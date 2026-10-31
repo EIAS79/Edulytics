@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+  "title": "Moving in the Plane",
+  "reviewer": "Coder 4: source and mathematical candidate; independent academic approval not granted",
+  "startedAtUtc": "2026-10-30T07:29:35.127887+00:00",
+  "closedAtUtc": null,
+  "status": "BLOCKED_A_B_C",
+  "localSourceFiles": [
+    {
+      "file": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
+      "sha256": "dbb43369a545fedd2d1a7d77be6e4f708fd583a6f13203351ed6e074c6f95c51"
+    },
+    {
+      "file": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\index.html",
+      "sha256": "ad4810d3e82313c1eeb8919228ee5d24d35d3d5c150f416abccfabdc0cd1bb5b"
+    },
+    {
+      "file": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\preparation.html",
+      "sha256": "f973defe83a451e19fa51f3316799ed92ce270ed441919d36a7a83ea7c368ca0"
+    }
+  ],
+  "sourceStandardRole": {
+    "source": [
+      {
+        "standard": "4.MD.C.5",
+        "role": "BuildingOn"
+      },
+      {
+        "standard": "8.G.A.1",
+        "role": "BuildingTowards"
+      }
+    ],
+    "teacherActivityEvidence": "Teacher source 1.1 Building On 4.MD.C.5; 1.2 and 1.3 Building Towards 8.G.A.1. Preparation also shows Building On + Building Towards.",
+    "incorrectBlueprintExtraRole": "Addressing:8.G.A.1",
+    "requestedAdjudication": "Retain source BuildingTowards instead of silently promoting to Addressing; academic owner must approve any blueprint role change.",
+    "owner": "Supervisor 2 / academic standards reviewer",
+    "approved": true,
+    "sharedBlueprintChanged": false,
+    "ownerApproval": "Supervisor 2 comment 6523795237; source semantic role BuildingTowards accepted, blueprint discrepancy deferred to owner"
+  },
+  "activityParity": [
+    {
+      "activity": "1.1",
+      "source": "A/B/C/D two-ray diagrams with common vertex: 180°, 90°, acute, obtuse; justify any defensible selection.",
+      "firstParty": "New accurate four-angle SVG plus existing open explanation and ShapeDecomposition accessible native cards.",
+      "decision": "SOURCE_SKILL_ALIGNED_CANDIDATE",
+      "limit": "Publisher-identical art not claimed; SVG not attached to authenticated Rich V2 renderer."
+    },
+    {
+      "activity": "1.2",
+      "source": "Three six-frame triangle sequences. Partners secretly describe and identify A/B/C and reverse roles. Original A/B clockwise second motion, C counterclockwise; A/B diverge at fourth frame.",
+      "firstParty": "New original 18-frame rigid SVG; three native six-frame RatioTables; prior source-aligned partner text preserved.",
+      "decision": "PEDAGOGICALLY_ALIGNED_FIRST_PARTY_CANDIDATE",
+      "limit": "Publisher blackline master not verified; no authenticated graphic attachment or partner submission."
+    },
+    {
+      "activity": "extension",
+      "source": "Start at frame six, run one dance backward; compare inverse translations/rotations.",
+      "firstParty": "Existing source-aligned reverse-motion prompt; original six-frame cards permit reverse order.",
+      "decision": "CONTENT_ALIGNED_CANDIDATE",
+      "limit": "Teacher review of drawing and explanation; not auto-graded."
+    },
+    {
+      "activity": "1.3",
+      "source": "Original publisher Frame to Frame Cool-down requires teacher login and remains inaccessible.",
+      "firstParty": "Previously authored original Edulytiks first-party equivalent and reused eight-point teacher rubric (no publisher text invented).",
+      "decision": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+      "limit": "Academic equivalence approval and actual teacher scoring route not verified."
+    }
+  ],
+  "assets": [
+    {
+      "file": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg",
+      "sha256": "e1aa8abd1dc01861cc53e173ba8de561b03747e124543dd45c60ca15c67b3f69",
+      "angles": [
+        {
+          "label": "A",
+          "degrees": 180
+        },
+        {
+          "label": "B",
+          "degrees": 90
+        },
+        {
+          "label": "C",
+          "degrees": 45
+        },
+        {
+          "label": "D",
+          "degrees": 125
+        }
+      ],
+      "status": "COURSE_OWNED_NOT_LEARNER_ATTACHED"
+    },
+    {
+      "file": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg",
+      "sha256": "69c7f67b61d95c70cc47ab1193577ecd6e2a2a5c0617ee9600448f849b2661b8",
+      "states": {
+        "A": [
+          {
+            "x": 0,
+            "y": 0,
+            "direction": "north"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "direction": "north"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "direction": "east"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "direction": "east"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "direction": "north"
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "direction": "north"
+          }
+        ],
+        "B": [
+          {
+            "x": 0,
+            "y": 0,
+            "direction": "north"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "direction": "north"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "direction": "east"
+          },
+          {
+            "x": 2,
+            "y": -1,
+            "direction": "east"
+          },
+          {
+            "x": 2,
+            "y": -1,
+            "direction": "south"
+          },
+          {
+            "x": 1,
+            "y": -1,
+            "direction": "south"
+          }
+        ],
+        "C": [
+          {
+            "x": 0,
+            "y": 0,
+            "direction": "north"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "direction": "north"
+          },
+          {
+            "x": 2,
+            "y": 0,
+            "direction": "west"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "direction": "west"
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "direction": "south"
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "direction": "south"
+          }
+        ]
+      },
+      "status": "COURSE_OWNED_NOT_LEARNER_ATTACHED"
+    }
+  ],
+  "nativeVisuals": {
+    "kinds": [
+      "ShapeDecomposition",
+      "RatioTable"
+    ],
+    "countNew": 4,
+    "renderer": "src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml",
+    "supportedByExistingRenderer": true,
+    "renderActuallyObservedWithStudentAuthentication": false
+  },
+  "sharedVisualHandoff": {
+    "owner": "Supervisor 2 single writer",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "contract": "Add allowlisted course-owned SVG attachment to Rich V2 lesson visual resolution (existing enum lacks general SVG visual kind). Restrict to these two fixed source-controlled paths; enforce script-free safe asset, accessible title and alt, responsive sizing; keep native fallbacks. Verify both panels under authenticated student role. Do not expose arbitrary HTML/URI or edit shared renderer in Coder 4 branch.",
+    "paths": [
+      "/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg",
+      "/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg"
+    ]
+  },
+  "assessmentContract": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "officialOutcome": "CCSS:8.G.A.1",
+    "staticRuleId": "ccss-transformations",
+    "candidateFamily": "transformations",
+    "actualFamilyAndNegativeGradingVerified": false,
+    "machineCandidate": {
+      "task": "P=(1,1) translated right 3 units: report final P",
+      "correct": "(4,1)",
+      "equivalentAccepted": [
+        "4,1",
+        "(4, 1)",
+        "(4.0,1.0)"
+      ],
+      "wrongRejected": [
+        "(1,4)",
+        "(4,2)",
+        "(-2,1)"
+      ],
+      "invalidRejected": [
+        "NaN,1",
+        "Infinity,1",
+        "(4,1,2)",
+        "",
+        null
+      ],
+      "productionGeneratorConnected": false
+    },
+    "human": {
+      "oddOneOut": "Any choice justified by correct property; do not enforce one option.",
+      "dance": "Partner reconstructs whole 6-frame movement and teacher reviews direction, turn and precision.",
+      "inverse": "Teacher reviews reverse slides and reverse turns, including ordered frames.",
+      "cooldown": "Reuse existing 8-point scoring rubric from current checkpoint; final reference (4,1), east-pointing tip, conserved lengths/angles.",
+      "savedTeacherScoresObserved": false
+    },
+    "handoffOwner": "Supervisor 2 shared Practice / teacher-scoring owner",
+    "handoff": "Confirm the exact lesson-scoped transformations route, equivalent/wrong/invalid inputs and fail-closed. Only extend existing transformations family if current supports no coordinate answer; no new engine for partner dance. Expose teacher-reviewed drawing and oral/text evidence through existing assessment workflow without fabricating auto-grades."
+  },
+  "latestRichSha256": "00a15a8c7e1a38d45bb2094b238d181dc5aeaffd267ea41708680c1a9c122a43",
+  "preserved": {
+    "candidateCount": 131,
+    "workedExamples": 3,
+    "historicalSourceEvidenceIntact": true,
+    "existingSvgPreserved": true
+  },
+  "verification": {
+    "targetedCommand": "node --test tests/academic-us-ccss-g8-coder4-u01-l01-unblock.test.cjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "passed": 4,
+    "failed": 0,
+    "testedCommitSHA": null,
+    "previousSupervisor2": "13/13 Node tests PASS at 33e69c6 (per Supervisor 2, not claimed for new SHA)",
+    "testedBaseHeadSHA": "33e69c6cc388dfa31234d66552d5b9e7f5cc8474",
+    "testedWorkingTreeFileSHA256": {
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg": "e1aa8abd1dc01861cc53e173ba8de561b03747e124543dd45c60ca15c67b3f69",
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg": "69c7f67b61d95c70cc47ab1193577ecd6e2a2a5c0617ee9600448f849b2661b8",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json": "00a15a8c7e1a38d45bb2094b238d181dc5aeaffd267ea41708680c1a9c122a43",
+      "tests/academic-us-ccss-g8-coder4-u01-l01-unblock.test.cjs": "f338092e2af407a8d486c774178d5c1a3a4740c41cd0ca74a99d6e8f61142bba"
+    },
+    "evidence": "Node test runner 4 tests / 4 pass / 0 fail / exit 0 on isolated Our-CS working tree; no .NET build or other full suite executed."
+  },
+  "gates": {
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "unresolved": [
+    "SOURCE_ROLE_APPROVAL_SUPERVISOR2",
+    "SOURCE_EQUIVALENCE_AND_SVG_AUTHENTIC_LEARNER_ATTACHMENT_SUPERVISOR2",
+    "EXACT_PRACTICE_AND_TEACHER_SCORE_ROUTE_SUPERVISOR2"
+  ],
+  "counters": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 0,
+    "B_CLOSED": 0,
+    "C_PREPARED": 0,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "REMAINING": 131
+  },
+  "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+  "nextLessonAllowed": true,
+  "release": "NO_GO",
+  "lastUpdatedAtUtc": "2026-10-30T07:32:41.463614+00:00",
+  "elapsedSecondsUntilEvidence": 186,
+  "courseOwnedABCDecision": {
+    "reviewedAtUtc": "2026-10-30T12:04:34.645182+00:00",
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
+    "A_evidence": "Three local source HTML SHA-256s and activity 1.1/1.2/inverse/Cool-down crosswalk recorded. Publisher marks 8.G.A.1 BuildingTowards; blueprint additionally claims Addressing and academic owner has not signed off.",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "B_evidence": "Existing supported Rich V2 ShapeDecomposition and RatioTable visual structures are attached to course data, all 4 L01 first-party graphics/math tests PASS, original source artwork not copied. Standalone SVG image attachment is enhancement, not a new mandatory B gate per Admin.",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C_evidence": "Non-numeric teacher criteria and eight-point Cool-down rubric available, correct/equivalent/wrong/invalid coordinate response oracle independently checked. Actual lesson-scoped transformations generation/grading not demonstrated; shared engine edit prohibited.",
+    "D": "NOT_RUN",
+    "returnQueue": false,
+    "returnReasons": [
+      "ACADEMIC_STANDARDS_OWNER_ROLE_ADJUDICATION",
+      "LESSON_SCOPED_TRANSFORMATIONS_PRACTICE_RUNTIME_OR_FAIL_CLOSED_DEPENDENCY"
+    ],
+    "needsSharedSvgKindForB": false,
+    "approvalClaimed": false,
+    "skipPermissionSuperseded": true,
+    "nextLessonAllowed": true,
+    "futureRuntimeStageDNotVerified": true
+  },
+  "strictSequentialOverride": {
+    "unitStatus": "UNIT_IN_PROGRESS",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "nextLessonAllowed": true,
+    "effectiveOrder": "ADMIN_V_UNIT",
+    "academicOwnerApproval": "Supervisor 2 comment 6523795237"
+  },
+  "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json"
+}

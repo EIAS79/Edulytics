@@ -1,0 +1,1387 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L01",
+      "CultureCode": "en",
+      "Title": "Projecting and Scaling",
+      "ExplanationParagraphs": [
+        "Goal: investigate how an enlarged or reduced image relates to its original through a center of projection and a scale factor. Compare the resulting distances rather than assuming all size changes are rigid.",
+        "Place a point light and a paper triangle above a wall. A shadow of the triangle can become larger when it moves closer to the light, but not every physical shadow is a perfect geometric dilation; establish which idealized rays and planar placements are being modeled.",
+        "Source activity 1.1, independent numeric check: 6 1/4 ÷ 2 = 25/8, 10 1/7 ÷ 5 = 71/35, and 8 1/2 ÷ 11 = 17/22. Explain how fractions or mixed numbers represent each quotient; the warm-up addresses fraction division before new scale factors.",
+        "Source activity 1.2: repeatedly halve an 8.5-by-11-inch page, producing first-party dimensions A(8.5,11), B(5.5,8.5), C(4.25,5.5), D(2.75,4.25), E(2.125,2.75), each written (short,long). A,C,E are similar with scale factors 1, 1/2, 1/4; B,D form a different shape family. Stack at a shared corner and compare diagonals. Do not claim that every halved rectangle is similar to the original.",
+        "Source activity 1.3: if rectangle R is split into four equal similar rectangles, B has 1/2 the length of each corresponding edge of R. If C is one of nine similar cells inside another quarter of R, C is 1/3 of B in length and 1/6 of R, so multiplying the two scale factors confirms the R-to-C relationship. Student sorting, measuring and reasoning need observation and teacher review.",
+        "Draw center O, triangle A,B,C and image A′,B′,C′ along the same rays from O. Estimate a common ratio OA′/OA for all three corners. A teacher checks the source-specific projection diagram and proportional reasoning; numeric scale ratios alone do not verify drawing quality.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/1/preparation.html . No publisher graphics or assessments are reproduced.",
+        "ACTIVE FIRST-PARTY U02:L01 A-B-C STUDENT ASSESSMENT (offline teacher paper, not authenticated Practice): selected lesson-linked sheet /curriculum/us-ccss-g8/assessment/u02-l01-projecting-scaling-paper.html. The Edulytiks source-aligned student activities are 1.1 Number Talk: Remembering Fraction Division (exact 6¼÷2,10⅐÷5,8½÷11), 1.2 Sorting Rectangles by repeated halves of 8½×11 (A,C,E similar, B,D not), and 1.3 Scaled Rectangles (R→B factor 1/2, B→C 1/3, R→C 1/6). It includes an independent same-ray center-of-dilation construction and five Edulytiks-owned practice task types matching original source Practice scope: selecting scaled rectangle dimensions, bidirectional scale factors, drawing scaled polygon copies, triangle-angle review and parallel-line angle review. A separate private eight-point teacher rubric, complete worked key and correct/equivalent/wrong/malformed/boundary authored fixtures support paper collection and human evaluation. The printed handoff has no student online submission, no persisted teacher grade or verified machine-generated selected Practice. This is first-party Edulytiks work informed by original OUR/IM Grade 8 Unit 2 Lesson 1 CC BY 4.0; teacher Cool-down is not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Projection center",
+          "Definition": "A common origin from which lines to corresponding image points extend.",
+          "Rule": "Use the same center for every pair of corresponding points.",
+          "Example": "O, A and A′ lie on one ray."
+        },
+        {
+          "Title": "Scale factor",
+          "Definition": "The ratio of image distance to original distance from the center.",
+          "Rule": "k=OA′/OA when A′ lies on the ray OA.",
+          "Example": "A point 2 units from O maps to 6 units: k=3."
+        },
+        {
+          "Title": "Enlargement or reduction",
+          "Definition": "An image that scales distances by the same positive factor.",
+          "Rule": "k>1 enlarges; 0<k<1 reduces.",
+          "Example": "An image with k=1/2 has each distance halved."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find the enlargement factor",
+          "Question": "A point A is 2 units from O and A′ is 6 units along the same ray. What is k?",
+          "Method": "Divide image radius by original radius.",
+          "Steps": [
+            "Take the original center distance OA=2.",
+            "The new center distance is OA′=6.",
+            "Compute k=6÷2=3."
+          ],
+          "Answer": "3, an enlargement.",
+          "Check": "Multiplying 2 by 3 gives 6."
+        },
+        {
+          "Title": "Calculate a reduced radius",
+          "Question": "A point is 12 cm from O. It is reduced by k=1/4. How far is the image point from O?",
+          "Method": "Multiply the original radius by k.",
+          "Steps": [
+            "The original distance is 12 cm.",
+            "Multiply by 1/4: 12×1/4=3.",
+            "Place the image on the original ray at distance 3 cm."
+          ],
+          "Answer": "3 cm.",
+          "Check": "3/12=1/4."
+        },
+        {
+          "Title": "Check a proposed uniform scale",
+          "Question": "A and B are 2 cm and 4 cm from O. Their images are 6 cm and 10 cm from O. Is one dilation enough?",
+          "Method": "Compare scale ratios.",
+          "Steps": [
+            "A-to-image ratio is 6÷2=3.",
+            "B-to-image ratio is 10÷4=2.5.",
+            "Different ratios cannot result from one uniform dilation."
+          ],
+          "Answer": "No; the scale ratios disagree.",
+          "Check": "A single factor would have to be both 3 and 2.5."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a large shadow a rigid transformation.",
+          "WhyWrong": "Rigid transformations preserve size, unlike an ideal dilation with k≠1.",
+          "Correction": "Check a corresponding distance."
+        },
+        {
+          "Mistake": "Using different projection centers for different vertices.",
+          "WhyWrong": "A dilation uses the same center for every point.",
+          "Correction": "Draw center-to-vertex rays first."
+        }
+      ],
+      "SummaryPoints": [
+        "A dilation scales every center-to-point distance consistently.",
+        "k above one enlarges and between zero and one reduces.",
+        "A projection model requires explicitly stated geometric assumptions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L02",
+      "CultureCode": "en",
+      "Title": "Circular Grid",
+      "ExplanationParagraphs": [
+        "Goal: use a grid of concentric circles and equally spaced rays to construct dilations. The circles encode distance from a common center and the rays encode direction.",
+        "For a positive scale factor k, the point and its image stay on the same ray from center O. Their radii differ by factor k. Every vertex must follow the same radial rule; otherwise the image distorts.",
+        "Source activity 2.1 asks students to notice and wonder about concentric-circle grids: all circles have the same center, and the radial distance is independent of ray direction. An open observation is teacher-reviewed, not a numeric answer.",
+        "Source activity 2.2 asks for four points on a small circle, their center-to-point rays, intersections with a larger circle and a measured S/L table. In an independent example with radii 2 and 5, every corresponding distance quotient L/S is 5/2, not a direction-dependent scale factor. The original GeoGebra point/ray/intersection/distance tools have not been integrated into Edulytiks.",
+        "Source activities 2.3 and 2.4: trace every quadrilateral vertex along its ray from the common center and use one constant factor for the entire polygon. Preserve labels and compare corresponding edges. Teacher review is required for a student-constructed polygon, rather than reporting that a static RatioTable is interactive.",
+        "On a circular grid draw an irregular three-vertex figure whose corners have radii 2,3,4 grid steps. Dilate by 2, label the image corners and justify corresponding radii. A teacher scores the diagram; an automated numeric radius check is a limited component.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/2/preparation.html . No publisher graphics or assessments are reproduced.",
+        "SELECTED FIRST-PARTY U02:L02 HUMAN-PAPER ASSESSMENT: /curriculum/us-ccss-g8/assessment/u02-l02-circular-grid-paper.html. This linked lesson-specific printable sheet covers original student tasks 2.1 Notice and Wonder concentric circles, 2.2 four point-on-circle rays and measured circle ratios (separate small/large table), 2.3 polygon and nonvertex dilation by factors 2 and 1/2 with common center, 2.4 quadrilateral factor 1/3 around a distinct center, four first-party source-aligned independent Practice task types including image and preimage on two circles, two independent triangle dilations and side/angle comparison, rigid congruence review, and triangle-angle retrieval. The teacher separately checks student constructions and private eight-point rubric. Independent first-party teacher paper Cool-down is provided; publisher-protected Cool-down is not copied. Paper route does not assert authenticated online practice, GeoGebra tools, grade persistence or Stage D runtime verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Concentric circular grid",
+          "Definition": "Circles with the same center and successive marked radii.",
+          "Rule": "Each ring represents a distance from O.",
+          "Example": "Point A can lie on a radius-3 circle."
+        },
+        {
+          "Title": "Ray correspondence",
+          "Definition": "Point and positive-scale image lie along one ray from the center.",
+          "Rule": "Preserve ray direction while changing radial distance.",
+          "Example": "On the north ray, radius 2 becomes radius 6 under factor 3."
+        },
+        {
+          "Title": "Uniform radial scale",
+          "Definition": "A single scale multiplier applied to all radii.",
+          "Rule": "r′=kr for each vertex.",
+          "Example": "Radii 2,3,4 become 4,6,8 with k=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Double three radii",
+          "Question": "Original radii are 2,3,4. What are image radii for k=2?",
+          "Method": "Multiply each radius by the same factor.",
+          "Steps": [
+            "2×2=4.",
+            "3×2=6.",
+            "4×2=8, retaining the original ray for each vertex."
+          ],
+          "Answer": "4, 6 and 8 units.",
+          "Check": "Each image/original ratio equals 2."
+        },
+        {
+          "Title": "Reduce a circle-grid radius",
+          "Question": "A point is on radius 9. Dilation k=1/3: find its new radius.",
+          "Method": "Scale radial distance.",
+          "Steps": [
+            "Read the source radius 9.",
+            "Multiply 9×1/3.",
+            "Place the point on radius 3 along the same ray."
+          ],
+          "Answer": "3 units.",
+          "Check": "3÷9=1/3."
+        },
+        {
+          "Title": "Spot inconsistent scaling",
+          "Question": "Radii 2 and 6 map to 5 and 15. What common scale factor is used?",
+          "Method": "Compare ratios.",
+          "Steps": [
+            "For the first point, 5÷2=2.5.",
+            "For the second, 15÷6=2.5.",
+            "The matching ratios support a single dilation centered at the grid center."
+          ],
+          "Answer": "k=2.5.",
+          "Check": "Both image radii are 2.5 times their sources."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Moving to a different ray after scaling.",
+          "WhyWrong": "A positive dilation preserves point direction from the center.",
+          "Correction": "Stay on the original center-to-point ray."
+        },
+        {
+          "Mistake": "Treating concentric rings as equally spaced scale factors rather than distances.",
+          "WhyWrong": "A grid ring indexes absolute radius, not multiplication.",
+          "Correction": "Read the radius values and multiply them."
+        }
+      ],
+      "SummaryPoints": [
+        "Circular grids show radial dilation directly.",
+        "Keep the center and ray fixed.",
+        "Scale every radius by one factor."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Circular grid distances at scale 2",
+          "Description": "Multiply each distance from the dilation center by 2; rays are unchanged.",
+          "Rows": [
+            {
+              "Label": "original radius",
+              "Cells": [
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "image radius",
+              "Cells": [
+                "4",
+                "6",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L03",
+      "CultureCode": "en",
+      "Title": "Dilations with no Grid",
+      "ExplanationParagraphs": [
+        "Goal: construct an image using a straightedge and measured center-to-point distances without relying on a square or circular grid.",
+        "Mark an arbitrary center O and a triangle ABC. Draw rays OA, OB, OC; along each ray mark A′,B′,C′ with OA′=k·OA and so on. Join image vertices in the original order.",
+        "Source activity 3.1 constructs points twice and half as far along a ray from its starting point. On original ray A(0,0), B(2,0), use C(4,0) and D(1,0); C must be beyond B, D between A and B.",
+        "Source activity 3.2 asks which labeled point is an image after a dilation and which chosen point can serve as center; reverse maps use reciprocal scale factors, and dilation with factor 1 maps any point to itself. On an independent example A(0,0), B(2,0), factor 5 gives B′(10,0).",
+        "Source activity 3.3 uses a dilation applet without a grid: constructing projected rays and distances must be student-demonstrated and teacher-checked or implemented as an accessible drawing task; a single numeric distance is not an equivalent graphical activity.",
+        "Construct a non-grid dilation of a scalene triangle by factor 3/2 and check corresponding side ratios. A ruler/tracing activity is teacher-reviewed; do not report numeric radius multiplication as proof that the learner constructed the whole figure.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/3/preparation.html . No publisher graphics or assessments are reproduced.",
+        "SELECTED ORIGINAL FIRST-PARTY U02:L03 STUDENT ASSESSMENT (OFFLINE TEACHER REVIEW): /curriculum/us-ccss-g8/assessment/u02-l03-dilations-no-grid-paper.html. Covers source 3.1 points on a ray with double/half distances, 3.2 full center/scale/image obstacle course including reciprocal and factor-one cases, and 3.3 non-grid straightedge ray/distance/perspective polygon construction. Includes six independently authored task families corresponding to source Practice: segment length factors 5, 3.7, 1/5, s; four point dilations around opposite centers; a new perspective drawing; reciprocal side-length scale; vertical-angle retrieval; and rigid-triangle congruence retrieval. The linked printable sheet requires teacher assessment of all correspondence labels and measured geometric construction. Its separate private teacher rubric, mathematical answer key and authored answer boundary cases are lesson-owned. This route is not online assessment, not publisher applet or protected Cool-down, and not Stage D verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Center ray",
+          "Definition": "Line from center O through one original vertex.",
+          "Rule": "A positive dilation image lies on that ray.",
+          "Example": "O,A,A′ are collinear."
+        },
+        {
+          "Title": "Measured scale",
+          "Definition": "A distance scaled by multiplier k.",
+          "Rule": "Use a ruler, compass or proportional construction.",
+          "Example": "OA=4 cm becomes OA′=6 cm for k=3/2."
+        },
+        {
+          "Title": "Similarity under dilation",
+          "Definition": "A dilation preserves corresponding angles but multiplies sides by k.",
+          "Rule": "Every side image/original ratio equals k.",
+          "Example": "A 6-cm side becomes 9 cm at k=3/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Place a scaled vertex",
+          "Question": "OA=4 cm and k=1.5. Find OA′.",
+          "Method": "Multiply radius by scale factor.",
+          "Steps": [
+            "The original radius is 4 cm.",
+            "Compute 4×1.5=6 cm.",
+            "Mark A′ at 6 cm from O on ray OA."
+          ],
+          "Answer": "6 cm.",
+          "Check": "6÷4=1.5."
+        },
+        {
+          "Title": "Find scale from a side",
+          "Question": "Corresponding sides measure 6 cm and 9 cm. What is the dilation factor?",
+          "Method": "Divide image side by original side.",
+          "Steps": [
+            "Identify original side 6 cm.",
+            "Identify corresponding image side 9 cm.",
+            "Compute 9÷6=3/2."
+          ],
+          "Answer": "3/2 or 1.5.",
+          "Check": "6×1.5=9."
+        },
+        {
+          "Title": "Detect a poor construction",
+          "Question": "One original radius 5 cm becomes 10 cm and another 3 cm becomes 9 cm. Is this factor consistent?",
+          "Method": "Compute both ratios.",
+          "Steps": [
+            "The first radius has factor 10÷5=2.",
+            "The second has factor 9÷3=3.",
+            "One dilation cannot use two different factors."
+          ],
+          "Answer": "No, the construction is inconsistent.",
+          "Check": "Two different factors invalidate a uniform dilation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Setting distances from an image vertex rather than the center.",
+          "WhyWrong": "Dilation radii are measured from the common center.",
+          "Correction": "Measure OA and OA′ from O."
+        },
+        {
+          "Mistake": "Claiming every side remains equal.",
+          "WhyWrong": "A nonunit dilation changes side lengths.",
+          "Correction": "Multiply each corresponding side by k."
+        }
+      ],
+      "SummaryPoints": [
+        "A grid is optional for dilation construction.",
+        "Draw center rays and use accurate scaled distances.",
+        "Check corresponding sides for a common ratio."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L04",
+      "CultureCode": "en",
+      "Title": "Dilations on a Square Grid",
+      "ExplanationParagraphs": [
+        "Goal: use ordered pairs and the center of dilation to construct an exact image on a square coordinate grid.",
+        "For center O=(0,0), the dilation by k maps (x,y) to (kx,ky). For another center C=(a,b), use C+k(P−C), not simple multiplication of global coordinates.",
+        "Source activity 4.1 requires estimating scale factor from points A, B, C on one ray; the estimate must be the quotient AC/AB rather than a guess or the ratio BC/AB.",
+        "Source activity 4.2: an original coordinate reconstruction of the stated rectangle A(2,9), B(8,9), C(8,5), D(2,5), center P(3,7), factor 2 gives A′(1,11), B′(13,11), C′(13,3), D′(1,3). Explicitly use P+2(X−P); multiplying raw coordinates by 2 would be wrong because P is not the origin.",
+        "Source activity 4.3 asks students to match original and image figures in a card sort and explain the center/scale factor for each. A static original diagram illustrates one valid case but is not a working accessible card-sort submission or teacher mark.",
+        "Draw a triangle on grid paper and dilate it from O by factor 2, then repeat with a different center. Explain why the second image is placed differently. The drawing and explanation require human review.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/4/preparation.html . No publisher graphics or assessments are reproduced.",
+        "ACTIVE U02:L04 FIRST-PARTY SELECTED A–B–C LEARNER ASSESSMENT: /curriculum/us-ccss-g8/assessment/u02-l04-dilations-square-grid-paper.html. The student-facing paper retains the existing two first-party source-aligned geometry SVGs and requires independent 4.1 scale-factor estimation with labeled A,B,C and ratio AC/AB; 4.2 full off-origin P(3,7) rectangle factor2 and both factor2/factor1/2 T(2,6) triangle images; 4.3 exact source-modality six-to-five card sort with one unmatched card and teacher-scored drawable image; and all five original Practice skill families including congruence-vs-similarity, three separate center dilations, nonparallel angle retrieval, rigid polygon motion and sequential reflection/translation. An independently authored Cool-down and separately stored private eight-point teacher rubric apply. Teacher distributes and scores this exact offline paper; neither an authenticated online Practice generator nor an online submission or persisted grade is claimed. Publisher-protected Cool-down and card artwork not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Origin-centered dilation",
+          "Definition": "Coordinate scaling about O.",
+          "Rule": "(x,y)→(kx,ky).",
+          "Example": "(2,−3) at k=2 becomes (4,−6)."
+        },
+        {
+          "Title": "Nonorigin center",
+          "Definition": "Scale the displacement from center C.",
+          "Rule": "P′=C+k(P−C).",
+          "Example": "From C(1,1), P(3,2) at k=2 maps to (5,3)."
+        },
+        {
+          "Title": "Corresponding displacement",
+          "Definition": "Each image displacement from C is proportional to the original.",
+          "Rule": "Vector CP′=k·CP.",
+          "Example": "Vector (2,1) becomes (4,2) at k=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Double a signed coordinate",
+          "Question": "Dilate P(2,−3) around the origin by factor 2.",
+          "Method": "Multiply both coordinates.",
+          "Steps": [
+            "New x is 2×2=4.",
+            "New y is −3×2=−6.",
+            "Plot (4,−6) on the same ray from O."
+          ],
+          "Answer": "P′(4,−6).",
+          "Check": "Distances from O double."
+        },
+        {
+          "Title": "Halve a coordinate pair",
+          "Question": "Dilate Q(−8,6) around O by factor 1/2.",
+          "Method": "Multiply every coordinate by 1/2.",
+          "Steps": [
+            "x′=−8/2=−4.",
+            "y′=6/2=3.",
+            "The new point is closer to O on the same ray."
+          ],
+          "Answer": "Q′(−4,3).",
+          "Check": "Both coordinates and radial distance halve."
+        },
+        {
+          "Title": "Different center",
+          "Question": "Center C(1,1), P(3,2), scale 2. Find P′.",
+          "Method": "Scale P−C, then add the center back.",
+          "Steps": [
+            "P−C=(2,1).",
+            "Twice this vector is (4,2).",
+            "Add C to obtain (5,3)."
+          ],
+          "Answer": "P′(5,3).",
+          "Check": "C-to-image displacement (4,2) is twice (2,1)."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying global coordinates regardless of center.",
+          "WhyWrong": "That only works when the center is the origin.",
+          "Correction": "Subtract the center before scaling, then add it back."
+        },
+        {
+          "Mistake": "Using an additive shift instead of multiplying displacements.",
+          "WhyWrong": "A dilation changes distances proportionally.",
+          "Correction": "Compare center-to-point lengths, not a constant translation vector."
+        }
+      ],
+      "SummaryPoints": [
+        "Origin-centered dilation multiplies coordinates.",
+        "For other centers scale P−C.",
+        "Keep correspondence and ray directions clear."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Origin-centered dilations in coordinates",
+          "Description": "For k positive, both coordinates multiply by the same factor, including negative coordinates.",
+          "Rows": [
+            {
+              "Label": "point",
+              "Cells": [
+                "P",
+                "Q"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "2",
+                "-8"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "-3",
+                "6"
+              ]
+            },
+            {
+              "Label": "factor k",
+              "Cells": [
+                "2",
+                "0.5"
+              ]
+            },
+            {
+              "Label": "image x",
+              "Cells": [
+                "4",
+                "-4"
+              ]
+            },
+            {
+              "Label": "image y",
+              "Cells": [
+                "-6",
+                "3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L05",
+      "CultureCode": "en",
+      "Title": "More Dilations",
+      "ExplanationParagraphs": [
+        "Goal: investigate dilation scale factors in the coordinate plane, including reductions, negative coordinates and the relationship between scale and transformed side lengths.",
+        "Dilations with k>1 enlarge and 0<k<1 reduce. Angles stay equal while lengths multiply by k; area changes by k². An image of a shape centered at O is determined by scaling every vertex.",
+        "Source activity 5.1 varies one dilation factor through an interactive triangular construction. A first-party triangle with side 14 has image side 7 when k=1/2 and side 28 when k=2; all corresponding angles stay fixed, while triangle area scales by k squared.",
+        "Source activity 5.2 is a two-person information gap: one partner has a problem card and the other has data and must supply requested values only. Learners must justify which center, original length and factor are needed; a fabricated automatically graded conversation would not verify the source communication task.",
+        "Investigate a coordinate rectangle of side lengths 2 and 3 at different positive factors. Record old and new side lengths and compare the area ratio. Written justification about why area scales by the square needs teacher scoring.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/5/preparation.html . No publisher graphics or assessments are reproduced.",
+        "EXACT SELECTED U02:L05 FIRST-PARTY STUDENT-PARTNER PAPER: /curriculum/us-ccss-g8/assessment/u02-l05-more-dilations-partner-paper.html. 5.1 three independent positive factors 1/2,1,2 of the same original triangle about a single nonorigin center, with labelled point images and squared area scaling. 5.2 actionable two-person information gap via SEPARATE printable Problem and Data cards; the problem solver must request exact original vertex coordinates, center and scale factor, justify why each is needed, and construct an image; the data partner shares only requested raw information and asks why, not solving; teacher collects an oral dialogue observation and independent results. All four original source Practice task families and an independently authored first-party Cool-down are included with separate private eight-point scoring rubric and answer boundary fixtures. Paper requires teacher distribution and judgment. Do not call it online Practice, automated dialogue, persisted teacher grades, publisher material or Stage D success."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Side length scaling",
+          "Definition": "A dilation multiplies every length by k.",
+          "Rule": "New side=old side×k.",
+          "Example": "Side 5 maps to side 15 at k=3."
+        },
+        {
+          "Title": "Angle invariance",
+          "Definition": "A positive dilation preserves angle measurements.",
+          "Rule": "Corresponding angles remain equal.",
+          "Example": "A 90° rectangle corner remains 90°."
+        },
+        {
+          "Title": "Area scaling",
+          "Definition": "Length in two independent directions is multiplied by k.",
+          "Rule": "Area image/original=k².",
+          "Example": "A 2×3 rectangle enlarged by k=2 grows from area 6 to 24."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Apply reduction",
+          "Question": "Original side length 14 and k=1/2. Find the image side.",
+          "Method": "Multiply by 1/2.",
+          "Steps": [
+            "Read the original 14-unit side.",
+            "Compute 14×1/2=7.",
+            "The image side is half as long."
+          ],
+          "Answer": "7 units.",
+          "Check": "7/14=1/2."
+        },
+        {
+          "Title": "New rectangle area",
+          "Question": "A 2-by-3 rectangle is dilated by factor 2. What is its image area?",
+          "Method": "Scale both side lengths.",
+          "Steps": [
+            "The original area is 2×3=6.",
+            "The image dimensions are 4 and 6.",
+            "Compute area 4×6=24, which is 4 times 6."
+          ],
+          "Answer": "24 square units.",
+          "Check": "k²=2²=4."
+        },
+        {
+          "Title": "Infer factor from areas",
+          "Question": "An original shape has area 8 and a similar image has area 72. Find positive scale factor k.",
+          "Method": "Take square root of area ratio.",
+          "Steps": [
+            "The image/original area ratio is 72/8=9.",
+            "Area ratio equals k² for a dilation.",
+            "Positive k=√9=3."
+          ],
+          "Answer": "k=3.",
+          "Check": "Original lengths triple and areas increase ninefold."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying area only by k.",
+          "WhyWrong": "Area has two independent dimensions that both scale.",
+          "Correction": "Use k² for area."
+        },
+        {
+          "Mistake": "Claiming dilation preserves all segment lengths.",
+          "WhyWrong": "Only unit scale does that.",
+          "Correction": "Check whether k=1."
+        }
+      ],
+      "SummaryPoints": [
+        "Dilation preserves angles but scales lengths.",
+        "Area scales by k squared.",
+        "Reductions and enlargements obey the same ratios."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Dilation scales area by k²",
+          "Description": "A 2 by 3 rectangle dilated by k=2 becomes 4 by 6; its area goes from 6 to 24.",
+          "Rows": [
+            {
+              "Label": "state",
+              "Cells": [
+                "original",
+                "image"
+              ]
+            },
+            {
+              "Label": "length",
+              "Cells": [
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "width",
+              "Cells": [
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "area",
+              "Cells": [
+                "6",
+                "24"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L06",
+      "CultureCode": "en",
+      "Title": "Similarity",
+      "ExplanationParagraphs": [
+        "Goal: identify similar figures through a sequence of rigid transformations and dilations, and distinguish similarity from congruence.",
+        "Similar figures share corresponding angles and all proportional sides, even if they have different positions, orientations and sizes. Dilation handles uniform size change; a rigid movement may then align the image.",
+        "Source activity 6.1 uses equivalent expressions as a warm-up. For an independent check, 10(2+3)−8·3=26, also 50−24 and 2·13, using distributive or arithmetic identities without changing the expression value.",
+        "Source activities 6.2 and 6.3 require describing actual sequences of dilations and rigid moves that transform corresponding labeled triangles and polygons; one equal side ratio without angle/correspondence checks does not prove similarity for a general quadrilateral.",
+        "Source activity 6.4 asks for methods describing translations and dilations, which are not interchangeable: a translation applies one vector and a dilation multiplies center-to-vertex distances by the same positive factor. A student-created overlay and proof require a visual/teacher check.",
+        "Draw a 3-by-5 rectangle and a 6-by-10 rectangle. Determine the common scale factor. Compare with a 6-by-9 rectangle and explain why one uniform dilation cannot map the first to the second.",
+        "A learner must justify a similarity claim rather than relying on appearances. Teacher-scored matching diagrams complement numeric side-ratio checks.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/6/preparation.html . No publisher graphics or assessments are reproduced.",
+        "EXACT FIRST-PARTY SELECTED U02:L06 SIMILARITY STUDENT/TEACHER PAPER: /curriculum/us-ccss-g8/assessment/u02-l06-similarity-transformations-paper.html. The paper preserves original teaching, covers source 6.1 three equivalent expressions, source 6.2 independent triangle and hexagon with explicit ordered rigid-motion and dilation images, 6.3 four prescribed distinct transformation combinations (translation+reflection, reflection+dilation>1, rotation+reflection, dilation<1+translation), 6.4 two differently scoped private five-card partner sets and independent geometrically equivalent sequences with observed oral comparison, plus three source Practice families (identify full similarity sequences, vertex side and angle correspondence, nested triangle dilation) and original first-party Cool-down. Teacher scores all drawings and partner explanations against private eight-point rubric with authored positive/equivalent/wrong/missing/malformed/boundary fixtures. This is not an authenticated app assessment or reproduction of protected publisher art/cards/Cool-down; Stage D remains NOT_RUN."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Similarity mapping",
+          "Definition": "A dilation possibly followed by rigid movements.",
+          "Rule": "Match angles and use one scale ratio for all sides.",
+          "Example": "3-by-5 maps to 6-by-10 at factor 2."
+        },
+        {
+          "Title": "Constant side ratios",
+          "Definition": "All corresponding lengths change by the same factor.",
+          "Rule": "a′/a=b′/b=…=k.",
+          "Example": "6/3=10/5=2."
+        },
+        {
+          "Title": "Congruence as special case",
+          "Definition": "Similar figures with scale factor 1.",
+          "Rule": "Congruent figures need no resizing.",
+          "Example": "Rotating a 3-by-5 rectangle preserves its dimensions."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare proportional rectangles",
+          "Question": "Are 3-by-5 and 6-by-10 rectangles similar?",
+          "Method": "Compare ratios for matching sides.",
+          "Steps": [
+            "The first corresponding ratio is 6÷3=2.",
+            "The second is 10÷5=2.",
+            "Both rectangles have right angles and consistent factor 2."
+          ],
+          "Answer": "Yes, similar with k=2.",
+          "Check": "One dilation maps the side lengths."
+        },
+        {
+          "Title": "Reject nonuniform scale",
+          "Question": "Can a 3-by-5 rectangle dilate to a 6-by-9 rectangle?",
+          "Method": "Compare both dimension ratios.",
+          "Steps": [
+            "Width ratio is 6/3=2.",
+            "Height ratio is 9/5=1.8.",
+            "One dilation cannot have factors 2 and 1.8."
+          ],
+          "Answer": "No, the rectangles are not similar in that correspondence.",
+          "Check": "Rotating the second does not produce the required side ratio either."
+        },
+        {
+          "Title": "Distinguish congruent",
+          "Question": "Two rectangles both measure 4 by 7 but one is rotated. Are they congruent, similar, or neither?",
+          "Method": "A rotation is rigid.",
+          "Steps": [
+            "All corresponding sides and angles agree.",
+            "Rotation changes orientation but not shape or size.",
+            "They are congruent, hence also similar."
+          ],
+          "Answer": "Congruent and similar; scale factor 1.",
+          "Check": "A rigid rotation maps one to the other."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling every rectangle pair similar.",
+          "WhyWrong": "Rectangles can have different length-to-width ratios.",
+          "Correction": "Compare both corresponding side ratios."
+        },
+        {
+          "Mistake": "Confusing similarity with equal size.",
+          "WhyWrong": "Similarity permits uniform scaling.",
+          "Correction": "State whether k is 1 or different."
+        }
+      ],
+      "SummaryPoints": [
+        "Similarity includes dilation and possibly rigid movements.",
+        "Angles agree and all side ratios are equal.",
+        "Congruence is similarity at scale 1."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L07",
+      "CultureCode": "en",
+      "Title": "Similar Polygons",
+      "ExplanationParagraphs": [
+        "Goal: check polygon similarity using a corresponding vertex order, matching angle measures and a constant ratio of side lengths.",
+        "Not every pair of polygons with equal angles is similar when there are four or more sides: side ratios also matter. Correspondence can reverse under reflection; labels must trace the intended pair of vertices.",
+        "Source activity 7.1 classifies propositions as all, some or none: every congruent pair is similar (all); a similar pair is congruent only when its scale factor is 1 (some); dilation centered at an angle vertex does not change the angle measure (none).",
+        "Source activity 7.2 provides a square with side 2 and rhombus with all sides 2 but unequal 60°/120° angles: they are not similar. Rectangles 4-by-2 and 6-by-4 have different aspect ratios, so no single uniform scale maps one to the other. Adding 2 units or independently using factors 1.5 and 2 does not constitute a dilation.",
+        "Source activity 7.3 is a partner search for similar polygons; match all angles and one consistent set of corresponding side quotients, with independent student labels. Such open comparison needs teacher review.",
+        "Investigate two quadrilaterals with one matching angle but inconsistent side ratios. Explain why a single angle is insufficient. Diagram correspondence and explanatory reasoning are teacher-scored.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/7/preparation.html . No publisher graphics or assessments are reproduced.",
+        "SELECTED G8 U02:L07 FIRST-PARTY OFFLINE STUDENT/PARTNER PAPER: /curriculum/us-ccss-g8/assessment/u02-l07-similar-polygons-partner-paper.html. Original three source activities are served through lesson-specific teacher-scored responses: 7.1 ALL/SOME/NONE congruence-vs-similarity-vs-angle-preserving dilations, 7.2 square-versus-rhombus angle correspondence and rectangles with additive but different scale ratios, and 7.3 actual find-someone-similar partner search with separate first-party polygon cards and private observation. The independent student paper includes all six distinct source Practice families (82-degree angle invariance, positive similar vs deceptively different examples, complete ratios, false angle-changing dilation, 90-degree square construction), optional first-party L-shape extension, and original Cool-down. Teacher must judge full labelled drawings and explanations using separate private eight-point rubric with correct/equivalent/wrong/missing/malformed/boundary fixtures. No simulated online partner activity, authenticated Practice, automatic grading or persisted teacher score is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Corresponding angles",
+          "Definition": "Matched vertices in two polygons have equal angle measures under similarity.",
+          "Rule": "Identify and label the vertex correspondence.",
+          "Example": "A 90° corner remains 90° after dilation."
+        },
+        {
+          "Title": "Corresponding side ratios",
+          "Definition": "Side lengths of one polygon are all multiplied by one positive factor.",
+          "Rule": "Each image/original ratio must equal k.",
+          "Example": "Sides 2,3,4 become 4,6,8 at k=2."
+        },
+        {
+          "Title": "Ordered correspondence",
+          "Definition": "A↔A′, B↔B′ etc. define which sides and angles match.",
+          "Rule": "Check ratios in that ordered sequence.",
+          "Example": "AB corresponds to A′B′."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check a side pattern",
+          "Question": "Polygon sides 2,3,4,5 map to 6,9,12,15. What is k?",
+          "Method": "Calculate all four ratios.",
+          "Steps": [
+            "6/2=3 and 9/3=3.",
+            "12/4=3 and 15/5=3.",
+            "Constant side factor is 3; angles still need to be checked for polygon similarity."
+          ],
+          "Answer": "k=3 for the sides; verify angles before certifying similarity.",
+          "Check": "Equal ratios alone are not sufficient for arbitrary polygons."
+        },
+        {
+          "Title": "Reject one wrong side",
+          "Question": "Sides 2,3,4 map to 4,6,9. Is the given correspondence a dilation?",
+          "Method": "Compare corresponding ratios.",
+          "Steps": [
+            "The first side ratio is 4/2=2.",
+            "The second is 6/3=2.",
+            "The third is 9/4=2.25, so the scale is not uniform."
+          ],
+          "Answer": "No.",
+          "Check": "One inconsistent side ratio is enough to reject this dilation correspondence."
+        },
+        {
+          "Title": "Angle mismatch",
+          "Question": "One quadrilateral angle is 80° and the corresponding image angle is 85°. Can the polygons be similar under the specified correspondence?",
+          "Method": "Similarity preserves angle measures.",
+          "Steps": [
+            "Corresponding angle in the original is 80°.",
+            "Corresponding image angle is 85°.",
+            "Angles are not equal, so no similarity mapping exists for that correspondence."
+          ],
+          "Answer": "No, not under that correspondence.",
+          "Check": "Dilations and rigid moves cannot change an angle by 5°."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Checking only a few matching sides.",
+          "WhyWrong": "An unchecked side can violate uniform scaling.",
+          "Correction": "Check the entire correspondence."
+        },
+        {
+          "Mistake": "Assuming equal side ratios alone determine any polygon.",
+          "WhyWrong": "General polygons can change angles while keeping sides in proportion.",
+          "Correction": "Also check corresponding angles."
+        }
+      ],
+      "SummaryPoints": [
+        "Polygon similarity needs equal angles and one common side ratio.",
+        "Label correspondence before calculating.",
+        "A single mismatch disproves the proposed similarity."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L08",
+      "CultureCode": "en",
+      "Title": "Similar Triangles",
+      "ExplanationParagraphs": [
+        "Goal: reason about similar triangles through angle correspondence and proportional sides, including the angle-angle (AA) similarity principle.",
+        "Unlike general quadrilaterals, two triangles with two pairs of equal corresponding angles are similar because their third angles also agree. Once AA is established, corresponding side ratios are constant.",
+        "Source activity 8.1 asks for distinct expressions using the supplied numbers 4, −2, 10 to obtain 20, and comparisons are teacher-reviewed; equivalent expression creation is not a fixed multiple-choice test.",
+        "Source activity 8.2 creates pasta triangles with one given angle and then with all three angles. Equal one angle alone does not guarantee similarity; agreeing in two independent corresponding angles establishes triangle similarity by AA. Measuring and comparing physical triangles is a human-observed construction.",
+        "Source activity 8.3 asks students to reason about similar figures in a regular pentagon using equal angle measures and corresponding sides. Preserve geometric labels and check the actual correspondence, not a statement that any pentagon is similar to any other.",
+        "Draw two triangles with angles 40°,60°,80°. Give them different side lengths but the same proportional ratios. Check that a rotation or reflection may be needed before a dilation aligns them.",
+        "An annotated triangle drawing or AA justification is teacher-reviewed, while numeric angle and ratio calculations can be checked separately.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/8/preparation.html . No publisher graphics or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "AA similarity",
+          "Definition": "Two pairs of matching triangle angles guarantee triangle similarity.",
+          "Rule": "The third angle follows from a sum of 180°.",
+          "Example": "40°/60° triangles each have remaining 80°."
+        },
+        {
+          "Title": "Corresponding side factor",
+          "Definition": "A similar triangle scales every side by one k.",
+          "Rule": "Image side=original side×k.",
+          "Example": "3-4-5 becomes 6-8-10 at k=2."
+        },
+        {
+          "Title": "Angle sum",
+          "Definition": "Triangle angles total 180°.",
+          "Rule": "Third angle=180°−first−second.",
+          "Example": "40°+60° leaves 80°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use two angles",
+          "Question": "Triangles both have corresponding angles 40° and 60°. Are they similar?",
+          "Method": "Use AA and angle sum.",
+          "Steps": [
+            "The third angle in each is 180−40−60=80°.",
+            "Both triangles have corresponding angles 40°,60°,80°.",
+            "AA guarantees similarity."
+          ],
+          "Answer": "Yes, similar by AA.",
+          "Check": "All three angle measures agree."
+        },
+        {
+          "Title": "Find scale from corresponding sides",
+          "Question": "A triangle side 3 corresponds to side 9 in a similar triangle. Find k.",
+          "Method": "Divide image side by original.",
+          "Steps": [
+            "Identify corresponding sides 3 and 9.",
+            "Compute 9/3=3.",
+            "Every other side must triple."
+          ],
+          "Answer": "k=3.",
+          "Check": "A 4-unit side would become 12."
+        },
+        {
+          "Title": "Find missing angle",
+          "Question": "Two angles measure 45° and 70°. What is the third?",
+          "Method": "Use angle sum.",
+          "Steps": [
+            "45°+70°=115°.",
+            "180°−115°=65°.",
+            "The third angle is 65°, determining the full angle set."
+          ],
+          "Answer": "65°.",
+          "Check": "45+70+65=180."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying AA to arbitrary four-sided figures.",
+          "WhyWrong": "AA similarity is a triangle theorem.",
+          "Correction": "Check the number of sides before using AA."
+        },
+        {
+          "Mistake": "Pairing the wrong sides in a ratio.",
+          "WhyWrong": "Corresponding sides must oppose equal angles.",
+          "Correction": "Label matched vertices and opposite sides."
+        }
+      ],
+      "SummaryPoints": [
+        "AA establishes triangle similarity.",
+        "Third angles follow from 180°.",
+        "Side lengths scale by one constant factor."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L09",
+      "CultureCode": "en",
+      "Title": "Side Length Quotients in Similar Triangles",
+      "ExplanationParagraphs": [
+        "Goal: use ratios of corresponding side lengths to find unknown measurements in similar triangles, and justify a proportion before solving.",
+        "For similar triangles ABC and DEF with A↔D, B↔E, C↔F, side quotients DE/AB=EF/BC=DF/AC. Ratios must compare the same direction (image/source) throughout.",
+        "Source activity 9.1 compares side sets (2,3,4) and (4,5,6): factors 2, 5/3 and 3/2 differ, so the two triangles are not similar despite both having three listed lengths.",
+        "Source activity 9.2 takes the original side triple (4,5,7) and scale factors 2, 3 and 1/2 to obtain (8,10,14), (12,15,21), and (2,2.5,3.5). Within each triangle the long/short quotient is 7/4, the long/medium is 7/5, and medium/short is 5/4, independent of scale.",
+        "Source activity 9.3 requires identifying corresponding sides consistently before solving an unknown quotient. An answer that swaps source/image or short/long denominators is incorrect even if a coincidental number matches.",
+        "Set up a missing-side problem, cross multiply, then substitute back. A teacher evaluates correct correspondence on figures; a calculator-only fraction answer cannot establish the matching of sides.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/9/preparation.html . No publisher graphics or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Image/source ratio",
+          "Definition": "One quotient for all corresponding sides.",
+          "Rule": "Image side divided by source side equals k.",
+          "Example": "6/4=9/6=1.5."
+        },
+        {
+          "Title": "Proportion",
+          "Definition": "An equation that sets equal ratios.",
+          "Rule": "Solve by multiplication while preserving corresponding order.",
+          "Example": "x/8=9/6 gives x=12."
+        },
+        {
+          "Title": "Inverse factor",
+          "Definition": "Source/image ratio is the reciprocal of k.",
+          "Rule": "Keep the same direction for every quotient.",
+          "Example": "If image/source=3/2, then source/image=2/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find a missing image side",
+          "Question": "Similar triangles have original side 8, corresponding source reference 6 and image reference 9. Find the image of 8.",
+          "Method": "Set x/8=9/6.",
+          "Steps": [
+            "The known factor is 9/6=3/2.",
+            "Multiply 8×3/2=12.",
+            "Check 12/8=1.5, matching 9/6."
+          ],
+          "Answer": "12 units.",
+          "Check": "Both image/source ratios equal 1.5."
+        },
+        {
+          "Title": "Find the original side",
+          "Question": "Image side 15 corresponds to unknown original side and factor k=3. Find original.",
+          "Method": "Divide image by factor.",
+          "Steps": [
+            "The relation is 15=3×source.",
+            "Divide both sides by 3.",
+            "Source length is 5."
+          ],
+          "Answer": "5 units.",
+          "Check": "5×3=15."
+        },
+        {
+          "Title": "Spot ratio reversal",
+          "Question": "A proposed solution uses 8/12=9/6 for corresponding sides. Is this consistent?",
+          "Method": "Keep quotient direction consistent.",
+          "Steps": [
+            "The first quotient source/image is 8/12=2/3.",
+            "The second quotient image/source is 9/6=3/2.",
+            "One is reciprocal of the other, so they cannot be equated as written."
+          ],
+          "Answer": "No; use 12/8=9/6 or 8/12=6/9.",
+          "Check": "Correct proportions use the same orientation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mixing original/image with image/original in one proportion.",
+          "WhyWrong": "The quotients are reciprocals.",
+          "Correction": "Label every numerator and denominator."
+        },
+        {
+          "Mistake": "Using arbitrary same-looking sides.",
+          "WhyWrong": "Only corresponding sides form the similarity proportion.",
+          "Correction": "Match the opposing equal angles first."
+        }
+      ],
+      "SummaryPoints": [
+        "Use consistent corresponding side quotients.",
+        "Cross-multiplication follows a justified proportion.",
+        "Check the answer by substitution."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L10",
+      "CultureCode": "en",
+      "Title": "Meet Slope",
+      "ExplanationParagraphs": [
+        "Goal: describe the slope of a nonvertical line as a consistent vertical change divided by horizontal change, including the sign and geometric rise/run meaning.",
+        "On a square grid trace two points and draw a right triangle whose legs show rise and run. The ratio is the same for any two distinct points on the same nonvertical straight line.",
+        "Source activity 10.1 invites equivalent forms for 15÷12, such as 5/4 and 1.25; a single decimal is not the only mathematical representation.",
+        "Source activity 10.2 draws three right triangles on the same line with (run,rise) values (4,3), (8,6), and (2,1.5). Their common slope is 3/4 because equal acute angles make the triangles similar. A static coordinate example alone cannot verify a learner has constructed the assigned pair.",
+        "Source activities 10.3 and 10.4 contrast lines with equal and unequal slopes. Two lines with slope 3 but different intercepts are parallel, a slope 1/2 line is less steep, and a vertical line has undefined slope because run=0, not slope 0.",
+        "Compare uphill, downhill and horizontal lines. A vertical line has undefined slope because run is zero; it does not have slope zero. Building accurate right triangles is a teacher-reviewed graphic task.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/10/preparation.html . No publisher graphics or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Slope",
+          "Definition": "Rate of vertical change per horizontal change.",
+          "Rule": "m=(y₂−y₁)/(x₂−x₁) for x₂≠x₁.",
+          "Example": "From (1,2) to (4,8), m=6/3=2."
+        },
+        {
+          "Title": "Slope sign",
+          "Definition": "Positive slope rises rightward, negative slope falls rightward.",
+          "Rule": "Use a consistent left-to-right run.",
+          "Example": "From (0,5) to (2,1), m=(1−5)/2=−2."
+        },
+        {
+          "Title": "Undefined vertical slope",
+          "Definition": "A vertical line has run zero.",
+          "Rule": "Division by zero is undefined.",
+          "Example": "x=3 has no finite slope."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Positive slope",
+          "Question": "Find the slope through (1,2) and (4,8).",
+          "Method": "Use change in y over change in x.",
+          "Steps": [
+            "Rise is 8−2=6.",
+            "Run is 4−1=3.",
+            "Slope m=6/3=2."
+          ],
+          "Answer": "2.",
+          "Check": "A move right one on the line increases y by 2."
+        },
+        {
+          "Title": "Negative slope",
+          "Question": "Find the slope through (0,5) and (2,1).",
+          "Method": "Take consistent coordinate differences.",
+          "Steps": [
+            "Rise from first to second is 1−5=−4.",
+            "Run is 2−0=2.",
+            "m=−4/2=−2."
+          ],
+          "Answer": "−2.",
+          "Check": "The line falls by 2 per unit right."
+        },
+        {
+          "Title": "Vertical slope",
+          "Question": "Find the slope of the line x=3.",
+          "Method": "Inspect the horizontal change between any two points.",
+          "Steps": [
+            "Two points (3,1) and (3,7) have run 3−3=0.",
+            "Their vertical change is 6.",
+            "Slope would be 6/0, which is undefined."
+          ],
+          "Answer": "Undefined, not zero.",
+          "Check": "The line is vertical rather than horizontal."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reversing only the rise but not the run.",
+          "WhyWrong": "Both differences must use the same point order.",
+          "Correction": "Compute y₂−y₁ and x₂−x₁."
+        },
+        {
+          "Mistake": "Calling a vertical line slope zero.",
+          "WhyWrong": "A zero slope is horizontal; a vertical run is zero and division is impossible.",
+          "Correction": "Distinguish y=c from x=c."
+        }
+      ],
+      "SummaryPoints": [
+        "Slope equals rise/run on a nonvertical line.",
+        "Signs encode direction.",
+        "Vertical lines have undefined slope."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Line with slope two",
+          "Description": "Original lesson-example input-output table. Each row uses y = 2x + 0. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "0",
+                "2",
+                "8",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L11",
+      "CultureCode": "en",
+      "Title": "Writing Equations for Lines",
+      "ExplanationParagraphs": [
+        "Goal: connect the slope of a line with the coordinates of its points and express a relationship in a linear equation.",
+        "A line with slope m and vertical intercept b satisfies y=mx+b. If a point and slope are known, substitute to solve for b. Verify a second point to ensure the chosen equation truly represents the line.",
+        "Source activity 11.1 uses a point on a line through A(0,2), D(4,7), with vertical rise 5 over horizontal run 4. For E above x=2, E=(2,4.5) and segment BE from B(2,2) has length 2.5; justify with a similar slope triangle, not visual guessing.",
+        "Source activity 11.2 checks the line through origin, (4,3) and (8,6), whose equation is y=3x/4: (20,15) and (100,75) lie on the line; (90,68) does not because 3·90/4=67.5. Treat wrong values as rejected examples.",
+        "Source activity 11.3 asks learners to derive a linear equation from similar slope triangles and to explain how every point on the entire line satisfies it; automatic evaluation of a single coordinate is only partial assessment.",
+        "Draw a line through points (1,3) and (3,7), calculate slope and write the equation. The teacher reviews the plotted graph and intercept interpretation; numerical substitutions can be machine-checked.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/11/preparation.html . No publisher graphics or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Slope-intercept equation",
+          "Definition": "y=mx+b describes a nonvertical line.",
+          "Rule": "m is rise/run and b is y at x=0.",
+          "Example": "y=2x+1 has slope 2 and intercept 1."
+        },
+        {
+          "Title": "Find intercept from point",
+          "Definition": "Substitute a known point into y=mx+b.",
+          "Rule": "b=y−mx.",
+          "Example": "At (1,3) and m=2, b=3−2=1."
+        },
+        {
+          "Title": "Validate a line",
+          "Definition": "Every coordinate pair on the line satisfies its equation.",
+          "Rule": "Substitute at least two points for confidence.",
+          "Example": "For y=2x+1, x=3 gives y=7."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equation from two points",
+          "Question": "Write the line through (1,3) and (3,7).",
+          "Method": "Find m and b.",
+          "Steps": [
+            "Slope m=(7−3)/(3−1)=4/2=2.",
+            "Substitute (1,3): 3=2(1)+b, so b=1.",
+            "The equation is y=2x+1."
+          ],
+          "Answer": "y=2x+1.",
+          "Check": "At x=3 it gives y=7."
+        },
+        {
+          "Title": "Known slope and point",
+          "Question": "Line has slope −3 and passes through (2,1). Find the equation.",
+          "Method": "Solve for intercept.",
+          "Steps": [
+            "Start y=−3x+b.",
+            "At (2,1): 1=−3×2+b=−6+b.",
+            "Therefore b=7 and y=−3x+7."
+          ],
+          "Answer": "y=−3x+7.",
+          "Check": "At x=2, −6+7=1."
+        },
+        {
+          "Title": "Check a point",
+          "Question": "Does (4,9) lie on y=2x+1?",
+          "Method": "Substitute x=4.",
+          "Steps": [
+            "Compute the right side 2×4+1=9.",
+            "The given y-coordinate is 9.",
+            "Both match, so the point satisfies the line equation."
+          ],
+          "Answer": "Yes.",
+          "Check": "9=2(4)+1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using y-intercept as the x-coordinate of a given point.",
+          "WhyWrong": "b is specifically the value when x=0.",
+          "Correction": "Solve b from a point and slope."
+        },
+        {
+          "Mistake": "Using two points with reversed slope differences.",
+          "WhyWrong": "Mixed-order differences give a wrong sign.",
+          "Correction": "Preserve consistent point order."
+        }
+      ],
+      "SummaryPoints": [
+        "For nonvertical lines use y=mx+b.",
+        "Find m from two points or a graph.",
+        "Solve b by substituting one known point."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Line through two given points",
+          "Description": "Original lesson-example input-output table. Each row uses y = 2x + 1. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "3",
+                "7",
+                "9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L12",
+      "CultureCode": "en",
+      "Title": "Using Equations for Lines",
+      "ExplanationParagraphs": [
+        "Goal: write and interpret linear equations from a given slope, point or context, and use them to predict values on a line.",
+        "Convert a constant change in y for each unit of x to a slope. Anchor the equation with an actual point, then calculate the intercept or use point-slope reasoning. State variable meanings in contexts.",
+        "Source activity 12.1: a positive dilation of scale 2 taking A to B has center C on their common line with C=2A−B. In an independent coordinate example A(2,1), B(5,4), the unique center is C(−1,−2). Do not treat that original coordinate example as the source image.",
+        "Source activity 12.2: the source line through (5,3) and (7,7) has slope 2 and satisfies y−3=2(x−5), or y=2x−7. Both (9,11) and (100,193) are on the line; (9,10) is an intentionally wrong point. Derive through a slope triangle, not only by reading a y-intercept omitted from the source diagram.",
+        "Source activity 12.3: for original triangle A(0,1), B(2,1), C(2,2), dilation centered at A with factor s maps C to (2s,1+s). Factor 2.5 sends C to (5,3.5), and factor 4.5 sends C to (9,5.5). Students must construct and label their image triangles; a static SVG is not an interactive dilation tool.",
+        "Model a water tank starting with 30 liters and draining 2 liters per minute. Form V=30−2t and decide the valid physical time domain. A teacher checks contextual assumptions and explanations; numeric predictions are only part of the task.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/12/preparation.html . No publisher graphics or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Slope as rate",
+          "Definition": "A constant change in output per input unit.",
+          "Rule": "Slope has units of output/input.",
+          "Example": "Tank volume changes by −2 L/min."
+        },
+        {
+          "Title": "Initial value",
+          "Definition": "The output at input zero.",
+          "Rule": "In y=mx+b, b is y(0).",
+          "Example": "Tank initially contains 30 liters."
+        },
+        {
+          "Title": "Context domain",
+          "Definition": "Inputs allowed by the real situation.",
+          "Rule": "Physical volume cannot be negative.",
+          "Example": "30−2t≥0 for t≥0 gives 0≤t≤15 minutes."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write tank equation",
+          "Question": "Tank starts at 30 L and loses 2 L each minute. Express V after t minutes.",
+          "Method": "Use initial value and rate.",
+          "Steps": [
+            "At t=0, volume is 30.",
+            "Each minute subtracts 2 liters, so slope is −2.",
+            "Combine to obtain V=30−2t."
+          ],
+          "Answer": "V=30−2t, for 0≤t≤15.",
+          "Check": "At t=15 the volume reaches 0."
+        },
+        {
+          "Title": "Predict volume",
+          "Question": "Using V=30−2t, find V after 7 minutes.",
+          "Method": "Substitute t=7.",
+          "Steps": [
+            "Multiply 2×7=14 liters lost.",
+            "Subtract 30−14=16.",
+            "Volume is still physically nonnegative."
+          ],
+          "Answer": "16 liters.",
+          "Check": "V=30−2(7)=16."
+        },
+        {
+          "Title": "Solve for empty time",
+          "Question": "When does the tank reach 0?",
+          "Method": "Set V=0 and solve.",
+          "Steps": [
+            "0=30−2t.",
+            "Add 2t to each side to get 2t=30.",
+            "Divide by 2 to obtain t=15."
+          ],
+          "Answer": "15 minutes.",
+          "Check": "At t=15, V=0; negative times or volumes are excluded."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using positive slope for a decreasing amount.",
+          "WhyWrong": "A loss per unit time is negative change.",
+          "Correction": "Check whether the graph rises or falls."
+        },
+        {
+          "Mistake": "Using a mathematically valid but physically impossible negative volume.",
+          "WhyWrong": "Model domain depends on context.",
+          "Correction": "Stop the time interval when volume reaches 0."
+        }
+      ],
+      "SummaryPoints": [
+        "Linear equations model constant rates.",
+        "State rate and initial value with units.",
+        "Interpret solutions within realistic domains."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Remaining water at constant loss rate",
+          "Description": "Original lesson-example input-output table. Each row uses y = -2x + 30. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "7",
+                "10",
+                "15"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "30",
+                "16",
+                "10",
+                "0"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U02:L13",
+      "CultureCode": "en",
+      "Title": "The Shadow Knows",
+      "ExplanationParagraphs": [
+        "Goal: estimate the height of an object using similar right triangles created by sunlight and measured shadows, with consistent length units.",
+        "Under the assumption that the sunlight rays are parallel and the ground is locally level, vertical objects and their horizontal shadows form similar right triangles. Height-to-shadow ratios agree at the same sun angle.",
+        "Source activity 13.1 contrasts nearby-lamp shadows, whose ray angles can differ, with parallel rays from distant sunlight. Do not infer equal ratios from a point light and objects at different distances.",
+        "Source activity 13.2 provides rounded field measurements (height in inches, shadow length in inches): (43,29), (72,48), (51,34), and lamp shadow 114. The first ratio 43/29≈1.48276 differs from 72/48=51/34=1.5. Predict lamp height approximately 114·1.5=171 inches, not as an exactly known measured height.",
+        "Source activities 13.3 and 13.4 ask students to justify the proportional model with parallel sun rays, right triangles and same-angle correspondence, then estimate a tall object. Real data rounded to whole inches must be treated as approximately proportional; teacher reviews the physical model and reasoning.",
+        "Investigate an original Edulytiks scenario: a 1.5-meter vertical pole casts a 2-meter shadow and a tree casts a 10-meter shadow at the same time. Draw and label both triangles, solve the tree height, then discuss how uneven ground or moving sunlight could invalidate the model.",
+        "The diagram, measurement procedure, and limitations require teacher judgment. The numerical proportion can be independently checked, but not substituted for actual field measurements or a validated physical model.",
+        "Independent Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 Unit 2, 2017–2019 CC BY 4.0. Public source: https://im.kendallhunt.com/MS/teachers/3/2/13/preparation.html . No publisher graphics or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Similar shadow triangles",
+          "Definition": "Vertical heights and horizontal shadows form right triangles with the same sunlight angle.",
+          "Rule": "Under parallel rays on level ground, height/shadow is constant.",
+          "Example": "1.5/2=tree height/10."
+        },
+        {
+          "Title": "Proportional height",
+          "Definition": "Unknown height found through equivalent ratios.",
+          "Rule": "h=reference height×target shadow/reference shadow.",
+          "Example": "h=1.5×10/2=7.5 meters."
+        },
+        {
+          "Title": "Model assumptions",
+          "Definition": "Conditions under which the shadow ratio is valid.",
+          "Rule": "Measure both shadows at one time on comparable level ground.",
+          "Example": "An incline changes the geometry and may invalidate the simple proportion."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find a tree height",
+          "Question": "Pole 1.5 m, pole shadow 2 m, tree shadow 10 m. Find tree height.",
+          "Method": "Set equal height-to-shadow ratios.",
+          "Steps": [
+            "Pole ratio is 1.5/2=0.75.",
+            "Set h/10=0.75 for the tree.",
+            "Multiply both sides by 10 to get h=7.5 m."
+          ],
+          "Answer": "7.5 meters.",
+          "Check": "7.5/10=1.5/2."
+        },
+        {
+          "Title": "Find an unknown shadow",
+          "Question": "A 4-meter post has shadow 6 meters. A 10-meter post at the same angle has what shadow?",
+          "Method": "Use proportional heights and shadow lengths.",
+          "Steps": [
+            "The height ratio is 10/4=2.5.",
+            "Scale the 6-meter shadow by 2.5.",
+            "Shadow is 15 meters."
+          ],
+          "Answer": "15 meters.",
+          "Check": "10/15=4/6=2/3."
+        },
+        {
+          "Title": "Assess a flawed ratio",
+          "Question": "Pole 2 m with 3 m shadow, tree with 6 m shadow. A student predicts 9 m height. Check.",
+          "Method": "Use height/shadow, not the reversed ratio.",
+          "Steps": [
+            "Reference height/shadow is 2/3.",
+            "Tree height is 6×2/3=4 meters.",
+            "The predicted 9 meters uses the wrong orientation of ratios."
+          ],
+          "Answer": "4 meters, not 9.",
+          "Check": "4/6=2/3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming shadows always represent similar triangles.",
+          "WhyWrong": "The ground slope, object tilt and sun angle can violate assumptions.",
+          "Correction": "Check geometry and same-time measurements."
+        },
+        {
+          "Mistake": "Mixing centimeters and meters.",
+          "WhyWrong": "Ratios require consistent units.",
+          "Correction": "Convert lengths before solving."
+        }
+      ],
+      "SummaryPoints": [
+        "Same-time sunlight can produce similar right triangles.",
+        "Equal height/shadow ratios determine missing values.",
+        "Explain measurement assumptions and uncertainty."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,1484 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L01",
+      "CultureCode": "en",
+      "Title": "Understanding Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Goal: interpret graphs of proportional relationships and explain the significance of points on a graph, especially the origin. Determine what a relationship represents using labeled axes and a contextual unit rate.",
+        "A proportion y=kx appears as a straight line through the origin when plotted against consistent numerical axes; the point (1,k) describes the unit rate. Not every line through or near a drawn origin establishes a legitimate proportional model unless quantities and units support it.",
+        "Source activity 1.1 presents distance horizontally and elapsed time vertically: line g passes through (6 cm,3 s), line f through (8 cm,2 s), so slopes as labeled are 1/2 s/cm and 1/4 s/cm. The inverse speeds are 2 cm/s and 4 cm/s, respectively; do not call the vertical-to-horizontal slope itself a speed in cm/s.",
+        "Source activities 1.2 and 1.3 follow position tick marks for a moving ladybug and ant and ask learners to compare rate across representations, including what doubling speed changes. A physical movement diagram and student explanation require observer or teacher assessment beyond a single quotient.",
+        "Investigate a chart of notebooks at $3 each: points (0,0), (1,3), (2,6). Draw axes labeled notebooks and cost, explain the meaning of the origin, and distinguish a line with a fixed admission fee. A teacher checks explanations and accurate graph labeling.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/1/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Proportional graph",
+          "Definition": "A straight relationship y=kx with constant quotient y/x for x≠0.",
+          "Rule": "It passes through (0,0) and (1,k).",
+          "Example": "Cost $3 per notebook is y=3x."
+        },
+        {
+          "Title": "Unit rate",
+          "Definition": "The output for one unit of input.",
+          "Rule": "Read the y-coordinate when x=1.",
+          "Example": "At (1,3) the rate is $3 per notebook."
+        },
+        {
+          "Title": "Contextual origin",
+          "Definition": "The point (0,0) on proportional axes.",
+          "Rule": "Interpret both quantities as zero, not merely the picture.",
+          "Example": "Buying zero notebooks costs zero before extra fees."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read the unit rate",
+          "Question": "Points (0,0),(1,3),(2,6) lie on a graph. What is the constant rate?",
+          "Method": "Use y/x for a positive x.",
+          "Steps": [
+            "At (1,3), the output/input ratio is 3/1=3.",
+            "At (2,6), it is 6/2=3.",
+            "The consistent rate is 3 per unit."
+          ],
+          "Answer": "3 output units per input unit.",
+          "Check": "Both ratios agree."
+        },
+        {
+          "Title": "Check a proportional pair",
+          "Question": "Is y=4x proportional? Does (3,12) lie on its graph?",
+          "Method": "Test both the intercept and substitution.",
+          "Steps": [
+            "y=4x has intercept 0, so it passes through the origin.",
+            "At x=3, y=4×3=12.",
+            "The point (3,12) satisfies the relation."
+          ],
+          "Answer": "Yes; (3,12) lies on a proportional graph.",
+          "Check": "The unit rate is 4."
+        },
+        {
+          "Title": "Detect a fixed fee",
+          "Question": "Does C=3n+5 represent a proportional cost relationship?",
+          "Method": "Inspect the value at zero input.",
+          "Steps": [
+            "At n=0, C=5.",
+            "A proportional relationship must have zero output at zero input.",
+            "The $5 fixed fee means C is linear but not proportional."
+          ],
+          "Answer": "No.",
+          "Check": "Its graph passes through (0,5), not the origin."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Relying only on a straight-looking sketch.",
+          "WhyWrong": "A nonzero intercept may be hidden by scale.",
+          "Correction": "Verify (0,0) and the constant ratio."
+        },
+        {
+          "Mistake": "Calling (0,0) meaningless.",
+          "WhyWrong": "It may encode a real zero-quantity condition.",
+          "Correction": "State its contextual units and assumptions."
+        }
+      ],
+      "SummaryPoints": [
+        "Proportional relationships have constant unit rate and zero intercept.",
+        "Graph labels and scales determine interpretation.",
+        "Nonzero fixed fees break proportionality."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Proportional input-output relationship",
+          "Description": "Original lesson-example input-output table. Each row uses y = 3x + 0. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "0",
+                "3",
+                "6",
+                "9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L02",
+      "CultureCode": "en",
+      "Title": "Graphs of Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Goal: interpret how axis scales affect the appearance of a proportional graph and compare equivalent representations of the same constant rate.",
+        "The same mathematical line can appear visually steeper or flatter if the horizontal and vertical pixel scales change. Numerical rate comes from labeled coordinate changes, not the drawing angle on the page.",
+        "Source activity 2.1 supplies a graph through origin and (8,14): y=(7/4)x, with graph scale changed in a second coordinate frame. Points (8,14) and (16,28) share the constant quotient 7/4, so relabeling axes does not change the underlying relationship.",
+        "Source activity 2.2 supplies a teacher-mediated twelve-card sort of proportional graphs; students identify which lines share proportionality constants and write equations. Source activity 2.3 compares graph scales. Neither a static sample chart nor the general sentence y=kx implements the card sort.",
+        "Plot the relationship y=2x with one graph using y-ticks of 1 and another using y-ticks of 5. Compare the plotted points and visual slope. A teacher evaluates whether the learner distinguishes display scale from mathematical rate.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/2/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Axis scale",
+          "Definition": "The numerical quantity represented by equal distances on an axis.",
+          "Rule": "Read tick labels before comparing slope.",
+          "Example": "One y-grid cell may stand for 1 or 5 units."
+        },
+        {
+          "Title": "Rate invariant",
+          "Definition": "The ratio Δy/Δx determined by coordinates.",
+          "Rule": "Changing plotting scale does not change the equation.",
+          "Example": "y=2x always has rate 2."
+        },
+        {
+          "Title": "Origin",
+          "Definition": "The point where both values are zero.",
+          "Rule": "A proportional graph still passes through (0,0) under rescaling.",
+          "Example": "The origin represents no output at zero input."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare two graphs",
+          "Question": "Two graphs of y=2x use different vertical grid spacing. Has the unit rate changed?",
+          "Method": "Use coordinates rather than drawn angle.",
+          "Steps": [
+            "On either graph, x=1 gives y=2.",
+            "On either graph, x=3 gives y=6.",
+            "The rate (6−2)/(3−1)=2 regardless of pixels."
+          ],
+          "Answer": "No; the mathematical unit rate remains 2.",
+          "Check": "Numerical point ratios agree."
+        },
+        {
+          "Title": "Read sparse ticks",
+          "Question": "The y-axis labels increase by 5 per cell. A point sits 3 cells above zero. What y-value is it?",
+          "Method": "Convert cells to numerical units.",
+          "Steps": [
+            "Each y-cell represents 5 units.",
+            "Three cells represent 3×5.",
+            "The numerical y-value is 15."
+          ],
+          "Answer": "15.",
+          "Check": "The plotted coordinate must be read from the scale."
+        },
+        {
+          "Title": "Find proportional rate",
+          "Question": "A graph contains (0,0) and (4,12). Find k.",
+          "Method": "Divide y by x at a nonzero point.",
+          "Steps": [
+            "At (4,12), output is 12.",
+            "Input is 4.",
+            "Compute k=12÷4=3."
+          ],
+          "Answer": "k=3.",
+          "Check": "The equation is y=3x."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing pixel steepness across differently scaled graphs.",
+          "WhyWrong": "The apparent angle depends on axis scale.",
+          "Correction": "Compare numerical coordinates and units."
+        },
+        {
+          "Mistake": "Counting tick marks as unit steps when labels skip values.",
+          "WhyWrong": "A cell may represent more than 1.",
+          "Correction": "Multiply by the axis increment."
+        }
+      ],
+      "SummaryPoints": [
+        "Labeled scales control interpretation.",
+        "Rate is a numerical quotient, not a picture angle.",
+        "The same proportional relationship may look different."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L03",
+      "CultureCode": "en",
+      "Title": "Representing Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Goal: create and connect tables, equations and graphs of proportional relationships, deciding when a given point lies on the line.",
+        "A constant rate k gives table outputs y=kx, a straight graph through (0,0), and an equation with no added constant. Input units and output units must be recorded consistently.",
+        "Source activity 3.1 multiplication warm-up includes 15·2=30, 15·0.5=7.5, 15·0.25=3.75 and 15·2.25=33.75.",
+        "Source activity 3.2 says Jada takes 8 steps where Noah takes 10, and Jada 12 where Noah takes 15: if x is Jada steps and y Noah steps then y=(5/4)x; corresponding table points (0,0),(8,10),(12,15) lie on one ray through the origin. Source activity 3.3 uses private information cards and an explanation, which require partner interaction and human review.",
+        "Use a table of distance traveled at a steady 4 kilometers per hour. Extend the table and graph the points. The teacher reviews readable axes, plotted labels and discussion of continuous versus discrete inputs.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/3/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Proportional equation",
+          "Definition": "The algebraic representation y=kx.",
+          "Rule": "Output is always k times input.",
+          "Example": "d=4t for speed 4 km/h."
+        },
+        {
+          "Title": "Table of values",
+          "Definition": "Paired inputs and outputs linked by one rule.",
+          "Rule": "Multiply each input by k.",
+          "Example": "t=0,1,2,3 gives d=0,4,8,12."
+        },
+        {
+          "Title": "Graph of values",
+          "Definition": "Points (x,kx) on a line through the origin.",
+          "Rule": "Use an appropriate domain and labeled axes.",
+          "Example": "(3,12) belongs to d=4t."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete the distance table",
+          "Question": "At 4 km/h, find distances at 0,1,2,3 hours.",
+          "Method": "Use d=4t.",
+          "Steps": [
+            "At zero hours, 4×0=0.",
+            "At 1 and 2 hours, distances are 4 and 8.",
+            "At 3 hours, distance is 12."
+          ],
+          "Answer": "0, 4, 8, 12 kilometers.",
+          "Check": "Each extra hour adds 4 km."
+        },
+        {
+          "Title": "Test a candidate point",
+          "Question": "Does (5,20) lie on d=4t?",
+          "Method": "Substitute input t=5.",
+          "Steps": [
+            "The predicted output is 4×5=20.",
+            "The candidate output is 20.",
+            "They agree, so the point is on the graph."
+          ],
+          "Answer": "Yes.",
+          "Check": "20/5=4."
+        },
+        {
+          "Title": "Reject an inconsistent table",
+          "Question": "A table lists (1,4),(2,8),(3,11). Is it perfectly proportional?",
+          "Method": "Check output/input ratios.",
+          "Steps": [
+            "4/1=4.",
+            "8/2=4.",
+            "11/3≠4, so one row breaks the rule."
+          ],
+          "Answer": "No.",
+          "Check": "At x=3, y should be 12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding an unexplained initial value to y=kx.",
+          "WhyWrong": "That changes the origin condition.",
+          "Correction": "Use y=kx for genuinely proportional relations."
+        },
+        {
+          "Mistake": "Plotting pairs with axes reversed.",
+          "WhyWrong": "The graph then represents a different rate.",
+          "Correction": "Label axes and units first."
+        }
+      ],
+      "SummaryPoints": [
+        "Tables, graphs and equations can represent one constant unit rate.",
+        "Proportional graphs pass through the origin.",
+        "Verify every table pair."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Distance as a function of time",
+          "Description": "Original lesson-example input-output table. Each row uses y = 4x + 0. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "0",
+                "4",
+                "8",
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L04",
+      "CultureCode": "en",
+      "Title": "Comparing Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Goal: compare proportional relationships given in different forms by finding their unit rates with consistent input-output units.",
+        "Do not decide that a line is faster solely by visual steepness if the display scales differ. Calculate k from an equation, table or labeled point, then compare like units.",
+        "Source activity 4.1 starts from proportional rule y=4.2x and asks the learner to invent a coherent context, label the table and graph and interpret x and y. A context must retain the units and constant rate rather than treating 4.2 as an arbitrary intercept.",
+        "Source activity 4.2 compares wages of $8.40 per hour against $7 per hour. After 12 hours the earnings are $100.80 and $84, a $16.80 difference; the $150 target requires 150/8.4≈17.86 hours and 150/7≈21.43 hours. The first-party line comparison is a static explanatory diagram, not a verified student graph.",
+        "Compare courier A traveling 12 km in 3 hours with courier B described by d=5t. State which covers more distance per hour, and explain why the values have the same units.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/4/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Comparable unit rates",
+          "Definition": "Rates expressed in the same output/input units.",
+          "Rule": "Convert units before ranking.",
+          "Example": "A: 12/3=4 km/h; B: 5 km/h."
+        },
+        {
+          "Title": "Rate from a table",
+          "Definition": "Divide nonzero output by input.",
+          "Rule": "k=y/x when proportional.",
+          "Example": "20 liters in 4 minutes is 5 L/min."
+        },
+        {
+          "Title": "Rate from an equation",
+          "Definition": "The coefficient k in y=kx.",
+          "Rule": "Identify which variable is output.",
+          "Example": "d=5t has rate 5 km per hour."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two couriers",
+          "Question": "A travels 12 km in 3 h; B follows d=5t km. Who is faster?",
+          "Method": "Compare distance/time rates.",
+          "Steps": [
+            "Courier A rate is 12/3=4 km/h.",
+            "Courier B equation gives 5 km/h.",
+            "5 exceeds 4, so B has the higher rate."
+          ],
+          "Answer": "B is faster by 1 km/h.",
+          "Check": "Both rates use kilometers per hour."
+        },
+        {
+          "Title": "From a table",
+          "Question": "A proportional machine produces 28 objects in 7 minutes. Find its rate.",
+          "Method": "Divide output by time.",
+          "Steps": [
+            "Output is 28 objects.",
+            "Input is 7 minutes.",
+            "28/7=4 objects per minute."
+          ],
+          "Answer": "4 objects/minute.",
+          "Check": "7×4=28."
+        },
+        {
+          "Title": "Unit conversion",
+          "Question": "Rate A is 120 meters/minute; rate B is 3 meters/second. Which is larger?",
+          "Method": "Convert to the same time unit.",
+          "Steps": [
+            "B is 3×60=180 meters/minute.",
+            "A is 120 meters/minute.",
+            "B exceeds A by 60 meters/minute."
+          ],
+          "Answer": "B is larger.",
+          "Check": "Comparing 120 to 3 without conversion would be invalid."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing unmatched time units.",
+          "WhyWrong": "A minute and second are different quantities.",
+          "Correction": "Convert before comparing."
+        },
+        {
+          "Mistake": "Comparing graph angles without axis-scale information.",
+          "WhyWrong": "Display geometry may be misleading.",
+          "Correction": "Use numerical unit rates."
+        }
+      ],
+      "SummaryPoints": [
+        "The unit rate is the basis of comparison.",
+        "Rates must use compatible units.",
+        "Equations, tables and graphs can be reduced to a common k."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L05",
+      "CultureCode": "en",
+      "Title": "Introduction to Linear Relationships",
+      "ExplanationParagraphs": [
+        "Goal: recognize a linear relationship as constant additive change in output per equal input step, and distinguish it from a proportional relationship.",
+        "A nonproportional linear model can start above zero. A relationship such as y=3x+4 increases by 3 for each additional x while the output at x=0 is 4.",
+        "Source activity 5.1 divides mixed number 2 5/8 by 1/2, obtaining 21/4=5.25.",
+        "Source activity 5.2 uses stacks of 6 cups at 15 cm and 12 cups at 23 cm. The slope is (23−15)/(12−6)=4/3 cm per additional cup; the original affine relationship is h=7+(4/3)n, not a proportional relation through the origin. Solving h=50 gives 32.25 cups, which is not a whole cup count; 33 whole cups reach or exceed 50 cm in this idealized model.",
+        "Source activity 5.3 asks students to construct a graph and explain how the constant additive cup height 7 cm acts as the intercept and the added height per nested cup is the slope. An actual physical stack and graph still require human or interactive verification.",
+        "Investigate a bike-rental fee: $4 booking charge plus $3 per hour. Make a table, graph and explain the intercept. The teacher reviews the interpretation; numbers alone do not verify the story.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/5/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear relationship",
+          "Definition": "Output changes by a constant amount for equal input steps.",
+          "Rule": "y=mx+b for a nonvertical linear graph.",
+          "Example": "C=3h+4."
+        },
+        {
+          "Title": "Initial value",
+          "Definition": "Output when input is zero.",
+          "Rule": "b=y(0).",
+          "Example": "Bike-rental fee at h=0 is $4."
+        },
+        {
+          "Title": "Rate of change",
+          "Definition": "Amount added to output per 1 input.",
+          "Rule": "m=Δy/Δx.",
+          "Example": "Cost rises $3 per hour."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate rental model",
+          "Question": "A bike costs $4 booking plus $3 per hour. Find cost at 2 hours.",
+          "Method": "Use C=3h+4.",
+          "Steps": [
+            "Two hours cost 3×2=6 in time charges.",
+            "Add the booking fee 4.",
+            "Total is 10 dollars."
+          ],
+          "Answer": "$10.",
+          "Check": "C(2)=10."
+        },
+        {
+          "Title": "Identify initial charge",
+          "Question": "For y=3x+4, what is y when x=0?",
+          "Method": "Substitute x=0.",
+          "Steps": [
+            "Compute 3×0=0.",
+            "Add 4.",
+            "The starting output is 4."
+          ],
+          "Answer": "4.",
+          "Check": "Graph crosses vertical axis at (0,4)."
+        },
+        {
+          "Title": "Test proportionality",
+          "Question": "Is y=3x+4 proportional?",
+          "Method": "Test zero input.",
+          "Steps": [
+            "A proportional graph must pass through (0,0).",
+            "Here y(0)=4.",
+            "The nonzero intercept disproves proportionality."
+          ],
+          "Answer": "No.",
+          "Check": "Constant change does not imply proportionality."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating any straight line as proportional.",
+          "WhyWrong": "A straight line can have nonzero intercept.",
+          "Correction": "Check the origin and b."
+        },
+        {
+          "Mistake": "Confusing fixed fee with per-hour rate.",
+          "WhyWrong": "They have different units.",
+          "Correction": "Label m and b with correct units."
+        }
+      ],
+      "SummaryPoints": [
+        "Linear relationships have constant additive change.",
+        "Proportionality adds the condition b=0.",
+        "State slope and initial value in context."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Linear but not proportional",
+          "Description": "Original lesson-example input-output table. Each row uses y = 3x + 4. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "4",
+                "7",
+                "10",
+                "13"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L06",
+      "CultureCode": "en",
+      "Title": "More Linear Relationships",
+      "ExplanationParagraphs": [
+        "Goal: analyze multiple linear relationships between quantities, including decreasing values, using tables and graphs without assuming every intercept is positive.",
+        "When input increases by one, output can rise, fall or remain fixed. Slope may be negative or zero; a linear rule uses one constant change for every equal input step.",
+        "Source activity 6.1 displays a colored growing arrangement with yellow squares n², blue tiles 3n, and red tiles n in diagram n. At n=4 there are 16 yellow, 12 blue and 4 red; at n=10 there are 100, 30 and 10. The total n²+4n is not linear even though blue and red counts are linear.",
+        "Source activities 6.2 and 6.3 require matching six situation cards to six graphs and interpreting slope/intercept in a summer-reading context. The learner must distinguish proportional y=mx from nonproportional y=mx+b and interpret the units of both parameters; static lesson text does not fulfill the source card interaction.",
+        "Analyze a tank with 18 liters losing 3 liters each minute. Build a table until empty, discuss the limited physical domain, and distinguish that from purely algebraic continuation. Teacher review checks model assumptions.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/6/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Negative linear rate",
+          "Definition": "Output decreases by a fixed amount for each input step.",
+          "Rule": "m<0.",
+          "Example": "V=18−3t."
+        },
+        {
+          "Title": "Constant difference",
+          "Definition": "Equal input changes give equal output differences.",
+          "Rule": "Compare successive table rows.",
+          "Example": "18,15,12,9 decreases by 3."
+        },
+        {
+          "Title": "Practical domain",
+          "Definition": "Only inputs sensible for the real situation.",
+          "Rule": "An emptied tank cannot have negative volume.",
+          "Example": "V=18−3t supports 0≤t≤6 min physically."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Tank at four minutes",
+          "Question": "18 liters lose 3 per minute. How much after 4 minutes?",
+          "Method": "Use V=18−3t.",
+          "Steps": [
+            "Four minutes remove 3×4=12 liters.",
+            "Subtract from 18.",
+            "Volume is 6 liters."
+          ],
+          "Answer": "6 liters.",
+          "Check": "18−12=6."
+        },
+        {
+          "Title": "Time to empty",
+          "Question": "When does V=18−3t equal zero?",
+          "Method": "Solve for t.",
+          "Steps": [
+            "0=18−3t.",
+            "Then 3t=18.",
+            "Divide to obtain t=6."
+          ],
+          "Answer": "6 minutes.",
+          "Check": "Volume at t=6 is 0."
+        },
+        {
+          "Title": "Test linear table",
+          "Question": "At times 0,1,2,3, outputs are 10,7,4,1. Is this linear?",
+          "Method": "Inspect equal successive differences.",
+          "Steps": [
+            "7−10=−3.",
+            "4−7=−3 and 1−4=−3.",
+            "Constant difference for 1-unit input increments gives slope −3."
+          ],
+          "Answer": "Yes, linear with slope −3.",
+          "Check": "A matching rule is y=10−3x."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Extending a physical model beyond valid range.",
+          "WhyWrong": "Negative contents are not possible after emptying.",
+          "Correction": "State the time domain."
+        },
+        {
+          "Mistake": "Reading a downward line as a positive rate.",
+          "WhyWrong": "Increasing x causes decreasing y.",
+          "Correction": "Use signed differences."
+        }
+      ],
+      "SummaryPoints": [
+        "Constant change can be positive, negative or zero.",
+        "Tables reveal slope through equal differences.",
+        "A model needs its real-world domain."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L07",
+      "CultureCode": "en",
+      "Title": "Representations of Linear Relationships",
+      "ExplanationParagraphs": [
+        "Goal: write equations from real situations and translate between a verbal description, a table of values and an equation.",
+        "Identify a starting amount and a repeated increment before choosing variables. A rule is not fully communicated if units or the meaning of the input are omitted.",
+        "Source activity 7.1 compares which of three glasses holds more, a visual estimation that cannot be decided solely from height because cross-section matters. Source activity 7.2 adjusts the initial water level, adds identical objects and plots volume/depth data with varying intercept.",
+        "For an independently chosen starting amount V0 and displacement per object d, the linear model is V(n)=V0+dn. In particular V(3)=V0+3d and V(7)=V0+7d. Since the source interactive initial water level is adjustable, there is no one globally correct fixed numerical intercept.",
+        "Source activity 7.3 asks students to calculate the slope from multiple triangles on their experiment graph. Compare the ratios for two runs and explain why slope does not depend on the chosen two points on the line; the experiment and plotted graph require observable learner work.",
+        "Model a delivery service charging $6 flat plus $2 per kilometer, then explain how its graph differs from a pure $2-per-kilometer proportional cost. A teacher checks the verbal-to-algebraic translation.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/7/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fixed charge",
+          "Definition": "A cost independent of quantity x.",
+          "Rule": "It becomes intercept b.",
+          "Example": "$6 base charge."
+        },
+        {
+          "Title": "Unit charge",
+          "Definition": "Cost per additional unit of quantity.",
+          "Rule": "It becomes slope m.",
+          "Example": "$2 per kilometer."
+        },
+        {
+          "Title": "Model equation",
+          "Definition": "A complete equation with defined variables.",
+          "Rule": "C=mx+b.",
+          "Example": "C=2d+6, C dollars, d kilometers."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write delivery cost",
+          "Question": "Service charges $6 fixed and $2 per km. Write C(d).",
+          "Method": "Combine fixed and variable charges.",
+          "Steps": [
+            "The unit charge contributes 2d.",
+            "The fixed fee contributes +6.",
+            "Total is C(d)=2d+6."
+          ],
+          "Answer": "C=2d+6.",
+          "Check": "At d=0 the cost is $6."
+        },
+        {
+          "Title": "Predict at 5 km",
+          "Question": "Use C=2d+6 for d=5.",
+          "Method": "Substitute distance.",
+          "Steps": [
+            "Variable charge is 2×5=10.",
+            "Add fixed 6.",
+            "Cost is $16."
+          ],
+          "Answer": "$16.",
+          "Check": "C(5)=16."
+        },
+        {
+          "Title": "Recover distance",
+          "Question": "A trip costs $22. How many km under C=2d+6?",
+          "Method": "Solve for d.",
+          "Steps": [
+            "22=2d+6.",
+            "Subtract six: 16=2d.",
+            "Divide by two: d=8."
+          ],
+          "Answer": "8 kilometers.",
+          "Check": "2×8+6=22."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using distance instead of cost as the dependent variable.",
+          "WhyWrong": "Variables and their units are reversed.",
+          "Correction": "State what each symbol measures."
+        },
+        {
+          "Mistake": "Leaving the fixed charge out.",
+          "WhyWrong": "The initial cost is not zero.",
+          "Correction": "Check x=0."
+        }
+      ],
+      "SummaryPoints": [
+        "Use contextual units and a named variable.",
+        "Rate maps to slope and fixed charge to intercept.",
+        "Check with a table or substitution."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Trip cost with a fixed fee",
+          "Description": "Original lesson-example input-output table. Each row uses y = 2x + 6. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "5",
+                "8"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "6",
+                "8",
+                "16",
+                "22"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L08",
+      "CultureCode": "en",
+      "Title": "Translating to $y=mx+b$",
+      "ExplanationParagraphs": [
+        "Goal: examine how moving the graph of a line changes its equation, particularly the intercept while preserving the slope under a vertical translation.",
+        "If y=mx is shifted upward c units, its equation becomes y=mx+c. A horizontal shift of y=mx+b by h units right has equation y=m(x−h)+b, so its intercept changes by −mh; do not conflate horizontal and vertical shifts.",
+        "Source activity 8.1 asks which graphed lines can be translations of line f. A translation keeps slope unchanged, whereas a changed slope cannot result from pure translation. The actual source diagram must be interpreted with lines labelled f,h,i,j,g and not a generic same-intercept equation.",
+        "Source activity 8.2 compares Diego babysitting at $10/hour with savings y=10x from zero and y=10x+30 with $30 saved initially. The two lines have equal slope 10 and vertical displacement 30. Source activity 8.3 describes translating arbitrary lines; specifying a horizontal translation can also change the intercept unless the slope is zero.",
+        "Graph y=2x and y=2x+3 on the same grid and compare corresponding points. A teacher checks whether the drawn lines are parallel and the vertical displacement is consistent.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/8/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vertical translation",
+          "Definition": "Add c to every y-coordinate.",
+          "Rule": "y=f(x) becomes y=f(x)+c.",
+          "Example": "y=2x becomes y=2x+3."
+        },
+        {
+          "Title": "Unchanged slope",
+          "Definition": "A vertical translation preserves rate of change.",
+          "Rule": "Only b changes in y=mx+b.",
+          "Example": "Both y=2x and y=2x+3 have slope 2."
+        },
+        {
+          "Title": "Horizontal translation",
+          "Definition": "Move graph right h input units.",
+          "Rule": "New equation y=f(x−h).",
+          "Example": "y=2x becomes y=2(x−4)=2x−8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Shift upward three",
+          "Question": "Write the image of y=2x after translating up 3.",
+          "Method": "Add 3 to output.",
+          "Steps": [
+            "Original y at x is 2x.",
+            "Vertical shift adds 3 at the same x.",
+            "New line y=2x+3."
+          ],
+          "Answer": "y=2x+3.",
+          "Check": "Slopes agree at 2; intercept changes to 3."
+        },
+        {
+          "Title": "Shift right four",
+          "Question": "Translate y=2x four units right.",
+          "Method": "Replace x by x−4.",
+          "Steps": [
+            "Original relation is y=2x.",
+            "For a right shift use y=2(x−4).",
+            "Distribute to get y=2x−8."
+          ],
+          "Answer": "y=2x−8.",
+          "Check": "Old point (0,0) moves to (4,0)."
+        },
+        {
+          "Title": "Compare intercepts",
+          "Question": "Parallel lines y=−3x+1 and y=−3x+7 differ by what vertical translation?",
+          "Method": "Subtract intercepts.",
+          "Steps": [
+            "Both slopes equal −3.",
+            "At x=0 their y-values are 1 and 7.",
+            "Difference is 7−1=6 upwards."
+          ],
+          "Answer": "Up 6 units.",
+          "Check": "Every y-value differs by 6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Changing slope during a pure translation.",
+          "WhyWrong": "A translation does not rotate a line.",
+          "Correction": "Keep m constant."
+        },
+        {
+          "Mistake": "Adding h to x for a rightward shift without a coordinate check.",
+          "WhyWrong": "Right shifts require replacing x by x−h.",
+          "Correction": "Verify where the origin point moves."
+        }
+      ],
+      "SummaryPoints": [
+        "Parallel translations keep slope.",
+        "Vertical shift adds to intercept.",
+        "Horizontal shifts need substitution f(x−h)."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L09",
+      "CultureCode": "en",
+      "Title": "Slopes Don't Have to be Positive",
+      "ExplanationParagraphs": [
+        "Goal: explain a negative slope as a decrease in y for each positive step in x and link this to a graph, table and contextual description.",
+        "A line dropping rightward has negative slope. The magnitude describes how quickly y decreases; a horizontal line has zero slope and a vertical one has undefined slope.",
+        "Source activity 9.1 is an open odd-one-out among four differently sloped lines; several well-justified features may distinguish a line and teacher review is needed for the explanation.",
+        "Source activity 9.2 models a $40 transportation card losing $2.50 each ride: B(r)=40−2.5r for nonnegative whole-number r from 0 to 16; B(0)=40, B(1)=37.5, B(2)=35 and B(16)=0. Using r=17 creates negative balance and is outside the original prepaid-card domain. Source activities 9.3 and 9.4 compare travel/payment contexts and signed rates, not just a generic negative-slope calculation.",
+        "Discuss an original downhill elevation example, beginning at height 20 m and losing 4 m per horizontal meter. Relate the physical direction to negative rise. The teacher checks story interpretation and correct graphical scales.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/9/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Negative slope",
+          "Definition": "A negative rise divided by positive run.",
+          "Rule": "m<0 when y falls as x increases.",
+          "Example": "(0,20) to (3,8) gives m=−4."
+        },
+        {
+          "Title": "Magnitude",
+          "Definition": "Absolute slope tells change per input without direction.",
+          "Rule": "|−4|=4 units of drop per x unit.",
+          "Example": "A decrease of 4 m per horizontal meter."
+        },
+        {
+          "Title": "Zero slope",
+          "Definition": "No output change as input grows.",
+          "Rule": "A horizontal line has m=0.",
+          "Example": "y=5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find downhill slope",
+          "Question": "Elevation goes from 20 m at x=0 to 8 m at x=3. What slope?",
+          "Method": "Compute rise/run.",
+          "Steps": [
+            "Δy=8−20=−12.",
+            "Δx=3−0=3.",
+            "Slope m=−12/3=−4."
+          ],
+          "Answer": "−4 meters per horizontal meter.",
+          "Check": "A positive x step reduces y by four."
+        },
+        {
+          "Title": "Predict height",
+          "Question": "Line y=20−4x; what is height at x=2?",
+          "Method": "Substitute x=2.",
+          "Steps": [
+            "Multiply 4×2=8.",
+            "Subtract from 20.",
+            "Predicted elevation is 12."
+          ],
+          "Answer": "12 meters.",
+          "Check": "At x=2, y=12."
+        },
+        {
+          "Title": "Contrast horizontal",
+          "Question": "Line through (1,5),(9,5). Find slope.",
+          "Method": "Divide change in y by change in x.",
+          "Steps": [
+            "Rise is 5−5=0.",
+            "Run is 9−1=8.",
+            "0/8=0."
+          ],
+          "Answer": "0.",
+          "Check": "Both points have y=5."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Taking only absolute differences.",
+          "WhyWrong": "That loses the direction of change.",
+          "Correction": "Use signed coordinate differences."
+        },
+        {
+          "Mistake": "Confusing slope zero with undefined.",
+          "WhyWrong": "Horizontal and vertical lines behave differently.",
+          "Correction": "Check whether run is zero or rise is zero."
+        }
+      ],
+      "SummaryPoints": [
+        "Negative slope means decrease for increasing x.",
+        "The magnitude controls rate of decrease.",
+        "Horizontal slope is zero."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Decreasing height with negative slope",
+          "Description": "Original lesson-example input-output table. Each row uses y = -4x + 20. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "20",
+                "16",
+                "12",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L10",
+      "CultureCode": "en",
+      "Title": "Calculating Slope",
+      "ExplanationParagraphs": [
+        "Goal: calculate slope from two points correctly, including negative or fractional values, and recognize that a vertical line has no finite slope.",
+        "Compute m=(y₂−y₁)/(x₂−x₁), with the same point ordering in numerator and denominator. Reversing both orders changes both signs and yields the same slope.",
+        "Source activity 10.1 asks for examples of a/b=−2, a/b=2 and a−b=−2; rational values with b≠0 may be used, so the answer need not be a single integer pair.",
+        "Source activity 10.2 plots (1,11) and (8,2). Its slope is (2−11)/(8−1)=−9/7, not +9/7. With the source extension, the required missing coordinates are k=5 for (k,2),(11,14), slope 2; k=7 for (1,k),(4,1), slope −2; k=11 for (3,5),(k,9), slope 1/2; k=5 for (−1,4),(−3,k), slope −1/2.",
+        "Source activity 10.3 includes the design of connected slope segments. A drawn line and geometric explanation require a student graph or teacher-reviewed construction; testing the numerical value −9/7 alone is partial.",
+        "Use two independently chosen point pairs on one line to verify slope consistency. A teacher inspects labeled rise/run triangles; computed ratios receive direct numerical checks.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/10/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Slope formula",
+          "Definition": "Difference of outputs divided by difference of inputs.",
+          "Rule": "m=(y₂−y₁)/(x₂−x₁).",
+          "Example": "For (1,2),(4,8), m=6/3=2."
+        },
+        {
+          "Title": "Order invariance",
+          "Definition": "Reversing both point orders preserves the quotient.",
+          "Rule": "Use consistent subtraction order.",
+          "Example": "(2−8)/(1−4)=−6/−3=2."
+        },
+        {
+          "Title": "Vertical special case",
+          "Definition": "Points with equal x give denominator zero.",
+          "Rule": "Slope is undefined.",
+          "Example": "Through (3,1),(3,6), x change is zero."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Positive slope",
+          "Question": "Slope between (1,2) and (4,8).",
+          "Method": "Use signed changes.",
+          "Steps": [
+            "Rise is 8−2=6.",
+            "Run is 4−1=3.",
+            "6/3=2."
+          ],
+          "Answer": "2.",
+          "Check": "Reversing both differences yields the same answer."
+        },
+        {
+          "Title": "Negative fractional slope",
+          "Question": "Slope from (−2,5) to (4,2).",
+          "Method": "Compute exact fraction.",
+          "Steps": [
+            "Rise is 2−5=−3.",
+            "Run is 4−(−2)=6.",
+            "m=−3/6=−1/2."
+          ],
+          "Answer": "−1/2.",
+          "Check": "A six-unit right step lowers y by three."
+        },
+        {
+          "Title": "Vertical exception",
+          "Question": "Slope through (3,1),(3,6).",
+          "Method": "Check denominator.",
+          "Steps": [
+            "Rise is 6−1=5.",
+            "Run is 3−3=0.",
+            "5/0 is undefined."
+          ],
+          "Answer": "Undefined.",
+          "Check": "Vertical lines cannot be written y=mx+b."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mixing point orders.",
+          "WhyWrong": "A positive denominator with reversed numerator changes sign.",
+          "Correction": "Subtract in a consistent order."
+        },
+        {
+          "Mistake": "Forcing a number when Δx=0.",
+          "WhyWrong": "Division by zero is undefined.",
+          "Correction": "Report vertical slope separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Slope uses signed rise over run.",
+        "Any two points on one nonvertical line give the same slope.",
+        "Equal x-coordinates imply undefined slope."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rise and run on a line with slope two",
+          "Description": "Original lesson-example input-output table. Each row uses y = 2x + 0. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "0",
+                "2",
+                "8",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L11",
+      "CultureCode": "en",
+      "Title": "Equations of All Kinds of Lines",
+      "ExplanationParagraphs": [
+        "Goal: distinguish equations of vertical and horizontal lines from nonhorizontal, nonvertical slope-intercept equations.",
+        "Horizontal lines have constant y and zero slope. Vertical lines have constant x and undefined slope; they cannot be represented as y=mx+b with a finite m.",
+        "Source activity 11.1 groups different line pairs into odd-one-out cases. Source activity 11.2 asks students to plot ten points whose y-coordinate is −4 (horizontal line y=−4), and ten points whose x-coordinate is 3 (vertical line x=3); distinguish these equations from y=−4x and x+y=−4.",
+        "The line y=−4 has slope zero, while the line x=3 has undefined slope because its run is zero; neither is an ordinary y=mx+b graph with finite m for the vertical line. Source activity 11.3 extends this distinction to geometry and same-perimeter contexts; pupil-generated graphs must be reviewed.",
+        "Sketch x=−2 and y=3 and find their intersection. A teacher checks accurate axes and labeling; substituting coordinates can validate points independently.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/11/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Horizontal line",
+          "Definition": "All points share one y-coordinate.",
+          "Rule": "Equation y=c and slope 0.",
+          "Example": "y=3 includes (−1,3),(2,3)."
+        },
+        {
+          "Title": "Vertical line",
+          "Definition": "All points share one x-coordinate.",
+          "Rule": "Equation x=c and undefined slope.",
+          "Example": "x=−2 includes (−2,0),(−2,4)."
+        },
+        {
+          "Title": "Intersection",
+          "Definition": "Coordinates satisfying both line equations.",
+          "Rule": "Solve simultaneous x=c and y=d.",
+          "Example": "x=−2 and y=3 meet at (−2,3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equation of horizontal line",
+          "Question": "What equation passes through (2,3),(−1,3)?",
+          "Method": "Identify unchanged y.",
+          "Steps": [
+            "Both y-coordinates are 3.",
+            "Every point along the horizontal line has y=3.",
+            "Write y=3."
+          ],
+          "Answer": "y=3.",
+          "Check": "Slope (3−3)/(2+1)=0."
+        },
+        {
+          "Title": "Equation of vertical line",
+          "Question": "What equation passes through (−2,0),(−2,4)?",
+          "Method": "Identify unchanged x.",
+          "Steps": [
+            "Both x-coordinates are −2.",
+            "All points on the vertical line have x=−2.",
+            "Write x=−2."
+          ],
+          "Answer": "x=−2.",
+          "Check": "Vertical slope is undefined."
+        },
+        {
+          "Title": "Find intersection",
+          "Question": "Find the intersection of x=−2 and y=3.",
+          "Method": "Apply both independent coordinate conditions.",
+          "Steps": [
+            "First coordinate must equal −2.",
+            "Second coordinate must equal 3.",
+            "The only common point is (−2,3)."
+          ],
+          "Answer": "(−2,3).",
+          "Check": "It satisfies both equations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a vertical line y=constant.",
+          "WhyWrong": "That describes a horizontal line.",
+          "Correction": "Check which coordinate remains fixed."
+        },
+        {
+          "Mistake": "Assigning zero slope to x=c.",
+          "WhyWrong": "Its run is zero, so the slope is undefined.",
+          "Correction": "Write the vertical equation directly."
+        }
+      ],
+      "SummaryPoints": [
+        "Horizontal lines have y=c.",
+        "Vertical lines have x=c.",
+        "Their intersections satisfy both constraints."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
+      "CultureCode": "en",
+      "Title": "Solutions to Linear Equations",
+      "ExplanationParagraphs": [
+        "Goal: interpret an ordered pair (x,y) as a solution of a two-variable linear equation precisely when substituting both coordinates makes an equality true.",
+        "One equation in two variables usually has infinitely many real solutions forming a straight line, not one arbitrary numeric answer. Confirm candidate pairs by direct substitution and describe a parameterized collection.",
+        "Source activity 12.1: three equal-area candidate square diagrams illustrate shading as fractions, not linear equations. Independent first-party fraction model: A and B each shade 12 of 16 equal cells (3/4) while C shades 13 of 16 (13/16), so C is larger. The source original square diagrams are not reproduced.",
+        "Source activity 12.2: apples cost $1 and oranges $2 each. The four sample purchases (6,3), (4,4), (5,4) and (8,2) cost $12, $12, $13 and $12, respectively. A $10 budget gives a+2o=10 with a,o whole nonnegative; the six exact-cost combinations are (10,0), (8,1), (6,2), (4,3), (2,4), (0,5). (7,2) costs 11 and must be rejected. The graph of the algebraic line also includes fractional points, which do not necessarily correspond to buyable whole fruit.",
+        "Source activity 12.3: for two unrestricted real numbers x,y, the statement double the first and add the second gives 2x+y=10. Solutions include (0,10), (1,8), (5,0), (−3,16), (7,−4), (3.5,3); non-solutions include (1,7), (2,4), (5,1). Graph and label several points in both sets, explain that all real solutions lie on one line, and distinguish a continuous line from the finite nonnegative integer purchase possibilities.",
+        "Teacher-scored contract: student-generated labeled coordinate graph with at least five valid and ten invalid ordered pairs, shaded-fraction rationale, budget units, and a written explanation of why a point on the real line is or is not an allowed whole-fruit purchase. A correct numeric yes/no ordered-pair item alone does not demonstrate these graphical, domain, or teacher-review outcomes. Supervisor 2 owns shared Practice PR #597 (source-matched Ax+By=C membership); no shared generator or renderer changes are made here.",
+        "Build a table for 2x+y=7, plot its points and decide whether (2,3) or (2,4) belongs. The teacher reviews the line graph and explanation; substitution is independently gradable.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/12/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solution pair",
+          "Definition": "Coordinates that make the equation true.",
+          "Rule": "Substitute x and y simultaneously.",
+          "Example": "(2,3) solves 2x+y=7."
+        },
+        {
+          "Title": "Graph of solutions",
+          "Definition": "All satisfying pairs form a line for a nondegenerate linear equation.",
+          "Rule": "Rewrite as y=−2x+7.",
+          "Example": "Points (0,7),(2,3) lie on one line."
+        },
+        {
+          "Title": "Non-solution",
+          "Definition": "A pair whose substitution makes false equality.",
+          "Rule": "Reject even if near the drawn line.",
+          "Example": "(2,4) gives 8, not 7."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check valid pair",
+          "Question": "Does (2,3) solve 2x+y=7?",
+          "Method": "Substitute both values.",
+          "Steps": [
+            "Compute 2×2=4.",
+            "Add y=3 to obtain 7.",
+            "The equation equals the required right side."
+          ],
+          "Answer": "Yes.",
+          "Check": "2(2)+3=7."
+        },
+        {
+          "Title": "Reject invalid pair",
+          "Question": "Does (2,4) solve 2x+y=7?",
+          "Method": "Compute left side.",
+          "Steps": [
+            "Compute 2×2=4.",
+            "Add 4 to obtain 8.",
+            "Since 8≠7, the pair is not a solution."
+          ],
+          "Answer": "No.",
+          "Check": "Its left side is 8."
+        },
+        {
+          "Title": "Generate another solution",
+          "Question": "Find y when x=−1 in 2x+y=7.",
+          "Method": "Solve for y.",
+          "Steps": [
+            "Insert x=−1: −2+y=7.",
+            "Add two to both sides.",
+            "y=9, giving (−1,9)."
+          ],
+          "Answer": "(−1,9).",
+          "Check": "2(−1)+9=7."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Only testing x and forgetting y.",
+          "WhyWrong": "A two-variable solution requires both coordinates.",
+          "Correction": "Substitute the ordered pair completely."
+        },
+        {
+          "Mistake": "Assuming one equation has one ordered-pair solution.",
+          "WhyWrong": "A line usually contains infinitely many real pairs.",
+          "Correction": "Use a free parameter to generate further points."
+        }
+      ],
+      "SummaryPoints": [
+        "Ordered pairs must satisfy the full equation.",
+        "A two-variable linear equation graphs a line.",
+        "Test both positive and negative inputs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Which ordered pairs solve 2x + y = 7?",
+          "Description": "An accessible table of four ordered pairs for a two-variable linear equation. Cases A, B and C lie on the line 2x + y = 7; case D does not. For each case substitute both coordinates. A graph of the line is still a separate teacher-reviewed task.",
+          "Rows": [
+            { "Label": "Case", "Cells": ["A", "B", "C", "D"] },
+            { "Label": "x", "Cells": ["0", "1", "2", "2"] },
+            { "Label": "y", "Cells": ["7", "5", "3", "4"] },
+            { "Label": "2x + y", "Cells": ["7", "7", "7", "8"] },
+            { "Label": "Satisfies equation?", "Cells": ["Yes", "Yes", "Yes", "No"] }
+          ]
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Substitute both coordinates",
+          "Description": "From 2x + y = 7, solve for y = 7 − 2x. Substituting (2,3) gives 2·2 + 3 = 7, so it is a solution; substituting (2,4) gives 2·2 + 4 = 8, so it is not a solution.",
+          "Items": [
+            "2x + y = 7",
+            "y = 7 − 2x",
+            "(2,3): 2·2 + 3 = 7 ✓",
+            "(2,4): 2·2 + 4 = 8 ≠ 7"
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L13",
+      "CultureCode": "en",
+      "Title": "More Solutions to Linear Equations",
+      "ExplanationParagraphs": [
+        "Goal: generate, verify and compare multiple ordered-pair solutions of two-variable linear equations, including equations in standard form and constraints.",
+        "When one variable is selected freely, solve for the other. A pair that works for one equation may fail another, and a line can be expressed in equivalent equation forms.",
+        "Source activity 13.1 asks for coordinate solutions to 6x=7y, 5x+3y=9 and y+5−x/3=7. Illustrations include (7,6), (0,3), and (6,4), respectively, which satisfy the equations when substituted.",
+        "Source activities 13.2 and 13.3 examine overlapping solution lines and requested coordinates. A point on two crossing lines solves both equations; a graph alone is insufficient if the coordinates are only estimated by eye. Teacher checks labels and the full explanation, including whether a statement names a pair or just one coordinate.",
+        "Use 2x+3y=12 and generate its x- and y-intercepts. Interpret their locations graphically. A teacher checks how the learner constructs a complete line from these points.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/13/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Standard form",
+          "Definition": "An equation Ax+By=C.",
+          "Rule": "Solve one variable in terms of the other.",
+          "Example": "2x+3y=12."
+        },
+        {
+          "Title": "Intercepts",
+          "Definition": "Where a line meets the coordinate axes.",
+          "Rule": "Set y=0 for x-intercept, x=0 for y-intercept.",
+          "Example": "Intercepts of 2x+3y=12 are (6,0),(0,4)."
+        },
+        {
+          "Title": "Equivalent equations",
+          "Definition": "Equations with the same solution set.",
+          "Rule": "Apply reversible algebraic operations.",
+          "Example": "2x+3y=12 equals y=4−(2/3)x."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find x-intercept",
+          "Question": "Find x-intercept of 2x+3y=12.",
+          "Method": "Set y=0.",
+          "Steps": [
+            "With y=0, equation becomes 2x=12.",
+            "Divide by 2.",
+            "x=6, giving (6,0)."
+          ],
+          "Answer": "(6,0).",
+          "Check": "2×6+3×0=12."
+        },
+        {
+          "Title": "Find y-intercept",
+          "Question": "Find y-intercept of 2x+3y=12.",
+          "Method": "Set x=0.",
+          "Steps": [
+            "With x=0, equation becomes 3y=12.",
+            "Divide by 3.",
+            "y=4, giving (0,4)."
+          ],
+          "Answer": "(0,4).",
+          "Check": "2×0+3×4=12."
+        },
+        {
+          "Title": "Find another pair",
+          "Question": "Choose x=3 in 2x+3y=12. Find y.",
+          "Method": "Substitute and isolate.",
+          "Steps": [
+            "2×3+3y=12.",
+            "Subtract 6: 3y=6.",
+            "Divide by 3, so y=2."
+          ],
+          "Answer": "(3,2).",
+          "Check": "2×3+3×2=12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Switching x-intercept and y-intercept procedures.",
+          "WhyWrong": "Intercepts require setting the opposite coordinate to zero.",
+          "Correction": "Label the axis before substituting."
+        },
+        {
+          "Mistake": "Inferring solution pairs from a rough graph only.",
+          "WhyWrong": "Pixel estimates can be wrong.",
+          "Correction": "Verify algebraically."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent equations can represent the same line.",
+        "Intercepts give reliable plotting points.",
+        "Check every solution by substitution."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Ordered pairs on a two-variable line",
+          "Description": "All listed points satisfy 2x+3y=12. A complete coordinate graph remains a separate task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "4",
+                "2",
+                "0"
+              ]
+            },
+            {
+              "Label": "2x+3y",
+              "Cells": [
+                "12",
+                "12",
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U03:L14",
+      "CultureCode": "en",
+      "Title": "Using Linear Relations to Solve Problems",
+      "ExplanationParagraphs": [
+        "Goal: model a real situation with a linear equation, identify meaningful variables, solve for an unknown quantity and check the solution against context.",
+        "A model with constant rate and a fixed starting value can be useful, but not every real situation extends indefinitely. Identify where the rule applies and state assumptions before interpreting an answer.",
+        "Source activity 14.1 gives grapes at $2.39/lb and bananas at $0.59/lb with a $15 budget: 2.39g+0.59b=15, with g,b nonnegative real measured pounds. It also gives savings starting at $50 with $20 added weekly, y=50+20x for nonnegative whole weeks x.",
+        "Source activity 14.2 presents five account lines with (slope,intercept) pairs a:(20,50), c:(−5,110), d:(0,30), e:(−10,80), h:(20,−80). Interpret negative initial balances as debts where appropriate rather than assume every model is an account starting positive. Source activity 14.3 uses a fish-related linear model whose actual numbers and interpretation must be matched before grading.",
+        "Original Edulytiks task: a repair shop charges $18 inspection plus $7 per labor hour. Write total cost, solve when a bill is $60, and explain why the time cannot be negative. A teacher evaluates variable definitions and contextual interpretation.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; exact public source: https://im.kendallhunt.com/MS/teachers/3/3/14/preparation.html . No publisher artwork or protected tasks are copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fixed-plus-variable cost",
+          "Definition": "Total starts at a fixed amount and increases with usage.",
+          "Rule": "C=18+7h.",
+          "Example": "At h=0, the fee is $18."
+        },
+        {
+          "Title": "Inverse problem",
+          "Definition": "Find input from known output.",
+          "Rule": "Set equation equal to measured total and solve.",
+          "Example": "If C=60, solve 18+7h=60."
+        },
+        {
+          "Title": "Feasible domain",
+          "Definition": "Inputs meaningful in the problem.",
+          "Rule": "Labor time must be nonnegative.",
+          "Example": "h≥0; predicted cost cannot be below $18 in this model."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write cost equation",
+          "Question": "Inspection $18 plus $7/hour. Write C(h).",
+          "Method": "Separate fixed fee and hourly charge.",
+          "Steps": [
+            "Inspection contributes $18.",
+            "h hours contribute $7h.",
+            "Total is C=18+7h."
+          ],
+          "Answer": "C(h)=18+7h dollars.",
+          "Check": "C(0)=18."
+        },
+        {
+          "Title": "Find labor hours",
+          "Question": "A bill is $60 under C=18+7h. How many hours?",
+          "Method": "Solve for h.",
+          "Steps": [
+            "60=18+7h.",
+            "Subtract 18: 42=7h.",
+            "Divide by 7: h=6."
+          ],
+          "Answer": "6 hours.",
+          "Check": "18+7×6=60."
+        },
+        {
+          "Title": "Reject impossible bill",
+          "Question": "Could C=11 be produced by C=18+7h with h≥0?",
+          "Method": "Check the minimum feasible cost.",
+          "Steps": [
+            "At h=0 the bill is $18.",
+            "For h≥0, 7h≥0 so cost≥18.",
+            "An $11 bill is below the minimum."
+          ],
+          "Answer": "No; not within the stated model.",
+          "Check": "An algebraic negative h would violate the context."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Giving a negative hour count as realistic.",
+          "WhyWrong": "Labor time is nonnegative in this model.",
+          "Correction": "Restrict domain before interpreting solutions."
+        },
+        {
+          "Mistake": "Ignoring model assumptions.",
+          "WhyWrong": "A flat and hourly rate may change for overtime or surcharges.",
+          "Correction": "State the valid pricing rule and range."
+        }
+      ],
+      "SummaryPoints": [
+        "Choose clear variables and units.",
+        "A fixed fee is an intercept, an hourly charge a slope.",
+        "Verify solutions in the real context."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

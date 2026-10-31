@@ -1,0 +1,1836 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+      "CultureCode": "en",
+      "Title": "Moving in the Plane",
+      "ExplanationParagraphs": [
+        "Learning objective: describe a slide or turn of a plane figure in everyday terms, identifying the direction and amount so another learner can repeat the motion. Formal names for transformations are introduced later.",
+        "Trace the outline of an irregular triangle on transparent paper and move the tracing without stretching it. A slide sends every point equally far in the same direction; a turn moves the outline around a chosen fixed point. Compare where the corners end up, not just where the middle ends up.",
+        "Source-aligned activity 1.1: show four original angle diagrams with one straight angle, one right angle, one acute angle and one obtuse angle. Invite multiple defensible odd-one-out explanations rather than require one universally correct selection.",
+        "Source-aligned activity 1.2: create three original triangle-movement dance cards, privately choose A, B or C, describe the movement orally, and let a partner identify the intended sequence. Verify that the description is reproducible; this partner communication task is not automatically graded from a single number.",
+        "Original Edulytiks accessible six-frame dance-card substitute (not the publisher blackline master): use one asymmetric triangle on a grid with a marked reference point P and a marked tip. Each frame lists (P x, P y, direction of tip). Keep the triangle's side lengths and angles unchanged. Dance A frames 1–6: (0,0,north), (2,0,north), (2,0,east), (2,1,east), (2,1,north), (3,1,north). Dance B frames 1–6: (0,0,north), (2,0,north), (2,0,east), (2,-1,east), (2,-1,south), (1,-1,south). Dance C frames 1–6: (0,0,north), (2,0,north), (2,0,west), (2,1,west), (2,1,south), (1,1,south).",
+        "Source-aligned partner procedure for activity 1.2: one learner secretly chooses original Edulytiks card A, B, or C, describes its six frames aloud without naming the card, and the partner identifies it; switch roles and write a reproducible description for each card. In these independently authored substitutes, all cards first slide right two units, cards A and B then turn a quarter-turn clockwise while C turns a quarter-turn counterclockwise, and A and B separate at frame 4. Specify slide distance/direction and turn direction/amount, not just 'move it'.",
+        "Source extension — reverse the dance: choose A, B, or C and trace the frames from 6 back to 1. Write the reverse instructions and compare them with your forward description: each slide uses the opposite direction with equal distance, and each clockwise turn becomes counterclockwise by the same angle, and vice versa. A learner may draw the original six frames on grid paper; a teacher assesses written descriptions, drawings, and partner communication rather than an invented single-number grade.",
+        "Original Edulytiks Cool-down (first-party equivalent, not the inaccessible publisher Cool-down): an asymmetric triangular card has marked reference point P at (1,1) with its tip pointing north. Slide P three grid units right without turning, then make a quarter-turn clockwise about the new P. Draw or describe the final pose, identify the final reference point and tip direction, and explain why the figure's lengths and angles stay the same. The teacher scores the construction and explanation; this question is not an automatically graded publisher item.",
+        "Partner investigation: each learner secretly draws a starting and ending position of the same triangular card, then gives verbal directions for the other to reconstruct the move. Test the explanation on an asymmetric figure; a vague instruction such as “move it over there” cannot be reproduced uniquely.",
+        "Original Edulytiks odd-one-out task: compare a straight angle, acute angle, right angle and obtuse angle. Identify an odd one out and state a defensible criterion. Distinct choices with distinct correct mathematical reasons are allowed; a teacher judges the justification rather than a one-button numerical grader.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/1/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT (paper/teacher selection, not online auto-Practice): Grade 8 U01:L01 student worksheet at /curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html. Teacher distributes or prints this exact course-owned worksheet, students document 1.1 alternative mathematical reasons; complete A/B/C six-frame dance/reconstruction in both roles and ordered inverse motions; write/draw the Edulytiks Cool-down. These original source tasks require human interpretation, not a grade from a choice letter or only P=(4,1). Teacher scores four separate 0–2 criteria against private rubric. Original protected publisher Cool-down is NOT used. The static file is an authored worksheet/handoff and is NOT an authenticated online submission or saved grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Slide",
+          "Definition": "Repositioning a figure without rotating or changing its size.",
+          "Rule": "All corresponding points travel the same distance and direction.",
+          "Example": "Shift triangle A(1,1),B(3,1),C(1,3) four squares to the right."
+        },
+        {
+          "Title": "Turn",
+          "Definition": "Moving a figure around a fixed center, changing its orientation.",
+          "Rule": "Specify center, direction and fraction of a full turn.",
+          "Example": "Turn a right-pointing arrow one quarter-turn left around its tail: it points upward."
+        },
+        {
+          "Title": "Rigid shape",
+          "Definition": "A figure with side lengths and angles unchanged during a movement.",
+          "Rule": "Sliding or turning must preserve every side and angle.",
+          "Example": "A 2-by-2 right triangle stays a 2-by-2 right triangle after a slide."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Describe the entire slide",
+          "Question": "Triangle A(1,1), B(3,1), C(1,3) slides four squares right and two squares up. Where are its new corners?",
+          "Method": "Add the same pair of movements to each corner.",
+          "Steps": [
+            "A moves right four from x=1 to x=5, and up two from y=1 to y=3, giving A′(5,3).",
+            "B moves to (3+4,1+2)=(7,3).",
+            "C moves to (1+4,3+2)=(5,5).",
+            "Check that the new horizontal and vertical legs are each still two grid units long."
+          ],
+          "Answer": "A′(5,3), B′(7,3), C′(5,5).",
+          "Check": "All three points move (+4,+2); the legs retain length 2."
+        },
+        {
+          "Title": "Describe a turn",
+          "Question": "An arrow points east. Rotate it a quarter-turn left around its tail. Which way does it point?",
+          "Method": "Hold its tail in place and turn counterclockwise through one fourth of a circle.",
+          "Steps": [
+            "Mark the tail as the fixed center.",
+            "One fourth of 360 degrees is 90 degrees.",
+            "From east, a 90-degree left turn points north while the arrow length is unchanged."
+          ],
+          "Answer": "North (up).",
+          "Check": "The reverse clockwise quarter-turn would return the arrow to the east."
+        },
+        {
+          "Title": "Find a justified odd one out",
+          "Question": "Four angles measure 35°, 90°, 125° and 180°. Give one mathematically justified odd-one-out.",
+          "Method": "Classify angles, then state the property that distinguishes a choice.",
+          "Steps": [
+            "35° is acute, 90° is right, 125° is obtuse and 180° is straight.",
+            "Choose 180° as the only straight angle; alternatively another unique category can be used.",
+            "State the selected criterion explicitly so the teacher can assess your reasoning."
+          ],
+          "Answer": "Example: 180° is the only straight angle; other categories support other answers.",
+          "Check": "A single-choice automated grader is inappropriate for this open justification."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Only saying “move it.”",
+          "WhyWrong": "Without direction and amount the destination cannot be reconstructed.",
+          "Correction": "Give a repeatable move for every corner."
+        },
+        {
+          "Mistake": "Treating resizing as a slide.",
+          "WhyWrong": "Rigid movements keep all distances and angle measures unchanged.",
+          "Correction": "Compare corresponding side lengths before deciding."
+        },
+        {
+          "Mistake": "Assuming there is only one odd one out.",
+          "WhyWrong": "Several different geometric classifications can single out different objects.",
+          "Correction": "Grade the mathematical justification, not an assumed unique choice."
+        }
+      ],
+      "SummaryPoints": [
+        "Slides move a figure without changing orientation, turns move it around a specified point.",
+        "Both moves preserve distances and angles.",
+        "Informal descriptions must still be reproducible.",
+        "Teacher review is required for alternative correct odd-one-out explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Triangle translated right four and up two",
+          "Description": "Original rigid-motion table: translate every point by (4,2). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "5",
+                "7",
+                "5"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "3",
+                "3",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Activity 1.1 — source-aligned ray pairs, native accessible cards",
+          "Description": "Original Edulytiks ray-pair labels A–D; justify a property that distinguishes one. The corresponding accurate original SVG needs shared Rich V2 attachment.",
+          "Rows": [
+            {
+              "Label": "A",
+              "Cells": [
+                "Two opposite horizontal rays",
+                "Common vertex"
+              ]
+            },
+            {
+              "Label": "B",
+              "Cells": [
+                "One ray right, one straight up",
+                "Common vertex"
+              ]
+            },
+            {
+              "Label": "C",
+              "Cells": [
+                "One ray right, one diagonal up-right",
+                "Common vertex"
+              ]
+            },
+            {
+              "Label": "D",
+              "Cells": [
+                "One ray right, one diagonal up-left",
+                "Common vertex"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1.2 — first-party six-frame Dance A",
+          "Description": "Native accessible frame-by-frame position chart for same triangle; point P and tip direction. Original SVG art awaits shared renderer attachment.",
+          "Rows": [
+            {
+              "Label": "Frame 1",
+              "Cells": [
+                "P=(0,0)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 2",
+              "Cells": [
+                "P=(2,0)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 3",
+              "Cells": [
+                "P=(2,0)",
+                "Tip: east"
+              ]
+            },
+            {
+              "Label": "Frame 4",
+              "Cells": [
+                "P=(2,1)",
+                "Tip: east"
+              ]
+            },
+            {
+              "Label": "Frame 5",
+              "Cells": [
+                "P=(2,1)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 6",
+              "Cells": [
+                "P=(3,1)",
+                "Tip: north"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1.2 — first-party six-frame Dance B",
+          "Description": "Native accessible frame-by-frame position chart for same triangle; point P and tip direction. Original SVG art awaits shared renderer attachment.",
+          "Rows": [
+            {
+              "Label": "Frame 1",
+              "Cells": [
+                "P=(0,0)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 2",
+              "Cells": [
+                "P=(2,0)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 3",
+              "Cells": [
+                "P=(2,0)",
+                "Tip: east"
+              ]
+            },
+            {
+              "Label": "Frame 4",
+              "Cells": [
+                "P=(2,-1)",
+                "Tip: east"
+              ]
+            },
+            {
+              "Label": "Frame 5",
+              "Cells": [
+                "P=(2,-1)",
+                "Tip: south"
+              ]
+            },
+            {
+              "Label": "Frame 6",
+              "Cells": [
+                "P=(1,-1)",
+                "Tip: south"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1.2 — first-party six-frame Dance C",
+          "Description": "Native accessible frame-by-frame position chart for same triangle; point P and tip direction. Original SVG art awaits shared renderer attachment.",
+          "Rows": [
+            {
+              "Label": "Frame 1",
+              "Cells": [
+                "P=(0,0)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 2",
+              "Cells": [
+                "P=(2,0)",
+                "Tip: north"
+              ]
+            },
+            {
+              "Label": "Frame 3",
+              "Cells": [
+                "P=(2,0)",
+                "Tip: west"
+              ]
+            },
+            {
+              "Label": "Frame 4",
+              "Cells": [
+                "P=(2,1)",
+                "Tip: west"
+              ]
+            },
+            {
+              "Label": "Frame 5",
+              "Cells": [
+                "P=(2,1)",
+                "Tip: south"
+              ]
+            },
+            {
+              "Label": "Frame 6",
+              "Cells": [
+                "P=(1,1)",
+                "Tip: south"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+      "CultureCode": "en",
+      "Title": "Naming the Moves",
+      "ExplanationParagraphs": [
+        "Learning objective: describe translations, rotations and reflections accurately, distinguish their effects on orientation and use clockwise and counterclockwise correctly.",
+        "For a translation, match each original vertex to its image with the same displacement. For a rotation, name the fixed center and signed direction of turn. For a reflection, find a mirror line that bisects the perpendicular segment between each pair of corresponding points.",
+        "Source activity 2.1 calls for estimating a rotation: use a first-party asymmetric quadrilateral and a corresponding rotated image sharing one fixed vertex. Estimate the counterclockwise angle before measuring it; an angle greater than 90° and less than 180° is not a quarter-turn. The accompanying original geometric model makes a 120° counterclockwise turn. The 120° value is for this model, not an assertion that every source diagram has that angle.",
+        "For source activities 2.2 and 2.3, make three paper examples with an asymmetric quadrilateral: slide one tracing, turn a second around a fixed corner, and flip a third over a vertical mirror line. Try to reproduce each move without lifting or flipping the tracing. A mirror flip reverses the order of the vertices while any slide or turn preserves that orientation; sort the pairs by evidence and explain the distinction before naming the transformation types.",
+        "Explain the chosen action to another learner. A card-sort answer may be justified in more than one language, so use a teacher-reviewed explanation rather than an invented automatic classification of speech or drawings.",
+        "Edulytiks activity 2.1 original angle estimate: on a grid use an asymmetric quadrilateral with center O at (0,0) and a marked ray ending at (2,0). A 120° counterclockwise turn places the ray end at (−1,√3). Estimate the obtuse turn before measuring; this is an independently authored example, not the publisher image.",
+        "Edulytiks activity 2.2 six-frame new-move task: track the marked point P, a north-pointing triangle tip, and a second colored corner that distinguishes the handedness of the triangle. Move right two; turn a quarter-turn clockwise around P; reflect across the line through P and its tip, so the tip stays east but the other corner switches sides; slide two up; turn a quarter-turn counterclockwise. Describe each transition in words. A reflection cannot be inferred from tip direction alone.",
+        "Edulytiks activity 2.3 independent card sort: classify two translations, two turns, and two reflections. Show the center and direction for a turn, a line for each flip, and the same displacement for all corresponding vertices in a slide. Cut out or copy the six descriptions and explain your categories to a partner; do not mark every student's open explanation with a single multiple-choice answer.",
+        "Original Edulytiks Cool-down 2.4 (publisher Cool-down not visible): Triangle P(1,1), Q(3,1), R(2,3) becomes P′(−1,1), Q′(−3,1), R′(−2,3). Decide if it is a reflection; identify and justify the mirror line with corresponding distances. Then consider P′(−1,1), Q′(−3,1), R′(2,3) and explain why this second image is not the same reflection. A teacher reviews the diagram and reasoning.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/2/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT — Grade 8 U01:L02: teacher distributes or prints this exact Edulytiks worksheet at /curriculum/us-ccss-g8/assessment/u01-l02-naming-moves-paper.html. The student names a 120-degree rotation estimate about O (activity 2.1), identifies five consecutive moves for six fully labelled asymmetric triangle frames including a genuine orientation-reversing reflection, records a partner reconstruction (2.2), sorts and justifies six move cards (2.3), and draws/reasons about an original Edulytiks reflection Cool-down with a non-reflection counterexample. Source practices involving drawings and oral explanation are teacher-scored with a private 8-point rubric (four criteria of 0–2); a coordinate-translation subskill is only optional numeric work, not a substitute for these human assessments. This first-party printable sheet is the selected offline teacher-review route, not a publisher Cool-down, online Practice generator, authenticated submission or persisted grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Translation",
+          "Definition": "A shift sending all points through the same displacement.",
+          "Rule": "Every corresponding point has the same movement vector.",
+          "Example": "A translation of (−3,2) moves left 3 and up 2."
+        },
+        {
+          "Title": "Rotation",
+          "Definition": "A turn of a specified angle about a chosen center.",
+          "Rule": "Clockwise follows clock-hand direction; counterclockwise is the opposite.",
+          "Example": "A 90° clockwise turn of a north-pointing arrow yields an east-pointing arrow."
+        },
+        {
+          "Title": "Reflection",
+          "Definition": "A mirror movement across a specified line.",
+          "Rule": "Paired points are perpendicular to and equidistant from the mirror line.",
+          "Example": "The reflection of (3,2) across the y-axis is (−3,2)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Uniform movement",
+          "Question": "A triangle moves every vertex three squares left and two up. Name the action.",
+          "Method": "Compare all displacement arrows.",
+          "Steps": [
+            "A-to-A′, B-to-B′ and C-to-C′ all point left three and up two.",
+            "The orientation has not turned or flipped.",
+            "Therefore one translation describes the whole move."
+          ],
+          "Answer": "Translation by (−3,2).",
+          "Check": "All point-to-image displacements agree."
+        },
+        {
+          "Title": "Use clock direction",
+          "Question": "An upward arrow makes a quarter-turn clockwise about its fixed tail. Which way will it point?",
+          "Method": "Hold its tail and turn in the direction clock hands move.",
+          "Steps": [
+            "The tail is the center and remains fixed.",
+            "A quarter-turn has magnitude 90°.",
+            "Turning clockwise from north points east."
+          ],
+          "Answer": "East (right).",
+          "Check": "West would describe a counterclockwise rather than clockwise quarter-turn."
+        },
+        {
+          "Title": "Locate a mirror image",
+          "Question": "P is three units right of a vertical mirror line and two units above a baseline. Describe P′.",
+          "Method": "Measure perpendicular distance and preserve the same height.",
+          "Steps": [
+            "The point lies three horizontal units on the right side.",
+            "Place its image three horizontal units on the left side of the same line.",
+            "Retain the original height of two units above the baseline."
+          ],
+          "Answer": "Three units left of the mirror line, two units above the baseline.",
+          "Check": "Point and image are on opposite sides of the mirror at equal distance."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a reflection a half-turn.",
+          "WhyWrong": "A reflection reverses handedness whereas a rotation preserves it.",
+          "Correction": "Track the orientation of three labeled corners."
+        },
+        {
+          "Mistake": "Omitting the rotation center.",
+          "WhyWrong": "The same angle about different centers produces different positions.",
+          "Correction": "Mark center, angle and direction."
+        },
+        {
+          "Mistake": "Matching corresponding vertices by proximity.",
+          "WhyWrong": "The nearest vertex may not be the actual image of a chosen original vertex.",
+          "Correction": "Track labels consistently from each starting vertex."
+        }
+      ],
+      "SummaryPoints": [
+        "Translations are uniform slides.",
+        "Rotations have a center, angle and direction.",
+        "A reflection requires a specified mirror line: corresponding points lie on opposite sides at equal perpendicular distances. The original figure does not have to be symmetric about that line.",
+        "Use corresponding points as evidence for the chosen action."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Translation left three and up two",
+          "Description": "Original rigid-motion table: translate every point by (-3,2). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "-2",
+                "0",
+                "-2"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "3",
+                "3",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "2.1 — 120-degree first-party rotation estimate",
+          "Description": "Initial ray and its independently constructed 120° image about O; exact coordinates, not a reproduction of the publisher quadrilateral.",
+          "Rows": [
+            {
+              "Label": "Original ray",
+              "Cells": [
+                "O=(0,0)",
+                "B=(2,0)"
+              ]
+            },
+            {
+              "Label": "After 120° CCW",
+              "Cells": [
+                "O=(0,0)",
+                "B′=(−1,√3)"
+              ]
+            },
+            {
+              "Label": "Lengths",
+              "Cells": [
+                "OB=2",
+                "OB′=2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "2.2 — six-frame new-move dance with a genuine reflection",
+          "Description": "An original six-frame demonstration. Orientation sign tracks vertex order: only the reflection reverses sign, even though the marked tip remains east.",
+          "Rows": [
+            {
+              "Label": "Frame 1",
+              "Cells": [
+                "P=(0,0)",
+                "north",
+                "orientation +"
+              ]
+            },
+            {
+              "Label": "Frame 2",
+              "Cells": [
+                "P=(2,0)",
+                "north",
+                "orientation +"
+              ]
+            },
+            {
+              "Label": "Frame 3",
+              "Cells": [
+                "P=(2,0)",
+                "east",
+                "orientation +"
+              ]
+            },
+            {
+              "Label": "Frame 4",
+              "Cells": [
+                "P=(2,0)",
+                "east",
+                "orientation − (mirror)"
+              ]
+            },
+            {
+              "Label": "Frame 5",
+              "Cells": [
+                "P=(2,2)",
+                "east",
+                "orientation −"
+              ]
+            },
+            {
+              "Label": "Frame 6",
+              "Cells": [
+                "P=(2,2)",
+                "north",
+                "orientation −"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "2.3 — original card sort: distinguish six rigid moves",
+          "Description": "Each group may include two examples. Translation has common displacement, rotation a center and angle, reflection a mirror line.",
+          "Rows": [
+            {
+              "Label": "T1",
+              "Cells": [
+                "All vertices move (+2,+1)",
+                "Translation"
+              ]
+            },
+            {
+              "Label": "T2",
+              "Cells": [
+                "All vertices move (−3,0)",
+                "Translation"
+              ]
+            },
+            {
+              "Label": "R1",
+              "Cells": [
+                "Quarter-turn clockwise about P",
+                "Rotation"
+              ]
+            },
+            {
+              "Label": "R2",
+              "Cells": [
+                "Half-turn around O",
+                "Rotation"
+              ]
+            },
+            {
+              "Label": "F1",
+              "Cells": [
+                "Flip over x=0",
+                "Reflection"
+              ]
+            },
+            {
+              "Label": "F2",
+              "Cells": [
+                "Flip over y=2",
+                "Reflection"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
+      "CultureCode": "en",
+      "Title": "Grid Moves",
+      "ExplanationParagraphs": [
+        "Learning objective: draw, label and justify the images of figures after translations, rotations and reflections on square and isometric grids.",
+        "Label the original polygon A,B,C and each image A′,B′,C′. On a square coordinate grid, a translation by (a,b) changes (x,y) to (x+a,y+b). A counterclockwise quarter-turn about the origin changes (x,y) to (−y,x); reflecting across the y-axis changes (x,y) to (−x,y).",
+        "Source-aligned activity 3.1: examine an isometric grid of equilateral triangles and ask the learner to notice parallel slanting lines and repeated 60° directions. The grid is not an ordinary Cartesian coordinate plane; do not imply its sloping basis vectors are perpendicular.",
+        "Source-aligned activity 3.2: to translate an original triangle use the directed arrow from A to A′ as the vector and apply the same vector to every other vertex; then reset before a rotation or reflection. The source GeoGebra construction and its click/drag behavior remain a distinct interactive integration requirement.",
+        "On an isometric grid six 60° sectors meet around a grid point. A 60° turn about a grid vertex can be constructed with tracing paper by preserving distance from the center; do not mistake the slanted equilateral-triangle grid for perpendicular Cartesian axes.",
+        "Student task: draw an irregular polygon and its translated image on a square grid, then choose a center and draw a turned copy on an isometric grid. Compare all corresponding vertices. Drawings and open construction explanations need accessible graphical/teacher review; three numerical coordinate examples alone cannot establish complete student assessment.",
+        "Edulytiks activity 3.1 tactile isometric grid: draw three equal-length rays from O at directions 0°, 60°, and 120° so six equilateral sectors meet around a vertex. Two basis steps e1=(1,0), e2=(1/2,√3/2) meet at 60°, not 90°; they cannot be treated as ordinary square x/y axes. Use tracing paper or the native basis descriptions below to sketch the triangular grid.",
+        "Edulytiks activity 3.2 original construction substitute: place triangle A(1,1), B(3,1), C(2,3) on a square grid; separately construct its translation by (+2,−1), counterclockwise quarter-turn about O, and reflection across the y-axis. Copy or trace the grid by hand, label A′,B′,C′, and verify all corresponding lengths. Each new construction starts from the ORIGINAL triangle, not the preceding transformed image.",
+        "Edulytiks isometric-grid rotation: record a lattice vertex by axial (q,r) along the equal-length 60° basis vectors. A counterclockwise 60° turn about O sends (q,r) to (−r,q+r). For example (1,0)→(0,1) and (0,1)→(−1,1). This coordinate shorthand supplements drawing and does not imply the axes are perpendicular. Explain center and corresponding vertices to a partner.",
+        "Original Edulytiks Cool-down 3.3 (publisher statement not visible): classify two proposed images of triangle A(1,1),B(3,1),C(2,3). Image I is (3,0),(5,0),(4,2). Image II is (3,0),(5,0),(2,2). Which represents one translation of the entire triangle? Justify with all three displacement vectors. Submit or draw the transformed triangle; a teacher evaluates the explanation rather than assuming an automatic source-equivalent grade.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/3/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT (selected paper/teacher-review route): teacher prints/distributes Grade 8 U01:L03 at /curriculum/us-ccss-g8/assessment/u01-l03-grid-moves-paper.html. The first-party student sheet asks for source-aligned 3.1 notice/wonder on an equilateral-triangle isometric grid with 60-degree nonperpendicular basis rays; source-aligned 3.2 labelled original triangle translation (+2,-1), counterclockwise 90-degree rotation about O, reflection across the y-axis, plus isometric 60-degree axial turn and partner explanation; and a teacher-reviewed Edulytiks-authored Cool-down comparing two candidate images by all three vertex displacement vectors. Worksheets require diagrams, correspondence, mathematics and explanations; the teacher privately scores four 0–2 criteria, 8 possible points. The protected publisher Cool-down is UNVERIFIED and not copied. The worksheet is an offline paper handoff, NOT an online auto-Practice generator, authenticated student submission, or saved grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Image vertices",
+          "Definition": "A′, B′, C′ label points corresponding to A, B, C after a movement.",
+          "Rule": "Apply the same transformation to every point and preserve label correspondence.",
+          "Example": "A(1,1) shifted (4,−3) becomes A′(5,−2)."
+        },
+        {
+          "Title": "Square-grid rules",
+          "Definition": "Coordinates describe special rigid motions about coordinate axes.",
+          "Rule": "Translate by addition; rotate CCW 90° about origin by (−y,x); mirror in y-axis by (−x,y).",
+          "Example": "(2,1) rotates CCW 90° to (−1,2)."
+        },
+        {
+          "Title": "Isometric-grid turn",
+          "Definition": "An equilateral-triangle grid gives directions separated by 60°.",
+          "Rule": "Choose a grid-point center; maintain each vertex distance and rotate each center-to-vertex ray equally.",
+          "Example": "One grid edge along east rotates to the next 60° direction."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Translate and relabel",
+          "Question": "A(1,1), B(3,1), C(1,2) shift four units right and three down. Find A′,B′,C′.",
+          "Method": "Add 4 to x and subtract 3 from y for all three vertices.",
+          "Steps": [
+            "A′=(1+4,1−3)=(5,−2).",
+            "B′=(3+4,1−3)=(7,−2).",
+            "C′=(1+4,2−3)=(5,−1).",
+            "Check B′−A′=(2,0) and C′−A′=(0,1), the same side vectors as before."
+          ],
+          "Answer": "A′(5,−2), B′(7,−2), C′(5,−1).",
+          "Check": "Each vertex has displacement (4,−3)."
+        },
+        {
+          "Title": "Turn a figure",
+          "Question": "Rotate the vertices (2,1), (3,1), (2,2) 90° counterclockwise about the origin.",
+          "Method": "Apply (x,y)→(−y,x) to every vertex.",
+          "Steps": [
+            "(2,1) changes to (−1,2).",
+            "(3,1) changes to (−1,3).",
+            "(2,2) changes to (−2,2).",
+            "Their side lengths remain one unit on the two legs."
+          ],
+          "Answer": "(−1,2), (−1,3), (−2,2).",
+          "Check": "A clockwise turn would instead send (2,1) to (1,−2)."
+        },
+        {
+          "Title": "Reflect an individual vertex",
+          "Question": "Reflect P(3,−2) across the y-axis.",
+          "Method": "Reverse the sign of the horizontal coordinate.",
+          "Steps": [
+            "The mirror line is x=0.",
+            "P lies three units to its right and has height y=−2.",
+            "Place the image three units to its left at the same height."
+          ],
+          "Answer": "P′(−3,−2).",
+          "Check": "The segment PP′ is horizontal and its midpoint is (0,−2)."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Moving only one vertex.",
+          "WhyWrong": "A transformation applies to every vertex of the figure.",
+          "Correction": "Label each original and image corner before drawing the new edges."
+        },
+        {
+          "Mistake": "Using the clockwise formula for a counterclockwise turn.",
+          "WhyWrong": "(y,−x) and (−y,x) produce opposite rotations.",
+          "Correction": "Check the unit vector (1,0) must turn to (0,1) counterclockwise."
+        },
+        {
+          "Mistake": "Using Cartesian grid assumptions on an isometric grid.",
+          "WhyWrong": "Its grid directions meet at 60°, not 90°.",
+          "Correction": "Use the equilateral geometry and preserve distance from the chosen center."
+        }
+      ],
+      "SummaryPoints": [
+        "Each original vertex has one corresponding image vertex.",
+        "Coordinate rules can describe square-grid transformations exactly.",
+        "Isometric grid rotations can be built by 60° tracing.",
+        "Check constructions visually and preserve labels."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Triangle translated right four and down three",
+          "Description": "Original rigid-motion table: translate every point by (4,-3). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "5",
+                "7",
+                "5"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "-2",
+                "-2",
+                "-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "3.1 — isometric grid nonperpendicular basis",
+          "Description": "Accessible original triangular-grid basis model; use equal-length edges 60° apart and six triangular sectors at each lattice point.",
+          "Rows": [
+            {
+              "Label": "e1",
+              "Cells": [
+                "(1,0) in Cartesian coordinates",
+                "Direction 0°"
+              ]
+            },
+            {
+              "Label": "e2",
+              "Cells": [
+                "(1/2,√3/2)",
+                "Direction 60°"
+              ]
+            },
+            {
+              "Label": "e2−e1",
+              "Cells": [
+                "(−1/2,√3/2)",
+                "Direction 120°"
+              ]
+            },
+            {
+              "Label": "Full turn",
+              "Cells": [
+                "6 sectors × 60°=360°",
+                "Not a square 90° grid"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "3.2 — same original triangle under three rigid moves",
+          "Description": "Each column represents a corresponding vertex; each operation independently starts with original A,B,C, so no accidental composition.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(1,1)",
+                "(3,1)",
+                "(2,3)"
+              ]
+            },
+            {
+              "Label": "translation (+2,−1)",
+              "Cells": [
+                "(3,0)",
+                "(5,0)",
+                "(4,2)"
+              ]
+            },
+            {
+              "Label": "90° CCW about O",
+              "Cells": [
+                "(−1,1)",
+                "(−1,3)",
+                "(−3,2)"
+              ]
+            },
+            {
+              "Label": "reflection in y-axis",
+              "Cells": [
+                "(−1,1)",
+                "(−3,1)",
+                "(−2,3)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "3.2 — 60-degree isometric vertex turn",
+          "Description": "Axial coordinates are along the two nonperpendicular 60° lattice vectors. Apply (q,r)→(−r,q+r), preserving length.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "P",
+                "Q",
+                "R"
+              ]
+            },
+            {
+              "Label": "axial original",
+              "Cells": [
+                "(1,0)",
+                "(0,1)",
+                "(1,1)"
+              ]
+            },
+            {
+              "Label": "axial rotated",
+              "Cells": [
+                "(0,1)",
+                "(−1,1)",
+                "(−1,2)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L04",
+      "CultureCode": "en",
+      "Title": "Making the Moves",
+      "ExplanationParagraphs": [
+        "Learning objective: draw a specified translation, rotation or reflection and describe the construction so someone else can reproduce the image.",
+        "A movement instruction is complete only when the image is determined. Translation requires a displacement; rotation requires center, direction and angle; reflection requires a line. Mark the same vertex labels on both figures to detect an accidental flip or shift.",
+        "Source-aligned activity 4.1: display a completed reflected triangle for a brief timed glance, then hide it and ask students to reconstruct the image from one known point, the mirror line and equal perpendicular distances. A static first-party explanation alone does not implement the source timed-flash interaction.",
+        "Source-aligned activities 4.2–4.3: one partner describes a triangle image that another sketches, followed by identifying a move from A to B and a second move from B to C on an isometric grid. Order of operations must be retained; the source drawing/GeoGebra interaction requires teacher or accessible geometric assessment.",
+        "Construction activity: draw an asymmetric quadrilateral A(1,1), B(4,1), C(3,3), D(1,2). Create three different copies: a shift two right, a half-turn about the origin, and a mirror across the y-axis. Compare how the order of labeled vertices changes.",
+        "A partner must reconstruct one of the copies from the written directions without seeing the result. A teacher evaluates completeness of directions and accurate diagram construction; a multiple-choice movement name does not substitute for this skill.",
+        "Edulytiks activity 4.1 reflection quick-image teaching alternative: briefly display an original triangle P(1,1),Q(3,1),R(2,3) and its reflection across the y-axis; hide the solution and ask learners to reconstruct P′(−1,1),Q′(−3,1),R′(−2,3) from equal perpendicular distances. A teacher can flash a drawn card twice; no unimplemented automated timed animation is implied.",
+        "Edulytiks activity 4.2 spoken partner directions: one student secretly chooses a first-party translation by (+2,0), a half-turn about O, or a reflection across the y-axis of the asymmetric quadrilateral. Another draws and labels the image; compare both corresponding points and the complete instruction: vector, center+angle+direction, or mirror line.",
+        "Edulytiks activity 4.3 two-step source equivalent: independently draw triangle A(1,1),B(3,1),C(2,3). First translate by (+2,0) to A′(3,1), B′(5,1), C′(4,3); then reflect over x=0 to A″(−3,1),B″(−5,1),C″(−4,3). Verify the composition in order. Reflecting first and translating second yields different coordinates, so order matters.",
+        "Source-aligned optional extension: seek another two-move construction taking the same figure to a given target, or explain why excluding a chosen type of move changes the available construction. Teacher scores geometry and precise oral/written justification; do not claim unverified GeoGebra clicks are implemented.",
+        "Original Edulytiks Cool-down 4.4 (publisher question inaccessible): triangle P(1,1), Q(3,1), R(2,3) is first shifted (+2,0), then mirrored across x=0. Give the three final positions and a correct two-step description. Explain why performing the reflection before the translation produces a different result. This is independently authored and teacher-scored.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/4/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT — Making the Moves, Grade 8 U01:L04: teacher selects/distributes exact Edulytiks student paper worksheet /curriculum/us-ccss-g8/assessment/u01-l04-making-moves-paper.html for source-aligned activities 4.1 Reflection Quick Image; 4.2 Make That Move; 4.3 A to B to C; 4.4 teacher Cool-down - What Does It Take?. This printable task asks the learner to reconstruct and label corresponding mathematical figures, demonstrate each move, and provide reproducible written, sketched or oral reasoning. A separate course-owned private four-criterion 8-point teacher rubric and correct/equivalent/wrong/malformed/boundary evidence are recorded in the lesson-exact academic assessment contract. The publisher-protected Cool-down remains unverified; this is a first-party alternative, not an online Practice generator, authenticated submission or saved teacher grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Specify a translation",
+          "Definition": "A displacement vector determines a slide.",
+          "Rule": "Apply (x+a,y+b) to every vertex.",
+          "Example": "Right two: (x,y)→(x+2,y)."
+        },
+        {
+          "Title": "Specify a half-turn",
+          "Definition": "A 180° rotation reverses both coordinate signs when centered at the origin.",
+          "Rule": "About O: (x,y)→(−x,−y).",
+          "Example": "B(4,1) becomes (−4,−1)."
+        },
+        {
+          "Title": "Specify a reflection",
+          "Definition": "A mirror line divides every joining segment perpendicularly at its midpoint.",
+          "Rule": "Across y-axis, reverse x and preserve y.",
+          "Example": "C(3,3) becomes (−3,3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete a translation",
+          "Question": "Shift A(1,1), B(4,1), C(3,3), D(1,2) two units right.",
+          "Method": "Add two to each x-coordinate.",
+          "Steps": [
+            "A′=(3,1) and B′=(6,1).",
+            "C′=(5,3) and D′=(3,2).",
+            "Connect A′B′C′D′ in original vertex order; all y-coordinates are unchanged."
+          ],
+          "Answer": "A′(3,1), B′(6,1), C′(5,3), D′(3,2).",
+          "Check": "The image and original have matching horizontal side lengths and angles."
+        },
+        {
+          "Title": "Half-turn around origin",
+          "Question": "Find the half-turn image of P(4,−3) about the origin.",
+          "Method": "Change both coordinate signs.",
+          "Steps": [
+            "A half-turn is 180°.",
+            "The x-coordinate 4 becomes −4.",
+            "The y-coordinate −3 becomes 3; check the origin is the midpoint of P and P′."
+          ],
+          "Answer": "P′(−4,3).",
+          "Check": "The midpoint of (4,−3) and (−4,3) is (0,0)."
+        },
+        {
+          "Title": "Reflect a segment",
+          "Question": "Reflect the endpoints A(1,2) and B(4,2) across the y-axis.",
+          "Method": "Reverse x for each point while keeping y.",
+          "Steps": [
+            "A′=(−1,2).",
+            "B′=(−4,2).",
+            "The mirrored segment still has length 3 but points left from A′ to B′."
+          ],
+          "Answer": "A′(−1,2), B′(−4,2).",
+          "Check": "Each original-image point pair is equidistant from x=0."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Providing just “rotate” in the instructions.",
+          "WhyWrong": "A center and angle are missing, so many outputs are possible.",
+          "Correction": "State the center, angle and turn direction."
+        },
+        {
+          "Mistake": "Connecting transformed vertices out of order.",
+          "WhyWrong": "The drawing might cross where the original did not.",
+          "Correction": "Preserve the original label sequence when connecting image vertices."
+        }
+      ],
+      "SummaryPoints": [
+        "Name the displacement, center or mirror line explicitly.",
+        "Transform every vertex before joining the edges.",
+        "Check a peer can reproduce written directions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Quadrilateral translated two units",
+          "Description": "Original rigid-motion table: translate every point by (2,0). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "4",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "3",
+                "2"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "3",
+                "6",
+                "5",
+                "3"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "1",
+                "1",
+                "3",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "4.1 — teacher flash-reflection card (manual original first-party alternative)",
+          "Description": "Use an original static triangle for a brief glance then conceal it; identify reflection line and corresponding vertex distances. No automatic timer is claimed.",
+          "Rows": [
+            {
+              "Label": "Original",
+              "Cells": [
+                "P(1,1), Q(3,1), R(2,3)"
+              ]
+            },
+            {
+              "Label": "Mirror",
+              "Cells": [
+                "x=0 vertical y-axis"
+              ]
+            },
+            {
+              "Label": "To reconstruct",
+              "Cells": [
+                "P′(−1,1), Q′(−3,1), R′(−2,3)"
+              ]
+            },
+            {
+              "Label": "Reason",
+              "Cells": [
+                "Equal perpendicular distances to x=0"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "4.3 — original two-step coordinate sequence",
+          "Description": "Exact corresponding vertices for translation followed by reflection; this image is not the same as reversing the order.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(1,1)",
+                "(3,1)",
+                "(2,3)"
+              ]
+            },
+            {
+              "Label": "step 1 shift (+2,0)",
+              "Cells": [
+                "(3,1)",
+                "(5,1)",
+                "(4,3)"
+              ]
+            },
+            {
+              "Label": "step 2 reflect x=0",
+              "Cells": [
+                "(−3,1)",
+                "(−5,1)",
+                "(−4,3)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L05",
+      "CultureCode": "en",
+      "Title": "Coordinate Moves",
+      "ExplanationParagraphs": [
+        "Learning objective: determine how the coordinates of corresponding points change under specified rigid movements, and justify the pattern rather than memorizing one unqualified formula.",
+        "Track coordinates relative to the transformation center or mirror line. A horizontal reflection across x=0 negates x, while a vertical reflection across y=0 negates y. A quarter-turn around the origin depends on direction; the same formula cannot be used for rotations about other centers without moving the center first.",
+        "Source-aligned activity 5.1: for source-aligned triangle T with vertices (−3,0),(−2,−1),(−4,−3) and triangle U with vertices (1,2),(2,1),(0,−1), every correct translation has vector (+4,+2). Point pairs (−3,0)→(1,2) and (−4,−3)→(0,−1) describe the same translation; the reverse and the (1,2)→(2,1) option do not.",
+        "Source-aligned activity 5.2: reflecting across the x-axis maps (13,10)→(13,−10), (13,−20)→(13,20), and (13,570)→(13,−570). Reflecting R(3,2) across the y-axis gives R′(−3,2). Learners should label original and image points and justify the rule.",
+        "Source-aligned activity 5.3: create a segment, transform both endpoints by the same rigid rule, and label the image segment; human review of plotting and correct correspondence remains distinct from validating two numeric pairs.",
+        "Use transparent grid paper to compare P(3,2), its reflection across the x-axis, its reflection across the y-axis and a 90° counterclockwise rotation about O. Explain how each operation affects signs and coordinate order.",
+        "Original task: a student supplies an incorrect image coordinate after a move. Diagnose the error using point-to-point distances or the required center/line. A teacher checks the explanation; numeric pairs can be independently checked.",
+        "Edulytiks activity 5.1: inspect four independent directed point pairs and identify every vector equal to (+4,+2). Both (−3,0)→(1,2) and (−4,−3)→(0,−1) work. A reversed point pair has vector (−4,−2) and cannot take the original triangle T to image U.",
+        "Edulytiks activity 5.2: predict and independently plot the x-axis reflections of (13,10), (13,−20), and (13,570), and the y-axis reflection of R(3,2). Label original and prime image; x-axis keeps x and reverses y, y-axis keeps y and reverses x. The magnitudes are preserved for large values too.",
+        "Edulytiks activity 5.3 original segment-motion construction: take A(1,1), B(3,1). A 90° CCW rotation of A about B gives C(3,−1). Rotating B 90° CCW about A gives D(1,3). A 90° clockwise rotation about the ORIGIN gives E(1,−1) and F(1,−3). Mark the different centers and verify the same segment length 2 each time; do not apply an origin rotation formula to an arbitrary center.",
+        "Source-aligned extension: construct a rigid movement sequence carrying one segment onto another equal-length segment and justify the center, rotation and translation used. A teacher examines the constructed correspondence and explanation.",
+        "Original Edulytiks Cool-down 5.4 (publisher statement not visible): given P(2,1),Q(4,1),R(2,3), decide which of two candidate images is a 90° CCW rotation about O and which is reflection in x=0. Image I: (−1,2),(−1,4),(−3,2). Image II: (−2,1),(−4,1),(−2,3). Identify the rigid rule and justify the coordinate patterns.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/5/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT — Coordinate Moves, Grade 8 U01:L05: teacher selects/distributes exact Edulytiks student paper worksheet /curriculum/us-ccss-g8/assessment/u01-l05-coordinate-moves-paper.html for source-aligned activities 5.1 Translating Coordinates; 5.2 Reflecting Points on the Coordinate Plane; 5.3 Transformations of a Segment; 5.4 teacher Cool-down - Rotation or Reflection. This printable task asks the learner to reconstruct and label corresponding mathematical figures, demonstrate each move, and provide reproducible written, sketched or oral reasoning. A separate course-owned private four-criterion 8-point teacher rubric and correct/equivalent/wrong/malformed/boundary evidence are recorded in the lesson-exact academic assessment contract. The publisher-protected Cool-down remains unverified; this is a first-party alternative, not an online Practice generator, authenticated submission or saved teacher grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reflection across x-axis",
+          "Definition": "Mirror over horizontal line y=0.",
+          "Rule": "(x,y)→(x,−y).",
+          "Example": "(3,2) becomes (3,−2)."
+        },
+        {
+          "Title": "Reflection across y-axis",
+          "Definition": "Mirror over vertical line x=0.",
+          "Rule": "(x,y)→(−x,y).",
+          "Example": "(3,2) becomes (−3,2)."
+        },
+        {
+          "Title": "Quarter-turn around O",
+          "Definition": "A 90° turn of a point around origin O=(0,0).",
+          "Rule": "CCW: (x,y)→(−y,x); clockwise: (x,y)→(y,−x).",
+          "Example": "(3,2) CCW becomes (−2,3), clockwise becomes (2,−3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare the two mirrors",
+          "Question": "Reflect P(3,2) across each coordinate axis.",
+          "Method": "Reverse only the coordinate perpendicular to each mirror line.",
+          "Steps": [
+            "Across the x-axis, the y-coordinate changes sign: (3,−2).",
+            "Across the y-axis, the x-coordinate changes sign: (−3,2).",
+            "Both image points remain the same distance from the origin as P."
+          ],
+          "Answer": "Across x-axis: (3,−2); across y-axis: (−3,2).",
+          "Check": "All three points are at distance √13 from O."
+        },
+        {
+          "Title": "Counterclockwise turn",
+          "Question": "Rotate Q(−4,1) a quarter-turn counterclockwise about O.",
+          "Method": "Exchange the coordinates and negate the old y-value.",
+          "Steps": [
+            "Original coordinate pair is (−4,1).",
+            "New x is −1, new y is −4.",
+            "The squared distance 16+1=17 is preserved."
+          ],
+          "Answer": "Q′(−1,−4).",
+          "Check": "A clockwise turn would produce (1,4), not the requested image."
+        },
+        {
+          "Title": "Detect an invalid reflection",
+          "Question": "A student says the x-axis reflection of (5,−3) is (−5,−3). Is that correct?",
+          "Method": "Check which coordinate is perpendicular to the x-axis.",
+          "Steps": [
+            "The x-axis is the horizontal line y=0.",
+            "Mirroring changes the vertical coordinate from −3 to +3.",
+            "The horizontal coordinate must remain 5."
+          ],
+          "Answer": "No. The correct image is (5,3).",
+          "Check": "The student instead described a reflection across the y-axis."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Negating both coordinates for any reflection.",
+          "WhyWrong": "That operation is a half-turn about O, not a single axis reflection.",
+          "Correction": "Name the mirror line and change only its perpendicular coordinate."
+        },
+        {
+          "Mistake": "Applying an origin-centered rotation formula around a different center.",
+          "WhyWrong": "The formula assumes the center is (0,0).",
+          "Correction": "Translate the center to O, rotate, and translate back."
+        }
+      ],
+      "SummaryPoints": [
+        "Coordinate sign changes depend on the chosen axis.",
+        "The direction of a quarter-turn changes the formula.",
+        "Verify center and distance invariance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Coordinate-axis reflection comparisons",
+          "Description": "Original P=(3,2); reflecting over the x-axis changes only y, and reflecting over the y-axis changes only x.",
+          "Rows": [
+            {
+              "Label": "state",
+              "Cells": [
+                "P",
+                "x-axis image",
+                "y-axis image"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "3",
+                "3",
+                "-3"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "2",
+                "-2",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "5.1 — select all true translation vectors",
+          "Description": "First-party visual movement-card choices; direction matters. Two pairs implement the vector (+4,+2); justify all choices.",
+          "Rows": [
+            {
+              "Label": "Pair 1",
+              "Cells": [
+                "(−3,0)→(1,2)",
+                "(+4,+2)"
+              ]
+            },
+            {
+              "Label": "Pair 2",
+              "Cells": [
+                "(2,1)→(−2,−1)",
+                "(−4,−2)"
+              ]
+            },
+            {
+              "Label": "Pair 3",
+              "Cells": [
+                "(−4,−3)→(0,−1)",
+                "(+4,+2)"
+              ]
+            },
+            {
+              "Label": "Pair 4",
+              "Cells": [
+                "(1,2)→(2,1)",
+                "(+1,−1)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "5.2 — source-aligned axis reflections with labeled pairs",
+          "Description": "Exact point-coordinate transformations, including large positive/negative y. No claim of publisher applet parity.",
+          "Rows": [
+            {
+              "Label": "point",
+              "Cells": [
+                "P",
+                "Q",
+                "R",
+                "S"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(13,10)",
+                "(13,−20)",
+                "(13,570)",
+                "(3,2)"
+              ]
+            },
+            {
+              "Label": "mirror line",
+              "Cells": [
+                "x-axis",
+                "x-axis",
+                "x-axis",
+                "y-axis"
+              ]
+            },
+            {
+              "Label": "image",
+              "Cells": [
+                "(13,−10)",
+                "(13,20)",
+                "(13,−570)",
+                "(−3,2)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "5.3 — compare 90-degree segment rotations about three centers",
+          "Description": "Original A=(1,1), B=(3,1) has length two. Each rotation preserves length but changes image based on its center.",
+          "Rows": [
+            {
+              "Label": "operation",
+              "Cells": [
+                "CCW around B",
+                "CCW around A",
+                "CW around origin"
+              ]
+            },
+            {
+              "Label": "original target",
+              "Cells": [
+                "A(1,1)",
+                "B(3,1)",
+                "A and B"
+              ]
+            },
+            {
+              "Label": "image",
+              "Cells": [
+                "C(3,−1)",
+                "D(1,3)",
+                "E(1,−1), F(1,−3)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
+      "CultureCode": "en",
+      "Title": "Describing Transformations",
+      "ExplanationParagraphs": [
+        "Learning objective: use coordinate and geometric language to describe a single transformation or a sequence that maps one polygon onto another.",
+        "Start with two labeled copies of a polygon. Check the displacement of every corresponding vertex before claiming it is a translation. For a rotation, compare distances from a proposed center. If the figure was mirrored, identify the reflection line using matching point pairs.",
+        "Source-aligned activity 6.1: determine a plausible center from an original polygon and its 90° counterclockwise image. A first-party example uses vertex P(2,1) mapped to P′(0,3) by rotation about C(0,1); check P−C=(2,0) and P′−C=(0,2) before concluding. One point pair alone may permit alternative motion types, so the full polygon must confirm the rotation.",
+        "Source-aligned activity 6.2: simulate an information gap with separate problem and data cards. A learner must request missing center/angle/vertex information from a partner and then explain the transformation. Do not replace the communication and card exchange task with a fabricated automatically scored verbal interaction.",
+        "An original Edulytiks investigation uses triangle A(1,1), B(3,1), C(1,2). First translate by (2,0), then reflect across the y-axis. Draw each intermediate image and name the ordered steps. Ask whether reversing the order would produce the same result.",
+        "The sequence description and matching of image labels are open construction tasks. Numeric coordinate predictions can be auto-checked, but teacher review must assess whether an explanation is complete and logically justified.",
+        "Edulytiks activity 6.1 original center investigation: triangle P(2,1),Q(2,3),R(1,2) maps to P′(0,3),Q′(−2,3),R′(−1,2) under a quarter-turn counterclockwise about center O(0,1). Infer O from at least two corresponding vertex pairs, then check every radius from O is equal in original and image. The center is not necessarily a polygon vertex.",
+        "Edulytiks activity 6.2 original information-gap alternative: divide the provided problem and data descriptions into separate paper cards so partners cannot see both at once. Problem card: identify and draw P′,Q′,R′ from original P(2,1),Q(2,3),R(1,2), but omit center and angle. Data card holds center O(0,1) and counterclockwise 90° instruction. The problem-holder must ask explicitly for the missing information and explain why it is required; the data-holder must not solve the task for the problem-holder.",
+        "Edulytiks follow-up composition: reflecting over the x-axis and then over the y-axis maps every point (x,y) to (−x,−y), equivalent to a 180° rotation about O. It is not necessarily equivalent to a 180° rotation around some other center. For P(2,1), the final image is (−2,−1). Justify by corresponding vertices.",
+        "Original Edulytiks Cool-down 6.3 (publisher prompt protected): triangle A(1,1),B(3,1),C(1,2) is first translated (+2,0), then reflected in the y-axis. Construct and name the final A″(−3,1),B″(−5,1),C″(−3,2) and explain the order; reflecting before translating gives another result. A teacher reviews the full sequence and reasoning.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/6/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT — Describing Transformations, Grade 8 U01:L06: teacher selects/distributes exact Edulytiks student paper worksheet /curriculum/us-ccss-g8/assessment/u01-l06-describing-transformations-paper.html for source-aligned activities 6.1 Finding a Center of Rotation; 6.2 Info Gap: Transformation Information; 6.3 teacher Cool-down - Describing a Sequence of Transformations. This printable task asks the learner to reconstruct and label corresponding mathematical figures, demonstrate each move, and provide reproducible written, sketched or oral reasoning. A separate course-owned private four-criterion 8-point teacher rubric and correct/equivalent/wrong/malformed/boundary evidence are recorded in the lesson-exact academic assessment contract. The publisher-protected Cool-down remains unverified; this is a first-party alternative, not an online Practice generator, authenticated submission or saved teacher grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sequence of moves",
+          "Definition": "A composition applies one movement to the output of another.",
+          "Rule": "Track intermediate points and respect the order.",
+          "Example": "First (x,y)→(x+2,y), then mirror across y-axis to (−x−2,y)."
+        },
+        {
+          "Title": "Inverse movement",
+          "Definition": "An inverse move restores the starting figure.",
+          "Rule": "Reverse a translation vector, clockwise/counterclockwise direction or repeat a reflection.",
+          "Example": "Undo a move right two by moving left two."
+        },
+        {
+          "Title": "Order matters",
+          "Definition": "Different compositions can move a figure to different images.",
+          "Rule": "Compute the image of one test point to compare orders.",
+          "Example": "Reflect (1,1) in y-axis then translate right two gives (1,1); reverse order gives (−3,1)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Translate then reflect",
+          "Question": "Point A(1,1) is translated right two, then mirrored in the y-axis. Find A″.",
+          "Method": "Apply each movement to the previous image.",
+          "Steps": [
+            "After translating, A′=(1+2,1)=(3,1).",
+            "Reflect A′ across x=0 to get A″=(−3,1).",
+            "Keep the double prime to show two consecutive movements."
+          ],
+          "Answer": "A″(−3,1).",
+          "Check": "The x-coordinate is −(1+2)=−3."
+        },
+        {
+          "Title": "Reverse the move order",
+          "Question": "Reflect A(1,1) in the y-axis, then shift right two. Find the result.",
+          "Method": "Perform reflection before translation.",
+          "Steps": [
+            "Reflect A to A′=(−1,1).",
+            "Move right two to A″=(−1+2,1)=(1,1).",
+            "Compare this with (−3,1) from the other order."
+          ],
+          "Answer": "A″(1,1), different from translating then reflecting.",
+          "Check": "The two sequences differ by four horizontal units."
+        },
+        {
+          "Title": "Undo a translation",
+          "Question": "A polygon moved left four and up three. Which single translation returns it?",
+          "Method": "Use the additive inverse displacement.",
+          "Steps": [
+            "The forward displacement is (−4,3).",
+            "Its inverse must add 4 horizontally and subtract 3 vertically.",
+            "The total displacement (−4,3)+(4,−3)=(0,0) returns every point."
+          ],
+          "Answer": "Move right four and down three.",
+          "Check": "The composition is the identity movement."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reversing the order of a composition without checking.",
+          "WhyWrong": "Most transformation compositions do not commute.",
+          "Correction": "Test a single labeled point in each order."
+        },
+        {
+          "Mistake": "Giving only the final coordinate pair.",
+          "WhyWrong": "It does not explain which sequence of movements produced the figure.",
+          "Correction": "Name each intermediate move with center/line/vector."
+        }
+      ],
+      "SummaryPoints": [
+        "A composition uses the output of each previous movement.",
+        "Order can change the final figure.",
+        "Every step can be checked through corresponding points."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Order matters for compositions",
+          "Description": "Starting at (1,1), translation by (2,0) then reflection in y-axis ends at (−3,1); the reverse order ends at (1,1).",
+          "Rows": [
+            {
+              "Label": "order",
+              "Cells": [
+                "translate then reflect",
+                "reflect then translate"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "-3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "6.1 — original quarter-turn center reconstruction",
+          "Description": "Coordinate data for a full polygon make center O=(0,1) independently checkable; all distances from O are preserved.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "P",
+                "Q",
+                "R"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(2,1)",
+                "(2,3)",
+                "(1,2)"
+              ]
+            },
+            {
+              "Label": "image 90° CCW",
+              "Cells": [
+                "(0,3)",
+                "(−2,3)",
+                "(−1,2)"
+              ]
+            },
+            {
+              "Label": "inferred center",
+              "Cells": [
+                "(0,1)",
+                "(0,1)",
+                "(0,1)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "6.2 — original information-gap problem and data cards",
+          "Description": "Teacher distributes the two cards SEPARATELY for partner information exchange; displaying both in one course preview is not the actual game.",
+          "Rows": [
+            {
+              "Label": "Problem card",
+              "Cells": [
+                "Draw the image of P(2,1),Q(2,3),R(1,2)",
+                "Ask for required move details; do not peek at data"
+              ]
+            },
+            {
+              "Label": "Data card",
+              "Cells": [
+                "Rotation center O=(0,1)",
+                "Angle 90° counterclockwise; share only requested information"
+              ]
+            },
+            {
+              "Label": "Discussion",
+              "Cells": [
+                "Explain why center, direction and angle are necessary",
+                "Partner checks correspondence, then swap roles"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "6.3 — original two-step Cool-down coordinate record",
+          "Description": "Translate by (+2,0), then reflect over x=0; explain why reversing the order changes the final image.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(1,1)",
+                "(3,1)",
+                "(1,2)"
+              ]
+            },
+            {
+              "Label": "after translation",
+              "Cells": [
+                "(3,1)",
+                "(5,1)",
+                "(3,2)"
+              ]
+            },
+            {
+              "Label": "after reflection",
+              "Cells": [
+                "(−3,1)",
+                "(−5,1)",
+                "(−3,2)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L07",
+      "CultureCode": "en",
+      "Title": "No Bending or Stretching",
+      "ExplanationParagraphs": [
+        "Learning objective: test which geometric measurements remain unchanged after a rigid transformation, using matching side lengths, angles, and point-to-point distances.",
+        "Rigid transformations preserve lengths and angles even though coordinates and orientation can change. Measuring an inaccurate hand sketch may suggest a tiny difference; exact coordinate calculations or tracing paper provide stronger evidence.",
+        "Source-aligned activity 7.1: show first-party ruler segments with eighths and tenths and distinguish exact reading from rounding. Source benchmark examples include 4⅝=4.625 units to the nearest eighth, 4.7 units to the nearest tenth, and approximately 3¾=3.75 units to the nearest eighth. Record units and precision clearly.",
+        "Source-aligned activity 7.2: measure corresponding sides and angles before and after translating, rotating and reflecting a triangle. Because rigid moves preserve lengths and angle measures, explain why changed measurements disprove a rigid mapping rather than trusting a sketch.",
+        "Source-aligned activity 7.3: given different candidate images, identify which ones can be rigid images and justify rejection with a specific altered length or angle; drawings, ruler work and explanations must receive a human or accessible-construction assessment.",
+        "Draw a triangle with vertices (1,1),(4,1),(1,5). Its legs have lengths 3 and 4 and its third side has length 5. Reflect it across the y-axis. Use a ruler and the Pythagorean relation to show that the image retains the same three lengths.",
+        "Partner task: one learner claims a stretched copy is a rotation. Measure two corresponding edges to decide whether this is possible. Record a counterexample with explicit measurements. Teacher review is required for the argument; a single numeric distance item is not the full lesson.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): An original 3-4-5 right triangle is reflected. Construct the reflected triangle and label all three unchanged side lengths, then explain why 3,4,5 remain invariant. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/7/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT — No Bending or Stretching, Grade 8 U01:L07: teacher selects/distributes exact Edulytiks student paper worksheet /curriculum/us-ccss-g8/assessment/u01-l07-no-bending-stretching-paper.html for source-aligned activities 7.1: Measuring Segments; 7.2: Sides and Angles; 7.3: Which One?. This printable task asks the learner to reconstruct and label corresponding mathematical figures, demonstrate each move, and provide reproducible written, sketched or oral reasoning. A separate course-owned private four-criterion 8-point teacher rubric and correct/equivalent/wrong/malformed/boundary evidence are recorded in the lesson-exact academic assessment contract. The publisher-protected Cool-down remains unverified; this is a first-party alternative, not an online Practice generator, authenticated submission or saved teacher grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distance preservation",
+          "Definition": "Corresponding segments have equal lengths after rigid transformations.",
+          "Rule": "For two points, compare squared distances Δx²+Δy² before and after.",
+          "Example": "Points (1,1),(4,1) stay distance 3 apart after reflection."
+        },
+        {
+          "Title": "Angle preservation",
+          "Definition": "Rigid movements keep the angle between corresponding rays.",
+          "Rule": "Every original angle equals its image angle.",
+          "Example": "A 90° corner remains 90° after turning or mirroring."
+        },
+        {
+          "Title": "Not a rigid move",
+          "Definition": "Stretching or shearing changes at least some distances or angles.",
+          "Rule": "Find one measured counterexample to reject rigid congruence.",
+          "Example": "A 3-unit segment stretched to 6 units is not a translation."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute all side lengths",
+          "Question": "Find side lengths of triangle (1,1),(4,1),(1,5).",
+          "Method": "Use coordinate differences and the Pythagorean theorem.",
+          "Steps": [
+            "The horizontal leg is 4−1=3 units.",
+            "The vertical leg is 5−1=4 units.",
+            "The slanted side length is √(3²+4²)=√25=5."
+          ],
+          "Answer": "Side lengths 3, 4 and 5.",
+          "Check": "Check 3²+4²=5²."
+        },
+        {
+          "Title": "Reflect without changing size",
+          "Question": "Reflect the same triangle across the y-axis and recalculate its leg lengths.",
+          "Method": "Negate x-coordinate for every vertex.",
+          "Steps": [
+            "The images are (−1,1),(−4,1),(−1,5).",
+            "The horizontal leg has length |−4−(−1)|=3.",
+            "The vertical leg still spans 5−1=4, and diagonal remains 5."
+          ],
+          "Answer": "The image has side lengths 3, 4 and 5.",
+          "Check": "Reflection reverses orientation, not segment lengths."
+        },
+        {
+          "Title": "Reject a stretch",
+          "Question": "An original segment is 3 units long; its proposed image is 6 units long. Could one rigid movement map them?",
+          "Method": "Compare an invariant before and after.",
+          "Steps": [
+            "Rigid movements preserve length.",
+            "The original length 3 differs from image length 6.",
+            "One mismatched length is sufficient to reject any rigid transformation."
+          ],
+          "Answer": "No. The figure was resized or otherwise distorted.",
+          "Check": "A rigid map cannot change length 3 to length 6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Judging equality by how the sketch looks.",
+          "WhyWrong": "Hand-drawn figures may not be to scale.",
+          "Correction": "Use corresponding coordinates or reliable geometric measurements."
+        },
+        {
+          "Mistake": "Assuming a reflection changes side lengths because orientation reverses.",
+          "WhyWrong": "Orientation and metric length are different properties.",
+          "Correction": "Calculate the squared distance before and after the reflection."
+        }
+      ],
+      "SummaryPoints": [
+        "Translations, rotations and reflections preserve every length and angle.",
+        "A single changed distance disproves rigidity.",
+        "Coordinate proofs can support a visual observation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L07 No Bending or Stretching",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Ruler: nearest eighth",
+              "Cells": [
+                "4 5/8 units",
+                "exact 4.625 units"
+              ]
+            },
+            {
+              "Label": "Ruler: nearest tenth",
+              "Cells": [
+                "4.7 units",
+                "not 4.07"
+              ]
+            },
+            {
+              "Label": "Rigid image",
+              "Cells": [
+                "3,4,5 sides",
+                "3,4,5 sides"
+              ]
+            },
+            {
+              "Label": "Distorted image",
+              "Cells": [
+                "3,4,5",
+                "3,4,6 cannot be rigid"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+      "CultureCode": "en",
+      "Title": "Rotation Patterns",
+      "ExplanationParagraphs": [
+        "Learning objective: investigate how rotations create repeating patterns, identify the center and angle of rotation, and explain rotational symmetry using known fractions of 360 degrees.",
+        "Arrange several identical asymmetric cutout shapes around a common marked point. Turn each copy by the same angle. Verify that the corners follow arcs centered on the same point and remain at their original distances from the center.",
+        "A pattern with six equally spaced repeats uses a rotation of 360°/6=60°. With four repeats it uses 90°; with three, 120°. The center and the exact number of turns matter; a rotation of 360° always returns the shape to its start.",
+        "Activity 8.1: create an original right isosceles triangle OAB with OA=OB=3 and angle AOB=90°. Draw its images after clockwise rotations of 90°, 180°, and 270° about O; four copies exactly form a square. Explain why the equal legs fit without gaps.",
+        "Activity 8.2: rotate segment PQ through 180° about endpoint Q, midpoint M, and off-line point C. For a half-turn about center C, each image X′ satisfies X′=2C−X. Endpoint rotation extends the original line; midpoint rotation exchanges segment endpoints; off-line rotation makes a parallel segment at the same length.",
+        "Activity 8.3: use four rigid copies of an asymmetric triangle to build and label a pattern. Identify corresponding lengths and transformations; a drawn construction and its explanation require teacher or accessible graphical assessment.",
+        "Make a first-party geometric rosette using a simple L-shaped figure traced around a chosen point. Label each rotated image and state the generating angle. A teacher assesses drawing accuracy, repeated figures and explanation; do not claim the rosette itself is machine-graded.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): For original A=(0,0) and B=(2,0), rotate 180° about midpoint M=(1,0); mark A′=(2,0), B′=(0,0) and justify why the segment maps to itself as a set. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/8/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced.",
+        "ACTIVE FIRST-PARTY LESSON ASSESSMENT — Rotation Patterns, Grade 8 U01:L08: teacher selects/distributes exact Edulytiks student paper worksheet /curriculum/us-ccss-g8/assessment/u01-l08-rotation-patterns-paper.html for source-aligned activities 8.1: Building a Quadrilateral; 8.2: Rotating a Segment; 8.3: A Pattern of Four Triangles. This printable task asks the learner to reconstruct and label corresponding mathematical figures, demonstrate each move, and provide reproducible written, sketched or oral reasoning. A separate course-owned private four-criterion 8-point teacher rubric and correct/equivalent/wrong/malformed/boundary evidence are recorded in the lesson-exact academic assessment contract. The publisher-protected Cool-down remains unverified; this is a first-party alternative, not an online Practice generator, authenticated submission or saved teacher grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Angle of repeat",
+          "Definition": "The smallest positive turn that maps a pattern to itself.",
+          "Rule": "For n equally spaced positions, a natural step is 360°/n.",
+          "Example": "Six placements around a center have 60° between positions."
+        },
+        {
+          "Title": "Center of rotation",
+          "Definition": "The fixed point about which every copy is turned.",
+          "Rule": "Each vertex follows a circular path with fixed radius from the center.",
+          "Example": "An endpoint two squares from O remains two squares from O after a turn."
+        },
+        {
+          "Title": "Rotational symmetry",
+          "Definition": "A figure coincides with itself after a positive turn smaller than 360°.",
+          "Rule": "Check the whole labeled figure, not one matching corner.",
+          "Example": "A non-square rectangle has a 180° symmetry; a generic scalene triangle does not."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Six-step pattern",
+          "Question": "What turn separates six equally spaced images around a center?",
+          "Method": "Divide a full revolution into six equal parts.",
+          "Steps": [
+            "A full turn is 360°.",
+            "Compute 360°÷6=60°.",
+            "After six 60° turns the total is 360°, returning to the starting orientation."
+          ],
+          "Answer": "60°.",
+          "Check": "6×60°=360°."
+        },
+        {
+          "Title": "A quarter-turn pattern",
+          "Question": "What is the step angle for four equally spaced copies?",
+          "Method": "Divide 360° by four.",
+          "Steps": [
+            "There are four identical turn intervals.",
+            "360°÷4=90°.",
+            "Four consecutive 90° turns complete exactly one revolution."
+          ],
+          "Answer": "90°.",
+          "Check": "4×90°=360°."
+        },
+        {
+          "Title": "Check symmetry of a rectangle",
+          "Question": "Will a non-square 2-by-5 rectangle agree with itself after a 90° turn? What about 180°?",
+          "Method": "Compare the positions of its long and short sides.",
+          "Steps": [
+            "After 90°, the original horizontal 5-unit dimension becomes vertical, so it does not match its starting location.",
+            "After 180°, both axes reverse and the 2-by-5 rectangle lies on its original outline.",
+            "A 180° rotation is therefore a symmetry, but a 90° rotation is not."
+          ],
+          "Answer": "90°: no. 180°: yes.",
+          "Check": "A square would have the additional 90° rotational symmetry."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting any number of repeated shapes as symmetry of a single shape.",
+          "WhyWrong": "A whole pattern and a constituent asymmetric tile can have different symmetries.",
+          "Correction": "Specify the figure being tested and require full overlap."
+        },
+        {
+          "Mistake": "Assuming the turn center may change between copies.",
+          "WhyWrong": "A single rotation pattern uses the same center.",
+          "Correction": "Keep center fixed and check vertex distances."
+        }
+      ],
+      "SummaryPoints": [
+        "Equal angular spacing divides 360° into consistent steps.",
+        "Check the same center for every image.",
+        "Rotational symmetry requires complete overlap of the chosen figure."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L08 Rotation Patterns",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "90° clockwise",
+              "Cells": [
+                "around common vertex O",
+                "one of four equal triangular regions"
+              ]
+            },
+            {
+              "Label": "180° about endpoint B",
+              "Cells": [
+                "opposite collinear segment",
+                "same length"
+              ]
+            },
+            {
+              "Label": "180° about midpoint M",
+              "Cells": [
+                "endpoints exchange",
+                "A′=B, B′=A"
+              ]
+            },
+            {
+              "Label": "180° about off-line C",
+              "Cells": [
+                "distinct parallel segment",
+                "same length and midpoint through C"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

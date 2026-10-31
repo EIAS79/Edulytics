@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+  "sourceLessonCode": "8.1.1",
+  "observedAt": "2026-10-30T07:02:26.083Z",
+  "startedAt": null,
+  "closedAt": null,
+  "elapsedSeconds": null,
+  "repository": "EIAS79/Edulytics",
+  "branch": "curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029",
+  "pullRequest": 593,
+  "parentHead": "fe1aa855528ba99059d4a2ba770f4b73f89eaa06",
+  "lessonContentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+  "previousRichSha256": "21eb6f1f9bf3fa2e4e0f912b447b58eab96e5f3e5b360ac192d06dd24a293c7b",
+  "latestRichSha256": "00a15a8c7e1a38d45bb2094b238d181dc5aeaffd267ea41708680c1a9c122a43",
+  "checkpointCommitSHA": "027ea29965020f0fdb11cf1fff278bfba5d0ad2b",
+  "commitSHARecordedIn": "LATEST_UNIT_GATE_HEAD_AT_START; final new HEAD in PR comment",
+  "originalSource": {
+    "root": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core",
+    "student": "08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
+    "teacher": "08_Grade_8_OUR_IM\\1\\1\\index.html",
+    "teacherPreparation": "08_Grade_8_OUR_IM\\1\\1\\preparation.html",
+    "sourcePages": "HTML on disk; exact local page numbering not applicable",
+    "activityIds": [
+      "1.1 Which One Doesn’t Belong: Diagrams",
+      "1.2 Triangle Square Dance",
+      "Are You Ready for More? reverse-dance extension",
+      "1.3 Cool-down - Frame to Frame (teacher login protected)"
+    ],
+    "goal": "Describe orally and in writing the slide or turn of a shape in informal language; justify which angle/ray diagram does not belong",
+    "roles": [
+      {
+        "role": "BuildingOn",
+        "standard": "4.MD.C.5"
+      },
+      {
+        "role": "BuildingTowards",
+        "standard": "8.G.A.1"
+      }
+    ],
+    "figures": "Original four-angle student description locally readable; source six-frame publisher blackline master not verified as locally present",
+    "publisherCoolDown": "Teacher sign-in required; original prompt not locally visible"
+  },
+  "activityMapping": [
+    {
+      "source": "1.1",
+      "candidate": "Original four-ray SVG plus native ShapeDecomposition cards; no publisher pixel reuse",
+      "finding": "FIGURE_CONSTRUCTED_SVG_NOT_ATTACHED_IN_SHARED_RENDERER",
+      "status": "BLOCKED"
+    },
+    {
+      "source": "1.2",
+      "candidate": "Original eighteen triangle frames SVG, native 3x6 frame tables and prior partner instructions retained",
+      "finding": "MATHEMATICAL_SVG_CONSTRUCTED_BUT_AUTHENTIC_LEARNER_ATTACHMENT_MISSING",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "source": "Extension",
+      "candidate": "Added reverse-frame instructions and inverse-move reasoning, preserve partner and teacher review",
+      "finding": "REVERSE_SEQUENCE_SOURCE_ALIGNED_TEACHER_REVIEW_REQUIRED",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "source": "Cool-down",
+      "candidate": "Original Edulytiks open-ended first-party equivalent authored without representing protected publisher wording as verified",
+      "finding": "FIRST_PARTY_EQUIVALENT_AUTHORED_ORIGINAL_COOLDOWN_NOT_VERIFIED",
+      "status": "BLOCKED"
+    }
+  ],
+  "firstPartyCoolDownRubric": {
+    "status": "DRAFT_TEACHER_SCORED_NOT_RUNTIME_INTEGRATED",
+    "maxPoints": 8,
+    "expected": "P ends at (4,1), the marked tip points east after a clockwise quarter-turn; no side length or angle measure changes",
+    "criteria": [
+      {
+        "name": "Endpoint reference P=(4,1)",
+        "max": 2
+      },
+      {
+        "name": "Correct clockwise quarter-turn ending east",
+        "max": 2
+      },
+      {
+        "name": "Congruent figure preserving lengths and angles",
+        "max": 2
+      },
+      {
+        "name": "Reproducible oral/written construction and explanation",
+        "max": 2
+      }
+    ],
+    "scale": "0 incorrect/missing, 1 partially justified, 2 correct with evidence",
+    "machineScored": false,
+    "persistedTeacherScore": false
+  },
+  "gates": {
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "blockingDependencies": [
+    {
+      "owner": "Supervisor 2 / academic standards owner",
+      "reason": "Source role 8.G.A.1 is BuildingTowards; blueprint incorrectly adds Addressing:8.G.A.1, approval required before A",
+      "action": "Explicit role adjudication, do not silently edit blueprint"
+    },
+    {
+      "owner": "Supervisor 2 / shared renderer",
+      "reason": "Four-angle graphic, six-frame card layout, accessible/authenticated lesson display not verified",
+      "action": "Confirm learner-visible accessible representation, route shared attachment centrally"
+    },
+    {
+      "owner": "Supervisor 2 / shared Practice and teacher workflow",
+      "reason": "Transformations static routing only; lesson-exact generation, negative grading and authenticated teacher rubric/attempt persistence not verified",
+      "action": "Prepare single-writer runtime contract and defer authenticated DB/tenant acceptance to Stage D"
+    }
+  ],
+  "focusedVerification": {
+    "independentCardSequenceMath": "MANUALLY_CHECKED card movements: A/B equal frames 1–3, C differs at frame 3, A/B differ at frame 4; each step is one rigid slide or quarter-turn",
+    "localSourceReading": "DONE teacher, student and preparation local HTML",
+    "testSourceChanged": "tests/academic-us-ccss-g8-coder4-v13-u01-final-source-spot.test.cjs",
+    "testSourceUpdatedAlso": "tests/academic-us-ccss-g8-coder4-v13-u01-batch.test.cjs",
+    "automatedTests": "PASS 4/4 in focused new Node test; tested uncommitted isolated working tree, SHA256 file evidence in new audit",
+    "build": "NOT_RUN",
+    "actions": "AUTOMATIC_GITHUB_ACTIONS_NOT_DISABLED",
+    "authenticatedBrowser": "NOT_RUN",
+    "database": "NOT_RUN",
+    "testCommand": "node --test tests/academic-us-ccss-g8-coder4-u01-l01-unblock.test.cjs",
+    "testExitCode": 0,
+    "testPassed": 4,
+    "testFailed": 0
+  },
+  "previousEvidencePreserved": [
+    "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json",
+    "docs/curriculum/us-ccss-g8-coder4-p0-current-execution-ledger-20261030.json"
+  ],
+  "counters": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 0,
+    "B_CLOSED": 0,
+    "C_PREPARED": 0,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "REMAINING": 131
+  },
+  "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+  "nextLessonAllowed": true,
+  "release": "NO_GO",
+  "newEvidencePath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+  "courseOwnedVisualPaths": [
+    "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg",
+    "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg"
+  ],
+  "firstPartyParityReview": {
+    "reviewer": "Coder 4",
+    "status": "SUPERVISOR2_ACADEMIC_APPROVED_WITH_CENTRAL_METADATA_DISCREPANCY_RECORDED",
+    "sourceRolesVerified": true,
+    "sourceFiguresOriginal": false,
+    "firstPartyAlternative": true
+  },
+  "blockerScope": "NO_ACADEMIC_ABC_BLOCKER; RUNTIME_AND_SHARED_BLUEPRINT_DEFERRED_STAGE_D",
+  "latestSequentialABCDecision": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+  "advancePolicy": "ADMIN_V_UNIT_STRICT_SEQUENTIAL_AFTER_COURSE_OWNED_ABC_ACCEPTANCE",
+  "unitGateEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
+  "strictUnitStatus": "UNIT_IN_PROGRESS",
+  "approvedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json",
+  "readyForStageD": true,
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "newABCClosureEvidence": "SUPERVISOR2_PR593_COMMENT_6523795237; L01 C COURSE_SPEC_AND_INDEPENDENT_ORACLE"
+}

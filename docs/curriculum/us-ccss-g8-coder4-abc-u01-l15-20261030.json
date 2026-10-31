@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L15",
+  "unit": "U01",
+  "officialOrdinal": 15,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\15\\index.html",
+      "sha256": "634f182312d5ae21bb424642a64c6304c5f911452b9482600129ad04b779e903"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\15\\index.html",
+      "sha256": "06a012df4495b6340795f66a134da1cfae0128483c049ac5663526dd9913c543"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\15\\preparation.html",
+      "sha256": "a706adf18b8bd771f1ffebc8034a6de10a01fde9077e3548057fa399e8aee48f"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.G.A.2"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.5"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "15.1: Can You Draw It?",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Classify all nine combinations of scalene/isosceles/equilateral with acute/right/obtuse and explain impossible cells.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "15.2: Find All Three",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Find three congruent triangle angle cards with each angle shown once and test total 180°.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "15.3: Tear It Up",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Cut three first-party angle corners and line them along a straight angle; explain why this represents 180°, including quadrilateral extension.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L15 Adding the Angles in a Triangle",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 0
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l15-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 3,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": 70,
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "e883a1bb55fc33f01f56f40cd07de6fd9b3527a7",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:02:16.009820+00:00",
+  "nextLesson": "U01:L16",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}
