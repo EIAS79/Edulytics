@@ -1,0 +1,242 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L18",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\18\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\18\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\18\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\18\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "24d060405b616aacd222503c5d4cb88c1a843911f2e9b91e60721db639d62a87",
+    "TeacherActivities": "e185d0d71ec95ed7496e12d7fd3c402f6c13beda0a6b817aa0854baacf8aaa78",
+    "StudentActivities": "a52167a438b45ef74c56e964ce006ed06a311c2c2eaebc2f9185addbfcc549cb",
+    "StudentPractice": "ad2f62688db6d610840435c8af24da6d120d4eb69dbb72d0d7b71092278a2571"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSA-CED.A.4",
+      "HSA-REI.D.11",
+      "HSG-GMD.A.3"
+    ],
+    "Addressing": [
+      "HSF-IF.C.7.b",
+      "HSG-MG.A.1",
+      "HSG-MG.A.3"
+    ],
+    "BuildingTowards": [
+      "HSF-IF.C.7.b"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "18.1",
+      "Goal": "source drum 36in diameter×1ft depth, V2.25pi cubic feet and scaled V2.25pi*k³",
+      "Mode": "SOURCE_EXACT_UNIT_CONVERSION_AND_PAPER"
+    },
+    {
+      "Source": "18.2",
+      "Goal": "original 12/24 helium tanks, inverse graph, 15ft diameter route limit, numeric contextual interpretation",
+      "Mode": "FIRST_PARTY_GRAPH_PAPER_AND_CUBEROOT"
+    },
+    {
+      "Source": "18.3",
+      "Goal": "beach ball radius1.5, source two graph curves, k5/k10 and 12000 total, source reversed comparison correction",
+      "Mode": "TEACHER_TWO_GRAPH_MODEL_WITH_CORRECTION"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine cube density, prism ratios, cone slant, square pyramid, packaging and source figure tasks",
+      "Mode": "EXACT_P1_P8_WITH_P9_HUMAN_FIGURE"
+    },
+    {
+      "Source": "18.4",
+      "Goal": "publisher protected Circular Logo",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L18",
+    "TaskId": "geo-u05-l18-drum-beach-helium-volume-two-graphs",
+    "GroupId": "GEO_U05_L18_DRUM_BEACH_ROOT_GRAPHS_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Teacher-scored first-party printable source drum/beach cylinder/sphere models with two graph lines, helium budget decisions and original nine Practice answers, 4x2 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l18-volume-graph-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "sets drum diameter36in radius1.5ft height1ft, V2.25pi, correctly writes V=2.25pi k³ with model assumptions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "solves 6000ft³ k≈9.468 and diameter28.405, doubling helium multiplies diameter by cbrt2, max15ft requires k5 and two tanks",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "derives beach original4.5pi and shared k total6.75pi k³, solves12000→k8.271, critiques source reversed drum-vs-ball comparison",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "explains nine source Practice cases, cube mass375, ratios17/15 vs11/6, slant5 and unavailable source P9 pictures",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "cube edge5cm density3g/cm³",
+        "TeacherExpected": "mass125*3=375grams",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "prism A5x5x6in vs B2x4x6in SA/V",
+        "TeacherExpected": "A SA170 V150 ratio17/15; B SA88 V48 ratio11/6; B higher ratio",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "cone r4 V16pi find apex-to-edge length",
+        "TeacherExpected": "height3 and slant5 units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "right square pyramid side10 midpoint slant13",
+        "TeacherExpected": "h12 V400, choice D",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "two squares four oblique parallelograms",
+        "TeacherExpected": "oblique square prism choice D",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "juice cylinder r2.5 h10.5 vs prism4x6 h10.5",
+        "TeacherExpected": "cylinder65.625pi≈206.167cm³, rectangular prism252cm³ larger",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "source parallelogram A1 scaled area x",
+        "TeacherExpected": "scale y=sqrt(x) for x≥0, axes x area cm² and y dimensionless",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "parallel layer slices tapered rectangles, congruent triangles/squares, tapered circles",
+        "TeacherExpected": "pyramid, triangular prism, square prism, cone respectively under intended full cross-section family",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "five source solids A-E select four with equal volume",
+        "TeacherExpected": "actual original source five figures required to certify four letters; no guessed mappings",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "DrumExactInitialV": "2.25pi",
+    "DrumRoundedV": 7.07,
+    "BeachInitialV": "4.5pi",
+    "BeachRoundedV": 14.14,
+    "SourcePoint1000K": "5.21",
+    "Tanks12Volume": 6000,
+    "Source12TankK": 9.468320564099924,
+    "Source12TankDiameter": 28.40496169229977,
+    "TankDoubleDiameterFactor": "cubert(2)",
+    "MaxDiameterFeet": 15,
+    "MaxK": 5,
+    "MaxV": 883.5729338221294,
+    "MaxWholeTanks": 2,
+    "CombinedK5V": 2650.718801466388,
+    "CombinedK10V": 21205.750411731104,
+    "EqualKFor12000": 8.271339878658667,
+    "BeachRadiusAt12000": 12.407009817988001,
+    "SourceTeacherGraphComparison": "REVERSED_SOURCE_ERROR_BALL_2X_DRUM_AT_SAME_K",
+    "P1Mass": 375,
+    "P2ARatio": "17/15",
+    "P2BRatio": "11/6",
+    "P3Slant": 5,
+    "P4Choice": "D",
+    "P5Choice": "D",
+    "P6PrismLarger": true,
+    "P7Graph": "sqrt(x)",
+    "P9": "SOURCE_PICTURES_TEACHER_REQUIRED"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source drum radius1.5ft height1ft has V2.25pi ft³ not9pi and grows k³",
+      "12 tanks of500ft³ give k~9.468, diameter~28.405; limit15 gives k5 and two whole tanks",
+      "beach volume4.5pi twice drum2.25pi for same k; total12000 gives k~8.271",
+      "P1 mass375g, P3 slant5, P6 prism252 exceeds cylinder65.625pi"
+    ],
+    "Equivalent": [
+      "exact drum2.25pi and source rounded7.07 are approximate same model, not identical exact expressions",
+      "k=cubert(6000/(2.25pi)) and diameter3*cubert(6000/(2.25pi)) follow positive scale",
+      "combined V(k)=6.75pi*k³ equals(2.25pi+4.5pi)*k³"
+    ],
+    "Wrong": [
+      "use diameter3feet as RADIUS to report drum volume9pi",
+      "double tanks doubles diameter instead of multiplying by cube root2",
+      "claim original drum uses twice beach helium from reversed source teacher synthesis",
+      "max route15ft would need 18 tanks instead of 2"
+    ],
+    "Boundary": [
+      "V0 gives collapsed k0 graph point, positive balloon requires V>0",
+      "original drum/balloon are simplified geometries and pressurized helium tank efficiencies not verified",
+      "P9 source picture-only matches must be teacher verified; no numerical choices invented"
+    ],
+    "Malformed": [
+      "graph x axis labelled scale and y volume while source defines inverse k as output",
+      "mix feet and inches without conversion for drum",
+      "replace sphere beach base4.5pi with pi*1.5² cylinder formula",
+      "claims Desmos runtime or persisted grades verified"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l18-volume-graph-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l18-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

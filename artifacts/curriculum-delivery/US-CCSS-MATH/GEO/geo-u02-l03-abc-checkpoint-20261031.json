@@ -1,0 +1,148 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+  "Unit": "U02",
+  "Ordinal": 25,
+  "SourceEdition": "IM High School Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\3\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\3\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\3\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\3\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "330fd0e40e4c59c35840e2a3316f5f688be78c62f4abecfd45c955c11c4460ea",
+    "TeacherActivities": "42f526b4fc3f48ea1988cbdeabef97652fa64a707af2b26032b61d0404f1685b",
+    "StudentActivities": "ab444057d566efbd9c211e98aa1da9f2aa2a4f1962d99ffecdc3c5e9865f3be9",
+    "StudentPractice": "5fe1daff82385e3c1cf8dcf336f7dfb8a6f72d5af5a404decedd8bf900a2e105"
+  },
+  "SourceComparisonA": [
+    {
+      "Source": "3.1",
+      "Original": "Must, might and impossible from congruent ABC and A'B'C', then applet/image and counterexamples",
+      "FirstParty": "paper labelled triangle question ordered must/might/cannot with independent isosceles counterexample"
+    },
+    {
+      "Source": "3.2",
+      "Original": "Invisible Triangles information-gap cards, transformer/player, step-by-step 1-3 vertex alignment, optional reflections only",
+      "FirstParty": "original independent hidden card and exact verbal pointwise instructions with peer recording; original cards not copied"
+    },
+    {
+      "Source": "3.3",
+      "Original": "Noah and Priya translation rotation reflection, explain B/E coincidence, ray DF and C/F coincidence",
+      "FirstParty": "precise same-ray-distance proof and angle orientation using independent triangles"
+    },
+    {
+      "Source": "Practice 1-8",
+      "Original": "ordered transformations, angle rotation, multiple choice, revisits U02:L01,L02 and parallel angles",
+      "FirstParty": "8 source-indexed paper teacher-reviewed mathematics routes with figure-dependency flags"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Original": "teacher-login restricted",
+      "FirstParty": "original unverified; independently authored paper argument alternative"
+    }
+  ],
+  "SourceLimitation": "Teacher/student first-edition source HTML and all eight Practice statements inspected. Publisher hidden game cards/figures not reproduced or visually certified; protected Cool-down remains unverified.",
+  "RetainedB": "Three earlier valid RichV2 worked examples and all U02:L01-L02 content remained unchanged.",
+  "RepairedB": "Add source 3.1 must/might/cannot discussion, original independent 3.2 invisible triangle partner transformation process, full 3.3 translation rotation conditional reflection proof of B/E and C/F coincidence, source practice P1-P8 and 8-point teacher assessment.",
+  "StageA": "A_CLOSED_SOURCE_TASK_TEXT_AND_FIRST_PARTY_PAPER_EQUIVALENCE_VISUAL_UNVERIFIED",
+  "StageB": "B_CLOSED_INVISIBLE_TRIANGLES_POINT_BY_POINT_PROOF_AND_EIGHT_PRACTICE",
+  "StageC": "C_CLOSED_AUTHORING_TEACHER_PAPER_RUBRIC_FIXTURES_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U02_L03_POINTWISE_RIGID_TRIANGLE_PROOF_HUMAN_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L03_POINTWISE_RIGID_TRIANGLE_PROOF_HUMAN_REVIEW",
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "SharedOwner": "Supervisor 2 issue #453",
+    "SavedGrade": "UNVERIFIED_STAGE_D",
+    "DigitalLessonRoute": "UNVERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "six ordered corresponding sides/angles correctly listed and figure matches preserved",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "reproducible first-vertex translation, second-vertex rotation and conditional correct reflection with fixed-point guarantees",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "valid same-ray/same-distance coincidence explanations for B and C with angle alignment",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "correct must/might/cannot classification plus counterexample rather than a drawing-based assumption",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "AB=DE and matching ray from D means B-image equals E, not merely equal distances",
+      "once the third ray is aligned to DF and AC=DF, C-image equals F",
+      "reflection about DE fixes D and E while swapping which half-plane contains the third vertex"
+    ],
+    "Equivalent": [
+      "different rigid sequence preserving same ordered triangle correspondence",
+      "start with reflection if orientation reversed, then translate/rotate, with all three corresponding vertices aligned"
+    ],
+    "Wrong": [
+      "equal lengths without requiring the same ray claimed to force endpoint coincidence",
+      "arbitrary unmatched side is never equal under any congruence, ignoring an isosceles possibility",
+      "reflecting about line not passing through already aligned vertices shifts both vertices"
+    ],
+    "Boundary": [
+      "nondegenerate triangles and distinct first two vertices required",
+      "A and D aligned but B-image on opposite DE ray: rotate by 180 not skip correct ray alignment",
+      "if C-image already on target side of DE, do not force the reflection"
+    ],
+    "Malformed": [
+      "missing translation vector or rotation centre",
+      "omits source-target vertex ordering",
+      "no proof of angle/length preservation"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l03-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedStaticCheck": {
+    "JSON_PACK_PARSE": "PASS",
+    "JSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_CHECK_SYNTAX_ONLY": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "NODE_TEST_RUN": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "ChangedFiles": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u02-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l03-pointwise-triangle-proof-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u02-l03-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l03-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "aa2db468d418eefe9684b0c746dcc7a00b6265af",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T00:14:02.276248Z",
+  "ClosedAtUtc": "2026-10-31T00:15:36.465700Z",
+  "ElapsedSeconds": 94.189,
+  "BlockersABC": [],
+  "StageDDependencies": [
+    "Issue #453 secure exact lesson teacher-scored submission",
+    "original figure parity and paper alternative approval",
+    "authenticated tenant isolation and final CI"
+  ],
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04"
+}

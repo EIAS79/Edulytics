@@ -1,0 +1,206 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L10",
+  "Status": "C_CLOSED_AUTHORING_TEACHER_PHYSICAL_BRACES_PROOFS_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\10\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\10\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\10\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\10\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "b045b3b3c8012378f04e54c1ae20dbb6583de84d666efb12cb83001f0a173fb9",
+    "TeacherActivities": "3d5a47bc79fa5f57045f2b7b7c83a16c9208132133d4d5e6cc9ce34e1e68ea97",
+    "StudentActivities": "6cc6c13aef119569af3cbb59cda4fe9552950c619dc0dd73c31a8e118a85d3fe",
+    "StudentPractice": "210579aa3e19fdf1e54b27f2596266b7e7eabac7e59c39d5c4010d572666e202"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "7.G.A.2",
+      "HSG-CO.B.8"
+    ],
+    "Addressing": [
+      "HSG-MG.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "10.1",
+      "Goal": "Physical bracing/metal-fastener exploration, different flexible and rigid diagonals",
+      "FirstPartyMode": "PHYSICAL_TEACHER_OBSERVED_DIAGONAL_CONSTRUCTION"
+    },
+    {
+      "Source": "10.2",
+      "Goal": "Two independent card sort classifications then rigid/flexible and SSS/SAS/ASA arguments",
+      "FirstPartyMode": "TEACHER_OWNED_PRIVATE_DIAGRAM_CARDS"
+    },
+    {
+      "Source": "10.2 Extension",
+      "Goal": "John Hancock braced building possible quadrilateral, source photograph not reproduced",
+      "FirstPartyMode": "FIRST_PARTY_CONJECTURE_AND_TEST"
+    },
+    {
+      "Source": "10.3",
+      "Goal": "Partner take-turns four quadrilateral claims matched to justified diagrams",
+      "FirstPartyMode": "TEACHER_REVIEWED_GIVEN_VS_PROVEN_CARD_PROTOCOL"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 original source problem skills including kite, reflection, angle bisector, rotation",
+      "FirstPartyMode": "EIGHT_TEACHER_SCORED_SOURCE_INDEXED_PRACTICE"
+    },
+    {
+      "Source": "10.4 Publisher Cool-down",
+      "Goal": "Restricted original",
+      "FirstPartyMode": "FIRST_PARTY_EDULYTIKS_PROOF_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L10_QUADRILATERAL_BRACES_PHYSICAL_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L10",
+    "Mode": "TEACHER_SELECTED_PHYSICAL_MANIPULATIVES_AND_PAPER_REVIEW",
+    "TaskId": "geo-u02-l10-diagonal-braces-card-sort-8-practice",
+    "TeacherHandoff": "Provide two long two short hole-punched strips and four fasteners per student or equivalent self-contained handmade materials; guide rigid/flexible brace demonstration, privately authored source-equivalent sort cards, partner explanation and 8 source-indexed practice tasks. Teacher observes and scores written proof against four 0–2 criteria offline; source original imagery/blackline not copied.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct physical brace configurations, distinction of diagonal and side-midpoint bar, counterexample to four-bar rigidity",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Two justified diagram-card classifications, rigid/flexible grouping and properly established SSS/SAS/ASA correspondence",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Accurate four matching quadrilateral claims and partner given-versus-to-prove argument without circular proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Eight source-indexed tasks and first-party Cool-down with correct kite/angle-bisector/rotation logic, no unsupported claims",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Scaffold rigidity and geometry",
+      "FirstPartyPrompt": "Compare a braced and unbraced original-independent scaffold diagram, identify rigidity constraints and why added right angles may follow.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Diagram multiple-select",
+      "FirstPartyPrompt": "Using a teacher verified diagram, evaluate relationships of CBE/ABE angles, DA/CB and DC/AB segments, and DC∥AB, DA∥CB; do not guess source true set without actual marks.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Prove parallelogram",
+      "FirstPartyPrompt": "For a teacher-supplied labelled quadrilateral, show both opposite side pairs parallel by valid triangle congruence and alternate interior angles.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "Kite congruent halves angle bisector",
+      "FirstPartyPrompt": "After WYZ congruent WYX by SSS, explain why diagonal WY bisects angles ZWX and ZYX from corresponding angles.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "Kite 133 and 34 degree angle",
+      "FirstPartyPrompt": "Find ZWY using teacher supplied correct figure of kite with WXY=133 and ZYX=34; explain any symmetry assumptions.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "Isosceles reflection proof blanks",
+      "FirstPartyPrompt": "Use segment CD midpoint B, line AB perpendicular bisects CD (only if justified by equidistance), reflection swaps C,D fixing A and B; do not assume B midpoint by mere diagram label.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Identify invalid angle bisector ASA proof",
+      "FirstPartyPrompt": "Given GE bisects FGH at G only, show why HEG=FEG at E does not follow and ASA is unsupported.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P8",
+      "OriginalSkill": "Rotation auxiliary quadrilateral",
+      "FirstPartyPrompt": "Draw new auxiliary line of 8-vertex figure and rotate it 90 degrees counterclockwise around K with exact source supplied coordinate/diagram; preserve ordered corresponding vertices.",
+      "Mode": "TEACHER_PAPER_OR_MANIPULATIVE_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "FlexibleRhombusExamples": [
+      "side5 angle60 non-square rhombus",
+      "side5 angle90 square"
+    ],
+    "P7_Error": "GE_BISECTS_AT_G_ONLY_DOES_NOT_IMPLY_AT_E",
+    "RigidFromDiagonal": "TWO_TRIANGLES_FIXED_BY_SSS_WITH_DIAGONAL_LENGTH",
+    "CardCriteria": [
+      "SSS",
+      "SAS",
+      "ASA"
+    ],
+    "PracticeCount": 8
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Card sort can classify same object in two independent valid ways",
+      "A hinged rhombus can vary angle without changing four side lengths",
+      "An added fixed diagonal can freeze two resulting triangles",
+      "P7 cannot invoke ASA from only the G angle bisector"
+    ],
+    "Equivalent": [
+      "different valid SSS/SAS/ASA proof matching explicitly labelled diagram facts",
+      "two different material brace layouts implementing the same rigid configuration"
+    ],
+    "Wrong": [
+      "all 4 bars force a rectangle",
+      "midpoint-to-midpoint bar is always a diagonal",
+      "GE bisector of FGH proves an E-angle equality",
+      "uncited parallel segment claim treated as given"
+    ],
+    "Boundary": [
+      "degenerate collinear hinges do not create nondegenerate triangle",
+      "separate rigid geometry from approximate traced shape"
+    ],
+    "Malformed": [
+      "card categorization without explanation",
+      "no physical drawing or teacher-visible evidence",
+      "incorrect rotation direction or center"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_RESTRICTED_UNVERIFIED_EDULYTIKS_FIRST_PARTY_PAPER",
+  "FirstPartyCooldown": {
+    "Prompt": "Construct and compare a braced and unbraced quadrilateral, choose a diagonal and complete a logically sound SSS/SAS/ASA proof; identify an invalid second-angle assumption in an angle-bisector proof.",
+    "Mode": "TEACHER_REVIEWED_PAPER_PLUS_PHYSICAL",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l10-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN application browser grading, tenant saved grades, CI, merge/deploy"
+}

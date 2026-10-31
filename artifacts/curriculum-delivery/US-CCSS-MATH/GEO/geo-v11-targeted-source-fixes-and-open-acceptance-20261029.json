@@ -1,0 +1,153 @@
+{
+  "SchemaVersion": 1,
+  "ReportDate": "2026-10-29",
+  "Course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "CourseCode": "GEO",
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "PR": "https://github.com/EIAS79/Edulytics/pull/583",
+  "Decision": "NO_GO",
+  "Workstream": "V11",
+  "RecoveryDevice": "Anas_Nitro / Personal",
+  "RecoveryCheckout": "C:\\Users\\codin\\Edulytiks-Coder6-GEO-Recovery-20261029",
+  "PreviousCleanCheckpoint": "91384478475abdb318569fa54324676df1a3cba3",
+  "LocallyTestedContentSha": "d4100f6e1f490786657277d6759eae537066ddd9",
+  "CourseCoverage": {
+    "blueprint": 124,
+    "richV2CandidatesAuthored": 124,
+    "units": 8,
+    "workedExamplesTotal": 372,
+    "workedExamplesStructurallyInspected": 372,
+    "workedExamplesIndependentlyAnswerCertified": "NOT_VERIFIED_ALL_372",
+    "keyConceptsStructurallyInspected": 372
+  },
+  "FixedAcademicDefects": [
+    {
+      "code": "U08:L04",
+      "fix": "Conditionals P(A|B) and P(B|A), separate table denominators and complete example steps"
+    },
+    {
+      "code": "U08:L07",
+      "fix": "Independence and dependence conditional equality and no-replacement example"
+    },
+    {
+      "code": "U08:L08",
+      "fix": "Multiplication rule P(A∩B)=P(A|B)P(B), zero-conditioning example and worked steps"
+    },
+    {
+      "code": "U08:L09",
+      "fix": "Both conditional directions, table fractions and mistaken probability labels"
+    },
+    {
+      "code": "U08:L10",
+      "fix": "Conditional independence criterion and worked comparison"
+    },
+    {
+      "code": "U08:L11",
+      "fix": "Sixth truncated conditional discovered by new test; correct independent replacement model plus source-aligned face-weighted two-sided-token example P=2/3"
+    },
+    {
+      "code": "U06:L07",
+      "fix": "Absolute-value focus/directrix distance |y−d|, equation proof, visual and point test"
+    }
+  ],
+  "TestEvidence": {
+    "Command": "node --test tools/curriculum/us-ccss-geo-richv2-contract.test.cjs tools/curriculum/us-ccss-geo-v11-conditional-integrity.test.cjs tools/curriculum/us-ccss-geo-v11-svg-assets.test.cjs",
+    "NodeTestsPassed": 29,
+    "NodeTestsFailed": 0,
+    "NodeTestsSkipped": 0,
+    "ExitCode": 0,
+    "MathOracles": [
+      "Conditional table denominators, independence versus disjointness, zero conditioning",
+      "3 equally likely two-sided tokens and 6 equally likely orientations giving 2/3 conditional probability",
+      "Parabola point-to-focus and point-to-directrix distances",
+      "Source-based radius/angle and cylinder formula checks"
+    ],
+    "GuaranteeLimits": [
+      "Node tests and static Razor encoding are not authenticated browser rendering",
+      "Structural review of 372 worked examples is not exhaustive independent mathematical verification",
+      "No full .NET or real Practice grader executed"
+    ]
+  },
+  "SourceResearch": {
+    "OfficialEdition": "IM Geometry 2019–2021",
+    "PreviousSourceComparisonInitial": 82,
+    "NewTeacherPreparationPagesRead": 9,
+    "NewStudentLessonPagesRead": 3,
+    "CombinedInitialTeacherStudentComparisonState": 85,
+    "NewTeacherOnlyState": 6,
+    "RemainingSyllabusOnlyRows": 33,
+    "AllLessonAcademicAcceptance": 0,
+    "ResearchPages": [
+      "U06:L06",
+      "U06:L07",
+      "U07:L08",
+      "U07:L11",
+      "U08:L07",
+      "U08:L08",
+      "U08:L09",
+      "U08:L10",
+      "U08:L11"
+    ],
+    "StudentPageRead": [
+      "U08:L08",
+      "U08:L09",
+      "U08:L11"
+    ],
+    "SourceTaskCaveat": "Page checks cover named preparation and three accessible student pages; do not equate with exhaustive task/rubric equivalence for all 124."
+  },
+  "VisualAssets": {
+    "Count": 3,
+    "Directory": "src/Edulytics.Web/wwwroot/geometry/geo/v11",
+    "VisualAssetManifest": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v11-three-original-svg-candidates-20261029.json",
+    "SvgXmlParsing": "3/3 VALID on authorized device",
+    "IntegratedIntoAuthenticatedRichV2": "NOT_VERIFIED: standalone assets staged, shared visual renderer does not yet embed them",
+    "AuthenticDynamicAppletAndHandDrawing": "NOT_IMPLEMENTED"
+  },
+  "Practice": {
+    "ExactGeoPrefixMappingsInExistingGlobalLessonSkillMapping": 0,
+    "GlobalMappingRows": 238,
+    "CourseRuntimeContractResolution": "NOT_TESTED; zero exact mapping rows is NOT proof no alternative fallback exists",
+    "IndependentGeneratorAndVerifier": "NOT_VERIFIED",
+    "CorrectWrongMalformedEquivalentBoundary": "NOT_EXECUTED_IN_REAL_GRADER",
+    "AttemptsFeedbackPersistence": "NOT_VERIFIED",
+    "HumanTeacherSubmissionReviewRubricGrade": "NOT_VERIFIED"
+  },
+  "Security": {
+    "CourseAdoption": "NOT_VERIFIED",
+    "TwoSchoolDisposablePostgresHTTPS": "NOT_EXECUTED",
+    "WrongALG1WrongSchoolWrongLessonNegativeCases": "NOT_EXECUTED",
+    "SharedOwnerIssue": "https://github.com/EIAS79/Edulytics/issues/453"
+  },
+  "Stages": {
+    "A": {
+      "initialComparisonRecorded": 85,
+      "teacherPreparationOnly": 6,
+      "sourceSyllabusPending": 33,
+      "approved": 0
+    },
+    "B": {
+      "authoredCandidates": 124,
+      "originalAccessibleSvgCandidates": 3,
+      "approved": 0
+    },
+    "C": {
+      "verified": 0
+    },
+    "D": {
+      "verified": 0
+    }
+  },
+  "CI": {
+    "BranchSha": "d4100f6e1f490786657277d6759eae537066ddd9",
+    "ActionsWorkflowsObserved": 7,
+    "StatusAtCheck": "QUEUED (math-foundation job and catalogue audit also queued)",
+    "Conclusion": "NOT_VERIFIED_GREEN",
+    "DotnetLocal": "NOT_RUN; original global.json SDK=10.0.200; dotnet missing from Windows standard locations; no SDK pin changed",
+    "SharedCatalogRepair": "https://github.com/EIAS79/Edulytics/pull/598 (separate central-owner unmerged review)"
+  },
+  "Boundaries": [
+    "No main merge, production deployment or real school writes",
+    "No shared materializer/seeder/Practice engine/security/CI edits",
+    "PR #583 stays Draft until source, Practice, authentic rendering, tenant, CI and owner gates pass"
+  ]
+}

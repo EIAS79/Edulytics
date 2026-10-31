@@ -1,0 +1,241 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L05",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\5\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\5\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\5\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\5\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "b3bbe92e0bf42ffa488aced76e624c8f5dec8112b36854cd2a9421498cc702cd",
+    "TeacherActivities": "83094f5b1433aaf89df6fa1c36b61fee8c244451dbf4497e4085a9e21fc3a9aa",
+    "StudentActivities": "1d9e0257a78e841ea7da1af49dc915d7faba3f2a5e724560198dcce6326c6b9b",
+    "StudentPractice": "e8bd5bed29f1ec38007fceed4c44f65719e6b92c4d3a9932b168c2fd9aa09106"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "6.EE.A.3",
+      "HSA-SSE.B.3.a"
+    ],
+    "Addressing": [
+      "HSA-SSE.A.2",
+      "HSA-SSE.B.3"
+    ],
+    "BuildingTowards": [
+      "HSG-GPE.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "5.1",
+      "Goal": "four original multiplication/distributive Math Talk expressions",
+      "Mode": "EXACT_SOURCE_EXPANSIONS"
+    },
+    {
+      "Source": "5.2",
+      "Goal": "four squares and five candidates with three source perfect trinomials, peer-error correction",
+      "Mode": "TEACHER_PERFECT_SQUARE_ORACLE_AND_RUBRIC"
+    },
+    {
+      "Source": "5.3",
+      "Goal": "original circle centre2,-7 r10 and factored centre-3,5 r8, optional sphere",
+      "Mode": "SOURCE_EXACT_EQUIVALENT_CIRCLE_FORMS"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven original factor matching, circle equation, diameter, point test and prism image problem",
+      "Mode": "EXACT_P1_P6_WITH_P7_SOURCE_IMAGE_TEACHER"
+    },
+    {
+      "Source": "5.4",
+      "Goal": "protected Center and Radius",
+      "Mode": "FIRST_PARTY_HUMAN_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L05",
+    "TaskId": "geo-u06-l05-source-perfect-trinomials-and-two-circle-equivalences",
+    "GroupId": "GEO_U06_L05_PERFECT_SQUARE_CIRCLE_FACTOR_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Printable original source four MathTalk distribution, four binomial squares, five candidate selections and two circle forms, seven Practice solutions with dated teacher4x2 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l05-squares-circles-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "uses distributive reasoning to expand original four products and explains the missing 2ab term",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "identifies exactly source perfect squares 1,3,4 of five candidates and factors each correctly",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "converts source centre(2,−7),r10 circle to x²+y²−4x+14y−47=0 and second centre(−3,5),r8 both directions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves original seven Practice P1 map A5 B2 C1 D3 E4, P2 r9, P4 diameter, P5 inside/outside/on and P7 figure limits",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "factor source x²+6x five expressions A-E",
+        "TeacherExpected": "A5 B2 C1 D3 E4",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "circle expanded x²−8x+16+y²+10y+25=81",
+        "TeacherExpected": "centre(4,−5) radius9",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "write three perfect square trinomials and factored copies",
+        "TeacherExpected": "e.g x²+8x+16=(x+4)², x²−14x+49=(x−7)², x²+2x+1=(x+1)²",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "circle diameter endpoints12,3 and−18,3",
+        "TeacherExpected": "centre(−3,3), radius15, (x+3)²+(y−3)²=225",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "circle centre2,1 radius5 candidate4,0;−3,3;−2,−2",
+        "TeacherExpected": "inside, outside, on respectively by squared distances5,29,25",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "triangle vertices2,5;3,1;4,2 under translation−2,+4",
+        "TeacherExpected": "congruent choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "triangular prism height6 and pictured base",
+        "TeacherExpected": "teacher original labelled diagram required to find base area then V6B",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "MathTalk": [
+      "5x+15",
+      "x^2-3x",
+      "x^2+6x+8",
+      "x^2-10x+25"
+    ],
+    "SourceFourSquares": [
+      "x^2-14x+49",
+      "x^2+8x+16",
+      "x^2-20x+100",
+      "x^2+2x+1"
+    ],
+    "SourcePerfectIndices": [
+      1,
+      3,
+      4
+    ],
+    "CircleA": "(x-2)^2+(y+7)^2=100",
+    "CircleAExpanded": "x^2+y^2-4x+14y-47=0",
+    "CircleB": "(x+3)^2+(y-5)^2=64",
+    "CircleBExpanded": "x^2+y^2+6x-10y-30=0",
+    "StudentSummary": "(x-11)^2+(y+1)^2=225",
+    "P1Map": [
+      5,
+      2,
+      1,
+      3,
+      4
+    ],
+    "P2Center": [
+      4,
+      -5
+    ],
+    "P2Radius": 9,
+    "P4Center": [
+      -3,
+      3
+    ],
+    "P4Radius": 15,
+    "P5SqDist": [
+      5,
+      29,
+      25
+    ],
+    "P6Choice": "A",
+    "P7": "SOURCE_DIAGRAM_TEACHER"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source (x+4)^2=x²+8x+16, NOT x²+16",
+      "source five candidates perfect 1 x²−6x+9,3 x²+18x+81,4 x²−2x+1",
+      "source circles centres(2,-7) r10 and(-3,5) r8 with equivalent expanded forms",
+      "Practice P1 A5 B2 C1 D3 E4, P5 candidates inside outside on"
+    ],
+    "Equivalent": [
+      "(x+3)^2+(y-5)^2=8² and x²+y²+6x−10y−30=0 describe identical circle",
+      "source (x−2)^2+(y+7)^2=10² and x²+y²−4x+14y−47=0 equivalent"
+    ],
+    "Wrong": [
+      "(x+4)^2 incorrectly expanded x²+16 dropping8x",
+      "source x²+10x+20 wrongly treated perfect square, needs25",
+      "source centre(2,-7) misread(-2,7)",
+      "diameter radius taken30 instead of15"
+    ],
+    "Boundary": [
+      "positive r for nondegenerate circle; r0 singleton point",
+      "original Practice P7 base measurements only source figure, exact numerical volume not supported by text",
+      "some factorizations may be real but not integer; perfect square requires exact constant b²/4"
+    ],
+    "Malformed": [
+      "rearranges equation by subtracting100 from x-terms only",
+      "claims squared radius9 for P2 instead of81",
+      "unbalanced equivalent circle equations with mismatched constants"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l05-squares-circles-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l05-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

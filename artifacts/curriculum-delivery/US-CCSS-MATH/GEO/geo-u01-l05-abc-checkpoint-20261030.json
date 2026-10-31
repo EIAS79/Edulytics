@@ -1,0 +1,120 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
+  "LessonTitle": "Construction Techniques 3: Perpendicular Lines and Angle Bisectors",
+  "Ordinal": 5,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "Predecessor": "a07922f4c105d78d2630b28a705d50876f59dd6c",
+  "Source": {
+    "TeacherPreparation": "10_HS_Geometry/1/5/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/5/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/5/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/5/practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "45d42db96eb5a1267340ca6e7b7538712359df582890bcd28e8166b098a796af",
+    "TeacherActivities": "e418db5c899509d4819b5a44cabef9bd65e43f5ac6848a8af14d45d1da09d46d",
+    "StudentActivities": "deee31c68b2709ba60eea7f6cd598acadadc89af9d2cf230626e7c08199b02ff",
+    "StudentPractice": "fbd0a7e1fe632ddc9cbd9cb6115217fd567244a6ae4d6a2123de2ce390e8b315"
+  },
+  "Edition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "First-party Edulytiks material; source course CC BY 4.0; no publisher figures or media imported",
+  "StageA": {
+    "Status": "A_CLOSED_COURSE_SOURCE_PARITY",
+    "Standards": {
+      "BuildingOn": [
+        "HSG-CO.A.1"
+      ],
+      "Addressing": [
+        "HSG-CO.D.12"
+      ],
+      "BuildingTowards": [
+        "HSG-CO.C.9",
+        "HSG-CO.D.12",
+        "HSG-CO.D.13"
+      ]
+    },
+    "Goals": [
+      "perpendicular through given point ON line",
+      "angle bisector"
+    ],
+    "SourceToRichV2": [
+      {
+        "Source": "5.1 Two Circles",
+        "FirstParty": "equal circle radius EA=EB, FA=FB and student conjecture EF perpendicular AB"
+      },
+      {
+        "Source": "5.2 Make It Right",
+        "FirstParty": "line l through C, symmetric A,B about C and bisector with arc intersections"
+      },
+      {
+        "Source": "5.3 Bisect This",
+        "FirstParty": "first estimate D, then equal-radius ray BX and partner alternating critiques"
+      },
+      {
+        "Source": "optional angle trisection/origami",
+        "FirstParty": "recorded optional only; never claimed compass/straightedge angle trisection"
+      },
+      {
+        "Source": "Practice 1–8",
+        "FirstParty": "eight independent reasoning/spatial analogues, earlier spiral review preserved"
+      },
+      {
+        "Source": "publisher Cool-down",
+        "FirstParty": "unverified publisher wording; original paper cooldown"
+      }
+    ],
+    "ExternalSignoff": "NOT_CLAIMED"
+  },
+  "StageB": {
+    "Status": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
+    "Preserved": [
+      "three existing worked examples",
+      "SSS and straight-angle explanations"
+    ],
+    "Fixes": [
+      "restore initial estimate D and partner swap",
+      "restore two-circle conjecture-first stage",
+      "restore perpendicular thru C source sequence",
+      "independent teacher cooldown"
+    ],
+    "VisualMode": "paper geometry and verbal label explanation; not authenticated online drawing"
+  },
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
+  "StageD": "NOT_RUN",
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "return_queue": [],
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
+  "Tests": {
+    "IndependentNode": "34 PASS / 0 FAIL",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "CountersAfter": {
+    "TOTAL": 124,
+    "AUTHORED": 124,
+    "A_CLOSED": 5,
+    "B_CLOSED": 5,
+    "C_PREPARED": 5,
+    "ABC_READY_FOR_D": 5,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "REMAINING": 119
+  },
+  "StartedAt": null,
+  "ClosedAt": null,
+  "ElapsedSeconds": null,
+  "Timing": "Not measured; no invented time",
+  "StageCClosure": {
+    "Status": "C_CLOSED_AUTHORING_ONLY",
+    "TaskCount": 2,
+    "PracticeCount": 8,
+    "Scoring": "human paper",
+    "StageD": "NOT_RUN"
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05"
+}

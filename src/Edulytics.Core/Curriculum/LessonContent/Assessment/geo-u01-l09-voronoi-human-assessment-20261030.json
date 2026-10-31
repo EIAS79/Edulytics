@@ -1,0 +1,121 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L09",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "prep": "e7be35f6484b13ff41ca96f8e1506c046077aaf63159fbafe8b01eb92f0518a1",
+    "teacher": "6bd7c3cb759752f2ac17ae4f141f5c1d3e8dfbbd9e64bdcd2ab9357e73c6acfe",
+    "student": "161f5db5b4d21c5da6d79dcc3b49cb6b7410873013aa6959b552bbe357036ff2",
+    "practice": "7bbab2e0741bc9d118783594883c1bf81ef11b26135d91968b4e87304f73eaa7"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "HSG-CO.D.12"
+    ],
+    "Addressing": [
+      "HSG-CO.D.12",
+      "HSG-MG.A.3",
+      "HSN-Q.A.2",
+      "HSN-Q.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-MG.A.3"
+    ]
+  },
+  "SourceActivities": [
+    "9.1 Notice and Wonder Dots in a Square",
+    "9.2 Who Is Closest? three and four sites, allocation and ties",
+    "9.3 optional expanded dynamic Voronoi with letter",
+    "9.4 Another Layer tessellation and Voronoi"
+  ],
+  "Task": {
+    "Prompt": "On original paper square-city map, partition nearest regions for A=(0,0), B=(8,0), C=(0,6), then add D=(8,6). Label all bisector boundaries, triple ties and write which additional evidence would be required to allocate 100 staff. Show one original grid tessellation and derived nearest-site cells.",
+    "Type": "HUMAN_TEACHER_SCORED_MODEL_DIAGRAM_AND_ARGUMENT",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "nearest-site bisectors for 3 labelled stores correct",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "fourth store update and tie cases labelled",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "tessellation/Voronoi geometry with complete cells",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "staffing assumptions and valid argument with limitation",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Items": [
+      {
+        "Id": "P1",
+        "Prompt": "How can you compare which of two sites A and B is closer to a point X?",
+        "Expected": "Construct the perpendicular bisector AB, locate X on the closer half-plane or tie boundary.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Prompt": "A point is on the perpendicular bisector of AB. Is it nearer A or B?",
+        "Expected": "Equal distance; the point lies on the Voronoi boundary.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Prompt": "Three stores at (0,0),(8,0),(0,6) have a common triple-tie point. Locate it.",
+        "Expected": "(4,3), distance 5 from all three.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Prompt": "How can you make an isosceles triangle ABC from base AB?",
+        "Expected": "Take C on perpendicular bisector of AB but not on AB, so AC=BC.",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "Prompt": "Which conditions define a regular polygon?",
+        "Expected": "At least three sides; all side lengths equal and all interior angles congruent.",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "Prompt": "What completes a rectangle after constructing two perpendiculars to AB at A and B?",
+        "Expected": "Mark C on the perpendicular at A, construct a line through C parallel AB, meet B's perpendicular at D and join.",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "Prompt": "Why do two equal-radius arcs from points B,D constrain the bisector of angle BAD?",
+        "Expected": "Equal distance from marks on both rays plus common vertex establishes symmetric triangles and equal angles.",
+        "Points": 2
+      }
+    ],
+    "TotalMax": 14
+  },
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: explain why the site at (4,3) is equally distant from three stores and why equal-area alone cannot determine staff counts",
+  "PaperDelivery": "Student submits labelled map and justification to teacher offline; teacher checks geometry, scores each criterion 0/1/2, signs/dates feedback sheet. No live upload/persisted grade claimed.",
+  "Cases": {
+    "CORRECT": "proper cells and tie lines and demand caveat",
+    "EQUIVALENT": "translated/rotated coordinate maps, other valid polygon intersection methods",
+    "WRONG": "incorrect nearest-site region or staffing numbers claimed from area without assumptions",
+    "INSUFFICIENT": "unlabelled colored regions or numeric answer without diagram",
+    "MALFORMED": "coincident sites treated as distinct, undefined region"
+  },
+  "AutoGrading": false,
+  "RuntimePracticeReadiness": "NOT_VERIFIED",
+  "StageD": "NOT_RUN: school/pathway lesson secure teacher evidence, authenticated rendering and grade persistence Supervisor 2 #453"
+}

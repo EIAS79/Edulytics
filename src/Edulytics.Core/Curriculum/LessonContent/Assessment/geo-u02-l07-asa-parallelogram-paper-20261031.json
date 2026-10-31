@@ -1,0 +1,206 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+  "Status": "C_CLOSED_AUTHORING_TEACHER_PAPER_ASA_RAY_INTERSECTION_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "0ad62a2a0c861b1d7863b786ffce8c110f1ad47d73a0afe7685c78c0e71e69f0",
+    "TeacherActivities": "b9ee445d2863abce23632626639a6a8651f4d57c477a4bc1672803dd707fcfd5",
+    "StudentActivities": "8675b1df54a6ad30bf7330892381516ab7d40ca3e4e14362adca8e6c8b970cac",
+    "StudentPractice": "181eabf4191d9eccd33095a944d14e47c7da3c4d7715940e0d7671d4b0dc551a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.5",
+      "HSG-CO.B.7",
+      "HSG-CO.B.8",
+      "HSG-CO.C.9"
+    ],
+    "Addressing": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10",
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.8"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "Unique line through two distinct points; distinct lines share at most one point",
+      "FirstPartyMode": "SOURCE_ALLOWED_PAPER_NOTICE_WONDER_WITH_TEACHER_DISPLAY"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "Original ASA WXY/DEF proof uses two angle rays unique intersection, not unknown distance",
+      "FirstPartyMode": "PAPER_TEACHER_REVIEWED_RIGID_MOTION_PROOF"
+    },
+    {
+      "Source": "7.3 OPTIONAL",
+      "Goal": "Parallel/transversal angle relationships a=42 and other labelled angles",
+      "FirstPartyMode": "OPTIONAL_PAPER_TEACHER_REVIEW_IMAGE_DEPENDENT"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "Opposite parallelogram sides via common diagonal and two alternate interior angles with ASA",
+      "FirstPartyMode": "PAPER_AUXILIARY_DIAGONAL_SAS_AVOIDANCE"
+    },
+    {
+      "Source": "7.4 Extension",
+      "Goal": "Parallelogram ears and a hexagon with two ears; figure proof teacher reviewed",
+      "FirstPartyMode": "OPTIONAL_HAND_DRAWN_POLYGON_REVIEW"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven original source-indexed theorem, isosceles, circle, correspondence and proof tasks",
+      "FirstPartyMode": "TEACHER_REVIEW_AND_LIMITED_INDEPENDENT_ORACLES"
+    },
+    {
+      "Source": "7.5 Cool-down",
+      "Goal": "Publisher-locked original unverified",
+      "FirstPartyMode": "EDULYTIKS_FIRST_PARTY_MANUAL_PROOF"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L07_ASA_PARALLELOGRAM_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_MATHEMATICAL_PROOF_REVIEW",
+    "TaskId": "geo-u02-l07-two-ray-asa-and-diagonal-parallelogram",
+    "TeacherHandoff": "Give an original first-party labelled paper source task: 7.1 two-line assertion Notice/Wonder (paper source alternative), 7.2 ASA WXY/DEF construction, optional 7.3 transversal discussion, 7.4 parallelogram diagonal proof, and seven indexed paper Practice questions, with author-created first-party Cool-down. Authorized teacher records evidence and 0-2 criteria offline only.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "OriginalGeoGebraApplet": "SOURCE_OPTIONAL_NOT_RECREATED"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct source two-line assertion and ASA included-side matching, no claim two distinct lines have two intersections",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Rigid ASA proof uses optional reflection and unique intersection of two distinct angle-ray lines, not unsupported length equality",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Diagonal AC, two alternate interior angle pairs and included common side, valid parallelogram opposite-side theorem",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "All seven source-indexed Practice components and first-party Cool-down with justified figure/teacher checks",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Prove ADE congruent CBE on original labelled diagram",
+      "FirstPartyPrompt": "On teacher-verified independent labelled diagrams, identify ASA/SAS criterion without assuming any visually marked angle not given.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Repair Han proof for BCD to DAB",
+      "FirstPartyPrompt": "Given DC parallel AB, identify alternate interior angle CDB=ABD and shared DB; justify or derive the additional required angle from actual source figure before applying ASA rather than hallucinating it.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Two angle bisectors and shared GE",
+      "FirstPartyPrompt": "When GE bisects angle HEF and angle FGH, prove HGE congruent FGE using angle HEG=GEF, angle HGE=EGF and shared included GE by ASA.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "Isosceles angles 33 and 35 degrees",
+      "FirstPartyPrompt": "Explain use of the two isosceles triangles and an original teacher-available figure before solving angle ABD; do not provide an unsupported numeric answer.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "Only a universal square family",
+      "FirstPartyPrompt": "Of triangles, pentagons, rectangles and squares each with one side length 5, explain only squares of side 5 are necessarily congruent.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "Minimum extra data after given angle",
+      "FirstPartyPrompt": "With a source-aligned labelled triangle and copied angle LKJ, describe the missing side/angle data that would suffice under SAS or ASA.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Two-circle radius relation",
+      "FirstPartyPrompt": "For circles centered at C and B, inspect a teacher-provided correct circle diagram and justify equality via same-centre radii, not arbitrary guessed chords.",
+      "Scoring": "TEACHER_REVIEW_REQUIRED",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "ASA_ThirdVertex": "UNIQUE_INTERSECTION_OF_TWO_DISTINCT_NONPARALLEL_LINES",
+    "IncludedSide": "WX_TO_DE",
+    "Parallelogram": "AB_PARALLEL_CD__BC_PARALLEL_AD__AC_SHARED__ASA_THEN_OPPOSITE_SIDES_EQUAL",
+    "P3": "GE_SHARED_ANGLE_BISECTOR_AT_G_AND_E__ASA",
+    "P5_OnlyUniversallyCongruent": "ALL_SQUARES_WITH_SIDE_5",
+    "OptionalTransversal": "42_OR_138_DEGREES_DEPENDING_ON_LABEL"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Two distinct nonparallel lines in the plane intersect at at most one point",
+      "ASA W to D X to E and aligned rays intersect at common Y=F",
+      "AB parallel CD, BC parallel AD, AC diagonal => ASA opposite triangles congruent",
+      "GE is included shared side between two pairs of bisected angles, valid ASA",
+      "Only squares with any side length 5 must all be congruent"
+    ],
+    "Equivalent": [
+      "Any rigid alignment of source ASA triangles that preserves exact ordered vertex correspondence",
+      "paper alternative to optional GeoGebra exploration, with valid notice-wonder explanation"
+    ],
+    "Wrong": [
+      "Two distinct nonparallel lines share two different points",
+      "ASA known included side replaced by nonincluded side without deriving missing angle",
+      "ASA third vertex equality inferred from unknown distances without ray intersection",
+      "Assuming parallelogram opposite sides congruent as initial premise",
+      "All rectangles with one side 5 are congruent"
+    ],
+    "Boundary": [
+      "Nondegenerate triangles have angle rays meeting at unique point",
+      "Coincident lines must not be treated as distinct",
+      "Optional transversal exercise may be omitted while 7.2/7.4 remain mandatory"
+    ],
+    "Malformed": [
+      "Unlabelled angle rays",
+      "No first-party paper figure or source-to-assessment handoff",
+      "Undocumented teacher review for complex geometry figures"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_EDULYTIKS_ORIGINAL_PAPER_ALTERNATIVE",
+  "FirstPartyCooldown": {
+    "Prompt": "Given parallelogram ABCD with AB parallel CD and BC parallel AD, draw diagonal AC and prove AB=CD and BC=AD via ASA, showing both alternate interior angles and unique-ray-intersection reasoning.",
+    "Mode": "TEACHER_REVIEWED_PAPER_ARGUMENT",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN online assignment and saved rubric/tenant/authenticated app tests/CI/merge/deploy"
+}

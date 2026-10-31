@@ -1,0 +1,265 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L04",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\4\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\4\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\4\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\4\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "2db3f9aab872f694509e8e6677862b6417811c257fe5820448f789a17dc21431",
+    "TeacherActivities": "31bde6e8deeb3d6160fe4e3a2bcf2b35f9ad167cdfa86feca16c26907c68b3fc",
+    "StudentActivities": "ade7af19302e0ac7d0ec14824fbdc8b89d7e08ca177a18ee1c4415955085f1c8",
+    "StudentPractice": "44a8a630a7cceecb910b32c9234caf460c0bf28c86362829b1eaf31649473970"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-SRT.A.3"
+    ],
+    "Addressing": [
+      "HSG-SRT.C.6",
+      "HSN-Q.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.7"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "4.1",
+      "Goal": "AA similar a/c=b/d Ratio Rivalry with student rebuttal",
+      "Mode": "TEACHER_AA_NARRATIVE"
+    },
+    {
+      "Source": "4.2",
+      "Goal": "four different right triangles per acute angle, three quotients and mean, eight source reference rows",
+      "Mode": "FIRST_PARTY_MULTIPLE_MEASUREMENT_PAPER_TABLE"
+    },
+    {
+      "Source": "4.3",
+      "Goal": "20/70 complement, 55/35 row, adjacency ratio0.839 inference and false halving conjecture",
+      "Mode": "TEACHER_CLASS_TABLE_REASONING"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight estimated angle, square/equilateral and ramp/quilt items",
+      "Mode": "EXACT_AND_TEACHER_IMAGE_REVIEW"
+    },
+    {
+      "Source": "4.4",
+      "Goal": "protected Lift Off",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L04",
+    "TaskId": "geo-u04-l04-four-scaled-right-triangles-complementary-ratios",
+    "GroupId": "GEO_U04_L04_RIGHT_TRIANGLE_UNNAMED_RATIO_TABLE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Four measured independently labelled right triangles per assigned acute angle, three raw and averaged quotient columns, student estimate and false-conjecture critique, source P1-P8 with human teacher-scored rubric and measurement precision.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "derives AA ratio a/c=b/d despite visually different triangle sizes",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "measures four per acute angle and computes all three ordered ratio columns and their averages with appropriate precision",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "uses source 55/35 and 20/70 complementary rows accurately and critiques angle-halving ratio fallacy",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies exact/estimated Practice P1-P8, dimensionless units, and source-image limits",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "opposite/hyp0.67 angle B estimate",
+        "TeacherExpected": "around42 degrees, not an exact measured angle",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "adj/hyp0.97,opp/hyp0.26,opp/adj0.27",
+        "TeacherExpected": "acute angle about15 degrees, other about75; labels A/C require original figure",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "hyp1, 30-degree adjacent0.866 opposite0.5 then hyp2",
+        "TeacherExpected": "30/60 degrees preserved; adjacent about1.732, opposite1",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "equilateral ABC x and angle B",
+        "TeacherExpected": "angle B 60, x depends on original figure labelled dimension",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "equilateral side8 area",
+        "TeacherExpected": "16sqrt3 square units, choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "square side from picture",
+        "TeacherExpected": "if diagonal6 as options suggest, side6/sqrt2 option B, actual diagram must be checked",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "6-inch rise ramp moving start closer than5ft",
+        "TeacherExpected": "ramp angle increases, choice B",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "quilt square ABCD diagonal BD4 and E midpoint AD",
+        "TeacherExpected": "AE=sqrt2 and area ABCD8 square units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "Angle35SourceRow": [
+      "0.819",
+      "0.574",
+      "0.700"
+    ],
+    "Angle55SourceRow": [
+      "0.574",
+      "0.819",
+      "1.428"
+    ],
+    "SourceRows10To80": {
+      "A10": [
+        0.985,
+        0.174,
+        0.176
+      ],
+      "A20": [
+        0.94,
+        0.342,
+        0.364
+      ],
+      "A30": [
+        0.866,
+        0.5,
+        0.577
+      ],
+      "A40": [
+        0.766,
+        0.643,
+        0.839
+      ],
+      "A50": [
+        0.643,
+        0.766,
+        1.192
+      ],
+      "A60": [
+        0.5,
+        0.866,
+        1.732
+      ],
+      "A70": [
+        0.342,
+        0.94,
+        2.747
+      ],
+      "A80": [
+        0.174,
+        0.985,
+        5.671
+      ]
+    },
+    "Ratio039ForAdjacentAngle": "about33deg",
+    "UnknownRowsAngles": [
+      65,
+      25
+    ],
+    "P1AngleEstimateDegrees": 42,
+    "P3NewAdjacentApprox": "1.732",
+    "P3NewOpposite": 1,
+    "P5Area": "16sqrt3",
+    "P5Choice": "A",
+    "P7Choice": "B",
+    "P8AE": "sqrt2",
+    "P8SquareArea": 8,
+    "Terminology": "THREE_UNNAMED_RATIO_COLUMNS_PRE_TRIG_NAMING"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "30 row about0.866 0.500 0.577, and 60 row about0.500 0.866 1.732",
+      "source 55 row0.574 0.819 1.428 swaps to 35 row0.819 0.574 about0.700",
+      "P5 equilateral8 area16sqrt3 and P8 diagonal4 yields square area8 AE sqrt2"
+    ],
+    "Equivalent": [
+      "a/c=b/d follows from b=k*a,d=k*c and AA proportion",
+      "0.700 and0.701 describe slightly different rounding of 0.574/0.819, not exactly equal values"
+    ],
+    "Wrong": [
+      "30-degree tangent is equal to half the 60-degree tangent",
+      "0.839 adjacent/hyp means angle40 because 40 opposite/adj column is0.839",
+      "report ratio .73239437 exactly from physical measurements5.2 and7.1 to tenths"
+    ],
+    "Boundary": [
+      "strictly positive legs and hypotenuse, adjacent/hyp strictly between0 and1",
+      "at0/90 degree limiting cases degeneracy prevents valid acute triangle",
+      "source P2 A/C orientation and P6 pictured square side not certified by text alone"
+    ],
+    "Malformed": [
+      "no assigned acute angle to identify adjacent vs opposite",
+      "three quotients omitted or ratios with inconsistent units/denominators",
+      "claims digital GeoGebra or locked cooldown machine grading verified"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l04-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

@@ -1,0 +1,309 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u02-l10-l12-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L10",
+      "CultureCode": "en",
+      "Title": "Practicing Proofs",
+      "ExplanationParagraphs": [
+        "Learning goal: Translate conjectures about flexible quadrilateral braces and diagonal conditions into precise statements, and choose SSS, SAS or ASA to justify useful quadrilateral properties.",
+        "A quadrilateral made from four hinged bars with fixed side lengths may change its angles and diagonals while keeping the bars the same length. Adding a diagonal bar can turn a mechanism into two triangles with SSS-controlled shapes. Whether the structure is rigid depends on exact joints and geometry, not an unlabelled drawing.",
+        "Verbal diagram: diagonals AC and BD of quadrilateral ABCD meet at O. If AO=CO and BO=DO, then triangles AOB and COD satisfy SAS because ∠AOB=∠COD are vertical angles; hence AB=CD. Similar argument with AOD and COB shows AD=BC. Such a quadrilateral is a parallelogram provided its vertices define a simple nondegenerate quadrilateral.",
+        "Original hands-on task: build a hinged quadrilateral from four straight equal-length or unequal-length bars and compare it with a version with a braced diagonal. Sketch two distinct noncongruent configurations when possible and explain how the diagonal's length changes. Sort a set of independently labelled diagrams by which triangle congruence theorem follows from their given markings.",
+        "Teacher rubric (0–8): clear physical constraints; valid counterexample to universal rigidity of a four-bar hinge; correct theorem classification from explicit marks; complete noncircular quadrilateral conclusion. Actual models, discussions and written proofs need teacher scoring, not numeric-only auto-grading.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These are original Edulytiks diagrams described in words, problems and reasoning; no publisher artwork or proprietary task cards are copied.",
+        "10.1 Brace Yourself: source physical manipulatives are two longer and two shorter strips of card stock, each 1 inch wide with evenly spaced holes, plus four metal fasteners. Assemble different diagonal configurations, trace the quadrilaterals formed by endpoints, and distinguish a true diagonal between opposing vertices from a misplaced brace through side midpoints. Change the crossing location/angle and record counterexamples to falsely claiming all hinged quadrilaterals are rigid.",
+        "10.2 Card Sort: More Practice Seeing Shortcuts. Use independently authored teacher-owned first-party diagram cards, not original protected blackline masters. In pairs sort by two categories of their own with justifications, regroup rigid versus flexible, then match explicit pairs of triangles to SSS, SAS or ASA using indicated marks. Recognize when triangle KNL/MNL needs an additional angle via angle sum or side via Pythagorean theorem before a theorem can legitimately apply. External John Hancock photograph not copied.",
+        "10.3 Matching Pictures to Proofs: partners take turns explaining which independent labelled diagram illustrates: both diagonals perpendicular and bisecting implies all four sides equal; one diagonal perpendicular-bisects the other implies two pairs adjacent sides equal; opposite angles of equal-sided quadrilateral equal; and opposite sides of a parallelogram equal. Distinguish GIVEN from PROVED, do not identify any rhombus diagram as already having perpendicular bisecting diagonals unless both properties are justified.",
+        "10.4 Source publisher Cool-down is restricted; original Edulytiks paper substitute: create a hinged quadrilateral and rigidly braced version, then choose a valid diagonal and prove a quadrilateral fact using SSS, SAS or ASA. Student labels every corresponding element and must explain why the proposed facts suffice. Teacher grades four 0–2 criteria rather than an automatic scalar.",
+        "Source-indexed Practice P1-P8: P1 brace/photographic scaffold comparison original-independent verbal diagrams; P2 figure-dependent multiple-select about CBE/ABE and parallel segments (no unsupported true-set invented); P3 prove an independent labelled quadrilateral a parallelogram; P4 SSS kite congruent halves implies WY bisects two apex angles; P5 original kite angle 133/34 degrees requiring teacher-supplied figure; P6 fill reflection proof of isosceles triangle using perpendicular bisector, avoiding invalid assumption B is the midpoint simply because it lies on some line; P7 GE bisects angle FGH but does NOT necessarily bisect angle HEF so an ASA second angle is unsupported; P8 rotate the original-independent 8-vertex figure 90 degrees counterclockwise around K and state correct ordered image of an auxiliary quadrilateral."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rigid and flexible frames",
+          "Definition": "A rigid frame retains pairwise distances under allowed motion; a hinged polygon can flex if constraints do not determine diagonal lengths.",
+          "Rule": "A diagonal bar may split a quadrilateral into two triangles, whose three side lengths fix their shapes.",
+          "Example": "A hinged rhombus can flatten and widen while each side length stays constant."
+        },
+        {
+          "Title": "Diagonal bisector criterion",
+          "Definition": "A simple nondegenerate quadrilateral whose two diagonals bisect each other is a parallelogram.",
+          "Rule": "Use SAS on triangles formed by the intersecting diagonals and vertical-angle equalities.",
+          "Example": "If AO=CO and BO=DO, the opposite sides AB and CD, AD and BC are congruent/parallel."
+        },
+        {
+          "Title": "Choose congruence criteria",
+          "Definition": "A valid congruence proof must match actual marked side/angle facts and the included condition.",
+          "Rule": "Use SSS for three side pairs, SAS for two sides and their included angle, ASA for two angles and their included side.",
+          "Example": "When two diagonals bisect each other, SAS uses half-diagonal equalities and vertical angles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "A quadrilateral with bisecting diagonals",
+          "Question": "A simple quadrilateral ABCD has AC and BD meeting at O with AO=CO and BO=DO. Prove AB=CD.",
+          "Method": "Apply SAS to opposite triangles.",
+          "Steps": [
+            "Triangles AOB and COD share vertical angles ∠AOB=∠COD.",
+            "AO=CO and BO=DO are given half-diagonal equalities.",
+            "The equal angle lies between the corresponding side pairs, so SAS applies.",
+            "Therefore AOB≅COD and corresponding AB=CD."
+          ],
+          "Answer": "AB=CD; a second SAS argument also gives AD=BC.",
+          "Check": "The claim assumes intersecting diagonals of a simple nondegenerate quadrilateral."
+        },
+        {
+          "Title": "Classify an SSS, SAS or ASA proof",
+          "Question": "Two triangles have three equal corresponding side lengths, but no angle facts are given. Which theorem directly establishes congruence?",
+          "Method": "Match the givens exactly.",
+          "Steps": [
+            "List the three corresponding side pairs and verify equality.",
+            "SSS requires precisely these three length equalities.",
+            "SAS would need an included angle, and ASA two angles, which are not supplied.",
+            "Therefore use SSS without inventing angles."
+          ],
+          "Answer": "Use Side-Side-Side (SSS).",
+          "Check": "Three lengths must satisfy strict triangle inequalities for nondegenerate triangles."
+        },
+        {
+          "Title": "Understand a hinged rhombus",
+          "Question": "A hinged quadrilateral has four equal bars of length 5, but no diagonal brace. Must its diagonal lengths remain constant?",
+          "Method": "Compare two rhombi with different interior angles.",
+          "Steps": [
+            "A rhombus of side 5 with interior angle 90° is a square; each diagonal has length 5√2.",
+            "A rhombus of side 5 with interior angle 60° has diagonal lengths 5 and 5√3.",
+            "Both configurations keep all four sides length 5.",
+            "Their diagonal lengths differ, so four equal sides alone do not make the hinged frame rigid."
+          ],
+          "Answer": "No; the diagonal lengths and angles can vary while all side lengths remain fixed.",
+          "Check": "The square and 60° rhombus are not congruent because their interior angles differ."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming four fixed side lengths force a unique rigid quadrilateral.",
+          "WhyWrong": "An unbraced hinged quadrilateral can flex and change angles/diagonals.",
+          "Correction": "Add a diagonal constraint or sufficient angle information, then show two constituent triangles are fixed."
+        },
+        {
+          "Mistake": "Applying SAS when the given angle is not between the two known sides.",
+          "WhyWrong": "It becomes the ambiguous SSA arrangement.",
+          "Correction": "Mark the vertex shared by the known sides and verify the named included angle."
+        },
+        {
+          "Mistake": "Taking the fact that GE bisects angle FGH as evidence it also bisects angle HEF in a proof of HEG and FEG.",
+          "WhyWrong": "A bisector at vertex G gives equal G-angles only; equality of the angles at E is not established without additional information.",
+          "Correction": "Reject the unjustified ASA step or supply a separately proved second angle condition before applying ASA."
+        }
+      ],
+      "SummaryPoints": [
+        "Congruence criteria must match the actual diagram markings and hypotheses.",
+        "Diagonals that bisect each other imply a parallelogram via SAS; hinged four-bar figures can flex.",
+        "Teacher-scored original model and proof evidence is required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L11",
+      "CultureCode": "en",
+      "Title": "Side-Side-Angle (Sometimes) Congruence",
+      "ExplanationParagraphs": [
+        "Learning goal: Produce examples and counterexamples showing why SSA is not a general triangle congruence criterion, and recognize restricted circumstances where the given data determine a unique triangle.",
+        "This is an optional source lesson. Given an angle A, adjacent side AB of length c and opposite side BC of length a, placing B on one ray and C on the other means the circle centred B of radius a may cut the C ray in zero, one or two positive points. The number depends on the altitude h=c sin A and relative side lengths.",
+        "For an acute angle with c>0 and h=c sin A: if a<h, no triangle; if a=h, one right triangle; if h<a<c, two different triangles; and if a≥c, one nondegenerate triangle (with a=c a vertex-at-A root excluded). If angle A is obtuse, a>c is needed for a triangle. These conditions are for labelled SSA with an actual nondegenerate triangle.",
+        "Verbal diagram: A=(0,0), B=(10,0); ray AC makes a 30° angle with AB. A circle centred B radius 6 meets the ray at two different positive distances AC, so two triangles share ∠A=30°, AB=10 and BC=6 but are not congruent.",
+        "Original task: construct multiple possible triangles from each SSA data card and list the count of valid nondegenerate solutions; draw at least one counterexample to a universal SSA rule. Teacher rubric (0–8): correctly identified nonincluded angle, valid circle/ray intersections, special-case conditions and a reasoned counterexample. Physical string/card activity and mathematical arguments are human scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These are original Edulytiks diagrams described in words, problems and reasoning; no publisher artwork or proprietary task cards are copied.",
+        "11.1 Notice and Wonder: source triangles GBD and KHI share angle GBD=KHI, BD=HI and DG=IK but the angle is not included between those two sides. Use two independent labelled noncongruent drawings and elicit why three corresponding facts do not prove congruence. The original image is not copied.",
+        "11.2 OPTIONAL Dare to Be (Even More) Different: make first-party labelled triangles with angle 40 degrees and given side lengths 6 and 8 cm. In groups of three vary which side is adjacent and which is opposite the given nonincluded angle. The existence and count of valid constructions change by ordering: the longer side opposite the angle gives a unique nondegenerate triangle, while a shorter opposite side may yield two. Provide tracing-paper/straightedge alternatives to optional software.",
+        "11.3 OPTIONAL Ambiguously Ambiguous?: distribute independent first-party SSA case cards (not publisher blackline) and classify zero, one, two or degenerate constructions. For acute angle A and adjacent c with altitude h=c sin A, two distinct positive solutions exist if h<a<c, none when a<h, one tangent when a=h, and one when a>=c (exclude t=0). The source extension constructs equal-radius points C,D on ray AC, midpoint M of CD and uses the perpendicular-bisector theorem to explain right triangle ABM; this is not a blanket proof of SSA congruence.",
+        "Source-indexed Practice P1-P7: P1 only SSS, SAS, ASA always imply congruence; P2 source 30-degree angle ABC and adjacent BC=6 with opposite CA=4 yields two SSA noncongruent triangles; P3 kite WY alleged bisector needs proven correspondence, not mere visual assumption; P4 labelled CBE/DAE and segment/parallel choices require original figure confirmation; P5 kite source angles 94/112 degrees needs correct figure; P6 reflection proof blanks about isosceles triangle and perpendicular bisector requires source figure; P7 correct order of translation E→A, rotation D→B, optional reflection about AB when mapping DEF to BAC, with figure condition and no source pixel claim.",
+        "11.4 Original publisher Cool-down inaccessible. Independently authored Edulytiks paper alternative gives SSA 30-degree c=10 a=6 two positive ray-intersection positions, a no-solution case and a unique-side-longer-opposite case, teacher rubric four 0-2 criteria."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "SSA arrangement",
+          "Definition": "Two side lengths and a corresponding angle not between those two sides.",
+          "Rule": "Treat the possible third vertex as intersections of one angle ray and a fixed-radius circle.",
+          "Example": "∠A=30°, AB=10, BC=6 can produce two distinct positive positions of C."
+        },
+        {
+          "Title": "Acute ambiguous case",
+          "Definition": "For acute A, adjacent known side c and opposite side a, the altitude h=c sin A controls solution count.",
+          "Rule": "When h<a<c there are two valid triangles; smaller or larger side relationships give different counts.",
+          "Example": "A=30°, c=10, h=5, a=6 yields two triangles."
+        },
+        {
+          "Title": "Congruence sufficiency",
+          "Definition": "A set of data guarantees one congruence class of triangles only if no second noncongruent configuration satisfies the same labelled information.",
+          "Rule": "SSA is not a universal criterion even though certain SSA data admit one triangle.",
+          "Example": "If a is longer than the adjacent known side c, an acute SSA case has only one triangle."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two valid SSA configurations",
+          "Question": "Let A=(0,0), B=(10,0), ∠A=30° and BC=6. How many noncongruent triangles ABC can be built?",
+          "Method": "Intersect ray AC with the radius-6 circle centred B.",
+          "Steps": [
+            "Write C=(t cos30°,t sin30°) with t=AC>0.",
+            "BC²=(t cos30°−10)²+(t sin30°)²=36 simplifies to t²−10√3t+64=0.",
+            "The discriminant is (10√3)²−4·64=44>0.",
+            "The two roots t=(10√3±√44)/2 are distinct and positive.",
+            "The resulting triangles have different AC lengths and so are noncongruent."
+          ],
+          "Answer": "Two distinct noncongruent triangles satisfy the same SSA data.",
+          "Check": "Altitude h=10 sin30°=5 and h<6<10 confirms the ambiguous case."
+        },
+        {
+          "Title": "No triangle from an undersized opposite side",
+          "Question": "For acute ∠A=30°, AB=10, BC=4, can triangle ABC exist?",
+          "Method": "Compare BC with the perpendicular distance from B to ray AC.",
+          "Steps": [
+            "The perpendicular distance from B to the line containing ray AC is h=10 sin30°=5.",
+            "Any point C on the ray is at least 5 units from B.",
+            "The required BC length is 4<5.",
+            "The radius-4 circle centred B does not meet ray AC."
+          ],
+          "Answer": "No such nondegenerate triangle exists.",
+          "Check": "This is a geometric distance obstruction, not a failure of ruler precision."
+        },
+        {
+          "Title": "One triangle when the opposite side is long",
+          "Question": "For ∠A=30°, AB=10 and BC=12, how many valid triangles exist?",
+          "Method": "Use the SSA radius-versus-adjacent-side condition.",
+          "Steps": [
+            "Here A is acute, adjacent side c=10 and opposite side a=12.",
+            "Since a>c, only one intersection of the radius-12 circle with the positive angle ray can occur.",
+            "Algebraically the circle equation has one positive and one negative ray parameter because its constant c²−a² is negative.",
+            "Discard the negative parameter, which lies on the opposite ray."
+          ],
+          "Answer": "Exactly one nondegenerate triangle satisfies these SSA data.",
+          "Check": "SSA sometimes yields a unique triangle, but it remains an invalid universal congruence test."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming any SSA data always create two triangles.",
+          "WhyWrong": "SSA can produce zero, one or two valid constructions depending on lengths and angle.",
+          "Correction": "Compare the opposite side with the altitude and adjacent side, or check circle-ray intersections."
+        },
+        {
+          "Mistake": "Treating a negative ray parameter as a second valid triangle.",
+          "WhyWrong": "It lies behind the angle vertex, not on the required ray.",
+          "Correction": "Retain only positive distances AC and check nondegeneracy."
+        }
+      ],
+      "SummaryPoints": [
+        "SSA is not universally sufficient for triangle congruence.",
+        "For acute SSA, the circle-ray intersection count depends on altitude h=c sin A and known sides.",
+        "Source optional construction exploration is teacher reviewed, not fictitiously autograded."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L12",
+      "CultureCode": "en",
+      "Title": "Proofs about Quadrilaterals",
+      "ExplanationParagraphs": [
+        "Learning goal: Translate quadrilateral conjectures into precise hypothesis-conclusion statements, prove relationships among parallelograms, rectangles, rhombi and their diagonals, and critique invalid diagram-based reasoning.",
+        "Definitions: a parallelogram has two pairs of opposite parallel sides; a rectangle has four right interior angles; a rhombus has four congruent sides; a square satisfies both rectangle and rhombus conditions. These classes overlap. A diagram suggesting one condition is not itself proof that the condition holds.",
+        "Verbal diagram: quadrilateral ABCD has diagonals AC and BD meeting at O. If AO=OC and BO=OD, the diagonals bisect each other and ABCD is a parallelogram by converse diagonal theorem. If in addition AC⊥BD, SSS/Pythagorean reasoning gives all four sides equal, so ABCD is a rhombus. If ABCD has four right angles, successive sides are parallel in pairs, so it is a parallelogram.",
+        "Original student task: choose one of the following and provide a valid written proof or counterexample: every rectangle is a parallelogram; a parallelogram with one right angle is a rectangle; diagonals bisecting each other imply parallelogram; perpendicular bisecting diagonals imply rhombus. Exchange a proof with a peer and identify one missing hypothesis.",
+        "Teacher rubric (0–8): precise given/conclusion, labelled auxiliary diagram, a valid congruence or parallel-line proof, and constructive critique. The original proof and drawing are scored by a teacher, not by an isolated numeric response.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These are original Edulytiks diagrams described in words, problems and reasoning; no publisher artwork or proprietary task cards are copied.",
+        "12.1 Play with Parallelograms: source allows optional GeoGebra drag or physical hole-punched strips and fasteners, not a compulsory working Edulytiks applet. Build multiple parallelograms and rectangles; conjecture which implications always hold. Rectangle means four right angles, parallelogram opposite sides parallel, rhombus four equal sides. Every rectangle is parallelogram; not every parallelogram is rectangle, demonstrated by a non-right-angled slanted example.",
+        "12.2 From Conjecture to Proof: convert EACH source conjecture into explicit givens and conclusion for a labelled simple nondegenerate quadrilateral. (a) four right angles → both opposite pairs parallel (using lines perpendicular to common transversal). (b) parallelogram + one right angle → four right angles. (c) both opposite side pairs congruent → parallelogram. (d) diagonals bisect each other → parallelogram. (e) perpendicular diagonals that also bisect each other → rhombus. Students choose at least one and write a rigorous diagram/proof; distinguish properties defined/given from unproved conjecture.",
+        "12.3 Checking a Proof: students exchange a rough draft with partner, explicitly critique missing hypotheses and fill the proof without circular reasoning. OPTIONAL two unequal-radius intersecting circles centred A and B crossing at C,D: since AC=AD and BC=BD the line of centres AB lies on the perpendicular bisector of CD, hence AB perpendicular CD; require two distinct centres and two distinct crossings.",
+        "Source Practice P1-P7: P1 for parallelogram EFGH with HEF right, FGH also right because opposite angles of a parallelogram congruent (option B); P2 diagram-dependent isosceles-trapezoid triangle selection; P3 match four conjectures to precisely labelled hypothesis/conclusion; P4 ASA/SAS/SSS only (A,B,D) of six; P5 figure-dependent quadrilateral segment/angle/parallel multi-select requires original diagram; P6 kite diagonal bisects apex angles only when proven by congruent corresponding triangles; P7 triangles with angles 80,20,80 and one side of length 5 allow TWO noncongruent classes depending if 5 is the base opposite 20 or a leg opposite 80 (the two 80 roles equivalent).",
+        "12.4 Publisher-restricted Cool-down unverified. Independent Edulytiks paper alternative: write exact given/conclusion for rectangle implies parallelogram and perpendicular bisecting diagonals imply rhombus, prove one and critique a circular argument. Teacher scores four 0-2 dimensions, no online grading."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadrilateral hierarchy",
+          "Definition": "Rectangles and rhombi are special parallelograms; squares are both rectangles and rhombi.",
+          "Rule": "Use definitions and properties as stated; do not assume a diagram belongs to a subclass without evidence.",
+          "Example": "Every square is a rectangle; not every rectangle is a square."
+        },
+        {
+          "Title": "Bisecting-diagonals converse",
+          "Definition": "A nondegenerate simple quadrilateral whose diagonals bisect each other is a parallelogram.",
+          "Rule": "Prove opposite triangles congruent with SAS using vertical angles and half-diagonal equalities, then derive parallel sides.",
+          "Example": "AO=OC and BO=OD imply AB∥CD and AD∥BC."
+        },
+        {
+          "Title": "Perpendicular bisecting diagonals",
+          "Definition": "A parallelogram with perpendicular diagonals has four equal sides and therefore is a rhombus.",
+          "Rule": "Combine diagonal bisection with perpendicularity to show each side is the hypotenuse of a right triangle with the same two leg lengths.",
+          "Example": "If AO=CO=3 and BO=DO=4 with AC⊥BD, each side has length 5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove every rectangle is a parallelogram",
+          "Question": "ABCD has four right interior angles. Why are AB∥CD and BC∥AD?",
+          "Method": "Use lines perpendicular to a common transversal.",
+          "Steps": [
+            "AB⊥BC and CD⊥BC because angles at B and C are right.",
+            "Two coplanar distinct lines perpendicular to BC are parallel; thus AB∥CD.",
+            "Similarly BC⊥AB and AD⊥AB, so BC∥AD.",
+            "Both opposite side pairs are parallel, satisfying the parallelogram definition."
+          ],
+          "Answer": "Every rectangle is a parallelogram.",
+          "Check": "The four vertices define a simple quadrilateral with distinct opposite sides."
+        },
+        {
+          "Title": "Prove diagonals that bisect each other imply a parallelogram",
+          "Question": "If AC and BD meet at O with AO=OC and BO=OD, prove ABCD is a parallelogram.",
+          "Method": "Use SAS and alternate-interior-angle converses.",
+          "Steps": [
+            "At intersection O, angles AOB and COD are vertical and congruent.",
+            "AO=OC and BO=OD, so triangles AOB and COD are congruent by SAS.",
+            "Their matching alternate-interior angles along line BD show AB∥CD.",
+            "Likewise triangles AOD and COB are congruent by SAS, giving AD∥BC.",
+            "Hence ABCD is a parallelogram."
+          ],
+          "Answer": "The bisecting-diagonals condition implies both opposite sides parallel.",
+          "Check": "Assume the diagonals intersect within a simple nondegenerate quadrilateral."
+        },
+        {
+          "Title": "Prove a perpendicular-diagonal parallelogram is a rhombus",
+          "Question": "In parallelogram ABCD, diagonals intersect perpendicularly at O. Prove every side congruent.",
+          "Method": "Use midpoint and right-triangle leg equalities.",
+          "Steps": [
+            "Parallelogram diagonals bisect each other, giving AO=CO and BO=DO.",
+            "Perpendicular diagonals make AOB, BOC, COD and DOA right triangles.",
+            "Each side is a hypotenuse with squared length AO²+BO² by the Pythagorean theorem.",
+            "Thus AB=BC=CD=DA>0.",
+            "Therefore ABCD is a rhombus."
+          ],
+          "Answer": "Every parallelogram with perpendicular diagonals is a rhombus.",
+          "Check": "Without diagonal bisection, perpendicularity alone does not guarantee a rhombus."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Concluding a quadrilateral is a rhombus merely because its diagonals meet at right angles.",
+          "WhyWrong": "Many kites have perpendicular diagonals without all sides equal or both diagonals bisected.",
+          "Correction": "Require both diagonals to bisect each other as well as perpendicularity, or verify four congruent sides."
+        },
+        {
+          "Mistake": "Treating the theorem being proved as a premise.",
+          "WhyWrong": "It creates a circular proof, e.g. assuming opposite sides parallel when that is the conclusion.",
+          "Correction": "Start only from the stated diagonal conditions and use SAS to derive parallelism."
+        }
+      ],
+      "SummaryPoints": [
+        "Rectangle, rhombus and square definitions identify overlapping quadrilateral subclasses.",
+        "Diagonal bisection implies a parallelogram; adding perpendicularity implies a rhombus.",
+        "A proof must identify conditions and reasons independently of the drawing; teacher reviews authentic proofs."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u03-l10-l12-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L10",
+      "CultureCode": "en",
+      "Title": "Other Conditions for Triangle Similarity",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove optional SSS and SAS triangle similarity theorems by first dilating one triangle and then applying the corresponding triangle congruence theorem.",
+        "This lesson is explicitly optional beyond the core AA requirement. For SSS similarity, if DE/AB=EF/BC=DF/AC=k>0, dilate ABC by k. Its image has three side lengths equal to DEF, so SSS congruence plus a rigid alignment maps the image to DEF. For SAS similarity, matching ratios of two corresponding sides and equality of the angle between them yield the same result via SAS congruence.",
+        "The included angle condition matters: if two pairs of proportional side lengths meet at vertices but their given angle is elsewhere, similarity is not automatically established. Theorems require matching side and angle correspondence, positive nondegenerate lengths and a genuine triangle.",
+        "Verbal diagram: ABC has sides 4,6,8, DEF corresponding sides 6,9,12. Every quotient is 3/2, so DEF is a uniform dilation (plus possible rigid motion) of ABC. A scalene triangle may be reflected without changing side proportions or similarity.",
+        "Student task: prove both optional criteria in writing, then annotate why an SSA-like set of side ratios and a nonincluded angle fails as a general theorem. Teacher rubric (0–8): teacher scores four 0/1/2 criteria for exact ordered SAS side ratio and included angle, full dilation plus SAS congruence proof, three-ratio SSS plus SSS congruence proof, and valid SSA counterexample with source indexed practice. Proof and modelling are human scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Original Edulytiks examples and prose; no publisher artwork or protected assessment content duplicated.",
+        "Source 10.1 Math Talk Triangle Congruence (5 min): compare four original source prompts: KM perpendicular NL and KL congruent ML; angle E congruent D; HI congruent FG; AB parallel CD with angle DAC congruent BCA. Students decide which specific SSS, SAS, ASA or other congruence shortcut applies to the pictured triangles, or state exactly what missing fact is needed. Since diagrams are not replicated, no source option truth values are invented.",
+        "Source 10.2 Side-Angle-Side Triangle Similarity? (15 min OPTIONAL): Andre and Clare ask what side means when lengths differ. Two pairs of ordered corresponding sides must be proportional by ONE k>0 with the INCLUDED angle congruent. Students draw triangles ABC, DEF, dilate ABC by k to match adjacent side lengths, preserve included angle, then apply already established SAS CONGRUENCE to the scaled and target triangles. Complete a narrative proof and compare peers sequences; do not use SSA or equality of unscaled lengths.",
+        "Source 10.3 Side-Side-Side Triangle Similarity (15 min OPTIONAL): when three ordered sides have ratios DE/AB=EF/BC=DF/AC=k>0, dilate ABC to match all target side lengths, apply already established SSS CONGRUENCE to align the whole triangle, and conclude original similarity. Compare this complete proof with SAS. Optional extension asks whether SSA similarity works; nonincluded angle with two side conditions does not guarantee one triangle, so construct an ambiguous counterexample rather than accepting the false shortcut.",
+        "Source Practice P1-P8: P1 ABC to DEF similarity and angle D require actual figure; P2 source ABC A60 B84 C36 with AB7.5 AC12.7 BC11.1, DEF D60, DE25.4, DF15 gives k2, EF22.2, E36 and F84; P3 original ABC versus DEC figure-dependent; P4 AB12 AC9 DE27 with angle A68 B44 D68 F44 gives k3, DF36, choice C. P5 source candidate angles all share the multiset {75,20,85} and thus all four A-D triangles are similar as unlabelled triangles; exact ordered congruence is not asserted. P6 sketch similar rectangles; P7 any two positive line segments similar, while angles are similar only if equal measure; P8 G to Gprime figure about centre C and factor require actual displayed dot positions. Do not fabricate P1/P3/P8 diagram answers.",
+        "Source synthesis optional A–E classified with original diagrams: A similar by AA, B by SAS, C and D insufficient, E congruent by SSS and therefore similar. Original teacher-locked 10.4 Cool-down Make Your Own is unverified. Independent Edulytiks Cool-down: construct original diagrams showing included-angle SAS and three-ratio SSS similarity, each using strategic dilation and known congruence theorem, then provide an invalid SSA nonexample. Teacher reviews actual diagrams and written proof, not scalar autograding.",
+        "Source edition confirms optional lesson beyond core standards, with Building On HSG-CO.B.8; do not promote new optional SAS/SSS proofs to core AA requirement or edit shared geometry engine files. Preserve three earlier mathematically correct worked examples. Every selected paper task has one responsible educator scoring the full argument and equivalent valid constructions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "SSS similarity",
+          "Definition": "Three pairs of corresponding sides in one common positive ratio guarantee triangle similarity.",
+          "Rule": "Dilate by that ratio and use SSS congruence.",
+          "Example": "4:6:8 maps to 6:9:12 with k=3/2."
+        },
+        {
+          "Title": "SAS similarity",
+          "Definition": "Two pairs of proportional corresponding sides and an equal included angle guarantee triangle similarity.",
+          "Rule": "Dilate to match two sides, then use SAS congruence.",
+          "Example": "Adjacent source sides 4,6 and target 8,12, with equal included angle, give k=2."
+        },
+        {
+          "Title": "Optional theorem boundary",
+          "Definition": "The similarity shortcuts extend but do not erase the needed angle/side hypotheses of valid congruence criteria.",
+          "Rule": "Do not assume SSA is sufficient because two side ratios happen to agree.",
+          "Example": "An ambiguous SSA construction may produce two non-similar triangles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove SSS similarity",
+          "Question": "ABC has corresponding sides 4,6,8; DEF has 6,9,12. Prove similarity.",
+          "Method": "Dilate then use SSS congruence.",
+          "Steps": [
+            "Compute all scale quotients: 6/4=9/6=12/8=3/2.",
+            "Dilate ABC by k=3/2 about any chosen centre.",
+            "Its three side lengths become 6,9,12.",
+            "SSS makes the dilated image congruent to DEF under the given correspondence.",
+            "Therefore the original triangles are similar."
+          ],
+          "Answer": "ABC∼DEF with scale factor 3/2.",
+          "Check": "4+6>8 and 6+9>12 ensure nondegenerate triangle side sets."
+        },
+        {
+          "Title": "Prove SAS similarity",
+          "Question": "AB=4,AC=6, ∠BAC=50°; DE=8,DF=12, ∠EDF=50°. Why similar?",
+          "Method": "Scale to match both side lengths and use the included angle.",
+          "Steps": [
+            "DE/AB=8/4=2 and DF/AC=12/6=2.",
+            "Dilate ABC by k=2 so its sides from A have lengths 8 and 12.",
+            "Dilations preserve the included angle, keeping it at 50°.",
+            "The scaled image matches DE,DF and their included angle; SAS gives congruence to DEF.",
+            "Hence ABC∼DEF."
+          ],
+          "Answer": "Similar at scale 2 by SAS similarity.",
+          "Check": "The 50° angle is between the two listed sides in each triangle."
+        },
+        {
+          "Title": "Invalid proportional-side conclusion",
+          "Question": "Two triangles have one known corresponding angle 45° and one pair of sides in ratio 2. Does that force similarity?",
+          "Method": "Check whether enough corresponding facts are known.",
+          "Steps": [
+            "One angle equality gives only one angular constraint.",
+            "One side ratio determines a possible scale but says nothing about other sides.",
+            "Other angle values may vary, yielding non-similar triangles.",
+            "Need AA or valid SSS/SAS similarity data."
+          ],
+          "Answer": "No; the information is insufficient.",
+          "Check": "A counterexample uses 45–45–90 and 45–60–75 triangles, sharing one 45° but differing other angles."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using two corresponding side ratios without knowing the included angle.",
+          "WhyWrong": "The shape may vary with included angle.",
+          "Correction": "Require the included angle for SAS similarity or all three side ratios for SSS."
+        },
+        {
+          "Mistake": "Treating SSS similarity as SSS congruence without accounting for scale.",
+          "WhyWrong": "Proportional sides can have differing actual lengths.",
+          "Correction": "First apply the positive dilation so all three target lengths match, then use SSS congruence."
+        }
+      ],
+      "SummaryPoints": [
+        "SSS and SAS similarity theorems follow from dilation plus the corresponding congruence criteria.",
+        "Included angle and ordered side ratios are essential.",
+        "Optional deeper proofs and counterexamples require teacher scoring."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L11",
+      "CultureCode": "en",
+      "Title": "Splitting Triangle Sides with Dilation, Part 2",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the converse of the proportional-division theorem: a segment parallel to a triangle side divides the other two sides in the same ratio, and apply the equivalence correctly.",
+        "Let triangle ABC be nondegenerate, M lie on segment AB, N on segment AC, and MN∥BC. Then ∠AMN=∠ABC and ∠ANM=∠ACB as corresponding angles with parallel lines; the angle at A is common. AA similarity yields AM/AB=AN/AC=MN/BC. The ratios use matching corresponding sides in the SAME direction.",
+        "Conversely, for points M on ray AB,N on ray AC satisfying AM/AB=AN/AC=k>0, centre-A dilation maps B→M and C→N, so MN∥BC. The two implications together give equivalence under the described nondegenerate positive-ray conditions.",
+        "Verbal diagram: in triangle ABC, line segment MN spans sides AB and AC near vertex A and is parallel to base BC. The small triangle AMN is similar to ABC and its sides are proportional to the matching large triangle sides.",
+        "Student task: annotate a triangle with a parallel mid-segment or off-midpoint segment, write a complete AA proof and a separate dilation proof for the converse. Teacher rubric (0–4): precise parallel and ray hypotheses, matching angle pairs, consistent proportional equations, and both logical directions. Actual construction and explanation are teacher assessed.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Original Edulytiks examples and prose; no publisher artwork or protected assessment content duplicated.",
+        "Source 11.1 Notice and Wonder Parallel Segments: show independently labelled triangle BAC with transversal segment MN and AC parallel MN. Collect questions about two smaller triangles and corresponding angles BEFORE announcing that proportional division follows. Preserve student discussion and source non-copied visuals.",
+        "Source 11.2 Prove It Parallel Segments: with M on BA and N on BC, AC parallel MN, the common angle at B and parallel-line corresponding angles prove triangle BMN similar to BAC by the previously established AA theorem. State both the matching scale AC/MN=CB/NB=AB/MB and the segment-division proportion AM/MB=CN/NB with valid same-side ordering. Peers challenge each proof before the generalized statement. Unlike earlier U03:L05 forward theorem, this is its CONVERSE, so together they form an if-and-only-if statement under the labelled nondegenerate triangle and interior points.",
+        "Source 11.3 Preponderance of Proportional Relationships case 1: triangle DAB has DA=3 DB=4 and the included angle right, so AB=5 by Pythagoras. DE=7.5 and AB parallel EF yield large/small k=7.5/3=2.5, DF=10 and EF=12.5. Case 2: BD parallel FG with BD=5 FG=15, EG=12 and EB=2.5. Small/large k=1/3, so ED=4, EF=7.5, DG=8, BF=5. Compare direct side ratios, unit scale, within-triangle ratios and Pythagorean reasoning rather than guessing figure measurements.",
+        "Source student summary numerical model: if G is two-thirds from A to B, F two-thirds from C to B, BA=9 and BC=12, then GA=6 FC=8 BG=3 BF=4 and BG/GA=BF/FC=1/2. The central logical step is AA similarity from the parallel segment, not the mere sketch. Explain why this theorem would fail without the assumed parallelism.",
+        "Source Practice P1-P7: P1 with A'C6, AA'3, A'B'5, B'C7 and A'B' parallel AB gives AC9, AB=15/2 and BB'=7/2. P2 show DE is not parallel BC using image-specific unequal ratios. P3 right triangle AC4 BC5 cut at side midpoints, small triangle side factor 1/2 and area factor 1/4; numeric original area depends on which source angle is marked right, not present in accessible text. P4 AA similarity sufficient condition is choice C. P5 ABC DEF similarity and EF need original diagram. P6 source prior U03:L09 DF requires original figure correspondence. P7 shrinking positive k choices are A=1/2 and B=8/9. Do not invent answers for inaccessible diagrams.",
+        "Source 11.4 Cool-down More Proportional Relationships is teacher-login protected; an original Edulytiks teacher paper equivalent asks for independently labelled BMN and BAC, correct AA proof, the two proportional equations and a numerical cut-length problem, scored with full narrative rubric. No new shared online grading or publisher diagram parity is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parallel-to-proportional theorem",
+          "Definition": "A segment between two sides of a triangle parallel to the third side divides the two sides in a common fraction from their vertex.",
+          "Rule": "Use AA similarity of the smaller and original triangle.",
+          "Example": "If MN∥BC and AM/AB=2/5 then AN/AC=2/5."
+        },
+        {
+          "Title": "Proportional-to-parallel converse",
+          "Definition": "Equal positive fractions along rays AB and AC give a connecting segment parallel to BC.",
+          "Rule": "Use the unique centre-A dilation with that factor.",
+          "Example": "If AM/AB=AN/AC=1/3 then MN∥BC."
+        },
+        {
+          "Title": "Ratio ordering",
+          "Definition": "Corresponding lengths must be compared consistently between the smaller and larger triangle.",
+          "Rule": "Use AM/AB=AN/AC=MN/BC, not crossed or inverted pairs.",
+          "Example": "Small-to-large factor 2/3 means all three small/large side ratios are 2/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove proportionality from a parallel",
+          "Question": "M is on AB, N on AC and MN∥BC. Prove AM/AB=AN/AC.",
+          "Method": "Use alternate/corresponding-angle equality then AA.",
+          "Steps": [
+            "Since MN∥BC, ∠AMN=∠ABC.",
+            "Similarly ∠ANM=∠ACB.",
+            "Two matching angles give triangle AMN∼ABC by AA.",
+            "Their corresponding side ratios match, so AM/AB=AN/AC=MN/BC."
+          ],
+          "Answer": "The parallel line splits both sides in the same proportion.",
+          "Check": "A nondegenerate triangle and MN with positive length are assumed."
+        },
+        {
+          "Title": "Find an unknown cut length",
+          "Question": "AB=15, AM=6, AC=20, MN∥BC. Find AN.",
+          "Method": "Use proportional sides from AA.",
+          "Steps": [
+            "Small-to-large scale is k=AM/AB=6/15=2/5.",
+            "Because MN∥BC, AN/AC=2/5.",
+            "Thus AN=(2/5)·20=8.",
+            "Check AN/AC=8/20=2/5."
+          ],
+          "Answer": "AN=8.",
+          "Check": "Since 0<2/5<1, N lies between A and C as required."
+        },
+        {
+          "Title": "Prove a segment parallel from ratios",
+          "Question": "AB=12, AM=9, AC=16, AN=12 with M,N on the rays from A. Prove MN∥BC.",
+          "Method": "Check equal scale factors and identify dilation.",
+          "Steps": [
+            "AM/AB=9/12=3/4.",
+            "AN/AC=12/16=3/4.",
+            "A dilation centred at A with k=3/4 maps B→M and C→N.",
+            "The dilation maps line BC (not through A) to line MN parallel to it."
+          ],
+          "Answer": "MN∥BC.",
+          "Check": "This uses the converse, not the forward theorem, and the common ray direction is essential."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using an angle equality without having parallel lines or a valid triangle correspondence.",
+          "WhyWrong": "AA then lacks proven hypotheses.",
+          "Correction": "Identify exactly which transversal and parallel lines create each equal angle."
+        },
+        {
+          "Mistake": "Treating proportions written in inconsistent directions as interchangeable.",
+          "WhyWrong": "It can invert or scramble the scale factor.",
+          "Correction": "Write all numerators from the same small triangle and denominators from the large triangle."
+        }
+      ],
+      "SummaryPoints": [
+        "Parallel-to-side implies a smaller AA-similar triangle and proportional sides.",
+        "Equal positive side fractions from a vertex imply parallel segment by dilation.",
+        "Both logical directions are distinct claims needing proof and explicit hypotheses."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L12",
+      "CultureCode": "en",
+      "Title": "Practice With Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Learning goal: Solve exact missing lengths and scale factors in contextual similarity problems, track measurement units, and check the reasonableness of numerical models.",
+        "This lesson is optional source practice. A scale drawing with 1 plan unit corresponding to a real-world length u has actual length Lactual=u·Lplan; ratios between corresponding plan and actual lengths remain consistent for every pair. For areas, a length scale k gives an area scale k², not k.",
+        "Verbal diagram: a triangular garden is represented by a 3–4–5 right triangle in plan units, each equal to 2.5 feet. The actual side lengths are 7.5,10,12.5 ft, retaining the same right-angle shape. A second garden at twice the dimensions has four times the area.",
+        "Original activity: design a rectangular or triangular garden or quilt plan from measurements and a declared scale. Compute two missing lengths, an area scale and explain which quantities are linear versus squared. Teacher rubric (0–4): correct source data and units, consistent ratios, valid answer checks, and model interpretation. Original drawings and partner discussion require human scoring.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Original Edulytiks examples and prose; no publisher artwork or protected assessment content duplicated.",
+        "Source 12.1 Vegetable Garden (5 minutes): In the original source, the garden scale is 1 plan unit = 2.8 feet, NOT 2.5 feet from the existing independent worked example. Learners inspect the actual garden drawing, write at least three valid equivalent representations: real length = 2.8 * plan length, real/plan = 2.8 feet/unit, and within-figure corresponding length ratios. For an independently authored illustration, 3 plan units correspond to 8.4 feet and 5 plan units to 14 feet. Do not invent unknown original diagram measurements or erase the prior correct 2.5-feet-per-unit original example.",
+        "Source 12.2 Card Sort Corresponding Parts (15 minutes; optional): Give partners first-party individually labelled cards instead of duplicating permissioned blackline figures. Group cards into pairs of similar shapes, write precise ordered similarity statements, recover common length ratio from corresponding sides, solve each missing side and describe a legal rigid/dilation sequence. Compare small-to-large k to reciprocal 1/k large-to-small and require student justifications rather than assuming every shape visually matches.",
+        "Source 12.3 Quilting Questions (15 minutes; optional): The original quilt is made of right isosceles triangles with smallest centre squares AREA = 1 square unit, hence each small central side is 1 unit and equal-leg triangular hypotenuse is leg times sqrt(2). The baby quilt uses 1 original unit = 6 inches; the target queen-size width is 90 inches, or 15 initial plan units. However, original whole quilt WIDTH in plan units depends on the publisher figure and cannot be inferred from the source text. If original width is W positive units, the linear enlargement is k=15/W, and a 1-unit central square becomes 6*(15/W) inches per side. Students examine the diagram, co-craft mathematical questions, and show appropriate Pythagorean and proportion work before writing a numerical physical-square answer.",
+        "Source 12.3 optional extension: second quilt uses right triangles with smallest legs 2 units and 3 units. Ask students to identify differently scaled similar triangle families, give two ordered similarity statements, and use explicitly labelled source measurements to determine the larger triangle LCQ; LCQ dimensions remain figure-dependent and must not be guessed without the original art. Compare ratios within a figure and across figures, identifying consistent units and possible k-squared AREA relationships.",
+        "Source lesson synthesis: similar triangles with source corresponding AB=3, BC=4, EF=6 yield DE=4.5 either from 3/4=DE/6 or 3/DE=4/6. Explain both within-triangle and across-triangle ratio equalities. The earlier independent 3-4-5 right-triangle garden with 2.5 ft/unit is mathematically correct and retained, but is not falsely labelled the original source 12.1 garden scale.",
+        "Source Practice P1-P7: P1 similar ordered quadrilaterals ABCD and A'B'C'D' guarantees A, B and D statements (diagonal and side similarity ratios); C and E do not follow generally. P2 vertical lines BC and DE unknown AD needs the original figure. P3 square ABCD side AB=2 has BD=2sqrt(2); E,H are midpoints of AD, AB so right triangle AEH legs 1,1 and area 1/2 square unit. P4 parallel A'B' with A'C=6, A'A=3 and B'C=7 yields B'B=7/2=3.5 (choice A). P5 Elena BC=16.5 versus Lin BC=17.1 requires original diagram, no fabricated choice. P6 knowing two side lengths alone does not prove similarity without enough angles or a third corresponding proportion. P7 dilation of line g to f about A has figure-dependent scale, and must be estimated from same-ray correspondence. Original teacher-locked 12.4 Cool-down Ratios Galore remains unverified; first-party teacher scored alternative applies two different proportional equations to a quilt or garden."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Proportional length relationship",
+          "Definition": "All corresponding linear measurements share one scale factor k.",
+          "Rule": "Solve Limage=k·Loriginal with consistent units and correspondence.",
+          "Example": "At 1 plan unit=2.5 ft, 4 units represents 10 ft."
+        },
+        {
+          "Title": "Area under similarity",
+          "Definition": "Dilation by positive factor k multiplies area by k².",
+          "Rule": "Apply the square of the linear scale, not k, when comparing surface areas.",
+          "Example": "Doubling all side lengths quadruples area."
+        },
+        {
+          "Title": "Dimensional analysis",
+          "Definition": "Numerical operations must preserve or convert the physical unit attached to each measurement.",
+          "Rule": "Use length units for side lengths, square units for areas, and label ratios explicitly.",
+          "Example": "A 3-by-4 foot rectangle has area 12 ft², not 12 ft."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale a triangular garden",
+          "Question": "A garden plan has right-triangle sides 3,4,5 units, each unit representing 2.5 ft. Find actual side lengths.",
+          "Method": "Multiply each plan side by one conversion factor.",
+          "Steps": [
+            "Scale factor is 2.5 ft per plan unit.",
+            "Multiply: 3·2.5=7.5 ft, 4·2.5=10 ft, 5·2.5=12.5 ft.",
+            "Check corresponding ratios all equal 2.5.",
+            "Triangle remains right-angled by uniform scaling."
+          ],
+          "Answer": "Actual sides are 7.5 ft, 10 ft and 12.5 ft.",
+          "Check": "7.5²+10²=12.5², consistent with the right-triangle plan."
+        },
+        {
+          "Title": "Find area change in a scaled quilt",
+          "Question": "An original square patch has area 9 in²; every edge is tripled for a new quilt. Find new area.",
+          "Method": "Square the linear scale.",
+          "Steps": [
+            "Length scale k=3.",
+            "Area factor is k²=9.",
+            "Multiply original area 9 in² by 9.",
+            "New patch area is 81 in²."
+          ],
+          "Answer": "81 in².",
+          "Check": "A 3-inch square becomes a 9-inch square, area 81 in²."
+        },
+        {
+          "Title": "Solve unknown similar side",
+          "Question": "Two similar triangles have matching sides 6→15 and 8→x. Find x.",
+          "Method": "Set a consistent corresponding length ratio.",
+          "Steps": [
+            "Scale factor from first to second is 15/6=2.5.",
+            "Multiply other original side: x=8·2.5.",
+            "Compute x=20.",
+            "Verify 15/6=20/8=2.5."
+          ],
+          "Answer": "x=20 in the same side-length units.",
+          "Check": "The side correspondence and scale direction are fixed throughout."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling area by the linear scale instead of its square.",
+          "WhyWrong": "Both independent dimensions change, so area changes by k·k=k².",
+          "Correction": "Use k² for area and k³ for volume when appropriate."
+        },
+        {
+          "Mistake": "Mixing plan units, feet and square feet in one expression without conversion.",
+          "WhyWrong": "Inconsistent units make the numerical result uninterpretable or wrong.",
+          "Correction": "Write a conversion factor with units and label lengths versus areas."
+        }
+      ],
+      "SummaryPoints": [
+        "Similar figures use one length scale factor for every corresponding side.",
+        "Area scales by the factor squared; answer units matter.",
+        "Optional source contexts with original designs and written checks are human assessed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

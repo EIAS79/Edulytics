@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L17",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceSha256": {
+    "prep": "4a25f60e62ea934545846855975b831d05c82712980fa73571620cc1db1084a6",
+    "teacher": "4de83c44bcb6fa6bf9f14cb0ecb52bd541296a535136846107a3bb1d268b8e0b",
+    "student": "cbd476047d7ca07f1f9a4a3ec37c80690ba6d55d4f24b018b68c0bc0a41a42a4",
+    "practice": "0b89316e4c5ca4dce2c298175982124a29a9da1e2af946e56f2f5ebd4d0a76f6"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.2",
+      "HSG-CO.A.4"
+    ],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5"
+    ]
+  },
+  "SourceActivities": [
+    "17.1 Math Talk From Here to There",
+    "17.2 Card Sort two classifications and exact transformations",
+    "17.3 Reflecting on Reflection exact mirror axis",
+    "Practice 1–9"
+  ],
+  "Task": {
+    "Prompt": "Given explicitly labelled congruent triangles ABC and DEF, give a pointwise translation/rotation/optional reflection sequence preserving already matched vertices. Sort four original rigid-motion cards twice with different criteria, and construct an exact mirror line for a given corresponding pair.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "accurate correspondence labels and first translation",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "rotation about matched first point fixes it and aligns second point",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "third point proof with optional reflection in matched line",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "two independently justified card-sort groupings and exact mirror construction",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "How can triangle ABC be mapped pointwise to D=(5,3), E=(5,5), F=(4,3)?",
+      "Expected": "Translate by (5,3), then rotate 90 CCW about D; A→D, B→E, C→F.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "Which always maps distinct A to B: half-turn at A, midpoint half-turn, reflection in AB, reflection in perpendicular bisector AB, translation AB?",
+      "Expected": "Midpoint half-turn, perpendicular-bisector reflection and directed translation AB.",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "How can you align two congruent triangles systematically without guessing?",
+      "Expected": "Translate one vertex to mate; rotate about it to align a second; reflect across their line if third lies opposite.",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Triangle rotation symmetry exchanges any vertices; what follows?",
+      "Expected": "Equilateral, equiangular, with rotations 120/240 degrees.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Four equally spaced petals: symmetry angles?",
+      "Expected": "90, 180 and 270 degrees.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Right triangle has a reflection symmetry. What follows?",
+      "Expected": "It is isosceles right, two equal legs and two equal acute angles.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "A kite has symmetry line AC. Compare angles ACB and ACD.",
+      "Expected": "Equal reflection-corresponding angles.",
+      "Points": 2
+    },
+    {
+      "Id": "P8",
+      "Prompt": "Exact mirror line mapping A to distinct B?",
+      "Expected": "Perpendicular bisector of segment AB.",
+      "Points": 2
+    },
+    {
+      "Id": "P9",
+      "Prompt": "Two directed 60-degree rotations differ only in centre. Must outputs match?",
+      "Expected": "No; centre is essential; matching angle without matching centre insufficient.",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: translate A(0,0) to D(5,3), rotate 90 CCW about D, prove B→E and C→F",
+  "Handoff": "Teacher collects actual labelled diagrams and two card-sort explanations, marks 0/1/2 for each rubric item, dates/signs offline feedback.",
+  "Cases": {
+    "CORRECT": "pointwise sequence maps three requested labelled vertices",
+    "EQUIVALENT": "alternate valid sequences matching same point correspondence",
+    "WRONG": "aligns only first point and assumes all others match",
+    "INSUFFICIENT": "visual congruence claim without precise motion specification",
+    "MALFORMED": "contradictory correspondence or noncongruent target"
+  },
+  "MachineGrade": false,
+  "StageD": "NOT_RUN school teacher score persistence and exact course mapping #453"
+}

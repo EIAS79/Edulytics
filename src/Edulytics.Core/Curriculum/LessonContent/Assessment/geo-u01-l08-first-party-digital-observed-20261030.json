@@ -1,0 +1,115 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L08",
+  "SourceOptional": true,
+  "SourceSha256": {
+    "prep": "244f5d0ac9a35aec472e9ce129dc87354bb5976a6c35704c8c2a6e0a5d327025",
+    "teacher": "d197fcb59ebfb6998317d4c27c9db22316f3eb77ae5c9ea847ae720720acabfd",
+    "student": "d2381d434f9d0ee2301f8189a7d6a9fa7efe477321a892c4ecdeab74a3d84e6b",
+    "practice": "4db02a592843e0360b3ebab1db258d4e1a82c1e556f96b45d8390177545aafd8"
+  },
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceActivityMap": [
+    "8.1 digital tool exploration and parent-point behaviour",
+    "8.2 two actual dynamic constructions with drag test",
+    "8.3 parallel and perpendicular tools and dragged quadrilateral"
+  ],
+  "Task": {
+    "Prompt": "In dynamic geometry software provided by your teacher, make two dependent constructions, demonstrate two nondegenerate drag operations, and explain the maintained properties. Present the LIVE software result to the teacher.",
+    "ResponseType": "TEACHER_OBSERVED_DYNAMIC_SOFTWARE_AND_WRITTEN_REASONING",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "uses parent-defined digital points rather than uncontrolled free vertices",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "creates valid digital circles/lines with correct constraints",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "demonstrates two distinct nondegenerate live drag checks",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "explains invariant preservation and a failure/degeneracy",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Source": 1,
+      "Prompt": "pencil point tools: free/on-object/intersection",
+      "Expected": "free point, point on object, point of intersection",
+      "Points": 2
+    },
+    {
+      "Source": 2,
+      "Prompt": "test a digital diagram by dragging",
+      "Expected": "move an independent parent point and check constraints",
+      "Points": 2
+    },
+    {
+      "Source": 3,
+      "Prompt": "rectangle losing angles when dragged",
+      "Expected": "a vertex was free rather than dependent on perpendicular/intersection",
+      "Points": 2
+    },
+    {
+      "Source": 4,
+      "Prompt": "digital straightedge: line and segment",
+      "Expected": "line, segment (and ray)",
+      "Points": 2
+    },
+    {
+      "Source": 5,
+      "Prompt": "digital compass: circle centred through point",
+      "Expected": "circle with centre through point or compass-transfer",
+      "Points": 2
+    },
+    {
+      "Source": 6,
+      "Prompt": "polygon vs regular polygon by drag invariants",
+      "Expected": "regular polygon keeps equal sides/angles under valid drag",
+      "Points": 2
+    },
+    {
+      "Source": 7,
+      "Prompt": "perpendicular bisector locates midpoint",
+      "Expected": "intersect perpendicular bisector of AB with AB",
+      "Points": 2
+    },
+    {
+      "Source": 8,
+      "Prompt": "alternate hexagon vertices form equilateral triangle",
+      "Expected": "join alternate vertices A,C,E",
+      "Points": 2
+    },
+    {
+      "Source": 9,
+      "Prompt": "bisect six hexagon central angles to construct regular 12-gon",
+      "Expected": "bisect each 60 degree central angle and add 6 intermediate vertices",
+      "Points": 2
+    }
+  ],
+  "PaperHandoff": "NOT_APPLICABLE_TO_DIGITAL_DRAG: teacher observes live dynamic software, records 0/1/2 criterion scores and signs dated teacher review sheet.",
+  "Cases": {
+    "CORRECT": "parent-dependent points and valid drag invariants",
+    "EQUIVALENT": "other dynamic software supporting identical constructed dependencies",
+    "WRONG": "freehand digital drawing that fails under dragging",
+    "INSUFFICIENT": "paper-only explanation or static screenshot without live drag",
+    "MALFORMED": "zero length or undefined circle intersections"
+  },
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: construct and drag an equal-radius circle intersection; describe preserved constraints",
+  "AutoScoring": false,
+  "Runtime": "NOT_RUN",
+  "StageD": "Supervisor 2 #453: digital tool availability, authenticated lesson access, teacher score persistence and tenant tests unverified"
+}

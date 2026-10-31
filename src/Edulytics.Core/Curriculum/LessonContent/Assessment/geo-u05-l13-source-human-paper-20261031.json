@@ -1,0 +1,213 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L13",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\13\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\13\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\13\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\13\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "823b5e5451552183fc68e220dd9416c665090ae56e2446d91552cedd2d64dcd3",
+    "TeacherActivities": "12929989a8b472e78ab99bbe859e175aedf467ff48874c5cffa07ca3dd8f6b88",
+    "StudentActivities": "212d9b15e08508da41eade2ed9755ad1f05b984c48bfd09ee9ef61f8c69c0806",
+    "StudentPractice": "a5ccc72cdc948a841fe33ae66a5641e7bad5236d12a856fe2e9221630e1b2d66"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.6",
+      "HSG-GMD.B.4"
+    ],
+    "Addressing": [
+      "HSG-GMD.A.1"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "13.1",
+      "Goal": "two original shapes matched to equal-base equal-height prisms/cylinders",
+      "Mode": "FIRST_PARTY_HUMAN_DIAGRAM"
+    },
+    {
+      "Source": "13.2",
+      "Goal": "source P1/P2/P3 physical prism decomposition and two pairwise volume equivalences",
+      "Mode": "FIRST_PARTY_PAPER_ASSEMBLY_TEACHER_PROOF"
+    },
+    {
+      "Source": "13.3",
+      "Goal": "source three B10 h6 shapes and t.5 section2.5, general B*t² and one-third formula",
+      "Mode": "EXACT_SOURCE_SYMBOLIC_CAVALIERI"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source volume, named solid, annulus, vase and scale questions",
+      "Mode": "EXACT_P1_P3_P5_P7_P8_AND_TEACHER_ORIGINAL_DIAGRAMS"
+    },
+    {
+      "Source": "13.4",
+      "Goal": "publisher protected Pyramid Strategies",
+      "Mode": "EDULYTIKS_INDEPENDENT_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L13",
+    "TaskId": "geo-u05-l13-three-pyramid-dissection-and-cross-sections",
+    "GroupId": "GEO_U05_L13_PRISM_THREE_PYRAMIDS_CAVALIERI_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Printed independent three-pyramid face/height comparison and diagram, general B*k²/one-third proof, original source k.5 section and eight indexed Practice answers scored with human0-8 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l13-pyramid-volume-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "pairs source three physical pyramids with prism faces and justifies each equality from matching bases/perpendicular heights",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "extends the one-third formula from triangular prism partition to other pyramids/cones through all-height B*k² sections and Cavalieri",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "computes 3 source sections2.5 and volumes20 when B10 h6, rebuts incorrect 5-area and60-volume",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves eight original source Practice items with exact units and original-image/cooldown limitations",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "square pyramid side6 height8",
+        "TeacherExpected": "volume96 cubic units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "cylinder and cone r9in h15in",
+        "TeacherExpected": "cylinder1215pi, cone405pi in³, fraction1/3",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "two solids h4 B8 section k.25",
+        "TeacherExpected": "each section0.5 square units and at any k areas8*k² equal",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "most specific name of original figure",
+        "TeacherExpected": "teacher original diagram required",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "4 triangles and one rectangular base",
+        "TeacherExpected": "rectangular pyramid choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "source shape rotated around original axis",
+        "TeacherExpected": "original marked figure required",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "crystal vase outer12x6cm height20, wall1cm each side/bottom",
+        "TeacherExpected": "outer1440cm³, approximate interior760cm³",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "trapezoid area10 to90",
+        "TeacherExpected": "k3 choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "ThreePyramidsEqual": "V=Bh/3",
+    "SourceCrossSectionAtHalf": 2.5,
+    "SourceAllVolume": 20,
+    "GeneralSection": "B*k^2",
+    "OptionalOctahedronVolume": "sqrt2/3*ell^3",
+    "P1Volume": 96,
+    "P2Cylinder": "1215pi",
+    "P2Cone": "405pi",
+    "P3Section": 0.5,
+    "P5Choice": "A",
+    "P7Outer": 1440,
+    "P7Inside": 760,
+    "P8Choice": "C"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "P1 P2 P3 volume equal by two matching area-height/Cavalieri pairings, fill prism so each Bh/3",
+      "source B10 h6 k.5 section2.5 and all three volumes20",
+      "P1 volume96, P2 cone405pi/cylinder1215pi, P7 vase interior760 and P8 k3"
+    ],
+    "Equivalent": [
+      "square pyramid side6 height8 gives36*8/3 and96",
+      "octahedron 2*l³/(3sqrt2) equals sqrt2*l³/3"
+    ],
+    "Wrong": [
+      "source section area5 (instead of2.5) treats area factor k not k²",
+      "source pyramid volume60 from B*h without dividing by3",
+      "cone and cylinder with same B,h have equal volume"
+    ],
+    "Boundary": [
+      "zero base or perpendicular height yields degenerate volume0",
+      "P1/P2/P3 original paper marking must be teacher checked, alt text duplicates labels",
+      "P4/P6 picture-only originals require original illustrations"
+    ],
+    "Malformed": [
+      "no cross section area equality across ALL heights",
+      "slant height used as perpendicular volume h",
+      "volume in square units or claimed publisher Cool-down grade"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l13-pyramid-volume-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l13-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

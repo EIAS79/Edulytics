@@ -1,0 +1,280 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L07",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "2f07235ef2df3b942697f4ffaabd3c01f4e4210977e3cfd736c779c6c0a7e1b2",
+    "TeacherActivities": "8fe346fca7a1db348c229ac983b43506cefc15b271fdabe3b55b0bf17d31d768",
+    "StudentActivities": "8b85ce1d3f83c072d109c7b063803cadc7ebdd8877a50a46f322b886d5567fb6",
+    "StudentPractice": "3ec46ca38a857c30daf5533c1d967922d8d70b96ef642f4865939be3230e9daf"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-GPE.B.4"
+    ],
+    "BuildingTowards": [
+      "HSG-GPE.A.2"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "focus/directrix original notice/wonder and equal perpendicular segments",
+      "Mode": "FIRST_PARTY_DRAWING_HUMAN"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "focus2,2/directrix x-axis, point6,5 and changing width/up/down/vertex",
+      "Mode": "SOURCE_EXACT_DISTANCE_AND_PAPER_VISUAL"
+    },
+    {
+      "Source": "7.3",
+      "Goal": "focus6,4/directrix y0, two candidate distances and general test; optional degenerate case",
+      "Mode": "FIRST_PARTY_POINTWISE_PARABOLA_ORACLE"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "9 original parabolic membership, circle, soap density and construction questions",
+      "Mode": "EXACT_SOURCE_SOLUTION_AND_HUMAN_ORIGINAL_FIGURE"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "publisher teacher-protected Point and a Line",
+      "Mode": "FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L07",
+    "TaskId": "geo-u06-l07-original-F2-2-and-F6-4-parabola-point-tests",
+    "GroupId": "GEO_U06_L07_FOCUS_DIRECTRIX_DISTANCE_PAPER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Student drawing of source F2,2/dy0 curve and source F6,4 pair point tests with perpendicular directrix distances; source nine Practice responses and 4×2 human rubric, print worksheet.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l07-parabola-distance-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "draws focus/directrix and student initial notice-wonder evidence; demonstrates point-to-line is shortest perpendicular distance",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "solves source F(2,2), y0 and P(6,5) with equal distances5, sketches correct vertex and focus-position effects",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "proves source focus6,4 directrix y0: (11,5) sqrt26 vs5 NOT on, (14,10) 10 vs10 ON",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves source nine Practice including P1 y2.5, P2 B/E, P4 sqrt11, P8 soap floating and P9 actual construction caveat",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "P=(6,y) equidistant from focus(4,1) and x-axis",
+        "TeacherExpected": "y=5/2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "parabola focus(6,2), directrix y4 select listed A-E",
+        "TeacherExpected": "B(2,-1) and E(8,2) only",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "focus(0,4) vs focus(0,-6) both y0 directrix",
+        "TeacherExpected": "vertices(0,2) upward and(0,-3) downward, latter wider by larger distance",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "circle x²+y²-8y+5=0",
+        "TeacherExpected": "centre(0,4), r=sqrt11",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "four perfect-square term choices A-D",
+        "TeacherExpected": "A2 B1 C3 D4",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "x²-12x+36, y²+8y+16, w²-16w+64",
+        "TeacherExpected": "(x-6)^2,(y+4)^2,(w-8)^2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "circle centre(1,-4) radius10",
+        "TeacherExpected": "(x-1)^2+(y+4)^2=100",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "soap prism dimensions5.6x13x16cm mass1.048kg",
+        "TeacherExpected": "V1164.8cm³, density≈0.8997g/cm³, floats under simplified rule",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "Jada angle ABC bisector using circle centre B through A and perp bisector AD",
+        "TeacherExpected": "valid when D lies on ray BC on same circle, AB=DB so B on perp bisector and isosceles vertex angle bisected",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "SourceF": [
+      2,
+      2
+    ],
+    "SourceDirectrix": "y=0",
+    "SourceP": [
+      6,
+      5
+    ],
+    "SourceDistance": 5,
+    "SourceVertex": [
+      2,
+      1
+    ],
+    "SourceFocusOther": [
+      6,
+      4
+    ],
+    "SourceFirstCandidate": [
+      11,
+      5
+    ],
+    "SourceFirstFocusDistance": "sqrt26",
+    "SourceFirstDirectrixDistance": 5,
+    "SourceSecondCandidate": [
+      14,
+      10
+    ],
+    "SourceSecondFocusDistance": 10,
+    "SourceSecondDirectrixDistance": 10,
+    "SourceSynthesisFocus": [
+      -1,
+      3
+    ],
+    "SourceSynthesisDirectrix": "y=1",
+    "SourceSynthesisVertex": [
+      -1,
+      2
+    ],
+    "SourceP1Y": 2.5,
+    "P2Choices": [
+      "B",
+      "E"
+    ],
+    "P3Vertices": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        -3
+      ]
+    ],
+    "P4Centre": [
+      0,
+      4
+    ],
+    "P4Radius": "sqrt11",
+    "P5Choices": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "P6Squares": [
+      "(x-6)^2",
+      "(y+4)^2",
+      "(w-8)^2"
+    ],
+    "P7Circle": "(x-1)^2+(y+4)^2=100",
+    "P8SoapDensity": "1048/1164.8",
+    "P8Floats": true,
+    "P9Construction": "VALID_IF_D_ON_RAY_BC_AND_AB_BD_EQUAL"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source F2,2 P6,5 and directrix y0 both distances equal5, so on parabola",
+      "source F6,4 P11,5 has focus sqrt26/directrix5 not on; P14,10 has both10 on",
+      "source P2 choices B,E and P8 soap density below water"
+    ],
+    "Equivalent": [
+      "point on parabola described by squared distances (x-6)^2+(y-4)^2=y^2 or exact nonnegative distance equation",
+      "focus(-1,3), line y1 has vertex(-1,2) and source P3,6 at equal5"
+    ],
+    "Wrong": [
+      "point-to-directrix distance measured diagonally to arbitrary point rather than perpendicular",
+      "source P(11,5) classified on because sqrt26 rounded to5",
+      "source P2 chooses focus itself C though focus-to-focus0 and focus-to-line2 unequal",
+      "P1 y=1/2 instead of 5/2 from arithmetic mistake"
+    ],
+    "Boundary": [
+      "when focus lies ON directrix the set is degenerate perpendicular line rather than genuine nondegenerate parabola",
+      "signed y coordinate requires abs(y-d) for line distance",
+      "original unflattened notice/wonder graphic and 7.2 teacher B labels require teacher source image, no fabricated B coords"
+    ],
+    "Malformed": [
+      "does not state focus and directrix",
+      "point-to-point and point-to-line distances expressed in incompatible units",
+      "source original locked cooldown claimed digitally passed"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l07-parabola-distance-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

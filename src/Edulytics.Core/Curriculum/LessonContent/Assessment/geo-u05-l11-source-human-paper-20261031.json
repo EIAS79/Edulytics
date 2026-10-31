@@ -1,0 +1,238 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L11",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\11\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\11\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\11\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\11\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "85f0d7c8203544046d9084c267cfc1b44072040a4e99cc835e8f036a3916a61e",
+    "TeacherActivities": "f19ae974838e794463310e9cf8d3eccaed6de3f7b45e79695f5cd072566441a4",
+    "StudentActivities": "9e22c4cd5907907efd234ede5ccb08b86f24dbee3148a9b16aa1c3d13db06996",
+    "StudentPractice": "6fc7cf66d1c9c839d1a4b9de963e38f2abb7bf054f002dd443b4bad8f0bedd1a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-SRT.C.6",
+      "HSG-SRT.C.8"
+    ],
+    "Addressing": [
+      "HSG-GMD.A.3",
+      "HSG-GMD.B.4",
+      "HSG-SRT.C.8"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.3"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "11.1",
+      "Goal": "right-triangle missing heights with source A/B figure-only inputs",
+      "Mode": "TEACHER_SOURCE_FIGURE_AND_FIRST_PARTY_RUBRIC"
+    },
+    {
+      "Source": "11.2",
+      "Goal": "A-G seven solid sorting and three independently chosen volumes",
+      "Mode": "HUMAN_ORIGINAL_DRAWING_AND_DEGREE_CALCULATOR"
+    },
+    {
+      "Source": "11.3",
+      "Goal": "Cayan tower core and chevron, 57-vs-58 discrepancy and Cavalieri identical floor volumes",
+      "Mode": "SOURCE_NUMERICAL_CONFLICT_DISCLOSED"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine triangular prism, oblique cylinder, selected areas, changed scale and Khufu tasks",
+      "Mode": "EXACT_WHEN_SOURCE_GROUNDING_EXISTS_ELSE_HUMAN"
+    },
+    {
+      "Source": "11.4",
+      "Goal": "teacher-protected Cylinder with a Hole cooldown",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L11",
+    "TaskId": "geo-u05-l11-choice-seven-solids-and-twisted-tower-core",
+    "GroupId": "GEO_U05_L11_PRISM_MISSING_HEIGHT_TOWER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "First-party source-aligned paper worksheet containing original 11.1 figure observation, 11.2 seven-source-solid choice, 11.3 tower model with 57/58 original discrepancy, nine Practice responses and four-criterion human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l11-prism-practice-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "sets up source two missing perpendicular heights using correctly added right-triangle altitude, degrees and teacher original figures",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "makes 2 easiest/2 hardest source A-G selections before computation, computes 3 including an easy and hard with justified units",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "models source twisted tower via identical horizontal sections, gross volume610470 and core 22108.5pi, flags source 57-vs-58 discrepancy",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves nine Practice with P2 24pi, P3 A B E, P5 90, P7 162, P8 48m and honest original-image angle limits",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "right triangle prism ABC: AC4 AB5 right at C; prism CF8",
+        "TeacherExpected": "BC3 and V48 if source CF is perpendicular prism length",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "oblique cylinder r2 edge6sqrt2 angle45 to base",
+        "TeacherExpected": "height6, volume24pi cubic units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "prism volume80 height5 choose areas16",
+        "TeacherExpected": "A B E valid; C circle r2 has area4pi D right triangle legs4 area8",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "water bottle curved outline base areaB and height h",
+        "TeacherExpected": "volume may be smaller/equal/larger than Bh depending source profile; original picture needed",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "curved-sided solid with square horizontal area3 by3 at all heights10",
+        "TeacherExpected": "V90 cubic units, choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "figure of rotation about original horizontal axis",
+        "TeacherExpected": "original axis and marked diagram must be inspected before numeric answer",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "SA22 volume6, image SA198",
+        "TeacherExpected": "k3 from sqrt9; image volume162",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "Khufu height144 side231, source section side154",
+        "TeacherExpected": "k2/3, section 48m above base and96m below apex",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "isosceles median, angle bisector statements",
+        "TeacherExpected": "B always true; A/D only if apex-specific, not universal; C/E false generally; teacher checks original intended conventions",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "CayanSourceNarrativeBaseAreaSqM": 1995,
+    "CayanFloorPlanAltSpanM": 58,
+    "CayanNarrativeSpanM": 57,
+    "CayanHeightM": 306,
+    "CayanGrossV": 610470,
+    "CayanCoreDiameterM": 17,
+    "CayanCoreArea": "72.25pi",
+    "CayanCoreV": "22108.5pi",
+    "CayanCorePercent": "100*(72.25pi/1995)",
+    "SourceDiscrepancy": "TEXT_57_VERSUS_IMAGE_DESCRIPTION_58_NEEDS_FIGURE",
+    "SourceSummaryCylinderHeight": "sqrt125",
+    "SourceSummaryCylinderV": "25pi*sqrt125",
+    "P1ConditionalVolume": 48,
+    "P2Volume": "24pi",
+    "P3Choices": [
+      "A",
+      "B",
+      "E"
+    ],
+    "P5Volume": 90,
+    "P5Choice": "C",
+    "P7Volume": 162,
+    "P8Scale": "2/3",
+    "P8HeightAboveBaseM": 48,
+    "P8HeightFromApexM": 96,
+    "P9CertainlyTrue": "B"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "oblique cylinder length6sqrt2 at45 gives perpendicular h6 and V24pi",
+      "Cayan source textual area1995 by height306 gives gross610470, core cross section72.25pi",
+      "P3 true choices A B E, P5 volume90, P7 image volume162, P8 plane48m above base"
+    ],
+    "Equivalent": [
+      "Cayan percentage 100*72.25*pi/1995 and core-to-total volume ratio 100*(22108.5*pi)/610470 are equal",
+      "source cylinder summary height sqrt125=5sqrt5 and V25pi sqrt125"
+    ],
+    "Wrong": [
+      "multiply an oblique edge length6sqrt2 directly as the perpendicular volume height",
+      "Cayan span58 from alt text and narrative57 silently treated as identical certified dimension",
+      "source Khufu section k2/3 located 96m above base instead of48",
+      "all medians of isosceles triangle are apex angle bisectors"
+    ],
+    "Boundary": [
+      "source A-G 11.2 diagrams absent; no exact source letter-to-volume mapping",
+      "Cayan 57 versus58 original source description conflicts; numeric 1995 gross result uses stated teacher text convention",
+      "water bottle volume cannot be determined from a lone base area and h if cross sections vary",
+      "source original 11.1 figure labels and P6 rotation need original pictures"
+    ],
+    "Malformed": [
+      "uses edge slant as h without perpendicular projection",
+      "surface area square metres labelled as cubic metres",
+      "reports current real-world Cayan tower capacity or locked teacher Cool-down grade as verified"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l11-prism-practice-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l11-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

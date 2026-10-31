@@ -1,0 +1,120 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L18",
+  "SourceOptional": true,
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceSha256": {
+    "prep": "4779babc7a4de124ec087bbd0a0b7adf0b51c821fc5003096ee40baba6e82a7f",
+    "teacher": "f28c1edc180f2b116923a4a852bb445763441580edc2b2fa28d07f111fa82275",
+    "student": "f288409f6639808ef89e994134a9fd96e96ffa6973efdc5421788c0ca6a3c7be",
+    "practice": "afd19fe372c749487322a05d1db24c64e75d90c23ce798f028a5625be0b4e5b5"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.2"
+    ],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.5"
+    ]
+  },
+  "SourceActivities": [
+    "18.1 Notice and Wonder Obstacles",
+    "18.2 Obstacle Course two maps with continuous collision constraints",
+    "18.3 Point by Point two parallelograms",
+    "Practice 1–8"
+  ],
+  "Task": {
+    "Prompt": "On original coordinate paper map, take two labelled triangles safely around rectangular obstacle by rigid-motion sequences. Show each intermediate image and prove ALL swept positions remain outside obstacle and within map, then describe pointwise alignment for a congruent parallelogram.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "both source-style start/goal figures and allowed intermediate images correctly mapped",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "all moving-figure swept positions avoid solid obstacle at each step",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "no figure leaves map boundary during any continuous motion",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "pointwise parallelogram mapping and full labelled transformation reasoning",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "Map first triangle from (1,1),(2,1),(1,2) to (8,8),(9,8),(8,9) while avoiding obstacle x4-6,y3-7.",
+      "Expected": "Up 7 then right 7; first all x<=2, then all y>=8, so swept figure avoids obstacle.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "What is image of (2,1) after 90° clockwise about (0,0), then translation (3,1)?",
+      "Expected": "(1,-2) then (4,-1).",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "Reflect triangle across x-axis and translate by (2,3); image of (1,2)?",
+      "Expected": "After reflection (1,-2), then (3,1).",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Which motion sends any A to any B in plane?",
+      "Expected": "Translation by directed segment AB.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "How do congruent triangles align systematically?",
+      "Expected": "Translate first vertex, rotate around it for second, reflect in their line if needed for third.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "A quadrilateral has rotational symmetry taking every vertex to any other. What follows?",
+      "Expected": "It is a square; all four sides and angles equal under quarter-turn symmetry.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "A quadrilateral has reflection symmetry. Must it have all equal sides?",
+      "Expected": "No; a non-square rectangle has reflection symmetry without all sides equal.",
+      "Points": 2
+    },
+    {
+      "Id": "P8",
+      "Prompt": "Rotate vector (2,0) 90° clockwise about origin.",
+      "Expected": "(0,-2).",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: prove up-then-right is collision-free but direct diagonal move is not",
+  "PaperHandoff": "Teacher receives path diagrams and written continuous-clearance arguments, scores each rubric dimension 0/1/2 and signs/date feedback on paper.",
+  "Cases": {
+    "CORRECT": "each swept triangle avoids obstacle and boundary and ends correctly matched",
+    "EQUIVALENT": "alternate fully safe continuous motions, with each clearance justified",
+    "WRONG": "checks only endpoints or passes through solid obstacles during motion",
+    "INSUFFICIENT": "only arrows or target triangles without intermediate/clearance arguments",
+    "MALFORMED": "obstacle/map not specified or intersecting initial position"
+  },
+  "MachineGrade": false,
+  "StageD": "NOT_RUN interactive path, teacher grade persistence, school isolation #453"
+}

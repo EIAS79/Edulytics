@@ -1,0 +1,175 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L11",
+  "Ordinal": 64,
+  "UnitCode": "U04",
+  "UnitOrdinal": 11,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\11\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\11\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\11\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\11\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "f28bb9bf1b283e435efcc03e78fd20c13a47bf47a5fc5ecc4caf484d8fb228f0",
+    "TeacherActivities": "49c6a8d90db8f0766ee591ad2f0b4accb3612ed312398acb5b117493b4b3bcd7",
+    "StudentActivities": "54717ab5c8b2b37bd5ee97ac719c0d4b34eedffa1aeb75e574cb741faccaa0b6",
+    "StudentPractice": "12e6ec9a8fc14ab6b107d69ed925b75819f636d2bf369fdd640a9abdbb413b88"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "11.1",
+      "Goal": "source radius1 hexagon shaded area pi-3sqrt3/2 and comparison with square",
+      "Mode": "EXACT_GEOMETRIC_AREA_PROOF"
+    },
+    {
+      "Source": "11.2",
+      "Goal": "independently derive full inscribed n-gon perimeter 2n sin180/n, source GeoGebra figure not reproduced",
+      "Mode": "TEACHER_GENERAL_FORMULA_DIAGRAM"
+    },
+    {
+      "Source": "11.3",
+      "Goal": "n6/10/20/50 pi lower approximations, upper tangent bound, incorrect original rounding claim correction",
+      "Mode": "MATH_EXACT_ROUNDING_CRITIQUE"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven original pentagon area, pi estimate, hexagon, airplane, right triangle and equilateral items",
+      "Mode": "EXACT_P1_P4_P7_AND_TEACHER_SOURCE_FIGURE"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Goal": "teacher-login protected final assessment unavailable",
+      "Mode": "EDULYTIKS_INDEPENDENT_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-GMD.A.1",
+      "HSG-SRT.C",
+      "HSN-Q.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U04_L11_PI_N_GON_BOUNDS_ROUNDING_PAPER_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L11",
+    "TaskId": "geo-u04-l11-inscribed-circumscribed-pi-proof-and-error-bound",
+    "GroupId": "GEO_U04_L11_PI_N_GON_BOUNDS_ROUNDING_PAPER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original hand drawn unit circle square and hexagon shaded areas, n-gon general proof and lower/upper bound, numeric n-series plus documented source rounding correction, seven indexed practice with date and human8 point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "constructs and calculates exact unit hexagon area3sqrt3/2 and shaded circle gap, comparing square gap",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "proves n-gon P=2n sin(180/n) and two-sided pi inequalities with geometric side/altitude justifications",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "checks n6 n10 n20 n50 and distinguishes error/rounding, demonstrating n237 smallest correct three-decimal rounding",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "answers seven original source Practice calculations and provides clear human-reviewed diagrams/units and source-correction explanation",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "unit-circle hexagon area3sqrt3/2, shaded gap pi minus that area",
+      "P_in=2n sin(pi/n), P_out=2n tan(pi/n) and π strictly between corresponding half-perimeters",
+      "n237 lower estimate rounds3.142 whereas n102 rounds3.141, correcting source misconception",
+      "Practice P1 pentagon perimeter35 and area84.303, P3 hex perimeter12 and area6sqrt3"
+    ],
+    "Equivalent": [
+      "2n sin180/n degrees and2n sin(pi/n radians agree when angle mode is correct",
+      "P1 pentagon area245/(4tan36) also equals(245/4)*cot36"
+    ],
+    "Wrong": [
+      "n*sin(pi/n) is FULL perimeter instead of HALF perimeter",
+      "n102 rounds to3.142 at nearest thousandth",
+      "a fixed inscribed regular polygon perimeter is larger than circumference",
+      "upper bound uses sine while lower uses tangent"
+    ],
+    "Boundary": [
+      "n integer>=3 and radius positive",
+      "source error tolerance under0.0005 is not sufficient to guarantee same rounding near threshold3.1415",
+      "teacher/source original GeoGebra applet not verified and publisher locked assessment not copied"
+    ],
+    "Malformed": [
+      "missing n side count or angle expressed in wrong mode",
+      "claims exact pi value from a finite polygon",
+      "source figure-dependent P5/P6 claimed exact with absent image"
+    ]
+  },
+  "IndependentMathOracles": {
+    "UnitHexagonArea": "3sqrt3/2",
+    "ShadedHexagonGap": "pi-3sqrt3/2",
+    "SquareShadedGap": "pi-2",
+    "PiLowerFormula": "n*sin(pi/n)",
+    "PiUpperFormula": "n*tan(pi/n)",
+    "FullPerimeterFormula": "2*n*sin(pi/n)",
+    "PiLowerN60": "3.1401573745766296",
+    "PiLowerN72": "3.140595890304192",
+    "PiLowerN102": "3.141095972729376",
+    "PiLowerN236": "3.1414998701404784",
+    "PiLowerN237": "3.141500651464446",
+    "FirstNCorrectNearestThousandth": 237,
+    "OriginalSource102Claim": "INACCURATE_FOR_NEAREST_THOUSANDTH_ROUNDING",
+    "P1PentagonArea": "245/(4tan36deg)",
+    "P3HexArea": "6sqrt3",
+    "P4Path": "sqrt(125^2+9^2)",
+    "P7EquilateralSide": 12
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l11-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u04-l11-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u04-l11-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u04-l11-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "e26d7d710c4059e4a001baa77348a32de623378d",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T07:14:59.569655Z",
+  "ClosedAtUtc": "2026-10-31T07:15:11.083304Z",
+  "ElapsedSeconds": 11.514,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L01"
+}

@@ -1,0 +1,805 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-hs-geo-u05-l13-l18-firstparty-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L13",
+      "CultureCode": "en",
+      "Title": "Building a Volume Formula for a Pyramid",
+      "ExplanationParagraphs": [
+        "Learning goal: Provide an informal Cavalieri/decomposition justification that every pyramid has V=(1/3)Bh, with B the base area and h perpendicular height.",
+        "Sections parallel to base at apex-height fraction t have area t²B The shape tapers quadratically",
+        "Source-aligned informal derivation: decompose a triangular prism into three pyramids of equal volume, then compare general pyramids/cones to the triangular-pyramid model with identical base area and perpendicular height. Every corresponding slice, at the same fraction of height from the apex, has area t² times the base. Cavalieri's principle transfers the one-third result beyond the triangular case.",
+        "Summing sections over full height gives Bh/3 Slant height is not volume height",
+        "Teacher rubric (0–8): four human-scored 0/1/2 criteria assess actual P1/P2/P3 source triangular-prism dissection and pairwise equal-volume evidence, general B*k² Cavalieri proof for pyramids/cones, exact k.5 source section2.5 and volume20 with critique of false60, and eight indexed original Practice solutions and source graphic limitations.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 13, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments.",
+        "Source 13.1 Cover Your Bases (5 min): for each of TWO original pictured cones/pyramids, independently draw a prism or cylinder with congruent matching base and SAME perpendicular height. Both right and oblique matching comparison cylinders satisfy the task, and straight versus skew changes neither B nor h in the matching prism/cylinder, by Cavalieri. Teacher reviews actual publisher diagram to identify any original A/B shapes rather than guessing.",
+        "Source 13.2 Splitting a Prism into Pyramids (15 min): RETRIEVE three actual paper pyramids P1 P2 P3 assembled in U05:L12 from original cutout nets. Triangular prism can be cut into three non-overlapping pyramids: compare P1 and P3 using prism's congruent triangle end bases and equal perpendicular heights, then P2 and P3 using two congruent triangle halves of a shared rectangle and equal perpendicular heights along the prism. For each pair corresponding parallel sections of their same base area and height have equal area, so Cavalieri gives equal volumes. Three equal volumes fill the prism, yielding V_pyramid=(1/3)*B*h for the corresponding triangular pyramid. Source printed labels of vertices E D C and B C D require teacher original diagram; student argument, actual face matching and original paper construction remain human-assessed.",
+        "Source 13.2 generalization: a triangular pyramid not in original 3-pyramid split can be reoriented and its apex shifted parallel to the base while preserving equal area B and perpendicular height h and corresponding cross section areas. Recompose to a triangular prism to justify one-third; this is an informal geometric decomposition argument, not a claim that simply observing three pieces is a general proof. P1/P3 source alt text duplicates P2/P3 some coordinates; use authenticated original diagrams when attributing precise labelled matching, not blind machine inferred triangle coordinates.",
+        "Source 13.3 Comparing Cross Sections (15 min): source THREE solids each height6 and base area10 square units. For source section dilation k=.5 from apex each section area10*(.5)^2=2.5 square units, NOT5; for any 0<=k<=1, all three same-height parallel sections have area10*k^2 (general B*k^2). By Cavalieri, their volumes equal the triangular pyramid's (1/3)*10*6=20 cubic units each. Correct original false response V=60 because formula B*h is prism/cylinder, not cone/pyramid. For general pyramid or cone with same height h and base area B, corresponding sections all B*k^2, hence same volume as triangular pyramid and V=(1/3)*B*h regardless of right/oblique apex.",
+        "Source 13.3 optional extension regular octahedron edge ell: the solid is two congruent square pyramids of square base side ell, perpendicular height ell/sqrt2, so combined volume2*(1/3)*ell^2*(ell/sqrt2)=(sqrt2/3)*ell^3. All lengths assumed positive and 'height' always perpendicular; no arbitrary cone uses V=B*h. Source student summary independent base area100 height7 gives 700/3≈233.3 cubic units. Preserve all three earlier correct first-party worked examples rather than rewriting them as original tasks.",
+        "Source Practice P1-P8: P1 square pyramid base side6 height8: V=(1/3)*36*8=96 cubic units. P2 cylinder r9in h15in V1215*pi in³; cone same base/height405*pi in³ and fraction one third. P3 two pictured pyramid/cone solids h4 base area8, apex-centred k=.25 section area8/16=0.5 square units, both same at any fraction k. P4 most specific name among triangular pyramid, regular prism, square prism, right triangular prism requires original source figure (do not fabricate choice). P5 four triangle faces plus one rectangle -> rectangular pyramid choice A. P6 source rotation around pictured axis requires original labels. P7 zigzag vase outer constant horizontal rectangular area12*6=72cm² h20 gives outer capacity1440cm³; wall thickness1cm on EACH side and base thickness1cm gives approximate inner dims10x4x19 and volume760cm³ under rectangular interior model. P8 trapezoid area10→90 area ratio9 requires k3 choice C. Original 13.4 Pyramid Strategies cooldown teacher-restricted; first-party diagram/three-pyramid evidence teacher-scored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pyramid sections",
+          "Definition": "Sections parallel to base at apex-height fraction t have area t²B",
+          "Rule": "The shape tapers quadratically",
+          "Example": "Halfway from apex section area B/4"
+        },
+        {
+          "Title": "Volume principle",
+          "Definition": "Summing sections over full height gives Bh/3",
+          "Rule": "Use an informal prism dissection or Cavalieri comparison",
+          "Example": "Three congruent pyramids may fill a suitable prism in a classic decomposition"
+        },
+        {
+          "Title": "Height requirement",
+          "Definition": "Perpendicular apex-to-base plane distance is h",
+          "Rule": "Slant height is not volume height",
+          "Example": "A skew pyramid can have same B,h and volume"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Building a Volume Formula for a Pyramid — worked case 1",
+          "Question": "Square pyramid base 6×6 and perpendicular height 9. Compute volume.",
+          "Method": "Pyramid sections",
+          "Steps": [
+            "Base area B=36",
+            "Apply V=Bh/3",
+            "V=36·9/3=108"
+          ],
+          "Answer": "108 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against the shape tapers quadratically"
+        },
+        {
+          "Title": "Building a Volume Formula for a Pyramid — worked case 2",
+          "Question": "Compare pyramid to equal-base equal-height prism B=20,h=6.",
+          "Method": "Volume principle",
+          "Steps": [
+            "Prism volume=20×6=120",
+            "Pyramid formula gives 20×6/3=40",
+            "Ratio is 1:3"
+          ],
+          "Answer": "Pyramid 40, prism 120 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against use an informal prism dissection or cavalieri comparison"
+        },
+        {
+          "Title": "Building a Volume Formula for a Pyramid — worked case 3",
+          "Question": "A pyramid has base area 18 and volume 48. Find perpendicular height.",
+          "Method": "Height requirement",
+          "Steps": [
+            "Use 48=(1/3)·18·h=6h",
+            "Solve h=8",
+            "Confirm 18·8/3=48"
+          ],
+          "Answer": "Height 8 length units.",
+          "Check": "Verify the numerical result and its geometric units against slant height is not volume height"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a sketch a proof of the 1/3 factor",
+          "WhyWrong": "A diagram alone does not justify all pyramids",
+          "Correction": "Use section scaling and Cavalieri or a dissection argument"
+        },
+        {
+          "Mistake": "Using slant edge in V=Bh/3",
+          "WhyWrong": "Height is perpendicular to base plane",
+          "Correction": "Identify the perpendicular altitude"
+        }
+      ],
+      "SummaryPoints": [
+        "Provide an informal Cavalieri/decomposition justification that every pyramid has V=(1/3)Bh, with B the base area and h perpendicular height.",
+        "Use an informal prism dissection or Cavalieri comparison",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Building a Volume Formula for a Pyramid. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Pyramid sections",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "The shape tapers quadratically",
+                "Halfway from apex section area B/4"
+              ]
+            },
+            {
+              "Label": "Volume principle",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use an informal prism dissection or Cavalieri comparison",
+                "Three congruent pyramids may fill a suitable prism in a classic decomposition"
+              ]
+            },
+            {
+              "Label": "Height requirement",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Slant height is not volume height",
+                "A skew pyramid can have same B,h and volume"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L14",
+      "CultureCode": "en",
+      "Title": "Working with Pyramids",
+      "ExplanationParagraphs": [
+        "Learning goal: Solve direct and inverse volume problems for pyramids and cones, and specify multiple plausible dimensions for a fixed positive volume.",
+        "For base area B and perpendicular height h, V=Bh/3 Use units B in length² and h in length",
+        "For circular base radius r, V=πr²h/3 No unique size without enough constraints",
+        "Teacher rubric (0–8): four human 0/1/2 criteria evaluate matched comparison prism volume with source picture boundaries, source inverse cone and D volume128, two valid distinct ice pyramid bases B144, and eight source Practice cases including noninvented six source-image selections and exact units.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 14, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments.",
+        "Source 14.1 Volume Matching (5 min): teacher first shows original pyramid and two comparator solids A and B with source picture dimensions. A prism of the SAME base B and exactly ONE THIRD the pyramid's perpendicular height has equal volume because Vprism=B*(hpyramid/3)=Vpyramid=B*hpyramid/3. Do not select source A/B label or invent lengths from missing image; source teacher synthesis identifies one matching rectangular prism. A prism with same base and same height would have THREE times the pyramid volume.",
+        "Source 14.2 Practice with Pyramids (20 min): source students calculate pyramid/cone volumes of illustrated A/B/C and labelled source D with base area32cm² and perpendicular h12cm, so D=32*12/3=128cm³. A/B/C image numeric side labels inaccessible from teacher/student text, human teacher checks figures. Source inverse cone question V=16pi: given r3, h=3*16/9=16/3 length units; given h3, r=sqrt(3*16/3)=4 length units. State generic V=pi*r²*h/3 and distinguish radius vs diameter. Source optional Giza dimensions height455ft base side756ft -> ideal pyramid volume756²*455/3 ft³; comparison to Olympic pool requires specifying actual chosen pool length/width/depth, so no ungrounded count.",
+        "Source 14.3 An Icy Pyramid (10 min): source caterer's approximate 12 L of water corresponds about720 cubic inches for classroom model, pyramid perpendicular height15in. Set 720=(B*15)/3=5B, so REQUIRED base area B=144in². Two distinct rectangular/square examples: 12×12in square; 9×16in rectangle. Triangular alternative right triangle legs12in and24in has B144. Ask teams to draw two DIFFERENT bases and verify exact model, or use cylinder-like disk only if base can be arbitrary circle, requiring cone (radius sqrt(144/pi)); source says a pyramid base any polygon, not circular. Original GeoGebra applet is optional and not connected. The 12 L↔720in³ approximation is source rounded, not exact physical equality.",
+        "Source student summary cone V=900pi in³ requires r²h=2700; source examples r5in, h108in and r20in, h6.75in. Both positive and valid for the simplified cone. Source synthesis inverse pyramid V200 units³ implies B*h=600, and many dimensions solve this without uniqueness. Use PERPENDICULAR height for oblique cones/pyramids and dimensions/area with square/cubic units; preserve existing correct independently authored RichV2 worked cases.",
+        "Source Practice P1-P8: P1 pyramid h5in V60in³ requires base area B=36in²: source A square side6, C rectangle4×9, F hexagon stated area36 true; B rectangle3×4 false, D circle r4 area16pi false, E right triangle leg5 hyp13 other leg12 area30 false. P2 original cheese prism4×2×2 volume16in³, two distinct pyramids with B*h=48: e.g. square4×4 base height3in and rectangle6×4 base height2in. P3 six source pictures with volumes40 are IMAGE DEPENDENT, do not invent choices. P4 square base side5 volume50 -> h=3*50/25=6 units choice C. P5 cone volume100pi -> same-radius same-height cylinder300pi cubic feet. P6 two triangles plus three rectangles -> triangular prism B. P7 oblique cylinder radius3, slant6sqrt2 at45deg gives perpendicular h6, V54pi choice D. P8 box original volume7 scaled to448 gives volume factor64 and positive linear k4: Mai correct, Andre/Lin confuse k²/k³ with k. Original teacher-login 14.4 Pyramid Dimensions cooldown restricted; teacher-scored first-party paper design task."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pyramid formula",
+          "Definition": "For base area B and perpendicular height h, V=Bh/3",
+          "Rule": "Use units B in length² and h in length",
+          "Example": "B=24,h=9 gives V=72"
+        },
+        {
+          "Title": "Cone formula",
+          "Definition": "For circular base radius r, V=πr²h/3",
+          "Rule": "Use radius not diameter",
+          "Example": "r=3,h=8 gives 24π"
+        },
+        {
+          "Title": "Inverse design",
+          "Definition": "Fix V then solve for any one positive dimension given the others",
+          "Rule": "No unique size without enough constraints",
+          "Example": "A pyramid V=60 could use B=20,h=9"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Working with Pyramids — worked case 1",
+          "Question": "Pyramid base area 24 cm² height 9 cm. Find V.",
+          "Method": "Pyramid formula",
+          "Steps": [
+            "Multiply B·h=216 cm³",
+            "Divide by 3",
+            "V=72 cm³"
+          ],
+          "Answer": "72 cm³.",
+          "Check": "Verify the numerical result and its geometric units against use units b in length² and h in length"
+        },
+        {
+          "Title": "Working with Pyramids — worked case 2",
+          "Question": "Cone radius 3 m height 8 m. Find V.",
+          "Method": "Cone formula",
+          "Steps": [
+            "Base area πr²=9π",
+            "Multiply height=72π",
+            "Divide by 3"
+          ],
+          "Answer": "24π m³.",
+          "Check": "Verify the numerical result and its geometric units against use radius not diameter"
+        },
+        {
+          "Title": "Working with Pyramids — worked case 3",
+          "Question": "Pyramid volume 60 m³ and base area 20 m². Find perpendicular height.",
+          "Method": "Inverse design",
+          "Steps": [
+            "Equation 60=20h/3",
+            "Multiply by 3 and divide by 20",
+            "h=9"
+          ],
+          "Answer": "9 m.",
+          "Check": "Verify the numerical result and its geometric units against no unique size without enough constraints"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substituting circular diameter for radius",
+          "WhyWrong": "The cone base uses r²",
+          "Correction": "Halve diameter first"
+        },
+        {
+          "Mistake": "Assuming a volume fixes all dimensions",
+          "WhyWrong": "Different positive B,h pairs yield same product Bh",
+          "Correction": "Ask for another measurement"
+        }
+      ],
+      "SummaryPoints": [
+        "Solve direct and inverse volume problems for pyramids and cones, and specify multiple plausible dimensions for a fixed positive volume.",
+        "Use radius not diameter",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Working with Pyramids. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Pyramid formula",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use units B in length² and h in length",
+                "B=24,h=9 gives V=72"
+              ]
+            },
+            {
+              "Label": "Cone formula",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use radius not diameter",
+                "r=3,h=8 gives 24π"
+              ]
+            },
+            {
+              "Label": "Inverse design",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "No unique size without enough constraints",
+                "A pyramid V=60 could use B=20,h=9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L15",
+      "CultureCode": "en",
+      "Title": "Putting All the Solids Together",
+      "ExplanationParagraphs": [
+        "Learning goal: Choose appropriate prism, cylinder, cone and pyramid formulas, decompose solids and explain units and possible overlap.",
+        "Prism/cylinder volume V=Bh Use perpendicular height",
+        "Cone/pyramid volume V=Bh/3 Avoid double counting intersections",
+        "Teacher rubric (0–8): four human-scored 0/1/2 criteria cover correct planning for missing source figures and perpendicular height selection, original first-party rotation cone/cylinder volumes24pi, supplementary dog-toy/hemisphere geometry with precision, and seven source Practice exact values and area/volume inverse cases.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 15, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments.",
+        "Source 15.1 Math Talk Volumes (5 min): return to exact and mentally simplified cylinder pi*r²*h, cone/pyramid (1/3)*B*h and prism B*h. Original math talk questions are pictorial with no recoverable specific marked dimensions in accessible source text; teacher must verify source figure before exact numbers. Source teacher explicitly warns that in cone formula one must SQUARE radius BEFORE multiplying by one third, not (r/3)². Students compare factorizations, operational order and two competing mental methods.",
+        "Source 15.2 Missing Measurements (20 min): original pairs of right cone and oblique rectangular prism, and two further source figures A/B, require PRE-CALCULATION explanation of which measurements are missing and which right triangle can be added. Use Pythagoras when two orthogonal legs or hypotenuse are known and DEGREE-mode trigonometry when a slant edge makes a supplied angle; volume always uses perpendicular height, not slant height. Original four figure-only dimension labels unavailable in HTML text, so do not invent numeric answers. Require peers to share their plan and independently check the final computed volumes.",
+        "Source 15.2 optional bowl: open hemisphere formed from ONE square foot of sheet metal interpreted as its CURVED outside area only, thickness neglected, curved hemisphere area2*pi*r²=1ft², so radius r=1/sqrt(2*pi) ft and contained hemispherical volume(2/3)*pi*r³=1/(3*sqrt(2*pi)) ft³. Source problem does not specify whether rim or thickness consumes material; teacher should disclose model assumptions. The source provides full sphere surface4*pi*r² and volume4*pi*r³/3 as supporting formulas; use half for hemisphere appropriately.",
+        "Source 15.3 Spinning into Three Dimensions (10 min): original shaded FIRST-PARTY 2D right profile touches VERTICAL axis; rectangle has radial width2in and vertical height5in, triangle ABOVE it has radial base2in and vertical height3in. After full360 degree rotation, resulting compound solid is a FILLED right cylinder radius2 height5 and a right cone radius2 height3 with disjoint interiors except shared disk. Cylinder V=pi*(2²)*5=20*pi in³, cone V=(1/3)*pi*2²*3=4*pi in³, total24*pi≈75.4 in³. Explain shared disk boundary has zero 3D volume, so volumes sum; a prism/pyramid with noncircular sections cannot be generated as this axial rotation of a planar region.",
+        "Source student summary: solid cylinder dog chew toy r9cm h2.5cm has V202.5*pi≈636cm³; solid right cone r6cm with slant16cm has perpendicular h=sqrt(16²−6²)=sqrt220 cm, volume(1/3)*pi*36*sqrt220=12*pi*sqrt220≈559cm³, so cylinder uses more material. Source source 15.4 Maximizing Seeds Cool-down teacher-login restricted, replaced with independent teacher paper route, not original content. Preserve valid earlier RichV2 independent composite24*pi example while distinguish its cylinder height4 and cone height6 from original source height5/3.",
+        "Source Practice P1-P7: P1 right cone diameter10 radius5, volume100*pi implies height h=3*100/25=12; apex-to-circle-edge slant sqrt(12²+5²)=13 units. P2 square right pyramid side10, apex-to-side-MIDPOINT slant height13, half side5, perpendicular height sqrt(13²−5²)=12; volume(1/3)*100*12=400 units³. P3 same-height prism base B and pyramid base3B volumes equal; same-base pyramid height h vs cylinder height3h means cylinder volume NINE times pyramid; same-height cone radius3r vs cylinder radius r means cone volume THREE times cylinder. P4 pyramid V120in³ h8 needs base area45in²; two examples rectangle5×9in, right triangle legs9/10in. P5 clay block prism6×1×(1/2)=3in³; pyramid with B*h=9: square3×3 height1 and rectangle3×1 height3 are two valid choices. P6 three congruent square pyramids fill cube side2ft volume8ft³, each8/3ft³. P7 wheel circle area324pi to9pi area ratio1/36, positive linear k=1/6. All seven practice tasks human-scored with exact/approximate and boundary fixtures."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Constant-section solid",
+          "Definition": "Prism/cylinder volume V=Bh",
+          "Rule": "Use perpendicular height",
+          "Example": "Cylinder r=2,h=6 gives 24π"
+        },
+        {
+          "Title": "Tapered solid",
+          "Definition": "Cone/pyramid volume V=Bh/3",
+          "Rule": "Distinguish base type",
+          "Example": "Cone r=2,h=6 gives 8π"
+        },
+        {
+          "Title": "Composite volume",
+          "Definition": "Add solids with disjoint interiors or subtract holes",
+          "Rule": "Avoid double counting intersections",
+          "Example": "A cube 3³ with a removed 1³ cavity has volume 26"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Putting All the Solids Together — worked case 1",
+          "Question": "Cone radius 2 height 6 on top of cylinder same radius and height 4. Find combined volume.",
+          "Method": "Constant-section solid",
+          "Steps": [
+            "Cylinder V=π·4·4=16π",
+            "Cone V=(1/3)π·4·6=8π",
+            "Disjoint interiors combine to 24π"
+          ],
+          "Answer": "24π cubic units.",
+          "Check": "Verify the numerical result and its geometric units against use perpendicular height"
+        },
+        {
+          "Title": "Putting All the Solids Together — worked case 2",
+          "Question": "A square pyramid base 5×5 height 12. Find V.",
+          "Method": "Tapered solid",
+          "Steps": [
+            "Base area B=25",
+            "Compute Bh/3=25·12/3",
+            "V=100"
+          ],
+          "Answer": "100 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against distinguish base type"
+        },
+        {
+          "Title": "Putting All the Solids Together — worked case 3",
+          "Question": "A cube side 3 has an interior cubic cavity side 1. Find material volume.",
+          "Method": "Composite volume",
+          "Steps": [
+            "Outer cube volume=3³=27",
+            "Void is 1³=1",
+            "Subtract: 27−1=26"
+          ],
+          "Answer": "26 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against avoid double counting intersections"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using same formula for cylinder and cone",
+          "WhyWrong": "Their section areas vary differently",
+          "Correction": "Use Bh versus Bh/3"
+        },
+        {
+          "Mistake": "Adding volumes that overlap",
+          "WhyWrong": "Shared regions get counted twice",
+          "Correction": "Decompose into disjoint pieces or subtract intersection"
+        }
+      ],
+      "SummaryPoints": [
+        "Choose appropriate prism, cylinder, cone and pyramid formulas, decompose solids and explain units and possible overlap.",
+        "Distinguish base type",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Putting All the Solids Together. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Constant-section solid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use perpendicular height",
+                "Cylinder r=2,h=6 gives 24π"
+              ]
+            },
+            {
+              "Label": "Tapered solid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Distinguish base type",
+                "Cone r=2,h=6 gives 8π"
+              ]
+            },
+            {
+              "Label": "Composite volume",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Avoid double counting intersections",
+                "A cube 3³ with a removed 1³ cavity has volume 26"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L16",
+      "CultureCode": "en",
+      "Title": "Surface Area and Volume",
+      "ExplanationParagraphs": [
+        "Learning goal: Compare volume and exposed surface area in design problems; distinguish total versus lateral surface and show that equal volumes need not mean equal surface areas.",
+        "Cube side s has V=s³ and total S=6s² Recover s=∛V if volume known",
+        "Closed cylinder total surface S=2πr²+2πrh State what is exposed",
+        "Teacher rubric (0–8): four human-scored 0/1/2 criteria evaluate source 180ft fence optimum; genuinely unbounded fixed-volume SA optimization vs cube minimum; source sphere/cylinder animal and optional strength ratios with dimensionality and model caveats; and exact eight source Practice cases, special rotation volume and teacher diagram limits.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 16, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments.",
+        "Source 16.1 Maximize Area (5 min): rectangular zoo feeding enclosure uses 180ft fence for FOUR sides, so length+width90ft. Rectangle area x(90-x) has maximum when x45ft, area2025ft². Square is a rectangle (four right angles). This warm-up maximizes TWO-dimensional area with fixed perimeter, but must NOT be transplanted backward as maximum three-dimensional SURFACE area for a fixed solid volume.",
+        "Source 16.2 Maximize in Three Dimensions (15 min): original simplified lithium battery mathematical model fixes rectangular prism volume60mm³ and assumes energy proportional to surface area of a lithium foil; never open, dismantle or experiment with an actual lithium-ion battery. Source asks for DIMENSIONS that MAXIMIZE exposed area with fixed volume, but with positive real unrestricted dimensions NO FINITE MAXIMUM EXISTS: for lengths t,t,60/t², SA=2(t²+120/t), diverges to infinity as t approaches0+. A cube of fixed volume MINIMIZES surface area within rectangular prisms; it does not maximize it. Compare concrete source alternative integer-edge prisms (1,2,30) V60 SA2(2+30+60)=184 and (1,1,60) V60 SA242; real high-area design requires explicit minimum foil thickness, manufacturability, thermal, performance and safety bounds. Explain this under-specified optimisation instead of presenting an arbitrary extreme as a true maximizer.",
+        "Source 16.3 Assume a Spherical Elephant (10 min): model elephant as perfect sphere radius4.5ft, volume(4/3)pi*(4.5³)=121.5pi ft³, surface4pi*(4.5²)=81pi ft², SA/V=(2/3) inverse feet. Model snake as closed right circular cylinder length3ft diameter0.2ft radius0.1ft, volumepi*(.1²)*3=.03pi ft³, external FULL surface2pi*(.1²)+2pi*.1*3=.62pi ft² (INCLUDING two end disks), SA/V=.62/.03=62/3≈20.667 inverse feet. If source assumes only lateral skin surface excluding cut ends then ratio20, so explain model boundary. These sphere/cylinder animal shapes are pedagogical idealizations, not exact physiological anatomy or species-wide heat transfer predictions.",
+        "Source 16.4 OPTIONAL Measuring Strength (10 min): original model human sphere radius1, ant radius1/200, elephant radius5. Raw cross-sectional muscle-area proxy pi*r² orders ant<human<elephant; relative proxy raw/volume=(pi*r²)/((4/3)pi*r³)=3/(4r), so relative proxies elephant3/20=.15, human3/4=.75, ant150, opposite ranking. An ant's relative proxy is200 times a human's, but the source 100-pound→20,000-pound illustration is NOT a biomechanical proof of actual lift capacity. Explain why multiplying rather than DIVIDING by spherical volume is a malformed ratio.",
+        "Source synthesis prism SA at volume216cm³: 1×12×18 has surface492cm²; 9×8×3 has246cm²; cube6×6×6 has216cm², minimum among those. Sphere with same volume r=cubert(162/pi)≈3.72cm and SA≈174cm², even lower than cube, illustrating compact shapes. Preserve existing first-party correct worked cases closed cylinder r2 h3 SA20pi, cube V27 SA54, cuboids 1×1×12 SA50 versus 2×2×3 SA32; distinguish them from source battery problem. Original 16.5 Minimize Area Cool-down teacher-restricted, replace first-party evidence.",
+        "Source Practice P1-P8: P1 four original equal-volume solids A-D with pictured surfaces but NO accessible shape dimensions; no invented letter for least surface, teacher checks source figure. P2 prism A 3×4×8in V96in³ SA=2(12+24+32)=136in² SA/V=17/12≈1.417 per inch; prism B5×5×6in V150in³ SA=2(25+30+30)=170in² SA/V=17/15≈1.133 per inch; B has larger absolute SA, A higher ratio. P3 two equal-volume ice shapes e.g cube6×6×6 V216 SA216 versus rectangular 1×12×18 V216 SA492, larger SA cools drink faster under simplified equal temperature/heat transfer conditions. P4 source marked grid region with axis x=5 includes polygon vertices (5,3),(5,8),(7,8),(8,6); rotation yields lower cone h3 r3 volume9pi plus upper frustum h2 radii3,2 volume(2/3)pi(9+6+4)=38pi/3, total65pi/3 cubic inches; teacher original image verifies vertices and filled region. P5 triangular prism source base picture needed before volume. P6 inverted cone r12in total h8in filled water from apex to height2in means linear k1/4, filled-volume fraction k³=1/64. P7 square pyramid side4 h10 volume(16*10)/3=160/3 cubic units. P8 original volume4 to108 factor27 => linear k3 and SA10*9=90 square units."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cube comparison",
+          "Definition": "Cube side s has V=s³ and total S=6s²",
+          "Rule": "Recover s=∛V if volume known",
+          "Example": "V=27 gives s=3 and S=54"
+        },
+        {
+          "Title": "Cylinder exposed surface",
+          "Definition": "Closed cylinder total surface S=2πr²+2πrh",
+          "Rule": "Remove an open top if specified",
+          "Example": "r=2,h=3 closed S=20π"
+        },
+        {
+          "Title": "Design tradeoff",
+          "Definition": "Same volume may correspond to different surface areas",
+          "Rule": "State what is exposed",
+          "Example": "Boxes 1×1×12 and 2×2×3 both V=12"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Surface Area and Volume — worked case 1",
+          "Question": "Closed cylinder radius 2 height 3: find total surface.",
+          "Method": "Cube comparison",
+          "Steps": [
+            "Two circular caps total 2π·2²=8π",
+            "Lateral area circumference×height=2π·2·3=12π",
+            "Sum 20π"
+          ],
+          "Answer": "20π square units.",
+          "Check": "Verify the numerical result and its geometric units against recover s=∛v if volume known"
+        },
+        {
+          "Title": "Surface Area and Volume — worked case 2",
+          "Question": "Cube volume 27; find total surface.",
+          "Method": "Cylinder exposed surface",
+          "Steps": [
+            "Side s=∛27=3",
+            "Surface S=6s²",
+            "S=6·9=54"
+          ],
+          "Answer": "54 square units.",
+          "Check": "Verify the numerical result and its geometric units against remove an open top if specified"
+        },
+        {
+          "Title": "Surface Area and Volume — worked case 3",
+          "Question": "Compare closed boxes 1×1×12 and 2×2×3 of volume 12.",
+          "Method": "Design tradeoff",
+          "Steps": [
+            "First area=2(1+12+12)=50",
+            "Second area=2(4+6+6)=32",
+            "Equal volume 12 but surfaces differ"
+          ],
+          "Answer": "Surface areas 50 and 32 square units.",
+          "Check": "Verify the numerical result and its geometric units against state what is exposed"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating curved area and total closed area as same",
+          "WhyWrong": "Caps may add to exposed surface",
+          "Correction": "Include only specified surfaces"
+        },
+        {
+          "Mistake": "Assuming equal volumes have equal areas",
+          "WhyWrong": "Shape affects boundary area",
+          "Correction": "Calculate S independently from V"
+        }
+      ],
+      "SummaryPoints": [
+        "Compare volume and exposed surface area in design problems; distinguish total versus lateral surface and show that equal volumes need not mean equal surface areas.",
+        "Remove an open top if specified",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Surface Area and Volume. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cube comparison",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Recover s=∛V if volume known",
+                "V=27 gives s=3 and S=54"
+              ]
+            },
+            {
+              "Label": "Cylinder exposed surface",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Remove an open top if specified",
+                "r=2,h=3 closed S=20π"
+              ]
+            },
+            {
+              "Label": "Design tradeoff",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "State what is exposed",
+                "Boxes 1×1×12 and 2×2×3 both V=12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L17",
+      "CultureCode": "en",
+      "Title": "Volume and Density",
+      "ExplanationParagraphs": [
+        "Learning goal: Model density as mass per unit volume, use unit conversion and composite volume to find mass, and distinguish material density from object-level average density.",
+        "ρ=m/V for V>0 Mass m=ρV",
+        "Geometric formula estimates occupied volume; voids matter Keep units in ρV",
+        "Teacher rubric (0–8): four human 0/1/2 criteria cover source equal-mass and density dimensions; exact pillow and anchor volume/unit conversions and target1000kg bulk volumes; hollow-tank fish mathematical population modelling with original-figure uncertainty; and nine original Practice solutions, alternative/malformed cases and teacher evidence.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 17, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments.",
+        "Source 17.1 A Kilogram by Any Other Name (5min): 1000kg feathers and1000kg steel have the SAME MASS despite very different occupied volumes. Density rho=m/V with units kg/m^3 or g/cm^3, not physical heaviness at fixed mass. Explain mass is conserved independent of presentation and distinguish material from bulk density and enclosed air.",
+        "Source 17.2 Light as a Feather (15min): source pillow feathers mass59g volume rectangular prism51cm×66cm×7cm=23562cm^3=0.023562m^3, so bulk rho=0.059kg/0.023562m^3≈2.504kg/m^3. Source steel anchor square pyramid base20cm×20cm perpendicular height28cm V=(400×28)/3≈3733.333cm^3=0.003733333m^3, mass30kg, rho≈8035.714kg/m^3. At these ideal source densities, mass1000kg of bulk feathers occupies1000/2.504≈399.356m^3, steel1000/8035.714≈0.12444m^3. Explicit dimensional conversion 1m^3=10^6cm^3 and1kg=10^3g; 1g/cm^3=1000kg/m^3, not1.",
+        "Source 17.2 optional Iridium Pencil: mass ratio for identical geometrical pencil volumes equals density(iridium)/density(wood) if both uniform; the original source provides NEITHER density numerically, so teacher asks for separately documented density references before any numeric multiple. Source teacher response uses rounded approximate bulk feather and steel figures; do not claim a model pillow's low bulk density is intrinsic feather material density.",
+        "Source 17.3 A Fishy Situation (15min): original source cylindrical tank with CENTRAL hollow vertical tube; water volume is V=pi*(R^2−r^2)*h cubic feet using verified outer and inner radii and water height, then gallons=7.48*V. Target stocking N=(16 fish/100 gallons)*gallons=0.16*7.48*pi*(R^2−r^2)*h. Compare to available275, add/remove by nearest defensible integer. Original required R,r,h appear only in publisher figure absent from accessible HTML text; teacher must inspect figure before certifying number. Teacher notes N≈315.8 and density for275≈14 fish per100 gal, suggesting around316 and 41 added, CONDITIONAL on original unseen diagram and no actual aquarium operations. This is a mathematical stocking exercise, not real animal welfare guidance.",
+        "Source summary: a spherical-object baseball example volume200cm^3 mass145g yields density0.725g/cm^3; an apple same volume200cm^3 mass100g yields0.5g/cm^3. Distinguish object average density from an internal heterogeneous structure. Source sink/float simplified criterion requires uniform displaced fluid and no trapped air; actual buoyancy can depend on geometry and fluid, so do not generalize to people or complex marine environments. Preserve earlier first-party correct block2×3×4cm density2.5g/cm³ mass60g, sample540g/200cm³=2.7g/cm³, annulus material r3 ri1 h5 density2 gives80pi grams.",
+        "Source Practice P1-P9: P1 annular washer outer diameter3/4in, inner1/4in, thickness1/4in, density0.285lb/in³. V_one=pi*((3/8)^2−(1/8)^2)*(1/4)=pi/32in³, FIVE washers mass5*.285*pi/32≈0.14lb nearest hundredth. P2 spherical cells radius10^-3cm, rho1.1g/cm³: mass/cell=1.1*(4pi/3)*10^-9g≈4.60767×10^-9g; koala6kg=6000g ≈1.302×10^12 cells and hippo1400kg=1.4×10^6g≈3.038×10^14 cells, under unrealistic equal spherical cells/no extracellular matrix model. P3 toy1×2×2 cm V4cm³ mass3g density.75g/cm³ < water1, floats under source simplified criterion. P4 cube V512 edge8 SA384 vs sphere same volume SA≈309.5, cube larger SA. P5 equal SA unequal volume e.g two closed rectangular prisms1×1×5 (SA22,V5) and1×2×3 (SA22,V6). P6 cone diameter10 r5 volume100pi ⇒ h12 slant13, choice C. P7 pyramid h4 V40 demands base area30: rectangle3×10 (B), right triangle leg5 hyp13 second leg12 area30 (D), heart area30 (E); B D E. P8 Bh valid constant-section prisms A,D and cylinder F only. P9 lines l,m,k all perpendicular to common n in same Euclidean PLANE are mutually parallel, so k meets neither; absent coplanarity in 3D, assertion fails and can have common foot intersection. Original teacher-restricted 17.4 Float or Sink cooldown is not reproduced; first-party physical-paper reasoning rubric."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Density definition",
+          "Definition": "ρ=m/V for V>0",
+          "Rule": "Mass m=ρV",
+          "Example": "Solid 2 cm³ at 3 g/cm³ has mass 6 g"
+        },
+        {
+          "Title": "Volume measurement",
+          "Definition": "Geometric formula estimates occupied volume; voids matter",
+          "Rule": "Use material volume for material density",
+          "Example": "A hollow cylinder excludes hole"
+        },
+        {
+          "Title": "Units",
+          "Definition": "Convert m³ to cm³ with 1 m³=10^6 cm³",
+          "Rule": "Keep units in ρV",
+          "Example": "2 g/cm³=2000 kg/m³"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Volume and Density — worked case 1",
+          "Question": "Block 2×3×4 cm has density 2.5 g/cm³. Find mass.",
+          "Method": "Density definition",
+          "Steps": [
+            "Volume=2·3·4=24 cm³",
+            "Multiply 2.5 g/cm³×24 cm³",
+            "Mass=60 g"
+          ],
+          "Answer": "60 grams.",
+          "Check": "Verify the numerical result and its geometric units against mass m=ρv"
+        },
+        {
+          "Title": "Volume and Density — worked case 2",
+          "Question": "Mass 540 g, volume 200 cm³; find density.",
+          "Method": "Volume measurement",
+          "Steps": [
+            "Density=m/V",
+            "Divide 540/200=2.7",
+            "Attach g/cm³"
+          ],
+          "Answer": "2.7 g/cm³.",
+          "Check": "Verify the numerical result and its geometric units against use material volume for material density"
+        },
+        {
+          "Title": "Volume and Density — worked case 3",
+          "Question": "Cylinder outer radius 3, hole radius 1, height 5, density 2 g/cm³. Find mass.",
+          "Method": "Units",
+          "Steps": [
+            "Material volume=π(9−1)·5=40π cm³",
+            "Multiply by 2 g/cm³",
+            "m=80π g"
+          ],
+          "Answer": "80π grams.",
+          "Check": "Verify the numerical result and its geometric units against keep units in ρv"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using hollow object's outer volume for material mass",
+          "WhyWrong": "The void contains no material",
+          "Correction": "Subtract hole before multiplying density"
+        },
+        {
+          "Mistake": "Using mass/area for volumetric density",
+          "WhyWrong": "Volumetric density denominator is cubic units",
+          "Correction": "Use m/V"
+        }
+      ],
+      "SummaryPoints": [
+        "Model density as mass per unit volume, use unit conversion and composite volume to find mass, and distinguish material density from object-level average density.",
+        "Use material volume for material density",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Volume and Density. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Density definition",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Mass m=ρV",
+                "Solid 2 cm³ at 3 g/cm³ has mass 6 g"
+              ]
+            },
+            {
+              "Label": "Volume measurement",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use material volume for material density",
+                "A hollow cylinder excludes hole"
+              ]
+            },
+            {
+              "Label": "Units",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Keep units in ρV",
+                "2 g/cm³=2000 kg/m³"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L18",
+      "CultureCode": "en",
+      "Title": "Volume and Graphing",
+      "ExplanationParagraphs": [
+        "Learning goal: Interpret square-root and cube-root graphs in geometric dimensions and invert area/volume formulas with correct physical domains.",
+        "For a cube V=s³, s=∛V for V≥0 Use positive edge lengths for nonzero cubes",
+        "Given square area A=s², side s=√A for A≥0 Do not interchange dimensions",
+        "Teacher rubric (0–8): four 0/1/2 human criteria score source exact drum diameter conversion and k³ model, original helium tank/budget/diameter inverse cubic root decisions, source pair of same-k beach/drum graphs and teacher reversed source typo, and all nine Practice responses with teacher figures and units.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 18, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments.",
+        "Source 18.1 Parade Balloon Part 1 (5min): original marching drum diameter36 inches=3feet, so radius1.5feet and axial width1foot, ideal cylindrical volume V0=pi*(1.5)^2*(1)=2.25pi≈7.07 cubic feet. A geometrically similar inflated drum-shaped balloon factor k has volume V=(2.25pi)*k^3≈7.07*k^3 ft³. Student explains departures: drums have shells, hardware and not exact filled circular cylinders; balloon shape and helium conditions may change. Keep exact 2.25pi distinct from source rounded7.07.",
+        "Source 18.2 Parade Balloon Part 2 (20min): invert positive V=(2.25pi)k³ to k=cubert(V/(2.25pi)) for V>=0 and nondegenerate k>0. Source printed point (1000,5.21) means 1000 cubic feet helium corresponds to about5.21x EACH linear dimension, subject to source rounding. One 500ft³ helium tank, 12 tanks implies6000ft³ and scale k=cubert(6000/(2.25pi))≈9.4683, balloon diameter3*k≈28.405ft. Doubling tanks to24 doubles helium volume, thus multiplies diameter by cbrt2≈1.2599, reaching≈35.788ft, not double. Parade maximum balloon diameter15ft means k<=15/3=5, helium V=(2.25pi)*125≈883.573ft³ and TWO 500ft³ tanks to fill (ceiling to whole tanks; fraction1.767 tanks would theoretically suffice absent indivisible-tank purchase). This exercise is NOT an actual flight engineering model and route restriction is hypothetical.",
+        "Source 18.3 Beach Ball Balloon (10min): original beach ball radius1.5ft, sphere volume(4/3)pi*(1.5)^3=4.5pi≈14.14ft³, EXACTLY TWICE drum original2.25pi. Same positive dilation k implies beach volume4.5pi*k³ and drum volume2.25pi*k³, with k=cubert(V_ball/(4.5pi)); a graph at constant k is horizontal across the two functions' points and expresses SAME linear factor but DIFFERENT required helium volumes. For k5, total helium (2.25pi+4.5pi)*125=843.75pi≈2650.72ft³. For k10, total6750pi≈21205.75ft³. For total12000ft³ shared equal k, solve6.75pi*k³=12000→k≈8.27134; scaled beach ball radius1.5*k≈12.407ft. Source teacher concluding sentence 'drum balloon almost twice ball balloon at scale10' is REVERSED relative to both actual source volumes and equations: BEACH BALL uses twice the drum helium at any same k.",
+        "Source 18.3 optional extension sphere SA/V=(4pi*r²)/((4/3)pi*r³)=3/r for r>0, units inverse length; graph y=3/r decreases steeply as r→0+ and flattens toward zero for large r, not a straight or square-root function. In print mode graph source functions exactly or approximate given coefficients7.07 and14.14; label x=volume cubic feet y=dimensionless scale and distinguish line of fixed k from function intersection: curves k(V) do not intersect for V>0 because different denominators, only at degenerate V0 (both k0).",
+        "Source student summary source cone-shaped water tank water's first small cone radius1ft height1ft V0=pi/3≈1.0472ft³, approximate1.05ft³, so k=cubert(V/(pi/3)) and vertical water height=k feet from that specific 1ft reference until tank full. Source point (100,4.57) from approximate1.05 gives ~4.57ft height. Do NOT use cone water level k as equivalent for nonconical tank or general above-capacity condition. Preserve earlier correct first-party square/cube root worked cases, not substitute them for source's parade/balloon graph.",
+        "Source Practice P1-P9: P1 cube edge5cm V125cm³ density3g/cm³ mass375g. P2 prism A 5×5×6in V150in³ SA=2(25+30+30)=170in² SA/V17/15≈1.133 in^-1; prism B 2×4×6in V48in³ SA=2(8+12+24)=88in² SA/V11/6≈1.833 in^-1, so B greater ratio. P3 right cone radius4 V16pi has height3, slant sqrt(3²+4²)=5 units. P4 right square pyramid side10 midpoint slant13 gives h12 V400, choice D. P5 two square bases and four congruent non-rectangular parallelograms -> OBLIQUE square prism choice D. P6 cylinder radius2.5cm height10.5cm V65.625pi≈206.167cm³, rectangular prism4×6×10.5 V252cm³, so PRISM larger. P7 parallelogram source area1cm² scaled to x cm² demands y=sqrt(x) dimensionless for x>=0; show graph and units. P8 similar rectangles taper to point→pyramid; congruent triangles→triangular prism; congruent squares→square prism; circles taper to point→cone as natural source ordered examples; other solids can share finite slices so specify sequence assumes consistent single base/height and full continuous family. P9 choose FOUR equal-volume solids from five original SOURCE FIGURES A–E, picture measurements missing in HTML: teacher must inspect figure, no fabricated list. Original 18.4 Circular Logo cooldown teacher-restricted; original-first-party paper graph worksheet 4x2 human rubric. Do not claim Desmos applet connected or online grade saved."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cube-root dimension",
+          "Definition": "For a cube V=s³, s=∛V for V≥0",
+          "Rule": "Use positive edge lengths for nonzero cubes",
+          "Example": "V=216 gives s=6"
+        },
+        {
+          "Title": "Square-root dimension",
+          "Definition": "Given square area A=s², side s=√A for A≥0",
+          "Rule": "For a closed cube face S=6s², s=√(S/6)",
+          "Example": "S=150 gives s=5"
+        },
+        {
+          "Title": "Graph comparison",
+          "Definition": "Square root grows differently from cube root; axes and units matter",
+          "Rule": "Do not interchange dimensions",
+          "Example": "For input 64, √64=8 and ∛64=4"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Volume and Graphing — worked case 1",
+          "Question": "Cube volume V=216 cm³; find side.",
+          "Method": "Cube-root dimension",
+          "Steps": [
+            "Cube volume equation V=s³",
+            "Take real positive cube root",
+            "s=6 cm"
+          ],
+          "Answer": "6 cm.",
+          "Check": "Verify the numerical result and its geometric units against use positive edge lengths for nonzero cubes"
+        },
+        {
+          "Title": "Volume and Graphing — worked case 2",
+          "Question": "Closed cube total surface area 150 m²; find side.",
+          "Method": "Square-root dimension",
+          "Steps": [
+            "Set 6s²=150",
+            "Divide by 6: s²=25",
+            "Positive root s=5 m"
+          ],
+          "Answer": "5 m.",
+          "Check": "Verify the numerical result and its geometric units against for a closed cube face s=6s², s=√(s/6)"
+        },
+        {
+          "Title": "Volume and Graphing — worked case 3",
+          "Question": "A graph shows y=∛x and x=64. Interpret y as cube edge in cm for x cm³.",
+          "Method": "Graph comparison",
+          "Steps": [
+            "Compute ∛64=4",
+            "Verify 4³=64",
+            "Label output length cm, input volume cm³"
+          ],
+          "Answer": "Cube edge 4 cm.",
+          "Check": "Verify the numerical result and its geometric units against do not interchange dimensions"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using square root to recover cube edge from volume",
+          "WhyWrong": "Dimension exponent is 3",
+          "Correction": "Use cube root"
+        },
+        {
+          "Mistake": "Allowing negative dimension from ± square root",
+          "WhyWrong": "Geometric length is nonnegative",
+          "Correction": "Choose positive root for nonzero body"
+        }
+      ],
+      "SummaryPoints": [
+        "Interpret square-root and cube-root graphs in geometric dimensions and invert area/volume formulas with correct physical domains.",
+        "For a closed cube face S=6s², s=√(S/6)",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Volume and Graphing. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cube-root dimension",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use positive edge lengths for nonzero cubes",
+                "V=216 gives s=6"
+              ]
+            },
+            {
+              "Label": "Square-root dimension",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "For a closed cube face S=6s², s=√(S/6)",
+                "S=150 gives s=5"
+              ]
+            },
+            {
+              "Label": "Graph comparison",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Do not interchange dimensions",
+                "For input 64, √64=8 and ∛64=4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

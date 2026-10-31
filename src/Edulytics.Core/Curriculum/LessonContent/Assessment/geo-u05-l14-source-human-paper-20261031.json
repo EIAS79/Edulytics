@@ -1,0 +1,227 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L14",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\14\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\14\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\14\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\14\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "c6f415e8c9b3573f63954f73bbc9189d3325e3094dbe8e4de3f48c7d22e11d31",
+    "TeacherActivities": "2b93e5d5cfe6eb373a7d9d9e4e5421c8d328f97dc9046f839be62be6eadba1ff",
+    "StudentActivities": "44d37a80ff786bed781db9ef7dcbf05420daa50e1b63eb2f4d8d1cc3da04c108",
+    "StudentPractice": "1df04895330887928709117cc2a12aca212cd6f231f103d4312ae454a2d1174b"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-GMD.A.1"
+    ],
+    "Addressing": [
+      "HSG-GMD.A.3",
+      "HSG-MG.A.3"
+    ],
+    "BuildingTowards": []
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "14.1",
+      "Goal": "source pyramid and same-volume rectangular prism with one-third height",
+      "Mode": "FIRST_PARTY_SOURCE_GEOMETRIC_COMPARISON"
+    },
+    {
+      "Source": "14.2",
+      "Goal": "four source pyramids A-D, cone V16pi inverse radius/height",
+      "Mode": "EXACT_D_AND_INVERSE_CONE_SOURCE_FIGURE_HUMAN"
+    },
+    {
+      "Source": "14.3",
+      "Goal": "ice pyramid V720in3 h15in two bases area144",
+      "Mode": "FIRST_PARTY_TWO_GEOMETRIC_BASES"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source pyramid base, cheese, six solids, cones and oblique cylinder tasks",
+      "Mode": "EXACT_P1_P2_P4_P8_AND_ORIGINAL_IMAGE_HUMAN"
+    },
+    {
+      "Source": "14.4",
+      "Goal": "publisher protected Pyramid Dimensions",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L14",
+    "TaskId": "geo-u05-l14-pyramid-B144-two-base-design",
+    "GroupId": "GEO_U05_L14_INVERSE_PYRAMID_ICE_BASE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Print source-aligned optional original pyramids D, paper V16pi inverses, physical two different ice bases B144, eight Practice item rationales and dated teacher0-8 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l14-inverse-pyramid-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "explains prism base B same and height one third produces same volume as pyramid, with teacher source figure review",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "solves source D=128cm³ and V16pi inverse cone h16/3 and r4 with correct radius/height roles",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "draws two different positive-area pyramid bases B144 for approximate ice sculpture V720 height15, explains source approximation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "answers all eight original Practice tasks including P1 A C F, P4 C, P5 300pi, P7 D and source P3 image limit",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "source pyramid V60 h5 choose possible base area36",
+        "TeacherExpected": "A C F",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "cheese prism4×2×2 same-volume pyramids",
+        "TeacherExpected": "volume16, B*h48; two valid base-and-height choices",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "six illustrated source solids volume40",
+        "TeacherExpected": "teacher verifies actual original diagram before selecting picture labels",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "square base side5 pyramid V50 find perpendicular height",
+        "TeacherExpected": "6 units choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "cone V100pi same radius height cylinder",
+        "TeacherExpected": "300pi ft³",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "2 congruent triangles and3 rectangles",
+        "TeacherExpected": "right triangular prism choice B",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "oblique cylinder r3 slant6sqrt2 angle45 to base",
+        "TeacherExpected": "perpendicular height6; 54pi cubic units choice D",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "scaled box V7 to448",
+        "TeacherExpected": "linear factor cbrt64=4, Mai correct",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "SourceDVolume": 128,
+    "InverseConeHeight": "16/3",
+    "InverseConeRadius": 4,
+    "IcyRequiredBaseSqIn": 144,
+    "IcyExampleBases": [
+      "12x12",
+      "9x16"
+    ],
+    "SourceSummaryCones": [
+      [
+        5,
+        108
+      ],
+      [
+        20,
+        6.75
+      ]
+    ],
+    "P1Choices": [
+      "A",
+      "C",
+      "F"
+    ],
+    "P2CheeseVolume": 16,
+    "P4Choice": "C",
+    "P5Cylinder": "300pi",
+    "P6Choice": "B",
+    "P7Choice": "D",
+    "P8Student": "Mai"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source D base32 h12 volume128 and inverse cone V16pi r3 gives height16/3",
+      "ice pyramid V720 h15 B144; examples12x12 and9x16",
+      "P1 A C F, P4 C, P5 300pi, P7 54pi choiceD"
+    ],
+    "Equivalent": [
+      "ice base9x16 and12x12 have same144in² but different shape",
+      "cone r5 h108 and cone r20 h6.75 each have900pi volume"
+    ],
+    "Wrong": [
+      "ice pyramid B48 because source formula divided by3 ignored",
+      "pyramid equal base and height has volume equal to prism",
+      "scaled box7→448 linear k64 rather than4"
+    ],
+    "Boundary": [
+      "positive base area and height needed for true volume",
+      "source 12L approximately720in³ not exact conversion",
+      "source 14.2 pictures A/B/C and P3 selections require original graphic"
+    ],
+    "Malformed": [
+      "radius mistaken for diameter",
+      "wrong cubic/square units",
+      "source label P3 chosen without diagram"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l14-inverse-pyramid-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l14-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

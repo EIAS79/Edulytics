@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 1,
+  "CreatedDate": "2026-10-29",
+  "Course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "Status": "COURSE_LOCAL_STATIC_ASSETS_UNLINKED_NOT_AUTHENTICATED_RENDITION",
+  "VisualKindRenderer": "Existing shared RichLessonVisualKind has no safe external SVG reference; Supervisor2 is sole owner of shared change.",
+  "Assets": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Path": "src/Edulytics.Web/wwwroot/geometry/geo/v13/u06-l15-quadrilateral-dilation-grid.svg",
+      "AltDescription": "Original and one-fifth dilated quadrilaterals with centre A=(2,3). A,B,C,D and image A,B′,C′,D′ share rays from A.",
+      "MathematicalFixture": {
+        "A": [
+          2,
+          3
+        ],
+        "B": [
+          6,
+          3
+        ],
+        "C": [
+          8,
+          9
+        ],
+        "D": [
+          4,
+          9
+        ],
+        "factor": 0.2,
+        "BPrime": [
+          2.8,
+          3
+        ],
+        "CPrime": [
+          3.2,
+          4.2
+        ],
+        "DPrime": [
+          2.4,
+          4.2
+        ]
+      },
+      "RendererVerified": false,
+      "SourceFigureIdentical": false
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Path": "src/Edulytics.Web/wwwroot/geometry/geo/v13/u07-l13-arc-length-radius-linear-graph.svg",
+      "AltDescription": "Original coordinate plot arc length s versus radius r for a fixed central angle 1.5 radians, showing five points on s=1.5r.",
+      "MathematicalFixture": {
+        "angleRadians": 1.5,
+        "points": [
+          [
+            2,
+            3
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            11,
+            16.5
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            20,
+            30
+          ]
+        ]
+      },
+      "RendererVerified": false,
+      "SourceFigureIdentical": false
+    }
+  ],
+  "RequiredContract": "Add a safe, allowlisted first-party SVG visual asset reference restricted to course-owned static files with accessible title/description; verify view in authenticated student and teacher lesson, DOM accessibility, CSP/path validation, and tenant isolation. Keep existing RichLessonVisualKind variants behavior intact.",
+  "HumanScoredDiagramGrading": "NOT_TESTED",
+  "AcademicStageBApproved": 0,
+  "DynamicConstructionTools": "NOT_IMPLEMENTED",
+  "SvgXmlValidatedLocally": false
+}

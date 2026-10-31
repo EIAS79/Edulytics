@@ -1,0 +1,329 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l01-l03-first-party-20261028-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+      "CultureCode": "en",
+      "Title": "Build It",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct segments, lines and circles precisely with a straightedge and compass. Explain how equal compass openings justify equal distances.",
+        "Starting model (verbal diagram, not to scale): A and B are distinct points; a circle with centre A passes through B. Every point P on that circle satisfies AP = AB. A straightedge draws the unique line through two distinct marked points; a compass transfers a fixed distance without reading a ruler.",
+        "Construction is not tracing by eye. A justified line is defined by two distinct points, and a justified circle by its centre and a point/radius. For a reproducible paper construction, mark named points and keep the compass opening fixed when transferring lengths.",
+        "U01:L01 repair (2026-10-30), first-party activity A — compare a freehand sketch with tool-defined construction: given distinct points P,Q and a separate point A, use the compass opening PQ to draw a circle centred at A, choose B on that circle, draw a second circle centred at B through A, and join A to B. Explain which distances are guaranteed equal and why a hand-drawn imitation alone cannot guarantee them. On paper, use an unmarked straightedge and compass; a compatible digital tool is optional, not claimed integrated.",
+        "Source-exact exploratory sequence for 1.2 (original Edulytiks wording): start with distinct A,B. Draw the circle centred at A through B; ESTIMATE a point C halfway along AB, without measuring or proving it. Draw the circle centred at B through C, label its two intersections with the first circle D and E, and connect A-D-E. Compare the produced triangles across two students BEFORE checking whether C really bisects AB. Different C choices change BC, the second circle and D,E; even though AD = AE = AB, the shape is not necessarily reproducible. Only after this comparison demonstrate equal-radius arcs as a legitimate exact-midpoint construction.",
+        "U01:L01 repair (2026-10-30), first-party activity B — diagnose an illegal move: J and K are distinct. A learner estimates a midpoint M on JK by eye, then asserts JM = MK and JK = 2JM. Neither equality is guaranteed. To replace the guess, draw congruent arcs centred at J and K with a common radius greater than JK/2; their two intersections define the perpendicular bisector and exact midpoint. The teacher reviews the actual labelled construction and argument, not a numeric proxy.",
+        "U01:L01 repair (2026-10-30), first-party activity C — independently sketch a regular hexagon, then construct one by stepping a fixed compass radius as successive chords on a circle. Compare the two results and justify equal sides using radius-defined equilateral central triangles; six central angles of 60° complete 360°. A peer comparison, diagram and explanation are assessed by a teacher.",
+        "Original Edulytiks task: Given distinct points A and B, construct an equilateral triangle ABC using two equal-radius circles. Record each permitted compass and straightedge move and explain why all three sides have the same length.",
+        "Human assessment boundary: an actual learner drawing and tool use are evaluated with a teacher rubric; no generated numeric answer is evidence of a successful physical construction. Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 1, CC BY 4.0; independently authored Edulytiks explanations and questions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Straightedge",
+          "Definition": "A straightedge defines a straight line through two distinct points without measuring its length.",
+          "Rule": "Mark A and B, then draw line AB or the finite segment AB using the points as anchors.",
+          "Example": "For A ≠ B, segment AB includes endpoints A and B; ray AB starts at A and continues through B."
+        },
+        {
+          "Title": "Compass and circle",
+          "Definition": "A circle is the set of points at a fixed positive distance r from a fixed centre O.",
+          "Rule": "A compass centred at O and opened to OA draws the circle through A; the unchanged opening transfers OA.",
+          "Example": "If P lies on this circle, OP = OA by construction."
+        },
+        {
+          "Title": "Construction evidence",
+          "Definition": "A geometric construction is justified by tool actions and invariants, not by visual resemblance.",
+          "Rule": "Name the constructed points and state equal-radius or collinearity reasons.",
+          "Example": "If C lies on circles with centres A and B of radius AB, then AC = BC = AB."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two circles make an equilateral triangle",
+          "Question": "Given distinct points A and B, construct C so that △ABC has three equal sides.",
+          "Method": "Use circles with centres at A and B and the same nonzero radius AB.",
+          "Steps": [
+            "Draw segment AB with the straightedge.",
+            "With centre A and opening AB draw circle cA.",
+            "Without changing the opening, draw circle cB centred at B.",
+            "Choose either intersection C of cA and cB and draw AC and BC.",
+            "Because C is on cA, AC = AB. Because C is on cB, BC = AB. Therefore AC = BC = AB."
+          ],
+          "Answer": "Triangle ABC is equilateral; either circle intersection is a valid choice.",
+          "Check": "A and B must be distinct. Two equal circles of radius AB intersect in two points, one on either side of AB. Teacher checks placement and marked equality."
+        },
+        {
+          "Title": "Transfer a length without reading a scale",
+          "Question": "Given segment PQ and a distinct point R, how can you locate S with RS = PQ?",
+          "Method": "Fix the compass opening to the distance PQ.",
+          "Steps": [
+            "Place the compass point at P and pencil at Q to capture opening PQ.",
+            "Keep the opening unchanged and place the compass point at R.",
+            "Mark any point S on the resulting circle centred at R.",
+            "Draw segment RS with the straightedge and label its endpoints."
+          ],
+          "Answer": "RS = PQ by equal compass radius.",
+          "Check": "The direction of RS is not fixed by its length; many S points are valid."
+        },
+        {
+          "Title": "Six equal chords form a regular hexagon",
+          "Question": "Construct a regular hexagon with a given circle centre O and radius OA > 0.",
+          "Method": "Step a chord equal to the circle radius around the circle.",
+          "Steps": [
+            "Draw the circle centred at O through A.",
+            "Keep the compass opening OA. From A mark the next point B on the circle.",
+            "Repeat at successive vertices to obtain C, D, E and F, then join consecutive points and F to A.",
+            "Each central triangle such as OAB has all sides radius OA and is equilateral, so each central angle is 60 degrees.",
+            "Six 60-degree central angles complete a full 360-degree turn; each chord has length OA."
+          ],
+          "Answer": "ABCDEF is a regular hexagon with six equal sides and six equal central angles.",
+          "Check": "Vertices must be taken consecutively in one direction. The compass opening remains OA throughout."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Eyeballing the location of a point that ought to be an exact circle intersection.",
+          "WhyWrong": "Visual estimates do not establish fixed distances and may break an equality claim.",
+          "Correction": "Use two defined circles and select a labelled intersection; justify equality using the radius definition."
+        },
+        {
+          "Mistake": "Changing the compass opening between equal-radius circles.",
+          "WhyWrong": "The side lengths then need not be equal.",
+          "Correction": "Keep the compass opening AB fixed for both circles in the triangle construction."
+        },
+        {
+          "Mistake": "Estimating the midpoint of a segment by eye and calling the resulting figure an exact construction.",
+          "WhyWrong": "Visual placement cannot guarantee equal half-segment lengths; the dependent circle radius and figure vary between students.",
+          "Correction": "Construct the perpendicular bisector from intersecting equal-radius arcs and justify both endpoint distances before naming the midpoint."
+        }
+      ],
+      "SummaryPoints": [
+        "A straightedge supplies collinearity and a compass supplies equal distances.",
+        "Source-aligned mathematical goal: precise construction and explanation, not mere drawing by appearance.",
+        "First-party constructions and justifications are described without copying publisher graphics; teacher reviews actual drawings, tool decisions and written explanations.",
+        "An estimated midpoint is deliberately useful as an exploratory illegal move: compare the different constructed triangles first, then critique unsupported half-length equalities and construct a true midpoint.",
+        "Paper compass/straightedge evidence with a labelled diagram and written proof can assess the source construction skill; it is not an online uploaded drawing or automatically scored result."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+      "CultureCode": "en",
+      "Title": "Constructing Patterns",
+      "ExplanationParagraphs": [
+        "Learning goal: Follow and write unambiguous straightedge-and-compass instructions that another person can use to reproduce a geometric pattern.",
+        "Verbal diagram: A and B are distinct endpoints of a horizontal segment. Two congruent circles centred at A and B both pass through the other centre. Label the intersection above AB as C and the one below as D. A reader can now construct the same four labelled points without needing an image.",
+        "Original Edulytiks construction challenge: create a diamond-shaped pattern from the two intersections C and D. Describe every point, centre, radius, intersection and segment in order; a peer should be able to follow the directions without seeing your result.",
+        "Rubric (teacher scored, 0–4): one point each for non-degenerate starting points and correctly maintained radius; unambiguous centre/intersection labels; correctly drawn segments; and a mathematical explanation of the equal lengths. A drawing or peer reconstruction is the evidence; no numeric-only automatic grade.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 2, CC BY 4.0. These are independently authored Edulytiks construction instructions, not copies of the original pattern artwork.",
+        "First-party activity 2.1 (Math Talk): given distinct A,B and two circles, centred A and B, each radius AB, label their intersections E and F. Extend AB to C on the A-side and D on the B-side with CA = AB = BD, so C,A,B,D lie in that order. Discuss four justified claims: EA=EB, triangle ABF is equilateral, CD=3AB and CB=DA=2AB. Peers compare at least two distance or construction arguments; equal lengths follow from marked radii and collinear segment addition, not from diagram appearance. The verbal configuration is original; the publisher figure is not claimed identical.",
+        "First-party activity 2.2 (Make Your Own): with a compass, unmarked straightedge and one labelled starting circle with centre O and radius OP, make an ORIGINAL pattern that uses only permitted constructions; students write every move in order (centres, fixed openings, line/segment endpoints, intersection labels), also specify shading or colouring. Preserve individual design freedom rather than assigning everyone the same diamond.",
+        "First-party activity 2.3 (Make Someone Else's): exchange only written directions with a partner who has NOT seen the creator's pattern. Partners reconstruct on paper, place original and recreation side by side, identify reproducible and ambiguous steps, and REVISE the written instructions with precise circle/centre/radius/line/point names. A static verbal diagram of the two equal circles is an optional worked model, not a substitute for the individual original-pattern and peer-reconstruction task.",
+        "Original Edulytiks cool-down alternative: draw a circle of radius OP>0, construct six successive equal-radius chords ABCDEF in one direction to form a regular hexagon, and mark opposite sides AB and DE. Write reproducible instructions and justify that the infinite lines AB and DE are parallel by the six 60-degree central angles or 180-degree symmetry about O. Label all objects; a picture alone is insufficient. This assesses precise instructions and produces a pair of parallel lines without reproducing the inaccessible 2021 publisher cool-down."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reproducible directions",
+          "Definition": "Construction instructions uniquely specify allowed steps and named geometric objects up to explicitly permitted choices.",
+          "Rule": "State the starting data, tools, centre, radius, intersection choice and connecting order.",
+          "Example": "‘Draw a circle centred at A through B’ is reproducible; ‘draw a circle on the left’ is ambiguous."
+        },
+        {
+          "Title": "Equal-radius intersections",
+          "Definition": "A point lying on two equal-radius circles has equal distances to their two centres.",
+          "Rule": "If C lies on both circles centred A and B with radius AB then AC = BC = AB.",
+          "Example": "C above AB and D below AB are the two equilateral-triangle apexes."
+        },
+        {
+          "Title": "Pattern verification",
+          "Definition": "A second student's successful reproduction requires mathematically precise inputs and a checkable invariant.",
+          "Rule": "Compare named equal lengths or known geometric properties rather than the appearance of a sketch.",
+          "Example": "The four edges AC, CB, BD and DA all have the same length."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Construct a symmetric four-sided pattern",
+          "Question": "Given a nonzero segment AB, create the quadrilateral A–C–B–D whose four sides are equal.",
+          "Method": "Construct two congruent circles and connect their two intersections.",
+          "Steps": [
+            "Draw and label distinct A and B with segment AB.",
+            "Draw a circle centred at A through B.",
+            "With unchanged compass opening AB, draw a circle centred at B through A.",
+            "Label the intersection on one side of AB C, and the other D.",
+            "Draw AC, CB, BD and DA in that order.",
+            "Each of C and D lies on both radius-AB circles, so AC = BC = BD = DA = AB."
+          ],
+          "Answer": "Quadrilateral A–C–B–D has four equal sides and is a rhombus (with AB as one diagonal).",
+          "Check": "The two intersections must be distinct, which holds because A ≠ B and the circles have equal radius AB."
+        },
+        {
+          "Title": "Diagnose ambiguous directions",
+          "Question": "Why can't a classmate reliably follow ‘draw two circles, then connect the points’?",
+          "Method": "Identify the missing geometric constraints and specify a reproducible replacement.",
+          "Steps": [
+            "The instruction does not say where each circle is centred.",
+            "It also omits the radius or the segment controlling the compass opening.",
+            "It fails to identify which intersection points and which connections to use.",
+            "Replace it with explicit circles centred at A and B, both of radius AB, and named intersections C and D."
+          ],
+          "Answer": "The original wording underdetermines the construction; the revised directions define checkable steps.",
+          "Check": "A new person can reconstruct the figure using only the starting distinct points and the written directions."
+        },
+        {
+          "Title": "Prove a pattern edge equality",
+          "Question": "A pattern uses C as the upper intersection and D as the lower intersection of the two equal-radius circles. Is AC equal to BD?",
+          "Method": "Use the definition of circles and equal compass opening.",
+          "Steps": [
+            "C lies on the circle centred A with radius AB, so AC = AB.",
+            "D lies on the circle centred B with radius AB, so BD = AB.",
+            "By transitivity AC = BD.",
+            "The argument is true irrespective of how the diagram is rotated."
+          ],
+          "Answer": "Yes, AC = BD = AB.",
+          "Check": "The statement uses labelled point membership and does not rely on measuring the picture."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using ‘left’ or ‘above’ without specifying a reference orientation or named line.",
+          "WhyWrong": "A diagram may be rotated or reflected by another student.",
+          "Correction": "Specify which side of directed AB or allow either intersection where symmetry permits."
+        },
+        {
+          "Mistake": "Asserting that sides are equal because the pattern looks symmetric.",
+          "WhyWrong": "A freehand sketch may resemble a rhombus even with unequal lengths.",
+          "Correction": "State that each edge is a radius of one of the equal-radius circles."
+        },
+        {
+          "Mistake": "A pattern is described only by appearance ('draw a flower' or 'connect the points').",
+          "Correction": "Specify each point, centre, radius and directed segment; have a new partner reconstruct without seeing the original; revise ambiguous text.",
+          "WhyWrong": "Visual description alone cannot establish a deterministic construction without centres, compass openings, named intersections and ordered segments."
+        }
+      ],
+      "SummaryPoints": [
+        "Construction instructions must give labelled objects, circle centres, radii and permitted choices.",
+        "A reproducible pattern can be checked with distance invariants even after translation or rotation.",
+        "Peer reconstruction and written precision are human-assessed; no fabricated numerical correctness score.",
+        "Construct your own pattern, write ordered precise compass-and-straightedge instructions including optional shading, then test them by another student's blind reconstruction.",
+        "A labelled construction of a regular hexagon gives two opposite parallel sides; this first-party paper cool-down is an original analogue, not the publisher's restricted task."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
+      "CultureCode": "en",
+      "Title": "Construction Techniques 1: Perpendicular Bisectors",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct the perpendicular bisector of a nonzero segment and explain why its constructed points are equally distant from the endpoints.",
+        "Verbal diagram (not to scale): segment AB is horizontal; X lies above AB and Y below AB. X and Y are the two intersections of equal-radius circles centred at A and B. The line XY crosses AB at its midpoint M and is perpendicular to AB.",
+        "A perpendicular bisector is a line through the midpoint of a segment meeting it at a right angle. For endpoints A and B with A ≠ B, choose a compass radius r strictly greater than half the length AB, so the two equal circles have distinct intersections X and Y.",
+        "Why the construction works: AX = BX and AY = BY because X and Y lie on both equal-radius circles. The line of points equidistant from A and B is perpendicular to AB through its midpoint; in this lesson that locus is explored and used as a conjecture, with a full proof developed later in the course.",
+        "Teacher-scored original Edulytiks task: construct XY and label A, B, X, Y, M. Provide a written explanation for the equal distances and a drawing showing XY meeting AB at M. The rubric requires two intersecting equal-radius arcs, the line through X and Y, identified midpoint and right angle, and a valid radius-based equal-distance statement. A typed number alone cannot demonstrate these.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 3, CC BY 4.0. This authored example and verbal diagram are Edulytiks originals; source sequence is acknowledged but publisher artwork is not reproduced.",
+        "Original first-party source-aligned activity 3.1 (Find All the Points): choose distinct A and B and a separate segment CD of positive length r. Mark at least five points on the circle centred A with radius CD and five on the circle centred B with the same radius; explain that infinitely many points satisfy each single-distance constraint. Mark ALL points satisfying both constraints as circle intersections, explaining that there are two when 2r>AB, one when 2r=AB and none when 2r<AB. Draw and label, rather than replacing the activity with a single numerical answer.",
+        "Original first-party source-aligned activity 3.2 (Human Perpendicular Bisector): mark two distinct floor locations A and B. Students successively stand at DIFFERENT locations they believe are equally distant from A and B; the class checks both distances using measuring tapes, records varied locations, then sketches and conjectures the common line through the midpoint perpendicular to AB. Treat it explicitly as a conjecture at this stage, NOT a proved theorem. On paper or using a coordinate grid, students may simulate locations if the physical classroom activity cannot be performed. Extension only: in 3D the equidistant locus is a plane perpendicular to AB through its midpoint.",
+        "Original first-party source-aligned activity 3.3 (How Well Can You Slice It?): first inspect two false examples, one intersecting midpoint at a NON-right angle and one right-angle line crossing AWAY from the midpoint. Then use tools to construct the perpendicular bisector of a nonzero PQ, and try a SECOND method with a tracing-paper copy (e.g. fold so P coincides with Q). Compare how each method establishes both midpoint and perpendicularity. For compass construction choose a common radius r strictly greater than PQ/2 and draw BOTH intersection points on opposite sides; r=PQ/2 gives only tangency, not a line.",
+        "Assessment boundary: first collect student conjectures and peer discussion of equal-distance locations; only then give or refer to the coordinate locus worked example, which is optional analytic checking, not a substitute for discovery. The full perpendicular-bisector locus theorem is formally proved later in the Geometry sequence.",
+        "First-party restricted-publisher-Cool-down equivalent (2026-10-30): with two distinct points R and S, give precise paper straightedge/compass instructions for the perpendicular bisector. Label both radius-r arc intersections X,Y with r>RS/2, midpoint M, and the right-angle mark. Explain RX=SX and RY=SY; state why choosing r=RS/2 fails to determine a line. Teacher evaluates drawing and written explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perpendicular bisector",
+          "Definition": "A line that passes through the midpoint of segment AB and meets AB at 90 degrees.",
+          "Rule": "Construct it with equal-radius arcs from A and B intersecting at two points X and Y, then draw line XY.",
+          "Example": "For A = (−3,0) and B = (3,0), the perpendicular bisector is x = 0."
+        },
+        {
+          "Title": "Equidistant locus",
+          "Definition": "The set of points P for which PA = PB, for two distinct fixed points A and B.",
+          "Rule": "Equal circles centred at A and B locate two such points; their connecting line is the perpendicular bisector.",
+          "Example": "If X is an intersection of two radius-5 circles centred at A and B then XA = XB = 5."
+        },
+        {
+          "Title": "Radius condition",
+          "Definition": "Two equal circles of radius r centred distance d apart have two intersection points exactly when r > d/2.",
+          "Rule": "Use a compass opening greater than half the segment length; do not use zero or too small a radius.",
+          "Example": "For AB = 6, radius 4 works; radius 3 gives one tangent point and cannot determine line XY."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Construct the perpendicular bisector",
+          "Question": "Given a 6 cm segment AB, construct its perpendicular bisector using only a straightedge and compass.",
+          "Method": "Use arcs of radius 4 cm (any radius strictly greater than 3 cm works) from both endpoints.",
+          "Steps": [
+            "Mark the distinct endpoints A and B of segment AB.",
+            "Open the compass to any radius greater than AB/2, for instance 4 cm when AB = 6 cm.",
+            "With centres A and B, draw equal-radius arcs that intersect on both sides of AB.",
+            "Label the intersections X and Y, and draw the line through X and Y.",
+            "Mark M where XY meets AB. The equidistant-line property gives AM = MB = 3 cm and a right angle between XY and AB."
+          ],
+          "Answer": "Line XY is the perpendicular bisector; its intersection M is the midpoint of AB.",
+          "Check": "AX = BX and AY = BY by equal-radius construction. Teacher checks geometric line and perpendicularity rather than treating a single length as complete evidence."
+        },
+        {
+          "Title": "Find the locus in coordinates",
+          "Question": "For A = (−3,0), B = (3,0), determine all points P = (x,y) such that PA = PB.",
+          "Method": "Equate squared distances and simplify, without losing distance domain information.",
+          "Steps": [
+            "PA² = (x+3)² + y² and PB² = (x−3)² + y².",
+            "Set (x+3)² + y² = (x−3)² + y².",
+            "Expand: x²+6x+9+y² = x²−6x+9+y².",
+            "Subtract common terms to obtain 12x = 0, so x = 0.",
+            "Every point (0,y) has equal squared distances to A and B, so x=0 is the full locus."
+          ],
+          "Answer": "The vertical line x = 0, perpendicular to AB through (0,0).",
+          "Check": "No extraneous solutions were introduced: squared Euclidean distances are nonnegative and equality of their squares implies equality of distances."
+        },
+        {
+          "Title": "Identify a failed radius choice",
+          "Question": "Two circle centres are 10 cm apart. Can radius 4 cm produce two arc intersections?",
+          "Method": "Compare twice the circle radius to the distance between centres.",
+          "Steps": [
+            "The circles have equal radii r = 4 cm and centre distance d = 10 cm.",
+            "Their radius lengths sum to 8 cm, less than 10 cm.",
+            "The circles cannot meet because a point belonging to both would require a path of total length at most 8 cm between the centres.",
+            "Choose any r > 5 cm instead to obtain two intersections."
+          ],
+          "Answer": "No. Radius 4 cm gives no intersection; a radius strictly greater than 5 cm is required.",
+          "Check": "At r = 5 cm the circles touch at only one point, so two distinct points are still unavailable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using radius less than or equal to half the segment length to create two arc intersections.",
+          "WhyWrong": "There are no intersections if r < AB/2 and only one if r = AB/2.",
+          "Correction": "Use the same opening at both endpoints and choose r > AB/2."
+        },
+        {
+          "Mistake": "Calling any line through the midpoint the perpendicular bisector.",
+          "WhyWrong": "The line must also meet the original segment at 90 degrees.",
+          "Correction": "Justify both midpoint and perpendicularity; the equal-radius intersection method produces the correct line."
+        },
+        {
+          "Mistake": "Using circles with opening exactly half the endpoint distance and calling their single tangent point a perpendicular-bisector line.",
+          "Correction": "Set r strictly greater than half the segment length; mark two distinct intersections X,Y, join them, then identify midpoint and 90-degree angle.",
+          "WhyWrong": "One tangent intersection cannot define the line through two distinct equidistant points needed for this construction."
+        },
+        {
+          "Mistake": "Treating the classroom equidistance conjecture as already proven or replacing student standing/folding exploration with the coordinate derivation.",
+          "Correction": "Keep the experiential observations and student conjecture first; use analytic distance algebra as additional independent verification, noting the formal theorem is established in a later unit.",
+          "WhyWrong": "The source pedagogical sequence develops a conjecture through student observations; presenting a later proof first removes the intended reasoning task."
+        }
+      ],
+      "SummaryPoints": [
+        "Equal-radius circles give points equally distant from both endpoints.",
+        "The line through two appropriate circle intersections is the perpendicular bisector, provided the starting endpoints differ.",
+        "Drawing, labelled justification and tool operation are reviewed with a teacher rubric rather than an invented auto-grade.",
+        "The floor-based equal-distance locus suggests a perpendicular bisector; the class first forms a conjecture, tests it, and compares a folded-paper construction with equal-radius arcs.",
+        "For two equal-radius circles centred r apart, two distinct intersections require compass opening > r/2; tangency cannot determine a bisector line."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

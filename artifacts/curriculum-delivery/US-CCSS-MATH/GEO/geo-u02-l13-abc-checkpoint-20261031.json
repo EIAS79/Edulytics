@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+  "LessonTitle": "Proofs about Parallelograms",
+  "Unit": "U02",
+  "Ordinal": 35,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\13\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\13\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\13\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\13\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "486743523153311fe9809d484aa4b97ff7da6e93206dbdb9c5cf5410bcc49f2d",
+    "TeacherActivities": "e46992946050f19b87293e2402c68df7675dfd0f036737158da23e0275425fef",
+    "StudentActivities": "519f1fe2fa3f26092b83831cee0ed277da2f87a40838ebcfafd003fce767eed3",
+    "StudentPractice": "062986df3f02fe7faf30a91556fb4fd60a1ffe8569ed4158737fb9f74299f4cd"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.9"
+    ],
+    "Addressing": [
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.11"
+    ]
+  },
+  "OriginalActivities": [
+    "13.1",
+    "13.2",
+    "13.3",
+    "13.3 Extension"
+  ],
+  "OriginalPracticeCount": 7,
+  "SourceCrosswalk": [
+    {
+      "Source": "13.1",
+      "Goal": "Paper alternative permitted to source dynamic diagonals notice/wonder",
+      "FirstPartyMode": "TEACHER_SELECTED_OFFLINE_DIAGONALS"
+    },
+    {
+      "Source": "13.2",
+      "Goal": "Convince self/partner/skeptic both parallelogram diagonals bisect",
+      "FirstPartyMode": "ASA_OR_RIGID_HALF_TURN_PROOF"
+    },
+    {
+      "Source": "13.3",
+      "Goal": "Backwards from rectangle with equal diagonals and overlapping triangles",
+      "FirstPartyMode": "SSS_ADJACENT_ANGLE_PROOF_PEER"
+    },
+    {
+      "Source": "13.3 Extension",
+      "Goal": "Diagonal conditions for rectangle/rhombus/square/trapezoid",
+      "FirstPartyMode": "HUMAN_REVIEW_EXTRA_CONJECTURES"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven original source-indexed quadrilateral and triangle tasks",
+      "FirstPartyMode": "TEACHER_REVIEW_SOURCE_PRACTICE"
+    },
+    {
+      "Source": "13.4 Cool-down",
+      "Goal": "Protected original",
+      "FirstPartyMode": "ORIGINAL_EDULYTIKS_PAPER_ALTERNATIVE"
+    }
+  ],
+  "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_PAPER_ALTERNATIVE",
+  "StageA": "A_CLOSED_LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_SOURCE_SHA256_AND_CROSSWALK",
+  "StageB": "B_CLOSED_COURSE_RICHV2_SOURCE_SPECIFIC_REPAIR_RETAIN_VALID_CONTENT",
+  "StageC": "C_CLOSED_AUTHORING_EXACT_LESSON_TEACHER_SELECTED_SOURCE_ASSESSMENT_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "SelectedPracticeGroupId": "GEO_U02_L13_PARALLELOGRAM_DIAGONAL_BACKWARDS_PAPER_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L13_PARALLELOGRAM_DIAGONAL_BACKWARDS_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+    "Mode": "TEACHER_SELECTED_PAPER_SOURCE_ALLOWED_FOR_APPLET",
+    "TaskId": "geo-u02-l13-both-diagonals-bisect-and-equal-diagonals-rectangle",
+    "TeacherHandoff": "Teacher provides source-permitted paper or optional projected 13.1, peer explains two 13.2 proofs, 13.3 backwards overlapping triangles, optional diagonal four-class extension, 7 indexed paper Practice and original first-party Cool-down. Score four 0-2 criteria offline only.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "GeoGebra": "ORIGINAL_OPTIONAL_NOT_EMBEDDED"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Justified diagonal midpoint notice/wonder and source exact AO/CO BO/DO rather than visual guess",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Complete ASA or 180-degree rotation proof parallelogram diagonals bisect, partner-skeptic explanation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Work-backwards SSS overlapping triangles and equal supplementary adjacent angles prove rectangle",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven paper source Practice and original first-party Cool-down, figure-dependent claims teacher checked",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "ParallelogramIffDiagonalsBisect": true,
+    "CongruentDiagonalsParallelogramImpliesRectangle": true,
+    "P4_Goal": "EK=KG and FK=KH",
+    "P7_OnlyAlwaysTrue": "SSS_TRIANGLE_THREE_SIDES",
+    "RectangleDiag": [
+      "BISECT",
+      "EQUAL"
+    ],
+    "RhombusDiag": [
+      "BISECT",
+      "PERPENDICULAR"
+    ]
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l13-parallelogram-diagonals-paper-20261031.json",
+  "LessonContentCommit": "b1dd0ec651a0f9fd7bd439fb41526d0fd36ceb2c",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l13-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StaticValidation": "Python JSON parsing + node --check syntax + git diff --check (NO app tests/Stage D)",
+  "OriginalFigures": "NOT_PIXEL_CERTIFIED_IF_SOURCE_IMAGES_LOCKED",
+  "TeacherScorePersistence": "NOT_VERIFIED_STAGE_D_ISSUE_453",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT"
+}
