@@ -1,0 +1,262 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L06",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "cb7d5be3eaa064c171334fa5ae64b8a8a36e1835357e17f54ed49dc5c815063c",
+    "TeacherActivities": "7788d7c32d2d6e63c461583a5ea0bd1bf0bb28a84f392e7df1d9df7f20239905",
+    "StudentActivities": "b48164364da0acbfb967011145522bc5b4fad6860582dfe5a5184f8cfb953b7e",
+    "StudentPractice": "4dcca0911db7044e28d42f4ff17ea1257ff155dab1f66847b6e49a13133c7eff"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSA-SSE.B.3",
+      "HSG-GPE.A.1"
+    ],
+    "BuildingTowards": [
+      "HSA-SSE.B.3",
+      "HSG-GPE.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "warmup x²+10x,−16x,+40x,+5x perfect-square box constants",
+      "Mode": "EXACT_SOURCE_HALF_COEFFICIENT"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "Elena x²+y²−6x−20y+105 with 9 and100 balancing, centre3,10 r2",
+      "Mode": "SOURCE_STEPWISE_COMPLETING_THE_SQUARE"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "unscaffolded x²+y²−2x+4y−4 graph and optional triangulation",
+      "Mode": "FIRST_PARTY_GRAPH_AND_COORDINATE_PROOF"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight circle, binomial factoring, scaling and SA/V source tasks",
+      "Mode": "EXACT_SOURCE_HUMAN_PAPER"
+    },
+    {
+      "Source": "6.4",
+      "Goal": "publisher protected One More cooldown",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L06",
+    "TaskId": "geo-u06-l06-elena-circle-and-independent-circle-rubric",
+    "GroupId": "GEO_U06_L06_COMPLETE_SQUARE_CIRCLE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original four square-box expressions, Elena equality steps and independent circle graph, optional solved triangulation, source 8 Practice and 4x2 teacher rubric on printable selected worksheet.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l06-complete-square-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "derives source four missing perfect-square constants including 25/4 using half-coefficient squared",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "continues Elena source steps x−3/y−10 squares, RHS4, centre3,10 radius2 with balanced both-sides proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "derives and draws source unscaffolded circle centre1,-2 r3, optional triangulation point6,8 with checks",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "completes original P1-P8 including source matching A1 B4 C3 D2, P4 A B D E, and circle P6 inside/outside/on",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "explain full completing square process with example",
+        "TeacherExpected": "group x/y and move constant, add half-linear-coefficient squared to both sides, factor and positive-root radius",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "source four perfect square box values A-D",
+        "TeacherExpected": "A16 choice1, B100 choice4, C64 choice3, D20.25 choice2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "circle x²+y²+4x−10y+20=0",
+        "TeacherExpected": "centre(−2,5), radius3",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "perfect-square trinomial A-F",
+        "TeacherExpected": "A B D E only",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "circle (x+3)²+(y−9)²=25 expanded",
+        "TeacherExpected": "x²+y²+6x−18y+65=0",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "circle centre−1,3 radius4 test2,1;4,1;3,3",
+        "TeacherExpected": "inside sqrt13, outside sqrt29, on4",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "triangle (3,−1),(2,4),(5,1) anisotropic (2x,5y)",
+        "TeacherExpected": "neither similarity nor congruence choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "cube side3 versus sphere radius3 SA/V",
+        "TeacherExpected": "cube SA54 V27 ratio2 in⁻¹, sphere SA36pi V36pi ratio1 in⁻¹, cube larger",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "WarmupConstants": [
+      25,
+      64,
+      400,
+      6.25
+    ],
+    "ElenaCompleted": "(x-3)^2+(y-10)^2=4",
+    "ElenaCentre": [
+      3,
+      10
+    ],
+    "ElenaRadius": 2,
+    "IndependentCompleted": "(x-1)^2+(y+2)^2=9",
+    "IndependentCentre": [
+      1,
+      -2
+    ],
+    "IndependentRadius": 3,
+    "TriangulationPoint": [
+      6,
+      8
+    ],
+    "SynthesisCircle1Centre": [
+      0,
+      12
+    ],
+    "SynthesisCircle1R": 1,
+    "SynthesisCircle2Centre": [
+      -35,
+      50
+    ],
+    "SynthesisCircle2R": "sqrt19",
+    "P2Map": [
+      1,
+      4,
+      3,
+      2
+    ],
+    "P3Centre": [
+      -2,
+      5
+    ],
+    "P3R": 3,
+    "P4Choices": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "P5Expanded": "x²+y²+6x−18y+65=0",
+    "P6SqDists": [
+      13,
+      29,
+      16
+    ],
+    "P7Choice": "C",
+    "P8CubeRatio": 2,
+    "P8SphereRatio": 1
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source Elena adds9+100 to BOTH sides, factors centre3,10 radius2",
+      "source Your Turn centre1,-2 radius3",
+      "source warmup x²+5x needs25/4=6.25, not25",
+      "P2 map A1 B4 C3 D2, P4 choices A B D E, P6 classifications inside outside on"
+    ],
+    "Equivalent": [
+      "x²+y²−6x−20y+105=0 and(x−3)²+(y−10)²=4 same circle",
+      "P5 expanded equation with constant65 equals original standard circle equation",
+      "sqrt19 and approx4.359 both radius estimates, exact preferred"
+    ],
+    "Wrong": [
+      "Elena adds9 and100 only left side leaving RHS−105",
+      "source Your Turn centre(-1,2) instead of(1,-2)",
+      "P4 y²−10y+5 called square because5 is positive",
+      "P8 sphere radius3 SA/V3 instead of1"
+    ],
+    "Boundary": [
+      "completed radius squared zero single point, negative no real circle",
+      "nonuniform scaling cannot preserve ratios in general unless special degenerate triangle",
+      "triangulation exact solution6,8 checks all three distances; missing any centre not sufficient",
+      "publisher cooldown not available and no runtime grade"
+    ],
+    "Malformed": [
+      "missing intermediate balanced equalities",
+      "linear coefficient/2 mistakenly written without squaring for constant",
+      "radius reported as signed negative square root",
+      "units area per volume stated as length not inverse length"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l06-complete-square-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
