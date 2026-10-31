@@ -358,7 +358,7 @@
       "teacherScoringPersistenceVerified": false,
       "A": "A_CLOSED_SOURCE_PARITY",
       "B": "B_CLOSED_COURSE_OWNED",
-      "C": "C_CLOSED_ACADEMIC_CONTRACT",
+      "C": "C_CLOSED_ACADEMIC_SELECTED_OFFLINE_PAPER_TEACHER_ASSESSMENT",
       "D": "NOT_RUN",
       "nextChecks": [
         "SOURCE_CONSTRUCTION_DIGITAL_EQUIVALENCE_UNVERIFIED",
@@ -367,14 +367,21 @@
         "LESSON_EXACT_AUTHENTICATED_PRACTICE_AND_TWO_SCHOOL_DATABASE_VERIFICATION_REQUIRED"
       ],
       "v13ActivitySpotCheck": "docs/curriculum/us-ccss-g8-coder4-v13-u01-source-geometry-evidence-20261029.json",
-      "lessonClosureStatus": "HISTORICAL_AUTHORING_PRESERVED_PENDING_REVALIDATION",
-      "readyForStageD": false,
+      "lessonClosureStatus": "READY_FOR_STAGE_D_ACADEMIC_OFFLINE_PAPER_ONLY",
+      "readyForStageD": true,
       "sequentialAdvanceAllowed": true,
       "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l08-academic-assessment-contract-20261030.json",
       "strictSequentialCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l08-20261030.json",
       "latestABCCommitSHA": "7bc1ba75ed712d039c784a5b05943f7a9665bd53",
       "previousReadyForStageDClaim": true,
-      "independentCReaudit20261031": "HOLD_EARLIER_CANONICAL_C_GATE"
+      "independentCReaudit20261031": "C_CLOSED_SELECTED_LESSON_PAPER_TEACHER_ROUTE",
+      "historicalABCCommitSHA": "7bc1ba75ed712d039c784a5b05943f7a9665bd53",
+      "stageCSelectedRouteContentCommitSHA": "a43ccf4341566e790ba09df7657adc12504b6dc0",
+      "selectedTeacherPaperAssessment": "/curriculum/us-ccss-g8/assessment/u01-l08-rotation-patterns-paper.html",
+      "stageDIntegrationRequired": true,
+      "lessonExactDigitalPracticeVerified": false,
+      "selectedRouteKind": "FIRST_PARTY_STATIC_PRINTABLE_STUDENT_ASSET_LINKED_FROM_RICHV2;TEACHER_DISTRIBUTES_AND_MANUAL_SCORES_OFFLINE",
+      "lastConfirmedClosureEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l08-selected-paper-stage-c-checkpoint-20261031.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
@@ -3650,11 +3657,11 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
     "status": "ACTIVE_NEXT_UNCLOSED",
     "unit": "U01",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L08",
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L07",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L09",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L08",
     "advanceAllowed": true,
     "authority": "COURSE_OWNED_SELECTED_PAPER_CLOSURE_STRICT_ORDER"
   },
@@ -3665,10 +3672,10 @@
     "A_CLOSED": 17,
     "B_CLOSED": 17,
     "C_PREPARED": 17,
-    "ABC_READY_FOR_D": 7,
+    "ABC_READY_FOR_D": 8,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 124,
+    "REMAINING": 123,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
@@ -3677,13 +3684,13 @@
   "unitProgress": {
     "unitCode": "U01",
     "unitTotal": 17,
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L07",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L08",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L08",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L09",
     "unitStatus": "UNIT_IN_PROGRESS",
     "unitsABCCLOSED": 0,
     "unitTotalCount": 9,
     "unitReport": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
-    "newlyClosed": 7,
+    "newlyClosed": 8,
     "finalAcademicAudit": "docs/curriculum/us-ccss-g8-coder4-u01-final-academic-unit-audit-20261030.json"
   },
   "abcReturnQueueSkipAllowed": false,

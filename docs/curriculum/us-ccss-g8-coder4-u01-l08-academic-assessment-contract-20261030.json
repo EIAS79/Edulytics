@@ -175,10 +175,340 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T14:01:41.517443+00:00",
-  "parentGitHEAD": "10988abf2e919c1de7c1ff8fe8d2610756fe70a3"
+  "parentGitHEAD": "10988abf2e919c1de7c1ff8fe8d2610756fe70a3",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l08-rotation-patterns-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l08-rotation-patterns-paper.html",
+    "learnerWorksheetSha256": "eec2564e47a45e272afbc6f7b7e53e2fafc003e68fbb02631dd1ef7cb69e8f8a",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "selectedTeacherPaper": true,
+    "linkedFromRichV2": true,
+    "delivery": "Print/distribute the exact L08 Edulytiks first-party student sheet, collect fourfold right-triangle tiling, three independent half-turn constructions, scalene-triangle pattern and Cool-down; teacher marks human evidence against private 8-point rubric.",
+    "sourceActivityMap": [
+      {
+        "source": "8.1 Building a Quadrilateral",
+        "worksheet": "quadrilateral",
+        "responseType": "FOUR_ROTATIONS_OF_RIGHT_ISOSCELES_TRIANGLE_AND_ROTATED_SQUARE_EXPLANATION",
+        "key": "O(0,0),A(3,0),B(0,3), four clockwise images at 0°,90°,180°,270°; four 90° sectors tile diamond-shaped square with vertices (3,0),(0,3),(-3,0),(0,-3) without gaps"
+      },
+      {
+        "source": "8.2 Rotating a Segment",
+        "worksheet": "segment",
+        "responseType": "THREE_DIFFERENT_ROTATION_CENTERS_WITH_CORRESPONDING_ENDPOINTS",
+        "key": "P(0,0), Q(2,0). 180° about Q(2,0): P′(4,0),Q′(2,0). About M(1,0): P′(2,0),Q′(0,0). About off-line C(0,2): P′(0,4),Q′(-2,4). All length 2; only midpoint maps segment to itself as a set."
+      },
+      {
+        "source": "8.3 A Pattern of Four Triangles",
+        "worksheet": "pattern",
+        "responseType": "FOUR_ROTATIONS_OF_SCALENE_TRIANGLE_WITH_LABELS_AND_MAPPING",
+        "key": "P(1,0),Q(3,0),R(1,1) rotation 90°CCW -> (0,1),(0,3),(-1,1); 180° -> (-1,0),(-3,0),(-1,-1); 270° -> (0,-1),(0,-3),(1,-1); 0° to 1° quadrant is 90° CCW, 1 to 3 is 180° CCW."
+      },
+      {
+        "source": "Original Edulytiks Cool-down (publisher not verified)",
+        "worksheet": "cool",
+        "responseType": "HUMAN_GRADED_MIDPOINT_HALF_TURN_DRAWING_AND_SET_ARGUMENT",
+        "key": "A(0,0),B(2,0) through 180° about M(1,0): A′(2,0), B′(0,0); image segment equals original as a point set while endpoints exchange"
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "Each criterion 0 absent/incorrect, 1 partially accurate with missing labels/reasoning, 2 mathematically correct, fully labelled and justified. Teacher manually scores paper only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "4 right isosceles 90-degree turns about O exactly tile rotated 45° square, preserving 3-unit legs and no gaps"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "3 distinct 180-degree segment-center constructions label all images and give correct set-mapping only at midpoint"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Scalene fourfold pattern gives exact corresponding vertices, center/angle/direction and preserves distances"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Original midpoint half-turn Cool-down exchanges endpoints, segment invariant as a set with complete proof"
+        }
+      ]
+    },
+    "privateKey": {
+      "originalRightTriangle": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "fourClockwiseTriangles": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -3,
+            0
+          ],
+          [
+            0,
+            -3
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            -3,
+            0
+          ]
+        ]
+      ],
+      "squareBoundary": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          0,
+          -3
+        ]
+      ],
+      "originalSegment": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "endpointQHalfTurn": [
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "midpointMHalfTurn": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "offLineCHalfTurn": [
+        [
+          0,
+          4
+        ],
+        [
+          -2,
+          4
+        ]
+      ],
+      "scaleneOriginal": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "scalene90CCW": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "scalene180CCW": [
+        [
+          -1,
+          0
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "scalene270CCW": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          1,
+          -1
+        ]
+      ]
+    },
+    "fixtures": {
+      "correct": [
+        "Four 90-degree clockwise increments tile a rotated square with no overlap",
+        "About endpoint Q segment P′(4,0) Q′(2,0)",
+        "About midpoint M segment P′(2,0) Q′(0,0)",
+        "Off-line 180 about C=(0,2) yields (0,4),(-2,4)",
+        "Scalene triangle four rotations accurately labelled",
+        "Cool-down midpoint half-turn exchanges A and B and leaves segment as set"
+      ],
+      "equivalent": [
+        "90° clockwise equals 270° counterclockwise about same center",
+        "180° clockwise and 180° counterclockwise produce same image",
+        "Four congruent right-angle triangles can be presented with alternate color/order but exact center and no gaps",
+        "A full verbal construction can be accepted by teacher if mathematically reproducible"
+      ],
+      "wrong": [
+        "Assuming 180° about endpoint Q leaves segment at original position",
+        "Rotating points as if center were O instead of off-line C",
+        "Stretched triangles accepted as congruent because pattern resembles rosette",
+        "Claiming four 90-degree sectors make an axis-aligned square with sides on coordinate axes for this model",
+        "Incorrect scalene vertex correspondence or direction"
+      ],
+      "malformed": [
+        "Missing labels for rotated A′/B′",
+        "No fixed center specified",
+        "Only the word symmetry without defining rotation angle",
+        "Missing segment image for one of three centers",
+        "Only Cool-down yes/no without corresponding endpoints"
+      ],
+      "boundary": [
+        "Midpoint half-turn is set-invariant but pointwise endpoints are not fixed",
+        "Diamond-shaped quadrilateral boundary is a square rotated 45°, not a different polygon type",
+        "180° direction either CW or CCW is equivalent",
+        "360° rotation returns every original point to itself",
+        "The scalene triangle is not itself rotationally symmetric at 90°, but a four-copy pattern has quarter-turn symmetry"
+      ],
+      "optionalNumeric": {
+        "autoGradeInSelectedRoute": false,
+        "prompt": "Rotate P(2,1) by 180° about (1,1)",
+        "expected": [
+          0,
+          1
+        ],
+        "correct": [
+          "(0,1)",
+          "0,1",
+          "(0.0,1.0)"
+        ],
+        "wrong": [
+          "(1,1)",
+          "(0,2)",
+          "(1,0)"
+        ],
+        "malformed": [
+          "NaN",
+          "(Infinity,1)",
+          "(1,2,3)",
+          "",
+          null
+        ]
+      }
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "firstPartyCoolDown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedEngineFilesModified": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l08-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
 }
