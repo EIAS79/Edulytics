@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l02-l06-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v6-20261031",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,8 +11,8 @@
         "Goal: draw and interpret the product of two UNIT fractions in two different orders, while retaining the original unit square as the whole. The public 2021 source explicitly asks for different partitioning orders rather than just the final numerical fraction.",
         "Warm-up: compare four equal-area grid sketches in which one selected part is marked; reason why different-looking blue parts may or may not represent the same fraction of the original unit. A Which One Doesn't Belong choice can have multiple valid justifications, so the original diagrams are not reduced to a fixed answer.",
         "Activity 1: make an original unit square grid with three equal vertical columns and four equal horizontal rows. First take one third of the whole, then one fourth of that selected third: the overlap is exactly one of 12 equal cells. Draw the construction again with fourths first, then take one third of the fourth. Show that the two dark cells represent equal area even though partition order differs.",
-        "Activity 2: partners create another pair of grids for one half of one fifth and one fifth of one half. Explain why each selected part is 1/10 of the SAME original whole and how commutativity is reflected in the area, without claiming that a different whole produces the same physical-sized part.",
-        "Assessment: drawing nested equal partitions, interpreting the order of construction, comparing distinct diagrams and justifying the full unit whole are teacher-reviewed tasks; evaluating 1/3×1/4 numerically alone does not establish source-task completion. Original source picture cards and restricted responses are not copied."
+        "Activity 2 (Write an Expression): interpret the original student-facing Priya diagram rather than replacing it with a new two-grid creation task. Explain how BOTH 1/5 × 1/2 and 1/2 × 1/5 can describe its shaded region (one tenth of the SAME original square). Then inspect the SECOND source-provided shaded diagram and write a multiplication expression for THAT diagram; justify its selected equal area against its original whole rather than presuming that its shaded fraction is also 1/10. First-party 2-by-5 and 5-by-2 grids below are teaching alternatives for the Priya example, NOT replicas of the original source figures.",
+        "Assessment: Activity 1 requires TWO independently drawn unit squares, equal partitions in opposite orders and a reason both shaded areas equal 1/12. Activity 2 requires explanations of both Priya expressions and a source-specific written expression for a distinct provided shaded image, judged against that image. These constructions, the open Which One Doesn't Belong arguments and source-image interpretation require teacher review; correct numeric 1/12 or 1/10 alone is insufficient. Restricted publisher diagrams, original Student Task PDF and gated Cool-down are not claimed verified."
       ],
       "KeyConcepts": [
         {
@@ -122,6 +122,106 @@
               "Cells": [
                 "1/12",
                 "1/12"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1 first-party model: third then quarter (4 rows by 3 columns)",
+          "Description": "EDULYTIKS-ORIGINAL accessible full-unit square, NOT a publisher diagram. The 12 equal-area cells cover the SAME entire square; select the left third, partition it into four equal rows and shade one cell. One selected cell = 1/12 of the original whole.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1 first-party model: quarter then third (3 rows by 4 columns)",
+          "Description": "EDULYTIKS-ORIGINAL accessible full-unit square, not the publisher diagram. Select one of four equal vertical quarter strips, then divide that strip into three equal rows and extend the rows across the whole. One of the SAME total twelve equal-area cells is shaded.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 2 Priya explanation substitute: fifth of half and half of fifth (2 rows by 5 columns)",
+          "Description": "First-party illustration for interpreting the Priya-expression example, not a copy of source Priya image or its separate task diagram. Each of ten equal-area cells is one tenth of the SAME original square. Both 1/5 × 1/2 and 1/2 × 1/5 describe its shaded fraction; teacher reviews the two different justifications and expression for the other publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
               ]
             }
           ]
