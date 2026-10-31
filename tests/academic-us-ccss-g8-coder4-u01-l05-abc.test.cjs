@@ -8,6 +8,7 @@ const id='PED:US-CCSS-MATH:G8:U01:L'+String(N).padStart(2,'0');
 const e=read('docs/curriculum/us-ccss-g8-coder4-abc-u01-l'+String(N).padStart(2,'0')+'-20261030.json');
 const packPath='src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json';
 const l=read(packPath).Lessons[N-1],man=read('docs/curriculum/us-ccss-g8-coder4-course-evidence-20261029.json');
+const selected=read('docs/curriculum/us-ccss-g8-coder4-u01-l05-academic-assessment-contract-20261030.json');
 test('U01 L'+N+' source roles, unique lesson, rights, fallback visuals and honest A-C gates',()=>{
  assert.equal(e.lessonCode,id);assert.equal(l.LessonCode,id);
  assert.equal(e.blueprintExtraRoles.length,0);
@@ -24,7 +25,9 @@ test('U01 L'+N+' source roles, unique lesson, rights, fallback visuals and hones
   assert.ok(v.Rows.every(row=>row.Cells.length>=1&&row.Cells.every(s=>String(s).length>0)));
  }
  assert.equal(sha(packPath),man.hashes.richCandidates['us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json']);
- assert.deepEqual(e.gates,{A:'A_ACCEPTED_COURSE_SOURCE_REVIEW',B:'B_CLOSED_COURSE_OWNED',C:'BLOCKED_C_DEPENDENCY',D:'NOT_RUN',READY_FOR_STAGE_D:false});
+ assert.equal(e.gates.A,'A_CLOSED_SOURCE_PARITY');assert.equal(e.gates.B,'B_CLOSED_COURSE_OWNED');
+ assert.equal(selected.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
+ assert.equal(selected.gates.READY_FOR_STAGE_D,true);assert.equal(selected.gates.D,'NOT_RUN');
  assert.equal(e.practiceContract.exactLessonReadyVerifiedRuntime,false);
  assert.equal(e.practiceContract.teacherRubric.maxPoints,8);
  assert.equal(e.practiceContract.teacherRubric.criteria.length,4);

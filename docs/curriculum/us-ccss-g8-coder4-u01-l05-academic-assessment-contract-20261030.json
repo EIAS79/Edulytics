@@ -34,7 +34,7 @@
   "sourceRoleReviewed": true,
   "centralPracticeRule": "ccss-transformations",
   "proposedFamily": "transformations",
-  "scope": "LESSON_SCOPED_ACADEMIC_ASSESSMENT_SPEC_ONLY",
+  "scope": "SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE_FOR_STAGE_C__NOT_RUNTIME_PRACTICE",
   "sourceActivityToFirstPartyCrosswalk": [
     {
       "sourceActivity": "5.1 Translating Coordinates",
@@ -191,10 +191,235 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T13:54:39.781933+00:00",
-  "parentHeadSHA": "c2f6736d5d8d9a762ef3e816ae52cd14ad41aed9"
+  "parentHeadSHA": "c2f6736d5d8d9a762ef3e816ae52cd14ad41aed9",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L05",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l05-coordinate-moves-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l05-coordinate-moves-paper.html",
+    "learnerWorksheetSha256": "f32ed0e0b562ef0cbd66477e18ff3dcebe6f121d2d00dbd5cbe004c05679a203",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "teacherSelectedOffline": true,
+    "linkedFromRichV2": true,
+    "delivery": "Teacher selects and prints course-owned L05 paper, collects complete directed-vector answers, plotted reflections, center-aware segment transformations and first-party Cool-down reasoning, marks by private rubric offline.",
+    "activityMap": [
+      {
+        "source": "5.1 Translating Coordinates",
+        "worksheet": "vectors",
+        "response": "FOUR_DIRECTED_VECTOR_CARDS_SELECT_ALL_PLUS_JUSTIFICATION",
+        "correct": "Pair 1 (-3,0)->(1,2) and Pair 3 (-4,-3)->(0,-1) have (+4,+2); Pair 2 reverse (-4,-2) and Pair 4 (+1,-1) are incorrect; order matters"
+      },
+      {
+        "source": "5.2 Reflecting Points on the Coordinate Plane",
+        "worksheet": "reflections",
+        "response": "LABELED_AXIS_REFLECTIONS_AND_RULE",
+        "correct": "(13,10)->(13,-10), (13,-20)->(13,20), (13,570)->(13,-570) across x-axis; (3,2)->(-3,2) across y-axis"
+      },
+      {
+        "source": "5.3 Transformations of a Segment",
+        "worksheet": "segment",
+        "response": "DIAGRAM_THREE_CENTER_SPECIFIC_ROTATIONS",
+        "correct": "Original A(1,1),B(3,1), CCW90 about B sends A to C(3,-1); CCW90 about A sends B to D(1,3); CW90 about O sends A to E(1,-1), B to F(1,-3); segment length remains 2"
+      },
+      {
+        "source": "Edulytiks Cool-down Rotation or Reflection",
+        "worksheet": "cool",
+        "response": "TWO_PROPOSED_TRIANGLE_IMAGES_AND_TEACHER_REASONING",
+        "correct": "Image I [(-1,2),(-1,4),(-3,2)] is 90° CCW rotation about O, Image II [(-2,1),(-4,1),(-2,3)] is x=0 reflection"
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "For each criterion 0 missing/incorrect, 1 partially correct with incomplete geometry, 2 fully correct and justified. Separate confidential teacher key; manual offline evaluation only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "Source 5.1 selects every correct directed translation card and rejects reverse/different vectors with arithmetic"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Source 5.2 labels all four x/y axis reflection images with correct sign and preserved coordinate including large magnitudes"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Source 5.3 uses exact specified rotation centers for all segment endpoints and explains preserved length"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down distinguishes 90° CCW about O from y-axis reflection using all corresponding points and orientation"
+        }
+      ]
+    },
+    "privateKey": {
+      "vectorCardDisplacements": [
+        [
+          4,
+          2
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "selectedCards": [
+        1,
+        3
+      ],
+      "reflections": [
+        [
+          13,
+          -10
+        ],
+        [
+          13,
+          20
+        ],
+        [
+          13,
+          -570
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "segment": {
+        "A": [
+          1,
+          1
+        ],
+        "B": [
+          3,
+          1
+        ],
+        "C": [
+          3,
+          -1
+        ],
+        "D": [
+          1,
+          3
+        ],
+        "E": [
+          1,
+          -1
+        ],
+        "F": [
+          1,
+          -3
+        ]
+      },
+      "coolDown": {
+        "original": [
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "rotation90CCW": [
+          [
+            -1,
+            2
+          ],
+          [
+            -1,
+            4
+          ],
+          [
+            -3,
+            2
+          ]
+        ],
+        "reflectionY": [
+          [
+            -2,
+            1
+          ],
+          [
+            -4,
+            1
+          ],
+          [
+            -2,
+            3
+          ]
+        ]
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "Select cards 1 and 3 with exact (+4,+2), reject 2 and 4",
+        "x-axis reflections (13,-10),(13,20),(13,-570), y-axis reflection (-3,2)",
+        "Segment CCW90 A around B -> (3,-1), B around A -> (1,3)",
+        "Segment CW90 about origin E(1,-1),F(1,-3)",
+        "Cool-down Image I rotation 90° CCW; II reflection in x=0"
+      ],
+      "equivalent": [
+        "Written vectors (+4,+2) and verbal four-right/two-up are equal",
+        "Equivalent signed integer/decimal point representations and labelled sketches",
+        "Same transformation geometry justified by rigid lengths/angle properties"
+      ],
+      "wrong": [
+        "Select reverse pair 2 as forward (+4,+2)",
+        "Reflect x-axis by negating x instead of y",
+        "Rotate around origin when center is B for endpoint A",
+        "Call Image I a reflection or Image II a counterclockwise rotation"
+      ],
+      "malformed": [
+        "Only final letters without vector calculation or reasons",
+        "Unlabelled point images and missing axis designation",
+        "Missing B/center when constructing segment rotation",
+        "No corresponding point mapping for Cool-down",
+        "Blank/refused teacher explanation"
+      ],
+      "boundary": [
+        "Large 570 magnitude still reflects to -570, not to 0",
+        "On a mirror axis x=0 or y=0 a point remains fixed",
+        "90° CCW about nonorigin center uses X-C rotated then +C, not direct origin formula",
+        "Distinct alternative explanations with exact same transformation should be teacher accepted",
+        "Exact coordinate pair (3,-1) not numerically equivalent to (3,-1.0000001)"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeModified": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l05-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  }
 }
