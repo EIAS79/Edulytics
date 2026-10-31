@@ -1,0 +1,206 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L12",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\12\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\12\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\12\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\12\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "f32faedf0cee106093c5b6f8ae3230f5891a8fca67778a82d520523c08ade8d7",
+    "TeacherActivities": "6f7aa07eeb4c054aa54b19d52862d95a2345ad000b4c0611d9de9cbd738eb266",
+    "StudentActivities": "cb0271e6895f89e87328a51a06622453a27c29aa1b2644abfe15edb08d478877",
+    "StudentPractice": "b30f65a79eaa082a3225b91bba0ca8e3581384df7406eba40ee1ab763048d599"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-SRT.B.5",
+      "HSN-Q.A.1"
+    ],
+    "BuildingTowards": []
+  },
+  "OriginalLessonOptionalBeyondStandards": true,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "12.1",
+      "Goal": "Garden plan original 1 unit = 2.8 feet and three equation representations",
+      "Mode": "SOURCE_SCALE_AND_INDEPENDENT_DIAGRAM_TEACHER_REVIEW"
+    },
+    {
+      "Source": "12.2",
+      "Goal": "Optional card sort similar labelled figures with k, inverse 1/k, missing lengths",
+      "Mode": "FIRST_PARTY_HUMAN_CARD_SORT"
+    },
+    {
+      "Source": "12.3",
+      "Goal": "Quilt with unit-area centre squares, 6 inches/unit and 90 inch queen width, variable W source image",
+      "Mode": "TEACHER_PAPER_PYTHAGORAS_SCALE_CONTEXT"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven indexed original similar-quadrilateral, quilt, parallel and dilation questions",
+      "Mode": "EXACT_SOURCE_ARITHMETIC_AND_IMAGE_DEPENDENT_TEACHER_REVIEW"
+    },
+    {
+      "Source": "12.4",
+      "Goal": "Publisher-locked Ratios Galore Cool-down",
+      "Mode": "EDULYTIKS_FIRST_PARTY_INDEPENDENT_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L12",
+    "TaskId": "geo-u03-l12-garden-card-quilt-scale-equivalent-ratios",
+    "GroupId": "GEO_U03_L12_CONTEXTUAL_PROPORTION_GARDEN_QUILT_PAPER",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original garden equation sheet with proper feet/unit ratios, classified first-party similar card pairs with inverse k, labelled quilt work with source figure width W and Pythagorean lengths, plus original Practice answers and teacher-scored explanations.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "three correct equivalent equations and units using original 1 plan unit = 2.8 feet garden source",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "accurate card similarity correspondence, single k, reciprocal inverse 1/k and computed lengths",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "quilt area-one centre-square geometry, Pythagorean reasoning, 90-inch width conversion and explicit W dependency",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "source Practice exact ratios, figure-dependent limitations and complete written mathematical justification",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "similar quadrilaterals source statements A-E",
+        "TeacherExpected": "A, B and D necessarily true; C and E generally false with given vertex order",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "vertical BC and DE find AD",
+        "TeacherExpected": "numeric result requires original exact figure and annotated corresponding segments",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "quilt square ABCD side2 with diagonal BD and triangle AEH",
+        "TeacherExpected": "BD=2sqrt(2); midpoints AE=AH=1 and triangle AEH area=1/2 square unit",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "parallel A'B' and A'C6 A'A3 B'C7",
+        "TeacherExpected": "B'B=7/2=3.5 choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "Elena BC16.5 versus Lin BC17.1",
+        "TeacherExpected": "judge only with original diagram; neither claim can be certified from text alone",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "two measured sides imply similarity?",
+        "TeacherExpected": "No; two lengths without included angle or proportional third side are insufficient",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "line g dilated about A to line f",
+        "TeacherExpected": "teacher checks original labelled diagram and positive k using centre-ray distance ratios",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "SourceGardenFeetPerPlanUnit": "2.8",
+    "IndependentGardenPlan3Ft": "8.4",
+    "OriginalQuiltSquareArea": "1 square unit",
+    "OriginalSmallSquareSide": "1 unit",
+    "BabyUnitInches": 6,
+    "QueenTargetWidthInches": 90,
+    "QueenTargetPlanWidthUnits": 15,
+    "QueenScaleFormula": "15/W",
+    "OriginalSummaryDE": "4.5",
+    "P1NecessaryOptions": [
+      "A",
+      "B",
+      "D"
+    ],
+    "P3Diagonal": "2sqrt(2)",
+    "P3TriangleArea": "1/2",
+    "P4Answer": "7/2",
+    "P4Choice": "A",
+    "P6UniversalTwoSides": false
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "garden 3 plan units at 2.8 feet/unit is 8.4 feet, and 5 plan units 14 feet",
+      "quilt original centre square area1 has side1 unit; queen width 90/6=15 original units",
+      "P1 similar quadrilateral choices A B D; P3 2sqrt2 diagonal and area 1/2; P4 B'B3.5"
+    ],
+    "Equivalent": [
+      "P4 7/2 and 3.5 units are exactly equivalent",
+      "between triangle corresponding ratio 3/DE=4/6 and within triangles 3/4=DE/6 both yield DE4.5"
+    ],
+    "Wrong": [
+      "silently substitutes retained independent 2.5ft garden scale for actual publisher 2.8ft",
+      "quilt square with area 1 unit assumed side sqrt(2) rather than 1",
+      "computes queen centre square width without determining original quilt total width W from diagram"
+    ],
+    "Boundary": [
+      "W must be positive; queen conversion 15/W only when W original plan width known",
+      "corresponding sides and diagonals must have nonzero length for positive similarity ratios",
+      "area scales by k squared, not k; physical width conversion uses length k"
+    ],
+    "Malformed": [
+      "no original model units or non-matching ratios across pairs",
+      "card classification without named correspondence or direction of k",
+      "claims exact source quilt dimensions without verifying missing image width"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l12-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
