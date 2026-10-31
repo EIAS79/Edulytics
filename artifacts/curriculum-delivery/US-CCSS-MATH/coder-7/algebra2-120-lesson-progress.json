@@ -137,16 +137,17 @@
       "stageC": "C_PREPARED",
       "abcReadyForD": false,
       "blockedByIntegration": {
-        "status": "BLOCKED_NEXT_CENTRAL_FILE_EXCLUSIVE_SLOT_NOT_TRANSFERRED",
-        "owner": "Coder 7 SOLO after Supervisor 3 grants exclusive central file ownership",
-        "currentExclusiveOwner": "Coder 8",
-        "issue": 453,
+        "status": "BLOCKED_CURRENT_LESSON_SHARED_WRITER_UNASSIGNED",
+        "owner": "UNASSIGNED - cross-supervisor single writer must be recorded in issue #605",
+        "currentExclusiveOwner": "NONE_CLEARED_AS_OF_2026_10_31",
+        "issue": 605,
+        "stageDAdoptionIssue": 453,
         "exactFiles": [
           "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
           "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
           "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
         ],
-        "reason": "Correct Course-owned generator/verifier needs registered lesson exact route and early BigInteger verifier hook; central slot is currently reserved."
+        "reason": "U01:L01 lacks an actual selected lesson-scoped generator/verifier and teacher-review path in the shared Practice route; historical Coder7 lease was superseded by Admin's latest locked #605 registry. Do not claim C closure or edit shared files before one cleared writer."
       },
       "lessonGateEvidence": {
         "sourceRootAlias": "Common Core",

@@ -395,5 +395,23 @@
   "D_VERIFIED": false,
   "mergeDeploy": "NOT_AUTHORIZED",
   "sourceHashesRecheckedUtc": "2026-10-30T13:03:19.288793+00:00",
-  "lastV4ReviewUtc": "2026-10-30T13:48:54.095382+00:00"
+  "lastV4ReviewUtc": "2026-10-30T13:48:54.095382+00:00",
+  "v5CheckerExpressionRepair": {
+    "scope": "U01:L01 course-owned exact checker verifier and tests only",
+    "identifiedDefect": "The Stage C equivalent-case contract recognizes 3*(3+2) for n=3 but the existing checker grader accepted integer literals only",
+    "repair": "Recognize the parameter-bound n*(n+2) or n(n+2) literal form without evaluating arbitrary expressions; retain canonical server answer as an integer",
+    "positiveCases": ["n=3: 15", "n=3: 3*(3+2)", "n=3: 3 ( 3 + 2 )"],
+    "negativeCases": ["n=3: 3*(4+2)", "n=3: 4*(4+2)", "n=3: 3*(3+2);alert(1)"],
+    "testPaths": [
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs"
+    ],
+    "testsAuthored": "NOT_RUN",
+    "staticReview": "DIFF_CHECK_JSON_PARSE_OK_AND_5_OF_5_LOCAL_SOURCE_HASH_MATCHES; NOT_A_CSHARP_BUILD",
+    "runtimeSelectedFamily": "NOT_REGISTERED",
+    "stageC": "NOT_CLOSED",
+    "readyForStageD": false,
+    "sharedOwnerIssue": 605,
+    "stageDAdoptionIssue": 453
+  }
 }

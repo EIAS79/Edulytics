@@ -21,12 +21,17 @@ public sealed class UsCcssAlg2SequencePracticeMathTests
     }
 
     [Fact]
-    public void Checker_RejectsIllegalOrNonintegerResponses()
+    public void Checker_AcceptsBoundedEquivalentExpressionAndRejectsInvalidResponses()
     {
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(1, "3"));
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "15"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "3*(3+2)"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "3 ( 3 + 2 )"));
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(7, "63"));
         Assert.False(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "7"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "3*(4+2)"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "4*(4+2)"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "3*(3+2);alert(1)"));
         Assert.False(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(3, "15.5"));
         Assert.False(UsCcssAlg2SequencePracticeMath.GradeCheckerMinimumMoves(0, "0"));
     }

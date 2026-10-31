@@ -208,6 +208,19 @@ public sealed class UsCcssAlg2U01L01PracticeAdapterTests
     }
 
     [Fact]
+    public void CheckerEquivalentExpression_IsAcceptedWithCanonicalServerAnswerKeptNumeric()
+    {
+        const string checker = "usccss.alg2.u01.l01.checker_jump_optional";
+        Assert.True(UsCcssAlg2U01L01PracticeAdapter.TryPrepareExactNumericQuestion(
+            checker, 0, 3, out _, out string canonical, out var parameters));
+        Assert.Equal("15", canonical);
+        Assert.True(UsCcssAlg2U01L01PracticeAdapter.VerifyExactNumericQuestion(
+            checker, parameters, "3*(3+2)"));
+        Assert.False(UsCcssAlg2U01L01PracticeAdapter.VerifyExactNumericQuestion(
+            checker, parameters, "3*(4+2)"));
+    }
+
+    [Fact]
     public void ServiceCompatibleNumericInterface_IsFailClosedForTeacherOrForgedFamily()
     {
         const string hanoi = "usccss.alg2.u01.l01.hanoi_min_moves";

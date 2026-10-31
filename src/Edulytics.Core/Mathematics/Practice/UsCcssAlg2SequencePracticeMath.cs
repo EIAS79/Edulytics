@@ -43,9 +43,21 @@ public static class UsCcssAlg2SequencePracticeMath
 
     public static bool GradeCheckerMinimumMoves(int checkersPerSide, string? response)
     {
-        if (checkersPerSide is < 1 or > 7) return false;
-        return TryParseInteger(response, out BigInteger submitted) &&
-               submitted == checkersPerSide * (checkersPerSide + 2);
+        if (checkersPerSide is < 1 or > 7 ||
+            string.IsNullOrWhiteSpace(response) ||
+            response.Length > MaximumResponseLength) return false;
+
+        BigInteger expected = checkersPerSide * (checkersPerSide + 2);
+        if (TryParseInteger(response, out BigInteger submitted))
+            return submitted == expected;
+
+        // The L01 source contract accepts the exact equivalent form
+        // n*(n+2). Recognize only the bound, numeric instance; do not
+        // evaluate arbitrary learner expressions as executable code.
+        string compact = Regex.Replace(response, @"\s+", "");
+        string n = checkersPerSide.ToString(CultureInfo.InvariantCulture);
+        return compact == n + "*(" + n + "+2)" ||
+               compact == n + "(" + n + "+2)";
     }
 
     public static bool GradeGeometricTerm(
