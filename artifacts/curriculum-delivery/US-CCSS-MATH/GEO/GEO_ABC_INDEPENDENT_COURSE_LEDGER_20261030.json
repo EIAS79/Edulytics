@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 38,
-    "B_CLOSED": 38,
-    "C_PREPARED": 38,
-    "ABC_READY_FOR_D": 38,
+    "A_CLOSED": 39,
+    "B_CLOSED": 39,
+    "C_PREPARED": 39,
+    "ABC_READY_FOR_D": 39,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 86,
+    "REMAINING": 85,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 2,
     "CURRENT_UNIT": "U03",
@@ -24,25 +24,25 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 86,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+    "Unprocessed": 85,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U03",
     "UnitLessonCount": 16,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
-    "AllUnitABCReady": true,
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+    "AllUnitABCReady": false,
     "NextUnit": "U03",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
     "U02ClosedLessonCount": 15,
     "UnitCountSource": "geo-124-source-manifest-20261028.json canonical unit counts: U01=22, U02=15, U03=16",
-    "U03ClosedLessonCount": 1
+    "U03ClosedLessonCount": 2
   },
   "LessonEntries": [
     {
@@ -936,6 +936,43 @@
       "TestsExecuted": "NOT_RUN",
       "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_FIRST_PARTY_EDULYTIKS_ALTERNATIVE",
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+      "Ordinal": 39,
+      "UnitOrdinal": 2,
+      "Title": "Scale of the Solar System",
+      "LessonCommit": "bc88a2171308c60c812fcf955eb2a01c25d7af22",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "4e0c096d02d491e232b9df2746c8978346829e699f6edb7004442d9e404f3e3e",
+        "TeacherActivities": "6d1d90a12de28b512b840c0ac91e01e34ce706acf19ad47763230ad8df936e77",
+        "StudentActivities": "cbad022bf49fe0d1adb81e7b066d6bdcba966c94efbf7d1983bd5cad4d4aeee0",
+        "StudentPractice": "9af6af9a73b237d7562f04c35b9990490c8694a63368813066f99d0408031659"
+      },
+      "OriginalActivities": [
+        "2.1 Solar Eclipse",
+        "2.2 Shrinking the Solar System optional",
+        "2.3 Shrinking the Solar System Take 2 optional",
+        "2.4 Locked source Cool-down"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_SOURCE_LESSON_GOALS_ACTIVITIES_DATA_TABLE_PRACTICE_AND_SHA256_VISUAL_PARITY_UNVERIFIED",
+      "B": "B_CLOSED_SOURCE_SOLAR_ECLIPSE_EIGHT_PLANET_TABLE_2_CM_0_3_MM_AND_MODEL_FEASIBILITY",
+      "C": "C_CLOSED_AUTHORING_TEACHER_PAPER_PRACTICE_ROUTE_ORACLES_AND_NOT_RUN_FIXTURES",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U03_L02_SOLAR_SYSTEM_SOURCE_RATIO_PAPER_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l02-solar-system-ratios-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l02-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l02-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_COOLDOWN_RESTRICTED_UNVERIFIED",
+      "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+      "TeacherScoringPersistence": "STAGE_D_NOT_VERIFIED_ISSUE_453",
+      "StartedAtUtc": "2026-10-31T03:41:08.317634Z",
+      "ClosedAtUtc": "2026-10-31T03:41:42.500383Z",
+      "ElapsedSeconds": 34.183
     }
   ],
   "return_queue": [],
@@ -976,7 +1013,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+  "Next": "U03:L03 canonical next, earlier 39 contiguous A-B-C authoring closures, tests NOT_RUN",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -1004,7 +1041,14 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l01-abc-checkpoint-20261031.json",
+  "LastCheckpoint20261031": {
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "BLOCKED_CURRENT_LESSON": null,
+    "LAST_CONTENT_COMMIT": "bc88a2171308c60c812fcf955eb2a01c25d7af22",
+    "Tests": "AUTHORED_NOT_RUN",
+    "SharedStageD": "Issue #453 teacher grading, issue #605 shared lease protected"
+  },
   "UnitSummaryU02_20261031": {
     "Course": "Geometry",
     "UnitCode": "U02",
