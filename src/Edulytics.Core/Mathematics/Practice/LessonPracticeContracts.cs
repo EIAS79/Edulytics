@@ -1379,6 +1379,22 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 Grade 5 U03:L02: one fourth OF one third and
+        // one third OF one fourth = 1/12 of the ORIGINAL whole.
+        // Priya's one fifth OF one half and reversed = 1/10.
+        // Digital exact selections only; open drawings, source image
+        // interpretation and written explanations are teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L02",
+            "supporting.fractions.multiply_divide",
+            "G5_ORIGINAL_WHOLE_ORDERED_UNIT_FRACTION_AREA_GRID",
+            [
+                "usccss.g5.u03.l02.unit_fraction_of_unit_fraction",
+                "usccss.g5.u03.l02.same_original_whole_order_comparison"
+            ],
+            "IM2021_G5_U03_L02_EXACT_DIGITAL_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 Grade 5 U03:L01: one piece of one selected half
         // measured against the ORIGINAL whole (1/6 or 1/8).
         // Digital objective selections are exact; drawings and explanations

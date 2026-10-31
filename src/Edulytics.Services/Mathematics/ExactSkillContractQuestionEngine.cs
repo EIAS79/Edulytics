@@ -184,6 +184,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L01FractionOfHalfQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L02UnitFractionQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
@@ -425,6 +426,8 @@ public sealed class ExactSkillContractQuestionEngine
     {
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
             return UsCcssG5U03L01FractionOfHalfQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L02UnitFractionQuestions.Supports(family))
+            return UsCcssG5U03L02UnitFractionQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
@@ -1767,6 +1770,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
         {
             var item = UsCcssG5U03L01FractionOfHalfQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L02UnitFractionQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L02UnitFractionQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -4991,6 +5000,8 @@ public sealed class ExactSkillContractQuestionEngine
         var p = problem.Parameters;
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(problem.Family))
             return UsCcssG5U03L01FractionOfHalfQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L02UnitFractionQuestions.Supports(problem.Family))
+            return UsCcssG5U03L02UnitFractionQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
