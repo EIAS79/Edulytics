@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "recordType": "GRADE6_LESSON_LOCAL_INTERACTIVE_WORKMAT_IMPLEMENTATION",
+  "courseCode": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+  "lessonTitle": "Tiling the Plane",
+  "unitCode": "U01",
+  "branch": "curriculum/us-ccss-g6-full-grade-20261028",
+  "pr": 591,
+  "baseHead": "b047c7e996adc6fde84c08e33320ad421ecdce9d",
+  "reviewedAtUtc": "2026-10-31T02:07:57.7858925Z",
+  "sourceLocalRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM",
+  "sourceProvenance": "Existing Grade 6 original student/teacher source comparisons and first-party equivalent visuals reused, not re-audited or publisher image reproduction.",
+  "scope": "U01:L01 lesson-local instructional tool only; no shared engine, renderer, route, grader, registry, seeder or production database changes",
+  "contribution": {
+    "workmatUrlPath": "/lesson-labs/us-ccss-g6/u01-l01-tiling-lab.html",
+    "files": [
+      "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u01-l01-tiling-lab.html",
+      "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u01-l01-tiling-lab.css",
+      "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u01-l01-tiling-lab.js",
+      "src/Edulytics.Web/wwwroot/images/public/us-ccss-g6-u01-l01-first-party-tilings.svg",
+      "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
+      "tests/academic-us-ccss-g6-u01-l01-visual-workmat-authoring.test.cjs"
+    ],
+    "prompts": [
+      "which-one-does-not-belong classification using multiple criteria",
+      "2x2 cell-based square and half-square triangle constructions, A/B/V/H, gap and overlap",
+      "same piece inventory 2 blue squares plus 4 yellow half-square triangles in at least two distinct layouts",
+      "compare piece counts to weighted triangular area units 72/64/56 across eight groups"
+    ],
+    "areaUnits": {
+      "fourCell": "square unit",
+      "eightHexagon": "small-triangle area unit",
+      "unitSystemsAreDifferent": true
+    },
+    "misleadingNumericalFixture": "A model with piece-area sum 4, covered area 3.5 and overlapping area 0.5 is explicitly not a tiling.",
+    "studentInput": "Keyboard-operable cell selectors and free written explanations; browser-only, no submission or persistence.",
+    "teacherRubric": {
+      "criteria": 4,
+      "pointsEach": 2,
+      "maxPoints": 8,
+      "manualReview": true,
+      "localPrintOnly": true,
+      "persisted": false
+    },
+    "limitations": [
+      "Main Rich V2 currently renders grade-only explanatory text with direct workmat path; it does not convert that path into an embedded navigation element. The workmat is available only when its static URL is opened.",
+      "Workmat provides a constrained instructional illustration and is not a general polygon geometry verifier.",
+      "No authenticated teacher review, school score, backend response, source applet, or publisher figure equivalence was verified.",
+      "PR #607 supervisor kernel preserved separately and not copied, merged or integrated."
+    ]
+  },
+  "staticChecks": {
+    "javascriptSyntax": "NODE_CHECK_ONLY",
+    "testFileSyntax": "NODE_CHECK_ONLY",
+    "richJson": "PARSED",
+    "svgXml": "PARSED",
+    "gitDiffWhitespace": "CHECKED",
+    "appRouting": "MAP_STATIC_ASSETS_SOURCE_PRESENT_NOT_RUNTIME_VERIFIED"
+  },
+  "authoredTests": "tests/academic-us-ccss-g6-u01-l01-visual-workmat-authoring.test.cjs",
+  "testStatus": "AUTHORED_NOT_RUN",
+  "stageA": "PREVIOUSLY_CLOSED_FIRST_PARTY_SOURCE_ALTERNATIVES",
+  "stageB": "EXTENDED_WITH_LESSON_LOCAL_INTERACTIVE_TEACHING_AID",
+  "stageC": "BLOCKED_SELECTED_PRACTICE_ROUTING_AND_TEACHER_REVIEW_PERSISTENCE",
+  "stageD": "NOT_STARTED",
+  "readyForStageD": false,
+  "closedAtUtc": null,
+  "closureSha": null,
+  "lastConfirmedClosedLesson": null,
+  "activeLesson": "PED:US-CCSS-MATH:G6:U01:L01",
+  "blockerOwner": "Supervisor 1 / designated globally cleared integration writer",
+  "blockedOn": {
+    "registry": "https://github.com/EIAS79/Edulytics/issues/605",
+    "implementation": "https://github.com/EIAS79/Edulytics/pull/607",
+    "ownerTask": "Select actual L01 Practice contract with valid math grader/feedback and explicit teacher-review route; preserve shared write lease; report separate integration SHA."
+  },
+  "release": false,
+  "merge": false,
+  "deployment": false
+}
