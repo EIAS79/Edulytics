@@ -12,8 +12,13 @@
         "A scale drawing multiplies EVERY original length by one common positive scale factor k, so corresponding angles stay equal. Stretching only horizontal lengths by a different factor from vertical lengths generally distorts the figure and is not a scale drawing.",
         "A dilation centred at P with factor k>0 sends A to A′ on ray PA with PA′=k·PA; if A=P, the centre stays fixed. The coordinate rule is A′=P+k(A−P). For 0<k<1 the image is closer to P; for k>1 farther away; k=1 identity.",
         "Verbal diagram: centre P=(1,1) and triangle A=(3,1),B=(1,4),C=(3,4). A dilation by factor 2 gives A′=(5,1),B′=(1,7),C′=(5,7). Every original segment length is doubled and angle measures are preserved.",
-        "Original student task: distinguish two differently edited diagrams—one uniformly scaled, one stretched in one direction—by measuring two independent corresponding lengths. Then draw a dilation about a non-origin centre. Teacher rubric (0–4): correct centre/ray, a single consistent k, accurate measurements and a reasoned distortion test; actual hand drawings and critique require human scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. All diagrams are described verbally and all worked Edulytiks problems are independently authored."
+        "Original student task: distinguish two differently edited diagrams—one uniformly scaled, one stretched in one direction—by measuring two independent corresponding lengths. Then draw a dilation about a non-origin centre. Teacher rubric (0–8): correct centre/ray, a single consistent k, accurate measurements and a reasoned distortion test; actual hand drawings and critique require human scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. All diagrams are described verbally and all worked Edulytiks problems are independently authored.",
+        "1.1 Is That the Same Hippo? Source public-domain edited animal image contrasts one uniformly scaled copy and one distorted stretch. The original image is not included, so compare two independently drawn outline figures: one multiplies every pairwise distance by the same factor and keeps corresponding angles, the other expands width factor 2 and height factor 3 and is distorted. Learners describe two different lengths they would measure and a corresponding angle; do not infer scaling from one dimension alone.",
+        "1.2 Sketching Stretching: Source centre C and H at distance 40 mm, factor 3 yields CH-prime=120 mm, so original-to-image displacement HH-prime=80 mm (NOT 120 mm). With source factor 3/4 centre O, image K-prime lies on ray OK at OK-prime=(3/4)OK, not 3/4 of some other distance. Learners draw a ray from the named centre through the source point, then place the image the correct radius from centre, making both the centre and factor visible. Preserve source-specific misconception about measuring the wrong segment.",
+        "1.3 Mini Me: Source centre P for a figure with two circles, rays from P pass through each source control point (centres, endpoints and marked A,B,C,D,E,F,G,H,I,J). Positive factor 1/2 locates every labelled image halfway along its own centre-to-point ray. It is insufficient to locate only D-prime and B-prime then guess other circles/vertices; every radius/segment must also shrink 1/2. Compare segment AB dilated about P and Q by the same factor 1/2: both image segments have length AB/2, although their positions differ. Even if Q tends arbitrarily far away, segment image length remains AB/2 for each finite Q.",
+        "Original independent Practice P1-P7: P1 source polygons P and Q scale ratio x=6 and unknown y requires teacher original figure, no fabricated numeric y; P2 given AB=6, CD=3, XY=4, ZW=a with AB↔XY and CD↔ZW yields a=2, equations 6/3=4/a and 6/4=3/a true; P3 equations 2/5=x/15 gives x=6, 4/3=x/7 gives x=28/3, 7/5=28/x gives x=20, 11/4=5/x gives x=20/11; P4 only rhombus necessarily has half-turn among given generic quadrilateral types; P5 prove rhombus diagonal reflection; P6 isosceles DAC and AB apex angle bisector implies AB perpendicular bisects CD by SAS; P7 parallel lines f,g equal-angle selections depend on missing original figure and require teacher review.",
+        "1.4 Publisher-locked Cool-down source not available. Independent Edulytiks paper equivalent asks to draw a centre-controlled factor-1/2 multi-point dilation, explain why different centres yield same output segment length while changing position, and reject a 2x horizontal 3x vertical distortion. Teacher human-scores four 0-2 dimensions."
       ],
       "KeyConcepts": [
         {
@@ -86,6 +91,11 @@
           "Mistake": "Treating unequal width and height factors as a valid scale copy.",
           "WhyWrong": "It distorts angles and segment ratios.",
           "Correction": "Verify one common positive ratio for independent corresponding lengths."
+        },
+        {
+          "Mistake": "Treating displacement HH-prime as 120 mm when the radius from centre C to image H-prime should equal 120 mm.",
+          "WhyWrong": "Source CH=40, dilation k=3: CH-prime=120 but HH-prime=80 on same ray.",
+          "Correction": "Measure every image from the correct centre, not from its original point; compare centre-to-image and centre-to-original lengths."
         }
       ],
       "SummaryPoints": [
