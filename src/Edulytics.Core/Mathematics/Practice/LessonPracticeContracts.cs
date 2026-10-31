@@ -883,12 +883,26 @@ public static class LessonPracticeContractRegistry
             Version),
     ];
 
+    private const string Coder8L01 =
+        "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01";
+
     private static readonly LessonPracticeContract[] AllEntries = BuildAllEntries();
 
     private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
         AllEntries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
 
-    public static IReadOnlyList<LessonPracticeContract> All => AllEntries;
+    // Coder 8 owns only L01. An exact lesson candidate is auditable but must
+    // not be advertised as a student-available contract before A-C approval.
+    // Filter this lesson identity only; preserve all other existing contracts.
+    private static readonly LessonPracticeContract[] RoutableEntries = AllEntries
+        .Where(x => x.LessonCode != Coder8L01)
+        .ToArray();
+
+    public static IReadOnlyList<LessonPracticeContract> All => RoutableEntries;
+
+    public static IReadOnlyList<LessonPracticeContract> Coder8L01PendingForAudit =>
+        AllEntries.Where(x => x.LessonCode == Coder8L01 &&
+            x.Readiness == "INTEGRATION_PENDING").ToArray();
 
     private static LessonPracticeContract[] BuildAllEntries()
     {
@@ -1360,6 +1374,32 @@ public static class LessonPracticeContractRegistry
             ["usccss.g4.u06.l15.area_partial_quotients", "usccss.g4.u06.l15.mural_complete_columns"],
             "IM2021_G4_U06_L15_SOURCE_ALIGNED_NUMERIC_PLUS_TEACHER_LED",
             "READY_VERIFIED",
+            Version);
+
+        // Coder 8 U01:L01: explicit canonical identity takes precedence over
+        // the legacy official outcome fallback that maps HSA-REI.C.8/C.9 to
+        // one-step linear equations. The listed matrix families are the exact
+        // candidate design from PR600, NOT built in this branch or certified
+        // learner-ready. Teacher M05 and M11 proofs have separate human rubrics.
+        // Pending readiness is deliberate until source-bound fixture parity,
+        // original content v4 predecessor and explicit selected integration.
+        byLesson[Coder8L01] = new LessonPracticeContract(
+            Coder8L01,
+            "supporting.matrices.core",
+            "CODER8_L01_MATRIX_FULL_SYSTEM_AND_TEACHER_REASONING",
+            [
+                "usccss.hs.matrix.coefficients_2x2",
+                "usccss.hs.matrix.solve_2x2",
+                "usccss.hs.matrix.inverse_2x2",
+                "usccss.hs.matrix.classify_2x2",
+                "usccss.hs.matrix.coefficients_3x3",
+                "usccss.hs.matrix.solve_3x3",
+                "usccss.hs.matrix.inverse_3x3",
+                "usccss.hs.matrix.row_reduce_3x3",
+                "usccss.hs.matrix.inverse_eligibility"
+            ],
+            "CODER8_L01_SOURCE_VERIFIED_CANDIDATE_NO_PREDECESSOR_APPROVAL",
+            "INTEGRATION_PENDING",
             Version);
 
         return byLesson.Values
