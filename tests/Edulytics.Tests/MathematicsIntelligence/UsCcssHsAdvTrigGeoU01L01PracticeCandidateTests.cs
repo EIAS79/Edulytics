@@ -79,6 +79,8 @@ public sealed class UsCcssHsAdvTrigGeoU01L01PracticeCandidateTests
     [InlineData("l01-rotation-sin", "sqrt(3)/2", "INCORRECT")]
     [InlineData("l01-fullturn-cos", "-sqrt(2)/2", "INCORRECT")]
     [InlineData("l01-reflection-cos", "cos(", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData("l01-reflection-cos", "-sqrt(1 2)/4", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData("l01-fullturn-cos", "sqrt( 8 )/4", "EXACT_ACCEPTED")]
     [InlineData("l01-reflection-cos", "NaN", "MALFORMED_OR_UNSUPPORTED")]
     [InlineData("l01-reflection-cos", "<script>", "MALFORMED_OR_UNSUPPORTED")]
     [InlineData("l01-reflection-cos", "sqrt(3)/2 + evil()", "MALFORMED_OR_UNSUPPORTED")]

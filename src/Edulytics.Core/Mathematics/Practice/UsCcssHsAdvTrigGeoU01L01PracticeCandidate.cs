@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Edulytics.Core.Mathematics.Practice;
 
@@ -103,6 +104,10 @@ public static class UsCcssHsAdvTrigGeoU01L01PracticeCandidate
         if (!candidate.IsScorable)
             return "OUT_OF_DOMAIN";
         if (string.IsNullOrWhiteSpace(submission) || submission.Length > 80)
+            return "MALFORMED_OR_UNSUPPORTED";
+        // Formatting whitespace is permitted, but merging separate numeric
+        // tokens must not manufacture an approved radical (sqrt(1 2) != sqrt(12)).
+        if (Regex.IsMatch(submission, @"(?<=\d)\s+(?=\d)"))
             return "MALFORMED_OR_UNSUPPORTED";
         var answer = string.Concat(submission.Where(c => !char.IsWhiteSpace(c)));
         // Exactly-written answer only. A decimal/e-notation representation
