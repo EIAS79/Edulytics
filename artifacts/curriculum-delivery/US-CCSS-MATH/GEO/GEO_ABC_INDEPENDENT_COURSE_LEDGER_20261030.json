@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 29,
-    "B_CLOSED": 29,
-    "C_PREPARED": 29,
-    "ABC_READY_FOR_D": 29,
+    "A_CLOSED": 30,
+    "B_CLOSED": 30,
+    "C_PREPARED": 30,
+    "ABC_READY_FOR_D": 30,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 95,
+    "REMAINING": 94,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 95,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+    "Unprocessed": 94,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 7
+    "U02ClosedLessonCount": 8
   },
   "LessonEntries": [
     {
@@ -643,6 +643,38 @@
       "TestsExecuted": "NOT_RUN",
       "PublisherCooldown": "7.5 PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_ORIGINAL_PAPER_ALTERNATIVE",
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+      "Ordinal": 30,
+      "UnitOrdinal": 8,
+      "Title": "The Perpendicular Bisector Theorem",
+      "LessonCommit": "7571973a99c6057670145c14e25d756c54b005c5",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "fd4817c8d5e0de4b1dd3b10b35789b7468696ae13b5b9895027a95308a2c12e0",
+        "TeacherActivities": "258a1f5ad38bf9010a183c2904673f9942dc9636cbe88d740564a9b09220f9aa",
+        "StudentActivities": "81473cc7f29eab3613877f3a62b220b6f73d95f3a342515f8b04a229a7efbcf3",
+        "StudentPractice": "9f9b95dd01a8db6a6c2d392cb03b31fc9dbd9009a02dfb0f1c100ece67bb56b1"
+      },
+      "OriginalActivities": [
+        "8.1 Which One Does Not Belong: Intersecting Lines",
+        "8.2 Lots of Lines",
+        "8.3 Not Too Close, Not Too Far"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_ORIGINAL_THEOREM_BOTH_DIRECTIONS_AND_SEVEN_PRACTICE_SOURCE_HASHES",
+      "B": "B_CLOSED_REPLACED_PREMATURE_SSS_CONVERSE_WITH_APEX_BISECTOR_SAS_PRESERVED_OTHER_EXAMPLES",
+      "C": "C_CLOSED_AUTHORING_EXACT_TEACHER_PAPER_BOTH_CONVERSES_SEVEN_PRACTICE_NOT_RUN",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L08_PERPENDICULAR_BISECTOR_BOTH_DIRECTIONS_PAPER_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l08-perpendicular-bisector-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l08-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l08-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "PUBLISHER_ORIGINAL_RESTRICTED_UNVERIFIED_FIRST_PARTY_ALTERNATIVE",
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -683,7 +715,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -711,5 +743,5 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l07-abc-checkpoint-20261031.json"
+  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l08-abc-checkpoint-20261031.json"
 }
