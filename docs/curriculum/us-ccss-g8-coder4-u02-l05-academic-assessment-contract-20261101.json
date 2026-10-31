@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L05",
+  "title": "More Dilations",
+  "unit": "U02",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\5\\index.html",
+      "sha256": "b21c64db23722a7ef322b7d87e4189d8cef34aa78c29aaca03c2d089f8b4386d"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\5\\index.html",
+      "sha256": "15f4b5e8424b10bb5bb4171b9282956356975cfaeb3af78a51ce96f1b5696acc"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\5\\preparation.html",
+      "sha256": "c9a87171b68ad2672a59732ef3820361d89b1439db247901dde18f09b8e9c9c6"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\5\\practice.html",
+      "sha256": "ace9bece24600aa6953fcbf4d48903bccf123720569d5a3c2a3f64b027d7d256"
+    }
+  },
+  "sourceStandardsRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.3"
+    }
+  ],
+  "learningGoals": [
+    "Describe orally one figure's dilations with a common center and varying scale factors",
+    "Identify needed center, scale factor and all vertex coordinates and explicitly request this information from partner",
+    "Use the complete data to construct a dilation with exact corresponding labels"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "source": "5.1 Many Dilations of a Triangle",
+      "section": "many",
+      "modality": "MULTIPLE_SCALES_SAME_CENTER_TRIANGLE_WITH_NONORIGIN_RAYS",
+      "answer": "Original A(0,0),B(4,0),C(0,3), center P(-2,-1). k0.5 images A(-1,-0.5),B(1,-0.5),C(-1,1), perimeter6, area1.5; k1 unchanged perimeter12 area6; k2 A(2,1),B(10,1),C(2,7), perimeter24 area24. All three original angles preserved."
+    },
+    {
+      "source": "5.2 Info Gap: Dilations",
+      "section": "infogap",
+      "modality": "REAL_TWO_PERSON_SEPARATELY_DISTRIBUTED_PROBLEM_DATA_CARDS_AND_ORAL_INFORMATION_HANDOFF",
+      "answer": "Distinct paper cards. Data partner gives requested center T(1,-1), scale factor3/2, vertices A(3,1),B(5,1),C(5,3),D(3,3). Student independent resulting A′(4,2),B′(7,2),C′(7,5),D′(4,5). Teacher observes needed six requests, explanations and partner independence; applet chatbot is not a substitute."
+    }
+  ],
+  "sourcePracticeToFirstPartyCrosswalk": [
+    {
+      "source": "Problem 1 image of quadrilateral with origin center and B→B′",
+      "section": "practice",
+      "answer": "Original A(2,0),B(4,0),C(4,2),D(2,2), known B′(6,0) means factor3/2, resulting (3,0),(6,0),(6,3),(3,3)."
+    },
+    {
+      "source": "Problem 2 centers and reciprocal factors among triangles A,B,C",
+      "section": "practice",
+      "answer": "Triangle A (1,1),(3,1),(1,3); B twice coordinates; C half coords, center O(0,0), A→B2, B→A 1/2, C→B4."
+    },
+    {
+      "source": "Problem 3 double and half triangle from original and related image",
+      "section": "practice",
+      "answer": "A(2,0),B(0,2),C(2,2): double (4,0),(0,4),(4,4); half(1,0),(0,1),(1,1); from double to half factor1/4 centered O."
+    },
+    {
+      "source": "Problem 4 right triangle angles from D=28 degrees",
+      "section": "practice",
+      "answer": "Remaining measures 90° and62°. Source right-angle vertex not explicitly identified by written question; accept correct assignments consistent with drawn right-angle mark."
+    }
+  ],
+  "selectedOfflinePaperRoute20261101": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U02:L05",
+    "routeType": "FIRST_PARTY_TEACHER_SELECTED_OFFLINE_PARTNER_INFO_GAP_AND_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l05-more-dilations-partner-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u02-l05-more-dilations-partner-paper.html",
+    "learnerWorksheetSha256": "2fe8bf15107567ddabcc2fe5200b5f51906a447c260b2a54303ab95fe5f3115f",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "stableTaskIds": [
+      "many",
+      "infogap",
+      "problem-card",
+      "data-card",
+      "partner-review",
+      "practice",
+      "cool"
+    ],
+    "teacherHandoff": "Print problem-card and data-card on different pages and hand to distinct partners before exchange; collect explanation/independence and teacher observation; score offline private rubric",
+    "partnerDataSecrecy": "CARDS_SEPARATE_UNTIL_INDEPENDENT_RESPONSES_AND_TEACHER_RELEASE",
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 wrong/missing;1 partial;2 complete source-equivalent labelled geometry and actionable observation. Grade remains offline manual only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "5.1 separate 0.5/1/2 same-center triangle drawings and side/area ratios k,k²"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "5.2 Partner A explicitly requests six necessary values and WHY; Partner B asks why, supplies only raw data, cards stay separate; independently correct polygon"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Four independent Practice modalities correct center/factor/images and retrieval with justified reciprocals and angle outcomes"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Original first-party Cool-down correct off-origin center, four vertex images, proportional geometry and human explanation"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "many": {
+        "center": [
+          -2,
+          -1
+        ],
+        "original": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "originalPerimeter": 12,
+        "originalArea": 6,
+        "images": [
+          {
+            "k": 0.5,
+            "points": [
+              [
+                -1,
+                -0.5
+              ],
+              [
+                1,
+                -0.5
+              ],
+              [
+                -1,
+                1
+              ]
+            ],
+            "perimeter": 6,
+            "area": 1.5
+          },
+          {
+            "k": 1,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "perimeter": 12,
+            "area": 6
+          },
+          {
+            "k": 2,
+            "points": [
+              [
+                2,
+                1
+              ],
+              [
+                10,
+                1
+              ],
+              [
+                2,
+                7
+              ]
+            ],
+            "perimeter": 24,
+            "area": 24
+          }
+        ]
+      },
+      "infogap": {
+        "center": [
+          1,
+          -1
+        ],
+        "factor": 1.5,
+        "original": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "images": [
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "requestedFacts": [
+          "center",
+          "scaleFactor",
+          "vertexA",
+          "vertexB",
+          "vertexC",
+          "vertexD"
+        ],
+        "partnerObserved": true
+      },
+      "practice1": {
+        "center": [
+          0,
+          0
+        ],
+        "original": [
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "knownBImage": [
+          6,
+          0
+        ],
+        "factor": 1.5,
+        "image": [
+          [
+            3,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      "practice2": {
+        "center": [
+          0,
+          0
+        ],
+        "A": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "B": [
+          [
+            2,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "C": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1.5,
+            0.5
+          ],
+          [
+            0.5,
+            1.5
+          ]
+        ],
+        "AtoB": 2,
+        "BtoA": 0.5,
+        "CtoB": 4
+      },
+      "practice3": {
+        "center": [
+          0,
+          0
+        ],
+        "original": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "double": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "half": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "doubleToHalf": 0.25
+      },
+      "practice4": {
+        "givenAngle": 28,
+        "rightAngle": 90,
+        "otherAcuteAngle": 62
+      },
+      "cooldown": {
+        "center": [
+          -1,
+          0
+        ],
+        "original": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "factor": 1.5,
+        "image": [
+          [
+            2,
+            1.5
+          ],
+          [
+            6.5,
+            1.5
+          ],
+          [
+            6.5,
+            4.5
+          ],
+          [
+            2,
+            4.5
+          ]
+        ]
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "All same-center k0.5,1,2 original triangle point images",
+        "Area ratios 0.25,1,4 and unchanged angles",
+        "Partner A six targeted requests, B asks WHY, separate independent solutions",
+        "Partner problem polygon images A(4,2),B(7,2),C(7,5),D(4,5)",
+        "Practice1 B′(6,0) yields k3/2 with four correct image points",
+        "Practice3 double image to half image needs factor1/4",
+        "Cool-down factor1.5 about T(-1,0) matches all four"
+      ],
+      "equivalent": [
+        "Area ratio k² proven by multiplying two scaled side dimensions",
+        "Exact fractions 3/2 and decimals 1.5 equivalent",
+        "Partner can ask for original coordinate vertices in one precise multi-vertex request if all vertices received",
+        "Right-angle mark may be at E or F; accept labels consistent with marked source diagram",
+        "A student may produce a valid alternative same-center triangular construction with correct ratios"
+      ],
+      "wrong": [
+        "Apply k2 image to get k1/2 image and call the latter factor1/2 of original",
+        "Claim area doubles when lengths double",
+        "A student reveals Data Card before independent questioning",
+        "Data partner computes image instead of providing raw requested facts",
+        "Miss external dilation center for Cool-down",
+        "Use ratio C→B=2 rather than4",
+        "Claim 28+90+62 is not180"
+      ],
+      "missing": [
+        "No recorded center request",
+        "No recorded factor request",
+        "Incomplete source vertex list",
+        "One partner independent result absent",
+        "No corresponding triangle ray labels",
+        "Only one of four Practice tasks completed"
+      ],
+      "malformed": [
+        "No student or partner identity/record",
+        "Nonfinite coordinate",
+        "Answer lacks which center is used",
+        "Apparent drawing with no original vertex correspondence",
+        "Partner card not physically separated",
+        "Bare percentage without associated length or area"
+      ],
+      "boundary": [
+        "k1 maps same triangle to itself and is an identity even though source activity varies factors",
+        "Same center must apply to all independent k images",
+        "Reciprocal dilation from B to A is k1/2",
+        "C→B relative factor4 from half to double",
+        "Data partner should not disclose computed image or look at other card until teacher authorizes",
+        "The user must not conflate student paper route with electronic teacher grade persistence"
+      ]
+    },
+    "firstPartyCoolDown": {
+      "section": "cool",
+      "provenance": "EDULYTIKS_ORIGINAL_NOT_PROTECTED_PUBLISHER_COOLDOWN",
+      "teacherReviewRequired": true
+    },
+    "humanAssessmentRequired": true,
+    "automaticGradeForPartnerTalk": false,
+    "onlineStudentSubmission": false,
+    "onlineTeacherGradePersistence": false,
+    "tests": "AUTHORED_NOT_RUN",
+    "testFile": "tests/academic-us-ccss-g8-coder4-u02-l05-selected-partner-paper-route-20261101.test.cjs",
+    "stageD": "NOT_RUN",
+    "publisherCooldown": "PROTECTED_PUBLISHER_5_3_NOT_REPRODUCED",
+    "originalPublisherDataCards": "NOT_REPRODUCED"
+  },
+  "StageA": "A_CLOSED_TWO_SOURCE_ACTIVITIES_FOUR_PRACTICE_FAMILIES_AND_PARTNER_STRUCTURE",
+  "StageB": "B_CLOSED_EXISTING_RICHV2_AND_LESSON_SELECTED_FIRST_PARTY_DRAWING_AND_CARDS",
+  "StageC": "C_CLOSED_SELECTED_TWO_PERSON_OFFLINE_PAPER_TEACHER_RUBRIC",
+  "StageD": "NOT_RUN",
+  "onlinePractice": "NOT_READY_VERIFIED",
+  "teacherGradePersistence": "NOT_RUN",
+  "sharedCodeModified": false
+}
