@@ -921,10 +921,10 @@
       "actualPostgresqlAttemptPersistedAndReadBack": false,
       "studentTeacherAuthenticatedSessionVerified": false,
       "teacherScoringPersistenceVerified": false,
-      "A": "NOT_ACCEPTED",
-      "B": "NOT_ACCEPTED",
-      "C": "NOT_VERIFIED",
-      "D": "NOT_VERIFIED",
+      "A": "A_CLOSED_SOURCE_THREE_ACTIVITIES_FIVE_PRACTICE_FAMILIES_PARITY",
+      "B": "B_CLOSED_PREVIOUS_RICHV2_AND_TWO_EXISTING_FIRST_PARTY_SVG_REUSED",
+      "C": "C_CLOSED_EXACT_SELECTED_FIRST_PARTY_TEACHER_PAPER_ROUTE",
+      "D": "NOT_RUN",
       "nextChecks": [
         "U02_TEACHER_SOURCE_ACTIVITY_AND_COOLDOWN_ACCEPTANCE_PENDING",
         "LESSON_EXACT_PRACTICE_AND_HUMAN_SCORE_PENDING",
@@ -939,7 +939,22 @@
           "path": "/curriculum/us-ccss-g8/figures/u02-l04-off-origin.svg",
           "sha256": "a9e67ac62272703ef2b82c9a87526fc5407958421ef9558516fa555dd25deff5"
         }
-      ]
+      ],
+      "readyForStageD": true,
+      "lessonClosureStatus": "READY_FOR_STAGE_D_ACADEMIC_OFFLINE_PAPER_ONLY",
+      "selectedTeacherPaperAssessment": "/curriculum/us-ccss-g8/assessment/u02-l04-dilations-square-grid-paper.html",
+      "selectedRouteKind": "EXACT_RICHV2_LINKED_STATIC_STUDENT_PAPER_WITH_TWO_EXISTING_FIRST_PARTY_SVG_AND_PRIVATE_TEACHER_RUBRIC",
+      "stageCSelectedRouteContentCommitSHA": "53ce8f733e51dce48ba825db2c66ffc92b6894e5",
+      "stageDIntegrationRequired": true,
+      "lessonExactDigitalPracticeVerified": false,
+      "lastConfirmedClosureEvidence": "docs/curriculum/us-ccss-g8-coder4-u02-l04-selected-paper-stage-c-checkpoint-20261101.json",
+      "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u02-l04-academic-assessment-contract-20261101.json",
+      "sourceStudentSha256": "eb764ba819cfda2705b614e1fc206d15d29d57880b7041ecfaafa66f0ca7c078",
+      "sourceTeacherSha256": "5bd257b6831ffa99b38d86ab718afd0c4e583603ac238c5c295d63ed5a709384",
+      "sourcePreparationSha256": "0cd82a3ad5be0739d997b9cfe1b67b343922d84e4e2580916cb4bc0e1ffd73ca",
+      "sourcePracticeSha256": "355333274b59b03f60481ec02b5a977708154f2cc717d29b0e94eb03569dc41e",
+      "sourcePracticeProblemCount": 5,
+      "sequentialAdvanceAllowed": true
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U02:L05",
@@ -3782,25 +3797,25 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U02:L04",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U02:L05",
     "status": "ACTIVE_NEXT_UNCLOSED",
     "unit": "U02",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U02:L04",
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U02:L03",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U02:L05",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U02:L04",
     "advanceAllowed": true,
-    "authority": "GRADE8_STANDING_SEQUENTIAL_SOURCE_A_B_C"
+    "authority": "GRADE8_STANDING_SEQUENTIAL_SOURCE_A_B_C_EXECUTION"
   },
   "abcReturnQueue": [],
   "abcCounters": {
     "TOTAL": 131,
     "AUTHORED": 131,
-    "A_CLOSED": 20,
-    "B_CLOSED": 20,
-    "C_PREPARED": 20,
-    "ABC_READY_FOR_D": 20,
+    "A_CLOSED": 21,
+    "B_CLOSED": 21,
+    "C_PREPARED": 21,
+    "ABC_READY_FOR_D": 21,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 111,
+    "REMAINING": 110,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -3809,13 +3824,13 @@
   "unitProgress": {
     "unitCode": "U02",
     "unitTotal": 13,
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U02:L03",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U02:L04",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U02:L04",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U02:L05",
     "unitStatus": "UNIT_IN_PROGRESS",
     "unitsABCCLOSED": 1,
     "unitTotalCount": 9,
-    "unitReadyForD": 3,
-    "unitRemaining": 10
+    "unitReadyForD": 4,
+    "unitRemaining": 9
   },
   "abcReturnQueueSkipAllowed": false,
   "currentBlockedLesson": null,
