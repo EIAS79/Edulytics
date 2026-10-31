@@ -81,6 +81,15 @@ test('G7 original visual and construction prompts retain unique switch cases',()
     assert.equal(arms.length,new Set(arms).size);
   }
 });
+test('L01 polygon controls provide coordinates to screen readers without duplicate SVG narration',()=>{
+  assert.match(client,/const vertices = points\.map/);
+  assert.match(client,/vertex ['"]?\+\(index\+1\)/);
+  assert.match(client,/vertices on a unit grid/);
+  assert.match(client,/button\.setAttribute\('aria-label'/);
+  assert.match(client,/'aria-hidden':'true'/);
+  assert.match(client,/button\.setAttribute\('aria-pressed', 'false'\)/);
+  // Source-level fixture only; actual screen-reader and rendered UI checks belong to D.
+});
 test('A-C closure remains truthful: shared Practice still blocked',()=>{
   assert.equal(cursor.READY_FOR_STAGE_D,false);
   assert.match(cursor.C_STATUS,/BLOCKED/);

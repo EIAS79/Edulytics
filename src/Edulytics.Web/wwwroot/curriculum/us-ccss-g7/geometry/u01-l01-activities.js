@@ -32,10 +32,17 @@
     button.type = 'button';
     button.className = 'school-button';
     button.setAttribute('aria-pressed', 'false');
-    button.setAttribute('aria-label', 'Select polygon card '+id);
+    // Screen readers need the actual figure, not only its letter: coordinates
+    // make correspondence and scale factors independently inspectable.
+    const vertices = points.map(([x, y], index) =>
+      'vertex '+(index+1)+' ('+x+', '+y+')').join('; ');
+    button.setAttribute('aria-label',
+      'Polygon card '+id+', '+points.length+' vertices on a unit grid: '+
+      vertices+'. Select this card to compare scaled copies.');
     button.dataset.g7Card = id;
-    const svg = make('svg', {viewBox:'0 0 110 110',width:'130',height:'130',role:'img',
-      'aria-label':'Card '+id+'. Polygon on a uniform unit grid.'});
+    // The labeled button exposes the geometry; hide its duplicate SVG subtree.
+    const svg = make('svg', {viewBox:'0 0 110 110',width:'130',height:'130',
+      'aria-hidden':'true',focusable:'false'});
     for(let n=10;n<=100;n+=10){
       svg.appendChild(make('path',{d:'M'+n+' 10V100 M10 '+n+'H100',stroke:'#ddd',fill:'none'}));
     }

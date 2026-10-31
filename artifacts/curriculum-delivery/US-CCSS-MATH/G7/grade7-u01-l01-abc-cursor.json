@@ -8,6 +8,16 @@
   "evidence": "Local teacher and student source read. Source activities: Printing Portraits, Scaling F and Pairs of Scaled Polygons. Existing F SVG and teacher rubric are reusable.",
   "A_STATUS": "A_CLOSED_SOURCE_GOALS_AND_FIRST_PARTY_ACTIVITY_EQUIVALENCE_REVIEWED",
   "B_STATUS": "BLOCKED_GRADE_BRANCH_SHARED_RICH_V2_DOES_NOT_INVOKE_G7_PARTIAL_ISSUE_592_PR_599",
+  "lessonLocalAccessibilityRepair": {
+    "scope": "PED:US-CCSS-MATH:G7:U01:L01_ONLY",
+    "defect": "Ten polygon-card buttons exposed letters but no geometric vertex data to screen-reader users.",
+    "repair": "The grade-owned JavaScript now includes numbered vertex coordinates in each button's accessible name and marks the nested duplicate SVG as decorative.",
+    "source": "07_Grade_7_OUR_IM_Student/1/1/index.html; original task asks learners to identify scaled polygon pairs and justify corresponding dimensions.",
+    "authoredRegressionFixture": "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
+    "fixtureStatus": "AUTHORED_NOT_RUN",
+    "runtimeAccessibilityStatus": "NOT_RUN_STAGE_D",
+    "deliveryBlocker": "Shared Rich V2 renderer hook remains external PR #599; no claim of authenticated student visibility."
+  },
   "C_STATUS": "BLOCKED_EXACT_LESSON_PRACTICE_SELECTION_GENERATOR_FEEDBACK_AND_TEACHER_REVIEW_ISSUE_592",
   "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
   "READY_FOR_STAGE_D": false,
