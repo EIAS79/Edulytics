@@ -17,12 +17,12 @@
     "09": 6
   },
   "previouslyReadyForStageD": 0,
-  "newlyReadyForStageD": 16,
-  "unitReadyForStageD": false,
-  "unitStatus": "UNIT_IN_PROGRESS",
-  "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L16",
-  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L17",
-  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L17",
+  "newlyReadyForStageD": 17,
+  "unitReadyForStageD": true,
+  "unitStatus": "UNIT_ABC_CLOSED_READY_FOR_STAGE_D",
+  "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L17",
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U02:L01",
+  "currentLesson": "PED:US-CCSS-MATH:G8:U02:L01",
   "blockedInUnitCurrently": 0,
   "activeBlockingLesson": null,
   "historicalPartiallyRepaired": [
@@ -42,19 +42,19 @@
     "A_CLOSED": 17,
     "B_CLOSED": 17,
     "C_PREPARED": 17,
-    "ABC_READY_FOR_D": 16,
+    "ABC_READY_FOR_D": 17,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 115,
+    "REMAINING": 114,
     "UNIT_TOTAL": 9,
-    "UNITS_ABC_CLOSED": 0,
+    "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS"
+    "UNIT_STATUS": "UNIT_ABC_CLOSED_READY_FOR_STAGE_D"
   },
   "unitTotals": {
     "UNIT_TOTAL": 9,
-    "UNITS_ABC_CLOSED": 0,
-    "CURRENT_UNIT": "U01",
+    "UNITS_ABC_CLOSED": 1,
+    "CURRENT_UNIT": "U02",
     "UNIT_STATUS": "UNIT_IN_PROGRESS"
   },
   "sourceOriginalsVerified": [
@@ -149,11 +149,9 @@
     "legacy17ClosuresPreservedHistorically": true
   },
   "stageCSelectedPaperClosure20261031": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
-    "contentSHA": "cdb4cf526fc438b93d6ec504085f172aa64ee43a",
-    "printableWorksheet": "/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
-    "teacherRubric": "four source task criteria 0-2 human only",
-    "StageD": "NOT_RUN",
-    "next": "PED:US-CCSS-MATH:G8:U01:L02"
+    "status": "ALL_17_OF_17_SELECTED_TEACHER_PAPER_ACADEMIC_A_B_C_CLOSED",
+    "stageD": "NOT_RUN",
+    "nextLesson": "PED:US-CCSS-MATH:G8:U02:L01",
+    "sharedFilesModified": false
   }
 }

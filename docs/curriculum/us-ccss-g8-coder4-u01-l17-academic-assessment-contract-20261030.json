@@ -174,10 +174,202 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T14:02:24.700421+00:00",
-  "parentGitHEAD": "f6eae38c6b4e67f792e299e8005ca518b17e5d2c"
+  "parentGitHEAD": "f6eae38c6b4e67f792e299e8005ca518b17e5d2c",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L17",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l17-rotate-tessellate-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l17-rotate-tessellate-paper.html",
+    "learnerWorksheetSha256": "5b9ce037866e476d3b91cd2be25e4a838056fcc22ad7d347a301ec84e59b095f",
+    "sourceActivityMap": [
+      {
+        "source": "17.1: Deducing Angle Measures",
+        "worksheet": "angle-tiles",
+        "modality": "REGULAR_POLYGON_VERTEX_SUM_TILING_AND_PENTAGON_COUNTEREXAMPLE",
+        "key": "6 equilateral triangle corners60° sum360;4 square corners90° sum360;3 regular hexagon corners120° sum360. Regular pentagon corner108°,3 corners324 leave gap36,4 corners432 exceed360 by72 (overlap)."
+      },
+      {
+        "source": "17.2: Tessellate This",
+        "worksheet": "tessellate",
+        "modality": "AT_LEAST_TWELVE_RIGID_TILE_REPEATING_GAPLESS_PLANAR_PATTERN_WITH_TRANSLATION_SYMMETRIES",
+        "key": "For square unit-grid pattern, no-overlap cover tiles [i,i+1]×[j,j+1] for all integers i,j. At least12 drawn. Full periodic pattern maps to itself via (+1,0) and(0,+1); finite drawing is a representative window and translated infinite tiling extends without gaps."
+      },
+      {
+        "source": "17.3: Rotate That",
+        "worksheet": "rotate",
+        "modality": "FOUR_COPY_ASYMMETRIC_TRIANGLE_PATTERN_AND_FULL_DESIGN_NONIDENTITY_ROTATION",
+        "key": "Scalene triangle P(1,0),Q(3,0),R(1,1) 0°,90°,180°,270° CCW copies. Entire four-copy union maps onto itself by 90° CCW about O, not an individual scalene triangle."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "SIX_CONGRUENT_EQUILATERAL_TRIANGLE_SECTORS_AND_ROTATION_SYMMETRY_TEACHER_REVIEW",
+        "key": "Six 60° sectors about center O exactly360 no angular gaps/overlaps; 60° rotation permutes six identical congruent triangles; extend triangular lattice with equal matching edges."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 absent/incorrect;1 partially precise with missing angles/edges;2 complete gap-free labelled construction and valid mathematical reasoning. Manual offline educator scoring only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "17.1 six triangles,four squares,three hexagons exact360 angle sums and pentagon36 gap/72 overlap counterexample"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "17.2 repeating pattern at least12 equal tiles, no overlaps/gaps, two exact translations of full periodic tiling"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "17.3 entire four-asymmetric-triangle pattern has nonidentity 90° rotational symmetry, center/partner identification"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down six 60° sectors around O and complete rigid symmetry/edge-matching proof"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "regularTilings": [
+        {
+          "polygon": "equilateral_triangle",
+          "copies": 6,
+          "angle": 60,
+          "sum": 360
+        },
+        {
+          "polygon": "square",
+          "copies": 4,
+          "angle": 90,
+          "sum": 360
+        },
+        {
+          "polygon": "regular_hexagon",
+          "copies": 3,
+          "angle": 120,
+          "sum": 360
+        }
+      ],
+      "pentagon": {
+        "angle": 108,
+        "threeSum": 324,
+        "threeGap": 36,
+        "fourSum": 432,
+        "fourOverlap": 72
+      },
+      "squareTiling": {
+        "tileSide": 1,
+        "minimumDrawn": 12,
+        "translationVectors": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vertexSum": 360
+      },
+      "fourfoldTriangle": {
+        "original": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "turnsCCWDegrees": [
+          0,
+          90,
+          180,
+          270
+        ],
+        "wholePatternSmallestPositiveSymmetryDegrees": 90,
+        "center": [
+          0,
+          0
+        ]
+      },
+      "cooldown": {
+        "triangleCount": 6,
+        "eachAngle": 60,
+        "totalAtVertex": 360,
+        "nonidentityRotation": 60
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "6*60=360, 4*90=360, 3*120=360; no angular gaps",
+        "Regular pentagon 3*108=324 leaves36°, four*108=432 overlaps72°",
+        "At least12 unit-square tiles with full pattern translation (+1,0) and (0,+1)",
+        "Four distinct scalene-triangle copies at 0,90,180,270 form whole-pattern quarter-turn symmetry",
+        "Six equilateral 60° copies around O and 60° turn permutes them"
+      ],
+      "equivalent": [
+        "Tessellation of equilateral triangles with exact two independent lattice vectors is acceptable",
+        "Clockwise270° equals counterclockwise90° for whole fourfold pattern",
+        "Regular hexagonal tiling with 3*120° at vertex accepted",
+        "Diagrammed no-gap edge-matching proof equivalent to exact vertex-count explanation"
+      ],
+      "wrong": [
+        "Claim 5 regular pentagons fit around one vertex",
+        "Claim three regular pentagons fill360 with no gap",
+        "Claim a single asymmetric triangle maps to itself under90° rotation",
+        "Translate only one tile and call entire pattern symmetric",
+        "Twelve arbitrarily placed squares with overlaps count as tessellation"
+      ],
+      "malformed": [
+        "Unlabelled polygon sector angles",
+        "No extended repeating tile pattern",
+        "No two translation vectors or partner observation",
+        "No rotation center/direction on four-copy design",
+        "Only the number60 without six-triangle diagram"
+      ],
+      "boundary": [
+        "360° around vertex is necessary but also need shared edges, no gaps and nonoverlapping interiors",
+        "Finite drawing only illustrates periodic tiling; full infinite pattern is translation invariant",
+        "Nonidentity symmetry refers to whole assembled pattern, not one asymmetric tile",
+        "Regular pentagons alone cannot form monohedral edge-to-edge tessellation by vertex meeting constraints",
+        "360° identity turn alone is not sufficient evidence of nonidentity rotational symmetry"
+      ]
+    },
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "stageD": "NOT_RUN",
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "firstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "sharedEngineFilesModified": false,
+    "testsStatus": "AUTHORED_NOT_RUN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l17-selected-paper-route-20261031.test.cjs"
+  },
+  "scope": "SELECTED_OFFLINE_PAPER_TEACHER_ROUTE_NOT_RUNTIME_PRACTICE"
 }
