@@ -1,0 +1,291 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L02",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\2\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\2\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\2\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\2\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "19a08392928d8fef463fcd47c3a118ffa91301560e948b94ae8b77cde0c5bdeb",
+    "TeacherActivities": "6be27269921de92fcead498707ee37167b5b1d50e305aa7f137248112d821bb0",
+    "StudentActivities": "eab6e1f45909b52f94169e26c54c015208206fb968863b58f4278a593aec723e",
+    "StudentPractice": "f419f75bdc9a5cccc95d7812ac898955aad068e1190840d22f3103c30c358fa2"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.2"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "2.1",
+      "Goal": "four original point A=(3,2) independent moves and point-to-point coordinate function",
+      "Mode": "EXACT_SOURCE_POINT_MAPS"
+    },
+    {
+      "Source": "2.2",
+      "Goal": "original ABC translate12,-2, rectangle uniform origin dilation2",
+      "Mode": "FIRST_PARTY_SOURCE_COORDINATE_TABLE_AND_PLOT"
+    },
+    {
+      "Source": "2.3",
+      "Goal": "Q horizontal stretch vs R reflection vs S CW rotation, source A example, optional y=x reflection",
+      "Mode": "HUMAN_PLOTTED_QUADRILATERAL_AND_SOURCE_UNAVAILABLE_POINTS"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight original function-matching, reflection, density, cube and square ratios",
+      "Mode": "EXACT_P1_P3_P4_P6_P8_HUMAN_IMAGES"
+    },
+    {
+      "Source": "2.4",
+      "Goal": "teacher-login protected Ready Transform",
+      "Mode": "EDULYTIKS_INDEPENDENT_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L02",
+    "TaskId": "geo-u06-l02-source-ABC-and-QRS-transform-map",
+    "GroupId": "GEO_U06_L02_INPUT_OUTPUT_RIGID_NONUNIFORM_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "First-party printable containing four source A maps, original triangle and rectangle input-output tables, Q/R/S plot and 8 Practice responses; scored with dated 4x2 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l02-transform-function-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "computes four independent transformations of source A(3,2), identifies each plane function's ordered-pair input/output",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "completes original ABC three-point translation(12,-2) and four original doubling rectangle table accurately with plots",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "distinguishes Q(2x,y) horizontal stretch from R x-axis reflection and S clockwise90 origin; maps source A(3,-4)",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves eight source Practice P1 A2 B3 C1 D4 E5, P3 classifications, P6 log floating and P8 ratio2 with teacher source plots",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "match A-E coordinate rules to directed moves",
+        "TeacherExpected": "A2 B3 C1 D4 E5",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "source original ABC triangle transform T and R",
+        "TeacherExpected": "apply (x−4,y+1) and (−x,y) separately to each actual source vertex in picture",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "classify four coordinate maps",
+        "TeacherExpected": "translation rigid, (2x,3y) neither, (3x,3y) dilation k3, (2−x,y) reflection x=1 rigid",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "reflect over x0 then y0",
+        "TeacherExpected": "180° rotation about origin choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "reflect over y2 then translate(3,2)",
+        "TeacherExpected": "composition (x+3,6−y), source original points figure needed",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "log cylinder r.4m h5 mass1950kg",
+        "TeacherExpected": "volume.8pi m³ density about775.9kg/m³, float",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "3 congruent square pyramids fill cube side3ft",
+        "TeacherExpected": "each9ft³ choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "reflect square ABCD across CD, compare AA' and AD",
+        "TeacherExpected": "ratio AA'/AD=2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "SourceA": [
+      3,
+      2
+    ],
+    "WarmupOutputs": [
+      [
+        3,
+        4
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        3,
+        -2
+      ],
+      [
+        -3,
+        -2
+      ]
+    ],
+    "TranslateSourceABC": [
+      [
+        2,
+        3
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        10,
+        4
+      ]
+    ],
+    "DoubleRectangle": [
+      [
+        -2,
+        -6
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        10,
+        -6
+      ]
+    ],
+    "Q": "(2x,y)",
+    "R": "(x,-y)",
+    "S": "(y,-x)",
+    "SourceAImages": {
+      "Q": [
+        6,
+        -4
+      ],
+      "R": [
+        3,
+        4
+      ],
+      "S": [
+        -4,
+        -3
+      ]
+    },
+    "OptionalReflectYX": "(y,x)",
+    "P1Choices": [
+      2,
+      3,
+      1,
+      4,
+      5
+    ],
+    "P3Classifications": [
+      "RIGID",
+      "NEITHER",
+      "DILATION",
+      "RIGID"
+    ],
+    "P4Choice": "C",
+    "P5Composition": "(x+3,6-y)",
+    "P6LogDensity": "1950/(0.8pi)",
+    "P6Floats": true,
+    "P7Choice": "C",
+    "P8Ratio": 2
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "A(3,2) translation up2 (3,4), left4 (-1,2), x-axis reflect (3,-2), origin half-turn(-3,-2)",
+      "source triangle A(-10,5) moves(2,3), B(-4,9)→(8,7), C(-2,6)→(10,4)",
+      "Q anisotropic horizontal stretch not uniform dilation; R x-axis reflect; S clockwise90 origin rotation",
+      "P1 A2 B3 C1 D4 E5, P4 choiceC, P7 choiceC"
+    ],
+    "Equivalent": [
+      "reflection y=x point map (x,y)→(y,x) sends optional four polygon vertices to A'",
+      "reflect x0 then y0 and rotate180 origin both yield(-x,-y)"
+    ],
+    "Wrong": [
+      "classify (2x,y) as uniform 2D dilation2",
+      "classify (2x,3y) as rigid or similarity",
+      "compute log density1950/(0.8π) as1950/(0.8) ignoring π",
+      "reflect y2 then translate as (x+3,4−y) forgetting +2"
+    ],
+    "Boundary": [
+      "k0 collapse not positive nondegenerate dilation; negative k includes half-turn under signed extension",
+      "original quadrilateral ABCD coordinates apart from A(3,-4) and P2/P5 image-only coords need teacher source",
+      "straight one-dimensional source grid transforms remain valid without live application"
+    ],
+    "Malformed": [
+      "maps unordered scalar inputs instead of ordered (x,y)",
+      "student applies 2.1 four warmup moves sequentially despite independent tasks",
+      "source P2 plotted result asserted for unavailable ABC vertex locations"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l02-transform-function-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l02-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
