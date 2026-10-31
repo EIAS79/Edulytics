@@ -515,5 +515,28 @@
     "stageC": "C_SELECTED_ENGINE_AUTHORED_PERSISTED_GRADING_BLOCKED",
     "readyForStageD": false,
     "closureSHA": null
+  },
+  "v10PersistedGradeActualHandoffAndRedRegression": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "integrationDraftPR": 616,
+    "persistedCodeCommit": "f39c223e2b82991a7f4db952eab71b36f736a236",
+    "persistedSharedPath": "src/Edulytics.Services/Practice/PracticeService.cs",
+    "persistedSharedBlobSha": "233bfe9566ecfe7aaff021f20dfc79d76ae48da1",
+    "leaseGrantComment": 6550421860,
+    "leaseReleaseComment": 6550653582,
+    "firstMismatchComment": 6550676180,
+    "followupGrantRequestComment": 6550678181,
+    "preservedAlgebra1": "P3_UNORDERED_SET_A_C_E_INLINE_PARITY_DIVERGENT_COURSE_HELPER",
+    "authoringImplemented": "ALG2_PERSISTED_FAMILY_ROUTING_EXACT_N_VARIANT_CANONICAL_REGENERATION",
+    "staticBlockingMismatch": "PracticeService requires ValidationMetadataJson.questionVariant. Stage18 GenerateComposed and GenerateProgressiveLesson omit this field; only GenerationParametersJson.questionVariant is always present. Legitimate Practice responses would be scored incorrect.",
+    "lessonOwnedRegressionTest": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PersistedGradingTests.cs",
+    "regressionStatus": "AUTHORED_NOT_RUN_EXPECTED_RED",
+    "requiredRepair": "New exclusive PracticeService.cs one-path Admin grant; make ValidationMetadataJson.questionVariant optional and validate equality only when present, preserving all other exact and security guards",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_NOT_CLOSED_STATIC_GRADING_MISMATCH",
+    "readyForStageD": false,
+    "closureSHA": null,
+    "nextLesson": "STOP_AT_U01_L01_UNTIL_TRUE_C_CLOSURE"
   }
 }

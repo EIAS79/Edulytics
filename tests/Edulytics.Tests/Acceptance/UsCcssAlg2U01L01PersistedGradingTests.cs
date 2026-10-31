@@ -144,6 +144,30 @@ public sealed class UsCcssAlg2U01L01PersistedGradingTests
         Assert.False(Grade(item, attempt, "2^64-1"));
     }
 
+    // AUTHORED_NOT_RUN / EXPECTED_RED on f39c223e:
+    // Stage18 GenerateComposed and GenerateProgressiveLesson do NOT put
+    // questionVariant in ValidationMetadataJson; they place it in the
+    // persisted GenerationParametersJson envelope instead.
+    [Fact]
+    public void ActualComposedValidationMetadataWithoutVariant_MustNotRejectIssuedAnswer()
+    {
+        var (item, attempt) = Issued(Hanoi, 64, 0, "18446744073709551615");
+        item.ValidationMetadataJson = JsonSerializer.Serialize(new
+        {
+            stage = 18,
+            alignment = "skill-contract-verified",
+            readiness = "READY_VERIFIED",
+            skillContract = "sequences.core.recursive_nth_term",
+            allowedFamily = Hanoi,
+            composer = "practice-assessment-v2",
+            questionForm = "Calculate",
+            solverVerified = true,
+            broadFallbackUsed = false,
+            officialMasteryEvidence = false
+        });
+        Assert.True(Grade(item, attempt, "2^(64)-1"));
+    }
+
     [Theory]
     [InlineData("E,A,C", true)]
     [InlineData(" c, e, a ", true)]
