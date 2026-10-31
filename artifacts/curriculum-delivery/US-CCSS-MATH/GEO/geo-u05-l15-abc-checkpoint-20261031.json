@@ -1,0 +1,172 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L15",
+  "Ordinal": 79,
+  "UnitCode": "U05",
+  "UnitOrdinal": 15,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\15\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\15\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\15\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\15\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "baa2655a28af508aa9e57f120274273f64f0b57536c865ed7ddaaefaf7525207",
+    "TeacherActivities": "64cb11768b22af10b4f27490defdacb2b7271d668e7bb9305af855d914555f6a",
+    "StudentActivities": "ed0394996b38085e3a565978d7d6aab180071e475289c13d25c88207a7e51af8",
+    "StudentPractice": "33fdd07d226e7bff3333fa3e97ab7162b437fafb17adf91713508ed37c7ec7f3"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "15.1",
+      "Goal": "mental base-area times perpendicular height with correct radius exponent",
+      "Mode": "TEACHER_SOURCE_FIGURE"
+    },
+    {
+      "Source": "15.2",
+      "Goal": "four source image-based missing lengths using Pythagoras/trig, optional hemisphere",
+      "Mode": "HUMAN_STRATEGY_AND_EXACT_SOURCE_ALTERNATIVE"
+    },
+    {
+      "Source": "15.3",
+      "Goal": "source profile cylinder r2 h5 with cone r2 h3 total24pi",
+      "Mode": "FIRST_PARTY_ROTATION_DRAWING_AND_EXACT_MATH"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven source cone slant, square pyramid height, volume comparisons, inverse design and wheel scale",
+      "Mode": "EXACT_SOURCE_CALCULATION_AND_HUMAN"
+    },
+    {
+      "Source": "15.4",
+      "Goal": "publisher protected Maximizing Seeds",
+      "Mode": "EDULYTIKS_INDEPENDENT_PAPER"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-GMD.A.3",
+      "HSG-GMD.B.4"
+    ],
+    "BuildingTowards": []
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U05_L15_CONE_CYLINDER_ROTATION_STRATEGY_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L15",
+    "TaskId": "geo-u05-l15-original-rotation-r2-h5-and-cone-h3",
+    "GroupId": "GEO_U05_L15_CONE_CYLINDER_ROTATION_STRATEGY_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Print annotated original 2D radial profile and compound 3D cylinder/cone, source missing-height plan with teacher supplied figures, P1-P7 exact computations and 8-point human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l15-rotation-composite-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "labels original source cone/prism missing dimensions, selects proper Pythagorean or trig height strategy before formula",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "constructs original 15.3 axial cylinder radius2 h5 plus cone radius2 h3, derives V24pi and explains no double count",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "checks source cylinder chew toy202.5pi vs right cone12pi sqrt220, distinguishes slant height and bowl material assumptions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies original P1-P7, including slant13, pyramid400, volume ratios1/9/3 and valid inverse design units",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source 15.3 r2 cylinder height5 volume20pi plus cone height3 volume4pi total24pi",
+      "P1 apex-to-edge13, P2 h12 volume400, P7 k1/6",
+      "P3 first prism/pyramid equal, cylinder9 times pyramid, cone3 times cylinder"
+    ],
+    "Equivalent": [
+      "source total24pi equals(20+4)pi and about75.398 cubic inches",
+      "P6 cube volume8 divided by3 gives8/3 cubic feet each"
+    ],
+    "Wrong": [
+      "cone radius squared after being divided by3",
+      "right pyramid uses given midpoint slant13 as perpendicular height",
+      "solid of rotation counts shared disk as positive overlap volume",
+      "wheel area ratio1/36 taken directly as linear scale"
+    ],
+    "Boundary": [
+      "source 15.1 and 15.2 original missing measurements figure only; cannot grade specific numeric answers without figure",
+      "hemisphere sheet metal area1ft² may describe curved surface only and ignores thickness",
+      "zero/negative radius/height nonphysical"
+    ],
+    "Malformed": [
+      "no rotation axis referenced",
+      "slant length and height conflated with no labelled right triangle",
+      "area in inches squared used to report volume"
+    ]
+  },
+  "IndependentMathOracles": {
+    "SourceRotationCylinder": "20pi",
+    "SourceRotationCone": "4pi",
+    "SourceRotationTotal": "24pi",
+    "SourceCylinderToy": "202.5pi",
+    "SourceConeToy": "12pi sqrt220",
+    "OptionalBowlVolume": "1/(3sqrt(2pi))",
+    "P1Slant": 13,
+    "P2PyramidVolume": 400,
+    "P3Comparisons": [
+      "EQUAL",
+      "CYLINDER_9X_PYRAMID",
+      "CONE_3X_CYLINDER"
+    ],
+    "P4BaseArea": 45,
+    "P5ClayVolume": 3,
+    "P6Pyramid": "8/3",
+    "P7LinearScale": "1/6"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l15-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u05-l15-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u05-l15-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u05-l15-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "a57d774f63fcf11fe646a98d942e7ccbdf6e0876",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T23:29:59.951149Z",
+  "ClosedAtUtc": "2026-10-31T23:30:10.199601Z",
+  "ElapsedSeconds": 10.248,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L16"
+}
