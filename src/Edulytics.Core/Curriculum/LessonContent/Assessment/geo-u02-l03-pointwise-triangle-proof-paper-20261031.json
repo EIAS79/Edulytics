@@ -1,0 +1,200 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "IM High School Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\3\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\3\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\3\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\3\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "330fd0e40e4c59c35840e2a3316f5f688be78c62f4abecfd45c955c11c4460ea",
+    "TeacherActivities": "42f526b4fc3f48ea1988cbdeabef97652fa64a707af2b26032b61d0404f1685b",
+    "StudentActivities": "ab444057d566efbd9c211e98aa1da9f2aa2a4f1962d99ffecdc3c5e9865f3be9",
+    "StudentPractice": "5fe1daff82385e3c1cf8dcf336f7dfb8a6f72d5af5a404decedd8bf900a2e105"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.A.1.a",
+      "8.G.A.1.b",
+      "HSG-CO.A.5",
+      "HSG-CO.B.6"
+    ],
+    "Addressing": [
+      "HSG-CO.B.7"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.8"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "3.1",
+      "Original": "Must, might and impossible from congruent ABC and A'B'C', then applet/image and counterexamples",
+      "FirstParty": "paper labelled triangle question ordered must/might/cannot with independent isosceles counterexample"
+    },
+    {
+      "Source": "3.2",
+      "Original": "Invisible Triangles information-gap cards, transformer/player, step-by-step 1-3 vertex alignment, optional reflections only",
+      "FirstParty": "original independent hidden card and exact verbal pointwise instructions with peer recording; original cards not copied"
+    },
+    {
+      "Source": "3.3",
+      "Original": "Noah and Priya translation rotation reflection, explain B/E coincidence, ray DF and C/F coincidence",
+      "FirstParty": "precise same-ray-distance proof and angle orientation using independent triangles"
+    },
+    {
+      "Source": "Practice 1-8",
+      "Original": "ordered transformations, angle rotation, multiple choice, revisits U02:L01,L02 and parallel angles",
+      "FirstParty": "8 source-indexed paper teacher-reviewed mathematics routes with figure-dependency flags"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Original": "teacher-login restricted",
+      "FirstParty": "original unverified; independently authored paper argument alternative"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L03_POINTWISE_RIGID_TRIANGLE_PROOF_HUMAN_REVIEW",
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "SharedOwner": "Supervisor 2 issue #453",
+    "SavedGrade": "UNVERIFIED_STAGE_D",
+    "DigitalLessonRoute": "UNVERIFIED_STAGE_D"
+  },
+  "Task": {
+    "Prompt": "Prove why a translate-rotate-reflect construction brings every corresponding vertex of two six-part-matched nondegenerate triangles together; teach a partner the exact moves without viewing the cards and resolve must/might/cannot claims.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "six ordered corresponding sides/angles correctly listed and figure matches preserved",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "reproducible first-vertex translation, second-vertex rotation and conditional correct reflection with fixed-point guarantees",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "valid same-ray/same-distance coincidence explanations for B and C with angle alignment",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "correct must/might/cannot classification plus counterexample rather than a drawing-based assumption",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "ABC maps to EDF",
+        "TeacherExpected": "A->E, B->D, C->F: segment AB->ED, BC->DF, AC->EF; source select-all checked against mapped order",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "rotation of triangle CBA into CDE about C",
+        "TeacherExpected": "ray CA maps CE by chosen directed rotation; endpoint A coincides E when CA=CE; whole triangle congruent if B coincides D under same rotation",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "transform XYZ to BCA",
+        "TeacherExpected": "Y->C then X->B is the required pairing; reflection axis must preserve fixed B,C; original diagram decides whether reflection needed",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "FGH half-turn to HEF",
+        "TeacherExpected": "F->H,G->E,H->F; teacher checks only the valid source option statements",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "symmetric pentagon ASDPX not matched to SMDZH",
+        "TeacherExpected": "use actual line SD reflection and write correct vertex order from image",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "ABC congruent DEF",
+        "TeacherExpected": "BC->EF, angle BAC->EDF, angle CBA->FED: choice B,C,E as listed if source wording read",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "reflect ABC across AB to ABD",
+        "TeacherExpected": "reflection fixes A,B and maps C->D, correct reflected side/angle relationships; apparent source angle ACD to ADB depends on figure, do not assert blindly",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "DE parallel BC",
+        "TeacherExpected": "source diagram-dependent angle EAC and DAB; prove from transversals and exact supplied angle marks",
+        "Points": 2,
+        "ScoreMode": "HUMAN"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "AB=DE and matching ray from D means B-image equals E, not merely equal distances",
+      "once the third ray is aligned to DF and AC=DF, C-image equals F",
+      "reflection about DE fixes D and E while swapping which half-plane contains the third vertex"
+    ],
+    "Equivalent": [
+      "different rigid sequence preserving same ordered triangle correspondence",
+      "start with reflection if orientation reversed, then translate/rotate, with all three corresponding vertices aligned"
+    ],
+    "Wrong": [
+      "equal lengths without requiring the same ray claimed to force endpoint coincidence",
+      "arbitrary unmatched side is never equal under any congruence, ignoring an isosceles possibility",
+      "reflecting about line not passing through already aligned vertices shifts both vertices"
+    ],
+    "Boundary": [
+      "nondegenerate triangles and distinct first two vertices required",
+      "A and D aligned but B-image on opposite DE ray: rotate by 180 not skip correct ray alignment",
+      "if C-image already on target side of DE, do not force the reflection"
+    ],
+    "Malformed": [
+      "missing translation vector or rotation centre",
+      "omits source-target vertex ordering",
+      "no proof of angle/length preservation"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE: state and justify B/E and C/F coincidence after pointwise rigid construction",
+  "TeacherHandoff": "Original secret-player and independent image recorded on paper; teacher reviews written proof, not numeric answer; saved digital teacher grades and exact assignment integration deferred to Stage D issue #453.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l03-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN_ISSUE_453"
+}
