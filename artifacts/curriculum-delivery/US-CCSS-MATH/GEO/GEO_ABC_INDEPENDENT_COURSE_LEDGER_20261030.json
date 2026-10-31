@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 26,
-    "B_CLOSED": 26,
-    "C_PREPARED": 26,
-    "ABC_READY_FOR_D": 26,
+    "A_CLOSED": 27,
+    "B_CLOSED": 27,
+    "C_PREPARED": 27,
+    "ABC_READY_FOR_D": 27,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 98,
+    "REMAINING": 97,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 98,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+    "Unprocessed": 97,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 4
+    "U02ClosedLessonCount": 5
   },
   "LessonEntries": [
     {
@@ -546,6 +546,38 @@
       "TestsExecuted": "NOT_RUN",
       "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED_FIRST_PARTY_ALTERNATIVE",
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+      "Ordinal": 27,
+      "UnitOrdinal": 5,
+      "Title": "Points, Segments, and Zigzags",
+      "LessonCommit": "adc1988061abbbe2e5b46938e379a89c26b80d5d",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "9e7ee7e516d2e5c0d9ffaf326e9f4cb1bb014ae904959977bbdc47ebc5c05576",
+        "TeacherActivities": "0ea4544eb6cf285de91840e637ab03eb539e41ca87d379cf236be98bb1443d93",
+        "StudentActivities": "7e5fb6ce413c2a9ee365e2ab90ce4265de947bea8d5e44ca34c17e93de43b348",
+        "StudentPractice": "f3366d7343d41e86fe2fb583a1a994ed0df1be7587fe69617d97edc70c535e74"
+      },
+      "OriginalActivities": [
+        "5.1 What's the Point?",
+        "5.2 What's the Segment?",
+        "5.3 Zig Then Zag"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_SOURCE_PROOF_ACTIVITIES_AND_SEVEN_PRACTICE_CROSSWALK",
+      "B": "B_CLOSED_POINT_TRANSLATION_SEGMENT_BICONDITIONAL_AND_FIVE_STEP_ZIGZAG",
+      "C": "C_CLOSED_AUTHORING_TEACHER_SELECTED_PAPER_PROOF_RUBRIC",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L05_POINT_SEGMENT_ZIGZAG_PAPER_HUMAN_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l05-point-segment-zigzag-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l05-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l05-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_UNVERIFIED_EDULYTIKS_AUTHORING_ALTERNATIVE",
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -586,7 +618,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -614,5 +646,5 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l04-abc-checkpoint-20261031.json"
+  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l05-abc-checkpoint-20261031.json"
 }
