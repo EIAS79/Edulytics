@@ -1,0 +1,1070 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v4",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L01",
+      "CultureCode": "en",
+      "Title": "How Well Can You Measure?",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Use square measurements to compare potentially proportional relationships, taking account of realistic measurement error. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/3/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "The source activity investigates measurement reliability: pupils measure square diagonals and perimeters, organize pairs, plot data, and then compare how diagonal length relates to area. Exact Pythagorean formulas belong to optional later-grade enrichment, not the required starting skill. Student source: https://im.kendallhunt.com/MS/students/2/3/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Square geometry",
+          "Definition": "A square of side s has perimeter 4s, diagonal s√2 and area s².",
+          "Rule": "The ratio perimeter/diagonal is 4/√2=2√2.",
+          "Example": "At s=3, perimeter=12 and diagonal=3√2."
+        },
+        {
+          "Title": "Measurement error",
+          "Definition": "Measured lengths differ slightly from exact values.",
+          "Rule": "Look for a trend close to a line through the origin.",
+          "Example": "Perimeter/diagonal quotients may cluster around 2.83."
+        },
+        {
+          "Title": "Nonproportional area",
+          "Definition": "Square area grows quadratically with side or diagonal.",
+          "Rule": "A/d=(s²)/(s√2)=s/√2 changes with s.",
+          "Example": "At s=2, A/d≈1.414; s=4 gives ≈2.828."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Measure a square and compare its diagonal to its perimeter",
+          "Question": "Use a ruler on three original 2 cm, 3 cm and 5 cm squares: estimate each diagonal, calculate the perimeter and plot pairs (diagonal, perimeter). What trend do you expect?",
+          "Method": "Measure first; organize experimental data and inspect the scatter plot rather than assuming a later-grade theorem.",
+          "Steps": [
+            "Carefully draw and measure three squares (sides 2, 3, 5 cm) and record diagonal lengths, approximately 2.8, 4.2 and 7.1 cm.",
+            "Calculate perimeters as 8, 12, and 20 cm.",
+            "Plot measured pairs (≈2.8,8), (≈4.2,12), (≈7.1,20) with the diagonal on the horizontal axis.",
+            "Describe a roughly straight-line trend near the origin and discuss measurement variation with a partner."
+          ],
+          "Answer": "Perimeters are 8,12,20 cm; diagonals are approximately 2.8,4.2,7.1 cm; plotting suggests proportionality with measurement uncertainty.",
+          "Check": "Teacher evaluates physical measurement, labeled plot and uncertainty discussion; exact √2 is optional enrichment, not a Grade 7 prerequisite."
+        },
+        {
+          "Title": "Explain scatter from measurement",
+          "Question": "Ruler estimates give diagonals 2.82 and 4.26 cm for squares with perimeters 8 and 12 cm. Are the quotients roughly equal?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Calculate 8/2.82≈2.84.",
+            "Calculate 12/4.26≈2.82.",
+            "Compare with theoretical value 2√2≈2.83."
+          ],
+          "Answer": "Yes, consistent within measurement error.",
+          "Check": "Exact measured ratios need not agree perfectly."
+        },
+        {
+          "Title": "Reject proportional area",
+          "Question": "For squares of side 2 and 4, calculate area divided by diagonal.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "At side 2, area=4 and diagonal=2√2, ratio=√2.",
+            "At side 4, area=16 and diagonal=4√2, ratio=2√2.",
+            "Ratios differ, so the relationship is not proportional."
+          ],
+          "Answer": "No constant area/diagonal ratio.",
+          "Check": "Doubling side doubles diagonal but quadruples area."
+        },
+        {
+          "Title": "Explain why two measurements may only look proportional",
+          "Question": "Two independently measured squares have (diagonal, perimeter) pairs (2.8 cm,8 cm) and (4.2 cm,12 cm). Are these evidence for proportionality, and what would improve the conclusion?",
+          "Method": "Make a scatter plot and compare quotients with allowance for ruler measurement variation.",
+          "Steps": [
+            "Plot both pairs with the diagonal as x and perimeter as y.",
+            "Compute approximately 8/2.8≈2.86 and 12/4.2≈2.86.",
+            "Observe that similar ratios support a linear-through-origin model, but two points do not independently prove an exact law.",
+            "Collect more independently measured squares, compare accuracy and explain why the graph may show small scatter."
+          ],
+          "Answer": "Yes, they support an approximately proportional model; more measurements and a labeled scatter plot strengthen the claim.",
+          "Check": "Teacher checks measured data, plotting and qualified conclusion."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Demanding exact equality from ruler readings",
+          "WhyWrong": "Real measurements are approximate.",
+          "Correction": "Use the graph trend and plausible measurement uncertainty."
+        },
+        {
+          "Mistake": "Treating square area as proportional to diagonal length",
+          "WhyWrong": "Area is quadratic in side length.",
+          "Correction": "Compare more than one square size."
+        }
+      ],
+      "SummaryPoints": [
+        "Perimeter is proportional to diagonal length for squares.",
+        "Small measurement errors can cause scatter around a line.",
+        "Area is not proportional to square diagonal length."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Square measurements and approximate proportionality",
+          "Description": "Independent examples: for squares of side 2, 4 and 6 cm, the perimeter is proportional to the diagonal, while the area is not. The exact expressions involving √2 show why measured quotients may vary slightly.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Square side s (cm)",
+              "Cells": [
+                "2",
+                "4",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Perimeter 4s (cm)",
+              "Cells": [
+                "8",
+                "16",
+                "24"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diagonal s√2 (cm)",
+              "Cells": [
+                "2√2",
+                "4√2",
+                "6√2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area s² (cm²)",
+              "Cells": [
+                "4",
+                "16",
+                "36"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U04:L01",
+      "CultureCode": "en",
+      "Title": "Lots of Flags",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Scale fractional rectangle dimensions, compare different scales and calculate what fraction or percent of a flag is covered by a region. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/4/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "A flag can be used to compare scale factors and percentages, with the denominator equal to the entire rectangle's area. These examples use independently created measurements, not official flag geometry.",
+        "First-party source-analog activity: select a plausible size for a flag, scale the entire flag and its corner panel, then estimate and compute the fraction covered, submitting a labeled drawing. Publisher student source: https://im.kendallhunt.com/MS/students/2/4/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scale fractional dimensions",
+          "Definition": "Multiply both dimensions by the same factor.",
+          "Rule": "If the factor is 3/2, multiply each side by 1.5.",
+          "Example": "A 4 by 2.5 rectangle becomes 6 by 3.75."
+        },
+        {
+          "Title": "Area percentage",
+          "Definition": "Percent coverage=part area/whole area×100.",
+          "Rule": "Use compatible area units.",
+          "Example": "A 12 cm² part of 60 cm² covers 20%."
+        },
+        {
+          "Title": "Scaled-area invariance",
+          "Definition": "Uniform scaling multiplies part and whole areas by k².",
+          "Rule": "Coverage fraction is unchanged under the same scaling.",
+          "Example": "If both areas quadruple, their ratio stays constant."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale a flag",
+          "Question": "A design is 4 cm by 2.5 cm. Create a factor-3/2 copy.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Scale length 4×1.5=6 cm.",
+            "Scale height 2.5×1.5=3.75 cm.",
+            "Check both copy/original ratios are 1.5."
+          ],
+          "Answer": "6 cm by 3.75 cm.",
+          "Check": "Neither side was scaled additively."
+        },
+        {
+          "Title": "Compute region percent",
+          "Question": "A 10 cm by 6 cm flag has a colored rectangle 4 cm by 3 cm. What percentage is colored?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Total area=10×6=60 cm².",
+            "Colored area=4×3=12 cm².",
+            "Compute 100×12/60=20%."
+          ],
+          "Answer": "20%.",
+          "Check": "20% of 60 is 12."
+        },
+        {
+          "Title": "Check scaling percent",
+          "Question": "Scale both flag and colored region by 2. What happens to coverage percent?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Total area changes 60→240 cm².",
+            "Colored area changes 12→48 cm².",
+            "Compute 48/240=0.2."
+          ],
+          "Answer": "Still 20%.",
+          "Check": "The identical area factor cancels."
+        },
+        {
+          "Title": "Draw a larger flag and maintain the colored area proportion",
+          "Question": "An independently designed flag measures 12 cm by 8 cm with a 4-by-4 cm corner panel. A copy is 30 cm wide. Draw it, and calculate its panel size and covered percent.",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "The linear factor is 30/12=2.5, so the new height is 8×2.5=20 cm.",
+            "The panel becomes 10 cm by 10 cm.",
+            "Original fraction=16/96=1/6; copy fraction=100/600=1/6.",
+            "The area percentage is 16⅔% in each flag, because both areas grow by 2.5²."
+          ],
+          "Answer": "Copy 30×20 cm, panel 10×10 cm, colored fraction 1/6, or 16⅔%.",
+          "Check": "Teacher checks correspondence and a genuinely drawn, labeled flag rather than only the percent."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing lengths to find area coverage",
+          "WhyWrong": "Percentage of area requires two-dimensional area quantities.",
+          "Correction": "Compute each area before dividing."
+        },
+        {
+          "Mistake": "Expecting percent coverage to change under uniform scaling",
+          "WhyWrong": "Both whole and part are scaled by the same squared factor.",
+          "Correction": "Reduce the fraction of new areas to verify."
+        }
+      ],
+      "SummaryPoints": [
+        "Scale both fractional dimensions consistently.",
+        "Find percentage from region area over total area.",
+        "Uniform scaling leaves a region's percent coverage unchanged."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Percentage of area in a scale drawing",
+          "Description": "An original flag-inspired rectangle has 60 cm² total area and a 12 cm² region. Doubling side lengths multiplies both areas by four, preserving the percent colored.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Cells": [
+                "Whole rectangle",
+                "Colored part",
+                "Percent colored"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Original",
+              "Cells": [
+                "60 cm²",
+                "12 cm²",
+                "20%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Factor-two lengths",
+              "Cells": [
+                "240 cm²",
+                "48 cm²",
+                "20%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U05:L01",
+      "CultureCode": "en",
+      "Title": "Interpreting Negative Numbers",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Compare signed rational numbers on number lines and interpret temperatures and elevations relative to zero. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/5/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "A negative value indicates a location below a chosen reference point. Absolute value measures distance from zero, not whether the temperature or elevation is positive.",
+        "Publisher student task parity includes reading missing negative and fractional-degree thermometer ticks and locating sea animals on a signed vertical axis; interpreting a negative sign and magnitude is necessary but not sufficient. Student source: https://im.kendallhunt.com/MS/students/2/5/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Signed positions",
+          "Definition": "Negative values lie below zero on a thermometer and below sea level for elevation.",
+          "Rule": "On a horizontal number line negative numbers lie left of zero.",
+          "Example": "−4°C is colder than −1°C."
+        },
+        {
+          "Title": "Number order",
+          "Definition": "The number farther right on a horizontal number line is greater.",
+          "Rule": "−2>−5 even though |−2|<|−5|.",
+          "Example": "−2°C is warmer than −5°C."
+        },
+        {
+          "Title": "Absolute value",
+          "Definition": "|x| is a nonnegative distance from 0.",
+          "Rule": "|−7|=7.",
+          "Example": "An elevation −7 m is 7 m below sea level."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare winter temperatures",
+          "Question": "Which is colder, −4°C or −9°C?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Locate −9 to the left of −4 on a number line.",
+            "Recall smaller temperature means colder.",
+            "State −9<−4."
+          ],
+          "Answer": "−9°C is colder.",
+          "Check": "The order matches the thermometer."
+        },
+        {
+          "Title": "Order elevations",
+          "Question": "Order −3.5 m, 2 m and −0.5 m from lowest to highest.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Both negatives are below 0; −3.5<−0.5.",
+            "A positive 2 is above zero.",
+            "Write the ascending order."
+          ],
+          "Answer": "−3.5 m, −0.5 m, 2 m.",
+          "Check": "Each position moves upward on a vertical reference line."
+        },
+        {
+          "Title": "Distance from zero",
+          "Question": "How far is −6.25 from zero on a number line?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Compute absolute value |−6.25|.",
+            "Remove the sign from the distance magnitude.",
+            "Label distance in units."
+          ],
+          "Answer": "6.25 units.",
+          "Check": "Distance cannot be negative."
+        },
+        {
+          "Title": "Complete signed thermometer ticks and interpret sea level",
+          "Question": "A thermometer has equally spaced 5°C ticks at −10, [blank], 0, 5, [blank], 15, 20, [blank], 30°C. Fill the blanks and use a vertical number line to compare a fish at −7 m and bird at +10 m.",
+          "Method": "Complete the equal-step vertical ruler and distinguish signed positions from unsigned vertical separation.",
+          "Steps": [
+            "The 5°C increments yield −10, −5,0,5,10,15,20,25,30, so blanks are −5,10,25.",
+            "Plot fish at −7 m and bird at +10 m relative to the sea-level 0 m reference.",
+            "The bird is 17 m vertically above the fish (10−(−7)=17).",
+            "Explain why −7 m means below water rather than a negative physical distance."
+          ],
+          "Answer": "Thermometer blanks −5°C,10°C,25°C; vertical separation 17 m.",
+          "Check": "Teacher reviews thermometer tick spacing and the correctly labeled signed vertical number line."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming −9 is greater than −4 because 9>4",
+          "WhyWrong": "Signed order depends on position relative to zero.",
+          "Correction": "Use a number line and compare from left to right."
+        },
+        {
+          "Mistake": "Confusing absolute value with elevation itself",
+          "WhyWrong": "Absolute value is distance from zero, not signed location.",
+          "Correction": "Keep position and distance in separate statements."
+        }
+      ],
+      "SummaryPoints": [
+        "Signed numbers locate temperatures and elevations relative to zero.",
+        "The more negative of two numbers is smaller.",
+        "Absolute value gives nonnegative distance from zero."
+      ],
+      "Visuals": [
+        {
+          "Kind": "NumberLine",
+          "Title": "Signed values around zero",
+          "Description": "A number line with equal five-unit intervals from −10 to 10. Negative numbers lie to the left of zero; a colder temperature of −9°C is left of −4°C. Use a ruler or thermometer for precise placement.",
+          "Items": [
+            "−10",
+            "−5",
+            "0",
+            "5",
+            "10"
+          ],
+          "SecondaryItems": [],
+          "Rows": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
+      "CultureCode": "en",
+      "Title": "Relationships between Quantities",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Recognize, reason about and explain predictable relationships that are not proportional, without requiring premature equation-solving. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/6/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "This introductory source lesson expressly studies predictable nonproportional situations and allows tables, diagrams or verbal reasoning. A generic proportional-rate Practice family would test the wrong target.",
+        "Independent activity counterparts to the publisher's contrasting popcorn-price tables, nonproportional entrance fees, and full-batch toasting constraints. They test different mathematical models, not a generic proportional scaling rule. Student lesson: https://im.kendallhunt.com/MS/students/2/6/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Nonproportional relationship",
+          "Definition": "A predictable rule may have a nonzero starting amount.",
+          "Rule": "y=b+kx with b≠0 cannot be written y=kx.",
+          "Example": "A $7 base fee plus $3 per visitor is not proportional."
+        },
+        {
+          "Title": "Recognizing patterns",
+          "Definition": "Differences can remain constant even while ratios change.",
+          "Rule": "Compare differences and quotients separately.",
+          "Example": "Costs $10 for 1 visitor and $13 for 2 have ratios 10 and 6.5."
+        },
+        {
+          "Title": "Explain without algebra",
+          "Definition": "Tables, diagrams or words can justify a relationship.",
+          "Rule": "Explain what changes and what stays fixed.",
+          "Example": "Each visitor adds $3, while every group starts at $7."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Describe a park entry policy",
+          "Question": "A park charges a $7 vehicle fee plus $3 per passenger. What do 2 and 4 passengers cost?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "For 2, compute 7+3×2=13 dollars.",
+            "For 4, compute 7+3×4=19 dollars.",
+            "Explain that the fixed $7 amount remains unchanged."
+          ],
+          "Answer": "$13 and $19.",
+          "Check": "The cost difference for two extra passengers is $6."
+        },
+        {
+          "Title": "Show not proportional",
+          "Question": "For 2 people the park costs $13, and for 4 people it costs $19. Is cost proportional to passenger count?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Compute 13/2=$6.50 per person.",
+            "Compute 19/4=$4.75 per person.",
+            "Different quotients mean no constant of proportionality."
+          ],
+          "Answer": "No.",
+          "Check": "A fixed fee prevents a line through zero."
+        },
+        {
+          "Title": "Reason using a tape description",
+          "Question": "A box contains 5 free tokens plus 4 for each visit. How many after 3 visits?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Represent 5 as a fixed starting segment.",
+            "Add three equal segments of 4.",
+            "Compute 5+4+4+4=17."
+          ],
+          "Answer": "17 tokens.",
+          "Check": "The starting 5 stays even for zero visits."
+        },
+        {
+          "Title": "Compare a unit-price and a fixed-fee popcorn model",
+          "Question": "Theater A sells popcorn at $0.60/oz. Theater B charges $3.50 plus $0.25/oz. Make two pricing tables for 10,20,35 oz; which is proportional?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "A: 10→$6, 20→$12, 35→$21.",
+            "B: 10→$6, 20→$8.50, 35→$12.25.",
+            "In A, each price/ounce ratio equals $0.60 per oz.",
+            "In B, the quotients differ; $3.50 remains as a fixed initial fee."
+          ],
+          "Answer": "A is proportional: $6,$12,$21; B is not proportional: $6,$8.50,$12.25.",
+          "Check": "Teacher checks BOTH distinct tables and the explanation; the figures are original, not publisher examples."
+        },
+        {
+          "Title": "Recover fixed entrance fee from two tickets",
+          "Question": "For an original park: 2 passengers cost $14, and 4 cost $20. Assuming a fixed fee plus a constant per-person increase, find both components and predict a 30-passenger bus fee.",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "Two extra passengers add $6, so each adds $3.",
+            "For two, variable cost is $6 and fixed entry fee is $14−$6=$8.",
+            "Check 4 passengers: $8+4×$3=$20.",
+            "For 30: $8+30×$3=$98."
+          ],
+          "Answer": "$8 fixed plus $3 per person, so 30 passengers cost $98.",
+          "Check": "A teacher reviews the inferred rule and its stated assumptions."
+        },
+        {
+          "Title": "Count complete toaster batches",
+          "Question": "A four-slot toaster takes 35 seconds per batch, including partially filled batches. How long to toast nine slices?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "One batch holds at most four slices.",
+            "Two batches hold at most eight; nine require a third.",
+            "Three batches take 3×35=105 seconds.",
+            "A full or partial batch takes the same time, so cook time is stepwise, not proportional to individual slices."
+          ],
+          "Answer": "105 seconds, using three batches.",
+          "Check": "The student must justify the integer batch count, rather than dividing nine by four as a continuous ratio."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Forcing every constant-difference table into y=kx",
+          "WhyWrong": "Constant differences can describe affine, not proportional, relations.",
+          "Correction": "Check output at zero and compare y/x."
+        },
+        {
+          "Mistake": "Demanding symbolic equations in this introductory source task",
+          "WhyWrong": "The source permits reasoning with words and diagrams.",
+          "Correction": "Accept mathematically justified diagrams, tables or explanations with teacher review."
+        }
+      ],
+      "SummaryPoints": [
+        "Predictable does not always mean proportional.",
+        "Look for a fixed starting amount and changing ratios.",
+        "Use words, tables or diagrams to justify a nonproportional rule."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "A predictable relationship that is not proportional",
+          "Description": "An original vehicle fee is 7 dollars plus 3 dollars per passenger. The increasing person-count ratios differ; this is a fixed-fee rule, not a proportional relationship.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Passengers",
+              "Cells": [
+                "0",
+                "2",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Total dollars",
+              "Cells": [
+                "7",
+                "13",
+                "19"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Dollars per passenger",
+              "Cells": [
+                "not defined",
+                "6.5",
+                "4.75"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Price with and without an additive fee",
+          "Description": "Original contrasting nonproportional and proportional pricing data. Teacher also reviews whole-batch step tables; do not auto-grade ratio scaling alone.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Ounces of popcorn",
+              "Cells": [
+                "10",
+                "20",
+                "35"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Proportional price ($)",
+              "Cells": [
+                "6",
+                "12",
+                "21"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Fixed-fee price ($)",
+              "Cells": [
+                "6",
+                "8.50",
+                "12.25"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U07:L01",
+      "CultureCode": "en",
+      "Title": "Relationships of Angles",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Use degree measure, adjacent-angle addition, straight angles and full-turn angles to find missing measures. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/7/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "A right angle is 90°, a straight angle 180° and a full turn 360°. This source lesson introduces hands-on composition and reasoning, with group justification rather than only numeric arithmetic.",
+        "The publisher student activities center on composing physical pattern-block angles, determining 120° corners from three fitting hexagons, and reading the correct 0°-based protractor scale; these cannot be replaced by merely solving equations. Student lesson: https://im.kendallhunt.com/MS/students/2/7/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Adjacent angles",
+          "Definition": "Adjacent angles share a vertex and one side without overlapping interiors.",
+          "Rule": "Their measures add to the combined angle.",
+          "Example": "30° and 60° fill a 90° right angle."
+        },
+        {
+          "Title": "Straight and full turns",
+          "Definition": "A straight angle is 180°; a full revolution is 360°.",
+          "Rule": "Use 180 or 360 as total depending on the geometry.",
+          "Example": "A 125° angle on a straight line leaves 55°."
+        },
+        {
+          "Title": "Degrees",
+          "Definition": "Angles measure turning, not side length.",
+          "Rule": "The same angle can have arbitrarily long rays.",
+          "Example": "A 60° angle remains 60° if rays are extended."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete a straight angle",
+          "Question": "Adjacent angles on a straight line measure 125° and x°. Find x.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Identify the straight total 180°.",
+            "Write 125+x=180.",
+            "Subtract x=180−125=55."
+          ],
+          "Answer": "55°.",
+          "Check": "125+55=180."
+        },
+        {
+          "Title": "Complete a full turn",
+          "Question": "Three angles around a point measure 110°, 95° and x°. Find x.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "The total around a point is 360°.",
+            "Add known angles: 110+95=205°.",
+            "Subtract 360−205=155°."
+          ],
+          "Answer": "155°.",
+          "Check": "110+95+155=360."
+        },
+        {
+          "Title": "Distinguish size and drawing",
+          "Question": "Two rays form a 45° angle. They are extended to double their length. What is their new angle?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Angle measures turn between directions.",
+            "Ray length does not change either direction.",
+            "Keep the original 45°."
+          ],
+          "Answer": "45°.",
+          "Check": "Degrees do not measure distance."
+        },
+        {
+          "Title": "Compose and measure a complete turn",
+          "Question": "Three regular hexagon corners fit around a point. What is each interior angle? Can regular pentagon corners of 108° fill the point without gaps?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "A complete turn measures 360°.",
+            "Three equal hexagon corners give 360÷3=120° each.",
+            "Three pentagon corners total 3×108=324°, leaving a 36° gap.",
+            "Four pentagon corners total 432°, causing overlap; explain why no whole number fits exactly."
+          ],
+          "Answer": "Hexagon angle 120°; regular pentagons do not exactly tile around a point.",
+          "Check": "Teacher checks physical angle blocks or accurate student drawings and the justification."
+        },
+        {
+          "Title": "Read the right protractor scale",
+          "Question": "A ray starts at the right-pointing 0° baseline. Its second ray rises 40° counterclockwise; a pupil reports 140°. Which measure is correct?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "Set the vertex at the protractor center and one ray on the right-facing 0°.",
+            "Follow the numbered scale increasing from the aligned 0°.",
+            "The second ray meets 40° on this scale; 140° belongs to the opposite starting direction.",
+            "Mark and draw the interior acute 40° wedge."
+          ],
+          "Answer": "40°, not 140°.",
+          "Check": "Teacher checks the ray sketch, baseline alignment and selection of the correct degree markings."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding angle lengths instead of measures",
+          "WhyWrong": "Angle size does not depend on ray lengths.",
+          "Correction": "Use the measured turns in degrees."
+        },
+        {
+          "Mistake": "Using 360° for adjacent angles on a straight line",
+          "WhyWrong": "A straight angle is half a full turn.",
+          "Correction": "Identify whether the diagram shows a line or complete revolution."
+        }
+      ],
+      "SummaryPoints": [
+        "Adjacent angle measures add.",
+        "Use 90°, 180° and 360° appropriately.",
+        "Angle measure depends on direction, not segment length."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Solve a straight-angle relation",
+          "Description": "Two neighboring angles form a straight 180-degree angle. Each displayed equality is a valid step for a 125-degree angle and its adjacent unknown angle.",
+          "Items": [
+            "125° + x = 180°",
+            "x = 180° − 125°",
+            "x = 55°"
+          ],
+          "SecondaryItems": [],
+          "Rows": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Compare complete-turn and protractor reasoning",
+          "Description": "First-party text support for physical pattern-block/angle-model tasks; not a replacement for an accurate angular sketch.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Construction",
+              "Cells": [
+                "3 regular hexagons",
+                "3 regular pentagons",
+                "Acute ray from right-facing 0°"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Angle sum or reading",
+              "Cells": [
+                "3×120°=360°",
+                "3×108°=324°",
+                "40°"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Conclusion",
+              "Cells": [
+                "Exact fit",
+                "36° gap",
+                "Use right-starting scale"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L01",
+      "CultureCode": "en",
+      "Title": "Mystery Bags",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Predict outcomes using repeated trials and compare evidence about likelihood, distinguishing observations from certainty. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/8/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "This source introduction uses concealed bags of colored objects and repeated experimental draws. Student predictions and arguments are teacher-reviewed; no single experimental outcome is guaranteed.",
+        "The actual introductory publisher task uses a repeated-with-replacement colored-block bag game, with changing round points and group records. Independent worked fractions support prediction, but do not replace the physical trial protocol or teacher-reviewed conclusions. Student source: https://im.kendallhunt.com/MS/students/2/8/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Experimental frequency",
+          "Definition": "Observed occurrence counts estimate likelihood.",
+          "Rule": "relative frequency=successful trials/total trials.",
+          "Example": "15 blue picks in 20 draws gives 75% observed blue."
+        },
+        {
+          "Title": "Comparing experiments",
+          "Definition": "More favorable outcomes in observed trials may support a likelihood prediction.",
+          "Rule": "Compare rates with equal or unequal trial counts correctly.",
+          "Example": "12/20=60% exceeds 8/20=40%."
+        },
+        {
+          "Title": "Uncertainty",
+          "Definition": "Past draws provide evidence but cannot guarantee the next independent random draw.",
+          "Rule": "Report an estimated probability, not a certainty.",
+          "Example": "A bag can still yield red after many blue draws."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate likelihood",
+          "Question": "In 20 trials from an unknown bag, a blue cube appears 15 times. Estimate the blue rate.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Count 15 blue outcomes among 20 trials.",
+            "Compute 15/20=0.75.",
+            "Write 75% as the observed relative frequency."
+          ],
+          "Answer": "Estimated blue probability about 0.75.",
+          "Check": "This is experimental evidence, not a guarantee."
+        },
+        {
+          "Title": "Compare bags",
+          "Question": "In 20 trials, bag A shows 12 green draws and bag B shows 8 green draws. Which is estimated more likely to yield green?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "A estimated rate 12/20=0.6.",
+            "B estimated rate 8/20=0.4.",
+            "Compare 0.6>0.4."
+          ],
+          "Answer": "Bag A by observed relative frequency.",
+          "Check": "More trials could change estimates."
+        },
+        {
+          "Title": "Evaluate a prediction",
+          "Question": "A learner observes 9 blue outcomes among 10 trials and predicts that the 11th must be blue. Is that conclusion justified?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Acknowledge 9/10 blue rate observed.",
+            "Recognize an estimated likelihood below certainty.",
+            "Explain that another color remains possible."
+          ],
+          "Answer": "No: the observation supports a high likelihood, not certainty.",
+          "Check": "Teacher reviews the reasoning about randomness."
+        },
+        {
+          "Title": "Score a repeated mystery-bag experiment with replacement",
+          "Question": "Four learners each draw four blocks with replacement per round. In a trial record, the group gets 4 target-color draws in round 1, 9 in round 2 and 5 in round 3. If target colors award 1, 2 and 3 points respectively, find the group's total and explain the likelihood evidence.",
+          "Method": "Reconstruct each round's sample count and points, and separate observed color frequency from the game score.",
+          "Steps": [
+            "Each round has 4 learners×4 trials=16 draws with replacement.",
+            "Round 1 gives 4×1=4 points; round 2 gives 9×2=18.",
+            "Round 3 gives 5×3=15 points; total 4+18+15=37.",
+            "Color frequencies were 4/16,9/16,5/16; compare them as estimates, not certainty about the next draw."
+          ],
+          "Answer": "37 group points, with round frequencies 25%,56.25%,31.25% for the target color.",
+          "Check": "Teacher checks round data protocol, actual recorded draws, replacement and empirical-vs-theoretical claim."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating relative frequency as a guaranteed next result",
+          "WhyWrong": "Random outcomes are uncertain.",
+          "Correction": "Use words such as 'estimated' and 'more likely'."
+        },
+        {
+          "Mistake": "Comparing only raw successful counts with unequal trials",
+          "WhyWrong": "Different sample sizes require comparable rates.",
+          "Correction": "Divide by the number of trials before comparing."
+        }
+      ],
+      "SummaryPoints": [
+        "Use repeated trials to estimate likelihood.",
+        "Compare relative frequencies rather than raw counts.",
+        "Random outcomes remain uncertain; justify predictions with evidence."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Observed chance results in a mystery-bag game",
+          "Description": "These numbers are an independent simulated illustrative tally, not the publisher's observed data. The 20 repeated draws show experimental frequency, not a guarantee for the next draw.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Observed color",
+              "Cells": [
+                "Blue",
+                "Not blue",
+                "Total"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Count out of 20",
+              "Cells": [
+                "15",
+                "5",
+                "20"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Relative frequency",
+              "Cells": [
+                "0.75",
+                "0.25",
+                "1.00"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L01",
+      "CultureCode": "en",
+      "Title": "Planning Recipes",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Scale ingredient and nutritional information per serving and justify a recipe meeting specified nutrient thresholds. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/9/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
+        "This optional open-ended source lesson asks learners to select or invent a recipe and defend their nutrition calculations. The numeric worked examples support arithmetic; the authentic recipe and justification require teacher assessment.",
+        "The publisher student project includes ingredient-by-ingredient amounts per serving, caloric values, total calories per serving and percentage of a 2,000-calorie reference. The full invented recipe and source attribution require human review; a total-calorie division alone misses the ingredient-table task. Student source: https://im.kendallhunt.com/MS/students/2/9/1/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Per-serving proportion",
+          "Definition": "Divide the recipe total by the number of servings.",
+          "Rule": "Per-serving nutrient=recipe total/servings.",
+          "Example": "600 kcal across 4 servings gives 150 kcal each."
+        },
+        {
+          "Title": "Serving rescale",
+          "Definition": "To change serving count, scale ingredient amounts with one consistent factor.",
+          "Rule": "New amount=old amount×new servings/old servings.",
+          "Example": "Four servings to six means factor 1.5."
+        },
+        {
+          "Title": "Constraint checking",
+          "Definition": "A recipe meets a stated threshold only if its computed per-serving value satisfies the bound.",
+          "Rule": "Specify numerical nutrition limits and units.",
+          "Example": "If a task says at most 200 kcal, 180 qualifies."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calories per serving",
+          "Question": "A recipe has 720 kcal and makes 6 equal servings. Find kcal per serving.",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Divide total calories by serving count.",
+            "Compute 720/6=120.",
+            "State kcal per serving."
+          ],
+          "Answer": "120 kcal per serving.",
+          "Check": "120×6=720."
+        },
+        {
+          "Title": "Rescale ingredients",
+          "Question": "A four-serving recipe uses 300 g of rice. How much is needed for six equal servings?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Scale factor=6/4=1.5.",
+            "Compute 300×1.5=450.",
+            "State grams."
+          ],
+          "Answer": "450 g.",
+          "Check": "450/6=300/4=75 g per serving."
+        },
+        {
+          "Title": "Review a nutrition requirement",
+          "Question": "A fictional recipe provides 900 kcal for five servings. The task defines 'low calorie' as at most 200 kcal per serving. Does this recipe meet that task-specific criterion?",
+          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Steps": [
+            "Compute 900/5=180 kcal per serving.",
+            "Compare 180≤200.",
+            "State that the threshold is a classroom assumption, not a universal health definition."
+          ],
+          "Answer": "Yes under the specified classroom threshold.",
+          "Check": "Teacher reviews the full invented recipe, source data and reasoning."
+        },
+        {
+          "Title": "Create a fully traceable per-serving nutrition table",
+          "Question": "A fictional recipe for four servings uses 600 g ingredient A at 2 kcal/g and 200 g ingredient B at 1.5 kcal/g. Calculate both ingredients' mass and calories per serving, total calories per serving, and fraction of an assumed 2,000 kcal daily reference.",
+          "Method": "Keep per-ingredient input quantities, unit caloric rates and serving count explicit.",
+          "Steps": [
+            "Ingredient A has 600/4=150 g per serving and 150×2=300 kcal.",
+            "Ingredient B has 200/4=50 g per serving and 50×1.5=75 kcal.",
+            "One serving provides 300+75=375 kcal.",
+            "Relative to a defined 2,000 kcal reference, compute 375/2000×100=18.75%."
+          ],
+          "Answer": "Ingredient A: 150 g/300 kcal; B: 50 g/75 kcal; total 375 kcal per serving, 18.75% of the illustrative 2,000 kcal reference.",
+          "Check": "Values and caloric factors are explicitly invented for a math model. Teacher checks the learner's actual selected recipe, reliable data sources, serving divisions and written explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying a nutrition threshold without defining it",
+          "WhyWrong": "Criteria differ by task, food label and jurisdiction.",
+          "Correction": "State the exact threshold supplied by the assignment; do not invent regulatory claims."
+        },
+        {
+          "Mistake": "Dividing one ingredient by the wrong number of portions",
+          "WhyWrong": "All recipe totals must use the same serving basis.",
+          "Correction": "Check serving count and units across all ingredients."
+        }
+      ],
+      "SummaryPoints": [
+        "Convert recipe totals to per-serving values.",
+        "Scale every ingredient consistently when changing servings.",
+        "Human review is required for an invented recipe and its justification."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Recipe totals compared with per-serving nutrition",
+          "Description": "Independent classroom recipe model. Divide recipe-level amounts by equal serving count. Do not infer that fictional data satisfy any external dietary guideline.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Cells": [
+                "Calories",
+                "Servings",
+                "Calories per serving"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Illustrative recipe",
+              "Cells": [
+                "720 kcal",
+                "6",
+                "120 kcal"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

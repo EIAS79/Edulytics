@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "pr": "https://github.com/EIAS79/Edulytics/pull/590",
+  "firstBatchEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v8-six-figure-source-acceptance-evidence.json",
+  "scope": "U01 L07–L09 original scale graphics, plus prior U01 L01–L06; no shared code change",
+  "createdFromGitHubCommits": [
+    "43ffa9d770daf30c3bea40fc33e9425abbafbabb",
+    "cae24de9a07ff6d1d8e8ca9af471c133e8524851",
+    "32b0de20fca89dd13ec59066574872609bfb7db",
+    "87ed1d8ad85467659a6e649cbbbe546e6fa818b6",
+    "5e7a02e309ba53ec8353f8846da49c73f92f2f7b",
+    "cde69ca80718b9165ffa7e2f57d9a81dd6537b6f"
+  ],
+  "visualBatch": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L07",
+      "file": "u01-l07-court-scale-and-bench.svg",
+      "originalTruth": "Drawn court 14x7 cm at 1cm:2m maps to 28x14m and an independent 4.5cm bench stands for 9m",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/7/index.html",
+      "svgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+      "assessment": "TEACHER_REVIEW_REQUIRED",
+      "studentArtifactActual": "NOT_SUBMITTED",
+      "authenticatedRender": "NOT_RUN",
+      "screenReader": "NOT_RUN",
+      "academicAccepted": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
+      "file": "u01-l08-scale-map-road-vs-direct.svg",
+      "originalTruth": "Three 2cm road segments total 6cm and 24km, straight connection 5cm and 20km, scale 1cm:4km",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/8/index.html",
+      "svgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+      "assessment": "TEACHER_REVIEW_REQUIRED",
+      "studentArtifactActual": "NOT_SUBMITTED",
+      "authenticatedRender": "NOT_RUN",
+      "screenReader": "NOT_RUN",
+      "academicAccepted": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
+      "file": "u01-l09-studio-floor-plan-with-door.svg",
+      "originalTruth": "7x5cm drawing of 7x5m studio at 1cm:1m, real 1.5cm opening in lower wall, not painted-on door",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/9/index.html",
+      "svgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+      "assessment": "TEACHER_REVIEW_REQUIRED",
+      "studentArtifactActual": "NOT_SUBMITTED",
+      "authenticatedRender": "NOT_RUN",
+      "screenReader": "NOT_RUN",
+      "academicAccepted": false
+    }
+  ],
+  "aggregate": {
+    "canonicalLessons": 145,
+    "authoredRichV2Candidates": 145,
+    "originalWorkedExamples": 584,
+    "authoredRichVisualRecords": 151,
+    "sourceStudentPagesPreviouslyCompared": 145,
+    "gradeOwnedFigureAssets": 9,
+    "gradeOnlyPartialMappings": 9,
+    "teacherRubricDraftRecords": 10,
+    "stageAAccepted": 0,
+    "stageBAuthenticatedVerified": 0,
+    "stageCPracticeVerified": 0,
+    "stageDFullyVerified": 0,
+    "ownerUAT": "NOT_RUN",
+    "release": "RELEASE_BLOCKED"
+  },
+  "testEvidence": {
+    "gradeXunit": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "coverage": "Source checks for six scale polygons and three new project diagrams; nine U01 teacher-only rubrics; no authentication/persistence/Practice",
+    "exactHeadCI": "PENDING_AT_AUTHORING",
+    "localDotnet": "NOT_INSTALLED",
+    "testRunnerMustConfirm": "GitHub Actions math-foundation-tests and .NET regression exact HEAD",
+    "doNotClaim": "Source xUnit PASS establishes candidate SVG source sanity, not authenticated rendered UI nor teacher rubric persistence"
+  },
+  "singleWriterIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "blocked": [
+    "Rich V2 shared renderer does not invoke optional G7 component",
+    "Selected Practice for scaled-copy geometry is not verified or repaired by this coder",
+    "Actual teacher-scorable drawn student submissions and persistence absent",
+    "True browser accessibility and two-school tests not performed"
+  ],
+  "nextGrade7Only": "U01 L10–L12: changing drawing scales and unit-equivalent scale cards and pool area; author original figures and teacher-only rubrics without global renderer changes"
+}

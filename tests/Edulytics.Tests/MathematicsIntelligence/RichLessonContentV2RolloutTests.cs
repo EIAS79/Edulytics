@@ -114,9 +114,34 @@ public sealed class RichLessonContentV2RolloutTests
         }
 
         Assert.Equal(5110, rows.Count);
+        // Curated count is data-driven: newly authored grades must not fail
+        // rollout merely because the historical global total was pinned.
+        // A curated sidecar with an unknown lesson or unexpected locale
+        // fails closed instead of inflating the accepted count.
+        var curatedLessons = RichLessonContentV2Registry.AllDocuments
+            .SelectMany(x => x.Lessons)
+            .ToArray();
         Assert.Equal(
-            26 + 143 + 149,
-            readyCurated);
+            curatedLessons.Length,
+            curatedLessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal)
+                .Count());
+        Assert.Equal(
+            145,
+            curatedLessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal)));
+
+        var canonicalCodes = documents
+            .SelectMany(x => x.Lessons)
+            .Select(x => x.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.All(curatedLessons, lesson =>
+        {
+            Assert.Contains(lesson.LessonCode, canonicalCodes);
+            Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
+        });
+
+        Assert.Equal(curatedLessons.Length, readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);
         Assert.Equal(0, blockedContract);

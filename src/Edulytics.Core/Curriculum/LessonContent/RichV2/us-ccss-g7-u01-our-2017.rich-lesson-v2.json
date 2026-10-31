@@ -1,0 +1,2180 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g7-u01-original-rich-v2-candidate-20261028-v3",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+      "CultureCode": "en",
+      "Title": "What are Scaled Copies?",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Recognize scaled copies by testing whether every corresponding length changes by the same factor; explain why a distorted figure is not scaled. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/1/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "A picture can look similar without being a mathematically valid scaled copy. Check the length of each corresponding segment, not only a single edge. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to sort scaled and distorted figures, create a scaled letter or polygon and explain their partner's classification. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal.",
+        "First-party F-classification activity (independent Edulytiks reconstruction, not publisher artwork): Use the additional candidate-dimensions table below to classify seven possible copies of an upright block F. The original F has an upright 4-unit spine, 2-unit top bar and 1-unit short bar. For each candidate, check all three matching length ratios AND whether every corresponding corner angle remains equal. Draw a valid copy with a new factor on squared paper, label its parts, and explain your decision to a partner; a teacher must inspect the finished outline and explanation. Table values specify candidate measurements rather than the publisher's visual figures."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Corresponding lengths",
+          "Definition": "A pair of matching lengths in the original and its copy.",
+          "Rule": "All corresponding-length ratios must equal one positive factor.",
+          "Example": "Side lengths 3, 4, 5 and 6, 8, 10 all have factor 2."
+        },
+        {
+          "Title": "Same multiplier",
+          "Definition": "Every length is multiplied by one common factor k greater than zero.",
+          "Rule": "Check more than one segment; k must be constant.",
+          "Example": "3→6 and 4→8 both use k=2."
+        },
+        {
+          "Title": "Not scaled",
+          "Definition": "A drawing stretched by different horizontal and vertical factors is distorted.",
+          "Rule": "Unequal corresponding ratios disprove a scaled copy.",
+          "Example": "A 3-by-4 rectangle changed to 6-by-7 has factors 2 and 7/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove a scaled triangle",
+          "Question": "A triangle has side lengths 3, 4 and 5 units. Another has corresponding lengths 6, 8 and 10. Is the second a scaled copy?",
+          "Method": "Compare ratios for all three matched sides.",
+          "Steps": [
+            "Compute 6÷3=2.",
+            "Compute 8÷4=2.",
+            "Compute 10÷5=2 and confirm the same positive factor."
+          ],
+          "Answer": "Yes, every corresponding side is doubled, so the scale factor is 2.",
+          "Check": "The side lengths preserve one common multiplier."
+        },
+        {
+          "Title": "Reject a stretched shape",
+          "Question": "A rectangle measures 3 by 4 cm. A proposed copy measures 6 by 7 cm. Is it scaled?",
+          "Method": "Check both side factors.",
+          "Steps": [
+            "Match width with width: 6÷3=2.",
+            "Match height with height: 7÷4=1.75.",
+            "The two factors differ, so no uniform scale exists."
+          ],
+          "Answer": "No: 2 is not equal to 1.75.",
+          "Check": "No choice of one k makes both sides match."
+        },
+        {
+          "Title": "Make a scaled rectangle",
+          "Question": "A rectangle measures 2 by 5 units. Make a scaled copy with factor 1.5.",
+          "Method": "Multiply each dimension by 1.5.",
+          "Steps": [
+            "Compute new width: 2×1.5=3.",
+            "Compute new height: 5×1.5=7.5.",
+            "Check 3÷2=7.5÷5=1.5."
+          ],
+          "Answer": "A 3-by-7.5-unit rectangle.",
+          "Check": "Both corresponding dimensions use factor 1.5."
+        },
+        {
+          "Title": "Sort, draw, and defend scaled F-shape models",
+          "Question": "Draw an original block letter F from vertices in order (0,0),(4,0),(4,1),(1,1),(1,2),(3,2),(3,3),(1,3),(1,5),(0,5). On graph paper make a scale-factor-2 copy and a horizontal-only stretch x→2x; which drawing is a scaled copy, and why?",
+          "Method": "Plot and connect every vertex in order; compare both horizontal and vertical corresponding segments and orally justify the distinction to a partner.",
+          "Steps": [
+            "Draw and close the original ten-vertex F outline; distinguish segment positions by the vertex labels.",
+            "For a factor-2 copy multiply both x and y of each vertex by 2, then connect in the same order.",
+            "For the horizontal-only stretch double x but keep y unchanged; a 4-unit top becomes 8 while a 5-unit spine stays 5.",
+            "Use multiple corresponding horizontal and vertical segments and show the figures to a teacher for a drawing/justification rubric."
+          ],
+          "Answer": "Only doubling both coordinates gives a scaled copy with scale factor 2; horizontal-only stretching does not.",
+          "Check": "A teacher verifies the actual F outlines and student explanation, not just the two ratios."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding the same length to every side",
+          "WhyWrong": "Adding 2 to sides 3 and 4 produces multipliers 5/3 and 6/4, not one factor.",
+          "Correction": "Multiply each length by k; never replace uniform scaling with constant addition."
+        },
+        {
+          "Mistake": "Checking only one side",
+          "WhyWrong": "One ratio can match by accident while other dimensions are distorted.",
+          "Correction": "Calculate the factor for every available corresponding length."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Every corresponding length changes by one positive multiplier.",
+        "A visually plausible drawing can still be distorted.",
+        "Explain a scaled-copy decision with at least two checked corresponding ratios."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Uniformly scaled triangle",
+          "Description": "Corresponding lengths are compared in the same order. Each copy/original quotient is 2. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Original side (units)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Copy side (units)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ]
+            },
+            {
+              "Label": "Scale factor",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Plot-and-compare original F and two candidate outlines",
+          "Description": "This table is an original coordinate specification for a first-party graph-paper drawing and verbal description. Join the vertices in listed order and close the outline. The table is NOT a rendered shape, and the actual drawing and explanation must be reviewed by a teacher.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Original vertex",
+              "Cells": [
+                "(0,0)",
+                "(4,0)",
+                "(4,1)",
+                "(1,1)",
+                "(1,2)",
+                "(3,2)",
+                "(3,3)",
+                "(1,3)",
+                "(1,5)",
+                "(0,5)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Factor-2 vertex",
+              "Cells": [
+                "(0,0)",
+                "(8,0)",
+                "(8,2)",
+                "(2,2)",
+                "(2,4)",
+                "(6,4)",
+                "(6,6)",
+                "(2,6)",
+                "(2,10)",
+                "(0,10)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Horizontal-only stretch",
+              "Cells": [
+                "(0,0)",
+                "(8,0)",
+                "(8,1)",
+                "(2,1)",
+                "(2,2)",
+                "(6,2)",
+                "(6,3)",
+                "(2,3)",
+                "(2,5)",
+                "(0,5)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original Edulytiks F-shape investigation — seven candidates",
+          "Description": "Construct an upright block F with the three labeled lengths below, then test each candidate as an entire outline. Candidate D depicts a SHEARED F whose corresponding right angles change; a rigidly rotated or translated F may still be a valid scaled copy if all side ratios and angles agree. Three matching measurements alone do not prove the entire outline is scaled. This is an independently authored, accessible dimension table inspired by source learning objectives: no original publisher figures, answers, student uploads or automatic scores are reproduced.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measurements / orientation",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Spine (units)",
+                "Top bar (units)",
+                "Short bar (units)",
+                "Spine alignment"
+              ]
+            },
+            {
+              "Label": "Original F",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4",
+                "2",
+                "1",
+                "upright"
+              ]
+            },
+            {
+              "Label": "Candidate A",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "3",
+                "1.5",
+                "upright"
+              ]
+            },
+            {
+              "Label": "Candidate B",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "4",
+                "2",
+                "upright"
+              ]
+            },
+            {
+              "Label": "Candidate C",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4",
+                "4",
+                "3",
+                "upright"
+              ]
+            },
+            {
+              "Label": "Candidate D",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4",
+                "2",
+                "1",
+                "sheared (angles changed)"
+              ]
+            },
+            {
+              "Label": "Candidate E",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "3",
+                "2",
+                "upright"
+              ]
+            },
+            {
+              "Label": "Candidate F",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "1",
+                "1",
+                "upright"
+              ]
+            },
+            {
+              "Label": "Candidate G",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12",
+                "6",
+                "3",
+                "upright"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+      "CultureCode": "en",
+      "Title": "Corresponding Parts and Scale Factors",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Identify matching points, segments and angles in two figures, then calculate and explain the scale factor. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/2/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "The word corresponding identifies parts that play the same role in each figure. Scale factors compare corresponding lengths; corresponding angle measures remain equal. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to identify corresponding points, sides and angles, and check scales with physical tracing or drawing. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Corresponding vertices",
+          "Definition": "Points in the original and copy with matching positions.",
+          "Rule": "Follow vertex order consistently.",
+          "Example": "In triangles ABC and DEF, A↔D, B↔E, C↔F."
+        },
+        {
+          "Title": "Scale factor",
+          "Definition": "A common ratio of a copied length to its matching original length.",
+          "Rule": "Find k=copy length/original length.",
+          "Example": "Side AB=4 and DE=6 give k=6/4=1.5."
+        },
+        {
+          "Title": "Angle preservation",
+          "Definition": "Uniform scaling changes lengths but not the measure of an angle.",
+          "Rule": "Compare matched vertices, not arbitrary nearby angles.",
+          "Example": "If angle B is 60°, its counterpart E is 60°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Match all sides",
+          "Question": "ABC has AB=4, BC=5, CA=6; DEF has DE=6, EF=7.5, FD=9. Find the scale factor.",
+          "Method": "Pair sides in vertex order.",
+          "Steps": [
+            "Match AB to DE, BC to EF and CA to FD.",
+            "Compute 6/4=1.5 and 7.5/5=1.5.",
+            "Confirm 9/6=1.5."
+          ],
+          "Answer": "From ABC to DEF, k=1.5.",
+          "Check": "All three paired lengths use 1.5."
+        },
+        {
+          "Title": "Reverse the scale",
+          "Question": "Triangle DEF is a 1.5-scale copy of ABC. What factor returns DEF to ABC?",
+          "Method": "Use the reciprocal.",
+          "Steps": [
+            "Write the forward factor as 3/2.",
+            "Invert the ratio to 2/3.",
+            "Check 6×(2/3)=4."
+          ],
+          "Answer": "The reverse factor is 2/3.",
+          "Check": "The original corresponding length 4 is restored."
+        },
+        {
+          "Title": "Corresponding angles",
+          "Question": "ABC has angle measures 40°, 60°, 80° and DEF is its uniformly scaled copy with A↔D, B↔E, C↔F. Find angle E.",
+          "Method": "Keep matching angles equal.",
+          "Steps": [
+            "Identify that B corresponds to E.",
+            "Read angle B as 60°.",
+            "Scaling preserves angles, so angle E=60°."
+          ],
+          "Answer": "Angle E is 60°.",
+          "Check": "The total remains 180° for both triangles."
+        },
+        {
+          "Title": "Label corresponding vertices, sides, and angles in two copies",
+          "Question": "Draw triangle ABC with A=(0,0), B=(4,0), C=(0,3). Draw DEF with D=(0,0), E=(6,0), F=(0,4.5). Identify the counterparts of point B, segment BC, and angle BAC. Explain a scale factor and measure or compare the right angle.",
+          "Method": "Draw both polygons, maintain matching vertex order, and compare segment ratios and the included right angle.",
+          "Steps": [
+            "Plot the three original and three copy vertices on coordinate grid with half-unit marks.",
+            "Follow vertex order A↔D, B↔E, C↔F: B corresponds to E; BC to EF; angle BAC to angle EDF.",
+            "Corresponding leg ratios are 6/4=1.5 and 4.5/3=1.5; the hypotenuses are 5 and 7.5.",
+            "Confirm angle BAC and EDF are right angles; submit the labeled drawing and oral explanation for teacher review."
+          ],
+          "Answer": "B↔E, BC↔EF, ∠BAC↔∠EDF; k=3/2 and both angles are 90°.",
+          "Check": "A correct calculation without correctly labeled corresponding points/angles does not complete the activity."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Pairing nonmatching sides",
+          "WhyWrong": "A ratio of unrelated sides is not a scale factor.",
+          "Correction": "Label corresponding vertices first, then compare matching segments."
+        },
+        {
+          "Mistake": "Multiplying angle measures by the scale factor",
+          "WhyWrong": "Scale changes lengths, not angle sizes.",
+          "Correction": "Keep corresponding angles equal in a scaled copy."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Corresponding points and sides are matched by their roles.",
+        "The copy-to-original length ratio is the scale factor.",
+        "Reciprocal factors reverse scaling; angles remain unchanged."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Corresponding sides in two triangles",
+          "Description": "Vertices A↔D, B↔E, C↔F. Each copied side is 1.5 times its partner. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "ABC side",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "AB 4",
+                "BC 5",
+                "CA 6"
+              ]
+            },
+            {
+              "Label": "DEF side",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "DE 6",
+                "EF 7.5",
+                "FD 9"
+              ]
+            },
+            {
+              "Label": "Copy/original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1.5",
+                "1.5",
+                "1.5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Draw corresponding triangle points and compare angles",
+          "Description": "This table is an original coordinate specification for a first-party graph-paper drawing and verbal description. Join the vertices in listed order and close the outline. The table is NOT a rendered shape, and the actual drawing and explanation must be reviewed by a teacher.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Point labels",
+              "Cells": [
+                "A↔D",
+                "B↔E",
+                "C↔F"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Original triangle vertices",
+              "Cells": [
+                "(0,0)",
+                "(4,0)",
+                "(0,3)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Scaled copy vertices",
+              "Cells": [
+                "(0,0)",
+                "(6,0)",
+                "(0,4.5)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Angle correspondence",
+              "Cells": [
+                "∠A↔∠D",
+                "∠B↔∠E",
+                "∠C↔∠F"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+      "CultureCode": "en",
+      "Title": "Making Scaled Copies",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Draw figures with a specified factor and justify that every side and distance is multiplied, not increased additively. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/3/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "On a coordinate grid, a scale centered at the origin multiplies both coordinates by the same factor. A scaled drawing must preserve its shape and corresponding angle measures. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to construct scaled copies both on and off the grid, and critique additive as opposed to multiplicative methods. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Coordinate scaling",
+          "Definition": "A point (x,y) becomes (kx,ky) for a scale centered at (0,0).",
+          "Rule": "Apply the same positive k to both coordinates.",
+          "Example": "(2,3) becomes (4,6) when k=2."
+        },
+        {
+          "Title": "Multiplicative sides",
+          "Definition": "Corresponding lengths are related by products.",
+          "Rule": "Use new length=k×original length.",
+          "Example": "Length 3 becomes 6 under k=2."
+        },
+        {
+          "Title": "Construction check",
+          "Definition": "Scaled drawings preserve angle measures and length ratios.",
+          "Rule": "Check horizontal, vertical and sloping matching distances.",
+          "Example": "A right triangle with legs 2 and 3 scales to legs 4 and 6 at k=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale on a grid",
+          "Question": "A triangle has vertices (0,0), (2,0) and (0,3). Draw a factor-2 copy.",
+          "Method": "Scale each coordinate from the origin.",
+          "Steps": [
+            "Keep the origin (0,0).",
+            "Multiply (2,0) by 2 to get (4,0).",
+            "Multiply (0,3) by 2 to get (0,6), then join the vertices."
+          ],
+          "Answer": "Vertices (0,0), (4,0), (0,6).",
+          "Check": "Both legs and the hypotenuse are doubled."
+        },
+        {
+          "Title": "Reject addition as a scaling operation",
+          "Question": "Original legs measure 2 and 3 units. A pupil adds 2 to each, producing legs 4 and 5. Is this a factor-2 copy?",
+          "Method": "Compare both ratios.",
+          "Steps": [
+            "The first ratio is 4/2=2.",
+            "The second ratio is 5/3, not 2.",
+            "One common multiplier does not exist."
+          ],
+          "Answer": "No: adding 2 distorts the triangle.",
+          "Check": "A factor-2 copy would have legs 4 and 6."
+        },
+        {
+          "Title": "Draw a half-size copy",
+          "Question": "Triangle vertices are (0,0), (6,0), (0,4). Use factor 1/2.",
+          "Method": "Multiply both nonzero coordinates by one half.",
+          "Steps": [
+            "Keep (0,0).",
+            "Send (6,0) to (3,0).",
+            "Send (0,4) to (0,2) and join the points."
+          ],
+          "Answer": "Vertices (0,0), (3,0), (0,2).",
+          "Check": "The legs change 6→3 and 4→2 consistently."
+        },
+        {
+          "Title": "Construct two scaled L-shaped polygons and critique additive resizing",
+          "Question": "Make an L-polygon by joining (0,0),(6,0),(6,2),(4,2),(4,5),(0,5). Draw copies at scale factors 1/2 and 3. A student proposes adding 2 to every side length instead. What goes wrong?",
+          "Method": "Use a coordinate grid to construct both scaled figures, explain the multiplier for every corresponding segment, and compare to an additive claim.",
+          "Steps": [
+            "Draw the original outline and check it closes without crossed edges.",
+            "For factor 1/2, plot vertices (0,0),(3,0),(3,1),(2,1),(2,2.5),(0,2.5) and join in the same order.",
+            "For factor 3, plot (0,0),(18,0),(18,6),(12,6),(12,15),(0,15) and join in the same order.",
+            "Two original sides of lengths 6 and 2 become 8 and 4 by adding 2, giving unequal ratios 8/6 and 4/2: reject the additive strategy."
+          ],
+          "Answer": "Both independently drawn copies preserve the L shape under factors 1/2 and 3. Adding 2 per side does not give one uniform factor.",
+          "Check": "Teacher checks both actual outlines, vertex order, non-overlap and a written comparison of additive vs multiplicative strategies."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Moving every point by the same offset",
+          "WhyWrong": "Translation moves the figure without changing its size.",
+          "Correction": "Multiply distances from the chosen center to construct a scaled copy."
+        },
+        {
+          "Mistake": "Scaling only the horizontal coordinate",
+          "WhyWrong": "Unequal changes on x and y distort angles and side ratios.",
+          "Correction": "Use the same multiplier on x and y when scaling from the origin."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Draw scaled copies by multiplying corresponding lengths by k.",
+        "Use (kx,ky) to scale grid coordinates about the origin.",
+        "Verify both shape preservation and matching length ratios."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Scale a triangle about the origin",
+          "Description": "Each coordinate is multiplied by 2; the origin stays fixed. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Point",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "(0,0)",
+                "(2,0)",
+                "(0,3)"
+              ]
+            },
+            {
+              "Label": "Factor-two copy",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "(0,0)",
+                "(4,0)",
+                "(0,6)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Construct L-shaped copies at two scales",
+          "Description": "This table is an original coordinate specification for a first-party graph-paper drawing and verbal description. Join the vertices in listed order and close the outline. The table is NOT a rendered shape, and the actual drawing and explanation must be reviewed by a teacher.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Original L vertices",
+              "Cells": [
+                "(0,0)",
+                "(6,0)",
+                "(6,2)",
+                "(4,2)",
+                "(4,5)",
+                "(0,5)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Half-size copy",
+              "Cells": [
+                "(0,0)",
+                "(3,0)",
+                "(3,1)",
+                "(2,1)",
+                "(2,2.5)",
+                "(0,2.5)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Triple-size copy",
+              "Cells": [
+                "(0,0)",
+                "(18,0)",
+                "(18,6)",
+                "(12,6)",
+                "(12,15)",
+                "(0,15)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
+      "CultureCode": "en",
+      "Title": "Scaled Relationships",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Test corresponding distances even between unjoined points and verify that matched angle measures stay equal. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/4/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "In a true scaled copy, the relationship applies to every distance, including an invisible diagonal between two vertices; corresponding angles remain equal. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to measure corresponding angles and unconnected vertex distances with a ruler/protractor. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unmarked distances",
+          "Definition": "A distance between two points is still scaled even when no segment is drawn.",
+          "Rule": "Check vertex-to-vertex distances as well as displayed sides.",
+          "Example": "A diagonal of length 5 becomes 10 at k=2."
+        },
+        {
+          "Title": "Right-triangle distance",
+          "Definition": "Perpendicular offsets can locate a diagonal by the Pythagorean theorem.",
+          "Rule": "For legs a and b, diagonal=√(a²+b²).",
+          "Example": "Offsets 3 and 4 give distance 5."
+        },
+        {
+          "Title": "Corresponding angles",
+          "Definition": "Uniform scaling preserves all angle measures.",
+          "Rule": "Use matching vertices or a protractor to compare angles.",
+          "Example": "A 90° corner remains 90° after doubling all lengths."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Test a hidden diagonal",
+          "Question": "Two vertices are 3 across and 4 up. In a proposed factor-2 copy they are 6 across and 8 up. Find both distances.",
+          "Method": "Use right triangles for the two point separations.",
+          "Steps": [
+            "Original distance=√(3²+4²)=5.",
+            "Copy distance=√(6²+8²)=10.",
+            "Compare 10/5=2."
+          ],
+          "Answer": "The hidden distance also doubles.",
+          "Check": "Both horizontal and vertical changes use factor 2."
+        },
+        {
+          "Title": "Check an angle",
+          "Question": "A quadrilateral corner measures 70°. A scaled copy is created with k=3. What is the corresponding angle?",
+          "Method": "Apply angle invariance.",
+          "Steps": [
+            "Identify the matching corner.",
+            "Scaling changes lengths, not directions of each corresponding side.",
+            "Retain the angle measure of 70°."
+          ],
+          "Answer": "70°.",
+          "Check": "Multiplying 70 by 3 would be incorrect."
+        },
+        {
+          "Title": "Detect nonuniform distortion",
+          "Question": "A 3-by-4 right-angled shape is copied as a 6-by-6 shape. Is it scaled?",
+          "Method": "Compare corresponding distances.",
+          "Steps": [
+            "Horizontal ratio is 6/3=2.",
+            "Vertical ratio is 6/4=1.5.",
+            "Unequal ratios disprove a scaled copy."
+          ],
+          "Answer": "No, its proportions changed.",
+          "Check": "The original diagonal is 5; copy diagonal √72, not 10."
+        },
+        {
+          "Title": "Test an unconnected distance with a ruler",
+          "Question": "On a 1-unit grid, plot A=(0,0), B=(4,0), C=(0,3) and scaled counterparts D=(0,0), E=(8,0), F=(0,6). The lines BC and EF are not drawn. Without relying on a formula from a later grade, measure or estimate both distances with a ruler. What should hold?",
+          "Method": "Draw the two polygons and use a ruler/protractor to compare corresponding but previously unconnected vertices and angles.",
+          "Steps": [
+            "Mark the point pairs and identify the scale factor 2 from the horizontal and vertical offsets.",
+            "Use a ruler or tracing overlay to measure unjoined BC and EF (approximately 5 and 10 units respectively).",
+            "Check that the two measured distances are in an approximate ratio of 2, within measurement precision.",
+            "Measure angle BAC and EDF and explain why corresponding angles stay equal."
+          ],
+          "Answer": "BC≈5 and EF≈10 grid units; the hidden corresponding distance scales by about 2, while the corresponding angle is unchanged.",
+          "Check": "Accept measured estimates with a justified tolerance; teacher checks the actual sketch and protractor work."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Checking only drawn edges",
+          "WhyWrong": "Undrawn distances may expose distortions.",
+          "Correction": "Compare multiple distances between matched points, not just labeled segments."
+        },
+        {
+          "Mistake": "Assuming a larger shape has larger angles",
+          "WhyWrong": "Uniform enlargement does not increase angle measures.",
+          "Correction": "Compare angle measures separately from length ratios."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Every matched distance scales, drawn or not.",
+        "Angles stay equal in scaled copies.",
+        "Use distances and angles together to test a proposed copy."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Distances in scaled copies",
+          "Description": "Invisible diagonals scale too; horizontal and vertical offsets are doubled. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measured distance",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Across",
+                "Up",
+                "Diagonal"
+              ]
+            },
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Copy",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L05",
+      "CultureCode": "en",
+      "Title": "The Size of the Scale Factor",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Explain enlargement, unchanged size and reduction; identify reciprocal factors for reversing a scale. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/5/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "A positive factor below 1 reduces lengths; factor 1 preserves lengths; a factor above 1 enlarges. The reverse factor is 1/k. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to compare factors below, equal to and above one, reconstruct puzzle pieces and revise mismatched copies. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scale below one",
+          "Definition": "If 0<k<1, every copied length is smaller.",
+          "Rule": "Multiply, do not subtract a fixed amount.",
+          "Example": "8 cm scaled by 1/2 becomes 4 cm."
+        },
+        {
+          "Title": "Scale above one",
+          "Definition": "If k>1, every copied length is larger.",
+          "Rule": "Check proportional multiplication.",
+          "Example": "8 cm scaled by 5/4 becomes 10 cm."
+        },
+        {
+          "Title": "Inverse scale",
+          "Definition": "Scaling back requires the reciprocal 1/k.",
+          "Rule": "Multiply the forward and backward factors to get 1.",
+          "Example": "The reverse of 5/4 is 4/5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Classify factors",
+          "Question": "What happens to a 12 cm segment with factors 1/2, 1 and 3/2?",
+          "Method": "Compute each product.",
+          "Steps": [
+            "12×1/2=6, a reduction.",
+            "12×1=12, no size change.",
+            "12×3/2=18, an enlargement."
+          ],
+          "Answer": "6 cm, 12 cm and 18 cm.",
+          "Check": "All changes follow the factor categories."
+        },
+        {
+          "Title": "Reverse a scale",
+          "Question": "A 4 cm side becomes 5 cm. What factor returns it to 4 cm?",
+          "Method": "Calculate reciprocal ratio.",
+          "Steps": [
+            "Forward factor=5/4.",
+            "Reverse factor=4/5.",
+            "Check 5×4/5=4."
+          ],
+          "Answer": "4/5.",
+          "Check": "Forward times reverse equals 1."
+        },
+        {
+          "Title": "Return a reduced drawing to full size",
+          "Question": "A shape is reduced by 1/3 and a copied edge is 7 cm. Find the original edge.",
+          "Method": "Use the inverse factor 3.",
+          "Steps": [
+            "Write copied=original×1/3.",
+            "Multiply 7×3.",
+            "Check 21×1/3=7."
+          ],
+          "Answer": "21 cm.",
+          "Check": "The copied length is one third of 21."
+        },
+        {
+          "Title": "Construct and exchange scaled puzzle tiles",
+          "Question": "A small polygon piece has vertices (0,0),(4,0),(4,2),(0,2). Produce a 1/2-scale copy. A partner receives your copy but not the original; how can they recreate the original piece?",
+          "Method": "Draw the half-size figure on a grid, check all corresponding lengths, then apply the reciprocal scale factor.",
+          "Steps": [
+            "For factor 1/2, make a 2-by-1 rectangle with vertices (0,0),(2,0),(2,1),(0,1).",
+            "Compare copy/original side ratios: 2/4=1/2 and 1/2=1/2.",
+            "To restore the missing piece, apply the reciprocal factor 2 to every copy length.",
+            "Exchange drawings with another learner and revise any distorted or misaligned edge."
+          ],
+          "Answer": "Half-sized piece 2 by 1; to recreate the original piece scale all lengths by 2.",
+          "Check": "Teacher reviews the actual matched pieces, reciprocal explanation, and any revision."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling every k less than 1 a negative scale",
+          "WhyWrong": "A positive factor below one is a reduction, not a reflection.",
+          "Correction": "Compare k with 0 and 1 separately."
+        },
+        {
+          "Mistake": "Using the same factor in both directions",
+          "WhyWrong": "Forward and reverse factors must multiply to 1.",
+          "Correction": "Use 1/k to recover original lengths."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "0<k<1 reduces, k=1 preserves, k>1 enlarges.",
+        "Reverse a scale by using 1/k.",
+        "Scaled-copy lengths depend multiplicatively on k."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Scale-factor sizes",
+          "Description": "The same 12-unit segment is reduced, preserved, or enlarged depending on k. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Factor",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1/2",
+                "1",
+                "3/2"
+              ]
+            },
+            {
+              "Label": "Original length",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12",
+                "12",
+                "12"
+              ]
+            },
+            {
+              "Label": "Copy length",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "12",
+                "18"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L06",
+      "CultureCode": "en",
+      "Title": "Scaling and Area",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Find how a two-dimensional shape's area changes under scaling and explain why the multiplier is k squared. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/6/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "Scaling both dimensions by k multiplies area by k², not k. This optional source lesson uses tangible shapes before numerical area calculations. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to build area models from equal tiles and justify a squared area factor. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area factor",
+          "Definition": "The area of a scaled 2D shape is k² times its original area.",
+          "Rule": "A_new=k²×A_original.",
+          "Example": "At k=2, area quadruples."
+        },
+        {
+          "Title": "Rectangle model",
+          "Definition": "Area=length×width, so scaling both makes (kl)(kw)=k²lw.",
+          "Rule": "Multiply each side first and compare areas.",
+          "Example": "3×4 has area 12; 6×8 has area 48."
+        },
+        {
+          "Title": "Reduction of area",
+          "Definition": "A length factor below one squares to an even smaller area factor.",
+          "Rule": "For k=1/2, area becomes 1/4.",
+          "Example": "80 square units becomes 20."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rectangle enlargement",
+          "Question": "A 3 by 4 rectangle is scaled by 2. Compare its areas.",
+          "Method": "Compute both dimensions and areas.",
+          "Steps": [
+            "Original area=3×4=12 square units.",
+            "Copy dimensions are 6 and 8.",
+            "Copy area=6×8=48, which is 4×12."
+          ],
+          "Answer": "Area changes by factor 4.",
+          "Check": "2²=4."
+        },
+        {
+          "Title": "Triangle enlargement",
+          "Question": "A triangle has base 6 and height 4. Scale by 3. Find its new area.",
+          "Method": "Use triangle area before and after scaling.",
+          "Steps": [
+            "Original area=6×4÷2=12.",
+            "New base=18 and new height=12.",
+            "New area=18×12÷2=108."
+          ],
+          "Answer": "108 square units, 9 times the original.",
+          "Check": "3²×12=108."
+        },
+        {
+          "Title": "Half-size reduction",
+          "Question": "A polygon has area 80 square units. What is its area when every length is halved?",
+          "Method": "Use the squared factor.",
+          "Steps": [
+            "Length factor is 1/2.",
+            "Area factor=(1/2)²=1/4.",
+            "Compute 80×1/4=20."
+          ],
+          "Answer": "20 square units.",
+          "Check": "A direct 80÷2=40 would ignore the second dimension."
+        },
+        {
+          "Title": "Build a scaled tiling and justify why area grows as the factor squared",
+          "Question": "Build a rectangular mosaic of 3 congruent unit squares in a 3-by-1 strip. How many same-size unit squares are needed for whole-strip scaled copies with side factors 2 and 3? Draw the tiled arrays.",
+          "Method": "Draw and count the squares in each 2D scaled strip rather than multiplying the original square count by k.",
+          "Steps": [
+            "Draw the original 3-by-1 strip and count 3 unit squares.",
+            "A side factor of 2 creates a 6-by-2 array, containing 12 unit squares (3×2²).",
+            "A side factor of 3 creates a 9-by-3 array, containing 27 unit squares (3×3²).",
+            "Use tile rows and columns to explain why doubled lengths imply four times the area, not two times."
+          ],
+          "Answer": "12 unit squares at factor 2 and 27 at factor 3.",
+          "Check": "The student's tile drawings must match the counts and preserve the scaled 3:1 proportions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying area by k",
+          "WhyWrong": "Area depends on two independent dimensions.",
+          "Correction": "Multiply area by k²."
+        },
+        {
+          "Mistake": "Squaring an area expressed with linear units",
+          "WhyWrong": "Area is measured in square units.",
+          "Correction": "Keep the units squared after calculating."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Length scale factor k gives area factor k².",
+        "Use areas of rectangles, triangles or manipulatives to verify.",
+        "The square-factor rule holds for reductions too."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Area is squared scaling",
+          "Description": "A 3-by-4 rectangle becomes 6-by-8 at scale factor 2, increasing area fourfold. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measurement",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Width",
+                "Height",
+                "Area"
+              ]
+            },
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "12"
+              ]
+            },
+            {
+              "Label": "Copy",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "8",
+                "48"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L07",
+      "CultureCode": "en",
+      "Title": "Scale Drawings",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Interpret scale drawings of real objects and calculate actual and drawing distances with consistent units. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/7/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "A scale drawing represents distances in the real world on a two-dimensional drawing. A labeled scale relates drawing units to actual distance units. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to interpret measurements from an actual drawn scale diagram and draw physical-length segments to scale. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Drawing-to-actual scale",
+          "Definition": "A stated drawing length represents a fixed real-world length.",
+          "Rule": "Use equivalent ratios for all distances.",
+          "Example": "1 cm to 2 m means 3 cm represents 6 m."
+        },
+        {
+          "Title": "Actual distance",
+          "Definition": "Multiply drawing distance by the actual amount represented per drawing unit.",
+          "Rule": "Actual=scale value×drawing length.",
+          "Example": "7 cm on a 1 cm:2 m drawing is 14 m."
+        },
+        {
+          "Title": "Drawing distance",
+          "Definition": "Divide actual distance by actual distance per drawing unit.",
+          "Rule": "Drawing=actual distance/scale value.",
+          "Example": "9 m becomes 4.5 cm when 1 cm represents 2 m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find an actual wall length",
+          "Question": "A floor plan uses 1 cm to represent 2 m. A wall measures 7 cm on the plan.",
+          "Method": "Multiply using the given scale.",
+          "Steps": [
+            "Write 1 cm:2 m.",
+            "Apply seven drawing-centimeters: 7×2 m.",
+            "State the real wall length."
+          ],
+          "Answer": "14 m.",
+          "Check": "14 m÷7 cm gives 2 m per cm."
+        },
+        {
+          "Title": "Find a plan length",
+          "Question": "An actual wall is 9 m long; the plan uses 1 cm for 2 m. What should you draw?",
+          "Method": "Divide actual length by 2 m per cm.",
+          "Steps": [
+            "Write 9 m÷(2 m per cm).",
+            "Compute 4.5 cm.",
+            "Check 4.5×2=9."
+          ],
+          "Answer": "4.5 cm.",
+          "Check": "The scale converts the plan length back to 9 m."
+        },
+        {
+          "Title": "Unitless ratio scale",
+          "Question": "A map scale is 1:100 with matching units. A line on the map measures 4 cm.",
+          "Method": "Multiply by the ratio denominator.",
+          "Steps": [
+            "Actual length=4×100 cm=400 cm.",
+            "Convert 400 cm to metres.",
+            "Check 400÷100=4."
+          ],
+          "Answer": "4 m.",
+          "Check": "4 m equals 400 cm."
+        },
+        {
+          "Title": "Measure a first-party school-court sketch to infer its real dimensions",
+          "Question": "Your class creates a rectangular activity court scale diagram 14 cm long and 7 cm wide using 1 cm for 2 m. What are the full dimensions? If a 9 m bench segment must appear on the same scale, how long do you draw it?",
+          "Method": "Label drawing measures and the units on a first-party geometric sketch; use a ruler to verify the produced representation.",
+          "Steps": [
+            "Write the stated rate as 1 drawing cm to 2 actual m.",
+            "Court length: 14×2=28 m; width: 7×2=14 m.",
+            "The 9 m bench should be 9÷2=4.5 cm long on the sketch.",
+            "Draw and label all segments and independently check the measured bench against the predicted length."
+          ],
+          "Answer": "28 m by 14 m court, 4.5 cm bench on the sketch.",
+          "Check": "Teacher verifies measured diagram, scale key, labels and proportional geometry rather than the numbers alone."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using different units without conversion",
+          "WhyWrong": "Ratio numbers cannot be compared before making dimensions consistent.",
+          "Correction": "Convert units explicitly when simplifying the scale."
+        },
+        {
+          "Mistake": "Dividing when finding actual length",
+          "WhyWrong": "A 1 cm:2 m scale makes real distances larger.",
+          "Correction": "Check units and magnitude before choosing multiplication or division."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Scales match drawing lengths with actual lengths.",
+        "Convert units before using a unitless ratio.",
+        "Use multiplication or division to move between drawing and reality."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Floor plan distance conversion",
+          "Description": "The model uses 1 cm on paper for 2 m of real distance. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Plan length (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1",
+                "3",
+                "7"
+              ]
+            },
+            {
+              "Label": "Actual length (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "6",
+                "14"
+              ]
+            },
+            {
+              "Label": "Rate (m/cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
+      "CultureCode": "en",
+      "Title": "Scale Drawings and Maps",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Estimate route length from a map scale and relate it to constant speed and travel time. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/8/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "Map routes can bend. Approximate them by several short segments, add scaled distances and then apply distance=speed×time. The source lesson is optional. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to compare road and direct distances on a scale map, with units and assumptions. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Curved-route estimate",
+          "Definition": "A bent road can be approximated by straight map segments.",
+          "Rule": "Add segment lengths before applying the scale.",
+          "Example": "Segments 3 cm and 4 cm total 7 cm."
+        },
+        {
+          "Title": "Travel speed",
+          "Definition": "Rate is distance traveled per unit time.",
+          "Rule": "speed=distance÷time.",
+          "Example": "6 km in 3 h gives 2 km/h."
+        },
+        {
+          "Title": "Travel duration",
+          "Definition": "Time equals distance divided by constant speed.",
+          "Rule": "time=distance÷speed.",
+          "Example": "56 km at 28 km/h takes 2 h."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate a route",
+          "Question": "A map uses 1 cm:1 km. Approximate a bend by segments 3 cm and 4 cm. How far is the route?",
+          "Method": "Sum segments then convert.",
+          "Steps": [
+            "Add 3+4=7 cm on the map.",
+            "Each cm represents 1 km.",
+            "Compute 7×1=7 km."
+          ],
+          "Answer": "Approximately 7 km.",
+          "Check": "The estimate improves if shorter segments follow the actual road."
+        },
+        {
+          "Title": "Find speed",
+          "Question": "The estimated route distance is 6 km and the trip takes 3 h. Find average speed.",
+          "Method": "Divide distance by time.",
+          "Steps": [
+            "Write rate=distance/time.",
+            "Compute 6÷3=2.",
+            "Label the speed in km/h."
+          ],
+          "Answer": "2 km/h.",
+          "Check": "2 km/h for 3 h covers 6 km."
+        },
+        {
+          "Title": "Find time",
+          "Question": "A road route is 56 km and the vehicle maintains 28 km/h. Find elapsed time.",
+          "Method": "Use distance=speed×time.",
+          "Steps": [
+            "Rearrange time=distance÷speed.",
+            "Compute 56÷28=2.",
+            "State time in hours."
+          ],
+          "Answer": "2 hours.",
+          "Check": "28×2=56 km."
+        },
+        {
+          "Title": "Compare map route distance with straight-line distance",
+          "Question": "On an original scale map, 1 cm represents 4 km. The marked road has three 2 cm segments, while the direct straight segment between the same endpoints measures 5 cm. Estimate each distance and explain which path is longer.",
+          "Method": "Add the entire routed length, convert each drawing length with units, and distinguish a path from direct displacement.",
+          "Steps": [
+            "Road drawing length=2+2+2=6 cm, representing 6×4=24 km.",
+            "Direct drawing length=5 cm, representing 5×4=20 km.",
+            "Compare 24 km road path to 20 km direct segment, a 4 km difference.",
+            "Explain that these are original schematic measurements; an unlabeled or not-to-scale map cannot support the same calculation."
+          ],
+          "Answer": "The mapped road is about 24 km; the direct segment about 20 km; road path about 4 km longer.",
+          "Check": "Teacher reviews route markings and the reason that a direct segment is not the traveled route."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using the straight-line distance as the full curved road",
+          "WhyWrong": "A winding route is longer than its straight-line displacement.",
+          "Correction": "Approximate along the route with several segments."
+        },
+        {
+          "Mistake": "Mixing km with miles per hour",
+          "WhyWrong": "Incompatible distance and speed units produce invalid time.",
+          "Correction": "Convert distance and speed to compatible units first."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Estimate bent routes by combining short distances.",
+        "Convert map lengths to actual distances.",
+        "Use distance, speed and time with consistent units."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Measuring a bent map route",
+          "Description": "Add consecutive segments along the route before converting using 1 cm for 1 km. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Route portion",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "First segment",
+                "Second segment",
+                "Total estimate"
+              ]
+            },
+            {
+              "Label": "Map (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "7"
+              ]
+            },
+            {
+              "Label": "Actual (km)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "7"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
+      "CultureCode": "en",
+      "Title": "Creating Scale Drawings",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Use actual measurements and a chosen scale to create a drawing; compare the drawing sizes produced by different scales. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/9/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "A smaller real-world distance represented by each centimeter produces a larger drawing for the same object. Select scales that fit the available paper. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to measure and construct a floor plan with a complete scale key and peer review. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Creating a drawing",
+          "Definition": "Find drawn length from measured length and scale.",
+          "Rule": "Divide actual length by real-world units per drawing unit.",
+          "Example": "8 m on a 1 cm:2 m plan becomes 4 cm."
+        },
+        {
+          "Title": "Choosing a scale",
+          "Definition": "A scale must fit the largest actual measurement on the page.",
+          "Rule": "Check both height and width before drawing.",
+          "Example": "8 m fits as 8 cm at 1 cm:1 m."
+        },
+        {
+          "Title": "Comparing two scales",
+          "Definition": "The same object can have drawings of different sizes.",
+          "Rule": "A scale representing more actual distance per cm produces smaller drawings.",
+          "Example": "1 cm:5 m produces a smaller drawing than 1 cm:2 m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Make a floor-plan rectangle",
+          "Question": "A room measures 8 m by 5 m. Draw it using 1 cm:2 m.",
+          "Method": "Convert both dimensions.",
+          "Steps": [
+            "8÷2=4 cm long.",
+            "5÷2=2.5 cm wide.",
+            "Draw a 4 by 2.5 cm rectangle."
+          ],
+          "Answer": "4 cm by 2.5 cm.",
+          "Check": "Every 1 cm represents 2 m."
+        },
+        {
+          "Title": "Choose the larger drawing",
+          "Question": "The same 8 m wall is drawn at 1 cm:2 m and at 1 cm:1 m. Which is larger?",
+          "Method": "Compute both lengths.",
+          "Steps": [
+            "At 2 m per cm, 8÷2=4 cm.",
+            "At 1 m per cm, 8÷1=8 cm.",
+            "Compare 8 cm with 4 cm."
+          ],
+          "Answer": "The 1 cm:1 m drawing is twice as long.",
+          "Check": "A smaller real-length-per-centimeter scale makes a larger drawing."
+        },
+        {
+          "Title": "Convert a long wall",
+          "Question": "An actual 15 m side is drawn with 1 cm:3 m. Find the drawing length.",
+          "Method": "Divide by real distance per cm.",
+          "Steps": [
+            "Use 15 m÷(3 m/cm).",
+            "Compute 5 cm.",
+            "Check 5×3=15 m."
+          ],
+          "Answer": "5 cm.",
+          "Check": "The units are consistent."
+        },
+        {
+          "Title": "Produce a complete scale floor plan from field measurements",
+          "Question": "Design a rectangular 7 m by 5 m studio with a 1.5 m-wide doorway along the 7 m wall. Choose 1 cm to 1 m, label the door and walls, and exchange the plan with another learner for error checks.",
+          "Method": "Measure actual features, compute scale conversions, construct and label the plan, then revise based on feedback.",
+          "Steps": [
+            "Create an initial sketch and record length 7 m, width 5 m and door width 1.5 m.",
+            "Under 1 cm:1 m, draw a 7-by-5 cm rectangle with a labeled 1.5 cm door opening.",
+            "Add a scale key and actual-length annotations for all critical segments.",
+            "Exchange the floor plan and check whether its labels, placement and doorway width can be reconstructed without verbal explanation."
+          ],
+          "Answer": "An appropriately labeled 7-by-5 cm diagram with 1.5 cm door segment and scale 1 cm:1 m.",
+          "Check": "Teacher-assessed drawing rubric: dimension accuracy, opening location, scale key, labels, completeness and peer revision."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying when constructing the drawing",
+          "WhyWrong": "Applying real-world scale as a multiplier makes a huge drawing.",
+          "Correction": "Divide measured real distance by the real distance represented per drawing unit."
+        },
+        {
+          "Mistake": "Choosing a scale without checking page dimensions",
+          "WhyWrong": "One side may extend beyond the paper.",
+          "Correction": "Test both planned dimensions before drawing."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Convert each real measurement using the same scale.",
+        "Different scales can represent the same real object.",
+        "A usable scale fits the drawing medium."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Room scale drawing",
+          "Description": "Using 1 cm for 2 m, both floor-plan dimensions shrink by the same rule. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Dimension",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Length",
+                "Width"
+              ]
+            },
+            {
+              "Label": "Room measurement (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "5"
+              ]
+            },
+            {
+              "Label": "Drawing measurement (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4",
+                "2.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L10",
+      "CultureCode": "en",
+      "Title": "Changing Scales in Scale Drawings",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Recreate a drawing at a new scale, compare areas and explain both ways to compute the new dimensions. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/10/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "You may return to actual measurements first or directly compare two scale ratios. Either route must give identical new lengths. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to convert one original scale drawing to a new scale and explain the changed area. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scale conversion via reality",
+          "Definition": "Find actual length using the old scale, then drawn length using the new.",
+          "Rule": "New drawing length=old drawing length×old real-units-per-cm/new real-units-per-cm.",
+          "Example": "3 cm at 4 m/cm becomes 6 cm at 2 m/cm."
+        },
+        {
+          "Title": "Direct drawing factor",
+          "Definition": "The new-to-old drawing factor equals old denominator divided by new denominator.",
+          "Rule": "Apply one factor to all drawn lengths.",
+          "Example": "Changing 4 m/cm to 2 m/cm doubles drawn lengths."
+        },
+        {
+          "Title": "Area change",
+          "Definition": "Area of the new drawn shape changes by the square of the drawing-length factor.",
+          "Rule": "New drawing area=k²×old drawing area.",
+          "Example": "Doubling drawing lengths quadruples its drawn area."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert wall length",
+          "Question": "An old plan uses 1 cm:4 m and shows a 3 cm wall. A new plan uses 1 cm:2 m.",
+          "Method": "Compute actual then new.",
+          "Steps": [
+            "Actual wall=3×4=12 m.",
+            "New drawing length=12÷2=6 cm.",
+            "Check factor=6/3=2."
+          ],
+          "Answer": "6 cm.",
+          "Check": "Both plans represent 12 m."
+        },
+        {
+          "Title": "Convert directly",
+          "Question": "A 5 cm line is drawn at 1 cm:5 m. At 1 cm:10 m, how long should it be?",
+          "Method": "Compare the two scales.",
+          "Steps": [
+            "Old 5 cm represents 25 m.",
+            "New length=25÷10=2.5 cm.",
+            "Compare new/old=2.5/5=1/2."
+          ],
+          "Answer": "2.5 cm.",
+          "Check": "New scale is half the drawing size."
+        },
+        {
+          "Title": "Compare plan areas",
+          "Question": "A rectangle measures 2 cm by 3 cm in the old plan. The new plan doubles its lengths. What area does the new drawing have?",
+          "Method": "Square the length factor.",
+          "Steps": [
+            "Old area=2×3=6 cm².",
+            "New sides are 4 and 6 cm.",
+            "New area=4×6=24 cm²."
+          ],
+          "Answer": "24 cm².",
+          "Check": "4×old area=24; k²=4."
+        },
+        {
+          "Title": "Redraw the same plot using a second scale and compare areas",
+          "Question": "A rectangular garden is drawn 10 cm by 6 cm at 1 cm:30 m. Make a new plan at 1 cm:20 m. Explain how the plans differ in size and squared area, then draw both.",
+          "Method": "Recover actual dimensions, convert to a new rate, and calculate both drawing areas.",
+          "Steps": [
+            "Actual lengths are 300 m and 180 m.",
+            "At 1 cm:20 m, the new diagram measures 15 cm by 9 cm.",
+            "Old drawing area=10×6=60 cm²; new drawing area=15×9=135 cm².",
+            "The linear ratio is 15/10=1.5; squared area ratio is 135/60=2.25."
+          ],
+          "Answer": "New plan 15 by 9 cm, 2.25 times the old drawing area.",
+          "Check": "Teacher checks both labeled original scale drawings and correctly distinguishes map area from actual land area."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying the old real units as the new drawing multiplier",
+          "WhyWrong": "Scales must be compared in the correct direction.",
+          "Correction": "Convert through actual measurements or use old/new scale ratio."
+        },
+        {
+          "Mistake": "Scaling drawing area by the linear factor",
+          "WhyWrong": "A two-dimensional area has two scaled dimensions.",
+          "Correction": "Use the square of the drawing factor."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Change scales through real-world distances or a ratio of scale denominators.",
+        "Every drawing dimension changes by one common factor.",
+        "Drawing area changes by the square of that factor."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Changing plan scales",
+          "Description": "One wall drawn at 1 cm:4 m and 1 cm:2 m changes drawing length but not actual distance. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scale",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1 cm:4 m",
+                "1 cm:2 m"
+              ]
+            },
+            {
+              "Label": "Wall drawing (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "Same actual wall (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12",
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L11",
+      "CultureCode": "en",
+      "Title": "Scales without Units",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Interpret and compare unitless scales such as 1:60; convert drawing and real measurements without confusing scale direction. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/11/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "A 1:60 scale has no named units because both sides use the same length unit. Actual lengths are 60 times the drawing lengths. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to compare unitless and unit-bearing scales after converting units. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unitless scale",
+          "Definition": "A ratio a:b compares drawing and actual measurements in the same units.",
+          "Rule": "For 1:60, multiply drawing lengths by 60.",
+          "Example": "3 cm on paper represents 180 cm in reality."
+        },
+        {
+          "Title": "Reverse ratio",
+          "Definition": "Going from actual to drawing reverses the factor.",
+          "Rule": "Multiply actual measurements by 1/60.",
+          "Example": "180 cm actual corresponds to 3 cm on paper."
+        },
+        {
+          "Title": "Comparing ratios",
+          "Definition": "A 1:25 drawing is larger than a 1:100 drawing of the same item.",
+          "Rule": "Smaller denominator means larger drawing at fixed actual size.",
+          "Example": "A 100 cm edge draws 4 cm at 1:25, 1 cm at 1:100."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale in centimeters",
+          "Question": "A line measures 3 cm on a 1:60 scale drawing. Find its actual length.",
+          "Method": "Use one ratio in matching units.",
+          "Steps": [
+            "Multiply 3 cm×60=180 cm.",
+            "Convert 180 cm to 1.8 m if desired.",
+            "Check 180/3=60."
+          ],
+          "Answer": "180 cm (or 1.8 m).",
+          "Check": "The ratio is 1:60."
+        },
+        {
+          "Title": "Reverse the scale",
+          "Question": "A real edge is 240 mm long and the drawing uses 1:60. Find its drawn length.",
+          "Method": "Divide the actual measurement by 60.",
+          "Steps": [
+            "Use consistent millimeters.",
+            "Compute 240/60=4 mm.",
+            "Verify 4×60=240 mm."
+          ],
+          "Answer": "4 mm.",
+          "Check": "The reverse scale is 1/60."
+        },
+        {
+          "Title": "Compare scales",
+          "Question": "An actual 100 cm edge is shown at 1:25 and 1:100. Which drawing is longer?",
+          "Method": "Compute the lengths.",
+          "Steps": [
+            "At 1:25, draw 100/25=4 cm.",
+            "At 1:100, draw 100/100=1 cm.",
+            "Compare 4 cm and 1 cm."
+          ],
+          "Answer": "1:25 gives a drawing four times as long.",
+          "Check": "For the same actual length, the denominator and drawn size vary inversely."
+        },
+        {
+          "Title": "Explain whether two scale notations are equivalent",
+          "Question": "One park map states 1 inch to 15 feet. Another states 1:180. Are these identical scales? Make a 6-foot wall segment at either scale and label the diagram.",
+          "Method": "Convert feet to inches before writing a unitless scale; compare consistent lengths.",
+          "Steps": [
+            "15 feet = 15×12=180 inches.",
+            "The first map has 1 drawing inch to 180 actual inches, or 1:180.",
+            "For a 6-foot wall: 72 actual inches divided by 180 gives 0.4 drawing inch.",
+            "Draw and label 0.4 inch with a scale key; report the conversion and units."
+          ],
+          "Answer": "Yes; both scales are 1:180. A 6-foot wall is drawn 0.4 inch long.",
+          "Check": "Teacher verifies the ruler diagram and requires same units before comparing unitless scale factors."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying 1:60 with different measurement units",
+          "WhyWrong": "A unitless ratio assumes the units are the same on both sides.",
+          "Correction": "Convert to the same unit before multiplying or dividing."
+        },
+        {
+          "Mistake": "Reversing which side is drawing",
+          "WhyWrong": "Using 60:1 instead of 1:60 swaps shrinking with enlarging.",
+          "Correction": "Label which side belongs to the drawing and which to reality."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Unitless scale compares like units.",
+        "At 1:n, actual length=n×drawing length.",
+        "A smaller n gives a larger drawing for the same real object."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Unitless 1:60 scale",
+          "Description": "Drawing and actual lengths are both in centimeters. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Drawing (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Actual (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "60",
+                "180",
+                "240"
+              ]
+            },
+            {
+              "Label": "Actual/drawing",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "60",
+                "60",
+                "60"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L12",
+      "CultureCode": "en",
+      "Title": "Units in Scale Drawings",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Convert length units, recognize equivalent scale expressions and calculate real areas using a squared scale factor. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/12/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "Two scales can sound different yet describe exactly the same geometric relationship. First put paired lengths in consistent units; for areas square the resulting linear factor. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to convert equivalent scales across units and explain squared area conversions. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent scales",
+          "Definition": "Different unit expressions may yield the same unitless ratio.",
+          "Rule": "Convert both scale lengths to the same unit.",
+          "Example": "1 inch:2.5 feet and 5 m:150 m are both 1:30."
+        },
+        {
+          "Title": "Unit conversion",
+          "Definition": "Converting feet to inches multiplies by 12.",
+          "Rule": "1 ft=12 in and 1 m=100 cm.",
+          "Example": "2.5 ft=30 in."
+        },
+        {
+          "Title": "Area under map scale",
+          "Definition": "Real area scales by the square of the real/drawing length factor.",
+          "Rule": "At 1:30, area factor=900.",
+          "Example": "2 cm² on a plan corresponds to 1800 cm² in reality."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Simplify customary units",
+          "Question": "Express 1 inch to 2.5 feet as a unitless scale.",
+          "Method": "Convert feet into inches.",
+          "Steps": [
+            "Convert 2.5×12=30 inches.",
+            "Express drawing:actual as 1 inch:30 inches.",
+            "Cancel matching units to obtain 1:30."
+          ],
+          "Answer": "1:30.",
+          "Check": "Both sides were measured in inches."
+        },
+        {
+          "Title": "Compare a metric scale",
+          "Question": "Is 5 m:150 m equivalent to 1 in:2.5 ft?",
+          "Method": "Simplify each.",
+          "Steps": [
+            "Simplify 5:150 to 1:30.",
+            "Convert 1 in:2.5 ft to 1:30.",
+            "Compare the two ratios."
+          ],
+          "Answer": "Yes; both are 1:30.",
+          "Check": "No physical units remain in the ratios."
+        },
+        {
+          "Title": "Find a real area",
+          "Question": "An irregular polygon on a 1:30 plan has a computed drawing area of 2 cm². Find the actual area.",
+          "Method": "Square the linear ratio.",
+          "Steps": [
+            "Linear real/drawing factor=30.",
+            "Area factor=30²=900.",
+            "Real area=2×900=1800 cm²."
+          ],
+          "Answer": "1800 cm², or 0.18 m².",
+          "Check": "1800÷10000=0.18 m²."
+        },
+        {
+          "Title": "Reconcile three unit-equivalent scales and compare areas",
+          "Question": "A flag has actual dimensions 20 m by 12 m. At a unitless 1:100 scale, calculate its drawing dimensions in centimeters, then the actual and drawing areas. Explain why the areas have different unit scales.",
+          "Method": "Convert all lengths to centimeters for the unitless ratio, then square the linear reduction.",
+          "Steps": [
+            "20 m=2000 cm and 12 m=1200 cm.",
+            "Divide by 100 to get 20 cm by 12 cm in the drawing.",
+            "Actual area=240 m², or 2,400,000 cm²; drawing area=240 cm².",
+            "Both in cm², actual/drawing=2,400,000/240=10,000=100²."
+          ],
+          "Answer": "20 cm by 12 cm drawing, 240 cm² drawing area, 240 m² actual area; unitless area factor is 10,000.",
+          "Check": "A reader must not compare the bare numbers 240 m² and 240 cm² without unit conversion; label every measure."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing inches directly with feet",
+          "WhyWrong": "Raw 1:2.5 is not the same as 1 inch:2.5 feet.",
+          "Correction": "Convert both parts to matching length units first."
+        },
+        {
+          "Mistake": "Multiplying area by 30 rather than 900",
+          "WhyWrong": "Area is a two-dimensional quantity.",
+          "Correction": "Square the scale factor for area."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Convert measurement units before simplifying scale ratios.",
+        "Equivalent scales have the same unitless ratio.",
+        "Real areas use the square of the real-to-drawing length factor."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Convert inch–foot scale units",
+          "Description": "The same ratio 1 inch to 2.5 feet becomes 1 inch to 30 inches. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Drawing",
+                "Actual"
+              ]
+            },
+            {
+              "Label": "Inches",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1",
+                "30"
+              ]
+            },
+            {
+              "Label": "Feet",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1/12",
+                "2.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U01:L13",
+      "CultureCode": "en",
+      "Title": "Draw It to Scale",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Plan, measure, construct and justify a scale floor plan with checked dimensions and a human-reviewed explanation. This is independently authored Grade 7 mathematics teaching aligned to the 2017–2019 OUR/IM source lesson. Source: https://im.kendallhunt.com/MS/teachers/2/1/13/preparation.html (CC BY 4.0 source lineage; no publisher artwork reproduced).",
+        "This optional project combines classroom measurements, suitable paper choice, spatial layout and reasoned scale selection. Original floor plans and oral critique require teacher review, not a single auto-graded response. The calculations and figures in the following examples were created for Edulytiks; they do not claim to reproduce the publisher's tasks or Cool Down.",
+        "Student task alignment: This lesson requires learners to produce, present, revise and justify an authentic measured floor plan. Learner-produced figures, justification and peer discussion require teacher review; a numeric Practice score alone cannot certify that source goal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Measurement plan",
+          "Definition": "A floor plan begins with selected real distances and accurate units.",
+          "Rule": "Measure the main walls, door placements and fixed obstacles.",
+          "Example": "Record room width 6 m and length 8 m."
+        },
+        {
+          "Title": "Fit to paper",
+          "Definition": "Choose a scale that makes all features fit the page.",
+          "Rule": "Check longest drawn dimension against page size.",
+          "Example": "At 1 cm:1 m, an 8 m wall is drawn 8 cm."
+        },
+        {
+          "Title": "Teacher-reviewed justification",
+          "Definition": "A correct plan explains measurement decisions, scale, labels and spatial fidelity.",
+          "Rule": "Use a rubric for accuracy, layout, units and explanation.",
+          "Example": "Two students may choose different valid scales."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Create a rectangular room plan",
+          "Question": "A room measures 8 m by 6 m. Use scale 1 cm:1 m. What rectangle should you draw?",
+          "Method": "Convert both sides.",
+          "Steps": [
+            "Draw long side 8÷1=8 cm.",
+            "Draw short side 6÷1=6 cm.",
+            "Label the dimensions and scale on the plan."
+          ],
+          "Answer": "An 8 cm by 6 cm rectangle.",
+          "Check": "Both dimensions preserve 1 cm per real metre."
+        },
+        {
+          "Title": "Check page constraints",
+          "Question": "Your page has a 20 cm by 15 cm available space. A 10 m by 8 m room uses 1 cm:0.5 m. Will it fit?",
+          "Method": "Calculate both planned dimensions.",
+          "Steps": [
+            "Long dimension=10÷0.5=20 cm.",
+            "Short dimension=8÷0.5=16 cm.",
+            "Compare 16 cm with available 15 cm."
+          ],
+          "Answer": "No; the 16 cm side exceeds 15 cm.",
+          "Check": "Use a smaller drawing scale, such as 1 cm:1 m, to fit."
+        },
+        {
+          "Title": "Review a scale proposal",
+          "Question": "Two students draw the same 8 m wall at 1 cm:2 m and 1 cm:1 m. May both plans be valid?",
+          "Method": "Assess scale consistency rather than identical drawing size.",
+          "Steps": [
+            "First plan uses 8÷2=4 cm.",
+            "Second plan uses 8÷1=8 cm.",
+            "Check that each student's other dimensions use their chosen scale too."
+          ],
+          "Answer": "Both plans can be correct if each is consistently scaled and labeled.",
+          "Check": "Teacher reviews measurements, relative placements and an explanation of scale choice."
+        },
+        {
+          "Title": "Teacher-reviewed classroom floor plan and peer critique",
+          "Question": "Using original measurements (room 8 m long and 6 m wide, doorway 1 m, board 3 m), design a floor plan at an appropriate scale for A4 paper. Include measured openings, a legend, actual units, and a peer-revision note.",
+          "Method": "Plan, estimate, measure, choose a feasible consistent scale, construct, exchange, critique and revise; no single numeric answer certifies this project.",
+          "Steps": [
+            "Choose 1 cm:1 m to make a 8-by-6 cm room drawing that fits ordinary A4 paper.",
+            "Mark the 1 cm doorway opening and a 3 cm board in physically plausible locations.",
+            "Label actual room dimensions, openings and the scale; organize feature measurements for another reader.",
+            "Exchange plans, identify at least one placement, completeness or scale issue, and revise before submitting the final diagram."
+          ],
+          "Answer": "A student-created, feasible, fully labeled scale drawing and a revision explanation; multiple correct designs exist.",
+          "Check": "Teacher-only rubric: measured geometry, scale, consistent units, correct features, clarity, partner feedback and revision."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating the classroom task as an exact-number quiz",
+          "WhyWrong": "An authentic plan requires drawing, measurement, communication and critique.",
+          "Correction": "Teacher reviews a drawing against a rubric, including accuracy and clarity."
+        },
+        {
+          "Mistake": "Changing the scale between objects",
+          "WhyWrong": "This produces inconsistent placement and relative dimensions.",
+          "Correction": "Apply the chosen scale to every room feature and label it."
+        },
+        {
+          "Mistake": "Treating a correctly computed numerical value as proof the complete drawing, construction, explanation or measured source task is satisfactory.",
+          "WhyWrong": "The original activity includes creating or interpreting mathematical representations and defending the work to another person.",
+          "Correction": "Check every corresponding quantity, an accurate student sketch/measurement and written or oral justification with a teacher rubric; treat auto-marked arithmetic only as supporting practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Measure and sketch real dimensions before drawing.",
+        "Choose one scale that fits the paper and use it consistently.",
+        "Have a teacher review the drawing, measurement decisions and explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Draw it to scale",
+          "Description": "At 1 cm:1 m, a measured 8-by-6 m room becomes an 8-by-6 cm rectangle. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Dimension",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Length",
+                "Width"
+              ]
+            },
+            {
+              "Label": "Actual (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "6"
+              ]
+            },
+            {
+              "Label": "Drawing (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "6"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

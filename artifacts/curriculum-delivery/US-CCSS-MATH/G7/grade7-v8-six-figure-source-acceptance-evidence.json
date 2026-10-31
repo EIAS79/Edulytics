@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "scope": "Grade 7 unit 1 lessons 1–6 only; no global engine or renderer modification",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "pr": "https://github.com/EIAS79/Edulytics/pull/590",
+  "supervisorIntegrationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "parentCheckpoint": "4fc26846a6914251edb54afcdbe6b3d8f9fa318a",
+  "ciIssueObserved": {
+    "sha": "4fc26846a6914251edb54afcdbe6b3d8f9fa318a",
+    "success": 20,
+    "failed": 4,
+    "commonFailure": "Two rows of USCCSSG7ScaleConstructionVisualTests.Grade7Diagram_IsOriginalAccessibleSvg_WithAnAuthoredLessonAndOptInComponent required literal scale in SVG desc",
+    "affectedLessonCodes": [
+      "PED:US-CCSS-MATH:G7:U01:L01",
+      "PED:US-CCSS-MATH:G7:U01:L03"
+    ]
+  },
+  "ciRepair": {
+    "commits": [
+      "f991ebf5a04eedcd69299fb19671d4ecbc29469a",
+      "90bb5e7e2b5dc2641196e1257010efdb707e1d0c"
+    ],
+    "scope": "Only original SVG <desc> strings changed; geometry and tests retained",
+    "staticSourceCheck": "YES_BOTH_DESCRIPTIONS_NOW_INCLUDE_MATHEMATICALLY_ACCURATE_SCALE_FACTOR",
+    "actualNewSHAxUnit": "CI_RUNNING_NOT_FINAL",
+    "dotnetLocal": "NOT_AVAILABLE"
+  },
+  "geometry": {
+    "publicPrefix": "/curriculum/us-ccss-g7/geometry/",
+    "optionalPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "sourceOfTruth": "Original Grade 7 SVG figures; not copied or excerpted from official publisher",
+    "assets": [
+      {
+        "n": 1,
+        "name": "u01-l01-scaled-vs-stretched.svg",
+        "truth": "Uniform factor 2 versus horizontal-only distortion: 4-by-5 F to 8-by-10 F versus 8-by-5 stretched F",
+        "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+        "repoPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+        "publicPath": "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+        "originalStudentConstruction": "REQUIRES_STUDENT_PRODUCED_ARTIFACT_AND_EXPLANATION",
+        "accessibleDescription": "AUTHORED_NOT_SCREEN_READER_TESTED",
+        "sourceTaskComparison": "STUDENT_PAGE_INSPECTED_ACADEMIC_PARITY_NOT_ACCEPTED",
+        "richV2EffectiveRender": "NOT_VERIFIED",
+        "authStudentTeacherViews": "NOT_RUN"
+      },
+      {
+        "n": 2,
+        "name": "u01-l02-corresponding-triangles.svg",
+        "truth": "ABC to DEF 3/2 linear factor with right angle unchanged",
+        "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+        "repoPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+        "publicPath": "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+        "originalStudentConstruction": "REQUIRES_STUDENT_PRODUCED_ARTIFACT_AND_EXPLANATION",
+        "accessibleDescription": "AUTHORED_NOT_SCREEN_READER_TESTED",
+        "sourceTaskComparison": "STUDENT_PAGE_INSPECTED_ACADEMIC_PARITY_NOT_ACCEPTED",
+        "richV2EffectiveRender": "NOT_VERIFIED",
+        "authStudentTeacherViews": "NOT_RUN"
+      },
+      {
+        "n": 3,
+        "name": "u01-l03-scaled-l-construction.svg",
+        "truth": "Six-vertex L: k=1/2 and k=3; one shared drawing unit; polygon panels not clipped",
+        "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+        "repoPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+        "publicPath": "/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+        "originalStudentConstruction": "REQUIRES_STUDENT_PRODUCED_ARTIFACT_AND_EXPLANATION",
+        "accessibleDescription": "AUTHORED_NOT_SCREEN_READER_TESTED",
+        "sourceTaskComparison": "STUDENT_PAGE_INSPECTED_ACADEMIC_PARITY_NOT_ACCEPTED",
+        "richV2EffectiveRender": "NOT_VERIFIED",
+        "authStudentTeacherViews": "NOT_RUN"
+      },
+      {
+        "n": 4,
+        "name": "u01-l04-hidden-distances-and-angles.svg",
+        "truth": "Rectangle width/height 4,3 to 8,6; diagonal 5 to 10, 90 degree corresponding angles",
+        "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
+        "repoPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+        "publicPath": "/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+        "originalStudentConstruction": "REQUIRES_STUDENT_PRODUCED_ARTIFACT_AND_EXPLANATION",
+        "accessibleDescription": "AUTHORED_NOT_SCREEN_READER_TESTED",
+        "sourceTaskComparison": "STUDENT_PAGE_INSPECTED_ACADEMIC_PARITY_NOT_ACCEPTED",
+        "richV2EffectiveRender": "NOT_VERIFIED",
+        "authStudentTeacherViews": "NOT_RUN"
+      },
+      {
+        "n": 5,
+        "name": "u01-l05-size-and-inverse-scale.svg",
+        "truth": "4x2 reduced, 8x4 original, 12x6 enlarged; reciprocal recovery factors 2 and 2/3",
+        "lessonCode": "PED:US-CCSS-MATH:G7:U01:L05",
+        "repoPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+        "publicPath": "/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+        "originalStudentConstruction": "REQUIRES_STUDENT_PRODUCED_ARTIFACT_AND_EXPLANATION",
+        "accessibleDescription": "AUTHORED_NOT_SCREEN_READER_TESTED",
+        "sourceTaskComparison": "STUDENT_PAGE_INSPECTED_ACADEMIC_PARITY_NOT_ACCEPTED",
+        "richV2EffectiveRender": "NOT_VERIFIED",
+        "authStudentTeacherViews": "NOT_RUN"
+      },
+      {
+        "n": 6,
+        "name": "u01-l06-tiling-and-area-factors.svg",
+        "truth": "3x1 to 6x2 to 9x3 equal-size tiles, areas 3,12,27 and area factors 1,4,9",
+        "lessonCode": "PED:US-CCSS-MATH:G7:U01:L06",
+        "repoPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+        "publicPath": "/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+        "originalStudentConstruction": "REQUIRES_STUDENT_PRODUCED_ARTIFACT_AND_EXPLANATION",
+        "accessibleDescription": "AUTHORED_NOT_SCREEN_READER_TESTED",
+        "sourceTaskComparison": "STUDENT_PAGE_INSPECTED_ACADEMIC_PARITY_NOT_ACCEPTED",
+        "richV2EffectiveRender": "NOT_VERIFIED",
+        "authStudentTeacherViews": "NOT_RUN"
+      }
+    ],
+    "teacherRubricDrafts": 7,
+    "teacherRubricFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json"
+  },
+  "tests": {
+    "source": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "runnerCommand": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --filter FullyQualifiedName~USCCSSG7ScaleConstructionVisualTests",
+    "execution": "CI_WORKFLOW_PENDING_AT_EVIDENCE_CREATION",
+    "covered": "6 lessons; first-party SVG title desc source codes and geometry, corresponding distances, factors, area tile counts, student/teacher draft rubric status",
+    "notCovered": "authenticated browser render, actual student image request 200, screen reader/keyboard/zoom, student submission, teacher scoring or persistence, school isolation, actual selected Practice generator/verifier/feedback",
+    "note": "Passing a source asset/unit test is not passing academic Stage A, rendered Stage B, Practice Stage C, or integrated Stage D"
+  },
+  "status": {
+    "authoringRichCandidates": 145,
+    "workedExamples": 584,
+    "richV2Visuals": 151,
+    "publicSourceStudentTasksCompared": 145,
+    "gradeOnlyOriginalSvgAssets": 6,
+    "teacherRubricDrafts": 7,
+    "academicAccepted": 0,
+    "effectiveRichV2Authenticated": 0,
+    "exactPracticeSelectedVerified": 0,
+    "stageDVerified": 0,
+    "ownerUAT": "NOT_RUN",
+    "release": "RELEASE_BLOCKED",
+    "prDraft": true
+  },
+  "dependency": {
+    "singleWriter": "Supervisor 1 issue #592",
+    "blockedWork": [
+      "Guarded shared _RichLessonContentV2.cshtml insertion for G7 U01 L01–L06",
+      "Runtime-selected exact U01 scaled-copy and U06 nonproportional Practice grading, wrong/malformed/equivalent answers and feedback",
+      "Teacher-rubric assignment, student artifact upload, persistence and tenant isolation",
+      "Authenticated student/teacher Rich V2 visual image 200 and accessibility verification",
+      "Production-safe academic A/B/C/D and owner UAT"
+    ],
+    "nextGradeOnly": "U01 L07–L09 scale drawing tasks: author original mathematically accurate maps/floorplans and teacher-only evaluation fixtures without changing shared renderer or grading engines"
+  }
+}

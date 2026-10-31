@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L09",
+  "sourceEdition": "2017–2019 CC BY 4.0",
+  "release": "RELEASE_BLOCKED",
+  "status": "SOURCE_ALIGNED_RICH_REPAIR_ORIGINAL_SVG_AND_HUMAN_RUBRIC_CANDIDATES_ONLY",
+  "sources": {
+    "student": "https://im.kendallhunt.com/MS/students/2/7/9/index.html",
+    "teacher": "https://im.kendallhunt.com/MS/teachers/2/7/9/preparation.html",
+    "standardsAddressing": [
+      "7.G.A.2"
+    ],
+    "rights": "OUR/Illustrative Mathematics 2017-2019 CC BY 4.0 attribution. Independent Edulytiks geometry; no source images copied.",
+    "inspect": "Public student task statements and alt descriptions, and public teacher preparation goals read; teacher guide/Cool Down and native interactive applet behavior not inspected."
+  },
+  "sourceActivityComparison": [
+    {
+      "activity": "9.1 Which One Doesn't Belong: Triangles",
+      "original": "Distinguish four triangle figures A-D with different side and angle labels, including A two 60° angles/3-unit sides, B 130° and 20° with side 7, C two 9-unit sides and 55°, D 90°.",
+      "repair": "Existing Rich V2 omitted this exact visual comparison; independent SVG is an analogue for classification, not a reconstruction of A-D. Source-task parity remains open."
+    },
+    {
+      "activity": "9.2 Does Your Triangle Match Theirs?",
+      "original": "Drag vertices, record other angle/side measures; compare Jada single 75° angle, Andre 75° and 45°, Lin two angles and one 5-cm side.",
+      "repair": "Updated four Rich V2 examples to require measurement, multiple-size counterexamples for first two cases, and the need for known corresponding 5-cm side position; interactive draggable vertices remain a shared unresolved integration."
+    },
+    {
+      "activity": "9.3 How Many Can You Draw?",
+      "original": "Explore 60°/60° and side 4 cm (one shape); 90°/90° and side 4 cm (none); 60°/90° and side 4 cm (several if which side is unspecified), with learner-drawn evidence.",
+      "repair": "New original SVG contains three panels with exactly measured math, and Rich V2 teacher-reviewed construction prompt distinguishes zero, one and multiple.",
+      "parity": "ORIGINAL_MATH_TASK_ANALOGUE_NOT_STUDENT_CONSTRUCTION_VERIFIED"
+    },
+    {
+      "activity": "Optional toothpick extension",
+      "original": "Rearrange three toothpicks so that an arrangement originally containing three equilateral triangles contains five.",
+      "repair": "Not implemented in V13; this optional source activity is still a gap."
+    }
+  ],
+  "firstPartySvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l09-zero-one-multiple-triangle-constructions.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l09-zero-one-multiple-triangle-constructions.svg",
+  "richPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u07-l02-l17-our-2017.rich-lesson-v2.json",
+  "mathModel": {
+    "one": {
+      "givenAnglesDeg": [
+        60,
+        60
+      ],
+      "oneSideCm": 4,
+      "scalePxPerCm": 30,
+      "triangle": [
+        [
+          67,
+          305
+        ],
+        [
+          187,
+          305
+        ],
+        [
+          127,
+          201.077
+        ]
+      ],
+      "countNoncongruent": 1,
+      "congruentReason": "All sides 4 cm; rotation or reflection does not create a new triangle."
+    },
+    "none": {
+      "givenAnglesDeg": [
+        90,
+        90
+      ],
+      "oneSideCm": 4,
+      "base": [
+        [
+          420,
+          306
+        ],
+        [
+          540,
+          306
+        ]
+      ],
+      "verticalRayOrigins": [
+        [
+          420,
+          306
+        ],
+        [
+          540,
+          306
+        ]
+      ],
+      "countNoncongruent": 0,
+      "why": "Perpendicular rays through distinct endpoints of a common base are parallel and cannot intersect to form a third triangle vertex."
+    },
+    "multiple": {
+      "givenAnglesDeg": [
+        60,
+        90
+      ],
+      "oneSideCm": 4,
+      "triangleAB": [
+        [
+          715,
+          314
+        ],
+        [
+          787,
+          314
+        ],
+        [
+          787,
+          189.2923
+        ]
+      ],
+      "triangleBC": [
+        [
+          916,
+          314
+        ],
+        [
+          957.5692,
+          314
+        ],
+        [
+          957.5692,
+          242
+        ]
+      ],
+      "pxPerCm": 18,
+      "firstFourCmSide": "AB",
+      "secondFourCmSide": "BC",
+      "countNoncongruent": "MORE_THAN_ONE",
+      "why": "Same two angles, but the 4 cm side occupies a different corresponding position."
+    }
+  },
+  "learnerTask": "Use ruler and protractor, or independently implemented angle controls, to draw triangles using each source condition. Record original point/ray measurements and label which side is 4 cm. Show two noncongruent triangles for the unspecified 60°/90°/4 cm case; explain why two right-angle rays cannot form a triangle, and demonstrate congruence of equilateral 4 cm constructions. Draw more than one triangle for single 75° or 75°/45° alone and compare sizes. Submit drawings and explanation for teacher review.",
+  "teacherOnlyRubric": {
+    "maxScore": 12,
+    "submittedStudentArtifacts": false,
+    "scoredByTeacher": false,
+    "criteria": [
+      {
+        "id": "l09-a",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Construct and accurately label triangle/ray diagrams for 60/60/4, 90/90/4 and 60/90/4 cases using proper measurement and units."
+      },
+      {
+        "id": "l09-b",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Distinguish one equilateral congruence class, impossible two-right-angle condition and multiple noncongruent right-triangle sizes; justify with drawings."
+      },
+      {
+        "id": "l09-c",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Show that 75° and 75°/45° angle-only conditions allow scaled copies, but fixing a corresponding 5-cm side removes scale freedom."
+      },
+      {
+        "id": "l09-d",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Document student-made measurements, label corresponding side placement and explain reasoning in writing/orally; reject malformed or unmeasured sketches."
+      }
+    ],
+    "mode": "HUMAN_TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED"
+  },
+  "validationCases": [
+    {
+      "kind": "correct",
+      "reply": "A one, B none, C multiple, with constructed sides AB=4 versus BC=4",
+      "expected": "Math valid; cannot approve assessment until teacher checks original drawings."
+    },
+    {
+      "kind": "wrong",
+      "reply": "Two 90° angles plus 4 cm makes one rectangle-half triangle",
+      "expected": "Reject because both interior right-angle rays cannot meet in a third vertex."
+    },
+    {
+      "kind": "wrong",
+      "reply": "60°, 90° and any 4 cm side force the same-sized triangle",
+      "expected": "Reject; side position unspecified gives noncongruent variants."
+    },
+    {
+      "kind": "ambiguous",
+      "reply": "Lin's triangle has angles 75° and 45° and one 5 cm side; it must match without stating which side is 5",
+      "expected": "Require which corresponding side measures 5 cm before unique congruence claim."
+    },
+    {
+      "kind": "degenerate",
+      "reply": "Use three collinear vertices for a triangle",
+      "expected": "Reject degenerate zero-area construction."
+    },
+    {
+      "kind": "incomplete",
+      "reply": "Only writes zero/one/multiple",
+      "expected": "Needs original measured drawings and reasoning for teacher rubric."
+    },
+    {
+      "kind": "malformed",
+      "reply": "Side 4 is visually claimed but has no label or scale",
+      "expected": "Request correctly measured construction and label."
+    }
+  ],
+  "testFile": "tests/academic-us-ccss-g7-v13-u07-l09-triangle-constructions.test.cjs",
+  "testExecution": "NOT_RUN_AT_CREATION",
+  "fullRepoTests": "NOT_RUN",
+  "dotnet": "NOT_RUN",
+  "integration": {
+    "supervisorIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "supervisorRendererPr": "https://github.com/EIAS79/Edulytics/pull/599",
+    "sourceOwnedOnly": true,
+    "exactSelectedPractice": "NOT_EXECUTED",
+    "realStudentDrawingSubmission": "NOT_IMPLEMENTED",
+    "teacherScoreStorage": "NOT_RUN",
+    "authenticatedRichRendering": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN"
+  },
+  "academic": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "humanApproval": "NOT_EVIDENCED",
+    "ownerUAT": "NOT_RUN"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+  "assessmentType": "EDULYTIKS_ORIGINAL_NOT_PUBLISHER_COOLDOWN",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "question": "Draw a right triangle ABC with vertices A=(0,0), B=(3,0), C=(0,4). Its perpendicular legs are 3 and 4 units and hypotenuse is 5 units. Candidate A has corresponding side lengths 6,8,10. Candidate B has corresponding lengths 6,8,9. Which candidate is uniformly scaled? Justify using all three corresponding ratios, then draw a half-sized copy preserving every corresponding angle.",
+  "expected": "Candidate A is scaled by 2: 6/3=8/4=10/5=2. Candidate B is not: 6/3=8/4=2, but 9/5=1.8. A half-size copy can use A'=(0,0), B'=(1.5,0), C'=(0,2) with hypotenuse 2.5; its angles are equal to those of ABC.",
+  "responseType": "TEACHER_REVIEWED_DRAWING_AND_EXPLANATION",
+  "feedback": {
+    "correct": "All corresponding lengths share one factor and the constructed shape retains its angles.",
+    "wrong": "A single matching ratio does not certify a scaled copy.",
+    "incomplete": "A numeric factor alone does not replace the required sketch and explanation."
+  },
+  "practice": "REUSE_EXISTING_ISOLATED_GEOMETRY_HELPER_PR_608_WITH_AUTHORIZED_EXACT_PRACTICE_ROUTE_ISSUE_605",
+  "assessmentBoundaries": {
+    "sourceScope": "U01:L01 only; no publisher Cool-down artwork or protected question reproduction",
+    "automaticFormativeOnly": [
+      "The seven first-party F measurement candidates A-G: compare three stated lengths with one common scale factor, and the explicitly stated shear/angle condition",
+      "The ten first-party polygon-card choices: identify intended reference matches and display each corresponding side-length ratio",
+      "The 3-4-5 Cool-down candidate A/B classification: show all three side ratios and the nonuniform counterexample"
+    ],
+    "humanTeacherScored": [
+      "Student-drawn full F and polygon constructions and corresponding vertex labels",
+      "Corresponding angle evidence, valid rotations versus shear, and all side correspondences in the student's own drawing",
+      "Student written/spoken justification, discussion, and half-scale triangle construction",
+      "Teacher award of four independent three-point rubric criteria; no implicit score inferred from a matching card or button click"
+    ],
+    "isolatedMathHelper": {
+      "pullRequest": 608,
+      "commit": "c2c5049125f8abff2b58622ef2a10cb5fadc70eb",
+      "path": "src/Edulytics.Core/Mathematics/Practice/UsCcssG7Unit1Lesson1ScaledCopyMath.cs",
+      "status": "GEOMETRY_ORACLE_REUSED_IN_SELECTED_COURSE_PRACTICE_AT_8c0403d1",
+      "instruction": "Do not duplicate helper or present it as registered/selected Practice"
+    },
+    "practiceRouting": "INTEGRATED_EXACT_L01_SELECTED_FAMILY_ON_G7_COURSE_BRANCH",
+    "renderIntegration": "COURSE_RICH_V2_RENDER_HOOK_PRESENT_SOURCE_ONLY",
+    "studentSubmissionAndPersistence": "NOT_IMPLEMENTED",
+    "teacherRubricScorePersistence": "NOT_IMPLEMENTED",
+    "currentEvaluationType": "EXACT_SELECTED_NUMERIC_PRIVATE_PRACTICE_PLUS_UNSAVED_LOCAL_FEEDBACK_AND_EXTERNAL_TEACHER_REVIEW",
+    "fixtureStatus": "AUTHORED_NOT_RUN"
+  },
+  "status": "GRADE_OWNED_STUDENT_ACTIVITY_AUTHORED_NOT_AUTHENTICATED_OR_PERSISTED",
+  "sourceTriangle": {
+    "vertices": {
+      "A": [
+        0,
+        0
+      ],
+      "B": [
+        3,
+        0
+      ],
+      "C": [
+        0,
+        4
+      ]
+    },
+    "legs": [
+      3,
+      4
+    ],
+    "hypotenuse": 5,
+    "scaledCandidateA": [
+      6,
+      8,
+      10
+    ],
+    "nonuniformCandidateB": [
+      6,
+      8,
+      9
+    ],
+    "halfScaleVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        1.5,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "scoringRubric": [
+    {
+      "criterion": "Distinguish candidate A from B using all three corresponding side ratios",
+      "points": 3
+    },
+    {
+      "criterion": "Construct the half-scale right triangle with labeled corresponding vertices and accurate units",
+      "points": 3
+    },
+    {
+      "criterion": "Preserve the 90-degree right angle and corresponding acute angles",
+      "points": 3
+    },
+    {
+      "criterion": "Explain orally or in writing why one multiplier applies to all lengths",
+      "points": 3
+    }
+  ],
+  "maxScore": 12,
+  "productViewPath": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "productScriptPath": "/curriculum/us-ccss-g7/geometry/u01-l01-activities.js",
+  "deliveryStatus": "INVOKED_ON_G7_BRANCH_AUTHORING_NOT_RUNTIME_VERIFIED",
+  "gradingStatus": "FORMATIVE_CLASSIFICATION_ONLY_TEACHER_REVIEW_REQUIRED",
+  "testExecutionStatus": "TEST_AUTHORED_NOT_RUN"
+}

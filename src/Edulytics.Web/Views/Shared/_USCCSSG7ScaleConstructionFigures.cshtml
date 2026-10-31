@@ -1,0 +1,702 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+@{
+    // Grade 7-specific opt-in visual. This partial deliberately has no
+    // global renderer registration or scoring side effects. Supervisor 1
+    // owns the shared Rich V2 invocation and authenticated proof.
+    var assetPath = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U01:L01" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+        "PED:US-CCSS-MATH:G7:U01:L02" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+        "PED:US-CCSS-MATH:G7:U01:L03" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+        "PED:US-CCSS-MATH:G7:U01:L04" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+        "PED:US-CCSS-MATH:G7:U01:L05" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+        "PED:US-CCSS-MATH:G7:U01:L06" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+        "PED:US-CCSS-MATH:G7:U01:L07" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+        "PED:US-CCSS-MATH:G7:U01:L08" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+        "PED:US-CCSS-MATH:G7:U01:L09" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+        "PED:US-CCSS-MATH:G7:U01:L10" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l10-changing-plan-scales.svg",
+        "PED:US-CCSS-MATH:G7:U01:L11" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l11-unitless-scale-conversion.svg",
+        "PED:US-CCSS-MATH:G7:U01:L12" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l12-unit-conversion-area-flag.svg",
+        "PED:US-CCSS-MATH:G7:U01:L13" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l13-classroom-floor-plan-peer-review.svg",
+        _ => null
+    };
+
+    var altText = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U01:L01" =>
+            "Original block letter F with width 4 and height 5, a correct copy twice as wide and twice as tall, and a counterexample twice as wide but unchanged in height. All use the same drawing unit.",
+        "PED:US-CCSS-MATH:G7:U01:L02" =>
+            "Two right triangles at equal page units: ABC has legs 4 and 3, and corresponding DEF has legs 6 and 4.5. Vertex pairs A to D, B to E and C to F show scale factor 1.5; the right angles remain 90 degrees.",
+        "PED:US-CCSS-MATH:G7:U01:L03" =>
+            "Three six-vertex L polygons at one common drawing unit: original width 6 height 5; smaller width 3 height 2.5 under scale factor one-half; larger width 18 height 15 under factor 3.",
+        "PED:US-CCSS-MATH:G7:U01:L04" =>
+            "Two rectangles at the same drawing units. The original measures 4 by 3 with an unmarked diagonal of 5; the factor-two copy measures 8 by 6 with a corresponding diagonal of 10. All corresponding right angles stay 90 degrees.",
+        "PED:US-CCSS-MATH:G7:U01:L05" =>
+            "At the same 14-pixel-per-unit drawing scale: reduced rectangle 4 by 2 with factor one-half, original rectangle 8 by 4 with factor one, and enlarged rectangle 12 by 6 with factor three-halves. Reciprocal factors reconstruct the original.",
+        "PED:US-CCSS-MATH:G7:U01:L06" =>
+            "Equal unit-square tiles cover an original 3 by 1 rectangle, a factor-two 6 by 2 rectangle and a factor-three 9 by 3 rectangle. Tiled areas count 3, 12 and 27 square units, so areas scale by the square of the length scale factor.",
+        "PED:US-CCSS-MATH:G7:U01:L07" =>
+            "A court at scale 1 drawing centimeter to 2 real meters: 14 by 7 drawing centimeters represents 28 by 14 meters. A 9-meter bench is a separately labeled 4.5-centimeter drawing segment. All drawing lengths use one consistent unit.",
+        "PED:US-CCSS-MATH:G7:U01:L08" =>
+            "Map at scale 1 centimeter to 4 kilometers. A three-segment road route measuring 2 centimeters per segment is 6 centimeters and 24 kilometers; a 5-centimeter straight line between its endpoints is 20 kilometers. The route is longer by 4 kilometers.",
+        "PED:US-CCSS-MATH:G7:U01:L09" =>
+            "A 7 by 5 meter studio floor plan drawn 7 by 5 centimeters at scale 1 centimeter to 1 meter. A measured 1.5-centimeter gap in the lower wall represents a 1.5-meter doorway, with an explicit scale key.",
+        "PED:US-CCSS-MATH:G7:U01:L10" =>
+            "Two scale drawings of one 300-by-180-meter garden using equal pixels per drawing centimeter: original 10-by-6-centimeter plan at one centimeter to 30 meters, and 15-by-9-centimeter plan at one centimeter to 20 meters. The drawing area ratio is 2.25.",
+        "PED:US-CCSS-MATH:G7:U01:L11" =>
+            "A unitless scale 1 to 180 matches one drawing inch to 15 actual feet. A 6-foot wall equals 72 inches and is drawn as a 0.4-inch segment. Both line segments use the same image pixel scale; the actual wall itself is not drawn at paper size.",
+        "PED:US-CCSS-MATH:G7:U01:L12" =>
+            "Original flag-like 20-meter by 12-meter rectangle with unitless 1 to 100 scale. The drawing is 20 by 12 centimeters and has area 240 square centimeters, while actual area is 240 square meters. Convert to common square-centimeter units before comparing the area factor 10000.",
+        "PED:US-CCSS-MATH:G7:U01:L13" =>
+            "An 8-by-6-meter classroom at one drawing centimeter to one meter, with an actual 1-meter doorway shown by a 1-centimeter wall opening and a 3-meter board shown by a 3-centimeter upper-wall segment. This is an example, not a completed learner floor plan.",
+        _ => ""
+    };
+
+    var constructionPrompt = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U01:L01" =>
+            "Construct your own original and correctly scaled F. Explain why the horizontally stretched F is not a scaled copy using one horizontal and one vertical corresponding length.",
+        "PED:US-CCSS-MATH:G7:U01:L02" =>
+            "Draw and label both triangles. Identify matching vertices, sides and angles, and justify the factor 3/2 using two corresponding lengths. Check the unchanged right angles.",
+        "PED:US-CCSS-MATH:G7:U01:L03" =>
+            "Create both L copies on graph paper. Check the vertex order and every length multiplier; explain why adding the same number to each side is not scaling.",
+        "PED:US-CCSS-MATH:G7:U01:L04" =>
+            "Draw each rectangle on a common grid, measure diagonal lengths between previously unconnected vertices and compare the corresponding right angles. Explain scale factor two using measured distances.",
+        "PED:US-CCSS-MATH:G7:U01:L05" =>
+            "Construct reduction, original and enlargement at the same grid units. Explain why factors below one reduce, above one enlarge, and reciprocals restore the original figure.",
+        "PED:US-CCSS-MATH:G7:U01:L06" =>
+            "Draw original and factor-two and factor-three copies using identical one-unit tiles. Count all tiles to justify why the area ratios are 1:4:9 rather than 1:2:3.",
+        "PED:US-CCSS-MATH:G7:U01:L07" =>
+            "Using a ruler and the court scale key, recreate the court and 9-meter bench as an original labeled drawing. Explain which real measurements correspond to each drawn segment.",
+        "PED:US-CCSS-MATH:G7:U01:L08" =>
+            "Draw an original map, trace all consecutive road segments, measure direct endpoint separation and convert both using the same map scale. Explain the difference between route and direct distance.",
+        "PED:US-CCSS-MATH:G7:U01:L09" =>
+            "Draw a fresh studio floor plan including a real 1.5-meter door opening, scale key and fully labeled walls. Exchange the plan with a peer and revise any measurement or placement errors.",
+        "PED:US-CCSS-MATH:G7:U01:L10" =>
+            "Create two original measured garden plans using the two stated scales. Explain why the two drawn areas differ by factor 2.25 while the real land remains the same.",
+        "PED:US-CCSS-MATH:G7:U01:L11" =>
+            "Convert 15 feet into 180 inches and explain the unitless ratio 1:180. Draw a 0.4-inch representation of a six-foot wall and show a ruler check.",
+        "PED:US-CCSS-MATH:G7:U01:L12" =>
+            "Draw an original 1:100 rectangular flag or pool plan. Label drawing and actual areas in consistent units and justify why the area factor is 10000.",
+        "PED:US-CCSS-MATH:G7:U01:L13" =>
+            "Independently measure or model your classroom, construct a complete scale drawing with doorway, board, scale key and units, then record peer corrections and revise.",
+        _ => ""
+    };
+}
+@if (assetPath is not null)
+{
+    <section class="rich-lesson-section rich-lesson-section--g7-original-geometry"
+             aria-label="Grade 7 scaled-figure construction reference">
+        <h3>Construct and justify: original geometry model</h3>
+        <figure>
+            <img src="@assetPath"
+                 asp-append-version="true"
+                 alt="@altText"
+                 loading="lazy"
+                 decoding="async"
+                 width="925"
+                 style="display:block;max-width:100%;height:auto" />
+            <figcaption>
+                Original Edulytiks mathematical figure, not publisher artwork.
+                Reference geometry only: the student must still produce and
+                explain an independent scaled construction.
+            </figcaption>
+        </figure>
+        <p><strong>Your task:</strong> @constructionPrompt</p>
+        <p>
+            <strong>Assessment boundary:</strong> An answer such as a scale
+            factor alone cannot complete this task. A teacher must inspect
+            the drawing, corresponding geometry and the student's reasoning.
+            This reference figure does not submit, score or save student work.
+        </p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L01")
+{
+    @* Grade-owned first-party activity; only appears when the shared owner invokes
+       this opt-in partial. Student work has no persistence or automatic grade. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-scaled-copy-activities"
+             data-g7-u01-l01 aria-label="Grade 7 lesson 1 scaled copies">
+        <h3>Explore scaled copies — Edulytiks original activity</h3>
+        <p>Inspect an original frame. Move the slider to change the two copies.
+           In a scaled copy, every corresponding horizontal and vertical length
+           changes by the same positive factor. A horizontal-only stretch
+           generally is not a scaled copy.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;min-height:9rem">
+            <figure style="min-width:9rem">
+                <svg viewBox="0 0 110 90" width="150" role="img"
+                     aria-label="Original 4-unit-wide by 3-unit-high frame with diagonal">
+                    <rect x="10" y="12" width="80" height="60" fill="#dcecf3" stroke="#152d40" stroke-width="2" />
+                    <path d="M10 72L90 12" stroke="#152d40" stroke-width="2" />
+                </svg>
+                <figcaption>Original: 4 by 3 units</figcaption>
+            </figure>
+            <figure style="min-width:9rem">
+                <svg data-g7-uniform viewBox="0 0 110 90" width="150" role="img"
+                     aria-label="Uniformly scaled frame">
+                    <rect x="10" y="12" width="80" height="60" fill="#dcecf3" stroke="#152d40" stroke-width="2" />
+                    <path d="M10 72L90 12" stroke="#152d40" stroke-width="2" />
+                </svg>
+                <figcaption>Uniform width and height</figcaption>
+            </figure>
+            <figure style="min-width:9rem">
+                <svg data-g7-distorted viewBox="0 0 110 90" width="150" role="img"
+                     aria-label="Nonuniform horizontally stretched frame">
+                    <rect x="10" y="12" width="80" height="60" fill="#e5e5e5" stroke="#661a1a" stroke-width="2" />
+                    <path d="M10 72L90 12" stroke="#661a1a" stroke-width="2" />
+                </svg>
+                <figcaption>Horizontal width only</figcaption>
+            </figure>
+        </div>
+        <label for="g7-u01-l01-scale">Explore the scale factor</label>
+        <input id="g7-u01-l01-scale" data-g7-portrait-scale
+               type="range" min="50" max="150" step="25" value="125" />
+        <p data-g7-portrait-result role="status">Use the slider to compare ratios.</p>
+        <h4>Check the seven F candidates</h4>
+        <p>Use the seven-candidate F measurement table from this lesson.
+           Compare the original spine (4 units), top bar (2 units), and
+           short bar (1 unit) with all three candidate measurements.
+           An entire rotated copy can still be scaled; a sheared F with
+           changed corresponding angles cannot. Dimensions alone do not
+           prove angle preservation.</p>
+        <label for="g7-u01-l01-f-choice">Candidate in the F table</label>
+        <select id="g7-u01-l01-f-choice" data-g7-f-choice>
+            <option value="">Choose A through G</option>
+            <option value="A">A</option><option value="B">B</option>
+            <option value="C">C</option><option value="D">D</option>
+            <option value="E">E</option><option value="F">F</option>
+            <option value="G">G</option>
+        </select>
+        <button type="button" class="school-button" data-g7-f-check>
+            Compare length ratios and angle condition
+        </button>
+        <p data-g7-f-feedback role="status" aria-live="polite">
+            The self-check concerns listed measurements only; construct and
+            justify the entire shape for teacher assessment.
+        </p>
+        <h3>Match ten first-party polygon cards</h3>
+        <p>Each pair has the same shape with all corresponding lengths multiplied by
+           one constant. Choose two cards, write the corresponding side-length
+           evidence, and check your choice. Draw one matched pair on graph paper;
+           show matching vertices and lengths. Explain the drawing to a partner or teacher.</p>
+        <div data-g7-cards style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem"
+             role="group" aria-label="Select two of ten original polygons"></div>
+        <label for="g7-u01-l01-reason">Explain your polygon match</label>
+        <textarea id="g7-u01-l01-reason" data-g7-explanation rows="3"
+                  style="width:100%;max-width:45rem"
+                  placeholder="Compare matching lengths, factors and angles"></textarea>
+        <p><button type="button" class="school-button" data-g7-check>Check pair</button>
+           <button type="button" class="school-button" data-g7-reset>Clear selections</button></p>
+        <p data-g7-feedback aria-live="polite">Your explanation and choices are not submitted or saved.</p>
+        <details>
+            <summary>What the teacher needs to review for this construction</summary>
+            <ul>
+                <li>Your complete graph-paper polygon or F outline with corresponding vertices labeled.</li>
+                <li>Corresponding side-length measurements, one common scale factor, and equal angles.</li>
+                <li>A written or spoken explanation, including why an unequal stretch or shear fails.</li>
+            </ul>
+            <p>The reference-card pair and listed numeric ratios can receive local self-check feedback.
+               These checks cannot evaluate your drawing or reasoning. Show the work to your
+               teacher; no submission, teacher score, or saved grade is provided by this activity.</p>
+        </details>
+        <h3>Cool-down — original Edulytiks assessment, not publisher Cool-down</h3>
+        <p>Draw a right triangle with perpendicular legs of 3 and 4 units and
+           hypotenuse 5 units. Candidate A has corresponding lengths 6, 8, 10.
+           Candidate B has lengths 6, 8, 9. Which is a scaled copy? Explain
+           using all three ratios, then construct a half-size copy with the same angles.</p>
+        <fieldset>
+            <legend>Classify the scaled copy</legend>
+            <label><input type="radio" name="g7-l01-cooldown" value="A" /> Candidate A</label>
+            <label><input type="radio" name="g7-l01-cooldown" value="B" /> Candidate B</label>
+        </fieldset>
+        <p><button type="button" class="school-button" data-g7-cooldown-check>
+            Check classification only
+        </button></p>
+        <p data-g7-cooldown-feedback aria-live="polite">
+            Teacher review is required for the actual drawing, three ratios and explanation.
+        </p>
+        <p><strong>Assessment boundary:</strong> This activity offers local formative
+           feedback only. No student response or drawing is saved, submitted, or
+           automatically scored. The teacher must assess the drawing and reasoning.</p>
+    </section>
+    <script src="~/curriculum/us-ccss-g7/geometry/u01-l01-activities.js"
+            asp-append-version="true" defer></script>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L02")
+{
+    @* First-party student-facing tasks. Static delivery depends on the
+       designated shared Rich V2 view invoking this Grade 7 partial. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-corresponding-parts"
+             data-g7-u01-l02 aria-label="Grade 7 corresponding parts and scale factor activity">
+        <h3>Corresponding Parts — Edulytiks original student activity</h3>
+        <p><strong>Number talk:</strong> Work out one-fourth of 32, one-ninth of 7.2,
+           and one-fourth of 5.6. Explain why multiplication by a unit fraction
+           divides by its denominator.</p>
+        <h4>Find matching points, lengths and angles</h4>
+        <p>On the same unit grid, draw original triangle ABC with A=(0,0),
+           B=(4,0), C=(0,3), and copy DEF with D=(0,0), E=(6,0), F=(0,4.5).
+           Then draw an altered copy D'=(0,0), E'=(6,0), F'=(0,3).</p>
+        <p>Label A↔D, B↔E, C↔F. Match segments AB↔DE, AC↔DF,
+           BC↔EF and angles BAC↔EDF. Use your own ruler or tracing paper
+           to compare the right angles and acute angles.</p>
+        <ul>
+            <li>Which copy is a scaled copy of ABC? Justify with all three side ratios.</li>
+            <li>Identify the correspondence of point B, segment BC and angle BAC.</li>
+            <li>What is the factor from ABC to DEF? What factor returns DEF to ABC?</li>
+            <li>What happens to the acute angles if the x-coordinate alone is multiplied by 1.5?</li>
+        </ul>
+        <p><strong>Additional triangle comparison:</strong> Start with side lengths
+           (3,4,5). Compare candidate sides (1.5,2,2.5), (6,8,10),
+           and (6,8,9). Identify the uniformly scaled figures and explain
+           why the remaining candidate is not a scaled copy. On graph paper,
+           draw one valid copy and label corresponding vertices and sides.</p>
+        <details>
+            <summary>Open the reasoning guide after you have attempted the activity</summary>
+            <p>The original ABC has right angle at A and sides 3,4,5.
+               DEF has sides 4.5,6,7.5; all three factors are 1.5
+               and corresponding angles remain equal. The altered copy
+               changes the two perpendicular sides by different factors,
+               so its acute angles change. The reverse factor is 2/3.
+               For the additional triangle comparison, factors 1/2
+               and 2 are uniform, while 6/3=8/4=2 but 9/5=1.8.</p>
+        </details>
+        <h4>Cool-down — Edulytiks original, not the publisher's gated question</h4>
+        <p>Draw ABC from the three original coordinates. Label its side lengths and
+           its right angle. Construct a factor-3/2 triangle DEF using the matching
+           vertices, identify the image of segment BC and angle BAC, and explain
+           why all corresponding angles stay equal. Then explain whether a
+           triangle with legs 6 and 3 is a scaled copy of ABC.</p>
+        <p><strong>Teacher-scoring boundary:</strong> A teacher must inspect
+           point correspondence, correct scale factors on all three sides,
+           preserved angle measures, a real labeled drawing, and a complete
+           explanation. Reading the reasoning guide or typing one number
+           does not submit or pass an assessment. This partial does not
+           capture or persist student work.</p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L03")
+{
+    @* Equivalent first-party lesson activity, not a claim to reproduce the
+       publisher's diagrams. Shared Rich V2 opt-in invocation is pending. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-making-scaled-copies"
+             data-g7-u01-l03 aria-label="Grade 7 original scaled construction activities">
+        <h3>Making Scaled Copies — Edulytiks student construction</h3>
+        <h4>Warm-up: more or less?</h4>
+        <p>Without rounding away an important difference, decide whether
+           25 × 8.5 is greater or less than 205, 9.93 × 0.984 is
+           greater or less than 10, and 0.24 × 0.67 is greater
+           or less than 0.2. Explain each claim.</p>
+        <h4>Draw, measure, and compare</h4>
+        <p>On graph paper, create an original L-shaped polygon by connecting
+           the vertices (0,0), (6,0), (6,2), (4,2), (4,5), (0,5)
+           in order and closing the outline. Use the same unit scale to
+           construct two separate copies with factors 3 and 1/2.
+           Preserve all angles and corresponding proportions. A fractional
+           coordinate is allowed between grid intersections.</p>
+        <p><strong>Factor 3:</strong> each original point (x,y) becomes
+           (3x,3y). <strong>Factor 1/2:</strong> each becomes
+           (x/2,y/2). Draw the actual shapes rather than just listing
+           numeric multipliers. Show a teacher your scale grid and
+           annotate at least two corresponding sides.</p>
+        <h4>Critique two strategies</h4>
+        <p>A student wants a 15-unit side to become 5 units.
+           One method multiplies every side by 1/3. Another subtracts 10
+           from every side. Which method produces a scaled copy?
+           Can subtraction produce a negative length for a short side?
+           Explain the effect on the geometry and on every angle.</p>
+        <p>A different student wants to make a 4-unit segment into 8 units
+           and suggests adding 4 to all side lengths. Explain why
+           multiplying every length by 2 is the intended construction
+           and why adding 4 generally is not uniform scaling.</p>
+        <details>
+            <summary>Check the mathematics after constructing your copy</summary>
+            <p>25 × 8.5 = 212.5 (greater than 205); 9.93 × 0.984
+               = 9.77112 (less than 10); and 0.24 × 0.67
+               = 0.1608 (less than 0.2). The multiplier from 15
+               to 5 is 1/3, not subtraction of 10. The correct
+               two L copies use all six original vertices multiplied
+               uniformly by factors 3 and 1/2; corresponding angles
+               remain unchanged. A translated or rotated construction
+               is valid if it preserves all distances and angles
+               with the same factor.</p>
+        </details>
+        <h4>Cool-down — independently authored by Edulytiks</h4>
+        <p>A triangle has vertices (0,0), (6,0), (0,4).
+           Draw a half-size copy (factor 1/2) on a coordinate grid;
+           label the image vertices, each corresponding length,
+           and its right angle. A classmate claims that adding 2
+           to both original legs produces the same copy. Identify the
+           two resulting ratios and show why the claim fails.</p>
+        <p><strong>Assessment boundary:</strong> Show your independently
+           drawn and labeled triangle, corresponding lengths, measured
+           angles, and written or oral critique to the teacher.
+           A numerical factor alone is not a completed construction.
+           This optional student activity does not submit,
+           grade or persist a learner response.</p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L04")
+{
+    @* Independent grade-owned source-equivalent lesson. Requires shared
+       Rich V2 invocation; not a student submission or grading service. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-scaled-relationships"
+             data-g7-u01-l04 aria-label="Grade 7 scaled relationships activities">
+        <h3>Scaled Relationships — first-party geometry investigation</h3>
+        <h4>4.1 Compare the angles</h4>
+        <p>Draw two right triangles ABC and DEF using the same grid:
+           A=(0,0), B=(4,0), C=(0,3);
+           D=(0,0), E=(8,0), F=(0,6).
+           Predict which angles correspond and measure one pair with
+           a protractor to the nearest 5 degrees. If necessary,
+           extend the rays before measuring.</p>
+        <h4>4.2 Include distances that are not drawn</h4>
+        <p>Without drawing segments BC and EF first, measure or calculate
+           the lengths between those endpoints. Identify the common factor
+           on AB↔DE, AC↔DF and the unseen BC↔EF.
+           A valid copy scales all distances, not only the drawn edges.
+           State whether the factor from ABC to DEF is the same as the
+           factor from DEF back to ABC.</p>
+        <p><strong>One more ratio:</strong> A source-inspired zigzag has
+           one corresponding side 6 units in the original and
+           15 units in the copy. If another distance in the original
+           is 4 units, what is its new distance? If another distance
+           in the copy is 5 units, what was its original length?
+           Explain the direction of the scale factor.</p>
+        <h4>4.3 Decide scaled or distorted</h4>
+        <p>Use two rectangles: P has width 4, height 3 and
+           right angles; Q has width 8 and height 3 and right
+           angles. Are they scaled copies? Show both corresponding
+           length ratios, then explain why equal angles alone
+           do not certify a scaled copy.</p>
+        <p>Two trapezoids each have corresponding angles of
+           60, 60, 120 and 120 degrees. One has parallel
+           sides 2 and 6 units; the other has corresponding
+           parallel sides 1 and 4 units. Can one be a scaled copy
+           of the other? Use both ratios, not a visual guess.</p>
+        <h4>4.4 A distorted picture</h4>
+        <p>Draw a recognizable first-party bird-like outline on a
+           square grid. Compare a uniformly enlarged copy to a copy
+           whose horizontal positions are doubled while vertical
+           positions stay unchanged. Identify one horizontal and
+           one vertical length to explain the distortion.</p>
+        <details><summary>Reveal a formative reasoning check after discussing</summary>
+            <p>ABC to DEF has common factor 2: matching legs are
+               4→8 and 3→6, while the unseen hypotenuse is 5→10.
+               Corresponding right and acute angles remain equal.
+               The reverse factor is 1/2.
+               The zigzag has factor 15/6=2.5, so 4→10
+               and 5 in the copy corresponds to 2 originally.
+               The rectangles have factors 8/4=2 and 3/3=1.
+               The trapezoid parallel sides have factors 1/2
+               and 4/6; the mismatch rules out scaling even
+               with matching angles.</p>
+        </details>
+        <h4>Cool-down — original Edulytiks task</h4>
+        <p>A triangle is drawn with vertices (0,0), (4,0), (0,3).
+           Draw a scale-factor-3 copy using the same unit grid.
+           Label the original and copy hypotenuse even if it is
+           not drawn in the first sketch. Verify the corresponding
+           angles and give evidence based on two distinct distances.
+           Contrast your copy with a 12-by-3 right triangle that
+           does not use one common multiplier.</p>
+        <p><strong>Teacher-review boundary:</strong> Show a drawn,
+           labeled artifact, estimates or measured angles with an
+           appropriate tolerance, correct corresponding distances,
+           and a written or oral justification. This grade-owned
+           source alone cannot submit work, persist scores, or
+           prove the shared Practice route.</p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L05")
+{
+    @* Grade-owned source-equivalent task. Rich V2 shared invocation unverified. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-scale-factor-size"
+             data-g7-u01-l05 aria-label="Grade 7 scale factor size and reciprocal activities">
+        <h3>The Size of the Scale Factor — first-party student activities</h3>
+        <h4>5.1 Missing-factor number talk</h4>
+        <p>Find the missing factor in 16x=176, 16x=8, 16x=1,
+           (1/5)x=1, and (2/5)x=1. Explain how reciprocals
+           reverse multiplication.</p>
+        <h4>5.2 Sort and defend original Edulytiks scale cards</h4>
+        <p>Use the matching lengths on each card, measured in identical
+           units, to decide whether the copy is smaller, unchanged,
+           or larger. Explain the factor, then pair reciprocal cards:</p>
+        <table>
+            <caption>Original Edulytiks size and inverse-factor card sort</caption>
+            <thead><tr><th>Card</th><th>Original</th><th>Copy</th></tr></thead>
+            <tbody>
+                <tr><th>A</th><td>2 × 3 rectangle</td><td>4 × 6 rectangle</td></tr>
+                <tr><th>B</th><td>4 × 6 rectangle</td><td>2 × 3 rectangle</td></tr>
+                <tr><th>C</th><td>4 × 2 rectangle</td><td>4 × 2 rectangle</td></tr>
+                <tr><th>D</th><td>4 × 2 rectangle</td><td>6 × 3 rectangle</td></tr>
+                <tr><th>E</th><td>6 × 3 rectangle</td><td>4 × 2 rectangle</td></tr>
+                <tr><th>F</th><td>2 × 3 rectangle</td><td>6 × 9 rectangle</td></tr>
+                <tr><th>G</th><td>6 × 9 rectangle</td><td>2 × 3 rectangle</td></tr>
+                <tr><th>H</th><td>4 × 2 rectangle</td><td>4 × 2 rectangle</td></tr>
+            </tbody>
+        </table>
+        <p>Which reciprocal pairs reverse the same scaling?
+           Do same-size copies use factor zero or factor one?
+           If a figure is scaled by 1/2 repeatedly, how much
+           of each original length remains after n steps?</p>
+        <h4>5.3 Optional original six-piece puzzle</h4>
+        <p>Cut six 2-by-2 square tiles. Arrange three tiles across
+           and two rows down to form a 6-by-4 rectangle.
+           Scale each tile by factor 1/2 and reassemble.
+           Measure the new overall width and height; note
+           that each tile's area is one quarter of its original.
+           If one scaled tile is lost, explain how multiplying
+           its lengths by the reciprocal factor would recover it.</p>
+        <h4>5.4 Missing copy, factor, or original</h4>
+        <p>A 4-by-2 rectangle becomes 6-by-3. Find the forward
+           factor, the reciprocal factor that reconstructs the
+           original, and a correctly labeled sketch of both.
+           Then create a factor-3 copy of a different 2-by-1
+           rectangle, and explain how to get back to the original.</p>
+        <details><summary>Open the review guide after independently sorting</summary>
+            <p>The number talk yields 11, 1/2, 1/16, 5, and 5/2.
+               Cards A/B use factors 2 and 1/2; D/E use 3/2
+               and 2/3; F/G use 3 and 1/3. C and H have
+               factor 1, not 0. The n-th repeated half-size
+               scale has factor (1/2) raised to n.
+               The six-tile assembled puzzle shrinks from 6×4
+               to 3×2, while each tile's area is quartered.</p>
+        </details>
+        <h4>Cool-down — Edulytiks-original, not gated publisher assessment</h4>
+        <p>A rectangle starts at vertices (0,0), (8,0),
+           (8,4), (0,4). Produce a labeled factor-3/4
+           copy and then use the reciprocal factor to
+           recover the original. Explain why the first copy
+           is smaller and how the shape and corresponding
+           angles are preserved. Give at least two
+           corresponding length ratios and your own drawing.</p>
+        <p><strong>Teacher-review boundary:</strong> Check original
+           and copied dimensions, reciprocal-factor reasoning,
+           labeled sketch and discussion. No student work
+           is automatically scored, submitted or persisted here.</p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L06")
+{
+    @* This optional source lesson is in the canonical Grade 7 sequence.
+       First-party drawings and area experiments; no original publisher applet. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-scaled-area"
+             data-g7-u01-l06 aria-label="Grade 7 scaling and area investigation">
+        <h3>Scaling and Area — original hands-on investigation</h3>
+        <h4>6.1 Build scaled shapes with unit-area blocks</h4>
+        <p>Use congruent one-square-unit tiles to build a rectangle
+           2 units wide and 1 unit tall. Build or draw similar
+           copies with factors 2, 3, and 4. Count original-size
+           tiles, then predict factors 5 and 6. Explain why
+           the number of unit tiles grows as the square of
+           the length factor, not by the factor itself.</p>
+        <h4>6.2 Start with more than one block</h4>
+        <p>Draw shapes of 3 unit tiles, 2 unit tiles, and
+           4 unit tiles (e.g., unit squares joined without gaps).
+           Build factor-2 and factor-3 scaled copies using
+           equally sized original tiles. Show how the number
+           of tiles depends on the number originally used.
+           Compare each result with a claim that every
+           factor-2 copy needs exactly 4 tiles.</p>
+        <table>
+            <caption>Record square-unit area data for original figures</caption>
+            <thead><tr><th>Length factor</th><th>Original area 3</th><th>Original area 2</th><th>Original area 4</th></tr></thead>
+            <tbody>
+                <tr><th>1</th><td>3</td><td>2</td><td>4</td></tr>
+                <tr><th>2</th><td>12</td><td>8</td><td>16</td></tr>
+                <tr><th>3</th><td>27</td><td>18</td><td>36</td></tr>
+                <tr><th>4</th><td>48</td><td>32</td><td>64</td></tr>
+            </tbody>
+        </table>
+        <h4>6.3 Compare parallelograms and triangles</h4>
+        <p>Sketch an original right triangle with perpendicular base 4 cm
+           and height 3 cm. Its area is 6 square cm. Construct
+           scaled copies with factors 1, 2, 3, 1/2 and 1/3.
+           Record new bases, heights and areas. Discuss
+           why all areas equal the original area multiplied
+           by the square of the scale factor. Predict its
+           area under factors 5 and 3/5.</p>
+        <details><summary>Formative area check (open after independent work)</summary>
+            <p>A 2-by-1 rectangle has area 2 and copies with factors
+               2, 3, 4, 5, 6 have areas 8, 18, 32, 50, 72.
+               An original of area n has scaled area n times
+               the scale factor squared. The 4-by-3 triangle has
+               area 6; factors 1, 2, 3, 1/2 and 1/3
+               give areas 6, 24, 54, 1.5 and 2/3 square cm.
+               Factors 5 and 3/5 give 150 and 54/25
+               square cm.</p>
+        </details>
+        <h4>Cool-down — independently authored Edulytiks task</h4>
+        <p>A rectangular paper model is 2 cm by 4 cm.
+           Construct a factor-3/2 copy, label both pairs
+           of side lengths and calculate both areas.
+           Explain why multiplying the original area
+           by 3/2, instead of by (3/2) squared,
+           would be wrong. Show a full labeled diagram
+           and mathematical explanation.</p>
+        <p><strong>Teacher review:</strong> Check unit squares
+           or measured construction, dimensions, area units,
+           multiplicative comparison and reasoning.
+           This Grade 7-only view does not persist a drawing,
+           grade answers, or certify the shared Practice selection.</p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L07")
+{
+    @* Source-equivalent Grade 7 tasks. Only served once shared Rich V2
+       calls this opt-in Grade 7 partial; no publisher images copied. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-scale-drawings"
+             data-g7-u01-l07 aria-label="Grade 7 scale drawings investigation">
+        <h3>Scale Drawings — original Edulytiks student investigation</h3>
+        <h4>7.1 What makes a scale drawing?</h4>
+        <p>Compare two top-view diagrams of the same round table.
+           In one, a 2-meter table diameter is represented by a
+           2-centimeter circle; a nearby 1-meter chair seat
+           is represented by a 1-centimeter circle. In the
+           second drawing, the table is stretched into a
+           4-by-2-centimeter ellipse. Explain which drawing
+           uses one consistent scale and why a schematic
+           layout labeled "not to scale" cannot be used to
+           calculate exact distances.</p>
+        <h4>7.2 Measure a first-party court plan</h4>
+        <p>A new Edulytiks basketball-court drawing uses the
+           scale <strong>1 centimeter on the plan represents
+           2 meters on the actual court</strong>. On a common
+           grid, construct a 14-by-7-centimeter rectangle
+           for a court and label the scale. The real model
+           is 28 by 14 meters. Mark a 12-centimeter
+           hoop-to-hoop segment and an example 1.2-centimeter
+           internal segment; convert each to actual meters.
+           If the actual bench is 9 meters long, draw its
+           matching scaled segment. Use a ruler to check
+           your sketch, allowing ordinary drawing tolerance.</p>
+        <p>State why merely converting 14 cm to 0.14 m
+           fails to recover the real court length. The
+           original on-paper scale is a <em>representation</em>,
+           not the measurement of the actual object.</p>
+        <h4>7.3 Read a graphic height scale</h4>
+        <p>Construct a first-party graphic scale where a
+           1-cm line represents 20 meters of actual height.
+           Draw two imaginary towers measuring 6 cm and
+           4 cm above the same baseline, and label their
+           implied heights. Determine the difference in
+           actual height in two ways: subtract the physical
+           heights, and convert the difference between
+           drawn heights. These are demonstration models,
+           not claimed measurements of named real buildings.</p>
+        <details><summary>Open the self-check after measurement</summary>
+            <p>The circular table/chair model is uniform,
+               while the ellipse is nonuniform. Under
+               1 cm to 2 m, the court model is 28 by 14 m,
+               the 12-cm internal segment is 24 m,
+               the 1.2-cm segment is 2.4 m,
+               and the 9-m bench is drawn as 4.5 cm.
+               Under 1 cm to 20 m, the imaginary towers
+               are 120 m and 80 m, differing by 40 m.</p>
+        </details>
+        <h4>Cool-down — Edulytiks-original, not the publisher's gated question</h4>
+        <p>Draw a rectangular room 8 meters by 6 meters
+           at a scale of 1 cm on the drawing to 2 m
+           in the actual room. Label the scale, the
+           representation of all four room walls,
+           and a 3-meter-wide door opening.
+           Explain why a 3-cm representation of the
+           door would be incorrect and show how a
+           teacher can verify the drawing with a ruler.</p>
+        <p><strong>Teacher review:</strong> A correct measured drawing
+           must use the same scale for every represented length,
+           include labels and units, and have an explanation.
+           Actual drawing/answer persistence, scoring and
+           selected Practice route are not provided by this partial.</p>
+    </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L08")
+{
+    @* Optional original Grade 7 lesson. Original map visuals not copied.
+       Shared Rich V2 invocation and exact Practice remain external gates. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-map-rates"
+             data-g7-u01-l08 aria-label="Grade 7 scale maps and travel rate activity">
+        <h3>Scale Drawings and Maps — first-party map-rate investigation</h3>
+        <h4>8.1 Compare two kinds of travel</h4>
+        <p>Two locations are 243 miles apart. A train takes 4 hours
+           at a constant speed; a car travels at 65 miles per hour.
+           Compare the train and car using miles per hour or
+           distances traveled in the same 4-hour period.
+           Defend your conclusion without mixing distance and speed units.</p>
+        <h4>8.2 Distinguish road length from direct distance</h4>
+        <p>Draw an Edulytiks-original plan with a grid scale
+           of <strong>1 grid unit represents 0.5 mile</strong>.
+           Draw a two-segment route from A=(0,0) to P=(12,0)
+           and then B=(12,5). The road is 17 grid units
+           (8.5 miles), while the straight segment AB is
+           13 units (6.5 miles) by the 5–12–13 right triangle. Explain why the
+           route length cannot be replaced by the direct
+           endpoint distance when calculating the driver's speed.</p>
+        <p>A driver follows the route in 8 minutes where the speed
+           limit is 55 miles per hour. Calculate the driver's
+           speed in miles per hour and decide if the limit
+           was obeyed. A helicopter flies directly between
+           the same endpoints in 8 minutes. Compare
+           the helicopter's speed with the driver's and
+           check that the units in both calculations match.</p>
+        <h4>8.3 A cycling trip from a map scale</h4>
+        <p>An original map-distance strip has a scale
+           key labeled 4 miles and a proposed cycling route
+           measuring 12.5 consecutive key-lengths.
+           If a cyclist travels 15 miles per hour,
+           find the expected travel time in hours
+           and hours/minutes. Explain why a different road
+           route could produce a different estimate.</p>
+        <details><summary>Compare your calculation methods</summary>
+            <p>The train averages 243/4 = 60.75 mph,
+               so the 65-mph car is faster. The original
+               road model has route length 8.5 mi,
+               a speed of 8.5/(8/60) = 63.75 mph,
+               which exceeds 55 mph. The helicopter's
+               direct 6.5-mile distance in the same
+               8 minutes gives 48.75 mph. The cycling
+               route has 12.5 × 4 = 50 miles and
+               needs 50/15 = 3 hours and 20 minutes.</p>
+        </details>
+        <h4>Cool-down — original Edulytiks map assessment</h4>
+        <p>On graph paper, make a two-stop map with the scale
+           1 centimeter represents 4 miles. Design a
+           road route from A to B with two or more segments
+           measuring 7 cm in total and a straight line
+           between endpoints measuring 5 cm.
+           One possible route is a 3-cm eastward leg followed
+           by a 4-cm northward leg, giving a 5-cm diagonal.
+           Label both distances in miles. If the road
+           takes 24 minutes at constant speed,
+           calculate its average speed and explain
+           why the direct line is not the road distance.
+           Submit a measured drawing with an explanation
+           for your teacher to review.</p>
+        <p><strong>Assessment boundary:</strong> The teacher
+           inspects the diagram, consistent map-scale conversions,
+           segment measurements and units. This grade-owned
+           view does not record work, automatically grade
+           the learner or prove a live Practice family.</p>
+    </section>
+}

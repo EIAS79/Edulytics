@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+  "title": "Corresponding Parts and Scale Factors",
+  "sourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/2/preparation.html",
+    "07_Grade_7_OUR_IM/1/2/index.html",
+    "07_Grade_7_OUR_IM_Student/1/2/index.html",
+    "07_Grade_7_OUR_IM_Student/1/2/practice.html"
+  ],
+  "originalRights": "OUR/IM 2017–2019 CC BY 4.0; first-party geometry and instructions, no source artwork reproduced",
+  "sourceTarget": "Name corresponding points, segments and angles; show that all matching lengths have a shared multiplier and matching angles remain equal",
+  "sourceActivityEvidence": [
+    {
+      "section": "2.1 Number Talk",
+      "original": "Quarter of 32, ninth of 7.2, quarter of 5.6",
+      "authored": "Equivalent unit-fraction mental arithmetic",
+      "gap": "none for target"
+    },
+    {
+      "section": "2.2 Corresponding Parts",
+      "original": "Road sign figures with tracing/protractor; match points, line segments and angles",
+      "authored": "First-party ABC/DEF triangles with point/segment/angle correspondence and a nonuniform counterexample",
+      "gap": "Publisher road-sign graphic not copied; tracing/measure remains a learner-controlled paper/tool activity"
+    },
+    {
+      "section": "2.3 Scaled Triangles",
+      "original": "Identify valid scaled copies of original 3–4–5 right triangle among several candidates",
+      "authored": "Compare 1.5–2–2.5 and 6–8–10 with 6–8–9, justify matching sides, draw teacher-reviewed scaled triangle",
+      "gap": "Different original candidate set rather than all eight publisher image cards"
+    }
+  ],
+  "independentCheck": {
+    "baseVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "scaledVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        0,
+        4.5
+      ]
+    ],
+    "k": 1.5,
+    "hypotenuse": [
+      5,
+      7.5
+    ],
+    "reverseFactor": "2/3",
+    "nonuniformLegs": [
+      6,
+      3
+    ]
+  },
+  "originalPublisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksOriginalCooldown": "AUTHOR_IN_GRADE_PARTIAL_NOT_PUBLISHER_COPY",
+  "edulytiksCooldownTask": "Draw coordinate triangles ABC/DEF, label correspondences, prove factor 3/2, reject horizontal-only extension; teacher checks construction/angles/ratios/reasoning.",
+  "lessonOwnedView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "originalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+  "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "practice": "EXACT_L02_SELECTED_CONTRACT_NOT_PRESENT_SOURCE_REQUIREMENTS_PREPARED_REUSE_G7_SCALED_COPY_KERNEL_WHERE_APPLICABLE",
+  "requiredPracticeCases": [
+    "factor 1.5",
+    "reverse factor 2/3",
+    "nonuniform x-only rejected",
+    "equivalent rotated/transposed and translated figures",
+    "incorrect vertex correspondences",
+    "malformed coordinates",
+    "teacher construction requires rubric not scalar grading"
+  ],
+  "activeSince": "2026-10-31T10:23:06Z",
+  "predecessor": {
+    "lesson": "PED:US-CCSS-MATH:G7:U01:L01",
+    "abcAuthoringClosureEvidenceSHA": "6d7103dca2cd5fb8bfac0cbc31c3724477bc1874",
+    "A_B_C": "ACCEPTED_AUTHORING",
+    "stageD": "NOT_RUN"
+  },
+  "A_STATUS": "A_CLOSED_EQUIVALENT_TASKS_AND_RIGHTS_EVIDENCED",
+  "B_STATUS": "ACCEPTED_AUTHORING_ON_G7_COURSE_GUARDED_RICH_V2_PARTIAL_ORIGINAL_SVG",
+  "C_STATUS": "BLOCKED_EXACT_U01L02_SELECTED_PRACTICE_OR_VERIFIED_EDUCATOR_SCORING_ABSENT",
+  "20261031StageB_AuthoringAcceptance": {
+    "courseLesson": "PED:US-CCSS-MATH:G7:U01:L02",
+    "renderDeliveryCommit": "8c0403d1b3b6c91644e8acc460fdc59a02007c2d",
+    "sharedHook": "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml",
+    "gradePartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "firstPartyFigure": "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+    "learnerTasks": ["corresponding A-D, B-E, C-F and sides/angles", "k=3/2 and inverse k=2/3", "uniform versus x-only stretch", "draw factor-3/2 triangle with right angles preserved"],
+    "teacherRubric": "grade7-authentic-geometry-teacher-rubrics-v6.json: L02 12-point four-criterion rubric",
+    "sourceScope": "2017-2019 OUR/IM teacher and student L02 previously compared; first-party artwork, gated original publisher Cool-down not reproduced",
+    "testFixture": "tests/academic-us-ccss-g7-u01-l02-abc-fixture.test.cjs",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "liveStudentDisplay": "NOT_RUN_STAGE_D",
+    "status": "ACCEPTED_AUTHORING_ONLY"
+  },
+  "20261031StageC_PreciseDependency": {
+    "selectedExactContract": "ABSENT_PED_US_CCSS_MATH_G7_U01_L02",
+    "requestedMechanics": "ordered vertex/segment/angle correspondence; factor 3/2 and inverse 2/3; exact matching side/angle evidence; wrong nonuniform/stretch factor; malformed response guards",
+    "reuse": "Use existing G7 U01 L01 polygon geometry oracle where mathematically compatible; do not duplicate it",
+    "educatorAlternative": "Source 12-point rubric exists but rubricIntegratedIntoTeacherUI=false and studentArtifactPersisted=false; not a verified educator-scored product route",
+    "requiredExclusiveOwner": "Separate Admin-approved shared Practice writer or teacher workflow owner; PR610 lease already RELEASED",
+    "newAcceptanceFixture": "AUTHORED_NOT_RUN_EXPECTED_RED_UNTIL_SELECTED_ASSESSMENT",
+    "currentResult": "BLOCKED_NO_FALSE_C_CLOSURE"
+  },
+  "READY_FOR_STAGE_D": false,
+  "D_STATUS": "NOT_RUN",
+  "testFile": "tests/academic-us-ccss-g7-u01-l02-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "blockedOwner": "Supervisor1/Admin: L02 exact selected Practice writer or separately authorized teacher-scoring workflow; renderer B already delivered on course",
+  "previouslyAuthoredGradeWorkPreserved": true,
+  "firstGradePatchCommit": "5f88ac7f9e45dc2b6713217d92d17bd2badc5117",
+  "testAuthoredCommit": "c20015e062412d3616e6fc61ed937015d51e2c1a",
+  "closedAt": null,
+  "closureCommitSHA": null,
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G7:U01:L03"
+}

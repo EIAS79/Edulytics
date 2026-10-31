@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L07",
+  "release": "RELEASE_BLOCKED",
+  "status": "ORIGINAL_COMPASS_DIAGRAM_AND_SOURCE_ALIGNMENT_TEACHER_RUBRIC_DRAFT_NOT_APPROVED",
+  "source": {
+    "student": "https://im.kendallhunt.com/MS/students/2/7/7/index.html",
+    "teacher": "https://im.kendallhunt.com/MS/teachers/2/7/7/preparation.html",
+    "rights": "OUR/IM 2017–2019 CC BY 4.0 source curriculum; first-party geometry created independently, with no publisher image path reuse.",
+    "inspection": "Public student lesson activity text and images' accessible descriptions and teacher preparation read. Restricted Teacher Guide/Cool Down, actual student applet sessions, original blackline master and teacher-scored student drawings not inspected.",
+    "standardsAddressing": [
+      "7.G.A.2"
+    ],
+    "objectives": [
+      "Use compass circles to find endpoints consistent with triangle side lengths.",
+      "Explain by hinged strips when triangle length conditions are impossible.",
+      "Reason about strict third-side bounds using repeated concrete examples."
+    ]
+  },
+  "studentActivityComparison": [
+    {
+      "activity": "7.1 Where Is Lin?",
+      "source": "Slide lies 5 m east of swings. Lin is 3 m from slide; many possible placements on a circle.",
+      "implementation": "Existing Rich V2 does not offer this metric park-location opening. New diagram teaches the same endpoint-locus structure using triangle lengths, but 7.1 as such remains UNVERIFIED_SOURCE_TASK_PARITY."
+    },
+    {
+      "activity": "7.2 How Long Is the Third Side?",
+      "source": "Construct many triangles with fixed sides 5 and 4 inches, including third lengths beyond and outside slider settings; optional 9 and 5 inch extensions.",
+      "implementation": "Original asset explicitly states 1 < third side < 9 inches for 5 and 4, and grade-owned source check covers endpoints. Physical slider/user submitted set is NOT_IMPLEMENTED."
+    },
+    {
+      "activity": "7.3 Swinging the Sides Around",
+      "source": "Trace a 3-inch rotating side; use two 3-inch endpoint circles with a 4-inch base; intersection constructs triangle; consider all endpoint choices.",
+      "implementation": "Original SVG has radius-3 circles at opposite ends of 4-inch base, two mirrored intersections, both congruent 4-3-3 triangles; distinguishes mirror copies from different triangle sizes."
+    },
+    {
+      "activity": "Summary impossible configuration",
+      "source": "For base 21 units and hinge radii 4 and 2, circles cannot meet; explain why shorter segments cannot reach.",
+      "implementation": "Second original SVG panel draws exact base/radii in a separate scale and verifies a 15-unit separation gap. Still requires learner construction or manipulatives, not merely looking at a picture."
+    }
+  ],
+  "gradeOwnedAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l07-compass-circle-intersections.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l07-compass-circle-intersections.svg",
+  "mathModel": {
+    "possible": {
+      "A": [
+        130,
+        250
+      ],
+      "B": [
+        274,
+        250
+      ],
+      "C": [
+        202,
+        169.5016
+      ],
+      "Cprime": [
+        202,
+        330.4984
+      ],
+      "pxPerIn": 36,
+      "radiiIn": [
+        3,
+        3
+      ],
+      "baseIn": 4,
+      "mirroredTrianglesCongruent": true
+    },
+    "impossible": {
+      "A": [
+        650,
+        250
+      ],
+      "B": [
+        902,
+        250
+      ],
+      "pxPerIn": 12,
+      "radiiIn": [
+        4,
+        2
+      ],
+      "baseIn": 21,
+      "uncoveredGapIn": 15
+    },
+    "thirdSide": {
+      "fixedLengthsIn": [
+        5,
+        4
+      ],
+      "strictMinIn": 1,
+      "strictMaxIn": 9,
+      "degenerateEndpoints": [
+        1,
+        9
+      ]
+    }
+  },
+  "studentOriginalConstruction": "Use a compass to draw circles of 3-inch radius from both ends of a 4-inch base. Mark both intersections and draw both triangles; explain why reflection gives identical shape despite changed orientation. Use two circles of radii 4 and 2 inches on a 21-inch base, explain why there are no intersections, and physically explore strictly valid third sides for a 5- and 4-inch pair. Submit sketches and written explanation for teacher review.",
+  "teacherRubricDraft": {
+    "maxScore": 12,
+    "requiresHumanScoring": true,
+    "studentArtifactPersisted": false,
+    "criteria": [
+      {
+        "id": "g7-u07-l07-1",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Draw a correctly measured 4-inch base and two 3-inch radius endpoint circles; mark both intersections and accurately construct corresponding triangles."
+      },
+      {
+        "id": "g7-u07-l07-2",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Explain why the two reflected triangle constructions are congruent, not different side-length solutions; identify repeated base/arc lengths."
+      },
+      {
+        "id": "g7-u07-l07-3",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Use measured strips or circles to show 21/4/2 cannot close and that a 5/4 third side must lie strictly between 1 and 9 inches."
+      },
+      {
+        "id": "g7-u07-l07-4",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Present original measured diagrams, correct units and a mathematical justification, including why boundary values are degenerate."
+      }
+    ],
+    "scoring": "Teacher must inspect physical or digital learner constructions and explanations; no automatic numeric credit."
+  },
+  "cases": [
+    {
+      "kind": "correct",
+      "claim": "Two intersections of r=3 circles with base=4 yield mirrored congruent triangles; 21/4/2 has no intersection; 1<x<9 for 5/4.",
+      "outcome": "Correct mathematical description; teacher construction/reasoning still unverified."
+    },
+    {
+      "kind": "wrong",
+      "claim": "For 21/4/2 circles meet because 4+2 is positive.",
+      "outcome": "Reject; 4+2=6 <21, center distance exceeds radius sum."
+    },
+    {
+      "kind": "wrong",
+      "claim": "Upper and lower 4/3/3 constructions make noncongruent triangles.",
+      "outcome": "Reject; reflection preserves lengths and angles."
+    },
+    {
+      "kind": "degenerate",
+      "claim": "Third side =9 or =1 with fixed 5 and4 produces a triangle.",
+      "outcome": "Reject; circles tangent/collinear, no nondegenerate triangle."
+    },
+    {
+      "kind": "nonunique",
+      "claim": "A single given 4-inch base and a 3-inch side alone determine the third vertex uniquely.",
+      "outcome": "Reject; free endpoint traces circle, additional condition is needed."
+    },
+    {
+      "kind": "incomplete",
+      "claim": "Writes the bounds with no circle or strip construction or explanation.",
+      "outcome": "Insufficient source-task and rubric evidence."
+    },
+    {
+      "kind": "malformed",
+      "claim": "Uses different compass radii without labels or counts two circles as two sides.",
+      "outcome": "Request corrected original measured drawing."
+    }
+  ],
+  "tests": {
+    "path": "tests/academic-us-ccss-g7-p0-u07-l07-circle-geometry.test.cjs",
+    "nodeExecution": "NOT_RUN_AT_AUTHORING",
+    "dotnet": "NOT_RUN",
+    "authBrowser": "NOT_RUN"
+  },
+  "integration": {
+    "supervisor1Issue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "supervisor1DraftPr": "https://github.com/EIAS79/Edulytics/pull/599",
+    "sharedFilesChanged": false,
+    "rendererHook": "PENDING_EXACT_G7_U07_L07",
+    "selectedPractice": "NOT_EXECUTED",
+    "teacherSubmissionPersistence": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN"
+  },
+  "academic": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "humanAcceptance": "NOT_EVIDENCED",
+    "ownerUAT": "NOT_RUN"
+  }
+}

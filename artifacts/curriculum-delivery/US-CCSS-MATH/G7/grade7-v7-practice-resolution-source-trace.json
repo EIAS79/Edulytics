@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "status": "READ_ONLY_SOURCE_PROJECTION_RISK_NOT_RUNTIME_EXECUTED",
+  "ownerIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "sharedEdited": false,
+  "sourcePaths": [
+    "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "src/Edulytics.Core/Mathematics/Practice/OfficialLessonPracticeRuleProjection.cs",
+    "src/Edulytics.Core/Mathematics/Practice/SupportingPracticeTargetRuleRegistry.cs",
+    "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json",
+    "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-rules.v1.json",
+    "src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json",
+    "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade7-our-2017.lesson-blueprint.json"
+  ],
+  "precedenceSource": "LessonPracticeContractRegistry.BuildAllEntries: hand-authored Entries first; LessonPracticeContractProjection.TryAdd, Polish projection.TryAdd, OfficialLessonPracticeRuleProjection.TryAdd, Supporting projection.TryAdd, then later exact overrides. U01 L01–L03 and U06 L01 have no exact entries in reviewed lesson-skill-mappings.v1.json. Final selected contract still NOT_EXECUTED.",
+  "officialOutcomeMappings": [
+    {
+      "code": "CCSS:7.G.A.1",
+      "ruleId": "ccss-shape-properties",
+      "targetRuleId": "shape-properties",
+      "targetFamily": "supporting.geometry.shape_dimension",
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SHAPE_PROPERTIES",
+      "familyPolicy": "supporting-advanced-independent-recompute-from-original-parameters"
+    },
+    {
+      "code": "CCSS:7.EE.B.4",
+      "ruleId": "ccss-linear-inequality",
+      "targetRuleId": "inequalities",
+      "families": [
+        "algebra.linear.inequality.ax_plus_b_relation_c",
+        "algebra.linear.inequality.variables_both_sides"
+      ],
+      "note": "Potential fallback via outcome mapping if exact-title review does not preempt; not the introductory U06 lesson task."
+    }
+  ],
+  "exactTitleCandidate": {
+    "code": "PED:US-CCSS-MATH:G7:U06:L01",
+    "officialTitle": "Relationships between Quantities",
+    "matchedReviewPattern": "^Relationships between Quantities$",
+    "targetRuleId": "ratio-scaling",
+    "skillId": "ratio.unit_rate",
+    "mechanic": "RATIO_RATE",
+    "allowedQuestionFamilies": [
+      "ratio.unit_rate.direct",
+      "ratio.unit_rate.equivalent_ratio",
+      "ratio.unit_rate.divide_total"
+    ],
+    "sourcePage": "https://im.kendallhunt.com/MS/students/2/6/1/index.html",
+    "academicGap": "Publisher lesson contrasts proportional and nonproportional price tables, fixed entrance fee and discrete batch-toasting. Proportional-only scaling fails this objective.",
+    "caution": "Actual precedence/selected family MUST be proven by running LessonPracticeContractRegistry.TryResolve and real item/validator; source code alone is not execution."
+  },
+  "highRiskLessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+      "title": "What are Scaled Copies?",
+      "outcome": "CCSS:7.G.A.1",
+      "genericProjectedFamily": "supporting.geometry.shape_dimension",
+      "requiredSourceTarget": "Identify and draw scaled and horizontally distorted F polygons, discuss ratios in multiple directions, teacher-grade drawing."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+      "title": "Corresponding Parts and Scale Factors",
+      "outcome": "CCSS:7.G.A.1",
+      "genericProjectedFamily": "supporting.geometry.shape_dimension",
+      "requiredSourceTarget": "Draw/match corresponding points, segments and angles; measure two lengths and explain consistent ratio."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+      "title": "Making Scaled Copies",
+      "outcome": "CCSS:7.G.A.1",
+      "genericProjectedFamily": "supporting.geometry.shape_dimension",
+      "requiredSourceTarget": "Construct scaled figures at 1/2 and 3, not generic dimensional classification."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
+      "title": "Relationships between Quantities",
+      "outcome": "CCSS:7.EE.B.4",
+      "reviewedTitleCandidate": "ratio-scaling",
+      "genericOutcomeFallback": "inequalities",
+      "requiredSourceTarget": "Proportional versus fixed fee and stepwise toasting, open explanation with teacher rubric."
+    }
+  ],
+  "verificationRequired": [
+    "Execute actual LessonPracticeContractRegistry.TryResolve on each exact lesson ID in .NET and capture contract SkillId/Mechanic/AllowedQuestionFamilies, not static mapping only",
+    "Generate actual practice questions and assert correct, wrong, malformed and equivalent response feedback independently",
+    "Ensure drawing/source open responses are teacher reviewed, persisted per school, no false numeric auto-PASS",
+    "Preserve British/Cambridge, UAE, Polish and other US grades in shared regression and seed/tenant tests"
+  ],
+  "runtimeSelectedContract": "NOT_EXECUTED",
+  "generatorVerifier": "NOT_EXECUTED",
+  "authenticatedFeedbackPersistence": "NOT_RUN",
+  "stageCVerified": 0,
+  "release": "NO_GO"
+}

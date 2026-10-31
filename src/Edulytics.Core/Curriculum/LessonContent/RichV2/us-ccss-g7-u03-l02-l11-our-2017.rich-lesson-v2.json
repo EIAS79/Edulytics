@@ -1,0 +1,1483 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v3",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L02",
+      "CultureCode": "en",
+      "Title": "Exploring Circles",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Identify center, radius, diameter and circumference, and use the equal-distance definition of a circle. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/2/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Recognizing circles; Drawing Circles; Identifying Radii and Diameters. This lesson requires students to Build a first-party circle with compass and mark multiple equal-distance points, radii, and a diameter. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/2/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Circle",
+          "Definition": "A circle consists of points in a plane at equal distance from one center.",
+          "Rule": "Distance from the center to every point on a circle is r.",
+          "Example": "Points 5 units from center O lie on the circle of radius 5."
+        },
+        {
+          "Title": "Radius and diameter",
+          "Definition": "Radius connects center to circle; diameter crosses the center from edge to edge.",
+          "Rule": "d=2r.",
+          "Example": "r=4 cm gives d=8 cm."
+        },
+        {
+          "Title": "Circumference",
+          "Definition": "Circumference is distance once around the circular boundary.",
+          "Rule": "It is a length, not an area.",
+          "Example": "A circular hoop's rim is measured in cm."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert radius to diameter",
+          "Question": "A circle has radius 4.5 cm. Find its diameter.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Write d=2r.",
+            "Compute 2×4.5=9.",
+            "Label cm."
+          ],
+          "Answer": "9 cm.",
+          "Check": "Half of 9 is 4.5."
+        },
+        {
+          "Title": "Identify a circle",
+          "Question": "Are all points exactly 3 cm from point O on the same circle?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Choose O as the center.",
+            "Check that every candidate point has distance 3 cm.",
+            "Apply the equal-distance definition."
+          ],
+          "Answer": "Yes, their locus is a circle of radius 3 cm.",
+          "Check": "Interior points are not on the boundary unless exactly 3 cm away."
+        },
+        {
+          "Title": "Find radius",
+          "Question": "A circle's diameter is 18 mm. Find radius.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Write r=d/2.",
+            "Compute 18/2=9.",
+            "Label mm."
+          ],
+          "Answer": "9 mm.",
+          "Check": "2×9=18."
+        },
+        {
+          "Title": "Source-task analogue — Recognizing circles",
+          "Question": "A student draws a circle centered O with radius 3 cm. They mark A and B on the circle on opposite sides of O and point C at distance 2 cm from O. Which of A,B,C lie on the circle, what is AB, and why?",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Set the compass opening to 3 cm from O and trace a complete circle.",
+            "Measure OA=OB=3 cm; C is inside because OC=2 cm, not 3 cm.",
+            "If A,O,B are collinear, AB=OA+OB=6 cm, a diameter.",
+            "Exchange the drawing and check equal radii and that the diameter actually passes through O."
+          ],
+          "Answer": "A and B lie on the circle; C does not; the diameter AB is 6 cm.",
+          "Check": "Teacher examines the original compass figure, selected points, center and markings; text arithmetic alone is incomplete."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling diameter a radius",
+          "WhyWrong": "A diameter spans both sides of the center.",
+          "Correction": "Divide diameter by two to find radius."
+        },
+        {
+          "Mistake": "Using square units for circumference",
+          "WhyWrong": "Circumference is a one-dimensional boundary length.",
+          "Correction": "Measure it in linear units."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Distance from the center to every point on a circle is r.",
+        "d=2r.",
+        "It is a length, not an area."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Radius and diameter measurements",
+          "Description": "For each circle diameter is twice radius. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (cm)",
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter/radius",
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L03",
+      "CultureCode": "en",
+      "Title": "Exploring Circumference",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Investigate the constant circumference-to-diameter ratio and interpret π as the constant of proportionality. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/3/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Circular Objects; Measuring Circumference; The Meaning of Pi. This lesson requires students to Measure everyday round objects with a string, compare circumference and diameter and plot quotients. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/3/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pi",
+          "Definition": "π is the constant ratio of circumference C to diameter d.",
+          "Rule": "C/d=π for every circle.",
+          "Example": "C≈3.14d."
+        },
+        {
+          "Title": "Proportional measurements",
+          "Definition": "Circumference and diameter have a zero-intercept proportional relationship.",
+          "Rule": "C=πd.",
+          "Example": "Doubling d doubles C."
+        },
+        {
+          "Title": "Measured approximations",
+          "Definition": "Physical measurements can approximate π with small error.",
+          "Rule": "Estimate C/d rather than expect exact decimals.",
+          "Example": "A 10 cm diameter yields circumference approximately 31.4 cm."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute from diameter",
+          "Question": "Find circumference for a 6 cm diameter in terms of π.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Identify d=6.",
+            "Apply C=πd.",
+            "Keep π exact."
+          ],
+          "Answer": "6π cm.",
+          "Check": "C/d=π."
+        },
+        {
+          "Title": "Estimate π",
+          "Question": "A measured diameter is 8 cm and circumference about 25.1 cm. Estimate C/d.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Compute 25.1/8=3.1375.",
+            "Compare with π≈3.14159.",
+            "Explain a small discrepancy as measurement/rounding error."
+          ],
+          "Answer": "Approximately 3.14.",
+          "Check": "Close to π."
+        },
+        {
+          "Title": "Scale two circles",
+          "Question": "If diameter increases from 4 to 10 cm, how does circumference change?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Initial C=4π.",
+            "Final C=10π.",
+            "Compare 10π/(4π)=2.5."
+          ],
+          "Answer": "Circumference is multiplied by 2.5.",
+          "Check": "Same ratio as diameters."
+        },
+        {
+          "Title": "Source-task analogue — Circular Objects",
+          "Question": "Three independent measured circles give approximate (d,C) pairs in cm (4.0,12.6),(7.0,22.0),(10.0,31.4). Plot them and explain what C/d suggests and why measured values may vary.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Record original string/ruler measurements to sensible precision and label the units.",
+            "Compute 12.6/4=3.15, 22/7≈3.14, 31.4/10=3.14.",
+            "Plot the (diameter,circumference) points and compare the approximate straight-line trend through the origin.",
+            "Discuss string stretch, imprecise contact and ruler reading as sources of scatter."
+          ],
+          "Answer": "The observed ratio C/d is around 3.14, an estimate of π; real measurements may differ.",
+          "Check": "Teacher checks a physical collection, measured table, plotted pairs and measurement-error explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating π as exactly 3.14",
+          "WhyWrong": "3.14 is an approximation to irrational π.",
+          "Correction": "Keep π exact when asked."
+        },
+        {
+          "Mistake": "Claiming C grows by area factor",
+          "WhyWrong": "Circumference is a length.",
+          "Correction": "Use the linear scale factor."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "C/d=π for every circle.",
+        "C=πd.",
+        "Estimate C/d rather than expect exact decimals."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Circle diameter and circumference",
+          "Description": "Circumference is π times diameter for every circle; π is exact. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "2",
+                "4",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference (cm)",
+              "Cells": [
+                "2π",
+                "4π",
+                "6π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference/diameter",
+              "Cells": [
+                "π",
+                "π",
+                "π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L04",
+      "CultureCode": "en",
+      "Title": "Applying Circumference",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Calculate circumference and missing radii and decompose perimeter with circular pieces. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/4/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Applying Circumference to Tracks; Solving for Missing Radius; Composite Perimeters. This lesson requires students to Combine straight sections and two semicircular turns into one complete curved boundary. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/4/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Full circumference",
+          "Definition": "Distance around a circle is π times its diameter.",
+          "Rule": "C=2πr=πd.",
+          "Example": "r=5 gives 10π."
+        },
+        {
+          "Title": "Arc fraction",
+          "Definition": "A half-circle arc is half its circle circumference.",
+          "Rule": "Half-arc length=πr.",
+          "Example": "A semicircle of r=4 has arc 4π."
+        },
+        {
+          "Title": "Composite perimeter",
+          "Definition": "Include all external boundary edges, both straight and curved.",
+          "Rule": "Do not count internal shared edges.",
+          "Example": "A semicircle attached to a 8-by-5 rectangle replaces one side of length 8 with arc 4π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find circumference",
+          "Question": "Find exact circumference of a radius-7 circle.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Use C=2πr.",
+            "Substitute r=7.",
+            "Simplify to 14π."
+          ],
+          "Answer": "14π units.",
+          "Check": "A diameter of 14 gives πd=14π."
+        },
+        {
+          "Title": "Find radius",
+          "Question": "A circle has circumference 18π cm. Find its radius.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Set 2πr=18π.",
+            "Divide both sides by 2π.",
+            "Compute r=9."
+          ],
+          "Answer": "9 cm.",
+          "Check": "2π×9=18π."
+        },
+        {
+          "Title": "Semicircle boundary",
+          "Question": "A semicircular region has radius 3 cm. What is its complete perimeter?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Curved half-arc=πr=3π.",
+            "Straight diameter=2r=6.",
+            "Add arc and diameter."
+          ],
+          "Answer": "6+3π cm.",
+          "Check": "Both straight and curved external edges are counted."
+        },
+        {
+          "Title": "Source-task analogue — Applying Circumference to Tracks",
+          "Question": "An original running track has two straight segments of 80 m each and two semicircular turns of radius 20 m. Calculate the inside lap length and make a labeled diagram.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Two 80 m straights contribute 160 m.",
+            "The two semicircles together make one full circle of radius 20 m, length 2π×20=40π m.",
+            "Total lap length=160+40π m≈285.7 m.",
+            "Sketch each semicircle attached to the two straights; do not double-count the joining segments."
+          ],
+          "Answer": "160+40π m, approximately 285.7 m.",
+          "Check": "Teacher verifies the original shape, correct two-half-circle decomposition and units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Omitting the diameter of a standalone semicircle",
+          "WhyWrong": "Its perimeter has an arc and a flat edge.",
+          "Correction": "Add the diameter."
+        },
+        {
+          "Mistake": "Using radius in C=πd without doubling",
+          "WhyWrong": "The formula uses diameter, not radius.",
+          "Correction": "Use 2πr when given r."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "C=2πr=πd.",
+        "Half-arc length=πr.",
+        "Do not count internal shared edges."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Circumference from a given radius",
+          "Description": "C=2πr; all outputs are linear measurements, not areas. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (cm)",
+              "Cells": [
+                "3",
+                "5",
+                "7"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "6",
+                "10",
+                "14"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference (cm)",
+              "Cells": [
+                "6π",
+                "10π",
+                "14π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L05",
+      "CultureCode": "en",
+      "Title": "Circumference and Wheels",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Relate a rolling wheel's revolutions to distance and rate, and explain why larger wheels require fewer turns. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/5/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Rolling Circles; Wheel Circumference; Repeated Turns. This lesson requires students to Test and graph the connection between wheel rotations and travel without slipping. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/5/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "One revolution",
+          "Definition": "A wheel rolling without slipping travels one circumference per complete turn.",
+          "Rule": "Distance per turn=πd.",
+          "Example": "d=1 m gives π m."
+        },
+        {
+          "Title": "Multiple revolutions",
+          "Definition": "Total distance equals revolutions times circumference.",
+          "Rule": "D=nπd.",
+          "Example": "10 turns at diameter 0.5 m gives 5π m."
+        },
+        {
+          "Title": "Rotational speed",
+          "Definition": "Revolutions per time scale distance per time.",
+          "Rule": "Speed=(turns/sec)×circumference.",
+          "Example": "3 turns/sec with C=2 m yields 6 m/sec."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distance after turns",
+          "Question": "A wheel has diameter 0.6 m and rotates 20 times without slipping.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "One revolution covers 0.6π m.",
+            "Multiply by 20.",
+            "Compute 12π m."
+          ],
+          "Answer": "12π m.",
+          "Check": "20×0.6π=12π."
+        },
+        {
+          "Title": "Compare wheels",
+          "Question": "Wheel A diameter 1 m and wheel B diameter 2 m travel the same 10π m. How many turns each?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "A circumference π m; turns=10π/π=10.",
+            "B circumference 2π m; turns=10π/(2π)=5.",
+            "Compare counts."
+          ],
+          "Answer": "10 turns for A; 5 for B.",
+          "Check": "Larger wheel needs fewer turns."
+        },
+        {
+          "Title": "Rotational travel rate",
+          "Question": "A wheel has circumference 1.5 m and spins 4 times per second without slipping. Find speed.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Multiply 1.5 m/turn by 4 turns/sec.",
+            "Cancel turns.",
+            "Compute 6 m/sec."
+          ],
+          "Answer": "6 m/sec.",
+          "Check": "Units simplify correctly."
+        },
+        {
+          "Title": "Source-task analogue — Rolling Circles",
+          "Question": "A toy wheel has diameter 0.4 m. A taped marker on the rim starts at the floor. Predict travel after 1, 5 and 30 complete forward turns with no slipping, then check a rolling model.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Compute one turn's distance from circumference: C=π×0.4=0.4π m.",
+            "For 5 turns calculate 2π m, for 30 turns calculate 12π m.",
+            "Mark one full rotation by the rim marker returning to its original orientation; measure distance against the predicted circumference.",
+            "Explain that slipping or an uneven rolling surface invalidates the exact distance-per-turn rule."
+          ],
+          "Answer": "1 turn 0.4π m, 5 turns 2π m, 30 turns 12π m.",
+          "Check": "Teacher checks the rolling trial, rotation counts, labeled measurement table and explicit no-slip assumption."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using wheel area for travel distance",
+          "WhyWrong": "Each full turn advances by the boundary length.",
+          "Correction": "Use circumference, not area."
+        },
+        {
+          "Mistake": "Ignoring slip",
+          "WhyWrong": "Distance per turn equals circumference only when rolling without slipping.",
+          "Correction": "State this modeling assumption."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Distance per turn=πd.",
+        "D=nπd.",
+        "Speed=(turns/sec)×circumference."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Wheel roll without slipping",
+          "Description": "Travel per turn is one circumference of the wheel. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Wheel diameter (m)",
+              "Cells": [
+                "0.5",
+                "1",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "One turn (m)",
+              "Cells": [
+                "0.5π",
+                "π",
+                "2π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Two turns (m)",
+              "Cells": [
+                "π",
+                "2π",
+                "4π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L06",
+      "CultureCode": "en",
+      "Title": "Estimating Areas",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Decompose irregular polygons and estimate uncertain geographic shapes with clearly stated methods and approximations. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/6/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Estimating Areas of Complex Regions; Estimating Maps with Grid Squares. This lesson requires students to Estimate by decomposition and bounding rectangles without pretending an irregular area is exact. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/6/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Decomposition",
+          "Definition": "Split a complex region into standard polygons.",
+          "Rule": "Sum nonoverlapping component areas.",
+          "Example": "A 5×4 rectangle plus 3×2 rectangle gives 26 square units."
+        },
+        {
+          "Title": "Subtraction of cutouts",
+          "Definition": "An irregular region can be a large enclosing shape minus exclusions.",
+          "Rule": "Subtract the area of holes or missing corners.",
+          "Example": "60−12=48 square units."
+        },
+        {
+          "Title": "Estimation",
+          "Definition": "A grid or polygon fit approximates a nonpolygonal boundary.",
+          "Rule": "Mark approximate results and assumptions.",
+          "Example": "A count of 30 mostly filled grid squares suggests area near 30 squares."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "L-shaped floor area",
+          "Question": "A shape combines a 5×4 rectangle and a 3×2 rectangle without overlap. Find area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Compute 5×4=20.",
+            "Compute 3×2=6.",
+            "Add 20+6=26."
+          ],
+          "Answer": "26 square units.",
+          "Check": "Parts are disjoint."
+        },
+        {
+          "Title": "Cutout region",
+          "Question": "A 9-by-7 rectangle lacks a 3-by-2 corner. Find remaining area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Enclosing area=9×7=63.",
+            "Missing corner=3×2=6.",
+            "Subtract 63−6=57."
+          ],
+          "Answer": "57 square units.",
+          "Check": "Avoid double counting cutout."
+        },
+        {
+          "Title": "Grid estimate",
+          "Question": "A district outline covers 18 full squares and about 8 half-squares on a 1 km² grid. Estimate area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Full squares contribute 18 km².",
+            "Half-squares contribute about 8×0.5=4 km².",
+            "Add 18+4≈22 km²."
+          ],
+          "Answer": "Approximately 22 km².",
+          "Check": "Uncertain boundary coverage makes this an estimate."
+        },
+        {
+          "Title": "Source-task analogue — Estimating Areas of Complex Regions",
+          "Question": "A student sketches a nonrectangular garden within an 8 m by 6 m bounding rectangle. An identified 2 m by 3 m cutout is definitely outside; the uncertain curved boundary contains between 1 and 3 square meters of additional excluded area. Give a defensible area interval.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Bounding rectangle area=8×6=48 m².",
+            "Remove the known rectangular cutout 2×3=6 m², leaving 42 m².",
+            "The additional excluded irregular portion is between 1 and 3 m².",
+            "Therefore the remaining region is between 42−3=39 and 42−1=41 m²; annotate the sketched bounding regions."
+          ],
+          "Answer": "A defensible estimate is 39–41 m², not an exact 40 m² without more data.",
+          "Check": "Teacher examines the student's labeled decomposition, uncertainty boundaries and explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding overlapping decomposed pieces",
+          "WhyWrong": "Overlap is double-counted.",
+          "Correction": "Use nonoverlapping subdivisions or subtract intersections."
+        },
+        {
+          "Mistake": "Presenting a map-based estimate as exact",
+          "WhyWrong": "Irregular boundaries require approximations.",
+          "Correction": "State the grid size and uncertainty."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Sum nonoverlapping component areas.",
+        "Subtract the area of holes or missing corners.",
+        "Mark approximate results and assumptions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Estimate an L-shaped region using decomposition",
+          "Description": "Two nonoverlapping rectangles are added to estimate the total covered area. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Region",
+              "Cells": [
+                "Main rectangle",
+                "Extension",
+                "Combined area"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Dimensions",
+              "Cells": [
+                "5 by 4",
+                "3 by 2",
+                "Disjoint pieces"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (square units)",
+              "Cells": [
+                "20",
+                "6",
+                "26"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L07",
+      "CultureCode": "en",
+      "Title": "Exploring the Area of a Circle",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Estimate circular area from grids and squares, and identify why area is not proportional to diameter. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/7/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Counting Circle Grid Squares; Area Compared with Radius Squares. This lesson requires students to Use experimental area estimates to infer the constant relating circle area to radius squared. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/7/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Grid area",
+          "Definition": "Count full and partial unit squares inside a disk.",
+          "Rule": "Approximate fractional boundary squares.",
+          "Example": "A disk near 13 squares may have area about 13 units²."
+        },
+        {
+          "Title": "Radius squared",
+          "Definition": "Circle area scales with the square of radius.",
+          "Rule": "A grows by factor k² when r grows by k.",
+          "Example": "Doubling r quadruples area."
+        },
+        {
+          "Title": "π comparison",
+          "Definition": "Disk area is a little more than three squares of side r.",
+          "Rule": "A≈πr².",
+          "Example": "For r=2, area≈12.57."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Circle area estimate",
+          "Question": "Estimate area of a disk with radius 2 using π≈3.14.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Square radius: 2²=4.",
+            "Multiply 3.14×4.",
+            "Compute 12.56."
+          ],
+          "Answer": "About 12.56 square units.",
+          "Check": "Slightly above 3r²=12."
+        },
+        {
+          "Title": "Prove not proportional to diameter",
+          "Question": "Compare areas for circles with radii 2 and 4.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "A1=4π; diameter 4.",
+            "A2=16π; diameter 8.",
+            "Diameter doubles but area quadruples."
+          ],
+          "Answer": "Area is not proportional to diameter.",
+          "Check": "A/d ratios are π and 2π."
+        },
+        {
+          "Title": "Compare to square",
+          "Question": "A radius-3 circle is placed inside a 6-by-6 square. What fraction of square area is the circle?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Circle area=9π.",
+            "Square area=36.",
+            "Divide 9π/36=π/4≈0.785."
+          ],
+          "Answer": "π/4, about 78.5%.",
+          "Check": "Disk fits inside the square."
+        },
+        {
+          "Title": "Source-task analogue — Counting Circle Grid Squares",
+          "Question": "A circular paper disk of radius 4 cm is placed on a 1 cm grid. A careful count suggests about 50 square units inside. Use that result to estimate A/r², then predict an approximate area for a similar disk of radius 8 cm.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Square the original radius: r²=4²=16 cm².",
+            "Observed area/r²≈50/16=3.125, near π.",
+            "A doubled radius has four times the area, so predicted area≈50×4=200 cm².",
+            "Describe edge partial-squares and counting uncertainty; compare with 64π≈201.1 cm² as a check, not a substituted measurement."
+          ],
+          "Answer": "Estimated area/r²≈3.125; doubled-radius disk around 200 cm².",
+          "Check": "Teacher checks actual grid counting or a faithfully annotated grid representation and the distinction from circumference scaling."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using C=πd for area",
+          "WhyWrong": "Circumference measures length, not surface covered.",
+          "Correction": "Use r² when finding area."
+        },
+        {
+          "Mistake": "Calling area directly proportional to radius",
+          "WhyWrong": "Doubling radius quadruples area.",
+          "Correction": "Use squared scale factors."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Approximate fractional boundary squares.",
+        "A grows by factor k² when r grows by k.",
+        "A≈πr²."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Radius, diameter and circle area",
+          "Description": "Circle area is πr², so doubling radius multiplies area by four. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (cm)",
+              "Cells": [
+                "2",
+                "4",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "4",
+                "8",
+                "12"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (cm²)",
+              "Cells": [
+                "4π",
+                "16π",
+                "36π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L08",
+      "CultureCode": "en",
+      "Title": "Relating Area to Circumference",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Explain the circle-area formula through informal dissection into near-parallelograms or triangles. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/8/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Rearranging Circular Sectors; Deriving the Circle Formula. This lesson requires students to Reassemble cut radial sectors into a near-parallelogram and justify its approximate base and height. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/8/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rearranged sectors",
+          "Definition": "A circle cut into many sectors can approximate a parallelogram.",
+          "Rule": "Base tends toward half-circumference; height tends toward radius.",
+          "Example": "Base≈πr, height≈r."
+        },
+        {
+          "Title": "Half-circumference",
+          "Definition": "Half of 2πr is πr.",
+          "Rule": "Use C/2=πr.",
+          "Example": "For r=3, half-circumference=3π."
+        },
+        {
+          "Title": "Derive area",
+          "Definition": "Rearranging preserves area in the limit.",
+          "Rule": "A≈(C/2)×r=πr².",
+          "Example": "r=3 gives 9π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find derived area",
+          "Question": "Rearranged sectors approximate base πr and height r. Find area at r=5.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Base≈π×5=5π.",
+            "Height=5.",
+            "Area≈5π×5=25π."
+          ],
+          "Answer": "25π square units.",
+          "Check": "Matches A=πr²."
+        },
+        {
+          "Title": "Compare circumference and area",
+          "Question": "If radius increases from 2 to 6, how do circumference and area change?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Radius factor=6/2=3.",
+            "Circumference factor=3.",
+            "Area factor=3²=9."
+          ],
+          "Answer": "Circumference triples; area increases ninefold.",
+          "Check": "One measure is length; the other is area."
+        },
+        {
+          "Title": "Explain triangle dissection",
+          "Question": "If the sectors rearrange into an approximate triangle with base 2πr and height r, find its area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Triangle area=base×height/2.",
+            "Substitute (2πr)×r/2.",
+            "Simplify to πr²."
+          ],
+          "Answer": "πr².",
+          "Check": "The conceptual limit requires increasingly thin sectors."
+        },
+        {
+          "Title": "Source-task analogue — Rearranging Circular Sectors",
+          "Question": "Cut an original radius-5 cm paper circle into 12 equal sectors and arrange them alternately point-up and point-down. Estimate the resulting near-parallelogram's base and height and infer the circle area.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Mark 12 equal angular sectors and cut or draw all pieces without missing area.",
+            "Alternate orientations; the near-parallelogram's long edge approaches half the circumference, πr=5π cm.",
+            "Its height is close to the radius, 5 cm.",
+            "Thus rearranged area approaches base×height=(5π)(5)=25π cm²; show why more sectors smooth the sloped edge."
+          ],
+          "Answer": "Area about 25π cm², justified by a sector rearrangement with base≈5π and height≈5.",
+          "Check": "Teacher inspects the original rearrangement diagram or physical sector model and the limiting-shape explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming a few sectors form an exact parallelogram",
+          "WhyWrong": "The construction is an approximation improving with more sectors.",
+          "Correction": "Describe it as an informal limiting argument."
+        },
+        {
+          "Mistake": "Using circumference as full parallelogram base without adjustment",
+          "WhyWrong": "The combined straight edge is half the circumference.",
+          "Correction": "Use C/2 as the base."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Base tends toward half-circumference; height tends toward radius.",
+        "Use C/2=πr.",
+        "A≈(C/2)×r=πr²."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sector-rearrangement area relationship",
+          "Description": "The rearranged-sector argument uses half circumference as approximate base and radius as height. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius",
+              "Cells": [
+                "2",
+                "3",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Half-circumference",
+              "Cells": [
+                "2π",
+                "3π",
+                "5π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area=base×height",
+              "Cells": [
+                "4π",
+                "9π",
+                "25π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L09",
+      "CultureCode": "en",
+      "Title": "Applying Area of Circles",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Compute exact circular and semicircular areas and combined shapes, retaining π symbolically. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/9/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Four Equal Circles in a Square; Comparing Inscribed Circles; Ring-Shaped Area. This lesson requires students to Compare one, four and nine circle packings inside equal square area. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/9/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exact disk area",
+          "Definition": "Disk area is π times radius squared.",
+          "Rule": "A=πr².",
+          "Example": "For r=5, area=25π."
+        },
+        {
+          "Title": "Partial disks",
+          "Definition": "A semicircle has half the area of its full circle.",
+          "Rule": "A_semicircle=πr²/2.",
+          "Example": "At r=4, area=8π."
+        },
+        {
+          "Title": "Composite region",
+          "Definition": "Add or subtract component areas with compatible units.",
+          "Rule": "Rectangles and circular sectors can be combined exactly.",
+          "Example": "A 4×3 rectangle plus half a radius-2 disk has area 12+2π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Exact disk area",
+          "Question": "Find area of a circle with diameter 12 cm.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Radius=12/2=6 cm.",
+            "Area=π×6².",
+            "Simplify 36π."
+          ],
+          "Answer": "36π cm².",
+          "Check": "Retain π rather than rounding."
+        },
+        {
+          "Title": "Area of a semicircle",
+          "Question": "Find the area of a half-disk with radius 4 m.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Full disk=16π m².",
+            "Take half.",
+            "Compute 8π."
+          ],
+          "Answer": "8π m².",
+          "Check": "Two equal halves form a circle."
+        },
+        {
+          "Title": "Compound area",
+          "Question": "A nonoverlapping 4×3 rectangle is joined to a semicircle of radius 2. Find total area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Rectangle=12 square units.",
+            "Semicircle=(π×2²)/2=2π.",
+            "Add the nonoverlapping areas."
+          ],
+          "Answer": "12+2π square units.",
+          "Check": "Both components use the same area unit."
+        },
+        {
+          "Title": "Source-task analogue — Four Equal Circles in a Square",
+          "Question": "Three original 10 cm-square designs contain respectively 1,4 and 9 equal circles arranged in a 1×1,2×2 or 3×3 packing, each touching cell sides. Calculate the total disk area in each design and the remaining uncovered area.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "For 1 disk, radius=5 cm, total circle area=25π cm².",
+            "For 4 disks, each radius=2.5 cm, total=4×6.25π=25π cm².",
+            "For 9 disks, each radius=5/3 cm, total=9×(25/9)π=25π cm².",
+            "Uncovered square area is always 100−25π cm²; draw the three distinct arrangements."
+          ],
+          "Answer": "All three layouts cover 25π cm² and leave 100−25π cm² uncovered.",
+          "Check": "Teacher assesses 1-,4-,9-circle drawings, touching boundaries, radii and shaded-region reasoning."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calculating from diameter as if it were radius",
+          "WhyWrong": "Radius is half diameter.",
+          "Correction": "Convert to r before squaring."
+        },
+        {
+          "Mistake": "Rounding π before an exact answer",
+          "WhyWrong": "Rounding changes an exact symbolic result.",
+          "Correction": "Keep π in the final expression."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "A=πr².",
+        "A_semicircle=πr²/2.",
+        "Rectangles and circular sectors can be combined exactly."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Full and half-disk areas",
+          "Description": "A half disk has half the area of its full circle. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius",
+              "Cells": [
+                "2",
+                "3",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Full disk area",
+              "Cells": [
+                "4π",
+                "9π",
+                "16π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Half-disk area",
+              "Cells": [
+                "2π",
+                "4.5π",
+                "8π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L10",
+      "CultureCode": "en",
+      "Title": "Distinguishing Circumference and Area",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Choose circumference for boundary tasks and area for coverage tasks; interpret uncertain real-world measurements. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/10/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Circumference or Area Poster; Critiquing Wrong Claims; Designing Applications. This lesson requires students to Choose units and circle quantities for fencing versus covering, then critique an incorrect formula. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/10/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Boundary measurement",
+          "Definition": "Circumference measures distance around a circular edge.",
+          "Rule": "C=2πr in linear units.",
+          "Example": "Fence around r=3 circle is 6π metres."
+        },
+        {
+          "Title": "Coverage measurement",
+          "Definition": "Area measures the region within a circle.",
+          "Rule": "A=πr² in square units.",
+          "Example": "Paint a radius-3 circle covers 9π m²."
+        },
+        {
+          "Title": "Estimating geometry",
+          "Definition": "Real diameters may need reasonable estimation before applying a formula.",
+          "Rule": "State precision and units.",
+          "Example": "If approximate r=1.5 m, C≈3π m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Fence or paint?",
+          "Question": "A circular garden has radius 3 m. Find fence length and planted area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Fence C=2π×3=6π m.",
+            "Area A=π×3²=9π m².",
+            "Identify distinct dimensions and units."
+          ],
+          "Answer": "Fence 6π m; area 9π m².",
+          "Check": "Length and area are not interchangeable."
+        },
+        {
+          "Title": "Use a measured diameter",
+          "Question": "A circular tabletop has estimated diameter 1.2 m. Estimate the surface area.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Estimate radius 0.6 m.",
+            "Area≈π×0.6²=0.36π.",
+            "Approximate 1.13 m²."
+          ],
+          "Answer": "About 1.13 m².",
+          "Check": "Reported precision reflects the measurement."
+        },
+        {
+          "Title": "Critique a claim",
+          "Question": "Someone says a circle of radius 4 cm has circumference 16π cm. Is that right?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Apply C=2πr.",
+            "Compute C=8π cm.",
+            "Compare with claimed 16π cm."
+          ],
+          "Answer": "No; 8π cm.",
+          "Check": "16π cm² would be its area."
+        },
+        {
+          "Title": "Source-task analogue — Circumference or Area Poster",
+          "Question": "A circular pond is 6 m across. A gardener needs an outer fence and a waterproof circular cover. Another pupil claims both require 6π because the diameter is 6. What measurements and units does each need?",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "The diameter is 6 m, so radius is 3 m.",
+            "Fence length is the circumference C=πd=6π m.",
+            "Cover material is the area A=πr²=9π m².",
+            "Create a two-column labeled diagram or poster; explain that linear and squared units prevent the formulas from being interchangeable."
+          ],
+          "Answer": "Fence: 6π m. Cover: 9π m². The pupil's shared numerical formula is incorrect for area.",
+          "Check": "Teacher grades the original poster/diagram, dimensional argument and criticism of the false claim."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using area to price perimeter fencing",
+          "WhyWrong": "Boundary length and surface coverage differ.",
+          "Correction": "Identify the physical quantity and its units."
+        },
+        {
+          "Mistake": "Reporting precision beyond measured inputs",
+          "WhyWrong": "Rough estimates do not justify many decimal digits.",
+          "Correction": "Choose a sensible rounded answer."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "C=2πr in linear units.",
+        "A=πr² in square units.",
+        "State precision and units."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Boundary length versus covered area",
+          "Description": "Both measures use the same radius but different formulas and units. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (m)",
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference (m)",
+              "Cells": [
+                "6π",
+                "8π",
+                "10π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (m²)",
+              "Cells": [
+                "9π",
+                "16π",
+                "25π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U03:L11",
+      "CultureCode": "en",
+      "Title": "Stained-Glass Windows",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Use circle circumference and area together with pricing models and justify a custom design under a spending limit. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/11/preparation.html (CC BY 4.0 lineage; no publisher artwork).",
+        "This lesson distinguishes its intended measurement, model and units. Work through the exact examples and explain how the representation supports each conclusion. For tasks requiring original construction, field measurements or open designs, a teacher must assess the artifact; a numeric verifier alone is insufficient.",
+        "Official OUR/IM 2017–2019 student task alignment: Window Costs; Colored Glass Areas; Budget-Constrained Window Design. This lesson requires students to Combine colored and clear regions, boundaries and scaled design costs in a teacher-reviewed plan. Equivalent first-party learner activity and its drawing/measurement evidence need teacher review; equations and visual tables are supporting representations only. Student source: https://im.kendallhunt.com/MS/students/2/3/11/index.html."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Material cost model",
+          "Definition": "Glass is priced per area while edging is priced per boundary length.",
+          "Rule": "Total=area rate×area+edge rate×perimeter.",
+          "Example": "Glass $2/m² and edge $3/m use different dimensional rates."
+        },
+        {
+          "Title": "Scaling price",
+          "Definition": "When scaling by k, area costs change by k² while boundary costs change by k.",
+          "Rule": "Scale each material cost separately.",
+          "Example": "Doubling dimensions quadruples glass cost but doubles edging cost."
+        },
+        {
+          "Title": "Human-reviewed design",
+          "Definition": "Different valid windows can satisfy the same budget.",
+          "Rule": "Check geometry, cost assumptions, layout and explanation.",
+          "Example": "Teacher reviews an original proposal, not one numeric target."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Price a circular window",
+          "Question": "A radius-2 m circular window costs $5/m² for glass and $3/m for edging. Find its total cost.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Glass area=π×2²=4π m²; cost=20π dollars.",
+            "Edge length=2π×2=4π m; cost=12π dollars.",
+            "Add 20π+12π=32π dollars."
+          ],
+          "Answer": "$32π, about $100.53.",
+          "Check": "Both materials priced in their correct units."
+        },
+        {
+          "Title": "Double the window",
+          "Question": "Same prices, but radius doubles from 2 to 4 m. Find new cost.",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Glass cost multiplies by 4: 80π.",
+            "Edge cost multiplies by 2: 24π.",
+            "Add 80π+24π=104π."
+          ],
+          "Answer": "$104π, about $326.73.",
+          "Check": "Cost does not simply double or quadruple."
+        },
+        {
+          "Title": "Check a budget",
+          "Question": "A design has glass area 8 m² at $4/m² and edge length 6 m at $2/m. Does a $50 budget suffice?",
+          "Method": "Select the circle measurement required, perform the exact calculation and verify the geometric units.",
+          "Steps": [
+            "Glass cost=8×4=$32.",
+            "Edge cost=6×2=$12.",
+            "Total=$44≤$50."
+          ],
+          "Answer": "Yes, $6 remains.",
+          "Check": "Teacher reviews the actual proposed shape, assumptions and estimate."
+        },
+        {
+          "Title": "Source-task analogue — Window Costs",
+          "Question": "Design an original rectangular stained-glass window 2 ft by 3 ft with a central clear circular region of radius 0.5 ft. Colored glass costs $5/ft², clear $2/ft², exterior frame $4/ft and circular separator $0.10/ft. Calculate total cost, and explain what changes at scale factor 2.",
+          "Method": "Create the authentic student measurement/drawing/data representation first; explain the model, justify the mathematics and have a teacher review the artifact.",
+          "Steps": [
+            "Total rectangle area is 6 ft²; the clear disk area is π(0.5)²=π/4 ft², and colored area is 6−π/4 ft².",
+            "Original outer frame perimeter is 10 ft; central circular separator length is π ft.",
+            "Original cost=5(6−π/4)+2(π/4)+4(10)+0.10π=70−0.65π dollars, about $67.96.",
+            "At scale factor 2, glass areas quadruple and frame/seam lengths double. Total cost becomes 4×(30−0.75π)+2×(40+0.10π)=200−2.8π dollars, about $191.20."
+          ],
+          "Answer": "Original cost 70−0.65π≈$67.96; scaled version 200−2.8π≈$191.20, before labor/tax.",
+          "Check": "Teacher reviews the labeled original colored/clear window design, units, non-overlap and budget assumptions; no number alone completes the design project."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling every cost by the same factor",
+          "WhyWrong": "Area and edge length scale differently.",
+          "Correction": "Use k² for area materials and k for edge materials."
+        },
+        {
+          "Mistake": "Accepting a window sketch solely from arithmetic",
+          "WhyWrong": "The design must satisfy geometric and budget requirements.",
+          "Correction": "Use teacher rubric for geometry, construction assumptions and explanation."
+        },
+        {
+          "Mistake": "Marking a computed number alone as proof of a completed source lesson's physical measurement, diagram, group comparison or design task.",
+          "WhyWrong": "The publisher lesson requires original mathematical representations, observations or defended construction choices beyond a scalar answer.",
+          "Correction": "Use the appropriate teacher rubric for the drawing or investigation and treat formula-based auto-marking only as supplementary practice."
+        }
+      ],
+      "SummaryPoints": [
+        "Total=area rate×area+edge rate×perimeter.",
+        "Scale each material cost separately.",
+        "Check geometry, cost assumptions, layout and explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cost model for stained-glass circle",
+          "Description": "At $5 per m² for glass and $3 per m for edging, area and perimeter costs grow at different rates. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (m)",
+              "Cells": [
+                "2",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Glass cost",
+              "Cells": [
+                "20π dollars",
+                "80π dollars"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Edge cost",
+              "Cells": [
+                "12π dollars",
+                "24π dollars"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "32π dollars",
+                "104π dollars"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

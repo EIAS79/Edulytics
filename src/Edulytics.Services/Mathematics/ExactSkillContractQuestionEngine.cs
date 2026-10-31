@@ -183,6 +183,8 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssT001RepresentationChoices.Supports(family.Trim()) ||
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
@@ -407,6 +409,10 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson1TilingQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1721,6 +1727,18 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson1ScaledCopyQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson1TilingQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
         {
             var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(family,random);
@@ -4865,6 +4883,10 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
