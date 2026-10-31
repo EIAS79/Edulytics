@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 34,
-    "B_CLOSED": 34,
-    "C_PREPARED": 34,
-    "ABC_READY_FOR_D": 34,
+    "A_CLOSED": 35,
+    "B_CLOSED": 35,
+    "C_PREPARED": 35,
+    "ABC_READY_FOR_D": 35,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 90,
+    "REMAINING": 89,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 90,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+    "Unprocessed": 89,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L12",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L12",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 12
+    "U02ClosedLessonCount": 13
   },
   "LessonEntries": [
     {
@@ -804,6 +804,39 @@
       "TestsExecuted": "NOT_RUN",
       "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_FIRST_PARTY_PAPER",
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+      "Ordinal": 35,
+      "UnitOrdinal": 13,
+      "Title": "Proofs about Parallelograms",
+      "LessonCommit": "b1dd0ec651a0f9fd7bd439fb41526d0fd36ceb2c",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "486743523153311fe9809d484aa4b97ff7da6e93206dbdb9c5cf5410bcc49f2d",
+        "TeacherActivities": "e46992946050f19b87293e2402c68df7675dfd0f036737158da23e0275425fef",
+        "StudentActivities": "519f1fe2fa3f26092b83831cee0ed277da2f87a40838ebcfafd003fce767eed3",
+        "StudentPractice": "062986df3f02fe7faf30a91556fb4fd60a1ffe8569ed4158737fb9f74299f4cd"
+      },
+      "OriginalActivities": [
+        "13.1",
+        "13.2",
+        "13.3",
+        "13.3 Extension"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_SOURCE_SHA256_AND_CROSSWALK",
+      "B": "B_CLOSED_COURSE_RICHV2_SOURCE_SPECIFIC_REPAIR_RETAIN_VALID_CONTENT",
+      "C": "C_CLOSED_AUTHORING_EXACT_LESSON_TEACHER_SELECTED_SOURCE_ASSESSMENT_NOT_RUN",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L13_PARALLELOGRAM_DIAGONAL_BACKWARDS_PAPER_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l13-parallelogram-diagonals-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l13-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l13-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_PAPER_ALTERNATIVE",
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -844,7 +877,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -872,5 +905,5 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l12-abc-checkpoint-20261031.json"
+  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l13-abc-checkpoint-20261031.json"
 }
