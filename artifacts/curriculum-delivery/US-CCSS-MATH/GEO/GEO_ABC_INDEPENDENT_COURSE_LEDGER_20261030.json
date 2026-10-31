@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 67,
-    "B_CLOSED": 67,
-    "C_PREPARED": 67,
-    "ABC_READY_FOR_D": 67,
+    "A_CLOSED": 68,
+    "B_CLOSED": 68,
+    "C_PREPARED": 68,
+    "ABC_READY_FOR_D": 68,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 57,
+    "REMAINING": 56,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 4,
     "CURRENT_UNIT": "U05",
@@ -24,18 +24,18 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 57,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+    "Unprocessed": 56,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U05",
     "UnitLessonCount": 16,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L03",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L03",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
     "AllUnitABCReady": false,
     "NextUnit": "U03",
     "ProcessedFirstUnit": 22,
@@ -44,7 +44,7 @@
     "UnitCountSource": "geo-124-source-manifest-20261028.json canonical unit counts: U01=22, U02=15, U03=16",
     "U03ClosedLessonCount": 16,
     "U04ClosedLessonCount": 11,
-    "U05ClosedLessonCount": 3
+    "U05ClosedLessonCount": 4
   },
   "LessonEntries": [
     {
@@ -2032,6 +2032,44 @@
       "StartedAtUtc": "2026-10-31T07:19:08.017542Z",
       "ClosedAtUtc": "2026-10-31T07:19:19.691686Z",
       "ElapsedSeconds": 11.674
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+      "Ordinal": 68,
+      "UnitOrdinal": 4,
+      "Title": "Scaling and Area",
+      "LessonCommit": "f03c4261afe6b2299dda6344995a43ac5f5001c1",
+      "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "5fff49cf1845e406fce057418b4fe8ceffe268a2664192a2a62f767785df9b37",
+        "TeacherActivities": "c1f1eeb728ac79734d648053cd29c1315c5d0101434773a5920a58325cf7befe",
+        "StudentActivities": "5b8d3f8eefe573ecf5b327d1e5cf5da6e7de573f7a6e0c8c9c984dae84e76f07",
+        "StudentPractice": "b22d4219f1ae6527c6f8c2f067e020940221335c448832217295e84a319158d1"
+      },
+      "OriginalActivities": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "Practice P1-P9",
+        "4.4"
+      ],
+      "OriginalPracticeCount": 9,
+      "A": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+      "B": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+      "C": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U05_L04_AREA_K_SQUARED_RECTANGLE_BLOB_HUMAN",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u05-l04-source-human-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u05-l04-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l04-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+      "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+      "TeacherScoringPersistence": "UNVERIFIED_STAGE_D_ISSUE_453",
+      "StartedAtUtc": "2026-10-31T07:20:14.037279Z",
+      "ClosedAtUtc": "2026-10-31T07:20:26.461934Z",
+      "ElapsedSeconds": 12.425
     }
   ],
   "return_queue": [],
@@ -2072,7 +2110,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "U05:L04 canonical next; Stage D NOT_RUN",
+  "Next": "U05:L05 canonical next; Stage D NOT_RUN",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -2101,10 +2139,10 @@
     "Timing": "Not independently measured; not inferred"
   },
   "LastCheckpoint20261031": {
-    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L03",
-    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
     "BLOCKED_CURRENT_LESSON": null,
-    "LAST_CONTENT_COMMIT": "e1d2efbcd45f624457bcf563fd7c4d7491cb6c5b",
+    "LAST_CONTENT_COMMIT": "f03c4261afe6b2299dda6344995a43ac5f5001c1",
     "Tests": "AUTHORED_NOT_RUN",
     "SharedEngineLease": "Issue #605 exclusive writer files untouched",
     "SavedTeacherGrade": "NOT_VERIFIED_STAGE_D_ISSUE_453"

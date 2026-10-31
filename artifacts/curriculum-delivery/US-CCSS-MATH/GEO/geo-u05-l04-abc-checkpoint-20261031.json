@@ -1,0 +1,199 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+  "Ordinal": 68,
+  "UnitCode": "U05",
+  "UnitOrdinal": 4,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\4\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\4\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\4\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\4\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "5fff49cf1845e406fce057418b4fe8ceffe268a2664192a2a62f767785df9b37",
+    "TeacherActivities": "c1f1eeb728ac79734d648053cd29c1315c5d0101434773a5920a58325cf7befe",
+    "StudentActivities": "5b8d3f8eefe573ecf5b327d1e5cf5da6e7de573f7a6e0c8c9c984dae84e76f07",
+    "StudentPractice": "b22d4219f1ae6527c6f8c2f067e020940221335c448832217295e84a319158d1"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "4.1",
+      "Goal": "square roots5,9,sqrt10 and positive physical factors",
+      "Mode": "EXACT_SOURCE_ROOTS"
+    },
+    {
+      "Source": "4.2",
+      "Goal": "5x2 grid dilation k .5,1,2,2.5,3,4, critique erroneous 30, optional odd squares",
+      "Mode": "SOURCE_GRID_TABLE_AND_PROOF"
+    },
+    {
+      "Source": "4.3",
+      "Goal": "approximate irregular blob via rectangles, area k squared, circle20 k6 gives720",
+      "Mode": "TEACHER_FIRST_PARTY_AREA_LIMIT_EXPLANATION"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine source area, circle, cone section, trig and isosceles geometry tasks",
+      "Mode": "EXACT_P1_P2_P5_P6_P8_AND_IMAGE_TEACHER"
+    },
+    {
+      "Source": "4.4",
+      "Goal": "teacher-protected Finding an Area",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "8.EE.A.2",
+      "HSG-SRT.A.1.b"
+    ],
+    "Addressing": [
+      "HSA-SSE.A.1.a",
+      "HSG-GMD"
+    ],
+    "BuildingTowards": [
+      "HSF-IF.C.7.b",
+      "HSG-GMD.A.1"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U05_L04_AREA_K_SQUARED_RECTANGLE_BLOB_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+    "TaskId": "geo-u05-l04-full-six-row-source-dilation-area-table",
+    "GroupId": "GEO_U05_L04_AREA_K_SQUARED_RECTANGLE_BLOB_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original source 5x2 rectangle scale-factor table with all six rows and diagram, source k3 incorrect area critique, nonrectangular rectangle-cover argument, circle area source720 and nine indexed Practice answers with teacher eight-point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "explains square roots and positive dilation domain and correctly draws source 5 by2 rectangle at k2 and k3",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "completes original six-factor table with image area A*k² and explicitly refutes area30 for k3",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "provides rigorous approximate-rectangle/distributive area argument and k2 k1/2 k3.5 source irregular-region cases",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "answers nine indexed source Practice with exact units and source image caveats, teacher-reviewed explanation",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "original rectangle length5 width2 k3 has area(15)(6)=90, not30",
+      "source table k.5 area2.5 k2.5 area62.5 k4 area160",
+      "source irregular circle area20 k6 becomes720 and P1 areas48,300,12,.75,17.28"
+    ],
+    "Equivalent": [
+      "area image A*k² and area image (k*l)*(k*w) give same square units",
+      "three consecutive odd-number area shell increases3,5,7 produce squares4,9,16"
+    ],
+    "Wrong": [
+      "length factor3 multiplies rectangle area by3 instead of9",
+      "area12 k1.2 results14.4 instead of17.28",
+      "all circular-section solids exclude cone or sphere"
+    ],
+    "Boundary": [
+      "positive finite k required for nondegenerate planar geometry; k=0 collapses to zero-area point",
+      "area factor k² holds for bounded measurable regions, not an unmeasurable pathological set",
+      "original trapezoid and rotation graphics not verified; exact marked selections not invented"
+    ],
+    "Malformed": [
+      "no side measurements for k or mixed square/linear units",
+      "source original area table missing rows yet claimed complete",
+      "teacher-protected Cool-down asserted digitally auto graded"
+    ]
+  },
+  "IndependentMathOracles": {
+    "OriginalRectangleLength": 5,
+    "OriginalRectangleWidth": 2,
+    "OriginalArea": 10,
+    "SourceAreaFactors": [
+      0.25,
+      1,
+      4,
+      6.25,
+      9,
+      16
+    ],
+    "SourceScaledAreas": [
+      2.5,
+      10,
+      40,
+      62.5,
+      90,
+      160
+    ],
+    "SourceIncorrectK3Area": 30,
+    "SourceCorrectK3Area": 90,
+    "SourceCircle20K6Area": 720,
+    "SourceArbitraryArea40K2": 160,
+    "SourceArbitraryArea40KHalf": 10,
+    "SourceArbitraryArea40K3_5": 490,
+    "SourceOddSumFormula": "sum_first_n_odds=n²",
+    "P1Areas": [
+      48,
+      300,
+      12,
+      0.75,
+      17.28
+    ],
+    "P5Choice": "A",
+    "P6Choices": [
+      "E",
+      "F",
+      "G"
+    ],
+    "P8Complement": "tan34=x/8"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l04-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u05-l04-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u05-l04-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u05-l04-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "f03c4261afe6b2299dda6344995a43ac5f5001c1",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T07:20:14.037279Z",
+  "ClosedAtUtc": "2026-10-31T07:20:26.461934Z",
+  "ElapsedSeconds": 12.425,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05"
+}
