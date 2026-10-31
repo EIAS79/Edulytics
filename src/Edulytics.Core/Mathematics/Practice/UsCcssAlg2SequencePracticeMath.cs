@@ -18,6 +18,10 @@ public static class UsCcssAlg2SequencePracticeMath
         if (discs is < 1 or > 64 || string.IsNullOrWhiteSpace(response) ||
             response.Length > MaximumResponseLength) return false;
 
+        // Whitespace may separate expression tokens but must never join two
+        // numeric tokens into a different integer (e.g. "3 1" -> "31").
+        if (Regex.IsMatch(response, @"(?<=\d)\s+(?=\d)")) return false;
+
         BigInteger expected = (BigInteger.One << discs) - BigInteger.One;
         string compact = Regex.Replace(response, @"\s+", "");
         Match exponent = Regex.Match(compact, @"^2\^(\d{1,2})-1$");

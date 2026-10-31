@@ -9,7 +9,11 @@ public sealed class UsCcssAlg2SequencePracticeMathTests
     {
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(3, "7"));
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(5, "2^5-1"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(5, " 2 ^ 5 - 1 "));
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(5, "1+2+4+8+16"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(5, "3 1"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(4, "1 5"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(64, "18 446744073709551615"));
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(64, "18446744073709551615"));
         Assert.False(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(64, "18446744073709552000"));
         Assert.False(UsCcssAlg2SequencePracticeMath.GradeHanoiMinimumMoves(5, "2^4-1"));
