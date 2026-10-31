@@ -65,3 +65,30 @@ test('L01 original 7.5 task: signed graph/table checks, tangent algebra, domain 
   near(Math.cos(Math.PI-Math.PI/3),-1/2);
   near(Math.sin(Math.PI+Math.PI/3),-Math.sqrt(3)/2);
 });
+
+
+// AUTHORED / NOT_RUN in Stage A-B-C; executable only in the later Stage D batch.
+test('L01 text-first triangle and both exact six-identity rows remain source-aligned',()=>{
+  const l01=pack.lessons[0].translations[0].stepByStepSolutions;
+  assert.match(l01,/Draw triangle ABC with a right angle at A/);
+  assert.match(l01,/sin\(x\)=a\/h/);
+  assert.match(l01,/cos\(90°−x\)=a\/h/);
+  assert.match(l01,/Two worked sample rows for all six conjectures/);
+  assert.match(l01,/x=pi\/6/);
+  assert.match(l01,/x=7pi\/6/);
+  assert.match(l01,/ordered comparisons, not quotients/);
+  assert.match(l01,/NOT proof for all real x/);
+  const table=[
+    {x:Math.PI/6,base:[.5,Math.sqrt(3)/2],ref:[.5,-Math.sqrt(3)/2],
+      half:[-.5,-Math.sqrt(3)/2],turn:[-.5,Math.sqrt(3)/2]},
+    {x:7*Math.PI/6,base:[-.5,-Math.sqrt(3)/2],ref:[-.5,Math.sqrt(3)/2],
+      half:[.5,Math.sqrt(3)/2],turn:[.5,-Math.sqrt(3)/2]}
+  ];
+  const value=x=>[Math.sin(x),Math.cos(x)];
+  for(const row of table){
+    [row.base,row.ref,row.half,row.turn].forEach((pair,i)=>{
+      const angle=[row.x,Math.PI-row.x,Math.PI+row.x,2*Math.PI-row.x][i];
+      pair.forEach((v,j)=>near(v,value(angle)[j]));
+    });
+  }
+});

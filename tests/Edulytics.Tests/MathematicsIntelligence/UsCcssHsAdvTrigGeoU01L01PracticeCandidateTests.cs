@@ -62,6 +62,52 @@ public sealed class UsCcssHsAdvTrigGeoU01L01PracticeCandidateTests
     }
 
     [Theory]
+    [InlineData("l01-reflection-cos", "-sqrt(27)/6")]
+    [InlineData("l01-reflection-cos", "-3/sqrt(12)")]
+    [InlineData("l01-rotation-sin", "-sqrt(27)/6")]
+    [InlineData("l01-rotation-sin", "-3/sqrt(12)")]
+    [InlineData("l01-fullturn-cos", "sqrt(18)/6")]
+    [InlineData("l01-fullturn-cos", "2/sqrt(8)")]
+    public void ReviewedExactAlgebraicAliasesAcceptedOnlyForTheirOwnQuestion(
+        string caseId, string answer)
+    {
+        Assert.Equal("EXACT_ACCEPTED",
+            UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ClassifyReviewerSubmission(
+                L01, caseId, answer));
+        Assert.NotEqual("EXACT_ACCEPTED",
+            UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ClassifyReviewerSubmission(
+                L01, caseId == "l01-fullturn-cos" ? "l01-reflection-cos" : "l01-fullturn-cos", answer));
+    }
+
+    [Theory]
+    [InlineData("degrees")]
+    [InlineData("Degrees")]
+    [InlineData("degree")]
+    [InlineData("")]
+    [InlineData("rad")]
+    public void DeclaredAngleModeMustBeExactlyRadians(string mode)
+    {
+        Assert.Equal("ANGLE_MODE_MISMATCH",
+            UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ClassifyReviewerSubmissionWithAngleMode(
+                L01, "l01-reflection-cos", mode, "-sqrt(3)/2"));
+        Assert.Equal("EXACT_ACCEPTED",
+            UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ClassifyReviewerSubmissionWithAngleMode(
+                L01, "l01-reflection-cos", "radians", "-sqrt(3)/2"));
+    }
+
+    [Theory]
+    [InlineData("sqrt(1 2)")]
+    [InlineData("sqrt( 1 2 )")]
+    [InlineData("sqrt(1\t2)")]
+    [InlineData("sqrt(1\n2)")]
+    public void DigitTokenWhitespaceCannotCreateApprovedRadicand(string broken)
+    {
+        Assert.Equal("MALFORMED_OR_UNSUPPORTED",
+            UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ClassifyReviewerSubmission(
+                L01, "l01-reflection-cos", "-" + broken + "/4"));
+    }
+
+    [Theory]
     [InlineData("l01-reflection-cos", "-0.8660254037844386")]
     [InlineData("l01-reflection-cos", "-8.660254037844386e-1")]
     [InlineData("l01-rotation-sin", "-0.866")]

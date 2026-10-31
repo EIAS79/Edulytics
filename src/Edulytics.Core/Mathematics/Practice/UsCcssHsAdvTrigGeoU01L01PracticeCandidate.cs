@@ -21,6 +21,7 @@ public static class UsCcssHsAdvTrigGeoU01L01PracticeCandidate
     public const string Version = "usccss.hs.adv_trig_geo.u01.l01.pending.v2";
     public const string Readiness = "INTEGRATION_PENDING";
     public const string AnswerPolicy = "EXACT_SYMBOLIC_ONLY_ALLOWLIST";
+    public const string RequiredAngleMode = "radians";
     public const int RequiredScorableQuestions = 3;
     public const int TeacherProofRubricMaxPoints = 6;
 
@@ -46,13 +47,13 @@ public static class UsCcssHsAdvTrigGeoU01L01PracticeCandidate
     private static readonly CandidateCase[] Cases =
     [
         new("l01-reflection-cos", 2, 1, 0, "OK", "-sqrt(3)/2",
-            ["-sqrt(12)/4"], ["-0.8660254037844386", "-0.866", "-8.660254037844386e-1"],
+            ["-sqrt(12)/4", "-sqrt(27)/6", "-3/sqrt(12)"], ["-0.8660254037844386", "-0.866", "-8.660254037844386e-1"],
             ["sqrt(3)/2", "-1/2"], ["cos(", "banana", "<script>"]),
         new("l01-rotation-sin", 4, 0, 1, "OK", "-sqrt(3)/2",
-            ["-sqrt(12)/4"], ["-0.8660254037844386", "-0.866"],
+            ["-sqrt(12)/4", "-sqrt(27)/6", "-3/sqrt(12)"], ["-0.8660254037844386", "-0.866"],
             ["sqrt(3)/2"], ["sin(", "banana", "NaN"]),
         new("l01-fullturn-cos", 3, 1, 2, "OK", "sqrt(2)/2",
-            ["1/sqrt(2)", "sqrt(8)/4"], ["0.7071067811865476", "0.707"],
+            ["1/sqrt(2)", "sqrt(8)/4", "sqrt(18)/6", "2/sqrt(8)"], ["0.7071067811865476", "0.707"],
             ["-sqrt(2)/2"], ["cos(", "banana", "Infinity"]),
         new("l01-tangent-pole", 6, 2, 2, "OUT_OF_DOMAIN", null,
             [], [], ["0", "1", "undefined=0"], ["tan(", "banana"])
@@ -123,6 +124,18 @@ public static class UsCcssHsAdvTrigGeoU01L01PracticeCandidate
         if (candidate.IncorrectForms.Contains(answer, StringComparer.Ordinal))
             return "INCORRECT";
         return "MALFORMED_OR_UNSUPPORTED";
+    }
+
+    /// <summary>
+    /// Course-only review guard for an explicitly declared angle unit. The shared
+    /// question router must independently enforce the same condition if selected.
+    /// </summary>
+    public static string ClassifyReviewerSubmissionWithAngleMode(
+        string? lessonCode, string? caseId, string? angleMode, string? submission)
+    {
+        if (!string.Equals(angleMode, RequiredAngleMode, StringComparison.Ordinal))
+            return "ANGLE_MODE_MISMATCH";
+        return ClassifyReviewerSubmission(lessonCode, caseId, submission);
     }
 
     private static bool IsDecimalNumericToken(string answer)
