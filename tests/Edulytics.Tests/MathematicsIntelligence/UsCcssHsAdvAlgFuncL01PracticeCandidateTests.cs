@@ -36,7 +36,10 @@ public sealed class UsCcssHsAdvAlgFuncL01PracticeCandidateTests
         Assert.Equal(expectedCaseId, question.CaseId);
         Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
         Assert.False(string.IsNullOrWhiteSpace(question.ExpectedResponseFormat));
-        Assert.Equal(expectedCaseId is "M05" or "M11", question.RequiresTeacherReview);
+        Assert.Equal(expectedCaseId is "M04" or "M05"
+            or "M07" or "M11" or "SOURCE_PAINTING" or "SOURCE_TASK6"
+            or "SOURCE_TASK1A" or "SOURCE_TASK1B",
+            question.RequiresTeacherReview);
     }
 
     [Fact]
@@ -118,6 +121,27 @@ public sealed class UsCcssHsAdvAlgFuncL01PracticeCandidateTests
         Assert.False(string.IsNullOrWhiteSpace(assessment.Feedback));
     }
 
+    [Theory]
+    [InlineData("M01", "A=[[1,1,1],[2,-1,1],[1,2,-1]];b=[6,3,2]", false)]
+    [InlineData("M02", "A^-1=[[1,-1],[-1,2]];x=[2,1]", false)]
+    [InlineData("M03", "A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[1,2,3]", false)]
+    [InlineData("M06", "inconsistent", false)]
+    [InlineData("M07", "singular", true)]
+    [InlineData("M08", "dimension_mismatch", false)]
+    [InlineData("SOURCE_PAINTING",
+        "A^-1=[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2,6]", true)]
+    [InlineData("SOURCE_TASK6",
+        "A^-1=[[-5/3,2/3,4/3],[1/3,-1/3,1/3],[1,0,-1]];x=[2,4,3]", true)]
+    [InlineData("SOURCE_TASK1A", "[[2,0,1],[1,4,0],[0,2,1]]", true)]
+    [InlineData("SOURCE_TASK1B", "[[1,0,0],[0,1,0],[0,0,1]]", true)]
+    public void ClosedNumericalCreditNeverSuppressesASeparateHumanExplanation(
+        string caseId, string answer, bool expectHumanReview)
+    {
+        var result = Candidate.Assess(Candidate.LessonCode, caseId, answer);
+        Assert.Equal(Candidate.Disposition.CorrectClosedAnswer, result.Status);
+        Assert.Equal(expectHumanReview, result.TeacherReviewRequired);
+    }
+
     [Fact]
     public void TeacherProofsGetNoAutomaticSuccessAndInvalidInputIsRejected()
     {
@@ -129,5 +153,19 @@ public sealed class UsCcssHsAdvAlgFuncL01PracticeCandidateTests
             Candidate.Assess(Candidate.LessonCode, "M11", "<script>bad</script>").Status);
         Assert.Equal(Candidate.Disposition.IncorrectOrMalformed,
             Candidate.Assess(Candidate.LessonCode, "M03", null).Status);
+        Assert.True(Candidate.Assess(Candidate.LessonCode, "M03", null)
+            .TeacherReviewRequired);
+        Assert.True(Candidate.Assess(Candidate.LessonCode, "M11",
+            "R2 <- R2 - 2R1 keeps the solutions").TeacherReviewRequired);
+        Assert.False(Candidate.Assess(Candidate.LessonCode, "M02",
+            "A^-1=[[1,-1],[-1,2]];x=[2,1]").TeacherReviewRequired);
+        Assert.True(Candidate.Assess(Candidate.LessonCode, "M01",
+            "Ax=b with A rows (1,1,1), (2,-1,1), (1,2,-1) and b column (6,3,2)")
+            .TeacherReviewRequired);
+        Assert.True(Candidate.Assess(Candidate.LessonCode, "M03",
+            "det(A)=7; A^-1=(1/7)*[[-1,3,2],[3,-2,1],[5,-1,-3]]; x=[1,2,3]")
+            .TeacherReviewRequired);
+        Assert.False(Candidate.Assess(Candidate.LessonCode, "M12", "any")
+            .TeacherReviewRequired);
     }
 }

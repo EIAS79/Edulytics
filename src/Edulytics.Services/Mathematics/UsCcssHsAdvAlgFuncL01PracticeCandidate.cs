@@ -26,7 +26,13 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
         TeacherReviewRequired
     }
 
-    public sealed record Assessment(Disposition Status, string Feedback);
+    /// <summary>
+    /// TeacherReviewRequired describes an independently required written
+    /// component, even when the closed matrix answer is numerically correct.
+    /// It is a handoff flag, NOT a teacher mark or persisted score.
+    /// </summary>
+    public sealed record Assessment(
+        Disposition Status, string Feedback, bool TeacherReviewRequired);
 
     private static readonly Question[] Questions =
     [
@@ -45,7 +51,7 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
         new(LessonCode, "M04",
             "Solve x+y+z=6, 2x-y+z=3, x+2y-z=2 by reversible " +
             "row reduction; submit the solution vector.",
-            "x=[x,y,z] (show row-operation reasoning to a teacher)", false),
+            "x=[x,y,z] (show row-operation reasoning to a teacher)", true),
         new(LessonCode, "M05",
             "Describe and justify every solution of x+y=2 and " +
             "2x+2y=4; represent the free parameter.",
@@ -56,7 +62,7 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
         new(LessonCode, "M07",
             "Decide whether [[1,2],[2,4]] has an inverse; state " +
             "the determinant-based reason.",
-            "singular / det(A)=0; inverse undefined", false),
+            "singular / det(A)=0; inverse undefined", true),
         new(LessonCode, "M08",
             "Can the inverse of [[2,1],[1,1]] multiply a " +
             "three-entry right-hand-side vector? Classify the issue.",
@@ -77,24 +83,24 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
             "Three painting receipts total 30, 20 and 10 units with " +
             "coefficient rows [2,0,1], [1,4,0], [0,2,1]. " +
             "Find the exact inverse and unit-price vector for paint, brush, tape.",
-            "A^-1=[[row1],[row2],[row3]];x=[paint,brush,tape]", false),
+            "A^-1=[[row1],[row2],[row3]];x=[paint,brush,tape]", true),
         new(LessonCode, "SOURCE_TASK6",
             "Use a matrix inverse to solve x+2y+2z=16, 2x+y+3z=17, " +
             "x+2y+z=13; supply both the full inverse and solution.",
-            "A^-1=[[row1],[row2],[row3]];x=[x,y,z]", false),
+            "A^-1=[[row1],[row2],[row3]];x=[x,y,z]", true),
         new(LessonCode, "SOURCE_TASK1A",
             "MVP 10.6H, task 1a: multiply the 3-by-3 identity matrix " +
             "I=[[1,0,0],[0,1,0],[0,0,1]] on the left by " +
             "A=[[2,0,1],[1,4,0],[0,2,1]]. Submit every entry of I*A. " +
             "Explain the identity property separately to your teacher.",
-            "[[row1],[row2],[row3]] (explanation teacher assessed)", false),
+            "[[row1],[row2],[row3]] (explanation teacher assessed)", true),
         new(LessonCode, "SOURCE_TASK1B",
             "MVP 10.6H, task 1b: multiply " +
             "[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]] " +
             "by A=[[2,0,1],[1,4,0],[0,2,1]]. " +
             "Submit the full 3-by-3 matrix product. " +
             "Explain the inverse property separately to your teacher.",
-            "[[row1],[row2],[row3]] (explanation teacher assessed)", false)
+            "[[row1],[row2],[row3]] (explanation teacher assessed)", true)
     ];
 
     /// <summary>
@@ -132,9 +138,10 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
     /// </summary>
     public static Assessment Assess(string? lessonCode, string? caseId, string? response)
     {
-        if (!TryGetQuestion(lessonCode, caseId, out _))
+        if (!TryGetQuestion(lessonCode, caseId, out var question))
             return new(Disposition.WrongLessonOrCase,
-                "This matrix assessment is not available for the requested lesson or task.");
+                "This matrix assessment is not available for the requested lesson or task.",
+                TeacherReviewRequired: false);
 
         var oracle = caseId switch
         {
@@ -162,12 +169,15 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
         {
             UsCcssHsAdvAlgFuncSourceResponseContract.MatrixCaseDisposition.CorrectClosedAnswer =>
                 new(Disposition.CorrectClosedAnswer,
-                    "Exact closed-answer check passed. Any requested explanation is teacher assessed."),
+                    "Exact closed-answer check passed. Any requested explanation is teacher assessed.",
+                    question!.RequiresTeacherReview),
             UsCcssHsAdvAlgFuncSourceResponseContract.MatrixCaseDisposition.TeacherReviewRequired =>
                 new(Disposition.TeacherReviewRequired,
-                    "Submit the mathematical argument for teacher review; no proof marks were awarded."),
+                    "Submit the mathematical argument for teacher review; no proof marks were awarded.",
+                    TeacherReviewRequired: true),
             _ => new(Disposition.IncorrectOrMalformed,
-                "Check the complete matrix, order, dimensions and exact numeric notation.")
+                "Check the complete matrix, order, dimensions and exact numeric notation.",
+                question!.RequiresTeacherReview)
         };
     }
 }
