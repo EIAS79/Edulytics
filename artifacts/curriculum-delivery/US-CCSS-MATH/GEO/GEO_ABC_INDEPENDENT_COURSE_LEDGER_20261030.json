@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 23,
-    "B_CLOSED": 23,
-    "C_PREPARED": 23,
-    "ABC_READY_FOR_D": 23,
+    "A_CLOSED": 24,
+    "B_CLOSED": 24,
+    "C_PREPARED": 24,
+    "ABC_READY_FOR_D": 24,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 101,
+    "REMAINING": 100,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 101,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+    "Unprocessed": 100,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 1
+    "U02ClosedLessonCount": 2
   },
   "LessonEntries": [
     {
@@ -442,6 +442,42 @@
       "ClosedAtUtc": "2026-10-31T00:10:32.895253Z",
       "ElapsedSeconds": 91.215,
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+      "Ordinal": 24,
+      "UnitOrdinal": 2,
+      "Title": "Congruent Parts, Part 2",
+      "LessonCommit": "ab2059129488e45851b36ce6bbb620ebd629a930",
+      "SourceEdition": "IM High School Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "2d06794c00ec977989584394d91c02a36a34850166ed5fec34df08979cf36f96",
+        "TeacherActivities": "a3d8d57872515fcadfb4080884e7baac214baa48824c691fbc56f37537702ef8",
+        "StudentActivities": "d38ef9fbb01e08c538a8d92d46805d15a3bc90572f8d1433bbdff7e694f09f7d",
+        "StudentPractice": "d505b17d5398a9b80498b96f11bc46317e2883f03f04d2ce6e510c1e88a63cfd"
+      },
+      "OriginalActivities": [
+        "2.1 Math Talk Which Are Congruent",
+        "2.2 Which Triangles Are Congruent SSA",
+        "2.3 Are These Parts Congruent"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_SOURCE_TEXT_AND_FIRST_PARTY_EQUIVALENT_GRAPHICS_UNVERIFIED",
+      "B": "B_CLOSED_SOURCE_ORDERED_CORRESPONDENCE_SSA_COUNTEREXAMPLE_AND_7_PRACTICE",
+      "C": "C_CLOSED_AUTHORING_TEACHER_PAPER_RUBRIC_AND_NOT_RUN_FIXTURES",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L02_ORDERED_CORRESPONDENCE_SSA_HUMAN_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l02-ordered-correspondence-ssa-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l02-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l02-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED",
+      "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+      "StartedAtUtc": "2026-10-31T00:11:38.370375Z",
+      "ClosedAtUtc": "2026-10-31T00:12:53.857480Z",
+      "ElapsedSeconds": 75.487,
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -482,7 +518,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "U02:L02 canonical next; U01 complete; U02:L01 A-B-C authorship complete, tests NOT_RUN",
+  "Next": "U02:L03 canonical next; U02:L02 A-B-C authoring complete; tests NOT_RUN",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -511,13 +547,13 @@
     "Timing": "Not independently measured; not inferred"
   },
   "LastCheckpoint20261031": {
-    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
-    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
     "BLOCKED_CURRENT_LESSON": null,
-    "LAST_CONTENT_COMMIT": "bf2445be3089caeed26fb6ea912ba14a16da1545",
+    "LAST_CONTENT_COMMIT": "ab2059129488e45851b36ce6bbb620ebd629a930",
     "Tests": "AUTHORED_NOT_RUN",
     "Unit01ReadyForStageD": true,
     "Unit02InProgress": true,
-    "SharedApplicationStageD": "Issue #453; online assignment, teacher grade and school isolation NOT_VERIFIED"
+    "SharedApplicationStageD": "Issue #453, teacher grade and two-school acceptance NOT_VERIFIED"
   }
 }
