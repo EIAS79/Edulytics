@@ -4,6 +4,96 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u03.l01.fraction_of_half_original_whole",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-one-of-three-or-four-equal-parts-of-half-is-one-of-six-or-eight-of-original",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g5.u03.l01.compare_original_whole_grids",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "equal-area-shaded-fractions-with-identical-original-whole-and-equal-grid-validation",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l01.scaled_copy_correspondence",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-uniform-polygon-correspondence-all-pairwise-squared-distances-source-scale-factors",
+      "representations": [
+        "numeric",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-eight-hexagon-piece-count-times-unit-triangle-area",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l01.structured_tiling_coverage",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-two-square-four-triangle-disjoint-half-cell-coverage-not-area-sum-alone",
+      "representations": [
+        "numeric",
+        "structured_geometry"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g4.u02.l03.same_denominator",
       "version": 1,
       "skillId": "fractions.compare.unlike_denominators",

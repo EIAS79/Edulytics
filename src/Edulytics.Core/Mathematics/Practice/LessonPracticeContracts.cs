@@ -1379,6 +1379,45 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 Grade 5 U03:L01: one piece of one selected half
+        // measured against the ORIGINAL whole (1/6 or 1/8).
+        // Digital objective selections are exact; drawings and explanations
+        // remain TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L01",
+            "supporting.fractions.multiply_divide",
+            "G5_ORIGINAL_WHOLE_FRACTION_OF_HALF_GRID",
+            [
+                "usccss.g5.u03.l01.fraction_of_half_original_whole",
+                "usccss.g5.u03.l01.compare_original_whole_grids"
+            ],
+            "IM2021_G5_U03_L01_EXACT_DIGITAL_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // IM 2021 Grade 7 U01:L01: reuse released exact polygon-copy route.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L01",
+            "geometry.similarity.scale_factor",
+            "G7_EXACT_SCALED_COPY_CORRESPONDENCE",
+            ["usccss.g7.u01.l01.scaled_copy_correspondence"],
+            "IM2021_G7_U01_L01_EXACT_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // IM 2021 Grade 6 U01:L01: reuse released two-family tiling route.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L01",
+            "geometry.area_tiling",
+            "G6_SOURCE_TILING_TRIANGULAR_UNITS_AND_EXACT_COVERAGE",
+            [
+                "usccss.g6.u01.l01.triangular_unit_tile_area",
+                "usccss.g6.u01.l01.structured_tiling_coverage"
+            ],
+            "IM2021_G6_U01_L01_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
