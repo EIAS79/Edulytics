@@ -1,0 +1,234 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L16",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\16\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\16\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\16\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\16\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "55ff1bd1103eb7106b7c92cebc8c452dc06aad60ede839152c7d8d5c31a09dc5",
+    "TeacherActivities": "81beb2f592703d9e9f5bdd5b9f2cedb6d384631cc989630610d2885d2471fdf9",
+    "StudentActivities": "629e7f3b841f3367a449bddb537d4cec490a67698e26d95068dc34a737221cd8",
+    "StudentPractice": "3e017d5669cb5f1748d36598ba45cfca7786c28f15ca166f2c48a8c04e1db67a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "7.G.B.6",
+      "8.G.C.9"
+    ],
+    "Addressing": [
+      "HSG-GMD.A.3",
+      "HSG-MG.A.1",
+      "HSG-MG.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-MG.A.3"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "16.1",
+      "Goal": "fixed rectangular 180ft enclosure maximum area square45x45",
+      "Mode": "EXACT_SOURCE_OPTIMUM"
+    },
+    {
+      "Source": "16.2",
+      "Goal": "fixed V60 battery SA cannot attain maximum without constraints; do not handle real batteries",
+      "Mode": "MATH_MODEL_BOUNDARY_AND_HUMAN_DESIGN"
+    },
+    {
+      "Source": "16.3",
+      "Goal": "spherical elephant r4.5ft versus cylindrical snake diameter.2ft h3",
+      "Mode": "EXACT_SOURCE_SURFACE_VOLUME_RATIOS"
+    },
+    {
+      "Source": "16.4",
+      "Goal": "optional ant/human/elephant strength proxies raw and relative",
+      "Mode": "EXACT_PROXY_AND_BIOLOGY_CAUTION"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source area-volume comparison, rotation, inverted cone and scaling",
+      "Mode": "EXACT_P2_P4_P8_AND_TEACHER_SOURCE_IMAGE"
+    },
+    {
+      "Source": "16.5",
+      "Goal": "publisher protected Minimize Area",
+      "Mode": "FIRST_PARTY_HUMAN_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L16",
+    "TaskId": "geo-u05-l16-elephant-snake-prism-surface-constraint",
+    "GroupId": "GEO_U05_L16_SURFACE_VOLUME_UNBOUNDED_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Source 45×45 fenced model, two battery prism V60 tables with unbounded surface critique, labelled animal SA/V table, source Practice P1-P8 and student first-party paper proof rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l16-surface-volume-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "derives 180ft fence maximum square45x45 area2025 and distinguishes it from 3D area optimisation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "explains source battery fixed-volume60 SA has no finite maximum without additional thickness constraints, cube minimizes SA",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "computes elephant121.5pi/81pi ratio2/3 vs snake.03pi/.62pi ratio62/3, explains optional 3/(4r) strength and simplifications",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies original P1-P8 with P2 ratios17/12 and17/15, P4 65pi/3, P6 1/64, P8 SA90 and valid source figure limits",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "four source solids same volume choose least SA",
+        "TeacherExpected": "original figure photos/measurements required to choose A-D",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "prism A3×4×8 and B5×5×6 ratio",
+        "TeacherExpected": "A SA136 V96 ratio17/12; B SA170 V150 ratio17/15; A higher ratio",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "two equal-volume ice pieces different SA",
+        "TeacherExpected": "cube side6 SA216 versus box1×12×18 SA492; larger exposed SA faster cooling under model",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "source grid rotated around vertical x5",
+        "TeacherExpected": "cone r3 h3 9pi plus frustum h2 radii3/2 38pi/3, total65pi/3 cubic inches",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "triangular prism given figure with height8",
+        "TeacherExpected": "original base diagram needed for area and volume",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "inverted cone r12 h8 water height2",
+        "TeacherExpected": "similar factor1/4 volume1/64",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "square base4 pyramid h10",
+        "TeacherExpected": "160/3 cubic units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "solid V4 SA10, image V108",
+        "TeacherExpected": "linear k3 new SA90 square units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "SourceFenceSideFt": 45,
+    "SourceFenceAreaFt2": 2025,
+    "BatteryFixedVolume": 60,
+    "BatteryMaxSA": "UNBOUNDED_WITHOUT_LOWER_DIMENSION_BOUND",
+    "ElephantV": "121.5pi",
+    "ElephantSA": "81pi",
+    "ElephantRatio": "2/3 inverse_ft",
+    "SnakeV": ".03pi",
+    "SnakeSA": ".62pi",
+    "SnakeRatio": "62/3 inverse_ft",
+    "RelativeStrength": "3/(4r)",
+    "P2A": {
+      "SA": 136,
+      "V": 96,
+      "Ratio": "17/12"
+    },
+    "P2B": {
+      "SA": 170,
+      "V": 150,
+      "Ratio": "17/15"
+    },
+    "P4SourceRotation": "65pi/3",
+    "P6Fill": "1/64",
+    "P7V": "160/3",
+    "P8SA": 90
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "180ft fixed fence square45 by45 area2025 maximum",
+      "fixed positive 3D prism volume60 has unbounded SA as one side goes to0, no finite max",
+      "elephant SA/V2/3 vs snake full-end SA/V62/3",
+      "Practice P4 rotation65pi/3 and P6 cone fraction1/64"
+    ],
+    "Equivalent": [
+      "source P4 cone9pi plus frustum38pi/3 equals65pi/3",
+      "source snake SA ratio .62/.03 equals62/3 inverse-foot"
+    ],
+    "Wrong": [
+      "fixed volume60 rectangular prism has cube maximizing surface area",
+      "elephant sphere ratio SA/V treated as V/SA",
+      "source cone fill height1/4 treated as volume fraction1/4",
+      "source P2 B smaller absolute SA because its ratio lower"
+    ],
+    "Boundary": [
+      "real battery must never be opened; source is only fictional design model",
+      "cylinder snake caps excluded changes ratio, must say full/lateral",
+      "source P1 A-D and P5 triangular base figures inaccessible from text"
+    ],
+    "Malformed": [
+      "ratio called dimensionless when SA/V has inverse-length units",
+      "fixed-volume optimization claimed numeric maximum without width/min-thickness constraint",
+      "original teacher locked Cool-down or actual verified animal physiology asserted"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l16-surface-volume-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l16-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
