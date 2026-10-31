@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace Edulytics.Services.Mathematics;
 
@@ -205,7 +206,10 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
         !string.IsNullOrWhiteSpace(value) &&
         value.Length <= MaxResponseLength &&
         !value.Contains('<') && !value.Contains('>') &&
-        !value.Contains('\0');
+        !value.Contains('\0') &&
+        // Preserve whitespace around separators without merging two distinct
+        // number tokens, e.g. source painting x=[1 2,2,6] must not mean 12.
+        !Regex.IsMatch(value, @"(?<=\d)\s+(?=\d)");
 
     private static bool Assignments(
         string? response, string name1, string name2, out string a, out string b)
