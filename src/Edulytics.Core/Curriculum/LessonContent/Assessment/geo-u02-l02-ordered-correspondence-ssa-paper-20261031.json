@@ -1,0 +1,210 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM High School Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\2\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\2\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\2\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\2\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "2d06794c00ec977989584394d91c02a36a34850166ed5fec34df08979cf36f96",
+    "TeacherActivities": "a3d8d57872515fcadfb4080884e7baac214baa48824c691fbc56f37537702ef8",
+    "StudentActivities": "d38ef9fbb01e08c538a8d92d46805d15a3bc90572f8d1433bbdff7e694f09f7d",
+    "StudentPractice": "d505b17d5398a9b80498b96f11bc46317e2883f03f04d2ce6e510c1e88a63cfd"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.A.2"
+    ],
+    "Addressing": [
+      "HSG-CO.B.6"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.7",
+      "HSG-CO.B.8"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "2.1 Math Talk",
+      "SourceRequirement": "four labelled polygon statement claims; student reasons about actual diagram and precise ordering",
+      "FirstPartyMapping": "ordered claim audit and invariant-based teacher review, without unverified publisher art"
+    },
+    {
+      "Source": "2.2 Triangle SSA",
+      "SourceRequirement": "identify which source triangles match, show rigid-motion steps and disprove a second correspondence",
+      "FirstPartyMapping": "source PQR vs ACE incorrect assertion, independent SSA double-solution example, and written constructive critique"
+    },
+    {
+      "Source": "2.3 Corresponding Parts",
+      "SourceRequirement": "rotation triangles ABD/CDB; polygons GFONM/HIJKL; quadrilaterals PQRS/VZYW",
+      "FirstPartyMapping": "named exact correspondences for angles ADB to CBD, NM to KL, ZYW to QRS"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "SourceRequirement": "symmetry, 90/180 rotations, rigid corresponding parts, parallel lines, reflection, regular hexagon",
+      "FirstPartyMapping": "7 teacher-reviewed answer conditions and diagram-dependent caveats"
+    },
+    {
+      "Source": "Cool-down",
+      "SourceRequirement": "publisher-protected teacher material",
+      "FirstPartyMapping": "independently authored correspondence contradiction with explicit labelled caveat"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L02_ORDERED_CORRESPONDENCE_SSA_HUMAN_REVIEW",
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "SharedOwner": "Supervisor 2 issue #453",
+    "ExactDigitalAssignment": "UNVERIFIED_STAGE_D",
+    "SavedTeacherResult": "UNVERIFIED_STAGE_D",
+    "NoPublisherFigureFidelityClaim": true
+  },
+  "Task": {
+    "Prompt": "Assess four different named congruence statements on first-party labelled polygons. Explain a valid rigid motion and a contradicting side/angle for a false statement. Investigate SSA and then correctly match the named points in the three source-like 2.3 transformations.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "ordered vertex-to-vertex mapping and precisely matched segments and angles",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "a correct specific rigid-motion sequence or one rigorously incompatible corresponding length/angle",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "recognizes SSA as nonincluded-angle ambiguity and gives a valid pair of distinct noncongruent triangles",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "clearly critiques a false correspondence and fully justifies the corrected statement with labels",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "symmetry axis SD: wrong order AXPDS versus HMZDS",
+        "ExpectedTeacherEvidence": "trace the symmetry of named vertices; rewrite ordered pentagons with actual reflected pairs, not guessed visually",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "rotate L-shaped polygon 90 degrees counter-clockwise about K",
+        "ExpectedTeacherEvidence": "teacher checks constructed new segment, its turned image and the ordered congruence statement",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "half-turn maps triangle FGH to HEF",
+        "ExpectedTeacherEvidence": "ordered mapping F->H,G->E,H->F; corresponding sides GF to EH and GH to EF; other options must be proved from original figure",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "reflection across AB maps ABC to ABD",
+        "ExpectedTeacherEvidence": "choice B; rigid transformation preserves corresponding segments AC and AD",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "angle BED and BCA from m parallel l",
+        "ExpectedTeacherEvidence": "justify the appropriate transversal and corresponding or alternate angle theorem; original diagram required",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "reflect isosceles FEH over HF to FGH",
+        "ExpectedTeacherEvidence": "teacher checks rhombus, bisected angles and image-angle correspondence; do not assume perpendicularity to FE",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "new segment to produce second congruent hexagon",
+        "ExpectedTeacherEvidence": "teacher evaluates image-specific resulting hexagon, construction and justification; original publisher image not duplicated",
+        "Points": 2,
+        "ScoreMode": "TEACHER_SCORED"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentSSACounterexample": {
+    "A": [
+      0,
+      0
+    ],
+    "B": [
+      8,
+      0
+    ],
+    "AngleBACDegrees": 30,
+    "BC": 5,
+    "ACCandidates": [
+      "4*sqrt(3)-3",
+      "4*sqrt(3)+3"
+    ],
+    "BothACPositive": true,
+    "DifferentTriangles": true,
+    "SourceDiagramNumbersNotClaimed": true
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "ABC congruent DEF with 3,4,5 sides maps corresponding sides exactly",
+      "ABC not congruent DFE because original AB=3 but alleged image DF=5",
+      "source ABD rotated from CDB means angle ADB corresponds CBD; NM to KL; ZYW to QRS"
+    ],
+    "Equivalent": [
+      "a reflected or rotated copy satisfies an ordered congruence if every vertex maps in stated order",
+      "any positive SSA angle/length configuration with two valid intersections demonstrates non-sufficiency"
+    ],
+    "Incorrect": [
+      "claim PQR congruent ACE from just PQ=AC, QR=CE and angle P=angle A",
+      "SSA mistakenly treated as always SAS when the angle is not included",
+      "claim every named ordering is valid because unlabelled shapes happen to be congruent"
+    ],
+    "Boundary": [
+      "A=30 degrees, AB=8, BC=5 yields two AC values 4sqrt3 +/-3; distinct positive solutions",
+      "when circle is tangent to angle ray at altitude there is one SSA solution, not two",
+      "degenerate collinear triples cannot be treated as proper triangles"
+    ],
+    "Malformed": [
+      "missing labelled original-image vertex mapping",
+      "no explicit rigid motion or unequal corresponding measure",
+      "diagram-only choice with no explanation of why angle/segment pairs match"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE: one explicitly mismatched ordered correspondence and a written rigid-motion contradiction",
+  "TeacherHandoff": "Paper labelled triangles, full rigid sequence and written counterexample assessed by teacher; exact authenticated app-selected scoring and grade persistence remain Stage D issue #453.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l02-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN_ISSUE_453"
+}

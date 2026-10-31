@@ -1,0 +1,201 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+  "Status": "C_CLOSED_AUTHORING_PERPENDICULAR_BISECTOR_CONVERSE_TEACHER_RUBRIC_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\8\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\8\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\8\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\8\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "fd4817c8d5e0de4b1dd3b10b35789b7468696ae13b5b9895027a95308a2c12e0",
+    "TeacherActivities": "258a1f5ad38bf9010a183c2904673f9942dc9636cbe88d740564a9b09220f9aa",
+    "StudentActivities": "81473cc7f29eab3613877f3a62b220b6f73d95f3a342515f8b04a229a7efbcf3",
+    "StudentPractice": "9f9b95dd01a8db6a6c2d392cb03b31fc9dbd9009a02dfb0f1c100ece67bb56b1"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "7.G.B.5",
+      "HSG-CO.A.4",
+      "HSG-CO.B.6",
+      "HSG-CO.D.12"
+    ],
+    "Addressing": [
+      "HSG-CO.C.9"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.3",
+      "HSG-CO.B.8",
+      "HSG-CO.C.9"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "8.1",
+      "Goal": "Which one does not belong for four line intersections; multiple valid reasons",
+      "FirstPartyMode": "TEACHER_SCORED_MULTIPLE_VALID_ODD_ONE_OUT"
+    },
+    {
+      "Source": "8.2",
+      "Goal": "Critique Diego, Jada, Noah and Elena before equidistant-to-perpendicular-bisector proof",
+      "FirstPartyMode": "TEACHER_REVIEWED_CONVERSE_SAS_ANGLE_BISECTOR"
+    },
+    {
+      "Source": "8.2 Extension",
+      "Goal": "Reflection LINE versus point reflection and theorem locus",
+      "FirstPartyMode": "HUMAN_CRITIQUE"
+    },
+    {
+      "Source": "8.3",
+      "Goal": "Prove converse on-bisector implies equidistant and give peer feedback",
+      "FirstPartyMode": "TEACHER_SCORED_SAS_FORWARD_WITH_SPECIAL_MIDPOINT_CASE"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "7 original problem skills, figure-dependent constraints",
+      "FirstPartyMode": "SEVEN_SOURCE_INDEXED_PAPER_TEACHER_REVIEWS"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Goal": "Source protected",
+      "FirstPartyMode": "INDEPENDENT_EDULYTIKS_PAPER_EQUIVALENT"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L08_PERPENDICULAR_BISECTOR_BOTH_DIRECTIONS_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_PROOF_AND_PEER_CRITIQUE",
+    "TaskId": "geo-u02-l08-no-circular-bisector-converse",
+    "TeacherHandoff": "Teacher assigns independent paper 8.1 figures with multiple defensible odd-one-out; 8.2 critique 4 student approaches; 8.3 partner proof of converse; seven indexed written Practice and independent Edulytiks Cool-down. Collect labelled diagrams and distinct implication proofs; score four 0-2 criteria offline, never scalar grade a drawing.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct four-image comparison with justified alternative answers and critique of circular Diego/Jada/Elena drafts",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Valid equidistant-to-bisector proof using apex-angle bisector SAS, midpoint and right angle, special case P on AB",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Separate on-bisector-to-equidistant proof by SAS right triangles and partner revision; converse distinguished from inverse",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven source-indexed Practice tasks and independently authored Cool-down with figure-dependent claims checked by teacher",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Converse classification",
+      "FirstPartyPrompt": "Evaluate five statements and their converses, select only B,C,D and give counterexamples to A,E.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Isosceles DAC perpendicular bisector information",
+      "FirstPartyPrompt": "What additional justified facts put AB along perpendicular bisector CD? Refer to teacher supplied original labelled diagram.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Kite perpendicular diagonals",
+      "FirstPartyPrompt": "Explain why two pairs of equal adjacent side lengths force a kite symmetry diagonal to be a perpendicular bisector, not from approximate measurements.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "ADE congruent CBE",
+      "FirstPartyPrompt": "Use marked equal angles and AE=CE with source figure to justify a correct ASA proof; teacher checks diagram.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "DBA congruent CBA",
+      "FirstPartyPrompt": "Specify which included angle and side equalities are still needed for SAS, not merely the fact DAC is isosceles.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "CBA mapped to MLK rigid motions",
+      "FirstPartyPrompt": "Provide an ordered translated/rotated and optional reflection correspondence preserving both segment lengths and included angle.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Cyclic quadrilateral two folds",
+      "FirstPartyPrompt": "Critique claimed square from two folds or four equal sides, using a valid figure-supported argument rather than assumed publisher pixels.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "P1_TrueConverses": [
+      "B",
+      "C",
+      "D"
+    ],
+    "Converse_SAS_No_SSS": "PA_PB_PD_SHARED_INCLUDED_HALF_ANGLES_TO_MIDPOINT_RIGHT_ANGLE",
+    "Forward_SAS": "MIDPOINT_EQUAL_AND_RIGHT_INCLUDED_ANGLES",
+    "MidpointCase": "P_ON_AB_AND_PA_EQ_PB_IMP_P_EQUALS_MIDPOINT",
+    "CircleLocus": "EQUAL_DISTANCE_IFF_ON_PERPENDICULAR_BISECTOR"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "If PA=PB, draw bisector of APB, apply SAS to APD and BPD to get midpoint D and right angle",
+      "If P on bisector of AB, midpoint and right angles yield SAS then PA=PB",
+      "P1 converses B,C,D only",
+      "Point P on AB equidistant means P midpoint"
+    ],
+    "Equivalent": [
+      "Coordinate distances A=(-3,0),B=(3,0) yield x=0 equidistant locus, independent of y",
+      "Alternative justified angle-bisector orientation with same proof"
+    ],
+    "Wrong": [
+      "Draw desired perpendicular line through P as if its midpoint property established",
+      "Use unproven SSS theorem as premise",
+      "Reflect across point C and assert A and B necessarily exchange",
+      "Equal supplementary angles necessarily form an adjacent straight angle",
+      "Equal angles must be vertical"
+    ],
+    "Boundary": [
+      "A and B must be distinct; if equal no unique perpendicular bisector",
+      "P at midpoint is a point on bisector but PM zero vector does not determine the perpendicular line"
+    ],
+    "Malformed": [
+      "No constructed angle bisector",
+      "Assuming a conclusion as its proof",
+      "Unlabelled figure with no assertion or teacher evidence"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_PAPER_ALTERNATIVE",
+  "FirstPartyCooldown": {
+    "Prompt": "For distinct endpoints A and B, prove both directions of PA=PB iff P lies on the perpendicular bisector of AB, explain where SAS is used, and reject a circular student argument.",
+    "Mode": "TEACHER_SCORED_PROOF",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l08-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN: no online teacher record, actual saved grade, two-school isolation, app suite, CI, merge/deploy"
+}

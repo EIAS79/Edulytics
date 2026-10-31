@@ -1,0 +1,315 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u02-l04-l06-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+      "CultureCode": "en",
+      "Title": "Congruent Triangles, Part 2",
+      "ExplanationParagraphs": [
+        "Learning goal: Generate and test conjectures about how much side-and-angle information is sufficient to prove two triangles congruent; distinguish true congruence criteria from underdetermined cases.",
+        "Not every combination of three measurements identifies a triangle. Three corresponding sides (SSS), two sides with their included angle (SAS), and two angles with their included side (ASA) are sufficient for triangle congruence in Euclidean geometry. Three angles (AAA) determine only similarity. Two sides with a nonincluded angle (SSA) can yield two different noncongruent triangles.",
+        "Verbal diagram: fix side AB with A=(0,0),B=(6,0). A chosen angle at A fixes a ray; giving AC=4 locates C uniquely on that ray. But specifying BC=5 and AC=4 without fixing the included angle may place C at either intersection of two circles, one on either side of AB; those mirror solutions are congruent, whereas a nonincluded-angle SSA constraint can also produce two genuinely different shapes.",
+        "Source-aligned original activity: play a paired information-gap task where one student has a private set of measurements and the other must request the minimum sufficient data for an unambiguous triangle. For each proposed set, say whether it gives a guaranteed congruent triangle, insufficient information, or a degenerate/impossible construction.",
+        "Teacher rubric (0–8): correct criterion labels and included-angle identification; a valid counterexample to AAA or SSA as a congruence test; mathematically valid diagram or alternative configurations; precise student discussion and written conjecture. Human-scored evidence is necessary; a numeric final answer cannot validate communication quality.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced.",
+        "4.1 Make That Triangle: construct triangle ABC with A=40 degrees, B=20 degrees, C=120 degrees, AB=5 cm, AC=2 cm, BC approximately 3.7 cm. Highlight measurements actually used; explain redundant data and rounding of a physical ruler/protractor construction. AB, AC and included angle A already fix the triangle up to congruence.",
+        "4.2 Too Much Information: pair learners with independent first-party private problem/data cards. Keep cards hidden, require precise named-side and named-angle requests and the data-holder's question why each is needed. Exchange roles and make separate constructions before comparing. ASA, SAS and SSS can suffice; AAA and SS cannot. Two sides plus an unspecified angle are NOT automatically SAS.",
+        "4.2 Extension: two given sides and a nonzero area may admit supplementary included angles and noncongruent triangles. Two specified angles and a positive area determine the scale for a labelled nondegenerate triangle. Explain with a drawing or counterexample; teacher reviews the reasoning.",
+        "4.3 Too Little Information: critique a request for two sides 5 cm and 4 cm and a 16-degree angle that does not identify the included angle. Construct or reason about alternative configurations; replace with a precise SAS request identifying its common included vertex.",
+        "Nine source-indexed independent paper Practice questions P1-P9 cover SSS/SAS/ASA markings, triangle angles 40 and 100 degrees and 3 cm side ambiguity, minimum labelled data, ABC-to-EDF ordered correspondence, same-ray vertex coincidence, quadrilateral reflection vertex ordering, HGF-to-HEF reflection claims, rectangle reflected corresponding parts, and a genuine decorated-hexagon symmetry. Teacher assesses drawings and written explanations; original publisher figures are not claimed pixel-equivalent.",
+        "4.4 Original publisher Cool-down is protected and not independently verified. Independently authored Edulytiks paper substitute asks for two noncongruent SSA triangles using AB=10, BC=6 and A=30 degrees, plus the named included-angle change that creates valid SAS. Human review uses four 0-2 criteria, not scalar auto-grading or authenticated saved teacher grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sufficient triangle-congruence data",
+          "Definition": "A set of corresponding measurements that determines a nondegenerate triangle up to rigid motion.",
+          "Rule": "SSS, SAS, ASA or AAS are valid; identify matching vertices and included angle conditions.",
+          "Example": "Side lengths 3,4,5 determine one congruence class of triangles."
+        },
+        {
+          "Title": "AAA insufficiency",
+          "Definition": "Matching all three angles fixes a triangle's shape but not its size.",
+          "Rule": "A uniform scale factor other than 1 preserves angles and changes side lengths.",
+          "Example": "Triangles with sides 3,4,5 and 6,8,10 share angles but are not congruent."
+        },
+        {
+          "Title": "SSA ambiguity",
+          "Definition": "Two side lengths and an angle not between them can allow two different triangles.",
+          "Rule": "Draw the angle ray and intersect it with a distance circle; count valid intersections.",
+          "Example": "At angle A=30° with AB=10 and BC=6, the ray from A can intersect the circle centred B with radius 6 in two distinct points."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Determine whether AAA is enough",
+          "Question": "Two right triangles have corresponding sides 3, 4, 5 and 6, 8, 10. They have identical three angles. Are they congruent?",
+          "Method": "Distinguish angle equality from length invariance.",
+          "Steps": [
+            "The side triples are proportional by factor 2, so corresponding angles are equal by similarity.",
+            "Corresponding side lengths differ: 3≠6.",
+            "A rigid transformation preserves all lengths and cannot double a side.",
+            "AAA therefore establishes similarity but not congruence."
+          ],
+          "Answer": "No; AAA is insufficient to prove congruence.",
+          "Check": "Scale factor 2 gives an explicit counterexample to AAA as a congruence test."
+        },
+        {
+          "Title": "SAS with the included angle",
+          "Question": "Triangle ABC has AB=5, AC=7 and ∠BAC=60°. Another triangle has corresponding sides 5 and 7 with the included angle 60°. Why congruent?",
+          "Method": "Align the 5-unit side and rotate the included side's ray.",
+          "Steps": [
+            "Map the 5-unit side of the first triangle onto the corresponding 5-unit side of the second using a rigid motion.",
+            "Use a rotation or reflection to align the 60° included-angle ray on the same side.",
+            "Both third vertices lie exactly 7 units from the common vertex along the same ray.",
+            "The equal-distance position is unique on the ray; therefore all three vertices coincide."
+          ],
+          "Answer": "The triangles are congruent by SAS.",
+          "Check": "The angle must be between the 5 and 7 sides; a nonincluded angle would not support this argument."
+        },
+        {
+          "Title": "A concrete SSA ambiguous case",
+          "Question": "Let A=(0,0), B=(10,0), ray AC make 30° with AB and require BC=6. Can there be two possible C points?",
+          "Method": "Let C=(t cos30°,t sin30°), t>0; solve the circle equation centred B.",
+          "Steps": [
+            "BC²=(t cos30°−10)²+(t sin30°)²=36.",
+            "Simplify: t²−20 cos30°·t+100=36, so t²−10√3·t+64=0.",
+            "Discriminant is (10√3)²−256=44>0, giving two positive values t=(10√3±√44)/2.",
+            "Different t values give different AC lengths with fixed AB, BC and angle A; the triangles are noncongruent."
+          ],
+          "Answer": "Yes; two noncongruent configurations are possible under these SSA data.",
+          "Check": "Both roots are positive and distinct; each C lies on the given ray and has BC=6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating any three pieces of data as sufficient.",
+          "WhyWrong": "AAA and SSA can leave size or a vertex position unresolved.",
+          "Correction": "Check whether the angle is included and whether the data match SSS/SAS/ASA/AAS."
+        },
+        {
+          "Mistake": "Assuming an information-gap partner knows the same diagram labels or intended correspondence.",
+          "WhyWrong": "Vague requests can describe different angles or sides and invalidate the theorem.",
+          "Correction": "Name each segment and angle with labelled vertices and explain how the requested measurements are used."
+        },
+        {
+          "Mistake": "Calling any two sides and an angle SAS without checking inclusion.",
+          "WhyWrong": "SSA can produce two noncongruent triangles, even for the same named values.",
+          "Correction": "Specify the included angle between the two corresponding sides or exhibit two SSA solutions."
+        }
+      ],
+      "SummaryPoints": [
+        "Sufficient triangle congruence information must control side lengths and vertex correspondence.",
+        "AAA gives only similarity, and SSA can be ambiguous.",
+        "Generating and critiquing sufficiency conjectures requires teacher-reviewed diagrams and explanations."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+      "CultureCode": "en",
+      "Title": "Points, Segments, and Zigzags",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove that any two points are congruent by translation, that two nonzero segments are congruent exactly when their lengths agree, and use these established facts in a rigid-motion proof about a two-segment zigzag.",
+        "A singleton point can be translated to any other point. For segment AB and CD with positive length, a rigid motion carrying AB onto CD exists if and only if AB=CD: first translate A to C and rotate around C to align the directed ray to D. A reflection can be used to place a later segment on a selected side of the first.",
+        "Verbal diagram: zigzag A–B–C has a turning angle ∠ABC between segments AB and BC. Another zigzag D–E–F has DE=AB, EF=BC and ∠DEF=∠ABC. Rigidly align AB with DE; reflect across DE if required to put the third point on the proper side; then the matching angle and distance locate it uniquely.",
+        "Original task: provide a complete narrative proof of the point and segment claims, arrange statements in logical order to prove zigzag congruence, and critique the difference between a segment with fixed endpoints and a deformable piece of string.",
+        "Teacher rubric (0–8): valid translation for points; correct 'if and only if' proof for segments; explicit same-side/included-angle argument for zigzags; correct treatment of flexible objects. Writing, original constructed zigzag and critique are human-scored rather than machine-graded as a number.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced.",
+        "5.1 What is the Point? Any one-point figure A is congruent to any other point B by the translation vector from A to B. A point at a different position is not a counterexample: an explicit rigid translation proves congruence.",
+        "5.2 What is the Segment? Refute the blanket statement that every straight segment is congruent by drawing 3-unit and 5-unit segments. Prove the repaired biconditional: two nondegenerate straight segments are congruent if and only if their lengths agree; first align one endpoint by translation, then rotate its directed ray, then use equality of distance along that ray to align the other endpoint.",
+        "5.2 extension: a bent piece of string and a straight fixed-endpoint segment are not interchangeable rigid one-dimensional figures. Clarify whether string refers to its material length, the current shape, or endpoint separation before asserting any congruence.",
+        "5.3 Zig Then Zag: source 5-step proof must be placed in valid order. First map QR to XY using equal lengths; if necessary reflect about XY so the third point is on the target side; equal included angle places S-prime on ray YZ; equal length RS=YZ places S-prime exactly at Z; conclude QRS is congruent to XYZ. Partners then exchange statement-by-statement proof of an ordered four-vertex figure, not merely the claim that sides look alike.",
+        "Source-indexed first-party Practice P1-P7: P1 rigidly align two-segment angle chains, P2 translate circles with equal radii, P3 only all squares of the same side length are necessarily congruent among listed broad quadrilateral families, P4 distinguish SAS/ASA/SSS given correspondences, P5 reflect HGF to HEF across FH, P6 ABC to EDF preserves A-to-E B-to-D C-to-F vertex order, P7 justify three quadrilaterals of a regular hexagon from a teacher-provided original-independent geometric diagram. Original publisher figure pixel parity remains unverified.",
+        "5.4 Publisher-restricted Cool-down is not verified. An original Edulytiks paper alternative asks for a point-translation proof, a counterexample to all-segments congruent, the exact equal-length segment motion, and a five-step zigzag alignment with optional reflection. Four teacher criteria scored 0-2; no automatic grading or live saved student/teacher result is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Point congruence",
+          "Definition": "Two one-point figures are congruent because a translation can send one to the other.",
+          "Rule": "For points A,B choose translation vector B−A.",
+          "Example": "Translation by (5,−1) maps point (−2,3) to point (3,2)."
+        },
+        {
+          "Title": "Segment congruence",
+          "Definition": "A nondegenerate segment is congruent to another exactly when they have equal length.",
+          "Rule": "Translation aligns one endpoint; rotation or reflection aligns its direction when the lengths match.",
+          "Example": "A segment from (0,0) to (3,4) has length 5, hence is congruent to a vertical segment of length 5."
+        },
+        {
+          "Title": "Two-segment zigzag",
+          "Definition": "A polyline of two contiguous segments with a specified included angle at the shared point.",
+          "Rule": "Two zigzags agree under a rigid motion when both segment lengths and their included angles match with a consistent correspondence.",
+          "Example": "AB=DE=3, BC=EF=4 and ∠B=∠E=80° establish congruence of the ordered zigzags."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove any two points congruent",
+          "Question": "Why are isolated points P=(−2,3) and Q=(3,2) congruent as one-point figures?",
+          "Method": "Construct the displacement vector connecting them.",
+          "Steps": [
+            "Subtract coordinates: Q−P=(5,−1).",
+            "Translate the plane by T(x,y)=(x+5,y−1).",
+            "T(P)=Q exactly, so the singleton figures coincide under a rigid transformation."
+          ],
+          "Answer": "The two one-point figures are congruent by translation.",
+          "Check": "Being different locations is irrelevant: translations preserve all point-figure properties."
+        },
+        {
+          "Title": "Proof of segment congruence",
+          "Question": "AB is a segment of length 5 and CD another segment of length 5. Show one rigid motion sequence mapping AB onto CD.",
+          "Method": "Align one endpoint then rotate to align the ray.",
+          "Steps": [
+            "Translate A to C; the translated B lies on a circle of radius 5 centred C.",
+            "Rotate about C until the ray from C to the translated B coincides with ray CD.",
+            "Both points on that ray lie at distance 5 from C, so the translated-rotated B coincides with D.",
+            "Thus the segment maps exactly to CD, establishing congruence."
+          ],
+          "Answer": "Equal positive segment lengths imply congruence; conversely rigid congruence forces equal lengths.",
+          "Check": "The reverse implication follows immediately from distance preservation by any rigid motion."
+        },
+        {
+          "Title": "Prove zigzag congruence",
+          "Question": "Zigzags ABC and DEF have AB=DE, BC=EF and ∠ABC=∠DEF. Why are they congruent?",
+          "Method": "Align the first segment, then the angle ray, then its endpoint length.",
+          "Steps": [
+            "Map AB onto DE using a rigid transformation, sending A→D and B→E.",
+            "If necessary, reflect in DE to place the image C′ on the same side of DE as F.",
+            "Equal included angles make rays EC′ and EF coincide.",
+            "Equal lengths BC=EF imply EC′=EF; their points on the same ray coincide.",
+            "Thus all three vertices align, establishing zigzag congruence."
+          ],
+          "Answer": "The ordered two-segment figures are congruent.",
+          "Check": "This is a rigid-motion proof for a zigzag and anticipates SAS for the enclosed triangle."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Arguing two segments are congruent merely because both have two endpoints.",
+          "WhyWrong": "Their lengths can differ; rigid motions cannot change lengths.",
+          "Correction": "Use a length equality and construct a translation plus rotation for the forward direction."
+        },
+        {
+          "Mistake": "Treating a flexible string as a rigid segment.",
+          "WhyWrong": "A curved or bent string's endpoints can change separation while the string length remains fixed.",
+          "Correction": "Specify a straight segment between fixed endpoints when applying segment congruence."
+        }
+      ],
+      "SummaryPoints": [
+        "Any singleton point is congruent to any other by translation.",
+        "Two straight segments are congruent precisely when their lengths are equal.",
+        "Matching two zigzag segments and the included angle allows a rigid-motion alignment; writing and constructions require teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+      "CultureCode": "en",
+      "Title": "Side-Angle-Side Triangle Congruence",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the Side-Angle-Side (SAS) congruence theorem from rigid transformations and use it to prove the base angles of an isosceles triangle congruent.",
+        "SAS states: if AB=DE, AC=DF and the included angle ∠BAC equals ∠EDF, then triangles ABC and DEF are congruent with A↔D,B↔E,C↔F. No third-side equality is needed as a hypothesis; it follows from triangle congruence.",
+        "Proof method: align A to D and ray AB with DE by a rigid motion. The common length AB=DE puts B onto E. If necessary reflect across DE to place the image of C on the same side as F. Included angles at A and D now match; their side rays coincide, and AC=DF fixes the same position for C and F. Thus all vertices align.",
+        "Isosceles base-angle proof uses SAS as in source activity 6.3, NOT a premature SSS theorem. Given PA=PB in triangle PAB, draw the ray PQ from P that bisects the apex angle APB and meets AB at Q. Then PA=PB, PQ=PQ, and included angles APQ and QPB are equal by construction. Hence triangles APQ and BPQ are congruent by SAS, so the corresponding base angles PAQ and PBQ are equal. Because Q lies on AB, these are base angles PAB and PBA. Do not assume Q is midpoint of AB or draw an arbitrary perpendicular bisector without proving P lies on it.",
+        "Student task: author a two-column or paragraph SAS proof and an isosceles base-angle proof. Annotate the true included angle, identify hypotheses versus consequences, and include a counterexample showing why nonincluded SSA is insufficient. Teacher rubric (0–8): correct SAS hypotheses, rigid alignment, valid isosceles proof and logically sound conclusion. Proof responses require teacher assessment, not an arbitrary machine-generated number.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced.",
+        "6.1 Information Overload: highlight exactly which corresponding given facts a full rigid-motion proof consumes; AB=DE, AC=DF and included angle A=D are already sufficient. BC=EF and other angle equalities are redundant hypotheses, not necessary for the SAS argument. Show alignment of the first side, optional reflection to the same half-plane, identical angle ray and equal length to force the third vertex to coincide.",
+        "6.2 Proving SAS: given LM=PQ, LN=PR and included angle L=P, explicitly send L to P and M to Q by rigid motion; reflect about PQ only if required; align ray to R using equal included angle; equal LN=PR puts N on R. This proves all corresponding vertices coincide. For known sides 5 and 12, a nondegenerate triangle third side satisfies 7<c<17, with no attained maximum or minimum, and c=13 when the included angle is 90 degrees.",
+        "6.3 Isosceles theorem: student dialogue must identify the auxiliary angle bisector PQ, not assume a midpoint or an unproved perpendicular-bisector consequence. PA=PB, PQ=PQ, and angles APQ=QPB are the actual SAS givens. Deduce base angles after the triangle congruence is established, not before.",
+        "Source-indexed independent Practice P1-P6: P1 select actually sufficient added facts for isosceles DBC with AD=AC, original figure teacher reviewed; P2 find the false SAS step using an angle not between alleged sides; P3 combine isosceles symmetry and 18/48-degree diagram only with the original arrangement checked by the teacher; P4 order a five-step zigzag rigid-motion proof (3,1,2,4,5); P5 label SAS/ASA/SSS marks; P6 ABC-to-EDF ordered correspondence means BC-to-DF, angle A-to-E, angle C-to-F are true, whereas AB-to-EF and AC-to-ED are false. Original publisher images are not claimed pixel-equivalent.",
+        "6.4 Publisher-locked Cool-down has not been independently accessed. Use an original first-party paper proof challenging an auxiliary-line false assumption; student must identify an actually justified angle bisector and prove isosceles base angles with SAS. Drawings and proof quality are reviewed by an authorized teacher with four 0–2 criteria."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "SAS triangle criterion",
+          "Definition": "Two corresponding sides and the INCLUDED angle between them equal in two nondegenerate triangles imply congruence.",
+          "Rule": "Identify the common vertex of both given sides and show it is the stated angle vertex.",
+          "Example": "AB=DE, AC=DF and ∠BAC=∠EDF imply ABC≅DEF."
+        },
+        {
+          "Title": "Isosceles base-angle theorem",
+          "Definition": "In a triangle with two congruent sides, the angles opposite those sides are congruent.",
+          "Rule": "Draw the apex-angle bisector PQ to create two triangles with equal apex sides, shared PQ, and equal included half-angles. Apply SAS; do not use an unestablished SSS theorem.",
+          "Example": "If AB=AC in ABC, then ∠ABC=∠BCA."
+        },
+        {
+          "Title": "Hypotheses and conclusions",
+          "Definition": "A theorem can use given information only after it is verified; other corresponding parts follow from congruence.",
+          "Rule": "Do not assume the third side or base-angle equality in a proof meant to establish it.",
+          "Example": "From SAS we may conclude BC=EF; it need not appear in the givens."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rigid-motion proof of SAS",
+          "Question": "Given AB=DE, AC=DF and ∠BAC=∠EDF, prove ABC≅DEF.",
+          "Method": "Map the included-angle vertex, first side, then second side ray and distance.",
+          "Steps": [
+            "Translate A to D, rotate around D so ray AB aligns with ray DE.",
+            "AB=DE ensures the image of B is E.",
+            "Reflect across DE if necessary to put the image of C on the target side of DE, keeping D and E fixed.",
+            "Equal included angles force the image ray DC′ to coincide with ray DF.",
+            "AC=DF places C′ and F at the same distance along that ray, so C′=F; the triangles coincide."
+          ],
+          "Answer": "ABC≅DEF by the SAS criterion.",
+          "Check": "The angle used is at A and D, between the two known side pairs; not SSA."
+        },
+        {
+          "Title": "Source-aligned isosceles base angles by SAS and an angle-bisector auxiliary line",
+          "Question": "In isosceles triangle PAB, PA=PB. Draw an apex angle bisector PQ meeting AB at Q. Without assuming SSS or that Q is midpoint, prove base angles at A and B equal.",
+          "Method": "Use PA=PB, PQ as common side and equal INCLUDED angles APQ and QPB to establish SAS.",
+          "Steps": [
+            "Construct ray PQ to bisect angle APB and let it meet side AB at Q.",
+            "PA=PB is given by the isosceles hypothesis; PQ=PQ is the shared segment.",
+            "Angles APQ and QPB are equal because PQ bisects the included apex angle.",
+            "By SAS, triangles APQ and BPQ are congruent, with A corresponding to B.",
+            "Therefore their base angles PAQ and PBQ are equal; Q lies on AB so angles PAB and PBA are equal."
+          ],
+          "Answer": "Base angles at A and B are congruent by SAS of triangles APQ and BPQ.",
+          "Check": "Do not invoke SSS before its lesson proof, use base-angle equality as a hypothesis, or presume an unproven perpendicular bisector goes through P."
+        },
+        {
+          "Title": "Determine a valid included-angle pair",
+          "Question": "Given triangles ABC and DEF with AB=DE, BC=EF and ∠ABC=∠DEF, can SAS be used?",
+          "Method": "Identify endpoints common to the two known sides.",
+          "Steps": [
+            "Sides AB and BC meet at B, so their included angle is ∠ABC.",
+            "Sides DE and EF meet at E, so their included angle is ∠DEF.",
+            "These included angles are given congruent, alongside the two corresponding side pairs.",
+            "Therefore SAS applies with A→D,B→E,C→F."
+          ],
+          "Answer": "Yes; ABC≅DEF by SAS.",
+          "Check": "Replacing ∠ABC with ∠BAC would not give this same SAS pattern."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using an angle not between the two given sides as the included angle.",
+          "WhyWrong": "That is SSA, which can be ambiguous.",
+          "Correction": "Locate the common endpoint of the two sides and name the angle with that endpoint as vertex."
+        },
+        {
+          "Mistake": "Assuming the isosceles base angles are already equal in a proof of that theorem.",
+          "WhyWrong": "It is circular reasoning because the conclusion is used as a premise.",
+          "Correction": "Construct midpoint D and use AB=AC, BD=DC and AD=AD to prove triangles congruent first."
+        },
+        {
+          "Mistake": "Invoking SSS or a presumed base-midpoint equality while deriving the isosceles base-angle theorem in lesson 6.",
+          "WhyWrong": "The source specifically builds SAS now; SSS and the perpendicular-bisector apex claim have not yet been independently established in the teaching sequence.",
+          "Correction": "Draw apex-angle bisector PQ; use PA=PB, PQ=PQ and equal included apex half-angles for SAS, then conclude base-angle equality."
+        }
+      ],
+      "SummaryPoints": [
+        "SAS justifies triangle congruence from two corresponding sides and their included angle.",
+        "The rigid-motion proof fixes a first vertex and side, then the second ray and distance.",
+        "An isosceles triangle has congruent base angles by a separate valid congruence argument; teacher reviews original proofs."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

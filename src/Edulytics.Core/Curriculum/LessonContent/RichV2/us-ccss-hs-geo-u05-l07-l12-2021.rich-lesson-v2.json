@@ -1,0 +1,782 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-hs-geo-u05-l07-l12-firstparty-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L07",
+      "CultureCode": "en",
+      "Title": "The Root of the Problem",
+      "ExplanationParagraphs": [
+        "Learning goal: Recover a positive linear scale from a prescribed volume factor with the cube-root function; contrast it with the square root needed for surface area.",
+        "Mathematical model: If volume ratio q=k³ with k>0, length factor is k=∛q Use the real positive cube root A known volume ratio q implies area ratio q^(2/3)",
+        "Application and limitations: Nonnegative geometric volumes yield nonnegative scale factors Positive nondegenerate solids require q>0",
+        "Teacher rubric (0–8): four 0/1/2 teacher criteria cover exact root modelling, eight-point source cube-root plot and shrinking average change, source satellite sqrt-vs-cubert target factors and invalid k4 critique, and eight source Practice with correct domain and units.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 7, CC BY 4.0. Independent first-party Edulytiks examples; no publisher artwork or protected assessments.",
+        "Source 7.1 The Number That Cubes (5 min): unit cube side1, new volumes27,1000,1001,7 demand positive k=cuberoot(V); answers 3,10,about10.0033,about1.9129. Explain 27→3 is a cube root not division by3, and use original simple cube drawings rather than any publisher images. Nonnegative input0 gives k0 collapsed limit; actual geometric nondegenerate cube requires V>0.",
+        "Source 7.2 Thinking Inside the Box (20 min): source shipper's basic box is cube side1 foot, volume1ft³; source new 8ft³→k2,10ft³→k≈2.1544. Complete exact ORIGINAL table of x volumes0,1,5,8,10,15,20,27 and y=cuberoot(x) rounded hundredths0,1,1.71,2,2.15,2.47,2.71,3. Plot graph x in CUBIC FEET and y DIMENSIONLESS scale, smooth increasing concave down for x>0. Compare additional4ft³ from21 to25 changes k by cubert25−cubert21≈.15, whereas from1 to5 increases k cubert5−1≈.71; equal added volume does not mean equal added length factor.",
+        "Source 7.2 double-volume 10 to20 changes scale by multiplicative factor cubert2≈1.25992, not doubling; it grows from about2.1544 to2.7144. Source graph and earlier y=sqrt(x) both start at(0,0), increase and flatten with x>0; no copyrighted applet reproduction or app UI verification. Student must explain how cube-root function inverts volume k³, and why k becomes small changes for larger volumes.",
+        "Source 7.3 Satellite Scale Factors (10 min): original hypothetical satellite solar-panel surface area5.4ft², interior volume1.2ft³. Target area21.6ft² requires k=sqrt(21.6/5.4)=sqrt4=2. Target volume4.05ft³ requires k=cubert(4.05/1.2)=cubert3.375=1.5. Source fake student suggestion k4 for area erroneously uses area ratio rather than sqrt; peers explicitly critique. The two design goals require DIFFERENT uniform size factors and therefore cannot both be satisfied exactly with one chosen k unless constraints change.",
+        "Source 7.3 optional extension: if the NUMERICAL VALUE of satellite surface area in square feet equals numerical volume in cubic feet, solve 5.4k²=1.2k³ for k>0 -> k=4.5. This is merely numerical equality of quantities with different dimensions and units and NOT a literal equality of physical area and volume. Under k=4.5 their numerical values both109.35, but units ft² versus ft³ differ. Clarify model semantics and optionally compare physical constraints instead of recommending real satellite sizing.",
+        "Source student summary source prism initial volume5 to320 yields k=cubert(320/5)=4, graph k=cubert(V/5) with points (0,0),(5,1),(40,2),(135,3),(320,4). Cylinder initial surface area35 to218.75 gives k=sqrt(218.75/35)=sqrt6.25=2.5. Preserve earlier first-party correct example 16→54 cubic units factor1.5, volume64× leads to surface16×, cube343 side7; those are not the original source figures.",
+        "Source Practice P1-P8: P1 original volume8 desired216→k3,1→k1/2,1000→k5. P2 k=cubert(V/7) true points A(0,0), D(7,1), G(56,2); B(1,1), C(1,7), E(14,2), F(49,2), H(27,3) wrong. P3 original surface area8 targets512→k8,1/2→k1/4,8→k1. P4 box wrapping1/8roll and capacity10in³ tripled dimensions needs 9/8 rolls and270in³ volume. P5 volume8 and k1/2→1, k.6→1.728, k1→8, k1.5→27. P6 y=sqrt(x/9) true choices A(0,0), E(9,1), H(36,2) only. P7 flyer area576in² scale1/4 ->36in². P8 right triangle S90,T45,ST3ft implies other leg SU3ft. Original 7.4 Finding a Scale Factor protected; first-party original graph and satellite argument teacher-scored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cube-root inverse",
+          "Definition": "If volume ratio q=k³ with k>0, length factor is k=∛q",
+          "Rule": "Use the real positive cube root",
+          "Example": "Volume ratio 125 gives k=5"
+        },
+        {
+          "Title": "Surface-area comparison",
+          "Definition": "Surface area ratio is k², distinct from k³",
+          "Rule": "A known volume ratio q implies area ratio q^(2/3)",
+          "Example": "q=27 implies area ratio 9"
+        },
+        {
+          "Title": "Model domain",
+          "Definition": "Nonnegative geometric volumes yield nonnegative scale factors",
+          "Rule": "Positive nondegenerate solids require q>0",
+          "Example": "q=0 collapses a solid"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "The Root of the Problem — example 1",
+          "Question": "A sculpture has volume 16 cm³ and a replica must have volume 54 cm³. Find k.",
+          "Method": "Cube-root inverse",
+          "Steps": [
+            "Volume ratio is 54/16=27/8",
+            "Cube root gives k=3/2",
+            "Check 16·(3/2)³=54"
+          ],
+          "Answer": "Linear enlargement factor 1.5.",
+          "Check": "Check each hypothesis, unit and numerical result against use the real positive cube root"
+        },
+        {
+          "Title": "The Root of the Problem — example 2",
+          "Question": "A solid volume grows by factor 64. What happens to surface area?",
+          "Method": "Surface-area comparison",
+          "Steps": [
+            "Cube root 64 gives length factor 4",
+            "Square the length factor: 4²=16",
+            "Area grows sixteenfold"
+          ],
+          "Answer": "Surface area factor 16.",
+          "Check": "Check each hypothesis, unit and numerical result against a known volume ratio q implies area ratio q^(2/3)"
+        },
+        {
+          "Title": "The Root of the Problem — example 3",
+          "Question": "A cube has volume 343 cm³. What is its edge length?",
+          "Method": "Model domain",
+          "Steps": [
+            "For a cube V=s³",
+            "Set s³=343",
+            "Take positive cube root s=7"
+          ],
+          "Answer": "Edge 7 cm.",
+          "Check": "Check each hypothesis, unit and numerical result against positive nondegenerate solids require q>0"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Taking square root of volume factor",
+          "WhyWrong": "Three dimensions scale",
+          "Correction": "Use cube root"
+        },
+        {
+          "Mistake": "Treating negative volume factor as physical",
+          "WhyWrong": "A real positive volume cannot become negative under positive dilation",
+          "Correction": "Check q>0"
+        }
+      ],
+      "SummaryPoints": [
+        "Recover a positive linear scale from a prescribed volume factor with the cube-root function; contrast it with the square root needed for surface area.",
+        "A known volume ratio q implies area ratio q^(2/3)",
+        "Teacher-reviewed diagrams and reasoning remain necessary for academic acceptance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of The Root of the Problem. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cube-root inverse",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use the real positive cube root",
+                "Volume ratio 125 gives k=5"
+              ]
+            },
+            {
+              "Label": "Surface-area comparison",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A known volume ratio q implies area ratio q^(2/3)",
+                "q=27 implies area ratio 9"
+              ]
+            },
+            {
+              "Label": "Model domain",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Positive nondegenerate solids require q>0",
+                "q=0 collapses a solid"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L08",
+      "CultureCode": "en",
+      "Title": "Speaking of Scaling",
+      "ExplanationParagraphs": [
+        "Learning goal: Coordinate length, surface-area and volume scale factors in both forward and reverse directions from any one known ratio, and communicate missing information.",
+        "Mathematical model: For uniform dilation, ratios are k,k²,k³ Use positive roots for inverse problems Reversed area and volume factors are 1/k² and 1/k³",
+        "Application and limitations: The type of given ratio must be specified to find the others Ask whether a value is a length, area or volume ratio",
+        "Teacher rubric (0–8): four teacher-scored 0/1/2 criteria evaluate source cone positive square-root inverse4.5, two independent first-party information-gap rounds with correct information protocol and dimension classification, original Jumbo Can maximum k2 and cost2.32 with model assumptions, and seven source Practice exact values with units and teacher explanation.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 8, CC BY 4.0. Independent first-party Edulytiks examples; no publisher artwork or protected assessments.",
+        "Source 8.1 Going Backwards (5 min): original cone has base area36pi cm² and dilated base729pi cm². The base AREA multiplier729/36=20.25, while corresponding LENGTH dilation k=sqrt20.25=4.5, not20.25. Compare 4²=16, 5²=25 and justify positive k; its volume factor k³=91.125 if all dimensions scale uniformly. Students critique their initial answer and communicate one, two, three-dimensional ratio roles.",
+        "Source 8.2 Info Gap Originals and Dilations (20 min): source uses TWO rounds of privately held problem/data cards. Partner holding data asks precisely WHAT given and WHY needed, reveals ONLY an asked-for original datum, never computes partner's unknowns; problem holder requests whether known measurement is length, surface area or volume, then recovers missing ratios from k,k²,k³ and independently solves. Swap cards and roles for round two and compare two valid methods for dilated cylinder volume: direct V=pi r²h with scaled radius/height versus original volume multiplied by k³. Publisher blackline data contents not publicly accessible as independent materials; substitute original Edulytiks cards rather than assert exact original numbers.",
+        "Source 8.3 Jumbo Can (15 min OPTIONAL): first reading identifies basic cans, second quantifies material cost $.04 per original can and juice fill $.27 per original can, third explains maximum material budget $.16 for scaled can with similar shape. MATERIAL cost scales with exterior surface area ∝k², so $.04k²≤$.16 gives largest positive k=2, doubling both height AND radius. JUICE volume cost scales k³, so $.27*8=$2.16, material $.16, combined per jumbo can $2.32 under strictly linear per-area/material and volume/juice price assumptions. Ask for two labelled first-party cylinder diagrams and caveats: seam, wall thickness, lids, label, waste and setup affect actual cost. No real production quote or product safety is certified.",
+        "Source 8.3 optional Burj Khalifa to Eiffel scale: source as of2019 historical heights and outside research required; without independently supplied actual building height and units cannot assign one unique numeric model ratio from a30-inch tower model. Students state k=30in/actual Burj height in inches and Eiffel model length=k*(Eiffel actual length in inches), only compute numeric if legitimate sources/units available. Do not import unverified historical record or internet measurement into protected source parity claims.",
+        "Source student summary original aquarium10in high,10in wide,14in long with nominal capacity5 gallons and surface area760in². A model museum aquarium135 gallons has volume factor135/5=27, positive k=cubert27=3 and dimensions30 by30 by42 inches, source exterior surface760*9=6840in². Note nominal5gallons is not literally the 1400 cubic inches geometric exterior volume without accounting for wall thickness and capacity; physical real aquarium volume and numerical design model are approximate. Source teacher conclusion wrongly phrases dividing new volume by old when given surface areas: correct area ratio is new surface/old surface, then sqrt, then cube to get volume ratio.",
+        "Source Practice P1-P7: P1 individual muffin serving1 scaled to serve100 by volume assumption requires length k=cubert100≈4.6416, decorative-paper use grows k²=100^(2/3)≈21.54 times for geometrically similar liner surface coverage. P2 game box original height8cm, wrap surface1408cm² vs travel198cm², area ratio198/1408=9/64, k=3/8, new height3cm. P3 cone SA360pi in² and V800pi in³, image SA2250pi => SA factor25/4=6.25, k=5/2, volume800pi*(125/8)=12500pi in³. P4 tanker model1gal to8000gal length factor cbrt8000=20. P5 k=cubert(V/4) two examples V4 k1 and V32 k2. P6 cube side3in original SA6*9=54in² and V27in³; k1/2 gives new side1.5in, SA13.5in² and V27/8=3.375in³. P7 circle area100pi→25pi gives k=sqrt1/4=1/2 choice C. Original teacher-locked 8.4 Dog Food Bags unavailable; use first-party paired card + can cost teacher paper review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "One factor determines others",
+          "Definition": "For uniform dilation, ratios are k,k²,k³",
+          "Rule": "Use positive roots for inverse problems",
+          "Example": "Area factor 36 gives k=6 and volume factor 216"
+        },
+        {
+          "Title": "Reverse scaling",
+          "Definition": "Inverting a dilation replaces k by 1/k",
+          "Rule": "Reversed area and volume factors are 1/k² and 1/k³",
+          "Example": "Forward k=3 reverse volume factor 1/27"
+        },
+        {
+          "Title": "Information-gaps",
+          "Definition": "The type of given ratio must be specified to find the others",
+          "Rule": "Ask whether a value is a length, area or volume ratio",
+          "Example": "Given only 'ratio 8' without dimension type is ambiguous"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Speaking of Scaling — example 1",
+          "Question": "A scale model has surface area 25 times its prototype. Find length and volume factors.",
+          "Method": "One factor determines others",
+          "Steps": [
+            "Area ratio=k²=25",
+            "Positive root yields k=5",
+            "Volume factor is 5³=125"
+          ],
+          "Answer": "Length factor 5; volume factor 125.",
+          "Check": "Check each hypothesis, unit and numerical result against use positive roots for inverse problems"
+        },
+        {
+          "Title": "Speaking of Scaling — example 2",
+          "Question": "A 3D design is scaled up 2× and then scaled back; give the second volume factor.",
+          "Method": "Reverse scaling",
+          "Steps": [
+            "Forward k=2 implies volume factor 8",
+            "Reverse k=1/2",
+            "Reverse volume factor (1/2)³=1/8"
+          ],
+          "Answer": "Reverse volume factor 1/8.",
+          "Check": "Check each hypothesis, unit and numerical result against reversed area and volume factors are 1/k² and 1/k³"
+        },
+        {
+          "Title": "Speaking of Scaling — example 3",
+          "Question": "An engineer reports new volume is 1/27 of original. Find surface ratio.",
+          "Method": "Information-gaps",
+          "Steps": [
+            "Solve k³=1/27",
+            "Cube root yields k=1/3",
+            "Square gives surface ratio 1/9"
+          ],
+          "Answer": "Surface area ratio 1/9.",
+          "Check": "Check each hypothesis, unit and numerical result against ask whether a value is a length, area or volume ratio"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using a reported volume factor as a length factor",
+          "WhyWrong": "Dimension matters",
+          "Correction": "Ask and convert using roots"
+        },
+        {
+          "Mistake": "Inverting k but not the corresponding powered factor",
+          "WhyWrong": "Reverse scale requires reciprocal of each dimensional factor",
+          "Correction": "Use 1/k³ for volume"
+        }
+      ],
+      "SummaryPoints": [
+        "Coordinate length, surface-area and volume scale factors in both forward and reverse directions from any one known ratio, and communicate missing information.",
+        "Reversed area and volume factors are 1/k² and 1/k³",
+        "Teacher-reviewed diagrams and reasoning remain necessary for academic acceptance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Speaking of Scaling. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "One factor determines others",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use positive roots for inverse problems",
+                "Area factor 36 gives k=6 and volume factor 216"
+              ]
+            },
+            {
+              "Label": "Reverse scaling",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Reversed area and volume factors are 1/k² and 1/k³",
+                "Forward k=3 reverse volume factor 1/27"
+              ]
+            },
+            {
+              "Label": "Information-gaps",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Ask whether a value is a length, area or volume ratio",
+                "Given only 'ratio 8' without dimension type is ambiguous"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L09",
+      "CultureCode": "en",
+      "Title": "Cylinder Volumes",
+      "ExplanationParagraphs": [
+        "Learning goal: Derive and use V=πr²h for right or oblique circular cylinders, and compute volumes of composite figures and rotational solids without confusing radius with diameter.",
+        "Mathematical model: A cylinder has constant cross-sectional disk area B=πr² Volume=Bh=πr²h with perpendicular height h Cavalieri gives same volume for equal base area and perpendicular height",
+        "Application and limitations: Volumes add for disjoint interiors and subtract removed pieces Use consistent cubic units",
+        "Authentic source-specific activity: Model a rolled rectangle as a cylinder and compare prism stacks and cylinder cross sections; teacher evaluates geometry and justified formula. Teacher rubric (0–4): correct diagram/units, explicit premises, reliable calculations, and an independently justified interpretation. Original drawings and written reasoning require teacher scoring.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 9, CC BY 4.0. Independent first-party Edulytiks examples; no publisher artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cylinder volume",
+          "Definition": "A cylinder has constant cross-sectional disk area B=πr²",
+          "Rule": "Volume=Bh=πr²h with perpendicular height h",
+          "Example": "Radius 3 height 4 gives 36π"
+        },
+        {
+          "Title": "Oblique cylinder",
+          "Definition": "Parallel base disks have constant area",
+          "Rule": "Cavalieri gives same volume for equal base area and perpendicular height",
+          "Example": "Slant edge length is not the height"
+        },
+        {
+          "Title": "Composite solid",
+          "Definition": "Volumes add for disjoint interiors and subtract removed pieces",
+          "Rule": "Use consistent cubic units",
+          "Example": "Cylinder with axial hole has π(R²−r²)h"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cylinder Volumes — example 1",
+          "Question": "Find volume of cylinder with radius 3 cm and height 8 cm.",
+          "Method": "Cylinder volume",
+          "Steps": [
+            "Base area π·3²=9π cm²",
+            "Multiply by perpendicular height 8",
+            "V=72π cm³"
+          ],
+          "Answer": "72π cm³.",
+          "Check": "Check each hypothesis, unit and numerical result against volume=bh=πr²h with perpendicular height h"
+        },
+        {
+          "Title": "Cylinder Volumes — example 2",
+          "Question": "Cylinder diameter 10 m and height 2 m; find volume.",
+          "Method": "Oblique cylinder",
+          "Steps": [
+            "Radius is diameter/2=5 m",
+            "Area=25π m²",
+            "Multiply height 2"
+          ],
+          "Answer": "50π m³.",
+          "Check": "Check each hypothesis, unit and numerical result against cavalieri gives same volume for equal base area and perpendicular height"
+        },
+        {
+          "Title": "Cylinder Volumes — example 3",
+          "Question": "A cylinder radius 5 height 4 has an axial cylindrical hole radius 2. Find material volume.",
+          "Method": "Composite solid",
+          "Steps": [
+            "Outer volume π·25·4=100π",
+            "Hole volume π·4·4=16π",
+            "Subtract 100π−16π"
+          ],
+          "Answer": "84π cubic units.",
+          "Check": "Check each hypothesis, unit and numerical result against use consistent cubic units"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substituting diameter for radius",
+          "WhyWrong": "Area uses radius squared",
+          "Correction": "Halve diameter first"
+        },
+        {
+          "Mistake": "Using slant edge as perpendicular height",
+          "WhyWrong": "Volume uses distance between parallel bases",
+          "Correction": "Measure perpendicular height"
+        }
+      ],
+      "SummaryPoints": [
+        "Derive and use V=πr²h for right or oblique circular cylinders, and compute volumes of composite figures and rotational solids without confusing radius with diameter.",
+        "Cavalieri gives same volume for equal base area and perpendicular height",
+        "Teacher-reviewed diagrams and reasoning remain necessary for academic acceptance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Cylinder Volumes. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cylinder volume",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Volume=Bh=πr²h with perpendicular height h",
+                "Radius 3 height 4 gives 36π"
+              ]
+            },
+            {
+              "Label": "Oblique cylinder",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Cavalieri gives same volume for equal base area and perpendicular height",
+                "Slant edge length is not the height"
+              ]
+            },
+            {
+              "Label": "Composite solid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use consistent cubic units",
+                "Cylinder with axial hole has π(R²−r²)h"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L10",
+      "CultureCode": "en",
+      "Title": "Cross Sections and Volume",
+      "ExplanationParagraphs": [
+        "Learning goal: Apply Cavalieri's principle correctly: solids of equal height with equal cross-sectional areas at each corresponding level have equal volumes; compare oblique prisms and cylinders.",
+        "Mathematical model: Equal-height solids with matching areas of parallel sections at every corresponding height have equal volumes Require all levels, not one Constant A gives V=Ah",
+        "Application and limitations: Equal base area or one equal slice alone does not force equal volume Check all corresponding levels",
+        "Authentic source-specific activity: Build original stack diagrams and explain why shearing constant-area slices preserves volume; teacher reviews all-level reasoning. Teacher rubric (0–4): correct diagram/units, explicit premises, reliable calculations, and an independently justified interpretation. Original drawings and written reasoning require teacher scoring.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 10, CC BY 4.0. Independent first-party Edulytiks examples; no publisher artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cavalieri's principle",
+          "Definition": "Equal-height solids with matching areas of parallel sections at every corresponding height have equal volumes",
+          "Rule": "Require all levels, not one",
+          "Example": "An oblique prism and right prism of same base area and height have equal volumes"
+        },
+        {
+          "Title": "Slice integral intuition",
+          "Definition": "Volume accumulates parallel cross-sectional areas through height",
+          "Rule": "Constant A gives V=Ah",
+          "Example": "Area 6 through height 7 gives volume 42"
+        },
+        {
+          "Title": "Counterexample",
+          "Definition": "Equal base area or one equal slice alone does not force equal volume",
+          "Rule": "Check all corresponding levels",
+          "Example": "Cone and cylinder of equal base/height have different volume"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cross Sections and Volume — example 1",
+          "Question": "Right and oblique prisms each have base area 12 cm² and perpendicular height 7 cm. Compare volumes.",
+          "Method": "Cavalieri's principle",
+          "Steps": [
+            "Every horizontal cross-section of each prism has area 12",
+            "Both share perpendicular height 7",
+            "Cavalieri gives same volume 12·7=84"
+          ],
+          "Answer": "Both 84 cm³.",
+          "Check": "Check each hypothesis, unit and numerical result against require all levels, not one"
+        },
+        {
+          "Title": "Cross Sections and Volume — example 2",
+          "Question": "A stack of disks has constant disk area 9π cm² for height 5. Find volume.",
+          "Method": "Slice integral intuition",
+          "Steps": [
+            "Every slice has area 9π",
+            "Multiply by uniform height 5",
+            "V=45π"
+          ],
+          "Answer": "45π cm³.",
+          "Check": "Check each hypothesis, unit and numerical result against constant a gives v=ah"
+        },
+        {
+          "Title": "Cross Sections and Volume — example 3",
+          "Question": "Can matching base area 20 and height 6 guarantee a cone and cylinder equal volumes?",
+          "Method": "Counterexample",
+          "Steps": [
+            "Cylinder volume is Bh=20·6=120",
+            "Cone volume is Bh/3=40",
+            "Sections differ at interior levels so Cavalieri conditions fail"
+          ],
+          "Answer": "No: cylinder 120 and cone 40 cubic units.",
+          "Check": "Check each hypothesis, unit and numerical result against check all corresponding levels"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Checking only one cross section",
+          "WhyWrong": "Cavalieri needs all matching levels",
+          "Correction": "Compare full area function"
+        },
+        {
+          "Mistake": "Using slant distance as height",
+          "WhyWrong": "The matching heights must be perpendicular to slicing planes",
+          "Correction": "Use normal height"
+        }
+      ],
+      "SummaryPoints": [
+        "Apply Cavalieri's principle correctly: solids of equal height with equal cross-sectional areas at each corresponding level have equal volumes; compare oblique prisms and cylinders.",
+        "Constant A gives V=Ah",
+        "Teacher-reviewed diagrams and reasoning remain necessary for academic acceptance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Cross Sections and Volume. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cavalieri's principle",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Require all levels, not one",
+                "An oblique prism and right prism of same base area and height have equal volumes"
+              ]
+            },
+            {
+              "Label": "Slice integral intuition",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Constant A gives V=Ah",
+                "Area 6 through height 7 gives volume 42"
+              ]
+            },
+            {
+              "Label": "Counterexample",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Check all corresponding levels",
+                "Cone and cylinder of equal base/height have different volume"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L11",
+      "CultureCode": "en",
+      "Title": "Prisms Practice",
+      "ExplanationParagraphs": [
+        "Learning goal: Solve composite volumes involving right and oblique prisms, converting between base area, perimeter and perpendicular height, and distinguishing a slanted side from height.",
+        "Mathematical model: Every prism has congruent parallel cross sections V=Bh Use perpendicular base separation",
+        "Application and limitations: Add nonoverlapping pieces or subtract voids Track cm²×cm=cm³",
+        "Authentic source-specific activity: Draft two original composite solids, label all dimensions and justify additive/subtractive decompositions in writing; teacher scores sketches. Teacher rubric (0–4): correct diagram/units, explicit premises, reliable calculations, and an independently justified interpretation. Original drawings and written reasoning require teacher scoring.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 11, CC BY 4.0. Independent first-party Edulytiks examples; no publisher artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Prism volume",
+          "Definition": "Every prism has congruent parallel cross sections",
+          "Rule": "V=Bh",
+          "Example": "Triangular prism base area 6 and height 9 gives 54"
+        },
+        {
+          "Title": "Oblique prism",
+          "Definition": "Cross-section base areas remain constant despite lateral offset",
+          "Rule": "Use perpendicular base separation",
+          "Example": "A slanted edge 10 does not imply height 10"
+        },
+        {
+          "Title": "Composite prism",
+          "Definition": "Add nonoverlapping pieces or subtract voids",
+          "Rule": "Track cm²×cm=cm³",
+          "Example": "Outer 8×6×5 minus cavity 2×2×5 gives 220"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prisms Practice — example 1",
+          "Question": "Triangular prism has right-triangle base legs 3,4 and prism height 9. Find V.",
+          "Method": "Prism volume",
+          "Steps": [
+            "Base area 1/2·3·4=6",
+            "Multiply perpendicular prism height 9",
+            "V=54"
+          ],
+          "Answer": "54 cubic units.",
+          "Check": "Check each hypothesis, unit and numerical result against v=bh"
+        },
+        {
+          "Title": "Oblique prism: missing perpendicular height",
+          "Question": "An oblique prism has base area 14 cm² and lateral edge length 10 cm making angle 30° with the base plane. Find its volume.",
+          "Method": "Resolve the lateral edge into its normal height component.",
+          "Steps": [
+            "The perpendicular height is h=10sin30° because the edge makes a 30° angle with its projection on the base plane.",
+            "Since sin30°=1/2, h=5 cm; the slanted 10 cm is NOT the volume height.",
+            "Use V=Bh=14×5=70 cm³."
+          ],
+          "Answer": "70 cm³.",
+          "Check": "Height is measured perpendicular to base; use degree mode."
+        },
+        {
+          "Title": "Prisms Practice — example 3",
+          "Question": "Rectangular prism 8×6×5 has a through-hole 2×2×5; find solid material volume.",
+          "Method": "Composite prism",
+          "Steps": [
+            "Outer 8·6·5=240",
+            "Removed volume 2·2·5=20",
+            "Difference 240−20=220"
+          ],
+          "Answer": "220 cubic units.",
+          "Check": "Check each hypothesis, unit and numerical result against track cm²×cm=cm³"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using lateral edge for height",
+          "WhyWrong": "The edge may be oblique",
+          "Correction": "Use perpendicular separation"
+        },
+        {
+          "Mistake": "Adding a cavity volume",
+          "WhyWrong": "A removed region reduces occupied solid",
+          "Correction": "Subtract disjoint void"
+        }
+      ],
+      "SummaryPoints": [
+        "Solve composite volumes involving right and oblique prisms, converting between base area, perimeter and perpendicular height, and distinguishing a slanted side from height.",
+        "Use perpendicular base separation",
+        "Teacher-reviewed diagrams and reasoning remain necessary for academic acceptance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Prisms Practice. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Prism volume",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "V=Bh",
+                "Triangular prism base area 6 and height 9 gives 54"
+              ]
+            },
+            {
+              "Label": "Oblique prism",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use perpendicular base separation",
+                "A slanted edge 10 does not imply height 10"
+              ]
+            },
+            {
+              "Label": "Composite prism",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Track cm²×cm=cm³",
+                "Outer 8×6×5 minus cavity 2×2×5 gives 220"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L12",
+      "CultureCode": "en",
+      "Title": "Prisms and Pyramids",
+      "ExplanationParagraphs": [
+        "Learning goal: Contrast prisms, pyramids, cylinders and cones by their changing versus constant parallel cross sections and predict the one-third volume relationship.",
+        "Mathematical model: Prism parallel slices are congruent; pyramid slices shrink toward one apex Identify base, apex and perpendicular height Equal base and height do not imply equal volume",
+        "Application and limitations: A pyramid and prism with same base area B and height h have ratio 1:3 Use established decomposition/Cavalieri formula",
+        "Authentic source-specific activity: Draw labelled constant-section and taper-section sequences and justify why cone/pyramid differ from prism/cylinder. Teacher reviews arguments. Teacher rubric (0–4): correct diagram/units, explicit premises, reliable calculations, and an independently justified interpretation. Original drawings and written reasoning require teacher scoring.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 12, CC BY 4.0. Independent first-party Edulytiks examples; no publisher artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Prism vs pyramid",
+          "Definition": "Prism parallel slices are congruent; pyramid slices shrink toward one apex",
+          "Rule": "Identify base, apex and perpendicular height",
+          "Example": "Square pyramid at half height from apex has quarter base area"
+        },
+        {
+          "Title": "Cone vs cylinder",
+          "Definition": "Cone parallel disks taper; cylinder disks have constant area",
+          "Rule": "Equal base and height do not imply equal volume",
+          "Example": "Cone volume is one third matching cylinder"
+        },
+        {
+          "Title": "Volume comparison",
+          "Definition": "A pyramid and prism with same base area B and height h have ratio 1:3",
+          "Rule": "Use established decomposition/Cavalieri formula",
+          "Example": "B=18,h=6 gives prism 108 and pyramid 36"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prisms and Pyramids — example 1",
+          "Question": "Prism and pyramid share base area 18 and height 6. Compare volumes.",
+          "Method": "Prism vs pyramid",
+          "Steps": [
+            "Prism V=Bh=18·6=108",
+            "Pyramid V=Bh/3=36",
+            "Ratio pyramid:prism=1:3"
+          ],
+          "Answer": "108 vs 36 cubic units.",
+          "Check": "Check each hypothesis, unit and numerical result against identify base, apex and perpendicular height"
+        },
+        {
+          "Title": "Prisms and Pyramids — example 2",
+          "Question": "Cone radius 3 and height 4; compare matching cylinder.",
+          "Method": "Cone vs cylinder",
+          "Steps": [
+            "Common base area π·3²=9π",
+            "Cylinder volume=9π·4=36π",
+            "Cone volume 1/3·36π=12π"
+          ],
+          "Answer": "Cone 12π, cylinder 36π.",
+          "Check": "Check each hypothesis, unit and numerical result against equal base and height do not imply equal volume"
+        },
+        {
+          "Title": "Prisms and Pyramids — example 3",
+          "Question": "Pyramid section at height one third from apex, base area 81. Find area.",
+          "Method": "Volume comparison",
+          "Steps": [
+            "Linear scale is t=1/3",
+            "Area scale t²=1/9",
+            "Area 81/9=9"
+          ],
+          "Answer": "Section area 9.",
+          "Check": "Check each hypothesis, unit and numerical result against use established decomposition/cavalieri formula"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming equal base and height means equal volumes",
+          "WhyWrong": "Tapered sections have less area",
+          "Correction": "Use factor one third for cone/pyramid"
+        },
+        {
+          "Mistake": "Mixing distance from base with from apex",
+          "WhyWrong": "Area slice similarity is apex-centred",
+          "Correction": "State reference height"
+        }
+      ],
+      "SummaryPoints": [
+        "Contrast prisms, pyramids, cylinders and cones by their changing versus constant parallel cross sections and predict the one-third volume relationship.",
+        "Equal base and height do not imply equal volume",
+        "Teacher-reviewed diagrams and reasoning remain necessary for academic acceptance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Prisms and Pyramids. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Prism vs pyramid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Identify base, apex and perpendicular height",
+                "Square pyramid at half height from apex has quarter base area"
+              ]
+            },
+            {
+              "Label": "Cone vs cylinder",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Equal base and height do not imply equal volume",
+                "Cone volume is one third matching cylinder"
+              ]
+            },
+            {
+              "Label": "Volume comparison",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use established decomposition/Cavalieri formula",
+                "B=18,h=6 gives prism 108 and pyramid 36"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

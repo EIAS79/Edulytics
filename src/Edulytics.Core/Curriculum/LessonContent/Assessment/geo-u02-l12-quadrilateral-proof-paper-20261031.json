@@ -1,0 +1,193 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L12",
+  "Status": "C_CLOSED_AUTHORING_QUADRILATERAL_CONJECTURE_PAPER_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\12\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\12\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\12\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\12\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "b628dcd8e0d1b6023f53fc4a3d92390572520954e804ee58829b4269a85d9728",
+    "TeacherActivities": "d80552d55762e2c35f69e572e96fa3f749fa9327363fef6af6f2dcb803099a20",
+    "StudentActivities": "55fc0e11f89863228dd374a825f2b4ee00fd2c9eb4884f74bed081e4377053cf",
+    "StudentPractice": "c05a2fdd1ed974312ca4b107c3657f9bb8b954943e5f1d2a7f8e566d5ea9f66d"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.9"
+    ],
+    "Addressing": [
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "12.1",
+      "Goal": "Physical vs optional digital quadrilateral dragging, rectangle implication",
+      "FirstPartyMode": "TEACHER_OBSERVED_STRIP_MODE"
+    },
+    {
+      "Source": "12.2",
+      "Goal": "Five different quadrilateral conjectures, exact given/conclusion and proof",
+      "FirstPartyMode": "TEACHER_REVIEWED_FIVE_THEOREM_CHOICES"
+    },
+    {
+      "Source": "12.3",
+      "Goal": "Partner critiques proof and optional two-circle centre line proof",
+      "FirstPartyMode": "TEACHER_OBSERVED_PEER_REVIEW"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "7 original source-indexed student problems, including 2 angle class cases",
+      "FirstPartyMode": "SEVEN_TEACHER_PAPER_ITEMS"
+    },
+    {
+      "Source": "12.4 Publisher Cool-down",
+      "Goal": "Restricted original",
+      "FirstPartyMode": "FIRST_PARTY_EDULYTIKS_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L12_QUADRILATERAL_PROOF_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L12",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_OR_SOURCE_PERMITTED_STRIPS",
+    "TaskId": "geo-u02-l12-quadrilateral-conjecture-proof-critique",
+    "TeacherHandoff": "Teacher gives paper/physical strips for 12.1, original first-party five-conjecture cards for 12.2, pairs exchange 12.3 drafts, and seven paper Practice items. Score four 0-2 human rubric criteria offline; optional GeoGebra is not claimed delivered by Edulytiks.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct quadrilateral definitions and original 12.1 counterexample parallelogram not rectangle",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Rewrites exact givens and wanted conclusion, chooses valid SAS/parallel theorem for 12.2 proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Genuine paired critique and repaired noncircular 12.3 proof, optional two-circle case if attempted",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven original indexed paper practice prompts and original Edulytiks Cool-down reviewed accurately",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Right angle parallelogram",
+      "FirstPartyPrompt": "Given EFGH parallelogram and ∠HEF 90°, use opposite-angle congruence to prove ∠FGH right.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Isosceles trapezoid figure",
+      "FirstPartyPrompt": "Select true congruent pairs of ABDE trapezoid triangles using teacher-verified original diagram, not guessed markings.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Match quadrilateral conjectures",
+      "FirstPartyPrompt": "Match two opposite side pairs or bisecting diagonals givens to precise target statements for labelled EFGH.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "Always sufficient triangle data",
+      "FirstPartyPrompt": "Of ASA,SAS,SSA,SSS,SS,AAA choose A,B,D and explain false patterns.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "Quadrilateral figure dependent true set",
+      "FirstPartyPrompt": "Use teacher-verified original source diagram to check EB/AD, DC/AB, DA/CB and line pair parallelism.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "Kite diagonal angle bisector",
+      "FirstPartyPrompt": "Demonstrate WY angle bisection from correct SSS/SAS kite congruence, not drawing alone.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Angle set 80,20,80 and one side5",
+      "FirstPartyPrompt": "Draw both noncongruent classes when side5 is opposite 20 or one of the equal 80 angles; identify that two 80 placements are congruent.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "P1_RightAngleBasis": "OPPOSITE_ANGLES_OF_PARALLELOGRAM_CONGRUENT_OPTION_B",
+    "P4_True": [
+      "A",
+      "B",
+      "D"
+    ],
+    "P7_NoncongruentTriangleClasses": 2,
+    "EveryRectangleParallelogram": true,
+    "NotEveryParallelogramRectangle": true,
+    "DiagonalsBisectAndPerpendicular": "RHOMBUS"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Rectangle right angles yield opposite parallels",
+      "One right angle in parallelogram implies rectangle",
+      "P1 B",
+      "P4 A B D",
+      "80,20,80 with side5 admits 2 congruence classes"
+    ],
+    "Equivalent": [
+      "SAS diagonal halves versus alternate-interior proof of parallelogram converse",
+      "paper/metal strip or equivalent optional dynamic construction if actually available"
+    ],
+    "Wrong": [
+      "Any parallelogram automatically rectangle",
+      "All rhombi squares",
+      "P4 SSA or AAA sufficient",
+      "80,20,80 side5 gives three noncongruent classes"
+    ],
+    "Boundary": [
+      "nondegenerate simple quadrilateral needed",
+      "two unequal-radius circles intersect at TWO distinct points for perpendicular-bisector extension"
+    ],
+    "Malformed": [
+      "unmarked given/conclusion",
+      "circular proof presumes wanted statement",
+      "missing figure for paper teacher review"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_FIRST_PARTY_PAPER",
+  "FirstPartyCooldown": {
+    "Prompt": "From rectangle ABCD four right angles, prove two pairs opposite sides parallel. Alternatively assume diagonals perpendicular and bisecting and prove rhombus. Critique one invalid circular draft.",
+    "Mode": "TEACHER_PAPER_REVIEW",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l12-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN authenticated app grading/tenant/CI/merge/deploy"
+}

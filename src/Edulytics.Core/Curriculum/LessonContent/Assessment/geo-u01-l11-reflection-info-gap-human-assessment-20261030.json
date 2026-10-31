@@ -1,0 +1,122 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L11",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "prep": "bfb4a29c917f9ed7e3499ab9fff511cd3d5f5722aa71b20c062c8fe27b51cb0a",
+    "teacher": "f34d622dd2bfd5e568daad0ebf5cf8e42a8a4f92e5ac4d8b6504a503ce64cc6a",
+    "student": "79719df73fe132b7ddc6c5a6055f777a04e794c4629427afd415fdce5533aa5a",
+    "practice": "ce7115c28e65349b95ee3deb52be9d3605cf31af68940b4e4d55cb5f82ae14c4"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.1",
+      "HSG-CO.A.1",
+      "HSG-CO.D.12"
+    ],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.4"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.4",
+      "HSG-CO.C.10",
+      "HSG-CO.C.9"
+    ]
+  },
+  "SourceActivities": [
+    "11.1 Which One Doesn't Belong Crossing the Line",
+    "11.2 Info Gap separate problem and data cards",
+    "11.3 Triangle in the Mirror and error critique",
+    "Practice 1–7"
+  ],
+  "Task": {
+    "Prompt": "Given oblique mirror y=x, construct images of triangle C=(1,1), D=(3,1), E=(2,4) and critique false C''=(1,-1). Complete a separate partner information-gap reflection exercise with mirror x=2; name all points and mirror lines.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "names a valid mirror line and correctly uses perpendicular foot",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "reflects all triangle vertices, including fixed mirror point",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "completes separate information-gap question/explanation and partner comparison",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "identifies flawed reflection and proves invalid perpendicular/equal-distance relationship",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Cards": {
+    "Problem": "Find reflection images of P=(4,1) and Q=(1,3); ask which information is missing and why",
+    "Data": "Mirror line x=2; give information only when specifically asked, and request a justification"
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "What construction creates the mirror line reflecting distinct A onto B?",
+      "Expected": "The perpendicular bisector of segment AB.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "What happens to a point P on the mirror line?",
+      "Expected": "It remains fixed P'=P.",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "Does reflecting over one line equal rotation 180 degrees about their intersection for every point?",
+      "Expected": "No; one reflection reverses orientation, a half-turn preserves it. They can agree for special points.",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Which is non-rigid: translation, reflection, rotation or dilation with factor 2?",
+      "Expected": "Dilation factor 2 changes distances.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "If reflection across x=2 takes D=(4,3), where is D'?",
+      "Expected": "(0,3); 2 is the midpoint x-coordinate.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "How can we determine whether C is closer to A or B?",
+      "Expected": "Draw perpendicular bisector AB; choose A/B half-plane or tie.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "Is a four-equal-sided quadrilateral always regular or never regular?",
+      "Expected": "Neither: square is regular; a non-square rhombus is not equiangular.",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: reflect (5,2) across x=2 to (-1,2) with a perpendicular-distance explanation",
+  "PaperSubmission": "Student submits labelled reflections, separately completed partner cards and reasoned error critique to school teacher; teacher assigns 0/1/2 per rubric criterion, records comment, signs/dates original paper. No online grade claimed.",
+  "Cases": {
+    "CORRECT": "C'=(1,1), D'=(1,3), E'=(4,2); P'=(0,1), Q'=(3,3)",
+    "EQUIVALENT": "alternative correct compass perpendicular constructions or mirrors with equivalent data",
+    "WRONG": "point same distance but not on perpendicular normal, or omits fixed points",
+    "INSUFFICIENT": "shaded triangle without reflection-axis and foot reasoning",
+    "MALFORMED": "undefined mirror line, contradicting data card"
+  },
+  "NoScalarAutoScore": true,
+  "StageD": "NOT_RUN secure course lesson assignment, paper score save and school auth #453"
+}

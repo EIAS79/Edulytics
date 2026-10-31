@@ -1,0 +1,200 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+  "Status": "C_CLOSED_AUTHORING_PAPER_SEGMENT_ZIGZAG_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\5\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\5\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\5\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\5\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "9e7ee7e516d2e5c0d9ffaf326e9f4cb1bb014ae904959977bbdc47ebc5c05576",
+    "TeacherActivities": "0ea4544eb6cf285de91840e637ab03eb539e41ca87d379cf236be98bb1443d93",
+    "StudentActivities": "7e5fb6ce413c2a9ee365e2ab90ce4265de947bea8d5e44ca34c17e93de43b348",
+    "StudentPractice": "f3366d7343d41e86fe2fb583a1a994ed0df1be7587fe69617d97edc70c535e74"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.1"
+    ],
+    "Addressing": [
+      "HSG-CO.B.6"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "5.1",
+      "Goal": "All points as singleton figures are congruent",
+      "FirstPartyMode": "TRANSLATE_A_TO_B_POINT_PROOF"
+    },
+    {
+      "Source": "5.2",
+      "Goal": "Not all segments congruent; equal lengths iff straight segments congruent",
+      "FirstPartyMode": "CONSTRUCTION_AND_TWO_DIRECTION_PROOF"
+    },
+    {
+      "Source": "5.2 extension",
+      "Goal": "Flexible string requires specifying the shape and fixed endpoints",
+      "FirstPartyMode": "COUNTEREXAMPLE_AND_DEFINITION"
+    },
+    {
+      "Source": "5.3",
+      "Goal": "Partner ordered five-step rigid zigzag argument, including reflection if needed",
+      "FirstPartyMode": "PARTNER_SPOKEN_AND_WRITTEN_PROOF"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven original Practice skills with figure/school source restrictions",
+      "FirstPartyMode": "SEVEN_INDEXED_FIRST_PARTY_PAPER_REVIEWS"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Goal": "Original protected, not inspected",
+      "FirstPartyMode": "EDULYTIKS_ORIGINAL_HUMAN_REVIEW"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L05_POINT_SEGMENT_ZIGZAG_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_PARTNER_REVIEW",
+    "TaskId": "geo-u02-l05-rigid-proof-and-segment-biconditional",
+    "TeacherHandoff": "Use a teacher-owned paper worksheet: student labels figures and writes complete translation/rotation, optional reflection, same-ray/distance argument; partner takes turns supplying the ordered zigzag proof. Check P1-P7 and Cool-down on paper with 8-point rubric. Record scores offline only.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Point congruence via actual translation vector and noncounterexample reasoning",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Segment equality iff rigid congruence, with unequal-length counterexample and valid forward motion",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Zigzag ordered 5-step alignment, exact same ray and length with correctly conditional reflection, partner communication",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven indexed Practice arguments and first-party Cool-down with proper ordered correspondence and valid figure constraints",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Two-segment rigid motions",
+      "FirstPartyPrompt": "Give the translation/rotation/reflection sequence mapping corresponding ordered segments of a teacher-supplied labelled 2-segment figure.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Congruent circles",
+      "FirstPartyPrompt": "Two circles centred at A and C with AB=CD radii. Explain why translating A to C maps one full circle to the other.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Quadrilateral conjecture",
+      "FirstPartyPrompt": "Of quadrilaterals, rectangles, rhombi, squares with one length-3 side, only all squares necessarily congruent; give a noncongruent counterexample to other categories.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "SSS/SAS/ASA classification",
+      "FirstPartyPrompt": "Match three labelled corresponding side marks, two sides with included angle, and two angles with included side to their sufficient criteria.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "HGF reflection across FH",
+      "FirstPartyPrompt": "Write the ordered congruence statement HGF to HEF with H and F fixed, G mapped to E.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "ABC congruent EDF",
+      "FirstPartyPrompt": "Select necessarily true A angle A to F, B angle B to D, C angle C to E, D BA to DE, E BC to FE.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Hexagon-derived quadrilaterals",
+      "FirstPartyPrompt": "Inspect a teacher-supplied independent concentric regular-hexagon diagram and determine congruence of three specified quadrilaterals with a valid rigid motion argument.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "NOT_VERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "ZigzagStepOrder": [
+      "map QR to XY",
+      "reflect if third point is opposite side",
+      "align the equal-angle ray",
+      "use equal radius/distance to coincide endpoint",
+      "conclude figures congruent"
+    ],
+    "P3_OnlyUniversallyCongruentFamily": "SQUARES_EQUAL_SIDE",
+    "P5_OrderedMapping": "HGF_TO_HEF",
+    "P6_TrueChoices": [
+      "B",
+      "D"
+    ],
+    "Circle": "equal radii map under centre translation"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Translation from (-2,3) to (3,2) has vector (5,-1)",
+      "3-unit segment not congruent to 5-unit segment",
+      "circle radius5 maps under centre translation",
+      "zigzag steps map-align, optional reflect, same ray, same distance, conclude",
+      "P6 B,D only"
+    ],
+    "Equivalent": [
+      "reverse handedness zigzag fixed using a reflection",
+      "different valid rigid motion producing the same ordered endpoint mapping"
+    ],
+    "Wrong": [
+      "all segments congruent regardless of length",
+      "same ray without equal length guarantees same endpoint",
+      "equal lengths alone prove any two zigzags without included angle",
+      "P6 BA mapped to EF rather than DE",
+      "all rhombi of one side length necessarily congruent"
+    ],
+    "Boundary": [
+      "zero-length degenerate segment must not silently meet nondegenerate proof hypothesis",
+      "reflection only when third point lies on wrong half-plane",
+      "bent string not identified with straight rigid segment"
+    ],
+    "Malformed": [
+      "missing correspondence and no labelled image",
+      "claims angle congruence with unproved side identification",
+      "omits partner proof order or required teacher drawing"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_FIRST_PARTY_EDULYTIKS_ALTERNATIVE",
+  "FirstPartyCooldown": {
+    "Prompt": "Prove two points are congruent by translation; disprove blanket all-segments congruence, prove equal-length straight segments congruent, and order 5 zigzag proof steps.",
+    "Mode": "TEACHER_REVIEWED_PAPER",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l05-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN: app online assignment and saved teacher manual grade, school tenancy, full CI, merge/deploy not claimed"
+}

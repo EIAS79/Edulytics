@@ -1,0 +1,632 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u06-l01-l06-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L01",
+      "CultureCode": "en",
+      "Title": "Rigid Transformations in the Plane",
+      "ExplanationParagraphs": [
+        "Learning goal: Use coordinate differences to verify congruence and explicitly map vertices by translations, rotations and reflections.",
+        "For P,Q, d²=(x2−x1)²+(y2−y1)² Check squared distances before SSS Points (0,0),(3,4) distance 5",
+        "Translation adds v; reflection and rotation preserve distance Apply same map to all vertices Track labels and verify every length",
+        "Source-specific original activity: Draw original and two-stage transformed triangle; teacher checks exact vertex tracking and proof. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 1, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distance",
+          "Definition": "For P,Q, d²=(x2−x1)²+(y2−y1)²",
+          "Rule": "Check squared distances before SSS",
+          "Example": "Points (0,0),(3,4) distance 5"
+        },
+        {
+          "Title": "Rigid coordinate rule",
+          "Definition": "Translation adds v; reflection and rotation preserve distance",
+          "Rule": "Apply same map to all vertices",
+          "Example": "90° CCW about origin (x,y)→(−y,x)"
+        },
+        {
+          "Title": "Congruence by SSS",
+          "Definition": "Three matching corresponding side lengths give congruent triangles",
+          "Rule": "Track labels and verify every length",
+          "Example": "3–4–5 image remains 3–4–5"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rigid Transformations in the Plane: worked application 1",
+          "Question": "Triangle A=(0,0),B=(2,0),C=(0,3) translates by (4,−1). Find image.",
+          "Method": "Distance",
+          "Steps": [
+            "Add (4,−1) to A→(4,−1)",
+            "B→(6,−1), C→(4,2)",
+            "Compare squared lengths 4,9,13 in both triangles"
+          ],
+          "Answer": "A′=(4,−1), B′=(6,−1), C′=(4,2).",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Rigid Transformations in the Plane: worked application 2",
+          "Question": "Rotate P=(2,−3) 90° CCW about origin.",
+          "Method": "Rigid coordinate rule",
+          "Steps": [
+            "Use (x,y)→(−y,x)",
+            "Substitute (2,−3)",
+            "Image (3,2), radius squared 13 unchanged"
+          ],
+          "Answer": "P′=(3,2).",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Rigid Transformations in the Plane: worked application 3",
+          "Question": "Are triangles (0,0),(3,0),(0,4) and (1,1),(1,4),(5,1) congruent?",
+          "Method": "Congruence by SSS",
+          "Steps": [
+            "First sides have squared lengths 9,16,25",
+            "Second sides have squared lengths 9,16,25",
+            "SSS gives congruence with appropriate vertex order"
+          ],
+          "Answer": "Yes, both side triples 3,4,5.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing only screen appearance",
+          "WhyWrong": "Pictures can conceal different lengths",
+          "Correction": "Calculate exact squared distances"
+        },
+        {
+          "Mistake": "Moving each vertex with a different vector and calling it translation",
+          "WhyWrong": "One translation uses one displacement",
+          "Correction": "Verify image−original vector constant"
+        }
+      ],
+      "SummaryPoints": [
+        "Use coordinate differences to verify congruence and explicitly map vertices by translations, rotations and reflections.",
+        "Apply same map to all vertices",
+        "Full representations and proof explanations need teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Rigid Transformations in the Plane; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Add (4,−1) to A→(4,−1)",
+            "B→(6,−1), C→(4,2)",
+            "Compare squared lengths 4,9,13 in both triangles",
+            "A′=(4,−1), B′=(6,−1), C′=(4,2)."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L02",
+      "CultureCode": "en",
+      "Title": "Transformations as Functions",
+      "ExplanationParagraphs": [
+        "Learning goal: Express geometric maps as functions acting on all points and compose them in the correct order.",
+        "Transformation f:R²→R² assigns one image per input Write output coordinates as explicit expressions f(x,y)=(x+3,y−2)",
+        "g∘f means apply f first, then g Order generally matters Solve two coordinate equalities",
+        "Source-specific original activity: Create input-output tables and critique a multi-valued rule; teacher reviews original argument. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 2, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Point function",
+          "Definition": "Transformation f:R²→R² assigns one image per input",
+          "Rule": "Write output coordinates as explicit expressions",
+          "Example": "f(x,y)=(x+3,y−2)"
+        },
+        {
+          "Title": "Function composition",
+          "Definition": "g∘f means apply f first, then g",
+          "Rule": "Order generally matters",
+          "Example": "Reflection after translation differs from reverse"
+        },
+        {
+          "Title": "Fixed points",
+          "Definition": "A point fixed by a transformation satisfies f(P)=P",
+          "Rule": "Solve two coordinate equalities",
+          "Example": "Reflection across y-axis fixes x=0"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Transformations as Functions: worked application 1",
+          "Question": "Let f(x,y)=(x+3,y−2), g(x,y)=(−x,y). Find g(f(2,5)).",
+          "Method": "Point function",
+          "Steps": [
+            "First f(2,5)=(5,3)",
+            "Then reflect g(5,3)=(−5,3)",
+            "Retain stated order"
+          ],
+          "Answer": "(−5,3).",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Transformations as Functions: worked application 2",
+          "Question": "Compute f(g(2,5)) and compare.",
+          "Method": "Function composition",
+          "Steps": [
+            "First g(2,5)=(−2,5)",
+            "Then f(−2,5)=(1,3)",
+            "This differs from g∘f"
+          ],
+          "Answer": "(1,3); composition does not commute.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Transformations as Functions: worked application 3",
+          "Question": "Find all fixed points of reflection R(x,y)=(−x,y).",
+          "Method": "Fixed points",
+          "Steps": [
+            "Set −x=x",
+            "Solve 2x=0→x=0",
+            "y remains arbitrary"
+          ],
+          "Answer": "All points (0,y) on y-axis.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying composition right-to-left incorrectly",
+          "WhyWrong": "g(f(P)) evaluates f first",
+          "Correction": "Write intermediate images"
+        },
+        {
+          "Mistake": "Calling a relation with two images per point a function",
+          "WhyWrong": "A function output must be unique",
+          "Correction": "Specify unique geometric construction for every input"
+        }
+      ],
+      "SummaryPoints": [
+        "Express geometric maps as functions acting on all points and compose them in the correct order.",
+        "Order generally matters",
+        "Full representations and proof explanations need teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Transformations as Functions; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "First f(2,5)=(5,3)",
+            "Then reflect g(5,3)=(−5,3)",
+            "Retain stated order",
+            "(−5,3)."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L03",
+      "CultureCode": "en",
+      "Title": "Types of Transformations",
+      "ExplanationParagraphs": [
+        "Learning goal: Classify maps as rigid motions, nonrigid similarities, or neither based on whether distances are preserved or uniformly scaled.",
+        "Preserves all pairwise distances Test squared distance ratios=1 Reflection (x,y)→(−x,y)",
+        "Multiplies all distances by one k>0, preserves angles Uniform positive dilation k=2 Test independent direction lengths",
+        "Source activity parity: introduce the scale-3 coordinate map (x,y)↦(3x,3y) using a point B=(2,3), its image B′=(6,9), and auxiliary feet M=(2,0), N=(6,0). Students construct the two right triangles PMB and PNB′ and justify proportionality/angle agreement before classifying the map as a dilation. This independent reconstruction requires a genuine labelled coordinate diagram and teacher-reviewed reasoning.",
+        "Source-specific original activity: Sort coordinate-rule cards with explicit counterexamples; teacher checks written classification. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 3, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Isometry",
+          "Definition": "Preserves all pairwise distances",
+          "Rule": "Test squared distance ratios=1",
+          "Example": "Reflection (x,y)→(−x,y)"
+        },
+        {
+          "Title": "Similarity",
+          "Definition": "Multiplies all distances by one k>0, preserves angles",
+          "Rule": "Uniform positive dilation k=2",
+          "Example": "Map (x,y)→(2x,2y)"
+        },
+        {
+          "Title": "Non-similarity",
+          "Definition": "Nonuniform stretching changes relative side ratios/angles",
+          "Rule": "Test independent direction lengths",
+          "Example": "Map (x,y)→(2x,y) not similarity"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Types of Transformations: worked application 1",
+          "Question": "Classify f(x,y)=(x−4,y+6).",
+          "Method": "Isometry",
+          "Steps": [
+            "Displacement same for all points",
+            "Differences between points unchanged",
+            "Therefore all lengths preserved"
+          ],
+          "Answer": "Rigid translation.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Types of Transformations: justify scale three with auxiliary right triangles",
+          "Question": "Point B=(2,3) maps to B′=(6,9). With origin P and feet M=(2,0), N=(6,0), explain why triangles PMB and PNB′ are similar and find PB:PB′.",
+          "Method": "Compare corresponding right-angle legs and infer AA similarity for the origin-centred dilation.",
+          "Steps": [
+            "PM=2, MB=3, PN=6, NB′=9; the horizontal and vertical leg pairs both have image/original ratio 3.",
+            "The triangles are right at M and N, and P,B,B′ lie on the same ray (both direction vectors are proportional), so their angles at P agree.",
+            "AA similarity gives PB′/PB=3 (or PB:PB′=1:3); independently PB=√13 and PB′=3√13."
+          ],
+          "Answer": "Triangles PMB and PNB′ are similar by AA and PB:PB′=1:3.",
+          "Check": "The coordinate map sends every vector from origin to three times itself and each leg scales exactly 3."
+        },
+        {
+          "Title": "Types of Transformations: worked application 3",
+          "Question": "Classify h(x,y)=(2x,y).",
+          "Method": "Non-similarity",
+          "Steps": [
+            "Unit horizontal segment grows from 1 to 2",
+            "Unit vertical segment stays 1",
+            "No common scale factor"
+          ],
+          "Answer": "Neither rigid nor similarity in general.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming every linear transformation is rigid",
+          "WhyWrong": "Linear maps may stretch or shear",
+          "Correction": "Test distances"
+        },
+        {
+          "Mistake": "Calling k=2 congruence",
+          "WhyWrong": "A factor other than 1 changes lengths",
+          "Correction": "Classify as similarity but not isometry"
+        }
+      ],
+      "SummaryPoints": [
+        "Classify maps as rigid motions, nonrigid similarities, or neither based on whether distances are preserved or uniformly scaled.",
+        "Uniform positive dilation k=2",
+        "Full representations and proof explanations need teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Types of Transformations; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "PM=2, MB=3, PN=6, NB′=9; the horizontal and vertical leg pairs both have image/original ratio 3.",
+            "The triangles are right at M and N, and P,B,B′ lie on the same ray (both direction vectors are proportional), so their angles at P agree.",
+            "AA similarity gives PB′/PB=3 (or PB:PB′=1:3); independently PB=√13 and PB′=3√13.",
+            "Triangles PMB and PNB′ are similar by AA and PB:PB′=1:3."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L04",
+      "CultureCode": "en",
+      "Title": "Distances and Circles",
+      "ExplanationParagraphs": [
+        "Learning goal: Derive a circle equation as the locus of points at fixed positive distance from a specified centre.",
+        "All points (x,y) at distance r from (h,k) Equation (x−h)²+(y−k)²=r² Centre (2,−1), radius 3",
+        "Substitute coordinates and compare squared distance to r² Equal=boundary, less=inside, greater=outside Do not conflate surface and boundary",
+        "Source-specific original activity: Graph and label exact centre and radius, then explain locus proof. Teacher checks graph. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 4, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distance equation",
+          "Definition": "All points (x,y) at distance r from (h,k)",
+          "Rule": "Equation (x−h)²+(y−k)²=r²",
+          "Example": "Centre (2,−1), radius 3"
+        },
+        {
+          "Title": "Point membership",
+          "Definition": "Substitute coordinates and compare squared distance to r²",
+          "Rule": "Equal=boundary, less=inside, greater=outside",
+          "Example": "Point (5,−1) lies on radius-3 circle"
+        },
+        {
+          "Title": "Circle versus disk",
+          "Definition": "Equation with equality is circumference; ≤ gives filled disk",
+          "Rule": "Do not conflate surface and boundary",
+          "Example": "x²+y²≤4 is disk radius 2"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distances and Circles: worked application 1",
+          "Question": "Write equation of circle centre (2,−1), radius 3.",
+          "Method": "Distance equation",
+          "Steps": [
+            "Use squared distance from centre",
+            "Equation (x−2)²+(y+1)²=3²",
+            "Simplify right side 9"
+          ],
+          "Answer": "(x−2)²+(y+1)²=9.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Distances and Circles: worked application 2",
+          "Question": "Does P=(5,−1) lie on that circle?",
+          "Method": "Point membership",
+          "Steps": [
+            "Compute (5−2)²+(−1+1)²",
+            "Value=9+0=9",
+            "Equals radius² 9"
+          ],
+          "Answer": "Yes, P lies on circle.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Distances and Circles: worked application 3",
+          "Question": "Classify Q=(2,0) relative to same circle.",
+          "Method": "Circle versus disk",
+          "Steps": [
+            "Squared distance=(2−2)²+(0+1)²=1",
+            "Radius²=9",
+            "Because 1<9, point is inside disk but not circle boundary"
+          ],
+          "Answer": "Inside, not on circumference.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using centre (−h,−k) from expression signs",
+          "WhyWrong": "Complete square coordinate is opposite sign in parentheses",
+          "Correction": "Read (x−h),(y−k)"
+        },
+        {
+          "Mistake": "Treating ≤ as circle circumference",
+          "WhyWrong": "Inequality includes interior points",
+          "Correction": "Use equality for boundary"
+        }
+      ],
+      "SummaryPoints": [
+        "Derive a circle equation as the locus of points at fixed positive distance from a specified centre.",
+        "Equal=boundary, less=inside, greater=outside",
+        "Full representations and proof explanations need teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Distances and Circles; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Use squared distance from centre",
+            "Equation (x−2)²+(y+1)²=3²",
+            "Simplify right side 9",
+            "(x−2)²+(y+1)²=9."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L05",
+      "CultureCode": "en",
+      "Title": "Squares and Circles",
+      "ExplanationParagraphs": [
+        "Learning goal: Expand and factor squared binomials in circle equations without changing the geometric locus.",
+        "(x−h)²=x²−2hx+h² Keep cross term  (x−3)²=x²−6x+9",
+        "Expanded and standard forms describe same circle Collect terms without dropping constants Half of linear coefficient gives centre coordinate",
+        "Source-specific original activity: Students rewrite equivalent circle equations and explain how algebra preserves the locus; teacher reviews reasoning. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 5, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Binomial expansion",
+          "Definition": "(x−h)²=x²−2hx+h²",
+          "Rule": "Keep cross term",
+          "Example": " (x−3)²=x²−6x+9"
+        },
+        {
+          "Title": "Equivalent equations",
+          "Definition": "Expanded and standard forms describe same circle",
+          "Rule": "Collect terms without dropping constants",
+          "Example": "(x−3)²+(y+2)²=25 ↔ x²+y²−6x+4y−12=0"
+        },
+        {
+          "Title": "Completing relation",
+          "Definition": "Coefficients of x,y encode centre after grouping",
+          "Rule": "Half of linear coefficient gives centre coordinate",
+          "Example": "x²−6x corresponds h=3"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Squares and Circles: worked application 1",
+          "Question": "Expand circle (x−3)²+(y+2)²=25.",
+          "Method": "Binomial expansion",
+          "Steps": [
+            "First square x²−6x+9",
+            "Second y²+4y+4",
+            "Subtract 25 from both sides and combine"
+          ],
+          "Answer": "x²+y²−6x+4y−12=0.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Squares and Circles: worked application 2",
+          "Question": "Recover radius for (x+1)²+(y−4)²=16.",
+          "Method": "Equivalent equations",
+          "Steps": [
+            "Centre is (−1,4)",
+            "Squared radius is 16",
+            "Take positive root r=4"
+          ],
+          "Answer": "Centre (−1,4), radius 4.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Squares and Circles: worked application 3",
+          "Question": "Check (3+2)² is not 3²+2².",
+          "Method": "Completing relation",
+          "Steps": [
+            "Compute left side 5²=25",
+            "Right side 9+4=13",
+            "Missing cross term is 2·3·2=12"
+          ],
+          "Answer": "25≠13; cross term essential.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dropping mixed binomial terms",
+          "WhyWrong": "Square of sum is not sum of squares",
+          "Correction": "Include ±2ab"
+        },
+        {
+          "Mistake": "Changing equation by moving constants inconsistently",
+          "WhyWrong": "Equality must be preserved",
+          "Correction": "Apply operation to both sides"
+        }
+      ],
+      "SummaryPoints": [
+        "Expand and factor squared binomials in circle equations without changing the geometric locus.",
+        "Collect terms without dropping constants",
+        "Full representations and proof explanations need teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Squares and Circles; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "First square x²−6x+9",
+            "Second y²+4y+4",
+            "Subtract 25 from both sides and combine",
+            "x²+y²−6x+4y−12=0."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L06",
+      "CultureCode": "en",
+      "Title": "Completing the Square",
+      "ExplanationParagraphs": [
+        "Learning goal: Convert general circle equations to centre-radius form using the same quadratic completion on both coordinates.",
+        "x²+bx=(x+b/2)²−(b/2)² Preserve constants x²−8x=(x−4)²−16",
+        "(x−h)²+(y−k)²=r² with r>0 Isolate positive squared radius Check positivity",
+        "Source-specific original activity: Show each algebraic equality line and graph centre; teacher reviews completeness. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 6, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Complete square",
+          "Definition": "x²+bx=(x+b/2)²−(b/2)²",
+          "Rule": "Preserve constants",
+          "Example": "x²−8x=(x−4)²−16"
+        },
+        {
+          "Title": "Centre-radius form",
+          "Definition": "(x−h)²+(y−k)²=r² with r>0",
+          "Rule": "Isolate positive squared radius",
+          "Example": "x²+y²−8x+6y=0 yields (4,−3),r=5"
+        },
+        {
+          "Title": "Feasibility",
+          "Definition": "If r²<0, no real circle; r²=0 gives one point",
+          "Rule": "Check positivity",
+          "Example": "x²+y²+1=0 has no real solutions"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Completing the Square: worked application 1",
+          "Question": "Complete square x²+y²−8x+6y=0.",
+          "Method": "Complete square",
+          "Steps": [
+            "Group (x²−8x)+(y²+6y)=0",
+            "Add 16 and 9 to both sides",
+            "(x−4)²+(y+3)²=25"
+          ],
+          "Answer": "Centre (4,−3), radius 5.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Completing the Square: worked application 2",
+          "Question": "Complete x²+y²+4x−10y+20=0.",
+          "Method": "Centre-radius form",
+          "Steps": [
+            "Move constant −20",
+            "Complete (x+2)², (y−5)² adding 4 and 25",
+            "Result (x+2)²+(y−5)²=9"
+          ],
+          "Answer": "Centre (−2,5), radius 3.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        },
+        {
+          "Title": "Completing the Square: worked application 3",
+          "Question": "Can x²+y²+1=0 represent real circle?",
+          "Method": "Feasibility",
+          "Steps": [
+            "Rearrange x²+y²=−1",
+            "Both squares are nonnegative",
+            "Their sum cannot be −1"
+          ],
+          "Answer": "No real point satisfies equation.",
+          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Forgetting to add completion constants to other side",
+          "WhyWrong": "Changes equation solution set",
+          "Correction": "Balance both sides"
+        },
+        {
+          "Mistake": "Calling negative r² a radius",
+          "WhyWrong": "Real squared radius cannot be negative",
+          "Correction": "Check final constant before taking root"
+        }
+      ],
+      "SummaryPoints": [
+        "Convert general circle equations to centre-radius form using the same quadratic completion on both coordinates.",
+        "Isolate positive squared radius",
+        "Full representations and proof explanations need teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Completing the Square; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Group (x²−8x)+(y²+6y)=0",
+            "Add 16 and 9 to both sides",
+            "(x−4)²+(y+3)²=25",
+            "Centre (4,−3), radius 5."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

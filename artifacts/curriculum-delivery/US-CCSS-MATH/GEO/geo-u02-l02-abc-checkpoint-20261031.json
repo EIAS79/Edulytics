@@ -1,0 +1,149 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+  "Unit": "U02",
+  "Ordinal": 24,
+  "SourceEdition": "IM High School Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\2\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\2\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\2\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\2\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "2d06794c00ec977989584394d91c02a36a34850166ed5fec34df08979cf36f96",
+    "TeacherActivities": "a3d8d57872515fcadfb4080884e7baac214baa48824c691fbc56f37537702ef8",
+    "StudentActivities": "d38ef9fbb01e08c538a8d92d46805d15a3bc90572f8d1433bbdff7e694f09f7d",
+    "StudentPractice": "d505b17d5398a9b80498b96f11bc46317e2883f03f04d2ce6e510c1e88a63cfd"
+  },
+  "SourceComparisonA": [
+    {
+      "Source": "2.1 Math Talk",
+      "SourceRequirement": "four labelled polygon statement claims; student reasons about actual diagram and precise ordering",
+      "FirstPartyMapping": "ordered claim audit and invariant-based teacher review, without unverified publisher art"
+    },
+    {
+      "Source": "2.2 Triangle SSA",
+      "SourceRequirement": "identify which source triangles match, show rigid-motion steps and disprove a second correspondence",
+      "FirstPartyMapping": "source PQR vs ACE incorrect assertion, independent SSA double-solution example, and written constructive critique"
+    },
+    {
+      "Source": "2.3 Corresponding Parts",
+      "SourceRequirement": "rotation triangles ABD/CDB; polygons GFONM/HIJKL; quadrilaterals PQRS/VZYW",
+      "FirstPartyMapping": "named exact correspondences for angles ADB to CBD, NM to KL, ZYW to QRS"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "SourceRequirement": "symmetry, 90/180 rotations, rigid corresponding parts, parallel lines, reflection, regular hexagon",
+      "FirstPartyMapping": "7 teacher-reviewed answer conditions and diagram-dependent caveats"
+    },
+    {
+      "Source": "Cool-down",
+      "SourceRequirement": "publisher-protected teacher material",
+      "FirstPartyMapping": "independently authored correspondence contradiction with explicit labelled caveat"
+    }
+  ],
+  "SourceLimitation": "Local first-edition teacher prep/student activity/practice text read. Original publisher diagram pixels and teacher-protected Cool-down inaccessible; authored analogue is not exact source visual parity.",
+  "RetainedB": "Three worked examples and valid ordered-invariant reasoning; U02:L01 and U02:L03 were preserved.",
+  "RepairedB": "Add all 2.1-2.3 source activity reasoning, four ordered correspondence checks, PQR vs ACE SSA critique with independent exact two-root mathematical example; seven practice paper mappings and first-party alternative cooldown.",
+  "StageA": "A_CLOSED_SOURCE_TEXT_AND_FIRST_PARTY_EQUIVALENT_GRAPHICS_UNVERIFIED",
+  "StageB": "B_CLOSED_SOURCE_ORDERED_CORRESPONDENCE_SSA_COUNTEREXAMPLE_AND_7_PRACTICE",
+  "StageC": "C_CLOSED_AUTHORING_TEACHER_PAPER_RUBRIC_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U02_L02_ORDERED_CORRESPONDENCE_SSA_HUMAN_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L02_ORDERED_CORRESPONDENCE_SSA_HUMAN_REVIEW",
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "SharedOwner": "Supervisor 2 issue #453",
+    "ExactDigitalAssignment": "UNVERIFIED_STAGE_D",
+    "SavedTeacherResult": "UNVERIFIED_STAGE_D",
+    "NoPublisherFigureFidelityClaim": true
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "ordered vertex-to-vertex mapping and precisely matched segments and angles",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "a correct specific rigid-motion sequence or one rigorously incompatible corresponding length/angle",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "recognizes SSA as nonincluded-angle ambiguity and gives a valid pair of distinct noncongruent triangles",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "clearly critiques a false correspondence and fully justifies the corrected statement with labels",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "ABC congruent DEF with 3,4,5 sides maps corresponding sides exactly",
+      "ABC not congruent DFE because original AB=3 but alleged image DF=5",
+      "source ABD rotated from CDB means angle ADB corresponds CBD; NM to KL; ZYW to QRS"
+    ],
+    "Equivalent": [
+      "a reflected or rotated copy satisfies an ordered congruence if every vertex maps in stated order",
+      "any positive SSA angle/length configuration with two valid intersections demonstrates non-sufficiency"
+    ],
+    "Incorrect": [
+      "claim PQR congruent ACE from just PQ=AC, QR=CE and angle P=angle A",
+      "SSA mistakenly treated as always SAS when the angle is not included",
+      "claim every named ordering is valid because unlabelled shapes happen to be congruent"
+    ],
+    "Boundary": [
+      "A=30 degrees, AB=8, BC=5 yields two AC values 4sqrt3 +/-3; distinct positive solutions",
+      "when circle is tangent to angle ray at altitude there is one SSA solution, not two",
+      "degenerate collinear triples cannot be treated as proper triangles"
+    ],
+    "Malformed": [
+      "missing labelled original-image vertex mapping",
+      "no explicit rigid motion or unequal corresponding measure",
+      "diagram-only choice with no explanation of why angle/segment pairs match"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l02-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedStaticCheck": {
+    "JSON_RICH_PACK": "PASS",
+    "JSON_ASSESSMENT": "PASS",
+    "NODE_CHECK_SYNTAX_ONLY": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "ChangedFiles": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u02-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l02-ordered-correspondence-ssa-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u02-l02-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l02-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "ab2059129488e45851b36ce6bbb620ebd629a930",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T00:11:38.370375Z",
+  "ClosedAtUtc": "2026-10-31T00:12:53.857480Z",
+  "ElapsedSeconds": 75.487,
+  "BlockersABC": [],
+  "StageDDependencies": [
+    "Issue #453 digital exact lesson route and teacher saved grade",
+    "authenticated first-party visuals",
+    "two-school negative access tests"
+  ],
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03"
+}

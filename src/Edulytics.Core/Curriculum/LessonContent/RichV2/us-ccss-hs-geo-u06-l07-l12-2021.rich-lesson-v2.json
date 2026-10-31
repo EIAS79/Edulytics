@@ -1,0 +1,631 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u06-l07-l12-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L07",
+      "CultureCode": "en",
+      "Title": "Distances and Parabolas",
+      "ExplanationParagraphs": [
+        "Learning goal: Model a parabola as points equidistant from a focus and a directrix, and determine whether named points satisfy the locus.",
+        "Parabola is set of points equidistant from fixed focus and line directrix Use perpendicular distance to the line Focus (0,2), directrix y=−2 produces x²=8y",
+        "The distance from a point (x,y) to a horizontal line y=d is |y−d|: draw the shortest perpendicular segment to the line. In this case the point-to-directrix distance is |y+2|. The focus-to-point distance is √(x²+(y−2)²); the parabola consists of the points where these distances are equal.",
+        "Independent source-specific student task: Students draw equal-distance loci and explain perpendicular line distance; teacher reviews graphs. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 7, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Focus-directrix",
+          "Definition": "Parabola is set of points equidistant from fixed focus and line directrix",
+          "Rule": "Use perpendicular distance to the line",
+          "Example": "Focus (0,2), directrix y=−2 produces x²=8y"
+        },
+        {
+          "Title": "Distance-to-line",
+          "Definition": "The perpendicular distance from point (x,y) to a horizontal line y=d is the absolute value of their vertical-coordinate difference.",
+          "Rule": "distance((x,y),line y=d)=|y−d|; this number is nonnegative.",
+          "Example": "For P=(4,2) and directrix y=−2, the distance is |2−(−2)|=4."
+        },
+        {
+          "Title": "Vertex",
+          "Definition": "The point halfway between focus and directrix on symmetry axis",
+          "Rule": "For focus (0,2), directrix y=−2, vertex (0,0)",
+          "Example": "Opens toward focus"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distances and Parabolas: problem 1",
+          "Question": "Find equation focus (0,2), directrix y=−2.",
+          "Method": "Focus-directrix",
+          "Steps": [
+            "For P=(x,y), the distance to focus (0,2) is √(x²+(y−2)²), and distance to directrix y=−2 is |y+2|.",
+            "Equate and square these nonnegative distances: x²+(y−2)²=(y+2)².",
+            "Expand: x²+y²−4y+4=y²+4y+4, so x²=8y."
+          ],
+          "Answer": "x²=8y.",
+          "Check": "For x=4 the equation gives y=2; the focus and directrix distances are both exactly 4."
+        },
+        {
+          "Title": "Distances and Parabolas: problem 2",
+          "Question": "Is P=(4,2) on this parabola?",
+          "Method": "Distance-to-line",
+          "Steps": [
+            "Compute the squared focus distance: (4−0)²+(2−2)²=16.",
+            "Compute the perpendicular directrix distance: |2−(−2)|=4, hence squared distance 16.",
+            "Because both distances equal 4, P=(4,2) is on the focus-directrix parabola."
+          ],
+          "Answer": "Yes.",
+          "Check": "The point satisfies x²=8y, since 16=8·2; both directrix and focus distances equal 4."
+        },
+        {
+          "Title": "Distances and Parabolas: problem 3",
+          "Question": "Find vertex focus (3,5), directrix y=1.",
+          "Method": "Vertex",
+          "Steps": [
+            "Axis x=3 passes through focus",
+            "Midpoint height=(5+1)/2=3",
+            "Vertex lies (3,3)"
+          ],
+          "Answer": "Vertex (3,3).",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing distance to a slanted line by vertical difference",
+          "WhyWrong": "Only horizontal directrices use vertical distances",
+          "Correction": "Use perpendicular distance to actual line"
+        },
+        {
+          "Mistake": "Choosing vertex at focus",
+          "WhyWrong": "Vertex is midway between focus and directrix",
+          "Correction": "Take axis midpoint"
+        }
+      ],
+      "SummaryPoints": [
+        "Model a parabola as points equidistant from a focus and a directrix, and determine whether named points satisfy the locus.",
+        "y−d",
+        "Human assessment required for original diagrams and geometric proofs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Distances and Parabolas; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "For P=(x,y), the distance to focus (0,2) is √(x²+(y−2)²), and distance to directrix y=−2 is |y+2|.",
+            "Equate and square these nonnegative distances: x²+(y−2)²=(y+2)².",
+            "Expand: x²+y²−4y+4=y²+4y+4, so x²=8y.",
+            "x²=8y."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L08",
+      "CultureCode": "en",
+      "Title": "Equations and Graphs",
+      "ExplanationParagraphs": [
+        "Learning goal: Derive and graph a parabola equation from focus/directrix information, matching its vertex, orientation and parameter p.",
+        "(x−h)²=4p(y−k) for p≠0 Focus (h,k+p) and directrix y=k−p p>0 opens up",
+        "(y−k)²=4p(x−h) Focus (h+p,k), directrix x=h−p Confirm by equidistance, not picture alone",
+        "Independent source-specific student task: Graph a focus/directrix and derive equation from squared distances; teacher scores geometry argument. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 8, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Standard vertical form",
+          "Definition": "(x−h)²=4p(y−k) for p≠0",
+          "Rule": "Focus (h,k+p) and directrix y=k−p",
+          "Example": "p>0 opens up"
+        },
+        {
+          "Title": "Horizontal form",
+          "Definition": "(y−k)²=4p(x−h)",
+          "Rule": "Focus (h+p,k), directrix x=h−p",
+          "Example": "p<0 opens left"
+        },
+        {
+          "Title": "Graph validity",
+          "Definition": "Vertex is (h,k), p is signed focal distance",
+          "Rule": "Confirm by equidistance, not picture alone",
+          "Example": "x²=12y has p=3"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equations and Graphs: problem 1",
+          "Question": "Focus (0,3), directrix y=−3. Write parabola.",
+          "Method": "Standard vertical form",
+          "Steps": [
+            "Vertex halfway is (0,0)",
+            "p=3",
+            "Equation x²=4·3y"
+          ],
+          "Answer": "x²=12y.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Equations and Graphs: problem 2",
+          "Question": "Graph (y−1)²=−8(x+2). Find vertex and focus.",
+          "Method": "Horizontal form",
+          "Steps": [
+            "Vertex (−2,1)",
+            "4p=−8 gives p=−2",
+            "Focus (h+p,k)=(−4,1)"
+          ],
+          "Answer": "Vertex (−2,1), focus (−4,1).",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Equations and Graphs: problem 3",
+          "Question": "Find directrix of (x−2)²=4(y+1).",
+          "Method": "Graph validity",
+          "Steps": [
+            "Vertex (2,−1)",
+            "4p=4 gives p=1",
+            "Directrix y=k−p=−2"
+          ],
+          "Answer": "y=−2.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confusing 4p with p",
+          "WhyWrong": "Coefficient is four times signed focal length",
+          "Correction": "Divide by 4"
+        },
+        {
+          "Mistake": "Applying vertical rule to horizontal parabola",
+          "WhyWrong": "Squared coordinate identifies orientation",
+          "Correction": "Use (y−k)² for horizontal opening"
+        }
+      ],
+      "SummaryPoints": [
+        "Derive and graph a parabola equation from focus/directrix information, matching its vertex, orientation and parameter p.",
+        "Focus (h+p,k), directrix x=h−p",
+        "Human assessment required for original diagrams and geometric proofs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Equations and Graphs; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Vertex halfway is (0,0)",
+            "p=3",
+            "Equation x²=4·3y",
+            "x²=12y."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L09",
+      "CultureCode": "en",
+      "Title": "Equations of Lines",
+      "ExplanationParagraphs": [
+        "Learning goal: Connect common-slope similar right triangles to the point-slope equation and recover a line from sufficient data.",
+        "For distinct points with Δx≠0, m=Δy/Δx Vertical lines have undefined slope A(1,2),B(4,8) gives m=2",
+        "A nonvertical line through (x1,y1) slope m obeys y−y1=m(x−x1) Use labelled known point Equation x=x1",
+        "Independent source-specific student task: Students reconstruct a line from slope and a point or two points; teacher evaluates graph and explanation. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 9, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Slope",
+          "Definition": "For distinct points with Δx≠0, m=Δy/Δx",
+          "Rule": "Vertical lines have undefined slope",
+          "Example": "A(1,2),B(4,8) gives m=2"
+        },
+        {
+          "Title": "Point-slope form",
+          "Definition": "A nonvertical line through (x1,y1) slope m obeys y−y1=m(x−x1)",
+          "Rule": "Use labelled known point",
+          "Example": "Through (2,3) slope −1: y−3=−(x−2)"
+        },
+        {
+          "Title": "Vertical exception",
+          "Definition": "Line x=a cannot be written y=mx+b with finite m",
+          "Rule": "Equation x=x1",
+          "Example": "Through (3,1),(3,5) gives x=3"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equations of Lines: problem 1",
+          "Question": "Line through (2,3) with slope −1.",
+          "Method": "Slope",
+          "Steps": [
+            "Use y−3=−1(x−2)",
+            "Expand y−3=−x+2",
+            "Solve y=−x+5"
+          ],
+          "Answer": "y=−x+5.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Equations of Lines: problem 2",
+          "Question": "Find line through (1,2),(4,8).",
+          "Method": "Point-slope form",
+          "Steps": [
+            "Compute rise/run=(8−2)/(4−1)=6/3=2",
+            "Use y−2=2(x−1)",
+            "Simplify y=2x"
+          ],
+          "Answer": "y=2x.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Equations of Lines: problem 3",
+          "Question": "Find equation through (3,1),(3,5).",
+          "Method": "Vertical exception",
+          "Steps": [
+            "Both x coordinates equal 3",
+            "Run=0, finite slope undefined",
+            "Every point has x=3"
+          ],
+          "Answer": "x=3.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing by Δx=0",
+          "WhyWrong": "Vertical slope undefined",
+          "Correction": "Use x=constant"
+        },
+        {
+          "Mistake": "Swapping point-slope signs",
+          "WhyWrong": "Use coordinates as y−y1 and x−x1",
+          "Correction": "Substitute given point to verify"
+        }
+      ],
+      "SummaryPoints": [
+        "Connect common-slope similar right triangles to the point-slope equation and recover a line from sufficient data.",
+        "Use labelled known point",
+        "Human assessment required for original diagrams and geometric proofs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Equations of Lines; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Use y−3=−1(x−2)",
+            "Expand y−3=−x+2",
+            "Solve y=−x+5",
+            "y=−x+5."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L10",
+      "CultureCode": "en",
+      "Title": "Parallel Lines in the Plane",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove and apply equal-slope criterion for parallel distinct nonvertical lines, with vertical-line exception.",
+        "Distinct nonvertical parallel lines share slope m Use direction vectors or corresponding angles y=2x+1 and y=2x−4 are parallel",
+        "Equal slope with equal intercept describes same line, not a distinct parallel pair Check intercepts or sample point Do not set undefined=undefined algebraically",
+        "Independent source-specific student task: Write a coordinate proof of slope criterion with direction vectors and special cases; teacher scores reasoning. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 10, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parallel slopes",
+          "Definition": "Distinct nonvertical parallel lines share slope m",
+          "Rule": "Use direction vectors or corresponding angles",
+          "Example": "y=2x+1 and y=2x−4 are parallel"
+        },
+        {
+          "Title": "Distinctness",
+          "Definition": "Equal slope with equal intercept describes same line, not a distinct parallel pair",
+          "Rule": "Check intercepts or sample point",
+          "Example": "y=x+2 and y=x+2 coincide"
+        },
+        {
+          "Title": "Vertical case",
+          "Definition": "Distinct x=a and x=b lines are parallel despite undefined slope",
+          "Rule": "Do not set undefined=undefined algebraically",
+          "Example": "x=2 and x=5 are parallel"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Parallel Lines in the Plane: problem 1",
+          "Question": "Line through (1,4) parallel y=3x−2. Find equation.",
+          "Method": "Parallel slopes",
+          "Steps": [
+            "Parallel slope is 3",
+            "Use y−4=3(x−1)",
+            "Expand y=3x+1"
+          ],
+          "Answer": "y=3x+1.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Parallel Lines in the Plane: problem 2",
+          "Question": "Are y=−2x+1 and 2y=−4x+8 parallel?",
+          "Method": "Distinctness",
+          "Steps": [
+            "Rewrite second as y=−2x+4",
+            "Both have slope −2",
+            "Different intercepts 1 and 4"
+          ],
+          "Answer": "Yes, distinct parallel lines.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Parallel Lines in the Plane: problem 3",
+          "Question": "Compare x=2 and x=5.",
+          "Method": "Vertical case",
+          "Steps": [
+            "Both are vertical with undefined slope",
+            "No point has both x=2 and x=5",
+            "Distinct vertical lines never intersect"
+          ],
+          "Answer": "Parallel.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming lines with same equation are distinct parallel",
+          "WhyWrong": "They coincide",
+          "Correction": "Check actual distinctness"
+        },
+        {
+          "Mistake": "Treating vertical slope as zero",
+          "WhyWrong": "Vertical slope is undefined",
+          "Correction": "Use equations x=a"
+        }
+      ],
+      "SummaryPoints": [
+        "Prove and apply equal-slope criterion for parallel distinct nonvertical lines, with vertical-line exception.",
+        "Check intercepts or sample point",
+        "Human assessment required for original diagrams and geometric proofs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Parallel Lines in the Plane; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Parallel slope is 3",
+            "Use y−4=3(x−1)",
+            "Expand y=3x+1",
+            "y=3x+1."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L11",
+      "CultureCode": "en",
+      "Title": "Perpendicular Lines in the Plane",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove perpendicularity by direction-vector dot product and negative reciprocal slopes, including horizontal/vertical exceptions.",
+        "For nonzero finite slopes m1,m2, perpendicular iff m1m2=−1 Use perpendicular direction vectors Slope 2 perpendicular slope −1/2",
+        "Vectors (a,b) and (c,d) perpendicular iff ac+bd=0 Works for vertical/horizontal Avoid multiplying undefined slopes",
+        "Independent source-specific student task: Prove a pair of slopes perpendicular and draw all special axis cases; teacher reviews exact proof. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 11, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Negative reciprocal",
+          "Definition": "For nonzero finite slopes m1,m2, perpendicular iff m1m2=−1",
+          "Rule": "Use perpendicular direction vectors",
+          "Example": "Slope 2 perpendicular slope −1/2"
+        },
+        {
+          "Title": "Dot product",
+          "Definition": "Vectors (a,b) and (c,d) perpendicular iff ac+bd=0",
+          "Rule": "Works for vertical/horizontal",
+          "Example": "Vectors (3,2),(−2,3) dot 0"
+        },
+        {
+          "Title": "Special axes",
+          "Definition": "Vertical lines perpendicular to horizontal lines",
+          "Rule": "Avoid multiplying undefined slopes",
+          "Example": "x=3 perpendicular y=−2"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Perpendicular Lines in the Plane: problem 1",
+          "Question": "Through (1,4), find perpendicular to y=2x+3.",
+          "Method": "Negative reciprocal",
+          "Steps": [
+            "Original slope 2",
+            "Perpendicular slope −1/2",
+            "Use y−4=−(x−1)/2"
+          ],
+          "Answer": "y=−x/2+9/2.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Perpendicular Lines in the Plane: problem 2",
+          "Question": "Are direction vectors (3,2), (−2,3) perpendicular?",
+          "Method": "Dot product",
+          "Steps": [
+            "Compute dot product 3(−2)+2(3)",
+            "Sum −6+6=0",
+            "Nonzero vectors and zero dot imply right angle"
+          ],
+          "Answer": "Yes.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "Perpendicular Lines in the Plane: problem 3",
+          "Question": "Find perpendicular to vertical x=3 through (5,−2).",
+          "Method": "Special axes",
+          "Steps": [
+            "Vertical direction (0,1)",
+            "Perpendicular line is horizontal",
+            "Through y=−2 gives equation y=−2"
+          ],
+          "Answer": "y=−2.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using reciprocal without negative sign",
+          "WhyWrong": "Product then +1 instead of −1",
+          "Correction": "Use −1/m"
+        },
+        {
+          "Mistake": "Dividing by zero for vertical slope",
+          "WhyWrong": "No finite slope exists",
+          "Correction": "Use dot products or horizontal/vertical geometry"
+        }
+      ],
+      "SummaryPoints": [
+        "Prove perpendicularity by direction-vector dot product and negative reciprocal slopes, including horizontal/vertical exceptions.",
+        "Works for vertical/horizontal",
+        "Human assessment required for original diagrams and geometric proofs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for Perpendicular Lines in the Plane; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Original slope 2",
+            "Perpendicular slope −1/2",
+            "Use y−4=−(x−1)/2",
+            "y=−x/2+9/2."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L12",
+      "CultureCode": "en",
+      "Title": "It’s All on the Line",
+      "ExplanationParagraphs": [
+        "Learning goal: Determine precisely which data establish one line, justify uniqueness and request missing data in an information-gap exchange.",
+        "Two distinct points determine exactly one line Use Δx=0 vertical exception Points (1,2),(3,6) define y=2x",
+        "One point and a finite slope determine one nonvertical line Use y−y0=m(x−x0) Ask a targeted missing condition",
+        "Independent source-specific student task: Pair activity: one person has two points, other may ask just enough questions to find line equation; teacher scores communication. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 12, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Line uniqueness",
+          "Definition": "Two distinct points determine exactly one line",
+          "Rule": "Use Δx=0 vertical exception",
+          "Example": "Points (1,2),(3,6) define y=2x"
+        },
+        {
+          "Title": "Point-slope requirements",
+          "Definition": "One point and a finite slope determine one nonvertical line",
+          "Rule": "Use y−y0=m(x−x0)",
+          "Example": "Point (1,5), slope 2 gives y=2x+3"
+        },
+        {
+          "Title": "Insufficiency",
+          "Definition": "One point without slope/second point admits infinitely many lines",
+          "Rule": "Ask a targeted missing condition",
+          "Example": "Through origin are y=mx and x=0"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two lines perpendicular to a third",
+          "Question": "Lines ℓ: y=2x+1 and n: y=2x−3 are each perpendicular to m: y=−x/2+4. Prove ℓ∥n.",
+          "Method": "Apply negative-reciprocal slopes with distinctness.",
+          "Steps": [
+            "The slope of m is −1/2 and the slope of each of ℓ and n is 2.",
+            "Both products are 2·(−1/2)=−1, so each line is perpendicular to m.",
+            "The intercepts of ℓ and n differ (1 and −3), so they are distinct lines with equal slope and therefore parallel."
+          ],
+          "Answer": "ℓ and n are distinct parallel lines.",
+          "Check": "The proof uses both perpendicularity and distinctness, not an unlabelled sketch."
+        },
+        {
+          "Title": "It’s All on the Line: problem 2",
+          "Question": "Line through (1,5) with slope 2.",
+          "Method": "Point-slope requirements",
+          "Steps": [
+            "Use point-slope equation y−5=2(x−1)",
+            "Expand y−5=2x−2",
+            "Solve y=2x+3"
+          ],
+          "Answer": "y=2x+3.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        },
+        {
+          "Title": "It’s All on the Line: problem 3",
+          "Question": "Does one point (0,0) uniquely determine line?",
+          "Method": "Insufficiency",
+          "Steps": [
+            "Line y=x goes through origin",
+            "Line y=2x also passes through origin",
+            "They are distinct, so extra direction/point required"
+          ],
+          "Answer": "No; infinitely many lines.",
+          "Check": "Substitute computed points and independently verify geometry or units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming one point fixes slope",
+          "WhyWrong": "Infinitely many directions remain possible",
+          "Correction": "Ask slope or second distinct point"
+        },
+        {
+          "Mistake": "Using two identical points as unique line inputs",
+          "WhyWrong": "They do not determine direction",
+          "Correction": "Require distinct points"
+        }
+      ],
+      "SummaryPoints": [
+        "Determine precisely which data establish one line, justify uniqueness and request missing data in an information-gap exchange.",
+        "Use y−y0=m(x−x0)",
+        "Human assessment required for original diagrams and geometric proofs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Exact reasoning path",
+          "Description": "An original algebraic/geometric calculation sequence for It’s All on the Line; steps depend on the stated hypotheses.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "The slope of m is −1/2 and the slope of each of ℓ and n is 2.",
+            "Both products are 2·(−1/2)=−1, so each line is perpendicular to m.",
+            "The intercepts of ℓ and n differ (1 and −3), so they are distinct lines with equal slope and therefore parallel.",
+            "ℓ and n are distinct parallel lines."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

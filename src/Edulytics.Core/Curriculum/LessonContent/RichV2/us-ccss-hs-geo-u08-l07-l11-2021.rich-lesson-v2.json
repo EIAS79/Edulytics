@@ -1,0 +1,643 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u08-l07-l11-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L07",
+      "CultureCode": "en",
+      "Title": "Related Events",
+      "ExplanationParagraphs": [
+        "Learning goal: Define independent and dependent events correctly by whether knowing one changes the probability of the other, and test independence from joint probability.",
+        "Two events A and B are independent exactly when P(A∩B)=P(A)×P(B). If P(B)>0, this is equivalent to P(A|B)=P(A): knowing B occurred does not change A's probability.",
+        "Dependence means the conditional probability differs from the unconditional probability: P(A|B)≠P(A) when P(B)>0. Disjoint events with positive probabilities are not independent, because P(A∩B)=0 while P(A)×P(B)>0.",
+        "Original student task: Use a two-stage card model and explain why replacement changes independence; teacher scores experimental plan. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 7, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Independence",
+          "Definition": "Events A,B independent if P(A∩B)=P(A)P(B)",
+          "Rule": "For P(B)>0, independence is equivalent to P(A|B)=P(A).",
+          "Example": "Two independent fair coin tosses: P(first head | second head)=1/2=P(first head)."
+        },
+        {
+          "Title": "Dependence",
+          "Definition": "Conditioning on B changes A probability",
+          "Rule": "For P(B)>0, dependence occurs when P(A|B)≠P(A).",
+          "Example": "With two red and one blue card drawn without replacement, P(red second | red first)=1/2, versus unconditional P(red second)=2/3."
+        },
+        {
+          "Title": "Disjoint versus independent",
+          "Definition": "Positive-probability disjoint events cannot be independent",
+          "Rule": "Intersection 0 but product >0",
+          "Example": "Fair die rolls 1 vs 2 on same roll"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Related Events: model 1",
+          "Question": "Fair coin twice; A=first head, B=second head. Independent?",
+          "Method": "Independence",
+          "Steps": [
+            "P(A)=1/2 and P(B)=1/2",
+            "P(A∩B)=P(HH)=1/4",
+            "Product (1/2)(1/2)=1/4"
+          ],
+          "Answer": "Yes, independent.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Related Events: model 2",
+          "Question": "Draw two cards without replacement from deck with 2 red, 1 blue. Is red first independent of red second?",
+          "Method": "Dependence",
+          "Steps": [
+            "By symmetry, P(second red)=2/3 before learning the first draw.",
+            "After the first draw is red, one red and one blue card remain; thus P(second red | first red)=1/2.",
+            "The positive conditioned probability 1/2 is unequal to unconditional 2/3, so the events are dependent."
+          ],
+          "Answer": "No, dependent.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Related Events: model 3",
+          "Question": "Two disjoint events each probability 1/4. Can they be independent?",
+          "Method": "Disjoint versus independent",
+          "Steps": [
+            "Intersection=0",
+            "Product P(A)P(B)=1/16>0",
+            "Independence equality fails"
+          ],
+          "Answer": "No.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Defining independence as one event affecting another",
+          "WhyWrong": "That describes dependence, the opposite",
+          "Correction": "Use P(A∩B)=P(A)×P(B), or P(A|B)=P(A) for P(B)>0; changing the probability under a condition means dependence."
+        },
+        {
+          "Mistake": "Calling disjoint nonzero events independent",
+          "WhyWrong": "Mutual exclusion makes co-occurrence impossible",
+          "Correction": "Use joint-product test"
+        }
+      ],
+      "SummaryPoints": [
+        "Define independent and dependent events correctly by whether knowing one changes the probability of the other, and test independence from joint probability.",
+        "For P(B)>0, independence means P(A|B)=P(A), equivalently P(A∩B)=P(A)P(B). Disjoint positive-probability events are dependent.",
+        "Source-specific probability models and experimental interpretations require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Related Events. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Independence",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Fair coin twice; A=first head, B=second head. Independent?",
+                "Yes, independent."
+              ]
+            },
+            {
+              "Label": "Dependence",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Draw two cards without replacement from deck with 2 red, 1 blue. Is red first independent of red second?",
+                "No, dependent."
+              ]
+            },
+            {
+              "Label": "Disjoint versus independent",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Two disjoint events each probability 1/4. Can they be independent?",
+                "No."
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L08",
+      "CultureCode": "en",
+      "Title": "Conditional Probability",
+      "ExplanationParagraphs": [
+        "Learning goal: Compute conditional probability with restricted sample space and derive multiplication formula for joint events.",
+        "When the conditioning event B has positive probability, P(A|B)=P(A∩B)/P(B). Only outcomes in B remain in the conditioned sample space; the numerator counts those also in A.",
+        "The multiplication formula P(A∩B)=P(A|B)P(B) applies whenever P(B)>0 and does not assume independence. If P(B)=0, the elementary conditional quotient P(A|B) is undefined; do not divide by zero.",
+        "Original student task: Students redraw a restricted sample space and derive the multiplication identity from count ratios; teacher reviews proof. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 8, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conditional formula",
+          "Definition": "For P(B)>0, the probability of A given B is the proportion of outcomes in B that also belong to A.",
+          "Rule": "P(A|B)=P(A∩B)/P(B), for P(B)>0.",
+          "Example": "If P(A∩B)=0.2 and P(B)=0.4, then P(A|B)=0.5."
+        },
+        {
+          "Title": "Multiplication rule",
+          "Definition": "The joint event probability equals the conditional probability of A given B multiplied by the probability of B.",
+          "Rule": "P(A∩B)=P(A|B)×P(B) when P(B)>0; no independence assumption is needed.",
+          "Example": "If P(A|B)=0.3 and P(B)=0.5, the joint probability is 0.15."
+        },
+        {
+          "Title": "Zero-probability condition",
+          "Definition": "Elementary conditional ratio not defined when P(B)=0",
+          "Rule": "Do not divide by zero",
+          "Example": "For P(B)=0, the elementary ratio P(A|B)=P(A∩B)/0 is undefined; this does not mean its value is 0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Conditional Probability: model 1",
+          "Question": "P(A∩B)=0.2 and P(B)=0.4. Find P(A|B).",
+          "Method": "Conditional formula",
+          "Steps": [
+            "The condition is event B, whose probability is P(B)=0.4>0.",
+            "Use P(A|B)=P(A∩B)/P(B)=0.2/0.4.",
+            "The conditional probability is 0.5."
+          ],
+          "Answer": "0.5.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Conditional Probability: model 2",
+          "Question": "P(B)=0.5 and P(A|B)=0.3. Find joint probability.",
+          "Method": "Multiplication rule",
+          "Steps": [
+            "Use the general multiplication rule P(A∩B)=P(A|B)×P(B).",
+            "Substitute P(A|B)=0.3 and P(B)=0.5.",
+            "Multiply 0.3×0.5=0.15 to obtain the joint probability."
+          ],
+          "Answer": "0.15.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Conditional Probability: model 3",
+          "Question": "A fair die result is even given that result exceeds 3. Find P(even|>3).",
+          "Method": "Zero-probability condition",
+          "Steps": [
+            "Given that the die result is greater than 3, the equally likely outcomes are {4,5,6}.",
+            "Of these, {4,6} are even, so exactly two of three conditioned outcomes meet the event.",
+            "Therefore P(even | result>3)=2/3."
+          ],
+          "Answer": "2/3.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing by P(A) when given B",
+          "WhyWrong": "Conditional denominator must match after bar",
+          "Correction": "In P(A|B), divide the joint probability P(A∩B) by P(B); P(B|A) has the different denominator P(A)."
+        },
+        {
+          "Mistake": "Dividing by event probability zero",
+          "WhyWrong": "Elementary ratio undefined",
+          "Correction": "Check P(B)>0 before computing P(A|B); when P(B)=0 the elementary conditional probability is undefined."
+        }
+      ],
+      "SummaryPoints": [
+        "Compute conditional probability with restricted sample space and derive multiplication formula for joint events.",
+        "For P(B)>0, P(A|B)=P(A∩B)/P(B) and P(A∩B)=P(A|B)×P(B); neither equation requires independence.",
+        "Source-specific probability models and experimental interpretations require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Conditional Probability. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Conditional formula",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "P(A∩B)=0.2 and P(B)=0.4. Find P(A|B).",
+                "0.5."
+              ]
+            },
+            {
+              "Label": "Multiplication rule",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "P(B)=0.5 and P(A|B)=0.3. Find joint probability.",
+                "0.15."
+              ]
+            },
+            {
+              "Label": "Zero-probability condition",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A fair die result is even given that result exceeds 3. Find P(even|>3).",
+                "2/3."
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L09",
+      "CultureCode": "en",
+      "Title": "Using Tables for Conditional Probability",
+      "ExplanationParagraphs": [
+        "Learning goal: Compute row-conditional and column-conditional probabilities from a frequency table and distinguish them from marginals.",
+        "Given event A in a two-way table, P(B|A)=count(A∩B)/count(A) when count(A)>0; the denominator is the A row total. The marginal P(B)=count(B)/N uses the grand total instead.",
+        "Given B, the reversed conditional P(A|B)=count(A∩B)/count(B) when count(B)>0. To check independence in the empirical table distribution, compare P(B|A) with P(B), or test P(A∩B)=P(A)×P(B).",
+        "Original student task: Use an original school-club hypothetical contingency table, justify population and limitations; teacher scores model. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 9, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conditional row",
+          "Definition": "Given A, denominator is total count of row A",
+          "Rule": "P(B|A)=count(A∩B)/count(A), when count(A)>0.",
+          "Example": "For [[12,8],[18,12]], the A row has 20 observations, so P(B|A)=12/20=0.6."
+        },
+        {
+          "Title": "Conditional column",
+          "Definition": "Given B, denominator is total count column B",
+          "Rule": "P(A|B)=count(A∩B)/count(B), when count(B)>0.",
+          "Example": "The B column has 30 observations, so P(A|B)=12/30=0.4."
+        },
+        {
+          "Title": "Independence table test",
+          "Definition": "If P(A)>0, compare P(B|A) with the marginal P(B), or compare joint P(A∩B) against P(A)×P(B).",
+          "Rule": "P(B|A)=P(B) for P(A)>0 if and only if A and B are independent.",
+          "Example": "The table gives P(B|A)=12/20=0.6 and P(B)=30/50=0.6, so A and B are independent in its empirical distribution."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Using Tables for Conditional Probability: model 1",
+          "Question": "Table A/B counts [[12,8],[18,12]]: compute P(B|A).",
+          "Method": "Conditional row",
+          "Steps": [
+            "Condition on A: its row contains count(A)=12+8=20 observations.",
+            "The count in both A and B is count(A∩B)=12.",
+            "Therefore P(B|A)=12/20=0.6."
+          ],
+          "Answer": "0.6.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Using Tables for Conditional Probability: model 2",
+          "Question": "Same table: compute P(A|B).",
+          "Method": "Conditional column",
+          "Steps": [
+            "Condition on B: its column contains count(B)=12+18=30 observations.",
+            "The intersection A∩B still contains 12 observations.",
+            "Therefore P(A|B)=12/30=0.4."
+          ],
+          "Answer": "0.4.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Using Tables for Conditional Probability: model 3",
+          "Question": "Are A and B independent in this table?",
+          "Method": "Independence table test",
+          "Steps": [
+            "There are N=50 observations, so P(A)=20/50=0.4.",
+            "P(B)=30/50=0.6, and P(A∩B)=12/50=0.24.",
+            "Since P(A)×P(B)=0.4×0.6=0.24=P(A∩B), events are independent in the table's empirical distribution."
+          ],
+          "Answer": "Yes, for the empirical distribution represented.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using grand total for every conditional denominator",
+          "WhyWrong": "A given condition restricts sample space",
+          "Correction": "Use row/column total"
+        },
+        {
+          "Mistake": "Confusing P(A|B) with P(B|A).",
+          "WhyWrong": "P(A|B) conditions on B (column count); P(B|A) conditions on A (row count). Their denominators and values can differ.",
+          "Correction": "Read the event after the vertical bar as the condition: P(A|B)=12/30=0.4, but P(B|A)=12/20=0.6 in this table."
+        }
+      ],
+      "SummaryPoints": [
+        "Compute row-conditional and column-conditional probabilities from a frequency table and distinguish them from marginals.",
+        "For this table P(B|A)=12/20=0.6, P(A|B)=12/30=0.4, and joint P(A∩B)=12/50=0.24; do not interchange denominators.",
+        "Source-specific probability models and experimental interpretations require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Using Tables for Conditional Probability. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Conditional row",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Table A/B counts [[12,8],[18,12]]: compute P(B|A).",
+                "0.6."
+              ]
+            },
+            {
+              "Label": "Conditional column",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Same table: compute P(A|B).",
+                "0.4."
+              ]
+            },
+            {
+              "Label": "Independence table test",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Are A and B independent in this table?",
+                "Yes, for the empirical distribution represented."
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L10",
+      "CultureCode": "en",
+      "Title": "Using Probability to Determine Whether Events Are Independent",
+      "ExplanationParagraphs": [
+        "Learning goal: Test independence from observed proportions, conditional probabilities and uncertainty from finite samples.",
+        "In an exact probability model, A and B are independent if and only if P(A∩B)=P(A)×P(B). Check joint, marginal and conditional probabilities with their named events and valid denominators.",
+        "For P(B)>0, the equivalent criterion is P(A|B)=P(A). Empirical frequencies from a finite classroom sample are estimates and cannot by themselves prove population-level independence or dependence.",
+        "Original student task: Design a hypothetical data collection with two binary variables and discuss sampling uncertainty; teacher reviews critique. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 10, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Joint-product criterion",
+          "Definition": "For events A,B, independence iff P(A∩B)=P(A)P(B)",
+          "Rule": "Use exact model probabilities where available",
+          "Example": "P(A)=0.4,P(B)=0.5,joint=0.2 independent"
+        },
+        {
+          "Title": "Conditional criterion",
+          "Definition": "If P(B)>0, the events are independent precisely when learning that B occurred leaves A's probability unchanged.",
+          "Rule": "P(A|B)=P(A) if and only if A and B are independent, provided P(B)>0.",
+          "Example": "If P(A)=0.4 and P(A|B)=0.3, with P(B)>0, the events are dependent."
+        },
+        {
+          "Title": "Sampling uncertainty",
+          "Definition": "Empirical counts estimate underlying probability, not prove population independence",
+          "Rule": "Difference can reflect sampling variation",
+          "Example": "Small samples need cautious inference"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Using Probability to Determine Whether Events Are Independent: model 1",
+          "Question": "Model P(A)=0.4,P(B)=0.5,joint=0.2. Independent?",
+          "Method": "Joint-product criterion",
+          "Steps": [
+            "Compute product 0.4·0.5=0.2",
+            "Compare with given joint 0.2",
+            "Equality holds"
+          ],
+          "Answer": "Yes, in the stated probability model.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Using Probability to Determine Whether Events Are Independent: model 2",
+          "Question": "Model P(A)=0.4,P(A|B)=0.3 with P(B)>0. Independent?",
+          "Method": "Conditional criterion",
+          "Steps": [
+            "With P(B)>0, independence would require P(A|B)=P(A).",
+            "The given P(A|B)=0.3 differs from P(A)=0.4.",
+            "Therefore the events are dependent in this probability model."
+          ],
+          "Answer": "No, dependent.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Using Probability to Determine Whether Events Are Independent: model 3",
+          "Question": "A 20-trial classroom frequency table suggests rates 0.5 and 0.55. Does it prove population independence?",
+          "Method": "Sampling uncertainty",
+          "Steps": [
+            "Frequencies are sample estimates",
+            "Sample fluctuation can create small differences",
+            "Without inferential assumptions cannot prove underlying relationship"
+          ],
+          "Answer": "No; not proof of independence.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating small relative frequency differences as conclusive population dependence",
+          "WhyWrong": "Sampling uncertainty affects observed rates",
+          "Correction": "Separate empirical evidence from formal model equality"
+        },
+        {
+          "Mistake": "Assuming independence whenever events can occur together",
+          "WhyWrong": "Nonempty intersection is insufficient",
+          "Correction": "Events can overlap and still be dependent; use P(A∩B)=P(A)×P(B), or the proper conditional equality with a positive conditioning probability."
+        }
+      ],
+      "SummaryPoints": [
+        "Test independence from observed proportions, conditional probabilities and uncertainty from finite samples.",
+        "In an exact probability model, independence means P(A∩B)=P(A)×P(B), or P(A|B)=P(A) when P(B)>0.",
+        "Source-specific probability models and experimental interpretations require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Using Probability to Determine Whether Events Are Independent. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Joint-product criterion",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Model P(A)=0.4,P(B)=0.5,joint=0.2. Independent?",
+                "Yes, in the stated probability model."
+              ]
+            },
+            {
+              "Label": "Conditional criterion",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Model P(A)=0.4,P(A|B)=0.3 with P(B)>0. Independent?",
+                "No, dependent."
+              ]
+            },
+            {
+              "Label": "Sampling uncertainty",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A 20-trial classroom frequency table suggests rates 0.5 and 0.55. Does it prove population independence?",
+                "No; not proof of independence."
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L11",
+      "CultureCode": "en",
+      "Title": "Probabilities in Games",
+      "ExplanationParagraphs": [
+        "Learning goal: optional source practice collecting and interpreting classroom game trials to estimate conditional probabilities and determine independence, while distinguishing data estimates from an exact chance model.",
+        "A symmetric payout game is fair in expectation when mean net gain equals zero Weight all outcomes by their probabilities",
+        "Original classroom-game investigation: three equally likely two-sided tokens have markings blank/blank, star/blank, and star/star. Select a token uniformly, then randomly expose one of its two sides. If the visible side has a star, the two-star token is more likely than the one-star token; each visible token face must be counted rather than each token type counted once. Also compare repeated independent rounds with observed classroom data, avoiding unsupported claims from small samples.",
+        "The theoretical outcomes are six equally likely token-side combinations. Three show stars: one side of star/blank and both sides of star/star. Two of those three starred outcomes come from the star/star token, so P(double-star token | visible star)=2/3, not 1/2. For a live experiment, record the selected token, visible side and count of trials, then estimate the conditional frequency and explain sampling variation.",
+        "Original student task: Students design a noncommercial, classroom probability board game with mathematical payoffs and critique whether repeated rounds are independent. Teacher scores rules, modelling and evidence. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 11, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fairness",
+          "Definition": "A symmetric payout game is fair in expectation when mean net gain equals zero",
+          "Rule": "Weight all outcomes by their probabilities",
+          "Example": "Win $2 with probability 1/3 and lose $1 with probability 2/3 gives EV=0"
+        },
+        {
+          "Title": "Game independence",
+          "Definition": "Separate rounds require a mechanism that does not alter later probabilities",
+          "Rule": "Replacing cards may help ensure repeated-round independence",
+          "Example": "Without replacement probabilities change"
+        },
+        {
+          "Title": "Expected value",
+          "Definition": "E[X]=∑xP(X=x) for discrete outcomes",
+          "Rule": "Positive expected net gain favors player long term under model",
+          "Example": "0.25·3+0.75·(−1)=0"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Probabilities in Games: model 1",
+          "Question": "Game wins $2 with probability 1/3, loses $1 otherwise. Is expected net gain fair?",
+          "Method": "Fairness",
+          "Steps": [
+            "Expected gain (1/3)·2=2/3",
+            "Expected loss (2/3)·(−1)=−2/3",
+            "Adding the two weighted outcomes gives expected net gain 2/3−2/3=0."
+          ],
+          "Answer": "Fair in expected net gain.",
+          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+        },
+        {
+          "Title": "Probabilities in Games: conditional draw model",
+          "Question": "A bag contains two red cards and one blue. Draw without replacement. Find P(second red | first red).",
+          "Method": "Condition on the first observed result and count remaining equally likely cards.",
+          "Steps": [
+            "After first red, two cards remain: one red and one blue.",
+            "The conditioned sample has two equally likely cards.",
+            "Only one is red, so probability of red on second draw given first red is 1/2."
+          ],
+          "Answer": "P(second red | first red)=1/2.",
+          "Check": "Unconditional P(second red)=2/3 by symmetry, so this demonstrates dependence."
+        },
+        {
+          "Title": "Probabilities in Games: two-sided token observation",
+          "Question": "Three equally likely two-sided tokens show blank/blank, star/blank and star/star. After a fair random orientation, the visible face shows a star. What is P(double-star token | visible star)?",
+          "Method": "Condition on the observable marked token faces, accounting for their different frequencies.",
+          "Steps": [
+            "There are six equally likely token-side outcomes because each of three tokens is selected uniformly and each side is equally likely to face up.",
+            "Three outcomes display a star: one starred side of star/blank and both starred sides of star/star.",
+            "Two of these three conditional outcomes come from star/star, so P(double-star token | visible star)=2/3."
+          ],
+          "Answer": "2/3; counting token types as two equally likely possibilities would incorrectly give 1/2.",
+          "Check": "Independently compute P(double-star and visible star)=2/6 and P(visible star)=3/6; the ratio is (2/6)/(3/6)=2/3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a game fair because win and lose names each appear once",
+          "WhyWrong": "Outcome probabilities and payouts matter",
+          "Correction": "Compute expected net gain"
+        },
+        {
+          "Mistake": "Claiming simulated 10 rounds prove fairness",
+          "WhyWrong": "Short-run samples vary",
+          "Correction": "Use exact model EV and report empirical frequencies separately"
+        }
+      ],
+      "SummaryPoints": [
+        "Classroom game data provide empirical estimates of conditional probabilities and evidence about independence; do not treat a small experimental sample as mathematical proof of the population model.",
+        "Fair two-sided token games must weight visible faces correctly: P(double-star token | visible star)=2/3 in the three-token model; empirical frequencies vary across trials.",
+        "Source-specific probability models and experimental interpretations require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Probabilities in Games. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Fairness",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Game wins $2 with probability 1/3, loses $1 otherwise. Is expected net gain fair?",
+                "Fair in expected net gain."
+              ]
+            },
+            {
+              "Label": "Condition on the first observed result and count remaining equally likely cards.",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A bag contains two red cards and one blue. Draw without replacement. Find P(second red | first red).",
+                "P(second red | first red)=1/2."
+              ]
+            },
+            {
+              "Label": "Expected value",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Three equally likely two-sided tokens show blank/blank, star/blank and star/star. After a fair random orientation, the visible face shows a star. What is P(double-star token | visible star)?",
+                "2/3; counting token types as two equally likely possibilities would incorrectly give 1/2."
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

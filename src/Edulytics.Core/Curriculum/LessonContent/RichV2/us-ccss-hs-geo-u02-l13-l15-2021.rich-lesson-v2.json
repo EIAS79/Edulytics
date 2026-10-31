@@ -1,0 +1,306 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u02-l13-l15-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+      "CultureCode": "en",
+      "Title": "Proofs about Parallelograms",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the diagonals of any parallelogram bisect each other, and prove that a parallelogram with congruent diagonals is a rectangle, using established congruence theorems rather than visual assumptions.",
+        "Verbal diagram: in parallelogram ABCD, diagonals AC and BD intersect at O; opposite sides satisfy AB∥CD and AD∥BC. Corresponding alternate-interior angles at O and the opposite-side congruence theorem prove triangles ABO and CDO congruent, hence AO=CO and BO=DO.",
+        "If AC=BD as an additional hypothesis, triangles ABC and BAD have AB common, BC=AD by parallelogram opposite-side congruence, and AC=BD given. SSS shows ∠ABC=∠BAD. Consecutive interior angles of a parallelogram are supplementary; since these two adjacent angles are equal, both are 90°. The other two are equal to their opposites, so all four are right angles and ABCD is a rectangle.",
+        "Student task: work backward from the desired conclusion 'ABCD is a rectangle' to a sufficient equality involving a pair of adjacent angles, then derive it from the diagonal information. Write both diagonal-bisection and rectangle proofs with distinct labelled triangles.",
+        "Teacher rubric (0–8): justified parallel/angle correspondence, a complete diagonal-bisection proof, correct SSS with diagonal equality, and a noncircular rectangle conclusion. Dynamic explorations, overlapping-triangle diagrams and explanation are human-scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. First-party Edulytiks prose/examples are independent; publisher diagrams and protected materials are not reproduced.",
+        "13.1 Notice and Wonder: source parallelogram ABCD (diagonals AC and BD meet at X) and rectangle EFGH (diagonals EG and FH meet at Y), ask what midpoint and equal-diagonal properties persist when figures are varied. The source permits a displayed applet or paper-and-pencil alternative; do not claim Edulytiks embedded GeoGebra or actual dynamic drag tests.",
+        "13.2 The Diagonals of a Parallelogram: write exactly AX=CX and BX=DX as target, do not assume midpoint from appearance. In groups give a triangle ASA congruence proof for AXB and CXD using AB∥CD and AB=CD, or an alternative 180-degree rotation around midpoint of AC. Convince oneself, then partner, then skeptic, showing both diagonals bisect each other.",
+        "13.3 Work Backwards to Prove: source gives ABCD parallelogram with AC=BD, prove rectangle. Partner takes turns saying \"I would know that were true if ...\" until finding a theorem linking equal diagonals and equal adjacent angles. Triangles ABC and BAD: AB common, BC=AD from parallelogram, AC=BD given imply SSS and angles ABC=BAD; adjacent parallelogram angles supplementary, hence each 90. Overlapping triangles may be redrawn separately; do not assume rectangle as a given.",
+        "13.3 Extension: describe diagonal constraints sufficient for rectangle (equal and mutually bisecting), rhombus (perpendicular and mutually bisecting), square (mutually bisecting, perpendicular and equal), and isosceles trapezoid subject to explicit parallel base and diagonal correspondence hypotheses. Teacher judges degeneracy/ordering; not every pair of intersecting segments by itself defines the claimed class.",
+        "Source Practice P1-P7: P1 restate one pair opposite sides both equal and parallel implies parallelogram; P2 prove AD=BC and AD∥BC implies parallelogram; P3 source-figure isosceles trapezoid pair for congruent diagonals; P4 exact target \"EK=KG and FK=KH\" from parallelogram EFGH, not a triangle-congruence statement alone; P5 right triangles EJH/EIH with right angles at J/I, HJ=HI, EH common gives HL leg congruence only if corresponding legs correct (hypotenuse-leg in source may not be introduced), teacher should provide rigorous ASA via complementary angles or reflection instead of an unsupported SSS; P6 figure-dependent 6-option true statements; P7 only three corresponding sides of a triangle universally establish congruence (SSS), option D.",
+        "13.4 Publisher Cool-down restricted. Edulytiks-authored paper alternative: prove if and only if parallelogram diagonal bisection, plus equal diagonals in parallelogram imply rectangle using an independent fully labelled pair of overlapping triangles. Teacher rubric four 0-2 criteria."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Diagonal bisection",
+          "Definition": "The two diagonals of a parallelogram intersect at their common midpoint.",
+          "Rule": "Use alternate-interior angles and a triangle congruence theorem to establish half-diagonal equalities.",
+          "Example": "If AC and BD meet at O in parallelogram ABCD, AO=OC and BO=OD."
+        },
+        {
+          "Title": "Congruent diagonals criterion",
+          "Definition": "A parallelogram whose two diagonals have equal length is a rectangle.",
+          "Rule": "SSS yields equal adjacent angles; supplementarity forces 90°.",
+          "Example": "A non-square 6-by-2 rectangle has congruent diagonals of length √40."
+        },
+        {
+          "Title": "Backward proof planning",
+          "Definition": "Start from the target statement, identify a useful sufficient condition, then derive that condition from the givens.",
+          "Rule": "Write the target as a logical consequence of facts you can prove, not as an assumed fact.",
+          "Example": "To prove a parallelogram rectangle, it suffices to prove one interior angle is a right angle."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove diagonals bisect each other",
+          "Question": "ABCD is a parallelogram with AC∩BD={O}. Prove AO=OC and BO=OD.",
+          "Method": "Use ASA on triangles ABO and CDO.",
+          "Steps": [
+            "Parallel AB and CD gives ∠BAO=∠DCO along transversal AC.",
+            "The same parallel pair gives ∠ABO=∠CDO along transversal BD.",
+            "Opposite sides AB=CD by the proved parallelogram theorem.",
+            "By ASA, triangles ABO and CDO are congruent with A↔C and B↔D.",
+            "Corresponding AO=CO and BO=DO, so O bisects each diagonal."
+          ],
+          "Answer": "Both diagonals of the parallelogram bisect each other.",
+          "Check": "Triangle ordering and angle correspondence are fixed by the two transversals."
+        },
+        {
+          "Title": "Prove congruent diagonals imply rectangle",
+          "Question": "Parallelogram ABCD has AC=BD. Prove all angles are 90°.",
+          "Method": "SSS on overlapping triangles then supplementary adjacent angles.",
+          "Steps": [
+            "In triangles ABC and BAD, AB=BA is shared.",
+            "BC=AD since opposite sides of a parallelogram are congruent.",
+            "AC=BD by the extra diagonal hypothesis.",
+            "SSS makes triangles ABC and BAD congruent; thus ∠ABC=∠BAD.",
+            "These adjacent parallelogram angles sum to 180°, so each equals 90°. Opposite angles match, hence all four are right."
+          ],
+          "Answer": "ABCD is a rectangle.",
+          "Check": "The given AC=BD is essential; a generic skew parallelogram need not have equal diagonals."
+        },
+        {
+          "Title": "Find a perpendicular test rectangle",
+          "Question": "A parallelogram has one angle 68° and its opposite angle also 68°. Could it have congruent diagonals?",
+          "Method": "Apply the congruent-diagonal rectangle criterion contrapositive.",
+          "Steps": [
+            "An adjacent angle is 180−68=112°, so no angle is right.",
+            "If diagonals were congruent, the previous theorem would force a rectangle.",
+            "A rectangle must have 90° angles, contradicting the 68° angle.",
+            "Therefore its diagonals cannot be congruent."
+          ],
+          "Answer": "No, the parallelogram's diagonals have different lengths.",
+          "Check": "The argument uses the established theorem; it does not estimate diagonals from the sketch."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Arguing the parallelogram's diagonals bisect each other because they appear to cross centrally.",
+          "WhyWrong": "Apparent central crossing on a sketch is not a proof.",
+          "Correction": "Prove triangles around the crossing congruent using parallel-line angle pairs and ASA."
+        },
+        {
+          "Mistake": "Treating opposite-angle equality alone as enough for a rectangle.",
+          "WhyWrong": "Every parallelogram has equal opposite angles, even when those angles are not 90°.",
+          "Correction": "Use equality of adjacent angles together with their 180° sum to force right angles."
+        }
+      ],
+      "SummaryPoints": [
+        "Parallelogram diagonals bisect one another.",
+        "Congruent diagonals in a parallelogram force a rectangle by SSS and supplementary adjacent angles.",
+        "Backward planning and proof evidence require teacher evaluation."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+      "CultureCode": "en",
+      "Title": "Bisect It",
+      "ExplanationParagraphs": [
+        "Learning goal: Justify straightedge-and-compass perpendicular-bisector and angle-bisector constructions rigorously using triangle congruence, and critique explanations that assume their conclusion.",
+        "Angle construction: for nondegenerate angle DAE with rays AD,AE, place D and E equally far from A by one circle. Construct midpoint F of DE by its perpendicular bisector, then draw ray AF. Triangles ADF and AEF have AD=AE, DF=EF and AF shared. SSS yields ∠DAF=∠FAE, so ray AF really bisects the angle.",
+        "Verbal diagram: the apex A of isosceles triangle DAE lies above chord DE; the segment AF runs to midpoint F of base DE. Because triangle DAE is isosceles, AF is both the angle bisector and the perpendicular bisector of DE (for a nondegenerate apex angle).",
+        "Perpendicular-bisector construction: two equal-radius circles centred at distinct endpoints B and C with common radius r>BC/2 intersect at X and Y. By radius equality BX=CX and BY=CY, so X,Y lie on the equidistant locus; the theorem proves their connecting line is the perpendicular bisector of BC.",
+        "Student task: supply an explanatory diagram and written proof for each construction, and critique a supposed proof that says 'AF is the angle bisector because it looks central.' Teacher rubric (0–8): tool conditions and clear labels; three SSS side equalities; valid angle or perpendicular-bisector conclusion; recognition of circular reasoning. Construction artifacts and peer critique are teacher-scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. First-party Edulytiks prose/examples are independent; publisher diagrams and protected materials are not reproduced.",
+        "14.1 Why Does This Construction Work? Teacher-selected Partner A explains equal-radius arc intersections X,Y centred at distinct B,C and radius greater than BC/2. Partner B explains BX=CX and BY=CY because of identical radii, so both intersections belong to perpendicular bisector locus. Since X and Y are distinct they identify the unique line. Partners match each physical construction step to its proof reason; never identify an arbitrary arc or tangent as the same two-point proof.",
+        "14.2 Construction from Definition: Han, Clare and Andre each propose an incomplete student proof for ray AF of angle DAE. Mark AD=AE because the same circle from A located D and E; F midpoint of DE gives DF=EF; AF=AF common. Only AFTER these three pairs are established use SSS to conclude triangles ADF/AEF congruent and corresponding ∠DAF=∠FAE. Han misidentifies a perpendicular bisector of an angle, Clare assumes desired angle-bisection, and Andre cannot use the desired angle equality as a premise. Reader asks one question of each and writes independently complete argument.",
+        "14.3 OPTIONAL Reflecting on Reflection: For isosceles △APB with AP=BP, ray PQ bisects apex angle and meets base AB at Q. PA=PB, PQ common, included ∠APQ=∠BPQ establish SAS. Thus AQ=BQ and equal adjacent supplementary ∠AQP and ∠BQP are right angles; PQ perpendicular bisector of AB and reflection axis. By contrast an arbitrary parallelogram diagonal is NOT a line of symmetry: the source draft wrongly treats angles ABM/ADM as alternate interior and misuses SAS. A special rhombus has diagonal reflection symmetries, but not all parallelograms.",
+        "Source-indexed independent student Practice P1–P7: P1 classify shapes for which at least one diagonal necessarily is a symmetry axis (rhombus/square; note exceptional rectangular/parallelogram special cases separately), P2 prove a chosen rhombus diagonal reflection, P3 refute isosceles trapezoid proposed triangle AEB≅DBE with source-labelled figure, P4 derive AB∥CD and AD∥BC from triangles ADC≅CBA with ordered correspondence, P5 isosceles-trapezoid congruent diagonals via complete auxiliary triangle SAS, P6 AF=AD and ∠F=∠D are generally insufficient without further included/right angle data, P7 determine sufficient extra data for triangle DBC isosceles given AD=AC with teacher-verified diagram. Publisher diagrams are NOT claimed reproduced.",
+        "14.4 Publisher Cool-down original restricted. First-party paper alternative asks for the perpendicular-bisector construction plus independent angle-bisector SSS proof and critique of the false parallelogram-diagonal reflection argument. Teacher awards four criterion scores 0–2; drawings and reasoning remain educator-graded and no live student assessment route is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Angle-bisector construction proof",
+          "Definition": "Given an angle with rays AD and AE, equal-radius points D,E and the midpoint F of DE make AF an angle bisector.",
+          "Rule": "Use AD=AE, DF=EF, AF=AF then SSS to deduce equal angles at A.",
+          "Example": "A triangle with equal sides AD and AE has a median from apex A that also bisects its apex angle."
+        },
+        {
+          "Title": "Equal-radius arc proof",
+          "Definition": "Circle intersections equidistant from endpoints lie on their perpendicular bisector.",
+          "Rule": "Use the two directions of the perpendicular-bisector theorem; require two distinct intersections.",
+          "Example": "When r>BC/2, equal circles centred at B,C yield two distinct points X,Y on the bisector."
+        },
+        {
+          "Title": "Circular reasoning",
+          "Definition": "A purported proof assumes the conclusion it is supposed to establish.",
+          "Rule": "Do not state angle DAF=FAE before deriving triangle congruence.",
+          "Example": "Saying a ray is an angle bisector because it halves the angle is not evidence that the construction produces the ray."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove the constructed ray bisects an angle",
+          "Question": "A circle centred A meets angle sides at D,E with AD=AE. F is midpoint DE. Show ray AF bisects ∠DAE.",
+          "Method": "SSS on triangles ADF and AEF.",
+          "Steps": [
+            "AD=AE because D,E lie on the same circle centred A.",
+            "DF=FE by midpoint definition.",
+            "AF=AF is common to both triangles.",
+            "SSS gives ADF≅AEF; corresponding angles DAF and FAE are equal.",
+            "Thus ray AF divides angle DAE into two equal angles."
+          ],
+          "Answer": "AF is the angle bisector of ∠DAE.",
+          "Check": "Assume 0°<∠DAE<180° so D,E,A are noncollinear and F≠A."
+        },
+        {
+          "Title": "Justify the perpendicular-bisector arc construction",
+          "Question": "Why does the line through two intersections X,Y of equal-radius circles centred B,C bisect BC at right angles?",
+          "Method": "Apply the equidistant-point converse theorem to each circle intersection.",
+          "Steps": [
+            "Choose B≠C and common radius r>BC/2 so two intersections exist.",
+            "Each intersection X and Y is distance r from both B and C.",
+            "By the perpendicular-bisector converse, X and Y each lie on BC's unique perpendicular bisector.",
+            "Two distinct points determine a line, so XY equals that perpendicular bisector."
+          ],
+          "Answer": "Line XY is the perpendicular bisector of BC.",
+          "Check": "At r=BC/2 there is only one circle intersection and line XY cannot be determined."
+        },
+        {
+          "Title": "Critique a circular argument",
+          "Question": "A student says 'AF bisects ∠DAE since angle DAF equals angle FAE.' Is that sufficient to justify the construction?",
+          "Method": "Identify whether the equality has been established.",
+          "Steps": [
+            "Angle DAF=FAE is exactly the property the construction needs to prove.",
+            "The student has not provided a reason for that equality.",
+            "The construction guarantees AD=AE and DF=EF, and AF is shared.",
+            "Apply SSS to triangles ADF and AEF and THEN infer the equal angles."
+          ],
+          "Answer": "No. The original statement assumes the desired conclusion instead of proving it.",
+          "Check": "A valid justification begins with circle and midpoint invariants, not the equality of angle measures."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using a point F anywhere on DE, rather than its midpoint, in the angle-bisector proof.",
+          "WhyWrong": "Without DF=FE, the three SSS side pairs need not match.",
+          "Correction": "Construct the midpoint by a valid method and state DF=FE."
+        },
+        {
+          "Mistake": "Using circle radius no greater than half the endpoint distance and expecting two arc intersections.",
+          "WhyWrong": "The circles have zero or one intersections, not two distinct points defining a line.",
+          "Correction": "Choose r>BC/2 and preserve the same compass opening at both centres."
+        }
+      ],
+      "SummaryPoints": [
+        "An angle-bisector construction is justified by SSS on two halves of an isosceles triangle.",
+        "Equal-radius circle intersections determine a perpendicular bisector using the proven equidistant locus theorem.",
+        "Construction steps must be justified, and human assessment is needed for drawings and proof critique."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+      "CultureCode": "en",
+      "Title": "Congruence for Quadrilaterals",
+      "ExplanationParagraphs": [
+        "Learning goal: Investigate which measurements guarantee two parallelograms are congruent, distinguish sufficient conditions from false four-side shortcuts, and construct a rigid-motion proof for valid cases.",
+        "A parallelogram is determined, up to rigid motion, by the lengths of two adjacent sides and the included angle (SAS for its diagonal constituent triangle). Four corresponding side lengths alone are NOT sufficient because the same two adjacent side lengths permit different interior angles; a square and a non-square rhombus with equal side lengths are counterexamples.",
+        "Verbal diagram: parallelogram ABCD has AB=4 and BC=6, with included ∠ABC=60°. A second parallelogram EFGH has EF=4, FG=6 and included ∠EFG=60°. First align triangles ABC and EFG by SAS; the fourth vertex of each parallelogram is uniquely fixed as the fourth vertex completing the two parallel-line pairs, so entire parallelograms coincide under the same rigid motion.",
+        "Any quadrilateral (not assumed parallelogram) needs more constraints. One diagonal divides it into two triangles; four corresponding side lengths plus diagonal length with a specified non-crossed arrangement can fix both constituent triangles up to reflection across the diagonal, but merely four side lengths leave flexible shapes.",
+        "Student task: use hinged strips or independently drawn shapes to produce two noncongruent rhombi with equal four side lengths, then invent and prove a sufficient parallelogram congruence criterion. Teacher rubric (0–8): explicit counterexample, valid included-angle hypothesis, triangle alignment, justified fourth-vertex uniqueness. Models and proofs require human scoring.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. First-party Edulytiks prose/examples are independent; publisher diagrams and protected materials are not reproduced.",
+        "15.1 True or Sometimes True? Parallelograms: from ABCD parallelogram, classify properties as MUST (both opposite side pairs parallel/congruent, opposite angles equal, diagonals bisect), MIGHT (rectangle, square, rhombus, right angle, perpendicular or equal diagonals), or CANNOT (only one pair of opposite sides parallel under nondegenerate definition). Require student justification with a counterexample when merely possible.",
+        "15.2 Floppy Quadrilaterals: hinged paper fasteners/strips demonstrate rhombi and non-square rhombi with all four sides length5 and differing included angles, disproving SSSS parallelogram congruence. For ABCD and EFGH, AB=EF, BC=FG and included ∠ABC=∠EFG: triangle ABC≅EFG by SAS, then D and H uniquely lie at intersections of lines through A/E parallel to BC/FG and through C/G parallel to AB/EF; the whole parallelograms coincide. This must be a rigid transformation argument, not four-side handwaving.",
+        "15.3 Make Your Own Congruence Theorem: teams propose a SECOND sufficient parallelogram criterion using few measurements, demonstrate noncongruent counterexamples to failed rules, and produce rigid-motion/triangle decomposition proof for successful rules. Evaluate extension that arbitrary quadrilaterals need extra constraints (diagonal and correct side assignments) and a convex/simple-figure hypothesis; a parallelogram-specific shortcut does not automatically hold for all quadrilaterals.",
+        "Source Practice P1-P7: P1 parallelograms, rhombi, rectangles, squares necessarily 180-degree rotationally symmetric (NOT arbitrary trapezoid/isosceles trapezoid); P2 rhombus EF GH diagonal EG reflection swaps F/H fixing E/G; P3 AD=BC and AD∥BC imply parallelogram via diagonal SAS and parallel converses; P4 one pair of opposite sides BOTH congruent and parallel suffices (choice B); P5 EFGH parallelogram with angle HEF right is a rectangle, evaluate congruent triangle pairs with exact original figure; P6 triangle ADB to CBD congruent from AB=CD and parallel lines but angle alone without legitimate second condition not enough; P7 KLMN parallelogram triangles KNL and MLN congruent by SAS or SSS with diagonal LN shared and correct corresponding sides.",
+        "15.4 Original protected Cool-down unavailable. An original Edulytiks paper equivalent asks to contrast a side-five square and slanted rhombus, show parallelogram SAS sufficiency with fourth-vertex uniqueness, and explain why the analogous claim for an arbitrary quadrilateral is invalid. Teacher reviews proof and construction, four 0–2 criteria."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "False four-sides criterion",
+          "Definition": "Four matching corresponding side lengths do not generally determine quadrilateral congruence.",
+          "Rule": "Vary the included angle of a rhombus while keeping side lengths fixed to build noncongruent counterexamples.",
+          "Example": "A side-5 square and a side-5 rhombus with 60° interior angle are not congruent."
+        },
+        {
+          "Title": "Parallelogram SAS-type sufficiency",
+          "Definition": "Two adjacent side lengths and their included angle determine a parallelogram up to rigid motion.",
+          "Rule": "Align two adjacent sides as a triangle by SAS, then locate the fourth vertex using unique parallels.",
+          "Example": "AB=EF=4, BC=FG=6 and ∠ABC=∠EFG=60° force ABCD≅EFGH."
+        },
+        {
+          "Title": "Fourth vertex uniqueness",
+          "Definition": "In a nondegenerate parallelogram, the fourth vertex is the unique intersection of parallels through two established adjacent vertices.",
+          "Rule": "Once three consecutive vertices and their orientation are fixed, the last vertex is determined.",
+          "Example": "Given A=(0,0), B=(4,0), C=(4,3), D=(0,3) is forced by parallel requirements."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reject a four-sides-only rule",
+          "Question": "Could a side-5 square and a side-5 rhombus with one angle 60° be congruent?",
+          "Method": "Compare angle invariants while keeping side lengths fixed.",
+          "Steps": [
+            "Each of the two quadrilaterals has four sides of length 5.",
+            "The square has four 90° interior angles.",
+            "The second rhombus has angles 60°,120°,60°,120°.",
+            "Rigid motions preserve angle measures, so no rigid motion maps one onto the other."
+          ],
+          "Answer": "No. Four equal corresponding side lengths are insufficient for parallelogram congruence.",
+          "Check": "Both are nondegenerate parallelograms yet differ by invariant angle measures."
+        },
+        {
+          "Title": "Prove an adjacent-side/angle theorem",
+          "Question": "Parallelograms ABCD and EFGH have AB=EF, BC=FG and ∠ABC=∠EFG. Are they congruent?",
+          "Method": "SAS on their consecutive three-vertex triangles, then complete the fourth vertex.",
+          "Steps": [
+            "Triangles ABC and EFG have two corresponding sides and the included angles congruent.",
+            "SAS gives a rigid motion aligning A→E, B→F, C→G.",
+            "D is the unique intersection of the line through A parallel to BC and the line through C parallel to AB.",
+            "H is the analogous unique intersection through E and G, so that same rigid motion maps D→H.",
+            "Thus all four corresponding vertices coincide."
+          ],
+          "Answer": "Yes; ABCD≅EFGH under the stated correspondence.",
+          "Check": "The parallelograms must be nondegenerate and the included angles must be the ones between the given sides."
+        },
+        {
+          "Title": "Compare quadrilateral classifications",
+          "Question": "A parallelogram has side lengths 4 and 6 and included angle 90°. What subclass does it belong to?",
+          "Method": "Use the parallelogram right-angle theorem.",
+          "Steps": [
+            "A parallelogram with one right angle has all interior angles right by parallel/supplementary properties.",
+            "Therefore it is a rectangle.",
+            "Its adjacent side lengths differ, so it is not a square or rhombus.",
+            "The rectangle has perimeter 2(4+6)=20 and area 4·6=24."
+          ],
+          "Answer": "It is a non-square rectangle with perimeter 20 and area 24.",
+          "Check": "Perimeter and area do not by themselves distinguish all congruence classes; side and angle data are essential."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying SSS to four sides of a quadrilateral as if a quadrilateral were a triangle.",
+          "WhyWrong": "Four fixed side lengths do not control the hinge angles or diagonal lengths.",
+          "Correction": "Divide the quadrilateral into triangles and identify enough diagonal/angle information; use an actual valid criterion."
+        },
+        {
+          "Mistake": "Assuming the fourth vertex may be placed anywhere after three parallelogram vertices are fixed.",
+          "WhyWrong": "Both pairs of opposite sides must remain parallel.",
+          "Correction": "Construct the unique intersection of the two required parallel lines."
+        }
+      ],
+      "SummaryPoints": [
+        "Parallelograms are not rigidly determined by their four corresponding side lengths alone.",
+        "Two adjacent sides and the included angle determine a parallelogram up to congruence.",
+        "A valid proof aligns three vertices via SAS and fixes the fourth via unique parallel lines; teacher scores full reasoning."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

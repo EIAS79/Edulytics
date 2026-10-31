@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+  "Ordinal": 22,
+  "UnitCode": "U01",
+  "SourceEdition": "Illustrative Mathematics High School Geometry First Edition (2019-2021)",
+  "OriginalSourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\22\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\22\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\22\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\22\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "d22cae4805a948f48d4e254d285352b00ed70e5f4daa668f4cb4095ce64e32ef",
+    "TeacherActivities": "70ce02966103ec325fc3605b6cfde3ce478f9f64911aa527aeb1bd036bb867fb",
+    "StudentActivities": "308acf2e9c841266dbafa6025b2103e3687aada86fa5c13762c85eab20b4ab52",
+    "StudentPractice": "886c7b48a1e90fcbb9348db309362e661d90dc13f9ef968b38f781521c95fbe0"
+  },
+  "SourceComparisonA": [
+    {
+      "Source": "22.1",
+      "Original": "Notice and Wonder: Dramatic Designs; image-based structure and mathematical questioning",
+      "Edulytiks": "Independent labelled hexagon/diagonals, wonder/notice with justification",
+      "MaterialLimit": "Publisher image not duplicated or pixel-verified"
+    },
+    {
+      "Source": "22.2",
+      "Original": "Duplicate a Design; teacher distributes permissioned hexagon designs; identify rigid motions; construct and write instructions",
+      "Edulytiks": "First-party hexagon-and-diagonals task with exact tool moves and a written recipe",
+      "MaterialLimit": "Permissioned blackline not duplicated; exact decorative visual parity not claimed"
+    },
+    {
+      "Source": "22.3",
+      "Original": "Make Your Own Design; digital or print; construction recipe; optional tessellation extension",
+      "Edulytiks": "Original learner design and written numbered steps; tessellation marked enrichment"
+    },
+    {
+      "Source": "22.4",
+      "Original": "Make Their Design; exchange secret instructions and justify congruent objects",
+      "Edulytiks": "Peer receives instructions only, reconstructs then compares diagrams and justifies congruence"
+    },
+    {
+      "Source": "Practice 1-2",
+      "Original": "Hexagon-based figure congruence and self-motion",
+      "Edulytiks": "First-party visual/paper analogues; teacher-reviewed, not source-image-identical"
+    },
+    {
+      "Source": "Practice 3-10",
+      "Original": "Cumulative U01:L18-L21 rigid motions and geometry proofs",
+      "Edulytiks": "Source-task-indexed paper review criteria referencing corresponding earlier lesson assessments; figures not inferred"
+    }
+  ],
+  "SourceFidelityCaveat": "Source lesson content and original student practice inspected on Our-CS; decorative images/permissioned blackline not exact-verified; no 100% image fidelity claim",
+  "RetainedContent": "Existing 3 geometrically valid worked examples, concepts, summary and source independence preserved",
+  "TargetedBRepairs": "Add source activities 22.1-22.4, peer feedback, optional tessellation, 10 cumulative practice review mappings; correct generic irrelevant summary; align 0-8 rubric text",
+  "StageA": "A_CLOSED_SOURCE_TEXT_AND_FIRST_PARTY_TASK_EQUIVALENCE_FIGURE_NOT_PIXEL_VERIFIED",
+  "StageB": "B_CLOSED_FOUR_SOURCE_ACTIVITIES_AND_PRACTICE_CROSSWALK",
+  "StageC": "C_CLOSED_TEACHER_SCORED_PAPER_ROUTE_WITH_NOT_RUN_TESTS",
+  "SelectedPracticeGroupId": "GEO_U01_L22_CONSTRUCTION_HUMAN_REVIEW",
+  "SelectedPracticeRoute": {
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "GroupId": "GEO_U01_L22_CONSTRUCTION_HUMAN_REVIEW",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "ExactAppAssignmentAndPersistence": "UNVERIFIED_STAGE_D_ISSUE_453",
+    "SharedOwner": "Supervisor 2 issue #453",
+    "PaperEvidence": "original design, replication, labelled procedure, peer feedback and teacher-scored signed review",
+    "NoStudentSubmissionRuntimeClaim": true
+  },
+  "TeacherRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "identifies repeated structures and at least one defensible geometric question from an original independent design (22.1)",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "reconstructs a labelled hexagon-based pattern using correct straightedge-compass steps and names at least one valid rigid motion (22.2)",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "produces an original design with ordered, reproducible centre/radius/intersection instructions (22.3)",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "independent peer uses the hidden-design instructions, identifies congruent parts with reasons, and the author resolves ambiguity (22.4)",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u01-l22-authoring-contract.test.cjs",
+  "AuthoredFixtureKinds": [
+    "Correct",
+    "Equivalent",
+    "Incorrect",
+    "Boundary",
+    "Malformed"
+  ],
+  "TestExecution": "NOT_RUN",
+  "StaticCheck": {
+    "JSONPack": "PASS",
+    "JSONRubric": "PASS",
+    "NodeSyntaxOnly": "PASS",
+    "GitDiffCheck": "PASS",
+    "RuntimeTests": "NOT_RUN",
+    "CIChecks": "NOT_RUN"
+  },
+  "ChangedFiles": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l19-l22-2021.rich-lesson-v2.json",
+    "tools/curriculum/us-ccss-geo-u01-l22-authoring-contract.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l22-creative-construction-paper-assessment-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l22-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/UNIT_ABC_CLOSURE_REPORT_U01_20261031.md"
+  ],
+  "ImplementationCommit": "67e24cc79d0b959c302c5b2cdfaf8db084238475",
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "StartedAtUtc": "2026-10-31T00:03:28.938147Z",
+  "ClosedAtUtc": "2026-10-31T00:06:26.739169Z",
+  "ElapsedSeconds": 177.801,
+  "BlockersABC": [],
+  "StageDUnverified": [
+    "exact GEO lesson assignment on web",
+    "student evidence capture",
+    "teacher scoring persistence",
+    "two-school access negatives",
+    "renderer and final CI"
+  ],
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01"
+}

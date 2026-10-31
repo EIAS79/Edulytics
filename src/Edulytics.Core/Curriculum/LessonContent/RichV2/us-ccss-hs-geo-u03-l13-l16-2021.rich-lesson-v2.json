@@ -1,0 +1,409 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u03-l13-l16-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L13",
+      "CultureCode": "en",
+      "Title": "Using the Pythagorean Theorem and Similarity",
+      "ExplanationParagraphs": [
+        "Learning goal: Identify the three similar right triangles created by dropping the altitude from the right-angle vertex to the hypotenuse and use matching sides to calculate missing lengths.",
+        "Let triangle ABC have right angle C and hypotenuse AB=c. Let D lie on AB with CD⊥AB, AD=x, DB=y, so x+y=c. Triangle ACD and triangle CBD each have a 90° angle at D and share an acute angle with ABC; AA proves both are similar to the original and to each other.",
+        "The similarity relations give AC²=c·x, BC²=c·y and CD²=x·y. The first two are leg-projection relations and the third is the geometric mean altitude relation. These hold for nondegenerate right triangles; if one leg is zero, the triangle is degenerate and the constructed altitude logic changes.",
+        "Verbal diagram: a right triangle with legs 6,8 and hypotenuse 10 has altitude from the right angle to hypotenuse of length 4.8. The hypotenuse is divided into projections 3.6 next to the 6-unit leg and 6.4 next to the 8-unit leg.",
+        "Student task: make a tracing-paper or digital annotation showing all three triangles and ordered similarity correspondences, then use exact proportional equations to calculate altitude and segments. Teacher rubric (0–4): correct right-angle/altitude assumptions, ordered AA matches, valid projection equations and precise numerical verification. Original traced figures and explanations are human scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks wrote all prose and numerical examples independently; protected source graphics and assessment answers have not been copied.",
+        "Source 13.1 Similar, Right? (5 min): start by asking whether original source triangle ADC is similar to CDB where CD is an ALTITUDE perpendicular to AB in right triangle ABC. Students identify all three right triangles ABC, ACD, CDB, sketch and trace angle correspondences rather than merely relying on looks. A valid AA proof uses shared/complementary acute angles and right angles; do not treat the two smaller triangles as necessarily congruent.",
+        "Source 13.2 Tangled Triangles (15 min): learners trace TWO smaller right triangles onto tracing paper separately, rotate each to match the large triangle orientation, write THREE correctly ordered pairwise similarity statements, label corresponding legs and hypotenuses, and find source side lengths HG, GF, HF from the actual annotated source diagram. Original figure measurements cannot be inferred from the accessible text, so numeric HG/GF/HF must be teacher-verified. Encourage three alternate strategies: Pythagorean theorem, a scale factor, and equivalent ratios; let peers compare correctness.",
+        "Source 13.3 More Tangled Triangles (15 min): students independently justify THREE AA-similar triangles ABC, ACD, CBD for an arbitrary right triangle with CD perpendicular to AB, without assuming similarity from image resemblance. Use right angles and complementary acute-angle correspondences to generate many equivalent side-length equations. In consistent source naming, AD/DC=DC/DB and CB/AB=DB/CB, so CD squared=AD*DB, BC squared=AB*DB. Students first compare angle evidence from protractor/tracing with exact reasoning, then group proportional ratios where one side appears twice.",
+        "Source 13.3 source numerical extension: Tyler's approximate CB=11.96 from measured/proportional data is challenged by Noah's exact CB=12 using Pythagorean theorem. Explain that approximate ruler/rounded ratios can disagree with exact computed lengths; the original source labelled right-triangle figure must be inspected to justify the exact value 12, not reverse-engineered from the quoted claim. Source synthesis angle BCD=58 degrees, ACD=32 degrees and angle A=58 degrees; in general if BCD=x, ACD=90-x and angle A=x, under the original pictured right-angle configuration.",
+        "Source lesson summary: triangle PQR with altitude PS to hypotenuse QR gives AA similarity PQR, SQP, SPR, and two independent geometric-mean/projection examples: when RS=3 QS=7, PS squared=RS*QS=21 so PS=sqrt(21); when PQ=5 QR=12, QS=PQ squared/QR=25/12. Preserve earlier independent 6-8-10 correct model, but make clear the original source's explicit sample values differ and that hypotenuse altitude is a mathematical relation to be justified by AA here, not yet the next lesson's Pythagorean derivation.",
+        "Source Practice P1-P7: P1 from triangle ABC right at C with CD altitude, determine which ORDERED triangles ABC, ACD, BCD, BDC, CAD, CBD correspond as written; visual angle-order correspondence, not simply same vertex sets, is crucial. P2 AD12 DB3 yields h squared=36, h=6. P3 a NONRIGHT triangle ABC with CD altitude always has area (h*c)/2, choice D, but its three triangles are not automatically similar. P4 write two valid ordered side-proportion equations for similar quadrilaterals ABCD and A'B'C'D' (previous L12). P5 parallel A'B' missing A'A and B'B requires source image. P6 vertical BC DE numeric AD figure-dependent. P7 midpoint triangle DEF congruence and BC length source-figure-dependent. Original teacher-locked 13.4 Cool-down remains unverified; first-party teacher-reviewed independent altitude diagram plus AA proof and segment-ratio problem are offered."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Altitude to hypotenuse",
+          "Definition": "The segment from a right triangle's right-angle vertex to the opposite hypotenuse, perpendicular to it.",
+          "Rule": "Draw it to the interior of hypotenuse for a nondegenerate right triangle.",
+          "Example": "A 6–8–10 right triangle has altitude 6·8/10=4.8."
+        },
+        {
+          "Title": "Three similar triangles",
+          "Definition": "The two smaller right triangles formed by the altitude are AA-similar to the original and each other.",
+          "Rule": "Match both their right angles and one shared or complementary acute angle.",
+          "Example": "Original ABC (right at C), and triangles ACD and CBD (right at D)."
+        },
+        {
+          "Title": "Projection formulas",
+          "Definition": "With hypotenuse c split into x,y, legs adjacent to x,y satisfy a²=cx,b²=cy, and altitude h²=xy.",
+          "Rule": "Use consistent side correspondence and x+y=c.",
+          "Example": "For c=10,x=3.6,y=6.4, altitude h=√(3.6·6.4)=4.8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute altitude and projections",
+          "Question": "A right triangle has legs 6 and 8 and hypotenuse 10. Find the altitude to hypotenuse and its two projections.",
+          "Method": "Use area and leg-projection relations.",
+          "Steps": [
+            "Area equality gives (6·8)/2=(10·h)/2, hence h=48/10=4.8.",
+            "Projection next to leg 6 is x=6²/10=3.6.",
+            "Projection next to leg 8 is y=8²/10=6.4.",
+            "Check x+y=10 and h²=4.8²=23.04=3.6·6.4."
+          ],
+          "Answer": "Altitude 4.8, hypotenuse segments 3.6 and 6.4.",
+          "Check": "Each length is positive and h²=xy, consistent with AA similarity."
+        },
+        {
+          "Title": "Geometric mean altitude",
+          "Question": "A right-triangle altitude divides its hypotenuse into segments of lengths 4 and 9. Find altitude.",
+          "Method": "Use h²=xy.",
+          "Steps": [
+            "The right-triangle altitude relation is h²=xy.",
+            "Set x=4,y=9, giving h²=36.",
+            "Take nonnegative length root: h=6.",
+            "Check h/4=9/h=1.5, the expected geometric mean proportion."
+          ],
+          "Answer": "h=6 length units.",
+          "Check": "The whole hypotenuse is 4+9=13 and the leg projections give a consistent right triangle."
+        },
+        {
+          "Title": "Justify smaller-triangle similarity",
+          "Question": "Why is triangle ACD similar to original ABC when ABC has right angle C and CD⊥AB?",
+          "Method": "Use AA with correct vertices.",
+          "Steps": [
+            "Original ABC has ∠ACB=90°.",
+            "Small triangle ACD has ∠ADC=90° by perpendicular altitude.",
+            "Both share acute angle at A because D lies on ray AB.",
+            "AA proves triangle ACD∼triangle ACB with appropriate vertex correspondence."
+          ],
+          "Answer": "The small altitude triangle is similar to the original by AA.",
+          "Check": "One matching right angle and one shared acute angle suffice; the angle at A must be identified."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using the wrong hypotenuse projection with a leg.",
+          "WhyWrong": "The leg squared equals the whole hypotenuse times its AD or DB projection adjacent to that leg.",
+          "Correction": "Draw and label the foot D and associate AC with AD, BC with DB."
+        },
+        {
+          "Mistake": "Assuming the two small triangles are congruent.",
+          "WhyWrong": "They have common angles but generally different size scales.",
+          "Correction": "Use AA similarity and ratios, not equal side lengths unless additional data demand it."
+        }
+      ],
+      "SummaryPoints": [
+        "A right-triangle altitude to its hypotenuse creates two smaller similar right triangles.",
+        "Leg projections and altitude satisfy a²=cx, b²=cy, h²=xy.",
+        "Ordered correspondence and hand-drawn representations are teacher assessed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L14",
+      "CultureCode": "en",
+      "Title": "Proving the Pythagorean Theorem",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the Pythagorean theorem from altitude-to-hypotenuse similarity and explain why both the theorem and its converse require the right-angle or matching-side hypotheses.",
+        "Let legs be a,b>0 and hypotenuse c>0 in a Euclidean right triangle. An altitude to the hypotenuse splits c into x,y with x+y=c. Similarity gives a²=cx and b²=cy, so a²+b²=c(x+y)=c². This proves the theorem without assuming it in advance.",
+        "The converse is also true: a triangle with positive lengths a,b,c satisfying a²+b²=c² and with c the longest side is right-angled opposite c. One can construct a right triangle with legs a,b, whose hypotenuse length is √(a²+b²)=c by the proved theorem; SSS shows it congruent to the given triangle, transferring the right angle.",
+        "Verbal diagram: show a right triangle with perpendicular legs a,b, diagonal c, and altitude h perpendicular to c. Label hypotenuse projections x next to a and y next to b. The identity follows by adding the two similar-triangle leg equations.",
+        "Student task: write the algebraic proof, draw a separate area-rearrangement illustration of the same theorem, and criticize a nonright triangle mistakenly labelled with c²=a²+b². Teacher rubric (0–4): correct setup, valid similarity equations, algebraic completion and clear necessity of hypotheses. Proof explanations and diagrams require human scoring.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks wrote all prose and numerical examples independently; protected source graphics and assessment answers have not been copied.",
+        "Source 14.1 Notice and Wonder Variable Version (5 min): first display an independently labelled right triangle with legs a,b, hypotenuse c and an altitude splitting c into x and y, with x+y=c. Before announcing the theorem, collect student observations, questions, and possible ratio equations from the three AA-similar triangles established in the preceding lesson. Avoid prematurely writing a squared-sum formula as a hypothesis.",
+        "Source 14.2 Prove Pythagoras Right (15 min): reconstruct Elena's a/x=c/a -> a squared=c*x and Diego's b/y=c/b -> b squared=c*y by valid cross multiplication. Add the separately established leg equations to obtain a squared + b squared=c*x+c*y=c(x+y). Since x+y=c, conclude a squared+b squared=c squared for a nondegenerate RIGHT triangle. Require a forward logically justified proof starting from AA similarity and positivity, not the Pythagorean identity being assumed to prove itself. Prompt students to explain exactly why the altitude produces three similar figures only for right triangles.",
+        "Source 14.3 An Alternate Approach (15 min): use first-party diagrams of TWO congruent large squares of side (a+b), each containing the SAME FOUR congruent right triangles with legs a,b. One arrangement leaves nonoverlapping regions of areas a squared and b squared; the other leaves one tilted interior square with side c and area c squared. Equating remaining regions after subtracting the same four triangle areas gives a squared+b squared=c squared. Students first notice and wonder about the diagram, reconstruct a complete proof, and revise it after explaining how the central figure is a square and why both outside square areas agree.",
+        "Source 14.3 optional James Garfield physical proof: assemble two congruent right triangles with a common sloping side and their other exposed legs as an (a+b)-high trapezoid. Compute area in two ways, (a+b)(a+b)/2 versus ab+c squared/2, with accurate orientation and perpendicular segment evidence, yielding a squared+b squared=c squared. This extension is not the required core 14.2 proof. Teacher scores independently authored cutouts rather than copying publisher square graphics.",
+        "Source lesson synthesis and converse: establish theorem and distinct converse: if a genuine triangle has positive shorter sides a,b and longest c with a squared+b squared=c squared, it is right, using the already proved theorem to construct a matching right triangle and SSS congruence. For 8-15-17, 17 squared=289=64+225 so right; for 8-15-18, 324>289 so obtuse (assuming triangle inequalities), and for 8-15-16, 256<289 so acute. Under source 14.3, students explain why mathematicians value distinct area and similarity proofs.",
+        "Source Practice P1-P9: P1 only clearly valid right triangle among A 6-9-12, B 8-10-13 and C 9-12-15 is C; option D source text repeats JL with values 10 and 17 and is internally inconsistent, so original graphic must be checked before classifying D. P2 source rectangle areas in side squares: area BGHC=a squared=c*x and ACIJ=b squared=c*y; named c-square rectangles require original diagram. P3 Andre third side5 versus Mai undetermined requires missing figure. P4 triangles ABC, ACD and CBD are similar after altitude to hypotenuse (ordered names checked). P5 CD=6 and AD=12 gives DB=36/12=3, choice B. P6 vertical BC and DE side BD is image-dependent. P7 right triangle legs5,12 has original area30 and midpoint triangle DEC area7.5 (area scale 1/4 not 1/2). P8 similar Q to P matching 5 to4 gives k=4/5, choice C. P9 triangle ADC versus CBA: AB=DC, AC shared and angle DCA equal BAC is the included angle, so SAS congruence with correctly mapped vertices if genuine nondegenerate triangles. Source original locked 14.4 Cool-down Test It Out is unverified; first-party paper alternative asks for forward similarity and independent square-rearrangement proofs plus one nonright counterexample."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pythagorean theorem",
+          "Definition": "For a right triangle with legs a,b and hypotenuse c, a²+b²=c².",
+          "Rule": "Do not use this identity for arbitrary triangles without verifying right angle.",
+          "Example": "3²+4²=9+16=25=5²."
+        },
+        {
+          "Title": "Similarity proof",
+          "Definition": "Use the altitude's similar triangles to obtain a²=cx,b²=cy, x+y=c.",
+          "Rule": "Add equations and factor c: a²+b²=c(x+y)=c².",
+          "Example": "If c=13,x=25/13,y=144/13, then a=5,b=12."
+        },
+        {
+          "Title": "Right-triangle converse",
+          "Definition": "If three positive side lengths satisfy a²+b²=c² with c longest, they form a right triangle.",
+          "Rule": "Use a constructed right triangle and SSS to transfer its right angle.",
+          "Example": "5²+12²=13² implies a right triangle."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Similarity-derived proof",
+          "Question": "Prove a²+b²=c² for a right triangle using an altitude to the hypotenuse.",
+          "Method": "Express squared legs with hypotenuse projections.",
+          "Steps": [
+            "Draw perpendicular altitude to hypotenuse c, splitting it into x and y.",
+            "AA similarity gives a²=cx and b²=cy.",
+            "Add: a²+b²=cx+cy.",
+            "Factor c to get c(x+y).",
+            "Because x+y=c, conclude a²+b²=c²."
+          ],
+          "Answer": "The Pythagorean theorem follows from similar triangles.",
+          "Check": "The right-angle and nondegenerate hypotheses are used to obtain the altitude similar triangles."
+        },
+        {
+          "Title": "Test a 5–12–13 triangle",
+          "Question": "Side lengths 5,12,13 are given. Determine whether the triangle is right.",
+          "Method": "Apply the converse with longest side 13.",
+          "Steps": [
+            "Positive side lengths satisfy triangle inequality.",
+            "Compute 5²+12²=25+144=169.",
+            "Compute 13²=169.",
+            "The squared-sum equality matches the longest side.",
+            "By the converse, the angle opposite side 13 is 90°."
+          ],
+          "Answer": "Yes; the 5–12–13 triangle is right.",
+          "Check": "It would be wrong to claim the angle opposite side 5 is the right angle."
+        },
+        {
+          "Title": "Reject a nonright triangle",
+          "Question": "Can a triangle with side lengths 4,5,6 be right?",
+          "Method": "Compare squared shorter sides with longest squared.",
+          "Steps": [
+            "4+5>6, so a nondegenerate triangle exists.",
+            "Compute 4²+5²=16+25=41.",
+            "Compute 6²=36.",
+            "Since 41≠36, the longest-side equality fails.",
+            "Thus the triangle is not right."
+          ],
+          "Answer": "No; side lengths 4,5,6 form a nonright triangle.",
+          "Check": "The result follows from the converse condition's contrapositive and correct longest-side choice."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying a²+b²=c² without first establishing a right angle or invoking the converse appropriately.",
+          "WhyWrong": "The formula is specific to right triangles, not every triangle.",
+          "Correction": "Verify perpendicular legs or use the longest-side squared-sum test for a converse claim."
+        },
+        {
+          "Mistake": "Claiming a proof by assuming a²+b²=c² at the start.",
+          "WhyWrong": "This uses the conclusion as a premise.",
+          "Correction": "Start from AA similarity or an independent area identity and derive the formula."
+        }
+      ],
+      "SummaryPoints": [
+        "Pythagoras follows from the geometric mean/projection relations of three similar right triangles.",
+        "The converse diagnoses right triangles from positive side lengths and longest-side equality.",
+        "Exact algebraic proof steps need teacher evaluation, distinct from a numeric question."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L15",
+      "CultureCode": "en",
+      "Title": "Finding All the Unknown Values in Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: Select justified proportions, right-triangle formulas and length units to find all unknown sides in similar right triangles, including cases where information is initially insufficient.",
+        "A right triangle can be solved from two side lengths using Pythagoras and then related to another by similarity when two angles agree or side ratios are established. The information-gap strategy is to identify the exact needed angle or side correspondence before requesting more numerical data.",
+        "Verbal diagram: one right triangle has legs 5,12 and hypotenuse 13. Another right triangle has a corresponding leg of length 15 replacing the length-5 leg. Since scale factor is 15/5=3, remaining leg is 36 and hypotenuse is 39; every ratio stays 3.",
+        "Original task: one student holds labelled triangle relationships, another numerical dimensions; without showing the whole card, they must ask targeted questions needed to solve an unknown. Include a deliberately insufficient dataset. Teacher rubric (0–4): useful information request, correct triangle correspondence, accurate computations and unit/condition checks. Original partner communication and reasoning are human-scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks wrote all prose and numerical examples independently; protected source graphics and assessment answers have not been copied.",
+        "Source 15.1 Which One Doesn't Belong: Triangles (5 min): display FOUR independently drawn labelled right-triangle variations A,B,C,D, invite students to argue which one does not belong and why, recording different defensible properties rather than treating a single choice as correct. Publisher warm-up figures are not reproduced or pixel-certified; the student's precise description and geometric basis are teacher scored.",
+        "Source 15.2 Info Gap Similar Sequence (20 min): enact two source-aligned first-party hidden CARD rounds, with one student holding a PROBLEM card, the other DATA card, never showing or reading it aloud entirely. Problem holder asks for exact missing side/angle/ordered similarity statement, data holder asks 'Why do you need to know that?' and reveals ONLY the requested given, not computed values. They then solve independently and swap roles. Track written questions, information sufficiency, source→target k direction, and at least one equivalent proportion BETWEEN triangles and one WITHIN triangle. Use Pythagorean theorem only after right angle is established. This previews trigonometric within-triangle ratios without claiming a trigonometry engine.",
+        "Source 15.2 original synthesis: two methods k for the whole triangle versus equal ratios of corresponding sides WITHIN each triangle must agree. For an independent original 5-12-13 triangle and enlargement factor 3 (previously correct Edulytiks worked example), side 5 maps 15, 12 maps 36, 13 maps 39. Retain this independent example; do not falsely claim it is the hidden publisher card, whose values are not publicly exposed. If only 40 and 50-degree angles and no length are known, students correctly request a physical side measurement instead of inventing absolute scale.",
+        "Source 15.3 Relatively Reasonable (10 min): a source drawing gives triangle ABC similar to A'B'C'. Students co-craft questions and use tracing, measurements, estimated k, Pythagorean identity and repeated cross-checks to suggest all three target lengths; approximate estimates are not exact source answers without diagram scale. Critique the teacher's deliberately hasty guess 5,6,7: 5/6 differs from 5/8, so corresponding ratios are inconsistent. State unit precision, admissible range and what extra labelled datum would improve certainty.",
+        "Source 15.3 optional origami extension: start with a square, fold bottom-left vertex to the TOP EDGE MIDPOINT, label F midpoint of fold-created right edge segment BE, then prove from similar right triangles and right-angle/Pythagorean reasoning that F is 1/3 of the way DOWN the full square side. Teacher evaluates the actual first-party paper fold and labelled steps; source protected drawing is not duplicated. Clearly mark this as optional and not a prerequisite for main source skills.",
+        "Source synthesis source-indexed computations: in one double-scale model ED=6 and FD=8 when target triangle twice original. In another right triangle OMN, Pythagorean theorem gives OM=12 rather than needing an awkward comparison of 8.45 and 13; the correspondence scale 8.45/13=0.65 then maps MN=5 to JK=3.25. The SOURCE student summary uses right triangle ABC with AB=4, BC=3, CA=5, and triangle FGH with hypotenuse FH=4 and opposite leg GH=12/5; x=sqrt(25-16)=3, and FG=y=4*(4/5)=16/5, confirmed by (16/5)^2+(12/5)^2=16. Both scale and Pythagoras agree; do not replace these source numbers with the independent 5-12-13 example.",
+        "Source Practice P1-P7: P1 BE of two given right triangles with angles ABC=EBD needs original drawing/side measures. P2 AB=13 hypotenuse BC=5 leg -> AC=12. P3 AC parallel DE and common perpendicular DC, approximate BE multiple choice is image-dependent; avoid invented options. P4 right triangles A 30,40,50; C 8,15,17; D 7,24,25 (correct A,C,D); B 1,1,2 is degenerate, E 4,5,6 nonright. P5 Andre third side13 versus Mai unknown requires original diagram and condition. P6 right triangle altitude CD=h with AD=8 DB=2 (source figure swaps those labels but product unchanged) -> h=sqrt(16)=4. P7 source ABC and AED transformation choice depends on image; teacher checks actual centre-A factor and reflection. Original protected 15.4 Cool-down Calculate and Check is unverified; independent teacher paper route asks students for two equivalent derivations and a reasoned information request."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Hypotenuse identification",
+          "Definition": "The side opposite a right angle is the longest side and the hypotenuse.",
+          "Rule": "Label it before applying a²+b²=c².",
+          "Example": "For legs 5,12 the hypotenuse is 13."
+        },
+        {
+          "Title": "Scaling similar triangles",
+          "Definition": "Corresponding sides in similar triangles share a positive ratio k.",
+          "Rule": "Determine k from a known matching side pair and multiply other sides consistently.",
+          "Example": "Scaling 5–12–13 by 3 gives 15–36–39."
+        },
+        {
+          "Title": "Information sufficiency",
+          "Definition": "A solvable triangle problem requires enough valid data to determine the target quantity under the stated theorem.",
+          "Rule": "Ask for a corresponding side or second angle where needed; state uncertainty instead of inventing values.",
+          "Example": "Knowing only one acute angle and the right angle fixes shape but not side lengths."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use Pythagoras on a missing hypotenuse",
+          "Question": "Right triangle legs are 5 cm and 12 cm. Find hypotenuse.",
+          "Method": "Use the squared-sum theorem.",
+          "Steps": [
+            "Identify the legs and hypotenuse opposite the right angle.",
+            "Compute c²=5²+12²=25+144=169.",
+            "Take positive root c=13.",
+            "Check 13>12 and 13>5."
+          ],
+          "Answer": "Hypotenuse 13 cm.",
+          "Check": "Length cannot be negative; resulting dimensions satisfy the triangle inequality."
+        },
+        {
+          "Title": "Solve a similar larger right triangle",
+          "Question": "The original 5–12–13 triangle is enlarged so its 5-side becomes 15. Find two other sides.",
+          "Method": "Use one common scale factor.",
+          "Steps": [
+            "Scale factor k=15/5=3.",
+            "Second leg becomes 12·3=36.",
+            "Hypotenuse becomes 13·3=39.",
+            "Check 15²+36²=225+1296=1521=39²."
+          ],
+          "Answer": "Other leg 36, hypotenuse 39.",
+          "Check": "All side lengths are in the same units as the given 15."
+        },
+        {
+          "Title": "Recognize incomplete data",
+          "Question": "A triangle is right with an acute angle 40°, but no side lengths are supplied. Can you determine the hypotenuse in cm?",
+          "Method": "Use the scale ambiguity inherent in AA similarity.",
+          "Steps": [
+            "The other acute angle is 50° by triangle angle sum.",
+            "Many triangles with angles 90°,40°,50° differ by positive dilation.",
+            "The hypotenuse could be any positive length consistent with that shape.",
+            "A known side length or comparable linear scale must be requested."
+          ],
+          "Answer": "No unique hypotenuse length; ask for a side measurement.",
+          "Check": "Angle data establish similarity but do not determine absolute scale."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a shape fixed by angles has a determined physical size.",
+          "WhyWrong": "Infinitely many positive dilations preserve all angles.",
+          "Correction": "Request at least one linear dimension before computing actual lengths."
+        },
+        {
+          "Mistake": "Multiplying some target sides by k and others by 1/k.",
+          "WhyWrong": "Inconsistent scale direction violates similarity ratios.",
+          "Correction": "Fix source→target direction and use the same factor for all corresponding sides."
+        }
+      ],
+      "SummaryPoints": [
+        "Pythagoras determines a missing side in a right triangle from two sides.",
+        "Similarity transfers all side lengths by one factor.",
+        "Missing data must be identified honestly; peer information-gap reasoning is human assessed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L16",
+      "CultureCode": "en",
+      "Title": "Bank Shot",
+      "ExplanationParagraphs": [
+        "Learning goal: Model one-bounce reflection paths and indirect height measurement with similar right triangles, explaining physical assumptions and checking coordinate or measured results.",
+        "For an ideal reflection on a straight wall, angle of incidence equals angle of reflection, measured to the normal. A convenient geometric construction reflects the destination across the wall and draws a straight line from the ball to this reflected point. The wall intersection is the calculated bounce point, provided that point lies on the actual wall segment and the path is unobstructed.",
+        "Verbal diagram: billiard cushion is horizontal line y=0, ball S=(2,3), intended target T=(8,5), both above wall. Reflect T across y=0 to T*=(8,-5). The straight segment from S to T* meets wall at B=(4.25,0); original path S→B→T has matching absolute approach/rebound slopes.",
+        "Indirect measurement with a flat mirror on level ground: assuming equal reflection angles and straight rays, similar right triangles compare object height H over horizontal mirror-to-object distance d1 with observer eye height h over mirror-to-eye distance d2, so H/d1=h/d2. State the mirror alignment, level-ground and observer-position assumptions.",
+        "Student task: construct a bank-shot path on a coordinate board and a hypothetical mirror-height estimate, then explain when the reflection approximation is inappropriate (ball radius, friction, offset cushion, uneven ground). Teacher rubric (0–4): correct reflected target, wall intersection, proportion/angle justification and physical limitation. Pool-table paths and mirror measurements require teacher-scored evidence.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks wrote all prose and numerical examples independently; protected source graphics and assessment answers have not been copied.",
+        "Source 16.1 Notice and Wonder Right Triangles (5 min): show original independently authored incoming and outgoing light/ball sightline triangles, invite notices and wonders before stating that corresponding right angles and equal incidence/reflection angles establish AA similarity. Require a verbal identification of the common mirror/cushion point and which angles are equal, not just a picture of two right triangles.",
+        "Source 16.2 Bank Shot (20 min): begin with student SKETCH of cue ball rebounding from the bottom cushion toward the orange five ball at the upper-right pocket before providing exact side values. Introduce the equal angle of incidence and reflection law and its AA similar RIGHT triangles; mark target cushion point X with unknown horizontal distance x and remaining total-width-x, then solve using original measured distances. Source print diagram and digital GeoGebra link are not copied or claimed functional. An original source-independent coordinate exercise uses wall y=0, cue S=(2,3), target T=(8,5): reflect T to T*=(8,-5), line ST* intersects wall at (4.25,0), and incoming/outgoing slope magnitudes both 4/3. Always verify this point lies on the finite cushion and state that real physics includes ball radius and friction.",
+        "Source 16.2 comparison of precision: a physical ruler gives lengths to nearest millimetre and angles to nearest degree, digitally calculated model may report many decimal places but typically nearest tenth suffices, and during actual play the athlete estimates a reachable bank shot. The source task's direct pool-table geometry requires the original measured drawing to calculate its particular exact contact point: do not substitute the independent (4.25,0) example as the publisher answer. Optional extension asks for one-stroke path and physical reachability.",
+        "Source 16.3 Indirect Measurement Mirrors (20 min OPTIONAL): place a small flat mirror on LEVEL ground where the observer sees the top of a tall object, with observer eye height h, mirror-to-eye horizontal distance d2 and mirror-to-object distance d1. From right angles and equal reflection angles derive AA similarity and H/d1=h/d2, so H=h*d1/d2. For independently authored values h=1.6m, d1=5m,d2=1m, H=8m. Teacher records actual physical measurements, units and uncertainty, checks alignment and verticality, and ensures students DO NOT LOOK AT THE SUN. Mirror is optional and bowls of water can model reflection, subject to classroom safety.",
+        "Source 16.4 Indirect Measurement No Mirrors (20 min OPTIONAL): teams brainstorm other methods (parallel shadows with a reference object; 45-degree clinometer made of paper, string and straw; calibrated triangle sighting; careful photo with camera projection assumptions), select equipment and collect enough measurements to make two AA similar triangles. For 45-degree right angle sighting on horizontal ground, horizontal distance to object equals vertical height difference above eye, so total height = ground distance + eye height, not simply the distance unless eye height zero. With shadows under the same Sun angle, object-height/reference-height equals object-shadow/reference-shadow. Students compare at least two methods and include model limitations, environmental hazards and measurement precision. Preserve optional status and teacher-reviewed physical evidence.",
+        "Source original independent wind-turbine anecdote cites 123 feet actual blade height but is a source historical example, NOT a verified result of any student measurement; the source expects student-generated indirect models, not a hard-coded answer. This lesson has HSG-SRT.B.5 and HSN-Q.A.3 Addressing roles and uses AA similarity and appropriate precision, with no need for new shared numerical engine.",
+        "Source student summary handball independent numeric model: the wall BC length20ft is divided in ratio BE:CE=1:2 because perpendicular distances AB=16ft and DC=32ft, so BE=20/3=6 2/3ft measured from B. Distinguish this student summary figure from original Practice P1 drawing with different D placement; the Practice P1 choices 7.8 and13.3 can be judged only with the exact figure. When the original labelled figure means DC=25, ratio BE/CE=16/25 gives BE=20*16/(16+25)=320/41=7.8049ft, choice A. Teacher checks this figure interpretation before scoring.",
+        "Source Practice P1-P9: P1 handball wall20ft, reflection angle and figure-dependent vertical depths; when AB16 DC25, BE about7.8ft choice A, otherwise verify original illustration. P2 design cue ball one-bounce into 9-ball top-centre pocket, explanation and angle check require original table. P3 mirror Mai height65in, distance120in, student distance72in implies h=65*(72/120)=39in. P4 triangle angle ABC=EBD finding BD is original figure-dependent. P5 hypotenuse AB17, leg BC15 -> AC8. P6 complete source Pythagorean proof blanks a^2=c*x, b^2=c*y, c*x+c*y, c*(x+y), c, c^2. P7 altitude CD to hypotenuse AB with AD4 DB16 => AB20, AC=sqrt(AB*AD)=sqrt80=4sqrt5. P8 vocabulary mapping Scale Drawing→4, Scale Factor→5, Dilation→3, Similar Figures→1, AA Similarity Theorem→2. P9 source quadrilaterals have proportional sides but without corresponding angles a true similarity conclusion is unjustified. The teacher-locked original unit Cool-down is not claimed; first-party paper authentic bank-shot and optional mirror method are human-reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reflection path construction",
+          "Definition": "A one-bounce ideal path between start and target reflecting off a straight wall can be made by reflecting the target across the wall.",
+          "Rule": "Draw line to reflected target and take its intersection with the wall, if the point is physically reachable.",
+          "Example": "Across y=0, reflect (8,5) to (8,-5)."
+        },
+        {
+          "Title": "Equal-angle law",
+          "Definition": "For ideal specular reflection, incidence and reflection angles to the surface normal are equal.",
+          "Rule": "Check incoming and outgoing line slopes relative to the wall and their angles with the perpendicular.",
+          "Example": "A slope magnitude 4/3 before the bounce equals the rebound slope magnitude 4/3."
+        },
+        {
+          "Title": "Indirect measurement",
+          "Definition": "Similar triangles relate height and horizontal distance for reflected sightlines over level ground under valid mirror geometry.",
+          "Rule": "Set H/objectDistance=eyeHeight/eyeDistance, using consistent units.",
+          "Example": "Eye height 1.6 m, mirror 1 m from eye and 5 m from object implies H=8 m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute an exact bank-shot point",
+          "Question": "S=(2,3), T=(8,5), wall y=0. Find a one-bounce point B under ideal reflection.",
+          "Method": "Reflect target and intersect straight segment with wall.",
+          "Steps": [
+            "Mirror target T across y=0 to T*=(8,-5).",
+            "Parameterize line S+t(T*−S)=(2+6t,3−8t).",
+            "Set y=0: 3−8t=0, t=3/8.",
+            "Then x=2+6·(3/8)=2+18/8=4.25.",
+            "Bounce point is B=(4.25,0)."
+          ],
+          "Answer": "B=(4.25,0).",
+          "Check": "Incoming slope -3/2.25=-4/3 and outgoing slope 5/3.75=4/3, giving equal incidence/reflection angles."
+        },
+        {
+          "Title": "Estimate building height with mirror",
+          "Question": "On level ground an observer's eye is 1.6 m high, mirror 1 m from observer and 5 m from building. Estimate building height assuming ideal reflected sightline.",
+          "Method": "Use the similar right triangles formed by mirror and vertical object/eye lines.",
+          "Steps": [
+            "The observer and building vertical segments form similar right triangles with the mirror vertex.",
+            "Set H/5=1.6/1 using lengths in metres.",
+            "Solve H=5·1.6=8 m.",
+            "Check geometry assumes horizontal level ground and correctly placed small flat mirror."
+          ],
+          "Answer": "Building height approximately 8 m under the stated idealized assumptions.",
+          "Check": "This is model output, not measured structural height; actual precision needs onsite measurements."
+        },
+        {
+          "Title": "Reject an unreachable bounce",
+          "Question": "Ideal reflection calculation gives B=(4.25,0) but the usable cushion exists only for 0≤x≤4. Can this one-bounce shot use that cushion?",
+          "Method": "Check the intersection against the finite wall domain.",
+          "Steps": [
+            "The calculated bounce requires x=4.25.",
+            "The actual wall segment ends at x=4.",
+            "Therefore B lies outside the permitted segment.",
+            "The ideal infinite-wall solution is not physically available on this finite cushion."
+          ],
+          "Answer": "No, that ideal one-bounce solution is infeasible for the stated wall segment.",
+          "Check": "A valid path must meet both the geometric angle condition and boundary constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reflecting the starting point and target both and using their direct segment without checking the bounce location.",
+          "WhyWrong": "It may produce no crossing on the intended finite wall segment.",
+          "Correction": "Reflect one endpoint consistently and verify the actual intersection is within the wall bounds."
+        },
+        {
+          "Mistake": "Inferring a measured building height without specifying eye height, mirror distances and level-ground assumptions.",
+          "WhyWrong": "Missing distances or nonlevel ground invalidate the similar triangles.",
+          "Correction": "Record measured inputs, units, sightline geometry and uncertainty before computing."
+        }
+      ],
+      "SummaryPoints": [
+        "A reflected endpoint reduces an ideal bank shot to a straight-line intersection problem.",
+        "Similar triangles support mirror-based indirect measurement under explicit assumptions.",
+        "Authentic physical experiments, billiard paths and reasoning require teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

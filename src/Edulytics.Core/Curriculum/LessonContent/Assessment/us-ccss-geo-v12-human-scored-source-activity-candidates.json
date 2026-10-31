@@ -1,0 +1,392 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "HS:TRAD:GEO:IM-1E",
+  "Status": "COURSE_LOCAL_AUTHORED_EVIDENCE_NOT_RUNTIME_CONNECTED",
+  "Version": "geometry-v12-human-scoring-source-activities-20261029",
+  "ExternalPracticeRegistrySharedOwner": "Supervisor 2 central",
+  "TeacherSubmissionPersistence": "NOT_IMPLEMENTED",
+  "NotReleaseApproval": true,
+  "Contracts": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L03",
+      "TaskId": "geo-v12-u06-l03-human-source-task",
+      "Title": "Transformation as coordinate scale proof",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/6/3/index.html",
+      "OriginalPrompt": "Draw original and scale-3 image of a nondegenerate point/triangle on the same labelled coordinate grid; construct right triangles and justify AA similarity before classifying the mapping.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not demonstrated, 1=partially evidenced, 2=complete and justified"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Coordinate and image labels under one map",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Valid auxiliary right-triangle construction",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "AA justification tied to corresponding angles/sides",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Interpret lengths, factor and nonrigid status",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "B=(2,3) mapped to B′=(6,9)",
+          "Expected": "PB:PB′=1:3",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "Scale 3 on 2-by-3 right triangle",
+          "Expected": "Legs 6 and 9; hypotenuse threefold",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "One leg scales 3 while other stays unchanged",
+          "ExpectedHandling": "Reject as general dilation proof"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Unlabelled diagram without stated centre",
+          "ExpectedHandling": "Teacher requests missing data"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "Zero vector used as only evidence",
+          "ExpectedHandling": "No nondegenerate right triangle; require additional nonzero point"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "PB′/PB=3 rather than PB:PB′=1:3",
+          "ExpectedHandling": "Accept mathematically equivalent ratio with explanation"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      }
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L02",
+      "TaskId": "geo-v12-u07-l02-human-source-task",
+      "Title": "Inscribed angles and intersecting chord AA proof",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/7/2/index.html",
+      "OriginalPrompt": "Label original intersecting chords CB and DE meeting at F, indicate arcs CE and DB, and write an AA proof relating triangles CFD and EFB.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not demonstrated, 1=partially evidenced, 2=complete and justified"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Circle/chords and intercepted arcs labelled",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Inscribed-angle pair theorem applied correctly",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Two corresponding equal angles and AA criterion",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Valid written proof including vertex correspondence",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "arc DB=140°,arc CE=100°",
+          "Expected": "C and E angles 70°, D and B angles 50°",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "Angle sum",
+          "Expected": "F angle 60°",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Interior angle treated as full central angle",
+          "ExpectedHandling": "Half-arc theorem incorrectly applied"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Arc names missing or chords not intersecting",
+          "ExpectedHandling": "Cannot infer requested AA correspondence"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "Coincident chord endpoints/degenerate triangles",
+          "ExpectedHandling": "Require distinct endpoints and interior intersection"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Alternative angle pair proof via vertical angles plus one inscribed pair",
+          "ExpectedHandling": "Teacher accepts valid AA proof"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      }
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L12",
+      "TaskId": "geo-v12-u07-l12-human-source-task",
+      "Title": "Radian pie sector and double-number-line representation",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/7/12/index.html",
+      "OriginalPrompt": "For angle 5π/6 radians, draw a shaded sector with initial ray and direction, mark it on a radian-degree double number line, and explain the fraction of a turn.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not demonstrated, 1=partially evidenced, 2=complete and justified"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Accurate oriented sector with 5/12 of turn",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Degree/radian reference positions correctly marked",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Geometric explanation of proportion of circumference",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Exact and approximate labels with clear units",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "5π/6 radians",
+          "Expected": "150°",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "Fraction of full turn",
+          "Expected": "5/12",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Shade 5/6 of full circle",
+          "ExpectedHandling": "Forgot denominator full turn is 2π"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Shaded region with no initial ray or orientation",
+          "ExpectedHandling": "Teacher requests orientation"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "Negative angle or >2π without orientation",
+          "ExpectedHandling": "Clarify signed/multiple-turn convention"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Show 150° or 5π/6 with coherent matching circle",
+          "ExpectedHandling": "Accept both paired labels"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      }
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L04",
+      "TaskId": "geo-v12-u08-l04-human-source-task",
+      "Title": "Two number cube trials and relative frequency table",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/8/4/index.html",
+      "OriginalPrompt": "Generate or collect ordered rolls of two distinct fair number cubes; present a labelled 6×6 theoretical sample space and a separate table of observed frequencies, then justify estimated and theoretical event probabilities.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not demonstrated, 1=partially evidenced, 2=complete and justified"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Ordered 36-outcome theoretical sample space",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Accurate experimental table totals and labelled axes",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Correct denominator for relative/conditional frequencies",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Explain finite sample variation versus the model",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "Two fair independent dice",
+          "Expected": "36 ordered equally likely results",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "Matching two faces",
+          "Expected": "6/36=1/6",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Use 6 equally likely unordered sums",
+          "ExpectedHandling": "Sum counts not equally likely"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Table missing number of trials",
+          "ExpectedHandling": "Relative frequency denominator unknown"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "Zero recorded trials",
+          "ExpectedHandling": "Observed frequency undefined; no division by zero"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Report 1/6 or 16.666…% for theoretical match",
+          "ExpectedHandling": "Accept numeric equivalence with clear units"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      }
+    }
+  ]
+}

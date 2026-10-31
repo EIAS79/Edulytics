@@ -1,0 +1,372 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "Geometry",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+  "Version": "2026-10-30-course-ABC",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "Independent first-party authored original; source curriculum CC BY 4.0; publisher names/logos/art not copied",
+  "SourceLocalPaths": {
+    "TeacherPreparation": "10_HS_Geometry/1/2/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/2/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/2/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/2/practice.html"
+  },
+  "SourceLocalSha256": {
+    "TeacherPreparation": "753e07443d4094913a4c5e88d72e2f37b4566932f7de0dfbae9063b679c1e8d2",
+    "TeacherActivities": "0feb917f871ffbe5b35fedf0879ba7e206cc2edd6dcceaa545e1d7a10fa1d58f",
+    "StudentActivities": "0435820f35b5ceb160828ac9e5bdc813323c22177a8d43021d9756f449f98a72",
+    "StudentPractice": "1fd7a5d79606d4278f0772b42eeb4a663390e783c621334cfe911891a361838c"
+  },
+  "Standards": {
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "SourceActivities": [
+    "2.1 Math Talk: Why Is That True?",
+    "2.2 Make Your Own",
+    "2.3 Make Someone Else's",
+    "2.4 teacher-labelled Cool-down: Constructing a Parallel Line (restricted task body)"
+  ],
+  "DeliveryMode": "PAPER_COMPASS_STRAIGHTEDGE_LABELLED_PATTERN_INSTRUCTIONS_AND_TEACHER_SCORE",
+  "MachineScoringAllowed": false,
+  "ExactLessonBinding": "NOT_REGISTERED_AS_ONLINE_ASSESSMENT",
+  "TeacherGradePersistence": "NOT_VERIFIED_STAGE_D",
+  "OriginalPublisherCoolDownStatus": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCoolDownStatus": "EDULYTIKS_AUTHORED_COOLDOWN",
+  "AuthenticatedStudentArtifactUpload": "NOT_CLAIMED",
+  "Tasks": [
+    {
+      "Id": "PATTERN-PEER-8",
+      "Type": "HUMAN_DRAWING_AND_WRITTEN_STEPS",
+      "Prompt": "Produce an original compass/straightedge pattern, record each move and the shading/colour convention, exchange only the written instructions with someone who has not seen it, compare their recreation, correct one ambiguous instruction, and submit the two drawings and revised instructions to your teacher.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Permitted straightedge/compass operations and correctly maintained given distances",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Clear labels for centres, radii, intersections and ordered connections",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Partner can independently reproduce a recognizably identical construction from text; drawings submitted",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Identifies and revises a genuinely ambiguous step and documents colour/shading",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Accept": "Any nondegenerate, reproducible original construction with clear teacher-verifiable invariants; not a single prescribed diagram",
+      "Reject": "Merely copying a provided picture or listing unspecified circles/lines; typed numeric answer alone"
+    },
+    {
+      "Id": "ORIGINAL-PARALLEL-COOLDOWN-8",
+      "Type": "HUMAN_DRAWING_AND_REASONING",
+      "Prompt": "Construct a regular hexagon in a circle using one unchanged compass opening equal to its radius, label consecutive A,B,C,D,E,F and draw the extended lines AB and DE. Explain why the two infinite lines are parallel and specify every construction move.",
+      "Exemplar": "Six equal-radius steps yield six equilateral central triangles with angle 60 degrees. The diameter half-turn swaps side AB with DE, so AB and DE have the same direction and are distinct parallel lines.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "C1",
+            "Criterion": "Nonzero circle radius, six distinct consecutively labelled vertices",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C2",
+            "Criterion": "Fixed-radius compass step and lines AB and DE correctly drawn",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C3",
+            "Criterion": "Explicit proof by 180-degree central symmetry/angle relations, not by appearance",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C4",
+            "Criterion": "Precise reproducible instructions with centre/radius/labelled lines",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Accept": "Clockwise or anticlockwise orientation; any rotation/translation of the construction",
+      "Reject": "A sketch with merely asserted parallelism without angle or symmetry reasoning"
+    }
+  ],
+  "SourcePracticeAnalogues": {
+    "EvidenceMode": "Human teacher reviewed paper reasoning; original source figures NOT copied; source problem numbers 1–4 mapped by skill, not image",
+    "TotalMax": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "Source": 1,
+        "Prompt": "Start with distinct A and B. Write every compass and straightedge move to construct the line through the two intersections X,Y of circles centred A and B, each radius AB.",
+        "Expected": "Draw circles with centres A and B and radius AB; mark both intersections X,Y; draw the full line XY. Name nonzero starting segment.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Source": 2,
+        "Prompt": "Two circles each radius AB are centred at A and B. Their intersections are X,Y. A point E lies on the circle centred A. Which of AX, AY, BX, BY, AE must equal AB? Explain.",
+        "Expected": "All five lengths equal AB by membership on the appropriate radius-AB circles.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Source": 3,
+        "Prompt": "A circle centred at A passes through B and X, while a different circle centred at B passes through X and A. Explain why AX=BX=AB.",
+        "Expected": "AX and AB are radii of circle A; BX and BA are radii of circle B.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Source": 4,
+        "Prompt": "A compass opens to length PQ and makes a circle centred R. Point S lies on the circle; point T is not stated to lie on the circle. Which equality is guaranteed: RS=PQ or RT=PQ?",
+        "Expected": "Only RS=PQ is guaranteed by the circle radius; no statement about RT follows.",
+        "Points": 2
+      }
+    ]
+  },
+  "Reviewer": "INDEPENDENT_SOURCE_REVIEW_COMPLETE_AT_COURSE_LOCAL_LEVEL; EXTERNAL_SIGNOFF_NOT_CLAIMED",
+  "SharedCDependency": {
+    "Owner": "Supervisor 2",
+    "Issue": 453,
+    "ExactRequirement": "Approved lesson-exact teacher-scored offline evidence/grade record for source-constructed original pattern; no known GEO-backed task registration or saved rubric workflow",
+    "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+    "DoNotChange": "Shared StudentAssessmentDeliveryService, AssessmentService.Commands, Practice registry, renderer, CI"
+  },
+  "Checks": {
+    "CourseJsonStructural": "CHECKED_SCRIPT",
+    "FocusedMath": "26 PASS / 0 FAIL for combined L02+L03 standalone geometry oracle on Our-CS (after correcting one harness assertion); not app test",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "Ci": "NOT_RUN",
+    "StageD": "NOT_RUN"
+  },
+  "AuthoringGate20261030": {
+    "Stage": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+    "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+    "PaperMode": "Physical straightedge/compass/pencil and labelled teacher-reviewed written proof, source-equivalent where appropriate",
+    "SourceLearningGoals": [
+      "2.1 Math Talk: Why Is That True?",
+      "2.2 Make Your Own",
+      "2.3 Make Someone Else's",
+      "2.4 teacher-labelled Cool-down: Constructing a Parallel Line (restricted task body)"
+    ],
+    "SourceToAssessment": [
+      {
+        "SourceActivity": "2.1 Math Talk: Why Is That True?",
+        "RequiredEvidence": "paper construction or correct labelled source diagram and an explicit justified claim",
+        "TaskIds": [
+          "PATTERN-PEER-8",
+          "ORIGINAL-PARALLEL-COOLDOWN-8"
+        ],
+        "PracticeRelatedItems": [
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ]
+      },
+      {
+        "SourceActivity": "2.2 Make Your Own",
+        "RequiredEvidence": "original paper activity with labelled tool moves, written reasoning and peer comparison when source requires",
+        "TaskIds": [
+          "PATTERN-PEER-8",
+          "ORIGINAL-PARALLEL-COOLDOWN-8"
+        ],
+        "PracticeRelatedItems": [
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ]
+      },
+      {
+        "SourceActivity": "2.3 Make Someone Else's",
+        "RequiredEvidence": "original paper activity with labelled tool moves, written reasoning and peer comparison when source requires",
+        "TaskIds": [
+          "PATTERN-PEER-8",
+          "ORIGINAL-PARALLEL-COOLDOWN-8"
+        ],
+        "PracticeRelatedItems": [
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ]
+      },
+      {
+        "SourceActivity": "2.4 teacher-labelled Cool-down: Constructing a Parallel Line (restricted task body)",
+        "RequiredEvidence": "original paper activity with labelled tool moves, written reasoning and peer comparison when source requires",
+        "TaskIds": [
+          "PATTERN-PEER-8",
+          "ORIGINAL-PARALLEL-COOLDOWN-8"
+        ],
+        "PracticeRelatedItems": [
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ]
+      }
+    ],
+    "Tasks": [
+      {
+        "Id": "PATTERN-PEER-8",
+        "Type": "HUMAN_TEACHER_RUBRIC_0_TO_8",
+        "RequiredPrompt": "Produce an original compass/straightedge pattern, record each move and the shading/colour convention, exchange only the written instructions with someone who has not seen it, compare their recreation, correct one ambiguous instruction, and submit the two drawings and revised instructions to your teacher.",
+        "AssessmentDimensions": [
+          {
+            "criterion": "R1",
+            "max": 2,
+            "description": "Permitted straightedge/compass operations and correctly maintained given distances"
+          },
+          {
+            "criterion": "R2",
+            "max": 2,
+            "description": "Clear labels for centres, radii, intersections and ordered connections"
+          },
+          {
+            "criterion": "R3",
+            "max": 2,
+            "description": "Partner can independently reproduce a recognizably identical construction from text; drawings submitted"
+          },
+          {
+            "criterion": "R4",
+            "max": 2,
+            "description": "Identifies and revises a genuinely ambiguous step and documents colour/shading"
+          }
+        ],
+        "Expected": "Teacher checks provided rubric + construction invariants, valid point/radius labels and justified conclusion",
+        "Accept": "Any nondegenerate, reproducible original construction with clear teacher-verifiable invariants; not a single prescribed diagram",
+        "Reject": "Merely copying a provided picture or listing unspecified circles/lines; typed numeric answer alone"
+      },
+      {
+        "Id": "ORIGINAL-PARALLEL-COOLDOWN-8",
+        "Type": "HUMAN_TEACHER_RUBRIC_0_TO_8",
+        "RequiredPrompt": "Construct a regular hexagon in a circle using one unchanged compass opening equal to its radius, label consecutive A,B,C,D,E,F and draw the extended lines AB and DE. Explain why the two infinite lines are parallel and specify every construction move.",
+        "AssessmentDimensions": [
+          {
+            "criterion": "C1",
+            "max": 2,
+            "description": "Nonzero circle radius, six distinct consecutively labelled vertices"
+          },
+          {
+            "criterion": "C2",
+            "max": 2,
+            "description": "Fixed-radius compass step and lines AB and DE correctly drawn"
+          },
+          {
+            "criterion": "C3",
+            "max": 2,
+            "description": "Explicit proof by 180-degree central symmetry/angle relations, not by appearance"
+          },
+          {
+            "criterion": "C4",
+            "max": 2,
+            "description": "Precise reproducible instructions with centre/radius/labelled lines"
+          }
+        ],
+        "Expected": "Six equal-radius steps yield six equilateral central triangles with angle 60 degrees. The diameter half-turn swaps side AB with DE, so AB and DE have the same direction and are distinct parallel lines.",
+        "Accept": "Clockwise or anticlockwise orientation; any rotation/translation of the construction",
+        "Reject": "A sketch with merely asserted parallelism without angle or symmetry reasoning"
+      }
+    ],
+    "Practice": [
+      {
+        "Id": "P1",
+        "ResponseType": "SHORT_WRITTEN_REASONING_OR_LABELLED_PAPER_GEOMETRY",
+        "Expected": "Draw circles with centres A and B and radius AB; mark both intersections X,Y; draw the full line XY. Name nonzero starting segment.",
+        "Points": 2,
+        "ManualCheck": true
+      },
+      {
+        "Id": "P2",
+        "ResponseType": "SHORT_WRITTEN_REASONING_OR_LABELLED_PAPER_GEOMETRY",
+        "Expected": "All five lengths equal AB by membership on the appropriate radius-AB circles.",
+        "Points": 2,
+        "ManualCheck": true
+      },
+      {
+        "Id": "P3",
+        "ResponseType": "SHORT_WRITTEN_REASONING_OR_LABELLED_PAPER_GEOMETRY",
+        "Expected": "AX and AB are radii of circle A; BX and BA are radii of circle B.",
+        "Points": 2,
+        "ManualCheck": true
+      },
+      {
+        "Id": "P4",
+        "ResponseType": "SHORT_WRITTEN_REASONING_OR_LABELLED_PAPER_GEOMETRY",
+        "Expected": "Only RS=PQ is guaranteed by the circle radius; no statement about RT follows.",
+        "Points": 2,
+        "ManualCheck": true
+      }
+    ],
+    "HumanGradeScale": {
+      "PerCriterion": [
+        0,
+        1,
+        2
+      ],
+      "MaxPerTask": 8,
+      "Meaning": {
+        "0": "invalid or no construction/argument",
+        "1": "partly correct evidence/reasoning",
+        "2": "correct labelled construction and mathematical justification"
+      }
+    },
+    "StudentHandoff": "Student completes original paper task with labels, legal tools, reasoning and any peer comparison, then submits to assigned teacher offline under school procedure; task must carry canonical LessonCode on teacher cover record.",
+    "TeacherAcknowledgement": "Teacher receives the paper, confirms actual construction/evidence and source goal, assigns criterion scores with written feedback and signs/dates the physical teacher record. This is an OFFLINE SPECIFICATION, not proof of an online review event or saved database grade.",
+    "EvidenceCases": [
+      {
+        "kind": "CORRECT",
+        "decision": "award corresponding full rubric credit when all constructions and justifications satisfy stated invariants"
+      },
+      {
+        "kind": "EQUIVALENT",
+        "decision": "accept transformations, valid alternative compass openings, other intersection choices and equivalent proofs if source skill still proved"
+      },
+      {
+        "kind": "WRONG",
+        "decision": "reject diagram with false radius equality, unproved midpoint, wrong bisector or unjustified parallel/equilateral claim"
+      },
+      {
+        "kind": "INSUFFICIENT",
+        "decision": "no full credit for a single number, unlabeled sketch or statement without proof when source demands actual construction"
+      },
+      {
+        "kind": "MALFORMED",
+        "decision": "reject zero radius/degenerate input, contradicting point order, missing required labels or self-inconsistent instructions"
+      }
+    ],
+    "MachineScoring": false,
+    "ScalarExamAutoGrade": "PROHIBITED_FOR_DRAWINGS_AND_PROOFS",
+    "StageD": {
+      "TeacherGradePersisted": false,
+      "ExactCanonicalLessonLinkVerified": false,
+      "StudentSchoolTeacherAuthorizationTested": false,
+      "AuthenticatedPracticeRun": false,
+      "SingleWriterOwner": "Supervisor 2, issue #453",
+      "Required": "secure exact course/lesson school assignment, evidence custody and rubric grading/feedback persistence"
+    }
+  }
+}

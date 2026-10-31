@@ -1,0 +1,770 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-hs-geo-u05-l13-l18-firstparty-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L13",
+      "CultureCode": "en",
+      "Title": "Building a Volume Formula for a Pyramid",
+      "ExplanationParagraphs": [
+        "Learning goal: Provide an informal Cavalieri/decomposition justification that every pyramid has V=(1/3)Bh, with B the base area and h perpendicular height.",
+        "Sections parallel to base at apex-height fraction t have area t²B The shape tapers quadratically",
+        "Source-aligned informal derivation: decompose a triangular prism into three pyramids of equal volume, then compare general pyramids/cones to the triangular-pyramid model with identical base area and perpendicular height. Every corresponding slice, at the same fraction of height from the apex, has area t² times the base. Cavalieri's principle transfers the one-third result beyond the triangular case.",
+        "Summing sections over full height gives Bh/3 Slant height is not volume height",
+        "Authentic activity: Use hand-made prism-and-pyramid sections to justify the 1/3 ratio for every parallel slice, then defend inference in written words. Teacher scores proof reasoning. Teacher rubric (0–4): correct geometric model and labelled units, justified relationship or construction, accurate computation, and clear independent explanation. Written work and illustrations are human scored.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 13, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pyramid sections",
+          "Definition": "Sections parallel to base at apex-height fraction t have area t²B",
+          "Rule": "The shape tapers quadratically",
+          "Example": "Halfway from apex section area B/4"
+        },
+        {
+          "Title": "Volume principle",
+          "Definition": "Summing sections over full height gives Bh/3",
+          "Rule": "Use an informal prism dissection or Cavalieri comparison",
+          "Example": "Three congruent pyramids may fill a suitable prism in a classic decomposition"
+        },
+        {
+          "Title": "Height requirement",
+          "Definition": "Perpendicular apex-to-base plane distance is h",
+          "Rule": "Slant height is not volume height",
+          "Example": "A skew pyramid can have same B,h and volume"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Building a Volume Formula for a Pyramid — worked case 1",
+          "Question": "Square pyramid base 6×6 and perpendicular height 9. Compute volume.",
+          "Method": "Pyramid sections",
+          "Steps": [
+            "Base area B=36",
+            "Apply V=Bh/3",
+            "V=36·9/3=108"
+          ],
+          "Answer": "108 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against the shape tapers quadratically"
+        },
+        {
+          "Title": "Building a Volume Formula for a Pyramid — worked case 2",
+          "Question": "Compare pyramid to equal-base equal-height prism B=20,h=6.",
+          "Method": "Volume principle",
+          "Steps": [
+            "Prism volume=20×6=120",
+            "Pyramid formula gives 20×6/3=40",
+            "Ratio is 1:3"
+          ],
+          "Answer": "Pyramid 40, prism 120 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against use an informal prism dissection or cavalieri comparison"
+        },
+        {
+          "Title": "Building a Volume Formula for a Pyramid — worked case 3",
+          "Question": "A pyramid has base area 18 and volume 48. Find perpendicular height.",
+          "Method": "Height requirement",
+          "Steps": [
+            "Use 48=(1/3)·18·h=6h",
+            "Solve h=8",
+            "Confirm 18·8/3=48"
+          ],
+          "Answer": "Height 8 length units.",
+          "Check": "Verify the numerical result and its geometric units against slant height is not volume height"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a sketch a proof of the 1/3 factor",
+          "WhyWrong": "A diagram alone does not justify all pyramids",
+          "Correction": "Use section scaling and Cavalieri or a dissection argument"
+        },
+        {
+          "Mistake": "Using slant edge in V=Bh/3",
+          "WhyWrong": "Height is perpendicular to base plane",
+          "Correction": "Identify the perpendicular altitude"
+        }
+      ],
+      "SummaryPoints": [
+        "Provide an informal Cavalieri/decomposition justification that every pyramid has V=(1/3)Bh, with B the base area and h perpendicular height.",
+        "Use an informal prism dissection or Cavalieri comparison",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Building a Volume Formula for a Pyramid. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Pyramid sections",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "The shape tapers quadratically",
+                "Halfway from apex section area B/4"
+              ]
+            },
+            {
+              "Label": "Volume principle",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use an informal prism dissection or Cavalieri comparison",
+                "Three congruent pyramids may fill a suitable prism in a classic decomposition"
+              ]
+            },
+            {
+              "Label": "Height requirement",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Slant height is not volume height",
+                "A skew pyramid can have same B,h and volume"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L14",
+      "CultureCode": "en",
+      "Title": "Working with Pyramids",
+      "ExplanationParagraphs": [
+        "Learning goal: Solve direct and inverse volume problems for pyramids and cones, and specify multiple plausible dimensions for a fixed positive volume.",
+        "For base area B and perpendicular height h, V=Bh/3 Use units B in length² and h in length",
+        "For circular base radius r, V=πr²h/3 No unique size without enough constraints",
+        "Authentic activity: Create two distinct noncongruent pyramids of equal volume, label required inputs, and justify them with calculations. Teacher reviews models. Teacher rubric (0–4): correct geometric model and labelled units, justified relationship or construction, accurate computation, and clear independent explanation. Written work and illustrations are human scored.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 14, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pyramid formula",
+          "Definition": "For base area B and perpendicular height h, V=Bh/3",
+          "Rule": "Use units B in length² and h in length",
+          "Example": "B=24,h=9 gives V=72"
+        },
+        {
+          "Title": "Cone formula",
+          "Definition": "For circular base radius r, V=πr²h/3",
+          "Rule": "Use radius not diameter",
+          "Example": "r=3,h=8 gives 24π"
+        },
+        {
+          "Title": "Inverse design",
+          "Definition": "Fix V then solve for any one positive dimension given the others",
+          "Rule": "No unique size without enough constraints",
+          "Example": "A pyramid V=60 could use B=20,h=9"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Working with Pyramids — worked case 1",
+          "Question": "Pyramid base area 24 cm² height 9 cm. Find V.",
+          "Method": "Pyramid formula",
+          "Steps": [
+            "Multiply B·h=216 cm³",
+            "Divide by 3",
+            "V=72 cm³"
+          ],
+          "Answer": "72 cm³.",
+          "Check": "Verify the numerical result and its geometric units against use units b in length² and h in length"
+        },
+        {
+          "Title": "Working with Pyramids — worked case 2",
+          "Question": "Cone radius 3 m height 8 m. Find V.",
+          "Method": "Cone formula",
+          "Steps": [
+            "Base area πr²=9π",
+            "Multiply height=72π",
+            "Divide by 3"
+          ],
+          "Answer": "24π m³.",
+          "Check": "Verify the numerical result and its geometric units against use radius not diameter"
+        },
+        {
+          "Title": "Working with Pyramids — worked case 3",
+          "Question": "Pyramid volume 60 m³ and base area 20 m². Find perpendicular height.",
+          "Method": "Inverse design",
+          "Steps": [
+            "Equation 60=20h/3",
+            "Multiply by 3 and divide by 20",
+            "h=9"
+          ],
+          "Answer": "9 m.",
+          "Check": "Verify the numerical result and its geometric units against no unique size without enough constraints"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substituting circular diameter for radius",
+          "WhyWrong": "The cone base uses r²",
+          "Correction": "Halve diameter first"
+        },
+        {
+          "Mistake": "Assuming a volume fixes all dimensions",
+          "WhyWrong": "Different positive B,h pairs yield same product Bh",
+          "Correction": "Ask for another measurement"
+        }
+      ],
+      "SummaryPoints": [
+        "Solve direct and inverse volume problems for pyramids and cones, and specify multiple plausible dimensions for a fixed positive volume.",
+        "Use radius not diameter",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Working with Pyramids. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Pyramid formula",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use units B in length² and h in length",
+                "B=24,h=9 gives V=72"
+              ]
+            },
+            {
+              "Label": "Cone formula",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use radius not diameter",
+                "r=3,h=8 gives 24π"
+              ]
+            },
+            {
+              "Label": "Inverse design",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "No unique size without enough constraints",
+                "A pyramid V=60 could use B=20,h=9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L15",
+      "CultureCode": "en",
+      "Title": "Putting All the Solids Together",
+      "ExplanationParagraphs": [
+        "Learning goal: Choose appropriate prism, cylinder, cone and pyramid formulas, decompose solids and explain units and possible overlap.",
+        "Prism/cylinder volume V=Bh Use perpendicular height",
+        "Cone/pyramid volume V=Bh/3 Avoid double counting intersections",
+        "Authentic activity: Draw an original composite solid with hidden boundaries, calculate its volume in two decompositions, and reconcile answers. Teacher verifies drawings. Teacher rubric (0–4): correct geometric model and labelled units, justified relationship or construction, accurate computation, and clear independent explanation. Written work and illustrations are human scored.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 15, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Constant-section solid",
+          "Definition": "Prism/cylinder volume V=Bh",
+          "Rule": "Use perpendicular height",
+          "Example": "Cylinder r=2,h=6 gives 24π"
+        },
+        {
+          "Title": "Tapered solid",
+          "Definition": "Cone/pyramid volume V=Bh/3",
+          "Rule": "Distinguish base type",
+          "Example": "Cone r=2,h=6 gives 8π"
+        },
+        {
+          "Title": "Composite volume",
+          "Definition": "Add solids with disjoint interiors or subtract holes",
+          "Rule": "Avoid double counting intersections",
+          "Example": "A cube 3³ with a removed 1³ cavity has volume 26"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Putting All the Solids Together — worked case 1",
+          "Question": "Cone radius 2 height 6 on top of cylinder same radius and height 4. Find combined volume.",
+          "Method": "Constant-section solid",
+          "Steps": [
+            "Cylinder V=π·4·4=16π",
+            "Cone V=(1/3)π·4·6=8π",
+            "Disjoint interiors combine to 24π"
+          ],
+          "Answer": "24π cubic units.",
+          "Check": "Verify the numerical result and its geometric units against use perpendicular height"
+        },
+        {
+          "Title": "Putting All the Solids Together — worked case 2",
+          "Question": "A square pyramid base 5×5 height 12. Find V.",
+          "Method": "Tapered solid",
+          "Steps": [
+            "Base area B=25",
+            "Compute Bh/3=25·12/3",
+            "V=100"
+          ],
+          "Answer": "100 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against distinguish base type"
+        },
+        {
+          "Title": "Putting All the Solids Together — worked case 3",
+          "Question": "A cube side 3 has an interior cubic cavity side 1. Find material volume.",
+          "Method": "Composite volume",
+          "Steps": [
+            "Outer cube volume=3³=27",
+            "Void is 1³=1",
+            "Subtract: 27−1=26"
+          ],
+          "Answer": "26 cubic units.",
+          "Check": "Verify the numerical result and its geometric units against avoid double counting intersections"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using same formula for cylinder and cone",
+          "WhyWrong": "Their section areas vary differently",
+          "Correction": "Use Bh versus Bh/3"
+        },
+        {
+          "Mistake": "Adding volumes that overlap",
+          "WhyWrong": "Shared regions get counted twice",
+          "Correction": "Decompose into disjoint pieces or subtract intersection"
+        }
+      ],
+      "SummaryPoints": [
+        "Choose appropriate prism, cylinder, cone and pyramid formulas, decompose solids and explain units and possible overlap.",
+        "Distinguish base type",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Putting All the Solids Together. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Constant-section solid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use perpendicular height",
+                "Cylinder r=2,h=6 gives 24π"
+              ]
+            },
+            {
+              "Label": "Tapered solid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Distinguish base type",
+                "Cone r=2,h=6 gives 8π"
+              ]
+            },
+            {
+              "Label": "Composite volume",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Avoid double counting intersections",
+                "A cube 3³ with a removed 1³ cavity has volume 26"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L16",
+      "CultureCode": "en",
+      "Title": "Surface Area and Volume",
+      "ExplanationParagraphs": [
+        "Learning goal: Compare volume and exposed surface area in design problems; distinguish total versus lateral surface and show that equal volumes need not mean equal surface areas.",
+        "Cube side s has V=s³ and total S=6s² Recover s=∛V if volume known",
+        "Closed cylinder total surface S=2πr²+2πrh State what is exposed",
+        "Authentic activity: Design two containers with equal capacity and different required material; illustrate faces and account for open versus closed lids. Teacher assesses design. Teacher rubric (0–4): correct geometric model and labelled units, justified relationship or construction, accurate computation, and clear independent explanation. Written work and illustrations are human scored.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 16, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cube comparison",
+          "Definition": "Cube side s has V=s³ and total S=6s²",
+          "Rule": "Recover s=∛V if volume known",
+          "Example": "V=27 gives s=3 and S=54"
+        },
+        {
+          "Title": "Cylinder exposed surface",
+          "Definition": "Closed cylinder total surface S=2πr²+2πrh",
+          "Rule": "Remove an open top if specified",
+          "Example": "r=2,h=3 closed S=20π"
+        },
+        {
+          "Title": "Design tradeoff",
+          "Definition": "Same volume may correspond to different surface areas",
+          "Rule": "State what is exposed",
+          "Example": "Boxes 1×1×12 and 2×2×3 both V=12"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Surface Area and Volume — worked case 1",
+          "Question": "Closed cylinder radius 2 height 3: find total surface.",
+          "Method": "Cube comparison",
+          "Steps": [
+            "Two circular caps total 2π·2²=8π",
+            "Lateral area circumference×height=2π·2·3=12π",
+            "Sum 20π"
+          ],
+          "Answer": "20π square units.",
+          "Check": "Verify the numerical result and its geometric units against recover s=∛v if volume known"
+        },
+        {
+          "Title": "Surface Area and Volume — worked case 2",
+          "Question": "Cube volume 27; find total surface.",
+          "Method": "Cylinder exposed surface",
+          "Steps": [
+            "Side s=∛27=3",
+            "Surface S=6s²",
+            "S=6·9=54"
+          ],
+          "Answer": "54 square units.",
+          "Check": "Verify the numerical result and its geometric units against remove an open top if specified"
+        },
+        {
+          "Title": "Surface Area and Volume — worked case 3",
+          "Question": "Compare closed boxes 1×1×12 and 2×2×3 of volume 12.",
+          "Method": "Design tradeoff",
+          "Steps": [
+            "First area=2(1+12+12)=50",
+            "Second area=2(4+6+6)=32",
+            "Equal volume 12 but surfaces differ"
+          ],
+          "Answer": "Surface areas 50 and 32 square units.",
+          "Check": "Verify the numerical result and its geometric units against state what is exposed"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating curved area and total closed area as same",
+          "WhyWrong": "Caps may add to exposed surface",
+          "Correction": "Include only specified surfaces"
+        },
+        {
+          "Mistake": "Assuming equal volumes have equal areas",
+          "WhyWrong": "Shape affects boundary area",
+          "Correction": "Calculate S independently from V"
+        }
+      ],
+      "SummaryPoints": [
+        "Compare volume and exposed surface area in design problems; distinguish total versus lateral surface and show that equal volumes need not mean equal surface areas.",
+        "Remove an open top if specified",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Surface Area and Volume. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cube comparison",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Recover s=∛V if volume known",
+                "V=27 gives s=3 and S=54"
+              ]
+            },
+            {
+              "Label": "Cylinder exposed surface",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Remove an open top if specified",
+                "r=2,h=3 closed S=20π"
+              ]
+            },
+            {
+              "Label": "Design tradeoff",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "State what is exposed",
+                "Boxes 1×1×12 and 2×2×3 both V=12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L17",
+      "CultureCode": "en",
+      "Title": "Volume and Density",
+      "ExplanationParagraphs": [
+        "Learning goal: Model density as mass per unit volume, use unit conversion and composite volume to find mass, and distinguish material density from object-level average density.",
+        "ρ=m/V for V>0 Mass m=ρV",
+        "Geometric formula estimates occupied volume; voids matter Keep units in ρV",
+        "Authentic activity: Model three hypothetical materials with given density and compute weights of alternate solids; human-review realistic assumptions and material volume. Teacher rubric (0–4): correct geometric model and labelled units, justified relationship or construction, accurate computation, and clear independent explanation. Written work and illustrations are human scored.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 17, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Density definition",
+          "Definition": "ρ=m/V for V>0",
+          "Rule": "Mass m=ρV",
+          "Example": "Solid 2 cm³ at 3 g/cm³ has mass 6 g"
+        },
+        {
+          "Title": "Volume measurement",
+          "Definition": "Geometric formula estimates occupied volume; voids matter",
+          "Rule": "Use material volume for material density",
+          "Example": "A hollow cylinder excludes hole"
+        },
+        {
+          "Title": "Units",
+          "Definition": "Convert m³ to cm³ with 1 m³=10^6 cm³",
+          "Rule": "Keep units in ρV",
+          "Example": "2 g/cm³=2000 kg/m³"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Volume and Density — worked case 1",
+          "Question": "Block 2×3×4 cm has density 2.5 g/cm³. Find mass.",
+          "Method": "Density definition",
+          "Steps": [
+            "Volume=2·3·4=24 cm³",
+            "Multiply 2.5 g/cm³×24 cm³",
+            "Mass=60 g"
+          ],
+          "Answer": "60 grams.",
+          "Check": "Verify the numerical result and its geometric units against mass m=ρv"
+        },
+        {
+          "Title": "Volume and Density — worked case 2",
+          "Question": "Mass 540 g, volume 200 cm³; find density.",
+          "Method": "Volume measurement",
+          "Steps": [
+            "Density=m/V",
+            "Divide 540/200=2.7",
+            "Attach g/cm³"
+          ],
+          "Answer": "2.7 g/cm³.",
+          "Check": "Verify the numerical result and its geometric units against use material volume for material density"
+        },
+        {
+          "Title": "Volume and Density — worked case 3",
+          "Question": "Cylinder outer radius 3, hole radius 1, height 5, density 2 g/cm³. Find mass.",
+          "Method": "Units",
+          "Steps": [
+            "Material volume=π(9−1)·5=40π cm³",
+            "Multiply by 2 g/cm³",
+            "m=80π g"
+          ],
+          "Answer": "80π grams.",
+          "Check": "Verify the numerical result and its geometric units against keep units in ρv"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using hollow object's outer volume for material mass",
+          "WhyWrong": "The void contains no material",
+          "Correction": "Subtract hole before multiplying density"
+        },
+        {
+          "Mistake": "Using mass/area for volumetric density",
+          "WhyWrong": "Volumetric density denominator is cubic units",
+          "Correction": "Use m/V"
+        }
+      ],
+      "SummaryPoints": [
+        "Model density as mass per unit volume, use unit conversion and composite volume to find mass, and distinguish material density from object-level average density.",
+        "Use material volume for material density",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Volume and Density. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Density definition",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Mass m=ρV",
+                "Solid 2 cm³ at 3 g/cm³ has mass 6 g"
+              ]
+            },
+            {
+              "Label": "Volume measurement",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use material volume for material density",
+                "A hollow cylinder excludes hole"
+              ]
+            },
+            {
+              "Label": "Units",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Keep units in ρV",
+                "2 g/cm³=2000 kg/m³"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L18",
+      "CultureCode": "en",
+      "Title": "Volume and Graphing",
+      "ExplanationParagraphs": [
+        "Learning goal: Interpret square-root and cube-root graphs in geometric dimensions and invert area/volume formulas with correct physical domains.",
+        "For a cube V=s³, s=∛V for V≥0 Use positive edge lengths for nonzero cubes",
+        "Given square area A=s², side s=√A for A≥0 Do not interchange dimensions",
+        "Authentic activity: Draw original square-root and cube-root plots with labelled physical axes, then critique a graph that swaps length and volume units. Teacher scores graphs and justification. Teacher rubric (0–4): correct geometric model and labelled units, justified relationship or construction, accurate computation, and clear independent explanation. Written work and illustrations are human scored.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 18, CC BY 4.0. Edulytiks examples independently authored; no publisher graphics or restricted assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cube-root dimension",
+          "Definition": "For a cube V=s³, s=∛V for V≥0",
+          "Rule": "Use positive edge lengths for nonzero cubes",
+          "Example": "V=216 gives s=6"
+        },
+        {
+          "Title": "Square-root dimension",
+          "Definition": "Given square area A=s², side s=√A for A≥0",
+          "Rule": "For a closed cube face S=6s², s=√(S/6)",
+          "Example": "S=150 gives s=5"
+        },
+        {
+          "Title": "Graph comparison",
+          "Definition": "Square root grows differently from cube root; axes and units matter",
+          "Rule": "Do not interchange dimensions",
+          "Example": "For input 64, √64=8 and ∛64=4"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Volume and Graphing — worked case 1",
+          "Question": "Cube volume V=216 cm³; find side.",
+          "Method": "Cube-root dimension",
+          "Steps": [
+            "Cube volume equation V=s³",
+            "Take real positive cube root",
+            "s=6 cm"
+          ],
+          "Answer": "6 cm.",
+          "Check": "Verify the numerical result and its geometric units against use positive edge lengths for nonzero cubes"
+        },
+        {
+          "Title": "Volume and Graphing — worked case 2",
+          "Question": "Closed cube total surface area 150 m²; find side.",
+          "Method": "Square-root dimension",
+          "Steps": [
+            "Set 6s²=150",
+            "Divide by 6: s²=25",
+            "Positive root s=5 m"
+          ],
+          "Answer": "5 m.",
+          "Check": "Verify the numerical result and its geometric units against for a closed cube face s=6s², s=√(s/6)"
+        },
+        {
+          "Title": "Volume and Graphing — worked case 3",
+          "Question": "A graph shows y=∛x and x=64. Interpret y as cube edge in cm for x cm³.",
+          "Method": "Graph comparison",
+          "Steps": [
+            "Compute ∛64=4",
+            "Verify 4³=64",
+            "Label output length cm, input volume cm³"
+          ],
+          "Answer": "Cube edge 4 cm.",
+          "Check": "Verify the numerical result and its geometric units against do not interchange dimensions"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using square root to recover cube edge from volume",
+          "WhyWrong": "Dimension exponent is 3",
+          "Correction": "Use cube root"
+        },
+        {
+          "Mistake": "Allowing negative dimension from ± square root",
+          "WhyWrong": "Geometric length is nonnegative",
+          "Correction": "Choose positive root for nonzero body"
+        }
+      ],
+      "SummaryPoints": [
+        "Interpret square-root and cube-root graphs in geometric dimensions and invert area/volume formulas with correct physical domains.",
+        "For a closed cube face S=6s², s=√(S/6)",
+        "Teacher-reviewed model evidence is required for Stage C/D approval."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Volume and Graphing. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cube-root dimension",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Use positive edge lengths for nonzero cubes",
+                "V=216 gives s=6"
+              ]
+            },
+            {
+              "Label": "Square-root dimension",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "For a closed cube face S=6s², s=√(S/6)",
+                "S=150 gives s=5"
+              ]
+            },
+            {
+              "Label": "Graph comparison",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Do not interchange dimensions",
+                "For input 64, √64=8 and ∛64=4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
