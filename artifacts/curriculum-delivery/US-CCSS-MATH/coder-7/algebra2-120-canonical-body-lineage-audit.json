@@ -1,0 +1,1227 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+  "reviewType": "READ_ONLY_CANONICAL_BODY_DIGEST_COMPARISON_NOT_APPROVAL",
+  "auditDate": "2026-10-30",
+  "sourceBranchHeadAtAudit": "07469b85cb809e34a015de7fc32966241597cd92",
+  "sourceBranchHeadInterpretation": "HEAD at start of targeted course-owned U07:L14 repair; sourceContentBlobSha binds exact candidate pack bytes; neither is a release approval",
+  "sourceContentPackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json",
+  "sourceContentBlobSha": "ef69ef8aaa82c548140cc1b73317843ed372001d",
+  "digestDefinition": "SHA256 UTF-8 of seven English body fields each prefixed with key: and joined by LF, in order title, explanation, keyConceptsAndRules, workedExamples, stepByStepSolutions, commonMistakes, quickSummary",
+  "counts": {
+    "lessons": 120,
+    "changedBodiesRequiringSuccessorDecision": 119,
+    "unchangedReusedBodies": 1,
+    "academicallyAccepted": 0,
+    "renderedAccepted": 0,
+    "practiceAccepted": 0,
+    "humanAccepted": 0
+  },
+  "interpretation": "118 changed authored bodies differ from immutable historical canonical-body digests. This is NOT 118 mathematical errors, nor proof of a new approved academic version. Content-version owner must review predecessor/successor materialization and independently authorized approval. Preserve originals.",
+  "sharedVersionOwnerStatus": "PENDING",
+  "release": "NO_GO",
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+      "sourceSha256": "11ed0bf897ac0d0a3346603a80e47f8e7dc991911d0a120e2c065d32b9a0360c",
+      "predecessorCanonicalBodySha256": "9e7aa655c4441095780fd17c07c4d53612b59a5becc907ab55541e224aabeff7",
+      "authoredCandidateBodySha256": "d6676bc2a71bb866796227144f637b6de1b605b104df30a46e12f6363670c593",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+      "sourceSha256": "1227711629071ad0e14885fb5fc9b1dee0d7aa0779b0bcf9ab1b3e81eec5fa13",
+      "predecessorCanonicalBodySha256": "ce58b137bc455281abb466579c0b65f19879f2c329859326c42f80341f599730",
+      "authoredCandidateBodySha256": "8134bf856c94094692772bf7844da47233146f46bf7e12b48957c6efc14a40af",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L03",
+      "sourceSha256": "ac9f54b862342e3f8a4d7de9a9906838bb9203679be912833ce4b4977c0ba4fc",
+      "predecessorCanonicalBodySha256": "9c6356a716caa3dca8e2905afd8518425f9caf5ca5d6e60b64efd13d8a58a4c7",
+      "authoredCandidateBodySha256": "d7118ee1dd9448f3958066dc596498fc6aa53ec61a1bbd751bdd0b27d30fd226",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L04",
+      "sourceSha256": "b65400e330a9a2fcd80e5b2ae5fc192924db23f30ac998f1d22503c6eb2b87bf",
+      "predecessorCanonicalBodySha256": "873b6f8f8b5989b54104c280c682439b7fb348dc62d5bb114b5a57d1bbd42778",
+      "authoredCandidateBodySha256": "0f84b245acc24bab644c103d112d93bc926c212c744cefeb3390da0dbaf1058a",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L05",
+      "sourceSha256": "8777564d2d51038ab21923d7da5b3cd8bbcd668eef85d07a0e203452490ab103",
+      "predecessorCanonicalBodySha256": "12326f81af4213b3735fde9e6c0c43f828dbaa2d0eb5aaf8664a357b6bdb4692",
+      "authoredCandidateBodySha256": "e535206cb8eed4dc57587fc64ae15e0d6d4f374e8e9ab54409ed54ae767c4e7c",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L06",
+      "sourceSha256": "f44e19cf2a4cbc74872762ecd8463f53ff0f453ef04ce9153334a55b0cbe1890",
+      "predecessorCanonicalBodySha256": "2b60edf7feed32d2add0bd6bb42918e278ebadd078d9cdc686b6aacbec2dd95b",
+      "authoredCandidateBodySha256": "66bad513337e29ce9332fe82d1c35663936bb41dd382a77a649297a2b4486e87",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L07",
+      "sourceSha256": "7b9439fae7d635cd00df7fcd2478aed728ed1b9042dc36277a1187592ba7cae2",
+      "predecessorCanonicalBodySha256": "42ad5932fa46aecc71e842c7247a6e8068fb4f8973da434bc270b9adbcc9d777",
+      "authoredCandidateBodySha256": "0df52aec1932da243b74e98dd2658b332a79454ca15f0a99346c13d803d4cd64",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L08",
+      "sourceSha256": "6cfdd455aaa0550349ce976824247e75b0f052662e5e17c8b8e446daaf13b27c",
+      "predecessorCanonicalBodySha256": "159f18d25e2f974d2ff3ddcdef4f3ead16d02afedb4838c720a2f20ea480fa47",
+      "authoredCandidateBodySha256": "7a728b40ee018352046c5ca03b6dd7deb09aa4da149b46ded8b9e4b197c21b8a",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L09",
+      "sourceSha256": "53e9603590abfaa3d03357dae795455584b03c839ede56168aeeb778800ca3cb",
+      "predecessorCanonicalBodySha256": "03c08d18bb3f682028d041f0093bb2a146116d3bcedac556b915c43397881456",
+      "authoredCandidateBodySha256": "5baed1c63144b18c70f17f13648d961b20cd74d75368491d80f00adfbce97b7b",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L10",
+      "sourceSha256": "6acb0fffe55c3d1aa213837450f8b49a1678c8c9f30cefdc10b61dd6eadf1797",
+      "predecessorCanonicalBodySha256": "9c9c2f2579cbacbf83f4e76a176d09bd0f98415279f9f20a8209c927939cb1ae",
+      "authoredCandidateBodySha256": "477880c814448ffc4ff9dc8d6a70089deb743c2d9d0fdc0211b4080158e3a0b2",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L11",
+      "sourceSha256": "f7faf3be1d71e62f130022605c488ace1e4e9c39ed3f32cf75a1ad3a64a4b2d5",
+      "predecessorCanonicalBodySha256": "1b10eb3f181c6d550252b38592441415fe7e4c377f194dcd5209c54a344b0231",
+      "authoredCandidateBodySha256": "583a505c05994c84a784392f5647349c83869785d9f8f3633a230255cc11a287",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L01",
+      "sourceSha256": "06033a2aaaec24d3521d495cfd914ea4601c7f11cd44a9c8f21143a3bde4686b",
+      "predecessorCanonicalBodySha256": "5073c02baadeb39f54124ec7fc8bc910ea9ae797aab6df1458092b93fa27eef0",
+      "authoredCandidateBodySha256": "875f0fba50961b9d5fbd4381359192fd373b40b51a5851cf908ef4d48da52f03",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L02",
+      "sourceSha256": "5da47349d5eba33a0033133f74a9e195e44aa9eb6ff41d4d7c9383500aa72e33",
+      "predecessorCanonicalBodySha256": "264480c5e8ede3df214f5487b18235596c0e27b5aa51cbd88d59d5388f0b2824",
+      "authoredCandidateBodySha256": "a3e87b94cb9c342ce191ef739deeca71dfd9d9edb67d08cbc5edbb950464b402",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L03",
+      "sourceSha256": "ba57d0abafb0ad23a99af4d41515d08c0f28d711f4c5b71907de85ddc74a244c",
+      "predecessorCanonicalBodySha256": "5e046043621d5c29d733a38442d5d3261ec02f7d09335098a4c9cc29cb4951a1",
+      "authoredCandidateBodySha256": "f34be9be39f7b5eae94a61242e47bfbd84c79351c43ccae559569dfde88bc063",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L04",
+      "sourceSha256": "3a601b8ec78c9986d176d3a49cae933a77a37847cde70e967ef227f8180c7d87",
+      "predecessorCanonicalBodySha256": "7f17557b10358f1dc67fa50747910dc106a275f641aa1a259ad460d7ec6eb662",
+      "authoredCandidateBodySha256": "a3916f0d5f3e87384e8683d2106d8f1616f3b8ae8e9d8aeb59a5e7cf04c93aff",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L05",
+      "sourceSha256": "d9b5392d011e8ac629a51f3a6935eed026447a938f6c91f2850381cc74e6b2eb",
+      "predecessorCanonicalBodySha256": "167b925b607587dd333ffd5376b06e2b44dce6309f033cecfad46cce3537c3cd",
+      "authoredCandidateBodySha256": "74fc70ab09f7af82f2127f7c21b30995e86da6eb127ab523953ca90bcee3f11c",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L06",
+      "sourceSha256": "1d2a44829493551014b4392650d85b9bb4e58a63d90424f7affad61a9a6aaff5",
+      "predecessorCanonicalBodySha256": "79a4358a440d486d752b1c3d246c9749fdacec350c4f9e70b0cda4f2b8e80f70",
+      "authoredCandidateBodySha256": "9016d28d441e5d75cad7e6d7a947821310140970158e3b51d3e3d6846fe7bd51",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L07",
+      "sourceSha256": "07d02fb99e66fc69320421dde78444ef50b5095e7fb862573b50d43433143cf8",
+      "predecessorCanonicalBodySha256": "3cd19cc6e30a10b01590ade83c7a8a242870f5d6234903809f1fb6354e79032b",
+      "authoredCandidateBodySha256": "9a7cf55526659069a4f3644e113b917787af850aab7aaefd45b97ccf29531967",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L08",
+      "sourceSha256": "0189947fcb28e946ed77175bc60144874ec1ca862d87cf15147f7f1c0061bd4d",
+      "predecessorCanonicalBodySha256": "8c809147bf237f1909f45438ab0b60a50ce2ccf4a5097c2901ded27c58f1fdf4",
+      "authoredCandidateBodySha256": "27b2be03808e2e0d17b5ff655a034e557e9756aa1026fa5b0510ff409ea163fe",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L09",
+      "sourceSha256": "711d15d2df876cb6c940ad470b6e138cbe6112eb8a917d2bacfe023272efcf41",
+      "predecessorCanonicalBodySha256": "aec22e299aa5c1d18fff73588dc3db19ba4639917a72e38b8f08472b7f72da4c",
+      "authoredCandidateBodySha256": "b1d9c181d0fdfd2180abb12d1ada75d9bdbde2dc350cb41f61fd62378bdd8662",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 21,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L10",
+      "sourceSha256": "fd0516f90c3e0f00f2fd771671cf2bbe1ea713db44fcfa9ea4084809669cd376",
+      "predecessorCanonicalBodySha256": "29aeee1fa6015cc05b2049208b5f2c277fbf8559ea40a10c0d057753f326d12a",
+      "authoredCandidateBodySha256": "164f09e11366561c92a62959b311cc224b14175729a94fe4d563770bf39679bf",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 22,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L11",
+      "sourceSha256": "c1db43d6a295734b549fa242d888bf0edf017b6367381f1bbe8a848ab2d2ce12",
+      "predecessorCanonicalBodySha256": "4099874bf7f61ebd7e9c38bc39d5a3fbfd308cc4d973f2307d69dbaee0ceca9c",
+      "authoredCandidateBodySha256": "88a1d3877d3314652f7dbe850308f78c8d79882dcfc06a104d4e39929d6897f2",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 23,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L12",
+      "sourceSha256": "cd627f78a9565e22376b520400fd4a839772794668446cbdfdac1376d77d8eb6",
+      "predecessorCanonicalBodySha256": "adfed312d303539d886d4f9a31bf99e171f29ffff07aa0e287eca532f25141f0",
+      "authoredCandidateBodySha256": "85aa496559195fd4c82a604f9f3827539aa81d50ee8a611efa580aa4164adf3f",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 24,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L13",
+      "sourceSha256": "19b98c7f626630c8698b809d87664a11382b5a3206b6e4a6aae53efdf6558132",
+      "predecessorCanonicalBodySha256": "03d0b826cb1ff15c568f1ca01d031eeebc7a4139b372d15f0c1e567886bbdde0",
+      "authoredCandidateBodySha256": "1c3351aefc631718e6c2b02f52458dc6d3af74c4174d20536e0e88796fb9b425",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 25,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L14",
+      "sourceSha256": "a290b1c5fbd75ebfcabf8f06a04f74d8fa2c2c5cb00e02f018eaa2d1eed71552",
+      "predecessorCanonicalBodySha256": "89e2584cdc4a96c751f83f93571838141a32b8bef329bb6450da7983a113a946",
+      "authoredCandidateBodySha256": "50fbaccea3b2368293096647b920ef8b12aebec390a10bc3b1502358c51c3ca1",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 26,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L15",
+      "sourceSha256": "cdbbd062ca32edd6dc6fca0dd50de316d0873c5618d3498e91a9b29f6c3e6182",
+      "predecessorCanonicalBodySha256": "e20aeffb4ca8c5f652cb6bfdbb95642167587b06a9511fc920079126d406cace",
+      "authoredCandidateBodySha256": "ba0880e212aa00d35b8b52e49ebeab04a0d34493aaba47eb81d40f951bca7ee2",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 27,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L16",
+      "sourceSha256": "9adb39b7311b9d2f3e6e7960af3eb4a5fa107a1779a2d73b82f641202c80fca9",
+      "predecessorCanonicalBodySha256": "f1ef5ff49a33dfd4ca28bd2f210be47e96866c822641c7127a1862cbdca50ab8",
+      "authoredCandidateBodySha256": "3d4523363a653fb2b4f4a1693ea3fce5bcbc887feb59e50b95f663cc6b7e1b96",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 28,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L17",
+      "sourceSha256": "e9c5162a6ffd803015252d60afd12fb6d221393caa7c6ff10aca46a614cc8941",
+      "predecessorCanonicalBodySha256": "3315af016897966299ed734f0fd74d4a3e75f85b62ed4006444c9d91373127fb",
+      "authoredCandidateBodySha256": "3315af016897966299ed734f0fd74d4a3e75f85b62ed4006444c9d91373127fb",
+      "lineageState": "UNCHANGED_BASELINE_BODY",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 29,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L18",
+      "sourceSha256": "3ec01ea514d3a8d8edbd6bf1d5271079d0941e66e5558f508ce233ff5391ece0",
+      "predecessorCanonicalBodySha256": "7cbc61c03b9ab3dcd69a13aed4fd3b580850f54446795458174cfa5e3b9fc475",
+      "authoredCandidateBodySha256": "6164c056a6eaf34c45d3a95d7533f0caa964e7a25a96c303c408240140d01324",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 30,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L19",
+      "sourceSha256": "14ae3323d012fcfc94501b40a7e5b9974b3ff639037e8ee9c339a2d7ff341b3b",
+      "predecessorCanonicalBodySha256": "2a45827204d035902dce09c8a1a030394b496f10fc7e286033eb0784092e2e83",
+      "authoredCandidateBodySha256": "0b8666a408bc5fc76286ef0e44c616605df1aae16f0ccaaa7c089740f1d8b439",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 31,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L20",
+      "sourceSha256": "fd0611fed840cfcf06999cca9b0651aa016a244b987eb93a6f62def9d0bf67db",
+      "predecessorCanonicalBodySha256": "0ef33f2ac0fe2ae25fc653e1ec9d11831de2f96b12e9f5b67b88b13b76e77c6a",
+      "authoredCandidateBodySha256": "b31d5ad6ce6b03a53162c99ebefd720a7dbded9a213a534f6e522505683548ef",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 32,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L21",
+      "sourceSha256": "2d316a73886f1b8ae9721a3b0402f1739e865bdcd3c5a011e0b463fb0d14b646",
+      "predecessorCanonicalBodySha256": "e84a58098eb22422b329d4a7b7d1c87caa1ca36e56a5363650dc611a0c070901",
+      "authoredCandidateBodySha256": "7e35f62223d2ed645ac021d72adc4f9c486ba2f176547da0bbc717dc802822ad",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 33,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L22",
+      "sourceSha256": "b7cb142c70b03735be2b4ac2869f533fa597e43adf7f32a7c038751d4acc72a8",
+      "predecessorCanonicalBodySha256": "42d4c34530e16d1dcd33760a20aa3f61d27a5d11673eff9b200e74ec5871c218",
+      "authoredCandidateBodySha256": "fb823c1160d5bd589f146efc23060a61875cba819b9b17d9b799b2e2d5164d54",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 34,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L23",
+      "sourceSha256": "425d1db82b75818cf461ddabc6b07358519620058a0b572a1b2fccb9cb224451",
+      "predecessorCanonicalBodySha256": "d83a5fe0d7332441f1612e06b0c7afb560c7788d0d9ff81e854fbe67a14d4cd6",
+      "authoredCandidateBodySha256": "fea5b83cf96f655c901bae152b7dd471880063c43f4611344f8e7cda4d37e5b7",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 35,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L24",
+      "sourceSha256": "7d3505017789c25e9576f14b4f051a56a5e9725ec2ba3d11f35d80834afda633",
+      "predecessorCanonicalBodySha256": "4c77c3781fe5ccec10d105984bc27f4faa0ed27733376f025e8557c57f8e4d63",
+      "authoredCandidateBodySha256": "8cd2080cd9afa55ec6b4dfb157e79d429b5c613dfdcc2c26f7c6748114b30140",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 36,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L25",
+      "sourceSha256": "44820f488b5a4ef3a7be6d14c1d2f85d4a2602076d08f1366ebd03f4b821522e",
+      "predecessorCanonicalBodySha256": "e878e30721e1449c7021ce6791e2781becfe59426279324ca730967afce55b45",
+      "authoredCandidateBodySha256": "e70a80cb1916ea78e1725cdc7b0ac7bec61f3312c350526b02401f28eda0c167",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 37,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L26",
+      "sourceSha256": "56866ca1aa991e365510dc029ab37eb6b3f5a86d85b9a73d4f692ad241d38af3",
+      "predecessorCanonicalBodySha256": "5c8ca1b7a18030cddde759b276cd99f6984ee2fa131ca1b4e7e8d0759eb51ecf",
+      "authoredCandidateBodySha256": "d800de25d234b43ac7856a84472f70430d571142c22a650d296ff1fff76dd43a",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 38,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L01",
+      "sourceSha256": "20bed55c06c57e8063a9e5359996fad6552867315180f57fa7b2ab6d56733c54",
+      "predecessorCanonicalBodySha256": "70ec58567be68b5750f2d77c0560df3ae297269a75ac69c431ca0039b2c6219f",
+      "authoredCandidateBodySha256": "5360e6d898b3437fbc7664302a6b8e007e2cbe8720e12770578fd29c7bc1db03",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 39,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L02",
+      "sourceSha256": "f3199eb222d4d3beed782fa893b143424434e5a0a90639e8d4fd9b599eea282f",
+      "predecessorCanonicalBodySha256": "a777ef95c4f3002cabaeb4b4ff720fb26b8adc6198befe1f09d5548e8c8561d5",
+      "authoredCandidateBodySha256": "bcdbbb94c4a8539d1bab4c64147685d6e3db96092d06e684164048d5581a03a3",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 40,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L03",
+      "sourceSha256": "c125692376e07b818b7f409357f3068a546b01397c912578a098617d53cfebf4",
+      "predecessorCanonicalBodySha256": "f7302ec9f25bf6f67d62457f0f78e55798fd1fe32f75673ae1db0c273de334a7",
+      "authoredCandidateBodySha256": "e3607c89493f25fec375624518f6b279509bc9b26ce0726a10929e8c4f8869ec",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 41,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L04",
+      "sourceSha256": "ca0bb162578dbb219ea70b3be821a973eb90dc44e46501abe44263462db9cd62",
+      "predecessorCanonicalBodySha256": "c028a15f234261a9a0b69d244194eee2b7a759cad9ef817f28ff4af7f3de5ceb",
+      "authoredCandidateBodySha256": "3bd565708ba1a7f45529a55f708ee4f06dd17bd421ccb86731150cfbaec5b392",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 42,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L05",
+      "sourceSha256": "4c0018175c13da88d251732c4f3284de13a1d693f161ba1306b74184ec069bc3",
+      "predecessorCanonicalBodySha256": "efe2c73584bd3ae857e39f127216436f04354c71600158772a625e1e2f8602f3",
+      "authoredCandidateBodySha256": "e4bdefb301b3a13e935572557072efeb2ebb14621bba011f92aed21821387502",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 43,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L06",
+      "sourceSha256": "00be0b9e948aee94749a214aeda98044bc197cb51b1f6052a6aeedce81589013",
+      "predecessorCanonicalBodySha256": "9caa939757367f6222b0c14e25773ecbeb0a9a889ebc725131945124835429a2",
+      "authoredCandidateBodySha256": "940524e044e2ffbaf14a94ca1866189d28b39f91ceb0f1bdc1478cff9f192cfd",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 44,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L07",
+      "sourceSha256": "fb1131f951dd1188009abde6235918bc67b9e4ce5d43df08baab78f6a8bcb11d",
+      "predecessorCanonicalBodySha256": "df74c8ad38f12366d591550cf644be21cc5b452fec9f8f011ee30411bec45bb8",
+      "authoredCandidateBodySha256": "e4663483f93888afdd2db6005dc6d3b800c520621a1f9c0714bf570f0f4b0b27",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 45,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L08",
+      "sourceSha256": "289c68fc6b0023cf8e5c3c06ea89daff0988d8dbc055020cf114e22282467bcf",
+      "predecessorCanonicalBodySha256": "ca993c4450af515bf7f83b875892de1ca00fc7d2bb049c294efbf8156eca998e",
+      "authoredCandidateBodySha256": "b49585040531ea6a29d335025e7dff4613877adc70666cf8fea7264968ab0d38",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 46,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L09",
+      "sourceSha256": "0b9bc142042cfb3b99e556fba9bde321c8785d11a3015c3c1d8ec648703fb769",
+      "predecessorCanonicalBodySha256": "bd884f9b0780ace354d5f57ab7c8c451b72f8a1ba065dbd9076b1b234ab61e9e",
+      "authoredCandidateBodySha256": "116b19e2e24bedc61213abec6c9021db3e8e774cc5d96ce2caa5a665f36e22b8",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 47,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L10",
+      "sourceSha256": "2d2d00dcf9f3da528c9d1d2a8f471997e64901b33e893f4d2e0576a6964b083b",
+      "predecessorCanonicalBodySha256": "82f58961ded0284d0fc05a83e062290b3f20b6a688167883d2899920dc1bd316",
+      "authoredCandidateBodySha256": "5b2216f3cf368c316d3fca52b15a373bef39b347d57758a7fce7edeb20d5a581",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 48,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L11",
+      "sourceSha256": "f4f9ab8e935106622919d60d3643fc94f2e68d365f4ef6a753908b921d065602",
+      "predecessorCanonicalBodySha256": "e4348b92163d84350a524aecdac62c421b06b0ce26ea4bb3de5e2bb4b2bf9b5c",
+      "authoredCandidateBodySha256": "dd4a73a9dea253afec69347828efc78012cbfc0fcc1b96af5745b6bdb1b35571",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 49,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L12",
+      "sourceSha256": "c715e9e4f28ca1e71eef2d408ab26069f3fe9fb163e1a39cc3d066ea779e06ff",
+      "predecessorCanonicalBodySha256": "3b8f7661a521c61826f8917699f503839fc5dfc41960dc70713375e7665b3d23",
+      "authoredCandidateBodySha256": "41bc325bd89f00cb52c298e6b9eaa4c704ecb90cadc9ca88e2f793c4eae87b7f",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 50,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L13",
+      "sourceSha256": "27aad7e5f69f0f94e5bcec25a21759947ae1825220c3d45abd1f46153f27aa39",
+      "predecessorCanonicalBodySha256": "a0c2a31091cda37ac6e05e8d1954777046508e722df17c7aa0a3ce90b2c675da",
+      "authoredCandidateBodySha256": "e0e525f80fb6a7a73893988628a9ac464f40a9a83f3888b54b8d4513d6f6fab6",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L14",
+      "sourceSha256": "ef053af23edad7d4be85ecd2d4386edec28e7d8f73101cf068e0fafa80738680",
+      "predecessorCanonicalBodySha256": "b891c2fe656e77fe4703abac81b8c9a43b8c6873693669ee5628c879ac72742f",
+      "authoredCandidateBodySha256": "d0da68430da3e3622e6fe97879de0c894ecb2e815f8981c51b9c327cca188c44",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L15",
+      "sourceSha256": "3ce4a6033d002d0e8db93651d123383f176c9a03de89a529fef592d8eca74625",
+      "predecessorCanonicalBodySha256": "aa0d1d5ac420c7488ab7334ffa0ca3db38d8f85e27e23018c0e106a88de561cb",
+      "authoredCandidateBodySha256": "6be296ff36b4801d83c0af5f54b51b57e7806a99f8e886fb841e2937b75e8c39",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 53,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L16",
+      "sourceSha256": "630a72c4a997bfb0b18fc6c7a91e71450454210bd8b7522c6b8e14c77d8fe636",
+      "predecessorCanonicalBodySha256": "c1827da0b9006fed6d1cf5f09c7854a6377e97cc3eb95e6390b121131289003c",
+      "authoredCandidateBodySha256": "e603730f8e7fe0b3b51936a7c751687450476e12a3c9e963873d3a00520d9f2b",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 54,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L17",
+      "sourceSha256": "9fec0b3ea9e2b81f662d65203a2108db0562b98937dea2e9e1f2ac7ab6d9e631",
+      "predecessorCanonicalBodySha256": "ad135800f5fda910bcbbc92ea664940a6e8ceafaf33a94982e88ac9e588f8617",
+      "authoredCandidateBodySha256": "bc297cb69f392aef88b8f1f6891c50f20b69ba633eac501f0e1acd5061158c7f",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 55,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L18",
+      "sourceSha256": "c5239b7fb0422ff2bb055e21a65ddb1787ae778e3b5e820aac0bb71d4375de61",
+      "predecessorCanonicalBodySha256": "89c1ec6d2d92f87ecd6ca6cfcc8759188128717a52c5bd0cf023ed1788ff19e3",
+      "authoredCandidateBodySha256": "a43266d93eb297ba9a2513df801eb4c3593b8e07b3878b29f8ab59d3a75ab8d8",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 56,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L19",
+      "sourceSha256": "c0042f2dedc95ee732131fec2b8097491702f1a812e8bc0e096c184ae6a08f30",
+      "predecessorCanonicalBodySha256": "38266c4750cfc454df4a88b2d8b1106632dc7f1f5fd71cf6e88bcf83da83ac05",
+      "authoredCandidateBodySha256": "f4a9efc5b3fa415dd0bbdc27f23ec5da2b7000ad66cec3a9f2bb9d464bb1f42c",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 57,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L01",
+      "sourceSha256": "be4bc1e10975e8c27718b7d23b98659da193bc3c85f41ed831030dd749f9e648",
+      "predecessorCanonicalBodySha256": "3f3f8ac3990a66b98c776319ffc2ebea7bf129705d3dd4e5f8a1c7cb112ee985",
+      "authoredCandidateBodySha256": "a419db479dcd1b7d6a55756e87dedb051f4392e2a8957fce928f5be8bb93a6d3",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 58,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L02",
+      "sourceSha256": "8a5d299f5d75e6d1696e34e2ca8a61419a4ca524d5d3ab8b09af410c64724030",
+      "predecessorCanonicalBodySha256": "a89eb0d0c72893abd940b924c5c35a4a5f997c9570b09120b0c566668c893c2e",
+      "authoredCandidateBodySha256": "2a5678e3d372f48c1f7dc952eb03ccd25727561cc61e587e8e46c3fe251f334a",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 59,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L03",
+      "sourceSha256": "d4292a9f368c9c8a4844254f6526c095ae57abe9f4799e5e20399da8d240c181",
+      "predecessorCanonicalBodySha256": "b25897db17a7af951963727c1b6209622b0d035e975e62ecb90e7d25b01091c2",
+      "authoredCandidateBodySha256": "b3b89742baef117d2e9b7fba14499d4bb9fdd32a15cecc18da0dfc8bf2816bce",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 60,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L04",
+      "sourceSha256": "b41048c484612b770dafdf5838f357cfd179bf2a6a721ce0e01889b69dc9de0d",
+      "predecessorCanonicalBodySha256": "3ee0617a0c66678772ebe2110af85299e94a6d38a18afbb6a690d892021b95ab",
+      "authoredCandidateBodySha256": "f84e8c3ce48aeda39ea5b17df1cff1db6d7b7b0f2ab26ead2b4ba705fcaf9e53",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 61,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L05",
+      "sourceSha256": "57f4c9eaace8b6e8f1dbb98f72a2b43087f6bd5c8939b42c4f2bd36e3f3764e1",
+      "predecessorCanonicalBodySha256": "9289a454a59e6cc101fdf5b8c0b56449301dca6a999c0424ce5dc24b1476d0b8",
+      "authoredCandidateBodySha256": "14fb3474fb578106c5c011d3c9e7bdee8a8a864443c60c17535ec8a0d8253139",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 62,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L06",
+      "sourceSha256": "9bdd197ccdb13df7651a54fc38efafc7193ccb5efaff81d89c785d8565df529d",
+      "predecessorCanonicalBodySha256": "c32e3f562976d506ceefd6bdf9c0522638a50bcfd04fb2bfa5f07977d1feb21e",
+      "authoredCandidateBodySha256": "8a4756ac94abc982013cb97883c154f0ecc2d09d1322d0c31abb25ac26a006b6",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 63,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L07",
+      "sourceSha256": "2ba73dc8074e61ee68deaa8668945ee171c23453c60e39c21775ab3492f048a0",
+      "predecessorCanonicalBodySha256": "3545a0df733c5ad6d7278ec2e1792be1dbc3bf88a7598490a20a43ebe531bdd0",
+      "authoredCandidateBodySha256": "98e7b08d84c899a46190039f2f37104bdaf3f0e3068d7c31810479292e4b2a70",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 64,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L08",
+      "sourceSha256": "7fe4ecc95dcc91637a01703575e557ceb8b802f2e30a50577ca2e996786649f0",
+      "predecessorCanonicalBodySha256": "973ac0f8ef99014585aab8cf06bbbd8a2968a31571901324106c7ab5b11e6607",
+      "authoredCandidateBodySha256": "858046b903fc370f9460021c708a05183648a9078a862504538a9604d3de822e",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 65,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L09",
+      "sourceSha256": "17b5799480c6f6d05898a74d2e30460d11b2231739b63dc60920f72510ecb5be",
+      "predecessorCanonicalBodySha256": "9caba95afc49b3ac13fcb0ec75ba61a6a784a0c974d4c1e6fad76c8bb7cef5c6",
+      "authoredCandidateBodySha256": "4f4dae5f8dcae1403fdaad00359692490c889047c37ea7ba494d906f6006a988",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 66,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L10",
+      "sourceSha256": "102c0b238361083ae4b1ffd169f6f2504806aaacb2e998a0c86158c43e98cf0b",
+      "predecessorCanonicalBodySha256": "917d42c6328a598e006abfc74b8b347c307124d662ec7578af3985ffb45b4b64",
+      "authoredCandidateBodySha256": "649431f0d1dfc9208af6ef690b1de0eaf047b6b76e847926234b696b6b10feee",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 67,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L11",
+      "sourceSha256": "0bb4c9e8d83de2a76504b63ac39234aa7c2312f9bf7ac8ca196fed0783b639f1",
+      "predecessorCanonicalBodySha256": "99cbbf564a4817023e7001007f0ad04c5c96afa8e13cda6bb509013d9ab301ba",
+      "authoredCandidateBodySha256": "7ec93aa999abdf073a59099c76592792995aaaa6ab256d13f5a735b3baaa4d42",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 68,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L12",
+      "sourceSha256": "191bd6c694bd892f2790fab7238288220f0a99d6136f8df145292ea0b37040e7",
+      "predecessorCanonicalBodySha256": "9f3d3fab33b7ac72c16436e3f6b3f5949b1fad4910f74baaa29c859a36bb152e",
+      "authoredCandidateBodySha256": "b1c387d15ed433a488d2f8c0ffb0c9f5dffc95c406c93ba359a2997fb61aa729",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 69,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L13",
+      "sourceSha256": "52e4d647e1722001b6b241d3d9d9c11914d608e5b2df553df21afd20f3c15e5d",
+      "predecessorCanonicalBodySha256": "f9f7590ed9509f08c721329b35d797103cae46912a69813f3745e30f9f7f28bf",
+      "authoredCandidateBodySha256": "ee28fe9458d1fd63959d5e0ade85b68f32f8d3c9c1ab750257f19513756218dd",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 70,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L14",
+      "sourceSha256": "120ad8ec4175e7c96b5471e3e5a52c413a19595de958e3bfb3adecedbec736d8",
+      "predecessorCanonicalBodySha256": "851e4330a9da68a75158d5ab381dedfc43f9e1caa340b38a53a495de64a42695",
+      "authoredCandidateBodySha256": "e4f0c9ffe0e738984d8116acf2b85e55cad22b7c95678b2125a121d310290318",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 71,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L15",
+      "sourceSha256": "9e120a2143f3273a2b7f93faee70ea8e6713a8542695715da0c419e5eff74eab",
+      "predecessorCanonicalBodySha256": "f24092b9605cc5778e0a284fff189a9fc672d63c1a4df4882f19e75432aabee4",
+      "authoredCandidateBodySha256": "aa2c405705180c96dd3a2656b3c5816076df896d15b4e858dd587d74a1373b7f",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 72,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L16",
+      "sourceSha256": "729eea1b291cf016eaafb26b55d03f021b4bf289c5ead63a92e23858dd27fdaa",
+      "predecessorCanonicalBodySha256": "0cebd01368498c4e2cbb367e9a834292c10a299d95697b68d328a51d649f63b7",
+      "authoredCandidateBodySha256": "1334a10b62e4399113b16ad028ce3cdb4e1e5bef5c24d09f9499704739a4e8b9",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 73,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L17",
+      "sourceSha256": "d279bbf8b0a2306d76f3e2d173109cdfc9df25dcf5cf7aff27966ec30ead44c2",
+      "predecessorCanonicalBodySha256": "3dfe5c4b3b9856c72030f4aa3250d2dc1e664b0eb48082ceeaae28bd96347c83",
+      "authoredCandidateBodySha256": "1fb8b168e94d1c6873bb414fa7cd1f92982aec49268efade3599207607ea514a",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 74,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L18",
+      "sourceSha256": "14e694d39e344f48f0321fbdf1306dd198c62dfb08e5010adc9e94462ea20113",
+      "predecessorCanonicalBodySha256": "37e3d56cefea0dce69b64e6b3dc0cfa1a02b63e3329ddd9ab84652bc7fdeaf15",
+      "authoredCandidateBodySha256": "d55015cba1b27232a4a07d734da4903f05bf5b9307509803ea2fcc654cc8e637",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 75,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L01",
+      "sourceSha256": "a79ac32362199bfa60428a3e1aaa888c9066fca7403a9e1d2f925132a88d32d6",
+      "predecessorCanonicalBodySha256": "e3d169432e675d6073338a251553c0495d2b7f66957c4ef53926f200a372a4a7",
+      "authoredCandidateBodySha256": "f0999b0fcb55695f5d703eede1eb36fdc584896a9a86d8e86b8e3ef9a207c41e",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 76,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L02",
+      "sourceSha256": "5f67b44d52ab8e6a39f400592fabb6c6d90367577e7a75d2f0a703055d768937",
+      "predecessorCanonicalBodySha256": "726786d9d3f393af1efb152fd9d51eee8a50ed6faef42ae395625fcbb8112535",
+      "authoredCandidateBodySha256": "ef81ba0afa1fa942c416570dc8b680971905aa7b73de33bf0490dfd088a33345",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 77,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L03",
+      "sourceSha256": "a5da6aa490995d28c9707f287a3952c2e5b698e3bc4d3fd9538b82c86a22374a",
+      "predecessorCanonicalBodySha256": "65c375a8232d327bbea9760a0dcdace1b8154ba5155cb6e1f9c1a7e07df23b40",
+      "authoredCandidateBodySha256": "a7fba8b059f2b683ae2b0eafc24bb529f689e4ccf8aac92fcdf5038140fc2ade",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 78,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L04",
+      "sourceSha256": "040f47f23e0019da718cfa8eda2a656633294cb6b50aca16dda852f43f7ba866",
+      "predecessorCanonicalBodySha256": "27f0c73429cea235ae51925aad7ade1df75c656bf71c2097712766a5e4e8fdb1",
+      "authoredCandidateBodySha256": "837ef3785293f677e7fabad8f5a831795cf38b2dd56240aa62085f8099436afd",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 79,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L05",
+      "sourceSha256": "603fa1acaf6def4b117412faf05bf3f007ef228d441650993df6e121aba39df3",
+      "predecessorCanonicalBodySha256": "ae6dcb45b03bdda7cf754f4be56de18bee78bb7eddce7674f58e16b48ce64b6c",
+      "authoredCandidateBodySha256": "b6daac4b5308b91db2293bf0ccd1633df38a6a96526d6501b8c37d35ab6ff6e9",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 80,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L06",
+      "sourceSha256": "436a7f863ba6ae49d727b2a36a77bdc55ad0ec1da5bba7e49955c8cc62b1926e",
+      "predecessorCanonicalBodySha256": "4bf8a6a66e6bf94a36e655749bc3fc39a1e0e0b59fa7e8d3cd8a8faa5fd07e1f",
+      "authoredCandidateBodySha256": "4aab4235070464f74dcba29832176475b1d34f5244eb39f2e3fdf2968772b92f",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 81,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L07",
+      "sourceSha256": "0e20250182442945246dd2f53c77d5a8c49d141004015f03a66f9a4053372967",
+      "predecessorCanonicalBodySha256": "3a5cba12722530285e5983624931e541dae47b376fa537e6de9457ff269bf637",
+      "authoredCandidateBodySha256": "9248295d3fbcc0322b804e71a459988152f111bfac07a996bbe68beb8bec10ef",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 82,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L08",
+      "sourceSha256": "c107604dc7087459ff40de3d6946e668772db323aedbbba4048b6ac44666d4ed",
+      "predecessorCanonicalBodySha256": "3afa4e6355cf91b2ee85a14d048b8bd4599d7a9c3c298d845b7d94d8695b9539",
+      "authoredCandidateBodySha256": "7bf23b5d1be3aecde68dcdab124795a49f0a1387082bd727cf334ac1eb2ebdc6",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 83,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L09",
+      "sourceSha256": "3bb58c8a0284b3aa907a95904cc94b3f964806f426f99a2d4ba6870d8cb9719d",
+      "predecessorCanonicalBodySha256": "42e2161e08a3654bd0361d7321066051cc9c69d1a22bb7d35492e922c4c5ff96",
+      "authoredCandidateBodySha256": "15432c3543740e613f889e16f91c1682eb6db4c56b59a5afcce1a7c3c8105d3f",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 84,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10",
+      "sourceSha256": "e179a39196685a7055c257ae3eab85a2e6b80b4ab49864fb6b9251b8d349cf77",
+      "predecessorCanonicalBodySha256": "6ac21cf73b77c5246ddd1ea26d0734207bcc3c78efc9bb8f02fc2d5c48fe736d",
+      "authoredCandidateBodySha256": "7a5b882e7a31f37842f68c43126119886085a62e35ea821ef6aae33c14792c60",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 85,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L11",
+      "sourceSha256": "4b031e087c7b6a586efc0e34183b51f2ff493d65918ea8c415be44a672a20f18",
+      "predecessorCanonicalBodySha256": "bce7b6f8afc2344ba59fc2b45581e8526d2955d60bcf2cd20abe86bdc6e77f95",
+      "authoredCandidateBodySha256": "eeaae055c80e7d618d9bef5b6bc9a25efe0ea7240b82b3f250a5adf3a63c075d",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 86,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L01",
+      "sourceSha256": "ae83d41c57bac98158b7e60bf55e7992ede3afefe7467e28233d461241f280a9",
+      "predecessorCanonicalBodySha256": "48f1fb11c60debb92e7e311bb7fe1c8ac151ae30f6700726f8563436abc4ad38",
+      "authoredCandidateBodySha256": "05fb00f392b2e3bd51a051706007e1a7a3df37585d2310a6679db8fcb291ab28",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 87,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L02",
+      "sourceSha256": "ae5cf85867de7f05d2fb31b63b4c26e25f93fb1ce97263a7c499be13417111a7",
+      "predecessorCanonicalBodySha256": "405730ed5d7cc178bc29f7aa8e527d8530d4043faf057db7e545b37e9a134180",
+      "authoredCandidateBodySha256": "cbfb63779e44d20e18d71dc0adb2c62a5124c4809fa9d5c6896ff5cde5c2bd88",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 88,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L03",
+      "sourceSha256": "949047aaa24effce6c2ca7c6dabfe9b6bb46aa4e485a63f315f9d4039f2b812e",
+      "predecessorCanonicalBodySha256": "3d70e2608bb221f5f6b043c48cfe4b770c1bd8862f41cd6ba91c303b1e3f2933",
+      "authoredCandidateBodySha256": "9b34db67b40bfcda7a39fe973239b5f7d901072fdfb6fa7d8116c7fc49daa127",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 89,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L04",
+      "sourceSha256": "f2590d06ac51fe721fe092f05c45194781a6f521add4c301ab4744b90dce56c2",
+      "predecessorCanonicalBodySha256": "a9a4a1ffeabf12079c4f3dc162833a735bd1c7e7c52f40166803c6b0ad47336d",
+      "authoredCandidateBodySha256": "d1b02fdfd3f68fd0ef2af67ba5f54ec95330b6b7bd1e02cb37f03c456569a626",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 90,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L05",
+      "sourceSha256": "805fa707e3f34feed6bb0e0f84009fca5fc670649945303c49074863aeffb4a4",
+      "predecessorCanonicalBodySha256": "12c6f6c6b7dd40ab2c9785b7054317f52a88f65e6269bbfa9aea8f0963ba9fbc",
+      "authoredCandidateBodySha256": "5a37279cb0575e9c9e8d9831bad37425818aa24911746f998886c020c0f9dba5",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 91,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L06",
+      "sourceSha256": "ed105023075187a4578dbdbac93360052395ad72d02b2534b7ce319a556071ca",
+      "predecessorCanonicalBodySha256": "12c053c680c09d423944ba46b2283c19893b430336a0c1d340bd02250b1cd491",
+      "authoredCandidateBodySha256": "f297c99e8b61f039652057f7d47a7972f22d5cae71e051919316771513b89f53",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 92,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L07",
+      "sourceSha256": "ddeae628095517db1ee88bb6518586532f58f1207febbe5cb0c0432a73292fa8",
+      "predecessorCanonicalBodySha256": "de465fa1c6833aa9914e84f0a8767a7d383a3d99ded9a8fc569c171c3f5a581d",
+      "authoredCandidateBodySha256": "69d1dd04e158e9f83743a8e10c66d50da38fb3ee792cbf2806733cf6e3a58cc7",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 93,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L08",
+      "sourceSha256": "bd4ab4cfad6068f48d9abdb7685c09660bbceb3c4bd6576819b60dbb568789a5",
+      "predecessorCanonicalBodySha256": "166b0f50d5da552bb4066fe6e2eb0b7eac21a98f4427fcf19fb8fbf9e623a247",
+      "authoredCandidateBodySha256": "27026a40d0f43898cb48528ded35297c0269ae905497423cb4fa6cd7645c08e5",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 94,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L09",
+      "sourceSha256": "ebebb13521f5023800bd9f8829a38b3e793d1fa2c0addf90f650a92e1deac7ec",
+      "predecessorCanonicalBodySha256": "26101c9118f7e1cef153fc23693c04cd9ee8e7cf3619d1eba870e45f78a24e87",
+      "authoredCandidateBodySha256": "966c4237cc3076d8dcddd6e1854d06680029fccfe5b3d5714a040e08a392d7ad",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 95,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L10",
+      "sourceSha256": "db05eecb036d8ea88886f96c906d8c7139579c8f69c8830f5dfad580e0e285c9",
+      "predecessorCanonicalBodySha256": "022a227bb41d75fe2c7a2d2c173f8cf9c8d3697fb854efcd2cec373eef754b5d",
+      "authoredCandidateBodySha256": "66af481154def6609b5e483cab372cb702dbc1b1b85ce03bc8551b1f8b6ae064",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 96,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L11",
+      "sourceSha256": "6f63da4659fa783da40b5913bf5ac8e530d7e30823c291affe8a991d7ac26c18",
+      "predecessorCanonicalBodySha256": "634c55f55316c3588e44711e5c981be22a08b7d61bb61066cc0c6b5de8208d61",
+      "authoredCandidateBodySha256": "69c6824fd519743822f9819992df4fc4e5caf0cf93df3619b30f74b8c92ce058",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 97,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L12",
+      "sourceSha256": "bd604e1ab247aa1b870dec57e736d030103eecc46238e8aca25afd145e494611",
+      "predecessorCanonicalBodySha256": "05957a2d28ddcd575d0d69a4ca29b745480804a7635daa619b3c070d7fea6da6",
+      "authoredCandidateBodySha256": "d60884246ed869b036f976f17ec73a4ec83adea8e4e644b4b27002db736a2d02",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 98,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L13",
+      "sourceSha256": "e66bb6addeb58fbc5b898e3cbf5fbe49650f4bac2dad80a8bb3b28cd3e234aae",
+      "predecessorCanonicalBodySha256": "95d1782a83554d943fe36515c88525e1bcd034ac50d6911cbf3b1c4561bac3fa",
+      "authoredCandidateBodySha256": "39da332194ae3a17ca3ba43d6fe4a1c1362197b011fb561d3aca2df1b20d8f53",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 99,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L14",
+      "sourceSha256": "d516668a8db95bcd2eca7201f46d0f0de94534916163942ae1e07d4c26c27a1b",
+      "predecessorCanonicalBodySha256": "75bbca42538b3eba2e0efdf61b2799076c30a5aa9d96fef78b62e55223afe469",
+      "authoredCandidateBodySha256": "3f5c6b01d9c723f3a5afe51ddb0eb4330e8f7d7846e15246495599e7654e15a3",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 100,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L15",
+      "sourceSha256": "76809c7136d6ba7f9488607409e774a1cb7cc40b710f8e211ce37accf47c7093",
+      "predecessorCanonicalBodySha256": "269fba88995fb97332144596681a21c443cfd3ac6c77ae29237c8466c23651ab",
+      "authoredCandidateBodySha256": "f09e5cb54013b8b638380ce1dacbd3accc477fe58ebe7acaa222d976908b91b7",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 101,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L16",
+      "sourceSha256": "d048bf611ccb05f5a9bc908e7e7b32996da0db6c153ee9b17b0a93ffba2281a1",
+      "predecessorCanonicalBodySha256": "76a498b8767f4bab10a0b7d637db165a78544b3761d2a9ddddd6878d41402560",
+      "authoredCandidateBodySha256": "ebcf7eac4bf0cff7cee4254212c6748326726243a05c99e90b9c65e314cf5787",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 102,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L17",
+      "sourceSha256": "f72d983bf26cbf1f1891d8c66d9ceb04cf65720852469b9fa13240f54b283d29",
+      "predecessorCanonicalBodySha256": "7b35ca4f15fca0e52d6922adec6540c136b9a1f30353ccd42f4778b72b1d1c4f",
+      "authoredCandidateBodySha256": "e2b93e49ba220bed1c64fe3dc192d7b06ccca22de0ad60c6e735bfb694b38cb5",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 103,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L18",
+      "sourceSha256": "5d69f1a8478b4f38a267659eeeeeb64d26faef322a6c98fa06e5795ab86b8842",
+      "predecessorCanonicalBodySha256": "96f095933bd788b0c27048fbb91b3505d9bcb17adee2e6f180ad89234bf112d7",
+      "authoredCandidateBodySha256": "8ab94e9aa09026187706bdc491e83ba521331649c5c6837472ebfcdbba9d9547",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 104,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L19",
+      "sourceSha256": "57c9be65470e058c9b6f8a5e723454be5af7400ddf4b471338e44477bfd4337c",
+      "predecessorCanonicalBodySha256": "1aadb8c5b256ffb2947f57f8402552084d52cd2d7e9618ae6dcbeec41cecdd1e",
+      "authoredCandidateBodySha256": "f843261547ed69af7cf2122ac38dd9107aa0a9c44f4b0cb7a9e23ac531ef8fe9",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 105,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L01",
+      "sourceSha256": "783f8516a7e1fec117575a7ca1a2a5c1aa26fac7202aa9e2f743b762e1dea5cb",
+      "predecessorCanonicalBodySha256": "6030ed06fa1bc61c8fcd1f5e8ab97906d4b87ef039510f92a834825520d6499d",
+      "authoredCandidateBodySha256": "ebcbf35b1b5580579215598553600cf91055e9f6a7671582ffc1591003bd43d4",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 106,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L02",
+      "sourceSha256": "d2f6365bd08896ca834933bac7d50708ea4078e4c78c630933b8d6144111b8cf",
+      "predecessorCanonicalBodySha256": "f21ea3112f7d96f1cfcf5fe1aec57311d2d607537cbfb129bb55180bb51ccc70",
+      "authoredCandidateBodySha256": "cfcedee79bf4a7256d9acacb5fcbb9629b72da0947b6055de52de0f51d7b7bce",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 107,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L03",
+      "sourceSha256": "07d49a7f5391bfd973164099680de02dce970838302ba6d3f0b69c4715d4f5ba",
+      "predecessorCanonicalBodySha256": "e294f0258f556d746afcaca514b57715b54eb10aa743905c51b0b27d0eb139c1",
+      "authoredCandidateBodySha256": "acf9cb097f0f89800bc76b7c2b8594db8fbf3a809bcc5a477706fc001cd26887",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 108,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L04",
+      "sourceSha256": "569d9e513f814d875810b73c4485504d6f5959fd6dabec645eb67ba4c7ffa139",
+      "predecessorCanonicalBodySha256": "00372d6149d88ba4aa5af3e436eaf71b3b8194170fb081b783a373a6ddd9348c",
+      "authoredCandidateBodySha256": "7bd8e51a864e25caf9bfbd4420c3b0242d9e059dda64ceacecba99c5011db2eb",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 109,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L05",
+      "sourceSha256": "a0b506ba109958f9a8b6412dc0462d78778f6cee130b2cc1e68ff717ec040772",
+      "predecessorCanonicalBodySha256": "372e061a46ef9e072b811863bbf3246673c8f31f3f6c01c3be680dd1b5a65014",
+      "authoredCandidateBodySha256": "81cf33a2fa95f7706c09863ca4c04756320edc16a10d4ee2395118fb027d2087",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 110,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L06",
+      "sourceSha256": "c86c296c6a76bfd21192ccfa52a8c792a8e3b71268f3a10efcb76cda9407581d",
+      "predecessorCanonicalBodySha256": "45902efd62a18cc2daad0fb910a49eb02b9c0b8b0dfd6900fbc8bdae56434da9",
+      "authoredCandidateBodySha256": "08632788ebedf9d46e3a256ad8ac86495037173acdb4c9e05bbf5af1c79d6b77",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 111,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L07",
+      "sourceSha256": "0b550301e16ec1bd39167fa8b15bd1ce9fa6b4aa037201723bc84283e6c64b44",
+      "predecessorCanonicalBodySha256": "bcb54648cceb644fd683b2c7bf4b892ba54402cf0b5e7cc2e2ffa2242b80ff58",
+      "authoredCandidateBodySha256": "7759dfce00df3c548faa05f39eb56040c510180f54402f2aef1a6f72ea98f508",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 112,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L08",
+      "sourceSha256": "fab011bca7b26bcfbeb18a2c547b2fb8af3f4526120797ee458e06f6aaae9f37",
+      "predecessorCanonicalBodySha256": "95b81206bdcec9bd29d5c3e343bd28b31408c559ee90b30f5c3915f690ffda4e",
+      "authoredCandidateBodySha256": "7c9b42e26c31b4951a0e1fbf0b3f662bf7dd2729b1882efc6ae247bbd28b96e4",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 113,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L09",
+      "sourceSha256": "26895d4ef29cb67c18a38e1f40403ff8c60cfc1dad4b447fd5ec7b3607d89999",
+      "predecessorCanonicalBodySha256": "4917c9a1e49e151b34ea382ebd2879cdde28e29e9e1e21f83d34470019bec6a8",
+      "authoredCandidateBodySha256": "902c2f489244c185eeed607b0950ebb56c44480712f43dd1ca9b06ff1f255c7b",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 114,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L10",
+      "sourceSha256": "9a59ff535ac51fee1b01ccf03d391d941a81f58c4ba2256cfdebcdb042203abe",
+      "predecessorCanonicalBodySha256": "fc6bf8ad354ecb83bbd4127abdd82095cca0a6727582af073054db8fe76a9da0",
+      "authoredCandidateBodySha256": "846ff3a62b1317959a1b1bed75110895ddc8b93f2a55e8512dab92179281eaea",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 115,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L11",
+      "sourceSha256": "a53a68853f38dd14a2c5b00ff0fa309e167ce6ba56d6b7fcce2d605dfee8e079",
+      "predecessorCanonicalBodySha256": "768fbfbab34c9954149d9c45637de88ac6fb7a33333c256f66f358477b858a16",
+      "authoredCandidateBodySha256": "b5c8a488a52fd23ec39af41430fd5f4cd6b652d2f830a65d33bbe4e870d6015a",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 116,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L12",
+      "sourceSha256": "f5c5e8dd77b535b8a8198ee0a7a80415cd6e909287141555d44916028a05d13f",
+      "predecessorCanonicalBodySha256": "7a1a54a967f0a70aee0c007570c59a8e85de0fed6452440f6e510557a98f4a3d",
+      "authoredCandidateBodySha256": "0bd003e9c7f71b2f5deded259b7e1e8ee46fb6e8476125be61ebf04d808337d1",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 117,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L13",
+      "sourceSha256": "e6f85cca6be320b10c1186eb020e1459ac1870ad756955d8a4ae25486f78b4e2",
+      "predecessorCanonicalBodySha256": "ff592113431d37f5acd0da403ce85a129c16efb1eedce52e1cba0544fdad79b4",
+      "authoredCandidateBodySha256": "07580a972620cc35ec21f1162cd7ea1d1e960b4a00d36631ad36ee2b64743d6b",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 118,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L14",
+      "sourceSha256": "aa6c762a9551d8c5b1cee95f3a5683b1e9977ad18d192b8469f5edbbb251aec9",
+      "predecessorCanonicalBodySha256": "231843340203950ad9be0232bb77e0aa0b135ed65f4a5b0a6c69d3a766a1c74f",
+      "authoredCandidateBodySha256": "7ab59f460eedacf58f67cc48f279d437630b259ac634f46646b5ccc65f38e8ca",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 119,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L15",
+      "sourceSha256": "f49ea59d424c0010617e17514df8698d44b194ccba9dd1af0b3efe5bca056f36",
+      "predecessorCanonicalBodySha256": "3af23f3c4b5c5ec1994c18b8d0af9631ab3e4317a1c873e32dc9974aa5eb7508",
+      "authoredCandidateBodySha256": "310d2859378d86f34f8402829b938126671961b3e14a74f898254f65d81ee72e",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    },
+    {
+      "ordinal": 120,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L16",
+      "sourceSha256": "aea59a82807ad3c443361edb0462371f4f964e94600fa11749e764d4b5c1b258",
+      "predecessorCanonicalBodySha256": "a51e61cc21d20754acc0c7ad1045e1155c4b6f7ea368ae9514a5aebf6331ffd6",
+      "authoredCandidateBodySha256": "c6e05d36bf6c28e51622536e0ba64fe86eca4fa78f26be5f3bbf1939485fb274",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
+      "academicAcceptance": "NOT_VERIFIED",
+      "runtimeAcceptance": "NOT_VERIFIED"
+    }
+  ],
+  "auditLastRefreshed": "2026-10-30",
+  "auditLastRefreshedScope": "U05:L10 First Edition activities 10.1-10.3 and source summary; not academically approved"
+}

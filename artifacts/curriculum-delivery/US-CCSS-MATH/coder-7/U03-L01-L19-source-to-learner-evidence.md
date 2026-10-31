@@ -1,0 +1,53 @@
+# Coder 7 — Full Unit 3 source-linked learner teaching evidence, 19/19 source-comparison rows
+
+Course: `US-CCSS-MATH:HS:TRAD:ALG2:IM-1E`. Original publisher: Illustrative Mathematics Algebra 2 **First Edition 2019–2021**, CC BY 4.0. Every teacher preparation and student lesson page below was inspected before first-party original learner explanation, worked example, domain/notation, steps, misconception and summary were committed. This is original Edulytiks adaptation, not a publisher answer-key copy or endorsement. Original LessonCode, standards formal target evidence roles, source link and source digests are unchanged. This is not academic approval or effective published content acceptance.
+
+| Lesson | Locked First Edition teacher/student evidence | Source goal addressed in original teaching | Blueprint publisher alignment role | Formal target/evidence category |
+|---|---|---|---|---|
+| 01 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/1/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/1/index.html) | Explain integer exponent rules and zero/negative exponents with nonzero-base restrictions | BuildingOn, BuildingTowards | CCSS:HSN-RN.A.1 (VerifiedContentCoverage); CCSS:HSN-RN.A.2 (VerifiedContentCoverage) |
+| 02 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/2/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/2/index.html) | Use square/cube area and volume models to interpret exact root lengths | BuildingOn, BuildingTowards | CCSS:HSN-RN.A.1 (VerifiedContentCoverage); CCSS:HSN-RN.A.2 (VerifiedContentCoverage) |
+| 03 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/3/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/3/index.html) | Prove unit fractional exponents equal square and cube roots | BuildingOn, Addressing, BuildingTowards | CCSS:HSN-RN.A.1 (PublisherAddressing); CCSS:HSN-RN.A.2 (PublisherAddressing) |
+| 04 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/4/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/4/index.html) | Rewrite positive rational exponents as radical powers and estimate from graph | BuildingOn, Addressing | CCSS:HSN-RN.A.1 (PublisherAddressing); CCSS:HSN-RN.A.2 (PublisherAddressing) |
+| 05 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/5/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/5/index.html) | Rewrite negative rational powers as positive reciprocal radicals | BuildingOn, Addressing | CCSS:HSN-RN.A.1 (PublisherAddressing); CCSS:HSN-RN.A.2 (PublisherAddressing) |
+| 06 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/6/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/6/index.html) | Distinguish squared-equation two roots from one nonnegative principal root | Addressing | CCSS:HSA-REI.A.2 (PublisherAddressing) |
+| 07 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/7/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/7/index.html) | Recognize extraneous roots introduced by squaring and lost negative squared roots | Addressing | CCSS:HSA-REI.A.1 (PublisherAddressing); CCSS:HSA-REI.A.2 (PublisherAddressing); CCSS:HSA-REI.B.4 (PublisherAddressing) |
+| 08 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/8/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/8/index.html) | Compare cube and cube-root equations and unique real solutions | BuildingOn, Addressing | CCSS:HSA-REI.A.2 (PublisherAddressing); CCSS:HSA-REI.D.11 (PublisherAddressing) |
+| 09 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/9/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/9/index.html) | Solve square/cube-root equations and construct zero-, one- and two-solution examples | Addressing | CCSS:HSA-REI.A.2 (PublisherAddressing) |
+| 10 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/10/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/10/index.html) | Explain why x²=−1 has no real root and justify extension beyond the real line | Addressing, BuildingTowards | CCSS:HSN-CN.A.1 (PublisherAddressing) |
+| 11 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/11/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/11/index.html) | Use imaginary unit i²=−1 and represent non-real solutions in a+bi form | BuildingOn, Addressing, BuildingTowards | CCSS:HSN-CN.A.1 (PublisherAddressing) |
+| 12 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/12/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/12/index.html) | Add/subtract complex numbers by components and derive the four-power cycle of i | Addressing, BuildingTowards | CCSS:HSN-CN.A.2 (PublisherAddressing) |
+| 13 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/13/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/13/index.html) | Multiply complex numbers distributively using i²=−1 | BuildingOn, Addressing, BuildingTowards | CCSS:HSN-CN.A.1 (PublisherAddressing); CCSS:HSN-CN.A.2 (PublisherAddressing) |
+| 14 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/14/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/14/index.html) | Practice complex arithmetic and periodic i powers with precise explanation | Addressing | CCSS:HSN-CN.A.1 (PublisherAddressing); CCSS:HSN-CN.A.2 (PublisherAddressing) |
+| 15 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/15/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/15/index.html) | Ask for missing data and recover a complex factor from product real/imaginary equations | BuildingOn, Addressing, BuildingTowards | CCSS:HSN-CN.A.2 (PublisherAddressing) |
+| 16 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/16/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/16/index.html) | Solve real quadratics by completing the square and quadratic formula | Addressing, BuildingTowards | CCSS:HSA-REI.B.4 (PublisherAddressing) |
+| 17 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/17/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/17/index.html) | Complete the square to find non-real complex conjugate roots and classify solutions | Addressing, BuildingTowards | CCSS:HSA-REI.B.4 (PublisherAddressing); CCSS:HSA-REI.D.11 (PublisherAddressing); CCSS:HSN-CN.C.7 (PublisherAddressing) |
+| 18 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/18/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/18/index.html) | Use quadratic formula with negative discriminant and verify complex roots | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-REI.B.4 (PublisherAddressing); CCSS:HSN-CN.C.7 (PublisherAddressing) |
+| 19 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/3/19/preparation.html) · [Student](https://im.kendallhunt.com/HS/students/3/3/19/index.html) | Construct quadratics by real/non-real root category and explain discriminant/graph evidence | Addressing, BuildingTowards | CCSS:HSA-REI.B.4 (PublisherAddressing); CCSS:HSN-CN.C.7 (PublisherAddressing) |
+
+## Independently checked mathematical proof points
+
+- **U03 L01 (Properties of Exponents):** 2³·2⁵=2⁸; 2⁵/2⁷=1/4; −2⁴ differs from (−2)⁴.
+- **U03 L02 (Square Roots and Cube Roots):** 25−4·3=13, sqrt(13) is exact square edge; cube root 50 between 3 and 4.
+- **U03 L03 (Exponents That Are Unit Fractions):** 9^(1/2)=3; 8^(1/3)=2; 7^(−1/3)=1/cuberoot(7).
+- **U03 L04 (Positive Rational Exponents):** 5^(2/3)=cuberoot(25); (2^(1/3))³=2; (1.26)³=2.000376.
+- **U03 L05 (Negative Rational Exponents):** 9^(−1/2)=1/3; (2^(−2/3))³=1/4.
+- **U03 L06 (Squares and Square Roots):** x²=4 gives ±2; sqrt(4)+sqrt(9)=5; sqrt(x)=4 gives x=16.
+- **U03 L07 (Inequivalent Equations):** x²−1=3 gives ±2; sqrt(x−1)=−3 produces extraneous candidate x=10.
+- **U03 L08 (Cubes and Cube Roots):** cuberoot(−64)=−4; cuberoot(t+4)=3 gives t=23.
+- **U03 L09 (Solving Radical Equations):** sqrt(a−5)=5 gives a=30; cuberoot(a−5)=5 gives a=130; sqrt(x)=cuberoot(x) gives 0 and 1.
+- **U03 L10 (A New Kind of Number):** i²=−1; (3i)²=−9, so no real square equals −1.
+- **U03 L11 (Introducing the Number $i$):** ±3i squared equals −9; ±i√5 squared equals −5.
+- **U03 L12 (Arithmetic with Complex Numbers):** (2+3i)+(−8−8i)=−6−5i; powers i^0..i^8 cycle mod four.
+- **U03 L13 (Multiplying Complex Numbers):** (8+i)(−5+3i)=−43+19i; (3+2i)²=5+12i; conjugate product 13.
+- **U03 L14 (More Arithmetic with Complex Numbers):** i^100=1, i^38=−1; (1+i)^8=16.
+- **U03 L15 (Working Backwards):** (2+3i)(a+bi)=2+16i gives a=4,b=2 and verifies.
+- **U03 L16 (Solving Quadratics):** x²−6x+7=0 gives x=3±√2 by two equivalent methods.
+- **U03 L17 (Completing the Square and Complex Solutions):** x²−8x+19=0 gives x=4±i√3, with −3 square remainder.
+- **U03 L18 (The Quadratic Formula and Complex Solutions):** x²−12x+41=0 gives 6±i√5; 3x²−10x+50 roots (5±5i√5)/3.
+- **U03 L19 (Real and Non-Real Solutions):** 2x²+4x+4 roots −1±i, while 2x²+4x+2 has repeated root −1.
+
+**Verification actually executed:** `node --test` with the byte-identical course-owned test file `tests/coder-7/UsCcssHsALG2120LESSONS.U03-early-math.test.cjs` (Git blob `a540aa2a2efc7aa9135b31a85cc7fc913e71556a`) passed **9/9**. Separately, `tests/coder-7/UsCcssHsALG2120LESSONS.U03-complex-math.test.cjs` (Git blob `4d28abf57bd37dd2c0e85735c1fdba13941cf4aa`) passed **10/10**, using explicit real/imaginary pair arithmetic and independent substitution back into complex quadratics. Together with three previous Unit 2 focused suites, 43 focused mathematical tests passed. Neither testing group exercised the application Practice generator, verifier, score persistence, school login, teacher/student UI, .NET build or protected final CI.
+
+**Blocking issues:** GitHub draft PR #588 contains unapproved learner-body changes; earlier canonical-body parity/approved version-predecessor checks failed. The shared academic/content-version integration owner must approve legitimate predecessor records and a tested materialization transition. The global school adopted course identity issue #453 is unresolved and prevents claiming authenticated lesson Practice. No production Neon/Render state was mutated. The currently stored original source hashes and historical canonical-body hashes must not be falsely represented as a new approved effective-content fingerprint.
+
+**Precise continuation:** U04 L01, ordinal 57. Unit 1: 11 revised; Unit 2: 25 revised and one original reused after source review; Unit 3: all 19 revised. No individual lessons have yet been accepted for a whole-course production release.

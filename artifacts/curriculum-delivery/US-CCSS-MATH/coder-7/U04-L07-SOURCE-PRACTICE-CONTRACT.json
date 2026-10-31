@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+  "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L07",
+  "sourceStudentUrl": "https://im.kendallhunt.com/HS/students/3/4/7/index.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/HS/teachers/3/4/7/preparation.html",
+  "sourceEdition": "Illustrative Mathematics First Edition 2019-2021 CC BY 4.0",
+  "scope": "GRADE_OWNED_SOURCE_TASK_REPAIR_AND_SHARED_PRACTICE_HANDOFF",
+  "stageA": {
+    "originalStudentTeacherSourceCompared": true,
+    "sourceActivities": [
+      "7.1 Halving and Doubling",
+      "7.2 Radiocarbon Dating",
+      "7.3 Old Manuscripts",
+      "Optional Gutenberg Bible",
+      "First Edition summary: sodium-22 half-life, table and function"
+    ],
+    "independentAcademicApproval": "NOT_VERIFIED"
+  },
+  "stageB": {
+    "studentContentAuthored": true,
+    "studentRenderer": "NOT_VERIFIED",
+    "accessibleGraphs": "NOT_VERIFIED",
+    "canonicalPredecessorPreserved": true
+  },
+  "stageC": {
+    "explicitLessonSkillMappingPresent": false,
+    "effectiveRuntimeSelectedFamilies": "NOT_VERIFIED",
+    "generatedVerifiedGradedPersisted": "NOT_RUN",
+    "tasks": [
+      {
+        "activity": "7.1",
+        "required": "Root-of-2 six-hour doubling and fourth-root one-half four-hour decay",
+        "autoCheck": [
+          "(2^(1/6))^6=2",
+          "((1/2)^(1/4))^4=0.5"
+        ],
+        "teacherRubric": "Justify equivalent hourly factors"
+      },
+      {
+        "activity": "7.2",
+        "required": "Distinguish 3 pg data table from 2.5 pg fossil starting 20,000 BCE",
+        "autoCheck": [
+          "3*(.5)^(1910/5730) approximately 2.3811",
+          "3*(.5)^(5730/5730)=1.5",
+          "3*(.5)^(11460/5730)=.75",
+          "2.5*(.5)^(22025/5730) approximately .1741 > .1 in 2026"
+        ],
+        "teacherRubric": "Explain A0=2.5 pg, 1/2 per half-life, H=5730 years and date origin"
+      },
+      {
+        "activity": "7.3",
+        "required": "Pythagoras-era 85% measured versus modeled fraction",
+        "autoCheck": [
+          "remaining at age around 2575 years approximately .732",
+          "85 percent corresponds to about 1343.5 model years"
+        ],
+        "teacherRubric": "Distinguish evidence conflicting with claim from conclusive proof of fake"
+      },
+      {
+        "activity": "Optional Gutenberg",
+        "required": "1450 Bible paper estimated remaining fraction in 2026",
+        "autoCheck": [
+          ".5^(576/5730) approximately .9327 > .9"
+        ],
+        "teacherRubric": "Justify use of elapsed years and approximations"
+      },
+      {
+        "activity": "Source summary (sodium-22)",
+        "required": "Interpret exponential function f(t)=4*(1/2)^(t/3) with three-year half-life and different nanogram units",
+        "autoCheck": [
+          "f(0)=4 ng",
+          "f(1) approximately 3.1748 ng",
+          "f(3)=2 ng",
+          "f(6)=1 ng",
+          "f(9)=0.5 ng",
+          "f(24)=0.015625 ng approximately 0.016 ng"
+        ],
+        "teacherRubric": "Interpret input t as elapsed years, output f(t) as nanograms, four as initial mass and three as three-year half-life; do not mix the carbon-14 isotope or picogram units."
+      }
+    ],
+    "negativeCases": [
+      "Using 3 pg rather than 2.5 pg for 20,000 BCE fossil",
+      "Interpreting 20,000 BCE as elapsed 20,000 years in 2026",
+      "Using 85 instead of .85 as remaining proportion",
+      "Reversing .1741>.1 and .9327>.9 comparisons",
+      "Autoscoring narrative fraud verdict as definite",
+      "Invalid nonnumeric/NaN/Infinity entries",
+      "Cross-curriculum or wrong-school/tenant attempt",
+      "Negative elapsed years in model",
+      "Treating sodium-22 three-year half-life as carbon-14's 5,730-year half-life or confusing nanograms with picograms",
+      "Reporting sodium-22 as fully vanished after 24 years, negative elapsed years or nonfinite answers"
+    ],
+    "requestOwner": "Supervisor 3 Shared Integration Coder",
+    "issue": 453,
+    "proposedCourseOwnedFamilies": [
+      {
+        "id": "usccss.hs.half_life_remaining_mass",
+        "status": "PROPOSED_NEW_NOT_REGISTERED",
+        "answerKind": "numeric_mass_with_units",
+        "generatorInputs": {
+          "initialMass": "finite positive",
+          "halfLifeYears": "finite positive",
+          "elapsedYears": "finite nonnegative",
+          "unit": "picogram or nanogram, preserved"
+        },
+        "canonicalAnswer": "initialMass * Math.pow(0.5, elapsedYears / halfLifeYears)",
+        "expectedExamples": [
+          {
+            "initialMass": 3,
+            "halfLifeYears": 5730,
+            "elapsedYears": 1910,
+            "expectedMass": 2.3811015779522995,
+            "unit": "pg"
+          },
+          {
+            "initialMass": 2.5,
+            "halfLifeYears": 5730,
+            "elapsedYears": 22025,
+            "expectedMass": 0.17411634636788115,
+            "unit": "pg"
+          },
+          {
+            "initialMass": 4,
+            "halfLifeYears": 3,
+            "elapsedYears": 24,
+            "expectedMass": 0.015625,
+            "unit": "ng"
+          }
+        ],
+        "verifier": "Check independent original-input exponential formula; accept correctly rounded source-specified units within declared tolerance, reject wrong units, zero/negative half-life, negative time, NaN, Infinity, malformed or nonnumeric submissions.",
+        "feedback": [
+          "Show interpreted half-life and initial mass, not just the final scalar",
+          "Distinguish sodium-22 ng from carbon-14 pg; do not interchange source time origins"
+        ]
+      },
+      {
+        "id": "usccss.hs.half_life_elapsed_from_fraction",
+        "status": "PROPOSED_NEW_NOT_REGISTERED",
+        "answerKind": "nonnegative_elapsed_years",
+        "generatorInputs": {
+          "fractionRemaining": "0 < q <= 1",
+          "halfLifeYears": "finite positive"
+        },
+        "canonicalAnswer": "-halfLifeYears * log2(fractionRemaining)",
+        "expectedExamples": [
+          {
+            "fractionRemaining": 0.85,
+            "halfLifeYears": 5730,
+            "elapsedYears": 1343.4859033401417
+          },
+          {
+            "fractionRemaining": 0.04,
+            "halfLifeYears": 5730,
+            "elapsedYears": 26609.29596740917
+          }
+        ],
+        "verifier": "Check logarithmic inversion and relative/absolute tolerance if approximate; reject q<=0, q>1, wrong reference year and inconsistent percentage (85 instead of 0.85).",
+        "feedback": [
+          "Convert 85% to 0.85 before inverting decay",
+          "A date is not the elapsed-time exponent; explain BCE-to-CE reference"
+        ]
+      },
+      {
+        "id": "usccss.hs.decay_argument_teacher_rubric",
+        "status": "PROPOSED_HUMAN_SCORED_NOT_AUTO_GRADED",
+        "answerKind": "teacher_reviewed_explanation",
+        "rubricCriteria": [
+          "Distinguishes given 3 pg table fossil from second 2.5 pg fossil",
+          "Interprets initial mass, factor per half-life, elapsed years and units",
+          "Uses correct numerical model and source calendar assumptions",
+          "Compares observed 85% and modeled 73% appropriately",
+          "Explains contamination, initial-condition and uncertainty limitations rather than definitive forgery"
+        ],
+        "verifier": "Capture structured teacher review and gradebook evidence; do not assert a numeric generator can verify the natural-language argument.",
+        "feedback": [
+          "Explain what each model parameter means",
+          "Support historical conclusion with conditional evidence and assumptions"
+        ]
+      }
+    ],
+    "officialOutcomeCurrentGenericRuleCandidates": [
+      {
+        "outcome": "CCSS:HSA-SSE.A.1",
+        "rule": "algebra-expressions",
+        "finding": "GENERAL_RULE_NOT_SOURCE_EXACT"
+      },
+      {
+        "outcome": "CCSS:HSA-SSE.B.3",
+        "rule": "quadratic",
+        "finding": "MISMATCH_FOR_HALF_LIFE_TASK"
+      },
+      {
+        "outcome": "CCSS:HSF-LE.B.5",
+        "rule": "exponential-log",
+        "finding": "MAY_PARTIALLY_RESOLVE_BUT_RUNTIME_UNVERIFIED"
+      },
+      {
+        "outcome": "CCSS:HSN-RN.A.1",
+        "rule": "polish-real-numbers",
+        "finding": "GENERAL_RULE_NOT_SOURCE_EXACT"
+      }
+    ],
+    "proposalOwner": "American Supervisor 3 single shared integration writer, coordinated with issue #453",
+    "proposalStatus": "REQUESTED_NOT_IMPLEMENTED"
+  },
+  "stageD": {
+    "courseOwnedNodeTests": "PENDING_REEXECUTION",
+    "dotnetRuntime": "NOT_VERIFIED",
+    "authenticatedTwoSchool": "NOT_RUN",
+    "teacherSignoff": "NOT_VERIFIED"
+  },
+  "predecessorCanonicalBodySha256": "3545a0df733c5ad6d7278ec2e1792be1dbc3bf88a7598490a20a43ebe531bdd0",
+  "proposedUnapprovedBodySha256": "98e7b08d84c899a46190039f2f37104bdaf3f0e3068d7c31810479292e4b2a70",
+  "sourceContentBlobSha": "b8d34814099eae6a73356ba9b0433fb2a5d70777",
+  "release": "NO_GO"
+}
