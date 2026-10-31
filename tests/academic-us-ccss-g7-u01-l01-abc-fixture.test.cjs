@@ -69,7 +69,7 @@ test('Student-facing original activity and distinct cooldown authored in G7 view
   assert.match(partial,/teacher must assess/i);
   assert.match(partial,/u01-l01-activities\.js/);
   assert.equal(cd.publisherCooldown,'NOT_VERIFIED_GATED');
-  assert.match(cd.deliveryStatus,/INVOCATION_UNVERIFIED/);
+  assert.match(cd.deliveryStatus,/INVOKED_ON_G7_BRANCH_AUTHORING_NOT_RUNTIME_VERIFIED/);
   assert.equal(cd.maxScore,12);
   assert.equal(cd.scoringRubric.reduce((s,c)=>s+c.points,0),12);
 });
@@ -153,21 +153,21 @@ test('L01 slider identity case and draft reset do not certify learner work',()=>
   assert.match(partial,/data-g7-cooldown-check/);
   assert.match(partial,/the teacher must assess the drawing and reasoning/i);
 });
-test('A-C closure remains truthful: shared Practice still blocked',()=>{
-  assert.equal(cursor.READY_FOR_STAGE_D,false);
-  assert.match(cursor.B_STATUS,/BLOCKED/);
-  assert.match(cursor.C_STATUS,/BLOCKED/);
+test('A-B-C authoring closure is recorded without claiming runtime, teacher persistence or Stage D',()=>{
+  assert.equal(cursor.READY_FOR_STAGE_D,true);
+  assert.match(cursor.B_STATUS,/ACCEPTED_AUTHORING/);
+  assert.match(cursor.C_STATUS,/ACCEPTED_AUTHORING/);
   assert.equal(cursor.testExecutionStatus,'TEST_AUTHORED_NOT_RUN');
   assert.equal(cd.testExecutionStatus,'TEST_AUTHORED_NOT_RUN');
   const local=cursor['2026_10_31LessonLocalExecution'];
   assert.equal(local.sharedFilesModified,false);
   assert.equal(local.closureSHA,null);
   assert.equal(local.externalMath.pullRequest,608);
-  assert.equal(local.externalMath.status,'ISOLATED_HELPER_NOT_COPIED_OR_LESSON_SELECTED');
+  assert.equal(local.externalMath.status,'EXISTING_KERNEL_PRESERVED_EXACT_FAMILY_SELECTED_IN_COURSE_AT_8c0403d1');
   assert.equal(local.externalRenderer.pullRequest,599);
   assert.equal(cd.assessmentBoundaries.studentSubmissionAndPersistence,'NOT_IMPLEMENTED');
   assert.equal(cd.assessmentBoundaries.teacherRubricScorePersistence,'NOT_IMPLEMENTED');
-  assert.equal(cd.assessmentBoundaries.practiceRouting,'APPROVED_DRAFT_PR_610_LEASE_RELEASED_NOT_ADOPTED_ON_COURSE_BRANCH');
+  assert.equal(cd.assessmentBoundaries.practiceRouting,'INTEGRATED_EXACT_L01_SELECTED_FAMILY_ON_G7_COURSE_BRANCH');
   assert.equal(cd.assessmentBoundaries.fixtureStatus,'AUTHORED_NOT_RUN');
 });
 
@@ -201,10 +201,10 @@ test('L01 source-aligned seven-candidate F table is in actually referenced Rich 
   assert.match(table.Description,/no original publisher figures/);
 });
 
-// One COURSE-BRANCH acceptance gate spanning the two isolated supervisor PRs.
-// INTENTIONALLY EXPECTED RED while #599 and #610 remain unadopted on #590.
+// One COURSE-BRANCH acceptance gate spanning the two approved integrations.
+// After commit 8c0403d1 both implementations are authored on PR #590.
 // Does not rerun or duplicate the numerical test suites already in #608/#610.
-// AUTHORED_NOT_RUN: never execute this while authoring A-B-C.
+// AUTHORED_NOT_RUN: Stage D executes the suite later.
 test('L01 approved B and C integration must coexist on the original course tree',()=>{
   const view=file('src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml');
   assert.match(view,/Model\.LessonCode\.StartsWith\("PED:US-CCSS-MATH:G7:U01:L"/);

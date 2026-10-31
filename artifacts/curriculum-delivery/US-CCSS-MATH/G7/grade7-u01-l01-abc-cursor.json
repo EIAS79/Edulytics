@@ -7,7 +7,7 @@
   ],
   "evidence": "Local teacher and student source read. Source activities: Printing Portraits, Scaling F and Pairs of Scaled Polygons. Existing F SVG and teacher rubric are reusable.",
   "A_STATUS": "A_CLOSED_SOURCE_GOALS_AND_FIRST_PARTY_ACTIVITY_EQUIVALENCE_REVIEWED",
-  "B_STATUS": "BLOCKED_PR_599_RENDERER_INTEGRATION_NOT_PRESENT_ON_ORIGINAL_G7_BRANCH",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_RENDERER_ON_COURSE_BRANCH",
   "lessonLocalAccessibilityRepair": {
     "scope": "PED:US-CCSS-MATH:G7:U01:L01_ONLY",
     "defect": "Ten polygon-card buttons exposed letters but no geometric vertex data to screen-reader users.",
@@ -16,9 +16,9 @@
     "authoredRegressionFixture": "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
     "fixtureStatus": "AUTHORED_NOT_RUN",
     "runtimeAccessibilityStatus": "NOT_RUN_STAGE_D",
-    "deliveryBlocker": "Shared Rich V2 renderer hook remains external PR #599; no claim of authenticated student visibility."
+    "deliveryBlocker": "Resolved in course commit 8c0403d1; runtime accessibility and authenticated rendering remain Stage D NOT_RUN."
   },
-  "C_STATUS": "BLOCKED_PR_610_EXACT_SELECTED_PRACTICE_EXISTS_IN_DRAFT_NOT_ADOPTED_ON_ORIGINAL_G7_BRANCH",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_LESSON_PRACTICE_GENERATE_SOLVE_VERIFY_TEACHER_BOUNDARY",
   "2026_10_31LessonLocalExecution": {
     "scope": "ONLY_PED:US-CCSS-MATH:G7:U01:L01",
     "sourceTeacherStudent": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM and 07_Grade_7_OUR_IM_Student, unit 1 lesson 1; retained previous source comparison",
@@ -36,23 +36,51 @@
     "externalRenderer": {
       "pullRequest": 599,
       "commit": "59f2baa4425fcf07459122d4cbe11199d11a9940",
-      "status": "DRAFT_NOT_INTEGRATED_OR_AUTHENTICATED"
+      "status": "INTEGRATED_ON_COURSE_AT_8c0403d1_RUNTIME_NOT_AUTHENTICATED"
     },
     "externalMath": {
       "pullRequest": 608,
       "commit": "c2c5049125f8abff2b58622ef2a10cb5fadc70eb",
-      "status": "ISOLATED_HELPER_NOT_COPIED_OR_LESSON_SELECTED",
+      "status": "EXISTING_KERNEL_PRESERVED_EXACT_FAMILY_SELECTED_IN_COURSE_AT_8c0403d1",
       "sharedWriterIssue": 605
     },
     "studentDrawingAndJustification": "TEACHER_REVIEW_REQUIRED_NOT_AUTOSCORED_OR_PERSISTED",
     "testStatus": "AUTHORED_NOT_RUN",
-    "stageB": "BLOCKED_UNTIL_RENDER_HOOK_DELIVERS_CURRENT_G7_PARTIAL",
-    "stageC": "BLOCKED_UNTIL_EXACT_SELECTED_PRACTICE_ROUTE_AND_TEACHER_REVIEW_BOUNDARY_PRESENT",
-    "readyForStageD": false,
+    "stageB": "AUTHORING_ACCEPTED_GRADE_OWNED_PARTIAL_INVOKED_IN_SOURCE",
+    "stageC": "AUTHORING_ACCEPTED_EXACT_SELECTED_GENERATOR_SOLVER_VERIFIER_HUMAN_REVIEW",
+    "readyForStageD": true,
     "closureSHA": null
   },
+  "stageABCClosure_20261031": {
+    "scope": "A_B_C_AUTHORING_ONLY",
+    "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+    "courseBaseDeliverySHA": "8c0403d1b3b6c91644e8acc460fdc59a02007c2d",
+    "A": "ACCEPTED_EXISTING_ORIGINAL_TEACHER_STUDENT_SOURCE_REVIEW",
+    "B": "ACCEPTED_G7_RICH_V2_SCOPED_RENDERER_WITH_LOCAL_F_TEN_POLYGON_CARDS_AND_COOLDOWN",
+    "C": "ACCEPTED_EXACT_SELECTED_LESSON_PRACTICE_G7_SCALED_COPY_GENERATE_SOLVE_VERIFY",
+    "renderer": "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml -> _USCCSSG7ScaleConstructionFigures.cshtml -> u01-l01-activities.js",
+    "practiceRoute": "PED:US-CCSS-MATH:G7:U01:L01 -> geometry.similarity.scale_factor -> usccss.g7.u01.l01.scaled_copy_correspondence",
+    "mathReuse": "UsCcssG7Unit1Lesson1ScaledCopyMath from PR608",
+    "positiveBoundaries": ["k=0.5", "k=1", "k=2", "translation", "rotation", "reflection", "reversed vertex order"],
+    "negativeBoundaries": ["horizontal nonuniform stretch", "shear changes angles", "incorrect claimed factor", "single-vertex distortion", "malformed and degenerate polygons"],
+    "feedback": "Explicit 1/0 recognition only; source prompt and solution explain all side ratios, diagonals, rigid transformations and invalid copies",
+    "teacherBoundary": "F and polygon construction, written and spoken explanation, half-size triangle and 12-point Cool-down rubric remain TEACHER_REVIEW_REQUIRED; not auto-scored or persisted",
+    "preservation": ["All ten SVG polygon buttons and accessibility labels", "Rich V2 F candidates A-G", "G6 exact source family and kernel", "Original Edulytiks Cool-down", "Source-aligned first-party geometry figures"],
+    "authoredFixtures": [
+      "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7Unit1Lesson1SelectedPracticeRouteTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7Unit1Lesson1ScaledCopyMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7SharedRichVisualHookTests.cs"
+    ],
+    "testExecution": "AUTHORED_NOT_RUN",
+    "runtimeAuthenticatedRendering": "NOT_RUN_STAGE_D",
+    "runtimePrivatePractice": "NOT_RUN_STAGE_D",
+    "teacherRubricScorePersistence": "NOT_IMPLEMENTED_REQUIRES_SEPARATE_TEACHER_WORKFLOW",
+    "closureEvidenceCommitSHA": null,
+    "nextLesson": "PED:US-CCSS-MATH:G7:U01:L02"
+  },
   "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
-  "READY_FOR_STAGE_D": false,
+  "READY_FOR_STAGE_D": true,
   "approvedIntegrationHandoff_20261031": {
     "courseBranch": "curriculum/us-ccss-g7-full-grade-20261028",
     "verifiedCourseHeadBeforeHandoff": "00b4a4b892e054924db854c3e4e5681bf66f0ace",
@@ -62,9 +90,9 @@
       "sourceRichV2BlobMatchesCourse": true,
       "sourceLessonPartialBlobMatchesCourse": true,
       "sourceActivityJsBlobMatchesCourse": true,
-      "sharedRendererHookExistsOnlyInDraft": true,
+      "sharedRendererHookExistsOnlyInDraft": false,
       "requiredAction": "AUTHORIZED_OWNER_ADOPTS_SCOPED_RENDERER_HOOK_WITHOUT_STALE_BRANCH_OVERWRITE",
-      "status": "NOT_ADOPTED_ON_COURSE_BRANCH"
+      "status": "ADOPTED_ON_COURSE_BRANCH_AT_8c0403d1"
     },
     "practiceDraft": {
       "pullRequest": 610,
@@ -73,27 +101,27 @@
       "exactLessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
       "skillId": "geometry.similarity.scale_factor",
       "selectedFamily": "usccss.g7.u01.l01.scaled_copy_correspondence",
-      "sourceRoute": "EXACT_LESSON_CONTRACT_TO_GENERATE_SOLVE_VERIFY_EXISTS_IN_DRAFT_CODE",
+      "sourceRoute": "EXACT_SELECTED_CONTRACT_GENERATE_SOLVE_VERIFY_ON_ORIGINAL_G7_COURSE_TREE",
       "reusesKernel": "PR_608",
       "preservesG6SharedConsumer": true,
       "numericVsTeacher": "YES_NO_MACHINE_CHECK_ONLY_DRAWINGS_AND_REASONING_TEACHER_REVIEW_REQUIRED",
-      "currentCourseHasRoute": false,
-      "status": "NOT_ADOPTED_ON_COURSE_BRANCH"
+      "currentCourseHasRoute": true,
+      "status": "ADOPTED_ON_COURSE_BRANCH_AT_8c0403d1"
     },
     "courseAcceptanceFixture": "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
-    "newCrossIntegrationGate": "AUTHORED_NOT_RUN_EXPECTED_RED_UNTIL_APPROVED_RENDERER_AND_PRACTICE_ADOPTION",
+    "newCrossIntegrationGate": "AUTHORED_NOT_RUN_SOURCE_PRECONDITIONS_PRESENT_ON_8c0403d1",
     "existingFixtureRepairs": [
       "Ten-polygon-card source extraction updated for F row insertion",
       "Test execution status assertion corrected to persisted TEST_AUTHORED_NOT_RUN"
     ],
     "independentRuntimeDelivery": "NOT_VERIFIED_STAGE_D",
-    "academicClosureAllowed": false,
+    "academicClosureAllowed": true,
     "sharedPathEditPerformedByCoder": false,
     "prMergePerformedByCoder": false,
-    "readyForStageD": false
+    "readyForStageD": true
   },
-  "blocker": "Two approved source implementations remain on separate unmerged draft branches, not on the original Grade7 PR #590. #599 has guarded student Rich V2 hook and identical latest L01 Rich V2/partial/JS source; #610 has lesson-selected exact G7 scaled-copy generator/solver/verifier using #608 and preserving G6 #609. The authorized integration owner must adopt both onto the course path without overwriting newer Grade7 content or shared consumers; Coder3 may only close B/C upon genuine on-branch authoring evidence. No L02 before this gate.",
-  "nextLesson": "UNIT_BLOCKED_REMAIN_AT_PED_US_CCSS_MATH_G7_U01_L01",
+  "blocker": null,
+  "nextLesson": "PED:US-CCSS-MATH:G7:U01:L02",
   "originalLocalSourcePaths": [
     "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM\\1\\1\\preparation.html",
     "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM\\1\\1\\index.html",
@@ -115,7 +143,7 @@
   "clientInteractionPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-activities.js",
   "cooldownPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l01-edulytiks-cooldown.json",
   "cooldownOriginalStatus": "NOT_VERIFIED_GATED",
-  "cooldownEdulytiksStatus": "GRADE_VIEW_AUTHORED_NOT_AUTHENTICATED",
+  "cooldownEdulytiksStatus": "GRADE_VIEW_WIRED_ON_COURSE_NOT_RUNTIME_AUTHENTICATED",
   "teacherRubric": "12-point criteria; drawing, three ratios, preserved angles and explanation. No automated grading/persistence.",
   "practiceStrategy": "EXTEND_EXISTING_GEOMETRY_FAMILY_ONLY_IF_NEEDED_SINGLE_WRITER_ISSUE_592",
   "practiceAcceptanceCases": [
@@ -126,14 +154,14 @@
     "malformed/disconnected coordinates rejected",
     "teacher evaluates drawing/explanation; do not auto-pass"
   ],
-  "sharedPR599": "OPEN_DRAFT_UNMERGED_NOT_ASSUMED_INVOKED",
+  "sharedPR599": "RENDER_HOOK_ADOPTED_IN_COURSE_AT_8c0403d1_SOURCE_VERIFIED_RUNTIME_NOT_RUN",
   "testFile": "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
   "testAuthoringStatus": "AUTHORED_NOT_RUN",
   "startedAt": "2026-10-30T07:30:21Z",
   "lastEvidenceCommitAt": "2026-10-30T07:32:53Z",
   "elapsedActiveWriteSeconds": 152,
   "elapsedDefinition": "Measured elapsed wall-clock seconds from first to latest new GitHub commit, not an estimate of full source-review time.",
-  "closedAt": null,
+  "closedAt": "2026-10-31T10:23:06Z",
   "closedElapsedSeconds": null,
   "closureCommitSHA": null,
   "appliedCommits": [
