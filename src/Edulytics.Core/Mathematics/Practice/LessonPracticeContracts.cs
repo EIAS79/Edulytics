@@ -1348,6 +1348,21 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
+        // units and structured 2x2 coverage separately; actual drawing,
+        // student explanation and the eight-point rubric are teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L01",
+            "geometry.area_tiling",
+            "G6_SOURCE_TILING_TRIANGULAR_UNITS_AND_EXACT_COVERAGE",
+            [
+                "usccss.g6.u01.l01.triangular_unit_tile_area",
+                "usccss.g6.u01.l01.structured_tiling_coverage"
+            ],
+            "IM2021_G6_U01_L01_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
