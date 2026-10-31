@@ -81,7 +81,20 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
         new(LessonCode, "SOURCE_TASK6",
             "Use a matrix inverse to solve x+2y+2z=16, 2x+y+3z=17, " +
             "x+2y+z=13; supply both the full inverse and solution.",
-            "A^-1=[[row1],[row2],[row3]];x=[x,y,z]", false)
+            "A^-1=[[row1],[row2],[row3]];x=[x,y,z]", false),
+        new(LessonCode, "SOURCE_TASK1A",
+            "MVP 10.6H, task 1a: multiply the 3-by-3 identity matrix " +
+            "I=[[1,0,0],[0,1,0],[0,0,1]] on the left by " +
+            "A=[[2,0,1],[1,4,0],[0,2,1]]. Submit every entry of I*A. " +
+            "Explain the identity property separately to your teacher.",
+            "[[row1],[row2],[row3]] (explanation teacher assessed)", false),
+        new(LessonCode, "SOURCE_TASK1B",
+            "MVP 10.6H, task 1b: multiply " +
+            "[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]] " +
+            "by A=[[2,0,1],[1,4,0],[0,2,1]]. " +
+            "Submit the full 3-by-3 matrix product. " +
+            "Explain the inverse property separately to your teacher.",
+            "[[row1],[row2],[row3]] (explanation teacher assessed)", false)
     ];
 
     /// <summary>
@@ -135,6 +148,12 @@ public static class UsCcssHsAdvAlgFuncL01PracticeCandidate
                 UsCcssHsAdvAlgFuncSourceResponseContract.VerifyInverseAndSolution(
                     response, new long[,] { { 1, 2, 2 }, { 2, 1, 3 }, { 1, 2, 1 } },
                     [16, 17, 13])
+                    ? UsCcssHsAdvAlgFuncSourceResponseContract.MatrixCaseDisposition.CorrectClosedAnswer
+                    : UsCcssHsAdvAlgFuncSourceResponseContract.MatrixCaseDisposition.IncorrectOrMalformed,
+            "SOURCE_TASK1A" or "SOURCE_TASK1B" =>
+                UsCcssHsAdvAlgFuncSourceResponseContract.VerifySourceMatrixProduct(
+                    response, new long[,] { { 2, 0, 1 }, { 1, 4, 0 }, { 0, 2, 1 } },
+                    inverseTimesCoefficients: caseId == "SOURCE_TASK1B")
                     ? UsCcssHsAdvAlgFuncSourceResponseContract.MatrixCaseDisposition.CorrectClosedAnswer
                     : UsCcssHsAdvAlgFuncSourceResponseContract.MatrixCaseDisposition.IncorrectOrMalformed,
             _ => UsCcssHsAdvAlgFuncSourceResponseContract.AssessL01MatrixCase(caseId, response)

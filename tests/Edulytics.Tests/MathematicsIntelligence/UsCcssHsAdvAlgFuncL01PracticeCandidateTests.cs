@@ -24,8 +24,10 @@ public sealed class UsCcssHsAdvAlgFuncL01PracticeCandidateTests
     [InlineData(10, "M11")]
     [InlineData(11, "SOURCE_PAINTING")]
     [InlineData(12, "SOURCE_TASK6")]
-    [InlineData(13, "M01")]
-    public void DeterministicQuestionBankContainsAllElevenMatrixCasesAndTwoOriginalTasks(
+    [InlineData(13, "SOURCE_TASK1A")]
+    [InlineData(14, "SOURCE_TASK1B")]
+    [InlineData(15, "M01")]
+    public void DeterministicQuestionBankPreservesThirteenCasesAndAddsOriginalSourceProducts(
         int index, string expectedCaseId)
     {
         Assert.True(Candidate.TryGenerate(Candidate.LessonCode, index, out var question));
@@ -76,6 +78,26 @@ public sealed class UsCcssHsAdvAlgFuncL01PracticeCandidateTests
         Candidate.Disposition.CorrectClosedAnswer)]
     [InlineData("SOURCE_TASK6",
         "A^-1=[[-5/3,2/3,4/3],[1/3,-1/3,1/3],[1,0,-1]];x=[2,3,4]",
+        Candidate.Disposition.IncorrectOrMalformed)]
+    [InlineData("SOURCE_TASK1A", "[[2,0,1],[1,4,0],[0,2,1]]",
+        Candidate.Disposition.CorrectClosedAnswer)]
+    [InlineData("SOURCE_TASK1A", "[[4/2,0,1],[1,4,0],[0,2,1]]",
+        Candidate.Disposition.CorrectClosedAnswer)]
+    [InlineData("SOURCE_TASK1A", "[[1,0,0],[0,1,0],[0,0,1]]",
+        Candidate.Disposition.IncorrectOrMalformed)]
+    [InlineData("SOURCE_TASK1A", "[[2,0,1],[1,4,0]]",
+        Candidate.Disposition.IncorrectOrMalformed)]
+    [InlineData("SOURCE_TASK1B", "[[1,0,0],[0,1,0],[0,0,1]]",
+        Candidate.Disposition.CorrectClosedAnswer)]
+    [InlineData("SOURCE_TASK1B", "[[1.0,0,0],[0,1,0],[0,0,1]]",
+        Candidate.Disposition.CorrectClosedAnswer)]
+    [InlineData("SOURCE_TASK1B", "[[2,0,1],[1,4,0],[0,2,1]]",
+        Candidate.Disposition.IncorrectOrMalformed)]
+    [InlineData("SOURCE_TASK1B", "[[1,0,0],[0,1,0],[0,0,1/0]]",
+        Candidate.Disposition.IncorrectOrMalformed)]
+    [InlineData("SOURCE_TASK1B", "[[1 0,0],[0,1,0],[0,0,1]]",
+        Candidate.Disposition.IncorrectOrMalformed)]
+    [InlineData("SOURCE_TASK1B", "[[1,0,0],[0,1,0],[0,0,1]];x=[1,2,3]",
         Candidate.Disposition.IncorrectOrMalformed)]
     [InlineData("M02", "x=[2,1]", Candidate.Disposition.IncorrectOrMalformed)]
     [InlineData("M07", "invertible", Candidate.Disposition.IncorrectOrMalformed)]
