@@ -1,0 +1,62 @@
+{
+    "schemaVersion":  1,
+    "kind":  "GRADE5_STAGES_A_B_C_SEQUENTIAL_LESSON_CLOSURE",
+    "lessonCode":  "PED:US-CCSS-MATH:G5:U03:L01",
+    "lessonTitle":  "One Piece of One Part",
+    "sourceEdition":  "2021 IM K-5",
+    "originalSourceSHA256":  {
+                                 "teacherLesson":  "78aa684e92ec390c9a90ad93343b212ba945ce4c35c2239e7cd7b6d02d1c2e59",
+                                 "teacherPreparation":  "68c2abeb5915a42ec3853808d89d3ab72bc3aa74e5cb6cbc231303e43cea831d"
+                             },
+    "previouslyCompletedLessons":  29,
+    "stageA":  "ACCEPTED_SOURCE_GOALS_ACTIVITY_TASKS_WITH_LICENSED_SOURCE_LIMITATIONS",
+    "sourceEvidence":  "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-abc-current-lesson-blocker-20261031.json",
+    "stageB":  "ACCEPTED_EXISTING_RICH_V2_3X2_4X2_2X4_EQUAL_CELL_ORIGINAL_WHOLE_TEACHER_RUBRIC",
+    "richV2":  "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json",
+    "teacherRubric":  "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-original-cooldown-teacher-rubric-v14.json",
+    "stageC":  "ACCEPTED_LESSON_SELECTED_EXACT_DIGITAL_GENERATOR_SOLVER_VERIFIER_AUTHORED_NOT_RUN",
+    "integrationCommitSHA":  "7045bd549916929ace143923c730a4b0eb338655",
+    "exactContractPath":  "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "exactSkillId":  "supporting.fractions.multiply_divide",
+    "questionFamilies":  [
+                             "usccss.g5.u03.l01.fraction_of_half_original_whole",
+                             "usccss.g5.u03.l01.compare_original_whole_grids"
+                         ],
+    "questionRegistry":  "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "selectedQuestionAdapter":  "src/Edulytics.Services/Mathematics/UsCcssG5U03L01FractionOfHalfQuestions.cs",
+    "engineDispatch":  "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "areaValidator":  "src/Edulytics.Core/Mathematics/Practice/UsCcssG5U03L01AreaModel.cs",
+    "selectedPracticeEvidence":  {
+                                     "lesson":  "PED:US-CCSS-MATH:G5:U03:L01",
+                                     "readiness":  "READY_VERIFIED_CONTRACT_AUTHORING",
+                                     "familyMode":  "bounded digital multiple-choice integer indices, not freeform rational scoring",
+                                     "generatedMath":  "one-third of half = one-sixth; one-fourth of half = one-eighth of original full area",
+                                     "comparison":  "same original whole + same selected fraction accepts changed orientation; changed original whole or 3-vs-4 subdivisions is NO",
+                                     "generate":  "ExactSkillContractQuestionEngine.Generate -\u003e Build -\u003e UsCcssG5U03L01FractionOfHalfQuestions.Build",
+                                     "solve":  "ExactSkillContractQuestionEngine.Solve -\u003e UsCcssG5U03L01FractionOfHalfQuestions.Solve",
+                                     "verify":  "ExactSkillContractQuestionEngine.Verify -\u003e UsCcssG5U03L01FractionOfHalfQuestions.Verify",
+                                     "explanation":  "Source-specific solution text states 1/(2*parts) of original whole and HUMAN review",
+                                     "parameterValidity":  "seven bounded integer parameters, 3 or 4 subdivisions, 24x24 or intentionally mismatched 48x24 original whole",
+                                     "malformedAndWrong":  "rejected invalid domain, option, orientation, width/whole mismatch, changed partition count and incorrect selection"
+                                 },
+    "teacherReview":  "REQUIRED_FOR_HAND_DRAWN_AREA_MODELS_FREE_EXPLANATION_AND_SELECTED_ORIGINAL_WHOLE__NUMERIC_CHOICE_IS_ONLY_SUBSKILL__PERSISTED_TEACHER_GRADING_NOT_CLAIMED",
+    "authoredFixtures":  [
+                             "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L01SelectedPracticeRouteTests.cs",
+                             "tests/academic-us-ccss-g5-u03-l01-abc-contract-20261031.test.cjs",
+                             "tests/academic-us-ccss-g5-u03-l01-local-parity-v14.test.cjs"
+                         ],
+    "tests":  "AUTHORED_NOT_RUN",
+    "runtimeAndStageD":  "NOT_RUN__NO_CI_E2E_MERGE_DEPLOY",
+    "release":  "DRAFT_NO_PRODUCTION_CERTIFICATION",
+    "sourceLimitations":  [
+                              "Separate 2021 Student PDF not verified",
+                              "Third party photo/figure binaries and rights not verified",
+                              "Publisher gated cooldown not verified; first-party formative task used"
+                          ],
+    "closingReview":  "TARGETED_STATIC_SOURCE_AND_SELECTED_DISPATCH_ONLY__NO_TEST_EXECUTION",
+    "closedAtUtc":  "2026-10-31T11:58:15.0410155Z",
+    "closureCommitSHA":  null,
+    "sealCommitSHA":  null,
+    "readyForStageD":  true,
+    "nextLesson":  "PED:US-CCSS-MATH:G5:U03:L02"
+}
