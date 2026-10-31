@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-fractions-coordinates-im2021-u03-l01-source-fix-v14-20261030",
+  "ContentVersion": "g5-fractions-coordinates-im2021-u03-l01-area-grids-v15-20261031",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -181,9 +181,9 @@
           "Question": "Explain why one fourth of one half of the same pan occupies one eighth of the whole.",
           "Method": "Use two perpendicular equal-partition choices.",
           "Steps": [
-            "Shade half of a 2-by-4 array of eight equal cells.",
-            "Select one of the four equal cells within the chosen half.",
-            "Count one selected cell among all eight equal whole-pan cells."
+            "Mark one of two equal halves of the original rectangle; do not shade the entire half as the final answer.",
+            "Partition the chosen half into four equal-area pieces; shade just one such piece.",
+            "Extend the same-size subdivisions through the other half: one shaded cell out of eight cells covering the original whole."
           ],
           "Answer": "One eighth of the whole pan.",
           "Check": "Four such pieces reconstruct the half; eight reconstruct the whole."
@@ -223,7 +223,7 @@
         {
           "Kind": "RatioTable",
           "Title": "Fraction of a fraction with one original whole",
-          "Description": "Text alternative for an original 2-row × 3-column equal-area grid; one cell represents one sixth of the pan.",
+          "Description": "First-party summary of six equal-area cells covering the ORIGINAL full pan; one shaded cell is one sixth of the full pan, not one third of the half as a new whole.",
           "Rows": [
             {
               "Label": "Original pan",
@@ -253,7 +253,7 @@
         },
         {
           "Kind": "RatioTable",
-          "Title": "Two original representations of one fourth of a half",
+          "Title": "Two Edulytiks-original representations of one fourth of a half",
           "Description": "Accessible first-party alternatives to the publisher's diagrams A and B. Equal total area is assumed; in each, one of eight equal cells in the entire original rectangle is shaded. Layout changes, not the fractional amount.",
           "Rows": [
             {
@@ -278,6 +278,94 @@
                 "same whole area",
                 "different line orientations",
                 "equal dark area = 1/8 whole"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original area model: one third of the remaining half (3 rows × 2 columns)",
+          "Description": "EDULYTIKS-ORIGINAL equal-area grid, not a publisher picture. The complete six-cell table is the original whole pan. LEFT column is one of two equal halves; one dark cell in its three equal parts is 1/6 of the original full pan. Dark = selected; unshaded = not selected. Read rows top to bottom.",
+          "Rows": [
+            {
+              "Label": "Top row",
+              "Cells": [
+                "■ shade",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Middle row",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Bottom row",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Diagram A: quarter of left half (4 rows × 2 columns)",
+          "Description": "EDULYTIKS-ORIGINAL schematic: divide the ORIGINAL whole into left/right equal halves, then partition the LEFT half into four equal horizontal parts. Extend the row divisions across the RIGHT half to make eight equal whole-pan cells. One dark cell = 1/8 original whole; all eight cells have equal area.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Diagram B: quarter of top half (2 rows × 4 columns)",
+          "Description": "EDULYTIKS-ORIGINAL equivalent model of the SAME original whole: divide into equal top/bottom halves, then quarter the TOP half vertically; extend all divisions across the BOTTOM half. Every cell occupies 1/8 of the whole. Diagram B changes orientation, not area; teacher checks explanations.",
+          "Rows": [
+            {
+              "Label": "Top half",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Bottom half",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
               ]
             }
           ]

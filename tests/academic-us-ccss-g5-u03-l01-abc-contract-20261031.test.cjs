@@ -84,4 +84,70 @@ test('source comparison, first-party diagrams, teacher rubric and honest gate st
   assert.ok(lesson.Visuals.length >= 2);
 });
 
+// Edulytiks-original equal-area grid fixtures. Independent expected geometry,
+// not an assertion that a selected runtime Practice endpoint grades these models.
+const areaModelSourcePath =
+  'src/Edulytics.Core/Mathematics/Practice/UsCcssG5U03L01AreaModel.cs';
+
+test('A/B original Rich V2 1/6 and paired 1/8 area grids have visible equal cells', () => {
+  const rich = load(contentPath);
+  const lesson = rich.Lessons.find(x => x.LessonCode === target);
+  assert.equal(rich.ContentVersion,
+    'g5-fractions-coordinates-im2021-u03-l01-area-grids-v15-20261031');
+  const cases = [
+    ['one third of the remaining half (3 rows', 3, 2, 6],
+    ['Diagram A: quarter of left half (4 rows', 4, 2, 8],
+    ['Diagram B: quarter of top half (2 rows', 2, 4, 8]
+  ];
+  for (const [title, expectedRows, expectedCols, total] of cases) {
+    const visual = lesson.Visuals.find(x => x.Title.includes(title));
+    assert.ok(visual, `Missing concrete first-party area model: ${title}`);
+    assert.match(visual.Description, /ORIGINAL/i);
+    assert.match(visual.Description, /original whole|whole pan|whole-pan|full pan/i);
+    assert.equal(visual.Rows.length, expectedRows);
+    assert.ok(visual.Rows.every(r => r.Cells.length === expectedCols));
+    const cells = visual.Rows.flatMap(r => r.Cells);
+    assert.equal(cells.length, total);
+    assert.equal(cells.filter(c => c.startsWith('■')).length, 1);
+    assert.equal(cells.filter(c => c.startsWith('□')).length, total - 1);
+  }
+  const originalStudent = lesson.ExplanationParagraphs.join(' ');
+  assert.match(originalStudent, /Teacher review is needed/);
+  assert.match(originalStudent, /a number alone is insufficient/);
+});
+
+test('lesson-only C# model supplies original-whole area, orientation and strict grid geometry', () => {
+  const source = fs.readFileSync(path.join(root, areaModelSourcePath), 'utf8');
+  assert.match(source, /class UsCcssG5U03L01AreaModel/);
+  assert.match(source, /enum CutDirection \{ Horizontal, Vertical \}/);
+  assert.match(source, /subdivisionsOfHalf is not \(3 or 4\)/);
+  assert.match(source, /originalWidth % columns != 0 \|\| originalHeight % rows != 0/);
+  assert.match(source, /new Diagram\(originalWidth, originalHeight, subdivisionsOfHalf/);
+  assert.match(source, /1, 2 \* subdivisionsOfHalf/);
+  assert.match(source, /!seen\.Add\(\(cell\.X, cell\.Y\)\)/);
+  assert.match(source, /seen\.Count == expected\.Count && shaded == 1/);
+  assert.match(source, /TeacherReviewRequired => true/);
+  assert.match(source, /RepresentsSameAreaOfOriginalWhole/);
+  assert.doesNotMatch(source, /LessonPracticeContractRegistry|ExactSkillContractQuestionEngine/);
+});
+
+test('independent negative area-grid oracle rejects unequal/overlapping/foreign-half cells', () => {
+  // Six unit-area cells on a 2×3 whole; first column is the selected half.
+  const correct = Array.from({length: 3}, (_, y) =>
+    Array.from({length: 2}, (_, x) => ({x, y, area: 1, shade: x === 0 && y === 0}))).flat();
+  const valid = (cells, selectedHalf = 'left') =>
+    Array.isArray(cells) && cells.length === 6 &&
+    cells.every(c => Number.isSafeInteger(c.x) && Number.isSafeInteger(c.y) &&
+      c.x >= 0 && c.x < 2 && c.y >= 0 && c.y < 3 && c.area === 1) &&
+    new Set(cells.map(c => `${c.x},${c.y}`)).size === 6 &&
+    cells.filter(c => c.shade).length === 1 &&
+    cells.some(c => c.shade && (selectedHalf === 'left' ? c.x === 0 : c.y === 0));
+  assert.equal(valid(correct), true);
+  assert.equal(valid(correct.map(c => c.x === 1 && c.y === 2 ? {...c, area: 0.5} : c)), false);
+  assert.equal(valid([...correct.slice(0,5), correct[0]]), false);
+  assert.equal(valid(correct.map(c => ({...c, shade: c.x === 1 && c.y === 0}))), false);
+  assert.equal(valid(correct.slice(0,5)), false);
+  assert.equal(valid(correct.map(c => ({...c, shade: false}))), false);
+});
+
 test.todo('PENDING sole engine writer: verify actual U03:L01 lesson-selected family, Build/Solve/Verify dispatch, positive/negative/equivalent/malformed cases and human-review boundary');
