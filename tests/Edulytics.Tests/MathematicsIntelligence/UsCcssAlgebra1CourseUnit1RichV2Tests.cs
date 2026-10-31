@@ -151,6 +151,8 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
             example => example.Answer.Contains("6, 5, 1", StringComparison.Ordinal));
         Assert.Contains(rich.ExplanationParagraphs,
             p => p.Contains("left", StringComparison.OrdinalIgnoreCase));
+        Assert.Contains(rich.ExplanationParagraphs, p =>
+            p.Contains("u01-l02-first-party-graphs-and-paper-lab.html", StringComparison.Ordinal));
     }
 
     [Fact]

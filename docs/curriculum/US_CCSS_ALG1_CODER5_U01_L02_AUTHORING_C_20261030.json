@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-  "contentVersion": "alg1-u01-l02-sequential-source-abc-20261030-v3",
+  "contentVersion": "alg1-u01-l02-first-party-graphs-20261031-v4",
   "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
   "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
   "sourceFiles": {
@@ -126,7 +126,7 @@
     }
   ],
   "stageD": {
-    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "productionPracticeReadiness": "C_BLOCKED_NO_EXACT_U01L02_SELECTED_CONTRACT",
     "sharedOwner": "Supervisor 2 designated central single-writer",
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
@@ -135,5 +135,21 @@
       "teacher grade persistence",
       "full CI"
     ]
+  },
+  "firstPartyVisualPaperLab20261031": {
+    "studentAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-hs/alg1/u01-l02-first-party-graphs-and-paper-lab.html",
+    "studentUrl": "/curriculum/us-ccss-hs/alg1/u01-l02-first-party-graphs-and-paper-lab.html",
+    "richV2Linked": true,
+    "realStaticGraphics": [
+      "dot_plot",
+      "equal_width_histogram",
+      "box_plot"
+    ],
+    "sourceData": "original invented twelve-trip dataset",
+    "studentIndependentDataset": "3,4,4,5,7,8,9,10 minutes",
+    "teacherReviewRubricPoints": 8,
+    "automatedGradeAvailable": false,
+    "stageCSelectedPractice": "BLOCKED_MISSING_EXACT_U01_L02_CONTRACT",
+    "tests": "AUTHORED_NOT_RUN"
   }
 }
