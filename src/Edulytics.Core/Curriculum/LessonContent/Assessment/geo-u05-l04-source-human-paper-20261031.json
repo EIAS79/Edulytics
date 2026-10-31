@@ -1,0 +1,249 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\4\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\4\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\4\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\4\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "5fff49cf1845e406fce057418b4fe8ceffe268a2664192a2a62f767785df9b37",
+    "TeacherActivities": "c1f1eeb728ac79734d648053cd29c1315c5d0101434773a5920a58325cf7befe",
+    "StudentActivities": "5b8d3f8eefe573ecf5b327d1e5cf5da6e7de573f7a6e0c8c9c984dae84e76f07",
+    "StudentPractice": "b22d4219f1ae6527c6f8c2f067e020940221335c448832217295e84a319158d1"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.EE.A.2",
+      "HSG-SRT.A.1.b"
+    ],
+    "Addressing": [
+      "HSA-SSE.A.1.a",
+      "HSG-GMD"
+    ],
+    "BuildingTowards": [
+      "HSF-IF.C.7.b",
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "4.1",
+      "Goal": "square roots5,9,sqrt10 and positive physical factors",
+      "Mode": "EXACT_SOURCE_ROOTS"
+    },
+    {
+      "Source": "4.2",
+      "Goal": "5x2 grid dilation k .5,1,2,2.5,3,4, critique erroneous 30, optional odd squares",
+      "Mode": "SOURCE_GRID_TABLE_AND_PROOF"
+    },
+    {
+      "Source": "4.3",
+      "Goal": "approximate irregular blob via rectangles, area k squared, circle20 k6 gives720",
+      "Mode": "TEACHER_FIRST_PARTY_AREA_LIMIT_EXPLANATION"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine source area, circle, cone section, trig and isosceles geometry tasks",
+      "Mode": "EXACT_P1_P2_P5_P6_P8_AND_IMAGE_TEACHER"
+    },
+    {
+      "Source": "4.4",
+      "Goal": "teacher-protected Finding an Area",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+    "TaskId": "geo-u05-l04-full-six-row-source-dilation-area-table",
+    "GroupId": "GEO_U05_L04_AREA_K_SQUARED_RECTANGLE_BLOB_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original source 5x2 rectangle scale-factor table with all six rows and diagram, source k3 incorrect area critique, nonrectangular rectangle-cover argument, circle area source720 and nine indexed Practice answers with teacher eight-point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "explains square roots and positive dilation domain and correctly draws source 5 by2 rectangle at k2 and k3",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "completes original six-factor table with image area A*k² and explicitly refutes area30 for k3",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "provides rigorous approximate-rectangle/distributive area argument and k2 k1/2 k3.5 source irregular-region cases",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "answers nine indexed source Practice with exact units and source image caveats, teacher-reviewed explanation",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "12-unit² area image under factors2,5,1,1/4,1.2",
+        "TeacherExpected": "areas48,300,12,0.75,17.28 square units in that order",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "scale unit-area circle pi by factor r",
+        "TeacherExpected": "scaled circle area pi r² for positive radius r",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "trapezoid ABCD to larger primed trapezoid with grid",
+        "TeacherExpected": "k measured from original labelled vertex rays; k² copies fit; source image needed",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "pyramidal first-party A,B,C cross-sections",
+        "TeacherExpected": "teacher checks original figures for conditional factors3/4,1/4,1/2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "which solid has apex dilation cross-sections with scale0 to1",
+        "TeacherExpected": "cone choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "solids with some circular cross-section",
+        "TeacherExpected": "E cone F cylinder G sphere",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "two dimensional figures rotated about shown axes",
+        "TeacherExpected": "original diagrams necessary",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "Jada numerator x instead of Tyler tan56=8/x",
+        "TeacherExpected": "tan34=x/8, since 34 and56 complementary",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "isosceles ACD BCD and angle BAC",
+        "TeacherExpected": "original diagram needed to resolve relative rays and determine angle BAC without guess",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "OriginalRectangleLength": 5,
+    "OriginalRectangleWidth": 2,
+    "OriginalArea": 10,
+    "SourceAreaFactors": [
+      0.25,
+      1,
+      4,
+      6.25,
+      9,
+      16
+    ],
+    "SourceScaledAreas": [
+      2.5,
+      10,
+      40,
+      62.5,
+      90,
+      160
+    ],
+    "SourceIncorrectK3Area": 30,
+    "SourceCorrectK3Area": 90,
+    "SourceCircle20K6Area": 720,
+    "SourceArbitraryArea40K2": 160,
+    "SourceArbitraryArea40KHalf": 10,
+    "SourceArbitraryArea40K3_5": 490,
+    "SourceOddSumFormula": "sum_first_n_odds=n²",
+    "P1Areas": [
+      48,
+      300,
+      12,
+      0.75,
+      17.28
+    ],
+    "P5Choice": "A",
+    "P6Choices": [
+      "E",
+      "F",
+      "G"
+    ],
+    "P8Complement": "tan34=x/8"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "original rectangle length5 width2 k3 has area(15)(6)=90, not30",
+      "source table k.5 area2.5 k2.5 area62.5 k4 area160",
+      "source irregular circle area20 k6 becomes720 and P1 areas48,300,12,.75,17.28"
+    ],
+    "Equivalent": [
+      "area image A*k² and area image (k*l)*(k*w) give same square units",
+      "three consecutive odd-number area shell increases3,5,7 produce squares4,9,16"
+    ],
+    "Wrong": [
+      "length factor3 multiplies rectangle area by3 instead of9",
+      "area12 k1.2 results14.4 instead of17.28",
+      "all circular-section solids exclude cone or sphere"
+    ],
+    "Boundary": [
+      "positive finite k required for nondegenerate planar geometry; k=0 collapses to zero-area point",
+      "area factor k² holds for bounded measurable regions, not an unmeasurable pathological set",
+      "original trapezoid and rotation graphics not verified; exact marked selections not invented"
+    ],
+    "Malformed": [
+      "no side measurements for k or mixed square/linear units",
+      "source original area table missing rows yet claimed complete",
+      "teacher-protected Cool-down asserted digitally auto graded"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l04-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
