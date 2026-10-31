@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 35,
-    "B_CLOSED": 35,
-    "C_PREPARED": 35,
-    "ABC_READY_FOR_D": 35,
+    "A_CLOSED": 36,
+    "B_CLOSED": 36,
+    "C_PREPARED": 36,
+    "ABC_READY_FOR_D": 36,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 89,
+    "REMAINING": 88,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 89,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+    "Unprocessed": 88,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L13",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 13
+    "U02ClosedLessonCount": 14
   },
   "LessonEntries": [
     {
@@ -837,6 +837,38 @@
       "TestsExecuted": "NOT_RUN",
       "PublisherCooldown": "PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_PAPER_ALTERNATIVE",
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+      "Ordinal": 36,
+      "UnitOrdinal": 14,
+      "Title": "Bisect It",
+      "LessonCommit": "76f9e33d6edf6aebfa6f62992506bd26550819c4",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "0d4791ae9ac219074647917ab0f83cc5c64d321ee9cb89779a94f572ca90c3ac",
+        "TeacherActivities": "ea1821ff222c431f20db33a3e54a7d2fd739a703a78f4014db1a46fe853c0cf8",
+        "StudentActivities": "44b18ea87091871067db9ef97272e07daa02ed3305ec1455a07f8814bf8d5287",
+        "StudentPractice": "270b4f5d5b0aca52e0b4b4ab970ffcd174f6141e9859a44a3e63d56053adaf50"
+      },
+      "OriginalActivities": [
+        "14.1",
+        "14.2",
+        "14.3 OPTIONAL"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_SOURCE_SHA256_AND_CROSSWALK",
+      "B": "B_CLOSED_COURSE_RICHV2_SOURCE_SPECIFIC_REPAIR_RETAIN_VALID_CONTENT",
+      "C": "C_CLOSED_AUTHORING_EXACT_LESSON_TEACHER_SELECTED_SOURCE_ASSESSMENT_NOT_RUN",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L14_ANGLE_BISECTOR_SSS_PAPER_CONSTRUCTION_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l14-angle-bisector-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l14-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l14-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_EDULYTIKS_ORIGINAL_PAPER_ALTERNATIVE",
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -877,7 +909,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -905,5 +937,5 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l13-abc-checkpoint-20261031.json"
+  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l14-abc-checkpoint-20261031.json"
 }
