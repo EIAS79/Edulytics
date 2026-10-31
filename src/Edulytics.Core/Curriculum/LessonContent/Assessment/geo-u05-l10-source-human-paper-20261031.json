@@ -1,0 +1,219 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L10",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\10\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\10\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\10\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\10\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "4f10f7a97b8501bea03d0b02bc1b3b79a274622fe7dbb6c43832f21843dcf240",
+    "TeacherActivities": "ea8f7ed92557efd2a0704641e1c8cab2d2c185d381bf5ceb130885d52973bbf3",
+    "StudentActivities": "4c244acee6ef9c2069bb8a62b2278a29075b9d244cbfe620938739fc2619c729",
+    "StudentPractice": "8e2bbb0e2e6674ee96b0df203b91ca379f4093665bc93e57e3c9932b0d3dad7a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-GMD.B.4"
+    ],
+    "Addressing": [
+      "HSG-GMD.A.1",
+      "HSG-GMD.B.4",
+      "HSG-MG.A.1"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "10.1",
+      "Goal": "straight vs oblique equal-coin stack same volume",
+      "Mode": "FIRST_PARTY_PAPER_COIN_LAYERS"
+    },
+    {
+      "Source": "10.2",
+      "Goal": "shift index cards, equal-section all-height Cavalieri argument and alternate cross sectional shapes",
+      "Mode": "TEACHER_HUMAN_PAPER_SLICE_PROOF"
+    },
+    {
+      "Source": "10.3",
+      "Goal": "three original right/oblique cylinder, cone and prism pairs",
+      "Mode": "EXACT_SOURCE_PAIR_WITNESSES_AND_TEACHER"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "vase B*h unknown, cylinder volume, hollow vase, original rotation, volume/area scale and sections",
+      "Mode": "EXACT_P2_P4_P6_P8_AND_SOURCE_IMAGE_HUMAN"
+    },
+    {
+      "Source": "10.4",
+      "Goal": "teacher restricted Drawing Solids",
+      "Mode": "EDULYTIKS_PRINTABLE_FIRST_PARTY_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L10",
+    "TaskId": "geo-u05-l10-equal-level-cross-sections-and-three-pairs",
+    "GroupId": "GEO_U05_L10_CAVALIERI_ALL_LEVELS_PAPER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Two teacher-reviewed coin/index card stack diagrams, precise Cavalieri hypotheses at matching heights, original three solid comparisons with math, eight source-indexed Practice and original first-party printable evidence sheet with scoring rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l10-cavalieri-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "explains right versus oblique coin and card stacks; perpendicular height and constant unchanged base-parallel sections",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "states two essential Cavalieri conditions equal height and equal area at every matching slice, shows why one slice insufficient",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "justifies source three pairs: unequal63pi/90pi cylinders, equal r3 h5 cones, equal triangular/rectangular prism30",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "answers source eight Practice with units; distinguishes volume B*h vase uncertainty and finite inner vase approximation",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "vase with base area B and total perpendicular h",
+        "TeacherExpected": "no unique V relation to Bh from base and height alone; source figure profile needed for choice",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "juice cylinder radius3.5 h12.5 vs prism6.4 by4 h12.5",
+        "TeacherExpected": "cylinder153.125pi≈481.056 cm³ larger than prism320 cm³",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "zigzag rectangular-section vase outer 6×3 in, h10, walls0.5in and bottom0.5in",
+        "TeacherExpected": "outer180 in³, internal approximate5×2×9.5=95 in³ under consistent inside section assumption",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "two constant base-parallel area solids and two varying",
+        "TeacherExpected": "prism/cylinder satisfy V=Bh; cone/sphere require variable area cross sections",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "source Unit5 Lesson9 vertical-axis rotation",
+        "TeacherExpected": "teacher checks original marked source figure before exact volume",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "original V2 SA10 dilated to V128",
+        "TeacherExpected": "volume ratio64, k4, image SA160 square units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "surface area50 to200",
+        "TeacherExpected": "linear k2, choice B",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "name two solids with all parallel-base sections congruent",
+        "TeacherExpected": "any right or oblique prism and cylinder",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "Cavalieri": "SAME_HEIGHT_AND_EQUAL_AREA_FOR_EVERY_CORRESPONDING_LEVEL",
+    "ObliqueCylinderPerpHeight7Radius3": "63pi",
+    "RightCylinderHeight10Radius3": "90pi",
+    "TwoConesRadius3Height5": "15pi EACH",
+    "TrianglePrismArea": "3*4/2=6",
+    "RectPrismArea": "1*6=6",
+    "PrismPairVolume": 30,
+    "SynthesisTiltCylinder": "2500pi",
+    "P1SourceImage": "FIGURE_NEEDED",
+    "P2Cylinder": "153.125pi",
+    "P2Prism": 320,
+    "P3OuterV": 180,
+    "P3InnerVApprox": 95,
+    "P6NewSA": 160,
+    "P7Choice": "B",
+    "P8": "PRISM_AND_CYLINDER"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "matching cross-sectional area at every corresponding level and equal heights makes volumes equal",
+      "source cylinder pair63pi vs90pi unequal due perpendicular heights7 vs10",
+      "source equal cone pair area-by-height slices matches despite apex offset; prism pair both30",
+      "P2 cylinder153.125pi bigger than prism320, P6 area160, P7 choiceB"
+    ],
+    "Equivalent": [
+      "right and oblique prism both V=Bh with equal base area B and perpendicular h, not lateral edge",
+      "solid slice volume may be justified by sum of equal thin-layer volumes instead of calculus"
+    ],
+    "Wrong": [
+      "treat oblique cylinder lateral edge10 as perpendicular height10",
+      "infer two solids equal volume from a single matching base cross section",
+      "vase volume Bh concluded from only its base area and height despite unknown profile",
+      "take P3 vase wall thickness out of only one side"
+    ],
+    "Boundary": [
+      "same perpendicular height required and area matching at ALL corresponding horizontal levels, not finitely sampled ones",
+      "zero/negative base area or height invalid for ordinary nondegenerate solid",
+      "vase original profile/rotation P5 diagram needs publisher figure, no false exact labels"
+    ],
+    "Malformed": [
+      "all-level condition omitted from claimed Cavalieri theorem",
+      "comparison mixes square centimetres and cubic centimetres",
+      "right/oblique diagram missing orientation of cutting planes"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l10-cavalieri-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l10-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
