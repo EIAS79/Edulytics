@@ -1,0 +1,211 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\3\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\3\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\3\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\3\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "a4b8a95a535a3263b83ef6d7b887fb5efde75757e3b138d33c9389a9362c10bb",
+    "TeacherActivities": "4feb218f5c6d96f0f610cc1b1203b335db53098186e77a923109887311db19f5",
+    "StudentActivities": "df1116a15d78ca2132ec69326771acb17e9b4f2cd8a25079e207ebeaa1c4719b",
+    "StudentPractice": "3d16ef85616f7895056454ca7adec02bb69f6c7aabe0f78db64229960541d9cd"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.A.3",
+      "HSG-CO.A.2"
+    ],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-SRT.A.1",
+      "HSG-SRT.A.1.b"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.A.1.b",
+      "HSG-SRT.A.2"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "3.1",
+      "Requirement": "triangle FGH about interior C, k3 and erroneous opposite-ray H image",
+      "FirstPartyMode": "ORIGINAL_LABELLED_PAPER_RAY_ERROR_CRITIQUE"
+    },
+    {
+      "Source": "3.2",
+      "Requirement": "EFG ruler measures, assigned rational/decimal factors, tracing partner, optional factor 1/2 vs 2 overlap",
+      "FirstPartyMode": "PAPER_TRACING_WITH_TEACHER_REVIEW"
+    },
+    {
+      "Source": "3.3",
+      "Requirement": "quadrilateral ABCD P with two independent ratio tables, proof from definition only for centre distances, side assertion unproved",
+      "FirstPartyMode": "HUMAN_SCORED_TWO_TABLE_DISTINCTION"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Requirement": "seven exact scale/perimeter and figure-dependent construction/proof tasks",
+      "FirstPartyMode": "EXACT_P1_P3_AND_TEACHER_FIGURE_REVIEW_P4_P7"
+    },
+    {
+      "Source": "3.4 Cool-down",
+      "Requirement": "publisher locked",
+      "FirstPartyMode": "FIRST_PARTY_INDEPENDENT_COOLDOWN_UNVERIFIED_ORIGINAL"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U03_L03_MEASURE_DILATION_TWO_TABLE_PAPER_REVIEW",
+    "TaskId": "geo-u03-l03-interior-center-k3-and-two-ratio-tables",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "Mode": "TEACHER_SELECTED_PAPER_DILATION_DRAWING_RULER_AND_PROOF",
+    "Evidence": "labelled original/image polygons, interior-centre rays, two ratio tables with precise k, student explanation and revised false-ray critique",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453; Issue #605 lease protected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "places all positive factor image vertices along correct rays from interior/exterior centre, rejects opposite-ray erroneous placement",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "uses the assigned rational/decimal k exactly and measures/predicts with labelled precision and correct expansion or contraction",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "completes centre-to-vertex table with rigorous definition-based explanation for four nonzero radii",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "completes separate corresponding-side table, identifies the unproved source assertion and distinguishes measured approximation from formal proof",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "pentagon centre F scale",
+        "TeacherExpected": "AB=3 -> A'B'=5, BC=6 -> B'C'=10, so positive scale k=5/3",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "perimeter twelve with k=3/4",
+        "TeacherExpected": "12*(3/4)=9 units; option A",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "which factor enlarges triangle",
+        "TeacherExpected": "4/3 only is greater than 1; option D",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "quadrilateral ABCD centre D k=2",
+        "TeacherExpected": "D'=D; A',B',C' lie along original D rays at twice centre distances",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "figure G centre B k=3",
+        "TeacherExpected": "each point image on positive ray from B at three times original B-point radius",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "polygon P Q from x=6 source picture",
+        "TeacherExpected": "derive scale only with source figure side labels, no invented option",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "AD congruent BC geometric proof",
+        "TeacherExpected": "teacher checks given figure and theorem from U02:L10",
+        "Points": 2,
+        "Mode": "HUMAN_IF_DIAGRAM_REQUIRED"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "P1ScaleFactor": "5/3",
+    "P2Perimeter": "9",
+    "P3Enlargement": "4/3",
+    "SourceSynthesisOE8": {
+      "k2": 16,
+      "kHalf": 4,
+      "kQuarter": 2,
+      "kThreeQuarters": 6
+    },
+    "ExactCentreDistanceProof": "OPprime=k*OP by definition for OP>0",
+    "SideProportionalityLessonStatus": "SOURCE_ASSERTION_NOT_PROVED_IN_THIS_LESSON",
+    "DecimalFractionEquivalents": {
+      "1/4": "0.25",
+      "1/2": "0.5",
+      "3/2": "1.5",
+      "5/2": "2.5"
+    }
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "all image rays have same directed orientation and distances multiplied by positive k",
+      "table one ratios 2,3,1/3,1/2 by source assigned values; table two observed side ratios approximate k",
+      "pentagon scale 5/3; 12 units perimeter at k 3/4 gives 9 units"
+    ],
+    "Equivalent": [
+      "0.25 and 1/4 exact dilation equivalence, same image",
+      "0.5 and 1/2 or 1.5 and 3/2 exact image equivalence"
+    ],
+    "Wrong": [
+      "image H' chosen opposite direction from interior centre C for k=3",
+      "claims second table follows directly from definition, source explicitly does not prove it",
+      "measures k=0.5 but predicts enlarged image"
+    ],
+    "Boundary": [
+      "centre equal to one polygon vertex means centre-to-point ratio for that vertex undefined 0/0",
+      "k=1 preserves all nonzero distances, image and original coincide",
+      "k>0 required for positive-ray definition; source excludes zero and negative factors",
+      "some overlap between triangles depends on geometry and centre, not only factor"
+    ],
+    "Malformed": [
+      "no defined centre or factor",
+      "no labels connecting original points to image points",
+      "missing units/ruler precision or one of the tables"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_3.4_COOLDOWN_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE: interior-centre positive factor and separate two ratio explanations",
+  "TeacherHandoff": "Paper measured figures and complete reasoning teacher-scored; exact digital assessment selection/grade persistence remains Stage D issue #453.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l03-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
