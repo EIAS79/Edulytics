@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 39,
-    "B_CLOSED": 39,
-    "C_PREPARED": 39,
-    "ABC_READY_FOR_D": 39,
+    "A_CLOSED": 40,
+    "B_CLOSED": 40,
+    "C_PREPARED": 40,
+    "ABC_READY_FOR_D": 40,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 85,
+    "REMAINING": 84,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 2,
     "CURRENT_UNIT": "U03",
@@ -24,25 +24,25 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 85,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "Unprocessed": 84,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U03",
     "UnitLessonCount": 16,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
     "AllUnitABCReady": false,
     "NextUnit": "U03",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
     "U02ClosedLessonCount": 15,
     "UnitCountSource": "geo-124-source-manifest-20261028.json canonical unit counts: U01=22, U02=15, U03=16",
-    "U03ClosedLessonCount": 2
+    "U03ClosedLessonCount": 3
   },
   "LessonEntries": [
     {
@@ -973,6 +973,43 @@
       "StartedAtUtc": "2026-10-31T03:41:08.317634Z",
       "ClosedAtUtc": "2026-10-31T03:41:42.500383Z",
       "ElapsedSeconds": 34.183
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+      "Ordinal": 40,
+      "UnitOrdinal": 3,
+      "Title": "Measuring Dilations",
+      "LessonCommit": "c547630869b7c628a5ca99e58c4adeba063c712e",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "a4b8a95a535a3263b83ef6d7b887fb5efde75757e3b138d33c9389a9362c10bb",
+        "TeacherActivities": "4feb218f5c6d96f0f610cc1b1203b335db53098186e77a923109887311db19f5",
+        "StudentActivities": "df1116a15d78ca2132ec69326771acb17e9b4f2cd8a25079e207ebeaa1c4719b",
+        "StudentPractice": "3d16ef85616f7895056454ca7adec02bb69f6c7aabe0f78db64229960541d9cd"
+      },
+      "OriginalActivities": [
+        "3.1 Dilating Out",
+        "3.2 All the Scale Factors",
+        "3.3 What Stays the Same",
+        "3.4 Locked source Cool-down"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_SOURCE_TEACHER_STUDENT_TEXT_4_ACTIVITIES_7_PRACTICE_SOURCE_HASH",
+      "B": "B_CLOSED_CENTRE_INSIDE_RAY_CRITIQUE_DECIMAL_FACTORS_TWO_TABLES_SOURCE_ASSERTION_BOUNDARY",
+      "C": "C_CLOSED_AUTHORING_HUMAN_PAPER_REVIEW_FIXTURES_NOT_RUN",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U03_L03_MEASURE_DILATION_TWO_TABLE_PAPER_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l03-dilation-two-ratio-tables-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l03-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l03-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_LOCKED_UNVERIFIED",
+      "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+      "TeacherScoringPersistence": "NOT_VERIFIED_STAGE_D_ISSUE_453",
+      "StartedAtUtc": "2026-10-31T03:42:48.130389Z",
+      "ClosedAtUtc": "2026-10-31T03:43:19.714953Z",
+      "ElapsedSeconds": 31.585
     }
   ],
   "return_queue": [],
@@ -1013,7 +1050,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "U03:L03 canonical next, earlier 39 contiguous A-B-C authoring closures, tests NOT_RUN",
+  "Next": "U03:L04 canonical next, 40 contiguous A-B-C academic authoring checkpoints; Stage D NOT_RUN",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -1042,12 +1079,13 @@
     "Timing": "Not independently measured; not inferred"
   },
   "LastCheckpoint20261031": {
-    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L02",
-    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L03",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
     "BLOCKED_CURRENT_LESSON": null,
-    "LAST_CONTENT_COMMIT": "bc88a2171308c60c812fcf955eb2a01c25d7af22",
+    "LAST_CONTENT_COMMIT": "c547630869b7c628a5ca99e58c4adeba063c712e",
     "Tests": "AUTHORED_NOT_RUN",
-    "SharedStageD": "Issue #453 teacher grading, issue #605 shared lease protected"
+    "SharedEngines": "Issue #605 exclusive leases untouched",
+    "TeacherScore": "Issue #453 Stage D NOT_VERIFIED"
   },
   "UnitSummaryU02_20261031": {
     "Course": "Geometry",
