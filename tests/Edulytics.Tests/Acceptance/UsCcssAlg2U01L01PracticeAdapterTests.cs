@@ -74,6 +74,61 @@ public sealed class UsCcssAlg2U01L01PracticeAdapterTests
         Assert.Equal("TeacherReviewRequired", Verdict(item, "a learner justification"));
     }
 
+    [Theory]
+    [InlineData("JadaReasoning")]
+    [InlineData("NoahReasoningOptional")]
+    [InlineData("TwoDistinctRules")]
+    public void TeacherOnlyLane_RejectsBlankOrOversizedAnswersWithoutAutoscoring(string variant)
+    {
+        object item = Item(variant, 1);
+        Assert.Equal("Incorrect", Verdict(item, ""));
+        Assert.Equal("Incorrect", Verdict(item, " \t\r\n "));
+        Assert.Equal("Incorrect", Verdict(item, new string('x', 4001)));
+        Assert.Equal("TeacherReviewRequired", Verdict(item, new string('x', 4000)));
+        Assert.Equal("TeacherReviewRequired", Verdict(item, "2+2=4, because ..."));
+        Assert.Null(Expected(item));
+    }
+
+    [Theory]
+    [InlineData("usccss.alg2.u01.l01.hanoi_min_moves", 1)]
+    [InlineData("usccss.alg2.u01.l01.checker_jump_optional", 1)]
+    [InlineData("usccss.alg2.u01.l01.recursive_sequence", 4)]
+    public void HumanProofs_HaveSeparatePrivateTeacherRubricAndNoNumericAnswer(
+        string family, int slot)
+    {
+        var teacherLane = Adapter.GetMethod("TryCreateTeacherReviewForFamily",
+            BindingFlags.NonPublic | BindingFlags.Static)!;
+        object?[] args = [family, slot, 1, null];
+        Assert.True((bool)teacherLane.Invoke(null, args)!);
+        object item = args[3]!;
+        Assert.Null(Expected(item));
+        Assert.True((bool)item.GetType().GetProperty("TeacherScored")!.GetValue(item)!);
+        Assert.False(string.IsNullOrWhiteSpace((string)item.GetType()
+            .GetProperty("TeacherRubric")!.GetValue(item)!));
+        var projection = Adapter.GetMethod("ProjectForLearner",
+            BindingFlags.NonPublic | BindingFlags.Static)!;
+        string learnerJson = JsonSerializer.Serialize(projection.Invoke(null, [item]));
+        Assert.DoesNotContain("TeacherRubric", learnerJson, StringComparison.Ordinal);
+        Assert.DoesNotContain("ExpectedAnswer", learnerJson, StringComparison.Ordinal);
+        Assert.DoesNotContain("7 + 1 + 7 = 15", learnerJson, StringComparison.Ordinal);
+    }
+
+    [Theory]
+    [InlineData("usccss.alg2.u01.l01.hanoi_min_moves", 0, 64)]
+    [InlineData("usccss.alg2.u01.l01.checker_jump_optional", 0, 7)]
+    [InlineData("usccss.alg2.u01.l01.recursive_sequence", 1, 4)]
+    [InlineData("usccss.alg2.u01.l01.hanoi_min_moves", 1, 0)]
+    [InlineData("usccss.alg2.u01.l01.recursive_sequence", 4, 2)]
+    public void TeacherReviewLane_RejectsNumericAndOutOfDomainParameters(
+        string family, int slot, int parameter)
+    {
+        var teacherLane = Adapter.GetMethod("TryCreateTeacherReviewForFamily",
+            BindingFlags.NonPublic | BindingFlags.Static)!;
+        object?[] args = [family, slot, parameter, null];
+        Assert.False((bool)teacherLane.Invoke(null, args)!);
+        Assert.Null(args[3]);
+    }
+
     [Fact]
     public void InvalidDomainCannotGenerate()
     {

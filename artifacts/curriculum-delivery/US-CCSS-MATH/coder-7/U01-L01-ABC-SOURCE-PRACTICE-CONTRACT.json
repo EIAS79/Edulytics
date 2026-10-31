@@ -413,5 +413,31 @@
     "readyForStageD": false,
     "sharedOwnerIssue": 605,
     "stageDAdoptionIssue": 453
+  },
+  "v6TeacherReviewLane": {
+    "activeLesson": "U01:L01",
+    "scope": "ALG2-only Practice adapter: explicit human-review-only creation and bounded response handling",
+    "implementation": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+    "teacherRequiredVariants": [
+      "JadaReasoning: hanoi_min_moves/slot=1/parameter=1",
+      "NoahReasoningOptional: checker_jump_optional/slot=1/parameter=1",
+      "TwoDistinctRules: recursive_sequence/slot=4/parameter=1"
+    ],
+    "teacherMode": "TEACHER_REVIEW_REQUIRED",
+    "automaticScoreForProofs": false,
+    "invalidSubmissions": "Null/blank or length over 4000 characters classified Incorrect, never sent to teacher review queue",
+    "studentProjection": "ProjectForLearner: no ExpectedAnswer, no TeacherRubric; direct Candidate JSON has JsonIgnore for both",
+    "numericBoundary": "TryCreateAutoGradableForFamily rejects all three teacher-only variants; TryCreateTeacherReviewForFamily rejects numeric variants",
+    "targetedTests": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+    "newTestsStatus": "AUTHORED_NOT_RUN",
+    "sharedCentralFilesChanged": false,
+    "selectedRuntimeContract": "NOT_CONNECTED_PENDING_EXCLUSIVE_SHARED_WRITER_ISSUE_605",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_PREPARED_NOT_CLOSED",
+    "READY_FOR_STAGE_D": false,
+    "blockerIssue": 605,
+    "blockerOwner": "UNASSIGNED_PENDING_ADMIN_EXCLUSIVE_GRANT",
+    "closureSHA": null
   }
 }

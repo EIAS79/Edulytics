@@ -80,9 +80,22 @@
           "explicit not-integration-ready state"
         ]
       },
-      "blockerStatus": "NEXT_CENTRAL_SLOT_APPROVED_NOT_TRANSFERRED",
-      "blockerOwner": "Coder 7 SOLO pending Coder8 release and Supervisor3 exclusive transfer",
-      "blockerIssue": 453,
+      "blockerStatus": "BLOCKED_SHARED_EXCLUSIVE_LEASE_UNASSIGNED_ISSUE_605",
+      "blockerOwner": "UNASSIGNED - Admin and cross-supervisor confirmation pending in #605",
+      "blockerIssue": 605,
+      "stageDAdoptionIssue": 453,
+      "teacherReviewLane": {
+        "sourceTasks": ["JadaReasoning", "NoahReasoningOptional", "TwoDistinctRules"],
+        "grading": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+        "courseOwnedDispatch": "TryCreateTeacherReviewForFamily",
+        "emptyResponse": "INCORRECT",
+        "maxResponseCharacters": 4000,
+        "answerLeakGuard": "Student projection excludes canonical numeric answer and teacher rubric",
+        "newXunitFixtures": "AUTHORED_NOT_RUN",
+        "selectedRuntimeContract": "NOT_REGISTERED",
+        "stageCClosed": false,
+        "closureSha": null
+      },
       "nextCursorAfterClosure": "STOP_U01_L01",
       "adaptedCoolDownStatus": "ADAPTED_COOLDOWN_ORIGINAL_UNVERIFIED",
       "courseOwnedMathVerifier": {

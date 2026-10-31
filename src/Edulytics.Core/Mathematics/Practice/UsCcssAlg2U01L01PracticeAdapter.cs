@@ -57,6 +57,11 @@ public static class UsCcssAlg2U01L01PracticeAdapter
 
     internal enum Verdict { Correct, Incorrect, TeacherReviewRequired }
 
+    // Bound the length of a submitted proof without automatically scoring its
+    // mathematical merits. Blank or unreasonably large submissions must not
+    // create a teacher review item.
+    internal const int MaximumTeacherExplanationLength = 4000;
+
     // Exact family dispatch allows a future central owner to bind the
     // existing engine's string family / variant / int parameter contract
     // without duplicating Algebra 2 generation or changing global behavior.
@@ -116,6 +121,24 @@ public static class UsCcssAlg2U01L01PracticeAdapter
     {
         if (!TryCreateForFamily(family, variantSlot, parameter, out candidate) ||
             candidate is null || candidate.TeacherScored)
+        {
+            candidate = null;
+            return false;
+        }
+        return true;
+    }
+
+    // A separate, course-local server-side teacher lane. The candidate
+    // includes a private rubric and must never be serialized to learners:
+    // ProjectForLearner is the only valid student projection. No human proof
+    // can enter the exact numeric verifier or receive an automatic score.
+    internal static bool TryCreateTeacherReviewForFamily(
+        string? family, int variantSlot, int parameter, out Candidate? candidate)
+    {
+        if (!TryCreateForFamily(family, variantSlot, parameter, out candidate) ||
+            candidate is null || !candidate.TeacherScored ||
+            candidate.ExpectedAnswer is not null ||
+            string.IsNullOrWhiteSpace(candidate.TeacherRubric))
         {
             candidate = null;
             return false;
@@ -323,7 +346,10 @@ public static class UsCcssAlg2U01L01PracticeAdapter
         if (!IsCanonicalCandidate(item))
             return Verdict.Incorrect;
         if (item.TeacherScored)
-            return Verdict.TeacherReviewRequired;
+            return string.IsNullOrWhiteSpace(response) ||
+                   response.Length > MaximumTeacherExplanationLength
+                ? Verdict.Incorrect
+                : Verdict.TeacherReviewRequired;
 
         bool correct = item.Variant switch
         {
