@@ -20,14 +20,14 @@ test('U01 preserves 17 historical authoring records; independent selected offlin
  assert.equal(led.rows.length,131);assert.equal(aud.lessonCommits.length,17);
  assert.equal(unit.unitTotal,17);assert.equal(unit.unitStatus,'UNIT_ABC_CLOSED_READY_FOR_STAGE_D');
  assert.equal(unit.unitReadyForStageD,true);assert.equal(unit.newlyReadyForStageD,17);
- assert.equal(led.abcCounters.ABC_READY_FOR_D,19);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.abcCounters.UNITS_ABC_CLOSED,1);assert.equal(led.abcCounters.REMAINING,112);
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,20);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.abcCounters.UNITS_ABC_CLOSED,1);assert.equal(led.abcCounters.REMAINING,111);
  assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L01');
  assert.equal(led.currentSequentialABCCursor.advanceAllowed,true);
  assert.equal(led.abcCounters.CURRENT_UNIT,'U02');
  assert.ok(led.rows.slice(0,17).every(x=>x.readyForStageD===true));
  assert.ok(led.rows.slice(0,17).every(x=>x.previousReadyForStageDClaim===true));
- assert.ok(led.rows.slice(17,19).every(x=>x.readyForStageD===true));assert.ok(led.rows.slice(19).every(x=>x.readyForStageD!==true));
+ assert.ok(led.rows.slice(17,20).every(x=>x.readyForStageD===true));assert.ok(led.rows.slice(20).every(x=>x.readyForStageD!==true));
  const manifest=read(doc('us-ccss-g8-coder4-course-evidence-20261029.json'));
  for(const [pack,hash] of Object.entries(aud.richContentSha256)){
   const f='src/Edulytics.Core/Curriculum/LessonContent/RichV2/'+pack;

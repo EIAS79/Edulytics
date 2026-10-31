@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L03",
+  "title": "Dilations with no Grid",
+  "unit": "U02",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\3\\index.html",
+      "sha256": "cb101ec257b6f86d3ce3fe885a82db1ed4d6fd52ad2e2598b836473f6766f09c"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\3\\index.html",
+      "sha256": "7a7f9a1ee91d06dd3fb2aa13f22b4d1dfac0a8646fe00eb6116350f075b6914d"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\3\\preparation.html",
+      "sha256": "6680c361e4ca5adda319439600487da2b37554c655eb4622873cd0e7e5510ef0"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\3\\practice.html",
+      "sha256": "f4e18a4fffe3d251d50f6be64f54e1f5ae276677171a3fd35da184ba5e027b8d"
+    }
+  },
+  "learningGoals": [
+    "Create a dilation of a figure given a center and scale factor",
+    "Explain orally the scale factor's effect on image size and distance from center",
+    "Identify center, scale factor and image without a circular grid"
+  ],
+  "sourceStandardsRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A"
+    }
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "source": "3.1: Points on a Ray",
+      "worksheet": "ray",
+      "modality": "STRAIGHTEDGE_CONSTRUCT_DOUBLE_AND_HALF_DISTANCE_ON_SAME_RAY",
+      "key": "A(0,0), B(2,0), AB=2. C(4,0), AC=4, D(1,0), AD=1. k2 maps B to C, k1/2 B to D."
+    },
+    {
+      "source": "3.2: Dilation Obstacle Course",
+      "worksheet": "obstacle",
+      "modality": "DISTINCT_CENTER_FACTOR_FORWARD_INVERSE_AND_IDENTITY_POINT_MAPPING",
+      "key": "A(-5,0),B(-3,0),F(-1,0),H(0,0),E(2,0),G(6,0),C(5,0). B→C about A k5; G→E about H k1/3; E→G about H k3; F→B about A k1/2; H→J about A k1/3 J=(-10/3,0); F→H about A k5/4; H→H about B k1."
+    },
+    {
+      "source": "3.3: Getting Perspective",
+      "worksheet": "perspective",
+      "modality": "NON_GRID_STRAIGHTEDGE_RAY_DISTANCE_AND_FULL_POLYGON_PROJECTION",
+      "key": "Center C(0,0), P(2,1) factor4 -> P′(8,4); Q(4,0) factor1/2 ->Q′(2,0). Triangle T(1,1),U(3,1),V(2,2), center K(-1,0), k3/2 -> T′(2,3/2), U′(5,3/2), V′(7/2,3). All center-ray ratios same and polygon sides scale by3/2."
+    }
+  ],
+  "sourcePracticeToFirstPartyCrosswalk": [
+    {
+      "source": "Problem 1 length of 3 cm under 5, 3.7, 1/5 and s",
+      "worksheet": "practice",
+      "key": "3×5=15 cm; 3×3.7=11.1 cm; 3×1/5=3/5 cm; 3s cm."
+    },
+    {
+      "source": "Problem 2 four point images about opposite centers",
+      "worksheet": "practice",
+      "key": "A(0,0),B(2,0); C from B about A k2=(4,0), D from A about B k2=(4,0), E from B about A k1/2=(1,0), F from A about B k1/2=(1,0); some images coincide."
+    },
+    {
+      "source": "Problem 3 perspective drawing with center, factor and image",
+      "worksheet": "practice",
+      "key": "Human teacher checks external center, all corresponding rays and shared k2, no default auto-score."
+    },
+    {
+      "source": "Problem 4 longest-side bidirectional scaling",
+      "worksheet": "practice",
+      "key": "DEF longest8cm, ABC longest12cm, DEF→ABC factor3/2 and inverse2/3."
+    },
+    {
+      "source": "Problem 5 intersecting line angles",
+      "worksheet": "practice",
+      "key": "Vertical opposite102°, both adjacent78°."
+    },
+    {
+      "source": "Problem 6 congruence and side/angle retrieval",
+      "worksheet": "practice",
+      "key": "A(0,0),B(3,0),C(0,4) translated(+2,-1) to D(2,-1),E(5,-1),F(2,3), side lengths3,4,5; right angle at D90°, other angles approximately53.1301° and36.8699°."
+    }
+  ],
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U02:L03",
+    "routeType": "FIRST_PARTY_TEACHER_SELECTED_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l03-dilations-no-grid-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u02-l03-dilations-no-grid-paper.html",
+    "learnerWorksheetSha256": "35c432ccf45588a9d61cc3e7662fff5aeb8695534a114e49bac42ee5e8e202a7",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "sourceActivityMap": [
+      {
+        "source": "3.1: Points on a Ray",
+        "worksheet": "ray",
+        "modality": "STRAIGHTEDGE_CONSTRUCT_DOUBLE_AND_HALF_DISTANCE_ON_SAME_RAY",
+        "key": "A(0,0), B(2,0), AB=2. C(4,0), AC=4, D(1,0), AD=1. k2 maps B to C, k1/2 B to D."
+      },
+      {
+        "source": "3.2: Dilation Obstacle Course",
+        "worksheet": "obstacle",
+        "modality": "DISTINCT_CENTER_FACTOR_FORWARD_INVERSE_AND_IDENTITY_POINT_MAPPING",
+        "key": "A(-5,0),B(-3,0),F(-1,0),H(0,0),E(2,0),G(6,0),C(5,0). B→C about A k5; G→E about H k1/3; E→G about H k3; F→B about A k1/2; H→J about A k1/3 J=(-10/3,0); F→H about A k5/4; H→H about B k1."
+      },
+      {
+        "source": "3.3: Getting Perspective",
+        "worksheet": "perspective",
+        "modality": "NON_GRID_STRAIGHTEDGE_RAY_DISTANCE_AND_FULL_POLYGON_PROJECTION",
+        "key": "Center C(0,0), P(2,1) factor4 -> P′(8,4); Q(4,0) factor1/2 ->Q′(2,0). Triangle T(1,1),U(3,1),V(2,2), center K(-1,0), k3/2 -> T′(2,3/2), U′(5,3/2), V′(7/2,3). All center-ray ratios same and polygon sides scale by3/2."
+      }
+    ],
+    "sourcePracticeMap": [
+      {
+        "source": "Problem 1 length of 3 cm under 5, 3.7, 1/5 and s",
+        "worksheet": "practice",
+        "key": "3×5=15 cm; 3×3.7=11.1 cm; 3×1/5=3/5 cm; 3s cm."
+      },
+      {
+        "source": "Problem 2 four point images about opposite centers",
+        "worksheet": "practice",
+        "key": "A(0,0),B(2,0); C from B about A k2=(4,0), D from A about B k2=(4,0), E from B about A k1/2=(1,0), F from A about B k1/2=(1,0); some images coincide."
+      },
+      {
+        "source": "Problem 3 perspective drawing with center, factor and image",
+        "worksheet": "practice",
+        "key": "Human teacher checks external center, all corresponding rays and shared k2, no default auto-score."
+      },
+      {
+        "source": "Problem 4 longest-side bidirectional scaling",
+        "worksheet": "practice",
+        "key": "DEF longest8cm, ABC longest12cm, DEF→ABC factor3/2 and inverse2/3."
+      },
+      {
+        "source": "Problem 5 intersecting line angles",
+        "worksheet": "practice",
+        "key": "Vertical opposite102°, both adjacent78°."
+      },
+      {
+        "source": "Problem 6 congruence and side/angle retrieval",
+        "worksheet": "practice",
+        "key": "A(0,0),B(3,0),C(0,4) translated(+2,-1) to D(2,-1),E(5,-1),F(2,3), side lengths3,4,5; right angle at D90°, other angles approximately53.1301° and36.8699°."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 incorrect/absent,1 partially correct with incomplete center/ray/label justification,2 exact drawings and corresponding distances/scale reasoning. Teacher marks paper offline.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "3.1 true C beyond B at twice distance and D within at half, label same directed ray and measured lengths"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "3.2 seven obstacle-course maps correctly distinguish center, factor, reciprocal, and fixed point under k1"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "3.3 two distinct point dilations and full polygon perspective using one center and uniform factor, including side/angle reasoning"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Six first-party Practice families and independently authored Cool-down with all triangle images and actual straightedge evidence"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "ray": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          2,
+          0
+        ],
+        "C": [
+          4,
+          0
+        ],
+        "D": [
+          1,
+          0
+        ],
+        "doubleFactor": 2,
+        "halfFactor": 0.5
+      },
+      "obstacle": {
+        "A": [
+          -5,
+          0
+        ],
+        "B": [
+          -3,
+          0
+        ],
+        "F": [
+          -1,
+          0
+        ],
+        "H": [
+          0,
+          0
+        ],
+        "E": [
+          2,
+          0
+        ],
+        "G": [
+          6,
+          0
+        ],
+        "C": [
+          5,
+          0
+        ],
+        "J": [
+          -3.3333333333333335,
+          0
+        ],
+        "factors": [
+          5,
+          0.3333333333333333,
+          3,
+          0.5,
+          0.3333333333333333,
+          1.25,
+          1
+        ]
+      },
+      "perspective": {
+        "center": [
+          0,
+          0
+        ],
+        "P": [
+          2,
+          1
+        ],
+        "PImage": [
+          8,
+          4
+        ],
+        "Q": [
+          4,
+          0
+        ],
+        "QImage": [
+          2,
+          0
+        ],
+        "polygonCenter": [
+          -1,
+          0
+        ],
+        "polygonOriginal": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "polygonFactor": 1.5,
+        "polygonImage": [
+          [
+            2,
+            1.5
+          ],
+          [
+            5,
+            1.5
+          ],
+          [
+            3.5,
+            3
+          ]
+        ]
+      },
+      "practice1": {
+        "sourceLength": 3,
+        "scaled": [
+          15,
+          11.1,
+          0.6
+        ],
+        "symbolic": "3s"
+      },
+      "practice2": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          2,
+          0
+        ],
+        "C": [
+          4,
+          0
+        ],
+        "D": [
+          4,
+          0
+        ],
+        "E": [
+          1,
+          0
+        ],
+        "F": [
+          1,
+          0
+        ]
+      },
+      "practice4": {
+        "forward": 1.5,
+        "inverse": 0.6666666666666666
+      },
+      "practice5": {
+        "vertical": 102,
+        "adjacent": 78
+      },
+      "practice6": {
+        "original": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "image": [
+          [
+            2,
+            -1
+          ],
+          [
+            5,
+            -1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "sideLengths": [
+          3,
+          4,
+          5
+        ],
+        "angles": [
+          90,
+          53.13010235415598,
+          36.86989764584402
+        ]
+      },
+      "cooldown": {
+        "center": [
+          0,
+          0
+        ],
+        "original": [
+          [
+            1,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "factor": 1.5,
+        "image": [
+          [
+            1.5,
+            1.5
+          ],
+          [
+            7.5,
+            1.5
+          ],
+          [
+            1.5,
+            4.5
+          ]
+        ]
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "C(4,0) twice A-B and D(1,0) half on forward ray",
+        "B→C center A factor5, G→E center H factor1/3",
+        "F→H center A factor5/4, H→H center B factor1",
+        "P(2,1) from C(0,0) k4 maps P′(8,4), Q k1/2 maps (2,0)",
+        "Perspective triangle scale3/2 from K(-1,0) gives T′(2,1.5),U′(5,1.5),V′(3.5,3)",
+        "3cm segment factors map to15,11.1,.6,3s",
+        "First-party Cool-down images 1.5,1.5 / 7.5,1.5 / 1.5,4.5"
+      ],
+      "equivalent": [
+        "k1/2 equals0.5, k5/4 equals1.25",
+        "3/5cm equals0.6cm for factor1/5",
+        "Full measurable straightedge drawing may replace coordinate notation with clear correspondences",
+        "A k1 identity map fixes H regardless of selected center",
+        "DEF→ABC scale1.5 equivalent3/2"
+      ],
+      "wrong": [
+        "C placed backward of A for positive factor2",
+        "Replace forward G→E factor1/3 with inverse3",
+        "Assume dilated angles multiply by3/2",
+        "Use distance from origin instead of chosen K for perspective",
+        "Call 3.7 times3 equal9.1 instead of11.1",
+        "Claim identity k0, which maps point to center, rather than k1"
+      ],
+      "malformed": [
+        "No center marked",
+        "Only image length without point/ray",
+        "Incomplete seven obstacle questions",
+        "Perspective drawing without labelled corresponding vertices",
+        "Factor unspecified or negative when source only positive",
+        "Cool-down only factor number without triangle construction"
+      ],
+      "boundary": [
+        "Positive k below1 puts image between center and original, k above1 beyond original on ray",
+        "If image equals original and point differs from center then k=1",
+        "Center itself is fixed by every dilation",
+        "Reciprocal factors undo dilations with same center",
+        "A dilation k1 is also a rigid motion; k other than1 generally not congruence",
+        "A 180-degree line-angle pair contains supplementary78 for vertical102"
+      ]
+    },
+    "firstPartyCoolDown": {
+      "worksheet": "cool",
+      "origin": "EDULYTIKS_INDEPENDENT_NOT_PUBLISHER_3.4",
+      "manualTeacherAssessment": true
+    },
+    "teacherSelectedOffline": true,
+    "studentSubmissionOnline": false,
+    "teacherGradePersistenceVerified": false,
+    "sourceAppletIntegrated": false,
+    "firstPartyNonGridStraightedge": "BLANK_UNGRIDDED_PRINT_AREA_AND_ORIGINAL_STARTER_RAY",
+    "machineGenerated": false,
+    "testsStatus": "AUTHORED_NOT_RUN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u02-l03-selected-paper-route-20261031.test.cjs",
+    "publisherCoolDown": "TEACHER_3.4_PRESENT_NOT_REPRODUCED"
+  },
+  "A": "A_CLOSED_SOURCE_THREE_ACTIVITIES_SIX_PRACTICE_TASKS_PARITY",
+  "B": "B_CLOSED_ORIGINAL_RICHV2_SELECTED_FIRST_PARTY_STRAIGHTEDGE_PAPER",
+  "C": "C_CLOSED_ACADEMIC_SELECTED_OFFLINE_PAPER_TEACHER_ASSESSMENT",
+  "D": "NOT_RUN",
+  "copyright": "SOURCE_CC_BY_4_0_REFERENCED_ORIGINAL_EDULYTIKS_ASSESSMENT",
+  "sharedEngineFilesModified": false,
+  "onlinePractice": "NOT_READY_VERIFIED",
+  "teacherGradePersistence": "NOT_RUN",
+  "publisherApplet": "NOT_INTEGRATED"
+}
