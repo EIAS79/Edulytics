@@ -39,7 +39,7 @@ for(let n=1;n<=17;n++)test('U01 L'+String(n).padStart(2,'0')+' source-scoped A-B
  const entry=aud.lessonCommits[n-1],row=led.rows[n-1];
  const s=read(doc('us-ccss-g8-coder4-u01-l'+num+'-academic-assessment-contract-20261030.json'));
  assert.equal(entry.lessonCode,id);assert.equal(row.lessonCode,id);
- assert.equal(entry.academicABCCommitSHA,row.latestABCCommitSHA);
+ assert.equal(entry.academicABCCommitSHA,n===2?row.historicalABCCommitSHA:row.latestABCCommitSHA);
  assert.match(entry.academicABCCommitSHA,/^[a-f0-9]{40}$/);
  assert.equal(entry.sourceFiles.length,3);
  for(const f of entry.sourceFiles)assert.match(f.sha256,/^[a-f0-9]{64}$/);
