@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
   "contentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
-  "readiness": "AUTHORING_COMPLETE_BUT_STAGE_C_BLOCKED_NO_SELECTED_PRACTICE_ROUTE",
+  "readiness": "ABC_AUTHORING_CLOSED_READY_FOR_STAGE_D__TESTS_NOT_RUN",
   "sourceRoles": {
     "6.SP.A.1": "BuildingOn",
     "HSS-ID.A.1": "BuildingTowards"
@@ -21,7 +21,7 @@
   ],
   "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
   "firstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
-  "runtimeEnabled": false,
+  "runtimeEnabled": true,
   "activities": [
     {
       "id": "WARMUP",
@@ -231,11 +231,11 @@
   },
   "priorAuthoringReadiness": "AUTHORING_CLOSED_READY_FOR_STAGE_D_NOT_RUNTIME",
   "strictStageCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "selectedPracticeRouteVerified": false,
+  "selectedPracticeRouteVerified": true,
   "blocker": {
     "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
     "stage": "C",
-    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "status": "RESOLVED_BY_INTEGRATION_4bfa3339ca2bad3b2e64453ba3b6ea090b911152",
     "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "lines": "124-151",
     "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
@@ -243,7 +243,8 @@
     "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
     "issue": "https://github.com/EIAS79/Edulytics/issues/453",
     "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained",
-    "parallelPermittedWork20261031": "Course local selected offline sheet authored and embedded; no claim that machine P3 or authenticated Practice can be generated. Waiting for global shared-service sole writer."
+    "parallelPermittedWork20261031": "Course local selected offline sheet authored and embedded; no claim that machine P3 or authenticated Practice can be generated. Waiting for global shared-service sole writer.",
+    "resolution": "Source-level route and persisted set-grader present; test execution and authenticated teacher grading remain Stage D"
   },
   "printableTeacherSelectedEvidence20261031": {
     "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
@@ -275,5 +276,22 @@
     "oracleFixtureCorrection": "Historical correct CSV transcription preserved as an independent valid fixture, supported by strict 3-token parsing; no production route claimed",
     "tests": "AUTHORED_NOT_RUN",
     "readiness": "STAGE_C_STILL_BLOCKED_SHARED_SELECTED_PRACTICE"
+  },
+  "sharedIntegrationSourceSha": "4bfa3339ca2bad3b2e64453ba3b6ea090b911152",
+  "sharedIntegrationEvidence": {
+    "integrationSourceSha": "4bfa3339ca2bad3b2e64453ba3b6ea090b911152",
+    "owner": "Supervisor 2 ? #605 released authorization",
+    "integrationPr": 612,
+    "selectedContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "family": "usccss.alg1.u01.l01.statistical_questions_p3",
+    "generatorAndVerifier": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "sourceScopedOracle": "src/Edulytics.Services/Mathematics/UsCcssAlg1U01L01StatisticalSelectionQuestions.cs",
+    "lessonSelection": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "persistedGradingBranch": "src/Edulytics.Services/Practice/PracticeService.cs",
+    "existingAuthoredNotRunFixtures": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssAlg1U01L01SelectedPracticeRouteTests.cs",
+    "humanRoute": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-hs/alg1/u01-l01-first-party-paper-assessment.html",
+    "humanSurveyRubricPoints": 8,
+    "humanOriginalEdulytiksCooldownPoints": 6,
+    "remainingStageD": "No authenticated two-school proof, real teacher grade persistence or CI/test execution claimed"
   }
 }
