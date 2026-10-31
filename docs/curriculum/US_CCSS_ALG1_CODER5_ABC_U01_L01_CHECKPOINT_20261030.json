@@ -35,7 +35,7 @@
     }
   },
   "existingCandidatePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l01-2021.rich-lesson-v2.json",
-  "candidateContentVersion": "alg1-u01-l01-local-source-aligned-20261030-v3",
+  "candidateContentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
   "reusedEvidence": [
     "V10 baseline independent spot review, PRELIMINARY only",
     "V11-V13 preexisting 132 authored Rich V2 sidecars, prior math oracles, privacy-safe survey examples",
@@ -75,7 +75,8 @@
     "blockerOwner": "NONE_FOR_B_STATIC; BROWSER_IN_STAGE_D",
     "staticSelectorContract": "Core embeds .rich-lesson-v2.json; LessonContentService selects RichLessonContentV2Registry.Find before composer",
     "staticResolverVerification": "PASS_8_OF_8_FOCUSED_TESTS",
-    "browserE2EIsStageD": true
+    "browserE2EIsStageD": true,
+    "studentFacingP3AnswerKey": "REMOVED_FROM_EXPLANATION_PARAGRAPHS_20261031; TEACHER_CONTRACT_RETAINS_KEY"
   },
   "C": {
     "sourceAlignedDraftPrepared": true,
@@ -131,7 +132,8 @@
     "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
     "authoringContract": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L01_AUTHORING_C_20261030.json",
     "independentAuthoringOracle": "PASS_17_CASES_20261030",
-    "runtimeServiceObligation": "REQUIRED_FOR_STAGE_C_SELECTED_ROUTE_BEFORE_ABC_CLOSURE; tests execution deferred Stage D"
+    "runtimeServiceObligation": "REQUIRED_FOR_STAGE_C_SELECTED_ROUTE_BEFORE_ABC_CLOSURE; tests execution deferred Stage D",
+    "typedMultiSelectInput": "CHECKBOX_ARRAY_A_TO_F; independent oracle accepts strict 3-token CSV transcription; production route blocked"
   },
   "D": {
     "authorized": false,

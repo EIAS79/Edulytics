@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
-  "contentVersion": "alg1-u01-l01-local-source-aligned-20261030-v3",
+  "contentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
   "readiness": "AUTHORING_COMPLETE_BUT_STAGE_C_BLOCKED_NO_SELECTED_PRACTICE_ROUTE",
   "sourceRoles": {
     "6.SP.A.1": "BuildingOn",
@@ -112,7 +112,9 @@
         "E"
       ],
       "normalize": "trim+uppercase; order independent; reject duplicates and malformed",
-      "productionGraderVerified": false
+      "productionGraderVerified": false,
+      "responseWireFormat": "CHECKBOX_ARRAY_A_TO_F; INDEPENDENT_ORACLE_ALSO_ACCEPTS_STRICT_3_TOKEN_COMMA_TRANSCRIPTION",
+      "studentFacingAnswerKeyExposure": "FORBIDDEN; ONLY_TEACHER_ASSESSMENT_CONTRACT_STORES_EXPECTED"
     },
     {
       "id": "COOLDOWN",
@@ -264,5 +266,14 @@
     "humanCooldownRubric": 6,
     "tests": "AUTHORED_NOT_RUN",
     "sharedServiceChanged": false
+  },
+  "studentP3KeyExposureFix20261031": {
+    "defect": "P3 answer set was previously published inside student-facing Rich V2 ExplanationParagraphs",
+    "fixedContentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
+    "answerKeyStoredInTeacherContract": true,
+    "printableStudentAssessmentUnchanged": true,
+    "oracleFixtureCorrection": "Historical correct CSV transcription preserved as an independent valid fixture, supported by strict 3-token parsing; no production route claimed",
+    "tests": "AUTHORED_NOT_RUN",
+    "readiness": "STAGE_C_STILL_BLOCKED_SHARED_SELECTED_PRACTICE"
   }
 }

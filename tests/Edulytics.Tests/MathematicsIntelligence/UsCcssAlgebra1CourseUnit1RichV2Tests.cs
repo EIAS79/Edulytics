@@ -60,8 +60,10 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
         Assert.Contains(rich.ExplanationParagraphs,
             p => p.Contains("Cool-down substitute", StringComparison.Ordinal)
                 && p.Contains("NOT independently verified", StringComparison.Ordinal));
-        Assert.Contains(rich.ExplanationParagraphs,
+        Assert.DoesNotContain(rich.ExplanationParagraphs,
             p => p.Contains("Answer set = {A, C, E}", StringComparison.Ordinal));
+        Assert.Contains(rich.ExplanationParagraphs,
+            p => p.Contains("P3 (six-choice select-all)", StringComparison.Ordinal));
 
     }
 
@@ -76,7 +78,7 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
         using var stream = assembly.GetManifestResourceStream(resource);
         Assert.NotNull(stream);
         using var doc = System.Text.Json.JsonDocument.Parse(stream);
-        Assert.Equal("alg1-u01-l01-local-source-aligned-20261030-v3",
+        Assert.Equal("alg1-u01-l01-local-source-aligned-20261031-v4",
             doc.RootElement.GetProperty("ContentVersion").GetString());
         Assert.Equal(Prefix + "L01", Assert.Single(doc.RootElement
             .GetProperty("Lessons").EnumerateArray()).GetProperty("LessonCode").GetString());
@@ -112,7 +114,16 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
         Assert.False(Match(["A", "C"])); // missing
         Assert.False(Match(["A", "a", "C", "E"])); // duplicate case variant
         Assert.False(Match(["A", "C", "Z"])); // unsupported
-        Assert.False(Match(["A,C,E"])); // malformed
+        Assert.False(Match(["A,C,E"])); // an array with one comma-joined token is malformed
+        // Independent teacher transcription oracle also preserves valid strict CSV fixtures.
+        static bool MatchDelimited(string? response) =>
+            !string.IsNullOrWhiteSpace(response) &&
+            Match(response.Split(',', StringSplitOptions.None));
+        Assert.True(MatchDelimited("c, E, a"));
+        Assert.False(MatchDelimited("A,,C,E"));
+        Assert.False(MatchDelimited("A,A,C,E"));
+        Assert.False(MatchDelimited("A,C,E,Z"));
+        Assert.False(MatchDelimited(null));
         Assert.False(Match(["A", "C", ""])); // blank
         Assert.False(Match([]));
         Assert.False(Match(null));

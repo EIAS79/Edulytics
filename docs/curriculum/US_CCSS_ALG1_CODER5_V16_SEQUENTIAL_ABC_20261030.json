@@ -47,7 +47,7 @@
         "P1/P2 open responses and new six-choice P3; locked publisher Cool-down replaced by first-party"
       ],
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l01-2021.rich-lesson-v2.json",
-      "contentVersion": "alg1-u01-l01-local-source-aligned-20261030-v3",
+      "contentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
       "A": {
         "status": "A_CLOSED",
         "decision": "SOURCE_GOALS_AND_ACTIVITY_MATCHED_FIRST_PARTY_EQUIVALENT",
@@ -59,7 +59,8 @@
       "B": {
         "status": "B_CLOSED_STATIC",
         "preserveCorrectPriorContent": true,
-        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
+        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed",
+        "studentFacingAnswerKeyLeakage": "REPAIRED_20261031_V4"
       },
       "C": {
         "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
@@ -75,7 +76,8 @@
         "runtimeEnabled": false,
         "stageDServiceOwner": "Supervisor 2 single-writer",
         "selectedPracticeRouteVerified": false,
-        "stageCGate": "BLOCKED_SELECTED_PRACTICE"
+        "stageCGate": "BLOCKED_SELECTED_PRACTICE",
+        "typedMultiSelectInput": "CHECKBOX_ARRAY_A_TO_F; independent oracle accepts strict 3-token CSV transcription; production route blocked"
       },
       "D": "NOT_RUN_BATCH_DEFERRED; SERVICE_GATE_FAIL_CLOSED",
       "readyForStageD": false,
