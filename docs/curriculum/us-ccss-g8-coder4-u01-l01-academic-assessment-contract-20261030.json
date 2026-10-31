@@ -2,7 +2,7 @@
   "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
   "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
   "lessonTitle": "Moving in the Plane",
-  "assessmentScope": "ACADEMIC_C_SPECIFICATION_ONLY__NOT_A_RUNTIME_LESSON_PRACTICE_CONTRACT",
+  "assessmentScope": "ACADEMIC_C_SELECTED_OFFLINE_EDULYTIKS_PAPER_AND_TEACHER_REVIEW__NOT_RUNTIME_PRACTICE_CONTRACT",
   "sourceEdition": "OUR/Illustrative Mathematics 2017-2019 teacher/student local HTML CC BY 4.0 adaptation",
   "sourceFiles": [
     {
@@ -164,7 +164,8 @@
     "machineOracleDefinedButNotProductionReady": true,
     "productionGeneratedPractice": "NOT_RUN_STAGE_D",
     "teacherScorePersistence": "NOT_RUN_STAGE_D",
-    "inputNegativeOracle": "COURSE_OWNED_FOCUSED_TEST_REQUIRED"
+    "inputNegativeOracle": "COURSE_OWNED_FOCUSED_TEST_REQUIRED",
+    "effectiveSelectedOfflineTeacherRouteAuthored": true
   },
   "futureStageD": {
     "exactPracticeContractReadiness": "NOT_READY_VERIFIED",
@@ -195,9 +196,9 @@
   "stageGates": {
     "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_BLOCKED_SELECTED_ROUTE_NOT_STATICALLY_INTEGRATED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
-    "READY_FOR_STAGE_D": false
+    "READY_FOR_STAGE_D": true
   },
   "previousHEAD": "4fabf7def2b89e4ba61fd015f13e496daa431de0",
   "priorStageGates": {
@@ -209,9 +210,101 @@
   },
   "selectedRouteReaudit20261031": {
     "atUtc": "2026-10-31T00:02:16.881Z",
-    "stageCStatus": "BLOCKED",
+    "stageCStatus": "CLOSED_ACADEMIC_OFFLINE_PAPER_ONLY",
     "reason": "ACADEMIC_C_SPECIFICATION_ONLY not selected in lesson Practice runtime or usable teacher assessment route",
     "sharedWriter": "Supervisor 2",
-    "fixtureFile": "tests/academic-us-ccss-g8-coder4-u01-l01-selected-route.stage-d.cjs"
+    "fixtureFile": "tests/academic-us-ccss-g8-coder4-u01-l01-selected-route.stage-d.cjs",
+    "resolvedWith": "LESSON_LOCAL_PRINTABLE_PAPER_ROUTE_AND_STUDENT_FACING_SELECTED_RICHV2_LINK__NO_SHARED_CODE"
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
+    "studentLessonRichV2": "src\\Edulytics.Core\\Curriculum\\LessonContent\\RichV2\\us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "delivery": "Teacher prints/distributes worksheet linked by literal lesson code/path in selected RichV2 content; collects paper or oral evidence with attached six-frame diagrams; scores criterion rubric offline.",
+    "activityMap": [
+      {
+        "source": "1.1",
+        "worksheet": "odd",
+        "accepted": "Any of A,B,C,D with a correct unique geometric property; teacher checks reasoning; no machine letter key."
+      },
+      {
+        "source": "1.2",
+        "worksheet": "dance",
+        "accepted": "Reproducible all six frames, chosen first-party A/B/C, partner reconstruction in both roles and preserves rigid lengths/angles."
+      },
+      {
+        "source": "extension",
+        "worksheet": "danceinv",
+        "accepted": "Reverse ordered 6→1 and inverse each move direction, preserve distances/turn magnitude."
+      },
+      {
+        "source": "Edulytiks Cool-down",
+        "worksheet": "cool",
+        "accepted": "Final P=(4,1), tip east, 90° clockwise; figure congruent and complete reconstruction explanation."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "Defensible unique angle-class property, not choice alone"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "All six frame slides/turns with correct direction/magnitude and partner reconstruction"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Reverse order/inverse each rigid move and preserve original dimensions"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Cool-down final point and tip, complete diagram/explanation why rigid motion preserves lengths/angles"
+        }
+      ],
+      "Scoring": "0 absent/incorrect,1 partial,2 correct with evidence; authorized teacher checks offline"
+    },
+    "fixtures": {
+      "correct": [
+        "C with acute 45° uniquely acute",
+        "A uniquely straight 180°",
+        "six frame A/B/C correctly reproduced",
+        "Cool-down P=(4,1), tip east"
+      ],
+      "equivalent": [
+        "B is the only right angle",
+        "D only obtuse 125°",
+        "equivalent oral vs written reproducible motion with complete six frames"
+      ],
+      "wrong": [
+        "choice letter alone",
+        "card name without six-frame moves",
+        "clockwise described counterclockwise",
+        "only final P numeric response without triangle tip and explanation"
+      ],
+      "malformed": [
+        "missing frames",
+        "omitted turn direction or amount",
+        "unlabelled triangle drawing",
+        "no partner reconstruction evidence"
+      ],
+      "boundary": [
+        "(4,1.0000001) not exact point key for optional coordinate-only subskill; does not replace human dance",
+        "alternative mathematically defensible angle reasons should not be rejected for different letter"
+      ]
+    },
+    "machineGenerated": false,
+    "teacherReview": "REAL_OFFLINE_PAPER_TEACHER_MANUAL_RECORD_REQUIRED",
+    "savedTeacherGradeVerified": false,
+    "onlineSubmissionAvailable": "NOT_VERIFIED_STAGE_D",
+    "sharedPracticeEngineChanges": false,
+    "strictGate": "Academic A-B-C only. Original source figures/publisher Cool-down excluded, app authenticated live route deferred Stage D."
   }
 }
