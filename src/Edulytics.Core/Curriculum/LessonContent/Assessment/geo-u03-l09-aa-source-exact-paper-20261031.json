@@ -1,0 +1,226 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L09",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\9\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\9\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\9\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\9\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "522fc25183fb1c7e48daa6890c0041f797900e26b55b5e92973c543b0fb88b4e",
+    "TeacherActivities": "62561c0457763676ec99560b971c750bf4ffab07935057ded5baac5da47070b6",
+    "StudentActivities": "76c182174bb042b52a3d07d1814a473c1368417bd979cdd789632e71e899ca27",
+    "StudentPractice": "42ace8e56d9ea9a87fdff0781aa99dc2a78faa8f473a65b9e84168332235b762"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10",
+      "HSG-SRT.A.2"
+    ],
+    "Addressing": [
+      "HSG-SRT.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.A.3"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "9.1",
+      "Goal": "Math Talk PQR halves, ASA congruence and similarity; GHIs another ASA case",
+      "Mode": "SOURCE_INDEXED_PAPER_MATH_TALK"
+    },
+    {
+      "Source": "9.2",
+      "Goal": "45-only versus 45-plus-30 plus side 2-to-6, formal dilate ASA AA theorem",
+      "Mode": "FIRST_PARTY_GEOMETRIC_GENERAL_PROOF"
+    },
+    {
+      "Source": "9.3",
+      "Goal": "source 60 40 and 40 80 triangles; solve x and y exact with correct angle mapping",
+      "Mode": "SOURCE_EXACT_RATIOS_AND_DIAGRAM"
+    },
+    {
+      "Source": "9.3 extension",
+      "Goal": "AA/AAA quadrilateral similarity not guaranteed",
+      "Mode": "COUNTEREXAMPLE_PAPER"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight original source-indexed AA, scale, circle and geometry tasks",
+      "Mode": "EXACT_P1_P2_AND_TEACHER_FIGURE_REVIEW_REMAINDER"
+    },
+    {
+      "Source": "9.4",
+      "Goal": "publisher locked cool-down",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L09",
+    "TaskId": "geo-u03-l09-aa-asa-original-source-math-proof",
+    "GroupId": "GEO_U03_L09_AA_THEOREM_SOURCE_PAPER_PROOF",
+    "Mode": "TEACHER_SELECTED_EXACT_RATIO_AND_PAPER_TRIANGLE_PROOF",
+    "Evidence": "student 9.2 drawing, labelled dilation, included-side ASA formal theorem proof and 9.3 angle-side ratio values with sketch",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedTeacherGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, issue #605 lease untouched"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correct correspondence of two angle pairs and third angle inferred using 180-degree theorem",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "source-aligned general dilate-by-included-side-ratio then ASA congruence triangle similarity proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "source 9.3 exact x=24/5 and y=10 using correct opposite-angle side correspondence",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "rejects single-angle similarity and unsupported quadrilateral AA and justifies source Practice classifications",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "DF in ABC and DEF",
+        "TeacherExpected": "AA angle map A to D, B to F, C to E; DE18 corresponds AC6, k3; DF corresponds AB8 -> DF24",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "ABC 35,20,125 angle triple",
+        "TeacherExpected": "similar option A C D",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "triangle ABC and DEC",
+        "TeacherExpected": "figure-dependent similarity and exact angle map",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "all circles similar",
+        "TeacherExpected": "translate centres then dilate ratio of positive radii",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "all parallelograms similar?",
+        "TeacherExpected": "no; different side/angle ratios counterexample",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "equilateral vs right and isosceles right",
+        "TeacherExpected": "equilateral/right impossible, right/isosceles possible when 45-45-90",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "quadrilaterals P Q scale",
+        "TeacherExpected": "source figure required for correct 3/5 4/5 5/4 or 5/3",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "circle centre Q versus R scale and x",
+        "TeacherExpected": "original figure and marked radii required",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_SOURCE_RATIO"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "P1DF": "24",
+    "P2ValidOptions": [
+      "A",
+      "C",
+      "D"
+    ],
+    "Source9_3FirstAngleSet": [
+      60,
+      40,
+      80
+    ],
+    "Source9_3SecondAngleSet": [
+      40,
+      80,
+      60
+    ],
+    "Source9_3Scale": "5/3",
+    "Source9_3_x": "24/5",
+    "Source9_3_y": "10",
+    "Source9_2_2to6Scale": "3",
+    "CorrectPreviousTheorem": "ASA_CONGRUENCE",
+    "QuadAATheoremNotGeneral": true
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source 9.3 angle triples 60,40,80 and 40,80,60 yield scale5/3 x24/5 y10",
+      "9.1 half-size PQR ASA to STU",
+      "P1 DE18 maps AC6 k3, DF=AB8*3=24"
+    ],
+    "Equivalent": [
+      "x=4.8 equals 24/5",
+      "different legal rigid alignments after included side dilation"
+    ],
+    "Wrong": [
+      "matches P1 DE18 to AB8 without angle order",
+      "one 45-degree angle means similarity",
+      "AAA quadrilateral angles always force similarity"
+    ],
+    "Boundary": [
+      "nondegenerate third angle positive",
+      "included side length positive for scale ratio",
+      "either included corresponding side pair can define k"
+    ],
+    "Malformed": [
+      "unlabelled angle correspondence in ratio",
+      "claims AA without ASA proof",
+      "source-image-only answer invented without figure"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_9.4_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_SOURCE_AA_AND_RATIO_PROOF",
+  "TeacherHandoff": "Student sketches and marked ratios, full dilation ASA proof and teacher rubric offline, without app grade claim.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l09-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
