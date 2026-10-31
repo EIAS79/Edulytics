@@ -1,0 +1,268 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L06",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "8f3119ab024213a39fcd4d82343ba1c251b1a59e61e722d74ad47a56dc54336f",
+    "TeacherActivities": "09a2e57fe3a4f220b61fd7e1bd12a60459daf158e1adb1c003570f44b34d4180",
+    "StudentActivities": "67aff11d7198b2dd4d2596502c47a3a211becaff626569790c4ade76bace20cc",
+    "StudentPractice": "30b5b63d3d1da3a9490023c9bf9e77e2c852ce8ea2effeddfc9551f7f5ff0ab1"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "6.G.A.2"
+    ],
+    "Addressing": [
+      "HSA-SSE.A.1.a",
+      "HSG-GMD",
+      "HSN-Q.A.1"
+    ],
+    "BuildingTowards": [
+      "HSF-IF.C.7.b",
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "unit and half-inch source cube Math Talk and counting small cubes",
+      "Mode": "FIRST_PARTY_UNIT_CUBE_ILLUSTRATION"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "four source k1,2,3,4 cube rows with surface and volume",
+      "Mode": "PHYSICAL_OR_FIRST_PARTY_CUBE_NET_AND_FILL"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "Clare Elena general solid cube approximation and source triangular prism",
+      "Mode": "TEACHER_ORIGINAL_NARRATIVE_PROOF"
+    },
+    {
+      "Source": "6.3 extension",
+      "Goal": "Sierpinski half-scale top self-similarity and zero Euclidean-area exception",
+      "Mode": "TEACHER_FRACTAL_BOUNDARY_ARGUMENT"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine source scaled paint box volume/area, graphs and parallel geometry items",
+      "Mode": "EXACT_P1_P6_P8_AND_TEACHER_SOURCE_FIGURE"
+    },
+    {
+      "Source": "6.4",
+      "Goal": "protected One Cubic Foot cooldown",
+      "Mode": "EDULYTIKS_INDEPENDENT_CUBE_PHYSICAL_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L06",
+    "TaskId": "geo-u05-l06-four-source-cube-rows-and-prism-general-proof",
+    "GroupId": "GEO_U05_L06_VOLUME_K_CUBED_SURFACE_K_SQUARED_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Source complete 1/2-inch cubes or teacher-labeled physical models for cube k1-4, correct 6k² and k³ table, one peer-revised general solid proof and triangular prism1344cm²/2304cm³, nine source Practice and eight-point human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "builds/draws unit cube k1,2,3,4 and completes all source surface area and volume rows with proper exposed faces",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "derives exposed surface ratio k² and filled volume ratio k³ for uniform 3D similarity using models/units",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "argues extension from cube cells to other solids, computes original triangular prism area1344 and volume2304",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves nine source indexed Practice cases and explains collapsed k0/fractal/source picture limitations",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "box paint2oz sugar15 cups scaled factor2",
+        "TeacherExpected": "8oz paint,120cups sugar with 4× exposed area and8× volume",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "volume12 with k1/4,.4,1,1.2,5/3",
+        "TeacherExpected": "3/16,0.768,12,20.736,500/9 cubic units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "solid volume10in³ scaled k3.5, critique Kiran35",
+        "TeacherExpected": "correct volume428.75in³, original error applied k not k³",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "parallelogram source area10 target0,40,160,360,640",
+        "TeacherExpected": "scale0 collapsed limit,2,4,6,8",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "graph y=sqrt(x/4) candidates (0,0),(1,.5),(1,1),(4,1),(8,2)",
+        "TeacherExpected": "options A B D valid only; x0 collapsed boundary",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "festival banner design area1.5ft² scale5",
+        "TeacherExpected": "area37.5 square feet",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "draw source k3/4 rectangular pyramid horizontal section",
+        "TeacherExpected": "each pictured base dimension multiplied by.75, source graphic required",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "unit circle shaded exterior to inscribed regular hexagon",
+        "TeacherExpected": "pi-3sqrt3/2 square inches provided original shaded region matches",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "coplanar lines l,m each perpendicular to n",
+        "TeacherExpected": "parallel by corresponding equal right angles in a plane; 3D ambiguity requires coplanarity",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "CubeK": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "CubeSurfaceArea": [
+      6,
+      24,
+      54,
+      96
+    ],
+    "CubeVolume": [
+      1,
+      8,
+      27,
+      64
+    ],
+    "OriginalTriangularPrismSA": 84,
+    "OriginalTriangularPrismVolume": 36,
+    "OriginalK": 4,
+    "ImageTriangularPrismSA": 1344,
+    "ImageTriangularPrismVolume": 2304,
+    "StudentSummaryPrismOriginalSA": 94,
+    "StudentSummaryPrismOriginalVolume": 60,
+    "StudentSummaryScaledSA": 846,
+    "StudentSummaryScaledVolume": 1620,
+    "PaintOz": 8,
+    "SugarCups": 120,
+    "P2Volumes": [
+      "3/16",
+      "0.768",
+      "12",
+      "20.736",
+      "500/9"
+    ],
+    "P3Volume": 428.75,
+    "P4Factors": [
+      0,
+      2,
+      4,
+      6,
+      8
+    ],
+    "P5Options": [
+      "A",
+      "B",
+      "D"
+    ],
+    "P6AreaFt2": 37.5,
+    "P8Gap": "pi-3sqrt3/2",
+    "SierpinskiArea": "ZERO_TWO_DIMENSIONAL_AREA",
+    "SierpinskiMassFraction": "1/3"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "unit cube k1,2,3,4 surface areas6,24,54,96 and volumes1,8,27,64",
+      "source triangular prism84cm² and36cm³ k4 becomes1344cm² and2304cm³",
+      "P1 paint8oz sugar120cups, P3 volume428.75 and P5 options A B D"
+    ],
+    "Equivalent": [
+      "10*(7/2)^3 and428.75 are equivalent cubic-inch volumes",
+      "3/16 cubic units equals0.1875; P2 500/9 equals55.555... recurring cubic units"
+    ],
+    "Wrong": [
+      "scales source triangular prism surface area by k³ rather than k²",
+      "sugar quantity grows4× not8× in doubled box",
+      "claims completed infinite Sierpinski dust top piece has 1/4 of its positive area, ignoring zero area",
+      "treats 3D lines perpendicular to same line as necessarily parallel without coplanarity"
+    ],
+    "Boundary": [
+      "k0 yields collapsed zero-volume figure, not an ordinary nondegenerate 3D solid",
+      "fractal zero planar area makes naive positive-area fraction discussion meaningless",
+      "original source cross-section dimensions for P7 and shaded figure P8 require original diagram"
+    ],
+    "Malformed": [
+      "units paint ounces mistakenly cubic inches",
+      "no distinction exposed boundary face from interior cubes",
+      "source Stage D or auth app score falsely claimed"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
