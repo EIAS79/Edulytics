@@ -113,6 +113,70 @@
   }
   document.querySelectorAll('[data-preset]').forEach(button =>
     button.addEventListener('click', () => setPreset(button.dataset.preset)));
+
+  // Construction snapshots are in-memory visual aids. They do not submit,
+  // persist or grade student diagrams. A teacher evaluates the saved
+  // constructions and explanation together; no machine mastery inference.
+  const captured = [null, null];
+  function inspectCells(cells) {
+    const parts = cells.map(id => kinds[id]);
+    return {
+      squares: parts.reduce((n, p) => n + p.squares, 0),
+      triangles: parts.reduce((n, p) => n + p.triangles, 0),
+      gaps: 4 - parts.reduce((n, p) => n + p.cover, 0),
+      overlaps: parts.reduce((n, p) => n + p.pieceArea - p.cover, 0)
+    };
+  }
+  function showCapture(index) {
+    const name = 'Construction ' + (index + 1);
+    const card = document.getElementById(index === 0 ? 'construction-first' : 'construction-second');
+    const title = makeElement('h4', '', name);
+    if (!captured[index]) {
+      card.replaceChildren(title, makeElement('p', '', 'Not captured'));
+      return;
+    }
+    const cells = captured[index];
+    const illustration = makeElement('div', 'mosaic mini-mosaic');
+    illustration.setAttribute('role', 'img');
+    illustration.setAttribute('aria-label', name + ': ' +
+      names.map((n, i) => n + ' = ' + kinds[cells[i]].label).join('; '));
+    illustration.replaceChildren(...cells.map((id, i) => paintCell(names[i], id)));
+    const { squares, triangles, gaps, overlaps } = inspectCells(cells);
+    const summary = makeElement('p', 'small',
+      squares + ' squares, ' + triangles + ' half-triangles; ' +
+      fmt(gaps) + ' square units uncovered; ' + fmt(overlaps) + ' overlapping.');
+    card.replaceChildren(title, illustration, summary);
+  }
+  function compareCaptures() {
+    const status = document.getElementById('comparison-status');
+    if (!captured[0] || !captured[1]) {
+      status.textContent = 'Capture both arrangements before comparing. Teacher review remains necessary.';
+      status.className = 'status';
+      return;
+    }
+    const first = inspectCells(captured[0]);
+    const second = inspectCells(captured[1]);
+    const complete = x => x.gaps === 0 && x.overlaps === 0 &&
+      x.squares === 2 && x.triangles === 4;
+    const distinct = captured[0].some((v, i) => v !== captured[1][i]);
+    status.className = 'status ' + (complete(first) && complete(second) && distinct ? 'valid' : 'invalid');
+    status.textContent = !distinct
+      ? 'Both saved cell arrangements are identical. Change placements to show a second arrangement.'
+      : !(complete(first) && complete(second))
+        ? 'At least one arrangement fails the constrained 2-square/4-triangle complete-covering check; revise before claiming two valid tilings.'
+        : 'Both distinct captured arrangements satisfy the constrained cell coverage and inventory checks. Teacher must still examine the drawings and written justification; no grade has been assigned.';
+  }
+  function capture(index) {
+    captured[index] = [...selection];
+    showCapture(index);
+    compareCaptures();
+    // Any previously entered teacher rubric must not survive changed evidence.
+    document.querySelectorAll('.rubric').forEach(s => { s.value = ''; });
+    output('review-status', 'Not reviewed — captured constructions changed. Teacher must review again.');
+  }
+  document.getElementById('capture-first').addEventListener('click', () => capture(0));
+  document.getElementById('capture-second').addEventListener('click', () => capture(1));
+
   document.querySelectorAll('.rubric').forEach(input =>
     input.addEventListener('change', () => {
       const scores = [...document.querySelectorAll('.rubric')].map(s => s.value);

@@ -71,3 +71,20 @@ test('Teacher rubric is human-entered with four criteria, not automatically grad
   assert.doesNotMatch(js, /\blocalStorage\b|\bsessionStorage\b|\bXMLHttpRequest\b/);
   assert.doesNotMatch(html, /<form\b/i);
 });
+
+test('two learner constructions are both captured, visible and teacher-reviewable without a machine grade', () => {
+  for (const element of ['capture-first', 'capture-second', 'construction-first', 'construction-second', 'comparison-status']) {
+    assert.match(html, new RegExp('id="' + element + '"'));
+  }
+  assert.match(js, /const captured = \[null, null\]/);
+  assert.match(js, /captured\[index\] = \[\.\.\.selection\]/);
+  assert.match(js, /const distinct = captured\[0\]\.some/);
+  assert.match(js, /x\.squares === 2 && x\.triangles === 4/);
+  assert.match(js, /x\.gaps === 0 && x\.overlaps === 0/);
+  assert.match(js, /Both saved cell arrangements are identical/);
+  assert.match(js, /Teacher must still examine the drawings and written justification/);
+  assert.match(js, /document\.querySelectorAll\('\.rubric'\)\.forEach\(s => \{ s\.value = ''; \}\)/);
+  assert.match(js, /Not reviewed — captured constructions changed/);
+  assert.match(css, /\.mini-mosaic/);
+  assert.match(css, /@media print\{\.capture-panel/);
+});

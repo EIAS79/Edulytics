@@ -34,6 +34,14 @@ button:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px sol
 .mosaic-cell[data-kind=overlap] .triangle{opacity:.65}
 .mosaic-cell[data-kind=overlap]::after{content:"OVERLAP";position:absolute;bottom:.3rem;right:.2rem;background:#7d1530;color:#fff;font-weight:700;font-size:.76rem;padding:.1rem .25rem}
 .editors{max-width:440px;display:grid;grid-template-columns:1fr 1fr;gap:.3rem .75rem;margin-top:.8rem}
+.capture-panel{margin:1rem 0;background:#f9fbfe}
+.capture-buttons{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}
+.captures{display:grid;grid-template-columns:repeat(2,minmax(210px,1fr));gap:1rem}
+.capture-item{padding:.65rem;border:1px solid #b8cedb;border-radius:.4rem;background:#fff}
+.capture-item h4{margin:0 0 .5rem}
+.mini-mosaic{max-width:240px;margin:.3rem 0}
+@media(max-width:560px){.captures{grid-template-columns:1fr}}
+@media print{.capture-panel{border:1px solid #888;break-inside:auto}.capture-item{break-inside:avoid}.capture-buttons{display:none}.captures{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .editors label{font-size:.87rem}
 .editors select{display:block;width:100%;padding:.5rem;border:1px solid #617e90;background:#fff;color:#132d40}
 .results{background:#eff6fb;border:1px solid #aecbda;border-radius:.5rem;padding:1rem}

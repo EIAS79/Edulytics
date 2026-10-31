@@ -26,7 +26,8 @@
       "which-one-does-not-belong classification using multiple criteria",
       "2x2 cell-based square and half-square triangle constructions, A/B/V/H, gap and overlap",
       "same piece inventory 2 blue squares plus 4 yellow half-square triangles in at least two distinct layouts",
-      "compare piece counts to weighted triangular area units 72/64/56 across eight groups"
+      "compare piece counts to weighted triangular area units 72/64/56 across eight groups",
+      "Capture and print two different constructed arrangements side by side; invalidate stale manual rubric when a saved construction changes"
     ],
     "areaUnits": {
       "fourCell": "square unit",
@@ -47,7 +48,8 @@
       "Main Rich V2 currently renders grade-only explanatory text with direct workmat path; it does not convert that path into an embedded navigation element. The workmat is available only when its static URL is opened.",
       "Workmat provides a constrained instructional illustration and is not a general polygon geometry verifier.",
       "No authenticated teacher review, school score, backend response, source applet, or publisher figure equivalence was verified.",
-      "PR #607 supervisor kernel preserved separately and not copied, merged or integrated."
+      "PR #607 supervisor kernel preserved separately and not copied, merged or integrated.",
+      "The two construction snapshots and printed rubric are browser-only, not an authenticated teacher response workflow or persisted grade."
     ]
   },
   "staticChecks": {
@@ -61,19 +63,21 @@
   "authoredTests": "tests/academic-us-ccss-g6-u01-l01-visual-workmat-authoring.test.cjs",
   "testStatus": "AUTHORED_NOT_RUN",
   "stageA": "PREVIOUSLY_CLOSED_FIRST_PARTY_SOURCE_ALTERNATIVES",
-  "stageB": "EXTENDED_WITH_LESSON_LOCAL_INTERACTIVE_TEACHING_AID",
-  "stageC": "BLOCKED_SELECTED_PRACTICE_ROUTING_AND_TEACHER_REVIEW_PERSISTENCE",
+  "stageB": "EXTENDED_WITH_TWO_SNAPSHOT_STUDENT_CONSTRUCTION_AND_TEACHER_PRINT_REVIEW",
+  "stageC": "DRAFT_PR609_SELECTED_PRACTICE_AUTHORED_NOT_PRESENT_ON_PR591_AND_HUMAN_REVIEW_NOT_PERSISTED",
   "stageD": "NOT_STARTED",
   "readyForStageD": false,
   "closedAtUtc": null,
   "closureSha": null,
   "lastConfirmedClosedLesson": null,
   "activeLesson": "PED:US-CCSS-MATH:G6:U01:L01",
-  "blockerOwner": "Supervisor 1 / designated globally cleared integration writer",
+  "blockerOwner": "Supervisor1 integration delivery / Coder2 exact Stage C acceptance",
   "blockedOn": {
-    "registry": "https://github.com/EIAS79/Edulytics/issues/605",
-    "implementation": "https://github.com/EIAS79/Edulytics/pull/607",
-    "ownerTask": "Select actual L01 Practice contract with valid math grader/feedback and explicit teacher-review route; preserve shared write lease; report separate integration SHA."
+    "registry": "https://github.com/EIAS79/Edulytics/issues/605#issuecomment-6538381087",
+    "integration": "https://github.com/EIAS79/Edulytics/pull/609",
+    "integrationHead": "a94747b47315f7c94637693e578acdcbe59346a6",
+    "ownerTask": "Supervisor1 shared-author route is in an unmerged Draft PR targeting Grade6; authoring closure on Grade6 PR591 requires independent acceptance of selected route on authorized course branch and explicit lesson-bound teacher-review modality. No unauthorized merge/cherry-pick by Coder2.",
+    "sharedLease": "RELEASED_NOT_REASSIGNED"
   },
   "release": false,
   "merge": false,

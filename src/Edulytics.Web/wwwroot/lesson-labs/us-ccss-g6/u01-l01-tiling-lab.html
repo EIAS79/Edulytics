@@ -55,6 +55,16 @@
         <p class="small">This is a simplified four-cell teaching model, not a full geometric polygon verifier. The production selected Practice contract and teacher-scoring workflow are separate.</p>
       </div>
     </div>
+    <section class="capture-panel" aria-labelledby="capture-title">
+      <h3 id="capture-title">Keep two different constructions for teacher comparison</h3>
+      <p>Build one arrangement, capture it, change the cell selectors and capture a second one. Both arrangements remain visible and printable. These browser-only snapshots are not submissions or automatic marks.</p>
+      <div class="capture-buttons"><button type="button" id="capture-first">Capture construction 1</button><button type="button" id="capture-second">Capture construction 2</button></div>
+      <div class="captures" id="captures" aria-label="Two student arrangement snapshots" aria-live="polite">
+        <article id="construction-first" class="capture-item"><h4>Construction 1</h4><p>Not captured</p></article>
+        <article id="construction-second" class="capture-item"><h4>Construction 2</h4><p>Not captured</p></article>
+      </div>
+      <p id="comparison-status" class="status" role="status">Capture both arrangements; your teacher must review their completeness, distinctness and explanation.</p>
+    </section>
     <p><strong>Challenge:</strong> Use exactly <strong>2 blue unit squares</strong> and <strong>4 yellow half-square triangles</strong>. Make two different complete tilings; each shape type must cover 2 square units. Explain why equal numerical area alone does not rule out gaps or overlaps.</p>
     <label for="construction-reason">Describe your second/third construction and why it is valid</label>
     <textarea id="construction-reason" rows="4" maxlength="3000" placeholder="Locations of pieces, common units, boundaries, gap/overlap check…"></textarea>
