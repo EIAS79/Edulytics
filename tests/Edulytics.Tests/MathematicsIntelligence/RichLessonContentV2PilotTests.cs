@@ -320,18 +320,43 @@ public sealed class RichLessonContentV2PilotTests
     }
 
     [Fact]
-    public void PilotRegistry_PreservesOriginal26And143Grade3And149Grade4LessonsWithoutDuplicates()
+    public void PilotRegistry_PreservesHistoricAndOptionalCompleteGradesWithoutDuplicateCodes()
     {
         var lessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(x => x.Lessons)
             .ToArray();
 
-        Assert.Equal(26 + 143 + 149, lessons.Length);
-        Assert.Equal(
-            26 + 143 + 149,
-            lessons.Select(x => x.LessonCode)
-                .Distinct(StringComparer.Ordinal)
-                .Count());
+        // Preserve the 24 Cambridge and 2 UAE original pilots independently
+        // of any new American grade inventory. This also reconciles the
+        // legacy-pilot invariant introduced in cross-curriculum PR #598.
+        var legacyPilots = RichLessonContentV2Registry.AllDocuments
+            .Where(x => x.ContentVersion is
+                "rich-v2-cambridge-primary-stage6-pilot-2026-09-22" or
+                "rich-v2-uae-g9-advanced-official-pilot-2026-09-22")
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+        Assert.Equal(26, legacyPilots.Length);
+
+        // Historical US grade coverage is invariant; new authored grades
+        // must not erase G3/G4 or invalidate the global inventory by count.
+        Assert.Equal(143, lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal)));
+        Assert.Equal(149, lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal)));
+
+        // G5/G7 are optional at the integration branch boundary, but their
+        // full authored packs cannot be silently truncated when present.
+        var grade5 = lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G5:", StringComparison.Ordinal));
+        var grade7 = lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal));
+        Assert.True(grade5 is 0 or 148, $"Unexpected G5 curated count: {grade5}");
+        Assert.True(grade7 is 0 or 145, $"Unexpected G7 curated count: {grade7}");
+        Assert.True(lessons.Length >= 26 + 143 + 149 + grade5 + grade7);
+        Assert.Equal(lessons.Length, lessons
+            .Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal)
+            .Count());
     }
 
     private static string FindRoot()

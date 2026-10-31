@@ -38,16 +38,21 @@ public sealed class CommonCorePhase04RichV2SourceEntityTests
             .SelectMany(doc => doc.Lessons)
             .ToDictionary(lesson => lesson.LessonCode, StringComparer.Ordinal);
 
-        // No CCSS rich-curated sidecar exists; otherwise the reader would
-        // take a different path and this acceptance contract must change.
+        // Audited CCSS lessons may use either a source-safe curated sidecar
+        // (G4/G5 and later grades) or the original runtime composer.
+        // Preserve the audit's 20 distinct source codes and text sanitization.
         foreach (var code in flagged)
         {
-            // Original Phase 04 examples use the runtime composer. Grade 4 now
-            // has an explicit owner-authored curated Rich V2 sidecar; do not
-            // misclassify that intentional addition as an unexpected source.
+            // A curated source is valid only for the exact audited
+            // canonical lesson and requested English locale. A broad
+            // "PED:US-CCSS-MATH:G" prefix would not detect wrong-lesson
+            // or wrong-locale registration.
             var curated = RichLessonContentV2Registry.Find(code, "en");
             if (curated is not null)
-                Assert.StartsWith("PED:US-CCSS-MATH:G4:", code);
+            {
+                Assert.Equal(code, curated.LessonCode);
+                Assert.Equal("en", curated.CultureCode);
+            }
             var lesson = lessonsByCode[code];
             var english = Assert.Single(lesson.Translations,
                 item => item.CultureCode == "en");
