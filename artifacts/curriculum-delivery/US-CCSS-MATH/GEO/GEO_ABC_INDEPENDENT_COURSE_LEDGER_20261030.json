@@ -18,29 +18,30 @@
     "BLOCKED": 0,
     "REMAINING": 87,
     "UNIT_TOTAL": 8,
-    "UNITS_ABC_CLOSED": 1,
-    "CURRENT_UNIT": "U02",
+    "UNITS_ABC_CLOSED": 2,
+    "CURRENT_UNIT": "U03",
     "UNIT_STATUS": "UNIT_IN_PROGRESS"
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
     "Unprocessed": 87,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L16",
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
-    "CurrentUnit": "U02",
-    "UnitLessonCount": 22,
+    "CurrentUnit": "U03",
+    "UnitLessonCount": 16,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L16",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L16",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
     "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
     "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
-    "AllUnitABCReady": false,
-    "NextUnit": "U02",
+    "AllUnitABCReady": true,
+    "NextUnit": "U03",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 15
+    "U02ClosedLessonCount": 15,
+    "UnitCountSource": "geo-124-source-manifest-20261028.json canonical unit counts: U01=22, U02=15, U03=16"
   },
   "LessonEntries": [
     {
@@ -941,7 +942,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L16",
+  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -969,5 +970,27 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l15-abc-checkpoint-20261031.json"
+  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l15-abc-checkpoint-20261031.json",
+  "UnitSummaryU02_20261031": {
+    "Course": "Geometry",
+    "UnitCode": "U02",
+    "UnitTotal": 15,
+    "PreviouslyClosed": 3,
+    "NewlyClosed": 12,
+    "UnitReadyForD": true,
+    "BlockedLessons": 0,
+    "FirstLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+    "NextUnit": "U03",
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L01",
+    "CourseReadyForDCount": 37,
+    "CourseRemaining": 87,
+    "CanonicalSource": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json",
+    "Note": "Earlier ledger Coverage.UnitLessonCount=22 was the U01 count, not U02. Canonical manifest and local teacher/student file lists show exactly 15 U02 lessons (L01–L15). There is no U02:L16.",
+    "AssessmentMode": "Original lesson-specific offline paper/physical teacher-scored A-B-C authoring handoff, not authenticated online selected route",
+    "Checks": "All 37 entries match first 37 canonical manifest codes, ready flag, D NOT_RUN, checkpoint and assessment file exists",
+    "NoMerge": true,
+    "NoDeploy": true,
+    "NoSharedEdits": true
+  }
 }
