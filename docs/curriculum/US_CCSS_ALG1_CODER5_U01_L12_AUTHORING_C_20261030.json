@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12",
+  "contentVersion": "alg1-u01-l12-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\12\\preparation.html",
+      "sha256": "a34a4c6a6d7d7823b1388320db679cc9785d6894685b67d956ede32bfffcdc83"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\12\\index.html",
+      "sha256": "0dbb843bb888003ace32b6ef1e398536d36785a9635b65e982a44c37350931b1"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\12\\index.html",
+      "sha256": "8596627d398f377d1eebb6236719373bd8f73ae9006c224495000979e528ae8b"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\12\\practice.html",
+      "sha256": "931e064945ab22add5aaaaeef5186e9041b2eb9525f54e8371f8bb9195766f54"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1 BuildingOn",
+    "HSS-ID.A.2 BuildingOn",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.3 Addressing"
+  ],
+  "activity": "Describe three data displays; explain technology-derived standard deviation and compare with MAD; distinguish population from sample convention.",
+  "practice": "Calculate population SD=1 for [3,3,5,5] and 3 for [1,1,7,7]; explain why constant data have SD=0.",
+  "mathFixture": [
+    4,
+    4,
+    1.0,
+    3.0,
+    0
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Describe three data displays; explain technology-derived standard deviation and compare with MAD; distinguish population from sample convention.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Calculate population SD=1 for [3,3,5,5] and 3 for [1,1,7,7]; explain why constant data have SD=0.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        4,
+        4,
+        1,
+        3,
+        0
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Calculate population SD=1 for [3,3,5,5] and 3 for [1,1,7,7]; explain why constant data have SD=0.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Mean and squared deviations",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Population SD units and divisor",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Contextual comparison, no false technology claim",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

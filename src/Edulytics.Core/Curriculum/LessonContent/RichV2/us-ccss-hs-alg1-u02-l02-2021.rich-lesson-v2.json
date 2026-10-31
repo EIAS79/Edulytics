@@ -1,0 +1,143 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l02-v12-source-activity-audit2-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L02",
+      "CultureCode": "en",
+      "Title": "Writing Equations to Model Relationships (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: identify which quantities are constant and which vary in a given context, and write equations using variables to represent numerical, geometric, spending and tax relationships. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 2, https://im.kendallhunt.com/HS/teachers/1/2/2/preparation.html (CC BY 4.0). Source roles: Building On 6.RP.A.3.c; Addressing HSA-CED.A.2 and HSA-CED.A.3. Unlike a generic algebra drill, this lesson moves from known quantities to variable equations.",
+        "Percent warm-up: 25%, 12% and 8% of 200 are 50, 24 and 16, respectively; p% of 200 is 200×p/100=2p for numeric percent value p. A 7% rate applied to price x dollars is 0.07x dollars, while total with tax and fixed fee can be written T=1.07x+95; distinguish one rate from the whole-price multiplier.",
+        "Independent geometric reasoning: in a convex polyhedron such as a cube, the relationship between vertices V, edges E and faces F is V−E+F=2. For a cube V=8,E=12,F=6, so 8−12+6=2. A tetrahedron V=4,E=6,F=4 gives 4−6+4=2. These equations represent a relationship with variable values; they are not the formula for any arbitrary disconnected or nonconvex solid.",
+        "Original shopping model: blueberries cost $3.20 per kilogram. Let q≥0 be mass in kilograms, and B=3.20q dollars be price. If q=2.5, then B=$8.00; if an original $15 coupon is valid for the whole purchase, represent the discounted price explicitly as B=max(0,3.20q−15), rather than silently permitting negative charges. The source pairs multiplication relationships with additive comparisons.",
+        "Student activity: interpret equations from words and vice versa, write at least one additive equation, multiplicative cost equation, percentage model and simple geometric relationship, state all units and domains, and peer-review a model for whether its assumptions are justified. Teacher-scored rubric (0–2 each, 8 maximum): correct constant/variable meanings, faithful equation construction, mathematical and domain accuracy, and reasoned critique and contextual interpretation.",
+        "V12 source-activity fidelity: the original student lesson combines mental percentages, vertex-edge-face relationships of solid figures, and progressively less-scaffolded contexts about income, spending and tax. In a warm-up compute25%,12%,8%,p% of 200; derive 50,24,16,2p. For a cube F=6,V=8,E=12 and tetrahedron F=4,V=4,E=6, verify V−E+F=2. This convex-solid relation is not claimed for arbitrary disjoint geometric assemblies. Teacher and student activity sources: https://im.kendallhunt.com/HS/teachers/1/2/2/preparation.html and https://im.kendallhunt.com/HS/students/1/2/2/index.html.",
+        "V12 independent sales scenario: a store charges $7 shipping after applying 8% sales tax to pre-tax goods cost x dollars. The model is T=1.08x+7. At x=$50, T=$61. If the shopper budget is $61, the constraint 1.08x+7≤61 gives x≤50 for nonnegative goods costs. Compare variable goods price x with fixed shipping7 and rate8%; a context may instead apply tax after shipping, creating a different model. Ask students to justify assumptions, not to memorize a single context-free equation.",
+        "Teacher human rubric 0–2 each for exact percentage calculations, correct polyhedral relationship and limits, clear fixed versus variable quantities/units, and a defensible tax/constraint equation with independent reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Variable and constant",
+          "Definition": "A variable quantity can change between valid scenarios, while a constant parameter stays fixed under the model.",
+          "Rule": "Write a unit, meaning and permitted domain for every symbol.",
+          "Example": "In B=3.20q, q kilograms varies, and 3.20 dollars/kg is the fixed rate."
+        },
+        {
+          "Title": "Equation as model",
+          "Definition": "An equation represents a stated relationship, not merely an instruction to solve for an isolated number.",
+          "Rule": "Convert operation and units from the context before simplifying.",
+          "Example": "T=1.07x+95 represents an original price with 7% tax and a fixed $95 charge."
+        },
+        {
+          "Title": "Geometric relation",
+          "Definition": "Euler's formula V−E+F=2 holds for connected convex polyhedra.",
+          "Rule": "Identify what is being counted; check the formula for more than one shape.",
+          "Example": "For a cube 8−12+6=2 and tetrahedron 4−6+4=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write a percentage and fee model",
+          "Question": "A purchase price x has 7% tax and an additional $95 fee. Find total and evaluate x=$2,000.",
+          "Method": "Add original price, proportional tax and fixed fee.",
+          "Steps": [
+            "Tax rate 7%=0.07, so tax dollars=0.07x.",
+            "Total equals x+0.07x+95=1.07x+95.",
+            "At x=2000, total=1.07×2000+95=2140+95=2235 dollars.",
+            "Check the fee is counted once and tax applies only to x, not to the fee."
+          ],
+          "Answer": "T=1.07x+95; for x=$2000, total is $2235.",
+          "Check": "Base $2000 + tax $140 + fee $95 = $2235."
+        },
+        {
+          "Title": "Express and check polyhedron counts",
+          "Question": "Write a relation among faces F, edges E, vertices V using a cube and tetrahedron.",
+          "Method": "Count the parts then determine a shared relation for convex polyhedra.",
+          "Steps": [
+            "Cube counts: F=6, E=12, V=8; V−E+F=8−12+6=2.",
+            "Tetrahedron counts: F=4, E=6, V=4; V−E+F=4−6+4=2.",
+            "Generalize the relation V−E+F=2 for connected convex polyhedra.",
+            "Rearrange as E=V+F−2 and check 12=8+6−2 for the cube."
+          ],
+          "Answer": "V−E+F=2, or equivalently E=V+F−2, for convex polyhedra.",
+          "Check": "Both studied solids satisfy the relation and the units are discrete counts."
+        },
+        {
+          "Title": "Scale an item cost model",
+          "Question": "Blueberries cost $3.20/kg. Find cost of 2.5 kg and mass affordable with $12.",
+          "Method": "Define q≥0 kilograms and price B=3.20q dollars.",
+          "Steps": [
+            "Multiplication by the constant unit price gives B=3.20q.",
+            "For q=2.5, B=3.20×2.5=8 dollars.",
+            "For a $12 budget, solve 3.20q≤12.",
+            "Divide both sides by positive 3.20: q≤3.75 kg.",
+            "Verify 3.20×3.75=12 dollars at the boundary."
+          ],
+          "Answer": "2.5 kg costs $8; at most 3.75 kg is affordable with $12.",
+          "Check": "Unit cancellation dollars/kg × kg = dollars; domain q≥0."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Writing 0.07x for total when 7% is only tax",
+          "WhyWrong": "The original price and any fees also contribute to the total.",
+          "Correction": "Use total x+0.07x+fee."
+        },
+        {
+          "Mistake": "Reversing vertices, edges and faces",
+          "WhyWrong": "A mislabeled equation can accidentally appear plausible on one solid.",
+          "Correction": "Count each kind separately and verify 8−12+6=2 for the cube."
+        },
+        {
+          "Mistake": "Allowing negative quantities in a physical purchase model",
+          "WhyWrong": "Negative mass cannot be purchased under the stated conditions.",
+          "Correction": "Add domain q≥0 and use appropriate monetary minimums if credits apply."
+        }
+      ],
+      "SummaryPoints": [
+        "Identify a quantity's meaning and units before choosing variables or constants.",
+        "Percent tax is proportional; fixed fees are additive; their equations differ.",
+        "Convex solids satisfy V−E+F=2; contexts can impose nonnegative and whole-number constraints.",
+        "Teacher-reviewed interpretation and modeling require more than a single calculated number."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent contextual equation checks",
+          "Description": "First-party mathematical examples with explicit quantities, units and independent outputs.",
+          "PrimaryLabel": "Context",
+          "SecondaryLabel": "Equation or result",
+          "Rows": [
+            {
+              "Label": "Cube F=6,E=12,V=8",
+              "Cells": [
+                "8−12+6=2"
+              ]
+            },
+            {
+              "Label": "Tetrahedron F=4,E=6,V=4",
+              "Cells": [
+                "4−6+4=2"
+              ]
+            },
+            {
+              "Label": "Original taxed purchase x=$2000",
+              "Cells": [
+                "T=$2235"
+              ]
+            },
+            {
+              "Label": "2.5 kg at $3.20/kg",
+              "Cells": [
+                "B=$8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

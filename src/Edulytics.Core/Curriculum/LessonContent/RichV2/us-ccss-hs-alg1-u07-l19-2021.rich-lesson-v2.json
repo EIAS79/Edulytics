@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l19-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L19",
+      "CultureCode": "en",
+      "Title": "Deriving the Quadratic Formula",
+      "ExplanationParagraphs": [
+        "Learning goal: derive the quadratic formula for any real ax²+bx+c=0 with a≠0 by normalizing and completing the square, and explain the discriminant and the ± branch. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 19 teacher https://im.kendallhunt.com/HS/teachers/1/7/19/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/19/index.html (CC BY 4.0). This lesson develops a proof of the formula, not another unexamined memorization exercise.",
+        "Start ax²+bx+c=0 with a≠0. Divide by a: x²+(b/a)x=−c/a. Add (b/(2a))²=b²/(4a²) to BOTH sides. Left becomes (x+b/(2a))²; right becomes (b²−4ac)/(4a²). For real roots require discriminant D=b²−4ac≥0.",
+        "Taking square roots of both sides yields |x+b/(2a)|=√D/(2|a|). The two possible signs can be arranged as x=(-b±√D)/(2a) even when a<0 because ± branches exchange order. State this nuance rather than falsely assuming √(4a²)=2a for every negative a.",
+        "Independent numerical check: for 2x²−6x+4=0, a2,b−6,c4,D36−32=4, formula x=(6±2)/4 gives x2 or1. Factoring 2(x−1)(x−2)=0 confirms them. The derived formula therefore agrees with another independent method.",
+        "Student task: reconstruct each algebraic step from shuffled cards, identify where a≠0 is needed, explain the source of ± and D, then validate a numerical example with factoring. Teacher-scored rubric0–2 for legitimate normalization, correct completed-square identity, sound square-root/sign handling and independent check."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Normalize",
+          "Definition": "For a≠0 divide ax²+bx+c=0 by a before completing.",
+          "Rule": "x²+(b/a)x=−c/a.",
+          "Example": "Division by zero is forbidden."
+        },
+        {
+          "Title": "Completed square identity",
+          "Definition": "Add b²/(4a²) to both sides to obtain a perfect square.",
+          "Rule": "(x+b/(2a))²=(b²−4ac)/(4a²).",
+          "Example": "The numerator is discriminant D."
+        },
+        {
+          "Title": "General roots",
+          "Definition": "The two branches combine to x=(-b±√D)/(2a) for D≥0.",
+          "Rule": "Handle ± and signs consistently.",
+          "Example": "2x²−6x+4 roots1,2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Derive complete square",
+          "Question": "Start ax²+bx+c=0, a≠0.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Divide by a: x²+(b/a)x=−c/a.",
+            "Half the x coefficient b/a is b/(2a).",
+            "Add its square b²/(4a²) to both sides.",
+            "Left becomes (x+b/(2a))².",
+            "Right common-denominator result (b²−4ac)/(4a²)."
+          ],
+          "Answer": "(x+b/(2a))²=(b²−4ac)/(4a²).",
+          "Check": "Expanding left and simplifying returns normalized equation."
+        },
+        {
+          "Title": "Resolve square-root branches",
+          "Question": "Find general solution given completed square.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "For D≥0, square root of right is √D/(2|a|).",
+            "Thus x+b/(2a)=±√D/(2|a|).",
+            "Absorb sign of a into ± label and rearrange.",
+            "Obtain x=(-b±√D)/(2a).",
+            "Both roots are covered regardless of sign of nonzero a."
+          ],
+          "Answer": "Quadratic formula x=(-b±√D)/(2a).",
+          "Check": "Substituting formula into completed-square identity reverses derivation."
+        },
+        {
+          "Title": "Independently validate example",
+          "Question": "Solve2x²−6x+4=0.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "a2,b−6,c4, so D36−32=4.",
+            "Formula x=(6±2)/4 yields x2 and1.",
+            "Factor polynomial2(x−1)(x−2).",
+            "Both roots make factors zero.",
+            "No extra roots."
+          ],
+          "Answer": "x1,2.",
+          "Check": "Independent factoring confirms formula."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Replacing √(4a²) with2a without considering a<0",
+          "WhyWrong": "Principal square root is2|a|.",
+          "Correction": "Carry absolute value or absorb signs after ±."
+        },
+        {
+          "Mistake": "Dividing by a without stipulating a≠0",
+          "WhyWrong": "Then equation may be linear or undefined manipulation.",
+          "Correction": "State nonzero quadratic coefficient."
+        },
+        {
+          "Mistake": "Dropping ± in the derivation",
+          "WhyWrong": "Loses one root for positive D.",
+          "Correction": "Retain both branches."
+        }
+      ],
+      "SummaryPoints": [
+        "The formula follows from completing a general normalized square.",
+        "D=b²−4ac controls real solutions.",
+        "For any nonzero a, both formula branches are valid with correct sign treatment.",
+        "Teacher evaluates derivation, not only final symbolic formula."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party exact quadratic reasoning and modeling table",
+          "Description": "Independently authored exact algebra, domain/units and mathematical evidence, not source images or real experiments.",
+          "PrimaryLabel": "Expression or scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "normalized",
+              "Cells": [
+                "x²+(b/a)x=−c/a"
+              ]
+            },
+            {
+              "Label": "completed",
+              "Cells": [
+                "(x+b/2a)²=D/(4a²)"
+              ]
+            },
+            {
+              "Label": "formula",
+              "Cells": [
+                "x=(−b±√D)/(2a)"
+              ]
+            },
+            {
+              "Label": "example roots",
+              "Cells": [
+                "1,2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

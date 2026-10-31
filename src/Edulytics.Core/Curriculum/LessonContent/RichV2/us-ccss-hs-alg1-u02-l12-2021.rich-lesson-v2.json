@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l12-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L12",
+      "CultureCode": "en",
+      "Title": "Writing and Graphing Systems of Linear Equations",
+      "ExplanationParagraphs": [
+        "Learning objective: write two equations for simultaneous constraints, graph both, and interpret their intersection as the pair satisfying the full system. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L12, https://im.kendallhunt.com/HS/teachers/1/2/12/preparation.html (CC BY 4.0). Building On 8.EE.C.8.a and 8.EE.C.8.b; Addressing HSA-CED.A.3, HSA-REI.A and HSA-REI.C.6; Building Towards HSA-REI.C.6.",
+        "Original ticket-sale scenario: a museum sold a total of 20 tickets, adult tickets $8 and child tickets $5. Its reported revenue is $136. Let a be adult tickets and c child tickets. Constraints a+c=20 and 8a+5c=136, with a,c whole and nonnegative. Graph each line on the same labeled axes and identify their shared intersection.",
+        "To locate intersection, subtract 5 times the first equation from the second: 3a=36, so a=12 and c=8. Verify 12+8=20 and 8(12)+5(8)=96+40=136. The crossing represents both constraints, not merely one line's allowed points.",
+        "Student task: draw both independent original lines, mark the meaningful first-quadrant integer intersection, identify two other pairs that satisfy only one constraint, and explain why a correct system requires all restrictions. Teacher-scored rubric (0–2 each, max 8): appropriate variable definitions, accurate graphs and shared scale, verified intersection, and interpretation of why off-intersection pairs fail."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "System",
+          "Definition": "Multiple equations constrain the same unknown values simultaneously.",
+          "Rule": "Every equation must be true at a system solution.",
+          "Example": "a+c=20 and 8a+5c=136."
+        },
+        {
+          "Title": "Graph intersection",
+          "Definition": "A common point of two lines solves both equations.",
+          "Rule": "Substitute its coordinates into each equation.",
+          "Example": "(12,8) satisfies both ticket constraints."
+        },
+        {
+          "Title": "Context domain",
+          "Definition": "Counts of sold tickets must be whole and nonnegative.",
+          "Rule": "Do not accept negative or fractional counts even when lines extend.",
+          "Example": "a=12, c=8 are valid ticket counts."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find simultaneous ticket counts",
+          "Question": "Solve a+c=20, 8a+5c=136.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Multiply a+c=20 by 5: 5a+5c=100.",
+            "Subtract from 8a+5c=136 to obtain 3a=36.",
+            "Divide by 3 to obtain a=12.",
+            "Substitute c=20−12=8.",
+            "Check revenue 8×12+5×8=136."
+          ],
+          "Answer": "12 adult and 8 child tickets.",
+          "Check": "Both total count and revenue match."
+        },
+        {
+          "Title": "Check a pair on one line only",
+          "Question": "Is (10,10) a system solution?",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Count equation: 10+10=20, true.",
+            "Revenue equation: 8×10+5×10=130, not 136.",
+            "The pair lies on the total-tickets line but not on the revenue line.",
+            "Therefore it is not the intersection."
+          ],
+          "Answer": "No, (10,10) is not a system solution.",
+          "Check": "All equations must be satisfied, not just one."
+        },
+        {
+          "Title": "Interpret the axes",
+          "Question": "What do intercepts of a+c=20 mean compared with its valid intersection?",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Intercept (20,0) models 20 adults and no children.",
+            "Intercept (0,20) models no adults and 20 children.",
+            "Neither gives revenue $136: totals are $160 and $100.",
+            "The second constraint selects intersection (12,8) from the first line."
+          ],
+          "Answer": "Only the shared point (12,8) meets both statements.",
+          "Check": "Check ticket counts and dollar sums."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating any point on either line as a system solution",
+          "WhyWrong": "The intersection must satisfy both equations.",
+          "Correction": "Verify both substitutions."
+        },
+        {
+          "Mistake": "Graphing without axis units and domains",
+          "WhyWrong": "A coordinate could be misread or imply impossible quantities.",
+          "Correction": "Label adult tickets, child tickets and nonnegative count domain."
+        }
+      ],
+      "SummaryPoints": [
+        "A system solution satisfies every constraint simultaneously.",
+        "The graph intersection visualizes that shared solution.",
+        "For the original ticket model, the valid solution is (a,c)=(12,8).",
+        "Teacher checks actual graphs and contextual reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original equation and result comparison",
+          "Description": "Independently authored labelled examples of equation relationships.",
+          "PrimaryLabel": "Model",
+          "SecondaryLabel": "Exact value or solution",
+          "Rows": [
+            {
+              "Label": "12 adults, 8 children",
+              "Cells": [
+                "20 tickets, $136"
+              ]
+            },
+            {
+              "Label": "10 adults, 10 children",
+              "Cells": [
+                "20 tickets, $130"
+              ]
+            },
+            {
+              "Label": "20 adults, 0 children",
+              "Cells": [
+                "20 tickets, $160"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

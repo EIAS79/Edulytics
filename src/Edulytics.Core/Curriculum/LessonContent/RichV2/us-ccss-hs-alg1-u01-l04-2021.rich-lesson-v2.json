@@ -1,0 +1,182 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l04-sequential-source-abc-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+      "CultureCode": "en",
+      "Title": "The Shape of Distributions",
+      "ExplanationParagraphs": [
+        "Learning goal: describe a distribution as symmetric, roughly bell-shaped, skewed, uniform or bimodal; defend the classification with evidence; and suggest a possible data-collection context without presenting the guess as fact. Independently authored Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition, Unit 1 Lesson 4, https://im.kendallhunt.com/HS/teachers/1/1/4/preparation.html (CC BY 4.0). Publisher role: Addressing HSS-ID.A.1; Building Towards HSS-ID.A.2.",
+        "Original data displays: at numerical values 1,2,3,4,5, data A have frequencies 1,2,4,2,1; B have 2,2,2,2,2; C have 5,3,1,1,1; D have 4,1,1,1,4. Use equally spaced values, draw one dot per observation and label each count. A is a roughly bell-shaped symmetric example, B uniform, C right-skewed and D bimodal. The data are fabricated specifically for mathematical practice, not attributed to actual students.",
+        "Partner matching task: compare the four dot plots and their frequency tables, name their shapes, and support each classification with two observations. Trade roles: the partner challenges a match or explains why it is valid. Invent a possible numerical survey question that might generate one display, then explain why a graph alone cannot prove which real survey was conducted.",
+        "Important distinctions: symmetry does not imply bell shape (a uniform display can be symmetric); a distribution's skew is named by the direction of its tail rather than the side containing its highest bar; two peaks may not represent two distinct populations. A box plot may conceal peaks that are obvious in a dot plot.",
+        "Teacher-scored rubric: give 0, 1 or 2 points each for accurate classification, numerical justification, plausible context with variable and units, and reasoned critique of partner claims (8 maximum). This is an explanation/card-matching activity, not a single machine-graded number. The first-party frequency tables are not publisher artwork.",
+        "V12 original source-aligned Which One Does Not Belong and card sort: make five first-party data sets at equally spaced values 1,2,3,4,5: A frequencies [1,2,4,2,1], B [2,2,2,2,2], C [5,3,1,1,1], D [4,1,1,1,4], E [1,1,1,3,5]. Without reading labels first, draw five DOT PLOTS and five matching FREQUENCY TABLES, shuffle these ten cards, and take turns explaining your five matches. A is symmetric bell-like, B uniform, C right-skewed, D bimodal and E left-skewed. Every displayed count is fictional, not a class survey.",
+        "V12 activity fidelity: the publisher explicitly includes a Which One Does Not Belong discussion and partner matching of ten representations, followed by suggesting a plausible real-world context for a displayed distribution. Students must invent at least two plausible contexts for one of the fictional graphs and explain why the source data cannot be inferred uniquely from a shape. The plotted dot positions and frequency cards must be student-created, not auto-inferred from rubric text.",
+        "Teacher draft assessment: observe actual partner turns and explanations, check 10 independently prepared cards, and score 0–2 for (1) frequencies and graph consistency, (2) correct five matches and shapes, (3) graph-based contextual explanations with uncertainty, and (4) peer questioning and mathematical language. A written draft is not authenticated teacher evidence.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): First-party shape data at equally spaced x=1,2,3,4,5: A counts 1,2,4,2,1, B 2,2,2,2,2, C 5,3,1,1,1, D 4,1,1,1,4, E 1,1,1,3,5. (1) Distinguish A as approximately bell-like symmetric and B as uniform; explain why both can be symmetric. (2) Explain C right-skewed and E left-skewed by the tails, not the peaks. (3) Identify D as bimodal, invent a plausible observational context and explain why the chart alone cannot prove that context. Teacher rubric 0-2 per reasoning element, total 6; chart classification may have more than one defensible descriptor, but unsupported evidence is not accepted."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Symmetry and bell shape",
+          "Definition": "A symmetric distribution has matching frequencies reflected around a center; a bell-shaped distribution has one central peak with frequencies tapering outward.",
+          "Rule": "Test mirrored pairs, then check for a central peak.",
+          "Example": "Frequencies 1,2,4,2,1 are symmetric and roughly bell-shaped; 2,2,2,2,2 are symmetric and uniform."
+        },
+        {
+          "Title": "Skewness",
+          "Definition": "A distribution is right-skewed when a sparse tail extends farther toward larger values, and left-skewed when the tail extends toward smaller values.",
+          "Rule": "Find the main cluster and the tail, not merely the tallest bar.",
+          "Example": "Frequencies 5,3,1,1,1 over increasing values have a right tail."
+        },
+        {
+          "Title": "Uniform and bimodal",
+          "Definition": "Uniform data have approximately equal frequencies across the shown values; bimodal data have two distinct common-value peaks.",
+          "Rule": "Read numerical counts at each peak and compare between-peak frequencies.",
+          "Example": "2,2,2,2,2 is uniform; 4,1,1,1,4 is bimodal."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Bell-shaped versus uniform",
+          "Question": "Classify frequencies 1,2,4,2,1 across values 1 to 5.",
+          "Method": "Compare pairs equally spaced from the central value and find the peak.",
+          "Steps": [
+            "At 1 and 5 the counts both equal 1.",
+            "At 2 and 4 the counts both equal 2.",
+            "At the center 3 there are 4 observations, the single maximum.",
+            "The frequencies rise then fall symmetrically; the ten observations form a small roughly bell-shaped display."
+          ],
+          "Answer": "Approximately bell-shaped and symmetric, not uniform.",
+          "Check": "1+2+4+2+1=10 and mirrored counts match."
+        },
+        {
+          "Title": "Direction of skew",
+          "Question": "For values 1 through 5 with frequencies 5,3,1,1,1, where does the tail extend?",
+          "Method": "Locate the bulk and follow sparse observations away from it.",
+          "Steps": [
+            "Values 1 and 2 contain 8 of the 11 observations.",
+            "Sparse observations remain at 3,4,5, each larger than the cluster.",
+            "The tail points toward greater values, so it is right-skewed.",
+            "Compute the weighted mean (5*1+3*2+1*3+1*4+1*5)/11=23/11, and median is 2."
+          ],
+          "Answer": "Right-skewed; mean 23/11 is slightly greater than median 2.",
+          "Check": "The weighted sum equals 23 and there are 11 observations."
+        },
+        {
+          "Title": "Propose but do not assert a context",
+          "Question": "What kind of variable might yield two frequency peaks at ratings 1 and 5?",
+          "Method": "Use the chart to suggest one hypothesis and distinguish speculation from data.",
+          "Steps": [
+            "The two peaks show values 1 and 5 have count 4 each.",
+            "Values 2,3,4 occur once each, so the middle has fewer responses.",
+            "A possible interpretation is an anonymous 1–5 preference scale with polarized responses.",
+            "Other contexts can produce this shape, so the chart cannot establish what was actually surveyed."
+          ],
+          "Answer": "A bimodal rating pattern is plausible, but a source population or survey question cannot be inferred as a fact.",
+          "Check": "4+1+1+1+4=11 observations with two equal peaks."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling every symmetric display bell-shaped",
+          "WhyWrong": "A uniform distribution can be symmetric while lacking one center peak.",
+          "Correction": "Check the frequencies for a single tapering center, not only mirror pairs."
+        },
+        {
+          "Mistake": "Naming skew by the location of the tallest bar",
+          "WhyWrong": "The tail, not the modal bar, determines the skew direction.",
+          "Correction": "Identify the bulk then find which direction the sparse values extend."
+        },
+        {
+          "Mistake": "Claiming a graph proves a real survey context",
+          "WhyWrong": "Many data-generating processes can share the same shape.",
+          "Correction": "Label any explanation a hypothesis and propose an experiment to test it."
+        }
+      ],
+      "SummaryPoints": [
+        "Describe data shapes using evidence from the actual frequencies and horizontal scales.",
+        "Symmetry, unimodality and bell shape are distinct properties; uniform data need not have a peak.",
+        "Skew direction follows the tail; bimodal means two distinct peaks.",
+        "Open context invention and partner critique require a teacher-scored rubric."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original distribution shape matching data",
+          "Description": "At values 1,2,3,4,5 respectively, the comma-separated frequencies identify all dots in four original practice displays.",
+          "PrimaryLabel": "Display",
+          "SecondaryLabel": "Frequencies and total",
+          "Rows": [
+            {
+              "Label": "A",
+              "Cells": [
+                "1,2,4,2,1 (n=10)"
+              ]
+            },
+            {
+              "Label": "B",
+              "Cells": [
+                "2,2,2,2,2 (n=10)"
+              ]
+            },
+            {
+              "Label": "C",
+              "Cells": [
+                "5,3,1,1,1 (n=11)"
+              ]
+            },
+            {
+              "Label": "D",
+              "Cells": [
+                "4,1,1,1,4 (n=11)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Five original distributions: frequency card reference",
+          "Description": "At values 1 to 5, each row provides five frequencies; students must draw and match actual dot plots separately.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "A symmetric bell",
+              "Cells": [
+                "1,2,4,2,1"
+              ]
+            },
+            {
+              "Label": "B uniform",
+              "Cells": [
+                "2,2,2,2,2"
+              ]
+            },
+            {
+              "Label": "C right-skew",
+              "Cells": [
+                "5,3,1,1,1"
+              ]
+            },
+            {
+              "Label": "D bimodal",
+              "Cells": [
+                "4,1,1,1,4"
+              ]
+            },
+            {
+              "Label": "E left-skew",
+              "Cells": [
+                "1,1,1,3,5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

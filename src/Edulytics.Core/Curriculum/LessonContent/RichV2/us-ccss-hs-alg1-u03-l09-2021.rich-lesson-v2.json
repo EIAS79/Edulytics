@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l09-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L09",
+      "CultureCode": "en",
+      "Title": "Causal Relationships",
+      "ExplanationParagraphs": [
+        "Learning goal: identify that statistical association alone does not establish cause, distinguish possible confounding and reverse causation, and design an ethical investigation that could support or refute a causal account. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 3 Lesson 9, https://im.kendallhunt.com/HS/teachers/1/3/9/preparation.html (CC BY 4.0). The source studies examples of associations and explanations, not a single correlation-computation exercise.",
+        "Original fictional dealership illustration: used-vehicle price decreases as mileage rises in a sample, but mileage is also related to vehicle age, maintenance history, damage, model and trim. A downward scatter plot could describe association while failing to determine the effect of driving an additional kilometre on the same car's value. No actual vehicles, buyers or causal experiment were observed for this example.",
+        "Independent causal diagram in words: model year influences both typical mileage and resale price. Therefore, model year is a possible common cause and a confounder in a simple mileage-versus-price comparison. Reversing arrows is not justified by an ordinary scatter plot. A carefully controlled design comparing truly comparable vehicles, along with uncertainty reporting, would strengthen but not guarantee a causal inference.",
+        "Original second example: ice-cream sales and outdoor heat illness calls might both rise in warm months. Temperature and seasonal exposure may influence both. It is not established that buying ice cream causes heat illness or that heat illness causes ice-cream purchases. Design alternative explanations and distinguish experimental randomization from an observational comparison.",
+        "Student activity: describe two distinct causal hypotheses and a confounding variable for a bivariate association, draw a simple accessible arrows-and-variables diagram, design a feasible ethical follow-up analysis, and critique a headline claiming cause from correlation. Teacher-scored rubric 0–2 for appropriate statistical observation, candidate explanations, study-design limitations and responsible causal-language critique."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Association versus causation",
+          "Definition": "Variables can change together without a change in one directly causing a change in the other.",
+          "Rule": "Correlation is observational evidence, not automatically causal.",
+          "Example": "Mileage and resale price may be related through model year."
+        },
+        {
+          "Title": "Confounder",
+          "Definition": "A third factor affecting both measured variables can create or distort association.",
+          "Rule": "Identify plausible common causes and what must be measured to adjust.",
+          "Example": "Model year may influence both accumulated mileage and vehicle price."
+        },
+        {
+          "Title": "Experimental versus observational design",
+          "Definition": "Randomized interventions, where ethical and practical, can support causal inference more strongly than uncontrolled observations.",
+          "Rule": "Never claim random assignment or causal proof without actual design.",
+          "Example": "Vehicle sale records are observational; a trial is a different method."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identify a plausible confounder",
+          "Question": "Mileage and used-car price are negatively associated. Does mileage alone necessarily cause the price difference?",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Record what the table actually shows: association between mileage and price.",
+            "Older cars often have higher mileage and may also have lower value.",
+            "Model year can influence both variables, so it is a plausible confounder.",
+            "A stronger analysis holds comparable year/model/condition constant and examines remaining differences.",
+            "Without that investigation, the plot cannot establish one causal contribution."
+          ],
+          "Answer": "Causation is not established; model year is a plausible confounder.",
+          "Check": "An association is consistent with more than one causal explanation."
+        },
+        {
+          "Title": "Explain an unrelated common cause",
+          "Question": "Ice-cream sales and outdoor heat calls rise in summer. Interpret cautiously.",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Both quantities may be higher during hot weather.",
+            "Temperature could increase demand for cold foods.",
+            "Temperature/exposure may also affect heat-related calls.",
+            "Their association may arise from this common input, not from direct causation.",
+            "Investigate seasonal and temperature effects separately."
+          ],
+          "Answer": "Heat/season is a potential common cause; direct ice-cream causation is unsupported.",
+          "Check": "Both observed trends can occur without either causing the other."
+        },
+        {
+          "Title": "Compare observational controls with randomization",
+          "Question": "What evidence would help distinguish proposed causes in a matched vehicle analysis?",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Collect actual model year, condition, trim and mileage data with appropriate permissions.",
+            "Compare price within similar age/model/condition groups.",
+            "Account for nonrandom seller selection and unmeasured differences.",
+            "State that stronger adjustment is not the same as proof of perfect causal identification."
+          ],
+          "Answer": "Better-controlled comparisons can test the mileage hypothesis without claiming certainty.",
+          "Check": "Confounders and limitations remain explicitly listed."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling r=0 evidence no causal relation is possible",
+          "WhyWrong": "A nonlinear causal relationship can have zero Pearson linear correlation.",
+          "Correction": "Inspect possible nonlinear effects and study design."
+        },
+        {
+          "Mistake": "Claiming a correlation itself proves which direction a causal arrow points",
+          "WhyWrong": "A symmetric association cannot determine causal direction.",
+          "Correction": "Seek intervention, temporal and confounding evidence."
+        },
+        {
+          "Mistake": "Inventing experiments or participant data",
+          "WhyWrong": "Written hypotheticals do not document real human studies.",
+          "Correction": "Label all supplied illustrations as fictional and assessments human-scored."
+        }
+      ],
+      "SummaryPoints": [
+        "Correlation describes association but does not identify causal direction or confounding.",
+        "Model year is a plausible third variable in mileage-versus-price patterns.",
+        "Common-cause explanations can link ice-cream sales and summer heat illness calls.",
+        "Teacher evaluates alternative hypotheses, ethical study proposals and cautious language."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original bivariate research illustration",
+          "Description": "Fictional numerical points with explicit provenance and limitations; no publisher or real participant data.",
+          "PrimaryLabel": "Variable / example",
+          "SecondaryLabel": "Statistic or interpretation",
+          "Rows": [
+            {
+              "Label": "Used-car mileage and price",
+              "Cells": [
+                "association possible; causal effect not established"
+              ]
+            },
+            {
+              "Label": "Model year",
+              "Cells": [
+                "candidate common cause"
+              ]
+            },
+            {
+              "Label": "Ice cream and heat calls",
+              "Cells": [
+                "temperature may influence both"
+              ]
+            },
+            {
+              "Label": "Study recommendation",
+              "Cells": [
+                "control, compare and state limits"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

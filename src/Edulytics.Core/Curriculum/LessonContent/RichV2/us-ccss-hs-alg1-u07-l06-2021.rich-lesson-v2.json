@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l06-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L06",
+      "CultureCode": "en",
+      "Title": "Rewriting Quadratic Expressions in Factored Form (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: reverse distributive multiplication for monic quadratic trinomials with positive integer factor constants, using an area diagram to find numbers whose sum is b and product c. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 6 teacher https://im.kendallhunt.com/HS/teachers/1/7/6/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/6/index.html (CC BY 4.0). The source uses rectangle area puzzles and does not yet rely on a universal factoring algorithm.",
+        "Independent expression x²+10x+24. Seek two positive integers with sum10 and product24:4 and6. Thus x²+10x+24=(x+4)(x+6). A decomposition has central square x², strips4x and6x, and corner area24; each part is accounted for.",
+        "Another original trinomial x²+11x+30 factors into (x+5)(x+6), since5+6=11 and5×6=30. At x2, the first trinomial equals4+20+24=48 and factors6×8=48. Algebraic distributivity, not merely sample equality, establishes identity.",
+        "Student task: create an area diagram, test multiple factor-pairs for c, explain why both sum and product must match, factor a second expression and critique a pair with correct product but wrong sum. Teacher-scored rubric0–2 for diagram, factor search, expansion verification and error-analysis reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Factor pair sum/product",
+          "Definition": "For (x+m)(x+n), sum m+n is coefficient of x and product mn is constant.",
+          "Rule": "Search both conditions.",
+          "Example": "4+6=10,4×6=24."
+        },
+        {
+          "Title": "Monic quadratic",
+          "Definition": "Leading x² coefficient1 simplifies the factor search.",
+          "Rule": "Write (x+m)(x+n).",
+          "Example": "x²+10x+24."
+        },
+        {
+          "Title": "Area decomposition",
+          "Definition": "Square and strip regions explain every term.",
+          "Rule": "Count x², mx, nx, mn.",
+          "Example": "x²+4x+6x+24."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Factor first trinomial",
+          "Question": "Factor x²+10x+24.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Find product24 pairs:1/24,2/12,3/8,4/6.",
+            "Only4+6=10 among positive pairs.",
+            "Write (x+4)(x+6).",
+            "Expand to x²+6x+4x+24.",
+            "Combine to original."
+          ],
+          "Answer": "(x+4)(x+6).",
+          "Check": "Sum and product verified."
+        },
+        {
+          "Title": "Factor second trinomial",
+          "Question": "Factor x²+11x+30.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Product30 positive pairs include5 and6.",
+            "Sum5+6=11.",
+            "Write (x+5)(x+6).",
+            "Expand x²+11x+30."
+          ],
+          "Answer": "(x+5)(x+6).",
+          "Check": "Exact distributive identity."
+        },
+        {
+          "Title": "Reject incorrect pair",
+          "Question": "Would (x+3)(x+8) equal x²+10x+24?",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Constants3×8=24 match.",
+            "But3+8=11, not10.",
+            "Expansion is x²+11x+24.",
+            "So product condition alone is not enough."
+          ],
+          "Answer": "No; linear coefficient would be11.",
+          "Check": "Both conditions needed."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Checking product but not sum",
+          "WhyWrong": "Wrong pair yields incorrect x coefficient.",
+          "Correction": "Verify both m+n and mn."
+        },
+        {
+          "Mistake": "Memorizing factors without interpreting area",
+          "WhyWrong": "It hides why strips add to bx.",
+          "Correction": "Use diagram and distribution."
+        }
+      ],
+      "SummaryPoints": [
+        "Factoring reverses the distribution of two binomial factors.",
+        "For x²+10x+24, positive factors4 and6 satisfy sum/product.",
+        "Area diagrams justify the resulting expression.",
+        "Teacher reviews justification and error analysis."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic reasoning and verification",
+          "Description": "Independently authored mathematical examples with explicit solution multiplicity and physical context.",
+          "PrimaryLabel": "Input or equation",
+          "SecondaryLabel": "Root or output",
+          "Rows": [
+            {
+              "Label": "x²+10x+24",
+              "Cells": [
+                "(x+4)(x+6)"
+              ]
+            },
+            {
+              "Label": "x²+11x+30",
+              "Cells": [
+                "(x+5)(x+6)"
+              ]
+            },
+            {
+              "Label": "wrong (x+3)(x+8)",
+              "Cells": [
+                "x²+11x+24"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

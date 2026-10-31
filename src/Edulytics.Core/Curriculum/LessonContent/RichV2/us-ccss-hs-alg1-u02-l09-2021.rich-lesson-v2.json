@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l09-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L09",
+      "CultureCode": "en",
+      "Title": "Which Variable to Solve for? (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning objective: isolate a target variable from multi-variable constraints before entering data, and use the resulting expression to evaluate multiple scenarios efficiently. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 9, https://im.kendallhunt.com/HS/teachers/1/2/9/preparation.html (CC BY 4.0). Addressing HSA-CED.A.3, HSA-CED.A.4 and HSA-REI.B.3.",
+        "Original independent cargo model: a freight vessel has at most 150 tonnes available. Let c≥0 be whole-number containers of 2.5 tonnes and t≥0 be whole-number crates of 3.75 tonnes. Constraint 2.5c+3.75t≤150. At capacity equality, solve for c=(150−3.75t)/2.5=60−1.5t. Because c,t are integers, not every point on this continuous line represents a valid loading plan.",
+        "Evaluate with t=12: c=60−18=42 containers and cargo mass 2.5×42+3.75×12=105+45=150 tonnes. With t=13, c=40.5 from equality is not a possible whole number of containers; at most floor(40.5)=40 fit without exceeding capacity. A spreadsheet can recalculate this but an authored numerical table is not proof of actual software interaction.",
+        "Student task: rearrange the equation in two ways (solve c in terms of t, t in terms of c), build a labelled table, test boundaries including negative and non-integer outputs, and critique a partner's feasible cargo plan. Teacher-scored rubric (0–2 each, 8 maximum): correct transformation, valid domain, correct boundary and rounding, and explanation of technology simulation versus observed tool use."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solve before substitution",
+          "Definition": "An isolated variable expression can be reused for many input scenarios.",
+          "Rule": "Keep numerator and denominator grouped with parentheses.",
+          "Example": "c=(150−3.75t)/2.5."
+        },
+        {
+          "Title": "Equality and capacity",
+          "Definition": "Equality is the full-load boundary; inequality allows lighter feasible loads.",
+          "Rule": "Do not confuse equal load with all feasible shipments.",
+          "Example": "2.5c+3.75t≤150."
+        },
+        {
+          "Title": "Integer domain",
+          "Definition": "Physical item counts are nonnegative integers.",
+          "Rule": "Take floor for maximum count if a continuous value is fractional.",
+          "Example": "For t=13, maximum c is 40, not 40.5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Isolate containers",
+          "Question": "Solve 2.5c+3.75t=150 for c.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Subtract 3.75t from both sides: 2.5c=150−3.75t.",
+            "Divide by 2.5>0: c=(150−3.75t)/2.5.",
+            "Simplify terms to c=60−1.5t.",
+            "Substitute t=12 to obtain c=42."
+          ],
+          "Answer": "c=60−1.5t at exact capacity.",
+          "Check": "2.5(42)+3.75(12)=105+45=150 tonnes."
+        },
+        {
+          "Title": "Check fractional capacity boundary",
+          "Question": "What is the maximum integer c if t=13 crates?",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Capacity leaves 150−3.75×13=101.25 tonnes.",
+            "Divide by 2.5 per container: 101.25/2.5=40.5.",
+            "A physical count must be whole and nonnegative, so maximum c=40.",
+            "Check cargo: 40×2.5+13×3.75=100+48.75=148.75≤150.",
+            "One extra container gives 151.25>150."
+          ],
+          "Answer": "At most 40 containers with 13 crates.",
+          "Check": "Check both 40 feasible and 41 infeasible."
+        },
+        {
+          "Title": "Rearrange for crates",
+          "Question": "Solve full-load equation for t and evaluate c=30.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Subtract 2.5c: 3.75t=150−2.5c.",
+            "Divide by positive 3.75: t=(150−2.5c)/3.75.",
+            "For c=30, t=(150−75)/3.75=20.",
+            "Check 2.5×30+3.75×20=75+75=150."
+          ],
+          "Answer": "t=(150−2.5c)/3.75, giving t=20 at c=30.",
+          "Check": "All counts are nonnegative integers and mass equals capacity."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rounding 40.5 containers up to 41",
+          "WhyWrong": "That exceeds the weight constraint.",
+          "Correction": "Round down and verify capacity."
+        },
+        {
+          "Mistake": "Treating every real graph point as an admissible load",
+          "WhyWrong": "Only nonnegative integer combinations describe actual objects.",
+          "Correction": "Check integrality and nonnegativity separately."
+        }
+      ],
+      "SummaryPoints": [
+        "An isolated variable expression simplifies repeated modeling calculations.",
+        "Cargo capacity is an inequality with an equality boundary.",
+        "For t=13, no more than 40 whole containers of 2.5 tonnes can fit.",
+        "Teacher reviews feasibility, unit interpretation and truthful technology evidence."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original mathematically checkable table",
+          "Description": "Independent first-party numerical model; each row has an exact textual interpretation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "12 crates",
+              "Cells": [
+                "42 containers at capacity"
+              ]
+            },
+            {
+              "Label": "13 crates",
+              "Cells": [
+                "40 containers maximum"
+              ]
+            },
+            {
+              "Label": "20 crates",
+              "Cells": [
+                "30 containers at capacity"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

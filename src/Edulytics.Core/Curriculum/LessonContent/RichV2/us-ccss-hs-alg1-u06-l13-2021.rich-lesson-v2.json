@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l13-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
+      "CultureCode": "en",
+      "Title": "Graphing the Standard Form (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: explore how changing linear coefficient b in ax²+bx+c changes the graph's symmetry axis and vertex when a and c remain fixed. Independently authored Edulytiks adaptation of optional Illustrative Mathematics Algebra 1 First Edition U06:L13 teacher https://im.kendallhunt.com/HS/teachers/1/6/13/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/13/index.html (CC BY 4.0). The publisher explicitly makes this optional and asks learners to notice graphs; it does not require general mastery of graph transformations at this point.",
+        "Original two functions f(x)=x²−6x and g(x)=x²+2x share a=1,c=0, so both pass origin(0,0) and open upward. Factoring yields f=x(x−6) with zeros0,6 and axis x3; g=x(x+2) with zeros0,−2 and axis x−1. Their vertices are f(3)=−9 and g(−1)=−1. Changing b affects both horizontal and vertical positions of the vertices.",
+        "For general a≠0, axis x=−b/(2a), derived by completing square. Keeping a1,c0, changing b alone changes the x-coordinate of the vertex but does not change y-intercept(0,0). This shows why a description such as 'adding bx just shifts left' may omit a vertical change.",
+        "Student task: graph three variations with a1,c0 and b=−6,0,+2; use tables to locate symmetrical pairs and explain how axis moves. If using actual graphing technology, record that separately; a static plot description is not evidence of live slider interaction. Teacher-scored rubric0–2 each for correct tables, axes/vertices, parameter isolation and explanatory comparisons."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear coefficient b",
+          "Definition": "For ax²+bx+c, b participates in determining symmetry axis and vertex.",
+          "Rule": "Axis x=−b/(2a) when a≠0.",
+          "Example": "b−6 with a1 gives axis x3."
+        },
+        {
+          "Title": "Intercept invariant when c fixed",
+          "Definition": "At x0, ax²+bx+c=c regardless of b.",
+          "Rule": "Compare f(0),g(0).",
+          "Example": "Both equal0."
+        },
+        {
+          "Title": "Factoring reveals symmetry",
+          "Definition": "When zeros are visible, vertex x-coordinate is root midpoint.",
+          "Rule": "For roots0,6 midpoint3.",
+          "Example": "f vertex x3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Analyze f(x)=x²−6x",
+          "Question": "Find zeros and vertex.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "Factor f=x(x−6).",
+            "Zeros0,6.",
+            "Symmetry axis midpoint3.",
+            "Evaluate f(3)=9−18=−9.",
+            "Leading coefficient positive, so this is minimum."
+          ],
+          "Answer": "Vertex(3,−9), intercepts(0,0),(6,0).",
+          "Check": "Check f(0)=f(6)=0."
+        },
+        {
+          "Title": "Analyze g(x)=x²+2x",
+          "Question": "Find zeros and vertex.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "Factor g=x(x+2).",
+            "Zeros0,−2.",
+            "Axis midpoint−1.",
+            "Evaluate g(−1)=1−2=−1.",
+            "It opens up, so vertex minimum−1."
+          ],
+          "Answer": "Vertex(−1,−1), intercepts(0,0),(−2,0).",
+          "Check": "g(0)=g(−2)=0."
+        },
+        {
+          "Title": "Compare b variations",
+          "Question": "What stays the same if b changes but a=1,c=0?",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "All functions have quadratic coefficient+1 and open upward.",
+            "All have y-intercept c=0.",
+            "Axis x=−b/2 varies with b.",
+            "Vertex height also varies because substituting the axis input changes output."
+          ],
+          "Answer": "Same opening and y-intercept; different vertices.",
+          "Check": "Two explicit examples verify."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming changing b shifts graph only horizontally",
+          "WhyWrong": "Vertex height also changes when c is fixed.",
+          "Correction": "Compute both coordinates."
+        },
+        {
+          "Mistake": "Mistaking optional exploratory source lesson for full vertex-algebra mastery",
+          "WhyWrong": "Source asks for observation and reasoning.",
+          "Correction": "Use tables and transparent model comparisons."
+        }
+      ],
+      "SummaryPoints": [
+        "Linear coefficient b affects the symmetry axis and vertex.",
+        "Holding c constant keeps the y-intercept unchanged.",
+        "Factoring gives f and g roots and vertex positions.",
+        "Teacher reviews exploratory parameter reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic graphical features",
+          "Description": "Accessible mathematical values, no claimed real experiment or publisher diagram.",
+          "PrimaryLabel": "Feature or input",
+          "SecondaryLabel": "Exact value",
+          "Rows": [
+            {
+              "Label": "f roots",
+              "Cells": [
+                "0,6"
+              ]
+            },
+            {
+              "Label": "f vertex",
+              "Cells": [
+                "(3,−9)"
+              ]
+            },
+            {
+              "Label": "g roots",
+              "Cells": [
+                "−2,0"
+              ]
+            },
+            {
+              "Label": "g vertex",
+              "Cells": [
+                "(−1,−1)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

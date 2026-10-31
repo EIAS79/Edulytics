@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+  "contentVersion": "alg1-u01-l04-sequential-source-abc-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\4\\preparation.html",
+      "sha256": "723c3cecb795e597da9ff532849b9c100de2e277c0aca18814989a1775ce1a7a"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\4\\index.html",
+      "sha256": "7eebda7e3d7c59d3f5866f3bfd5efce2e07a4d5a333ec0658b804b365c2c4bdf"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\4\\index.html",
+      "sha256": "31489388ea641d90b43fb1d8d0065d1c4f0960a91e1ecf49c3e578e85cc2a8d8"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\4\\practice.html",
+      "sha256": "f5eca991f7c3e615ca9e6979064db097fe58cb025e6cdfc2082b808abe0997e0"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1=Addressing",
+    "HSS-ID.A.2=BuildingTowards"
+  ],
+  "sourceToContentCrosswalk": [
+    "distribution-shape four-way warm-up",
+    "five distributions paired dot plots and frequency cards, ten representations",
+    "invent and justify possible context, cannot infer actual sampled population",
+    "practice drawing/classifying symmetric, skew, uniform, bell and bimodal, original Cool-down substitute"
+  ],
+  "task": "symmetric, uniform, skewed and bimodal five-card matching",
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_TASKS",
+      "kind": "HUMAN",
+      "tasks": [
+        "distribution-shape four-way warm-up",
+        "five distributions paired dot plots and frequency cards, ten representations",
+        "invent and justify possible context, cannot infer actual sampled population",
+        "practice drawing/classifying symmetric, skew, uniform, bell and bimodal, original Cool-down substitute"
+      ],
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "C1",
+          "maxPoints": 2,
+          "evidence": "Correct five original dot plots and five frequency tables"
+        },
+        {
+          "criterion": "C2",
+          "maxPoints": 2,
+          "evidence": "Ten-card partner matching and precise shape names"
+        },
+        {
+          "criterion": "C3",
+          "maxPoints": 2,
+          "evidence": "Defensible imagined contexts without claims of observation"
+        },
+        {
+          "criterion": "C4",
+          "maxPoints": 2,
+          "evidence": "Actual questioning/explanation and independent student evidence"
+        }
+      ],
+      "authenticInteractionOnlyIfObserved": true
+    },
+    {
+      "id": "FIRST_PARTY_COOLDOWN",
+      "kind": "HUMAN",
+      "source": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "frequency card matches",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "shape/tail evidence",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "plausible context without false source attribution",
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "id": "INDEPENDENT_MATH_FIXTURE",
+      "kind": "AUTHORING_ORACLE_NOT_RUNTIME",
+      "expected": [
+        "bell-symmetric",
+        "uniform",
+        "right-skew",
+        "bimodal",
+        "left-skew"
+      ],
+      "answerType": "ordered vector of numerical values or named categorical shape descriptors; graph drawing stays HUMAN",
+      "correct": [
+        "bell-symmetric",
+        "uniform",
+        "right-skew",
+        "bimodal",
+        "left-skew"
+      ],
+      "equivalent": "numerically equivalent values using stated units and quartile conventions where appropriate",
+      "wrong": "missing value, shifted bin, wrong median, invalid copied formula, or unjustified descriptor",
+      "malformed": "null, blank, NaN, unsupported type, duplicated selection, invalid vector length",
+      "verification": "independently computed local Python arithmetic or classification; never asserted as production grader"
+    }
+  ],
+  "stageD": {
+    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "sharedOwner": "Supervisor 2 designated central single-writer",
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
+    "NOT_RUN": [
+      "Live Practice",
+      "teacher grade persistence",
+      "full CI"
+    ]
+  }
+}

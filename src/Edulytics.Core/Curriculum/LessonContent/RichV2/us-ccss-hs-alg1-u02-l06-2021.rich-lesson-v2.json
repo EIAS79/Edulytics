@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l06-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L06",
+      "CultureCode": "en",
+      "Title": "Equivalent Equations",
+      "ExplanationParagraphs": [
+        "Learning objective: decide whether equations have the same solution sets, explain operations that preserve equivalence and use contextual interpretation to check. Edulytiks first-party source-aligned lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 6, https://im.kendallhunt.com/HS/teachers/1/2/6/preparation.html (CC BY 4.0). Building On 6.EE.A.4; Addressing HSA-CED.A.2, HSA-REI.A.1, HSA-SSE.A.1; Building Towards HSA-REI.A.",
+        "Equations 3x+9=24, 3x=15 and x=5 are equivalent: each has exactly the solution set {5}. Subtracting 9 from both sides, combining like terms, and multiplying both sides by a nonzero constant preserve the solution set. By contrast, multiplying by zero or dividing by a variable expression that could equal zero can lose information.",
+        "Original age context: the older sibling is six years older than the younger, y. Set o=y+6. Equivalent statements o−y=6, 2o−2y=12 hold for the same ordered pairs. They express a relationship rather than one fixed numeric answer. Age constraints o,y≥0 matter even when all algebraic pairs solve.",
+        "Student tasks: explain each transformation to a partner, generate two distinct equivalent forms of a contextual equation, test plausible wrong and correct moves, then interpret both equations in words. Teacher-scored rubric (0–2 each, total 8): exact solution-set comparison, valid move justification, correct contextual variable relation, and critique of a non-equivalent transformation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent equations",
+          "Definition": "Two equations are equivalent if they have exactly the same solutions.",
+          "Rule": "Compare all solutions, not just one shared solution.",
+          "Example": "3x+9=24 and x=5 both solve to {5}."
+        },
+        {
+          "Title": "Valid transformations",
+          "Definition": "Adding the same value, or multiplying by a fixed nonzero constant, on both sides preserves equality solutions.",
+          "Rule": "Never multiply by zero or divide by possibly zero expression without domain analysis.",
+          "Example": "3x=15 divided by 3 gives x=5."
+        },
+        {
+          "Title": "Relational equivalence",
+          "Definition": "Two-variable equations can represent the same relationship in different forms.",
+          "Rule": "Rearrange both sides consistently.",
+          "Example": "o=y+6 is equivalent to o−y=6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Transform without changing solutions",
+          "Question": "Show 3x+9=24 is equivalent to x=5.",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "Subtract 9 from both sides: 3x=15.",
+            "Divide both sides by nonzero 3: x=5.",
+            "Reverse: multiply x=5 by 3 to get 3x=15 and add 9 to recover 3x+9=24.",
+            "Both equations share exactly one solution."
+          ],
+          "Answer": "They are equivalent with solution {5}.",
+          "Check": "Substitution gives 3×5+9=24."
+        },
+        {
+          "Title": "Rearrange a relational equation",
+          "Question": "Are o=y+6 and 2o−2y=12 equivalent over real o,y?",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "From o=y+6, subtract y to obtain o−y=6.",
+            "Multiply both sides by nonzero 2 to get 2o−2y=12.",
+            "Reverse by dividing by 2 and adding y.",
+            "The same ordered pairs satisfy both."
+          ],
+          "Answer": "Yes, they are equivalent equations.",
+          "Check": "Try y=10,o=16; both yield true equalities."
+        },
+        {
+          "Title": "Spot lost information",
+          "Question": "Compare x=5 and 0x=0.",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "The first equation requires exactly x=5.",
+            "Multiplying both sides of x=5 by zero gives 0x=0.",
+            "The second equality is true for every real x, not only 5.",
+            "Thus multiplication by zero is not an equivalence-preserving move."
+          ],
+          "Answer": "Not equivalent: {5} differs from all real numbers.",
+          "Check": "At x=4, 0x=0 true but x=5 false."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating one shared solution as proof of equivalence",
+          "WhyWrong": "The equations might have other different solutions.",
+          "Correction": "Compare the full solution sets."
+        },
+        {
+          "Mistake": "Dividing by a zero or possibly zero factor",
+          "WhyWrong": "Division is undefined or can eliminate solutions.",
+          "Correction": "State nonzero requirement and check all original solutions."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent equations must have identical solution sets.",
+        "Adding or subtracting the same amount and multiplying by a fixed nonzero constant preserve equivalence.",
+        "Contextual relationships may have infinitely many ordered-pair solutions.",
+        "Teacher-reviewed move explanations are essential; a solved number alone is not sufficient."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent accessible model table",
+          "Description": "Text-only original Edulytiks numerical context; labels carry the needed units and restrictions.",
+          "PrimaryLabel": "Scenario",
+          "SecondaryLabel": "Equation or value",
+          "Rows": [
+            {
+              "Label": "3x+9=24",
+              "Cells": [
+                "x=5"
+              ]
+            },
+            {
+              "Label": "3x=15",
+              "Cells": [
+                "x=5"
+              ]
+            },
+            {
+              "Label": "x=5",
+              "Cells": [
+                "x=5"
+              ]
+            },
+            {
+              "Label": "0x=0",
+              "Cells": [
+                "all real x; not equivalent"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

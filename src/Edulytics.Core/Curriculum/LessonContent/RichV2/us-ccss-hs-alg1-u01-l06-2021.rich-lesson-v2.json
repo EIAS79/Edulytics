@@ -1,0 +1,137 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l06-sequential-source-abc-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+      "CultureCode": "en",
+      "Title": "Mystery Computations",
+      "ExplanationParagraphs": [
+        "Learning goal: use changing spreadsheet inputs to infer hidden formulas, validate rules with several trials, and write formulas referencing cells. Original Edulytiks adaptation of optional Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 6, https://im.kendallhunt.com/HS/teachers/1/1/6/preparation.html (CC BY 4.0). This source emphasizes repeated reasoning MP8 rather than a numbered publisher Addressing target.",
+        "Independent spreadsheet model: cell B2 contains =A2+2*A3. With A2=5 and A3=4, it displays 13; with A2=7 and A3=4 it displays 15; with A2=5 and A3=6 it displays 17. Hiding the formula creates a rule-discovery task. Vary one input at a time; a single trial does not establish which formula is correct.",
+        "Student activity: use an actual accessible spreadsheet when available; experiment with zero, negative numbers and fractions to test the rule. Create =A2+A4 in B2, build a distinct mystery rule in B3, then exchange with a partner and justify a conjecture. A paper grid is a clearly labelled substitute when software is unavailable, not proof of interactive spreadsheet operation.",
+        "Teacher-scored rubric: 0–2 each for entering or describing a valid formula, using at least three contrasting trials, explaining the inferred relationship, and checking a counterexample (8 total). Unobserved clicking or partner discussion must never receive synthetic automatic credit.",
+        "V13 optionality and required medium: publisher U1L6 is part of an OPTIONAL three-lesson spreadsheet introduction. If students already know spreadsheets, an authorized teacher can skip the sequence; no school should record an unassigned optional task as failed. An internet-enabled spreadsheet is the original interaction, not a static arithmetic worksheet. No actual application operation or partner turn is evidenced by this content file.",
+        "V13 original Make-24 and cell-probe sequence: combine 1,3,4,6 with 6/(1-3/4)=24. In a live spreadsheet define B2 = A2+A4 and hold A3 constant while testing A2=5,A4=-2 (3); A2=-0.5,A4=0.75 (0.25); then change only A3 and explain why B2 does not move. Move to a new B3 formula and exchange hidden-rule input trials with another learner; explicitly distinguish a spreadsheet-run observation from a written hypothetical.",
+        "First-party source-aligned activity 6.2: a teacher-hidden four-cell model uses input A2=5,A3=4,A4=-2,A5=6 with B2 = A2+A4, B3 = A3*A5, B4 = A2-A3 and B5 = (A5-A4)/2, giving B2=3,B3=24,B4=1,B5=4. Ask which input influences each output. Vary exactly one input at a time, then test a zero, a negative input and a fractional input. A correct conjecture survives counterexamples; one screenshot or invented sheet operation is insufficient. This is a hypothetical first-party model, not copied hidden publisher formulas or evidence an applet was run.",
+        "Practice source-alignment: evaluate formulas referenced by exact spreadsheet cell addresses, including SUM and PRODUCT syntax with explicit intervals, a negative product and identifying an invalid circular reference, plus an open justification about choosing center/spread from an earlier distribution. Machine checking a scalar output is not proof of spreadsheet interaction or an answer to an open explanation. Actual Grade 6 optional spreadsheet work can be skipped after authorized readiness evaluation.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): (1) For A2=5,A3=4,A4=-2,A5=6 predict B2 from =A2+A4 and explain; (2) change only A3 to 10 and explain why B2 stays 3 but B3=A3*A5 becomes 60; (3) describe how to test an unknown B5 with independent input trials. Teacher scores 0-2 each, total 6, with genuine observations distinct from a disclosed hypothetical paper model. No protected publisher Cool-down read."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cell address",
+          "Definition": "A spreadsheet reference such as A2 names a cell's current value.",
+          "Rule": "Use a column letter plus row number in formulas.",
+          "Example": "=A2+7 gives 12 when A2=5."
+        },
+        {
+          "Title": "Dynamic formula",
+          "Definition": "Referenced formulas recompute after input changes.",
+          "Rule": "Change one value and predict a result.",
+          "Example": "Increasing A3 by 2 adds 4 to =A2+2*A3."
+        },
+        {
+          "Title": "Rule conjecture",
+          "Definition": "Finite input-output examples support a hypothesis but rarely prove it uniquely.",
+          "Rule": "Test inputs that distinguish competing rules.",
+          "Example": "x+2 and 2x both give 4 at x=2 but differ at x=3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Infer a two-variable rule",
+          "Question": "Given outputs 13,15,17 for inputs (5,4),(7,4),(5,6), propose a formula.",
+          "Method": "Explain each calculation and verify it independently.",
+          "Steps": [
+            "Raising A2 by 2 raises output by 2, suggesting coefficient 1.",
+            "Raising A3 by 2 raises output by 4, suggesting coefficient 2.",
+            "Test =A2+2*A3: 5+2(4)=13.",
+            "The other trials give 7+2(4)=15 and 5+2(6)=17."
+          ],
+          "Answer": "One compatible rule is =A2+2*A3.",
+          "Check": "More trials are needed to distinguish all possible rules."
+        },
+        {
+          "Title": "Check negative and fractional inputs",
+          "Question": "Evaluate =A2+2*A3 for A2=-3 and A3=1.5.",
+          "Method": "Explain each calculation and verify it independently.",
+          "Steps": [
+            "Read A2 as -3, A3 as 1.5.",
+            "Multiply 2 by 1.5 to get 3.",
+            "Add -3 and 3 to get zero.",
+            "Retest with A3=2 to predict -3+4=1."
+          ],
+          "Answer": "B2=0 initially, then 1 after A3 becomes 2.",
+          "Check": "Independent substitution verifies both."
+        },
+        {
+          "Title": "Create a partner formula",
+          "Question": "Evaluate =3*A2-A4 at (A2,A4)=(4,5) and (0,-2).",
+          "Method": "Explain each calculation and verify it independently.",
+          "Steps": [
+            "For the first case 3*4=12.",
+            "Subtract 5 to get 7.",
+            "For the second case 3*0=0.",
+            "Subtract negative 2: 0-(-2)=2."
+          ],
+          "Answer": "The two outputs are 7 and 2.",
+          "Check": "Signed subtraction is consistent in both cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating a cell address with its label",
+          "WhyWrong": "A2 means the changing cell value, not the letters A2.",
+          "Correction": "Recompute after editing that cell."
+        },
+        {
+          "Mistake": "Inferring a rule from one example",
+          "WhyWrong": "Different rules can agree at a single point.",
+          "Correction": "Vary each input in multiple trials."
+        },
+        {
+          "Mistake": "Ignoring negative arithmetic",
+          "WhyWrong": "Subtracting a negative adds a positive.",
+          "Correction": "Substitute values with parentheses."
+        }
+      ],
+      "SummaryPoints": [
+        "Cell references read changing data and formulas recalculate.",
+        "Vary one input at a time when inferring a hidden rule.",
+        "Test competing formulas with negative, zero and decimal inputs.",
+        "Teacher observation, not a numerical score, establishes actual spreadsheet interaction."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original accessible numerical demonstration",
+          "Description": "Each row is explicitly labelled practice data, not real student observations.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Frequency or output",
+          "Rows": [
+            {
+              "Label": "A2=5, A3=4, B2=13",
+              "Cells": [
+                "13"
+              ]
+            },
+            {
+              "Label": "A2=7, A3=4, B2=15",
+              "Cells": [
+                "15"
+              ]
+            },
+            {
+              "Label": "A2=5, A3=6, B2=17",
+              "Cells": [
+                "17"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l05-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L05",
+      "CultureCode": "en",
+      "Title": "Representing Exponential Decay",
+      "ExplanationParagraphs": [
+        "Learning goal: represent exponential decrease by y=a·b^t with 0<b<1 using equations, tables and graphs; interpret the initial amount and decay factor; distinguish measured discrete samples from continuous-time interpolation. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 5, https://im.kendallhunt.com/HS/teachers/1/5/5/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/5/index.html (CC BY 4.0). Source includes an algae area model and insulin context; our first-party model is not a biological dose or medical instruction.",
+        "Original hypothetical surface staining area in square centimetres decreases by half after each treatment week. Initial area256cm², so A(t)=256(1/2)^t for nonnegative whole weeks t, giving 256,128,64,32,16 at weeks0–4. The formula can be evaluated at fractional weeks as a mathematical extension, but no physical process at fractional times is established without observations.",
+        "Read the graph: vertical intercept (0,256), positive y-values decreasing toward0 but never exactly0 at finite nonnegative t under the real exponential model. For t3 A=32; solving A=16 by pattern gives t4. An automatic assumption that all exponential decay crosses the horizontal axis at a finite time is incorrect.",
+        "Student task: use a table and original graph to identify multiplier, initial value and long-term trend; explain why discrete observed weeks may not prove smooth decay, and compare it with a linear decline. Teacher-scored rubric 0–2 each for arithmetic, equation/graph match, context and asymptote interpretation, and disclosure of continuous-model assumptions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Decay equation",
+          "Definition": "An exponential decrease uses initial a>0 and a factor between0 and1.",
+          "Rule": "Read a from t0 and b from equal-step ratios.",
+          "Example": "A(t)=256(1/2)^t."
+        },
+        {
+          "Title": "Long-term behavior",
+          "Definition": "For 0<b<1 and a>0, outputs approach zero without reaching it at any finite real t.",
+          "Rule": "Do not infer a zero from rounding small values.",
+          "Example": "A(t)>0 for every finite t."
+        },
+        {
+          "Title": "Discrete versus continuous",
+          "Definition": "A rule can be extended to fractional inputs, but measurements may exist only at integer times.",
+          "Rule": "State the model input domain separately.",
+          "Example": "Weekly sampled spots only verify integer-week data."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete decay table",
+          "Question": "Evaluate A(t)=256×(1/2)^t for weeks0–4.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "At t0 factor1 yields256.",
+            "At t1 256/2=128.",
+            "At t2 128/2=64.",
+            "At t3 64/2=32.",
+            "At t4 32/2=16."
+          ],
+          "Answer": "Areas256,128,64,32,16 cm².",
+          "Check": "Every adjacent ratio equals1/2."
+        },
+        {
+          "Title": "Interpret multiplier and initial value",
+          "Question": "What do256 and1/2 represent?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Evaluate t0 to identify area256cm².",
+            "Compute t1/t0=128/256=1/2.",
+            "Each equal week retains half the previous area.",
+            "This is50% reduction each week, not a50cm² reduction."
+          ],
+          "Answer": "Initial256cm²; factor0.5 per week.",
+          "Check": "Remainder ratio matches each table step."
+        },
+        {
+          "Title": "Understand graph asymptote",
+          "Question": "Does A(t)=256(1/2)^t equal zero at a finite t?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "For every finite real t, (1/2)^t is positive.",
+            "Multiplying by256 preserves positivity.",
+            "As t increases without bound, the factor tends toward zero.",
+            "The horizontal axis is approached but never crossed in the mathematical model."
+          ],
+          "Answer": "No finite zero; horizontal asymptote A=0.",
+          "Check": "At t4 the area is still16, not zero."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Concluding halving eventually produces exact zero in finitely many steps",
+          "WhyWrong": "Powers of positive1/2 never equal zero.",
+          "Correction": "Separate practical detection limits from mathematical limit."
+        },
+        {
+          "Mistake": "Treating discrete observations as proof of continuous-time kinetics",
+          "WhyWrong": "No intermediate measurement is provided.",
+          "Correction": "Disclose interpolation assumption."
+        },
+        {
+          "Mistake": "Using a medical example to imply dosing decisions",
+          "WhyWrong": "Mathematical decay alone is insufficient for clinical decisions.",
+          "Correction": "Keep the example fictional and nonmedical."
+        }
+      ],
+      "SummaryPoints": [
+        "a·b^t models repeated decrease when0<b<1.",
+        "The original invented surface-area values halve each week.",
+        "Exponential output remains positive, approaching zero asymptotically.",
+        "Context, sampling and graph choices require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "256cm²"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "128cm²"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "64cm²"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "32cm²"
+              ]
+            },
+            {
+              "Label": "t4",
+              "Cells": [
+                "16cm²"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

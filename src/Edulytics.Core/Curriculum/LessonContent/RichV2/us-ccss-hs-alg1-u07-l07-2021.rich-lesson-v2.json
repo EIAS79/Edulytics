@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l07-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L07",
+      "CultureCode": "en",
+      "Title": "Rewriting Quadratic Expressions in Factored Form (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: factor monic trinomials whose two constant factors have opposite signs, reason about positive versus negative products, and verify linear coefficients through sum/product. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 7 teacher https://im.kendallhunt.com/HS/teachers/1/7/7/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/7/index.html (CC BY 4.0). The source extends earlier two-sum/two-difference factors to one sum and one difference.",
+        "Original expression x²−x−12. Need integers m,n whose product−12 and sum−1. The pair−4 and+3 works: (x−4)(x+3)=x²−x−12. The mixed-sign factors explain why constant is negative but x coefficient may be positive or negative depending on magnitude.",
+        "Another first-party trinomial x²+2x−15 uses product−15 and sum+2, from+5 and−3, so (x+5)(x−3). Expand to verify all terms; at x0 constant is−15, and at x3 the product vanishes. Do not treat a negative constant as proof that the larger-in-magnitude factor must be negative; check coefficient sign.",
+        "Student task: list integer factor pairs of a negative number, choose by required sum, build a signed-area reasoning table, factor both expressions and critique the tempting pair+4,−3 for x²−x−12. Teacher-scored rubric0–2 for signed factor search, identity algebra, verification and explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Opposite signs",
+          "Definition": "If integer factor product is negative, the two constant factors have opposite signs.",
+          "Rule": "Check m×n<0.",
+          "Example": "−4×3=−12."
+        },
+        {
+          "Title": "Linear coefficient",
+          "Definition": "The sum m+n sets the coefficient of x in monic expansion.",
+          "Rule": "Check signed sum, not just magnitudes.",
+          "Example": "−4+3=−1."
+        },
+        {
+          "Title": "Identity check",
+          "Definition": "Expand all factor products to confirm entire polynomial.",
+          "Rule": "Distribute.",
+          "Example": "(x−4)(x+3)=x²−x−12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Factor negative linear coefficient",
+          "Question": "Factor x²−x−12.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Find product−12 pairs.",
+            "Choose−4 and+3 because product−12, sum−1.",
+            "Write (x−4)(x+3).",
+            "Expand x²+3x−4x−12=x²−x−12."
+          ],
+          "Answer": "(x−4)(x+3).",
+          "Check": "Both signed conditions verified."
+        },
+        {
+          "Title": "Factor positive linear coefficient",
+          "Question": "Factor x²+2x−15.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Find product−15, sum+2.",
+            "Use+5 and−3.",
+            "Write (x+5)(x−3).",
+            "Expand x²−3x+5x−15=x²+2x−15."
+          ],
+          "Answer": "(x+5)(x−3).",
+          "Check": "Sum/product correct."
+        },
+        {
+          "Title": "Reject reversed signs",
+          "Question": "Would (x+4)(x−3) equal x²−x−12?",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Product of constants4×−3=−12 correct.",
+            "Sum4−3=+1, not−1.",
+            "Expansion gives x²+x−12.",
+            "So it matches a different polynomial."
+          ],
+          "Answer": "No; the middle coefficient has wrong sign.",
+          "Check": "Test x1: proposed1+1−12=−10 versus actual1−1−12=−12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignoring linear coefficient sign",
+          "WhyWrong": "Product alone is insufficient.",
+          "Correction": "Check sum m+n exactly."
+        },
+        {
+          "Mistake": "Changing both signs when only one should be negative",
+          "WhyWrong": "Two negative factors have positive product.",
+          "Correction": "Use opposite signs for negative constant."
+        }
+      ],
+      "SummaryPoints": [
+        "Mixed signs correspond to negative constant products.",
+        "Use the signed sum to select the correct factor order.",
+        "x²−x−12=(x−4)(x+3).",
+        "Teacher reviews signed-area reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factor and completing-square verification",
+          "Description": "Independent mathematical equations, checked roots and explanations, not a reproduction of publisher diagrams.",
+          "PrimaryLabel": "Expression or condition",
+          "SecondaryLabel": "Equivalent form or solutions",
+          "Rows": [
+            {
+              "Label": "x²−x−12",
+              "Cells": [
+                "(x−4)(x+3)"
+              ]
+            },
+            {
+              "Label": "x²+2x−15",
+              "Cells": [
+                "(x+5)(x−3)"
+              ]
+            },
+            {
+              "Label": "wrong sign example",
+              "Cells": [
+                "(x+4)(x−3)=x²+x−12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

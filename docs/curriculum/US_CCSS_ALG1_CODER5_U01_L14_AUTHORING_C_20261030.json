@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+  "contentVersion": "alg1-u01-l14-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\14\\preparation.html",
+      "sha256": "7a9df33088a7c60bed23b0e73f1c78b16188ec0d44bd4695a3befae83cf98617"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\14\\index.html",
+      "sha256": "6e4edb32d0129b07f9971bedf73a86cb9230c08a474536431f2f7d8492db0cb9"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\14\\index.html",
+      "sha256": "2fd5b0e38345b41463be74bef212807c3c7f5b32d3dd912ee3f507cdb9f0cec0"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\14\\practice.html",
+      "sha256": "cd931e6f1c605bddadc3342bcd515781ad7ecca0033b84bbde1168810c17e50d"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1 BuildingOn",
+    "HSS-ID.A.1 Addressing",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.3 Addressing",
+    "HSS-ID.A.3 BuildingTowards"
+  ],
+  "activity": "Investigate an outlier before deleting; distinguish error from valid extreme.",
+  "practice": "Find fences 5.5 and17.5 for 9,10,11,12,13,100; explain why 100 is outlying but not automatically discarded.",
+  "mathFixture": [
+    11.5,
+    10,
+    13,
+    3,
+    17.5,
+    25.833333333333332,
+    11,
+    11
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Investigate an outlier before deleting; distinguish error from valid extreme.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Find fences 5.5 and17.5 for 9,10,11,12,13,100; explain why 100 is outlying but not automatically discarded.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        11.5,
+        10,
+        13,
+        3,
+        17.5,
+        25.833333333333332,
+        11,
+        11
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Find fences 5.5 and17.5 for 9,10,11,12,13,100; explain why 100 is outlying but not automatically discarded.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Quartile and fence",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Mean vs median",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Reasoned retain/exclude choice",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

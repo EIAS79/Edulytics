@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l11-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L11",
+      "CultureCode": "en",
+      "Title": "Domain and Range (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: infer domain and range directly from features of graphs, including open/closed endpoints, horizontal segments, holes, and discrete inputs, and interpret restrictions in context. Original Edulytiks source-aligned lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 11, https://im.kendallhunt.com/HS/teachers/1/4/11/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/11/index.html (CC BY 4.0). The source compares continuous, step and oscillating graphs rather than relying only on function formulas.",
+        "Original fictional delivery charge step graph: C(t)=4 dollars for 0≤t<2 hours, C(t)=7 for 2≤t<4, and C(t)=10 for 4≤t≤6, where t is elapsed service time. Input domain [0,6], output range exactly {4,7,10}; it is incorrect to claim every cost between4 and10 occurs. At t=2, the left segment ends open at cost4 and the next begins closed at cost7.",
+        "Original continuous triangular ride-height graph joins (0,0),(3,9),(7,0) with straight segments. Domain [0,7] seconds and range [0,9] metres, because all intermediate heights are attained under the interpolation assumption. Compare a continuous interval of outputs with a step function's isolated set of outputs.",
+        "Student task: draw both graphs with accurate open/closed points; decide whether a graph includes certain inputs and outputs; compare two graphs with identical x-domain but different ranges; and explain why a jump in graph excludes intermediate output values. Teacher-scored rubric 0–2 for endpoints, domain, range and coherent context explanation with suitable accessible alternatives."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Graph domain",
+          "Definition": "All x-coordinates represented by points of a function graph.",
+          "Rule": "Watch open endpoints and missing x-values.",
+          "Example": "For delivery C, domain [0,6] includes 0 and6."
+        },
+        {
+          "Title": "Graph range",
+          "Definition": "All y-coordinates actually attained.",
+          "Rule": "Do not fill between discrete or stepped outputs.",
+          "Example": "C's range {4,7,10}, not [4,10]."
+        },
+        {
+          "Title": "Open versus closed endpoints",
+          "Definition": "A filled circle includes a point; an open circle excludes it.",
+          "Rule": "At a shared boundary choose the rule that contains equality.",
+          "Example": "At t=2 the cost is7, not4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read domain and range from step segments",
+          "Question": "Find domain and range of C(t)=4 on [0,2),7 on [2,4),10 on [4,6].",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "The three time intervals cover every t from0 through6.",
+            "0 and6 are included, giving domain [0,6].",
+            "Every segment is horizontal and takes one of only three values.",
+            "Thus range is exactly {4,7,10} dollars.",
+            "No cost of6 dollars is attained."
+          ],
+          "Answer": "Domain [0,6] h, range {4,7,10} dollars.",
+          "Check": "Check closed endpoints match the stated intervals."
+        },
+        {
+          "Title": "Handle boundary accurately",
+          "Question": "What is C(2) and C(4)?",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "At t=2 the first piece t<2 is excluded.",
+            "The middle piece 2≤t<4 applies, giving C(2)=7.",
+            "At t=4 the middle piece excludes equality.",
+            "The last piece 4≤t≤6 applies, giving C(4)=10."
+          ],
+          "Answer": "C(2)=$7, C(4)=$10.",
+          "Check": "At each input exactly one value is assigned."
+        },
+        {
+          "Title": "Contrast a continuous triangular graph",
+          "Question": "The ride joins (0,0),(3,9),(7,0) with straight segments. Find range.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "The ride is defined from t0 through t7 inclusive.",
+            "It rises continuously from0 to9 then falls continuously to0.",
+            "All heights between0 and9 occur on a segment.",
+            "Domain is [0,7], range [0,9]."
+          ],
+          "Answer": "Domain [0,7]s, range [0,9]m.",
+          "Check": "The maximum9m occurs at t3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Replacing a step range with an entire numerical interval",
+          "WhyWrong": "Values such as6 are never outputs.",
+          "Correction": "List attained horizontal levels."
+        },
+        {
+          "Mistake": "Assigning two costs to a shared breakpoint",
+          "WhyWrong": "Overlapping closed pieces would break function uniqueness.",
+          "Correction": "Use precise open/closed interval membership."
+        }
+      ],
+      "SummaryPoints": [
+        "A graph's x-values form its domain and its y-values form its range.",
+        "Open/closed endpoints matter at jumps.",
+        "Step-function range can be discrete despite continuous input.",
+        "Teacher reviews accurate graphs and reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible function observations",
+          "Description": "Original hypothetical data and formula checks, not source-owned graphics or fabricated student participation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output or classification",
+          "Rows": [
+            {
+              "Label": "t=1.5",
+              "Cells": [
+                "C=$4"
+              ]
+            },
+            {
+              "Label": "t=2",
+              "Cells": [
+                "C=$7"
+              ]
+            },
+            {
+              "Label": "t=4",
+              "Cells": [
+                "C=$10"
+              ]
+            },
+            {
+              "Label": "t=6",
+              "Cells": [
+                "C=$10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

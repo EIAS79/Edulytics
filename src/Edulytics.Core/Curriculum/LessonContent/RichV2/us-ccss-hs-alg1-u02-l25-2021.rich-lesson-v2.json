@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l25-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L25",
+      "CultureCode": "en",
+      "Title": "Solving Problems with Systems of Linear Inequalities in Two Variables",
+      "ExplanationParagraphs": [
+        "Learning objective: interpret systems of inequalities with strict and inclusive boundaries, test whether a point on an intersection edge counts as a solution and identify missing contextual assumptions. Original independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L25, https://im.kendallhunt.com/HS/teachers/1/2/25/preparation.html (CC BY 4.0). The source specifically distinguishes included and excluded boundary points, not merely approximate graph shading.",
+        "Original charity event model: muffins m sell for $3 each and cookies c sell for $2 each. A booth can prepare at least 20 items and has a maximum ingredient budget of $60 in this simplified equal-price resource model. Conditions m+c≥20, 3m+2c≤60, m,c nonnegative integers. A pair (10,10) satisfies item count 20 and cost $50, and (20,0) lies on both inclusive boundaries.",
+        "Contrast a strict requirement 3m+2c<60: pair (20,0) no longer satisfies the cost condition because it equals 60. Pair (15,10) has cost $65 and item count 25, so fails in both inclusive and strict variants. An exact line may be included for ≥ while a second line excluded for <; show solid/dashed patterns independently.",
+        "Student task: create one graph for inclusive system and another after a strict change, label feasible points, explain the status of (20,0) and a non-integer point and propose an additional relevant resource constraint. Teacher-scored rubric 0–2 each for complete system, boundary status, numerical testing and explanatory graph/assumption critique."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inclusive boundary",
+          "Definition": "Equality is allowed by ≥ and ≤.",
+          "Rule": "Use a solid line and include equality points.",
+          "Example": "At m=20,c=0, item count 20 and cost 60 meet inclusive limits."
+        },
+        {
+          "Title": "Strict boundary",
+          "Definition": "Equality is excluded by > and <.",
+          "Rule": "Use a dashed line and explicitly test the edge.",
+          "Example": "3m+2c<60 excludes (20,0)."
+        },
+        {
+          "Title": "Intersect restrictions",
+          "Definition": "Every inequality and the count domain apply at the same time.",
+          "Rule": "Test item count, cost and nonnegativity separately.",
+          "Example": "(15,10) gives 25 items but $65, so not feasible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Test a point inside the feasible set",
+          "Question": "For m=10,c=10, check both constraints.",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Item count m+c=20≥20.",
+            "Cost 3m+2c=30+20=50≤60.",
+            "Counts are whole and nonnegative.",
+            "All conditions hold."
+          ],
+          "Answer": "Feasible (10 muffins, 10 cookies).",
+          "Check": "Both original inequalities true."
+        },
+        {
+          "Title": "Distinguish inclusive versus strict",
+          "Question": "Is (20,0) feasible for cost ≤60 and cost <60?",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Item count 20+0=20≥20.",
+            "Cost 3×20+2×0=60.",
+            "Inclusive ≤60 is satisfied.",
+            "Strict <60 is false at exact 60.",
+            "The boundary must switch from solid to dashed."
+          ],
+          "Answer": "Included with ≤60, excluded with <60.",
+          "Check": "Boundary arithmetic exactly equals 60."
+        },
+        {
+          "Title": "Reject a superficially abundant plan",
+          "Question": "Is (15,10) feasible?",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Item count 15+10=25≥20.",
+            "Cost 3×15+2×10=45+20=65.",
+            "Budget max is $60, so $65 fails.",
+            "Point lies outside the budget half-plane."
+          ],
+          "Answer": "Infeasible because cost exceeds budget.",
+          "Check": "One satisfied condition cannot compensate for another failure."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using a solid line for a strict limit",
+          "WhyWrong": "That suggests the excluded equality points count.",
+          "Correction": "Dashed boundary for < or >."
+        },
+        {
+          "Mistake": "Ignoring integer restrictions in item counts",
+          "WhyWrong": "Fractions of a muffin may be algebraically plotted but physically unsupported.",
+          "Correction": "Use nonnegative integer domain."
+        }
+      ],
+      "SummaryPoints": [
+        "Boundary inclusion can differ between constraints in one system.",
+        "At (20,0), $60 is allowed under ≤60 but not under <60.",
+        "A valid real-world plan satisfies every inequality and domain constraint.",
+        "Teacher evaluates diagrams, symbols and contextual argument."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original multi-constraint example",
+          "Description": "First-party mathematical examples with explicit limits, excluding publisher graphics and any unobserved real survey or product data.",
+          "PrimaryLabel": "Case",
+          "SecondaryLabel": "Constraint result",
+          "Rows": [
+            {
+              "Label": "(10,10)",
+              "Cells": [
+                "20 items, $50 feasible"
+              ]
+            },
+            {
+              "Label": "(20,0)",
+              "Cells": [
+                "20 items, $60 inclusive only"
+              ]
+            },
+            {
+              "Label": "(15,10)",
+              "Cells": [
+                "25 items, $65 infeasible"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

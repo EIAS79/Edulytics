@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l05-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+      "CultureCode": "en",
+      "Title": "Using Function Notation to Describe Rules (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning objective: evaluate and solve equations involving linear functions, distinguish constant-rate graphs from nonlinear graphs and use graphing technology when actually accessible. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 5, https://im.kendallhunt.com/HS/teachers/1/4/5/preparation.html (CC BY 4.0). The source introduces 'linear function' and includes an optional technology activity; it is not simply a second copy of Lesson 4.",
+        "Independent first-party temperature-like model, without asserting physical calibration: T(t)=18+1.5t degrees for elapsed minutes t∈[0,10]. It is linear because each minute increases predicted output by1.5 degrees. At t=4, T=24; solve T(t)=27 to find t=6. A straight graph passes through (0,18),(4,24),(6,27).",
+        "Contrast a nonlinear function Q(t)=t²+2 on t≥0: Q(0)=2, Q(1)=3, Q(2)=6, Q(3)=11. First differences are1,3,5 rather than constant; its graph curves. For a constant-rate function, average rates between any two distinct inputs in the domain equal the slope. When solving equations using a graph, intersections with horizontal output line correspond to inputs with that output.",
+        "Student task: generate both graphs and compare their rates, solve two target-output equations by algebra and graph reading, and document whether real graphing technology was used or drawings were manual. Teacher-scored rubric 0–2 each for accurate evaluation, inverse input-solving, mathematical evidence of linearity/nonlinearity and correct labelled graphs plus technology disclosure."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear function",
+          "Definition": "A function whose output changes by a constant amount per equal input increment.",
+          "Rule": "Its graph is a straight line with constant slope.",
+          "Example": "T(t)=18+1.5t has slope1.5 degrees/minute."
+        },
+        {
+          "Title": "Nonlinear function",
+          "Definition": "A rule whose input-output change does not have one fixed rate across its domain.",
+          "Rule": "Compare slopes over equal intervals.",
+          "Example": "Q(t)=t²+2 has differences1,3,5."
+        },
+        {
+          "Title": "Solving a target output",
+          "Definition": "The equation f(t)=k asks which inputs yield output k.",
+          "Rule": "Use algebra or where graph crosses y=k.",
+          "Example": "T(t)=27 occurs at t=6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate and solve a linear function",
+          "Question": "Given T(t)=18+1.5t, find T(4) and when T=27.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "At4, calculate18+1.5×4=24.",
+            "Set18+1.5t=27.",
+            "Subtract18 to get1.5t=9.",
+            "Divide1.5 to get t=6.",
+            "Check T(6)=18+9=27."
+          ],
+          "Answer": "T(4)=24; T=27 at t=6.",
+          "Check": "Both times within [0,10]."
+        },
+        {
+          "Title": "Verify a constant rate",
+          "Question": "Find average rate of T between t=0 and4, and4 and6.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "T(0)=18,T(4)=24,T(6)=27.",
+            "Rate0–4=(24−18)/(4−0)=6/4=1.5.",
+            "Rate4–6=(27−24)/(6−4)=3/2=1.5.",
+            "The rates match: the model is linear."
+          ],
+          "Answer": "Rate constant at1.5 output units per minute.",
+          "Check": "Matches coefficient of t."
+        },
+        {
+          "Title": "Identify a nonlinear rule",
+          "Question": "Given Q(t)=t²+2, evaluate at t=0,1,2,3 and compare equal-step differences.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Outputs are2,3,6,11.",
+            "Step differences are3−2=1,6−3=3,11−6=5.",
+            "Because differences differ for unit steps, rate is not constant.",
+            "The graph is curved rather than a straight line."
+          ],
+          "Answer": "Q is nonlinear.",
+          "Check": "Nonconstant differences disprove linearity on tested domain."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling every function f(x) linear",
+          "WhyWrong": "Function notation applies to nonlinear and piecewise rules too.",
+          "Correction": "Check rate of change before labeling linear."
+        },
+        {
+          "Mistake": "Assuming an authored graph proves actual software use",
+          "WhyWrong": "A text table is not evidence of a tool session.",
+          "Correction": "Disclose manual versus authentic technology work."
+        }
+      ],
+      "SummaryPoints": [
+        "A linear function changes at constant rate and has a straight-line graph.",
+        "Use f(t)=k to determine inputs for a desired output.",
+        "Nonlinear functions have varying rates across intervals.",
+        "Teacher evaluates graph and explanation, with truthful technology evidence."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party input/output table",
+          "Description": "Independent original functional models and their exact numeric outputs, including domain limits.",
+          "PrimaryLabel": "Function input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "T(0)",
+              "Cells": [
+                "18"
+              ]
+            },
+            {
+              "Label": "T(4)",
+              "Cells": [
+                "24"
+              ]
+            },
+            {
+              "Label": "T(6)",
+              "Cells": [
+                "27"
+              ]
+            },
+            {
+              "Label": "Q(0),Q(1),Q(2),Q(3)",
+              "Cells": [
+                "2,3,6,11"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

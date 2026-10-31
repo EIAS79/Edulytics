@@ -1,0 +1,130 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l14-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L14",
+      "CultureCode": "en",
+      "Title": "Completing the Square (Part 3)",
+      "ExplanationParagraphs": [
+        "Learning goal: adapt completing the square to nonmonic quadratic equations ax²+bx+c=0, first dividing by nonzero a and then completing a monic square; correct the misconception that (2x+3)² has middle coefficient6x. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 14 teacher https://im.kendallhunt.com/HS/teachers/1/7/14/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/14/index.html (CC BY 4.0).",
+        "Original equation 2x²+8x−10=0. Divide by2 to obtain x²+4x−5=0, or x²+4x=5. Add half-of-four squared,4, to both sides: (x+2)²=9, so x+2=±3 and x=1 or−5. Original check at1:2+8−10=0; at−5:50−40−10=0.",
+        "Second model 3x²−6x−9=0. Divide by3: x²−2x−3=0; move−3: x²−2x=3. Add1 both sides: (x−1)²=4; roots x=3 or−1. This demonstrates preserving signs across division and using a correct completing term after normalizing leading coefficient.",
+        "Student task: compare a student's incorrect attempt to complete square without dividing a, solve two nonmonic quadratics, and expand (2x+3)² to locate cross-term error. Teacher-scored rubric0–2 for initial coefficient normalization, valid complete-square terms, both checked roots and reasoned critique."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Normalize leading coefficient",
+          "Definition": "Divide both sides of ax²+bx+c=0 by nonzero a before monic completion.",
+          "Rule": "For2x²+8x−10=0, divide by2.",
+          "Example": "x²+4x−5=0."
+        },
+        {
+          "Title": "Complete after normalization",
+          "Definition": "Half the NEW linear coefficient, then square.",
+          "Rule": "b'=4 gives add4.",
+          "Example": "(x+2)²=9."
+        },
+        {
+          "Title": "Cross term in nonmonic squares",
+          "Definition": "(mx+n)²=m²x²+2mnx+n².",
+          "Rule": "(2x+3)² has12x.",
+          "Example": "Not6x."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve coefficient2 equation",
+          "Question": "Solve2x²+8x−10=0.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Divide by2:x²+4x−5=0.",
+            "Move5:x²+4x=5.",
+            "Add4 to both sides:(x+2)²=9.",
+            "x+2=±3, so x=1 or−5.",
+            "Check both original."
+          ],
+          "Answer": "x1,−5.",
+          "Check": "At each polynomial zero."
+        },
+        {
+          "Title": "Solve coefficient3 equation",
+          "Question": "Solve3x²−6x−9=0.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Divide by3:x²−2x−3=0.",
+            "Rearrange x²−2x=3.",
+            "Add1 both sides:(x−1)²=4.",
+            "x−1=±2 yields x3 or−1.",
+            "Check original."
+          ],
+          "Answer": "x3 or−1.",
+          "Check": "At3:27−18−9=0; at−1:3+6−9=0."
+        },
+        {
+          "Title": "Correct scaled-square error",
+          "Question": "Expand(2x+3)².",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Square2x to4x².",
+            "Cross terms2×(2x)×3=12x.",
+            "Square3 to9.",
+            "Full result4x²+12x+9.",
+            "At x1 original5²=25, result4+12+9=25."
+          ],
+          "Answer": "4x²+12x+9.",
+          "Check": "The incorrect middle coefficient6 would give19."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Completing square before normalizing a without adjusting coefficients",
+          "WhyWrong": "The missing-square term depends on b/a.",
+          "Correction": "Divide by a first."
+        },
+        {
+          "Mistake": "Dropping 2 from scaled square's mixed term",
+          "WhyWrong": "Two cross products must be included.",
+          "Correction": "Use2mnx."
+        }
+      ],
+      "SummaryPoints": [
+        "Normalize nonmonic quadratic then complete monic square.",
+        "The example2x²+8x−10=0 has roots1 and−5.",
+        "Scaled squares still require two cross terms.",
+        "Teacher reviews equivalence and error analysis."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact roots, signed discriminants and contextual verification",
+          "Description": "Independent original algebra and error-analysis data; teacher-reviewed explanations are not auto-grading proof.",
+          "PrimaryLabel": "Equation or case",
+          "SecondaryLabel": "Exact outcome",
+          "Rows": [
+            {
+              "Label": "2x²+8x−10=0",
+              "Cells": [
+                "roots1,−5"
+              ]
+            },
+            {
+              "Label": "3x²−6x−9=0",
+              "Cells": [
+                "roots3,−1"
+              ]
+            },
+            {
+              "Label": "(2x+3)²",
+              "Cells": [
+                "4x²+12x+9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

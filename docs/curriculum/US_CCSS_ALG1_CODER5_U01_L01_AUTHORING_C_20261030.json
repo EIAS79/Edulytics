@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "contentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
+  "readiness": "AUTHORING_COMPLETE_BUT_STAGE_C_BLOCKED_NO_SELECTED_PRACTICE_ROUTE",
+  "sourceRoles": {
+    "6.SP.A.1": "BuildingOn",
+    "HSS-ID.A.1": "BuildingTowards"
+  },
+  "sourceFilesSha256": {
+    "09_HS_Algebra_1/1/1/preparation.html": "a405615c5a6ecb73fbfc343f9e52ac19c3a19fbcb2a918ca156cee2a3a2839ae",
+    "09_HS_Algebra_1/1/1/index.html": "10205bbb0b0aea92bcac424d3b70132452764b0ec40c0235c8c280e949056c65",
+    "09_HS_Algebra_1_Student/1/1/index.html": "bd2fff1b76ef42942aa073499dd462f235eb258f352f611b6f88fa51543f8609",
+    "09_HS_Algebra_1_Student/1/1/practice.html": "0ffbcfc624ff9194849ab5928ca779a119e7f0d9484c3817ac0f10c306f7bf2e"
+  },
+  "goals": [
+    "statistical variation vs fixed fact",
+    "numerical vs categorical",
+    "class-level question vs individual respondent",
+    "voluntary anonymous sampling limits"
+  ],
+  "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "firstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+  "runtimeEnabled": false,
+  "activities": [
+    {
+      "id": "WARMUP",
+      "source": "1.1",
+      "kind": "HUMAN",
+      "prompt": "For each of four original shelf questions defend an odd-one-out using response type and anticipated variability. Multiple defensible arguments.",
+      "rubric": "teacher reviews reasoning"
+    },
+    {
+      "id": "SURVEY",
+      "source": "1.2",
+      "kind": "HUMAN",
+      "prompt": "Teacher supplies one numeric statistical, one categorical statistical, one fixed question. Student creates fourth and four respondent items; may ask 15 voluntary anonymous classmates if authorized. Explain group vs individual.",
+      "possiblePoints": 8,
+      "rubric": [
+        {
+          "criterion": "statistical question design and anticipated variability",
+          "points": 2
+        },
+        {
+          "criterion": "numerical/categorical classification with justification",
+          "points": 2
+        },
+        {
+          "criterion": "genuine or explicitly invented response summary without identifiers",
+          "points": 2
+        },
+        {
+          "criterion": "class versus individual interpretation and sampling limitation",
+          "points": 2
+        }
+      ],
+      "genuineCollectionClaimed": false,
+      "syntheticAsActualForbidden": true
+    },
+    {
+      "id": "P1",
+      "source": "P1",
+      "kind": "HUMAN",
+      "prompt": "Numerical statistical question, respondent item, units and rationale for variation"
+    },
+    {
+      "id": "P2",
+      "source": "P2",
+      "kind": "HUMAN",
+      "prompt": "Categorical statistical question, respondent item, classes and rationale for variation"
+    },
+    {
+      "id": "P3",
+      "source": "Edulytiks first-party source-equivalent",
+      "kind": "EXACT_SELECT_ALL_AUTHORING",
+      "answerType": "set of choice IDs",
+      "options": [
+        {
+          "id": "A",
+          "statistical": true,
+          "reason": "reading pages vary across pupils"
+        },
+        {
+          "id": "B",
+          "statistical": false,
+          "reason": "one named book has one fixed page count"
+        },
+        {
+          "id": "C",
+          "statistical": true,
+          "reason": "lunch preference varies across classmates"
+        },
+        {
+          "id": "D",
+          "statistical": false,
+          "reason": "a single person had one lunch yesterday"
+        },
+        {
+          "id": "E",
+          "statistical": true,
+          "reason": "walk minutes vary by pupil"
+        },
+        {
+          "id": "F",
+          "statistical": false,
+          "reason": "the capital of a country is a fixed fact"
+        }
+      ],
+      "expected": [
+        "A",
+        "C",
+        "E"
+      ],
+      "normalize": "trim+uppercase; order independent; reject duplicates and malformed",
+      "productionGraderVerified": false,
+      "responseWireFormat": "CHECKBOX_ARRAY_A_TO_F; INDEPENDENT_ORACLE_ALSO_ACCEPTS_STRICT_3_TOKEN_COMMA_TRANSCRIPTION",
+      "studentFacingAnswerKeyExposure": "FORBIDDEN; ONLY_TEACHER_ASSESSMENT_CONTRACT_STORES_EXPECTED"
+    },
+    {
+      "id": "COOLDOWN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "kind": "HUMAN",
+      "prompt": "Explain class reading minutes; fixed principal name; class preferred game; classify variable and answer type",
+      "possiblePoints": 6,
+      "rubric": [
+        {
+          "criterion": "statistical versus nonstatistical rationale",
+          "points": 2
+        },
+        {
+          "criterion": "numerical versus categorical rationale",
+          "points": 2
+        },
+        {
+          "criterion": "class-level variability versus individual fixed fact",
+          "points": 2
+        }
+      ]
+    }
+  ],
+  "oracleFixtures": {
+    "correct": [
+      [
+        "A",
+        "C",
+        "E"
+      ],
+      [
+        " c ",
+        "e",
+        " a "
+      ],
+      [
+        "E",
+        "A",
+        "C"
+      ],
+      "c, E, a"
+    ],
+    "wrong": [
+      [
+        "A",
+        "C"
+      ],
+      [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      [
+        "A",
+        "B",
+        "C",
+        "E"
+      ]
+    ],
+    "malformed": [
+      null,
+      [],
+      [
+        "A",
+        "a",
+        "C",
+        "E"
+      ],
+      [
+        "A",
+        "C",
+        "E",
+        "Z"
+      ],
+      [
+        "A",
+        "",
+        "C",
+        "E"
+      ],
+      [
+        "A",
+        null,
+        "C",
+        "E"
+      ],
+      [
+        "A",
+        4,
+        "C",
+        "E"
+      ],
+      "A,,C,E",
+      "",
+      42
+    ]
+  },
+  "stageDObligation": {
+    "owner": "Supervisor 2 central service single-writer",
+    "path": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "current": "NoSupportedOutcomes before registry dispatch (intentional fail closed)",
+    "requirements": [
+      "authorized exact lesson-scoped selection generator/grader",
+      "authenticated human assessment, teacher feedback and grade persistence",
+      "two-school tenant isolation and final CI"
+    ],
+    "NOT_RUN": [
+      "authenticated browser",
+      "attempt and grade persistence",
+      "full CI"
+    ],
+    "notProductionReady": true
+  },
+  "priorAuthoringReadiness": "AUTHORING_CLOSED_READY_FOR_STAGE_D_NOT_RUNTIME",
+  "strictStageCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
+  "selectedPracticeRouteVerified": false,
+  "blocker": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "stage": "C",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "lines": "124-151",
+    "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+    "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+    "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained",
+    "parallelPermittedWork20261031": "Course local selected offline sheet authored and embedded; no claim that machine P3 or authenticated Practice can be generated. Waiting for global shared-service sole writer."
+  },
+  "printableTeacherSelectedEvidence20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "studentAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-hs/alg1/u01-l01-first-party-paper-assessment.html",
+    "studentUrl": "/curriculum/us-ccss-hs/alg1/u01-l01-first-party-paper-assessment.html",
+    "linkedFromRichV2": true,
+    "dataSafety": "15 voluntary anonymous respondents only if teacher authorizes; no names or sensitive responses, hypothetical not mislabelled real",
+    "studentTasks": [
+      "1.1 four question warm-up",
+      "1.2 statistical/class survey and own fourth question",
+      "P1 numerical with units and variation",
+      "P2 categorical with classes and variation",
+      "P3 exact six-choice multi-select",
+      "Edulytiks independent Cool-down"
+    ],
+    "selectedRoute": "OFFLINE_PRINTABLE_LEARNER_WORKSHEET_TEACHER_HUMAN_REVIEW_ONLY",
+    "machineSelectedPractice": false,
+    "machineGrader": "NOT_VERIFIED",
+    "teacherSurveyRubric": 8,
+    "humanCooldownRubric": 6,
+    "tests": "AUTHORED_NOT_RUN",
+    "sharedServiceChanged": false
+  },
+  "studentP3KeyExposureFix20261031": {
+    "defect": "P3 answer set was previously published inside student-facing Rich V2 ExplanationParagraphs",
+    "fixedContentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
+    "answerKeyStoredInTeacherContract": true,
+    "printableStudentAssessmentUnchanged": true,
+    "oracleFixtureCorrection": "Historical correct CSV transcription preserved as an independent valid fixture, supported by strict 3-token parsing; no production route claimed",
+    "tests": "AUTHORED_NOT_RUN",
+    "readiness": "STAGE_C_STILL_BLOCKED_SHARED_SELECTED_PRACTICE"
+  }
+}

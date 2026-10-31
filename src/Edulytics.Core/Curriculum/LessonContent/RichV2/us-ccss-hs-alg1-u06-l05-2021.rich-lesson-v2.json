@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l05-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
+      "CultureCode": "en",
+      "Title": "Building Quadratic Functions to Describe Situations (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: recognize a quadratic distance-versus-time pattern for a falling object, derive distance from an approximate constant gravitational acceleration and distinguish distance fallen from remaining altitude. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L05 teacher https://im.kendallhunt.com/HS/teachers/1/6/5/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/5/index.html (CC BY 4.0). The source uses feet and falling rock data; this candidate uses a separate invented metric scenario.",
+        "Original physics-idealized scenario: object released from rest in an approximate gravitational field with g≈10m/s² and no air drag from180m above ground. After t seconds, approximate distance fallen D(t)=(1/2)gt²≈5t² metres. At t0,1,2,3,4,5,6, fall distances0,5,20,45,80,125,180m. The model is valid only until the object reaches ground at t6, ignoring drag and other physics.",
+        "The increase in distance for successive seconds grows by5,15,25,35,45,55m. Second differences of10m per equal-second step match a quadratic pattern; the average rate of fall in each second is not constant. Remaining height H(t)=180−5t²; do not confuse the two output variables.",
+        "Student task: use original table and diagram to argue why linear constant-speed modeling fails, identify physical domain0≤t≤6, graph D and H separately and interpret what D(6)=180 means. Teacher-scored rubric0–2 for correct data and second differences, justified model, unit/domain and careful physical assumptions. No real drop is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distance of a falling object",
+          "Definition": "Under constant acceleration from rest, distance is proportional to t².",
+          "Rule": "D(t)≈gt²/2.",
+          "Example": "With g≈10,D(t)=5t² metres."
+        },
+        {
+          "Title": "Changing fall rate",
+          "Definition": "Equal time intervals show increasing distance changes.",
+          "Rule": "Compute first differences.",
+          "Example": "0,5,20,45 increments5,15,25."
+        },
+        {
+          "Title": "Physical domain",
+          "Definition": "The model changes once the object reaches ground.",
+          "Rule": "Limit time to height constraint.",
+          "Example": "D≤180 implies0≤t≤6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete distance table",
+          "Question": "Calculate D(t)=5t² for t0,1,2,3.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "At0 distance0.",
+            "At1 distance5.",
+            "At2 distance5×4=20.",
+            "At3 distance5×9=45.",
+            "Differences5,15,25 increase."
+          ],
+          "Answer": "Distances0,5,20,45m.",
+          "Check": "All outputs in metres."
+        },
+        {
+          "Title": "Find ground time",
+          "Question": "From height180m with D=5t², when is ground reached?",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Set5t²=180.",
+            "Divide5:t²=36.",
+            "Mathematical solutions t=±6.",
+            "Physical elapsed time cannot be negative, so t=6.",
+            "Check D(6)=5×36=180."
+          ],
+          "Answer": "Ground at6s under model.",
+          "Check": "The excluded negative root is not meaningful time."
+        },
+        {
+          "Title": "Compare distance and height",
+          "Question": "At t4 what is fall distance and height?",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Fall distance5×4²=80m.",
+            "Initial height180m.",
+            "Remaining height180−80=100m.",
+            "At t6 remaining height0.",
+            "Outputs measure different quantities."
+          ],
+          "Answer": "D(4)=80m,H(4)=100m.",
+          "Check": "D+H=180m for modeled interval."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using linear distance5t instead of quadratic5t²",
+          "WhyWrong": "Falling speed changes under acceleration.",
+          "Correction": "Inspect second differences."
+        },
+        {
+          "Mistake": "Keeping negative time from squared equation",
+          "WhyWrong": "Time since release has nonnegative domain.",
+          "Correction": "Use t≥0."
+        },
+        {
+          "Mistake": "Treating idealized numerical acceleration as measured fact",
+          "WhyWrong": "Air resistance and gravity variation are ignored.",
+          "Correction": "State approximate model assumptions."
+        }
+      ],
+      "SummaryPoints": [
+        "Falling distance from rest under ideal gravity is quadratic in elapsed time.",
+        "D(t)=5t² and H(t)=180−5t² represent different quantities.",
+        "The object reaches ground at6 seconds in the invented model.",
+        "Teacher reviews physics limitations, data and graph reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independently authored geometric or quadratic model",
+          "Description": "Accessible numerical table and original situation, not copied publisher figures or authentic measurements.",
+          "PrimaryLabel": "Input or scenario",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "D0m"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "D20m"
+              ]
+            },
+            {
+              "Label": "t4",
+              "Cells": [
+                "D80m"
+              ]
+            },
+            {
+              "Label": "t6",
+              "Cells": [
+                "D180m"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

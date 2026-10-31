@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "asOfDate": "2026-10-29",
+  "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
+  "classification": "SOURCE_ALIGNED_ORIGINAL_ACTIVITY_CANDIDATES_NOT_ACADEMIC_APPROVAL",
+  "fixes": 7,
+  "lessonCodes": [
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L01",
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L01"
+  ],
+  "approvedAcademicTasks": 0,
+  "teacherScoresPersisted": 0,
+  "practiceContractsVerified": 0,
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/1/4/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/1/4/index.html",
+      "teachingGoal": "Recognize distribution shape from dot plots and frequency tables; match multiple representations; invent and defend contextual explanations.",
+      "independentlyAuthoredStudentTask": [
+        "V12 original source-aligned Which One Does Not Belong and card sort: make five first-party data sets at equally spaced values 1,2,3,4,5: A frequencies [1,2,4,2,1], B [2,2,2,2,2], C [5,3,1,1,1], D [4,1,1,1,4], E [1,1,1,3,5]. Without reading labels first, draw five DOT PLOTS and five matching FREQUENCY TABLES, shuffle these ten cards, and take turns explaining your five matches. A is symmetric bell-like, B uniform, C right-skewed, D bimodal and E left-skewed. Every displayed count is fictional, not a class survey.",
+        "V12 activity fidelity: the publisher explicitly includes a Which One Does Not Belong discussion and partner matching of ten representations, followed by suggesting a plausible real-world context for a displayed distribution. Students must invent at least two plausible contexts for one of the fictional graphs and explain why the source data cannot be inferred uniquely from a shape. The plotted dot positions and frequency cards must be student-created, not auto-inferred from rubric text.",
+        "Teacher draft assessment: observe actual partner turns and explanations, check 10 independently prepared cards, and score 0–2 for (1) frequencies and graph consistency, (2) correct five matches and shapes, (3) graph-based contextual explanations with uncertainty, and (4) peer questioning and mathematical language. A written draft is not authenticated teacher evidence."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Correct five original dot plots and five frequency tables",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Ten-card partner matching and precise shape names",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Defensible imagined contexts without claims of observation",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Actual questioning/explanation and independent student evidence",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "dot-plot sketch and distribution shape classification",
+        "frequency-to-graph and graph-to-frequency matching",
+        "verbal context critique; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "ORIGINAL_DOT_PLOT_GRAPH_WORKFLOW_UNVERIFIED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/2/1/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/2/1/index.html",
+      "teachingGoal": "Model a group cost with expressions, identify changing/fixed quantities, set realistic budget and quantity constraints, and defend different solutions.",
+      "independentlyAuthoredStudentTask": [
+        "V12 source-aligned three-group planning task (all data fictional): given 20 guests, $14 per pizza with 3 servings per pizza, and a fixed $8 for drinks/plates, GROUP A proposes 6 pizzas ($92, only 18 servings, invalid), GROUP B proposes 7 pizzas ($106, 21 servings, valid), GROUP C proposes 8 pizzas ($120, 24 servings, valid). The class budget is $120. Each group states variables n,p, expression C=14p+8, capacity 3p≥n, budget 14p+8≤120 and integer restrictions; a peer must question an assumption before selecting a plan.",
+        "V12 warm-up modeling analogue (independently chosen numbers): let m=$9 be a main dish, q be an integer number of $2 side dishes, and T=9+2q. At q=3, T=$15. Explain what each symbol represents and why an equation is a model of one possible meal, not a universal price. Change the day-of-party quantities into variables and identify possible integer/inequality constraints.",
+        "The publisher expects collaborative planning with more than one defensible approach. Teacher scores actual student proposals and rationale, not only the numerical cost: 0–2 each for assumptions/variables, expressions and units, valid constraints, and reasoned presentation/critique. Planning discussion remains unverified without learner evidence."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Identifies independent and changing quantities and units",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Derives each proposed cost expression correctly",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Checks capacity, integer and budget constraints",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Presents multiple realistic plans and critiques assumptions",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "contextual expression matching and missing variables",
+        "constraint inequality checking with domain",
+        "open modeling and peer argument; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "GROUP_PLANNING_AND_TEACHER_FEEDBACK_UNVERIFIED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/3/1/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/3/1/index.html",
+      "teachingGoal": "Build and interpret two-way tables, recover missing cells using marginal totals, and conduct an authentic information-gap exchange.",
+      "independentlyAuthoredStudentTask": [
+        "V12 source-equivalent information-gap task using completely invented club-preference observations. Keep the full solution hidden from learners: Group A Sports 12 Arts 8 Total 20; Group B Sports 9 Arts 11 Total 20; columns Sports 21 Arts 19 Grand 40. Learner card A sees A-Sports=12, B-Arts=11, group totals20 and grand total40; learner card B sees column totals Sports21,Arts19, and the location of missing cells. Learners request the information needed to reconstruct the four cells, switch questioner/information roles, and check row/column/grand totals.",
+        "V12 partner task must have real two separate visible information cards (not a single displayed answer table) before claiming an information gap. Teacher assesses precisely framed questions, categorical-variable distinction, filled table, and interpretation such as \"nine Group B participants chose Sports\"; count entries are frequencies, not continuous measurements. Source student activities also include real-world category table reconstruction and a separate animal-trait table; the Edulytiks numbers are independent.",
+        "Teacher draft assessment 0–2 each: categorical row/column labels; correct four interior counts and marginals; genuinely differentiated partner information/questions; contextual interpretation and explained checks. An answer-key table on its own is not proof of partner interaction."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Correct two categorical variables and table headings",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Correct four interior and all marginal counts",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Independent actual information-gap questions and role change",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Clear count interpretation and summation verification",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "two-way missing-cell inference with row and column marginals",
+        "cell frequency interpretation with categorical units",
+        "partner role/cards and teacher observation; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "ACTUAL_TWO_ROLE_INFORMATION_GAP_NOT_IMPLEMENTED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/4/1/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/4/1/index.html",
+      "teachingGoal": "Distinguish functions and nonfunctions from contextual situations, select inputs precisely, interpret graph coordinates and multiple defensible pricing models.",
+      "independentlyAuthoredStudentTask": [
+        "V12 source-equivalent first-party bundle-price discussion: a bakery sells individual rolls for $1.60, a six-pack for $7.20 and a twelve-pack for $12.80. For exactly 13 rolls, different purchase plans yield different totals: 13 singles cost $20.80; two six-packs and one single cost $16.00; a twelve-pack plus one single costs $14.40; one six-pack plus seven singles costs $18.40. Each plan is feasible. Students defend one interpretation and critique why input \"number of rolls\" alone does NOT select a unique total without a purchase-policy input; under cheapest-price policy there is exactly one price for each integer quantity.",
+        "V12 function and graph task: label an actual input-output table for bike hours h=0,1,2,3 and cost P(h)=4+3h, then draw its points. In a second plotted relation, include (2,7) and (2,9) at the same input to show why the vertical line at x=2 intersects twice. Explain the difference between one output per fully specified input and a single y-value repeated for different inputs. Interpret x and y coordinates and state relevant whole-hour domain.",
+        "Publisher student lesson uses alternative bagel purchase plans and graph narratives including motion of a leashed animal; independently invented examples preserve the key ambiguity/function-property comparison without source pixels. Draft teacher rubric0–2 each for graph and axes, uniqueness argument, contextual model comparison and independent written explanation."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Functions vs nonfunctions with justified input definition",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Accurately graphed points and coordinate interpretations",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Four checked purchase plans and pricing-policy caveat",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Explains real-world domain and counterexample",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "function table input uniqueness",
+        "function/nonfunction graph classification",
+        "contextual price-plan interpretation; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "GRAPH_DRAWING_AND_AMBIGUOUS_PRICE_DISCUSSION_UNVERIFIED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/5/1/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/5/1/index.html",
+      "teachingGoal": "Use calculations, graphs and optional technology to compare repeated addition and multiplication before formal linear/exponential vocabulary.",
+      "independentlyAuthoredStudentTask": [
+        "V12 source-aligned original tripling sequence for the activity paralleling bacteria reproduction: start with ONE fictional microscopic object and triple each step. Counts at steps0,1,2,3,4 are1,3,9,27,81. Students draw the objects for steps0 through3, write repeated multiplication 3×3×3=27, and explain why \"add three\" cannot produce the same sequence. This is not a verified physical observation.",
+        "V12 original comparison activity: construct a table for the existing fictional reward schemes A(t)=100+30t and B(t)=10×2^t at whole weeks0..6. On the same labeled axes plot both curves, identify week5 as the first integer week when B>A, and explain why constant additive differences and constant multiplicative factors lead to different predictions. Students may independently use a scientific calculator or spreadsheet but must record actual tool use; no claim of a performed spreadsheet interaction appears in this lesson.",
+        "Draft teacher criteria0–2 each for correct diagrams/3^t counts, both exact schemes through week6, genuine two-curve plotted graph with correct intersection ordering, and justified comparisons plus conditional technology report. Graph reading and learner-generated plotting remain unverified."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Correct original repeated-multiplication diagrams",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Valid linear/exponential tables and crossover week",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Student-plotted comparison graph with scales",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Comparison reasoning and truthful technology log",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "repeated-factor tables and exponent representation",
+        "additive vs multiplicative comparison",
+        "hand-drawn graph/tool workflow; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "ACTUAL_TWO_PATTERN_GRAPH_AND_TECHNOLOGY_EVIDENCE_UNVERIFIED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L01",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/6/1/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/6/1/index.html",
+      "teachingGoal": "Describe increasing-then-decreasing area patterns with drawings, tables and graphs before mandatory symbolic quadratic formalism.",
+      "independentlyAuthoredStudentTask": [
+        "V12 source-equivalent Notice and Wonder THREE original tables, at integer n=0,1,2,3,4: L(n)=7n+2 has outputs2,9,16,23,30 (constant +7); E(n)=2×3^n has2,6,18,54,162 (constant factor3); Q(n)=12−(n−2)^2 has8,11,12,11,8 (rises then falls). Learners discuss in words and visuals before being required to use function notation or the term quadratic; those expressions are provided as optional teacher checks, not compulsory early student solutions.",
+        "V12 Measurement and Plotting Garden: using the independently chosen 24-metre perimeter, draw rectangles with widths 1,2,3,4,5,6,7,8,9,10,11 metres, each length12−w metres. Record area w(12−w) and graph width vs area on labeled axes (area in m²). From 11,20,27,32,35,36,35,32,27,20,11 identify the maximum 36 m² at 6×6m. Explain the rise-and-fall verbally, including why equal widths/length swaps give equal area.",
+        "The publisher student work explicitly has a three-table Notice and Wonder, diagrams of an enclosed garden and plotting garden area. The task is only complete after students prepare the actual diagrams and graphs; a table or provided SVG does not count as authentic student production. Teacher rubric0–2 for three table observations, measured rectangle drawings, area graph and qualitative maximum/comparison."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Three-table notice/wonder comparisons",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Original garden sketches with side lengths and fixed perimeter",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Correctly labeled area-vs-width graph and maximum",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Qualitative rise/fall compared to linear/exponential",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "geometric width/length and maximum-area reasoning",
+        "classification from equal-input numerical patterns",
+        "student garden sketches and actual graphs; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "ACTUAL_GARDEN_DRAWINGS_AND_INCREASING_DECREASING_GRAPH_UNVERIFIED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L01",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/1/7/1/preparation.html",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/1/7/1/index.html",
+      "teachingGoal": "Write equations from geometric constraints and interpret unknown inputs in a contextual quadratic, without expecting a fully mastered solving algorithm at this stage.",
+      "independentlyAuthoredStudentTask": [
+        "V12 source-aligned new independently authored GEOMETRIC CONSTRAINT task: a rectangular picture measures8 by5 inches, and a uniform nonoverlapping frame of border thickness x inches surrounds all four edges. The frame material covers 30 square inches. Outer dimensions are (8+2x) by (5+2x), so the necessary area equation is (8+2x)(5+2x)−8×5=30, equivalently4x²+26x=30. A border thickness of x=1 gives outer rectangle10×7 area70, picture area40, and frame area30. Negative x is impossible. Let students propose and explain this equation before completing formal quadratic solving techniques.",
+        "V12 geometric diagram task: draw an 8×5 inner rectangle centered in a 10×7 outer rectangle for x=1, label four strips of thickness1 and the corner regions; explain why the frame area is outer area minus picture area. Compare with the existing first-party flight example h(t)=16−(t−3)^2, which yields height7 at t0 and6, to explain that the same target output may have more than one input. The publisher uses a launched-object context and a physical framing-cut activity; independent values avoid copying the paper cut-out dimensions.",
+        "Draft teacher assessment0–2 each for labelled original picture/frame diagram, exact geometric area equation, check at x1 with units/domain, and interpretation of context roots/unknown inputs. This is evidence of an authored task, not of actual cutting, authenticated teacher grading, or a student solution."
+      ],
+      "proposedTeacherRubric": {
+        "status": "DRAFT_HUMAN_GRADE_NOT_IMPLEMENTED",
+        "criteria": [
+          {
+            "id": "C1",
+            "name": "Labelled interior/outer rectangle and uniform border",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C2",
+            "name": "Correct outer minus inner quadratic area equation",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C3",
+            "name": "Verified x=1 and valid contextual thickness domain",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          },
+          {
+            "id": "C4",
+            "name": "Interprets unknown inputs and algebraic versus physical roots",
+            "min": 0,
+            "max": 2,
+            "anchor0": "No adequate evidence",
+            "anchor1": "Partly supported but substantial missing evidence",
+            "anchor2": "Correct task-specific student work independently verified by assigned teacher"
+          }
+        ],
+        "totalPossible": 8,
+        "scorePersisted": false,
+        "teacherRoleVerified": false,
+        "feedbackPersisted": false
+      },
+      "requiredPracticeFamilies": [
+        "frame-area geometric constraints and unknown input equation",
+        "quadratic graphical target intersection",
+        "cutting/modeling and teacher-reviewed explanation; HUMAN_TEACHER_ONLY"
+      ],
+      "exactApprovedPracticeContract": false,
+      "integratedPracticeEngineModified": false,
+      "safetyGate": "V10 ALG1 PRACTICE_FAIL_CLOSED",
+      "integrationBlocker": "ACTUAL_FRAMING_MANIPULATIVES_AND_TEACHER_GRADING_UNVERIFIED",
+      "academicAccepted": false,
+      "authenticatedStudentTaskVerified": false
+    }
+  ]
+}

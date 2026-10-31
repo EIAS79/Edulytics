@@ -1,0 +1,143 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l10-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
+      "CultureCode": "en",
+      "Title": "The Effect of Extremes",
+      "ExplanationParagraphs": [
+        "Learning goal: determine how extreme values affect mean versus median and justify which measure better summarizes a given distribution; construct and interpret data sets subject to given center constraints. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 10, https://im.kendallhunt.com/HS/teachers/1/1/10/preparation.html (CC BY 4.0). Publisher roles: Addressing HSS-ID.A.1, HSS-ID.A.2, HSS-ID.A.3; Building Towards HSS-ID.A.3.",
+        "Independent example A, a hypothetical set of ten response times in seconds: 4,5,5,6,6,7,7,8,8,9. Sum 65, mean 6.5, median (6+7)/2=6.5. Replacing only the 9 with 39 raises the sum to 95, mean to 9.5, but the fifth and sixth sorted values remain 6 and 7; median is still 6.5. The extreme creates a right tail, and the mean no longer represents the central cluster well.",
+        "Constructing displays with constraints is not a routine fixed-answer problem. Example B with ten values 0,1,2,2,2,3,3,4,5,18 has median (2+3)/2=2.5 and mean 40/10=4, greater than the median. Example C -20,1,2,4,5,5,6,7,8,10 has median 5 and sum 28, mean 2.8 below the median. Multiple legitimate constructed datasets satisfy each inequality; teacher checks both the numbers and their reasoning.",
+        "Student tasks: compare dot plots before and after replacing an extreme, find both measures of center, create at least three different data values in each student-constructed set of ten or more values meeting a specified mean/median relation, and explain why one center is more resistant. Label any data as simulated unless actually collected. An extreme can be legitimate; do not automatically delete outliers.",
+        "Teacher-scored rubric (0–2 each, maximum 8): correct raw-data/changed-data statistics; accurate shape/tail analysis; valid constrained example with independent mean/median checks; defensible choice of center and ethical treatment of outliers. No invented classroom response or fabricated software action counts as evidence.",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L10: Compare two gaming populations using variable and graph; create at least 10 points with three distinct values for given mean-median relations. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Explain why replacing 9 by 39 changes mean 6.5 to 9.5 while median stays 6.5; defend center under skew. A teacher scores 0, 1 or 2 per criterion: Mean/median calculations; Effects of extremes and shape; Appropriate center and context. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Resistance of the median",
+          "Definition": "The median depends on order positions and often changes less than mean when one end value becomes more extreme.",
+          "Rule": "Sort and compare central positions after the change.",
+          "Example": "Replacing 9 by 39 raises the mean but leaves the median 6.5."
+        },
+        {
+          "Title": "Mean and tails",
+          "Definition": "Every value contributes to the arithmetic mean, so long tails pull it toward extremes.",
+          "Rule": "Check distribution shape and actual numerical sum.",
+          "Example": "A right extreme raises mean 6.5 to 9.5 in the ten-value example."
+        },
+        {
+          "Title": "Constructing constraints",
+          "Definition": "A constructed data set must satisfy the exact requested mean, median, count and distinct-value constraints.",
+          "Rule": "Verify using independent arithmetic, not just a sketched shape.",
+          "Example": "Ten values can have median 2.5 and mean 4 when one high value stretches the right tail."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare before and after an extreme",
+          "Question": "For 4,5,5,6,6,7,7,8,8,9 replace 9 with 39.",
+          "Method": "Work from the original Edulytiks dataset and independently verify the stated numerical result.",
+          "Steps": [
+            "Original sum=65 and ten entries yield mean=6.5.",
+            "The middle positions 5 and 6 contain 6 and 7, median=6.5.",
+            "Replacing 9 by 39 raises sum by 30 to 95.",
+            "New mean=95/10=9.5, while the middle pair and median stay unchanged."
+          ],
+          "Answer": "Mean increases from 6.5 to 9.5; median remains 6.5 seconds.",
+          "Check": "The changed value is still the maximum and does not displace the middle pair."
+        },
+        {
+          "Title": "Make mean above median",
+          "Question": "Analyze 0,1,2,2,2,3,3,4,5,18.",
+          "Method": "Work from the original Edulytiks dataset and independently verify the stated numerical result.",
+          "Steps": [
+            "There are ten ordered values and more than three distinct values.",
+            "Positions five and six are 2 and 3, giving median=2.5.",
+            "Sum=0+1+2+2+2+3+3+4+5+18=40.",
+            "Mean=40/10=4, exceeding median 2.5.",
+            "The 18 is a high extreme, creating a right tail."
+          ],
+          "Answer": "Median 2.5 and mean 4.",
+          "Check": "All ten values are listed and their sum is 40."
+        },
+        {
+          "Title": "Make median above mean",
+          "Question": "Analyze -20,1,2,4,5,5,6,7,8,10.",
+          "Method": "Work from the original Edulytiks dataset and independently verify the stated numerical result.",
+          "Steps": [
+            "Ten ordered values include at least three distinct values.",
+            "Positions five and six are both 5, so median=5.",
+            "Sum=-20+1+2+4+5+5+6+7+8+10=28.",
+            "Mean=28/10=2.8 below median 5.",
+            "The -20 creates a left tail that pulls the mean downward."
+          ],
+          "Answer": "Median 5 and mean 2.8.",
+          "Check": "Mean is less than median and the stated signed sum is 28."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a high outlier always changes median",
+          "WhyWrong": "One changed maximum often preserves all central order positions.",
+          "Correction": "Compare sorted central positions, not just the extreme."
+        },
+        {
+          "Mistake": "Assuming mean always describes a typical value",
+          "WhyWrong": "A long tail can pull mean away from most observations.",
+          "Correction": "Compare with median and the distribution shape."
+        },
+        {
+          "Mistake": "Deleting inconvenient extreme observations",
+          "WhyWrong": "An outlier may be a genuine, important observation.",
+          "Correction": "Investigate quality and report it transparently rather than silently removing data."
+        }
+      ],
+      "SummaryPoints": [
+        "A single large extreme can dramatically increase the mean without changing the median.",
+        "For the original ten response times, mean and median both equal 6.5; replacing 9 with 39 raises mean to 9.5.",
+        "The median is often preferred when the distribution has strong skew or outliers; report the choice with evidence.",
+        "Constrained dataset construction and interpretation are open-ended teacher-reviewed tasks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original numerical data summary",
+          "Description": "An independently authored accessible text table of the practice dataset; not real class responses.",
+          "PrimaryLabel": "Value or bin",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "Original sample mean",
+              "Cells": [
+                "6.5"
+              ]
+            },
+            {
+              "Label": "Original sample median",
+              "Cells": [
+                "6.5"
+              ]
+            },
+            {
+              "Label": "After extreme mean",
+              "Cells": [
+                "9.5"
+              ]
+            },
+            {
+              "Label": "After extreme median",
+              "Cells": [
+                "6.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

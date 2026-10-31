@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l14-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L14",
+      "CultureCode": "en",
+      "Title": "Solving Systems by Elimination (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning objective: add or subtract two linear equations with opposite/equal coefficients to eliminate a variable, solve the remaining equation and connect the pair to the graphs' common intersection. Edulytiks independent adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L14, https://im.kendallhunt.com/HS/teachers/1/2/14/preparation.html (CC BY 4.0). Addressing HSA-REI.C.6; Building Towards HSA-REI.C.5.",
+        "Original balanced-relationship example: x+y=13 and x−y=3. Adding both equations yields 2x=16 (the +y and −y cancel), giving x=8 and y=5. The sum line 2x=16 passes through the same intersection as both original lines, but it is not by itself equivalent to the entire original system.",
+        "Elimination is appropriate when one variable has equal or opposite coefficients. For 3a+2b=18 and 3a−2b=6, adding yields 6a=24 -> a=4, then b=3. A second strategy subtracts if coefficients are identical rather than opposites.",
+        "Student task: make an original visual balance diagram or equivalent text table, add/subtract two equations, graph both originals and their sum, describe the single shared intersection and justify why it survives the operation. Teacher-scored rubric 0–2 for correct operation, cancellation, back-substitution and graph/argument; group-created diagrams are not single-number auto-grades."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Elimination",
+          "Definition": "Combine full equations to cancel a variable by equal/opposite coefficients.",
+          "Rule": "Add equations term-by-term or subtract the entire equation.",
+          "Example": "(x+y)+(x−y)=13+3 gives 2x=16."
+        },
+        {
+          "Title": "Common solution",
+          "Definition": "A system solution satisfies any sum of its true equalities.",
+          "Rule": "Check both originals, not just the newly summed equation.",
+          "Example": "(8,5) makes x+y=13 and x−y=3."
+        },
+        {
+          "Title": "Graph intersection",
+          "Definition": "A third equation formed by adding has a line containing the original intersection.",
+          "Rule": "Don't confuse one combined equation with a replacement for both constraints.",
+          "Example": "The line x=8 also passes through (8,5)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Eliminate opposite coefficients",
+          "Question": "Solve x+y=13 and x−y=3.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Add both equations: 2x+0y=16.",
+            "Divide by 2: x=8.",
+            "Substitute into x+y=13, giving y=5.",
+            "Check second: 8−5=3."
+          ],
+          "Answer": "(x,y)=(8,5).",
+          "Check": "Both original equalities hold."
+        },
+        {
+          "Title": "Eliminate in two more-variable equations",
+          "Question": "Solve 3a+2b=18 and 3a−2b=6.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Add to obtain 6a=24.",
+            "Divide: a=4.",
+            "Substitute 12+2b=18, so 2b=6 and b=3.",
+            "Verify 12−6=6 in second."
+          ],
+          "Answer": "(a,b)=(4,3).",
+          "Check": "Both equations check exactly."
+        },
+        {
+          "Title": "Distinguish sum line from full system",
+          "Question": "Does (8,0) solve 2x=16 and both original equations x+y=13,x−y=3?",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "It satisfies 2×8=16.",
+            "Check x+y=8+0=8, not 13.",
+            "Check x−y=8−0=8, not 3.",
+            "Thus one new equation has extra solutions; retain an original constraint."
+          ],
+          "Answer": "(8,0) solves the combined equation but not the original system.",
+          "Check": "Only (8,5) meets both originals."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Combining coefficients without combining full right sides",
+          "WhyWrong": "The sum must operate on both sides.",
+          "Correction": "Add both left sides and both right sides."
+        },
+        {
+          "Mistake": "Assuming the sum line equals the full system",
+          "WhyWrong": "It may contain more solutions.",
+          "Correction": "Use remaining original equation to determine the actual pair."
+        }
+      ],
+      "SummaryPoints": [
+        "Opposite coefficients allow a variable to disappear when equations are added.",
+        "The original system intersection is on the sum line.",
+        "For x+y=13 and x−y=3, the shared solution is (8,5).",
+        "Explain the graph connection rather than only giving a pair."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original equation and result comparison",
+          "Description": "Independently authored labelled examples of equation relationships.",
+          "PrimaryLabel": "Model",
+          "SecondaryLabel": "Exact value or solution",
+          "Rows": [
+            {
+              "Label": "x+y=13, x−y=3",
+              "Cells": [
+                "(8,5)"
+              ]
+            },
+            {
+              "Label": "3a+2b=18,3a−2b=6",
+              "Cells": [
+                "(4,3)"
+              ]
+            },
+            {
+              "Label": "sum x=8",
+              "Cells": [
+                "includes extra points, such as (8,0)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

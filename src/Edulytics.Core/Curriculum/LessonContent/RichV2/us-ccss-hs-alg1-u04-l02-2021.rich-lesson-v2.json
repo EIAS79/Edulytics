@@ -1,0 +1,136 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l02-v12-source-activity-audit2-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L02",
+      "CultureCode": "en",
+      "Title": "Function Notation",
+      "ExplanationParagraphs": [
+        "Learning objective: use notation f(a)=b to identify and communicate named input-output relationships, explain values in units and distinguish an input from the function's output. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 2, https://im.kendallhunt.com/HS/teachers/1/4/2/preparation.html (CC BY 4.0). Publisher Addressing HSF-IF.A.1, HSF-IF.A.2 and HSF-IF.B.4. The source uses a dog's distance over time; this lesson retains context-sensitive interpretation with original data.",
+        "Original hiking example: a traveller's elevation above trailhead is represented by H(t)=20+15t metres for 0≤t≤4 hours. H(2)=50 means the traveller is 50 m above trailhead after two hours; it is not the number of hours nor a multiplication of H by 2. H(0)=20 describes an initial elevation of 20 metres.",
+        "Translate a verbal statement into f notation. If a reservoir has 280 litres after 3 hours, write V(3)=280 L, where V maps elapsed hours to remaining volume. A statement V(a)=V(b) means the two inputs yield the same measured volume; it does not force a=b for a non-injective function.",
+        "Student task: interpret at least five original notations with explicit units, map them to a labelled graph and table, explain why H(2) is different from 2H, and translate contextual data to notation in both directions. Teacher-scored rubric 0–2 each for correctly named function and argument, accurate units, correct graph/table match and verbal interpretation.",
+        "V12 source-equivalent multi-function naming: the original source interprets three functions describing distance from a post over time, then introduces concise notation f(t),g(t),h(t). Use three independently invented probe models instead: f(t)=min(t,4) metres, g(t)=4−|t−3| metres, h(t)=2 metres for integer seconds t=0..6. At t=2, f(2)=2, g(2)=3, h(2)=2; at t=4, f(4)=4, g(4)=3, h(4)=2. Identical inputs can produce different outputs for DIFFERENT functions, without violating uniqueness within one named function. Source preparation/student: https://im.kendallhunt.com/HS/teachers/1/4/2/preparation.html and https://im.kendallhunt.com/HS/students/1/4/2/index.html.",
+        "V12 student task: match three original distance-time graphs to tables, name and use f, g and h, explain f(2)=2 metres in a sentence and compare it with g(2)=3 metres; translate one sentence into function notation and another back to the situation. Note the source expects interpretation from genuinely drawn graphs, so the existing one-function hiking calculation does not alone satisfy the activity.",
+        "Teacher draft rubric0–2 each for three correctly named function graph/table correspondences, input-output interpretation with units, meaning of multiple functions at same input, and student-authored notation/translation evidence."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Function name",
+          "Definition": "A symbol such as H represents a rule or relation giving an output for each permitted input.",
+          "Rule": "H(t) denotes an output, not multiplication by a letter.",
+          "Example": "H(2)=50 metres."
+        },
+        {
+          "Title": "Input argument",
+          "Definition": "The quantity within parentheses is the input variable or value.",
+          "Rule": "Check its domain and units.",
+          "Example": "In H(2), the input is 2 hours."
+        },
+        {
+          "Title": "Value statement",
+          "Definition": "f(a)=b records the function's output b at input a.",
+          "Rule": "Translate both directions between words and notation.",
+          "Example": "V(3)=280 means volume after3 hours is280 litres."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate notation in context",
+          "Question": "Given H(t)=20+15t, find and interpret H(2).",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Identify input t=2 hours.",
+            "Substitute H(2)=20+15(2).",
+            "Calculate 20+30=50 metres.",
+            "Explain this represents elevation after 2 hours."
+          ],
+          "Answer": "H(2)=50 metres.",
+          "Check": "Input2 lies in domain [0,4]."
+        },
+        {
+          "Title": "Translate an observation to notation",
+          "Question": "After three hours a reservoir holds 280 litres. Represent it using V.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Name function V as remaining volume in litres.",
+            "Define t as elapsed hours.",
+            "Input t=3 yields measured output280.",
+            "Write V(3)=280 litres and interpret."
+          ],
+          "Answer": "V(3)=280 L.",
+          "Check": "The statement links an input and one output."
+        },
+        {
+          "Title": "Distinguish f(a)=f(b) from equal inputs",
+          "Question": "For F(t)=(t−2)², compare F(1) and F(3).",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Evaluate F(1)=(1−2)²=1.",
+            "Evaluate F(3)=(3−2)²=1.",
+            "Outputs are equal despite inputs1 and3 being distinct.",
+            "Do not conclude input arguments must coincide."
+          ],
+          "Answer": "F(1)=F(3)=1 but 1≠3.",
+          "Check": "Function is not one-to-one across these inputs."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading f(2) as f times 2",
+          "WhyWrong": "Function notation is evaluation, not an ordinary product.",
+          "Correction": "Substitute the input into the named rule."
+        },
+        {
+          "Mistake": "Interpreting f(a)=f(b) as a=b",
+          "WhyWrong": "Many different inputs may share one output.",
+          "Correction": "Check if function is one-to-one before inferring equality of inputs."
+        }
+      ],
+      "SummaryPoints": [
+        "f(a)=b identifies input a and output b of a named function.",
+        "Contextual notation must carry units for both quantities.",
+        "Different inputs may share the same output.",
+        "Graph matching and explanation are teacher-scored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party input/output table",
+          "Description": "Independent original functional models and their exact numeric outputs, including domain limits.",
+          "PrimaryLabel": "Function input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "H(0)",
+              "Cells": [
+                "20 metres"
+              ]
+            },
+            {
+              "Label": "H(2)",
+              "Cells": [
+                "50 metres"
+              ]
+            },
+            {
+              "Label": "H(4)",
+              "Cells": [
+                "80 metres"
+              ]
+            },
+            {
+              "Label": "V(3)",
+              "Cells": [
+                "280 litres"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

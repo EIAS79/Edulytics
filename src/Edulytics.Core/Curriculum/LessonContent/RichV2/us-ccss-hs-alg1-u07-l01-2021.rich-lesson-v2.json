@@ -1,0 +1,177 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l01-v12-source-activities-reviewed-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L01",
+      "CultureCode": "en",
+      "Title": "Finding Unknown Inputs",
+      "ExplanationParagraphs": [
+        "Learning goal: use graphs and function notation to identify input values that produce a specified output of a quadratic function; understand that several inputs may share one output. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 1 teacher https://im.kendallhunt.com/HS/teachers/1/7/1/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/1/index.html (CC BY 4.0). The source opens by reading quadratic flight graphs rather than insisting on formal symbolic solving.",
+        "Original invented arch-height model h(t)=16−(t−3)² metres for t∈[0,7] seconds. It rises to a maximum16m at t3 then falls. At t0 and t6, output is7m: h(0)=16−9=7 and h(6)=16−9=7. This is a graph interpretation, not two separate flights.",
+        "To find which time corresponds to height7, intersect the parabola with horizontal line h=7. Its intersections are (0,7) and (6,7). The domain matters: the algebraic graph extends to other t values, but negative elapsed time would be invalid in a real launch. If the model has measurement uncertainty, a hand-drawn crossing may only approximate a value; this exact first-party model is constructed for exact checks.",
+        "Student task: graph original model, mark vertex and both points at height7, compare h(1) and h(5), and explain why a fixed output can correspond to two distinct inputs without violating function uniqueness. Teacher-scored rubric0–2 for graph, two correct inputs, context restrictions and complete interpretation.",
+        "V12 source-aligned new independently authored GEOMETRIC CONSTRAINT task: a rectangular picture measures8 by5 inches, and a uniform nonoverlapping frame of border thickness x inches surrounds all four edges. The frame material covers 30 square inches. Outer dimensions are (8+2x) by (5+2x), so the necessary area equation is (8+2x)(5+2x)−8×5=30, equivalently4x²+26x=30. A border thickness of x=1 gives outer rectangle10×7 area70, picture area40, and frame area30. Negative x is impossible. Let students propose and explain this equation before completing formal quadratic solving techniques.",
+        "V12 geometric diagram task: draw an 8×5 inner rectangle centered in a 10×7 outer rectangle for x=1, label four strips of thickness1 and the corner regions; explain why the frame area is outer area minus picture area. Compare with the existing first-party flight example h(t)=16−(t−3)^2, which yields height7 at t0 and6, to explain that the same target output may have more than one input. The publisher uses a launched-object context and a physical framing-cut activity; independent values avoid copying the paper cut-out dimensions.",
+        "Draft teacher assessment0–2 each for labelled original picture/frame diagram, exact geometric area equation, check at x1 with units/domain, and interpretation of context roots/unknown inputs. This is evidence of an authored task, not of actual cutting, authenticated teacher grading, or a student solution."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unknown input",
+          "Definition": "To find a time for a target output, locate intersections with a horizontal target line.",
+          "Rule": "Solve or read h(t)=y0.",
+          "Example": "h(t)=7 at t0 and6."
+        },
+        {
+          "Title": "Function uniqueness",
+          "Definition": "Each input has one output, but multiple inputs can share an output.",
+          "Rule": "Separate equal y-values from equal x-values.",
+          "Example": "h(0)=h(6)=7."
+        },
+        {
+          "Title": "Physical domain",
+          "Definition": "Use only elapsed times supported by the situation.",
+          "Rule": "Apply t≥0 and end of modeled flight.",
+          "Example": "Here t∈[0,7]."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find times at height7",
+          "Question": "Solve h(t)=16−(t−3)²=7.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Set16−(t−3)²=7.",
+            "Subtract16:−(t−3)²=−9.",
+            "Multiply−1:(t−3)²=9.",
+            "Thus t−3=±3, t=0 or6.",
+            "Both are in [0,7]."
+          ],
+          "Answer": "t=0s or6s.",
+          "Check": "h0=h6=7m."
+        },
+        {
+          "Title": "Locate vertex",
+          "Question": "Where is maximum height?",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Squared term≥0.",
+            "Output h=16−(square) cannot exceed16.",
+            "At t3 the square is zero.",
+            "Vertex(3,16) and maximum16m."
+          ],
+          "Answer": "16m at3 seconds.",
+          "Check": "h(3)=16."
+        },
+        {
+          "Title": "Compare reflected inputs",
+          "Question": "Find h(1),h(5).",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "At1 deviation from3 is−2.",
+            "At5 deviation+2.",
+            "Each squared distance4.",
+            "Each height16−4=12m.",
+            "The graph is symmetric about t3."
+          ],
+          "Answer": "Both12m.",
+          "Check": "Equal horizontal distances yield equal outputs."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a function cannot give the same output twice",
+          "WhyWrong": "Uniqueness restricts outputs per input, not inputs per output.",
+          "Correction": "Read graph with vertical-line test."
+        },
+        {
+          "Mistake": "Keeping negative elapsed times as valid physical solutions",
+          "WhyWrong": "Some equations have extraneous context solutions.",
+          "Correction": "Apply domain and units."
+        }
+      ],
+      "SummaryPoints": [
+        "A horizontal target line may cross a quadratic graph twice.",
+        "The invented flight reaches height7m at times0 and6s.",
+        "Equal outputs at different inputs do not violate function definition.",
+        "Teacher reviews graphical interpretation and restrictions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic reasoning and verification",
+          "Description": "Independently authored mathematical examples with explicit solution multiplicity and physical context.",
+          "PrimaryLabel": "Input or equation",
+          "SecondaryLabel": "Root or output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "h7m"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "h12m"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "h16m"
+              ]
+            },
+            {
+              "Label": "t5",
+              "Cells": [
+                "h12m"
+              ]
+            },
+            {
+              "Label": "t6",
+              "Cells": [
+                "h7m"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Picture-frame area model: independent dimensions",
+          "Description": "Border strips thickness x are included on both sides of each dimension; x=1 produces 30 square inches of material.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "picture",
+              "Cells": [
+                "8×5 = 40 in²"
+              ]
+            },
+            {
+              "Label": "outer at x=1",
+              "Cells": [
+                "(8+2)×(5+2)=70 in²"
+              ]
+            },
+            {
+              "Label": "frame at x=1",
+              "Cells": [
+                "70−40=30 in²"
+              ]
+            },
+            {
+              "Label": "general frame area",
+              "Cells": [
+                "(8+2x)(5+2x)−40=4x²+26x"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l12-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L12",
+      "CultureCode": "en",
+      "Title": "Piecewise Functions",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret and graph a piecewise-defined function whose rule changes across intervals, with careful inclusive/exclusive endpoints and unambiguous function values. Independently authored Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 12, https://im.kendallhunt.com/HS/teachers/1/4/12/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/12/index.html (CC BY 4.0). The source includes bike rentals, postage rates and open/filled graph endpoints.",
+        "Original fictional food-delivery fee P(w) in dollars for a small parcel weighing w kilograms: P(w)=0.5w when 0≤w≤5, and P(w)=3 when 5<w≤8. At 5kg the first rate gives $2.50 (solid point), whereas just above5kg the charge jumps to $3 (open point at5 on the second piece); P(8)=$3. Above8kg is outside this service model.",
+        "This model is not an assumption that all real-world delivery services charge this way. It uses a deliberately simple break to show why a piecewise graph can include a line segment and a horizontal step, why the output at exactly the breakpoint must be specified once, and why P(5.001) differs from P(5).",
+        "Student task: construct a table including 0,4.9,5,5.01,8,8.1; draw the curve/step with labelled axes, contrast an incorrectly closed second-branch left endpoint with the correct graph, and create a second real-life step-fee function. Teacher-scored rubric 0–2 each for correct cases notation, boundary tests, accurate graph and clear context/domain explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Piecewise definition",
+          "Definition": "A function can use different formulas on different parts of its domain.",
+          "Rule": "State each condition beside its formula.",
+          "Example": "P(w)=0.5w for 0≤w≤5, and 3 for 5<w≤8."
+        },
+        {
+          "Title": "Breakpoint",
+          "Definition": "Where the active rule changes, endpoint inclusion determines which value applies.",
+          "Rule": "Test exactly at the boundary and just above/below.",
+          "Example": "P(5)=2.5; P(5.01)=3."
+        },
+        {
+          "Title": "Step discontinuity",
+          "Definition": "Output may jump when the input crosses a boundary.",
+          "Rule": "Do not draw a connecting vertical segment as if it were part of a function.",
+          "Example": "There are no outputs in (2.5,3) near w5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate on both sides of the break",
+          "Question": "Evaluate P(4),P(5),P(5.01),P(8).",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "For4kg use first piece:0.5×4=2 dollars.",
+            "At5kg first piece includes equality:0.5×5=2.5.",
+            "At5.01kg use second piece:3 dollars.",
+            "At8kg second piece includes equality:3 dollars."
+          ],
+          "Answer": "P(4)=2, P(5)=2.5, P(5.01)=3, P(8)=3 dollars.",
+          "Check": "Every input belongs to exactly one defined piece."
+        },
+        {
+          "Title": "Identify open and closed endpoints",
+          "Question": "How should values at w=5 appear on the graph?",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "First line goes through (5,2.5) with a filled point.",
+            "Second horizontal segment at y=3 begins only for w>5.",
+            "Place an open circle at (5,3).",
+            "Do not draw the vertical jump as a function segment."
+          ],
+          "Answer": "Closed (5,2.5), open (5,3).",
+          "Check": "Only P(5)=2.5 is defined at the breakpoint."
+        },
+        {
+          "Title": "Find domain and range",
+          "Question": "Describe all attainable weights and prices.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "Domain covers0≤w≤8kg by the two adjacent intervals.",
+            "First branch produces every price from0 through2.5.",
+            "Second branch produces price3 only.",
+            "Thus range is [0,2.5] ∪ {3} dollars."
+          ],
+          "Answer": "Domain [0,8]kg, range [0,2.5]∪{3} dollars.",
+          "Check": "No input>8 is defined and no output2.75 occurs."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assigning both branches at w=5",
+          "WhyWrong": "A function cannot give two outputs for one input.",
+          "Correction": "Use ≤ in exactly one branch."
+        },
+        {
+          "Mistake": "Drawing a vertical line between step levels",
+          "WhyWrong": "A vertical segment gives multiple outputs for the same input.",
+          "Correction": "Separate endpoints with appropriate open/closed circles."
+        }
+      ],
+      "SummaryPoints": [
+        "A piecewise function has explicit rules and interval conditions.",
+        "Breakpoints must have unambiguous inclusion.",
+        "P(5)=2.5 while P(5.01)=3 in the example.",
+        "Teachers assess students' graphs, cases and explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible function observations",
+          "Description": "Original hypothetical data and formula checks, not source-owned graphics or fabricated student participation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output or classification",
+          "Rows": [
+            {
+              "Label": "w=4kg",
+              "Cells": [
+                "$2"
+              ]
+            },
+            {
+              "Label": "w=5kg",
+              "Cells": [
+                "$2.50"
+              ]
+            },
+            {
+              "Label": "w=5.01kg",
+              "Cells": [
+                "$3"
+              ]
+            },
+            {
+              "Label": "w=8kg",
+              "Cells": [
+                "$3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

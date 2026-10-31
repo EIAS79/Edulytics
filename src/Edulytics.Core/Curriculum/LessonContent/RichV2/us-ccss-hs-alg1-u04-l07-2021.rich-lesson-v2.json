@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l07-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L07",
+      "CultureCode": "en",
+      "Title": "Using Graphs to Find Average Rate of Change",
+      "ExplanationParagraphs": [
+        "Learning goal: use two points on a function graph to compute average rate of change as (f(b)−f(a))/(b−a), interpret positive/negative/zero rates and attend to context-specific units. Original first-party Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 7, https://im.kendallhunt.com/HS/teachers/1/4/7/preparation.html and source student activities at https://im.kendallhunt.com/HS/students/1/4/7/index.html (CC BY 4.0). Official Addressing HSF-IF.B.6 and Building Towards HSF-IF.B.6.",
+        "Original hypothetical temperature-monitoring data (hours since 4 PM, degrees Celsius): (0,12),(2,4),(6,−2). Between 4 and 6 PM average rate is (4−12)/(2−0)=−4°C/hour. Between 6 and 10 PM average rate is (−2−4)/(6−2)=−6/4=−1.5°C/hour. The total temperature change is different from per-hour rate; the earlier interval cools faster even though the second interval spans four hours.",
+        "Another independent context is a water tank: measured volume V(1)=90 litres and V(5)=50 litres. Over 1–5 minutes, the secant slope equals (50−90)/(5−1)=−10 litres/minute, describing an average net decrease, not a claim that loss happened at exactly that instantaneous rate.",
+        "Student task: sketch both situations with axes/units, determine slopes of secant lines, compare rates when time intervals have different lengths, and critique a claim that the larger absolute temperature change implies faster cooling. State that an average rate does not reveal all intermediate changes.",
+        "Teacher-scored rubric 0–2 each for correct endpoint readings, signed Δoutput/Δinput arithmetic, units and direction interpretation, and critical rate comparison with limitations. A graph read from a teacher/student source is not reproduced as publisher artwork."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Average rate of change",
+          "Definition": "Change in function value divided by change in input over a specified interval.",
+          "Rule": "Use (f(b)−f(a))/(b−a), b≠a.",
+          "Example": "Temperature drops 8°C in 2h, average −4°C/h."
+        },
+        {
+          "Title": "Secant slope",
+          "Definition": "The average rate is slope of the line through the two endpoint graph points.",
+          "Rule": "Report the endpoint coordinates and units.",
+          "Example": "Tank points (1,90),(5,50) give −10 litres/min."
+        },
+        {
+          "Title": "Sign and units",
+          "Definition": "Positive, negative and zero slopes mean net rise, drop or no change per unit input.",
+          "Rule": "A negative rate is not automatically a negative observed quantity.",
+          "Example": "Temperature can remain above zero while its rate is negative."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare two cooling intervals",
+          "Question": "T(0)=12,T(2)=4,T(6)=−2, with hours since4PM.",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "First interval output change=4−12=−8°C.",
+            "Time change=2h, so average −8/2=−4°C/h.",
+            "Second change=−2−4=−6°C.",
+            "Time change=6−2=4h, so average −6/4=−1.5°C/h.",
+            "The first interval is faster cooling in magnitude."
+          ],
+          "Answer": "4–6PM −4°C/h; 6–10PM −1.5°C/h.",
+          "Check": "Rates use distinct durations, not raw total drops."
+        },
+        {
+          "Title": "Find water tank rate",
+          "Question": "V(1)=90L, V(5)=50L. Find average rate.",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "Identify interval input a=1,b=5 minutes.",
+            "Output difference 50−90=−40 litres.",
+            "Time difference 5−1=4 minutes.",
+            "Rate −40/4=−10 litres/min.",
+            "Interpret as average net loss, without assuming uniform flow every instant."
+          ],
+          "Answer": "−10 litres per minute.",
+          "Check": "Four minutes times −10 L/min gives −40 litres."
+        },
+        {
+          "Title": "Distinguish net change from slope",
+          "Question": "The temperature falls 6°C over4h; is the rate −6°C/h?",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "The net output change is −6°C.",
+            "Average rate divides by elapsed time4h.",
+            "Rate is −6/4=−1.5°C/h.",
+            "A rate of −6°C/h would imply −24°C over4h under constant change, inconsistent with endpoints."
+          ],
+          "Answer": "No; average −1.5°C/h.",
+          "Check": "Multiplying true rate by four reproduces net −6°C."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using total change as average rate",
+          "WhyWrong": "It omits the input interval duration.",
+          "Correction": "Divide output change by input change."
+        },
+        {
+          "Mistake": "Reversing only one subtraction",
+          "WhyWrong": "That reverses the sign incorrectly.",
+          "Correction": "Use consistent (b−a) in numerator and denominator."
+        },
+        {
+          "Mistake": "Interpreting average rate as exactly constant every second",
+          "WhyWrong": "Endpoints do not determine the path between them.",
+          "Correction": "Use average or secant, not instantaneous claims."
+        }
+      ],
+      "SummaryPoints": [
+        "Average rate of change equals secant slope between endpoints.",
+        "Signed slopes and units matter for comparison.",
+        "4–6PM cools faster than 6–10PM in the fictional temperature record.",
+        "A teacher scores reasoning, graph choice and interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party function table",
+          "Description": "These are independently authored hypothetical data, not copied publisher graphs, videos or classroom observations.",
+          "PrimaryLabel": "Input or phase",
+          "SecondaryLabel": "Original output",
+          "Rows": [
+            {
+              "Label": "4–6 PM",
+              "Cells": [
+                "−4°C/hour"
+              ]
+            },
+            {
+              "Label": "6–10 PM",
+              "Cells": [
+                "−1.5°C/hour"
+              ]
+            },
+            {
+              "Label": "Tank minute1–5",
+              "Cells": [
+                "−10 L/minute"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

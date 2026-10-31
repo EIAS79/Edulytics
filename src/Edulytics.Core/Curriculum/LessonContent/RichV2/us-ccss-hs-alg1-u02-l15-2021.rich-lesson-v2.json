@@ -1,0 +1,121 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l15-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L15",
+      "CultureCode": "en",
+      "Title": "Solving Systems by Elimination (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: explain why combining two true equations produces another true equality at the system's solution, and solve a contextual system through addition or subtraction. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L15, https://im.kendallhunt.com/HS/teachers/1/2/15/preparation.html (CC BY 4.0). Addressing HSA-REI.C.6; Building Towards HSA-REI.C.5. The source emphasizes logical justification of elimination, not a memorized rule alone.",
+        "Original bookshop model: two notebooks and one pen cost $11 (2n+p=11); one notebook and one pen cost $7 (n+p=7). Subtract the second equality from the first: n=4, then p=3. This subtraction is valid because the same combination of quantities is subtracted on both sides; the pair must satisfy both original prices.",
+        "Alternate original system x+y=10 and 2x−y=8 has opposite y coefficients. Adding gives 3x=18, x=6, y=4. Explain in words why a shared solution of both is guaranteed to satisfy the sum equation, but why an arbitrary solution of the sum need not satisfy the whole system.",
+        "Partner task: write and justify an addition proof and a subtraction proof; critique a calculation where only left sides were combined, and verify solutions with arithmetic and a shared coordinate graph. Teacher-scored rubric (0–2 each, 8 max): correct elimination, justification of equal additions, verified pair, and contextual/graph interpretation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equalities can be combined",
+          "Definition": "If two equalities are true for a pair, the sum or difference of their sides is also equal.",
+          "Rule": "Combine both sides term by term.",
+          "Example": "2n+p=11 minus n+p=7 gives n=4."
+        },
+        {
+          "Title": "Elimination and back-check",
+          "Definition": "The cancellation reduces the system to one unknown but doesn't replace all original constraints.",
+          "Rule": "Substitute the result into an original equation.",
+          "Example": "From n=4, n+p=7 yields p=3."
+        },
+        {
+          "Title": "A sum equation is necessary but not sufficient",
+          "Definition": "Every common solution satisfies a sum, but an arbitrary sum-line point might not satisfy both originals.",
+          "Rule": "Retain at least one original equation for verification.",
+          "Example": "x=6 alone from 3x=18 doesn't yet determine y."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Subtract two purchase equations",
+          "Question": "2n+p=11, n+p=7.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Subtract full second equation from first.",
+            "(2n+p)−(n+p)=11−7 reduces to n=4.",
+            "Use n+p=7 to get p=3.",
+            "Check 2(4)+3=11 and 4+3=7."
+          ],
+          "Answer": "(n,p)=(4,3) dollars per item.",
+          "Check": "Both original purchase totals agree."
+        },
+        {
+          "Title": "Add equations with opposite signs",
+          "Question": "x+y=10, 2x−y=8.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Add left and right sides: 3x+0y=18.",
+            "So x=6.",
+            "Use first equation: y=10−6=4.",
+            "Check second: 2(6)−4=8."
+          ],
+          "Answer": "(x,y)=(6,4).",
+          "Check": "Substitution validates both equations."
+        },
+        {
+          "Title": "Explain why one sum is insufficient",
+          "Question": "Does (6,9) solve the sum 3x=18, and the system x+y=10,2x−y=8?",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "At x=6, 3x=18 regardless of y.",
+            "For y=9, x+y=15, not 10.",
+            "Second equation gives 2(6)−9=3, not 8.",
+            "The sum equation alone contains extra points."
+          ],
+          "Answer": "No; (6,9) is not a system solution.",
+          "Check": "Both original equations fail."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding only the left sides",
+          "WhyWrong": "The equation equality is then destroyed.",
+          "Correction": "Add or subtract both right sides too."
+        },
+        {
+          "Mistake": "Not checking the pair after elimination",
+          "WhyWrong": "A sum line admits many non-system solutions.",
+          "Correction": "Back-substitute into both originals."
+        }
+      ],
+      "SummaryPoints": [
+        "Add or subtract equalities to eliminate a variable.",
+        "The common pair remains a solution of each combined equation.",
+        "The result of elimination still requires an original equation for a full solution.",
+        "Teacher assesses the reasoning and contextual explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent original mathematical summary",
+          "Description": "Accessible text for the specific equation or context rather than a reproduction of publisher artwork.",
+          "PrimaryLabel": "Test case",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "2n+p=11,n+p=7",
+              "Cells": [
+                "n=4,p=3"
+              ]
+            },
+            {
+              "Label": "x+y=10,2x−y=8",
+              "Cells": [
+                "x=6,y=4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

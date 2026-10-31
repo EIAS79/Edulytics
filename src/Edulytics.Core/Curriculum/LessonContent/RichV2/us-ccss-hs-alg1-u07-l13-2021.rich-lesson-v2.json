@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l13-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L13",
+      "CultureCode": "en",
+      "Title": "Completing the Square (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: complete the square and solve monic quadratic equations with fractional coefficients, showing each rational step without rounding; analyze common errors in fraction arithmetic. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 13 teacher https://im.kendallhunt.com/HS/teachers/1/7/13/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/13/index.html (CC BY 4.0). The source emphasizes that the method is unchanged when rational values are awkward.",
+        "Original equation x²+(1/2)x=3/16. Half the x coefficient is1/4, whose square is1/16. Adding1/16 to both sides gives (x+1/4)²=4/16=1/4, so x+1/4=±1/2 and roots x=1/4 or−3/4. Check using sixteenths: for x1/4, x²1/16 plus(1/2)(1/4)=2/16 =>3/16; for x−3/4, x²9/16 plus−3/8=−6/16 =>3/16.",
+        "Second challenge x²+(3/2)x=1/4: half coefficient is3/4, square9/16; right becomes1/4+9/16=13/16; solutions x=(-3±√13)/4. The irrational exact forms are valid and should not be prematurely rounded. The method produces both roots even if a student expected only rational outputs.",
+        "Student task: explain the square-corner area with fractional parts, solve each equation, label both ± branches, identify a wrong common denominator in an incorrect peer solution and confirm exact roots. Teacher-scored rubric0–2 for fraction accuracy, equivalent transformations, full exact root set and coherent error analysis."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fractional completing term",
+          "Definition": "For monic x²+bx, add (b/2)² even if b is a fraction.",
+          "Rule": "b=1/2 gives (1/4)²=1/16.",
+          "Example": "x²+(.5)x+1/16=(x+1/4)²."
+        },
+        {
+          "Title": "Equivalent fractions",
+          "Definition": "Adding rational quantities requires common denominators.",
+          "Rule": "1/4+9/16=13/16.",
+          "Example": "The completed square may have irrational roots."
+        },
+        {
+          "Title": "Exact radicals",
+          "Definition": "Roots can be expressed with √ rather than rounded approximations.",
+          "Rule": "Keep (-3±√13)/4 exact.",
+          "Example": "Both represent real roots."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve small fractions",
+          "Question": "Solve x²+(1/2)x=3/16.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Half of1/2 is1/4; square is1/16.",
+            "Add1/16 both sides to get(x+1/4)²=4/16.",
+            "Square root gives x+1/4=±1/2.",
+            "Subtract1/4 to obtain x=1/4 or−3/4.",
+            "Verify substitution into original equality."
+          ],
+          "Answer": "x=1/4 or−3/4.",
+          "Check": "At both, left equals3/16."
+        },
+        {
+          "Title": "Solve awkward fractions exactly",
+          "Question": "Solve x²+(3/2)x=1/4.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Half coefficient3/2 is3/4.",
+            "Add(3/4)²=9/16 both sides.",
+            "RHS=4/16+9/16=13/16.",
+            "(x+3/4)²=13/16 gives x+3/4=±√13/4.",
+            "Subtract3/4 to obtain(-3±√13)/4."
+          ],
+          "Answer": "x=(-3±√13)/4.",
+          "Check": "Both roots arise from completed square."
+        },
+        {
+          "Title": "Correct a common denominator error",
+          "Question": "Is1/4+9/16 equal10/20?",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Rewrite1/4=4/16.",
+            "Add4/16+9/16=13/16.",
+            "The denominators are not added.",
+            "Thus10/20 is incorrect and would change the solution set."
+          ],
+          "Answer": "13/16.",
+          "Check": "Fraction common-denominator method."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding numerators and denominators separately",
+          "WhyWrong": "Fractions require common denominators.",
+          "Correction": "Rewrite1/4 as4/16."
+        },
+        {
+          "Mistake": "Rounding irrational roots while claiming exact answers",
+          "WhyWrong": "Rounded values are approximate only.",
+          "Correction": "Retain √13 form."
+        },
+        {
+          "Mistake": "Omitting ± for a positive square",
+          "WhyWrong": "That removes one root.",
+          "Correction": "Show both signs."
+        }
+      ],
+      "SummaryPoints": [
+        "Completing the square works with rational coefficients without changing its logic.",
+        "The first example has rational roots1/4 and−3/4.",
+        "The second has exact irrational roots(-3±√13)/4.",
+        "Teacher evaluates fraction and error reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact roots, signed discriminants and contextual verification",
+          "Description": "Independent original algebra and error-analysis data; teacher-reviewed explanations are not auto-grading proof.",
+          "PrimaryLabel": "Equation or case",
+          "SecondaryLabel": "Exact outcome",
+          "Rows": [
+            {
+              "Label": "x²+.5x=3/16",
+              "Cells": [
+                "x=1/4 or−3/4"
+              ]
+            },
+            {
+              "Label": "x²+1.5x=.25",
+              "Cells": [
+                "x=(-3±√13)/4"
+              ]
+            },
+            {
+              "Label": "completed constant",
+              "Cells": [
+                ".5x adds1/16"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

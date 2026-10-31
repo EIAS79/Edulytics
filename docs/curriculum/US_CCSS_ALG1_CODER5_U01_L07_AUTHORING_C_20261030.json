@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
+  "contentVersion": "alg1-u01-l07-sequential-source-abc-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local HTML, CC BY 4.0",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\7\\preparation.html",
+      "sha256": "7bb25f5b85b9e78900642328d75fb232909f181bb6cf77d8de5bea9ea021ba74"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\7\\index.html",
+      "sha256": "259c31a4f73c92d7045ae76f01823f2dd4a17da95b84d7bc3306ff7bb6e482a8"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\7\\index.html",
+      "sha256": "e66ddc87b21189e43bdecac944f8a3dd5d1b0e7a8daa28ebf71678d3a55b05cc"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\7\\practice.html",
+      "sha256": "26a222160c5120ac16261020e1fb87988344f5d53077b2ff61ecf0b94fbef93b"
+    }
+  },
+  "sourceRoles": [
+    "Optional spreadsheet sequence; no numbered Addressing standard specified in local teacher preparation"
+  ],
+  "sourceToContentCrosswalk": [
+    "7.1 contextual arithmetic warm-up",
+    "7.2 ten separate expression cells and order of operations",
+    "7.3 A1,A2,A3 references with dynamic change",
+    "7.4 speed/area/recipe formula, estimate before calculating, partner resolution",
+    "P1 expression syntax, P2 distance unit, P3 equivalent area formulas, P4 juice output, prior stats"
+  ],
+  "task": "spreadsheet calculator, distances, area and recipes",
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_TASKS",
+      "kind": "HUMAN",
+      "tasks": [
+        "7.1 contextual arithmetic warm-up",
+        "7.2 ten separate expression cells and order of operations",
+        "7.3 A1,A2,A3 references with dynamic change",
+        "7.4 speed/area/recipe formula, estimate before calculating, partner resolution",
+        "P1 expression syntax, P2 distance unit, P3 equivalent area formulas, P4 juice output, prior stats"
+      ],
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "spreadsheet-formula",
+          "maxPoints": 2,
+          "evidence": "correct references and safe syntax"
+        },
+        {
+          "criterion": "arithmetic-model",
+          "maxPoints": 2,
+          "evidence": "correct checked numerical interpretation"
+        },
+        {
+          "criterion": "dynamic-behavior",
+          "maxPoints": 2,
+          "evidence": "accurate change-propagation explanation, labelled simulated if not run"
+        },
+        {
+          "criterion": "reasoned-verification",
+          "maxPoints": 2,
+          "evidence": "units/constraints, justified counterexample or independent check"
+        }
+      ],
+      "authenticInteractionOnlyIfObserved": true
+    },
+    {
+      "id": "FIRST_PARTY_COOLDOWN",
+      "kind": "HUMAN",
+      "source": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "formula syntax",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "area, recipe and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "input-change reasoning",
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "id": "INDEPENDENT_MATH_FIXTURE",
+      "kind": "AUTHORING_ORACLE_NOT_RUNTIME",
+      "expected": [
+        9,
+        -5,
+        14,
+        49,
+        3.5,
+        13,
+        3.2,
+        0.5,
+        91,
+        7
+      ],
+      "answerType": "ordered vector of numerical values or named categorical shape descriptors; graph drawing stays HUMAN",
+      "correct": [
+        9,
+        -5,
+        14,
+        49,
+        3.5,
+        13,
+        3.2,
+        0.5,
+        91,
+        7
+      ],
+      "equivalent": "numerically equivalent values using stated units and quartile conventions where appropriate",
+      "wrong": "missing value, shifted bin, wrong median, invalid copied formula, or unjustified descriptor",
+      "malformed": "null, blank, NaN, unsupported type, duplicated selection, invalid vector length",
+      "verification": "independently computed local Python arithmetic or classification; never asserted as production grader"
+    }
+  ],
+  "stageD": {
+    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "sharedOwner": "Supervisor 2 designated central single-writer",
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
+    "NOT_RUN": [
+      "Live Practice",
+      "teacher grade persistence",
+      "full CI"
+    ]
+  }
+}

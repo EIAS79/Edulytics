@@ -1,0 +1,150 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l16-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+      "CultureCode": "en",
+      "Title": "Analyzing Data",
+      "ExplanationParagraphs": [
+        "Learning goal: ask a statistical question; plan two comparable experimental conditions; collect and analyse authentic data; choose displays and measures of center/variability; and explain limitations. Original Edulytiks material aligned with Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 16, https://im.kendallhunt.com/HS/teachers/1/1/16/preparation.html (CC BY 4.0). Publisher Addressing includes HSS-ID.A and HSS-ID.A.1–A.3; Building Towards also includes HSS-ID.A.1–A.3.",
+        "Ruler-drop experiment: measure how far a dropped ruler travels before a participant catches it. Establish two test conditions, for example preferred versus non-preferred hand, keep the start point and measurement precision constant, and consider randomizing or counterbalancing the trial order. Work only with authorized voluntary participation; do not collect identity-sensitive data. Lower catch distance may suggest faster response but does not on its own prove a causal effect.",
+        "The official student task requests at least 20 observations in EACH condition. A separate first-party hypothetical dataset with only five values per condition illustrates computation and is NOT evidence that a classroom experiment occurred: A=4,6,8,10,12 centimetres, B=2,4,6,8,10 centimetres. A mean and median are 8 cm; B mean and median are 6 cm. Both MADs are (4+2+0+2+4)/5=2.4 cm; IQRs are each 6 cm under median-of-halves.",
+        "Student project: collect real observations when permitted and safe; use the source's sample-size expectation; create two comparable dot/box plots and an accessible count table; compute appropriate center and spread; and explain whether the observed results answer the statistical question. If no real experiment is possible, explicitly label a simulated analysis and seek teacher assessment of the missing physical-work requirement.",
+        "Teacher-scored rubric, 0–2 each (maximum 8): safe and comparable experimental design; correctly documented genuine observations or transparent simulation limitation; accurate displays/statistics; evidence-backed conclusion identifying confounding, measurement error and sampling limitations. Do not fabricate participants, trial counts, saved answers or physical evidence.",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L16: Two ruler-drop conditions require 20 genuine observations EACH, if actually performed; five-value example is fictional. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Compare fictional group means 8cm vs6cm and median 8cm vs6cm; five observations cannot satisfy source experiment. A teacher scores 0, 1 or 2 per criterion: Fair design and authentic n; Display and statistics; Limits and no fake participation. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two-condition experiment",
+          "Definition": "A statistical investigation measures the same variable under two clearly stated conditions.",
+          "Rule": "Control measurement methods and identify units and sample sizes.",
+          "Example": "Preferred versus non-preferred hand with ruler-drop distance in centimetres."
+        },
+        {
+          "Title": "Comparable numerical summaries",
+          "Definition": "Measures of center and spread help compare both distributions.",
+          "Rule": "Display both conditions on consistent axes and apply the same statistic.",
+          "Example": "In the hypothetical illustration A mean 8 cm and B mean 6 cm, both MADs 2.4 cm."
+        },
+        {
+          "Title": "Observational limitations",
+          "Definition": "Confounding and measurement error constrain what may be concluded.",
+          "Rule": "State how trials were conducted and do not claim a genuine experiment from synthetic numbers.",
+          "Example": "Practice effects may make later ruler drops easier regardless of hand condition."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute two hypothetical means and medians",
+          "Question": "Compare A=4,6,8,10,12 cm and B=2,4,6,8,10 cm.",
+          "Method": "Sort and calculate within each clearly labelled simulation group.",
+          "Steps": [
+            "A total is 4+6+8+10+12=40 over five values; mean=8 cm.",
+            "B total is 2+4+6+8+10=30; mean=6 cm.",
+            "Both sorted sets have the third value as median: 8 and 6.",
+            "A exceeds B by 2 cm in both centers.",
+            "The comparison is numerical only, not proof of an experiment."
+          ],
+          "Answer": "Hypothetical A mean/median=8 cm, B mean/median=6 cm.",
+          "Check": "Both samples contain exactly five fabricated practice observations."
+        },
+        {
+          "Title": "Compare variability using MAD",
+          "Question": "Find MAD of each hypothetical condition.",
+          "Method": "Compute absolute distances from each condition's mean.",
+          "Steps": [
+            "For A mean 8, deviations are 4,2,0,2,4.",
+            "A absolute-deviation sum is 12, so MAD=12/5=2.4 cm.",
+            "For B mean 6, deviations are also 4,2,0,2,4.",
+            "B MAD=2.4 cm.",
+            "The center differs while both samples have the same spread."
+          ],
+          "Answer": "Both MADs equal 2.4 cm.",
+          "Check": "B equals A minus 2 entrywise; shifting data preserves MAD."
+        },
+        {
+          "Title": "Compare IQR and study requirements",
+          "Question": "Find both IQRs and explain why five fabricated values cannot satisfy the source experiment.",
+          "Method": "Use median-of-halves and distinguish illustration from physical data collection.",
+          "Steps": [
+            "For A, lower pair 4,6 yields Q1=5; upper pair 10,12 yields Q3=11.",
+            "A IQR=11−5=6 cm.",
+            "For B, lower pair 2,4 yields Q1=3; upper 8,10 yields Q3=9.",
+            "B IQR=9−3=6 cm.",
+            "The source task requires at least 20 actual observations per condition; five hypothetical numbers are only a worked example."
+          ],
+          "Answer": "Both IQRs equal 6 cm; actual experiment remains unperformed.",
+          "Check": "Quartile calculations match the declared convention and simulated n=5 is less than required n=20."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting five fictional trials as actual participation",
+          "WhyWrong": "No physical measurements or real participants are established.",
+          "Correction": "Require real documentation or label the analysis as simulation."
+        },
+        {
+          "Mistake": "Changing more than the intended experimental variable",
+          "WhyWrong": "Practice effects, inconsistent drop heights or trial order confound a comparison.",
+          "Correction": "Keep conditions comparable and counterbalance order."
+        },
+        {
+          "Mistake": "Treating a difference of means as universal causation",
+          "WhyWrong": "Small uncontrolled samples do not establish causality.",
+          "Correction": "Discuss sample size, measurement error and alternative explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "An experiment must define conditions, variables, units, procedure and real observations.",
+        "The official lesson asks for at least 20 ruler-drop measurements per condition; invented five-point data do not satisfy this requirement.",
+        "In the fictional arithmetic demonstration, means 8 and 6 cm differ, while MADs 2.4 and IQRs 6 cm agree.",
+        "Teacher-scored scientific reasoning and genuine sample evidence are essential; never auto-approve a fabricated physical task."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Hypothetical demonstration only",
+          "Description": "This five-value per condition table is not participant data and cannot satisfy the source experiment's minimum 20 authentic observations in each condition.",
+          "PrimaryLabel": "Measure",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "A mean / median in cm",
+              "Cells": [
+                "8 / 8"
+              ]
+            },
+            {
+              "Label": "B mean / median in cm",
+              "Cells": [
+                "6 / 6"
+              ]
+            },
+            {
+              "Label": "A and B MAD in cm",
+              "Cells": [
+                "2.4"
+              ]
+            },
+            {
+              "Label": "A and B IQR in cm",
+              "Cells": [
+                "6"
+              ]
+            },
+            {
+              "Label": "Official minimum per condition",
+              "Cells": [
+                "20 actual measurements"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

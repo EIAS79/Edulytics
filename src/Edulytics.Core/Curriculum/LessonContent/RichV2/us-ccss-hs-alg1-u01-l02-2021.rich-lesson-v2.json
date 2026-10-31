@@ -1,0 +1,368 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l02-sequential-source-abc-20261030-v3",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+      "CultureCode": "en",
+      "Title": "Data Representations",
+      "ExplanationParagraphs": [
+        "Learning goal: draw and interpret a dot plot, histogram and box plot for the same numerical dataset; calculate a five-number summary; and explain the effect of changing histogram bins. Optional review lesson in Illustrative Mathematics Algebra 1 First Edition, Unit 1 Lesson 2 (CC BY 4.0), https://im.kendallhunt.com/HS/teachers/1/1/2/preparation.html. The teacher preparation lists 6.SP.B.4 as Building On; HSS-ID.A.1 appears under both Addressing and Building Towards; HSS-ID.A.2 is Building Towards. These are separate source alignment roles, not a claim that all are Addressing.",
+        "Edulytiks original practice dataset (12 recorded cycling-trip durations, minutes): 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 9, 10. All values are nonnegative numerical measurements. A dot plot displays one dot for each trip at its numerical value. An accessible count description appears in the accompanying frequency table.",
+        "A histogram groups numerical observations into nonoverlapping intervals. For bins [2,4), [4,6), [6,8), [8,10), [10,12), the frequencies are 3, 3, 3, 2, 1. Left endpoints are included; right endpoints are excluded, so 4 belongs to [4,6), not [2,4). Axes must be titled 'Trip duration (minutes)' and 'Number of trips', with bars touching because time is numerical.",
+        "Rebinning the same data into [2,6), [6,10), [10,14) yields frequencies 6, 5, 1. The sum is still 12, but the visual impression changes. Choose intervals appropriate to the data and disclose their boundaries; do not infer a different sample from a re-binned graph.",
+        "For the box plot, first sort the values. With 12 observations, the median is the average of positions 6 and 7: (5+6)/2 = 5.5. The lower six are 2,3,3,4,5,5; Q1 = (3+4)/2 = 3.5. The upper six are 6,7,7,8,9,10; Q3 = (7+8)/2 = 7.5. The minimum is 2 and maximum is 10. On a minutes number line, draw a box from 3.5 to 7.5, a median mark at 5.5, and whiskers to 2 and 10. This uses the median-of-halves convention; state your quartile convention for larger datasets.",
+        "Student tasks: (1) create a dot plot of all twelve measurements and identify its mode(s); (2) draw both histograms, specifying boundaries and labels, and explain how their appearances differ; (3) calculate the summary and draw the matching box plot; (4) compare what individual values a dot plot preserves versus what each grouped display hides. Teacher rubric: 0–2 points each for accurate dot counts, histograms and axis/interval labels, correct five-number calculation and box positions, and a reasoned graphical comparison. Maximum 8; 0 missing/incorrect, 1 partially correct, 2 complete and justified. Original drawing and reasoning require human review.",
+        "First-party 2.1 Notice and Wonder (not publisher battery-life observations): 26 hypothetical phone battery-life durations in hours have frequency counts 4h:3, 5h:5, 6h:6, 7h:5, 8h:4, 9h:2, 10h:1. Sketch a dot plot, histogram and box plot on labelled hour scales; compare which shows exact values, interval frequencies, or quartiles. The five-number summary is (4,5,6,8,10) hours under the median-of-halves convention. Ask at least one evidence-based 'notice' and one 'wonder'. These 26 phones are fictional, not actual tested devices.",
+        "First-party 2.2 optional histogram workshop mirroring the source's same-data rebinning: fictional days until thirty plants first produce tomatoes, sorted: 46,48,51,52,54,55,56,58,59,61,62,63,64,65,66,67,68,69,71,72,73,74,76,77,78,81,82,84,87,92. Using half-open intervals [40,50),[50,60),[60,70),[70,80),[80,90),[90,100), width-10 frequencies are 2,7,9,7,4,1. Rebin at width 5, starting 40, with counts 0,2,3,4,4,5,4,3,3,1,1 across [40,45) through [90,95). Label days and plant frequency, draw touching bars and discuss why too-narrow or too-wide bins can conceal variation. Never present these invented plants as observations from the original source.",
+        "First-party 2.3 box-plot investigation: using the same 30 fictional tomato days, find the minimum 46, Q1 58 (median of the lowest fifteen), median (66+67)/2=66.5, Q3 76 (median of upper fifteen), maximum 92; IQR 18 days. Draw a labelled box plot and interpret its quartiles in context. Compare to both histograms: grouped bars hide individual day values while a box plot highlights quartiles. Source 2.2 and 2.3 are optional review activities; actual student plot drawings need human assessment.",
+        "Source-aligned independent practice modes: P1 read a median from a dot plot using the displayed dots, P2 create a box plot from raw numerical observations, P3 construct a histogram using explicit interval boundaries, P4 classify all numerical datasets (including negative numbers, temperatures and decimals; names and yes/no responses are categorical), P5 justify whether a typical distance across vehicles anticipates variability. For a first-party equivalent, use the 30 fictional plant values, select numerical or categorical samples, and justify a class-level question. Do not invent numeric answers to source-only graphs that are not in the first-party content; drawn plots and prose remain teacher-scored.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (publisher original protected, PUBLISHER_COOLDOWN_UNVERIFIED): using our 30 fictional plant days, (1) explain why the width-10 interval [60,70) contains 9 plants but does not reveal all exact day values; (2) identify Q1=58, median=66.5 and Q3=76 and interpret one quartile in context; (3) explain why the same 30 observations give a visually different width-5 histogram. Human-scored rubric 0-2 each for bin logic, correct quartiles/units, and defensible rebinning explanation, 6 points. Do not claim publisher Cool-down parity or actual planting observations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Dot plot",
+          "Definition": "One mark is placed over each recorded numerical value.",
+          "Rule": "Count all marks; equal values stack at the same horizontal position.",
+          "Example": "For value 3, place two dots at 3 minutes; for 7, two dots at 7 minutes."
+        },
+        {
+          "Title": "Histogram bin",
+          "Definition": "A continuous numerical interval grouping observations.",
+          "Rule": "For [a,b), include a and exclude b; adjoining intervals must not overlap or leave gaps.",
+          "Example": "A 4-minute ride belongs in [4,6), not [2,4)."
+        },
+        {
+          "Title": "Five-number summary",
+          "Definition": "Minimum, lower quartile Q1, median Q2, upper quartile Q3 and maximum.",
+          "Rule": "Sort the data, calculate each statistic using a declared quartile method and keep its units.",
+          "Example": "For the 12-trip dataset: 2, 3.5, 5.5, 7.5 and 10 minutes."
+        },
+        {
+          "Title": "Box plot",
+          "Definition": "A display of five-number summary and the spread of the data.",
+          "Rule": "Draw median within Q1–Q3 box; extend whiskers to min/max when using this simple convention.",
+          "Example": "The IQR is 7.5−3.5 = 4 minutes, and the full range is 10−2 = 8 minutes."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Count and bin the trip durations",
+          "Question": "Create a frequency description and histogram counts for 12 trips using intervals [2,4), [4,6), [6,8), [8,10), [10,12).",
+          "Method": "Tally each raw observation once according to left-inclusive, right-exclusive interval boundaries.",
+          "Steps": [
+            "Read 2,3,3: three observations are at least 2 and less than 4.",
+            "Read 4,5,5: three observations are at least 4 and less than 6.",
+            "Read 6,7,7: three observations are at least 6 and less than 8.",
+            "Read 8,9: two observations are at least 8 and less than 10.",
+            "Read 10: one observation is at least 10 and less than 12.",
+            "Check frequencies 3+3+3+2+1 = 12, matching all raw observations."
+          ],
+          "Answer": "The five bar heights are 3,3,3,2,1; bins have width 2 minutes.",
+          "Check": "Every one of the 12 trip durations appears in exactly one interval and the total frequency is 12."
+        },
+        {
+          "Title": "Compute a five-number summary",
+          "Question": "For the same sorted 12 durations, find min, Q1, median, Q3, max and interpret the interquartile range.",
+          "Method": "Use the median-of-halves quartile definition, then subtract Q1 from Q3.",
+          "Steps": [
+            "The minimum is the first value 2, and maximum is the last value 10.",
+            "Median is mean of positions 6 and 7: (5+6)/2 = 5.5.",
+            "Lower half 2,3,3,4,5,5 gives Q1=(3+4)/2=3.5.",
+            "Upper half 6,7,7,8,9,10 gives Q3=(7+8)/2=7.5.",
+            "Interquartile range IQR = 7.5−3.5 = 4 minutes."
+          ],
+          "Answer": "(2, 3.5, 5.5, 7.5, 10) minutes; IQR = 4 minutes.",
+          "Check": "The statistics are ordered 2 ≤ 3.5 ≤ 5.5 ≤ 7.5 ≤ 10, and half the data fall within the central quartile interval by construction."
+        },
+        {
+          "Title": "Rebin a histogram without changing the data",
+          "Question": "Give frequencies for [2,6), [6,10), [10,14) using the same 12 trip durations.",
+          "Method": "Place each numerical observation in one left-inclusive interval.",
+          "Steps": [
+            "The six observations 2, 3, 3, 4, 5, 5 fall into [2,6).",
+            "The five observations 6, 7, 7, 8, 9 fall into [6,10).",
+            "The observation 10 falls into [10,14).",
+            "Add frequencies 6 + 5 + 1 = 12, matching the original sample."
+          ],
+          "Answer": "The width-four histogram frequencies are 6, 5, 1.",
+          "Check": "All 12 observations appear exactly once; no boundary value is counted twice."
+        },
+        {
+          "Title": "Thirty fictional plants: change interval width without changing observations",
+          "Question": "For thirty invented plant days, give width-10 counts and a five-number summary, and explain how changing to width 5 affects the picture.",
+          "Method": "Count half-open bins; use the medians of the lower and upper fifteen observations.",
+          "Steps": [
+            "Use width-10 bins [40,50), [50,60), [60,70), [70,80), [80,90), [90,100) with counts 2,7,9,7,4,1.",
+            "Check total 2+7+9+7+4+1=30; width-5 frequencies are 0,2,3,4,4,5,4,3,3,1,1, also totalling 30.",
+            "The 15th and 16th ordered days are 66 and 67, giving median 66.5 days. The eighth of the lower fifteen is 58, the eighth of the upper fifteen is 76.",
+            "Draw a box from Q1=58 to Q3=76, mark median 66.5, and extend whiskers to min 46 and max 92."
+          ],
+          "Answer": "Five-number summary (46,58,66.5,76,92) days; IQR 18 days; width-10 counts 2,7,9,7,4,1.",
+          "Check": "Both histograms count exactly thirty invented plants, the median lies between Q1 and Q3 and neither changes under rebinning."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting a boundary value in two histogram bins.",
+          "WhyWrong": "Double counting inflates total frequency and changes the represented data.",
+          "Correction": "Use a consistent [lower, upper) bin convention; a 6-minute trip belongs only to [6,8)."
+        },
+        {
+          "Mistake": "Treating the median and quartiles as individual data values without computing when the sample size is even.",
+          "WhyWrong": "The central statistic may lie between observed values.",
+          "Correction": "Order observations and average the two middle values of the relevant group."
+        },
+        {
+          "Mistake": "Claiming a histogram shows individual data points precisely.",
+          "WhyWrong": "Grouping hides within-bin positions.",
+          "Correction": "Use the dot plot for exact values and label the histogram bins and counts explicitly."
+        }
+      ],
+      "SummaryPoints": [
+        "For the 12-trip dataset, dot-plot frequencies are 2:1,3:2,4:1,5:2,6:1,7:2,8:1,9:1,10:1.",
+        "Width-two histogram bin frequencies: 3,3,3,2,1; width-four frequencies: 6,5,1; both total 12.",
+        "Five-number summary is (2,3.5,5.5,7.5,10) minutes under the median-of-halves convention.",
+        "Class-created dot plots, box plots, histogram choices and explanations require teacher rubric assessment; single numeric answers do not replace these tasks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible dot plot counts for the same 12 cycling trips",
+          "Description": "Frequency table specifies every point of an independently authored dot plot: each dot represents one trip; durations and counts are provided for nonvisual interpretation.",
+          "PrimaryLabel": "Trip duration (minutes)",
+          "SecondaryLabel": "Number of dots",
+          "Rows": [
+            {
+              "Label": "2",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "4",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "5",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "6",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "7",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "8",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "9",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "10",
+              "Cells": [
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Histogram bins at width 2 minutes",
+          "Description": "Continuous intervals are left-inclusive and right-exclusive; horizontal axis is duration in minutes, vertical axis is the number of trips.",
+          "PrimaryLabel": "Bin (minutes)",
+          "SecondaryLabel": "Frequency",
+          "Rows": [
+            {
+              "Label": "[2,4)",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[4,6)",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[6,8)",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[8,10)",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "[10,12)",
+              "Cells": [
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Fictional thirty-plant histogram frequency table, width 10 days",
+          "Description": "Accessible exact nonoverlapping bin counts for a synthetic sample of thirty plants; draw the histogram with days on the horizontal axis and plant frequency vertical. Each interval includes its lower bound but excludes its upper bound.",
+          "PrimaryLabel": "Days until first fruit",
+          "SecondaryLabel": "Number of plants",
+          "Rows": [
+            {
+              "Label": "[40,50)",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "[50,60)",
+              "Cells": [
+                "7"
+              ]
+            },
+            {
+              "Label": "[60,70)",
+              "Cells": [
+                "9"
+              ]
+            },
+            {
+              "Label": "[70,80)",
+              "Cells": [
+                "7"
+              ]
+            },
+            {
+              "Label": "[80,90)",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "[90,100)",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "30"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Fictional thirty-plant histogram frequency table, width 5 days",
+          "Description": "Accessible exact nonoverlapping bin counts for a synthetic sample of thirty plants; draw the histogram with days on the horizontal axis and plant frequency vertical. Each interval includes its lower bound but excludes its upper bound.",
+          "PrimaryLabel": "Days until first fruit",
+          "SecondaryLabel": "Number of plants",
+          "Rows": [
+            {
+              "Label": "[40,45)",
+              "Cells": [
+                "0"
+              ]
+            },
+            {
+              "Label": "[45,50)",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "[50,55)",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[55,60)",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "[60,65)",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "[65,70)",
+              "Cells": [
+                "5"
+              ]
+            },
+            {
+              "Label": "[70,75)",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "[75,80)",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[80,85)",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[85,90)",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "[90,95)",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "30"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

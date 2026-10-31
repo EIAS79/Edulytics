@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l04-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+      "CultureCode": "en",
+      "Title": "Comparing Quadratic and Exponential Functions",
+      "ExplanationParagraphs": [
+        "Learning goal: compare quadratic growth with exponential growth, using tables, graphs, successive ratios and reasoned long-run comparisons; discover that an increasing exponential eventually overtakes a fixed-degree polynomial. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L04 teacher https://im.kendallhunt.com/HS/teachers/1/6/4/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/4/index.html (CC BY 4.0). The source specifically compares growing square tiles with doubling tiles.",
+        "Original functions for integer step n≥0: Q(n)=n² tiles and E(n)=2^n tiles. Values n0 through6: Q0,1,4,9,16,25,36; E1,2,4,8,16,32,64. At n3 quadratic9>exponential8; at n4 both16; at n5 exponential32>quadratic25. Looking only at a short range could yield an incorrect prediction about long-run dominance.",
+        "Quadratic successive output ratios are not constant: Q2/Q1=4, Q3/Q2=9/4, Q4/Q3=16/9. Exponential ratio E(n+1)/E(n)=2 for all n. A graph should use common scales and show the later crossing rather than imply it is an exponential's fixed increase.",
+        "Student task: graph both for n0–7, justify each crossing/ordering change, compare the first and second differences of Q with exponential ratios, and discuss the mathematical distinction between eventual growth and a real-world material limit. Teacher-scored rubric0–2 for correct tables, comparison at shared inputs, factor/rate explanation and carefully qualified conclusion."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadratic growth",
+          "Definition": "A fixed squared term gives nonconstant first differences and constant second differences for equal steps.",
+          "Rule": "Q(n)=n².",
+          "Example": "Differences1,3,5,7."
+        },
+        {
+          "Title": "Exponential growth",
+          "Definition": "A fixed multiplier b>1 is applied each step.",
+          "Rule": "E(n)=2^n.",
+          "Example": "E5=32,E6=64."
+        },
+        {
+          "Title": "Crossover at shared input",
+          "Definition": "One function may dominate in one interval, then another later.",
+          "Rule": "Compare equal n.",
+          "Example": "Q3=9>E3=8, Q5=25<E5=32."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare functions at n3,4,5",
+          "Question": "Q(n)=n², E(n)=2^n.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "At3, Q=9,E=8, so Q>E.",
+            "At4, Q=16,E=16, equal.",
+            "At5, Q=25,E=32, so E>Q.",
+            "The order changes across the range; neither comparison from n3 alone works forever."
+          ],
+          "Answer": "Q3>E3, equality n4, E5>Q5.",
+          "Check": "Direct exponent and square arithmetic."
+        },
+        {
+          "Title": "Compare output ratios",
+          "Question": "Compute Q2/Q1,Q3/Q2 and E3/E2.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Q1=1,Q2=4,Q3=9.",
+            "Q2/Q1=4, Q3/Q2=9/4=2.25.",
+            "The quadratic ratios differ.",
+            "E2=4,E3=8, ratio8/4=2.",
+            "Exponential ratio is always2."
+          ],
+          "Answer": "Quadratic ratios vary; exponential factor2.",
+          "Check": "Use positive denominators."
+        },
+        {
+          "Title": "Check later growth",
+          "Question": "Compare at n6 and7.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Q6=36,E6=64.",
+            "Q7=49,E7=128.",
+            "E exceeds Q at both.",
+            "The gap grows from28 to79 tiles.",
+            "This supports, but finite checks alone do not prove, eventual dominance."
+          ],
+          "Answer": "n6 E64>Q36; n7 E128>Q49.",
+          "Check": "Differences confirmed independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a quadratic is multiplied by a fixed factor each step",
+          "WhyWrong": "n² successive ratios vary.",
+          "Correction": "Compute at multiple points."
+        },
+        {
+          "Mistake": "Inferring permanent dominance from a finite graph alone",
+          "WhyWrong": "A limited window may hide crossing.",
+          "Correction": "Inspect longer range and structural change."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadratic and exponential functions can exchange which is larger.",
+        "Q3 exceeds E3, while E5 exceeds Q5 in the chosen sample.",
+        "Quadratic first differences and exponential ratios behave differently.",
+        "Teacher reviews graphs and long-run reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independently authored geometric or quadratic model",
+          "Description": "Accessible numerical table and original situation, not copied publisher figures or authentic measurements.",
+          "PrimaryLabel": "Input or scenario",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "n3",
+              "Cells": [
+                "Q9,E8"
+              ]
+            },
+            {
+              "Label": "n4",
+              "Cells": [
+                "Q16,E16"
+              ]
+            },
+            {
+              "Label": "n5",
+              "Cells": [
+                "Q25,E32"
+              ]
+            },
+            {
+              "Label": "n6",
+              "Cells": [
+                "Q36,E64"
+              ]
+            },
+            {
+              "Label": "n7",
+              "Cells": [
+                "Q49,E128"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

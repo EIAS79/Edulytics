@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l15-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L15",
+      "CultureCode": "en",
+      "Title": "Quadratic Equations with Irrational Solutions",
+      "ExplanationParagraphs": [
+        "Learning goal: express irrational solutions of quadratic equations exactly using square roots, estimate their locations on a number line and distinguish exact expressions from decimal approximations. Independent first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 15 teacher https://im.kendallhunt.com/HS/teachers/1/7/15/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/15/index.html (CC BY 4.0). The source reinforces that not every square-root solution simplifies to a rational number.",
+        "Original equation x²=7 has two real solutions ±√7. Because7 is not a perfect square integer, √7 is irrational, approximately2.64575; −√7≈−2.64575. The exact solution set is {−√7,√7}; rounding to2.65 would not satisfy the original equality exactly.",
+        "Second equation (x−4)²=3 yields x=4±√3. Both are irrational since adding rational4 to irrational √3 cannot make rational. Approximate values2.268 and5.732; the exact form exposes symmetry about x4. In contrast (x−4)²=9 gives rational roots1 and7.",
+        "Student task: solve both exact irrational examples and a rational contrast, plot approximations at sensible scale, and explain why an exact irrational root must not be called nonexistent merely because it is not a terminating decimal. Teacher-scored rubric0–2 for complete ± solutions, exact forms, numerical approximations and justifications of irrationality."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Irrational square root",
+          "Definition": "The square root of a positive integer that is not a perfect square is irrational.",
+          "Rule": "√7 cannot be represented as p/q for integers.",
+          "Example": "Keep √7 exact."
+        },
+        {
+          "Title": "Shifted radical root",
+          "Definition": "Solving(x−h)²=k gives x=h±√k for k≥0.",
+          "Rule": "Use both branches.",
+          "Example": "(x−4)²=3 gives4±√3."
+        },
+        {
+          "Title": "Approximation versus equality",
+          "Definition": "Decimal rounding provides a numerical location, not an exact equation identity.",
+          "Rule": "Use exact radical for verified algebra.",
+          "Example": "2.65²≠7 exactly."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve x²=7",
+          "Question": "Give exact and approximate roots.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Take both square-root signs x=±√7.",
+            "Since7 is not a perfect-square integer, √7 is irrational.",
+            "Approximate √7≈2.64575.",
+            "Both positive and negative squares are7."
+          ],
+          "Answer": "x=±√7≈±2.64575.",
+          "Check": "Exact squares equal7."
+        },
+        {
+          "Title": "Solve shifted irrational square",
+          "Question": "Solve(x−4)²=3.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Take roots x−4=±√3.",
+            "Add4 to both sides: x=4±√3.",
+            "Approximate √3≈1.732.",
+            "Solutions approximately2.268 and5.732.",
+            "Their midpoint equals4."
+          ],
+          "Answer": "x=4±√3.",
+          "Check": "Substitution returns3."
+        },
+        {
+          "Title": "Distinguish rational comparison",
+          "Question": "Solve(x−4)²=9.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Square root of9 is3, a rational integer.",
+            "Thus x−4=±3.",
+            "Solutions x=1 and7, both rational.",
+            "Contrast with √3 in previous equation."
+          ],
+          "Answer": "x1,7, rational.",
+          "Check": "Both satisfy squared difference9."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Discarding irrational roots",
+          "WhyWrong": "Real irrational numbers are valid solutions.",
+          "Correction": "Keep radical exact."
+        },
+        {
+          "Mistake": "Reporting only principal positive square root",
+          "WhyWrong": "Square equations may have both signs.",
+          "Correction": "Use ± and verify."
+        },
+        {
+          "Mistake": "Equating approximate decimal with exact radical",
+          "WhyWrong": "Rounding changes exact equality.",
+          "Correction": "Clearly label approximation."
+        }
+      ],
+      "SummaryPoints": [
+        "Irrational roots can be written exactly using radicals.",
+        "x²=7 has roots ±√7; shifted square yields 4±√3.",
+        "Decimal approximations aid graphing but do not replace exact algebra.",
+        "Teacher reviews explanations and number-line placement."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact roots, signed discriminants and contextual verification",
+          "Description": "Independent original algebra and error-analysis data; teacher-reviewed explanations are not auto-grading proof.",
+          "PrimaryLabel": "Equation or case",
+          "SecondaryLabel": "Exact outcome",
+          "Rows": [
+            {
+              "Label": "x²=7",
+              "Cells": [
+                "±√7"
+              ]
+            },
+            {
+              "Label": "(x−4)²=3",
+              "Cells": [
+                "4±√3"
+              ]
+            },
+            {
+              "Label": "(x−4)²=9",
+              "Cells": [
+                "1,7 rational"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

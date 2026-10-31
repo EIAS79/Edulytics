@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l06-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
+      "CultureCode": "en",
+      "Title": "Features of Graphs",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret horizontal and vertical intercepts, extrema, and increasing, constant, and decreasing intervals on graphs of functions, including contextual meaning of h(0) and h(t)=0. First-party Edulytiks adaptation aligned with Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 6, https://im.kendallhunt.com/HS/teachers/1/4/6/preparation.html and student tasks at https://im.kendallhunt.com/HS/students/1/4/6/index.html (CC BY 4.0). Source Building On HSF-IF.A.2 and Addressing HSF-IF.B.4; never substitute a generic vertex-only algebra exercise for graphical interpretation.",
+        "Independent first-party example: a fictional drone follows a continuous piecewise-linear height function H(t) in metres for 0≤t≤8 seconds. Ordered points (0,0),(2,12),(5,12),(8,0) are connected by straight segments. The graph rises during 0–2 seconds, remains level during 2–5, and falls during 5–8. Maximum height is 12 metres for every t in [2,5]; minimum is zero at t=0,8. Both (0,0),(8,0) are horizontal intercepts, and H(0)=0 is the vertical intercept.",
+        "A horizontal intercept is a coordinate where the output equals zero; a vertical intercept is the output when input is zero. Maximum and minimum can occur at several inputs, and in a contextual graph should have units. Do not claim that the graph reveals details between points beyond the stated straight-segment modeling assumption.",
+        "Student task: create an original accessible sketch from the four ordered pairs, identify features with exact intervals and units, translate H(2)=H(5) and H(8)=0 into sentences, and critique a classmate who calls the entire rising segment the maximum. Compare a graph of distance from home to a graph of height to expose that the meaning of a zero output depends on context.",
+        "Teacher-scored rubric (0–2 each, maximum 8): faithful graph with axes/units, correct intercepts/extrema, correct interval analysis, and meaningful function-notation/context explanations. Actual graph creation and open reasoning are teacher assessed; no invented student activity is automatically credited."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Intercepts",
+          "Definition": "Horizontal intercepts have output zero; the vertical intercept has input zero.",
+          "Rule": "Report the coordinates and what they mean in the setting.",
+          "Example": "H(0)=0 gives vertical intercept (0,0); H(8)=0 gives horizontal intercept (8,0)."
+        },
+        {
+          "Title": "Maximum and minimum",
+          "Definition": "Extrema compare output values across the defined domain, not just one small segment.",
+          "Rule": "Give numerical output and the inputs at which it occurs.",
+          "Example": "Maximum 12 m from t=2 through t=5, minimum 0 m at t=0 and 8."
+        },
+        {
+          "Title": "Increasing and decreasing intervals",
+          "Definition": "A function increases if its outputs rise as input increases and decreases if they fall.",
+          "Rule": "Describe intervals and flat portions separately.",
+          "Example": "H increases on (0,2), is constant on [2,5], decreases on (5,8)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Determine the maximum plateau",
+          "Question": "Connect (0,0),(2,12),(5,12),(8,0) by straight segments. Find maximum and inputs.",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "Outputs rise from zero to 12 by t=2.",
+            "The segment from t=2 to t=5 is horizontal at 12.",
+            "Later outputs decrease from 12 to zero.",
+            "No output exceeds 12 in the specified continuous piecewise model.",
+            "Every t in [2,5] achieves maximum 12."
+          ],
+          "Answer": "Maximum H(t)=12 m for t from 2 to 5 seconds.",
+          "Check": "Endpoints and every point of the plateau have height12."
+        },
+        {
+          "Title": "Interpret all zero values",
+          "Question": "When is H(t)=0, and what does it mean?",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "At t=0 the plotted height is0.",
+            "From t=0 to2 the height rises; it is positive between.",
+            "On 5–8 it falls to zero exactly at8.",
+            "Thus the only zeros are t=0 and t=8.",
+            "In the fictional scenario the drone is on ground at these times."
+          ],
+          "Answer": "Horizontal intercepts (0,0),(8,0).",
+          "Check": "Segment interpolation excludes other zeros."
+        },
+        {
+          "Title": "Compare average rates over intervals",
+          "Question": "Compare rise over t=0 to2 with descent over t=5 to8.",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "Rise is 12−0=12 m in 2s, giving +6 m/s.",
+            "Descent is 0−12=−12 m in 3s, giving −4 m/s.",
+            "Positive rate indicates increasing altitude.",
+            "Negative rate indicates decreasing altitude."
+          ],
+          "Answer": "Rise rate +6 m/s, descent rate −4 m/s.",
+          "Check": "Both reproduce endpoint height changes."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming an extremum occurs at only one time",
+          "WhyWrong": "Flat maxima can persist across intervals.",
+          "Correction": "Identify all inputs attaining the extreme."
+        },
+        {
+          "Mistake": "Confusing horizontal intercept with the maximum",
+          "WhyWrong": "Horizontal intercept means output zero, not greatest output.",
+          "Correction": "Look for axis crossing versus top of graph."
+        },
+        {
+          "Mistake": "Calling a flat segment increasing",
+          "WhyWrong": "Its output is constant over the interval.",
+          "Correction": "Label flat portions constant and explain slope zero."
+        }
+      ],
+      "SummaryPoints": [
+        "Graph features require coordinates, units and interval context.",
+        "The original drone model has a height plateau at 12m from 2s to5s.",
+        "Horizontal intercepts are (0,0),(8,0) and vertical intercept (0,0).",
+        "Plotting and contextual explanation require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party function table",
+          "Description": "These are independently authored hypothetical data, not copied publisher graphs, videos or classroom observations.",
+          "PrimaryLabel": "Input or phase",
+          "SecondaryLabel": "Original output",
+          "Rows": [
+            {
+              "Label": "t=0 seconds",
+              "Cells": [
+                "H=0 m"
+              ]
+            },
+            {
+              "Label": "t=2 seconds",
+              "Cells": [
+                "H=12 m"
+              ]
+            },
+            {
+              "Label": "t=5 seconds",
+              "Cells": [
+                "H=12 m"
+              ]
+            },
+            {
+              "Label": "t=8 seconds",
+              "Cells": [
+                "H=0 m"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

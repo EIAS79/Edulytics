@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l02-v12-source-activity-audit2-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L02",
+      "CultureCode": "en",
+      "Title": "Relative Frequency Tables",
+      "ExplanationParagraphs": [
+        "Learning goal: calculate joint, row-conditional and column-conditional relative frequencies in a two-way table, identify each denominator and translate percentages into context. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U03:L02, https://im.kendallhunt.com/HS/teachers/1/3/2/preparation.html (CC BY 4.0); Addressing HSS-ID.B.5. The source distinguishes three valid percentage questions that have different reference populations.",
+        "Reuse the independent fictional club dataset only as a labelled mathematical bridge: A Sports12/Arts8 total20; B Sports9/Arts11 total20; Sports column21; Arts column19; overall40. Joint frequency for Group A and Sports is 12/40=30%. Within A, Sports frequency 12/20=60%; among all Sports respondents, the proportion in A is 12/21≈57.14%. These are different claims.",
+        "Student task: construct three separately titled relative-frequency tables using the overall sample, row and column denominators, calculate complements, and explain why 30%, 60% and 57.14% can all describe the same interior cell without disagreement. Teacher-scored rubric 0–2 for denominator selection, correct row/column calculations, labelled percentages and justified comparison and critique.",
+        "V12 source-specific relative frequency representations: use the independent 40-response club table Group A [Sports12, Arts8] and Group B [Sports9, Arts11]. The JOINT table by grand total40 is A Sports30%, A Arts20%, B Sports22.5%, B Arts27.5%, whose cells sum100%. The ROW-CONDITIONAL tables are A [60%,40%] and B [45%,55%]; the COLUMN-CONDITIONAL tables are Sports [A12/21≈57.14%, B9/21≈42.86%], Arts [A8/19≈42.11%, B11/19≈57.89%]. Teacher and student sources: https://im.kendallhunt.com/HS/teachers/1/3/2/preparation.html and https://im.kendallhunt.com/HS/students/1/3/2/index.html.",
+        "V12 student task: draw three original segmented-bar representations from the separate joint, row and column percentages; label the reference populations and horizontal/vertical denominators. Explain why the percentages for A Sports differ (30%,60%,57.14%) without contradicting each other. The published unit includes segmented bars and a Notice and Wonder, so a frequency table alone does not complete its visual activity.",
+        "Draft teacher rubric0–2 each for joint-cell/whole sums, row/column denominators and totals, actual segmented bar graphs with labels, and contextual conditional probability reasoning. Visual learner artifact and teacher grading remain unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Joint relative frequency",
+          "Definition": "An interior count divided by grand total.",
+          "Rule": "Name both categories and the overall reference population.",
+          "Example": "A Sports=12/40=.30."
+        },
+        {
+          "Title": "Row conditional frequency",
+          "Definition": "A cell divided by its row total.",
+          "Rule": "Reference the row group explicitly.",
+          "Example": "Sports among A=12/20=.60."
+        },
+        {
+          "Title": "Column conditional frequency",
+          "Definition": "A cell divided by its column total.",
+          "Rule": "Reference the chosen column explicitly.",
+          "Example": "A among Sports=12/21≈.5714."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find joint frequency",
+          "Question": "What fraction of all40 are in A and Sports?",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "The interior count is12.",
+            "Grand total of responses is40.",
+            "Compute12/40=0.30.",
+            "Interpret as 30% of whole hypothetical sample."
+          ],
+          "Answer": "30% joint relative frequency.",
+          "Check": "12=.30×40."
+        },
+        {
+          "Title": "Compare row percentages",
+          "Question": "What percent of A and B choose Sports?",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "A has12 Sports out of20, giving12/20=60%.",
+            "B has9 Sports out of20, giving9/20=45%.",
+            "Difference is15 percentage points.",
+            "The percentages refer to different groups but same category."
+          ],
+          "Answer": "A60%, B45%.",
+          "Check": "Both denominators are their own row totals20."
+        },
+        {
+          "Title": "Compute conditional by column",
+          "Question": "Of21 Sports respondents, what fraction belong to A?",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Sports column total is21.",
+            "Twelve of these belong to A.",
+            "Compute12/21=4/7≈57.14%.",
+            "Do not divide by A total20; that answers a different question."
+          ],
+          "Answer": "About57.14% of Sports respondents are in A.",
+          "Check": "12+9=21 and 12/21+9/21=1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using overall denominator for a conditional percentage",
+          "WhyWrong": "That answers a joint rather than conditional question.",
+          "Correction": "Read 'among which group?' before dividing."
+        },
+        {
+          "Mistake": "Claiming percentage-point difference as relative percent increase",
+          "WhyWrong": "15 points differs from proportional increase.",
+          "Correction": "Name the measure correctly and show denominators."
+        }
+      ],
+      "SummaryPoints": [
+        "Joint, row and column frequencies use distinct denominators.",
+        "The same cell can yield 30%,60% or57.14%, depending on reference group.",
+        "Row-based values can be compared to inspect possible association.",
+        "Human explanation of the relevant population is part of assessment."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible statistical data",
+          "Description": "Original clearly fictional Edulytiks sample and calculation; no real pupils or publisher graphics.",
+          "PrimaryLabel": "Statistic or observation",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "A Sports joint",
+              "Cells": [
+                "12/40=30%"
+              ]
+            },
+            {
+              "Label": "A Sports within A",
+              "Cells": [
+                "12/20=60%"
+              ]
+            },
+            {
+              "Label": "A among all Sports",
+              "Cells": [
+                "12/21≈57.14%"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l17-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L17",
+      "CultureCode": "en",
+      "Title": "Different Compounding Intervals",
+      "ExplanationParagraphs": [
+        "Learning goal: compare equal nominal annual rates applied at different compounding frequencies, identify the actual periodic interest rate and effective annual growth factor, and explain assumptions and limits of a mathematical comparison. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 17, https://im.kendallhunt.com/HS/teachers/1/5/17/preparation.html and student task https://im.kendallhunt.com/HS/students/1/5/17/index.html (CC BY 4.0). No personal investment or borrowing advice is given.",
+        "Invented principal$1000 with nominal annual rate24%, no fees or tax. Annual compounding: A(y)=1000(1.24)^y for whole years. Monthly compounding: M(m)=1000(1+.24/12)^m=1000(1.02)^m; after12 months M(12)=1000(1.02)^12≈$1268.24. Annual A(1)=$1240, so additional compounding periods increase the modeled year-end amount by about$28.24 under these assumptions.",
+        "Effective annual rate of the monthly model is ((1.02)^12−1)×100≈26.8242%, not24%; nominal24% and periodic2% are different pieces of information. Comparing models fairly requires the same principal and elapsed time. For a quarterly model at6% per quarter, total after one year is1000(1.06)^4≈$1262.48.",
+        "Student task: write annual, quarterly and monthly functions, compare their one-year outputs and identify the correct time unit for each exponent. Explain what is held equal and which assumptions are omitted. Teacher-scored rubric0–2 each for period/rate conversion, correct powers and comparison, effective annual rate interpretation and reasoned caveats."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Nominal and periodic rates",
+          "Definition": "A nominal annual rate divided by number of compounding periods defines a periodic rate in this idealized convention.",
+          "Rule": "For24% nominal and12 months, periodic rate2%.",
+          "Example": "M(m)=1000(1.02)^m."
+        },
+        {
+          "Title": "Effective annual factor",
+          "Definition": "Apply the periodic multiplier for all compounding periods in a year.",
+          "Rule": "Effective rate=(1+r/n)^n−1.",
+          "Example": "(1.02)^12−1≈.268242."
+        },
+        {
+          "Title": "Comparable time units",
+          "Definition": "Exponents represent numbers of periods, not necessarily years.",
+          "Rule": "Do not use12 as a year count for monthly formula.",
+          "Example": "At one year use A(1) versus M(12)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare annual and monthly",
+          "Question": "Find year-end amounts under nominal24%.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Annual:1000×1.24=$1240.",
+            "Monthly periodic rate24%/12=2%.",
+            "Monthly factor over12 periods=(1.02)^12≈1.2682418.",
+            "Monthly balance≈$1268.24.",
+            "Difference≈$28.24 in the model."
+          ],
+          "Answer": "Annual $1240, monthly about $1268.24.",
+          "Check": "Both cover exactly one year and same principal."
+        },
+        {
+          "Title": "Compute effective annual rate",
+          "Question": "What annual percent matches monthly factor1.02?",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Calculate twelve-period multiplier1.02^12.",
+            "Its value≈1.2682418.",
+            "Subtract1 to isolate accumulated growth≈.2682418.",
+            "Convert to percentage≈26.82418%.",
+            "Contrast with nominal annual24%."
+          ],
+          "Answer": "Effective annual rate≈26.8242%.",
+          "Check": "Annual factor is greater than1.24 under this convention."
+        },
+        {
+          "Title": "Compare quarterly alternative",
+          "Question": "Compute one year with6% per quarter.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Four quarters elapse in a year.",
+            "Periodic factor1.06.",
+            "Raise to fourth power:1.06^4≈1.26247696.",
+            "Multiply$1000 to get≈$1262.48.",
+            "This lies between annual and monthly cases."
+          ],
+          "Answer": "Quarterly compounded total about$1262.48.",
+          "Check": "One-year comparisons use1,4,12 periods correctly."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using24% every month",
+          "WhyWrong": "This compounds an entirely different rate.",
+          "Correction": "Convert nominal annual24% to2% monthly."
+        },
+        {
+          "Mistake": "Writing exponent1 for monthly one-year model",
+          "WhyWrong": "There are twelve monthly periods.",
+          "Correction": "Use M(12)."
+        },
+        {
+          "Mistake": "Claiming modeled yield without fees/tax is an actual offer",
+          "WhyWrong": "Real contracts include other terms.",
+          "Correction": "Label hypothetical idealization."
+        }
+      ],
+      "SummaryPoints": [
+        "More frequent compounding changes effective annual growth even under the same nominal rate.",
+        "Nominal24% monthly yields factor1.02 each month.",
+        "After one idealized year annual $1240, monthly≈$1268.24.",
+        "Teacher reviews unit conversions and interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "Annual1year",
+              "Cells": [
+                "$1240.00"
+              ]
+            },
+            {
+              "Label": "Quarterly4periods",
+              "Cells": [
+                "≈$1262.48"
+              ]
+            },
+            {
+              "Label": "Monthly12periods",
+              "Cells": [
+                "≈$1268.24"
+              ]
+            },
+            {
+              "Label": "Monthly effective annual",
+              "Cells": [
+                "≈26.8242%"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

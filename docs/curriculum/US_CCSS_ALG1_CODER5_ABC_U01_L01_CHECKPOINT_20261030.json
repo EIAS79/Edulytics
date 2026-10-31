@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
+  "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "canonicalOrdinal": 1,
+  "courseTotal": 132,
+  "existingAuthoredLessons": 132,
+  "previousGitHubHead": "ecf567db3a7880070a1c29e1e69a5e93b3536a52",
+  "checkpointBranch": "feat/us-ccss-alg1-coder5-full-course-20261028",
+  "checkpointPr": 589,
+  "checkpointGitSha": "RECORDED_BY_CONTAINING_GIT_COMMIT_AND_PR_COMMENT",
+  "startedAt": null,
+  "closedAt": null,
+  "elapsedSeconds": null,
+  "timeTrackingNote": "start time was not captured before work; do not fabricate elapsed duration or closure",
+  "inspectedAtUtc": "2026-10-30T07:00:19.172010+00:00",
+  "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+  "sourceEdition": "Illustrative Mathematics HS Algebra 1 First Edition, local teacher/student HTML",
+  "originalSources": {
+    "09_HS_Algebra_1/1/1/preparation.html": {
+      "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\1\\preparation.html",
+      "sha256": "a405615c5a6ecb73fbfc343f9e52ac19c3a19fbcb2a918ca156cee2a3a2839ae"
+    },
+    "09_HS_Algebra_1/1/1/index.html": {
+      "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\1\\index.html",
+      "sha256": "10205bbb0b0aea92bcac424d3b70132452764b0ec40c0235c8c280e949056c65"
+    },
+    "09_HS_Algebra_1_Student/1/1/index.html": {
+      "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\1\\index.html",
+      "sha256": "bd2fff1b76ef42942aa073499dd462f235eb258f352f611b6f88fa51543f8609"
+    },
+    "09_HS_Algebra_1_Student/1/1/practice.html": {
+      "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\1\\practice.html",
+      "sha256": "0ffbcfc624ff9194849ab5928ca779a119e7f0d9484c3817ac0f10c306f7bf2e"
+    }
+  },
+  "existingCandidatePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l01-2021.rich-lesson-v2.json",
+  "candidateContentVersion": "alg1-u01-l01-local-source-aligned-20261031-v4",
+  "reusedEvidence": [
+    "V10 baseline independent spot review, PRELIMINARY only",
+    "V11-V13 preexisting 132 authored Rich V2 sidecars, prior math oracles, privacy-safe survey examples",
+    "existing source teacher/student link metadata and 8-point prose rubric"
+  ],
+  "A": {
+    "localComparisonComplete": true,
+    "academicallyAccepted": true,
+    "whyNotAccepted": "SUPERSEDED: Supervisor 2 approved first-party source-equivalent pedagogy for A on 2026-10-30; protected original publisher Cool-down still unverified",
+    "sourceActivities": [
+      "1.1 warm-up four different prompts; defend each possible odd-one-out",
+      "1.2 teacher-supplied numeric/categorical/nonstatistical investigation; add independent fourth and 15 anonymous respondents; group summaries and classification",
+      "optional find numerical and categorical news examples",
+      "source practice problems 1-2 open response and 3 select all"
+    ],
+    "sourceTeacherPrepVerified": true,
+    "sourceTeacherIndexVerified": true,
+    "sourceStudentIndexVerified": true,
+    "sourceStudentPracticeVerified": true,
+    "reviewer": "Coder 5 source reviewer; independent academic signoff still pending",
+    "signoffRequest": "docs/curriculum/US_CCSS_ALG1_CODER5_U01L01_ACADEMIC_SIGNOFF_REQUEST_20261030.md",
+    "authorSourceParityAccepted": true,
+    "academicDecision": "A_CLOSED_AT_COURSE_AUTHOR_LEVEL; independent external signature not required by latest Admin order",
+    "approvalAuthority": "Supervisor 2, PR #589 issuecomment-6523796600"
+  },
+  "B": {
+    "candidateCorrected": true,
+    "accepted": true,
+    "preservedExistingMathAndVisual": true,
+    "fixes": [
+      "four-option warm-up",
+      "three source-response families and independent fourth question",
+      "separate individual survey item from classwide investigation",
+      "optional extension, source-appropriate practice and original Cool-down"
+    ],
+    "effectiveAuthenticatedRenderingVerified": false,
+    "blockerOwner": "NONE_FOR_B_STATIC; BROWSER_IN_STAGE_D",
+    "staticSelectorContract": "Core embeds .rich-lesson-v2.json; LessonContentService selects RichLessonContentV2Registry.Find before composer",
+    "staticResolverVerification": "PASS_8_OF_8_FOCUSED_TESTS",
+    "browserE2EIsStageD": true,
+    "studentFacingP3AnswerKey": "REMOVED_FROM_EXPLANATION_PARAGRAPHS_20261031; TEACHER_CONTRACT_RETAINS_KEY"
+  },
+  "C": {
+    "sourceAlignedDraftPrepared": true,
+    "acceptedOrVerified": false,
+    "humanScoredSurveyRubricPoints": 8,
+    "firstPartyCooldownRubricPoints": 6,
+    "publisherCooldown": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+    "firstPartySelectAllExpected": [
+      "A",
+      "C",
+      "E"
+    ],
+    "focusedDraftOracleCases": {
+      "correct": [
+        "E",
+        "A",
+        "C"
+      ],
+      "extra": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "missing": [
+        "A",
+        "C"
+      ],
+      "duplicate": [
+        "A",
+        "A",
+        "C",
+        "E"
+      ],
+      "unsupported": [
+        "A",
+        "C",
+        "E",
+        "Z"
+      ],
+      "empty": []
+    },
+    "independentDraftOraclePassed": true,
+    "productionGeneratorVerified": false,
+    "productionGraderVerified": false,
+    "authorizedTeacherScoringVerified": false,
+    "attemptPersistenceVerified": false,
+    "integrator": "Supervisor 2 / shared Practice owner",
+    "safety": "Fail-closed unchanged; open-ended prompts never auto-graded",
+    "currentRuntimeMapping": "UNSUPPORTED: ALG1 NoSupportedOutcomes before lesson contract registry",
+    "draftOracleCaseAndOrderEquivalent": "PASS_LOCAL_DRAFT_NOT_RUNTIME",
+    "sharedOwnerRequiredAction": "Review verified exact multi-select generator/grader availability and teacher-scored P1/P2/survey/Cool-down workflow; retain fail-closed",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "authoringContract": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L01_AUTHORING_C_20261030.json",
+    "independentAuthoringOracle": "PASS_17_CASES_20261030",
+    "runtimeServiceObligation": "REQUIRED_FOR_STAGE_C_SELECTED_ROUTE_BEFORE_ABC_CLOSURE; tests execution deferred Stage D",
+    "typedMultiSelectInput": "CHECKBOX_ARRAY_A_TO_F; independent oracle accepts strict 3-token CSV transcription; production route blocked"
+  },
+  "D": {
+    "authorized": false,
+    "verified": false,
+    "twoSchoolHttpsDbNotRun": true
+  },
+  "focusedVerification": {
+    "sourceLocalFileExistenceAndTaskTokens": "PASS",
+    "firstPartyContentAndResponseFamilyIntegrity": "PASS",
+    "manualMathCountsAndMean": "PASS",
+    "independentDraftExactSetPositiveWrongDuplicateUnsupportedEmpty": "PASS",
+    "productionPracticeAutomatedSuite": "NOT_RUN",
+    "dotnetBuild": "NARROW_TEST_PROJECT_COMPILED_AS_PART_OF_FOCUSED_DOTNET_TEST",
+    "authenticatedBrowser": "NOT_RUN",
+    "sharedCI": "NOT_RUN",
+    "dotnetFocusedTwoCourseTests": "PASS_2_OF_2_NO_FAILURES_NO_SKIPS",
+    "dotnetSdkTemporary": "10.0.300; global.json byte-identically restored",
+    "dotnetPreliminaryAttempt": "NOT_EXECUTED_SDK_10.0.200_ABSENT",
+    "dotnetFocusedFilter": "UsCcssAlgebra1CourseUnit1RichV2Tests.SurveyExampleIsExplicitlySyntheticAndCannotClaimRealStudentParticipation | UsCcssAlgebra1V12SourceTaskMathematicsTests.Supervisor2ContractAndTeacherAssessmentMatrixPreserveNoGo",
+    "gitDiffWhitespace": "PASS",
+    "staticSelectorAndDraftOracleAndFailClosedTests": "PASS_8_OF_8_ZERO_FAILED_ZERO_SKIPPED",
+    "focusedCommand": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore --filter [StaticAlgebra1Lesson01SelectorUsesCorrectEmbeddedContentVersion OR DraftSelectAllOracleAcceptsOrderAndCaseButRejectsMalformedAnswers OR UnverifiedExactLessonCannotCreateGenericPrivatePractice] --verbosity quiet",
+    "sdkPinPreserved": "10.0.200 global.json restored, tested with temporary installed 10.0.300"
+  },
+  "blockers": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "stage": "C",
+      "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+      "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "lines": "124-151",
+      "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+      "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+      "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+      "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+      "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
+    }
+  ],
+  "nextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "nextLessonMayStart": false,
+  "rollup": {
+    "TOTAL": 132,
+    "AUTHORED": 132,
+    "A_CLOSED": 1,
+    "B_CLOSED": 1,
+    "C_PREPARED": 1,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "REMAINING": 132
+  },
+  "testedAtUtc": "2026-10-30T07:05:15.653346+00:00",
+  "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5",
+  "return_queue": [],
+  "advanceReason": "SUPERSEDED BY 2026-10-30 ADMIN V-UNIT: stop at first unclosed L01; cannot skip to L02",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "unitStatus": "UNIT_IN_PROGRESS",
+  "lastFullyABCClosedLesson": null,
+  "currentUnitTotal": 16,
+  "blockingDependencyForUnit": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "stage": "C",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "lines": "124-151",
+    "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+    "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+    "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
+  },
+  "latestOrder": "ADMIN_V_UNIT_STRICT_SEQUENTIAL",
+  "sourceHashRevalidatedAtUtc": "2026-10-30T12:59:58.913206+00:00",
+  "sourceHashStatus": "PASS_4_LOCAL_FILES_UNCHANGED",
+  "testsForThisGate": "NOT_RUN_DOTNET; manual service control-flow PASS",
+  "stageDObligations": [
+    "ALG1 shared service gate single-writer",
+    "authenticated generator and grader",
+    "teacher-scored saving, tenant isolation and E2E"
+  ],
+  "historicalAuthoringClosedAtUtc": "2026-10-30T13:54:58.589948+00:00",
+  "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00"
+}
