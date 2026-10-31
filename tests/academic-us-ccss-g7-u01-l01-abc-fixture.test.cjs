@@ -47,7 +47,7 @@ test('Independent coordinate scaling, rotation, translation and malformed oracle
   assert.equal(sameScaledPolygon(p,[[0,0],[6,0],[NaN,8]]),false);
 });
 test('Ten original polygon cards are five real scaled-copy pairs',()=>{
-  const match=client.match(/const cards = (\[[\s\S]*?\]);\s*const byId/);
+  const match=client.match(/const cards = (\[[\s\S]*?\]);\s*\/\/ These are the lesson/);
   assert.ok(match,'Could not locate bounded card data');
   const cards=JSON.parse(match[1].replace(/'/g,'"'));
   assert.equal(cards.length,10);
@@ -157,7 +157,7 @@ test('A-C closure remains truthful: shared Practice still blocked',()=>{
   assert.equal(cursor.READY_FOR_STAGE_D,false);
   assert.match(cursor.B_STATUS,/BLOCKED/);
   assert.match(cursor.C_STATUS,/BLOCKED/);
-  assert.equal(cursor.testExecutionStatus,'NOT_RUN');
+  assert.equal(cursor.testExecutionStatus,'TEST_AUTHORED_NOT_RUN');
   assert.equal(cd.testExecutionStatus,'TEST_AUTHORED_NOT_RUN');
   const local=cursor['2026_10_31LessonLocalExecution'];
   assert.equal(local.sharedFilesModified,false);
@@ -167,7 +167,7 @@ test('A-C closure remains truthful: shared Practice still blocked',()=>{
   assert.equal(local.externalRenderer.pullRequest,599);
   assert.equal(cd.assessmentBoundaries.studentSubmissionAndPersistence,'NOT_IMPLEMENTED');
   assert.equal(cd.assessmentBoundaries.teacherRubricScorePersistence,'NOT_IMPLEMENTED');
-  assert.equal(cd.assessmentBoundaries.practiceRouting,'PENDING_SUPERVISOR_SINGLE_WRITER_ISSUE_605');
+  assert.equal(cd.assessmentBoundaries.practiceRouting,'APPROVED_DRAFT_PR_610_LEASE_RELEASED_NOT_ADOPTED_ON_COURSE_BRANCH');
   assert.equal(cd.assessmentBoundaries.fixtureStatus,'AUTHORED_NOT_RUN');
 });
 
@@ -199,4 +199,41 @@ test('L01 source-aligned seven-candidate F table is in actually referenced Rich 
   assert.equal(scaled(['6','oops','1.5','upright']),false);
   assert.match(lesson.ExplanationParagraphs.join(' '),/teacher must inspect the finished outline/);
   assert.match(table.Description,/no original publisher figures/);
+});
+
+// One COURSE-BRANCH acceptance gate spanning the two isolated supervisor PRs.
+// INTENTIONALLY EXPECTED RED while #599 and #610 remain unadopted on #590.
+// Does not rerun or duplicate the numerical test suites already in #608/#610.
+// AUTHORED_NOT_RUN: never execute this while authoring A-B-C.
+test('L01 approved B and C integration must coexist on the original course tree',()=>{
+  const view=file('src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml');
+  assert.match(view,/Model\.LessonCode\.StartsWith\("PED:US-CCSS-MATH:G7:U01:L"/);
+  assert.match(view,/<partial name="_USCCSSG7ScaleConstructionFigures" model="Model"/);
+  assert.match(partial,/data-g7-u01-l01/);
+  assert.match(partial,/data-g7-f-choice/);
+  assert.match(client,/const fCandidateRows/);
+  assert.match(client,/const vertices = points\.map/);
+
+  const contracts=file('src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
+  const engine=file('src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs');
+  const families=JSON.stringify(JSON.parse(file(
+    'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json')));
+  const family='usccss.g7.u01.l01.scaled_copy_correspondence';
+  assert.match(contracts,/byLesson\["PED:US-CCSS-MATH:G7:U01:L01"\]/);
+  assert.ok(contracts.includes(family));
+  assert.ok(families.includes(family));
+  assert.match(engine,/UsCcssG7Unit1Lesson1ScaledCopyQuestions\.Supports/);
+  assert.match(engine,/UsCcssG7Unit1Lesson1ScaledCopyQuestions\.Verify/);
+  assert.match(engine,/UsCcssG7Unit1Lesson1ScaledCopyQuestions\.Solve/);
+  assert.match(engine,/UsCcssG7Unit1Lesson1ScaledCopyQuestions\.Build/);
+  const adapter=file('src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson1ScaledCopyQuestions.cs');
+  const polygonOracle=file('src/Edulytics.Core/Mathematics/Practice/UsCcssG7Unit1Lesson1ScaledCopyMath.cs');
+  assert.match(adapter,/Geometry\.Check\(/);
+  assert.match(polygonOracle,/UNIFORM_SCALED_COPY/);
+  assert.match(adapter,/TEACHER_REVIEW_REQUIRED/);
+  const service=file('src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs');
+  const exact=service.indexOf('LessonPracticeContractRegistry.TryResolve');
+  const fallback=service.indexOf('StudentPrivatePracticeError.NoSupportedOutcomes');
+  assert.ok(exact>=0&&fallback>exact,'Exact lesson dispatch must precede generic outcome fallback');
+  assert.match(engine,/UsCcssG6Unit1Lesson1TilingQuestions\.Supports/);
 });

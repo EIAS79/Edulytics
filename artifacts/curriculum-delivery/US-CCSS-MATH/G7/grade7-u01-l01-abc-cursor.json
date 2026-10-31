@@ -7,7 +7,7 @@
   ],
   "evidence": "Local teacher and student source read. Source activities: Printing Portraits, Scaling F and Pairs of Scaled Polygons. Existing F SVG and teacher rubric are reusable.",
   "A_STATUS": "A_CLOSED_SOURCE_GOALS_AND_FIRST_PARTY_ACTIVITY_EQUIVALENCE_REVIEWED",
-  "B_STATUS": "BLOCKED_GRADE_BRANCH_SHARED_RICH_V2_DOES_NOT_INVOKE_G7_PARTIAL_ISSUE_592_PR_599",
+  "B_STATUS": "BLOCKED_PR_599_RENDERER_INTEGRATION_NOT_PRESENT_ON_ORIGINAL_G7_BRANCH",
   "lessonLocalAccessibilityRepair": {
     "scope": "PED:US-CCSS-MATH:G7:U01:L01_ONLY",
     "defect": "Ten polygon-card buttons exposed letters but no geometric vertex data to screen-reader users.",
@@ -18,7 +18,7 @@
     "runtimeAccessibilityStatus": "NOT_RUN_STAGE_D",
     "deliveryBlocker": "Shared Rich V2 renderer hook remains external PR #599; no claim of authenticated student visibility."
   },
-  "C_STATUS": "BLOCKED_EXACT_LESSON_PRACTICE_SELECTION_GENERATOR_FEEDBACK_AND_TEACHER_REVIEW_ISSUE_605",
+  "C_STATUS": "BLOCKED_PR_610_EXACT_SELECTED_PRACTICE_EXISTS_IN_DRAFT_NOT_ADOPTED_ON_ORIGINAL_G7_BRANCH",
   "2026_10_31LessonLocalExecution": {
     "scope": "ONLY_PED:US-CCSS-MATH:G7:U01:L01",
     "sourceTeacherStudent": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM and 07_Grade_7_OUR_IM_Student, unit 1 lesson 1; retained previous source comparison",
@@ -53,7 +53,46 @@
   },
   "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
   "READY_FOR_STAGE_D": false,
-  "blocker": "The main Rich V2 currently displays core explanations and ratio tables but does not invoke the Grade7-only partial with 10 SVG cards and 3–4–5 cooldown. Separate draft PR #599 has hook but stale partial. Exact L01 scaled-copy Practice remains unresolved on #592. Do not advance to L02 under V5.",
+  "approvedIntegrationHandoff_20261031": {
+    "courseBranch": "curriculum/us-ccss-g7-full-grade-20261028",
+    "verifiedCourseHeadBeforeHandoff": "00b4a4b892e054924db854c3e4e5681bf66f0ace",
+    "rendererDraft": {
+      "pullRequest": 599,
+      "head": "acd6e763d09c56cd2764bca66e8481f91f8ab875",
+      "sourceRichV2BlobMatchesCourse": true,
+      "sourceLessonPartialBlobMatchesCourse": true,
+      "sourceActivityJsBlobMatchesCourse": true,
+      "sharedRendererHookExistsOnlyInDraft": true,
+      "requiredAction": "AUTHORIZED_OWNER_ADOPTS_SCOPED_RENDERER_HOOK_WITHOUT_STALE_BRANCH_OVERWRITE",
+      "status": "NOT_ADOPTED_ON_COURSE_BRANCH"
+    },
+    "practiceDraft": {
+      "pullRequest": 610,
+      "head": "a9bcaff01ee9a58a766e5df499f1c8f06a923e32",
+      "soleWriterLease": "RELEASED_ISSUE_605_COMMENT_6540336826",
+      "exactLessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+      "skillId": "geometry.similarity.scale_factor",
+      "selectedFamily": "usccss.g7.u01.l01.scaled_copy_correspondence",
+      "sourceRoute": "EXACT_LESSON_CONTRACT_TO_GENERATE_SOLVE_VERIFY_EXISTS_IN_DRAFT_CODE",
+      "reusesKernel": "PR_608",
+      "preservesG6SharedConsumer": true,
+      "numericVsTeacher": "YES_NO_MACHINE_CHECK_ONLY_DRAWINGS_AND_REASONING_TEACHER_REVIEW_REQUIRED",
+      "currentCourseHasRoute": false,
+      "status": "NOT_ADOPTED_ON_COURSE_BRANCH"
+    },
+    "courseAcceptanceFixture": "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
+    "newCrossIntegrationGate": "AUTHORED_NOT_RUN_EXPECTED_RED_UNTIL_APPROVED_RENDERER_AND_PRACTICE_ADOPTION",
+    "existingFixtureRepairs": [
+      "Ten-polygon-card source extraction updated for F row insertion",
+      "Test execution status assertion corrected to persisted TEST_AUTHORED_NOT_RUN"
+    ],
+    "independentRuntimeDelivery": "NOT_VERIFIED_STAGE_D",
+    "academicClosureAllowed": false,
+    "sharedPathEditPerformedByCoder": false,
+    "prMergePerformedByCoder": false,
+    "readyForStageD": false
+  },
+  "blocker": "Two approved source implementations remain on separate unmerged draft branches, not on the original Grade7 PR #590. #599 has guarded student Rich V2 hook and identical latest L01 Rich V2/partial/JS source; #610 has lesson-selected exact G7 scaled-copy generator/solver/verifier using #608 and preserving G6 #609. The authorized integration owner must adopt both onto the course path without overwriting newer Grade7 content or shared consumers; Coder3 may only close B/C upon genuine on-branch authoring evidence. No L02 before this gate.",
   "nextLesson": "UNIT_BLOCKED_REMAIN_AT_PED_US_CCSS_MATH_G7_U01_L01",
   "originalLocalSourcePaths": [
     "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM\\1\\1\\preparation.html",
