@@ -240,6 +240,29 @@
     "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
     "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
     "issue": "https://github.com/EIAS79/Edulytics/issues/453",
-    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
+    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained",
+    "parallelPermittedWork20261031": "Course local selected offline sheet authored and embedded; no claim that machine P3 or authenticated Practice can be generated. Waiting for global shared-service sole writer."
+  },
+  "printableTeacherSelectedEvidence20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "studentAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-hs/alg1/u01-l01-first-party-paper-assessment.html",
+    "studentUrl": "/curriculum/us-ccss-hs/alg1/u01-l01-first-party-paper-assessment.html",
+    "linkedFromRichV2": true,
+    "dataSafety": "15 voluntary anonymous respondents only if teacher authorizes; no names or sensitive responses, hypothetical not mislabelled real",
+    "studentTasks": [
+      "1.1 four question warm-up",
+      "1.2 statistical/class survey and own fourth question",
+      "P1 numerical with units and variation",
+      "P2 categorical with classes and variation",
+      "P3 exact six-choice multi-select",
+      "Edulytiks independent Cool-down"
+    ],
+    "selectedRoute": "OFFLINE_PRINTABLE_LEARNER_WORKSHEET_TEACHER_HUMAN_REVIEW_ONLY",
+    "machineSelectedPractice": false,
+    "machineGrader": "NOT_VERIFIED",
+    "teacherSurveyRubric": 8,
+    "humanCooldownRubric": 6,
+    "tests": "AUTHORED_NOT_RUN",
+    "sharedServiceChanged": false
   }
 }
