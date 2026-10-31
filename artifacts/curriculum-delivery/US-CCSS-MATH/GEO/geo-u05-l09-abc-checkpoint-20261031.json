@@ -1,0 +1,202 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L09",
+  "Ordinal": 73,
+  "UnitCode": "U05",
+  "UnitOrdinal": 9,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\9\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\9\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\9\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\9\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "1dcc812ae8bb1d7e4ebb9cbd530271b4bade46ebfb1cdebe7d38c4749b1ed6d1",
+    "TeacherActivities": "1fd5dbeb87be520b070521fb323064264ea2260fd512dd59e0a37eb855c11edb",
+    "StudentActivities": "189a2828ec3b9e21ae06dd270f5275d0ece70e8df8e4e340be24db32598619b2",
+    "StudentPractice": "c98f214c2072cf47a753299a1a517646f6c9f1df1cf250520b16551d1b00c468"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "9.1",
+      "Goal": "compare two original pictured solids with common base-area times height method",
+      "Mode": "FIRST_PARTY_PRINTABLE_SKETCH_PLUS_TEACHER"
+    },
+    {
+      "Source": "9.2",
+      "Goal": "prism9 by4pi and cylinder radius6 equal base36pi; two different water layers",
+      "Mode": "EXACT_SOURCE_WATER_TRANSFER_TWO_HEIGHTS"
+    },
+    {
+      "Source": "9.3 A/B",
+      "Goal": "A two stacked axis cylinders87pi and B annular cylinder96pi with grid axes",
+      "Mode": "SOURCE_COORDINATE_FIRST_PARTY_PRINTABLE_ROTATION"
+    },
+    {
+      "Source": "9.3 extension",
+      "Goal": "tripled height/radius/cube edge and alternate original A horizontal axis",
+      "Mode": "EXACT_SOURCE_FRACTIONAL_VOLUME_COMPARISON"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven source-indexed cylinder, composite, bagel, toothpaste, inverse volume, cube questions",
+      "Mode": "EXACT_GEOMETRIC_PAPER_ORACLES_AND_HUMAN_IMAGE_REVIEW"
+    },
+    {
+      "Source": "9.4",
+      "Goal": "teacher-login restricted Cylinder Strategies cooldown",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PRINTABLE_HUMAN_COOLDOWN"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "7.G.B.4",
+      "7.G.B.6",
+      "8.G.C.9"
+    ],
+    "Addressing": [
+      "HSG-GMD.A.1",
+      "HSG-GMD.A.3",
+      "HSG-GMD.B.4"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U05_L09_CYLINDER_WATER_AND_ROTATION_PAPER_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L09",
+    "TaskId": "geo-u05-l09-original-water-transfer-and-two-rotated-grid-solids",
+    "GroupId": "GEO_U05_L09_CYLINDER_WATER_AND_ROTATION_PAPER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Print U05:L09 source-aligned first-party student worksheet; hand-labelled volume and transfer diagrams, independent rotation-axis grid A/B calculations, seven numbered Practice items, written reasoning and human teacher rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l09-cylinder-volumes-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "compares prism and cylinder through B*h, radius vs diameter, and justifies unit-height layer area",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "shows original prism9 by4pi and cylinder r6 both have base36pi, predicts equal transferred heights1cm and3cm with volume conservation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "annotates original rotation axes and calculates source A 87pi, B hollow96pi and optional alternative horizontal axis99pi with correct subdivisions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "completes original seven practice items, units, rationale for equal-area but differently shaped annuli, and recognizes unavailable P2 output images",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "water prism9*4pi base36pi equals cylinder radius6 base36pi; identical volume means height1 or3",
+      "grid A two stacked cylinders 75pi and12pi total87pi, B annulus (25-9)*6pi=96pi",
+      "Practice P1 solid cylinder54pi, P3 values48pi 36pi 198.25 and105, P5 C P6 D"
+    ],
+    "Equivalent": [
+      "grid A 3*pi*(25+4)=87*pi cubic centimeters",
+      "hollow rectangle summary5*pi*(16-1)=75*pi =80*pi-5*pi",
+      "P4 bagel area ratio25^(2/3) equals cbrt625 to rounding precision"
+    ],
+    "Wrong": [
+      "P1 radius misread as diameter6 producing 216pi instead of54pi",
+      "grid B hole ignored leading150pi rather than96pi",
+      "bagel serving25 uses length factor25 rather than cube root25",
+      "source P2 A/D identical volume inferred to mean identical solids, although annular dimensions differ"
+    ],
+    "Boundary": [
+      "positive radius and nonnegative height required, zero height has zero volume",
+      "an off-axis rectangle produces annulus and hollow solid, not a filled cylinder",
+      "same base area and water volume implies equal height provided no overflow/nonuniform container section",
+      "original P2 output images unavailable from source text, no fabricated image matching"
+    ],
+    "Malformed": [
+      "rotation axis absent or reference coordinates missing",
+      "student report gives square-centimeter units for cylinder volume",
+      "a bare symbol pi with no measured radius/height or correct water volume"
+    ]
+  },
+  "IndependentMathOracles": {
+    "PrismBaseArea": "9*4*pi=36*pi",
+    "CylinderBaseArea": "pi*6^2=36*pi",
+    "WaterHeightsCm": [
+      1,
+      3
+    ],
+    "GridAVolume": "(5^2*3+2^2*3)pi=87pi",
+    "GridBVolume": "(5^2-3^2)*6*pi=96pi",
+    "GridAAlternativeHorizontalVolume": "99pi",
+    "StudentSummaryHollow": "75pi",
+    "P1Volume": "54pi",
+    "P2RegionVolumes": [
+      "48pi",
+      "120pi",
+      "64pi",
+      "48pi"
+    ],
+    "P3Volumes": [
+      "48pi",
+      "36pi",
+      "198.25",
+      "105"
+    ],
+    "P4BagelScale": "cubert25",
+    "P4CoatingAreaFactor": "25^(2/3)",
+    "P5Choice": "C",
+    "P6Choice": "D",
+    "P7OriginalSurface": 96,
+    "P7OriginalVolume": 64,
+    "P7ImageSurface": 6,
+    "P7ImageVolume": 1,
+    "ImageMatching": "REQUIRES_ORIGINAL_ILLUSTRATIONS",
+    "PublisherCooldown": "LOCKED_UNVERIFIED"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l09-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u05-l09-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u05-l09-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u05-l09-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "8afbbb66d88dc3c1d247d36783e26c8c67270981",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T23:21:30.976256Z",
+  "ClosedAtUtc": "2026-10-31T23:21:40.049483Z",
+  "ElapsedSeconds": 9.073,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L10"
+}
