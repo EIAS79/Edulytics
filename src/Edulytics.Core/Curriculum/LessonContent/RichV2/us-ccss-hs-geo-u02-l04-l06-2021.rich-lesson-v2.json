@@ -214,9 +214,14 @@
         "Learning goal: Prove the Side-Angle-Side (SAS) congruence theorem from rigid transformations and use it to prove the base angles of an isosceles triangle congruent.",
         "SAS states: if AB=DE, AC=DF and the included angle ∠BAC equals ∠EDF, then triangles ABC and DEF are congruent with A↔D,B↔E,C↔F. No third-side equality is needed as a hypothesis; it follows from triangle congruence.",
         "Proof method: align A to D and ray AB with DE by a rigid motion. The common length AB=DE puts B onto E. If necessary reflect across DE to place the image of C on the same side as F. Included angles at A and D now match; their side rays coincide, and AC=DF fixes the same position for C and F. Thus all vertices align.",
-        "Isosceles theorem: in triangle ABC with AB=AC, select D as the midpoint of BC and form triangles ABD and ACD. They share AD, satisfy BD=DC and AB=AC, so by SSS they are congruent, hence ∠ABC=∠BCA. Alternatively, use a rigid reflection across the perpendicular bisector of BC after justifying apex A lies on it.",
-        "Student task: author a two-column or paragraph SAS proof and an isosceles base-angle proof. Annotate the true included angle, identify hypotheses versus consequences, and include a counterexample showing why nonincluded SSA is insufficient. Teacher rubric (0–4): correct SAS hypotheses, rigid alignment, valid isosceles proof and logically sound conclusion. Proof responses require teacher assessment, not an arbitrary machine-generated number.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced."
+        "Isosceles base-angle proof uses SAS as in source activity 6.3, NOT a premature SSS theorem. Given PA=PB in triangle PAB, draw the ray PQ from P that bisects the apex angle APB and meets AB at Q. Then PA=PB, PQ=PQ, and included angles APQ and QPB are equal by construction. Hence triangles APQ and BPQ are congruent by SAS, so the corresponding base angles PAQ and PBQ are equal. Because Q lies on AB, these are base angles PAB and PBA. Do not assume Q is midpoint of AB or draw an arbitrary perpendicular bisector without proving P lies on it.",
+        "Student task: author a two-column or paragraph SAS proof and an isosceles base-angle proof. Annotate the true included angle, identify hypotheses versus consequences, and include a counterexample showing why nonincluded SSA is insufficient. Teacher rubric (0–8): correct SAS hypotheses, rigid alignment, valid isosceles proof and logically sound conclusion. Proof responses require teacher assessment, not an arbitrary machine-generated number.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced.",
+        "6.1 Information Overload: highlight exactly which corresponding given facts a full rigid-motion proof consumes; AB=DE, AC=DF and included angle A=D are already sufficient. BC=EF and other angle equalities are redundant hypotheses, not necessary for the SAS argument. Show alignment of the first side, optional reflection to the same half-plane, identical angle ray and equal length to force the third vertex to coincide.",
+        "6.2 Proving SAS: given LM=PQ, LN=PR and included angle L=P, explicitly send L to P and M to Q by rigid motion; reflect about PQ only if required; align ray to R using equal included angle; equal LN=PR puts N on R. This proves all corresponding vertices coincide. For known sides 5 and 12, a nondegenerate triangle third side satisfies 7<c<17, with no attained maximum or minimum, and c=13 when the included angle is 90 degrees.",
+        "6.3 Isosceles theorem: student dialogue must identify the auxiliary angle bisector PQ, not assume a midpoint or an unproved perpendicular-bisector consequence. PA=PB, PQ=PQ, and angles APQ=QPB are the actual SAS givens. Deduce base angles after the triangle congruence is established, not before.",
+        "Source-indexed independent Practice P1-P6: P1 select actually sufficient added facts for isosceles DBC with AD=AC, original figure teacher reviewed; P2 find the false SAS step using an angle not between alleged sides; P3 combine isosceles symmetry and 18/48-degree diagram only with the original arrangement checked by the teacher; P4 order a five-step zigzag rigid-motion proof (3,1,2,4,5); P5 label SAS/ASA/SSS marks; P6 ABC-to-EDF ordered correspondence means BC-to-DF, angle A-to-E, angle C-to-F are true, whereas AB-to-EF and AC-to-ED are false. Original publisher images are not claimed pixel-equivalent.",
+        "6.4 Publisher-locked Cool-down has not been independently accessed. Use an original first-party paper proof challenging an auxiliary-line false assumption; student must identify an actually justified angle bisector and prove isosceles base angles with SAS. Drawings and proof quality are reviewed by an authorized teacher with four 0–2 criteria."
       ],
       "KeyConcepts": [
         {
@@ -228,7 +233,7 @@
         {
           "Title": "Isosceles base-angle theorem",
           "Definition": "In a triangle with two congruent sides, the angles opposite those sides are congruent.",
-          "Rule": "Prove equal-base angles by triangle congruence or reflection across the apex-to-base-midpoint axis.",
+          "Rule": "Draw the apex-angle bisector PQ to create two triangles with equal apex sides, shared PQ, and equal included half-angles. Apply SAS; do not use an unestablished SSS theorem.",
           "Example": "If AB=AC in ABC, then ∠ABC=∠BCA."
         },
         {
@@ -254,17 +259,18 @@
           "Check": "The angle used is at A and D, between the two known side pairs; not SSA."
         },
         {
-          "Title": "Prove isosceles base angles",
-          "Question": "In triangle ABC, AB=AC. Prove ∠ABC=∠BCA.",
-          "Method": "Construct the midpoint D of BC and use SSS on ABD and ACD.",
+          "Title": "Source-aligned isosceles base angles by SAS and an angle-bisector auxiliary line",
+          "Question": "In isosceles triangle PAB, PA=PB. Draw an apex angle bisector PQ meeting AB at Q. Without assuming SSS or that Q is midpoint, prove base angles at A and B equal.",
+          "Method": "Use PA=PB, PQ as common side and equal INCLUDED angles APQ and QPB to establish SAS.",
           "Steps": [
-            "Let D be midpoint of BC, so BD=DC.",
-            "Given AB=AC and common AD=AD.",
-            "All three corresponding side pairs of triangles ABD and ACD agree, so triangles ABD≅ACD by SSS.",
-            "Angles ABD and ACD correspond and agree. Since D lies on BC, those are the base angles ABC and BCA."
+            "Construct ray PQ to bisect angle APB and let it meet side AB at Q.",
+            "PA=PB is given by the isosceles hypothesis; PQ=PQ is the shared segment.",
+            "Angles APQ and QPB are equal because PQ bisects the included apex angle.",
+            "By SAS, triangles APQ and BPQ are congruent, with A corresponding to B.",
+            "Therefore their base angles PAQ and PBQ are equal; Q lies on AB so angles PAB and PBA are equal."
           ],
-          "Answer": "The base angles of an isosceles triangle are congruent.",
-          "Check": "Requires genuine triangle A,B,C noncollinear and D on segment BC."
+          "Answer": "Base angles at A and B are congruent by SAS of triangles APQ and BPQ.",
+          "Check": "Do not invoke SSS before its lesson proof, use base-angle equality as a hypothesis, or presume an unproven perpendicular bisector goes through P."
         },
         {
           "Title": "Determine a valid included-angle pair",
@@ -290,6 +296,11 @@
           "Mistake": "Assuming the isosceles base angles are already equal in a proof of that theorem.",
           "WhyWrong": "It is circular reasoning because the conclusion is used as a premise.",
           "Correction": "Construct midpoint D and use AB=AC, BD=DC and AD=AD to prove triangles congruent first."
+        },
+        {
+          "Mistake": "Invoking SSS or a presumed base-midpoint equality while deriving the isosceles base-angle theorem in lesson 6.",
+          "WhyWrong": "The source specifically builds SAS now; SSS and the perpendicular-bisector apex claim have not yet been independently established in the teaching sequence.",
+          "Correction": "Draw apex-angle bisector PQ; use PA=PB, PQ=PQ and equal included apex half-angles for SAS, then conclude base-angle equality."
         }
       ],
       "SummaryPoints": [

@@ -1,0 +1,196 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+  "Status": "C_CLOSED_AUTHORING_SAS_ISOSCELES_TEACHER_PAPER_RUBRIC_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "a4dfb5b2481a93acc9de5b317ecf4da64144798ef2aac2838d71b189f2019f5e",
+    "TeacherActivities": "71bf1ce20944ac344fca4de91cf4ab8849cdf20ad5cb6b576b8cfe3e1550a781",
+    "StudentActivities": "4ef53b77028ff85f2e82c2cea0fe3f5ab2811bc0d8493c2b2ab06f99ce320770",
+    "StudentPractice": "6dda3f2fcef345540690988cf4e096493b257ef410c09af1d7fe4eda11becc9f"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.5",
+      "HSG-CO.B.7",
+      "HSG-CO.B.8"
+    ],
+    "Addressing": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.10",
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "Highlight only necessary two sides + included angle in provided full proof",
+      "FirstPartyMode": "HUMAN_REVIEWED_HIGHLIGHTED_RIGID_PROOF"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "Prove SAS itself with optional reflection and equal ray-distance; extend to third-side bounds",
+      "FirstPartyMode": "TEACHER_SCORED_SAS_DRAWING"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "Use auxiliary apex angle bisector for isosceles base-angle proof, no premature SSS",
+      "FirstPartyMode": "TEACHER_SCORED_ANGLE_BISECTOR_SAS_PROOF"
+    },
+    {
+      "Source": "Practice P1-P6",
+      "Goal": "Six source-specific paper proofs and selection/ordering cases",
+      "FirstPartyMode": "TEACHER_SCORED_ORACLE_PLUS_FIGURE_BOUNDARY"
+    },
+    {
+      "Source": "6.4 Publisher Cool-down",
+      "Goal": "Publisher teacher login restricted",
+      "FirstPartyMode": "ORIGINAL_EDULYTIKS_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L06_SAS_AND_ISOSCELES_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_ARGUMENT_REVIEW",
+    "TaskId": "geo-u02-l06-sas-proof-and-apex-angle-bisector",
+    "TeacherHandoff": "Collect 6.1 highlighted full proof, 6.2 SAS aligned drawing with optional reflection, 6.3 actual apex-angle bisector PQ diagram and SAS base-angle proof, six source-indexed paper practices, and first-party Cool-down. Mark four 0-2 criteria offline; do not claim live teacher grade persistence.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Identifies genuine two sides and included angle without using redundant side/angle facts as hypotheses",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Constructs valid rigid-motion SAS proof with first side, conditional reflection, correct ray and distance",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Draws angle-bisector PQ and proves base angles by SAS without circular reliance on SSS or midpoint",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Justifies six paper source practice parts and first-party Cool-down including invalid SAS and ordered correspondence",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "SourceSkill": "Sufficient facts for DBC isosceles",
+      "FirstPartyPrompt": "Given DAC isosceles with AD=AC, select justifications that force DB=BC and explain symmetry or triangle correspondence, teacher reviews original figure.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "SourcePublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "SourceSkill": "Invalid parallelogram SAS proof",
+      "FirstPartyPrompt": "Find why AB=DC, angle ABC=ADC, AC=AC do NOT establish SAS between ABC and ADC; named angles are not included between the two given sides.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "SourcePublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "SourceSkill": "Two isosceles triangles angle inference",
+      "FirstPartyPrompt": "Use source angles BAC=18 and BDC=48 and the teacher-supplied diagram to justify angle ABD; no numeric value is machine-certified without figure parity.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "SourcePublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "SourceSkill": "Ordered zigzag proof",
+      "FirstPartyPrompt": "Reorder five original source ideas: first align AB to DE, reflect if needed, match same ray, use equal distance, conclude congruence.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "SourcePublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "SourceSkill": "Match congruence criteria",
+      "FirstPartyPrompt": "Match two included sides and angle to SAS, two angles with included side to ASA, three side pairs to SSS; figure marks teacher reviewed.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "SourcePublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "SourceSkill": "ABC congruent EDF corresponding parts",
+      "FirstPartyPrompt": "Choose true of A:AB→EF, B:BC→DF, C:AC→ED, D:angle A→E, E:angle C→F.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "SourcePublisherFigureParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "SAS_Pairing": "PA_PB_PQ_SHARED_INCLUDED_HALF_ANGLES",
+    "P4_OriginalStatementOrder": [
+      3,
+      1,
+      2,
+      4,
+      5
+    ],
+    "P6_TrueChoices": [
+      "B",
+      "D",
+      "E"
+    ],
+    "ThirdSide_5_12_ValidNondegenerate": "7<c<17",
+    "ThirdSide_RightAngle": 13,
+    "IsoscelesProof": "ANGLE_BISECTOR_THEN_SAS_NOT_SSS"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Apex PA=PB, shared PQ, angle APQ=QPB yields SAS and matching base angles",
+      "5,12 included right angle gives 13",
+      "P4 order 3,1,2,4,5",
+      "P6 choices B,D,E"
+    ],
+    "Equivalent": [
+      "either triangle mirror orientation with conditional reflection",
+      "different justified rigid-motion sequence aligns labelled vertices"
+    ],
+    "Wrong": [
+      "SSA called SAS",
+      "SSS used before established in this source lesson",
+      "presuming PQ hits midpoint without proving it",
+      "AB=DC, angle ABC=ADC and AC=AC mislabelled included SAS",
+      "claiming third side has attained maximum 17"
+    ],
+    "Boundary": [
+      "nondegenerate length 5 and12 gives open interval 7<c<17, endpoints degenerate",
+      "reflection only if half-plane mismatch",
+      "angle bisector must be constructed at actual apex P"
+    ],
+    "Malformed": [
+      "unlabelled side/angle mismatch",
+      "missing auxiliary line justification",
+      "claim without proof that base angles equal"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_EDULYTIKS_FIRST_PARTY_EQUIVALENT",
+  "FirstPartyCooldown": {
+    "Prompt": "Draw isosceles PAB with PA=PB, add correct apex angle bisector PQ to AB, explain every SAS fact and infer base-angle equality; state why unproved perpendicular bisector midpoint assumption is invalid.",
+    "Mode": "TEACHER_SCORED_PAPER",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN online assignment, saved teacher rubric, tenant app tests, CI, merge/deploy"
+}
