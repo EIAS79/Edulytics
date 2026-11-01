@@ -91,6 +91,14 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 256 by 5", "256 × 5", 1280, "whole-number product"),
         new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 587 by 8", "587 × 8", 4696, "whole-number product"),
         new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 809 by 9", "809 × 9", 7281, "whole-number product"),
+        new("usccss.g5.u04.l08.original_distributive_number_talk", "Original G5 U04:L08 Number Talk using distributive property", "6 × (15)", 90, "exact product"),
+        new("usccss.g5.u04.l08.original_distributive_number_talk", "Original G5 U04:L08 Number Talk using distributive property", "6 × (17)", 102, "exact product"),
+        new("usccss.g5.u04.l08.original_distributive_number_talk", "Original G5 U04:L08 Number Talk using distributive property", "6 × (2 1/3)", 14, "exact product"),
+        new("usccss.g5.u04.l08.original_distributive_number_talk", "Original G5 U04:L08 Number Talk using distributive property", "6 × (2 2/3)", 16, "exact product"),
+        new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 893×56. Teacher checks source digit uniqueness and global closest-product strategy", "893 × 56", 50008, "whole-number product"),
+        new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 589×36. Teacher checks source digit uniqueness and global closest-product strategy", "589 × 36", 21204, "whole-number product"),
+        new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 856×39. Teacher checks source digit uniqueness and global closest-product strategy", "856 × 39", 33384, "whole-number product"),
+        new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 693×58. Teacher checks source digit uniqueness and global closest-product strategy", "693 × 58", 40194, "whole-number product"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

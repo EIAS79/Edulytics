@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -403,11 +403,12 @@
       "CultureCode": "en",
       "Title": "Multiplication Fluency",
       "ExplanationParagraphs": [
-        "Goal: practice fluency through selectable games, including a greatest-product challenge and arranging five given digits so a product is as CLOSE as possible to a TARGET. A closest-product objective is different from maximizing a product; student choices and revisions matter.",
-        "Warm-up: connect mental 6×15 and 6×17 with 6×2 1/3 and 6×2 2/3 by the distributive property. The comparison shows why a useful known product supports another calculation; the fraction examples are part of the source warm-up.",
-        "Activity 1 — choose a fluency game: select a first-party greatest-product activity or target-product puzzle. For a target of 40000, assign the five distinct digits 1,2,3,6,8 into a three-digit-by-two-digit product. Two legal trials: 813×62=50406 and 682×31=21142; decide which is closer using ABSOLUTE difference from 40000 rather than which product is bigger. These are practice trials, not a claim that either is globally closest.",
-        "Activity 2 — create and revise: a student designs another 3-digit×2-digit arrangement with the same five digits, computes the full product using the standard algorithm, and keeps a comparison table of results and absolute distance from target. Teacher reviews number choices, digit reuse and strategy explanation; numeric scores check exact calculations only.",
-        "Assessment boundary: in the source, students pick between existing math centers and explain the strategy used. Auto-grading only the product or declaring one arrangement closest without checking all legal permutations would misrepresent the actual task."
+        "Original IM 2021 Grade5 U04:L08 Multiplication Fluency: source learners choose one of two fluency games (Greatest Product OR Number Puzzles: Multiplication and Division), then use exactly the supplied digits 3,5,6,8,9 to make three-digit-by-two-digit whole-number products as close as possible to two source targets, 50000 and 20000. These are closeness optimizations, not always maxima.",
+        "Warm-up Number Talk The Distributive Property: original 6×15=90,6×17=102,6×2 1/3=14,6×2 2/3=16. Pupils explain 6×(2+1/3)=12+2 and 6×(2+2/3)=12+4, and connect mental multiplication strategies.",
+        "Activity 1 Fluency Practice Choice Time: teacher facilitates choice of source game, including strategy discussion and legal moves. Number Puzzle or Greatest Product outcomes vary by players; original complete card/deck material and physical implementation were not independently inspected, so do not invent a unique certified source winner.",
+        "Activity 2 Targeted Products: use original digits 3,5,6,8,9 once each in a three-digit factor and a two-digit factor. For TARGET 50000 an exact finite enumeration of 120 permutations gives 893×56=50008, ABSOLUTE difference 8. For TARGET 20000 the closest valid arrangement is 589×36=21204, difference 1204. These optimal candidate calculations are an Edulytiks mathematical verification of the printed constraint, not quotations from a source answer key; students still defend why their selected products are closer than other valid candidates.",
+        "Previously drafted 1,2,3,6,8 digit trials and a 40000 target are mathematically legitimate extra puzzles only, NOT the original 2021 Activity 2. Teacher reviews each legal digit use, choice of game, student strategy, estimation and closest-product proof. Edulytiks independent Cool-down is original reflection work, not a publisher Cool-down reproduction.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -431,7 +432,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare closeness",
+          "Title": "Original source distributive Number Talk",
+          "Question": "Evaluate 6×15,6×17,6×2 1/3 and 6×2 2/3.",
+          "Method": "Break products into easy known facts, whole and fraction parts.",
+          "Steps": [
+            "6×15=90, and 6×17=102.",
+            "6×2 1/3=12+2=14.",
+            "6×2 2/3=12+4=16."
+          ],
+          "Answer": "90,102,14,16.",
+          "Check": "Source fractions use mixed-number arithmetic."
+        },
+        {
+          "Title": "Original source target 50000",
+          "Question": "Arrange 3,5,6,8,9 once each for a three-digit×two-digit product near 50000.",
+          "Method": "Compare absolute distances to target; independently enumerate all 120 legal digit permutations to certify nearest.",
+          "Steps": [
+            "One legal arrangement is 893×56=50008.",
+            "Compute the absolute difference from target: 8.",
+            "A check of all 120 distinct permutations finds no closer product; teacher reviews the optimization argument."
+          ],
+          "Answer": "893×56=50008 (8 above target).",
+          "Check": "Digits 8,9,3,5,6 are all used exactly once."
+        },
+        {
+          "Title": "Original source target 20000",
+          "Question": "Use exactly 3,5,6,8,9 once to make a product closest to 20000.",
+          "Method": "Compare legal three- and two-digit arrangements, absolute distance from target.",
+          "Steps": [
+            "One legal arrangement is 589×36=21204.",
+            "Distance above 20000 is 1204.",
+            "Independent full permutation comparison finds this nearest under the printed slot constraints."
+          ],
+          "Answer": "589×36=21204 (1204 above).",
+          "Check": "All five source digits appear exactly once; no other legal arrangement is closer."
+        },
+        {
+          "Title": "Optional existing extension — Compare closeness",
           "Question": "Which trial product is nearer 40000: 813×62 or 682×31?",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -443,7 +480,7 @@
           "Check": "50406−40000=10406; 40000−21142=18858."
         },
         {
-          "Title": "Use a known fact",
+          "Title": "Optional existing extension — Use a known fact",
           "Question": "Compute 6×2 2/3 mentally.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -455,7 +492,7 @@
           "Check": "6×8/3=16."
         },
         {
-          "Title": "Check a new legal candidate",
+          "Title": "Optional existing extension — Check a new legal candidate",
           "Question": "Try 631×82 and compare to target 40000.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -477,42 +514,57 @@
           "Mistake": "Claim optimality from checking a few trials",
           "WhyWrong": "The source's exploration permits multiple strategies, but a mathematical minimum would require a complete proof.",
           "Correction": "Label trial rankings honestly and continue revising or enumerate all candidates."
+        },
+        {
+          "Mistake": "Replace source digits 3,5,6,8,9 and target 50000/20000 with invented 1,2,3,6,8 and 40000",
+          "WhyWrong": "That creates a different optimization puzzle and does not cover both original 2021 source targets.",
+          "Correction": "Present original source digits and target values first; preserve alternate puzzles only as clearly optional extensions."
         }
       ],
       "SummaryPoints": [
-        "Multiplication fluency games have distinct objectives and require accurate full products.",
-        "A closest-target game minimizes absolute difference, not product size.",
-        "Teacher evaluates participation and strategy; calculations are supporting Practice.",
-        "2021 first-edition IM K–5 Grade 5 Unit 4 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-8/lesson.html. Public task HTML reviewed, original Student Task PDF, gated Cool-down, and separate asset rights not independently reviewed. Edulytiks examples independently authored."
+        "Source warmup 6×15=90,6×17=102,6×2 1/3=14,6×2 2/3=16.",
+        "Original source Activity1 choice: Greatest Product or Number Puzzles.",
+        "Original digits 3,5,6,8,9 used once per target to approach 50000 and 20000.",
+        "Edulytiks computed 893×56=50008 distance 8, and 589×36=21204 distance 1204, under source slots.",
+        "Teacher evaluates legal digit choices and qualitative nearest-product arguments, not only numeric values."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multiplication Fluency — reasoning model",
-          "Description": "Original accessible text-only mathematical table; source diagrams, game pieces and photographs are not reproduced.",
+          "Title": "Source digits and target product candidates",
+          "Description": "Source target/digit constraints with Edulytiks-derived closest candidates, not source publisher official answer key.",
           "Rows": [
             {
-              "Label": "Trial",
+              "Label": "Source available digits",
               "Cells": [
-                "813×62",
-                "682×31",
-                "631×82"
+                "3",
+                "5",
+                "6",
+                "8",
+                "9"
               ]
             },
             {
-              "Label": "Product",
+              "Label": "50000 target",
               "Cells": [
-                "50406",
-                "21142",
-                "51742"
+                "893×56",
+                "50008",
+                "absolute difference 8"
               ]
             },
             {
-              "Label": "Absolute distance to 40000",
+              "Label": "20000 target",
               "Cells": [
-                "10406",
-                "18858",
-                "11742"
+                "589×36",
+                "21204",
+                "absolute difference 1204"
+              ]
+            },
+            {
+              "Label": "Game choices",
+              "Cells": [
+                "Greatest Product",
+                "Number Puzzles"
               ]
             }
           ]
