@@ -1579,6 +1579,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g5.u05.l02.original_grid_thousandth_values", "usccss.g5.u05.l02.original_fifteen_hundredths_critic"],
             "IM2021_G5_U05_L02_DECIMAL_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // IM K5 2021 G5 U06:L18: source-aligned selected decimal
+        // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U06:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U06:L18", "supporting.decimals.core",
+            "G5_SOURCE_UNIT5_LESSON_18_DECIMAL_PLACE_VALUE",
+            ["usccss.g5.u06.l18.original_compare_without_multiplying"],
+            "IM2021_G5_U06_L18_DECIMAL_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U06:L17: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U06:L17"] = new LessonPracticeContract(

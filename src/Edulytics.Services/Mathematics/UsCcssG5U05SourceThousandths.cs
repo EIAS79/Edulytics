@@ -535,6 +535,22 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners farther than Priya", "Jada and Clare", "Han and Mai", "all four"),
         new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners less than Priya", "Han and Mai", "Jada and Clare", "all four"),
         new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source runner order smallest to greatest", "Mai, Han, Priya, Clare, Jada", "Han, Mai, Priya, Jada, Clare", "Priya, Mai, Han, Clare, Jada"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original warmup2/3×5", "10/3", "2/3", "5/3"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original PartnerA 2/5×12", "24/5", "12/5", "30/5"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original PartnerA 5/3×12", "20", "15", "12"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original PartnerA 7/7×12", "12", "7", "24"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original PartnerB 4/7×12", "48/7", "12/7", "28/7"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original PartnerB 8/5×12", "96/5", "24/5", "12"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original PartnerB 9/9×12", "12", "9", "18"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source choose numerator n/11×12>12, valid example", "12", "11", "10"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source choose numerator n/15×12=12, unique value", "15", "12", "16"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source choose denominator13/d×12<12, valid example", "14", "13", "12"),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original relative source1/4×A compared A for positive A", "<", ">", "="),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original relative source2×A compared A for positive A", ">", "<", "="),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original relative source13/8×A compared A for positive A", ">", "<", "="),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original relative source2/3×A compared A for positive A", "<", ">", "="),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source13/8×11/39 compared11/39", ">", "<", "="),
+        new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source2/3×17/53 compared17/53", "<", ">", "="),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

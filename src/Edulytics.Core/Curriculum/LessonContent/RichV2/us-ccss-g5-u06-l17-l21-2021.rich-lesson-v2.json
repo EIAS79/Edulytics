@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l17-l21-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u06-l17-l21-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -252,11 +252,18 @@
       "CultureCode": "en",
       "Title": "Compare Without Multiplying",
       "ExplanationParagraphs": [
-        "Goal: place fraction products at approximate positions on a number line and generalize comparisons to ANY positive amount A, including fractional A. In the source, students choose numbers to make inequalities true and explain why the rule works without arithmetic evaluation.",
-        "Warm-up: put 1/3×12 and4/3×12 on opposite sides of12 using an original zero-to-twenty number line. An estimate based on the factor relationship to one is enough to determine direction before exact plotting.",
-        "Activity 1 — fractions of twelve: plot 3/5×12=36/5, 7/7×12=12, and5/4×12=15; the third is right of12 and the first left. Choose an integer numerator n in n/11×12>12, requiring n>11; choose n/15×12=12, requiring n=15; and choose denominator d in 13/d×12<12, requiring d>13 for positive integer d.",
-        "Activity 2 — unknown A: suppose A is any positive fraction on the number line. Place (1/4)A,(2/3)A,A,(13/8)A,2A in increasing order. Test examples A=3/5 and A=7/9 without claiming the ordering needs numerical values; explain why it is valid for positive A.",
-        "Assessment: exact comparisons and inequality choices may be checked mechanically, but the source asks learners to plot relative location, state a rule with the needed positivity condition and justify the choice of unknown numerators and denominators; teacher review is required."
+        "Original IM2021 G5 U06:L18 compares products by asking whether multiplier is below, equal or above one, using approximate SOURCE number lines and an UNKNOWN positive quantity A. Students are not required to compute exact products for every inequality.",
+        "Warm-up original Notice and Wonder uses 2/3×5, a value below5, with source number-line illustration and student insights teacher reviewed.",
+        "Activity1 Approximate Location PartnerA original2/5×12=24/5,5/3×12=20,7/7×12=12. PartnerB original4/7×12=48/7,8/5×12=96/5,9/9×12=12. Partner draws each position on the publisher line; original axis artwork and spatial precision remain teacher reviewed.",
+        "Activity1 other source boxes n/11×12>12 requires n>11 (e.g12); n/15×12=12 requires n15; 13/d×12<12 requires denominator d>13 (e.g14). The source admits many integer values for inequalities; exact choices are illustrative only, not a universal key.",
+        "Activity2 An Unknown Number original locations1/4 A<A,2A>A,13/8 A>A and2/3 A<A assuming source positive A. Printed comparisons13/8×11/39>11/39 and2/3×17/53<17/53. Teacher assesses source number line labels and explanation.",
+        "Prior fictional3/5×12 tasks are valid Edulytiks extensions only. Selected numeric family covers source expressions and bounded relational rules but not student-drawn coordinate placement and free-choice blanks.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: place fraction products at approximate positions on a number line and generalize comparisons to ANY positive amount A, including fractional A. In the source, students choose numbers to make inequalities true and explain why the rule works without arithmetic evaluation.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: put 1/3×12 and4/3×12 on opposite sides of12 using an original zero-to-twenty number line. An estimate based on the factor relationship to one is enough to determine direction before exact plotting.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — fractions of twelve: plot 3/5×12=36/5, 7/7×12=12, and5/4×12=15; the third is right of12 and the first left. Choose an integer numerator n in n/11×12>12, requiring n>11; choose n/15×12=12, requiring n=15; and choose denominator d in 13/d×12<12, requiring d>13 for positive integer d.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — unknown A: suppose A is any positive fraction on the number line. Place (1/4)A,(2/3)A,A,(13/8)A,2A in increasing order. Test examples A=3/5 and A=7/9 without claiming the ordering needs numerical values; explain why it is valid for positive A.",
+        "Optional previous source-aligned or independently authored extension — Assessment: exact comparisons and inequality choices may be checked mechanically, but the source asks learners to plot relative location, state a rule with the needed positivity condition and justify the choice of unknown numerators and denominators; teacher review is required."
       ],
       "KeyConcepts": [
         {
@@ -280,7 +287,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Choose missing values",
+          "Title": "Source exact 1 — Original U06:L18 Compare Without Multiplying",
+          "Question": "Original warmup2/3×5",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "10/3",
+          "Check": "Original numeric source example; incorrect distractors 2/3 and 5/3 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original U06:L18 Compare Without Multiplying",
+          "Question": "Original PartnerA 2/5×12",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "24/5",
+          "Check": "Original numeric source example; incorrect distractors 12/5 and 30/5 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original U06:L18 Compare Without Multiplying",
+          "Question": "Original PartnerA 5/3×12",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "20",
+          "Check": "Original numeric source example; incorrect distractors 15 and 12 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original U06:L18 Compare Without Multiplying",
+          "Question": "Original PartnerA 7/7×12",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "12",
+          "Check": "Original numeric source example; incorrect distractors 7 and 24 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Choose missing values",
           "Question": "Find n for n/11×12>12 and n for n/15×12=12.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -292,7 +347,7 @@
           "Check": "For n=12, 12/11×12>12."
         },
         {
-          "Title": "Order unknown A",
+          "Title": "Optional existing extension — Order unknown A",
           "Question": "Order1/4A,2/3A,A,13/8A,2A when A>0.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -304,7 +359,7 @@
           "Check": "This holds even if A is fractional."
         },
         {
-          "Title": "Plot fractional products",
+          "Title": "Optional existing extension — Plot fractional products",
           "Question": "Where do3/5×12,12 and5/4×12 lie?",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -326,18 +381,90 @@
           "Mistake": "Choose n=11 to make n/11×12 greater than12",
           "WhyWrong": "A multiplier of exactly one creates equality, not a greater product.",
           "Correction": "Use a numerator larger than the denominator."
+        },
+        {
+          "Mistake": "Substitute 3/5 and5/4 source line plot factors or mark only one numerator as allowable source answer",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore all six original partner expressions and recognize open inequality solution sets with teacher review."
         }
       ],
       "SummaryPoints": [
-        "Multiplier comparison with one can solve inequalities without computing a product.",
-        "Line-plot placement and generalized explanations depend on a positive baseline.",
-        "Source partner representations require teacher review.",
-        "2021 IM K–5 Grade 5 Unit 6 Lesson 18: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-18/lesson.html. Read source teacher lesson Student Facing sections on authorized Primary/Our-CS. Separate original Student Task PDFs, figures and gated response still NOT_VERIFIED. Independent Edulytiks examples."
+        "Source partner products24/5,20,12 and48/7,96/5,12.",
+        "Original open boxes require n>11, n=15, d>13.",
+        "Original A comparisons<,>,>,<.",
+        "Source fraction baselines13/8>1 and2/3<1.",
+        "Optional prior: Multiplier comparison with one can solve inequalities without computing a product.",
+        "Optional prior: Line-plot placement and generalized explanations depend on a positive baseline.",
+        "Optional prior: Source partner representations require teacher review.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 6 Lesson 18: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-18/lesson.html. Read source teacher lesson Student Facing sections on authorized Primary/Our-CS. Separate original Student Task PDFs, figures and gated response still NOT_VERIFIED. Independent Edulytiks examples."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Compare Without Multiplying — reasoning model",
+          "Title": "Original U06:L18 Compare Without Multiplying — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup2/3×5",
+              "Cells": [
+                "10/3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerA 2/5×12",
+              "Cells": [
+                "24/5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerA 5/3×12",
+              "Cells": [
+                "20",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerA 7/7×12",
+              "Cells": [
+                "12",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerB 4/7×12",
+              "Cells": [
+                "48/7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerB 8/5×12",
+              "Cells": [
+                "96/5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerB 9/9×12",
+              "Cells": [
+                "12",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source choose numerator n/11×12>12, valid example",
+              "Cells": [
+                "12",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Compare Without Multiplying — reasoning model",
           "Description": "Original accessible numeric or observation table, not protected diagrams, imagery or real student data.",
           "Rows": [
             {
