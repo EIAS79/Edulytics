@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -184,11 +184,12 @@
       "CultureCode": "en",
       "Title": "An Algorithm Using Partial Quotients",
       "ExplanationParagraphs": [
-        "Goal: interpret and use a written PARTIAL QUOTIENTS algorithm for division by a two-digit divisor. Connect each subtraction of a convenient divisor multiple to the number of whole groups removed, then keep track of the remaining quantity and total quotient.",
-        "Warm-up: inspect an incomplete first-party partial-quotient layout for 588÷21, displaying dividend 588 and subtracting 420. Ask what the 420 represents (20 groups of 21) and what remains, rather than guessing the final answer from surface features.",
-        "Activity 1 — label each line: calculate 588÷21 by subtracting 420=20×21, leaving168; subtract 126=6×21, leaving42; subtract42=2×21, leaving0. Sum partial quotients 20+6+2=28. Explain the roles of multiplication and subtraction at every step.",
-        "Activity 2 — use less scaffolding: for 768÷24, subtract 720=30×24 leaving48, then subtract 48=2×24 leaving0. Alternatively subtract 480 then 240 then48 for partial quotients 20,10,2. Compare the remaining values and show the same 32 groups.",
-        "Academic boundary: source asks learners to make sense of the actual written algorithm, what every number means and how partial quotients are recorded, including self-explanation. The final 28/32 number alone cannot grade whether the learner has represented the algorithm properly."
+        "Original IM 2021 G5 U04:L12 An Algorithm Using Partial Quotients: the source pupils read and complete a STACKED written division layout where each subtraction records a multiple of the divisor, and the full quotient is the SUM of the written partial quotients. Remainders and units of each partial step matter.",
+        "Warm-up Notice and Wonder Incomplete Solution: source begins 448÷16 and a first written 20 groups ×16=320, leaving 128, with a hint 5×16=80. Learners discuss what comes next, not simply quote a complete 28. The source asks teacher-led interpretation of the visual stacked layout.",
+        "Activity 1 Elena's Work: the actual source 448÷16=28, with partial 20,5,3: subtract 320 then80 then48 to reach zero; quotient 20+5+3=28. Label what each subtraction means and explain why 16 is the fixed divisor throughout.",
+        "Activity 2 Complete the Solution: source 492÷12 has 20×12=240 then another20×12=240 then remainder12; final 1×12=12 gives 41. Source 630÷15 begins 40×15=600 then30 remain, 2×15=30 so quotient42. The original student-facing third diagram appears only as a caption in teacher HTML and is not independently reconstructed; do not manufacture a third official quotient. Teacher reviews the actual page images and algorithm steps.",
+        "Exact digital Practice validates the known quotient and partial chunks. Original stack diagrams, intermediate quotient choice, explanations and unrecovered third source figure remain TEACHER_REVIEW_REQUIRED. Independently authored Cool-down uses 784÷28=28, rather than gated publisher Cool-down.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -212,7 +213,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Read every subtraction row",
+          "Title": "Source Elena 448 divided by 16",
+          "Question": "Follow Elena's stacked algorithm for 448÷16.",
+          "Method": "Repeated subtraction of divisible chunks and sum of partial quotients.",
+          "Steps": [
+            "20×16=320, remainder128.",
+            "5×16=80, remainder48.",
+            "3×16=48, remainder0; quotient20+5+3."
+          ],
+          "Answer": "28.",
+          "Check": "28×16=448."
+        },
+        {
+          "Title": "Original first incomplete 492 divided by 12",
+          "Question": "Complete the source 492÷12 stack already showing two 20-group steps.",
+          "Method": "Keep 12 as divisor, subtract multiples and record every quotient contribution.",
+          "Steps": [
+            "492−240=252, record 20 groups.",
+            "252−240=12, record another 20.",
+            "12−12=0, record one more, so 20+20+1=41."
+          ],
+          "Answer": "41.",
+          "Check": "41×12=492."
+        },
+        {
+          "Title": "Original source 630 divided by 15",
+          "Question": "Complete the stack showing initial 40 groups of 15.",
+          "Method": "Subtract 600 and then 30 with correct partial quotient values.",
+          "Steps": [
+            "40×15=600; 630−600=30.",
+            "2×15=30; remainder0.",
+            "Add40+2."
+          ],
+          "Answer": "42.",
+          "Check": "42×15=630."
+        },
+        {
+          "Title": "Optional existing extension — Read every subtraction row",
           "Question": "Find 588÷21 by three partial quotients.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -224,7 +261,7 @@
           "Check": "21×28=588."
         },
         {
-          "Title": "Choose a larger chunk",
+          "Title": "Optional existing extension — Choose a larger chunk",
           "Question": "Find 768÷24 using two steps.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -236,7 +273,7 @@
           "Check": "24×32=768."
         },
         {
-          "Title": "Use smaller chunks instead",
+          "Title": "Optional existing extension — Use smaller chunks instead",
           "Question": "Show 768÷24 with 20,10,2 groups.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -258,45 +295,50 @@
           "Mistake": "Stop with a remainder greater than or equal to divisor",
           "WhyWrong": "Another full group can still be removed if enough quantity remains.",
           "Correction": "Continue until the final whole-number remainder is smaller than the divisor."
+        },
+        {
+          "Mistake": "Replace 448÷16,492÷12,630÷15 with invented 588÷21 or 768÷24 as official source",
+          "WhyWrong": "Original source diagrams explicitly show Elena's 448÷16 and two incomplete stacks; invented numbers fail source parity.",
+          "Correction": "Restore all verified source stacked subtractions; keep previous invented but valid examples only as extensions."
         }
       ],
       "SummaryPoints": [
-        "A partial-quotients algorithm combines subtraction, multiplication and addition.",
-        "Every subtracted product represents a specific number of equal groups.",
-        "Explanation of each recorded algorithm step is teacher-reviewed.",
-        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 12, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-12/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+        "Source warm-up original incomplete stack 448÷16 with first 20-group removal.",
+        "Source Elena 448÷16=28 using partials 20+5+3.",
+        "Source 492÷12=41 using 20+20+1; source 630÷15=42 using 40+2.",
+        "A third source image appears as caption only, not independently verified.",
+        "Teacher reviews original vertical algorithm and remainder reasoning; exact digital choices supplement only."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "An Algorithm Using Partial Quotients — division decomposition",
-          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Title": "Original stacked partial quotient source steps",
+          "Description": "First-party numeric equivalent of source vertical algorithms, not copied original publisher figures.",
           "Rows": [
             {
-              "Label": "Step",
+              "Label": "448÷16",
               "Cells": [
-                "Start",
-                "After 20 groups",
-                "After 6 groups",
-                "After 2 groups"
+                "subtract320 (20)",
+                "subtract80 (5)",
+                "subtract48 (3)",
+                "28"
               ]
             },
             {
-              "Label": "Remaining",
+              "Label": "492÷12",
               "Cells": [
-                "588",
-                "168",
-                "42",
-                "0"
+                "subtract240 (20)",
+                "subtract240 (20)",
+                "subtract12 (1)",
+                "41"
               ]
             },
             {
-              "Label": "Groups removed",
+              "Label": "630÷15",
               "Cells": [
-                "—",
-                "20",
-                "6",
-                "2"
+                "subtract600 (40)",
+                "subtract30 (2)",
+                "42"
               ]
             }
           ]

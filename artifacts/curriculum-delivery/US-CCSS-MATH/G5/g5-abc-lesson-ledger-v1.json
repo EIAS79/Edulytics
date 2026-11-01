@@ -6,18 +6,18 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U04:L12",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U04:L13",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 60,
-    "B_CLOSED": 60,
-    "C_PREPARED": 60,
-    "READY_FOR_D": 60,
+    "A_CLOSED": 61,
+    "B_CLOSED": 61,
+    "C_PREPARED": 61,
+    "READY_FOR_D": 61,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 88
+    "REMAINING": 87
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -2921,28 +2921,41 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U04:L12",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-4\\lesson-12\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-4\\lesson-12\\preparation.html"
+      ],
+      "reuseFinding": "RESTORED_SOURCE_ELENA_448_16_AND_492_12_630_15_STACKS; DISCLOSED_UNREADABLE_THIRD_FIGURE; REUSED_WHOLE_DIVISION_ADAPTER",
+      "A_STATUS": "COMPLETE_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "COMPLETE_WITH_SELECTED_CONTRACT_EVIDENCE_AUTHORED_NOT_RUN",
+      "PracticeStrategy": "REUSE_EXISTING_SHARED_EXACT_ENGINE_AND_G5_UNIT4_SOURCE_BOUNDED_ADAPTER",
+      "CooldownOriginalStatus": "PUBLISHER_GATED_UNVERIFIED",
+      "CooldownEdulytiksStatus": "INDEPENDENT_TEACHER_COOLDOWN_OR_RUBRIC",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U04L12SourcePracticeTests.cs",
+      "testExecutionStatus": "AUTHORED_NOT_RUN",
       "startedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-11-01T16:41:24.549361+00:00",
       "elapsedSeconds": null,
       "commitSHA": null,
       "blocker": null,
-      "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
+      "READY_FOR_STAGE_D": true,
+      "sourceEvidence": {
+        "teacherLessonSha256": "575782188e6a8f1610f34c5f2984785e08c48541fab88b9eea2747c0aa243144",
+        "teacherPreparationSha256": "0242a60ef9d24391fc66988c04a5923c5544e5a1e90b9d9839eb025944f7a91d",
+        "limitation": "Publisher figures/Standalone Student PDF and source-gated materials not independently certified"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U04L12SourcePracticeTests.cs",
       "openIssues": [],
       "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "authoredCandidate": true,
+      "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u04-l12-independent-teacher-cooldown-20261101.json",
+      "selectedPracticeFamilyIds": [
+        "usccss.g5.u04.l12.source_elena_partial_quotient_totals",
+        "usccss.g5.u04.l12.source_written_partial_quotient_chunks"
+      ],
+      "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u04-l12-abc-sequential-closure-20261101.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U04:L13",
@@ -5120,7 +5133,7 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-11-01T16:40:24.843927+00:00",
+  "updatedAtUtc": "2026-11-01T16:41:24.549361+00:00",
   "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L02",
   "returnBacklog": [
     {

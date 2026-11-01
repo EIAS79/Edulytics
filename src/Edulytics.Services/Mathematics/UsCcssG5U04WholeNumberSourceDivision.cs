@@ -42,6 +42,16 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l11.source_convenient_quotient_chunks", "Original source helpful partial quotient chunk 62 divided by 31", "62 ÷ 31", 2, "partial groups"),
         new("usccss.g5.u04.l11.source_convenient_quotient_chunks", "Original source helpful partial quotient chunk 341 divided by 31", "341 ÷ 31", 11, "partial groups"),
         new("usccss.g5.u04.l11.source_convenient_quotient_chunks", "Original source helpful partial quotient chunk 310 divided by 31", "310 ÷ 31", 10, "partial groups"),
+        new("usccss.g5.u04.l12.source_elena_partial_quotient_totals", "Original IM 2021 U04:L12 written partial quotient algorithm 448 divided by 16", "448 ÷ 16", 28, "exact whole quotient"),
+        new("usccss.g5.u04.l12.source_elena_partial_quotient_totals", "Original IM 2021 U04:L12 written partial quotient algorithm 492 divided by 12", "492 ÷ 12", 41, "exact whole quotient"),
+        new("usccss.g5.u04.l12.source_elena_partial_quotient_totals", "Original IM 2021 U04:L12 written partial quotient algorithm 630 divided by 15", "630 ÷ 15", 42, "exact whole quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 320 divided by 16", "320 ÷ 16", 20, "partial quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 80 divided by 16", "80 ÷ 16", 5, "partial quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 48 divided by 16", "48 ÷ 16", 3, "partial quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 240 divided by 12", "240 ÷ 12", 20, "partial quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 12 divided by 12", "12 ÷ 12", 1, "partial quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 600 divided by 15", "600 ÷ 15", 40, "partial quotient"),
+        new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 30 divided by 15", "30 ÷ 15", 2, "partial quotient"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
