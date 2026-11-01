@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 31,
-    "B_CLOSED": 31,
+    "A_CLOSED": 32,
+    "B_CLOSED": 32,
     "C_PREPARED": 31,
     "READY_FOR_D": 31,
     "D_VERIFIED": 0,
-    "BLOCKED": 0,
+    "BLOCKED": 1,
     "REMAINING": 117
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
@@ -1818,28 +1818,41 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L03",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-3\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-3\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_RICH_V2_U03_L03_ACCURATE_FOUR_COLUMN_PATTERN; REPAIR_MISSING_SOURCE_ACTIVITY2_1_5x1_3_AND_1_2x1_6_AND_1_4x1_6; PRESERVE_SEVEN_ROW_EXTENSION_AS_OPTIONAL; NEW_LESSON_ONLY_CANDIDATE",
+      "A_STATUS": "COMPLETE_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_EXACT_SELECTED_PRACTICE_NOT_INTEGRATED",
+      "PracticeStrategy": "LESSON_ONLY_SOURCE_EXACT_TWO_FAMILY_CANDIDATE_PENDING_UNIQUE_SHARED_WRITER_APPROVAL",
+      "CooldownOriginalStatus": "PUBLISHER_GATED_UNVERIFIED",
+      "CooldownEdulytiksStatus": "INDEPENDENT_SEVEN_POINT_TEACHER_RUBRIC_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u03-l03-source-parity-20261101.test.cjs",
+      "testExecutionStatus": "AUTHORED_NOT_RUN",
       "startedAt": null,
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": "Exact L03 selected LessonPractice contract, question-family registry and shared engine Supports/Build/Solve/Verify are not integrated. Needs separate Admin final exclusive writer grant under Issue #605; do not advance to L04 before L03 C completion.",
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l03-abc-active-lesson-source-evidence-20261101.json",
+        "teacherLessonSha256": "39302efa153cd9bb01f63ba7bef7d06729a8e3d1c3d3175edd8b68d969be4815",
+        "teacherPreparationSha256": "9601a01462fa7be7e7cc9a1211b2c5eb3a8c83bca1b8f2aefaa7df896b27ec9c",
+        "limitation": "Original publisher Student PDF, figure binaries/rights and gated Cool-down not separately verified"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u03-l03-source-parity-20261101.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/605"
+      ],
+      "lastEvidenceCommitSHA": "04442ce81f027d145ce1b273a7b13debe54d876c",
+      "authoredCandidate": true,
+      "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l03-original-teacher-rubric-20261101.json",
+      "lessonLocalPracticeCandidate": "src/Edulytics.Services/Mathematics/UsCcssG5U03L03UnitFractionQuestions.cs",
+      "lessonLocalPracticeCandidateTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L03UnitFractionCandidateTests.cs"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L04",
@@ -4742,7 +4755,7 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-11-01T14:59:01.701Z",
+  "updatedAtUtc": "2026-11-01T15:06:37.291Z",
   "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L02",
   "returnBacklog": [
     {
