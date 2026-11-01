@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l17-l21-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "ContentVersion": "g5-u06-l17-l21-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Interpret Diagrams",
       "ExplanationParagraphs": [
-        "Goal: MATCH fraction multiplication expressions with fraction-area diagrams and relative number-line positions, then compare products with a selected positive original factor. The 2021 source also asks students to compare a runner's unknown baseline distance with several fractions of it, without computing the unknown distance.",
-        "Warm-up: take an original four-unit line segment. Mark a factor 3/4 of the four units to the LEFT of the four-unit endpoint, and 5/4 of it to the RIGHT. Explain why the relative position alone shows the inequality, even without identifying an exact length.",
-        "Activity 1 — original matching task: expressions 2/5×3, 6/5×3, 2/5×5 and6/5×5 should be matched to two descriptions: a shaded two-fifths of 3 or5 equal wholes, and a sixth-fifths extension after a full original amount. Compare 2/5×3<3,6/5×3>3, and analogous inequalities for5. The student draws or selects consistent shaded diagrams and corresponding number-line points.",
-        "Activity 2 — unknown runner distance: let P be a positive unknown distance. Student A ran three fifths of P, B ran seven fourths of P, C ran twice P, D ran five sixths of P. Without computing P, order A < D < original P < B < C. Explain why multiplying each factor by the same positive P preserves ordering.",
-        "Teacher boundary: matching abstract diagrams, placing an unknown-runner distance on a number line, and explaining why the factor size determines ordering are teacher-reviewed; numeric fractions alone are insufficient to complete the source activity."
+        "Original IM2021 G5 U06:L17 compares fraction products of positive amounts to baseline factors, matches multiple fractions to publisher DIAGRAMS, and orders named runners without knowing Priya's numeric original distance.",
+        "Warm-up original Estimation Exploration5/3×9625. Multiplier5/3>1 so product is GREATER than9625, and approximate location may be discussed; student low/about-right/high estimates are not uniquely keyed.",
+        "Activity1 Match the Diagram original four expressions2/7×3=6/7<3,9/7×3=27/7>3,2/7×5=10/7<5,9/7×5=45/7>5. Source diagrams are teacher-scored, and the exact interpretation needs 7 equal pieces of each original whole. Prior independently invented2/5 and6/5 examples are not printed source tasks.",
+        "Activity2 Who Ran Farther original baseline Priya distance P>0. Jada2P, Han6/7P, Clare14/8P=7/4P and Mai3/5P. Ordered shortest to longest: Mai,Han,Priya,Clare,Jada. Farther than Priya are Jada and Clare; shorter are Han and Mai. Original source asks mapping INITIALS to positions of a number line with one missing; teacher assesses actual publisher diagram.",
+        "Exact selected practice includes source expressions and ordering; original figure matching, shaded units and warm-up open estimates are TEACHER_REVIEW_REQUIRED, as is any unrecovered publisher Cool-down. Edulytiks independent teacher Cool-down tests alternate ratios.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: MATCH fraction multiplication expressions with fraction-area diagrams and relative number-line positions, then compare products with a selected positive original factor. The 2021 source also asks students to compare a runner's unknown baseline distance with several fractions of it, without computing the unknown distance.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: take an original four-unit line segment. Mark a factor 3/4 of the four units to the LEFT of the four-unit endpoint, and 5/4 of it to the RIGHT. Explain why the relative position alone shows the inequality, even without identifying an exact length.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original matching task: expressions 2/5×3, 6/5×3, 2/5×5 and6/5×5 should be matched to two descriptions: a shaded two-fifths of 3 or5 equal wholes, and a sixth-fifths extension after a full original amount. Compare 2/5×3<3,6/5×3>3, and analogous inequalities for5. The student draws or selects consistent shaded diagrams and corresponding number-line points.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — unknown runner distance: let P be a positive unknown distance. Student A ran three fifths of P, B ran seven fourths of P, C ran twice P, D ran five sixths of P. Without computing P, order A < D < original P < B < C. Explain why multiplying each factor by the same positive P preserves ordering.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: matching abstract diagrams, placing an unknown-runner distance on a number line, and explaining why the factor size determines ordering are teacher-reviewed; numeric fractions alone are insufficient to complete the source activity."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Match two representations",
+          "Title": "Source exact 1 — Original U06:L17 Interpret Diagrams",
+          "Question": "Original warmup5/3×9625 is greater or less than original9625?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "greater",
+          "Check": "Original numeric source example; incorrect distractors less and equal must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original U06:L17 Interpret Diagrams",
+          "Question": "Original source2/7×3",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "6/7",
+          "Check": "Original numeric source example; incorrect distractors 2/7 and 3/7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original U06:L17 Interpret Diagrams",
+          "Question": "Original source9/7×3",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "27/7",
+          "Check": "Original numeric source example; incorrect distractors 9/7 and 18/7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original U06:L17 Interpret Diagrams",
+          "Question": "Original source2/7×5",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "10/7",
+          "Check": "Original numeric source example; incorrect distractors 7/7 and 2/5 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Match two representations",
           "Question": "Compare2/5×3 with6/5×3.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "Exact values6/5 and18/5 confirm the order."
         },
         {
-          "Title": "Unknown runners",
+          "Title": "Optional existing extension — Unknown runners",
           "Question": "Order 3/5P,5/6P,P,7/4P,2P for P>0.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "Teacher checks the numerical scale and factor explanations."
         },
         {
-          "Title": "Different baseline lengths",
+          "Title": "Optional existing extension — Different baseline lengths",
           "Question": "Compare2/5 of5 with6/5 of5.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -82,18 +136,90 @@
           "Mistake": "Assume the unknown P must be known numerically to rank fractions",
           "WhyWrong": "When the same P is positive, factor comparison determines order.",
           "Correction": "Compare the multipliers without guessing P."
+        },
+        {
+          "Mistake": "Use invented2/5 and6/5 multiplier tasks as source or reverse Mai/Han ordering",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source numerator2/7 and9/7 and original named runner ratios."
         }
       ],
       "SummaryPoints": [
-        "Diagram matching requires a consistent unit whole and proportional positions.",
-        "A positive unknown quantity may still be ordered by multiplier size.",
-        "Source figure/number-line explanation is teacher-reviewed.",
-        "2021 IM K–5 Grade 5 Unit 6 Lesson 17: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-17/lesson.html. Read source teacher lesson Student Facing sections on authorized Primary/Our-CS. Separate original Student Task PDFs, figures and gated response still NOT_VERIFIED. Independent Edulytiks examples."
+        "Original products6/7,27/7,10/7,45/7.",
+        "Original relative comparisons<,>,<,>.",
+        "Source runners order Mai<Han<Priya<Clare<Jada.",
+        "Original publisher matching diagrams teacher reviewed.",
+        "Optional prior: Diagram matching requires a consistent unit whole and proportional positions.",
+        "Optional prior: A positive unknown quantity may still be ordered by multiplier size.",
+        "Optional prior: Source figure/number-line explanation is teacher-reviewed.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 6 Lesson 17: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-17/lesson.html. Read source teacher lesson Student Facing sections on authorized Primary/Our-CS. Separate original Student Task PDFs, figures and gated response still NOT_VERIFIED. Independent Edulytiks examples."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Interpret Diagrams — reasoning model",
+          "Title": "Original U06:L17 Interpret Diagrams — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup5/3×9625 is greater or less than original9625?",
+              "Cells": [
+                "greater",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source2/7×3",
+              "Cells": [
+                "6/7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source9/7×3",
+              "Cells": [
+                "27/7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source2/7×5",
+              "Cells": [
+                "10/7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source9/7×5",
+              "Cells": [
+                "45/7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source2/7×3 compared3 symbol",
+              "Cells": [
+                "<",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source9/7×3 compared3 symbol",
+              "Cells": [
+                ">",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source2/7×5 compared5 symbol",
+              "Cells": [
+                "<",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Interpret Diagrams — reasoning model",
           "Description": "Original accessible numeric or observation table, not protected diagrams, imagery or real student data.",
           "Rows": [
             {

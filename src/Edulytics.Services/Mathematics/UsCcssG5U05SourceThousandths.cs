@@ -519,6 +519,22 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open denominator 9/n×50<50 choose valid example", "10", "8", "9"),
         new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open denominator 9/n×50=50 choose value", "9", "8", "10"),
         new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open denominator 9/n×50>50 choose valid example", "8", "9", "10"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original warmup5/3×9625 is greater or less than original9625?", "greater", "less", "equal"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source2/7×3", "6/7", "2/7", "3/7"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source9/7×3", "27/7", "9/7", "18/7"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source2/7×5", "10/7", "7/7", "2/5"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source9/7×5", "45/7", "9/7", "35/7"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source2/7×3 compared3 symbol", "<", ">", "="),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source9/7×3 compared3 symbol", ">", "<", "="),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source2/7×5 compared5 symbol", "<", ">", "="),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source9/7×5 compared5 symbol", ">", "<", "="),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners Jada twice Priya distance P, factor", "2", "1/2", "1"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners Han6/7 of Priya distance P, factor", "6/7", "7/6", "1"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners Clare14/8 of Priya distance P simplified factor", "7/4", "4/7", "7/8"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners Mai3/5 of Priya distance P, factor", "3/5", "5/3", "1"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners farther than Priya", "Jada and Clare", "Han and Mai", "all four"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original runners less than Priya", "Han and Mai", "Jada and Clare", "all four"),
+        new("usccss.g5.u06.l17.original_products_diagrams_runners", "Original source runner order smallest to greatest", "Mai, Han, Priya, Clare, Jada", "Han, Mai, Priya, Jada, Clare", "Priya, Mai, Han, Clare, Jada"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
