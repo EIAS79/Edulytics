@@ -430,6 +430,9 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field1 six laps short of a mile by yards", "173", "73", "183"),
         new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field2 408 1/2 feet by240 1/4 feet, perimeter feet", "1297.5", "648.75", "12975"),
         new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field2 minimum whole laps for at least TWO miles (10560 feet)", "9", "8", "10"),
+        new("usccss.g5.u06.l08.original_fraction_sums_differences", "Original source 2/3+2/3, same denominators", "4/3", "2/3", "4/6"),
+        new("usccss.g5.u06.l08.original_fraction_sums_differences", "Original source 2/3−1/6, use equivalent sixths", "1/2", "1/6", "1/3"),
+        new("usccss.g5.u06.l08.original_fraction_sums_differences", "Original source 2/3+1/2, use sixths", "7/6", "3/5", "3/6"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

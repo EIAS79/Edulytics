@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l07-l11-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u06-l07-l11-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -255,11 +255,17 @@
       "CultureCode": "en",
       "Title": "Add and Subtract Fractions PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: add and subtract fraction quantities when denominators match or differ by inventing categories for an expression-card sort, then using diagrams, equal parts or equivalent fractions in any mathematically defensible way. The source explicitly permits multiple grouping rationales and does not require formal common-denominator rules as the only entry point.",
-        "Warm-up: compare one half with two fourths using a single fixed-unit tape. Both shade the same length and have different numerator/denominator pairs; explain why they can be combined after renaming one or both.",
-        "Activity 1 — category sort: first-party expressions 3/4+1/2,3/4+3/4,3/4−1/8,2/5+3/10 and5/6−1/3 may be grouped by same versus different denominators, by addition versus subtraction, or by whether the result exceeds one. At least two valid classification systems and student explanations are required.",
-        "Activity 2 — find three values: 3/4+3/4=6/4=1 1/2 by adding identical fourths; 3/4−1/8=6/8−1/8=5/8 by eighth strips; 3/4+1/2=3/4+2/4=5/4=1 1/4 by common quarters. Different number-line or tape-diagram strategies must refer to the same unit whole.",
-        "Assessment: the original task asks learners to explain their own sort, change categories and choose strategies. A single automated arithmetic answer cannot certify card sorting, drawn partitions, partner comparison or multiple valid methods."
+        "Original IM2021 G5 U06:L08 permits adding/subtracting fractions with same or different denominators, encouraging visual representations and equivalent unit fractions before formalizing a single common-denominator algorithm.",
+        "Warm-up original Which One Doesn't Belong: fraction representations A–D show pictured number lines and equivalent shaded lengths. Source image B includes number lines in thirds and sixths, C represents two-thirds and eight-twelfths, but incomplete image data prevents reconstructing all A/D exact contents. Teacher reviews all original pictures and accepts multiple supported WODB reasons.",
+        "Activity1 original teacher-given cards for Fraction Sums and Differences ask students to sort twice under their own mathematical category choices. The original card deck is not fully encoded in teacher HTML; do not fabricate official expressions. First-party sample fraction cards may appear ONLY as Edulytiks independent extensions.",
+        "Activity2 original printed fractions are2/3+2/3=4/3=1⅓,2/3−1/6=4/6−1/6=3/6=1/2,2/3+1/2=4/6+3/6=7/6=1⅙. These support three different denominator relationships; learners explain equivalent units and their chosen diagrams.",
+        "Selected Practice tests exactly these three printed numerical values only; original WODB images, card sort and explanation need TEACHER_REVIEW_REQUIRED. Source-gated publisher Cool-down not claimed replicated; independent Edulytiks teacher Cool-down clearly distinct.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: add and subtract fraction quantities when denominators match or differ by inventing categories for an expression-card sort, then using diagrams, equal parts or equivalent fractions in any mathematically defensible way. The source explicitly permits multiple grouping rationales and does not require formal common-denominator rules as the only entry point.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare one half with two fourths using a single fixed-unit tape. Both shade the same length and have different numerator/denominator pairs; explain why they can be combined after renaming one or both.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — category sort: first-party expressions 3/4+1/2,3/4+3/4,3/4−1/8,2/5+3/10 and5/6−1/3 may be grouped by same versus different denominators, by addition versus subtraction, or by whether the result exceeds one. At least two valid classification systems and student explanations are required.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — find three values: 3/4+3/4=6/4=1 1/2 by adding identical fourths; 3/4−1/8=6/8−1/8=5/8 by eighth strips; 3/4+1/2=3/4+2/4=5/4=1 1/4 by common quarters. Different number-line or tape-diagram strategies must refer to the same unit whole.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the original task asks learners to explain their own sort, change categories and choose strategies. A single automated arithmetic answer cannot certify card sorting, drawn partitions, partner comparison or multiple valid methods."
       ],
       "KeyConcepts": [
         {
@@ -283,7 +289,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Same denominator",
+          "Title": "Source exact 1 — Original G5 U06:L08 Add and Subtract Fractions",
+          "Question": "Original source 2/3+2/3, same denominators",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "4/3",
+          "Check": "Original numeric source example; incorrect distractors 2/3 and 4/6 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original G5 U06:L08 Add and Subtract Fractions",
+          "Question": "Original source 2/3−1/6, use equivalent sixths",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1/2",
+          "Check": "Original numeric source example; incorrect distractors 1/6 and 1/3 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original G5 U06:L08 Add and Subtract Fractions",
+          "Question": "Original source 2/3+1/2, use sixths",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "7/6",
+          "Check": "Original numeric source example; incorrect distractors 3/5 and 3/6 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Same denominator",
           "Question": "Find3/4+3/4.",
           "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
           "Steps": [
@@ -295,7 +337,7 @@
           "Check": "Each summand0.75 gives1.5 total."
         },
         {
-          "Title": "Subtract unlike parts",
+          "Title": "Optional existing extension — Subtract unlike parts",
           "Question": "Find3/4−1/8.",
           "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
           "Steps": [
@@ -307,7 +349,7 @@
           "Check": "5/8+1/8=6/8=3/4."
         },
         {
-          "Title": "Add halves to quarters",
+          "Title": "Optional existing extension — Add halves to quarters",
           "Question": "Find3/4+1/2.",
           "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
           "Steps": [
@@ -329,18 +371,54 @@
           "Mistake": "Claim a single correct card classification",
           "WhyWrong": "Several grouping criteria can be justified from exact mathematical properties.",
           "Correction": "State the rule for each classification and ensure all cards actually satisfy it."
+        },
+        {
+          "Mistake": "Substitute fictional3/4 source card examples for original three printed2/3 problems",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore exact source student tasks and retain card deck/image verification limitation."
         }
       ],
       "SummaryPoints": [
-        "Fractions can be added or subtracted with diagrams or equivalent unit parts.",
-        "Different card-sort explanations are legitimate when clearly justified.",
-        "Teacher review is needed for drawing and categorization.",
-        "2021 original IM K–5 Grade5 Unit6 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-8/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+        "Original 2/3+2/3=4/3,2/3−1/6=1/2,2/3+1/2=7/6.",
+        "Source WODB diagrams and card-sort outcomes teacher reviewed.",
+        "Distinct fractions have equivalent partitions of same whole.",
+        "Optional prior: Fractions can be added or subtracted with diagrams or equivalent unit parts.",
+        "Optional prior: Different card-sort explanations are legitimate when clearly justified.",
+        "Optional prior: Teacher review is needed for drawing and categorization.",
+        "Optional prior: 2021 original IM K–5 Grade5 Unit6 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-8/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Add and Subtract Fractions PLC Activity — original representation",
+          "Title": "Original G5 U06:L08 Add and Subtract Fractions — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source 2/3+2/3, same denominators",
+              "Cells": [
+                "4/3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source 2/3−1/6, use equivalent sixths",
+              "Cells": [
+                "1/2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source 2/3+1/2, use sixths",
+              "Cells": [
+                "7/6",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Add and Subtract Fractions PLC Activity — original representation",
           "Description": "Independently authored accessible math table, not source's publisher card/image set.",
           "Rows": [
             {
