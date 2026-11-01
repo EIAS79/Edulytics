@@ -15,7 +15,7 @@ internal static class UsCcssG5Unit1Lesson3Questions
         if(!Supports(family))throw new InvalidOperationException("Not G5 lesson 3");
         ArgumentNullException.ThrowIfNull(random);
         
-var w=random.Next(2,10),d=random.Next(2,10),h=random.Next(2,9);
+int w=random.Next(2,10),d=random.Next(2,10),h=random.Next(2,9);
 var p=new Dictionary<string,int>(StringComparer.Ordinal){["width"]=w,["depth"]=d,["height"]=h};
 var prompt=$"Edulytiks variation of the original 2021 packed cube-layer cards: "+
     $"a full rectangular prism is {w} cubes wide, {d} cubes deep and {h} cubes high. "+

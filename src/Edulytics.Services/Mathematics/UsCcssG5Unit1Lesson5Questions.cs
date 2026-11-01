@@ -15,7 +15,7 @@ internal static class UsCcssG5Unit1Lesson5Questions
         if(!Supports(family))throw new InvalidOperationException("Not G5 lesson 5");
         ArgumentNullException.ThrowIfNull(random);
         
-var w=random.Next(2,11),d=random.Next(2,13);
+int w=random.Next(2,11),d=random.Next(2,13);
 var allowedHeights=new[]{1,2,3,10,25};
 var h=allowedHeights[random.Next(allowedHeights.Length)];
 var p=new Dictionary<string,int>(StringComparer.Ordinal){["width"]=w,["depth"]=d,["height"]=h};
