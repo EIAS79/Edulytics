@@ -68,6 +68,12 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l04.source_place_value_nugget_ratios", "Original source place-value weights: source gram-weight A0.6 compared to C0.006, A/C", "100", "10", "0.01"),
         new("usccss.g5.u05.l04.source_place_value_nugget_ratios", "Original source place-value weights: source gram-weight C0.006 compared to B0.06, C/B", "0.1", "10", "0.01"),
         new("usccss.g5.u05.l04.source_place_value_nugget_ratios", "Original source place-value weights: source gram-weight C0.006 compared to A0.6, C/A", "0.01", "100", "0.1"),
+        new("usccss.g5.u05.l05.original_decimal_true_false", "Original source U05:L05 warmup true/false: 7.06 = 7.006. Explain using same place value, not number of printed digits", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l05.original_decimal_true_false", "Original source U05:L05 warmup true/false: 7.06 = 7.060. Explain using same place value, not number of printed digits", "true", "false", "not enough information"),
+        new("usccss.g5.u05.l05.original_decimal_true_false", "Original source U05:L05 warmup true/false: 7.06 = 7.600. Explain using same place value, not number of printed digits", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Original source Diego threw frisbee 5.10 meters and Jada threw it5.01 meters. Who threw FARTHER? Teacher explains distance comparison.", "Diego", "Jada", "tie"),
+        new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Original source Tyler swam length in35.15 seconds and Han in35.30 seconds. Who was FASTER? Smaller time is faster.", "Tyler", "Han", "tie"),
+        new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Original source: which decimal is strictly BETWEEN 5 and 5.01, as Priya's throw requires? EDULYTIKS illustrative choice only, source accepts many answers", "5.005", "5.01", "5.1"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -717,11 +717,17 @@
       "CultureCode": "en",
       "Title": "Compare Decimals",
       "ExplanationParagraphs": [
-        "Goal: compare thousandth-place decimals using matching place-value positions, and interpret what greater or smaller means IN CONTEXT. The source distinguishes a farther frisbee throw (larger distance wins) from a faster swim (smaller recorded time wins).",
-        "Warm-up — true or false: 7.06=7.006 is false because 7.060 has 60 thousandths but 7.006 has 6; 7.06=7.060 is true because adding a trailing zero does not change the value; 7.06=7.600 is false because the tenths digit differs. Ask learners to justify each place rather than count printed digits.",
-        "Activity 1 — distance versus time: an original frisbee contest records throws of 6.207,6.270 and6.199 meters. A longer distance wins, so 6.270 is best. A swimming race records 27.213,27.231 and27.208 seconds; the smaller time wins, so 27.208 is fastest. Compare aligned thousandths in each case and explain why the desired ordering reverses with the context.",
-        "Activity 2 — construct between numbers: choose TWO different thousandth-place decimals strictly between 5.000 and5.010, such as5.002 and5.009, then compare them. Show that a hundredth-only decimal cannot supply a value strictly between these endpoints unless finer fractional places are introduced. Several valid pairs exist.",
-        "Assessment: exact comparisons and inequality signs can be checked, but justification, benchmark use, source sport context and choosing different correct decimals are teacher-reviewed. A numeric rank alone does not certify why the result is best in its domain."
+        "Original IM 2021 Grade5 Unit5 Lesson5 Compare Decimals: compare decimals to three places using equal place-value columns, and interpret what greater or smaller means in context. Farther FRISBEE means larger measured distance; faster SWIM means smaller time. The printed original values are crucial.",
+        "Warm-up original TRUE OR FALSE: 7.06=7.006 FALSE because7.060≠7.006;7.06=7.060 TRUE because zero thousandths does not change number;7.06=7.600 FALSE because tenths differ. Teacher scores student explanation of each equality and alignment.",
+        "Activity 1 Farther and Faster original: Diego throws a frisbee5.10 meters, Jada5.01 meters, so Diego wins distance. Tyler swims in35.15 seconds, Han35.30 seconds, so TYLER is faster despite his time being numerically SMALLER. Source asks the reasons, not just identity recognition.",
+        "Activity 2 Farthest Frisbee Flight: original Diego5.1m and Jada5.01m. Give TWO valid DIFFERENT distances each: Han farther than Diego, Tyler farther than Diego but less than6m, Mai shorter than Jada, Priya shorter than Jada but MORE than5m. Examples for Priya5.001m and5.009m, demonstrating the need for THOUSANDTHS between5.000 and5.010. These are independently chosen valid exemplars; source specifies INEQUALITIES, not one numeric key.",
+        "Source also asks how to reason between5.000 and5.010 and justify various answers; open intervals, decimal zeros and measurement explanations are TEACHER_REVIEW_REQUIRED. Earlier mathematically valid fictional frisbee values6.207 etc are preserved only as optional practice extensions. Independently authored Edulytiks Cool-down uses original decimals not from source and teacher-reviews explanation.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: compare thousandth-place decimals using matching place-value positions, and interpret what greater or smaller means IN CONTEXT. The source distinguishes a farther frisbee throw (larger distance wins) from a faster swim (smaller recorded time wins).",
+        "Optional previous source-aligned or independently authored extension — Warm-up — true or false: 7.06=7.006 is false because 7.060 has 60 thousandths but 7.006 has 6; 7.06=7.060 is true because adding a trailing zero does not change the value; 7.06=7.600 is false because the tenths digit differs. Ask learners to justify each place rather than count printed digits.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — distance versus time: an original frisbee contest records throws of 6.207,6.270 and6.199 meters. A longer distance wins, so 6.270 is best. A swimming race records 27.213,27.231 and27.208 seconds; the smaller time wins, so 27.208 is fastest. Compare aligned thousandths in each case and explain why the desired ordering reverses with the context.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — construct between numbers: choose TWO different thousandth-place decimals strictly between 5.000 and5.010, such as5.002 and5.009, then compare them. Show that a hundredth-only decimal cannot supply a value strictly between these endpoints unless finer fractional places are introduced. Several valid pairs exist.",
+        "Optional previous source-aligned or independently authored extension — Assessment: exact comparisons and inequality signs can be checked, but justification, benchmark use, source sport context and choosing different correct decimals are teacher-reviewed. A numeric rank alone does not certify why the result is best in its domain."
       ],
       "KeyConcepts": [
         {
@@ -745,7 +751,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Assess decimal statements",
+          "Title": "Original source decimal equalities",
+          "Question": "Determine truth of 7.06=7.006,7.06=7.060,7.06=7.600.",
+          "Method": "Line up ones,tenths,hundredths,thousandths, adding trailing zeros as needed.",
+          "Steps": [
+            "7.06=7.060 so equality with7.006 is false.",
+            "7.060 and7.06 are equal.",
+            "7.600 has six tenths; 7.060 has zero tenths, not equal."
+          ],
+          "Answer": "False, True, False.",
+          "Check": "Zeros at END of fractional decimal don't change its value."
+        },
+        {
+          "Title": "Source Diego/Jada and Tyler/Han",
+          "Question": "Who throws farther: Diego5.10m or Jada5.01m? Who swims faster: Tyler35.15s or Han35.30s?",
+          "Method": "Larger distance but shorter elapsed time win.",
+          "Steps": [
+            "5.10m=5.100m >5.010m so Diego throws farther.",
+            "35.150s <35.300s so Tyler spends less time.",
+            "Explain distinct desired ordering for distance and time."
+          ],
+          "Answer": "Diego throws farther; Tyler swims faster.",
+          "Check": "Physical units and direction of comparison matter."
+        },
+        {
+          "Title": "Original source open Priya interval",
+          "Question": "Find TWO values more than5m but less than Jada5.01m.",
+          "Method": "Use the thousandths between5.000 and5.010.",
+          "Steps": [
+            "5.000<5.001<5.010.",
+            "5.000<5.009<5.010.",
+            "Numerous valid values, requiring teacher-reviewed explanation."
+          ],
+          "Answer": "Examples 5.001m and5.009m; not a unique key.",
+          "Check": "Both are strictly inside required interval."
+        },
+        {
+          "Title": "Optional existing extension — Assess decimal statements",
           "Question": "Which are true: 7.06=7.006,7.06=7.060,7.06=7.600?",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -757,7 +799,7 @@
           "Check": "Only adding a zero in the final thousandth place preserves value."
         },
         {
-          "Title": "Distance and swimming rankings",
+          "Title": "Optional existing extension — Distance and swimming rankings",
           "Question": "Find the farther throw among 6.207,6.270,6.199 meters and fastest swimmer among27.213,27.231,27.208 seconds.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -769,7 +811,7 @@
           "Check": "The unit and the performance objective determine the comparison."
         },
         {
-          "Title": "Choose two between",
+          "Title": "Optional existing extension — Choose two between",
           "Question": "Find two distinct decimal thousandths strictly between 5 and5.01.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -791,18 +833,66 @@
           "Mistake": "Assume a larger sport measurement always wins",
           "WhyWrong": "Some competitions reward shorter times rather than longer distances.",
           "Correction": "Identify whether the context seeks a maximum length or minimum duration."
+        },
+        {
+          "Mistake": "Use invented6.207-meter frisbee and27.213-second swim as printed original data",
+          "WhyWrong": "Printed source uses Diego5.10/Jada5.01m and Tyler35.15/Han35.30s and asks a thousandths interval.",
+          "Correction": "Restore four named source measures and all open constraints; retain invented examples only as optional extensions."
         }
       ],
       "SummaryPoints": [
-        "Align and compare tenths, hundredths and thousandths, not numeral length.",
-        "A distance and a race time can require opposite ranking directions.",
-        "Several choices between two decimal endpoints may be valid and need a reasoned justification.",
-        "Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 5 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-5/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
+        "Original warm-up three decimal equalities: false,true,false.",
+        "Diego5.10m > Jada5.01m, so Diego throws farther.",
+        "Tyler35.15s < Han35.30s, so Tyler swims faster.",
+        "Source Activity2 asks TWO values per 4 open relative-distance constraints, not one answer.",
+        "Priya can throw5.001m or5.009m between5m and5.01m; teacher checks source explanation.",
+        "Optional prior: Align and compare tenths, hundredths and thousandths, not numeral length.",
+        "Optional prior: A distance and a race time can require opposite ranking directions.",
+        "Optional prior: Several choices between two decimal endpoints may be valid and need a reasoned justification.",
+        "Optional prior: Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 5 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-5/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Compare Decimals — accessible place-value model",
+          "Title": "Original Grade5 L05 comparisons, distances and times",
+          "Description": "Source-exact values plus teacher-reviewed illustrative open interval choices.",
+          "Rows": [
+            {
+              "Label": "True/false",
+              "Cells": [
+                "7.06≠7.006",
+                "7.06=7.060",
+                "7.06≠7.600"
+              ]
+            },
+            {
+              "Label": "Frisbee",
+              "Cells": [
+                "Diego5.10m",
+                "Jada5.01m",
+                "Diego farther"
+              ]
+            },
+            {
+              "Label": "Swimming",
+              "Cells": [
+                "Tyler35.15s",
+                "Han35.30s",
+                "Tyler faster"
+              ]
+            },
+            {
+              "Label": "Priya interval",
+              "Cells": [
+                "5.000m < value <5.010m",
+                "e.g5.001/5.009"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Compare Decimals — accessible place-value model",
           "Description": "First-party text model of the source's mathematical structure, not a reproduction of original publisher images or student cards.",
           "Rows": [
             {
