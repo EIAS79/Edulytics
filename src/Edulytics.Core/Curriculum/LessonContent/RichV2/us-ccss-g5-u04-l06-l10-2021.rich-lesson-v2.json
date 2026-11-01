@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -766,11 +766,12 @@
       "CultureCode": "en",
       "Title": "World’s Record Folk Dance",
       "ExplanationParagraphs": [
-        "Goal: use the meaning of division to find how many equal-sized groups make up a multi-thousand-person event, applying multiplication as an inverse check and comparing group sizes. The 2021 source intentionally permits many student strategies before formal partial-quotients algorithms are established in later lessons.",
-        "Warm-up: discuss an original picture-free event model consisting of 60 groups of eight participants plus four additional groups. Ask students how many participants that represents and what repeating group sizes reveal about the array; the source dance photo and event-specific images are not copied.",
-        "Activity 1 — original example with changed numbers: an imagined folk-dance celebration has 3,456 dancers arranged in groups of eight. Begin with 400 groups×8=3200, leaving 256. Add 30 groups×8=240 and 2 groups×8=16; so 400+30+2=432 groups. Explain every partial number in context and verify 432×8=3456.",
-        "Activity 2 — keep the same number of dancers but use groups of four and two. There are 3456÷4=864 four-dancer groups and 3456÷2=1728 two-dancer groups. Explain by regrouping why each group-of-eight creates two groups of four and four groups of two, so the number of groups doubles and quadruples.",
-        "Teacher review: the source's world record event asks for a learner-selected division strategy, comparing it against other people's methods, and relating changed divisors to changed groups. Exact quotients are machine-checkable but cannot replace the explanation and interpretation. No source-specific protected photograph or gated response copied."
+        "Original IM 2021 G5 U04:L10 World's Record Folk Dance: interpret WHOLE-number division as number of equal groups in a source world-record event involving exactly 4704 dancers in Peru. Keep the original total fixed as group size changes; students choose meaningful multiplication and equal-grouping diagrams.",
+        "Warm-up How Many Do You See: World Record Event: pupils interpret the original image and discuss how dancers might form groups. The publisher/event image and exact arrangement were not separately recovered or reproduced; do NOT invent a source photo count or a separate 3456-dancer event as the textbook's actual context.",
+        "Activity 1 How Many Groups of 8 Dancers?: 4704 Peru dancers can form 4704÷8=588 complete groups of eight. Use mental partial quotients or familiar multiples: 500 groups=4000 dancers, 80 groups=640, 8 groups=64; 500+80+8=588. Confirm 588×8=4704. Teacher reviews actual division diagram and learner strategy.",
+        "Activity 2 More Groups of Dancers: SAME 4704 people grouped in fours yield 4704÷4=1176 groups; in twos yield 4704÷2=2352 groups. Explain how halving group size doubles the group count and compare original source partners' approaches. Check with 1176×4=4704 and 2352×2=4704.",
+        "Source synthesis: these are division-by-whole contexts, not multiplying the same numbers as a fixed 3-digit×2-digit product. Exact selected numeric cases cover only three known quotients. Original partner explanation, chosen diagram, photo interpretation and self-justified grouping are TEACHER_REVIEW_REQUIRED; independently authored Edulytiks Cool-down uses 5232 dancers.",
+        "Previous first-party 3456-dancer numbers remain valid optional extensions, never mislabeled as the original Peru world record."
       ],
       "KeyConcepts": [
         {
@@ -794,7 +795,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "How many groups of eight?",
+          "Title": "Source Peru 4704 dancers in eights",
+          "Question": "How many groups of 8 can 4704 original source dancers form?",
+          "Method": "Source-exact group-count division with inverse multiplication checking; diagrams teacher-reviewed.",
+          "Steps": [
+            "Count 500×8=4000.",
+            "Count 80×8=640 and 8×8=64.",
+            "Add 500+80+8 groups, checking 4000+640+64=4704."
+          ],
+          "Answer": "588 groups of 8.",
+          "Check": "588×8=4704."
+        },
+        {
+          "Title": "Source Peru 4704 dancers in fours",
+          "Question": "How many groups of 4 from the same 4704 dancers?",
+          "Method": "Source-exact group-count division with inverse multiplication checking; diagrams teacher-reviewed.",
+          "Steps": [
+            "Use inverse multiplication or halving of 8-person groups.",
+            "Since every 8-person group splits into two 4-person groups, double 588.",
+            "Check 1176×4=4704."
+          ],
+          "Answer": "1176 groups of 4.",
+          "Check": "4704÷4=1176."
+        },
+        {
+          "Title": "Source Peru 4704 dancers in pairs",
+          "Question": "How many two-dancer groups from 4704?",
+          "Method": "Source-exact group-count division with inverse multiplication checking; diagrams teacher-reviewed.",
+          "Steps": [
+            "Each four-person group becomes two pairs.",
+            "Double 1176 to get 2352.",
+            "Check all 4704 people are included."
+          ],
+          "Answer": "2352 groups of 2.",
+          "Check": "2352×2=4704."
+        },
+        {
+          "Title": "Optional previous extension — How many groups of eight?",
           "Question": "3456 dancers join groups of eight. How many groups?",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -806,7 +843,7 @@
           "Check": "432×8=3456 dancers."
         },
         {
-          "Title": "Compare groups of four",
+          "Title": "Optional previous extension — Compare groups of four",
           "Question": "The same 3456 dancers form groups of four. How many?",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -818,7 +855,7 @@
           "Check": "864×4=3456."
         },
         {
-          "Title": "Compare groups of two",
+          "Title": "Optional previous extension — Compare groups of two",
           "Question": "How many pairs can 3456 dancers make?",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -840,42 +877,56 @@
           "Mistake": "Claim fewer people per group means fewer groups",
           "WhyWrong": "With a fixed positive total, smaller groups mean more groups.",
           "Correction": "Relate groups of eight to two groups of four or four groups of two."
+        },
+        {
+          "Mistake": "Present fictional 3456 dancers as the original textbook Peru world record",
+          "WhyWrong": "Printed source explicitly specifies 4704 dancers and asks for 8/4/2-person groups.",
+          "Correction": "Restore 4704÷8/4/2 source tasks, and preserve alternate values only as an extension."
         }
       ],
       "SummaryPoints": [
-        "Division and multiplication describe the same grouping relationship.",
-        "Partial quotient groups can be combined into an exact quotient.",
-        "Method choice, contextual labels and comparisons require teacher review.",
-        "2021 first-edition IM K–5 Grade 5 Unit 4 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-10/lesson.html. Public task HTML reviewed, original Student Task PDF, gated Cool-down, and separate asset rights not independently reviewed. Edulytiks examples independently authored."
+        "2021 original Peru event has exactly 4704 dancers, NOT an invented 3456.",
+        "4704÷8=588 groups; 4704÷4=1176; 4704÷2=2352.",
+        "Halving group size doubles the number of groups while original dancer total remains fixed.",
+        "Original photo interpretation, diagrams, inverse-check explanations and partner reasoning are teacher reviewed.",
+        "Independent Edulytiks Cool-down: 5232÷8=654 groups of eight."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "World’s Record Folk Dance — reasoning model",
-          "Description": "Original accessible text-only mathematical table; source diagrams, game pieces and photographs are not reproduced.",
+          "Title": "Original 4704-dancer source group sizes",
+          "Description": "First-party accessible source-number table, without copying original event images.",
           "Rows": [
             {
-              "Label": "Group size",
+              "Label": "Original dancers",
               "Cells": [
-                "8 people",
-                "4 people",
-                "2 people"
+                "4704",
+                "4704",
+                "4704"
               ]
             },
             {
-              "Label": "Number of groups",
+              "Label": "Dancers per group",
               "Cells": [
-                "432",
-                "864",
-                "1728"
+                "8",
+                "4",
+                "2"
+              ]
+            },
+            {
+              "Label": "Complete groups",
+              "Cells": [
+                "588",
+                "1176",
+                "2352"
               ]
             },
             {
               "Label": "Inverse multiplication",
               "Cells": [
-                "432×8",
-                "864×4",
-                "1728×2"
+                "588×8=4704",
+                "1176×4=4704",
+                "2352×2=4704"
               ]
             }
           ]
