@@ -298,7 +298,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 " byGrade=" + string.Join(",",
                     codes.GroupBy(code =>
                         System.Text.RegularExpressions.Regex.Match(
-                            code, @":G\\d+:").Value,
+                            code, @":G\d+:").Value,
                         StringComparer.Ordinal)
                     .OrderBy(group => group.Key, StringComparer.Ordinal)
                     .Select(group => $"{group.Key}:{group.Count()}")));
