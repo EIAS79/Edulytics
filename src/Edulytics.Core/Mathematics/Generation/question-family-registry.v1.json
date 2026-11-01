@@ -510,16 +510,16 @@
     {
       "id": "usccss.g5.u07.l03.source_shared_coordinate_lines",
       "version": 1,
-      "skillId": "supporting.decimals.core",
+      "skillId": "supporting.geometry.properties",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
       ],
-      "answerType": "exact_integer",
-      "verificationPolicy": "im2021-g5-u07-l03-bounded-source-numeric-choice",
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u07-l03-bounded-coordinate-choice",
       "representations": [
         "numeric",
-        "area_model"
+        "diagram"
       ],
       "status": "ShadowVerified",
       "lessonPracticeRouting": true,
@@ -528,16 +528,16 @@
     {
       "id": "usccss.g5.u07.l02.original_plot_specific_points",
       "version": 1,
-      "skillId": "supporting.decimals.core",
+      "skillId": "supporting.geometry.properties",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
       ],
-      "answerType": "exact_integer",
-      "verificationPolicy": "im2021-g5-u07-l02-bounded-source-numeric-choice",
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u07-l02-bounded-coordinate-choice",
       "representations": [
         "numeric",
-        "area_model"
+        "diagram"
       ],
       "status": "ShadowVerified",
       "lessonPracticeRouting": true,
@@ -546,16 +546,16 @@
     {
       "id": "usccss.g5.u07.l01.coordinates_description_vocabulary",
       "version": 1,
-      "skillId": "supporting.decimals.core",
+      "skillId": "supporting.geometry.properties",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
       ],
-      "answerType": "exact_integer",
-      "verificationPolicy": "im2021-g5-u07-l01-bounded-source-numeric-choice",
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u07-l01-bounded-coordinate-choice",
       "representations": [
         "numeric",
-        "area_model"
+        "diagram"
       ],
       "status": "ShadowVerified",
       "lessonPracticeRouting": true,
@@ -2847,7 +2847,7 @@
       "productionRouting": false,
       "lessonPracticeRouting": true
     },
-{
+    {
       "id": "usccss.g5.u03.l03.unit_fraction_equation_value",
       "version": 1,
       "skillId": "supporting.fractions.multiply_divide",

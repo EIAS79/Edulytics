@@ -1727,7 +1727,7 @@ public static class LessonPracticeContractRegistry
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L13"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U07:L13", "geometry.perimeter_area",
-            "G5_SOURCE_UNIT7_LESSON_13_GEOMETRY_ATTRIBUTES",
+            "G5_SOURCE_UNIT7_LESSON_13_RECTANGLE_AREA_PERIMETER",
             ["usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs"],
             "IM2021_G5_U07_L13_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
@@ -1735,7 +1735,7 @@ public static class LessonPracticeContractRegistry
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L12"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U07:L12", "supporting.geometry.properties",
-            "G5_SOURCE_UNIT7_LESSON_12_GEOMETRY_ATTRIBUTES",
+            "G5_SOURCE_UNIT7_LESSON_12_COIN_COORDINATES",
             ["usccss.g5.u07.l12.source_coin_graph_context"],
             "IM2021_G5_U07_L12_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
@@ -1743,7 +1743,7 @@ public static class LessonPracticeContractRegistry
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L11"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U07:L11", "supporting.sequences.core",
-            "G5_SOURCE_UNIT7_LESSON_11_GEOMETRY_ATTRIBUTES",
+            "G5_SOURCE_UNIT7_LESSON_11_SEQUENCE_CORRESPONDING_TERMS",
             ["usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs"],
             "IM2021_G5_U07_L11_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
@@ -1751,7 +1751,7 @@ public static class LessonPracticeContractRegistry
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L10"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U07:L10", "supporting.sequences.core",
-            "G5_SOURCE_UNIT7_LESSON_10_GEOMETRY_ATTRIBUTES",
+            "G5_SOURCE_UNIT7_LESSON_10_SEQUENCE_CORRESPONDING_TERMS",
             ["usccss.g5.u07.l10.source_recursive_patterns_offset"],
             "IM2021_G5_U07_L10_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
@@ -1759,7 +1759,7 @@ public static class LessonPracticeContractRegistry
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L09"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U07:L09", "supporting.sequences.core",
-            "G5_SOURCE_UNIT7_LESSON_09_GEOMETRY_ATTRIBUTES",
+            "G5_SOURCE_UNIT7_LESSON_09_SEQUENCE_CORRESPONDING_TERMS",
             ["usccss.g5.u07.l09.source_generated_patterns_two_rules"],
             "IM2021_G5_U07_L09_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
@@ -1806,26 +1806,26 @@ public static class LessonPracticeContractRegistry
         // IM K5 2021 G5 U07:L03: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L03"] = new LessonPracticeContract(
-            "PED:US-CCSS-MATH:G5:U07:L03", "supporting.decimals.core",
-            "G5_SOURCE_UNIT5_LESSON_03_DECIMAL_PLACE_VALUE",
+            "PED:US-CCSS-MATH:G5:U07:L03", "supporting.geometry.properties",
+            "G5_SOURCE_UNIT7_LESSON_03_COORDINATE_POINTS",
             ["usccss.g5.u07.l03.source_shared_coordinate_lines"],
-            "IM2021_G5_U07_L03_DECIMAL_TEACHER_REVIEW",
+            "IM2021_G5_U07_L03_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
         // IM K5 2021 G5 U07:L02: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L02"] = new LessonPracticeContract(
-            "PED:US-CCSS-MATH:G5:U07:L02", "supporting.decimals.core",
-            "G5_SOURCE_UNIT5_LESSON_02_DECIMAL_PLACE_VALUE",
+            "PED:US-CCSS-MATH:G5:U07:L02", "supporting.geometry.properties",
+            "G5_SOURCE_UNIT7_LESSON_02_COORDINATE_POINTS",
             ["usccss.g5.u07.l02.original_plot_specific_points"],
-            "IM2021_G5_U07_L02_DECIMAL_TEACHER_REVIEW",
+            "IM2021_G5_U07_L02_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
         // IM K5 2021 G5 U07:L01: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L01"] = new LessonPracticeContract(
-            "PED:US-CCSS-MATH:G5:U07:L01", "supporting.decimals.core",
-            "G5_SOURCE_UNIT5_LESSON_01_DECIMAL_PLACE_VALUE",
+            "PED:US-CCSS-MATH:G5:U07:L01", "supporting.geometry.properties",
+            "G5_SOURCE_UNIT7_LESSON_01_COORDINATE_POINTS",
             ["usccss.g5.u07.l01.coordinates_description_vocabulary"],
-            "IM2021_G5_U07_L01_DECIMAL_TEACHER_REVIEW",
+            "IM2021_G5_U07_L01_GEOMETRY_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
         // IM K5 2021 G5 U06:L21: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
