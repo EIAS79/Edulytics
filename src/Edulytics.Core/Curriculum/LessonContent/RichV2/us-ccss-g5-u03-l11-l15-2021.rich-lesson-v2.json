@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v7-20261101",
+  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -337,11 +337,12 @@
       "CultureCode": "en",
       "Title": "Divide Whole Numbers by Unit Fractions",
       "ExplanationParagraphs": [
-        "Goal: count how many unit-fraction sized groups fit into a whole-number length, using paper or cloth strips, rather than dividing a unit fraction into more recipients. The 2021 source connects this to quilt strips of different lengths and asks students to predict how the piece count changes as the cut piece becomes shorter.",
-        "Warm-up: notice/describe a quilt arrangement of rectangular fabric strips without using the source photograph, which has separate attribution. Compare strips measuring the same total length but cut into different-sized pieces.",
-        "Activity 1 — original paper strip: start with a 3-meter strip. Cut it into half-meter pieces; there are six pieces. Reset to a whole 3-meter strip, cut it into third-meter pieces; there are nine. Reset again, cut into quarter-meter pieces; there are twelve. Use accurate unit partitions or a nonvisual equal-interval text description.",
-        "Activity 2 — generalize: in a positive whole-number length n, there are b pieces of length 1/b per original unit. Thus n÷(1/b)=n×b, not n/b. Explain how a SMALLER fractional divisor results in a GREATER number of pieces, in contrast with dividing one fraction among b students.",
-        "Assessment: source asks learners to interpret and justify physical strip cuts; a numeric count is only a supporting check. Teacher reviews correct equal-length cutting, unit references and explanation. Source image from a third-party licensed photo is not copied."
+        "Purpose of IM 2021 U03:L13: count how many 1/b-foot-sized equal groups fit into an ORIGINAL WHOLE-NUMBER FEET LENGTH; do not confuse total length or units with the number of pieces. The source explicitly uses paper strips and quilt visual context.",
+        "Warm-up Notice and Wonder: Quilts — discuss the source Gee's Bend quiltmakers and rectangular fabric arrangements respectfully. Original photograph is credited CC BY 2.0 and is not copied without separate image rights verification. Different colored strips are measured in feet.",
+        "Activity 1 Paper Strips: the source gives THREE original strips, each exactly TWO FEET long. Red cut into 1/2-foot pieces produces 4; green 1/3-foot produces 6; yellow 1/4-foot produces 8. Explain why all originals have same 2-foot whole and why smaller fractional group size produces more pieces.",
+        "Activity 2 More Paper Strips: Kiran cuts a TWO-FOOT yellow strip into 1/6-foot pieces so 2÷(1/6)=12 pieces. Explain a distinct THREE-FOOT strip cut into 1/6-foot segments: 3÷(1/6)=18. Students draw, interpret actual equal intervals and describe the context of the quotient.",
+        "Students explain why 2÷(1/b)=2b, but dividing a unit fraction by 2 is a different operation. A prior correct 3-meter numerical example remains only an optional extension, not the source Activity 1.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -365,7 +366,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Half-meter pieces",
+          "Title": "Original three two-foot source strips",
+          "Question": "How many pieces from 2 feet of red, green and yellow paper cut respectively into 1/2, 1/3 and 1/4 foot?",
+          "Method": "Count unit-fraction-sized groups in a fixed original 2-foot strip.",
+          "Steps": [
+            "Red: two whole feet with two half-feet per foot → four.",
+            "Green: three third-feet per foot → six.",
+            "Yellow: four quarter-feet per foot → eight."
+          ],
+          "Answer": "Red 4, green 6, yellow 8 pieces.",
+          "Check": "2÷1/2=4; 2÷1/3=6; 2÷1/4=8."
+        },
+        {
+          "Title": "Source Kiran sixth-foot cuts",
+          "Question": "Kiran cuts 2 feet of yellow strip into 1/6-foot pieces. How many?",
+          "Method": "Group count from equivalent sixth-foot segments.",
+          "Steps": [
+            "One foot has six pieces of length 1/6 foot.",
+            "Two feet contain 2×6 such pieces.",
+            "Explain what quotient means in the strip context."
+          ],
+          "Answer": "12 pieces.",
+          "Check": "2÷1/6=12."
+        },
+        {
+          "Title": "Source three-foot strip sixths",
+          "Question": "Explain 3÷1/6=18 in feet-strip language.",
+          "Method": "Three original one-foot units each contribute six sixth-foot pieces.",
+          "Steps": [
+            "Start with 3 whole feet.",
+            "Split each full foot into six identical sixth-foot segments.",
+            "Count all 18 groups."
+          ],
+          "Answer": "18 pieces.",
+          "Check": "18 × 1/6 foot = 3 feet."
+        },
+        {
+          "Title": "Optional existing extension — Half-meter pieces",
           "Question": "A 3-meter strip is cut into 1/2-meter pieces. How many?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -377,7 +414,7 @@
           "Check": "6×1/2 meter=3 meters."
         },
         {
-          "Title": "Third-meter pieces",
+          "Title": "Optional existing extension — Third-meter pieces",
           "Question": "The same 3-meter strip is cut into 1/3-meter pieces.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -389,7 +426,7 @@
           "Check": "9×1/3 meter=3 meters."
         },
         {
-          "Title": "Quarter-meter pieces",
+          "Title": "Optional existing extension — Quarter-meter pieces",
           "Question": "A 3-meter strip is cut into 1/4-meter pieces.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -411,42 +448,54 @@
           "Mistake": "Use unequal cuts while claiming equal unit-fraction pieces",
           "WhyWrong": "The divisor describes one consistent fraction of a meter.",
           "Correction": "Mark equal 1/4-meter intervals and count all complete pieces."
+        },
+        {
+          "Mistake": "Use a three-meter strip as the original source's three paper strips",
+          "WhyWrong": "All three source Activity 1 paper strips are two FEET, so half/third/quarter counts are 4/6/8 not 6/9/12.",
+          "Correction": "Restore the source's two-foot red green yellow strips; use 3-foot only in the separate Activity 2 example and meter models only as extensions."
         }
       ],
       "SummaryPoints": [
-        "Dividing whole lengths by positive unit fractions counts more small pieces.",
-        "Each whole contains b parts of size 1/b, so n wholes contain nb parts.",
-        "Hands-on cutting and corresponding quotient explanations are teacher reviewed.",
-        "2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 13, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-13/lesson.html. First-party Edulytiks examples; public teacher/student-facing HTML activity reviewed but original Student Task PDF and gated Cool-down not independently checked."
+        "Original red, green, yellow strips each 2 feet: halves give 4, thirds 6, quarters 8.",
+        "Kiran's 2-foot yellow strip divided into sixths gives 12; separate 3-foot example gives 18.",
+        "Group count 2÷(1/b)=2b for positive whole b; do not use 3-meter substitute.",
+        "Teacher reviews actual physical strips, quilt context and drawings.",
+        "Independent Edulytiks paper strip Cool-down checks 4÷1/8=32 pieces."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Divide Whole Numbers by Unit Fractions — quotient meaning",
-          "Description": "Original text-only equal-group model; does not reproduce public publisher image cards or protected responses.",
+          "Title": "Original source two-foot strips and Kiran",
+          "Description": "Edulytiks original accessible source-number table; paper-strip drawings and source quilt photograph require separate teacher verification.",
           "Rows": [
             {
-              "Label": "Starting length",
+              "Label": "Original strip length",
               "Cells": [
-                "3 m",
-                "3 m",
-                "3 m"
+                "2 ft",
+                "2 ft",
+                "2 ft",
+                "2 ft",
+                "3 ft"
               ]
             },
             {
-              "Label": "Piece length",
+              "Label": "Cut length",
               "Cells": [
-                "1/2 m",
-                "1/3 m",
-                "1/4 m"
+                "1/2 ft",
+                "1/3 ft",
+                "1/4 ft",
+                "1/6 ft",
+                "1/6 ft"
               ]
             },
             {
-              "Label": "Number of pieces",
+              "Label": "Pieces",
               "Cells": [
+                "4",
                 "6",
-                "9",
-                "12"
+                "8",
+                "12",
+                "18"
               ]
             }
           ]

@@ -41,6 +41,11 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l12.quarter_division_pattern", "Original Grade 5 L12 source Activity 3 quarter-of-a-whole shared among 2 groups", "(1/4) ÷ 2", 1, 8, "of the original whole"),
         new("usccss.g5.u03.l12.quarter_division_pattern", "Original Grade 5 L12 source Activity 3 quarter-of-a-whole shared among 3 groups", "(1/4) ÷ 3", 1, 12, "of the original whole"),
         new("usccss.g5.u03.l12.quarter_division_pattern", "Original Grade 5 L12 source Activity 3 quarter-of-a-whole shared among 4 groups", "(1/4) ÷ 4", 1, 16, "of the original whole"),
+        new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 2 feet long is cut into segments each 1/2 foot. Teacher checks colored paper and physical cut lengths", "2 ÷ (1/2)", 4, 1, "equal strip pieces"),
+        new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 2 feet long is cut into segments each 1/3 foot. Teacher checks colored paper and physical cut lengths", "2 ÷ (1/3)", 6, 1, "equal strip pieces"),
+        new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 2 feet long is cut into segments each 1/4 foot. Teacher checks colored paper and physical cut lengths", "2 ÷ (1/4)", 8, 1, "equal strip pieces"),
+        new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 2 feet long is cut into segments each 1/6 foot. Teacher checks colored paper and physical cut lengths", "2 ÷ (1/6)", 12, 1, "equal strip pieces"),
+        new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 3 feet long is cut into segments each 1/6 foot. Teacher checks colored paper and physical cut lengths", "3 ÷ (1/6)", 18, 1, "equal strip pieces"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>
