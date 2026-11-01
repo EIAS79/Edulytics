@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l02-l03-l05-im2021-original-richv2-v8-20261029",
+  "ContentVersion": "g5-u08-l02-l03-l05-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "More Multiplication",
       "ExplanationParagraphs": [
-        "Goal: assess whether partial-product multiplication of a large whole number is plausible, locate a place-value error in another learner's written work, and then practice products with trailing zeros. The source includes an intentionally unreasonable solution; pupils must critique what they agree and disagree with.",
-        "Warm-up: estimate 740×36. Since 740×30=22200, any purported exact product smaller than 20000 is suspect. Estimation is a check, not a replacement for careful multiplication.",
-        "Activity 1 — independently authored error critique: a fictional student correctly calculates 740×6=4440 but records the second partial product for the factor 30 as 2220 rather than 22200, then claims the total is6660. Explain why the 3 in 36 represents THREE TENS, so 740×30=22200, and the correct total is26640. Review the student's first partial product without blindly rejecting every step.",
-        "Activity 2 — trailing zeros: calculate 670×89 as 67×89×10=59630 and 6700×89 as67×89×100=596300. Explain why increasing one factor tenfold increases the product tenfold and contrast the reasoning with merely guessing a zero count.",
-        "Assessment: the learner's diagnostic argument, independently revised working, reasonable estimate and place-value language must be reviewed by a teacher. Numeric products may be checked but do not replace interpreting another student's erroneous written method."
+        "Original IM2021 G5 U08:L02 practices standard algorithm and place-value scaling for products of multi-digit numbers including trailing zeros; children inspect another pupil's WRONG written multiplication before correcting it.",
+        "Warm-up Estimation Exploration original9999×896, close to10000×900≈9000000; exact product8959104. Too-low/about-right/too-high responses are estimates, not fixed printed choices.",
+        "Activity1 Kiran's Work original multiplication650×27: his displayed first partial650×7=4550 is correct; he writes second partial1300, but 2 represents TWENTY so 650×20=13000. Printed total5850 is incorrect; correct sum4550+13000=17550. Teacher reviews what is right and wrong in image rather than replacing with unrelated740×36 example.",
+        "Activity2 Zero the Hero has four original written multiplication image problems labeled1–4 whose exact factors are not recoverable from text-only captions. Do not invent them or claim all source products verified without image inspection. Teacher checks actual figures; bounded selected cases cover Kiran and the printed warm-up.",
+        "Previous first-party740×36 and670×89 examples remain optional extensions clearly labeled. A–B–C authoring handoff is not Stage D or proof of a runtime student renderer.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: assess whether partial-product multiplication of a large whole number is plausible, locate a place-value error in another learner's written work, and then practice products with trailing zeros. The source includes an intentionally unreasonable solution; pupils must critique what they agree and disagree with.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: estimate 740×36. Since 740×30=22200, any purported exact product smaller than 20000 is suspect. Estimation is a check, not a replacement for careful multiplication.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — independently authored error critique: a fictional student correctly calculates 740×6=4440 but records the second partial product for the factor 30 as 2220 rather than 22200, then claims the total is6660. Explain why the 3 in 36 represents THREE TENS, so 740×30=22200, and the correct total is26640. Review the student's first partial product without blindly rejecting every step.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — trailing zeros: calculate 670×89 as 67×89×10=59630 and 6700×89 as67×89×100=596300. Explain why increasing one factor tenfold increases the product tenfold and contrast the reasoning with merely guessing a zero count.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the learner's diagnostic argument, independently revised working, reasonable estimate and place-value language must be reviewed by a teacher. Numeric products may be checked but do not replace interpreting another student's erroneous written method."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Find the student error",
+          "Title": "Source exact 1 — More Multiplication",
+          "Question": "Original source warmup9999×896 exact product",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "8959104",
+          "Check": "Original numeric source example; incorrect distractors 8960000 and 8959000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — More Multiplication",
+          "Question": "Original source Kiran650×27 exact product",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "17550",
+          "Check": "Original numeric source example; incorrect distractors 5850 and 15750 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — More Multiplication",
+          "Question": "Original source Kiran first partial product650×7",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "4550",
+          "Check": "Original numeric source example; incorrect distractors 4500 and 455 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — More Multiplication",
+          "Question": "Original source Kiran second partial product650×20",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "13000",
+          "Check": "Original numeric source example; incorrect distractors 1300 and 130 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Find the student error",
           "Question": "Why is 740×36=6660 impossible?",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "740×36=26640; teacher evaluates critique of the wrong place value."
         },
         {
-          "Title": "Multiply with one trailing zero",
+          "Title": "Optional existing extension — Multiply with one trailing zero",
           "Question": "Find 670×89.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "670×(90−1)=60300−670=59630."
         },
         {
-          "Title": "Scale by another ten",
+          "Title": "Optional existing extension — Scale by another ten",
           "Question": "Find 6700×89.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -82,18 +136,75 @@
           "Mistake": "Judge a result solely because its final digit looks plausible",
           "WhyWrong": "Reasonableness depends on magnitude and all partial products.",
           "Correction": "Compare the proposed product against 740×30 first."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
         }
       ],
       "SummaryPoints": [
-        "Diagnose the incorrect PLACE VALUE, retaining correct portions of a peer's method.",
-        "Check the order of magnitude before computing and correct trailing-zero scaling.",
-        "The source's annotated student-work critique requires teacher review.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-2/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
+        "Original warmup exact8959104.",
+        "Kiran first partial4550 correct, second must13000, total17550 not5850.",
+        "Source four image-only problems teacher checked.",
+        "Optional prior: Diagnose the incorrect PLACE VALUE, retaining correct portions of a peer's method.",
+        "Optional prior: Check the order of magnitude before computing and correct trailing-zero scaling.",
+        "Optional prior: The source's annotated student-work critique requires teacher review.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-2/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "More Multiplication — first-party model",
+          "Title": "More Multiplication — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source warmup9999×896 exact product",
+              "Cells": [
+                "8959104",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Kiran650×27 exact product",
+              "Cells": [
+                "17550",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Kiran first partial product650×7",
+              "Cells": [
+                "4550",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Kiran second partial product650×20",
+              "Cells": [
+                "13000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Kiran printed total5850 for650×27 is correct?",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source factor27 tens digit2 has value",
+              "Cells": [
+                "20",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — More Multiplication — first-party model",
           "Description": "Original text table for accessibility; no publisher handwritten-work image or copyrighted lesson art copied.",
           "Rows": [
             {

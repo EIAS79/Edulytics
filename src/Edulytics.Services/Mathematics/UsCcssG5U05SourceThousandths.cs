@@ -719,6 +719,12 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits6,3,1: expression giving largest product", "31×6", "61×3", "63×1"),
         new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,3,2,5: largest product", "3816", "3796", "3724"),
         new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,3,2,5: arrangement with largest product", "72×53", "73×52", "532×7"),
+        new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source warmup9999×896 exact product", "8959104", "8960000", "8959000"),
+        new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source Kiran650×27 exact product", "17550", "5850", "15750"),
+        new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source Kiran first partial product650×7", "4550", "4500", "455"),
+        new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source Kiran second partial product650×20", "13000", "1300", "130"),
+        new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original Kiran printed total5850 for650×27 is correct?", "false", "true", "unknown"),
+        new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source factor27 tens digit2 has value", "20", "2", "200"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
