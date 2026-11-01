@@ -4,6 +4,36 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-eight-hexagon-piece-count-times-unit-triangle-area",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l01.structured_tiling_coverage",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-two-square-four-triangle-disjoint-half-cell-coverage-not-area-sum-alone",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g4.u02.l03.same_denominator",
       "version": 1,
       "skillId": "fractions.compare.unlike_denominators",

@@ -1,0 +1,229 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g6-u01-l15-l16-nets-area-volume-source-candidate-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G6:U01:L15",
+      "CultureCode": "en",
+      "Title": "More Nets, More Surface Area",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct foldable prism/pyramid nets, use their polygons to calculate surface area, and distinguish surface usage from the number of unit cubes a box holds.",
+        "A polyhedron net must show each outside face exactly once, with correctly connected matching edges. A triangular prism has two matching triangles and three lateral rectangles. A square pyramid has one square and four triangular faces. Label the faces with lengths and right-angle heights before finding their areas.",
+        "Different rectangular boxes can have equal cubic-unit capacity yet require different amounts of wrapping or cardboard. Compare surface area as area, not volume. A net or student-built original polyhedron needs teacher review of face connections, validity and explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Foldable face-adjacency net",
+          "Definition": "A net is a planar layout of every outer polygon of a solid, connected to reproduce its edges when folded.",
+          "Rule": "Draw every face, match shared-edge lengths, and check no folded overlap.",
+          "Example": "A triangular prism includes two congruent triangles and three rectangles."
+        },
+        {
+          "Title": "Net surface area",
+          "Definition": "The total two-dimensional exterior of a solid equals the sum of the areas in any valid net.",
+          "Rule": "Add every face exactly once in square units.",
+          "Example": "A triangular prism with 3–4–5 end triangles and length 6 has area 2×6 + 6(3+4+5)=84 square centimeters."
+        },
+        {
+          "Title": "Surface versus capacity",
+          "Definition": "Surface area measures material for an outside shell; volume measures enclosed unit cubes.",
+          "Rule": "Calculate both independently when comparing boxes, with area in cm² and volume in cm³.",
+          "Example": "A 2×3×6 and a 3×3×4 box both hold 36 cm³ but have surface areas 72 cm² and 66 cm²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Net of a triangular prism",
+          "Question": "A triangular-prism base is a right triangle with sides 3, 4 and 5 cm, and the prism is 6 cm long. Find exterior area.",
+          "Method": "Enumerate the two triangular bases and three rectangles in a valid net.",
+          "Steps": [
+            "Each right triangle area is 3×4÷2=6 cm²; both total 12 cm².",
+            "Lateral rectangle areas are 3×6=18, 4×6=24, and 5×6=30 cm².",
+            "Total net area is 12+18+24+30=84 cm².",
+            "Verify all five faces connect along matching edge lengths and fold into the prism."
+          ],
+          "Answer": "84 cm² of exterior surface.",
+          "Check": "The two triangle bases and all three lateral faces must each be counted once."
+        },
+        {
+          "Title": "Compare surface and capacity of two boxes",
+          "Question": "Which uses less cardboard: a closed 2×3×6 cm prism or a closed 3×3×4 cm prism, and which contains more unit cubes?",
+          "Method": "Calculate external face areas and volumes separately.",
+          "Steps": [
+            "Box A area is 2(2×3+2×6+3×6)=2(6+12+18)=72 cm².",
+            "Box B area is 2(3×3+3×4+3×4)=2(9+12+12)=66 cm².",
+            "Both volumes are 36 cm³, as 2×3×6=3×3×4=36.",
+            "Conclude B uses 6 cm² less material but has equal ideal cubic capacity."
+          ],
+          "Answer": "Box B uses less cardboard (66 vs 72 cm²), and both hold 36 cm³.",
+          "Check": "Neither conclusion follows solely from the other statistic; calculate both."
+        },
+        {
+          "Title": "Construct an original polyhedron net",
+          "Question": "Draw a foldable triangular-prism or square-pyramid net with all face lengths labeled, then compare it with a peer's different net of the same solid.",
+          "Method": "Teacher-reviewed drawing and explanation with a face inventory.",
+          "Steps": [
+            "Name the solid and list the required polygon faces.",
+            "Draw a connected net with matched shared edges and dimensions.",
+            "Explain how every face folds to the solid without overlap.",
+            "Calculate total area and compare with another valid net."
+          ],
+          "Answer": "Multiple valid nets can exist for the same solid, but they must represent the same faces and surface area.",
+          "Check": "Teacher or peer validates polygon count, connection, dimension scale and geometric justification; a single numeric result cannot prove foldability."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using all correct polygons but attaching faces along incompatible edges.",
+          "WhyWrong": "The resulting planar drawing cannot fold into the intended solid without overlap or mismatch.",
+          "Correction": "Label the solid's actual face adjacency and match shared-edge lengths in the net."
+        },
+        {
+          "Mistake": "Claiming that equal box volumes require equal amounts of cardboard.",
+          "WhyWrong": "A change of dimensions can alter total face areas without changing the three-dimensional product.",
+          "Correction": "Compute area and volume separately in different units and compare the two outputs."
+        }
+      ],
+      "SummaryPoints": [
+        "A valid net contains all outer faces, with matched edges and connections.",
+        "Add polygonal face areas in square units; volume describes cubic-unit capacity.",
+        "Drawn nets require teacher review for foldability beyond correct arithmetic."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Prism net faces and box comparisons",
+          "Description": "Text-accessible original net plan: two right triangles with side lengths 3,4,5 cm and three attached rectangles of dimensions 3-by-6,4-by-6,5-by-6 cm. Their areas total 84 cm². Separately compare a 2-by-3-by-6 box (area 72, volume 36) and a 3-by-3-by-4 box (area 66, volume 36); all lengths in centimeters.",
+          "PrimaryLabel": "2 × 6 + 18 + 24 + 30 = 84 cm²",
+          "SecondaryLabel": "Equal volume 36 cm³, areas 72 and 66 cm²",
+          "Items": [
+            "Triangle bases: 6 + 6",
+            "Rectangles: 18 + 24 + 30",
+            "Valid net needs shared-edge matching"
+          ],
+          "SecondaryItems": [
+            "Box A: 72 cm², 36 cm³",
+            "Box B: 66 cm², 36 cm³"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G6:U01:L16",
+      "CultureCode": "en",
+      "Title": "Distinguishing Between Surface Area and Volume",
+      "ExplanationParagraphs": [
+        "Learning goal: Compare length, surface area and volume with appropriate dimensions, and construct examples showing these are independent attributes.",
+        "Length counts one-dimensional distance. Surface area counts exposed outside unit squares, including faces hidden from a viewer. Volume counts the enclosed three-dimensional unit cubes. The units themselves reveal the difference: cm, cm² and cm³ are not interchangeable.",
+        "Build two different solids from eight unit cubes; both have volume 8 but can have different surface areas. In reverse, a 1-by-1-by-5 prism and a 1-by-2-by-3 prism both expose 22 square units but enclose 5 and 6 cubic units, respectively.",
+        "Original student designs can be non-prisms; their unit-cube count still determines volume while a systematic count of externally exposed faces determines surface area. Teacher reviews visual constructions, not only the final numbers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Three measurement dimensions",
+          "Definition": "Length, area and volume respectively measure one-, two- and three-dimensional quantities.",
+          "Rule": "Write corresponding linear, square and cubic units.",
+          "Example": "A 2-cm edge has length 2 cm; a 2-by-3 face has area 6 cm²; a 2-by-3-by-4 prism has volume 24 cm³."
+        },
+        {
+          "Title": "Same volume, different exposure",
+          "Definition": "The arrangement of a fixed set of unit cubes changes contact faces and exposed surface.",
+          "Rule": "Volume equals cube count; count only outside square faces for surface area.",
+          "Example": "Eight cubes arranged 2×2×2 expose 24 squares; arranged 1×1×8 expose 34 squares."
+        },
+        {
+          "Title": "Same area, different capacity",
+          "Definition": "Two geometric solids may have identical total outside face areas but unequal volumes.",
+          "Rule": "For a rectangular prism, calculate 2(ab+bc+ac) and abc independently.",
+          "Example": "A 1×1×5 prism has area 22 and volume 5; a 1×2×3 prism has area 22 and volume 6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Eight cubes with changing surface",
+          "Question": "Compare a 2×2×2 cube, a 1×2×4 prism, and a 1×1×8 prism, each built from eight unit cubes.",
+          "Method": "Count unit-cube volume and six outer face regions for each design.",
+          "Steps": [
+            "All three volumes are 8 cubic units.",
+            "The 2×2×2 cube exposes 6×4=24 square units.",
+            "The 1×2×4 prism exposes 2(2+4+8)=28 square units.",
+            "The 1×1×8 prism exposes 2(1+8+8)=34 square units."
+          ],
+          "Answer": "All volumes are 8, while surface areas are 24, 28 and 34 square units.",
+          "Check": "None of the touching internal cube faces are counted as exposed."
+        },
+        {
+          "Title": "Same area but unequal volumes",
+          "Question": "Compare closed rectangular prisms of dimensions 1×1×5 and 1×2×3 centimeters.",
+          "Method": "Compute area and volume separately.",
+          "Steps": [
+            "Prism A surface is 2(1+5+5)=22 cm².",
+            "Prism B surface is 2(2+3+6)=22 cm².",
+            "Prism A volume is 1×1×5=5 cm³.",
+            "Prism B volume is 1×2×3=6 cm³."
+          ],
+          "Answer": "Both expose 22 cm², but their volumes differ: 5 cm³ versus 6 cm³.",
+          "Check": "Equal square area does not imply equal cubic capacity."
+        },
+        {
+          "Title": "Build and defend two original eight-cube shapes",
+          "Question": "Design two different connected solids each with eight unit cubes, including a nonrectangular arrangement if desired. Measure their exterior face areas.",
+          "Method": "Student-selected building/diagram task with teacher-reviewed complete face accounting.",
+          "Steps": [
+            "Create two labeled distinct assemblies, using eight unit cubes in each.",
+            "Count each body's unit cubes to confirm volume 8.",
+            "Mark and count exterior unit squares systematically, including hidden faces.",
+            "Compare areas, explain internal cube contacts, and invite peer feedback."
+          ],
+          "Answer": "Many valid constructions exist; both have volume 8 while the outside areas may match or differ.",
+          "Check": "Teacher checks physically feasible connection, no overlapping cubes, correct external face counting and clear area-versus-volume explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming identical volumes imply equal surface areas.",
+          "WhyWrong": "Changing cube adjacency changes how many unit-square faces are exposed.",
+          "Correction": "Compute surface from all outer faces separately from volume."
+        },
+        {
+          "Mistake": "Assuming identical surface areas imply identical volumes.",
+          "WhyWrong": "Two prisms can have the same surface 22 cm² while enclosing 5 or 6 cm³.",
+          "Correction": "Calculate each dimension product independently."
+        },
+        {
+          "Mistake": "Including the hidden internal faces where unit cubes meet.",
+          "WhyWrong": "Contact faces are not on the outside surface of the assembly.",
+          "Correction": "Count faces visible from every outside direction, not faces touching another cube."
+        }
+      ],
+      "SummaryPoints": [
+        "Length uses linear units, outside area square units and occupied volume cubic units.",
+        "Fixed eight-cube count gives equal volume but possibly different exterior area.",
+        "Equal exterior area can also coexist with different volumes; original cube constructions require human review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Independent measures in cube-built shapes",
+          "Description": "Text-accessible independent diagram specification: three solids each using eight identical unit cubes, arranged as 2-by-2-by-2 (outside area 24), 1-by-2-by-4 (area 28), and 1-by-1-by-8 (area 34). A separate pair of prisms 1-by-1-by-5 and 1-by-2-by-3 have the same outside surface area 22 square units but volumes 5 and 6 cubic units. Exclude internal touching faces.",
+          "PrimaryLabel": "8 cubes → area 24, 28 or 34",
+          "SecondaryLabel": "Surface 22 → volumes 5 or 6",
+          "Items": [
+            "2 × 2 × 2: volume 8, area 24",
+            "1 × 2 × 4: volume 8, area 28",
+            "1 × 1 × 8: volume 8, area 34"
+          ],
+          "SecondaryItems": [
+            "1 × 1 × 5: area 22, volume 5",
+            "1 × 2 × 3: area 22, volume 6"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

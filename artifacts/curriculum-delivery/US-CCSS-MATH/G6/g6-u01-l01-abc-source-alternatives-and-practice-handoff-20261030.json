@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH:G6:U01:L01",
+  "recordType": "GRADE_OWNED_A_B_EVIDENCE_AND_C_UNAUTHORIZED_SHARED_HANDOFF",
+  "startedAt": "2026-10-30T07:34:42.214Z",
+  "authoringDate": "2026-10-30",
+  "candidateBranch": "curriculum/us-ccss-g6-full-grade-20261028",
+  "sourceDocuments": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\1\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\1\\practice.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\1\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\1\\preparation.html"
+  ],
+  "sourceVerifiedPreviouslyReadOnly": true,
+  "originalFigurePixelIdentityVerified": false,
+  "originalAppletOperated": false,
+  "publisherCooldownStatus": "NOT_VERIFIED_GATED",
+  "firstPartyAsset": "src/Edulytics.Web/wwwroot/images/public/us-ccss-g6-u01-l01-first-party-tilings.svg",
+  "assetPublicPath": "/images/public/us-ccss-g6-u01-l01-first-party-tilings.svg",
+  "assetEmbeddedInExistingRichV2": false,
+  "existingRichV2RazorInspection": {
+    "partials": [
+      "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml",
+      "src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml"
+    ],
+    "finding": "RichLessonVisualKind.ShapeDecomposition reads only Rows; original grade L01 had empty Rows, producing empty shape cards despite text descriptions. Filled Rows with source-aligned paper constructions. Static SVG is a standalone first-party printable aid, not embedded by the shared visual renderer; sharing a plain URL in visual Rows is not an interactive embed."
+  },
+  "A": {
+    "status": "A_CLOSED_SOURCE_ALIGNED_FIRST_PARTY_DRAWABLE_EQUIVALENTS",
+    "sourceTasks": [
+      {
+        "id": "1.1",
+        "target": "Four colored geometric tilings; valid multi-criterion Which One Does Not Belong answers",
+        "equivalent": "Explicit four-panel 2x2 blue-square/yellow-half-triangle full/partial drawings, four Rich V2 shape cards and student prompts; teacher assesses distinct defensible reasons",
+        "limits": "Equivalent geometry and cognitive action, not literal publisher shapes or pixel parity"
+      },
+      {
+        "id": "1.2",
+        "target": "Teacher assigns A/B; compare 3 trapezoids, 4 rhombi, 7 triangles in each of eight hexagons by area and manipulation",
+        "equivalent": "Existing accurate 8-hexagon area example 72/64/56 in small-triangle units, added grade-only rich text cards and paper triangular-grid cut/slide/turn/trace instructions; numeric comparison plus teacher explanation",
+        "limits": "Original dynamic applet and A/B visual inventory not verified as copied or digitally interactive"
+      },
+      {
+        "id": "extension",
+        "target": "Graph paper construction with at least two shapes and equal plane coverage per shape type",
+        "equivalent": "Complete V/H 2x2 square + half-square triangle arrangements and third student-created drawing, each equal area by shape type, teacher rubric",
+        "limits": "New first-party square-unit model, distinct from hexagon triangle-area units"
+      },
+      {
+        "id": "practice",
+        "target": "Area comparisons and construction/reasoning",
+        "equivalent": "Student-facing area/rubric model and static C handoff; actual Practice contract integration unresolved",
+        "limits": "No selected automated Practice item proof"
+      }
+    ],
+    "academicDecision": "A closed against verified source goals and authored drawable alternative under Supervisor 1 decision; not a claim of publisher media identity, functioning digital applet, or Stage D rendered/teacher workflow."
+  },
+  "B": {
+    "status": "B_CLOSED_AUTHORED_GRADE_RICH_V2",
+    "oldExamplesPreserved": 6,
+    "nowExamples": 8,
+    "cooldown": "EDULYTIKS_ORIGINAL_6_6_5_TOTAL17_NOT_PUBLISHER",
+    "safety": "2x2 card uses SQUARE units; 8-hexagon comparison uses SMALL-TRIANGLE units. Separate and explicit.",
+    "richVisualRowsPreviouslyEmpty": true,
+    "richVisualRowsNowFilled": true,
+    "authenticatedRender": "NOT_RUN_STAGE_D",
+    "effectiveMaterializer": "NOT_RUN_STAGE_D"
+  },
+  "C": {
+    "status": "C_BLOCKED_SHARED_OWNER_ASSIGNMENT_AND_WIRING",
+    "inspectedStaticInputs": [
+      {
+        "path": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+        "finding": "No explicit U01:L01 lesson-specific mapping found among 238 mapped items"
+      },
+      {
+        "path": "src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json",
+        "finding": "Title-only tiling-plane candidate: supporting.geometry.plane, mechanic TESSELLATION, family supporting.geometry.plane.mixed"
+      },
+      {
+        "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+        "finding": "supporting.geometry.plane.mixed registered ShadowVerified and lessonPracticeRouting=true; registration is not proof of actual lesson-selected generator/feedback"
+      },
+      {
+        "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+        "finding": "No hand-authored direct PED:US-CCSS-MATH:G6:U01:L01 entry found; projection/fallback still must be independently traced."
+      },
+      {
+        "path": "src/Edulytics.Core/Mathematics/Practice/OfficialOutcomePracticeRuleRegistry.cs",
+        "finding": "Official outcome projection implementation exists; actual G6 selected precedence/item not executed"
+      }
+    ],
+    "preferredStrategy": "REUSE existing tessellation/area check for provable exact subskills; EXTEND appropriate family if full lesson-specific coverage missing; do not create another engine without showing existing cannot support constructions.",
+    "proposedContract": {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+      "skill": "geometry.area.tiling_decomposition",
+      "mechanic": "TILE_AREA_AND_CONSTRUCTION",
+      "familyCandidates": [
+        "supporting.geometry.plane.mixed",
+        "geometry.perimeter_area.rectangle_area",
+        "supporting.geometry.triangle_area"
+      ],
+      "familyDecision": "UNVERIFIED_SHARED_OWNER_MUST_SELECT",
+      "subskills": [
+        "Numerical triangular-area comparison for per-hex 3 trapezoids × 3, 4 rhombi × 2, 7 triangles × 1, across 8 repeated hexagons",
+        "Distinguish tile count from area with units and no gaps/overlaps",
+        "Produce distinct 2x2 area-4 tilings with exactly two unit squares and four half-square triangles, each shape type covering area 2",
+        "Teacher-scored explanation of visual classification and gap-free construction, original diagram or accessible cell descriptions"
+      ],
+      "answerModalities": [
+        "structured numeric small-triangle-area counts with explicit unit",
+        "structured 2x2 tiling cell inventory (two squares plus four half-unit triangles)",
+        "teacher-reviewed graph-paper diagram/textual cell description and proof"
+      ],
+      "selectedContractProof": "NOT_RUN_UNASSIGNED_SINGLE_WRITER",
+      "expectedEvaluation": "Only unambiguous arithmetic can be machine graded. Diagram validity, physical manipulation and qualitative rationale require teacher assessment unless an explicit independently verified structured verifier exists.",
+      "testOracleCases": [
+        {
+          "id": "hex-correct",
+          "input": {
+            "red": 72,
+            "blue": 64,
+            "green": 56,
+            "unit": "small-triangle-area-unit"
+          },
+          "expected": "ACCEPT_EXACT_COUNTS_ONLY"
+        },
+        {
+          "id": "hex-wrong-count",
+          "input": {
+            "red": 24,
+            "blue": 32,
+            "green": 56,
+            "unit": "tile-count"
+          },
+          "expected": "REJECT_AS_AREA"
+        },
+        {
+          "id": "hex-wrong-units",
+          "input": {
+            "red": 72,
+            "blue": 64,
+            "green": 56,
+            "unit": "square-unit"
+          },
+          "expected": "REJECT_UNIT_MISMATCH"
+        },
+        {
+          "id": "hex-malformed",
+          "input": {
+            "red": "72",
+            "blue": null,
+            "green": 56
+          },
+          "expected": "REJECT_MALFORMED"
+        },
+        {
+          "id": "draw-V",
+          "input": {
+            "columns": [
+              "SQUARES",
+              "DIAGONALLY_SPLIT_TRIANGLE_PAIRS"
+            ],
+            "totalSquareUnits": 4
+          },
+          "expected": "ACCEPT_IF_STRUCTURED_COVERAGE_VERIFIED_AND_TEACHER_RUBRIC_REQUIRED"
+        },
+        {
+          "id": "draw-H",
+          "input": {
+            "rows": [
+              "SQUARES",
+              "DIAGONALLY_SPLIT_TRIANGLE_PAIRS"
+            ],
+            "totalSquareUnits": 4
+          },
+          "expected": "ACCEPT_EQUIVALENT_VALID_REARRANGEMENT"
+        },
+        {
+          "id": "draw-gap",
+          "input": {
+            "emptyCell": "bottom-right",
+            "reportedArea": 4
+          },
+          "expected": "REJECT_GAP"
+        },
+        {
+          "id": "draw-overlap",
+          "input": {
+            "overlapCell": "top-left",
+            "reportedArea": 4
+          },
+          "expected": "REJECT_OVERLAP"
+        },
+        {
+          "id": "draw-number-only",
+          "input": 4,
+          "expected": "DO_NOT_AUTO_ACCEPT_DIAGRAM_OR_EXPLANATION"
+        },
+        {
+          "id": "cooldown",
+          "input": {
+            "red": 6,
+            "blue": 6,
+            "green": 5,
+            "total": 17
+          },
+          "expected": "ACCEPT_NUMERIC_COMPONENT_ONLY"
+        }
+      ],
+      "teacherRubric": {
+        "maxPoints": 8,
+        "criteria": [
+          {
+            "name": "Construction completeness",
+            "points": 2,
+            "full": "Every required target cell covered exactly once; no overlaps or uncovered gaps"
+          },
+          {
+            "name": "Common-unit reasoning",
+            "points": 2,
+            "full": "Triangle-area or square-area unit chosen correctly and not conflated"
+          },
+          {
+            "name": "Two genuinely distinct arrangements",
+            "points": 2,
+            "full": "Two independent valid V/H or other nonidentical arrangements with conserved inventory"
+          },
+          {
+            "name": "Justification and communication",
+            "points": 2,
+            "full": "Explains area comparison, number-vs-area misconception and why rearrangement preserves area"
+          }
+        ],
+        "originalArtworkNotRequired": true,
+        "persistedScoringStatus": "NOT_RUN_STAGE_D"
+      }
+    },
+    "owner": "Supervisor 1 to explicitly authorize a single Grade 6 integration writer/scope; #592 existing G5/G7 coordination alone is not permission.",
+    "sharedFilesOffLimits": [
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+      "src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json",
+      "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+      "src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml"
+    ],
+    "acceptCOnlyWhen": "Authorized shared branch has correctly wired selection/generator/verifier/feedback + teacher rubric or demonstrably already-correct selection, with scoped test definitions."
+  },
+  "tests": {
+    "path": "tests/academic-us-ccss-g6-u01-source-geometry-v12.test.cjs",
+    "status": "AUTHORED_NOT_RUN",
+    "runtimePractice": "NOT_RUN",
+    "appAuthenticated": "NOT_RUN",
+    "DB": "NOT_RUN"
+  },
+  "status": {
+    "A_CLOSED": 1,
+    "B_CLOSED": 1,
+    "C_PREPARED": 0,
+    "READY_FOR_STAGE_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "FIRST_OPEN": "PED:US-CCSS-MATH:G6:U01:L01",
+    "NO_MERGE": true,
+    "NO_DEPLOY": true
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L12",
+  "title": "What is Surface Area?",
+  "reviewDate": "2026-10-28",
+  "reviewVerdict": "PUBLIC_SOURCE_STUDENT_TEACHER_PRACTICE_TEXT_COMPARED__ACTUAL_PRODUCT_NOT_VERIFIED",
+  "originalEdition": "OUR/IM 2017–2019",
+  "studentUrl": "https://im.kendallhunt.com/MS/students/1/1/12/index.html",
+  "teacherUrl": "https://im.kendallhunt.com/MS/teachers/1/1/12/index.html",
+  "practiceUrl": "https://im.kendallhunt.com/MS/students/1/1/12/practice.html",
+  "alignmentRoles": {
+    "buildingTowards": [
+      "6.G.A.4"
+    ],
+    "addressing": [
+      "6.G.A.4"
+    ]
+  },
+  "observedSourceTaskTypes": [
+    {
+      "title": "Estimate cabinet covering",
+      "meaning": "Estimate number of uniform sticky notes to cover all requested cabinet faces while explicitly excluding the bottom",
+      "machineOnlySufficient": false
+    },
+    {
+      "title": "Calculate face covering",
+      "meaning": "Determine measurements needed, count each side face and explain differences between estimates and measurements",
+      "machineOnlySufficient": false
+    },
+    {
+      "title": "Rearrange twelve unit cubes",
+      "meaning": "Construct a different rectangular prism with same cube count and determine total exposed outer-square area",
+      "machineOnlySufficient": false
+    },
+    {
+      "title": "Independent practice",
+      "meaning": "Evaluate surface area of a closed prism, distinguish surface area from volume, compare unit-cube assemblies and revisit earlier triangle topics",
+      "machineOnlySufficient": "ONLY_FOR_FIXED_NUMERIC_SUBTASKS"
+    }
+  ],
+  "candidateTeachingPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g6-phase29-v1.lesson-content-pack.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l12-exposed-cabinet-and-cubes-20261028.rich-lesson-v2.json"
+  ],
+  "proposedRubric": {
+    "status": "AUTHORED_NOT_PERSISTED_NOT_UAT_VERIFIED",
+    "maxScore": 8,
+    "teacherJudgmentRequired": true,
+    "criteria": [
+      {
+        "criterion": "Identifies requested exposed faces and excluded bottom",
+        "max": 2
+      },
+      {
+        "criterion": "Uses correct face-area units and consistent labeled dimensions",
+        "max": 2
+      },
+      {
+        "criterion": "Builds a valid twelve-unit-cube prism and distinguishes internal from external faces",
+        "max": 2
+      },
+      {
+        "criterion": "Explains why equal cube counts can give different exposed surface areas",
+        "max": 2
+      }
+    ]
+  },
+  "knownGaps": [
+    "No authenticated cabinet covering video or original publisher photographs have been checked or copied",
+    "Original source cabinet media may carry separate CC BY-SA attribution or permission; grade candidate uses original numerical model only",
+    "No verified 3D drag/drop cube construction or teacher-scored diagram persistence",
+    "No exact generator/verifier/feedback/attempt grading or two-school authorization proof"
+  ],
+  "verification": {
+    "sourcePublicTextCompared": true,
+    "originalFigurePixelsCompared": false,
+    "teacherResponsesProtectedAccessed": false,
+    "authStudentRichV2Rendered": false,
+    "selectedPracticeContractRun": false,
+    "teacherRubricSaved": false,
+    "stageAAccepted": false,
+    "stageCAccepted": false,
+    "stageDVerified": false,
+    "academicAcceptance": "NOT_ACCEPTED"
+  }
+}
