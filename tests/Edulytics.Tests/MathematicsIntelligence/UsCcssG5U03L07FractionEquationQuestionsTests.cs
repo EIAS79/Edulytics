@@ -29,6 +29,35 @@ public sealed class UsCcssG5U03L07FractionEquationQuestionsTests
         Assert.True(UsCcssG5U03L07FractionEquationQuestions.Verify(f,P(c,slot),expected));
         Assert.False(UsCcssG5U03L07FractionEquationQuestions.Verify(f,P(c,slot),"7/4"));
     }
+    [Theory]
+    [InlineData(2,0,"1")]
+    [InlineData(3,1,"2")]
+    public void SupplementalMissingFactorsKeepExactProductsAndTeacherBoundaries(int c,int slot,string expected)
+    {
+        var f=UsCcssG5U03L07FractionEquationQuestions.MissingFamily;
+        Assert.Equal(expected,UsCcssG5U03L07FractionEquationQuestions.Solve(f,P(c,slot)));
+        Assert.True(UsCcssG5U03L07FractionEquationQuestions.Verify(f,P(c,slot),expected));
+        Assert.False(UsCcssG5U03L07FractionEquationQuestions.Verify(f,P(c,slot),"7/4"));
+    }
+    [Fact]
+    public void MissingFactorFamilyProvidesTenVerifiedNonrepeatedItems()
+    {
+        var f=UsCcssG5U03L07FractionEquationQuestions.MissingFamily;
+        var questions=new ExactSkillContractQuestionEngine().Generate(
+            "grade5-u03-l07-diversity",
+            "PED:US-CCSS-MATH:G5:U03:L07",
+            [f],ExactSkillQuestionDifficulty.Standard,10,20261101,[]);
+        Assert.Equal(10,questions.Count);
+        Assert.Equal(10,questions.Select(x=>x.ExposureFingerprint).Distinct().Count());
+        Assert.All(questions,question=>
+        {
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family,question.Parameters,question.CorrectAnswer));
+            Assert.Contains("TEACHER_REVIEW_REQUIRED",question.Prompt);
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                question.Family,question.Parameters,"-1"));
+        });
+    }
     [Fact]
     public void MalformedAndTeacherBoundary()
     {

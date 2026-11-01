@@ -16,7 +16,10 @@ public static class UsCcssG5U03L07FractionEquationQuestions
     private static readonly (int A,int B,int C,int D)[] Products=
         [(2,5,3,4),(3,7,4,5),(9,11,5,8),(3,8,2,5),(3,4,9,5),(10,5,6,5)];
     private static readonly (string Left,string Answer,string WrongA,string WrongB)[] Missing=
-        [("8/9 x ? = 56/36","7/4","7/9","8/4"),("5 x ? = 15/8","3/8","5/8","15/5")];
+        [("8/9 x ? = 56/36","7/4","7/9","8/4"),
+         ("5 x ? = 15/8","3/8","5/8","15/5"),
+         ("(2/5) x ? = 6/20","3/4","3/5","2/4"),
+         ("3 x ? = 12/7","4/7","3/7","12/3")];
     public static bool Supports(string? family) => family is ProductFamily or MissingFamily;
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p,out int c)
     {
@@ -50,7 +53,9 @@ public static class UsCcssG5U03L07FractionEquationQuestions
         {
             var ex=Missing[i];
             correct=ex.Answer;wrongA=ex.WrongA;wrongB=ex.WrongB;
-            prompt=$"Original source missing-factor equation: {ex.Left}. Choose the correct factor. ";
+            prompt=(i<2 ? "Original source missing-factor equation: "
+                         : "Edulytiks-original supplementary missing-factor practice: ")+
+                $"{ex.Left}. Choose the correct factor. ";
             solution=$"The exact source equation is satisfied by {correct}, not by adding or swapping numerator and denominator.";
         }
         string[] options=p["slot"] switch
