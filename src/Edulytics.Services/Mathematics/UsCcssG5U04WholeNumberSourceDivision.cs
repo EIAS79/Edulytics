@@ -70,6 +70,16 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 480÷24, correct the corresponding multiplier rather than the source's wrong label", "480 ÷ 24", 20, "partial quotient"),
         new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 240÷24, correct the corresponding multiplier rather than the source's wrong label", "240 ÷ 24", 10, "partial quotient"),
         new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 24÷24, correct the corresponding multiplier rather than the source's wrong label", "24 ÷ 24", 1, "partial quotient"),
+        new("usccss.g5.u04.l15.original_missing_rectangle_dimensions", "Original source rectangle table: width feet when area816 sq ft and length24 ft", "816 ÷ 24", 34, "source rectangle units as indicated"),
+        new("usccss.g5.u04.l15.original_missing_rectangle_dimensions", "Original source rectangle table: length feet when area1248 sq ft and width48 ft", "1248 ÷ 48", 26, "source rectangle units as indicated"),
+        new("usccss.g5.u04.l15.original_missing_rectangle_dimensions", "Original source rectangle table: area square feet when length23 ft and width253 ft", "23 × 253", 5819, "source rectangle units as indicated"),
+        new("usccss.g5.u04.l15.original_missing_rectangle_dimensions", "Original source rectangle table: length feet when area5796 sq ft and width36 ft", "5796 ÷ 36", 161, "source rectangle units as indicated"),
+        new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: height feet when volume375 cubic ft and base area15 square ft", "375 ÷ 15", 25, "dimension or product as indicated"),
+        new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: base area square feet when volume1176 cubic ft and height28 ft", "1176 ÷ 28", 42, "dimension or product as indicated"),
+        new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: Clare's height feet when prism volume882 cubic ft, length6 ft, width7 ft", "882 ÷ (6 × 7)", 21, "dimension or product as indicated"),
+        new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: unknown width feet when volume936 cubic ft, length8 ft, height9 ft", "936 ÷ (8 × 9)", 13, "dimension or product as indicated"),
+        new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: unknown length feet when volume1536 cubic ft, width48 ft, height2 ft", "1536 ÷ (48 × 2)", 16, "dimension or product as indicated"),
+        new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: product width×height in square feet, NOT uniquely either dimension, when volume1008 cu ft and length36 ft", "1008 ÷ 36", 28, "dimension or product as indicated"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

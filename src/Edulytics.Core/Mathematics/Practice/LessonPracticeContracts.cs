@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM K5 2021 G5 U04:L15: source-specific selected exact
+        // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U04:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U04:L15", "number.whole.divide",
+            "G5_SOURCE_UNIT4_LESSON_15_WHOLE_NUMBER_ARITHMETIC",
+            ["usccss.g5.u04.l15.original_missing_rectangle_dimensions", "usccss.g5.u04.l15.original_prism_base_and_height"],
+            "IM2021_G5_U04_L15_AUTHORING_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U04:L14: source-specific selected exact
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U04:L14"] = new LessonPracticeContract(

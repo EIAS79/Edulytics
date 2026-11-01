@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l15-l17-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u04-l15-l17-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,13 @@
       "CultureCode": "en",
       "Title": "Find Missing Side Lengths",
       "ExplanationParagraphs": [
-        "Goal: use inverse multiplication/division to determine an unknown rectangular side from area or volume, distinguish square from cubic units, and explain when the available dimensions are INSUFFICIENT for a unique answer. The 2021 source finishes by discussing different valid side pairs for one known volume.",
-        "Warm-up: estimate an outdoor garden's area from a first-party text scenario with dimensions only approximately known. Give too-low, about-right and too-high estimates, explicitly stating assumptions; one photographic appearance does not establish a unique exact area.",
-        "Activity 1 — missing area width: a rectangular lawn has area 1536 square feet and length 48 feet. Compute width=1536÷48=32 feet using partial quotients 30×48=1440 then 2×48=96. Verify by multiplying 48×32.",
-        "Activity 2 — missing prism height: a storage prism has volume 2160 cubic feet and base area 120 square feet, so its height is 18 feet. Contrast an alternative prism with volume 960 cubic feet and one known dimension 32 feet. The other two perpendicular dimensions have product 30 square feet, so 5×6,3×10 and2×15 feet all give valid dimensions if no further constraints are supplied.",
-        "Teacher boundary: source requires identifying quantities with units, interpreting why area versus volume changes the operation, and producing several valid length pairs when one is underdetermined. A numeric auto-check cannot certify the argument that multiple solutions are permitted."
+        "Original IM 2021 G5 U04:L15 Find Missing Side Lengths connects multiplication and division to area in SQUARE feet and prism volume in CUBIC feet. Learners must identify which dimension is missing, choose the correct divisor (side versus base area) and recognize insufficient data when TWO side lengths are unknown.",
+        "Warm-up Estimation Exploration The Garden: original source garden photograph with third-party Pixabay credit is not copied; pupils supply too low/about right/too high estimates and explain visual uncertainty. The photograph alone does not yield a single exact area.",
+        "Activity 1 Find the Missing Side Length Part1 original rectangle TABLE in feet: area816 sq ft and length24 ft gives width34; area1248 sq ft and WIDTH48 ft gives length26; length23 ft and width253 ft gives missing area5819 sq ft; area5796 sq ft and width36 ft gives length161. Preserve area units and avoid swapping table columns, which were independently verified from original HTML cell markup.",
+        "Activity 2 Part2 original volume/base-area TABLE: volume375 cubic ft, base area15 square ft gives height25 ft; volume1176 cubic ft and height28 ft gives base area42 square ft. Clare's source prism has volume882 cubic ft, length6 ft, width7 ft, so base area42 square ft and height21 ft; her first step 882÷6=147 must then be divided by the other width7.",
+        "Same Activity2 later prism TABLE: volume936 cubic ft, length8 ft, height9 ft -> missing width13 ft; volume1536 cubic ft, WIDTH48 ft, height2 ft -> missing length16 ft; volume1008 cubic ft, LENGTH36 ft, width and height both missing -> only their PRODUCT is 1008÷36=28 square feet. Valid pairs such as 4×7 and2×14 illustrate that the individual dimensions are NOT uniquely determined, and teacher reviews explanation.",
+        "Exact numerical Practice only checks bounded source entries and product28, explicitly without pretending width/height unique. Original diagrams/photograph, student explanations and distinct valid dimensions require TEACHER_REVIEW_REQUIRED; independent Cool-down is Edulytiks-authored.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +38,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Lawn width",
+          "Title": "Original source rectangle table",
+          "Question": "Complete the source area/length/width table with entries 816,1248,23×253,5796.",
+          "Method": "Area=length×width; missing side =area/known side.",
+          "Steps": [
+            "816÷24=34 ft missing width.",
+            "1248÷48=26 ft missing length.",
+            "23×253=5819 square ft missing area; 5796÷36=161 ft missing length."
+          ],
+          "Answer": "34 ft,26 ft,5819 sq ft,161 ft.",
+          "Check": "24×34=816,26×48=1248,161×36=5796."
+        },
+        {
+          "Title": "Original volume table and Clare's prism",
+          "Question": "Find height for 375/15, base area for1176/28, and height of 882 cu ft prism 6×7 base.",
+          "Method": "Volume=base area×height; base area=length×width.",
+          "Steps": [
+            "375÷15=25 ft height.",
+            "1176÷28=42 square ft base area.",
+            "Clare: base6×7=42 sq ft;882÷42=21 ft height."
+          ],
+          "Answer": "25 ft;42 sq ft;21 ft.",
+          "Check": "15×25=375,42×28=1176,6×7×21=882."
+        },
+        {
+          "Title": "Original prism table non-uniqueness",
+          "Question": "Complete source volume936 length8 height9; volume1536 width48 height2; volume1008 length36 with both other dimensions missing.",
+          "Method": "Divide by product of all known dimensions, and flag underdetermined cases.",
+          "Steps": [
+            "936÷(8×9)=13 ft width.",
+            "1536÷(48×2)=16 ft length.",
+            "1008÷36=28 sq ft =width×height; valid pairs include4×7,2×14, neither individual is fixed."
+          ],
+          "Answer": "13 ft width;16 ft length; width×height=28 sq ft (no unique pair).",
+          "Check": "Do not auto-score one chosen width/height for the last row."
+        },
+        {
+          "Title": "Optional existing extension — Lawn width",
           "Question": "A lawn has area1536 square feet and length48 feet. Find width.",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -48,7 +86,7 @@
           "Check": "48×32=1536 square feet."
         },
         {
-          "Title": "Prism height",
+          "Title": "Optional existing extension — Prism height",
           "Question": "A prism has volume2160 cubic feet and base area120 square feet.",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -60,7 +98,7 @@
           "Check": "120 ft²×18 ft=2160 ft³."
         },
         {
-          "Title": "Explain multiple possible lengths",
+          "Title": "Optional existing extension — Explain multiple possible lengths",
           "Question": "Volume960 cubic feet and one edge32 feet are known. Could the other edges be uniquely determined?",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -82,42 +120,80 @@
           "Mistake": "Select one arbitrary factor pair as the only remaining prism dimensions",
           "WhyWrong": "One known edge and volume determine only the product of the two remaining edges.",
           "Correction": "Supply several valid factorizations or ask for another dimension."
+        },
+        {
+          "Mistake": "Treat made-up 1536 sq ft/48 ft lawn and 2160 cu ft/base120 prism as the original textbook's only values",
+          "WhyWrong": "Printed source has multiple exact table cells, with an intentional last underdetermined 1008 cu ft prism.",
+          "Correction": "Restore all original table rows with correct column placements, distinguish square vs cubic units and record ambiguous last row."
         }
       ],
       "SummaryPoints": [
-        "Area and volume missing-side problems use inverse multiplication with consistent units.",
-        "One fixed area plus a side may yield a unique missing side; one volume plus one edge may not determine the other two.",
-        "Teacher reviews the representation and proof of multiple valid solutions.",
-        "2021 Illustrative Mathematics K–5 Grade 5, Unit 4 Lesson 15 public HTML: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-15/lesson.html. Student Task PDF and gated Cool-down not independently verified. Examples and text diagrams are original Edulytiks work."
+        "Original area table unknowns: width34,length26,area5819,length161.",
+        "Source volume/base table: 375/15=25 ft height,1176/28=42 sq ft base.",
+        "Clare's 882/(6×7)=21 ft height; source 936/(8×9)=13 ft width,1536/(48×2)=16 ft length.",
+        "Source 1008 cu ft and length36 means width×height=28 square ft; infinitely many positive pairs, no single width.",
+        "Teacher reviews source photo, units and underdetermined geometry; selected digital answers exclude freehand explanation."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Find Missing Side Lengths — mathematical interpretation",
-          "Description": "Original accessible mathematical text diagram, without source photo or protected chart.",
+          "Title": "Original source rectangular area unknowns",
+          "Description": "Edulytiks reconstructed from verified teacher HTML table cell positions, not publisher artwork.",
           "Rows": [
             {
-              "Label": "Known",
+              "Label": "Area square ft",
               "Cells": [
-                "Area 1536 ft² + length48 ft",
-                "Volume2160 ft³ + base120 ft²",
-                "Volume960 ft³ + edge32 ft"
+                "816",
+                "1248",
+                "5819",
+                "5796"
               ]
             },
             {
-              "Label": "Computed",
+              "Label": "Length ft",
               "Cells": [
-                "Width32 ft",
-                "Height18 ft",
-                "Other edges product30 ft²"
+                "24",
+                "26",
+                "23",
+                "161"
               ]
             },
             {
-              "Label": "Unique?",
+              "Label": "Width ft",
               "Cells": [
-                "Yes",
-                "Yes",
-                "No"
+                "34",
+                "48",
+                "253",
+                "36"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source prism volumes and missing dimensions",
+          "Description": "Source exact values; 1008 cu ft at length36 has NO UNIQUE width or height.",
+          "Rows": [
+            {
+              "Label": "Volume cubic ft",
+              "Cells": [
+                "375",
+                "1176",
+                "882",
+                "936",
+                "1536",
+                "1008"
+              ]
+            },
+            {
+              "Label": "Knowns/derived",
+              "Cells": [
+                "base15→height25",
+                "h28→base42",
+                "6×7→height21",
+                "8×?×9→width13",
+                "?×48×2→length16",
+                "length36→width×height28"
               ]
             }
           ]
