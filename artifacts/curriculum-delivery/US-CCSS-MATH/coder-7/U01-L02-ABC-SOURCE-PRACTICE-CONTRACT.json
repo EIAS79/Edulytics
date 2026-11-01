@@ -303,5 +303,39 @@
     "selectedRuntimeContract": "NOT_REGISTERED_REQUIRES_SEPARATE_ADMIN_GRANT",
     "readyForStageD": false,
     "closureSHA": null
+  },
+  "v3SelectedExactEngineIntegration": {
+    "lesson": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_SELECTED_GENERATION_SOLVE_VERIFY_FEEDBACK_AUTHORED_PERSISTED_SCORE_NOT_CLOSED",
+    "draftIntegrationPR": 618,
+    "integrationCommit": "eb4bd65c611c6b1ee48f0b7887951e1b45f4c398",
+    "adminGrantComment": 6558468484,
+    "releaseComment": 6558702381,
+    "sharedFiles": {
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs": "a5acd8a2f75e9c1b133fbec12dd3dd0f771e7f17",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs": "1a4a58abd19894ba7b2a9f361f55776a0b955ce7",
+      "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json": "042740e6b5bb2d570d899751261462ff916bf084"
+    },
+    "selectedLessonContract": "READY_VERIFIED",
+    "families": [
+      "usccss.alg2.u01.l02.geometric_fill_ratio",
+      "usccss.alg2.u01.l02.paper_conservation",
+      "usccss.alg2.u01.l02.sierpinski_shaded"
+    ],
+    "registryPreservation": "1108_PRIOR_FAMILY_IDS_PRESERVED_1111_WITH_EXACT_THREE_NEW",
+    "route": "LessonCode -> READY_VERIFIED selected contract -> ExactSkillContractQuestionEngine.BuildProblem -> existing course adapter -> Solve -> Verify -> source-specific nonrevealing feedback hint",
+    "math": "Exact rational and equivalent decimal verification with source-bounded n and variant; no arbitrary expression evaluation",
+    "teachersOnly": "monthly_balance interest policy pending academic approval; graphic proofs, graphs, models, two-rule explanations, publisher cool-down teacher-scored",
+    "authoredAcceptanceTest": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L02SelectedPracticeRoutingTests.cs",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "independentStageCBlocker": "Actual PracticeService.RespondAsync routes these L02 families to generic AnswersMatch. Unlike L01 there is no issued-family n/variant, canonical regeneration and Stage18 persisted metadata attestation. Outer attempt ownership access checks are preserved but insufficient to establish exact source grading.",
+    "sharedPathNeededForFutureRepair": "src/Edulytics.Services/Practice/PracticeService.cs",
+    "sharedPathGranted": false,
+    "leaseStatus": "THREE_FILE_LEASE_RELEASED",
+    "readyForStageD": false,
+    "closureSHA": null,
+    "nextLesson": "STAY_U01_L02"
   }
 }

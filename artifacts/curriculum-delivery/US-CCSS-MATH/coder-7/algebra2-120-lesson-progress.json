@@ -308,22 +308,28 @@
       ],
       "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
       "sourceToStudentCompared": true,
-      "practiceMappingExplicit": false,
-      "practiceFamiliesExplicit": [],
-      "effectivePracticeStatus": "COURSE_OWNED_L02_NUMERIC_ADAPTER_AUTHORED_NOT_SELECTED",
+      "practiceMappingExplicit": true,
+      "practiceFamiliesExplicit": [
+        "usccss.alg2.u01.l02.geometric_fill_ratio",
+        "usccss.alg2.u01.l02.paper_conservation",
+        "usccss.alg2.u01.l02.sierpinski_shaded"
+      ],
+      "effectivePracticeStatus": "SELECTED_NUMERIC_EXACT_ENGINE_AUTHORED_PERSISTED_GRADING_BLOCKED",
       "runtimeMaterializationStatus": "NOT_VERIFIED",
       "testsStatus": "AUTHORED_NOT_RUN",
       "academicApproval": "NOT_VERIFIED",
       "ownerUat": "NOT_VERIFIED",
       "stageA": "A_CLOSED",
       "stageB": "B_CLOSED",
-      "stageC": "C_LOCAL_ADAPTER_AUTHORED_SHARED_ROUTE_PENDING",
+      "stageC": "C_SELECTED_ENGINE_AUTHORED_PERSISTED_SCORING_NOT_ACCEPTED",
       "abcReadyForD": false,
       "blockedByIntegration": {
-        "status": "BLOCKED_CENTRAL_REGISTRY_OWNERSHIP",
-        "reason": "Exact U01:L02 family binding is not registered in shared Practice runtime, teacher rubric and monetary rounding policy await approval",
-        "owner": "Coder 7, Supervisor 3 grants temporary central-file lock",
-        "issue": 453
+        "status": "BLOCKED_PERSISTED_GRADING_EXCLUDED_PRACTICESERVICE_PATH",
+        "reason": "Exact U01:L02 selected routing, BuildProblem, Solve, Verify and nonrevealing feedback authored by eb4bd65c and adopted into #588. Actual PracticeService.RespondAsync routes these L02 families to generic AnswersMatch, bypassing L02-specific canonical n/variant, family, Stage18 metadata and item-to-attempt provenance attestation. Outer attempt ownership and school access checks remain in place. A separate PracticeService.cs exclusive grant is required before genuine Stage C closure. monthly_balance remains teacher-scored without approved rounding.",
+        "owner": "Coder 7 after fresh one-file Admin grant; prior three-file exclusive lease RELEASED #6558702381",
+        "issue": 605,
+        "selectedIntegrationCommit": "eb4bd65c611c6b1ee48f0b7887951e1b45f4c398",
+        "selectedIntegrationPR": 618
       },
       "lessonGateEvidence": {
         "sourceRootAlias": "Common Core",
