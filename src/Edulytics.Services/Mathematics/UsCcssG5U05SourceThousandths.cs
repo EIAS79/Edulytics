@@ -611,6 +611,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B added point(0,3) lies on", "vertical axis", "horizontal axis", "origin"),
         new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original source point (1,0) lies on", "horizontal axis", "vertical axis", "origin"),
         new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original source point (0,1) lies on", "vertical axis", "horizontal axis", "origin"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "All original source quadrilaterals have exactly how many sides?", "4", "3", "5"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source category square has how many right angles?", "4", "2", "0"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source rectangle has how many pairs of parallel opposite sides?", "2", "1", "0"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source parallelogram has how many pairs of parallel opposite sides?", "2", "1", "0"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source figure with NO parallel sides, number of pairs parallel", "0", "1", "2"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source quadrilateral with exactly ONE pair of parallel sides is possible?", "yes", "no", "all are parallelograms"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source two distinct source card-sort categories required in Activity2?", "yes", "no", "three fixed categories only"),
+        new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source original Guess Which One partner selects a secret figure and partner asks what kind of questions?", "yes/no attribute questions", "random numerical guesses", "same four-choice answer"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
