@@ -82,6 +82,100 @@ def only_one_row(query, label):
     return rows[0]
 
 
+
+def verify_g5_u03_l02_actual_practice_svg(opener, lesson_id, adoption_id):
+    """Generate a new Grade5-only attempt and verify what the learner really sees.
+
+    Uses the ephemeral HTTPS school and real persisted server-owned parameters.
+    The extra attempt intentionally remains unsubmitted: drawing/copying is not
+    automatically assessed or counted as evidence of teacher rubric persistence.
+    """
+    source = get_page(opener, "/student/practice")
+    token = extract_csrf(source)
+    nonce = extract_idempotency_key(source)
+    actual_adoption = extract_adoption(source)
+    if not token or not nonce or actual_adoption != adoption_id:
+        raise AssertionError("G5 visual test: scoped lesson form invalid")
+    request_data = urllib.parse.urlencode({
+        "curriculumAdoptionId": adoption_id,
+        "scope": "Lesson",
+        "lessonId": lesson_id,
+        "difficulty": "AtClassLevel",
+        "questionCount": "1",
+        "__RequestVerificationToken": token,
+        "_idempotencyKey": nonce
+    }).encode()
+    with opener.open(urllib.request.Request(
+            BASE + "/student/practice/generate",
+            data=request_data, method="POST"), timeout=45) as response:
+        endpoint = urllib.parse.urlparse(response.url).path.lower()
+        match = re.fullmatch(r"/student/practice/attempt/(" + UUID + r")", endpoint)
+        if response.status != 200 or not match:
+            raise AssertionError("G5 visual test: no authenticated attempt page")
+        attempt_id = match.group(1)
+        rendered = html.unescape(response.read().decode("utf-8"))
+    item = only_one_row("""
+        SELECT i."GenerationFamily",
+               COALESCE(i."GenerationParametersJson"::text,'')
+        FROM "PracticeAttempts" p
+        JOIN "PracticeAttemptItems" pi ON pi."PracticeAttemptId"=p."Id"
+        JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
+        WHERE p."Id"='""" + attempt_id + """';""",
+        "real G5 selected visual source")
+    family, parameter_text = item.split("|", 1)
+    allowed = {
+        "usccss.g5.u03.l02.unit_fraction_of_unit_fraction",
+        "usccss.g5.u03.l02.same_original_whole_order_comparison"
+    }
+    if family not in allowed:
+        raise AssertionError("G5 visual test: unrelated question family")
+    try:
+        payload = json.loads(parameter_text)
+        parameters = payload.get("parameters", payload)
+    except (ValueError, AttributeError) as exc:
+        raise AssertionError("G5 visual test: missing trusted parameters") from exc
+    if not isinstance(parameters, dict) or set(parameters) != {
+            "case", "layout", "slot", "comparison", "differentWhole"
+    }:
+        raise AssertionError("G5 visual test: unexpected parameter dictionary")
+    if any(type(x) is not int for x in parameters.values()) or (
+            parameters["case"] not in range(4) or
+            parameters["comparison"] not in range(4) or
+            parameters["layout"] not in range(4) or
+            parameters["slot"] not in range(3) or
+            parameters["differentWhole"] not in range(2)):
+        raise AssertionError("G5 visual test: invalid Grade5 fraction parameters")
+    svg = re.search(
+        r"<svg\\b[^>]*class=['\\"]practice-math-visual['\\"][^>]*>.*?</svg>",
+        rendered, re.IGNORECASE | re.DOTALL)
+    if svg is None:
+        raise AssertionError("G5 visual test: actual student attempt has no SVG")
+    drawing = svg.group(0)
+    pair = [(3, 4), (4, 3), (2, 5), (5, 2)]
+    first_count = pair[parameters["case"]][0] * pair[parameters["case"]][1]
+    comparison_count = pair[parameters["comparison"]][0] * pair[parameters["comparison"]][1]
+    product = family.endswith(".unit_fraction_of_unit_fraction")
+    expected_cells = first_count if product else first_count + comparison_count
+    expected_shaded = 1 if product else 2
+    if len(re.findall(r"class='fraction-cell ", drawing)) != expected_cells or (
+        len(re.findall(r"class='fraction-cell fraction-shaded'", drawing)) !=
+            expected_shaded):
+        raise AssertionError("G5 visual test: drawn cells diverge from canonical grid")
+    if any(answer in drawing for answer in (
+            "1/10", "1/12", "Answer 1=", "Select 1:",
+            "SAME whole", "DIFFERENT whole")):
+        raise AssertionError("G5 visual test: correct answer leaked in source visual")
+    return {
+        "selectedFamily": family,
+        "studentAttemptId": attempt_id,
+        "renderedSvgSha256": hashlib.sha256(drawing.encode("utf-8")).hexdigest(),
+        "canonicalEqualAreaCells": expected_cells,
+        "shadedCells": expected_shaded,
+        "learnerSvgRendered": True,
+        "publisherImageCopied": False,
+        "unsubmittedConstructionTeacherScored": False
+    }
+
 def run():
     if os.environ.get("GITHUB_ACTIONS") != "true" or (
         os.environ.get("EDULYTICS_CLEAN_DATABASE_NAME") != "edulytics_clean_ci"
@@ -151,7 +245,12 @@ def run():
                 extract_idempotency_key(wrong_form), sql, answer_mode="malformed")
             if negative.get("status") != "MALFORMED_ANSWER_REJECTED_AND_PERSISTED":
                 raise AssertionError(f"G5 {code}: bad answer was not rejected: {negative}")
+            visual_evidence = (
+                verify_g5_u03_l02_actual_practice_svg(student, lesson_id, adoption_id)
+                if code.endswith("U03:L02") else None
+            )
             results.append({
+                "g5U03L02Visual": visual_evidence,
                 "lessonCode": code,
                 "lessonId": lesson_id,
                 "studentGrade": 5,
@@ -165,6 +264,10 @@ def run():
                 "academicSourceParityVerified": False})
             print("G5_DISPOSABLE_HTTPS_LESSON_PASS", code,
                   positive["family"], flush=True)
+            if visual_evidence:
+                print("G5_U03_L02_REAL_LEARNER_SVG_PASS",
+                      visual_evidence["selectedFamily"],
+                      visual_evidence["canonicalEqualAreaCells"], flush=True)
     finally:
         restored = sql("""
           WITH restored AS (
