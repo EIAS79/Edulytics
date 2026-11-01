@@ -38,6 +38,8 @@ jobs:
         run: node --test tests/academic-us-ccss-g5-rich-v2-duplicate-gate-stage-d.test.cjs
       - name: Validate source-item evidence across legacy 2021 schemas and negative controls
         run: node --test tests/academic-us-ccss-g5-stage-d-source-inventory.test.cjs
+      - name: Verify G5 U01 L04 original A–F prism mathematics and report gated cool-down only as Stage D blocker
+        run: node --test tests/academic-us-ccss-g5-u01-l04-source-20261030.test.cjs
       - name: Check U02 original local source-section inventory without false parity approval
         run: node --test tests/academic-us-ccss-g5-u02-stage-d-raw-source-inventory.test.cjs
       - name: Verify all 296 teacher/student local source snapshots are indexed without granting academic approval
