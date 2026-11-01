@@ -64,7 +64,7 @@ public sealed class UsCcssG5U03L02SelectedPracticeRuntimeTests
     [InlineData(0, 0)]
     [InlineData(0, 1)]
     [InlineData(0, 2)]
-    [InlineData(1, 3)]
+    [InlineData(1, 2)]
     [InlineData(2, 1)]
     [InlineData(3, 2)]
     public void AllSourceProductsUseTheOriginalWholeNotSelectedSubpart(int scenario, int slot)
