@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l11-l13-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u05-l11-l13-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -432,11 +432,17 @@
       "CultureCode": "en",
       "Title": "Analyze Addition Mistakes",
       "ExplanationParagraphs": [
-        "Goal: CRITIQUE AND CORRECT incorrect addition strategies when two decimals have different numbers of printed decimal digits. The 2021 source's core misconception is treating whole-number right alignment as valid for decimals, then judging a wrong result only because it is slightly larger than one addend.",
-        "Warm-up: compare expressions such as 42.8+6.15 and 4.28+61.5 and explain why the same digit strings can describe very different magnitudes; write them as aligned place-value quantities before computing.",
-        "Activity 1 — analyze a fictional student: one learner writes 518.37+64.2 as 524.79 after lining up last digits, treating 2 tenths as two hundredths. Another writes 518.37+64.20=582.57 by aligning decimal points. Use benchmark 520+60≈580 to refute the implausibly small 524.79, identify the exact incorrect columns, and explain why the correct total is 582.57. Teacher reviews the critique, not merely the number.",
-        "Activity 2 — same digit groups, different place values: find 4.82+6.37=11.19; 48.2+63.7=111.9; 482+6.37=488.37; and 48.2+6.37=54.57. Each uses similar digits but shifts their place values. Draw a decimal-position table and compare strategies using all needed trailing-zero placeholders.",
-        "Assessment: it is not enough to choose the learner with the correct number; the source asks learners to explain the specific place-value misalignment, use an estimate to detect it, revise an argument and compare several mixed-precision sums. Teacher adjudicates critique and mathematical communication."
+        "Original IM 2021 G5 U05:L13 Analyze Addition Mistakes: analyze why RIGHT-aligning a decimal with fewer printed decimal digits than the other addend breaks place-value meaning. Decimal POINTS must be aligned, adding trailing zeros when useful; a result being larger than one input alone does not validate it.",
+        "Warm-up Estimation Exploration Many Places original 1,987.89+658.54=2,646.43. A reasoned benchmark e.g2000+650≈2650 sets scale; pupils mark too-low/about-right/too-high estimates and justify before exact arithmetic. This original task replaces invented42.8+6.15 comparisons, which remain optional examples.",
+        "Activity 1 Compare Calculations original 621.45+72.3=693.75. Elena incorrectly right-aligns last printed digits and obtains628.68; her claim it is plausible because greater than621 is mathematically insufficient. Andre correctly aligns decimal PLACE VALUES and gets693.75, consistent with approx620+70≈690. Teacher asks who is correct and the exact column and rounding evidence.",
+        "Activity 2 Same Digits Different Sums original four addition expressions: 2.63+7.74=10.37,26.3+774=800.3,46.3+31.42=77.72,463+3.14=466.14. The same digits have different magnitude depending on decimal point placement; students should explain whole and fractional places in each and estimate reasonableness.",
+        "Exact selected Practice checks the six source sums and source Elena/Andre classification only, not original handwritten error critique, estimation bands or school explanations. Original publisher figure and gated Cool-down are not independently certified; Edulytiks independent rubric uses a different misaligned decimal sum.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: CRITIQUE AND CORRECT incorrect addition strategies when two decimals have different numbers of printed decimal digits. The 2021 source's core misconception is treating whole-number right alignment as valid for decimals, then judging a wrong result only because it is slightly larger than one addend.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare expressions such as 42.8+6.15 and 4.28+61.5 and explain why the same digit strings can describe very different magnitudes; write them as aligned place-value quantities before computing.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — analyze a fictional student: one learner writes 518.37+64.2 as 524.79 after lining up last digits, treating 2 tenths as two hundredths. Another writes 518.37+64.20=582.57 by aligning decimal points. Use benchmark 520+60≈580 to refute the implausibly small 524.79, identify the exact incorrect columns, and explain why the correct total is 582.57. Teacher reviews the critique, not merely the number.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — same digit groups, different place values: find 4.82+6.37=11.19; 48.2+63.7=111.9; 482+6.37=488.37; and 48.2+6.37=54.57. Each uses similar digits but shifts their place values. Draw a decimal-position table and compare strategies using all needed trailing-zero placeholders.",
+        "Optional previous source-aligned or independently authored extension — Assessment: it is not enough to choose the learner with the correct number; the source asks learners to explain the specific place-value misalignment, use an estimate to detect it, revise an argument and compare several mixed-precision sums. Teacher adjudicates critique and mathematical communication."
       ],
       "KeyConcepts": [
         {
@@ -460,7 +466,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Critique a false answer",
+          "Title": "Original Elena-versus-Andre error",
+          "Question": "Whose calculation of621.45+72.3 is correct, Elena628.68 or Andre693.75?",
+          "Method": "Align corresponding ones/tenths/hundredths columns, benchmark around690.",
+          "Steps": [
+            "Write72.3 as72.30.",
+            "Add621.45+72.30=693.75.",
+            "Elena incorrectly aligned the last printed digits and got628.68, not plausible relative to620+70."
+          ],
+          "Answer": "Andre is correct;693.75.",
+          "Check": "Teacher scores written error analysis."
+        },
+        {
+          "Title": "Original warm-up large sum",
+          "Question": "Estimate and calculate1,987.89+658.54.",
+          "Method": "Reason near2000+650≈2650 then exact place-value sum.",
+          "Steps": [
+            "1987+658=2645.",
+            "0.89+0.54=1.43.",
+            "Combine2645+1.43=2646.43."
+          ],
+          "Answer": "2646.43.",
+          "Check": "A near2650 estimate is plausible."
+        },
+        {
+          "Title": "Original same-digit comparison problems",
+          "Question": "Find2.63+7.74,26.3+774,46.3+31.42,463+3.14.",
+          "Method": "Preserve decimal place values across varied numbers of printed digits.",
+          "Steps": [
+            "2.63+7.74=10.37.",
+            "26.30+774=800.3 and46.30+31.42=77.72.",
+            "463+3.14=466.14."
+          ],
+          "Answer": "10.37,800.3,77.72,466.14.",
+          "Check": "Source teacher reviews whether vertical layout aligns decimal points."
+        },
+        {
+          "Title": "Optional existing extension — Critique a false answer",
           "Question": "A pupil says 518.37+64.2=524.79. What went wrong?",
           "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
           "Steps": [
@@ -472,7 +514,7 @@
           "Check": "Teacher reviews whether the learner explains the exact column error."
         },
         {
-          "Title": "Same digits, different scale",
+          "Title": "Optional existing extension — Same digits, different scale",
           "Question": "Calculate 4.82+6.37 and 48.2+63.7.",
           "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
           "Steps": [
@@ -484,7 +526,7 @@
           "Check": "4.82+6.37=11.19; 48.2+63.7=111.9."
         },
         {
-          "Title": "Mixed whole and decimal",
+          "Title": "Optional existing extension — Mixed whole and decimal",
           "Question": "Calculate 482+6.37 without right-aligning the last printed digits.",
           "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
           "Steps": [
@@ -506,18 +548,65 @@
           "Mistake": "Accept any result slightly greater than the larger addend",
           "WhyWrong": "The second addend may add dozens or hundreds of units, not just a positive fraction.",
           "Correction": "Use an independent approximate sum to check whether the result is reasonable."
+        },
+        {
+          "Mistake": "Present fictional518.37+64.2 and its incorrect result524.79 as the original Elena/Andre source problem",
+          "WhyWrong": "The book explicitly compares621.45+72.3 with Elena628.68 and Andre693.75, plus four other source expressions.",
+          "Correction": "Restore original source operands, both named learner outputs, original estimate and four Activity2 sums."
         }
       ],
       "SummaryPoints": [
-        "The standard algorithm is correct only when like decimal units are combined.",
-        "A place-value explanation is required to critique a mistaken calculation.",
-        "Estimating supports diagnosis but does not replace a complete correction.",
-        "2021 IM K–5 Grade 5 Unit 5 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-13/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
+        "Original source large-number estimation1987.89+658.54=2646.43.",
+        "Elena right-aligns and gets false628.68; Andre gets correct693.75 for621.45+72.3.",
+        "Source four Activity2 sums10.37,800.3,77.72,466.14.",
+        "Teacher scores why Elena's justification is insufficient and which decimal places misalign.",
+        "Selected numeric Practice is source-bounded; no source figure reproduction claimed.",
+        "Optional prior: The standard algorithm is correct only when like decimal units are combined.",
+        "Optional prior: A place-value explanation is required to critique a mistaken calculation.",
+        "Optional prior: Estimating supports diagnosis but does not replace a complete correction.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-13/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Analyze Addition Mistakes — original reasoning",
+          "Title": "Original Elena/Andre source error and corrected sums",
+          "Description": "Exact printed source values and first-party place-value explanation; original pupil algorithm image requires teacher.",
+          "Rows": [
+            {
+              "Label": "Elena wrong",
+              "Cells": [
+                "621.45+72.3",
+                "628.68 FALSE"
+              ]
+            },
+            {
+              "Label": "Andre correct",
+              "Cells": [
+                "621.45+72.30",
+                "693.75"
+              ]
+            },
+            {
+              "Label": "Source warm-up",
+              "Cells": [
+                "1987.89+658.54",
+                "2646.43"
+              ]
+            },
+            {
+              "Label": "Activity2",
+              "Cells": [
+                "2.63+7.74=10.37",
+                "26.3+774=800.3",
+                "46.3+31.42=77.72",
+                "463+3.14=466.14"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Analyze Addition Mistakes — original reasoning",
           "Description": "Accessible original decimal place-value table; no source publisher diagram or recording sheet copied.",
           "Rows": [
             {

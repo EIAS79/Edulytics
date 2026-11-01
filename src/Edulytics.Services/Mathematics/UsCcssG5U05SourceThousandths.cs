@@ -169,6 +169,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 6.8+4.97; explain place value and carrying when needed", "11.77", "10.177", "11.67"),
         new("usccss.g5.u05.l12.source_nearest_whole_estimates", "Original U05:L12 estimate before calculating: original source 2.82+5.2=8.02 nearest WHOLE", "8", "9", "7"),
         new("usccss.g5.u05.l12.source_nearest_whole_estimates", "Original U05:L12 estimate before calculating: original source 6.8+4.97=11.77 nearest WHOLE", "12", "11", "10"),
+        new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 1,987.89 + 658.54, align same DECIMAL place columns rather than final printed digit", "2646.43", "2546.43", "264.643"),
+        new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 621.45 + 72.3, align same DECIMAL place columns rather than final printed digit", "693.75", "628.68", "621.1173"),
+        new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 2.63 + 7.74, align same DECIMAL place columns rather than final printed digit", "10.37", "9.137", "10.07"),
+        new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 26.3 + 774, align same DECIMAL place columns rather than final printed digit", "800.3", "103.7", "800.03"),
+        new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 46.3 + 31.42, align same DECIMAL place columns rather than final printed digit", "77.72", "77.45", "77.27"),
+        new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 463 + 3.14, align same DECIMAL place columns rather than final printed digit", "466.14", "463.314", "466.4"),
+        new("usccss.g5.u05.l13.original_elena_andre_error", "Original source Elena and Andre attempt621.45+72.3. Which pupil correctly aligns decimal places and obtains693.75 rather than false628.68?", "Andre", "Elena", "both"),
+        new("usccss.g5.u05.l13.original_elena_andre_error", "Original source Elena's FALSE arithmetic after right-alignment of digit strings: what incorrect value does her shown work report?", "628.68", "693.75", "621.75"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
