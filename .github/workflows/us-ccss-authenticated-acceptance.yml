@@ -7,6 +7,9 @@ on:
       - 'tools/Edulytics.CiFixtures/**'
       - 'tools/phase29/acceptance_two_school_https.py'
       - 'tools/phase29/b001_practice_attempt_probe.py'
+      - 'tools/phase29/verify_main_content_parity.py'
+      - 'tools/phase29/verify_g5_owner_content_delta.py'
+      - 'tools/phase29/test_verify_g5_owner_content_delta.py'
       - 'tools/curriculum/us-ccss-g1-stage-d-technical-reconciliation.cjs'
       - 'tests/us-ccss-g1-stage-d-technical-reconciliation.test.cjs'
       - 'src/**'
@@ -69,7 +72,9 @@ jobs:
           python3 -m py_compile tools/phase29/b001_practice_attempt_probe.py
           python3 -m py_compile tools/phase29/g2_late_companion_https.py
           python3 tools/phase29/b001_practice_attempt_probe.py
-      - name: Prove embedded content is unchanged
+      - name: Reject unapproved Grade 5 source, metadata, lesson order and translation changes
+        run: python3 -m unittest discover -s tools/phase29 -p 'test_verify_g5_owner_content_delta.py' -v
+      - name: Verify main storage parity with SHA-pinned owner-consented G5 English corrections only
         run: python3 tools/phase29/verify_main_content_parity.py
       - name: Build application and apply only disposable schema
         run: |
