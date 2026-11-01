@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -255,11 +255,17 @@
       "CultureCode": "en",
       "Title": "Points on the Coordinate Plane",
       "ExplanationParagraphs": [
-        "Goal: recognize that points sharing x lie vertically aligned and points sharing y lie horizontally aligned, including points on coordinate AXES. The source asks students to estimate location before using a fully marked grid and to infer unit scale from a single known point on a blank plane.",
-        "Warm-up: predict the positions of (5,1),(5,2),(5,3),(5,4) without drawing: all are at x=5 and form a vertical line, while (4,3),(5,3),(6,3),(7,3) form a horizontal line at y=3. Check your prediction by plotting.",
-        "Activity 1 — axes and estimates: mark (5,0) on x-axis and (0,3) on y-axis. Explain why a zero coordinate means the point lies ON an axis, not that it is missing. In a blank grid with only point (4,2), infer an original unit interval, find (4,0) and (0,2), then explain how (1,0) and (0,1) can be located with reliable axis scale.",
-        "Activity 2 — point patterns: partner A plots points with x fixed at 6 and y=1,3,5; partner B plots points with y fixed at2 and x=1,4,7. Compare vertical and horizontal alignment, make one accurate drawing for each, and write the constant coordinate in words.",
-        "Assessment: selecting scale and plotting on a BLANK coordinate plane are source-core mathematical skills, requiring actual figure inspection and student explanation. An array of point strings is not sufficient authenticated rendering parity."
+        "Original IM K5 2021 Grade5 U07:L03 extends the coordinate grid to points sharing one coordinate and to points lying ON the horizontal/vertical axes where one coordinate equals zero. Numeric point location is assessed along with actual student plotting and explanation.",
+        "Warm-up Notice and Wonder Points with Zero includes original source picture; students explain why one coordinate being0 does NOT mean an undefined point, it means one axis of the coordinate plane.",
+        "Activity1 What's the Point printed Partner A: A(5,1),B(5,2),C(5,3),D(5,4), which are vertically aligned at x5, plus(5,0) on horizontal axis. Partner B: A(4,3),B(5,3),C(6,3),D(7,3), horizontally aligned at y3, plus(0,3) on vertical axis. These actual source positions are recorded precisely.",
+        "Activity2 Plotting Points Without a Grid has a source point shown on an axes-only figure whose exact numeric coordinates cannot be certified from text alone; asks students to plot points and determine whether (1,0) and(0,1) can be placed ACCURATELY. Scale must be justified from given visual reference; do not assert a picture shows a unique tick spacing unless verified.",
+        "Selected exact Practice validates printed coordinate labels and axes only, not the freehand graphs and teacher discussion. Previous correct invented diagram examples remain optional Edulytiks extensions and original gated source Cool-down is separately unverified.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: recognize that points sharing x lie vertically aligned and points sharing y lie horizontally aligned, including points on coordinate AXES. The source asks students to estimate location before using a fully marked grid and to infer unit scale from a single known point on a blank plane.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: predict the positions of (5,1),(5,2),(5,3),(5,4) without drawing: all are at x=5 and form a vertical line, while (4,3),(5,3),(6,3),(7,3) form a horizontal line at y=3. Check your prediction by plotting.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — axes and estimates: mark (5,0) on x-axis and (0,3) on y-axis. Explain why a zero coordinate means the point lies ON an axis, not that it is missing. In a blank grid with only point (4,2), infer an original unit interval, find (4,0) and (0,2), then explain how (1,0) and (0,1) can be located with reliable axis scale.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — point patterns: partner A plots points with x fixed at 6 and y=1,3,5; partner B plots points with y fixed at2 and x=1,4,7. Compare vertical and horizontal alignment, make one accurate drawing for each, and write the constant coordinate in words.",
+        "Optional previous source-aligned or independently authored extension — Assessment: selecting scale and plotting on a BLANK coordinate plane are source-core mathematical skills, requiring actual figure inspection and student explanation. An array of point strings is not sufficient authenticated rendering parity."
       ],
       "KeyConcepts": [
         {
@@ -283,7 +289,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Identify fixed x",
+          "Title": "Source exact 1 — Original G5 U07:L03 Plot More Points",
+          "Question": "Original Partner A first point A printed coordinates",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(5,1)",
+          "Check": "Original numeric source example; incorrect distractors (1,5) and (5,3) must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original G5 U07:L03 Plot More Points",
+          "Question": "Original Partner A point B printed coordinates",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(5,2)",
+          "Check": "Original numeric source example; incorrect distractors (2,5) and (5,3) must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original G5 U07:L03 Plot More Points",
+          "Question": "Original Partner A point C printed coordinates",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(5,3)",
+          "Check": "Original numeric source example; incorrect distractors (3,5) and (5,2) must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original G5 U07:L03 Plot More Points",
+          "Question": "Original Partner A point D printed coordinates",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(5,4)",
+          "Check": "Original numeric source example; incorrect distractors (4,5) and (5,1) must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Identify fixed x",
           "Question": "What line contains (5,1),(5,2),(5,3),(5,4)?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -295,7 +349,7 @@
           "Check": "Teacher inspects actual plotted dots."
         },
         {
-          "Title": "Identify fixed y",
+          "Title": "Optional existing extension — Identify fixed y",
           "Question": "Are (4,3),(5,3),(6,3),(7,3) horizontally aligned?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -307,7 +361,7 @@
           "Check": "Points ordered left to right by x."
         },
         {
-          "Title": "Plot the axes",
+          "Title": "Optional existing extension — Plot the axes",
           "Question": "Where are (4,0) and (0,2)?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -329,18 +383,89 @@
           "Mistake": "Assume equal first coordinates produce a horizontal line",
           "WhyWrong": "First x values fix horizontal location, not height.",
           "Correction": "Trace points vertically along constant x."
+        },
+        {
+          "Mistake": "Confuse zero first coordinate with origin or treat printed Partner A points as horizontal",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore original coordinate lists and x/y scale including zero axis."
         }
       ],
       "SummaryPoints": [
-        "Constant first coordinate means vertical alignment; constant second means horizontal.",
-        "A marked point can help establish scale on an otherwise blank coordinate plane.",
-        "Source plotting and peer review are teacher-scored.",
-        "Source 2021 IM K–5 Grade5 Unit7 Lesson 3: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-3/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
+        "Partner A x5 vertical; point(5,0) on horizontal axis.",
+        "Partner B y3 horizontal; point(0,3) on vertical axis.",
+        "Source plotting without a grid requires teacher verified unit scale.",
+        "Optional prior: Constant first coordinate means vertical alignment; constant second means horizontal.",
+        "Optional prior: A marked point can help establish scale on an otherwise blank coordinate plane.",
+        "Optional prior: Source plotting and peer review are teacher-scored.",
+        "Optional prior: Source 2021 IM K–5 Grade5 Unit7 Lesson 3: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-3/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Points on the Coordinate Plane — original representation",
+          "Title": "Original G5 U07:L03 Plot More Points — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original Partner A first point A printed coordinates",
+              "Cells": [
+                "(5,1)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A point B printed coordinates",
+              "Cells": [
+                "(5,2)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A point C printed coordinates",
+              "Cells": [
+                "(5,3)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A point D printed coordinates",
+              "Cells": [
+                "(5,4)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A shared first coordinate for A-D",
+              "Cells": [
+                "5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A points share vertical line",
+              "Cells": [
+                "x=5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A added point with coordinates (5,0) lies on",
+              "Cells": [
+                "horizontal axis",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner B first point A printed coordinates",
+              "Cells": [
+                "(4,3)",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Points on the Coordinate Plane — original representation",
           "Description": "Accessible first-party equivalent for values and ordered pairs; it is not a tested interactive plot or copied publisher graphic.",
           "Rows": [
             {

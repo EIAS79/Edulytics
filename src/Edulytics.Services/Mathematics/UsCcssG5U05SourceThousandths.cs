@@ -596,6 +596,21 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l02.original_plot_specific_points", "Source among D(6,4),E(2,5),F(8,3): farthest RIGHT", "F", "D", "E"),
         new("usccss.g5.u07.l02.original_plot_specific_points", "Source among D,E,F: highest VERTICAL coordinate", "E", "D", "F"),
         new("usccss.g5.u07.l02.original_plot_specific_points", "Original ordered pair (5,2) must be plotted at x5 y2, not x2 y5: correct statement", "x5, y2", "x2, y5", "x5, y5"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A first point A printed coordinates", "(5,1)", "(1,5)", "(5,3)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A point B printed coordinates", "(5,2)", "(2,5)", "(5,3)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A point C printed coordinates", "(5,3)", "(3,5)", "(5,2)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A point D printed coordinates", "(5,4)", "(4,5)", "(5,1)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A shared first coordinate for A-D", "5", "3", "1"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A points share vertical line", "x=5", "y=5", "x=0"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner A added point with coordinates (5,0) lies on", "horizontal axis", "vertical axis", "origin"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B first point A printed coordinates", "(4,3)", "(3,4)", "(5,3)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B point B printed coordinates", "(5,3)", "(3,5)", "(6,3)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B point C printed coordinates", "(6,3)", "(3,6)", "(7,3)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B point D printed coordinates", "(7,3)", "(3,7)", "(6,3)"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B points share horizontal line", "y=3", "x=3", "y=0"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original Partner B added point(0,3) lies on", "vertical axis", "horizontal axis", "origin"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original source point (1,0) lies on", "horizontal axis", "vertical axis", "origin"),
+        new("usccss.g5.u07.l03.source_shared_coordinate_lines", "Original source point (0,1) lies on", "vertical axis", "horizontal axis", "origin"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
