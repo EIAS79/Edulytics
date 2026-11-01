@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -209,11 +209,18 @@
       "CultureCode": "en",
       "Title": "Round Decimals",
       "ExplanationParagraphs": [
-        "Goal: label number-line endpoints and tick intervals correctly, estimate a point, and round decimals to the nearest whole number, tenth or hundredth with a defensible place-value explanation. The source first asks children to critique an incorrectly located 15.53 and then continues with more number lines.",
-        "Warm-up — poorly labeled point: an original unmarked 0–1 line has a marker slightly left of its midpoint. Give a too-low, reasonable and too-high decimal estimate; a picture without tenths marks cannot justify one exact thousandth. Propose adding tenths to improve the estimate.",
-        "Activity 1 — check a location: in a number line from 15.5 to15.6, a point representing 15.53 should be 3/10 of the distance across the interval from15.5 and closer to15.5 than15.6. A placement more than halfway toward15.6 is incorrect even if its numeric label is 15.53. Draw and label all tenths and hundredths before reasoning.",
-        "Activity 2 — round from nested lines: the original first-party decimal 6.273 lies between 6 and7, between6.2 and6.3, and between6.27 and6.28. Its nearest whole is6, nearest tenth6.3 and nearest hundredth6.27. Another example 4.685 lies between4.68 and4.69 and at the hundredth midpoint; under conventional half-up rounding it becomes4.69, but any alternate tie convention must be specified before grading.",
-        "Assessment: source asks students to label previously blank tick marks and explain if a plotted point is accurate before rounding. Numeric rounding answers do not establish correct number-line construction or critique. Student-generated diagrams and justification are teacher-reviewed."
+        "Original IM 2021 G5 U05:L08 Round Decimals: students label NUMBER-LINE ticks, estimate a point between marked decimals, and round printed decimal numbers to nearest whole, tenth and hundredth. Rounding requires comparing distances on a correctly scaled line, not simply changing a digit mechanically without understanding the threshold.",
+        "Warm-up Estimation Exploration Number Line: the publisher shows an unlabeled point and asks low/about-right/high estimates. Original line figure not independently reproduced, so its exact point is teacher-reviewed and not automatically assigned a fabricated coordinate.",
+        "Activity 1 Name that Number: printed Jada point labeled15.53 on 11 evenly spaced ticks from15 to16 (tenths). Source places point between the sixth and seventh tick marks; determine whether 15.53 lies in the correct 15.5–15.6 interval and assess the original plotted point position with the actual visual, rather than assume a source image match from alt text alone. Other original lines are3–4 by tenths,5.6–5.7 by hundredths and1.7–1.8 by hundredths, with points between specific marks. These image-dependent estimate answers are TEACHER_REVIEW_REQUIRED.",
+        "Activity 2 Which Number Is Closest?: source6.273 rounds nearest whole6, tenth6.3, hundredth6.27. Original4.158 rounds whole4, tenth4.2, hundredth4.16. Children can use source number lines to justify nearest bounds and the place immediately right of rounding digit.",
+        "Activity 3 Round the Numbers optional: printed original table numbers34.482,99.909,5.555,19.509. Nearest whole/tenth/hundredth respectively:34/34.5/34.48;100/99.9/99.91;6/5.6/5.56;20/19.5/19.51. Apply Grade5 conventional five-rounds-up half-way policy and handle carrying to a new whole at99.909 and19.509.",
+        "Exact numeric selected Practice covers only these source rounding results, not original source number-line diagram correctness or original gated Cool-down. Independently authored Edulytiks Cool-down asks pupils to round7.865 and explain thresholds; prior 4.685 source-style worked example remains optional, clearly not original printed activity.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: label number-line endpoints and tick intervals correctly, estimate a point, and round decimals to the nearest whole number, tenth or hundredth with a defensible place-value explanation. The source first asks children to critique an incorrectly located 15.53 and then continues with more number lines.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — poorly labeled point: an original unmarked 0–1 line has a marker slightly left of its midpoint. Give a too-low, reasonable and too-high decimal estimate; a picture without tenths marks cannot justify one exact thousandth. Propose adding tenths to improve the estimate.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — check a location: in a number line from 15.5 to15.6, a point representing 15.53 should be 3/10 of the distance across the interval from15.5 and closer to15.5 than15.6. A placement more than halfway toward15.6 is incorrect even if its numeric label is 15.53. Draw and label all tenths and hundredths before reasoning.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — round from nested lines: the original first-party decimal 6.273 lies between 6 and7, between6.2 and6.3, and between6.27 and6.28. Its nearest whole is6, nearest tenth6.3 and nearest hundredth6.27. Another example 4.685 lies between4.68 and4.69 and at the hundredth midpoint; under conventional half-up rounding it becomes4.69, but any alternate tie convention must be specified before grading.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source asks students to label previously blank tick marks and explain if a plotted point is accurate before rounding. Numeric rounding answers do not establish correct number-line construction or critique. Student-generated diagrams and justification are teacher-reviewed."
       ],
       "KeyConcepts": [
         {
@@ -237,7 +244,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Critique an incorrectly plotted point",
+          "Title": "Original Activity2 round6.273 and4.158",
+          "Question": "Round source 6.273 and4.158 to nearest whole,tenth,hundredth.",
+          "Method": "Use left-place digit and nearest neighboring ticks; conventional half-up threshold.",
+          "Steps": [
+            "6.273→whole6,tenth6.3,hundredth6.27.",
+            "4.158→whole4,tenth4.2,hundredth4.16.",
+            "Explain place and which neighboring number is closer."
+          ],
+          "Answer": "6,6.3,6.27;4,4.2,4.16.",
+          "Check": "Preserve source decimal precision."
+        },
+        {
+          "Title": "Original optional activity source table",
+          "Question": "Round34.482,99.909,5.555,19.509 to whole,tenth,hundredth.",
+          "Method": "Align whole/tenth/hundredth columns and inspect next digit.",
+          "Steps": [
+            "34.482→34,34.5,34.48.",
+            "99.909→100,99.9,99.91; 5.555→6,5.6,5.56.",
+            "19.509→20,19.5,19.51."
+          ],
+          "Answer": "Source table values as shown for all three rounding precisions.",
+          "Check": "Teacher checks original worked number lines."
+        },
+        {
+          "Title": "Original Jada15.53 placement",
+          "Question": "Is source Jada's point15.53 on a15–16 line at an appropriate position?",
+          "Method": "Assess the actual provided source image with eleven tenth ticks.",
+          "Steps": [
+            "Tick sequence is15.0 through16.0 by0.1.",
+            "15.53 lies between15.5 and15.6, much closer to15.5.",
+            "Teacher checks the actual drawn position and reason rather than deriving exact pixels from alt description."
+          ],
+          "Answer": "15.53 must be in15.5–15.6 interval; teacher reviews drawn point.",
+          "Check": "Do not invent the diagram's exact relative location."
+        },
+        {
+          "Title": "Optional existing extension — Critique an incorrectly plotted point",
           "Question": "A pupil marks15.53 closer to15.6 than to15.5. Is that accurate?",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -249,7 +292,7 @@
           "Check": "Distance to15.5 is0.03; distance to15.6 is0.07."
         },
         {
-          "Title": "Round 6.273 to three places",
+          "Title": "Optional existing extension — Round 6.273 to three places",
           "Question": "Round6.273 to nearest whole, tenth and hundredth.",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -261,7 +304,7 @@
           "Check": "Rounding must follow the requested place, not the number of printed digits."
         },
         {
-          "Title": "A midpoint requires a rule",
+          "Title": "Optional existing extension — A midpoint requires a rule",
           "Question": "How does 4.685 round to hundredths under nearest, halves-up?",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -283,18 +326,83 @@
           "Mistake": "Use the thousandths digit to round directly to the whole place",
           "WhyWrong": "Rounding to a place depends first on the next smaller place.",
           "Correction": "Choose the requested place, then determine nearest available benchmark."
+        },
+        {
+          "Mistake": "Present made-up number-line endpoints for Jada's original15–16 source or replace original optional rounding table with independent numbers",
+          "WhyWrong": "Source specifically places15.53 on a15–16 line and has six printed numbers with grade-appropriate rounding questions.",
+          "Correction": "Restore original printed values and original scale, assess actual source point visually with teacher and preserve unrelated examples as extensions."
         }
       ],
       "SummaryPoints": [
-        "Label and interpret number-line scales before placing or rounding decimals.",
-        "Different rounding precisions may give different displays of the same exact number.",
-        "Source point placement and mathematical explanation require teacher review.",
-        "Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 8 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-8/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+        "Source Activity1 Jada15.53 on15–16 tenths line plus three pictured estimate tasks require teacher-review.",
+        "Source Activity2 6.273→6/6.3/6.27 and4.158→4/4.2/4.16.",
+        "Original optional table34.482→34/34.5/34.48 and99.909→100/99.9/99.91.",
+        "Original optional5.555→6/5.6/5.56 and19.509→20/19.5/19.51.",
+        "Numerical rounding selected Practice supplements but does not grade source tick drawings and estimates.",
+        "Optional prior: Label and interpret number-line scales before placing or rounding decimals.",
+        "Optional prior: Different rounding precisions may give different displays of the same exact number.",
+        "Optional prior: Source point placement and mathematical explanation require teacher review.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 8 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-8/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Round Decimals — original decimal model",
+          "Title": "Exact printed source L08 decimal rounding",
+          "Description": "Original source values; source number line pictures are separate teacher-reviewed visuals.",
+          "Rows": [
+            {
+              "Label": "6.273",
+              "Cells": [
+                "whole6",
+                "tenth6.3",
+                "hundredth6.27"
+              ]
+            },
+            {
+              "Label": "4.158",
+              "Cells": [
+                "whole4",
+                "tenth4.2",
+                "hundredth4.16"
+              ]
+            },
+            {
+              "Label": "34.482",
+              "Cells": [
+                "34",
+                "34.5",
+                "34.48"
+              ]
+            },
+            {
+              "Label": "99.909",
+              "Cells": [
+                "100",
+                "99.9",
+                "99.91"
+              ]
+            },
+            {
+              "Label": "5.555",
+              "Cells": [
+                "6",
+                "5.6",
+                "5.56"
+              ]
+            },
+            {
+              "Label": "19.509",
+              "Cells": [
+                "20",
+                "19.5",
+                "19.51"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Round Decimals — original decimal model",
           "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
           "Rows": [
             {
