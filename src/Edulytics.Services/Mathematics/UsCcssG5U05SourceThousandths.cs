@@ -212,6 +212,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l16.original_mixed_decimal_arithmetic", "Original IM2021 Grade5 U05 L16 source mental/subtraction/mixed operations and optional challenge: 73.3 - 52.99; align place-value columns and explain regrouping; selected numeric item only", "20.31", "20.41", "20.20"),
         new("usccss.g5.u05.l16.original_mixed_decimal_arithmetic", "Original IM2021 Grade5 U05 L16 source mental/subtraction/mixed operations and optional challenge: 128.44 - 62.57; align place-value columns and explain regrouping; selected numeric item only", "65.87", "65.97", "65.76"),
         new("usccss.g5.u05.l16.original_mixed_decimal_arithmetic", "Original IM2021 Grade5 U05 L16 source mental/subtraction/mixed operations and optional challenge: 261.25 - 260.7; align place-value columns and explain regrouping; selected numeric item only", "0.55", "0.65", "0.44"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 2×0.7 = ? Evaluate exact product and explain position of tenths/hundredths.", "1.40", "1.50", "1.29"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 2×0.08 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.16", "0.26", "0.05"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 2×0.78 = ? Evaluate exact product and explain position of tenths/hundredths.", "1.56", "1.66", "1.45"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 3×0.5 = ? Evaluate exact product and explain position of tenths/hundredths.", "1.50", "1.60", "1.39"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 5×0.3 = ? Evaluate exact product and explain position of tenths/hundredths.", "1.50", "1.60", "1.39"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 7×0.02 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.14", "0.24", "0.03"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 U05 L17 whole×tenths/hundredths 6×0.07 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.42", "0.52", "0.31"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 source true/false: 100×0.01=1", "true", "false", "not enough information"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 source true/false: 10×0.1=0.01", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 source true/false: 10×0.01=0.1", "true", "false", "not enough information"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
