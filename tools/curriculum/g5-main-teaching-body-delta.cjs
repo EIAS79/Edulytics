@@ -10,6 +10,10 @@ const relative = 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math
 const outputDir = path.join(root,'stage-d-results');
 const consentPath='artifacts/curriculum-delivery/US-CCSS-MATH/G5/grade5-owner-academic-consent-20261101.json';
 const ownerConsent=JSON.parse(fs.readFileSync(path.join(root,consentPath),'utf8'));
+const approvedPath='src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json';
+const approvedBytes=fs.readFileSync(path.join(root,approvedPath));
+const approvedContentBlobSha=crypto.createHash('sha1')
+  .update('blob '+approvedBytes.length+'\0').update(approvedBytes).digest('hex');
 const ownerConsentValid=
   ownerConsent.ownerDecision==='OWNER_ACADEMIC_CONSENT_GRANTED' &&
   ownerConsent.scope?.grade==='G5' && ownerConsent.scope?.prNumber===596 &&
@@ -17,6 +21,8 @@ const ownerConsentValid=
   ownerConsent.scope?.requiredEntryState==='READY_FOR_STAGE_D' &&
   ownerConsent.authorizationClaims?.ownerConsentsTo107IdentifiedTextChanges===true &&
   ownerConsent.publicDecisionEvidence==='https://github.com/EIAS79/Edulytics/issues/619#issuecomment-6564702967' &&
+  ownerConsent.approvedContentPackPath===approvedPath &&
+  ownerConsent.approvedContentPackGitBlobSha===approvedContentBlobSha &&
   ownerConsent.ownerSignedCryptographicDocument===false &&
   ownerConsent.certificationExclusions?.individualSourceElementsIndependentlyCompared===false &&
   ownerConsent.certificationExclusions?.releaseApproved===false;

@@ -5,6 +5,10 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {ownerAcademicConsent}=require('../tools/curriculum/g5-stage-d-diagnostic.cjs');
 const evidence=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G5/grade5-owner-academic-consent-20261101.json'),'utf8'));
+const crypto=require('node:crypto');
+const approvedBytes=fs.readFileSync(path.resolve(__dirname,'..',evidence.approvedContentPackPath));
+const approvedGitBlob=crypto.createHash('sha1')
+  .update('blob '+approvedBytes.length+'\0').update(approvedBytes).digest('hex');
 
 test('owner authorizes all 148 already READY_FOR_STAGE_D Grade5 lessons with cited decision only',()=>{
   const c=ownerAcademicConsent();
@@ -14,6 +18,8 @@ test('owner authorizes all 148 already READY_FOR_STAGE_D Grade5 lessons with cit
   assert.equal(evidence.scope.grade,'G5');
   assert.equal(evidence.scope.stage,'D');
   assert.equal(evidence.authorizationClaims.ownerConsentsTo107IdentifiedTextChanges,true);
+  assert.equal(evidence.approvedContentPackGitBlobSha,approvedGitBlob);
+  assert.match(approvedGitBlob,/^[0-9a-f]{40}$/);
   assert.equal(evidence.publicDecisionEvidence,c.publicDecisionEvidence);
 });
 test('owner consent cannot fabricate individual technical checks, legal rights or release',()=>{
