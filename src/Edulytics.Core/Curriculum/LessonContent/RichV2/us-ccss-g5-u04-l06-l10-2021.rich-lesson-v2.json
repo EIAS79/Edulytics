@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l06-l10-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Standard Algorithm: Multi-digit Numbers with Composing PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: combine the two-row standard algorithm for a three-digit-by-two-digit product with place-value composing (carrying), explicitly discussing where each newly composed ten, hundred or thousand comes from. This is deliberately different from Unit 4 Lesson 5 without composing.",
-        "Warm-up: mentally compare (3×4)×10, (3×40)×10, and (3×200)×10. Explain how 30 is three tens rather than three ones and why tens partial products must be placed one column left.",
-        "Activity 1 — compose in the first row: use original 273×24. Multiply by four ones: 4×3=12 (carry 1 ten), 4×7+1=29 tens (carry 2 hundreds), 4×2+2=10 hundreds (carry 1 thousand), so the ones partial product is 1092. Multiply by 20: 273×20=5460, accounting for the 2 tens. Combine to get 6552. Ask a learner to identify precisely what each carry means.",
-        "Activity 2 — all products: separate an original product 368×57 into 368×7=2576 and 368×50=18400, then add 20976. Explain where regrouping happens within the first product and when adding 2576 to 18400. Write both partial products in aligned columns, or use a table describing the same place values.",
-        "Teacher review: the source compares student and compact records of composition and requires explaining why the carried digits mean larger units. The numeric answer is only a subcheck; a product verifier cannot certify a learner's written carry explanation."
+        "Original IM 2021 Grade5 U04:L06 is Standard Algorithm: Multi-digit Numbers with Composing PLC Activity. Use multi-digit factors and the standard algorithm with correct carrying in partial rows AND final addition. Prior source-aligned L05 lacked composing; this lesson changes the mathematical situation.",
+        "Warm-up Number Talk Three Factors: original (2×3)×10=60, (2×40)×10=800, (2×200)×10=4000 and (2×243)×10=4860. Pupil explains why tens factor 10 can be regrouped with the other factors without changing total.",
+        "Activity 1 Compose a New Unit: actual source 241×23=5543. Lin records 241×3=723 and 241×20=4820 then adds to 5543. The source asks what the 1 written above 241 represents in Lin's work: adding 7 hundreds and 8 hundreds creates 15 hundreds, hence one newly composed THOUSAND. It also asks learners to compute 182×41=7462 and 304×23=6992 by the standard algorithm. Original handwritten regrouping marks and reasoning require teacher review.",
+        "Activity 2 All the Products: original 647×9=5823, 647×50=32350, 647×59=38173 (sum of the first two), and 264×38=10032. Ask for correct columns, carry values and partial rows. Do not substitute the unrelated 273×24 source claim; retain that mathematically valid example only as an extension.",
+        "Independent Edulytiks Cool-down 372×46=17112 asks the pupil to show both partial rows and explain carried tens/hundreds. Exact selected numeric Practice cannot certify their original written standard algorithm. Original gated Cool-down and publisher figure artwork not independently verified.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +37,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "One composed two-row product",
+          "Title": "Original Lin's 241×23",
+          "Question": "Explain source Lin's 241×23=5543, the two rows and the carried 1.",
+          "Method": "Source standard algorithm with partial rows and thousand carry.",
+          "Steps": [
+            "Ones factor 3 gives 241×3=723.",
+            "Tens factor 2 tens gives 241×20=4820.",
+            "Add 723+4820=5543; 7 hundreds+8 hundreds=15 hundreds, compose one thousand."
+          ],
+          "Answer": "5543; carried 1 denotes one thousand in the row addition.",
+          "Check": "241×23=5543."
+        },
+        {
+          "Title": "Original source final products",
+          "Question": "Compute 182×41,304×23,647×9,647×50,647×59 and 264×38.",
+          "Method": "Place-value composing and correct tens shift.",
+          "Steps": [
+            "182×41=7462 and 304×23=6992.",
+            "647×9=5823; 647×50=32350.",
+            "647×59=32350+5823=38173; 264×38=10032."
+          ],
+          "Answer": "7462,6992,5823,32350,38173,10032.",
+          "Check": "Products and partial addition agree."
+        },
+        {
+          "Title": "Original three-factor Number Talk",
+          "Question": "Find (2×3)×10,(2×40)×10,(2×200)×10,(2×243)×10.",
+          "Method": "Associativity and multiplication by ten.",
+          "Steps": [
+            "2×3×10=60.",
+            "2×40×10=800 and 2×200×10=4000.",
+            "2×243×10=4860."
+          ],
+          "Answer": "60,800,4000,4860.",
+          "Check": "Use distributive/associative laws."
+        },
+        {
+          "Title": "Optional existing extension — One composed two-row product",
           "Question": "Find 273×24, recording the new units.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -48,7 +85,7 @@
           "Check": "273×24=273×(20+4)=5460+1092."
         },
         {
-          "Title": "Many compositions",
+          "Title": "Optional existing extension — Many compositions",
           "Question": "Calculate 368×57.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -60,7 +97,7 @@
           "Check": "368×(7+50)=20976."
         },
         {
-          "Title": "Diagnose wrong tens alignment",
+          "Title": "Optional existing extension — Diagnose wrong tens alignment",
           "Question": "A pupil records 273×20 as 546. Explain what was omitted.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -82,42 +119,80 @@
           "Mistake": "Place the tens row in the ones column",
           "WhyWrong": "The second multiplier digit counts tens, not ones.",
           "Correction": "Shift the entire tens partial product one place to the left."
+        },
+        {
+          "Mistake": "Present invented 273×24 as the textbook's Lin 241×23 algorithm or omit 647×59",
+          "WhyWrong": "The original source compares specific products and asks for what the written carried 1 represents.",
+          "Correction": "Restore Lin's 241×23 and all source composing exercises with correct place-value explanations."
         }
       ],
       "SummaryPoints": [
-        "Composing units must be justified by place value during multiplication and addition.",
-        "The two-row compact algorithm represents the same exact partial products.",
-        "Teacher reviews explanation and algorithm-to-quantity links.",
-        "2021 first-edition IM K–5 Grade 5 Unit 4 Lesson 6: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-6/lesson.html. Public task HTML reviewed, original Student Task PDF, gated Cool-down, and separate asset rights not independently reviewed. Edulytiks examples independently authored."
+        "Warmup original (2×3,40,200,243)×10 ->60,800,4000,4860.",
+        "Source Lin 241×23=5543 from 723+4820; the carried 1 is a thousand.",
+        "Source 182×41=7462,304×23=6992.",
+        "Source 647×9=5823,×50=32350,×59=38173; 264×38=10032.",
+        "Teacher reviews composing marks and source written algorithms; numeric choice is supplementary."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Standard Algorithm: Multi-digit Numbers with Composing PLC Activity — reasoning model",
-          "Description": "Original accessible text-only mathematical table; source diagrams, game pieces and photographs are not reproduced.",
+          "Title": "Original Lin standard algorithm source partials",
+          "Description": "First-party place-value model for the original 241×23; original publisher handwritten marks remain teacher reviewed.",
           "Rows": [
             {
-              "Label": "Product",
+              "Label": "241×3",
               "Cells": [
-                "273×4",
-                "273×20",
-                "Sum"
+                "723"
               ]
             },
             {
-              "Label": "Value",
+              "Label": "241×20",
               "Cells": [
-                "1092",
-                "5460",
-                "6552"
+                "4820"
               ]
             },
             {
-              "Label": "With another product",
+              "Label": "combined hundreds",
               "Cells": [
-                "368×7=2576",
-                "368×50=18400",
-                "20976"
+                "7+8=15 hundreds",
+                "carry 1 thousand"
+              ]
+            },
+            {
+              "Label": "sum",
+              "Cells": [
+                "5543"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source All Products numbers",
+          "Description": "Source numeric results; student original algorithm annotations teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "647×9",
+              "Cells": [
+                "5823"
+              ]
+            },
+            {
+              "Label": "647×50",
+              "Cells": [
+                "32350"
+              ]
+            },
+            {
+              "Label": "647×59",
+              "Cells": [
+                "38173"
+              ]
+            },
+            {
+              "Label": "264×38",
+              "Cells": [
+                "10032"
               ]
             }
           ]

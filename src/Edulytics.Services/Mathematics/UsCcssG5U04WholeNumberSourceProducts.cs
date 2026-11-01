@@ -73,6 +73,19 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 140 by 3", "140 × 3", 420, "partial-product value"),
         new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 301 by 4", "301 × 4", 1204, "partial-product value"),
         new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 301 by 20", "301 × 20", 6020, "partial-product value"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 241×23", "241 × 23", 5543, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 241×3", "241 × 3", 723, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 241×20", "241 × 20", 4820, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 182×41", "182 × 41", 7462, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 304×23", "304 × 23", 6992, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 647×9", "647 × 9", 5823, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 647×50", "647 × 50", 32350, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 647×59", "647 × 59", 38173, "whole-number product"),
+        new("usccss.g5.u04.l06.original_carried_multiplication", "Original source G5 U04:L06 composing algorithm 264×38", "264 × 38", 10032, "whole-number product"),
+        new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 6 multiplied by ten", "6 × 10", 60, "whole-number product"),
+        new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 80 multiplied by ten", "80 × 10", 800, "whole-number product"),
+        new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 400 multiplied by ten", "400 × 10", 4000, "whole-number product"),
+        new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 486 multiplied by ten", "486 × 10", 4860, "whole-number product"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
