@@ -72,6 +72,13 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source greater-than-1: twenty-five whole units divided into eighths", "25 ÷ (1/8)", 200, 1, "groups"),
         new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source less-than-1: one fifth divided among twenty-five", "(1/5) ÷ 25", 1, 125, "of original whole"),
         new("usccss.g5.u03.l16.source_ninetyeight_fifth_estimate", "Original source Estimation Exploration: 98 wholes divided into one-fifth-unit-sized groups, a little less than 100÷1/5=500", "98 ÷ (1/5)", 490, 1, "fifth-size groups"),
+        new("usccss.g5.u03.l17.source_multiply_divide_warmup", "Five wholes count how many sixth-sized pieces fit", "5 ÷ (1/6)", 30, 1, "groups"),
+        new("usccss.g5.u03.l17.source_multiply_divide_warmup", "Five wholes times one sixth", "5 × (1/6)", 5, 6, "original units"),
+        new("usccss.g5.u03.l17.source_multiply_divide_warmup", "One fifth shared among six equal recipients", "(1/5) ÷ 6", 1, 30, "original units per recipient"),
+        new("usccss.g5.u03.l17.source_multiply_divide_warmup", "One fifth times one sixth of same whole", "(1/5) × (1/6)", 1, 30, "of the original whole"),
+        new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Eleven grains of rice together weigh one third gram: find weight of ONE grain", "(1/3) ÷ 11", 1, 33, "grams per grain"),
+        new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Mai travels three quarters of a nine-tenths mile long road", "(9/10) × (3/4)", 27, 40, "miles run"),
+        new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Nine tennis balls each weigh 2 1/16 ounces", "(33/16) × 9", 297, 16, "ounces total"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>
