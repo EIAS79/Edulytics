@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l10-l12-l13-im2021-original-richv2-v8-20261029",
+  "ContentVersion": "g5-u08-l10-l12-l13-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Here Comes the Sum",
       "ExplanationParagraphs": [
-        "Goal: reason about how numerator and denominator sizes affect the sum of TWO positive fractions, then play a strategic greatest-sum game and a smallest-sum game with a partner. The source has four turns to place spinner-generated digits in two fraction numerators/two positive denominators and multiple rounds of play. The spinner's actual probabilities are not inferred from the original artwork.",
-        "Warm-up: with positive digits2,3,4,5 placed once each, compare the fraction sums5/2+4/3=23/6=3 5/6 and2/4+3/5=11/10=1.1. A strategy for a greater result places larger values upstairs and smaller downstairs, but valid exact outcomes depend on legal digit assignments, order and particular spinner results.",
-        "Activity 1 — original greatest-sum sample: suppose the four observed spinner digits in one round are2,3,4,5. One legal placement is5/2+4/3=23/6. Require every digit to be used once and denominators to be nonzero. A player must record the order in which each irreversible placement was made; knowing the four digits retrospectively does not prove an optimal game strategy under uncertainty.",
-        "Activity 2 — original smallest-sum sample with the same FOUR digit values: placing2/4+3/5 yields11/10. Compare with2/5+3/4=23/20, which is larger, and explain why cross-products are necessary when denominators differ. Repeat for four full rounds and explain the tie-break rule: combine round sums only in a tie, and prefer the larger total for greatest-sum versus the smaller total for smallest-sum.",
-        "Assessment: mathematical equivalence and legal use of four supplied digits are machine-checkable subskills; the complete four-round partner game, actual spinner outcomes, irrevocable placement decisions and strategy rationale require teacher review."
+        "Original IM2021 G5 U08:L10 develops adaptive fraction addition strategies through TWO spinner games Greatest Sum and Smallest Sum. The spinner outcomes and placements are student dependent and must not be substituted with one fake publisher result.",
+        "Warm-up Number Talk printed fractions2/12+1/6=1/3,2/6+1/2=5/6,1/3+1/2=5/6,1/3+3/2=11/6. Children find equivalent denominator units and compare efficient representations.",
+        "Activity1 Greatest Sum: partner spins to fill four blank numerator/denominator slots, cannot erase a placed digit, computes sum, and the GREATER sum wins a round. After FOUR rounds majority of wins, ties broken by total of all four sums.",
+        "Activity2 Smallest Sum: same actual spinner-and-four-box process over four rounds but SMALLER sum wins each round, ties decided by smaller total of all round sums. Original source doesn't prescribe any roll sequence or fixed optimal numerical solution before rolls.",
+        "Previous authored numerical examples in Rich V2 remain distinct optional Edulytiks additions. Digital selected practice covers exact warm-up values and source rules; real spins, denominators, fairness, rationale, and correct scoring require teacher review.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: reason about how numerator and denominator sizes affect the sum of TWO positive fractions, then play a strategic greatest-sum game and a smallest-sum game with a partner. The source has four turns to place spinner-generated digits in two fraction numerators/two positive denominators and multiple rounds of play. The spinner's actual probabilities are not inferred from the original artwork.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: with positive digits2,3,4,5 placed once each, compare the fraction sums5/2+4/3=23/6=3 5/6 and2/4+3/5=11/10=1.1. A strategy for a greater result places larger values upstairs and smaller downstairs, but valid exact outcomes depend on legal digit assignments, order and particular spinner results.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original greatest-sum sample: suppose the four observed spinner digits in one round are2,3,4,5. One legal placement is5/2+4/3=23/6. Require every digit to be used once and denominators to be nonzero. A player must record the order in which each irreversible placement was made; knowing the four digits retrospectively does not prove an optimal game strategy under uncertainty.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — original smallest-sum sample with the same FOUR digit values: placing2/4+3/5 yields11/10. Compare with2/5+3/4=23/20, which is larger, and explain why cross-products are necessary when denominators differ. Repeat for four full rounds and explain the tie-break rule: combine round sums only in a tie, and prefer the larger total for greatest-sum versus the smaller total for smallest-sum.",
+        "Optional previous source-aligned or independently authored extension — Assessment: mathematical equivalence and legal use of four supplied digits are machine-checkable subskills; the complete four-round partner game, actual spinner outcomes, irrevocable placement decisions and strategy rationale require teacher review."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Greatest sum example",
+          "Title": "Source exact 1 — Greatest and Smallest Fraction Sums",
+          "Question": "Original warmup2/12+1/6",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1/3",
+          "Check": "Original numeric source example; incorrect distractors 3/18 and 3/12 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Greatest and Smallest Fraction Sums",
+          "Question": "Original warmup2/6+1/2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "5/6",
+          "Check": "Original numeric source example; incorrect distractors 3/8 and 3/6 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Greatest and Smallest Fraction Sums",
+          "Question": "Original warmup1/3+1/2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "5/6",
+          "Check": "Original numeric source example; incorrect distractors 2/5 and 3/6 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Greatest and Smallest Fraction Sums",
+          "Question": "Original warmup1/3+3/2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "11/6",
+          "Check": "Original numeric source example; incorrect distractors 4/5 and 10/6 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Greatest sum example",
           "Question": "Use digits2,3,4,5 exactly once as two fractions. Evaluate5/2+4/3.",
           "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "The sample doesn't certify winning a real four-round game."
         },
         {
-          "Title": "Smallest sum example",
+          "Title": "Optional existing extension — Smallest sum example",
           "Question": "Evaluate2/4+3/5.",
           "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "2/5+3/4=23/20, slightly greater."
         },
         {
-          "Title": "Compare unlike denominators",
+          "Title": "Optional existing extension — Compare unlike denominators",
           "Question": "Which is greater: 11/10 or 23/20?",
           "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
           "Steps": [
@@ -82,18 +136,89 @@
           "Mistake": "Use a digit twice or change a written placement after a later spin",
           "WhyWrong": "The source game requires each spinner result be placed in one unused box and not revised.",
           "Correction": "Keep a valid four-placement sequence for every round."
+        },
+        {
+          "Mistake": "Treat fictional spinner outcomes as the only official correct source game totals.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original printed warm-up and precise game constraints; evaluate actual student play by teacher rubric."
         }
       ],
       "SummaryPoints": [
-        "Greatest and smallest objectives reward different numerator/denominator choices.",
-        "A valid source game includes actual spinner outcomes, irreversible slots and four rounds.",
-        "Only teacher reviews partner decisions, strategy and complete play.",
-        "2021 IM Grade 5 Unit 8 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-10/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
+        "Original warmup1/3,5/6,5/6,11/6.",
+        "Greatest wins by maximum; Smallest by minimum with distinct tie-break totals.",
+        "Original spinner outcomes cannot be inferred from static source.",
+        "Optional prior: Greatest and smallest objectives reward different numerator/denominator choices.",
+        "Optional prior: A valid source game includes actual spinner outcomes, irreversible slots and four rounds.",
+        "Optional prior: Only teacher reviews partner decisions, strategy and complete play.",
+        "Optional prior: 2021 IM Grade 5 Unit 8 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-10/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Here Comes the Sum — first-party game",
+          "Title": "Greatest and Smallest Fraction Sums — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup2/12+1/6",
+              "Cells": [
+                "1/3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup2/6+1/2",
+              "Cells": [
+                "5/6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup1/3+1/2",
+              "Cells": [
+                "5/6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup1/3+3/2",
+              "Cells": [
+                "11/6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Greatest Sum game chooses player with",
+              "Cells": [
+                "greater sum",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Smallest Sum game chooses player with",
+              "Cells": [
+                "smaller sum",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source EACH sum game has how many rounds?",
+              "Cells": [
+                "4",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source fraction digit blanks after a spinner roll can be chan",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Here Comes the Sum — first-party game",
           "Description": "Accessible original game record example; published spinner, source recording sheet and protected responses are not copied.",
           "Rows": [
             {

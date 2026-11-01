@@ -788,6 +788,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Source roof area picture shows 8-sided shape, can exact area be certified without all figure dimensions?", "no", "yes", "always150"),
         new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Original reservoir-design task has a single unique source required length width height?", "no", "yes", "only cubes"),
         new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Source capture rain: gross theoretical precipitation and usable water may differ due to losses, true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original warmup2/12+1/6", "1/3", "3/18", "3/12"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original warmup2/6+1/2", "5/6", "3/8", "3/6"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original warmup1/3+1/2", "5/6", "2/5", "3/6"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original warmup1/3+3/2", "11/6", "4/5", "10/6"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original Greatest Sum game chooses player with", "greater sum", "smaller sum", "closest to zero"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original Smallest Sum game chooses player with", "smaller sum", "greater sum", "equal only"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original source EACH sum game has how many rounds?", "4", "2", "6"),
+        new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original source fraction digit blanks after a spinner roll can be changed?", "no", "yes", "only after final round"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
