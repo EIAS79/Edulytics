@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Divide Unit Fractions by Whole Numbers",
       "ExplanationParagraphs": [
-        "Goal: split one unit-fraction amount equally among a whole-number count of recipients and describe the resulting portion as a fraction of the ORIGINAL whole. Source 2021 begins from physical leftover food sharing; the fraction divided is the dividend, not the divisor.",
-        "Warm-up: compare simple quotients after the starting quantity is reduced while the number of recipients stays fixed; explain why fewer resources with the same recipients yields a smaller share.",
-        "Activity 1 — original leftover pan: a family has one half of a full tray of bread remaining and four people share the leftover equally. Draw a rectangle with one half highlighted and split that selected half into four equal areas. Extend partitions across the original whole, producing eight equal cells, one per person. Express 1/2÷4=1/8 of the original tray per person.",
-        "Activity 2 — alternative fractions: half a meter of ribbon is shared by three crafters. Partition the original one-meter ribbon into six equal sections and give one to each crafter. Explain that the answer 1/6 meter differs profoundly from 3÷(1/2), which would ask how many half-meter lengths fit in three full meters.",
-        "Assessment boundary: the source evaluates a diagram of splitting a fractional dividend and how it matches the division situation. Exact numeric checks can support the lesson, but the drawn original whole and explanation require teacher review. No protected macaroni illustration or publisher answer key was copied."
+        "Purpose IM K-5 2021 Grade5 U03:L11: divide a UNIT fraction by a positive whole-number recipient count. The original reference stays the FULL pan; do not turn the fraction dividend into its reciprocal.",
+        "Warm-up — Number Talk Double the Divisor: the source sequence is 72÷4=18,36÷4=9,4÷4=1,1÷4=1/4. Pupils explain why a smaller starting quantity shared among four gives a smaller result.",
+        "Activity 1 — More Macaroni and Cheese: Jada AND HER TWO SISTERS (three people) equally share ONE HALF of an original pan. Draw full pan, highlight remaining half, subdivide the half into three equal pieces: EACH receives 1/6 OF THE ENTIRE PAN. Write (1/2)÷3=1/6; source MLR7 Compare and Connect gallery walk reviews diagrams and explanations.",
+        "Activity 2 — More People Share: FOUR people share the SAME half-pan so each gets 1/8 of the original whole; FIVE people share the half so each receives 1/10. Explain why increasing group count decreases the per-person portion; compare with three-person 1/6. The teacher evaluates equal partition dimensions and source drawing quality.",
+        "Assessment and source boundaries: independent Edulytiks-authored alternative Cool-down asks SIX people to share half a pan and explain 1/12 against the original full pan. Exact numeric subskills are only supplements: macaroni drawings, comparison discussion and MLR7 oral explanations remain TEACHER_REVIEW_REQUIRED. Publisher-gated Cool-down, figure binaries and separate Student PDF not independently inspected.",
+        "Earlier mathematically valid 1/2 of a tray shared by four and 1/2 meter of ribbon shared by three are OPTIONAL EXTENSIONS, not original 2021 source activities."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +37,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Divide a half tray",
+          "Title": "Original Activity 1: Jada and two sisters",
+          "Question": "Three people divide half a pan of macaroni and cheese evenly. How much of the ORIGINAL FULL PAN does each receive?",
+          "Method": "Original source context, equal-area full-pan model, and teacher-reviewed drawing.",
+          "Steps": [
+            "Draw the whole pan and select one half.",
+            "Partition that half into three equal parts.",
+            "Extend the cut to the full pan and count six equal original-pan pieces."
+          ],
+          "Answer": "1/6 of the original pan.",
+          "Check": "(1/2)÷3=1/(2×3)=1/6."
+        },
+        {
+          "Title": "Original Activity 2: four share",
+          "Question": "Four people share the same half-pan. How much per person?",
+          "Method": "Original source context, equal-area full-pan model, and teacher-reviewed drawing.",
+          "Steps": [
+            "Identify original whole pan and remaining 1/2.",
+            "Partition remaining half equally into four pieces.",
+            "Each person takes one of eight original-pan pieces."
+          ],
+          "Answer": "1/8 of the full pan.",
+          "Check": "(1/2)÷4=1/8."
+        },
+        {
+          "Title": "Original Activity 2: five share",
+          "Question": "Five people share the same half-pan. How much per person?",
+          "Method": "Original source context, equal-area full-pan model, and teacher-reviewed drawing.",
+          "Steps": [
+            "Retain the half-pan as starting quantity.",
+            "Split that half into five equal pieces.",
+            "Each piece represents one tenth of the full original pan."
+          ],
+          "Answer": "1/10 of the full pan.",
+          "Check": "(1/2)÷5=1/10."
+        },
+        {
+          "Title": "Optional extension — Divide a half tray",
           "Question": "Four people split half a tray of food equally. What portion of the full tray does each receive?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -48,7 +85,7 @@
           "Check": "4×1/8=1/2 tray."
         },
         {
-          "Title": "Divide half a meter",
+          "Title": "Optional extension — Divide half a meter",
           "Question": "Three people share 1/2 meter of ribbon equally.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -60,7 +97,7 @@
           "Check": "3×1/6=1/2 meter."
         },
         {
-          "Title": "Check division direction",
+          "Title": "Optional extension — Check division direction",
           "Question": "Are 1/2÷3 and 3÷1/2 equal?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -82,46 +119,48 @@
           "Mistake": "Report one quarter of the remaining half as a quarter of the full tray",
           "WhyWrong": "The selected half is not the original unit whole.",
           "Correction": "Count resulting equal pieces across the whole tray before naming the final share."
+        },
+        {
+          "Mistake": "Replace original macaroni-and-cheese three/four/five-person tasks with fabricated ribbon or bread story",
+          "WhyWrong": "Original 2021 source requires interpreting leftover half-pan and full-whole reference.",
+          "Correction": "Teach source macaroni stories first and preserve unrelated valid models as supplemental only."
         }
       ],
       "SummaryPoints": [
-        "Splitting a unit fraction among b people produces smaller portions of the original whole.",
-        "For positive a and b, (1/a)÷b=1/(ab).",
-        "Drawing and explaining the fractional-dividend story are teacher-reviewed.",
-        "2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 11, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-11/lesson.html. First-party Edulytiks examples; public teacher/student-facing HTML activity reviewed but original Student Task PDF and gated Cool-down not independently checked."
+        "Warm-up exact source 72÷4=18,36÷4=9,4÷4=1,1÷4=1/4.",
+        "Original macaroni and cheese: Jada and two sisters split 1/2 pan →1/6 each.",
+        "Four people split 1/2 pan →1/8, five people →1/10; original full pan is the unit.",
+        "The diagram and the partner explanation are teacher-reviewed, numeric choice alone insufficient.",
+        "Independent Cool-down: six people share 1/2 original pan → 1/12 each."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Divide Unit Fractions by Whole Numbers — quotient meaning",
-          "Description": "Original text-only equal-group model; does not reproduce public publisher image cards or protected responses.",
+          "Title": "Original half-pan sharing 3/4/5 people",
+          "Description": "Edulytiks first-party table showing the same full-pan whole; not original publisher macaroni illustration.",
           "Rows": [
             {
-              "Label": "Original whole",
+              "Label": "Remaining pan",
               "Cells": [
-                "1 tray",
-                "1 meter"
-              ]
-            },
-            {
-              "Label": "Dividend",
-              "Cells": [
-                "1/2 tray",
-                "1/2 meter"
+                "1/2",
+                "1/2",
+                "1/2"
               ]
             },
             {
               "Label": "People",
               "Cells": [
+                "3",
                 "4",
-                "3"
+                "5"
               ]
             },
             {
-              "Label": "Share",
+              "Label": "Whole-pan share each",
               "Cells": [
-                "1/8 tray",
-                "1/6 meter"
+                "1/6",
+                "1/8",
+                "1/10"
               ]
             }
           ]

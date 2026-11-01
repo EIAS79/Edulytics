@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L11 source half-pan and exact four-divisor
+        // warmup; teacher reviews drawings and MLR7 comparison.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L11", "supporting.fractions.multiply_divide",
+            "G5_SOURCE_HALF_PAN_FRACTION_DIVIDED_BY_WHOLE",
+            ["usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares", "usccss.g5.u03.l11.four_divisor_number_talk"],
+            "IM2021_G5_U03_L11_EXACT_NUMERIC_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U03:L10 optional exact sharing, original diagrams
         // and quotient ordering justification teacher-reviewed.
         byLesson["PED:US-CCSS-MATH:G5:U03:L10"] = new LessonPracticeContract(

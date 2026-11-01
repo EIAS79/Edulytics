@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u03l11-half-pan-three-four-five-sharers",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
+      "id": "usccss.g5.u03.l11.four_divisor_number_talk",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u03l11-warmup-72-36-4-1-divided-by-four",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u03.l10.source_pretzel_share_per_student",
       "version": 1,
       "skillId": "supporting.fractions.multiply_divide",

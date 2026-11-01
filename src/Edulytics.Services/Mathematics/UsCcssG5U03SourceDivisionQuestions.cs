@@ -1,0 +1,94 @@
+using System.Globalization;
+using Edulytics.Core.Enums;
+
+namespace Edulytics.Services.Mathematics;
+
+/// <summary>
+/// Reusable, STRICTLY source-bounded Grade 5 Unit 03 fraction division question
+/// adapter. This is NOT a new shared engine: existing ExactSkillContractQuestionEngine
+/// delegates only registered lesson-selected source families to it.
+/// Open diagrams, discourse and teacher-scored source tasks remain human reviewed.
+/// Test fixtures are authored only (NOT_RUN).
+/// </summary>
+public static class UsCcssG5U03SourceDivisionQuestions
+{
+    public sealed record Problem(string Family, string Prompt, string Solution,
+        AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
+    private sealed record SourceCase(string Family, string Context, string Expression,
+        int Numerator, int Denominator, string Units);
+    private static readonly SourceCase[] Cases =
+    [
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares",
+            "Jada and her two sisters equally share HALF the original pan of macaroni and cheese among THREE people",
+            "(1/2) / 3", 1,6,"of the whole pan"),
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares",
+            "FOUR people share HALF the original pan equally",
+            "(1/2) / 4",1,8,"of the whole pan"),
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares",
+            "FIVE people share HALF the original pan equally",
+            "(1/2) / 5",1,10,"of the whole pan"),
+        new("usccss.g5.u03.l11.four_divisor_number_talk",
+            "Original Grade 5 U03:L11 warm-up, 72 divided by 4","72 / 4",18,1,""),
+        new("usccss.g5.u03.l11.four_divisor_number_talk",
+            "Original Grade 5 U03:L11 warm-up, 36 divided by 4","36 / 4",9,1,""),
+        new("usccss.g5.u03.l11.four_divisor_number_talk",
+            "Original Grade 5 U03:L11 warm-up, 4 divided by 4","4 / 4",1,1,""),
+        new("usccss.g5.u03.l11.four_divisor_number_talk",
+            "Original Grade 5 U03:L11 warm-up, 1 divided by 4","1 / 4",1,4,""),
+        // END_G5_U03_AUTHORING_CASES
+    ];
+    public static bool Supports(string? family) =>
+        !string.IsNullOrWhiteSpace(family) &&
+        Cases.Any(c => string.Equals(c.Family, family, StringComparison.Ordinal));
+    private static int Gcd(int a,int b) {a=Math.Abs(a);b=Math.Abs(b);while(b!=0){int r=a%b;a=b;b=r;}return a;}
+    private static string Rational(int a,int b)
+    {
+        int g=Gcd(a,b);
+        return b/g==1 ? (a/g).ToString(CultureInfo.InvariantCulture)
+            : $"{a/g}/{b/g}";
+    }
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p,
+        out SourceCase? answer)
+    {
+        answer=null;
+        if(!Supports(family)||p is null||p.Count!=2||
+           !p.TryGetValue("case",out int index)||index<0||
+           !p.TryGetValue("slot",out int slot)||slot is <0 or >2)return false;
+        var cases=Cases.Where(c => c.Family==family).ToArray();
+        if(index>=cases.Length) return false;
+        answer=cases[index];return true;
+    }
+    public static Problem Build(string family,Random random)
+    {
+        if(!Supports(family))throw new InvalidOperationException("Unregistered G5 U03 source family.");
+        ArgumentNullException.ThrowIfNull(random);
+        var cases=Cases.Where(c => c.Family==family).ToArray();
+        IReadOnlyDictionary<string,int> p=new Dictionary<string,int>(StringComparer.Ordinal)
+        {["case"]=random.Next(cases.Length),["slot"]=random.Next(3)};
+        if(!Valid(family,p,out var c)||c is null)throw new InvalidOperationException("Invalid source case.");
+        string correct=Rational(c.Numerator,c.Denominator);
+        string wrongA=Rational(c.Numerator+c.Denominator,c.Denominator);
+        string wrongB=Rational(c.Numerator+2*c.Denominator,c.Denominator);
+        string[] options=p["slot"] switch
+        {
+            0=>[correct,wrongA,wrongB],
+            1=>[wrongA,correct,wrongB],
+            _=>[wrongA,wrongB,correct]
+        };
+        string prompt=$"{c.Context}. Calculate the exact source expression {c.Expression} " +
+            $"relative to the SAME original whole. Select 1: {options[0]}; 2: {options[1]}; 3: {options[2]}. " +
+            "Student sketches, original context interpretations and explanations are TEACHER_REVIEW_REQUIRED.";
+        string solution=$"{c.Expression} = {correct} {c.Units}. " +
+            "The source context and full-whole reference matter; a selected numeric choice cannot score the pupil's diagram.";
+        return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);
+    }
+    public static string Solve(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!Valid(family,p,out _))throw new InvalidOperationException("Malformed G5 Unit 3 source case.");
+        return (p["slot"]+1).ToString(CultureInfo.InvariantCulture);
+    }
+    public static bool Verify(string family,IReadOnlyDictionary<string,int>? p,string? answer) =>
+        Valid(family,p,out _) &&
+        string.Equals(answer,(p!["slot"]+1).ToString(CultureInfo.InvariantCulture),
+            StringComparison.Ordinal);
+}
