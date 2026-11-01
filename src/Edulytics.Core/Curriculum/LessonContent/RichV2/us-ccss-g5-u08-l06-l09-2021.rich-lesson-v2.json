@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l06-l09-im2021-original-richv2-v8-20261029",
+  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Revisit Volume PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: use unit-cube packing to justify integer rectangular-prism volume, find several different cuboid arrangements for one volume, and distinguish an imaginary rectangular bounding prism from an irregular actual landmark. The original source explicitly warns that multiplying a historic structure's displayed dimensions does not compute the true volume of a non-prism.",
-        "Warm-up: imagine 126 identical unit cubes with no gaps. A 3-by-6-by-7 arrangement uses126 cubes; a 2-by-7-by-9 arrangement also uses126. Ask learners to illustrate the layers of both boxes and explain why equal volume does NOT imply equal face shapes or surface area.",
-        "Activity 1 — choose box arrangements: compare factor triples(1,9,14),(2,7,9),(3,6,7), each multiplying to126 cubic-unit cubes. State that finding several valid arrangements is different from identifying the exact dimensions of any photographed box because cube sizes and the physical interior dimensions are not verified.",
-        "Activity 2 — architectural bounding models: model an imaginary rectangular prism with square base230m by230m and height140m, obtaining 7,406,000m³. Separately model a bounding prism with footprint129m by59m and height373m:2,838,903m³. These are explicitly rectangular MODEL volumes only. The actual pyramid tapers, and an actual stepped skyscraper is not a uniform rectangular prism; comparing the bounding volumes does not determine the actual structures' volume without additional shape data.",
-        "Assessment: arrays/diagrams of cube packing, validity of every factor triple, and explanations distinguishing model bounds from real structures require teacher judgment. Avoid claiming an actual pyramid equals its rectangular bounding prism."
+        "Original IM2021 G5 U08:L06 applies fixed unit-cube counts to rectangular-prism dimensions, then approximates the size of two famous structures. The source explicitly says neither real structure is a simple rectangular prism, so mathematical PROXY volumes are not claims about actual building interiors.",
+        "Warm-up Estimation Exploration Sugar Cubes uses a credited Biswarup Ganguly CC BY 3.0 image; the original count cannot be deduced from text alone, so student high/low/right estimates require teacher visual review.",
+        "Activity1 126 Cubes original box holds126 equal sugar cubes; valid factor arrangements include3×6×7 and2×7×9. The physical sugar box printed dimensions1 7/8in by3 3/4in by4 3/8in are approximate, so a pupil must reason how many small unit cubes fit and cannot declare one unique integer packing dimension without cube measurement.",
+        "Activity2 Colossal Structures Old and New source hypothetical rectangular PRISM for Great Pyramid with 230m square base and height140m yields230×230×140=7406000m³; actual pyramid is not a prism. Empire State Building source footprint129m×59m and height373m gives a rough prism proxy 2838903m³. Source photo and true shapes make both estimates/model assumptions, not certified real-world volumes.",
+        "Source images and credit terms preserved as metadata, not copied without independent binary/license review. Selected exact cases grade fixed cuboid arithmetic only; estimation and source image comparison are TEACHER_REVIEW_REQUIRED.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use unit-cube packing to justify integer rectangular-prism volume, find several different cuboid arrangements for one volume, and distinguish an imaginary rectangular bounding prism from an irregular actual landmark. The original source explicitly warns that multiplying a historic structure's displayed dimensions does not compute the true volume of a non-prism.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: imagine 126 identical unit cubes with no gaps. A 3-by-6-by-7 arrangement uses126 cubes; a 2-by-7-by-9 arrangement also uses126. Ask learners to illustrate the layers of both boxes and explain why equal volume does NOT imply equal face shapes or surface area.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — choose box arrangements: compare factor triples(1,9,14),(2,7,9),(3,6,7), each multiplying to126 cubic-unit cubes. State that finding several valid arrangements is different from identifying the exact dimensions of any photographed box because cube sizes and the physical interior dimensions are not verified.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — architectural bounding models: model an imaginary rectangular prism with square base230m by230m and height140m, obtaining 7,406,000m³. Separately model a bounding prism with footprint129m by59m and height373m:2,838,903m³. These are explicitly rectangular MODEL volumes only. The actual pyramid tapers, and an actual stepped skyscraper is not a uniform rectangular prism; comparing the bounding volumes does not determine the actual structures' volume without additional shape data.",
+        "Optional previous source-aligned or independently authored extension — Assessment: arrays/diagrams of cube packing, validity of every factor triple, and explanations distinguishing model bounds from real structures require teacher judgment. Avoid claiming an actual pyramid equals its rectangular bounding prism."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Two different 126-unit boxes",
+          "Title": "Source exact 1 — Colossal Volume and Sugar Cubes",
+          "Question": "Original source box contains exactly how many sugar cubes?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "126",
+          "Check": "Original numeric source example; incorrect distractors 120 and 128 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Colossal Volume and Sugar Cubes",
+          "Question": "Source126 cubes: valid complete rectangular-prism layering dimensions in cubes",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3×6×7",
+          "Check": "Original numeric source example; incorrect distractors 3×6×8 and 3×7×7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Colossal Volume and Sugar Cubes",
+          "Question": "Source126 cubes: another valid cuboid factor triple",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2×7×9",
+          "Check": "Original numeric source example; incorrect distractors 2×7×8 and 3×7×7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Colossal Volume and Sugar Cubes",
+          "Question": "Source historical Great Pyramid rectangular-prism PROXY base side230 meters and height140m, cubic meters",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "7406000",
+          "Check": "Original numeric source example; incorrect distractors 32200 and 5290000 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Two different 126-unit boxes",
           "Question": "Give two rectangular-prism arrangements of126 unit cubes.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "3×6×7=126 and2×7×9=126."
         },
         {
-          "Title": "Bounding pyramid prism",
+          "Title": "Optional existing extension — Bounding pyramid prism",
           "Question": "Find the volume of an imaginary230m×230m×140m rectangular prism.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "NOT the exact real-world pyramid volume."
         },
         {
-          "Title": "Bounding building prism",
+          "Title": "Optional existing extension — Bounding building prism",
           "Question": "Find129×59×373m³ for a hypothetical encompassing rectangular prism.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -82,18 +136,89 @@
           "Mistake": "Assume one factor triple is the only possible box shape",
           "WhyWrong": "Composite126 has many integer factorizations.",
           "Correction": "Find and justify more than one distinct triple."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
         }
       ],
       "SummaryPoints": [
-        "Volume counts unit cubes in the modeled rectangular prism.",
-        "Two distinct cube arrangements may have exactly equal volume.",
-        "Original physical cube layouts and real-world shape judgment require teacher review.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-6/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+        "126 permits many cuboid integer factor triples.",
+        "Pyramid rectangular bounding proxy7,406,000m³; building proxy2,838,903m³.",
+        "Real solids are not accurately captured by full rectangular-prism proxies.",
+        "Optional prior: Volume counts unit cubes in the modeled rectangular prism.",
+        "Optional prior: Two distinct cube arrangements may have exactly equal volume.",
+        "Optional prior: Original physical cube layouts and real-world shape judgment require teacher review.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-6/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Revisit Volume PLC Activity — original geometric model",
+          "Title": "Colossal Volume and Sugar Cubes — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source box contains exactly how many sugar cubes?",
+              "Cells": [
+                "126",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source126 cubes: valid complete rectangular-prism layering dimensions ",
+              "Cells": [
+                "3×6×7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source126 cubes: another valid cuboid factor triple",
+              "Cells": [
+                "2×7×9",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source historical Great Pyramid rectangular-prism PROXY base side230 m",
+              "Cells": [
+                "7406000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source historical Empire State approximate rectangular-prism proxy129×",
+              "Cells": [
+                "2838903",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Which hypothetical rectangular PRISM PROXY volume is larger?",
+              "Cells": [
+                "Great Pyramid proxy",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Great Pyramid actual shape is a rectangular prism true",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source sugar cube packing only126 total cubes can determine a UNIQUE b",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Revisit Volume PLC Activity — original geometric model",
           "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
           "Rows": [
             {

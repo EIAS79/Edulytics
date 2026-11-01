@@ -756,6 +756,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original source summary alternate quotient1782÷27", "66", "56", "65"),
         new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original source summary partial quotients60+6", "66", "64", "606"),
         new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original Elena intended exact division6773÷13=521, correct?", "true", "false", "unknown"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Original source box contains exactly how many sugar cubes?", "126", "120", "128"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Source126 cubes: valid complete rectangular-prism layering dimensions in cubes", "3×6×7", "3×6×8", "3×7×7"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Source126 cubes: another valid cuboid factor triple", "2×7×9", "2×7×8", "3×7×7"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Source historical Great Pyramid rectangular-prism PROXY base side230 meters and height140m, cubic meters", "7406000", "32200", "5290000"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Source historical Empire State approximate rectangular-prism proxy129×59×373 cubic meters", "2838903", "2890938", "7406000"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Which hypothetical rectangular PRISM PROXY volume is larger?", "Great Pyramid proxy", "Empire State proxy", "equal"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Original source Great Pyramid actual shape is a rectangular prism true/false", "false", "true", "unknown"),
+        new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Source sugar cube packing only126 total cubes can determine a UNIQUE box shape?", "no", "yes", "always a cube"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
