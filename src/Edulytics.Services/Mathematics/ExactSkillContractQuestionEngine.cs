@@ -177,6 +177,7 @@ public sealed class ExactSkillContractQuestionEngine
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
          UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(family.Trim()) ||
+         UsCcssAlg2U01L02PracticeAdapter.SupportsFamily(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -412,6 +413,9 @@ public sealed class ExactSkillContractQuestionEngine
         // all generic scalar parsing; forged variants and teacher tasks fail closed.
         if (UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(family))
             return UsCcssAlg2U01L01PracticeAdapter.VerifyExactNumericQuestion(
+                family, parameters, answer);
+        if (UsCcssAlg2U01L02PracticeAdapter.SupportsFamily(family))
+            return UsCcssAlg2U01L02PracticeAdapter.VerifyExactNumericQuestion(
                 family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
@@ -1757,6 +1761,36 @@ public sealed class ExactSkillContractQuestionEngine
                      "when working backwards. Written justifications require teacher review."
             };
             return new ExactProblem(family, prompt, hint,
+                AssessmentItemType.ShortAnswer, parameters);
+        }
+
+        if (UsCcssAlg2U01L02PracticeAdapter.SupportsFamily(family))
+        {
+            // Source-bounded numeric slots only. Monthly-interest rounding,
+            // diagrams, graph explanations and distinct rules stay teacher-scored.
+            int variantCount = family == UsCcssAlg2U01L02PracticeAdapter.GeometricFamily
+                ? 6 : 2;
+            int slot = QuestionVariantPolicy.NormalizeSlot(preferredVariant ?? random.Next(variantCount))
+                % variantCount;
+            int minimumN = family == UsCcssAlg2U01L02PracticeAdapter.GeometricFamily && slot == 1
+                ? 1 : 0;
+            int maximumN = family == UsCcssAlg2U01L02PracticeAdapter.SierpinskiFamily
+                ? 5 : 6;
+            int n = random.Next(minimumN, maximumN + 1);
+            if (!UsCcssAlg2U01L02PracticeAdapter.TryPrepareExactNumericQuestion(
+                    family, slot, n, out var prompt, out _, out var parameters))
+                throw new InvalidOperationException(
+                    "ALG2 L02 numeric question outside approved source domain.");
+
+            string feedback = family switch
+            {
+                UsCcssAlg2U01L02PracticeAdapter.PaperFamily =>
+                    "Track the number of pieces and the area of ONE piece. Explain total-area conservation to your teacher.",
+                UsCcssAlg2U01L02PracticeAdapter.SierpinskiFamily =>
+                    "Count shaded triangles separately from the area of ONE shaded triangle. Graph interpretation requires teacher review.",
+                _ => "Use the starting term, correct index and common ratio. Explain why consecutive quotients match."
+            };
+            return new ExactProblem(family, prompt, feedback,
                 AssessmentItemType.ShortAnswer, parameters);
         }
 
@@ -4918,6 +4952,19 @@ public sealed class ExactSkillContractQuestionEngine
                 !regenerated.TryGetValue("variant", out int expectedVariant) ||
                 expectedVariant != slot)
                 throw new InvalidOperationException("ALG2 L01 malformed numeric item.");
+            return exactAnswer;
+        }
+        if (UsCcssAlg2U01L02PracticeAdapter.SupportsFamily(problem.Family))
+        {
+            if (!p.TryGetValue("n", out int n) ||
+                !p.TryGetValue("variant", out int slot) ||
+                p.Count != 2 ||
+                !UsCcssAlg2U01L02PracticeAdapter.TryPrepareExactNumericQuestion(
+                    problem.Family, slot, n,
+                    out _, out string exactAnswer, out var regenerated) ||
+                !regenerated.TryGetValue("variant", out int expectedVariant) ||
+                expectedVariant != slot)
+                throw new InvalidOperationException("ALG2 L02 malformed numeric item.");
             return exactAnswer;
         }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
