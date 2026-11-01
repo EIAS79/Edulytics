@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/us-ccss-g5-stage-d.yml'
       - 'tools/curriculum/g5-stage-d-diagnostic.cjs'
+      - 'tools/curriculum/g5-stage-d-trx-reconcile.py'
+      - 'tools/curriculum/tests/test_g5_stage_d_trx_reconcile.py'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G5/**'
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Core/Curriculum/**'
@@ -117,7 +119,17 @@ jobs:
         run: |
           mkdir -p stage-d-results
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --no-restore --filter 'FullyQualifiedName~UsCcssG5|FullyQualifiedName~Grade5' --logger 'trx;LogFileName=grade5.trx' --results-directory stage-d-results
-      - name: Keep diagnostic TRX even when tests fail
+      - name: Validate Stage D per-lesson attribution parser against negative controls
+        if: always()
+        run: python3 -m unittest discover -s tools/curriculum/tests -p 'test_g5_stage_d_trx_reconcile.py' -v
+      - name: Reconcile real Grade 5 xUnit TestRun results to all 148 individual lessons
+        if: always()
+        run: |
+          python3 tools/curriculum/g5-stage-d-trx-reconcile.py \
+            --trx stage-d-results/grade5.trx \
+            --ledger artifacts/curriculum-delivery/US-CCSS-MATH/G5/g5-abc-lesson-ledger-v1.json \
+            --output stage-d-results/grade5-trx-per-lesson.json
+      - name: Keep TRX and per-lesson diagnostic even when tests fail
         if: always()
         uses: actions/upload-artifact@v4
         with:
