@@ -770,6 +770,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original teacher source requests estimates too low/about right/too high, are these a single official exact number?", "no", "yes", "always 100"),
         new("usccss.g5.u08.l07.source_wagon_photo_estimation", "To compute a rough wagon bed rectangular volume from measured dimensions, which operation?", "length×width×height", "length+width+height", "2×(length+width)"),
         new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original source asks students to EXPLAIN how accurate each dimension estimate is, teacher scored?", "yes", "no", "only digital numeric response"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Original source wagon27ft×13ft×2ft, cubic feet capacity", "702", "720", "542"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Original source wagon depth2ft length27ft width13ft: BASE area square feet", "351", "702", "3510"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source sand bag fills9 cubic feet: number bags for wagon702 cubic feet", "78", "87", "79"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source each sand bag costs$12: cost78 bags in dollars", "936", "780", "930"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source each sand bag weighs150lb: weight78 bags in pounds", "11700", "7800", "10800"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source each shipped box2×2×2 feet: cubic feet per box", "8", "6", "12"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source wagon702ft3 divided by box8ft3: largest WHOLE count by cubic-volume-only upper bound", "87", "88", "78"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source source says4000 boxes to deliver, number boxes in shipment", "4000", "400", "40000"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "An axis-aligned single layer of2ft cubes in27ft by13ft bed fits how many by ordinary floor packing?", "78", "87", "90"),
+        new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source actual box trips necessarily fixed by volume-only arithmetic without packing policy?", "no", "yes", "always46"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

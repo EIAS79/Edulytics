@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -507,10 +507,16 @@
       "CultureCode": "en",
       "Title": "Filling up the World's Largest Wagon",
       "ExplanationParagraphs": [
-        "Goal: apply the displayed real-wagon dimensions from the 2021 learner task to volume, bag count, money and mass, then reason about AXIS-ALIGNED packing of rigid cubes. Unlike loose sand, boxes cannot occupy fractional leftover dimensions, so volume ratio alone is not a valid box-capacity count.",
-        "Activity 1 — cubic capacity and sand: an idealized wagon bed is27ft long,13ft wide and2ft deep. Its rectangular-prism volume is702ft³. If one bag fills approximately9ft³ and costs$12 and weighs150lb, a full bag model needs78 bags, costing$936 and weighing11700lb. Distinguish mass/weight from volume and explain possible voids, vehicle safety constraints and source 'about' quantities.",
-        "Activity 2 — cube box delivery: each delivery box is a rigid2ft×2ft×2ft cube. Floor-fitting rows along dimensions are ⌊27/2⌋=13, ⌊13/2⌋=6, and ⌊2/2⌋=1 in height. The regular axis-aligned pack holds13×6×1=78 boxes per trip, not87 boxes computed as702÷8 and rounded. For4000 boxes, 51 trips carry3978, leaving22 boxes, so52 trips are needed under this simple packing plan.",
-        "Assessment boundary: sand fills the available volume approximately, while rigid boxes leave inaccessible volume under the fixed orientation. The source asks an explanation and practical layout, so packing assumptions must be stated and teacher reviewed. Volume-only division may overcount and should not automatically validate an answer."
+        "Original IM2021 G5 U08:L08 uses ACTUAL SOURCE Radio Flyer rectangular bed 27 feet long,13 feet wide,2 feet deep. It asks quantities of 150-pound sand bags filling9 cubic feet at$12 each and delivering4000 two-foot cubical boxes.",
+        "Warm-up Notice and Wonder Toy Boxes asks open source observation of picture; independent figure use needs source visual check and is teacher reviewed.",
+        "Activity1 Sand Wagon source wagon capacity27×13×2=702ft³. Each 150-pound sand bag fills9ft³, so702÷9=78 bags, cost78×$12=$936 and mass78×150lb=11700lb. Real capacity/bag fill may be approximate, hence source says ABOUT for cost.",
+        "Activity2 More Boxes source box2ft×2ft×2ft=8ft³, 4000 such boxes. IMPORTANT source problem does not specify detailed packing orientation. Simple VOLUME ratio702/8=87.75 yields upper bound87 boxes each trip and at least46 trips by volume. Physical axis-aligned single layer (floor27/2=13 and floor13/2=6, floor2/2=1) fits78 boxes, requiring52 trips. Do not auto-grade 46 or52 as uniquely certified without teacher deciding packing model; both calculations represent different assumptions.",
+        "Source volume arithmetic exact but box-trips interpretation and student explanation remain TEACHER_REVIEW_REQUIRED. Preserve original wagon dimensions, source 150-pound/9ft³/$12 bags and4000 identical boxes, not earlier invented dimensions.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: apply the displayed real-wagon dimensions from the 2021 learner task to volume, bag count, money and mass, then reason about AXIS-ALIGNED packing of rigid cubes. Unlike loose sand, boxes cannot occupy fractional leftover dimensions, so volume ratio alone is not a valid box-capacity count.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — cubic capacity and sand: an idealized wagon bed is27ft long,13ft wide and2ft deep. Its rectangular-prism volume is702ft³. If one bag fills approximately9ft³ and costs$12 and weighs150lb, a full bag model needs78 bags, costing$936 and weighing11700lb. Distinguish mass/weight from volume and explain possible voids, vehicle safety constraints and source 'about' quantities.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — cube box delivery: each delivery box is a rigid2ft×2ft×2ft cube. Floor-fitting rows along dimensions are ⌊27/2⌋=13, ⌊13/2⌋=6, and ⌊2/2⌋=1 in height. The regular axis-aligned pack holds13×6×1=78 boxes per trip, not87 boxes computed as702÷8 and rounded. For4000 boxes, 51 trips carry3978, leaving22 boxes, so52 trips are needed under this simple packing plan.",
+        "Optional previous source-aligned or independently authored extension — Assessment boundary: sand fills the available volume approximately, while rigid boxes leave inaccessible volume under the fixed orientation. The source asks an explanation and practical layout, so packing assumptions must be stated and teacher reviewed. Volume-only division may overcount and should not automatically validate an answer."
       ],
       "KeyConcepts": [
         {
@@ -534,7 +540,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Fill model with sand",
+          "Title": "Source exact 1 — Radio Flyer Sand and Boxes",
+          "Question": "Original source wagon27ft×13ft×2ft, cubic feet capacity",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "702",
+          "Check": "Original numeric source example; incorrect distractors 720 and 542 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Radio Flyer Sand and Boxes",
+          "Question": "Original source wagon depth2ft length27ft width13ft: BASE area square feet",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "351",
+          "Check": "Original numeric source example; incorrect distractors 702 and 3510 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Radio Flyer Sand and Boxes",
+          "Question": "Source sand bag fills9 cubic feet: number bags for wagon702 cubic feet",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "78",
+          "Check": "Original numeric source example; incorrect distractors 87 and 79 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Radio Flyer Sand and Boxes",
+          "Question": "Source each sand bag costs$12: cost78 bags in dollars",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "936",
+          "Check": "Original numeric source example; incorrect distractors 780 and 930 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Fill model with sand",
           "Question": "For a702ft³ bed and approximately9ft³ per sand bag, find bags, cost and weight.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -546,7 +600,7 @@
           "Check": "These values are conditional on ideal full volume and approximate bag capacity."
         },
         {
-          "Title": "Count boxes geometrically",
+          "Title": "Optional existing extension — Count boxes geometrically",
           "Question": "How many rigid2ft cubes fit in a27×13×2-foot rectangular bed with edges aligned?",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -558,7 +612,7 @@
           "Check": "The 1ft leftover strips do not fit extra 2ft cubes."
         },
         {
-          "Title": "Find deliveries",
+          "Title": "Optional existing extension — Find deliveries",
           "Question": "How many trips deliver4000 boxes at78 boxes/trip?",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -580,18 +634,89 @@
           "Mistake": "Confuse a 150-pound bag's MASS with its nine-cubic-foot CAPACITY",
           "WhyWrong": "Pounds and cubic feet measure different properties.",
           "Correction": "Calculate bag count from volume, then total pounds from bag count."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
         }
       ],
       "SummaryPoints": [
-        "The same wagon supports different sand-volume and rigid-box-packing calculations.",
-        "Rigid boxes require checking whole-number dimensions and possibly a final partial trip.",
-        "Student sketches and physical packing assumptions require teacher assessment.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 8, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-8/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+        "Original volume702ft³, bags78, cost$936, sand11700lb.",
+        "Cubic box volume8ft³ and 4000 units.",
+        "Trips depend on packing assumptions: volume-only lower bound46; straightforward physical grid gives52.",
+        "Optional prior: The same wagon supports different sand-volume and rigid-box-packing calculations.",
+        "Optional prior: Rigid boxes require checking whole-number dimensions and possibly a final partial trip.",
+        "Optional prior: Student sketches and physical packing assumptions require teacher assessment.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 8, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-8/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Filling up the World's Largest Wagon — original geometric model",
+          "Title": "Radio Flyer Sand and Boxes — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source wagon27ft×13ft×2ft, cubic feet capacity",
+              "Cells": [
+                "702",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source wagon depth2ft length27ft width13ft: BASE area square ",
+              "Cells": [
+                "351",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source sand bag fills9 cubic feet: number bags for wagon702 cubic feet",
+              "Cells": [
+                "78",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source each sand bag costs$12: cost78 bags in dollars",
+              "Cells": [
+                "936",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source each sand bag weighs150lb: weight78 bags in pounds",
+              "Cells": [
+                "11700",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source each shipped box2×2×2 feet: cubic feet per box",
+              "Cells": [
+                "8",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source wagon702ft3 divided by box8ft3: largest WHOLE count by cubic-vo",
+              "Cells": [
+                "87",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source source says4000 boxes to deliver, number boxes in shipment",
+              "Cells": [
+                "4000",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Filling up the World's Largest Wagon — original geometric model",
           "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
           "Rows": [
             {
