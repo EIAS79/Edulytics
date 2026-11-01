@@ -65,6 +65,13 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored non-publisher card: one-quarter of paper shared among three children", "(1/4) ÷ 3", 1, 12, "of original sheet"),
         new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored unmatched-card story: two whole meters into fifth-meter groups", "2 ÷ (1/5)", 10, 1, "pieces"),
         new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored reversed story: one fifth meter shared among two children", "(1/5) ÷ 2", 1, 10, "meter per child"),
+        new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source greater-than-1: twenty-five whole units divided into fifths", "25 ÷ (1/5)", 125, 1, "groups"),
+        new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source less-than-1: one seventh divided among twenty-five", "(1/7) ÷ 25", 1, 175, "of original whole"),
+        new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source less-than-1: one eighth divided among twenty-five", "(1/8) ÷ 25", 1, 200, "of original whole"),
+        new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source greater-than-1: twenty-five whole units divided into sevenths", "25 ÷ (1/7)", 175, 1, "groups"),
+        new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source greater-than-1: twenty-five whole units divided into eighths", "25 ÷ (1/8)", 200, 1, "groups"),
+        new("usccss.g5.u03.l16.source_twenty_five_fraction_quotients", "Original source less-than-1: one fifth divided among twenty-five", "(1/5) ÷ 25", 1, 125, "of original whole"),
+        new("usccss.g5.u03.l16.source_ninetyeight_fifth_estimate", "Original source Estimation Exploration: 98 wholes divided into one-fifth-unit-sized groups, a little less than 100÷1/5=500", "98 ÷ (1/5)", 490, 1, "fifth-size groups"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>

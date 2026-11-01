@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Reason About Quotients",
       "ExplanationParagraphs": [
-        "Goal: compare and order quotients containing a positive whole number and a unit fraction WITHOUT necessarily computing each quotient. The 2021 source asks students to group expressions above or below one and justify an ordering by interpreting dividend and divisor.",
-        "Warm-up: estimate 97÷1/6 by comparison with 100÷1/6=600. Discuss too-low and too-high bounds while keeping the meaning of sixth-sized groups; avoid treating the fraction divisor as the number six.",
-        "Activity 1: compare six original expressions 12÷1/3, 12÷1/5, 12÷1/8, (1/3)÷12, (1/5)÷12, (1/8)÷12. First classify which quotients exceed one and which lie below one, using comparison of the positive dividend and divisor. Then order all six conceptually: 1/96 < 1/60 < 1/36 < 36 < 60 < 96.",
-        "Activity 2: choose two expressions and independently verify their exact values, explaining why a smaller unit-fraction divisor produces MORE groups from the same whole total while a smaller fractional dividend produces a SMALLER share with the same integer divisor. Compare with a partner and revise any incorrect order.",
-        "Assessment: numeric ordering can be checked, but the original source asks for explaining the ordering without calculation, discussing strategies and revising reasoning. Teacher reviews the qualitative comparisons and unit semantics, not only the selected number. No original card artwork or protected response is copied."
+        "Original IM 2021 U03:L16 goal: estimate, compare above/below one and order positive quotients of a whole and a unit fraction without calculating first. Division direction matters; students justify comparison of dividend and divisor.",
+        "Warm-up How Many One Fifths? source 98÷1/5 is a little LESS than 100÷1/5=500 and is exactly 490; do not replace source with 97÷1/6 and an unrelated 600 estimate.",
+        "Activity 1 Greater Than or Less Than 1: six ACTUAL source expressions: 25÷1/5=125, 1/7÷25=1/175, 1/8÷25=1/200, 25÷1/7=175, 25÷1/8=200 and 1/5÷25=1/125. The three whole-dividend expressions are above one; the three unit-fraction-dividend expressions are below one.",
+        "Activity 2 Estimate and Divide: order the SAME six source expressions from least to greatest without computing: (1/8)÷25 < (1/7)÷25 < (1/5)÷25 < 25÷(1/5) < 25÷(1/7) < 25÷(1/8). Then choose two to calculate and justify exact values 1/200,1/175,1/125,125,175,200.",
+        "Original six-expression ordering and source comparison explanation remain TEACHER_REVIEW_REQUIRED; exact numeric subskills are selected digital supports, not proof of reasoning. Independently authored Edulytiks Cool-down compares 30÷1/6 vs (1/6)÷30.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +37,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Sort without evaluating all quotients",
+          "Title": "Original source estimation 98 fifths",
+          "Question": "Estimate and compute 98÷1/5 compared with 100÷1/5.",
+          "Method": "One whole has five one-fifths groups.",
+          "Steps": [
+            "100÷1/5=500.",
+            "98 is two fewer whole units, so 10 fewer fifth-sized groups.",
+            "Result 490, a little less than 500."
+          ],
+          "Answer": "490.",
+          "Check": "490×1/5=98."
+        },
+        {
+          "Title": "Source classify six quotients around one",
+          "Question": "Which source 25/one-fraction quotients are larger than 1?",
+          "Method": "Distinguish whole count divided into small groups from a small fraction shared among 25.",
+          "Steps": [
+            "25÷1/5,1/7,1/8 yield 125,175,200 >1.",
+            "1/7÷25,1/8÷25,1/5÷25 yield fractions less than 1.",
+            "Keep original fraction dividend and whole divisor positions."
+          ],
+          "Answer": "Three larger: 125,175,200; three smaller: 1/175,1/200,1/125.",
+          "Check": "Source expressions and units preserved."
+        },
+        {
+          "Title": "Source ascending order",
+          "Question": "Order six original source expressions from least to greatest.",
+          "Method": "Reason conceptually before using exact values.",
+          "Steps": [
+            "Within fractional results, 1/200<1/175<1/125.",
+            "All three fractions are below all three integers.",
+            "Among integer quotients 125<175<200."
+          ],
+          "Answer": "1/200, 1/175, 1/125, 125, 175, 200.",
+          "Check": "Do not insert unrelated 12-based source claims."
+        },
+        {
+          "Title": "Optional existing extension — Sort without evaluating all quotients",
           "Question": "Classify 12÷1/3,12÷1/5,1/3÷12,1/5÷12 relative to one.",
           "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
           "Steps": [
@@ -48,7 +85,7 @@
           "Check": "Exact check: 36,60 and 1/36,1/60."
         },
         {
-          "Title": "Order six quotient expressions",
+          "Title": "Optional existing extension — Order six quotient expressions",
           "Question": "Put 12÷1/3,12÷1/5,12÷1/8,1/3÷12,1/5÷12,1/8÷12 in increasing order.",
           "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
           "Steps": [
@@ -60,7 +97,7 @@
           "Check": "Results are 1/96, 1/60, 1/36, 36, 60, 96."
         },
         {
-          "Title": "Bound a large quotient",
+          "Title": "Optional existing extension — Bound a large quotient",
           "Question": "Estimate 97÷1/6 without first calculating an exact long expression.",
           "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
           "Steps": [
@@ -82,40 +119,47 @@
           "Mistake": "Reverse the conceptual ordering when changing denominator",
           "WhyWrong": "Larger denominators make unit fractions smaller and whole÷unit-fraction quotients larger.",
           "Correction": "Compare group size and number of groups before sorting."
+        },
+        {
+          "Mistake": "Use fabricated source 12÷1/3/5/8 or warmup 97÷1/6",
+          "WhyWrong": "The original printed 2021 source uses 25 and warmup 98÷1/5, changing the values changes comparison tasks.",
+          "Correction": "Restore all six source 25 expressions and source 490 warmup, keep other examples only as extension."
         }
       ],
       "SummaryPoints": [
-        "Order quotient sizes using the meanings of dividends and unit-fraction divisors.",
-        "Explain why fraction-dividend and whole-dividend expressions lie on opposite sides of one.",
-        "The source's justifications and revisions are teacher-reviewed.",
-        "Source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 16 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-16/lesson.html. Public student-facing HTML task reviewed; original Edulytiks examples. Original Student Task PDF, gated Cool-down and rights of third-party source artwork not independently verified."
+        "Original warmup 98÷1/5=490 just under 500.",
+        "Source six expressions all use 25 with 1/5,1/7,1/8.",
+        "Ascending 1/200 <1/175 <1/125 <125 <175 <200.",
+        "Three quotients exceed one, three fall below one; explanations teacher reviewed.",
+        "Edulytiks independent Cool-down contrasts 30÷1/6 and 1/6÷30."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Reason About Quotients — exact meaning",
-          "Description": "First-party text diagram or quotient-comparison table; no external source figure cards reproduced.",
+          "Title": "Original source six expressions and comparison to one",
+          "Description": "First-party tabulated original source equations, with human review of no-calculation ordering explanations.",
           "Rows": [
             {
-              "Label": "Type",
+              "Label": "25 ÷ unit fraction",
               "Cells": [
-                "1/8÷12",
-                "1/5÷12",
-                "1/3÷12",
-                "12÷1/3",
-                "12÷1/5",
-                "12÷1/8"
+                "25÷1/5=125",
+                "25÷1/7=175",
+                "25÷1/8=200"
               ]
             },
             {
-              "Label": "Value",
+              "Label": "Unit fraction ÷25",
               "Cells": [
-                "1/96",
-                "1/60",
-                "1/36",
-                "36",
-                "60",
-                "96"
+                "1/5÷25=1/125",
+                "1/7÷25=1/175",
+                "1/8÷25=1/200"
+              ]
+            },
+            {
+              "Label": "Ordered ascending",
+              "Cells": [
+                "1/200<1/175<1/125",
+                "125<175<200"
               ]
             }
           ]
