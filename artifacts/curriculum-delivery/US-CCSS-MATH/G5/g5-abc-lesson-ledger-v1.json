@@ -6,18 +6,18 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L02",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L03",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
     "A_CLOSED": 31,
     "B_CLOSED": 31,
-    "C_PREPARED": 30,
-    "READY_FOR_D": 30,
+    "C_PREPARED": 31,
+    "READY_FOR_D": 31,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 118
+    "BLOCKED": 0,
+    "REMAINING": 117
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -1763,35 +1763,58 @@
       "testPath": "tests/academic-us-ccss-g5-u03-l01-abc-contract-20261031.test.cjs",
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-abc-sequential-closure-20261031.json",
       "integrationCommitSHA": "7045bd549916929ace143923c730a4b0eb338655",
-      "openIssues": ["https://github.com/EIAS79/Edulytics/issues/605", "https://github.com/EIAS79/Edulytics/issues/592"],
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/605",
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
       "lastEvidenceCommitSHA": "a97d233823201843cb598cc73b7177cb36c9da3d",
       "authoredCandidate": true
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L02",
-      "originalLocalSourcePaths": ["C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-2\\lesson.html","C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-2\\preparation.html"],
-      "reuseFinding": "REUSE_VALID_U03_L02_RICHV2_AND_REPAIR_PRIYA_ACTIVITY2; ADD_FIRST_PARTY_4X3_3X4_2X5_GRID_MODELS_AND_TEACHER_RUBRIC",
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-2\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-2\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_VALID_U03_L02_RICHV2_AND_REPAIR_PRIYA_ACTIVITY2; ADD_FIRST_PARTY_4X3_3X4_2X5_GRID_MODELS_AND_TEACHER_RUBRIC; ACCEPTED_EXACT_SELECTED_PRACTICE_FROM_RELEASED_SUP1_U03L02_INTEGRATION_B61D9A69",
       "A_STATUS": "COMPLETE_WITH_DOCUMENTED_2021_SOURCE_LIMITATIONS",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_EXACT_SELECTED_L02_PRACTICE_WRITER_NOT_ASSIGNED",
-      "PracticeStrategy": "REUSE_G5_U03_L01_ORIGINAL_WHOLE_CAPABILITY_IF_MATHEMATICALLY_COMPATIBLE__SUP1_EXCLUSIVE_WRITER_REQUIRED",
+      "C_STATUS": "COMPLETE_WITH_SELECTED_CONTRACT_EVIDENCE_AUTHORED_NOT_RUN",
+      "PracticeStrategy": "SELECTED_G5_U03_L02_TWO_EXACT_SOURCE_BOUND_DIGITAL_FAMILIES_UNIT_FRACTION_OF_UNIT_FRACTION_AND_SAME_ORIGINAL_WHOLE_COMPARISON",
       "CooldownOriginalStatus": "SOURCE_TEACHER_GATED_UNVERIFIED",
       "CooldownEdulytiksStatus": "EDULYTIKS_ORIGINAL_TEACHER_RUBRIC",
       "testFile": "tests/academic-us-ccss-g5-u03-l02-abc-contract-20261031.test.cjs",
       "testExecutionStatus": "AUTHORED_NOT_RUN",
       "startedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-11-01T14:58:22.040Z",
       "elapsedSeconds": null,
-      "commitSHA": null,
-      "blocker": "Exact lesson-selected L02 Practice contract/generator/solver/verifier is absent; L01 adapter covers thirds or fourths of ONE HALF only, not 1/4 of 1/3, Priya 1/5 of 1/2 and the second source diagram. Requires approved sole Supervisor 1 writer under Issue 605; learner drawings and explanations remain teacher reviewed.",
-      "READY_FOR_STAGE_D": false,
-      "sourceEvidence": {"path":"artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-abc-current-lesson-20261031.json","teacherLessonSha256":"4bb09e8dfbcf3da207e376a775051c865f518111ed424efe7464ae7c907e8f62","teacherPreparationSha256":"64a7b4954da110aa63e3ec0086fdcb2eb870e92c45ce4fac3925daa45be896f6","limitations":"Original 2021 Student PDF, publisher figures and gated Cool-down not verified"},
+      "commitSHA": "ec8b93e0e0ed7f8330a7e9201173d43c019602d2",
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
+      "sourceEvidence": {
+        "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-abc-sequential-closure-20261101.json",
+        "teacherLessonSha256": "4bb09e8dfbcf3da207e376a775051c865f518111ed424efe7464ae7c907e8f62",
+        "teacherPreparationSha256": "64a7b4954da110aa63e3ec0086fdcb2eb870e92c45ce4fac3925daa45be896f6",
+        "limitations": "Original 2021 Student PDF, publisher figures and gated Cool-down not verified",
+        "previousReview": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-abc-current-lesson-20261031.json"
+      },
       "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
       "testPath": "tests/academic-us-ccss-g5-u03-l02-abc-contract-20261031.test.cjs",
       "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-original-teacher-rubric-20261031.json",
-      "openIssues": ["https://github.com/EIAS79/Edulytics/issues/605", "https://github.com/EIAS79/Edulytics/issues/592"],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/605",
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "ec8b93e0e0ed7f8330a7e9201173d43c019602d2",
+      "authoredCandidate": true,
+      "integrationCommitSHA": "b61d9a69830272bae2721ab79e277bb899e23e1a",
+      "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-abc-sequential-closure-20261101.json",
+      "selectedPracticeFamilyIds": [
+        "usccss.g5.u03.l02.unit_fraction_of_unit_fraction",
+        "usccss.g5.u03.l02.same_original_whole_order_comparison"
+      ],
+      "selectedPracticeRouting": "STATIC_REGISTRY_AND_DISPATCH_AUTHORED_NOT_RUN",
+      "teacherScoringBoundary": "ORIGINAL_DRAWINGS_AND_PRIYA_REASONING_TEACHER_REVIEW; RUBRIC_PERSISTENCE_NOT_DEMONSTRATED"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L03",
@@ -4719,7 +4742,7 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-31T12:08:07.1639964Z",
+  "updatedAtUtc": "2026-11-01T14:59:01.701Z",
   "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L02",
   "returnBacklog": [
     {
