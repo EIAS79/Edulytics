@@ -155,6 +155,10 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l10.source_luge_time_rounding", "Source an athlete timed 48.615 seconds to nearest thousandth; what would this report round to nearest HUNDREDTH?", "48.62", "48.61", "48.60"),
         new("usccss.g5.u05.l10.source_luge_speeds_and_precision", "Original source which athlete has greatest TOP SPEED, not smallest race time?", "Athlete 4", "Athlete 1", "Athlete 3"),
         new("usccss.g5.u05.l10.source_luge_speeds_and_precision", "Original source sixth athlete speed strictly between82.80mph and82.81mph, choose one valid illustrative thousandth-place speed", "82.805", "82.800", "82.810"),
+        new("usccss.g5.u05.l11.original_shaded_hundredth_grid_sums", "Original U05:L11 How Many Do You See warmup: first hundredths grid has20/100 shaded, second90/100 shaded; sum shaded amounts of equal one-whole unit grids", "1.10", "0.110", "0.11"),
+        new("usccss.g5.u05.l11.original_shaded_hundredth_grid_sums", "Original U05:L11 How Many Do You See warmup: first hundredths grid has95/100 shaded, second7/100 shaded; sum shaded amounts of equal one-whole unit grids", "1.02", "0.102", "0.97"),
+        new("usccss.g5.u05.l11.original_shaded_hundredth_grid_sums", "Original U05:L11 How Many Do You See warmup: first hundredths grid has20/100 shaded, second9/100 shaded; sum shaded amounts of equal one-whole unit grids", "0.29", "0.029", "2.9"),
+        new("usccss.g5.u05.l11.original_decimal_addition", "Original U05:L11 Activity1 find2.26+1.87 using any valid pupil-selected place-value strategy; teacher assesses student method", "4.13", "3.103", "4.03"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

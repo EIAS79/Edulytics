@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u05.l11.original_shaded_hundredth_grid_sums",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u05-l11-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
+      "id": "usccss.g5.u05.l11.original_decimal_addition",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u05-l11-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u05.l10.source_luge_time_rounding",
       "version": 1,
       "skillId": "supporting.decimals.core",
