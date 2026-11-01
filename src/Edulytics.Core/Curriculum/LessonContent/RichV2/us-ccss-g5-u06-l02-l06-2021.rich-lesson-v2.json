@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v11-20261101",
+  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v12-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -999,11 +999,17 @@
       "CultureCode": "en",
       "Title": "Multi-step Conversion Problems: Metric Liquid Volume",
       "ExplanationParagraphs": [
-        "Goal: convert LITERS to MILLILITERS and back, including decimals and fractions, then solve a multi-step liquid-volume problem involving dancers sharing bottled water. The original source asks students to compare whether they convert each bottle first or convert total liters last, and to explain which strategy is helpful.",
-        "Warm-up: contrast a bottle of capacity0.45L with a 20L cooler. One liter is1000 milliliters, so0.45L=450mL and20L=20000mL. Explain why a container image alone cannot determine capacity without labeled measurements; publisher bottle artwork not reused.",
-        "Activity 1 — unit table and comparisons: convert5L to5000mL; 0.95L to950mL;6500mL to6.5L; and3/4L to750mL. Compare15mL with0.15L and explain 0.15L=150mL, so15mL is smaller. Explain how a missing zero in 0.015L changes the interpretation.",
-        "Activity 2 — original dancers problem: 24 dancers each drink one and a half 450mL bottles during a rehearsal. Total volume24×1.5×450=16200mL, or16.2L. If the water began in a 20L cooler, 3.8L remains under the ideal no-spill assumption. A student may compute0.45L×1.5×24 or calculate total bottles first; compare strategies and state that bottles consumed may include halves.",
-        "Assessment: unit table numerical conversions are partial automatable checks, but the source multi-step modeling, physically meaningful capacity and comparison of converting before/after multiplication require teacher review. Gated source responses and original source image assets remain unverified."
+        "Original IM2021 G5 U06:L06 converts liters and milliliters with exact decimal/fraction place values, and models dancers drinking half bottles; avoid changing source bottle volume or dancer count. One liter is1000 milliliters.",
+        "Warm-up original Number Talk1400÷10=140,÷100=14,÷1000=1.4 and1401÷1000=1.401. Teacher asks which numerator digit represents tenths/hundredths/thousandths.",
+        "Activity1 Liquid Volume Conversions EXACT SOURCE HTML TABLE cells:5L=5000mL;6.3L=6300mL;0.95L=950mL;10^2 L=100000mL;800000mL=800L;10^6 mL=1000L;65mL=0.065L. Crucially 10^6 is in the MILLILITER column, NOT liters; do not report one billion mL as the original answer. Source comparisons:15mL <0.15L(150mL),2500mL=2.5L,200mL<1/4L(250mL),1mL=1/1000L,15600mL>15.5L.",
+        "Activity2 Rehydrating Dancers original source25 dancers each drink1 1/2 bottles of500mL. Total25×1.5×500=18750mL=18.75L. Each cooler holds15L so need2 full coolers, leaving30−18.75=11.25L. Sports drink requires30mL MIX per500mL WATER: 37.5 bottle-equivalents×30mL=1125mL=1.125L mixture concentrate. Teacher assesses modeling assumptions and mixing ratios.",
+        "Previously invented24 dancers 450mL bottles and20L cooler are only optional Edulytiks exercises, not printed source. Human reasoning over comparable liquid quantities, source diagrams and original gated Cool-down remain teacher reviewed. Selected exact digital choices reflect source numbers only.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: convert LITERS to MILLILITERS and back, including decimals and fractions, then solve a multi-step liquid-volume problem involving dancers sharing bottled water. The original source asks students to compare whether they convert each bottle first or convert total liters last, and to explain which strategy is helpful.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: contrast a bottle of capacity0.45L with a 20L cooler. One liter is1000 milliliters, so0.45L=450mL and20L=20000mL. Explain why a container image alone cannot determine capacity without labeled measurements; publisher bottle artwork not reused.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — unit table and comparisons: convert5L to5000mL; 0.95L to950mL;6500mL to6.5L; and3/4L to750mL. Compare15mL with0.15L and explain 0.15L=150mL, so15mL is smaller. Explain how a missing zero in 0.015L changes the interpretation.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — original dancers problem: 24 dancers each drink one and a half 450mL bottles during a rehearsal. Total volume24×1.5×450=16200mL, or16.2L. If the water began in a 20L cooler, 3.8L remains under the ideal no-spill assumption. A student may compute0.45L×1.5×24 or calculate total bottles first; compare strategies and state that bottles consumed may include halves.",
+        "Optional previous source-aligned or independently authored extension — Assessment: unit table numerical conversions are partial automatable checks, but the source multi-step modeling, physically meaningful capacity and comparison of converting before/after multiplication require teacher review. Gated source responses and original source image assets remain unverified."
       ],
       "KeyConcepts": [
         {
@@ -1027,7 +1033,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Convert mixed units",
+          "Title": "Source exact 1 — Original IM2021 Grade5 U06:L06 Metric Liquid Volume",
+          "Question": "Source warmup1400÷10",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "140",
+          "Check": "Original numeric source example; incorrect distractors 14 and 1.4 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original IM2021 Grade5 U06:L06 Metric Liquid Volume",
+          "Question": "Source warmup1400÷100",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "14",
+          "Check": "Original numeric source example; incorrect distractors 140 and 1.4 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original IM2021 Grade5 U06:L06 Metric Liquid Volume",
+          "Question": "Source warmup1400÷1000",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1.4",
+          "Check": "Original numeric source example; incorrect distractors 14 and 0.14 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original IM2021 Grade5 U06:L06 Metric Liquid Volume",
+          "Question": "Source warmup1401÷1000",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1.401",
+          "Check": "Original numeric source example; incorrect distractors 1.41 and 14.01 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Convert mixed units",
           "Question": "Convert5L,0.95L and6500mL.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -1039,7 +1093,7 @@
           "Check": "6.5L×1000=6500mL."
         },
         {
-          "Title": "Compare decimals and fractions",
+          "Title": "Optional existing extension — Compare decimals and fractions",
           "Question": "Which is greater: 15mL or0.15L?",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -1051,7 +1105,7 @@
           "Check": "150mL>15mL."
         },
         {
-          "Title": "Dancers and cooler",
+          "Title": "Optional existing extension — Dancers and cooler",
           "Question": "24 dancers each drink1.5 bottles of450mL. How much from a20L cooler remains?",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -1073,18 +1127,90 @@
           "Mistake": "Add 24 dancers and1.5 bottles as though quantities were comparable",
           "WhyWrong": "The quantities have different units; each dancer's rate must multiply the number of dancers.",
           "Correction": "Compute dancers×bottles per dancer×mL per bottle."
+        },
+        {
+          "Mistake": "Treat source10^6 in milliliter column as 10^6 liters or use invented24 dancers",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original source table-column positions from actual HTML,25 dancers,500mL bottles and15L coolers."
         }
       ],
       "SummaryPoints": [
-        "One liter contains1000 milliliters and fractional liters convert consistently.",
-        "Multi-step volume problems can be solved in either liter or milliliter units.",
-        "Teacher reviews assumptions and explanation of conversion-order choices.",
-        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-6/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+        "Source exact table correctly interprets10^6 as mL =>1000L.",
+        "Source warmup140,14,1.4,1.401.",
+        "25 dancers drink18.75L water;2 coolers leave11.25L, mix1.125L.",
+        "Original comparisons source table teacher explanation.",
+        "Optional prior: One liter contains1000 milliliters and fractional liters convert consistently.",
+        "Optional prior: Multi-step volume problems can be solved in either liter or milliliter units.",
+        "Optional prior: Teacher reviews assumptions and explanation of conversion-order choices.",
+        "Optional prior: Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-6/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multi-step Conversion Problems: Metric Liquid Volume — original model",
+          "Title": "Original IM2021 Grade5 U06:L06 Metric Liquid Volume — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source warmup1400÷10",
+              "Cells": [
+                "140",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source warmup1400÷100",
+              "Cells": [
+                "14",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source warmup1400÷1000",
+              "Cells": [
+                "1.4",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source warmup1401÷1000",
+              "Cells": [
+                "1.401",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source table5L expressed in mL",
+              "Cells": [
+                "5000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source table6.3L expressed in mL",
+              "Cells": [
+                "6300",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source table0.95L expressed in mL",
+              "Cells": [
+                "950",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source table10^2 L expressed in mL",
+              "Cells": [
+                "100000",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Multi-step Conversion Problems: Metric Liquid Volume — original model",
           "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
           "Rows": [
             {
