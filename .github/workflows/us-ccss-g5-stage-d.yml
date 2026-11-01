@@ -52,6 +52,31 @@ jobs:
           name: grade5-source-element-provenance-report
           path: stage-d-results/grade5-source-evidence.json
           if-no-files-found: error
+  teaching-body-delta:
+    name: grade5-main-candidate-104-source-delta-evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Independently fingerprint Grade5 old/new field differences
+        run: |
+          node --check tools/curriculum/g5-main-teaching-body-delta.cjs
+          node tools/curriculum/g5-main-teaching-body-delta.cjs
+      - name: Upload exact 104-change source-review audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade5-main-content-field-change-evidence
+          path: |
+            stage-d-results/grade5-main-teaching-body-delta.json
+            stage-d-results/grade5-main-teaching-body-delta.md
+          if-no-files-found: error
   source-contract-shards:
     name: grade5-source-contract-${{ matrix.batch }}
     needs: source-preflight
@@ -100,7 +125,7 @@ jobs:
   final-academic-fail-closed:
     name: grade5-NO-GO-until-source-rights-runtime-approvals
     if: always()
-    needs: [source-preflight, source-element-evidence, source-contract-shards, shared-build-grade5-dotnet]
+    needs: [source-preflight, source-element-evidence, teaching-body-delta, source-contract-shards, shared-build-grade5-dotnet]
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
@@ -116,10 +141,12 @@ jobs:
           NODE_SHARDS: ${{ needs.source-contract-shards.result }}
           DOTNET: ${{ needs.shared-build-grade5-dotnet.result }}
           SOURCE: ${{ needs.source-element-evidence.result }}
+          MAIN_PARITY: ${{ needs.teaching-body-delta.result }}
         run: |
-          echo "G5_STAGE_D_RESULTS preflight=$PREFLIGHT node=$NODE_SHARDS dotnet=$DOTNET source=$SOURCE"
+          echo "G5_STAGE_D_RESULTS preflight=$PREFLIGHT node=$NODE_SHARDS dotnet=$DOTNET source=$SOURCE main=$MAIN_PARITY"
           test "$PREFLIGHT" = success
           test "$NODE_SHARDS" = success
           test "$DOTNET" = success
           test "$SOURCE" = success
+          test "$MAIN_PARITY" = success
           node tools/curriculum/g5-stage-d-diagnostic.cjs academic
