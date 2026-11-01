@@ -132,8 +132,8 @@
     "academicApproval": "NOT_VERIFIED"
   },
   "stageC": {
-    "status": "C_PREPARED_NEXT_CENTRAL_SLOT_WAIT_NOT_RUNTIME_ROUTABLE",
-    "lessonScopedMappingExplicitInSharedRegistry": false,
+    "status": "C_CLOSED_AUTHORING_SELECTED_PRACTICE_EXACT_PERSISTED_GRADING",
+    "lessonScopedMappingExplicitInSharedRegistry": true,
     "effectiveRuntimeFamilyVerified": false,
     "proposedFamilies": [
       {
@@ -254,7 +254,7 @@
     },
     "independentOracleTest": "tests/coder-7/UsCcssAlg2U01L01SourcePracticeContract.test.cjs",
     "blockerIssue": 453,
-    "blocker": "No exact READY_VERIFIED lesson-scoped registry entry, no public engine SupportsFamily/BuildProblem/Solve/BigInteger Verify dispatch. Coder8 owns central slot; Coder7 approved next only, not yet exclusive owner.",
+    "blocker": "RESOLVED_STAGE_C_AUTHORING: READY_VERIFIED selected contract, exact engine, persisted adapter, Stage18 Composed/Progressive questionVariant compatibility in 101bf007. Tests AUTHORED_NOT_RUN; runtime Stage D pending.",
     "runtimeGenerationVerification": "NOT_RUN",
     "studentTeacherAuthenticatedE2E": "NOT_RUN",
     "tenantIsolation": "NOT_RUN",
@@ -391,7 +391,7 @@
       "checkedUtc": "2026-10-30T13:48:54.095382+00:00"
     }
   },
-  "ABC_READY_FOR_D": false,
+  "ABC_READY_FOR_D": true,
   "D_VERIFIED": false,
   "mergeDeploy": "NOT_AUTHORIZED",
   "sourceHashesRecheckedUtc": "2026-10-30T13:03:19.288793+00:00",
@@ -538,5 +538,46 @@
     "readyForStageD": false,
     "closureSHA": null,
     "nextLesson": "STOP_AT_U01_L01_UNTIL_TRUE_C_CLOSURE"
+  },
+  "v11ABCIndependentAuthoringAcceptance": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "lessonTitle": "A Towering Sequence",
+    "acceptanceScope": "STAGES_A_B_C_AUTHORING_ONLY_NO_RUNTIME_EXECUTION",
+    "stageA": "A_CLOSED_PREVIOUS_SOURCE_TO_LEARNER_ADAPTATION_PRESERVED",
+    "stageB": "B_CLOSED_PREVIOUS_SOURCE_ALIGNED_TEACHING_ORACLES_PRESERVED",
+    "stageC": "C_CLOSED_SELECTED_EXACT_GENERATE_SOLVE_VERIFY_PRIVATE_FEEDBACK_AUTHORED",
+    "selectedLessonContract": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "selectedFamilies": [
+      "usccss.alg2.u01.l01.hanoi_min_moves",
+      "usccss.alg2.u01.l01.recursive_sequence",
+      "usccss.alg2.u01.l01.checker_jump_optional"
+    ],
+    "integrationEvidence": {
+      "selectedLessonRoutingPR": 613,
+      "selectedEngineCommit": "3e5546a824d4ffce139970f21f86702cb886a065",
+      "persistedGradePR": 616,
+      "persistedGradeCommit": "f39c223e2b82991a7f4db952eab71b36f736a236",
+      "questionVariantHotfixPR": 617,
+      "questionVariantHotfixCommit": "101bf007e169d112fc5317d73e06d2ac842db36b",
+      "questionVariantBlob": "2ad7f49b8918cc897d41f17ec7edb39a5a899338",
+      "exclusiveLeaseReleaseComment": 6557820145,
+      "selectedStage18": "LessonPracticeContractRegistry -> Stage18SkillContractPracticeEngine.GenerateComposed/GenerateProgressiveLesson -> ExactSkillContractQuestionEngine -> PracticeService.GradeAlg2L01PersistedAnswer -> exact course adapter",
+      "hanoi64": "BigInteger exact 18446744073709551615 and 2^(64)-1 equivalent",
+      "checker": "3*(3+2) equivalent for 3 checkers per side",
+      "recurrence": "four bounded source numeric variants, rational equivalence, canonical regeneration",
+      "variantAttestation": "GenerationParametersJson questionVariant required; optional ValidationMetadataJson questionVariant when present exact string match; invalid/blank/wrong type rejects",
+      "humanProofBoundary": "Jada, Noah and distinct-rule reasoning remain teacher-scored, outside machine-graded numeric families",
+      "security": "Student attempt owner, school, lesson, adoption, private-scoped and authenticated access unchanged",
+      "algebra1Preservation": "P3 unordered {A,C,E} exact set compatibility and all other existing graders retained"
+    },
+    "acceptanceEvidence": "Independent source/lesson contract and static route inspection; git diff --check, strict canonical parameter/domain/metadata checks, and authored focused tests; NO assertion of executed runtime pass",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "runtimeMaterialization": "NOT_VERIFIED_STAGE_D",
+    "authenticatedE2E": "NOT_RUN_STAGE_D",
+    "academicOwnerUat": "NOT_VERIFIED_STAGE_D",
+    "stageD": "NOT_STARTED",
+    "readyForStageD": true,
+    "closureSHA": null,
+    "nextLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02"
   }
 }
