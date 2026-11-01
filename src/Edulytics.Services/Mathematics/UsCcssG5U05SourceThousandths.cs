@@ -492,6 +492,17 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source equivalent weights2 4/8 and2 1/2 are equal true/false", "true", "false", "unknown"),
         new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source frequency of egg weight2 1/2oz including printed2 4/8 label", "2", "1", "3"),
         new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source frequency of egg weight1 3/4oz including printed1 6/8 label", "2", "1", "3"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original warmup1/3×18", "6", "3", "12"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original warmup2/3×18", "12", "6", "18"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original warmup4/3×18", "24", "18", "30"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original warmup5/3×18", "30", "24", "36"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source apricot line plot number of apricots", "15", "12", "16"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source apricots weighing LESS THAN1 1/2 oz, count", "3", "5", "2"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source apricots weighing LESS THAN1 1/2 oz, fraction of15", "1/5", "1/3", "1/4"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source count weighing1 5/8 oz", "5", "3", "2"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source aggregate weight for FIVE apricots each1 5/8 oz", "8 1/8", "7 1/8", "8 5/8"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional Mai apricot chart total weight in ounces", "23 3/4", "15", "9 1/2"),
+        new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source total weight MORE than16-ounce pound yes/no", "yes", "no", "exactly one pound"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
