@@ -86,6 +86,11 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 80 multiplied by ten", "80 × 10", 800, "whole-number product"),
         new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 400 multiplied by ten", "400 × 10", 4000, "whole-number product"),
         new("usccss.g5.u04.l06.original_three_factor_number_talk", "Original source L06 Number Talk three factors, intermediate product 486 multiplied by ten", "486 × 10", 4860, "whole-number product"),
+        new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 417 by 28", "417 × 28", 11676, "whole-number product"),
+        new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 28 by 417", "28 × 417", 11676, "whole-number product"),
+        new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 256 by 5", "256 × 5", 1280, "whole-number product"),
+        new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 587 by 8", "587 × 8", 4696, "whole-number product"),
+        new("usccss.g5.u04.l07.source_composing_products_and_commutativity", "Original U04:L07 source diagram or composing exercise 809 by 9", "809 × 9", 7281, "whole-number product"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

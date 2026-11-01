@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -205,11 +205,12 @@
       "CultureCode": "en",
       "Title": "Build Multiplication Fluency",
       "ExplanationParagraphs": [
-        "Goal: multiply three-digit by two-digit factors with ANY number of composed units and use an original greatest-product game to reason how choices of digits affect the product. The source asks students to explore composition limits, not only perform ordinary calculations.",
-        "Warm-up: compare two different-looking compact algorithms that both produce the same exact product. Ask what the carried marks and partial rows mean; a correct number by itself need not prove the layout is valid.",
-        "Activity 1 — greatest product from five distinct digits: choose digits 1,2,4,6,8 once each to form one three-digit and one two-digit factor. Try at least three legal options, such as 864×21, 821×64, and 642×81. Check products respectively 18144, 52544 and 52002 and explain why a learner might revise their choice. The source's game requires trying, discussion and strategy rather than a hidden unique rubric for every intermediate move.",
-        "Activity 2 — how many composed units: study the ones-column product 9×9=81, which can compose 8 tens, not 9. In the next column, the product of a digit up to 9, plus a carry no larger than 8, never reaches nine new hundreds from two individual digits 9 and 9 with a single-digit multiplier; the limit should be justified with a place-value model and the original source's wider 3-digit×2-digit cases. Avoid claiming an unverified global maximum from a single example.",
-        "Assessment: arithmetic correctness, digit-use rules and a comparison of candidates are machine-checkable subskills, but a strategy explanation and exploration of carries are teacher-reviewed. Original game cards, algorithm pictures and gated Cool-down not copied."
+        "Original IM 2021 Grade5 U04:L07 Build Multiplication Fluency: compare representations of an identical product, play a pupil-selected greater-product game using actual physical number cards, and optionally investigate carrying new units. Source number-card deck itself was not independently recovered from the teacher HTML and its numerical contents MUST NOT be fabricated as official original cards.",
+        "Warm-up Notice and Wonder Same Solution: two source standard-algorithm records show 417×28=11676 and 28×417=11676. One recording uses partial rows 3336 and 8340; another records 196,280,11200. Both are valid forms, demonstrating commutativity and place-value products; teacher reviews diagram details.",
+        "Activity 1 Greatest Product: the original game asks partners to choose number cards for a three-digit by two-digit multiplication, form valid numbers, compare products and award a point over five rounds. Teacher supplies the actual source cards, and learners explain their decisions. Existing Edulytiks 864×21,821×64,642×81 models remain explicitly FIRST-PARTY game examples only; their digits are not claimed as the source deck. Original strategy and card legality remain TEACHER_REVIEW_REQUIRED.",
+        "Activity 2 optional Desperately Seeking 9 New Units: original source 256×5=1280,587×8=4696,809×9=7281. Determine how many tens and hundreds are carried in each and debate why a digit-by-digit 9×9=81 plus at most 8 previously carried yields at most 89, hence a single column can compose at most 8 new higher-place units, not 9. Student reasoning is teacher reviewed.",
+        "Independent Edulytiks teacher Cool-down 679×8=5432 asks for the full standard algorithm and newly composed units. Original publisher-gated Cool-down and any source number-card images remain unverified, so only exact known source arithmetic is selected Practice.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -233,7 +234,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare a trial product",
+          "Title": "Original two equal 417×28 algorithms",
+          "Question": "Explain why the source's two algorithms for 417×28 and 28×417 agree.",
+          "Method": "Compare two valid multiplication orders and their place-value partials.",
+          "Steps": [
+            "417×8=3336 and 417×20=8340; sum 11676.",
+            "28×7=196,28×10=280,28×400=11200; sum 11676.",
+            "Use commutativity and same total as check."
+          ],
+          "Answer": "11676 both ways.",
+          "Check": "Both exact source diagrams correspond to identical value."
+        },
+        {
+          "Title": "Original source compositions",
+          "Question": "Evaluate 256×5,587×8 and 809×9 using the standard algorithm.",
+          "Method": "Compose higher place units and explain carries.",
+          "Steps": [
+            "256×5=1280.",
+            "587×8=4696.",
+            "809×9=7281."
+          ],
+          "Answer": "1280,4696,7281.",
+          "Check": "No digit multiplication plus carry needs to compose 9 of a new unit."
+        },
+        {
+          "Title": "Teacher-led source game versus independent model",
+          "Question": "Describe the original five-round Greatest Product game and why an independent 821×64 vs 642×81 comparison is only an extension.",
+          "Method": "Student partner chooses cards, records legal 3-digit×2-digit multiplications and justifies outcomes.",
+          "Steps": [
+            "Partner A and B choose actual source cards in alternating turns.",
+            "Compare the two constructed whole-number products and award a point to larger value.",
+            "Teacher verifies card use and strategy; Edulytiks alternative 821×64=52544 vs642×81=52002."
+          ],
+          "Answer": "Teacher-reviewed five-round game; the example favors 821×64 by 542.",
+          "Check": "Original source card values not independently certified."
+        },
+        {
+          "Title": "Optional existing extension — Compare a trial product",
           "Question": "Compute 864×21.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -245,7 +282,7 @@
           "Check": "864×21=18144; every digit 1,2,4,6,8 is used once."
         },
         {
-          "Title": "Revise the trial",
+          "Title": "Optional existing extension — Revise the trial",
           "Question": "Compare 821×64 and 642×81 using the same five digits.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -257,7 +294,7 @@
           "Check": "52544−52002=542; these are compared trials, not a proven global maximum."
         },
         {
-          "Title": "Check new tens from one digit product",
+          "Title": "Optional existing extension — Check new tens from one digit product",
           "Question": "Can 9×9 compose nine tens?",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -279,42 +316,81 @@
           "Mistake": "Claim a maximum after checking only two arrangements",
           "WhyWrong": "An optimization proof needs an exhaustive legal search or a valid mathematical exchange argument.",
           "Correction": "Classify trial products as examples unless a global proof has been supplied."
+        },
+        {
+          "Mistake": "Claim independently chosen 1,2,4,6,8 game digits are the exact 2021 publisher number cards",
+          "WhyWrong": "The teacher HTML describes choosing cards but does not expose the original deck, so specific invented digits are unsupported.",
+          "Correction": "Keep source game directions and five-round rubric, label sample cards first-party and record source deck not verified."
         }
       ],
       "SummaryPoints": [
-        "Fluency includes both accurate composing and strategic selection of factors.",
-        "The maximum ones-column carry from two digits is eight tens.",
-        "Game reasoning, trial revisions and carry-limit arguments are teacher-reviewed.",
-        "2021 first-edition IM K–5 Grade 5 Unit 4 Lesson 7: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-7/lesson.html. Public task HTML reviewed, original Student Task PDF, gated Cool-down, and separate asset rights not independently reviewed. Edulytiks examples independently authored."
+        "Original source warmup 417×28=28×417=11676 with two partial-product decompositions.",
+        "Original partner Greatest Product uses actual source number cards and five rounds; deck values not independently certified.",
+        "Source optional 256×5=1280,587×8=4696,809×9=7281.",
+        "Explain why standard algorithm cannot carry 9 of a newly composed unit in a single column.",
+        "Exact selected Practice supports known source numeric cases; teacher scores card games and carry arguments."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Build Multiplication Fluency — reasoning model",
-          "Description": "Original accessible text-only mathematical table; source diagrams, game pieces and photographs are not reproduced.",
+          "Title": "Source 417 by 28 two standard layouts",
+          "Description": "Source-exact first-party arithmetic table; source photograph and drawn carry placements require teacher confirmation.",
           "Rows": [
             {
-              "Label": "Trial",
+              "Label": "417×28 row 8",
               "Cells": [
-                "864×21",
-                "821×64",
-                "642×81"
+                "3336"
               ]
             },
             {
-              "Label": "Product",
+              "Label": "417×28 row 20",
               "Cells": [
-                "18144",
-                "52544",
-                "52002"
+                "8340"
               ]
             },
             {
-              "Label": "Use-once digits",
+              "Label": "28×417 alternative",
               "Cells": [
-                "1,2,4,6,8",
-                "1,2,4,6,8",
-                "1,2,4,6,8"
+                "196",
+                "280",
+                "11200"
+              ]
+            },
+            {
+              "Label": "both products",
+              "Cells": [
+                "11676"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source optional new-unit compositions",
+          "Description": "Source three products; original teacher discussion of carrying 9 new units remains open.",
+          "Rows": [
+            {
+              "Label": "256×5",
+              "Cells": [
+                "1280"
+              ]
+            },
+            {
+              "Label": "587×8",
+              "Cells": [
+                "4696"
+              ]
+            },
+            {
+              "Label": "809×9",
+              "Cells": [
+                "7281"
+              ]
+            },
+            {
+              "Label": "single-column carry maximum",
+              "Cells": [
+                "8"
               ]
             }
           ]
