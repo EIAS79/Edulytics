@@ -6,18 +6,18 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L07",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L08",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 35,
-    "B_CLOSED": 35,
-    "C_PREPARED": 35,
-    "READY_FOR_D": 35,
+    "A_CLOSED": 36,
+    "B_CLOSED": 36,
+    "C_PREPARED": 36,
+    "READY_FOR_D": 36,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 113
+    "REMAINING": 112
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -1975,28 +1975,41 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L07",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-7\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-7\\preparation.html"
+      ],
+      "reuseFinding": "REUSED_RICH_U03_L07_ACTIVITY1_GOALS; REPAIRED_SOURCE_ACTIVITY2_THREE_PRODUCTS_AND_TWO_MISSING_FACTORS",
+      "A_STATUS": "COMPLETE_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "COMPLETE_WITH_SELECTED_CONTRACT_EVIDENCE_AUTHORED_NOT_RUN",
+      "PracticeStrategy": "SOURCE_L07_TWO_FAMILIES_REUSING_EXISTING_EXACT_ENGINE",
+      "CooldownOriginalStatus": "PUBLISHER_GATED_UNVERIFIED",
+      "CooldownEdulytiksStatus": "INDEPENDENT_TEACHER_FRACTION_EQUATION_COOLDOWN",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L07FractionEquationQuestionsTests.cs",
+      "testExecutionStatus": "AUTHORED_NOT_RUN",
       "startedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-11-01T15:35:38.315461+00:00",
       "elapsedSeconds": null,
       "commitSHA": null,
       "blocker": null,
-      "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
+      "READY_FOR_STAGE_D": true,
+      "sourceEvidence": {
+        "teacherLessonSha256": "2b30f8f147a2b52b0e2f3f842363cea140b42598717421e8d5db47b843cb387b",
+        "teacherPreparationSha256": "99609f120bb46cfa4cfdd51d5523384ea4cba33af3cb343dc6d5a87cae42c8b8",
+        "limitation": "Original figures/Student PDF/gated Cool-down not independently certified"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l07-l10-2021.rich-lesson-v2.json",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L07FractionEquationQuestionsTests.cs",
       "openIssues": [],
       "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "authoredCandidate": true,
+      "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l07-original-teacher-cooldown-20261101.json",
+      "selectedPracticeFamilyIds": [
+        "usccss.g5.u03.l07.source_fraction_products",
+        "usccss.g5.u03.l07.missing_fraction_factors"
+      ],
+      "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l07-abc-sequential-closure-20261101.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L08",
@@ -4799,7 +4812,7 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-11-01T15:31:45.208691+00:00",
+  "updatedAtUtc": "2026-11-01T15:35:38.315461+00:00",
   "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L02",
   "returnBacklog": [
     {

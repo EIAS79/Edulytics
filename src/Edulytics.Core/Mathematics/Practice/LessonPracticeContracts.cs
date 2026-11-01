@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L07 source fraction products and missing
+        // factors, with original image explanations teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L07", "supporting.fractions.multiply_divide",
+            "G5_SOURCE_NONUNIT_FRACTION_PRODUCT_AND_MISSING_FACTOR",
+            ["usccss.g5.u03.l07.source_fraction_products", "usccss.g5.u03.l07.missing_fraction_factors"],
+            "IM2021_G5_U03_L07_EXACT_SELECTED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 U03:L06 source 8/30 and 24/20; area images and
         // original WODB interpretations remain TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U03:L06"] = new LessonPracticeContract(

@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,8 +11,9 @@
         "Goal: move from a fully gridded fraction-area diagram to multiplying two fractions without requiring every unit cell to be drawn. The 2021 source makes the scaffolding optional by stages and asks children to decide when a sketch is useful, including unusually large denominators.",
         "Warm-up: compare two diagrams for a 4/5-by-1/2 rectangular region, one with twenty equal cells and another labelled only with side lengths. Explain why 8/20, 4/10 and 2/5 describe the same area despite different partitions.",
         "Activity 1 — three original products: 2/5×3/4=6/20=3/10, then 3/7×4/5=12/35, then 9/11×5/8=45/88. For the first, draw a five-column-by-four-row whole; for the second choose a sketch or counting; for the third use the numerator/denominator structure when physically drawing 88 parts is inefficient. Explain the benefit and limits of each choice.",
-        "Activity 2 — a reasoning critique: a learner claims the 9×5 selected cells could be counted as 14 rather than 45 by adding numerators. Explain that a 9-row selected region repeated across five columns has 45 small cells, while all 11×8=88 cells remain in the full unit. Check that product less than one is plausible because both factors are less than one.",
-        "Source boundary: strategies for diagram choice, a correct visual partition, commutativity and explanation are teacher reviewed. Numeric product checks do not establish whether learners understand fraction-area structure; original teacher image cards are not copied."
+        "Activity 2 — Multiply Fractions (source, not a free discussion-only critique): solve (3/8)×(2/5)=6/40, (3/4)×(9/5)=27/20 and (10/5)×(6/5)=60/25. Then determine the missing factor in (8/9)×?=56/36 (answer 7/4) and 5×?=15/8 (answer 3/8). Show why the inverse multiplication structure works. Source Activity 1 2/5×3/4, 3/7×4/5, 9/11×5/8 and Diego's diagram remain covered.",
+        "Source boundary: strategies for diagram choice, a correct visual partition, commutativity and explanation are teacher reviewed. Numeric product checks do not establish whether learners understand fraction-area structure; original teacher image cards are not copied.",
+        "Original 2021 warm-up two equivalent 4/5-by-1/2 figures display 8/20 and 4/10. Children may defend the equality from partitioning 2/4=1/2. Teacher reviews the source figures, requested diagrams, estimate of product magnitude and students' decisions to use a grid for 45/88, not merely the selected numeric choice."
       ],
       "KeyConcepts": [
         {
@@ -70,6 +71,30 @@
           ],
           "Answer": "45/88.",
           "Check": "Multiplying across gives 45/88 and the result is below both factors."
+        },
+        {
+          "Title": "Source Activity 2: product of two fractions",
+          "Question": "Calculate (3/8)×(2/5), (3/4)×(9/5) and (10/5)×(6/5).",
+          "Method": "Exact numerator and denominator multiplication with unit-square interpretation.",
+          "Steps": [
+            "Multiply 3×2 over 8×5=6/40.",
+            "Multiply 3×9 over 4×5=27/20.",
+            "Multiply 10×6 over 5×5=60/25."
+          ],
+          "Answer": "6/40, 27/20 and 60/25.",
+          "Check": "Values can be reduced to 3/20, 27/20, 12/5 without changing the source products."
+        },
+        {
+          "Title": "Source Activity 2: missing fraction factor",
+          "Question": "Solve (8/9)×?=56/36 and 5×?=15/8.",
+          "Method": "Use inverse multiplication or exact factor ratios; explain why the same whole is preserved.",
+          "Steps": [
+            "Compare 8×7=56 and 9×4=36 to find 7/4.",
+            "Use 5×3/8=15/8 to find the second factor.",
+            "Substitute the missing fractions back and verify both equations."
+          ],
+          "Answer": "7/4 and 3/8.",
+          "Check": "8/9×7/4=56/36; 5×3/8=15/8."
         }
       ],
       "CommonMistakes": [
@@ -85,10 +110,11 @@
         }
       ],
       "SummaryPoints": [
-        "Area-grid structure justifies a fraction multiplication algorithm even without a full picture.",
-        "Choose a helpful representation and explain why it matches the quantities.",
-        "Teacher reviews method selection and student diagrams, not just numeric products.",
-        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 7 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-7/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+        "Original warm-up equivalent 8/20=4/10=2/5 diagrams require visual justification.",
+        "Original Activity 1 products 2/5×3/4=6/20, 3/7×4/5=12/35 and 9/11×5/8=45/88.",
+        "Original Activity 2 three products 6/40, 27/20 and 60/25, followed by missing factors 7/4 and 3/8.",
+        "Numeric source choices support but do not replace teacher review of Diego's diagram and explanations.",
+        "Restricted publisher Cool-down is replaced by an independent Edulytiks teacher-scored fraction-equation explanation."
       ],
       "Visuals": [
         {
@@ -126,6 +152,48 @@
                 "3/10",
                 "12/35",
                 "45/88"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source Activity 2 exact fraction products",
+          "Description": "First-party source-equation answer table, not publisher source imagery.",
+          "Rows": [
+            {
+              "Label": "3/8 × 2/5",
+              "Cells": [
+                "6/40",
+                "3/20"
+              ]
+            },
+            {
+              "Label": "3/4 × 9/5",
+              "Cells": [
+                "27/20",
+                "1 7/20"
+              ]
+            },
+            {
+              "Label": "10/5 × 6/5",
+              "Cells": [
+                "60/25",
+                "12/5"
+              ]
+            },
+            {
+              "Label": "8/9 × missing",
+              "Cells": [
+                "56/36",
+                "7/4"
+              ]
+            },
+            {
+              "Label": "5 × missing",
+              "Cells": [
+                "15/8",
+                "3/8"
               ]
             }
           ]

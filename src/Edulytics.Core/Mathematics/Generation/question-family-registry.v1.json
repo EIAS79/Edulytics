@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u03.l07.source_fraction_products",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g5-2021-u03l07-six-source-product-exact-choices",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
+      "id": "usccss.g5.u03.l07.missing_fraction_factors",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g5-2021-u03l07-missing-factor-exact-choices",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u03.l06.nonunit_fraction_area_source_products",
       "version": 1,
       "skillId": "supporting.fractions.multiply_divide",
