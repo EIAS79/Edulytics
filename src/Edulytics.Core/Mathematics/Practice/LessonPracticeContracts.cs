@@ -35,6 +35,35 @@ public static class LessonPracticeContractRegistry
 
     private static readonly LessonPracticeContract[] Entries =
     [
+        // IM First Edition ALG2 U01:L01. Numeric only; Jada/Noah explanations
+        // and distinct-rule proofs stay on the teacher-review lane.
+        new(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+            "sequences.core.recursive_nth_term",
+            "ALG2_L01_HANOI_CHECKER_RECURSIVE_EXACT",
+            [
+                "usccss.alg2.u01.l01.hanoi_min_moves",
+                "usccss.alg2.u01.l01.recursive_sequence",
+                "usccss.alg2.u01.l01.checker_jump_optional"
+            ],
+            "IM_1E_ALG2_U01_L01_SOURCE_REVIEWED_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version),
+        // IM First Edition ALG2 U01:L02. Numeric-only geometric terms,
+        // paper conservation counts/piece area and Sierpinski shaded pieces.
+        // Credit-card rounding and graphical justifications require teacher review.
+        new(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+            "sequences.core.recursive_nth_term",
+            "ALG2_L02_GEOMETRIC_PAPER_SIERPINSKI_EXACT",
+            [
+                "usccss.alg2.u01.l02.geometric_fill_ratio",
+                "usccss.alg2.u01.l02.paper_conservation",
+                "usccss.alg2.u01.l02.sierpinski_shaded"
+            ],
+            "IM_1E_ALG2_U01_L02_SOURCE_REVIEWED_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version),
         // IM 2021 G1 U01 L01: two original activity goals, no subtraction.
         new(
             "PED:US-CCSS-MATH:G1:U01:L01",

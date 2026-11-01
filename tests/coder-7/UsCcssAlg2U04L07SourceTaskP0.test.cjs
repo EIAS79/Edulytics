@@ -1,0 +1,86 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const packPath='src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json';
+const pack=read(packPath),contract=read('artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U04-L07-SOURCE-PRACTICE-CONTRACT.json');
+const lesson=pack.lessons.find(x=>x.lessonCode===contract.lessonCode),t=lesson.translations.find(x=>x.cultureCode==='en');
+const remaining=(M,years,H=5730)=>M*Math.pow(.5,years/H);
+const near=(a,b,tol=1e-5)=>assert.ok(Number.isFinite(a)&&Math.abs(a-b)<=tol,'Got '+a+' expected '+b);
+test('U04 L07 source 7.2 covers TWO separate fossils with age-aware exact maths',()=>{
+ assert.equal(lesson.sourceUrl,contract.sourceTeacherUrl);
+ assert.match(t.workedExamples,/Source activity 7.2 \(second fossil\)/);
+ assert.match(t.workedExamples,/20,000 BCE/);
+ assert.match(t.workedExamples,/0\.1741 picogram/);
+ assert.match(t.keyConceptsAndRules,/t=5730\*log2\(A0\/m\)/);
+ near(remaining(3,1910),2.38110157795,1e-5);
+ near(remaining(3,5730),1.5);near(remaining(3,11460),.75);
+ near(remaining(2.5,2026+20000-1),.17411634636788115,1e-10);
+ assert.ok(remaining(2.5,22025)>.1);
+ near(5730*Math.log2(25),26609.2959674,.01);
+ assert.ok(remaining(2.5,26609-1)>.1&&remaining(2.5,26610)<.1);
+});
+test('U04 L07 source 7.3 85 percent and optional Gutenberg are visible and conditional',()=>{
+ assert.match(t.workedExamples,/Pythagoras/);
+ assert.match(t.workedExamples,/85%/);
+ assert.match(t.workedExamples,/Gutenberg Bible/);
+ assert.match(t.workedExamples,/1450 CE/);
+ const papyrus=remaining(1,2575);
+ assert.ok(papyrus>.73&&papyrus<.74);
+ near(-5730*Math.log2(.85),1343.4859033,.001);
+ const bible=remaining(1,2026-1450);
+ near(bible,.9326944513,1e-9);
+ assert.ok(bible>.9&&remaining(1,1000)<.9);
+ assert.match(t.commonMistakes,/no year zero/);
+ assert.match(t.stepByStepSolutions,/teacher-scored rubric/);
+});
+test('source and proposed digest are reproducible; no fabricated B/C/D approval',()=>{
+ const fields=['title','explanation','keyConceptsAndRules','workedExamples','stepByStepSolutions','commonMistakes','quickSummary'];
+ const digest=crypto.createHash('sha256').update(fields.map(k=>k+':'+t[k]).join('\n')).digest('hex');
+ assert.equal(digest,contract.proposedUnapprovedBodySha256);
+ assert.equal(lesson.canonicalBodySha256,contract.predecessorCanonicalBodySha256);
+ const ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/algebra2-120-lesson-progress.json');
+ const row=ledger.lessons.find(x=>x.lessonCode===lesson.lessonCode);
+ assert.equal(row.academicApproval,'NOT_VERIFIED');
+ assert.equal(row.effectivePracticeStatus,'NOT_VERIFIED');
+ assert.equal(contract.stageA.independentAcademicApproval,'NOT_VERIFIED');
+ assert.equal(contract.stageB.studentRenderer,'NOT_VERIFIED');
+ assert.equal(contract.stageC.explicitLessonSkillMappingPresent,false);
+ assert.equal(contract.stageC.effectiveRuntimeSelectedFamilies,'NOT_VERIFIED');
+ assert.equal(contract.stageC.generatedVerifiedGradedPersisted,'NOT_RUN');
+ assert.ok(contract.stageC.tasks.length>=4&&contract.stageC.negativeCases.length>=5);
+ assert.equal(contract.release,'NO_GO');
+});
+
+test('U04 L07 source summary sodium-22 function, table, and boundary checks',()=>{
+ const w=t.workedExamples;
+ assert.match(w,/Source lesson summary—sodium-22 exponential function/);
+ assert.match(w,/exponential function f\(t\)=4\*\(1\/2\)\^\(t\/3\)/);
+ assert.match(w,/input t is elapsed years/);
+ assert.match(w,/output f\(t\) is the remaining sodium-22 mass in nanograms/);
+ const sodium=years=>4*Math.pow(.5,years/3);
+ for(const [years,ng] of [[0,4],[3,2],[6,1],[9,.5],[24,.015625]])near(sodium(years),ng,1e-12);
+ near(sodium(1),3.174802103936399,1e-12);
+ assert.ok(sodium(23)>.015625&&sodium(25)<.015625);
+ const acceptable=years=>typeof years==='number'&&Number.isFinite(years)&&years>=0;
+ for(const invalid of [-1,NaN,Infinity,'3',null]) assert.equal(acceptable(invalid),false);
+ const c=contract.stageC.tasks.find(x=>x.activity==='Source summary (sodium-22)');
+ assert.ok(c&&c.autoCheck.length>=6);
+ assert.equal(contract.stageC.effectiveRuntimeSelectedFamilies,'NOT_VERIFIED');
+ assert.equal(contract.stageB.studentRenderer,'NOT_VERIFIED');
+});
+
+test('U04 L07 exact course-owned family proposal is not mistaken for registered Practice',()=>{
+ const families=contract.stageC.proposedCourseOwnedFamilies;
+ assert.deepEqual(families.map(f=>f.id),[
+  'usccss.hs.half_life_remaining_mass',
+  'usccss.hs.half_life_elapsed_from_fraction',
+  'usccss.hs.decay_argument_teacher_rubric'
+ ]);
+ assert.ok(families.every(f=>f.status.startsWith('PROPOSED_')));
+ const pending=contract.stageC.officialOutcomeCurrentGenericRuleCandidates;
+ assert.equal(pending.find(x=>x.outcome==='CCSS:HSA-SSE.B.3').finding,'MISMATCH_FOR_HALF_LIFE_TASK');
+ assert.equal(contract.stageC.proposalStatus,'REQUESTED_NOT_IMPLEMENTED');
+ assert.equal(contract.stageC.explicitLessonSkillMappingPresent,false);
+ assert.equal(contract.stageC.generatedVerifiedGradedPersisted,'NOT_RUN');
+ assert.equal(contract.release,'NO_GO');
+});

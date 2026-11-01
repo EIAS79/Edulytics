@@ -19784,6 +19784,78 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.alg2.u01.l01.hanoi_min_moves",
+      "version": 1,
+      "skillId": "sequences.core.recursive_nth_term",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "bounded-recursive-hanoi-biginteger-1-to-64-and-parenthesized-powers",
+      "representations": ["recursive_sequence", "hanoi_tower", "teacher_review_proofs"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.alg2.u01.l01.recursive_sequence",
+      "version": 1,
+      "skillId": "sequences.core.recursive_nth_term",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "source-bounded-affine-geometric-fibonacci-exact-rational-equivalence",
+      "representations": ["recursive_sequence", "fraction", "teacher_review_distinct_rules"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.alg2.u01.l01.checker_jump_optional",
+      "version": 1,
+      "skillId": "sequences.core.recursive_nth_term",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "bounded-checker-minimum-n-times-n-plus-two-no-eval",
+      "representations": ["checker_swap", "exact_expression", "teacher_review_legal_moves"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.alg2.u01.l02.geometric_fill_ratio",
+      "version": 1,
+      "skillId": "sequences.core.recursive_nth_term",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "alg2-l02-six-source-geometric-ratios-index-0-to-6-bounded-rational",
+      "representations": ["geometric_sequence", "common_ratio", "fraction_decimal_equivalence", "teacher_review_explanation"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.alg2.u01.l02.paper_conservation",
+      "version": 1,
+      "skillId": "sequences.core.recursive_nth_term",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "alg2-l02-n0-to-6-pieces-2pow-n-piece-area-80-over-2pow-n",
+      "representations": ["paper_pieces", "paper_single_piece_area", "teacher_review_graph_and_conservation"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.alg2.u01.l02.sierpinski_shaded",
+      "version": 1,
+      "skillId": "sequences.core.recursive_nth_term",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "alg2-l02-n0-to-5-shaded-count-3pow-n-single-area-256-over-4pow-n",
+      "representations": ["sierpinski_shaded_count", "sierpinski_single_piece_area", "teacher_review_diagram"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

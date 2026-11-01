@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+  "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+  "sourceEdition": "Illustrative Mathematics Algebra 2 First Edition 2019-2021, CC BY 4.0",
+  "source": {
+    "rootAlias": "Common Core",
+    "teacherPreparation": "11_HS_Algebra_2/1/1/preparation.html",
+    "teacherActivities": "11_HS_Algebra_2/1/1/index.html",
+    "teacherPractice": "11_HS_Algebra_2/1/1/practice.html",
+    "studentActivities": "11_HS_Algebra_2_Student/1/1/index.html",
+    "studentPractice": "11_HS_Algebra_2_Student/1/1/practice.html",
+    "originalCoolDown": "TEACHER_AUTH_REQUIRED_NOT_REVIEWED"
+  },
+  "stageA": {
+    "status": "A_CLOSED_SOURCE_TO_ADAPTED_LEARNER_CONTENT",
+    "publisherGoals": [
+      "Comprehend sequence as a list of numbers and term as a member",
+      "Describe a recursive rule orally",
+      "Generate a sequence from a mathematical context"
+    ],
+    "sourceActivityCoverage": [
+      {
+        "id": "1.1",
+        "name": "What's Next?",
+        "requirement": "Choose any starting term and repeat double minus one five terms",
+        "representation": "workedExamples"
+      },
+      {
+        "id": "1.2",
+        "name": "The Tower of Hanoi",
+        "requirement": "Three pegs; legal moves; minimum for 3,4,5,7; explain 3-to-4 reuse and 64-disc extension",
+        "representation": "explanation, keyConceptsAndRules, workedExamples, stepByStepSolutions"
+      },
+      {
+        "id": "1.3",
+        "name": "Checker Jumping Puzzle (optional)",
+        "requirement": "Forward-only colored checker swap and minimum moves for 1,2,3,4,7; explain recursion or pattern",
+        "representation": "workedExamples, stepByStepSolutions",
+        "optional": true
+      },
+      {
+        "id": "practice-1",
+        "requirement": "Fibonacci 0,1 then 10 terms",
+        "representation": "stepByStepSolutions"
+      },
+      {
+        "id": "practice-2",
+        "requirement": "Halving 1/2,1/4,1/8 then next three",
+        "representation": "stepByStepSolutions"
+      },
+      {
+        "id": "practice-3",
+        "requirement": "Backward and forward recurrence x(n+1)=-2*x(n)+3 with fourth=-7",
+        "representation": "stepByStepSolutions"
+      },
+      {
+        "id": "practice-4",
+        "requirement": "Two distinct valid continuations for 0,5",
+        "representation": "stepByStepSolutions"
+      }
+    ],
+    "studentAndTeacherSourceIndependentlyRead": true,
+    "verbatimPublisherAnswerKeyReviewed": false,
+    "studentAppletRuntimeVerified": false,
+    "independentAcademicApproval": "NOT_VERIFIED"
+  },
+  "stageB": {
+    "status": "B_CLOSED_COURSE_OWNED_TEACHING_AND_MATH",
+    "expectedAnswers": {
+      "towerDiscCounts": {
+        "3": "7",
+        "4": "15",
+        "5": "31",
+        "7": "127",
+        "64": "18446744073709551615"
+      },
+      "checkerCounts": {
+        "1": 3,
+        "2": 8,
+        "3": 15,
+        "4": 24,
+        "7": 63
+      },
+      "fibonacciFirstTen": [
+        0,
+        1,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34
+      ],
+      "halvesNextThree": [
+        "1/16",
+        "1/32",
+        "1/64"
+      ],
+      "recurrenceBeforeFourth": [
+        2,
+        -1,
+        5
+      ],
+      "recurrenceAfterFourth": [
+        17,
+        -31,
+        65
+      ],
+      "twoDistinctContinuations": [
+        [
+          0,
+          5,
+          10,
+          15,
+          20
+        ],
+        [
+          0,
+          5,
+          20,
+          45,
+          80
+        ]
+      ]
+    },
+    "publisherLessonStyle": "Student investigation and explanation preserved; worked solutions are original adaptations",
+    "teacherSourceCoolDownRead": false,
+    "studentRendererTest": "NOT_RUN",
+    "academicApproval": "NOT_VERIFIED"
+  },
+  "stageC": {
+    "status": "C_CLOSED_AUTHORING_SELECTED_PRACTICE_EXACT_PERSISTED_GRADING",
+    "lessonScopedMappingExplicitInSharedRegistry": true,
+    "effectiveRuntimeFamilyVerified": false,
+    "proposedFamilies": [
+      {
+        "id": "usccss.alg2.u01.l01.hanoi_min_moves",
+        "status": "COURSE_ADAPTER_PRESENT_UNREGISTERED",
+        "answerKind": "exact_nonnegative_integer_string",
+        "parameters": {
+          "discCount": "integer 1 through 64"
+        },
+        "generator": "Generate a positive disc count and require the minimum legal moves, 2^n-1, using arbitrary-precision integer arithmetic",
+        "verifierIndependent": "Validate count with legal-move shortest-path BFS for 1-4 discs; for larger n use independent inductive lower-bound reasoning plus BigInt formula; never floating-point at n=64",
+        "wrongCases": [
+          "n moves for n discs",
+          "2*n-1 instead of 2^n-1",
+          "64-bit unsafe floating-point rounded result"
+        ],
+        "malformedCases": [
+          "empty",
+          "text",
+          "3.5",
+          "NaN",
+          "Infinity"
+        ],
+        "domainCases": [
+          "n=0 outside the publisher's task domain",
+          "n=-1",
+          "n=65 outside proposed safe range"
+        ],
+        "equivalentCases": [
+          "31",
+          "2^5-1",
+          "1+2+4+8+16"
+        ],
+        "humanRubric": "Explain why moving the largest disc requires two transfers of n-1 smaller discs and a central move; assess legal-move reasoning",
+        "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs"
+      },
+      {
+        "id": "usccss.alg2.u01.l01.recursive_sequence",
+        "status": "COURSE_ADAPTER_PRESENT_UNREGISTERED",
+        "answerKind": "ordered_integer_or_rational_sequence_and_rule",
+        "parameters": {
+          "initialTerms": "explicit one or two valid terms",
+          "rule": "2x-1, halving, previous-two sum, or -2x+3"
+        },
+        "generator": "Generate explicit seed(s) with named recurrence and valid requested term indices",
+        "verifierIndependent": "Compute each term from seeds and recurrence; check every position and rational equivalence by reduced numerator/denominator",
+        "wrongCases": [
+          "wrong term indexing",
+          "1-2x instead of 2x-1",
+          "previous one instead of previous two",
+          "reverse recurrence sign error"
+        ],
+        "malformedCases": [
+          "missing seed",
+          "non-finite",
+          "wrong length",
+          "zero denominator"
+        ],
+        "domainCases": [
+          "index before first seed",
+          "unbounded terms exceeding safe numeric range"
+        ],
+        "equivalentCases": [
+          "0.0625 and 1/16",
+          "2/32 and 1/16"
+        ],
+        "humanRubric": "Require starting term(s) plus clear recursive rule; for open-ended 0,5 require two genuinely distinct rules, not merely two expressions for the same rule",
+        "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs"
+      },
+      {
+        "id": "usccss.alg2.u01.l01.checker_jump_optional",
+        "status": "COURSE_ADAPTER_PRESENT_UNREGISTERED",
+        "answerKind": "exact_integer_moves_and_explanation",
+        "parameters": {
+          "checkersPerSide": "positive integer, canonical source tasks 1,2,3,4,7"
+        },
+        "generator": "Generate forward-only two-color checker exchange and minimum valid move count",
+        "verifierIndependent": "Search legal move graph with breadth-first search for small n; source pattern n(n+2) for n up to 7",
+        "wrongCases": [
+          "Hanoi recurrence reused for checkers",
+          "backward move treated legal",
+          "same-color jump allowed"
+        ],
+        "malformedCases": [
+          "negative",
+          "fractional",
+          "nonnumeric"
+        ],
+        "domainCases": [
+          "zero checkers",
+          "invalid initial arrangements"
+        ],
+        "equivalentCases": [
+          "15 and 3*(3+2) for n=3"
+        ],
+        "humanRubric": "Explain legal checker movement and why proposed minimal sequence completes the color swap",
+        "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs"
+      }
+    ],
+    "teacherScored": [
+      "1.2 Jada's reuse explanation",
+      "1.3 Noah's optional reasoning",
+      "Practice problem 4 two distinct rules"
+    ],
+    "adaptedCoolDown": {
+      "classification": "ADAPTED_COOLDOWN_ORIGINAL_UNVERIFIED",
+      "releasePlacement": "TEACHER_ONLY_NOT_STUDENT_PACK",
+      "prompt": "A sequence starts with 2. Each new term is double the previous term plus 1. List five terms and explain the recurrence in words. If a classmate lists 2,5,11,23,47, explain how to check their work.",
+      "expected": [
+        2,
+        5,
+        11,
+        23,
+        47
+      ],
+      "rubric": "1 point for five terms, 1 for stating initial term and 2*a(n-1)+1, 1 for clear verification of the next-term rule; allow equivalent explanations",
+      "publisherTextMatch": "NOT_CLAIMED"
+    },
+    "independentOracleTest": "tests/coder-7/UsCcssAlg2U01L01SourcePracticeContract.test.cjs",
+    "blockerIssue": 453,
+    "blocker": "RESOLVED_STAGE_C_AUTHORING: READY_VERIFIED selected contract, exact engine, persisted adapter, Stage18 Composed/Progressive questionVariant compatibility in 101bf007. Tests AUTHORED_NOT_RUN; runtime Stage D pending.",
+    "runtimeGenerationVerification": "NOT_RUN",
+    "studentTeacherAuthenticatedE2E": "NOT_RUN",
+    "tenantIsolation": "NOT_RUN",
+    "academicRubricApproval": "NOT_VERIFIED",
+    "courseOwnedVerifierImplementation": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2SequencePracticeMath.cs",
+    "courseOwnedVerifierTests": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+    "isolatedCompilerProbe": {
+      "result": "20_PASS_0_FAIL",
+      "scope": "standalone temp .NET SDK 10.0 source-linked compilation, not repository xUnit or runtime",
+      "device": "Our-CS",
+      "repoBaseHead": "a8f38f2ef7e9d00aa7592534ded35c72a2cc10c4",
+      "timeUtc": "2026-10-30T12:09:36.906193+00:00"
+    },
+    "repositoryXunitStatus": "NOT_RUN_BY_V4",
+    "owner": "Coder 7 — Algebra 2, SOLO",
+    "requiredCentralFileOwnership": "Supervisor 3 must grant temporary exclusive file ownership before any central registry edit; no shared coder",
+    "implementationOwner": "Coder 7 SOLO — Algebra 2",
+    "courseOwnedQuestionGenerator": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+    "courseOwnedAdapterReviewTests": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+    "courseOwnedAdapterReviewTestsStatus": "NOT_RUN_UNIT_FIRST_V3",
+    "lastNodeVerificationOnPreviousHead": "16_PASS_0_FAIL_at_1894f9d95a7057bb57927c78c3ddf8647a2b0bbb",
+    "newCommitTests": "NOT_RUN",
+    "teacherNarrativeAssessment": "HUMAN_RUBRIC_REQUIRED_NOT_AUTOGRADED",
+    "answerLeakGuard": "Internal-only candidate; ExpectedAnswer must never be projected to learner DTO",
+    "generatorVariants": [
+      "HanoiMoves",
+      "CheckerMovesOptional",
+      "DoubleMinusOne",
+      "Halve",
+      "AffineReverse",
+      "Fibonacci",
+      "JadaReasoning",
+      "NoahReasoningOptional",
+      "TwoDistinctRules"
+    ],
+    "centralDependency": {
+      "exactFile": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "additionalLikelyFiles": [
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+        "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"
+      ],
+      "ownership": "REQUEST_SUPERVISOR3_EXCLUSIVE_CENTRAL_FILE_LOCK_BEFORE_CHANGING",
+      "ownerToImplement": "Coder 7 SOLO once exclusive ownership is granted",
+      "evidence": "LessonPracticeCapabilityResolver.TryResolve only accepts READY_VERIFIED entries; no U01:L01 mapping in registry or mappings at inspected HEAD",
+      "issue": 453,
+      "status": "NOT_EDITED_BY_CODER7_DUE_CONCURRENT_FILE_OWNERSHIP_RISK"
+    },
+    "distinctionStageD": {
+      "notRequiredForCourseOwnedCPreparation": [
+        "Authenticated HTTP student attempt E2E",
+        "persisted gradebook verification",
+        "two-school tenant isolation",
+        "full CI or manual full build"
+      ],
+      "stillRequiredBeforeCClosure": [
+        "validated exact lesson routing binding to appropriate generation and verifier",
+        "compatible, trusted registry entry and question family",
+        "reviewed teacher-scoring contract"
+      ],
+      "status": "NOT_STARTED_STAGE_D"
+    },
+    "statusReason": "Source and course-owned generator/verifier/teacher rubric are prepared, but central runtime cannot route them by lessonCode; do not equate isolated code with registered Practice",
+    "lastUpdatedUtc": "2026-10-30T13:03:19.288793+00:00",
+    "V4BoundedSolo": {
+      "scope": "COURSE_OWNED_L01_ONLY",
+      "startingHead": "2d97794bc9859a6070bdb64fa1680b0c2e6b118d",
+      "sourceSha256Rechecked": "5_OF_5_MATCHED",
+      "sourceRecheckedUtc": "2026-10-30T13:48:54.095382+00:00",
+      "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+      "adapterSha256": "d4814d2fd28297bd5e1cf189ff5efaa0cb9e9249b3cd579ab17529051de06673",
+      "testPath": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+      "testSha256": "4c2f09f311576ed495388714ebfd4cf3d4c5141d7d52858f482273109a031f0c",
+      "reportPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-V4-NEXT-CENTRAL-SLOT-HANDOFF.md",
+      "changes": [
+        "Corrected 3-to-4 Hanoi teacher rubric from 3+1+3 to 7+1+7=15",
+        "Independent checker n^2+2n lower-bound teacher proof",
+        "Distinct rule pair for 0,5 with arithmetic and quadratic examples",
+        "Canonical candidate regeneration and family/ItemId fail-closed validation",
+        "Learner-only DTO projection and JsonIgnore on answer/teacher rubric",
+        "Redacted Candidate.ToString so logs do not leak answers",
+        "Explicit numeric vs teacher-reviewed family routing; exact (n,variant) parameters",
+        "Public narrow server-only build/verify hooks compatible with ExactSkillContractQuestionEngine shapes"
+      ],
+      "courseOwnedAdaptationStatus": "IMPLEMENTED_UNCOMPILED_NOT_REGISTERED",
+      "newXunitTests": "NOT_RUN",
+      "newDotnetBuild": "NOT_RUN",
+      "newStaticMathCheck": "FOCUSED_PYTHON_STATIC_MATH_INSPECTION_OK_NOT_CSHARP_COMPILE",
+      "legacyNodeTests": "16_OF_16_PASS_ON_EARLIER_1894f9d_HEAD_ONLY",
+      "leaseStatus": "NEXT_EXCLUSIVE_SLOT_APPROVED_NOT_GRANTED",
+      "currentExclusiveOwner": "Coder 8",
+      "coder7CentralWriteAuthorized": false,
+      "centralFilesChanged": [],
+      "preciseRequiredSharedHooks": [
+        {
+          "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+          "operations": [
+            "exact LessonCode mapping after verified implementation",
+            "READY-only routing, keep PendingForAudit fail-closed"
+          ],
+          "status": "NOT_EDITED_CURRENTLY_RESERVED"
+        },
+        {
+          "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "operations": [
+            "SupportsFamily narrow hook",
+            "BuildProblem numeric family dispatch",
+            "Solve with BigInteger/rational string answers",
+            "Verify before generic int.TryParse"
+          ],
+          "status": "NOT_EDITED_CURRENTLY_RESERVED"
+        },
+        {
+          "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+          "operations": [
+            "reviewed numeric families with verified policy and matching skill metadata"
+          ],
+          "status": "NOT_EDITED_CURRENTLY_RESERVED"
+        },
+        {
+          "path": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "operations": [
+            "only if projection route chosen rather than hand-authored contract"
+          ],
+          "status": "NOT_EDITED_UNNEEDED_UNLESS_PROJECTION"
+        }
+      ],
+      "academicTeacherRubricSignoff": "NOT_VERIFIED",
+      "canonicalVersionSuccessorApproval": "NOT_VERIFIED",
+      "runtimeRegistryMapping": "NOT_PRESENT",
+      "runtimeQuestionGeneration": "NOT_RUN",
+      "runtimeBigIntegerVerification": "NOT_RUN",
+      "stageDStudentE2eAndGradebook": "NOT_RUN_STAGE_D",
+      "reason": "Numeric adapter hardened, but contract cannot route and engine generic int parse rejects exact 64-disc answer until exclusive shared dispatch",
+      "checkedUtc": "2026-10-30T13:48:54.095382+00:00"
+    }
+  },
+  "ABC_READY_FOR_D": true,
+  "D_VERIFIED": false,
+  "mergeDeploy": "NOT_AUTHORIZED",
+  "sourceHashesRecheckedUtc": "2026-10-30T13:03:19.288793+00:00",
+  "lastV4ReviewUtc": "2026-10-30T13:48:54.095382+00:00",
+  "v5CheckerExpressionRepair": {
+    "scope": "U01:L01 course-owned exact checker verifier and tests only",
+    "identifiedDefect": "The Stage C equivalent-case contract recognizes 3*(3+2) for n=3 but the existing checker grader accepted integer literals only",
+    "repair": "Recognize the parameter-bound n*(n+2) or n(n+2) literal form without evaluating arbitrary expressions; retain canonical server answer as an integer",
+    "positiveCases": ["n=3: 15", "n=3: 3*(3+2)", "n=3: 3 ( 3 + 2 )"],
+    "negativeCases": ["n=3: 3*(4+2)", "n=3: 4*(4+2)", "n=3: 3*(3+2);alert(1)"],
+    "testPaths": [
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs"
+    ],
+    "testsAuthored": "NOT_RUN",
+    "staticReview": "DIFF_CHECK_JSON_PARSE_OK_AND_5_OF_5_LOCAL_SOURCE_HASH_MATCHES; NOT_A_CSHARP_BUILD",
+    "runtimeSelectedFamily": "NOT_REGISTERED",
+    "stageC": "NOT_CLOSED",
+    "readyForStageD": false,
+    "sharedOwnerIssue": 605,
+    "stageDAdoptionIssue": 453
+  },
+  "v6TeacherReviewLane": {
+    "activeLesson": "U01:L01",
+    "scope": "ALG2-only Practice adapter: explicit human-review-only creation and bounded response handling",
+    "implementation": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+    "teacherRequiredVariants": [
+      "JadaReasoning: hanoi_min_moves/slot=1/parameter=1",
+      "NoahReasoningOptional: checker_jump_optional/slot=1/parameter=1",
+      "TwoDistinctRules: recursive_sequence/slot=4/parameter=1"
+    ],
+    "teacherMode": "TEACHER_REVIEW_REQUIRED",
+    "automaticScoreForProofs": false,
+    "invalidSubmissions": "Null/blank or length over 4000 characters classified Incorrect, never sent to teacher review queue",
+    "studentProjection": "ProjectForLearner: no ExpectedAnswer, no TeacherRubric; direct Candidate JSON has JsonIgnore for both",
+    "numericBoundary": "TryCreateAutoGradableForFamily rejects all three teacher-only variants; TryCreateTeacherReviewForFamily rejects numeric variants",
+    "targetedTests": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+    "newTestsStatus": "AUTHORED_NOT_RUN",
+    "sharedCentralFilesChanged": false,
+    "selectedRuntimeContract": "NOT_CONNECTED_PENDING_EXCLUSIVE_SHARED_WRITER_ISSUE_605",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_PREPARED_NOT_CLOSED",
+    "READY_FOR_STAGE_D": false,
+    "blockerIssue": 605,
+    "blockerOwner": "UNASSIGNED_PENDING_ADMIN_EXCLUSIVE_GRANT",
+    "closureSHA": null
+  },
+  "v7HanoiExactExponentEquivalence": {
+    "activeLesson": "U01:L01",
+    "identifiedDefect": "Valid exact expression 2^(n)-1 was rejected despite the prompt allowing an exact expression; existing 2^n-1 accepted",
+    "implementation": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2SequencePracticeMath.cs",
+    "scope": "Hanoi only: strict two-form anchored exponent grammar for 2^n-1 and 2^(n)-1; exponent equal to issued disc count 1..64",
+    "positiveExamples": ["n=5: 2^(5)-1", "n=64: 2 ^ (64) - 1", "n=64: 18446744073709551615"],
+    "negativeExamples": ["n=5: 2^(4)-1", "n=5: 2^(5-1", "n=5: 2^5)-1", "n=64: 2^(6 4)-1", "n=64: 2^(65)-1"],
+    "targetedTests": [
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs"
+    ],
+    "testStatus": "AUTHORED_NOT_RUN",
+    "runtimeSelectedPractice": "NOT_REGISTERED",
+    "activeSharedLease": "G6 RELEASED_ISSUE_605; G7 NEXT_QUEUED_NO_ALG2_GRANT",
+    "stageC": "C_PREPARED_NOT_CLOSED",
+    "READY_FOR_STAGE_D": false,
+    "closureSHA": null
+  },
+  "v8SelectedPracticeIntegrationAcceptance": {
+    "scope": "L01 selected contract and exact engine integration; course-owned acceptance only, no global path edits",
+    "testPath": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01SelectedPracticeRoutingTests.cs",
+    "testStatus": "AUTHORED_NOT_RUN_EXPECTED_RED_UNTIL_SHARED_INTEGRATION",
+    "acceptanceRequirements": [
+      "Exact U01:L01 LessonCode resolves a READY_VERIFIED practice contract",
+      "Selected family allowlist includes exactly numeric Hanoi, recurrence, and optional checker, without teacher prose",
+      "Existing ExactSkillContractQuestionEngine can generate a bounded source question for each family",
+      "Shared engine Verify and course-only verifier independently agree on canonical answer",
+      "Malformed inputs rejected by both central and course-only verifier",
+      "Generated numeric parameters use n and variant contract, preserving teacher-only exclusion"
+    ],
+    "integrationStatus": "NOT_REGISTERED_PRESERVED_UNTIL_ISSUE_605_EXCLUSIVE_GRANT",
+    "engineOwner": "NOT_AUTHORIZED_CODER_7",
+    "stageCClosed": false,
+    "readyForStageD": false,
+    "closureSHA": null
+  },
+  "v9SelectedEngineIntegrationDeliveredAndPersistedGradeBlocker": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "source": "A Towering Sequence",
+    "originalCoursePR": 588,
+    "originalCourseIntegrationHead": "3e5546a824d4ffce139970f21f86702cb886a065",
+    "draftIntegrationPR": 613,
+    "adminGrantIssue": 605,
+    "adminGrantComment": 6544887584,
+    "exclusiveLeaseReleasedComment": 6545072251,
+    "sharedFilesDelivered": [
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+      "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+    ],
+    "sharedFileBlobShas": {
+      "LessonPracticeContracts.cs": "47ba67a64c177968f6fc2c85f3fca258dccc90d3",
+      "ExactSkillContractQuestionEngine.cs": "70ee0087f330a729abdbaa2e82af8eef58b1ada0",
+      "question-family-registry.v1.json": "2228ec939529f1127d1e8674437ba6bbd9522c3b"
+    },
+    "selectedContract": "READY_VERIFIED_AUTHORED",
+    "selectedFamilies": [
+      "usccss.alg2.u01.l01.hanoi_min_moves",
+      "usccss.alg2.u01.l01.recursive_sequence",
+      "usccss.alg2.u01.l01.checker_jump_optional"
+    ],
+    "generatorSolverVerifier": "AUTHORING_CONNECTED_STATIC_REVIEW_ONLY",
+    "nonrevealingFamilyFeedback": "AUTHORING_CONNECTED",
+    "teacherProofReview": "TEACHER_REVIEW_REQUIRED_NO_AUTOMATIC_SCORE",
+    "targetedAcceptanceTests": "AUTHORED_NOT_RUN",
+    "staticChecks": "REGISTRY_BASE_1105_PRESERVED_TO_1108; JSON_PARSE_AND_DIFF_CHECK_OK",
+    "remainingBlockingPath": "src/Edulytics.Services/Practice/PracticeService.cs",
+    "blockingReason": "Persisted answer grading uses generic MathematicsAnswerEquivalence.AreEquivalent, not exact ALG2 issued n/variant verifier; equivalent Hanoi 2^(64)-1 and checker 3*(3+2) can be scored incorrect although exact engine Verify accepts both",
+    "requiredNextGrant": "Separate exclusive PracticeService.cs family-scoped persisted scoring integration, approved by Admin through issue #605 after fresh collision verification",
+    "crossBranchCaveat": "G5/G6/G7/ALG1 released integration changes exist on divergent course branches; this PR preserved all 1105 original ALG2 base IDs but did not import dependencies outside approved three paths",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_SELECTED_ENGINE_AUTHORED_PERSISTED_GRADING_BLOCKED",
+    "readyForStageD": false,
+    "closureSHA": null
+  },
+  "v10PersistedGradeActualHandoffAndRedRegression": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "integrationDraftPR": 616,
+    "persistedCodeCommit": "f39c223e2b82991a7f4db952eab71b36f736a236",
+    "persistedSharedPath": "src/Edulytics.Services/Practice/PracticeService.cs",
+    "persistedSharedBlobSha": "233bfe9566ecfe7aaff021f20dfc79d76ae48da1",
+    "leaseGrantComment": 6550421860,
+    "leaseReleaseComment": 6550653582,
+    "firstMismatchComment": 6550676180,
+    "followupGrantRequestComment": 6550678181,
+    "preservedAlgebra1": "P3_UNORDERED_SET_A_C_E_INLINE_PARITY_DIVERGENT_COURSE_HELPER",
+    "authoringImplemented": "ALG2_PERSISTED_FAMILY_ROUTING_EXACT_N_VARIANT_CANONICAL_REGENERATION",
+    "staticBlockingMismatch": "PracticeService requires ValidationMetadataJson.questionVariant. Stage18 GenerateComposed and GenerateProgressiveLesson omit this field; only GenerationParametersJson.questionVariant is always present. Legitimate Practice responses would be scored incorrect.",
+    "lessonOwnedRegressionTest": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PersistedGradingTests.cs",
+    "regressionStatus": "AUTHORED_NOT_RUN_EXPECTED_RED",
+    "requiredRepair": "New exclusive PracticeService.cs one-path Admin grant; make ValidationMetadataJson.questionVariant optional and validate equality only when present, preserving all other exact and security guards",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_NOT_CLOSED_STATIC_GRADING_MISMATCH",
+    "readyForStageD": false,
+    "closureSHA": null,
+    "nextLesson": "STOP_AT_U01_L01_UNTIL_TRUE_C_CLOSURE"
+  },
+  "v11ABCIndependentAuthoringAcceptance": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "lessonTitle": "A Towering Sequence",
+    "acceptanceScope": "STAGES_A_B_C_AUTHORING_ONLY_NO_RUNTIME_EXECUTION",
+    "stageA": "A_CLOSED_PREVIOUS_SOURCE_TO_LEARNER_ADAPTATION_PRESERVED",
+    "stageB": "B_CLOSED_PREVIOUS_SOURCE_ALIGNED_TEACHING_ORACLES_PRESERVED",
+    "stageC": "C_CLOSED_SELECTED_EXACT_GENERATE_SOLVE_VERIFY_PRIVATE_FEEDBACK_AUTHORED",
+    "selectedLessonContract": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "selectedFamilies": [
+      "usccss.alg2.u01.l01.hanoi_min_moves",
+      "usccss.alg2.u01.l01.recursive_sequence",
+      "usccss.alg2.u01.l01.checker_jump_optional"
+    ],
+    "integrationEvidence": {
+      "selectedLessonRoutingPR": 613,
+      "selectedEngineCommit": "3e5546a824d4ffce139970f21f86702cb886a065",
+      "persistedGradePR": 616,
+      "persistedGradeCommit": "f39c223e2b82991a7f4db952eab71b36f736a236",
+      "questionVariantHotfixPR": 617,
+      "questionVariantHotfixCommit": "101bf007e169d112fc5317d73e06d2ac842db36b",
+      "questionVariantBlob": "2ad7f49b8918cc897d41f17ec7edb39a5a899338",
+      "exclusiveLeaseReleaseComment": 6557820145,
+      "selectedStage18": "LessonPracticeContractRegistry -> Stage18SkillContractPracticeEngine.GenerateComposed/GenerateProgressiveLesson -> ExactSkillContractQuestionEngine -> PracticeService.GradeAlg2L01PersistedAnswer -> exact course adapter",
+      "hanoi64": "BigInteger exact 18446744073709551615 and 2^(64)-1 equivalent",
+      "checker": "3*(3+2) equivalent for 3 checkers per side",
+      "recurrence": "four bounded source numeric variants, rational equivalence, canonical regeneration",
+      "variantAttestation": "GenerationParametersJson questionVariant required; optional ValidationMetadataJson questionVariant when present exact string match; invalid/blank/wrong type rejects",
+      "humanProofBoundary": "Jada, Noah and distinct-rule reasoning remain teacher-scored, outside machine-graded numeric families",
+      "security": "Student attempt owner, school, lesson, adoption, private-scoped and authenticated access unchanged",
+      "algebra1Preservation": "P3 unordered {A,C,E} exact set compatibility and all other existing graders retained"
+    },
+    "acceptanceEvidence": "Independent source/lesson contract and static route inspection; git diff --check, strict canonical parameter/domain/metadata checks, and authored focused tests; NO assertion of executed runtime pass",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "runtimeMaterialization": "NOT_VERIFIED_STAGE_D",
+    "authenticatedE2E": "NOT_RUN_STAGE_D",
+    "academicOwnerUat": "NOT_VERIFIED_STAGE_D",
+    "stageD": "NOT_STARTED",
+    "readyForStageD": true,
+    "closureSHA": "d925fdd204ffd463029d58a5888a8687a8e863e8",
+    "nextLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02"
+  }
+}

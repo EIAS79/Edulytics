@@ -1,0 +1,73 @@
+# Coder 7 — Algebra 2 Unit 2 L01–L18 source-to-learner evidence
+
+**Scope**: course `US-CCSS-MATH:HS:TRAD:ALG2:IM-1E`. Eighteen lesson-specific First Edition 2019–2021 publisher teacher preparation pages and student tasks directly read. All source references below are IM/Kendall Hunt original first-edition URLs (CC BY 4.0). This is a first-party Edulytiks adaptation, **not** publisher approval, a copy of source answer keys, independent CCSS certification or runtime acceptance.
+
+## Checked lesson matrix
+
+| U02 lesson | Original publisher teacher/student evidence | Reviewed source objective / instruction built or preserved | Publisher role categories in locked blueprint | Formal target evidence recorded in blueprint | Edulytiks content status |
+|---|---|---|---|---|---|
+| 01 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/1/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/1/index.html) | Translate a cut-and-fold paper-box construction into a volume polynomial, graph its feasible domain, and locate maximum physical volume | Addressing, BuildingTowards | CCSS:HSA-CED.A.2 [PublisherAddressing]; CCSS:HSF-IF.B.4 [PublisherAddressing]; CCSS:HSF-IF.B.5 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 02 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/2/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/2/index.html) | Build and evaluate polynomial investment balances using place value and staggered growth factors | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-APR.A.1 [PublisherAddressing]; CCSS:HSA-CED.A.2 [PublisherAddressing]; CCSS:HSA-REI.D.11 [PublisherAddressing]; CCSS:HSA-SSE.A.1 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 03 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/3/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/3/index.html) | Recognize a polynomial and identify degree, leading coefficient, and relative graph extrema | Addressing, BuildingTowards | CCSS:HSF-IF.C.7 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 04 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/4/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/4/index.html) | Prove polynomial closure under addition, subtraction and multiplication and give a division counterexample | Addressing, BuildingTowards | CCSS:HSA-APR.A.1 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 05 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/5/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/5/index.html) | Find zeros and x-intercepts from linear factors and distinguish the y-intercept | Addressing | CCSS:HSA-APR.B.3 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 06 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/6/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/6/index.html) | Rewrite standard/factored forms and compare nonzero vertical scalings with physical-domain restrictions | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-APR.A.1 [PublisherAddressing]; CCSS:HSA-SSE.B.3 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 07 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/7/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/7/index.html) | Construct polynomials from prescribed zeros and select graphing windows that show all relevant roots | Addressing, BuildingTowards | CCSS:HSA-SSE.A.1 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 08 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/8/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/8/index.html) | Describe how polynomial degree parity and the leading term govern distant end behavior | Addressing, BuildingTowards | CCSS:HSA-APR.B.3 [VerifiedContentCoverage]; CCSS:HSF-IF.C.7 [VerifiedContentCoverage] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 09 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/9/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/9/index.html) | Use sign of leading coefficient and degree parity to match and construct polynomial end behavior | Addressing, BuildingTowards | CCSS:HSF-BF.B.3 [VerifiedContentCoverage] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 10 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/10/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/10/index.html) | Relate root multiplicities to touching/crossing behavior when sketching factored polynomials | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-APR.B.3 [PublisherAddressing]; CCSS:HSF-IF.C.7 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 11 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/11/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/11/index.html) | Solve intersections between two polynomial functions using equality and both coordinates | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-REI.C.7 [PublisherAddressing]; CCSS:HSA-REI.D.11 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 12 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/12/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/12/index.html) | Reverse polynomial multiplication by dividing a cubic by a known linear factor | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-APR.B.3 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 13 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/13/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/13/index.html) | Use long division to find polynomial quotient and remainder with domain caveats | Addressing, BuildingTowards | CCSS:HSA-APR.B.2 [VerifiedContentCoverage] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 14 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/14/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/14/index.html) | Identify missing information, factor and sketch source-scoped polynomials with partner explanation | Addressing, BuildingTowards | CCSS:HSA-APR.B.3 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 15 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/15/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/15/index.html) | Apply remainder theorem P(a)=r and solve unknown coefficient from factor data | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-APR.B.2 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 16 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/16/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/16/index.html) | Build rational fixed-volume closed cylinder surface area model and feasible minimum | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-CED.A.2 [PublisherAddressing]; CCSS:HSA-CED.A.4 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+| 17 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/17/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/17/index.html) | Review existing rational graph teaching for vertical asymptotes and ten-mile travel-time model | BuildingOn, Addressing, BuildingTowards | CCSS:HSA-CED.A.2 [PublisherAddressing]; CCSS:HSF-IF.B.4 [PublisherAddressing]; CCSS:HSF-IF.C.7 [PublisherAddressing] | REUSE_SOURCE_REVIEWED_RUNTIME_PENDING |
+| 18 | [Teacher](https://im.kendallhunt.com/HS/teachers/3/2/18/preparation.html) / [Student](https://im.kendallhunt.com/HS/students/3/2/18/index.html) | Review and extend existing horizontal-asymptote teaching with source paperback average-cost model | Addressing, BuildingTowards | CCSS:HSA-APR.D.6 [PublisherAddressing]; CCSS:HSA-SSE.A.1 [PublisherAddressing] | CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION |
+
+**Evidence interpretation:** `PublisherAddressing`, `VerifiedContentCoverage`, and `BuildingTowards`/`BuildingOn` are distinct evidence roles. This matrix reproduces the checked-in blueprint and points to the actual publisher source; it does not independently certify every target. All original pedagogical identities, links, source digests and canonicalBodySha256 baseline fields are retained. New learner-body text differs from those historical hashes and requires authorized new effective-content fingerprint/version handling.
+
+## Individually checked mathematical cases
+
+- **U02 L01 — Let’s Make a Box:** V(x)=x(3-2x)(8-2x); x=2/3 gives 200/27 and physical 0<x<1.5; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L02 — Funding the Future:** C(1.05)=1639.089375; p(-5)=-495; C(1)=1450; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L03 — Introducing Polynomials:** x^3-3x has local high (-1,2) and low (1,-2); status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L04 — Combining Polynomials:** (2x²-3x+1)(x²+4x-5)=2x⁴+5x³-21x²+19x-5; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L05 — Connecting Factors and Zeros:** (x+5)(x+1)(x-3) roots -5,-1,3 and f(0)=-15; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L06 — Different Forms:** x(14-2x)(8.5-2x)=4x³-45x²+119x; physical 0<x<4.25; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L07 — Using Factors and Zeros:** p=(x+1)(x-2)(x+15) roots -15,-1,2, so window -10..8 is insufficient; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L08 — End Behavior (Part 1):** positive odd x³ end directions down-left/up-right; positive even x⁴ both up; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L09 — End Behavior (Part 2):** x(x+3)(2-x)=-x³-x²+6x, negative odd ends up-left/down-right; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L10 — Multiplicity:** (x+1)(x−3)² has simple crossing at −1 and double touch at 3; vertical intercept 9; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L11 — Finding Intersections:** (x+7)(x−4)=x−4 has both intersections (−6,−10) and (4,0); status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L12 — Polynomial Division (Part 1):** x³+5x²+2x−8=(x−1)(x+2)(x+4); verify exact quotient and remainder 0; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L13 — Polynomial Division (Part 2):** 2x³+7x²+7x+2=(x+1)(2x²+5x+2); (x²+1)/(x−1) remainder 2; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L14 — What Do You Know About Polynomials?:** x³−7x+6=(x−2)(x+3)(x−1); two different cubics with zeros 0 and −4; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L15 — The Remainder Theorem:** P(2)=64−8u and root x=2 gives u=8; remainder for 6x²−7x−5 at 2 is 5; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L16 — Minimizing Surface Area:** Volume 452 cm³; S=2πr²+904/r; optimum r=(226/π)^(1/3) approx 4.159; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+- **U02 L17 — Graphs of Rational Functions (Part 1):** Original t(r)=10/r: t(8)=1.25 h, t(40/3)=0.75 h, r=0 excluded; status: REUSE_SOURCE_REVIEWED_RUNTIME_PENDING.
+- **U02 L18 — Graphs of Rational Functions (Part 2):** Paperback average c(x)=4+120/x, c(50)=6.40, break-even 30 and positive profit 31; status: CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION.
+
+## Actual executable verification
+
+Two separate course-scoped original Node test files were run in a local isolated container and had their exact Git blob SHA matched to the committed GitHub versions:
+- `tests/coder-7/UsCcssHsALG2120LESSONS.U02-math.test.cjs` — **8/8 PASS**, blob `f7da4d1473137ca582b0b18c394bd9973c829500`.
+- `tests/coder-7/UsCcssHsALG2120LESSONS.U02-next-math.test.cjs` — **8/8 PASS**, blob `61bca43c9cbc76b39aa4d385efb2b703dc8ac525`.
+
+These tests verify independent arithmetic, polynomial identities, root and multiplicity behavior, rational-domain negatives and optimization computations. They do **not** execute the actual generation/verifier/persistence code, site rendering, .NET tests, or authenticated UAT. The 120-row file/metadata integrity Node test was updated to follow the moving cursor but is **NOT_RUN** as a repository-wide content fixture test; do not mark it green without real execution.
+
+## Reuse, edition and shared integration
+
+- **U02 L17** already had source-aligned original teaching for speed/time and vertical asymptotes. It was preserved, now marked source-reviewed; it still needs effective Practice and academic/runtime acceptance.
+- **U02 L18** had original explanations of horizontal asymptotes but lacked the publisher paperback task. Preserved existing math, appended first-party source-context average-cost and break-even teaching (50 books $6.40, 100 books $5.20, positive profit at 31 copies sold at $8 each).
+- **U05 L10** remains independently authored and untouched; its source review is still pending.
+- **Publisher rights:** Illustrative Mathematics High School Algebra 2, First Edition 2019–2021, CC BY 4.0. Changed/explanatory mathematical text by Edulytiks; publisher name/logo excluded. The later v.360 edition is not used.
+- **CI:** Current canonical-body parity integration failed due to missing academic approval/version predecessor. Do not invent `newlyApproved` evidence, remove gate, or update shared seeding/materializer without one assigned global owner.
+- **Adoption and Practice:** #453 remains open. The current review neither proves high-school course selection nor all 120 effective Practice contracts. Existing metadata alone does not prove authenticated student scoring.
+
+**Next lesson:** `PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L19`, ordinal 30. The course is not complete, reviewed, merged or deployed.
+
+
+## V11 source-task gap closure: U02 L18 (2026-10-29)
+
+Checked the original [student activities](https://im.kendallhunt.com/HS/students/3/2/18/index.html) and [teacher preparation](https://im.kendallhunt.com/HS/teachers/3/2/18/preparation.html). Activity 18.3 has eight functions to match against graphs A-D. Prior learner worked examples covered 18.1 and the paperback 18.2 but did not expose those eight mappings in the learner body. The course-owned Rich V2 worked example now includes all eight exact equation-to-graph-label mappings, their four horizontal asymptotes, x=0 domain exclusion and the optional extension. A new course-owned Node regression checks source-task visibility in the actual student content. The source graphical figures are NOT replicated and authenticated rendering of a first-party graph remains NOT_VERIFIED. This does not grant academic Stage A or Stage B acceptance; canonical predecessor SHA remains unchanged, the proposed successor digest is recomputed, and a version-owner decision is still required.
