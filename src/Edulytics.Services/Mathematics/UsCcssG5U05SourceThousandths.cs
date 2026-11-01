@@ -587,6 +587,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Draw My Shape lesson: do dimensions ALONE distinguish two congruent rectangles in different coordinate grid positions?", "no", "yes", "only if colors differ"),
         new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Guess Which One partner task: correct questions to identify a secret shape should have what answer type?", "yes or no", "only numeric", "only free drawing"),
         new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Guess Which One lettered figure cards A–L: is their exact identification from publisher diagrams available from the teacher HTML?", "teacher visual review required", "all shapes share identical coordinates", "the first shape is definitely chosen"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original source point D has printed coordinates", "(6,4)", "(4,6)", "(6,5)"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original source point E has printed coordinates", "(2,5)", "(5,2)", "(2,4)"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original source point F has printed coordinates", "(8,3)", "(3,8)", "(8,4)"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original source D(6,4) first coordinate / x coordinate", "6", "4", "0"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original source E(2,5) second coordinate / y coordinate", "5", "2", "0"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original source F(8,3) first coordinate / x coordinate", "8", "3", "0"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Source among D(6,4),E(2,5),F(8,3): farthest RIGHT", "F", "D", "E"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Source among D,E,F: highest VERTICAL coordinate", "E", "D", "F"),
+        new("usccss.g5.u07.l02.original_plot_specific_points", "Original ordered pair (5,2) must be plotted at x5 y2, not x2 y5: correct statement", "x5, y2", "x2, y5", "x5, y5"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
