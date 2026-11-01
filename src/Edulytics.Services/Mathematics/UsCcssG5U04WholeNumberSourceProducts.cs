@@ -118,6 +118,24 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l21.independent_group_annual_estimates", "INDEPENDENT EDULYTIKS ILLUSTRATIVE POPULATION (NOT PRINTED SOURCE SIZE): hypothetical four-person family, if EACH person generates the original printed 219 pounds/year", "219 × 4", 876, "pounds of estimated annual food waste for the hypothetical population"),
         new("usccss.g5.u04.l21.independent_group_annual_estimates", "INDEPENDENT EDULYTIKS ILLUSTRATIVE POPULATION (NOT PRINTED SOURCE SIZE): hypothetical twenty-five-person class, if EACH person generates the original printed 219 pounds/year", "219 × 25", 5475, "pounds of estimated annual food waste for the hypothetical population"),
         new("usccss.g5.u04.l21.independent_group_annual_estimates", "INDEPENDENT EDULYTIKS ILLUSTRATIVE POPULATION (NOT PRINTED SOURCE SIZE): hypothetical 500-person school, if EACH person generates the original printed 219 pounds/year", "219 × 500", 109500, "pounds of estimated annual food waste for the hypothetical population"),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "17 × 149", 3000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "19 × 149", 3000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "20 × 149", 3000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "21 × 149", 3000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "22 × 149", 3000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "15 × 149", 2000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "14 × 149", 2000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "13 × 149", 2000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "24 × 149", 4000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "26 × 149", 4000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "27 × 149", 4000, "", true),
+        new(L01Estimate,"Edulytiks-original supplemental nearest-thousand product estimate", "31 × 149", 5000, "", true),
+        new("usccss.g5.u04.l02.original_partial_products_totals","Edulytiks-original supplementary area model with 215 by 34","215 × 34",7310,"square units of an area model"),
+        new("usccss.g5.u04.l19.source_state_rectangular_area_products","Edulytiks-original supplementary rectangular-area product with sides 13 and 17","13 × 17",221,"square units"),
+        new("usccss.g5.u04.l21.source_food_waste_annual_ounces","Edulytiks-original supplementary yearly food-weight model: 100 ounces daily for 365 days","100 × 365",36500,"ounces per year"),
+        new("usccss.g5.u04.l21.source_food_waste_annual_ounces","Edulytiks-original supplementary yearly food-weight model: 150 ounces daily for 365 days","150 × 365",54750,"ounces per year"),
+        new("usccss.g5.u04.l21.source_food_waste_annual_ounces","Edulytiks-original supplementary yearly food-weight model: 200 ounces daily for 365 days","200 × 365",73000,"ounces per year"),
+        new("usccss.g5.u04.l21.independent_group_annual_estimates","Edulytiks-original supplementary group annual estimate: 25 ounces daily over 365 days","25 × 365",9125,"ounces per year"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
@@ -149,12 +167,24 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         string prompt,solution;
         if(e.SourceEstimate)
         {
-            prompt="IM2021 original Activity1: 18×149. Which estimate is most reasonable? "+
-                "Select 1: 2000; 2: 4000; 3: 3000; 4: 1500. "+
-                "Explain why your estimate is plausible and whether the exact product "+
-                "is more or less: TEACHER_REVIEW_REQUIRED.";
-            solution="18×149=2682, closest to 3000 of the four original options; "+
-                "explain that 18×150≈2700 and the product is less than the selected 3000.";
+            if(e.Context.StartsWith("Edulytiks-original",StringComparison.Ordinal))
+            {
+                prompt=$"{e.Context}: estimate {e.Expression} to the nearest thousand. "+
+                    $"Select 1: {e.Result-1000}; 2: {e.Result+1000}; "+
+                    $"3: {e.Result}; 4: {e.Result+2000}. "+
+                    "Justify rounding and estimate with place value: TEACHER_REVIEW_REQUIRED.";
+                solution=$"The closest thousand for {e.Expression} is {e.Result}; "+
+                    "the selected estimate is a numerical subskill, not teacher-scored reasoning.";
+            }
+            else
+            {
+                prompt="IM2021 original Activity1: 18×149. Which estimate is most reasonable? "+
+                    "Select 1: 2000; 2: 4000; 3: 3000; 4: 1500. "+
+                    "Explain why your estimate is plausible and whether the exact product "+
+                    "is more or less: TEACHER_REVIEW_REQUIRED.";
+                solution="18×149=2682, closest to 3000 of the four original options; "+
+                    "explain that 18×150≈2700 and the product is less than the selected 3000.";
+            }
         }
         else
         {
@@ -167,10 +197,10 @@ public static class UsCcssG5U04WholeNumberSourceProducts
                 1=>[wrongA,correct,wrongB],
                 _=>[wrongA,wrongB,correct]
             };
-            prompt=$"{e.Context}. Calculate the exact value of {e.Expression}. "+
+            prompt=$"{e.Context}. Calculate the {(e.Context.StartsWith("Edulytiks-original",StringComparison.Ordinal)?"supplementary":"source")} exact value of {e.Expression}. "+
                 $"Select 1: {opts[0]}; 2: {opts[1]}; 3: {opts[2]}. "+
                 "Multi-digit place-value reasoning and original estimate discussion are TEACHER_REVIEW_REQUIRED.";
-            solution=$"The exact original-source product {e.Expression} is {correct} {e.Units}. "+
+            solution=$"The exact source-aligned product {e.Expression} is {correct} {e.Units}. "+
                 "The student strategy, place-value decomposition and estimation justification need teacher scoring.";
         }
         return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);

@@ -106,6 +106,15 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l20.original_cargo_container_division", "Original 2021 source 20ft × 8ft × 8ft container =1280 cubic feet, school is assumed to recycle40 cubic feet per day: days to fill ONE full container", "1280 ÷ 40", 32, "days per school per container, under source assumed daily volume"),
         new("usccss.g5.u04.l20.original_cargo_container_division", "Original 2021 historical source states 210000 US-exported plastic containers in 2018 and around70000 elementary schools: containers per school required", "210000 ÷ 70000", 3, "cargo containers per school"),
         new("usccss.g5.u04.l20.original_cargo_container_division", "Exact conversion of 3 containers of1280 cubic feet into assumed 40-cubic-feet daily recycling: days to fill THREE containers (independently derived from printed source)", "(3 × 1280) ÷ 40", 96, "days at constant source hypothetical recycling rate"),
+        new(L10Dance,"Edulytiks-original supplementary dance grouping of 4704 people in groups of sixteen","4704 ÷ 16",294,"groups"),
+        new("usccss.g5.u04.l12.source_elena_partial_quotient_totals","Edulytiks-original supplementary partial quotient 560 divided by 14","560 ÷ 14",40,"whole groups"),
+        new("usccss.g5.u04.l13.original_partial_quotient_estimate_and_solve","Edulytiks-original supplementary estimate and exact quotient 714 divided by 21","714 ÷ 21",34,"groups"),
+        new("usccss.g5.u04.l14.original_corrected_error_quotients","Edulytiks-original supplementary corrected-division exercise for 1300 divided by 25","1300 ÷ 25",52,"groups"),
+        new("usccss.g5.u04.l16.source_long_noodle_whole_quotient_parts","Edulytiks-original supplementary noodle split: 10119 feet shared by 500 people, whole feet each","floor(10119 ÷ 500)",20,"whole feet per person"),
+        new("usccss.g5.u04.l16.source_long_noodle_whole_quotient_parts","Edulytiks-original supplementary noodle remainder after 500 people each get 20 feet","10119 - (20 × 500)",119,"feet remaining"),
+        new("usccss.g5.u04.l16.source_han_estimate_integer_checks","Edulytiks-original supplementary check of 500 people receiving 20 whole feet each","500 × 20",10000,"feet distributed"),
+        new("usccss.g5.u04.l17.source_fraction_partial_quotient_totals","Edulytiks-original supplementary fraction-compatible partial quotient 240 divided by 16","240 ÷ 16",15,"whole quotient"),
+        new("usccss.g5.u04.l20.original_cargo_container_division","Edulytiks-original supplementary cargo-volume model 1280 cubic feet divided by 80 cubic feet per day","1280 ÷ 80",16,"days"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
@@ -140,11 +149,14 @@ public static class UsCcssG5U04WholeNumberSourceDivision
             1=>[wrongA,correct,wrongB],
             _=>[wrongA,wrongB,correct]
         };
-        string prompt=$"{c.Context}. Find the source quotient {c.Expression}. "+
+        string origin=c.Context.StartsWith("Edulytiks-original",StringComparison.Ordinal)
+            ? "supplementary source-aligned" : "original source";
+        string prompt=$"{c.Context}. Find the {origin} value {c.Expression}. "+
             $"Select 1: {answers[0]}; 2: {answers[1]}; 3: {answers[2]}. "+
-            "Pupil's original grouping diagram, interpretation and partner explanations are TEACHER_REVIEW_REQUIRED.";
+            "Original pupil diagrams, interpretation and partner explanations are TEACHER_REVIEW_REQUIRED.";
         string solution=$"{c.Expression}={correct} {c.Units}. "+
-            "Use multiplication to check the source's number of groups and preserve the original 4704-person total.";
+            "Check the operation with its inverse and preserve the specified units; "+
+            "student explanations and the source drawing remain teacher-reviewed.";
         return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
