@@ -17,6 +17,14 @@ internal static class UsCcssG5Unit1Lesson7Questions
         "An Edulytiks-original small block measures 2 centimeters by 3 centimeters by 5 centimeters. Choose 1 cm cubed, 2 inches cubed, or 3 feet cubed. Justify your unit selection to a teacher."
     ];
     private static readonly int[] IndependentAnswers = [3, 2, 1];
+    private static string PromptFor(int variant)
+    {
+        if(variant<SourceEquivalentPrompts.Length)return SourceEquivalentPrompts[variant];
+        var unit=variant%3 switch {0=>"centimeters",1=>"inches",_=>"feet"};
+        return $"Edulytiks-original supplementary unit selection: a clearly measured storage box has sides {variant+1}, {variant+2} and 3 {unit}. Choose its correct volume unit: 1 cubic centimeters, 2 cubic inches, 3 cubic feet. Explain the context and chosen unit to the teacher.";
+    }
+    private static int AnswerFor(int variant) =>
+        variant<IndependentAnswers.Length?IndependentAnswers[variant]:(variant%3)+1;
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family) =>
@@ -25,20 +33,20 @@ internal static class UsCcssG5Unit1Lesson7Questions
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported Grade5 source family");
         ArgumentNullException.ThrowIfNull(random);
-        var variant=random.Next(IndependentAnswers.Length);
+        var variant=random.Next(12);
         var parameters=new Dictionary<string,int>(StringComparer.Ordinal) {["variant"]=variant};
         var solution="Original info-gap questioning, open size/context unit choices and physical cubic units are reviewed by teacher; no invented missing edge.";
-        return new Problem(family,SourceEquivalentPrompts[variant],solution,
+        return new Problem(family,PromptFor(variant),solution,
             AssessmentItemType.Numeric,parameters);
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> parameters)
     {
         if(!Valid(family,parameters))throw new InvalidOperationException("Invalid source question parameters");
-        return IndependentAnswers[parameters["variant"]].ToString(CultureInfo.InvariantCulture);
+        return AnswerFor(parameters["variant"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> parameters,string? answer) =>
         Valid(family,parameters)&&string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p) =>
         Supports(family)&&p is not null&&p.Count==1&&
-        p.TryGetValue("variant",out var v)&&v>=0&&v<IndependentAnswers.Length;
+        p.TryGetValue("variant",out var v)&&v>=0&&v<12;
 }
