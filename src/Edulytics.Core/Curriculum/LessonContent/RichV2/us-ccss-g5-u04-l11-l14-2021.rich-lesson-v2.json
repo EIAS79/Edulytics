@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l11-l14-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Different Partial Quotients PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: compare multiple correct DECOMPOSITIONS of a whole-number quotient and choose partial quotients that are helpful to calculate. The 2021 source includes card-matching of different expressions and explicit metacognitive reflection about revising a partial-quotient choice.",
-        "Warm-up: consider 364÷13 with 260÷13=20,65÷13=5 and39÷13=3. Explain that subtracting these divisible chunks recovers 364, and that the corresponding partial quotients add to 28; changing order is allowed when the pieces still partition the total.",
-        "Activity 1 — original card choices: find 352÷16. One learner selects 320÷16=20 and then32÷16=2; another uses 160÷16=10 twice then32÷16=2. Compare the two different lists as legitimate decompositions of the SAME dividend and quotient. A card whose chunks add to 336 is incomplete even if every individual division statement is true.",
-        "Activity 2 — choose an efficient starting step: for 832÷26, one learner removes 780=30×26 and then52=2×26; another removes 520=20×26 then312=12×26. Both give 32, and students discuss which products they can find mentally more easily. Encourage revising initial choices if an easier combination becomes evident.",
-        "Teacher review: this source activity is about selecting and matching sets of partial quotients, explaining completeness, comparing computation effort and reflecting on choices. An exact 22 or 32 is a supporting numeric subcheck, not certification of that thinking. No publisher card images copied."
+        "Original IM 2021 G5 U04:L11 Different Partial Quotients PLC Activity compares multiple valid decompositions of WHOLE-NUMBER DIVISION by a two-digit divisor, including sets of quotient chunks and metacognitive choice of a useful first multiple. The sum of selected partial QUOTIENTS must equal the full quotient, and corresponding products must partition the ORIGINAL dividend.",
+        "Warm-up Notice and Wonder Ways to Record: source 364÷13=28 is recorded through Clare/Jada different decompositions. Source examples include 13×10=130,13×20=260,13×5=65,13×3=39; 260+65+39=364 and partial quotients 20+5+3=28. A source figure may also present 130+130+65+39=364. Teacher reviews actual partial-quotient records rather than assuming a unique order.",
+        "Activity 1 Division Expressions: original source card activity targets 308÷14=22. Learners select an actual set of expressions whose partial QUOTIENTS add to 22 and whose dividend chunks sum to 308, leaving zero. Actual original option card deck is not independently verified; do not claim invented card expressions are publisher originals. Correct independent example 14×20=280 then14×2=28.",
+        "Activity 2 Choose Your Own Partial Quotients: source exercises 360÷15=24 (e.g. 300÷15=20 and60÷15=4), 945÷45=21 (900÷45=20 and45÷45=1) and 992÷31=32 (e.g. 31×30=930 and62÷31=2). Teacher asks children to choose a first useful partial quotient, compare possible start values and revise when needed. Some source card expressions such as 341÷31=11 are helper chunks, not full 992÷31.",
+        "Exact selected Practice covers verified source quotients and helper chunks only. Teacher reviews card selection, original source diagram interpretation, complete remainder zero and partner explanations. Edulytiks independent teacher Cool-down 672÷24=28 does not recreate the publisher gated original.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +37,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Two solutions with one quotient",
+          "Title": "Source 364÷13 partial quotients",
+          "Question": "Compare two ways to divide 364 by 13 with convenient chunks.",
+          "Method": "Sum valid multiples of divisor and their quotient contributions.",
+          "Steps": [
+            "13×20=260, remainder104.",
+            "13×5=65, remainder39.",
+            "13×3=39, zero remaining; 20+5+3=28."
+          ],
+          "Answer": "28.",
+          "Check": "28×13=364, no remainder."
+        },
+        {
+          "Title": "Original 308÷14 card-sum target",
+          "Question": "Choose chunks that make 308÷14 with an exact zero remainder.",
+          "Method": "Source task accepts different partial-quotient sets, not a single invented card match.",
+          "Steps": [
+            "14×20=280, leaving 28.",
+            "14×2=28, leaving zero.",
+            "20+2=22."
+          ],
+          "Answer": "22.",
+          "Check": "22×14=308."
+        },
+        {
+          "Title": "Source three student-selected division targets",
+          "Question": "Calculate 360÷15,945÷45,992÷31.",
+          "Method": "Start with convenient tens of divisor then finish remaining groups.",
+          "Steps": [
+            "360=300+60 ->20+4=24 groups of 15.",
+            "945=900+45 ->20+1=21 groups of 45.",
+            "992=930+62 ->30+2=32 groups of 31."
+          ],
+          "Answer": "24;21;32.",
+          "Check": "15×24=360,45×21=945,31×32=992."
+        },
+        {
+          "Title": "Optional existing extension — Two solutions with one quotient",
           "Question": "Show two legal partial-quotient methods for 352÷16.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -48,7 +85,7 @@
           "Check": "16×22=352; neither method leaves a remainder."
         },
         {
-          "Title": "Choose large easy chunks",
+          "Title": "Optional existing extension — Choose large easy chunks",
           "Question": "Calculate 832÷26 starting with 30 groups.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -60,7 +97,7 @@
           "Check": "26×32=832."
         },
         {
-          "Title": "Reject an incomplete set",
+          "Title": "Optional existing extension — Reject an incomplete set",
           "Question": "A student records only 20 groups of 16 for 352÷16. Explain the missing work.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -82,46 +119,59 @@
           "Mistake": "Sum partial quotients without checking subtracted multiples",
           "WhyWrong": "A correct-looking sum can mask omitted or duplicated dividend pieces.",
           "Correction": "Multiply each selected partial quotient by the divisor and sum to the original dividend."
+        },
+        {
+          "Mistake": "Replace source 308÷14 and 360÷15,945÷45,992÷31 with invented 352÷16 and 832÷26",
+          "WhyWrong": "Original printed lesson uses named different quotient targets and specific helper expressions, and expects student source card selection.",
+          "Correction": "Restore all source totals and verified helpers; keep alternative division examples explicitly optional."
         }
       ],
       "SummaryPoints": [
-        "Different correct decompositions of the dividend may give the same quotient.",
-        "Efficient partial quotient choices depend on known multiples and place value.",
-        "Card matching and reflection on strategy changes are teacher-reviewed.",
-        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 11, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-11/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+        "Source warmup 364÷13=28 using different valid source partial-quotient representations.",
+        "Source Activity1 target 308÷14=22, with full original card deck not independently certified.",
+        "Source Activity2 360÷15=24,945÷45=21,992÷31=32 and helper chunks.",
+        "Original partner discussions require full dividend accounting and a remainder of zero.",
+        "Selected numeric quotient cases are supplemental; teacher scores actual source diagrams and choices."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Different Partial Quotients PLC Activity — division decomposition",
-          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Title": "Original source partial quotient decomposition table",
+          "Description": "First-party source arithmetic, not exact publisher choice card layout; student cards and peer review teacher scored.",
           "Rows": [
             {
-              "Label": "Method",
+              "Label": "364÷13",
               "Cells": [
-                "20+2",
-                "10+10+2"
+                "260+65+39",
+                "20+5+3=28"
               ]
             },
             {
-              "Label": "Dividend chunks",
+              "Label": "308÷14",
               "Cells": [
-                "320+32",
-                "160+160+32"
+                "280+28",
+                "20+2=22"
               ]
             },
             {
-              "Label": "Total",
+              "Label": "360÷15",
               "Cells": [
-                "352",
-                "352"
+                "300+60",
+                "20+4=24"
               ]
             },
             {
-              "Label": "Quotient",
+              "Label": "945÷45",
               "Cells": [
-                "22",
-                "22"
+                "900+45",
+                "20+1=21"
+              ]
+            },
+            {
+              "Label": "992÷31",
+              "Cells": [
+                "930+62",
+                "30+2=32"
               ]
             }
           ]

@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM K5 2021 G5 U04:L11: source-specific selected exact
+        // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U04:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U04:L11", "number.whole.divide",
+            "G5_SOURCE_UNIT4_LESSON_11_WHOLE_NUMBER_ARITHMETIC",
+            ["usccss.g5.u04.l11.source_partial_quotient_totals", "usccss.g5.u04.l11.source_convenient_quotient_chunks"],
+            "IM2021_G5_U04_L11_AUTHORING_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U04:L10 source 4704-person folk dance divisions,
         // partner diagrams and strategy TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U04:L10"] = new LessonPracticeContract(
