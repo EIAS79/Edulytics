@@ -471,6 +471,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original target1 1/3 cup walnuts, how much after5/6 used", "1/2", "5/6", "1/3"),
         new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original hiking1 1/2 miles+4/10 mile total", "1 9/10", "1 1/10", "1 4/5"),
         new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original hiking trail2 1/2 miles, after1 9/10, remainder", "3/5", "1/5", "4/5"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original warmup1/8+5/8", "3/4", "6/16", "5/16"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original warmup1/8+6/16", "1/2", "7/24", "7/16"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original warmup1/8+1/3", "11/24", "2/11", "4/24"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original warmup1/8+5/12", "13/24", "6/20", "6/24"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Source common denominator18 for4/6+5/8 valid yes/no", "no", "yes", "unknown"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Source common denominator24 for4/6+5/8 valid yes/no", "yes", "no", "unknown"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Source common denominator48 for4/6+5/8 valid yes/no", "yes", "no", "unknown"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source4/6+5/8", "31/24", "25/24", "30/24"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source2/5+13/15", "19/15", "15/15", "13/15"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source6/5−1/3", "13/15", "5/15", "12/15"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source11/12+3 5/9", "4 17/36", "3 17/36", "4 11/36"),
+        new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source6/10−9/25", "6/25", "3/25", "1/25"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

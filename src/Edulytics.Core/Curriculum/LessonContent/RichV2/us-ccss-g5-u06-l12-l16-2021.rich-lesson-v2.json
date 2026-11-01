@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l12-l16-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u06-l12-l16-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -249,11 +249,17 @@
       "CultureCode": "en",
       "Title": "Put It All Together: Add and Subtract Fractions",
       "ExplanationParagraphs": [
-        "Goal: critique claims about common denominators, distinguish invalid choices from two valid choices, and flexibly select convenient equivalent forms to add and subtract fractions. The original source contrasts denominators 18,24 and48 for6ths and8ths.",
-        "Warm-up: list multiples of6 and8. The first positive common multiple is24; 48 is also a common multiple, while18 is not divisible by8. Explain why using18 would force non-integer rescaling of eighths, so it cannot be the common denominator in the usual equivalent-fraction strategy.",
-        "Activity 1 — critique three learners: find 2/3+3/8. One student proposes denominator18, another24, another48. Denominator18 is not a multiple of8; 24 gives16/24+9/24=25/24;48 gives32/48+18/48=50/48=25/24. Students explain why both24 and48 work but24 is simpler.",
-        "Activity 2 — compare strategies: find 3/5+4/15 using fifteenths to get9/15+4/15=13/15. Find6/5−1/3 as18/15−5/15=13/15. For 4/7+5/6, denominator42 yields24/42+35/42=59/42. A partner chooses another valid common multiple and explains why the quotient stays equal.",
-        "Teacher boundary: the source asks whom the student agrees with, alternative denominator choices and written critique. Correct numeric sums are supporting evidence only; the reasons given for accepting or rejecting a denominator need teacher review."
+        "Original IM2021 G5 U06:L13 considers MULTIPLE common denominators and why proposed denominators18,24,48 do or do not work for denominators6 and8. Pupils choose any valid efficient strategy and justify equivalence.",
+        "Warm-up original source1/8+5/8=3/4,1/8+6/16=1/2,1/8+1/3=11/24,1/8+5/12=13/24. Students can represent these values with common units or an area model.",
+        "Activity1 original source fraction4/6+5/8=2/3+5/8=31/24=1 7/24. Tyler claims18 common denominator INVALID because18 not multiple8. Han24 and Clare48 both VALID; using24 gives16/24+15/24=31/24, 48 gives32/48+30/48=62/48=31/24. Previous invented2/3+3/8 is not the source expression.",
+        "Activity2 original source2/5+13/15=19/15,6/5−1/3=13/15,11/12+3 5/9=4 17/36 and6/10−9/25=6/25. Verify a denominator common to original pair, and discuss if there is a smaller convenient multiple.",
+        "All source teacher visual representations, critique of Tyler/Han/Clare and choice of denominator are TEACHER_REVIEW_REQUIRED; selected numeric exact cases test original sums only. Independent Edulytiks Cool-down is distinct from publisher original.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: critique claims about common denominators, distinguish invalid choices from two valid choices, and flexibly select convenient equivalent forms to add and subtract fractions. The original source contrasts denominators 18,24 and48 for6ths and8ths.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: list multiples of6 and8. The first positive common multiple is24; 48 is also a common multiple, while18 is not divisible by8. Explain why using18 would force non-integer rescaling of eighths, so it cannot be the common denominator in the usual equivalent-fraction strategy.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — critique three learners: find 2/3+3/8. One student proposes denominator18, another24, another48. Denominator18 is not a multiple of8; 24 gives16/24+9/24=25/24;48 gives32/48+18/48=50/48=25/24. Students explain why both24 and48 work but24 is simpler.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — compare strategies: find 3/5+4/15 using fifteenths to get9/15+4/15=13/15. Find6/5−1/3 as18/15−5/15=13/15. For 4/7+5/6, denominator42 yields24/42+35/42=59/42. A partner chooses another valid common multiple and explains why the quotient stays equal.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: the source asks whom the student agrees with, alternative denominator choices and written critique. Correct numeric sums are supporting evidence only; the reasons given for accepting or rejecting a denominator need teacher review."
       ],
       "KeyConcepts": [
         {
@@ -277,7 +283,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Critique denominator choices",
+          "Title": "Source exact 1 — Original U06:L13 Put It All Together Fractions",
+          "Question": "Original warmup1/8+5/8",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3/4",
+          "Check": "Original numeric source example; incorrect distractors 6/16 and 5/16 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original U06:L13 Put It All Together Fractions",
+          "Question": "Original warmup1/8+6/16",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1/2",
+          "Check": "Original numeric source example; incorrect distractors 7/24 and 7/16 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original U06:L13 Put It All Together Fractions",
+          "Question": "Original warmup1/8+1/3",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "11/24",
+          "Check": "Original numeric source example; incorrect distractors 2/11 and 4/24 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original U06:L13 Put It All Together Fractions",
+          "Question": "Original warmup1/8+5/12",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "13/24",
+          "Check": "Original numeric source example; incorrect distractors 6/20 and 6/24 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Critique denominator choices",
           "Question": "For2/3+3/8 compare proposed18,24,48.",
           "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
           "Steps": [
@@ -289,7 +343,7 @@
           "Check": "16/24+9/24=25/24."
         },
         {
-          "Title": "Use denominator already available",
+          "Title": "Optional existing extension — Use denominator already available",
           "Question": "Find3/5+4/15.",
           "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
           "Steps": [
@@ -301,7 +355,7 @@
           "Check": "13/15−4/15=9/15."
         },
         {
-          "Title": "Use a product common multiple",
+          "Title": "Optional existing extension — Use a product common multiple",
           "Question": "Find4/7+5/6.",
           "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
           "Steps": [
@@ -323,18 +377,89 @@
           "Mistake": "Assume only the smallest denominator gives a correct sum",
           "WhyWrong": "Any positive common multiple works with proper numerator scaling.",
           "Correction": "Compare24 and48 calculations and reduce both."
+        },
+        {
+          "Mistake": "Accept18 for 6ths and eighths or replace source4/6+5/8 with2/3+3/8",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source4/6+5/8 and explain why18 is not multiple8; retain mathematically correct alternatives only as extensions."
         }
       ],
       "SummaryPoints": [
-        "Evaluate denominator claims using exact divisibility.",
-        "Different correct choices preserve an equivalent result.",
-        "Teacher evaluates reasoning, not just numerical fraction sums.",
-        "IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-13/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
+        "Source warmup3/4,1/2,11/24,13/24.",
+        "Source original4/6+5/8=31/24, denominators24/48 valid,18 invalid.",
+        "Source Activity2 19/15,13/15,4 17/36,6/25.",
+        "Optional prior: Evaluate denominator claims using exact divisibility.",
+        "Optional prior: Different correct choices preserve an equivalent result.",
+        "Optional prior: Teacher evaluates reasoning, not just numerical fraction sums.",
+        "Optional prior: IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-13/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Put It All Together: Add and Subtract Fractions — original model",
+          "Title": "Original U06:L13 Put It All Together Fractions — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup1/8+5/8",
+              "Cells": [
+                "3/4",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup1/8+6/16",
+              "Cells": [
+                "1/2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup1/8+1/3",
+              "Cells": [
+                "11/24",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup1/8+5/12",
+              "Cells": [
+                "13/24",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source common denominator18 for4/6+5/8 valid yes/no",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source common denominator24 for4/6+5/8 valid yes/no",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source common denominator48 for4/6+5/8 valid yes/no",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source4/6+5/8",
+              "Cells": [
+                "31/24",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Put It All Together: Add and Subtract Fractions — original model",
           "Description": "First-party accessible mathematical table, not publisher graphics or activity cards.",
           "Rows": [
             {
