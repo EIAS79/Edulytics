@@ -20,3 +20,12 @@ Observed CI failure CS1003 in source answer bank; targeted comma repair `eeb2b73
 - Actual Authenticated Student/Teacher E2E, database, accessibility, production renderer and final green CI are NOT yet proven.
 
 **Operational control:** Draft PR #596. No merge, deploy, production connection, or self-issued reviewer approval. Stage D diagnostic is fail-closed.
+
+
+## 2026-11-01 execution results
+
+- Tested code SHA: `eeb9e51e80fdc2f5135f3867e1b7cbcd3b471309`.
+- Stage D dedicated run: [41338917084](https://github.com/EIAS79/Edulytics/actions/runs/41338917084) — 148-row manifest pass, 126/129 Node D1 (3 TODO), 1319/1319 Grade5 .NET pass; final academic gate blocked.
+- Authenticated acceptance [41338917105](https://github.com/EIAS79/Edulytics/actions/runs/41338917105) failed at source-body parity before E2E. Original JSON parity [41338917132](https://github.com/EIAS79/Edulytics/actions/runs/41338917132) failed.
+- A–B–C legacy U01 source conflicts and official mapping counts 210/26 vs 215/27 remain unapproved. [Source/academic issue #619](https://github.com/EIAS79/Edulytics/issues/619).
+- Final Grade5 D_VERIFIED = 0 and release decision `NO_GO_TECHNICAL`. This documentation does not carry its own tested CI result.
