@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
 using Xunit;
@@ -113,6 +114,32 @@ public sealed class UsCcssG5U03L03UnitFractionCandidateTests
 
         Assert.DoesNotContain(contract.AllowedQuestionFamilies,
             family => family.StartsWith("usccss.g5.u03.l01.", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void EverySourcePatternPresentsThreeDistinctOptionsWithExactlyOneCorrectFraction()
+    {
+        var seenFourByFour = false;
+        for (var seed = 0; seed < 180; seed++)
+        {
+            var item = UsCcssG5U03L03UnitFractionQuestions.Build(
+                UsCcssG5U03L03UnitFractionQuestions.PatternFamily, new Random(seed));
+            var match = Regex.Match(item.Prompt,
+                @"Select 1: (1/\\d+); 2: (1/\\d+); 3: (1/\\d+)\\.");
+            Assert.True(match.Success, item.Prompt);
+            var options = new[]
+            {
+                match.Groups[1].Value, match.Groups[2].Value, match.Groups[3].Value
+            };
+            Assert.Equal(3, options.Distinct(StringComparer.Ordinal).Count());
+            var rowCount = item.Parameters["case"] + 2;
+            var expected = $"1/{4 * rowCount}";
+            Assert.Equal(expected, options[int.Parse(
+                UsCcssG5U03L03UnitFractionQuestions.Solve(item.Family, item.Parameters)) - 1]);
+            if (rowCount == 4)
+                seenFourByFour = true;
+        }
+        Assert.True(seenFourByFour, "The original 4 × 4 source diagram must be exercised");
     }
 
     [Fact]

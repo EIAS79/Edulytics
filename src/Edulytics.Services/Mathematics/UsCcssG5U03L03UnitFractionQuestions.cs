@@ -48,11 +48,19 @@ public static class UsCcssG5U03L03UnitFractionQuestions
             throw new InvalidOperationException("Invalid Grade 5 unit-fraction source case.");
         int product = checked(first * second);
         string answer = $"1/{product}";
+        // Source four-column × four-row case: both factors are four.
+        // Do not present two identical wrong options (1/4 and 1/4).
+        // A second independently wrong unit fraction keeps the three
+        // choices distinct without changing the publisher's correct 1/16.
+        string firstDistractor = $"1/{first}";
+        string secondDistractor = first == second
+            ? $"1/{first + second}"
+            : $"1/{second}";
         string[] options = p["slot"] switch
         {
-            0 => [answer, $"1/{first}", $"1/{second}"],
-            1 => [$"1/{first}", answer, $"1/{second}"],
-            _ => [$"1/{first}", $"1/{second}", answer]
+            0 => [answer, firstDistractor, secondDistractor],
+            1 => [firstDistractor, answer, secondDistractor],
+            _ => [firstDistractor, secondDistractor, answer]
         };
         string request = family == PatternFamily
             ? $"The same ORIGINAL unit square has FOUR equal columns and {second} equal rows. " +
