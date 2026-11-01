@@ -146,7 +146,7 @@ def verify_g5_u03_l02_actual_practice_svg(opener, lesson_id, adoption_id):
             parameters["differentWhole"] not in range(2)):
         raise AssertionError("G5 visual test: invalid Grade5 fraction parameters")
     svg = re.search(
-        r"<svg\\b[^>]*class=['\\"]practice-math-visual['\\"][^>]*>.*?</svg>",
+        r"<svg\b[^>]*class='practice-math-visual'[^>]*>.*?</svg>",
         rendered, re.IGNORECASE | re.DOTALL)
     if svg is None:
         raise AssertionError("G5 visual test: actual student attempt has no SVG")
