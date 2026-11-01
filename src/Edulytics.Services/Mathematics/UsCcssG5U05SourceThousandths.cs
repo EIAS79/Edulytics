@@ -678,6 +678,17 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner A if second reaches120 first is", "80", "60", "40"),
         new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner B first step2 second step3: if first30 second is", "45", "60", "20"),
         new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner B if second60 first is", "40", "30", "90"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerA Rule1 +8 Rule2 +2, point A", "(0,0)", "(8,2)", "(2,8)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerA point B corresponding +8/+2", "(8,2)", "(2,8)", "(8,4)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerA point C corresponding +8/+2", "(16,4)", "(4,16)", "(16,6)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerA point F corresponding +8/+2", "(40,10)", "(10,40)", "(48,12)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerB Rule1 +10 Rule2 +40, point C", "(20,80)", "(80,20)", "(20,40)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerB point F", "(50,200)", "(200,50)", "(50,160)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original Activity2 Rule1 +2 Rule2 +5, point A", "(0,0)", "(2,5)", "(5,2)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original Activity2 Rule1 +2 Rule2 +5, point C", "(4,10)", "(10,4)", "(6,15)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original Activity2 Rule1 +2 Rule2 +5, point F", "(10,25)", "(25,10)", "(8,20)"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerA rule1 value always how many TIMES corresponding rule2 value for nonzero indices?", "4", "2", "8"),
+        new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original Activity2 rule2 value divided by rule1 value for positive terms", "5/2", "2/5", "5"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

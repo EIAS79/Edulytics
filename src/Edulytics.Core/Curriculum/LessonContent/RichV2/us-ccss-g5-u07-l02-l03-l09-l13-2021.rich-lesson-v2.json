@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v11-20261101",
+  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v12-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -991,11 +991,17 @@
       "CultureCode": "en",
       "Title": "Patterns on the Coordinate Plane",
       "ExplanationParagraphs": [
-        "Goal: pair CORRESPONDING terms from two recursively generated patterns into (x,y) coordinates and graph them; the source highlights that a point's two coordinates must come from the SAME position in the pattern tables. Some students initially match unrelated terms and create false plot points.",
-        "Warm-up: two patterns start zero and add2 and5. For indices n=0,1,2,3,4, the ordered pairs are (0,0),(2,5),(4,10),(6,15),(8,20). Recognize that y=5/2 x for these points. A point (10,20) does not lie on this relationship because it pairs coordinates from different indices.",
-        "Activity 1 — original table and labels: generate X by+3 and Y by+9 from zero. Points A=(0,0),B=(3,9),C=(6,18),D=(9,27),E=(12,36). Plot and label on a first-quadrant grid, check spacing, and explain why the y-coordinate is triple x for any corresponding term. A learner must identify which point is letter C before guessing from visual proximity.",
-        "Activity 2 — another graph: generate first pattern +4 and second +6, pairs (0,0),(4,6),(8,12),(12,18),(16,24). Describe why all plotted points lie on a straight line through origin in this proportional example, without claiming every arbitrary recursive pattern pair must. Explain how counting/scale changes along both axes.",
-        "Teacher boundary: building axes, choosing an appropriate visible scale, plotting correctly and interpreting a labeled point as a matched pair require teacher inspection. A text table is an accessible planning aid, not fully verified learner-interactive plotting."
+        "Original IM2021 G5 U07:L11 converts two recursive pattern tables into ordered pairs (rule1,rule2), plots and labels the SOURCE point letters A–F, and interprets relationships through consistent index matching.",
+        "Warm-up Notice and Wonder Coordinate Grid source figure should be visually teacher inspected; students explain how each plotted x/y coordinate corresponds to the same index of the two pattern rules.",
+        "Activity1 Partner A original start0 step8 for rule1 and step2 for rule2, giving A(0,0),B(8,2),C(16,4),D(24,6),E(32,8),F(40,10). Partner B source step10 and step40, giving A(0,0),B(10,40),C(20,80),D(30,120),E(40,160),F(50,200). Printed grid letters and axes require teacher visual assessment.",
+        "Activity2 original source Rule1 start0 add2 and Rule2 start0 add5, so A(0,0),B(2,5),C(4,10),D(6,15),E(8,20),F(10,25). The point C represents the THIRD listed pair when zero is A and shows rule2 ten while rule1 four.",
+        "Previously invented +3/+9 source table in Rich V2 remains an independent extension only. Exact selected source Practice covers numeric paired values; physically plotted point positions and original figure matching are teacher reviewed.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: pair CORRESPONDING terms from two recursively generated patterns into (x,y) coordinates and graph them; the source highlights that a point's two coordinates must come from the SAME position in the pattern tables. Some students initially match unrelated terms and create false plot points.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: two patterns start zero and add2 and5. For indices n=0,1,2,3,4, the ordered pairs are (0,0),(2,5),(4,10),(6,15),(8,20). Recognize that y=5/2 x for these points. A point (10,20) does not lie on this relationship because it pairs coordinates from different indices.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original table and labels: generate X by+3 and Y by+9 from zero. Points A=(0,0),B=(3,9),C=(6,18),D=(9,27),E=(12,36). Plot and label on a first-quadrant grid, check spacing, and explain why the y-coordinate is triple x for any corresponding term. A learner must identify which point is letter C before guessing from visual proximity.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — another graph: generate first pattern +4 and second +6, pairs (0,0),(4,6),(8,12),(12,18),(16,24). Describe why all plotted points lie on a straight line through origin in this proportional example, without claiming every arbitrary recursive pattern pair must. Explain how counting/scale changes along both axes.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: building axes, choosing an appropriate visible scale, plotting correctly and interpreting a labeled point as a matched pair require teacher inspection. A text table is an accessible planning aid, not fully verified learner-interactive plotting."
       ],
       "KeyConcepts": [
         {
@@ -1019,7 +1025,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Plot a pattern pair",
+          "Title": "Source exact 1 — Patterns and Ordered Pairs",
+          "Question": "Original PartnerA Rule1 +8 Rule2 +2, point A",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(0,0)",
+          "Check": "Original numeric source example; incorrect distractors (8,2) and (2,8) must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Patterns and Ordered Pairs",
+          "Question": "Original PartnerA point B corresponding +8/+2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(8,2)",
+          "Check": "Original numeric source example; incorrect distractors (2,8) and (8,4) must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Patterns and Ordered Pairs",
+          "Question": "Original PartnerA point C corresponding +8/+2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(16,4)",
+          "Check": "Original numeric source example; incorrect distractors (4,16) and (16,6) must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Patterns and Ordered Pairs",
+          "Question": "Original PartnerA point F corresponding +8/+2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "(40,10)",
+          "Check": "Original numeric source example; incorrect distractors (10,40) and (48,12) must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Plot a pattern pair",
           "Question": "Generate +3 and +9 from zero, first five pairs.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1031,7 +1085,7 @@
           "Check": "Teacher checks correct grid location for every point."
         },
         {
-          "Title": "Reject mismatched indices",
+          "Title": "Optional existing extension — Reject mismatched indices",
           "Question": "Does (10,20) fit +2/+5 pair?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1043,7 +1097,7 @@
           "Check": "It is not a valid point for this pair of patterns."
         },
         {
-          "Title": "Interpret a labeled point",
+          "Title": "Optional existing extension — Interpret a labeled point",
           "Question": "What does C=(6,18) mean for +3/+9 sequences?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1065,18 +1119,89 @@
           "Mistake": "Plot ordered pairs without specifying axis units",
           "WhyWrong": "The visual coordinate cannot be verified if grid increments are unclear.",
           "Correction": "Choose a consistent scale and label axes."
+        },
+        {
+          "Mistake": "Use unrelated or invented examples rather than the actual source pattern rules and plotted values.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore the exact source pattern, coin, and rectangle constants; preserve open plotting and story decisions as teacher-scored."
         }
       ],
       "SummaryPoints": [
-        "A coordinate graph can display relationships between corresponding recursive patterns.",
-        "A matched pair must use the same step index.",
-        "Plotting, labeling and relationship explanation require teacher review.",
-        "Source 2021 IM K–5 Grade5 Unit7 Lesson 11: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-11/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
+        "Original partnerA (0,0),(8,2),(16,4),(24,6),(32,8),(40,10).",
+        "Original partnerB (0,0),(10,40),(20,80),(30,120),(40,160),(50,200).",
+        "Original Activity2 pointC(4,10) and F(10,25).",
+        "Optional prior: A coordinate graph can display relationships between corresponding recursive patterns.",
+        "Optional prior: A matched pair must use the same step index.",
+        "Optional prior: Plotting, labeling and relationship explanation require teacher review.",
+        "Optional prior: Source 2021 IM K–5 Grade5 Unit7 Lesson 11: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-11/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Patterns on the Coordinate Plane — original representation",
+          "Title": "Patterns and Ordered Pairs — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original PartnerA Rule1 +8 Rule2 +2, point A",
+              "Cells": [
+                "(0,0)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerA point B corresponding +8/+2",
+              "Cells": [
+                "(8,2)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerA point C corresponding +8/+2",
+              "Cells": [
+                "(16,4)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerA point F corresponding +8/+2",
+              "Cells": [
+                "(40,10)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerB Rule1 +10 Rule2 +40, point C",
+              "Cells": [
+                "(20,80)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original PartnerB point F",
+              "Cells": [
+                "(50,200)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity2 Rule1 +2 Rule2 +5, point A",
+              "Cells": [
+                "(0,0)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity2 Rule1 +2 Rule2 +5, point C",
+              "Cells": [
+                "(4,10)",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Patterns on the Coordinate Plane — original representation",
           "Description": "Accessible first-party equivalent for values and ordered pairs; it is not a tested interactive plot or copied publisher graphic.",
           "Rows": [
             {
