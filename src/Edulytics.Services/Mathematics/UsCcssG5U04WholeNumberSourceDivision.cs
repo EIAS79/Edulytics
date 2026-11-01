@@ -85,6 +85,20 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l16.source_han_estimate_integer_checks", "Source 25 whole feet distributed to400 original noodle diners", "25 × 400", 10000, "feet of the original noodle"),
         new("usccss.g5.u04.l16.source_han_estimate_integer_checks", "Han's source estimate 25 1/4 feet each for400 people; total length for that estimate", "(25 × 400) + ((1/4) × 400)", 10100, "feet total"),
         new("usccss.g5.u04.l16.source_han_estimate_integer_checks", "Difference between original modeled length 10119ft and Han's total estimate10100ft", "10119 − 10100", 19, "feet combined difference"),
+        new("usccss.g5.u04.l17.source_fraction_partial_quotient_totals", "Original IM 2021 G5 U04:L17 optional fraction-as-quotient source 78÷6", "78 ÷ 6", 13, "whole-number quotient"),
+        new("usccss.g5.u04.l17.source_fraction_partial_quotient_totals", "Original IM 2021 G5 U04:L17 optional fraction-as-quotient source 165÷15", "165 ÷ 15", 11, "whole-number quotient"),
+        new("usccss.g5.u04.l17.source_fraction_partial_quotient_totals", "Original IM 2021 G5 U04:L17 optional fraction-as-quotient source 540÷18", "540 ÷ 18", 30, "whole-number quotient"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 60/6 or partial quotient", "60 ÷ 6", 10, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 6/6 or partial quotient", "6 ÷ 6", 1, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 66/6 or partial quotient", "66 ÷ 6", 11, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 12/6 or partial quotient", "12 ÷ 6", 2, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 18/6 or partial quotient", "18 ÷ 6", 3, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 75/15 or partial quotient", "75 ÷ 15", 5, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 30/15 or partial quotient", "30 ÷ 15", 2, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 150/15 or partial quotient", "150 ÷ 15", 10, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 15/15 or partial quotient", "15 ÷ 15", 1, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 180/18 or partial quotient", "180 ÷ 18", 10, "numeric component of open source fraction sum"),
+        new("usccss.g5.u04.l17.source_exact_integer_chunks", "Original U04:L17 eligible integer-valued partial fraction 360/18 or partial quotient", "360 ÷ 18", 20, "numeric component of open source fraction sum"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

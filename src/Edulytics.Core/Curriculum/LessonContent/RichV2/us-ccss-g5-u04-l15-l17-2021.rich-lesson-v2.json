@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l15-l17-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u04-l15-l17-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -382,11 +382,12 @@
       "CultureCode": "en",
       "Title": "Fractions as Partial Quotients (optional)",
       "ExplanationParagraphs": [
-        "Goal: interpret quotients as fractions and determine which SUMS of fractional quotients represent the same exact dividend/divisor. The public 2021 optional lesson asks learners to select ALL matching expressions and then choose strategically helpful numerator decompositions.",
-        "Warm-up: consider a quotient fraction such as84/7. Explain why it equals84÷7, and why (70/7)+(14/7) gives10+2. The same denominator is essential when numerators are split and fractions interpreted as partial quotients.",
-        "Activity 1 — select expressions: for84/7, compare equivalent 84÷7, 70/7+14/7, 63/7+21/7 and (70÷7)+(14÷7). Reject the superficially similar 71/7+14/7 because its numerators total85, not84. Reject 70÷7+14 because the last14 is not divided by7.",
-        "Activity 2 — choose helpful chunks: for165÷15, compare150/15+15/15=10+1 with75/15+90/15=5+6. Both give11 and use complete divisor multiples. Discuss why 150 may be a faster mentally accessible decomposition, and why choosing numerators not divisible by15 can still give a valid but less friendly fractional calculation if the total is conserved.",
-        "Teacher boundary: the original source asks for all mathematically equivalent card choices, explanations and efficiency comparisons. An automated exact fraction answer can help but cannot pass a reasoning/card-selection exercise without checking what the learner selected and why. Source image cards and gated response not copied."
+        "Original IM 2021 Grade5 U04:L17 Fractions as Partial Quotients (optional) asks students to recognize that a quotient may be represented as a fraction and as a SUM of fractions with the SAME denominator. A correct full quotient requires all numerators collectively to equal the source dividend; not all individual partial fractions need integer values.",
+        "Warm-up What Do You Know About 60/6+6/6?: original sum10+1=11, equal 66/6. Teacher asks students to notice numerator partitioning and explain why shared denominator6 is preserved.",
+        "Activity 1 Select Expressions: original target 78/6=13. VALID source options are 78÷6;66/6+12/6;60/6+18/6;and(60÷6)+(18÷6). INVALID are77/6+8/6=85/6 and(60÷6)+18=28. Students must select ALL true representations, defend rejection of close distractors, and show why sum of numerators corresponds to78, not merely choose one correct number.",
+        "Activity 2 Choose One Expression: all three printed source decompositions of165÷15=11 are valid:75/15+80/15+10/15, (30+30+30+60+15)/15 and150/15+15/15. The first includes 80/15, not an integer quotient, and is still a valid fraction sum; do not falsely disqualify it. For540÷18=30 the valid printed options include180/18+180/18+180/18,500/18+40/18,and360/18+180/18. Pupils compare helpfulness of decompositions and explain their choices.",
+        "Original fraction-sum selection, source expression validity, partner proof and explanation of noninteger partial chunks remain TEACHER_REVIEW_REQUIRED. Existing 84÷7 first-party examples are correct but OPTIONAL EXTENSIONS, not source tasks. The exact digital family supports only integer-valued source subproblems and targets; it is not certified to grade open source fraction-sum sets. Independent Edulytiks Cool-down uses96÷8.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -410,7 +411,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Select all exact quotient expressions",
+          "Title": "Original source 78/6 select all",
+          "Question": "Which original expressions are equivalent to78/6?",
+          "Method": "Conserve numerator total across common denominator and evaluate grouping.",
+          "Steps": [
+            "78÷6=13;66/6+12/6=78/6.",
+            "60/6+18/6 and60÷6+18÷6 both equal13.",
+            "77/6+8/6=85/6 and60÷6+18=28 are not equivalent."
+          ],
+          "Answer": "Four valid source choices; reject two distractors.",
+          "Check": "Teacher checks select-all classification and explanation."
+        },
+        {
+          "Title": "Original source 165÷15 fraction sums",
+          "Question": "Use three printed fractional numerator decompositions for165/15.",
+          "Method": "Any sum with denominator15 and numerator total165 is equivalent.",
+          "Steps": [
+            "75+80+10=165, even if 80/15 is not an integer.",
+            "30+30+30+60+15=165.",
+            "150+15=165; each division gives11 in total."
+          ],
+          "Answer": "All three representations equal11.",
+          "Check": "Partial fractions do not need integer values."
+        },
+        {
+          "Title": "Original source 540÷18 choose helpful form",
+          "Question": "Compare180/18+180/18+180/18;500/18+40/18;360/18+180/18.",
+          "Method": "Choose numerator decompositions and evaluate whole quotient.",
+          "Steps": [
+            "180+180+180=540 ->10+10+10=30.",
+            "500+40=540 gives another valid fractional sum.",
+            "360+180=540 gives20+10=30 and may be easiest."
+          ],
+          "Answer": "30 for all three source representations.",
+          "Check": "Teacher evaluates reasoning about relative helpfulness."
+        },
+        {
+          "Title": "Optional existing extension — Select all exact quotient expressions",
           "Question": "Which expressions equal84/7: 84÷7,70/7+14/7,63/7+21/7,71/7+14/7?",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -422,7 +459,7 @@
           "Check": "84÷7=70/7+14/7=63/7+21/7=12."
         },
         {
-          "Title": "Compare two useful decompositions",
+          "Title": "Optional existing extension — Compare two useful decompositions",
           "Question": "Find165÷15 using fractions.",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -434,7 +471,7 @@
           "Check": "15×11=165."
         },
         {
-          "Title": "Spot a false missing denominator",
+          "Title": "Optional existing extension — Spot a false missing denominator",
           "Question": "Does70÷7+14 equal84÷7?",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -456,46 +493,50 @@
           "Mistake": "Treat any two true quotient expressions as a correct matching pair",
           "WhyWrong": "Correctly computed individual fractions may sum to a different total.",
           "Correction": "Add numerator contributions and compare with original dividend before accepting."
+        },
+        {
+          "Mistake": "Use invented84/7 rather than source78/6 and falsely reject80/15 as a noninteger partial quotient",
+          "WhyWrong": "The source explicitly demonstrates fraction sums whose individual numerators need not be divisible by the common denominator.",
+          "Correction": "Restore source78/6,165/15,540/18 and explain conservation of summed numerators including noninteger parts."
         }
       ],
       "SummaryPoints": [
-        "Decomposing a quotient as a fraction sum can make division mentally easier.",
-        "Correct expressions preserve numerator total and consistent divisor.",
-        "Teacher reviews which expressions were chosen and the efficiency explanation.",
-        "2021 Illustrative Mathematics K–5 Grade 5, Unit 4 Lesson 17 public HTML: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-17/lesson.html. Student Task PDF and gated Cool-down not independently verified. Examples and text diagrams are original Edulytiks work."
+        "Source warmup60/6+6/6=11.",
+        "Original 78/6 select-all: first four listed expressions valid, last two invalid.",
+        "Source165÷15=11 with three valid decompositions, even noninteger individual fractions.",
+        "Source540÷18=30 with three printed valid fraction-sum forms.",
+        "Teacher reviews original select-all, fraction sums and helpfulness reasoning; fixed digital exact cases only supplement."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Fractions as Partial Quotients (optional) — mathematical interpretation",
-          "Description": "Original accessible mathematical text diagram, without source photo or protected chart.",
+          "Title": "Original source fraction-partial-quotient comparisons",
+          "Description": "First-party accessible numerical truth table. The original source select-all and explanations require human review.",
           "Rows": [
             {
-              "Label": "Target",
+              "Label": "78/6",
               "Cells": [
-                "84/7",
-                "165/15"
+                "=13",
+                "4 valid expressions",
+                "2 invalid distractors"
               ]
             },
             {
-              "Label": "One correct split",
+              "Label": "165/15",
               "Cells": [
-                "70/7+14/7",
-                "150/15+15/15"
+                "=11",
+                "75+80+10",
+                "30+30+30+60+15",
+                "150+15"
               ]
             },
             {
-              "Label": "Another split",
+              "Label": "540/18",
               "Cells": [
-                "63/7+21/7",
-                "75/15+90/15"
-              ]
-            },
-            {
-              "Label": "Exact quotient",
-              "Cells": [
-                "12",
-                "11"
+                "=30",
+                "180+180+180",
+                "500+40",
+                "360+180"
               ]
             }
           ]
