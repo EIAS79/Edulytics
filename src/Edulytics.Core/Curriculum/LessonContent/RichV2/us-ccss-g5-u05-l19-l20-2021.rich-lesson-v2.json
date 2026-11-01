@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l19-l20-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u05-l19-l20-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -256,11 +256,17 @@
       "CultureCode": "en",
       "Title": "Products in the Hundredths Place PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: show why a tenth TIMES a tenth produces hundredths of the original unit, using equal-area 10×10 grids, fraction meaning, and integer products. The source explicitly contrasts 2×0.3 with0.2×0.3, then critiques an answer that is ten times too large; it extends to mixed whole-and-tenths factors and compares related products.",
-        "Warm-up: first compare 4×0.3=1.2 with 0.4×0.3=0.12. Explain why four groups of three tenths are not the same as four tenths of three tenths. The decimal point is a size statement about the factors, not a formatting rule.",
-        "Activity 1 — two decimal factors: use a first-party unit square split into ten equal columns and ten equal rows. The intersection of three selected columns and six selected rows contains18 of100 equal cells, so 0.3×0.6=0.18 square unit. Reject the claim that the product is1.8 because one factor is less than one and the intersection covers fewer than a full unit.",
-        "Activity 2 — whole plus fractional tenths: calculate 2.4×0.5 as24 tenths×5 tenths =120 hundredths =1.20. Compare with 2.4×5=12.0, ten times greater. Calculate 3.6×0.7 as36×7 hundredths=252 hundredths=2.52 and explain why the result can be greater than one even though one factor is less than one; the other factor is greater than one.",
-        "Assessment: source requires drawn area cells, explanations of the two factor meanings, and exact relationships between whole and decimal products, including student critique. A correct decimal multiplication answer alone cannot verify that a shaded grid depicts the two fractional side lengths."
+        "Original IM2021 Grade5 U05:L20 Products in the Hundredths Place introduces why multiplying TWO quantities of TENTHS yields HUNDREDTHS of the original one whole; a 10×10 area grid and fractional units are essential conceptual representations.",
+        "Warm-up source asks explicitly 1×0.1=0.1 and0.1×0.1=0.01, not a different4×0.3 warmup. Learners explain that one tenth of one tenth is one hundredth of the SAME unit.",
+        "Activity1 original2×0.3=0.6 versus0.2×0.3=0.06. Kiran incorrectly writes0.2×0.4=0.8; correct0.08. Teacher asks why product of two factors less than one is smaller than either in this positive unit interval, with original source grid drawing.",
+        "Activity2 original1.8×0.4=0.72,2.5×0.6=1.50,3.8×0.7=2.66. Related comparisons74×6=444,7.4×6=44.4 and7.4×0.6=4.44 demonstrate how unit scaling affects the product by powers of10.",
+        "Preserve correct but invented0.3×0.6 and3.6×0.7 examples as optional Edulytiks extensions only. Original grids, Kiran's written argument and original gated Cool-down are not claimed fully recovered; independent Edulytiks cooldown teacher assesses grid and reasoning.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: show why a tenth TIMES a tenth produces hundredths of the original unit, using equal-area 10×10 grids, fraction meaning, and integer products. The source explicitly contrasts 2×0.3 with0.2×0.3, then critiques an answer that is ten times too large; it extends to mixed whole-and-tenths factors and compares related products.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: first compare 4×0.3=1.2 with 0.4×0.3=0.12. Explain why four groups of three tenths are not the same as four tenths of three tenths. The decimal point is a size statement about the factors, not a formatting rule.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — two decimal factors: use a first-party unit square split into ten equal columns and ten equal rows. The intersection of three selected columns and six selected rows contains18 of100 equal cells, so 0.3×0.6=0.18 square unit. Reject the claim that the product is1.8 because one factor is less than one and the intersection covers fewer than a full unit.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — whole plus fractional tenths: calculate 2.4×0.5 as24 tenths×5 tenths =120 hundredths =1.20. Compare with 2.4×5=12.0, ten times greater. Calculate 3.6×0.7 as36×7 hundredths=252 hundredths=2.52 and explain why the result can be greater than one even though one factor is less than one; the other factor is greater than one.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source requires drawn area cells, explanations of the two factor meanings, and exact relationships between whole and decimal products, including student critique. A correct decimal multiplication answer alone cannot verify that a shaded grid depicts the two fractional side lengths."
       ],
       "KeyConcepts": [
         {
@@ -284,7 +290,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Shaded hundredth cells",
+          "Title": "Source exact 1 — Original Grade5 U05:L20 Products in the Hundredths Place",
+          "Question": "Original IM2021 U05 L20 original decimal times decimal products 1×0.1 = ? Evaluate exact product and explain position of tenths/hundredths.",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.10",
+          "Check": "Original numeric source example; incorrect distractors 0.20 and -0.01 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original Grade5 U05:L20 Products in the Hundredths Place",
+          "Question": "Original IM2021 U05 L20 original decimal times decimal products 0.1×0.1 = ? Evaluate exact product and explain position of tenths/hundredths.",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.01",
+          "Check": "Original numeric source example; incorrect distractors 0.11 and -0.10 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original Grade5 U05:L20 Products in the Hundredths Place",
+          "Question": "Original IM2021 U05 L20 original decimal times decimal products 2×0.3 = ? Evaluate exact product and explain position of tenths/hundredths.",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.60",
+          "Check": "Original numeric source example; incorrect distractors 0.70 and 0.49 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original Grade5 U05:L20 Products in the Hundredths Place",
+          "Question": "Original IM2021 U05 L20 original decimal times decimal products 0.2×0.3 = ? Evaluate exact product and explain position of tenths/hundredths.",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.06",
+          "Check": "Original numeric source example; incorrect distractors 0.16 and -0.05 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Shaded hundredth cells",
           "Question": "Find 0.3×0.6 using the same original unit square.",
           "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
           "Steps": [
@@ -296,7 +350,7 @@
           "Check": "3×6 hundredths=18/100."
         },
         {
-          "Title": "Mixed whole-and-tenths factor",
+          "Title": "Optional existing extension — Mixed whole-and-tenths factor",
           "Question": "Find 2.4×0.5.",
           "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
           "Steps": [
@@ -308,7 +362,7 @@
           "Check": "2.4×0.5=1.2, versus2.4×5=12."
         },
         {
-          "Title": "Related product pair",
+          "Title": "Optional existing extension — Related product pair",
           "Question": "Find 3.6×0.7 and compare to 36×7.",
           "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
           "Steps": [
@@ -330,18 +384,89 @@
           "Mistake": "Assume a product must always be smaller than both inputs",
           "WhyWrong": "A multiplier between0 and1 decreases the other positive factor, but if the OTHER factor exceeds one the product may still exceed one.",
           "Correction": "Check 3.6×0.7=2.52: it is less than3.6 but greater than0.7."
+        },
+        {
+          "Mistake": "Claim Kiran's 0.2×0.4=0.8 is correct, or use fictional grid product0.3×0.6 as printed source",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore the original factor pairs and exact scaled products; review original 100-square intersection visually."
         }
       ],
       "SummaryPoints": [
-        "A tenth of a tenth produces a hundredth-sized area, not another tenth.",
-        "Related integer products justify the hundredths scale.",
-        "Drawing and critiquing the fraction-area representation remain teacher-reviewed.",
-        "2021 IM K–5 Grade 5 Unit 5 Lesson 20: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-20/lesson.html. Read on verified Our-CS: public source teacher lesson and Student Facing activities; original full Student Task PDF, gated response and independent image licensing still unverified. Text and math examples independently authored."
+        "Source warmup0.1 and0.01.",
+        "Source2×.3=.6, .2×.3=.06, Kiran .2×.4=.8 is false (correct.08).",
+        "Source other products.72,1.5,2.66,444,44.4,4.44.",
+        "Optional prior: A tenth of a tenth produces a hundredth-sized area, not another tenth.",
+        "Optional prior: Related integer products justify the hundredths scale.",
+        "Optional prior: Drawing and critiquing the fraction-area representation remain teacher-reviewed.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 20: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-20/lesson.html. Read on verified Our-CS: public source teacher lesson and Student Facing activities; original full Student Task PDF, gated response and independent image licensing still unverified. Text and math examples independently authored."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Products in the Hundredths Place PLC Activity — equivalent product meanings",
+          "Title": "Original Grade5 U05:L20 Products in the Hundredths Place — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 1×0.1 ",
+              "Cells": [
+                "0.10",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 0.1×0.",
+              "Cells": [
+                "0.01",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 2×0.3 ",
+              "Cells": [
+                "0.60",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 0.2×0.",
+              "Cells": [
+                "0.06",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 0.2×0.",
+              "Cells": [
+                "0.08",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 1.8×0.",
+              "Cells": [
+                "0.72",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 2.5×0.",
+              "Cells": [
+                "1.50",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L20 original decimal times decimal products 3.8×0.",
+              "Cells": [
+                "2.66",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Products in the Hundredths Place PLC Activity — equivalent product meanings",
           "Description": "Original accessible expression/area grid representation; no publisher card graphics copied.",
           "Rows": [
             {

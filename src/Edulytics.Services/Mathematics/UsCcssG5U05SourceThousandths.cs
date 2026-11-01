@@ -251,6 +251,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 35×0.7 = ? Evaluate exact product and explain position of tenths/hundredths.", "24.50", "24.60", "24.39"),
         new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 35×0.78 = ? Evaluate exact product and explain position of tenths/hundredths.", "27.30", "27.40", "27.19"),
         new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 42×0.66 = ? Evaluate exact product and explain position of tenths/hundredths.", "27.72", "27.82", "27.61"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 1×0.1 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.10", "0.20", "-0.01"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 0.1×0.1 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.01", "0.11", "-0.10"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 2×0.3 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.60", "0.70", "0.49"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 0.2×0.3 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.06", "0.16", "-0.05"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 0.2×0.4 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.08", "0.18", "-0.03"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 1.8×0.4 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.72", "0.82", "0.61"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 2.5×0.6 = ? Evaluate exact product and explain position of tenths/hundredths.", "1.50", "1.60", "1.39"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 3.8×0.7 = ? Evaluate exact product and explain position of tenths/hundredths.", "2.66", "2.76", "2.55"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 74×6 = ? Evaluate exact product and explain position of tenths/hundredths.", "444.00", "444.10", "443.89"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 7.4×6 = ? Evaluate exact product and explain position of tenths/hundredths.", "44.40", "44.50", "44.29"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 U05 L20 original decimal times decimal products 7.4×0.6 = ? Evaluate exact product and explain position of tenths/hundredths.", "4.44", "4.54", "4.33"),
+        new("usccss.g5.u05.l20.source_tenths_times_tenths", "Original IM2021 source true/false: Kiran says 0.2×0.4=0.8; original answer actually0.08", "false", "true", "not enough information"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
