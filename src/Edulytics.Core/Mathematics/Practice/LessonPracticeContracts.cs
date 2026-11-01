@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L10 optional exact sharing, original diagrams
+        // and quotient ordering justification teacher-reviewed.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L10", "supporting.fractions.multiply_divide",
+            "G5_SOURCE_PRETZELS_AND_THIRDS_SHARING_QUOTIENTS",
+            ["usccss.g5.u03.l10.source_pretzel_share_per_student", "usccss.g5.u03.l10.source_divide_by_three_pattern"],
+            "IM2021_G5_U03_L10_TEACHER_LED_AND_EXACT_SELECTED",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U03:L09 OPTIONAL open flag design is teacher led;
         // only a separate fixed first-party support model is selected Practice.
         byLesson["PED:US-CCSS-MATH:G5:U03:L09"] = new LessonPracticeContract(

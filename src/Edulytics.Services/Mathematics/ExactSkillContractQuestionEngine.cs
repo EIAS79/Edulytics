@@ -192,6 +192,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG5U03L07FractionEquationQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L08FlagMeasureQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L09FlagDesignSupportQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L10SharingQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
@@ -449,6 +450,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG5U03L08FlagMeasureQuestions.Verify(family, parameters, answer);
         if (UsCcssG5U03L09FlagDesignSupportQuestions.Supports(family))
             return UsCcssG5U03L09FlagDesignSupportQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L10SharingQuestions.Supports(family))
+            return UsCcssG5U03L10SharingQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
@@ -1839,6 +1842,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG5U03L09FlagDesignSupportQuestions.Supports(family))
         {
             var item = UsCcssG5U03L09FlagDesignSupportQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L10SharingQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L10SharingQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -5079,6 +5088,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG5U03L08FlagMeasureQuestions.Solve(problem.Family, p);
         if (UsCcssG5U03L09FlagDesignSupportQuestions.Supports(problem.Family))
             return UsCcssG5U03L09FlagDesignSupportQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L10SharingQuestions.Supports(problem.Family))
+            return UsCcssG5U03L10SharingQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))

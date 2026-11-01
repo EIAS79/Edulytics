@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v8-20261101",
+  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -560,11 +560,12 @@
       "CultureCode": "en",
       "Title": "Concepts of Division (optional)",
       "ExplanationParagraphs": [
-        "Goal: compare equal-sharing quotients conceptually before formal work on division of a unit fraction by a whole number and a whole number by a unit fraction. The public 2021 source asks students to order multiple sharing situations and reason about how changes in the number of sharers or items affect a person's share.",
-        "Warm-up: compare 120 divided by 12,6,3 and 2. With the same dividend, a smaller positive divisor produces a greater quotient, and the reasoning should be stated in terms of group size or number of shares.",
-        "Activity 1 — original snack-sharing table: compare five situations with whole items: (A) four people share forty, (B) five people share forty-five, (C) five people share forty, (D) ten people share forty, (E) five people share fifteen. Order each person's shares: A=10, B=9, C=8, D=4, E=3, so A>B>C>D>E. Students may first reason comparatively without full calculation, and then check by exact quotients.",
-        "Activity 2: hold total fixed at 40 pieces and compare groups of 4,5,10; then hold people fixed at 5 and vary totals 15,40,45. Explain why quotient changes differently in each family and state the valid positivity assumptions. Use diagrams or verbal grouping when mathematical representations differ.",
-        "Assessment: the source's optional lesson uses open order/why explanations and develops future fraction-division concepts. Computing one numerical quotient is insufficient evidence of the original comparison/ordering task. Teacher reviews comparative explanations and group models; original pretzel photograph and gated Cool-down not copied."
+        "Optional original IM 2021 G5 U03:L10: reason about quotient sizes and how changing divisor and dividend changes a per-person share. Teacher connects this to later dividing a unit fraction by a whole number, but does not mislabel the open optional sharing lesson as just numeric quotient fluency.",
+        "Warm-up — Same Dividend, Different Divisor: 120÷12=10, 120÷6=20, 120÷3=40, 120÷2=60. Students explain why the same total shared among fewer positive recipients yields larger shares.",
+        "Activity 1 — Share Pretzels: original 2021 list has SEVEN situations (not a fabricated 40-item table). 3 students share 42 (14 each); 14 share 42 (3); 3 share 24 (8); 3 share 45 (15); 7 share 42 (6); 3 share 6 (2); and 6 share 42 (7). Order greatest-to-least: 15,14,8,7,6,3,2. Teacher checks the reasoned comparison, not only the largest numeric choice.",
+        "Activity 2 — Division Patterns: original source sequence 36÷3=12,12÷3=4,9÷3=3,6÷3=2,3÷3=1,1÷3=1/3. Then explain (1/3)÷3=1/9 using an accurate partition of the SAME whole, not by replacing it with 40÷5 tables. Students should connect whole-number sharing to unit-fraction shares, and explain why the quotient shrinks as the dividend shrinks.",
+        "Independent Edulytiks alternative Cool-down: compare eight sharers of 24 pretzels with two sharers of half a pretzel; model each quotient and explain why the unit changes to fractions. Source drawings, ordered comparisons and student thinking require TEACHER_REVIEW_REQUIRED. Original teacher-gated Cool-down is not independently certified.",
+        "Old valid 40-item or 45-item arithmetic examples are retained as OPTIONAL EXTENSIONS only; original 42/24/45 pretzel situations must be presented first."
       ],
       "KeyConcepts": [
         {
@@ -588,7 +589,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Order five sharing stories",
+          "Title": "Original seven pretzel stories",
+          "Question": "List the per-person share for 42÷3,42÷14,24÷3,45÷3,42÷7,6÷3,42÷6.",
+          "Method": "Source numbers and equal-sharing model, with teacher-reviewed comparative explanations.",
+          "Steps": [
+            "Compute the quotient of each actual source story.",
+            "Keep total pretzels and number of students distinct.",
+            "Order shares from greatest to least."
+          ],
+          "Answer": "14,3,8,15,6,2,7; descending 15,14,8,7,6,3,2.",
+          "Check": "45÷3 yields 15, largest; 6÷3 gives 2, smallest."
+        },
+        {
+          "Title": "Original divide-by-three sequence",
+          "Question": "Find 36÷3,12÷3,9÷3,6÷3,3÷3,1÷3.",
+          "Method": "Source numbers and equal-sharing model, with teacher-reviewed comparative explanations.",
+          "Steps": [
+            "Divide the original total by three in every row.",
+            "Compare the number of objects per sharer.",
+            "Explain the final one whole shared as thirds."
+          ],
+          "Answer": "12,4,3,2,1,1/3.",
+          "Check": "The divisor stays 3; only the dividend changes."
+        },
+        {
+          "Title": "Original one third shared into three",
+          "Question": "Draw and evaluate (1/3)÷3 of the original whole.",
+          "Method": "Source numbers and equal-sharing model, with teacher-reviewed comparative explanations.",
+          "Steps": [
+            "Divide the original whole into three equal thirds.",
+            "Select a third and divide that third into three equal smaller parts.",
+            "Extend partition lines to show nine equal parts of the full whole."
+          ],
+          "Answer": "1/9 of the original whole.",
+          "Check": "(1/3)÷3=(1/3)×(1/3)=1/9."
+        },
+        {
+          "Title": "Optional extension — Order five sharing stories",
           "Question": "Sort 40÷4,45÷5,40÷5,40÷10,15÷5 from largest to smallest.",
           "Method": "Original first-party mathematical model with an explicit reasoning check.",
           "Steps": [
@@ -600,7 +637,7 @@
           "Check": "10 > 9 > 8 > 4 > 3."
         },
         {
-          "Title": "Keep the total fixed",
+          "Title": "Optional extension — Keep the total fixed",
           "Question": "Compare 40 items split among 4, 5 or 10 people.",
           "Method": "Original first-party mathematical model with an explicit reasoning check.",
           "Steps": [
@@ -612,7 +649,7 @@
           "Check": "40/4=10, 40/5=8,40/10=4."
         },
         {
-          "Title": "Keep the sharers fixed",
+          "Title": "Optional extension — Keep the sharers fixed",
           "Question": "Five people share 15,40 or45 objects in three situations. Which gives the most?",
           "Method": "Original first-party mathematical model with an explicit reasoning check.",
           "Steps": [
@@ -634,58 +671,103 @@
           "Mistake": "Infer negative or zero divisor cases from positive sharing models",
           "WhyWrong": "The original fair-sharing context assumes a positive number of recipients.",
           "Correction": "State the positive-divisor requirement and preserve the context of equal real-world shares."
+        },
+        {
+          "Mistake": "Use an invented 40-piece sharing table as original source",
+          "WhyWrong": "The 2021 original has seven 42/24/45/6 pretzel situations, including 14 students sharing 42.",
+          "Correction": "Return to the seven actual source quotients and their exact order; keep other arithmetic only as extension."
         }
       ],
       "SummaryPoints": [
-        "Increasing recipients for the same positive total decreases each share.",
-        "Increasing the total for the same positive number of people increases each share.",
-        "Comparing and defending the order of sharing situations is teacher-reviewed.",
-        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 10 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-10/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+        "Original source 120÷12,6,3,2 gives 10,20,40,60.",
+        "Seven pretzel problems give per-person shares 14,3,8,15,6,2,7; descending 15,14,8,7,6,3,2.",
+        "Source pattern 36,12,9,6,3,1 divided by three yields 12,4,3,2,1,1/3, then (1/3)÷3=1/9.",
+        "Teacher evaluates all ordering explanations and the correctly partitioned original whole.",
+        "Independent Edulytiks teacher-scored Cool-down does not reproduce the gated publisher item."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Concepts of Division (optional) — mathematical model",
-          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Title": "Original source seven pretzel-sharing situations",
+          "Description": "Edulytiks original accessible source-number table; not publisher artwork. Total and sharing group identify the fraction per student.",
           "Rows": [
             {
-              "Label": "Situation",
+              "Label": "Total pretzels",
               "Cells": [
-                "A",
-                "B",
-                "C",
-                "D",
-                "E"
-              ]
-            },
-            {
-              "Label": "Objects",
-              "Cells": [
-                "40",
+                "42",
+                "42",
+                "24",
                 "45",
-                "40",
-                "40",
-                "15"
+                "42",
+                "6",
+                "42"
               ]
             },
             {
-              "Label": "People",
+              "Label": "Students",
               "Cells": [
-                "4",
-                "5",
-                "5",
-                "10",
-                "5"
+                "3",
+                "14",
+                "3",
+                "3",
+                "7",
+                "3",
+                "6"
               ]
             },
             {
-              "Label": "Each receives",
+              "Label": "Per-student share",
               "Cells": [
-                "10",
-                "9",
+                "14",
+                "3",
                 "8",
-                "4",
+                "15",
+                "6",
+                "2",
+                "7"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original divide-by-three pattern",
+          "Description": "Every quotient is one of three equal portions of the source total; 1/3 divided by three becomes 1/9 of original whole.",
+          "Rows": [
+            {
+              "Label": "Dividend",
+              "Cells": [
+                "36",
+                "12",
+                "9",
+                "6",
+                "3",
+                "1",
+                "1/3"
+              ]
+            },
+            {
+              "Label": "Divisor",
+              "Cells": [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3",
+                "3",
                 "3"
+              ]
+            },
+            {
+              "Label": "Quotient",
+              "Cells": [
+                "12",
+                "4",
+                "3",
+                "2",
+                "1",
+                "1/3",
+                "1/9"
               ]
             }
           ]
