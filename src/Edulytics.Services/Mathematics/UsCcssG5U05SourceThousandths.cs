@@ -576,6 +576,10 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l20.original_general_product_inequalities", "Source99/8×23/22 compared99/8 symbol", ">", "<", "="),
         new("usccss.g5.u06.l20.original_general_product_inequalities", "Source10/10×1/2 compared1/2 symbol", "=", "<", ">"),
         new("usccss.g5.u06.l20.original_general_product_inequalities", "Source100/7×9/13 compared9/13 symbol", ">", "<", "="),
+        new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup1/4×60", "15", "30", "45"),
+        new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup3/4×60", "45", "15", "30"),
+        new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup5/4×60", "75", "60", "90"),
+        new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup9/4×60", "135", "90", "120"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
