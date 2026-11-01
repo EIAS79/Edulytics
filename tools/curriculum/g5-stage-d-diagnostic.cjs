@@ -93,14 +93,23 @@ function analyzeElementInventory(evidence, lessonCode){
     Array.isArray(evidence.sourceElements)?evidence.sourceElements:null;
   const declaredCounts=[evidence.sourceElementsKnown,evidence.sourceElementsCount]
     .filter(Number.isInteger);
-  const identified=sourceElements?.length ?? declaredCounts[0] ?? null;
-  const matched=sourceElements?.filter(x=>x?.Status==='MATCHED_DIGITAL'||x?.Status==='MATCHED_TEACHER_LED').length ?? null;
+  // Some later A-C closures use sourceElements as short *strings* describing
+  // activities. Those are source outlines, NOT 1:1 source-element records.
+  const structured=sourceElements!==null && sourceElements.length>0 &&
+    sourceElements.every(e=>e!==null && typeof e==='object' && !Array.isArray(e) &&
+      typeof e.SourceElementId==='string' && e.SourceElementId.trim() &&
+      typeof e.LessonCode==='string' && e.LessonCode.trim());
+  const sourceElementRows=structured?sourceElements:null;
+  const descriptiveOutlineCount=sourceElements!==null && !structured?sourceElements.length:null;
+  const identified=sourceElementRows?.length ?? declaredCounts[0] ?? null;
+  const matched=sourceElementRows?.filter(x=>x.Status==='MATCHED_DIGITAL'||x.Status==='MATCHED_TEACHER_LED').length ?? null;
   const statusCounts={};
   const blockers=[];
   if(sourceElements===null)blockers.push('SOURCE_ITEMIZED_DENOMINATOR_UNKNOWN');
+  else if(!structured)blockers.push('SOURCE_ELEMENT_ARRAY_IS_NOT_STRUCTURED_1_TO_1_EVIDENCE');
   if(sourceElements){
     const ids=new Set();
-    for(const item of sourceElements){
+    for(const item of sourceElementRows||[]){
       const status=typeof item?.Status==='string'?item.Status:'UNKNOWN';
       statusCounts[status]=(statusCounts[status]||0)+1;
       if(typeof item?.SourceElementId!=='string'||!item.SourceElementId.trim())
@@ -113,13 +122,14 @@ function analyzeElementInventory(evidence, lessonCode){
         blockers.push('MISSING_ELEMENT_SOURCE_SNAPSHOT');
     }
     if(declaredCounts.some(n=>n!==sourceElements.length))blockers.push('SOURCE_ITEM_COUNT_MISMATCH');
-    if(Number.isInteger(evidence.sourceElementsAccepted)&&evidence.sourceElementsAccepted!==matched)
+    if(structured && Number.isInteger(evidence.sourceElementsAccepted)&&evidence.sourceElementsAccepted!==matched)
       blockers.push('ACCEPTED_ELEMENT_COUNT_MISMATCH');
-    if(matched!==sourceElements.length)blockers.push('UNMATCHED_IDENTIFIED_SOURCE_ELEMENTS');
+    if(structured && matched!==sourceElementRows.length)blockers.push('UNMATCHED_IDENTIFIED_SOURCE_ELEMENTS');
   }
   if(evidence.lessonCode && evidence.lessonCode!==lessonCode)
     blockers.push('SOURCE_EVIDENCE_LESSON_CODE_MISMATCH');
-  return {sourceElements,identified,matched,statusCounts,blockers:[...new Set(blockers)]};
+  return {sourceElements:sourceElementRows,hasSourceElementArray:sourceElements!==null,
+    descriptiveOutlineCount,identified,matched,statusCounts,blockers:[...new Set(blockers)]};
 }
 
 function sourceEvidenceAudit(){
@@ -127,7 +137,8 @@ function sourceEvidenceAudit(){
   const rows=[];
   for(const item of q.records){
     const evidence=read(item.evidence);
-    const {sourceElements,identified,matched,statusCounts,blockers}=analyzeElementInventory(evidence,item.code);
+    const {sourceElements,hasSourceElementArray,descriptiveOutlineCount,
+      identified,matched,statusCounts,blockers}=analyzeElementInventory(evidence,item.code);
     if(evidence.status==='A_C_EXPLICIT_GAP')blockers.push('A_C_EXPLICIT_GAP');
     if(evidence.sourceCoverage100Percent!==true)blockers.push('SOURCE_PARITY_NOT_INDEPENDENTLY_PROVEN');
     if(evidence.academicAccepted!==true)blockers.push('ACADEMIC_SIGNOFF_NOT_PROVEN');
@@ -135,6 +146,7 @@ function sourceEvidenceAudit(){
     if(!acceptedReviewer)blockers.push('AUTHORIZED_HUMAN_REVIEWER_NOT_EVIDENCED');
     rows.push({ordinal:item.ordinal,lessonCode:item.code,sourceEvidencePath:item.evidence,
       sourceSnapshotId:evidence.sourceSnapshotId||null,identifiedElementCount:identified,
+      hasSourceElementArray,descriptiveOutlineElementCount:descriptiveOutlineCount,
       itemizedElementCount:sourceElements?.length??null,matchedElementCount:matched,
       sourceElementStatusCounts:statusCounts,sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
       academicApproval:evidence.academicAccepted===true?'CLAIMED_IN_AC_REQUIRES_SIGNED_REVIEW':'NOT_APPROVED',
@@ -143,7 +155,12 @@ function sourceEvidenceAudit(){
   const result={schemaVersion:1,reportType:'SOURCE_ELEMENT_EVIDENCE_DIAGNOSTIC_NOT_ACADEMIC_CERTIFICATION',
     gitCandidateSha:cp.execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim(),
     scopeLessons:148,lessonCount:rows.length,
+    rawElementArrayLessons:rows.filter(x=>x.hasSourceElementArray).length,
+    descriptiveOutlineLessons:rows.filter(x=>x.descriptiveOutlineElementCount!==null).length,
     itemizedLessonCount:rows.filter(x=>x.itemizedElementCount!==null).length,
+    completeElementSnapshotLessons:rows.filter(x=>x.itemizedElementCount!==null &&
+      !x.blockers.includes('MISSING_ELEMENT_SOURCE_SNAPSHOT')).length,
+    noElementArrayLessons:rows.filter(x=>!x.hasSourceElementArray).length,
     unknownSourceDenominatorLessons:rows.filter(x=>x.itemizedElementCount===null).length,
     sourceParityVerifiedLessons:0,academicApprovedLessons:0,
     lessonsWithExplicitACGap:rows.filter(x=>x.blockers.includes('A_C_EXPLICIT_GAP')).map(x=>x.lessonCode),
@@ -151,7 +168,9 @@ function sourceEvidenceAudit(){
   fs.mkdirSync(path.join(ROOT,'stage-d-results'),{recursive:true});
   fs.writeFileSync(path.join(ROOT,'stage-d-results/grade5-source-evidence.json'),JSON.stringify(result,null,2)+'\n');
   console.log('G5_SOURCE_EVIDENCE_AUDIT '+JSON.stringify({candidateSha:result.gitCandidateSha,scope:result.scopeLessons,
-    itemized:result.itemizedLessonCount,unknownDenominators:result.unknownSourceDenominatorLessons,
+    rawArrays:result.rawElementArrayLessons,descriptiveOutlines:result.descriptiveOutlineLessons,
+    itemized:result.itemizedLessonCount,completeSnapshots:result.completeElementSnapshotLessons,
+    unknownDenominators:result.unknownSourceDenominatorLessons,
     explicitGaps:result.lessonsWithExplicitACGap,blocked:result.blockedLessons,
     artifact:'stage-d-results/grade5-source-evidence.json'}));
   if(q.errors.length||result.blockedLessons)process.exitCode=2;

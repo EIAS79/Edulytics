@@ -26,6 +26,24 @@ test('all existing U01 L04-L07 source-element array schemas are itemized',()=>{
     assert.equal(source.sourceCoverage100Percent,false);
   }
 });
+test('unstructured descriptive source outline is never counted as itemized parity',()=>{
+  const source=JSON.parse(fs.readFileSync(path.join(root,gradePath,
+    'u03-l04-abc-sequential-closure-20261101.json'),'utf8'));
+  const audit=analyzeElementInventory(source,'PED:US-CCSS-MATH:G5:U03:L04');
+  assert.equal(audit.hasSourceElementArray,true);
+  assert.equal(audit.descriptiveOutlineCount,5);
+  assert.equal(audit.sourceElements,null);
+  assert.equal(audit.matched,null);
+  assert.ok(audit.blockers.includes('SOURCE_ELEMENT_ARRAY_IS_NOT_STRUCTURED_1_TO_1_EVIDENCE'));
+});
+test('structured element identities with missing snapshots remain blocked',()=>{
+  const source=JSON.parse(fs.readFileSync(path.join(root,gradePath,
+    'u01-l02-abc-element-ledger-20261030.json'),'utf8'));
+  const audit=analyzeElementInventory(source,code(2));
+  assert.ok(audit.sourceElements.length>0);
+  assert.ok(audit.blockers.includes('MISSING_ELEMENT_SOURCE_SNAPSHOT'));
+  assert.equal(source.academicAccepted,false);
+});
 test('unknown element inventory stays unknown, not successful',()=>{
   const audit=analyzeElementInventory({lessonCode:code(1)},code(1));
   assert.equal(audit.identified,null);
