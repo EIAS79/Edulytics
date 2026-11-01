@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -267,11 +267,17 @@
       "CultureCode": "en",
       "Title": "Trapezoids PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: compare TWO mathematically used trapezoid definitions: exclusive 'exactly one pair of parallel opposite sides' and inclusive 'at least one pair'. The 2021 lesson explicitly adopts the INCLUSIVE definition as its course convention; classification under each rule must not be silently treated as interchangeable.",
-        "Warm-up: draw a sloping four-sided figure with one pair of horizontal opposite sides and no other parallel pair. Name its visible parallel lines and explain why it satisfies both definitions, no matter whether it is drawn upright or rotated.",
-        "Activity 1 — coordinate construction: draw vertices (0,0),(5,0),(4,2),(1,2), which form a trapezoid with a parallel horizontal base and top but the two other sides have different slopes. Draw a separate parallelogram with vertices (0,0),(4,0),(5,2),(1,2), whose two opposite side pairs are both parallel. Classify both figures under the exactly-one versus at-least-one definition. Require labeled coordinate diagrams and explanations of line directions.",
-        "Activity 2 — hierarchy comparison: with the inclusive convention, every parallelogram is a trapezoid but not every trapezoid is a parallelogram. With the exclusive convention, no parallelogram is a trapezoid. A square is a trapezoid ONLY under the inclusive convention, and every square is also a parallelogram; the learner evaluates this statement and creates a visual hierarchy consistent with the selected definition.",
-        "Assessment: a numeric or category label alone cannot establish coordinate drawing correctness or understanding of why the two definitions create different hierarchy diagrams. Teacher reviews the actual shapes, diagrams and discussion; the source's copyrighted illustrations and response cards were not reused."
+        "Original 2021 Grade5 U07:L05 explicitly compares two common definitions of trapezoid. Exclusive definition means EXACTLY one pair of parallel opposite sides; inclusive definition means AT LEAST one. The curriculum deliberately adopts the INCLUSIVE definition in Activity2.",
+        "Warm-up What Do You Know About Trapezoids? collects student prior definitions before the class adopts a convention; classify without declaring one definition globally correct for every mathematical context.",
+        "Activity1 What’s a Trapezoid? asks pupils to DRAW a trapezoid on coordinate grid, label vertices and decide whether it is also square, rectangle, rhombus or parallelogram. Multiple drawings are possible; selected choices cannot certify their actual sketches.",
+        "Activity2 Two Definitions gives exact printed Definition1/Definition2 and FIVE statements about all/no/some parallelograms and trapezoids. Under inclusive course rule every parallelogram and square qualifies; not every trapezoid is a parallelogram. Under exclusive no parallelogram qualifies.",
+        "Prior example coordinate constructions in Rich V2 are independent support. Teacher reviews source drawings, justifications and classification of images; bounded selected Practice checks definition logic only.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: compare TWO mathematically used trapezoid definitions: exclusive 'exactly one pair of parallel opposite sides' and inclusive 'at least one pair'. The 2021 lesson explicitly adopts the INCLUSIVE definition as its course convention; classification under each rule must not be silently treated as interchangeable.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: draw a sloping four-sided figure with one pair of horizontal opposite sides and no other parallel pair. Name its visible parallel lines and explain why it satisfies both definitions, no matter whether it is drawn upright or rotated.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — coordinate construction: draw vertices (0,0),(5,0),(4,2),(1,2), which form a trapezoid with a parallel horizontal base and top but the two other sides have different slopes. Draw a separate parallelogram with vertices (0,0),(4,0),(5,2),(1,2), whose two opposite side pairs are both parallel. Classify both figures under the exactly-one versus at-least-one definition. Require labeled coordinate diagrams and explanations of line directions.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — hierarchy comparison: with the inclusive convention, every parallelogram is a trapezoid but not every trapezoid is a parallelogram. With the exclusive convention, no parallelogram is a trapezoid. A square is a trapezoid ONLY under the inclusive convention, and every square is also a parallelogram; the learner evaluates this statement and creates a visual hierarchy consistent with the selected definition.",
+        "Optional previous source-aligned or independently authored extension — Assessment: a numeric or category label alone cannot establish coordinate drawing correctness or understanding of why the two definitions create different hierarchy diagrams. Teacher reviews the actual shapes, diagrams and discussion; the source's copyrighted illustrations and response cards were not reused."
       ],
       "KeyConcepts": [
         {
@@ -295,7 +301,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare two shapes",
+          "Title": "Source exact 1 — Trapezoids",
+          "Question": "Source Definition1 trapezoid exactly how many pairs of parallel opposite sides?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1",
+          "Check": "Original numeric source example; incorrect distractors 2 and 0 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Trapezoids",
+          "Question": "Source Definition2 trapezoid requires AT LEAST how many pairs of parallel opposite sides?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1",
+          "Check": "Original numeric source example; incorrect distractors 2 and 0 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Trapezoids",
+          "Question": "Source grade-five course chooses which definition for the rest of the unit?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "inclusive at least one",
+          "Check": "Original numeric source example; incorrect distractors exclusive exactly one and no definition must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Trapezoids",
+          "Question": "Under EXCLUSIVE definition are parallelograms trapezoids?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "no",
+          "Check": "Original numeric source example; incorrect distractors yes and some only must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Compare two shapes",
           "Question": "Do all parallelograms count as trapezoids under the two definitions?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -307,7 +361,7 @@
           "Check": "Both statements are conditional on the definition."
         },
         {
-          "Title": "Draw a genuine one-pair quadrilateral",
+          "Title": "Optional existing extension — Draw a genuine one-pair quadrilateral",
           "Question": "Check the parallel pairs for (0,0),(5,0),(4,2),(1,2).",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -319,7 +373,7 @@
           "Check": "Teacher checks the plotted shape and equality of top/bottom directions."
         },
         {
-          "Title": "Square in hierarchy",
+          "Title": "Optional existing extension — Square in hierarchy",
           "Question": "Under the source convention, is a square a trapezoid?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -341,18 +395,89 @@
           "Mistake": "Assume any shape with one parallel pair is also a parallelogram",
           "WhyWrong": "A parallelogram requires two opposite parallel pairs.",
           "Correction": "Check both pairs before applying the more specific class."
+        },
+        {
+          "Mistake": "Replace published source open diagrams with one invented fixed numeric-only answer",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original two-stage task, exact source terms and teacher-reviewed images with numerical choices bounded to the source properties."
         }
       ],
       "SummaryPoints": [
-        "There are inclusive and exclusive definitions, and the source selects inclusive.",
-        "A shape's place in the hierarchy follows stated defining properties.",
-        "Coordinate drawings, Venn diagrams and explanations require teacher review.",
-        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 5: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-5/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+        "Exclusive: exactly one parallel opposite pair, no parallelograms.",
+        "Inclusive: at least one pair; all parallelograms and squares are trapezoids.",
+        "Course uses inclusive convention; source drawings teacher-reviewed.",
+        "Optional prior: There are inclusive and exclusive definitions, and the source selects inclusive.",
+        "Optional prior: A shape's place in the hierarchy follows stated defining properties.",
+        "Optional prior: Coordinate drawings, Venn diagrams and explanations require teacher review.",
+        "Optional prior: 2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 5: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-5/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Trapezoids PLC Activity — properties and examples",
+          "Title": "Trapezoids — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source Definition1 trapezoid exactly how many pairs of parallel opposi",
+              "Cells": [
+                "1",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Definition2 trapezoid requires AT LEAST how many pairs of paral",
+              "Cells": [
+                "1",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source grade-five course chooses which definition for the rest of the ",
+              "Cells": [
+                "inclusive at least one",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Under EXCLUSIVE definition are parallelograms trapezoids?",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Under INCLUSIVE definition are all parallelograms trapezoids?",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Under INCLUSIVE definition is every square a trapezoid?",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source statement all trapezoids are parallelograms, under inclusive de",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source statement some trapezoids are parallelograms under inclusive de",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Trapezoids PLC Activity — properties and examples",
           "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
           "Rows": [
             {

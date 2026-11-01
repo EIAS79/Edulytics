@@ -619,6 +619,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source quadrilateral with exactly ONE pair of parallel sides is possible?", "yes", "no", "all are parallelograms"),
         new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source two distinct source card-sort categories required in Activity2?", "yes", "no", "three fixed categories only"),
         new("usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "Source original Guess Which One partner selects a secret figure and partner asks what kind of questions?", "yes/no attribute questions", "random numerical guesses", "same four-choice answer"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source Definition1 trapezoid exactly how many pairs of parallel opposite sides?", "1", "2", "0"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source Definition2 trapezoid requires AT LEAST how many pairs of parallel opposite sides?", "1", "2", "0"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source grade-five course chooses which definition for the rest of the unit?", "inclusive at least one", "exclusive exactly one", "no definition"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Under EXCLUSIVE definition are parallelograms trapezoids?", "no", "yes", "some only"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Under INCLUSIVE definition are all parallelograms trapezoids?", "yes", "no", "only rectangles"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Under INCLUSIVE definition is every square a trapezoid?", "yes", "no", "only if rotated"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source statement all trapezoids are parallelograms, under inclusive definition", "false", "true", "unknown"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source statement some trapezoids are parallelograms under inclusive definition", "true", "false", "unknown"),
+        new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source statement no trapezoids are parallelograms under exclusive definition", "true", "false", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
