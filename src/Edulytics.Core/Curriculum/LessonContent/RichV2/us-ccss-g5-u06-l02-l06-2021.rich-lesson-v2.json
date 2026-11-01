@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l02-l06-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Powers of 10 PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: represent very large whole numbers with powers of ten and explain how many groups of one thousand, one million or one billion compose them. The 2021 source uses HISTORICAL human-population examples, including India in 1997, so those figures must not be described as a current census. The optional trillion exploration is modeling rather than an official factual count.",
-        "Warm-up: extend a first-party text pattern: a unit strip divided into ten equal segments, then each segment into ten, and repeat to obtain ten, one hundred and one thousand tiny segments. Explain how 10×10×10=1000 and the notation 10^3 refer to three factors of ten.",
-        "Activity 1 — name and relate scales: 1,000,000=10^6 is one thousand groups of one thousand or one million; 1,000,000,000=10^9 is one thousand groups of one million and one million groups of one thousand. Write both in words and expanded products of powers of ten. Discuss why a familiar local population might help students visualize scale without asserting an unverified current population.",
-        "Activity 2 — missing factors: solve 3000=30×100, 24×10×100=24000, and (missing number)×10=100000 (missing10000). Read 10^3,10^4,10^7 as 1000,10000,10000000. Optional: name 10^12 as one trillion and explain why claiming a real-world exact trillion-count would require separate trustworthy evidence.",
-        "Assessment: mathematical notation and numeric blanks can be checked, but explaining diagrams, describing orders of magnitude and proposing a plausible real-world example demand teacher review. Original publisher images and restricted answers not copied."
+        "Original IM2021 G5 U06:L02 recognizes repeated factors of ten and exponential notation through billion; the OPTIONAL extension considers one trillion. A power10^k has k factors of10, so source place-value scale must be verified, not merely counting printed digits.",
+        "Warm-up How Many Do You See Starburst uses publisher diagram with successively subdivided line segments; source visual number of extensions cannot be certified from plain text without the actual image. Teacher assesses the learner's own grouped count and drawing.",
+        "Activity1 Population of Delaware and India: original source says ABOUT1,000,000 in Delaware and ABOUT1,000,000,000 in India in1997. These are historical educational benchmarks, not asserted current population facts. One million=10^6=1000 thousands; one billion=10^9=1000 millions and1000000 thousands. Original source asks how many times to extend pictured segments, requiring teacher visual review.",
+        "Activity2 source exact equations 2000=?×20 =>100;20×10×?=20000 =>100;?×10=100000 =>10000;1000×10000=10000000. Printed exponent questions10^3=1000,10^4=10000,10^7=10000000. Learner explains factors of10 and why exponents count them.",
+        "Optional Activity3 source one trillion=1000000000000=10^12, equal1000 billions or1000000 millions; source asks an OPEN real-world example with appropriate estimation and caveat. No student-generated claims about actual physical counts should be pregraded. Original gated Cool-down separately unavailable; Edulytiks independent teacher Cool-down tests a new power.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: represent very large whole numbers with powers of ten and explain how many groups of one thousand, one million or one billion compose them. The 2021 source uses HISTORICAL human-population examples, including India in 1997, so those figures must not be described as a current census. The optional trillion exploration is modeling rather than an official factual count.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: extend a first-party text pattern: a unit strip divided into ten equal segments, then each segment into ten, and repeat to obtain ten, one hundred and one thousand tiny segments. Explain how 10×10×10=1000 and the notation 10^3 refer to three factors of ten.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — name and relate scales: 1,000,000=10^6 is one thousand groups of one thousand or one million; 1,000,000,000=10^9 is one thousand groups of one million and one million groups of one thousand. Write both in words and expanded products of powers of ten. Discuss why a familiar local population might help students visualize scale without asserting an unverified current population.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — missing factors: solve 3000=30×100, 24×10×100=24000, and (missing number)×10=100000 (missing10000). Read 10^3,10^4,10^7 as 1000,10000,10000000. Optional: name 10^12 as one trillion and explain why claiming a real-world exact trillion-count would require separate trustworthy evidence.",
+        "Optional previous source-aligned or independently authored extension — Assessment: mathematical notation and numeric blanks can be checked, but explaining diagrams, describing orders of magnitude and proposing a plausible real-world example demand teacher review. Original publisher images and restricted answers not copied."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Name the numbers",
+          "Title": "Source exact 1 — Original 2021 G5 U06:L02 Powers of 10",
+          "Question": "Original source Delaware ABOUT 1,000,000 people, express as power of ten (historical textbook example)",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "10^6",
+          "Check": "Original numeric source example; incorrect distractors 10^9 and 10^3 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original 2021 G5 U06:L02 Powers of 10",
+          "Question": "Original source 1,000,000 people expressed as number of THOUSANDS",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1000",
+          "Check": "Original numeric source example; incorrect distractors 100 and 100000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original 2021 G5 U06:L02 Powers of 10",
+          "Question": "Original historical India 1997 ABOUT 1,000,000,000 people, power of ten",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "10^9",
+          "Check": "Original numeric source example; incorrect distractors 10^6 and 10^12 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original 2021 G5 U06:L02 Powers of 10",
+          "Question": "Original India1997 source1,000,000,000 people, number of MILLIONS",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1000",
+          "Check": "Original numeric source example; incorrect distractors 1000000 and 100 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Name the numbers",
           "Question": "Compare one million with one billion using powers of ten.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "1000×1000000=1000000000."
         },
         {
-          "Title": "Solve missing factors",
+          "Title": "Optional existing extension — Solve missing factors",
           "Question": "Find A in A×10=100000.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "10000×10=100000."
         },
         {
-          "Title": "Read exponential forms",
+          "Title": "Optional existing extension — Read exponential forms",
           "Question": "Write 10^3,10^4 and10^7 in whole-number notation.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -82,18 +136,90 @@
           "Mistake": "Treat a 1997 historical population approximation as a current census value",
           "WhyWrong": "The original source clearly locates its India population example in 1997.",
           "Correction": "Label past data with its year and verify current information separately if needed."
+        },
+        {
+          "Mistake": "Present 1997 India one-billion population as verified CURRENT 2026 census or omit printed power-of-ten blanks",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore historical source years and exact equations while preserving image-based counting for teacher review."
         }
       ],
       "SummaryPoints": [
-        "Exponential notation communicates powers of ten and large-number structure.",
-        "Missing factors can be solved using known ten-power relationships.",
-        "Real-world magnitude analogies are teacher-reviewed and historical figures retain their dates.",
-        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-2/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+        "Original source1e6=10^6,1e9=10^9 historical benchmarks.",
+        "Activity2 blanks100,100,10000,10000000 and powers1000,10000,10000000.",
+        "Optional trillion10^12,1000 billions,1000000 millions.",
+        "Original source starburst figure/real world analogy teacher reviewed.",
+        "Optional prior: Exponential notation communicates powers of ten and large-number structure.",
+        "Optional prior: Missing factors can be solved using known ten-power relationships.",
+        "Optional prior: Real-world magnitude analogies are teacher-reviewed and historical figures retain their dates.",
+        "Optional prior: Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-2/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Powers of 10 PLC Activity — original model",
+          "Title": "Original 2021 G5 U06:L02 Powers of 10 — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source Delaware ABOUT 1,000,000 people, express as power of t",
+              "Cells": [
+                "10^6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source 1,000,000 people expressed as number of THOUSANDS",
+              "Cells": [
+                "1000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original historical India 1997 ABOUT 1,000,000,000 people, power of te",
+              "Cells": [
+                "10^9",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original India1997 source1,000,000,000 people, number of MILLIONS",
+              "Cells": [
+                "1000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original India1997 source1,000,000,000 people, number of THOUSANDS",
+              "Cells": [
+                "1000000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source 2000 = ? × 20, solve blank",
+              "Cells": [
+                "100",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source 20×10×?=20,000, solve blank",
+              "Cells": [
+                "100",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source ?×10=100,000, solve blank",
+              "Cells": [
+                "10000",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Powers of 10 PLC Activity — original model",
           "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
           "Rows": [
             {

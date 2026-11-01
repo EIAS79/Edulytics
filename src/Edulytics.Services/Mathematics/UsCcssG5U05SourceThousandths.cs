@@ -334,6 +334,21 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number0.6 divided by10 equals", "0.06", "0.6", "0.006"),
         new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number0.06 multiplied by100 equals", "6", "60", "0.6"),
         new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number600 multiplied by0.01 equals", "6", "60", "0.6"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source Delaware ABOUT 1,000,000 people, express as power of ten (historical textbook example)", "10^6", "10^9", "10^3"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 1,000,000 people expressed as number of THOUSANDS", "1000", "100", "100000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original historical India 1997 ABOUT 1,000,000,000 people, power of ten", "10^9", "10^6", "10^12"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original India1997 source1,000,000,000 people, number of MILLIONS", "1000", "1000000", "100"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original India1997 source1,000,000,000 people, number of THOUSANDS", "1000000", "1000", "100000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 2000 = ? × 20, solve blank", "100", "10", "1000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 20×10×?=20,000, solve blank", "100", "1000", "10"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source ?×10=100,000, solve blank", "10000", "1000", "100000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 1000×10000, calculate exact result", "10000000", "1000000", "100000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 10^3 written as number", "1000", "100", "10000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 10^4 written as number", "10000", "1000", "100000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original source 10^7 written as number", "10000000", "1000000", "100000000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original optional source 1 trillion represented as power of ten", "10^12", "10^9", "10^10"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original optional source 1 trillion expressed in BILLIONS", "1000", "100", "1000000"),
+        new("usccss.g5.u06.l02.original_powers_of_ten", "Original optional source 1 trillion expressed in MILLIONS", "1000000", "1000", "1000000000"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
