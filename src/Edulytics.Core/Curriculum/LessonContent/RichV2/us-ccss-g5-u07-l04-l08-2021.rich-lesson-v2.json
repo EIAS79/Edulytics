@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v11-20261101",
+  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v12-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -1023,11 +1023,17 @@
       "CultureCode": "en",
       "Title": "Sort Triangles",
       "ExplanationParagraphs": [
-        "Goal: SORT triangles by both side-length relationships and angle type in a 3×3 attribute grid, identify combinations that CANNOT exist, and use all/some/none statements about right triangles. The 2021 source explicitly notes an equilateral triangle cannot be a right or obtuse triangle.",
-        "Warm-up: draw an equilateral triangle with three congruent sides and three 60° angles. Compare it with a right triangle having one 90° angle and two acute angles, and with an obtuse triangle having one angle greater than90°. Explain why a triangle can never have two right angles or two obtuse angles because the angle sum is180°.",
-        "Activity 1 — fill an original table: columns scalene (three unequal sides), isosceles non-equilateral (exactly two equal sides), equilateral (three equal sides); rows acute, right, obtuse. An equilateral triangle can fill ONLY the acute row. Both scalene and exactly-two-equal-side triangles can be acute or obtuse or right (e.g., right isosceles angles45°,45°,90°). Ask students to draw at least one sample for each allowed cell and explain the empty equilateral-right and equilateral-obtuse cells.",
-        "Activity 2 — write quantifiers: ALL right triangles have one right angle and their other two angles acute. SOME right triangles have two equal sides (45°-45°-90°), but not all. NONE have an obtuse angle or all three equal sides. Partner checks whether the learner's drawings and categorical statements satisfy these properties.",
-        "Assessment: source card-sort, measured side relations, actual angle/drawing classification, two impossible classes and all/some/none statements require teacher-reviewed figures. The text table is an accessible description but not verified visual parity with publisher figure cards."
+        "Original 2021 Grade5 U07:L08 classifies triangles by BOTH side-length equality and angle measure, using physical original triangle cards. Since internal angles total180 degrees, a triangle cannot have two right or two obtuse angles.",
+        "Warm-up Estimation Exploration Angle Measure shows an original figure whose numeric answer depends on measuring the printed angle; student low/about-right/high estimates are not falsely replaced by a fabricated exact angle.",
+        "Activity1 The Right Fit presents a six-cell classification grid: all different, exactly two equal, all three equal side lengths versus has90, has>90, all<90 angles. Students select original image cards or explain a combination impossible; an equilateral triangle is acute, never right or obtuse.",
+        "Activity2 All, Some, None uses right triangles from the first activity and asks pupils to formulate generally valid statements about their side-length classifications. A right isosceles triangle is possible; not all right triangles are isosceles and none has a second right angle.",
+        "Existing geometrical teaching explanations remain optional extensions; source card layouts, drawings, student explanations and publisher Cool-down require teacher inspection. Selected choices only check fixed triangle-property implications.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: SORT triangles by both side-length relationships and angle type in a 3×3 attribute grid, identify combinations that CANNOT exist, and use all/some/none statements about right triangles. The 2021 source explicitly notes an equilateral triangle cannot be a right or obtuse triangle.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: draw an equilateral triangle with three congruent sides and three 60° angles. Compare it with a right triangle having one 90° angle and two acute angles, and with an obtuse triangle having one angle greater than90°. Explain why a triangle can never have two right angles or two obtuse angles because the angle sum is180°.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — fill an original table: columns scalene (three unequal sides), isosceles non-equilateral (exactly two equal sides), equilateral (three equal sides); rows acute, right, obtuse. An equilateral triangle can fill ONLY the acute row. Both scalene and exactly-two-equal-side triangles can be acute or obtuse or right (e.g., right isosceles angles45°,45°,90°). Ask students to draw at least one sample for each allowed cell and explain the empty equilateral-right and equilateral-obtuse cells.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — write quantifiers: ALL right triangles have one right angle and their other two angles acute. SOME right triangles have two equal sides (45°-45°-90°), but not all. NONE have an obtuse angle or all three equal sides. Partner checks whether the learner's drawings and categorical statements satisfy these properties.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source card-sort, measured side relations, actual angle/drawing classification, two impossible classes and all/some/none statements require teacher-reviewed figures. The text table is an accessible description but not verified visual parity with publisher figure cards."
       ],
       "KeyConcepts": [
         {
@@ -1051,7 +1057,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Classify equilateral triangle",
+          "Title": "Source exact 1 — Sort Triangles",
+          "Question": "Source triangle has exactly how many sides?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3",
+          "Check": "Original numeric source example; incorrect distractors 4 and 5 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Sort Triangles",
+          "Question": "Triangle with a 90-degree angle is classified by angles as",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "right",
+          "Check": "Original numeric source example; incorrect distractors acute and obtuse must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Sort Triangles",
+          "Question": "Triangle with one angle greater than90 degrees is classified as",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "obtuse",
+          "Check": "Original numeric source example; incorrect distractors right and acute must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Sort Triangles",
+          "Question": "Triangle with all three angles less than90 degrees is classified as",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "acute",
+          "Check": "Original numeric source example; incorrect distractors right and obtuse must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Classify equilateral triangle",
           "Question": "Could three equal sides form a right triangle?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -1063,7 +1117,7 @@
           "Check": "Any equilateral is acute."
         },
         {
-          "Title": "Describe a right isosceles triangle",
+          "Title": "Optional existing extension — Describe a right isosceles triangle",
           "Question": "Can a right triangle have exactly two equal sides?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -1075,7 +1129,7 @@
           "Check": "It has exactly two equal sides, not three."
         },
         {
-          "Title": "Right triangle quantifiers",
+          "Title": "Optional existing extension — Right triangle quantifiers",
           "Question": "Write one ALL, SOME and NONE statement about right triangles.",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -1097,18 +1151,89 @@
           "Mistake": "Assume three equal sides could create right or obtuse angles",
           "WhyWrong": "Equal sides force three60° angles.",
           "Correction": "Use angle sum and equal-angle property."
+        },
+        {
+          "Mistake": "Replace published source open diagrams with one invented fixed numeric-only answer",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original two-stage task, exact source terms and teacher-reviewed images with numerical choices bounded to the source properties."
         }
       ],
       "SummaryPoints": [
-        "Triangles can be sorted by sides and angle classes simultaneously.",
-        "The equilateral-right and equilateral-obtuse cells are impossible.",
-        "Source card sorting and all/some/none explanations are teacher-reviewed.",
-        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-8/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+        "Source triangles may be classified scalene, isosceles or equilateral and acute/right/obtuse.",
+        "No triangle has two right or obtuse angles; all equilateral triangles are acute.",
+        "Source card drawings and estimations teacher-reviewed.",
+        "Optional prior: Triangles can be sorted by sides and angle classes simultaneously.",
+        "Optional prior: The equilateral-right and equilateral-obtuse cells are impossible.",
+        "Optional prior: Source card sorting and all/some/none explanations are teacher-reviewed.",
+        "Optional prior: 2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-8/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Sort Triangles — properties and examples",
+          "Title": "Sort Triangles — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source triangle has exactly how many sides?",
+              "Cells": [
+                "3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Triangle with a 90-degree angle is classified by angles as",
+              "Cells": [
+                "right",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Triangle with one angle greater than90 degrees is classified as",
+              "Cells": [
+                "obtuse",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Triangle with all three angles less than90 degrees is classified as",
+              "Cells": [
+                "acute",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source side category exactly two equal lengths is",
+              "Cells": [
+                "isosceles",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source side category all three equal lengths is",
+              "Cells": [
+                "equilateral",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source side category all three different lengths is",
+              "Cells": [
+                "scalene",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Can a triangle have TWO right angles?",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Sort Triangles — properties and examples",
           "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
           "Rows": [
             {

@@ -647,6 +647,17 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source INCLUSIVE trapezoid definition: a trapezoid is a parallelogram", "sometimes", "always", "never"),
         new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source find a square that is NOT a rectangle is", "impossible", "possible", "any rhombus"),
         new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source find a rhombus that is NOT a square is", "possible", "impossible", "only square"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Source triangle has exactly how many sides?", "3", "4", "5"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Triangle with a 90-degree angle is classified by angles as", "right", "acute", "obtuse"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Triangle with one angle greater than90 degrees is classified as", "obtuse", "right", "acute"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Triangle with all three angles less than90 degrees is classified as", "acute", "right", "obtuse"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Source side category exactly two equal lengths is", "isosceles", "equilateral", "scalene"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Source side category all three equal lengths is", "equilateral", "scalene", "right-only"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Source side category all three different lengths is", "scalene", "equilateral", "isosceles-only"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can a triangle have TWO right angles?", "no", "yes", "only equilateral"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can a triangle have TWO obtuse angles?", "no", "yes", "only right triangle"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can a right triangle be isosceles?", "yes", "no", "always equilateral"),
+        new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can an equilateral triangle contain a right angle?", "no", "yes", "sometimes"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
