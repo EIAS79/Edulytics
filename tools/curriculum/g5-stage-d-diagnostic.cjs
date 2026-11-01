@@ -132,13 +132,65 @@ function analyzeElementInventory(evidence, lessonCode){
     descriptiveOutlineCount,identified,matched,statusCounts,blockers:[...new Set(blockers)]};
 }
 
+
+/**
+ * A 2024 v.360 student HTML is not a 2021 Kendall Hunt student source, even
+ * when its unit and lesson code happen to coincide. A file hash proves identity
+ * of the captured bytes only, never semantic equivalence or redistribution.
+ */
+function analyzeEditionPair(lessonCode, entries){
+  const blockers=[];
+  const teacher=entries.filter(x=>x.role==='Teacher');
+  const student=entries.filter(x=>x.role==='Student');
+  const exactHash=x=>typeof x?.sha256==='string'&&/^[a-f0-9]{64}$/.test(x.sha256);
+  if(teacher.length!==1||student.length!==1)
+    blockers.push('SOURCE_EDITION_MISSING_OR_DUPLICATE_ROLE');
+  const t=teacher[0],s=student[0];
+  if(!exactHash(t)||!exactHash(s))
+    blockers.push('SOURCE_EDITION_HASH_MISSING_OR_MALFORMED');
+  if(t?.htmlDocumentTitle!=='Illustrative Mathematics | Kendall Hunt' ||
+      t?.editionMatch!=='IM2021_TEACHER_CANDIDATE_SOURCE')
+    blockers.push('TEACHER_IM2021_EDITION_NOT_VERIFIED');
+  if(s?.htmlDocumentTitle!=='Illustrative Mathematics | Kendall Hunt' ||
+      s?.editionMatch!=='IM2021_STUDENT_CANDIDATE_SOURCE')
+    blockers.push('STUDENT_IM2021_EDITION_NOT_VERIFIED');
+  if(s?.editionMatch==='WRONG_EDITION_V360_STUDENT_MIRROR' ||
+      s?.htmlDocumentTitle==='Illustrative Mathematics | v.360 Curriculum')
+    blockers.push('SOURCE_EDITION_MISMATCH_V360_STUDENT');
+  // Authentic title/path alone does not prove student/teacher semantic match.
+  if(t?.educationalParityCertified!==true || s?.educationalParityCertified!==true)
+    blockers.push('TEACHER_STUDENT_SEMANTIC_PARITY_NOT_CERTIFIED');
+  return {lessonCode,teacherSha256:t?.sha256||null,studentSha256:s?.sha256||null,
+    teacherTitle:t?.htmlDocumentTitle||null,studentTitle:s?.htmlDocumentTitle||null,
+    blockers:[...new Set(blockers)]};
+}
+function grade5EditionManifests(){
+  const lookup=new Map();
+  for(let u=1;u<=units.length;u++){
+    const p=rel+'local-teacher-student-html-source-hashes-u'+String(u).padStart(2,'0')+'.json';
+    if(!exists(p))throw Error('MISSING_G5_UNIT_EDITION_MANIFEST '+p);
+    const manifest=read(p);
+    if(!Array.isArray(manifest.lessons))throw Error('MALFORMED_G5_UNIT_EDITION_MANIFEST '+p);
+    for(const entry of manifest.lessons){
+      const key='PED:US-CCSS-MATH:G5:U'+String(u).padStart(2,'0')+
+        ':L'+String(entry.lesson).padStart(2,'0');
+      if(!lookup.has(key))lookup.set(key,[]);
+      lookup.get(key).push(entry);
+    }
+  }
+  return lookup;
+}
+
 function sourceEvidenceAudit(){
   const q=inventory();
+  const editionLookup=grade5EditionManifests();
   const rows=[];
   for(const item of q.records){
     const evidence=read(item.evidence);
     const {sourceElements,hasSourceElementArray,descriptiveOutlineCount,
       identified,matched,statusCounts,blockers}=analyzeElementInventory(evidence,item.code);
+    const editionEvidence=analyzeEditionPair(item.code,editionLookup.get(item.code)||[]);
+    blockers.push(...editionEvidence.blockers);
     if(evidence.status==='A_C_EXPLICIT_GAP')blockers.push('A_C_EXPLICIT_GAP');
     if(evidence.sourceCoverage100Percent!==true)blockers.push('SOURCE_PARITY_NOT_INDEPENDENTLY_PROVEN');
     if(evidence.academicAccepted!==true)blockers.push('ACADEMIC_SIGNOFF_NOT_PROVEN');
@@ -148,7 +200,8 @@ function sourceEvidenceAudit(){
       sourceSnapshotId:evidence.sourceSnapshotId||null,identifiedElementCount:identified,
       hasSourceElementArray,descriptiveOutlineElementCount:descriptiveOutlineCount,
       itemizedElementCount:sourceElements?.length??null,matchedElementCount:matched,
-      sourceElementStatusCounts:statusCounts,sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
+      sourceElementStatusCounts:statusCounts,editionEvidence,
+      sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
       academicApproval:evidence.academicAccepted===true?'CLAIMED_IN_AC_REQUIRES_SIGNED_REVIEW':'NOT_APPROVED',
       blockers});
   }
@@ -162,6 +215,7 @@ function sourceEvidenceAudit(){
       !x.blockers.includes('MISSING_ELEMENT_SOURCE_SNAPSHOT')).length,
     noElementArrayLessons:rows.filter(x=>!x.hasSourceElementArray).length,
     unknownSourceDenominatorLessons:rows.filter(x=>x.itemizedElementCount===null).length,
+    wrongEditionStudentLessons:rows.filter(x=>x.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT')).length,
     sourceParityVerifiedLessons:0,academicApprovedLessons:0,
     lessonsWithExplicitACGap:rows.filter(x=>x.blockers.includes('A_C_EXPLICIT_GAP')).map(x=>x.lessonCode),
     blockedLessons:rows.filter(x=>x.blockers.length).length,rows};
@@ -171,6 +225,7 @@ function sourceEvidenceAudit(){
     rawArrays:result.rawElementArrayLessons,descriptiveOutlines:result.descriptiveOutlineLessons,
     itemized:result.itemizedLessonCount,completeSnapshots:result.completeElementSnapshotLessons,
     unknownDenominators:result.unknownSourceDenominatorLessons,
+    wrongEditionStudentLessons:result.wrongEditionStudentLessons,
     explicitGaps:result.lessonsWithExplicitACGap,blocked:result.blockedLessons,
     artifact:'stage-d-results/grade5-source-evidence.json'}));
   if(q.errors.length||result.blockedLessons)process.exitCode=2;
@@ -184,4 +239,4 @@ if(require.main===module){
   else if(mode==='source-evidence')sourceEvidenceAudit();
   else throw Error('Unknown mode '+mode);
 }
-module.exports={analyzeElementInventory};
+module.exports={analyzeElementInventory,analyzeEditionPair,grade5EditionManifests};

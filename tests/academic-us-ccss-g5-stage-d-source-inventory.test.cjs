@@ -3,7 +3,8 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
-const {analyzeElementInventory}=require('../tools/curriculum/g5-stage-d-diagnostic.cjs');
+const {analyzeElementInventory,analyzeEditionPair,grade5EditionManifests}=
+  require('../tools/curriculum/g5-stage-d-diagnostic.cjs');
 
 const root=path.resolve(__dirname,'..');
 const gradePath='artifacts/curriculum-delivery/US-CCSS-MATH/G5';
@@ -69,4 +70,36 @@ test('reject duplicated source ID, wrong lesson, missing snapshot and incorrect 
     'MISSING_ELEMENT_SOURCE_SNAPSHOT','UNMATCHED_IDENTIFIED_SOURCE_ELEMENTS'])
     assert.ok(audit.blockers.includes(failure),failure);
   assert.equal(audit.matched,1);
+});
+
+test('every first-edition teacher lesson has a wrong-edition v.360 student mirror, preventing Grade 5 source signoff',()=>{
+  const entries=grade5EditionManifests();
+  assert.equal(entries.size,148);
+  for(const [lessonCode,rows] of entries){
+    const result=analyzeEditionPair(lessonCode,rows);
+    assert.equal(result.teacherTitle,'Illustrative Mathematics | Kendall Hunt');
+    assert.equal(result.studentTitle,'Illustrative Mathematics | v.360 Curriculum');
+    assert.ok(result.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT'));
+    assert.ok(result.blockers.includes('STUDENT_IM2021_EDITION_NOT_VERIFIED'));
+    assert.ok(result.blockers.includes('TEACHER_STUDENT_SEMANTIC_PARITY_NOT_CERTIFIED'));
+    assert.match(result.teacherSha256,/^[a-f0-9]{64}$/);
+    assert.match(result.studentSha256,/^[a-f0-9]{64}$/);
+  }
+});
+test('missing, duplicate, forged and cross-edition student evidence cannot pass source gate',()=>{
+  const lessonCode='PED:US-CCSS-MATH:G5:U01:L01';
+  const [teacher,student]=grade5EditionManifests().get(lessonCode);
+  const valid=analyzeEditionPair(lessonCode,[teacher,student]);
+  assert.ok(valid.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT'));
+  const dropped=analyzeEditionPair(lessonCode,[teacher]);
+  assert.ok(dropped.blockers.includes('SOURCE_EDITION_MISSING_OR_DUPLICATE_ROLE'));
+  const duplicated=analyzeEditionPair(lessonCode,[teacher,student,student]);
+  assert.ok(duplicated.blockers.includes('SOURCE_EDITION_MISSING_OR_DUPLICATE_ROLE'));
+  const fake=analyzeEditionPair(lessonCode,[teacher,{...student,sha256:'0'}]);
+  assert.ok(fake.blockers.includes('SOURCE_EDITION_HASH_MISSING_OR_MALFORMED'));
+  const titleOnly=analyzeEditionPair(lessonCode,[teacher,{
+    ...student,htmlDocumentTitle:teacher.htmlDocumentTitle,
+    editionMatch:'IM2021_STUDENT_CANDIDATE_SOURCE'
+  }]);
+  assert.ok(titleOnly.blockers.includes('TEACHER_STUDENT_SEMANTIC_PARITY_NOT_CERTIFIED'));
 });
