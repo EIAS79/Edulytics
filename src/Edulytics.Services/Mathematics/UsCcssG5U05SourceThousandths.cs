@@ -177,6 +177,13 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l13.original_place_aligned_additions", "Original IM2021 Grade5 U05:L13 printed addition 463 + 3.14, align same DECIMAL place columns rather than final printed digit", "466.14", "463.314", "466.4"),
         new("usccss.g5.u05.l13.original_elena_andre_error", "Original source Elena and Andre attempt621.45+72.3. Which pupil correctly aligns decimal places and obtains693.75 rather than false628.68?", "Andre", "Elena", "both"),
         new("usccss.g5.u05.l13.original_elena_andre_error", "Original source Elena's FALSE arithmetic after right-alignment of digit strings: what incorrect value does her shown work report?", "628.68", "693.75", "621.75"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original IM2021 Grade5 U05 L14 source warmup and activity1: 0.50 - 0.01; align place-value columns and explain regrouping; selected numeric item only", "0.49", "0.59", "0.38"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original IM2021 Grade5 U05 L14 source warmup and activity1: 0.61 - 0.02; align place-value columns and explain regrouping; selected numeric item only", "0.59", "0.69", "0.48"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original IM2021 Grade5 U05 L14 source warmup and activity1: 1.00 - 0.07; align place-value columns and explain regrouping; selected numeric item only", "0.93", "1.03", "0.82"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original IM2021 Grade5 U05 L14 source warmup and activity1: 2.26 - 1.32; align place-value columns and explain regrouping; selected numeric item only", "0.94", "1.04", "0.83"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original source T/F: 0.5 - 0.01 = 0.4 (must evaluate actual difference 0.49)", "false", "true", "unknown"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original source T/F: 0.61 - 0.02 = 0.59", "true", "false", "unknown"),
+        new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original source T/F: 1 - 0.07 = 0.93", "true", "false", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

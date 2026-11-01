@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l14-l15-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "ContentVersion": "g5-u05-l14-l15-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Make Sense of Decimal Subtraction",
       "ExplanationParagraphs": [
-        "Goal: subtract decimals through hundredths using a student-chosen strategy, with a hundredths-grid visual or place-value argument, BEFORE treating the standard algorithm as obligatory. The 2021 source uses student mathematical posters and a Target Numbers game that starts from TWO instead of zero.",
-        "Warm-up: describe a complete unit grid with 94 of 100 small squares shaded, then remove 36 of those hundredths. Explain the remaining 58 shaded hundredths using a diagram or inverse addition; all cells refer to the same original whole.",
-        "Activity 1 — show a subtraction method: 4.12−1.68=2.44. A counting-up explanation goes from 1.68 to 2.00 (+0.32), to 4.00 (+2.00), and to 4.12 (+0.12), totaling 2.44. A place-value method first subtracts one whole and regrouped fractional units; compare methods through first-party drawings or verbal representations. The student must explain why a comparison with a whole-number benchmark supports the result.",
-        "Activity 2 — Target Numbers subtraction: start at exactly 2.00 and use six provided digit-card values 4,2,3,1,2,1, each chosen ONCE as tenths or hundredths, to make a running total as close to 1 as possible without falling below 1. A legal example subtracts 0.4,0.2,0.3,0.01,0.02,0.01 for a final 1.06. Explain why the six choices fit the lower bound and propose how changing a digit from tenths to hundredths alters the result; this example is not claimed globally optimal.",
-        "Assessment: source goal includes creating and discussing visual subtraction displays, writing the six-step game record, refining choices and asking mathematical questions. Numeric 2.44 or 1.06 alone is not source-task completion; open representations, legality of decisions and communication require teacher review."
+        "Original Grade5 Unit5 Lesson14 makes sense of subtraction to the hundredths and asks pupils to find their own justified method; place value, counting up and inverse addition are acceptable if correct.",
+        "Warm-up TRUE/FALSE source states 0.5−0.01=0.4 is FALSE, since difference 0.49; 0.61−0.02=0.59 is TRUE; 1−0.07=0.93 is TRUE. Ask why subtracting a HUNDREDTH changes the 0.5 hundredth position rather than dropping to0.4.",
+        "Activity1 The Difference original is 2.26−1.32=0.94. A place-value approach subtracts1 from2, 0.3 from0.2 requires regrouping, or counting up from1.32 to2.26 via1.32→2.00 (+0.68)→2.26 (+0.26), total0.94. The original learner method and explanation are TEACHER_REVIEW_REQUIRED.",
+        "Activity2 Target Numbers original is the six-round partner game START AT2 and subtract the rolled number of TENTHS or HUNDREDTHS on each turn, seeking closest to1 WITHOUT GOING BELOW. No original sequence of rolls, no single preordained winner. Ask the learner to justify a different possible move.",
+        "Previous 94/36 shaded hundredths and 4.12−1.68 are mathematically correct but are first-party EXTENSIONS, never described as original source expressions. Original publisher Cool-down is gated; independently authored teacher Cool-down is separate.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: subtract decimals through hundredths using a student-chosen strategy, with a hundredths-grid visual or place-value argument, BEFORE treating the standard algorithm as obligatory. The 2021 source uses student mathematical posters and a Target Numbers game that starts from TWO instead of zero.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: describe a complete unit grid with 94 of 100 small squares shaded, then remove 36 of those hundredths. Explain the remaining 58 shaded hundredths using a diagram or inverse addition; all cells refer to the same original whole.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — show a subtraction method: 4.12−1.68=2.44. A counting-up explanation goes from 1.68 to 2.00 (+0.32), to 4.00 (+2.00), and to 4.12 (+0.12), totaling 2.44. A place-value method first subtracts one whole and regrouped fractional units; compare methods through first-party drawings or verbal representations. The student must explain why a comparison with a whole-number benchmark supports the result.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — Target Numbers subtraction: start at exactly 2.00 and use six provided digit-card values 4,2,3,1,2,1, each chosen ONCE as tenths or hundredths, to make a running total as close to 1 as possible without falling below 1. A legal example subtracts 0.4,0.2,0.3,0.01,0.02,0.01 for a final 1.06. Explain why the six choices fit the lower bound and propose how changing a digit from tenths to hundredths alters the result; this example is not claimed globally optimal.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source goal includes creating and discussing visual subtraction displays, writing the six-step game record, refining choices and asking mathematical questions. Numeric 2.44 or 1.06 alone is not source-task completion; open representations, legality of decisions and communication require teacher review."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Subtract shaded hundredths",
+          "Title": "Source exact 1 — IM2021 U05:L14 Make Sense of Decimal Subtraction",
+          "Question": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 0.50 - 0.01; align place-value columns and explain regrouping; selected numeric item only",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.49",
+          "Check": "Original numeric source example; incorrect distractors 0.59 and 0.38 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — IM2021 U05:L14 Make Sense of Decimal Subtraction",
+          "Question": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 0.61 - 0.02; align place-value columns and explain regrouping; selected numeric item only",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.59",
+          "Check": "Original numeric source example; incorrect distractors 0.69 and 0.48 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — IM2021 U05:L14 Make Sense of Decimal Subtraction",
+          "Question": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 1.00 - 0.07; align place-value columns and explain regrouping; selected numeric item only",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.93",
+          "Check": "Original numeric source example; incorrect distractors 1.03 and 0.82 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — IM2021 U05:L14 Make Sense of Decimal Subtraction",
+          "Question": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 2.26 - 1.32; align place-value columns and explain regrouping; selected numeric item only",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.94",
+          "Check": "Original numeric source example; incorrect distractors 1.04 and 0.83 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Subtract shaded hundredths",
           "Question": "A whole has 94 hundredths shaded, and 36 shaded hundredths are removed. What remains?",
           "Method": "Original whole/tenths/hundredths subtraction with inverse-addition check; drawings and partner explanations remain teacher-judged.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "0.94−0.36=0.58."
         },
         {
-          "Title": "Use counting up",
+          "Title": "Optional existing extension — Use counting up",
           "Question": "Find 4.12−1.68 without a required vertical algorithm.",
           "Method": "Original whole/tenths/hundredths subtraction with inverse-addition check; drawings and partner explanations remain teacher-judged.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "1.68+2.44=4.12."
         },
         {
-          "Title": "Check six legal choices",
+          "Title": "Optional existing extension — Check six legal choices",
           "Question": "Starting at 2.00, subtract 0.4,0.2,0.3,0.01,0.02,0.01. Does the record stay above 1?",
           "Method": "Original whole/tenths/hundredths subtraction with inverse-addition check; drawings and partner explanations remain teacher-judged.",
           "Steps": [
@@ -82,18 +136,82 @@
           "Mistake": "Give a numeric game result without six legal choices",
           "WhyWrong": "The source also assesses place-value decisions and reflection after all six rolls.",
           "Correction": "Verify the complete record, legality, lower bound and explanation with a teacher."
+        },
+        {
+          "Mistake": "Treat invented4.12−1.68 or 94/36 grid as the PRINTED lesson's main source tasks",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore actual source T/F and2.26−1.32, and preserve game outcomes as open teacher assessment."
         }
       ],
       "SummaryPoints": [
-        "Decimal subtraction can be understood by removing equal-area hundredths, counting up or decomposing units.",
-        "Target Numbers Stage 9 starts at two and seeks one without dropping below it.",
-        "Drawing, game choices and justification are teacher-reviewed; arithmetic is a subcheck.",
-        "2021 IM K–5 Grade 5 Unit 5 Lesson 14: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-14/lesson.html. The teacher HTML and Student Facing activity text were read-only inspected on authorized Our-CS; protected Cool-down and original full Student Task PDF are not independently available. All examples and diagrams here are first-party Edulytiks content."
+        "Source T/F results false,true,true for 0.5−0.01,0.61−0.02,1−0.07.",
+        "Source original 2.26−1.32=0.94.",
+        "Game requires six learner-specific rolls, subtraction of tenths or hundredths and nearest1 from above.",
+        "Optional prior: Decimal subtraction can be understood by removing equal-area hundredths, counting up or decomposing units.",
+        "Optional prior: Target Numbers Stage 9 starts at two and seeks one without dropping below it.",
+        "Optional prior: Drawing, game choices and justification are teacher-reviewed; arithmetic is a subcheck.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 14: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-14/lesson.html. The teacher HTML and Student Facing activity text were read-only inspected on authorized Our-CS; protected Cool-down and original full Student Task PDF are not independently available. All examples and diagrams here are first-party Edulytiks content."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Make Sense of Decimal Subtraction — original place-value model",
+          "Title": "IM2021 U05:L14 Make Sense of Decimal Subtraction — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 0.50 - 0.0",
+              "Cells": [
+                "0.49",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 0.61 - 0.0",
+              "Cells": [
+                "0.59",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 1.00 - 0.0",
+              "Cells": [
+                "0.93",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 Grade5 U05 L14 source warmup and activity1: 2.26 - 1.3",
+              "Cells": [
+                "0.94",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source T/F: 0.5 - 0.01 = 0.4 (must evaluate actual difference",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source T/F: 0.61 - 0.02 = 0.59",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source T/F: 1 - 0.07 = 0.93",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Make Sense of Decimal Subtraction — original place-value model",
           "Description": "First-party accessible description of decimal models and game records; publisher grid imagery and game sheet not copied.",
           "Rows": [
             {
