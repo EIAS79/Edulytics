@@ -38,6 +38,8 @@ jobs:
         run: node --test tests/academic-us-ccss-g5-rich-v2-duplicate-gate-stage-d.test.cjs
       - name: Validate source-item evidence across legacy 2021 schemas and negative controls
         run: node --test tests/academic-us-ccss-g5-stage-d-source-inventory.test.cjs
+      - name: Check U02 original local source-section inventory without false parity approval
+        run: node --test tests/academic-us-ccss-g5-u02-stage-d-raw-source-inventory.test.cjs
   source-element-evidence:
     name: grade5-source-element-provenance-and-approval-fail-closed
     runs-on: ubuntu-24.04
