@@ -88,7 +88,10 @@ test('every first-edition teacher lesson has a wrong-edition v.360 student mirro
 });
 test('missing, duplicate, forged and cross-edition student evidence cannot pass source gate',()=>{
   const lessonCode='PED:US-CCSS-MATH:G5:U01:L01';
-  const [teacher,student]=grade5EditionManifests().get(lessonCode);
+  const entries=grade5EditionManifests().get(lessonCode);
+  const teacher=entries.find(x=>x.role==='Teacher');
+  const student=entries.find(x=>x.role==='Student');
+  assert.ok(teacher&&student,'both source roles must be identified by role, never array order');
   const valid=analyzeEditionPair(lessonCode,[teacher,student]);
   assert.ok(valid.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT'));
   const dropped=analyzeEditionPair(lessonCode,[teacher]);
