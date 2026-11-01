@@ -503,6 +503,22 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source aggregate weight for FIVE apricots each1 5/8 oz", "8 1/8", "7 1/8", "8 5/8"),
         new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional Mai apricot chart total weight in ounces", "23 3/4", "15", "9 1/2"),
         new("usccss.g5.u06.l15.original_apricot_lineplot", "Original optional source total weight MORE than16-ounce pound yes/no", "yes", "no", "exactly one pound"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original warmup4/5×100=120 T/F", "false", "true", "unknown"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original warmup4/5×100<100 T/F", "true", "false", "unknown"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original warmup4/5×100=80 T/F", "true", "false", "unknown"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original source Noah1/2 of5-mile trail in miles", "2 1/2", "3 3/4", "6 1/4"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original source Elena3/4 of5-mile trail in miles", "3 3/4", "2 1/2", "6 1/4"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original source Kiran1 1/4 of5-mile trail in miles", "6 1/4", "3 3/4", "5"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original source runner order shortest to longest", "Noah, Elena, Kiran", "Elena, Noah, Kiran", "Kiran, Elena, Noah"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original5/4×100 compared100 symbol", ">", "<", "="),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original5/7×2 compared2 symbol", "<", ">", "="),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Original1/3×50 compared100 symbol", "<", ">", "="),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open numerator n/9×50<50 choose valid example", "8", "9", "10"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open numerator n/9×50=50 choose value", "9", "8", "10"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open numerator n/9×50>50 choose valid example", "10", "8", "9"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open denominator 9/n×50<50 choose valid example", "10", "8", "9"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open denominator 9/n×50=50 choose value", "9", "8", "10"),
+        new("usccss.g5.u06.l16.original_fraction_product_comparisons", "Source open denominator 9/n×50>50 choose valid example", "8", "9", "10"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
