@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -345,11 +345,13 @@
       "CultureCode": "en",
       "Title": "Shipping Trash",
       "ExplanationParagraphs": [
-        "Goal: reason about the volume of standard cargo containers and whether a stated collection of schools could supply sufficient recyclables to fill a hypothetical shipping total. The source combines place-value multiplication/division and Fermi estimation with explicit assumptions, not one automatic real-world result.",
-        "Warm-up: mentally compute8×4,8×8,8×8×2 and8×8×20, explaining how factors of ten scale a known rectangular-prism base; the source uses standard container dimensions as context and may include licensed imagery not copied here.",
-        "Activity 1 — original classroom scenario: a rectangular cargo container is20 feet long,8 feet wide and8 feet tall. Compute20×8×8=1280 cubic feet. Assume a school generates40 cubic feet of usable recyclable plastic per day, then it takes1280÷40=32 school days to fill ONE such container. State that usable compacted volume can differ from loose bin volume; do not invent an actual school's measurement.",
-        "Activity 2 — hypothetical national shipment comparison: imagine120000 containers exported in one year and40000 participating schools. Divide120000÷40000=3 containers per school per year; under a 180-day school year and40 cubic feet/day, a school produces7200 cubic feet, or more than five 1280-cubic-foot containers, if perfectly collectible and packable. Discuss why seasonal attendance, non-plastic content, packing efficiency and actual data could overturn this plausibility conclusion.",
-        "Assessment boundary: the source asks a reasoned 'would schools supply enough?' investigation. Correct equations are only one part; teacher reviews assumptions, data provenance, estimate bounds, units and whether the conclusion follows from the declared hypothetical figures. The 2021 actual year/shipments data are not silently updated or presented as current."
+        "Original IM K5 2021 G5 U04:L20 Shipping Trash combines cubic-foot volume, multiplication of factors, quotient interpretation, realistic school recyclable plastic estimates and feasibility. The printed 2018 export figures and around70,000 schools are HISTORICAL textbook assumptions, not verified current 2026 statistics.",
+        "Warm-up Number Talk Three Factors original 8×4=32, 8×8=64, 8×8×2=128 and 8×8×20=1,280. Teacher asks how decomposing 20=2×10 scales the last result and why three physical dimensions produce CUBIC feet.",
+        "Activity 1 What a Waste: source asks pupils to ESTIMATE a class recycling bin's volume, school bins' total capacity, and how much their school generates in a day/week/month/year; then argue if a year's recyclable materials might fit inside a classroom. The actual school's bin counts, class room dimensions, behavior, school days and compacting are unknown; the correct responses require explicit pupil assumptions and TEACHER_REVIEW_REQUIRED.",
+        "Activity 2 Plastic Palooza original source: ship cargo container20 feet long by8 feet wide by8 feet tall=1280 cubic feet; a school hypothetically makes40 cubic feet recyclable plastic each day; container fill time1280÷40=32 days. Printed historical 2018 US exports around210,000 plastic cargo containers and source assumption around70,000 elementary schools; each would need to fill210000÷70000=3 containers, consuming3840 cubic feet or around96 source-rate days. A reasoned yes/no feasibility answer depends on how many COLLECTION days, density and real collection rates students assume.",
+        "Do not substitute invented source statement 120,000 containers /40,000 schools. The first-party numeric selected Practice supports the TWO source quotients and an explicitly derived third days case; original volume multiplication and source estimation remain visible Rich V2 content, with teacher review of dimension products, conceptual feasibility and environmental context.",
+        "Independent Edulytiks Cool-down uses a different fictional cargo box and disposal volume, with teacher checking units and assumptions. Source images/third-party content and gated Cool-down are not claimed reproduced.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -373,7 +375,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Volume of one container",
+          "Title": "Original number talk and cargo volume",
+          "Question": "Find source 8×4,8×8,8×8×2,8×8×20; then source 20ft by8ft by8ft cargo container.",
+          "Method": "Associativity and cubic-foot volume.",
+          "Steps": [
+            "Original warmup yields32,64,128,1280.",
+            "Container base8×8=64 square feet.",
+            "Multiply by20ft length to get1280 cubic feet."
+          ],
+          "Answer": "Container volume1280 cubic feet.",
+          "Check": "ft×ft×ft=ft³."
+        },
+        {
+          "Title": "Original daily plastic rate versus cargo volume",
+          "Question": "If school generates40 cubic ft/day, how many days to fill1280 cubic ft?",
+          "Method": "Divide container capacity by hypothetical volume per day.",
+          "Steps": [
+            "Source container1280ft³.",
+            "Source rate40ft³/day.",
+            "1280÷40=32 days."
+          ],
+          "Answer": "32 days per cargo container under the source assumption.",
+          "Check": "32×40=1280ft³."
+        },
+        {
+          "Title": "Source 2018 export-to-school historical scale",
+          "Question": "Printed source says210000 cargo containers and about70000 elementary schools. How many containers per school?",
+          "Method": "Divide historical source total by model school count.",
+          "Steps": [
+            "210000÷70000=3 containers per school.",
+            "Three 1280ft³ containers total3840ft³.",
+            "At40ft³/day this would require96 days; real feasibility depends on actual school calendar and recycling assumptions."
+          ],
+          "Answer": "3 containers per school;96 days at constant hypothetical daily rate.",
+          "Check": "70000×3=210000; 96×40=3840."
+        },
+        {
+          "Title": "Optional existing extension — Volume of one container",
           "Question": "How large is an ideal20-by-8-by-8-ft rectangular container?",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -385,7 +423,7 @@
           "Check": "160 ft²×8 ft=1280 ft³."
         },
         {
-          "Title": "School days to fill",
+          "Title": "Optional existing extension — School days to fill",
           "Question": "At an assumed40 cubic feet/day, how many days fill1280 cubic feet?",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -397,7 +435,7 @@
           "Check": "32×40=1280 cubic feet."
         },
         {
-          "Title": "Compare hypothetical shipment and schools",
+          "Title": "Optional existing extension — Compare hypothetical shipment and schools",
           "Question": "120000 containers for40000 schools: how many containers per school?",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -419,42 +457,62 @@
           "Mistake": "Treat old publisher shipment figures as current official statistics",
           "WhyWrong": "A 2021 lesson's historical data context is not an assertion about the present year.",
           "Correction": "Identify any figures as original-year evidence or original hypothetical inputs with their date."
+        },
+        {
+          "Mistake": "Claim the source's US exports were120000 containers and there were40000 schools",
+          "WhyWrong": "Original text provides210000 containers in 2018 and around70000 elementary schools.",
+          "Correction": "Restore printed 2018 figures and clearly label them textbook historical estimates, not current audited counts."
         }
       ],
       "SummaryPoints": [
-        "Cargo capacity is a cubic-volume calculation; days-to-fill and per-school targets use quotients.",
-        "National-scale comparisons require explicit school counts, days and collection assumptions.",
-        "Teacher judges the reasonableness of the whole modeled conclusion, not just products.",
-        "Source: first-edition 2021 Illustrative Mathematics K–5 Grade 5 Unit 4 Lesson 20 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-20/lesson.html. Only public teacher and student HTML reviewed; original Student Task PDF, third-party photographs and gated source Cool-down not independently verified. All numeric models are independent Edulytiks examples."
+        "Source Number Talk32,64,128,1280 shows associativity and powers of ten.",
+        "Original cargo 20×8×8=1280 cubic feet; assumed40 cubic ft/day =>32 days per container.",
+        "Original 2018 source210000 containers and about70000 elementary schools =>3 containers per school.",
+        "Full feasibility depends on student assumptions (days, bins, volume) and requires teacher review.",
+        "Numerical selected Practice only covers bounded group/volume quotients; historical facts are not verified contemporary data."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Shipping Trash — original modeling",
-          "Description": "First-party accessible text modeling table. No source image/photograph or personal student journal data included.",
+          "Title": "Printed 2021 Shipping Trash quantities and conditional interpretation",
+          "Description": "Cited 2018 data are historical textbook figures; first-party model calculations, not current statistics.",
           "Rows": [
             {
-              "Label": "Modeled quantity",
+              "Label": "Number Talk",
               "Cells": [
-                "Cargo container",
-                "School daily",
-                "School target"
+                "8×4=32",
+                "8×8=64",
+                "8×8×2=128",
+                "8×8×20=1280"
               ]
             },
             {
-              "Label": "Value",
+              "Label": "Container dimensions",
               "Cells": [
-                "1280 ft³",
-                "40 ft³/day",
-                "3 containers/year"
+                "20ft×8ft×8ft",
+                "1280ft³"
               ]
             },
             {
-              "Label": "Check",
+              "Label": "Daily rate",
               "Cells": [
-                "20×8×8",
-                "1280÷40=32 days",
-                "120000÷40000=3"
+                "40ft³/day assumed",
+                "32 days/container"
+              ]
+            },
+            {
+              "Label": "Printed 2018 export model",
+              "Cells": [
+                "210000 containers",
+                "70000 schools",
+                "3 containers/school"
+              ]
+            },
+            {
+              "Label": "Derived days for three",
+              "Cells": [
+                "3840ft³",
+                "96 days at assumed rate"
               ]
             }
           ]
