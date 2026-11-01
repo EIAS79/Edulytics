@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l18-l21-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Lots of Milk",
       "ExplanationParagraphs": [
-        "Goal: estimate volumes consumed by progressively larger groups and estimate the time required to consume a LARGE target volume. The 2021 source distinguishes open model assumptions from exact arithmetic and asks students to compare too-low, plausible and too-high estimates. This is not a lesson with a single verified milk-consumption number.",
-        "Warm-up: imagine a first-party rectangular carton with inside dimensions 2 by 2 by 5 inches; volume is 20 cubic inches. Use its approximate size to justify why ten or 1000 cubic inches may be too small or large for a small lunch carton; actual carton packaging is rarely a perfect rectangular interior.",
-        "Activity 1 — grow a model: assume each participating pupil uses one 20-cubic-inch carton per day and 25 pupils participate in one class. Then one class uses approximately 500 cubic inches, six such classes about 3000, a school of 20 such classes about 10000, and ten such schools about 100000 per day. Each multiplication is conditional on invented class/school counts and equal consumption assumptions, not a reported real school fact.",
-        "Activity 2 — reverse the model: estimate days for a single participating class, six classes, one school or ten schools to consume one million cubic inches using those daily estimates. For one school, 1000000÷10000=100 days under the assumptions, while ten schools use 100000 daily and need ten days. Discuss real-world variation in attendance, consumption, milk alternatives and the number of school days.",
-        "Teacher boundary: the source's self-selected estimates, reasonable ranges, assumptions and peer argument require teacher review. Calculating the quotient from a clearly stated model can be exact but cannot certify that the assumptions reflect a real class. Do not imply milk cartons/photographs were reused."
+        "Original IM K5 2021 U04:L18 Lots of Milk explores estimated CARTON volume in CUBIC INCHES and how consumption scales from student to CLASS, GRADE, SCHOOL and TEN LOCAL SCHOOLS. There is no printed fixed school enrollment, fixed milk carton size, or single original solution: students must state their own plausible assumptions and explain low/about-right/high estimates.",
+        "Warm-up Estimation Exploration How Big is the Milk Carton: original USDA-attributed carton photograph is separately licensed/public domain and not incorporated or certified here. Students estimate volume in cubic inches with TOO LOW, ABOUT RIGHT, TOO HIGH, explaining why from a photo alone no exact carton dimensions follow.",
+        "Activity 1 Milk for Everyone: source asks the pupil to estimate one day's milk volume for YOU, YOUR CLASS, YOUR GRADE, YOUR SCHOOL and TEN SCHOOLS, in cubic inches. Each category depends on chosen number of pupils, attendance and carton size. An Edulytiks sample assumption of 20 cubic inches per pupil per day, 25 students per class and 500 per school yields 20,500, variable grade total,10,000 and100,000 cubic inches/day respectively. These are sample assumptions, NEVER the source's canonical volumes.",
+        "Activity 2 How Big is 1,000,000?: source target is ONE MILLION cubic inches of milk and asks days for TEN SCHOOLS, SCHOOL, GRADE, CLASS, YOU. With INDEPENDENT illustrative constant rates 100,000, 10,000, 500 and20 cubic inches/day, the illustrative days are10,100,2000,50000 respectively, but no fixed grade count is given. For grade, pupil must supply a separate positive measured/estimated rate; both rate and days vary by class/school context.",
+        "Selected numeric Practice is explicitly restricted to Edulytiks invented, labeled, conditional benchmark scenarios for division with the original one-million target. It cannot grade open source pupil estimates, carton photo interpretation or grade/school enrollment. Those remain TEACHER_REVIEW_REQUIRED. Independently authored Cool-down asks students to write their own assumptions instead of falsely claiming to reproduce the teacher-gated publisher Cool-down.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +37,31 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Estimate class consumption",
+          "Title": "Original five source comparison groups",
+          "Question": "Estimate cubic inches of milk consumed daily by you, class, grade, school and ten schools.",
+          "Method": "Choose and justify pupil population and carton volume; ALL numbers are pupil assumptions.",
+          "Steps": [
+            "Name estimated volume of one carton in cubic inches.",
+            "For each group, estimate how many such cartons are consumed daily.",
+            "Multiply pupil count by carton volume; label units and explain assumptions."
+          ],
+          "Answer": "Multiple defensible answers; no single fixed number in the source.",
+          "Check": "Teacher verifies units, scaling and assumptions."
+        },
+        {
+          "Title": "One-million cubic inches target with explicit conditional rates",
+          "Question": "Under Edulytiks hypothetical rates, how many days to consume 1,000,000 cubic inches?",
+          "Method": "Days = 1000000 cubic inches divided by estimated daily cubic-inch rate.",
+          "Steps": [
+            "At100000 cubic in/day for ten schools: 10 days.",
+            "At10000 cubic in/day for one school:100 days.",
+            "At500 cubic in/day for one class:2000 days;20 in/day for one pupil:50000 days."
+          ],
+          "Answer": "10;100;2000;50000 days under these stated ASSUMPTIONS, not canonical source answers.",
+          "Check": "A different justified rate yields a different legitimate answer."
+        },
+        {
+          "Title": "Optional existing extension — Estimate class consumption",
           "Question": "A class of 25 students is assumed each to drink20 cubic inches in a day.",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -48,7 +73,7 @@
           "Check": "25×20=500, but actual participants can differ."
         },
         {
-          "Title": "Estimate a hypothetical school",
+          "Title": "Optional existing extension — Estimate a hypothetical school",
           "Question": "20 identical classes of25 participants each drink one20-cubic-inch carton daily.",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -60,7 +85,7 @@
           "Check": "20×25×20=10000."
         },
         {
-          "Title": "Reverse to days",
+          "Title": "Optional existing extension — Reverse to days",
           "Question": "At10000 cubic inches/day, how many days to reach1000000 cubic inches?",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -82,45 +107,59 @@
           "Mistake": "Divide consumption instead of multiplying when moving from a class to many classes",
           "WhyWrong": "Each added class adds its own estimated carton volume.",
           "Correction": "Multiply by the number of equally modeled classes."
+        },
+        {
+          "Mistake": "Present hypothetical fixed school counts and 20-cubic-inch cartons as verified 2021 textbook data",
+          "WhyWrong": "Source intentionally leaves pupil attendance, class and school sizes unknown to support realistic estimates and explanation.",
+          "Correction": "Label any sample consumption rate independently authored and preserve genuine original open assumptions and teacher review."
         }
       ],
       "SummaryPoints": [
-        "Estimates scale by multiplication and reverse by division, but remain estimates.",
-        "State who drinks, carton size, number of classes, school days and other assumptions.",
-        "Reasoned ranges and data choice require teacher review.",
-        "Source: first-edition 2021 Illustrative Mathematics K–5 Grade 5 Unit 4 Lesson 18 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-18/lesson.html. Only public teacher and student HTML reviewed; original Student Task PDF, third-party photographs and gated source Cool-down not independently verified. All numeric models are independent Edulytiks examples."
+        "Original source milk carton photo estimated low/about-right/high; exact printed dimensions not provided.",
+        "Original categories you,class,grade,school,10 schools require pupil-derived assumptions.",
+        "Original million-cubic-inch target and estimated days have no universally correct school rate.",
+        "The numeric family explicitly labels separate hypothetical examples; source open estimates require teacher review.",
+        "No publisher original Cool-down or third-party source image is claimed reproduced."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Lots of Milk — original modeling",
-          "Description": "First-party accessible text modeling table. No source image/photograph or personal student journal data included.",
+          "Title": "Source categories with distinct first-party illustrative assumptions",
+          "Description": "NOT original publisher measurements. Every numerical value derives from explicit Edulytiks sample population and 20 cubic inches/pupil/day.",
           "Rows": [
             {
-              "Label": "Group",
+              "Label": "You",
               "Cells": [
-                "One participant",
-                "One 25-person class",
-                "20 classes",
-                "10 schools"
+                "20 in³/day assumed",
+                "50000 days"
               ]
             },
             {
-              "Label": "Daily volume estimate",
+              "Label": "Class of25",
               "Cells": [
-                "20 in³",
-                "500 in³",
-                "10000 in³",
-                "100000 in³"
+                "500 in³/day assumed",
+                "2000 days"
               ]
             },
             {
-              "Label": "Days for 1M in³",
+              "Label": "School of500",
               "Cells": [
-                "50000",
-                "2000",
-                "100",
-                "10"
+                "10000 in³/day assumed",
+                "100 days"
+              ]
+            },
+            {
+              "Label": "Ten such schools",
+              "Cells": [
+                "100000 in³/day assumed",
+                "10 days"
+              ]
+            },
+            {
+              "Label": "Grade",
+              "Cells": [
+                "pupil count unknown",
+                "days vary with assumptions"
               ]
             }
           ]
