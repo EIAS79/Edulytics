@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -447,12 +447,19 @@
       "CultureCode": "en",
       "Title": "Order Decimals",
       "ExplanationParagraphs": [
-        "Goal: compare, order and generate numbers lying STRICTLY between two decimals using place value, optionally supported by number lines. The source intentionally explores the possibility of a number between two consecutive thousandths, even if students cannot yet NAME that number using only three decimal places.",
-        "Warm-up — true or false: 0.909>0.91 is false because0.909<0.910; 4.1<4.100 is false since they are equal; 0.99<0.999 is true. Require a verbal place-value explanation rather than comparing written digit counts.",
-        "Activity 1 — choose multiple valid values between endpoints: 786.2<786.254<786.3, 9.99<9.995<10, 0.45<0.456<0.46, 0.5<0.507<0.51, and0.99<0.995<0.999. Draw a number line with suitable endpoints for one chosen inequality and compare different students' answers; there is no single value each blank must contain.",
-        "Activity 2 — the midpoint question: ask whether any number lies between 1.731 and1.732. There is no thousandth-grid value between consecutive thousandths, BUT at finer precision 1.7315 is strictly between. Invite students to conjecture and explain what a more finely subdivided number line would reveal, without requiring formal fourth-decimal-place notation from every Grade 5 learner.",
-        "Activity 3 — order an original set 0.907,0.97,0.917 and0.9. Express them as 0.907,0.970,0.917 and0.900 to compare, yielding 0.900<0.907<0.917<0.970. A teacher reviews the argument and choice of scale and should not mark the absence of more advanced naming as automatically wrong.",
-        "Assessment: numerical ordering can be checked exactly, but the student-generated intervals, exploratory finer-precision conjecture, ordering diagrams and peer revisions are teacher-reviewed. Gated source response and figure cards are not copied."
+        "Original IM 2021 Grade5 U05:L09 Order Decimals: compare three-decimal-place values, write sets in increasing order and construct ANY number strictly inside an open decimal interval, with a number line as an optional visualization. Exact fixed choices are not a substitute for teacher scoring all valid source open interval answers.",
+        "Warm-up True or False original: 0.909>0.91 FALSE (0.909<0.910);4.1<4.100 FALSE (4.100=4.1);0.99<0.999 TRUE (0.990<0.999). Pupils justify by alignment and preserve trailing-zero equivalence.",
+        "Activity 1 Caught in the Middle: original five constraints 786.2<x<786.3,9.99<x<10,0.46>x>0.45,0.5<x<0.51 and0.99<x<0.999. Teacher accepts infinitely many valid real decimals in each interval, e.g786.25,9.995,0.456,0.505 and0.995, not a single correct fixed value.",
+        "Same Activity1 original Kiran claims no number lies strictly between1.731 and1.732. This is incorrect on the real number line;1.7315 lies strictly between them, although it uses four places rather than the lesson's common thousandths grid. Teacher reviews explanation and warns that a number line's tick resolution does not mean no number exists between its marks.",
+        "Activity 2 Least to Greatest original printed four sets: 67.020,67.200,67.002 ->67.002<67.020<67.200;1.101,1.02,1.1 ->1.02<1.100<1.101;0.333,0.323,0.3 ->0.300<0.323<0.333;99.99,99.09,99.091 ->99.090<99.091<99.990. Source relative numbers and leading zeros matter.",
+        "Selected Practice presents source values in bounded choices; original source inequality entry, number-line explanation, all correct alternative between-values and partner reasoning are TEACHER_REVIEW_REQUIRED. Independent Edulytiks Cool-down covers different values.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: compare, order and generate numbers lying STRICTLY between two decimals using place value, optionally supported by number lines. The source intentionally explores the possibility of a number between two consecutive thousandths, even if students cannot yet NAME that number using only three decimal places.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — true or false: 0.909>0.91 is false because0.909<0.910; 4.1<4.100 is false since they are equal; 0.99<0.999 is true. Require a verbal place-value explanation rather than comparing written digit counts.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — choose multiple valid values between endpoints: 786.2<786.254<786.3, 9.99<9.995<10, 0.45<0.456<0.46, 0.5<0.507<0.51, and0.99<0.995<0.999. Draw a number line with suitable endpoints for one chosen inequality and compare different students' answers; there is no single value each blank must contain.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — the midpoint question: ask whether any number lies between 1.731 and1.732. There is no thousandth-grid value between consecutive thousandths, BUT at finer precision 1.7315 is strictly between. Invite students to conjecture and explain what a more finely subdivided number line would reveal, without requiring formal fourth-decimal-place notation from every Grade 5 learner.",
+        "Optional previous source-aligned or independently authored extension — Activity 3 — order an original set 0.907,0.97,0.917 and0.9. Express them as 0.907,0.970,0.917 and0.900 to compare, yielding 0.900<0.907<0.917<0.970. A teacher reviews the argument and choice of scale and should not mark the absence of more advanced naming as automatically wrong.",
+        "Optional previous source-aligned or independently authored extension — Assessment: numerical ordering can be checked exactly, but the student-generated intervals, exploratory finer-precision conjecture, ordering diagrams and peer revisions are teacher-reviewed. Gated source response and figure cards are not copied."
       ],
       "KeyConcepts": [
         {
@@ -476,7 +483,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Fill a strict inequality",
+          "Title": "Original source three inequality truth values",
+          "Question": "Classify0.909>0.91,4.1<4.100,0.99<0.999.",
+          "Method": "Add trailing zeros to align decimals without changing magnitude.",
+          "Steps": [
+            "0.909<0.910 so first is false.",
+            "4.1=4.100 so strict less is false.",
+            "0.990<0.999 so third is true."
+          ],
+          "Answer": "False,False,True.",
+          "Check": "Every comparison uses equal place values."
+        },
+        {
+          "Title": "Original source five between tasks and Kiran",
+          "Question": "Choose a decimal inside each source interval and refute Kiran's no-number claim.",
+          "Method": "Strict inequalities with decimal place-value refinement.",
+          "Steps": [
+            "786.25,9.995,0.456,0.505,0.995 fit the five printed intervals.",
+            "1.7315 is strictly between1.731 and1.732.",
+            "All such answers are examples; teacher accepts other valid values."
+          ],
+          "Answer": "Multiple possible solutions; counterexample1.7315.",
+          "Check": "All chosen numbers are strictly greater/lower than their bounds."
+        },
+        {
+          "Title": "Original source four increasing-order sets",
+          "Question": "Order all four source sets to thousandths correctly.",
+          "Method": "Compare ones,tenths,hundredths,thousandths after padding zeros.",
+          "Steps": [
+            "67.002<67.020<67.200.",
+            "1.02<1.1<1.101 and0.3<0.323<0.333.",
+            "99.09<99.091<99.99."
+          ],
+          "Answer": "Four printed increasing-order sequences.",
+          "Check": "Teacher checks pupils' optional number line."
+        },
+        {
+          "Title": "Optional existing extension — Fill a strict inequality",
           "Question": "Give a decimal strictly between9.99 and10.",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -488,7 +531,7 @@
           "Check": "9.990<9.995<10.000."
         },
         {
-          "Title": "More precise numbers between",
+          "Title": "Optional existing extension — More precise numbers between",
           "Question": "Is there a number between1.731 and1.732?",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -500,7 +543,7 @@
           "Check": "1.731<1.7315<1.732; teacher checks the learner's reasoning at their introduced precision."
         },
         {
-          "Title": "Order four decimals",
+          "Title": "Optional existing extension — Order four decimals",
           "Question": "Put0.907,0.97,0.917,0.9 from least to greatest.",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -522,18 +565,81 @@
           "Mistake": "Treat 0.9 as greater than 0.907 because it has fewer digits",
           "WhyWrong": "Trailing zeros have no effect on decimal magnitude.",
           "Correction": "Compare0.900 with0.907 using aligned places."
+        },
+        {
+          "Mistake": "Replace source ordering numbers with invented0.907/0.97/0.917/0.9 or claim one unique answer to intervals",
+          "WhyWrong": "Printed book lists four specific sets and intentionally asks for any value strictly between given bounds.",
+          "Correction": "Restore original four sets and accept all mathematically valid between-values under teacher review."
         }
       ],
       "SummaryPoints": [
-        "An open decimal interval may have many valid choices and requires strict inequalities.",
-        "Ordering should use place value and equivalent trailing zeros.",
-        "Finer-number-line conjectures and student-authored values require teacher review.",
-        "Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 9 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-9/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+        "Original warm-up false,false,true for0.909>0.91,4.1<4.100,0.99<0.999.",
+        "Five source open intervals support many valid responses and teacher explanation.",
+        "Kiran is wrong:1.7315 is between1.731 and1.732 despite needing four decimal places.",
+        "Original four printed ordering sets reproduced with correct ascending decimals.",
+        "Selected numeric choice does not validate all pupil-owned interval answers or handwritten number lines.",
+        "Optional prior: An open decimal interval may have many valid choices and requires strict inequalities.",
+        "Optional prior: Ordering should use place value and equivalent trailing zeros.",
+        "Optional prior: Finer-number-line conjectures and student-authored values require teacher review.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 9 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-9/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Order Decimals — original decimal model",
+          "Title": "Original source order and open interval constraints",
+          "Description": "Original source numbers; between examples are separately authored mathematical examples, not one publisher key.",
+          "Rows": [
+            {
+              "Label": "Warm-up T/F",
+              "Cells": [
+                "0.909>0.91 false",
+                "4.1<4.100 false",
+                "0.99<0.999 true"
+              ]
+            },
+            {
+              "Label": "Source group1",
+              "Cells": [
+                "67.002",
+                "67.020",
+                "67.200"
+              ]
+            },
+            {
+              "Label": "Source group2",
+              "Cells": [
+                "1.02",
+                "1.1",
+                "1.101"
+              ]
+            },
+            {
+              "Label": "Source group3",
+              "Cells": [
+                "0.3",
+                "0.323",
+                "0.333"
+              ]
+            },
+            {
+              "Label": "Source group4",
+              "Cells": [
+                "99.09",
+                "99.091",
+                "99.99"
+              ]
+            },
+            {
+              "Label": "Kiran counterexample",
+              "Cells": [
+                "1.731<1.7315<1.732"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Order Decimals — original decimal model",
           "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
           "Rows": [
             {
