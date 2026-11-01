@@ -168,6 +168,47 @@ public sealed class UsCcssAlg2U01L01PersistedGradingTests
         Assert.True(Grade(item, attempt, "2^(64)-1"));
     }
 
+    // AUTHORED_NOT_RUN: an explicit metadata variant is an attestation:
+    // matching string passes; blank, conflicting or wrong-type values fail.
+    [Theory]
+    [InlineData("\"v1\"", true)]
+    [InlineData("\"v2\"", false)]
+    [InlineData("\"\"", false)]
+    [InlineData("\" \"", false)]
+    [InlineData("null", false)]
+    [InlineData("42", false)]
+    [InlineData("{}", false)]
+    public void PresentAttestedQuestionVariant_MustMatchTheIssuedEnvelope(
+        string variantJson, bool expected)
+    {
+        var (item, attempt) = Issued(Hanoi, 64, 0, "18446744073709551615");
+        var metadata = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(
+            item.ValidationMetadataJson)!;
+        using var variant = JsonDocument.Parse(variantJson);
+        metadata["questionVariant"] = variant.RootElement.Clone();
+        item.ValidationMetadataJson = JsonSerializer.Serialize(metadata);
+        Assert.Equal(expected, Grade(item, attempt, "2^(64)-1"));
+    }
+
+    [Fact]
+    public void MissingOrMalformedEnvelopeQuestionVariant_IsAlwaysRejected()
+    {
+        var (item, attempt) = Issued(Hanoi, 64, 0, "18446744073709551615");
+        var original = item.GenerationParametersJson;
+        item.GenerationParametersJson = original.Replace(
+            "\"questionVariant\":\"v1\"", "\"questionVariant\":null");
+        Assert.False(Grade(item, attempt, "2^(64)-1"));
+        item.GenerationParametersJson = original.Replace(
+            "\"questionVariant\":\"v1\"", "\"questionVariant\":\"\"");
+        Assert.False(Grade(item, attempt, "2^(64)-1"));
+        item.GenerationParametersJson = original.Replace(
+            "\"questionVariant\":\"v1\"", "\"questionVariant\":42");
+        Assert.False(Grade(item, attempt, "2^(64)-1"));
+        item.GenerationParametersJson = original.Replace(
+            "\"questionVariant\":\"v1\",", "");
+        Assert.False(Grade(item, attempt, "2^(64)-1"));
+    }
+
     [Theory]
     [InlineData("E,A,C", true)]
     [InlineData(" c, e, a ", true)]

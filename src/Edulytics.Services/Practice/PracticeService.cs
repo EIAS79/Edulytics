@@ -532,9 +532,14 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
                 !metadata.TryGetProperty("allowedFamily", out var alignedFamily) ||
                 alignedFamily.ValueKind != JsonValueKind.String ||
                 alignedFamily.GetString() != item.GenerationFamily ||
-                !metadata.TryGetProperty("questionVariant", out var attestedVariant) ||
-                attestedVariant.ValueKind != JsonValueKind.String ||
-                attestedVariant.GetString() != displayedVariant.GetString() ||
+                // Simple Stage18 generation may attest this field. Composed and
+                // Progressive omit it, so validate equality only when present.
+                // A present malformed, blank or conflicting value fails closed.
+                (metadata.TryGetProperty("questionVariant", out var attestedVariant) &&
+                 (attestedVariant.ValueKind != JsonValueKind.String ||
+                  string.IsNullOrWhiteSpace(attestedVariant.GetString()) ||
+                  !string.Equals(attestedVariant.GetString(),
+                      displayedVariant.GetString(), StringComparison.Ordinal))) ||
                 !metadata.TryGetProperty("solverVerified", out var solverVerified) ||
                 solverVerified.ValueKind != JsonValueKind.True ||
                 !metadata.TryGetProperty("broadFallbackUsed", out var broadFallback) ||
