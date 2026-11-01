@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l02-l06-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Thousandths on Grids and in Words",
       "ExplanationParagraphs": [
-        "Goal: use a consistent whole, a hundredths grid and a further division of hundredths into tenths to read, represent and name decimal thousandths. The lesson explicitly asks learners to move among shaded areas, decimals, fractions and written place-value language.",
-        "Warm-up: a source-style unit square with roughly three quarters shaded, but no grid, does not provide an exact count. Offer a too-low estimate such as one half, an about-right estimate such as three quarters, and a too-high estimate such as nine tenths, then explain why a hundredths grid would refine the estimate. These are illustrative estimates, not recovered values from the publisher image.",
-        "Activity 1 — partition to thousandths: draw a 10 by 10 unit grid and treat every square as one hundredth of the whole. Subdivide one hundredth into ten equal strips. Each strip is one thousandth of the same original whole. Represent 0.327 by three whole tenths, two separate hundredths, and seven thousandth-strips; compare that with 327 of 1000 equal-area parts.",
-        "Activity 2 — multiple names: explain 0.625 as 625 thousandths or 6 tenths, 2 hundredths, and 5 thousandths. Explain that 0.15 equals fifteen hundredths or 150 thousandths, but NOT fifteen thousandths, which is 0.015. Use a labeled accessible 10×10 grid description when an actual drawing is unavailable.",
-        "Assessment boundary: the source requires drawings, estimation discussion, alternative representations and explanations of the unit whole. A single correct decimal may be checked automatically, but whether the student's drawing has congruent parts and correct selected area remains teacher-reviewed. No source grid image or protected response is copied."
+        "Original IM K5 2021 G5 U05:L02 Thousandths on Grids and in Words: name and draw decimal units to THREE decimal places on a consistent whole. The source asks pupils to shade provided numbers, interpret actual shaded publisher grids, and critique competing verbal place-value interpretations. Correct digits without the original grid cannot prove drawing competence.",
+        "Warm-up source Estimation Exploration What Part of the Square is Shaded uses an original source image with unknown precise shaded fraction in HTML; low/about-right/high estimates remain teacher reviewed. Do not invent exact original warm-up shading from a different first-party image.",
+        "Activity 1 Represent Thousandths on a Grid original source prompts: shade a.2/10=0.2, b.0.2, c.15/100=0.15 and d.0.34. Interpret four additional source diagrams a–d: only the fourth diagram's HTML alt description independently states 62 of100 hundredth cells shaded and five of ten small pieces of another hundredth cell, so that described diagram represents0.625; other source diagrams' precise shading requires original visual review. Last original student task says SHADE0.328 on the grid, then explain 3 tenths,2 hundredths,8 thousandths.",
+        "Activity 2 Say What?: student representations for source-shaded FIFTEEN HUNDREDTHS=0.15. Jada says15 hundredths (correct), Priya150 thousandths (correct), Tyler15 thousandths (INCORRECT:0.015), Diego1 tenth and5 hundredths (correct), Mai1 tenth and half a tenth (correct). Teacher reviews WHY representations of the SAME whole agree and why Tyler switches denominator.",
+        "An independently authored teacher-scored Cool-down asks pupils to shade0.437 and justify the 7 thousandths. Exact Practice family covers source-decimal choice and Jada/Priya/Tyler/Diego/Mai conceptual answer values only. Original figure interpretation and freehand source drawings remain TEACHER_REVIEW_REQUIRED. Gated source Cool-down cannot be certified; existing other mathematically correct first-party example 0.327 is retained as optional extension.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use a consistent whole, a hundredths grid and a further division of hundredths into tenths to read, represent and name decimal thousandths. The lesson explicitly asks learners to move among shaded areas, decimals, fractions and written place-value language.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: a source-style unit square with roughly three quarters shaded, but no grid, does not provide an exact count. Offer a too-low estimate such as one half, an about-right estimate such as three quarters, and a too-high estimate such as nine tenths, then explain why a hundredths grid would refine the estimate. These are illustrative estimates, not recovered values from the publisher image.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — partition to thousandths: draw a 10 by 10 unit grid and treat every square as one hundredth of the whole. Subdivide one hundredth into ten equal strips. Each strip is one thousandth of the same original whole. Represent 0.327 by three whole tenths, two separate hundredths, and seven thousandth-strips; compare that with 327 of 1000 equal-area parts.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — multiple names: explain 0.625 as 625 thousandths or 6 tenths, 2 hundredths, and 5 thousandths. Explain that 0.15 equals fifteen hundredths or 150 thousandths, but NOT fifteen thousandths, which is 0.015. Use a labeled accessible 10×10 grid description when an actual drawing is unavailable.",
+        "Optional previous source-aligned or independently authored extension — Assessment boundary: the source requires drawings, estimation discussion, alternative representations and explanations of the unit whole. A single correct decimal may be checked automatically, but whether the student's drawing has congruent parts and correct selected area remains teacher-reviewed. No source grid image or protected response is copied."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Build 0.327",
+          "Title": "Source shade exact values",
+          "Question": "Represent 2/10,0.2,15/100,0.34 and 0.328 with consistent whole-grid units.",
+          "Method": "Hundredths grid of100 cells and each 1/100 cell split into10 thousandths.",
+          "Steps": [
+            "2/10=0.2, 15/100=0.15 and 0.34 is34 hundredths.",
+            "0.328 is3 tenths+2 hundredths+8 thousandths.",
+            "Explain labels on one unchanged whole unit grid."
+          ],
+          "Answer": "0.2,0.2,0.15,0.34,0.328, with teacher-reviewed shading.",
+          "Check": "0.328=328/1000."
+        },
+        {
+          "Title": "Source diagram D 62 squares and five subparts",
+          "Question": "A 10×10 hundredths grid has62 fully shaded cells and5 of10 slices of another cell. What is shaded?",
+          "Method": "Count62 hundredths plus five thousandths relative to original whole.",
+          "Steps": [
+            "62 hundredths=0.62.",
+            "5 of10 parts of one hundredth are five thousandths=0.005.",
+            "Sum0.62+0.005."
+          ],
+          "Answer": "0.625.",
+          "Check": "625/1000=0.625."
+        },
+        {
+          "Title": "Original five students disagree about0.15",
+          "Question": "Whose description of fifteen hundredths is equivalent?",
+          "Method": "Translate each named expression to decimal units of unchanged whole.",
+          "Steps": [
+            "15 hundredths=150 thousandths=0.15.",
+            "One tenth+five hundredths=0.15; one tenth+half a tenth=0.15.",
+            "15 thousandths=0.015 and is NOT equal to0.15."
+          ],
+          "Answer": "Jada,Priya,Diego,Mai correct; Tyler incorrect.",
+          "Check": "Teacher scores critique and exact original shaded diagram connection."
+        },
+        {
+          "Title": "Optional existing extension — Build 0.327",
           "Question": "Represent 0.327 as tenths, hundredths and thousandths.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -48,7 +90,7 @@
           "Check": "300+20+7=327 thousandths."
         },
         {
-          "Title": "Name 0.625",
+          "Title": "Optional existing extension — Name 0.625",
           "Question": "How many thousandths make 0.625?",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -60,7 +102,7 @@
           "Check": "600+20+5=625."
         },
         {
-          "Title": "Correct the wrong name",
+          "Title": "Optional existing extension — Correct the wrong name",
           "Question": "Is 0.15 equal to 15 thousandths?",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -82,18 +124,69 @@
           "Mistake": "Change the size of the whole between diagrams",
           "WhyWrong": "The decimal representation describes fractions of one consistent unit.",
           "Correction": "Use a labeled whole and equal-size cells in every drawing."
+        },
+        {
+          "Mistake": "Treat Tyler's 15 thousandths as 0.15 or substitute0.327 for original 0.328",
+          "WhyWrong": "The printed source distinguishes0.015 from0.15 and specifically asks pupils to shade0.328.",
+          "Correction": "Use source0.328 and 0.625 independently described diagram, and critique Tyler using a constant original whole."
         }
       ],
       "SummaryPoints": [
-        "Ten thousandths make one hundredth; one thousand thousandths make the whole.",
-        "Use grid, fraction, decimal and word form for the SAME selected area.",
-        "Estimates and learner-produced equal-area diagrams require teacher review.",
-        "Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 2 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-2/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
+        "Original grids shade2/10,0.2,15/100,0.34 and0.328; teacher verifies actual shading.",
+        "Source described diagram D 62 hundredths+5 thousandths=0.625.",
+        "Jada,Priya,Diego,Mai describe0.15 correctly; Tyler's15 thousandths=0.015 is different.",
+        "Original source warm-up picture and incompletely described shaded figures are not invented.",
+        "Decimal exact selected Practice is supplementary to teacher-scored drawings and place-value explanation.",
+        "Optional prior: Ten thousandths make one hundredth; one thousand thousandths make the whole.",
+        "Optional prior: Use grid, fraction, decimal and word form for the SAME selected area.",
+        "Optional prior: Estimates and learner-produced equal-area diagrams require teacher review.",
+        "Optional prior: Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 2 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-2/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Thousandths on Grids and in Words — accessible place-value model",
+          "Title": "Original source L02 grid values",
+          "Description": "Source quantities; only source diagram D numeric alt-description independently confirmed. Other original publisher figures remain teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source shade quantities",
+              "Cells": [
+                "2/10=0.2",
+                "0.2",
+                "15/100=0.15",
+                "0.34",
+                "0.328"
+              ]
+            },
+            {
+              "Label": "Source diagram D",
+              "Cells": [
+                "62 hundredths",
+                "5 thousandths",
+                "0.625"
+              ]
+            },
+            {
+              "Label": "Source correct student expressions",
+              "Cells": [
+                "Jada0.15",
+                "Priya0.15",
+                "Diego0.15",
+                "Mai0.15"
+              ]
+            },
+            {
+              "Label": "Source incorrect Tyler",
+              "Cells": [
+                "15 thousandths=0.015",
+                "not0.15"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Thousandths on Grids and in Words — accessible place-value model",
           "Description": "First-party text model of the source's mathematical structure, not a reproduction of original publisher images or student cards.",
           "Rows": [
             {
