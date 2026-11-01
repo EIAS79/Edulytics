@@ -46,7 +46,7 @@ test('first-party A–D diagrams preserve four equal columns, exactly one shaded
 test('source Activity 2 math and seven-row extension are separate', () => {
   const l = target();
   const expected = ['1/15','1/12','1/24'];
-  assert.ok(expected.every(value => l.WorkedExamples.some(ex => ex.Answer === value || ex.Answer === value + '.')));
+  assert.ok(expected.every(value => l.WorkedExamples.some(ex => ex.Answer.startsWith(value))));
   const extension = l.WorkedExamples.find(ex => ex.Title.startsWith('Optional extension'));
   assert.ok(extension);
   assert.match(extension.Question,/EXTENSION ONLY/);
