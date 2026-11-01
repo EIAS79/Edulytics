@@ -288,10 +288,20 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
         // Exactly 294 individually SHA-guarded source-bound lesson identities currently require metadata-only synchronization. Older inventory was 179; 115 additional Grade2 source repairs have explicit official lesson identities. Fail closed on any discrepancy.
         const int expectedSourceBoundCorrectionCount = 294;
+        var distinctCount = codes.Distinct(StringComparer.Ordinal).Count();
         if (codes.Length != expectedSourceBoundCorrectionCount ||
-            codes.Distinct(StringComparer.Ordinal).Count() != expectedSourceBoundCorrectionCount)
+            distinctCount != expectedSourceBoundCorrectionCount)
             throw new InvalidOperationException(
-                "Source-bound Common Core JSON metadata correction inventory drift.");
+                "Source-bound Common Core JSON metadata correction inventory drift." +
+                $" expected={expectedSourceBoundCorrectionCount} actual={codes.Length}" +
+                $" unique={distinctCount}" +
+                " byGrade=" + string.Join(",",
+                    codes.GroupBy(code =>
+                        System.Text.RegularExpressions.Regex.Match(
+                            code, @":G\\d+:").Value,
+                        StringComparer.Ordinal)
+                    .OrderBy(group => group.Key, StringComparer.Ordinal)
+                    .Select(group => $"{group.Key}:{group.Count()}")));
 
         var lessons = await _db.CurriculumPedagogicalLessons.AsNoTracking()
             .Where(x =>
