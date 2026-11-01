@@ -580,6 +580,13 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup3/4×60", "45", "15", "30"),
         new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup5/4×60", "75", "60", "90"),
         new("usccss.g5.u06.l21.original_weekend_fraction_sixty", "Original source warmup9/4×60", "135", "90", "120"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Original source vocabulary: what is the numbered HORIZONTAL line on a coordinate grid called?", "horizontal axis", "vertical axis", "origin"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Original source vocabulary: what is the numbered VERTICAL line called?", "vertical axis", "horizontal axis", "origin"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Original source vocabulary: where do horizontal and vertical axes meet?", "origin", "upper-right corner", "a rectangle's center"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Draw My Shape lesson: which input determines a rectangle's POSITION on the numbered grid?", "its coordinate locations", "only its side lengths", "only its color"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Draw My Shape lesson: do dimensions ALONE distinguish two congruent rectangles in different coordinate grid positions?", "no", "yes", "only if colors differ"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Guess Which One partner task: correct questions to identify a secret shape should have what answer type?", "yes or no", "only numeric", "only free drawing"),
+        new("usccss.g5.u07.l01.coordinates_description_vocabulary", "Source Guess Which One lettered figure cards A–L: is their exact identification from publisher diagrams available from the teacher HTML?", "teacher visual review required", "all shapes share identical coordinates", "the first shape is definitely chosen"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

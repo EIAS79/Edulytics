@@ -93,7 +93,7 @@ test('A/B original Rich V2 1/6 and paired 1/8 area grids have visible equal cell
   const rich = load(contentPath);
   const lesson = rich.Lessons.find(x => x.LessonCode === target);
   assert.equal(rich.ContentVersion,
-    'g5-fractions-coordinates-im2021-u03-l01-area-grids-v15-20261031');
+    'g5-fractions-coordinates-im2021-u03-l01-area-grids-v16-20261101');
   const cases = [
     ['one third of the remaining half (3 rows', 3, 2, 6],
     ['Diagram A: quarter of left half (4 rows', 4, 2, 8],
