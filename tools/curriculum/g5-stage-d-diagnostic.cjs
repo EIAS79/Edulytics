@@ -57,7 +57,7 @@ function shard(name){
     if(p.stderr)process.stderr.write(p.stderr);
     if(p.error)throw p.error;
     if(p.status!==0)process.exitCode=p.status||1;
-    const summary=(p.stdout||'').match(/(?:^|\\n)(?:[^\\n]*?)(?:ℹ todo|# todo)\\s+(\\d+)\\s*(?:\\n|$)/);
+    const summary=(p.stdout||'').match(/(?:^|\n)(?:[^\n]*?)(?:ℹ todo|# todo)\s+(\d+)\s*(?:\n|$)/);
     const todos=summary?Number(summary[1]):null;
     if(todos===null){
       console.error('G5_STAGE_D_NODE_SUMMARY_MISSING: cannot prove there are zero TODO tests');
@@ -125,7 +125,7 @@ function sourceEvidenceAudit(){
     lessonsWithExplicitACGap:rows.filter(x=>x.blockers.includes('A_C_EXPLICIT_GAP')).map(x=>x.lessonCode),
     blockedLessons:rows.filter(x=>x.blockers.length).length,rows};
   fs.mkdirSync(path.join(ROOT,'stage-d-results'),{recursive:true});
-  fs.writeFileSync(path.join(ROOT,'stage-d-results/grade5-source-evidence.json'),JSON.stringify(result,null,2)+'\\n');
+  fs.writeFileSync(path.join(ROOT,'stage-d-results/grade5-source-evidence.json'),JSON.stringify(result,null,2)+'\n');
   console.log('G5_SOURCE_EVIDENCE_AUDIT '+JSON.stringify({candidateSha:result.gitCandidateSha,scope:result.scopeLessons,
     itemized:result.itemizedLessonCount,unknownDenominators:result.unknownSourceDenominatorLessons,
     explicitGaps:result.lessonsWithExplicitACGap,blocked:result.blockedLessons,
