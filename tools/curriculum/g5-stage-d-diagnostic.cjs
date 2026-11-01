@@ -246,9 +246,12 @@ function sourceEvidenceAudit(){
       blockers.push('ORIGINAL_2021_STUDENT_FACING_SECTION_NOT_LOCATED');
     if(evidence.status==='A_C_EXPLICIT_GAP')blockers.push('A_C_EXPLICIT_GAP');
     if(evidence.sourceCoverage100Percent!==true)blockers.push('SOURCE_PARITY_NOT_INDEPENDENTLY_PROVEN');
-    if(evidence.academicAccepted!==true)blockers.push('ACADEMIC_SIGNOFF_NOT_PROVEN');
+    // Project owner approved this Grade 5 content pack, including the 107 edits.
+    // This is not independent source-element verification; retain that evidence gate.
+    if(!ownerConsent.ownerContentConsent && evidence.academicAccepted!==true)
+      blockers.push('GRADE5_CONTENT_OWNER_APPROVAL_NOT_PROVEN');
     const acceptedReviewer=typeof evidence.academicReviewerSignature==='string'&&evidence.academicReviewerSignature.trim().length>0;
-    if(!acceptedReviewer)blockers.push('AUTHORIZED_HUMAN_REVIEWER_NOT_EVIDENCED');
+    if(!acceptedReviewer)blockers.push('INDEPENDENT_SOURCE_ELEMENT_REVIEW_NOT_EVIDENCED');
     rows.push({ordinal:item.ordinal,lessonCode:item.code,sourceEvidencePath:item.evidence,
       sourceSnapshotId:evidence.sourceSnapshotId||null,identifiedElementCount:identified,
       hasSourceElementArray,descriptiveOutlineElementCount:descriptiveOutlineCount,
@@ -256,7 +259,10 @@ function sourceEvidenceAudit(){
       sourceElementStatusCounts:statusCounts,editionEvidence,
       original2021StudentFacing:sourceStudentFacing,
       sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
-      academicApproval:evidence.academicAccepted===true?'CLAIMED_IN_AC_REQUIRES_SIGNED_REVIEW':'NOT_APPROVED',
+      academicApproval:ownerConsent.ownerContentConsent
+        ? 'OWNER_APPROVED_GRADE5_CONTENT_SOURCE_VERIFICATION_PENDING'
+        : evidence.academicAccepted===true?'CLAIMED_IN_AC_REQUIRES_SIGNED_REVIEW':'NOT_APPROVED',
+      ownerContentApproved:ownerConsent.ownerContentConsent,independentElementReviewPassed:acceptedReviewer,
       blockers});
   }
   const result={schemaVersion:1,reportType:'SOURCE_ELEMENT_EVIDENCE_DIAGNOSTIC_NOT_ACADEMIC_CERTIFICATION',
@@ -273,7 +279,9 @@ function sourceEvidenceAudit(){
     wrongEditionStudentLessons:rows.filter(x=>x.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT')).length,
     original2021TeacherStudentFacingLessons:rows.filter(x=>x.original2021StudentFacing?.sections>0).length,
     original2021TeacherStudentFacingSections:rows.reduce((n,x)=>n+(x.original2021StudentFacing?.sections||0),0),
-    sourceParityVerifiedLessons:0,academicApprovedLessons:0,
+    sourceParityVerifiedLessons:0,
+    ownerContentApprovedLessons:ownerConsent.ownerContentConsent?rows.length:0,
+    independentlySourceApprovedLessons:0,
     lessonsWithExplicitACGap:rows.filter(x=>x.blockers.includes('A_C_EXPLICIT_GAP')).map(x=>x.lessonCode),
     blockedLessons:rows.filter(x=>x.blockers.length).length,rows};
   fs.mkdirSync(path.join(ROOT,'stage-d-results'),{recursive:true});
@@ -285,6 +293,8 @@ function sourceEvidenceAudit(){
     wrongEditionStudentLessons:result.wrongEditionStudentLessons,
     original2021StudentFacingLessons:result.original2021TeacherStudentFacingLessons,
     original2021StudentFacingSections:result.original2021TeacherStudentFacingSections,
+    ownerContentApprovedLessons:result.ownerContentApprovedLessons,
+    independentlySourceApprovedLessons:result.independentlySourceApprovedLessons,
     explicitGaps:result.lessonsWithExplicitACGap,blocked:result.blockedLessons,
     artifact:'stage-d-results/grade5-source-evidence.json'}));
   if(q.errors.length||result.blockedLessons)process.exitCode=2;

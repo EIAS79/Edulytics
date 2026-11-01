@@ -13,6 +13,8 @@ const approvedGitBlob=crypto.createHash('sha1')
 test('owner authorizes all 148 already READY_FOR_STAGE_D Grade5 lessons with cited decision only',()=>{
   const c=ownerAcademicConsent();
   assert.equal(c.ownerDecision,'OWNER_ACADEMIC_CONSENT_GRANTED');
+  assert.equal(c.ownerContentConsent,true);
+  assert.equal(c.individualSourceParityCertified,false);
   assert.equal(evidence.scope.lessonCount,148);
   assert.equal(evidence.scope.requiredEntryState,'READY_FOR_STAGE_D');
   assert.equal(evidence.scope.grade,'G5');
