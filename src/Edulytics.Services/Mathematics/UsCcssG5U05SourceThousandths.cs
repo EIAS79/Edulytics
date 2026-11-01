@@ -294,6 +294,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l23.source_whole_by_fractional_decimal", "Original printed true/false: 6÷0.01=60", "false", "true", "unknown"),
         new("usccss.g5.u05.l23.source_whole_by_fractional_decimal", "Original printed true/false: 6÷0.1<6÷0.01", "true", "false", "unknown"),
         new("usccss.g5.u05.l23.source_whole_by_fractional_decimal", "Original printed true/false: 6÷0.01=60÷0.1", "true", "false", "unknown"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.42÷5; explain exact decimal place scaling and original mathematical unit", "0.084", "0.184", "-0.026"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.8÷4; explain exact decimal place scaling and original mathematical unit", "0.2", "0.3", "0.09"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.6÷3; explain exact decimal place scaling and original mathematical unit", "0.2", "0.3", "0.09"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.5÷2; explain exact decimal place scaling and original mathematical unit", "0.25", "0.35", "0.14"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.75÷5; explain exact decimal place scaling and original mathematical unit", "0.15", "0.25", "0.04"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 60÷5; explain exact decimal place scaling and original mathematical unit", "12", "12.1", "11.89"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 6÷5; explain exact decimal place scaling and original mathematical unit", "1.2", "1.3", "1.09"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.6÷5; explain exact decimal place scaling and original mathematical unit", "0.12", "0.22", "0.01"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.7÷2; explain exact decimal place scaling and original mathematical unit", "0.35", "0.45", "0.24"),
+        new("usccss.g5.u05.l24.source_decimal_divided_by_whole", "Original Grade5 U05 L24 sharing decimal amount among whole number groups: evaluate source expression 0.45÷5; explain exact decimal place scaling and original mathematical unit", "0.09", "0.19", "-0.02"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
