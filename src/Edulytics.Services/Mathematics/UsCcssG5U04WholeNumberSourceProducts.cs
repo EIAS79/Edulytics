@@ -99,6 +99,18 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 589×36. Teacher checks source digit uniqueness and global closest-product strategy", "589 × 36", 21204, "whole-number product"),
         new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 856×39. Teacher checks source digit uniqueness and global closest-product strategy", "856 × 39", 33384, "whole-number product"),
         new("usccss.g5.u04.l08.original_digits_target_products", "Edulytiks-computed trial from original source digits 3,5,6,8,9: 693×58. Teacher checks source digit uniqueness and global closest-product strategy", "693 × 58", 40194, "whole-number product"),
+        new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse chickadee, rectangular interior floor 4 inches by 4 inches, MINIMUM height 6 inches", "4 × 4 × 6", 96, "cubic inches (minimum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse chickadee, rectangular interior floor 4 inches by 4 inches, MAXIMUM height 10 inches", "4 × 4 × 10", 160, "cubic inches (maximum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse wood duck, rectangular interior floor 10 inches by 18 inches, MINIMUM height 10 inches", "10 × 18 × 10", 1800, "cubic inches (minimum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse wood duck, rectangular interior floor 10 inches by 18 inches, MAXIMUM height 24 inches", "10 × 18 × 24", 4320, "cubic inches (maximum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse barn owl, rectangular interior floor 10 inches by 18 inches, MINIMUM height 15 inches", "10 × 18 × 15", 2700, "cubic inches (minimum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse barn owl, rectangular interior floor 10 inches by 18 inches, MAXIMUM height 18 inches", "10 × 18 × 18", 3240, "cubic inches (maximum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse red-headed woodpecker, rectangular interior floor 6 inches by 6 inches, MINIMUM height 12 inches", "6 × 6 × 12", 432, "cubic inches (minimum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse red-headed woodpecker, rectangular interior floor 6 inches by 6 inches, MAXIMUM height 15 inches", "6 × 6 × 15", 540, "cubic inches (maximum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse bluebird, rectangular interior floor 5 inches by 5 inches, MINIMUM height 6 inches", "5 × 5 × 6", 150, "cubic inches (minimum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse bluebird, rectangular interior floor 5 inches by 5 inches, MAXIMUM height 12 inches", "5 × 5 × 12", 300, "cubic inches (maximum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse swallow, rectangular interior floor 6 inches by 6 inches, MINIMUM height 6 inches", "6 × 6 × 6", 216, "cubic inches (minimum volume)"),
+        new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse swallow, rectangular interior floor 6 inches by 6 inches, MAXIMUM height 8 inches", "6 × 6 × 8", 288, "cubic inches (maximum volume)"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

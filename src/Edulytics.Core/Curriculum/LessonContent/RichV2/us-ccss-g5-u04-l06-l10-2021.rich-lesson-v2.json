@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -577,11 +577,12 @@
       "CultureCode": "en",
       "Title": "The Birds",
       "ExplanationParagraphs": [
-        "Goal: use estimates and exact three-dimensional rectangular-prism volumes to compare viable birdhouse sizes within recommended ranges. The source supplies variable floor sizes and height intervals and asks for minimum/maximum volumes; this is a contextual multiplication lesson, not simple arbitrary box arithmetic.",
-        "Warm-up: describe the geometric shape of a birdhouse from an independently authored text description, rather than copying the public-domain but separately attributed source photo. Note a sloping roof need not be part of the interior rectangular-prism approximation; state any model assumptions.",
-        "Activity 1 — estimate: a small original birdhouse has a 5-inch by 5-inch floor and an interior height from 7 to 11 inches. Find floor area 25 square inches, estimate 25×10≈250 cubic inches, then identify that viable cubic volume is between 175 and 275 cubic inches under the stated rectangular approximation.",
-        "Activity 2 — compare ranges: another birdhouse has an 8-inch by 9-inch rectangular floor and height between 12 and 15 inches; compute volume range 864–1080 cubic inches. Contrast both ranges and defend an estimate before exact computations; require units and explicit geometric assumptions.",
-        "Assessment: an exact boundary value can be graded automatically, but the source requires choosing a reasonable estimate, describing what dimensions mean in context and justifying volume model assumptions. Teacher checks that reasoning, not only one number. No original bird photos or birdhouse charts copied."
+        "Original IM 2021 Grade 5 U04:L09 The Birds uses MULTIPLICATION in a realistic rectangular-prism VOLUME context. The source explicitly lists six bird species, floor side lengths and recommended height intervals; learners must estimate possible volumes then calculate minimum and maximum recommended volumes for EACH, reporting cubic inches rather than square inches.",
+        "Warm-up Notice and Wonder For the Birds: a source bird-house photograph is credited to US Fish and Wildlife Service Public Domain, but the exact image binary and display rights have not been independently verified. Teacher elicits visual observations, including possible sloped roofs; volume models the specified rectangular house interior rather than claiming exact roof shape.",
+        "Activity 1 Home is Where the Bird Lives: ORIGINAL table: chickadee 4×4 inch floor, height 6–10; wood duck 10×18, height 10–24; barn owl 10×18, height 15–18; red-headed woodpecker 6×6, height 12–15; bluebird 5×5, height 6–12; swallow 6×6, height 6–8. For each choose and explain an estimate consistent with width×length×a plausible height within the given source interval.",
+        "Activity 2 What is the Volume? Under the original rectangular-prism model, chickadee 96–160 cubic in; wood duck 1800–4320; barn owl 2700–3240; red-headed woodpecker 432–540; bluebird 150–300; swallow 216–288. Floor area is width×length in square inches, then multiplying by a height in inches produces CUBIC inches; teacher checks model limits, estimates and real world reasonableness.",
+        "Lesson source synthesis reviews the multiplication algorithm with 412×32=13184 (2×412=824 plus30×412=12360), but this does not replace the six birdhouse tasks. Earlier authored fictional 5×5 by height 7–11 and 8×9 by height 12–15 are OPTIONAL EXTENSIONS, not source table entries. Teacher checks open estimations and source picture interpretation. Independent Edulytiks Cool-down uses new birdhouse measurements.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -605,7 +606,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Estimate a small birdhouse",
+          "Title": "Original chickadee recommended volumes",
+          "Question": "A chickadee house floor is 4 by 4 inches and height 6–10 inches. Find the range.",
+          "Method": "Volume of rectangular prism = floor area × height.",
+          "Steps": [
+            "Base area 4×4=16 square inches.",
+            "Minimum 16×6=96 cubic inches.",
+            "Maximum 16×10=160 cubic inches."
+          ],
+          "Answer": "96–160 cubic inches.",
+          "Check": "All dimensions in inches; output must be cubic inches."
+        },
+        {
+          "Title": "Original wood duck and barn owl",
+          "Question": "Two source species both use 10 by 18-inch floors but have different height ranges. Compute ranges.",
+          "Method": "Both floor areas are 180 square inches; multiply by each height interval.",
+          "Steps": [
+            "Wood duck 10–24 inches: 180×10=1800 and180×24=4320.",
+            "Barn owl 15–18 inches: 180×15=2700 and180×18=3240.",
+            "Compare volumes and interpret difference in recommended height."
+          ],
+          "Answer": "Wood duck 1800–4320; barn owl 2700–3240 cubic inches.",
+          "Check": "Shared floor does not imply shared volume range."
+        },
+        {
+          "Title": "Original remaining three species",
+          "Question": "Find woodpecker, bluebird and swallow range of volumes from the printed source table.",
+          "Method": "Compute floor area and multiply by each printed min/max height.",
+          "Steps": [
+            "Red-headed woodpecker 6×6×(12–15)=432–540.",
+            "Bluebird 5×5×(6–12)=150–300.",
+            "Swallow 6×6×(6–8)=216–288."
+          ],
+          "Answer": "432–540;150–300;216–288 cubic inches respectively.",
+          "Check": "Avoid square-inch units for volume."
+        },
+        {
+          "Title": "Optional existing extension — Estimate a small birdhouse",
           "Question": "Floor 5 by 5 inches and height 7–11 inches. Find an approximate volume.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -617,7 +654,7 @@
           "Check": "It lies between 175 and 275 cubic inches."
         },
         {
-          "Title": "Find exact range",
+          "Title": "Optional existing extension — Find exact range",
           "Question": "Find minimum and maximum small birdhouse volumes.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -629,7 +666,7 @@
           "Check": "Increasing height produces increasing volume."
         },
         {
-          "Title": "Compare larger birdhouse",
+          "Title": "Optional existing extension — Compare larger birdhouse",
           "Question": "Floor 8 by 9 inches, height 12–15 inches. Find the range.",
           "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
           "Steps": [
@@ -651,46 +688,72 @@
           "Mistake": "Include a pitched-roof shape in box volume without stating assumptions",
           "WhyWrong": "A sloped roof is not a rectangular prism with the same uniform cross section.",
           "Correction": "Clarify what is modeled as a rectangular interior, and seek additional dimensions for other shapes."
+        },
+        {
+          "Mistake": "Use a fictional 5×5 birdhouse with height 7–11 as the original 2021 source table",
+          "WhyWrong": "The source specifies six species and different fixed base sizes and height intervals; invented values lose all six contextual comparisons.",
+          "Correction": "Restore all six original species and calculate minimum/maximum cubic volume for each; preserve fictional examples only as extensions."
         }
       ],
       "SummaryPoints": [
-        "Multiplication and rectangular-prism volume explain contextual estimate ranges.",
-        "Fixed positive base area makes volume increase with height.",
-        "Teacher reviews estimates, model assumptions and explanation.",
-        "2021 first-edition IM K–5 Grade 5 Unit 4 Lesson 9: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-9/lesson.html. Public task HTML reviewed, original Student Task PDF, gated Cool-down, and separate asset rights not independently reviewed. Edulytiks examples independently authored."
+        "Source original six birdhouse species and printed floor/height intervals are included, not fictional substitutions.",
+        "Exact source ranges (in³): chickadee96–160,wood duck1800–4320,barn owl2700–3240,woodpecker432–540,bluebird150–300,swallow216–288.",
+        "Open plausible estimates and original source photograph remain teacher reviewed.",
+        "Source lesson synthesis 412×32=13184 retains place-value multiplication connection.",
+        "Independent Cool-down new floor7×8 in and height9–12 gives504–672 cubic inches."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "The Birds — reasoning model",
-          "Description": "Original accessible text-only mathematical table; source diagrams, game pieces and photographs are not reproduced.",
+          "Title": "Source six birdhouse recommended rectangular volume ranges",
+          "Description": "Exact printed source measurements with Edulytiks-computed cubic-inch ranges; original bird photograph not reproduced.",
           "Rows": [
             {
-              "Label": "Birdhouse",
+              "Label": "Chickadee",
               "Cells": [
-                "Small",
-                "Large"
+                "4×4",
+                "h 6–10",
+                "96–160 in³"
               ]
             },
             {
-              "Label": "Floor dimensions",
+              "Label": "Wood duck",
               "Cells": [
-                "5×5 in",
-                "8×9 in"
+                "10×18",
+                "h 10–24",
+                "1800–4320 in³"
               ]
             },
             {
-              "Label": "Height range",
+              "Label": "Barn owl",
               "Cells": [
-                "7–11 in",
-                "12–15 in"
+                "10×18",
+                "h 15–18",
+                "2700–3240 in³"
               ]
             },
             {
-              "Label": "Volume range",
+              "Label": "Red-headed woodpecker",
               "Cells": [
-                "175–275 in³",
-                "864–1080 in³"
+                "6×6",
+                "h 12–15",
+                "432–540 in³"
+              ]
+            },
+            {
+              "Label": "Bluebird",
+              "Cells": [
+                "5×5",
+                "h 6–12",
+                "150–300 in³"
+              ]
+            },
+            {
+              "Label": "Swallow",
+              "Cells": [
+                "6×6",
+                "h 6–8",
+                "216–288 in³"
               ]
             }
           ]
