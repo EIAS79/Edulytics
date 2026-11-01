@@ -79,6 +79,18 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Eleven grains of rice together weigh one third gram: find weight of ONE grain", "(1/3) ÷ 11", 1, 33, "grams per grain"),
         new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Mai travels three quarters of a nine-tenths mile long road", "(9/10) × (3/4)", 27, 40, "miles run"),
         new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Nine tennis balls each weigh 2 1/16 ounces", "(33/16) × 9", 297, 16, "ounces total"),
+        new("usccss.g5.u03.l18.original_warmup_and_picnic", "3 times one tenth of original whole", "3 × (1/10)", 3, 10, "of original whole"),
+        new("usccss.g5.u03.l18.original_warmup_and_picnic", "one tenth multiplied by three", "(1/10) × 3", 3, 10, "of original whole"),
+        new("usccss.g5.u03.l18.original_warmup_and_picnic", "one tenth shared among three people", "(1/10) ÷ 3", 1, 30, "of original whole"),
+        new("usccss.g5.u03.l18.original_warmup_and_picnic", "three whole units divided into tenth-sized groups", "3 ÷ (1/10)", 30, 1, "groups"),
+        new("usccss.g5.u03.l18.original_warmup_and_picnic", "Diego makes quarter-pound burgers from two pounds beef", "2 ÷ (1/4)", 8, 1, "burgers"),
+        new("usccss.g5.u03.l18.original_warmup_and_picnic", "Diego and Clare equally share one-quarter pound potato salad", "(1/4) ÷ 2", 1, 8, "pounds per person"),
+        new("usccss.g5.u03.l18.original_partner_contexts", "Partner A: Han walks three fourths of a four-fifths kilometer route", "(4/5) × (3/4)", 3, 5, "kilometers"),
+        new("usccss.g5.u03.l18.original_partner_contexts", "Partner A: half gallon water equally divided among ten science groups", "(1/2) ÷ 10", 1, 20, "gallons per group"),
+        new("usccss.g5.u03.l18.original_partner_contexts", "Partner A: three kilograms fills one fifth of strawberry container, find full capacity", "3 ÷ (1/5)", 15, 1, "kilograms capacity"),
+        new("usccss.g5.u03.l18.original_partner_contexts", "Partner B: Han takes four minutes to walk one-third kilometer, time for whole kilometer", "4 ÷ (1/3)", 12, 1, "minutes"),
+        new("usccss.g5.u03.l18.original_partner_contexts", "Partner B: Clare collects two and two thirds times her four-kilogram soil goal", "(8/3) × 4", 32, 3, "kilograms collected"),
+        new("usccss.g5.u03.l18.original_partner_contexts", "Partner B: a half-pound strawberry container is three fifths full", "(1/2) × (3/5)", 3, 10, "pounds strawberries"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>

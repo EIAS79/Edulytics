@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v7-20261101",
+  "ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -341,11 +341,12 @@
       "CultureCode": "en",
       "Title": "Represent Situations with Multiplication and Division",
       "ExplanationParagraphs": [
-        "Goal: choose and justify multiplication and division representations for realistic fraction contexts, distinguishing why the same numbers give radically different answers when their roles are reversed. The public 2021 lesson explicitly relates a division equation and a multiplication equation to one contextual drawing.",
-        "Warm-up: compare 3×1/10=3/10 with 1/10×3=3/10, then compare 1/10÷3=1/30 with 3÷1/10=30. Explain that order is reversible in multiplication but not generally in division.",
-        "Activity 1 — original neighborhood meal: a package has 3 pounds of beans and each serving needs 1/4 pound. Count 12 quarter-pound portions and write 3÷1/4=12 and 12×1/4=3. Contrast with one quarter of a pound shared among three people: 1/4÷3=1/12 pound, and 3×1/12=1/4.",
-        "Activity 2: present two separate tape diagrams — one representing three whole pounds subdivided into fourths, the other representing one selected fourth subdivided into thirds — and ask partners to match each to its proper division and multiplication equation. Encourage a written explanation of why the order of multiplication factors is flexible but division terms are not.",
-        "Assessment: the original source requires stories, diagrams, both operations and partner revision; numeric result can be checked, but drawings and equation-story correspondence require teacher review. Original publisher images and gated solutions are not reproduced."
+        "Original IM 2021 U03:L18: represent contextual fraction multiplication AND division by both a correct multiplication/division equation and a diagram while preserving named measurement units. Multiple student justifications may be valid; reciprocal operations change the story.",
+        "Warm-up original source 3×1/10=3/10, 1/10×3=3/10, 1/10÷3=1/30, 3÷1/10=30. Contrast commutativity of multiplication with noncommutativity of division; draw an original whole and explain.",
+        "Activity 1 Putting it All Together: Diego's dad has 2 pounds beef, 1/4 lb per burger ->2÷1/4=8 burgers AND 8×1/4=2 pounds. Diego and Clare share 1/4 pound potato salad between TWO people ->(1/4)÷2=1/8 pound each AND 2×1/8=1/4 pound. The teacher reviews two distinct original diagrams and corresponding inverse equations.",
+        "Activity 2 Multiplication or Division? Partner A actual source: Han walks 3/4 of a 4/5-km route ->3/5 km; 1/2 gallon water shared among 10 science groups ->1/20 gallon each; 3 kilograms strawberries fills 1/5 capacity ->15 kg full. Partner B: 4 minutes per 1/3 km ->12 minutes per kilometer; soil collected 2 2/3 times 4-kg goal ->10 2/3 kg; a 1/2-pound strawberry container 3/5 full ->3/10 pounds.",
+        "Students independently choose the operation, label physical units, exchange paper with partners and resolve equation disagreement. The Edulytiks numerical support checks one exact answer only; source diagrams, verbal reciprocal reasoning and partner paper feedback remain TEACHER_REVIEW_REQUIRED. Original gated publisher Cool-down is unavailable, so the independent teacher-reviewed alternative is distinctly authored.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -369,7 +370,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Count servings",
+          "Title": "Source burger and potato salad reciprocal equations",
+          "Question": "How many 1/4-pound burgers can Diego make from 2 pounds, and how much of 1/4 pound potato salad do two people share?",
+          "Method": "Group count versus share size; explicit reciprocal multiplication.",
+          "Steps": [
+            "2÷1/4=8 burgers, check 8×1/4=2 pounds.",
+            "1/4÷2=1/8 pound each, check 2×1/8=1/4 pound.",
+            "Draw two whole-referenced diagrams and distinguish units."
+          ],
+          "Answer": "8 burgers; 1/8 pound salad per person.",
+          "Check": "Correct operations must be justified in the distinct stories."
+        },
+        {
+          "Title": "Original Partner A mathematics",
+          "Question": "Calculate Han 3/4 of 4/5 km, science 1/2 gallon shared among 10, and strawberry capacity where 3 kg is 1/5 full.",
+          "Method": "Choose multiply/divide for each named source quantity.",
+          "Steps": [
+            "(4/5)×(3/4)=3/5 km.",
+            "(1/2)÷10=1/20 gallon per group.",
+            "3÷(1/5)=15 kg whole-container capacity."
+          ],
+          "Answer": "3/5 km; 1/20 gallon; 15 kg.",
+          "Check": "Units and original wholes differ for the three tasks."
+        },
+        {
+          "Title": "Original Partner B mathematics",
+          "Question": "Han takes 4 min per 1/3 km, soil weighs 2 2/3 times 4 kg, and strawberries occupy 3/5 of a 1/2 lb container.",
+          "Method": "Choose the operation and calculate exact fractional values.",
+          "Steps": [
+            "4÷(1/3)=12 minutes for one km.",
+            "(8/3)×4=32/3 kg =10 2/3 kg.",
+            "(1/2)×(3/5)=3/10 pound."
+          ],
+          "Answer": "12 minutes; 10 2/3 kg; 3/10 lb.",
+          "Check": "Units are minutes, kilograms and pounds."
+        },
+        {
+          "Title": "Optional existing extension — Count servings",
           "Question": "Three pounds of beans, quarter-pound portions. How many servings?",
           "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
           "Steps": [
@@ -381,7 +418,7 @@
           "Check": "3÷1/4=12 and 12×1/4=3 pounds."
         },
         {
-          "Title": "Divide a quarter",
+          "Title": "Optional existing extension — Divide a quarter",
           "Question": "One quarter pound is shared by three students. What does each receive?",
           "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
           "Steps": [
@@ -393,7 +430,7 @@
           "Check": "1/4÷3=1/12 and 3×1/12=1/4."
         },
         {
-          "Title": "Distinguish equations with identical printed numbers",
+          "Title": "Optional existing extension — Distinguish equations with identical printed numbers",
           "Question": "Are 3÷1/4 and 1/4÷3 the same?",
           "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
           "Steps": [
@@ -415,39 +452,47 @@
           "Mistake": "Use the same area diagram for opposite division expressions",
           "WhyWrong": "One model represents whole-group counting while the other represents fractional equal sharing.",
           "Correction": "Draw the correct original whole and identify the divided quantity before partitioning."
+        },
+        {
+          "Mistake": "Treat whole÷unit fraction and unit fraction÷whole as interchangeable operations or replace source Partner A/B statements with generic examples",
+          "WhyWrong": "Diego's burger count is 8 while salad share is 1/8, and each original named story determines correct physical units.",
+          "Correction": "Restore the exact original two picnic prompts and six source Partner A/B numerical situations; require a matching multiplication/division equation and model."
         }
       ],
       "SummaryPoints": [
-        "Related multiplication equations can verify a division calculation.",
-        "Whole÷unit fraction counts groups; unit fraction÷whole gives a smaller share.",
-        "The diagram-to-context explanation remains teacher-reviewed.",
-        "Source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 18 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-18/lesson.html. Public student-facing HTML task reviewed; original Edulytiks examples. Original Student Task PDF, gated Cool-down and rights of third-party source artwork not independently verified."
+        "Warmup 3/10,3/10,1/30,30 from the four different source expressions.",
+        "Burger story 8 burgers and potato salad 1/8 lb/person require reciprocal equations and drawings.",
+        "Partner A: 3/5 km,1/20 gallon per group,15 kg capacity.",
+        "Partner B: 12 min,32/3 kg soil,3/10 lb strawberries.",
+        "Teacher reviews operation selection, inverse equations, units and peer explanations."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Represent Situations with Multiplication and Division — exact meaning",
-          "Description": "First-party text diagram or quotient-comparison table; no external source figure cards reproduced.",
+          "Title": "Original source partner-context operations",
+          "Description": "Edulytiks original table; learner source diagrams and peer review remain teacher assessed.",
           "Rows": [
             {
-              "Label": "Situation",
+              "Label": "Activity 1",
               "Cells": [
-                "Count portions",
-                "Share a quarter"
+                "2÷1/4=8 burgers",
+                "1/4÷2=1/8 lb salad"
               ]
             },
             {
-              "Label": "Division",
+              "Label": "Partner A",
               "Cells": [
-                "3÷1/4=12",
-                "1/4÷3=1/12"
+                "3/5 km walked",
+                "1/20 gallon/group",
+                "15 kg capacity"
               ]
             },
             {
-              "Label": "Inverse check",
+              "Label": "Partner B",
               "Cells": [
-                "12×1/4=3",
-                "3×1/12=1/4"
+                "12 min/km",
+                "10 2/3 kg soil",
+                "3/10 lb strawberries"
               ]
             }
           ]
