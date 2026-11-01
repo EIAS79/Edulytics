@@ -105,6 +105,34 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l20.source_unknown_class_whole", "Jada source equal-quarters check: total grade-five pupils 96 divided among four classes", "96 ÷ 4", 24, 1, "students in one class"),
         new("usccss.g5.u03.l20.source_calcium_rocket_total", "Original source 250 mg calcium is one quarter of recommended daily allowance", "250 ÷ (1/4)", 1000, 1, "mg total recommended calcium"),
         new("usccss.g5.u03.l20.source_calcium_rocket_total", "Original source 60 days to travel one fifth of a Mars route, estimate total travel days in a constant-speed model", "60 ÷ (1/5)", 300, 1, "days total travel"),
+        // First-party supplementary source-aligned numeric practice. Original source indices preserved.
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares", "Edulytiks-original supplementary: 6 people share one half of a pan equally", "(1/2) ÷ 6", 1, 12, "of original pan"),
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares", "Edulytiks-original supplementary: 7 people share one half of a pan equally", "(1/2) ÷ 7", 1, 14, "of original pan"),
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares", "Edulytiks-original supplementary: 8 people share one half of a pan equally", "(1/2) ÷ 8", 1, 16, "of original pan"),
+        new("usccss.g5.u03.l11.mac_cheese_half_pan_equal_shares", "Edulytiks-original supplementary: 9 people share one half of a pan equally", "(1/2) ÷ 9", 1, 18, "of original pan"),
+        new("usccss.g5.u03.l12.third_division_teacher_diagrams", "Edulytiks-original supplementary: one third of the same whole shared among 5 people", "(1/3) ÷ 5", 1, 15, "of the original whole"),
+        new("usccss.g5.u03.l12.third_division_teacher_diagrams", "Edulytiks-original supplementary: one third of the same whole shared among 6 people", "(1/3) ÷ 6", 1, 18, "of the original whole"),
+        new("usccss.g5.u03.l12.third_division_teacher_diagrams", "Edulytiks-original supplementary: one third of the same whole shared among 7 people", "(1/3) ÷ 7", 1, 21, "of the original whole"),
+        new("usccss.g5.u03.l12.quarter_division_pattern", "Edulytiks-original supplementary: one quarter of the same whole shared among 5 people", "(1/4) ÷ 5", 1, 20, "of the original whole"),
+        new("usccss.g5.u03.l12.quarter_division_pattern", "Edulytiks-original supplementary: one quarter of the same whole shared among 6 people", "(1/4) ÷ 6", 1, 24, "of the original whole"),
+        new("usccss.g5.u03.l12.quarter_division_pattern", "Edulytiks-original supplementary: one quarter of the same whole shared among 7 people", "(1/4) ÷ 7", 1, 28, "of the original whole"),
+        new("usccss.g5.u03.l14.snack_servings_story_selection", "Edulytiks-original supplementary: 4 cups split into equal 1/4-cup servings", "4 ÷ (1/4)", 16, 1, "servings"),
+        new("usccss.g5.u03.l14.snack_servings_story_selection", "Edulytiks-original supplementary: 3 cups split into equal 1/2-cup servings", "3 ÷ (1/2)", 6, 1, "servings"),
+        new("usccss.g5.u03.l14.snack_servings_story_selection", "Edulytiks-original supplementary: 6 cups split into equal 1/3-cup servings", "6 ÷ (1/3)", 18, 1, "servings"),
+        new("usccss.g5.u03.l16.source_ninetyeight_fifth_estimate", "Edulytiks-original supplementary: estimate near one hundred wholes divided into one-fifth units", "96 ÷ (1/5)", 480, 1, "fifth-size groups"),
+        new("usccss.g5.u03.l16.source_ninetyeight_fifth_estimate", "Edulytiks-original supplementary: estimate near one hundred wholes divided into one-fifth units", "97 ÷ (1/5)", 485, 1, "fifth-size groups"),
+        new("usccss.g5.u03.l16.source_ninetyeight_fifth_estimate", "Edulytiks-original supplementary: estimate near one hundred wholes divided into one-fifth units", "99 ÷ (1/5)", 495, 1, "fifth-size groups"),
+        new("usccss.g5.u03.l16.source_ninetyeight_fifth_estimate", "Edulytiks-original supplementary: estimate near one hundred wholes divided into one-fifth units", "101 ÷ (1/5)", 505, 1, "fifth-size groups"),
+        new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Edulytiks-original supplementary: nine rice grains together weigh one third gram", "(1/3) ÷ 9", 1, 27, "grams per grain"),
+        new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Edulytiks-original supplementary: one half of a nine-tenths-mile route is walked", "(9/10) × (1/2)", 9, 20, "miles"),
+        new("usccss.g5.u03.l17.source_real_world_fraction_contexts", "Edulytiks-original supplementary: eight tennis balls each weigh two and one sixteenth ounces", "(33/16) × 8", 264, 16, "ounces"),
+        new("usccss.g5.u03.l19.source_estimation_exact", "Edulytiks-original supplementary: estimate then calculate 27 groups of 26/9 units", "27 × (26/9)", 702, 9, "units"),
+        new("usccss.g5.u03.l19.source_estimation_exact", "Edulytiks-original supplementary: estimate then calculate 29 groups of 26/9 units", "29 × (26/9)", 754, 9, "units"),
+        new("usccss.g5.u03.l19.source_estimation_exact", "Edulytiks-original supplementary: estimate then calculate 30 groups of 26/9 units", "30 × (26/9)", 780, 9, "units"),
+        new("usccss.g5.u03.l19.source_estimation_exact", "Edulytiks-original supplementary: estimate then calculate 32 groups of 26/9 units", "32 × (26/9)", 832, 9, "units"),
+        new("usccss.g5.u03.l20.source_calcium_rocket_total", "Edulytiks-original supplementary: 200 mg calcium represents one fifth of a hypothetical total", "200 ÷ (1/5)", 1000, 1, "mg total"),
+        new("usccss.g5.u03.l20.source_calcium_rocket_total", "Edulytiks-original supplementary: 300 mg calcium represents one third of a hypothetical total", "300 ÷ (1/3)", 900, 1, "mg total"),
+        new("usccss.g5.u03.l20.source_calcium_rocket_total", "Edulytiks-original supplementary: 80 travel days represents one quarter of a uniform-speed journey", "80 ÷ (1/4)", 320, 1, "days total"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>
@@ -145,7 +173,9 @@ public static class UsCcssG5U03SourceDivisionQuestions
             1=>[wrongA,correct,wrongB],
             _=>[wrongA,wrongB,correct]
         };
-        string prompt=$"{c.Context}. Calculate the exact source expression {c.Expression} " +
+        string kind=c.Context.StartsWith("Edulytiks-original",StringComparison.Ordinal)
+            ? "supplementary source-aligned expression" : "exact source expression";
+        string prompt=$"{c.Context}. Calculate the {kind} {c.Expression} " +
             $"relative to the SAME original whole. Select 1: {options[0]}; 2: {options[1]}; 3: {options[2]}. " +
             "Student sketches, original context interpretations and explanations are TEACHER_REVIEW_REQUIRED.";
         string solution=$"{c.Expression} = {correct} {c.Units}. " +
