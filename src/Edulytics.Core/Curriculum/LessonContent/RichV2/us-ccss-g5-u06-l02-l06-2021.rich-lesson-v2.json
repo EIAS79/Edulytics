@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -751,11 +751,17 @@
       "CultureCode": "en",
       "Title": "Multi-step Conversion Problems: Metric Length",
       "ExplanationParagraphs": [
-        "Goal: solve MULTI-STEP length situations involving centimeter steps, meter totals and kilometer distances, then compare weekly runners after making their units compatible. The source asks learners to choose appropriate units and compare several strategies for sum and difference, not just copy conversion ratios.",
-        "Warm-up: a typical step may be measured in centimeters; a day-long walk is easier to express in meters or kilometers. Discuss the meaning of a 0.52-meter step and why 8000 repeated steps produce a distance above4km, conditional on constant stride length.",
-        "Activity 1 — count steps: assume a measured half-meter-ish stride of52cm and8000 steps in a day. Multiply52×8000=416000 centimeters, then divide100 to4160 meters or divide100000 to4.16km. Check equivalence by converting0.52m×8000 directly to4160m. State this is an idealized constant-step model, not a measured personal activity record.",
-        "Activity 2 — two weekly runners: one runner's fictional kilometer totals are 5.5,6.25,4.75,7.1,6.4 for five days, summing exactly30.0km. Another's meter totals are5400,6200,5800,6500,7000m, summing30900m=30.9km. The second runner traveled0.9km farther. Explain why direct comparison of30 and30900 without units is invalid.",
-        "Assessment: actual individual stride measurement or partner work, choice of unit, estimated realism, adding daily distances, conversion reasoning and a written comparison are teacher-reviewed. Numeric totals can support the result but cannot certify the real-life modeling assumptions."
+        "Original IM2021 G5 U06:L05 uses multi-step metric length conversion and decimal addition/subtraction, with the same distance expressed in centimeters, meters or kilometers. Source situational choices of sensible display units are open teacher-scored decisions.",
+        "Warm-up source T/F5423×10=50423 FALSE (54230),5423÷10=542.3 TRUE,5423÷100=54.23 TRUE. Teacher reviews why multiplying by10 changes digits' place values.",
+        "Activity1 Walk All Day: Lin's watch assumes EACH STEP 50cm and original events: 5 steps to friend's desk=250cm=2.5m;12 steps to classroom front=600cm=6m;250 steps to bus=12500cm=125m;1000 steps twice around playground=50000cm=500m. Her original daily8500 steps correspond425000cm=4250m=4.25km. Source asks which units are appropriate for those contexts, rather than a single fixed choice.",
+        "Activity2 Who Ran Farther? Original Tyler km Monday8.5 Tuesday6.25 Wednesday10.3 Thursday5.75 Friday9.25 =>40.05km. Clare original meters 5400+7500+8250+6750+7250=35150m=35.15km. Tyler ran4.90km farther. Different unit choice must not alter the physical distance; learner explains additive strategies.",
+        "Previous invented52cm×8000 steps and invented weekly jog totals are mathematically valid optional Edulytiks extras only. Source watches, variables and original student estimates remain teacher reviewed; independent Edulytiks Cool-down is distinct from publisher gated source.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: solve MULTI-STEP length situations involving centimeter steps, meter totals and kilometer distances, then compare weekly runners after making their units compatible. The source asks learners to choose appropriate units and compare several strategies for sum and difference, not just copy conversion ratios.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: a typical step may be measured in centimeters; a day-long walk is easier to express in meters or kilometers. Discuss the meaning of a 0.52-meter step and why 8000 repeated steps produce a distance above4km, conditional on constant stride length.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — count steps: assume a measured half-meter-ish stride of52cm and8000 steps in a day. Multiply52×8000=416000 centimeters, then divide100 to4160 meters or divide100000 to4.16km. Check equivalence by converting0.52m×8000 directly to4160m. State this is an idealized constant-step model, not a measured personal activity record.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — two weekly runners: one runner's fictional kilometer totals are 5.5,6.25,4.75,7.1,6.4 for five days, summing exactly30.0km. Another's meter totals are5400,6200,5800,6500,7000m, summing30900m=30.9km. The second runner traveled0.9km farther. Explain why direct comparison of30 and30900 without units is invalid.",
+        "Optional previous source-aligned or independently authored extension — Assessment: actual individual stride measurement or partner work, choice of unit, estimated realism, adding daily distances, conversion reasoning and a written comparison are teacher-reviewed. Numeric totals can support the result but cannot certify the real-life modeling assumptions."
       ],
       "KeyConcepts": [
         {
@@ -779,7 +785,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Calculate daily distance",
+          "Title": "Source exact 1 — Original IM2021 U06:L05 Multi-step Metric Length",
+          "Question": "Original warmup5423×10=50423 T/F",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original IM2021 U06:L05 Multi-step Metric Length",
+          "Question": "Original warmup5423÷10=542.3 T/F",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original IM2021 U06:L05 Multi-step Metric Length",
+          "Question": "Original warmup5423÷100=54.23 T/F",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original IM2021 U06:L05 Multi-step Metric Length",
+          "Question": "Lin step 5×50cm walking friend's desk distance cm",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "250",
+          "Check": "Original numeric source example; incorrect distractors 25 and 2500 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Calculate daily distance",
           "Question": "A hypothetical walker makes8000 steps averaging52cm each. Estimate distance.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -791,7 +845,7 @@
           "Check": "0.52m×8000=4160m."
         },
         {
-          "Title": "Sum one runner's week",
+          "Title": "Optional existing extension — Sum one runner's week",
           "Question": "Find total km for5.5,6.25,4.75,7.1,6.4km.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -803,7 +857,7 @@
           "Check": "All values have the same km unit."
         },
         {
-          "Title": "Compare a second week",
+          "Title": "Optional existing extension — Compare a second week",
           "Question": "The other distances are5400,6200,5800,6500,7000 meters. Who went farther?",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -825,18 +879,90 @@
           "Mistake": "Treat an assumed constant step length as a guaranteed measured distance",
           "WhyWrong": "The model assumes each step has approximately the same length.",
           "Correction": "Label result an estimate; discuss measurement variability."
+        },
+        {
+          "Mistake": "Replace source stride50cm and8500 steps with invented52cm/8000 assumptions",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore printed Lin step counts and original runner weekly tables, and treat unit selection as open reasoning."
         }
       ],
       "SummaryPoints": [
-        "Multi-step conversions preserve the physical quantity across cm, m and km.",
-        "Choose convenient units and check comparisons only after alignment.",
-        "Teacher reviews estimation assumptions and student method explanations.",
-        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-5/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+        "Original Lin daily 8500 steps×50cm=4.25km.",
+        "Tyler runs40.05km, Clare35.15km, Tyler4.90km farther.",
+        "Source warmup false,true,true.",
+        "Source sensible units and student explanation teacher scored.",
+        "Optional prior: Multi-step conversions preserve the physical quantity across cm, m and km.",
+        "Optional prior: Choose convenient units and check comparisons only after alignment.",
+        "Optional prior: Teacher reviews estimation assumptions and student method explanations.",
+        "Optional prior: Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-5/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multi-step Conversion Problems: Metric Length — original model",
+          "Title": "Original IM2021 U06:L05 Multi-step Metric Length — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup5423×10=50423 T/F",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup5423÷10=542.3 T/F",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup5423÷100=54.23 T/F",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Lin step 5×50cm walking friend's desk distance cm",
+              "Cells": [
+                "250",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Lin step 5×50cm friend's desk distance meters",
+              "Cells": [
+                "2.5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Lin step 12×50cm classroom front distance cm",
+              "Cells": [
+                "600",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Lin step12×50cm classroom front distance meters",
+              "Cells": [
+                "6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Lin 250×50cm walk classroom to bus distance cm",
+              "Cells": [
+                "12500",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Multi-step Conversion Problems: Metric Length — original model",
           "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
           "Rows": [
             {

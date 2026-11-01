@@ -385,6 +385,21 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l04.original_metric_divisions", "Original source Anke Behmer javelin4454cm in meters", "44.54", "4.454", "445.4"),
         new("usccss.g5.u06.l04.original_metric_divisions", "Original source unit table 7864 meters in kilometers", "7.864", "78.64", "0.7864"),
         new("usccss.g5.u06.l04.original_metric_divisions", "Original source unit table2.037 kilometers in meters", "2037", "203.7", "20370"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Original warmup5423×10=50423 T/F", "false", "true", "unknown"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Original warmup5423÷10=542.3 T/F", "true", "false", "unknown"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Original warmup5423÷100=54.23 T/F", "true", "false", "unknown"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin step 5×50cm walking friend's desk distance cm", "250", "25", "2500"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin step 5×50cm friend's desk distance meters", "2.5", "25", "0.25"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin step 12×50cm classroom front distance cm", "600", "60", "6000"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin step12×50cm classroom front distance meters", "6", "60", "0.6"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin 250×50cm walk classroom to bus distance cm", "12500", "1250", "125000"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin250 steps to bus distance meters", "125", "12.5", "1250"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin1000×50cm running twice playground distance cm", "50000", "5000", "500000"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin1000 steps playground distance meters", "500", "50", "5000"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Lin daily8500 steps at50cm each distance km", "4.25", "42.5", "0.425"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Tyler source weekly run km 8.5+6.25+10.3+5.75+9.25", "40.05", "40.5", "39.05"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Clare source weekly run meters 5400+7500+8250+6750+7250 in KM", "35.15", "35.51", "351.5"),
+        new("usccss.g5.u06.l05.source_multistep_metric_distance", "Tyler distance over Clare in km", "4.9", "3.9", "5.9"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
