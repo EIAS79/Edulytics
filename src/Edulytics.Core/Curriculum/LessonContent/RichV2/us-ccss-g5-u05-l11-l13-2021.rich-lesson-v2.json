@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l11-l13-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u05-l11-l13-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -220,11 +220,17 @@
       "CultureCode": "en",
       "Title": "Estimate and Add",
       "ExplanationParagraphs": [
-        "Goal: estimate decimal sums and organize an addition standard algorithm with each decimal place aligned, composing tenths and whole units as necessary. In the 2021 source, students first find a decimal sum their own way, critique another learner's algorithm after partner feedback, and only then estimate sums whose decimal-place counts differ.",
-        "Warm-up: use a benchmark such as 4.70+3.20≈8 and discuss why the actual sum is close to 8 before calculating; an estimate is an early magnitude check, not a substitute for exact result or justifying its precision.",
-        "Activity 1 — connect strategies: calculate 4.76+2.58 as 4.76+2.00+0.58=7.34. Then write vertical columns, align both decimal points and compose 6+8=14 hundredths into one tenth and four hundredths. Continue adding tenths with the carry, explain why the final sum is 7.34, and revise a partner explanation if it confuses the composed unit.",
-        "Activity 2 — decimal lengths differ: estimate 3.7+6.84. Write 3.70+6.84=10.54, close to 11. Next estimate 8.96+2.3 by comparison with 9+2.3≈11.3, then calculate 8.96+2.30=11.26. Compare these estimates to whole numbers and explain why right-aligning the last *printed digits* can add hundredths to tenths incorrectly.",
-        "Assessment: exact sums and nearest-whole decisions can be checked, but teacher reviews the algorithm's carry explanation, initial estimate, learner choice of method and revision after partner questions. Source student-response and protected Cool-down not copied."
+        "Original IM2021 Grade5 U05:L12 Estimate and Add builds accurate place-value aligned decimal addition strategies from Grade4 whole-number addition. Students ESTIMATE first where required and may choose an efficient standard algorithm or another valid reasoned method; the written method and carry explanations remain teacher reviewed.",
+        "Warm-up Number Talk 99 Hundredths: original four expressions 1.00+0.99+0.02=2.01;1.99+0.02=2.01;1.99+0.03=2.02;1.99+0.13=2.12. Regroup 99 hundredths and extra hundredths as two whole units plus the stated remainder; ask which sums are equivalent and why.",
+        "Activity 1 Use the Standard Algorithm to Add Decimals: original5.61+2.53=8.14. Han's original photographed vertical calculation invites learners to identify place alignment and regrouping; original6.62+3.74=10.36, with 6 hundredths+4 hundredths=10 hundredths composing one tenth and 6 tenths+7 tenths plus carrying=14 tenths composing one whole. Teacher verifies original Han's written steps rather than inventing an algorithm image.",
+        "Activity 2 Estimate and Find the Value: source2.82+5.2=8.02 closest WHOLE8; source6.8+4.97=11.77 closest WHOLE12. Estimate BEFORE computing exactly, then use aligned decimal positions (5.20 and6.80) to check source results. Distinguish whole-estimate task from an exact rounded decimal key.",
+        "Previous correct fictional4.76+2.58,3.7+6.84 and8.96+2.3 remain only OPTIONAL Edulytiks examples. Numeric source choices check the eight original expressions and two nearest-whole values; written algorithm, estimation rationale and original figure require TEACHER_REVIEW_REQUIRED. Independently authored Cool-down uses7.84+3.58.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: estimate decimal sums and organize an addition standard algorithm with each decimal place aligned, composing tenths and whole units as necessary. In the 2021 source, students first find a decimal sum their own way, critique another learner's algorithm after partner feedback, and only then estimate sums whose decimal-place counts differ.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: use a benchmark such as 4.70+3.20≈8 and discuss why the actual sum is close to 8 before calculating; an estimate is an early magnitude check, not a substitute for exact result or justifying its precision.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — connect strategies: calculate 4.76+2.58 as 4.76+2.00+0.58=7.34. Then write vertical columns, align both decimal points and compose 6+8=14 hundredths into one tenth and four hundredths. Continue adding tenths with the carry, explain why the final sum is 7.34, and revise a partner explanation if it confuses the composed unit.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — decimal lengths differ: estimate 3.7+6.84. Write 3.70+6.84=10.54, close to 11. Next estimate 8.96+2.3 by comparison with 9+2.3≈11.3, then calculate 8.96+2.30=11.26. Compare these estimates to whole numbers and explain why right-aligning the last *printed digits* can add hundredths to tenths incorrectly.",
+        "Optional previous source-aligned or independently authored extension — Assessment: exact sums and nearest-whole decisions can be checked, but teacher reviews the algorithm's carry explanation, initial estimate, learner choice of method and revision after partner questions. Source student-response and protected Cool-down not copied."
       ],
       "KeyConcepts": [
         {
@@ -248,7 +254,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Explain decimal composing",
+          "Title": "Source warm-up 99 hundredths",
+          "Question": "Compute1.00+0.99+0.02,1.99+0.02,1.99+0.03,1.99+0.13.",
+          "Method": "Regroup decimal hundredths across whole boundaries.",
+          "Steps": [
+            "1.00+0.99+0.02=2.01.",
+            "1.99+0.02=2.01 and+0.03=2.02.",
+            "1.99+0.13=2.12."
+          ],
+          "Answer": "2.01,2.01,2.02,2.12.",
+          "Check": "Source exercises preserve hundredths."
+        },
+        {
+          "Title": "Source Han standard algorithm",
+          "Question": "Find original5.61+2.53 and6.62+3.74 with aligned decimal points.",
+          "Method": "Add matching place columns and compose groups of ten.",
+          "Steps": [
+            "5.61+2.53=8.14.",
+            "6.62+3.74: add 0.62+0.74=1.36.",
+            "6+3+1.36=10.36."
+          ],
+          "Answer": "8.14 and10.36.",
+          "Check": "Teachers score Han step interpretation and carries."
+        },
+        {
+          "Title": "Original estimate then exact sums",
+          "Question": "What whole number is2.82+5.2 near? And6.8+4.97?",
+          "Method": "Use benchmark whole numbers and verify exact values.",
+          "Steps": [
+            "2.82≈3 and5.2≈5, sum≈8; exact8.02.",
+            "6.8≈7 and4.97≈5, sum≈12; exact11.77.",
+            "Compare estimates to exact results."
+          ],
+          "Answer": "Closest8 and12; exact8.02 and11.77.",
+          "Check": "Source requests both estimate and exact evaluation."
+        },
+        {
+          "Title": "Optional existing extension — Explain decimal composing",
           "Question": "Find 4.76+2.58 with a correctly aligned algorithm.",
           "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
           "Steps": [
@@ -260,7 +302,7 @@
           "Check": "4.76+2.58=7.34."
         },
         {
-          "Title": "Estimate and align",
+          "Title": "Optional existing extension — Estimate and align",
           "Question": "Estimate 3.7+6.84 and calculate exactly.",
           "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
           "Steps": [
@@ -272,7 +314,7 @@
           "Check": "10.54 is 0.46 from 11 and 0.54 from 10."
         },
         {
-          "Title": "Use compensation",
+          "Title": "Optional existing extension — Use compensation",
           "Question": "Calculate 8.96+2.3 without dropping the missing hundredth.",
           "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
           "Steps": [
@@ -294,18 +336,58 @@
           "Mistake": "Forget a composed tenth when adding a hundredths carry",
           "WhyWrong": "Fourteen hundredths contain one more tenth and four hundredths.",
           "Correction": "Carry the one tenth into the correct next place."
+        },
+        {
+          "Mistake": "Use invented4.76+2.58 and3.7+6.84 as the original printed addends",
+          "WhyWrong": "The source lists distinct warming 1.99 quantities and activity sums5.61+2.53,6.62+3.74,2.82+5.2,6.8+4.97.",
+          "Correction": "Restore all source addends and nearest-whole questions; retain correct unrelated numbers as extensions."
         }
       ],
       "SummaryPoints": [
-        "Estimate sums using sensible whole-number benchmarks before exact computation.",
-        "Place-value alignment and composed-unit explanation are central to the algorithm.",
-        "Teacher reviews why students' method and peer revisions are valid.",
-        "2021 IM K–5 Grade 5 Unit 5 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-12/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
+        "Original warmup sums2.01,2.01,2.02,2.12.",
+        "Source Activity1 5.61+2.53=8.14 and6.62+3.74=10.36.",
+        "Source Activity2 2.82+5.2=8.02 near8,6.8+4.97=11.77 near12.",
+        "Source teacher Han algorithm image and pupil chosen strategies require teacher review.",
+        "Digital exact choices are selected arithmetic evidence only.",
+        "Optional prior: Estimate sums using sensible whole-number benchmarks before exact computation.",
+        "Optional prior: Place-value alignment and composed-unit explanation are central to the algorithm.",
+        "Optional prior: Teacher reviews why students' method and peer revisions are valid.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-12/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Estimate and Add — original reasoning",
+          "Title": "Source 2021 Grade5 U05 L12 decimal addends",
+          "Description": "Exact printed source expressions; teacher reviews vertical algorithm and estimation method.",
+          "Rows": [
+            {
+              "Label": "Number Talk",
+              "Cells": [
+                "2.01",
+                "2.01",
+                "2.02",
+                "2.12"
+              ]
+            },
+            {
+              "Label": "Standard algorithm",
+              "Cells": [
+                "5.61+2.53=8.14",
+                "6.62+3.74=10.36"
+              ]
+            },
+            {
+              "Label": "Estimate+exact",
+              "Cells": [
+                "2.82+5.20=8.02~8",
+                "6.80+4.97=11.77~12"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Estimate and Add — original reasoning",
           "Description": "Accessible original decimal place-value table; no source publisher diagram or recording sheet copied.",
           "Rows": [
             {

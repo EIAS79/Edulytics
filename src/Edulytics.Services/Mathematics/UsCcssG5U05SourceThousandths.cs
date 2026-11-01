@@ -159,6 +159,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l11.original_shaded_hundredth_grid_sums", "Original U05:L11 How Many Do You See warmup: first hundredths grid has95/100 shaded, second7/100 shaded; sum shaded amounts of equal one-whole unit grids", "1.02", "0.102", "0.97"),
         new("usccss.g5.u05.l11.original_shaded_hundredth_grid_sums", "Original U05:L11 How Many Do You See warmup: first hundredths grid has20/100 shaded, second9/100 shaded; sum shaded amounts of equal one-whole unit grids", "0.29", "0.029", "2.9"),
         new("usccss.g5.u05.l11.original_decimal_addition", "Original U05:L11 Activity1 find2.26+1.87 using any valid pupil-selected place-value strategy; teacher assesses student method", "4.13", "3.103", "4.03"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 1.00+0.99+0.02; explain place value and carrying when needed", "2.01", "2.00", "1.01"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 1.99+0.02; explain place value and carrying when needed", "2.01", "1.101", "2.21"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 1.99+0.03; explain place value and carrying when needed", "2.02", "2.01", "2.12"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 1.99+0.13; explain place value and carrying when needed", "2.12", "2.02", "1.112"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 5.61+2.53; explain place value and carrying when needed", "8.14", "8.04", "7.114"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 6.62+3.74; explain place value and carrying when needed", "10.36", "9.136", "10.26"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 2.82+5.2; explain place value and carrying when needed", "8.02", "7.102", "8.22"),
+        new("usccss.g5.u05.l12.original_decimal_sums", "Original IM2021 U05:L12 printed decimal addition 6.8+4.97; explain place value and carrying when needed", "11.77", "10.177", "11.67"),
+        new("usccss.g5.u05.l12.source_nearest_whole_estimates", "Original U05:L12 estimate before calculating: original source 2.82+5.2=8.02 nearest WHOLE", "8", "9", "7"),
+        new("usccss.g5.u05.l12.source_nearest_whole_estimates", "Original U05:L12 estimate before calculating: original source 6.8+4.97=11.77 nearest WHOLE", "12", "11", "10"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
