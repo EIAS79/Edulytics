@@ -32,6 +32,26 @@ jobs:
           node-version: '24'
       - name: Assert all 148 unique source-linked lesson rows, tests and closure evidence
         run: node tools/curriculum/g5-stage-d-diagnostic.cjs preflight
+  source-element-evidence:
+    name: grade5-source-element-provenance-and-approval-fail-closed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Audit actual source-element evidence and disallow blank academic approval
+        run: node tools/curriculum/g5-stage-d-diagnostic.cjs source-evidence
+      - name: Preserve per-lesson evidence and explicit blockers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade5-source-element-provenance-report
+          path: stage-d-results/grade5-source-evidence.json
+          if-no-files-found: error
   source-contract-shards:
     name: grade5-source-contract-${{ matrix.batch }}
     needs: source-preflight
@@ -80,7 +100,7 @@ jobs:
   final-academic-fail-closed:
     name: grade5-NO-GO-until-source-rights-runtime-approvals
     if: always()
-    needs: [source-preflight, source-contract-shards, shared-build-grade5-dotnet]
+    needs: [source-preflight, source-element-evidence, source-contract-shards, shared-build-grade5-dotnet]
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
@@ -95,9 +115,11 @@ jobs:
           PREFLIGHT: ${{ needs.source-preflight.result }}
           NODE_SHARDS: ${{ needs.source-contract-shards.result }}
           DOTNET: ${{ needs.shared-build-grade5-dotnet.result }}
+          SOURCE: ${{ needs.source-element-evidence.result }}
         run: |
-          echo "G5_STAGE_D_RESULTS preflight=$PREFLIGHT node=$NODE_SHARDS dotnet=$DOTNET"
+          echo "G5_STAGE_D_RESULTS preflight=$PREFLIGHT node=$NODE_SHARDS dotnet=$DOTNET source=$SOURCE"
           test "$PREFLIGHT" = success
           test "$NODE_SHARDS" = success
           test "$DOTNET" = success
+          test "$SOURCE" = success
           node tools/curriculum/g5-stage-d-diagnostic.cjs academic
