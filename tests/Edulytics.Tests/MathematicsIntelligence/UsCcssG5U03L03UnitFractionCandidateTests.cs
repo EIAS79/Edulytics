@@ -125,7 +125,7 @@ public sealed class UsCcssG5U03L03UnitFractionCandidateTests
             var item = UsCcssG5U03L03UnitFractionQuestions.Build(
                 UsCcssG5U03L03UnitFractionQuestions.PatternFamily, new Random(seed));
             var match = Regex.Match(item.Prompt,
-                @"Select 1: (1/\\d+); 2: (1/\\d+); 3: (1/\\d+)\\.");
+                @"Select 1: (1/\d+); 2: (1/\d+); 3: (1/\d+)\.");
             Assert.True(match.Success, item.Prompt);
             var options = new[]
             {
