@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l07-l10-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,18 @@
       "CultureCode": "en",
       "Title": "Round Doubloons",
       "ExplanationParagraphs": [
-        "Goal: understand rounding decimals to the nearest whole number, tenth and hundredth as choosing the closest mark on an appropriately labeled number line. The source starts with a scale whose displayed reading is less precise than the objects on the pan; the displayed reading must not be treated as an exact measurement.",
-        "Warm-up — digital scales: a modeled balance has weights whose exact mass totals 12.32 ounces, while a tenths-precision scale displays 12.3. Give different possible reasons and explain that 12.3 ounces need not equal exactly 12.300; a measurement device may report the nearest tenth instead of every hundredth.",
-        "Activity 1 — historical coin comparison without copyrighted art: the publisher's public page gives two historical sample weights, 6.867 and 6.766 grams. On a number line to hundredths, the first is closest to 6.87 and the second to 6.77; to tenths the values round to 6.9 and 6.8. Both round to 7 grams at whole-gram precision, so that coarser scale cannot distinguish their weights. Use two independent textual positions instead of reproducing coin photographs.",
-        "Activity 2 — choose precision: write original values 5.743 and 5.748 grams and locate each between adjacent hundredths. To the nearest hundredth, 5.743 becomes 5.74 and 5.748 becomes 5.75, while to the nearest tenth both display 5.7. Explain what distinguishable information is lost at lower precision.",
-        "Assessment: the original source asks learners to reason about historical coin identification and how scale precision changes claims; teacher reviews number-line placement, device interpretation and why rounded equal values do not establish equal original masses. One rounded number is only a numeric subcheck."
+        "Original IM 2021 G5 U05:L07 Round Doubloons: understand measurement precision and which underlying thousandth-decimal weights ROUND to same nearest tenth/hundredth/whole reading. A scale's displayed value may be rounded; saying a rounded measurement equals the exact object weight is false.",
+        "Warm-up Notice and Wonder A Digital Scale uses credited source image by Bjwebb (public domain Wikimedia), not independently reproduced; teacher shows actual original scale reading before pupils decide which historical coin could be on it. Do not invent the displayed digits from an uninspected figure.",
+        "Activity 1 Gold Doubloons: original source historical gold coin printed before1728 mass6.867 grams, after1728 mass6.766 grams. To nearest TENTH, 6.9g versus6.8g, distinguishable; to nearest WHOLE gram BOTH=7g, indistinguishable by a gram-only display; to nearest HUNDREDTH6.87g versus6.77g. Before1728 coin is heavier (6.867>6.766). Source asks pupils to place original two masses on number lines and explain which hundredth marks they approach.",
+        "Activity 2 Exact or Approximate? Source 14 pencils on desk is an exact discrete count, Los Angeles population12,400,000 is an estimated large quantity, school-to-park2.4 miles is an approximate length, runner time19.78 seconds is a measurement rounded to hundredths of a second, not a logically exact elapsed time to infinitely fine precision. Teacher reviews how precision affects labels and why not all printed digits imply exactness.",
+        "Original gated Cool-down A Golden Dollar not asserted replicated. Independent Edulytiks teacher Cool-down compares coin values5.746 and5.754g to tenths/hundredths with physical interpretation. The previous 12.32-ounce fictional scale remains an optional extension distinct from the original source.",
+        "Exact selected Practice checks only source historical weight rounding and source classification; original source photo, number-line positions and explanations remain TEACHER_REVIEW_REQUIRED.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: understand rounding decimals to the nearest whole number, tenth and hundredth as choosing the closest mark on an appropriately labeled number line. The source starts with a scale whose displayed reading is less precise than the objects on the pan; the displayed reading must not be treated as an exact measurement.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — digital scales: a modeled balance has weights whose exact mass totals 12.32 ounces, while a tenths-precision scale displays 12.3. Give different possible reasons and explain that 12.3 ounces need not equal exactly 12.300; a measurement device may report the nearest tenth instead of every hundredth.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — historical coin comparison without copyrighted art: the publisher's public page gives two historical sample weights, 6.867 and 6.766 grams. On a number line to hundredths, the first is closest to 6.87 and the second to 6.77; to tenths the values round to 6.9 and 6.8. Both round to 7 grams at whole-gram precision, so that coarser scale cannot distinguish their weights. Use two independent textual positions instead of reproducing coin photographs.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — choose precision: write original values 5.743 and 5.748 grams and locate each between adjacent hundredths. To the nearest hundredth, 5.743 becomes 5.74 and 5.748 becomes 5.75, while to the nearest tenth both display 5.7. Explain what distinguishable information is lost at lower precision.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the original source asks learners to reason about historical coin identification and how scale precision changes claims; teacher reviews number-line placement, device interpretation and why rounded equal values do not establish equal original masses. One rounded number is only a numeric subcheck."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +43,31 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Historical sample coin masses",
+          "Title": "Historical source doubloon weight precision",
+          "Question": "Round pre-1728 6.867g and post-1728 6.766g to whole, tenth and hundredth.",
+          "Method": "Place decimals on source number lines and choose nearest marked scale.",
+          "Steps": [
+            "6.867→7g nearest whole,6.9 nearest tenth,6.87 nearest hundredth.",
+            "6.766→7g nearest whole,6.8 nearest tenth,6.77 nearest hundredth.",
+            "Coarse whole-gram scales cannot tell the two original coins apart."
+          ],
+          "Answer": "Whole7/7; tenths6.9/6.8; hundredths6.87/6.77 grams.",
+          "Check": "6.867g>6.766g."
+        },
+        {
+          "Title": "Original source four precision examples",
+          "Question": "Are 14 pencils,12,400,000 city population,2.4mi travel distance and19.78s race duration exact or estimates?",
+          "Method": "Count discrete objects versus rounded measurements/large population estimates.",
+          "Steps": [
+            "A counted 14 pencils is an exact quantity.",
+            "Large city population12,400,000 is an estimate.",
+            "Measured miles2.4 and time19.78 are rounded reports, approximate."
+          ],
+          "Answer": "Exact; estimate; estimate; estimate/rounded measurement.",
+          "Check": "Teacher reviews nuance that printed decimals are measurements to specified precision."
+        },
+        {
+          "Title": "Optional existing extension — Historical sample coin masses",
           "Question": "Round 6.867 grams and 6.766 grams to nearest tenth, hundredth and whole.",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -48,7 +79,7 @@
           "Check": "6.867>6.766 even when whole-gram displays tie."
         },
         {
-          "Title": "Concealed hundredths on a scale",
+          "Title": "Optional existing extension — Concealed hundredths on a scale",
           "Question": "A scale reports12.3 ounces though exact measured pieces total12.32. Is its display necessarily wrong?",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -60,7 +91,7 @@
           "Check": "The displayed precision is not sufficient to recover the exact hundredths."
         },
         {
-          "Title": "Find a precision that distinguishes masses",
+          "Title": "Optional existing extension — Find a precision that distinguishes masses",
           "Question": "Rounded to hundredths and tenths, compare5.743 and5.748 grams.",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -82,18 +113,62 @@
           "Mistake": "Ignore the requested rounding place",
           "WhyWrong": "Rounding to tenths and hundredths may give different displays.",
           "Correction": "Label the unit interval on a number line before selecting a closest value."
+        },
+        {
+          "Mistake": "Present the 12.32-ounce fictional model as the original digital-scale photograph or confuse coin dates",
+          "WhyWrong": "Source text explicitly provides before1728=6.867g and after1728=6.766g and asks about precision under two measuring scales.",
+          "Correction": "Restore original dated gram weights, separate original photo from fictional model and explain why whole rounding collapses distinction."
         }
       ],
       "SummaryPoints": [
-        "Rounding chooses the closest value at the requested place, not an exact hidden measurement.",
-        "Coarse measurement can make distinct masses appear identical.",
-        "The source's measured-coin interpretation and number-line explanation remain teacher-reviewed.",
-        "Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 7 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-7/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+        "Source original doubloons 6.867g before1728 and6.766g after1728, former heavier.",
+        "Whole grams both round7; tenths6.9 and6.8; hundredths6.87 and6.77.",
+        "Original 14 pencils exact, LA12,400,000 estimate, 2.4mi approximate and19.78s rounded.",
+        "Original digital-scale image reading and number-line explanations require teacher review.",
+        "Independent Edulytiks cooldown clearly separate from original gated A Golden Dollar.",
+        "Optional prior: Rounding chooses the closest value at the requested place, not an exact hidden measurement.",
+        "Optional prior: Coarse measurement can make distinct masses appear identical.",
+        "Optional prior: The source's measured-coin interpretation and number-line explanation remain teacher-reviewed.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 7 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-7/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Round Doubloons — original decimal model",
+          "Title": "Original before/after1728 coin masses and rounding",
+          "Description": "Source original grams; original digital-scale photograph and number-line drawing remain teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Pre1728",
+              "Cells": [
+                "6.867g",
+                "whole7",
+                "tenth6.9",
+                "hundredth6.87"
+              ]
+            },
+            {
+              "Label": "Post1728",
+              "Cells": [
+                "6.766g",
+                "whole7",
+                "tenth6.8",
+                "hundredth6.77"
+              ]
+            },
+            {
+              "Label": "Source exact/approximate",
+              "Cells": [
+                "14 pencils exact",
+                "12,400,000 population estimated",
+                "2.4mi approximate",
+                "19.78s rounded"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Round Doubloons — original decimal model",
           "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
           "Rows": [
             {

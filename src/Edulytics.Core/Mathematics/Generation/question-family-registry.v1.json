@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u05.l07.original_doubloon_rounding",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u05-l07-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
+      "id": "usccss.g5.u05.l07.original_exact_vs_approximate",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u05-l07-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u05.l06.original_number_line_comparison",
       "version": 1,
       "skillId": "supporting.decimals.core",

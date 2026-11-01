@@ -84,6 +84,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: original lower number-line smallest tick interval, thousandth; exact visual placement and tick labels teacher-reviewed", "0.001", "0.01", "0.1"),
         new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: original middle number-line tick interval, hundredth; exact visual placement and tick labels teacher-reviewed", "0.01", "0.1", "0.001"),
         new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: original top number-line tick interval, tenth; exact visual placement and tick labels teacher-reviewed", "0.1", "0.01", "0.001"),
+        new("usccss.g5.u05.l07.original_doubloon_rounding", "Original G5 U05:L07 historical gold doubloon printed source before1728 weight6.867 grams rounded to nearest TENTH; teacher reviews number-line diagram and which scale can distinguish before versus after", "6.9", "6.8", "6.87"),
+        new("usccss.g5.u05.l07.original_doubloon_rounding", "Original G5 U05:L07 historical gold doubloon printed source after1728 weight6.766 grams rounded to nearest TENTH; teacher reviews number-line diagram and which scale can distinguish before versus after", "6.8", "6.7", "6.77"),
+        new("usccss.g5.u05.l07.original_doubloon_rounding", "Original G5 U05:L07 historical gold doubloon printed source before1728 weight6.867 grams rounded to nearest HUNDREDTH; teacher reviews number-line diagram and which scale can distinguish before versus after", "6.87", "6.86", "6.8"),
+        new("usccss.g5.u05.l07.original_doubloon_rounding", "Original G5 U05:L07 historical gold doubloon printed source after1728 weight6.766 grams rounded to nearest HUNDREDTH; teacher reviews number-line diagram and which scale can distinguish before versus after", "6.77", "6.76", "6.8"),
+        new("usccss.g5.u05.l07.original_doubloon_rounding", "Original G5 U05:L07 historical gold doubloon printed source before1728 weight6.867 rounded to nearest WHOLE gram; teacher reviews number-line diagram and which scale can distinguish before versus after", "7", "6", "6.9"),
+        new("usccss.g5.u05.l07.original_doubloon_rounding", "Original G5 U05:L07 historical gold doubloon printed source after1728 weight6.766 rounded to nearest WHOLE gram; teacher reviews number-line diagram and which scale can distinguish before versus after", "7", "6", "6.8"),
+        new("usccss.g5.u05.l07.original_exact_vs_approximate", "Original source Activity2 classify whether quantity is EXACT or an ESTIMATE/approximate measurement: 14 pencils actually on a desk", "exact", "estimate", "unknown"),
+        new("usccss.g5.u05.l07.original_exact_vs_approximate", "Original source Activity2 classify whether quantity is EXACT or an ESTIMATE/approximate measurement: population of Los Angeles stated as 12,400,000", "estimate", "exact", "unknown"),
+        new("usccss.g5.u05.l07.original_exact_vs_approximate", "Original source Activity2 classify whether quantity is EXACT or an ESTIMATE/approximate measurement: 2.4-mile stated school-to-park distance", "estimate", "exact", "unknown"),
+        new("usccss.g5.u05.l07.original_exact_vs_approximate", "Original source Activity2 classify whether quantity is EXACT or an ESTIMATE/approximate measurement: runner's 19.78-second recorded time", "estimate", "exact", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
@@ -114,8 +124,8 @@ public static class UsCcssG5U05SourceThousandths
         };
         string prompt=$"{c.Context} Select 1: {options[0]}; 2: {options[1]}; 3: {options[2]}. "+
             "For drawings, shaded mosaics and original poster explanations: TEACHER_REVIEW_REQUIRED.";
-        string solution=$"Correct source place-value unit is {c.Answer}. "+
-            "One thousandth is one of 1000 equal pieces of the ORIGINAL whole; "+
+        string solution=$"Correct source-aligned selected answer is {c.Answer}. "+
+            "Use the exact original source units, place value, and context; "+
             "teacher reviews the student's diagrams and explanation.";
         return new Problem(family,prompt,solution,AssessmentItemType.Numeric,p);
     }
