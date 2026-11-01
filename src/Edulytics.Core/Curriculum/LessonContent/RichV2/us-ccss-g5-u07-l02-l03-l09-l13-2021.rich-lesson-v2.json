@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -499,11 +499,17 @@
       "CultureCode": "en",
       "Title": "Patterns and Relationships",
       "ExplanationParagraphs": [
-        "Goal: generate two sequences from separate recursive rules and explain how corresponding terms relate MULTIPLICATIVELY, not only by listing numbers. The 2021 source has a relationship so a distant number such as192 can be reasoned about without extending a very long table.",
-        "Warm-up: generate pairs from zero using +3 and+6: at corresponding term index n≥0 the numbers are 3n and6n. The second sequence is twice the first; every number of the second sequence appears in the first, but the reverse is not true for all terms. Keep the starting index and first term clear.",
-        "Activity 1 — original distant-term reasoning: from zero, pattern A adds4 and pattern B adds12. Their aligned terms are 0/0,4/12,8/24,12/36, etc.; B=3A for corresponding entries. If A reaches80, B is240. If B reaches192, A is64. Explain using the relationship rather than enumerating20 or16 terms.",
-        "Activity 2 — inverse relationship: choose a second pair starting at zero, adding5 and10. If the second value reaches70, the first is35. If the first reaches90, the second is180. Partners compare two legitimate explanations of why B=2A remains true for every corresponding index, and whether the same formula would hold after changing starting values.",
-        "Teacher boundary: the source requires pattern displays, corresponding-index evidence, far-term predictions and mathematical conversation. A single numeric answer cannot certify the learner has correctly matched terms rather than merely spotting familiar factors."
+        "Original Grade5 U07:L09 Generate Patterns gives TWO recursively defined numerical sequences starting at zero, with one addend multiple of the other, and asks pupils to find far-away CORRESPONDING terms rather than merely listing early entries.",
+        "Warm-up Choral Count Two Patterns is a public counting routine whose source student numbers arise from classroom contributions and teacher pacing; actual oral turns require teacher evaluation.",
+        "Activity1 What's the Pattern? original Jada rule starts0 adds4, Priya rule starts0 adds8. At the same index Priya term is TWICE Jada, so Jada40 corresponds Priya80, Jada60 corresponds Priya120, and Priya192 corresponds Jada96.",
+        "Activity2 More Patterns Partner A source Jada+2 and Priya+6: Jada34 corresponds Priya102, Priya120 corresponds Jada40. Partner B source Jada+3 and Priya+9: Jada54 corresponds Priya162, Priya198 corresponds Jada66. These relationships are at the same sequence index and each begins at0.",
+        "Previously authored Rich V2 invented source A+4/B+12 and offset examples remain explicit optional Edulytiks extensions only. Original partner representation, explanation and table creation are teacher reviewed.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: generate two sequences from separate recursive rules and explain how corresponding terms relate MULTIPLICATIVELY, not only by listing numbers. The 2021 source has a relationship so a distant number such as192 can be reasoned about without extending a very long table.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: generate pairs from zero using +3 and+6: at corresponding term index n≥0 the numbers are 3n and6n. The second sequence is twice the first; every number of the second sequence appears in the first, but the reverse is not true for all terms. Keep the starting index and first term clear.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original distant-term reasoning: from zero, pattern A adds4 and pattern B adds12. Their aligned terms are 0/0,4/12,8/24,12/36, etc.; B=3A for corresponding entries. If A reaches80, B is240. If B reaches192, A is64. Explain using the relationship rather than enumerating20 or16 terms.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — inverse relationship: choose a second pair starting at zero, adding5 and10. If the second value reaches70, the first is35. If the first reaches90, the second is180. Partners compare two legitimate explanations of why B=2A remains true for every corresponding index, and whether the same formula would hold after changing starting values.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: the source requires pattern displays, corresponding-index evidence, far-term predictions and mathematical conversation. A single numeric answer cannot certify the learner has correctly matched terms rather than merely spotting familiar factors."
       ],
       "KeyConcepts": [
         {
@@ -527,7 +533,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare two patterns",
+          "Title": "Source exact 1 — Generate Patterns",
+          "Question": "Original Jada start0 step4 and Priya start0 step8: when Jada is40 Priya is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "80",
+          "Check": "Original numeric source example; incorrect distractors 40 and 160 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Generate Patterns",
+          "Question": "Original Jada step4 and Priya step8: when Jada is60 Priya is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "120",
+          "Check": "Original numeric source example; incorrect distractors 60 and 240 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Generate Patterns",
+          "Question": "Original Jada step4 and Priya step8: when Priya is192 Jada is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "96",
+          "Check": "Original numeric source example; incorrect distractors 48 and 192 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Generate Patterns",
+          "Question": "Partner A source Jada step2 Priya step6, when Jada34 Priya is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "102",
+          "Check": "Original numeric source example; incorrect distractors 68 and 204 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Compare two patterns",
           "Question": "A:+4 and B:+12 from zero. Find first five corresponding pairs.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -539,7 +593,7 @@
           "Check": "B=3A."
         },
         {
-          "Title": "Infer far corresponding value",
+          "Title": "Optional existing extension — Infer far corresponding value",
           "Question": "If B=192, what aligned A value?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -551,7 +605,7 @@
           "Check": "192=3×64."
         },
         {
-          "Title": "Use another pattern ratio",
+          "Title": "Optional existing extension — Use another pattern ratio",
           "Question": "A:+5 and B:+10 from zero. If A=90, find B.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -573,18 +627,89 @@
           "Mistake": "Assume the same ratio survives arbitrary different starting values",
           "WhyWrong": "An additive start can disrupt proportional correspondence.",
           "Correction": "Check starting values before asserting B=kA."
+        },
+        {
+          "Mistake": "Use unrelated or invented examples rather than the actual source pattern rules and plotted values.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore the exact source pattern, coin, and rectangle constants; preserve open plotting and story decisions as teacher-scored."
         }
       ],
       "SummaryPoints": [
-        "Corresponding patterns generated from zero can have a fixed multiplicative relationship.",
-        "Use that relationship for distant-term prediction.",
-        "Teacher reviews the pattern index explanation and partner comparisons.",
-        "Source 2021 IM K–5 Grade5 Unit7 Lesson 9: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-9/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
+        "Original source ratio Priya:Jada is2:1 then3:1 for partner examples.",
+        "Source source pairs(40,80),(60,120),(96,192); partnerA(34,102),(40,120),partnerB(54,162),(66,198).",
+        "Student-generated tables and oral counting reviewed by teacher.",
+        "Optional prior: Corresponding patterns generated from zero can have a fixed multiplicative relationship.",
+        "Optional prior: Use that relationship for distant-term prediction.",
+        "Optional prior: Teacher reviews the pattern index explanation and partner comparisons.",
+        "Optional prior: Source 2021 IM K–5 Grade5 Unit7 Lesson 9: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-9/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Patterns and Relationships — original representation",
+          "Title": "Generate Patterns — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original Jada start0 step4 and Priya start0 step8: when Jada is40 Priy",
+              "Cells": [
+                "80",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Jada step4 and Priya step8: when Jada is60 Priya is",
+              "Cells": [
+                "120",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Jada step4 and Priya step8: when Priya is192 Jada is",
+              "Cells": [
+                "96",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Partner A source Jada step2 Priya step6, when Jada34 Priya is",
+              "Cells": [
+                "102",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Partner A source Jada step2 Priya step6, when Priya120 Jada is",
+              "Cells": [
+                "40",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Partner B source Jada step3 Priya step9, when Jada54 Priya is",
+              "Cells": [
+                "162",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Partner B source Jada step3 Priya step9, when Priya198 Jada is",
+              "Cells": [
+                "66",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source first three Jada +4 terms including start0",
+              "Cells": [
+                "0,4,8",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Patterns and Relationships — original representation",
           "Description": "Accessible first-party equivalent for values and ordered pairs; it is not a tested interactive plot or copied publisher graphic.",
           "Rows": [
             {

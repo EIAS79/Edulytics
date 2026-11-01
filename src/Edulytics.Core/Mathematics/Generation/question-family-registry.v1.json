@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u07.l09.source_generated_patterns_two_rules",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u07-l09-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "diagram"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u07.l08.source_triangle_side_and_angle_types",
       "version": 1,
       "skillId": "supporting.geometry.properties",

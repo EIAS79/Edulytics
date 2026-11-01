@@ -658,6 +658,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can a triangle have TWO obtuse angles?", "no", "yes", "only right triangle"),
         new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can a right triangle be isosceles?", "yes", "no", "always equilateral"),
         new("usccss.g5.u07.l08.source_triangle_side_and_angle_types", "Can an equilateral triangle contain a right angle?", "no", "yes", "sometimes"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Original Jada start0 step4 and Priya start0 step8: when Jada is40 Priya is", "80", "40", "160"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Original Jada step4 and Priya step8: when Jada is60 Priya is", "120", "60", "240"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Original Jada step4 and Priya step8: when Priya is192 Jada is", "96", "48", "192"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Partner A source Jada step2 Priya step6, when Jada34 Priya is", "102", "68", "204"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Partner A source Jada step2 Priya step6, when Priya120 Jada is", "40", "60", "80"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Partner B source Jada step3 Priya step9, when Jada54 Priya is", "162", "108", "486"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Partner B source Jada step3 Priya step9, when Priya198 Jada is", "66", "99", "22"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Source first three Jada +4 terms including start0", "0,4,8", "4,8,12", "0,8,16"),
+        new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Source first three Priya +8 terms including start0", "0,8,16", "0,4,8", "8,16,24"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
