@@ -877,6 +877,19 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original WODB routine demands a reason each shape can be different from others?", "yes", "no", "only one numeric answer"),
         new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original volume shape B described as three-dimensional or flat?", "three-dimensional", "flat two-dimensional", "line only"),
         new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original source student explanations and sketches have a SINGLE exact universal answer?", "no", "yes", "always 2 cubic units"),
+        // First-party supplementary source-skill models; publisher examples retained above.
+        new("usccss.g5.u05.l05.original_decimal_true_false", "Edulytiks-original supplementary true/false: 7.8 = 7.80 (trailing decimal zero)", "true", "false", "insufficient information"),
+        new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Edulytiks-original supplementary: Maya threw 5.2 meters, Alex 4.9 meters; who threw farther?", "Maya", "Alex", "tie"),
+        new("usccss.g5.u05.l09.source_decimal_inequality_truth", "Edulytiks-original supplementary inequality: 3.005 < 3.05", "true", "false", "insufficient information"),
+        new("usccss.g5.u05.l11.original_decimal_addition", "Edulytiks-original supplementary place-value addition: 3.75 + 2.86", "6.61", "5.161", "6.51"),
+        new("usccss.g5.u05.l11.original_decimal_addition", "Edulytiks-original supplementary place-value addition: 5.09 + 4.72", "9.81", "9.71", "10.81"),
+        new("usccss.g5.u05.l11.original_decimal_addition", "Edulytiks-original supplementary place-value addition: 0.67 + 1.45", "2.12", "1.112", "2.02"),
+        new("usccss.g5.u05.l11.original_shaded_hundredth_grid_sums", "Edulytiks-original supplementary pair of equal unit-area grids with 35 and 25 of 100 cells shaded", "0.60", "0.060", "0.10"),
+        new("usccss.g5.u05.l12.source_nearest_whole_estimates", "Edulytiks-original supplementary nearest-whole estimation of 4.36 + 2.20 = 6.56", "7", "6", "8"),
+        new("usccss.g5.u05.l12.source_nearest_whole_estimates", "Edulytiks-original supplementary nearest-whole estimation of 8.42 + 1.19 = 9.61", "10", "9", "11"),
+        new("usccss.g5.u05.l13.original_elena_andre_error", "Edulytiks-original supplementary corrected decimal alignment for 2.4 + 1.35", "3.75", "2.175", "3.39"),
+        new("usccss.g5.u05.l13.original_elena_andre_error", "Edulytiks-original supplementary corrected decimal alignment for 8.03 + 1.7", "9.73", "8.20", "9.10"),
+        new("usccss.g5.u06.l08.original_fraction_sums_differences", "Edulytiks-original supplementary same-whole fraction sum 3/4 + 1/8", "7/8", "4/12", "5/8"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
