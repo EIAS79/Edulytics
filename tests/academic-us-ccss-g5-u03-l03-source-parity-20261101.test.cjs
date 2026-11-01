@@ -69,4 +69,23 @@ test('teacher rubric is not falsely machine-completed', () => {
   assert.equal(r.tests,'AUTHORED_NOT_RUN');
 });
 
-test.todo('Shared Practice route and exact issuer family for L03 require separate exclusive single-writer authorization; do not infer readiness from the lesson-local candidate');
+test('Stage D structural U03:L03 exact issuer route has a runtime Generate/Solve/Verify regression', () => {
+  const src = file => fs.readFileSync(path.join(root, file), 'utf8');
+  const contract = src('src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
+  const start = contract.indexOf('byLesson["PED:US-CCSS-MATH:G5:U03:L03"]');
+  assert.ok(start >= 0);
+  const selected = contract.slice(start, start + 650);
+  assert.match(selected, /usccss\.g5\.u03\.l03\.four_columns_unit_fraction_pattern/);
+  assert.match(selected, /usccss\.g5\.u03\.l03\.unit_fraction_equation_value/);
+  assert.match(selected, /TEACHER_REVIEW/);
+  assert.match(selected, /READY_VERIFIED/);
+  const exact = src('src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs');
+  for (const method of ['Supports', 'Verify', 'Solve', 'Build']) {
+    assert.match(exact, new RegExp('UsCcssG5U03L03UnitFractionQuestions\\.' + method));
+  }
+  const xunit = src('tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L03UnitFractionCandidateTests.cs');
+  assert.match(xunit, /SourceSpecificFamiliesAreSelectedThroughActualLessonPracticeContract/);
+  assert.match(xunit, /MalformedForeignAndOutOfDomainParametersFailClosed/);
+  assert.match(xunit, /EverySourcePatternPresentsThreeDistinctOptionsWithExactlyOneCorrectFraction/);
+  // This is code-path structural coverage, not authenticated grading approval.
+});

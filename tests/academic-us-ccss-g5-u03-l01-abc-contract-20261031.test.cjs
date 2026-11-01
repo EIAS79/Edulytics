@@ -150,4 +150,22 @@ test('independent negative area-grid oracle rejects unequal/overlapping/foreign-
   assert.equal(valid(correct.map(c => ({...c, shade: false}))), false);
 });
 
-test.todo('PENDING sole engine writer: verify actual U03:L01 lesson-selected family, Build/Solve/Verify dispatch, positive/negative/equivalent/malformed cases and human-review boundary');
+test('Stage D structural route binds U03:L01 to exact engine, with runtime cases in xUnit suite', () => {
+  const src = file => fs.readFileSync(path.join(root, file), 'utf8');
+  const contract = src('src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
+  const start = contract.indexOf('byLesson["PED:US-CCSS-MATH:G5:U03:L01"]');
+  assert.ok(start >= 0);
+  const selected = contract.slice(start, start + 650);
+  assert.match(selected, /usccss\.g5\.u03\.l01\.fraction_of_half_original_whole/);
+  assert.match(selected, /usccss\.g5\.u03\.l01\.compare_original_whole_grids/);
+  assert.match(selected, /READY_VERIFIED/);
+  const exact = src('src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs');
+  for (const method of ['Supports', 'Verify', 'Solve', 'Build']) {
+    assert.match(exact, new RegExp('UsCcssG5U03L01FractionOfHalfQuestions\\.' + method));
+  }
+  const xunit = src('tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L01SelectedPracticeRouteTests.cs');
+  assert.match(xunit, /GeneratedSelectedDigitalItems_AgreeWithIndependentVerifier/);
+  assert.match(xunit, /MalformedOutsideDomainAndUnregisteredCases_FailClosed/);
+  assert.match(xunit, /PredecessorAndReleasedConsumers_RemainAvailable/);
+  // Static checks alone do not prove authenticated UI or human-scored drawings.
+});
