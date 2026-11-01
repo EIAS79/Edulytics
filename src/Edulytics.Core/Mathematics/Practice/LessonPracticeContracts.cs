@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L09 OPTIONAL open flag design is teacher led;
+        // only a separate fixed first-party support model is selected Practice.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L09", "supporting.fractions.multiply_divide",
+            "G5_OPTIONAL_ORIGINAL_FLAG_DESIGN_TEACHER_REVIEW_PLUS_DIGITAL_SUPPORT",
+            ["usccss.g5.u03.l09.first_party_flag_band_fabric_area_support"],
+            "IM2021_G5_U03_L09_OPEN_DESIGN_HUMAN_REVIEW_REQUIRED",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U03:L08 Thailand/Colombia flag exact measurements,
         // original artwork and open source questions TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U03:L08"] = new LessonPracticeContract(
