@@ -190,6 +190,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG5U03L05ShadedAreaQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L06NonunitAreaQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L07FractionEquationQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L08FlagMeasureQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
@@ -443,6 +444,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG5U03L06NonunitAreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG5U03L07FractionEquationQuestions.Supports(family))
             return UsCcssG5U03L07FractionEquationQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L08FlagMeasureQuestions.Supports(family))
+            return UsCcssG5U03L08FlagMeasureQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
@@ -1821,6 +1824,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG5U03L07FractionEquationQuestions.Supports(family))
         {
             var item = UsCcssG5U03L07FractionEquationQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L08FlagMeasureQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L08FlagMeasureQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -5057,6 +5066,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG5U03L06NonunitAreaQuestions.Solve(problem.Family, p);
         if (UsCcssG5U03L07FractionEquationQuestions.Supports(problem.Family))
             return UsCcssG5U03L07FractionEquationQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L08FlagMeasureQuestions.Supports(problem.Family))
+            return UsCcssG5U03L08FlagMeasureQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))

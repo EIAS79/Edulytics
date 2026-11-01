@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L08 Thailand/Colombia flag exact measurements,
+        // original artwork and open source questions TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L08", "supporting.fractions.multiply_divide",
+            "G5_SOURCE_FLAG_MEASURED_FRACTIONAL_AREA_AND_LENGTH",
+            ["usccss.g5.u03.l08.original_flags_fraction_measure"],
+            "IM2021_G5_U03_L08_EXACT_FLAG_PRODUCTS_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U03:L07 source fraction products and missing
         // factors, with original image explanations teacher reviewed.
         byLesson["PED:US-CCSS-MATH:G5:U03:L07"] = new LessonPracticeContract(

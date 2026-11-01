@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v6-20261101",
+  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -206,11 +206,12 @@
       "CultureCode": "en",
       "Title": "Apply Fraction Multiplication",
       "ExplanationParagraphs": [
-        "Goal: apply fraction multiplication to find areas of real rectangular designs, including subregions of different widths. The 2021 source uses flags with partly fractional measurements and expects a learner to derive stripe areas and explain the relationship between stripe widths.",
-        "Warm-up: calculate 1/3×3/5, 2/3×3/5 and 5/3×3/5 mentally and compare strategies. Explain that an area must use consistent linear side lengths before reporting square units.",
-        "Activity 1 — first-party flag-like fabric: a small rectangular banner is 8 inches across and 6 1/2 inches tall. Calculate total area 8×(6+1/2)=52 square inches. A narrow red stripe is 3/4 inch high, so its area is 8×3/4=6 square inches; an adjacent blue stripe is 1 1/2 inches high, twice as tall, so its area is 8×1 1/2=12 square inches.",
-        "Activity 2: compare two geometric strategies: decompose the total banner into a 6-inch main strip plus a half-inch strip, or convert 6 1/2 to 13/2 and multiply. Explain why 8×13/2=52 matches both. Use a label-only rectangle or own paper model; do not reproduce the publisher's national flag artwork, some of which carries separate third-party rights.",
-        "Assessment: exact area products are checkable, but choice of diagram, unit labels, relating stripe heights to area and mathematical discourse require teacher review. The original response images and copyrighted flags were not copied."
+        "Goal: apply exact fraction multiplication to the ACTUAL IM 2021 U03:L08 source flags. Measurements in inches are side lengths; results in square inches describe area. Teacher checks how each source flag image is interpreted. Foreign flag photos and logos are not copied because their third-party rights differ.",
+        "Warm-up — Number Talk Fraction Multiplication: the four exact source expressions are (1/3)×(3/5)=1/5, (2/3)×(3/5)=2/5, (5/3)×(3/5)=1 and (2/3)×(13/5)=26/15. Compare strategies with and without a visual area model.",
+        "Activity 1 — Flags: original Thailand flag replica measures 5 inches wide and 7 1/2 inches long. Total area = 5×7 1/2=37 1/2 square inches. Each red stripe is 5/6 inch wide, so its area is (5/6)×(7 1/2)=25/4 square inches; blue stripe width 10/6 inch yields 25/2 square inches. Explain how the striped source geometry relates to measured widths and areas (not an invented 8×6 1/2 banner).",
+        "Activity 2 — More Flags: in the source Colombia replica the flag is 3 1/2 inches wide and 5 1/4 inches long. Yellow occupies half the width, so its stripe width is 7/4 inches and its area is (7/4)×(21/4)=147/16 square inches. Blue and red each occupy one quarter of flag width, hence (1/4)×(3 1/2)=7/8 INCH (length, not area). The student must invent the appropriate QUESTION for the 7/8-inch and 147/16-square-inch calculations and justify why dimensions/units determine the question.",
+        "Synthesis and assessment: source flag graphics and red/blue/yellow region proportions remain teacher-reviewed, as do student-written questions and modeling. Exact numeric products support but cannot replace visual source interpretation. An independent Edulytiks flag-striped teacher Cool-down checks the same distinction; original publisher Cool-down and independent Student Task PDF were not separately inspected.",
+        "Existing 8-by-6 1/2 first-party banner examples are mathematically sound OPTIONAL EXTENSIONS, not IM 2021 source Activity 1 or 2."
       ],
       "KeyConcepts": [
         {
@@ -234,7 +235,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Whole banner",
+          "Title": "Original Thailand full flag",
+          "Question": "Thailand replica is 5 inches by 7 1/2 inches. Find area.",
+          "Method": "Mathematical product based on verified text of original flag activity; teacher reviews national flag figures and units.",
+          "Steps": [
+            "Convert 7 1/2 to 15/2 inches.",
+            "Compute 5×15/2=75/2.",
+            "Report area in square inches."
+          ],
+          "Answer": "75/2=37 1/2 square inches.",
+          "Check": "Width×length gives square inches."
+        },
+        {
+          "Title": "Original Thailand red and blue stripes",
+          "Question": "Compute red stripe (5/6)×(15/2) and blue stripe (10/6)×(15/2).",
+          "Method": "Mathematical product based on verified text of original flag activity; teacher reviews national flag figures and units.",
+          "Steps": [
+            "Use the common 15/2-inch flag length.",
+            "Red: 75/12=25/4 square inches.",
+            "Blue: 150/12=25/2 square inches."
+          ],
+          "Answer": "Red 25/4; blue 25/2 square inches.",
+          "Check": "Double stripe width gives double stripe area."
+        },
+        {
+          "Title": "Original Colombia length versus area",
+          "Question": "What questions are answered by (1/4)×3 1/2=7/8 and by (1/2×3 1/2)×(5 1/4)=147/16?",
+          "Method": "Mathematical product based on verified text of original flag activity; teacher reviews national flag figures and units.",
+          "Steps": [
+            "First expression is a blue/red stripe width (inches).",
+            "Second multiplies yellow stripe width 7/4 by flag length 21/4.",
+            "Second result is yellow stripe area (square inches)."
+          ],
+          "Answer": "7/8 inch width; 147/16 square inches yellow area.",
+          "Check": "Do not confuse length units with area units."
+        },
+        {
+          "Title": "Optional extension — Whole banner",
           "Question": "A banner measures 8 inches by 6 1/2 inches. What is its area?",
           "Method": "Original first-party mathematical model with an explicit reasoning check.",
           "Steps": [
@@ -246,7 +283,7 @@
           "Check": "8×13/2=52."
         },
         {
-          "Title": "Red stripe",
+          "Title": "Optional extension — Red stripe",
           "Question": "A stripe is 8 inches across and 3/4 inch high. What is its area?",
           "Method": "Original first-party mathematical model with an explicit reasoning check.",
           "Steps": [
@@ -258,7 +295,7 @@
           "Check": "8×3/4=24/4=6."
         },
         {
-          "Title": "Blue stripe",
+          "Title": "Optional extension — Blue stripe",
           "Question": "A second stripe has the same width but height 1 1/2 inches. How does its area compare?",
           "Method": "Original first-party mathematical model with an explicit reasoning check.",
           "Steps": [
@@ -280,42 +317,87 @@
           "Mistake": "Reuse protected publisher flag artwork without asset review",
           "WhyWrong": "A public textbook page and its separate images can have different licenses and attribution requirements.",
           "Correction": "Use independently authored color-stripe models and verify each external asset separately."
+        },
+        {
+          "Mistake": "Use an invented banner rather than original Thailand/Colombia tasks",
+          "WhyWrong": "Original 2021 measurement numbers, flags and units determine different answers.",
+          "Correction": "Keep first-party banners as optional extension after authentic source arithmetic and image interpretation."
         }
       ],
       "SummaryPoints": [
-        "Fraction products can measure regions of a physical banner and its stripes.",
-        "Same width with doubled height gives doubled area.",
-        "Source image interpretation and student explanation need teacher review; original flag assets not reused.",
-        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 8 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-8/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+        "Warm-up four source products: 1/5, 2/5, 1 and 26/15.",
+        "Thailand replica 5×7 1/2 has area 37 1/2 square inches; red 25/4 and blue 25/2 square inches.",
+        "Colombia replica 3 1/2 by 5 1/4; blue/red width 7/8 inch, yellow area 147/16 square inches.",
+        "Original flags and student question interpretation require teacher review; never infer area from a stripe width alone.",
+        "Third-party flag image rights, original Student PDF and publisher-gated Cool-down remain unverified."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Apply Fraction Multiplication — mathematical model",
-          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Title": "Source Thailand flag numerical measurement table",
+          "Description": "Source-exact text values, first-party accessible rectangular measurement model; not reproduction of third-party national flag artwork.",
           "Rows": [
             {
-              "Label": "Region",
+              "Label": "Flag width and length",
               "Cells": [
-                "Full banner",
-                "Red stripe",
-                "Blue stripe"
+                "5 in",
+                "7 1/2 in"
               ]
             },
             {
-              "Label": "Dimensions (in)",
+              "Label": "Flag total area",
               "Cells": [
-                "8×6 1/2",
-                "8×3/4",
-                "8×1 1/2"
+                "5×15/2",
+                "75/2 sq in"
               ]
             },
             {
-              "Label": "Area (in²)",
+              "Label": "Red stripe width/area",
               "Cells": [
-                "52",
-                "6",
-                "12"
+                "5/6 in",
+                "25/4 sq in"
+              ]
+            },
+            {
+              "Label": "Blue stripe width/area",
+              "Cells": [
+                "10/6 in",
+                "25/2 sq in"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Colombia flag measured stripe comparison",
+          "Description": "First-party accessible table of source fractions and measurements; actual original flag image is teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Full width and length",
+              "Cells": [
+                "3 1/2 in",
+                "5 1/4 in"
+              ]
+            },
+            {
+              "Label": "Blue/red stripe width",
+              "Cells": [
+                "1/4×7/2",
+                "7/8 in"
+              ]
+            },
+            {
+              "Label": "Yellow stripe width",
+              "Cells": [
+                "1/2×7/2",
+                "7/4 in"
+              ]
+            },
+            {
+              "Label": "Yellow stripe area",
+              "Cells": [
+                "7/4×21/4",
+                "147/16 sq in"
               ]
             }
           ]
