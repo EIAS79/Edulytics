@@ -63,9 +63,23 @@ class ReconcileTests(unittest.TestCase):
         report=mod.reconcile({"lessons":lessons},xunit,"a"*40)
         self.assertEqual(report["requiredXunitMissingCount"],0)
         self.assertEqual(report["nodeShardEvidenceRequiredCount"],29)
+        self.assertEqual(report["nodeLinkedWithoutXunitCount"],29)
         self.assertEqual(report["lessonDirectTestCount"],119)
         self.assertEqual(report["lessons"][0]["technicalStatus"],"NODE_SHARD_EVIDENCE_REQUIRED")
         self.assertEqual(report["dVerified"],0)
+
+    def test_node_link_is_still_required_when_xunit_also_passes(self):
+        lessons=[]
+        for unit,n in enumerate((12,17,20,21,26,21,13,18),1):
+            for lesson in range(1,n+1):
+                lessons.append({"LessonCode":f"PED:US-CCSS-MATH:G5:U{unit:02d}:L{lesson:02d}",
+                                "testPath":f"tests/UsCcssG5U{unit:02d}L{lesson:02d}Tests.cs"})
+        lessons[0]["testPath"]="tests/academic-us-ccss-g5-u01-l01-contract.test.cjs"
+        report=mod.reconcile({"lessons":lessons},[{"lessonCode":lessons[0]["LessonCode"],
+                "outcome":"Passed","testName":"Real","className":"G5Test","testId":"1"}],"c"*40)
+        self.assertEqual(report["nodeShardEvidenceRequiredCount"],1)
+        self.assertEqual(report["nodeLinkedWithoutXunitCount"],0)
+        self.assertFalse(report["lessons"][0]["dVerified"])
 
     def test_missing_csharp_class_still_fails_closed(self):
         lessons=[]
