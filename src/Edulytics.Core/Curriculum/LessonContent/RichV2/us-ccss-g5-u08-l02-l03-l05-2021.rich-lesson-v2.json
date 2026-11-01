@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l02-l03-l05-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u08-l02-l03-l05-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -237,11 +237,17 @@
       "CultureCode": "en",
       "Title": "Factors as a Factor in Our Strategy Choice",
       "ExplanationParagraphs": [
-        "Goal: choose a multiplication strategy based on the structure of the particular factors, explain that decision and compare another student's approach. The 2021 source presents products with factors close to 10, 100, round numbers and less convenient combinations so one fixed algorithm is not imposed.",
-        "Warm-up: consider 17×9 and17×101. Rather than repeatedly adding, use17×(10−1) and17×(100+1). State the corrections explicitly and explain why the product of 17 by101 must exceed17×100.",
-        "Activity 1 — independent set of factor structures: calculate 18×3=54 by a known fact, 18×101=1818 by distribution, 18×25=450 by quarter of18×100, and18×9=162 by compensation from18×10. Compute18×136=2448 by partial products18×(100+30+6). Ask the learner to name a preferred strategy for each and compare its efficiency with standard multiplication.",
-        "Activity 2 — contrast products: 29×7=203, 12×45=540, 15×199=2985 and24×154=3696. For15×199 use15×(200−1); for24×154 distribute into 24×(150+4). Highlight why a strategy effective for 15×199 is less attractive for24×154.",
-        "Assessment: the official lesson assesses choosing and justifying methods, not merely numeric products. Peer comparisons and claims of efficiency have multiple defensible responses and require teacher evaluation."
+        "Original IM2021 G5 U08:L03 asks children to choose among mental number facts, compensating near ten/hundred, distributivity and standard multi-digit multiplication on the actual PRINTED factors, and justify their strategy rather than claiming a single required technique.",
+        "Warm-up Number Talk Increasing Factors original230×10=2300,230×12=2760,230×15=3450,232×15=3480. Children compare how adding two to one factor increases result by30 for multiplier15.",
+        "Activity1 Choose a Multiplication Strategy printed14×3=42,14×101=1414,14×25=350,14×9=126,14×136=1904. Pupils choose methods; for14×101 use14×(100+1), for14×9 use14×(10−1).",
+        "Activity2 Compare Strategies printed29×7=203,12×45=540,15×199=2985,24×154=3696. Students compare efficiency and error risk with a partner; no one official method for every problem.",
+        "Previous invented18×3/18×101 problems in Rich V2 remain explicitly labeled Edulytiks extensions. Exact selected cases support original numerical answers but explanation and strategy choice are teacher reviewed.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: choose a multiplication strategy based on the structure of the particular factors, explain that decision and compare another student's approach. The 2021 source presents products with factors close to 10, 100, round numbers and less convenient combinations so one fixed algorithm is not imposed.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: consider 17×9 and17×101. Rather than repeatedly adding, use17×(10−1) and17×(100+1). State the corrections explicitly and explain why the product of 17 by101 must exceed17×100.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — independent set of factor structures: calculate 18×3=54 by a known fact, 18×101=1818 by distribution, 18×25=450 by quarter of18×100, and18×9=162 by compensation from18×10. Compute18×136=2448 by partial products18×(100+30+6). Ask the learner to name a preferred strategy for each and compare its efficiency with standard multiplication.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — contrast products: 29×7=203, 12×45=540, 15×199=2985 and24×154=3696. For15×199 use15×(200−1); for24×154 distribute into 24×(150+4). Highlight why a strategy effective for 15×199 is less attractive for24×154.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the official lesson assesses choosing and justifying methods, not merely numeric products. Peer comparisons and claims of efficiency have multiple defensible responses and require teacher evaluation."
       ],
       "KeyConcepts": [
         {
@@ -265,7 +271,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Just below two hundred",
+          "Title": "Source exact 1 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup230×10",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2300",
+          "Check": "Original numeric source example; incorrect distractors 230 and 23000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup230×12",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2760",
+          "Check": "Original numeric source example; incorrect distractors 2300 and 2500 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup230×15",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3450",
+          "Check": "Original numeric source example; incorrect distractors 2760 and 3000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup232×15",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3480",
+          "Check": "Original numeric source example; incorrect distractors 3450 and 2320 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Just below two hundred",
           "Question": "Calculate 15×199.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -277,7 +331,7 @@
           "Check": "15×199=2985."
         },
         {
-          "Title": "Use a quarter of a hundred",
+          "Title": "Optional existing extension — Use a quarter of a hundred",
           "Question": "Calculate 18×25.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -289,7 +343,7 @@
           "Check": "25×(20−2)=500−50=450."
         },
         {
-          "Title": "Use partial products",
+          "Title": "Optional existing extension — Use partial products",
           "Question": "Find24×154.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -311,18 +365,89 @@
           "Mistake": "Present a numerical answer as a complete strategy comparison",
           "WhyWrong": "The source asks why an algorithm fits certain factor structures.",
           "Correction": "Name the chosen property and compare with an alternative."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
         }
       ],
       "SummaryPoints": [
-        "Compare methods on the numbers, not a mandatory one-size-fits-all algorithm.",
-        "Use factors near 10/100/200 and known quarters to simplify when justified.",
-        "A credible strategy and reasoned comparison need teacher review.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-3/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
+        "Original warmup2300,2760,3450,3480.",
+        "Activity1 42,1414,350,126,1904.",
+        "Activity2 203,540,2985,3696.",
+        "Optional prior: Compare methods on the numbers, not a mandatory one-size-fits-all algorithm.",
+        "Optional prior: Use factors near 10/100/200 and known quarters to simplify when justified.",
+        "Optional prior: A credible strategy and reasoned comparison need teacher review.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-3/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Factors as a Factor in Our Strategy Choice — first-party model",
+          "Title": "Factors as a Factor in Our Strategy Choice — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup230×10",
+              "Cells": [
+                "2300",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup230×12",
+              "Cells": [
+                "2760",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup230×15",
+              "Cells": [
+                "3450",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup232×15",
+              "Cells": [
+                "3480",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×3",
+              "Cells": [
+                "42",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×101",
+              "Cells": [
+                "1414",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×25",
+              "Cells": [
+                "350",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×9",
+              "Cells": [
+                "126",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Factors as a Factor in Our Strategy Choice — first-party model",
           "Description": "Original text table for accessibility; no publisher handwritten-work image or copyrighted lesson art copied.",
           "Rows": [
             {

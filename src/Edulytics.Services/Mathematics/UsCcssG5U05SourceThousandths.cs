@@ -725,6 +725,19 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source Kiran second partial product650×20", "13000", "1300", "130"),
         new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original Kiran printed total5850 for650×27 is correct?", "false", "true", "unknown"),
         new("usccss.g5.u08.l02.source_placevalue_partial_products", "Original source factor27 tens digit2 has value", "20", "2", "200"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original warmup230×10", "2300", "230", "23000"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original warmup230×12", "2760", "2300", "2500"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original warmup230×15", "3450", "2760", "3000"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original warmup232×15", "3480", "3450", "2320"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity1 14×3", "42", "56", "14"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity1 14×101", "1414", "1400", "1144"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity1 14×25", "350", "250", "1400"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity1 14×9", "126", "140", "120"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity1 14×136", "1904", "1804", "1400"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 29×7", "203", "196", "290"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 12×45", "540", "450", "570"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 15×199", "2985", "3000", "2980"),
+        new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 24×154", "3696", "3690", "3596"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

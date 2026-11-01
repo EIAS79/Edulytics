@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u08.l03.source_multiplication_strategy_source_factors",
+      "version": 1,
+      "skillId": "number.whole.multiply",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u08-l03-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "diagram"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u08.l02.source_placevalue_partial_products",
       "version": 1,
       "skillId": "number.whole.multiply",
