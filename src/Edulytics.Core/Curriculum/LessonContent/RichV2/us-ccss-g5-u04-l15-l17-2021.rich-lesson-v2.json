@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l15-l17-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u04-l15-l17-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -206,11 +206,12 @@
       "CultureCode": "en",
       "Title": "World’s Record Noodle Soup",
       "ExplanationParagraphs": [
-        "Goal: interpret a real division context in which the quotient may be a MIXED number and the remainder has a physical meaning. The 2021 source's record-long CONTINUOUS noodle matters: the noodle is not merely unrelated little noodles whose lengths are added with no physical model.",
-        "Warm-up: discuss an independently described single continuous noodle, its length and the number of people to share it. Distinguish a length measure (feet) from servings and elapsed production time; real photos and protected material are not reused.",
-        "Activity 1 — original long noodle: one continuous noodle measures2050 feet and is divided equally among80 diners. Estimate about2000÷80=25 feet per person, then compute2050÷80=25 with50 feet remaining. Divide the remaining50 feet equally to obtain50/80=5/8 foot per person. Each receives25 5/8 feet of noodle.",
-        "Activity 2 — interpret leftover and number of diners: if the same noodle were shared by100 diners, each receives2050÷100=20 1/2 feet. Compare the group count, remaining fraction and why more equal diners mean a shorter share. Use a tape-line description so the remainder is understood as food length, not an abandoned people count.",
-        "Assessment: the original source asks learners to estimate, interpret and reason about continuous-noodle fractional quotients, not only divide integers. The student explanation, remainder interpretation and comparison remain teacher-reviewed; numeric quotient validation is supporting."
+        "Original IM 2021 Grade5 U04:L16 World’s Record Noodle Soup has a Chinese food company with a Guinness-record single continuous noodle approximately TEN THOUSAND ONE HUNDRED NINETEEN FEET long (10119 ft), equally shared among FOUR HUNDRED people (400). The source fraction remaining after division must be allocated fairly; neither treating the length as an unrelated piece count nor discarding remainder matches the task.",
+        "Warm-up Notice and Wonder World Record Event: original source describes the approximately10119-foot longest noodle. Pupils explain physical scale and what length in FEET means. Source photo/media not reproduced and length is approximate in the real world while source arithmetic treats the stated 10119 as the modeled whole.",
+        "Activity 1 How Many Feet in One Serving? 10119÷400. Reason with 400×25=10000, slightly BELOW total10119; everyone receives MORE than25 feet. Exactly in the mathematical model, after25 whole feet each, 119 feet remain to share among400: share is 25+119/400 feet =25.2975 feet per person. Students estimate before full calculation and decide if their estimate is lower or higher with source inequalities.",
+        "Activity 2 Han's Estimate: Han says each person will get about 25 1/4 feet (25.25). For400 people his claim corresponds to 400×(25+1/4)=10100ft, only19ft short of the modeled10119; exact share exceeds Han's estimate by 19/400ft (0.0475ft) per person. His estimate is reasonable, slightly low; teacher reviews explanation instead of an unverified publisher answer key.",
+        "Exact digital Practice validates bounded INTEGER subskills such as the 25 whole feet per person,119 leftover feet,10000 baseline,10100 Han total and19 aggregate difference. These are NOT claimed to be the full fractional share; the mixed-number 25 119/400, visual fair sharing, real-world context and qualitative estimation remain TEACHER_REVIEW_REQUIRED. Earlier 2050÷80=25 5/8 remains an optional correct extension only. Edulytiks authored independent Cool-down shares8011ft among400.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -234,7 +235,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Find a mixed quotient",
+          "Title": "Original record noodle source fractional share",
+          "Question": "A 10119-foot noodle is shared equally by400 diners. How many feet per person?",
+          "Method": "Whole-number quotient and leftover part divided by all people.",
+          "Steps": [
+            "400×25=10000 feet are allocated as25 feet to each diner.",
+            "Original modeled length minus that is119 feet left.",
+            "Each receives an additional 119/400 foot; no noodle discarded."
+          ],
+          "Answer": "25 119/400 feet, or25.2975 feet per person.",
+          "Check": "400×25+119=10119."
+        },
+        {
+          "Title": "Source Han about25 and one quarter",
+          "Question": "How does Han's 25¼ foot estimate per diner compare to exact mathematical share?",
+          "Method": "Multiply his estimated share by total diners and compare to source total.",
+          "Steps": [
+            "400×25=10000, and400×1/4=100 feet.",
+            "Han's total=10100 feet,19 feet below10119.",
+            "Per person Han underestimates by19/400 feet."
+          ],
+          "Answer": "Reasonable but slightly low; true modeled share is25 119/400 feet.",
+          "Check": "119/400 >1/4 because119>100."
+        },
+        {
+          "Title": "Estimate without completing source division",
+          "Question": "Is25 feet per person above or below 10119÷400?",
+          "Method": "Benchmark 400×25=10000 compared to stated whole.",
+          "Steps": [
+            "25 groups of400 equals10000.",
+            "Original total is10119, which exceeds10000.",
+            "Equal share therefore exceeds25 feet per diner."
+          ],
+          "Answer": "25 feet is lower than the exact share.",
+          "Check": "Bounded reasoning without calculating full quotient."
+        },
+        {
+          "Title": "Optional existing extension — Find a mixed quotient",
           "Question": "2050 feet of noodle among80 diners. Length per person?",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -246,7 +283,7 @@
           "Check": "80×25=2000 and80×5/8=50, total2050 feet."
         },
         {
-          "Title": "Change diner count",
+          "Title": "Optional existing extension — Change diner count",
           "Question": "If the same 2050-foot noodle is shared among100 diners, what is the share?",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -258,7 +295,7 @@
           "Check": "100×20 1/2=2050 feet."
         },
         {
-          "Title": "Check a wrong remainder interpretation",
+          "Title": "Optional existing extension — Check a wrong remainder interpretation",
           "Question": "A student says each diner gets25 feet, while50 extra feet should simply be thrown away. Explain the error.",
           "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
           "Steps": [
@@ -280,53 +317,59 @@
           "Mistake": "Read the quotient remainder as extra whole people",
           "WhyWrong": "The remainder is measured in feet, not in number of diners.",
           "Correction": "Label every intermediate quantity in its proper units."
+        },
+        {
+          "Mistake": "Substitute fabricated original noodle 2050ft/80 diners and discard continuous length remainder",
+          "WhyWrong": "Source original specifies approx10119ft and400 diners, whose fractional remainder119/400 differs substantially.",
+          "Correction": "Restore10119÷400, use25 whole feet plus119/400, and compare directly to Han's25¼ estimate."
         }
       ],
       "SummaryPoints": [
-        "A whole-number division remainder can become a fraction of the unit per person.",
-        "One original continuous object is shared entirely, preserving exact total length.",
-        "Teacher checks the real-world interpretation of a mixed-number quotient.",
-        "2021 Illustrative Mathematics K–5 Grade 5, Unit 4 Lesson 16 public HTML: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-16/lesson.html. Student Task PDF and gated Cool-down not independently verified. Examples and text diagrams are original Edulytiks work."
+        "Original source record: one noodle approximately10119 feet long, serving400 people.",
+        "Full mathematical share=10119/400=25 119/400=25.2975 feet/person.",
+        "Han's about25 1/4 foot share is slightly low by19/400 ft/person.",
+        "Selected Practice only checks integer components; fractional sharing model and estimates are teacher reviewed.",
+        "Prior 2050ft/80 example remains optional extension and is NOT original source."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "World’s Record Noodle Soup — mathematical interpretation",
-          "Description": "Original accessible mathematical text diagram, without source photo or protected chart.",
+          "Title": "Original source 10119-foot noodle and Han's fraction estimate",
+          "Description": "Edulytiks accessible arithmetic summary; original noodle photo not reproduced.",
           "Rows": [
             {
-              "Label": "Total length",
+              "Label": "Original source length / diners",
               "Cells": [
-                "2050 ft",
-                "2050 ft"
+                "10119 ft",
+                "400"
               ]
             },
             {
-              "Label": "Diners",
+              "Label": "Whole feet/person",
               "Cells": [
-                "80",
-                "100"
+                "25 ft",
+                "10000 ft allocated"
               ]
             },
             {
-              "Label": "Whole feet each",
+              "Label": "Remainder distributed",
               "Cells": [
-                "25",
-                "20"
+                "119 ft",
+                "119/400 ft/person"
               ]
             },
             {
-              "Label": "Fractional feet each",
+              "Label": "Exact model share",
               "Cells": [
-                "5/8",
-                "1/2"
+                "25 119/400 ft",
+                "25.2975 ft"
               ]
             },
             {
-              "Label": "Total share",
+              "Label": "Han's share estimate",
               "Cells": [
-                "25 5/8",
-                "20 1/2"
+                "25 1/4 ft",
+                "19/400 ft/person low"
               ]
             }
           ]

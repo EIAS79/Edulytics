@@ -80,6 +80,11 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: unknown width feet when volume936 cubic ft, length8 ft, height9 ft", "936 ÷ (8 × 9)", 13, "dimension or product as indicated"),
         new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: unknown length feet when volume1536 cubic ft, width48 ft, height2 ft", "1536 ÷ (48 × 2)", 16, "dimension or product as indicated"),
         new("usccss.g5.u04.l15.original_prism_base_and_height", "Original source prism table: product width×height in square feet, NOT uniquely either dimension, when volume1008 cu ft and length36 ft", "1008 ÷ 36", 28, "dimension or product as indicated"),
+        new("usccss.g5.u04.l16.source_long_noodle_whole_quotient_parts", "2021 source continuous noodle approximately10119 feet shared equally among400 people: whole FEET per person, not full fractional share", "floor(10119 ÷ 400)", 25, "whole feet per diner, plus fractional remainder"),
+        new("usccss.g5.u04.l16.source_long_noodle_whole_quotient_parts", "Source noodle original total10119 feet minus twenty-five whole feet for each of400 diners", "10119 − (25 × 400)", 119, "feet left to distribute fractionally"),
+        new("usccss.g5.u04.l16.source_han_estimate_integer_checks", "Source 25 whole feet distributed to400 original noodle diners", "25 × 400", 10000, "feet of the original noodle"),
+        new("usccss.g5.u04.l16.source_han_estimate_integer_checks", "Han's source estimate 25 1/4 feet each for400 people; total length for that estimate", "(25 × 400) + ((1/4) × 400)", 10100, "feet total"),
+        new("usccss.g5.u04.l16.source_han_estimate_integer_checks", "Difference between original modeled length 10119ft and Han's total estimate10100ft", "10119 − 10100", 19, "feet combined difference"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
