@@ -25,7 +25,7 @@ test('source-faithful Activity 1 preserves BOTH third-quarter orders and exact t
 test('Activity 2 retains Priya source expression pair and distinct image expression', () => {
   const l = lesson();
   const t = l.ExplanationParagraphs.join(' ');
-  assert.match(t, /Priya diagram/);
+  assert.match(t, /Priya figure 149035/);
   assert.match(t, /1\/5 × 1\/2/);
   assert.match(t, /1\/2 × 1\/5/);
   assert.match(t, /SECOND source figure 149036/);
