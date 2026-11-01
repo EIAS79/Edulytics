@@ -85,28 +85,52 @@ function academic(){
   process.exitCode=2;
 }
 
+// The accepted A-C handoff has historical element-array schemas. Missing a
+// recognized array is a diagnostic bug; an itemized list is still NOT academic approval.
+function analyzeElementInventory(evidence, lessonCode){
+  const sourceElements=Array.isArray(evidence.lessonElements)?evidence.lessonElements:
+    Array.isArray(evidence.elements)?evidence.elements:
+    Array.isArray(evidence.sourceElements)?evidence.sourceElements:null;
+  const declaredCounts=[evidence.sourceElementsKnown,evidence.sourceElementsCount]
+    .filter(Number.isInteger);
+  const identified=sourceElements?.length ?? declaredCounts[0] ?? null;
+  const matched=sourceElements?.filter(x=>x?.Status==='MATCHED_DIGITAL'||x?.Status==='MATCHED_TEACHER_LED').length ?? null;
+  const statusCounts={};
+  const blockers=[];
+  if(sourceElements===null)blockers.push('SOURCE_ITEMIZED_DENOMINATOR_UNKNOWN');
+  if(sourceElements){
+    const ids=new Set();
+    for(const item of sourceElements){
+      const status=typeof item?.Status==='string'?item.Status:'UNKNOWN';
+      statusCounts[status]=(statusCounts[status]||0)+1;
+      if(typeof item?.SourceElementId!=='string'||!item.SourceElementId.trim())
+        blockers.push('SOURCE_ELEMENT_ID_MISSING');
+      else if(ids.has(item.SourceElementId))
+        blockers.push('DUPLICATE_SOURCE_ELEMENT_ID');
+      else ids.add(item.SourceElementId);
+      if(item?.LessonCode!==lessonCode)blockers.push('SOURCE_ELEMENT_LESSON_CODE_MISMATCH');
+      if(typeof item?.SourceSnapshotId!=='string'||!item.SourceSnapshotId.trim())
+        blockers.push('MISSING_ELEMENT_SOURCE_SNAPSHOT');
+    }
+    if(declaredCounts.some(n=>n!==sourceElements.length))blockers.push('SOURCE_ITEM_COUNT_MISMATCH');
+    if(Number.isInteger(evidence.sourceElementsAccepted)&&evidence.sourceElementsAccepted!==matched)
+      blockers.push('ACCEPTED_ELEMENT_COUNT_MISMATCH');
+    if(matched!==sourceElements.length)blockers.push('UNMATCHED_IDENTIFIED_SOURCE_ELEMENTS');
+  }
+  if(evidence.lessonCode && evidence.lessonCode!==lessonCode)
+    blockers.push('SOURCE_EVIDENCE_LESSON_CODE_MISMATCH');
+  return {sourceElements,identified,matched,statusCounts,blockers:[...new Set(blockers)]};
+}
+
 function sourceEvidenceAudit(){
   const q=inventory();
   const rows=[];
   for(const item of q.records){
     const evidence=read(item.evidence);
-    const sourceElements=Array.isArray(evidence.lessonElements)?evidence.lessonElements:
-      Array.isArray(evidence.elements)?evidence.elements:null;
-    const identified=sourceElements?.length ?? (Number.isInteger(evidence.sourceElementsKnown)?evidence.sourceElementsKnown:null);
-    const matched=sourceElements?.filter(x=>x.Status==='MATCHED_DIGITAL'||x.Status==='MATCHED_TEACHER_LED').length ?? null;
-    const statusCounts={};
-    if(sourceElements)for(const e of sourceElements){
-      const status=typeof e.Status==='string'?e.Status:'UNKNOWN';
-      statusCounts[status]=(statusCounts[status]||0)+1;
-    }
-    const blockers=[];
+    const {sourceElements,identified,matched,statusCounts,blockers}=analyzeElementInventory(evidence,item.code);
     if(evidence.status==='A_C_EXPLICIT_GAP')blockers.push('A_C_EXPLICIT_GAP');
     if(evidence.sourceCoverage100Percent!==true)blockers.push('SOURCE_PARITY_NOT_INDEPENDENTLY_PROVEN');
     if(evidence.academicAccepted!==true)blockers.push('ACADEMIC_SIGNOFF_NOT_PROVEN');
-    if(sourceElements===null)blockers.push('SOURCE_ITEMIZED_DENOMINATOR_UNKNOWN');
-    if(sourceElements&&Number.isInteger(evidence.sourceElementsKnown)&&evidence.sourceElementsKnown!==sourceElements.length)blockers.push('SOURCE_ITEM_COUNT_MISMATCH');
-    if(sourceElements&&matched!==sourceElements.length)blockers.push('UNMATCHED_IDENTIFIED_SOURCE_ELEMENTS');
-    if(sourceElements?.some(x=>typeof x.SourceSnapshotId!=='string'||!x.SourceSnapshotId.trim()))blockers.push('MISSING_ELEMENT_SOURCE_SNAPSHOT');
     const acceptedReviewer=typeof evidence.academicReviewerSignature==='string'&&evidence.academicReviewerSignature.trim().length>0;
     if(!acceptedReviewer)blockers.push('AUTHORIZED_HUMAN_REVIEWER_NOT_EVIDENCED');
     rows.push({ordinal:item.ordinal,lessonCode:item.code,sourceEvidencePath:item.evidence,
@@ -133,9 +157,12 @@ function sourceEvidenceAudit(){
   if(q.errors.length||result.blockedLessons)process.exitCode=2;
 }
 
-const mode=process.argv[2]||'preflight';
-if(mode==='preflight')preflight();
-else if(mode==='shard')shard(process.argv[3]);
-else if(mode==='academic')academic();
-else if(mode==='source-evidence')sourceEvidenceAudit();
-else throw Error('Unknown mode '+mode);
+if(require.main===module){
+  const mode=process.argv[2]||'preflight';
+  if(mode==='preflight')preflight();
+  else if(mode==='shard')shard(process.argv[3]);
+  else if(mode==='academic')academic();
+  else if(mode==='source-evidence')sourceEvidenceAudit();
+  else throw Error('Unknown mode '+mode);
+}
+module.exports={analyzeElementInventory};

@@ -36,6 +36,8 @@ jobs:
         run: node tools/curriculum/g5-stage-d-diagnostic.cjs preflight
       - name: Reject duplicate embedded Rich V2 lesson/culture records across curricula
         run: node --test tests/academic-us-ccss-g5-rich-v2-duplicate-gate-stage-d.test.cjs
+      - name: Validate source-item evidence across legacy 2021 schemas and negative controls
+        run: node --test tests/academic-us-ccss-g5-stage-d-source-inventory.test.cjs
   source-element-evidence:
     name: grade5-source-element-provenance-and-approval-fail-closed
     runs-on: ubuntu-24.04
