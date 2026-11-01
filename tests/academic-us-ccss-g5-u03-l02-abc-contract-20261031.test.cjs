@@ -80,4 +80,43 @@ test('original educator scoring cannot be passed from numeric-only choice', () =
   assert.equal(rubric.tests,'AUTHORED_NOT_RUN');
 });
 
-test.todo('Supervisor unique owner: select L02 exact Practice family with Build/Solve/Verify, equivalent grids, source diagram expression, malformed and TEACHER_REVIEW_REQUIRED rubric; Stage C not accepted until real lesson route');
+// L02's three-file Practice integration is now on the Grade 5 course branch.
+// This is an AUTHORED_NOT_RUN static contract regression fixture, not
+// proof of executed C# scoring or persisted teacher submissions.
+test('L02 selected Practice is lesson-scoped, has both exact families and a shared engine dispatcher', () => {
+  const contract = fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+  const codePos = contract.indexOf('byLesson["' + code + '"]');
+  assert.ok(codePos >= 0, 'actual lesson code has an explicit selected contract');
+  const lessonContract = contract.slice(codePos, codePos + 740);
+  const families = [
+    'usccss.g5.u03.l02.unit_fraction_of_unit_fraction',
+    'usccss.g5.u03.l02.same_original_whole_order_comparison'
+  ];
+  for (const family of families) assert.ok(lessonContract.includes(family), family);
+  assert.match(lessonContract,/READY_VERIFIED/);
+  assert.match(lessonContract,/supporting\.fractions\.multiply_divide/);
+
+  const registered = json('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json').families;
+  for (const family of families) {
+    const matches = registered.filter(f => f.id === family);
+    assert.equal(matches.length,1, 'exactly one registry entry: ' + family);
+    assert.equal(matches[0].lessonPracticeRouting,true);
+    assert.equal(matches[0].productionRouting,false);
+    assert.equal(matches[0].skillId,'supporting.fractions.multiply_divide');
+  }
+  const engine = fs.readFileSync(path.join(root,
+    'src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs'),'utf8');
+  const delegate = 'UsCcssG5U03L02UnitFractionQuestions';
+  assert.ok(engine.includes(delegate + '.Supports(family.Trim())'));
+  for(const method of ['Build','Solve','Verify']) {
+    assert.ok(engine.includes(delegate + '.' + method + '('),
+      'exact selected engine delegation: '+method);
+  }
+  const local = fs.readFileSync(path.join(root,
+    'src/Edulytics.Services/Mathematics/UsCcssG5U03L02UnitFractionQuestions.cs'),'utf8');
+  for(const family of families) assert.ok(local.includes(family));
+  assert.ok(local.includes('TEACHER_REVIEW_REQUIRED'));
+});
+
+test.todo('Real authenticated renderer, source-specific second published diagram, teacher rubric persistence and .NET verification remain outside A-B-C authoring');
