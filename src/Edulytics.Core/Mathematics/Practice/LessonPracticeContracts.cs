@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 Grade 5 U04:L01 number talk, source estimates, and
+        // source products; student strategies TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U04:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U04:L01", "number.whole.multiply",
+            "G5_SOURCE_MULTIDIGIT_PRODUCT_ESTIMATE_AND_EXACT_CALCULATION",
+            ["usccss.g5.u04.l01.source_multi_digit_product_values", "usccss.g5.u04.l01.source_reasonable_product_estimate"],
+            "IM2021_G5_U04_L01_EXACT_SELECTED_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U03:L20: source-specific selected exact
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U03:L20"] = new LessonPracticeContract(

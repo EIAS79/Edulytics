@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v6-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Estimate and Find Products",
       "ExplanationParagraphs": [
-        "Learning goal: estimate a multi-digit product using benchmarks, then find the exact value using a student-selected strategy and explain whether the original estimate was high or low. This opening source lesson expects several valid approaches, not mandatory standard-algorithm steps before students compare methods.",
-        "Warm-up: mentally use basic facts to find 50×8, 50×80, 50×800 and 800×500. Tell a partner how each factor of ten changes the resulting place value. Keep number-talk reasoning distinct from formal algorithm rehearsal.",
-        "Activity 1 — reasonable estimates: estimate 23×147 using 20×150=3000 and 25×150=3750 as reference benchmarks. The exact result is 3381 and lies between those two rounded estimates. Ask which estimate is closer and why 20×150 is too low; learners may give another reasonable benchmark if they justify it.",
-        "Activity 2 — compute related products: determine 23×7=161, 23×47=1081 and 23×147=3381 using related partial products. Explain that 23×147=23×(100+40+7), and the two shorter products help make sense of the extra 100. Create a diagram, vertical computation or verbal explanation of the selected approach.",
-        "Academic boundary: the original source requests a defended estimate, actual calculation and gallery comparison of different methods. A numeric 3381 check is supporting Practice only; whether the estimate was justified, method correct and comparison clear requires teacher review."
+        "Original IM 2021 Grade5 U04:L01 5.NBT.B.5: estimate and multiply multi-digit whole numbers using place value and student-chosen reasoning. Original 2021 examples and choices, not fabricated numbers, are the core lesson; teacher examines several mathematically defensible strategies.",
+        "Warm-up Number Talk A Multiple of 10: original mental products 50×6=300, 50×60=3000, 50×600=30000, 600×500=300000. Ask how multiplying one factor by ten changes a product, and why 600×500 involves six hundred times five hundred.",
+        "Activity 1 Reasonable Estimates: original 18×149, choose the MOST reasonable from 2000, 4000, 3000, 1500. Exact product 2682 and 3000 is the closest offered. Compare benchmark 18×150≈2700 and 20×150≈3000; 1500 is too low, 4000 too high, 2000 possible lower bound but less close. Explain whether true product is greater or less than selected estimate (2682<3000).",
+        "Activity 2 Multiply by 18: original products 18×9=162; 18×49=882; 18×149=2682. For 18×149 decompose as 18×(100+40+9)=1800+720+162=2682 or as 18×(150−1)=2700−18. Learners compare their valid place-value strategies and adjust the original estimate.",
+        "Independent Edulytiks author-created alternative Cool-down: estimate then calculate 17×136=2312 using place value; explain why close to 2400. This does NOT reproduce original teacher-gated Cool-down 'Fifteen'. Original art and separate Student Task PDF not individually certified; explanation and student-generated strategy TEACHER_REVIEW_REQUIRED.",
+        "Existing correct 23×147 and 50×8 extension examples are preserved after original 2021 source examples, not presented as publisher tasks."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +37,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Estimate before multiplying",
+          "Title": "Original number talk powers of ten",
+          "Question": "Calculate 50×6,50×60,50×600,600×500 mentally.",
+          "Method": "Source 2021 exact product and an independently authored place-value explanation; teacher verifies original student method.",
+          "Steps": [
+            "50×6=300.",
+            "Extra factor of 10 gives 50×60=3000 then 50×600=30000.",
+            "600×500=6×5×100×100=300000."
+          ],
+          "Answer": "300, 3000, 30000, 300000.",
+          "Check": "Check each factor's place value and zeros."
+        },
+        {
+          "Title": "Original most-reasonable estimate",
+          "Question": "From 2000,4000,3000,1500 choose the best estimate of 18×149.",
+          "Method": "Source 2021 exact product and an independently authored place-value explanation; teacher verifies original student method.",
+          "Steps": [
+            "18×150=2700, slightly larger than true product.",
+            "20×150=3000 is a reasonable benchmark.",
+            "Exact 18×149=2682, closer to 3000 than to any other offered answer."
+          ],
+          "Answer": "3000 (true product 2682).",
+          "Check": "2682<3000, and 3000 is only 318 away."
+        },
+        {
+          "Title": "Original source multiply by eighteen",
+          "Question": "Find 18×9,18×49,18×149, explaining a coherent mental progression.",
+          "Method": "Source 2021 exact product and an independently authored place-value explanation; teacher verifies original student method.",
+          "Steps": [
+            "18×9=162.",
+            "18×49=18×(50−1)=900−18=882.",
+            "18×149=18×(150−1)=2700−18=2682."
+          ],
+          "Answer": "162; 882; 2682.",
+          "Check": "18×149=1800+720+162=2682."
+        },
+        {
+          "Title": "Optional prior extension — Estimate before multiplying",
           "Question": "Estimate 23×147 and decide whether 3000 is too low.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -48,7 +85,7 @@
           "Check": "23×147=3381 and 3381−3000=381."
         },
         {
-          "Title": "Connect three products",
+          "Title": "Optional prior extension — Connect three products",
           "Question": "Find 23×7, 23×47 and 23×147.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -60,7 +97,7 @@
           "Check": "1081+2300=3381."
         },
         {
-          "Title": "Compare strategies",
+          "Title": "Optional prior extension — Compare strategies",
           "Question": "Why do 23×(100+47) and (20+3)×147 agree?",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -82,42 +119,50 @@
           "Mistake": "Use one algorithm as the only valid explanation",
           "WhyWrong": "The introductory source permits diagrams, properties and student-selected computation strategies.",
           "Correction": "Require valid mathematical reasoning and reasonable results, not a single preferred layout."
+        },
+        {
+          "Mistake": "Treat 23×147 and 50×8 as the printed original 2021 L01 exercises",
+          "WhyWrong": "Original textbook asks 18×149 and number talk 50×6, 50×60, 50×600, 600×500, with four specific estimates.",
+          "Correction": "Restore original tasks first and retain correct unrelated examples as optional extensions."
         }
       ],
       "SummaryPoints": [
-        "Estimate, compute, then explain over/under estimation.",
-        "Different distributive or diagram strategies can represent the same exact product.",
-        "Teacher reviews how the estimate and chosen method are justified.",
-        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-1/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+        "Original number talk 50×6=300,50×60=3000,50×600=30000,600×500=300000.",
+        "Original estimated 18×149: among 2000,4000,3000,1500 choose 3000, above actual 2682.",
+        "Original Activity2 18×9=162,18×49=882,18×149=2682; explain multiples of ten/place value.",
+        "Teacher reviews learners' estimation, bounding, and different correct multiplication approaches.",
+        "Independent Edulytiks Cool-down uses 17×136=2312; gated publisher Cool-down not reproduced."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Estimate and Find Products — place-value model",
-          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Title": "2021 source products and estimation benchmarks",
+          "Description": "First-party accessible multiplication table, with exact original source numbers. The pupil's written strategy and original book graphics remain teacher-reviewed.",
           "Rows": [
             {
-              "Label": "Expression",
+              "Label": "Number Talk",
               "Cells": [
-                "23×7",
-                "23×47",
-                "23×147"
+                "50×6=300",
+                "50×60=3000",
+                "50×600=30000",
+                "600×500=300000"
               ]
             },
             {
-              "Label": "Decomposition",
+              "Label": "18×149 source options",
               "Cells": [
-                "23×7",
-                "23×40+23×7",
-                "23×100+23×40+23×7"
+                "2000",
+                "4000",
+                "3000 BEST",
+                "1500"
               ]
             },
             {
-              "Label": "Product",
+              "Label": "Exact source products",
               "Cells": [
-                "161",
-                "1081",
-                "3381"
+                "18×9=162",
+                "18×49=882",
+                "18×149=2682"
               ]
             }
           ]
