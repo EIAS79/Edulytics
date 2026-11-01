@@ -14,14 +14,14 @@ public static class UsCcssG5U03L06NonunitAreaQuestions
     public sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     private static readonly (int A,int B,int C,int D)[] Examples=
-        [(2,6,4,5),(3,6,4,5),(6,5,4,4)];
+        [(2,6,4,5),(3,6,4,5),(6,5,4,4),(4,6,4,5)];
     public static bool Supports(string? family) => family==Family;
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p,
         out (int A,int B,int C,int D) e)
     {
         e=default;
         if(!Supports(family)||p is null||p.Count!=2||
-           !p.TryGetValue("case",out int c)||c is <0 or >2||
+           !p.TryGetValue("case",out int c)||c is <0 or >=4||
            !p.TryGetValue("slot",out int slot)||slot is <0 or >2) return false;
         e=Examples[c];return true;
     }
@@ -30,7 +30,7 @@ public static class UsCcssG5U03L06NonunitAreaQuestions
         if(!Supports(family))throw new InvalidOperationException("Not Grade 5 U03:L06 family.");
         ArgumentNullException.ThrowIfNull(random);
         IReadOnlyDictionary<string,int> p=new Dictionary<string,int>(StringComparer.Ordinal)
-        {["case"]=random.Next(3),["slot"]=random.Next(3)};
+        {["case"]=random.Next(Examples.Length),["slot"]=random.Next(3)};
         if(!Valid(family,p,out var e))throw new InvalidOperationException("Invalid source bounds.");
         string correct=$"{e.A*e.C}/{e.B*e.D}";
         string wrongA=$"{e.A+e.C}/{e.B+e.D}";
@@ -45,6 +45,8 @@ public static class UsCcssG5U03L06NonunitAreaQuestions
           ? "The last original source table asks how (6 x 4)/(5 x 4) represents a shaded area, even though more than one unit can be visible. "
           : p["case"]==0
           ? "The source Activity 1 area corresponds to 2/6 x 4/5 = 2 x 4 x (1/6 x 1/5). "
+          : p["case"]==3
+          ? "Edulytiks-original supplementary variation: 4/6 x 4/5 of the original unit square. "
           : "The preparation model uses 3/6 x 4/5 of a unit square. ";
         string prompt=question+ $"The ORIGINAL one-square-unit area is the reference. Select 1: {opts[0]}; 2: {opts[1]}; 3: {opts[2]}. " +
             "Source diagrams, the WODB reasoning and learner calculations remain TEACHER_REVIEW_REQUIRED.";
