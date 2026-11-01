@@ -747,6 +747,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source1008÷14 nearest among70 80 90", "70", "80", "90"),
         new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source blank÷blank=700 choose valid example", "7000÷10=700", "7000÷100=700", "700÷0=700"),
         new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source blank÷blank=78 choose valid example", "780÷10=78", "780÷100=78", "78÷0=78"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Source warmup9953÷37 exact quotient", "269", "270", "260"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Source Elena's printed6773÷13 exact quotient", "521", "53", "520"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original Elena's printed partial quotient53 for6773÷13 is correct true/false", "false", "true", "unknown"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Source Elena intended partial first subtraction for500 groups of13", "6500", "650", "5000"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Source remaining6773−6500 after first partial quotient500", "273", "6123", "2773"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Source 273÷13 quotient", "21", "3", "20"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original source summary alternate quotient1782÷27", "66", "56", "65"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original source summary partial quotients60+6", "66", "64", "606"),
+        new("usccss.g5.u08.l05.source_division_partial_quotient_error_analysis", "Original Elena intended exact division6773÷13=521, correct?", "true", "false", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

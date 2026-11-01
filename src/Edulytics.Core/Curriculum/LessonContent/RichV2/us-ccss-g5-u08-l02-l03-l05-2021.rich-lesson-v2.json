@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l02-l03-l05-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u08-l02-l03-l05-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -487,11 +487,17 @@
       "CultureCode": "en",
       "Title": "More Division",
       "ExplanationParagraphs": [
-        "Goal: revisit partial quotients with multi-digit divisors, judge whether another learner's division answer can be reasonable, and explain which large partial products have been subtracted. A student-written long-division layout may contain a correct remainder calculation but a wrong place value in the hundreds portion.",
-        "Warm-up: use 13×500=6500 to estimate 6773÷13. Any positive quotient much smaller than500 cannot be correct because more than6500 was available to partition.",
-        "Activity 1 — diagnostic learner critique: an original false partial-quotient calculation for 6773÷13 subtracts 6500 correctly but labels its partial quotient as50 instead of500; it then subtracts260 (20 groups), leaving13, and subtracts13 (1 group). Recording50+20+1=71 is wrong, while500+20+1=521 is correct. Explain the value of each subtracted chunk, not just its written position.",
-        "Activity 2 — independent division: divide 7392 by24 using partial quotients. Subtract24×300=7200, leaving192; subtract24×8=192, leaving zero. Conclude308. Alternatively use24×(300+8)=7392; compare partial-quotient methods with a peer.",
-        "Assessment: numerical quotient and inverse check can be verified, but the selected partial-quotient chunks, estimation of order of magnitude and critique of a fictional student solution require teacher review."
+        "Original IM2021 G5 U08:L05 revisits PARTIAL QUOTIENT division with deliberate peer error analysis, where the divisor is two digit and the dividend four digit. Source estimates are used to reject implausible small quotients.",
+        "Warm-up Estimation Exploration original9953÷37 equals269, close to10000÷40≈250; teacher scores three plausible estimates rather than a single prescribed low/about-right/high number.",
+        "Activity1 Elena's Work original6773÷13. The printed image claims partial quotients50,2,1 giving53 with the first subtraction650 while the displayed remainder273 would require subtraction6500. Correct result521 because500×13=6500 leaves273 and20×13=260 leaves13 then1×13=13. The reported53 is not a reasonable 6773÷13 estimate.",
+        "Activity2 Partial Quotients Practice Partner A/B original expressions are embedded in picture-only task boxes, not verifiably extractable from text. Students compare alternative partial-quotient decompositions rather than just supply one key. The printed section summary illustrates1782÷27=66 using60+6 or30+30+5+1.",
+        "Previous invented division cases remain optional Edulytiks extensions, not original. Numeric selected Practice covers source warmup and Elena error, original diagrams and learner's own partial-quotient work require teacher review.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: revisit partial quotients with multi-digit divisors, judge whether another learner's division answer can be reasonable, and explain which large partial products have been subtracted. A student-written long-division layout may contain a correct remainder calculation but a wrong place value in the hundreds portion.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: use 13×500=6500 to estimate 6773÷13. Any positive quotient much smaller than500 cannot be correct because more than6500 was available to partition.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — diagnostic learner critique: an original false partial-quotient calculation for 6773÷13 subtracts 6500 correctly but labels its partial quotient as50 instead of500; it then subtracts260 (20 groups), leaving13, and subtracts13 (1 group). Recording50+20+1=71 is wrong, while500+20+1=521 is correct. Explain the value of each subtracted chunk, not just its written position.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — independent division: divide 7392 by24 using partial quotients. Subtract24×300=7200, leaving192; subtract24×8=192, leaving zero. Conclude308. Alternatively use24×(300+8)=7392; compare partial-quotient methods with a peer.",
+        "Optional previous source-aligned or independently authored extension — Assessment: numerical quotient and inverse check can be verified, but the selected partial-quotient chunks, estimation of order of magnitude and critique of a fictional student solution require teacher review."
       ],
       "KeyConcepts": [
         {
@@ -515,7 +521,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Detect wrong magnitude",
+          "Title": "Source exact 1 — Partial Quotients",
+          "Question": "Source warmup9953÷37 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "269",
+          "Check": "Original numeric source example; incorrect distractors 270 and 260 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Partial Quotients",
+          "Question": "Source Elena's printed6773÷13 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "521",
+          "Check": "Original numeric source example; incorrect distractors 53 and 520 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Partial Quotients",
+          "Question": "Original Elena's printed partial quotient53 for6773÷13 is correct true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Partial Quotients",
+          "Question": "Source Elena intended partial first subtraction for500 groups of13",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "6500",
+          "Check": "Original numeric source example; incorrect distractors 650 and 5000 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Detect wrong magnitude",
           "Question": "A learner records71 for6773÷13 while subtracting chunks6500,260 and13. Correct the reasoning.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -527,7 +581,7 @@
           "Check": "13×521=6773; 13×71 is much too small."
         },
         {
-          "Title": "Create your own partial quotients",
+          "Title": "Optional existing extension — Create your own partial quotients",
           "Question": "Divide7392 by24.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -539,7 +593,7 @@
           "Check": "24×308=7392."
         },
         {
-          "Title": "Use a second chunking",
+          "Title": "Optional existing extension — Use a second chunking",
           "Question": "Find6773÷13 by subtracting a big round chunk first.",
           "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
           "Steps": [
@@ -561,18 +615,89 @@
           "Mistake": "Accept a small division quotient when the dividend is thousands and divisor about ten",
           "WhyWrong": "Magnitude matters: 13×500 already accounts for6500.",
           "Correction": "Estimate with known divisor multiples before or after dividing."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
         }
       ],
       "SummaryPoints": [
-        "Partial quotients can be chosen in different valid sizes but must sum to the true quotient.",
-        "A place-value critique is distinct from checking only the remainder.",
-        "Peer explanations and annotated chunking are teacher-reviewed.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-5/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
+        "Warmup exact269.",
+        "Original6773÷13=521, incorrect image53 due to missing place-value scaling.",
+        "Summary1782÷27=66 can be decomposed60+6 or30+30+5+1.",
+        "Optional prior: Partial quotients can be chosen in different valid sizes but must sum to the true quotient.",
+        "Optional prior: A place-value critique is distinct from checking only the remainder.",
+        "Optional prior: Peer explanations and annotated chunking are teacher-reviewed.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-5/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "More Division — first-party model",
+          "Title": "Partial Quotients — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source warmup9953÷37 exact quotient",
+              "Cells": [
+                "269",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Elena's printed6773÷13 exact quotient",
+              "Cells": [
+                "521",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Elena's printed partial quotient53 for6773÷13 is correct true",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Elena intended partial first subtraction for500 groups of13",
+              "Cells": [
+                "6500",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source remaining6773−6500 after first partial quotient500",
+              "Cells": [
+                "273",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source 273÷13 quotient",
+              "Cells": [
+                "21",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source summary alternate quotient1782÷27",
+              "Cells": [
+                "66",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source summary partial quotients60+6",
+              "Cells": [
+                "66",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — More Division — first-party model",
           "Description": "Original text table for accessibility; no publisher handwritten-work image or copyrighted lesson art copied.",
           "Rows": [
             {
