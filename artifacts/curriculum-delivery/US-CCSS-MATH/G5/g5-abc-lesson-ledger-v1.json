@@ -6,18 +6,18 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L03",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L04",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
     "A_CLOSED": 32,
     "B_CLOSED": 32,
-    "C_PREPARED": 31,
-    "READY_FOR_D": 31,
+    "C_PREPARED": 32,
+    "READY_FOR_D": 32,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 117
+    "BLOCKED": 0,
+    "REMAINING": 116
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -1825,18 +1825,18 @@
       "reuseFinding": "REUSE_RICH_V2_U03_L03_ACCURATE_FOUR_COLUMN_PATTERN; REPAIR_MISSING_SOURCE_ACTIVITY2_1_5x1_3_AND_1_2x1_6_AND_1_4x1_6; PRESERVE_SEVEN_ROW_EXTENSION_AS_OPTIONAL; NEW_LESSON_ONLY_CANDIDATE",
       "A_STATUS": "COMPLETE_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_EXACT_SELECTED_PRACTICE_NOT_INTEGRATED",
-      "PracticeStrategy": "LESSON_ONLY_SOURCE_EXACT_TWO_FAMILY_CANDIDATE_PENDING_UNIQUE_SHARED_WRITER_APPROVAL",
+      "C_STATUS": "COMPLETE_WITH_SELECTED_CONTRACT_EVIDENCE_AUTHORED_NOT_RUN",
+      "PracticeStrategy": "REUSE_EXISTING_G5_U03_L02_SELECTED_PRACTICE_ENGINE_VIA_L03_SOURCE_BOUNDED_TWO_FAMILY_DISPATCH",
       "CooldownOriginalStatus": "PUBLISHER_GATED_UNVERIFIED",
       "CooldownEdulytiksStatus": "INDEPENDENT_SEVEN_POINT_TEACHER_RUBRIC_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u03-l03-source-parity-20261101.test.cjs",
       "testExecutionStatus": "AUTHORED_NOT_RUN",
       "startedAt": null,
-      "closedAt": null,
+      "closedAt": "2026-11-01T15:19:13.766608+00:00",
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": "Exact L03 selected LessonPractice contract, question-family registry and shared engine Supports/Build/Solve/Verify are not integrated. Needs separate Admin final exclusive writer grant under Issue #605; do not advance to L04 before L03 C completion.",
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l03-abc-active-lesson-source-evidence-20261101.json",
         "teacherLessonSha256": "39302efa153cd9bb01f63ba7bef7d06729a8e3d1c3d3175edd8b68d969be4815",
@@ -1852,7 +1852,14 @@
       "authoredCandidate": true,
       "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l03-original-teacher-rubric-20261101.json",
       "lessonLocalPracticeCandidate": "src/Edulytics.Services/Mathematics/UsCcssG5U03L03UnitFractionQuestions.cs",
-      "lessonLocalPracticeCandidateTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L03UnitFractionCandidateTests.cs"
+      "lessonLocalPracticeCandidateTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L03UnitFractionCandidateTests.cs",
+      "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l03-abc-sequential-closure-20261101.json",
+      "selectedPracticeFamilyIds": [
+        "usccss.g5.u03.l03.four_columns_unit_fraction_pattern",
+        "usccss.g5.u03.l03.unit_fraction_equation_value"
+      ],
+      "selectedPracticeRouting": "EXACT_STATIC_ROUTE_AND_REGISTRY_AUTHORED_NOT_RUN",
+      "teacherScoringBoundary": "ESTIMATION_SOURCE_FIGURES_AND_DRAWINGS_HUMAN_REVIEW; TEACHER_RUBRIC_NOT_PERSISTED"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L04",
@@ -4755,7 +4762,7 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-11-01T15:06:37.291Z",
+  "updatedAtUtc": "2026-11-01T15:19:13.766608+00:00",
   "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L02",
   "returnBacklog": [
     {

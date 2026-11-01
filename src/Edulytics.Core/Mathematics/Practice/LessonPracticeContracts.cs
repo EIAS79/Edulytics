@@ -1379,6 +1379,22 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 Grade 5 U03:L03: preserve four equal columns for 2-5
+        // source rows, predict next six rows, and solve the three actual
+        // Activity 2 unit-fraction equations relative to the SAME whole.
+        // Source image interpretations, estimates and explanations are
+        // TEACHER_REVIEW_REQUIRED, never scored by objective choices.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L03",
+            "supporting.fractions.multiply_divide",
+            "G5_ORIGINAL_WHOLE_UNIT_FRACTION_GRID_PATTERN",
+            [
+                "usccss.g5.u03.l03.four_columns_unit_fraction_pattern",
+                "usccss.g5.u03.l03.unit_fraction_equation_value"
+            ],
+            "IM2021_G5_U03_L03_EXACT_DIGITAL_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 Grade 5 U03:L02: one fourth OF one third and
         // one third OF one fourth = 1/12 of the ORIGINAL whole.
         // Priya's one fifth OF one half and reversed = 1/10.

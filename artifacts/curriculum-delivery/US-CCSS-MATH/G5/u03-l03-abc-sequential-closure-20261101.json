@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "kind": "GRADE5_U03_L03_ABC_SEQUENTIAL_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G5:U03:L03",
+  "sourceEdition": "IM K-5 First Edition 2021",
+  "sourceOriginalLocalTeacherLessonSHA256": "39302efa153cd9bb01f63ba7bef7d06729a8e3d1c3d3175edd8b68d969be4815",
+  "sourceOriginalLocalTeacherPreparationSHA256": "9601a01462fa7be7e7cc9a1211b2c5eb3a8c83bca1b8f2aefaa7df896b27ec9c",
+  "stageA": "COMPLETE_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+  "stageB": "COMPLETE_WITH_EVIDENCE",
+  "stageC": "COMPLETE_WITH_SELECTED_CONTRACT_EVIDENCE_AUTHORED_NOT_RUN",
+  "readyForStageD": true,
+  "selectedSkill": "supporting.fractions.multiply_divide",
+  "selectedPracticeFamilies": [
+    "usccss.g5.u03.l03.four_columns_unit_fraction_pattern",
+    "usccss.g5.u03.l03.unit_fraction_equation_value"
+  ],
+  "reuseOfExistingSharedEngine": true,
+  "coveredSourceMathematics": [
+    "source four-column rows 2,3,4,5 one-cell fractions 1/8,1/12,1/16,1/20",
+    "source next six-row 1/24 with teacher-reviewed diagram",
+    "source 1/5*1/3=1/15; 1/2*1/6=1/12; 1/4*1/6=1/24",
+    "first shaded source diagram interpretation teacher-reviewed",
+    "estimation exploration and MLR1 peer explanations teacher-reviewed"
+  ],
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l03-original-teacher-rubric-20261101.json",
+  "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+  "selectedContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+  "selectedEngine": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+  "selectedRegistry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+  "localCandidateReused": "src/Edulytics.Services/Mathematics/UsCcssG5U03L03UnitFractionQuestions.cs",
+  "fixtures": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L03UnitFractionCandidateTests.cs",
+    "tests/academic-us-ccss-g5-u03-l03-source-parity-20261101.test.cjs"
+  ],
+  "testExecutionStatus": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "originalSourceLimitations": [
+    "Original Student PDF not separately inspected",
+    "Publisher image binaries unavailable for independent pixel-level certification",
+    "Publisher original gated Cool-down inaccessible; Edulytiks-alternative teacher rubric authored",
+    "Runtime authenticated Practice, recorded teacher grading and UI not tested"
+  ],
+  "previousClosedLesson": "PED:US-CCSS-MATH:G5:U03:L02",
+  "nextLegalLesson": "PED:US-CCSS-MATH:G5:U03:L04",
+  "closedAtUtc": "2026-11-01T15:19:13.766608+00:00",
+  "closureCommitSHA": "Refer to the Git commit containing this closure file; SHA-stamped in next ledger commit if necessary."
+}
