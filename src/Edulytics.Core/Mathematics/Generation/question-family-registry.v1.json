@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u08.l13.source_fraction_product_spinner_strategy",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u08-l13-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "diagram"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u08.l12.source_original_decimal_race_place_rules",
       "version": 1,
       "skillId": "supporting.decimals.core",

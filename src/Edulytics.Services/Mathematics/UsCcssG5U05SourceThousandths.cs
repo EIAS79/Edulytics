@@ -817,6 +817,17 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Decimal Race to500 odd digit may occupy", "tenths,hundredths,thousandths", "ones,tens,hundreds", "only thousands"),
         new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Decimal Race to500 even digit may occupy", "ones,tens,hundreds", "tenths,hundredths,thousandths", "only thousandths"),
         new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original source digits2,3,9: valid arrangement", "2.39", "239", "2390"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source warmup1/3×3", "1", "3", "1/3"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source warmup1/3×4", "4/3", "3/4", "1/12"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source warmup1/3×6/3", "2/3", "6/9", "1/3"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source warmup1/3×1/4", "1/12", "4/3", "1/7"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source Fraction Multiplication Compare first game chooses", "greatest product", "smallest product", "greatest sum"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source Fraction Multiplication Compare Round2 chooses", "smallest product", "greatest product", "smallest difference"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Original Fraction Multiplication spinner activity has how many fraction boxes?", "4", "2", "6"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section example digits1 3 5 6 gives LARGEST possible product", "10", "6", "30"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section digits1 3 5 6 greatest product arrangement", "6/3 × 5/1", "1/6 × 3/5", "1/5 × 3/6"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section digits1 3 5 6 SMALLEST sum", "7/10", "4/11", "1/2"),
+        new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section digits1 3 5 6 SMALLEST difference", "3/10", "1/10", "5/10"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
