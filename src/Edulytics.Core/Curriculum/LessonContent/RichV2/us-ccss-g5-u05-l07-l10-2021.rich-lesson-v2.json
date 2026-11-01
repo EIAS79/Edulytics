@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -679,11 +679,18 @@
       "CultureCode": "en",
       "Title": "Solve Problems with Decimals",
       "ExplanationParagraphs": [
-        "Goal: use rounding precision to determine how closely recorded decimal measurements can distinguish athletes' finishing times and speed, and reason about sets of possible underlying thousandth-place values. The source's luge data are CREATED for instruction, not actual event results.",
-        "Warm-up: an original, entirely hypothetical four-athlete sled-race table records times in seconds 52.146,52.153,52.178,52.201. Ask what the unlabeled columns might mean before naming units, and discuss why a race result uses smaller elapsed time even if maximum speed rewards larger measures.",
-        "Activity 1 — compare rounding precisions: to nearest second all four record52; to nearest tenth the first three record52.1, the fourth52.2; to nearest hundredth the first records52.15 and the second52.15, creating a tie absent from the original thousandth times. To thousandths the fastest is52.146, then52.153,52.178 and52.201. Explain why rounding can erase distinctions without changing the actual times.",
-        "Activity 2 — reverse rounding: assuming a recorded time is itself specified to thousandth-second precision and ties are rounded half-up, which thousandth times display52.15 when rounded to nearest hundredth? The ten discrete values52.145,52.146,...,52.154 do. Alternatively a measurement of52.615 to nearest thousandth rounds to52.62 at hundredths. State precision and midpoint convention; the result for underlying continuous times is an interval, not just ten measurements.",
-        "Assessment: the source asks learners to create mathematical questions from an unlabeled race table, discuss how rankings change under various recording precisions and explain possible pre-rounded values. Teacher review is required for the contextual explanation and inverse-rounding interval; a single rounded numeric value is a subcheck. Neither source luge photo nor any actual athletic record is asserted or reused."
+        "Original IM2021 Grade5 U05:L10 Solve Problems with Decimals uses a printed FIVE-ATHLETE LUGE TABLE (instructional dataset, not asserted live results), records time in SECONDS to thousandths and top speed in MILES PER HOUR to hundredths, then compares how different rounding precision can create ties. Faster race means smaller elapsed time; greater top speed is a different comparison.",
+        "Warm-up Notice and Wonder The Luge includes original photograph attributed Kris Krüg CC BY-SA2.0; do not copy source photo without image/rights verification. Original published table times/speeds: Athlete1=48.532s/82.13mph; A2=48.561s/82.75mph; A3=48.626s/82.81mph; A4=48.634s/83.07mph; A5=48.708s/82.80mph.",
+        "Activity 1 How Accurate Is It?: original all five times round to49 seconds nearest WHOLE, giving a five-way time tie; nearest TENTH times A1=48.5,A2=48.6,A3=48.6,A4=48.6,A5=48.7, so A2–A4 tie; nearest HUNDREDTH A1=48.53,A2=48.56,A3=48.63,A4=48.63,A5=48.71, so A3/A4 tie. Real winner by full precision is A1 (48.532s) fastest.",
+        "Source asks possible time values to nearest THOUSANDTH when displayed nearest hundredth as48.85s: conventional half-up range48.845 through48.854 inclusive in 0.001 steps. Another time48.615 recorded nearest thousandth rounds to48.62 to nearest hundredth. Students interpret rounding interval not invent one exact underlying time.",
+        "Activity 2 Compare Speeds: original descending fastest top speeds A4 83.07 >A3 82.81 >A5 82.80 >A2 82.75 >A1 82.13mph. Nearest TENTH mph A1=82.1,A2=82.8,A3=82.8,A4=83.1,A5=82.8, so A2/A3/A5 tie; nearest WHOLE mph A1=82, A2–A5=83. A sixth athlete strictly faster than82.80 but slower than82.81 may have82.805mph to thousandths, with many other valid values.",
+        "Original source unit synthesis grid0.542 etc remains in Rich V2 context as source-aligned place value link; old independent52.146 fictional sled results are retained ONLY as optional extensions, not the printed table. Original figures, explanation of ranking ties and open intermediate speed responses are TEACHER_REVIEW_REQUIRED. Independent Edulytiks Cool-down uses a distinct track timing table.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use rounding precision to determine how closely recorded decimal measurements can distinguish athletes' finishing times and speed, and reason about sets of possible underlying thousandth-place values. The source's luge data are CREATED for instruction, not actual event results.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: an original, entirely hypothetical four-athlete sled-race table records times in seconds 52.146,52.153,52.178,52.201. Ask what the unlabeled columns might mean before naming units, and discuss why a race result uses smaller elapsed time even if maximum speed rewards larger measures.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — compare rounding precisions: to nearest second all four record52; to nearest tenth the first three record52.1, the fourth52.2; to nearest hundredth the first records52.15 and the second52.15, creating a tie absent from the original thousandth times. To thousandths the fastest is52.146, then52.153,52.178 and52.201. Explain why rounding can erase distinctions without changing the actual times.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — reverse rounding: assuming a recorded time is itself specified to thousandth-second precision and ties are rounded half-up, which thousandth times display52.15 when rounded to nearest hundredth? The ten discrete values52.145,52.146,...,52.154 do. Alternatively a measurement of52.615 to nearest thousandth rounds to52.62 at hundredths. State precision and midpoint convention; the result for underlying continuous times is an interval, not just ten measurements.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the source asks learners to create mathematical questions from an unlabeled race table, discuss how rankings change under various recording precisions and explain possible pre-rounded values. Teacher review is required for the contextual explanation and inverse-rounding interval; a single rounded numeric value is a subcheck. Neither source luge photo nor any actual athletic record is asserted or reused."
       ],
       "KeyConcepts": [
         {
@@ -707,7 +714,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare race rankings at different precisions",
+          "Title": "Printed source five luge times at three precisions",
+          "Question": "Round source times48.532,48.561,48.626,48.634,48.708 to whole,tenth,hundredth seconds.",
+          "Method": "Correct decimal place rounding with context-specific ties.",
+          "Steps": [
+            "Whole seconds all49.",
+            "Tenths 48.5,48.6,48.6,48.6,48.7.",
+            "Hundredths 48.53,48.56,48.63,48.63,48.71."
+          ],
+          "Answer": "Full precision fastest Athlete1; rounding can create ties.",
+          "Check": "Source exact times shown in their printed order."
+        },
+        {
+          "Title": "Original top speeds order",
+          "Question": "Order82.13,82.75,82.81,83.07,82.80 mph from greatest to least.",
+          "Method": "Align place values, not athlete-number order.",
+          "Steps": [
+            "83.07 is greatest (Athlete4).",
+            "82.81 (A3) exceeds82.80 (A5), which exceeds82.75(A2).",
+            "82.13(A1) is smallest; nearest tenth makes A2,A3,A5 equal82.8."
+          ],
+          "Answer": "A4>A3>A5>A2>A1 by top speed.",
+          "Check": "Speed rank differs from smallest time rank."
+        },
+        {
+          "Title": "Source precision ranges",
+          "Question": "Which thousandth-place values round to48.85 to hundredths, and how does48.615 round to hundredths?",
+          "Method": "Conventional nearest with halves-up thresholds.",
+          "Steps": [
+            "Values48.845 through48.854 inclusive round to48.85.",
+            "There are ten possible 0.001 readings in that range.",
+            "48.615 rounds up to48.62 to hundredths."
+          ],
+          "Answer": "48.845–48.854 inclusive;48.62.",
+          "Check": "Teacher scores interval reasoning, not one invented exact time."
+        },
+        {
+          "Title": "Optional existing extension — Compare race rankings at different precisions",
           "Question": "Four athletes have times52.146,52.153,52.178,52.201 seconds. How do their reported results change?",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -719,7 +762,7 @@
           "Check": "Tie claims are about rounded displays, not original elapsed times."
         },
         {
-          "Title": "Which thousandths round to one hundredth?",
+          "Title": "Optional existing extension — Which thousandths round to one hundredth?",
           "Question": "Which thousandth-second displays round to52.15 seconds to nearest hundredth, half-up?",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -731,7 +774,7 @@
           "Check": "52.144→52.14;52.155→52.16."
         },
         {
-          "Title": "Change the recorded precision",
+          "Title": "Optional existing extension — Change the recorded precision",
           "Question": "Round52.615 seconds from thousandths to nearest hundredth under half-up.",
           "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
           "Steps": [
@@ -753,18 +796,80 @@
           "Mistake": "Infer a unique thousandth from one hundredth rounded value",
           "WhyWrong": "Rounding to hundredths removes information about multiple finer values.",
           "Correction": "State the interval and rounding rule before enumerating possible original measurements."
+        },
+        {
+          "Mistake": "Replace source five luge athlete times and speeds with fictional52.146/52.153 etc as textbook original",
+          "WhyWrong": "Printed 2021 source specifies five named rows with distinct rounding-induced ties; fabricated substitute changes intended answers.",
+          "Correction": "Restore all five original rows and precision questions, preserve fictional practice only as optional extension."
         }
       ],
       "SummaryPoints": [
-        "Rounding a race time can create apparent ties and change displayed rank groups.",
-        "Inverse rounding to a stated resolution gives a range of finer measurements.",
-        "The original source's table questions, explanations and interpretation require teacher review.",
-        "Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 10 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-10/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+        "Original source five athlete times48.532,48.561,48.626,48.634,48.708s and speeds82.13,82.75,82.81,83.07,82.80mph.",
+        "Whole seconds all49, tenths A2–A4 tie, hundredths A3/A4 tie; true full-precision fastest time Athlete1.",
+        "Source nearest hundredth48.85 permits thousandth values48.845–48.854 inclusive;48.615 rounds to48.62.",
+        "Speeds descending Athlete4>3>5>2>1, with source tenth/whole precision ties.",
+        "Teacher reviews source figure, time-versus-speed distinction, and open sixth-athlete interval.",
+        "Optional prior: Rounding a race time can create apparent ties and change displayed rank groups.",
+        "Optional prior: Inverse rounding to a stated resolution gives a range of finer measurements.",
+        "Optional prior: The original source's table questions, explanations and interpretation require teacher review.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 10 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-10/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Solve Problems with Decimals — original decimal model",
+          "Title": "Original source luge time and speed table",
+          "Description": "Printed IM2021 instructional athlete data, not actual recent sports results. Full table and rounding shown exactly.",
+          "Rows": [
+            {
+              "Label": "Athlete1",
+              "Cells": [
+                "48.532s",
+                "82.13mph",
+                "48.53s hundredth",
+                "82.1mph tenth"
+              ]
+            },
+            {
+              "Label": "Athlete2",
+              "Cells": [
+                "48.561s",
+                "82.75mph",
+                "48.56s",
+                "82.8mph"
+              ]
+            },
+            {
+              "Label": "Athlete3",
+              "Cells": [
+                "48.626s",
+                "82.81mph",
+                "48.63s",
+                "82.8mph"
+              ]
+            },
+            {
+              "Label": "Athlete4",
+              "Cells": [
+                "48.634s",
+                "83.07mph",
+                "48.63s",
+                "83.1mph"
+              ]
+            },
+            {
+              "Label": "Athlete5",
+              "Cells": [
+                "48.708s",
+                "82.80mph",
+                "48.71s",
+                "82.8mph"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Solve Problems with Decimals — original decimal model",
           "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
           "Rows": [
             {
