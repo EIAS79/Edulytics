@@ -449,6 +449,19 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 7/10−2/3", "1/30", "5/30", "3/30"),
         new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 7/20+41/50", "117/100", "48/70", "76/100"),
         new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 2/9−1/6", "1/18", "1/3", "3/18"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original warmup3+7/8", "3 7/8", "3 8/8", "2 1/8"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original warmup3−7/8", "2 1/8", "3 1/8", "2 7/8"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original warmup1 5/8+6/8", "2 3/8", "1 11/16", "1 1/8"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original warmup1 5/8−6/8", "7/8", "1/8", "11/8"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Source original equivalence select:2 13/8 equals3 5/8 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Source original equivalence select:3 10/16 equals3 5/8 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Source original equivalence select:20/8 equals3 5/8 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original3 5/8−3/16", "3 7/16", "3 2/16", "2 13/16"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original3 5/8−1 15/16", "1 11/16", "2 11/16", "1 5/16"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original3 5/8−1 12/16", "1 7/8", "1 1/8", "2 1/8"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original9 1/8−8 8/9", "17/72", "1/72", "71/72"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original3 1/2−10/4", "1", "1/2", "3/2"),
+        new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original4 3/5−1 2/3", "2 14/15", "2 1/15", "3 1/15"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
