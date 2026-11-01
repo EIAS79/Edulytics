@@ -868,6 +868,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original Activity2 8/14+3/7 exact fraction result", "1", "7/14", "11/14"),
         new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original source Activity3 student should author how many True/False equations?", "3", "1", "2"),
         new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original source class correct value for each self-authored statement universally predetermined?", "no", "yes", "only all true"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original warmup Which One Doesn't Belong math topic", "volume of shapes", "decimals only", "statistics mean only"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original Activity1 source says choose how many given cards?", "3", "2", "4"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original Activity1 source learner draws how many NEW shapes?", "1", "2", "3"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original Activity2 source says choose how many given cards?", "2", "3", "4"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original Activity2 source learner draws how many NEW shapes?", "2", "1", "3"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original Activity3 source learner creates how many shapes for their own task?", "4", "2", "3"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original WODB routine demands a reason each shape can be different from others?", "yes", "no", "only one numeric answer"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original volume shape B described as three-dimensional or flat?", "three-dimensional", "flat two-dimensional", "line only"),
+        new("usccss.g5.u08.l18.source_student_created_volume_wodb", "Original source student explanations and sketches have a SINGLE exact universal answer?", "no", "yes", "always 2 cubic units"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
