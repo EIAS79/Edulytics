@@ -286,22 +286,40 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         // Fail closed on source-bound technical release inventory drift:
         // 12 previous mathematics repairs + 19 entity display corrections
         // + 3 first Grade 1 repairs + 7 more + 6 locally verified G1 + 6 further source-goal G1 content repairs.
-        // Exactly 294 individually SHA-guarded source-bound lesson identities currently require metadata-only synchronization. Older inventory was 179; 115 additional Grade2 source repairs have explicit official lesson identities. Fail closed on any discrepancy.
-        const int expectedSourceBoundCorrectionCount = 294;
+        // Exact current source-hash-guarded candidates, discovered by REAL
+        // isolated CI run #41362244433. This is not 294: the original count
+        // was stale, and the active deterministic predicate currently selects
+        // 144 G1 + 131 G2 + 2 G3 + 9 G4. Keep both the total and individual
+        // grade denominators fail closed; no G5/G6 candidate is authorized by
+        // this cross-grade metadata-only maintenance routine.
+        const int expectedSourceBoundCorrectionCount = 286;
         var distinctCount = codes.Distinct(StringComparer.Ordinal).Count();
+        var byGrade = codes.GroupBy(code =>
+                System.Text.RegularExpressions.Regex.Match(
+                    code, @":G\d+:").Value,
+                StringComparer.Ordinal)
+            .ToDictionary(group => group.Key, group => group.Count(),
+                StringComparer.Ordinal);
+        var expectedByGrade = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            [":G1:"] = 144,
+            [":G2:"] = 131,
+            [":G3:"] = 2,
+            [":G4:"] = 9
+        };
         if (codes.Length != expectedSourceBoundCorrectionCount ||
-            distinctCount != expectedSourceBoundCorrectionCount)
+            distinctCount != expectedSourceBoundCorrectionCount ||
+            byGrade.Count != expectedByGrade.Count ||
+            expectedByGrade.Any(expected =>
+                !byGrade.TryGetValue(expected.Key, out var count) ||
+                count != expected.Value))
             throw new InvalidOperationException(
                 "Source-bound Common Core JSON metadata correction inventory drift." +
                 $" expected={expectedSourceBoundCorrectionCount} actual={codes.Length}" +
                 $" unique={distinctCount}" +
                 " byGrade=" + string.Join(",",
-                    codes.GroupBy(code =>
-                        System.Text.RegularExpressions.Regex.Match(
-                            code, @":G\d+:").Value,
-                        StringComparer.Ordinal)
-                    .OrderBy(group => group.Key, StringComparer.Ordinal)
-                    .Select(group => $"{group.Key}:{group.Count()}")));
+                    byGrade.OrderBy(group => group.Key, StringComparer.Ordinal)
+                    .Select(group => $"{group.Key}:{group.Value}")));
 
         var lessons = await _db.CurriculumPedagogicalLessons.AsNoTracking()
             .Where(x =>
