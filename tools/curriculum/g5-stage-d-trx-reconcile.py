@@ -99,6 +99,7 @@ def reconcile(lesson_ledger: dict, results: list[dict], candidate: str) -> dict:
     missing = [x["lessonCode"] for x in rows if not x["directResultCount"]]
     failing = [x["lessonCode"] for x in rows if x["technicalStatus"] == "DIRECT_TEST_FAILURE"]
     missing_required_xunit = [x["lessonCode"] for x in rows if x["technicalStatus"] == "REQUIRED_XUNIT_TEST_MISSING"]
+    node_linked = [x["lessonCode"] for x in rows if x["expectedTestRunner"] == "NODE"]
     outstanding_node = [x["lessonCode"] for x in rows if x["technicalStatus"] == "NODE_SHARD_EVIDENCE_REQUIRED"]
     unknown_runner = [x["lessonCode"] for x in rows if x["technicalStatus"] == "UNDECLARED_TEST_RUNNER"]
     shared = [x for x in results if x["lessonCode"] is None]
@@ -113,8 +114,10 @@ def reconcile(lesson_ledger: dict, results: list[dict], candidate: str) -> dict:
         "lessonWithDirectFailureCount": len(failing),
         "requiredXunitMissingCount": len(missing_required_xunit),
         "requiredXunitMissingLessons": missing_required_xunit,
-        "nodeShardEvidenceRequiredCount": len(outstanding_node),
-        "nodeShardEvidenceRequiredLessons": outstanding_node,
+        "nodeShardEvidenceRequiredCount": len(node_linked),
+        "nodeShardEvidenceRequiredLessons": node_linked,
+        "nodeLinkedWithoutXunitCount": len(outstanding_node),
+        "nodeLinkedWithoutXunitLessons": outstanding_node,
         "undeclaredRunnerCount": len(unknown_runner),
         "undeclaredRunnerLessons": unknown_runner,
         "missingDirectLessonTests": missing,
