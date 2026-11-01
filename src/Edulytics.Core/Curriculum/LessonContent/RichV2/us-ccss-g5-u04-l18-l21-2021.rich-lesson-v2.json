@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -525,11 +525,13 @@
       "CultureCode": "en",
       "Title": "Food Waste Journal (optional)",
       "ExplanationParagraphs": [
-        "Goal: keep a real week-long food-waste observation journal, estimate the mass thrown out in ounces and pounds and use multiplication/division to make meaningful monthly/yearly estimates. The source explicitly asks learners to reflect on categories and compare diary observations with broader data; there is NO invented single correct journal entry.",
-        "Warm-up: discuss examples of edible scraps and spoiled ingredients without asking students to disclose private family details or make claims about sensitive home situations. A teacher may choose nonpersonal classroom waste measurements instead; original copyrighted dumpster imagery is not copied.",
-        "Activity 1 — independent worked EXAMPLE, not a real student's journal: a fictional school kitchen records estimated food scraps 8 oz on Monday,12 oz on Tuesday,4 oz on Wednesday,16 oz on Thursday and8 oz on Friday. These five entries total48 ounces, equivalent to48÷16=3 pounds. Learners design a journal with type of item, reason, date and estimated weight; their own actual observations must be entered by themselves and cannot be fabricated by the software.",
-        "Activity 2 — estimate a time scale: under the fictional assumption3 pounds in a five-day school week, estimate 12 pounds over four similar weeks and 108 pounds over36 such weeks. Ask learners why a 52-week calendar year might not match a 36-week school schedule and how breaks or a single unusual week affect the estimate.",
-        "Teacher assessment: journals collected over time, reasons for waste, source citations for average weights, privacy-safe group discussion, assumption quality and reflection require human review. The platform can check unit conversion and numerical arithmetic but must not auto-mark the authentic data-collection investigation complete from a canned value."
+        "Original IM 2021 G5 U04:L21 Food Waste Journal (optional) is an OPEN observation and estimation project, not a worksheet of fixed one-day food-waste amounts. The source provides a reference US average of 219 pounds of food waste PER PERSON PER YEAR, and the conversion 16 ounces per pound; neither is a measurement of the individual learner's household or a claim about 2026 current statistics.",
+        "Warm-up Notice and Wonder Food Waste: teacher leads an age-appropriate discussion with the original attribution photograph omitted until media/rights verification. Student observations about school/household waste are optional, nonjudgmental and teacher reviewed; do not demand sensitive home disclosures.",
+        "Activity 1 Food Waste in the United States: using ORIGINAL 219lb/year per person, estimate per month219/12=18.25lb and per week219/52≈4.21lb (52 weeks an approximation); for family, class and school, the source asks the pupil to determine and clearly LABEL the relevant number of people before multiplying219lb×population. No source family/class/school sizes are fixed. Exact original conversion 219×16=3504 ounces/year. Sample 4-person family876lb,25-person class5475lb and500-person school109500lb/year are independently authored illustrations, NEVER publisher data.",
+        "Activity 2 Food Journal: source learner completes a table of name/type of discarded food, reason discarded and ESTIMATED WEIGHT in ounces for THEIR actual day. Learner computes ounces÷16 to pounds, compares their own observed totals to weekly average assumptions and explains uncertainty. The software must not fabricate pupil entries, dates, personal household behaviors or single correct real data. A zero-waste diary is also legitimate.",
+        "Activity 3 Analyze Food Journals (optional): use the pupil's own weekly data to estimate month and year, compare with printed national reference219lb/year, and discuss reasons for deviations without treating the average as an individual requirement. Teacher assesses diary validity, units, extrapolation and argument. Existing independent fictional 8,12,4,16,8-ounce scraps remain clearly optional demonstrations, not the student's authentic source journal.",
+        "Selected exact Practice checks only the printed-source yearly ounce conversion and transparently hypothetical annual group totals, NOT open pupil journal data. Independently authored Edulytiks Cool-down uses a sample diary of known values; original publisher gated Cool-down is not claimed recovered.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -553,7 +555,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Sum a fictional sample journal",
+          "Title": "Original source 219 pounds and 16 ounces/pound",
+          "Question": "How many OUNCES per year correspond to the source US reference 219 pounds/person/year?",
+          "Method": "Convert pounds to ounces using the printed16 ounces per pound.",
+          "Steps": [
+            "The source gives219lb annually, per person.",
+            "Each pound contains16 ounces.",
+            "Compute219×16=3504 ounces annually."
+          ],
+          "Answer": "3504 ounces per person per modeled year.",
+          "Check": "3504÷16=219 pounds."
+        },
+        {
+          "Title": "Original source monthly/weekly estimates versus independent population sizes",
+          "Question": "Approximate 219lb/year per month/week, then explain a group-year total.",
+          "Method": "Divide by12 months or approx52 weeks; multiply by an explicitly assumed group population.",
+          "Steps": [
+            "219÷12=18.25 pounds per month.",
+            "219÷52≈4.21 pounds per week.",
+            "Under Edulytiks example 4-person family:4×219=876lb per year; other populations give different correct numbers."
+          ],
+          "Answer": "About18¼lb/month,4.21lb/week, and group-dependent total.",
+          "Check": "Source does not supply family,class,school headcounts."
+        },
+        {
+          "Title": "Original student-owned food journal and optional weekly analysis",
+          "Question": "Enter actual food type/reason/estimated ounces, total and compare with approximate yearly average.",
+          "Method": "Teacher reviews user-entered observations, mass conversion and projection assumptions.",
+          "Steps": [
+            "Student enters personal or classroom observations, which are not fabricated by software.",
+            "Add weights in ounces and divide by16 for pounds.",
+            "If a whole week's diary exists, multiply by about52 to project a model year, and compare thoughtfully with219lb."
+          ],
+          "Answer": "Open teacher-reviewed observation; no unique universal total.",
+          "Check": "No fixed invented daily entries are treated as original student data."
+        },
+        {
+          "Title": "Optional existing extension — Sum a fictional sample journal",
           "Question": "Fictional five-day food waste entries8,12,4,16,8 ounces. Find total.",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -565,7 +603,7 @@
           "Check": "5 amounts sum to48, and3×16=48."
         },
         {
-          "Title": "Project four comparable weeks",
+          "Title": "Optional existing extension — Project four comparable weeks",
           "Question": "If3 pounds per school week repeats across four weeks, how much?",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -577,7 +615,7 @@
           "Check": "Actual weeks may vary, so this is a conditional estimate."
         },
         {
-          "Title": "Project a school-year scenario",
+          "Title": "Optional existing extension — Project a school-year scenario",
           "Question": "At3 pounds per week over36 school weeks, estimate total.",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -599,50 +637,66 @@
           "Mistake": "Use 16 ounces as fluid-volume conversion without context",
           "WhyWrong": "Food mass and liquid fluid-ounce measures are not interchangeable by a single factor.",
           "Correction": "Label journal weights ounces of mass and pounds; use separate conversions for fluids."
+        },
+        {
+          "Mistake": "Present a fabricated 8,12,4,16,8-ounce classroom diary as if it were the pupil's recorded original daily waste",
+          "WhyWrong": "The printed source asks students to enter their actual own observed food type, reason and estimated weight. Invented records would falsify evidence.",
+          "Correction": "Retain fictional values only as standalone first-party examples; source journal remains editable and teacher-reviewed with no predetermined answer."
         }
       ],
       "SummaryPoints": [
-        "A meaningful journal requires actual observations, not fabricated numeric completion.",
-        "Add daily estimated weights, convert units and estimate longer periods with explicit assumptions.",
-        "Teacher reviews data, reflection, privacy and modeling; numeric checks are supporting only.",
-        "Source: first-edition 2021 Illustrative Mathematics K–5 Grade 5 Unit 4 Lesson 21 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-21/lesson.html. Only public teacher and student HTML reviewed; original Student Task PDF, third-party photographs and gated source Cool-down not independently verified. All numeric models are independent Edulytiks examples."
+        "Original printed average219 pounds of food waste/person/year and16oz/pound yield3504oz/year.",
+        "Per person model estimates18.25lb/month and roughly4.21lb/week using12 months/52 weeks.",
+        "Family, class and school group totals depend on user-selected population sizes; no fixed textbook counts.",
+        "Original student's daily and optional weekly journal data and reasons are authentic open submissions, never invented by the system.",
+        "Selected exact numeric exercises only cover original conversion and clearly labeled hypothetical group totals; teacher scores diary and comparisons."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Food Waste Journal (optional) — original modeling",
-          "Description": "First-party accessible text modeling table. No source image/photograph or personal student journal data included.",
+          "Title": "Original food-waste reference and transparent first-party assumptions",
+          "Description": "Printed yearly US average219 lb and unit conversion16oz/lb; group sizes shown here are separately identified Edulytiks hypothetical models.",
           "Rows": [
             {
-              "Label": "Fictional weekday",
+              "Label": "Printed per-person annual average",
               "Cells": [
-                "Mon",
-                "Tue",
-                "Wed",
-                "Thu",
-                "Fri"
+                "219 pounds",
+                "3504 ounces"
               ]
             },
             {
-              "Label": "Estimated food scraps (oz)",
+              "Label": "Month/week estimate",
               "Cells": [
-                "8",
-                "12",
-                "4",
-                "16",
-                "8"
+                "18.25 lb/month",
+                "~4.21 lb/week"
               ]
             },
             {
-              "Label": "Total ounces",
+              "Label": "Edulytiks group of4",
               "Cells": [
-                "48"
+                "876lb/year",
+                "example only"
               ]
             },
             {
-              "Label": "Total pounds",
+              "Label": "Edulytiks class of25",
               "Cells": [
-                "3"
+                "5475lb/year",
+                "example only"
+              ]
+            },
+            {
+              "Label": "Edulytiks school of500",
+              "Cells": [
+                "109500lb/year",
+                "example only"
+              ]
+            },
+            {
+              "Label": "Original student diary",
+              "Cells": [
+                "real student data",
+                "NO fixed numeric answer"
               ]
             }
           ]
