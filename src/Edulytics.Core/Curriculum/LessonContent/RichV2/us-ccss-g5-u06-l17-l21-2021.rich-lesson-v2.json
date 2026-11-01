@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l17-l21-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u06-l17-l21-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -744,11 +744,17 @@
       "CultureCode": "en",
       "Title": "Will it Always Work? (optional)",
       "ExplanationParagraphs": [
-        "Goal: assess whether a comparison rule for fraction products always holds, under which mathematical assumptions, and communicate a general proof via words, diagrams or distributivity. The source deliberately contains complex factors that invite comparison WITHOUT cumbersome arithmetic.",
-        "Warm-up: check a first-party group of claims: when positive x is multiplied by one, remains x; when multiplied by3/4, decreases; when multiplied by5/4, increases. Ask whether these statements need x>0, x=0 or a negative x to be treated differently.",
-        "Activity 1 — inequalities with large numbers: decide 3/5×742<742, 127/128×311<311 and13/12×49>49. Compare also1/4×4/4=1/4 and7/7×1/2=1/2 for factors exactly one; the latter examples require EQUALITY rather than a strict inequality.",
-        "Activity 2 — evaluate a student's proposed rule: for a positive fraction x, a factor f greater than one makes fx>x, a factor between zero and one makes fx<x, and f=1 preserves x. Prove using f=1+h or1−h, noting h>0. Clarify zero baseline would make all products zero and a negative baseline would reverse the strict comparison, outside the source's positive-fraction focus.",
-        "Teacher boundary: proof-writing, poster/gallery explanation, reasoned critique of an 'always' statement and edge-case precision require human review, while selected exact comparisons are supporting numerical checks."
+        "Original IM2021 G5 U06:L20 OPTIONAL proves fraction product comparisons without multiplying large numerators/denominators and checks when a general rule is valid for POSITIVE fractions. For baseline zero or negative (outside current Grade5 task assumptions), strict inequalities need different conditions, so explanations must not claim unconditional universality.",
+        "Warm-up original TRUE/FALSE3/4=1−1/4 TRUE,(1−1/4)×9=9−(1/4×9) TRUE,(1+1/4)×7=7+1/4 FALSE because correct distribution also multiplies the extra1/4 by7.",
+        "Activity1 True Statements original comparisons567 <345×567,4/5×851 <851,1/4 =5/5×1/4,103/104 >(103/104)×(103/104),99/8×23/22 >99/8,10/10×1/2=1/2,100/7×9/13 >9/13. Explain each by positive baseline and the other factor compared with1.",
+        "Activity2 Andre's two printed rules: multiplying a positive fraction by a factor LESS THAN1 makes smaller result, multiplying by a factor GREATER THAN1 makes larger. Teacher checks the missing positivity assumptions, distributive proof, examples and diagrams. No sole sequence of seven signs replaces Andre's general argument.",
+        "Prior made-up3/5×742 and127/128×311 remain optional Edulytiks exercises, not source expressions. Numeric choice practice supports original comparisons and T/F, while source teacher proof and original optional Cool-down remain human evaluated.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: assess whether a comparison rule for fraction products always holds, under which mathematical assumptions, and communicate a general proof via words, diagrams or distributivity. The source deliberately contains complex factors that invite comparison WITHOUT cumbersome arithmetic.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: check a first-party group of claims: when positive x is multiplied by one, remains x; when multiplied by3/4, decreases; when multiplied by5/4, increases. Ask whether these statements need x>0, x=0 or a negative x to be treated differently.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — inequalities with large numbers: decide 3/5×742<742, 127/128×311<311 and13/12×49>49. Compare also1/4×4/4=1/4 and7/7×1/2=1/2 for factors exactly one; the latter examples require EQUALITY rather than a strict inequality.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — evaluate a student's proposed rule: for a positive fraction x, a factor f greater than one makes fx>x, a factor between zero and one makes fx<x, and f=1 preserves x. Prove using f=1+h or1−h, noting h>0. Clarify zero baseline would make all products zero and a negative baseline would reverse the strict comparison, outside the source's positive-fraction focus.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: proof-writing, poster/gallery explanation, reasoned critique of an 'always' statement and edge-case precision require human review, while selected exact comparisons are supporting numerical checks."
       ],
       "KeyConcepts": [
         {
@@ -772,7 +778,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare large products without multiplying",
+          "Title": "Source exact 1 — Original U06:L20 Will It Always Work Optional",
+          "Question": "Original warmup3/4=1−1/4 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original U06:L20 Will It Always Work Optional",
+          "Question": "Original warmup(1−1/4)×9=9−(1/4×9) true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original U06:L20 Will It Always Work Optional",
+          "Question": "Original warmup(1+1/4)×7=7+1/4 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original U06:L20 Will It Always Work Optional",
+          "Question": "Source567 compared345×567 symbol",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "<",
+          "Check": "Original numeric source example; incorrect distractors > and = must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Compare large products without multiplying",
           "Question": "For x=742, is3/5x less than x?",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -784,7 +838,7 @@
           "Check": "Teacher checks size-of-factor reasoning."
         },
         {
-          "Title": "Equality",
+          "Title": "Optional existing extension — Equality",
           "Question": "Compare7/7×1/2 with1/2.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -796,7 +850,7 @@
           "Check": "1×1/2=1/2."
         },
         {
-          "Title": "Write a proof",
+          "Title": "Optional existing extension — Write a proof",
           "Question": "Explain why f=1+h with h>0 makes fx>x for x>0.",
           "Method": "First-party fraction/number-line reasoning with teacher-reviewed explanation and exact numeric subcheck.",
           "Steps": [
@@ -818,18 +872,89 @@
           "Mistake": "Ignore factor equal to one",
           "WhyWrong": "A factor exactly one does not change positive x.",
           "Correction": "Include equality as a distinct case."
+        },
+        {
+          "Mistake": "Present fabricated 742/311 comparison numbers as the original source or distribute (1+1/4)×7 incorrectly",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore all seven printed comparisons and note positivity assumptions in Andre's proof."
         }
       ],
       "SummaryPoints": [
-        "The factor-size rule is valid for a positive baseline with specified domain.",
-        "Compare using one plus/minus a positive part and distributivity.",
-        "General proof, posters and critique require teacher adjudication.",
-        "2021 IM K–5 Grade 5 Unit 6 Lesson 20: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-20/lesson.html. Read source teacher lesson Student Facing sections on authorized Primary/Our-CS. Separate original Student Task PDFs, figures and gated response still NOT_VERIFIED. Independent Edulytiks examples."
+        "Warmup true,true,false.",
+        "Original signs <,<,=,>,>,=,> in order.",
+        "Andre rules hold for positive baseline fractions and positive multipliers under source conditions.",
+        "Optional prior: The factor-size rule is valid for a positive baseline with specified domain.",
+        "Optional prior: Compare using one plus/minus a positive part and distributivity.",
+        "Optional prior: General proof, posters and critique require teacher adjudication.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 6 Lesson 20: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-20/lesson.html. Read source teacher lesson Student Facing sections on authorized Primary/Our-CS. Separate original Student Task PDFs, figures and gated response still NOT_VERIFIED. Independent Edulytiks examples."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Will it Always Work? (optional) — reasoning model",
+          "Title": "Original U06:L20 Will It Always Work Optional — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup3/4=1−1/4 true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup(1−1/4)×9=9−(1/4×9) true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup(1+1/4)×7=7+1/4 true/false",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source567 compared345×567 symbol",
+              "Cells": [
+                "<",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source4/5×851 compared851 symbol",
+              "Cells": [
+                "<",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source1/4 compared5/5×1/4 symbol",
+              "Cells": [
+                "=",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source103/104 compared(103/104)×(103/104) symbol",
+              "Cells": [
+                ">",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source99/8×23/22 compared99/8 symbol",
+              "Cells": [
+                ">",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Will it Always Work? (optional) — reasoning model",
           "Description": "Original accessible numeric or observation table, not protected diagrams, imagery or real student data.",
           "Rows": [
             {

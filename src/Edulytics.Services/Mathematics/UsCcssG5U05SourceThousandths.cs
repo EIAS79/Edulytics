@@ -566,6 +566,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1+1/5)×4/7 compared4/7", ">", "<", "="),
         new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1−3/8)×4/7 compared4/7", "<", ">", "="),
         new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1+1/8)×4/7 compared4/7", ">", "<", "="),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Original warmup3/4=1−1/4 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Original warmup(1−1/4)×9=9−(1/4×9) true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Original warmup(1+1/4)×7=7+1/4 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source567 compared345×567 symbol", "<", ">", "="),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source4/5×851 compared851 symbol", "<", ">", "="),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source1/4 compared5/5×1/4 symbol", "=", "<", ">"),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source103/104 compared(103/104)×(103/104) symbol", ">", "<", "="),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source99/8×23/22 compared99/8 symbol", ">", "<", "="),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source10/10×1/2 compared1/2 symbol", "=", "<", ">"),
+        new("usccss.g5.u06.l20.original_general_product_inequalities", "Source100/7×9/13 compared9/13 symbol", ">", "<", "="),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
