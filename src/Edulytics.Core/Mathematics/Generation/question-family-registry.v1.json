@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u06.l12.original_salad_dressing_fraction_problems",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u06-l12-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u06.l11.original_mixed_fraction_differences",
       "version": 1,
       "skillId": "supporting.decimals.core",

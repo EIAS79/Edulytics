@@ -462,6 +462,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original9 1/8−8 8/9", "17/72", "1/72", "71/72"),
         new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original3 1/2−10/4", "1", "1/2", "3/2"),
         new("usccss.g5.u06.l11.original_mixed_fraction_differences", "Original4 3/5−1 2/3", "2 14/15", "2 1/15", "3 1/15"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original warmup3/17+17/19 exact sum", "346/323", "20/36", "1"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original salad recipe3/4 cup oil, has2/3, amount to borrow in cups", "1/12", "1/16", "1/6"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Source 1 tablespoon=1/16 cup is sufficient for missing1/12 cup true/false", "false", "true", "unknown"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original salad ingredients3/4+1/3+1/2 cup total", "1 7/12", "1 1/4", "1 1/2"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original source about1 1/2 cups approximation reasonable yes/no", "yes", "no", "exactly equal"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original protein bar walnuts1/2+1/3 cups total", "5/6", "2/5", "1/6"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original target1 1/3 cup walnuts, how much after5/6 used", "1/2", "5/6", "1/3"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original hiking1 1/2 miles+4/10 mile total", "1 9/10", "1 1/10", "1 4/5"),
+        new("usccss.g5.u06.l12.original_salad_dressing_fraction_problems", "Original hiking trail2 1/2 miles, after1 9/10, remainder", "3/5", "1/5", "4/5"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
