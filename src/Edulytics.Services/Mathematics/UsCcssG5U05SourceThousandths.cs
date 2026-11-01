@@ -441,6 +441,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source equivalent4/6+5/6", "3/2", "9/12", "3/6"),
         new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source16/12−3/6", "5/6", "1/2", "11/12"),
         new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original optional source Jada1 3/4 inches minus Andre7/8 inches", "7/8", "1/8", "1/4"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 3/4+7/8", "13/8", "11/8", "10/8"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 3/4+4/6", "17/12", "7/10", "13/12"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 3/4−2/5", "7/20", "1/20", "5/20"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 2/5+4/9", "38/45", "6/14", "20/45"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 3/8+1/5", "23/40", "4/13", "21/40"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 7/10−2/3", "1/30", "5/30", "3/30"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 7/20+41/50", "117/100", "48/70", "76/100"),
+        new("usccss.g5.u06.l10.original_common_denominator_fraction_tasks", "Original source printed fraction expression 2/9−1/6", "1/18", "1/3", "3/18"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

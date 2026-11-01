@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l07-l11-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u06-l07-l11-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -703,11 +703,17 @@
       "CultureCode": "en",
       "Title": "All Sorts of Denominators",
       "ExplanationParagraphs": [
-        "Goal: explain why multiplying two denominators always produces SOME common denominator, then choose a smaller or more useful common multiple when available. The source contrasts using a guaranteed product with spotting an easier common unit, and asks children to justify both the method and their actual sum/difference.",
-        "Warm-up: compare the common denominator 24 for3/4+2/3 with the smaller denominator12. Both are mathematically sound, but 12 produces smaller equivalent numerators than24. Explain why multiplying4×3=12 always supplies a multiple of both.",
-        "Activity 1 — new sums: find3/8+2/5 using40ths, giving15/40+16/40=31/40. Find7/10−2/3 using30ths, giving21/30−20/30=1/30. Students can draw area bars, use multiplicative equivalence, or explain part counts.",
-        "Activity 2 — choose between denominators: 2/3+5/9 can use9ths to give6/9+5/9=11/9, or27ths to give18/27+15/27=33/27=11/9. Discuss why both work, and why the least common denominator is often more convenient while the denominator product is a guaranteed fallback.",
-        "Assessment: teacher reviews a proof of denominator product as a common multiple, correct equivalences and a rationale for choice. Merely outputting31/40 is a small algorithmic subskill of the original source task."
+        "Original IM2021 G5 U06:L10 explains why multiplying two denominators always yields a COMMON DENOMINATOR while a smaller common multiple may be mathematically more efficient. Student strategies and representations remain flexible.",
+        "Warm-up How Many Do You See Fraction Sum uses publisher figure which is not independently reconstructed by plain source text. Teacher assesses fractions drawn and explains same whole; do not invent exact original shading.",
+        "Activity1 Different Denominators printed problems3/4+7/8=13/8=1⅝;3/4+4/6=17/12=1 5/12;3/4−2/5=7/20. Choose denominators8/12/20, explain how equivalent fractions preserve quantities.",
+        "Activity2 Multiply Denominators: Lin original2/5+4/9 uses common denominator45, correct18/45+20/45=38/45. Other source problems3/8+1/5=23/40,7/10−2/3=1/30,7/20+41/50=117/100=1 17/100,2/9−1/6=1/18. The product of denominators always works, but students compare practical smaller common denominator choices if available.",
+        "Previous invented3/8+2/5,2/3+5/9 values remain mathematically valid optional Edulytiks examples and NOT original source tasks. Exact selected questions cover source printed fraction values; original drawings, Lin's proof and teacher discussion remain TEACHER_REVIEW_REQUIRED.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: explain why multiplying two denominators always produces SOME common denominator, then choose a smaller or more useful common multiple when available. The source contrasts using a guaranteed product with spotting an easier common unit, and asks children to justify both the method and their actual sum/difference.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare the common denominator 24 for3/4+2/3 with the smaller denominator12. Both are mathematically sound, but 12 produces smaller equivalent numerators than24. Explain why multiplying4×3=12 always supplies a multiple of both.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — new sums: find3/8+2/5 using40ths, giving15/40+16/40=31/40. Find7/10−2/3 using30ths, giving21/30−20/30=1/30. Students can draw area bars, use multiplicative equivalence, or explain part counts.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — choose between denominators: 2/3+5/9 can use9ths to give6/9+5/9=11/9, or27ths to give18/27+15/27=33/27=11/9. Discuss why both work, and why the least common denominator is often more convenient while the denominator product is a guaranteed fallback.",
+        "Optional previous source-aligned or independently authored extension — Assessment: teacher reviews a proof of denominator product as a common multiple, correct equivalences and a rationale for choice. Merely outputting31/40 is a small algorithmic subskill of the original source task."
       ],
       "KeyConcepts": [
         {
@@ -731,7 +737,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Different denominators with no simple multiple",
+          "Title": "Source exact 1 — Original U06:L10 All Sorts of Denominators",
+          "Question": "Original source printed fraction expression 3/4+7/8",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "13/8",
+          "Check": "Original numeric source example; incorrect distractors 11/8 and 10/8 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original U06:L10 All Sorts of Denominators",
+          "Question": "Original source printed fraction expression 3/4+4/6",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "17/12",
+          "Check": "Original numeric source example; incorrect distractors 7/10 and 13/12 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original U06:L10 All Sorts of Denominators",
+          "Question": "Original source printed fraction expression 3/4−2/5",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "7/20",
+          "Check": "Original numeric source example; incorrect distractors 1/20 and 5/20 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original U06:L10 All Sorts of Denominators",
+          "Question": "Original source printed fraction expression 2/5+4/9",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "38/45",
+          "Check": "Original numeric source example; incorrect distractors 6/14 and 20/45 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Different denominators with no simple multiple",
           "Question": "Find3/8+2/5.",
           "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
           "Steps": [
@@ -743,7 +797,7 @@
           "Check": "31/40−16/40=15/40."
         },
         {
-          "Title": "Subtract with thirtieths",
+          "Title": "Optional existing extension — Subtract with thirtieths",
           "Question": "Find7/10−2/3.",
           "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
           "Steps": [
@@ -755,7 +809,7 @@
           "Check": "1/30+20/30=21/30."
         },
         {
-          "Title": "Contrast 9 versus 27",
+          "Title": "Optional existing extension — Contrast 9 versus 27",
           "Question": "Find2/3+5/9 with two common denominators.",
           "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
           "Steps": [
@@ -777,18 +831,90 @@
           "Mistake": "Multiply denominator factors but forget the numerator conversions",
           "WhyWrong": "Changing partition sizes requires changing selected counts proportionally.",
           "Correction": "For a/b to denominator bd, multiply numerator by d too."
+        },
+        {
+          "Mistake": "Substitute3/8+2/5 for the original source3/4+7/8 and assert a single denominator always mandatory",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore all printed fraction values and preserve student right to choose alternative common denominators."
         }
       ],
       "SummaryPoints": [
-        "The denominator product gives a guaranteed common unit, not always the best unit.",
-        "Like-unit arithmetic can use any valid common multiple with numerator scaling.",
-        "Teacher reviews explanation of why the algorithm works and method selection.",
-        "2021 original IM K–5 Grade5 Unit6 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-10/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+        "Source Activity1 13/8,17/12,7/20.",
+        "Lin 2/5+4/9=38/45.",
+        "Source others23/40,1/30,117/100,1/18.",
+        "Teacher reviews which denominator and why.",
+        "Optional prior: The denominator product gives a guaranteed common unit, not always the best unit.",
+        "Optional prior: Like-unit arithmetic can use any valid common multiple with numerator scaling.",
+        "Optional prior: Teacher reviews explanation of why the algorithm works and method selection.",
+        "Optional prior: 2021 original IM K–5 Grade5 Unit6 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-10/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "All Sorts of Denominators — original representation",
+          "Title": "Original U06:L10 All Sorts of Denominators — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source printed fraction expression 3/4+7/8",
+              "Cells": [
+                "13/8",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 3/4+4/6",
+              "Cells": [
+                "17/12",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 3/4−2/5",
+              "Cells": [
+                "7/20",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 2/5+4/9",
+              "Cells": [
+                "38/45",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 3/8+1/5",
+              "Cells": [
+                "23/40",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 7/10−2/3",
+              "Cells": [
+                "1/30",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 7/20+41/50",
+              "Cells": [
+                "117/100",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source printed fraction expression 2/9−1/6",
+              "Cells": [
+                "1/18",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — All Sorts of Denominators — original representation",
           "Description": "Independently authored accessible math table, not source's publisher card/image set.",
           "Rows": [
             {
