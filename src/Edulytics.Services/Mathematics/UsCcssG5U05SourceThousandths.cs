@@ -368,6 +368,23 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l03.original_metric_conversions", "Original fifth-grade benchmark148cm, Mai161cm status", "above", "below", "equal"),
         new("usccss.g5.u06.l03.original_metric_conversions", "Original fifth-grade benchmark148cm, Tyler143cm status", "below", "above", "equal"),
         new("usccss.g5.u06.l03.original_metric_conversions", "Original fifth-grade benchmark148cm, Clare157cm status", "above", "below", "equal"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source warmup 5÷1000=0.05 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source warmup 36÷100=0.36 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source warmup 1328÷1000=1.328 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Jackie Joyner-Kersee 1988 long jump727 centimeters in METERS", "7.27", "72.7", "0.727"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Jackie 1988 javelin4566 centimeters in METERS", "45.66", "4.566", "456.6"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Jackie 1988 shot put1580 centimeters in METERS", "15.8", "1.58", "158"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Diego running9513 meters in kilometers", "9.513", "95.13", "0.9513"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Clare running11018 meters in kilometers", "11.018", "110.18", "1.1018"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Priya running8210 meters in kilometers", "8.21", "82.10", "0.821"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Andre running10000 meters in kilometers", "10", "100", "1"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Tyler demonstration5632 divided by10", "563.2", "56.32", "5.632"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Tyler demonstration5632 divided by100", "56.32", "563.2", "5.632"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original Tyler demonstration5632 divided by1000", "5.632", "56.32", "563.2"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source Sabine John long jump671cm in meters", "6.71", "67.1", "0.671"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source Anke Behmer javelin4454cm in meters", "44.54", "4.454", "445.4"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source unit table 7864 meters in kilometers", "7.864", "78.64", "0.7864"),
+        new("usccss.g5.u06.l04.original_metric_divisions", "Original source unit table2.037 kilometers in meters", "2037", "203.7", "20370"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
