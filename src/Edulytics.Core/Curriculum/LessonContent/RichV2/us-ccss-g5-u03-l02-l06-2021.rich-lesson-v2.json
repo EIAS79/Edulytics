@@ -232,13 +232,13 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L03",
       "CultureCode": "en",
-      "Title": "Multiply Unit Fractions PLC Activity",
+      "Title": "Multiply Unit Fractions",
       "ExplanationParagraphs": [
-        "Goal: investigate the numerical pattern for products of UNIT fractions by interpreting a sequence of equal-area grids and giving exact multiplication equations. The source increases the number of rows with a fixed number of columns, and asks students to explain the observed pattern.",
-        "Warm-up: estimate a shaded region whose width is about one half and height around one fourth; set too-low and too-high bounds. A teacher reviews the rationale because a sketch is approximate and a single exact answer is not justified without dimensions.",
-        "Activity 1: fix the width of one cell at one fourth of a unit square; draw a grid with 2, 3, 4 and 5 equally sized rows, shading only one rectangle in the first column. The corresponding areas are 1/8, 1/12, 1/16 and 1/20. For each diagram, write both (1/4)×(1/r) and (1/r)×(1/4).",
-        "Activity 2: ask a partner to predict the denominator when there are seven rows and four columns, then test the conjecture with a 4-by-7 model. Explain how the grid has 28 equal pieces and the highlighted region is one twenty-eighth. Check why the numerator remains one and why adding denominators would be incorrect.",
-        "Assessment: the exact values can be checked numerically, but noticing and defending the grid pattern, drawing new diagrams and interpreting two expression orders must be teacher-reviewed. Protected source images and Cool-down are not reproduced."
+        "Goal (IM K–5 2021, 5.NF.B.4.a): use rows and columns of the same original whole to connect unit-fraction multiplication diagrams, expressions and exact products. Students first read supplied images and later calculate without a diagram.",
+        "Warm-up — Estimation Exploration: How Much is Shaded? Record an estimate that is too low, about right and too high for the SOURCE shaded image. Discuss why the pictured region is MORE than (1/2) × (1/6) = 1/12 of the whole; approximate image dimensions do not justify replacing the source task with an exact guessed fraction. Teacher reviews estimates and visual reasoning.",
+        "Activity 1 — Notice Patterns in Expressions: the source A–D diagrams keep the SAME full square and FOUR equal columns while the equal rows grow 2, 3, 4, 5. One shaded cell has area 1/8, 1/12, 1/16, 1/20 respectively. Students select an actual source diagram, write an equivalent unit-fraction multiplication expression, explain the shading and DRAW their predicted next (six-row) diagram. Show (1/2)×(1/4)=(1/4)×(1/2)=1/8, and analogous 1/3, 1/4 and 1/5 rows. Independently-authored equal-area grids below model the mathematical structure but do NOT reproduce the publisher images.",
+        "Activity 2 — Write a Multiplication Equation: use the FIRST source-provided shaded image to write the multiplication equation for its actual shaded piece (do not invent its dimensions). Explain how the SECOND source diagram represents (1/5)×(1/3)=1/15 of the ORIGINAL whole, using rows and columns. Then solve (1/2)×(1/6)=1/12 and (1/4)×(1/6)=1/24; drawings may support but are not required for the last numerical subskills. Preserve MLR1 Stronger and Clearer Each Time: partners give feedback on the written diagram explanation and students revise it.",
+        "Assessment boundaries: fixed-whole equal-area products and their numeric answers can be authored for exact Practice; image-specific expression selection, open drawings, estimates, prediction justifications and revised written explanations require TEACHER_REVIEW_REQUIRED. The original publisher drawings/Student Task PDF and gated Cool-down have not been separately certified. Optional seven-row 1/28 practice is an EXTENSION, not the source's Activity 2."
       ],
       "KeyConcepts": [
         {
@@ -286,8 +286,44 @@
           "Check": "All numerators are one; denominators grow by four with each row."
         },
         {
-          "Title": "Predict seven rows",
-          "Question": "A unit square has 4 columns and 7 rows. Find one-cell area.",
+          "Title": "Activity 2: explain one fifth of one third",
+          "Question": "Explain why the source's 1/5 × 1/3 grid represents 1/15 of the original unit square.",
+          "Method": "Count the source diagram's equal columns and rows; use a newly authored 5-by-3 model as a mathematical reference, not as the publisher figure.",
+          "Steps": [
+            "Fix the original whole as one complete square.",
+            "Partition into five equal parts in one direction and three in the other.",
+            "One of fifteen equal cells is one fifteenth of the original whole; justify against the source picture."
+          ],
+          "Answer": "1/15 of the original whole.",
+          "Check": "(1/5) × (1/3) = 1/(5 × 3) = 1/15; the source image explanation is teacher-reviewed."
+        },
+        {
+          "Title": "Activity 2: one half of one sixth",
+          "Question": "Find the number that makes 1/2 × 1/6 = ? true.",
+          "Method": "Exact unit-fraction denominator product, optionally supported by a two-row six-column diagram.",
+          "Steps": [
+            "Hold the complete unit as the original whole.",
+            "Count 2 × 6 = 12 equally sized pieces.",
+            "The product is one of twelve equal pieces."
+          ],
+          "Answer": "1/12.",
+          "Check": "(1/2)×(1/6)=1/(2×6)."
+        },
+        {
+          "Title": "Activity 2: one quarter of one sixth",
+          "Question": "Find the number that makes 1/4 × 1/6 = ? true.",
+          "Method": "Exact unit-fraction denominator product; the diagram is optional for the numerical answer.",
+          "Steps": [
+            "Hold the complete unit as the original whole.",
+            "Count 4 × 6 = 24 equal cells.",
+            "One selected part is one twenty-fourth of the whole."
+          ],
+          "Answer": "1/24.",
+          "Check": "(1/4)×(1/6)=1/(4×6)."
+        },
+        {
+          "Title": "Optional extension: predict seven rows (not original Activity 2)",
+          "Question": "EXTENSION ONLY: a full unit square has 4 equal columns and 7 equal rows. What area is one equal cell?",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
             "Count 4×7 equal cells.",
@@ -308,18 +344,29 @@
           "Mistake": "Think more rows means a larger cell",
           "WhyWrong": "The same whole is split into more equal pieces.",
           "Correction": "Compare one shaded part to the fixed-size whole square."
+        },
+        {
+          "Mistake": "Treat the source's approximate estimation image as an exact prescribed 1/4 height",
+          "WhyWrong": "The original warm-up asks for bounds and compares the shading against 1/2 × 1/6; its publisher diagram dimensions were not independently verified.",
+          "Correction": "Use the original teacher warm-up language and review the estimate qualitatively."
+        },
+        {
+          "Mistake": "Replace source Activity 2's 1/5 × 1/3 image and 1/2 × 1/6, 1/4 × 1/6 equations with a 4 × 7 extension",
+          "WhyWrong": "This omits distinct source tasks and confuses extension with the required lesson.",
+          "Correction": "Retain all three source expressions and treat 4 × 7 as additional practice only."
         }
       ],
       "SummaryPoints": [
-        "For unit fractions, multiply denominators to count equal pieces of the same whole.",
-        "A one-cell area shrinks as the number of equal rows increases.",
-        "Pattern predictions and corresponding diagrams remain teacher-reviewed.",
-        "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-3/lesson.html. Public teacher/student-facing HTML source tasks inspected; original Edulytiks examples. Gated response and original Student Task PDF not independently checked."
+        "Four fixed columns with 2–5 rows yield 1/8, 1/12, 1/16, 1/20; predict six rows as source pattern continuation.",
+        "Source Activity 2 includes explaining 1/5 × 1/3 = 1/15 and calculating 1/2 × 1/6 = 1/12 and 1/4 × 1/6 = 1/24.",
+        "Estimation from the source shaded image, source-image-to-equation, partner explanations and drawings remain teacher-reviewed.",
+        "Publisher gated Cool-down, independent Student Task PDF and original image binaries/rights unverified; first-party diagrams below do not claim publisher pixel parity.",
+        "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-3/lesson.html."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multiply Unit Fractions PLC Activity — fraction grid",
+          "Title": "Multiply Unit Fractions — source Activity 1 four-column pattern",
           "Description": "Accessible first-party text equivalent of an equal-area fraction grid; not publisher artwork.",
           "Rows": [
             {
@@ -347,6 +394,347 @@
                 "1/12",
                 "1/16",
                 "1/20"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 2 rows (source A)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 8 of the SAME original whole is 1/8. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 3 rows (source B)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 12 of the SAME original whole is 1/12. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 4 rows (source C)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 16 of the SAME original whole is 1/16. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 5 rows (source D)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 20 of the SAME original whole is 1/20. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 5 columns × 3 rows (source Activity 2 1/5 × 1/3)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 15 of the SAME original whole is 1/15. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 6 columns × 2 rows (source Activity 2 1/2 × 1/6)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 12 of the SAME original whole is 1/12. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 6 columns × 4 rows (source Activity 2 1/4 × 1/6)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 24 of the SAME original whole is 1/24. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional extension: 4 columns × 7 rows (seven rows)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 28 of the SAME original whole is 1/28. Additional practice only, not original Activity 2.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 6",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 7",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
               ]
             }
           ]
