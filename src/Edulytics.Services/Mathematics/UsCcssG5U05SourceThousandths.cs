@@ -420,6 +420,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l06.source_metric_liquid_volume", "Source dance team uses15L coolers to hold18.75L: minimum number of full coolers", "2", "1", "3"),
         new("usccss.g5.u06.l06.source_metric_liquid_volume", "Source 2 coolers ×15L minus18.75L drunk: leftover liters water", "11.25", "3.75", "1.125"),
         new("usccss.g5.u06.l06.source_metric_liquid_volume", "Source dancers drink37.5 bottle-equivalents and30mL sports mix per500mL water: liters mix", "1.125", "11.25", "0.1125"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original source warmup45×10", "450", "45", "4500"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original source warmup45×2", "90", "47", "450"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original source warmup45×12", "540", "480", "450"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original source warmup46×12", "552", "562", "460"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field1 90 yards by42 1/4 yards, perimeter in yards", "264.5", "264", "132.25"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original first field6 laps around perimeter in yards", "1587", "1787", "1760"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original source claims first field6 laps MORE than one1760-yard mile: true/false", "false", "true", "unknown"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field1 six laps short of a mile by yards", "173", "73", "183"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field2 408 1/2 feet by240 1/4 feet, perimeter feet", "1297.5", "648.75", "12975"),
+        new("usccss.g5.u06.l07.original_customary_mile_laps", "Original field2 minimum whole laps for at least TWO miles (10560 feet)", "9", "8", "10"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
