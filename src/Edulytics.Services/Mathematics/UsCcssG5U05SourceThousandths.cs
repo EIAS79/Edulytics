@@ -780,6 +780,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source source says4000 boxes to deliver, number boxes in shipment", "4000", "400", "40000"),
         new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "An axis-aligned single layer of2ft cubes in27ft by13ft bed fits how many by ordinary floor packing?", "78", "87", "90"),
         new("usccss.g5.u08.l08.source_sand_bags_boxes_volume", "Source actual box trips necessarily fixed by volume-only arithmetic without packing policy?", "no", "yes", "always46"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Original source monthly rainfall depth in centimeters", "5", "50", "0.5"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Original source rainfall depth5cm in meters", "0.05", "0.5", "0.005"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Original source cubic centimeters in one liter", "1000", "100", "10000"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Source 5cm rainfall over ONE square-meter area converted to liters theoretical volume", "50", "5", "500"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Source 5cm rainfall over 1m2 converted to cubic centimeters theoretical volume", "50000", "5000", "500000"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Source roof area picture shows 8-sided shape, can exact area be certified without all figure dimensions?", "no", "yes", "always150"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Original reservoir-design task has a single unique source required length width height?", "no", "yes", "only cubes"),
+        new("usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units", "Source capture rain: gross theoretical precipitation and usable water may differ due to losses, true/false", "true", "false", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

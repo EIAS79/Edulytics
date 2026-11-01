@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v11-20261101",
+  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v12-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -769,11 +769,17 @@
       "CultureCode": "en",
       "Title": "Problem Solving with Volume: Water (optional)",
       "ExplanationParagraphs": [
-        "Goal: connect rainfall DEPTH with roof AREA to estimate water VOLUME, convert cubic units into liters, then design a plausible reservoir. The original 2021 lesson shows an irregular roof diagram and asks students to estimate household water use and justify whether rain capture is practical. That original diagram is not available for reproduction; the geometry below is an explicitly different first-party model.",
-        "Activity 1 — independent schematic: an original simple roof footprint is partitioned into two NONOVERLAPPING rectangles measuring15m×8m and10m×3m. Their total horizontal modeled catchment area is120+30=150m². With hypothetical average rainfall depth5cm=0.05m, ideal water volume is150m²×0.05m=7.5m³=7500L. Explain why the depth must be in meters when multiplying by square-meter area and why the original irregular eight-sided source roof's area cannot be claimed as150m² from this new model.",
-        "Activity 2 — reservoir model: an ideal rectangular reservoir5m×3m×0.5m holds7.5m³=7500L, matching the entire imagined rainfall amount if perfectly captured. In reality, runoff efficiency, evaporation, first-flush losses, roof material, contaminants, overflow and rainfall seasonality can make effective captured water smaller, so a real storage plan demands context data and safe nonpotable/potable classification.",
-        "Activity 3 — variable household demand: one hypothetical household estimates 6000L used per month, another9000L. The ideal 7500L rain volume exceeds the first estimate by1500L but falls short of the second by1500L; no personal water usage should be fabricated on behalf of a student. Ask learners to supply their own assumptions or school-safe alternative data and explain whether harvesting is justified.",
-        "Assessment: source roof geometry interpretation, student-chosen demand figures, real-world data provenance and reservoir design are human-reviewed modeling. The arithmetic checker can confirm 150×0.05 and liter conversions only conditional on the declared inputs; no single source-independent correct system design exists."
+        "Original IM2021 G5 U08:L09 models rain falling on a source EIGHT-SIDED orthogonal roof, unit conversion centimeters to meters and cubic centimeters to liters, and open water-demand and reservoir design questions.",
+        "Warm-up Notice and Wonder Cubic Centimeters and Grams uses original credited image. Student explains why a cubic centimeter of water roughly corresponds to one gram under usual conditions; figure credit and measurement assumptions need teacher check.",
+        "Activity1 Catching Rainfall includes a roof diagram with printed sides including10m,15m,3m and8m but other sides are UNLABELED/figure-dependent in accessible original text. No exact roof surface area is certified from that partial description alone. With monthly rain depth5cm=0.05m, a hypothetical 1m² patch receives0.05m³=50000cm³=50L of rain. For actual roof, multiply its geometrically verified m² area by50L/m²; account for roof shape and measured dimensions.",
+        "Activity1 also asks students to choose RESERVOIR dimensions, which are open and must fit proposed target volume with clear units. Students might make different valid measurements and container designs.",
+        "Activity2 How Much Water? original household water-use estimate, required rainfall, engineering challenges and whether rainwater capture is sensible have no single correct answer without the learner's own data. Digital selected choices verify source unit conversion only; teacher evaluates authentic environmental reasoning.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: connect rainfall DEPTH with roof AREA to estimate water VOLUME, convert cubic units into liters, then design a plausible reservoir. The original 2021 lesson shows an irregular roof diagram and asks students to estimate household water use and justify whether rain capture is practical. That original diagram is not available for reproduction; the geometry below is an explicitly different first-party model.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — independent schematic: an original simple roof footprint is partitioned into two NONOVERLAPPING rectangles measuring15m×8m and10m×3m. Their total horizontal modeled catchment area is120+30=150m². With hypothetical average rainfall depth5cm=0.05m, ideal water volume is150m²×0.05m=7.5m³=7500L. Explain why the depth must be in meters when multiplying by square-meter area and why the original irregular eight-sided source roof's area cannot be claimed as150m² from this new model.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — reservoir model: an ideal rectangular reservoir5m×3m×0.5m holds7.5m³=7500L, matching the entire imagined rainfall amount if perfectly captured. In reality, runoff efficiency, evaporation, first-flush losses, roof material, contaminants, overflow and rainfall seasonality can make effective captured water smaller, so a real storage plan demands context data and safe nonpotable/potable classification.",
+        "Optional previous source-aligned or independently authored extension — Activity 3 — variable household demand: one hypothetical household estimates 6000L used per month, another9000L. The ideal 7500L rain volume exceeds the first estimate by1500L but falls short of the second by1500L; no personal water usage should be fabricated on behalf of a student. Ask learners to supply their own assumptions or school-safe alternative data and explain whether harvesting is justified.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source roof geometry interpretation, student-chosen demand figures, real-world data provenance and reservoir design are human-reviewed modeling. The arithmetic checker can confirm 150×0.05 and liter conversions only conditional on the declared inputs; no single source-independent correct system design exists."
       ],
       "KeyConcepts": [
         {
@@ -797,7 +803,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Calculate rain volume",
+          "Title": "Source exact 1 — Rainwater Volume",
+          "Question": "Original source monthly rainfall depth in centimeters",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "5",
+          "Check": "Original numeric source example; incorrect distractors 50 and 0.5 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Rainwater Volume",
+          "Question": "Original source rainfall depth5cm in meters",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.05",
+          "Check": "Original numeric source example; incorrect distractors 0.5 and 0.005 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Rainwater Volume",
+          "Question": "Original source cubic centimeters in one liter",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1000",
+          "Check": "Original numeric source example; incorrect distractors 100 and 10000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Rainwater Volume",
+          "Question": "Source 5cm rainfall over ONE square-meter area converted to liters theoretical volume",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "50",
+          "Check": "Original numeric source example; incorrect distractors 5 and 500 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Calculate rain volume",
           "Question": "A fictional roof consists of two nonoverlapping rectangles15×8m and10×3m. Rain depth5cm. How much water falls?",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -809,7 +863,7 @@
           "Check": "This is a first-party roof, NOT the original source's irregular roof figure."
         },
         {
-          "Title": "Design reservoir dimensions",
+          "Title": "Optional existing extension — Design reservoir dimensions",
           "Question": "Find an example rectangular tank capacity equal to7500L.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -821,7 +875,7 @@
           "Check": "Matching theoretical capacity does not imply actual capture efficiency."
         },
         {
-          "Title": "Compare different household estimates",
+          "Title": "Optional existing extension — Compare different household estimates",
           "Question": "If modeled rain supply is7500L, compare demand estimates6000L and9000L.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -843,18 +897,89 @@
           "Mistake": "Claim all theoretical rain reaches the reservoir and can safely be drunk",
           "WhyWrong": "Losses and contamination can change volume and intended use.",
           "Correction": "Distinguish mathematical upper-bound supply from an engineered system."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
         }
       ],
       "SummaryPoints": [
-        "Area×depth gives an IDEAL cubic-volume estimate if compatible units are used.",
-        "The source's irregular roof diagram cannot be silently replaced with an asserted equal area.",
-        "Teacher assesses student assumptions, actual roof geometry and planning judgment.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 9, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-9/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+        "Rain depth5cm=0.05m and 50L per m² theoretical.",
+        "Original exact roof area not certified without full graphic dimensions.",
+        "Rain capture, reservoir shape and water use open teacher review.",
+        "Optional prior: Area×depth gives an IDEAL cubic-volume estimate if compatible units are used.",
+        "Optional prior: The source's irregular roof diagram cannot be silently replaced with an asserted equal area.",
+        "Optional prior: Teacher assesses student assumptions, actual roof geometry and planning judgment.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 9, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-9/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Problem Solving with Volume: Water (optional) — original geometric model",
+          "Title": "Rainwater Volume — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source monthly rainfall depth in centimeters",
+              "Cells": [
+                "5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source rainfall depth5cm in meters",
+              "Cells": [
+                "0.05",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source cubic centimeters in one liter",
+              "Cells": [
+                "1000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source 5cm rainfall over ONE square-meter area converted to liters the",
+              "Cells": [
+                "50",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source 5cm rainfall over 1m2 converted to cubic centimeters theoretica",
+              "Cells": [
+                "50000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source roof area picture shows 8-sided shape, can exact area be certif",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original reservoir-design task has a single unique source required len",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source capture rain: gross theoretical precipitation and usable water ",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Problem Solving with Volume: Water (optional) — original geometric model",
           "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
           "Rows": [
             {

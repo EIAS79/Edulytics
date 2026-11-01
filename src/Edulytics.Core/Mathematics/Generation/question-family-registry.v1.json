@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u08.l09.source_rainwater_millimeter_centimeter_units",
+      "version": 1,
+      "skillId": "geometry.volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u08-l09-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "diagram"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u08.l08.source_sand_bags_boxes_volume",
       "version": 1,
       "skillId": "geometry.volume",
