@@ -20,7 +20,7 @@ internal static class UsCcssG5Unit1Lesson7Questions
     private static string PromptFor(int variant)
     {
         if(variant<SourceEquivalentPrompts.Length)return SourceEquivalentPrompts[variant];
-        var unit=variant%3 switch {0=>"centimeters",1=>"inches",_=>"feet"};
+        var unit=(variant%3) switch {0=>"centimeters",1=>"inches",_=>"feet"};
         return $"Edulytiks-original supplementary unit selection: a clearly measured storage box has sides {variant+1}, {variant+2} and 3 {unit}. Choose its correct volume unit: 1 cubic centimeters, 2 cubic inches, 3 cubic feet. Explain the context and chosen unit to the teacher.";
     }
     private static int AnswerFor(int variant) =>
