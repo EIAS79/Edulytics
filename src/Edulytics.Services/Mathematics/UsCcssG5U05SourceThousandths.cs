@@ -551,6 +551,21 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l18.original_compare_without_multiplying", "Original relative source2/3×A compared A for positive A", "<", ">", "="),
         new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source13/8×11/39 compared11/39", ">", "<", "="),
         new("usccss.g5.u06.l18.original_compare_without_multiplying", "Source2/3×17/53 compared17/53", "<", ">", "="),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original warmup15/14×23/30 simplified", "23/28", "23/30", "15/14"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original Activity1 2/5×4/3", "8/15", "6/15", "12/15"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original Activity1 3/4×5/2", "15/8", "5/8", "15/4"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original Activity1 4/3×5/2", "10/3", "20/3", "10/6"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original Activity1 (1+1/3)×5/2", "10/3", "5/3", "10/6"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original Activity1 (1−3/5)×4/3", "8/15", "12/15", "4/15"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original Activity1 (1−1/4)×5/2", "15/8", "5/8", "15/4"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1−2/5)×4/7", "12/35", "4/35", "8/35"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1+1/5)×4/7", "24/35", "12/35", "20/35"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1−3/8)×4/7", "5/14", "3/14", "7/14"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1+1/8)×4/7", "9/14", "5/14", "13/14"),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1−2/5)×4/7 compared4/7", "<", ">", "="),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1+1/5)×4/7 compared4/7", ">", "<", "="),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1−3/8)×4/7 compared4/7", "<", ">", "="),
+        new("usccss.g5.u06.l19.original_fraction_distributivity", "Original (1+1/8)×4/7 compared4/7", ">", "<", "="),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
