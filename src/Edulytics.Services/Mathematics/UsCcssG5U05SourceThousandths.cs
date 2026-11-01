@@ -738,6 +738,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 12×45", "540", "450", "570"),
         new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 15×199", "2985", "3000", "2980"),
         new("usccss.g5.u08.l03.source_multiplication_strategy_source_factors", "Original Activity2 24×154", "3696", "3690", "3596"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source warmup blank÷blank=136: choose valid equation", "1360÷10=136", "1360÷100=136", "136÷0=136"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source364÷13 exact quotient", "28", "30", "26"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source364÷13 most reasonable among20 30 40", "30", "20", "40"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source540÷12 exact quotient", "45", "40", "50"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source540÷12: which estimates among40 50 are equally distant?", "40 and 50", "40 only", "50 only"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source1008÷14 exact quotient", "72", "70", "80"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source1008÷14 nearest among70 80 90", "70", "80", "90"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source blank÷blank=700 choose valid example", "7000÷10=700", "7000÷100=700", "700÷0=700"),
+        new("usccss.g5.u08.l04.source_division_estimates_missing_factors", "Original source blank÷blank=78 choose valid example", "780÷10=78", "780÷100=78", "78÷0=78"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

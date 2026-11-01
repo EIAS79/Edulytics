@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l04-l11-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+  "ContentVersion": "g5-u08-l04-l11-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Dive Back Into Division",
       "ExplanationParagraphs": [
-        "Goal: estimate whole-number quotients using friendly multiplication benchmarks and then reason from a given quotient to multiple different valid dividend–divisor pairs. This revisits partial quotients without forcing one calculation strategy.",
-        "Warm-up: a calculator-free quotient estimate for364÷13 can use 13×20=260 and13×30=390; 364 is closer to390 than260 so thirty is a reasonable tens estimate. To compute exactly, remove20 groups of13 leaving104, then eight more groups of13, giving28. Ask learners to explain why different chunk selections are equally legal.",
-        "Activity 1 — original estimate cases: 728÷24 is near30 because24×30=720 (exact30 remainder8). For 1008÷14, exact72 and a tens estimate70 is reasonable. In the 2021 source 540÷12=45 with choices 40,50,60 has a TIE between40 and50 by absolute distance; do not auto-mark one unique nearest-ten answer unless the activity provides a further rounding convention. Both are justifiable benchmarks.",
-        "Activity 2 — make different quotient equations: give a quotient of78 and ask for at least four different valid positive whole-number pairs, such as78÷1,156÷2,390÷5,780÷10. Give a quotient of700 and construct700÷1,1400÷2,3500÷5,7000÷10. A student must produce novel pairs and explain divisor×quotient=dividend, not just copy one template.",
-        "Teacher boundary: the source asks pupils to compare reasonable estimates, multiple distinct example equations, group explanations, and a visual gallery. Exact division is supporting Practice, not proof that a strategy or a set of ten genuinely distinct equations was authored."
+        "Original IM2021 G5 U08:L04 returns to whole-number division with up to four-digit dividend and two-digit divisor, asking first if quotient estimates are REASONABLE then finding exact result and constructing infinitely many valid missing-dividend/divisor expressions.",
+        "Warm-up Notice and Wonder Blank Spaces displays blank÷blank=136; source invites many valid pairs and peer reasoning, not one official answer.",
+        "Activity1 Reasonable Estimates original364÷13=28 near30 of choices20 30 40, 540÷12=45 exactly halfway between40 and50 (either a defensible estimate if closeness is only criterion),1008÷14=72 nearest70 of70 80 90. The three original exact quotient figures labeled a/b/c are image-only and require teacher review.",
+        "Activity2 Missing Dividends and Divisors asks for FIVE different pairs each yielding700 and78; infinite valid possibilities include7000÷10=700,780÷10=78. Teacher verifies variety and method rather than grading one sample as only correct.",
+        "Prior first-party728÷24 remains an optional extension. Source estimated versus exact values are separated and static numeric Practice does not claim to score student-generated equations or image-only division work.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: estimate whole-number quotients using friendly multiplication benchmarks and then reason from a given quotient to multiple different valid dividend–divisor pairs. This revisits partial quotients without forcing one calculation strategy.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: a calculator-free quotient estimate for364÷13 can use 13×20=260 and13×30=390; 364 is closer to390 than260 so thirty is a reasonable tens estimate. To compute exactly, remove20 groups of13 leaving104, then eight more groups of13, giving28. Ask learners to explain why different chunk selections are equally legal.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original estimate cases: 728÷24 is near30 because24×30=720 (exact30 remainder8). For 1008÷14, exact72 and a tens estimate70 is reasonable. In the 2021 source 540÷12=45 with choices 40,50,60 has a TIE between40 and50 by absolute distance; do not auto-mark one unique nearest-ten answer unless the activity provides a further rounding convention. Both are justifiable benchmarks.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — make different quotient equations: give a quotient of78 and ask for at least four different valid positive whole-number pairs, such as78÷1,156÷2,390÷5,780÷10. Give a quotient of700 and construct700÷1,1400÷2,3500÷5,7000÷10. A student must produce novel pairs and explain divisor×quotient=dividend, not just copy one template.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: the source asks pupils to compare reasonable estimates, multiple distinct example equations, group explanations, and a visual gallery. Exact division is supporting Practice, not proof that a strategy or a set of ten genuinely distinct equations was authored."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Estimate then calculate",
+          "Title": "Source exact 1 — Dive Back Into Division",
+          "Question": "Original source warmup blank÷blank=136: choose valid equation",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1360÷10=136",
+          "Check": "Original numeric source example; incorrect distractors 1360÷100=136 and 136÷0=136 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Dive Back Into Division",
+          "Question": "Original source364÷13 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "28",
+          "Check": "Original numeric source example; incorrect distractors 30 and 26 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Dive Back Into Division",
+          "Question": "Original source364÷13 most reasonable among20 30 40",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "30",
+          "Check": "Original numeric source example; incorrect distractors 20 and 40 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Dive Back Into Division",
+          "Question": "Original source540÷12 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "45",
+          "Check": "Original numeric source example; incorrect distractors 40 and 50 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Estimate then calculate",
           "Question": "Find364÷13 and give a tens estimate.",
           "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "13×28=364."
         },
         {
-          "Title": "No unique nearest benchmark tie",
+          "Title": "Optional existing extension — No unique nearest benchmark tie",
           "Question": "What is the nearest of 40,50,60 to540÷12?",
           "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "Teacher must accept both without an extra specified tie-breaking convention."
         },
         {
-          "Title": "Construct new quotients",
+          "Title": "Optional existing extension — Construct new quotients",
           "Question": "Provide four equations with quotient78.",
           "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
           "Steps": [
@@ -82,18 +136,89 @@
           "Mistake": "Reject one equally close tens estimate in a tie",
           "WhyWrong": "Two benchmarks may be equally near an exact quotient.",
           "Correction": "Compare absolute distances and state the tie if no convention resolves it."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
         }
       ],
       "SummaryPoints": [
-        "Use benchmark multiplication to estimate a quotient and partial quotients to calculate.",
-        "A single positive integer quotient corresponds to many dividend/divisor pairs.",
-        "Teacher reviews distinct equations, estimation rationale and gallery explanations.",
-        "Source: 2021 IM Grade5 Unit8 Lesson4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-4/lesson.html. Student Facing read on verified Our-CS; original Student PDF/gated response not independently verified."
+        "Original quotient28 nearest30,45 tied between40/50,72 nearest70.",
+        "Original missing-divisor equations nonunique with many valid choices.",
+        "Image-only original problems require teacher visual review.",
+        "Optional prior: Use benchmark multiplication to estimate a quotient and partial quotients to calculate.",
+        "Optional prior: A single positive integer quotient corresponds to many dividend/divisor pairs.",
+        "Optional prior: Teacher reviews distinct equations, estimation rationale and gallery explanations.",
+        "Optional prior: Source: 2021 IM Grade5 Unit8 Lesson4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-4/lesson.html. Student Facing read on verified Our-CS; original Student PDF/gated response not independently verified."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Family of quotient 78",
+          "Title": "Dive Back Into Division — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source warmup blank÷blank=136: choose valid equation",
+              "Cells": [
+                "1360÷10=136",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source364÷13 exact quotient",
+              "Cells": [
+                "28",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source364÷13 most reasonable among20 30 40",
+              "Cells": [
+                "30",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source540÷12 exact quotient",
+              "Cells": [
+                "45",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source540÷12: which estimates among40 50 are equally distant?",
+              "Cells": [
+                "40 and 50",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source1008÷14 exact quotient",
+              "Cells": [
+                "72",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source1008÷14 nearest among70 80 90",
+              "Cells": [
+                "70",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source blank÷blank=700 choose valid example",
+              "Cells": [
+                "7000÷10=700",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Family of quotient 78",
           "Description": "Accessible original arithmetic and game demonstration; not source publisher playing cards/worksheet images.",
           "Rows": [
             {
