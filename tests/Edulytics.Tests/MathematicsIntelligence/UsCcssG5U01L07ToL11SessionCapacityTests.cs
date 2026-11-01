@@ -45,7 +45,7 @@ public sealed class UsCcssG5U01L07ToL11SessionCapacityTests
             Assert.All(questions,question=>
             {
                 Assert.Equal(family,question.Family);
-                Assert.Equal(1,question.Parameters.Count);
+                Assert.Single(question.Parameters);
                 var variant=question.Parameters["variant"];
                 Assert.InRange(variant,0,11);
                 Assert.Equal(IndependentExpected(family,variant,originals).ToString(
