@@ -1,3 +1,4 @@
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
 using Xunit;
 
@@ -74,6 +75,44 @@ public sealed class UsCcssG5U03L03UnitFractionCandidateTests
         }
         Assert.False(UsCcssG5U03L03UnitFractionQuestions.Supports(
             UsCcssG5U03L03UnitFractionQuestions.PatternFamily + ".foreign"));
+    }
+
+    private const string Lesson = "PED:US-CCSS-MATH:G5:U03:L03";
+
+    [Fact]
+    public void SourceSpecificFamiliesAreSelectedThroughActualLessonPracticeContract()
+    {
+        Assert.True(LessonPracticeContractRegistry.TryResolve(Lesson, out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Equal("supporting.fractions.multiply_divide", contract.SkillId);
+        Assert.Equal(new[]
+        {
+            UsCcssG5U03L03UnitFractionQuestions.PatternFamily,
+            UsCcssG5U03L03UnitFractionQuestions.EquationFamily
+        }, contract.AllowedQuestionFamilies);
+
+        var engine = new ExactSkillContractQuestionEngine();
+        var actual = engine.Generate("g5-u03-l03-stage-d-exact",
+            Lesson, contract.AllowedQuestionFamilies,
+            ExactSkillQuestionDifficulty.Standard, 4, 50303, Array.Empty<string>());
+        Assert.Equal(4, actual.Count);
+        foreach (var question in actual)
+        {
+            Assert.Contains(question.Family, contract.AllowedQuestionFamilies);
+            Assert.Equal(3, question.Parameters.Count);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                question.Family, question.Parameters, question.CorrectAnswer));
+            Assert.Contains("ORIGINAL", question.Prompt, StringComparison.Ordinal);
+            Assert.Contains("TEACHER_REVIEW_REQUIRED", question.Prompt, StringComparison.Ordinal);
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                question.Family, question.Parameters, "not-a-selected-choice"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                question.Family, question.Parameters, " 1"));
+        }
+
+        Assert.DoesNotContain(contract.AllowedQuestionFamilies,
+            family => family.StartsWith("usccss.g5.u03.l01.", StringComparison.Ordinal));
     }
 
     [Fact]
