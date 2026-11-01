@@ -483,6 +483,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source6/5−1/3", "13/15", "5/15", "12/15"),
         new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source11/12+3 5/9", "4 17/36", "3 17/36", "4 11/36"),
         new("usccss.g5.u06.l13.original_common_denominator_critique", "Original source6/10−9/25", "6/25", "3/25", "1/25"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Original U06:L14 source measured egg weights: TOTAL number of plotted egg entries", "12", "10", "11"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source egg weight1 7/8 oz appears how many times?", "3", "2", "4"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Original source fraction of12 eggs weighing1 7/8oz", "1/4", "1/3", "1/2"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source lightest measured egg weight in ounces", "1 3/4", "1 7/8", "2 1/8"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source heaviest measured egg weight in ounces", "2 1/2", "2 3/8", "2 1/4"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Original source heaviest egg minus lightest egg in ounces", "3/4", "1/4", "1/2"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source equivalent weights2 4/8 and2 1/2 are equal true/false", "true", "false", "unknown"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source frequency of egg weight2 1/2oz including printed2 4/8 label", "2", "1", "3"),
+        new("usccss.g5.u06.l14.original_egg_fraction_lineplot", "Source frequency of egg weight1 3/4oz including printed1 6/8 label", "2", "1", "3"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
