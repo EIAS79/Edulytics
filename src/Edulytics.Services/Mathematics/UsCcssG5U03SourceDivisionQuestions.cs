@@ -98,6 +98,13 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Smallest whole ÷ unit fraction from distinct 1–6 choices", "1 ÷ (1/2)", 2, 1, "source-permitted exact fraction value"),
         new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Largest unit fraction ÷ whole from distinct 1–6 choices", "(1/2) ÷ 1", 1, 2, "source-permitted exact fraction value"),
         new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Smallest unit fraction ÷ whole from distinct 1–6 choices", "(1/6) ÷ 5", 1, 30, "source-permitted exact fraction value"),
+        new("usccss.g5.u03.l20.source_unknown_class_whole", "One third of the source class equals nine students. How many students are in the full class?", "9 ÷ (1/3)", 27, 1, "students in class"),
+        new("usccss.g5.u03.l20.source_unknown_class_whole", "Source class is 27; one third times unknown whole equals nine", "(1/3) × 27", 9, 1, "students represented by one third"),
+        new("usccss.g5.u03.l20.source_unknown_class_whole", "Source class whole contains three groups of nine pupils", "3 × 9", 27, 1, "students in class"),
+        new("usccss.g5.u03.l20.source_unknown_class_whole", "Jada's class has 24 pupils, one quarter of grade-five pupils. How many pupils are in grade five?", "24 ÷ (1/4)", 96, 1, "grade-five students"),
+        new("usccss.g5.u03.l20.source_unknown_class_whole", "Jada source equal-quarters check: total grade-five pupils 96 divided among four classes", "96 ÷ 4", 24, 1, "students in one class"),
+        new("usccss.g5.u03.l20.source_calcium_rocket_total", "Original source 250 mg calcium is one quarter of recommended daily allowance", "250 ÷ (1/4)", 1000, 1, "mg total recommended calcium"),
+        new("usccss.g5.u03.l20.source_calcium_rocket_total", "Original source 60 days to travel one fifth of a Mars route, estimate total travel days in a constant-speed model", "60 ÷ (1/5)", 300, 1, "days total travel"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>
