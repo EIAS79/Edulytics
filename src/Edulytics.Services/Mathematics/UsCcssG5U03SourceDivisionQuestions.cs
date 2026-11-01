@@ -35,6 +35,12 @@ public static class UsCcssG5U03SourceDivisionQuestions
             "Original Grade 5 U03:L11 warm-up, 4 divided by 4","4 / 4",1,1,""),
         new("usccss.g5.u03.l11.four_divisor_number_talk",
             "Original Grade 5 U03:L11 warm-up, 1 divided by 4","1 / 4",1,4,""),
+        new("usccss.g5.u03.l12.third_division_teacher_diagrams", "Priya and Mai's original two diagrams represent one third of the SAME WHOLE shared among four", "(1/3) ÷ 4", 1, 12, "of the original whole"),
+        new("usccss.g5.u03.l12.third_division_teacher_diagrams", "Han draws one third of a same original whole divided into three equal parts", "(1/3) ÷ 3", 1, 9, "of the original whole"),
+        new("usccss.g5.u03.l12.third_division_teacher_diagrams", "Priya's source mistake says 1/3 ÷ 2 = 1/2; the correct answer is 1/6 of the original WHOLE", "(1/3) ÷ 2", 1, 6, "of the original whole"),
+        new("usccss.g5.u03.l12.quarter_division_pattern", "Original Grade 5 L12 source Activity 3 quarter-of-a-whole shared among 2 groups", "(1/4) ÷ 2", 1, 8, "of the original whole"),
+        new("usccss.g5.u03.l12.quarter_division_pattern", "Original Grade 5 L12 source Activity 3 quarter-of-a-whole shared among 3 groups", "(1/4) ÷ 3", 1, 12, "of the original whole"),
+        new("usccss.g5.u03.l12.quarter_division_pattern", "Original Grade 5 L12 source Activity 3 quarter-of-a-whole shared among 4 groups", "(1/4) ÷ 4", 1, 16, "of the original whole"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>

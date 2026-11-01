@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v6-20261101",
+  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -173,11 +173,12 @@
       "CultureCode": "en",
       "Title": "Represent Division of Unit Fractions by Whole Numbers",
       "ExplanationParagraphs": [
-        "Goal: compare two different tape or area diagrams for the SAME unit-fraction dividend shared into equal whole-number groups, then connect them to equivalent division and multiplication expressions. Source L12 makes this comparison explicit, unlike L11's first contextual construction.",
-        "Warm-up: estimate a tiny shaded fraction of a unit-length tape when only rough marks are available. State too-low, plausible and too-high estimates without asserting exactness from an approximate image.",
-        "Activity 1 — two original diagrams for 1/3÷4: Drawing A partitions the whole tape into three equal thirds then divides only the selected third into four equal pieces. Drawing B partitions the entire tape into twelve equal intervals and shades one. Both represent 1/12 of the original whole; students identify which divisions are visible in each representation.",
-        "Activity 2 — explain 1/3÷3: use either three thirds followed by three subdivisions of one third, or a nine-interval tape. Write 1/3÷3=1/9, check by recombining three 1/9 pieces, and describe the difference between a part of a whole and the whole itself.",
-        "Assessment: the 2021 student task asks comparison, diagrams, explanation and the quotient, and later notices the repeated-denominator pattern. Teacher reviews how either representation shows the actual context and original whole, not only its numeric fraction. No source artwork or gated solution cards are reused."
+        "Purpose IM K5 2021 Grade5 U03:L12: interpret and critique diagrams for a UNIT fraction shared by a positive whole number. A quotient is always stated relative to the original complete unit, not the selected third alone.",
+        "Warm-up Estimation Exploration: estimate a shaded region, compare the source tape and source area models for a quarter of a whole with a smaller selected region; allow justified too-low/about-right/too-high estimates. Approximate source publisher pictures cannot be assumed to give a uniquely exact area.",
+        "Activity 1 Diagrams Equations Situations: source Priya and Mai diagrams both show (1/3)÷4=1/12 OF THE SAME WHOLE, even though partitions have different orientations. Han draws (1/3)÷3=1/9. Students compare what the two diagrams preserve and identify the full original whole.",
+        "Activity 2 Priya's Work: source claims '(1/3)÷2=1/2' because half of the third is shaded; this is INCORRECT when reporting part of the whole. The true fraction is (1/3)÷2=1/6 of ORIGINAL WHOLE. Apply MLR3 Clarify, Critique, Correct; students write questions and a revised explanation rather than simply picking an answer.",
+        "Activity 3 Look for Patterns: original source expressions (1/4)÷2=1/8, (1/4)÷3=1/12, (1/4)÷4=1/16. Generalize (1/4)÷n = 1/(4n) for positive whole-number n; use teacher-reviewed equal partition models and verbal why.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -201,7 +202,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Two valid tape diagrams",
+          "Title": "Source diagram comparison Priya and Mai",
+          "Question": "Use two orientations of the original whole to explain (1/3)÷4.",
+          "Method": "Divide a selected third into four equal subparts, extending the whole-unit count.",
+          "Steps": [
+            "Name one full original unit and its three equal thirds.",
+            "Divide one chosen third into four equal smaller pieces.",
+            "Show 12 equal parts in the ORIGINAL whole; one is selected."
+          ],
+          "Answer": "1/12 of the original whole.",
+          "Check": "(1/3)÷4=1/12, independent of valid orientation."
+        },
+        {
+          "Title": "Source Priya flawed explanation",
+          "Question": "Priya says (1/3)÷2 is 1/2. Critique and correct.",
+          "Method": "Distinguish half of a selected third from a half of the original whole.",
+          "Steps": [
+            "Keep the original whole as one unit.",
+            "Halve one of three equal thirds.",
+            "One of six original-whole equal cells is shaded."
+          ],
+          "Answer": "1/6 of the original whole; Priya's 1/2 is incorrect.",
+          "Check": "2×1/6=1/3, not 2×1/2=1/3."
+        },
+        {
+          "Title": "Source quarter pattern",
+          "Question": "Evaluate (1/4)÷2, (1/4)÷3 and (1/4)÷4.",
+          "Method": "Hold a quarter of the whole and divide it into 2/3/4 equal shares.",
+          "Steps": [
+            "Divide one original whole into fourths.",
+            "Subdivide the selected quarter by 2,3,4 respectively.",
+            "Count all equal full-whole pieces to obtain denominators 8,12,16."
+          ],
+          "Answer": "1/8, 1/12, 1/16.",
+          "Check": "1/(4n) for n=2,3,4."
+        },
+        {
+          "Title": "Optional existing extension — Two valid tape diagrams",
           "Question": "Explain 1/3÷4 in two different ways.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -213,7 +250,7 @@
           "Check": "4×1/12=1/3; teacher reviews both pictured partitions."
         },
         {
-          "Title": "Divide one third by three",
+          "Title": "Optional existing extension — Divide one third by three",
           "Question": "Find 1/3÷3.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -225,7 +262,7 @@
           "Check": "3×1/9=1/3."
         },
         {
-          "Title": "Find a missing partner share",
+          "Title": "Optional existing extension — Find a missing partner share",
           "Question": "One fourth of a sheet is split among two pupils. How much of the whole per pupil?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -247,50 +284,47 @@
           "Mistake": "Compare a one-third strip to a one-third share rather than a whole-unit share",
           "WhyWrong": "The final denominator must express the original whole when the question says 'of the whole'.",
           "Correction": "Relabel the entire tape and count all tiny equal intervals."
+        },
+        {
+          "Mistake": "Mistake a fraction OF the selected third for a fraction OF the original whole",
+          "WhyWrong": "Priya's source calculation 1/3÷2=1/2 uses the wrong reference whole.",
+          "Correction": "Extend the partitions across the full unit: one of six equal full-whole pieces."
         }
       ],
       "SummaryPoints": [
-        "Different correct diagrams may represent the same fraction-division relationship.",
-        "When one a-th is divided among b, each share is one (ab)-th of the whole.",
-        "Comparison of diagrams and reasoning explanations require teacher review.",
-        "2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 12, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-12/lesson.html. First-party Edulytiks examples; public teacher/student-facing HTML activity reviewed but original Student Task PDF and gated Cool-down not independently checked."
+        "Original 1/3÷4=1/12 and 1/3÷3=1/9; teacher compares diagram orientations.",
+        "Priya's wrong 1/3÷2=1/2 must be corrected to 1/6 of original whole.",
+        "Quarter pattern 1/4÷2,3,4 yields 1/8,1/12,1/16.",
+        "Learner diagrams, critique and MLR3 peer discussion remain teacher reviewed.",
+        "Independent Edulytiks Cool-down asks (1/5)÷3=1/15 with original whole."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Represent Division of Unit Fractions by Whole Numbers — quotient meaning",
-          "Description": "Original text-only equal-group model; does not reproduce public publisher image cards or protected responses.",
+          "Title": "Original source one-third and one-quarter division",
+          "Description": "Edulytiks original numeric/tape model, not publisher artwork; exact full-whole reference; diagrams require teacher review.",
           "Rows": [
             {
-              "Label": "Example",
+              "Label": "One third divided",
               "Cells": [
-                "1/3 ÷ 4",
-                "1/3 ÷ 3",
-                "1/4 ÷ 2"
+                "÷4 = 1/12",
+                "÷3 = 1/9",
+                "÷2 = 1/6"
               ]
             },
             {
-              "Label": "Full-unit equal parts",
+              "Label": "One quarter divided",
               "Cells": [
-                "12",
-                "9",
-                "8"
+                "÷2 = 1/8",
+                "÷3 = 1/12",
+                "÷4 = 1/16"
               ]
             },
             {
-              "Label": "Selected parts",
+              "Label": "Wrong Priya claim",
               "Cells": [
-                "1",
-                "1",
-                "1"
-              ]
-            },
-            {
-              "Label": "Share",
-              "Cells": [
-                "1/12",
-                "1/9",
-                "1/8"
+                "1/3 ÷ 2 ≠ 1/2",
+                "half a third = one sixth whole"
               ]
             }
           ]

@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM K5 2021 G5 U03:L12: source-specific selected exact
+        // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L12", "supporting.fractions.multiply_divide",
+            "G5_SOURCE_UNIT3_LESSON_12_BOUNDED_FRACTION",
+            ["usccss.g5.u03.l12.third_division_teacher_diagrams", "usccss.g5.u03.l12.quarter_division_pattern"],
+            "IM2021_G5_U03_L12_AUTHORING_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U03:L11 source half-pan and exact four-divisor
         // warmup; teacher reviews drawings and MLR7 comparison.
         byLesson["PED:US-CCSS-MATH:G5:U03:L11"] = new LessonPracticeContract(
