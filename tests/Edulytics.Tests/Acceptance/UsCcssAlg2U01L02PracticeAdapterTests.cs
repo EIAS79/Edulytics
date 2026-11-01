@@ -20,6 +20,8 @@ public sealed class UsCcssAlg2U01L02PracticeAdapterTests
     [InlineData("usccss.alg2.u01.l02.geometric_fill_ratio", 1, 4, "1/16")]
     [InlineData("usccss.alg2.u01.l02.geometric_fill_ratio", 2, 3, "27")]
     [InlineData("usccss.alg2.u01.l02.geometric_fill_ratio", 3, 2, "9/16")]
+    [InlineData("usccss.alg2.u01.l02.geometric_fill_ratio", 4, 3, "64")]
+    [InlineData("usccss.alg2.u01.l02.geometric_fill_ratio", 5, 3, "1/1000")]
     [InlineData("usccss.alg2.u01.l02.paper_conservation", 0, 6, "64")]
     [InlineData("usccss.alg2.u01.l02.paper_conservation", 1, 6, "5/4")]
     [InlineData("usccss.alg2.u01.l02.sierpinski_shaded", 0, 5, "243")]

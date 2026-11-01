@@ -40,14 +40,16 @@ public static class UsCcssAlg2U01L02PracticeAdapter
 
         switch (family)
         {
-            case GeometricFamily when (variant is >= 0 and <= 3) &&
+            case GeometricFamily when (variant is >= 0 and <= 5) &&
                                       n >= (variant == 1 ? 1 : 0) && n <= 6:
                 (first, ratio, firstIndex, numerator, denominator) = variant switch
                 {
                     0 => ("1", "2", 0, BigInteger.One << n, BigInteger.One),
                     1 => ("1/2", "1/2", 1, BigInteger.One, BigInteger.One << n),
                     2 => ("1", "3", 0, BigInteger.Pow(3, n), BigInteger.One),
-                    _ => ("1", "3/4", 0, BigInteger.Pow(3, n), BigInteger.Pow(4, n))
+                    3 => ("1", "3/4", 0, BigInteger.Pow(3, n), BigInteger.Pow(4, n)),
+                    4 => ("1", "4", 0, BigInteger.Pow(4, n), BigInteger.One),
+                    _ => ("1", "1/10", 0, BigInteger.One, BigInteger.Pow(10, n))
                 };
                 prompt = $"A geometric sequence starts at index {firstIndex} with term {first} " +
                          $"and multiplies by {ratio} each step. Give term {n} exactly.";
@@ -116,6 +118,10 @@ public static class UsCcssAlg2U01L02PracticeAdapter
                     "1", "3", 0, n, submittedAnswer),
                 3 => UsCcssAlg2SequencePracticeMath.GradeGeometricTerm(
                     "1", "3/4", 0, n, submittedAnswer),
+                4 => UsCcssAlg2SequencePracticeMath.GradeGeometricTerm(
+                    "1", "4", 0, n, submittedAnswer),
+                5 => UsCcssAlg2SequencePracticeMath.GradeGeometricTerm(
+                    "1", "1/10", 0, n, submittedAnswer),
                 _ => false
             },
             PaperFamily => UsCcssAlg2SequencePracticeMath.GradeGeometricTerm(
