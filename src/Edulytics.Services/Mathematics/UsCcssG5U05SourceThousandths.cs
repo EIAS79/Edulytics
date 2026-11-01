@@ -239,6 +239,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l18.source_whole_number_properties", "Original source fill3×0.7=(3×7)×?", "0.1", "0.01", "1"),
         new("usccss.g5.u05.l18.source_whole_number_properties", "Original source fill3×0.07=(3×7)×?", "0.01", "0.1", "1"),
         new("usccss.g5.u05.l18.source_whole_number_properties", "Original source fill5×?=(5×4)×0.1", "0.4", "0.04", "4"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 40×2×0.1 = ? Evaluate exact product and explain position of tenths/hundredths.", "8.00", "8.10", "7.89"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 20×0.1×4 = ? Evaluate exact product and explain position of tenths/hundredths.", "8.00", "8.10", "7.89"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 0.1×80 = ? Evaluate exact product and explain position of tenths/hundredths.", "8.00", "8.10", "7.89"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 0.01×20×40 = ? Evaluate exact product and explain position of tenths/hundredths.", "8.00", "8.10", "7.89"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 6×0.12 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.72", "0.82", "0.61"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 4×1.4 = ? Evaluate exact product and explain position of tenths/hundredths.", "5.60", "5.70", "5.49"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 5×3.9 = ? Evaluate exact product and explain position of tenths/hundredths.", "19.50", "19.60", "19.39"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 25×0.41 = ? Evaluate exact product and explain position of tenths/hundredths.", "10.25", "10.35", "10.14"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 35×0.08 = ? Evaluate exact product and explain position of tenths/hundredths.", "2.80", "2.90", "2.69"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 35×0.7 = ? Evaluate exact product and explain position of tenths/hundredths.", "24.50", "24.60", "24.39"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 35×0.78 = ? Evaluate exact product and explain position of tenths/hundredths.", "27.30", "27.40", "27.19"),
+        new("usccss.g5.u05.l19.source_whole_decimal_properties", "Original IM2021 U05 L19 original warmup and source activities 42×0.66 = ? Evaluate exact product and explain position of tenths/hundredths.", "27.72", "27.82", "27.61"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

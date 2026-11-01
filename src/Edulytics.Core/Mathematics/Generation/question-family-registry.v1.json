@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u05.l19.source_whole_decimal_properties",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u05-l19-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u05.l18.source_whole_number_properties",
       "version": 1,
       "skillId": "supporting.decimals.core",
