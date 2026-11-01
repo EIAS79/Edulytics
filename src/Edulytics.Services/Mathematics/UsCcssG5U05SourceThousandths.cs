@@ -689,6 +689,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original Activity2 Rule1 +2 Rule2 +5, point F", "(10,25)", "(25,10)", "(8,20)"),
         new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original PartnerA rule1 value always how many TIMES corresponding rule2 value for nonzero indices?", "4", "2", "8"),
         new("usccss.g5.u07.l11.source_corresponding_pattern_coordinate_pairs", "Original Activity2 rule2 value divided by rule1 value for positive terms", "5/2", "2/5", "5"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original warmup(2×10)+(3×5)=(3×10)+(1×5), true/false", "true", "false", "unknown"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original warmup(3×25)+(5×5)=8×25, true/false", "false", "true", "unknown"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original warmup(4×25)+(10×5)=(2×25)+(10×10), true/false", "true", "false", "unknown"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Tyler: 1 dime 3 nickels 2 pennies; total NUMBER of coins", "6", "5", "7"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Tyler: 1 dime 3 nickels 2 pennies; TOTAL cents", "27", "26", "35"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Tyler corresponding plot point(number of coins,value cents)", "(6,27)", "(27,6)", "(5,27)"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Lin: 3 quarters 1 dime 1 penny, total cents", "86", "85", "76"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Lin corresponding point (number,value cents)", "(5,86)", "(86,5)", "(5,76)"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Diego: 1 quarter and1 dime, corresponding point", "(2,35)", "(35,2)", "(2,30)"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Original Clare has5 coins NO QUARTER, source graph point representing them", "(5,18)", "(5,86)", "(2,50)"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Source partner coin toss10 times: heads+tails must equal", "10", "5", "20"),
+        new("usccss.g5.u07.l12.source_coin_graph_context", "Source 10-flip student point on horizontal axis (heads, tails) means", "zero tails", "zero heads", "five of each"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

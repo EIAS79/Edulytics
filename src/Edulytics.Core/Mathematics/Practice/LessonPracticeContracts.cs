@@ -1579,6 +1579,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g5.u05.l02.original_grid_thousandth_values", "usccss.g5.u05.l02.original_fifteen_hundredths_critic"],
             "IM2021_G5_U05_L02_DECIMAL_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // IM K5 2021 G5 U07:L12: source-aligned bounded geometry
+        // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U07:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U07:L12", "supporting.geometry.properties",
+            "G5_SOURCE_UNIT7_LESSON_12_GEOMETRY_ATTRIBUTES",
+            ["usccss.g5.u07.l12.source_coin_graph_context"],
+            "IM2021_G5_U07_L12_GEOMETRY_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U07:L11: source-aligned bounded geometry
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U07:L11"] = new LessonPracticeContract(

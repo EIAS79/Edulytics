@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v12-20261101",
+  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v13-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -1244,11 +1244,17 @@
       "CultureCode": "en",
       "Title": "Interpret Points on the Coordinate Plane",
       "ExplanationParagraphs": [
-        "Goal: plot and INTERPRET points representing two distinct real quantities, including coin-flip counts and the number/total value of different coin collections. The source asks learners to identify a coordinate's meaning in context, not merely recite two numbers.",
-        "Warm-up: imagine tossing a coin ten times. If H counts heads and T counts tails, then H+T=10. Points (0,10),(3,7),(5,5),(10,0) have different coordinates but all represent ten outcomes. This is a deterministic relationship for counts, not a prediction that real flips must be evenly split.",
-        "Activity 1 — first-party coin flip trial: three fictional classmates record (heads,tails) counts (6,4),(2,8),(7,3) for ten flips each. Mark these points with x=heads and y=tails. When two pupils report (6,4), use distinct names or a count marker at same point; one coordinate pair can represent multiple observations.",
-        "Activity 2 — coin collection graph: x-axis number of coins and y-axis total value in cents. For a set of2 dimes,3 nickels,1 penny, x=6 and y=20+15+1=36 cents, point (6,36). For3 quarters and1 nickel, x=4 and y=75+5=80 cents, point (4,80). Explain why two different coin collections can have equal counts but different values, and why a plotted point does not tell the unique composition without additional information.",
-        "Assessment: the source asks for plotted coordinates and their real-unit meanings, repeated outcomes and contextual inference. Teacher inspects coordinate charts, units and interpretation; numeric coin totals alone are not evidence of a completed graph."
+        "Original IM2021 G5 U07:L12 uses COIN FLIPS and COIN COLLECTIONS to interpret the x and y coordinates as different quantities, with a visible context-labeled first-quadrant grid.",
+        "Warm-up source truth values from coin arithmetic: (2×10)+(3×5)=(3×10)+(1×5) TRUE at35 cents, (3×25)+(5×5)=8×25 FALSE because100≠200, (4×25)+(10×5)=(2×25)+(10×10) TRUE at150.",
+        "Activity1 Heads or Tails original Han/Jada flip results are shown in a publisher-only image; pupil must read actual plotted points, then flip a coin TEN times and record own (heads,tails) where x counts heads, y counts tails and x+y=10. The results are nondeterministic and never fabricated in this source-aligned record.",
+        "Activity2 Coin Values original chart x number of coins, y total value in CENTS. Tyler has1 dime+3 nickels+2 pennies=6 coins and27c →(6,27). Lin has3 quarters+1 dime+1 penny=5 coins and86c →(5,86). Diego has1 quarter+1 dime=(2,35). Clare five coins with NO quarter corresponds (5,18) from the original plotted values; one candidate composition is1 dime+1 nickel+3 pennies.",
+        "Source visible graph's 15 plotted points, student trial data, teacher reading and reasoning remain TEACHER_REVIEW_REQUIRED. Prior fictional examples retained optional only; selected Practice checks source exact coin counts and bounded properties.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: plot and INTERPRET points representing two distinct real quantities, including coin-flip counts and the number/total value of different coin collections. The source asks learners to identify a coordinate's meaning in context, not merely recite two numbers.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: imagine tossing a coin ten times. If H counts heads and T counts tails, then H+T=10. Points (0,10),(3,7),(5,5),(10,0) have different coordinates but all represent ten outcomes. This is a deterministic relationship for counts, not a prediction that real flips must be evenly split.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — first-party coin flip trial: three fictional classmates record (heads,tails) counts (6,4),(2,8),(7,3) for ten flips each. Mark these points with x=heads and y=tails. When two pupils report (6,4), use distinct names or a count marker at same point; one coordinate pair can represent multiple observations.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — coin collection graph: x-axis number of coins and y-axis total value in cents. For a set of2 dimes,3 nickels,1 penny, x=6 and y=20+15+1=36 cents, point (6,36). For3 quarters and1 nickel, x=4 and y=75+5=80 cents, point (4,80). Explain why two different coin collections can have equal counts but different values, and why a plotted point does not tell the unique composition without additional information.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the source asks for plotted coordinates and their real-unit meanings, repeated outcomes and contextual inference. Teacher inspects coordinate charts, units and interpretation; numeric coin totals alone are not evidence of a completed graph."
       ],
       "KeyConcepts": [
         {
@@ -1272,7 +1278,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Interpret ten flips",
+          "Title": "Source exact 1 — Represent Problems on the Coordinate Grid",
+          "Question": "Original warmup(2×10)+(3×5)=(3×10)+(1×5), true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Represent Problems on the Coordinate Grid",
+          "Question": "Original warmup(3×25)+(5×5)=8×25, true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Represent Problems on the Coordinate Grid",
+          "Question": "Original warmup(4×25)+(10×5)=(2×25)+(10×10), true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Represent Problems on the Coordinate Grid",
+          "Question": "Original Tyler: 1 dime 3 nickels 2 pennies; total NUMBER of coins",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "6",
+          "Check": "Original numeric source example; incorrect distractors 5 and 7 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Interpret ten flips",
           "Question": "A student gets six heads and four tails. What point represents this?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1284,7 +1338,7 @@
           "Check": "Not a statement about expected probability."
         },
         {
-          "Title": "Plot coin collection",
+          "Title": "Optional existing extension — Plot coin collection",
           "Question": "Two dimes, three nickels and a penny: give coin-count vs value point.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1296,7 +1350,7 @@
           "Check": "Teacher verifies original graph and units."
         },
         {
-          "Title": "Compare two collections",
+          "Title": "Optional existing extension — Compare two collections",
           "Question": "Three quarters and one nickel: give point.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1318,18 +1372,89 @@
           "Mistake": "Assume one plotted point reveals the exact coin denominations",
           "WhyWrong": "Different collections can share the same number and value.",
           "Correction": "State that extra data may be necessary to reconstruct the collection."
+        },
+        {
+          "Mistake": "Use unrelated or invented examples rather than the actual source pattern rules and plotted values.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore the exact source pattern, coin, and rectangle constants; preserve open plotting and story decisions as teacher-scored."
         }
       ],
       "SummaryPoints": [
-        "Ordered pairs represent real quantities only with labeled axes.",
-        "Coin flip totals and coin value examples require contextual interpretation.",
-        "Teacher checks actual plotted points and diagram meanings.",
-        "Source 2021 IM K–5 Grade5 Unit7 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-12/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
+        "Warmup true,false,true.",
+        "Source Tyler(6,27), Lin(5,86), Diego(2,35), Clare possible(5,18).",
+        "Own ten flips require recorded class data, not fabricated.",
+        "Optional prior: Ordered pairs represent real quantities only with labeled axes.",
+        "Optional prior: Coin flip totals and coin value examples require contextual interpretation.",
+        "Optional prior: Teacher checks actual plotted points and diagram meanings.",
+        "Optional prior: Source 2021 IM K–5 Grade5 Unit7 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-12/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Interpret Points on the Coordinate Plane — original representation",
+          "Title": "Represent Problems on the Coordinate Grid — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup(2×10)+(3×5)=(3×10)+(1×5), true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup(3×25)+(5×5)=8×25, true/false",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup(4×25)+(10×5)=(2×25)+(10×10), true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Tyler: 1 dime 3 nickels 2 pennies; total NUMBER of coins",
+              "Cells": [
+                "6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Tyler: 1 dime 3 nickels 2 pennies; TOTAL cents",
+              "Cells": [
+                "27",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Tyler corresponding plot point(number of coins,value cents)",
+              "Cells": [
+                "(6,27)",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Lin: 3 quarters 1 dime 1 penny, total cents",
+              "Cells": [
+                "86",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Lin corresponding point (number,value cents)",
+              "Cells": [
+                "(5,86)",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Interpret Points on the Coordinate Plane — original representation",
           "Description": "Accessible first-party equivalent for values and ordered pairs; it is not a tested interactive plot or copied publisher graphic.",
           "Rows": [
             {
