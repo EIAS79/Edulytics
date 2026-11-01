@@ -3,6 +3,8 @@
 
 This is a fail-closed technical diagnostic, NEVER academic approval. A successful
 aggregate test run is insufficient to claim that each of the 148 lessons was tested.
+Node-linked lessons are verified by a separate required CI job; this .NET-only
+reconciler never claims a Node lesson passed because xUnit passed.
 No runtime DB credentials, external services, or publishing permissions are needed.
 """
 from __future__ import annotations
@@ -79,17 +81,26 @@ def reconcile(lesson_ledger: dict, results: list[dict], candidate: str) -> dict:
     for idx, code in enumerate(codes, 1):
         direct = by_lesson[code]
         outcomes = Counter(x["outcome"] for x in direct)
-        status = ("NO_DIRECT_TEST_EVIDENCE" if not direct else
-                  "DIRECT_TEST_FAILURE" if any(x != "Passed" for x in outcomes) else
-                  "DIRECT_TESTS_PASSED_OTHER_D_GATES_OPEN")
+        linked_test = source_lessons[idx - 1].get("testPath") or source_lessons[idx - 1].get("testFile") or ""
+        expected_runner = ("DOTNET" if linked_test.endswith(".cs") else
+                           "NODE" if linked_test.endswith(".cjs") else "UNKNOWN")
+        status = ("DIRECT_TEST_FAILURE" if any(x != "Passed" for x in outcomes) else
+                  "DIRECT_TESTS_PASSED_OTHER_D_GATES_OPEN" if direct else
+                  "NODE_SHARD_EVIDENCE_REQUIRED" if expected_runner == "NODE" else
+                  "REQUIRED_XUNIT_TEST_MISSING" if expected_runner == "DOTNET" else
+                  "UNDECLARED_TEST_RUNNER")
         rows.append({
             "ordinal": idx, "lessonCode": code, "directResultCount": len(direct),
+            "expectedTestRunner": expected_runner, "linkedTestPath": linked_test,
             "outcomes": dict(outcomes), "technicalStatus": status,
             "testNames": sorted({x["testName"] for x in direct}),
             "dVerified": False, "academicApproved": False,
         })
     missing = [x["lessonCode"] for x in rows if not x["directResultCount"]]
     failing = [x["lessonCode"] for x in rows if x["technicalStatus"] == "DIRECT_TEST_FAILURE"]
+    missing_required_xunit = [x["lessonCode"] for x in rows if x["technicalStatus"] == "REQUIRED_XUNIT_TEST_MISSING"]
+    outstanding_node = [x["lessonCode"] for x in rows if x["technicalStatus"] == "NODE_SHARD_EVIDENCE_REQUIRED"]
+    unknown_runner = [x["lessonCode"] for x in rows if x["technicalStatus"] == "UNDECLARED_TEST_RUNNER"]
     shared = [x for x in results if x["lessonCode"] is None]
     return {
         "schemaVersion": 1,
@@ -100,11 +111,17 @@ def reconcile(lesson_ledger: dict, results: list[dict], candidate: str) -> dict:
         "lessonDirectTestCount": len(rows) - len(missing),
         "lessonWithoutDirectTestCount": len(missing),
         "lessonWithDirectFailureCount": len(failing),
+        "requiredXunitMissingCount": len(missing_required_xunit),
+        "requiredXunitMissingLessons": missing_required_xunit,
+        "nodeShardEvidenceRequiredCount": len(outstanding_node),
+        "nodeShardEvidenceRequiredLessons": outstanding_node,
+        "undeclaredRunnerCount": len(unknown_runner),
+        "undeclaredRunnerLessons": unknown_runner,
         "missingDirectLessonTests": missing,
         "directFailures": failing,
         "crossLessonOrUnattributedTestCount": len(shared),
         "dVerified": 0, "academicApproved": 0,
-        "note": "A passing shared xUnit result is not attributed to a lesson unless its test class names the lesson. Original source parity and authenticated E2E remain separate.",
+        "note": "A passing shared xUnit result is not attributed to a lesson unless its test class names the lesson. Node-linked lessons require independent passing Node shard evidence; no Node PASS is inferred from xUnit. Source parity and authenticated E2E remain separate.",
         "lessons": rows
     }
 
@@ -125,12 +142,16 @@ def main() -> int:
         "outcomes": report["xunitOutcomes"],
         "directLessons": report["lessonDirectTestCount"],
         "missingDirect": report["lessonWithoutDirectTestCount"],
+        "requiredXunitMissing": report["requiredXunitMissingCount"],
+        "nodeShardOutstanding": report["nodeShardEvidenceRequiredCount"],
         "directFailures": report["lessonWithDirectFailureCount"],
         "artifact": str(args.output)
     }))
-    if report["lessonWithoutDirectTestCount"] or report["lessonWithDirectFailureCount"]:
-        print("G5_STAGE_D_INCOMPLETE: 148/148 individually attributed xUnit lesson proof absent", file=sys.stderr)
+    if report["requiredXunitMissingCount"] or report["undeclaredRunnerCount"] or report["lessonWithDirectFailureCount"]:
+        print("G5_STAGE_D_XUNIT_INCOMPLETE: required C#-linked direct evidence absent or failed", file=sys.stderr)
         return 2
+    if report["nodeShardEvidenceRequiredCount"]:
+        print("G5_STAGE_D_XUNIT_SCOPE_COMPLETE: Node-only lesson evidence remains mandatory in separate D1–D3 shard jobs")
     return 0
 
 if __name__ == "__main__":
