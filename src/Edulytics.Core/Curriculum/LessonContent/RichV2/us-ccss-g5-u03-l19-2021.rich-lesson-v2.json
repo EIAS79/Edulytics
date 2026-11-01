@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l19-im2021-first-party-fraction-optimization-richv2-20261028-v1",
+  "ContentVersion": "g5-u03-l19-im2021-source-parity-richv2-20261101-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Fraction Games",
       "ExplanationParagraphs": [
-        "Learning goal: use exact fraction multiplication and division to build the greatest or smallest possible product or quotient from permitted digits. This 2021 first-edition lesson focuses on reasoning about which number positions make an expression larger or smaller, not merely computing a fixed fraction answer.",
-        "Warm-up: estimate 28 multiplied by 2 8/9. Because 2 8/9 is between 2 and 3 and close to 3, the exact product is between 56 and 84, closer to 84. Convert 2 8/9 to 26/9 to verify 28 × 26/9 = 728/9 = 80 8/9. The estimate and justification use the source's mathematical structure; the worked wording here is first-party.",
-        "Activity 1 — build the greatest value: use different digits from 1 through 6 in the places allowed by the expression. For a whole number divided by a unit fraction, the quotient equals the whole number times the fraction's denominator. Try exchanges and argue that the two largest distinct digits give the greatest such product: 6 ÷ (1/5) = 30, or 5 ÷ (1/6) = 30. This is an independently authored illustration of the public preparation's optimization objective, not a transcription of a protected Cool-down.",
-        "Activity 2 — build the smallest value: for (1/a) ÷ b with distinct positive digits 1 through 6, the quotient is 1/(ab). Maximizing the product ab minimizes the positive quotient; the same largest distinct digits yield (1/6) ÷ 5 = 1/30, or (1/5) ÷ 6 = 1/30. Ask students to compare legal assignments and explain why exchanging a smaller chosen digit for an unused larger one improves the result.",
-        "Assessment boundary: numeric values and legal distinct-digit constraints can receive exact checks. Proving that a chosen expression is globally maximal or minimal, discussing alternate ties, and collaborating in the original partner activity require teacher review. Source: public IM K–5 Grade 5 Unit 3 Lesson 19 (2021) preparation. Publisher student PDF diagrams, Cool-down and any image artwork are not claimed reproduced or fully verified."
+        "Original 2021 Grade 5 Unit 3 Lesson 19 'Fraction Games' goal: choose distinct digits from 1,2,3,4,5,6 for the ORIGINAL THREE printed expression types, and build both largest and smallest possible positive product or quotient. The actual mathematical source task includes a/b × c/d, n ÷ (1/d), and (1/d) ÷ n; each expression uses each chosen number no more than once. Do not claim a fixed choice-only oracle assesses the learner's optimization proof.",
+        "Warm-up original Estimation Exploration: 28 × 2 8/9. Because 2 8/9 is slightly below 3, product is just below 28×3=84 and above 28×2=56. Exact result 28×26/9=728/9=80 8/9. Student low/about-right/high estimate reasoning is teacher reviewed.",
+        "Activity 1 LARGEST: for fraction product four distinct slots, if improper fractions are permitted as in the source unqualified a/b form, (6/1)×(5/2)=15 is optimal using the largest two numerators and smallest two denominators. Whole ÷ unit fraction: 6÷(1/5)=30 or 5÷(1/6)=30. Unit fraction ÷ whole: (1/2)÷1=1/2 with distinct digits 2 and 1. Students explain all legal assignments, including swapped factor ties; teacher reviews their argument about whether any additional source classroom restrictions are imposed.",
+        "Activity 2 SMALLEST: fraction product (1/6)×(2/5)=1/15 with four distinct digit slots. Whole ÷ unit fraction: 1÷(1/2)=2. Unit fraction ÷ whole: (1/6)÷5=1/30, or (1/5)÷6=1/30. Mathematical constraints and source permitted digits are essential; choosing a digit twice violates the original problem even when the arithmetic is correct.",
+        "Assessment: source asks student pairs to justify largest AND smallest in all three expression shapes, not only one division question. A selected exact numeric answer is supplemental; legality, optimality proof, source digits, partner discussion and alternative tied solutions are TEACHER_REVIEW_REQUIRED. Original source Cool-down gated and figure binaries not claimed verified. Independent Edulytiks teacher Cool-down checks a new exact optimization scenario.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -42,7 +43,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Largest whole ÷ unit fraction",
+          "Title": "Original source estimate",
+          "Question": "Estimate and compute 28×2 8/9.",
+          "Method": "Compare mixed number against 2 and 3 then exact fraction conversion.",
+          "Steps": [
+            "28×2=56 and 28×3=84 bound the product.",
+            "2 8/9=26/9, so 28×26/9=728/9.",
+            "Convert 728/9 to 80 8/9 and explain why close to 84."
+          ],
+          "Answer": "80 8/9.",
+          "Check": "Exact fraction is 728/9 between 56 and 84."
+        },
+        {
+          "Title": "Original source three largest expressions",
+          "Question": "Fill the three source templates using distinct digits 1–6 for each expression to give a greatest value.",
+          "Method": "Product/quotient monotonicity by digit position, teacher reviews proof.",
+          "Steps": [
+            "a/b×c/d: use 6,5 on top and 1,2 below ->15.",
+            "n÷(1/d): use 6 and 5 ->30.",
+            "(1/d)÷n: use d=2 and n=1 ->1/2."
+          ],
+          "Answer": "15, 30, 1/2 respectively, under source's unrestricted positive-digit slots.",
+          "Check": "No chosen digit repeats in an expression; equivalent source-permitted ties possible."
+        },
+        {
+          "Title": "Original source three smallest expressions",
+          "Question": "Fill each original source template with legal distinct digits to minimize its positive value.",
+          "Method": "Put smallest numerators/largest denominators; compare division forms.",
+          "Steps": [
+            "a/b×c/d: (1/6)×(2/5)=1/15.",
+            "n÷(1/d): choose 1÷(1/2)=2.",
+            "(1/d)÷n: (1/6)÷5=1/30."
+          ],
+          "Answer": "1/15, 2, 1/30 respectively.",
+          "Check": "Teacher checks global optimality explanation, not just chosen numeric outcome."
+        },
+        {
+          "Title": "Optional existing extension — Largest whole ÷ unit fraction",
           "Question": "With distinct digits 1–6 in a ÷ (1/b), what is the greatest possible quotient?",
           "Method": "Use the inverse relation a ÷ (1/b) = a × b, then optimize the product.",
           "Steps": [
@@ -54,7 +91,7 @@
           "Check": "Both use distinct legal digits; any other pair has at least one factor smaller than 5 or 6."
         },
         {
-          "Title": "Smallest unit fraction ÷ whole",
+          "Title": "Optional existing extension — Smallest unit fraction ÷ whole",
           "Question": "With distinct digits 1–6 in (1/a) ÷ b, what is the least positive quotient?",
           "Method": "Convert the quotient to the reciprocal of a product and maximize its denominator.",
           "Steps": [
@@ -66,7 +103,7 @@
           "Check": "For positive denominators, 1/30 is smaller than 1/k for every positive k under 30."
         },
         {
-          "Title": "Estimate a fractional product",
+          "Title": "Optional existing extension — Estimate a fractional product",
           "Question": "Estimate 28 × 2 8/9, then calculate exactly.",
           "Method": "Bound the mixed number between two whole numbers before multiplying.",
           "Steps": [
@@ -93,46 +130,45 @@
           "Mistake": "A correct extreme value is a complete argument",
           "WhyWrong": "Finding 30 or 1/30 does not, by itself, establish that no other permitted choice is better.",
           "Correction": "Explain why the two largest distinct legal digits give the greatest positive product."
+        },
+        {
+          "Mistake": "Score only one source fraction division optimum and omit fraction-by-fraction product and the opposite extreme",
+          "WhyWrong": "Original 2021 activities ask six global extrema over three different expression types, with digit uniqueness, requiring strategy and proof.",
+          "Correction": "Cover all three source templates twice (maximum and minimum), check distinct digits and teacher-reviewed optimality argument."
         }
       ],
       "SummaryPoints": [
-        "For positive integers a,b, a ÷ (1/b) = ab while (1/a) ÷ b = 1/(ab); changing the order changes the result.",
-        "Optimize under the exact legal digit rules, verify the arithmetic and justify why no other assignment can improve the result.",
-        "The written optimality explanation, alternate ties and peer game are teacher-reviewed even when a supporting numeric answer can be checked.",
-        "Publisher: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 3 Lesson 19 first edition (2021), CC BY 4.0, preparation https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-19/preparation.html; first-party Edulytiks examples and table."
+        "Source asks BOTH maximum and minimum for all THREE printed fraction product/quotient templates.",
+        "Use distinct chosen digits 1–6 per expression; repeated digits invalidate an otherwise right calculation.",
+        "Math extrema under unrestricted source templates: products 15 and 1/15; whole÷fraction 30 and 2; fraction÷whole 1/2 and 1/30.",
+        "Original warm-up 28×2 8/9 =80 8/9, estimated just below 84.",
+        "Teacher checks global maximal/minimal reasoning, legal source number reuse constraints and partner exchange; numeric digital cases insufficient alone."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Fraction-division game — legal choices with distinct digits",
-          "Description": "Accessible first-party comparison; exact original publisher cards and their original student PDF are not reproduced. The two largest legal distinct digits are 6 and 5.",
+          "Title": "Original three 2021 templates — legal digit extrema",
+          "Description": "First-party exact numeric table; source permits distinct numbers 1 through 6 in each expression. Teacher evaluates reasoning and alternative legal ties.",
           "Rows": [
             {
-              "Label": "Division type",
+              "Label": "Fraction×fraction",
               "Cells": [
-                "a ÷ (1/b)",
-                "(1/a) ÷ b"
+                "max:6/1×5/2=15",
+                "min:1/6×2/5=1/15"
               ]
             },
             {
-              "Label": "Legal example",
+              "Label": "Whole÷unit fraction",
               "Cells": [
-                "6 ÷ (1/5)",
-                "(1/6) ÷ 5"
+                "max:6÷(1/5)=30",
+                "min:1÷(1/2)=2"
               ]
             },
             {
-              "Label": "Value",
+              "Label": "Unit fraction÷whole",
               "Cells": [
-                "30",
-                "1/30"
-              ]
-            },
-            {
-              "Label": "Optimization",
-              "Cells": [
-                "Largest quotient",
-                "Smallest positive quotient"
+                "max:(1/2)÷1=1/2",
+                "min:(1/6)÷5=1/30"
               ]
             }
           ]

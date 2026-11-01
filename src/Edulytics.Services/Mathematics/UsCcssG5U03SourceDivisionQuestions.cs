@@ -91,6 +91,13 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l18.original_partner_contexts", "Partner B: Han takes four minutes to walk one-third kilometer, time for whole kilometer", "4 ÷ (1/3)", 12, 1, "minutes"),
         new("usccss.g5.u03.l18.original_partner_contexts", "Partner B: Clare collects two and two thirds times her four-kilogram soil goal", "(8/3) × 4", 32, 3, "kilograms collected"),
         new("usccss.g5.u03.l18.original_partner_contexts", "Partner B: a half-pound strawberry container is three fifths full", "(1/2) × (3/5)", 3, 10, "pounds strawberries"),
+        new("usccss.g5.u03.l19.source_estimation_exact", "Original source warm-up 28 times two and eight ninths, estimate between 56 and 84 then compute exactly", "28 × (26/9)", 728, 9, "units"),
+        new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Greatest legal product of two fractions using distinct slots from digits 1–6; explain global maximum", "(6/1) × (5/2)", 15, 1, "source-permitted exact fraction value"),
+        new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Smallest legal positive product of two fractions using four distinct slots from digits 1–6", "(1/6) × (2/5)", 1, 15, "source-permitted exact fraction value"),
+        new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Largest whole ÷ unit fraction from distinct 1–6 choices", "6 ÷ (1/5)", 30, 1, "source-permitted exact fraction value"),
+        new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Smallest whole ÷ unit fraction from distinct 1–6 choices", "1 ÷ (1/2)", 2, 1, "source-permitted exact fraction value"),
+        new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Largest unit fraction ÷ whole from distinct 1–6 choices", "(1/2) ÷ 1", 1, 2, "source-permitted exact fraction value"),
+        new("usccss.g5.u03.l19.original_digit_optimization_extrema", "Smallest unit fraction ÷ whole from distinct 1–6 choices", "(1/6) ÷ 5", 1, 30, "source-permitted exact fraction value"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>
