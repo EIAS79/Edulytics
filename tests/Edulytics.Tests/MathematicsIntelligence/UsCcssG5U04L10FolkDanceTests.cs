@@ -21,8 +21,9 @@ public sealed class UsCcssG5U04L10FolkDanceTests
     public void RejectForeignOrMalformedAndPreserveTeacherBoundary()
     {
         var f=UsCcssG5U04WholeNumberSourceDivision.L10Dance;
-        foreach(var p in new[]{P(-1),P(3),P(0,-1),P(0,3)})
+        foreach(var p in new[]{P(-1),P(4),P(0,-1),P(0,3)})
             Assert.False(UsCcssG5U04WholeNumberSourceDivision.Verify(f,p,"1"));
+        Assert.True(UsCcssG5U04WholeNumberSourceDivision.Verify(f,P(3,1),"2"));
         var extra=P(0);extra["unknown"]=9;
         Assert.False(UsCcssG5U04WholeNumberSourceDivision.Verify(f,extra,"1"));
         Assert.False(UsCcssG5U04WholeNumberSourceDivision.Verify(f,null,"1"));
