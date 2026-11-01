@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -351,11 +351,12 @@
       "CultureCode": "en",
       "Title": "Divide Using Partial Quotients",
       "ExplanationParagraphs": [
-        "Goal: select reasonable PARTIAL QUOTIENTS for increasingly unfamiliar 3- and 4-digit dividends and two-digit divisors, estimate BEFORE calculating, and compare different student approaches. Source lesson specifically asks learners to explain why an efficient first multiple is chosen.",
-        "Warm-up: compare several 11-times whole numbers: 110÷10=11,121÷11=11,132÷12=11. Explain how using a quotient benchmark can guide a division method without reproducing a fixed diagram.",
-        "Activity 1 — two partners, different choices: Student A solves 672÷28 by subtracting560=20×28, leaving112, then112=4×28; Student B subtracts 280 twice then112, using partial quotients 10+10+4. Both yield24. Discuss why the less efficient route is still correct and what information the initial estimate gives.",
-        "Activity 2 — estimate and solve: for 988÷38, estimate near 1000÷40≈25. Subtract760=20×38 leaving228, then228=6×38, so exact quotient26. Check that the 26 result is close to benchmark25. If a learner chooses 10+10+6 instead, demonstrate the same final dividend accounting.",
-        "Teacher boundary: the source requires comparing different algorithms, strategy revision and an estimate, not one preferred exact layout. Numeric checking supports correct division, but learner justification, estimating and peer comparison require teacher review."
+        "Original IM 2021 Grade5 U04:L13 Divide Using Partial Quotients: estimate quotient magnitude before a written partial-quotients algorithm, decide a convenient divisor multiple, compare partner strategies and justify that all quotient chunks together exactly account for the dividend.",
+        "Warm-up original Number Talk Divide: 110÷10=11,121÷11=11,132÷12=11,154÷14=11. Notice four changing dividends and divisors with a constant quotient eleven. Verify multiplication inverse, rather than relying on source images.",
+        "Activity 1 Compare Solutions: original Student Facing specifies Partner 1/2 division layouts and comparison with another group. The locally available teacher HTML does not reveal the numerical values in those embedded partner images, so no invented 672÷28 is represented as an official source problem. Use teacher-provided actual images or clearly independently authored examples for comparison, and assess students' selection of useful partial quotient chunks.",
+        "Activity 2 Estimate and Solve actual source: estimate and calculate 612÷34=18 (e.g. 34×10=340 and34×8=272); 529÷23=23 (23×20=460 and23×3=69); 1044÷29=36 (29×30=870 and29×6=174). Estimation benchmarks may be 600÷30≈20,500÷25≈20,1000÷30≈33; they are approximate guides, not unique mandated source answers.",
+        "Source partner card alignment, estimate arguments and full original vertical division records need TEACHER_REVIEW_REQUIRED. Exact source quotient choices cover only automatic subskills. Existing 672÷28,988÷38 examples are correct but are optional Edulytiks extensions. Independent teacher Cool-down 816÷34=24 is not copied from gated publisher materials.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -379,7 +380,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare two strategies",
+          "Title": "Original source Number Talk division pattern",
+          "Question": "Evaluate 110÷10,121÷11,132÷12,154÷14 mentally.",
+          "Method": "Every source dividend is eleven times its divisor.",
+          "Steps": [
+            "110=11×10.",
+            "121=11×11 and132=11×12.",
+            "154=11×14."
+          ],
+          "Answer": "11 for each expression.",
+          "Check": "Multiply each divisor by11."
+        },
+        {
+          "Title": "Original Estimate and Solve 612÷34 and529÷23",
+          "Question": "Estimate, then divide source 612 by34 and529 by23.",
+          "Method": "Choose useful ten-group multiples of each two-digit divisor.",
+          "Steps": [
+            "612÷34: subtract340 for10 groups then272 for8 ->18.",
+            "529÷23: subtract460 for20 groups then69 for3 ->23.",
+            "Compare estimates with exact counts."
+          ],
+          "Answer": "18 and23.",
+          "Check": "34×18=612,23×23=529."
+        },
+        {
+          "Title": "Original 1044÷29",
+          "Question": "Estimate and solve source 1044 divided by29.",
+          "Method": "Separate 30 groups and six groups of 29.",
+          "Steps": [
+            "Estimate 1000÷30≈33, so answer a little above thirty.",
+            "29×30=870; remainder174.",
+            "29×6=174; total 30+6=36 groups."
+          ],
+          "Answer": "36.",
+          "Check": "29×36=1044."
+        },
+        {
+          "Title": "Optional existing extension — Compare two strategies",
           "Question": "Find 672÷28 with both a 20+4 and 10+10+4 plan.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -391,7 +428,7 @@
           "Check": "24×28=672."
         },
         {
-          "Title": "Estimate quotient size",
+          "Title": "Optional existing extension — Estimate quotient size",
           "Question": "Estimate 988÷38 using friendly nearby numbers.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -403,7 +440,7 @@
           "Check": "The exact quotient26 is close, not necessarily equal to the estimate."
         },
         {
-          "Title": "Compute from estimate",
+          "Title": "Optional existing extension — Compute from estimate",
           "Question": "Finish 988÷38 exactly.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -425,46 +462,54 @@
           "Mistake": "Reject correct longer solutions",
           "WhyWrong": "A different combination of legal partial quotients can be mathematically equivalent.",
           "Correction": "Check whether all subtracted divisor-multiples account for the dividend."
+        },
+        {
+          "Mistake": "Present fabricated 672÷28 or 988÷38 as original source Activity1/2 numbers",
+          "WhyWrong": "The original visible teacher tasks specify 612÷34,529÷23,1044÷29 and source Partner1/2 images with unavailable embedded numbers.",
+          "Correction": "Restore verified source quotients and label partner-image numeric details unverified, preserving correct other tasks only as extensions."
         }
       ],
       "SummaryPoints": [
-        "Estimate the quotient before selecting partial-quotient group counts.",
-        "Different valid partial-quotient decompositions can be compared without penalizing correct alternatives.",
-        "Partner explanation and strategic selection require teacher review.",
-        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 13, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-13/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+        "Warm-up four source expressions all equal eleven: 110÷10,121÷11,132÷12,154÷14.",
+        "Source Activity1 Partner 1/2 quotient pictures require actual teacher-provided image review; their numbers are not verified.",
+        "Source Activity2 612÷34=18,529÷23=23,1044÷29=36.",
+        "Estimate first then select valid partial quotients with a zero remainder and inverse multiplication check.",
+        "Teacher reviews estimate and original partner reasoning; digital exact choices are partial practice only."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Divide Using Partial Quotients — division decomposition",
-          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Title": "Original source estimates and partial-quotient sums",
+          "Description": "First-party source-number table; partner images and chosen estimates assessed by teacher.",
           "Rows": [
             {
-              "Label": "Expression",
+              "Label": "612÷34",
               "Cells": [
-                "672÷28",
-                "988÷38"
+                "estimate≈20",
+                "10+8=18"
               ]
             },
             {
-              "Label": "Estimate",
+              "Label": "529÷23",
               "Cells": [
-                "≈24",
-                "≈25"
+                "estimate≈20",
+                "20+3=23"
               ]
             },
             {
-              "Label": "Partial quotients",
+              "Label": "1044÷29",
               "Cells": [
-                "20+4",
-                "20+6"
+                "estimate≈33",
+                "30+6=36"
               ]
             },
             {
-              "Label": "Exact answer",
+              "Label": "Warm-up",
               "Cells": [
-                "24",
-                "26"
+                "110/10=11",
+                "121/11=11",
+                "132/12=11",
+                "154/14=11"
               ]
             }
           ]

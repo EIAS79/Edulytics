@@ -52,6 +52,13 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 12 divided by 12", "12 ÷ 12", 1, "partial quotient"),
         new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 600 divided by 15", "600 ÷ 15", 40, "partial quotient"),
         new("usccss.g5.u04.l12.source_written_partial_quotient_chunks", "Original U04:L12 source partial group chunk 30 divided by 15", "30 ÷ 15", 2, "partial quotient"),
+        new("usccss.g5.u04.l13.original_partial_quotient_estimate_and_solve", "Original 2021 G5 U04:L13 Estimate and Solve source quotient 612÷34, explain estimate before partial quotients", "612 ÷ 34", 18, "whole groups"),
+        new("usccss.g5.u04.l13.original_partial_quotient_estimate_and_solve", "Original 2021 G5 U04:L13 Estimate and Solve source quotient 529÷23, explain estimate before partial quotients", "529 ÷ 23", 23, "whole groups"),
+        new("usccss.g5.u04.l13.original_partial_quotient_estimate_and_solve", "Original 2021 G5 U04:L13 Estimate and Solve source quotient 1044÷29, explain estimate before partial quotients", "1044 ÷ 29", 36, "whole groups"),
+        new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 110÷10", "110 ÷ 10", 11, "groups"),
+        new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 121÷11", "121 ÷ 11", 11, "groups"),
+        new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 132÷12", "132 ÷ 12", 11, "groups"),
+        new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 154÷14", "154 ÷ 14", 11, "groups"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
