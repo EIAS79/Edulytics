@@ -805,6 +805,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original source number set for Smallest Difference", "1,1,2,2,3,4,5,6", "1,2,3,4,5,6,7,8", "2,3,4,5,6,7,8,9"),
         new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original Smallest Difference activity uses HOW MANY fraction differences whose total is compared?", "2", "1", "4"),
         new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original spinner number placement change allowed after writing?", "no", "yes", "only at the end"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original source0.99+0.1=0.9+0.1+0.09 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original source0.99+0.01=0.9+0.1 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original source0.99+0.1=1.99 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original race to One exact winning target", "1", "0.1", "500"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original race to One Tenth exact winning target", "0.1", "1", "500"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Race to One choice per roll: what place values?", "tenths or hundredths", "ones or tens", "hundredths or thousandths"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Race to One Tenth choice per roll: what place values?", "hundredths or thousandths", "tenths or hundredths", "ones or tens"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original race if next addition EXCEEDS target, player", "loses turn", "wins", "immediately restarts"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Decimal Race to500 winning threshold", "500 or more", "exactly500", "100 or more"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Decimal Race to500 odd digit may occupy", "tenths,hundredths,thousandths", "ones,tens,hundreds", "only thousands"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original Decimal Race to500 even digit may occupy", "ones,tens,hundreds", "tenths,hundredths,thousandths", "only thousandths"),
+        new("usccss.g5.u08.l12.source_original_decimal_race_place_rules", "Original source digits2,3,9: valid arrangement", "2.39", "239", "2390"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

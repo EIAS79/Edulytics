@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l10-l12-l13-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u08-l10-l12-l13-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -263,11 +263,17 @@
       "CultureCode": "en",
       "Title": "Decimal Game Day",
       "ExplanationParagraphs": [
-        "Goal: practice decimal addition through TWO distinct first-party comparable game models: Race to One or One Tenth, where an exact TARGET is required and overshoots lose a turn, and Decimal Race to 500, where even-digit whole places and odd-digit fractional places govern legal number creation. The original source has no fixed turn count guaranteeing the exact target.",
-        "Warm-up: on Race to One, a die result4 can be used as0.4 or0.04. Starting with0.60 and rolling4, choosing0.4 reaches1.00 exactly whereas0.04 reaches0.64. Explain how changing the place-value choice changes numerical amount by tenfold.",
-        "Activity 1 — exact targets: Race to One permits tenths/hundredths; a fictional legal series0.4+0.4+0.2 reaches1.0. Race to One Tenth permits hundredths/thousandths; a legal hypothetical series0.04+0.03+0.03 reaches0.10. If a player at0.95 rolls6, neither0.6 nor0.06 is legal because both exceed1; that player loses the turn. If at0.095 and rolling6 for the tenth target, neither0.06 nor0.006 is legal. The teacher must confirm actual dice rolls and the full game record.",
-        "Activity 2 — Race to 500: suppose spins produce digits2,3,9. Legal decimals include2.39 and2.93 because the even 2 is in the ones place and the odd digits3 and9 occupy hundredths/tenths. With digits4,2,5, a legal number is42.5: even 4 and2 are whole-place digits, odd5 is a tenths digit. Add the chosen legal numbers to a running total; repeat spins and alternate with partner until one cumulative total reaches at least500. No numeric claim that a few sample rounds finish the game.",
-        "Assessment: exact summation and digit placement can be machine-checked per documented turn, but the source's authentic dice/spinner results, full progressions, partner play and strategy analysis remain teacher reviewed."
+        "Original IM2021 G5 U08:L12 reviews adding decimals using THREE original interactive games: Race to One, Race to One Tenth, and Decimal Race to500. These games produce REAL student-dependent scores, not one seeded official winner.",
+        "Warm-up printed TRUE/FALSE: 0.99+0.1=0.9+0.1+0.09 TRUE (1.09),0.99+0.01=0.9+0.1 TRUE (1.00),0.99+0.1=1.99 FALSE.",
+        "Activity1 Race to One rolls one number cube each turn, selects that digit as TENTHS or HUNDREDTHS, adds it to previous score, wins on exactly1.00 and forfeits a move if the total would exceed1. Race to One Tenth uses HUNDREDTHS or THOUSANDTHS, target exactly0.1, with the same overshoot rule.",
+        "Activity2 Decimal Race to500: spin THREE digits per turn; ODDS may occupy only fractional tenths/hundredths/thousandths and EVENS only whole ones/tens/hundreds. Example source digits2,3,9 allow 2.39 or2.93, then add to prior total; first reaching500 or more wins.",
+        "Game execution, student roll choices, place-value strategies and real winner need teacher verification; selected exact choices cover only rules and source warm-up. Previous fictional trial rolls must be clearly marked Edulytiks demo.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: practice decimal addition through TWO distinct first-party comparable game models: Race to One or One Tenth, where an exact TARGET is required and overshoots lose a turn, and Decimal Race to 500, where even-digit whole places and odd-digit fractional places govern legal number creation. The original source has no fixed turn count guaranteeing the exact target.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: on Race to One, a die result4 can be used as0.4 or0.04. Starting with0.60 and rolling4, choosing0.4 reaches1.00 exactly whereas0.04 reaches0.64. Explain how changing the place-value choice changes numerical amount by tenfold.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — exact targets: Race to One permits tenths/hundredths; a fictional legal series0.4+0.4+0.2 reaches1.0. Race to One Tenth permits hundredths/thousandths; a legal hypothetical series0.04+0.03+0.03 reaches0.10. If a player at0.95 rolls6, neither0.6 nor0.06 is legal because both exceed1; that player loses the turn. If at0.095 and rolling6 for the tenth target, neither0.06 nor0.006 is legal. The teacher must confirm actual dice rolls and the full game record.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — Race to 500: suppose spins produce digits2,3,9. Legal decimals include2.39 and2.93 because the even 2 is in the ones place and the odd digits3 and9 occupy hundredths/tenths. With digits4,2,5, a legal number is42.5: even 4 and2 are whole-place digits, odd5 is a tenths digit. Add the chosen legal numbers to a running total; repeat spins and alternate with partner until one cumulative total reaches at least500. No numeric claim that a few sample rounds finish the game.",
+        "Optional previous source-aligned or independently authored extension — Assessment: exact summation and digit placement can be machine-checked per documented turn, but the source's authentic dice/spinner results, full progressions, partner play and strategy analysis remain teacher reviewed."
       ],
       "KeyConcepts": [
         {
@@ -291,7 +297,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Reach exactly one",
+          "Title": "Source exact 1 — Decimal Race Games",
+          "Question": "Original source0.99+0.1=0.9+0.1+0.09 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Decimal Race Games",
+          "Question": "Original source0.99+0.01=0.9+0.1 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Decimal Race Games",
+          "Question": "Original source0.99+0.1=1.99 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Decimal Race Games",
+          "Question": "Original race to One exact winning target",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1",
+          "Check": "Original numeric source example; incorrect distractors 0.1 and 500 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Reach exactly one",
           "Question": "Three valid die results4,4,2 are used as tenths. What is the total?",
           "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
           "Steps": [
@@ -303,7 +357,7 @@
           "Check": "Actual dice results must be supplied by learners."
         },
         {
-          "Title": "Reach a tenth",
+          "Title": "Optional existing extension — Reach a tenth",
           "Question": "Three hypothetical die results4,3,3 are chosen as hundredths.",
           "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
           "Steps": [
@@ -315,7 +369,7 @@
           "Check": "Alternative thousandth choices would change the sums."
         },
         {
-          "Title": "Check parity of a decimal",
+          "Title": "Optional existing extension — Check parity of a decimal",
           "Question": "Can spins2,3,9 make2.93? What about3.29?",
           "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
           "Steps": [
@@ -337,18 +391,89 @@
           "Mistake": "Treat an odd digit as a whole-number digit in Decimal Race to500",
           "WhyWrong": "Game rules restrict odd digits to tenths/hundredths/thousandths.",
           "Correction": "Place even digits in ones/tens/hundreds and odd in decimal places."
+        },
+        {
+          "Mistake": "Treat fictional spinner outcomes as the only official correct source game totals.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original printed warm-up and precise game constraints; evaluate actual student play by teacher rubric."
         }
       ],
       "SummaryPoints": [
-        "Exact target and overrun rules matter more than any arbitrary worksheet-row count.",
-        "Fractional scale choices and parity constraints create genuine game strategy.",
-        "Teacher reviews authentic dice, spinner and opponent play.",
-        "2021 IM Grade 5 Unit 8 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-12/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
+        "Source warmup true,true,false.",
+        "Targets exactly1 and0.1, overshoot loses turn.",
+        "Race500 odd fractional / even whole place, target≥500.",
+        "Optional prior: Exact target and overrun rules matter more than any arbitrary worksheet-row count.",
+        "Optional prior: Fractional scale choices and parity constraints create genuine game strategy.",
+        "Optional prior: Teacher reviews authentic dice, spinner and opponent play.",
+        "Optional prior: 2021 IM Grade 5 Unit 8 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-12/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Decimal Game Day — first-party game",
+          "Title": "Decimal Race Games — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source0.99+0.1=0.9+0.1+0.09 true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source0.99+0.01=0.9+0.1 true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source0.99+0.1=1.99 true/false",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original race to One exact winning target",
+              "Cells": [
+                "1",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original race to One Tenth exact winning target",
+              "Cells": [
+                "0.1",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Race to One choice per roll: what place values?",
+              "Cells": [
+                "tenths or hundredths",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Race to One Tenth choice per roll: what place values?",
+              "Cells": [
+                "hundredths or thousandths",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original race if next addition EXCEEDS target, player",
+              "Cells": [
+                "loses turn",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Decimal Game Day — first-party game",
           "Description": "Accessible original game record example; published spinner, source recording sheet and protected responses are not copied.",
           "Rows": [
             {
