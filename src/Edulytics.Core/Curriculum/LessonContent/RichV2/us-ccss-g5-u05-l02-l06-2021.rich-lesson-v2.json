@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -470,11 +470,18 @@
       "CultureCode": "en",
       "Title": "Explore Place Value Relationships (optional)",
       "ExplanationParagraphs": [
-        "Goal: use a balance model to investigate equivalence of tenths, hundredths and thousandths of an ounce and explain that the SAME mass can be made from different collections of standard weights. The source is an optional exploration, not a prescription that one coin-like combination must be supplied.",
-        "Warm-up: examine an original balance description: one weight of 0.01 ounce is balanced by ten separate 0.001-ounce weights. Explain why this is possible and why the number of pieces on either pan differs even though the total mass is equal. The original publisher's scale illustration and gold-nugget photograph are not reproduced.",
-        "Activity 1 — balance a target: assemble 0.385 ounce with denominations 0.1, 0.01, and 0.001 ounce. A place-value arrangement is three 0.1s, eight 0.01s and five 0.001s. Their combined mass is 0.385 ounce, and the arrangement uses 16 physical weights. Compare with two 0.1s, eighteen 0.01s and five 0.001s (25 weights), which balances the same mass.",
-        "Activity 2 — fewest and most weights: assuming an unlimited supply of only those three positive denominations and no other restrictions, 16 weights is the MINIMUM, since exchanging ten smaller pieces for one larger decreases count. Using exclusively 0.001-ounce weights gives 385 weights, the MAXIMUM because every piece must weigh at least 0.001 ounce. State the supply assumption and justify with place-value exchanges instead of just reporting the numbers.",
-        "Teacher assessment: discussing alternate valid combinations, selecting minimal/maximal counts under declared constraints, explaining balanced masses and any physical or drawn scale representation require human review. A numeric answer is one subskill but is not an auto-pass for source exploration."
+        "Original IM2021 Grade5 U05:L04 OPTIONAL Explore Place Value Relationships uses a BALANCE and physical standard weights0.1,0.01 and0.001 OUNCE to explore equivalent weights and how composing ten smaller place units creates a larger one. Third activity's nugget table switches units to GRAMS, which must be kept separate from the earlier ounce balance examples.",
+        "Warm-up Notice and Wonder Maintain Your Balance uses original photo of gold with James St John CC BY2.0 attribution, not copied without independent file/license review. Teacher asks students to notice and explain why distinct combinations of standard weights can balance same nugget mass.",
+        "Activity 1 Balance the Weight source: nugget0.2 ounce can use two0.1-ounce pieces, twenty0.01-ounce pieces, or200×0.001; multiple answers legitimate. For source0.385 ounce, minimal number of allowed0.1/0.01/0.001 pieces is3+8+5=16, maximum385 all thousandth pieces; mixed count examples are teacher-reviewed. Conversions printed:266 of0.001=0.266oz,150 of0.01=1.5oz,27 of0.1=2.7oz.",
+        "Activity 2 Weights and Place Values original: three tenths+five hundredths+eight thousandths=0.358oz; six tenths+two thousandths=0.602oz; six tenths+two hundredths=0.62oz; two hundred eighty-three thousandths=0.283oz; four hundred nine thousandths=0.409oz. The source asks digits of0.527oz, which are5 tenths,2 hundredths,7 thousandths.",
+        "Activity 3 Comparing Place Values with Weights: ten0.01-ounce pieces balance one0.1-ounce piece, and one hundred0.001-ounce pieces do too. The source GRAM nugget table says A0.6g,B0.06g,C0.006g, with ratios A/B10,A/C100,C/B1/10,C/A1/100. These relationships are based on relative unit magnitudes, not physical count of all pieces.",
+        "Numeric selected Practice includes only source exact conversions and ratios; original hands-on balance, alternative optimal weight combinations, MLR partner explanations and photograph remain TEACHER_REVIEW_REQUIRED. Independently authored Edulytiks Cool-down uses0.406oz.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use a balance model to investigate equivalence of tenths, hundredths and thousandths of an ounce and explain that the SAME mass can be made from different collections of standard weights. The source is an optional exploration, not a prescription that one coin-like combination must be supplied.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: examine an original balance description: one weight of 0.01 ounce is balanced by ten separate 0.001-ounce weights. Explain why this is possible and why the number of pieces on either pan differs even though the total mass is equal. The original publisher's scale illustration and gold-nugget photograph are not reproduced.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — balance a target: assemble 0.385 ounce with denominations 0.1, 0.01, and 0.001 ounce. A place-value arrangement is three 0.1s, eight 0.01s and five 0.001s. Their combined mass is 0.385 ounce, and the arrangement uses 16 physical weights. Compare with two 0.1s, eighteen 0.01s and five 0.001s (25 weights), which balances the same mass.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — fewest and most weights: assuming an unlimited supply of only those three positive denominations and no other restrictions, 16 weights is the MINIMUM, since exchanging ten smaller pieces for one larger decreases count. Using exclusively 0.001-ounce weights gives 385 weights, the MAXIMUM because every piece must weigh at least 0.001 ounce. State the supply assumption and justify with place-value exchanges instead of just reporting the numbers.",
+        "Optional previous source-aligned or independently authored extension — Teacher assessment: discussing alternate valid combinations, selecting minimal/maximal counts under declared constraints, explaining balanced masses and any physical or drawn scale representation require human review. A numeric answer is one subskill but is not an auto-pass for source exploration."
       ],
       "KeyConcepts": [
         {
@@ -498,7 +505,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Balance a three-place value",
+          "Title": "Original source nugget0.385 ounce",
+          "Question": "With 0.1,0.01,0.001 ounce pieces, give the smallest and largest number of weights to balance0.385oz.",
+          "Method": "Place-value units and positive pieces; no larger types than source listed.",
+          "Steps": [
+            "0.385=3×0.1+8×0.01+5×0.001.",
+            "Minimum pieces3+8+5=16.",
+            "All-thousandths maximum385 pieces; compare legal alternative representations."
+          ],
+          "Answer": "16 minimum,385 maximum pieces.",
+          "Check": "Teacher verifies distinct combinations and unit mass."
+        },
+        {
+          "Title": "Source weight-to-decimal and expanded form",
+          "Question": "Convert266×0.001,150×0.01,27×0.1, and source three decimal-weight combinations.",
+          "Method": "Exact place-value multiplication with source ounces.",
+          "Steps": [
+            "266×0.001=.266oz,150×.01=1.5oz,27×.1=2.7oz.",
+            "3×.1+5×.01+8×.001=.358oz.",
+            "6×.1+2×.001=.602oz, while6×.1+2×.01=.62oz."
+          ],
+          "Answer": "0.266,1.5,2.7,0.358,0.602,0.62 ounces.",
+          "Check": "Teacher checks correct units and representation."
+        },
+        {
+          "Title": "Original source gram nugget place ratios",
+          "Question": "Compare A0.6g,B0.06g,C0.006g.",
+          "Method": "Each place is ten times adjacent smaller decimal unit.",
+          "Steps": [
+            "A/B=.6/.06=10.",
+            "A/C=.6/.006=100.",
+            "C/B=.006/.06=.1 and C/A=.006/.6=.01."
+          ],
+          "Answer": "10,100,0.1,0.01.",
+          "Check": "Same gram units cancel in ratio."
+        },
+        {
+          "Title": "Optional existing extension — Balance a three-place value",
           "Question": "Give one combination of weights totaling exactly 0.385 ounce.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -510,7 +553,7 @@
           "Check": "300+80+5=385 thousandths of an ounce."
         },
         {
-          "Title": "Another correct balance",
+          "Title": "Optional existing extension — Another correct balance",
           "Question": "Can you build the same mass with more than sixteen pieces?",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -522,7 +565,7 @@
           "Check": "0.2+0.18+0.005=0.385; 2+18+5=25."
         },
         {
-          "Title": "Prove count limits",
+          "Title": "Optional existing extension — Prove count limits",
           "Question": "What are least and greatest numbers of weights for 0.385 oz under the three-denomination unlimited-supply rules?",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -544,18 +587,76 @@
           "Mistake": "Claim a minimum or maximum without specifying supply rules",
           "WhyWrong": "Different available denominations or limited stocks can change extreme counts.",
           "Correction": "State that only 0.1, 0.01 and 0.001 ounce weights are available in unlimited supply."
+        },
+        {
+          "Mistake": "Mix up 0.602 and0.62, or report ounce-mass quantities as grams in source Activities1 and2",
+          "WhyWrong": "Source explicitly distinguishes two hundredths vs two thousandths, and grams only appear in Activity3's nugget table.",
+          "Correction": "Preserve decimal zeros, original ounce units and separate gram ratio comparisons with a consistent whole."
         }
       ],
       "SummaryPoints": [
-        "Decimal place values can be physically modeled as weights with ten-to-one relationships.",
-        "Several collections can balance exactly the same mass.",
-        "Optimizing piece counts and demonstrating a physical balance require teacher review.",
-        "Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 4 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-4/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
+        "Original balance weights0.1,0.01,0.001 ounce;0.2 ounce has many valid representations.",
+        "Original0.385 ounce minimal16 source pieces, maximal385.",
+        "Source266 thousandths=.266oz,150 hundredths=1.5oz,27 tenths=2.7oz.",
+        "Source ounce examples0.358,0.602,0.62 and word form0.283,0.409.",
+        "Source gram A0.6/B0.06/C0.006 ratios10,100,.1,.01; qualitative balance teacher-reviewed.",
+        "Optional prior: Decimal place values can be physically modeled as weights with ten-to-one relationships.",
+        "Optional prior: Several collections can balance exactly the same mass.",
+        "Optional prior: Optimizing piece counts and demonstrating a physical balance require teacher review.",
+        "Optional prior: Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 4 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-4/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Explore Place Value Relationships (optional) — accessible place-value model",
+          "Title": "Source ounce weights and gram nugget place values",
+          "Description": "Source-verified numeric quantities; original gold photo/physical balance teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Ounce combination",
+              "Cells": [
+                "0.385=0.3+0.08+0.005",
+                "min16 pieces",
+                "max385"
+              ]
+            },
+            {
+              "Label": "Weights given",
+              "Cells": [
+                "266×.001=.266",
+                "150×.01=1.5",
+                "27×.1=2.7"
+              ]
+            },
+            {
+              "Label": "Other source weights",
+              "Cells": [
+                "0.358",
+                "0.602",
+                "0.620"
+              ]
+            },
+            {
+              "Label": "Gram nuggets A,B,C",
+              "Cells": [
+                "0.6g",
+                "0.06g",
+                "0.006g"
+              ]
+            },
+            {
+              "Label": "Ratio comparisons",
+              "Cells": [
+                "10",
+                "100",
+                "0.1",
+                "0.01"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Explore Place Value Relationships (optional) — accessible place-value model",
           "Description": "First-party text model of the source's mathematical structure, not a reproduction of original publisher images or student cards.",
           "Rows": [
             {

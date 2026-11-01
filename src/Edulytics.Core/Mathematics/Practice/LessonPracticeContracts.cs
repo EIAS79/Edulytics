@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM K5 2021 G5 U05:L04: source-aligned selected decimal
+        // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U05:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U05:L04", "supporting.decimals.core",
+            "G5_SOURCE_UNIT5_LESSON_04_DECIMAL_PLACE_VALUE",
+            ["usccss.g5.u05.l04.source_gold_weight_conversions", "usccss.g5.u05.l04.source_place_value_nugget_ratios"],
+            "IM2021_G5_U05_L04_DECIMAL_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U05:L03: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U05:L03"] = new LessonPracticeContract(
