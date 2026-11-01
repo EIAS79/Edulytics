@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261101-v2",
+  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261101-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -179,11 +179,17 @@
       "CultureCode": "en",
       "Title": "Place Value Patterns",
       "ExplanationParagraphs": [
-        "Goal: describe multiplicative relationships among values of digits in different places using true multiplication and division equations. The source's digit sequences move across the decimal point; simply appending zeroes to every number is not a valid general rule.",
-        "Warm-up: inspect the sequence 8200, 820, 82, 8.2, 0.82, 0.082. Share what stays the same about the written digits and what changes about the *value*. Check neighboring entries using division by ten.",
-        "Activity 1 — equations and discussion: make several mathematically true equations showing the relationship of 6, 60, 600, 0.6, 0.06 and the multipliers 10, 100, 0.1, 0.01. Explain how each equation states a place-value comparison. Test a suspected false equation before accepting it, and discuss multiple valid expressions with a partner.",
-        "Activity 2 — a digit's value shifts: extend the sequence 600, 60, 6, 0.6, 0.06 both upward and downward. Describe each next term as one tenth the previous term and each preceding term as ten times the following term; examples include 6000 and 0.006. Describe why the symbol 6 still appears while its represented value changes.",
-        "Synthesis and assessment: use both multiplication and division to relate a tenth to a hundredth and a thousand to ten thousand. Authored equations, visual displays, peer critique and explanations are teacher-reviewed. A single multiplication-by-ten response does not assess the source's equation-building task; original gated Cool-down not inspected."
+        "Original IM 2021 Grade5 U06:L01 asks pupils to explain that each place's value is ten TIMES the place immediately to its RIGHT and one TENTH the place immediately to its left, through both multiplication and division with decimal place-value relationships.",
+        "Warm-up Notice and Wonder Same Digits gives original printed series 8,200,820,82,8.2,0.82,0.082. Students explain which digits remain and why each rightward step of the number value is divided by10. It is not an instruction to always append/remove a zero from the STRING.",
+        "Activity1 Many True Equations original printed card set 600,0.06,100,60, multiplication sign,10,6, division sign,0.1,0.6,equals sign and0.01. Learners create AS MANY true equations as they can using source pieces multiple times, e.g600÷100=6,600×0.01=6,6×10=60 and0.6÷10=0.06. A single fixed digital choice cannot validate all possible original equation combinations and teacher reviews reasoning.",
+        "Activity2 Describe Multiplicative Relationships original600,60,6,0.6,0.06 sequence: before600 can be6000, and after0.06 is0.006. Students describe place of digit6 through ones, tenths and hundredths and how multiplication/division by10 changes actual magnitude while preserving written digit identity.",
+        "Original source gated Cool-down Multiplication and Division Equations asks student expression creation; independently authored Edulytiks teacher Cool-down uses different values. Previous Rich V2 original correct examples retained as optional context. Exact choice cases only assess bounded source digit relationships, not all original student-created equations.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: describe multiplicative relationships among values of digits in different places using true multiplication and division equations. The source's digit sequences move across the decimal point; simply appending zeroes to every number is not a valid general rule.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: inspect the sequence 8200, 820, 82, 8.2, 0.82, 0.082. Share what stays the same about the written digits and what changes about the *value*. Check neighboring entries using division by ten.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — equations and discussion: make several mathematically true equations showing the relationship of 6, 60, 600, 0.6, 0.06 and the multipliers 10, 100, 0.1, 0.01. Explain how each equation states a place-value comparison. Test a suspected false equation before accepting it, and discuss multiple valid expressions with a partner.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — a digit's value shifts: extend the sequence 600, 60, 6, 0.6, 0.06 both upward and downward. Describe each next term as one tenth the previous term and each preceding term as ten times the following term; examples include 6000 and 0.006. Describe why the symbol 6 still appears while its represented value changes.",
+        "Optional previous source-aligned or independently authored extension — Synthesis and assessment: use both multiplication and division to relate a tenth to a hundredth and a thousand to ten thousand. Authored equations, visual displays, peer critique and explanations are teacher-reviewed. A single multiplication-by-ten response does not assess the source's equation-building task; original gated Cool-down not inspected."
       ],
       "KeyConcepts": [
         {
@@ -207,7 +213,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Explain a decimal shift",
+          "Title": "Source exact 1 — Original IM2021 G5 U06:L01 Place Value Patterns",
+          "Question": "Original warmup source sequence after 8200, the next number is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "820",
+          "Check": "Original numeric source example; incorrect distractors 8200 and 82 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original IM2021 G5 U06:L01 Place Value Patterns",
+          "Question": "Original warmup source sequence after820, the next number is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "82",
+          "Check": "Original numeric source example; incorrect distractors 8.2 and 8200 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original IM2021 G5 U06:L01 Place Value Patterns",
+          "Question": "Original warmup source sequence after82, the next number is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "8.2",
+          "Check": "Original numeric source example; incorrect distractors 0.82 and 820 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original IM2021 G5 U06:L01 Place Value Patterns",
+          "Question": "Original warmup source sequence after8.2, the next number is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.82",
+          "Check": "Original numeric source example; incorrect distractors 0.082 and 82 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Explain a decimal shift",
           "Question": "How is 0.6 related to 0.06?",
           "Method": "Use the value of the digit in tenths and hundredths.",
           "Steps": [
@@ -219,7 +273,7 @@
           "Check": "0.06 × 10 = 0.6."
         },
         {
-          "Title": "Continue a place-value pattern",
+          "Title": "Optional existing extension — Continue a place-value pattern",
           "Question": "Continue 600, 60, 6, 0.6, 0.06 one step in both directions.",
           "Method": "The common ratio from left to right is one tenth.",
           "Steps": [
@@ -231,7 +285,7 @@
           "Check": "Every number is ten times the following number."
         },
         {
-          "Title": "Write two true equations",
+          "Title": "Optional existing extension — Write two true equations",
           "Question": "Use 600, 6, 100 and 0.01 to write two true equations.",
           "Method": "Describe the same place-value relationship with two inverse operations.",
           "Steps": [
@@ -253,18 +307,90 @@
           "Mistake": "Change only one number in a ratio comparison",
           "WhyWrong": "A change in digit position affects the number's represented value, not its identity as a digit.",
           "Correction": "Compare 0.06, 0.6 and 6 with explicit multiplication or division equations."
+        },
+        {
+          "Mistake": "Overgeneralize decimal place changes as appending or deleting printed zeros rather than multiplying/dividing actual positional value",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore all printed source values and teacher-authored equation creation with a consistent digit and tenfold unit."
         }
       ],
       "SummaryPoints": [
-        "A digit's value is ten times greater one place to the left and one tenth as large one place to the right.",
-        "Write inverse multiplication and division equations to show the same relationships.",
-        "Multiple true equations and classroom mathematical arguments remain teacher-reviewed.",
-        "Source: IM K–5 first edition 2021 Grade 5 Unit 6 Lesson 1, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-1/lesson.html; independent Edulytiks examples."
+        "Warm-up source values8200→820→82→8.2→.82→.082 each step÷10.",
+        "Source Activity1 has flexible true equations using all original number/symbol cards.",
+        "Source Activity2 extension6000,600,60,6,.6,.06,.006.",
+        "Teacher scores original created equations and place-value explanations.",
+        "Optional prior: A digit's value is ten times greater one place to the left and one tenth as large one place to the right.",
+        "Optional prior: Write inverse multiplication and division equations to show the same relationships.",
+        "Optional prior: Multiple true equations and classroom mathematical arguments remain teacher-reviewed.",
+        "Optional prior: Source: IM K–5 first edition 2021 Grade 5 Unit 6 Lesson 1, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-1/lesson.html; independent Edulytiks examples."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Same digit, changing place value",
+          "Title": "Original IM2021 G5 U06:L01 Place Value Patterns — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup source sequence after 8200, the next number is",
+              "Cells": [
+                "820",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup source sequence after820, the next number is",
+              "Cells": [
+                "82",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup source sequence after82, the next number is",
+              "Cells": [
+                "8.2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup source sequence after8.2, the next number is",
+              "Cells": [
+                "0.82",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup source sequence after0.82, the next number is",
+              "Cells": [
+                "0.082",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity2 source600,60,6,0.6,0.06: preceding term before600 i",
+              "Cells": [
+                "6000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity2 source600,60,6,0.6,0.06: following term after0.06 i",
+              "Cells": [
+                "0.006",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source number600 divided by10 equals",
+              "Cells": [
+                "60",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Same digit, changing place value",
           "Description": "First-party table supports the source's six-valued sequence with a single nonzero digit.",
           "Rows": [
             {

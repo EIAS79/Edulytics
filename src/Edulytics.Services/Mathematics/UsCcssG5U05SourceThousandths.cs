@@ -322,6 +322,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l26.source_book_fair_margin_examples", "Original Grade5 U05 L26 original two-school book-fair source margins and variable scenarios: evaluate source expression (12.90−8)×10; explain exact decimal place scaling and original mathematical unit", "49", "49.1", "48.89"),
         new("usccss.g5.u05.l26.source_book_fair_margin_examples", "Original Grade5 U05 L26 original two-school book-fair source margins and variable scenarios: evaluate source expression (12−8)×12; explain exact decimal place scaling and original mathematical unit", "48", "48.1", "47.89"),
         new("usccss.g5.u05.l26.source_book_fair_margin_examples", "Original Grade5 U05 L26 original two-school book-fair source margins and variable scenarios: evaluate source expression (12−8)×13; explain exact decimal place scaling and original mathematical unit", "52", "52.1", "51.89"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original warmup source sequence after 8200, the next number is", "820", "8200", "82"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original warmup source sequence after820, the next number is", "82", "8.2", "8200"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original warmup source sequence after82, the next number is", "8.2", "0.82", "820"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original warmup source sequence after8.2, the next number is", "0.82", "0.082", "82"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original warmup source sequence after0.82, the next number is", "0.082", "0.0082", "8.2"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original Activity2 source600,60,6,0.6,0.06: preceding term before600 is", "6000", "600", "60"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original Activity2 source600,60,6,0.6,0.06: following term after0.06 is", "0.006", "0.06", "0.6"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number600 divided by10 equals", "60", "6", "0.6"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number6 multiplied by10 equals", "60", "600", "0.6"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number0.6 divided by10 equals", "0.06", "0.6", "0.006"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number0.06 multiplied by100 equals", "6", "60", "0.6"),
+        new("usccss.g5.u06.l01.source_tenfold_place_value", "Original source number600 multiplied by0.01 equals", "6", "60", "0.6"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
