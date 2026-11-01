@@ -1379,6 +1379,17 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L04: exact source park digital subskills,
+        // soccer 1/2 of 2/3 and Elena's 5-row x 2-column colored park.
+        // DRAWING / ORIGINAL IMAGE / PEER EXPLANATION TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L04",
+            "supporting.fractions.multiply_divide",
+            "G5_SOURCE_PARK_ORIGINAL_WHOLE_TWO_CONTEXT_NESTED_FRACTION",
+            ["usccss.g5.u03.l04.park_nested_original_whole_fraction", "usccss.g5.u03.l04.elena_park_expression_region"],
+            "IM2021_G5_U03_L04_PARK_EXACT_DIGITAL_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 Grade 5 U03:L03: preserve four equal columns for 2-5
         // source rows, predict next six rows, and solve the three actual
         // Activity 2 unit-fraction equations relative to the SAME whole.
