@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v8-20261101",
+  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -1152,11 +1152,12 @@
       "CultureCode": "en",
       "Title": "Multiply Fractions",
       "ExplanationParagraphs": [
-        "Goal: extend shaded area reasoning to multiplying TWO NON-UNIT fractions. Learners interpret several expressions for the same shaded grid region, not only an algorithmic numerator-and-denominator multiplication.",
-        "Warm-up: compare equal-area grid illustrations where the selected part may occupy several cells. Give multiple defensible Which One Doesn't Belong reasons instead of a single arbitrary visual classification.",
-        "Activity 1: create a whole square with three equal rows and four equal columns. Shade a rectangle spanning two rows and three columns. Of twelve equal whole-unit cells, six are shaded; its side lengths are 2/3 and 3/4. Explain why (2/3)×(3/4)=6/12=1/2, and why 2×3×(1/3×1/4) produces the same six small cells.",
-        "Activity 2: use a second, differently proportioned first-party 5-by-7 grid with a shaded 2-by-4 subrectangle. Its covered area is 8/35 of the whole. Partner should identify the exact side fractions, justify that 2/5×4/7=8/35, and check that neither 2/5 nor 4/7 alone describes the whole shaded area.",
-        "Assessment: the source asks learners to relate different expressions to a single shaded area and explain why factor decomposition and fractional area agree. Student-drawn regions, explanatory claims and image interpretation remain teacher-reviewed; exact numeric products are supporting tests, not complete replacement."
+        "Goal (IM 2021 5.NF.B.4.b): represent multiplying TWO NON-UNIT fractions as shaded rectangular area. Each correct expression must be traced to number of shaded equal cells over the number of same-size cells in ONE original whole square.",
+        "Warm-up — Which One Doesn't Belong: More Pieces? Discuss the four ORIGINAL source figures A–D; the source explicitly notes picture A as the only one with neither side length a unit fraction. Original image A has six shaded of twelve whole cells, so its fraction is 6/12. Multiple teacher-defended exclusions are valid; do not replace original diagrams with an invented fixed answer.",
+        "Activity 1 — Many Expressions: the actual source diagram represents 8/30 square unit, also 2×4×(1/5×1/6) and (2/6)×(4/5). The learner explains that a 6-row by 5-column original square contains 30 equal cells and the 2×4 selected rectangle is eight of them. Show why products of numerators and denominators each count different parts of the same model. Students describe in words how ALL THREE given expressions match the ONE source diagram.",
+        "Activity 2 — More Patterns: complete the source diagram A–D table with the multiplication expression and shaded square-unit area for each actual publisher drawing (do not invent absent image values). For the final source diagram explain (6×4)/(5×4)=24/20, including six selected fifth parts over 5-by-4 original-unit cells; the whole does not silently become a 2-unit rectangle. Draw teacher-supported alternatives while preserving the actual image comparison and noticed pattern.",
+        "Synthesis — the product of shaded row-count times shaded column-count goes in the numerator, while the count of equal rows times equal columns in one original whole goes in the denominator. Original drawings, source diagram A-D interpretations and different student justifications are teacher reviewed. Edulytiks independent Cool-down: draw (2/3)×(3/5)=6/15=2/5 square unit with a whole-unit 3-by-5 area model.",
+        "Earlier mathematically valid 6/12 and 8/35 examples are kept as EXTENSIONS, not a substitute for the original 8/30/2×4×(1/5×1/6), 2/6×4/5 and final 24/20 source tasks. Publisher Student Task PDF, original artwork and gated Cool-down remain unverified."
       ],
       "KeyConcepts": [
         {
@@ -1180,7 +1181,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Six of twelve cells",
+          "Title": "Original Activity 1: three equivalent expressions",
+          "Question": "Explain 8/30, 2×4×(1/5×1/6) and (2/6)×(4/5) as the same shaded unit-square area.",
+          "Method": "IM 2021 source diagram mathematics, with first-party grid model and teacher-reviewed original figure.",
+          "Steps": [
+            "Hold the square at six rows and five columns.",
+            "Select two of six rows and four of five columns.",
+            "Count eight cells of 30 to prove the expressions agree."
+          ],
+          "Answer": "8/30 square unit (=4/15).",
+          "Check": "(2/6)×(4/5)=8/30."
+        },
+        {
+          "Title": "Source preparation: three sixths by four fifths",
+          "Question": "Why is (3/6)×(4/5) a product of shaded rows and columns?",
+          "Method": "IM 2021 source diagram mathematics, with first-party grid model and teacher-reviewed original figure.",
+          "Steps": [
+            "Partition the unit square into six rows and five columns.",
+            "Select three rows and four columns.",
+            "Count twelve shaded parts of thirty."
+          ],
+          "Answer": "12/30 square unit (=2/5).",
+          "Check": "3×4/6×5=12/30."
+        },
+        {
+          "Title": "Original Activity 2 last table",
+          "Question": "Explain (6×4)/(5×4) with the original whole as one square unit.",
+          "Method": "IM 2021 source diagram mathematics, with first-party grid model and teacher-reviewed original figure.",
+          "Steps": [
+            "Each original whole has 5 by 4 equal subdivisions.",
+            "Six selected fifth-wide parts extend beyond one unit width.",
+            "Six times four shaded pieces of 1/20 units produce 24/20."
+          ],
+          "Answer": "24/20 square unit (=6/5).",
+          "Check": "A visible second unit does not double the 20-cell denominator."
+        },
+        {
+          "Title": "Optional extension — Six of twelve cells",
           "Question": "A unit square is partitioned into three rows and four columns, with two rows and three columns shaded. Find the area.",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
@@ -1192,7 +1229,7 @@
           "Check": "(2/3)×(3/4)=6/12."
         },
         {
-          "Title": "Multiply two non-unit fractions",
+          "Title": "Optional extension — Multiply two non-unit fractions",
           "Question": "Find 2/5×4/7 as an area of one whole.",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
@@ -1204,7 +1241,7 @@
           "Check": "8 is 2×4 and 35 is 5×7."
         },
         {
-          "Title": "Justify different expressions",
+          "Title": "Optional extension — Justify different expressions",
           "Question": "Show why (2/3)×(3/4) and 6×(1/12) describe the same shaded area.",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
@@ -1226,46 +1263,112 @@
           "Mistake": "Select arbitrary nonrectangular cells while naming rectangular side fractions",
           "WhyWrong": "A product of side fractions refers to a rectangular region with that row/column extent.",
           "Correction": "Shade a coherent a-by-c subrectangle and label the original whole."
+        },
+        {
+          "Mistake": "Substitute a mathematically correct but different 5-by-7 eight-of-thirty-five rectangle for the source 8/30 diagram",
+          "WhyWrong": "Source A1 requires six rows, five columns, shaded two by four and three equivalent expressions.",
+          "Correction": "Use an original full-unit 6-by-5 grid for required source task, keep 8/35 as optional extension only."
         }
       ],
       "SummaryPoints": [
-        "Area grids show why numerator products count shaded cells and denominator products count total cells.",
-        "Two non-unit fractions can have a smaller product than either factor when each lies between zero and one.",
-        "Diagram interpretation, critique and student reasoning remain teacher-reviewed.",
-        "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-6/lesson.html. Public teacher/student-facing HTML source tasks inspected; original Edulytiks examples. Gated response and original Student Task PDF not independently checked."
+        "Exact source Activity 1: 8/30 = 2×4×(1/5×1/6) = (2/6)×(4/5) square unit.",
+        "Exact source last-table expression: (6×4)/(5×4)=24/20; denominator refers to ONE unit.",
+        "Source warm-up asks Which One Doesn't Belong with image A showing 6/12 shaded, including teacher-defended multiple reasons.",
+        "Original diagram interpretations, open explanations and learner drawings require teacher review; not machine-scored.",
+        "Independent Edulytiks Cool-down: (2/3)×(3/5)=6/15=2/5 with a 3-by-5 grid."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multiply Fractions — fraction grid",
-          "Description": "Accessible first-party text equivalent of an equal-area fraction grid; not publisher artwork.",
+          "Title": "First-party source-skill 6-by-5 shaded model",
+          "Description": "EDULYTIKS original 6-row by 5-column model: a 2×4 shaded rectangle has eight of thirty equal full-unit parts, illustrating the source 8/30 equation but not copying publisher artwork.",
           "Rows": [
             {
-              "Label": "Model",
+              "Label": "R1",
               "Cells": [
-                "3 rows × 4 columns",
-                "5 rows × 7 columns"
+                "shade",
+                "shade",
+                "shade",
+                "shade",
+                "empty"
               ]
             },
             {
-              "Label": "Shaded region",
+              "Label": "R2",
               "Cells": [
-                "2 rows × 3 columns",
-                "2 rows × 4 columns"
+                "shade",
+                "shade",
+                "shade",
+                "shade",
+                "empty"
               ]
             },
             {
-              "Label": "Product",
+              "Label": "R3",
               "Cells": [
-                "2/3 × 3/4",
-                "2/5 × 4/7"
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
               ]
             },
             {
-              "Label": "Fraction of whole",
+              "Label": "R4",
               "Cells": [
-                "6/12=1/2",
-                "8/35"
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R5",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R6",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Activity 2 last diagram mathematical table",
+          "Description": "Six groups of four shaded twentieth-cells compared with the SAME original 5-by-4 whole; if the drawing extends beyond one unit, 24/20 remains the area in square units.",
+          "Rows": [
+            {
+              "Label": "shaded count",
+              "Cells": [
+                "6×4",
+                "24"
+              ]
+            },
+            {
+              "Label": "one whole subdivisions",
+              "Cells": [
+                "5×4",
+                "20"
+              ]
+            },
+            {
+              "Label": "fraction of square unit",
+              "Cells": [
+                "24/20",
+                "6/5"
               ]
             }
           ]

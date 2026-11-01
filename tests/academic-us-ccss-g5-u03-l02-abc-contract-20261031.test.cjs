@@ -34,7 +34,7 @@ test('Activity 2 retains Priya source expression pair and distinct image express
 
 test('first-party diagrams retain original equal-area whole and exactly one shaded cell', () => {
   const rich = json(resource);
-  assert.equal(rich.ContentVersion,'g5-u03-l02-l06-im2021-source-parity-visual-v8-20261101');
+  assert.equal(rich.ContentVersion,'g5-u03-l02-l06-im2021-source-parity-visual-v9-20261101');
   const checks = [
     {title:'third then quarter',rows:4,cols:3,den:12},
     {title:'quarter then third',rows:3,cols:4,den:12},
