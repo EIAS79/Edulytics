@@ -1,5 +1,5 @@
 // G5 U03:L02 original-2021 source and grade-owned A/B fixtures.
-// AUTHORING ONLY — AUTHORED_NOT_RUN; this file is intentionally not executed.
+// Stage D actual Node source/first-party visual tests; authenticated teacher persistence remains unverified.
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
@@ -28,17 +28,19 @@ test('Activity 2 retains Priya source expression pair and distinct image express
   assert.match(t, /Priya diagram/);
   assert.match(t, /1\/5 × 1\/2/);
   assert.match(t, /1\/2 × 1\/5/);
-  assert.match(t, /SECOND source-provided shaded diagram/);
-  assert.match(t, /rather than presuming.*1\/10/);
+  assert.match(t, /SECOND source figure 149036/);
+  assert.match(t, /1\/5 × 1\/3 = 1\/3 × 1\/5 = 1\/15/);
+  assert.match(t, /not 1\/10/);
 });
 
 test('first-party diagrams retain original equal-area whole and exactly one shaded cell', () => {
   const rich = json(resource);
-  assert.equal(rich.ContentVersion,'g5-u03-l02-l06-im2021-source-parity-visual-v9-20261101');
+  assert.equal(rich.ContentVersion,'g5-u03-l02-l06-im2021-source-parity-visual-v10-20261101');
   const checks = [
     {title:'third then quarter',rows:4,cols:3,den:12},
     {title:'quarter then third',rows:3,cols:4,den:12},
-    {title:'Priya explanation substitute',rows:2,cols:5,den:10}
+    {title:'Priya explanation substitute',rows:2,cols:5,den:10},
+    {title:'second original source geometry',rows:5,cols:3,den:15}
   ];
   for(const c of checks) {
     const v = lesson().Visuals.find(x => x.Title.includes(c.title));
@@ -51,6 +53,23 @@ test('first-party diagrams retain original equal-area whole and exactly one shad
     assert.equal(cells.filter(x=>x==='□ empty').length,c.den-1);
     assert.match(v.Description,/original|whole/i);
   }
+});
+
+test('second IM2021 published image geometry has an independently authored 5 by 3 one-fifteenth substitute', () => {
+  const source=json('artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-activity2-first-edition-diagram-geometry.json');
+  assert.match(source.sourceFileSha256,/^[0-9a-f]{64}$/);
+  assert.deepEqual(source.originalTeacherFigureAltEvidence.map(x=>x.sourceRecordId),[149035,149036]);
+  assert.deepEqual(source.originalTeacherFigureAltEvidence.map(x=>x.correctArea),['1/10','1/15']);
+  assert.equal(source.publisherAssetsCopied,false);
+  assert.equal(source.authenticatedTeacherRubricPersistenceVerified,false);
+  const visual=lesson().Visuals.find(x=>x.Title.includes('second original source geometry'));
+  assert.ok(visual);
+  assert.equal(visual.Rows.length,5);
+  assert.ok(visual.Rows.every(row=>row.Cells.length===3));
+  assert.equal(visual.Rows.flatMap(row=>row.Cells).filter(cell=>cell==='■ shade').length,1);
+  assert.match(lesson().WorkedExamples.find(x=>x.Title.includes('Second original Activity 2')).Answer,/1\/15/);
+  const rubric=json(rubricFile);
+  assert.match(rubric.rubric[5].criterion,/149036.*1\/15/);
 });
 
 test('independent boundary oracle rejects false whole and unequal partitions', () => {
@@ -77,7 +96,7 @@ test('original educator scoring cannot be passed from numeric-only choice', () =
   assert.equal(rubric.teacherScored,true);
   assert.match(rubric.teacherSubmissionStatus,/NOT_CONNECTED_TO_PERSISTED_GRADING/);
   assert.ok(rubric.rejectOrReview.some(x=>x.includes('numeric-only')));
-  assert.equal(rubric.tests,'AUTHORED_NOT_RUN');
+  assert.equal(rubric.tests,'ORIGINAL_2021_HTML_FIGURE_GEOMETRY_VERIFIED;AUTHENTICATED_TEACHER_RUBRIC_PERSISTENCE_NOT_VERIFIED');
 });
 
 // L02's three-file Practice integration is now on the Grade 5 course branch.
@@ -119,4 +138,4 @@ test('L02 selected Practice is lesson-scoped, has both exact families and a shar
   assert.ok(local.includes('TEACHER_REVIEW_REQUIRED'));
 });
 
-test.todo('Real authenticated renderer, source-specific second published diagram, teacher rubric persistence and .NET verification remain outside A-B-C authoring');
+test.todo('Authenticated learner renderer and persisted teacher scoring for U03:L02 still need end-to-end verification; source geometry and .NET mathematical oracle are now separately tested');

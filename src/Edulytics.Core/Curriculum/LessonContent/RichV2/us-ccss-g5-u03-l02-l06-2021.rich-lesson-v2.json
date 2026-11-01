@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v9-20261101",
+  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,8 +11,8 @@
         "Goal: draw and interpret the product of two UNIT fractions in two different orders, while retaining the original unit square as the whole. The public 2021 source explicitly asks for different partitioning orders rather than just the final numerical fraction.",
         "Warm-up: compare four equal-area grid sketches in which one selected part is marked; reason why different-looking blue parts may or may not represent the same fraction of the original unit. A Which One Doesn't Belong choice can have multiple valid justifications, so the original diagrams are not reduced to a fixed answer.",
         "Activity 1: make an original unit square grid with three equal vertical columns and four equal horizontal rows. First take one third of the whole, then one fourth of that selected third: the overlap is exactly one of 12 equal cells. Draw the construction again with fourths first, then take one third of the fourth. Show that the two dark cells represent equal area even though partition order differs.",
-        "Activity 2 (Write an Expression): interpret the original student-facing Priya diagram rather than replacing it with a new two-grid creation task. Explain how BOTH 1/5 × 1/2 and 1/2 × 1/5 can describe its shaded region (one tenth of the SAME original square). Then inspect the SECOND source-provided shaded diagram and write a multiplication expression for THAT diagram; justify its selected equal area against its original whole rather than presuming that its shaded fraction is also 1/10. First-party 2-by-5 and 5-by-2 grids below are teaching alternatives for the Priya example, NOT replicas of the original source figures.",
-        "Assessment: Activity 1 requires TWO independently drawn unit squares, equal partitions in opposite orders and a reason both shaded areas equal 1/12. Activity 2 requires explanations of both Priya expressions and a source-specific written expression for a distinct provided shaded image, judged against that image. These constructions, the open Which One Doesn't Belong arguments and source-image interpretation require teacher review; correct numeric 1/12 or 1/10 alone is insufficient. Restricted publisher diagrams, original Student Task PDF and gated Cool-down are not claimed verified."
+        "Activity 2 (Write an Expression): original Kendall Hunt 2021 teacher Student Facing contains Priya figure 149035 with 2 rows x 5 columns and 1 shaded rectangle (1/5 × 1/2 = 1/2 × 1/5 = 1/10 of original whole). The SECOND source figure 149036 has 5 rows x 3 columns, 1 shaded (1/5 × 1/3 = 1/3 × 1/5 = 1/15 of original whole, not 1/10). The figures below are independently authored mathematical grids, not publisher image copies. Students justify both expressions and the unchanged whole; teacher reviews their drawing.",
+        "Assessment: Activity 1 requires both full original unit squares with order 1/3×1/4 and 1/4×1/3 yielding 1/12. Activity 2 requires the Priya 1/10 diagram and the separate original second 5-by-3 diagram (1/15), each justified with original-whole visual evidence. Numeric-only answers do not grade diagrams. Original source pictures are not redistributed and teacher-rubric persistence and gated Cool-down still require verification."
       ],
       "KeyConcepts": [
         {
@@ -70,6 +70,19 @@
           ],
           "Answer": "Both are 1/10 of the original whole.",
           "Check": "One tenth can be drawn with different row/column order."
+        },
+        {
+          "Title": "Second original Activity 2 source geometry (5 × 3)",
+          "Question": "A whole square is partitioned into 5 equal rows and 3 equal columns, exactly one cell shaded. What is the shaded fraction and its two multiplication expressions?",
+          "Method": "Edulytiks independently authored accessible grid using verified source geometry, not a publisher image.",
+          "Steps": [
+            "Keep the original whole square.",
+            "Divide it into five congruent rows and three congruent columns.",
+            "Shade one of the 15 equal cells.",
+            "Write 1/5 × 1/3 and 1/3 × 1/5 for the same unit cell."
+          ],
+          "Answer": "1/15 of the original whole.",
+          "Check": "5 × 3 = 15 equal cells; exactly one is shaded, not 1/10."
         }
       ],
       "CommonMistakes": [
@@ -87,6 +100,7 @@
       "SummaryPoints": [
         "Two different partition orders can represent the same unit-fraction product.",
         "The area is expressed relative to the original whole.",
+        "The separate second source diagram has one shaded cell among 15 equal cells (five by three), representing 1/15 of the original whole.",
         "Source diagram comparisons and drawing quality require teacher review.",
         "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-2/lesson.html. Public teacher/student-facing HTML source tasks inspected; original Edulytiks examples. Gated response and original Student Task PDF not independently checked."
       ],
@@ -219,6 +233,53 @@
               "Cells": [
                 "□ empty",
                 "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 2 second original source geometry — Edulytiks first-party 5 rows by 3 columns",
+          "Description": "EDULYTIKS-ORIGINAL table, not publisher artwork. From local first-edition 2021 teacher Student Facing image record 149036: complete unit square divided into 5 rows and 3 columns, with exactly one of 15 equal rectangles shaded. 1/5 × 1/3 = 1/3 × 1/5 = 1/15. Student visual explanations require teacher review.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Cells": [
                 "□ empty",
                 "□ empty",
                 "□ empty"

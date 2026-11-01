@@ -4,8 +4,8 @@
   "sourceEdition": "2021 Illustrative Mathematics K–5 source teacher lesson and Student Facing",
   "kind": "EDULYTIKS_AUTHORED_LESSON_SPECIFIC_TEACHER_RUBRIC_NOT_PUBLISHER_COOLDOWN",
   "sourceActivity1": "Students draw one-third then one-quarter of that third AND one-quarter then one-third of that quarter as two diagrams; each shaded area is 1/12 of the original whole.",
-  "sourceActivity2": "Interpret Priya's published 1/5×1/2 and 1/2×1/5 expressions as 1/10 of the original square; then write and justify a matching multiplication expression for the different source-provided shaded image, whose shading must not be guessed from a text-only replacement.",
-  "studentFacingFormativeTask": "Draw two equal-size full-unit squares. Shade one fourth of one third in the first and one third of one fourth in the second. Compare their shaded areas and explain why both are 1/12 of the ORIGINAL whole. Then explain a separate 1/5×1/2 square and write both 1/5×1/2 and 1/2×1/5 for the same one-tenth area.",
+  "sourceActivity2": "Original Kendall Hunt IM2021 public teacher Student Facing Activity 2 has two distinct unit squares: image record 149035 contains two equal rows and five equal columns, one shaded (1/10); separate image record 149036 has five equal rows and three equal columns, one shaded (1/15). Explain 1/5×1/2 and 1/2×1/5 for first, and 1/3×1/5 and 1/5×1/3 for second, relative to each original whole. Drawings, justifications and source figure interpretation are teacher-scored; diagrams included in Edulytiks are first-party alternatives.",
+  "studentFacingFormativeTask": "Draw two equal-size full-unit squares. Shade one fourth of one third in the first and one third of one fourth in the second. Compare their shaded areas and explain why both are 1/12 of the ORIGINAL whole. Then explain a separate 1/5×1/2 square and write both 1/5×1/2 and 1/2×1/5 for the same one-tenth area. Compare the distinct original five-row, three-column Student Facing image with Priya's two-row, five-column image. Explain why the second image represents 1/15, not 1/10, and write both multiplication orders.",
   "maxPoints": 6,
   "teacherScored": true,
   "rubric": [
@@ -30,7 +30,7 @@
       "points": 1
     },
     {
-      "criterion": "Source-provided separate shaded diagram receives its own correctly matched multiplication expression with a visual justification, not an assumed answer",
+      "criterion": "Separate original source diagram 149036 is a 5-row-by-3-column equal-area unit square with one shaded cell; 1/15 is justified visually by 1/5×1/3 or 1/3×1/5, without confusing this with Priya's 1/10.",
       "points": 1
     }
   ],
@@ -40,10 +40,11 @@
     "shaded 1/3 or 1/4 of whole rather than 1/12",
     "numeric-only exact answer without a diagram is insufficient for teacher construction criteria",
     "incorrect expression for second original shaded diagram",
-    "unsupported freehand construction is not machine-scored"
+    "unsupported freehand construction is not machine-scored",
+    "The distinct second source image is incorrectly reported as 1/10 or depicted as a 2-by-5 grid instead of a 5-by-3 unit square."
   ],
   "teacherSubmissionStatus": "RUBRIC_AUTHORED_NOT_CONNECTED_TO_PERSISTED_GRADING",
   "publisherAssessment": "GATED_SOURCE_COOLDOWN_NOT_COPIED_OR_VERIFIED",
-  "tests": "AUTHORED_NOT_RUN",
+  "tests": "ORIGINAL_2021_HTML_FIGURE_GEOMETRY_VERIFIED;AUTHENTICATED_TEACHER_RUBRIC_PERSISTENCE_NOT_VERIFIED",
   "readyForStageD": false
 }
