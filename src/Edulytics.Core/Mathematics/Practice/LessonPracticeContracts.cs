@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U05:L01 source one thousandth with teacher-drawn
+        // mosaic/100-by-10 grid interpretation; numeric selected Practice only.
+        byLesson["PED:US-CCSS-MATH:G5:U05:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U05:L01", "supporting.decimals.core",
+            "G5_SOURCE_U05_L01_ONE_THOUSANDTH_SAME_WHOLE",
+            ["usccss.g5.u05.l01.original_thousandth_decimal_units"],
+            "IM2021_G5_U05_L01_THOUSANDTH_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U04:L21: source-specific selected exact
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U04:L21"] = new LessonPracticeContract(

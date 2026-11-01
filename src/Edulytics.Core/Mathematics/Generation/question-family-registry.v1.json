@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u05.l01.original_thousandth_decimal_units",
+      "version": 1,
+      "skillId": "supporting.decimals.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u05-l01-same-whole-thousandth-exact-selected-decimal-choices",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u04.l21.source_food_waste_annual_ounces",
       "version": 1,
       "skillId": "number.whole.multiply",

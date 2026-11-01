@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261028-v1",
+  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261101-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,11 @@
         "Warm-up: imagine a mosaic with many small tiles of different sizes. Estimate how much of the *entire* picture one small tile might cover; discuss how the denominator relates to the total number of equivalent-sized pieces. The original source photograph has separate rights and is not copied.",
         "Activity 1 — explain existing knowledge: partners make a poster showing 1/10, 1/100 and 1/1000 as fractions, decimals and equal-unit diagrams. Compare multiple legitimate representations and describe why partitioning a drawing into a thousand parts is difficult.",
         "Activity 2 — subdivide one hundredth: begin with a 10-by-10 grid representing one whole; there are 100 small square cells. Divide one such hundredth cell into ten equal stripes, then a stripe represents one thousandth of the original whole. Mark the value as 1/1000 = 0.001. Explain why there are 100 × 10 = 1000 such stripes in the whole.",
-        "Synthesis: connect each place value to ten equal next-smaller units. A learner's poster, drawn partitions, estimation of mosaic tile sizes, and verbal comparison require teacher review. One decimal-number answer does not stand in for the complete 2021 Grade 5 Unit 5 Lesson 1 task; original gated Cool-down not verified."
+        "Synthesis: connect each place value to ten equal next-smaller units. A learner's poster, drawn partitions, estimation of mosaic tile sizes, and verbal comparison require teacher review. One decimal-number answer does not stand in for the complete 2021 Grade 5 Unit 5 Lesson 1 task; original gated Cool-down not verified.",
+        "2021 source Activity 1 asks three questions verbatim in mathematical sense: What do you know about one TENTH, one HUNDREDTH and one THOUSANDTH? Learners show and explain multiple representations of the SAME unit whole; this is open teacher-reviewed mathematics, not only a 0.001 numeric answer.",
+        "2021 source Activity 2 shows TWO shaded grid regions; the teacher HTML does not independently expose all shading cells, so do NOT invent numeric shading values for those diagrams. The same source asks how many tiny rectangles make up one original unit square and to complete its table 1/10=0.1,1/100=0.01,1/1000=?; source-decimal 0.001 is exact.",
+        "Warm-up original source mosaic photograph by David Shankbone is CC-BY-SA 3.0 attributed, but its exact original binary and individual picture partition are not independently certified here; give low/about-right/high and open teacher explanation without fabricating a source exact tile count.",
+        "Original teacher-gated Cool-down is a Journal Prompt: One Thousandth. An independently authored Edulytiks exit journal is supplied distinctly; qualitative journal, source mosaic/two shaded grids and original diagram require TEACHER_REVIEW_REQUIRED."
       ],
       "KeyConcepts": [
         {
@@ -82,13 +86,19 @@
           "Mistake": "Compare parts from different-sized wholes",
           "WhyWrong": "A strip of one picture may not have the same size as a strip of a different picture.",
           "Correction": "Declare one common whole before comparing fractional sizes."
+        },
+        {
+          "Mistake": "Treat one thousandth as 0.01 or count strips relative to one hundredth instead of original one whole",
+          "WhyWrong": "Original table 1/100=0.01 and dividing one hundredth into ten gives 1/1000 of same original whole.",
+          "Correction": "Use unchanged original whole, 100×10=1000 equal strips; 1/1000=0.001."
         }
       ],
       "SummaryPoints": [
         "One thousandth is one of 1,000 equal parts of a single whole: 1/1000 = 0.001.",
         "Each new decimal place is one tenth the place value immediately to its left.",
         "Original source estimation, posters, grid drawings and learner explanations are teacher-reviewed.",
-        "Source: 2021 IM K–5 Grade 5 Unit 5 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-1/lesson.html; original Edulytiks diagrams in words, no source mosaic artwork."
+        "Source: 2021 IM K–5 Grade 5 Unit 5 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-1/lesson.html; original Edulytiks diagrams in words, no source mosaic artwork.",
+        "Original source asks three one-tenth/one-hundredth/one-thousandth statements; 1/1000=0.001, while source shading and journal are teacher reviewed."
       ],
       "Visuals": [
         {
@@ -126,6 +136,37 @@
                 "10",
                 "100",
                 "1000"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original Grade5 Unit5 Lesson1 tenths to thousandths source table",
+          "Description": "First-party numeric table of public source 1/10,1/100,1/1000. Source shaded publisher diagrams remain teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Fraction of original same whole",
+              "Cells": [
+                "1/10",
+                "1/100",
+                "1/1000"
+              ]
+            },
+            {
+              "Label": "Decimal notation",
+              "Cells": [
+                "0.1",
+                "0.01",
+                "0.001"
+              ]
+            },
+            {
+              "Label": "Same-whole conversion",
+              "Cells": [
+                "one tenth =10 hundredths",
+                "one hundredth =10 thousandths",
+                "one whole =1000 thousandths"
               ]
             }
           ]
