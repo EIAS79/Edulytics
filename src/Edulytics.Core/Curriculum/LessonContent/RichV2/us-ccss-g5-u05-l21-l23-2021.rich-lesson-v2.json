@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l21-l23-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "ContentVersion": "g5-u05-l21-l23-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,17 @@
       "CultureCode": "en",
       "Title": "Multiply More Decimals",
       "ExplanationParagraphs": [
-        "Goal: extend place-value multiplication to two tenths-based decimal factors and large whole-number-by-hundredths products, explaining WHY equivalent integer-product expressions represent the same value. The 2021 source requires justification of equivalence before exact computation, then independent strategy selection.",
-        "Warm-up — benchmark: decide whether 6.4×2.7 is between12 and24 by comparing 6.4 with6 and7 and 2.7 with2 and3. An estimate near17 is reasonable, but an actual value needs a correct count of hundredths or decimal partial products.",
-        "Activity 1 — prove equivalence: calculate 6.4×2.7 as (64×27)×0.01, because both factors were written as tenths and 0.1×0.1=0.01. Multiply64×27=1728 to get17.28. Also calculate 5.6×3.2=(56×32)÷100=17.92 and 23×0.47=(23×47)×0.01=10.81. Explain what fractional unit each whole-number product counts rather than merely inserting decimal punctuation.",
-        "Activity 2 — choose your strategy: calculate 8.2×3.4=27.88 using partial products or 82×34 hundredths. Calculate 47×0.36=16.92. An extra 3-digit challenge is 235×0.18=42.30; show why the hundreds-place integer factor increases computation size but not the decimal unit used for the other factor.",
-        "Assessment: open justification of equivalent expressions, independent method choice and comparison of solutions require teacher review. Numeric results and decimal-place constraints can be checked, but a guessed decimal point without unit reasoning cannot prove the source learner task."
+        "Original IM2021 G5 U05:L21 asks pupils to multiply two tenths-based decimal factors or whole×hundredths and explain equivalence using whole-number product TIMES the product of decimal units. The student chooses strategies, not an arbitrary formula for moving decimal points.",
+        "Warm-up Estimation Exploration Central Park gives about3.85km length and0.79km width and asks too-low/about-right/too-high estimates for area. The literal rectangle multiplication3.85×0.79=3.0415km² is only a rectangular MODEL of irregular park shape; source credited MapMaster CC-BY-SA map art not independently copied. Teacher evaluates sensible estimates and geographic limitations.",
+        "Activity1 original equivalent expressions7.2×5.3=(72×53)×0.01=38.16;6.5×2.8=(65×28)÷100=18.20;31×0.44=(31×44)×1/100=13.64. Explain why each unit product is a hundredth and compute whole product without decimal-place guesswork.",
+        "Activity2 Choose Your Strategy original7.3×4.2=30.66,38×0.55=20.9,285×0.17=48.45. Strategies include whole-number facts, distributivity and compensation; teacher assesses rationale and units.",
+        "Previous fictional6.4×2.7 and235×.18 are valid Edulytiks extensions only. Numeric selected source Practice cannot grade original Central Park estimate, map or explanation. Independently authored Cool-down separate from gated publisher original.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: extend place-value multiplication to two tenths-based decimal factors and large whole-number-by-hundredths products, explaining WHY equivalent integer-product expressions represent the same value. The 2021 source requires justification of equivalence before exact computation, then independent strategy selection.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — benchmark: decide whether 6.4×2.7 is between12 and24 by comparing 6.4 with6 and7 and 2.7 with2 and3. An estimate near17 is reasonable, but an actual value needs a correct count of hundredths or decimal partial products.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — prove equivalence: calculate 6.4×2.7 as (64×27)×0.01, because both factors were written as tenths and 0.1×0.1=0.01. Multiply64×27=1728 to get17.28. Also calculate 5.6×3.2=(56×32)÷100=17.92 and 23×0.47=(23×47)×0.01=10.81. Explain what fractional unit each whole-number product counts rather than merely inserting decimal punctuation.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — choose your strategy: calculate 8.2×3.4=27.88 using partial products or 82×34 hundredths. Calculate 47×0.36=16.92. An extra 3-digit challenge is 235×0.18=42.30; show why the hundreds-place integer factor increases computation size but not the decimal unit used for the other factor.",
+        "Optional previous source-aligned or independently authored extension — Assessment: open justification of equivalent expressions, independent method choice and comparison of solutions require teacher review. Numeric results and decimal-place constraints can be checked, but a guessed decimal point without unit reasoning cannot prove the source learner task."
       ],
       "KeyConcepts": [
         {
@@ -36,7 +42,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Prove two tenths are hundredths",
+          "Title": "Source exact 1 — Original Grade5 U05:L21 Multiply More Decimals",
+          "Question": "Original Grade5 U05 L21 equivalent products and strategy choices: evaluate source expression 7.2×5.3; explain exact decimal place scaling and original mathematical unit",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "38.16",
+          "Check": "Original numeric source example; incorrect distractors 38.26 and 38.05 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original Grade5 U05:L21 Multiply More Decimals",
+          "Question": "Original Grade5 U05 L21 equivalent products and strategy choices: evaluate source expression (72×53)×0.01; explain exact decimal place scaling and original mathematical unit",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "38.16",
+          "Check": "Original numeric source example; incorrect distractors 38.26 and 38.05 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original Grade5 U05:L21 Multiply More Decimals",
+          "Question": "Original Grade5 U05 L21 equivalent products and strategy choices: evaluate source expression 6.5×2.8; explain exact decimal place scaling and original mathematical unit",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "18.2",
+          "Check": "Original numeric source example; incorrect distractors 18.3 and 18.09 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original Grade5 U05:L21 Multiply More Decimals",
+          "Question": "Original Grade5 U05 L21 equivalent products and strategy choices: evaluate source expression (65×28)÷100; explain exact decimal place scaling and original mathematical unit",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "18.2",
+          "Check": "Original numeric source example; incorrect distractors 18.3 and 18.09 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Prove two tenths are hundredths",
           "Question": "Find 6.4×2.7 without a decimal-point guess.",
           "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
           "Steps": [
@@ -48,7 +102,7 @@
           "Check": "6.4×2.7=(64×27)×0.01."
         },
         {
-          "Title": "Whole by hundredths",
+          "Title": "Optional existing extension — Whole by hundredths",
           "Question": "Find 23×0.47.",
           "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
           "Steps": [
@@ -60,7 +114,7 @@
           "Check": "23×0.47=23×47/100=10.81."
         },
         {
-          "Title": "Challenge with a three-digit whole factor",
+          "Title": "Optional existing extension — Challenge with a three-digit whole factor",
           "Question": "Find 235×0.18.",
           "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
           "Steps": [
@@ -82,18 +136,89 @@
           "Mistake": "Assume a larger whole-number factor forces extra decimal places",
           "WhyWrong": "Decimal unit depends on the fractional factor, not total number of printed digits in the whole factor.",
           "Correction": "Track how many tenths or hundredths the decimal factor contains."
+        },
+        {
+          "Mistake": "Treat independent6.4×2.7 as source original and wrongly assume source park is perfect rectangle",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore original three equivalent pairs and strategy products while keeping original park estimate open."
         }
       ],
       "SummaryPoints": [
-        "Two tenths factors multiply as an integer product of hundredth-sized units.",
-        "Whole-by-hundredths products can be computed from familiar whole-number facts.",
-        "Equivalence explanations and independent strategy choice require teacher review.",
-        "IM K–5 2021 first edition Grade 5 Unit 5 Lesson 21, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-21/lesson.html. Primary/Our-CS authorized read-only teacher Student Facing and source activity review; original Student Task PDF, gated Cool-down and image-rights verification remain open. Independent first-party examples."
+        "Source three paired products38.16,18.2,13.64.",
+        "Activity2 exact products30.66,20.90,48.45.",
+        "Warm-up Central Park area requires estimate/model and teacher assessment.",
+        "Optional prior: Two tenths factors multiply as an integer product of hundredth-sized units.",
+        "Optional prior: Whole-by-hundredths products can be computed from familiar whole-number facts.",
+        "Optional prior: Equivalence explanations and independent strategy choice require teacher review.",
+        "Optional prior: IM K–5 2021 first edition Grade 5 Unit 5 Lesson 21, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-21/lesson.html. Primary/Our-CS authorized read-only teacher Student Facing and source activity review; original Student Task PDF, gated Cool-down and image-rights verification remain open. Independent first-party examples."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multiply More Decimals — exact model",
+          "Title": "Original Grade5 U05:L21 Multiply More Decimals — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "38.16",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "38.16",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "18.2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "18.2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "13.64",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "13.64",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "30.66",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Grade5 U05 L21 equivalent products and strategy choices: eval",
+              "Cells": [
+                "20.9",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Multiply More Decimals — exact model",
           "Description": "Original Edulytiks equal-group/place-value table; no copied teacher card or source illustration.",
           "Rows": [
             {
