@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -239,11 +239,18 @@
       "CultureCode": "en",
       "Title": "Thousandths in Expanded Form",
       "ExplanationParagraphs": [
-        "Goal: write decimals through the thousandths place in expanded form as a SUM of digit-times-place-value terms, and connect these expressions to words, standard notation and shaded unit-grid models. The source's opening Which One Doesn't Belong is open mathematical reasoning, not a uniquely keyed answer.",
-        "Warm-up: contrast a number such as 0.26 with 26÷100, 26×0.001 and 2×0.1+6×0.01. Three of these represent 0.26 except 26×0.001=0.026. Explain multiple properties by which one expression might be an outlier (division, multiplication, a sum), so an apparently different-looking correct expression is not automatically wrong.",
-        "Activity 1 — expanded form: in an original example, a grid represents 0.835 as 8 tenths, 3 hundredths and 5 thousandths. Write 0.835=(8×0.1)+(3×0.01)+(5×0.001). Use a 1000-part area interpretation rather than relying only on decimal-place vocabulary.",
-        "Activity 2 — zeros preserve place: 0.105 has one tenth, zero hundredths and five thousandths. Compare the correct 0.1+0.005=0.105 with the tempting wrong 0.1+0.05=0.15. Try another independently authored 0.407=4×0.1+0×0.01+7×0.001 and compare with 0.47=0.4+0.07.",
-        "Assessment: numeric expansion can be checked exactly when given a specified standard form, but explaining Why One Doesn't Belong and showing a correctly shaded/partitioned whole requires teacher review. Source's original student diagram and gated teacher response are not reproduced."
+        "Original IM 2021 Grade5 U05:L03 Thousandths in Expanded Form: connect grid-shaded original whole with each digit's decimal place-value term (tenths, hundredths, thousandths), write STANDARD and expanded decimal forms and critique a wrong claim about the zero hundredths place. A pure number answer cannot demonstrate the pupil's original shaded grid model.",
+        "Warm-up Which One Doesn't Belong source four EXPRESSIONS: 26÷100=0.26; 0.26; 26×0.001=0.026; and(2×0.1)+(6×0.01)=0.26. Numerically the 26×0.001 expression differs; students may legitimately find structural differentness in other representations, with reasoned WODB explanations reviewed by teacher.",
+        "Activity 1 Expanded Form: printed shaded source original (4×0.1)+(1×0.01)+(9×0.001) =0.419. Teacher shows original shaded drawing and asks WHY this expression matches the grid. A second source asks pupil to shade (8×0.1)+(3×0.01)+(5×0.001)=0.835, write decimal form and explain the constant whole.",
+        "Same Activity1 source Mai incorrectly says 0.105 equals (1×0.1)+(5×0.01), but her expression is 0.15. Correct expansion 0.105 is one tenth + ZERO hundredths + FIVE thousandths: (1×0.1)+(0×0.01)+(5×0.001). The zero placeholder matters; teacher reviews original pupil proof and correction.",
+        "Activity 2 Decimal Numbers in Numerous Ways: original asks to represent 477/1000=0.477; ONE HUNDRED THIRTY-SIX THOUSANDTHS=0.136; and (3×0.1)+(6×0.01)+(8×0.001)=0.368 in multiple representations. Learners can use fractions, decimals, expanded form, words and consistently divided grids; a correct format choice is only one component.",
+        "Original 2021 cool-down is teacher-gated and not asserted reproduced. Independently authored Edulytiks Cool-down uses 0.204 and requires a visual/word/expanded-form explanation. Exact selected family supports a bounded subset of numeric conversions, not grading original WODB reasoning, handwritten grid shading or Math Language Routine tasks.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: write decimals through the thousandths place in expanded form as a SUM of digit-times-place-value terms, and connect these expressions to words, standard notation and shaded unit-grid models. The source's opening Which One Doesn't Belong is open mathematical reasoning, not a uniquely keyed answer.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: contrast a number such as 0.26 with 26÷100, 26×0.001 and 2×0.1+6×0.01. Three of these represent 0.26 except 26×0.001=0.026. Explain multiple properties by which one expression might be an outlier (division, multiplication, a sum), so an apparently different-looking correct expression is not automatically wrong.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — expanded form: in an original example, a grid represents 0.835 as 8 tenths, 3 hundredths and 5 thousandths. Write 0.835=(8×0.1)+(3×0.01)+(5×0.001). Use a 1000-part area interpretation rather than relying only on decimal-place vocabulary.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — zeros preserve place: 0.105 has one tenth, zero hundredths and five thousandths. Compare the correct 0.1+0.005=0.105 with the tempting wrong 0.1+0.05=0.15. Try another independently authored 0.407=4×0.1+0×0.01+7×0.001 and compare with 0.47=0.4+0.07.",
+        "Optional previous source-aligned or independently authored extension — Assessment: numeric expansion can be checked exactly when given a specified standard form, but explaining Why One Doesn't Belong and showing a correctly shaded/partitioned whole requires teacher review. Source's original student diagram and gated teacher response are not reproduced."
       ],
       "KeyConcepts": [
         {
@@ -267,7 +274,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Expand 0.835",
+          "Title": "Original 0.419 and0.835 source grids",
+          "Question": "Interpret source(4×0.1)+(1×0.01)+(9×0.001) and shade(8×0.1)+(3×0.01)+(5×0.001).",
+          "Method": "Digit-times-place-value terms are sums of fractions of SAME whole.",
+          "Steps": [
+            "4 tenths+1 hundredth+9 thousandths=0.419.",
+            "8 tenths+3 hundredths+5 thousandths=0.835.",
+            "Explain how each place is represented in original unit grid."
+          ],
+          "Answer": "0.419 and0.835.",
+          "Check": "Teacher verifies source drawings."
+        },
+        {
+          "Title": "Original Mai0.105 mistake",
+          "Question": "Mai says0.105=(1×0.1)+(5×0.01). Critique.",
+          "Method": "Identify one tenth, zero hundredths and five thousandths.",
+          "Steps": [
+            "Mai's RHS is0.1+0.05=0.15.",
+            "0.105 includes five THOUSANDTHS, not hundredths.",
+            "Write0.105=(1×0.1)+(0×0.01)+(5×0.001)."
+          ],
+          "Answer": "Mai is incorrect; correct expression equals0.105.",
+          "Check": "0.15≠0.105."
+        },
+        {
+          "Title": "Original three Activity2 numbers",
+          "Question": "Write original477/1000,136 thousandths and3 tenths+6 hundredths+8 thousandths in standard decimal notation.",
+          "Method": "Preserve denominator1000 and position of hundreds/tens/ones thousandths.",
+          "Steps": [
+            "477/1000=0.477.",
+            "136 thousandths=0.136.",
+            "3×0.1+6×0.01+8×0.001=0.368."
+          ],
+          "Answer": "0.477,0.136,0.368.",
+          "Check": "Fraction/word/expanded forms describe same original whole."
+        },
+        {
+          "Title": "Optional existing extension — Expand 0.835",
           "Question": "Write 0.835 as a sum of digit-place products.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -279,7 +322,7 @@
           "Check": "800+30+5=835 thousandths."
         },
         {
-          "Title": "Keep the zero hundredths",
+          "Title": "Optional existing extension — Keep the zero hundredths",
           "Question": "Expand 0.105 without treating its 5 as hundredths.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -291,7 +334,7 @@
           "Check": "0.1+0.05=0.15 is not equivalent."
         },
         {
-          "Title": "Expand 0.407",
+          "Title": "Optional existing extension — Expand 0.407",
           "Question": "Express 0.407 as a sum of decimal unit values.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -313,18 +356,76 @@
           "Mistake": "Assume visually different expressions must have different values",
           "WhyWrong": "Multiplication, fraction division and sums can be mathematically equivalent representations.",
           "Correction": "Evaluate the exact place-value contributions before judging equivalence."
+        },
+        {
+          "Mistake": "Present invented0.835 as the original shaded GIVEN example or accept Mai's five hundredths for0.105",
+          "WhyWrong": "Original Activity1 first shaded expression is0.419, second is0.835 for pupil shading, and Mai's RHS equals0.15 rather than0.105.",
+          "Correction": "Restore source task roles and 0.419/0.835, explicitly include zero hundredths and five thousandths in0.105."
         }
       ],
       "SummaryPoints": [
-        "Expanded form records the value of each decimal digit as a summand.",
-        "A zero place can be omitted as a zero term, but its position must still be respected.",
-        "Comparing alternative expressions and source grid reasoning are teacher-reviewed.",
-        "Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 3 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-3/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
+        "Source WODB four representations: three give0.26, while26×0.001=0.026; teacher accepts supported structural outliers.",
+        "Original source shaded0.419 and pupil shade0.835 require diagram assessment.",
+        "Mai's (1×0.1)+(5×0.01)=0.15, not printed0.105; use5 thousandths instead.",
+        "Source 477/1000=0.477,136 thousandths=0.136,3T+6H+8Th=0.368.",
+        "Existing mathematically correct alternate decimal examples retained as optional extensions.",
+        "Optional prior: Expanded form records the value of each decimal digit as a summand.",
+        "Optional prior: A zero place can be omitted as a zero term, but its position must still be respected.",
+        "Optional prior: Comparing alternative expressions and source grid reasoning are teacher-reviewed.",
+        "Optional prior: Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 3 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-3/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Thousandths in Expanded Form — accessible place-value model",
+          "Title": "Original 2021 L03 expanded decimals",
+          "Description": "First-party source-exact numeric table; underlying original shaded grids, WODB responses and pupil critique remain teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source Activity1 shaded",
+              "Cells": [
+                "4 tenths",
+                "1 hundredth",
+                "9 thousandths",
+                "0.419"
+              ]
+            },
+            {
+              "Label": "Source Activity1 student shade",
+              "Cells": [
+                "8 tenths",
+                "3 hundredths",
+                "5 thousandths",
+                "0.835"
+              ]
+            },
+            {
+              "Label": "Source Activity2",
+              "Cells": [
+                "477/1000=0.477",
+                "136/1000=0.136",
+                "3T+6H+8Th=0.368"
+              ]
+            },
+            {
+              "Label": "Original Mai's error",
+              "Cells": [
+                "Mai expression0.15",
+                "printed target0.105",
+                "correct use5×0.001"
+              ]
+            },
+            {
+              "Label": "Warm-up WODB value",
+              "Cells": [
+                "26/100=0.26",
+                "26×0.001=0.026"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Thousandths in Expanded Form — accessible place-value model",
           "Description": "First-party text model of the source's mathematical structure, not a reproduction of original publisher images or student cards.",
           "Rows": [
             {
