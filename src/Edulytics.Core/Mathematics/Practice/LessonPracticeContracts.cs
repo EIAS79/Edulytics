@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM K5 2021 G5 U03:L15: source-specific selected exact
+        // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L15", "supporting.fractions.multiply_divide",
+            "G5_SOURCE_UNIT3_LESSON_15_BOUNDED_FRACTION",
+            ["usccss.g5.u03.l15.source_four_division_number_talk", "usccss.g5.u03.l15.teacher_authored_card_sort_equivalents"],
+            "IM2021_G5_U03_L15_AUTHORING_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U03:L14: source-specific selected exact
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U03:L14"] = new LessonPracticeContract(

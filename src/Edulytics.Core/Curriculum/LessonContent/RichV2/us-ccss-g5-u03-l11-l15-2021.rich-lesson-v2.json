@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v9-20261101",
+  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -674,11 +674,12 @@
       "CultureCode": "en",
       "Title": "Fraction Division Situations",
       "ExplanationParagraphs": [
-        "Goal: MATCH authentic story situations to equations for the two distinct types of fraction division taught in prior lessons. The source provides more expressions than stories and requires students to defend both correct and deliberately unmatched cards, then create their own division contexts.",
-        "Warm-up: compare 6÷(1/3)=18 with (1/3)÷6=1/18. Both contain the same two numbers, but their dividend/divisor order produces different quantities. Explain that one counts how many small groups fit in six, while the other shares a third among six recipients.",
-        "Activity 1 — original card sort: Story A says three meters of cloth are cut into 1/4-meter pieces; matching expression is 3÷(1/4)=12 pieces. Story B says 1/4 of a sheet is shared among three students; expression (1/4)÷3=1/12 sheet each. Include unmatched 3÷4 on the card set and explain why it is not a truthful model of either described situation.",
-        "Activity 2 — compose a new narrative for 2÷(1/5)=10 and contrast with (1/5)÷2=1/10. Students write the actual unit and question, make a tape or paper diagram, and exchange stories with a partner to test whether the division equation matches the story rather than only the numbers.",
-        "Assessment: source's card sorting, authoring, discussion and peer justification are open responses requiring human review. Numeric answer checking is possible for matched exact expressions, but must not certify the original task when the wrong card is chosen. Gated response cards and source artwork are not copied."
+        "Original IM 2021 U03:L15 goal: match fraction-division expressions to contextual stories, explicitly distinguish whole÷unit-fraction (number of groups) from unit-fraction÷whole (size of share), and write original story for an unmatched card. The exact publisher card-deck binary was not inspected; never present first-party cards as literal source cards.",
+        "Warm-up original 6÷3=2, 6÷1/3=18, (1/3)÷6=1/18, (1/3)÷12=1/36. Discuss why reversing dividend and divisor changes the meaning and unit; do not assume commutativity of division.",
+        "Activity 1 — Card Sort: Fraction Division Problem Sort. The original Student Facing says match expression cards to situation cards, with some expressions intentionally unmatched, and explain choices. The exact publisher cards are gated/not verified, so provide independently authored Edulytiks equivalent example cards: 3 meters into 1/4-meter segments ->12 segments, and 1/4 of a sheet shared among 3 ->1/12 sheet each. These are NOT verified original publisher card statements. Teacher presents and scores actual source deck when available.",
+        "Activity 2 — Division Story Situations: source asks learner to choose an unmatched expression, create a fitting story, exchange with another group and solve. Independent exemplar 2÷1/5=10 fifth-meter pieces versus (1/5)÷2=1/10 meter per person. Qualitative story wording, units and logic require TEACHER_REVIEW_REQUIRED.",
+        "An independent Edulytiks teacher-scored Cool-down uses two swapped division expressions and asks for matching situations, not a publisher Cool-down reconstruction. Source original card figures remain a documented unavailable original element; do not claim exact source-element 100%.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -702,7 +703,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Cloth strip story",
+          "Title": "Original source number talk",
+          "Question": "Contrast 6÷3,6÷(1/3),(1/3)÷6,(1/3)÷12.",
+          "Method": "Interpret full groups versus fractional remaining share.",
+          "Steps": [
+            "Six ÷ three gives two wholes.",
+            "Six ÷ a third counts 18 third-sized groups.",
+            "One third ÷ six or twelve yields 1/18 or 1/36 of the original whole."
+          ],
+          "Answer": "2, 18, 1/18, 1/36.",
+          "Check": "Division order is not interchangeable."
+        },
+        {
+          "Title": "Teacher-authored matching cards, NOT original source",
+          "Question": "Match 3m÷1/4m and 1/4 sheet÷3 recipients to distinct situations.",
+          "Method": "Independently authored examples illustrating the source's card-sort skill.",
+          "Steps": [
+            "Three meters contain 12 quarter-meter pieces.",
+            "A quarter sheet split three ways gives 1/12 sheet each.",
+            "Identify which expression counts groups and which measures a share."
+          ],
+          "Answer": "12 pieces; 1/12 sheet per student.",
+          "Check": "Cards are Edulytiks-authored, not verified 2021 publisher card texts."
+        },
+        {
+          "Title": "Original Activity 2 unmatched-story instruction",
+          "Question": "Invent correct stories for 2÷1/5 and (1/5)÷2; compare.",
+          "Method": "Teacher reviews distinct story semantics and student partner exchange.",
+          "Steps": [
+            "For 2÷1/5, make 2 meters cut in fifth-meter lengths.",
+            "For 1/5÷2, distribute a fifth-meter piece equally among two people.",
+            "Compare 10 pieces versus 1/10 meter each."
+          ],
+          "Answer": "10 fifth-meter pieces versus 1/10 meter per person.",
+          "Check": "Source asks learner-authored narrative for an unmatched expression; these are independent examples."
+        },
+        {
+          "Title": "Optional existing extension — Cloth strip story",
           "Question": "Three meters are cut into 1/4-meter pieces. Which division expression models how many pieces?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -714,7 +751,7 @@
           "Check": "12×1/4 meter=3 meters."
         },
         {
-          "Title": "Share a quarter sheet",
+          "Title": "Optional existing extension — Share a quarter sheet",
           "Question": "One fourth of a paper sheet is shared equally among three people. Which expression is correct?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -726,7 +763,7 @@
           "Check": "3×1/12=1/4 sheet."
         },
         {
-          "Title": "Reject a wrong card",
+          "Title": "Optional existing extension — Reject a wrong card",
           "Question": "Does 3÷4 represent three meters cut into quarter-meter pieces?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -748,46 +785,47 @@
           "Mistake": "Treat a valid numeric result as proof the card matches a story",
           "WhyWrong": "The numbers may be calculated correctly but answer a different question.",
           "Correction": "Explain how every term of the expression corresponds to a specific story quantity."
+        },
+        {
+          "Mistake": "Claim invented 3-meter cloth and quarter-sheet examples are the original 2021 card sort",
+          "WhyWrong": "The original teacher HTML names a physical card sort but does not expose the exact card deck statements or figures.",
+          "Correction": "Label all substitute cards Edulytiks-authored, document inaccessible publisher cards and require teacher review."
         }
       ],
       "SummaryPoints": [
-        "Unit fraction ÷ whole and whole ÷ unit fraction describe different operations and situations.",
-        "Matching stories and expressions requires correct quantity roles, not shared printed numbers.",
-        "Writing and validating one's own stories is teacher-reviewed.",
-        "2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 15, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-15/lesson.html. First-party Edulytiks examples; public teacher/student-facing HTML activity reviewed but original Student Task PDF and gated Cool-down not independently checked."
+        "Original warmup 6÷3=2, 6÷1/3=18, 1/3÷6=1/18, 1/3÷12=1/36.",
+        "Original Card Sort requires matching expression and story with unmatched cards; publisher card content not verified.",
+        "Original Activity 2 requires learners to write stories for unmatched expressions and exchange with peers.",
+        "Independent Edulytiks example cards are valid skill analogues but NOT publisher cards; teacher review required."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Fraction Division Situations — quotient meaning",
-          "Description": "Original text-only equal-group model; does not reproduce public publisher image cards or protected responses.",
+          "Title": "Source skill and first-party example card distinctions",
+          "Description": "The original publisher card-deck image/content is unverified; all card stories here are Edulytiks originals, for teacher-led matching only.",
           "Rows": [
             {
-              "Label": "Question",
+              "Label": "Source warm-up 6÷3 vs 6÷1/3",
               "Cells": [
-                "Cut 3 meters into quarter-meter lengths",
-                "Share 1/4 sheet among 3"
+                "2",
+                "18",
+                "count of groups differs"
               ]
             },
             {
-              "Label": "Dividend",
+              "Label": "Source warm-up 1/3÷6 vs 1/3÷12",
               "Cells": [
-                "3 meters",
-                "1/4 sheet"
+                "1/18",
+                "1/36",
+                "share size differs"
               ]
             },
             {
-              "Label": "Divisor",
-              "Cells": [
-                "1/4 meter per piece",
-                "3 people"
-              ]
-            },
-            {
-              "Label": "Quotient",
+              "Label": "First-party example 3÷1/4 vs 1/4÷3",
               "Cells": [
                 "12 pieces",
-                "1/12 sheet per person"
+                "1/12 sheet",
+                "different contexts"
               ]
             }
           ]

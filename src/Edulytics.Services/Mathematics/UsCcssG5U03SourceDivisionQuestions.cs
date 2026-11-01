@@ -57,6 +57,14 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l14.snack_servings_story_selection", "Original source popcorn cups: 3 whole units, 1/4 per serving", "3 ÷ (1/4)", 12, 1, "servings"),
         new("usccss.g5.u03.l14.snack_servings_story_selection", "Original source orange juice liters: 2 whole units, 1/4 per serving", "2 ÷ (1/4)", 8, 1, "servings"),
         new("usccss.g5.u03.l14.snack_servings_story_selection", "Original source granola cups: 5 whole units, 1/2 per serving", "5 ÷ (1/2)", 10, 1, "servings"),
+        new("usccss.g5.u03.l15.source_four_division_number_talk", "Original source L15 warmup six items shared among three", "6 ÷ 3", 2, 1, "items per group"),
+        new("usccss.g5.u03.l15.source_four_division_number_talk", "Original source L15 warmup six wholes divided into third-sized groups", "6 ÷ (1/3)", 18, 1, "groups"),
+        new("usccss.g5.u03.l15.source_four_division_number_talk", "Original source L15 warmup one third shared among six people", "(1/3) ÷ 6", 1, 18, "of original whole"),
+        new("usccss.g5.u03.l15.source_four_division_number_talk", "Original source L15 warmup one third shared among twelve people", "(1/3) ÷ 12", 1, 36, "of original whole"),
+        new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored non-publisher card: three meters strip into quarter-meter equal pieces", "3 ÷ (1/4)", 12, 1, "pieces"),
+        new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored non-publisher card: one-quarter of paper shared among three children", "(1/4) ÷ 3", 1, 12, "of original sheet"),
+        new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored unmatched-card story: two whole meters into fifth-meter groups", "2 ÷ (1/5)", 10, 1, "pieces"),
+        new("usccss.g5.u03.l15.teacher_authored_card_sort_equivalents", "Edulytiks-authored reversed story: one fifth meter shared among two children", "(1/5) ÷ 2", 1, 10, "meter per child"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>
