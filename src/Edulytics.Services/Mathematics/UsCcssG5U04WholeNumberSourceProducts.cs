@@ -62,6 +62,17 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 20", "3 × 20", 60, "exact result"),
         new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 600", "3 × 600", 1800, "exact result"),
         new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 623", "3 × 623", 1869, "exact result"),
+        new("usccss.g5.u04.l05.original_no_composing_products", "Original source U04:L05 no-composing standard algorithm 413 by 21", "413 × 21", 8673, "whole-number product"),
+        new("usccss.g5.u04.l05.original_no_composing_products", "Original source U04:L05 no-composing standard algorithm 202 by 12", "202 × 12", 2424, "whole-number product"),
+        new("usccss.g5.u04.l05.original_no_composing_products", "Original source U04:L05 no-composing standard algorithm 122 by 33", "122 × 33", 4026, "whole-number product"),
+        new("usccss.g5.u04.l05.original_no_composing_products", "Original source U04:L05 no-composing standard algorithm 321 by 24", "321 × 24", 7704, "whole-number product"),
+        new("usccss.g5.u04.l05.original_no_composing_products", "Original source U04:L05 no-composing standard algorithm 301 by 24", "301 × 24", 7224, "whole-number product"),
+        new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 20 by 3", "20 × 3", 60, "partial-product value"),
+        new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 24 by 3", "24 × 3", 72, "partial-product value"),
+        new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 120 by 3", "120 × 3", 360, "partial-product value"),
+        new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 140 by 3", "140 × 3", 420, "partial-product value"),
+        new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 301 by 4", "301 × 4", 1204, "partial-product value"),
+        new("usccss.g5.u04.l05.original_number_talk_and_diego_correction", "Original source U04:L05 Number Talk or Diego partial row 301 by 20", "301 × 20", 6020, "partial-product value"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

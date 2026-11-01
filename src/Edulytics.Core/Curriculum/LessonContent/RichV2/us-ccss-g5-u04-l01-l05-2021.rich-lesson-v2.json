@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -747,11 +747,12 @@
       "CultureCode": "en",
       "Title": "Standard Algorithm: Multi-digit Numbers without Composing",
       "ExplanationParagraphs": [
-        "Learning goal: compare condensed two-row standard multiplication and expanded partial-products recording for a three-digit-by-two-digit product that requires NO newly composed unit. This is deliberately BEFORE composing with a two-digit multiplier; do not introduce mandatory multi-digit carrying as the central skill in this lesson.",
-        "Warm-up: use mental comparisons between 20×3, 24×3, 120×3 and 140×3 to recall place-value alignment and prepare for the tens multiplier's shift. Discuss why a row multiplied by 20 represents tens.",
-        "Activity 1 — compare two algorithms: use first-party 312×21. Expanded partial products are 300,10,2,6000,200,40; standard algorithm records 312 (times one) and 6240 (times twenty), then sums 6552. Explain which expanded contributions lie inside each condensed row; the original publisher uses different numbers, so these are independently authored examples.",
-        "Activity 2 — without composition: calculate 211×32. Multiply 211×2=422 and 211×30=6330, then add 6752. Contrast the invalid row 633 for 30×211 with the correct 6330 and reject a product below 211×30 using estimation.",
-        "Assessment: the public source asks learners to identify individual partial products inside compact rows and explain why a missing tens shift yields an implausibly small product. Numeric checking of 6552/6752 is insufficient for matching rows to place-value meaning; that explanation is teacher-reviewed."
+        "IM 2021 G5 U04:L05 introduces the compact standard algorithm for a THREE-digit by TWO-digit multiplication when newly composed units are not needed in intermediate column products. Source requires comparing expanded and condensed algorithms and the tens-row place alignment, not simply memorizing an answer.",
+        "Warm-up Number Talk original 20×3=60,24×3=72,120×3=360,140×3=420. Draw place-value columns and reason why multiplying a factor by ten changes the product tenfold. The source numbers differ from other invented activities.",
+        "Activity 1 Compare Two Algorithms: original product 413×21=8673. Expanded partial records are 3,10,400,60,200,8000 (sum 8673). Compact algorithm records 413 (multiplied by 1) and 8260 (413 multiplied by 20) and adds to 8673. Teachers ask students to identify where each expanded term appears in compressed rows and to compare final steps.",
+        "Activity 2 Use the Standard Algorithm: exact source products 202×12=2424; 122×33=4026; 321×24=7704. Diego's erroneous source calculation 301×24=1806 adds 1204 for 301×4 but incorrectly uses 602 instead of 6020 for 301×20, omitting a zero/tens place. Correct total is 7224. The error analysis is critical to the lesson and requires teacher review.",
+        "Existing correct first-party 312×21 or similar algorithms are optional extensions only. Independently authored Edulytiks Cool-down 213×32=6816 assesses tens alignment and explanation. Original gated publisher Cool-down and source figure binaries are not claimed verified.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -775,7 +776,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Condense six partial products",
+          "Title": "Original 413×21 two algorithms",
+          "Question": "Connect source six expanded partial products and the compact two-row method.",
+          "Method": "Two-digit times three-digit place-value groups.",
+          "Steps": [
+            "Expanded 3+10+400+60+200+8000=8673.",
+            "Ones row 413×1=413; tens row 413×20=8260.",
+            "Sum 413+8260=8673 and trace expanded units."
+          ],
+          "Answer": "8673.",
+          "Check": "Source 413×21=8673."
+        },
+        {
+          "Title": "Original Activity2 three standard products",
+          "Question": "Calculate 202×12, 122×33 and 321×24.",
+          "Method": "Proper ones- and tens-rows in standard multi-digit multiplication.",
+          "Steps": [
+            "202×12=2020+404=2424.",
+            "122×33=3660+366=4026.",
+            "321×24=6420+1284=7704."
+          ],
+          "Answer": "2424, 4026, 7704.",
+          "Check": "Each tens-row is a multiple of ten."
+        },
+        {
+          "Title": "Source Diego's false 301×24=1806",
+          "Question": "Why does Diego's computed total 1806 fail?",
+          "Method": "Check reasonableness and tens-position of each partial product.",
+          "Steps": [
+            "Correct 301×4=1204.",
+            "Correct 301×20=6020, not 602.",
+            "Add 1204+6020=7224, much greater than 1806."
+          ],
+          "Answer": "7224 is correct; Diego omitted tens-place shift.",
+          "Check": "301×24 > 300×20=6000 so 1806 is unreasonable."
+        },
+        {
+          "Title": "Optional existing extension — Condense six partial products",
           "Question": "Calculate 312×21 using both expanded and compact recording.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -787,7 +824,7 @@
           "Check": "312×(20+1)=6240+312=6552."
         },
         {
-          "Title": "Use two-digit standard algorithm without composing",
+          "Title": "Optional existing extension — Use two-digit standard algorithm without composing",
           "Question": "Calculate 211×32.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -799,7 +836,7 @@
           "Check": "211×(30+2)=6330+422=6752."
         },
         {
-          "Title": "Diagnose a tens-row error",
+          "Title": "Optional existing extension — Diagnose a tens-row error",
           "Question": "Why is recording 211×30 as 633 incorrect?",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -821,46 +858,84 @@
           "Mistake": "Assume all standard-algorithm lessons use carry composition",
           "WhyWrong": "This source specifically isolates two-digit multiplication without composition so students can notice the partial-product structure.",
           "Correction": "Explain where the two rows come from before introducing regrouping in the subsequent lesson."
+        },
+        {
+          "Mistake": "Accept Diego's 301×24=1806 or use only invented 312×21 algorithm",
+          "WhyWrong": "The source explicitly teaches positional shift of 301×20=6020 and asks pupils to diagnose omitted tens place.",
+          "Correction": "Restore source 413×21 and three activity products, plus Diego tens alignment error correction."
         }
       ],
       "SummaryPoints": [
-        "A compact standard algorithm records exactly the same products as a longer partial-products list.",
-        "The tens-row factor must represent a multiple of ten.",
-        "Teacher checks compact-to-expanded explanation and error critique; numeric output alone is not full source task.",
-        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 5 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-5/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+        "Warm-up actual 20×3=60,24×3=72,120×3=360,140×3=420.",
+        "Source 413×21=8673, condensed 413+8260 or six expanded summands.",
+        "Original 202×12=2424,122×33=4026,321×24=7704.",
+        "Diego's 301×24=1806 is wrong: 602 must represent 6020, so correct product 7224.",
+        "Teacher reviews original standard algorithm layout and explanations of place-value alignment."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Standard Algorithm: Multi-digit Numbers without Composing — place-value model",
-          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Title": "Original 413×21 expanded and compact algorithms",
+          "Description": "First-party place-value comparisons; source image order and annotation teacher reviewed.",
           "Rows": [
             {
-              "Label": "Algorithm",
+              "Label": "Ones row",
               "Cells": [
-                "Expanded partials",
-                "Condensed standard"
+                "413"
               ]
             },
             {
-              "Label": "For 312×21",
+              "Label": "Tens row",
               "Cells": [
-                "300+10+2+6000+200+40",
-                "312+6240"
+                "8260"
               ]
             },
             {
-              "Label": "Product",
+              "Label": "Expanded six",
               "Cells": [
-                "6552",
-                "6552"
+                "3",
+                "10",
+                "400",
+                "60",
+                "200",
+                "8000"
               ]
             },
             {
-              "Label": "For 211×32",
+              "Label": "Sum",
               "Cells": [
-                "200+20+2+6000+300+30",
-                "422+6330"
+                "8673"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Diego misalignment correction",
+          "Description": "Contrasts incorrect unshifted tens row against source correct product.",
+          "Rows": [
+            {
+              "Label": "301×4",
+              "Cells": [
+                "1204"
+              ]
+            },
+            {
+              "Label": "301×20",
+              "Cells": [
+                "6020, NOT 602"
+              ]
+            },
+            {
+              "Label": "Correct sum",
+              "Cells": [
+                "7224"
+              ]
+            },
+            {
+              "Label": "Diego's false sum",
+              "Cells": [
+                "1806"
               ]
             }
           ]
