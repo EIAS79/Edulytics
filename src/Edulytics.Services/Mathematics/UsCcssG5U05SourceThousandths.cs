@@ -184,6 +184,18 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original source T/F: 0.5 - 0.01 = 0.4 (must evaluate actual difference 0.49)", "false", "true", "unknown"),
         new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original source T/F: 0.61 - 0.02 = 0.59", "true", "false", "unknown"),
         new("usccss.g5.u05.l14.source_decimal_subtraction_and_truth", "Original source T/F: 1 - 0.07 = 0.93", "true", "false", "unknown"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 1.50 - 0.51; align place-value columns and explain regrouping; selected numeric item only", "0.99", "1.09", "0.88"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 1.50 - 0.52; align place-value columns and explain regrouping; selected numeric item only", "0.98", "1.08", "0.87"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 1.50 - 0.60; align place-value columns and explain regrouping; selected numeric item only", "0.90", "1.00", "0.79"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 1.50 - 0.62; align place-value columns and explain regrouping; selected numeric item only", "0.88", "0.98", "0.77"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 8.53 - 2.70; align place-value columns and explain regrouping; selected numeric item only", "5.83", "5.93", "5.72"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 6.62 - 3.71; align place-value columns and explain regrouping; selected numeric item only", "2.91", "3.01", "2.80"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 15.27 - 4.30; align place-value columns and explain regrouping; selected numeric item only", "10.97", "11.07", "10.86"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 16.14 - 9.80; align place-value columns and explain regrouping; selected numeric item only", "6.34", "6.44", "6.23"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original IM2021 Grade5 U05 L15 warmup, standard and estimate: 622.35 - 71.40; align place-value columns and explain regrouping; selected numeric item only", "550.95", "551.05", "550.84"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original L15 15.27−4.3 exact10.97: nearest WHOLE value", "11", "10", "12"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original L15 16.14−9.8 exact6.34: nearest WHOLE value", "6", "7", "5"),
+        new("usccss.g5.u05.l15.original_decimal_subtraction", "Original L15 optional source Elena incorrectly gets615.21 from622.35−71.4. Choose pupil whose place-aligned subtraction yields550.95.", "Andre", "Elena", "Both"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
