@@ -46,6 +46,17 @@ public static class UsCcssG5U03SourceDivisionQuestions
         new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 2 feet long is cut into segments each 1/4 foot. Teacher checks colored paper and physical cut lengths", "2 ÷ (1/4)", 8, 1, "equal strip pieces"),
         new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 2 feet long is cut into segments each 1/6 foot. Teacher checks colored paper and physical cut lengths", "2 ÷ (1/6)", 12, 1, "equal strip pieces"),
         new("usccss.g5.u03.l13.two_foot_paper_strip_unit_fraction_groups", "Original source paper strip 3 feet long is cut into segments each 1/6 foot. Teacher checks colored paper and physical cut lengths", "3 ÷ (1/6)", 18, 1, "equal strip pieces"),
+        new("usccss.g5.u03.l14.same_divisor_quarter_pattern", "Original Set A 3 whole units divided into quarters", "3 ÷ (1/4)", 12, 1, "quarter-unit groups"),
+        new("usccss.g5.u03.l14.same_divisor_quarter_pattern", "Original Set A 4 whole units divided into quarters", "4 ÷ (1/4)", 16, 1, "quarter-unit groups"),
+        new("usccss.g5.u03.l14.same_divisor_quarter_pattern", "Original Set A 5 whole units divided into quarters", "5 ÷ (1/4)", 20, 1, "quarter-unit groups"),
+        new("usccss.g5.u03.l14.same_divisor_quarter_pattern", "Original Set A 6 whole units divided into quarters", "6 ÷ (1/4)", 24, 1, "quarter-unit groups"),
+        new("usccss.g5.u03.l14.same_dividend_three_pattern", "Original Set B 3 whole units divided into 1/2 sized groups", "3 ÷ (1/2)", 6, 1, "groups"),
+        new("usccss.g5.u03.l14.same_dividend_three_pattern", "Original Set B 3 whole units divided into 1/3 sized groups", "3 ÷ (1/3)", 9, 1, "groups"),
+        new("usccss.g5.u03.l14.same_dividend_three_pattern", "Original Set B 3 whole units divided into 1/4 sized groups", "3 ÷ (1/4)", 12, 1, "groups"),
+        new("usccss.g5.u03.l14.same_dividend_three_pattern", "Original Set B 3 whole units divided into 1/5 sized groups", "3 ÷ (1/5)", 15, 1, "groups"),
+        new("usccss.g5.u03.l14.snack_servings_story_selection", "Original source popcorn cups: 3 whole units, 1/4 per serving", "3 ÷ (1/4)", 12, 1, "servings"),
+        new("usccss.g5.u03.l14.snack_servings_story_selection", "Original source orange juice liters: 2 whole units, 1/4 per serving", "2 ÷ (1/4)", 8, 1, "servings"),
+        new("usccss.g5.u03.l14.snack_servings_story_selection", "Original source granola cups: 5 whole units, 1/2 per serving", "5 ÷ (1/2)", 10, 1, "servings"),
         // END_G5_U03_AUTHORING_CASES
     ];
     public static bool Supports(string? family) =>

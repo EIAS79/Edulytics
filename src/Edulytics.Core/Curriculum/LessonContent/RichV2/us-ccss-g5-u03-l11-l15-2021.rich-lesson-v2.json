@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v8-20261101",
+  "ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -508,11 +508,12 @@
       "CultureCode": "en",
       "Title": "Represent Division of Whole Numbers by Unit Fractions",
       "ExplanationParagraphs": [
-        "Goal: express, compare and generalize patterns in dividing whole numbers by a unit fraction, using number tables and optional tape diagrams. The 2021 source asks students to explore separate sets where the whole dividend or unit-fraction divisor changes and to explain the different patterns.",
-        "Warm-up: reason mentally how 6÷1, 6÷1/2, 6÷1/3 and 6÷1/6 change. Relate growing quotients to a fixed six-unit length divided into successively shorter pieces.",
-        "Activity 1 — hold divisor fixed: compute 2÷1/3=6, 3÷1/3=9, 4÷1/3=12, 5÷1/3=15. Use a labelled strip or verbal model to explain adding three pieces for each added whole unit. Describe the pattern without assuming that integer quotients alone prove the geometry.",
-        "Activity 2 — hold dividend fixed: compute 3÷1/2=6, 3÷1/3=9, 3÷1/4=12, 3÷1/5=15. Each answer is the number of fractional pieces in the same three units; denominators increasing by one add three groups. Compare the two patterns as a class, then test an original larger case 7÷1/6=42.",
-        "Assessment boundary: completing tables may be independently verified, but the source's gallery walk of explanations, diagram use and clear contrast between holding dividend or divisor fixed require teacher review. No original diagram cards and protected solutions are copied."
+        "Original IM 2021 U03:L14 goal: count whole-number groups of unit-fraction size, compare what changes when dividend or divisor stays fixed, and match original snack stories to exact division expressions.",
+        "Warm-up source Number Talk: 6÷1=6; 6÷1/2=12; 6÷1/3=18; 6÷1/6=36. Keeping six wholes fixed while group size shrinks makes more groups.",
+        "Activity 1 source SET A keeps divisor 1/4 and varies whole dividend 3,4,5,6: answers 12,16,20,24. Source SET B keeps dividend 3 and varies 1/2,1/3,1/4,1/5: answers 6,9,12,15. Compare two different patterns.",
+        "Activity 2: source popcorn 3 cups with 1/4 cup per serving ->12; orange juice 2 liters with 1/4-liter servings ->8; granola 5 cups with 1/2 cup serving ->10. Extra unmatched cards (1/4÷3,1/2÷5) are not valid story models, and teacher reviews why.",
+        "Original story-to-expression matching and student explanations are TEACHER_REVIEW_REQUIRED; exact selected digital values are only partial skills. Old mathematically correct 1/3 pattern is retained as optional extension.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -536,7 +537,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Fixed third-meter pieces",
+          "Title": "Source Set A quarter groups",
+          "Question": "Calculate 3÷1/4,4÷1/4,5÷1/4,6÷1/4.",
+          "Method": "Four quarter-sized groups fit into one whole.",
+          "Steps": [
+            "Hold divisor 1/4 fixed.",
+            "Increase whole dividend 3,4,5,6.",
+            "Multiply each dividend by four."
+          ],
+          "Answer": "12, 16, 20, 24.",
+          "Check": "12×1/4=3 and 24×1/4=6."
+        },
+        {
+          "Title": "Source Set B three wholes",
+          "Question": "Find 3÷1/2,3÷1/3,3÷1/4,3÷1/5.",
+          "Method": "Three wholes partitioned by different unit size.",
+          "Steps": [
+            "Count halves in three wholes.",
+            "Count thirds, quarters and fifths in three wholes.",
+            "Record 6,9,12,15."
+          ],
+          "Answer": "6, 9, 12, 15.",
+          "Check": "Smaller group sizes create more groups."
+        },
+        {
+          "Title": "Source snack-serving stories",
+          "Question": "Calculate popcorn, orange juice and granola serving counts.",
+          "Method": "Total quantity divided by per-serving measure.",
+          "Steps": [
+            "3 cups popcorn ÷1/4 cup=12 servings.",
+            "2 L juice ÷1/4 L=8 servings.",
+            "5 cups granola ÷1/2 cup=10 servings."
+          ],
+          "Answer": "12, 8, 10 servings.",
+          "Check": "Respect original source measurement units."
+        },
+        {
+          "Title": "Optional existing extension — Fixed third-meter pieces",
           "Question": "Complete 2÷1/3,3÷1/3,4÷1/3,5÷1/3.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -548,7 +585,7 @@
           "Check": "Multiplying each quotient by 1/3 recovers 2,3,4,5."
         },
         {
-          "Title": "Fixed three-unit length",
+          "Title": "Optional existing extension — Fixed three-unit length",
           "Question": "Complete 3÷1/2,3÷1/3,3÷1/4,3÷1/5.",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -560,7 +597,7 @@
           "Check": "6×1/2=3, 9×1/3=3, 12×1/4=3, 15×1/5=3."
         },
         {
-          "Title": "Predict a sixth-sized piece count",
+          "Title": "Optional existing extension — Predict a sixth-sized piece count",
           "Question": "How many 1/6-sized pieces fit into seven whole units?",
           "Method": "Interpret equal-sized groups and the fixed whole with an original diagram before checking exact division.",
           "Steps": [
@@ -582,53 +619,49 @@
           "Mistake": "Interpret larger denominators as larger physical piece lengths",
           "WhyWrong": "With a fixed unit whole, one fifth is shorter than one third.",
           "Correction": "Compare equal-unit pieces on a tape before predicting number of groups."
+        },
+        {
+          "Mistake": "Replace source Set A with an invented division by one third",
+          "WhyWrong": "Original source explicitly holds the divisor at one fourth, not one third.",
+          "Correction": "Restore 3,4,5,6 divided by 1/4 and keep 1/3 patterns as extension."
         }
       ],
       "SummaryPoints": [
-        "Two changing-quotient patterns can share results while describing different changes in a grouping situation.",
-        "For positive integers n,b, n÷(1/b)=nb.",
-        "Teacher reviews comparison posters and verbal pattern explanations.",
-        "2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 14, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-14/lesson.html. First-party Edulytiks examples; public teacher/student-facing HTML activity reviewed but original Student Task PDF and gated Cool-down not independently checked."
+        "Warm-up 6÷1,1/2,1/3,1/6 equals 6,12,18,36.",
+        "Source Set A 3–6 divided by 1/4 yields 12,16,20,24.",
+        "Source Set B 3 divided by 1/2,1/3,1/4,1/5 yields 6,9,12,15.",
+        "Popcorn 12 servings, juice 8, granola 10; unmatched cards are teacher reviewed."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Represent Division of Whole Numbers by Unit Fractions — quotient meaning",
-          "Description": "Original text-only equal-group model; does not reproduce public publisher image cards or protected responses.",
+          "Title": "Original source two division sets and snack contexts",
+          "Description": "First-party original mathematics table; teacher reviews matching dialogue.",
           "Rows": [
             {
-              "Label": "Pattern",
+              "Label": "Set A ÷ 1/4",
               "Cells": [
-                "Fixed 1/3 divisor",
-                "Fixed 3-unit dividend"
+                "3→12",
+                "4→16",
+                "5→20",
+                "6→24"
               ]
             },
             {
-              "Label": "First",
+              "Label": "Set B 3÷",
               "Cells": [
-                "2÷1/3=6",
-                "3÷1/2=6"
+                "1/2→6",
+                "1/3→9",
+                "1/4→12",
+                "1/5→15"
               ]
             },
             {
-              "Label": "Second",
+              "Label": "Snacks",
               "Cells": [
-                "3÷1/3=9",
-                "3÷1/3=9"
-              ]
-            },
-            {
-              "Label": "Third",
-              "Cells": [
-                "4÷1/3=12",
-                "3÷1/4=12"
-              ]
-            },
-            {
-              "Label": "Fourth",
-              "Cells": [
-                "5÷1/3=15",
-                "3÷1/5=15"
+                "popcorn 12",
+                "juice 8",
+                "granola 10"
               ]
             }
           ]
