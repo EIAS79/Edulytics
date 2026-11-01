@@ -828,6 +828,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section digits1 3 5 6 greatest product arrangement", "6/3 × 5/1", "1/6 × 3/5", "1/5 × 3/6"),
         new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section digits1 3 5 6 SMALLEST sum", "7/10", "4/11", "1/2"),
         new("usccss.g5.u08.l13.source_fraction_product_spinner_strategy", "Source end section digits1 3 5 6 SMALLEST difference", "3/10", "1/10", "5/10"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original warmup Notice and Wonder picture mathematical theme", "sharing bread as fractions", "car volume exact", "whole-number multiplication only"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity1 requests image chosen by", "the student", "the publisher only", "a fixed number generator"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity1 image should encourage interpretation of", "sharing and fractions", "largest integer product only", "coordinate grid exact only"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity1 records which two kinds of prompts?", "notices and wonders", "true and false only", "long division only"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity2 participant role is", "facilitate classmates' discussion", "only compute one exact quotient", "copy source answer key"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity2 teacher requires classmates' actual ideas to be", "recorded", "discarded", "fabricated"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity3 image may concern", "any learned math topic", "bread only", "volume only"),
+        new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Source activity original chosen pictures have one unique fixed numeric answer?", "no", "yes", "always1"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
