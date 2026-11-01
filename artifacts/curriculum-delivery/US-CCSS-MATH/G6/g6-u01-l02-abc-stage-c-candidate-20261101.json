@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_U01_L02_STAGE_C_COURSE_SCOPED_ADAPTER_NOT_CLOSURE",
+  "recordedUtc": "2026-11-01T21:58:01Z",
+  "headBefore": "abbd7150634f156735bfcc309152422250383ec7",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+  "lastClosed": "PED:US-CCSS-MATH:G6:U01:L01",
+  "source": "OUR/IM Middle School G6 2017-2019 / local 06_Grade_6_OUR_IM/1/2 + student/1/2",
+  "sourceKit": "one unit square; four small half-unit right triangles; one medium unit triangle; two large area-two triangles = 8 square units",
+  "sourceGoals": [
+    "2.1 square unit definition including mixed sizes/gaps",
+    "2.2 exact piece inventory and area-preserving constructions",
+    "2.3 area-conservation justifications"
+  ],
+  "preservedExisting": [
+    "us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
+    "UsCcssG6Unit1Lesson2TangramArea.cs",
+    "UsCcssG6Unit1Lesson2TangramAreaTests.cs"
+  ],
+  "newAdapter": "src/Edulytics.Services/Mathematics/UsCcssG6Unit1Lesson2TangramQuestions.cs",
+  "families": [
+    "usccss.g6.u01.l02.tangram_piece_area",
+    "usccss.g6.u01.l02.tangram_equal_area"
+  ],
+  "numericScope": "half-square exact arithmetic, allowed source kit, equal areas; numeric-only independent question assembly/solve/verify",
+  "humanReview": "all assembled silhouettes, disjointness, gaps, overlap, two distinct shapes, explanation, authentic teacher scoring/persistence",
+  "newTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson2TangramQuestionAdapterTests.cs",
+  "testExecution": "AUTHORED_NOT_RUN",
+  "stageA": "PREVIOUS_SCOPED_SOURCE_FIRST_PARTY_EVIDENCE_MEDIA_LIMITS_REMAIN",
+  "stageB": "PREVIOUS_RICH_V2_SOURCE_CONTENT_AUTHORED_RUNTIME_UNVERIFIED",
+  "stageC": "PREPARED_COURSE_LOCAL_ONLY_SHARED_ROUTE_NOT_CONNECTED",
+  "selectedPractice": "NOT_CONNECTED",
+  "sharedDependencyIssue": "https://github.com/EIAS79/Edulytics/issues/605",
+  "sharedPaths": [
+    "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+  ],
+  "nextLessonPermission": false,
+  "readyForStageD": false,
+  "stageD": "NOT_STARTED",
+  "closureSHA": null,
+  "unitStatus": "UNIT_IN_PROGRESS_BLOCKED_L02",
+  "additionalExecutionRules": "G6_STAGE_ABC_SEQUENTIAL_FAST_EXECUTION_RULES.md"
+}
