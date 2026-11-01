@@ -844,6 +844,20 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original Activity2 learner should DISPLAY image and ask classmates for", "too high,too low,about right estimates", "their grades only", "secret numerical passwords"),
         new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original Activity2 classmates must have quiet think and peer discussion before sharing", "yes", "no", "only one student speaks"),
         new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Source count of umbrellas exact from credited photo is determined by text-only description?", "no", "yes", "always100"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Original warmup28÷14", "2", "3", "1"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Original warmup70÷14", "5", "6", "7"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Original warmup98÷14", "7", "5", "8"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Original warmup350÷14", "25", "20", "35"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity1 30÷15", "2", "3", "20"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity1 45÷15", "3", "2", "30"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity1 300÷15", "20", "10", "30"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity2 Option1 220÷22", "10", "20", "11"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity2 Option1 66÷22", "3", "2", "6"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity2 Option2 260÷26", "10", "20", "2"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity2 Option2 260÷13", "20", "10", "26"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity3 430÷43", "10", "43", "100"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source activities ask student to CREATE additional expressions, is there one unique set?", "no", "yes", "always4 fixed"),
+        new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Original Number Talk should include student reasoning for choice of next term?", "yes", "no", "answers only"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

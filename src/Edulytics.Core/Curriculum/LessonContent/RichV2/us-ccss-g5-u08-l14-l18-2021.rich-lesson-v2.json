@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l14-l18-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u08-l14-l18-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -498,11 +498,17 @@
       "CultureCode": "en",
       "Title": "Number Talk PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: the learner DESIGNS one or more Number Talk sequences to help classmates reason about dividing whole numbers by two-digit divisors using connections among expressions. The official 2021 task intentionally leaves multiple blanks for pupil-authored questions; any fixed list of answers can only be an exemplar, not the mandated completion.",
-        "Activity 1 — sample continuation: original sequence 40÷20=2,60÷20=3,400÷20=20 can be followed by420÷20=21. Explain how400÷20 and20÷20 combine to make420÷20 rather than presenting unrelated computations. An acceptable alternative might emphasize factor-of-ten scaling or another quotient relationship.",
-        "Activity 2 — design a second number talk: start with 240÷24=10 and72÷24=3; add 312÷24=13 and480÷24=20. Invite learners to describe how combining ten and three groups or doubling a known quotient creates convenient values. The original source accepts multiple choices; ask the learner to explain what their sequence teaches, then facilitate the discussion with a small group.",
-        "Activity 3 — extended source-like example: start 510÷51=10, then add102÷51=2,612÷51=12,714÷51=14. The selected expressions keep the same divisor and create useful patterns. Ask classmates to anticipate the quotient BEFORE computation, and document what they actually notice. Do not invent peers' responses.",
-        "Assessment: the teacher checks logical sequencing, at least one usable division strategy, each nonzero divisor, explanation of relationships, and student-led presentation/discussion. Numeric quotient checks are not complete source-task acceptance."
+        "Original IM2021 G5 U08:L16 transfers the division NUMBER TALK routine to students who DESIGN continuing sequences of expressions, justify their choice of the next problem, and facilitate comparative mental strategies.",
+        "Warm-up original four quotients28÷14=2,70÷14=5,98÷14=7,350÷14=25. Students should connect each to multiples of14 rather than mindless computation.",
+        "Activity1 Number Talk Design1 original30÷15=2,45÷15=3,300÷15=20, then student writes a FOURTH expression of their choice and explains why it follows the original sequence.",
+        "Activity2 Design2 lets pupils choose Option1 220÷22=10 and66÷22=3 then add TWO original expressions; or Option2 260÷26=10 and260÷13=20 then TWO new expressions. Choices and mathematical relationships student-generated, not a publisher exact key.",
+        "Activity3 Design3 original430÷43=10 then learner writes THREE new expressions and explains each. Original teacher reflection, student planning and facilitation remain TEACHER_REVIEW_REQUIRED; bounded exact digital choices cover printed fixed quotients only.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: the learner DESIGNS one or more Number Talk sequences to help classmates reason about dividing whole numbers by two-digit divisors using connections among expressions. The official 2021 task intentionally leaves multiple blanks for pupil-authored questions; any fixed list of answers can only be an exemplar, not the mandated completion.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — sample continuation: original sequence 40÷20=2,60÷20=3,400÷20=20 can be followed by420÷20=21. Explain how400÷20 and20÷20 combine to make420÷20 rather than presenting unrelated computations. An acceptable alternative might emphasize factor-of-ten scaling or another quotient relationship.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — design a second number talk: start with 240÷24=10 and72÷24=3; add 312÷24=13 and480÷24=20. Invite learners to describe how combining ten and three groups or doubling a known quotient creates convenient values. The original source accepts multiple choices; ask the learner to explain what their sequence teaches, then facilitate the discussion with a small group.",
+        "Optional previous source-aligned or independently authored extension — Activity 3 — extended source-like example: start 510÷51=10, then add102÷51=2,612÷51=12,714÷51=14. The selected expressions keep the same divisor and create useful patterns. Ask classmates to anticipate the quotient BEFORE computation, and document what they actually notice. Do not invent peers' responses.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the teacher checks logical sequencing, at least one usable division strategy, each nonzero divisor, explanation of relationships, and student-led presentation/discussion. Numeric quotient checks are not complete source-task acceptance."
       ],
       "KeyConcepts": [
         {
@@ -526,7 +532,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Complete a connected sequence",
+          "Title": "Source exact 1 — Design Number Talks",
+          "Question": "Original warmup28÷14",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2",
+          "Check": "Original numeric source example; incorrect distractors 3 and 1 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Design Number Talks",
+          "Question": "Original warmup70÷14",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "5",
+          "Check": "Original numeric source example; incorrect distractors 6 and 7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Design Number Talks",
+          "Question": "Original warmup98÷14",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "7",
+          "Check": "Original numeric source example; incorrect distractors 5 and 8 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Design Number Talks",
+          "Question": "Original warmup350÷14",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "25",
+          "Check": "Original numeric source example; incorrect distractors 20 and 35 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Complete a connected sequence",
           "Question": "Given40÷20,60÷20,400÷20, propose a meaningful next expression.",
           "Method": "Independent exemplar and task rubric, NOT evidence a pupil has created or facilitated an original classroom task.",
           "Steps": [
@@ -538,7 +592,7 @@
           "Check": "Several other continuations may be valid."
         },
         {
-          "Title": "Combine known quotients",
+          "Title": "Optional existing extension — Combine known quotients",
           "Question": "Why is312÷24=13?",
           "Method": "Independent exemplar and task rubric, NOT evidence a pupil has created or facilitated an original classroom task.",
           "Steps": [
@@ -550,7 +604,7 @@
           "Check": "24×13=312."
         },
         {
-          "Title": "Build an extension",
+          "Title": "Optional existing extension — Build an extension",
           "Question": "Add another related expression after510÷51=10.",
           "Method": "Independent exemplar and task rubric, NOT evidence a pupil has created or facilitated an original classroom task.",
           "Steps": [
@@ -572,18 +626,89 @@
           "Mistake": "Assume one published answer uniquely completes an open Number Talk",
           "WhyWrong": "Many sequences can develop a valid strategy.",
           "Correction": "Teacher reviews an original sequence and why its progression helps classmates."
+        },
+        {
+          "Mistake": "Fabricate learner-selected images, peer responses or exact source figure geometry as a precomputed single-answer item.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Keep source student-generated tasks as teacher-scored and use bounded source question families only for procedural rules or fixed expressions."
         }
       ],
       "SummaryPoints": [
-        "Divide multi-digit numbers using related multiples and additive quotient reasoning.",
-        "A Number Talk design must be mathematically coherent and genuinely authored by the learner.",
-        "Teacher verifies facilitation and explanation; an automatically checked quotient is partial.",
-        "Provenance: 2021 IM K–5 Grade 5 Unit 8 Lesson 16, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-16/lesson.html. Teacher activity and Student Facing HTML read-only on explicitly approved Our-CS through Primary. Student-owned selected media, original Student Task PDF, source card art, protected answers and per-asset rights are NOT verified. Exemplars here were newly authored for Edulytiks, never submitted as learner work."
+        "Source warmup2,5,7,25.",
+        "Activity1 given2,3,20; Activity2 options10/3 or10/20.",
+        "Activity3 first quotient10 with three student-authored followups.",
+        "Optional prior: Divide multi-digit numbers using related multiples and additive quotient reasoning.",
+        "Optional prior: A Number Talk design must be mathematically coherent and genuinely authored by the learner.",
+        "Optional prior: Teacher verifies facilitation and explanation; an automatically checked quotient is partial.",
+        "Optional prior: Provenance: 2021 IM K–5 Grade 5 Unit 8 Lesson 16, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-16/lesson.html. Teacher activity and Student Facing HTML read-only on explicitly approved Our-CS through Primary. Student-owned selected media, original Student Task PDF, source card art, protected answers and per-asset rights are NOT verified. Exemplars here were newly authored for Edulytiks, never submitted as learner work."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Number Talk PLC Activity — exemplar and review rubric",
+          "Title": "Design Number Talks — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup28÷14",
+              "Cells": [
+                "2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup70÷14",
+              "Cells": [
+                "5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup98÷14",
+              "Cells": [
+                "7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup350÷14",
+              "Cells": [
+                "25",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Activity1 30÷15",
+              "Cells": [
+                "2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Activity1 45÷15",
+              "Cells": [
+                "3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Activity1 300÷15",
+              "Cells": [
+                "20",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Activity2 Option1 220÷22",
+              "Cells": [
+                "10",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Number Talk PLC Activity — exemplar and review rubric",
           "Description": "Original accessible planning/critique template; not reproduction of publisher image, photo, cards or worksheet.",
           "Rows": [
             {
