@@ -1579,6 +1579,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g5.u05.l02.original_grid_thousandth_values", "usccss.g5.u05.l02.original_fifteen_hundredths_critic"],
             "IM2021_G5_U05_L02_DECIMAL_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // IM K5 2021 G5 U08:L11: source-aligned bounded math practice
+        // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U08:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U08:L11", "fractions.add_subtract",
+            "G5_SOURCE_UNIT8_LESSON_11_MATH_APPLICATION",
+            ["usccss.g5.u08.l11.source_fraction_subtraction_comparison_games"],
+            "IM2021_G5_U08_L11_SOURCE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM K5 2021 G5 U08:L10: source-aligned bounded math practice
         // source subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U08:L10"] = new LessonPracticeContract(

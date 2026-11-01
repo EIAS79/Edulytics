@@ -796,6 +796,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original Smallest Sum game chooses player with", "smaller sum", "greater sum", "equal only"),
         new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original source EACH sum game has how many rounds?", "4", "2", "6"),
         new("usccss.g5.u08.l10.source_fraction_sum_strategic_games", "Original source fraction digit blanks after a spinner roll can be changed?", "no", "yes", "only after final round"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original warmup2/3−1/6", "1/2", "1/6", "3/6"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original warmup2/3−1/2", "1/6", "1/2", "3/6"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original warmup2/3−4/6", "zero", "1/6", "2/6"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original warmup2/3−1/4", "5/12", "3/12", "7/12"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original Greatest Difference winning value is", "largest difference", "smallest difference", "largest sum"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original game has four blank numerator/denominator slots per round?", "yes", "no", "only two"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original source number set for Smallest Difference", "1,1,2,2,3,4,5,6", "1,2,3,4,5,6,7,8", "2,3,4,5,6,7,8,9"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original Smallest Difference activity uses HOW MANY fraction differences whose total is compared?", "2", "1", "4"),
+        new("usccss.g5.u08.l11.source_fraction_subtraction_comparison_games", "Original spinner number placement change allowed after writing?", "no", "yes", "only at the end"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
