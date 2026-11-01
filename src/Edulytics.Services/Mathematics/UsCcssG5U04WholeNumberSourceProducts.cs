@@ -53,6 +53,15 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 200 and 5", "200 × 5", 1000, "partial-product contribution"),
         new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 40 and 5", "40 × 5", 200, "partial-product contribution"),
         new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 5 and 5", "5 × 5", 25, "partial-product contribution"),
+        new("usccss.g5.u04.l04.original_carried_multi_digit_products", "Original source U04:L04 standard algorithm multiplication 318 by 3; composing place-value units must be explained", "318 × 3", 954, "whole-number product"),
+        new("usccss.g5.u04.l04.original_carried_multi_digit_products", "Original source U04:L04 standard algorithm multiplication 3615 by 4; composing place-value units must be explained", "3615 × 4", 14460, "whole-number product"),
+        new("usccss.g5.u04.l04.original_carried_multi_digit_products", "Original source U04:L04 standard algorithm multiplication 16023 by 3; composing place-value units must be explained", "16023 × 3", 48069, "whole-number product"),
+        new("usccss.g5.u04.l04.original_carried_multi_digit_products", "Original source U04:L04 standard algorithm multiplication 27326 by 3; composing place-value units must be explained", "27326 × 3", 81978, "whole-number product"),
+        new("usccss.g5.u04.l04.original_carried_multi_digit_products", "Original source U04:L04 standard algorithm multiplication 10215 by 6; composing place-value units must be explained", "10215 × 6", 61290, "whole-number product"),
+        new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 3", "3 × 3", 9, "exact result"),
+        new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 20", "3 × 20", 60, "exact result"),
+        new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 600", "3 × 600", 1800, "exact result"),
+        new("usccss.g5.u04.l04.original_warmup_partial_products", "Original source U04:L04 Number Talk partial product 3 by 623", "3 × 623", 1869, "exact result"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

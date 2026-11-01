@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -553,11 +553,12 @@
       "CultureCode": "en",
       "Title": "Standard Algorithm: One-digit and Multi-digit Numbers with Composing",
       "ExplanationParagraphs": [
-        "Learning goal: interpret and carry newly composed tens, hundreds or thousands correctly when multiplying a multi-digit number (up to five digits) by one digit. This lesson's teacher activity asks students to explain where each carried unit came from, not memorize an unmotivated digit-shift procedure.",
-        "Warm-up: mentally calculate 3×7, 3×30, 3×200 and 3×237. See the three partial contributions 21,90,600 and combine to 711; relate that to what the compact standard algorithm records.",
-        "Activity 1 — composition: for 247×3, multiply ones 7×3=21, write 1 one and carry 2 tens. Multiply tens 4×3+2=14 tens, write 4 tens and carry 1 hundred. Multiply hundreds 2×3+1=7 hundreds, giving 741. Connect each written compact digit and carried mark with 600+120+21.",
-        "Activity 2 — five-digit factors: find 12,345×6 with place-by-place composing. Independently check the result 74,070 using 12,000×6=72,000 and 345×6=2070. Prompt students to explain in words why the zero in the hundreds position of 74,070 records a composed group of 20 hundreds correctly.",
-        "Assessment: exactly graded products and carry checks can support the algorithm, but source learner explanation of the carried digits and peer revision must be reviewed; an isolated correct product is not evidence of that conceptual understanding."
+        "Original IM 2021 Grade5 U04:L04: multiply numbers with up to FIVE digits by a ONE-digit factor using the standard algorithm with composing across ones/tens/hundreds/thousands/ten-thousands. Student explanations must justify every carried place value; do not merely provide a black-box product.",
+        "Warm-up Number Talk Partial Product: original source 3×3=9,3×20=60,3×600=1800,3×623=1869. The three place-value terms 9+60+1800 combine into the final four-digit result. Existing prior example 3×237=711 is an optional extension, not textbook original.",
+        "Activity 1 Compose with the Standard Algorithm: Han uses partial products for 318×3: 900+30+24=954. Elena uses the standard algorithm for SAME source product. Eight ones ×3=24 ones, so she writes four ones and COMPOSES 2 tens; tens: 1×3 tens plus two carried tens gives FIVE tens (the digit 5 in 954); hundreds 3×3=9 hundreds. Students interpret the little carried 2 and the resulting 5 in terms of units.",
+        "Activity 2 Use the Standard Algorithm: original source four expressions are 3615×4=14460, 16023×3=48069, 27326×3=81978 and 10215×6=61290. Learners use Elena's compact column strategy, align all places and handle composing through zeros. The original source asks learners to explain their own recorded arithmetic, which remains teacher reviewed.",
+        "Independent Edulytiks Cool-down uses 21456×3=64368 and asks for a carried-place explanation. Original publisher Cool-down remains gated and was not copied; exact digital choice does not substitute for the original vertical working and student explanation.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -581,7 +582,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Explain every carry in 247×3",
+          "Title": "Original 318×3: Han and Elena",
+          "Question": "Explain Han's partial products and Elena's carried 2 and digit 5 for 318×3.",
+          "Method": "Connect tens regrouping to expanded place-value products.",
+          "Steps": [
+            "8×3=24 ones; record four ones and carry two tens.",
+            "1 ten×3 plus 2 carried tens =5 tens.",
+            "3 hundreds×3=9 hundreds; answer 954."
+          ],
+          "Answer": "954, with carry 2 tens and written 5 tens.",
+          "Check": "900+30+24=954."
+        },
+        {
+          "Title": "Original five-digit by one-digit calculations",
+          "Question": "Calculate 3615×4,16023×3,27326×3,10215×6.",
+          "Method": "The source standard algorithm with composing.",
+          "Steps": [
+            "3615×4=14460.",
+            "16023×3=48069.",
+            "27326×3=81978 and 10215×6=61290."
+          ],
+          "Answer": "14460; 48069; 81978; 61290.",
+          "Check": "Check zeros and regrouped place-value columns."
+        },
+        {
+          "Title": "Original Number Talk 3×623",
+          "Question": "Calculate 3×3,3×20,3×600,3×623 mentally.",
+          "Method": "Distribute multiplication across hundreds/tens/ones.",
+          "Steps": [
+            "3×3=9 and 3×20=60.",
+            "3×600=1800.",
+            "Sum 1800+60+9."
+          ],
+          "Answer": "9,60,1800,1869.",
+          "Check": "3×623=1869."
+        },
+        {
+          "Title": "Optional existing extension — Explain every carry in 247×3",
           "Question": "Calculate 247×3 and name the units carried.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -593,7 +630,7 @@
           "Check": "600+120+21=741."
         },
         {
-          "Title": "Five-digit product with composing",
+          "Title": "Optional existing extension — Five-digit product with composing",
           "Question": "Calculate 12,345×6.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -605,7 +642,7 @@
           "Check": "72,000+2070=74,070."
         },
         {
-          "Title": "Refute an omitted carry",
+          "Title": "Optional existing extension — Refute an omitted carry",
           "Question": "A learner computes 247×3 as 621. Identify why that cannot be correct.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -627,50 +664,77 @@
           "Mistake": "Omit a zero place in a large result",
           "WhyWrong": "A zero may be a valid place holder after composing; skipping it shifts all higher digits.",
           "Correction": "Use place-value columns and check against an estimate."
+        },
+        {
+          "Mistake": "Use 247×3 and warm-up 3×237 as if they were the textbook's Han/Elena example",
+          "WhyWrong": "Original source uses 318×3 and specifically asks what carried 2 and written 5 in 954 represent.",
+          "Correction": "Teach 318×3 carry semantics and source five-digit one-digit exercises; retain unrelated correct examples as optional extensions."
         }
       ],
       "SummaryPoints": [
-        "Each carried mark denotes newly composed units of the next place.",
-        "A standard-algorithm digit should be justified through partial products.",
-        "Teacher review is needed for explanations and peer revisions, beyond a numeric product.",
-        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-4/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+        "Original Number Talk 3×3,3×20,3×600,3×623 ->9,60,1800,1869.",
+        "Source Han/Elena both compute 318×3=954; carried 2 represents two tens, final 5 five tens.",
+        "Source Activity2 3615×4=14460,16023×3=48069,27326×3=81978,10215×6=61290.",
+        "Student compact algorithm, place-value carrying and original diagram must be teacher reviewed.",
+        "Edulytiks independent cooldown 21456×3=64368 teaches carrying."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Standard Algorithm: One-digit and Multi-digit Numbers with Composing — place-value model",
-          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Title": "Original 318×3 Han versus Elena comparison",
+          "Description": "First-party decimal place table; teacher reviews original source algorithm image.",
           "Rows": [
             {
-              "Label": "Stage",
+              "Label": "Han's partial products",
               "Cells": [
-                "Ones",
-                "Tens",
-                "Hundreds"
+                "900",
+                "30",
+                "24"
               ]
             },
             {
-              "Label": "247×3",
+              "Label": "Elena carried tens",
               "Cells": [
-                "7×3=21",
-                "4×3+2=14",
-                "2×3+1=7"
+                "8×3=24 ones",
+                "carry 2 tens",
+                "3 tens+2 tens=5 tens"
               ]
             },
             {
-              "Label": "Written digit",
+              "Label": "Final product",
               "Cells": [
-                "1",
-                "4",
-                "7"
+                "954"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source Activity 2 products",
+          "Description": "Exact original multiplication expression answers; vertical algorithm handwriting requires teacher review.",
+          "Rows": [
+            {
+              "Label": "3615×4",
+              "Cells": [
+                "14460"
               ]
             },
             {
-              "Label": "Carries forward",
+              "Label": "16023×3",
               "Cells": [
-                "2 tens",
-                "1 hundred",
-                "None"
+                "48069"
+              ]
+            },
+            {
+              "Label": "27326×3",
+              "Cells": [
+                "81978"
+              ]
+            },
+            {
+              "Label": "10215×6",
+              "Cells": [
+                "61290"
               ]
             }
           ]
