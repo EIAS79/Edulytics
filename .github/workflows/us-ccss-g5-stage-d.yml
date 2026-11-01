@@ -44,6 +44,8 @@ jobs:
         run: node --test tests/academic-us-ccss-g5-local-html-snapshot-stage-d.test.cjs
       - name: Prove original IM2021 teacher lessons contain student-facing source sections without assuming parity
         run: node --test tests/academic-us-ccss-g5-im2021-student-facing-locator.test.cjs
+      - name: Validate owner academic consent is scoped to Grade 5 only and cannot authorize unverified release
+        run: node --test tests/academic-us-ccss-g5-owner-academic-consent-stage-d.test.cjs
   source-element-evidence:
     name: grade5-source-element-provenance-and-approval-fail-closed
     runs-on: ubuntu-24.04

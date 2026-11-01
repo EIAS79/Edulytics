@@ -70,7 +70,9 @@ function shard(name){
   console.log('G5_STAGE_D_SHARD_END '+name+' node='+node.length+' cs='+cs+' nodeResult='+process.exitCode);
 }
 function academic(){
+  const ownerConsent=ownerAcademicConsent();
   const q=inventory(); const blockers=[...q.errors];
+  if(!ownerConsent.ownerContentConsent)blockers.push('GRADE5_OWNER_ACADEMIC_CONSENT_NOT_RECORDED');
   for(const row of q.records){
     const source=read(row.evidence);
     if(source.status==='A_C_EXPLICIT_GAP'||source.academicAccepted===false||source.sourceCoverage100Percent===false)
@@ -81,7 +83,9 @@ function academic(){
   // No Stage D test evidence or authorized human reviewer in the handoff; never promote on static files alone.
   blockers.push('G5_TECHNICAL_AND_AUTHENTICATED_E2E_CANDIDATE_EVIDENCE_NOT_COLLECTED');
   blockers.push('G5_ORIGINAL_IMAGE_PDF_RIGHTS_AND_TEACHER_APPROVAL_NOT_CERTIFIED');
-  console.error('G5_STAGE_D_ACADEMIC_NO_GO '+JSON.stringify({decision:'NO_GO_TECHNICAL',blockerCount:blockers.length,sample:blockers.slice(0,35)}));
+  console.error('G5_STAGE_D_ACADEMIC_NO_GO '+JSON.stringify({decision:'NO_GO_TECHNICAL',
+    ownerAcademicConsent:ownerConsent.ownerDecision,
+    blockerCount:blockers.length,sample:blockers.slice(0,35)}));
   process.exitCode=2;
 }
 
@@ -202,7 +206,30 @@ function original2021StudentFacingLocator(){
   return lookup;
 }
 
+
+function ownerAcademicConsent(){
+  const file=rel+'grade5-owner-academic-consent-20261101.json';
+  if(!exists(file))throw Error('GRADE5_OWNER_CONSENT_RECORD_MISSING');
+  const c=read(file);
+  if(c.ownerDecision!=='OWNER_ACADEMIC_CONSENT_GRANTED' ||
+      c.scope?.repository!=='EIAS79/Edulytics' ||
+      c.scope?.prNumber!==596 ||
+      c.scope?.grade!=='G5' || c.scope?.stage!=='D' ||
+      c.scope?.lessonCount!==148 || c.scope?.requiredEntryState!=='READY_FOR_STAGE_D' ||
+      c.authorizationClaims?.ownerConsentsToReviewedGrade5Content!==true ||
+      c.authorizationClaims?.ownerConsentsTo107IdentifiedTextChanges!==true ||
+      c.ownerSignedCryptographicDocument!==false ||
+      !/^https:\/\/github\.com\/EIAS79\/Edulytics\/issues\/619#issuecomment-\d+$/.test(c.publicDecisionEvidence||'') ||
+      Object.values(c.certificationExclusions||{}).some(v=>v!==false) ||
+      Object.keys(c.certificationExclusions||{}).length!==6)
+    throw Error('GRADE5_OWNER_CONSENT_SCOPE_OR_EVIDENCE_INVALID');
+  return {ownerDecision:c.ownerDecision,publicDecisionEvidence:c.publicDecisionEvidence,
+    ownerContentConsent:true,individualSourceParityCertified:false,
+    thirdPartyRightsCertified:false,studentTeacherE2ECertified:false,releaseCertified:false};
+}
+
 function sourceEvidenceAudit(){
+  const ownerConsent=ownerAcademicConsent();
   const q=inventory();
   const editionLookup=grade5EditionManifests();
   const firstEditionStudentFacing=original2021StudentFacingLocator();
@@ -233,6 +260,7 @@ function sourceEvidenceAudit(){
       blockers});
   }
   const result={schemaVersion:1,reportType:'SOURCE_ELEMENT_EVIDENCE_DIAGNOSTIC_NOT_ACADEMIC_CERTIFICATION',
+    ownerAcademicConsent:ownerConsent,
     gitCandidateSha:cp.execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim(),
     scopeLessons:148,lessonCount:rows.length,
     rawElementArrayLessons:rows.filter(x=>x.hasSourceElementArray).length,
@@ -270,4 +298,4 @@ if(require.main===module){
   else if(mode==='source-evidence')sourceEvidenceAudit();
   else throw Error('Unknown mode '+mode);
 }
-module.exports={analyzeElementInventory,analyzeEditionPair,grade5EditionManifests,original2021StudentFacingLocator};
+module.exports={analyzeElementInventory,analyzeEditionPair,grade5EditionManifests,original2021StudentFacingLocator,ownerAcademicConsent};
