@@ -638,6 +638,15 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Original activity toothpicks required to build a rectangle", "6", "4", "3"),
         new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Is a rhombus with four equal sides but nonright angles a square?", "no", "yes", "only if turned"),
         new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Source square has four equal sides and four right angles", "true", "false", "unknown"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source always/sometimes/never: a rhombus is a square", "sometimes", "always", "never"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source always/sometimes/never: a square is a rhombus", "always", "sometimes", "never"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source always/sometimes/never: a triangle is a quadrilateral", "never", "sometimes", "always"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source always/sometimes/never: a square is a rectangle", "always", "sometimes", "never"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source always/sometimes/never: a rectangle is a parallelogram", "always", "sometimes", "never"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source always/sometimes/never: a parallelogram is a rhombus", "sometimes", "always", "never"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source INCLUSIVE trapezoid definition: a trapezoid is a parallelogram", "sometimes", "always", "never"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source find a square that is NOT a rectangle is", "impossible", "possible", "any rhombus"),
+        new("usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never", "Source find a rhombus that is NOT a square is", "possible", "impossible", "only square"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

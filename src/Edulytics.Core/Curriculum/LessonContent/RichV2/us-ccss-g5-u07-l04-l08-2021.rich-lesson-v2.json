@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -773,11 +773,17 @@
       "CultureCode": "en",
       "Title": "Rectangles and Squares",
       "ExplanationParagraphs": [
-        "Goal: reason using always/sometimes/never about shape class hierarchy, recognize which requested quadrilateral combinations are IMPOSSIBLE and give both true examples and counterexamples for 'sometimes'. The source is an attribute-based card game with a gallery walk, not just diagram identification.",
-        "Warm-up: consider a square and a rectangle with different adjacent lengths. Both have right angles, yet only the first necessarily has four equal sides. Ask whether every rectangle must be a square and why a long rectangle is a counterexample.",
-        "Activity 1 — original clue pairs: choose or draw one quadrilateral that is not a parallelogram, a rhombus that is square, a rhombus that is not square, a rectangle that is not square, and a parallelogram that is not a rectangle. Explain why a 'square that is not a rectangle' cannot exist. Under the inclusive source convention, a rectangle is also a trapezoid; a figure that is a trapezoid and NOT parallelogram can have just one parallel pair.",
-        "Activity 2 — classify statements: 'Rhombus is a square': SOMETIMES (right angles required); 'Square is a rhombus': ALWAYS; 'Triangle is quadrilateral': NEVER; 'Square is a rectangle': ALWAYS; 'Rectangle is parallelogram': ALWAYS; 'Parallelogram is rhombus': SOMETIMES. Under the source inclusive trapezoid definition, 'Trapezoid is parallelogram': SOMETIMES. For every SOMETIMES answer supply two diagrams, one supporting example and one counterexample.",
-        "Assessment: card use-once constraint, physically meaningful drawings, correct hierarchy definitions and counterexample justifications are teacher-judged; numerical property tests cannot auto-pass the source art/communication task."
+        "Original 2021 Grade5 U07:L07 synthesizes the hierarchy with a graphic Venn relationship and ALWAYS/SOMETIMES/NEVER claims. Square is always rectangle and rhombus, both parallelograms; inclusive trapezoid contains all parallelograms but has other members too.",
+        "Warm-up What Do You Know About This Shape? depends on original figure, requiring actual teacher inspection. No invented image attributes are promoted as the original drawing.",
+        "Activity1 Quadrilateral Clues gives seven exact card-selection requests including quadrilateral not parallelogram, rhombus square, rhombus not square, trapezoid not rectangle, rectangle not square, parallelogram not rectangle and square NOT rectangle. Last is IMPOSSIBLE; partner may use each source figure only once.",
+        "Activity2 prints seven ALWAYS/SOMETIMES/NEVER statements; rhombus sometimes square, square always rhombus, triangle never quadrilateral, square always rectangle, rectangle always parallelogram, parallelogram sometimes rhombus, trapezoid sometimes parallelogram. For SOMETIMES, pupils must actually draw both examples and counterexamples.",
+        "Source cooldown asks placement in Venn diagram and is diagram-based. Bounded selected items support property reasoning but original source diagrams, card reuse and teacher sketches still require visual validation.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: reason using always/sometimes/never about shape class hierarchy, recognize which requested quadrilateral combinations are IMPOSSIBLE and give both true examples and counterexamples for 'sometimes'. The source is an attribute-based card game with a gallery walk, not just diagram identification.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: consider a square and a rectangle with different adjacent lengths. Both have right angles, yet only the first necessarily has four equal sides. Ask whether every rectangle must be a square and why a long rectangle is a counterexample.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original clue pairs: choose or draw one quadrilateral that is not a parallelogram, a rhombus that is square, a rhombus that is not square, a rectangle that is not square, and a parallelogram that is not a rectangle. Explain why a 'square that is not a rectangle' cannot exist. Under the inclusive source convention, a rectangle is also a trapezoid; a figure that is a trapezoid and NOT parallelogram can have just one parallel pair.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — classify statements: 'Rhombus is a square': SOMETIMES (right angles required); 'Square is a rhombus': ALWAYS; 'Triangle is quadrilateral': NEVER; 'Square is a rectangle': ALWAYS; 'Rectangle is parallelogram': ALWAYS; 'Parallelogram is rhombus': SOMETIMES. Under the source inclusive trapezoid definition, 'Trapezoid is parallelogram': SOMETIMES. For every SOMETIMES answer supply two diagrams, one supporting example and one counterexample.",
+        "Optional previous source-aligned or independently authored extension — Assessment: card use-once constraint, physically meaningful drawings, correct hierarchy definitions and counterexample justifications are teacher-judged; numerical property tests cannot auto-pass the source art/communication task."
       ],
       "KeyConcepts": [
         {
@@ -801,7 +807,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Classify rhombus-square relation",
+          "Title": "Source exact 1 — Rectangles and Squares",
+          "Question": "Source always/sometimes/never: a rhombus is a square",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "sometimes",
+          "Check": "Original numeric source example; incorrect distractors always and never must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Rectangles and Squares",
+          "Question": "Source always/sometimes/never: a square is a rhombus",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "always",
+          "Check": "Original numeric source example; incorrect distractors sometimes and never must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Rectangles and Squares",
+          "Question": "Source always/sometimes/never: a triangle is a quadrilateral",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "never",
+          "Check": "Original numeric source example; incorrect distractors sometimes and always must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Rectangles and Squares",
+          "Question": "Source always/sometimes/never: a square is a rectangle",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "always",
+          "Check": "Original numeric source example; incorrect distractors sometimes and never must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Classify rhombus-square relation",
           "Question": "Is a rhombus always/sometimes/never a square?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -813,7 +867,7 @@
           "Check": "Both example and counterexample required."
         },
         {
-          "Title": "Classify square-rectangle relation",
+          "Title": "Optional existing extension — Classify square-rectangle relation",
           "Question": "Is a square always/sometimes/never a rectangle?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -825,7 +879,7 @@
           "Check": "Impossible to draw a square that is not a rectangle."
         },
         {
-          "Title": "Classify inclusive trapezoids",
+          "Title": "Optional existing extension — Classify inclusive trapezoids",
           "Question": "Is a trapezoid always/sometimes/never a parallelogram under the 2021 rule?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -847,18 +901,89 @@
           "Mistake": "Claim sometimes without a counterexample",
           "WhyWrong": "Sometimes requires existence of both a qualifying and nonqualifying instance.",
           "Correction": "Draw and verify both examples."
+        },
+        {
+          "Mistake": "Replace published source open diagrams with one invented fixed numeric-only answer",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original two-stage task, exact source terms and teacher-reviewed images with numerical choices bounded to the source properties."
         }
       ],
       "SummaryPoints": [
-        "Always/sometimes/never statements express inclusion and counterexamples.",
-        "No square can fail to be a rectangle or a rhombus.",
-        "Teacher reviews actual drawings and card-use rules.",
-        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 7: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-7/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+        "Original sequence sometimes,always,never,always,always,sometimes,sometimes.",
+        "A square that is not a rectangle is impossible.",
+        "Source student examples and card images teacher-reviewed.",
+        "Optional prior: Always/sometimes/never statements express inclusion and counterexamples.",
+        "Optional prior: No square can fail to be a rectangle or a rhombus.",
+        "Optional prior: Teacher reviews actual drawings and card-use rules.",
+        "Optional prior: 2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 7: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-7/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Rectangles and Squares — properties and examples",
+          "Title": "Rectangles and Squares — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source always/sometimes/never: a rhombus is a square",
+              "Cells": [
+                "sometimes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source always/sometimes/never: a square is a rhombus",
+              "Cells": [
+                "always",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source always/sometimes/never: a triangle is a quadrilateral",
+              "Cells": [
+                "never",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source always/sometimes/never: a square is a rectangle",
+              "Cells": [
+                "always",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source always/sometimes/never: a rectangle is a parallelogram",
+              "Cells": [
+                "always",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source always/sometimes/never: a parallelogram is a rhombus",
+              "Cells": [
+                "sometimes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source INCLUSIVE trapezoid definition: a trapezoid is a parallelogram",
+              "Cells": [
+                "sometimes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source find a square that is NOT a rectangle is",
+              "Cells": [
+                "impossible",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Rectangles and Squares — properties and examples",
           "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
           "Rows": [
             {

@@ -4,6 +4,24 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "im2021-g5-u07-l07-bounded-source-numeric-choice",
+      "representations": [
+        "numeric",
+        "diagram"
+      ],
+      "status": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false
+    },
+    {
       "id": "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle",
       "version": 1,
       "skillId": "supporting.geometry.properties",
