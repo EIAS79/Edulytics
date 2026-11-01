@@ -278,5 +278,30 @@
   },
   "firstReviewHead": "bdb64370d0fc8afee988d286dc12cc606ac5464e",
   "createdUtc": "2026-10-30T12:11:25.242506+00:00",
-  "lastReviewedUtc": "2026-10-30T12:13:42.122943+00:00"
+  "lastReviewedUtc": "2026-10-30T12:13:42.122943+00:00",
+  "v2LocalStageCCandidate": {
+    "lesson": "U01:L02",
+    "stageA": "A_CLOSED_PREVIOUS",
+    "stageB": "B_CLOSED_PREVIOUS",
+    "stageC": "C_LOCAL_NUMERIC_ADAPTER_AUTHORED_NOT_SELECTED",
+    "lessonLocalAdapter": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L02PracticeAdapter.cs",
+    "lessonLocalAcceptanceTest": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L02PracticeAdapterTests.cs",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "numericFamilies": [
+      "usccss.alg2.u01.l02.geometric_fill_ratio",
+      "usccss.alg2.u01.l02.paper_conservation",
+      "usccss.alg2.u01.l02.sierpinski_shaded"
+    ],
+    "numericVariants": "geometric 4 source-aligned ratios; paper exact piece count and individual area; Sierpinski exact shaded count and individual area",
+    "verification": "Reuse existing UsCcssAlg2SequencePracticeMath exact geometric, Sierpinski count/area verifiers; bounded n, no arbitrary evaluations",
+    "excludedFromAutograding": [
+      "usccss.alg2.u01.l02.monthly_balance — source rounding ambiguity needs academic/teacher signoff",
+      "paper and Sierpinski graph labeling and proof",
+      "source two-distinct-rules explanation and publisher cooldown"
+    ],
+    "sharedFilesModified": [],
+    "selectedRuntimeContract": "NOT_REGISTERED_REQUIRES_SEPARATE_ADMIN_GRANT",
+    "readyForStageD": false,
+    "closureSHA": null
+  }
 }
