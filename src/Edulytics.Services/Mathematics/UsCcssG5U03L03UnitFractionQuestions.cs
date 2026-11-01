@@ -59,7 +59,7 @@ public static class UsCcssG5U03L03UnitFractionQuestions
               (second == 6 ? "This is the predicted NEXT diagram after the source A–D pattern. " :
                "This matches one member of the source A–D four-column pattern. ") +
               "Exactly one equal cell is shaded. "
-            : $"Calculate the source unit-fraction expression " +
+            : $"Calculate the ORIGINAL source unit-fraction expression " +
               (p["reversed"] == 0 ? $"(1/{first}) × (1/{second})" :
                $"(1/{second}) × (1/{first})") + " of the SAME original whole. ";
         string prompt = request +
