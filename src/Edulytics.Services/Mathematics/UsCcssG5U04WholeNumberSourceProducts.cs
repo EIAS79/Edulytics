@@ -111,6 +111,9 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse bluebird, rectangular interior floor 5 inches by 5 inches, MAXIMUM height 12 inches", "5 × 5 × 12", 300, "cubic inches (maximum volume)"),
         new("usccss.g5.u04.l09.source_birdhouse_min_volumes", "IM 2021 source birdhouse swallow, rectangular interior floor 6 inches by 6 inches, MINIMUM height 6 inches", "6 × 6 × 6", 216, "cubic inches (minimum volume)"),
         new("usccss.g5.u04.l09.source_birdhouse_max_volumes", "IM 2021 source birdhouse swallow, rectangular interior floor 6 inches by 6 inches, MAXIMUM height 8 inches", "6 × 6 × 8", 288, "cubic inches (maximum volume)"),
+        new("usccss.g5.u04.l19.source_state_rectangular_area_products", "Original IM K5 2021 G5 U04:L19 source Rhode Island IDEALIZED rectangle approximate size 77km by 60km, compare to original garbage-patch rough area of 1,000,000 square kilometers (not actual surveyed state area)", "77 × 60", 4620, "square kilometers of source approximate rectangular model"),
+        new("usccss.g5.u04.l19.source_state_rectangular_area_products", "Original IM K5 2021 G5 U04:L19 source Delaware IDEALIZED rectangle approximate size 154km by 48km, compare to original garbage-patch rough area of 1,000,000 square kilometers (not actual surveyed state area)", "154 × 48", 7392, "square kilometers of source approximate rectangular model"),
+        new("usccss.g5.u04.l19.source_state_rectangular_area_products", "Original IM K5 2021 G5 U04:L19 source New Mexico IDEALIZED rectangle approximate size 596km by 552km, compare to original garbage-patch rough area of 1,000,000 square kilometers (not actual surveyed state area)", "596 × 552", 328992, "square kilometers of source approximate rectangular model"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

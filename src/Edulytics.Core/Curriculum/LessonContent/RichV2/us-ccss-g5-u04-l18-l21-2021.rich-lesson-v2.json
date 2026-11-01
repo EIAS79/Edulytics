@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -172,11 +172,13 @@
       "CultureCode": "en",
       "Title": "Trash Talk PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: reason about kilometer-sized distances and multiply large lengths to describe areas measured in SQUARE kilometers. The source introduces the vast area associated with ocean debris and a comparison with state sizes; area must NOT be conflated with how much cubic volume the waste occupies.",
-        "Warm-up: describe a first-party coastline observation of litter floating in the ocean, explaining why the waste can spread over a large region without assuming it forms a solid filled rectangular prism. Any source photographs or third-party ocean imagery are excluded.",
-        "Activity 1 — establish units: one kilometer equals1000 meters of linear distance, while one square kilometer is the area of a1-km-by-1-km square. Students estimate plausible distances around school and between towns and defend which are less, roughly equal or more than a kilometer, using real local measurements only where known.",
-        "Activity 2 — compare hypothetical rectangular map regions: one labeled ocean observation region extends700 km by500 km, with rectangular area350000 square km. A second reference land region extends1000 km by250 km, with area250000 square km. Compare the areas and conclude the first is 100000 square km larger UNDER THE EXPLICIT IDEALIZED RECTANGLE assumptions, not a precise claim about a real garbage patch or state boundary.",
-        "Assessment: the source's main tasks involve geometric estimation, large whole-number multiplication and visual map interpretation. The method chosen, units and discussion of model validity require teacher review; numeric products alone do not prove the student understands scale or whether the geographic shape is truly rectangular."
+        "Original IM 2021 G5 U04:L19 Trash Talk PLC Activity applies place-value multiplication to approximate rectangular AREAS in square kilometers, distinguishes kilometer (linear distance) from square kilometer (area), and requires reasoned real-world scale comparisons. The source estimates a Great Pacific Garbage Patch area of ABOUT 1,000,000 square kilometers; this is a textbook modeling estimate, not a current independently verified environmental measurement.",
+        "Warm-up Notice and Wonder Trash and Ice: original media shown by teacher, with source image attribution and rights assessed separately. Students notice/ask questions about accumulation, not assume trash is a solid rectangular prism or that surface area proves material volume.",
+        "Activity 1 Square Kilometers: source asks whether Mai walking TWO laps around a soccer field is about ONE kilometer; estimate with a field perimeter and explain assumptions rather than inventing an official field size. Compare distance across YOUR state, your home to school, your classroom to restroom, and a car vacation with a kilometer. These responses are context-specific and TEACHER_REVIEW_REQUIRED; a fixed universal number is unsupported.",
+        "Activity 2 So Much Trash: printed original illustrative rectangles: RHODE ISLAND ~77km long×60km wide =>4,620 square kilometers; DELAWARE ~154km×48km =>7,392 square kilometers; NEW MEXICO ~596km×552km =>328,992 square kilometers. Each modeled state area is SMALLER than source hypothetical garbage patch 1,000,000 square kilometers. A rectangular length×width estimate is not a literal present-day surveyed state area.",
+        "Original source also asks pupils to CIRCLE an estimated area on the US map that would represent the source garbage patch. Source Wikimedia/CC-BY-SA 3.0 map graphic is not silently copied, and geometric map-circling is not automatically graded; teacher scores scale reasoning and units. Existing invented 700×500 or1000×250km exercises remain optional Edulytics extensions, not the source's comparison numbers.",
+        "Numerical exact-choice practice covers only the three original dimension products using the existing multiplication adapter; it cannot claim full verification of soccer-field measurement, state-wide distances, map circling or current environmental claims. Independently authored teacher Cool-down compares a new pair of idealized rectangles.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -200,7 +202,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Area of hypothetical ocean region",
+          "Title": "Original Rhode Island comparison",
+          "Question": "Printed source models Rhode Island as about77km×60km. Compare with source 1,000,000 km².",
+          "Method": "Idealized rectangular model area in square kilometers, not linear distance.",
+          "Steps": [
+            "77×60=4,620 square kilometers.",
+            "Compare4,620 with1,000,000.",
+            "Source garbage patch is far larger than the modeled Rhode Island rectangle."
+          ],
+          "Answer": "4,620 km²; smaller than1,000,000 km².",
+          "Check": "Units km×km=km²."
+        },
+        {
+          "Title": "Original Delaware comparison",
+          "Question": "Printed source models Delaware as154km long by48km wide. Which area is larger?",
+          "Method": "Exact multi-digit multiplication in source rectangular approximation.",
+          "Steps": [
+            "154×(50−2)=7,700−308.",
+            "Area model yields7,392km².",
+            "7,392 is less than1,000,000."
+          ],
+          "Answer": "7,392km², smaller than modeled garbage patch.",
+          "Check": "154×48=7392."
+        },
+        {
+          "Title": "Original New Mexico comparison and map task",
+          "Question": "Original source models New Mexico as596×552km. Compare and explain scale.",
+          "Method": "Use distributive law and a drawn area estimate.",
+          "Steps": [
+            "596×(500+50+2)=298000+29800+1192.",
+            "Total328,992km².",
+            "Still less than1,000,000km²; map-size drawing needs teacher review."
+          ],
+          "Answer": "328,992km²; smaller than the source's million-square-km patch.",
+          "Check": "Rectangular area is a model, not exact state boundary."
+        },
+        {
+          "Title": "Optional existing extension — Area of hypothetical ocean region",
           "Question": "Estimate area of an idealized700-by-500-km rectangle.",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -212,7 +250,7 @@
           "Check": "700 km×500 km=350000 km²."
         },
         {
-          "Title": "Compare with reference region",
+          "Title": "Optional existing extension — Compare with reference region",
           "Question": "A reference rectangle is1000 km by250 km. Find its area.",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -224,7 +262,7 @@
           "Check": "Both regions are schematic; no actual state area is inferred."
         },
         {
-          "Title": "Find area difference",
+          "Title": "Optional existing extension — Find area difference",
           "Question": "How much greater is350000 km² than250000 km²?",
           "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
           "Steps": [
@@ -246,45 +284,55 @@
           "Mistake": "Treat an imagined rectangular region as an official state or ocean-garbage-patch statistic",
           "WhyWrong": "Illustrative lengths and real-world irregular geography are different.",
           "Correction": "Mark the rectangles hypothetical and distinguish maps or verified measurements from invented dimensions."
+        },
+        {
+          "Mistake": "Present unrelated invented700×500km area products as original state-comparison dimensions",
+          "WhyWrong": "Source specifically supplies 77×60 for Rhode Island,154×48 for Delaware and596×552 for New Mexico, with a map-scale activity.",
+          "Correction": "Restore the printed state dimension models and preserve the real-world open kilometer and map tasks."
         }
       ],
       "SummaryPoints": [
-        "Kilometers measure length and square kilometers measure area.",
-        "Large number multiplication and explicit assumptions help compare idealized regions.",
-        "Teacher reviews scale estimates, representation and environmental-data limitations.",
-        "Source: first-edition 2021 Illustrative Mathematics K–5 Grade 5 Unit 4 Lesson 19 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-19/lesson.html. Only public teacher and student HTML reviewed; original Student Task PDF, third-party photographs and gated source Cool-down not independently verified. All numeric models are independent Edulytiks examples."
+        "Source Mai soccer-field two laps around one km requires student estimation, not a fixed prescribed field size.",
+        "Source asks home/school/state/vacation comparisons to one kilometer; responses depend on student geography.",
+        "Printed source Rhode Island77×60=4,620km²; Delaware154×48=7,392km²; New Mexico596×552=328,992km².",
+        "All three source rectangle models are smaller than the source's ~1,000,000km² garbage patch area.",
+        "Original source US map circling and photo interpretation remain teacher reviewed with separate artwork rights."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Trash Talk PLC Activity — original modeling",
-          "Description": "First-party accessible text modeling table. No source image/photograph or personal student journal data included.",
+          "Title": "Original source state dimensions vs one-million km² model",
+          "Description": "Source numbers, reconstructed first-party arithmetic; original credited map artwork not reproduced.",
           "Rows": [
             {
-              "Label": "Hypothetical region",
+              "Label": "Rhode Island",
               "Cells": [
-                "Ocean rectangle",
-                "Reference rectangle"
+                "77km×60km",
+                "4,620km²",
+                "less than1,000,000"
               ]
             },
             {
-              "Label": "Side lengths (km)",
+              "Label": "Delaware",
               "Cells": [
-                "700×500",
-                "1000×250"
+                "154km×48km",
+                "7,392km²",
+                "less than1,000,000"
               ]
             },
             {
-              "Label": "Modeled area (km²)",
+              "Label": "New Mexico",
               "Cells": [
-                "350000",
-                "250000"
+                "596km×552km",
+                "328,992km²",
+                "less than1,000,000"
               ]
             },
             {
-              "Label": "Difference",
+              "Label": "Source garbage patch estimate",
               "Cells": [
-                "100000 km² more in first model"
+                "~1,000,000km²",
+                "textbook modeling estimate"
               ]
             }
           ]
