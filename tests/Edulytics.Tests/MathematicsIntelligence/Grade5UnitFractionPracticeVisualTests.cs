@@ -44,8 +44,9 @@ public sealed class Grade5UnitFractionPracticeVisualTests
             Assert.Contains("aria-label=", svg);
             Assert.Equal(expectedCells,
                 Regex.Matches(svg, "class='fraction-cell ").Count);
-            Assert.Equal(1,
-                Regex.Matches(svg, "class='fraction-cell fraction-shaded'").Count);
+            Assert.Single(
+                Regex.Matches(svg, "class='fraction-cell fraction-shaded'")
+                    .Cast<Match>());
             Assert.DoesNotContain("Select 1:", svg);
             Assert.DoesNotContain("1/12", svg);
             Assert.DoesNotContain("1/10", svg);
