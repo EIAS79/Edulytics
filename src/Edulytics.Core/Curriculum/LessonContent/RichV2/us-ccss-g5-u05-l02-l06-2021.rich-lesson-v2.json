@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u05-l02-l06-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -933,11 +933,18 @@
       "CultureCode": "en",
       "Title": "Compare Decimals on the Number Line",
       "ExplanationParagraphs": [
-        "Goal: represent and compare decimals to thousandths on appropriately SCALED NUMBER LINES. The source uses nested number lines 0–1 by tenths, 0–0.1 by hundredths, and 0–0.01 by thousandths, explicitly connecting a zoomed-in segment to the next finer scale.",
-        "Warm-up — notice and wonder: read a first-party text model of three lines whose endpoints are 0–1,0–0.1,0–0.01 and whose tick intervals are 0.1,0.01 and0.001 respectively. Explain that 0.001 can be plotted exactly on the thousandths line, but requires estimation between the first two ticks on a line marked only by tenths or hundredths.",
-        "Activity 1 — interpret a zoomed interval: draw a new number line from 0.530 to0.540 with marks every 0.001. Locate 0.534 on the fourth tick after0.530 and0.537 on the seventh. Explain 0.534<0.537 and compare their difference as three thousandths. The tick scale is part of the mathematical task, not incidental decoration.",
-        "Activity 2 — compare pairs on consistent scales: compare 0.230 to0.216 by rewriting0.23=0.230 and using a 0.210–0.240 line with thousandth precision. Compare0.2 with0.02 on a 0–0.3 line with hundredth marks, noting a difference of0.18; do not reverse the coordinates of tick placements when zooming.",
-        "Assessment: teacher reviews student's selection of endpoints, tick increments and exact placements as well as explanation. An isolated greater-than symbol is not enough for the original scaled line work. Publisher's nested number-line image and gated Cool-down are not copied."
+        "Original IM2021 G5 U05:L06 Compare Decimals on the Number Line: recognize NESTED number lines that zoom from a whole0–1 interval subdivided in TENTHS, to0–0.1 interval in HUNDREDTHS, to0–0.01 interval in THOUSANDTHS. A place value of a label depends on the specified scale and a correct number must sit at a mathematically consistent tick.",
+        "Warm-up Notice and Wonder Nested Lines: teacher supplies source three-line diagram and pupils explain how each entire lower line zooms into the first tick interval of the line above. Source given 0–1 by0.1;0–0.1 by0.01;0–0.01 by0.001. Original publisher figure positions and arrow placement are not independently reproduced from source image; teacher checks spatial interpretation.",
+        "Activity 1 Locate 1 Thousandth: students label ALL tick marks on each of the original number lines and indicate0.001. On the source fine-scale0–0.01 line,0.001 is the FIRST tick after zero. On a coarse line it is too small to coincide with the first full tenth/hundredth tick; learners explain where it would lie between original marks rather than falsely label 0.001 as0.01 or0.1.",
+        "Activity 2 Label and Compare Decimals: source asks pupils to choose which original line BEST compares0.534 and0.537. The thousandths differ, so a scale with step0.001 in the neighborhood of0.53 supports exact placement;0.534 <0.537. A separately authored zoomed line0.530–0.540 is a valid model but NOT stated to be one of the exact publisher line images.",
+        "Activity 3 Locate and Compare With Symbols: ORIGINAL printed pairs are0.2 >0.02,0.3 >0.14,0.23 >0.216. Write 0.200>0.020,0.300>0.140,0.230>0.216 to check equal place-value columns. Learner locates points on correct source number lines and explains each inequality.",
+        "Independent Edulytiks teacher Cool-down uses0.407 versus0.470 and a thousandth-tick number line. Selected exact decimal choice checks only correct inequalities and source tick-interval values, not original student-drawn axes, tick spacing or rationale. The original gated Cool-down and source graphics have not been independently certified.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: represent and compare decimals to thousandths on appropriately SCALED NUMBER LINES. The source uses nested number lines 0–1 by tenths, 0–0.1 by hundredths, and 0–0.01 by thousandths, explicitly connecting a zoomed-in segment to the next finer scale.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — notice and wonder: read a first-party text model of three lines whose endpoints are 0–1,0–0.1,0–0.01 and whose tick intervals are 0.1,0.01 and0.001 respectively. Explain that 0.001 can be plotted exactly on the thousandths line, but requires estimation between the first two ticks on a line marked only by tenths or hundredths.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — interpret a zoomed interval: draw a new number line from 0.530 to0.540 with marks every 0.001. Locate 0.534 on the fourth tick after0.530 and0.537 on the seventh. Explain 0.534<0.537 and compare their difference as three thousandths. The tick scale is part of the mathematical task, not incidental decoration.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — compare pairs on consistent scales: compare 0.230 to0.216 by rewriting0.23=0.230 and using a 0.210–0.240 line with thousandth precision. Compare0.2 with0.02 on a 0–0.3 line with hundredth marks, noting a difference of0.18; do not reverse the coordinates of tick placements when zooming.",
+        "Optional previous source-aligned or independently authored extension — Assessment: teacher reviews student's selection of endpoints, tick increments and exact placements as well as explanation. An isolated greater-than symbol is not enough for the original scaled line work. Publisher's nested number-line image and gated Cool-down are not copied."
       ],
       "KeyConcepts": [
         {
@@ -961,7 +968,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Plot two close decimals",
+          "Title": "Original three nested lines",
+          "Question": "Describe scale of0–1,0–0.1 and0–0.01 source number lines and locate0.001.",
+          "Method": "Each zoom subdivides one unit of previous line into10 equal next-smaller pieces.",
+          "Steps": [
+            "0–1 line tenth ticks of0.1.",
+            "0–0.1 line hundredth ticks of0.01.",
+            "0–0.01 line thousandth ticks of0.001, first after zero."
+          ],
+          "Answer": "Scale0.1,0.01,0.001; 0.001 is first fine-scale tick.",
+          "Check": "Teacher reviews original arrows, labels and drawn positions."
+        },
+        {
+          "Title": "Original compare0.534 and0.537",
+          "Question": "Which line best displays0.534 versus0.537, and which value is larger?",
+          "Method": "Use0.001 subdivisions and align thousandths.",
+          "Steps": [
+            "Both numbers have0.53 to the hundredths.",
+            "The thousandth digits are4 and7.",
+            "Thus0.534<0.537; choose fine thousandth scale."
+          ],
+          "Answer": "0.534 <0.537.",
+          "Check": "Difference is three thousandths."
+        },
+        {
+          "Title": "Original three symbol comparisons",
+          "Question": "Compare0.2 vs0.02;0.3 vs0.14;0.23 vs0.216.",
+          "Method": "Add trailing zeros without changing values, then compare place value.",
+          "Steps": [
+            "0.200>0.020.",
+            "0.300>0.140.",
+            "0.230>0.216."
+          ],
+          "Answer": "Greater than for all three source expressions.",
+          "Check": "The number-line points must agree."
+        },
+        {
+          "Title": "Optional existing extension — Plot two close decimals",
           "Question": "Locate 0.534 and0.537 on a line running 0.530–0.540 in steps of0.001.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -973,7 +1016,7 @@
           "Check": "0.537−0.534=0.003."
         },
         {
-          "Title": "Choose a sufficiently fine scale",
+          "Title": "Optional existing extension — Choose a sufficiently fine scale",
           "Question": "Which nested line shows 0.001 exactly as a marked tick:0–1 by0.1,0–0.1 by0.01, or0–0.01 by0.001?",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -985,7 +1028,7 @@
           "Check": "The first tick is0.001."
         },
         {
-          "Title": "Compare decimals with unequal places",
+          "Title": "Optional existing extension — Compare decimals with unequal places",
           "Question": "Compare0.23 with0.216 and0.2 with0.02.",
           "Method": "First-party place-value model with independently checkable decimal arithmetic and an accessible description.",
           "Steps": [
@@ -1007,18 +1050,65 @@
           "Mistake": "Plot a thousandth as a tenth",
           "WhyWrong": "The place values differ by a factor of one hundred.",
           "Correction": "Use0–0.01 with one-thousandth increments when precise position is required."
+        },
+        {
+          "Mistake": "Treat0.001 as first tick on tenths or hundredths source line or change source pairs to invented comparisons",
+          "WhyWrong": "Original nested scales are0.1,0.01 and0.001 and printed pairs have exact differences in named places.",
+          "Correction": "Restore original three source zoom scales and exact0.534/0.537 and Activity3 comparisons."
         }
       ],
       "SummaryPoints": [
-        "Nested decimal lines change the magnitude of the displayed interval and the tick step.",
-        "Choose a scale fine enough to locate and compare thousandths.",
-        "Teacher reviews number line construction and explanation, not only numerical comparison.",
-        "Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 6 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-6/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
+        "Source three nested number lines top0–1 tenths,middle0–0.1 hundredths,bottom0–0.01 thousandths.",
+        "Original locate0.001 at first thousandth tick; source spatial labeling teacher reviewed.",
+        "Compare0.534<0.537 using suitable thousandth scale.",
+        "Original 0.2>0.02,0.3>0.14,0.23>0.216; justify by aligned place value.",
+        "Numerical selected Practice does not replace tick-mark placements or original image checks.",
+        "Optional prior: Nested decimal lines change the magnitude of the displayed interval and the tick step.",
+        "Optional prior: Choose a scale fine enough to locate and compare thousandths.",
+        "Optional prior: Teacher reviews number line construction and explanation, not only numerical comparison.",
+        "Optional prior: Official reference: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 5 Lesson 6 first edition 2021, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-6/lesson.html. Public lesson HTML reviewed. Original Student Task PDF, gated Cool-down/response and per-asset image rights remain unverified; numerical examples and text diagrams are independent Edulytiks work."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Compare Decimals on the Number Line — accessible place-value model",
+          "Title": "Original nested source scales and three decimal pairs",
+          "Description": "First-party accessible source-number layout; original visual-axis drawings require teacher review.",
+          "Rows": [
+            {
+              "Label": "Top source number line",
+              "Cells": [
+                "0 to1",
+                "tick0.1"
+              ]
+            },
+            {
+              "Label": "Middle source number line",
+              "Cells": [
+                "0 to0.1",
+                "tick0.01"
+              ]
+            },
+            {
+              "Label": "Bottom source number line",
+              "Cells": [
+                "0 to0.01",
+                "tick0.001"
+              ]
+            },
+            {
+              "Label": "Compare source",
+              "Cells": [
+                "0.534<0.537",
+                "0.2>0.02",
+                "0.3>0.14",
+                "0.23>0.216"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Compare Decimals on the Number Line — accessible place-value model",
           "Description": "First-party text model of the source's mathematical structure, not a reproduction of original publisher images or student cards.",
           "Rows": [
             {

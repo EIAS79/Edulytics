@@ -74,6 +74,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Original source Diego threw frisbee 5.10 meters and Jada threw it5.01 meters. Who threw FARTHER? Teacher explains distance comparison.", "Diego", "Jada", "tie"),
         new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Original source Tyler swam length in35.15 seconds and Han in35.30 seconds. Who was FASTER? Smaller time is faster.", "Tyler", "Han", "tie"),
         new("usccss.g5.u05.l05.original_frisbee_swim_comparisons", "Original source: which decimal is strictly BETWEEN 5 and 5.01, as Priya's throw requires? EDULYTIKS illustrative choice only, source accepts many answers", "5.005", "5.01", "5.1"),
+        new("usccss.g5.u05.l06.original_number_line_comparison", "Original 2021 U05:L06 source number-line comparison 0.2 ? 0.02. Use a consistent scale to thousandths where needed", ">", "<", "="),
+        new("usccss.g5.u05.l06.original_number_line_comparison", "Original 2021 U05:L06 source number-line comparison 0.3 ? 0.14. Use a consistent scale to thousandths where needed", ">", "<", "="),
+        new("usccss.g5.u05.l06.original_number_line_comparison", "Original 2021 U05:L06 source number-line comparison 0.23 ? 0.216. Use a consistent scale to thousandths where needed", ">", "<", "="),
+        new("usccss.g5.u05.l06.original_number_line_comparison", "Original 2021 U05:L06 source number-line comparison 0.534 ? 0.537. Use a consistent scale to thousandths where needed", "<", ">", "="),
+        new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: source one thousandth; exact visual placement and tick labels teacher-reviewed", "0.001", "0.01", "0.1"),
+        new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: source one hundredth; exact visual placement and tick labels teacher-reviewed", "0.01", "0.001", "0.1"),
+        new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: source one tenth; exact visual placement and tick labels teacher-reviewed", "0.1", "0.01", "0.001"),
+        new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: original lower number-line smallest tick interval, thousandth; exact visual placement and tick labels teacher-reviewed", "0.001", "0.01", "0.1"),
+        new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: original middle number-line tick interval, hundredth; exact visual placement and tick labels teacher-reviewed", "0.01", "0.1", "0.001"),
+        new("usccss.g5.u05.l06.original_nested_line_place_values", "Original source nested number-lines: original top number-line tick interval, tenth; exact visual placement and tick labels teacher-reviewed", "0.1", "0.01", "0.001"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
