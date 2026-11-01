@@ -24,6 +24,21 @@ class Grade5OwnerContentDeltaNegativeControls(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_pair(self.original, self.candidate)
 
+    def test_exact_grade5_content_version_transition_is_allowed(self):
+        self.original["contentVersion"] = "phase30-common-core-rich-content-v1"
+        self.candidate["contentVersion"] = "phase30-common-core-rich-content-v1-g5-u01-l01-source-20261030"
+        self.assertEqual(len(validate_pair(self.original, self.candidate)), 107)
+
+    def test_unknown_content_version_or_pack_metadata_is_rejected(self):
+        self.original["contentVersion"] = "phase30-common-core-rich-content-v1"
+        self.candidate["contentVersion"] = "forged-version"
+        with self.assertRaises(ValueError):
+            validate_pair(self.original, self.candidate)
+        self.candidate["contentVersion"] = "phase30-common-core-rich-content-v1-g5-u01-l01-source-20261030"
+        self.candidate["sourceAuthority"] = "forged"
+        with self.assertRaises(ValueError):
+            validate_pair(self.original, self.candidate)
+
     def test_extra_108th_change_is_rejected(self):
         self.candidate["lessons"][107]["translations"][0]["title"] = "extra"
         with self.assertRaises(ValueError):

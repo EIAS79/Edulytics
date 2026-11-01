@@ -31,6 +31,15 @@ def validate_pair(original, candidate):
     after = dict(candidate)
     old = before.pop("lessons", None)
     new = after.pop("lessons", None)
+    old_version = before.pop("contentVersion", None)
+    new_version = after.pop("contentVersion", None)
+    # The fixed owner-approved Grade5 Git blob also updates exactly this pack
+    # contentVersion. It is not permission to edit any other pack metadata.
+    if old_version != new_version and (
+        old_version, new_version) != (
+            "phase30-common-core-rich-content-v1",
+            "phase30-common-core-rich-content-v1-g5-u01-l01-source-20261030"):
+        raise ValueError("G5 unexpected contentVersion transition")
     if (before != after or not isinstance(old, list) or
             not isinstance(new, list) or len(old) != 148 or len(new) != 148):
         raise ValueError("G5 top-level metadata or 148-lesson denominator changed")
