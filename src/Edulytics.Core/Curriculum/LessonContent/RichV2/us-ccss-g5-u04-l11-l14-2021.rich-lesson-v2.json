@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u04-l11-l14-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -522,11 +522,13 @@
       "CultureCode": "en",
       "Title": "Practice an Algorithm Using Partial Quotients",
       "ExplanationParagraphs": [
-        "Goal: find and explain ERRORS in partial-quotient division and then handle larger four-digit dividends with strategic HUNDREDS-sized quotient chunks. The 2021 lesson expects diagnosing wrong multiplication or subtraction, not just finding correct results elsewhere.",
-        "Warm-up: compare partial-quotient methods with many small multiples and fewer large multiples; consider different valid Which One Doesn't Belong reasons. A short method need not be less understandable than a longer method, and multiple correct methods are allowed.",
-        "Activity 1 — original error analysis: a student divides 832 by26 by subtracting a claimed 30×26=750, then uses the remaining82 to obtain three more groups. Identify the incorrectly multiplied chunk (30×26 is780, not750) and explain the correct remaining 52 and final quotient32. In another attempt subtract 780 correctly but mistakenly record 832−780=62; correct to52. Require students to explain each arithmetic error's consequence.",
-        "Activity 2 — four-digit division with large chunks: for 8415÷33, start with 200 groups (6600), leaving1815; subtract50 groups (1650), leaving165; subtract5 groups (165), leaving0. Sum200+50+5=255. For 7344÷24, start300 groups (7200), leave144, then6 groups (144), total306. Confirm divisor×quotient=dividend.",
-        "Teacher boundary: source critiques errors, compares partial quotient choices and requires large multi-digit calculation with interpretation. Checking only 255 or306 cannot certify correct algorithm debugging or partner discussion. Publisher long-division pictures and protected response are not copied."
+        "Original IM 2021 Grade5 U04:L14 Practice an Algorithm Using Partial Quotients: the task is to SPOT AND EXPLAIN mathematical ERRORS in source learners' stacked division, then repair the whole-number quotient. Correct answers alone do not satisfy error diagnosis; some image labels conflict with computed partial products by design.",
+        "Warm-up Which One Doesn't Belong Different Ways: original source shows four written division layouts A–D. The HTML text includes a partially described 1312÷82 figure whose textual side label is ambiguous ('83' in the description), so do NOT infer or certify the full WODB diagrams from text alone. Teacher shows original images and accepts defensible distinctions.",
+        "Activity 1 Find the Mistake original example 1: source stack claims 1656÷46=29 and first removes 920 for 20 groups, then incorrectly reports remainder436. Correct first remainder 1656−920=736. Subsequent source subtraction positions are also inconsistent; exact quotient is 36 since 46×36=1656. Student must identify the wrong subtraction and explain a fully consistent repair, e.g. 46×30=1380 remainder276 then 46×6=276.",
+        "Activity 1 original example 2: source claims 972÷18=64 from '60' and '4' partials, but subtracts 900. Nine hundred is 50×18, NOT 60×18. Then 972−900=72 and72÷18=4, so correct quotient is 50+4=54.",
+        "Activity 1 original example 3: source claims 744÷24=211 but records subtracting 480, then240, then remainder24. 480=20×24, NOT 200×24; 240=10×24; 24=1×24. Correct quotient20+10+1=31, verified by31×24=744.",
+        "Activity 2 Practice Problems: source teacher HTML identifies four numberless diagram captions without independently readable operand values; preserve teacher-led completion of those printed problems and label any alternative exact exercises as original Edulytiks extras. Exact selected Practice supports three verified corrected quotients and source chunk calculations, but original handwritten error explanation remains TEACHER_REVIEW_REQUIRED. Independent Cool-down uses 1512÷42.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -550,7 +552,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Find a multiplication error",
+          "Title": "Original error 1656÷46",
+          "Question": "Find and correct source student's wrong 1656÷46=29 and its subtraction.",
+          "Method": "Locate incorrect remainder and reconstruct valid divisor multiples.",
+          "Steps": [
+            "20×46=920; 1656−920=736 not436.",
+            "One consistent repair: 30×46=1380, remainder276.",
+            "6×46=276, remainder0; total36."
+          ],
+          "Answer": "36, not29.",
+          "Check": "36×46=1656."
+        },
+        {
+          "Title": "Original error 972÷18",
+          "Question": "Student labels subtract900 as 60 groups of18 and claims quotient64. Explain error.",
+          "Method": "Correct quotient label for source chunk 900 and sum partial group counts.",
+          "Steps": [
+            "18×60=1080, not900.",
+            "18×50=900, leaving72.",
+            "18×4=72; total50+4=54."
+          ],
+          "Answer": "54, not64.",
+          "Check": "54×18=972."
+        },
+        {
+          "Title": "Original error 744÷24",
+          "Question": "Source labels subtract480 as 200 groups and reports211. Correct it.",
+          "Method": "Identify place-value order of actual product and divide remaining groups.",
+          "Steps": [
+            "480÷24=20, not200.",
+            "240÷24=10, remainder24.",
+            "24÷24=1, total20+10+1=31."
+          ],
+          "Answer": "31, not211.",
+          "Check": "31×24=744."
+        },
+        {
+          "Title": "Optional existing extension — Find a multiplication error",
           "Question": "A partial-quotient step says30×26=750 while dividing832 by26. What is wrong?",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -562,7 +600,7 @@
           "Check": "26×32=832."
         },
         {
-          "Title": "Find a subtraction error",
+          "Title": "Optional existing extension — Find a subtraction error",
           "Question": "The same problem records832−780=62. Correct it.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -574,7 +612,7 @@
           "Check": "780+52=832."
         },
         {
-          "Title": "Four-digit partial quotient",
+          "Title": "Optional existing extension — Four-digit partial quotient",
           "Question": "Find8415÷33 using large chunks.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -586,7 +624,7 @@
           "Check": "255×33=8415."
         },
         {
-          "Title": "Another four-digit quotient",
+          "Title": "Optional existing extension — Another four-digit quotient",
           "Question": "Find7344÷24.",
           "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
           "Steps": [
@@ -608,42 +646,48 @@
           "Mistake": "Use only tens-sized chunks for every large dividend",
           "WhyWrong": "Small chunks may work but cause avoidable repetitive work for four-digit dividends.",
           "Correction": "Consider a 100- or 200-group chunk and verify it does not exceed the remainder."
+        },
+        {
+          "Mistake": "Treat invented 832÷26=32 error scenarios as the original three source error cards",
+          "WhyWrong": "Actual source problems are 1656÷46,972÷18,744÷24 with distinct subtraction/partial quotient mistakes.",
+          "Correction": "Restore all original source error mathematics and teacher-scored explanation, preserve valid invented problems only as extensions."
         }
       ],
       "SummaryPoints": [
-        "Error checking must distinguish incorrect multiplication from incorrect subtraction.",
-        "Hundreds-sized partial quotients can efficiently divide four-digit numbers.",
-        "Teacher reviews diagnosis, correction and explanation; exact numbers are supporting checks.",
-        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 14, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-14/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+        "Original source WODB handwritten diagrams may have ambiguous textual descriptions; actual source art is teacher-reviewed.",
+        "Original wrong quotient 1656÷46=29; correct36 and first remainder 736, not436.",
+        "Original wrong quotient 972÷18=64; correct54, because900÷18=50.",
+        "Original wrong quotient 744÷24=211; correct31, because480÷24=20.",
+        "Original Activity2 four source figure captions lack independently verified numeric content; do not invent source problems."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Practice an Algorithm Using Partial Quotients — division decomposition",
-          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Title": "Original source three error corrections",
+          "Description": "First-party source mathematical checks; original handwritten diagrams need independent teacher review.",
           "Rows": [
             {
-              "Label": "Problem",
+              "Label": "1656÷46",
               "Cells": [
-                "832÷26",
-                "8415÷33",
-                "7344÷24"
+                "wrong29",
+                "first remainder should736",
+                "correct36"
               ]
             },
             {
-              "Label": "Partial quotient choices",
+              "Label": "972÷18",
               "Cells": [
-                "30+2",
-                "200+50+5",
-                "300+6"
+                "wrong64",
+                "900÷18=50 not60",
+                "correct54"
               ]
             },
             {
-              "Label": "Quotient",
+              "Label": "744÷24",
               "Cells": [
-                "32",
-                "255",
-                "306"
+                "wrong211",
+                "480÷24=20 not200",
+                "correct31"
               ]
             }
           ]

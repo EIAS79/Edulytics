@@ -59,6 +59,17 @@ public static class UsCcssG5U04WholeNumberSourceDivision
         new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 121÷11", "121 ÷ 11", 11, "groups"),
         new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 132÷12", "132 ÷ 12", 11, "groups"),
         new("usccss.g5.u04.l13.original_division_number_talk", "Original 2021 G5 U04:L13 Number Talk exact quotient 154÷14", "154 ÷ 14", 11, "groups"),
+        new("usccss.g5.u04.l14.original_corrected_error_quotients", "Original G5 U04:L14 Find the Mistake division diagram for 1656÷46; source displayed partial quotient work is incorrect", "1656 ÷ 46", 36, "correct whole quotient"),
+        new("usccss.g5.u04.l14.original_corrected_error_quotients", "Original G5 U04:L14 Find the Mistake division diagram for 972÷18; source displayed partial quotient work is incorrect", "972 ÷ 18", 54, "correct whole quotient"),
+        new("usccss.g5.u04.l14.original_corrected_error_quotients", "Original G5 U04:L14 Find the Mistake division diagram for 744÷24; source displayed partial quotient work is incorrect", "744 ÷ 24", 31, "correct whole quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 920÷46, correct the corresponding multiplier rather than the source's wrong label", "920 ÷ 46", 20, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 230÷46, correct the corresponding multiplier rather than the source's wrong label", "230 ÷ 46", 5, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 184÷46, correct the corresponding multiplier rather than the source's wrong label", "184 ÷ 46", 4, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 900÷18, correct the corresponding multiplier rather than the source's wrong label", "900 ÷ 18", 50, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 72÷18, correct the corresponding multiplier rather than the source's wrong label", "72 ÷ 18", 4, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 480÷24, correct the corresponding multiplier rather than the source's wrong label", "480 ÷ 24", 20, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 240÷24, correct the corresponding multiplier rather than the source's wrong label", "240 ÷ 24", 10, "partial quotient"),
+        new("usccss.g5.u04.l14.original_error_analysis_valid_chunks", "Original G5 L14 division source arithmetic chunk 24÷24, correct the corresponding multiplier rather than the source's wrong label", "24 ÷ 24", 1, "partial quotient"),
         // END_G5_U04_DIVISION_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
