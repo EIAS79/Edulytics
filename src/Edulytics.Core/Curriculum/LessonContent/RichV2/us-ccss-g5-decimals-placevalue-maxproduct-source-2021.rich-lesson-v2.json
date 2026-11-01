@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261101-v3",
+  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261101-v4",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -425,11 +425,17 @@
       "CultureCode": "en",
       "Title": "Find the Largest Product PLC Activity",
       "ExplanationParagraphs": [
-        "Goal: use place value, multi-digit multiplication, systematic comparison and mathematical argument to find the greatest product obtainable under fixed digit-use constraints. The largest possible *two-digit factor* need not produce the greatest two-digit-by-one-digit product.",
-        "Warm-up: compare 841 × 6 with 641 × 8 without assuming the longer-looking product is greater. Both involve the digits 8, 6, 4 and 1 arranged differently; predict using partial products, then verify the difference through exact multiplication.",
-        "Activity 1 — test a claim: using the distinct digits 7, 5 and 2, decide whether 75 × 2 produces the greatest possible two-digit-by-one-digit product. Enumerate legal choices or compare partial products: 75 × 2 = 150 while 52 × 7 = 364. Discuss why putting a large digit in the multiplier can outweigh choosing the largest two-digit factor. Then find the greatest legal product from digits 6, 3 and 1.",
-        "Activity 2 — more digits: explore different legal multiplication formats using four distinct digits, including three-digit-by-one-digit and two-digit-by-two-digit products. For digits 7, 3, 2 and 5 compare plausible candidates with exact products rather than relying on a single guess. Explain systematically why the selected expression is greatest under the given format rules.",
-        "Synthesis and teacher review: explain how each digit contributes hundreds, tens and ones to the product, and compare choices by the difference in partial products. The original 2021 source requires partner discussion, critique, revised claims and independent justification, not just a final number. The source's digit-arrangement illustrations and gated Cool-down are not copied or claimed source-verified."
+        "Original IM2021 G5 U08:L01 revisits the standard whole-number multiplication algorithm and asks which arrangement of THREE or FOUR specified digits yields the greatest product, using place-value reasoning rather than assuming the largest possible first factor wins.",
+        "Warm-up Notice and Wonder Digits is a visual/source brainstorming routine whose original figure and learner comments are teacher reviewed.",
+        "Activity1 Talk About It original asserts for digits7,5,2 largest product is75×2 because75 is largest possible numeral. This is FALSE:75×2=150 while52×7=364, larger than72×5=360. Original next task digits6,3,1 yields31×6=186, exceeding61×3=183.",
+        "Activity2 More Digits printed digit set7,3,2,5; all four digits used once across factors. Among three-by-one and two-by-two placements the maximum is72×53=3816, slightly larger than73×52=3796 and532×7=3724. Students must demonstrate their search and argue using place value.",
+        "Source learner debates, exact card pictures and original Cool-down are teacher review. Existing correct Rich V2 extensions and previous lesson data preserved, with digital selected Practice bounded to these original products.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use place value, multi-digit multiplication, systematic comparison and mathematical argument to find the greatest product obtainable under fixed digit-use constraints. The largest possible *two-digit factor* need not produce the greatest two-digit-by-one-digit product.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare 841 × 6 with 641 × 8 without assuming the longer-looking product is greater. Both involve the digits 8, 6, 4 and 1 arranged differently; predict using partial products, then verify the difference through exact multiplication.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — test a claim: using the distinct digits 7, 5 and 2, decide whether 75 × 2 produces the greatest possible two-digit-by-one-digit product. Enumerate legal choices or compare partial products: 75 × 2 = 150 while 52 × 7 = 364. Discuss why putting a large digit in the multiplier can outweigh choosing the largest two-digit factor. Then find the greatest legal product from digits 6, 3 and 1.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — more digits: explore different legal multiplication formats using four distinct digits, including three-digit-by-one-digit and two-digit-by-two-digit products. For digits 7, 3, 2 and 5 compare plausible candidates with exact products rather than relying on a single guess. Explain systematically why the selected expression is greatest under the given format rules.",
+        "Optional previous source-aligned or independently authored extension — Synthesis and teacher review: explain how each digit contributes hundreds, tens and ones to the product, and compare choices by the difference in partial products. The original 2021 source requires partner discussion, critique, revised claims and independent justification, not just a final number. The source's digit-arrangement illustrations and gated Cool-down are not copied or claimed source-verified."
       ],
       "KeyConcepts": [
         {
@@ -453,7 +459,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Correct the greatest-factor claim",
+          "Title": "Source exact 1 — Find the Largest Product",
+          "Question": "Original source digits7,5,2: proposed largest75×2=150 is actually largest, agree/disagree?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "disagree",
+          "Check": "Original numeric source example; incorrect distractors agree and unsure must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Find the Largest Product",
+          "Question": "Original source digits7,5,2: value of75×2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "150",
+          "Check": "Original numeric source example; incorrect distractors 364 and 350 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Find the Largest Product",
+          "Question": "Original source digits7,5,2: largest possible product",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "364",
+          "Check": "Original numeric source example; incorrect distractors 150 and 360 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Find the Largest Product",
+          "Question": "Original source digits7,5,2: expression giving largest product",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "52×7",
+          "Check": "Original numeric source example; incorrect distractors 75×2 and 72×5 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Correct the greatest-factor claim",
           "Question": "With digits 7, 5 and 2, is 75 × 2 the greatest two-digit-by-one-digit product?",
           "Method": "Calculate alternative valid assignments using all three digits exactly once.",
           "Steps": [
@@ -465,7 +519,7 @@
           "Check": "The six legal assignments yield 150, 114, 360, 175, 364 and 135; maximum 364."
         },
         {
-          "Title": "Find the best product using 6, 3, 1",
+          "Title": "Optional existing extension — Find the best product using 6, 3, 1",
           "Question": "Choose a two-digit factor and one-digit multiplier using 6, 3 and 1 exactly once.",
           "Method": "Enumerate the six legal placements or use place-value reasoning.",
           "Steps": [
@@ -477,7 +531,7 @@
           "Check": "186 > 183, the next largest candidate; all digits were used once."
         },
         {
-          "Title": "Revisit two four-digit arrangements",
+          "Title": "Optional existing extension — Revisit two four-digit arrangements",
           "Question": "Which is greater: 841 × 6 or 641 × 8?",
           "Method": "Compare partial products before relying on appearance.",
           "Steps": [
@@ -499,18 +553,89 @@
           "Mistake": "One plausible large result proves it is maximal",
           "WhyWrong": "Finding a large value does not rule out another legal rearrangement.",
           "Correction": "Enumerate the bounded digit arrangements or use a valid exchange argument."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
         }
       ],
       "SummaryPoints": [
-        "Maximizing a product requires considering both factors and the place values of each digit.",
-        "Use the full legal digit rules, compare exact products and justify why no better arrangement exists.",
-        "The lesson's discussion, revisions of claims and written optimality argument are teacher-reviewed.",
-        "Source: IM K–5 first edition 2021 Grade 5 Unit 8 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-1/lesson.html; first-party Edulytiks calculations and table."
+        "Original proposed75×2 is not maximum,52×7=364 is.",
+        "Digits6,3,1 maximum31×6=186.",
+        "Four digits7,3,2,5 maximum72×53=3816.",
+        "Optional prior: Maximizing a product requires considering both factors and the place values of each digit.",
+        "Optional prior: Use the full legal digit rules, compare exact products and justify why no better arrangement exists.",
+        "Optional prior: The lesson's discussion, revisions of claims and written optimality argument are teacher-reviewed.",
+        "Optional prior: Source: IM K–5 first edition 2021 Grade 5 Unit 8 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-1/lesson.html; first-party Edulytiks calculations and table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Permutations of distinct digits 6, 3, 1",
+          "Title": "Find the Largest Product — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source digits7,5,2: proposed largest75×2=150 is actually larg",
+              "Cells": [
+                "disagree",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits7,5,2: value of75×2",
+              "Cells": [
+                "150",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits7,5,2: largest possible product",
+              "Cells": [
+                "364",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits7,5,2: expression giving largest product",
+              "Cells": [
+                "52×7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits6,3,1: largest possible product",
+              "Cells": [
+                "186",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits6,3,1: expression giving largest product",
+              "Cells": [
+                "31×6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits7,3,2,5: largest product",
+              "Cells": [
+                "3816",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source digits7,3,2,5: arrangement with largest product",
+              "Cells": [
+                "72×53",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Permutations of distinct digits 6, 3, 1",
           "Description": "Original complete enumeration of three-digit placements for the two-digit-by-one-digit format.",
           "Rows": [
             {

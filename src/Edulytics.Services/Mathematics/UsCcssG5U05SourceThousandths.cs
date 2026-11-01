@@ -711,6 +711,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source area16 and length4cm width", "4", "8", "2"),
         new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Original source perimeter12cm for length2.5 width3.5, true/false", "true", "false", "unknown"),
         new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Original source area16cm2 for length5 width3.2, true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,5,2: proposed largest75×2=150 is actually largest, agree/disagree?", "disagree", "agree", "unsure"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,5,2: value of75×2", "150", "364", "350"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,5,2: largest possible product", "364", "150", "360"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,5,2: expression giving largest product", "52×7", "75×2", "72×5"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits6,3,1: largest possible product", "186", "183", "63"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits6,3,1: expression giving largest product", "31×6", "61×3", "63×1"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,3,2,5: largest product", "3816", "3796", "3724"),
+        new("usccss.g5.u08.l01.source_digit_arrangement_maximum_products", "Original source digits7,3,2,5: arrangement with largest product", "72×53", "73×52", "532×7"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
