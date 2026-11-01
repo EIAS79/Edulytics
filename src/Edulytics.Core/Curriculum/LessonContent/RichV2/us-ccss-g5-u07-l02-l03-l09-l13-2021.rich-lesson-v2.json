@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v10-20261101",
+  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v11-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -752,11 +752,17 @@
       "CultureCode": "en",
       "Title": "More Patterns",
       "ExplanationParagraphs": [
-        "Goal: compare multiple pairs of recursive number patterns, including cases whose corresponding terms are NOT simple multiples because starting values differ. The source first presents three pattern pairs and asks for any valid relationships; later returns to clear ratios like3/2.",
-        "Warm-up: contrast A starting0 adding3 and B starting0 adding6: B=2A. Compare another pair A starting4 adding3, B starting9 adding6: corresponding values satisfy B=2A+1, not B=2A. Emphasize the extra offset due to different starting values.",
-        "Activity 1 — three first-party sets: Set A starts0 with increments2 and4, so B=2A; Set B starts5 and12 with increments2 and4, so B=2A+2; Set C starts0 with increments3 and5, so B=5/3 A at corresponding positive indices. Build four rows for each and explain which are multiplicative and which have offset. Several valid descriptions are accepted when they refer to the full sequence.",
-        "Activity 2 — ratio 3/2: pattern X starts zero and adds4; pattern Y starts zero and adds6. If X=40, then Y=60; if Y=120, X=80. Prove from step index n: X=4n, Y=6n=3/2 X. A partner checks why a statement about addends cannot be freely applied to unrelated starting values.",
-        "Teacher boundary: source asks for multiple pattern observations, proof or counterexamples, peer diagrams and strategy revisions. The correct distant pair is a numeric subcheck; showing the graph or index relationship remains teacher-reviewed."
+        "Original IM2021 G5 U07:L10 compares three PAIRS of recursively generated patterns, including starting values offset differently and fractional relationships, so corresponding terms can obey both multiplication and additive correction.",
+        "Warm-up original TRUE/FALSE276÷3=(1/3)×276 TRUE;276÷3=276/6 FALSE; (276÷3)×2=(2/3)×276 TRUE. Teacher asks equivalent operations and the fraction-of-number meaning.",
+        "Activity1 Mix and Match original SetA starts0 add3 versus starts0 add6, B=2A. SetB starts4 add3 versus starts9 add6, B=2A+1 rather than simple doubling. SetC starts0 add5 versus starts0 add3, B=3/5 A for corresponding terms. Source pupils express relationships as equations.",
+        "Activity2 Generate Patterns Partner A starts0 with+4 and+6, so first40→second60 and second120→first80. Partner B +2 and+3, so first30→second45 and second60→first40. No unstated offset may be invented for either starting-zero pair.",
+        "Correct prior fictional sets with different step sizes stay optional Edulytiks examples but are not printed source. Teacher reviews tables, relationships in words and justifications; exact chosen calculations are a bounded subset.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: compare multiple pairs of recursive number patterns, including cases whose corresponding terms are NOT simple multiples because starting values differ. The source first presents three pattern pairs and asks for any valid relationships; later returns to clear ratios like3/2.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: contrast A starting0 adding3 and B starting0 adding6: B=2A. Compare another pair A starting4 adding3, B starting9 adding6: corresponding values satisfy B=2A+1, not B=2A. Emphasize the extra offset due to different starting values.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — three first-party sets: Set A starts0 with increments2 and4, so B=2A; Set B starts5 and12 with increments2 and4, so B=2A+2; Set C starts0 with increments3 and5, so B=5/3 A at corresponding positive indices. Build four rows for each and explain which are multiplicative and which have offset. Several valid descriptions are accepted when they refer to the full sequence.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — ratio 3/2: pattern X starts zero and adds4; pattern Y starts zero and adds6. If X=40, then Y=60; if Y=120, X=80. Prove from step index n: X=4n, Y=6n=3/2 X. A partner checks why a statement about addends cannot be freely applied to unrelated starting values.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: source asks for multiple pattern observations, proof or counterexamples, peer diagrams and strategy revisions. The correct distant pair is a numeric subcheck; showing the graph or index relationship remains teacher-reviewed."
       ],
       "KeyConcepts": [
         {
@@ -780,7 +786,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Identify a non-multiple relationship",
+          "Title": "Source exact 1 — Interpret Relationships",
+          "Question": "Original warmup276÷3=(1/3)×276 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Interpret Relationships",
+          "Question": "Original warmup276÷3=276/6 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Interpret Relationships",
+          "Question": "Original warmup(276÷3)×2=(2/3)×276 true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Interpret Relationships",
+          "Question": "Original SetA first pattern0+3 and second0+6 when first12 second is",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "24",
+          "Check": "Original numeric source example; incorrect distractors 12 and 36 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Identify a non-multiple relationship",
           "Question": "A starts4 adds3, B starts9 adds6. What links them?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -792,7 +846,7 @@
           "Check": "At n=1: A=7, B=15."
         },
         {
-          "Title": "Predict using 3/2",
+          "Title": "Optional existing extension — Predict using 3/2",
           "Question": "X starts0 adds4; Y starts0 adds6. Find Y when X=40.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -804,7 +858,7 @@
           "Check": "60/40=3/2."
         },
         {
-          "Title": "Compare set B",
+          "Title": "Optional existing extension — Compare set B",
           "Question": "A starts5 adds2, B starts12 adds4. Find B when A=11.",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -826,18 +880,89 @@
           "Mistake": "Compare terms at different indices",
           "WhyWrong": "A multiplicative or offset relationship refers to aligned terms.",
           "Correction": "Use the same n in both rules."
+        },
+        {
+          "Mistake": "Use unrelated or invented examples rather than the actual source pattern rules and plotted values.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore the exact source pattern, coin, and rectangle constants; preserve open plotting and story decisions as teacher-scored."
         }
       ],
       "SummaryPoints": [
-        "Some pairs of patterns have constant ratios; others have an added offset.",
-        "Write term equations to justify a claimed relationship.",
-        "Original source tables and partner explanations are teacher-assessed.",
-        "Source 2021 IM K–5 Grade5 Unit7 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-10/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
+        "Source warmup true,false,true.",
+        "SetA B=2A, SetB B=2A+1, SetC B=3A/5.",
+        "Source partnerA40→60 and120→80, partnerB30→45 and60→40.",
+        "Optional prior: Some pairs of patterns have constant ratios; others have an added offset.",
+        "Optional prior: Write term equations to justify a claimed relationship.",
+        "Optional prior: Original source tables and partner explanations are teacher-assessed.",
+        "Optional prior: Source 2021 IM K–5 Grade5 Unit7 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-10/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "More Patterns — original representation",
+          "Title": "Interpret Relationships — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup276÷3=(1/3)×276 true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup276÷3=276/6 true/false",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup(276÷3)×2=(2/3)×276 true/false",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original SetA first pattern0+3 and second0+6 when first12 second is",
+              "Cells": [
+                "24",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original SetB first starts4 +3 second starts9 +6, second when first=10",
+              "Cells": [
+                "21",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original SetB relation between second B and first A at same index",
+              "Cells": [
+                "B=2A+1",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original SetC first starts0 step5 second starts0 step3 when first20 se",
+              "Cells": [
+                "12",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Partner A first starts0 step4 second step6, if first40 second",
+              "Cells": [
+                "60",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — More Patterns — original representation",
           "Description": "Accessible first-party equivalent for values and ordered pairs; it is not a tested interactive plot or copied publisher graphic.",
           "Rows": [
             {

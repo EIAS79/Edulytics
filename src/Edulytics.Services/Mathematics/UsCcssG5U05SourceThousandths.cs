@@ -667,6 +667,17 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Partner B source Jada step3 Priya step9, when Priya198 Jada is", "66", "99", "22"),
         new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Source first three Jada +4 terms including start0", "0,4,8", "4,8,12", "0,8,16"),
         new("usccss.g5.u07.l09.source_generated_patterns_two_rules", "Source first three Priya +8 terms including start0", "0,8,16", "0,4,8", "8,16,24"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original warmup276÷3=(1/3)×276 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original warmup276÷3=276/6 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original warmup(276÷3)×2=(2/3)×276 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original SetA first pattern0+3 and second0+6 when first12 second is", "24", "12", "36"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original SetB first starts4 +3 second starts9 +6, second when first=10", "21", "20", "24"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original SetB relation between second B and first A at same index", "B=2A+1", "B=2A", "B=A+5"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original SetC first starts0 step5 second starts0 step3 when first20 second is", "12", "15", "30"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner A first starts0 step4 second step6, if first40 second is", "60", "80", "30"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner A if second reaches120 first is", "80", "60", "40"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner B first step2 second step3: if first30 second is", "45", "60", "20"),
+        new("usccss.g5.u07.l10.source_recursive_patterns_offset", "Original Partner B if second60 first is", "40", "30", "90"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
