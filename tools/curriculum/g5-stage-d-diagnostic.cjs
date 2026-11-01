@@ -181,9 +181,31 @@ function grade5EditionManifests(){
   return lookup;
 }
 
+
+function original2021StudentFacingLocator(){
+  const lookup=new Map();
+  for(let u=1;u<=units.length;u++){
+    const key=String(u).padStart(2,'0');
+    const file=rel+'im2021-student-facing-local-source-u'+key+'.json';
+    if(!exists(file))throw Error('ORIGINAL_2021_STUDENT_FACING_MANIFEST_MISSING '+file);
+    const manifest=read(file);
+    if(!Array.isArray(manifest.lessons)||manifest.lessons.length!==units[u-1]||
+        manifest.fullItemizedParity!=='UNVERIFIED')
+      throw Error('ORIGINAL_2021_STUDENT_FACING_MANIFEST_INVALID '+file);
+    for(const x of manifest.lessons){
+      const code='PED:US-CCSS-MATH:G5:U'+key+':L'+String(x.lesson).padStart(2,'0');
+      if(lookup.has(code))throw Error('DUPLICATE_2021_STUDENT_FACING_SOURCE '+code);
+      lookup.set(code,{path:file,sections:x.studentFacingSections,
+        cmsAssetReferences:x.cmsAssetReferences});
+    }
+  }
+  return lookup;
+}
+
 function sourceEvidenceAudit(){
   const q=inventory();
   const editionLookup=grade5EditionManifests();
+  const firstEditionStudentFacing=original2021StudentFacingLocator();
   const rows=[];
   for(const item of q.records){
     const evidence=read(item.evidence);
@@ -191,6 +213,10 @@ function sourceEvidenceAudit(){
       identified,matched,statusCounts,blockers}=analyzeElementInventory(evidence,item.code);
     const editionEvidence=analyzeEditionPair(item.code,editionLookup.get(item.code)||[]);
     blockers.push(...editionEvidence.blockers);
+    const sourceStudentFacing=firstEditionStudentFacing.get(item.code)||null;
+    if(!sourceStudentFacing||!Number.isInteger(sourceStudentFacing.sections)||
+        sourceStudentFacing.sections<1)
+      blockers.push('ORIGINAL_2021_STUDENT_FACING_SECTION_NOT_LOCATED');
     if(evidence.status==='A_C_EXPLICIT_GAP')blockers.push('A_C_EXPLICIT_GAP');
     if(evidence.sourceCoverage100Percent!==true)blockers.push('SOURCE_PARITY_NOT_INDEPENDENTLY_PROVEN');
     if(evidence.academicAccepted!==true)blockers.push('ACADEMIC_SIGNOFF_NOT_PROVEN');
@@ -201,6 +227,7 @@ function sourceEvidenceAudit(){
       hasSourceElementArray,descriptiveOutlineElementCount:descriptiveOutlineCount,
       itemizedElementCount:sourceElements?.length??null,matchedElementCount:matched,
       sourceElementStatusCounts:statusCounts,editionEvidence,
+      original2021StudentFacing:sourceStudentFacing,
       sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
       academicApproval:evidence.academicAccepted===true?'CLAIMED_IN_AC_REQUIRES_SIGNED_REVIEW':'NOT_APPROVED',
       blockers});
@@ -216,6 +243,8 @@ function sourceEvidenceAudit(){
     noElementArrayLessons:rows.filter(x=>!x.hasSourceElementArray).length,
     unknownSourceDenominatorLessons:rows.filter(x=>x.itemizedElementCount===null).length,
     wrongEditionStudentLessons:rows.filter(x=>x.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT')).length,
+    original2021TeacherStudentFacingLessons:rows.filter(x=>x.original2021StudentFacing?.sections>0).length,
+    original2021TeacherStudentFacingSections:rows.reduce((n,x)=>n+(x.original2021StudentFacing?.sections||0),0),
     sourceParityVerifiedLessons:0,academicApprovedLessons:0,
     lessonsWithExplicitACGap:rows.filter(x=>x.blockers.includes('A_C_EXPLICIT_GAP')).map(x=>x.lessonCode),
     blockedLessons:rows.filter(x=>x.blockers.length).length,rows};
@@ -226,6 +255,8 @@ function sourceEvidenceAudit(){
     itemized:result.itemizedLessonCount,completeSnapshots:result.completeElementSnapshotLessons,
     unknownDenominators:result.unknownSourceDenominatorLessons,
     wrongEditionStudentLessons:result.wrongEditionStudentLessons,
+    original2021StudentFacingLessons:result.original2021TeacherStudentFacingLessons,
+    original2021StudentFacingSections:result.original2021TeacherStudentFacingSections,
     explicitGaps:result.lessonsWithExplicitACGap,blocked:result.blockedLessons,
     artifact:'stage-d-results/grade5-source-evidence.json'}));
   if(q.errors.length||result.blockedLessons)process.exitCode=2;
@@ -239,4 +270,4 @@ if(require.main===module){
   else if(mode==='source-evidence')sourceEvidenceAudit();
   else throw Error('Unknown mode '+mode);
 }
-module.exports={analyzeElementInventory,analyzeEditionPair,grade5EditionManifests};
+module.exports={analyzeElementInventory,analyzeEditionPair,grade5EditionManifests,original2021StudentFacingLocator};
