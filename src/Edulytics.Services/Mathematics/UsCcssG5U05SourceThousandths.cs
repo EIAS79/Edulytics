@@ -858,6 +858,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source Activity3 430÷43", "10", "43", "100"),
         new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Source activities ask student to CREATE additional expressions, is there one unique set?", "no", "yes", "always4 fixed"),
         new("usccss.g5.u08.l16.source_student_generated_division_number_talks", "Original Number Talk should include student reasoning for choice of next term?", "yes", "no", "answers only"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original warmup3/4+3/8 = 3/8+3/8 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original warmup7/5+2/3 = 21/15+8/15 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original warmup8/9+5/12 = 32/36+15/36 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original Activity1 5/6−4/9=45/54−24/54 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original Activity1 5/6−4/9=15/36 true/false", "false", "true", "unknown"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original Activity1 difference5/6−4/9 exact reduced", "7/18", "15/36", "1/18"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original Activity2 8/14+3/7=4/7+3/7 true/false", "true", "false", "unknown"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original Activity2 8/14+3/7 exact fraction result", "1", "7/14", "11/14"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original source Activity3 student should author how many True/False equations?", "3", "1", "2"),
+        new("usccss.g5.u08.l17.source_student_generated_fraction_truths", "Original source class correct value for each self-authored statement universally predetermined?", "no", "yes", "only all true"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
