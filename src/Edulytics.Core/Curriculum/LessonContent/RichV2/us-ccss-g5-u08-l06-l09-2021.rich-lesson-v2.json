@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -258,11 +258,17 @@
       "CultureCode": "en",
       "Title": "Estimating the Volume of the World’s Largest Wagon",
       "ExplanationParagraphs": [
-        "Goal: make an evidence-based estimate of a very large wagon's interior VOLUME, starting without provided dimensions. The original 2021 lesson asks which measurements and units matter, and for too-low, plausible and too-high estimates, then refines them from visible scale references in a photo. No exact global wagon specification should be silently supplied to replace the learner's observations.",
-        "Warm-up: compare the value of a children's wagon to a large display wagon; a photograph without a ruler cannot establish exact lengths. Discuss why measurements in feet may be useful for a large wagon bed, while cubic feet (not square feet) are needed for its approximate interior volume.",
-        "Activity 1 — original modeling worksheet in prose: choose a fictional wagon interior approximately24ft long,12ft wide and2ft deep. The rectangular-prism estimate is576ft³. Label every number an assumption because the actual wagon bed may have curved edges, thick walls or a tapered shape; an external wagon photograph would need actual reference objects for more reliable dimensions.",
-        "Activity 2 — make a reasonable interval: if plausible length is22–26ft, width10–14ft and depth1.5–2.5ft, simple enclosing rectangular-prism bounds are330ft³ (too low for the midpoint model) and910ft³ (too high for that midpoint model). Select a middle estimate576ft³ and defend why the 330/910 choices are rough low/high scenarios, not mathematically certified physical bounds of the unknown wagon.",
-        "Assessment: students must identify dimensions, units, scale references, uncertainty and revise estimates from an image. An automatically computed product on assumed dimensions is a numeric example but not proof that a particular photograph's wagon was measured correctly."
+        "Original IM2021 G5 U08:L07 Estimating the Radio Flyer is deliberately NOT a fixed multiplication worksheet. Pupils inspect the source wagon image, propose dimensions and units, compare too-low/about-right/too-high bounds, then justify how image clues could improve estimates.",
+        "Warm-up Notice and Wonder Radio Flyer uses original photo and student-generated observations. Source image lacks certified scale in accessible teacher text, so no exact original wagon dimensions should be fabricated from image proportions.",
+        "Activity1 Anatomy of an Estimate asks which measurements length,width,height of wagon BED matter, what physical units are sensible, and how to calibrate a rough value using visual objects and known benchmarks. Pupils record plausible bounds and assumptions.",
+        "Activity2 Estimating the Size asks learner to revise estimated dimensions from wagon photo, disclose uncertainty separately for length,width,height, and improve volume using product of estimates. Multiple plausible numerical answers are valid with evidence, so source teacher rubric is authoritative.",
+        "Selected exact choices cover fixed dimensional reasoning only, not the ACTUAL unmeasured source volume. Previously authored first-party numeric wagon illustrations remain labeled optional independent support; original figure and reasoning teacher reviewed.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: make an evidence-based estimate of a very large wagon's interior VOLUME, starting without provided dimensions. The original 2021 lesson asks which measurements and units matter, and for too-low, plausible and too-high estimates, then refines them from visible scale references in a photo. No exact global wagon specification should be silently supplied to replace the learner's observations.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare the value of a children's wagon to a large display wagon; a photograph without a ruler cannot establish exact lengths. Discuss why measurements in feet may be useful for a large wagon bed, while cubic feet (not square feet) are needed for its approximate interior volume.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original modeling worksheet in prose: choose a fictional wagon interior approximately24ft long,12ft wide and2ft deep. The rectangular-prism estimate is576ft³. Label every number an assumption because the actual wagon bed may have curved edges, thick walls or a tapered shape; an external wagon photograph would need actual reference objects for more reliable dimensions.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — make a reasonable interval: if plausible length is22–26ft, width10–14ft and depth1.5–2.5ft, simple enclosing rectangular-prism bounds are330ft³ (too low for the midpoint model) and910ft³ (too high for that midpoint model). Select a middle estimate576ft³ and defend why the 330/910 choices are rough low/high scenarios, not mathematically certified physical bounds of the unknown wagon.",
+        "Optional previous source-aligned or independently authored extension — Assessment: students must identify dimensions, units, scale references, uncertainty and revise estimates from an image. An automatically computed product on assumed dimensions is a numeric example but not proof that a particular photograph's wagon was measured correctly."
       ],
       "KeyConcepts": [
         {
@@ -286,7 +292,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Choose a reasonable unit",
+          "Title": "Source exact 1 — Estimate the Radio Flyer",
+          "Question": "Original source Radio Flyer visual estimation requires which three dimensions?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "length,width,height",
+          "Check": "Original numeric source example; incorrect distractors length only and width only must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Estimate the Radio Flyer",
+          "Question": "Original source a wagon BED volume should be expressed in",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "cubic length units",
+          "Check": "Original numeric source example; incorrect distractors meters only and square units only must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Estimate the Radio Flyer",
+          "Question": "Original source a still photo without trustworthy scale can establish EXACT wagon dimensions?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "no",
+          "Check": "Original numeric source example; incorrect distractors yes and only length must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Estimate the Radio Flyer",
+          "Question": "Original teacher source requests estimates too low/about right/too high, are these a single official exact number?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "no",
+          "Check": "Original numeric source example; incorrect distractors yes and always 100 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Choose a reasonable unit",
           "Question": "Why not describe wagon volume only in square feet?",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -298,7 +352,7 @@
           "Check": "A 24×12×2-foot model is576 cubic feet."
         },
         {
-          "Title": "Create a first estimate",
+          "Title": "Optional existing extension — Create a first estimate",
           "Question": "A fictional wagon bed is24×12×2ft. Estimate capacity.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -310,7 +364,7 @@
           "Check": "288ft²×2ft=576ft³."
         },
         {
-          "Title": "Bound a model",
+          "Title": "Optional existing extension — Bound a model",
           "Question": "Compute products from low 22×10×1.5ft and high26×14×2.5ft assumptions.",
           "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
           "Steps": [
@@ -332,18 +386,75 @@
           "Mistake": "Confuse area and volume",
           "WhyWrong": "Two dimensions compute square units, but capacity requires a third dimension.",
           "Correction": "Add a depth and express cubic units."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
         }
       ],
       "SummaryPoints": [
-        "Estimate physical measurements with explicit references and uncertainty.",
-        "Choose cubic units for interior capacity and compare low/middle/high scenarios.",
-        "A learner's source-image interpretation and refinement remain teacher-reviewed.",
-        "Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 7, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-7/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+        "Three dimensions necessary for a rectangular-volume proxy.",
+        "No one published measured exact wagon volume in this lesson's student activity.",
+        "Source visual estimates require explicit model assumptions and teacher scoring.",
+        "Optional prior: Estimate physical measurements with explicit references and uncertainty.",
+        "Optional prior: Choose cubic units for interior capacity and compare low/middle/high scenarios.",
+        "Optional prior: A learner's source-image interpretation and refinement remain teacher-reviewed.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 7, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-7/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Estimating the Volume of the World’s Largest Wagon — original geometric model",
+          "Title": "Estimate the Radio Flyer — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source Radio Flyer visual estimation requires which three dim",
+              "Cells": [
+                "length,width,height",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source a wagon BED volume should be expressed in",
+              "Cells": [
+                "cubic length units",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source a still photo without trustworthy scale can establish ",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original teacher source requests estimates too low/about right/too hig",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "To compute a rough wagon bed rectangular volume from measured dimensio",
+              "Cells": [
+                "length×width×height",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source asks students to EXPLAIN how accurate each dimension e",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Estimating the Volume of the World’s Largest Wagon — original geometric model",
           "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
           "Rows": [
             {

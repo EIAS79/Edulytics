@@ -764,6 +764,12 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Which hypothetical rectangular PRISM PROXY volume is larger?", "Great Pyramid proxy", "Empire State proxy", "equal"),
         new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Original source Great Pyramid actual shape is a rectangular prism true/false", "false", "true", "unknown"),
         new("usccss.g5.u08.l06.source_126_cube_prism_and_building_volume", "Source sugar cube packing only126 total cubes can determine a UNIQUE box shape?", "no", "yes", "always a cube"),
+        new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original source Radio Flyer visual estimation requires which three dimensions?", "length,width,height", "length only", "width only"),
+        new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original source a wagon BED volume should be expressed in", "cubic length units", "meters only", "square units only"),
+        new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original source a still photo without trustworthy scale can establish EXACT wagon dimensions?", "no", "yes", "only length"),
+        new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original teacher source requests estimates too low/about right/too high, are these a single official exact number?", "no", "yes", "always 100"),
+        new("usccss.g5.u08.l07.source_wagon_photo_estimation", "To compute a rough wagon bed rectangular volume from measured dimensions, which operation?", "length×width×height", "length+width+height", "2×(length+width)"),
+        new("usccss.g5.u08.l07.source_wagon_photo_estimation", "Original source asks students to EXPLAIN how accurate each dimension estimate is, teacher scored?", "yes", "no", "only digital numeric response"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
