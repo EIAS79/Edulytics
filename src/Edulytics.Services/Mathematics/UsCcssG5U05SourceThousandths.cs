@@ -701,6 +701,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l12.source_coin_graph_context", "Original Clare has5 coins NO QUARTER, source graph point representing them", "(5,18)", "(5,86)", "(2,50)"),
         new("usccss.g5.u07.l12.source_coin_graph_context", "Source partner coin toss10 times: heads+tails must equal", "10", "5", "20"),
         new("usccss.g5.u07.l12.source_coin_graph_context", "Source 10-flip student point on horizontal axis (heads, tails) means", "zero tails", "zero heads", "five of each"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Original perimeter12cm: length+width in cm", "6", "12", "3"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source perimeter12 rectangle a SQUARE length in cm", "3", "6", "4"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source perimeter12 rectangle length2.5cm, width", "3.5", "4.5", "2.5"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source perimeter12 rectangle length3.25cm, width", "2.75", "3.75", "3.25"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source area16 square-cm rectangle square length in cm", "4", "8", "16"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source area16 square-cm rectangle length5cm width", "3.2", "2.5", "4"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source area16 square-cm rectangle length3cm width", "16/3", "3/16", "13"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Source area16 and length4cm width", "4", "8", "2"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Original source perimeter12cm for length2.5 width3.5, true/false", "true", "false", "unknown"),
+        new("usccss.g5.u07.l13.source_rectangle_area_perimeter_coordinate_pairs", "Original source area16cm2 for length5 width3.2, true/false", "true", "false", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v13-20261101",
+  "ContentVersion": "g5-u07-l02-l03-l09-l13-im2021-source-parity-richv2-v14-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -1499,11 +1499,17 @@
       "CultureCode": "en",
       "Title": "Patterns in the Coordinate Plane",
       "ExplanationParagraphs": [
-        "Goal: connect fixed PERIMETER versus fixed AREA rectangles to different relationships between length and width, and plot the resulting ordered pairs. The source specifically contrasts addition-based perimeter with multiplication-based area and allows fractional or decimal side lengths.",
-        "Warm-up: a rectangle of perimeter16cm satisfies length+width=8cm. Possible pairs (1,7),(2,6),(3,5),(4,4),(5,3) lie on a descending straight line. Ask learners to explain why one side growing by1 forces the other to shrink by1.",
-        "Activity 1 — constant perimeter: choose a perimeter of16cm. Length x and width y satisfy2x+2y=16, or y=8−x. For length2.5cm width5.5cm, and length3.25cm width4.75cm. Both give perimeter16cm. Plot and label the positions with a scale allowing quarters, explaining why two side lengths must remain positive.",
-        "Activity 2 — constant area: choose area12cm². Then length×width=12, so examples (1,12),(2,6),(3,4),(4,3) fit, and (5,2.4) also fits. Compare this curved decreasing relationship with the straight fixed-perimeter line. A square with area12 requires each side √12cm, not a convenient whole length; a teacher may accept an approximate value with justification, but avoid claiming a rational integer exact side.",
-        "Assessment: source requires constructing tables, plotting fractional coordinates and interpreting the TWO different constraints. Equal perimeter does not imply equal area; numeric products alone cannot verify a coordinate plot or discussion of why the patterns differ."
+        "Original IM2021 G5 U07:L13 creates and GRAPHS ordered pairs (length,width) of rectangles under fixed PERIMETER12cm versus fixed AREA16cm². Different numerical constraints produce different graph shapes.",
+        "Warm-up Estimation Exploration Window Washing asks one window's area from an original CC0 Unsplash photo, but without verified physical dimensions no exact area can be read from the picture; pupil estimates are teacher scored.",
+        "Activity1 Rectangle Perimeters original Jada perimeter12cm, so length+width=6cm and width=6−length; source square is3×3cm, if length2.5 width3.5, if length3.25 width2.75. Students complete source table and DRAW graph points rather than only calculating.",
+        "Activity2 Rectangle Areas original area16cm², so width=16/length; for length5cm width3.2, length3cm width16/3, and original square4×4. Graphing length and width shows multiplicative rather than additive relation. Positive dimensions required.",
+        "Prior invented perimeter16/area12 examples in Rich V2 are independent Edulytiks exercises only. The source graph, CC0 photo, estimate, original plot and written explanations remain teacher reviewed, while selected Practice handles bounded numeric computations.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: connect fixed PERIMETER versus fixed AREA rectangles to different relationships between length and width, and plot the resulting ordered pairs. The source specifically contrasts addition-based perimeter with multiplication-based area and allows fractional or decimal side lengths.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: a rectangle of perimeter16cm satisfies length+width=8cm. Possible pairs (1,7),(2,6),(3,5),(4,4),(5,3) lie on a descending straight line. Ask learners to explain why one side growing by1 forces the other to shrink by1.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — constant perimeter: choose a perimeter of16cm. Length x and width y satisfy2x+2y=16, or y=8−x. For length2.5cm width5.5cm, and length3.25cm width4.75cm. Both give perimeter16cm. Plot and label the positions with a scale allowing quarters, explaining why two side lengths must remain positive.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — constant area: choose area12cm². Then length×width=12, so examples (1,12),(2,6),(3,4),(4,3) fit, and (5,2.4) also fits. Compare this curved decreasing relationship with the straight fixed-perimeter line. A square with area12 requires each side √12cm, not a convenient whole length; a teacher may accept an approximate value with justification, but avoid claiming a rational integer exact side.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source requires constructing tables, plotting fractional coordinates and interpreting the TWO different constraints. Equal perimeter does not imply equal area; numeric products alone cannot verify a coordinate plot or discussion of why the patterns differ."
       ],
       "KeyConcepts": [
         {
@@ -1527,7 +1533,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Perimeter at decimal sides",
+          "Title": "Source exact 1 — Perimeter and Area of Rectangles",
+          "Question": "Original perimeter12cm: length+width in cm",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "6",
+          "Check": "Original numeric source example; incorrect distractors 12 and 3 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Perimeter and Area of Rectangles",
+          "Question": "Source perimeter12 rectangle a SQUARE length in cm",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3",
+          "Check": "Original numeric source example; incorrect distractors 6 and 4 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Perimeter and Area of Rectangles",
+          "Question": "Source perimeter12 rectangle length2.5cm, width",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3.5",
+          "Check": "Original numeric source example; incorrect distractors 4.5 and 2.5 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Perimeter and Area of Rectangles",
+          "Question": "Source perimeter12 rectangle length3.25cm, width",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2.75",
+          "Check": "Original numeric source example; incorrect distractors 3.75 and 3.25 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Perimeter at decimal sides",
           "Question": "A rectangle has P16cm and length2.5cm. What width?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1539,7 +1593,7 @@
           "Check": "2×(2.5+5.5)=16."
         },
         {
-          "Title": "Area at decimal sides",
+          "Title": "Optional existing extension — Area at decimal sides",
           "Question": "Rectangle area12cm² and length5cm. What width?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1551,7 +1605,7 @@
           "Check": "5×2.4=12."
         },
         {
-          "Title": "Distinguish constraints",
+          "Title": "Optional existing extension — Distinguish constraints",
           "Question": "Does (3,5) satisfy P16cm and area12cm² simultaneously?",
           "Method": "Original coordinate, pattern or context model; teacher assesses plotted points and written mathematical reasoning.",
           "Steps": [
@@ -1573,18 +1627,89 @@
           "Mistake": "Assume two rectangles of same perimeter must have same area",
           "WhyWrong": "Multiple length-width pairs share a perimeter but have different products.",
           "Correction": "Compare (3,5) with (4,4), both P16 but areas15 and16."
+        },
+        {
+          "Mistake": "Use unrelated or invented examples rather than the actual source pattern rules and plotted values.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore the exact source pattern, coin, and rectangle constants; preserve open plotting and story decisions as teacher-scored."
         }
       ],
       "SummaryPoints": [
-        "Fixed perimeter and fixed area produce different length–width patterns.",
-        "Fractional points and graphs must be scaled correctly.",
-        "Teacher reviews coordinate graphs and explanations.",
-        "Source 2021 IM K–5 Grade5 Unit7 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-13/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
+        "Original P12: length+width6, square3×3, lengths2.5→3.5 and3.25→2.75.",
+        "Original A16: length5→3.2, length3→16/3, square4×4.",
+        "Student-made graphs and image-based estimates teacher reviewed.",
+        "Optional prior: Fixed perimeter and fixed area produce different length–width patterns.",
+        "Optional prior: Fractional points and graphs must be scaled correctly.",
+        "Optional prior: Teacher reviews coordinate graphs and explanations.",
+        "Optional prior: Source 2021 IM K–5 Grade5 Unit7 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-13/lesson.html. Actual 2021 teacher HTML including Student Facing inspected read-only on Primary/Our-CS. Source images, original separate Student Task PDFs and gated answers NOT_VERIFIED; original Edulytiks math text and accessible table."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Patterns in the Coordinate Plane — original representation",
+          "Title": "Perimeter and Area of Rectangles — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original perimeter12cm: length+width in cm",
+              "Cells": [
+                "6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source perimeter12 rectangle a SQUARE length in cm",
+              "Cells": [
+                "3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source perimeter12 rectangle length2.5cm, width",
+              "Cells": [
+                "3.5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source perimeter12 rectangle length3.25cm, width",
+              "Cells": [
+                "2.75",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source area16 square-cm rectangle square length in cm",
+              "Cells": [
+                "4",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source area16 square-cm rectangle length5cm width",
+              "Cells": [
+                "3.2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source area16 square-cm rectangle length3cm width",
+              "Cells": [
+                "16/3",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source area16 and length4cm width",
+              "Cells": [
+                "4",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Patterns in the Coordinate Plane — original representation",
           "Description": "Accessible first-party equivalent for values and ordered pairs; it is not a tested interactive plot or copied publisher graphic.",
           "Rows": [
             {
