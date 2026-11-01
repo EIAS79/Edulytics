@@ -42,6 +42,17 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 300 and 4", "300 × 4", 1200, "partial-product units"),
         new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 10 and 4", "10 × 4", 40, "partial-product units"),
         new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 5 and 4", "5 × 4", 20, "partial-product units"),
+        new("usccss.g5.u04.l03.original_partial_product_algorithm", "Original source L03 multiply 245 by 35, and use place-value partial products", "245 × 35", 8575, "whole-number product"),
+        new("usccss.g5.u04.l03.original_partial_product_algorithm", "Original source L03 multiply 245 by 30, and use place-value partial products", "245 × 30", 7350, "whole-number product"),
+        new("usccss.g5.u04.l03.original_partial_product_algorithm", "Original source L03 multiply 245 by 5, and use place-value partial products", "245 × 5", 1225, "whole-number product"),
+        new("usccss.g5.u04.l03.original_partial_product_algorithm", "Original source L03 multiply 4 by 5342, and use place-value partial products", "4 × 5342", 21368, "whole-number product"),
+        new("usccss.g5.u04.l03.original_partial_product_algorithm", "Original source L03 multiply 5 by 5342, and use place-value partial products", "5 × 5342", 26710, "whole-number product"),
+        new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 200 and 30", "200 × 30", 6000, "partial-product contribution"),
+        new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 40 and 30", "40 × 30", 1200, "partial-product contribution"),
+        new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 5 and 30", "5 × 30", 150, "partial-product contribution"),
+        new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 200 and 5", "200 × 5", 1000, "partial-product contribution"),
+        new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 40 and 5", "40 × 5", 200, "partial-product contribution"),
+        new("usccss.g5.u04.l03.original_245_by_35_partial_cells", "Source 245×35 six-cell partial product for 5 and 5", "5 × 5", 25, "partial-product contribution"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

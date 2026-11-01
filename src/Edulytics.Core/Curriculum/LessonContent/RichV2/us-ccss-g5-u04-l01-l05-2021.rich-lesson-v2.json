@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v7-20261101",
+  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -365,11 +365,12 @@
       "CultureCode": "en",
       "Title": "Partial Products in Algorithms",
       "ExplanationParagraphs": [
-        "Learning goal: organize the same full set of three-digit-by-two-digit partial products into numerical addition algorithms, including left-to-right and right-to-left recording. The source compares how different layouts list identical place-value contributions.",
-        "Warm-up: compare alternative decomposed products as equations and area-style diagrams. Source WODB explanations are open-ended, not a single designated outlier.",
-        "Activity 1 — partial products everywhere: for 236×24=(200+30+6)×(20+4), produce six values: 4000,600,120 for the 20-group; 800,120,24 for the 4-group. Explain how 20×30=600 differs from 4×30=120 despite both containing 30, and how every cell appears in the sum.",
-        "Activity 2 — record using two algorithms: list six separate partial products from largest place to smallest, then rewrite in reverse order without changing the sum. Alternatively combine 236×4=944 with 236×20=4720 to get the same 5664. Explain why row order is flexible but each place-value factor is fixed.",
-        "Teacher boundary: source requires matching sets of partial products to products, comparing vertical recording and defending diagram-to-equation connections. A numeric answer cannot replace all of those justifications. The source's comparison visuals are not reproduced."
+        "IM 2021 G5 U04:L03 goal: organize 3-digit×2-digit multiplication using actual source partial product diagrams and algorithms. The original source uses 245×35, and asks students to compare Andre and Clare's differently ordered but equivalent summands, not an arbitrary 236×24 example.",
+        "Warm-up Which One Doesn't Belong: Multiplying Large Numbers: the source compares several rectangle representations for 4×5342 with a variant 5×5342; examples include 20000+1200+160+8=21368 and 4×(5000+300+42)=20000+1200+168=21368. Original teacher diagrams may be chosen for multiple defensible outliers and are assessed by the teacher.",
+        "Activity 1 Partial Products Everywhere: original source 245×35=(200+40+5)×(30+5). The six relevant source summands are 6000,1200,150 and 1000,200,25, totaling 8575. Learners identify WHICH different sets of partial expressions produce the same product and explain why all original subrectangles are accounted for.",
+        "Activity 2 Record Partial Products: Andre and Clare both calculate 245×35=8575 with alternative recording order. Condensed groups are 245×30=7350 and 245×5=1225. Expanded contributions may be arranged as 6000+1200+150+1000+200+25. Explain how each digit occupies correct place value and why rearranging addends leaves the final product unchanged.",
+        "Source image card interpretations, visual box grouping, original Andre/Clare arithmetic layout and pupil explanations remain TEACHER_REVIEW_REQUIRED; exact numeric results support but do not prove a correct algorithm. Earlier correct 236×24 is retained as an optional extension only. Independently authored Edulytiks Cool-down uses 326×24 and teacher-reviewed partial product proof.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -393,7 +394,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "List six exact partial products",
+          "Title": "Original 245×35 six partial products",
+          "Question": "Calculate 245×35 by expanding hundreds tens ones against thirty and five.",
+          "Method": "Area-grid distributive decomposition.",
+          "Steps": [
+            "30-row 200×30=6000,40×30=1200,5×30=150.",
+            "5-row 200×5=1000,40×5=200,5×5=25.",
+            "Sum 6000+1200+150+1000+200+25."
+          ],
+          "Answer": "8575.",
+          "Check": "245×35=8575."
+        },
+        {
+          "Title": "Andre and Clare partial products compared",
+          "Question": "Show how two source solution layouts for 245×35 agree although the contributions are ordered differently.",
+          "Method": "Both standard group sums and expanded sums are valid distributive records.",
+          "Steps": [
+            "Tens multiplier: 245×30=7350.",
+            "Ones multiplier: 245×5=1225.",
+            "Total 7350+1225=8575; use commutativity of addition to explain order."
+          ],
+          "Answer": "8575 in both layouts.",
+          "Check": "Teacher checks every original partial-product place label."
+        },
+        {
+          "Title": "Source warm-up 4×5342 contrast",
+          "Question": "Use rectangular subproducts to find 4×5342, and compare 5×5342.",
+          "Method": "Split 5342 by thousands, hundreds, tens and ones.",
+          "Steps": [
+            "4×(5000+300+40+2)=20000+1200+160+8=21368.",
+            "Combine 40 and 2 to get 4×42=168.",
+            "5×5342=26710; compare factor 4 versus 5."
+          ],
+          "Answer": "21368 and 26710.",
+          "Check": "Original WODB diagram interpretation remains teacher reviewed."
+        },
+        {
+          "Title": "Optional existing extension — List six exact partial products",
           "Question": "Calculate 236×24 using separate cell values.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -405,7 +442,7 @@
           "Check": "(236×20)+(236×4)=4720+944=5664."
         },
         {
-          "Title": "Condense into two rows",
+          "Title": "Optional existing extension — Condense into two rows",
           "Question": "Explain why two-row recording is equivalent to six partial products.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -417,7 +454,7 @@
           "Check": "Individual component products remain present within 944 and 4720."
         },
         {
-          "Title": "Detect missing tens",
+          "Title": "Optional existing extension — Detect missing tens",
           "Question": "A student writes 236×20=472. What is wrong?",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -439,40 +476,71 @@
           "Mistake": "Assume changing listing order changes the answer",
           "WhyWrong": "Addition can reorder the identical set of partial products without changing the sum.",
           "Correction": "Verify the same six quantities appear in both versions."
+        },
+        {
+          "Mistake": "Substitute 236×24 for the original textbook's Andre/Clare 245×35",
+          "WhyWrong": "The source explicitly compares records of six partial contributions for 245×35=8575.",
+          "Correction": "Restore original 245×35 six summands and trace both student algorithms, preserving unrelated correct model as extension."
         }
       ],
       "SummaryPoints": [
-        "Partial product algorithms record the same mathematics as a decomposed multiplication diagram.",
-        "Group contributions correctly by place value, then add every row.",
-        "Teacher reviews matching algorithms to diagrams and explanations of different layouts.",
-        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 3 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-3/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+        "Source warm-up compares 4×5342 and source variant 5×5342 with diagram interpretations.",
+        "Source Activity1 245×35=8575 with six exact expanded partial products.",
+        "Source Activity2 compares Andre and Clare original place-value recording layouts.",
+        "Teacher checks source drawings and correct positional notation, not just numeric answer.",
+        "Edulytiks alternative Cool-down 326×24=7824 uses independent same skill."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Partial Products in Algorithms — place-value model",
-          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Title": "Original 245×35 partial contributions",
+          "Description": "Edulytiks source-aligned first-party number table, not copied publisher algorithm pictures.",
           "Rows": [
             {
-              "Label": "Place-value product",
+              "Label": "30 partials",
               "Cells": [
-                "20×200",
-                "20×30",
-                "20×6",
-                "4×200",
-                "4×30",
-                "4×6"
+                "6000",
+                "1200",
+                "150"
               ]
             },
             {
-              "Label": "Value",
+              "Label": "5 partials",
               "Cells": [
-                "4000",
-                "600",
-                "120",
-                "800",
-                "120",
-                "24"
+                "1000",
+                "200",
+                "25"
+              ]
+            },
+            {
+              "Label": "sum",
+              "Cells": [
+                "8575"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Andre and Clare grouped partials",
+          "Description": "Place value totals: original 245 multiplied by 30 and 5 regardless of recording order.",
+          "Rows": [
+            {
+              "Label": "245×30",
+              "Cells": [
+                "7350"
+              ]
+            },
+            {
+              "Label": "245×5",
+              "Cells": [
+                "1225"
+              ]
+            },
+            {
+              "Label": "full product",
+              "Cells": [
+                "8575"
               ]
             }
           ]
