@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v8-20261101",
+  "ContentVersion": "g5-u06-l02-l06-im2021-source-parity-richv2-v9-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -259,11 +259,17 @@
       "CultureCode": "en",
       "Title": "Metric Conversion and Multiplication by Powers of Ten",
       "ExplanationParagraphs": [
-        "Goal: convert from a LARGER metric length unit to a smaller unit by multiplying by 100 or1000, and use the context of athletics to compare jump lengths while selecting appropriate units. The source asks students to notice relationships across conversion tables and defend units in a broad jump story.",
-        "Warm-up: point to a meter stick and explain that it has 100 centimeters and 1000 millimeters. State that 1 kilometer has1000 meters and that a centimeter has ten millimeters. Predict why a large unit needs MORE smaller-sized units for the same physical distance.",
-        "Activity 1 — equivalent length tables: convert 3.2 meters to320 centimeters and3200 millimeters; convert12 kilometers to12000 meters. Use a first-party accessible length table and distinguish metric linear units, not square or cubic ones. Explain how multiplying by100 or1000 changes the VALUE of each digit in the new unit rather than physically changing distance.",
-        "Activity 2 — first-party standing jumps: students measure 1.62 meters,1.39 meters and1.50 meters; a hypothetical class comparison benchmark is1.45 meters (145 cm). Classify the first and third as above and the second below the benchmark. Convert each jump into centimeters and millimeters; discuss why reporting 1620 millimeters sounds numerically larger than162 centimeters while describing the identical distance.",
-        "Teacher boundary: the source asks students to classify physical measurements, analyze a published jump record, debate units and explain equivalence; a conversion calculator may verify values but cannot certify measurement interpretation or choice of helpful units. No source athlete photo reused."
+        "Original IM2021 G5 U06:L03 converts larger metric LENGTH units to smaller using powers10, compares standing broad jump data and explains which measurement unit is appropriate for the real-world event. Conversion changes the NUMBER but not physical distance.",
+        "Warm-up source four number talks100×1.5=150,1000×1.5=1500,15÷10=1.5,15÷100=0.15. Teacher checks how the position of each digit changes with multiplication/division by a power10.",
+        "Activity1 How Tall How Long How Far: original metric source table1 meter=100 centimeters=1000 millimeters. Original races1,10,100,1000 kilometers correspond to1000,10000,100000,1000000 meters respectively. Learner explains regular powers-of-ten pattern and preserves linear (not area or volume) units.",
+        "Activity2 Broad Jump original source three pupils Mai1.61m=161cm=1610mm, Tyler1.43m=143cm=1430mm, Clare1.57m=157cm=1570mm. Printed fifth-grade average148cm, so Mai and Clare ABOVE and Tyler BELOW. Original historical broad-jump world-record comparison337cm versus Mai+Clare161+157=318cm, so Jada's 'more than combined' claim is mathematically true by19cm using the printed values. World record number is treated as source-historical, not verified current.",
+        "Tyler claims his1430mm sounds more impressive than1.43m, yet it's the same length. Original teacher asks WHICH UNIT is best and WHY, which remains open teacher review. Previous invented broad jumps1.62/1.39/1.50 are optional Edulytiks extensions only. Independent Edulytiks Cool-down uses different metric measurements.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: convert from a LARGER metric length unit to a smaller unit by multiplying by 100 or1000, and use the context of athletics to compare jump lengths while selecting appropriate units. The source asks students to notice relationships across conversion tables and defend units in a broad jump story.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: point to a meter stick and explain that it has 100 centimeters and 1000 millimeters. State that 1 kilometer has1000 meters and that a centimeter has ten millimeters. Predict why a large unit needs MORE smaller-sized units for the same physical distance.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — equivalent length tables: convert 3.2 meters to320 centimeters and3200 millimeters; convert12 kilometers to12000 meters. Use a first-party accessible length table and distinguish metric linear units, not square or cubic ones. Explain how multiplying by100 or1000 changes the VALUE of each digit in the new unit rather than physically changing distance.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — first-party standing jumps: students measure 1.62 meters,1.39 meters and1.50 meters; a hypothetical class comparison benchmark is1.45 meters (145 cm). Classify the first and third as above and the second below the benchmark. Convert each jump into centimeters and millimeters; discuss why reporting 1620 millimeters sounds numerically larger than162 centimeters while describing the identical distance.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: the source asks students to classify physical measurements, analyze a published jump record, debate units and explain equivalence; a conversion calculator may verify values but cannot certify measurement interpretation or choice of helpful units. No source athlete photo reused."
       ],
       "KeyConcepts": [
         {
@@ -287,7 +293,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Convert meter units",
+          "Title": "Source exact 1 — Original 2021 G5 U06:L03 Metric Conversion and Powers of 10",
+          "Question": "Original warm-up 100 × 1.5",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "150",
+          "Check": "Original numeric source example; incorrect distractors 15 and 1500 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original 2021 G5 U06:L03 Metric Conversion and Powers of 10",
+          "Question": "Original warm-up 1000 × 1.5",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1500",
+          "Check": "Original numeric source example; incorrect distractors 150 and 15000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original 2021 G5 U06:L03 Metric Conversion and Powers of 10",
+          "Question": "Original warm-up 15÷10",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1.5",
+          "Check": "Original numeric source example; incorrect distractors 0.15 and 15 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original 2021 G5 U06:L03 Metric Conversion and Powers of 10",
+          "Question": "Original warm-up 15÷100",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.15",
+          "Check": "Original numeric source example; incorrect distractors 1.5 and 0.015 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Convert meter units",
           "Question": "Convert3.2m into centimeters and millimeters.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -299,7 +353,7 @@
           "Check": "320 cm=3.2 m and3200 mm=3.2 m."
         },
         {
-          "Title": "Convert a long race",
+          "Title": "Optional existing extension — Convert a long race",
           "Question": "Express12km in meters.",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -311,7 +365,7 @@
           "Check": "12000÷1000=12 kilometers."
         },
         {
-          "Title": "Compare hypothetical broad jumps",
+          "Title": "Optional existing extension — Compare hypothetical broad jumps",
           "Question": "Three jump lengths are1.62m,1.39m and1.50m. Which are above1.45m?",
           "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
           "Steps": [
@@ -333,18 +387,89 @@
           "Mistake": "Compare digits without matching measurement units",
           "WhyWrong": "162cm and1.5m have different unit scales.",
           "Correction": "Convert both to centimeters or both to meters before ordering."
+        },
+        {
+          "Mistake": "Confuse unit conversion with changing distance or substitute invented broad jump values for source table",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original Mai/Tyler/Clare data, metric source tables and source units, with teacher explanation."
         }
       ],
       "SummaryPoints": [
-        "Larger metric lengths convert to smaller metric units with positive factors of ten.",
-        "Unit conversion changes a count, not the actual distance.",
-        "Measuring jumps and explaining an appropriate unit are teacher-reviewed.",
-        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-3/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+        "Source 1meter=100cm=1000mm; km race values1000/10000/100000/1000000m.",
+        "Source Mai161cm, Tyler143cm, Clare157cm: above,below,above relative148cm.",
+        "Source record337cm > Mai+Clare318cm by19cm; Tyler1430mm equivalent1.43m.",
+        "Optional prior: Larger metric lengths convert to smaller metric units with positive factors of ten.",
+        "Optional prior: Unit conversion changes a count, not the actual distance.",
+        "Optional prior: Measuring jumps and explaining an appropriate unit are teacher-reviewed.",
+        "Optional prior: Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-3/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Metric Conversion and Multiplication by Powers of Ten — original model",
+          "Title": "Original 2021 G5 U06:L03 Metric Conversion and Powers of 10 — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warm-up 100 × 1.5",
+              "Cells": [
+                "150",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warm-up 1000 × 1.5",
+              "Cells": [
+                "1500",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warm-up 15÷10",
+              "Cells": [
+                "1.5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warm-up 15÷100",
+              "Cells": [
+                "0.15",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source metric length 1 meter to centimeters",
+              "Cells": [
+                "100",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source metric length1 meter to millimeters",
+              "Cells": [
+                "1000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source long race10 kilometers to meters",
+              "Cells": [
+                "10000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source long race100 kilometers to meters",
+              "Cells": [
+                "100000",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Metric Conversion and Multiplication by Powers of Ten — original model",
           "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
           "Rows": [
             {
