@@ -6,18 +6,18 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:ABC_COMPLETE",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L04",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 148,
+    "A_CLOSED": 147,
     "B_CLOSED": 148,
     "C_PREPARED": 148,
-    "READY_FOR_D": 148,
+    "READY_FOR_D": 147,
     "D_VERIFIED": 0,
-    "BLOCKED": 0,
-    "REMAINING": 0
+    "BLOCKED": 1,
+    "REMAINING": 1
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -310,20 +310,20 @@
         "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\preparation.html"
       ],
       "reuseFinding": "REUSE_EXPLICIT_LAYER_AND_ESTIMATION_RICHV2; FIX_MISSING_SOURCE_120_CUBE_EXPRESSIONS_AND_ORIGINAL_EXIT",
-      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "A_STATUS": "A_C_EXPLICIT_GAP",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
       "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE volume computation as supplemental; EXTEND human-reviewed estimation and layer-expression interpretation via shared single-writer",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l04-contract-v15.test.cjs",
-      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "testExecutionStatus": "WRITTEN_NOT_RUN",
       "startedAt": "2026-10-30T07:58:46.888Z",
       "closedAt": "2026-10-30T19:14:38.151Z",
       "elapsedSeconds": 40551,
       "commitSHA": null,
-      "blocker": null,
-      "READY_FOR_STAGE_D": true,
+      "blocker": "ORIGINAL_2021_L04_COOLDOWN_USE_EXPRESSIONS_CONTENT_GATED_AND_NOT_SOURCE_VERIFIED",
+      "READY_FOR_STAGE_D": false,
       "sourceEvidence": {
         "source": "IM K–5 2021 original local teacher lesson and preparation, embedded Student Facing",
         "goals": [
@@ -333,7 +333,87 @@
         ],
         "rights": "Original source model semantics used; first-party examples only",
         "originalFigures": "UNVERIFIED_NOT_COPIED",
-        "publisherCooldown": "GATED_NOT_VERIFIED"
+        "publisherCooldown": "ORIGINAL_2021_STUDENT_TASK_GATED_UNVERIFIED",
+        "activity1FigureMapping": [
+          {
+            "label": "A",
+            "sourceFigureRecordId": "148018",
+            "dimensions": [
+              2,
+              3,
+              4
+            ],
+            "volumeCubicUnits": 24,
+            "firstPartyVisualTitle": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+            "teacherReviewRequired": true
+          },
+          {
+            "label": "B",
+            "sourceFigureRecordId": "148019",
+            "dimensions": [
+              3,
+              5,
+              2
+            ],
+            "volumeCubicUnits": 30,
+            "firstPartyVisualTitle": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+            "teacherReviewRequired": true
+          },
+          {
+            "label": "C",
+            "sourceFigureRecordId": "148020",
+            "dimensions": [
+              3,
+              2,
+              5
+            ],
+            "volumeCubicUnits": 30,
+            "firstPartyVisualTitle": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+            "teacherReviewRequired": true
+          },
+          {
+            "label": "D",
+            "sourceFigureRecordId": "148021",
+            "dimensions": [
+              4,
+              2,
+              3
+            ],
+            "volumeCubicUnits": 24,
+            "firstPartyVisualTitle": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+            "teacherReviewRequired": true
+          },
+          {
+            "label": "E",
+            "sourceFigureRecordId": "148022",
+            "dimensions": [
+              4,
+              1,
+              2
+            ],
+            "volumeCubicUnits": 8,
+            "firstPartyVisualTitle": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+            "teacherReviewRequired": true
+          },
+          {
+            "label": "F",
+            "sourceFigureRecordId": "148023",
+            "dimensions": [
+              2,
+              7,
+              6
+            ],
+            "volumeCubicUnits": 84,
+            "firstPartyVisualTitle": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+            "teacherReviewRequired": true
+          }
+        ],
+        "sourceSnapshotSha256": {
+          "teacherLesson": "79f825be60d5a797fa64d549643093610503477f38f3d252e04cffb1279ddc12",
+          "teacherPreparation": "31baa2dca687f0a5916c90db93cb2c20ca30d1e06c4284c68ed8b462ce23396d",
+          "wrongEditionStudentMirror": "c8c97f94259986024de38a554a3863df0378c065ffeb43776d04a5c5a6b7d999"
+        },
+        "firstEditionStudentCopy": "2021 TEACHER EMBEDDED STUDENT FACING; accessim_student v.360 explicitly not used for 2021 parity"
       },
       "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json",
       "testPath": "tests/academic-us-ccss-g5-u01-l04-contract-v15.test.cjs",
@@ -345,7 +425,8 @@
       "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-practice-rubric-v15.json",
       "beforeAfterFinding": {
         "before": "First-party 40-cube multiplication model remained, but lacked actual 2021 source's 5×24 and 6×20 expression interpretation; original exit absent.",
-        "after": "Added source 120-cube paired layer expressions, explicit uncertain 9-front cube estimation, original 60-cube exit, accessible model, teacher rubric."
+        "after": "Added source 120-cube paired layer expressions, explicit uncertain 9-front cube estimation, original 60-cube exit, accessible model, teacher rubric.",
+        "abcReconciliation20261101": "Fixed missing first-party A–F prism figure mapping; identified unmatched source cooldown item; historical READY_FOR_STAGE_D was inconsistent with source evidence and is removed for this lesson until verified"
       },
       "practiceImplementation": {
         "family": "usccss.g5.u01.l04.full_prism_layer_groups",
@@ -357,7 +438,9 @@
         "parentHead": "a030f6383dea45e84eaa6e55adf5b60409296354"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-abc-element-ledger-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_ABC_ELEMENT_LEDGER_WITH_SOURCE_LIMITS"
+      "closureEvidenceKind": "ORIGINAL_ABC_ELEMENT_LEDGER_WITH_SOURCE_LIMITS",
+      "reopenedForEvidenceCorrectionAt": "2026-11-01",
+      "priorClosedAtPreserved": "2026-10-30T19:14:38.151Z"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
@@ -6351,5 +6434,8 @@
     "unitStatusEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-v5-strict-unit-status-20261030.json",
     "checkedAtUtc": "2026-10-30T12:48:08.024Z",
     "legacyNextIndependentCursorIgnored": true
-  }
+  },
+  "activeABCReviewLesson": "PED:US-CCSS-MATH:G5:U01:L04",
+  "lastSequentialABCReadyLesson": "PED:US-CCSS-MATH:G5:U01:L03",
+  "sourceEvidenceReconciliation20261101": "L04 explicit original cooldown gate; 147 historical READY claims not independently revalidated in this focused correction. A-C sequential acceptance resumes at L04; 2021 student source, not v.360 mirror."
 }

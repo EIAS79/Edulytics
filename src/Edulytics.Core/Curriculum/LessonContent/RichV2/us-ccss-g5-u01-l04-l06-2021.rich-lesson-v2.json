@@ -10,7 +10,7 @@
       "ExplanationParagraphs": [
         "Goal: determine volume when a rectangular prism is shown partly filled with unit cubes. Explain how the known cubes identify the size of a complete layer, infer unseen layers, and connect different multiplication expressions to the same prism. A drawing of incomplete cube detail does not mean the prism itself is hollow.",
         "Warm-up — Estimation Exploration: a 2021 original picture shows nine unit cubes in a visible front layer of a rectangular prism but obscures the depth. Ask for an estimate too low, about right and too high; justify that the exact cube count is UNKNOWN without the number of congruent layers. The publisher optionally reveals ten such layers, in which case the total is 90 cubes; 90 is NOT knowable from the original incomplete picture alone. Edulytiks supplies its own source-functionally equivalent verbal model, not the unseen image.",
-        "Activity 1 — Layers in Rectangular Prisms (20 minutes): for each of the 2021 source's partially detailed but completely packed prisms A–F, record and justify (a) number of cubes in a complete layer, (b) number of layers, and (c) cubic volume. The original figure descriptions include one partly detailed prism with a 2×7-cube visible base and three cubes indicated along its partly shown height; count the 14 cubes per base layer but do not infer a final total from a partially shown dimension unless the full height is established by the actual source diagram or teacher directions. Another explicitly dimensioned source prism is 2×3×4 = 24 cubic units. The original Activity 2, NOT Prism A, uses the separate 6×4×5 = 120-cube model and the expressions 5×24, 6×20 and 4×30. Inaccessible publisher artwork must be replaced by independent, clearly labeled diagrams or tactile cubes; teacher checks that each factor refers to real model dimensions.",
+        "Activity 1 — Layers in Rectangular Prisms (20 minutes): for each of the 2021 source's partially detailed but completely packed prisms A–F, record and justify (a) number of cubes in a complete layer, (b) number of layers, and (c) cubic volume. The original figure descriptions include one partly detailed prism with a 2×7-cube visible base and three cubes indicated along its partly shown height; count the 14 cubes per base layer but do not infer a final total from a partially shown dimension unless the full height is established by the actual source diagram or teacher directions. Another explicitly dimensioned source prism is 2×3×4 = 24 cubic units. The original Activity 2, NOT Prism A, uses the separate 6×4×5 = 120-cube model and the expressions 5×24, 6×20 and 4×30. Inaccessible publisher artwork must be replaced by independent, clearly labeled diagrams or tactile cubes; teacher checks that each factor refers to real model dimensions. Source picture order is A=148018 (2×3×4, 24 cubes), B=148019 (3×5×2, 30), C=148020 (3×2×5, 30), D=148021 (4×2×3, 24), E=148022 (4×1×2, 8), and F=148023 (2×7×6, 84). The 2×7 base/partly drawn height image record 158826 appears in the Activity 1 launch and MUST NOT be mislabeled as Prism A. In the first four student table rows record cubes per complete layer, number of full layers, and resulting volume; for E and F justify using partially visible but dimensioned cubes. These are independently authored accessible number models and teacher-reviewed geometry, NOT publisher artwork.",
         "Activity 2 — Finding Volume in Different Ways (15 minutes): explain what 5 × 24 and 6 × 20 mean for ONE 4×5×6 completely packed prism (120 cubic units). The source includes 5 × (4 × 6) and 6 × (4 × 5); another valid method is 4 × (5 × 6). Describe the chosen rectangular layer, perpendicular number of layers, and why changing the orientation does not change volume. The related 5×2×4=40 first-party example is supplementary, not a replacement for this original 120-cube source reasoning.",
         "Teacher assesses low/medium/high estimation as reasoned ranges, not as an exact image pixel-identical result; checks layer-count×cubes-in-layer tables and explains equivalent 120-cube expressions and parentheses in context. Students may use independently authored text tables, physical cubes or a tactile representation. Volume is measured in cubic units; squaring the answer or reporting a surface area is not appropriate to this lesson.",
         "Edulytiks-original exit check (NOT gated 2021 'Use Expressions'): a completely packed rectangular prism measures 3, 4 and 5 cubes along perpendicular edges. Show two ways of grouping identical cubes into complete layers and match each multiplication expression to the geometry. Expected: 3×20=60 and 5×12=60 cubic units (or 4×15=60); a teacher checks corresponding layers, cubic units and explanation, not merely a scalar 60.",
@@ -110,6 +110,21 @@
           ],
           "Answer": "5×24=6×20=4×30=120 cubic units.",
           "Check": "Original source figure 147425; do not confuse this independent Activity 2 prism with the partially detailed Activity 1 drawings."
+        },
+        {
+          "Title": "Source-figure A–F layer and volume reasoning",
+          "Question": "Using six original 2021 Activity 1 prism dimensions, fill the A–D layer table and justify the two separate E–F prism volumes.",
+          "Method": "Edulytiks independently authored dimension-and-layer table from source 2021 HTML figure alt descriptions, retaining the student's explanation and figure construction for teacher review.",
+          "Steps": [
+            "Prism A has 2×3 cubes in one layer and four layers, volume 24 cubic units.",
+            "Prisms B and C have different pictured layers but both contain 30 cubes: (3×5)×2 and (3×2)×5.",
+            "Prism D gives (4×2)×3 = 24 cubic units.",
+            "Prism E gives (4×1)×2 = 8 cubic units.",
+            "Prism F gives (2×7)×6 = 84 cubic units, even if only some cubes are drawn.",
+            "Explain the selected orientation and how hidden cubes must complete the prism; teacher checks actual drawing-based reasoning."
+          ],
+          "Answer": "A=24, B=30, C=30, D=24, E=8, F=84 cubic units.",
+          "Check": "Volume = cubes in one COMPLETE layer × count of equally sized layers; do not reassign source image 158826 to Prism A."
         }
       ],
       "CommonMistakes": [
@@ -197,9 +212,83 @@
               ]
             }
           ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original 2021 Activity 1 A–F — independent source-geometry layer table",
+          "Description": "EDULYTIKS first-party accessible mathematical table. 2021 teacher Student Facing Activity 1 source figures 148018–148023 identify six packed prisms; A–D are table questions and E–F are explain-volume questions. These are dimensions inferred from the original source figure alt descriptions, not image files or a substitute for teacher assessment of drawings. The separate 158826 launch drawing must not be confused with Prism A.",
+          "Rows": [
+            {
+              "Label": "Prism",
+              "Cells": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F"
+              ]
+            },
+            {
+              "Label": "2021 source figure ID",
+              "Cells": [
+                "148018",
+                "148019",
+                "148020",
+                "148021",
+                "148022",
+                "148023"
+              ]
+            },
+            {
+              "Label": "Dimensions (unit cubes)",
+              "Cells": [
+                "2 × 3 × 4",
+                "3 × 5 × 2",
+                "3 × 2 × 5",
+                "4 × 2 × 3",
+                "4 × 1 × 2",
+                "2 × 7 × 6"
+              ]
+            },
+            {
+              "Label": "Cubes in one complete layer",
+              "Cells": [
+                "6",
+                "15",
+                "6",
+                "8",
+                "4",
+                "14"
+              ]
+            },
+            {
+              "Label": "Number of layers",
+              "Cells": [
+                "4",
+                "2",
+                "5",
+                "3",
+                "2",
+                "6"
+              ]
+            },
+            {
+              "Label": "Volume (cubic units)",
+              "Cells": [
+                "24",
+                "30",
+                "30",
+                "24",
+                "8",
+                "84"
+              ]
+            }
+          ]
         }
       ],
-      "Videos": []
+      "Videos": [],
+      "ContentVersion": "g5-u01-l04-im2021-source-figure-a-f-abc-20261101"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
