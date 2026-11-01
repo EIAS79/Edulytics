@@ -628,6 +628,16 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source statement all trapezoids are parallelograms, under inclusive definition", "false", "true", "unknown"),
         new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source statement some trapezoids are parallelograms under inclusive definition", "true", "false", "unknown"),
         new("usccss.g5.u07.l05.source_trapezoid_two_definitions", "Source statement no trapezoids are parallelograms under exclusive definition", "true", "false", "unknown"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Every square is a rhombus by original unit definition", "true", "false", "unknown"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Every rectangle is a parallelogram", "true", "false", "unknown"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Every square is also a rectangle", "true", "false", "unknown"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "A rhombus MUST be a square", "false", "true", "unknown"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "A parallelogram MUST have four right angles", "false", "true", "unknown"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Source Diego: impossible to draw a square that is NOT a rhombus, agree?", "agree", "disagree", "cannot decide"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Original activity toothpicks required to build a square", "4", "6", "3"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Original activity toothpicks required to build a rectangle", "6", "4", "3"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Is a rhombus with four equal sides but nonright angles a square?", "no", "yes", "only if turned"),
+        new("usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "Source square has four equal sides and four right angles", "true", "false", "unknown"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>

@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u07-l04-l08-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -514,11 +514,17 @@
       "CultureCode": "en",
       "Title": "Hierarchy of Quadrilaterals",
       "ExplanationParagraphs": [
-        "Goal: construct quadrilaterals physically from identical straight sticks and explain inclusion relationships: every square is a rhombus; every rectangle is a parallelogram, but converses need not hold. The source uses four or six toothpicks to demonstrate fixed side lengths while changing angles and then asks students to critique a misleading explanation.",
-        "Warm-up: take four hypothetical equal toothpicks and connect their endpoints as a square. Rotate/joint the shape into a slanted, non-right-angled rhombus without changing the four side lengths. What changed is angle measure, not side length or closed four-sided status.",
-        "Activity 1 — two constructions: model a square and a non-square rhombus using four equal sticks. Both have all equal sides; only the square has four right angles. Model a rectangle and a slanted parallelogram with pairs of matching opposite side lengths (for example two short and two long sticks). In both shapes, opposite sides stay parallel but only the rectangle has right angles.",
-        "Activity 2 — classify hand-drawn shapes: draw a rhombus with vertices (0,2),(2,3),(4,2),(2,1), which has all four equal side lengths but does NOT have four right angles; draw the axis-aligned square (0,0),(2,0),(2,2),(0,2), which is both square and rhombus. Explain why a 'square that is not a rhombus' is impossible; rewrite the incorrect statement 'Rhombuses are not squares' as 'Some rhombuses are squares; some are not.'",
-        "Assessment: drawing and physical construction, side-length verification, the full hierarchy and partner critique cannot be certified by a single classification label; source activity requires teacher evaluation of actual shapes. First-party coordinate examples replace source toothpick photographs."
+        "Original 2021 Grade5 U07:L06 organizes quadrilateral SUBCATEGORIES via the defining properties of side lengths, parallel sides and right angles, retaining the curriculum's inclusive trapezoid definition.",
+        "Warm-up Notice and Wonder Squares and Rhombuses compares source shapes by equal sides and angle measures, showing the difference between being a rhombus and the more specific square.",
+        "Activity1 Shapes with Toothpicks: with FOUR equal toothpicks build a square then a slanted rhombus while all edge lengths remain fixed but angles change; using SIX sticks with opposite-side lengths build a rectangle and a nonrectangular parallelogram. Learners construct and explain.",
+        "Activity2 Three Quadrilaterals asks pupils to draw three distinct polygons (at least one parallelogram), evaluate square/rhombus/rectangle/parallelogram and additionally DRAW a rhombus not square plus one that is square. Diego argues there cannot be a square not a rhombus: correct under source properties.",
+        "Automated selected Practice covers bounded subset truths but cannot verify toothpick constructions, original source pictures or learner-created coordinates. Existing Rich V2 content reused; teacher drawings and explanations are recorded as mandatory review.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: construct quadrilaterals physically from identical straight sticks and explain inclusion relationships: every square is a rhombus; every rectangle is a parallelogram, but converses need not hold. The source uses four or six toothpicks to demonstrate fixed side lengths while changing angles and then asks students to critique a misleading explanation.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: take four hypothetical equal toothpicks and connect their endpoints as a square. Rotate/joint the shape into a slanted, non-right-angled rhombus without changing the four side lengths. What changed is angle measure, not side length or closed four-sided status.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — two constructions: model a square and a non-square rhombus using four equal sticks. Both have all equal sides; only the square has four right angles. Model a rectangle and a slanted parallelogram with pairs of matching opposite side lengths (for example two short and two long sticks). In both shapes, opposite sides stay parallel but only the rectangle has right angles.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — classify hand-drawn shapes: draw a rhombus with vertices (0,2),(2,3),(4,2),(2,1), which has all four equal side lengths but does NOT have four right angles; draw the axis-aligned square (0,0),(2,0),(2,2),(0,2), which is both square and rhombus. Explain why a 'square that is not a rhombus' is impossible; rewrite the incorrect statement 'Rhombuses are not squares' as 'Some rhombuses are squares; some are not.'",
+        "Optional previous source-aligned or independently authored extension — Assessment: drawing and physical construction, side-length verification, the full hierarchy and partner critique cannot be certified by a single classification label; source activity requires teacher evaluation of actual shapes. First-party coordinate examples replace source toothpick photographs."
       ],
       "KeyConcepts": [
         {
@@ -542,7 +548,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Square vs rhombus",
+          "Title": "Source exact 1 — Hierarchy of Quadrilaterals",
+          "Question": "Every square is a rhombus by original unit definition",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Hierarchy of Quadrilaterals",
+          "Question": "Every rectangle is a parallelogram",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Hierarchy of Quadrilaterals",
+          "Question": "Every square is also a rectangle",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Hierarchy of Quadrilaterals",
+          "Question": "A rhombus MUST be a square",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Square vs rhombus",
           "Question": "Are all rhombuses squares?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -554,7 +608,7 @@
           "Check": "Teacher checks angles and side lengths of counterexample."
         },
         {
-          "Title": "Rectangle vs parallelogram",
+          "Title": "Optional existing extension — Rectangle vs parallelogram",
           "Question": "Can a parallelogram have no right angles?",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -566,7 +620,7 @@
           "Check": "A rectangle is always a parallelogram."
         },
         {
-          "Title": "Impossible request",
+          "Title": "Optional existing extension — Impossible request",
           "Question": "Draw a square that is not a rhombus.",
           "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
           "Steps": [
@@ -588,18 +642,89 @@
           "Mistake": "Claim a hierarchy arrow works in both directions",
           "WhyWrong": "A subclass's extra defining properties are not required by the parent class.",
           "Correction": "Prove one direction and supply counterexample to the converse."
+        },
+        {
+          "Mistake": "Replace published source open diagrams with one invented fixed numeric-only answer",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original two-stage task, exact source terms and teacher-reviewed images with numerical choices bounded to the source properties."
         }
       ],
       "SummaryPoints": [
-        "A square is a special rhombus and rectangle; a rectangle is a special parallelogram.",
-        "Constructing and modifying figures reveals which properties are preserved.",
-        "Source physical work and hierarchy claims need teacher review.",
-        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 6: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-6/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+        "Square is both rhombus and rectangle; both parallelograms.",
+        "Not all rhombuses are squares and not all parallelograms are rectangles.",
+        "Source construction and drawings teacher-scored.",
+        "Optional prior: A square is a special rhombus and rectangle; a rectangle is a special parallelogram.",
+        "Optional prior: Constructing and modifying figures reveals which properties are preserved.",
+        "Optional prior: Source physical work and hierarchy claims need teacher review.",
+        "Optional prior: 2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 6: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-6/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Hierarchy of Quadrilaterals — properties and examples",
+          "Title": "Hierarchy of Quadrilaterals — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Every square is a rhombus by original unit definition",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Every rectangle is a parallelogram",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Every square is also a rectangle",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "A rhombus MUST be a square",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "A parallelogram MUST have four right angles",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Diego: impossible to draw a square that is NOT a rhombus, agree",
+              "Cells": [
+                "agree",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original activity toothpicks required to build a square",
+              "Cells": [
+                "4",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original activity toothpicks required to build a rectangle",
+              "Cells": [
+                "6",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Hierarchy of Quadrilaterals — properties and examples",
           "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
           "Rows": [
             {
