@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v6-20261101",
+  "ContentVersion": "g5-u04-l01-l05-im2021-source-parity-richv2-v7-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -175,11 +175,12 @@
       "CultureCode": "en",
       "Title": "Partial Products in Diagrams",
       "ExplanationParagraphs": [
-        "Learning goal: calculate a three-digit-by-two-digit product from rectangular partial-product diagrams and explain that the separate boxes are place-value products. The source's area-style rectangles are deliberately NOT to scale; learners should not infer relative lengths from their physical picture widths.",
-        "Warm-up: compare several original rectangle-grid decompositions of a product; students may choose different Which One Doesn't Belong criteria and must defend them. One picture is not automatically unique just because it uses more subrectangles.",
-        "Activity 1 — build six partial products: write 134×23=(100+30+4)×(20+3). Label a 2-row-by-3-column table with 2000,600,80 across the 20-row and 300,90,12 across the 3-row. Sum 2000+600+80+300+90+12=3082. Show each cell's factors; do not mistake the table for a scale drawing.",
-        "Activity 2 — choose an efficient decomposition: calculate the same product with (100+34)×23=2300+782, or 134×(20+3)=2680+402. Explain what the subrectangles mean, why all three decompositions count exactly once and which is convenient for a learner.",
-        "Teacher boundary: source expects matching rectangular area diagrams, filling all partial cells, selecting one of several decompositions and explaining its benefit. Numeric multiplication alone cannot auto-complete the geometry-to-expression matching or student discussion. Source figures not copied."
+        "Original IM 2021 G5 U04:L02 5.NBT.B.5: interpret multi-digit multiplication as partial products inside differently partitioned rectangle diagrams. The source pictures may group cells differently and are not necessarily drawn to scale. A pupil must justify how the same full rectangular product arises from each valid decomposition.",
+        "Warm-up Which One Doesn't Belong: Diagrams to Find Products: original source figures A–D depict alternative splits of 42×33, with 30 and 3 units on one side, 40 and 2 on the other. The 2-by-2 diagram has partial products 1200,60,120,6, summing 1386. Accept multiple valid pupil-selected outliers, with original diagram interpretation requiring TEACHER_REVIEW_REQUIRED.",
+        "Activity 1 Decompose in Many Ways: source 42×33=(40+2)(30+3)=1200+60+120+6=1386. Then original 142×33=(100+40+2)(30+3)=3000+1200+60+300+120+6=4686. Diagram labels and individual box contributions should represent actual place values, not approximate physical widths.",
+        "Activity 2 Calculate in Many Ways: actual original 315×24=(300+10+5)(20+4). Six-cell model: 6000+200+100+1200+40+20=7560. Alternative source diagrams show an entire 315 times 20 and 315 times 4 (two rectangles), or 300,10,5 times 24 (three rectangles). All decompositions give the SAME product; students choose a diagram and explain why.",
+        "Numerical selected Practice validates exact products and each partial-product cell only. Source diagram choice, WODB rationale, open models and peer explanation remain teacher scored. An independent Edulytiks alternative Cool-down applies the same skill to 234×12, not a copied publisher original.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
       ],
       "KeyConcepts": [
         {
@@ -203,7 +204,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Six-cell place-value model",
+          "Title": "Original 42 by 33 area diagram",
+          "Question": "Fill the 2-by-2 partial-products grid for 42×33 and find the total.",
+          "Method": "Decompose 42=40+2 and 33=30+3.",
+          "Steps": [
+            "30×40=1200 and 30×2=60.",
+            "3×40=120 and 3×2=6.",
+            "Add 1200+60+120+6."
+          ],
+          "Answer": "1386.",
+          "Check": "42×33=1386; cell rows/columns must match source factors."
+        },
+        {
+          "Title": "Original expanded 142 by 33",
+          "Question": "Use a 3-by-2 rectangular decomposition to find 142×33.",
+          "Method": "(100+40+2)×(30+3) gives six source partial products.",
+          "Steps": [
+            "30-row: 3000+1200+60=4260.",
+            "3-row: 300+120+6=426.",
+            "Add 4260+426."
+          ],
+          "Answer": "4686.",
+          "Check": "142×33=4686."
+        },
+        {
+          "Title": "Original three forms of 315 by 24",
+          "Question": "Find 315×24 using one of the source's three area-model decompositions.",
+          "Method": "Six-cell, two-cell, or three-cell representations preserve distributive law.",
+          "Steps": [
+            "Six cells: 6000,200,100,1200,40,20.",
+            "Two cells: 315×20=6300 and 315×4=1260.",
+            "Three cells: 300×24=7200,10×24=240,5×24=120."
+          ],
+          "Answer": "7560.",
+          "Check": "Each decomposition produces 315×24=7560; teacher reviews diagram consistency."
+        },
+        {
+          "Title": "Optional existing extension — Six-cell place-value model",
           "Question": "Calculate 134×23 from a 3-column by 2-row partial-products table.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -215,7 +252,7 @@
           "Check": "134×20=2680 and 134×3=402; 2680+402=3082."
         },
         {
-          "Title": "Two-cell model",
+          "Title": "Optional existing extension — Two-cell model",
           "Question": "How can 134×23 be calculated using only two partial products?",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -227,7 +264,7 @@
           "Check": "2680+402=3082."
         },
         {
-          "Title": "Check another grouping",
+          "Title": "Optional existing extension — Check another grouping",
           "Question": "Show that 134×23=(100+34)×23.",
           "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
           "Steps": [
@@ -249,48 +286,73 @@
           "Mistake": "Forget one of the six boxes",
           "WhyWrong": "Leaving out any place-value combination reduces the sum.",
           "Correction": "Cross-check every row/column pair has a product."
+        },
+        {
+          "Mistake": "Replace textbook 42×33,142×33 and 315×24 with unrelated 134×23",
+          "WhyWrong": "The source's exact rectangles and multiple models use particular tens, hundreds and ones partial products; alternative values omit them.",
+          "Correction": "Restore all three source products and preserve mathematically correct 134×23 only as extension."
         }
       ],
       "SummaryPoints": [
-        "Each partial-product diagram box corresponds to multiplying two place-value parts.",
-        "All valid decompositions preserve the exact factor product.",
-        "Diagram labels and chosen partition explanations are teacher-assessed.",
-        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 2 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-2/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+        "Source warm-up compares original WODB rectangles of 42×33 with multiple valid explanations.",
+        "Source Activity1 42×33=1386 and 142×33=4686, using correctly labeled place-value cells.",
+        "Source Activity2 315×24=7560 across six-cell, two-cell and three-cell representations.",
+        "Teacher checks diagrams and verbal distributive-law justification; selected numeric choice is supplementary.",
+        "Independent Cool-down 234×12=2808 is teacher-scored; original gated Cool-down not certified."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Partial Products in Diagrams — place-value model",
-          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Title": "Original 42×33 partial products",
+          "Description": "Accessible first-party mathematical area grid; teacher checks original source picture orientation.",
           "Rows": [
             {
-              "Label": "Factor row",
+              "Label": "30-row",
               "Cells": [
-                "100",
-                "30",
-                "4"
+                "30×40=1200",
+                "30×2=60"
               ]
             },
             {
-              "Label": "20",
+              "Label": "3-row",
               "Cells": [
-                "2000",
-                "600",
-                "80"
+                "3×40=120",
+                "3×2=6"
               ]
             },
             {
-              "Label": "3",
+              "Label": "Grand total",
               "Cells": [
-                "300",
-                "90",
-                "12"
+                "1386"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original 315×24 six-cell area model",
+          "Description": "Edulytiks source-number model showing six exact place-value products.",
+          "Rows": [
+            {
+              "Label": "20-row",
+              "Cells": [
+                "6000",
+                "200",
+                "100"
+              ]
+            },
+            {
+              "Label": "4-row",
+              "Cells": [
+                "1200",
+                "40",
+                "20"
               ]
             },
             {
               "Label": "Total",
               "Cells": [
-                "3082"
+                "7560"
               ]
             }
           ]

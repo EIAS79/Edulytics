@@ -29,6 +29,19 @@ public static class UsCcssG5U04WholeNumberSourceProducts
         new(L01Product,"Original IM Grade 5 U04 L01 Activity 2","18 × 149",2682,""),
         new(L01Estimate,"Which of the FOUR original source benchmarks is the MOST REASONABLE estimate of 18×149?",
             "18 × 149, estimate",3000,"",true),
+        new("usccss.g5.u04.l02.original_partial_products_totals", "Original textbook U04:L02 area model of 42 by 33; teacher reviews diagram organization", "42 × 33", 1386, "square units of area model"),
+        new("usccss.g5.u04.l02.original_partial_products_totals", "Original textbook U04:L02 area model of 142 by 33; teacher reviews diagram organization", "142 × 33", 4686, "square units of area model"),
+        new("usccss.g5.u04.l02.original_partial_products_totals", "Original textbook U04:L02 area model of 315 by 24; teacher reviews diagram organization", "315 × 24", 7560, "square units of area model"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 30 and 40", "30 × 40", 1200, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 30 and 2", "30 × 2", 60, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 3 and 40", "3 × 40", 120, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 3 and 2", "3 × 2", 6, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 300 and 20", "300 × 20", 6000, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 10 and 20", "10 × 20", 200, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 5 and 20", "5 × 20", 100, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 300 and 4", "300 × 4", 1200, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 10 and 4", "10 × 4", 40, "partial-product units"),
+        new("usccss.g5.u04.l02.original_area_diagram_cells", "Original source 42×33 or 315×24 rectangular partial-product cell using factors 5 and 4", "5 × 4", 20, "partial-product units"),
         // END_G5_U04_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
