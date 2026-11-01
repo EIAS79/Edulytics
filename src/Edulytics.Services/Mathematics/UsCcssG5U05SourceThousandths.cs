@@ -836,6 +836,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity2 teacher requires classmates' actual ideas to be", "recorded", "discarded", "fabricated"),
         new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Original Activity3 image may concern", "any learned math topic", "bread only", "volume only"),
         new("usccss.g5.u08.l14.source_student_created_notice_wonder", "Source activity original chosen pictures have one unique fixed numeric answer?", "no", "yes", "always1"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original warmup subject to estimate from photograph", "umbrellas", "sugar cubes", "coins"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original warmup photograph attribution license visible in teacher source", "CC0 Unsplash", "CC BY-NC", "proprietary Edulytiks"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original source Estimation Exploration needs which THREE estimate categories?", "too low,about right,too high", "yes,no,maybe", "exactly three right answers"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original Activity1 student must FIND an image suitable for estimating quantity using", "multi-digit multiplication", "geometry proofs only", "subtracting fractions only"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original Activity1 estimates are prepared by", "student from chosen image", "fixed official answer key", "unrelated random template"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original Activity2 learner should DISPLAY image and ask classmates for", "too high,too low,about right estimates", "their grades only", "secret numerical passwords"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Original Activity2 classmates must have quiet think and peer discussion before sharing", "yes", "no", "only one student speaks"),
+        new("usccss.g5.u08.l15.source_student_created_estimation_exploration", "Source count of umbrellas exact from credited photo is determined by text-only description?", "no", "yes", "always100"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
