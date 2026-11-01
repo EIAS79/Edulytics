@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u05-l16-l18-im2021-source-parity-richv2-v9-20261101",
+  "ContentVersion": "g5-u05-l16-l18-im2021-source-parity-richv2-v10-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -510,11 +510,17 @@
       "CultureCode": "en",
       "Title": "Use Whole Number Facts",
       "ExplanationParagraphs": [
-        "Learning goal: use the associative and distributive properties to rewrite a positive whole number times a decimal as exact whole-number products TIMES one tenth or one hundredth. The source first asks whether equations are true or false, and later asks for two different representations of the SAME source diagram.",
-        "Warm-up — truth and reasonableness: compare 5×0.6 with 30, and 4×0.08 with 32×0.01. The former is 3.0, not 30; the latter is 0.32 and correctly counts 32 hundredths. A whole number multiplied by a positive fraction less than one must yield a product less than that whole number.",
-        "Activity 1 — explain all place-value factors: calculate 7×0.04=(7×4)×0.01=0.28; contrast it with the incorrect 7×0.04=(7×4)×0.1=2.8. Complete an equation such as 8×0.7=(8×7)×___ with one tenth, and 8×0.07=(8×7)×___ with one hundredth. Explain why only the correct unit gives equivalent products.",
-        "Activity 2 — match two expressions to one model: an accessible hundredths diagram has four equal groups of 0.13, or a combined 52 hundredths. Interpret both 4×13×0.01=0.52 and 4×0.1+4×0.03=0.52, then critique the false shortcut 4×13×0.1=5.2. A student must describe the four grouped tenths-and-hundredths selections, not only calculate.",
-        "Assessment: false-equation critiques, blank-filling and diagram/expression matching can have numeric subchecks but the learner's justification and chosen interpretation are teacher-reviewed; original source visual and protected response not reused."
+        "Original IM2021 Grade5 U05:L18 demonstrates associative and distributive multiplication properties using whole-number factors and the VALUE of tenths/hundredths, rejecting equations in which unit0.01 is confused with0.1.",
+        "Warm-up original source TRUE/FALSE:30×2×10=6×10 is FALSE (600≠60),30×2×10=20×3×10 is TRUE (600=600),60×10=30×20 is TRUE. Students justify not only recite true/false.",
+        "Activity1 Agree or Disagree source4×0.7=28 is FALSE (2.8),5×0.8=0.40 FALSE (4),6×0.03=(6×3)×0.01 TRUE (0.18),8×0.07=(8×7)×0.1 FALSE (right side5.6 vs0.56). Printed fill-ins 3×0.7=3×7×0.1,3×0.07=3×7×0.01,5×0.4=(5×4)×0.1.",
+        "Activity2 Interpret Diagrams original 3×0.12 and equivalent (3×12)×0.01 and (3×0.1)+(3×0.02) ALL give0.36. Source original hundreds-grid figure, decomposition drawing and oral proof remain TEACHER_REVIEW_REQUIRED.",
+        "Previous correct unrelated 7×0.04,8×.07,4×.13 can be kept as Edulytiks extensions only. Original gated Cool-down is not inferred; independent teacher-scored Cool-down uses 9×0.08.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Learning goal: use the associative and distributive properties to rewrite a positive whole number times a decimal as exact whole-number products TIMES one tenth or one hundredth. The source first asks whether equations are true or false, and later asks for two different representations of the SAME source diagram.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — truth and reasonableness: compare 5×0.6 with 30, and 4×0.08 with 32×0.01. The former is 3.0, not 30; the latter is 0.32 and correctly counts 32 hundredths. A whole number multiplied by a positive fraction less than one must yield a product less than that whole number.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — explain all place-value factors: calculate 7×0.04=(7×4)×0.01=0.28; contrast it with the incorrect 7×0.04=(7×4)×0.1=2.8. Complete an equation such as 8×0.7=(8×7)×___ with one tenth, and 8×0.07=(8×7)×___ with one hundredth. Explain why only the correct unit gives equivalent products.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — match two expressions to one model: an accessible hundredths diagram has four equal groups of 0.13, or a combined 52 hundredths. Interpret both 4×13×0.01=0.52 and 4×0.1+4×0.03=0.52, then critique the false shortcut 4×13×0.1=5.2. A student must describe the four grouped tenths-and-hundredths selections, not only calculate.",
+        "Optional previous source-aligned or independently authored extension — Assessment: false-equation critiques, blank-filling and diagram/expression matching can have numeric subchecks but the learner's justification and chosen interpretation are teacher-reviewed; original source visual and protected response not reused."
       ],
       "KeyConcepts": [
         {
@@ -538,7 +544,55 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Whole-number fact with hundredths",
+          "Title": "Source exact 1 — Original Grade5 U05:L18 Use Whole Number Facts",
+          "Question": "Original IM2021 source true/false: 30×2×10=6×10",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and not enough information must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original Grade5 U05:L18 Use Whole Number Facts",
+          "Question": "Original IM2021 source true/false: 30×2×10=20×3×10",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and not enough information must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original Grade5 U05:L18 Use Whole Number Facts",
+          "Question": "Original IM2021 source true/false: 60×10=30×20",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "true",
+          "Check": "Original numeric source example; incorrect distractors false and not enough information must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original Grade5 U05:L18 Use Whole Number Facts",
+          "Question": "Original IM2021 source true/false: 4×0.7=28",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and not enough information must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Whole-number fact with hundredths",
           "Question": "Find 7×0.04 and justify the decimal.",
           "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
           "Steps": [
@@ -550,7 +604,7 @@
           "Check": "7×0.04=28×0.01."
         },
         {
-          "Title": "Fill the unit blank",
+          "Title": "Optional existing extension — Fill the unit blank",
           "Question": "What value completes 8×0.07=(8×7)×___?",
           "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
           "Steps": [
@@ -562,7 +616,7 @@
           "Check": "56×0.01=0.56."
         },
         {
-          "Title": "Match two expressions to one diagram",
+          "Title": "Optional existing extension — Match two expressions to one diagram",
           "Question": "A model shows four groups of 0.13. Find the sum using whole-number facts and distribution.",
           "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
           "Steps": [
@@ -584,18 +638,89 @@
           "Mistake": "Accept a product larger than the positive whole factor without checking",
           "WhyWrong": "A positive multiplier below one produces a smaller positive product.",
           "Correction": "Compare to n×1 and verify the resulting magnitude."
+        },
+        {
+          "Mistake": "Treat8×0.07=(8×7)×0.1 as true or substitute invented products for original expressions",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use the correct0.01 scaling and restore all seven source conditions with original3×0.12 diagrams."
         }
       ],
       "SummaryPoints": [
-        "Whole-number multiplication facts remain useful when the units are tenths or hundredths.",
-        "Associative and distributive properties provide two equivalent diagram interpretations.",
-        "Reasoned true/false statements and student diagrams remain teacher-reviewed.",
-        "2021 IM K–5 Grade 5 Unit 5 Lesson 18: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-18/lesson.html. Original source 2021 teacher HTML and Student Facing activity directly read on authorized Our-CS in V7; source student PDF, gated responses and image licenses remain separately unchecked. Original Edulytiks math examples and descriptions."
+        "Source source warmup false,true,true.",
+        "Source activity1 false,false,true,false.",
+        "Source 3×0.12=(3×12)×0.01=3×0.1+3×0.02=0.36.",
+        "Optional prior: Whole-number multiplication facts remain useful when the units are tenths or hundredths.",
+        "Optional prior: Associative and distributive properties provide two equivalent diagram interpretations.",
+        "Optional prior: Reasoned true/false statements and student diagrams remain teacher-reviewed.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 18: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-18/lesson.html. Original source 2021 teacher HTML and Student Facing activity directly read on authorized Our-CS in V7; source student PDF, gated responses and image licenses remain separately unchecked. Original Edulytiks math examples and descriptions."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Use Whole Number Facts — place value model",
+          "Title": "Original Grade5 U05:L18 Use Whole Number Facts — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original IM2021 source true/false: 30×2×10=6×10",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 source true/false: 30×2×10=20×3×10",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 source true/false: 60×10=30×20",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 source true/false: 4×0.7=28",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 source true/false: 5×0.8=0.40",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 source true/false: 6×0.03=(6×3)×0.01",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 source true/false: 8×0.07=(8×7)×0.1",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original IM2021 U05 L18 original equivalent product 4×0.7 = ? Evaluate",
+              "Cells": [
+                "2.80",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Use Whole Number Facts — place value model",
           "Description": "Accessible original table, not publisher student graphic or card.",
           "Rows": [
             {

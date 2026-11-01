@@ -222,6 +222,23 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 source true/false: 100×0.01=1", "true", "false", "not enough information"),
         new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 source true/false: 10×0.1=0.01", "false", "true", "not enough information"),
         new("usccss.g5.u05.l17.source_whole_times_decimals", "Original IM2021 source true/false: 10×0.01=0.1", "true", "false", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 30×2×10=6×10", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 30×2×10=20×3×10", "true", "false", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 60×10=30×20", "true", "false", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 4×0.7=28", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 5×0.8=0.40", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 6×0.03=(6×3)×0.01", "true", "false", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 source true/false: 8×0.07=(8×7)×0.1", "false", "true", "not enough information"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product 4×0.7 = ? Evaluate exact product and explain position of tenths/hundredths.", "2.80", "2.90", "2.69"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product 5×0.8 = ? Evaluate exact product and explain position of tenths/hundredths.", "4.00", "4.10", "3.89"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product 6×0.03 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.18", "0.28", "0.07"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product 8×0.07 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.56", "0.66", "0.45"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product 3×0.12 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.36", "0.46", "0.25"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product (3×12)×0.01 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.36", "0.46", "0.25"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original IM2021 U05 L18 original equivalent product 3×0.1+3×0.02 = ? Evaluate exact product and explain position of tenths/hundredths.", "0.36", "0.46", "0.25"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original source fill3×0.7=(3×7)×?", "0.1", "0.01", "1"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original source fill3×0.07=(3×7)×?", "0.01", "0.1", "1"),
+        new("usccss.g5.u05.l18.source_whole_number_properties", "Original source fill5×?=(5×4)×0.1", "0.4", "0.04", "4"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
