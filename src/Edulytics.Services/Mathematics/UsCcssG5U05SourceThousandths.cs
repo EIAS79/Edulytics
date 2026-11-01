@@ -28,7 +28,7 @@ public static class UsCcssG5U05SourceThousandths
         new(Family,"Original place value relationship: ten equal thousandths make how much of the original whole?",
             "0.01","0.001","0.1"),
         new(Family,"Original place value relationship: one whole contains how many equal one-thousandth units?",
-            "1000","100","10")
+            "1000","100","10"),
         new("usccss.g5.u05.l02.original_grid_thousandth_values", "Original IM2021 U05:L02 Activity1: source A fraction 2/10 represented by a grid. A source figure other than explicitly described D must be physically reviewed by teacher", "0.2", "0.02", "0.002"),
         new("usccss.g5.u05.l02.original_grid_thousandth_values", "Original IM2021 U05:L02 Activity1: source grid B decimal 0.2. A source figure other than explicitly described D must be physically reviewed by teacher", "0.2", "0.02", "0.12"),
         new("usccss.g5.u05.l02.original_grid_thousandth_values", "Original IM2021 U05:L02 Activity1: source grid C fraction 15/100. A source figure other than explicitly described D must be physically reviewed by teacher", "0.15", "0.015", "0.105"),
