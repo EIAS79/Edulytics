@@ -433,6 +433,14 @@ public static class UsCcssG5U05SourceThousandths
         new("usccss.g5.u06.l08.original_fraction_sums_differences", "Original source 2/3+2/3, same denominators", "4/3", "2/3", "4/6"),
         new("usccss.g5.u06.l08.original_fraction_sums_differences", "Original source 2/3−1/6, use equivalent sixths", "1/2", "1/6", "1/3"),
         new("usccss.g5.u06.l08.original_fraction_sums_differences", "Original source 2/3+1/2, use sixths", "7/6", "3/5", "3/6"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source T/F 1/4+2/4=3/4", "true", "false", "unknown"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source T/F 1/2+1/4=2/4", "false", "true", "unknown"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source T/F 3/4−1/2=2/4", "false", "true", "unknown"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source 2/3+10/12", "3/2", "7/12", "4/3"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source equivalent8/12+10/12", "3/2", "18/24", "17/12"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source equivalent4/6+5/6", "3/2", "9/12", "3/6"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original source16/12−3/6", "5/6", "1/2", "11/12"),
+        new("usccss.g5.u06.l09.original_equivalent_fraction_expressions", "Original optional source Jada1 3/4 inches minus Andre7/8 inches", "7/8", "1/8", "1/4"),
         // END_G5_U05_SOURCE_CASES
     ];
     public static bool Supports(string? family)=>
