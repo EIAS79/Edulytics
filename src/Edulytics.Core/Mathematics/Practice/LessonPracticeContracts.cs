@@ -1379,6 +1379,14 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G5 U03:L05 source A and Han six-fifteenths; teacher
+        // evaluates source B/C art, estimation and student drawings.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L05", "supporting.fractions.multiply_divide",
+            "G5_UNIT_RECTANGLE_SHADED_FIFTEENTHS",
+            ["usccss.g5.u03.l05.shaded_unit_rectangle_product"],
+            "IM2021_G5_U03_L05_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G5 U03:L04: exact source park digital subskills,
         // soccer 1/2 of 2/3 and Elena's 5-row x 2-column colored park.
         // DRAWING / ORIGINAL IMAGE / PEER EXPLANATION TEACHER_REVIEW_REQUIRED.

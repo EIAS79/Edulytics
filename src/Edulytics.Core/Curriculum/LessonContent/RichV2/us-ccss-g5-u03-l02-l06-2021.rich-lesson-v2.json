@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v7-20261101",
+  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v8-20261101",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -946,11 +946,12 @@
       "CultureCode": "en",
       "Title": "Multiply a Unit Fraction by a Non-unit Fraction",
       "ExplanationParagraphs": [
-        "Goal: calculate products of a UNIT fraction by a NON-UNIT fraction through progressively more shaded equal-area rectangles. Each expression must correspond to a model; the 2021 source changes the number of shaded cells and asks learners to explain how the value is related to unit-fraction products.",
-        "Warm-up: estimate a shaded region about half a unit long and more than half-unit wide. Reason that the area should exceed one quarter square unit if both extents truly are above one half; approximate sketches do not yield an exact value until dimensions are supplied.",
-        "Activity 1: start with one whole unit square divided into four equal rows and five equal columns. Shade the first, second and third cells of exactly one row; the whole has 20 cells, three shaded. Write (1/4)×(3/5)=3/20, or 3×((1/4)×(1/5))=3×1/20.",
-        "Activity 2: compare areas when one fourth is multiplied by 1/5, 2/5, 3/5 and 4/5. The corresponding shaded pieces are 1, 2, 3 and 4 out of twenty, while the whole and size of each piece stay fixed. Predict five fifths for the full row and explain why 1/4 results, not 1/20.",
-        "Assessment boundary: matching expressions, progressive shade patterns and exact calculations can be mathematically checked, but the source's actual diagrams, constructed models and partner explanations remain teacher-reviewed. No publisher figures or gated learner responses are copied."
+        "Source IM 2021 Grade 5 U03:L05, 5.NF.B.4.b: multiply a UNIT fraction and a NON-UNIT fraction including a value greater than one; link the fixed unit-square grid denominator to cell area, the numerator to the number of shaded pieces, and the correct square-unit area.",
+        "Warm-up — Estimation Exploration: Shaded Rectangle. Learners supply a too-low/about-right/too-high estimate for the actual source figure, and explain why the shaded area is MORE than 1/4 square unit. The exact dimensions of this approximate publisher picture are not invented; teacher assesses reasoning.",
+        "Activity 1 — Write Equations: original source images A, B, C show progressively more shaded fraction of a 1/3-high row with fifths along the horizontal. Source figure A can be described by (2/5)×(1/3)=2/15 square unit; students give expressions for EACH actual source image, notice the pattern and explain Han's (6/5)×(1/3)=6/15 square unit, including how six fifth-width pieces may extend beyond one row/unit-square. Do not falsely count a doubled 30-cell denominator for 6/5.",
+        "Activity 2 — Estimate With Expressions: write a plausible expression for the SOURCE warm-up shaded image and explain why its shaded area exceeds 1/4 but is less than 1/2 square unit. Examples like (3/5)×(1/2) or (4/5)×(1/2) are reasonable estimates, not a certified exact image value. The teacher reviews varied mathematically defensible estimates, not a single arbitrary scalar choice.",
+        "Lesson synthesis: explicitly compare the 6/5×1/3=6/15 diagram with Kiran's incorrect 6/30 reasoning; the unit square is the denominator reference, not the number of cells in a drawn two-unit rectangle. Partner explanations and the original publisher figures are teacher reviewed. Alternative Edulytiks Cool-down: use (4/5)×(1/3)=4/15 with a correct same-whole diagram and written justification.",
+        "Existing independent 4-by-5 twentieths examples are retained as EXTENSION models only; they do NOT replace original A–C images, Han or the estimation activity. Gated 2021 publisher Cool-down/Student Task PDF/image binaries are not independently certified."
       ],
       "KeyConcepts": [
         {
@@ -974,7 +975,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Three fifths of a quarter",
+          "Title": "Source Activity 1 A: two fifths of one third",
+          "Question": "What area is shaded by (2/5)×(1/3) in the first source grid?",
+          "Method": "Source-specific equal-area unit model; teacher verifies source figure interpretation.",
+          "Steps": [
+            "Divide the original square into 5 equal columns and 3 equal rows.",
+            "Shade two of fifteen equal cells.",
+            "Write the area relative to ONE square unit."
+          ],
+          "Answer": "2/15 square unit.",
+          "Check": "2×1/(5×3)=2/15."
+        },
+        {
+          "Title": "Source Activity 1 Han: six fifths of one third",
+          "Question": "Explain why Han writes (6/5)×(1/3)=6/15, not 6/30.",
+          "Method": "Source-specific equal-area unit model; teacher verifies source figure interpretation.",
+          "Steps": [
+            "A single whole square has 15 equal 1/15 cells.",
+            "Six fifth-width cells may extend across unit boundaries.",
+            "Six shaded fifteenths are 6/15 square unit, not six of thirty new unit-sized parts."
+          ],
+          "Answer": "6/15 square unit (equivalent 2/5).",
+          "Check": "The unit-square denominator is 5×3=15, not a doubled 30."
+        },
+        {
+          "Title": "Source Activity 2: estimate with a multiplication expression",
+          "Question": "Give a reasonable multiplication expression for a source shaded rectangle that covers more than 1/4 but less than 1/2 of the square.",
+          "Method": "Source-specific equal-area unit model; teacher verifies source figure interpretation.",
+          "Steps": [
+            "Keep the full square as the reference.",
+            "Use visual bounds rather than pretend exact side lengths.",
+            "For example (3/5)×(1/2)=3/10 is a plausible estimate if consistent with the actual image."
+          ],
+          "Answer": "Teacher-reviewed plausible estimates, e.g. 3/10 if diagram supports them.",
+          "Check": "The image is not a fixed 3/10 oracle; estimates require justification."
+        },
+        {
+          "Title": "Optional extension — Three fifths of a quarter",
           "Question": "Find (1/4)×(3/5) using a unit square.",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
@@ -986,7 +1023,7 @@
           "Check": "Three groups of 1/20 give 3/20."
         },
         {
-          "Title": "Compare increasing shaded cells",
+          "Title": "Optional extension — Compare increasing shaded cells",
           "Question": "Compute (1/4)×(1/5), (1/4)×(2/5), (1/4)×(3/5).",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
@@ -998,7 +1035,7 @@
           "Check": "Each increases by exactly 1/20 square unit."
         },
         {
-          "Title": "Four fifths of one quarter",
+          "Title": "Optional extension — Four fifths of one quarter",
           "Question": "Find (1/4)×(4/5).",
           "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
           "Steps": [
@@ -1020,54 +1057,89 @@
           "Mistake": "Use unequal grids for successive examples and claim a pattern",
           "WhyWrong": "The lesson's pattern requires a fixed-size original whole and equal cells.",
           "Correction": "Keep the same 4×5 area grid when comparing growing numerators."
+        },
+        {
+          "Mistake": "Use 6/30 instead of 6/15 from Han's two-unit sketch",
+          "WhyWrong": "The denominator must measure one original unit square, not both drawn squares combined.",
+          "Correction": "Mark one complete unit square's 5-by-3 equal cells and count six 1/15-sized shaded pieces."
         }
       ],
       "SummaryPoints": [
-        "Multiply a unit fraction by a non-unit fraction using a selected-cell model.",
-        "The non-unit numerator names how many equal tiny product pieces are selected.",
-        "The fixed whole and diagram-to-expression explanation are teacher-reviewed.",
-        "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-5/lesson.html. Public teacher/student-facing HTML source tasks inspected; original Edulytiks examples. Gated response and original Student Task PDF not independently checked."
+        "Original source A row model (2/5)×(1/3)=2/15, and Han (6/5)×(1/3)=6/15 of one square unit.",
+        "The numerator counts shaded unit-grid cells; the denominator counts equal cells of one ORIGINAL unit square, not of several adjacent unit squares.",
+        "The source warm-up asks for too-low/about-right/too-high estimates; the second activity accepts more than one justified approximate expression.",
+        "Teacher reviews actual original figures A, B, C, Kiran's 6/30 misconception, partner discussion and hand drawings.",
+        "Independent 4/5×1/3=4/15 Cool-down with teacher rubric; original restricted publisher Cool-down not copied."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Multiply a Unit Fraction by a Non-unit Fraction — fraction grid",
-          "Description": "Accessible first-party text equivalent of an equal-area fraction grid; not publisher artwork.",
+          "Title": "First-party source A whole-unit 5-column by 3-row",
+          "Description": "EDULYTIKS original equal 15-cell unit-square diagram, not original figure A. Exactly two shaded cells demonstrate 2/5×1/3=2/15.",
           "Rows": [
             {
-              "Label": "Non-unit fraction",
+              "Label": "Row 1",
               "Cells": [
-                "1/5",
-                "2/5",
-                "3/5",
-                "4/5"
+                "shade",
+                "shade",
+                "empty",
+                "empty",
+                "empty"
               ]
             },
             {
-              "Label": "Multiplier",
+              "Label": "Row 2",
               "Cells": [
-                "1/4",
-                "1/4",
-                "1/4",
-                "1/4"
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
               ]
             },
             {
-              "Label": "Selected cells of 20",
+              "Label": "Row 3",
               "Cells": [
-                "1",
-                "2",
-                "3",
-                "4"
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Han's six shaded fifteenths without denominator doubling",
+          "Description": "One WHOLE unit square always has 15 equal 1/15 cells. Six shaded cells (possibly continuing to an adjacent unit-square diagram) total 6/15, NOT 6/30.",
+          "Rows": [
+            {
+              "Label": "Part count in first whole",
+              "Cells": [
+                "5×3=15",
+                "one cell=1/15"
               ]
             },
             {
-              "Label": "Area",
+              "Label": "Total selected cells",
               "Cells": [
-                "1/20",
-                "2/20",
-                "3/20",
-                "4/20"
+                "6",
+                "six fifteenths"
+              ]
+            },
+            {
+              "Label": "Correct product",
+              "Cells": [
+                "(6/5)×(1/3)",
+                "6/15"
+              ]
+            },
+            {
+              "Label": "Rejected Kiran claim",
+              "Cells": [
+                "6/30",
+                "wrong original whole"
               ]
             }
           ]

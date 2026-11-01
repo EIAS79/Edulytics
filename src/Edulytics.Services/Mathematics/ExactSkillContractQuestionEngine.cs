@@ -187,6 +187,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG5U03L02UnitFractionQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L03UnitFractionQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L04ParkQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L05ShadedAreaQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
@@ -434,6 +435,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG5U03L03UnitFractionQuestions.Verify(family, parameters, answer);
         if (UsCcssG5U03L04ParkQuestions.Supports(family))
             return UsCcssG5U03L04ParkQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L05ShadedAreaQuestions.Supports(family))
+            return UsCcssG5U03L05ShadedAreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
@@ -1794,6 +1797,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG5U03L04ParkQuestions.Supports(family))
         {
             var item = UsCcssG5U03L04ParkQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L05ShadedAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L05ShadedAreaQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -5024,6 +5033,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG5U03L03UnitFractionQuestions.Solve(problem.Family, p);
         if (UsCcssG5U03L04ParkQuestions.Supports(problem.Family))
             return UsCcssG5U03L04ParkQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L05ShadedAreaQuestions.Supports(problem.Family))
+            return UsCcssG5U03L05ShadedAreaQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
