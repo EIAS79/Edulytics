@@ -188,3 +188,9 @@ Re-read original teacher lesson/preparation locally: WODB diagrams with multiple
 - The previous 148 static 2021 review records remain reusable but are **not automatically certified** as second-pass lesson closures.
 - GitHub Actions manual no-tests ledger integrity workflow: `.github/workflows/g5-2021-second-pass-ledger-check.yml`. This validates state/evidence bookkeeping; it cannot inspect local 2021 source files on a hosted runner. Never substitute its success for source examination.
 - Retain 2021 local source read-only; fix only proven v360/content mismatches. Run no Stage D, tests, CI suites, merge or deploy. Finish each lesson then unit, report per unit and proceed without waiting for another instruction.
+
+## SECOND-PASS OWNER REVIEW REPORT PUBLISHED — 2026-11-02
+
+The separately requested 2021-only second A–B–C source review is **closed for all 148 lessons, across all 8 units**. Original `READY_FOR_STAGE_D=148/148` unchanged, new independent `REVIEW_COMPLETE_2021=148/148`; `lastSecondPassClosed=PED:US-CCSS-MATH:G5:U08:L18`, `nextSecondPassLesson=null`. The current source of truth is `g5-2021-second-pass-review-ledger-v1.json`, not any old 2026-10-30/11-01 authored acceptance counter or the earlier 2026-11-02 static revalidation report. Independent report: `GRADE5_2021_SECOND_PASS_ABC_148_FINAL_REVIEW_REPORT_20261102.md`. Each of the eight units has its own `UNN_SECOND_PASS_2021_REVIEW_COMPLETE_20261102.md` report.
+
+**No more lesson A–B–C re-review is queued. Do not restart at U01:L01 or U02:L05.** Next action is **owner examines the final report and explicitly authorizes the existing Stage D plan** if acceptable. No Stage D tests/CI, merge or deploy occurred. `REVIEW_COMPLETE_2021` denotes source-aligned lesson-level evidence review with documented publisher assets/Cool-down/teacher limitations; it is NOT a publisher-exact-material or student-runtime certification.
