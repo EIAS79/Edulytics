@@ -31,14 +31,15 @@
     "Use valid choice rows; teacher scores generality of student argument, not just isolated numeric output"
   ],
   "PracticeStrategy": "REUSE exact fraction quotient and mixed-number numerical family as supplemental; shared writer EXTEND proof/explanation human scored task",
-  "staticMapping": "NO_EXPLICIT_U02L05; official 5.NF.B.3 fallback numeric families need actual selected verification",
-  "selectedContract": "NOT_VERIFIED",
+  "staticMapping": "U02:L05 source-specific family in UsCcssG5Unit2SourcePracticeContracts.cs",
+  "selectedContract": "usccss.g5.u02.l05.fraction_division_generalization",
   "StageA": "COMPLETE_WITH_EVIDENCE",
   "StageB": "COMPLETE_WITH_EVIDENCE",
-  "StageC": "BLOCKED_SHARED_INTEGRATION",
+  "StageC": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
   "sourceAssets": "First-party explanations; publisher figures not copied",
   "publisherCooldown": "NOT_VERIFIED_GATED",
   "edulytiksCooldown": "ORIGINAL_AUTHORED",
-  "testStatus": "TEST_AUTHORED_NOT_RUN",
-  "owner": "Supervisor 1 designated single writer #592"
+  "testStatus": "WRITTEN_NOT_RUN",
+  "owner": "Supervisor 1 designated single writer #592",
+  "runtimeVerification": "NOT_RUN_STAGE_D"
 }

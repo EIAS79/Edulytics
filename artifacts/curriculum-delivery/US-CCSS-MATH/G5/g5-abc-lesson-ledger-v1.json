@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L05",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L06",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -1233,8 +1233,8 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-5\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-5\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-5\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-5\\preparation.html"
       ],
       "reuseFinding": "REUSE_SOURCE_SPECIFIC_BLUEBERRY_RATIO_CATEGORIES_AND_UNIVERSAL_A_DIV_B_EQ_A_OVER_B_PROOF; ONLY_ADD_ORIGINAL_EXIT_AND_TARGET_FIXTURES",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
@@ -1283,7 +1283,23 @@
         "parentHead": "57182c198630311949ffb63c2f67262899133e91"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l05-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "atDate": "2026-11-02",
+        "status": "READY_FOR_STAGE_D",
+        "source": "2021 original teacher lesson and preparation read-only",
+        "richV2": "REUSED_CORRECT",
+        "sourceGoal": "a divided by b equals a/b for a whole number a and b positive",
+        "sourceActivities": "True/False; blueberry constraints; arbitrary quotient fraction proof",
+        "staticFamily": "usccss.g5.u02.l05.fraction_division_generalization",
+        "staticContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs",
+        "originalGatedCooldown": "SOURCE_UNAVAILABLE",
+        "independentTeacherReviewedExit": "MATCHED_TEACHER_LED",
+        "testStatus": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "source100PercentClaimed": false,
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l05-2021-source-revalidation-20261102.json"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L06",
