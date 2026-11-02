@@ -49,7 +49,7 @@ def get_page(opener, path):
         return response.read().decode("utf-8")
 
 
-def login_student():
+def login_actor(email, role):
     opener = urllib.request.build_opener(
         urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
         urllib.request.HTTPSHandler(context=ssl.create_default_context(cafile=CA)))
@@ -64,8 +64,8 @@ def login_student():
         raise AssertionError("G5 CI login CSRF missing")
     password = os.environ["Edulytics__MeetingDemo__Password"]
     data = urllib.parse.urlencode({
-        "Email": STUDENT, "Password": password,
-        "AccountType": "Student",
+        "Email": email, "Password": password,
+        "AccountType": role,
         "__RequestVerificationToken": token}).encode()
     with opener.open(urllib.request.Request(
             BASE + "/account/login?culture=en", data=data,
@@ -75,6 +75,13 @@ def login_student():
             raise AssertionError("G5 student login failed")
     return opener
 
+
+def login_student():
+    return login_actor(STUDENT, "Student")
+
+
+def login_teacher():
+    return login_actor("commoncore-primary.teacher.primary@edulytiks.com", "Teacher")
 
 def only_one_row(query, label):
     rows = sql(query).splitlines()
@@ -177,6 +184,73 @@ def verify_g5_u03_l02_actual_practice_svg(opener, lesson_id, adoption_id):
         "unsubmittedConstructionTeacherScored": False
     }
 
+def verify_l02_teacher_rubric(student, lesson_id, adoption_id):
+    """Authenticate the student submission, assigned teacher review and saved score."""
+    path = ("/student/g5/u03/l02/rubric?lessonId=" + lesson_id
+            + "&curriculumAdoptionId=" + adoption_id)
+    page = get_page(student, path)
+    token = extract_csrf(page)
+    if not token or 'name="explanation"' not in page:
+        raise AssertionError("Grade 5 source construction form missing")
+    explanation = (
+        "Two congruent wholes: one third then one fourth equals one twelfth; "
+        "one fourth then one third equals one twelfth of the same whole. "
+        "Priya's 2 by 5 grid shows one tenth, but the separate 5 by 3 grid "
+        "shows one fifteenth. Both products preserve the original whole."
+    )
+    payload = urllib.parse.urlencode({
+        "lessonId": lesson_id, "curriculumAdoptionId": adoption_id,
+        "explanation": explanation, "__RequestVerificationToken": token
+    }).encode()
+    with student.open(urllib.request.Request(
+            BASE + "/student/g5/u03/l02/rubric/submit",
+            data=payload, method="POST"), timeout=45) as response:
+        if response.status != 200:
+            raise AssertionError("Grade 5 source response was not saved")
+    submission_id = only_one_row("""
+        SELECT r."Id"::text
+        FROM "Grade5U03L02TeacherRubrics" r
+        JOIN "StudentProfiles" p ON p."Id"=r."StudentProfileId"
+        JOIN "AspNetUsers" u ON u."Id"=p."UserId"
+        WHERE u."Email"='""" + STUDENT + """'
+          AND r."CurriculumPedagogicalLessonId"='""" + lesson_id + """'
+          AND r."TeacherScore" IS NULL;""", "ungraded source submission")
+    teacher = login_teacher()
+    teacher_form = get_page(
+        teacher, "/school/g5/u03/l02/rubric/" + submission_id)
+    token = extract_csrf(teacher_form)
+    if not token or teacher_form.count('name="marks"') != 6:
+        raise AssertionError("Assigned teacher cannot review six source criteria")
+    feedback = "Reviewed the original whole and both diagrams."
+    payload = urllib.parse.urlencode([
+        *[("marks", 1) for _ in range(6)],
+        ("teacherFeedback", feedback),
+        ("__RequestVerificationToken", token)
+    ]).encode()
+    with teacher.open(urllib.request.Request(
+            BASE + "/school/g5/u03/l02/rubric/" + submission_id,
+            data=payload, method="POST"), timeout=45) as response:
+        if response.status != 200:
+            raise AssertionError("Teacher rubric update failed")
+    reviewed = only_one_row("""
+        SELECT "TeacherScore"::text || '|' || "CriteriaJson" || '|' ||
+               "TeacherFeedback"
+        FROM "Grade5U03L02TeacherRubrics"
+        WHERE "Id"='""" + submission_id + """';""",
+        "persisted teacher-reviewed source response")
+    score, rubric_json, stored_feedback = reviewed.split("|", 2)
+    if score != "6" or json.loads(rubric_json) != [1] * 6 or (
+            stored_feedback != feedback):
+        raise AssertionError("Teacher rubric did not persist all criteria")
+    student_page = get_page(student, path)
+    if "Teacher score:" not in student_page or feedback not in student_page:
+        raise AssertionError("Original student cannot read teacher feedback")
+    print("G5_U03_L02_AUTHENTICATED_TEACHER_RUBRIC_PERSISTENCE_PASS",
+          submission_id, flush=True)
+    return {"sourceSubmission": submission_id, "score": 6,
+            "sixTeacherSelectedCriteriaPersisted": True,
+            "originalStudentCanReadFeedback": True}
+
 def all_grade5_lesson_rows():
     """Fail closed if the seeded runtime is missing any officially indexed lesson."""
     records = sql("""
@@ -274,7 +348,12 @@ def run():
                 verify_g5_u03_l02_actual_practice_svg(student, lesson_id, adoption_id)
                 if code.endswith("U03:L02") else None
             )
+            teacher_rubric = (
+                verify_l02_teacher_rubric(student, lesson_id, adoption_id)
+                if code.endswith("U03:L02") else None
+            )
             results.append({
+                "teacherRubric": teacher_rubric,
                 "g5U03L02Visual": visual_evidence,
                 "lessonCode": code,
                 "lessonId": lesson_id,
@@ -285,7 +364,7 @@ def run():
                 "malformedAnswerRejectedAndPersisted": negative["status"],
                 "selectedGenerationFamily": positive["family"],
                 "sourceFigurePixelsCopiedOrVerified": False,
-                "humanTeacherRubricPersistenceVerified": False,
+                "humanTeacherRubricPersistenceVerified": teacher_rubric is not None,
                 "academicSourceParityVerified": False})
             print("G5_DISPOSABLE_HTTPS_LESSON_PASS", code,
                   positive["family"], flush=True)

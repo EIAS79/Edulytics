@@ -138,4 +138,35 @@ test('L02 selected Practice is lesson-scoped, has both exact families and a shar
   assert.ok(local.includes('TEACHER_REVIEW_REQUIRED'));
 });
 
-test.todo('Authenticated learner renderer and persisted teacher scoring for U03:L02 still need end-to-end verification; source geometry and .NET mathematical oracle are now separately tested');
+test('U03:L02 educator rubric persistence is lesson-scoped, separately migrated and secured', () => {
+  const controller=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Controllers/Grade5U03L02RubricController.cs'),'utf8');
+  const migration=fs.readFileSync(path.join(root,
+    'src/Edulytics.Data/Migrations/20261102023000_Grade5U03L02TeacherRubric.cs'),'utf8');
+  const student=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Views/Grade5U03L02RubricStudent/Index.cshtml'),'utf8');
+  const teacher=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Views/Grade5U03L02RubricTeacher/Review.cshtml'),'utf8');
+  const queue=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Views/Grade5U03L02RubricTeacher/Index.cshtml'),'utf8');
+  assert.match(controller,/PED:US-CCSS-MATH:G5:U03:L02/);
+  assert.match(controller,/Authorize\(Policy = "StudentPortal"\)/);
+  assert.match(controller,/Authorize\(Roles = RoleNames.Teacher\)/);
+  assert.equal((controller.match(/ValidateAntiForgeryToken/g)||[]).length,2);
+  assert.match(controller,/Grade5U03L02TeacherRubrics/);
+  assert.match(controller,/TeacherAssignments/);
+  assert.match(controller,/StudentEnrollments/);
+  assert.match(controller,/t\.SubjectId == adoption\.SubjectId/);
+  assert.match(controller,/TeacherUserId" IS NULL/);
+  assert.match(controller,/marks\.Any\(x => x is not 0 and not 1\)/);
+  assert.match(controller,/TeacherFeedback/);
+  assert.match(controller,/ON CONFLICT/);
+  assert.match(migration,/CreateTable/);
+  assert.match(migration,/UX_G5U03L02Rubric_SchoolClassStudentLesson/);
+  assert.match(migration,/CK_G5U03L02Rubric_ReviewConsistent/);
+  assert.match(student,/__RequestVerificationToken|AntiForgeryToken/);
+  assert.match(teacher,/AntiForgeryToken/);
+  assert.match(queue,/Pending review/);
+  // Static contracts are independent of the runtime HTTPS and DB persistence
+  // probe; the latter must pass separately before Stage D acceptance.
+});
