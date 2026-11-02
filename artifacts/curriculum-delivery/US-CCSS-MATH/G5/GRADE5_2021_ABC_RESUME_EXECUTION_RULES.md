@@ -147,3 +147,8 @@ Re-read original teacher lesson/preparation locally: WODB diagrams with multiple
 - L05 shaded unit/non-unit fraction area 2/5×1/3=2/15, 6/5×1/3=6/15 and Kiran error 6/30. Open estimate drawings remain teacher-reviewed. Revalidation `u03-l05-2021-source-revalidation-20261102.json` committed `50f0f84c`.
 - L06 non-unit fractions 8/30 = 2×4×(1/5×1/6), 6×4/(5×4)=24/20 and 2/4×3/5=6/20. Revalidation `u03-l06-2021-source-revalidation-20261102.json` committed `9f211343`.
 - Publisher gated original Cool-downs and independently uncertified publisher image/PDF assets stay explicit source-verbatim limitations, not accepted as source-exact. Existing first-party teacher-scored cool-downs retained. Tests authored but NOT_RUN. Stage D / CI NOT_RUN. **Current sequential revalidation cursor U03:L07**; prior 35/148 lessons reviewed in this revalidation series, not 35 new authoring closures.
+
+## Unit 3 revalidation completed — U03:L07–L20, 2026-11-02
+- Sequential individual revalidation evidence committed for U03:L07–L20, with local First Edition 2021 teacher lesson comparison and retained authoring closures. All existing selected Practice/rubrics preserved where aligned; no intentional tests or CI.
+- Unit record: `u03-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `683bdc8f42bb5cfe0fc97f9060733e6bc06b3628`.
+- **New sequential cursor: U04:L01 (50th of 148 lessons)**. The revalidation count through U03 is 49/148; publisher asset-exact coverage is not certified and outstanding original images/Student PDFs/gated Cool-downs remain flagged.
