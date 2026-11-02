@@ -20,3 +20,47 @@ test('U01 composite volumes and units use independent arithmetic',()=>{
 test('U01 2021 optional modeling preserves 60 containers not fabricated ship estimate',()=>{
  for(const a of [[1,6,10],[2,5,6],[3,4,5],[2,3,10],[1,3,20]])assert.equal(a.reduce((x,y)=>x*y,1),60);
 });
+
+test('U01:L01 first-edition 2021 student task PDF supports exact page-level 9-task contract, without false Cool-down certification',()=>{
+ const fs=require('node:fs');const path=require('node:path');
+ const root=path.resolve(__dirname,'..');
+ const ledger=JSON.parse(fs.readFileSync(path.join(root,
+   'artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json'),'utf8'));
+ const source=ledger.original2021StudentTaskPdfDirectProof;
+ assert.match(source.pdfSha256,/^[0-9a-f]{64}$/);
+ assert.equal(source.pdfSha256,'e07a5fa1c847c059660e014f26e36b677f21e74fcf310a59a1d13ed2ef8e3bca');
+ assert.equal(source.pageCount,3);
+ assert.equal(source.sourceEditionFooterVerified,true);
+ assert.equal(source.verifiedStudentTextItems,9);
+ assert.equal(source.originalCooldownIncluded,false);
+ assert.equal(source.publisherPdfCommitted,false);
+ const expected={
+   'G5-U01-L01-IDENTITY':1,'G5-U01-L01-GOAL':1,
+   'G5-U01-L01-WU-Q01':1,'G5-U01-L01-A01-Q01':2,
+   'G5-U01-L01-A01-Q02':2,'G5-U01-L01-A01-Q03':2,
+   'G5-U01-L01-A02-Q01':3,'G5-U01-L01-A02-Q02':3,
+   'G5-U01-L01-A02-Q03':3
+ };
+ assert.equal(ledger.lessonElements.length,25);
+ for(const [sourceId,page] of Object.entries(expected)){
+   const element=ledger.lessonElements.find(x=>x.SourceElementId===sourceId);
+   assert.ok(element,sourceId);
+   assert.equal(element.Original2021StudentPdfProof.pdfSha256,source.pdfSha256);
+   assert.equal(element.Original2021StudentPdfProof.page,page);
+   assert.equal(element.Original2021StudentPdfProof.validatedAgainstActualLocalPdf,true);
+   assert.ok(element.Original2021StudentPdfProof.sourceTextSnippet.length>=12);
+ }
+ const originalCooldown=ledger.lessonElements.find(x=>x.SourceElementId==='G5-U01-L01-CD-SOURCE-Q01');
+ assert.equal(originalCooldown.Status,'SOURCE_UNAVAILABLE');
+ assert.equal(originalCooldown.Original2021StudentPdfProof.present,false);
+ assert.equal(ledger.sourceCoverage100Percent,false);
+ assert.equal(ledger.academicAccepted,false);
+ const rich=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json'),'utf8'));
+ const lesson=rich.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G5:U01:L01');
+ assert.ok(lesson);
+ const prose=JSON.stringify(lesson);
+ for(const model of ['2','5','3','9','8','10'])
+   assert.ok(prose.includes(model),'Student source model '+model);
+ assert.match(prose,/connecting cubes|congruent cubes/i);
+});
