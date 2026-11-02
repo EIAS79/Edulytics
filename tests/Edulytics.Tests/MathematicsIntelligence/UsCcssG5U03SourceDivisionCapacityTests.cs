@@ -42,4 +42,24 @@ public sealed class UsCcssG5U03SourceDivisionCapacityTests
                 new Dictionary<string,int>{{"case",99},{"slot",0}},"1"));
         }
     }
+    [Fact]
+    public void AllSourceDivisionPromptsPassProductionAnswerLeakGate()
+    {
+        var engine=new ExactSkillContractQuestionEngine();
+        foreach(var (family,lesson,_) in Cases)
+        {
+            var code="PED:US-CCSS-MATH:G5:U03:"+lesson;
+            for(var seed=1;seed<=24;seed++)
+            {
+                var questions=engine.Generate("g5-u03-qa-source",code,
+                    [family],ExactSkillQuestionDifficulty.Standard,1,seed,[]);
+                Assert.Single(questions);
+                var q=questions[0];
+                var gate=Edulytics.Core.Mathematics.Practice.PracticeAnswerLeakValidator
+                    .ValidatePrompt(q.Family,q.Prompt,q.CorrectAnswer);
+                Assert.True(gate.IsSafe,$"{family} seed={seed} case={q.Parameters.GetValueOrDefault("case")}: {gate.ReasonCode}");
+            }
+        }
+    }
+
 }
