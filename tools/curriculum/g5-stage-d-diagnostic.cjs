@@ -348,7 +348,7 @@ function sourceEvidenceAudit(){
       !x.blockers.includes('MISSING_ELEMENT_SOURCE_SNAPSHOT')).length,
     noElementArrayLessons:rows.filter(x=>!x.hasSourceElementArray).length,
     unknownSourceDenominatorLessons:rows.filter(x=>x.itemizedElementCount===null ||
-      read(x.sourceEvidencePath).sourceCoverageDenominator?.startsWith('UNKNOWN_FULL_SOURCE_')).length,
+      String(read(x.sourceEvidencePath).sourceCoverageDenominator||'').startsWith('UNKNOWN_FULL_SOURCE_')).length,
     wrongEditionStudentLessons:rows.filter(x=>x.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT')).length,
     original2021TeacherStudentFacingLessons:rows.filter(x=>x.original2021StudentFacing?.sections>0).length,
     original2021TeacherStudentFacingSections:rows.reduce((n,x)=>n+(x.original2021StudentFacing?.sections||0),0),
