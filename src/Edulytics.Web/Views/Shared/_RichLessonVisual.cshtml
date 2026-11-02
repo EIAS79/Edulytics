@@ -209,6 +209,67 @@
             </svg>
         </div>
     }
+﻿    else if (Model.Kind == RichLessonVisualKind.Grade5Unit1CubeModelWodb)
+    {
+        // Author-created, mathematically source-aligned Grade 5 U01:L02
+        // constructions. Do not use original publisher figure pixels.
+        var models = new[]
+        {
+            Enumerable.Range(0, 2).SelectMany(segment =>
+                Enumerable.Range(0, 2).SelectMany(y =>
+                    Enumerable.Range(0, 3).Select(z =>
+                        (X: segment * 4, Y: y, Z: z)))).ToArray(),
+            Enumerable.Range(0, 2).SelectMany(x =>
+                Enumerable.Range(0, 2).SelectMany(y =>
+                    Enumerable.Range(0, 3).Select(z => (X: x, Y: y, Z: z))))
+                    .Where(c => c != (X: 1, Y: 1, Z: 2)).ToArray(),
+            new[] { 4, 4, 3, 1 }.SelectMany((n, z) =>
+                Enumerable.Range(0, n).Select(x => (X: x, Y: 0, Z: z))).ToArray(),
+            Enumerable.Range(0, 3).SelectMany(x =>
+                Enumerable.Range(0, 2).SelectMany(y =>
+                    Enumerable.Range(0, 2).Select(z => (X: x, Y: y, Z: z)))).ToArray()
+        };
+        var labels = new[] { "A", "B", "C", "D" };
+        var details = new[]
+        {
+            "2 separate prisms; 6 + 6",
+            "1 missing top cube; 11",
+            "4 + 4 + 3 + 1 = 12",
+            "3 by 2 by 2; 12"
+        };
+        <div class="rich-lesson-cube-models">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 650"
+                 role="img" aria-label="@Model.Description"
+                 style="max-width:960px;width:100%;height:auto">
+                @for (var modelIndex = 0; modelIndex < models.Length; modelIndex++)
+                {
+                    var cx = 120 + (modelIndex % 2) * 470;
+                    var cy = 190 + (modelIndex / 2) * 310;
+                    var cubes = models[modelIndex];
+                    <g>
+                        <text x="@(cx - 75)" y="@(cy - 150)" font-size="22"
+                              fill="currentColor" font-weight="bold">
+                            @labels[modelIndex]: @cubes.Length cubes
+                        </text>
+                        @foreach (var cube in cubes.OrderBy(c => c.X + c.Y + c.Z).ThenBy(c => c.Z))
+                        {
+                            var x = cx + (cube.X - cube.Y) * 24;
+                            var y = cy + (cube.X + cube.Y) * 12 - cube.Z * 30;
+                            var faceTop = $"{x},{y - 30} {x + 24},{y - 18} {x},{y - 6} {x - 24},{y - 18}";
+                            var faceLeft = $"{x - 24},{y - 18} {x},{y - 6} {x},{y + 20} {x - 24},{y + 8}";
+                            var faceRight = $"{x},{y - 6} {x + 24},{y - 18} {x + 24},{y + 8} {x},{y + 20}";
+                            <polygon points="@faceTop" fill="#e9f3fc" stroke="#31536f" stroke-width="1.6"/>
+                            <polygon points="@faceLeft" fill="#b5d5ee" stroke="#31536f" stroke-width="1.6"/>
+                            <polygon points="@faceRight" fill="#80b5db" stroke="#31536f" stroke-width="1.6"/>
+                        }
+                        <text x="@(cx - 75)" y="@(cy + 104)" fill="currentColor"
+                              font-size="17">@details[modelIndex]</text>
+                    </g>
+                }
+            </svg>
+        </div>
+    }
+
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

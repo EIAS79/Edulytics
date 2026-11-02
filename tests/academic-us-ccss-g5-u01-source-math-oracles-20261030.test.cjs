@@ -100,3 +100,45 @@ test('U01:L01 independent author exit measures the greater eight-versus-nine cub
  assert.match(author.ExpectedMathematics,/8-versus-9/);
  assert.equal(evidence.sourceCoverage100Percent,false);
 });
+
+
+test('U01:L02 2021 original Student Task Statements source and accessible four-model cube figures',()=>{
+ const fs=require('node:fs'),path=require('node:path');
+ const root=path.resolve(__dirname,'..');
+ const rich=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json'),'utf8'));
+ const lesson=rich.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G5:U01:L02');
+ const drawing=lesson.Visuals.filter(x=>x.Kind==='Grade5Unit1CubeModelWodb');
+ assert.equal(drawing.length,1);
+ assert.match(drawing[0].Description,/two separate 1-by-2-by-3 solids/i);
+ assert.match(drawing[0].Description,/missing one top cube/i);
+ assert.match(drawing[0].Description,/four-, four-, three-, and one-cube layers/i);
+ assert.match(drawing[0].Description,/3-by-2-by-2 solid/i);
+ const ledger=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json'),'utf8'));
+ const source=ledger.original2021StudentTaskPdfDirectProof;
+ assert.equal(source.pages,3);
+ assert.equal(source.verifiedTextItems,8);
+ assert.match(source.pdfSha256,/^[a-f0-9]{64}$/);
+ assert.equal(source.originalImagePixelParityCertified,false);
+ assert.equal(source.originalLockedCoolDownIncluded,false);
+ assert.equal(source.academicSourceParityComplete,false);
+ assert.deepEqual(ledger.newFirstPartySourceModelVisual20261102.fourModelCubeCounts,[12,11,12,12]);
+ assert.equal(ledger.newFirstPartySourceModelVisual20261102.firstModelIsTwoSeparateSixCubePrisms,true);
+ for(const e of ledger.lessonElements.filter(e=>e.Original2021StudentPdfProof)){
+  assert.equal(e.Original2021StudentPdfProof.sha256,source.pdfSha256);
+  assert.ok(e.Original2021StudentPdfProof.page>=1 && e.Original2021StudentPdfProof.page<=3);
+ }
+ assert.equal(ledger.sourceCoverage100Percent,false);
+ const renderer=fs.readFileSync(path.join(root,
+  'src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml'),'utf8');
+ const kind=fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/RichLessonContentV2.cs'),'utf8');
+ assert.match(kind,/Grade5Unit1CubeModelWodb = 12/);
+ assert.match(renderer,/RichLessonVisualKind.Grade5Unit1CubeModelWodb/);
+ assert.match(renderer,/two separate prisms|2 separate prisms/i);
+ assert.match(renderer,/1 missing top cube/);
+ assert.match(renderer,/4 \+ 4 \+ 3 \+ 1 = 12/);
+ assert.match(renderer,/3 by 2 by 2; 12/);
+ assert.match(renderer,/aria-label="@Model.Description"/);
+});

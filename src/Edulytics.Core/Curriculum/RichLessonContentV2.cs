@@ -26,7 +26,8 @@ public enum RichLessonVisualKind
     EquationSet = 8,
     ShapeDecomposition = 9,
     Grade4Unit1AreaFigures = 10,
-    Grade5Unit1CubeComparison = 11
+    Grade5Unit1CubeComparison = 11,
+    Grade5Unit1CubeModelWodb = 12
 }
 
 public sealed class RichLessonContentV2Document
