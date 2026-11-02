@@ -124,3 +124,6 @@ Original teacher lesson/preparation: parenthesis number talk; card sort expressi
 
 ## U02:L14 (ordinal 26) 2021 local original revalidation
 Number talk source 3×(10÷2),3/2×10,14/7×10,14×10/7; two-role Info Gap: Area involves missing side length and querying relation, original gated master not verified; optional Fill in the Blank fractional products preserved. Reused Rich V2 and static family `usccss.g5.u02.l14.fraction_multiplication_info_gap`. Added teacher-reviewed first-party 8m width 3/4 length info-gap exit ->48 sq m without claiming original publisher Evaluate Expressions. Tests authored NOT_RUN, CI/Stage D NOT_RUN. Next U02:L15.
+
+## U02:L15 (ordinal 27) IM 2021 source revalidation
+Read local teacher source/preparation: mixed number talk 6×3/8,6×2 3/8,7×9/10,7×3 9/10; number bank 4,5,5 1/2,3,5 3/4,2 exactly once for rug, puzzle and whiteboard contexts; 4×5 2/3 expressed by distributive, bounding subtraction, improper fraction, and divide-by-three. Rich V2 and static `usccss.g5.u02.l15.multiply_mixed_source_number_bank` reused; added independent 4×5 2/3 display-board exit with diagram/two methods. Publisher Mixed Number Multiplication gated; no exact-source parity claim. Tests written not run; CI/D not run. Next U02:L16.
