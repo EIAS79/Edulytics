@@ -346,6 +346,21 @@ def run():
             for term in required:
                 if term.casefold() not in page.casefold():
                     raise AssertionError(f"G5 {code}: missing actual authenticated content: {term}")
+            if code.endswith("U01:L01"):
+                # Source-equivalent first-party cube models must be visible
+                # to an authenticated learner, not merely present in JSON.
+                drawing = re.search(
+                    r'<svg[^>]*viewBox="0 0 960 590"[^>]*>.*?</svg>',
+                    page, re.DOTALL)
+                if drawing is None:
+                    raise AssertionError("G5 U01:L01 actual four-model SVG absent")
+                if drawing.group(0).count("<polygon") != 102:
+                    raise AssertionError("G5 U01:L01 missing 34 individual SVG cube prisms")
+                for label, count in (("A", 8), ("B", 8), ("C", 8), ("D", 10)):
+                    if not re.search(r">" + label + r"[^<]*" + str(count) + r" cubes<",
+                                     html.unescape(drawing.group(0))):
+                        raise AssertionError("G5 U01:L01 missing correctly counted model " + label)
+                print("G5_U01_L01_FIRST_PARTY_34_CUBE_SVG_PASS", flush=True)
             if code.endswith("U03:L02") and (
                     "Open teacher-reviewed construction and explanation" not in page or
                     "/student/g5/u03/l02/rubric" not in page):

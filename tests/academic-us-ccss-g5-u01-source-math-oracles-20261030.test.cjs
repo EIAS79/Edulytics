@@ -63,4 +63,17 @@ test('U01:L01 first-edition 2021 student task PDF supports exact page-level 9-ta
  for(const model of ['2','5','3','9','8','10'])
    assert.ok(prose.includes(model),'Student source model '+model);
  assert.match(prose,/connecting cubes|congruent cubes/i);
+ assert.equal(lesson.Visuals[0].Kind,"Grade5Unit1CubeComparison");
+ assert.match(lesson.Visuals[0].Description,/two-by-two-by-two cube \(eight cubes\)/i);
+ assert.match(lesson.Visuals[0].Description,/five cubes in a bottom row and three above/i);
+ assert.match(lesson.Visuals[0].Description,/five-by-one-by-two solid \(ten cubes\)/i);
+ const renderer=fs.readFileSync(path.join(root,
+   'src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml'),'utf8');
+ assert.match(renderer,/RichLessonVisualKind.Grade5Unit1CubeComparison/);
+ for(const contract of ['Count = 8','Count = 10','5 bottom + 3 above = 8','2 × 1 × 4 = 8']){
+   assert.ok(renderer.includes(contract),"Source figure contract missing: "+contract);
+ }
+ const kind=fs.readFileSync(path.join(root,
+   'src/Edulytics.Core/Curriculum/RichLessonContentV2.cs'),'utf8');
+ assert.match(kind,/Grade5Unit1CubeComparison = 11/);
 });
