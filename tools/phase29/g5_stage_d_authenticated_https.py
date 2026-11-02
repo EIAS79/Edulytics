@@ -383,8 +383,11 @@ def run():
                 if drawing.group(0).count("<polygon") != 141:
                     raise AssertionError("G5 U01:L02 expected 47 first-party rendered cubes")
                 for label, count in (("A", 12), ("B", 11), ("C", 12), ("D", 12)):
-                    if not re.search(r">" + label + r"[^<]*" + str(count) + r" cubes<",
-                                     drawing.group(0)):
+                    # Razor may add whitespace/newlines inside SVG text;
+                    # require the visible label and exact count, not byte-adjacent tags.
+                    if not re.search(r">\s*" + re.escape(label) + r"\s*:\s*" +
+                                     str(count) + r"\s+cubes\s*<",
+                                     html.unescape(drawing.group(0))):
                         raise AssertionError("G5 U01:L02 model/count mismatch " + label)
                 print("G5_U01_L02_FIRST_PARTY_47_CUBE_SVG_PASS",flush=True)
             if code.endswith("U03:L02") and (
