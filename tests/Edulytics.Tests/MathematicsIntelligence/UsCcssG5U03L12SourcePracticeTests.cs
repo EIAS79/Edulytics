@@ -42,10 +42,16 @@ public sealed class UsCcssG5U03L12SourcePracticeTests
                 Edulytics.Services.Practice.StudentPrivatePracticeDifficulty.AtClassLevel,
                 1,seed,[],student);
             Assert.Single(positive);
+            var validPositive=new Edulytics.Services.Practice.PracticeSessionQualityValidator()
+                .Validate(contract.ToLegacyStage18Contract(),positive,1);
+            Assert.True(validPositive.IsReady,$"positive seed={seed} {validPositive.StatusCode} {string.Join(",",validPositive.ReasonCodes)}");
             var negative=engine.GenerateComposed(school,adoption,lesson,contract.ToLegacyStage18Contract(),
                 Edulytics.Services.Practice.StudentPrivatePracticeDifficulty.AtClassLevel,
                 1,seed+129,[positive[0].ExposureFingerprint],student);
             Assert.Single(negative);
+            var validNegative=new Edulytics.Services.Practice.PracticeSessionQualityValidator()
+                .Validate(contract.ToLegacyStage18Contract(),negative,1);
+            Assert.True(validNegative.IsReady,$"negative seed={seed} {validNegative.StatusCode} {string.Join(",",validNegative.ReasonCodes)}");
         }
     }
 
