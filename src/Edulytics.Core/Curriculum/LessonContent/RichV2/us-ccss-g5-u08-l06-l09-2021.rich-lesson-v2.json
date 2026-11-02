@@ -1,0 +1,1023 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u08-l06-l09-im2021-source-parity-richv2-v12-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L06",
+      "CultureCode": "en",
+      "Title": "Revisit Volume PLC Activity",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L06 applies fixed unit-cube counts to rectangular-prism dimensions, then approximates the size of two famous structures. The source explicitly says neither real structure is a simple rectangular prism, so mathematical PROXY volumes are not claims about actual building interiors.",
+        "Warm-up Estimation Exploration Sugar Cubes uses a credited Biswarup Ganguly CC BY 3.0 image; the original count cannot be deduced from text alone, so student high/low/right estimates require teacher visual review.",
+        "Activity1 126 Cubes original box holds126 equal sugar cubes; valid factor arrangements include3×6×7 and2×7×9. The physical sugar box printed dimensions1 7/8in by3 3/4in by4 3/8in are approximate, so a pupil must reason how many small unit cubes fit and cannot declare one unique integer packing dimension without cube measurement.",
+        "Activity2 Colossal Structures Old and New source hypothetical rectangular PRISM for Great Pyramid with 230m square base and height140m yields230×230×140=7406000m³; actual pyramid is not a prism. Empire State Building source footprint129m×59m and height373m gives a rough prism proxy 2838903m³. Source photo and true shapes make both estimates/model assumptions, not certified real-world volumes.",
+        "Source images and credit terms preserved as metadata, not copied without independent binary/license review. Selected exact cases grade fixed cuboid arithmetic only; estimation and source image comparison are TEACHER_REVIEW_REQUIRED.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use unit-cube packing to justify integer rectangular-prism volume, find several different cuboid arrangements for one volume, and distinguish an imaginary rectangular bounding prism from an irregular actual landmark. The original source explicitly warns that multiplying a historic structure's displayed dimensions does not compute the true volume of a non-prism.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: imagine 126 identical unit cubes with no gaps. A 3-by-6-by-7 arrangement uses126 cubes; a 2-by-7-by-9 arrangement also uses126. Ask learners to illustrate the layers of both boxes and explain why equal volume does NOT imply equal face shapes or surface area.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — choose box arrangements: compare factor triples(1,9,14),(2,7,9),(3,6,7), each multiplying to126 cubic-unit cubes. State that finding several valid arrangements is different from identifying the exact dimensions of any photographed box because cube sizes and the physical interior dimensions are not verified.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — architectural bounding models: model an imaginary rectangular prism with square base230m by230m and height140m, obtaining 7,406,000m³. Separately model a bounding prism with footprint129m by59m and height373m:2,838,903m³. These are explicitly rectangular MODEL volumes only. The actual pyramid tapers, and an actual stepped skyscraper is not a uniform rectangular prism; comparing the bounding volumes does not determine the actual structures' volume without additional shape data.",
+        "Optional previous source-aligned or independently authored extension — Assessment: arrays/diagrams of cube packing, validity of every factor triple, and explanations distinguishing model bounds from real structures require teacher judgment. Avoid claiming an actual pyramid equals its rectangular bounding prism."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Integer cube packing",
+          "Definition": "A prism filled by a×b×c equal unit cubes without gaps has volume abc cubic units.",
+          "Rule": "3×6×7=126.",
+          "Example": "Changing dimensions may preserve the number of cubes."
+        },
+        {
+          "Title": "Factor triples",
+          "Definition": "Different whole-number side triples may have the same product.",
+          "Rule": "2×7×9=3×6×7=126.",
+          "Example": "Each ordered or reordered triple represents a potential cuboid."
+        },
+        {
+          "Title": "Bounding rectangular models",
+          "Definition": "Using length×width×height for a shape that is not an exact rectangular prism gives a rectangular model, not exact actual shape volume.",
+          "Rule": "230×230×140=7406000m³ for the enclosing prism.",
+          "Example": "The pyramidal interior cannot be equated to that model without extra geometry."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Colossal Volume and Sugar Cubes",
+          "Question": "Original source box contains exactly how many sugar cubes?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "126",
+          "Check": "Original numeric source example; incorrect distractors 120 and 128 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Colossal Volume and Sugar Cubes",
+          "Question": "Source126 cubes: valid complete rectangular-prism layering dimensions in cubes",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3×6×7",
+          "Check": "Original numeric source example; incorrect distractors 3×6×8 and 3×7×7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Colossal Volume and Sugar Cubes",
+          "Question": "Source126 cubes: another valid cuboid factor triple",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2×7×9",
+          "Check": "Original numeric source example; incorrect distractors 2×7×8 and 3×7×7 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Colossal Volume and Sugar Cubes",
+          "Question": "Source historical Great Pyramid rectangular-prism PROXY base side230 meters and height140m, cubic meters",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "7406000",
+          "Check": "Original numeric source example; incorrect distractors 32200 and 5290000 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Two different 126-unit boxes",
+          "Question": "Give two rectangular-prism arrangements of126 unit cubes.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Choose dimensions3,6,7 and multiply.",
+            "Choose dimensions2,7,9 and multiply.",
+            "Explain the layers of each."
+          ],
+          "Answer": "Both have volume126 unit cubes.",
+          "Check": "3×6×7=126 and2×7×9=126."
+        },
+        {
+          "Title": "Optional existing extension — Bounding pyramid prism",
+          "Question": "Find the volume of an imaginary230m×230m×140m rectangular prism.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Find square base area230×230=52900m².",
+            "Multiply by140m.",
+            "Label as bounding rectangular model."
+          ],
+          "Answer": "7406000m³ for the model.",
+          "Check": "NOT the exact real-world pyramid volume."
+        },
+        {
+          "Title": "Optional existing extension — Bounding building prism",
+          "Question": "Find129×59×373m³ for a hypothetical encompassing rectangular prism.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Compute base129×59=7611m².",
+            "Multiply7611 by373.",
+            "Explain why this can overcount a stepped structure."
+          ],
+          "Answer": "2838903m³ for the model.",
+          "Check": "7611×373=2838903."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a solid pyramid as a rectangular prism with the same base and height",
+          "WhyWrong": "The pyramid tapers with height, violating the constant cross-section condition.",
+          "Correction": "Call the product a bounding-prism model, not the pyramid's actual volume."
+        },
+        {
+          "Mistake": "Assume one factor triple is the only possible box shape",
+          "WhyWrong": "Composite126 has many integer factorizations.",
+          "Correction": "Find and justify more than one distinct triple."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
+        }
+      ],
+      "SummaryPoints": [
+        "126 permits many cuboid integer factor triples.",
+        "Pyramid rectangular bounding proxy7,406,000m³; building proxy2,838,903m³.",
+        "Real solids are not accurately captured by full rectangular-prism proxies.",
+        "Optional prior: Volume counts unit cubes in the modeled rectangular prism.",
+        "Optional prior: Two distinct cube arrangements may have exactly equal volume.",
+        "Optional prior: Original physical cube layouts and real-world shape judgment require teacher review.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-6/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Colossal Volume and Sugar Cubes — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source box contains exactly how many sugar cubes?",
+              "Cells": [
+                "126",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source126 cubes: valid complete rectangular-prism layering dimensions ",
+              "Cells": [
+                "3×6×7",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source126 cubes: another valid cuboid factor triple",
+              "Cells": [
+                "2×7×9",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source historical Great Pyramid rectangular-prism PROXY base side230 m",
+              "Cells": [
+                "7406000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source historical Empire State approximate rectangular-prism proxy129×",
+              "Cells": [
+                "2838903",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Which hypothetical rectangular PRISM PROXY volume is larger?",
+              "Cells": [
+                "Great Pyramid proxy",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Great Pyramid actual shape is a rectangular prism true",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source sugar cube packing only126 total cubes can determine a UNIQUE b",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Revisit Volume PLC Activity — original geometric model",
+          "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
+          "Rows": [
+            {
+              "Label": "Model",
+              "Cells": [
+                "3×6×7",
+                "2×7×9",
+                "230×230×140",
+                "129×59×373"
+              ]
+            },
+            {
+              "Label": "Volume in stated unit",
+              "Cells": [
+                "126 cubes",
+                "126 cubes",
+                "7406000 m³ model",
+                "2838903 m³ model"
+              ]
+            },
+            {
+              "Label": "Confidence",
+              "Cells": [
+                "Exact cube product",
+                "Exact cube product",
+                "Bounding prism only",
+                "Bounding prism only"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L07",
+      "CultureCode": "en",
+      "Title": "Estimating the Volume of the World’s Largest Wagon",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L07 Estimating the Radio Flyer is deliberately NOT a fixed multiplication worksheet. Pupils inspect the source wagon image, propose dimensions and units, compare too-low/about-right/too-high bounds, then justify how image clues could improve estimates.",
+        "Warm-up Notice and Wonder Radio Flyer uses original photo and student-generated observations. Source image lacks certified scale in accessible teacher text, so no exact original wagon dimensions should be fabricated from image proportions.",
+        "Activity1 Anatomy of an Estimate asks which measurements length,width,height of wagon BED matter, what physical units are sensible, and how to calibrate a rough value using visual objects and known benchmarks. Pupils record plausible bounds and assumptions.",
+        "Activity2 Estimating the Size asks learner to revise estimated dimensions from wagon photo, disclose uncertainty separately for length,width,height, and improve volume using product of estimates. Multiple plausible numerical answers are valid with evidence, so source teacher rubric is authoritative.",
+        "Selected exact choices cover fixed dimensional reasoning only, not the ACTUAL unmeasured source volume. Previously authored first-party numeric wagon illustrations remain labeled optional independent support; original figure and reasoning teacher reviewed.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: make an evidence-based estimate of a very large wagon's interior VOLUME, starting without provided dimensions. The original 2021 lesson asks which measurements and units matter, and for too-low, plausible and too-high estimates, then refines them from visible scale references in a photo. No exact global wagon specification should be silently supplied to replace the learner's observations.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare the value of a children's wagon to a large display wagon; a photograph without a ruler cannot establish exact lengths. Discuss why measurements in feet may be useful for a large wagon bed, while cubic feet (not square feet) are needed for its approximate interior volume.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original modeling worksheet in prose: choose a fictional wagon interior approximately24ft long,12ft wide and2ft deep. The rectangular-prism estimate is576ft³. Label every number an assumption because the actual wagon bed may have curved edges, thick walls or a tapered shape; an external wagon photograph would need actual reference objects for more reliable dimensions.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — make a reasonable interval: if plausible length is22–26ft, width10–14ft and depth1.5–2.5ft, simple enclosing rectangular-prism bounds are330ft³ (too low for the midpoint model) and910ft³ (too high for that midpoint model). Select a middle estimate576ft³ and defend why the 330/910 choices are rough low/high scenarios, not mathematically certified physical bounds of the unknown wagon.",
+        "Optional previous source-aligned or independently authored extension — Assessment: students must identify dimensions, units, scale references, uncertainty and revise estimates from an image. An automatically computed product on assumed dimensions is a numeric example but not proof that a particular photograph's wagon was measured correctly."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Interior rectangular-prism estimate",
+          "Definition": "A wagon bed may be approximated by length×width×depth in one consistent linear unit.",
+          "Rule": "24ft×12ft×2ft≈576ft³.",
+          "Example": "Real interior capacity may differ if boundaries are not rectangular."
+        },
+        {
+          "Title": "Estimate uncertainty",
+          "Definition": "Lower and upper plausible dimensions give a range of model products.",
+          "Rule": "22×10×1.5=330ft³;26×14×2.5=910ft³.",
+          "Example": "The range depends on declared assumptions."
+        },
+        {
+          "Title": "Cubic versus square units",
+          "Definition": "The floor is measured in square feet, while an interior fill volume requires depth.",
+          "Rule": "24ft×12ft=288ft²;×2ft=576ft³.",
+          "Example": "Area alone is not capacity."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Estimate the Radio Flyer",
+          "Question": "Original source Radio Flyer visual estimation requires which three dimensions?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "length,width,height",
+          "Check": "Original numeric source example; incorrect distractors length only and width only must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Estimate the Radio Flyer",
+          "Question": "Original source a wagon BED volume should be expressed in",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "cubic length units",
+          "Check": "Original numeric source example; incorrect distractors meters only and square units only must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Estimate the Radio Flyer",
+          "Question": "Original source a still photo without trustworthy scale can establish EXACT wagon dimensions?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "no",
+          "Check": "Original numeric source example; incorrect distractors yes and only length must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Estimate the Radio Flyer",
+          "Question": "Original teacher source requests estimates too low/about right/too high, are these a single official exact number?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "no",
+          "Check": "Original numeric source example; incorrect distractors yes and always 100 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Choose a reasonable unit",
+          "Question": "Why not describe wagon volume only in square feet?",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Identify floor length and width.",
+            "Determine what depth measurement is missing.",
+            "Multiply three lengths and label cubic feet."
+          ],
+          "Answer": "Cubic feet measure the volume, not square feet.",
+          "Check": "A 24×12×2-foot model is576 cubic feet."
+        },
+        {
+          "Title": "Optional existing extension — Create a first estimate",
+          "Question": "A fictional wagon bed is24×12×2ft. Estimate capacity.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Multiply floor dimensions24×12=288ft².",
+            "Use estimated depth2ft.",
+            "State that the model assumes an approximately rectangular interior."
+          ],
+          "Answer": "About576ft³.",
+          "Check": "288ft²×2ft=576ft³."
+        },
+        {
+          "Title": "Optional existing extension — Bound a model",
+          "Question": "Compute products from low 22×10×1.5ft and high26×14×2.5ft assumptions.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Compute lower chosen model dimensions.",
+            "Compute upper chosen model dimensions.",
+            "Explain why neither result is an actual measured wagon volume."
+          ],
+          "Answer": "330ft³ and910ft³ for selected models.",
+          "Check": "A teacher reviews whether estimates use defensible scale evidence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Present an assumed dimension set as an official dimension of the source wagon",
+          "WhyWrong": "The lesson has students infer sizes from a visual; the exercise numbers here are invented examples.",
+          "Correction": "Label all modeled dimensions hypothetical until directly measured."
+        },
+        {
+          "Mistake": "Confuse area and volume",
+          "WhyWrong": "Two dimensions compute square units, but capacity requires a third dimension.",
+          "Correction": "Add a depth and express cubic units."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
+        }
+      ],
+      "SummaryPoints": [
+        "Three dimensions necessary for a rectangular-volume proxy.",
+        "No one published measured exact wagon volume in this lesson's student activity.",
+        "Source visual estimates require explicit model assumptions and teacher scoring.",
+        "Optional prior: Estimate physical measurements with explicit references and uncertainty.",
+        "Optional prior: Choose cubic units for interior capacity and compare low/middle/high scenarios.",
+        "Optional prior: A learner's source-image interpretation and refinement remain teacher-reviewed.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 7, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-7/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Estimate the Radio Flyer — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source Radio Flyer visual estimation requires which three dim",
+              "Cells": [
+                "length,width,height",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source a wagon BED volume should be expressed in",
+              "Cells": [
+                "cubic length units",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source a still photo without trustworthy scale can establish ",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original teacher source requests estimates too low/about right/too hig",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "To compute a rough wagon bed rectangular volume from measured dimensio",
+              "Cells": [
+                "length×width×height",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source asks students to EXPLAIN how accurate each dimension e",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Estimating the Volume of the World’s Largest Wagon — original geometric model",
+          "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "Low assumption",
+                "Middle assumption",
+                "High assumption"
+              ]
+            },
+            {
+              "Label": "Length (ft)",
+              "Cells": [
+                "22",
+                "24",
+                "26"
+              ]
+            },
+            {
+              "Label": "Width (ft)",
+              "Cells": [
+                "10",
+                "12",
+                "14"
+              ]
+            },
+            {
+              "Label": "Depth (ft)",
+              "Cells": [
+                "1.5",
+                "2",
+                "2.5"
+              ]
+            },
+            {
+              "Label": "Modeled volume (ft³)",
+              "Cells": [
+                "330",
+                "576",
+                "910"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L08",
+      "CultureCode": "en",
+      "Title": "Filling up the World's Largest Wagon",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L08 uses ACTUAL SOURCE Radio Flyer rectangular bed 27 feet long,13 feet wide,2 feet deep. It asks quantities of 150-pound sand bags filling9 cubic feet at$12 each and delivering4000 two-foot cubical boxes.",
+        "Warm-up Notice and Wonder Toy Boxes asks open source observation of picture; independent figure use needs source visual check and is teacher reviewed.",
+        "Activity1 Sand Wagon source wagon capacity27×13×2=702ft³. Each 150-pound sand bag fills9ft³, so702÷9=78 bags, cost78×$12=$936 and mass78×150lb=11700lb. Real capacity/bag fill may be approximate, hence source says ABOUT for cost.",
+        "Activity2 More Boxes source box2ft×2ft×2ft=8ft³, 4000 such boxes. IMPORTANT source problem does not specify detailed packing orientation. Simple VOLUME ratio702/8=87.75 yields upper bound87 boxes each trip and at least46 trips by volume. Physical axis-aligned single layer (floor27/2=13 and floor13/2=6, floor2/2=1) fits78 boxes, requiring52 trips. Do not auto-grade 46 or52 as uniquely certified without teacher deciding packing model; both calculations represent different assumptions.",
+        "Source volume arithmetic exact but box-trips interpretation and student explanation remain TEACHER_REVIEW_REQUIRED. Preserve original wagon dimensions, source 150-pound/9ft³/$12 bags and4000 identical boxes, not earlier invented dimensions.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: apply the displayed real-wagon dimensions from the 2021 learner task to volume, bag count, money and mass, then reason about AXIS-ALIGNED packing of rigid cubes. Unlike loose sand, boxes cannot occupy fractional leftover dimensions, so volume ratio alone is not a valid box-capacity count.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — cubic capacity and sand: an idealized wagon bed is27ft long,13ft wide and2ft deep. Its rectangular-prism volume is702ft³. If one bag fills approximately9ft³ and costs$12 and weighs150lb, a full bag model needs78 bags, costing$936 and weighing11700lb. Distinguish mass/weight from volume and explain possible voids, vehicle safety constraints and source 'about' quantities.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — cube box delivery: each delivery box is a rigid2ft×2ft×2ft cube. Floor-fitting rows along dimensions are ⌊27/2⌋=13, ⌊13/2⌋=6, and ⌊2/2⌋=1 in height. The regular axis-aligned pack holds13×6×1=78 boxes per trip, not87 boxes computed as702÷8 and rounded. For4000 boxes, 51 trips carry3978, leaving22 boxes, so52 trips are needed under this simple packing plan.",
+        "Optional previous source-aligned or independently authored extension — Assessment boundary: sand fills the available volume approximately, while rigid boxes leave inaccessible volume under the fixed orientation. The source asks an explanation and practical layout, so packing assumptions must be stated and teacher reviewed. Volume-only division may overcount and should not automatically validate an answer."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Capacity of the wagon model",
+          "Definition": "The given rectangular interior dimensions determine its theoretical prism volume.",
+          "Rule": "27×13×2=702ft³.",
+          "Example": "Actual usable capacity may be less."
+        },
+        {
+          "Title": "Bag volume and cost",
+          "Definition": "Total bag count is capacity divided by bag volume when divisible and all space is filled.",
+          "Rule": "702÷9=78;78×$12=$936.",
+          "Example": "78 bags at150 pounds weigh11700 pounds."
+        },
+        {
+          "Title": "Rigid box packing",
+          "Definition": "Whole-number fit of a cubic box is determined along each dimension, not only by total volume.",
+          "Rule": "floor(27/2)×floor(13/2)×floor(2/2)=78.",
+          "Example": "4000 boxes require ceil(4000/78)=52 trips."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Radio Flyer Sand and Boxes",
+          "Question": "Original source wagon27ft×13ft×2ft, cubic feet capacity",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "702",
+          "Check": "Original numeric source example; incorrect distractors 720 and 542 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Radio Flyer Sand and Boxes",
+          "Question": "Original source wagon depth2ft length27ft width13ft: BASE area square feet",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "351",
+          "Check": "Original numeric source example; incorrect distractors 702 and 3510 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Radio Flyer Sand and Boxes",
+          "Question": "Source sand bag fills9 cubic feet: number bags for wagon702 cubic feet",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "78",
+          "Check": "Original numeric source example; incorrect distractors 87 and 79 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Radio Flyer Sand and Boxes",
+          "Question": "Source each sand bag costs$12: cost78 bags in dollars",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "936",
+          "Check": "Original numeric source example; incorrect distractors 780 and 930 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Fill model with sand",
+          "Question": "For a702ft³ bed and approximately9ft³ per sand bag, find bags, cost and weight.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Compute702÷9=78 bags.",
+            "Multiply78×$12 for purchase cost.",
+            "Multiply78×150lb for weight."
+          ],
+          "Answer": "78 bags, $936, 11700lb.",
+          "Check": "These values are conditional on ideal full volume and approximate bag capacity."
+        },
+        {
+          "Title": "Optional existing extension — Count boxes geometrically",
+          "Question": "How many rigid2ft cubes fit in a27×13×2-foot rectangular bed with edges aligned?",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Count13 whole boxes along27ft.",
+            "Count6 whole boxes across13ft.",
+            "Count1 level vertically and multiply."
+          ],
+          "Answer": "78 boxes per trip.",
+          "Check": "The 1ft leftover strips do not fit extra 2ft cubes."
+        },
+        {
+          "Title": "Optional existing extension — Find deliveries",
+          "Question": "How many trips deliver4000 boxes at78 boxes/trip?",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Calculate78×51=3978.",
+            "Subtract4000−3978=22 remaining.",
+            "Add a final partial trip."
+          ],
+          "Answer": "52 trips.",
+          "Check": "78×52=4056 theoretical maximum slots; 51 trips insufficient."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Divide total wagon volume by a box's volume to claim87 complete boxes fit",
+          "WhyWrong": "Geometric packing creates unused strips even when total leftover volume is positive.",
+          "Correction": "Count complete boxes along each side."
+        },
+        {
+          "Mistake": "Confuse a 150-pound bag's MASS with its nine-cubic-foot CAPACITY",
+          "WhyWrong": "Pounds and cubic feet measure different properties.",
+          "Correction": "Calculate bag count from volume, then total pounds from bag count."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
+        }
+      ],
+      "SummaryPoints": [
+        "Original volume702ft³, bags78, cost$936, sand11700lb.",
+        "Cubic box volume8ft³ and 4000 units.",
+        "Trips depend on packing assumptions: volume-only lower bound46; straightforward physical grid gives52.",
+        "Optional prior: The same wagon supports different sand-volume and rigid-box-packing calculations.",
+        "Optional prior: Rigid boxes require checking whole-number dimensions and possibly a final partial trip.",
+        "Optional prior: Student sketches and physical packing assumptions require teacher assessment.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 8, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-8/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Radio Flyer Sand and Boxes — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source wagon27ft×13ft×2ft, cubic feet capacity",
+              "Cells": [
+                "702",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source wagon depth2ft length27ft width13ft: BASE area square ",
+              "Cells": [
+                "351",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source sand bag fills9 cubic feet: number bags for wagon702 cubic feet",
+              "Cells": [
+                "78",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source each sand bag costs$12: cost78 bags in dollars",
+              "Cells": [
+                "936",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source each sand bag weighs150lb: weight78 bags in pounds",
+              "Cells": [
+                "11700",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source each shipped box2×2×2 feet: cubic feet per box",
+              "Cells": [
+                "8",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source wagon702ft3 divided by box8ft3: largest WHOLE count by cubic-vo",
+              "Cells": [
+                "87",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source source says4000 boxes to deliver, number boxes in shipment",
+              "Cells": [
+                "4000",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Filling up the World's Largest Wagon — original geometric model",
+          "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
+          "Rows": [
+            {
+              "Label": "Property",
+              "Cells": [
+                "Wagon",
+                "Sand bag",
+                "Rigid box"
+              ]
+            },
+            {
+              "Label": "Given",
+              "Cells": [
+                "27×13×2ft",
+                "9ft³; $12;150lb",
+                "2×2×2ft"
+              ]
+            },
+            {
+              "Label": "Volume",
+              "Cells": [
+                "702ft³",
+                "9ft³",
+                "8ft³"
+              ]
+            },
+            {
+              "Label": "Whole count",
+              "Cells": [
+                "—",
+                "78 bags",
+                "78 packed per trip"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "—",
+                "$936;11700lb",
+                "4000 boxes⇒52 trips"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L09",
+      "CultureCode": "en",
+      "Title": "Problem Solving with Volume: Water (optional)",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L09 models rain falling on a source EIGHT-SIDED orthogonal roof, unit conversion centimeters to meters and cubic centimeters to liters, and open water-demand and reservoir design questions.",
+        "Warm-up Notice and Wonder Cubic Centimeters and Grams uses original credited image. Student explains why a cubic centimeter of water roughly corresponds to one gram under usual conditions; figure credit and measurement assumptions need teacher check.",
+        "Activity1 Catching Rainfall includes a roof diagram with printed sides including10m,15m,3m and8m but other sides are UNLABELED/figure-dependent in accessible original text. No exact roof surface area is certified from that partial description alone. With monthly rain depth5cm=0.05m, a hypothetical 1m² patch receives0.05m³=50000cm³=50L of rain. For actual roof, multiply its geometrically verified m² area by50L/m²; account for roof shape and measured dimensions.",
+        "Activity1 also asks students to choose RESERVOIR dimensions, which are open and must fit proposed target volume with clear units. Students might make different valid measurements and container designs.",
+        "Activity2 How Much Water? original household water-use estimate, required rainfall, engineering challenges and whether rainwater capture is sensible have no single correct answer without the learner's own data. Digital selected choices verify source unit conversion only; teacher evaluates authentic environmental reasoning.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: connect rainfall DEPTH with roof AREA to estimate water VOLUME, convert cubic units into liters, then design a plausible reservoir. The original 2021 lesson shows an irregular roof diagram and asks students to estimate household water use and justify whether rain capture is practical. That original diagram is not available for reproduction; the geometry below is an explicitly different first-party model.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — independent schematic: an original simple roof footprint is partitioned into two NONOVERLAPPING rectangles measuring15m×8m and10m×3m. Their total horizontal modeled catchment area is120+30=150m². With hypothetical average rainfall depth5cm=0.05m, ideal water volume is150m²×0.05m=7.5m³=7500L. Explain why the depth must be in meters when multiplying by square-meter area and why the original irregular eight-sided source roof's area cannot be claimed as150m² from this new model.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — reservoir model: an ideal rectangular reservoir5m×3m×0.5m holds7.5m³=7500L, matching the entire imagined rainfall amount if perfectly captured. In reality, runoff efficiency, evaporation, first-flush losses, roof material, contaminants, overflow and rainfall seasonality can make effective captured water smaller, so a real storage plan demands context data and safe nonpotable/potable classification.",
+        "Optional previous source-aligned or independently authored extension — Activity 3 — variable household demand: one hypothetical household estimates 6000L used per month, another9000L. The ideal 7500L rain volume exceeds the first estimate by1500L but falls short of the second by1500L; no personal water usage should be fabricated on behalf of a student. Ask learners to supply their own assumptions or school-safe alternative data and explain whether harvesting is justified.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source roof geometry interpretation, student-chosen demand figures, real-world data provenance and reservoir design are human-reviewed modeling. The arithmetic checker can confirm 150×0.05 and liter conversions only conditional on the declared inputs; no single source-independent correct system design exists."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area times depth",
+          "Definition": "Volume of a vertical rain layer over a flat equivalent catchment equals area×rainfall depth.",
+          "Rule": "150m²×0.05m=7.5m³.",
+          "Example": "Both dimensions must be compatible."
+        },
+        {
+          "Title": "Cubic meter to liter",
+          "Definition": "One cubic meter equals1000 liters.",
+          "Rule": "7.5m³=7500L.",
+          "Example": "Also7,500,000cm³ since1L=1000cm³."
+        },
+        {
+          "Title": "Conditional water planning",
+          "Definition": "Estimated capture depends on source area, precipitation, losses and water demand.",
+          "Rule": "5×3×0.5=7.5m³ reservoir model.",
+          "Example": "A real system may capture less than theoretical rainfall."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Rainwater Volume",
+          "Question": "Original source monthly rainfall depth in centimeters",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "5",
+          "Check": "Original numeric source example; incorrect distractors 50 and 0.5 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Rainwater Volume",
+          "Question": "Original source rainfall depth5cm in meters",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "0.05",
+          "Check": "Original numeric source example; incorrect distractors 0.5 and 0.005 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Rainwater Volume",
+          "Question": "Original source cubic centimeters in one liter",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1000",
+          "Check": "Original numeric source example; incorrect distractors 100 and 10000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Rainwater Volume",
+          "Question": "Source 5cm rainfall over ONE square-meter area converted to liters theoretical volume",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "50",
+          "Check": "Original numeric source example; incorrect distractors 5 and 500 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Calculate rain volume",
+          "Question": "A fictional roof consists of two nonoverlapping rectangles15×8m and10×3m. Rain depth5cm. How much water falls?",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Add roof areas120+30=150m².",
+            "Convert5cm to0.05m.",
+            "Multiply150×0.05 and convert m³ to liters."
+          ],
+          "Answer": "7.5m³=7500L.",
+          "Check": "This is a first-party roof, NOT the original source's irregular roof figure."
+        },
+        {
+          "Title": "Optional existing extension — Design reservoir dimensions",
+          "Question": "Find an example rectangular tank capacity equal to7500L.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Convert7500L to7.5m³.",
+            "Choose dimensions5m×3m×0.5m.",
+            "Multiply and discuss safe installation and losses."
+          ],
+          "Answer": "7.5m³ or7500L.",
+          "Check": "Matching theoretical capacity does not imply actual capture efficiency."
+        },
+        {
+          "Title": "Optional existing extension — Compare different household estimates",
+          "Question": "If modeled rain supply is7500L, compare demand estimates6000L and9000L.",
+          "Method": "Independent first-party model. Exact arithmetic is a subcheck, not proof of realistic geometric/measurement assumptions.",
+          "Steps": [
+            "Subtract6000L from7500L.",
+            "Subtract7500L from9000L.",
+            "State that these are hypothetical monthly demand figures."
+          ],
+          "Answer": "1500L surplus for first;1500L shortfall for second.",
+          "Check": "Teacher assesses whether modeled demand and capture assumptions are plausible."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiply square-meter area by a depth in unconverted centimeters",
+          "WhyWrong": "This gives mixed units, not direct cubic meters.",
+          "Correction": "Convert5cm to0.05m before multiplying area in m²."
+        },
+        {
+          "Mistake": "Claim all theoretical rain reaches the reservoir and can safely be drunk",
+          "WhyWrong": "Losses and contamination can change volume and intended use.",
+          "Correction": "Distinguish mathematical upper-bound supply from an engineered system."
+        },
+        {
+          "Mistake": "Treat an unmeasured publisher illustration as providing an exact unique model result, or ignore original units and physical context.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Restore source problem dimensions and preserve original illustration/packing interpretations for authentic teacher validation."
+        }
+      ],
+      "SummaryPoints": [
+        "Rain depth5cm=0.05m and 50L per m² theoretical.",
+        "Original exact roof area not certified without full graphic dimensions.",
+        "Rain capture, reservoir shape and water use open teacher review.",
+        "Optional prior: Area×depth gives an IDEAL cubic-volume estimate if compatible units are used.",
+        "Optional prior: The source's irregular roof diagram cannot be silently replaced with an asserted equal area.",
+        "Optional prior: Teacher assesses student assumptions, actual roof geometry and planning judgment.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 9, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-9/lesson.html. Student Facing and teacher activity read from approved Primary/Our-CS 2021 lesson HTML. Separate Student Task PDF, gated responses and individual source-image rights remain unchecked. All diagrams/text examples authored independently for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rainwater Volume — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source monthly rainfall depth in centimeters",
+              "Cells": [
+                "5",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source rainfall depth5cm in meters",
+              "Cells": [
+                "0.05",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source cubic centimeters in one liter",
+              "Cells": [
+                "1000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source 5cm rainfall over ONE square-meter area converted to liters the",
+              "Cells": [
+                "50",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source 5cm rainfall over 1m2 converted to cubic centimeters theoretica",
+              "Cells": [
+                "50000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source roof area picture shows 8-sided shape, can exact area be certif",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original reservoir-design task has a single unique source required len",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source capture rain: gross theoretical precipitation and usable water ",
+              "Cells": [
+                "true",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Problem Solving with Volume: Water (optional) — original geometric model",
+          "Description": "Accessible original dimensional table. Source photography and drawings are not reproduced. Estimates and geometry model assumptions are identified.",
+          "Rows": [
+            {
+              "Label": "Model property",
+              "Cells": [
+                "Roof rectangle A",
+                "Roof rectangle B",
+                "Total"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "120m²",
+                "30m²",
+                "150m²"
+              ]
+            },
+            {
+              "Label": "Rain depth",
+              "Cells": [
+                "5cm",
+                "5cm",
+                "5cm"
+              ]
+            },
+            {
+              "Label": "Ideal volume",
+              "Cells": [
+                "6000L",
+                "1500L",
+                "7500L"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

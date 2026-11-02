@@ -57,6 +57,9 @@ public static partial class PracticeMathVisualRenderer
                 "trigonometry.right_triangle.find_side_exact" or
                 "trigonometry.right_triangle.find_angle_exact" or
                 "trigonometry.modelling.contextual" => RightTriangle(parameters),
+                "usccss.g5.u03.l02.unit_fraction_of_unit_fraction" or
+                "usccss.g5.u03.l02.same_original_whole_order_comparison"
+                    => GradeFiveUnitFractionAreaVisual(family, parameters),
                 "fractions.represent.interpret.fraction_bar" => FractionBar(parameters),
                 "vectors.add.exact_rational" or
                 "vectors.subtract.exact_rational" or

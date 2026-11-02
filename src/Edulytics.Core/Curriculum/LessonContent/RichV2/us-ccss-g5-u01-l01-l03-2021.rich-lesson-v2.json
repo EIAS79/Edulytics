@@ -1,0 +1,709 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u01-l01-l03-im2021-v30-original-layers-worked-20261030",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+      "CultureCode": "en",
+      "Title": "What Is Volume?",
+      "ExplanationParagraphs": [
+        "Learning goal: build and compare three-dimensional objects made from identical connecting cubes. Volume describes how much three-dimensional space an object occupies. This first lesson develops the concept by construction and comparison, not by requiring a rectangular-prism formula.",
+        "Warm-up — Which One Doesn't Belong?: original 2021 student-facing HTML (including the local AccessIM student mirror) presents four labelled cube objects, with source image alternative descriptions verified: A is a completely packed 2 × 2 × 2 prism (8 congruent cubes); B has 5 cubes in its bottom row and 3 above (8 in all); C is a 2 × 1 × 4 rectangular prism (8); D is a 5 × 1 × 2 rectangular prism (10). Students can justify several choices: D uses 10 rather than 8 cubes, B is not presented as a fully rectangular prism, and A is a cube. These are accessible SOURCE-DESCRIBED dimensions, not an assertion that the original image pixels or licensing have been inspected. Build or draw equivalent connected objects in original Edulytiks teaching materials; do not copy or claim reproduction of publisher artwork. The open-ended mathematical reasoning requires teacher review.",
+        "Activity 1 — Build Objects with Cubes (15 minutes): the 2021 Student Facing source asks which object is 'bigger' in two pictured pairs and why. The first pair reuses the original warm-up A (2 × 2 × 2 = 8 cubes) and B (5 cubes along the bottom row and 3 above = 8); the second pair shows a completely packed 2 × 2 × 2 prism (8) and a different arrangement with a 2 × 2 base plus four cubes stacked on top (8). The teacher synthesis says both objects in each pair occupy eight equally sized cubes although their arrangements differ. The original local HTML image alt descriptions have been checked, but the underlying image binaries and figure reuse rights remain unverified; text/physical models are independently authored accessible substitutes. The 2021 teacher source launches this activity in pairs, gives 5 minutes for individual work and 5 minutes for partner work, and uses MLR2 Collect and Display to refine precise language (bigger, longer, wider, taller, shorter, how many, more than, less than). Students explain both comparisons orally, in writing or using physical/tactile cubes; teacher review is needed.",
+        "Teacher preparation and delivery: gather equal-size connecting cubes (the 2021 teacher source specifies 24 per pair for Activity 2) and optionally provide isometric dot paper. The warm-up is open-ended; Activity 1 compares the two eight-cube pairs by space occupied, not prism multiplication. In Activity 2, learners in groups of four first construct individual objects from handfuls and order them by volume; they repeat, then each uses exactly nine cubes to build a single face-connected object and compare distinct shapes of the same volume. The teacher documents construction, counting, ordering and mathematical explanation. Dot-paper drawings are optional; tactile models, precise verbal descriptions and teacher-observed constructions are accessible alternatives. After the warm-up, include the source Math Community teacher move: students reflect on what it means to do mathematics together; collect and display their 'Doing Math' actions, then revisit and revise the chart after the Cool-down. For Activity 1, compare the two source pairs with five minutes of independent and five minutes of partner discussion, and collect language using MLR2. For Activity 2, launch four-person groups with 24 connecting cubes per pair, support ten minutes of group construction and ordering, then display three or four different nine-cube objects in synthesis. Read directions aloud for accessibility; isometric or centimeter dot paper is optional rather than a prerequisite.",
+        "Activity 2 — Build and Order: each group member takes a handful of equal-size connecting cubes, builds one object, orders all four group objects by volume using cube count and explains the order; repeat. Then each group member makes a face-connected solid from exactly nine congruent cubes, with no overlaps. Compare their arrangements and explain why the solids occupy the same space despite different outlines. Correct connected constructions need not be rectangular prisms. This is teacher-assessed open work, not a single auto-graded number.",
+        "Teacher-assessed source boundary: explaining why two cube objects use equal space, drawing arrangements, peer discourse and the open-ended Which One Doesn't Belong reasoning require human review. A simple number from an automatically generated box-dimensions task does not demonstrate completion of those activity goals. Publisher first-edition 2021 Grade 5 Unit 1 Lesson 1 preparation reviewed; original gated Cool-down not accessed, and no publisher figure is claimed as reproduced.",
+        "Edulytiks-original exit check (NOT the gated 2021 publisher Cool-down): a tall, face-connected model and a low, face-connected model are each built from eight congruent cubes without overlap. Which model has greater volume? Explain using cube size and count rather than apparent height; build, draw, describe or otherwise show your two models and justify your reasoning to the teacher. The teacher checks coherent models, equal cube counts and explanation; the numeric answer 8 alone is not sufficient and no publisher Cool-down parity is claimed.",
+        "Lesson-local teacher review rubric (8 points, manually scored): (1) valid nine-cube face-connected non-overlapping solid 0–2; (2) count-based comparisons of equal-sized cubes, not height-only, 0–2; (3) two distinct valid nine-cube arrangements with equal-volume explanation 0–2; (4) supported WODB/ordering justification and accessible discussion 0–2. One point for partial reasoning, zero for an absent or invalid response. Unscored digital cube counts are supplemental only. An independent Edulytiks Cool-down is teacher-reviewed; the original publisher Cool-down is SOURCE_UNAVAILABLE_GATED. Teacher may accept oral, tactile, drawn, or written evidence."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Volume is three-dimensional space",
+          "Definition": "The amount of three-dimensional space filled by a solid object.",
+          "Rule": "Compare objects by the number of identical cubes they occupy when constructed without gaps or overlaps.",
+          "Example": "An eight-cube stair-step and an eight-cube block have the same cube count."
+        },
+        {
+          "Title": "Shape and volume are different attributes",
+          "Definition": "Shape describes arrangement; volume describes amount of space.",
+          "Rule": "Rearranging identical cubes does not change the total volume if none are added or removed.",
+          "Example": "A one-layer eight-cube strip can be transformed into a 2-by-2-by-2 block using the same eight cubes."
+        },
+        {
+          "Title": "Unit cube as a comparison tool",
+          "Definition": "A cube of a fixed size used to build or measure a solid.",
+          "Rule": "Cubes must have the same size to compare their counts as measures of space.",
+          "Example": "A model with six congruent cubes takes up less space than an eight-cube model."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Same cube count, different arrangement",
+          "Question": "Model A has eight 1-cube pieces in one layer; model B has two layers of four. Do their volumes differ?",
+          "Method": "Count equivalent cubes without looking only at height.",
+          "Steps": [
+            "Count the eight unit cubes in A.",
+            "Count four cubes in each of B's two layers: four plus four is eight.",
+            "Because each model uses eight identical cubes and no gaps, neither fills more space."
+          ],
+          "Answer": "Same volume: eight equal-size cubes in each model.",
+          "Check": "Rebuild B into the A arrangement without changing the number of pieces."
+        },
+        {
+          "Title": "Compare two constructed objects",
+          "Question": "Object A is made from seven congruent cubes, and object B from nine congruent cubes. Which fills more space?",
+          "Method": "Use a common cube-sized unit rather than an image's apparent height.",
+          "Steps": [
+            "Check that both objects were built from the same-size cubes.",
+            "Compare the counts, seven and nine.",
+            "Nine cubes fill the space of two additional unit cubes."
+          ],
+          "Answer": "Object B fills two more unit-cube spaces.",
+          "Check": "The comparison is valid only because the cubes have the same size."
+        },
+        {
+          "Title": "Invent a different eight-cube model",
+          "Question": "How can a learner show that two different-looking solids have equal volume?",
+          "Method": "Construct and explain two valid arrangements; several answers are possible.",
+          "Steps": [
+            "Build a 2-by-2-by-2 solid from eight cubes.",
+            "Rearrange the same eight cubes into a one-cube-high 2-by-4 rectangle.",
+            "Explain why changing their positions without changing the pieces preserves the total space occupied."
+          ],
+          "Answer": "For example, a 2-by-2-by-2 block and a 2-by-4-by-1 strip each use eight equal cubes.",
+          "Check": "Teacher checks the actual models and the learner's justification; the chosen shape is not a fixed-response assessment."
+        },
+        {
+          "Title": "Order four builds, then redesign nine cubes",
+          "Question": "Four classmates build different solids with 5, 8, 9 and 11 identical face-connected cubes. Order their volumes. Next, construct two different solids of exactly nine congruent cubes. Does their volume change?",
+          "Method": "Compare cube counts of same-size nonoverlapping pieces, then use a non-prism nine-cube arrangement to distinguish shape from occupied space.",
+          "Steps": [
+            "Count each classmate's cubes without judging visible width or height; put their counts in ascending order.",
+            "Build one 3-by-3-by-1 nine-cube slab and a second face-connected nine-cube stair-step with rows of 4, 3 and 2 cubes in the same layer.",
+            "Check that both nine-cube arrangements use every cube once, are face-connected and have no overlaps; compare orientation and space occupied."
+          ],
+          "Answer": "For these constructed examples, 5 < 8 < 9 < 11 cubic units. Both nine-cube solids occupy nine unit-cube spaces even though their outlines differ.",
+          "Check": "Teacher checks the physical/tactile structures, student ordering and justifications. Any other valid four-object ordering and nine-cube connected models may be accepted; fixed numbers are original examples, not the publisher's image answers."
+        },
+        {
+          "Title": "2021 source warm-up A–D: more than one valid WODB answer",
+          "Question": "A is a packed 2×2×2 cube; B has five lower-row cubes and three on top; C is a 2×1×4 prism; D is a 5×1×2 prism. Which one does not belong, and why?",
+          "Method": "Use original source-described identical unit-cube models and justify the reasoning; teacher reviews alternatives.",
+          "Steps": [
+            "Count A: 2×2×2=8.",
+            "Count B: 5+3=8.",
+            "Count C: 2×1×4=8; D: 5×1×2=10.",
+            "D is defensible because it has two more cubes; B is defensible because it is not a fully packed rectangular prism; A is defensible because it is a cube.",
+            "A teacher assesses the property and justification, not one keyed letter."
+          ],
+          "Answer": "A=8, B=8, C=8, D=10; several geometrically justified WODB responses are valid.",
+          "Check": "Original source record IDs 147995–147998; no publisher artwork is reproduced."
+        },
+        {
+          "Title": "2021 source Activity 1: both original eight-cube comparison pairs",
+          "Question": "The first source pair is a packed 2×2×2 prism versus a five-cube bottom row with three above; the second is a packed 2×2×2 prism versus a 2×2 base with four more cubes above. Which object has more volume in each pair?",
+          "Method": "Use original source-described identical unit-cube models and justify the reasoning; teacher reviews alternatives.",
+          "Steps": [
+            "First pair: 2×2×2=8 and 5+3=8.",
+            "Second pair: 2×2×2=8 and 2×2+4=8.",
+            "With congruent nonoverlapping unit cubes, a different arrangement does not increase volume.",
+            "Ask students to build, describe or draw both pairs and justify equal amounts of occupied space."
+          ],
+          "Answer": "Neither: both source pairs have equal volume, eight congruent unit cubes per object.",
+          "Check": "Original source record IDs 147995, 147996, 147635, 147636."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Taller means larger volume",
+          "WhyWrong": "A tall thin solid may use fewer cubes than a shorter wide solid.",
+          "Correction": "Count equal-sized cubes rather than judging only one dimension."
+        },
+        {
+          "Mistake": "Two objects with different outlines must have different volumes",
+          "WhyWrong": "Moving equal unit cubes changes shape but not the number or size of cubes.",
+          "Correction": "Build different eight-cube arrangements and count each cube exactly once."
+        },
+        {
+          "Mistake": "Build nine cubes in separate disconnected islands and claim one solid was constructed",
+          "WhyWrong": "The original construction asks learners to form a single cube-connected object; an accurate total count by itself does not demonstrate the object-building task.",
+          "Correction": "Join congruent cubes face-to-face into one connected object, verify nine pieces, and explain why volume stays nine despite changing its silhouette."
+        }
+      ],
+      "SummaryPoints": [
+        "Two solids can have different shapes but occupy the same amount of space.",
+        "Build and compare objects using equally sized cubes; use a model, drawing or oral explanation.",
+        "Publisher reference: IM K–5 Math Grade 5, first edition 2021, Unit 1 Lesson 1, CC BY 4.0; source preparation https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-1/preparation.html. Text models are original Edulytiks examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Volume comparison using accessible layer descriptions",
+          "Description": "First-party text table supports building models. It does not reproduce the source's four picture cards.",
+          "Rows": [
+            {
+              "Label": "Model",
+              "Cells": [
+                "A: eight cubes in one row",
+                "B: two layers of four"
+              ]
+            },
+            {
+              "Label": "Cube count",
+              "Cells": [
+                "8",
+                "4 + 4 = 8"
+              ]
+            },
+            {
+              "Label": "Same volume?",
+              "Cells": [
+                "Yes",
+                "Yes"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Alternative nine-cube arrangements (original text descriptions)",
+          "Description": "A nonvisual task model for the original build-and-order experience; physical connecting cubes are preferred and drawings are optional, not a copy of publisher cards.",
+          "Rows": [
+            {
+              "Label": "Build A",
+              "Cells": [
+                "One 3 × 3 layer",
+                "9 connected unit cubes"
+              ]
+            },
+            {
+              "Label": "Build B",
+              "Cells": [
+                "One layer of adjacent rows containing 4, 3 and 2 cubes",
+                "9 connected unit cubes"
+              ]
+            },
+            {
+              "Label": "Comparison",
+              "Cells": [
+                "Different outline",
+                "Same volume: 9 cubic units"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-described 2021 warm-up A–D and two comparison pairs — accessible text, not source artwork",
+          "Description": "These paraphrased geometry descriptions were checked against local 2021 teacher/student HTML image alternative text. No original publisher figure image is embedded; visual pixel parity and individual reuse rights remain unverified. Students may construct independent tactile or diagram equivalents.",
+          "Rows": [
+            {
+              "Label": "Warm-up A",
+              "Cells": [
+                "Completely packed 2 × 2 × 2 rectangular prism",
+                "8 congruent cubes"
+              ]
+            },
+            {
+              "Label": "Warm-up B",
+              "Cells": [
+                "Bottom row: 5 cubes; upper row: 3 cubes",
+                "8 congruent cubes"
+              ]
+            },
+            {
+              "Label": "Warm-up C",
+              "Cells": [
+                "Completely packed 2 × 1 × 4 rectangular prism",
+                "8 congruent cubes"
+              ]
+            },
+            {
+              "Label": "Warm-up D",
+              "Cells": [
+                "Completely packed 5 × 1 × 2 rectangular prism",
+                "10 congruent cubes"
+              ]
+            },
+            {
+              "Label": "Activity 1 pair 1",
+              "Cells": [
+                "Original warm-up A versus original warm-up B",
+                "8 versus 8; equal occupied space"
+              ]
+            },
+            {
+              "Label": "Activity 1 pair 2",
+              "Cells": [
+                "2 × 2 × 2 prism versus a 2 × 2 base with four cubes stacked above",
+                "8 versus 8; equal occupied space"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
+      "CultureCode": "en",
+      "Title": "Measure Volume",
+      "ExplanationParagraphs": [
+        "Learning goal: understand volume as the number of unit cubes needed to completely fill a three-dimensional region. Use counting and equal layers of cubes to measure a prism informally. This lesson precedes formal dimension formulas in the 2021 IM first-edition sequence.",
+        "Warm-up — Which One Doesn't Belong: Cubes (10 minutes): the original 2021 Student Facing displays exactly four labelled picture cards. Card A describes TWO rectangular prisms each 1×2×3 cubes (6 per prism); B describes a 2×2×3 rectangular prism with ONE cube missing from the top (11 total, not a fully packed 12-cube prism); C describes an irregular arrangement of four rows 4+4+3+1 = 12 cubes; D describes one fully packed 3×2×2 prism containing 12 cubes. Do not conflate A's two separate prisms with a single 6-cube solid. Multiple WODB choices are valid with a mathematically justified property; compare unit-cube counting, shape, and how a cube may be missing. Publisher artwork is not reproduced; independent tactile/text models are explicitly labelled as such. The corresponding original local 2021 figure record IDs are 148008 (A), 148009 (B), 148010 (C) and 148011 (D); these are provenance labels for verified HTML descriptions, not copied artwork.",
+        "Activity 1 — Finding Volume (15 min): each pair receives 24 equal-size connecting cubes. Partner A uses 8–12 cubes to build any connected solid (not necessarily a rectangular prism) and hands the object to Partner B. B counts every cube exactly once, whether cube-by-cube or by layers that may contain different counts, and explains the strategy. A compares strategies, the pair swaps roles and discusses which shapes were easier to count and why. A complete rectangular-prism layer formula is not required for these irregular builds.",
+        "Activity 2 — Guess My Prism (20 min): use 16–24 congruent cubes per pair and hide one completely packed rectangular-prism model from the partner. Describe rows, columns, cubes in a complete layer and number of layers precisely enough for the partner to reconstruct the SAME dimensions, not just the total. Reconstruct, compare, rotate if needed, then swap roles. The 2021 source compares two different-looking six-cube example prism orientations before the game; independent Edulytiks model descriptions support this source goal without pretending to reproduce original artwork.",
+        "Teacher review: source warm-up permits alternative defensible WODB responses. Activity 1 checks direct unit-cube counting, including variable-size layers in irregular connected solids; Activity 2 checks an unambiguous packed-prism description, reconstruction and partner explanation. A number alone (e.g. 18) cannot establish the hidden-prism shape. Numeric volume Practice is supplemental, not full evidence of construction. Publisher 2021 Cool-down gated and NOT_VERIFIED_GATED; original task images remain unverified, with no artwork copied.",
+        "Edulytiks-original exit check (NOT the publisher Cool-down): A student builds a completely packed 2-by-3-by-3 prism from 18 equal cubes. Describe two ways to count all 18 cubes, including any hidden cubes, and give enough row/column/layer information for a partner to rebuild the prism. The teacher checks structural description, counts, cubic units and explanation; a scalar 18 is insufficient.",
+        "Teacher-assessed 8-point source-aligned rubric (teacher review required): (1) correct cube counts for four warm-up models and justified WODB reasoning, 0–2; (2) valid connected 8–12 cube build and count each cube exactly once, 0–2; (3) unambiguous 16–24 cube fully packed rectangular-prism description and partner reconstruction that matches dimensions, 0–2; (4) compare strategies and communicate how hidden cubes and layers are counted, 0–2. Give 1 for partial explanation, 0 for wrong or absent response. A numerical volume alone is insufficient evidence of the partner construction."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Volume unit",
+          "Definition": "A unit cube occupies one cubic unit of space.",
+          "Rule": "The volume of a solid completely filled with n identical unit cubes is n cubic units.",
+          "Example": "Nine cubes fill nine cubic units."
+        },
+        {
+          "Title": "Layers as a counting structure",
+          "Definition": "A layer is a set of cubes at one level of a packed solid.",
+          "Rule": "If complete layers each contain the same number of cubes, add equal groups to count all cubes.",
+          "Example": "Three layers of four unit cubes give 4 + 4 + 4 = 12."
+        },
+        {
+          "Title": "Rectangular prism structure",
+          "Definition": "A box-shaped solid that can be packed with equal cubes in a rectangular array.",
+          "Rule": "Describe rows and columns in one layer before counting repeated layers.",
+          "Example": "A 2-by-3 layer contains six cubes; two such layers contain twelve."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Count by layers",
+          "Question": "A solid has three identical layers, with four unit cubes per layer. What is its volume?",
+          "Method": "Repeated addition or multiplication shows the same cube count.",
+          "Steps": [
+            "Count four cubes in the first complete layer.",
+            "Record three equal layers.",
+            "Add 4 + 4 + 4 or calculate 3 × 4."
+          ],
+          "Answer": "12 cubic units.",
+          "Check": "A physical model using exactly twelve equal cubes confirms the count."
+        },
+        {
+          "Title": "Include concealed cubes",
+          "Question": "A packed rectangular prism has two rows and three columns per layer and two layers. How many cubes fill it?",
+          "Method": "Use the complete prism's structure, including cubes not visible from the front.",
+          "Steps": [
+            "Count a full layer as 2 × 3 = 6 cubes.",
+            "Recognize that a completely packed second layer also has six cubes.",
+            "Add 6 + 6 = 12."
+          ],
+          "Answer": "12 unit cubes, or 12 cubic units.",
+          "Check": "Two equal six-cube layers account for every cube, including those obscured in a drawing."
+        },
+        {
+          "Title": "Explain two different strategies",
+          "Question": "A learner makes a solid with two layers of five cubes each. Describe two valid ways to count it.",
+          "Method": "Compare direct counting and equal-group reasoning.",
+          "Steps": [
+            "Count each cube once to obtain ten.",
+            "Alternatively identify two groups of five.",
+            "Confirm 5 + 5 and 2 × 5 give the same count."
+          ],
+          "Answer": "10 cubic units by either strategy.",
+          "Check": "Teacher reviews a matching physical model and explanation rather than marking the strategy text with one numeric answer."
+        },
+        {
+          "Title": "Guess My Prism — describe then reconstruct",
+          "Question": "Partner A hides a completely packed rectangular prism of 18 equal cubes. Give enough information that Partner B can rebuild the same object without seeing it.",
+          "Method": "Interpret a spoken/tactile construction description and verify equal dimensions and cube count rather than inferring shape from a printed product alone.",
+          "Steps": [
+            "Partner A describes each layer as two rows of three cubes, with three identical layers in total.",
+            "Partner B builds three full 2-by-3 layers and connects them into one rectangular prism of 18 cubes.",
+            "Compare the rebuilt object with A's model, discuss orientation differences, and switch partner roles with another valid 16–24 cube prism."
+          ],
+          "Answer": "A 2 × 3 × 3 packed rectangular prism with 18 cubes; another orientation can represent the same solid.",
+          "Check": "Teacher observes whether the description uniquely identifies a packed prism, the partner successfully rebuilds it, and both explain equal volume. An 18-only numeric answer is insufficient."
+        },
+        {
+          "Title": "2021 source warm-up: two prisms in A, one missing cube in B",
+          "Question": "WODB shows A as two distinct 1×2×3 prisms of equal size; B a 2×2×3 prism with a missing top cube; C an irregular 4+4+3+1 arrangement; D a packed 3×2×2 prism. Justify a choice.",
+          "Method": "Use original source-described identical unit-cube models and justify the reasoning; teacher reviews alternatives.",
+          "Steps": [
+            "A depicts TWO separate prisms with six cubes in EACH, not one single twelve-cube solid.",
+            "B has 2×2×3−1=11 cubes.",
+            "C has 4+4+3+1=12 cubes; D has 3×2×2=12.",
+            "Possible distinctions include B missing a cube, D being a completely packed twelve-cube prism, A displaying two separate congruent prisms.",
+            "Require the student to explain the classification; there is no unique keyed letter."
+          ],
+          "Answer": "A: two separate six-cube prisms; B: eleven cubes; C and D: twelve cubes per object.",
+          "Check": "Original source SVG figure records 148008–148011; artwork is not copied."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Only count cubes that can be seen",
+          "WhyWrong": "A packed prism may contain hidden cubes.",
+          "Correction": "Infer the full rectangular rows and layers and count every cube."
+        },
+        {
+          "Mistake": "Record area units instead of volume units",
+          "WhyWrong": "A layer is two-dimensional, but the filled solid is three-dimensional.",
+          "Correction": "Describe the entire solid in cubic units rather than square units."
+        },
+        {
+          "Mistake": "Use only the cube count to describe a prism in the partner reconstruction game",
+          "WhyWrong": "Eighteen cubes may form different rectangular prisms or nonprism objects; group count alone does not specify the three-dimensional structure.",
+          "Correction": "Describe equal rows, columns and layers as well as the total, then check the partner's reconstructed model."
+        },
+        {
+          "Mistake": "Treat both prisms on source WODB card A as one solid",
+          "WhyWrong": "The original image description identifies two distinct prisms, not one connected twelve-cube object.",
+          "Correction": "Count six in each 1×2×3 prism separately; combine objects only when the task explicitly asks for a total of separate volumes."
+        }
+      ],
+      "SummaryPoints": [
+        "One cubic unit is the space taken up by one unit cube.",
+        "Count volume directly or by adding the number of cubes in complete equal layers.",
+        "Publisher reference: IM K–5 Math Grade 5, first edition 2021, Unit 1 Lesson 2, CC BY 4.0; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-2/preparation.html. Examples and text representations are original Edulytiks work."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Counting cubes by layers",
+          "Description": "Original text table gives a nonvisual equivalent of a cube-array model; it is not a publisher picture.",
+          "Rows": [
+            {
+              "Label": "Layer",
+              "Cells": [
+                "Bottom",
+                "Top"
+              ]
+            },
+            {
+              "Label": "Rows × columns",
+              "Cells": [
+                "2 × 3",
+                "2 × 3"
+              ]
+            },
+            {
+              "Label": "Cubes in layer",
+              "Cells": [
+                "6",
+                "6"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "6 + 6 = 12",
+                "12 cubic units"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Guess My Prism — original accessible partner instructions",
+          "Description": "Text alternative to a hidden physical prism; do not use as a substitution for teacher-scored collaboration.",
+          "Rows": [
+            {
+              "Label": "Partner A",
+              "Cells": [
+                "2 rows × 3 cubes per layer",
+                "3 complete layers",
+                "18 identical cubes"
+              ]
+            },
+            {
+              "Label": "Partner B",
+              "Cells": [
+                "Rebuild from spoken dimensions",
+                "Compare shape, layers and total",
+                "Rotate model if needed"
+              ]
+            },
+            {
+              "Label": "Teacher rubric",
+              "Cells": [
+                "Descriptions unambiguous",
+                "Both prisms completely packed",
+                "Partner exchange and reasoning observed"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Edulytiks-original L02 complete and irregular unit-cube examples",
+          "Description": "Independent accessible task supports counting irregular objects and reconstructing packed prisms. NOT a reproduction of inaccessible original 2021 picture cards.",
+          "Rows": [
+            {
+              "Label": "Irregular model",
+              "Cells": [
+                "Two connected layers: 5 cubes and 4 cubes",
+                "9 unit cubes total; explain each layer"
+              ]
+            },
+            {
+              "Label": "Packed prism",
+              "Cells": [
+                "2 rows of 3 per layer",
+                "3 layers; 6 + 6 + 6 = 18"
+              ]
+            },
+            {
+              "Label": "Partner evidence",
+              "Cells": [
+                "Describe shape and layers, not just 18",
+                "Rebuild a congruent packed prism up to orientation"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "2021 original WODB source figures — accessible counts",
+          "Description": "Verbal equivalent of original source figure descriptions, preserving whether a card depicts two prisms, a missing unit cube, irregular rows or a packed prism; not a reproduction of publisher images.",
+          "Rows": [
+            {
+              "Label": "A",
+              "Cells": [
+                "Two separate 1×2×3 prisms",
+                "6 cubes in each prism"
+              ]
+            },
+            {
+              "Label": "B",
+              "Cells": [
+                "One 2×2×3 block with one missing top cube",
+                "11 cubes"
+              ]
+            },
+            {
+              "Label": "C",
+              "Cells": [
+                "Irregular rows of 4, 4, 3, 1",
+                "12 cubes"
+              ]
+            },
+            {
+              "Label": "D",
+              "Cells": [
+                "One fully packed 3×2×2 prism",
+                "12 cubes"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
+      "CultureCode": "en",
+      "Title": "Volumes of Prism Drawings",
+      "ExplanationParagraphs": [
+        "Learning goal: find the number of unit cubes in a drawing of a completely packed rectangular prism, using its layers. Moving from manipulatives to drawings requires accounting for unseen cubes and considering whether to group cubes by horizontal or vertical layers.",
+        "2021 original warm-up — Number Talk (10 minutes): mentally find 6 × 4 = 24, 3 × 2 × 4 = 24, 3 × 2 × 5 = 30 and 3 × 2 × 6 = 36. Explain how successive products increase by six unit cubes when one additional complete 3-by-2 layer is added. Discuss equivalent factor grouping and how the factors relate to complete cube layers; no original publisher art is reproduced.",
+        "Activity 1 — Build Rectangular Prisms (20 minutes): the source provides Card Sort Rectangular Prism Cards, a set per group of four, and 48 connecting cubes per pair. Each learner chooses a picture card, builds a COMPLETELY PACKED corresponding prism, counts ALL unit cubes (including hidden ones), explains their layers to a partner, and repeats. When exact card drawings are unavailable, use labelled original Edulytiks example descriptions with full dimensions, not invented claims about publisher cards A or E. A teacher checks the reconstruction, not just the numeric answer.",
+        "Activity 2 — Layers, Layers, and More Layers (15 minutes): examine descriptions of several fully packed cube prisms and find their volumes using horizontal and vertical layer groupings. The source discusses a 2-by-4-by-5 example as five layers of eight (5 × 8 = 40), or two layers of twenty (2 × 20 = 40); another viewpoint gives four layers of ten (4 × 10 = 40). Ask students to identify hidden cubes, relate factors to layer sizes and justify why regrouping changes neither the solid nor its volume. The exact source picture cards remain unverified; all text models are original Edulytiks representations. The source Student Facing three labeled completely packed prism examples include 4×2×5 = 40, 4×3×5 = 60, and 4×4×5 = 80 unit cubes. Ask for cubic unit counts and layer explanations, not only a multiplication product.",
+        "Source-specific second activity: a completely filled prism with five layers of eight identical cubes holds forty cubic units. Equivalently, a rotated view can be reasoned as two layers of twenty cubes. The published drawings must not be confused with independent example models; source card artwork is unavailable for licensed reproduction, and student explanations must account for unseen cubes.",
+        "Assessment boundary: original student work requires building from card descriptions, explaining hidden cubes, comparing equal-layer counts and communicating counting strategies. Surface-area or isolated dimension-product Practice cannot certify a constructed model or reasoned hidden-layer interpretation. Teacher assesses open models and descriptions. The 2021 Cool-down ('Jada’s Prism') is login gated and not claimed as reproduced; Edulytiks authors an independent check instead.",
+        "Edulytiks-original exit check (NOT publisher Jada’s Prism): a fully packed prism has a bottom face of 2 rows of 4 cubes and is 5 complete layers high, but an illustration shows only its top layer. Find its true volume, show two different complete-layer methods, and explain why the visible eight cubes do not give the whole volume. Expected: 5×8 = 40 or 2×20 = 40 (or 4×10 = 40) cubic units, with teacher review of the geometric reasoning.",
+        "Teacher 8-point manual review for the original 2021 lesson: 0–2 for accurately building a completely packed prism from a source card; 0–2 for explicitly counting all cubes including those hidden by perspective; 0–2 for giving correct 40, 60 and 80 cubic-unit counts using equal layers in the three Student Facing examples; 0–2 for explaining an alternative grouping (e.g., 5×8 = 2×20 = 4×10 = 40). Give one point for partially justified correct work, zero for unsupported or incorrect construction. A bare numerical value is insufficient evidence of the physical card-sort task."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Hidden cubes",
+          "Definition": "A cube in a fully packed prism may be obscured by other cubes in a two-dimensional drawing.",
+          "Rule": "Use complete layers and the given dimensions or visible grid pattern to include hidden cubes.",
+          "Example": "Two 2-by-3 layers contain twelve cubes even if only the top face is shown."
+        },
+        {
+          "Title": "Horizontal layers",
+          "Definition": "Parallel layers can each have the same number of cubes.",
+          "Rule": "Cubes per layer multiplied by the number of layers gives the complete count.",
+          "Example": "Three layers with eight cubes each contain 24 cubes."
+        },
+        {
+          "Title": "Different groupings, same volume",
+          "Definition": "The same prism can be counted through rows, columns or layers.",
+          "Rule": "Group the same set of unit cubes without double counting; regrouping factors preserves the product.",
+          "Example": "(3 × 2) × 4 = 3 × (2 × 4) = 24."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reconstruct a drawing",
+          "Question": "A completely packed prism drawing describes three rows of two cubes per layer and four equal layers. How many unit cubes fill it?",
+          "Method": "Use a text-based equivalent of the layered picture.",
+          "Steps": [
+            "Count one layer: 3 × 2 = 6 cubes.",
+            "Find four equal layers.",
+            "Calculate 6 × 4 = 24."
+          ],
+          "Answer": "24 cubic units.",
+          "Check": "Each of four layers has six cubes; 4 × 6 = 24."
+        },
+        {
+          "Title": "Compare two counting directions",
+          "Question": "The same prism is 3 cubes long, 2 cubes wide and 4 cubes high. Give two ways to count.",
+          "Method": "Associate multiplication regroupings with different layers.",
+          "Steps": [
+            "Use four horizontal layers of six cubes: 4 × (3 × 2).",
+            "Alternatively use three lengthwise stacks of eight cubes: 3 × (2 × 4).",
+            "Verify that both groupings give 24."
+          ],
+          "Answer": "24 cubic units by either method.",
+          "Check": "Both groupings count the same 3 × 2 × 4 cubes without omissions."
+        },
+        {
+          "Title": "Spot an incomplete drawing count",
+          "Question": "A pupil counts only the six cubes of the top layer of a three-layer packed prism. Explain the error.",
+          "Method": "Contrast visible cubes with the complete three-dimensional filling.",
+          "Steps": [
+            "Identify the six cubes in the visible top layer.",
+            "Account for two additional complete six-cube layers below.",
+            "Add all three six-cube layers."
+          ],
+          "Answer": "18 cubic units; the first count misses 12 hidden cubes.",
+          "Check": "3 × 6 = 18, not 6; teacher reviews the student's explanation of hidden layers."
+        },
+        {
+          "Title": "Different layer directions describe the same 40-cube prism",
+          "Question": "A packed prism has five horizontal layers of eight cubes; from another viewpoint it may be grouped into two layers of twenty cubes. Is its volume different?",
+          "Method": "Compare layer partitionings of one unchanged 2-by-4-by-5 prism.",
+          "Steps": [
+            "Count five equal horizontal layers of eight unit cubes: 5×8.",
+            "Regroup the same packed rectangular prism as two sections of twenty unit cubes: 2×20.",
+            "Confirm every cube is counted exactly once in both groupings."
+          ],
+          "Answer": "Both counts are forty cubic units.",
+          "Check": "Teacher reviews whether the drawing/model has compatible 2×4×5 dimensions and whether the student accounts for hidden cubes."
+        },
+        {
+          "Title": "2021 source Number Talk — one more complete six-cube layer",
+          "Question": "Evaluate mentally 6×4, 3×2×4, 3×2×5 and 3×2×6; explain the sequence.",
+          "Method": "Count complete equal-cube layers and justify cubes hidden by the source drawings.",
+          "Steps": [
+            "6×4=24 and 3×2×4=24; grouping the same factors does not change the result.",
+            "One complete 3×2 layer holds six equal cubes.",
+            "Four such layers contain 24, five contain 30, and six contain 36 cubes.",
+            "Every additional complete six-cube layer increases the volume by six cubic units."
+          ],
+          "Answer": "24, 24, 30 and 36 cubes, respectively.",
+          "Check": "Original 2021 Student Facing Number Talk expressions. A teacher evaluates mental strategies."
+        },
+        {
+          "Title": "2021 source Layers, Layers, and More Layers — three pictured prisms",
+          "Question": "Source diagrams show packed rectangular prisms 4×2×5, 4×3×5 and 4×4×5 unit cubes. Find each volume and explain the layers.",
+          "Method": "Count complete equal-cube layers and justify cubes hidden by the source drawings.",
+          "Steps": [
+            "For 4×2×5, each 4×2 layer contains 8 cubes and five layers contain 5×8=40.",
+            "For 4×3×5, each layer contains 12 cubes and five layers contain 60.",
+            "For 4×4×5, each layer contains 16 cubes and five layers contain 80.",
+            "Explain why hidden cubes count; rotating 4×2×5 can be grouped as 2×20 or 4×10 but stays 40."
+          ],
+          "Answer": "40, 60 and 80 cubic units; the first figure also equals 2×20 or 4×10.",
+          "Check": "Original source figure alternatives 147428, 148016 and 148017."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating visible cubes as the entire volume",
+          "WhyWrong": "A drawing hides cubes behind front or top faces.",
+          "Correction": "Assume a stated packed prism is filled and count all implied layers."
+        },
+        {
+          "Mistake": "Adding side lengths to measure volume",
+          "WhyWrong": "The edges describe lengths, not cube counts.",
+          "Correction": "Count a complete layer and multiply by the number of layers, explaining each factor."
+        }
+      ],
+      "SummaryPoints": [
+        "A complete prism drawing represents both visible and hidden unit cubes.",
+        "Horizontal and vertical groupings are equivalent ways to count the same filled solid.",
+        "Publisher reference: IM K–5 Math Grade 5, first edition 2021, Unit 1 Lesson 3, CC BY 4.0; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-3/preparation.html. Text and layer models are independent Edulytiks examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Packed prism with four equal layers",
+          "Description": "Accessible original model; the publisher's source prism cards and artwork are not copied.",
+          "Rows": [
+            {
+              "Label": "Layer",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Cubes in layer",
+              "Cells": [
+                "6",
+                "6",
+                "6",
+                "6"
+              ]
+            },
+            {
+              "Label": "Cumulative count",
+              "Cells": [
+                "6",
+                "12",
+                "18",
+                "24"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Edulytiks-original factor-change number talk and equivalent layers",
+          "Description": "Source-goal equivalent textual models, not images or cards from the 2021 publisher.",
+          "Rows": [
+            {
+              "Label": "Warm-up products",
+              "Cells": [
+                "6×4=24",
+                "3×2×4=24",
+                "3×2×5=30",
+                "3×2×6=36"
+              ]
+            },
+            {
+              "Label": "Fully packed prism",
+              "Cells": [
+                "2×4×5 unit cubes",
+                "40 cubic units"
+              ]
+            },
+            {
+              "Label": "Choose layers",
+              "Cells": [
+                "5 layers × 8",
+                "2 layers × 20",
+                "4 layers × 10"
+              ]
+            },
+            {
+              "Label": "Why this works",
+              "Cells": [
+                "All 40 cubes counted",
+                "Hidden cubes still included"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

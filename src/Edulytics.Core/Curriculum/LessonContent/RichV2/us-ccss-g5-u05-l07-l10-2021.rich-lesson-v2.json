@@ -1,0 +1,926 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u05-l07-l10-im2021-source-parity-richv2-v9-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L07",
+      "CultureCode": "en",
+      "Title": "Round Doubloons",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U05:L07 Round Doubloons: understand measurement precision and which underlying thousandth-decimal weights ROUND to same nearest tenth/hundredth/whole reading. A scale's displayed value may be rounded; saying a rounded measurement equals the exact object weight is false.",
+        "Warm-up Notice and Wonder A Digital Scale uses credited source image by Bjwebb (public domain Wikimedia), not independently reproduced; teacher shows actual original scale reading before pupils decide which historical coin could be on it. Do not invent the displayed digits from an uninspected figure.",
+        "Activity 1 Gold Doubloons: original source historical gold coin printed before1728 mass6.867 grams, after1728 mass6.766 grams. To nearest TENTH, 6.9g versus6.8g, distinguishable; to nearest WHOLE gram BOTH=7g, indistinguishable by a gram-only display; to nearest HUNDREDTH6.87g versus6.77g. Before1728 coin is heavier (6.867>6.766). Source asks pupils to place original two masses on number lines and explain which hundredth marks they approach.",
+        "Activity 2 Exact or Approximate? Source 14 pencils on desk is an exact discrete count, Los Angeles population12,400,000 is an estimated large quantity, school-to-park2.4 miles is an approximate length, runner time19.78 seconds is a measurement rounded to hundredths of a second, not a logically exact elapsed time to infinitely fine precision. Teacher reviews how precision affects labels and why not all printed digits imply exactness.",
+        "Original gated Cool-down A Golden Dollar not asserted replicated. Independent Edulytiks teacher Cool-down compares coin values5.746 and5.754g to tenths/hundredths with physical interpretation. The previous 12.32-ounce fictional scale remains an optional extension distinct from the original source.",
+        "Exact selected Practice checks only source historical weight rounding and source classification; original source photo, number-line positions and explanations remain TEACHER_REVIEW_REQUIRED.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: understand rounding decimals to the nearest whole number, tenth and hundredth as choosing the closest mark on an appropriately labeled number line. The source starts with a scale whose displayed reading is less precise than the objects on the pan; the displayed reading must not be treated as an exact measurement.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — digital scales: a modeled balance has weights whose exact mass totals 12.32 ounces, while a tenths-precision scale displays 12.3. Give different possible reasons and explain that 12.3 ounces need not equal exactly 12.300; a measurement device may report the nearest tenth instead of every hundredth.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — historical coin comparison without copyrighted art: the publisher's public page gives two historical sample weights, 6.867 and 6.766 grams. On a number line to hundredths, the first is closest to 6.87 and the second to 6.77; to tenths the values round to 6.9 and 6.8. Both round to 7 grams at whole-gram precision, so that coarser scale cannot distinguish their weights. Use two independent textual positions instead of reproducing coin photographs.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — choose precision: write original values 5.743 and 5.748 grams and locate each between adjacent hundredths. To the nearest hundredth, 5.743 becomes 5.74 and 5.748 becomes 5.75, while to the nearest tenth both display 5.7. Explain what distinguishable information is lost at lower precision.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the original source asks learners to reason about historical coin identification and how scale precision changes claims; teacher reviews number-line placement, device interpretation and why rounded equal values do not establish equal original masses. One rounded number is only a numeric subcheck."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rounding as closest benchmark",
+          "Definition": "A number rounded to a named place is represented by the closest multiple of that place unit.",
+          "Rule": "6.867 is nearer 6.87 than 6.86 and becomes 6.87 to hundredths.",
+          "Example": "Use a labeled number line to compare distances."
+        },
+        {
+          "Title": "Coarse display can hide differences",
+          "Definition": "Distinct exact masses may produce the same display when the scale records only coarse units.",
+          "Rule": "6.867 and 6.766 both round to 7 grams.",
+          "Example": "Equal rounded results need not imply equal original measurements."
+        },
+        {
+          "Title": "Precision matters to interpretation",
+          "Definition": "The same exact value can round differently to different place values.",
+          "Rule": "5.748→5.75 to hundredths and 5.7 to tenths.",
+          "Example": "Named unit and rounding place must be explicit."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Historical source doubloon weight precision",
+          "Question": "Round pre-1728 6.867g and post-1728 6.766g to whole, tenth and hundredth.",
+          "Method": "Place decimals on source number lines and choose nearest marked scale.",
+          "Steps": [
+            "6.867→7g nearest whole,6.9 nearest tenth,6.87 nearest hundredth.",
+            "6.766→7g nearest whole,6.8 nearest tenth,6.77 nearest hundredth.",
+            "Coarse whole-gram scales cannot tell the two original coins apart."
+          ],
+          "Answer": "Whole7/7; tenths6.9/6.8; hundredths6.87/6.77 grams.",
+          "Check": "6.867g>6.766g."
+        },
+        {
+          "Title": "Original source four precision examples",
+          "Question": "Are 14 pencils,12,400,000 city population,2.4mi travel distance and19.78s race duration exact or estimates?",
+          "Method": "Count discrete objects versus rounded measurements/large population estimates.",
+          "Steps": [
+            "A counted 14 pencils is an exact quantity.",
+            "Large city population12,400,000 is an estimate.",
+            "Measured miles2.4 and time19.78 are rounded reports, approximate."
+          ],
+          "Answer": "Exact; estimate; estimate; estimate/rounded measurement.",
+          "Check": "Teacher reviews nuance that printed decimals are measurements to specified precision."
+        },
+        {
+          "Title": "Optional existing extension — Historical sample coin masses",
+          "Question": "Round 6.867 grams and 6.766 grams to nearest tenth, hundredth and whole.",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Locate 6.867 between 6.86 and 6.87; locate 6.766 between 6.76 and6.77.",
+            "Round to hundredths: 6.87 and6.77; to tenths:6.9 and6.8.",
+            "To whole grams choose 7 for both."
+          ],
+          "Answer": "Hundredths: 6.87 and 6.77; tenths: 6.9 and 6.8; whole: both 7 grams.",
+          "Check": "6.867>6.766 even when whole-gram displays tie."
+        },
+        {
+          "Title": "Optional existing extension — Concealed hundredths on a scale",
+          "Question": "A scale reports12.3 ounces though exact measured pieces total12.32. Is its display necessarily wrong?",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "State that the scale may only report tenths.",
+            "Round 12.32 to the nearest tenth.",
+            "Compare the displayed 12.3 with the rounded value."
+          ],
+          "Answer": "No; 12.32 ounces rounds to12.3 ounces.",
+          "Check": "The displayed precision is not sufficient to recover the exact hundredths."
+        },
+        {
+          "Title": "Optional existing extension — Find a precision that distinguishes masses",
+          "Question": "Rounded to hundredths and tenths, compare5.743 and5.748 grams.",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "At hundredths, 5.743 is near5.74, 5.748 is near5.75.",
+            "At tenths, both are near5.7.",
+            "Explain which display can distinguish them."
+          ],
+          "Answer": "Hundredths distinguish 5.74 and5.75; tenths produce the same 5.7.",
+          "Check": "The exact masses are still different."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume identical rounded measurements prove equal exact values",
+          "WhyWrong": "Rounding loses information about less-significant places.",
+          "Correction": "State possible underlying intervals rather than identifying an exact original mass."
+        },
+        {
+          "Mistake": "Ignore the requested rounding place",
+          "WhyWrong": "Rounding to tenths and hundredths may give different displays.",
+          "Correction": "Label the unit interval on a number line before selecting a closest value."
+        },
+        {
+          "Mistake": "Present the 12.32-ounce fictional model as the original digital-scale photograph or confuse coin dates",
+          "WhyWrong": "Source text explicitly provides before1728=6.867g and after1728=6.766g and asks about precision under two measuring scales.",
+          "Correction": "Restore original dated gram weights, separate original photo from fictional model and explain why whole rounding collapses distinction."
+        }
+      ],
+      "SummaryPoints": [
+        "Source original doubloons 6.867g before1728 and6.766g after1728, former heavier.",
+        "Whole grams both round7; tenths6.9 and6.8; hundredths6.87 and6.77.",
+        "Original 14 pencils exact, LA12,400,000 estimate, 2.4mi approximate and19.78s rounded.",
+        "Original digital-scale image reading and number-line explanations require teacher review.",
+        "Independent Edulytiks cooldown clearly separate from original gated A Golden Dollar.",
+        "Optional prior: Rounding chooses the closest value at the requested place, not an exact hidden measurement.",
+        "Optional prior: Coarse measurement can make distinct masses appear identical.",
+        "Optional prior: The source's measured-coin interpretation and number-line explanation remain teacher-reviewed.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 7 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-7/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original before/after1728 coin masses and rounding",
+          "Description": "Source original grams; original digital-scale photograph and number-line drawing remain teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Pre1728",
+              "Cells": [
+                "6.867g",
+                "whole7",
+                "tenth6.9",
+                "hundredth6.87"
+              ]
+            },
+            {
+              "Label": "Post1728",
+              "Cells": [
+                "6.766g",
+                "whole7",
+                "tenth6.8",
+                "hundredth6.77"
+              ]
+            },
+            {
+              "Label": "Source exact/approximate",
+              "Cells": [
+                "14 pencils exact",
+                "12,400,000 population estimated",
+                "2.4mi approximate",
+                "19.78s rounded"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Round Doubloons — original decimal model",
+          "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
+          "Rows": [
+            {
+              "Label": "Mass (g)",
+              "Cells": [
+                "6.867",
+                "6.766"
+              ]
+            },
+            {
+              "Label": "Nearest hundredth",
+              "Cells": [
+                "6.87",
+                "6.77"
+              ]
+            },
+            {
+              "Label": "Nearest tenth",
+              "Cells": [
+                "6.9",
+                "6.8"
+              ]
+            },
+            {
+              "Label": "Nearest whole",
+              "Cells": [
+                "7",
+                "7"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L08",
+      "CultureCode": "en",
+      "Title": "Round Decimals",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U05:L08 Round Decimals: students label NUMBER-LINE ticks, estimate a point between marked decimals, and round printed decimal numbers to nearest whole, tenth and hundredth. Rounding requires comparing distances on a correctly scaled line, not simply changing a digit mechanically without understanding the threshold.",
+        "Warm-up Estimation Exploration Number Line: the publisher shows an unlabeled point and asks low/about-right/high estimates. Original line figure not independently reproduced, so its exact point is teacher-reviewed and not automatically assigned a fabricated coordinate.",
+        "Activity 1 Name that Number: printed Jada point labeled15.53 on 11 evenly spaced ticks from15 to16 (tenths). Source places point between the sixth and seventh tick marks; determine whether 15.53 lies in the correct 15.5–15.6 interval and assess the original plotted point position with the actual visual, rather than assume a source image match from alt text alone. Other original lines are3–4 by tenths,5.6–5.7 by hundredths and1.7–1.8 by hundredths, with points between specific marks. These image-dependent estimate answers are TEACHER_REVIEW_REQUIRED.",
+        "Activity 2 Which Number Is Closest?: source6.273 rounds nearest whole6, tenth6.3, hundredth6.27. Original4.158 rounds whole4, tenth4.2, hundredth4.16. Children can use source number lines to justify nearest bounds and the place immediately right of rounding digit.",
+        "Activity 3 Round the Numbers optional: printed original table numbers34.482,99.909,5.555,19.509. Nearest whole/tenth/hundredth respectively:34/34.5/34.48;100/99.9/99.91;6/5.6/5.56;20/19.5/19.51. Apply Grade5 conventional five-rounds-up half-way policy and handle carrying to a new whole at99.909 and19.509.",
+        "Exact numeric selected Practice covers only these source rounding results, not original source number-line diagram correctness or original gated Cool-down. Independently authored Edulytiks Cool-down asks pupils to round7.865 and explain thresholds; prior 4.685 source-style worked example remains optional, clearly not original printed activity.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: label number-line endpoints and tick intervals correctly, estimate a point, and round decimals to the nearest whole number, tenth or hundredth with a defensible place-value explanation. The source first asks children to critique an incorrectly located 15.53 and then continues with more number lines.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — poorly labeled point: an original unmarked 0–1 line has a marker slightly left of its midpoint. Give a too-low, reasonable and too-high decimal estimate; a picture without tenths marks cannot justify one exact thousandth. Propose adding tenths to improve the estimate.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — check a location: in a number line from 15.5 to15.6, a point representing 15.53 should be 3/10 of the distance across the interval from15.5 and closer to15.5 than15.6. A placement more than halfway toward15.6 is incorrect even if its numeric label is 15.53. Draw and label all tenths and hundredths before reasoning.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — round from nested lines: the original first-party decimal 6.273 lies between 6 and7, between6.2 and6.3, and between6.27 and6.28. Its nearest whole is6, nearest tenth6.3 and nearest hundredth6.27. Another example 4.685 lies between4.68 and4.69 and at the hundredth midpoint; under conventional half-up rounding it becomes4.69, but any alternate tie convention must be specified before grading.",
+        "Optional previous source-aligned or independently authored extension — Assessment: source asks students to label previously blank tick marks and explain if a plotted point is accurate before rounding. Numeric rounding answers do not establish correct number-line construction or critique. Student-generated diagrams and justification are teacher-reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "A number line's labels define location",
+          "Definition": "Equal tick spacing must correspond to equal numeric increments.",
+          "Rule": "15.53 is 0.03 beyond15.5, or 30% of a 0.1-wide interval.",
+          "Example": "It is closer to 15.5 than15.6."
+        },
+        {
+          "Title": "Rounding by closest value",
+          "Definition": "To round to tenths or hundredths, compare the number with adjacent multiples of the target place value.",
+          "Rule": "6.273 rounds to6.3 tenths and6.27 hundredths.",
+          "Example": "A number line or place-value chart explains the choice."
+        },
+        {
+          "Title": "Tie conventions should be stated",
+          "Definition": "Exactly halfway between two rounded choices can require an explicit rule.",
+          "Rule": "Under conventional half-up, 4.685 rounds to 4.69 to hundredths.",
+          "Example": "Do not treat unannounced alternative tie-breaking as a source-mandated fact."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original Activity2 round6.273 and4.158",
+          "Question": "Round source 6.273 and4.158 to nearest whole,tenth,hundredth.",
+          "Method": "Use left-place digit and nearest neighboring ticks; conventional half-up threshold.",
+          "Steps": [
+            "6.273→whole6,tenth6.3,hundredth6.27.",
+            "4.158→whole4,tenth4.2,hundredth4.16.",
+            "Explain place and which neighboring number is closer."
+          ],
+          "Answer": "6,6.3,6.27;4,4.2,4.16.",
+          "Check": "Preserve source decimal precision."
+        },
+        {
+          "Title": "Original optional activity source table",
+          "Question": "Round34.482,99.909,5.555,19.509 to whole,tenth,hundredth.",
+          "Method": "Align whole/tenth/hundredth columns and inspect next digit.",
+          "Steps": [
+            "34.482→34,34.5,34.48.",
+            "99.909→100,99.9,99.91; 5.555→6,5.6,5.56.",
+            "19.509→20,19.5,19.51."
+          ],
+          "Answer": "Source table values as shown for all three rounding precisions.",
+          "Check": "Teacher checks original worked number lines."
+        },
+        {
+          "Title": "Original Jada15.53 placement",
+          "Question": "Is source Jada's point15.53 on a15–16 line at an appropriate position?",
+          "Method": "Assess the actual provided source image with eleven tenth ticks.",
+          "Steps": [
+            "Tick sequence is15.0 through16.0 by0.1.",
+            "15.53 lies between15.5 and15.6, much closer to15.5.",
+            "Teacher checks the actual drawn position and reason rather than deriving exact pixels from alt description."
+          ],
+          "Answer": "15.53 must be in15.5–15.6 interval; teacher reviews drawn point.",
+          "Check": "Do not invent the diagram's exact relative location."
+        },
+        {
+          "Title": "Optional existing extension — Critique an incorrectly plotted point",
+          "Question": "A pupil marks15.53 closer to15.6 than to15.5. Is that accurate?",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Subtract15.53−15.5=0.03.",
+            "Compare the interval width of0.1 and see that the point is30% of the way from15.5.",
+            "Explain why it belongs closer to15.5."
+          ],
+          "Answer": "No; it should be nearer15.5.",
+          "Check": "Distance to15.5 is0.03; distance to15.6 is0.07."
+        },
+        {
+          "Title": "Optional existing extension — Round 6.273 to three places",
+          "Question": "Round6.273 to nearest whole, tenth and hundredth.",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Locate6.273 between6 and7; nearer6.",
+            "Locate6.273 between6.2 and6.3; nearer6.3.",
+            "Locate6.273 between6.27 and6.28; nearer6.27."
+          ],
+          "Answer": "Whole6; tenth6.3; hundredth6.27.",
+          "Check": "Rounding must follow the requested place, not the number of printed digits."
+        },
+        {
+          "Title": "Optional existing extension — A midpoint requires a rule",
+          "Question": "How does 4.685 round to hundredths under nearest, halves-up?",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "The hundredth choices are4.68 and4.69.",
+            "4.685 is exactly halfway between them.",
+            "Apply the specified halves-up convention."
+          ],
+          "Answer": "4.69.",
+          "Check": "Do not infer a tie policy from an unlabeled source or use floating-point approximations as evidence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume a decimal label is correctly located because its digits match",
+          "WhyWrong": "A point must correspond to the actual fraction of the scaled interval.",
+          "Correction": "Compare the point's relative distance to labeled endpoints."
+        },
+        {
+          "Mistake": "Use the thousandths digit to round directly to the whole place",
+          "WhyWrong": "Rounding to a place depends first on the next smaller place.",
+          "Correction": "Choose the requested place, then determine nearest available benchmark."
+        },
+        {
+          "Mistake": "Present made-up number-line endpoints for Jada's original15–16 source or replace original optional rounding table with independent numbers",
+          "WhyWrong": "Source specifically places15.53 on a15–16 line and has six printed numbers with grade-appropriate rounding questions.",
+          "Correction": "Restore original printed values and original scale, assess actual source point visually with teacher and preserve unrelated examples as extensions."
+        }
+      ],
+      "SummaryPoints": [
+        "Source Activity1 Jada15.53 on15–16 tenths line plus three pictured estimate tasks require teacher-review.",
+        "Source Activity2 6.273→6/6.3/6.27 and4.158→4/4.2/4.16.",
+        "Original optional table34.482→34/34.5/34.48 and99.909→100/99.9/99.91.",
+        "Original optional5.555→6/5.6/5.56 and19.509→20/19.5/19.51.",
+        "Numerical rounding selected Practice supplements but does not grade source tick drawings and estimates.",
+        "Optional prior: Label and interpret number-line scales before placing or rounding decimals.",
+        "Optional prior: Different rounding precisions may give different displays of the same exact number.",
+        "Optional prior: Source point placement and mathematical explanation require teacher review.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 8 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-8/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact printed source L08 decimal rounding",
+          "Description": "Original source values; source number line pictures are separate teacher-reviewed visuals.",
+          "Rows": [
+            {
+              "Label": "6.273",
+              "Cells": [
+                "whole6",
+                "tenth6.3",
+                "hundredth6.27"
+              ]
+            },
+            {
+              "Label": "4.158",
+              "Cells": [
+                "whole4",
+                "tenth4.2",
+                "hundredth4.16"
+              ]
+            },
+            {
+              "Label": "34.482",
+              "Cells": [
+                "34",
+                "34.5",
+                "34.48"
+              ]
+            },
+            {
+              "Label": "99.909",
+              "Cells": [
+                "100",
+                "99.9",
+                "99.91"
+              ]
+            },
+            {
+              "Label": "5.555",
+              "Cells": [
+                "6",
+                "5.6",
+                "5.56"
+              ]
+            },
+            {
+              "Label": "19.509",
+              "Cells": [
+                "20",
+                "19.5",
+                "19.51"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Round Decimals — original decimal model",
+          "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
+          "Rows": [
+            {
+              "Label": "Original value",
+              "Cells": [
+                "6.273",
+                "15.53",
+                "4.685"
+              ]
+            },
+            {
+              "Label": "Nearest whole",
+              "Cells": [
+                "6",
+                "16",
+                "5"
+              ]
+            },
+            {
+              "Label": "Nearest tenth",
+              "Cells": [
+                "6.3",
+                "15.5",
+                "4.7"
+              ]
+            },
+            {
+              "Label": "Nearest hundredth",
+              "Cells": [
+                "6.27",
+                "15.53",
+                "4.69 under half-up"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L09",
+      "CultureCode": "en",
+      "Title": "Order Decimals",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U05:L09 Order Decimals: compare three-decimal-place values, write sets in increasing order and construct ANY number strictly inside an open decimal interval, with a number line as an optional visualization. Exact fixed choices are not a substitute for teacher scoring all valid source open interval answers.",
+        "Warm-up True or False original: 0.909>0.91 FALSE (0.909<0.910);4.1<4.100 FALSE (4.100=4.1);0.99<0.999 TRUE (0.990<0.999). Pupils justify by alignment and preserve trailing-zero equivalence.",
+        "Activity 1 Caught in the Middle: original five constraints 786.2<x<786.3,9.99<x<10,0.46>x>0.45,0.5<x<0.51 and0.99<x<0.999. Teacher accepts infinitely many valid real decimals in each interval, e.g786.25,9.995,0.456,0.505 and0.995, not a single correct fixed value.",
+        "Same Activity1 original Kiran claims no number lies strictly between1.731 and1.732. This is incorrect on the real number line;1.7315 lies strictly between them, although it uses four places rather than the lesson's common thousandths grid. Teacher reviews explanation and warns that a number line's tick resolution does not mean no number exists between its marks.",
+        "Activity 2 Least to Greatest original printed four sets: 67.020,67.200,67.002 ->67.002<67.020<67.200;1.101,1.02,1.1 ->1.02<1.100<1.101;0.333,0.323,0.3 ->0.300<0.323<0.333;99.99,99.09,99.091 ->99.090<99.091<99.990. Source relative numbers and leading zeros matter.",
+        "Selected Practice presents source values in bounded choices; original source inequality entry, number-line explanation, all correct alternative between-values and partner reasoning are TEACHER_REVIEW_REQUIRED. Independent Edulytiks Cool-down covers different values.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: compare, order and generate numbers lying STRICTLY between two decimals using place value, optionally supported by number lines. The source intentionally explores the possibility of a number between two consecutive thousandths, even if students cannot yet NAME that number using only three decimal places.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — true or false: 0.909>0.91 is false because0.909<0.910; 4.1<4.100 is false since they are equal; 0.99<0.999 is true. Require a verbal place-value explanation rather than comparing written digit counts.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — choose multiple valid values between endpoints: 786.2<786.254<786.3, 9.99<9.995<10, 0.45<0.456<0.46, 0.5<0.507<0.51, and0.99<0.995<0.999. Draw a number line with suitable endpoints for one chosen inequality and compare different students' answers; there is no single value each blank must contain.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — the midpoint question: ask whether any number lies between 1.731 and1.732. There is no thousandth-grid value between consecutive thousandths, BUT at finer precision 1.7315 is strictly between. Invite students to conjecture and explain what a more finely subdivided number line would reveal, without requiring formal fourth-decimal-place notation from every Grade 5 learner.",
+        "Optional previous source-aligned or independently authored extension — Activity 3 — order an original set 0.907,0.97,0.917 and0.9. Express them as 0.907,0.970,0.917 and0.900 to compare, yielding 0.900<0.907<0.917<0.970. A teacher reviews the argument and choice of scale and should not mark the absence of more advanced naming as automatically wrong.",
+        "Optional previous source-aligned or independently authored extension — Assessment: numerical ordering can be checked exactly, but the student-generated intervals, exploratory finer-precision conjecture, ordering diagrams and peer revisions are teacher-reviewed. Gated source response and figure cards are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Strict decimal intervals",
+          "Definition": "A number in an open interval must be greater than the lower endpoint and less than the upper endpoint.",
+          "Rule": "9.99<9.995<10.",
+          "Example": "Multiple choices can satisfy one problem."
+        },
+        {
+          "Title": "Trailing zeros preserve order",
+          "Definition": "Equivalent decimal notation can make comparisons easier.",
+          "Rule": "0.9=0.900<0.907<0.917<0.970=0.97.",
+          "Example": "More printed digits do not imply a greater number."
+        },
+        {
+          "Title": "Decimals beyond thousandths",
+          "Definition": "Even when two displayed decimals are consecutive thousandths, a finer decimal representation can lie strictly between.",
+          "Rule": "1.731<1.7315<1.732.",
+          "Example": "The source invites conceptual observation without imposing an unintroduced algorithm."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source three inequality truth values",
+          "Question": "Classify0.909>0.91,4.1<4.100,0.99<0.999.",
+          "Method": "Add trailing zeros to align decimals without changing magnitude.",
+          "Steps": [
+            "0.909<0.910 so first is false.",
+            "4.1=4.100 so strict less is false.",
+            "0.990<0.999 so third is true."
+          ],
+          "Answer": "False,False,True.",
+          "Check": "Every comparison uses equal place values."
+        },
+        {
+          "Title": "Original source five between tasks and Kiran",
+          "Question": "Choose a decimal inside each source interval and refute Kiran's no-number claim.",
+          "Method": "Strict inequalities with decimal place-value refinement.",
+          "Steps": [
+            "786.25,9.995,0.456,0.505,0.995 fit the five printed intervals.",
+            "1.7315 is strictly between1.731 and1.732.",
+            "All such answers are examples; teacher accepts other valid values."
+          ],
+          "Answer": "Multiple possible solutions; counterexample1.7315.",
+          "Check": "All chosen numbers are strictly greater/lower than their bounds."
+        },
+        {
+          "Title": "Original source four increasing-order sets",
+          "Question": "Order all four source sets to thousandths correctly.",
+          "Method": "Compare ones,tenths,hundredths,thousandths after padding zeros.",
+          "Steps": [
+            "67.002<67.020<67.200.",
+            "1.02<1.1<1.101 and0.3<0.323<0.333.",
+            "99.09<99.091<99.99."
+          ],
+          "Answer": "Four printed increasing-order sequences.",
+          "Check": "Teacher checks pupils' optional number line."
+        },
+        {
+          "Title": "Optional existing extension — Fill a strict inequality",
+          "Question": "Give a decimal strictly between9.99 and10.",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Express endpoints as9.990 and10.000.",
+            "Choose9.995, five thousandths above the lower endpoint.",
+            "Verify it is below10.000."
+          ],
+          "Answer": "For example,9.995.",
+          "Check": "9.990<9.995<10.000."
+        },
+        {
+          "Title": "Optional existing extension — More precise numbers between",
+          "Question": "Is there a number between1.731 and1.732?",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Observe they are consecutive thousandth-place numbers.",
+            "Consider splitting the gap into two equal smaller parts.",
+            "Locate the midpoint using a fourth decimal place if familiar."
+          ],
+          "Answer": "Yes, for example1.7315; a finer representation is needed.",
+          "Check": "1.731<1.7315<1.732; teacher checks the learner's reasoning at their introduced precision."
+        },
+        {
+          "Title": "Optional existing extension — Order four decimals",
+          "Question": "Put0.907,0.97,0.917,0.9 from least to greatest.",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Rewrite each with three places:0.907,0.970,0.917,0.900.",
+            "Compare tenths first, then hundredths and thousandths.",
+            "Order from smallest to largest."
+          ],
+          "Answer": "0.9<0.907<0.917<0.97.",
+          "Check": "0.900<0.907<0.917<0.970."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Conclude no real value lies between consecutive thousandths",
+          "WhyWrong": "A new fractional place can subdivide the interval again.",
+          "Correction": "Explore a finer number line without demanding unsupported curriculum mastery."
+        },
+        {
+          "Mistake": "Treat 0.9 as greater than 0.907 because it has fewer digits",
+          "WhyWrong": "Trailing zeros have no effect on decimal magnitude.",
+          "Correction": "Compare0.900 with0.907 using aligned places."
+        },
+        {
+          "Mistake": "Replace source ordering numbers with invented0.907/0.97/0.917/0.9 or claim one unique answer to intervals",
+          "WhyWrong": "Printed book lists four specific sets and intentionally asks for any value strictly between given bounds.",
+          "Correction": "Restore original four sets and accept all mathematically valid between-values under teacher review."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warm-up false,false,true for0.909>0.91,4.1<4.100,0.99<0.999.",
+        "Five source open intervals support many valid responses and teacher explanation.",
+        "Kiran is wrong:1.7315 is between1.731 and1.732 despite needing four decimal places.",
+        "Original four printed ordering sets reproduced with correct ascending decimals.",
+        "Selected numeric choice does not validate all pupil-owned interval answers or handwritten number lines.",
+        "Optional prior: An open decimal interval may have many valid choices and requires strict inequalities.",
+        "Optional prior: Ordering should use place value and equivalent trailing zeros.",
+        "Optional prior: Finer-number-line conjectures and student-authored values require teacher review.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 9 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-9/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source order and open interval constraints",
+          "Description": "Original source numbers; between examples are separately authored mathematical examples, not one publisher key.",
+          "Rows": [
+            {
+              "Label": "Warm-up T/F",
+              "Cells": [
+                "0.909>0.91 false",
+                "4.1<4.100 false",
+                "0.99<0.999 true"
+              ]
+            },
+            {
+              "Label": "Source group1",
+              "Cells": [
+                "67.002",
+                "67.020",
+                "67.200"
+              ]
+            },
+            {
+              "Label": "Source group2",
+              "Cells": [
+                "1.02",
+                "1.1",
+                "1.101"
+              ]
+            },
+            {
+              "Label": "Source group3",
+              "Cells": [
+                "0.3",
+                "0.323",
+                "0.333"
+              ]
+            },
+            {
+              "Label": "Source group4",
+              "Cells": [
+                "99.09",
+                "99.091",
+                "99.99"
+              ]
+            },
+            {
+              "Label": "Kiran counterexample",
+              "Cells": [
+                "1.731<1.7315<1.732"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Order Decimals — original decimal model",
+          "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
+          "Rows": [
+            {
+              "Label": "Unsorted",
+              "Cells": [
+                "0.907",
+                "0.97",
+                "0.917",
+                "0.9"
+              ]
+            },
+            {
+              "Label": "Three-place form",
+              "Cells": [
+                "0.907",
+                "0.970",
+                "0.917",
+                "0.900"
+              ]
+            },
+            {
+              "Label": "Rank least→greatest",
+              "Cells": [
+                "2",
+                "4",
+                "3",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L10",
+      "CultureCode": "en",
+      "Title": "Solve Problems with Decimals",
+      "ExplanationParagraphs": [
+        "Original IM2021 Grade5 U05:L10 Solve Problems with Decimals uses a printed FIVE-ATHLETE LUGE TABLE (instructional dataset, not asserted live results), records time in SECONDS to thousandths and top speed in MILES PER HOUR to hundredths, then compares how different rounding precision can create ties. Faster race means smaller elapsed time; greater top speed is a different comparison.",
+        "Warm-up Notice and Wonder The Luge includes original photograph attributed Kris Krüg CC BY-SA2.0; do not copy source photo without image/rights verification. Original published table times/speeds: Athlete1=48.532s/82.13mph; A2=48.561s/82.75mph; A3=48.626s/82.81mph; A4=48.634s/83.07mph; A5=48.708s/82.80mph.",
+        "Activity 1 How Accurate Is It?: original all five times round to49 seconds nearest WHOLE, giving a five-way time tie; nearest TENTH times A1=48.5,A2=48.6,A3=48.6,A4=48.6,A5=48.7, so A2–A4 tie; nearest HUNDREDTH A1=48.53,A2=48.56,A3=48.63,A4=48.63,A5=48.71, so A3/A4 tie. Real winner by full precision is A1 (48.532s) fastest.",
+        "Source asks possible time values to nearest THOUSANDTH when displayed nearest hundredth as48.85s: conventional half-up range48.845 through48.854 inclusive in 0.001 steps. Another time48.615 recorded nearest thousandth rounds to48.62 to nearest hundredth. Students interpret rounding interval not invent one exact underlying time.",
+        "Activity 2 Compare Speeds: original descending fastest top speeds A4 83.07 >A3 82.81 >A5 82.80 >A2 82.75 >A1 82.13mph. Nearest TENTH mph A1=82.1,A2=82.8,A3=82.8,A4=83.1,A5=82.8, so A2/A3/A5 tie; nearest WHOLE mph A1=82, A2–A5=83. A sixth athlete strictly faster than82.80 but slower than82.81 may have82.805mph to thousandths, with many other valid values.",
+        "Original source unit synthesis grid0.542 etc remains in Rich V2 context as source-aligned place value link; old independent52.146 fictional sled results are retained ONLY as optional extensions, not the printed table. Original figures, explanation of ranking ties and open intermediate speed responses are TEACHER_REVIEW_REQUIRED. Independent Edulytiks Cool-down uses a distinct track timing table.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use rounding precision to determine how closely recorded decimal measurements can distinguish athletes' finishing times and speed, and reason about sets of possible underlying thousandth-place values. The source's luge data are CREATED for instruction, not actual event results.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: an original, entirely hypothetical four-athlete sled-race table records times in seconds 52.146,52.153,52.178,52.201. Ask what the unlabeled columns might mean before naming units, and discuss why a race result uses smaller elapsed time even if maximum speed rewards larger measures.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — compare rounding precisions: to nearest second all four record52; to nearest tenth the first three record52.1, the fourth52.2; to nearest hundredth the first records52.15 and the second52.15, creating a tie absent from the original thousandth times. To thousandths the fastest is52.146, then52.153,52.178 and52.201. Explain why rounding can erase distinctions without changing the actual times.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — reverse rounding: assuming a recorded time is itself specified to thousandth-second precision and ties are rounded half-up, which thousandth times display52.15 when rounded to nearest hundredth? The ten discrete values52.145,52.146,...,52.154 do. Alternatively a measurement of52.615 to nearest thousandth rounds to52.62 at hundredths. State precision and midpoint convention; the result for underlying continuous times is an interval, not just ten measurements.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the source asks learners to create mathematical questions from an unlabeled race table, discuss how rankings change under various recording precisions and explain possible pre-rounded values. Teacher review is required for the contextual explanation and inverse-rounding interval; a single rounded numeric value is a subcheck. Neither source luge photo nor any actual athletic record is asserted or reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rounding can create apparent ties",
+          "Definition": "Distinct exact values may round to the same display at lower precision.",
+          "Rule": "52.146 and52.153 both become52.15 when rounded to hundredths.",
+          "Example": "Rounding is not a tie in actual time."
+        },
+        {
+          "Title": "Measurement resolution changes rankings",
+          "Definition": "Competition ranking is based on original elapsed times; coarser recording may remove ordering information.",
+          "Rule": "52.146<52.153<52.178<52.201.",
+          "Example": "At whole seconds all display52."
+        },
+        {
+          "Title": "Inverse rounding describes a set",
+          "Definition": "A rounded hundredth value can arise from multiple finer values, depending on the stated midpoint convention.",
+          "Rule": "52.145 through52.154 in thousandths round to52.15 by half-up.",
+          "Example": "Continuous underlying values lie in an interval around the rounded hundredth."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Printed source five luge times at three precisions",
+          "Question": "Round source times48.532,48.561,48.626,48.634,48.708 to whole,tenth,hundredth seconds.",
+          "Method": "Correct decimal place rounding with context-specific ties.",
+          "Steps": [
+            "Whole seconds all49.",
+            "Tenths 48.5,48.6,48.6,48.6,48.7.",
+            "Hundredths 48.53,48.56,48.63,48.63,48.71."
+          ],
+          "Answer": "Full precision fastest Athlete1; rounding can create ties.",
+          "Check": "Source exact times shown in their printed order."
+        },
+        {
+          "Title": "Original top speeds order",
+          "Question": "Order82.13,82.75,82.81,83.07,82.80 mph from greatest to least.",
+          "Method": "Align place values, not athlete-number order.",
+          "Steps": [
+            "83.07 is greatest (Athlete4).",
+            "82.81 (A3) exceeds82.80 (A5), which exceeds82.75(A2).",
+            "82.13(A1) is smallest; nearest tenth makes A2,A3,A5 equal82.8."
+          ],
+          "Answer": "A4>A3>A5>A2>A1 by top speed.",
+          "Check": "Speed rank differs from smallest time rank."
+        },
+        {
+          "Title": "Source precision ranges",
+          "Question": "Which thousandth-place values round to48.85 to hundredths, and how does48.615 round to hundredths?",
+          "Method": "Conventional nearest with halves-up thresholds.",
+          "Steps": [
+            "Values48.845 through48.854 inclusive round to48.85.",
+            "There are ten possible 0.001 readings in that range.",
+            "48.615 rounds up to48.62 to hundredths."
+          ],
+          "Answer": "48.845–48.854 inclusive;48.62.",
+          "Check": "Teacher scores interval reasoning, not one invented exact time."
+        },
+        {
+          "Title": "Optional existing extension — Compare race rankings at different precisions",
+          "Question": "Four athletes have times52.146,52.153,52.178,52.201 seconds. How do their reported results change?",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "Order the original thousandth times, with smaller faster.",
+            "Round to hundredths:52.15,52.15,52.18,52.20.",
+            "Round to tenths:52.1,52.2,52.2,52.2; round to whole seconds:52,52,52,52."
+          ],
+          "Answer": "Exact fastest:52.146. Hundredths tie first two; tenths tie last three; whole seconds tie all.",
+          "Check": "Tie claims are about rounded displays, not original elapsed times."
+        },
+        {
+          "Title": "Optional existing extension — Which thousandths round to one hundredth?",
+          "Question": "Which thousandth-second displays round to52.15 seconds to nearest hundredth, half-up?",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "The lower midpoint is52.145 and the upper is52.155.",
+            "Include values from52.145 but exclude52.155 which rounds to52.16.",
+            "List allowed thousandth increments."
+          ],
+          "Answer": "52.145 through52.154 inclusive (10 thousandth-place values).",
+          "Check": "52.144→52.14;52.155→52.16."
+        },
+        {
+          "Title": "Optional existing extension — Change the recorded precision",
+          "Question": "Round52.615 seconds from thousandths to nearest hundredth under half-up.",
+          "Method": "First-party place-value reasoning, accessible number-line description and exact decimal arithmetic.",
+          "Steps": [
+            "The nearest hundredth candidates are52.61 and52.62.",
+            "52.615 is exactly halfway.",
+            "Apply the stated halves-up rule."
+          ],
+          "Answer": "52.62 seconds.",
+          "Check": "Do not silently replace the named tie rule with a different algorithm."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claim a rounded tie proves equal actual athlete times",
+          "WhyWrong": "Different finer values can map to one rounded display.",
+          "Correction": "Compare the exact source times and label any tie as display-level only."
+        },
+        {
+          "Mistake": "Infer a unique thousandth from one hundredth rounded value",
+          "WhyWrong": "Rounding to hundredths removes information about multiple finer values.",
+          "Correction": "State the interval and rounding rule before enumerating possible original measurements."
+        },
+        {
+          "Mistake": "Replace source five luge athlete times and speeds with fictional52.146/52.153 etc as textbook original",
+          "WhyWrong": "Printed 2021 source specifies five named rows with distinct rounding-induced ties; fabricated substitute changes intended answers.",
+          "Correction": "Restore all five original rows and precision questions, preserve fictional practice only as optional extension."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source five athlete times48.532,48.561,48.626,48.634,48.708s and speeds82.13,82.75,82.81,83.07,82.80mph.",
+        "Whole seconds all49, tenths A2–A4 tie, hundredths A3/A4 tie; true full-precision fastest time Athlete1.",
+        "Source nearest hundredth48.85 permits thousandth values48.845–48.854 inclusive;48.615 rounds to48.62.",
+        "Speeds descending Athlete4>3>5>2>1, with source tenth/whole precision ties.",
+        "Teacher reviews source figure, time-versus-speed distinction, and open sixth-athlete interval.",
+        "Optional prior: Rounding a race time can create apparent ties and change displayed rank groups.",
+        "Optional prior: Inverse rounding to a stated resolution gives a range of finer measurements.",
+        "Optional prior: The original source's table questions, explanations and interpretation require teacher review.",
+        "Optional prior: Source: 2021 first-edition IM K–5 Grade 5 Unit 5 Lesson 10 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-10/lesson.html. Public student/teacher lesson HTML checked; original Student Task PDF, protected student responses and gated Cool-down not independently verified. Independent Edulytiks numbers and accessible descriptions; third-party photographs not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source luge time and speed table",
+          "Description": "Printed IM2021 instructional athlete data, not actual recent sports results. Full table and rounding shown exactly.",
+          "Rows": [
+            {
+              "Label": "Athlete1",
+              "Cells": [
+                "48.532s",
+                "82.13mph",
+                "48.53s hundredth",
+                "82.1mph tenth"
+              ]
+            },
+            {
+              "Label": "Athlete2",
+              "Cells": [
+                "48.561s",
+                "82.75mph",
+                "48.56s",
+                "82.8mph"
+              ]
+            },
+            {
+              "Label": "Athlete3",
+              "Cells": [
+                "48.626s",
+                "82.81mph",
+                "48.63s",
+                "82.8mph"
+              ]
+            },
+            {
+              "Label": "Athlete4",
+              "Cells": [
+                "48.634s",
+                "83.07mph",
+                "48.63s",
+                "83.1mph"
+              ]
+            },
+            {
+              "Label": "Athlete5",
+              "Cells": [
+                "48.708s",
+                "82.80mph",
+                "48.71s",
+                "82.8mph"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Solve Problems with Decimals — original decimal model",
+          "Description": "Accessible original text representation; no publisher photograph, historical coin illustration or original scale/race chart reused.",
+          "Rows": [
+            {
+              "Label": "Athlete",
+              "Cells": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            {
+              "Label": "Exact time (s)",
+              "Cells": [
+                "52.146",
+                "52.153",
+                "52.178",
+                "52.201"
+              ]
+            },
+            {
+              "Label": "Hundredths",
+              "Cells": [
+                "52.15",
+                "52.15",
+                "52.18",
+                "52.20"
+              ]
+            },
+            {
+              "Label": "Tenths",
+              "Cells": [
+                "52.1",
+                "52.2",
+                "52.2",
+                "52.2"
+              ]
+            },
+            {
+              "Label": "Whole seconds",
+              "Cells": [
+                "52",
+                "52",
+                "52",
+                "52"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

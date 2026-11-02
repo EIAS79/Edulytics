@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "kind": "GRADE_5_SINGLE_ACTIVE_LESSON_ABC_BLOCKER_EVIDENCE",
+  "lessonCode": "PED:US-CCSS-MATH:G5:U03:L01",
+  "courseCode": "US-CCSS-MATH:G5:IM-K5-2021",
+  "originalPr": 596,
+  "originalBranch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "auditedAgainstHead": "28a9207320df948b7fb49db7620e3eaed30fe670",
+  "sourceEdition": "Illustrative Mathematics K-5 first edition 2021",
+  "sourcePaths": {
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-1\\lesson.html",
+    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-1\\preparation.html"
+  },
+  "sourceSha256": {
+    "teacherLesson": "78aa684e92ec390c9a90ad93343b212ba945ce4c35c2239e7cd7b6d02d1c2e59",
+    "teacherPreparation": "68c2abeb5915a42ec3853808d89d3ab72bc3aa74e5cb6cbc231303e43cea831d"
+  },
+  "stageA": "SOURCE_2021_TEACHER_PREPARATION_STUDENT_FACING_COVERAGE_REVIEWED_WITH_LIMITATIONS",
+  "sourceTaskComparison": [
+    "Warm-up: estimate remaining macaroni-cheese pan between 1/3 and 1/2 (~2/5), not exactly one half.",
+    "Activity 1: draw own area representation for one third of remaining half; justify 1/6 of original whole.",
+    "Activity 2: compare two diagrams for one fourth of a half; equivalent orientations justify 1/8 of original whole.",
+    "Synthesis: retain the original whole as reference; teacher reviews free drawings/explanations."
+  ],
+  "sourceLimitations": [
+    "Separate original 2021 Student Task PDF not individually verified",
+    "Publisher image binaries/rights and diagrams A/B pixel parity not verified",
+    "Original publisher teacher-gated Cool-down not verified"
+  ],
+  "stageB": "IMPLEMENTED_GRADE_ONLY_CONCRETE_EQUAL_AREA_RICH_V2_DIAGRAMS_AND_STANDALONE_DIGITAL_GRID_VALIDATOR",
+  "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json",
+  "contentVersion": "g5-fractions-coordinates-im2021-u03-l01-area-grids-v15-20261031",
+  "additionalLessonOnlyCode": "src/Edulytics.Core/Mathematics/Practice/UsCcssG5U03L01AreaModel.cs",
+  "lessonSpecificImplementation": {
+    "preserved": "Correct existing source-aligned goals, explanatory pedagogy and the teacher-only four-point alternative Cool-down rubric.",
+    "richV2": "Added independently-authored 3x2 one-sixth whole-area grid, 4x2 and 2x4 one-eighth equal-area grids, each with one marked cell and explicit full-whole accessible text; clarified mark-half versus shade-final-cell sequencing.",
+    "pureMath": "TryCreate checks supported denominators and exact equal-area divisibility, rejects invalid orientation and noninteger partitions; IsValidDigitalGrid rejects unequal cell dimensions, overlap, incomplete coverage, wrong-half and multiple shading; equivalent orientations require the same original whole.",
+    "limitations": "Lesson-only grid helper is not yet registered with selected Practice/renderer; no claim of dynamic UI interaction, persisted teacher grading, test pass or runtime deployment.",
+    "contentVersionCaution": "Shared canonical materialization/version propagation requires the authorized integration owner; sidecar version update alone is not proof of effective seeded content."
+  },
+  "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-original-cooldown-teacher-rubric-v14.json",
+  "originalCooldownStatus": "ORIGINAL_COOLDOWN_UNVERIFIED",
+  "substituteCooldownStatus": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+  "stageC": "BLOCKED_MISSING_EXACT_LESSON_SELECTED_PRACTICE_CONTRACT_AND_AUTHORIZED_ENGINE_OWNER",
+  "digitalAssessmentRequirements": {
+    "candidateGroup": "G5_FRACTION_OF_UNIT_FRACTION_SOURCE_TASK_CANDIDATE_NOT_VERIFIED_ENGINE",
+    "familyId": "UNASSIGNED_REUSE_EXTEND_NEW_AFTER_OWNER_AUDIT",
+    "answerMode": "Exact rational fraction for digital subskill; diagram/explanation remains teacher-reviewed",
+    "correct": [
+      "one third of one half = one sixth of original whole",
+      "one fourth of one half = one eighth"
+    ],
+    "equivalent": [
+      "horizontally and vertically partitioned equal-area representations",
+      "different valid equal-size partitions of same whole"
+    ],
+    "wrong": [
+      "one third of half reported as one third of whole",
+      "one fourth of half reported as one fourth of whole",
+      "unequal partitions",
+      "scalar-only answer treated as complete drawing proof"
+    ],
+    "malformed": [
+      "zero or negative denominators",
+      "noninteger partition counts",
+      "invalid diagram orientation or selected index",
+      "missing original-whole reference"
+    ]
+  },
+  "sharedDependencies": {
+    "owner": "UNASSIGNED_IN_ENGINE_OWNERSHIP_REGISTRY",
+    "registryIssue": "https://github.com/EIAS79/Edulytics/issues/605",
+    "integrationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "requiredOwnerAction": "Supervisor 1 assign one nonconflicting shared writer; verify selected lesson route and existing reusable generators/verifiers; extend only if needed in owned integration PR, then handoff exact family and C fixtures."
+  },
+  "testsAuthored": "tests/academic-us-ccss-g5-u03-l01-abc-contract-20261031.test.cjs",
+  "testExecutionStatus": "AUTHORED_NOT_RUN",
+  "staticReview": "LESSON_ONLY_JSON_PARSE_SOURCE_COVERAGE_AND_STAGED_DIFF_INSPECTION; NO_NODE_DOTNET_CI_OR_STAGE_D_TEST_EXECUTION",
+  "testFixtureCoverage": ["1/3 of 1/2 = 1/6 original whole", "1/4 of 1/2 = 1/8 original whole", "equivalent horizontal versus vertical 1/8 area grids", "unequal cells and overlaps rejected", "missing/reassigned original whole", "teacher-scored model explanation not inferred from exact numeric result", "malformed denominators and indices"],
+  "startedAtUtc": "UNAVAILABLE",
+  "auditedAtUtc": "2026-10-31T00:01:15.7055596Z",
+  "lessonOnlyImplementationAtUtc": "2026-10-31T02:10:13.9316903Z",
+  "closedAtUtc": null,
+  "elapsedSeconds": "UNAVAILABLE",
+  "status": "BLOCKED_CURRENT_LESSON",
+  "READY_FOR_STAGE_D": false,
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:G5:U02:L17",
+  "activeLesson": "PED:US-CCSS-MATH:G5:U03:L01",
+  "nextLessonImplementationAuthorized": false,
+  "note": "Earlier U01/U02 29 lesson A-B-C authoring claims received read-only structural audit: ordered per-lesson closure commits, original local file presence, family registration, lesson routing flags and question-engine dispatch were present. This is not runtime or independent full-content certification."
+}

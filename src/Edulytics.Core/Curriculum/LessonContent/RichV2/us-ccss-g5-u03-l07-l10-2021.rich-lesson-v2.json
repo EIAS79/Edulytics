@@ -1,0 +1,779 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v9-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L07",
+      "CultureCode": "en",
+      "Title": "Generalize Fraction Multiplication",
+      "ExplanationParagraphs": [
+        "Goal: move from a fully gridded fraction-area diagram to multiplying two fractions without requiring every unit cell to be drawn. The 2021 source makes the scaffolding optional by stages and asks children to decide when a sketch is useful, including unusually large denominators.",
+        "Warm-up: compare two diagrams for a 4/5-by-1/2 rectangular region, one with twenty equal cells and another labelled only with side lengths. Explain why 8/20, 4/10 and 2/5 describe the same area despite different partitions.",
+        "Activity 1 — three original products: 2/5×3/4=6/20=3/10, then 3/7×4/5=12/35, then 9/11×5/8=45/88. For the first, draw a five-column-by-four-row whole; for the second choose a sketch or counting; for the third use the numerator/denominator structure when physically drawing 88 parts is inefficient. Explain the benefit and limits of each choice.",
+        "Activity 2 — Multiply Fractions (source, not a free discussion-only critique): solve (3/8)×(2/5)=6/40, (3/4)×(9/5)=27/20 and (10/5)×(6/5)=60/25. Then determine the missing factor in (8/9)×?=56/36 (answer 7/4) and 5×?=15/8 (answer 3/8). Show why the inverse multiplication structure works. Source Activity 1 2/5×3/4, 3/7×4/5, 9/11×5/8 and Diego's diagram remain covered.",
+        "Source boundary: strategies for diagram choice, a correct visual partition, commutativity and explanation are teacher reviewed. Numeric product checks do not establish whether learners understand fraction-area structure; original teacher image cards are not copied.",
+        "Original 2021 warm-up two equivalent 4/5-by-1/2 figures display 8/20 and 4/10. Children may defend the equality from partitioning 2/4=1/2. Teacher reviews the source figures, requested diagrams, estimate of product magnitude and students' decisions to use a grid for 45/88, not merely the selected numeric choice."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product independent of diagram density",
+          "Definition": "A fraction product can be found by counting selected cells over all cells or by equivalent exact multiplication.",
+          "Rule": "For valid fractions a/b and c/d, the product ac/bd.",
+          "Example": "9/11×5/8=45/88."
+        },
+        {
+          "Title": "Optional representation",
+          "Definition": "A full grid is one tool, not an obligation when denominators make many cells.",
+          "Rule": "Choose a diagram, decomposition or an abstract product if the reasoning is clear.",
+          "Example": "Drawing 88 tiny cells may be less useful than naming 9×5 and 11×8."
+        },
+        {
+          "Title": "Equivalent area fractions",
+          "Definition": "Repartitioning into a finer equal grid can preserve area.",
+          "Rule": "8/20=4/10=2/5.",
+          "Example": "Both drawings with dimensions 4/5 and 1/2 give area 2/5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute with a grid",
+          "Question": "Find 2/5×3/4.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Partition whole into five columns and four rows.",
+            "Shade two columns across three selected rows, giving six cells.",
+            "Compare with 20 total cells and simplify."
+          ],
+          "Answer": "6/20=3/10.",
+          "Check": "2×3/(5×4)=6/20."
+        },
+        {
+          "Title": "Choose an efficient method",
+          "Question": "Find 3/7×4/5.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Identify three selected rows out of seven and four columns out of five.",
+            "Count 3×4=12 selected cells of 7×5=35.",
+            "Write the exact product without needing every cell drawn."
+          ],
+          "Answer": "12/35.",
+          "Check": "Both factors are below one, and 12/35 is also below one."
+        },
+        {
+          "Title": "Large denominator product",
+          "Question": "Find 9/11×5/8.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Explain that a detailed 88-cell sketch is optional.",
+            "Count selected-cell product 9×5=45.",
+            "Count whole-cell product 11×8=88."
+          ],
+          "Answer": "45/88.",
+          "Check": "Multiplying across gives 45/88 and the result is below both factors."
+        },
+        {
+          "Title": "Source Activity 2: product of two fractions",
+          "Question": "Calculate (3/8)×(2/5), (3/4)×(9/5) and (10/5)×(6/5).",
+          "Method": "Exact numerator and denominator multiplication with unit-square interpretation.",
+          "Steps": [
+            "Multiply 3×2 over 8×5=6/40.",
+            "Multiply 3×9 over 4×5=27/20.",
+            "Multiply 10×6 over 5×5=60/25."
+          ],
+          "Answer": "6/40, 27/20 and 60/25.",
+          "Check": "Values can be reduced to 3/20, 27/20, 12/5 without changing the source products."
+        },
+        {
+          "Title": "Source Activity 2: missing fraction factor",
+          "Question": "Solve (8/9)×?=56/36 and 5×?=15/8.",
+          "Method": "Use inverse multiplication or exact factor ratios; explain why the same whole is preserved.",
+          "Steps": [
+            "Compare 8×7=56 and 9×4=36 to find 7/4.",
+            "Use 5×3/8=15/8 to find the second factor.",
+            "Substitute the missing fractions back and verify both equations."
+          ],
+          "Answer": "7/4 and 3/8.",
+          "Check": "8/9×7/4=56/36; 5×3/8=15/8."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add rather than multiply the numerator/denominator counts",
+          "WhyWrong": "A grid has rows times columns; adding their counts cannot describe a rectangular array.",
+          "Correction": "Count the product of row and column selections."
+        },
+        {
+          "Mistake": "Assume a product is untrustworthy unless a full drawing is made",
+          "WhyWrong": "Understanding the grid structure can justify exact fraction multiplication symbolically.",
+          "Correction": "Use an optional sketch or cell-count argument and check size against benchmarks."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warm-up equivalent 8/20=4/10=2/5 diagrams require visual justification.",
+        "Original Activity 1 products 2/5×3/4=6/20, 3/7×4/5=12/35 and 9/11×5/8=45/88.",
+        "Original Activity 2 three products 6/40, 27/20 and 60/25, followed by missing factors 7/4 and 3/8.",
+        "Numeric source choices support but do not replace teacher review of Diego's diagram and explanations.",
+        "Restricted publisher Cool-down is replaced by an independent Edulytiks teacher-scored fraction-equation explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Generalize Fraction Multiplication — mathematical model",
+          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Rows": [
+            {
+              "Label": "Product",
+              "Cells": [
+                "2/5×3/4",
+                "3/7×4/5",
+                "9/11×5/8"
+              ]
+            },
+            {
+              "Label": "Selected cells",
+              "Cells": [
+                "6",
+                "12",
+                "45"
+              ]
+            },
+            {
+              "Label": "Total unit cells",
+              "Cells": [
+                "20",
+                "35",
+                "88"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "3/10",
+                "12/35",
+                "45/88"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source Activity 2 exact fraction products",
+          "Description": "First-party source-equation answer table, not publisher source imagery.",
+          "Rows": [
+            {
+              "Label": "3/8 × 2/5",
+              "Cells": [
+                "6/40",
+                "3/20"
+              ]
+            },
+            {
+              "Label": "3/4 × 9/5",
+              "Cells": [
+                "27/20",
+                "1 7/20"
+              ]
+            },
+            {
+              "Label": "10/5 × 6/5",
+              "Cells": [
+                "60/25",
+                "12/5"
+              ]
+            },
+            {
+              "Label": "8/9 × missing",
+              "Cells": [
+                "56/36",
+                "7/4"
+              ]
+            },
+            {
+              "Label": "5 × missing",
+              "Cells": [
+                "15/8",
+                "3/8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L08",
+      "CultureCode": "en",
+      "Title": "Apply Fraction Multiplication",
+      "ExplanationParagraphs": [
+        "Goal: apply exact fraction multiplication to the ACTUAL IM 2021 U03:L08 source flags. Measurements in inches are side lengths; results in square inches describe area. Teacher checks how each source flag image is interpreted. Foreign flag photos and logos are not copied because their third-party rights differ.",
+        "Warm-up — Number Talk Fraction Multiplication: the four exact source expressions are (1/3)×(3/5)=1/5, (2/3)×(3/5)=2/5, (5/3)×(3/5)=1 and (2/3)×(13/5)=26/15. Compare strategies with and without a visual area model.",
+        "Activity 1 — Flags: original Thailand flag replica measures 5 inches wide and 7 1/2 inches long. Total area = 5×7 1/2=37 1/2 square inches. Each red stripe is 5/6 inch wide, so its area is (5/6)×(7 1/2)=25/4 square inches; blue stripe width 10/6 inch yields 25/2 square inches. Explain how the striped source geometry relates to measured widths and areas (not an invented 8×6 1/2 banner).",
+        "Activity 2 — More Flags: in the source Colombia replica the flag is 3 1/2 inches wide and 5 1/4 inches long. Yellow occupies half the width, so its stripe width is 7/4 inches and its area is (7/4)×(21/4)=147/16 square inches. Blue and red each occupy one quarter of flag width, hence (1/4)×(3 1/2)=7/8 INCH (length, not area). The student must invent the appropriate QUESTION for the 7/8-inch and 147/16-square-inch calculations and justify why dimensions/units determine the question.",
+        "Synthesis and assessment: source flag graphics and red/blue/yellow region proportions remain teacher-reviewed, as do student-written questions and modeling. Exact numeric products support but cannot replace visual source interpretation. An independent Edulytiks flag-striped teacher Cool-down checks the same distinction; original publisher Cool-down and independent Student Task PDF were not separately inspected.",
+        "Existing 8-by-6 1/2 first-party banner examples are mathematically sound OPTIONAL EXTENSIONS, not IM 2021 source Activity 1 or 2."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area in a realistic context",
+          "Definition": "Multiply the two perpendicular measured dimensions of a rectangular flag or stripe.",
+          "Rule": "8 inches×6 1/2 inches=52 square inches.",
+          "Example": "One subregion of height 3/4 inch and width 8 inches is 6 square inches."
+        },
+        {
+          "Title": "Proportional stripes with fixed width",
+          "Definition": "For stripes of the same length, doubling stripe height doubles area.",
+          "Rule": "Area A=width×height; if height doubles and width stays fixed, area doubles.",
+          "Example": "8×1 1/2 is twice 8×3/4."
+        },
+        {
+          "Title": "Mixed-number equivalence",
+          "Definition": "A mixed-length area can be computed by decomposition or improper fraction.",
+          "Rule": "8×(6+1/2)=8×13/2.",
+          "Example": "Both give 52 square inches."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original Thailand full flag",
+          "Question": "Thailand replica is 5 inches by 7 1/2 inches. Find area.",
+          "Method": "Mathematical product based on verified text of original flag activity; teacher reviews national flag figures and units.",
+          "Steps": [
+            "Convert 7 1/2 to 15/2 inches.",
+            "Compute 5×15/2=75/2.",
+            "Report area in square inches."
+          ],
+          "Answer": "75/2=37 1/2 square inches.",
+          "Check": "Width×length gives square inches."
+        },
+        {
+          "Title": "Original Thailand red and blue stripes",
+          "Question": "Compute red stripe (5/6)×(15/2) and blue stripe (10/6)×(15/2).",
+          "Method": "Mathematical product based on verified text of original flag activity; teacher reviews national flag figures and units.",
+          "Steps": [
+            "Use the common 15/2-inch flag length.",
+            "Red: 75/12=25/4 square inches.",
+            "Blue: 150/12=25/2 square inches."
+          ],
+          "Answer": "Red 25/4; blue 25/2 square inches.",
+          "Check": "Double stripe width gives double stripe area."
+        },
+        {
+          "Title": "Original Colombia length versus area",
+          "Question": "What questions are answered by (1/4)×3 1/2=7/8 and by (1/2×3 1/2)×(5 1/4)=147/16?",
+          "Method": "Mathematical product based on verified text of original flag activity; teacher reviews national flag figures and units.",
+          "Steps": [
+            "First expression is a blue/red stripe width (inches).",
+            "Second multiplies yellow stripe width 7/4 by flag length 21/4.",
+            "Second result is yellow stripe area (square inches)."
+          ],
+          "Answer": "7/8 inch width; 147/16 square inches yellow area.",
+          "Check": "Do not confuse length units with area units."
+        },
+        {
+          "Title": "Optional extension — Whole banner",
+          "Question": "A banner measures 8 inches by 6 1/2 inches. What is its area?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Split height into 6 and 1/2 inches.",
+            "Compute 8×6=48 square inches.",
+            "Add 8×1/2=4 square inches."
+          ],
+          "Answer": "52 square inches.",
+          "Check": "8×13/2=52."
+        },
+        {
+          "Title": "Optional extension — Red stripe",
+          "Question": "A stripe is 8 inches across and 3/4 inch high. What is its area?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Identify the same 8-inch width as the banner.",
+            "Multiply 8×3/4.",
+            "Write square inches, not linear inches."
+          ],
+          "Answer": "6 square inches.",
+          "Check": "8×3/4=24/4=6."
+        },
+        {
+          "Title": "Optional extension — Blue stripe",
+          "Question": "A second stripe has the same width but height 1 1/2 inches. How does its area compare?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Notice 1 1/2 is twice 3/4.",
+            "Use double the red stripe area, 2×6.",
+            "Check independently with 8×3/2."
+          ],
+          "Answer": "12 square inches, twice the red stripe's area.",
+          "Check": "8×3/2=12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a stripe's height as its area",
+          "WhyWrong": "Area measures the product of width and height.",
+          "Correction": "Use square units and the correct shared width."
+        },
+        {
+          "Mistake": "Reuse protected publisher flag artwork without asset review",
+          "WhyWrong": "A public textbook page and its separate images can have different licenses and attribution requirements.",
+          "Correction": "Use independently authored color-stripe models and verify each external asset separately."
+        },
+        {
+          "Mistake": "Use an invented banner rather than original Thailand/Colombia tasks",
+          "WhyWrong": "Original 2021 measurement numbers, flags and units determine different answers.",
+          "Correction": "Keep first-party banners as optional extension after authentic source arithmetic and image interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up four source products: 1/5, 2/5, 1 and 26/15.",
+        "Thailand replica 5×7 1/2 has area 37 1/2 square inches; red 25/4 and blue 25/2 square inches.",
+        "Colombia replica 3 1/2 by 5 1/4; blue/red width 7/8 inch, yellow area 147/16 square inches.",
+        "Original flags and student question interpretation require teacher review; never infer area from a stripe width alone.",
+        "Third-party flag image rights, original Student PDF and publisher-gated Cool-down remain unverified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Thailand flag numerical measurement table",
+          "Description": "Source-exact text values, first-party accessible rectangular measurement model; not reproduction of third-party national flag artwork.",
+          "Rows": [
+            {
+              "Label": "Flag width and length",
+              "Cells": [
+                "5 in",
+                "7 1/2 in"
+              ]
+            },
+            {
+              "Label": "Flag total area",
+              "Cells": [
+                "5×15/2",
+                "75/2 sq in"
+              ]
+            },
+            {
+              "Label": "Red stripe width/area",
+              "Cells": [
+                "5/6 in",
+                "25/4 sq in"
+              ]
+            },
+            {
+              "Label": "Blue stripe width/area",
+              "Cells": [
+                "10/6 in",
+                "25/2 sq in"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Colombia flag measured stripe comparison",
+          "Description": "First-party accessible table of source fractions and measurements; actual original flag image is teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Full width and length",
+              "Cells": [
+                "3 1/2 in",
+                "5 1/4 in"
+              ]
+            },
+            {
+              "Label": "Blue/red stripe width",
+              "Cells": [
+                "1/4×7/2",
+                "7/8 in"
+              ]
+            },
+            {
+              "Label": "Yellow stripe width",
+              "Cells": [
+                "1/2×7/2",
+                "7/4 in"
+              ]
+            },
+            {
+              "Label": "Yellow stripe area",
+              "Cells": [
+                "7/4×21/4",
+                "147/16 sq in"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L09",
+      "CultureCode": "en",
+      "Title": "My Own Flag (optional)",
+      "ExplanationParagraphs": [
+        "Goal: independently DESIGN a symbolic banner and compute or estimate areas of its colored geometric components. The source's optional activity emphasizes creativity, constraints, measurement and open mathematical modeling, rather than one numeric product as the only answer.",
+        "Original source warm-up Notice and Wonder: discuss the FLAGS OF BOTSWANA AND TAIWAN shown in teacher-provided material, including color, shape and symbolism. The source public HTML attributes its original images to separate public-domain/CC0 providers; do not duplicate those images or claim pixel equivalence. Teacher reviews respectful questions and observations.",
+        "Original Activity 1 — Principles of Flag Design (MLR2 Collect and Display): Keep It Simple; Use Meaningful Symbolism; Use 2 to 3 Basic Colors; No Lettering or Seals; Be Distinctive or Be Related. The teacher assigns a principle to each partner group; learners discuss its meaning, compare source Botswana/Taiwan flags, create a shared language display, and justify multiple source-image design choices. First-party abstract designs are optional comparisons, not source substitutes.",
+        "Original Activity 2 — My Flag: learners use real paper, rulers and colored pencils/crayons to DESIGN THEIR OWN flag, explain symbols and colors, estimate or calculate how much fabric of EACH color they require in SQUARE INCHES, and exchange designs with a partner who critiques the five principles. The student chooses the measurements and geometric shapes; there is NO universal canonical area answer. A first-party 8 by 5 1/2 three-band banner with 10, 16 and 18 sq in bands is retained as a scaffold only, not original source requirements.",
+        "Activity 2 — critique alternative layouts: if a learner adds an overlapping emblem, the union of colored regions may not be the plain sum of each separate painted piece. Ask the designer to explain whether it is a new layer of color versus a separate piece of fabric. Compare another legitimate design with equal total area but a different shape arrangement.",
+        "Teacher assessment: creativity, symbolism, physical design, estimation for unusual shapes, checking overlaps and the explanatory reflection are inherently teacher-reviewed. Numeric checks validate a proposed design's measurements only, and MUST NOT mark the original optional flag project automatically complete. No national-flag artwork or protected source images were reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Original flag design and area",
+          "Definition": "A design has chosen dimensions and may contain colored partitions whose areas are calculated separately.",
+          "Rule": "For nonoverlapping rectangles, total area is the sum of the component areas.",
+          "Example": "Three bands of areas 10,16,18 cover 44 square inches."
+        },
+        {
+          "Title": "Component widths and heights",
+          "Definition": "Each component must use side lengths that correspond to its actual extent.",
+          "Rule": "A band 8 inches wide and 1 1/4 inches tall has area 10 square inches.",
+          "Example": "8×5/4=10."
+        },
+        {
+          "Title": "Overlapping decoration",
+          "Definition": "Colored layers or emblems do not necessarily increase the unique cloth area.",
+          "Rule": "If pieces overlap, the union area needs a non-overlapping accounting.",
+          "Example": "A badge painted on top of a banner does not add fabric area."
+        },
+        {
+          "Title": "Criteria and open-design critique",
+          "Definition": "A design can be assessed for meaningful communication, distinctive structure and visual simplicity in addition to quantitative area.",
+          "Rule": "Evaluate the actual learner design with a teacher rubric; a numeric calculation cannot score its meaning or aesthetic choices.",
+          "Example": "A clear three-band pattern can satisfy a simplicity goal, but students still need to explain what the colors represent."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Design a three-band banner",
+          "Question": "Find area of an 8-by-5 1/2-inch banner with bands 1 1/4,2,2 1/4 inches tall.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Check heights sum: 1 1/4+2+2 1/4=5 1/2 inches.",
+            "Multiply the three band heights by the 8-inch width.",
+            "Add the nonoverlapping band areas."
+          ],
+          "Answer": "10+16+18=44 square inches total.",
+          "Check": "8×5 1/2=44."
+        },
+        {
+          "Title": "Find a band area",
+          "Question": "A band is 8 inches wide and 2 1/4 inches high. What area does it cover?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Rewrite 2 1/4 as 9/4.",
+            "Multiply 8×9/4.",
+            "Regroup to a whole area."
+          ],
+          "Answer": "18 square inches.",
+          "Check": "8×2+8×1/4=16+2=18."
+        },
+        {
+          "Title": "Check a mixed nonrectangular design",
+          "Question": "A learner paints a small star over a colored banner stripe. Is the banner fabric larger just because the star is painted?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Distinguish a separate fabric piece from pigment covering existing fabric.",
+            "Identify the actual physical boundary of the banner.",
+            "Recalculate fabric area using the banner's outer dimensions."
+          ],
+          "Answer": "No. With a painted star the fabric area remains 44 square inches.",
+          "Check": "Teacher checks the actual design; creative choices cannot be graded from one numeric answer."
+        },
+        {
+          "Title": "Critique a first-party design",
+          "Question": "A student makes a three-band banner with simple colors and writes its name across the middle. Which design criterion might be reconsidered?",
+          "Method": "Evaluate an independently described banner against simplicity and communicative criteria, without claiming one unique artistic answer.",
+          "Steps": [
+            "Describe the layout and what the bands represent.",
+            "Explain why additional lettering may reduce clarity at a distance.",
+            "Offer a graphical alternative and justify whether it preserves the student's intended meaning."
+          ],
+          "Answer": "A learner might replace lettering with a simple shape, while maintaining a meaningful design; other reasoned revisions are possible.",
+          "Check": "Teacher reviews the actual drawing and explanation; no numeric auto-grader may mark this task as complete."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add painted decoration as extra physical fabric area",
+          "WhyWrong": "Overlaying a color changes visual appearance, not the total underlying fabric.",
+          "Correction": "Count only actual occupied nonoverlapping fabric regions for a total area."
+        },
+        {
+          "Mistake": "Choose bands whose heights exceed the banner",
+          "WhyWrong": "The component shapes must fit the outer dimensions and not double-count regions.",
+          "Correction": "Sum heights and check they exactly match the planned banner height."
+        },
+        {
+          "Mistake": "Automatically complete an original learner-designed flag using the numeric 44-square-inch sample",
+          "WhyWrong": "The optional source permits arbitrary flag dimensions and non-rectangular geometry; the sample is only a scaffold.",
+          "Correction": "Require teacher review of the learner's drawn original, measured colored regions and design-principle reflections."
+        }
+      ],
+      "SummaryPoints": [
+        "The original optional U03:L09 is a student-directed flag DESIGN project, not a fixed-product exercise.",
+        "Original five principles: Keep It Simple, Use Meaningful Symbolism, Use 2 to 3 Basic Colors, No Lettering or Seals, Be Distinctive or Be Related.",
+        "Learners estimate actual needed colored fabric in square inches, then discuss a partner's symbols, meanings and design criteria.",
+        "Teacher reviews each unique flag drawing, geometric partition, overlapping colors and open explanation.",
+        "Supplemental 8×5 1/2 sample yields 44 square inches, not a teacher-approved score of the original project."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "My Own Flag (optional) — mathematical model",
+          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Rows": [
+            {
+              "Label": "Band",
+              "Cells": [
+                "Top",
+                "Middle",
+                "Bottom",
+                "Total"
+              ]
+            },
+            {
+              "Label": "Height (in)",
+              "Cells": [
+                "1 1/4",
+                "2",
+                "2 1/4",
+                "5 1/2"
+              ]
+            },
+            {
+              "Label": "Area (in²)",
+              "Cells": [
+                "10",
+                "16",
+                "18",
+                "44"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L10",
+      "CultureCode": "en",
+      "Title": "Concepts of Division (optional)",
+      "ExplanationParagraphs": [
+        "Optional original IM 2021 G5 U03:L10: reason about quotient sizes and how changing divisor and dividend changes a per-person share. Teacher connects this to later dividing a unit fraction by a whole number, but does not mislabel the open optional sharing lesson as just numeric quotient fluency.",
+        "Warm-up — Same Dividend, Different Divisor: 120÷12=10, 120÷6=20, 120÷3=40, 120÷2=60. Students explain why the same total shared among fewer positive recipients yields larger shares.",
+        "Activity 1 — Share Pretzels: original 2021 list has SEVEN situations (not a fabricated 40-item table). 3 students share 42 (14 each); 14 share 42 (3); 3 share 24 (8); 3 share 45 (15); 7 share 42 (6); 3 share 6 (2); and 6 share 42 (7). Order greatest-to-least: 15,14,8,7,6,3,2. Teacher checks the reasoned comparison, not only the largest numeric choice.",
+        "Activity 2 — Division Patterns: original source sequence 36÷3=12,12÷3=4,9÷3=3,6÷3=2,3÷3=1,1÷3=1/3. Then explain (1/3)÷3=1/9 using an accurate partition of the SAME whole, not by replacing it with 40÷5 tables. Students should connect whole-number sharing to unit-fraction shares, and explain why the quotient shrinks as the dividend shrinks.",
+        "Independent Edulytiks alternative Cool-down: compare eight sharers of 24 pretzels with two sharers of half a pretzel; model each quotient and explain why the unit changes to fractions. Source drawings, ordered comparisons and student thinking require TEACHER_REVIEW_REQUIRED. Original teacher-gated Cool-down is not independently certified.",
+        "Old valid 40-item or 45-item arithmetic examples are retained as OPTIONAL EXTENSIONS only; original 42/24/45 pretzel situations must be presented first."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fixed dividend, changing divisor",
+          "Definition": "Sharing the same positive total among more people gives a smaller equal share.",
+          "Rule": "For fixed a>0 and positive b<c, a/b>a/c.",
+          "Example": "40/4=10 is greater than 40/10=4."
+        },
+        {
+          "Title": "Fixed divisor, changing dividend",
+          "Definition": "More objects shared by the same positive number of people give each person more.",
+          "Rule": "For fixed b>0 and positive a<c, a/b<c/b.",
+          "Example": "45/5=9 exceeds 15/5=3."
+        },
+        {
+          "Title": "Ordering by share size",
+          "Definition": "An equal-sharing situation can be compared by the quotient total divided by recipients.",
+          "Rule": "Keep the contextual roles of dividend and divisor clear.",
+          "Example": "40 for 4 students ranks above 45 for 5 students."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original seven pretzel stories",
+          "Question": "List the per-person share for 42÷3,42÷14,24÷3,45÷3,42÷7,6÷3,42÷6.",
+          "Method": "Source numbers and equal-sharing model, with teacher-reviewed comparative explanations.",
+          "Steps": [
+            "Compute the quotient of each actual source story.",
+            "Keep total pretzels and number of students distinct.",
+            "Order shares from greatest to least."
+          ],
+          "Answer": "14,3,8,15,6,2,7; descending 15,14,8,7,6,3,2.",
+          "Check": "45÷3 yields 15, largest; 6÷3 gives 2, smallest."
+        },
+        {
+          "Title": "Original divide-by-three sequence",
+          "Question": "Find 36÷3,12÷3,9÷3,6÷3,3÷3,1÷3.",
+          "Method": "Source numbers and equal-sharing model, with teacher-reviewed comparative explanations.",
+          "Steps": [
+            "Divide the original total by three in every row.",
+            "Compare the number of objects per sharer.",
+            "Explain the final one whole shared as thirds."
+          ],
+          "Answer": "12,4,3,2,1,1/3.",
+          "Check": "The divisor stays 3; only the dividend changes."
+        },
+        {
+          "Title": "Original one third shared into three",
+          "Question": "Draw and evaluate (1/3)÷3 of the original whole.",
+          "Method": "Source numbers and equal-sharing model, with teacher-reviewed comparative explanations.",
+          "Steps": [
+            "Divide the original whole into three equal thirds.",
+            "Select a third and divide that third into three equal smaller parts.",
+            "Extend partition lines to show nine equal parts of the full whole."
+          ],
+          "Answer": "1/9 of the original whole.",
+          "Check": "(1/3)÷3=(1/3)×(1/3)=1/9."
+        },
+        {
+          "Title": "Optional extension — Order five sharing stories",
+          "Question": "Sort 40÷4,45÷5,40÷5,40÷10,15÷5 from largest to smallest.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Compute or reason with 40÷4=10 and 45÷5=9.",
+            "Find 40÷5=8 and 40÷10=4.",
+            "Find 15÷5=3 and order the distinct shares."
+          ],
+          "Answer": "40÷4 > 45÷5 > 40÷5 > 40÷10 > 15÷5.",
+          "Check": "10 > 9 > 8 > 4 > 3."
+        },
+        {
+          "Title": "Optional extension — Keep the total fixed",
+          "Question": "Compare 40 items split among 4, 5 or 10 people.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Identify the common total 40.",
+            "Compare increasing number of recipients.",
+            "Find shares 10,8,4 in that order."
+          ],
+          "Answer": "Four people receive the most; ten people the least.",
+          "Check": "40/4=10, 40/5=8,40/10=4."
+        },
+        {
+          "Title": "Optional extension — Keep the sharers fixed",
+          "Question": "Five people share 15,40 or45 objects in three situations. Which gives the most?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Compare the same divisor 5.",
+            "Larger dividend 45 means greater share.",
+            "Verify 45/5=9, 40/5=8, 15/5=3."
+          ],
+          "Answer": "The 45-object situation gives 9 each, the greatest share.",
+          "Check": "Every quotient uses the same five recipients."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume the greatest total always gives the largest share",
+          "WhyWrong": "The number of recipients may also change, so the dividend alone cannot order all situations.",
+          "Correction": "Compare both total quantity and recipient count, or compute quotients."
+        },
+        {
+          "Mistake": "Infer negative or zero divisor cases from positive sharing models",
+          "WhyWrong": "The original fair-sharing context assumes a positive number of recipients.",
+          "Correction": "State the positive-divisor requirement and preserve the context of equal real-world shares."
+        },
+        {
+          "Mistake": "Use an invented 40-piece sharing table as original source",
+          "WhyWrong": "The 2021 original has seven 42/24/45/6 pretzel situations, including 14 students sharing 42.",
+          "Correction": "Return to the seven actual source quotients and their exact order; keep other arithmetic only as extension."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source 120÷12,6,3,2 gives 10,20,40,60.",
+        "Seven pretzel problems give per-person shares 14,3,8,15,6,2,7; descending 15,14,8,7,6,3,2.",
+        "Source pattern 36,12,9,6,3,1 divided by three yields 12,4,3,2,1,1/3, then (1/3)÷3=1/9.",
+        "Teacher evaluates all ordering explanations and the correctly partitioned original whole.",
+        "Independent Edulytiks teacher-scored Cool-down does not reproduce the gated publisher item."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source seven pretzel-sharing situations",
+          "Description": "Edulytiks original accessible source-number table; not publisher artwork. Total and sharing group identify the fraction per student.",
+          "Rows": [
+            {
+              "Label": "Total pretzels",
+              "Cells": [
+                "42",
+                "42",
+                "24",
+                "45",
+                "42",
+                "6",
+                "42"
+              ]
+            },
+            {
+              "Label": "Students",
+              "Cells": [
+                "3",
+                "14",
+                "3",
+                "3",
+                "7",
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "Per-student share",
+              "Cells": [
+                "14",
+                "3",
+                "8",
+                "15",
+                "6",
+                "2",
+                "7"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original divide-by-three pattern",
+          "Description": "Every quotient is one of three equal portions of the source total; 1/3 divided by three becomes 1/9 of original whole.",
+          "Rows": [
+            {
+              "Label": "Dividend",
+              "Cells": [
+                "36",
+                "12",
+                "9",
+                "6",
+                "3",
+                "1",
+                "1/3"
+              ]
+            },
+            {
+              "Label": "Divisor",
+              "Cells": [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+              ]
+            },
+            {
+              "Label": "Quotient",
+              "Cells": [
+                "12",
+                "4",
+                "3",
+                "2",
+                "1",
+                "1/3",
+                "1/9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

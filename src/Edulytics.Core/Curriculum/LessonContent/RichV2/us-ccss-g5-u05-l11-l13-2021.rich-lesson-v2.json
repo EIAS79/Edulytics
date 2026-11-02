@@ -1,0 +1,636 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u05-l11-l13-im2021-source-parity-richv2-v10-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L11",
+      "CultureCode": "en",
+      "Title": "Make Sense of Decimal Addition PLC Activity",
+      "ExplanationParagraphs": [
+        "Original IM 2021 U05:L11 Make Sense of Decimal Addition PLC Activity: decimal addends are amounts of SAME whole-unit hundredths, and learner may use partial sums, a grid, or compensation. Composing100 hundredths produces one whole. Source expects a pupil-generated algorithm and explanation BEFORE formalizing any one standard procedure.",
+        "Warm-up How Many Do You See Grids: first two original hundredths grids shade20 and90 cells, corresponding0.20+0.90=1.10 (one whole plus10 hundredths); next two shade95 and7 cells ->0.95+0.07=1.02; third pair20 and9 cells ->0.20+0.09=0.29. Original source alt-descriptions explicitly reveal cell counts; they were not the invented68/37 previously in Rich V2.",
+        "Activity1 The Sum: original numerical prompt is2.26+1.87=4.13. Show own strategy e.g2+1=3 and0.26+0.87=1.13 then compose to4.13, or2.26+1.74=4 then+0.13. Teacher reviews student diagrams and mathematical explanation, not just the exact selected option.",
+        "Activity2 Target Numbers Add Tenths or Hundredths: both partners start at0, roll the number cube, decide whether to add drawn number of TENTHS or HUNDREDTHS, keep a running total for SIX turns and aim as CLOSE to1 AS POSSIBLE WITHOUT EXCEEDING1. There is no fixed winning total; original dice results, independent moves and discussion of alternate move require TEACHER_REVIEW_REQUIRED. Prior fictional six-turn sequence remains separately labeled extension, not publisher source sequence.",
+        "Source's original warmup images, student-created strategies and game score cannot be inferred from a digital exact-answer option. An independent Edulytiks Cool-down asks pupils to find1.48+2.67=4.15 and explain regrouping, distinct from gated original.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: make sense of decimal addition by choosing and explaining a strategy before formalizing the standard algorithm. The original 2021 lesson starts with How Many Do You See hundredths-grid images and then has students make gallery-walk displays of their independently chosen addition approach.",
+        "Optional previous source-aligned or independently authored extension — Warm-up — count shaded hundredths: describe two original complete unit-square grids, one with 68 hundredth cells shaded and another with 37. Combine 68+37=105 hundredths, meaning one whole and five hundredths. Students may regroup 32 shaded parts from the second model to finish the first whole; they must identify the same full square unit in both grids.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — show a strategy: calculate 3.48+2.76 using a hundredths-grid picture, expanded notation, compensation or an original student-selected approach. A place-value explanation is 3+2=5 wholes, 0.4+0.7=1.1 and 0.08+0.06=0.14; regroup to 6.24. A second valid method moves 0.52 from 2.76 to complete the first addend to 4 and adds the remaining 2.24. Prepare an accessible explanation or visual to compare strategies with partners.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — Target Numbers variation: begin at zero; with a supplied sequence of six digit-card values 2,3,4,1,5,2, choose each as tenths or hundredths. Try to reach the largest total not exceeding one. One valid sequence of values 0.2,0.3,0.04,0.1,0.05,0.02 totals 0.71. Students must review why a different set of tenths/hundredths choices may make a better total and write equations for all six steps; never claim this single demonstration is the winning strategy.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the source's peer display, mathematical questions, six decisions, and explanation of how a decision changes the outcome are open tasks. A numeric decimal addition check is a supporting Practice item only, not proof that a six-turn partner game or gallery discussion was completed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Decimal units compose",
+          "Definition": "Ten hundredths become one tenth, and ten tenths become one whole.",
+          "Rule": "0.68+0.37=1.05 because 105 hundredths make a whole plus five hundredths.",
+          "Example": "The grid has one hundred equal parts per unit."
+        },
+        {
+          "Title": "Multiple valid addition methods",
+          "Definition": "Add quantities by place value, by regrouped pictures or by compensation while preserving the total.",
+          "Rule": "3.48+2.76=4.00+2.24=6.24.",
+          "Example": "Moving 0.52 from the second addend to the first changes the summands but not the sum."
+        },
+        {
+          "Title": "Game objective and constraints",
+          "Definition": "Six selected decimal increments are added to a running total, with the final total no greater than 1.",
+          "Rule": "0≤sum≤1; compare final totals and seek the closest allowed value to 1.",
+          "Example": "A learner must explain which place-value choices improved their attempt."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source three hundredths grid pairs",
+          "Question": "Find20+90,95+7,20+9 shaded HUNDREDTH units from same whole.",
+          "Method": "Combine cell counts in hundredth-grid units, composing one whole when at least100.",
+          "Steps": [
+            "20+90=110 hundredths=1.10.",
+            "95+7=102 hundredths=1.02.",
+            "20+9=29 hundredths=0.29."
+          ],
+          "Answer": "1.10,1.02,0.29.",
+          "Check": "Each complete 100-cell source square equals1."
+        },
+        {
+          "Title": "Original source2.26+1.87",
+          "Question": "Find2.26+1.87 and explain a chosen decimal strategy.",
+          "Method": "Combine aligned place-value components or use compensation.",
+          "Steps": [
+            "2.26+1.74=4.00.",
+            "The original1.87 has0.13 still left.",
+            "Final sum4.13; alternatively0.26+0.87=1.13."
+          ],
+          "Answer": "4.13.",
+          "Check": "Source strategy and presentation teacher reviewed."
+        },
+        {
+          "Title": "Original Target Numbers six-turn partner game",
+          "Question": "Describe how six turns of tenths-or-hundredths dice addition can approach1 without exceeding.",
+          "Method": "Each round has a number cube result and student-selected decimal unit.",
+          "Steps": [
+            "Both begin0 and roll source number cube.",
+            "On each turn choose tenths or hundredths, recording running sum.",
+            "After six rounds compare closest non-exceeding totals and explain a revisable move."
+          ],
+          "Answer": "Open player-specific totals; no one fixed source win.",
+          "Check": "Teacher assesses game journal and reasoning."
+        },
+        {
+          "Title": "Optional existing extension — Compose shaded hundredths",
+          "Question": "Two unit grids show 68 and 37 shaded hundredths. What is the combined amount?",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Count 68 hundredths in the first whole and 37 in the second.",
+            "Combine to 105 hundredths.",
+            "Regroup 100 hundredths as one whole and retain five hundredths."
+          ],
+          "Answer": "1.05 units.",
+          "Check": "0.68+0.37=1.05."
+        },
+        {
+          "Title": "Optional existing extension — Choose a method",
+          "Question": "Calculate 3.48+2.76 in at least two mathematically compatible ways.",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Use decimal-place sums: 3+2, 4/10+7/10, and 8/100+6/100.",
+            "Compose the 11 tenths and 14 hundredths into equivalent larger places.",
+            "Alternatively shift 0.52 from 2.76 to 3.48 and add 4+2.24."
+          ],
+          "Answer": "6.24.",
+          "Check": "3.48+2.76=6.24 and 4.00+2.24=6.24."
+        },
+        {
+          "Title": "Optional existing extension — Record a six-choice attempt",
+          "Question": "A player chooses 0.2,0.3,0.04,0.1,0.05,0.02 in six turns. Does the total exceed 1?",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Add tenths first: 0.2+0.3+0.1=0.6.",
+            "Add hundredths: 0.04+0.05+0.02=0.11.",
+            "Combine 0.6+0.11 and compare to one."
+          ],
+          "Answer": "The total is 0.71, so it does not exceed 1.",
+          "Check": "The six-turn record must be checked for one choice per supplied digit, and teacher reviews strategy."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat ten hundredths as a new whole",
+          "WhyWrong": "Ten hundredths make a tenth; one hundred hundredths make a whole.",
+          "Correction": "Regroup each place at exactly ten of the next smaller unit."
+        },
+        {
+          "Mistake": "Automatically mark the numeric score as the full game",
+          "WhyWrong": "A strategy game also asks for six legal choices, a partner comparison and a proposed revision.",
+          "Correction": "Check the full move record, reflect on a changed move and retain teacher assessment."
+        },
+        {
+          "Mistake": "Present fictional68/37 shaded grids and3.48+2.76 as original 2021 Activity numbers",
+          "WhyWrong": "Original printed source has20/90,95/7,20/9 grid counts and2.26+1.87 exact addends.",
+          "Correction": "Restore source grid/shaded sums and original addition while retaining unrelated correct work only as extensions."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source grid pairs20+90=110,95+7=102,20+9=29 hundredths.",
+        "Source Activity1 2.26+1.87=4.13 with multiple valid pupil strategies.",
+        "Source six-round game uses self-selected tenths/hundredths and variable rolls, not a fixed answer.",
+        "Learner-written explanation, original grid images and partner game are teacher reviewed.",
+        "Selected numeric choice is limited to three known source grid sums and one original sum.",
+        "Optional prior: Decimal addition can be justified through area models, composed units or compensation.",
+        "Optional prior: The original game has a six-turn place-value choice and cannot be replaced by one sum.",
+        "Optional prior: Teacher reviews student diagrams, partner discussion and explanation of strategy.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 11: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-11/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original U05:L11 shaded-grid sums and decimal addend",
+          "Description": "Exact original hundredths cell-count descriptions; individual pupil methods and dice outcomes teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "20/100+90/100",
+              "Cells": [
+                "1.10"
+              ]
+            },
+            {
+              "Label": "95/100+7/100",
+              "Cells": [
+                "1.02"
+              ]
+            },
+            {
+              "Label": "20/100+9/100",
+              "Cells": [
+                "0.29"
+              ]
+            },
+            {
+              "Label": "2.26+1.87",
+              "Cells": [
+                "4.13"
+              ]
+            },
+            {
+              "Label": "Target Numbers",
+              "Cells": [
+                "6 turns",
+                "approach1 without exceeding"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Make Sense of Decimal Addition PLC Activity — original reasoning",
+          "Description": "Accessible original decimal place-value table; no source publisher diagram or recording sheet copied.",
+          "Rows": [
+            {
+              "Label": "Example",
+              "Cells": [
+                "68/100+37/100",
+                "3.48+2.76",
+                "Six-turn demonstration"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "1.05",
+                "6.24",
+                "0.71"
+              ]
+            },
+            {
+              "Label": "Teacher-reviewed part",
+              "Cells": [
+                "Grid regrouping",
+                "Justify strategy",
+                "Decisions and reflection"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L12",
+      "CultureCode": "en",
+      "Title": "Estimate and Add",
+      "ExplanationParagraphs": [
+        "Original IM2021 Grade5 U05:L12 Estimate and Add builds accurate place-value aligned decimal addition strategies from Grade4 whole-number addition. Students ESTIMATE first where required and may choose an efficient standard algorithm or another valid reasoned method; the written method and carry explanations remain teacher reviewed.",
+        "Warm-up Number Talk 99 Hundredths: original four expressions 1.00+0.99+0.02=2.01;1.99+0.02=2.01;1.99+0.03=2.02;1.99+0.13=2.12. Regroup 99 hundredths and extra hundredths as two whole units plus the stated remainder; ask which sums are equivalent and why.",
+        "Activity 1 Use the Standard Algorithm to Add Decimals: original5.61+2.53=8.14. Han's original photographed vertical calculation invites learners to identify place alignment and regrouping; original6.62+3.74=10.36, with 6 hundredths+4 hundredths=10 hundredths composing one tenth and 6 tenths+7 tenths plus carrying=14 tenths composing one whole. Teacher verifies original Han's written steps rather than inventing an algorithm image.",
+        "Activity 2 Estimate and Find the Value: source2.82+5.2=8.02 closest WHOLE8; source6.8+4.97=11.77 closest WHOLE12. Estimate BEFORE computing exactly, then use aligned decimal positions (5.20 and6.80) to check source results. Distinguish whole-estimate task from an exact rounded decimal key.",
+        "Previous correct fictional4.76+2.58,3.7+6.84 and8.96+2.3 remain only OPTIONAL Edulytiks examples. Numeric source choices check the eight original expressions and two nearest-whole values; written algorithm, estimation rationale and original figure require TEACHER_REVIEW_REQUIRED. Independently authored Cool-down uses7.84+3.58.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: estimate decimal sums and organize an addition standard algorithm with each decimal place aligned, composing tenths and whole units as necessary. In the 2021 source, students first find a decimal sum their own way, critique another learner's algorithm after partner feedback, and only then estimate sums whose decimal-place counts differ.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: use a benchmark such as 4.70+3.20≈8 and discuss why the actual sum is close to 8 before calculating; an estimate is an early magnitude check, not a substitute for exact result or justifying its precision.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — connect strategies: calculate 4.76+2.58 as 4.76+2.00+0.58=7.34. Then write vertical columns, align both decimal points and compose 6+8=14 hundredths into one tenth and four hundredths. Continue adding tenths with the carry, explain why the final sum is 7.34, and revise a partner explanation if it confuses the composed unit.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — decimal lengths differ: estimate 3.7+6.84. Write 3.70+6.84=10.54, close to 11. Next estimate 8.96+2.3 by comparison with 9+2.3≈11.3, then calculate 8.96+2.30=11.26. Compare these estimates to whole numbers and explain why right-aligning the last *printed digits* can add hundredths to tenths incorrectly.",
+        "Optional previous source-aligned or independently authored extension — Assessment: exact sums and nearest-whole decisions can be checked, but teacher reviews the algorithm's carry explanation, initial estimate, learner choice of method and revision after partner questions. Source student-response and protected Cool-down not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Align equal place values",
+          "Definition": "Decimal addition columns align whole units, tenths and hundredths, not the last printed digit.",
+          "Rule": "3.7+6.84=3.70+6.84=10.54.",
+          "Example": "Missing hundredths in a short decimal may be represented as zero."
+        },
+        {
+          "Title": "Compose a new unit",
+          "Definition": "Ten hundredths become one tenth, possibly affecting the tenths sum and whole sum.",
+          "Rule": "4.76+2.58=7.34.",
+          "Example": "6 hundredths+8 hundredths=14 hundredths."
+        },
+        {
+          "Title": "Estimate before exact result",
+          "Definition": "Round or compensate to predict the approximate whole-number magnitude.",
+          "Rule": "3.7+6.84 is close to 11, and exact result 10.54 is nearer 11 than 10.",
+          "Example": "An estimate and an exact sum have different epistemic roles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source warm-up 99 hundredths",
+          "Question": "Compute1.00+0.99+0.02,1.99+0.02,1.99+0.03,1.99+0.13.",
+          "Method": "Regroup decimal hundredths across whole boundaries.",
+          "Steps": [
+            "1.00+0.99+0.02=2.01.",
+            "1.99+0.02=2.01 and+0.03=2.02.",
+            "1.99+0.13=2.12."
+          ],
+          "Answer": "2.01,2.01,2.02,2.12.",
+          "Check": "Source exercises preserve hundredths."
+        },
+        {
+          "Title": "Source Han standard algorithm",
+          "Question": "Find original5.61+2.53 and6.62+3.74 with aligned decimal points.",
+          "Method": "Add matching place columns and compose groups of ten.",
+          "Steps": [
+            "5.61+2.53=8.14.",
+            "6.62+3.74: add 0.62+0.74=1.36.",
+            "6+3+1.36=10.36."
+          ],
+          "Answer": "8.14 and10.36.",
+          "Check": "Teachers score Han step interpretation and carries."
+        },
+        {
+          "Title": "Original estimate then exact sums",
+          "Question": "What whole number is2.82+5.2 near? And6.8+4.97?",
+          "Method": "Use benchmark whole numbers and verify exact values.",
+          "Steps": [
+            "2.82≈3 and5.2≈5, sum≈8; exact8.02.",
+            "6.8≈7 and4.97≈5, sum≈12; exact11.77.",
+            "Compare estimates to exact results."
+          ],
+          "Answer": "Closest8 and12; exact8.02 and11.77.",
+          "Check": "Source requests both estimate and exact evaluation."
+        },
+        {
+          "Title": "Optional existing extension — Explain decimal composing",
+          "Question": "Find 4.76+2.58 with a correctly aligned algorithm.",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Add 6 hundredths+8 hundredths=14 hundredths; write 4 and carry one tenth.",
+            "Add 7 tenths+5 tenths+1 tenth=13 tenths; write 3 tenths and carry one whole.",
+            "Add 4+2+1 whole and record the decimal alignment."
+          ],
+          "Answer": "7.34.",
+          "Check": "4.76+2.58=7.34."
+        },
+        {
+          "Title": "Optional existing extension — Estimate and align",
+          "Question": "Estimate 3.7+6.84 and calculate exactly.",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Estimate by 3.7≈4 and 6.84≈7, giving a nearby total of 11.",
+            "Write 3.70 so the hundredths columns align.",
+            "Add to obtain the exact sum."
+          ],
+          "Answer": "About 11; exact 10.54.",
+          "Check": "10.54 is 0.46 from 11 and 0.54 from 10."
+        },
+        {
+          "Title": "Optional existing extension — Use compensation",
+          "Question": "Calculate 8.96+2.3 without dropping the missing hundredth.",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Use 2.3=2.30 and add by aligned columns.",
+            "Or round 8.96 up to 9 by adding 0.04 and remove that from 2.30.",
+            "Find 9+2.26."
+          ],
+          "Answer": "11.26.",
+          "Check": "8.96+2.30=11.26."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Right-align the final numeral character instead of the decimal points",
+          "WhyWrong": "A tenths digit from one operand must not add directly to a hundredths digit from another.",
+          "Correction": "Align decimal places and pad a missing hundredths digit with zero."
+        },
+        {
+          "Mistake": "Forget a composed tenth when adding a hundredths carry",
+          "WhyWrong": "Fourteen hundredths contain one more tenth and four hundredths.",
+          "Correction": "Carry the one tenth into the correct next place."
+        },
+        {
+          "Mistake": "Use invented4.76+2.58 and3.7+6.84 as the original printed addends",
+          "WhyWrong": "The source lists distinct warming 1.99 quantities and activity sums5.61+2.53,6.62+3.74,2.82+5.2,6.8+4.97.",
+          "Correction": "Restore all source addends and nearest-whole questions; retain correct unrelated numbers as extensions."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warmup sums2.01,2.01,2.02,2.12.",
+        "Source Activity1 5.61+2.53=8.14 and6.62+3.74=10.36.",
+        "Source Activity2 2.82+5.2=8.02 near8,6.8+4.97=11.77 near12.",
+        "Source teacher Han algorithm image and pupil chosen strategies require teacher review.",
+        "Digital exact choices are selected arithmetic evidence only.",
+        "Optional prior: Estimate sums using sensible whole-number benchmarks before exact computation.",
+        "Optional prior: Place-value alignment and composed-unit explanation are central to the algorithm.",
+        "Optional prior: Teacher reviews why students' method and peer revisions are valid.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-12/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Source 2021 Grade5 U05 L12 decimal addends",
+          "Description": "Exact printed source expressions; teacher reviews vertical algorithm and estimation method.",
+          "Rows": [
+            {
+              "Label": "Number Talk",
+              "Cells": [
+                "2.01",
+                "2.01",
+                "2.02",
+                "2.12"
+              ]
+            },
+            {
+              "Label": "Standard algorithm",
+              "Cells": [
+                "5.61+2.53=8.14",
+                "6.62+3.74=10.36"
+              ]
+            },
+            {
+              "Label": "Estimate+exact",
+              "Cells": [
+                "2.82+5.20=8.02~8",
+                "6.80+4.97=11.77~12"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Estimate and Add — original reasoning",
+          "Description": "Accessible original decimal place-value table; no source publisher diagram or recording sheet copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "4.76+2.58",
+                "3.70+6.84",
+                "8.96+2.30"
+              ]
+            },
+            {
+              "Label": "Estimate",
+              "Cells": [
+                "≈7",
+                "≈11",
+                "≈11"
+              ]
+            },
+            {
+              "Label": "Exact",
+              "Cells": [
+                "7.34",
+                "10.54",
+                "11.26"
+              ]
+            },
+            {
+              "Label": "Hundredths check",
+              "Cells": [
+                "6+8=14",
+                "0+4=4",
+                "6+0=6"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L13",
+      "CultureCode": "en",
+      "Title": "Analyze Addition Mistakes",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U05:L13 Analyze Addition Mistakes: analyze why RIGHT-aligning a decimal with fewer printed decimal digits than the other addend breaks place-value meaning. Decimal POINTS must be aligned, adding trailing zeros when useful; a result being larger than one input alone does not validate it.",
+        "Warm-up Estimation Exploration Many Places original 1,987.89+658.54=2,646.43. A reasoned benchmark e.g2000+650≈2650 sets scale; pupils mark too-low/about-right/too-high estimates and justify before exact arithmetic. This original task replaces invented42.8+6.15 comparisons, which remain optional examples.",
+        "Activity 1 Compare Calculations original 621.45+72.3=693.75. Elena incorrectly right-aligns last printed digits and obtains628.68; her claim it is plausible because greater than621 is mathematically insufficient. Andre correctly aligns decimal PLACE VALUES and gets693.75, consistent with approx620+70≈690. Teacher asks who is correct and the exact column and rounding evidence.",
+        "Activity 2 Same Digits Different Sums original four addition expressions: 2.63+7.74=10.37,26.3+774=800.3,46.3+31.42=77.72,463+3.14=466.14. The same digits have different magnitude depending on decimal point placement; students should explain whole and fractional places in each and estimate reasonableness.",
+        "Exact selected Practice checks the six source sums and source Elena/Andre classification only, not original handwritten error critique, estimation bands or school explanations. Original publisher figure and gated Cool-down are not independently certified; Edulytiks independent rubric uses a different misaligned decimal sum.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: CRITIQUE AND CORRECT incorrect addition strategies when two decimals have different numbers of printed decimal digits. The 2021 source's core misconception is treating whole-number right alignment as valid for decimals, then judging a wrong result only because it is slightly larger than one addend.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare expressions such as 42.8+6.15 and 4.28+61.5 and explain why the same digit strings can describe very different magnitudes; write them as aligned place-value quantities before computing.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — analyze a fictional student: one learner writes 518.37+64.2 as 524.79 after lining up last digits, treating 2 tenths as two hundredths. Another writes 518.37+64.20=582.57 by aligning decimal points. Use benchmark 520+60≈580 to refute the implausibly small 524.79, identify the exact incorrect columns, and explain why the correct total is 582.57. Teacher reviews the critique, not merely the number.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — same digit groups, different place values: find 4.82+6.37=11.19; 48.2+63.7=111.9; 482+6.37=488.37; and 48.2+6.37=54.57. Each uses similar digits but shifts their place values. Draw a decimal-position table and compare strategies using all needed trailing-zero placeholders.",
+        "Optional previous source-aligned or independently authored extension — Assessment: it is not enough to choose the learner with the correct number; the source asks learners to explain the specific place-value misalignment, use an estimate to detect it, revise an argument and compare several mixed-precision sums. Teacher adjudicates critique and mathematical communication."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Magnitude exposes impossible sums",
+          "Definition": "A result should be consistent with a rough benchmark before checking individual digits.",
+          "Rule": "518.37+64.2 is about 520+60=580.",
+          "Example": "524.79 is implausibly small because it adds only around 6 instead of 64."
+        },
+        {
+          "Title": "Align decimals and equal units",
+          "Definition": "Add hundreds to hundreds, tens to tens, tenths to tenths and hundredths to hundredths.",
+          "Rule": "518.37+64.20=582.57.",
+          "Example": "Right alignment of printed digits is incorrect for unequal decimal lengths."
+        },
+        {
+          "Title": "Same digits can mean different magnitudes",
+          "Definition": "Place value changes the quantity even if the printed digits look familiar.",
+          "Rule": "48.2+63.7=111.9 while 4.82+6.37=11.19.",
+          "Example": "The number of whole units changes across examples."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original Elena-versus-Andre error",
+          "Question": "Whose calculation of621.45+72.3 is correct, Elena628.68 or Andre693.75?",
+          "Method": "Align corresponding ones/tenths/hundredths columns, benchmark around690.",
+          "Steps": [
+            "Write72.3 as72.30.",
+            "Add621.45+72.30=693.75.",
+            "Elena incorrectly aligned the last printed digits and got628.68, not plausible relative to620+70."
+          ],
+          "Answer": "Andre is correct;693.75.",
+          "Check": "Teacher scores written error analysis."
+        },
+        {
+          "Title": "Original warm-up large sum",
+          "Question": "Estimate and calculate1,987.89+658.54.",
+          "Method": "Reason near2000+650≈2650 then exact place-value sum.",
+          "Steps": [
+            "1987+658=2645.",
+            "0.89+0.54=1.43.",
+            "Combine2645+1.43=2646.43."
+          ],
+          "Answer": "2646.43.",
+          "Check": "A near2650 estimate is plausible."
+        },
+        {
+          "Title": "Original same-digit comparison problems",
+          "Question": "Find2.63+7.74,26.3+774,46.3+31.42,463+3.14.",
+          "Method": "Preserve decimal place values across varied numbers of printed digits.",
+          "Steps": [
+            "2.63+7.74=10.37.",
+            "26.30+774=800.3 and46.30+31.42=77.72.",
+            "463+3.14=466.14."
+          ],
+          "Answer": "10.37,800.3,77.72,466.14.",
+          "Check": "Source teacher reviews whether vertical layout aligns decimal points."
+        },
+        {
+          "Title": "Optional existing extension — Critique a false answer",
+          "Question": "A pupil says 518.37+64.2=524.79. What went wrong?",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Benchmark the total near 580, making 524.79 suspicious.",
+            "Write 64.2 as 64.20 and align decimal points under 518.37.",
+            "Add columns to get 582.57; identify the wrong place-value pairing in the pupil's work."
+          ],
+          "Answer": "Correct sum 582.57, not 524.79.",
+          "Check": "Teacher reviews whether the learner explains the exact column error."
+        },
+        {
+          "Title": "Optional existing extension — Same digits, different scale",
+          "Question": "Calculate 4.82+6.37 and 48.2+63.7.",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "For the first, combine hundredths, tenths and units.",
+            "For the second, combine tenths, units and tens.",
+            "Compare their magnitudes."
+          ],
+          "Answer": "11.19 and 111.9.",
+          "Check": "4.82+6.37=11.19; 48.2+63.7=111.9."
+        },
+        {
+          "Title": "Optional existing extension — Mixed whole and decimal",
+          "Question": "Calculate 482+6.37 without right-aligning the last printed digits.",
+          "Method": "Original decimal place-value explanation with an independently checkable numerical result; diagram and peer discourse require teacher assessment.",
+          "Steps": [
+            "Write 482 as 482.00 to align decimals.",
+            "Add hundredths and tenths to the zero placeholders.",
+            "Add whole-number parts."
+          ],
+          "Answer": "488.37.",
+          "Check": "482.00+6.37=488.37."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Align the rightmost digit of unequal-length decimals",
+          "WhyWrong": "Whole-number alignment discards the meaning of the decimal-point positions.",
+          "Correction": "Align decimal points, not final digits, and verify a place-value chart."
+        },
+        {
+          "Mistake": "Accept any result slightly greater than the larger addend",
+          "WhyWrong": "The second addend may add dozens or hundreds of units, not just a positive fraction.",
+          "Correction": "Use an independent approximate sum to check whether the result is reasonable."
+        },
+        {
+          "Mistake": "Present fictional518.37+64.2 and its incorrect result524.79 as the original Elena/Andre source problem",
+          "WhyWrong": "The book explicitly compares621.45+72.3 with Elena628.68 and Andre693.75, plus four other source expressions.",
+          "Correction": "Restore original source operands, both named learner outputs, original estimate and four Activity2 sums."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source large-number estimation1987.89+658.54=2646.43.",
+        "Elena right-aligns and gets false628.68; Andre gets correct693.75 for621.45+72.3.",
+        "Source four Activity2 sums10.37,800.3,77.72,466.14.",
+        "Teacher scores why Elena's justification is insufficient and which decimal places misalign.",
+        "Selected numeric Practice is source-bounded; no source figure reproduction claimed.",
+        "Optional prior: The standard algorithm is correct only when like decimal units are combined.",
+        "Optional prior: A place-value explanation is required to critique a mistaken calculation.",
+        "Optional prior: Estimating supports diagnosis but does not replace a complete correction.",
+        "Optional prior: 2021 IM K–5 Grade 5 Unit 5 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-13/lesson.html. Activity and Student Facing sections read from authorized local 2021 teacher lesson HTML on Our-CS; original publisher task PDFs, image assets and gated Cool-down remain unchecked. Examples and tables are newly written for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original Elena/Andre source error and corrected sums",
+          "Description": "Exact printed source values and first-party place-value explanation; original pupil algorithm image requires teacher.",
+          "Rows": [
+            {
+              "Label": "Elena wrong",
+              "Cells": [
+                "621.45+72.3",
+                "628.68 FALSE"
+              ]
+            },
+            {
+              "Label": "Andre correct",
+              "Cells": [
+                "621.45+72.30",
+                "693.75"
+              ]
+            },
+            {
+              "Label": "Source warm-up",
+              "Cells": [
+                "1987.89+658.54",
+                "2646.43"
+              ]
+            },
+            {
+              "Label": "Activity2",
+              "Cells": [
+                "2.63+7.74=10.37",
+                "26.3+774=800.3",
+                "46.3+31.42=77.72",
+                "463+3.14=466.14"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Analyze Addition Mistakes — original reasoning",
+          "Description": "Accessible original decimal place-value table; no source publisher diagram or recording sheet copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "518.37+64.20",
+                "4.82+6.37",
+                "48.2+63.7",
+                "482+6.37"
+              ]
+            },
+            {
+              "Label": "Exact sum",
+              "Cells": [
+                "582.57",
+                "11.19",
+                "111.9",
+                "488.37"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

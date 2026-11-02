@@ -1,0 +1,708 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u04-l18-l21-im2021-source-parity-richv2-v9-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L18",
+      "CultureCode": "en",
+      "Title": "Lots of Milk",
+      "ExplanationParagraphs": [
+        "Original IM K5 2021 U04:L18 Lots of Milk explores estimated CARTON volume in CUBIC INCHES and how consumption scales from student to CLASS, GRADE, SCHOOL and TEN LOCAL SCHOOLS. There is no printed fixed school enrollment, fixed milk carton size, or single original solution: students must state their own plausible assumptions and explain low/about-right/high estimates.",
+        "Warm-up Estimation Exploration How Big is the Milk Carton: original USDA-attributed carton photograph is separately licensed/public domain and not incorporated or certified here. Students estimate volume in cubic inches with TOO LOW, ABOUT RIGHT, TOO HIGH, explaining why from a photo alone no exact carton dimensions follow.",
+        "Activity 1 Milk for Everyone: source asks the pupil to estimate one day's milk volume for YOU, YOUR CLASS, YOUR GRADE, YOUR SCHOOL and TEN SCHOOLS, in cubic inches. Each category depends on chosen number of pupils, attendance and carton size. An Edulytiks sample assumption of 20 cubic inches per pupil per day, 25 students per class and 500 per school yields 20,500, variable grade total,10,000 and100,000 cubic inches/day respectively. These are sample assumptions, NEVER the source's canonical volumes.",
+        "Activity 2 How Big is 1,000,000?: source target is ONE MILLION cubic inches of milk and asks days for TEN SCHOOLS, SCHOOL, GRADE, CLASS, YOU. With INDEPENDENT illustrative constant rates 100,000, 10,000, 500 and20 cubic inches/day, the illustrative days are10,100,2000,50000 respectively, but no fixed grade count is given. For grade, pupil must supply a separate positive measured/estimated rate; both rate and days vary by class/school context.",
+        "Selected numeric Practice is explicitly restricted to Edulytiks invented, labeled, conditional benchmark scenarios for division with the original one-million target. It cannot grade open source pupil estimates, carton photo interpretation or grade/school enrollment. Those remain TEACHER_REVIEW_REQUIRED. Independently authored Cool-down asks students to write their own assumptions instead of falsely claiming to reproduce the teacher-gated publisher Cool-down.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Estimate unit volume",
+          "Definition": "A small rectangular carton can be approximated as a rectangular prism in cubic inches.",
+          "Rule": "Estimate V≈length×width×height with dimensions in inches.",
+          "Example": "A 2×2×5 inch prism has volume20 cubic inches."
+        },
+        {
+          "Title": "Scale daily consumption",
+          "Definition": "A repeated assumed per-person volume times a participant count estimates a larger group's daily amount.",
+          "Rule": "20 in³/person×25 people≈500 in³ per day.",
+          "Example": "Ten hypothetical schools of 20 such classes use about100000 in³ per day."
+        },
+        {
+          "Title": "Time from volume rate",
+          "Definition": "Estimated days equals target cubic volume divided by estimated daily cubic volume.",
+          "Rule": "days≈1000000 in³÷10000 in³/day=100.",
+          "Example": "An estimated rate does not create exact real-world forecasts."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original five source comparison groups",
+          "Question": "Estimate cubic inches of milk consumed daily by you, class, grade, school and ten schools.",
+          "Method": "Choose and justify pupil population and carton volume; ALL numbers are pupil assumptions.",
+          "Steps": [
+            "Name estimated volume of one carton in cubic inches.",
+            "For each group, estimate how many such cartons are consumed daily.",
+            "Multiply pupil count by carton volume; label units and explain assumptions."
+          ],
+          "Answer": "Multiple defensible answers; no single fixed number in the source.",
+          "Check": "Teacher verifies units, scaling and assumptions."
+        },
+        {
+          "Title": "One-million cubic inches target with explicit conditional rates",
+          "Question": "Under Edulytiks hypothetical rates, how many days to consume 1,000,000 cubic inches?",
+          "Method": "Days = 1000000 cubic inches divided by estimated daily cubic-inch rate.",
+          "Steps": [
+            "At100000 cubic in/day for ten schools: 10 days.",
+            "At10000 cubic in/day for one school:100 days.",
+            "At500 cubic in/day for one class:2000 days;20 in/day for one pupil:50000 days."
+          ],
+          "Answer": "10;100;2000;50000 days under these stated ASSUMPTIONS, not canonical source answers.",
+          "Check": "A different justified rate yields a different legitimate answer."
+        },
+        {
+          "Title": "Optional existing extension — Estimate class consumption",
+          "Question": "A class of 25 students is assumed each to drink20 cubic inches in a day.",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Declare that all 25 choose one such carton.",
+            "Multiply25×20.",
+            "Report cubic inches, not 25 cartons as the volume unit."
+          ],
+          "Answer": "About500 cubic inches/day under the assumptions.",
+          "Check": "25×20=500, but actual participants can differ."
+        },
+        {
+          "Title": "Optional existing extension — Estimate a hypothetical school",
+          "Question": "20 identical classes of25 participants each drink one20-cubic-inch carton daily.",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Estimate500 cubic inches per class.",
+            "Multiply20 classes×500 cubic inches.",
+            "Keep the simplifying assumptions explicit."
+          ],
+          "Answer": "About10000 cubic inches daily.",
+          "Check": "20×25×20=10000."
+        },
+        {
+          "Title": "Optional existing extension — Reverse to days",
+          "Question": "At10000 cubic inches/day, how many days to reach1000000 cubic inches?",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Keep target and daily consumption in cubic inches.",
+            "Divide1000000 by10000.",
+            "Interpret as estimated days at a constant rate."
+          ],
+          "Answer": "About100 days.",
+          "Check": "100×10000=1000000; change in consumption changes the estimate."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat an assumed class size and milk amount as measured real data",
+          "WhyWrong": "Source modeling requires estimates that vary by actual context.",
+          "Correction": "Write the assumptions and state the result conditionally."
+        },
+        {
+          "Mistake": "Divide consumption instead of multiplying when moving from a class to many classes",
+          "WhyWrong": "Each added class adds its own estimated carton volume.",
+          "Correction": "Multiply by the number of equally modeled classes."
+        },
+        {
+          "Mistake": "Present hypothetical fixed school counts and 20-cubic-inch cartons as verified 2021 textbook data",
+          "WhyWrong": "Source intentionally leaves pupil attendance, class and school sizes unknown to support realistic estimates and explanation.",
+          "Correction": "Label any sample consumption rate independently authored and preserve genuine original open assumptions and teacher review."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source milk carton photo estimated low/about-right/high; exact printed dimensions not provided.",
+        "Original categories you,class,grade,school,10 schools require pupil-derived assumptions.",
+        "Original million-cubic-inch target and estimated days have no universally correct school rate.",
+        "The numeric family explicitly labels separate hypothetical examples; source open estimates require teacher review.",
+        "No publisher original Cool-down or third-party source image is claimed reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Source categories with distinct first-party illustrative assumptions",
+          "Description": "NOT original publisher measurements. Every numerical value derives from explicit Edulytiks sample population and 20 cubic inches/pupil/day.",
+          "Rows": [
+            {
+              "Label": "You",
+              "Cells": [
+                "20 in³/day assumed",
+                "50000 days"
+              ]
+            },
+            {
+              "Label": "Class of25",
+              "Cells": [
+                "500 in³/day assumed",
+                "2000 days"
+              ]
+            },
+            {
+              "Label": "School of500",
+              "Cells": [
+                "10000 in³/day assumed",
+                "100 days"
+              ]
+            },
+            {
+              "Label": "Ten such schools",
+              "Cells": [
+                "100000 in³/day assumed",
+                "10 days"
+              ]
+            },
+            {
+              "Label": "Grade",
+              "Cells": [
+                "pupil count unknown",
+                "days vary with assumptions"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L19",
+      "CultureCode": "en",
+      "Title": "Trash Talk PLC Activity",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U04:L19 Trash Talk PLC Activity applies place-value multiplication to approximate rectangular AREAS in square kilometers, distinguishes kilometer (linear distance) from square kilometer (area), and requires reasoned real-world scale comparisons. The source estimates a Great Pacific Garbage Patch area of ABOUT 1,000,000 square kilometers; this is a textbook modeling estimate, not a current independently verified environmental measurement.",
+        "Warm-up Notice and Wonder Trash and Ice: original media shown by teacher, with source image attribution and rights assessed separately. Students notice/ask questions about accumulation, not assume trash is a solid rectangular prism or that surface area proves material volume.",
+        "Activity 1 Square Kilometers: source asks whether Mai walking TWO laps around a soccer field is about ONE kilometer; estimate with a field perimeter and explain assumptions rather than inventing an official field size. Compare distance across YOUR state, your home to school, your classroom to restroom, and a car vacation with a kilometer. These responses are context-specific and TEACHER_REVIEW_REQUIRED; a fixed universal number is unsupported.",
+        "Activity 2 So Much Trash: printed original illustrative rectangles: RHODE ISLAND ~77km long×60km wide =>4,620 square kilometers; DELAWARE ~154km×48km =>7,392 square kilometers; NEW MEXICO ~596km×552km =>328,992 square kilometers. Each modeled state area is SMALLER than source hypothetical garbage patch 1,000,000 square kilometers. A rectangular length×width estimate is not a literal present-day surveyed state area.",
+        "Original source also asks pupils to CIRCLE an estimated area on the US map that would represent the source garbage patch. Source Wikimedia/CC-BY-SA 3.0 map graphic is not silently copied, and geometric map-circling is not automatically graded; teacher scores scale reasoning and units. Existing invented 700×500 or1000×250km exercises remain optional Edulytics extensions, not the source's comparison numbers.",
+        "Numerical exact-choice practice covers only the three original dimension products using the existing multiplication adapter; it cannot claim full verification of soccer-field measurement, state-wide distances, map circling or current environmental claims. Independently authored teacher Cool-down compares a new pair of idealized rectangles.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Length versus area",
+          "Definition": "A kilometer measures one-dimensional distance, whereas square kilometers measure two-dimensional coverage.",
+          "Rule": "1 km²=1 km×1 km=1000000 m².",
+          "Example": "A rectangular 700×500-km region covers350000 km²."
+        },
+        {
+          "Title": "Large place-value products",
+          "Definition": "Area of an idealized rectangle can be computed from large measured lengths.",
+          "Rule": "700×500=350000.",
+          "Example": "1000×250=250000."
+        },
+        {
+          "Title": "Model assumptions matter",
+          "Definition": "An actual coastal debris region rarely forms an exact rectangle; dimensions supply an approximation.",
+          "Rule": "Label model boundaries and uncertainty before comparing large products.",
+          "Example": "350000−250000=100000 km² in the two idealized models."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original Rhode Island comparison",
+          "Question": "Printed source models Rhode Island as about77km×60km. Compare with source 1,000,000 km².",
+          "Method": "Idealized rectangular model area in square kilometers, not linear distance.",
+          "Steps": [
+            "77×60=4,620 square kilometers.",
+            "Compare4,620 with1,000,000.",
+            "Source garbage patch is far larger than the modeled Rhode Island rectangle."
+          ],
+          "Answer": "4,620 km²; smaller than1,000,000 km².",
+          "Check": "Units km×km=km²."
+        },
+        {
+          "Title": "Original Delaware comparison",
+          "Question": "Printed source models Delaware as154km long by48km wide. Which area is larger?",
+          "Method": "Exact multi-digit multiplication in source rectangular approximation.",
+          "Steps": [
+            "154×(50−2)=7,700−308.",
+            "Area model yields7,392km².",
+            "7,392 is less than1,000,000."
+          ],
+          "Answer": "7,392km², smaller than modeled garbage patch.",
+          "Check": "154×48=7392."
+        },
+        {
+          "Title": "Original New Mexico comparison and map task",
+          "Question": "Original source models New Mexico as596×552km. Compare and explain scale.",
+          "Method": "Use distributive law and a drawn area estimate.",
+          "Steps": [
+            "596×(500+50+2)=298000+29800+1192.",
+            "Total328,992km².",
+            "Still less than1,000,000km²; map-size drawing needs teacher review."
+          ],
+          "Answer": "328,992km²; smaller than the source's million-square-km patch.",
+          "Check": "Rectangular area is a model, not exact state boundary."
+        },
+        {
+          "Title": "Optional existing extension — Area of hypothetical ocean region",
+          "Question": "Estimate area of an idealized700-by-500-km rectangle.",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Identify both numbers as lengths in kilometers.",
+            "Multiply7×5=35 and account for four factors of ten in 700 and500.",
+            "Attach km²."
+          ],
+          "Answer": "350000 square kilometers under the rectangle model.",
+          "Check": "700 km×500 km=350000 km²."
+        },
+        {
+          "Title": "Optional existing extension — Compare with reference region",
+          "Question": "A reference rectangle is1000 km by250 km. Find its area.",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Interpret dimensions as linear distances.",
+            "Multiply1000×250.",
+            "Use square-kilometer units."
+          ],
+          "Answer": "250000 km².",
+          "Check": "Both regions are schematic; no actual state area is inferred."
+        },
+        {
+          "Title": "Optional existing extension — Find area difference",
+          "Question": "How much greater is350000 km² than250000 km²?",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Identify the two area estimates.",
+            "Subtract350000−250000.",
+            "Keep the result in square kilometers."
+          ],
+          "Answer": "100000 km².",
+          "Check": "This difference applies only to the chosen rectangles, not directly to real geographic shapes."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "State the modeled ocean trash region's area in cubic kilometers",
+          "WhyWrong": "A map footprint measures two-dimensional coverage, not three-dimensional fill.",
+          "Correction": "Use km², reserving cubic units for volume with an additional thickness/height."
+        },
+        {
+          "Mistake": "Treat an imagined rectangular region as an official state or ocean-garbage-patch statistic",
+          "WhyWrong": "Illustrative lengths and real-world irregular geography are different.",
+          "Correction": "Mark the rectangles hypothetical and distinguish maps or verified measurements from invented dimensions."
+        },
+        {
+          "Mistake": "Present unrelated invented700×500km area products as original state-comparison dimensions",
+          "WhyWrong": "Source specifically supplies 77×60 for Rhode Island,154×48 for Delaware and596×552 for New Mexico, with a map-scale activity.",
+          "Correction": "Restore the printed state dimension models and preserve the real-world open kilometer and map tasks."
+        }
+      ],
+      "SummaryPoints": [
+        "Source Mai soccer-field two laps around one km requires student estimation, not a fixed prescribed field size.",
+        "Source asks home/school/state/vacation comparisons to one kilometer; responses depend on student geography.",
+        "Printed source Rhode Island77×60=4,620km²; Delaware154×48=7,392km²; New Mexico596×552=328,992km².",
+        "All three source rectangle models are smaller than the source's ~1,000,000km² garbage patch area.",
+        "Original source US map circling and photo interpretation remain teacher reviewed with separate artwork rights."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source state dimensions vs one-million km² model",
+          "Description": "Source numbers, reconstructed first-party arithmetic; original credited map artwork not reproduced.",
+          "Rows": [
+            {
+              "Label": "Rhode Island",
+              "Cells": [
+                "77km×60km",
+                "4,620km²",
+                "less than1,000,000"
+              ]
+            },
+            {
+              "Label": "Delaware",
+              "Cells": [
+                "154km×48km",
+                "7,392km²",
+                "less than1,000,000"
+              ]
+            },
+            {
+              "Label": "New Mexico",
+              "Cells": [
+                "596km×552km",
+                "328,992km²",
+                "less than1,000,000"
+              ]
+            },
+            {
+              "Label": "Source garbage patch estimate",
+              "Cells": [
+                "~1,000,000km²",
+                "textbook modeling estimate"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L20",
+      "CultureCode": "en",
+      "Title": "Shipping Trash",
+      "ExplanationParagraphs": [
+        "Original IM K5 2021 G5 U04:L20 Shipping Trash combines cubic-foot volume, multiplication of factors, quotient interpretation, realistic school recyclable plastic estimates and feasibility. The printed 2018 export figures and around70,000 schools are HISTORICAL textbook assumptions, not verified current 2026 statistics.",
+        "Warm-up Number Talk Three Factors original 8×4=32, 8×8=64, 8×8×2=128 and 8×8×20=1,280. Teacher asks how decomposing 20=2×10 scales the last result and why three physical dimensions produce CUBIC feet.",
+        "Activity 1 What a Waste: source asks pupils to ESTIMATE a class recycling bin's volume, school bins' total capacity, and how much their school generates in a day/week/month/year; then argue if a year's recyclable materials might fit inside a classroom. The actual school's bin counts, class room dimensions, behavior, school days and compacting are unknown; the correct responses require explicit pupil assumptions and TEACHER_REVIEW_REQUIRED.",
+        "Activity 2 Plastic Palooza original source: ship cargo container20 feet long by8 feet wide by8 feet tall=1280 cubic feet; a school hypothetically makes40 cubic feet recyclable plastic each day; container fill time1280÷40=32 days. Printed historical 2018 US exports around210,000 plastic cargo containers and source assumption around70,000 elementary schools; each would need to fill210000÷70000=3 containers, consuming3840 cubic feet or around96 source-rate days. A reasoned yes/no feasibility answer depends on how many COLLECTION days, density and real collection rates students assume.",
+        "Do not substitute invented source statement 120,000 containers /40,000 schools. The first-party numeric selected Practice supports the TWO source quotients and an explicitly derived third days case; original volume multiplication and source estimation remain visible Rich V2 content, with teacher review of dimension products, conceptual feasibility and environmental context.",
+        "Independent Edulytiks Cool-down uses a different fictional cargo box and disposal volume, with teacher checking units and assumptions. Source images/third-party content and gated Cool-down are not claimed reproduced.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cargo rectangular prism volume",
+          "Definition": "Volume equals the product of three perpendicular lengths in the same linear unit.",
+          "Rule": "20×8×8=1280 cubic feet.",
+          "Example": "Container dimensions specify cubic feet of internal space under ideal prism assumptions."
+        },
+        {
+          "Title": "Days to fill at a rate",
+          "Definition": "Capacity divided by an assumed collection volume per day estimates fill days.",
+          "Rule": "1280 ft³÷(40 ft³/day)=32 days.",
+          "Example": "Changing collection assumptions changes the predicted days."
+        },
+        {
+          "Title": "Large-quantity modeling",
+          "Definition": "Shipment target per school equals total containers divided by participating school count.",
+          "Rule": "120000÷40000=3 containers per school in the hypothetical model.",
+          "Example": "Compare annual school production with3×1280 ft³."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original number talk and cargo volume",
+          "Question": "Find source 8×4,8×8,8×8×2,8×8×20; then source 20ft by8ft by8ft cargo container.",
+          "Method": "Associativity and cubic-foot volume.",
+          "Steps": [
+            "Original warmup yields32,64,128,1280.",
+            "Container base8×8=64 square feet.",
+            "Multiply by20ft length to get1280 cubic feet."
+          ],
+          "Answer": "Container volume1280 cubic feet.",
+          "Check": "ft×ft×ft=ft³."
+        },
+        {
+          "Title": "Original daily plastic rate versus cargo volume",
+          "Question": "If school generates40 cubic ft/day, how many days to fill1280 cubic ft?",
+          "Method": "Divide container capacity by hypothetical volume per day.",
+          "Steps": [
+            "Source container1280ft³.",
+            "Source rate40ft³/day.",
+            "1280÷40=32 days."
+          ],
+          "Answer": "32 days per cargo container under the source assumption.",
+          "Check": "32×40=1280ft³."
+        },
+        {
+          "Title": "Source 2018 export-to-school historical scale",
+          "Question": "Printed source says210000 cargo containers and about70000 elementary schools. How many containers per school?",
+          "Method": "Divide historical source total by model school count.",
+          "Steps": [
+            "210000÷70000=3 containers per school.",
+            "Three 1280ft³ containers total3840ft³.",
+            "At40ft³/day this would require96 days; real feasibility depends on actual school calendar and recycling assumptions."
+          ],
+          "Answer": "3 containers per school;96 days at constant hypothetical daily rate.",
+          "Check": "70000×3=210000; 96×40=3840."
+        },
+        {
+          "Title": "Optional existing extension — Volume of one container",
+          "Question": "How large is an ideal20-by-8-by-8-ft rectangular container?",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Compute floor area20×8=160 square feet.",
+            "Multiply height8 feet.",
+            "Write volume in cubic feet."
+          ],
+          "Answer": "1280 cubic feet.",
+          "Check": "160 ft²×8 ft=1280 ft³."
+        },
+        {
+          "Title": "Optional existing extension — School days to fill",
+          "Question": "At an assumed40 cubic feet/day, how many days fill1280 cubic feet?",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Keep rate in ft³/day.",
+            "Divide1280 by40.",
+            "Describe this as an estimated count under the stated assumption."
+          ],
+          "Answer": "32 days.",
+          "Check": "32×40=1280 cubic feet."
+        },
+        {
+          "Title": "Optional existing extension — Compare hypothetical shipment and schools",
+          "Question": "120000 containers for40000 schools: how many containers per school?",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Divide total target120000 by40000.",
+            "Use place-value scaling to reduce to12÷4.",
+            "Interpret the quotient as a target per school, not actual observed output."
+          ],
+          "Answer": "Three containers per school in the invented scenario.",
+          "Check": "40000×3=120000; teacher reviews whether modeled production meets the target."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume all school waste has the same compacted volume as all recyclables",
+          "WhyWrong": "Collection rate, material, packing and space use are assumptions, not facts.",
+          "Correction": "State what fraction is usable and test sensitivity to that assumption."
+        },
+        {
+          "Mistake": "Treat old publisher shipment figures as current official statistics",
+          "WhyWrong": "A 2021 lesson's historical data context is not an assertion about the present year.",
+          "Correction": "Identify any figures as original-year evidence or original hypothetical inputs with their date."
+        },
+        {
+          "Mistake": "Claim the source's US exports were120000 containers and there were40000 schools",
+          "WhyWrong": "Original text provides210000 containers in 2018 and around70000 elementary schools.",
+          "Correction": "Restore printed 2018 figures and clearly label them textbook historical estimates, not current audited counts."
+        }
+      ],
+      "SummaryPoints": [
+        "Source Number Talk32,64,128,1280 shows associativity and powers of ten.",
+        "Original cargo 20×8×8=1280 cubic feet; assumed40 cubic ft/day =>32 days per container.",
+        "Original 2018 source210000 containers and about70000 elementary schools =>3 containers per school.",
+        "Full feasibility depends on student assumptions (days, bins, volume) and requires teacher review.",
+        "Numerical selected Practice only covers bounded group/volume quotients; historical facts are not verified contemporary data."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Printed 2021 Shipping Trash quantities and conditional interpretation",
+          "Description": "Cited 2018 data are historical textbook figures; first-party model calculations, not current statistics.",
+          "Rows": [
+            {
+              "Label": "Number Talk",
+              "Cells": [
+                "8×4=32",
+                "8×8=64",
+                "8×8×2=128",
+                "8×8×20=1280"
+              ]
+            },
+            {
+              "Label": "Container dimensions",
+              "Cells": [
+                "20ft×8ft×8ft",
+                "1280ft³"
+              ]
+            },
+            {
+              "Label": "Daily rate",
+              "Cells": [
+                "40ft³/day assumed",
+                "32 days/container"
+              ]
+            },
+            {
+              "Label": "Printed 2018 export model",
+              "Cells": [
+                "210000 containers",
+                "70000 schools",
+                "3 containers/school"
+              ]
+            },
+            {
+              "Label": "Derived days for three",
+              "Cells": [
+                "3840ft³",
+                "96 days at assumed rate"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L21",
+      "CultureCode": "en",
+      "Title": "Food Waste Journal (optional)",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U04:L21 Food Waste Journal (optional) is an OPEN observation and estimation project, not a worksheet of fixed one-day food-waste amounts. The source provides a reference US average of 219 pounds of food waste PER PERSON PER YEAR, and the conversion 16 ounces per pound; neither is a measurement of the individual learner's household or a claim about 2026 current statistics.",
+        "Warm-up Notice and Wonder Food Waste: teacher leads an age-appropriate discussion with the original attribution photograph omitted until media/rights verification. Student observations about school/household waste are optional, nonjudgmental and teacher reviewed; do not demand sensitive home disclosures.",
+        "Activity 1 Food Waste in the United States: using ORIGINAL 219lb/year per person, estimate per month219/12=18.25lb and per week219/52≈4.21lb (52 weeks an approximation); for family, class and school, the source asks the pupil to determine and clearly LABEL the relevant number of people before multiplying219lb×population. No source family/class/school sizes are fixed. Exact original conversion 219×16=3504 ounces/year. Sample 4-person family876lb,25-person class5475lb and500-person school109500lb/year are independently authored illustrations, NEVER publisher data.",
+        "Activity 2 Food Journal: source learner completes a table of name/type of discarded food, reason discarded and ESTIMATED WEIGHT in ounces for THEIR actual day. Learner computes ounces÷16 to pounds, compares their own observed totals to weekly average assumptions and explains uncertainty. The software must not fabricate pupil entries, dates, personal household behaviors or single correct real data. A zero-waste diary is also legitimate.",
+        "Activity 3 Analyze Food Journals (optional): use the pupil's own weekly data to estimate month and year, compare with printed national reference219lb/year, and discuss reasons for deviations without treating the average as an individual requirement. Teacher assesses diary validity, units, extrapolation and argument. Existing independent fictional 8,12,4,16,8-ounce scraps remain clearly optional demonstrations, not the student's authentic source journal.",
+        "Selected exact Practice checks only the printed-source yearly ounce conversion and transparently hypothetical annual group totals, NOT open pupil journal data. Independently authored Edulytiks Cool-down uses a sample diary of known values; original publisher gated Cool-down is not claimed recovered.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Weight units and journal observations",
+          "Definition": "Sixteen ounces equal one pound of mass/weight in common US customary usage.",
+          "Rule": "48 oz÷16=3 pounds.",
+          "Example": "Do not confuse ounces of mass with fluid ounces of volume."
+        },
+        {
+          "Title": "Add measured estimated entries",
+          "Definition": "A total for a journal period sums all observations for that same time span.",
+          "Rule": "8+12+4+16+8=48 ounces.",
+          "Example": "Journal totals depend on actual recorded observations."
+        },
+        {
+          "Title": "Scale a representative week cautiously",
+          "Definition": "Long-term projection assumes sampled weeks are representative.",
+          "Rule": "3 pounds/week×4 weeks≈12 pounds.",
+          "Example": "A school calendar and vacations change total weeks."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source 219 pounds and 16 ounces/pound",
+          "Question": "How many OUNCES per year correspond to the source US reference 219 pounds/person/year?",
+          "Method": "Convert pounds to ounces using the printed16 ounces per pound.",
+          "Steps": [
+            "The source gives219lb annually, per person.",
+            "Each pound contains16 ounces.",
+            "Compute219×16=3504 ounces annually."
+          ],
+          "Answer": "3504 ounces per person per modeled year.",
+          "Check": "3504÷16=219 pounds."
+        },
+        {
+          "Title": "Original source monthly/weekly estimates versus independent population sizes",
+          "Question": "Approximate 219lb/year per month/week, then explain a group-year total.",
+          "Method": "Divide by12 months or approx52 weeks; multiply by an explicitly assumed group population.",
+          "Steps": [
+            "219÷12=18.25 pounds per month.",
+            "219÷52≈4.21 pounds per week.",
+            "Under Edulytiks example 4-person family:4×219=876lb per year; other populations give different correct numbers."
+          ],
+          "Answer": "About18¼lb/month,4.21lb/week, and group-dependent total.",
+          "Check": "Source does not supply family,class,school headcounts."
+        },
+        {
+          "Title": "Original student-owned food journal and optional weekly analysis",
+          "Question": "Enter actual food type/reason/estimated ounces, total and compare with approximate yearly average.",
+          "Method": "Teacher reviews user-entered observations, mass conversion and projection assumptions.",
+          "Steps": [
+            "Student enters personal or classroom observations, which are not fabricated by software.",
+            "Add weights in ounces and divide by16 for pounds.",
+            "If a whole week's diary exists, multiply by about52 to project a model year, and compare thoughtfully with219lb."
+          ],
+          "Answer": "Open teacher-reviewed observation; no unique universal total.",
+          "Check": "No fixed invented daily entries are treated as original student data."
+        },
+        {
+          "Title": "Optional existing extension — Sum a fictional sample journal",
+          "Question": "Fictional five-day food waste entries8,12,4,16,8 ounces. Find total.",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Label each value as an estimate from a hypothetical case.",
+            "Add 8+12+4+16+8=48 ounces.",
+            "Convert by dividing by16 ounces per pound."
+          ],
+          "Answer": "48 ounces =3 pounds.",
+          "Check": "5 amounts sum to48, and3×16=48."
+        },
+        {
+          "Title": "Optional existing extension — Project four comparable weeks",
+          "Question": "If3 pounds per school week repeats across four weeks, how much?",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Assume each future week resembles the fictional example.",
+            "Multiply3×4.",
+            "Record pounds and assumption."
+          ],
+          "Answer": "Approximately12 pounds.",
+          "Check": "Actual weeks may vary, so this is a conditional estimate."
+        },
+        {
+          "Title": "Optional existing extension — Project a school-year scenario",
+          "Question": "At3 pounds per week over36 school weeks, estimate total.",
+          "Method": "Use an original measurable scenario; distinguish assumed estimates from exact derived results.",
+          "Steps": [
+            "Choose36 school weeks explicitly.",
+            "Multiply36×3.",
+            "Do not present this as an official household yearly statistic."
+          ],
+          "Answer": "About108 pounds under assumptions.",
+          "Check": "The result is not a replacement for a real seven-day journal."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Invent diary values and present them as actual learner data",
+          "WhyWrong": "The source explicitly assigns observation and reflection over time.",
+          "Correction": "Keep instructional examples labeled fictional; students or teachers enter the genuine journal."
+        },
+        {
+          "Mistake": "Use 16 ounces as fluid-volume conversion without context",
+          "WhyWrong": "Food mass and liquid fluid-ounce measures are not interchangeable by a single factor.",
+          "Correction": "Label journal weights ounces of mass and pounds; use separate conversions for fluids."
+        },
+        {
+          "Mistake": "Present a fabricated 8,12,4,16,8-ounce classroom diary as if it were the pupil's recorded original daily waste",
+          "WhyWrong": "The printed source asks students to enter their actual own observed food type, reason and estimated weight. Invented records would falsify evidence.",
+          "Correction": "Retain fictional values only as standalone first-party examples; source journal remains editable and teacher-reviewed with no predetermined answer."
+        }
+      ],
+      "SummaryPoints": [
+        "Original printed average219 pounds of food waste/person/year and16oz/pound yield3504oz/year.",
+        "Per person model estimates18.25lb/month and roughly4.21lb/week using12 months/52 weeks.",
+        "Family, class and school group totals depend on user-selected population sizes; no fixed textbook counts.",
+        "Original student's daily and optional weekly journal data and reasons are authentic open submissions, never invented by the system.",
+        "Selected exact numeric exercises only cover original conversion and clearly labeled hypothetical group totals; teacher scores diary and comparisons."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original food-waste reference and transparent first-party assumptions",
+          "Description": "Printed yearly US average219 lb and unit conversion16oz/lb; group sizes shown here are separately identified Edulytiks hypothetical models.",
+          "Rows": [
+            {
+              "Label": "Printed per-person annual average",
+              "Cells": [
+                "219 pounds",
+                "3504 ounces"
+              ]
+            },
+            {
+              "Label": "Month/week estimate",
+              "Cells": [
+                "18.25 lb/month",
+                "~4.21 lb/week"
+              ]
+            },
+            {
+              "Label": "Edulytiks group of4",
+              "Cells": [
+                "876lb/year",
+                "example only"
+              ]
+            },
+            {
+              "Label": "Edulytiks class of25",
+              "Cells": [
+                "5475lb/year",
+                "example only"
+              ]
+            },
+            {
+              "Label": "Edulytiks school of500",
+              "Cells": [
+                "109500lb/year",
+                "example only"
+              ]
+            },
+            {
+              "Label": "Original student diary",
+              "Cells": [
+                "real student data",
+                "NO fixed numeric answer"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

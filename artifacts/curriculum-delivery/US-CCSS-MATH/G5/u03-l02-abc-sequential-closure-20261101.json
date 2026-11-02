@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "kind": "GRADE5_U03_L02_ABC_SEQUENTIAL_AUTHORING_CLOSURE",
+  "courseCode": "US-CCSS-MATH:G5:IM-K5-2021",
+  "lessonCode": "PED:US-CCSS-MATH:G5:U03:L02",
+  "lessonTitle": "Represent Unit Fraction Multiplication",
+  "sourceEdition": "Illustrative Mathematics K–5 2021",
+  "previousClosedLesson": "PED:US-CCSS-MATH:G5:U03:L01",
+  "sourceEvidence": {
+    "previousReview": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-abc-current-lesson-20261031.json",
+    "teacherLessonSha256": "4bb09e8dfbcf3da207e376a775051c865f518111ed424efe7464ae7c907e8f62",
+    "teacherPreparationSha256": "64a7b4954da110aa63e3ec0086fdcb2eb870e92c45ce4fac3925daa45be896f6"
+  },
+  "stageA": "COMPLETE_WITH_DOCUMENTED_2021_SOURCE_LIMITATIONS",
+  "stageB": "COMPLETE_WITH_EVIDENCE",
+  "stageC": "COMPLETE_WITH_SELECTED_CONTRACT_EVIDENCE_AUTHORED_NOT_RUN",
+  "readyForStageD": true,
+  "practice": {
+    "lessonCode": "PED:US-CCSS-MATH:G5:U03:L02",
+    "selectedSkill": "supporting.fractions.multiply_divide",
+    "selectedFamilies": [
+      "usccss.g5.u03.l02.unit_fraction_of_unit_fraction",
+      "usccss.g5.u03.l02.same_original_whole_order_comparison"
+    ],
+    "lessonPracticeRouting": true,
+    "productionRouting": false,
+    "selectedContract": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "engineDispatcher": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "localGeneratorSolverVerifier": "src/Edulytics.Services/Mathematics/UsCcssG5U03L02UnitFractionQuestions.cs",
+    "areaValidator": "src/Edulytics.Core/Mathematics/Practice/UsCcssG5U03L02UnitFractionArea.cs",
+    "integrationCommitSha": "b61d9a69830272bae2721ab79e277bb899e23e1a",
+    "exclusiveLeaseRelease": "https://github.com/EIAS79/Edulytics/issues/605#issuecomment-6550717324",
+    "deliveryToOriginalCourse": "https://github.com/EIAS79/Edulytics/issues/605#issuecomment-6550746758",
+    "limitations": "Static code integration and authored contracts only, no executed learner route or score persistence proof"
+  },
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+  "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l02-original-teacher-rubric-20261031.json",
+  "teacherReviewedTasks": [
+    "Two independently drawn partition orders giving 1/12",
+    "Priya 1/5 × 1/2 and reverse both giving 1/10",
+    "Distinct source-provided shaded diagram and its expression",
+    "Which One Doesn't Belong explanations"
+  ],
+  "authoredTests": [
+    "tests/academic-us-ccss-g5-u03-l02-abc-contract-20261031.test.cjs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5U03L02UnitFractionLocalPrepTests.cs"
+  ],
+  "lastFixtureAuthoringCommitSha": "319b57cdca0668850ad20ea3a962e6d11fcb5d9a",
+  "testExecutionStatus": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ciInvokedByAuthor": false,
+  "acceptanceScope": "A/B/C content and exact selected Practice authoring evidence, not runtime or production signoff",
+  "sourceLimitations": [
+    "Separate original 2021 Student Task PDF not individually verified",
+    "Publisher original artwork and separate shaded figure do not have binary/pixel parity certification",
+    "Publisher gated Cool-down unavailable; Edulytiks-authored alternative teacher rubric",
+    "Original source drawings and reasoning require manual teacher review; rubric scoring persistence is not demonstrated"
+  ],
+  "preservedClosures": {
+    "unit01": 12,
+    "unit02": 17,
+    "unit03Previously": 1
+  },
+  "grade5ReadyForStageDAfterClosure": 31,
+  "nextRequiredLesson": "PED:US-CCSS-MATH:G5:U03:L03",
+  "closedAtUtc": "2026-11-01T14:58:22.040Z"
+}

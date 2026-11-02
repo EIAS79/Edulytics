@@ -1,0 +1,508 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u08-l04-l11-im2021-source-parity-richv2-v9-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L04",
+      "CultureCode": "en",
+      "Title": "Dive Back Into Division",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L04 returns to whole-number division with up to four-digit dividend and two-digit divisor, asking first if quotient estimates are REASONABLE then finding exact result and constructing infinitely many valid missing-dividend/divisor expressions.",
+        "Warm-up Notice and Wonder Blank Spaces displays blank÷blank=136; source invites many valid pairs and peer reasoning, not one official answer.",
+        "Activity1 Reasonable Estimates original364÷13=28 near30 of choices20 30 40, 540÷12=45 exactly halfway between40 and50 (either a defensible estimate if closeness is only criterion),1008÷14=72 nearest70 of70 80 90. The three original exact quotient figures labeled a/b/c are image-only and require teacher review.",
+        "Activity2 Missing Dividends and Divisors asks for FIVE different pairs each yielding700 and78; infinite valid possibilities include7000÷10=700,780÷10=78. Teacher verifies variety and method rather than grading one sample as only correct.",
+        "Prior first-party728÷24 remains an optional extension. Source estimated versus exact values are separated and static numeric Practice does not claim to score student-generated equations or image-only division work.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: estimate whole-number quotients using friendly multiplication benchmarks and then reason from a given quotient to multiple different valid dividend–divisor pairs. This revisits partial quotients without forcing one calculation strategy.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: a calculator-free quotient estimate for364÷13 can use 13×20=260 and13×30=390; 364 is closer to390 than260 so thirty is a reasonable tens estimate. To compute exactly, remove20 groups of13 leaving104, then eight more groups of13, giving28. Ask learners to explain why different chunk selections are equally legal.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — original estimate cases: 728÷24 is near30 because24×30=720 (exact30 remainder8). For 1008÷14, exact72 and a tens estimate70 is reasonable. In the 2021 source 540÷12=45 with choices 40,50,60 has a TIE between40 and50 by absolute distance; do not auto-mark one unique nearest-ten answer unless the activity provides a further rounding convention. Both are justifiable benchmarks.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — make different quotient equations: give a quotient of78 and ask for at least four different valid positive whole-number pairs, such as78÷1,156÷2,390÷5,780÷10. Give a quotient of700 and construct700÷1,1400÷2,3500÷5,7000÷10. A student must produce novel pairs and explain divisor×quotient=dividend, not just copy one template.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: the source asks pupils to compare reasonable estimates, multiple distinct example equations, group explanations, and a visual gallery. Exact division is supporting Practice, not proof that a strategy or a set of ten genuinely distinct equations was authored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Estimate quotient using multiples",
+          "Definition": "Compare a dividend with friendly positive multiples of divisor before exact partial quotients.",
+          "Rule": "13×30=390 near364.",
+          "Example": "Exact364÷13=28."
+        },
+        {
+          "Title": "Partial quotient flexibility",
+          "Definition": "Different sums of valid divisor group-counts yield same dividend.",
+          "Rule": "364÷13=20+8.",
+          "Example": "260+104=364."
+        },
+        {
+          "Title": "Families with fixed quotient",
+          "Definition": "For integer quotient q>0 and nonzero integer divisor d>0, dividend qd gives a valid quotient q.",
+          "Rule": "390÷5=78,780÷10=78.",
+          "Example": "Multiple valid equations exist."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Dive Back Into Division",
+          "Question": "Original source warmup blank÷blank=136: choose valid equation",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1360÷10=136",
+          "Check": "Original numeric source example; incorrect distractors 1360÷100=136 and 136÷0=136 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Dive Back Into Division",
+          "Question": "Original source364÷13 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "28",
+          "Check": "Original numeric source example; incorrect distractors 30 and 26 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Dive Back Into Division",
+          "Question": "Original source364÷13 most reasonable among20 30 40",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "30",
+          "Check": "Original numeric source example; incorrect distractors 20 and 40 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Dive Back Into Division",
+          "Question": "Original source540÷12 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "45",
+          "Check": "Original numeric source example; incorrect distractors 40 and 50 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Estimate then calculate",
+          "Question": "Find364÷13 and give a tens estimate.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Use13×30=390 as a benchmark.",
+            "Subtract20×13=260 from364 to leave104.",
+            "Subtract8×13=104 and add group counts."
+          ],
+          "Answer": "Exact28, estimate near30.",
+          "Check": "13×28=364."
+        },
+        {
+          "Title": "Optional existing extension — No unique nearest benchmark tie",
+          "Question": "What is the nearest of 40,50,60 to540÷12?",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Compute the exact quotient45.",
+            "Compare distances from40 and50: both five.",
+            "Explain that a nearest-number rule alone produces a tie."
+          ],
+          "Answer": "Both40 and50 are equally near;60 is farther.",
+          "Check": "Teacher must accept both without an extra specified tie-breaking convention."
+        },
+        {
+          "Title": "Optional existing extension — Construct new quotients",
+          "Question": "Provide four equations with quotient78.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Choose distinct positive divisors1,2,5,10.",
+            "Multiply each chosen divisor by78.",
+            "Check each division by inverse multiplication."
+          ],
+          "Answer": "78÷1=78,156÷2=78,390÷5=78,780÷10=78.",
+          "Check": "Dividends are all different and inverses return78."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Guess a missing dividend without multiplying quotient by divisor",
+          "WhyWrong": "A quotient alone does not give a unique dividend.",
+          "Correction": "Choose a nonzero divisor first and calculate dividend=divisor×quotient."
+        },
+        {
+          "Mistake": "Reject one equally close tens estimate in a tie",
+          "WhyWrong": "Two benchmarks may be equally near an exact quotient.",
+          "Correction": "Compare absolute distances and state the tie if no convention resolves it."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "Original quotient28 nearest30,45 tied between40/50,72 nearest70.",
+        "Original missing-divisor equations nonunique with many valid choices.",
+        "Image-only original problems require teacher visual review.",
+        "Optional prior: Use benchmark multiplication to estimate a quotient and partial quotients to calculate.",
+        "Optional prior: A single positive integer quotient corresponds to many dividend/divisor pairs.",
+        "Optional prior: Teacher reviews distinct equations, estimation rationale and gallery explanations.",
+        "Optional prior: Source: 2021 IM Grade5 Unit8 Lesson4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-4/lesson.html. Student Facing read on verified Our-CS; original Student PDF/gated response not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Dive Back Into Division — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source warmup blank÷blank=136: choose valid equation",
+              "Cells": [
+                "1360÷10=136",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source364÷13 exact quotient",
+              "Cells": [
+                "28",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source364÷13 most reasonable among20 30 40",
+              "Cells": [
+                "30",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source540÷12 exact quotient",
+              "Cells": [
+                "45",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source540÷12: which estimates among40 50 are equally distant?",
+              "Cells": [
+                "40 and 50",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source1008÷14 exact quotient",
+              "Cells": [
+                "72",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source1008÷14 nearest among70 80 90",
+              "Cells": [
+                "70",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source blank÷blank=700 choose valid example",
+              "Cells": [
+                "7000÷10=700",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Family of quotient 78",
+          "Description": "Accessible original arithmetic and game demonstration; not source publisher playing cards/worksheet images.",
+          "Rows": [
+            {
+              "Label": "Divisor",
+              "Cells": [
+                "1",
+                "2",
+                "5",
+                "10"
+              ]
+            },
+            {
+              "Label": "Dividend",
+              "Cells": [
+                "78",
+                "156",
+                "390",
+                "780"
+              ]
+            },
+            {
+              "Label": "Quotient",
+              "Cells": [
+                "78",
+                "78",
+                "78",
+                "78"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L11",
+      "CultureCode": "en",
+      "Title": "What’s the Difference?",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L11 uses unlike-denominator subtraction, adaptive strategic reasoning, and a spinner game with a greatest difference followed by a puzzle to minimize the sum of TWO differences.",
+        "Warm-up source2/3−1/6=1/2,2/3−1/2=1/6,2/3−4/6=zero and2/3−1/4=5/12. Student explains why renaming2/3 in sixths or twelfths changes number of pieces but not quantity.",
+        "Activity1 Greatest Difference gives students multiple rounds of spinner rolls filling locked fraction numerator and denominator blanks. The GREATEST fraction difference wins; source does not provide any fixed roll sequence or official unique result.",
+        "Activity2 What is the Smallest Difference? printed numbers1,1,2,2,3,4,5,6 fill eight boxes making TWO subtraction expressions and student tries to minimize their combined result. This is an optimization under rule constraints, not a single response to unrelated invented fractions.",
+        "Previously authored examples remain optional extensions; selected source Practice includes warm-up fractions and fixed rules only, with student-generated subtraction choices and original teacher discussions evaluated by teacher.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: use unlike-denominator fractions in a repeated strategy GAME that seeks the largest difference, then an independent task seeks the SMALLEST total of two differences. The 2021 source's four rounds require recording random spinner digits as they occur; the answer depends on each player's choices and cannot be reduced to one official number.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: compare5/6−1/3=1/2 with5/6−1/4=7/12 and explain how a smaller subtrahend makes the result larger when the minuend stays fixed. Fractions must be renormalized into equal-size pieces before subtracting.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — demonstration rounds: choose digits for the numerator and denominator of two fraction differences using a given bank1,1,2,2,3,4,5,6. An original trial uses6/1−1/5=29/5 and4/2−2/3=4/3, total107/15. This trial does not claim optimality; the authentic spinner game must preserve the sequence, one-time placement decisions, four round results and the tie-break rule.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — minimize summed difference: using the same eight input digits exactly once, a first-party trial is1/2−1/3=1/6 and4/5−2/6=7/15, total19/30. Learners may choose different legal arrangements and argue whose summed differences are nearest zero. Require exact use-once checks, nonzero denominators and a declared policy if they produce a negative difference; the source allows discussion of swapping order, not blind automatic reordering.",
+        "Optional previous source-aligned or independently authored extension — Teacher boundary: randomly drawn digits, irreversibility of moves, four-round interaction, per-round winner, tie-break and choices to seek a small difference must be teacher-reviewed. Checking one computed fraction cannot certify the original competitive mathematical process."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Difference with unlike denominators",
+          "Definition": "Use equivalent fractions with common units before subtraction.",
+          "Rule": "5/6−1/4=10/12−3/12=7/12.",
+          "Example": "Subtracting a smaller positive amount leaves a larger result."
+        },
+        {
+          "Title": "Use-once digit constraints",
+          "Definition": "A legal arrangement must use all and only supplied digits in specified numerator/denominator positions.",
+          "Rule": "1,1,2,2,3,4,5,6 each occurs the required number of times.",
+          "Example": "A legal result may still be a losing trial."
+        },
+        {
+          "Title": "Different objectives",
+          "Definition": "Largest difference maximizes subtraction result; closest-to-zero differences minimize a chosen total or distance to zero.",
+          "Rule": "Compare rational values, not just numerators.",
+          "Example": "The 2021 game is teacher-reviewed."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Greatest and Smallest Fraction Differences",
+          "Question": "Original warmup2/3−1/6",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1/2",
+          "Check": "Original numeric source example; incorrect distractors 1/6 and 3/6 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Greatest and Smallest Fraction Differences",
+          "Question": "Original warmup2/3−1/2",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "1/6",
+          "Check": "Original numeric source example; incorrect distractors 1/2 and 3/6 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Greatest and Smallest Fraction Differences",
+          "Question": "Original warmup2/3−4/6",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "zero",
+          "Check": "Original numeric source example; incorrect distractors 1/6 and 2/6 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Greatest and Smallest Fraction Differences",
+          "Question": "Original warmup2/3−1/4",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "5/12",
+          "Check": "Original numeric source example; incorrect distractors 3/12 and 7/12 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Evaluate a largest-difference trial",
+          "Question": "Calculate6/1−1/5 and4/2−2/3.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Find6−1/5=29/5.",
+            "Find2−2/3=4/3.",
+            "Use fifteenths to total both trial differences."
+          ],
+          "Answer": "29/5 and4/3, combined107/15.",
+          "Check": "The digits1,1,2,2,3,4,5,6 appear once each across both differences; this is a legal demonstration, not a maximum proof."
+        },
+        {
+          "Title": "Optional existing extension — Evaluate a small-difference trial",
+          "Question": "Calculate1/2−1/3 and4/5−2/6.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Use sixths for first difference to get1/6.",
+            "Use fifteenths for second difference4/5−1/3=7/15.",
+            "Add in thirtieths."
+          ],
+          "Answer": "1/6+7/15=19/30.",
+          "Check": "Both differences nonnegative and the eight digits are used with the stated multiplicities."
+        },
+        {
+          "Title": "Optional existing extension — Explain why game outcome isn't fixed",
+          "Question": "Why is one example fraction not evidence of winning four spinner rounds?",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "The placement order depends on independently spun digits.",
+            "One player's choices and the other player's choices both affect each round.",
+            "Record each actual round, the winner and possible tie-break aggregation."
+          ],
+          "Answer": "No single fixed result; review actual turn records.",
+          "Check": "Teacher checks authenticity and legal move sequence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Change a digit after the next spinner result",
+          "WhyWrong": "The game explicitly commits each placed number and forbids changing it.",
+          "Correction": "Keep a chronological written move record."
+        },
+        {
+          "Mistake": "Accept a mathematically correct difference as a legal game submission without checking digits",
+          "WhyWrong": "The required digit bank, available positions and turn order constrain valid plays.",
+          "Correction": "Check the complete sequence and multiplicities, not only arithmetic."
+        },
+        {
+          "Mistake": "Treat fictional spinner outcomes as the only official correct source game totals.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Preserve original printed warm-up and precise game constraints; evaluate actual student play by teacher rubric."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source warmup1/2,1/6,0,5/12.",
+        "Activity1 real spinner placements learner-specific.",
+        "Activity2 optimization on exact eight printed numbers teacher assessed.",
+        "Optional prior: Subtract unlike fractions with equal-sized part units and compare rational differences.",
+        "Optional prior: Use-once constraints and four-round game decisions form part of the source task.",
+        "Optional prior: Teacher checks game records, strategy and any negative-difference policy.",
+        "Optional prior: Source: 2021 IM Grade5 Unit8 Lesson11 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-11/lesson.html. Source Student Facing read on verified Our-CS; original PDF and protected response not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Greatest and Smallest Fraction Differences — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup2/3−1/6",
+              "Cells": [
+                "1/2",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup2/3−1/2",
+              "Cells": [
+                "1/6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup2/3−4/6",
+              "Cells": [
+                "zero",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup2/3−1/4",
+              "Cells": [
+                "5/12",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Greatest Difference winning value is",
+              "Cells": [
+                "largest difference",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original game has four blank numerator/denominator slots per round?",
+              "Cells": [
+                "yes",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source number set for Smallest Difference",
+              "Cells": [
+                "1,1,2,2,3,4,5,6",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Smallest Difference activity uses HOW MANY fraction differenc",
+              "Cells": [
+                "2",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Two legal fraction subtraction trials",
+          "Description": "Accessible original arithmetic and game demonstration; not source publisher playing cards/worksheet images.",
+          "Rows": [
+            {
+              "Label": "Goal",
+              "Cells": [
+                "Larger-difference trial",
+                "Smaller-total trial"
+              ]
+            },
+            {
+              "Label": "First difference",
+              "Cells": [
+                "6/1−1/5=29/5",
+                "1/2−1/3=1/6"
+              ]
+            },
+            {
+              "Label": "Second difference",
+              "Cells": [
+                "4/2−2/3=4/3",
+                "4/5−2/6=7/15"
+              ]
+            },
+            {
+              "Label": "Combined total",
+              "Cells": [
+                "107/15",
+                "19/30"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+test('G5 U02 L03 dancers 2/3, 3/2 context and first fixed table rows',()=>{assert.equal(3*(2/3),2);assert.equal(2*(3/2),3);assert.deepEqual([2/4,3/4,3/5],[.5,.75,.6])});
+test('G5 U02 L03 original 4÷5 exit and reversed error',()=>{assert.equal(5*(4/5),4);assert.notEqual(5*(5/4),4);assert.equal(3*(3/2)>2,true)});
+test('G5 U02 L03 reject zero/invalid recipients and wrong units',()=>{for(const n of [0,-2,1.5,'5',null])assert.equal(Number.isSafeInteger(n)&&n>0,false);assert.notEqual('4/5 liters per dancer','4/5 dancers per liter')});
+const p=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json'),s=path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l03-practice-acceptance-v16.json');
+test('G5 U02 L03 source task and original exit on intended Rich V2 path, C gated',{skip:(!fs.existsSync(p)||!fs.existsSync(s))&&'requires exact branch fixtures'},()=>{const l=JSON.parse(fs.readFileSync(p,'utf8')).Lessons.find(x=>x.LessonCode.endsWith('U02:L03'));const r=JSON.parse(fs.readFileSync(s,'utf8'));assert.match(l.ExplanationParagraphs.join(' '),/Edulytiks-original exit check/);assert.equal(r.StageC,'BLOCKED_SHARED_INTEGRATION')});

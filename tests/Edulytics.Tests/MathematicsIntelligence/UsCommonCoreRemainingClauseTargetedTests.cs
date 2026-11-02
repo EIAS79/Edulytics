@@ -9,7 +9,7 @@ public sealed class UsCommonCoreRemainingClauseTargetedTests
     private static readonly string[] Families =
     [
         "usccss.g3.rectangle_unit_tiles",
-        "usccss.g5.unit_cube_count",
+        "usccss.g5.u01.l01.compare_connected_cube_models",
         "usccss.g6.observation_count",
         "usccss.hs.function_sum",
         "usccss.hs.function_composition",
@@ -24,7 +24,7 @@ public sealed class UsCommonCoreRemainingClauseTargetedTests
     private static readonly Dictionary<string, string[]> PublisherLessons = new(StringComparer.Ordinal)
     {
         ["PED:US-CCSS-MATH:G3:U02:L08"] = ["usccss.g3.rectangle_unit_tiles"],
-        ["PED:US-CCSS-MATH:G5:U01:L01"] = ["usccss.g5.unit_cube_count"],
+        ["PED:US-CCSS-MATH:G5:U01:L01"] = ["usccss.g5.u01.l01.compare_connected_cube_models"],
         ["PED:US-CCSS-MATH:G6:U08:L17"] = ["usccss.g6.observation_count"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10"] = ["usccss.hs.function_sum", "usccss.hs.function_composition"],
         ["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15"] = ["usccss.hs.inverse_composition", "usccss.hs.inverse_table", "usccss.hs.restricted_inverse"],

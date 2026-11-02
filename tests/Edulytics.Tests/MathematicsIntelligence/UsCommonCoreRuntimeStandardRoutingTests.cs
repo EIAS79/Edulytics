@@ -31,8 +31,8 @@ public sealed class UsCommonCoreRuntimeStandardRoutingTests
     {
         var narrowByOutcome = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            ["CCSS:5.G.A.1"] = "usccss.geometry.",
-            ["CCSS:5.NF.B.7"] = "usccss.fractions.",
+            ["CCSS:5.G.A.1"] = "usccss.g5.u07.",
+            ["CCSS:5.NF.B.7"] = "usccss.g5.u03.",
             ["CCSS:6.EE.A.2"] = "usccss.algebra.",
             ["CCSS:7.NS.A.2"] = "usccss.number."
         };

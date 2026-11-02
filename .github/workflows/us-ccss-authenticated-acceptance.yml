@@ -7,6 +7,10 @@ on:
       - 'tools/Edulytics.CiFixtures/**'
       - 'tools/phase29/acceptance_two_school_https.py'
       - 'tools/phase29/b001_practice_attempt_probe.py'
+      - 'tools/phase29/verify_main_content_parity.py'
+      - 'tools/phase29/verify_g5_owner_content_delta.py'
+      - 'tools/phase29/g5_stage_d_authenticated_https.py'
+      - 'tools/phase29/test_verify_g5_owner_content_delta.py'
       - 'tools/curriculum/us-ccss-g1-stage-d-technical-reconciliation.cjs'
       - 'tests/us-ccss-g1-stage-d-technical-reconciliation.test.cjs'
       - 'src/**'
@@ -65,11 +69,14 @@ jobs:
       - name: Validate fail-closed B001 Practice form classification
         run: |
           python3 -m py_compile tools/phase29/acceptance_two_school_https.py tools/phase29/b001_practice_form_coverage.py
+          python3 -m py_compile tools/phase29/g5_stage_d_authenticated_https.py
           python3 tools/phase29/b001_practice_form_coverage.py
           python3 -m py_compile tools/phase29/b001_practice_attempt_probe.py
           python3 -m py_compile tools/phase29/g2_late_companion_https.py
           python3 tools/phase29/b001_practice_attempt_probe.py
-      - name: Prove embedded content is unchanged
+      - name: Reject unapproved Grade 5 source, metadata, lesson order and translation changes
+        run: python3 -m unittest discover -s tools/phase29 -p 'test_verify_g5_owner_content_delta.py' -v
+      - name: Verify main storage parity with SHA-pinned owner-consented G5 English corrections only
         run: python3 tools/phase29/verify_main_content_parity.py
       - name: Build application and apply only disposable schema
         run: |
@@ -159,8 +166,21 @@ jobs:
             sleep 3
           done
           test "$ready" = true
+          # Grade 5 Stage D: all 148 learner pages and selected Practice, plus two exact 2021 source checks.
+          # selected families and disposable persisted correct/malformed grades.
+          # The script restores the synthetic G5 enrollment before legacy B001
+          # probes. Do not use this for the unimplemented teacher-rubric signoff.
+          python3 tools/phase29/g5_stage_d_authenticated_https.py
           python3 tools/phase29/acceptance_two_school_https.py
           python3 tools/phase29/g2_late_companion_https.py
+      - name: Preserve G5 real authenticated 148-lesson rendering and persisted Practice evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g5-stage-d-authenticated-148-lessons-technical-not-teacher-approval
+          path: /tmp/g5-stage-d-authenticated-148-lessons.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve exact 500 lesson disposable real Practice generation and grading evidence
         if: always()
         uses: actions/upload-artifact@v4

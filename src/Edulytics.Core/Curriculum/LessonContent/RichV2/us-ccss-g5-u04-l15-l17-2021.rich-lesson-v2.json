@@ -1,0 +1,548 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u04-l15-l17-im2021-source-parity-richv2-v8-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L15",
+      "CultureCode": "en",
+      "Title": "Find Missing Side Lengths",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U04:L15 Find Missing Side Lengths connects multiplication and division to area in SQUARE feet and prism volume in CUBIC feet. Learners must identify which dimension is missing, choose the correct divisor (side versus base area) and recognize insufficient data when TWO side lengths are unknown.",
+        "Warm-up Estimation Exploration The Garden: original source garden photograph with third-party Pixabay credit is not copied; pupils supply too low/about right/too high estimates and explain visual uncertainty. The photograph alone does not yield a single exact area.",
+        "Activity 1 Find the Missing Side Length Part1 original rectangle TABLE in feet: area816 sq ft and length24 ft gives width34; area1248 sq ft and WIDTH48 ft gives length26; length23 ft and width253 ft gives missing area5819 sq ft; area5796 sq ft and width36 ft gives length161. Preserve area units and avoid swapping table columns, which were independently verified from original HTML cell markup.",
+        "Activity 2 Part2 original volume/base-area TABLE: volume375 cubic ft, base area15 square ft gives height25 ft; volume1176 cubic ft and height28 ft gives base area42 square ft. Clare's source prism has volume882 cubic ft, length6 ft, width7 ft, so base area42 square ft and height21 ft; her first step 882÷6=147 must then be divided by the other width7.",
+        "Same Activity2 later prism TABLE: volume936 cubic ft, length8 ft, height9 ft -> missing width13 ft; volume1536 cubic ft, WIDTH48 ft, height2 ft -> missing length16 ft; volume1008 cubic ft, LENGTH36 ft, width and height both missing -> only their PRODUCT is 1008÷36=28 square feet. Valid pairs such as 4×7 and2×14 illustrate that the individual dimensions are NOT uniquely determined, and teacher reviews explanation.",
+        "Exact numerical Practice only checks bounded source entries and product28, explicitly without pretending width/height unique. Original diagrams/photograph, student explanations and distinct valid dimensions require TEACHER_REVIEW_REQUIRED; independent Cool-down is Edulytiks-authored.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Missing rectangle side",
+          "Definition": "Dividing area by one known perpendicular side yields the other linear dimension.",
+          "Rule": "width=area÷length.",
+          "Example": "1536 ft²÷48 ft=32 ft."
+        },
+        {
+          "Title": "Missing prism height",
+          "Definition": "Dividing volume by its known base area yields corresponding linear height.",
+          "Rule": "height=volume÷base area.",
+          "Example": "2160 ft³÷120 ft²=18 ft."
+        },
+        {
+          "Title": "Not always one answer",
+          "Definition": "Knowing volume and only ONE edge leaves the product of two missing edges, not each edge individually.",
+          "Rule": "960 ft³÷32 ft=30 ft², with several factor pairs.",
+          "Example": "5×6,3×10 or2×15 feet are all possible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source rectangle table",
+          "Question": "Complete the source area/length/width table with entries 816,1248,23×253,5796.",
+          "Method": "Area=length×width; missing side =area/known side.",
+          "Steps": [
+            "816÷24=34 ft missing width.",
+            "1248÷48=26 ft missing length.",
+            "23×253=5819 square ft missing area; 5796÷36=161 ft missing length."
+          ],
+          "Answer": "34 ft,26 ft,5819 sq ft,161 ft.",
+          "Check": "24×34=816,26×48=1248,161×36=5796."
+        },
+        {
+          "Title": "Original volume table and Clare's prism",
+          "Question": "Find height for 375/15, base area for1176/28, and height of 882 cu ft prism 6×7 base.",
+          "Method": "Volume=base area×height; base area=length×width.",
+          "Steps": [
+            "375÷15=25 ft height.",
+            "1176÷28=42 square ft base area.",
+            "Clare: base6×7=42 sq ft;882÷42=21 ft height."
+          ],
+          "Answer": "25 ft;42 sq ft;21 ft.",
+          "Check": "15×25=375,42×28=1176,6×7×21=882."
+        },
+        {
+          "Title": "Original prism table non-uniqueness",
+          "Question": "Complete source volume936 length8 height9; volume1536 width48 height2; volume1008 length36 with both other dimensions missing.",
+          "Method": "Divide by product of all known dimensions, and flag underdetermined cases.",
+          "Steps": [
+            "936÷(8×9)=13 ft width.",
+            "1536÷(48×2)=16 ft length.",
+            "1008÷36=28 sq ft =width×height; valid pairs include4×7,2×14, neither individual is fixed."
+          ],
+          "Answer": "13 ft width;16 ft length; width×height=28 sq ft (no unique pair).",
+          "Check": "Do not auto-score one chosen width/height for the last row."
+        },
+        {
+          "Title": "Optional existing extension — Lawn width",
+          "Question": "A lawn has area1536 square feet and length48 feet. Find width.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Choose convenient 48×30=1440.",
+            "Subtract1536−1440=96, which is48×2.",
+            "Add partial quotients30+2."
+          ],
+          "Answer": "32 feet.",
+          "Check": "48×32=1536 square feet."
+        },
+        {
+          "Title": "Optional existing extension — Prism height",
+          "Question": "A prism has volume2160 cubic feet and base area120 square feet.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Identify 120 ft² as base area.",
+            "Divide2160 by120.",
+            "Label linear height units."
+          ],
+          "Answer": "18 feet.",
+          "Check": "120 ft²×18 ft=2160 ft³."
+        },
+        {
+          "Title": "Optional existing extension — Explain multiple possible lengths",
+          "Question": "Volume960 cubic feet and one edge32 feet are known. Could the other edges be uniquely determined?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Divide960 by32 to find product30 square feet.",
+            "Factor30 using 5×6,3×10,2×15.",
+            "Show each pair times32 gives the original volume."
+          ],
+          "Answer": "No unique pair; 5 and6,3 and10,2 and15 feet are examples.",
+          "Check": "32×5×6=32×3×10=32×2×15=960 ft³."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Report square feet as a missing side length",
+          "WhyWrong": "Area divided by a linear side yields a linear measurement.",
+          "Correction": "Track units throughout division."
+        },
+        {
+          "Mistake": "Select one arbitrary factor pair as the only remaining prism dimensions",
+          "WhyWrong": "One known edge and volume determine only the product of the two remaining edges.",
+          "Correction": "Supply several valid factorizations or ask for another dimension."
+        },
+        {
+          "Mistake": "Treat made-up 1536 sq ft/48 ft lawn and 2160 cu ft/base120 prism as the original textbook's only values",
+          "WhyWrong": "Printed source has multiple exact table cells, with an intentional last underdetermined 1008 cu ft prism.",
+          "Correction": "Restore all original table rows with correct column placements, distinguish square vs cubic units and record ambiguous last row."
+        }
+      ],
+      "SummaryPoints": [
+        "Original area table unknowns: width34,length26,area5819,length161.",
+        "Source volume/base table: 375/15=25 ft height,1176/28=42 sq ft base.",
+        "Clare's 882/(6×7)=21 ft height; source 936/(8×9)=13 ft width,1536/(48×2)=16 ft length.",
+        "Source 1008 cu ft and length36 means width×height=28 square ft; infinitely many positive pairs, no single width.",
+        "Teacher reviews source photo, units and underdetermined geometry; selected digital answers exclude freehand explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source rectangular area unknowns",
+          "Description": "Edulytiks reconstructed from verified teacher HTML table cell positions, not publisher artwork.",
+          "Rows": [
+            {
+              "Label": "Area square ft",
+              "Cells": [
+                "816",
+                "1248",
+                "5819",
+                "5796"
+              ]
+            },
+            {
+              "Label": "Length ft",
+              "Cells": [
+                "24",
+                "26",
+                "23",
+                "161"
+              ]
+            },
+            {
+              "Label": "Width ft",
+              "Cells": [
+                "34",
+                "48",
+                "253",
+                "36"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source prism volumes and missing dimensions",
+          "Description": "Source exact values; 1008 cu ft at length36 has NO UNIQUE width or height.",
+          "Rows": [
+            {
+              "Label": "Volume cubic ft",
+              "Cells": [
+                "375",
+                "1176",
+                "882",
+                "936",
+                "1536",
+                "1008"
+              ]
+            },
+            {
+              "Label": "Knowns/derived",
+              "Cells": [
+                "base15→height25",
+                "h28→base42",
+                "6×7→height21",
+                "8×?×9→width13",
+                "?×48×2→length16",
+                "length36→width×height28"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L16",
+      "CultureCode": "en",
+      "Title": "World’s Record Noodle Soup",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U04:L16 World’s Record Noodle Soup has a Chinese food company with a Guinness-record single continuous noodle approximately TEN THOUSAND ONE HUNDRED NINETEEN FEET long (10119 ft), equally shared among FOUR HUNDRED people (400). The source fraction remaining after division must be allocated fairly; neither treating the length as an unrelated piece count nor discarding remainder matches the task.",
+        "Warm-up Notice and Wonder World Record Event: original source describes the approximately10119-foot longest noodle. Pupils explain physical scale and what length in FEET means. Source photo/media not reproduced and length is approximate in the real world while source arithmetic treats the stated 10119 as the modeled whole.",
+        "Activity 1 How Many Feet in One Serving? 10119÷400. Reason with 400×25=10000, slightly BELOW total10119; everyone receives MORE than25 feet. Exactly in the mathematical model, after25 whole feet each, 119 feet remain to share among400: share is 25+119/400 feet =25.2975 feet per person. Students estimate before full calculation and decide if their estimate is lower or higher with source inequalities.",
+        "Activity 2 Han's Estimate: Han says each person will get about 25 1/4 feet (25.25). For400 people his claim corresponds to 400×(25+1/4)=10100ft, only19ft short of the modeled10119; exact share exceeds Han's estimate by 19/400ft (0.0475ft) per person. His estimate is reasonable, slightly low; teacher reviews explanation instead of an unverified publisher answer key.",
+        "Exact digital Practice validates bounded INTEGER subskills such as the 25 whole feet per person,119 leftover feet,10000 baseline,10100 Han total and19 aggregate difference. These are NOT claimed to be the full fractional share; the mixed-number 25 119/400, visual fair sharing, real-world context and qualitative estimation remain TEACHER_REVIEW_REQUIRED. Earlier 2050÷80=25 5/8 remains an optional correct extension only. Edulytiks authored independent Cool-down shares8011ft among400.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Division with remainder as fraction",
+          "Definition": "When a length is shared equally and remainder remains, divide it as well.",
+          "Rule": "a÷b=q+r/b with0≤r<b.",
+          "Example": "2050÷80=25+50/80=25 5/8."
+        },
+        {
+          "Title": "Continuous noodle length",
+          "Definition": "The length of one object can be partitioned into equal portions without treating the fraction as new whole noodles.",
+          "Rule": "Every share multiplied by diner count reconstructs original length.",
+          "Example": "80×25 5/8 feet=2050 feet."
+        },
+        {
+          "Title": "Fixed total with more recipients",
+          "Definition": "More equal shares from a fixed positive total yield smaller share lengths.",
+          "Rule": "2050÷100<2050÷80.",
+          "Example": "20 1/2 ft<25 5/8 ft."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original record noodle source fractional share",
+          "Question": "A 10119-foot noodle is shared equally by400 diners. How many feet per person?",
+          "Method": "Whole-number quotient and leftover part divided by all people.",
+          "Steps": [
+            "400×25=10000 feet are allocated as25 feet to each diner.",
+            "Original modeled length minus that is119 feet left.",
+            "Each receives an additional 119/400 foot; no noodle discarded."
+          ],
+          "Answer": "25 119/400 feet, or25.2975 feet per person.",
+          "Check": "400×25+119=10119."
+        },
+        {
+          "Title": "Source Han about25 and one quarter",
+          "Question": "How does Han's 25¼ foot estimate per diner compare to exact mathematical share?",
+          "Method": "Multiply his estimated share by total diners and compare to source total.",
+          "Steps": [
+            "400×25=10000, and400×1/4=100 feet.",
+            "Han's total=10100 feet,19 feet below10119.",
+            "Per person Han underestimates by19/400 feet."
+          ],
+          "Answer": "Reasonable but slightly low; true modeled share is25 119/400 feet.",
+          "Check": "119/400 >1/4 because119>100."
+        },
+        {
+          "Title": "Estimate without completing source division",
+          "Question": "Is25 feet per person above or below 10119÷400?",
+          "Method": "Benchmark 400×25=10000 compared to stated whole.",
+          "Steps": [
+            "25 groups of400 equals10000.",
+            "Original total is10119, which exceeds10000.",
+            "Equal share therefore exceeds25 feet per diner."
+          ],
+          "Answer": "25 feet is lower than the exact share.",
+          "Check": "Bounded reasoning without calculating full quotient."
+        },
+        {
+          "Title": "Optional existing extension — Find a mixed quotient",
+          "Question": "2050 feet of noodle among80 diners. Length per person?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Remove80×25=2000 feet.",
+            "50 feet remain, shared equally as50/80 feet each.",
+            "Simplify50/80=5/8."
+          ],
+          "Answer": "25 5/8 feet per diner.",
+          "Check": "80×25=2000 and80×5/8=50, total2050 feet."
+        },
+        {
+          "Title": "Optional existing extension — Change diner count",
+          "Question": "If the same 2050-foot noodle is shared among100 diners, what is the share?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Compute100×20=2000 feet.",
+            "Split remaining50 feet among100 diners.",
+            "Simplify50/100=1/2 foot."
+          ],
+          "Answer": "20 1/2 feet per diner.",
+          "Check": "100×20 1/2=2050 feet."
+        },
+        {
+          "Title": "Optional existing extension — Check a wrong remainder interpretation",
+          "Question": "A student says each diner gets25 feet, while50 extra feet should simply be thrown away. Explain the error.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Identify leftover50 feet from the whole.",
+            "The sharing goal is equal division of the entire single noodle.",
+            "Give each diner50/80 feet beyond the25 feet."
+          ],
+          "Answer": "Each gets25 5/8 feet; no length is unaccounted for.",
+          "Check": "Teacher verifies the meaning of the fraction from the fixed continuous original."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore the remainder in exact equal sharing",
+          "WhyWrong": "The continuous noodle has length beyond the whole-number partial share.",
+          "Correction": "Represent remainder divided by recipient count as a fractional length."
+        },
+        {
+          "Mistake": "Read the quotient remainder as extra whole people",
+          "WhyWrong": "The remainder is measured in feet, not in number of diners.",
+          "Correction": "Label every intermediate quantity in its proper units."
+        },
+        {
+          "Mistake": "Substitute fabricated original noodle 2050ft/80 diners and discard continuous length remainder",
+          "WhyWrong": "Source original specifies approx10119ft and400 diners, whose fractional remainder119/400 differs substantially.",
+          "Correction": "Restore10119÷400, use25 whole feet plus119/400, and compare directly to Han's25¼ estimate."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source record: one noodle approximately10119 feet long, serving400 people.",
+        "Full mathematical share=10119/400=25 119/400=25.2975 feet/person.",
+        "Han's about25 1/4 foot share is slightly low by19/400 ft/person.",
+        "Selected Practice only checks integer components; fractional sharing model and estimates are teacher reviewed.",
+        "Prior 2050ft/80 example remains optional extension and is NOT original source."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source 10119-foot noodle and Han's fraction estimate",
+          "Description": "Edulytiks accessible arithmetic summary; original noodle photo not reproduced.",
+          "Rows": [
+            {
+              "Label": "Original source length / diners",
+              "Cells": [
+                "10119 ft",
+                "400"
+              ]
+            },
+            {
+              "Label": "Whole feet/person",
+              "Cells": [
+                "25 ft",
+                "10000 ft allocated"
+              ]
+            },
+            {
+              "Label": "Remainder distributed",
+              "Cells": [
+                "119 ft",
+                "119/400 ft/person"
+              ]
+            },
+            {
+              "Label": "Exact model share",
+              "Cells": [
+                "25 119/400 ft",
+                "25.2975 ft"
+              ]
+            },
+            {
+              "Label": "Han's share estimate",
+              "Cells": [
+                "25 1/4 ft",
+                "19/400 ft/person low"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L17",
+      "CultureCode": "en",
+      "Title": "Fractions as Partial Quotients (optional)",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U04:L17 Fractions as Partial Quotients (optional) asks students to recognize that a quotient may be represented as a fraction and as a SUM of fractions with the SAME denominator. A correct full quotient requires all numerators collectively to equal the source dividend; not all individual partial fractions need integer values.",
+        "Warm-up What Do You Know About 60/6+6/6?: original sum10+1=11, equal 66/6. Teacher asks students to notice numerator partitioning and explain why shared denominator6 is preserved.",
+        "Activity 1 Select Expressions: original target 78/6=13. VALID source options are 78÷6;66/6+12/6;60/6+18/6;and(60÷6)+(18÷6). INVALID are77/6+8/6=85/6 and(60÷6)+18=28. Students must select ALL true representations, defend rejection of close distractors, and show why sum of numerators corresponds to78, not merely choose one correct number.",
+        "Activity 2 Choose One Expression: all three printed source decompositions of165÷15=11 are valid:75/15+80/15+10/15, (30+30+30+60+15)/15 and150/15+15/15. The first includes 80/15, not an integer quotient, and is still a valid fraction sum; do not falsely disqualify it. For540÷18=30 the valid printed options include180/18+180/18+180/18,500/18+40/18,and360/18+180/18. Pupils compare helpfulness of decompositions and explain their choices.",
+        "Original fraction-sum selection, source expression validity, partner proof and explanation of noninteger partial chunks remain TEACHER_REVIEW_REQUIRED. Existing 84÷7 first-party examples are correct but OPTIONAL EXTENSIONS, not source tasks. The exact digital family supports only integer-valued source subproblems and targets; it is not certified to grade open source fraction-sum sets. Independent Edulytiks Cool-down uses96÷8.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "A fraction is division",
+          "Definition": "The fraction numerator divided by denominator expresses the exact quotient.",
+          "Rule": "84/7=84÷7=12.",
+          "Example": "84 objects divided into7 groups yields12."
+        },
+        {
+          "Title": "Partial quotient fractions add",
+          "Definition": "Splitting the numerator into parts and dividing each by the SAME divisor preserves value.",
+          "Rule": "(a+b)/d=a/d+b/d for positive d.",
+          "Example": "70/7+14/7=84/7."
+        },
+        {
+          "Title": "Check an entire expression",
+          "Definition": "A candidate sum may contain valid fractions yet not equal the target quotient.",
+          "Rule": "Numerators must total the original dividend when denominators are the same.",
+          "Example": "71/7+14/7=85/7, not84/7."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source 78/6 select all",
+          "Question": "Which original expressions are equivalent to78/6?",
+          "Method": "Conserve numerator total across common denominator and evaluate grouping.",
+          "Steps": [
+            "78÷6=13;66/6+12/6=78/6.",
+            "60/6+18/6 and60÷6+18÷6 both equal13.",
+            "77/6+8/6=85/6 and60÷6+18=28 are not equivalent."
+          ],
+          "Answer": "Four valid source choices; reject two distractors.",
+          "Check": "Teacher checks select-all classification and explanation."
+        },
+        {
+          "Title": "Original source 165÷15 fraction sums",
+          "Question": "Use three printed fractional numerator decompositions for165/15.",
+          "Method": "Any sum with denominator15 and numerator total165 is equivalent.",
+          "Steps": [
+            "75+80+10=165, even if 80/15 is not an integer.",
+            "30+30+30+60+15=165.",
+            "150+15=165; each division gives11 in total."
+          ],
+          "Answer": "All three representations equal11.",
+          "Check": "Partial fractions do not need integer values."
+        },
+        {
+          "Title": "Original source 540÷18 choose helpful form",
+          "Question": "Compare180/18+180/18+180/18;500/18+40/18;360/18+180/18.",
+          "Method": "Choose numerator decompositions and evaluate whole quotient.",
+          "Steps": [
+            "180+180+180=540 ->10+10+10=30.",
+            "500+40=540 gives another valid fractional sum.",
+            "360+180=540 gives20+10=30 and may be easiest."
+          ],
+          "Answer": "30 for all three source representations.",
+          "Check": "Teacher evaluates reasoning about relative helpfulness."
+        },
+        {
+          "Title": "Optional existing extension — Select all exact quotient expressions",
+          "Question": "Which expressions equal84/7: 84÷7,70/7+14/7,63/7+21/7,71/7+14/7?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Compute target84/7=12.",
+            "Check numerator sums70+14 and63+21 both84.",
+            "Reject71+14=85."
+          ],
+          "Answer": "The first three are equivalent; the last is not.",
+          "Check": "84÷7=70/7+14/7=63/7+21/7=12."
+        },
+        {
+          "Title": "Optional existing extension — Compare two useful decompositions",
+          "Question": "Find165÷15 using fractions.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Split as150/15+15/15=10+1.",
+            "Alternatively split75/15+90/15=5+6.",
+            "Compare which partial calculations are convenient."
+          ],
+          "Answer": "11 by either method.",
+          "Check": "15×11=165."
+        },
+        {
+          "Title": "Optional existing extension — Spot a false missing denominator",
+          "Question": "Does70÷7+14 equal84÷7?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Find70÷7=10.",
+            "Add the undivided14 to get24.",
+            "Compare with84÷7=12 and locate the missing division by7."
+          ],
+          "Answer": "No; it equals24 instead of12.",
+          "Check": "Replace14 by14÷7=2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add a numerator not divided by the same divisor",
+          "WhyWrong": "The decomposition must distribute the division across EVERY numerator part.",
+          "Correction": "Keep /7 on both parts when splitting84/7."
+        },
+        {
+          "Mistake": "Treat any two true quotient expressions as a correct matching pair",
+          "WhyWrong": "Correctly computed individual fractions may sum to a different total.",
+          "Correction": "Add numerator contributions and compare with original dividend before accepting."
+        },
+        {
+          "Mistake": "Use invented84/7 rather than source78/6 and falsely reject80/15 as a noninteger partial quotient",
+          "WhyWrong": "The source explicitly demonstrates fraction sums whose individual numerators need not be divisible by the common denominator.",
+          "Correction": "Restore source78/6,165/15,540/18 and explain conservation of summed numerators including noninteger parts."
+        }
+      ],
+      "SummaryPoints": [
+        "Source warmup60/6+6/6=11.",
+        "Original 78/6 select-all: first four listed expressions valid, last two invalid.",
+        "Source165÷15=11 with three valid decompositions, even noninteger individual fractions.",
+        "Source540÷18=30 with three printed valid fraction-sum forms.",
+        "Teacher reviews original select-all, fraction sums and helpfulness reasoning; fixed digital exact cases only supplement."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source fraction-partial-quotient comparisons",
+          "Description": "First-party accessible numerical truth table. The original source select-all and explanations require human review.",
+          "Rows": [
+            {
+              "Label": "78/6",
+              "Cells": [
+                "=13",
+                "4 valid expressions",
+                "2 invalid distractors"
+              ]
+            },
+            {
+              "Label": "165/15",
+              "Cells": [
+                "=11",
+                "75+80+10",
+                "30+30+30+60+15",
+                "150+15"
+              ]
+            },
+            {
+              "Label": "540/18",
+              "Cells": [
+                "=30",
+                "180+180+180",
+                "500+40",
+                "360+180"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

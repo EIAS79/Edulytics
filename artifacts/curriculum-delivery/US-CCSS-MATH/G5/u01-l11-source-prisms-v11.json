@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
+  "grade": "US-CCSS-MATH:G5:IM-K5-2021",
+  "sourceEdition": "IM K-5 original 2021 first edition",
+  "reviewDate": "2026-10-29",
+  "reviewClassification": "GRADE5_DEFECT_FIXED",
+  "disposition": "Fixed Grade-5-only Rich V2 teaching omission: Han's partly-filled 10x6x5 box; detailed original T-shaped raised bed, valid 18x3x4 rearrangement, Noah's alternate design and open-response rubric. Did not rewrite other five lessons in this same sidecar.",
+  "sourceAccess": {
+    "method": "Public original 2021 source website and publisher Student Task PDF through web browser; no remote computer connected",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-11/preparation.html",
+    "teacherLessonAndStudentFacing": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-11/lesson.html",
+    "originalStudentTaskPdf": "https://cms-assets.illustrativemathematics.org/ml9hazf30oltxwf5k92ng6lv2osq",
+    "originalStudentTaskPdfPagesInspected": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "publisherFiguresVisualInspection": "Original PDF page 1 warmup prism drawings A-D; page 2 Han 10x6x5 cube box; page 3 T garden 10x3x4 plus 8x3x4 feet; page 4 alternate dimensions and section summary.",
+    "assetRightsIndividuallyChecked": false,
+    "sourceTextLicenseNoted": "Public source footer cites Creative Commons Attribution 4.0; source marks/logos and third-party embedded assets have separate rights. No publisher diagram copied.",
+    "gatedCooldown": "NOT_VERIFIED — teacher login required"
+  },
+  "studentTaskPdfChecked": true,
+  "sourceFiguresVisuallyInspected": true,
+  "gatedCooldownChecked": false,
+  "individualImageRightsChecked": false,
+  "standards": {
+    "Addressing": [
+      "5.MD.C",
+      "5.MD.C.5"
+    ],
+    "BuildingTowards": "NOT_LISTED_ON_LESSON_PREPARATION"
+  },
+  "observedTaskSequence": [
+    "Warm-up Which One Doesn't Belong: four prism drawings A-D, multiple mathematically defensible classifications",
+    "11.1 Han's partly packed 10 cubes by 6 cubes by 5 cubes box, full capacity and explanation",
+    "11.1 Clare's storage 4 ft by 9 ft by 5 ft; alternative multiplication grouping",
+    "11.1 Mai's walk-in closet: area 30 ft² and height 9 ft, without invented floor sides",
+    "11.2 raised garden: 10x3x4 ft bar plus face-joined 8x3x4 ft stem (T layout); expression, numeric volume and units",
+    "11.2 Noah's different side lengths for same total volume; select and justify a garden design",
+    "Lesson synthesis and separate section summary on decomposing two prisms; gated Cool-down not inspected"
+  ],
+  "mathChecks": [
+    {
+      "context": "Han",
+      "oneLayer": 60,
+      "layers": 5,
+      "expected": 300,
+      "unit": "unit cubes"
+    },
+    {
+      "context": "Clare",
+      "dimensionsFeet": [
+        4,
+        9,
+        5
+      ],
+      "expected": 180,
+      "unit": "ft³"
+    },
+    {
+      "context": "Mai",
+      "floorAreaSquareFeet": 30,
+      "heightFeet": 9,
+      "expected": 270,
+      "unit": "ft³"
+    },
+    {
+      "context": "Original T garden",
+      "componentDimensionsFeet": [
+        [
+          10,
+          3,
+          4
+        ],
+        [
+          8,
+          3,
+          4
+        ]
+      ],
+      "volumesCubicFeet": [
+        120,
+        96
+      ],
+      "expected": 216,
+      "sharedFaceSquareFeet": 12,
+      "overlapInteriorCubicFeet": 0
+    },
+    {
+      "context": "Rearranged check",
+      "straightDimensionsFeet": [
+        18,
+        3,
+        4
+      ],
+      "expected": 216,
+      "warning": "Same volume, different outline; not claim original shape is straight prism"
+    },
+    {
+      "context": "Noah valid example",
+      "componentDimensionsFeet": [
+        [
+          12,
+          3,
+          4
+        ],
+        [
+          6,
+          3,
+          4
+        ]
+      ],
+      "expected": 216,
+      "warning": "Illustrative independently authored example, not unique source answer"
+    }
+  ],
+  "rubric": {
+    "correct": "Right spatial layout, unit dimensions, appropriate base×height or l×w×h product, two non-overlapping face-joined garden prisms, cubic feet, credible changed dimensions and explanatory comparison",
+    "reject": "Wrong 300-cube capacity, wrong units, double counting shared interiors, disjoint pieces, unsupported geometry, merely quoting 216 for an invalid design",
+    "malformed": "Missing, nonpositive or non-integer counts for discrete cube check; mixed or contradictory measurement units; invalid/overlapping construction",
+    "teacherReview": "Open figure classification, student's sketch and face sharing, Noah's proposed design and student's preferred design with reason; numeric-only Practice cannot certify these"
+  },
+  "sourceVsCandidate": {
+    "before": "L11 Rich V2 sidecar omitted the source's Han 300-cube task and did not explicitly teach 18×3×4 garden rearrangement or Noah's same-volume changed design.",
+    "after": "Grade-5-only source task fidelity repair committed. Independently authored text and tables; no publisher image reuse.",
+    "baselineCanonicalPack": "Still contains generic and ungrammatical L11 learner translation ('You will the mathematical purpose...') and abbreviated source tasks. Actual persisted/selected content precedence, safe canonical version transitions and tenant-safe migration remain unverified; do not assume Rich V2 is effective.",
+    "contentVersion": "Unchanged intentionally; safe production version transition belongs to Supervisor 1 integration issue #592."
+  },
+  "testEvidence": {
+    "file": "tests/academic-us-ccss-g5-u01-prism-palooza-v11.test.cjs",
+    "committedTestBlobSha": "f5f46a73439c7d719b92eda17c37b14fe73b9433",
+    "localNodeGitBlobSha": "f5f46a73439c7d719b92eda17c37b14fe73b9433",
+    "exactByteParity": true,
+    "command": "node --test /mnt/data/academic-us-ccss-g5-u01-prism-palooza-v11.exact.test.cjs",
+    "nodeVersion": "v22.16.0",
+    "environment": "Isolated ChatGPT container; neither Our-CS nor Anas_Nitro, no repository clone",
+    "passed": 5,
+    "failed": 0,
+    "skipped": 2,
+    "limitations": "Five actual math/construction tests on exact committed test bytes. Two source-sidecar and evidence fixtures SKIPPED because full branch checkout not mounted; .NET and live tests NOT_RUN. GitHub CI on final head separate."
+  },
+  "stageA": "NOT_COMPLETE",
+  "stageB": "NOT_VERIFIED",
+  "stageC": "NOT_VERIFIED",
+  "stageD": "NOT_VERIFIED",
+  "academicAccepted": false,
+  "ownerUat": "NOT_RUN",
+  "release": "NO_GO",
+  "sharedDependencies": [
+    "https://github.com/EIAS79/Edulytics/issues/592"
+  ]
+}

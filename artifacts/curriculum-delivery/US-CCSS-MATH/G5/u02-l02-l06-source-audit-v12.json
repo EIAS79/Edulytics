@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "kind": "US_G5_U02_V12_LESSON_SOURCE_AUDIT",
+  "date": "2026-10-30",
+  "lessonCodes": [
+    "PED:US-CCSS-MATH:G5:U02:L02",
+    "PED:US-CCSS-MATH:G5:U02:L03",
+    "PED:US-CCSS-MATH:G5:U02:L04",
+    "PED:US-CCSS-MATH:G5:U02:L05",
+    "PED:US-CCSS-MATH:G5:U02:L06"
+  ],
+  "classification": "CONTENT_REPAIR",
+  "candidateLessonCountPreserved": 148,
+  "source": {
+    "publisher": "Illustrative Mathematics 2021 edition",
+    "teacherLessonPattern": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-{2..6}/lesson.html",
+    "teacherPreparationPattern": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-{2..6}/preparation.html",
+    "originalStudentPdfPagesInspected": {
+      "L02": 3,
+      "L03": 3,
+      "L04": 0,
+      "L05": 4,
+      "L06": 3
+    },
+    "L04PdfBlocker": "Original student PDF oversized and not read",
+    "L02BlacklineMasterInspected": false,
+    "protectedCooldownInspected": false,
+    "externalImageLicensingVerified": false
+  },
+  "defects": [
+    {
+      "lesson": "L02",
+      "fixed": "Restored Card Sort: Sandwich Match with 2÷5 and 3÷2, one-sandwich four-row table, explanation and model-matching rubric",
+      "remaining": "Publisher blackline card inventory and exact learner interactions not checked"
+    },
+    {
+      "lesson": "L03",
+      "fixed": "Restored dancers Interpret Expressions table with 2÷4, 3÷4, 3÷5 and open rows; differentiated Mai's incorrect 3÷2 context"
+    },
+    {
+      "lesson": "L04",
+      "fixed": "Restored both inverse Grams of Gold problems: 3×(4/3)=4 grams and 5÷(5/6)=6 friends",
+      "remaining": "Separate source PDF and original images not verified"
+    },
+    {
+      "lesson": "L05",
+      "fixed": "Restored source constrained blueberry choices and general proof a÷b=a/b for nonzero b; does not treat one numeric example as universal proof"
+    },
+    {
+      "lesson": "L06",
+      "fixed": "Corrected source diagram A three half-shaded unit bars, B full first bar/half second/blank third; source B is not one long three-mile bar"
+    }
+  ],
+  "codePaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json"
+  ],
+  "testPaths": [
+    "tests/academic-us-ccss-g5-u02-sharing-v12.test.cjs",
+    "tests/academic-us-ccss-g5-u02-l06-diagrams-v12.test.cjs"
+  ],
+  "nativeNode": {
+    "version": "22.16.0",
+    "command": "node --test /mnt/data/g5_v12_isolated/tests/*.test.cjs",
+    "passed": 8,
+    "failed": 0,
+    "skipped": 2,
+    "exactTestGitBlobShas": [
+      "4473ed86ab497168b97bc9d9deca64e01628885e",
+      "981937b9ef0752b88fc6e3ea137f77790660e94c"
+    ],
+    "scope": "Isolated original math and invalid-model checks only; full branch fixtures absent"
+  },
+  "connectorGradeOwnedRichJsonChecks": {
+    "passed": 5,
+    "scope": "GitHub current branch JSON parsed and source-specific lesson markers checked in memory; not native full-repository tests"
+  },
+  "academic": {
+    "stageAAccepted": 0,
+    "stageBEffective": 0,
+    "stageCSelectedPractice": 0,
+    "stageDVerified": 0,
+    "ownerUat": "NOT_RUN",
+    "dotnet": "NOT_RUN",
+    "authenticatedStudentTeacher": "NOT_RUN",
+    "database": "NOT_RUN",
+    "finalRelease": "NO_GO"
+  },
+  "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "sharedTestsPR": "https://github.com/EIAS79/Edulytics/pull/601",
+  "next": "PED:US-CCSS-MATH:G5:U02:L07"
+}

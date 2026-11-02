@@ -1,0 +1,938 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u04-l06-l10-im2021-source-parity-richv2-v10-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L06",
+      "CultureCode": "en",
+      "Title": "Standard Algorithm: Multi-digit Numbers with Composing PLC Activity",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U04:L06 is Standard Algorithm: Multi-digit Numbers with Composing PLC Activity. Use multi-digit factors and the standard algorithm with correct carrying in partial rows AND final addition. Prior source-aligned L05 lacked composing; this lesson changes the mathematical situation.",
+        "Warm-up Number Talk Three Factors: original (2×3)×10=60, (2×40)×10=800, (2×200)×10=4000 and (2×243)×10=4860. Pupil explains why tens factor 10 can be regrouped with the other factors without changing total.",
+        "Activity 1 Compose a New Unit: actual source 241×23=5543. Lin records 241×3=723 and 241×20=4820 then adds to 5543. The source asks what the 1 written above 241 represents in Lin's work: adding 7 hundreds and 8 hundreds creates 15 hundreds, hence one newly composed THOUSAND. It also asks learners to compute 182×41=7462 and 304×23=6992 by the standard algorithm. Original handwritten regrouping marks and reasoning require teacher review.",
+        "Activity 2 All the Products: original 647×9=5823, 647×50=32350, 647×59=38173 (sum of the first two), and 264×38=10032. Ask for correct columns, carry values and partial rows. Do not substitute the unrelated 273×24 source claim; retain that mathematically valid example only as an extension.",
+        "Independent Edulytiks Cool-down 372×46=17112 asks the pupil to show both partial rows and explain carried tens/hundreds. Exact selected numeric Practice cannot certify their original written standard algorithm. Original gated Cool-down and publisher figure artwork not independently verified.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Carry new units during multiplication",
+          "Definition": "Ten of one place become one of the next larger place.",
+          "Rule": "In 273×4, 4×3=12 creates 1 ten, and 4×7+1=29 creates 2 hundreds.",
+          "Example": "The result is 1092."
+        },
+        {
+          "Title": "The tens partial product",
+          "Definition": "The second digit of a two-digit multiplier represents groups of ten.",
+          "Rule": "273×20=5460, not 546.",
+          "Example": "273×24=1092+5460."
+        },
+        {
+          "Title": "Add the two partial products",
+          "Definition": "The standard algorithm sums ones-row and tens-row contributions after any carries.",
+          "Rule": "368×57=368×7+368×50.",
+          "Example": "2576+18400=20976."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original Lin's 241×23",
+          "Question": "Explain source Lin's 241×23=5543, the two rows and the carried 1.",
+          "Method": "Source standard algorithm with partial rows and thousand carry.",
+          "Steps": [
+            "Ones factor 3 gives 241×3=723.",
+            "Tens factor 2 tens gives 241×20=4820.",
+            "Add 723+4820=5543; 7 hundreds+8 hundreds=15 hundreds, compose one thousand."
+          ],
+          "Answer": "5543; carried 1 denotes one thousand in the row addition.",
+          "Check": "241×23=5543."
+        },
+        {
+          "Title": "Original source final products",
+          "Question": "Compute 182×41,304×23,647×9,647×50,647×59 and 264×38.",
+          "Method": "Place-value composing and correct tens shift.",
+          "Steps": [
+            "182×41=7462 and 304×23=6992.",
+            "647×9=5823; 647×50=32350.",
+            "647×59=32350+5823=38173; 264×38=10032."
+          ],
+          "Answer": "7462,6992,5823,32350,38173,10032.",
+          "Check": "Products and partial addition agree."
+        },
+        {
+          "Title": "Original three-factor Number Talk",
+          "Question": "Find (2×3)×10,(2×40)×10,(2×200)×10,(2×243)×10.",
+          "Method": "Associativity and multiplication by ten.",
+          "Steps": [
+            "2×3×10=60.",
+            "2×40×10=800 and 2×200×10=4000.",
+            "2×243×10=4860."
+          ],
+          "Answer": "60,800,4000,4860.",
+          "Check": "Use distributive/associative laws."
+        },
+        {
+          "Title": "Optional existing extension — One composed two-row product",
+          "Question": "Find 273×24, recording the new units.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Calculate 273×4=1092 and show the carried ten and hundreds.",
+            "Calculate 273×20=5460, shifting the tens row.",
+            "Add both place-value-aligned partial products."
+          ],
+          "Answer": "6552.",
+          "Check": "273×24=273×(20+4)=5460+1092."
+        },
+        {
+          "Title": "Optional existing extension — Many compositions",
+          "Question": "Calculate 368×57.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Find 368×7=2576 with regrouping.",
+            "Find 368×50=18400 and explain the factor of ten.",
+            "Add 2576+18400."
+          ],
+          "Answer": "20976.",
+          "Check": "368×(7+50)=20976."
+        },
+        {
+          "Title": "Optional existing extension — Diagnose wrong tens alignment",
+          "Question": "A pupil records 273×20 as 546. Explain what was omitted.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Interpret 20 as two tens, not two ones.",
+            "Multiply 273×2=546 only as an intermediate step.",
+            "Scale by ten to obtain 5460."
+          ],
+          "Answer": "The tens partial product should be 5460.",
+          "Check": "The original full product must exceed the tens-row amount 5460."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a carry as an extra digit with no unit",
+          "WhyWrong": "A carried 2 in the hundreds column means two hundreds, not two ones.",
+          "Correction": "Connect each carry to the result of multiplying units and regrouping."
+        },
+        {
+          "Mistake": "Place the tens row in the ones column",
+          "WhyWrong": "The second multiplier digit counts tens, not ones.",
+          "Correction": "Shift the entire tens partial product one place to the left."
+        },
+        {
+          "Mistake": "Present invented 273×24 as the textbook's Lin 241×23 algorithm or omit 647×59",
+          "WhyWrong": "The original source compares specific products and asks for what the written carried 1 represents.",
+          "Correction": "Restore Lin's 241×23 and all source composing exercises with correct place-value explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "Warmup original (2×3,40,200,243)×10 ->60,800,4000,4860.",
+        "Source Lin 241×23=5543 from 723+4820; the carried 1 is a thousand.",
+        "Source 182×41=7462,304×23=6992.",
+        "Source 647×9=5823,×50=32350,×59=38173; 264×38=10032.",
+        "Teacher reviews composing marks and source written algorithms; numeric choice is supplementary."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original Lin standard algorithm source partials",
+          "Description": "First-party place-value model for the original 241×23; original publisher handwritten marks remain teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "241×3",
+              "Cells": [
+                "723"
+              ]
+            },
+            {
+              "Label": "241×20",
+              "Cells": [
+                "4820"
+              ]
+            },
+            {
+              "Label": "combined hundreds",
+              "Cells": [
+                "7+8=15 hundreds",
+                "carry 1 thousand"
+              ]
+            },
+            {
+              "Label": "sum",
+              "Cells": [
+                "5543"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source All Products numbers",
+          "Description": "Source numeric results; student original algorithm annotations teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "647×9",
+              "Cells": [
+                "5823"
+              ]
+            },
+            {
+              "Label": "647×50",
+              "Cells": [
+                "32350"
+              ]
+            },
+            {
+              "Label": "647×59",
+              "Cells": [
+                "38173"
+              ]
+            },
+            {
+              "Label": "264×38",
+              "Cells": [
+                "10032"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L07",
+      "CultureCode": "en",
+      "Title": "Build Multiplication Fluency",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U04:L07 Build Multiplication Fluency: compare representations of an identical product, play a pupil-selected greater-product game using actual physical number cards, and optionally investigate carrying new units. Source number-card deck itself was not independently recovered from the teacher HTML and its numerical contents MUST NOT be fabricated as official original cards.",
+        "Warm-up Notice and Wonder Same Solution: two source standard-algorithm records show 417×28=11676 and 28×417=11676. One recording uses partial rows 3336 and 8340; another records 196,280,11200. Both are valid forms, demonstrating commutativity and place-value products; teacher reviews diagram details.",
+        "Activity 1 Greatest Product: the original game asks partners to choose number cards for a three-digit by two-digit multiplication, form valid numbers, compare products and award a point over five rounds. Teacher supplies the actual source cards, and learners explain their decisions. Existing Edulytiks 864×21,821×64,642×81 models remain explicitly FIRST-PARTY game examples only; their digits are not claimed as the source deck. Original strategy and card legality remain TEACHER_REVIEW_REQUIRED.",
+        "Activity 2 optional Desperately Seeking 9 New Units: original source 256×5=1280,587×8=4696,809×9=7281. Determine how many tens and hundreds are carried in each and debate why a digit-by-digit 9×9=81 plus at most 8 previously carried yields at most 89, hence a single column can compose at most 8 new higher-place units, not 9. Student reasoning is teacher reviewed.",
+        "Independent Edulytiks teacher Cool-down 679×8=5432 asks for the full standard algorithm and newly composed units. Original publisher-gated Cool-down and any source number-card images remain unverified, so only exact known source arithmetic is selected Practice.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fluent multiplication with composing",
+          "Definition": "Correctly retain new tens/hundreds across each partial product and its sum.",
+          "Rule": "Carry composed units to the next place and check against an estimate.",
+          "Example": "864×21=18144."
+        },
+        {
+          "Title": "Digit-use product optimization",
+          "Definition": "A legal product must use the available digits exactly once in the specified factor formats.",
+          "Rule": "Compare full products rather than the apparent size of one factor.",
+          "Example": "821×64=52544 exceeds 642×81=52002."
+        },
+        {
+          "Title": "Largest ones-place carry",
+          "Definition": "For multiplying two single digits at most 9, the result cannot exceed 81.",
+          "Rule": "The largest new tens from a ones-place digit multiplication is 8.",
+          "Example": "9×9=81 means 1 one and 8 composed tens."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original two equal 417×28 algorithms",
+          "Question": "Explain why the source's two algorithms for 417×28 and 28×417 agree.",
+          "Method": "Compare two valid multiplication orders and their place-value partials.",
+          "Steps": [
+            "417×8=3336 and 417×20=8340; sum 11676.",
+            "28×7=196,28×10=280,28×400=11200; sum 11676.",
+            "Use commutativity and same total as check."
+          ],
+          "Answer": "11676 both ways.",
+          "Check": "Both exact source diagrams correspond to identical value."
+        },
+        {
+          "Title": "Original source compositions",
+          "Question": "Evaluate 256×5,587×8 and 809×9 using the standard algorithm.",
+          "Method": "Compose higher place units and explain carries.",
+          "Steps": [
+            "256×5=1280.",
+            "587×8=4696.",
+            "809×9=7281."
+          ],
+          "Answer": "1280,4696,7281.",
+          "Check": "No digit multiplication plus carry needs to compose 9 of a new unit."
+        },
+        {
+          "Title": "Teacher-led source game versus independent model",
+          "Question": "Describe the original five-round Greatest Product game and why an independent 821×64 vs 642×81 comparison is only an extension.",
+          "Method": "Student partner chooses cards, records legal 3-digit×2-digit multiplications and justifies outcomes.",
+          "Steps": [
+            "Partner A and B choose actual source cards in alternating turns.",
+            "Compare the two constructed whole-number products and award a point to larger value.",
+            "Teacher verifies card use and strategy; Edulytiks alternative 821×64=52544 vs642×81=52002."
+          ],
+          "Answer": "Teacher-reviewed five-round game; the example favors 821×64 by 542.",
+          "Check": "Original source card values not independently certified."
+        },
+        {
+          "Title": "Optional existing extension — Compare a trial product",
+          "Question": "Compute 864×21.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Multiply by one: 864.",
+            "Multiply by 20: 17280.",
+            "Add both aligned partial products."
+          ],
+          "Answer": "18144.",
+          "Check": "864×21=18144; every digit 1,2,4,6,8 is used once."
+        },
+        {
+          "Title": "Optional existing extension — Revise the trial",
+          "Question": "Compare 821×64 and 642×81 using the same five digits.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "821×64=821×(60+4)=49260+3284=52544.",
+            "642×81=642×(80+1)=51360+642=52002.",
+            "Compare the difference and discuss why factor positions matter."
+          ],
+          "Answer": "821×64 is greater by 542.",
+          "Check": "52544−52002=542; these are compared trials, not a proven global maximum."
+        },
+        {
+          "Title": "Optional existing extension — Check new tens from one digit product",
+          "Question": "Can 9×9 compose nine tens?",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Compute the maximum one-digit product 9×9=81.",
+            "Regroup 81 ones into 8 tens plus 1 one.",
+            "Recognize nine tens would require at least 90 ones."
+          ],
+          "Answer": "No; at most 8 new tens.",
+          "Check": "8×10+1=81."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume a largest-looking three-digit factor always creates the greatest legal product",
+          "WhyWrong": "The two-digit multiplier can offset a decrease in the three-digit factor.",
+          "Correction": "Evaluate complete products and explain candidate comparisons."
+        },
+        {
+          "Mistake": "Claim a maximum after checking only two arrangements",
+          "WhyWrong": "An optimization proof needs an exhaustive legal search or a valid mathematical exchange argument.",
+          "Correction": "Classify trial products as examples unless a global proof has been supplied."
+        },
+        {
+          "Mistake": "Claim independently chosen 1,2,4,6,8 game digits are the exact 2021 publisher number cards",
+          "WhyWrong": "The teacher HTML describes choosing cards but does not expose the original deck, so specific invented digits are unsupported.",
+          "Correction": "Keep source game directions and five-round rubric, label sample cards first-party and record source deck not verified."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source warmup 417×28=28×417=11676 with two partial-product decompositions.",
+        "Original partner Greatest Product uses actual source number cards and five rounds; deck values not independently certified.",
+        "Source optional 256×5=1280,587×8=4696,809×9=7281.",
+        "Explain why standard algorithm cannot carry 9 of a newly composed unit in a single column.",
+        "Exact selected Practice supports known source numeric cases; teacher scores card games and carry arguments."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Source 417 by 28 two standard layouts",
+          "Description": "Source-exact first-party arithmetic table; source photograph and drawn carry placements require teacher confirmation.",
+          "Rows": [
+            {
+              "Label": "417×28 row 8",
+              "Cells": [
+                "3336"
+              ]
+            },
+            {
+              "Label": "417×28 row 20",
+              "Cells": [
+                "8340"
+              ]
+            },
+            {
+              "Label": "28×417 alternative",
+              "Cells": [
+                "196",
+                "280",
+                "11200"
+              ]
+            },
+            {
+              "Label": "both products",
+              "Cells": [
+                "11676"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source optional new-unit compositions",
+          "Description": "Source three products; original teacher discussion of carrying 9 new units remains open.",
+          "Rows": [
+            {
+              "Label": "256×5",
+              "Cells": [
+                "1280"
+              ]
+            },
+            {
+              "Label": "587×8",
+              "Cells": [
+                "4696"
+              ]
+            },
+            {
+              "Label": "809×9",
+              "Cells": [
+                "7281"
+              ]
+            },
+            {
+              "Label": "single-column carry maximum",
+              "Cells": [
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L08",
+      "CultureCode": "en",
+      "Title": "Multiplication Fluency",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U04:L08 Multiplication Fluency: source learners choose one of two fluency games (Greatest Product OR Number Puzzles: Multiplication and Division), then use exactly the supplied digits 3,5,6,8,9 to make three-digit-by-two-digit whole-number products as close as possible to two source targets, 50000 and 20000. These are closeness optimizations, not always maxima.",
+        "Warm-up Number Talk The Distributive Property: original 6×15=90,6×17=102,6×2 1/3=14,6×2 2/3=16. Pupils explain 6×(2+1/3)=12+2 and 6×(2+2/3)=12+4, and connect mental multiplication strategies.",
+        "Activity 1 Fluency Practice Choice Time: teacher facilitates choice of source game, including strategy discussion and legal moves. Number Puzzle or Greatest Product outcomes vary by players; original complete card/deck material and physical implementation were not independently inspected, so do not invent a unique certified source winner.",
+        "Activity 2 Targeted Products: use original digits 3,5,6,8,9 once each in a three-digit factor and a two-digit factor. For TARGET 50000 an exact finite enumeration of 120 permutations gives 893×56=50008, ABSOLUTE difference 8. For TARGET 20000 the closest valid arrangement is 589×36=21204, difference 1204. These optimal candidate calculations are an Edulytiks mathematical verification of the printed constraint, not quotations from a source answer key; students still defend why their selected products are closer than other valid candidates.",
+        "Previously drafted 1,2,3,6,8 digit trials and a 40000 target are mathematically legitimate extra puzzles only, NOT the original 2021 Activity 2. Teacher reviews each legal digit use, choice of game, student strategy, estimation and closest-product proof. Edulytiks independent Cool-down is original reflection work, not a publisher Cool-down reproduction.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Target product versus largest product",
+          "Definition": "Closest to a given target minimizes absolute difference, which may not maximize product.",
+          "Rule": "Compare |product−target|, not only product size.",
+          "Example": "For target 40000, difference from 50406 is 10406."
+        },
+        {
+          "Title": "Use-once digits",
+          "Definition": "Each of five given digits may be used once across a three-digit and a two-digit factor.",
+          "Rule": "Check one-to-one usage before validating the result.",
+          "Example": "813×62 uses 1,2,3,6,8 once."
+        },
+        {
+          "Title": "Distributive mental link",
+          "Definition": "Known whole-number and mixed-number products can use the same decomposition structure.",
+          "Rule": "6×(2+1/3)=12+2.",
+          "Example": "6×2 1/3=14."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source distributive Number Talk",
+          "Question": "Evaluate 6×15,6×17,6×2 1/3 and 6×2 2/3.",
+          "Method": "Break products into easy known facts, whole and fraction parts.",
+          "Steps": [
+            "6×15=90, and 6×17=102.",
+            "6×2 1/3=12+2=14.",
+            "6×2 2/3=12+4=16."
+          ],
+          "Answer": "90,102,14,16.",
+          "Check": "Source fractions use mixed-number arithmetic."
+        },
+        {
+          "Title": "Original source target 50000",
+          "Question": "Arrange 3,5,6,8,9 once each for a three-digit×two-digit product near 50000.",
+          "Method": "Compare absolute distances to target; independently enumerate all 120 legal digit permutations to certify nearest.",
+          "Steps": [
+            "One legal arrangement is 893×56=50008.",
+            "Compute the absolute difference from target: 8.",
+            "A check of all 120 distinct permutations finds no closer product; teacher reviews the optimization argument."
+          ],
+          "Answer": "893×56=50008 (8 above target).",
+          "Check": "Digits 8,9,3,5,6 are all used exactly once."
+        },
+        {
+          "Title": "Original source target 20000",
+          "Question": "Use exactly 3,5,6,8,9 once to make a product closest to 20000.",
+          "Method": "Compare legal three- and two-digit arrangements, absolute distance from target.",
+          "Steps": [
+            "One legal arrangement is 589×36=21204.",
+            "Distance above 20000 is 1204.",
+            "Independent full permutation comparison finds this nearest under the printed slot constraints."
+          ],
+          "Answer": "589×36=21204 (1204 above).",
+          "Check": "All five source digits appear exactly once; no other legal arrangement is closer."
+        },
+        {
+          "Title": "Optional existing extension — Compare closeness",
+          "Question": "Which trial product is nearer 40000: 813×62 or 682×31?",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Compute 813×62=50406 and 682×31=21142.",
+            "Find distances 10406 and 18858 respectively.",
+            "Choose the smaller absolute difference, without claiming global optimality."
+          ],
+          "Answer": "813×62 is closer of these two trials.",
+          "Check": "50406−40000=10406; 40000−21142=18858."
+        },
+        {
+          "Title": "Optional existing extension — Use a known fact",
+          "Question": "Compute 6×2 2/3 mentally.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Separate 2 2/3 into 2+2/3.",
+            "Compute 6×2=12.",
+            "Compute 6×2/3=4 and combine."
+          ],
+          "Answer": "16.",
+          "Check": "6×8/3=16."
+        },
+        {
+          "Title": "Optional existing extension — Check a new legal candidate",
+          "Question": "Try 631×82 and compare to target 40000.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Verify digits 6,3,1,8,2 are all used once.",
+            "Compute 631×82=631×80+631×2=50480+1262=51742.",
+            "Compute the target difference."
+          ],
+          "Answer": "51742, which is 11742 above the target.",
+          "Check": "It is farther than the 50406 trial (difference 10406)."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat the numerically greatest product as the closest to a target",
+          "WhyWrong": "Distance from target depends on how far a candidate is above or below it.",
+          "Correction": "Calculate absolute difference for every legal candidate."
+        },
+        {
+          "Mistake": "Claim optimality from checking a few trials",
+          "WhyWrong": "The source's exploration permits multiple strategies, but a mathematical minimum would require a complete proof.",
+          "Correction": "Label trial rankings honestly and continue revising or enumerate all candidates."
+        },
+        {
+          "Mistake": "Replace source digits 3,5,6,8,9 and target 50000/20000 with invented 1,2,3,6,8 and 40000",
+          "WhyWrong": "That creates a different optimization puzzle and does not cover both original 2021 source targets.",
+          "Correction": "Present original source digits and target values first; preserve alternate puzzles only as clearly optional extensions."
+        }
+      ],
+      "SummaryPoints": [
+        "Source warmup 6×15=90,6×17=102,6×2 1/3=14,6×2 2/3=16.",
+        "Original source Activity1 choice: Greatest Product or Number Puzzles.",
+        "Original digits 3,5,6,8,9 used once per target to approach 50000 and 20000.",
+        "Edulytiks computed 893×56=50008 distance 8, and 589×36=21204 distance 1204, under source slots.",
+        "Teacher evaluates legal digit choices and qualitative nearest-product arguments, not only numeric values."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Source digits and target product candidates",
+          "Description": "Source target/digit constraints with Edulytiks-derived closest candidates, not source publisher official answer key.",
+          "Rows": [
+            {
+              "Label": "Source available digits",
+              "Cells": [
+                "3",
+                "5",
+                "6",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "Label": "50000 target",
+              "Cells": [
+                "893×56",
+                "50008",
+                "absolute difference 8"
+              ]
+            },
+            {
+              "Label": "20000 target",
+              "Cells": [
+                "589×36",
+                "21204",
+                "absolute difference 1204"
+              ]
+            },
+            {
+              "Label": "Game choices",
+              "Cells": [
+                "Greatest Product",
+                "Number Puzzles"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L09",
+      "CultureCode": "en",
+      "Title": "The Birds",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade 5 U04:L09 The Birds uses MULTIPLICATION in a realistic rectangular-prism VOLUME context. The source explicitly lists six bird species, floor side lengths and recommended height intervals; learners must estimate possible volumes then calculate minimum and maximum recommended volumes for EACH, reporting cubic inches rather than square inches.",
+        "Warm-up Notice and Wonder For the Birds: a source bird-house photograph is credited to US Fish and Wildlife Service Public Domain, but the exact image binary and display rights have not been independently verified. Teacher elicits visual observations, including possible sloped roofs; volume models the specified rectangular house interior rather than claiming exact roof shape.",
+        "Activity 1 Home is Where the Bird Lives: ORIGINAL table: chickadee 4×4 inch floor, height 6–10; wood duck 10×18, height 10–24; barn owl 10×18, height 15–18; red-headed woodpecker 6×6, height 12–15; bluebird 5×5, height 6–12; swallow 6×6, height 6–8. For each choose and explain an estimate consistent with width×length×a plausible height within the given source interval.",
+        "Activity 2 What is the Volume? Under the original rectangular-prism model, chickadee 96–160 cubic in; wood duck 1800–4320; barn owl 2700–3240; red-headed woodpecker 432–540; bluebird 150–300; swallow 216–288. Floor area is width×length in square inches, then multiplying by a height in inches produces CUBIC inches; teacher checks model limits, estimates and real world reasonableness.",
+        "Lesson source synthesis reviews the multiplication algorithm with 412×32=13184 (2×412=824 plus30×412=12360), but this does not replace the six birdhouse tasks. Earlier authored fictional 5×5 by height 7–11 and 8×9 by height 12–15 are OPTIONAL EXTENSIONS, not source table entries. Teacher checks open estimations and source picture interpretation. Independent Edulytiks Cool-down uses new birdhouse measurements.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Volume with a height interval",
+          "Definition": "For positive fixed rectangular base area, volume increases with height.",
+          "Rule": "base area×minimum height ≤ volume ≤ base area×maximum height.",
+          "Example": "25×7=175, 25×11=275 cubic inches."
+        },
+        {
+          "Title": "Choose a useful estimate",
+          "Definition": "Estimate a viable height in the given range and multiply by a simple base area.",
+          "Rule": "For a height 7–11, 10 is a reasonable benchmark.",
+          "Example": "25×10≈250 cubic inches."
+        },
+        {
+          "Title": "Record correct cubic units",
+          "Definition": "Multiplying square inches of floor by inches of height creates cubic inches.",
+          "Rule": "72 in²×12 in=864 in³.",
+          "Example": "A linear answer alone cannot express the volume."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original chickadee recommended volumes",
+          "Question": "A chickadee house floor is 4 by 4 inches and height 6–10 inches. Find the range.",
+          "Method": "Volume of rectangular prism = floor area × height.",
+          "Steps": [
+            "Base area 4×4=16 square inches.",
+            "Minimum 16×6=96 cubic inches.",
+            "Maximum 16×10=160 cubic inches."
+          ],
+          "Answer": "96–160 cubic inches.",
+          "Check": "All dimensions in inches; output must be cubic inches."
+        },
+        {
+          "Title": "Original wood duck and barn owl",
+          "Question": "Two source species both use 10 by 18-inch floors but have different height ranges. Compute ranges.",
+          "Method": "Both floor areas are 180 square inches; multiply by each height interval.",
+          "Steps": [
+            "Wood duck 10–24 inches: 180×10=1800 and180×24=4320.",
+            "Barn owl 15–18 inches: 180×15=2700 and180×18=3240.",
+            "Compare volumes and interpret difference in recommended height."
+          ],
+          "Answer": "Wood duck 1800–4320; barn owl 2700–3240 cubic inches.",
+          "Check": "Shared floor does not imply shared volume range."
+        },
+        {
+          "Title": "Original remaining three species",
+          "Question": "Find woodpecker, bluebird and swallow range of volumes from the printed source table.",
+          "Method": "Compute floor area and multiply by each printed min/max height.",
+          "Steps": [
+            "Red-headed woodpecker 6×6×(12–15)=432–540.",
+            "Bluebird 5×5×(6–12)=150–300.",
+            "Swallow 6×6×(6–8)=216–288."
+          ],
+          "Answer": "432–540;150–300;216–288 cubic inches respectively.",
+          "Check": "Avoid square-inch units for volume."
+        },
+        {
+          "Title": "Optional existing extension — Estimate a small birdhouse",
+          "Question": "Floor 5 by 5 inches and height 7–11 inches. Find an approximate volume.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Find 5×5=25 square inches.",
+            "Choose a plausible height such as 10 inches.",
+            "Multiply 25×10."
+          ],
+          "Answer": "About 250 cubic inches.",
+          "Check": "It lies between 175 and 275 cubic inches."
+        },
+        {
+          "Title": "Optional existing extension — Find exact range",
+          "Question": "Find minimum and maximum small birdhouse volumes.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Use floor area 25 square inches.",
+            "Multiply by lower height 7 and upper height 11.",
+            "State both as cubic units."
+          ],
+          "Answer": "175–275 cubic inches.",
+          "Check": "Increasing height produces increasing volume."
+        },
+        {
+          "Title": "Optional existing extension — Compare larger birdhouse",
+          "Question": "Floor 8 by 9 inches, height 12–15 inches. Find the range.",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Compute base area 8×9=72.",
+            "Multiply lower height 72×12=864.",
+            "Multiply upper height 72×15=1080."
+          ],
+          "Answer": "864–1080 cubic inches.",
+          "Check": "Compare dimensions and note these are for an ideal rectangular prism."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use one proposed height as the only possible valid answer",
+          "WhyWrong": "The source gives a range of possible heights.",
+          "Correction": "Report estimated values and exact lower/upper bounds as distinct statements."
+        },
+        {
+          "Mistake": "Include a pitched-roof shape in box volume without stating assumptions",
+          "WhyWrong": "A sloped roof is not a rectangular prism with the same uniform cross section.",
+          "Correction": "Clarify what is modeled as a rectangular interior, and seek additional dimensions for other shapes."
+        },
+        {
+          "Mistake": "Use a fictional 5×5 birdhouse with height 7–11 as the original 2021 source table",
+          "WhyWrong": "The source specifies six species and different fixed base sizes and height intervals; invented values lose all six contextual comparisons.",
+          "Correction": "Restore all six original species and calculate minimum/maximum cubic volume for each; preserve fictional examples only as extensions."
+        }
+      ],
+      "SummaryPoints": [
+        "Source original six birdhouse species and printed floor/height intervals are included, not fictional substitutions.",
+        "Exact source ranges (in³): chickadee96–160,wood duck1800–4320,barn owl2700–3240,woodpecker432–540,bluebird150–300,swallow216–288.",
+        "Open plausible estimates and original source photograph remain teacher reviewed.",
+        "Source lesson synthesis 412×32=13184 retains place-value multiplication connection.",
+        "Independent Cool-down new floor7×8 in and height9–12 gives504–672 cubic inches."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Source six birdhouse recommended rectangular volume ranges",
+          "Description": "Exact printed source measurements with Edulytiks-computed cubic-inch ranges; original bird photograph not reproduced.",
+          "Rows": [
+            {
+              "Label": "Chickadee",
+              "Cells": [
+                "4×4",
+                "h 6–10",
+                "96–160 in³"
+              ]
+            },
+            {
+              "Label": "Wood duck",
+              "Cells": [
+                "10×18",
+                "h 10–24",
+                "1800–4320 in³"
+              ]
+            },
+            {
+              "Label": "Barn owl",
+              "Cells": [
+                "10×18",
+                "h 15–18",
+                "2700–3240 in³"
+              ]
+            },
+            {
+              "Label": "Red-headed woodpecker",
+              "Cells": [
+                "6×6",
+                "h 12–15",
+                "432–540 in³"
+              ]
+            },
+            {
+              "Label": "Bluebird",
+              "Cells": [
+                "5×5",
+                "h 6–12",
+                "150–300 in³"
+              ]
+            },
+            {
+              "Label": "Swallow",
+              "Cells": [
+                "6×6",
+                "h 6–8",
+                "216–288 in³"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L10",
+      "CultureCode": "en",
+      "Title": "World’s Record Folk Dance",
+      "ExplanationParagraphs": [
+        "Original IM 2021 G5 U04:L10 World's Record Folk Dance: interpret WHOLE-number division as number of equal groups in a source world-record event involving exactly 4704 dancers in Peru. Keep the original total fixed as group size changes; students choose meaningful multiplication and equal-grouping diagrams.",
+        "Warm-up How Many Do You See: World Record Event: pupils interpret the original image and discuss how dancers might form groups. The publisher/event image and exact arrangement were not separately recovered or reproduced; do NOT invent a source photo count or a separate 3456-dancer event as the textbook's actual context.",
+        "Activity 1 How Many Groups of 8 Dancers?: 4704 Peru dancers can form 4704÷8=588 complete groups of eight. Use mental partial quotients or familiar multiples: 500 groups=4000 dancers, 80 groups=640, 8 groups=64; 500+80+8=588. Confirm 588×8=4704. Teacher reviews actual division diagram and learner strategy.",
+        "Activity 2 More Groups of Dancers: SAME 4704 people grouped in fours yield 4704÷4=1176 groups; in twos yield 4704÷2=2352 groups. Explain how halving group size doubles the group count and compare original source partners' approaches. Check with 1176×4=4704 and 2352×2=4704.",
+        "Source synthesis: these are division-by-whole contexts, not multiplying the same numbers as a fixed 3-digit×2-digit product. Exact selected numeric cases cover only three known quotients. Original partner explanation, chosen diagram, photo interpretation and self-justified grouping are TEACHER_REVIEW_REQUIRED; independently authored Edulytiks Cool-down uses 5232 dancers.",
+        "Previous first-party 3456-dancer numbers remain valid optional extensions, never mislabeled as the original Peru world record."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Division counts equal groups",
+          "Definition": "Given a total and equal group size, divide to determine the number of groups.",
+          "Rule": "total÷group size=number of groups.",
+          "Example": "3456÷8=432."
+        },
+        {
+          "Title": "Partial quotient approach",
+          "Definition": "Subtract known multiples of the divisor and add the number of groups accounted for.",
+          "Rule": "3200÷8=400, 240÷8=30, 16÷8=2.",
+          "Example": "432 total eight-person groups."
+        },
+        {
+          "Title": "Change group size",
+          "Definition": "With a fixed positive total, halving positive group size doubles the number of groups.",
+          "Rule": "3456÷4=2×(3456÷8).",
+          "Example": "864 groups of four versus 432 groups of eight."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source Peru 4704 dancers in eights",
+          "Question": "How many groups of 8 can 4704 original source dancers form?",
+          "Method": "Source-exact group-count division with inverse multiplication checking; diagrams teacher-reviewed.",
+          "Steps": [
+            "Count 500×8=4000.",
+            "Count 80×8=640 and 8×8=64.",
+            "Add 500+80+8 groups, checking 4000+640+64=4704."
+          ],
+          "Answer": "588 groups of 8.",
+          "Check": "588×8=4704."
+        },
+        {
+          "Title": "Source Peru 4704 dancers in fours",
+          "Question": "How many groups of 4 from the same 4704 dancers?",
+          "Method": "Source-exact group-count division with inverse multiplication checking; diagrams teacher-reviewed.",
+          "Steps": [
+            "Use inverse multiplication or halving of 8-person groups.",
+            "Since every 8-person group splits into two 4-person groups, double 588.",
+            "Check 1176×4=4704."
+          ],
+          "Answer": "1176 groups of 4.",
+          "Check": "4704÷4=1176."
+        },
+        {
+          "Title": "Source Peru 4704 dancers in pairs",
+          "Question": "How many two-dancer groups from 4704?",
+          "Method": "Source-exact group-count division with inverse multiplication checking; diagrams teacher-reviewed.",
+          "Steps": [
+            "Each four-person group becomes two pairs.",
+            "Double 1176 to get 2352.",
+            "Check all 4704 people are included."
+          ],
+          "Answer": "2352 groups of 2.",
+          "Check": "2352×2=4704."
+        },
+        {
+          "Title": "Optional previous extension — How many groups of eight?",
+          "Question": "3456 dancers join groups of eight. How many groups?",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Choose 400 groups, accounting for 3200 dancers.",
+            "The remaining 256 dancers include 30 groups (240) and 2 groups (16).",
+            "Add partial quotients 400+30+2."
+          ],
+          "Answer": "432 groups.",
+          "Check": "432×8=3456 dancers."
+        },
+        {
+          "Title": "Optional previous extension — Compare groups of four",
+          "Question": "The same 3456 dancers form groups of four. How many?",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Every group of eight can be divided into two groups of four.",
+            "Double the 432 eight-person groups.",
+            "Verify by multiplying the quotient by four."
+          ],
+          "Answer": "864 groups of four.",
+          "Check": "864×4=3456."
+        },
+        {
+          "Title": "Optional previous extension — Compare groups of two",
+          "Question": "How many pairs can 3456 dancers make?",
+          "Method": "Explain the mathematical structure with first-party place-value or contextual representations.",
+          "Steps": [
+            "Each group of four makes two pairs.",
+            "Double 864 groups of four.",
+            "Check the corresponding multiplication."
+          ],
+          "Answer": "1728 pairs.",
+          "Check": "1728×2=3456."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Divide groups by the number of participants instead of participants by group size",
+          "WhyWrong": "The dividend is the known total number of people, not the unknown group count.",
+          "Correction": "Label the total and desired size of each group before writing the expression."
+        },
+        {
+          "Mistake": "Claim fewer people per group means fewer groups",
+          "WhyWrong": "With a fixed positive total, smaller groups mean more groups.",
+          "Correction": "Relate groups of eight to two groups of four or four groups of two."
+        },
+        {
+          "Mistake": "Present fictional 3456 dancers as the original textbook Peru world record",
+          "WhyWrong": "Printed source explicitly specifies 4704 dancers and asks for 8/4/2-person groups.",
+          "Correction": "Restore 4704÷8/4/2 source tasks, and preserve alternate values only as an extension."
+        }
+      ],
+      "SummaryPoints": [
+        "2021 original Peru event has exactly 4704 dancers, NOT an invented 3456.",
+        "4704÷8=588 groups; 4704÷4=1176; 4704÷2=2352.",
+        "Halving group size doubles the number of groups while original dancer total remains fixed.",
+        "Original photo interpretation, diagrams, inverse-check explanations and partner reasoning are teacher reviewed.",
+        "Independent Edulytiks Cool-down: 5232÷8=654 groups of eight."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original 4704-dancer source group sizes",
+          "Description": "First-party accessible source-number table, without copying original event images.",
+          "Rows": [
+            {
+              "Label": "Original dancers",
+              "Cells": [
+                "4704",
+                "4704",
+                "4704"
+              ]
+            },
+            {
+              "Label": "Dancers per group",
+              "Cells": [
+                "8",
+                "4",
+                "2"
+              ]
+            },
+            {
+              "Label": "Complete groups",
+              "Cells": [
+                "588",
+                "1176",
+                "2352"
+              ]
+            },
+            {
+              "Label": "Inverse multiplication",
+              "Cells": [
+                "588×8=4704",
+                "1176×4=4704",
+                "2352×2=4704"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -35,6 +35,15 @@ def run():
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as exc:
         errors.append(f"Grade 4 pinned owner-authored delta invalid: {exc}")
         g4_owner_authored = set()
+    # The Grade 5 owner consent is an immutable, content-only technical
+    # exception: no permission to rewrite source, official metadata or other grades.
+    # Source/academic rights approval remains in the separate Stage D gate.
+    try:
+        from verify_g5_owner_content_delta import validate as validate_g5
+        g5_owner_content = validate_g5()
+    except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade 5 pinned owner content delta invalid: {exc}")
+        g5_owner_content = set()
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -217,14 +226,15 @@ def run():
         ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
     ).strip() == g4_lock["originalMainCommit"]
     g4_new_changes = g4_owner_authored if original_main else set()
-    expected_changes = changes_expected | g4_new_changes
+    expected_changes = changes_expected | g4_new_changes | g5_owner_content
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
-                           if key not in approved and key not in g4_owner_authored and baseline[key] != candidate[key]]
+                           if key not in approved and key not in g4_owner_authored
+                           and key not in g5_owner_content and baseline[key] != candidate[key]]
     if unexpected_metadata:
         errors.append(f"unapproved lesson metadata changes: {unexpected_metadata[:6]}")
-    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} release=NO_GO")
+    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} g5OwnerContentOnly={len(g5_owner_content)} release=NO_GO")
     for e in errors: print("ERROR:",e)
     return 1 if errors else 0
 

@@ -1,0 +1,674 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v9-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L16",
+      "CultureCode": "en",
+      "Title": "Reason About Quotients",
+      "ExplanationParagraphs": [
+        "Original IM 2021 U03:L16 goal: estimate, compare above/below one and order positive quotients of a whole and a unit fraction without calculating first. Division direction matters; students justify comparison of dividend and divisor.",
+        "Warm-up How Many One Fifths? source 98÷1/5 is a little LESS than 100÷1/5=500 and is exactly 490; do not replace source with 97÷1/6 and an unrelated 600 estimate.",
+        "Activity 1 Greater Than or Less Than 1: six ACTUAL source expressions: 25÷1/5=125, 1/7÷25=1/175, 1/8÷25=1/200, 25÷1/7=175, 25÷1/8=200 and 1/5÷25=1/125. The three whole-dividend expressions are above one; the three unit-fraction-dividend expressions are below one.",
+        "Activity 2 Estimate and Divide: order the SAME six source expressions from least to greatest without computing: (1/8)÷25 < (1/7)÷25 < (1/5)÷25 < 25÷(1/5) < 25÷(1/7) < 25÷(1/8). Then choose two to calculate and justify exact values 1/200,1/175,1/125,125,175,200.",
+        "Original six-expression ordering and source comparison explanation remain TEACHER_REVIEW_REQUIRED; exact numeric subskills are selected digital supports, not proof of reasoning. Independently authored Edulytiks Cool-down compares 30÷1/6 vs (1/6)÷30.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quotients of opposite magnitudes",
+          "Definition": "A positive whole divided by a proper unit fraction gives a result above one; a proper fraction divided among a positive whole count gives a result below one.",
+          "Rule": "n÷(1/b)=nb but (1/b)÷n=1/(bn).",
+          "Example": "12÷1/5=60 while 1/5÷12=1/60."
+        },
+        {
+          "Title": "Fixed whole, smaller divisor",
+          "Definition": "The number of small groups grows when their positive unit-fraction size decreases.",
+          "Rule": "For fixed n>0 and b<c, n÷1/b<n÷1/c.",
+          "Example": "12÷1/3<12÷1/8."
+        },
+        {
+          "Title": "Fixed integer divisor, smaller fractional dividend",
+          "Definition": "A smaller positive fractional starting amount gives a smaller equal share.",
+          "Rule": "For fixed n>0 and b<c, (1/c)÷n <(1/b)÷n.",
+          "Example": "1/8÷12 <1/3÷12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original source estimation 98 fifths",
+          "Question": "Estimate and compute 98÷1/5 compared with 100÷1/5.",
+          "Method": "One whole has five one-fifths groups.",
+          "Steps": [
+            "100÷1/5=500.",
+            "98 is two fewer whole units, so 10 fewer fifth-sized groups.",
+            "Result 490, a little less than 500."
+          ],
+          "Answer": "490.",
+          "Check": "490×1/5=98."
+        },
+        {
+          "Title": "Source classify six quotients around one",
+          "Question": "Which source 25/one-fraction quotients are larger than 1?",
+          "Method": "Distinguish whole count divided into small groups from a small fraction shared among 25.",
+          "Steps": [
+            "25÷1/5,1/7,1/8 yield 125,175,200 >1.",
+            "1/7÷25,1/8÷25,1/5÷25 yield fractions less than 1.",
+            "Keep original fraction dividend and whole divisor positions."
+          ],
+          "Answer": "Three larger: 125,175,200; three smaller: 1/175,1/200,1/125.",
+          "Check": "Source expressions and units preserved."
+        },
+        {
+          "Title": "Source ascending order",
+          "Question": "Order six original source expressions from least to greatest.",
+          "Method": "Reason conceptually before using exact values.",
+          "Steps": [
+            "Within fractional results, 1/200<1/175<1/125.",
+            "All three fractions are below all three integers.",
+            "Among integer quotients 125<175<200."
+          ],
+          "Answer": "1/200, 1/175, 1/125, 125, 175, 200.",
+          "Check": "Do not insert unrelated 12-based source claims."
+        },
+        {
+          "Title": "Optional existing extension — Sort without evaluating all quotients",
+          "Question": "Classify 12÷1/3,12÷1/5,1/3÷12,1/5÷12 relative to one.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "For whole divided by unit fraction, count many small fractions in each whole; values are greater than one.",
+            "For a unit fraction divided among twelve, the resulting share is smaller than the unit fraction and below one.",
+            "Use those meanings to group, then verify with independent mathematics."
+          ],
+          "Answer": "12÷1/3 and 12÷1/5 are above one; 1/3÷12 and 1/5÷12 are below one.",
+          "Check": "Exact check: 36,60 and 1/36,1/60."
+        },
+        {
+          "Title": "Optional existing extension — Order six quotient expressions",
+          "Question": "Put 12÷1/3,12÷1/5,12÷1/8,1/3÷12,1/5÷12,1/8÷12 in increasing order.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Place all three fractional-dividend quotients before the whole-dividend quotients.",
+            "Among the small shares, the one-eighth divided among twelve is smallest.",
+            "Among whole-dividend quotients, the one-eighth divisor yields the most groups."
+          ],
+          "Answer": "1/8÷12 < 1/5÷12 < 1/3÷12 < 12÷1/3 < 12÷1/5 < 12÷1/8.",
+          "Check": "Results are 1/96, 1/60, 1/36, 36, 60, 96."
+        },
+        {
+          "Title": "Optional existing extension — Bound a large quotient",
+          "Question": "Estimate 97÷1/6 without first calculating an exact long expression.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Compare 97 with 100, which is slightly greater.",
+            "Each whole contains six sixths, so 100÷1/6=600.",
+            "Conclude 97÷1/6 is slightly below 600 and verify."
+          ],
+          "Answer": "A sensible estimate is a little less than 600; exact value 582.",
+          "Check": "97×6=582, which is below 600."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume every quotient is smaller than its dividend",
+          "WhyWrong": "A positive divisor less than one increases the quotient.",
+          "Correction": "Interpret division as counting tiny groups instead of an unqualified rule about shrinking."
+        },
+        {
+          "Mistake": "Reverse the conceptual ordering when changing denominator",
+          "WhyWrong": "Larger denominators make unit fractions smaller and whole÷unit-fraction quotients larger.",
+          "Correction": "Compare group size and number of groups before sorting."
+        },
+        {
+          "Mistake": "Use fabricated source 12÷1/3/5/8 or warmup 97÷1/6",
+          "WhyWrong": "The original printed 2021 source uses 25 and warmup 98÷1/5, changing the values changes comparison tasks.",
+          "Correction": "Restore all six source 25 expressions and source 490 warmup, keep other examples only as extension."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warmup 98÷1/5=490 just under 500.",
+        "Source six expressions all use 25 with 1/5,1/7,1/8.",
+        "Ascending 1/200 <1/175 <1/125 <125 <175 <200.",
+        "Three quotients exceed one, three fall below one; explanations teacher reviewed.",
+        "Edulytiks independent Cool-down contrasts 30÷1/6 and 1/6÷30."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source six expressions and comparison to one",
+          "Description": "First-party tabulated original source equations, with human review of no-calculation ordering explanations.",
+          "Rows": [
+            {
+              "Label": "25 ÷ unit fraction",
+              "Cells": [
+                "25÷1/5=125",
+                "25÷1/7=175",
+                "25÷1/8=200"
+              ]
+            },
+            {
+              "Label": "Unit fraction ÷25",
+              "Cells": [
+                "1/5÷25=1/125",
+                "1/7÷25=1/175",
+                "1/8÷25=1/200"
+              ]
+            },
+            {
+              "Label": "Ordered ascending",
+              "Cells": [
+                "1/200<1/175<1/125",
+                "125<175<200"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L17",
+      "CultureCode": "en",
+      "Title": "Fraction Multiplication and Division Situations",
+      "ExplanationParagraphs": [
+        "Original IM 2021 U03:L17 purpose: solve multiplication and division situations with fractions, choose the correct operation and original unit, and communicate needed facts. The source includes an information-gap partner card exchange not reducible to a single numeric question.",
+        "Warm-up original source Number Talk: 5÷1/6=30, 5×1/6=5/6, (1/5)÷6=1/30 and (1/5)×(1/6)=1/30. The latter two share a numerical result but have different operations and situational interpretations.",
+        "Activity 1 Info Gap: Tiles (source problem card/data card): the teacher gives separate cards and students may ask only for the measurements or facts needed to solve; the data card partner must not solve for them. Since original gated card contents are not verified, do NOT invent tile dimensions, areas or fixed source answer. Provide original source procedure, a separate teacher-authored optional prompt and a teacher rubric for information requested and mathematical reasoning.",
+        "Activity 2 source real-life questions: 11 grains of rice weigh 1/3 gram, so each grain weighs 1/33 gram; Mai runs 3/4 of a 9/10-mile road, covering 27/40 mile; each tennis ball weighs 2 1/16 ounces and nine balls weigh 297/16 = 18 9/16 ounces. Students name their operations, models and units in each response.",
+        "Exact numeric selected Practice supports source warm-up and three public Activity2 arithmetic cases. The original tile information gap, partner dialogue, any original card figures and qualitative explanations remain TEACHER_REVIEW_REQUIRED; independently authored Edulytiks Cool-down assesses choice of operation and an original full-whole model.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area of one fractional tile",
+          "Definition": "The tile's area is the product of its two perpendicular fractional lengths.",
+          "Rule": "(1/4 foot)×(1/2 foot)=1/8 square foot.",
+          "Example": "Each tile covers one eighth of one square foot."
+        },
+        {
+          "Title": "Grid counting without overlaps",
+          "Definition": "A rectangular floor can be covered by rows×columns of congruent tiles when side lengths divide evenly.",
+          "Rule": "2÷1/4=8 columns, 1 1/2÷1/2=3 rows, 8×3=24 tiles.",
+          "Example": "24 tiles make exactly 3 square feet."
+        },
+        {
+          "Title": "Information-gap assessment",
+          "Definition": "No unique tile count exists without knowing tile dimensions or area.",
+          "Rule": "Ask for the missing tile size and justify why it is needed before calculating.",
+          "Example": "Different tile sizes change the required count on the same floor."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source rice grains equally shared mass",
+          "Question": "If 11 grains of rice weigh 1/3 gram total, how much does one grain weigh?",
+          "Method": "Divide a fraction of a gram among eleven equal grains.",
+          "Steps": [
+            "Original unit is one gram.",
+            "The rice sample weighs one third gram total.",
+            "(1/3)÷11 =1/(3×11)=1/33 gram per grain."
+          ],
+          "Answer": "1/33 gram per grain.",
+          "Check": "11×(1/33)=1/3 gram."
+        },
+        {
+          "Title": "Source Mai road fraction",
+          "Question": "Mai runs 3/4 of her 9/10-mile road. How many miles?",
+          "Method": "Multiply positive fractions of original road length.",
+          "Steps": [
+            "Full road measures 9/10 mile.",
+            "Multiply 9/10 by 3/4.",
+            "Distance traveled is 27/40 mile."
+          ],
+          "Answer": "27/40 mile.",
+          "Check": "27/40 is less than 9/10 mile."
+        },
+        {
+          "Title": "Source tennis ball mass",
+          "Question": "Nine balls each weigh 2 1/16 ounces. Find combined mass.",
+          "Method": "Convert mixed number and multiply.",
+          "Steps": [
+            "2 1/16 = 33/16 ounces each.",
+            "Nine times 33/16 = 297/16 ounces.",
+            "297/16 = 18 9/16 ounces."
+          ],
+          "Answer": "297/16 = 18 9/16 ounces.",
+          "Check": "Nine balls weigh just above 18 ounces, consistent with about 2 oz each."
+        },
+        {
+          "Title": "Optional existing extension — Missing tile dimensions",
+          "Question": "A floor is 2 ft by 1 1/2 ft, but tile dimensions are hidden. Can the exact count be known?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Calculate floor area 2×1 1/2=3 square feet.",
+            "Recognize that smaller tiles require more pieces and larger tiles fewer.",
+            "Ask the partner for tile length and width or an exact equivalent area plus layout constraints."
+          ],
+          "Answer": "No exact tile count until tile dimensions are supplied.",
+          "Check": "Teacher checks the request and the learner's explanation of necessity."
+        },
+        {
+          "Title": "Optional existing extension — Fill a floor with congruent tiles",
+          "Question": "Floor 2 ft×1 1/2 ft, tiles 1/4 ft×1/2 ft. How many fit without gaps?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Across 2 feet, count 2÷1/4=8 tile columns.",
+            "Along 1 1/2 feet, count (3/2)÷(1/2)=3 tile rows.",
+            "Multiply 8×3 and confirm compatible edge lengths."
+          ],
+          "Answer": "24 tiles.",
+          "Check": "One tile is 1/8 ft²; 24×1/8=3 ft², the floor area."
+        },
+        {
+          "Title": "Optional existing extension — A second tile area problem",
+          "Question": "A 6-square-foot wall is covered with tiles that each cover 1/4 square foot. How many ideal full tiles?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Treat six square feet as total target area.",
+            "Count quarter-square-foot groups inside six square feet.",
+            "Multiply 6×4."
+          ],
+          "Answer": "24 tiles in the ideal non-overlapping model.",
+          "Check": "24×1/4=6 square feet; real edge cutting may change purchase quantity."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Choose a tile count before the tile size is known",
+          "WhyWrong": "Several tile dimensions can fill or partly cover the same floor, yielding different counts.",
+          "Correction": "Ask for necessary dimensional information before answering."
+        },
+        {
+          "Mistake": "Multiply both widths and lengths without validating the layout",
+          "WhyWrong": "The tile count from area may not create a whole-tile fit in arbitrary dimensions.",
+          "Correction": "Check the number of rows and columns, nonoverlap, and edge-cut assumptions."
+        },
+        {
+          "Mistake": "Replace source Info Gap Tiles with a guessed tile dimension or invented fixed area",
+          "WhyWrong": "The original source splits problem and data cards and teacher HTML doesn't reveal all original card numbers; unsupported guesses misrepresent the task.",
+          "Correction": "Preserve real partner exchange with a teacher-provided original card, mark gated values unverified, and use separately labeled independent math examples."
+        }
+      ],
+      "SummaryPoints": [
+        "Warmup 5÷1/6=30,5×1/6=5/6,1/5÷6=1/30,1/5×1/6=1/30.",
+        "Information Gap Tiles uses separate problem and data cards, teacher-led; source-specific values unknown.",
+        "Original rice 11 grains=1/3 gram ->1/33g each.",
+        "Mai's 9/10-mile road three quarters =27/40 mile; nine 2 1/16 oz tennis balls =18 9/16 oz.",
+        "Teacher reviews request-for-information and source diagrams; selected digital choices are only arithmetic support."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original Grade5 L17 arithmetic and source-unit choices",
+          "Description": "First-party numeric summary; original information-gap tile card facts remain unknown and teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "11 rice grains",
+              "Cells": [
+                "1/3 gram total",
+                "1/33 gram per grain"
+              ]
+            },
+            {
+              "Label": "Mai's road",
+              "Cells": [
+                "9/10 mile ×3/4",
+                "27/40 mile"
+              ]
+            },
+            {
+              "Label": "Tennis balls",
+              "Cells": [
+                "9×(2 1/16 oz)",
+                "18 9/16 ounces"
+              ]
+            },
+            {
+              "Label": "Info Gap tiles",
+              "Cells": [
+                "ask partner for needed data",
+                "do not invent a source answer"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L18",
+      "CultureCode": "en",
+      "Title": "Represent Situations with Multiplication and Division",
+      "ExplanationParagraphs": [
+        "Original IM 2021 U03:L18: represent contextual fraction multiplication AND division by both a correct multiplication/division equation and a diagram while preserving named measurement units. Multiple student justifications may be valid; reciprocal operations change the story.",
+        "Warm-up original source 3×1/10=3/10, 1/10×3=3/10, 1/10÷3=1/30, 3÷1/10=30. Contrast commutativity of multiplication with noncommutativity of division; draw an original whole and explain.",
+        "Activity 1 Putting it All Together: Diego's dad has 2 pounds beef, 1/4 lb per burger ->2÷1/4=8 burgers AND 8×1/4=2 pounds. Diego and Clare share 1/4 pound potato salad between TWO people ->(1/4)÷2=1/8 pound each AND 2×1/8=1/4 pound. The teacher reviews two distinct original diagrams and corresponding inverse equations.",
+        "Activity 2 Multiplication or Division? Partner A actual source: Han walks 3/4 of a 4/5-km route ->3/5 km; 1/2 gallon water shared among 10 science groups ->1/20 gallon each; 3 kilograms strawberries fills 1/5 capacity ->15 kg full. Partner B: 4 minutes per 1/3 km ->12 minutes per kilometer; soil collected 2 2/3 times 4-kg goal ->10 2/3 kg; a 1/2-pound strawberry container 3/5 full ->3/10 pounds.",
+        "Students independently choose the operation, label physical units, exchange paper with partners and resolve equation disagreement. The Edulytiks numerical support checks one exact answer only; source diagrams, verbal reciprocal reasoning and partner paper feedback remain TEACHER_REVIEW_REQUIRED. Original gated publisher Cool-down is unavailable, so the independent teacher-reviewed alternative is distinctly authored.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Whole divided by unit fraction",
+          "Definition": "Count the number of small fixed-size servings.",
+          "Rule": "3÷1/4=12; 12×1/4=3.",
+          "Example": "Three pounds supply twelve quarter-pound portions."
+        },
+        {
+          "Title": "Unit fraction divided by whole",
+          "Definition": "Distribute one fractional amount into equal smaller portions.",
+          "Rule": "1/4÷3=1/12; 3×1/12=1/4.",
+          "Example": "A quarter pound shared three ways gives each person a twelfth pound."
+        },
+        {
+          "Title": "Multiplication and division relations",
+          "Definition": "Division can be checked by multiplying quotient times divisor, but exchanging dividend and divisor changes the question.",
+          "Rule": "If a÷b=q, then q×b=a when b is nonzero.",
+          "Example": "12×1/4=3 and (1/12)×3=1/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source burger and potato salad reciprocal equations",
+          "Question": "How many 1/4-pound burgers can Diego make from 2 pounds, and how much of 1/4 pound potato salad do two people share?",
+          "Method": "Group count versus share size; explicit reciprocal multiplication.",
+          "Steps": [
+            "2÷1/4=8 burgers, check 8×1/4=2 pounds.",
+            "1/4÷2=1/8 pound each, check 2×1/8=1/4 pound.",
+            "Draw two whole-referenced diagrams and distinguish units."
+          ],
+          "Answer": "8 burgers; 1/8 pound salad per person.",
+          "Check": "Correct operations must be justified in the distinct stories."
+        },
+        {
+          "Title": "Original Partner A mathematics",
+          "Question": "Calculate Han 3/4 of 4/5 km, science 1/2 gallon shared among 10, and strawberry capacity where 3 kg is 1/5 full.",
+          "Method": "Choose multiply/divide for each named source quantity.",
+          "Steps": [
+            "(4/5)×(3/4)=3/5 km.",
+            "(1/2)÷10=1/20 gallon per group.",
+            "3÷(1/5)=15 kg whole-container capacity."
+          ],
+          "Answer": "3/5 km; 1/20 gallon; 15 kg.",
+          "Check": "Units and original wholes differ for the three tasks."
+        },
+        {
+          "Title": "Original Partner B mathematics",
+          "Question": "Han takes 4 min per 1/3 km, soil weighs 2 2/3 times 4 kg, and strawberries occupy 3/5 of a 1/2 lb container.",
+          "Method": "Choose the operation and calculate exact fractional values.",
+          "Steps": [
+            "4÷(1/3)=12 minutes for one km.",
+            "(8/3)×4=32/3 kg =10 2/3 kg.",
+            "(1/2)×(3/5)=3/10 pound."
+          ],
+          "Answer": "12 minutes; 10 2/3 kg; 3/10 lb.",
+          "Check": "Units are minutes, kilograms and pounds."
+        },
+        {
+          "Title": "Optional existing extension — Count servings",
+          "Question": "Three pounds of beans, quarter-pound portions. How many servings?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Count four quarter-pound groups in each full pound.",
+            "Multiply 3×4=12.",
+            "Write the matching division and multiplication statements."
+          ],
+          "Answer": "12 servings.",
+          "Check": "3÷1/4=12 and 12×1/4=3 pounds."
+        },
+        {
+          "Title": "Optional existing extension — Divide a quarter",
+          "Question": "One quarter pound is shared by three students. What does each receive?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Mark a quarter of a whole pound.",
+            "Divide the selected quarter into three equal pieces.",
+            "Compare the pieces to all twelve equal parts of the full pound."
+          ],
+          "Answer": "1/12 pound each.",
+          "Check": "1/4÷3=1/12 and 3×1/12=1/4."
+        },
+        {
+          "Title": "Optional existing extension — Distinguish equations with identical printed numbers",
+          "Question": "Are 3÷1/4 and 1/4÷3 the same?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Interpret the first as counting quarter-pound servings in three pounds.",
+            "Interpret the second as dividing one-quarter pound among three people.",
+            "Find each and explain the different resulting units."
+          ],
+          "Answer": "No; they are 12 versus 1/12.",
+          "Check": "12×1/4=3 while 1/12×3=1/4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Conclude division is commutative because multiplication is commutative",
+          "WhyWrong": "Swapping the dividend and divisor changes the number or size of groups.",
+          "Correction": "Write the actual story roles and check with inverse multiplication."
+        },
+        {
+          "Mistake": "Use the same area diagram for opposite division expressions",
+          "WhyWrong": "One model represents whole-group counting while the other represents fractional equal sharing.",
+          "Correction": "Draw the correct original whole and identify the divided quantity before partitioning."
+        },
+        {
+          "Mistake": "Treat whole÷unit fraction and unit fraction÷whole as interchangeable operations or replace source Partner A/B statements with generic examples",
+          "WhyWrong": "Diego's burger count is 8 while salad share is 1/8, and each original named story determines correct physical units.",
+          "Correction": "Restore the exact original two picnic prompts and six source Partner A/B numerical situations; require a matching multiplication/division equation and model."
+        }
+      ],
+      "SummaryPoints": [
+        "Warmup 3/10,3/10,1/30,30 from the four different source expressions.",
+        "Burger story 8 burgers and potato salad 1/8 lb/person require reciprocal equations and drawings.",
+        "Partner A: 3/5 km,1/20 gallon per group,15 kg capacity.",
+        "Partner B: 12 min,32/3 kg soil,3/10 lb strawberries.",
+        "Teacher reviews operation selection, inverse equations, units and peer explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source partner-context operations",
+          "Description": "Edulytiks original table; learner source diagrams and peer review remain teacher assessed.",
+          "Rows": [
+            {
+              "Label": "Activity 1",
+              "Cells": [
+                "2÷1/4=8 burgers",
+                "1/4÷2=1/8 lb salad"
+              ]
+            },
+            {
+              "Label": "Partner A",
+              "Cells": [
+                "3/5 km walked",
+                "1/20 gallon/group",
+                "15 kg capacity"
+              ]
+            },
+            {
+              "Label": "Partner B",
+              "Cells": [
+                "12 min/km",
+                "10 2/3 kg soil",
+                "3/10 lb strawberries"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L20",
+      "CultureCode": "en",
+      "Title": "How Much in the Group? (optional)",
+      "ExplanationParagraphs": [
+        "Original IM 2021 Grade5 U03:L20 OPTIONAL How Much in the Group? asks to infer the original WHOLE from a known unit-fraction part: part = whole ×1/n. The unknown whole is larger than the known part, and multiplication/division equations must refer to the same group and original unit.",
+        "Warm-up Estimation Exploration 'What Number Goes in the Blank?' includes a publisher diagram; teacher may ask too low/about right/too high with correct mathematical explanation but the figure is not reconstructed from HTML. An earlier first-party guessed number 14 is not certified source and must not be presented as an original source measurement.",
+        "Activity 1 Different Equations: if one-third of a class is 9, total original class =27. Equivalent equations (1/3)×27=9, 27÷3=9, 3×9=27. Students explain meaning of THREE equations and reconstruct a three-section strip or same-whole representation rather than memorize inverse multiplication.",
+        "Activity 2 How Big is the Class? Jada's 24-member class is one-quarter of all fifth graders. Total grade-five students 24÷(1/4)=96; select BOTH correct source relational equation choices: unknown total÷4=24 AND 24=(1/4)×unknown total. Reject (1/4)×24=unknown total and (1/4)÷24=unknown total because they refer to the wrong whole.",
+        "Activity 3 How Many in One Group? Source applications: 250 mg calcium equals 1/4 of daily recommended allowance, so whole 1000 mg; a rocket took 60 days to reach 1/5 of the way to Mars and under the source's constant-rate mathematical model the complete journey takes 300 days. Original scientific realism and approximate travel assumptions do not replace source mathematical reasoning.",
+        "Independent Edulytiks teacher-scored Cool-down uses a separate unknown-whole context. Exact selection supports the numeric cases only; source diagram interpretation, choose-all-equations response, units and student explanations remain TEACHER_REVIEW_REQUIRED. Publisher original Cool-down and isolated figure binaries are not independently verified.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Recover the whole from a unit share",
+          "Definition": "If one of b equal shares of a whole is known, multiply that share by b to recover the total.",
+          "Rule": "If (1/b)×T=s then T=b×s.",
+          "Example": "One fourth of class is seven students, so whole class is 28."
+        },
+        {
+          "Title": "Equivalent missing-factor equations",
+          "Definition": "The relationships between total T and share s can use multiplication or division.",
+          "Rule": "T÷b=s, b×s=T and (1/b)×T=s.",
+          "Example": "28÷4=7, 4×7=28."
+        },
+        {
+          "Title": "Check a context-specific equation",
+          "Definition": "An equation must represent how many identical shares make the whole.",
+          "Rule": "An expression involving a fractional dividend may be valid arithmetic but irrelevant to the class-size story.",
+          "Example": "(1/4)÷7 is not a class-size reconstruction equation."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original 2021 class of 27",
+          "Question": "If one third of a class is nine pupils, how many pupils are in the class? Interpret three source equations.",
+          "Method": "Find complete whole from known third and check inverse equations.",
+          "Steps": [
+            "Nine pupils are 1/3 of the original whole.",
+            "Three equal groups of nine give 27.",
+            "Verify 27÷3=9 and 1/3×27=9."
+          ],
+          "Answer": "27 pupils in the class.",
+          "Check": "Source three equations 1/3×27=9,27÷3=9,3×9=27."
+        },
+        {
+          "Title": "Source Jada's grade-five population",
+          "Question": "Jada's 24-pupil class is 1/4 of fifth grade. Find population and which source equations are correct.",
+          "Method": "Inverse unit-fraction multiplication plus source equation selection.",
+          "Steps": [
+            "Four such 24-pupil parts make the original grade-five whole.",
+            "24÷1/4=96 pupils.",
+            "Correct source matches are unknown÷4=24 and 24=1/4×unknown."
+          ],
+          "Answer": "96 grade-five pupils.",
+          "Check": "Incorrect source 1/4×24 and 1/4÷24 do not give total grade."
+        },
+        {
+          "Title": "Source calcium and Mars trip totals",
+          "Question": "250 mg is 1/4 of allowance; 60 days is 1/5 of a route. Find both complete wholes.",
+          "Method": "Multiply observed fraction-sized part by its denominator, retaining units.",
+          "Steps": [
+            "Calcium: 250×4=1000 mg.",
+            "Travel: 60×5=300 days for equal time per route fifth.",
+            "Explain original whole and why a fraction-sized part is less than whole."
+          ],
+          "Answer": "1000 mg calcium; 300 days travel in the model.",
+          "Check": "1000/4=250 mg; 300/5=60 days."
+        },
+        {
+          "Title": "Optional existing extension — Find the total grade",
+          "Question": "One fourth of a class is seven students. What is the whole count?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Represent one quarter as seven students.",
+            "Build four equal seven-student groups.",
+            "Multiply 4×7."
+          ],
+          "Answer": "28 students.",
+          "Check": "One fourth of 28 is 7 students."
+        },
+        {
+          "Title": "Optional existing extension — Compare three correct equations",
+          "Question": "Show three matching equations if one third of a grade has 12 students.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Write (1/3)×T=12.",
+            "Rewrite as T÷3=12.",
+            "Use the inverse 3×12=T to find 36."
+          ],
+          "Answer": "T=36 students.",
+          "Check": "36÷3=12 and 1/3×36=12."
+        },
+        {
+          "Title": "Optional existing extension — Reject an unmatched candidate",
+          "Question": "Does 1/4÷7=T represent the whole when one fourth is seven students?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Interpret the dividend 1/4 as a fractional amount divided among seven.",
+            "Observe the quotient would be 1/28, a tiny share.",
+            "Compare with four equal groups of seven students yielding the whole 28."
+          ],
+          "Answer": "No. The correct whole is 28 students, not 1/28.",
+          "Check": "Teacher reviews the explanation of which equation quantities correspond to students."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Divide the known one-fourth share by four to find the whole",
+          "WhyWrong": "The known share is only one of four equal groups, so the whole is larger.",
+          "Correction": "Multiply by the number of equal groups to recover the whole."
+        },
+        {
+          "Mistake": "Match an equation by its printed digits alone",
+          "WhyWrong": "Fractions and whole-number counts play different mathematical roles.",
+          "Correction": "Describe the context for each factor, dividend, divisor and missing value."
+        },
+        {
+          "Mistake": "Automatically compute 1/4 ×24 or 1/4 ÷24 as the unknown full grade-five population",
+          "WhyWrong": "24 is the observed one-quarter part, so multiplying/dividing it as if it were the original whole reverses source problem meaning.",
+          "Correction": "Represent 24 as one of four equal groups; compute 24×4=96 and verify original relational equations."
+        }
+      ],
+      "SummaryPoints": [
+        "Source Activity1 1/3 class=9 -> full class 27; all three source equations represent same relationship.",
+        "Source Activity2 24 students =1/4 grade-five population ->96; original correct equations unknown÷4=24 and 24=1/4×unknown.",
+        "Source Activity3 calcium quarter 250 mg ->1000 mg, rocket fifth 60 days ->300 days in source mathematical model.",
+        "Teacher reviews source equation-selection semantics, original whole, warm-up estimate and diagrams.",
+        "Alternative Edulytiks teacher Cool-down independently assesses unknown whole; publisher gated Cool-down not certified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original unknown whole: pupil counts, calcium and travel",
+          "Description": "First-party source-number table; full-original-unit diagrams and multiple-equation selection require teacher review.",
+          "Rows": [
+            {
+              "Label": "Third of class",
+              "Cells": [
+                "9 students",
+                "full 27 students"
+              ]
+            },
+            {
+              "Label": "Quarter of fifth grade",
+              "Cells": [
+                "24 students",
+                "full 96 students"
+              ]
+            },
+            {
+              "Label": "Quarter calcium total",
+              "Cells": [
+                "250 mg",
+                "full 1000 mg"
+              ]
+            },
+            {
+              "Label": "Fifth of route time",
+              "Cells": [
+                "60 days",
+                "full 300 days"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

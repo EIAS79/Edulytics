@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
+  "source": "IM K5 2021 Unit 1 Lesson 5 original lesson and preparation on Primary Our-CS",
+  "sourceTasks": [
+    "Prism Print Notice and Wonder",
+    "All About That Base multiple base choices",
+    "Growing Prism source 4×10 and heights 1,2,3,10,25",
+    "What Is the Question? source answers 3,5,12,60 and dimensions 3×4×5"
+  ],
+  "expectedAnswers": {
+    "growingPrism": [
+      40,
+      80,
+      120,
+      400,
+      1000
+    ],
+    "questionContext": "side lengths 3/4, height 5, area 12 square units, volume 60 cubic units"
+  },
+  "rubric": [
+    "Any rectangular face may be base with matching perpendicular height",
+    "Different supported question phrasings allowed",
+    "Teacher scores explanations and drawn, tactile or physical models",
+    "Scalar value alone does not prove source-aligned explanation"
+  ],
+  "negativeCases": [
+    "wrong height after rotation",
+    "area reported in cubic units",
+    "volume reported in square units",
+    "40×25=100",
+    "malformed dimensions",
+    "unjustified scalar answer"
+  ],
+  "practiceFamily": "No explicit L05 mapping; official fallback may use generic volume/surface-area; exact selected runtime route NOT_VERIFIED",
+  "PracticeStrategy": "REUSE numeric volume as supplement; shared writer EXTEND for teacher open responses if needed",
+  "StageA": "COMPLETE_WITH_EVIDENCE",
+  "StageB": "COMPLETE_WITH_EVIDENCE",
+  "StageC": "GRADE5_L05_EXACT_SOURCE_GROWING_PRISM_WRITTEN_NOT_RUN_TEACHER_LED",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED",
+  "figures": "UNVERIFIED_ORIGINAL_IMAGE_NOT_REPRODUCED",
+  "testStatus": "WRITTEN_NOT_RUN",
+  "owner": "Supervisor 1 single shared writer issue #592",
+  "digitalFamily": "usccss.g5.u01.l05.growing_prism_fixed_base",
+  "teacherReviewRequired": "Rotated base orientation, invented question with answers 3/5/12/60, original Cool-down"
+}
