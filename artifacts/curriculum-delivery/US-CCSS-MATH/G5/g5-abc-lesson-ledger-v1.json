@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L02",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L03",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -1019,8 +1019,8 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-2\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-2\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-2\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-2\\preparation.html"
       ],
       "reuseFinding": "REUSE_SOURCE_SPECIFIC_1_DIV_2_3_4_5_AND_MULTIPLE_SANDWICH_MATCH_RICH_V2; ONLY_APPEND_ORIGINAL_EXIT_AND_C_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
@@ -1070,7 +1070,23 @@
         "parentHead": "58077d3d2aa6bed5a9255f894c53dae5c565f058"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l02-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "atDate": "2026-11-02",
+        "status": "READY_FOR_STAGE_D",
+        "sourceEvidence": "2021 first-edition teacher lesson and preparation, reviewed read-only on Our-CS",
+        "richV2": "EXISTING_SOURCE_ALIGNED_PRESERVED",
+        "staticSelectedFamily": "usccss.g5.u02.l02.unit_share_equivalence",
+        "mappingPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs",
+        "questionBankPath": "src/Edulytics.Services/Mathematics/UsCcssG5Unit2SourceQuestions.cs",
+        "atomicEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l02-2021-source-revalidation-20261102.json",
+        "originalPublisherCooldown": "SOURCE_UNAVAILABLE_GATED",
+        "firstPartyCooldown": "MATCHED_TEACHER_LED",
+        "blacklineMaster": "SOURCE_UNVERIFIED_THIRD_PARTY_IMAGES_NOT_COPIED",
+        "source100PercentClaimed": false,
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L03",
