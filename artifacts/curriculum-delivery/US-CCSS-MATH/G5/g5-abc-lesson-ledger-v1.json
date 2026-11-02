@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L01",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L02",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -951,8 +951,8 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L01",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-1\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-1\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-1\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-1\\preparation.html"
       ],
       "reuseFinding": "PRESERVE_PHASE29_PEDAGOGICAL_METADATA_AND_CANONICAL_PACK; ADD_MISSING_GRADE_OWNED_RICH_V2_EXACT_LESSON_SUBJECT_TO_STATIC_REGISTRY_EMBED",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
@@ -1002,7 +1002,19 @@
         "parentHead": "08e45c20cc52ac04516331236fa7d9dbf311e433"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l01-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "atUtc": "2026-11-02T16:16:40.399Z",
+        "status": "READY_FOR_STAGE_D",
+        "atomicEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l01-2021-atomic-source-evidence-20261102.json",
+        "verifiedOriginal2021TeacherSha256": "6ba43da35214dc627a8989ec9b171c2a8b2103298b3d85e096072ce4b5d31538",
+        "staticPracticeFamily": "usccss.g5.u02.l01.source_fair_share_choice",
+        "ownerAuthorizedFunctionalCooldown": "MATCHED_TEACHER_LED",
+        "originalPublisherCooldownSource": "SOURCE_UNAVAILABLE",
+        "source100PercentClaimed": false,
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
@@ -6517,14 +6529,22 @@
     },
     "grade": {
       "scope148": 148,
-      "lessonsRevalidatedThisPass": 12,
-      "remainingThisPass136": 136,
-      "nextLesson": "PED:US-CCSS-MATH:G5:U02:L01",
+      "lessonsRevalidatedThisPass": 13,
+      "remainingThisPass136": 135,
+      "nextLesson": "PED:US-CCSS-MATH:G5:U02:L02",
       "historicalReadyCount": 148
     },
     "ci": "NOT_RUN",
     "stageD": "NOT_RUN",
     "independentAcademicApproval": "NOT_CLAIMED",
-    "deploy": "NOT_RUN"
+    "deploy": "NOT_RUN",
+    "unit02": {
+      "lessons17": 17,
+      "sequentialAbcRevalidated": 1,
+      "lastClosedLesson": "PED:US-CCSS-MATH:G5:U02:L01",
+      "nextLesson": "PED:US-CCSS-MATH:G5:U02:L02",
+      "sourceTeacher2021": true,
+      "stageD": "NOT_RUN"
+    }
   }
 }

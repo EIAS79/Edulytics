@@ -75,3 +75,8 @@
 - Optional source L12 is valid and has NO official publisher Cool-down. Its third-party truck photo remains `RIGHTS_RESTRICTED` and was NOT imported; independent Edulytiks text/array activities and own reflection reused.
 - U01:L01–L12 sequential A–B–C source/teaching/practice revalidated with first-party authorized alternatives and explicit original publisher limits. See `u01-abc-first-edition-2021-revalidation-closure-20261102.json`.
 - Current pass 12/148 revalidated; previous 148 READY labels are historical, not 2021 revalidation. CI/tests and Stage D NOT_RUN. Next **U02:L01**.
+
+## Sequential closure checkpoint: Grade5 U02:L01 (ordinal 13)
+- Source is local 2021 Kendall Hunt unit2 Lesson 1 `Share Sandwiches`, teacher lesson SHA-256 `6ba43da35214dc627a8989ec9b171c2a8b2103298b3d85e096072ce4b5d31538`, preparation `0ac916c7f980ebf891a001a519241f4db4acc6ee818fcbb7fa4f593e`.
+- Reused correct first-party Rich V2 explaining six 2/3/5 distinct-number cases and Han's 2/3 partition; static source-specific exact multiple-choice generator verified from grouped `UsCcssG5Unit2SourceQuestions`, registered through `UsCcssG5Unit2SourcePracticeContracts`. Teacher checks drawings/reasoning; four third-party publisher food photos not copied. Original gated publisher How Much? remains SOURCE_UNAVAILABLE; own 4/3 fair-share exit retained.
+- Created source-relevant atomic itemization instead of misusing 45 raw DOM image/header tags; denominator of full original publisher source remains incomplete. Test fixtures written NOT_RUN, CI/D NOT_RUN. Next **U02:L02**.

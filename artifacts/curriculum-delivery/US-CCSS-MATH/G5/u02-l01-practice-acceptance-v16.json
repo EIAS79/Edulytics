@@ -32,12 +32,20 @@
   "sourceBoundary": "CC BY 4.0 teacher text; separate photo rights and publisher gated 'How Much?' not copied/verified; first-party models only",
   "ContentWiring": "NEW_RICH_V2_FILE: C# project embeds Curriculum/LessonContent/RichV2/*.rich-lesson-v2.json; RichLessonContentV2Registry.BuildDirectLessonIndex matches LessonCode/CultureCode and Find returns same content (actual authenticated display Stage D NOT_RUN)",
   "PracticeStrategy": "REUSE numeric fraction-as-quotient only as supplement if actually selected; EXTEND teacher-scored equal sharing representation through Supervisor 1 single writer",
-  "explicitLessonMapping": "NONE_FOR_U02L01",
-  "selectedRuntimePractice": "NOT_VERIFIED",
+  "explicitLessonMapping": "UsCcssG5Unit2SourcePracticeContracts.Reviewed (registered inside LessonPracticeContracts.BuildAllEntries)",
+  "selectedRuntimePractice": "STATIC_SOURCE_EXACT_FAMILY_SELECTED; AUTHENTICATED_RUNTIME_STAGE_D_NOT_RUN",
   "StageA": "COMPLETE_WITH_EVIDENCE",
   "StageB": "COMPLETE_WITH_EVIDENCE",
-  "StageC": "BLOCKED_SHARED_INTEGRATION",
+  "StageC": "GRADE5_U02_L01_SOURCE_EXACT_FAIR_SHARING_CHOICE_WRITTEN_NOT_RUN_TEACHER_LED",
   "publisherCooldown": "NOT_VERIFIED_GATED",
   "edulytiksCooldown": "ORIGINAL_AUTHORED",
-  "testStatus": "TEST_AUTHORED_NOT_RUN"
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "historicalStageCBefore20261102": "BLOCKED_SHARED_INTEGRATION",
+  "staticRouteEvidence": [
+    "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs",
+    "src/Edulytics.Services/Mathematics/UsCcssG5Unit2SourceQuestions.cs",
+    "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs"
+  ],
+  "originalPublisherCoolDown": "NOT_VERIFIED_GATED",
+  "firstPartyExitRule": "OWNER_AUTHORIZED_EDULYTIKS_ORIGINAL_FOUR_SANDWICHES_THREE_PEOPLE_4_OVER_3_TEACHER_REVIEWED"
 }
