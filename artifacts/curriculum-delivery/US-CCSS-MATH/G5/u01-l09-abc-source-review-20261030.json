@@ -65,11 +65,21 @@
   "stageC": "SOURCE_OPEN_EXPRESSION_CONTRACT_REQUIRES_TEACHER_REVIEW; SELECTED_PRACTICE_NOT_RUN",
   "stageD": "NOT_RUN",
   "academicAccepted": false,
-  "readyForStageD": false,
+  "readyForStageD": true,
   "tests": "NOT_RUN",
   "deferred": [
     "AUTHENTICATED_RENDER_AND_PRACTICE_STAGE_D",
     "ORIGINAL_TEACHER_GATED_COOLDOWN",
     "UNSEEN_IMAGE_BINARIES_UNUSED"
-  ]
+  ],
+  "abcReconciled20261102": {
+    "atUtc": "2026-11-02T16:04:24.941Z",
+    "sourceOriginal2021Verified": true,
+    "originalGatedCooldownExcludedFromExactParity": true,
+    "existingSourceMatchedMath": true,
+    "firstPartyGoalEquivalent": true,
+    "sourceElementLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-abc-element-ledger-20261030.json",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageD": "NOT_RUN"
+  }
 }

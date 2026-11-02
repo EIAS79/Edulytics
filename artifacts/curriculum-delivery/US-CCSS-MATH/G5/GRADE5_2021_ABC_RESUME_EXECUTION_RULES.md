@@ -58,3 +58,7 @@
 ## Sequential closure checkpoint: Grade 5 U01:L08
 - First Edition 2021 Put It Together and source 22, 30, 46, 50, 60, 57 disjoint prism calculations retained. Previous stale ABC source-review `readyForStageD=false` reconciled with source-specific registered practice and user-authorized independent teacher-reviewed 30-cube exit; original publisher Cool-down still SOURCE_UNAVAILABLE and NOT claimed exact.
 - Teacher SHA-256 `347ec03c60ad4125aef80609cfab5ef05646325793ca51534570f17ed16c9420`; preparation `c409f8cc52224e79f6d64618ce8f8886154817b6465db385ff9388e4c1544279`. No tests/CI/Stage D run. Next **U01:L09**.
+
+## Sequential closure checkpoint: Grade 5 U01:L09
+- Original first-edition 2021 source and correct 78 ft³/259 in³/42 cubes/420 in³ composite expressions retained. Existing selected lesson-specific numeric Practice and teacher partition explanations retained. Previous source review false READY status reconciled; gated original publisher Cool-down separately SOURCE_UNAVAILABLE while independent Edulytiks 78 ft³ reasoning exit accepted functionally.
+- Teacher SHA-256 `1096c393903be379c1071785ea657f8be4f3d945727c85e0b82c4c067cb08cc2`; preparation `bd20cf59b7ac2a38a2c78b1f746cade09962af5d23963428c4e9cb54164f60d4`. No tests/CI/Stage D run. Next **U01:L10**.
