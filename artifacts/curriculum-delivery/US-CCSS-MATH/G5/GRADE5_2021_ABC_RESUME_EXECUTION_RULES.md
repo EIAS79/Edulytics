@@ -100,3 +100,6 @@
 
 ## U02:L06 (ordinal 18) 2021 revalidation
 Local teacher lesson/preparation inspected: number talk 3×1/2, 3×2/2, 3×3/2, 5×3/2; Lin and Han share a 3-mile relay equally 3÷2=3×1/2=1/2×3=3/2; two 3-unit half-partition diagrams and teacher explanation. Reused matching Rich V2 and first-party independent 5-mile exit. Static practice family `usccss.g5.u02.l06.relay_division_unit_fraction` already declared and questions present, correcting historical stale BLOCKED_SHARED_INTEGRATION. Original gated publisher cool-down unavailable. Tests WRITTEN_NOT_RUN; Stage D NOT_RUN. Next U02:L07.
+
+## U02:L07 (ordinal 19) local 2021 revalidation
+Original teacher lesson/preparation checked: estimate number line between 0 and 5 without unsupported exact value; Mai 1/4 of 9 miles =9/4, Han 1/4 of 7 =7/4; four-person 3-mile relay gives 3/4 per runner, multiple diagrams/cards with explanations. Existing source-aligned Rich V2 and first-party 11-mile independent exit retained. Exact source-specific static family `usccss.g5.u02.l07.unit_fraction_race_distances` declared, stale Stage C blocked evidence corrected and test expectation authored not run. Publisher Another Race gated and original blackline cards not claimed source-exact. CI/Stage D NOT_RUN. Next U02:L08.
