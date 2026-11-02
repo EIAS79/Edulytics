@@ -112,3 +112,6 @@ Read teacher lesson/preparation: warm-up compare four area shapes; six-unit leng
 
 ## U02:L10 (ordinal 22), IM 2021 local source revalidation
 Local teacher lesson/preparation checked: estimate fractional area >half of seven; rectangles of whole side four with fractional heights 2/3,3/4,3/5; distinguish twelve 1/4 from twelve 1/5 area pieces. Unlabeled diagrams and student matching remain teacher-reviewed. Reused existing source-matched Rich V2 and exact unit2 selected static family `usccss.g5.u02.l10.area_whole_by_nonunit_fraction`. Added first-party 4×3/5 versus 4×3/4 cool-down with geometric reasoning; publisher original gated. Tests authored NOT_RUN; CI/Stage D NOT_RUN. Next U02:L11.
+
+## U02:L11 (ordinal 23) IM first edition 2021 revalidation
+Source teacher lesson/preparation compared: warm-up 10÷3=10×1/3 and 10/3=5×2/3; 4 2/3×4=56/3 select-all correct (A,C,D), 2 1/4×2 and 3 3/4×3 geometric examples. Source-aligned Rich V2 reused and independent 3×5/4 first-party area exit appended with diagram rubric. Static exact family `usccss.g5.u02.l11.area_fraction_greater_than_one` retained; publisher Find the Area gated and no source-verbatim 100% claim. Test authored NOT_RUN, CI/Stage D NOT_RUN. Next U02:L12.
