@@ -167,3 +167,8 @@ Re-read original teacher lesson/preparation locally: WODB diagrams with multiple
 - U06:L01–L21 compared in official sequence against local First Edition 2021 teacher lesson/preparation and existing authoring closures; committed one source-revalidation evidence file per lesson without rebuilding correct implementations.
 - Unit handoff report: `u06-2021-abc-sequential-revalidation-unit-closure-20261102.md`, GitHub commit `9292a1be48fd0623fb3b25e09b3cc502da0d4391`.
 - **Active revalidation cursor: U07:L01**, revalidated **117/148** lessons. This count does not imply original publisher asset-exact 100% or Stage D approval. Tests/Stage D/CI deliberately NOT_RUN; no merge/deploy.
+
+## Unit 7 2021 sequential A–B–C revalidation complete — 2026-11-02
+- U07:L01–L13 compared one-by-one with local original teacher lesson/preparation, prior authoring closures and selected lesson Practice. Revalidation JSON artifacts committed in lesson order; no engine rewrite.
+- Unit report `u07-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `574c72e01028e4912a5664a2867fb3aed5090e42`. U07:L13 original teaching commentary makes imprecise claim 16/5~3 1/3 although exact value 3.2; flagged as source text discrepancy without propagating math error.
+- **Active sequential cursor: U08:L01, reviewed 130/148**. Original publisher asset-exact 100%, authenticated runtime, Stage D and CI NOT certified/run. No merge or deploy.
