@@ -77,3 +77,26 @@ test('U01:L01 first-edition 2021 student task PDF supports exact page-level 9-ta
    'src/Edulytics.Core/Curriculum/RichLessonContentV2.cs'),'utf8');
  assert.match(kind,/Grade5Unit1CubeComparison = 11/);
 });
+
+test('U01:L01 independent author exit measures the greater eight-versus-nine cube volume, not height',()=>{
+ const fs=require('node:fs');const path=require('node:path');
+ const root=path.resolve(__dirname,'..');
+ const j=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json'),'utf8'));
+ const lesson=j.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G5:U01:L01');
+ const exit=lesson.ExplanationParagraphs.find(x=>x.startsWith('Edulytiks-original five-minute exit check'));
+ assert.ok(exit,'First-party source-goal exit instruction missing');
+ assert.match(exit,/eight identical unit cubes/);
+ assert.match(exit,/nine identical unit cubes/);
+ assert.match(exit,/one more unit-cube space/);
+ assert.match(exit,/teacher evaluates a valid construction/i);
+ assert.equal(9-8,1);
+ const evidence=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json'),'utf8'));
+ const original=evidence.lessonElements.find(x=>x.SourceElementId==='G5-U01-L01-CD-SOURCE-Q01');
+ const author=evidence.lessonElements.find(x=>x.SourceElementId==='G5-U01-L01-CD-AUTHOR-Q01');
+ assert.equal(original.Status,'SOURCE_UNAVAILABLE','2021 protected exact task is not invented');
+ assert.equal(author.Status,'MATCHED_TEACHER_LED');
+ assert.match(author.ExpectedMathematics,/8-versus-9/);
+ assert.equal(evidence.sourceCoverage100Percent,false);
+});

@@ -935,13 +935,13 @@
       "ParentElementId": null,
       "Category": "author-created-cool-down",
       "SourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html#CD-AUTHOR-Q01",
-      "ExpectedMathematics": "Two independent connected 8-cube objects same volume, explanation required",
-      "SourceDescription": "Edulytiks-original equal-volume 8-cube high and low solids, teacher-reviewed",
+      "ExpectedMathematics": "First-party teacher-reviewed 8-versus-9 unit-cube volume comparison using equal-size cubes, with construction and reasoning",
+      "SourceDescription": "Edulytiks-original 8-cube tall solid vs 9-cube low connected solid, skill-aligned to first-edition volume comparison; does not reproduce 2021 publisher protected question",
       "TeacherOrStudentAudience": "Student",
       "RightsStatus": "AUTHOR_CREATED_NOT_PUBLISHER",
       "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
       "ImplementationType": "TEACHER_LED",
-      "VerificationMethod": "Manual side-by-side source HTML/teacher prep vs. grade-owned Rich V2. Original image HTML alt when relevant; no authenticated application was run.",
+      "VerificationMethod": "Original 2021 first-edition teacher lesson goal verified; related 2023 CKMath teacher guide independently corroborates the compare-different-volume exit skill, but is not claimed to be the exact original 2021 locked Cool-down. Teacher reviews construction, counts and justification.",
       "TestNames": [
         "tests/academic-us-ccss-g5-u01-source-math-oracles-20261030.test.cjs",
         "tests/academic-us-ccss-g5-u01-figure-source-contract-20261030.test.cjs"
@@ -1134,7 +1134,14 @@
     "originalPublisherFigureBytesCopied": false,
     "sourceCoverage100Percent": false,
     "stageDVerified": false,
-    "academicAtoCHandoffPreserved": true
+    "academicAtoCHandoffPreserved": true,
+    "firstPartyExitSkillCorrection20261102": {
+      "comparison": "eight congruent cubes versus nine congruent cubes, low model has greater volume",
+      "authorCreatedNotCopiedFromPublisher": true,
+      "originalPublisherCoolDownStillGated": true,
+      "sourceCompatible2023AdaptationIsNotOriginal2021Proof": true,
+      "studentPdfDoesNotContainCoolDown": true
+    }
   },
   "original2021StudentTaskPdfDirectProof": {
     "source": "IM K-5 first edition (2021), Unit 1 Lesson 1, Student Task Statements",
