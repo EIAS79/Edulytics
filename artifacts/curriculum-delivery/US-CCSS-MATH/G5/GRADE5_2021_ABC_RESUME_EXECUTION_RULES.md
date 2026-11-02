@@ -109,3 +109,6 @@ Read local teacher lesson and preparation: source true/false unit-fraction third
 
 ## U02:L09 (ordinal 21) first edition 2021 revalidation
 Read teacher lesson/preparation: warm-up compare four area shapes; six-unit length with heights 1,1/2,1/3,1/4 produces 6,3,2,1 1/2 square units; four half-height 1,2,3,4 wide grid drawings and partly hidden area estimations. Reused existing Rich V2 and static area family; added missing independent teacher-reviewed 6×1/4 vs 3×1/2 rectangle exit, not the publisher-gated Fractional Pieces. Test authored NOT_RUN; Stage D/CI NOT_RUN. Next U02:L10.
+
+## U02:L10 (ordinal 22), IM 2021 local source revalidation
+Local teacher lesson/preparation checked: estimate fractional area >half of seven; rectangles of whole side four with fractional heights 2/3,3/4,3/5; distinguish twelve 1/4 from twelve 1/5 area pieces. Unlabeled diagrams and student matching remain teacher-reviewed. Reused existing source-matched Rich V2 and exact unit2 selected static family `usccss.g5.u02.l10.area_whole_by_nonunit_fraction`. Added first-party 4×3/5 versus 4×3/4 cool-down with geometric reasoning; publisher original gated. Tests authored NOT_RUN; CI/Stage D NOT_RUN. Next U02:L11.
