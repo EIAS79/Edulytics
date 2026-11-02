@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L03",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L04",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -1091,8 +1091,8 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L03",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-3\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-3\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-3\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-3\\preparation.html"
       ],
       "reuseFinding": "REUSE_ALREADY_SOURCE_FAITHFUL_RICH_V2_MAI_CONTEXT_2_DIV_3_AND_DANCERS_TABLE; ADD_ORIGINAL_EXIT_AND_GRADE_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
@@ -1143,7 +1143,21 @@
         "closingHead": "12ae04b995fc16613567c69de517f9d0fcf8c4fa"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l03-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "atDate": "2026-11-02",
+        "status": "READY_FOR_STAGE_D",
+        "original2021TeacherSource": "READ_READ_ONLY",
+        "sourceMathematics": "3 dancers share 2 liters:2/3 each; Mai's 3/2 rejected; open table 2/4,3/4,3/5; 3/2 valid only for reversed context",
+        "staticFamily": "usccss.g5.u02.l03.fraction_division_direction",
+        "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs",
+        "questionBank": "src/Edulytics.Services/Mathematics/UsCcssG5Unit2SourceQuestions.cs",
+        "publisherCoolDown": "SOURCE_UNAVAILABLE_GATED",
+        "firstPartyCooldown": "MATCHED_TEACHER_LED",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "source100PercentClaimed": false
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L04",
