@@ -73,3 +73,5 @@ test('G5 U02 L17 OPTIONAL source contextual exact subskill with teacher oversigh
 checkLesson('PED:US-CCSS-MATH:G5:U02:L17','usccss.g5.u02.l17.mosaic_rectangle_area_cost',["4 1/2 square inches","18 square inches","$90","$54"],["3 1/2 square inches","12 square inches"]);
 });
 // NEXT_LESSON_TEST
+
+test('U02:L08 independent two-thirds exit retained with source fifths and original publisher excluded',()=>{const l=JSON.parse(read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json')).Lessons.find(v=>v.LessonCode.endsWith('U02:L08'));const text=l.ExplanationParagraphs.join(' ');assert.match(text,/Edulytiks-original Cool-down/);assert.match(text,/two-thirds of the entire six-liter quantity/);assert.match(text,/not the gated 2021 publisher/);assert.match(text,/2×\(3÷5\)/)});
