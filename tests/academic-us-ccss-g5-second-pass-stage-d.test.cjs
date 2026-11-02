@@ -57,7 +57,11 @@ test('2021 second-pass handoff retains all 148 ordered Grade 5 closures with ind
       assert.ok(fs.statSync(target).isFile(), 'missing closure evidence ' + expected);
       const evidence = load(row.reviewEvidencePath);
       assert.equal(evidence.lessonCode, expected, 'wrong evidence lesson ' + expected);
-      assert.equal(evidence.REVIEW_COMPLETE_2021, true, expected);
+      // U01:L01 was closed with the original, explicit secondPassReviewComplete2021
+      // field; later lessons standardized on REVIEW_COMPLETE_2021.
+      const sourceReviewComplete = evidence.REVIEW_COMPLETE_2021 ??
+        evidence.secondPassReviewComplete2021;
+      assert.equal(sourceReviewComplete, true, 'missing closed 2021 review evidence ' + expected);
       const edition = evidence.sourceEdition ?? evidence.edition ?? evidence.sourceEditionVerified;
       if (edition !== undefined) assert.match(edition, /2021/, expected);
       const historical = evidence.oldReadyForStageD ?? evidence.readyForStageD ??
