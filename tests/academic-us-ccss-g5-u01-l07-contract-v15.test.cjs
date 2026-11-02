@@ -21,3 +21,23 @@ test('grade5 U01 L07 exact subskill contract and source mathematical oracles', {
  for(const answer of [3,2,1])assert.ok(src.includes(String(answer)));
  assert.match(src,/teacher-reviewed/);
 });
+
+test('L07 cubic-volume units remain cubic and information-gap algebra uses one consistent unknown', () => {
+ const document = JSON.parse(fs.readFileSync(p, 'utf8'));
+ const lesson = document.Lessons.find(x => x.LessonCode === 'PED:US-CCSS-MATH:G5:U01:L07');
+ assert.ok(lesson, 'Grade 5 U01:L07 rich lesson must exist');
+ const unitVisual = lesson.Visuals.find(x => x.Title === 'Choosing a cubic unit');
+ assert.ok(unitVisual);
+ const reasonable = unitVisual.Rows.find(x => x.Label === 'Reasonable unit');
+ assert.ok(reasonable);
+ assert.equal(reasonable.Cells[0], 'Cubic inches or cubic centimeters',
+   'volume units must be three-dimensional, never centimeters alone');
+ const freezer = lesson.WorkedExamples.find(x =>
+   x.Title === 'Original 2021 Information Gap freezer — ask before multiplying');
+ assert.ok(freezer);
+ assert.match(freezer.Steps[2], /4\s*×\s*d\s*×\s*3\s*=\s*12d cubic feet/);
+ assert.match(freezer.Steps[3], /missing edge measurement/);
+ assert.doesNotMatch(freezer.Steps.join(' '), /\bwithout L\b/,
+   'do not substitute an undefined L for the dimension d');
+ assert.match(freezer.Answer, /12d cubic feet/);
+});
