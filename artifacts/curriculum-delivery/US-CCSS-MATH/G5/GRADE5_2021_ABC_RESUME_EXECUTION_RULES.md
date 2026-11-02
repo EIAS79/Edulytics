@@ -118,3 +118,6 @@ Source teacher lesson/preparation compared: warm-up 10÷3=10×1/3 and 10/3=5×2/
 
 ## U02:L12 (ordinal 24) source revalidation 2021
 Original local teacher lesson/preparation inspected: number talk 3×20,3×24,5×2,5×2 1/2; Noah 5×6 1/4=31 1/4 square yards versus Priya 6×5 1/4=31 1/2; six decomposition strategy starters for 4×5 1/2=22. Reused existing math/teacher rubric/source-specific static family `usccss.g5.u02.l12.decomposed_mixed_rectangle_area`; independent exit added asking two decompositions of 4×5 1/2. Publisher Decompose Rectangles gated; first-party equivalent not claimed publisher text. Test authored NOT_RUN; CI/Stage D NOT_RUN. Next U02:L13.
+
+## U02:L13 (ordinal 25) source revalidation 2021
+Original teacher lesson/preparation: parenthesis number talk; card sort expressions/diagrams with multiple matches, diagram C 3×5 2/5, B (5×3)−(5×2/5); later 4×5 1/3 and 7×3 3/4 using distributive area expressions. Reused source-specific static family `usccss.g5.u02.l13.distributive_area_expressions` and existing Rich V2. Added teacher-reviewed 7×3 3/4 independent cooldown with additive/subtractive decompositions, not the publisher gated Equivalent Expressions. Tests WRITTEN_NOT_RUN, Stage D/CI NOT_RUN. Next U02:L14.
