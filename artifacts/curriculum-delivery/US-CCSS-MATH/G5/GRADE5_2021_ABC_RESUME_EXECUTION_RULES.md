@@ -139,3 +139,11 @@ Revisited original 2021 teacher lesson/preparation on Our-CS: pan remainder ~2/5
 
 ## U03:L02 (ordinal 31) 2021 first-edition sequential revalidation
 Re-read original teacher lesson/preparation locally: WODB diagrams with multiple valid arguments; first 1/4 of 1/3 and 1/3 of 1/4 both equal 1/12; Priya 1/5×1/2=1/10 and second image 1/5×1/3=1/15 of original whole. Existing Rich V2 contains corresponding first-party 4×3, 3×4, 2×5, 5×3 grids, exact two selected static families, teacher rubric and tests; preserved. Original publisher How Much is Shaded? gated, first-party teacher rubric retained. Tests/Stage D/CI NOT_RUN, publisher exact asset parity not claimed. Next U03:L03.
+
+## U03:L03–L06 (ordinals 32–35) 2021 sequential revalidation — 2026-11-02
+- Read original First Edition 2021 local `lesson.html` and `preparation.html` for U03:L03, L04, L05, L06. Compared source objectives, sample values, student-facing tasks and teacher-led reasoning against their existing 2026-11-01 A–B–C authoring closures and selected static Practice families. No unnecessary engine or content reconstruction.
+- L03 source four-column unit-fraction arrays, 1/8, 1/12, 1/16, 1/20 and next 1/24, plus 1/5×1/3=1/15 and 1/4×1/6=1/24. Revalidation `u03-l03-2021-source-revalidation-20261102.json` committed `9662f64a`.
+- L04 sports park 1/2 of 2/3 = 1/3 and Elena's ten-piece park: grass 3/10, pond 4/10, swings 1/10, basketball 2/10. Revalidation `u03-l04-2021-source-revalidation-20261102.json` committed `79a6bdda`.
+- L05 shaded unit/non-unit fraction area 2/5×1/3=2/15, 6/5×1/3=6/15 and Kiran error 6/30. Open estimate drawings remain teacher-reviewed. Revalidation `u03-l05-2021-source-revalidation-20261102.json` committed `50f0f84c`.
+- L06 non-unit fractions 8/30 = 2×4×(1/5×1/6), 6×4/(5×4)=24/20 and 2/4×3/5=6/20. Revalidation `u03-l06-2021-source-revalidation-20261102.json` committed `9f211343`.
+- Publisher gated original Cool-downs and independently uncertified publisher image/PDF assets stay explicit source-verbatim limitations, not accepted as source-exact. Existing first-party teacher-scored cool-downs retained. Tests authored but NOT_RUN. Stage D / CI NOT_RUN. **Current sequential revalidation cursor U03:L07**; prior 35/148 lessons reviewed in this revalidation series, not 35 new authoring closures.
