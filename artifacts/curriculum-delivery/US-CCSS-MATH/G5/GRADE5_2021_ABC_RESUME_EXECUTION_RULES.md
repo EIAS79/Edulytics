@@ -127,3 +127,6 @@ Number talk source 3×(10÷2),3/2×10,14/7×10,14×10/7; two-role Info Gap: Area
 
 ## U02:L15 (ordinal 27) IM 2021 source revalidation
 Read local teacher source/preparation: mixed number talk 6×3/8,6×2 3/8,7×9/10,7×3 9/10; number bank 4,5,5 1/2,3,5 3/4,2 exactly once for rug, puzzle and whiteboard contexts; 4×5 2/3 expressed by distributive, bounding subtraction, improper fraction, and divide-by-three. Rich V2 and static `usccss.g5.u02.l15.multiply_mixed_source_number_bank` reused; added independent 4×5 2/3 display-board exit with diagram/two methods. Publisher Mixed Number Multiplication gated; no exact-source parity claim. Tests written not run; CI/D not run. Next U02:L16.
+
+## U02:L16 (ordinal 28; source OPTIONAL), 2021 revalidation
+Local original teacher lesson/preparation read: warm-up 30-40 square foot garden sizes, Priya budget 36 with options 9×4 2/3=42,9×3 8/9=35,12×2 11/12=35,9×2 2/3=24; distinguish eligibility versus closeness to target. Estimation products 7×12 8/9 and 9×4 2/29 and digit puzzle close to 20. Existing source-specific Rich V2/`usccss.g5.u02.l16.estimate_mixed_area_products` preserved, added own 8×4 1/3=34 2/3 independent exit with teacher reasoning. Publisher Estimate and Solve gated. Tests WRITTEN_NOT_RUN, CI/Stage D NOT_RUN. Next U02:L17.

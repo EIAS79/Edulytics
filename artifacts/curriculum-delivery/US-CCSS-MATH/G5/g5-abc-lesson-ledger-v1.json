@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L16",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L17",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -2018,16 +2018,16 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L16",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-16\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-16\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-16\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-16\\preparation.html"
       ],
       "reuseFinding": "SOURCE_RICH_V2_REVIEWED_AND_REUSED_PER_COMMITTED_U02-L16-ABC-SEQUENTIAL-CLOSURE-20261030.JSON",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
       "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "SOURCE_EXACT_DIGITAL_SUBSKILL_PLUS_TEACHER_REVIEW: usccss.g5.u02.l16.estimate_mixed_area_products",
-      "CooldownOriginalStatus": "NO_VERIFIED_SOURCE_COOLDOWN_OR_GATED_AS_APPLICABLE; EDULYTIKS_AUTHOR_CREATED_SUBSTITUTION_WHEN_REQUIRED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=SOURCE_UNAVAILABLE_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED_TEACHER_REVIEW",
       "testFile": "tests/academic-us-ccss-g5-u02-sequential-abc-20261030.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": null,
@@ -2072,7 +2072,21 @@
       "sourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l16-abc-sequential-closure-20261030.json",
       "lastClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l16-abc-sequential-closure-20261030.json",
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l16-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "status": "READY_FOR_STAGE_D",
+        "original2021Source": "local lesson/preparation",
+        "optionalLesson": true,
+        "math": "Garden 36-foot target; options 42,35,35,24; estimate mixed products 7×12 8/9,9×4 2/29; source five-digit close-to-20 puzzle",
+        "staticFamily": "usccss.g5.u02.l16.estimate_mixed_area_products",
+        "richV2": "REUSED_AND_FIRST_PARTY_EXIT",
+        "publisherCooldown": "SOURCE_UNAVAILABLE",
+        "teacherReviewRequired": true,
+        "source100PercentClaimed": false,
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l16-2021-source-revalidation-20261102.json"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L17",
