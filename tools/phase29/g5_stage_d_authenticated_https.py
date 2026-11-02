@@ -221,6 +221,7 @@ def run():
         raise AssertionError("G5 class/adoption GUID malformed")
     if not re.fullmatch(UUID, student_row):
         raise AssertionError("G5 original student class GUID malformed")
+    lessons = all_grade5_lesson_rows()
     results = []
     original_restored = False
     try:
@@ -237,16 +238,17 @@ def run():
         if changed != "1":
             raise AssertionError("G5 disposable reassignment must affect one enrollment")
         student = login_student()
-        for code, (title, phrases) in TARGETS.items():
-            lesson_id = only_one_row("""
-                SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
-                WHERE "Code"='""" + code + """';""", "lesson " + code)
-            if not re.fullmatch(UUID, lesson_id):
-                raise AssertionError("G5 lesson GUID malformed")
+        for code, lesson_id in lessons:
+            # Exact source text is independently checked for the two reviewed
+            # fixtures; every lesson still requires a real authenticated page.
+            title, phrases = TARGETS.get(code, (None, ()))
             page = html.unescape(get_page(student, "/student/learning/lesson/" + lesson_id))
-            for required in (title, "rich-lesson-section", *phrases):
-                if required.casefold() not in page.casefold():
-                    raise AssertionError(f"G5 {code}: missing actual authenticated content: {required}")
+            required = ("rich-lesson-section", *phrases)
+            if title:
+                required = (title, *required)
+            for term in required:
+                if term.casefold() not in page.casefold():
+                    raise AssertionError(f"G5 {code}: missing actual authenticated content: {term}")
             form = get_page(student, "/student/practice")
             csrf = extract_csrf(form)
             adoption = extract_adoption(form)
@@ -255,8 +257,8 @@ def run():
                 raise AssertionError(f"G5 {code}: Practice form has wrong grade's adoption")
             positive = probe_lesson(student, BASE, lesson_id, adoption,
                                     csrf, nonce, sql)
-            if positive.get("status") != "SELF_CONSISTENT_GRADE_PERSISTED":
-                raise AssertionError(f"G5 {code}: real correct answer failed: {positive}")
+            if positive.get("status") != "SELF_CONSISTENT_GRADE_PERSISTED" or not positive.get("family"):
+                raise AssertionError(f"G5 {code}: real correct answer or family failed: {positive}")
             if code.endswith("U03:L02") and positive.get("family") not in {
                 "usccss.g5.u03.l02.unit_fraction_of_unit_fraction",
                 "usccss.g5.u03.l02.same_original_whole_order_comparison"
@@ -305,10 +307,10 @@ def run():
         original_restored = restored == "1"
         if not original_restored:
             raise AssertionError("G5 fixture enrollment restoration failed")
-    if len(results) != len(TARGETS) or not original_restored:
+    if len(results) != 148 or len({r["lessonCode"] for r in results}) != 148 or not original_restored:
         raise AssertionError("G5 technical E2E count/integrity mismatch")
     output = {
-        "scope": "GRADE5_TWO_EXPLICIT_LESSONS_NOT_ALL_148",
+        "scope": "GRADE5_ALL_148_AUTHENTICATED_TECHNICAL_NOT_ACADEMIC_PARITY",
         "technicalAcceptanceOnly": True,
         "sourceEdition": "IM K5 2021 first-edition RichV2",
         "runGitSha": subprocess.check_output(
@@ -316,12 +318,15 @@ def run():
         "testDatabase": "edulytics_clean_ci",
         "originalEnrollmentRestored": original_restored,
         "lessonCount": len(results),
+        "authenticatedCoverageNumerator": len(results),
+        "authenticatedCoverageDenominator": 148,
+        "exactSourceContentAssertions": list(TARGETS),
         "independentAcademicSourceSignoff": False,
         "teacherRubricPersistenceApproved": False,
         "rows": results}
-    Path("/tmp/g5-stage-d-authenticated-two-lessons.json").write_text(
+    Path("/tmp/g5-stage-d-authenticated-148-lessons.json").write_text(
         json.dumps(output, indent=2) + "\n", encoding="utf-8")
-    print("G5_REAL_AUTHENTICATED_HTTPS_TECHNICAL_PASS 2/2", flush=True)
+    print("G5_REAL_AUTHENTICATED_HTTPS_TECHNICAL_PASS 148/148", flush=True)
 
 
 if __name__ == "__main__":
