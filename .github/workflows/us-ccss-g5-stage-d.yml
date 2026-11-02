@@ -65,12 +65,20 @@ jobs:
           node-version: '24'
       - name: Audit actual source-element evidence and disallow blank academic approval
         run: node tools/curriculum/g5-stage-d-diagnostic.cjs source-evidence
+      - name: Generate original IM2021 per-lesson source-section mapping review queue
+        if: always()
+        run: node tools/curriculum/g5-source-review-queue.cjs
+      - name: Guard source queue against false approval and lost Rich V2 mappings
+        if: always()
+        run: node --test tests/academic-us-ccss-g5-source-review-queue-stage-d.test.cjs
       - name: Preserve per-lesson evidence and explicit blockers
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: grade5-source-element-provenance-report
-          path: stage-d-results/grade5-source-evidence.json
+          path: |
+            stage-d-results/grade5-source-evidence.json
+            stage-d-results/grade5-original-2021-source-review-queue.json
           if-no-files-found: error
   teaching-body-delta:
     name: grade5-main-candidate-104-source-delta-evidence
