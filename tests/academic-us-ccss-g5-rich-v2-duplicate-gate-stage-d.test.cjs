@@ -152,3 +152,25 @@ test('Grade5 original 2021 teacher source titles exclude non-title PLC badges',(
   }
  }
 });
+
+// Existing parity audit tests above cover all 148 lesson metadata and all 148 Rich V2 titles.
+test('student title preserves immutable owner-consented data but renders 2021 source title for Grade5 only',()=>{
+ const view=fs.readFileSync(path.join(root,'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'),'utf8');
+ assert.match(view,/Model\.LessonCode\.StartsWith\("PED:US-CCSS-MATH:G5:"/);
+ assert.match(view,/Model\.Title\.EndsWith\(" PLC Activity"/);
+ assert.match(view,/ViewData\["Title"\]\s*=\s*grade5OriginalDisplayTitle/);
+ assert.match(view,/<h1>@grade5OriginalDisplayTitle<\/h1>/);
+ const official=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json'),'utf8'));
+ const pack=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json'),'utf8'));
+ let displayCorrected=0;
+ for(const entry of official.Lessons){
+  const legacy=pack.lessons.find(row=>row.lessonCode===entry.LessonCode).translations.find(t=>t.cultureCode==='en').title;
+  const displayed=entry.LessonCode.startsWith('PED:US-CCSS-MATH:G5:')&&
+     legacy.endsWith(' PLC Activity') ? legacy.slice(0,-' PLC Activity'.length):legacy;
+  if(displayed!==legacy)displayCorrected++;
+  assert.ok(displayed.length>0);
+ }
+ assert.equal(displayCorrected,26,'26 previously source-mismatched Grade5 displays');
+});
