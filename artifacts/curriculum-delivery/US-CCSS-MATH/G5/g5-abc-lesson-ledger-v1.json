@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L04",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L05",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -1162,8 +1162,8 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L04",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-4\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-4\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-4\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-4\\preparation.html"
       ],
       "reuseFinding": "REUSE_SOURCE_REPAIRED_POUNDS_BLUEBERRIES_GOLD_AND_DIV_BY_7; ADD_ONLY_FIRST_PARTY_EXIT_AND_C_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
@@ -1213,7 +1213,22 @@
         "parentHead": "8993b98946ee43f11a7afb7c5fec7823be88d7dc"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l04-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "atDate": "2026-11-02",
+        "status": "READY_FOR_STAGE_D",
+        "source": "Original local IM 2021 first edition lesson.html and preparation.html inspected read-only",
+        "staticPracticeFamily": "usccss.g5.u02.l04.blueberry_division_context",
+        "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs",
+        "questionBank": "src/Edulytics.Services/Mathematics/UsCcssG5Unit2SourceQuestions.cs",
+        "richV2": "PRESERVED_MATHEMATICALLY_MATCHING",
+        "sourceFullParityClaimed": false,
+        "originalPublisherCooldown": "SOURCE_UNAVAILABLE",
+        "firstPartyExit": "MATCHED_TEACHER_LED",
+        "test": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l04-2021-source-revalidation-20261102.json"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
