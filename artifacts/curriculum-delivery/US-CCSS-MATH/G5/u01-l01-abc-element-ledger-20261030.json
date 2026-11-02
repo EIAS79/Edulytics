@@ -7,9 +7,9 @@
   "sourceSnapshotId": "local-2021-im-g5-u01-l01-teacher:77225-prep:52343-figures:7",
   "sourceReference": {
     "edition": "2021 First Edition",
-    "teacherHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
-    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html",
-    "studentHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\accessim_student\\unit-1\\section-a\\lesson-1.html",
+    "teacherHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
+    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html",
+    "studentHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
     "figureIds": [
       {
         "id": "147995",
@@ -65,7 +65,11 @@
         "referenceCode": "5.MD.C.3",
         "outcomeCode": null
       }
-    ]
+    ],
+    "studentFacingEvidence": "Embedded Student Facing tasks in original 2021 Kendall Hunt teacher lesson HTML; NOT a separate v.360 student page",
+    "excludedWrongEditionMirror": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_v360\\05_Grade_5_IM_K5\\accessim_student\\unit-1\\section-a\\lesson-1.html",
+    "teacherHtmlSha256": "88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb",
+    "teacherPreparationSha256": "0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195"
   },
   "sourceElementsKnown": 25,
   "sourceElementStatusCounts": {
@@ -163,10 +167,13 @@
   "stageB": "CONTENT_TEACHING_REPAIRED_STATICALLY; B_RUNTIME_UNVERIFIED_STAGE_D",
   "stageC": "EXACT_GRADE5_DIGITAL_COMPARISON_SELECTED_STATICALLY_AND_8_POINT_TEACHER_REVIEW_WRITTEN_NOT_RUN",
   "academicAccepted": false,
-  "readyForStageD": true,
+  "readyForStageD": false,
   "stageDTests": "WRITTEN_NOT_RUN",
   "sourceRights": "No publisher figure pixels copied; HTML alt/source meaning paraphrased into first-party text tables. Third-party artwork reuse remains unclaimed.",
-  "activeBlockers": [],
+  "activeBlockers": [
+    "ORIGINAL_2021_PUBLISHER_COOLDOWN_SOURCE_UNAVAILABLE",
+    "FULL_SOURCE_1_TO_1_PARITY_NOT_VERIFIED"
+  ],
   "lessonElements": [
     {
       "LessonOrdinal": 1,
@@ -1155,5 +1162,22 @@
     "originalCooldownIncluded": false,
     "assertionScope": "PDF text-based student task instructions only, not original figure-image rendering or gated cool-down",
     "rights": "CC BY 2021 Illustrative Mathematics; attribution required when adapting original expression"
+  },
+  "abcRevalidation20261102": {
+    "sourceEdition": "Illustrative Mathematics K-5 Grade 5 First Edition (2021)",
+    "sourceLessonSha256": "88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb",
+    "sourcePreparationSha256": "0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195",
+    "previousIncorrectStudentLocator": "accessim_student (v.360) was incorrectly listed as 2021 student evidence; replaced with original teacher HTML embedded Student Facing",
+    "reuse": "2021 teacher source, volume goals, 8-cube comparisons, 9-cube construction, Rich V2, teacher rubric, exact practice, Edulytics-original cooldown all retained",
+    "unresolvedSourceElementIds": [
+      "G5-U01-L01-CD-SOURCE-Q01"
+    ],
+    "publisherOriginalCooldownStatus": "SOURCE_UNAVAILABLE_GATED",
+    "edulyticsAlternativeCooldownStatus": "ALREADY_AUTHORED_TEACHER_REVIEW_REQUIRED",
+    "abcStatus": "A_C_EXPLICIT_GAP",
+    "reason": "Full 2021 source item parity cannot be claimed while publisher's exact protected cool-down text is unseen. The independently written skill-aligned alternative is valid to use but not proof of source-exact 1:1 matching.",
+    "dStageTests": "NOT_RUN",
+    "noTestsExecutedInThisChange": true,
+    "sourceReadDevice": "Our-CS read-only"
   }
 }

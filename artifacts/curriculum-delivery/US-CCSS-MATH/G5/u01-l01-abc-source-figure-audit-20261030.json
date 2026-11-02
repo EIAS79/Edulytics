@@ -8,7 +8,7 @@
   "sourceEdition": "IM K–5 Mathematics First Edition 2021",
   "sourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
   "teacherPreparationLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html",
-  "studentLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\accessim_student\\unit-1\\section-a\\lesson-1.html",
+  "studentLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
   "sourceMode": "REMOTE_DESKTOP_COMMANDER_PRIMARY_OUR_CS_READ_ONLY",
   "baselineCommit": "a02cb5c571caf9747df19ff0fe6a9730123570fd",
   "reviewDate": "2026-10-30",
@@ -112,8 +112,10 @@
     "tests/academic-us-ccss-g5-u01-figure-source-contract-20261030.test.cjs"
   ],
   "academicAccepted": false,
-  "checkpointStatus": "READY_FOR_STAGE_D",
-  "blockers": [],
+  "checkpointStatus": "A_C_EXPLICIT_GAP",
+  "blockers": [
+    "G5-U01-L01-CD-SOURCE-Q01:ORIGINAL_2021_COOLDOWN_NOT_AVAILABLE_FOR_SOURCE_1_TO_1_VERIFICATION"
+  ],
   "timing": {
     "status": "NOT_MEASURED_FULL_LESSON_CLOSURE",
     "goalSeconds": 180
@@ -123,7 +125,7 @@
   "contentVersion": "g5-u01-l01-l03-im2021-v16-source-element-a-c-20261030",
   "elementLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
   "knownElements": 25,
-  "matchedElements": 25,
+  "matchedElements": 24,
   "publisherCooldown": "SOURCE_UNAVAILABLE_GATED",
   "passedTests": 0,
   "testExecution": "NOT_RUN",
@@ -196,5 +198,12 @@
     "Six math-critical publisher SVG responses fetched from exact asset URLs and compared to source ALT; no exact pixel rendering or image reuse licensed.",
     "Dog/cube example raster could not be opened, no copied artwork; physical build lesson objective and 9-cube construction preserved."
   ],
-  "sourceGoalCoverage": "25/25 WITH_OWNER_AUTHORIZED_CUSTOM_COOLDOWN; ORIGINAL_PUBLISHER_MATERIAL_PARITY_NOT_CERTIFIED"
+  "sourceGoalCoverage": "24/25 original identified source elements matched; 1 protected original publisher Cool-down unresolved. Independently authored Edulytics exit remains usable but not literal 2021 source parity.",
+  "studentFacingEvidence": "Original 2021 teacher HTML embedded Student Facing; v.360 student mirror explicitly excluded",
+  "abcRevalidation20261102": {
+    "originalTeacherHtmlSha256": "88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb",
+    "originalPreparationSha256": "0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195",
+    "readOnlyDevice": "Our-CS",
+    "reason": "A-C close gate must not ignore SOURCE_UNAVAILABLE"
+  }
 }
