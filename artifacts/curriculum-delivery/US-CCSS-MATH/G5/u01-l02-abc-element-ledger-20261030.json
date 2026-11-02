@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sourceEdition": "IM K–5 2021 First Edition",
   "sourcePaths": [
-    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\lesson.html",
-    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\preparation.html"
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\lesson.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\preparation.html"
   ],
   "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
   "contentVersion": "g5-u01-l01-l03-im2021-v17-source-specific-a-b-c-20261030",
@@ -548,20 +548,25 @@
       "TeacherOrStudentAudience": "student",
       "RightsStatus": "SOURCE_TEXT_PARAPHRASED_IMAGES_NOT_REUSED",
       "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json#U01:L02",
-      "ImplementationType": "TEACHER_LED",
+      "ImplementationType": "BLOCKED",
       "VerificationMethod": "Local teacher and student HTML math/source alt to Rich V2 comparisons",
       "TestNames": [
         "tests/academic-us-ccss-g5-u01-l02-exact-source-20261030.test.cjs"
       ],
       "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
       "Reviewer": "A–B–C lesson audit",
-      "Status": "MATCHED_TEACHER_LED",
+      "Status": "SOURCE_UNAVAILABLE",
       "IssueId": null,
       "ContentVersion": "g5-u01-l01-l03-im2021-v17-source-specific-a-b-c-20261030",
       "CandidateSha": "PENDING_COMMIT_SHA",
       "UpdatedUtc": "2026-10-30",
       "SourceDescription": "Publisher Volume of a Rectangular Prism cooldown not available in original cached public teacher HTML. Publisher prompt inaccessible; owner authorized Edulytiks-original 2×3×3 18-cube exit, not literal publisher parity.",
-      "MatchedArtifact": "source reference only"
+      "MatchedArtifact": "source reference only",
+      "Original2021SourceStatus": "TEACHER_LOGIN_GATED",
+      "OriginalPublisherTextVerified": false,
+      "OwnerAuthorizedReplacement": "G5-U01-L02-EXIT-CHECK",
+      "FunctionalReplacementStatus": "MATCHED_TEACHER_LED",
+      "OriginalSourceParityCertified": false
     },
     {
       "LessonOrdinal": 2,
@@ -632,7 +637,7 @@
       "TeacherOrStudentAudience": "student",
       "RightsStatus": "SOURCE_TEXT_PARAPHRASED_IMAGES_NOT_REUSED",
       "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json#U01:L02",
-      "ImplementationType": "BLOCKED",
+      "ImplementationType": "DIGITAL",
       "VerificationMethod": "Exact selected question + verifier + registry contract inspected in source; tests authored not run",
       "TestNames": [
         "tests/academic-us-ccss-g5-u01-l02-exact-source-20261030.test.cjs"
@@ -646,13 +651,21 @@
       "UpdatedUtc": "2026-10-30",
       "SourceDescription": "Irregular 8–12 connected cube counting digitally covered by source-aligned exact family usccss.g5.u01.l02.count_irregular_connected_cubes; Guess My Prism, partner reconstruction, WODB and explanation are teacher reviewed.",
       "MatchedArtifact": "contract gap; teacher-led source tasks preserved",
-      "EdulytiksArtifactPath": "src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson2Questions.cs"
+      "EdulytiksArtifactPath": "src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson2Questions.cs",
+      "SourceSpecificFamily": "usccss.g5.u01.l02.count_irregular_connected_cubes",
+      "CodeStaticEvidence": [
+        "src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson2Questions.cs",
+        "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit1Lesson2PracticeContracts.cs"
+      ],
+      "RuntimeValidation": "DEFERRED_STAGE_D",
+      "HumanReviewBoundary": "Guess My Prism drawing/physical reconstruction and open rationale remain teacher-reviewed"
     }
   ],
   "sourceElementsCount": 20,
   "counts": {
-    "matched": 19,
-    "sourceUnavailable": 0,
+    "matched": 18,
+    "sourceVerified": 1,
+    "sourceUnavailable": 1,
     "capabilityBlocked": 0
   },
   "openGates": [],
@@ -695,5 +708,26 @@
     ],
     "firstModelIsTwoSeparateSixCubePrisms": true,
     "academicParityNotAssumedFromMathematicalSimilarity": true
+  },
+  "officialOriginalPublisherCoolDownParityCertified": false,
+  "acRevalidation20261102": {
+    "checkedAtUtc": "2026-11-02T15:49:10.740Z",
+    "teacherHtmlSha256": "2d2ad558cf24be326217d4ec18da8fc217d16f35d5440733d70fc24fb3b258fc",
+    "preparationSha256": "a37655d8ee484e83a6a476caa974d9276e7be3990c6e93d6253f89cf28ddb984",
+    "sourceEdition": "Illustrative Mathematics K5 Grade 5 First Edition 2021",
+    "verifiedSequence": [
+      "2021 warmup WODB four cube models",
+      "Activity 1 arbitrary 8-12 cube constructions with teacher counts",
+      "Activity 2 16-24 cube hidden prism partner reconstruction",
+      "Unit-cube goal, strategies and teacher rubric",
+      "User-authorized original Edulytics cooldown"
+    ],
+    "decision": "READY_FOR_STAGE_D_WITH_OWNER_AUTHORIZED_FUNCTIONAL_COOLDOWN_EXCEPTION",
+    "explicitException": "Original publisher cooldown behind teacher login; replaced by independent teacher-reviewed 2x3x3 prism prompt and reasoning; exact publisher prompt NOT certified",
+    "staticPracticeFamily": "usccss.g5.u01.l02.count_irregular_connected_cubes",
+    "runtimeNotTested": true,
+    "tests": "WRITTEN_NOT_RUN",
+    "reusedExisting": true,
+    "noNewEngine": true
   }
 }

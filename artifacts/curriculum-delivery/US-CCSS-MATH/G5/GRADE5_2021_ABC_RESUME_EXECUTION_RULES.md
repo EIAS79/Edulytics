@@ -24,3 +24,8 @@
 - `U01:L01` revalidated and A–B–C closed with **owner-authorized independent teacher-reviewed Cool-down alternative**; original publisher text is still source-unavailable and must not be claimed literal parity. The next lesson cursor is `U01:L02`. The open publisher source issue is retained as a source-verbatim limitation, not a defect in the independent Edulytics Cool-down.
 - Existing original Edulytics cool-down and Grade 5 Rich V2/Practice are **retained**. First-edition teacher lesson SHA-256: `88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb`; preparation SHA-256: `0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195`.
 - No CI or tests are claimed from this revalidation. Do not promote the lesson or all 148 by altering flags alone.
+
+## Sequential closure checkpoint: Grade 5 U01:L02
+- Reused existing exact irregular unit-cube count family and 2021 source-aligned Rich V2. Original publisher Cool-down explicitly remains SOURCE_UNAVAILABLE; existing first-party teacher-reviewed alternative approved by owner and retained. Static selected Practice contract present; Stage D runtime is NOT_RUN.
+- Source SHA-256 lesson 2: `2d2ad558cf24be326217d4ec18da8fc217d16f35d5440733d70fc24fb3b258fc`; preparation: `a37655d8ee484e83a6a476caa974d9276e7be3990c6e93d6253f89cf28ddb984`.
+- Next active lesson: **U01:L03**. Preserve this closure and all previous content; do not rerun Stage D/CI.

@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L02",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L03",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -210,8 +210,8 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\preparation.html"
       ],
       "reuseFinding": "REUSE_EXISTING_SOURCE_GUESS_MY_PRISM_AND_18_CUBE_EXAMPLE; FIX_WARMUP_AND_REAL_ACTIVITY_ORDER_AND_UNEVEN_LAYER_COUNTING",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
@@ -264,7 +264,19 @@
         "closingParentHead": "34f81c2abcfdd2f5f4eb806f27a28c7970834e88"
       },
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_ABC_ELEMENT_LEDGER_WITH_SOURCE_LIMITS"
+      "closureEvidenceKind": "ORIGINAL_ABC_ELEMENT_LEDGER_WITH_SOURCE_LIMITS",
+      "abcRevalidation20261102": {
+        "status": "READY_FOR_STAGE_D",
+        "atUtc": "2026-11-02T15:49:10.740Z",
+        "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
+        "teacherHtmlSha256": "2d2ad558cf24be326217d4ec18da8fc217d16f35d5440733d70fc24fb3b258fc",
+        "preparationSha256": "a37655d8ee484e83a6a476caa974d9276e7be3990c6e93d6253f89cf28ddb984",
+        "source2021Only": true,
+        "practiceFamily": "usccss.g5.u01.l02.count_irregular_connected_cubes",
+        "publisherCooldownSourceExact": "SOURCE_UNAVAILABLE",
+        "functionalAlternative": "MATCHED_TEACHER_LED",
+        "testStatus": "WRITTEN_NOT_RUN"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
