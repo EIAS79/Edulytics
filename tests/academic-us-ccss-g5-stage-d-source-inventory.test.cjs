@@ -13,16 +13,20 @@ const fixture=n=>JSON.parse(fs.readFileSync(path.join(root,gradePath,
   'u01-l'+String(n).padStart(2,'0')+'-abc-element-ledger-20261030.json'),'utf8'));
 
 test('all existing U01 L04-L07 source-element array schemas are itemized',()=>{
-  const counts=new Map([[4,20],[5,24],[6,19],[7,15]]);
-  for(const [lesson,count] of counts){
+  // The 2021 second pass retained each unavailable publisher item explicitly;
+  // these are not part of the matched count or academic approval denominator.
+  const counts=new Map([[4,[21,20]],[5,[25,24]],[6,[21,19]],[7,[17,16]]]);
+  for(const [lesson,[total,matched]] of counts){
     const source=fixture(lesson);
     const audit=analyzeElementInventory(source,code(lesson));
-    assert.equal(audit.sourceElements.length,count,'lesson '+lesson);
-    assert.equal(audit.identified,count);
-    assert.equal(audit.matched,count);
-    assert.deepEqual(audit.blockers,[],'documented element structure '+lesson);
-    // These remain academic/source blockers: itemization never authorizes 100% parity.
-    assert.equal(source.status,'A_C_EXPLICIT_GAP');
+    assert.equal(audit.sourceElements.length,total,'lesson '+lesson);
+    assert.equal(audit.identified,total);
+    assert.equal(audit.matched,matched);
+    assert.equal(source.sourceElementsAccepted,matched);
+    assert.ok(audit.blockers.includes('UNMATCHED_IDENTIFIED_SOURCE_ELEMENTS'),
+     'unavailable publisher source items must remain blockers '+lesson);
+    assert.equal(source.status,'READY_FOR_STAGE_D');
+    assert.equal(source.readyForStageD,true);
     assert.equal(source.academicAccepted,false);
     assert.equal(source.sourceCoverage100Percent,false);
   }

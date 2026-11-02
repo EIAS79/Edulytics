@@ -56,7 +56,19 @@ test('Grade5 first-party visual inventory and 2021 CC BY source attribution are 
   }
  }
  assert.equal(codes.size,148,'Grade 5 first-edition lesson count');
- assert.equal(figures,284,'Grade5 first-party visual inventory, including U01:L01 and U01:L02 SVG models');
+ // Historical 284 visuals plus first-party prism-card visuals in U01:L03 and U01:L06.
+ const cardProof=[
+  ['us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json','PED:US-CCSS-MATH:G5:U01:L03','Edulytiks-original printable prism-build cards (independent 2021 skill equivalents)'],
+  ['us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json','PED:US-CCSS-MATH:G5:U01:L06','Edulytiks-original six prism/expression cards — first-party matching set']
+ ];
+ for(const [filename,code,title] of cardProof){
+  const doc=JSON.parse(fs.readFileSync(path.join(dir,filename),'utf8'));
+  const lesson=doc.Lessons.find(x=>x.LessonCode===code);
+  assert.equal(lesson?.Visuals.filter(x=>x.Title===title).length,1,
+   'missing distinct first-party source-equivalent visual: '+code);
+ }
+ assert.equal(figures,284+cardProof.length,
+  'Grade5 first-party visual baseline plus 2021 independent prism-card alternatives');
  assert.equal(videos,0,'no unreviewed external Grade5 video embeds');
  const grade5Intro=JSON.parse(fs.readFileSync(path.join(dir,
   'us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json'),'utf8'));

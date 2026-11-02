@@ -18,7 +18,10 @@ test('official original IM2021 Student Task PDFs for U01 L04-L06 are individuall
   const source=read(base+'/u01-l'+id+'-abc-element-ledger-20261030.json');
   const proof=source.stageDOriginalStudentPdfSourceReview20261102;
   assert.equal(source.lessonCode,'PED:US-CCSS-MATH:G5:U01:L'+id);
-  assert.equal(source.status,'A_C_EXPLICIT_GAP');
+  assert.equal(source.status,'READY_FOR_STAGE_D');
+   assert.equal(source.readyForStageD,true);
+   assert.equal(proof.currentLegacyGapStatusPreserved,
+    'HISTORICAL_A_C_EXPLICIT_GAP_RETAINED_AS_PROVENANCE_NOT_CURRENT_ABC_STATUS');
   assert.equal(source.academicAccepted,false);
   assert.equal(source.sourceCoverage100Percent,false);
   assert.equal(proof.pdfPageCount,expected.pages);
