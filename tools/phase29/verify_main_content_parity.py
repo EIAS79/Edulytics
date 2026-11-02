@@ -135,7 +135,7 @@ def run():
                 continue
             candidate_keys.add(key)
             if (entry.get("humanAcademicSignoff") != "PENDING" or
-                entry.get("contentPackFile", "").startswith(str(BASE) + "/") is False):
+                entry.get("contentPackFile", "").startswith(BASE.as_posix() + "/") is False):
                 errors.append(f"Phase04 repair approval/path metadata invalid: {key}")
             approved[key] = {
                 "packCode": "US-CCSS-MATH",
