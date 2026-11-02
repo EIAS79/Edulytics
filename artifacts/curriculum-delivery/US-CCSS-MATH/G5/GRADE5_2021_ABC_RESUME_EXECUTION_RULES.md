@@ -49,3 +49,8 @@
 ## Sequential closure checkpoint: Grade 5 U01:L06
 - Existing first-edition 2021 true/false warm-up, source 90/72/84 examples, optional Two Truths and a Lie, source-specific exact family, and Edulytiks original Cool-down retained. Added six independent text-accessible prism-expression cards as original first-party Activity 1 alternative. Source publisher card blackline and original gated Cool-down recorded as SOURCE_UNAVAILABLE, not hidden.
 - Teacher SHA-256 `6b6c0e624f3445483a276742c2de655586a7edf8b276477dab5c7a0de62d8ad6`, preparation `d37110791a47146e20f89ce48506ea92c73556ca6cc295b94ef769223898885c`. Stage D, CI, tests NOT_RUN. Next **U01:L07**.
+
+## Sequential closure checkpoint: Grade 5 U01:L07
+- Existing 2021 six-object cubic-unit choice, two-party information-gap lesson, source dimensions (4 feet, 2-foot data card; other dimension must be requested), independent 24-cubic-foot exit and source-specific exact unit-choice Practice reused. Information-gap card element recorded explicitly; inaccessible original publisher Cool-down preserved as SOURCE_UNAVAILABLE with first-party replacement.
+- Teacher lesson SHA-256 `956878ef2019e4e1650b8ce7e50421b580f092fff10326af06035d0648e9d763`, preparation SHA-256 `11a861b7578ba63160fc29bb89b48da9187c063429dcd4f5a4dd054e1b69dd30`.
+- Original publisher text parity NOT claimed; CI, Stage D and tests NOT_RUN. Next **U01:L08**.
