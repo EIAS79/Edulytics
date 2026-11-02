@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L106: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L20").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Use N=d×q+r"));assert.ok(t.quickSummary.includes("275/8 requires 35 buses"));assert.equal(Math.ceil(378/4),95);assert.equal(Math.ceil(275/8),35);});
+test('L106: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-106-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"8663b94f1946d26bdda307508d01bc4a1498f402065aa0f0687cdb5fa839f921");assert.equal(c.readyForStageD,true);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

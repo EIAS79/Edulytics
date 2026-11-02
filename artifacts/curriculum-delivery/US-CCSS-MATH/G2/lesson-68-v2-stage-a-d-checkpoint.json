@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 68,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L01",
+  "title": "How Do We Compose a Hundred?",
+  "stageA": {
+    "status": "REVIEWED_ORIGINAL_IM2021_SOURCE",
+    "originalPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-1/preparation.html",
+    "originalLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-1/lesson.html",
+    "sourceCanonicalBodySha256": "8b95f1c712928a475193eb9bb76a77698d724a68e85231a340721f7531f018a1",
+    "sourceSemanticSha256": "0387047de9dd25b9b45a1f5d941d795b4451b4ce61c8059b64c22f4525eb13f7",
+    "officialOutcomeCodes": [
+      "CCSS:2.NBT.A.1",
+      "CCSS:2.NBT.A.2"
+    ],
+    "originalTasks": [
+      "Reviewed teacher source lesson 1 with original warm-up, student-facing activities, place-value numbers, base-ten diagrams and protected cool-down."
+    ],
+    "copyright": "Source mathematical statements paraphrased; publisher actual figures/teacher-only cooldown not copied"
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_SIX_FIELD_RICH_CONTENT_REPAIRED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5OriginalRichContentCorrections.cs",
+    "preExistingUnit5LegacyRepairPreserved": true,
+    "originalShaAndOfficialOutcomesGuarded": true
+  },
+  "stageC": {
+    "status": "SOURCE_SPECIFIC_FOUR_FAMILIES_CODED_TESTS_WRITTEN_NOT_EXECUTED",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit5FirstSixContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5FirstSixQuestions.cs",
+    "protectedController": "src/Edulytics.Web/Controllers/Grade2Unit5FirstSixActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Unit5FirstSixActivities/Index.cshtml",
+    "sourceLimits": "Authentic source photographs, base-ten images, source drawing and group oral work require teacher review; first-party exact numeric answers are separate",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal68OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal68MathAndTeacherBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal68ExactQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal68PrivateStudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "status": "READY_FOR_STAGE_D",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 69
+}

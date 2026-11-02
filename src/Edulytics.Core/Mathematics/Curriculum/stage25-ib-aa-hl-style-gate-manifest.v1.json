@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "stage": "25",
+  "status": "COMPLETE",
+  "gate": "IB Mathematics: Analysis and Approaches HL-style capability gate",
+  "claimBoundary": "ENGINE_STYLE_CAPABILITY_ONLY",
+  "gatePolicy": {
+    "requiredBenchmarkCategories": [
+      "Routine",
+      "Multi-step",
+      "Modelling",
+      "Reasoning",
+      "Proof",
+      "Unfamiliar transfer"
+    ],
+    "globalIbAaHlCapabilityClaimAllowed": false,
+    "productRoutingEnabled": false,
+    "officialIbCurriculumMappingPresent": false,
+    "categoryEvidenceDoesNotEqualCurriculumApproval": true,
+    "unsupportedCategoriesMustFailClosed": true,
+    "verifiedStyleClaimRequires": [
+      "all required benchmark categories evidenced",
+      "versioned official curriculum mapping",
+      "solver pass",
+      "independent verifier pass",
+      "answer grading pass",
+      "strategy planning pass",
+      "difficulty calibration pass",
+      "approved academic review"
+    ]
+  },
+  "academicReview": {
+    "currentState": "REQUIRED",
+    "approvedVerifiedCategoryCount": 0,
+    "note": "Stage 25 measures engine capability against IB AA HL-style demand classes. It does not claim official IB curriculum alignment, endorsement, or full HL coverage."
+  },
+  "summary": {
+    "categoryCount": 6,
+    "evidencedCategories": 4,
+    "unsupportedCategories": 2,
+    "benchmarkCount": 15,
+    "formalIbMappings": 0
+  },
+  "categoryCoverage": [
+    {
+      "category": "Routine",
+      "status": "EVIDENCED",
+      "benchmarkCount": 5,
+      "capabilityClaim": "NARROW_ENGINE_SLICE_ONLY",
+      "limitation": "Routine exact symbolic/numeric slices only; not a claim of full IB AA HL routine coverage."
+    },
+    {
+      "category": "Multi-step",
+      "status": "EVIDENCED",
+      "benchmarkCount": 4,
+      "capabilityClaim": "NARROW_ENGINE_SLICE_ONLY",
+      "limitation": "Evidence is limited to reviewed solver-grounded calculus/numerical-method slices with deterministic planning and verification."
+    },
+    {
+      "category": "Modelling",
+      "status": "EVIDENCED",
+      "benchmarkCount": 4,
+      "capabilityClaim": "NARROW_ENGINE_SLICE_ONLY",
+      "limitation": "Evidence is limited to exact mechanics models already represented by the Mathematics Intelligence Kernel."
+    },
+    {
+      "category": "Reasoning",
+      "status": "EVIDENCED",
+      "benchmarkCount": 2,
+      "capabilityClaim": "NARROW_ENGINE_SLICE_ONLY",
+      "limitation": "Evidence covers structured sequence-pattern reasoning slices only; it does not establish general mathematical argument or proof capability."
+    },
+    {
+      "category": "Proof",
+      "status": "UNSUPPORTED",
+      "benchmarkCount": 0,
+      "capabilityClaim": "BLOCKED",
+      "limitation": "No production-grade proof construction and independent proof verification corpus is currently accepted."
+    },
+    {
+      "category": "Unfamiliar transfer",
+      "status": "UNSUPPORTED",
+      "benchmarkCount": 0,
+      "capabilityClaim": "BLOCKED",
+      "limitation": "No accepted benchmark proves robust transfer to unfamiliar multi-stage problem structures."
+    }
+  ]
+}

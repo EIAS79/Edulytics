@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 34,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L16",
+  "unitNumber": 2,
+  "lessonNumber": 16,
+  "title": "Our Market’s Inventory (optional)",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "originalBook": "Read-only locally archived IM K–5 Grade2 U02 L16 teacher preparation/lesson HTML",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-16/preparation.html",
+    "sourceSemanticSha256": "650485df82686406a0e4d59ae6ee634bec00b4665c2e2a8599b33418d7ad5e14",
+    "sourceBodySha256": "54da7fdf3c0ec9cc2e83cb8656793c4d5b881d673ab4cc59b915e0a0e427a875",
+    "officialOutcomeCodes": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.6",
+      "CCSS:2.OA.A.1"
+    ],
+    "warmup": "Han shopping basket Notice and Wonder; actual image shown only by teacher.",
+    "activity1": "Choose 3 products in original market with100 total items, one count strictly below10, two counts strictly above10. Partner explains constraints.",
+    "activity2": "Buyers and Sellers: one number cube rolled 3 times, create legal one/two-digit quantities, sell only within available remaining stock, update inventory after every real transaction.",
+    "activity3": "Optional Sales Reports: use actual per-product starting, sold, ending and restock; restock equals sold. Authentic report and MLR8 partner discussion teacher-reviewed.",
+    "sourceGap": "Original shopping-cart art and actual buyer rolls/sales not inferred or reproduced from numerical first-party examples.",
+    "rights": "IM K–5 2021 source mathematical constraints attributed; first-party independently authored inventory examples and exit clearly labeled."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_SHA_PREDECESSOR_GUARDED_SIX_LEARNER_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2MarketInventoryTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "Exact original source URL, original body SHA, ordered outcomes, previous original six fields, approved persisted rich predecessor version."
+  },
+  "stageC": {
+    "status": "COMPLETE_PROTECTED_ORIGINAL_MARKET_NUMERIC_COMPANION_FOUR_EXACT_FAMILIES_AND_WRITTEN_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2SixteenthLessonMarketInventory.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson16MarketInventoryContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson16MarketInventoryQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson34ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson34Activities/Index.cshtml",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson34Page.cs",
+    "families": [
+      "usccss.g2.u02.l16.inventory_missing_category",
+      "usccss.g2.u02.l16.sale_remaining_quantity",
+      "usccss.g2.u02.l16.restock_to_original_amount",
+      "usccss.g2.u02.l16.total_sales_three_categories"
+    ],
+    "firstPartyExample": "Starting stock fruit7+cards42+books51=100, sales3+23+25=51, remaining4+19+26=49; restock51.",
+    "independentExit": "Stock36, sold19, remaining17, restock19.",
+    "humanOnly": "Actual student-selected products, physical die rolls, partner orders, authentic paper inventory sheets and MLR8 roles require teacher; no digital proof.",
+    "security": "StudentPortal role, adoption, published source lesson access, antiforgery POST, bounded strings; no school grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2MarketInventoryTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2SixteenthLessonMarketInventoryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson16MarketInventoryQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson34ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "readyForStageD": true,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L01_GRADE_ORDINAL35_STAGE_A_B_C_NO_SKIP"
+}

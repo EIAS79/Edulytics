@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 95,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L07",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "b8437e235cba98c3fc020e2d0cbe0cbd0a0eb1ba5067662b9abfa7a683bf34af",
+    "teacherPreparationSha256": "90e4768c60f81198c12b2f46682b9055435d1c0b2fe7c8aa19ecdb08be94315a",
+    "studentMirrorSha256": "640f6560ed2f9d4d2455531cd6977864305cfe91577469453252d024745d248c",
+    "teacherActivityHeadings": [
+      "Activity 1: A Ten or Not a Ten? (15 minutes)",
+      "Activity 2: Missing Numbers (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,",
+      "Student Facing Jada likes to look for ways to make a new ten when she adds. Would she be able to a make a new ten when she adds to find the value of these sums? If Jada c",
+      "Student Facing Lin's brother spilled water on her math work! Figure out what number Lin wrote before it got smudged. Lin wrote a one-digit number with which you can make "
+    ],
+    "sourceSpecificComparison": "Original compose-ten choices 45+5,9+63,26+3,8+47; four valid-open missing-number conditions, visual pending",
+    "classification": "CONTENT_REPAIR",
+    "exactAccessibleOriginalStudentJadaTask": [
+      "45+5=50 — NEW_TEN=YES",
+      "9+63=72 — NEW_TEN=YES",
+      "26+3=29 — NEW_TEN=NO",
+      "8+47=55 — NEW_TEN=YES"
+    ],
+    "fourOpenLinSmudgeSourceDomains": [
+      "32+□ with ONE-DIGIT choice, new ten",
+      "16+□ with ONE-DIGIT choice, no new ten",
+      "8+□ with TWO-DIGIT choice, new ten",
+      "8+□ with TWO-DIGIT choice, no new ten"
+    ],
+    "unverifiedOriginalSourceVisualArtwork": true
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "0cefaadb39b70859d5d11348768e90943751b40a",
+    "existingFirstPartyExplanationsAndOriginalMathReviewed": true,
+    "originalJadaAndSmudgeTaskExplanationsReused": true,
+    "teacherReviewOfStudentSelfWrittenJustificationRequired": true
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": false,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "sourceSpecificGeneratorCorrection": {
+      "path": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+      "commit": "eb98432c25ddc01d8f3e808fa08081e1a5749ed0",
+      "defect": "Prior L07 mode 4 reported NEW_TEN=NO for 8+two-digit operand when the ones sum composed a new ten; e.g. 8+75=83 must report YES",
+      "mathResolution": "Derived NEW_TEN from (a%10+b%10>=10), consistent with existing independently computed verifier; no change to source-permitted domains or teacher-only boundaries",
+      "relevantHistoricCi": "https://github.com/EIAS79/Edulytics/actions/runs/39310776955",
+      "independentlyRunOnNewCommit": false
+    },
+    "jadaSourceSpecificModeRange": [
+      6,
+      9
+    ],
+    "jadaSourceSpecificContracts": [
+      "NEW_TEN=YES;TOTAL=50",
+      "NEW_TEN=YES;TOTAL=72",
+      "NEW_TEN=NO;TOTAL=29",
+      "NEW_TEN=YES;TOTAL=55"
+    ],
+    "originalFourOpenSmudgeModeRange": [
+      2,
+      5
+    ],
+    "alternativeValidOpenChoicesStillAccepted": true,
+    "originalGeneratorModesPreserved": [
+      0,
+      1
+    ],
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "2f98c40ebccffa7508af335bd20fde5860f5f46c",
+    "openAnswerVerifierRangeFixCommit": "4f572ad329e83f0b79df43a0104c90f69b1067df",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson95OriginalJadaNewTenTests.cs",
+    "authoredTestsCommit": "6c24cc80ccff310532f3e1b85668e94f75d00d68",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED",
+    "practiceTestsPrepared": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs",
+    "practiceNegativeCarryRegressionCommit": "91e7f7088f636ef376059958a66a97a68f1e7f83",
+    "oldCiFailureRootCauseIdentified": true,
+    "newSourceMathRun": "NOT_RUN_AUTHORING_POLICY"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review at 96; no merge or deployment.",
+  "crossLessonSourcePracticeResumption20261020": {
+    "sourceSpecificSubset": {
+      "existingEngine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+      "modes": [
+        "32+□ new ten one-digit",
+        "16+□ no new ten one-digit",
+        "8+□ new ten two-digit",
+        "8+□ no new ten two-digit"
+      ],
+      "acceptAnyCorrectAlternate": true,
+      "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs",
+      "authenticStudentGradeAndPersistAtFrozenSHA": "PENDING",
+      "sourceTeachingFullV1Review": "PENDING",
+      "academicAcceptance": "NOT_CLAIMED"
+    },
+    "material": "REUSE_ORIGINAL_STUDENT_TASK_AND_GRADED_PRACTICE_CANDIDATE",
+    "notSourceComplete": true,
+    "notASubstituteForAuthenticatedGradingOrLegalVisualInspection": true,
+    "originalV1Approval": "NOT_CLAIMED",
+    "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleOriginalStudentAndTeacherNumericTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "numericPracticeGeneratorAndExactOrOpenVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalPublisherImagesAndFreeFormWrittenExplanationsAutoGraded": false,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "sourceBoundary": "Source Jada numeric carry decisions and four alternate-valid Lin smudge cases are covered separately. Original image contents and open pupil-constructed explanations remain teacher-reviewed; legal images, live grading/persistence, CI and approval require Stage D."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 95,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L07",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-95-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Which One Doesn't Belong illustration and learner self-written justification are not auto-graded or copied."
+  }
+}

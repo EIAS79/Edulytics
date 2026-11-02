@@ -1,0 +1,2153 @@
+{
+  "schemaVersion": 1,
+  "registryVersion": "math-skills-v1-foundation",
+  "status": "Foundation",
+  "skills": [
+    {
+      "id": "number.whole.add_subtract",
+      "domain": "number",
+      "canonicalName": "Whole-number addition and subtraction",
+      "legacyCanonicalSkill": "WholeNumberAdditionAndSubtraction",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.add_subtract.exact",
+        "number.verify.whole.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.add_subtract.within_10.build",
+        "number.whole.add_subtract.within_10.apply",
+        "number.whole.add_subtract.across_ten.build",
+        "number.whole.add_subtract.across_ten.apply",
+        "number.whole.add_subtract.within_100.build",
+        "number.whole.add_subtract.within_100.apply",
+        "number.whole.add_subtract.columnar.build",
+        "number.whole.add_subtract.columnar.apply",
+        "number.whole.add_subtract.comparative.build",
+        "number.whole.add_subtract.comparative.apply",
+        "number.whole.add_subtract.complement_100.build",
+        "number.whole.add_subtract.complement_100.apply",
+        "number.whole.add_subtract.complement_10",
+        "number.whole.add_subtract.within_20.reasonable"
+      ]
+    },
+    {
+      "id": "number.whole.add",
+      "domain": "number",
+      "canonicalName": "Whole-number addition",
+      "legacyCanonicalSkill": "WholeNumberAddition",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.add.exact",
+        "number.verify.whole.add"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.add.direct"
+      ]
+    },
+    {
+      "id": "number.whole.subtract",
+      "domain": "number",
+      "canonicalName": "Whole-number subtraction",
+      "legacyCanonicalSkill": "WholeNumberSubtraction",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.subtract.exact",
+        "number.verify.whole.subtract"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.subtract.direct"
+      ]
+    },
+    {
+      "id": "number.whole.multiply",
+      "domain": "number",
+      "canonicalName": "Whole-number multiplication",
+      "legacyCanonicalSkill": "WholeNumberMultiplication",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.multiply.exact",
+        "number.verify.whole.multiply"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.multiply.fact_recall.build",
+        "number.whole.multiply.fact_recall.apply",
+        "number.whole.multiply.double"
+      ]
+    },
+    {
+      "id": "number.whole.divide",
+      "domain": "number",
+      "canonicalName": "Whole-number division",
+      "legacyCanonicalSkill": "WholeNumberDivision",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "v2QuestionFamilies": [
+        "number.whole.divide.with_remainder.build",
+        "number.whole.divide.with_remainder.apply"
+      ]
+    },
+    {
+      "id": "algebra.linear.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve linear equations",
+      "legacyCanonicalSkill": "OneStepLinearEquation",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.solve.exact_rational",
+        "algebra.linear.verify.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.ax_plus_b_equals_c",
+        "algebra.linear.variables_both_sides"
+      ]
+    },
+    {
+      "id": "algebra.linear.inequality.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve single-variable linear inequalities",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.affine_extract",
+        "algebra.linear.inequality.solve.exact_rational",
+        "algebra.linear.inequality.verify.interval"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.inequality.ax_plus_b_relation_c",
+        "algebra.linear.inequality.variables_both_sides"
+      ]
+    },
+    {
+      "id": "algebra.linear.systems.two_by_two.solve",
+      "domain": "algebra",
+      "canonicalName": "Solve a 2x2 linear system",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.linear.systems.two_by_two.affine_extract",
+        "algebra.linear.systems.two_by_two.solve.exact_rational",
+        "algebra.linear.systems.two_by_two.verify.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.linear.systems.two_by_two.integer_coefficients"
+      ]
+    },
+    {
+      "id": "algebra.quadratic.solve.real_roots",
+      "domain": "algebra",
+      "canonicalName": "Solve quadratic equations over the real numbers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "algebra.quadratic.solve.real.exact",
+        "algebra.quadratic.verify.exact_substitution"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.quadratic.solve.integer_coefficients.real_roots"
+      ]
+    },
+    {
+      "id": "functions.evaluate.exact",
+      "domain": "functions",
+      "canonicalName": "Evaluate a supported single-variable function at an exact input",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "functions.evaluate.exact_rational",
+        "functions.verify.exact_evaluation"
+      ],
+      "v2QuestionFamilies": [
+        "functions.evaluate.exact_rational"
+      ]
+    },
+    {
+      "id": "functions.graph.sample.coordinates",
+      "domain": "functions",
+      "canonicalName": "Generate exact coordinate samples from a supported function",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "functions.evaluate.exact_rational",
+        "functions.graph.sample.exact_rational",
+        "functions.graph.verify.exact_points"
+      ],
+      "v2QuestionFamilies": [
+        "functions.graph.sample.exact_coordinates"
+      ]
+    },
+    {
+      "id": "sequences.arithmetic.nth_term",
+      "domain": "sequences",
+      "canonicalName": "Find the nth term of an arithmetic sequence",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "sequences.arithmetic.nth_term.exact",
+        "sequences.verify.exact_nth_term"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.arithmetic.nth_term.exact"
+      ]
+    },
+    {
+      "id": "sequences.geometric.nth_term",
+      "domain": "sequences",
+      "canonicalName": "Find the nth term of a geometric sequence",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "sequences.geometric.nth_term.exact",
+        "sequences.verify.exact_nth_term"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.geometric.nth_term.exact"
+      ]
+    },
+    {
+      "id": "indices.integer_power.evaluate",
+      "domain": "indices",
+      "canonicalName": "Evaluate integer powers of exact rational bases",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "indices.power.integer_exponent.exact",
+        "indices.verify.integer_power"
+      ],
+      "v2QuestionFamilies": [
+        "indices.power.integer_exponent.exact"
+      ]
+    },
+    {
+      "id": "exponentials.same_base.solve",
+      "domain": "exponentials",
+      "canonicalName": "Solve exact same-base exponential equations for an integer exponent",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "exponentials.solve.same_base.integer_exponent",
+        "exponentials.verify.same_base.substitution"
+      ],
+      "v2QuestionFamilies": [
+        "exponentials.solve.same_base.integer_exponent"
+      ]
+    },
+    {
+      "id": "logarithms.evaluate.exact",
+      "domain": "logarithms",
+      "canonicalName": "Evaluate exact logarithms that correspond to integer powers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "logarithms.evaluate.exact_integer_power",
+        "logarithms.verify.inverse_exponentiation"
+      ],
+      "v2QuestionFamilies": [
+        "logarithms.evaluate.exact_integer_power"
+      ]
+    },
+    {
+      "id": "trigonometry.special_angles.evaluate",
+      "domain": "trigonometry",
+      "canonicalName": "Evaluate exact sine cosine and tangent values at supported special angles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "trigonometry.special_angle.exact",
+        "trigonometry.verify.special_angle.exact"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.special_angle.exact_degrees"
+      ]
+    },
+    {
+      "id": "geometry.rectangle.area",
+      "domain": "geometry",
+      "canonicalName": "Find the area of a rectangle from exact positive dimensions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.rectangle.area.exact",
+        "geometry.verify.rectangle.area"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.rectangle.area.exact"
+      ]
+    },
+    {
+      "id": "geometry.rectangle.perimeter",
+      "domain": "geometry",
+      "canonicalName": "Find the perimeter of a rectangle from exact positive dimensions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.rectangle.perimeter.exact",
+        "geometry.verify.rectangle.perimeter"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.rectangle.perimeter.exact"
+      ]
+    },
+    {
+      "id": "geometry.triangle.area.base_height",
+      "domain": "geometry",
+      "canonicalName": "Find triangle area from exact base and perpendicular height",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.triangle.area.base_height.exact",
+        "geometry.verify.triangle.area.base_height"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.triangle.area.base_height.exact"
+      ]
+    },
+    {
+      "id": "geometry.right_triangle.pythagorean",
+      "domain": "geometry",
+      "canonicalName": "Find an exact rational side length in a right triangle using Pythagoras",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "geometry.right_triangle.pythagorean.exact",
+        "geometry.verify.right_triangle.pythagorean"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.right_triangle.pythagorean.exact",
+        "geometry.right_triangle.pythagorean.find_leg_exact"
+      ]
+    },
+    {
+      "id": "calculus.polynomial.differentiate",
+      "domain": "calculus",
+      "canonicalName": "Differentiate a supported exact-rational polynomial",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.derivative.exact",
+        "calculus.verify.polynomial.derivative"
+      ],
+      "v2QuestionFamilies": [
+        "calculus.polynomial.derivative.exact"
+      ]
+    },
+    {
+      "id": "calculus.polynomial.integrate.definite",
+      "domain": "calculus",
+      "canonicalName": "Evaluate a definite integral of a supported exact-rational polynomial",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.definite_integral.exact",
+        "calculus.verify.polynomial.definite_integral"
+      ],
+      "v2QuestionFamilies": [
+        "calculus.polynomial.definite_integral.exact"
+      ]
+    },
+    {
+      "id": "vectors.add.exact",
+      "domain": "vectors",
+      "canonicalName": "Add exact rational vectors componentwise",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.add.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.add.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.dot.exact",
+      "domain": "vectors",
+      "canonicalName": "Evaluate exact rational vector dot products",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.dot.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.dot.exact_rational"
+      ]
+    },
+    {
+      "id": "matrices.multiply.exact",
+      "domain": "matrices",
+      "canonicalName": "Multiply bounded exact rational matrices",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "matrices.multiply.exact_rational",
+        "matrices.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "matrices.multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "matrices.determinant.2x2",
+      "domain": "matrices",
+      "canonicalName": "Evaluate the determinant of a 2x2 exact rational matrix",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "matrices.determinant.2x2.exact",
+        "matrices.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "matrices.determinant.2x2.exact"
+      ]
+    },
+    {
+      "id": "complex.add.exact",
+      "domain": "complex",
+      "canonicalName": "Add complex values with exact rational real and imaginary parts",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "complex.add.exact_rational",
+        "complex.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "complex.add.exact_rational"
+      ]
+    },
+    {
+      "id": "complex.multiply.exact",
+      "domain": "complex",
+      "canonicalName": "Multiply complex values with exact rational real and imaginary parts",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "complex.multiply.exact_rational",
+        "complex.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "complex.multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "probability.simple.evaluate.exact",
+      "domain": "probability",
+      "canonicalName": "Evaluate simple favourable-over-total probability exactly",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "probability.simple.exact_rational",
+        "probability.verify.exact_events"
+      ],
+      "v2QuestionFamilies": [
+        "probability.simple.favourable_over_total.exact"
+      ]
+    },
+    {
+      "id": "probability.complement.evaluate.exact",
+      "domain": "probability",
+      "canonicalName": "Evaluate the exact complement of a probability",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "probability.complement.exact_rational",
+        "probability.verify.exact_events"
+      ],
+      "v2QuestionFamilies": [
+        "probability.complement.exact"
+      ]
+    },
+    {
+      "id": "statistics.mean.arithmetic.exact",
+      "domain": "statistics",
+      "canonicalName": "Evaluate an arithmetic mean over bounded exact data",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "statistics.mean.arithmetic.exact_rational",
+        "statistics.verify.exact_means"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.mean.arithmetic.exact"
+      ]
+    },
+    {
+      "id": "statistics.mean.frequency_table.exact",
+      "domain": "statistics",
+      "canonicalName": "Evaluate an exact mean from a bounded frequency table",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "statistics.mean.frequency_table.exact_rational",
+        "statistics.verify.exact_means"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.mean.frequency_table.exact"
+      ]
+    },
+    {
+      "id": "numerical.roots.bisection.iterate",
+      "domain": "numerical_methods",
+      "canonicalName": "Apply a fixed number of bisection iterations using exact-rational arithmetic",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "numerical.roots.bisection.fixed_iterations.exact_rational",
+        "numerical.verify.bisection.fixed_iterations"
+      ],
+      "v2QuestionFamilies": [
+        "numerical.roots.bisection.fixed_iterations.exact_rational"
+      ]
+    },
+    {
+      "id": "numerical.roots.newton.iterate",
+      "domain": "numerical_methods",
+      "canonicalName": "Apply a fixed number of Newton iterations using exact-rational arithmetic",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "numerical.roots.newton.fixed_iterations.exact_rational",
+        "numerical.verify.newton.fixed_iterations"
+      ],
+      "v2QuestionFamilies": [
+        "numerical.roots.newton.fixed_iterations.exact_rational"
+      ]
+    },
+    {
+      "id": "numerical.integration.trapezoidal.estimate",
+      "domain": "numerical_methods",
+      "canonicalName": "Evaluate a fixed-subdivision trapezoidal-rule estimate using exact-rational arithmetic",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational",
+        "numerical.verify.trapezoidal.fixed_subdivisions"
+      ],
+      "v2QuestionFamilies": [
+        "numerical.integration.trapezoidal.fixed_subdivisions.exact_rational"
+      ]
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.velocity",
+      "domain": "mechanics",
+      "canonicalName": "Find final velocity under constant acceleration",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.kinematics.constant_acceleration.velocity.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.kinematics.constant_acceleration.velocity.exact"
+      ]
+    },
+    {
+      "id": "mechanics.kinematics.constant_acceleration.displacement",
+      "domain": "mechanics",
+      "canonicalName": "Find displacement under constant acceleration",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.kinematics.constant_acceleration.displacement.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.kinematics.constant_acceleration.displacement.exact"
+      ]
+    },
+    {
+      "id": "mechanics.newton.second_law.force",
+      "domain": "mechanics",
+      "canonicalName": "Find resultant force using Newton's second law",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.newton.second_law.force.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.newton.second_law.force.exact"
+      ]
+    },
+    {
+      "id": "mechanics.newton.third_law.reaction",
+      "domain": "mechanics",
+      "canonicalName": "Find the equal and opposite reaction force",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.newton.third_law.reaction.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.newton.third_law.reaction.exact"
+      ]
+    },
+    {
+      "id": "mechanics.equilibrium.balancing_force_1d",
+      "domain": "mechanics",
+      "canonicalName": "Find a balancing force for one-dimensional equilibrium",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.equilibrium.balancing_force_1d.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.equilibrium.balancing_force_1d.exact"
+      ]
+    },
+    {
+      "id": "mechanics.momentum.impulse",
+      "domain": "mechanics",
+      "canonicalName": "Apply impulse equals change in momentum",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.momentum.impulse.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.momentum.impulse.exact"
+      ]
+    },
+    {
+      "id": "mechanics.energy.work_energy",
+      "domain": "mechanics",
+      "canonicalName": "Apply the work-energy relationship",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.energy.work_energy.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.energy.work_energy.exact"
+      ]
+    },
+    {
+      "id": "mechanics.power.work_over_time",
+      "domain": "mechanics",
+      "canonicalName": "Find average power from work and elapsed time",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "mechanics.units.si_dimensional_analysis",
+        "mechanics.power.work_over_time.exact",
+        "mechanics.verify.models_and_units"
+      ],
+      "v2QuestionFamilies": [
+        "mechanics.power.work_over_time.exact"
+      ]
+    },
+    {
+      "id": "number.lcm",
+      "domain": "number",
+      "canonicalName": "Find and use least common multiples",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "number.lcm.exact",
+        "number.verify.lcm"
+      ],
+      "v2QuestionFamilies": [
+        "number.lcm.two_numbers"
+      ]
+    },
+    {
+      "id": "fractions.equivalent",
+      "domain": "fractions",
+      "canonicalName": "Generate and recognize equivalent fractions",
+      "legacyGameMechanic": "FRACTION_EQUIVALENT",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.equivalent.exact",
+        "fractions.verify.equivalent"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.equivalent.missing_value",
+        "fractions.equivalent.recognize",
+        "fractions.equivalent.generate_multiple",
+        "fractions.equivalent.reduce_common_factor"
+      ]
+    },
+    {
+      "id": "fractions.of_quantity",
+      "domain": "fractions",
+      "canonicalName": "Find a fraction of a quantity",
+      "legacyCanonicalSkill": "FractionOfQuantity",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.of_quantity.exact",
+        "fractions.verify.of_quantity"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ]
+    },
+    {
+      "id": "percentages.of_quantity",
+      "domain": "percentages",
+      "canonicalName": "Find a percentage of a quantity",
+      "legacyCanonicalSkill": "PercentageOfQuantity",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "percentages.of_quantity.exact",
+        "percentages.verify.of_quantity"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.of_quantity.direct"
+      ]
+    },
+    {
+      "id": "ratio.unit_rate",
+      "domain": "ratio",
+      "canonicalName": "Use ratios, proportions, unit rates and division in a given ratio",
+      "legacyCanonicalSkill": "UnitRateAndProportion",
+      "legacyGameMechanic": "UNIT_RATE",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "ratio.unit_rate.exact",
+        "ratio.verify.unit_rate"
+      ],
+      "v2QuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio",
+        "ratio.unit_rate.divide_total"
+      ]
+    },
+    {
+      "id": "algebra.relationships.two_unknowns",
+      "domain": "algebra",
+      "canonicalName": "Solve linked relationships with two unknowns",
+      "legacyGameMechanic": "TWO_UNKNOWNS",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "algebra.relationships.two_unknowns.total_difference"
+      ]
+    },
+    {
+      "id": "measurement.scale.read_equal_intervals",
+      "domain": "measurement",
+      "canonicalName": "Read scales divided into equal intervals",
+      "legacyGameMechanic": "SCALE_READING",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "measurement.scale.equal_intervals.read_value"
+      ]
+    },
+    {
+      "id": "fractions.compare.unlike_denominators",
+      "domain": "fractions",
+      "canonicalName": "Compare fractions with different denominators",
+      "legacyGameMechanic": "FRACTION_COMPARE_UNLIKE",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.unlike.common_denominator"
+      ]
+    },
+    {
+      "id": "fractions.add_subtract",
+      "domain": "fractions",
+      "canonicalName": "Add and subtract fractions with exact denominator alignment",
+      "semantics": "Add or subtract fraction quantities using same, related or unlike denominators; equivalence is a supporting transformation, not the primary target.",
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "supportedAnswerTypes": [
+        "exact_rational"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.add_subtract.exact",
+        "fractions.verify.add_subtract"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.add_subtract.within_one.build",
+        "fractions.add_subtract.within_one.apply",
+        "fractions.add_subtract.same_denominator.mixed.build",
+        "fractions.add_subtract.same_denominator.mixed.apply",
+        "fractions.add_subtract.related.build",
+        "fractions.add_subtract.related.apply",
+        "fractions.add_subtract.common_denominator.build",
+        "fractions.add_subtract.common_denominator.apply"
+      ]
+    },
+    {
+      "id": "fractions.compare.benchmark",
+      "domain": "fractions",
+      "canonicalName": "Compare fractions with benchmark values",
+      "semantics": "Compare a fraction with benchmark values such as one half or one using exact equivalence or cross-products.",
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "supportedAnswerTypes": [
+        "relation"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.compare.benchmark.exact",
+        "fractions.verify.compare.benchmark"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.compare.benchmark"
+      ]
+    },
+    {
+      "id": "fractions.represent.interpret",
+      "domain": "fractions",
+      "canonicalName": "Interpret and construct fraction representations",
+      "semantics": "Interpret or construct visual/number-line representations of fractions, including fractions greater than one.",
+      "prerequisites": [],
+      "supportedAnswerTypes": [
+        "representation",
+        "exact_rational"
+      ],
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "fractions.represent.interpret.exact",
+        "fractions.verify.representation"
+      ],
+      "v2QuestionFamilies": [
+        "fractions.represent.interpret.fraction_bar"
+      ]
+    },
+    {
+      "id": "geometry.coordinate.straight_line",
+      "domain": "geometry",
+      "canonicalName": "Reason with coordinates and straight-line gradients",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.coordinate.gradient_between_points",
+        "geometry.coordinate.evaluate_linear_rule",
+        "geometry.coordinate.y_intercept_from_rule"
+      ]
+    },
+    {
+      "id": "geometry.angles.relationships",
+      "domain": "geometry",
+      "canonicalName": "Use angle relationships in lines and parallel-line configurations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.angles.parallel_lines",
+        "geometry.angles.supplementary",
+        "geometry.angles.algebraic_supplementary"
+      ]
+    },
+    {
+      "id": "geometry.similarity",
+      "domain": "geometry",
+      "canonicalName": "Use similarity and scale factors for corresponding lengths",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.similarity.find_missing_length",
+        "geometry.similarity.scale_factor"
+      ]
+    },
+    {
+      "id": "geometry.congruence",
+      "domain": "geometry",
+      "canonicalName": "Identify valid triangle congruence criteria",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.congruence.identify_criterion"
+      ]
+    },
+    {
+      "id": "geometry.surface_area",
+      "domain": "geometry",
+      "canonicalName": "Calculate surface area of three-dimensional solids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.surface_area.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.volume",
+      "domain": "geometry",
+      "canonicalName": "Calculate volume of three-dimensional solids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.volume.rectangular_prism"
+      ]
+    },
+    {
+      "id": "geometry.surface_area_volume",
+      "domain": "geometry",
+      "canonicalName": "Reason about surface area and volume",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.surface_area_volume.rectangular_prism_surface_area",
+        "geometry.surface_area_volume.rectangular_prism_volume"
+      ]
+    },
+    {
+      "id": "geometry.perimeter_area",
+      "domain": "geometry",
+      "canonicalName": "Calculate perimeter and area of plane figures",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.perimeter_area.rectangle_area",
+        "geometry.perimeter_area.rectangle_perimeter",
+        "geometry.perimeter_area.triangle_area",
+        "geometry.perimeter_area.rectangle_missing_side"
+      ]
+    },
+    {
+      "id": "trigonometry.right_triangle.sin_cos_tan",
+      "domain": "trigonometry",
+      "canonicalName": "Use sine cosine and tangent in right triangles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.right_triangle.ratio_exact",
+        "trigonometry.right_triangle.find_side_exact",
+        "trigonometry.right_triangle.find_angle_exact"
+      ]
+    },
+    {
+      "id": "trigonometry.modelling",
+      "domain": "trigonometry",
+      "canonicalName": "Model contextual right-triangle problems with trigonometry",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.trigonometry.exact_generation",
+        "geometry.trigonometry.independent_verification"
+      ],
+      "v2QuestionFamilies": [
+        "trigonometry.modelling.contextual"
+      ]
+    },
+    {
+      "id": "vectors.subtract.exact",
+      "domain": "vectors",
+      "canonicalName": "Subtract exact rational vectors componentwise",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.subtract.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.subtract.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.scalar_multiply",
+      "domain": "vectors",
+      "canonicalName": "Multiply a vector by an exact scalar",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.scalar_multiply.exact_rational",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.scalar_multiply.exact_rational"
+      ]
+    },
+    {
+      "id": "vectors.magnitude",
+      "domain": "vectors",
+      "canonicalName": "Find the exact magnitude of a two-dimensional vector",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.magnitude.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.magnitude.exact"
+      ]
+    },
+    {
+      "id": "vectors.between_points",
+      "domain": "vectors",
+      "canonicalName": "Find the displacement vector between two coordinate points",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "vectors.between_points.exact",
+        "vectors.verify.exact_operations"
+      ],
+      "v2QuestionFamilies": [
+        "vectors.between_points.exact"
+      ]
+    },
+    {
+      "id": "percentages.core",
+      "domain": "percentages",
+      "canonicalName": "Solve core percentage problems including percentage of quantity and percentage increase or decrease",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "percentages.core.exact",
+        "percentages.verify.core"
+      ],
+      "v2QuestionFamilies": [
+        "percentages.core.of_quantity",
+        "percentages.core.increase_decrease"
+      ]
+    },
+    {
+      "id": "sequences.core",
+      "domain": "sequences",
+      "canonicalName": "Reason with arithmetic and geometric sequences and exact term positions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "v2QuestionFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.geometric_nth_term",
+        "sequences.core.find_position_arithmetic"
+      ]
+    },
+    {
+      "id": "geometry.polygons.angle_sum",
+      "domain": "geometry",
+      "canonicalName": "Use polygon interior-angle sums to find sums and missing or regular interior angles",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "geometry.polygons.exact",
+        "geometry.verify.polygons"
+      ],
+      "v2QuestionFamilies": [
+        "geometry.polygons.interior_angle_sum",
+        "geometry.polygons.missing_interior_angle",
+        "geometry.polygons.regular_interior_angle"
+      ]
+    },
+    {
+      "id": "statistics.center_spread.core",
+      "domain": "statistics",
+      "canonicalName": "Calculate and interpret mean, median and range for bounded exact data",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "statistics.center_spread.exact",
+        "statistics.verify.center_spread"
+      ],
+      "v2QuestionFamilies": [
+        "statistics.center_spread.mean",
+        "statistics.center_spread.median",
+        "statistics.center_spread.range"
+      ]
+    },
+    {
+      "id": "probability.theoretical.core",
+      "domain": "probability",
+      "canonicalName": "Evaluate exact theoretical probabilities for simple events, complements and two independent fair coin tosses",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "probability.theoretical.exact",
+        "probability.verify.theoretical"
+      ],
+      "v2QuestionFamilies": [
+        "probability.theoretical.simple_event",
+        "probability.theoretical.complement",
+        "probability.theoretical.two_coins_exactly_one"
+      ]
+    },
+    {
+      "id": "supporting.number.place_value_rounding",
+      "domain": "number",
+      "canonicalName": "Place value and rounding for whole numbers",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.place_value",
+        "supporting.number.rounding"
+      ]
+    },
+    {
+      "id": "supporting.number.directed_operations",
+      "domain": "number",
+      "canonicalName": "Directed-number and order-of-operations reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.negative_operation",
+        "supporting.number.order_operations",
+        "supporting.number.multiply",
+        "supporting.number.divide"
+      ]
+    },
+    {
+      "id": "supporting.number.factors_primes",
+      "domain": "number",
+      "canonicalName": "Factors, greatest common factors and prime factors",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.gcf",
+        "supporting.number.prime_factor",
+        "supporting.number.lcm"
+      ]
+    },
+    {
+      "id": "supporting.decimals.core",
+      "domain": "number",
+      "canonicalName": "Decimal comparison, rounding and exact operations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.decimals.place_value",
+        "supporting.decimals.operation",
+        "supporting.decimals.compare",
+        "supporting.decimals.round"
+      ]
+    },
+    {
+      "id": "supporting.fractions.multiply_divide",
+      "domain": "fractions",
+      "canonicalName": "Fraction multiplication, division and simplification",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.fractions.multiply",
+        "supporting.fractions.divide_whole",
+        "supporting.fractions.simplify",
+        "supporting.fractions.mixed_to_improper"
+      ]
+    },
+    {
+      "id": "supporting.fdp.equivalence",
+      "domain": "fractions",
+      "canonicalName": "Fraction-decimal-percentage equivalence",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.fdp.percent_equivalent"
+      ]
+    },
+    {
+      "id": "supporting.measurement.practical",
+      "domain": "measurement",
+      "canonicalName": "Practical unit conversion, elapsed time and money change",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.measurement.unit_conversion",
+        "supporting.measurement.time_elapsed",
+        "supporting.measurement.money_change",
+        "supporting.measurement.compare",
+        "supporting.measurement.calendar_next_day",
+        "supporting.measurement.clock_half_hour",
+        "supporting.measurement.choose_tool",
+        "supporting.measurement.unit_iteration",
+        "supporting.measurement.indirect_compare",
+        "supporting.measurement.money_marked_value"
+      ]
+    },
+    {
+      "id": "supporting.algebra.expressions",
+      "domain": "algebra",
+      "canonicalName": "Substitution and manipulation of algebraic expressions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.algebra.substitute",
+        "supporting.algebra.expand",
+        "supporting.algebra.factor",
+        "supporting.algebra.simplify",
+        "supporting.algebra.expressions.mixed",
+        "supporting.algebra.algebraic_fraction",
+        "supporting.algebra.binomial_coefficient"
+      ]
+    },
+    {
+      "id": "supporting.algebra.equations",
+      "domain": "algebra",
+      "canonicalName": "Exact equation, simultaneous-equation and quadratic-root reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.algebra.simultaneous",
+        "supporting.algebra.quadratic_larger_root",
+        "supporting.algebra.equations.mixed",
+        "supporting.algebra.complete_square_vertex",
+        "supporting.algebra.inverse_proportion"
+      ]
+    },
+    {
+      "id": "supporting.functions.core",
+      "domain": "functions",
+      "canonicalName": "Exact evaluation and composition of functions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.functions.evaluate",
+        "supporting.functions.composite",
+        "supporting.functions.core.mixed",
+        "supporting.functions.inverse_linear",
+        "supporting.functions.polynomial_value"
+      ]
+    },
+    {
+      "id": "supporting.indices.roots_standard_form",
+      "domain": "indices",
+      "canonicalName": "Powers, roots and powers-of-ten standard form",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.indices.power_or_root",
+        "supporting.standard_form.power10_exponent"
+      ]
+    },
+    {
+      "id": "supporting.surds.core",
+      "domain": "indices",
+      "canonicalName": "Simplifying exact square-root surds",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.surds.coefficient"
+      ]
+    },
+    {
+      "id": "supporting.geometry.angles",
+      "domain": "geometry",
+      "canonicalName": "Angle classification and angle sums around a point",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.angle_around_point",
+        "supporting.geometry.angle_classify",
+        "supporting.geometry.angle_measure"
+      ]
+    },
+    {
+      "id": "supporting.geometry.area_volume",
+      "domain": "geometry",
+      "canonicalName": "Areas of plane shapes and volumes of cuboids",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.parallelogram_area",
+        "supporting.geometry.compound_area",
+        "supporting.geometry.cuboid_volume",
+        "supporting.geometry.triangle_area",
+        "supporting.geometry.surface_area_cuboid"
+      ]
+    },
+    {
+      "id": "supporting.geometry.transformations",
+      "domain": "geometry",
+      "canonicalName": "Coordinate translations, reflections and rotations",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.translate_point",
+        "supporting.geometry.reflect_axis",
+        "supporting.geometry.rotate90",
+        "supporting.transformations.mixed"
+      ]
+    },
+    {
+      "id": "supporting.geometry.analytic",
+      "domain": "geometry",
+      "canonicalName": "Coordinate midpoint and distance reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.midpoint",
+        "supporting.geometry.axis_distance",
+        "supporting.geometry.analytic.mixed",
+        "supporting.coordinate.line_intersection"
+      ]
+    },
+    {
+      "id": "supporting.geometry.circles_loci",
+      "domain": "geometry",
+      "canonicalName": "Exact circle measures and elementary loci",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.circle_circumference_pi_coefficient",
+        "supporting.geometry.circle_area_pi_coefficient",
+        "supporting.geometry.locus_equidistant",
+        "supporting.circle.angle_semicircle",
+        "supporting.circle.arc_angle_degrees"
+      ]
+    },
+    {
+      "id": "supporting.statistics.charts",
+      "domain": "statistics",
+      "canonicalName": "Reading tables, pie charts and exact chart totals",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.table_total",
+        "supporting.statistics.pie_sector_angle",
+        "supporting.statistics.charts.mixed",
+        "supporting.statistics.cumulative_total",
+        "supporting.statistics.histogram_density",
+        "supporting.statistics.category_total",
+        "supporting.statistics.compare_category_counts"
+      ]
+    },
+    {
+      "id": "supporting.statistics.scatter",
+      "domain": "statistics",
+      "canonicalName": "Interpreting scatter-graph correlation",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.scatter_correlation"
+      ]
+    },
+    {
+      "id": "supporting.statistics.experimental_probability",
+      "domain": "statistics",
+      "canonicalName": "Experimental probability from relative frequency",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.experimental_probability"
+      ]
+    },
+    {
+      "id": "supporting.probability.sample_space",
+      "domain": "probability",
+      "canonicalName": "Counting finite sample spaces",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.sample_space_count"
+      ]
+    },
+    {
+      "id": "supporting.statistics.distributions",
+      "domain": "statistics",
+      "canonicalName": "Comparing distribution spread",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.compare_range",
+        "supporting.statistics.quartile",
+        "supporting.statistics.grouped_mean",
+        "supporting.statistics.center_or_variation"
+      ]
+    },
+    {
+      "id": "supporting.statistics.data_collection",
+      "domain": "statistics",
+      "canonicalName": "Census and sample data-collection decisions",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.statistics.collection_method",
+        "supporting.statistics.statistical_question"
+      ]
+    },
+    {
+      "id": "supporting.reasoning.core",
+      "domain": "algebra",
+      "canonicalName": "Multi-step algebraic reasoning and justification",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.reasoning.multistep",
+        "supporting.reasoning.verify_identity"
+      ]
+    },
+    {
+      "id": "supporting.calculus.core",
+      "domain": "calculus",
+      "canonicalName": "Polynomial differentiation, definite integration and elementary optimization",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.calculus.derivative_value",
+        "supporting.calculus.definite_integral_linear",
+        "supporting.calculus.optimization",
+        "supporting.calculus.differential_equation_value"
+      ]
+    },
+    {
+      "id": "supporting.matrices.core",
+      "domain": "matrices",
+      "canonicalName": "Exact 2 by 2 determinant reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.matrices.determinant2"
+      ]
+    },
+    {
+      "id": "supporting.complex.core",
+      "domain": "complex",
+      "canonicalName": "Exact real-part reasoning with complex addition and multiplication",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.complex.add_real_part",
+        "supporting.complex.multiply_real_part"
+      ]
+    },
+    {
+      "id": "supporting.mechanics.core",
+      "domain": "mechanics",
+      "canonicalName": "Constant-acceleration velocity modelling",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.mechanics.constant_acceleration_velocity",
+        "supporting.mechanics.projectile_velocity",
+        "supporting.mechanics.energy",
+        "supporting.mechanics.circular_motion",
+        "supporting.mechanics.equilibrium",
+        "supporting.mechanics.friction",
+        "supporting.mechanics.connected_particles"
+      ]
+    },
+    {
+      "id": "supporting.probability.conditional",
+      "domain": "probability",
+      "canonicalName": "Elementary conditional probability",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.conditional_simple"
+      ]
+    },
+    {
+      "id": "supporting.exponentials_logs",
+      "domain": "algebra",
+      "canonicalName": "Exact exponential and logarithmic inverse reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.exponentials.solve_exponent",
+        "supporting.logarithms.evaluate"
+      ]
+    },
+    {
+      "id": "supporting.combinatorics.core",
+      "domain": "probability",
+      "canonicalName": "Elementary exact combinatorial counting",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.combinatorics.choose_two"
+      ]
+    },
+    {
+      "id": "supporting.probability_statistics.core",
+      "domain": "probability",
+      "canonicalName": "Mixed exact probability and statistics reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability_statistics.mixed"
+      ]
+    },
+    {
+      "id": "supporting.geometry.plane",
+      "domain": "geometry",
+      "canonicalName": "Mixed exact plane-geometry reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.plane.mixed"
+      ]
+    },
+    {
+      "id": "supporting.geometry.solid",
+      "domain": "geometry",
+      "canonicalName": "Mixed exact solid-geometry reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.solid.mixed"
+      ]
+    },
+    {
+      "id": "supporting.sequences.core",
+      "domain": "sequences",
+      "canonicalName": "Mixed exact arithmetic-sequence reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.sequences.core.mixed",
+        "supporting.series.geometric_sum",
+        "supporting.sequences.next_term",
+        "supporting.sequences.skip_count"
+      ]
+    },
+    {
+      "id": "supporting.trigonometry.core",
+      "domain": "trigonometry",
+      "canonicalName": "Exact right-triangle trigonometric-ratio reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.trigonometry.core.mixed",
+        "supporting.trigonometry.bearing",
+        "supporting.trigonometry.sine_rule_exact",
+        "supporting.trigonometry.cosine_rule_square",
+        "supporting.trigonometry.area_sine_double",
+        "supporting.trigonometry.graph_special",
+        "supporting.trigonometry.identity_missing_component",
+        "supporting.trigonometry.equation_smallest_angle"
+      ]
+    },
+    {
+      "id": "supporting.number.real",
+      "domain": "number",
+      "canonicalName": "Mixed exact real-number reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.number.real.mixed",
+        "supporting.number.compare_order",
+        "supporting.number.parity",
+        "supporting.number.bounds_upper",
+        "supporting.number.scale_power10",
+        "supporting.number.count_cardinality",
+        "supporting.number.numeral_identity",
+        "supporting.number.teen_decompose",
+        "supporting.number.ordinal_position",
+        "supporting.number.estimate_closer"
+      ]
+    },
+    {
+      "id": "supporting.geometry.properties",
+      "domain": "geometry",
+      "canonicalName": "Classify elementary 2D/3D shape properties and turns",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.geometry.shape_dimension",
+        "supporting.geometry.turn_degrees",
+        "supporting.geometry.face_count",
+        "supporting.geometry.position_direction",
+        "supporting.geometry.orientation_invariant"
+      ]
+    },
+    {
+      "id": "supporting.sets.core",
+      "domain": "probability",
+      "canonicalName": "Exact finite set and Venn-diagram counting",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.sets.union_count"
+      ]
+    },
+    {
+      "id": "supporting.probability.distributions",
+      "domain": "probability",
+      "canonicalName": "Exact foundational discrete/continuous distribution and inference reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.binomial_half",
+        "supporting.probability.normal_symmetry",
+        "supporting.probability.poisson_mean",
+        "supporting.probability.uniform_interval",
+        "supporting.statistics.hypothesis_decision",
+        "supporting.probability.discrete_expected_value"
+      ]
+    },
+    {
+      "id": "supporting.probability.events",
+      "domain": "probability",
+      "canonicalName": "Exact combined-event, tree-diagram and expected-frequency reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.probability.independent_product",
+        "supporting.probability.expected_frequency"
+      ]
+    },
+    {
+      "id": "supporting.numerical.core",
+      "domain": "numerical_methods",
+      "canonicalName": "Exact foundational numerical solution and approximation reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.numerical.bisection_midpoint"
+      ]
+    },
+    {
+      "id": "supporting.vectors.core",
+      "domain": "vectors",
+      "canonicalName": "Exact foundational vector component and magnitude reasoning",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.vectors.add",
+        "supporting.vectors.magnitude"
+      ]
+    },
+    {
+      "id": "supporting.algebra.systems_inequalities",
+      "domain": "algebra",
+      "canonicalName": "Solve systems of linear equations and linear inequalities",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "supporting.algebra.systems_inequalities.mixed",
+        "supporting.algebra.linear_programming.vertex_optimum"
+      ]
+    },
+    {
+      "id": "calculus.area_between_curves",
+      "domain": "calculus",
+      "canonicalName": "Find exact geometric area between bounded polynomial curves",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "rational.exact_arithmetic",
+        "algebra.polynomial.normalize.exact_rational",
+        "calculus.polynomial.definite_integral.exact",
+        "calculus.area_between_curves.exact",
+        "calculus.verify.area_between_curves.piecewise"
+      ],
+      "v2QuestionFamilies": [
+        "calculus.area_between_curves.polynomial_exact"
+      ]
+    },
+    {
+      "id": "usccss.g2.hundreds_place_value",
+      "domain": "number",
+      "canonicalName": "Recognize ten tens as one hundred and 100–900 as 1–9 hundreds (2.NBT.A.1.a–b)",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g2.hundreds_as_tens",
+        "usccss.g2.hundreds_digit_to_number"
+      ]
+    },
+    {
+      "id": "usccss.g1.ten_as_unit",
+      "domain": "number",
+      "canonicalName": "Ten ones as one ten; teen numbers one ten and some ones (1.NBT.B.2)",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g1.u03.l08.ten_unit.compose",
+        "usccss.g1.u03.l08.ten_unit.four_teen_numbers"
+      ]
+    },
+    {
+      "id": "data.categorical.represent_interpret",
+      "domain": "statistics",
+      "canonicalName": "Read, construct and compare Grade 2 category graphs and measured-data line plots with source-visible values (2.MD.D.9–10)",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g2.u01.l08.read_pictograph_category",
+        "usccss.g2.u01.l08.combine_or_compare_categories",
+        "usccss.g2.u01.l08.graph_question_answerable",
+        "usccss.g2.u01.l09.bar_category_height",
+        "usccss.g2.u01.l09.bar_combine_or_compare",
+        "usccss.g2.u01.l09.bar_total",
+        "usccss.g2.u01.l10.picture_symbol_count",
+        "usccss.g2.u01.l10.bar_height_for_category",
+        "usccss.g2.u01.l10.picture_bar_same_data",
+        "usccss.g2.u01.l11.graph_question_count",
+        "usccss.g2.u01.l11.graph_question_combine",
+        "usccss.g2.u01.l11.graph_question_compare",
+        "usccss.g2.u01.l12.sort_three_category_count",
+        "usccss.g2.u01.l12.sort_three_category_combine",
+        "usccss.g2.u01.l13.bar_unknown_difference",
+        "usccss.g2.u01.l13.related_addition_missing_difference",
+        "usccss.g2.u01.l13.related_subtraction_difference",
+        "usccss.g2.u01.l14.tape_unknown_gap",
+        "usccss.g2.u01.l14.tape_addition_missing_part",
+        "usccss.g2.u01.l14.tape_subtraction_missing_part",
+        "usccss.g2.u01.l18.read_category_count",
+        "usccss.g2.u01.l18.combine_two_categories",
+        "usccss.g2.u01.l18.compare_two_categories",
+        "usccss.g2.u01.l18.tape_difference_from_graph",
+        "usccss.g2.u03.l14.line_plot_frequency",
+        "usccss.g2.u03.l14.line_plot_total_measurements",
+        "usccss.g2.u03.l14.line_plot_most_common_length",
+        "usccss.g2.u03.l14.line_plot_length_range",
+        "usccss.g2.u03.l15.pencil_plot_frequency",
+        "usccss.g2.u03.l15.pencil_plot_total",
+        "usccss.g2.u03.l15.pencil_plot_modal_length",
+        "usccss.g2.u03.l15.pencil_plot_empty_tick",
+        "usccss.g2.u03.l16.plant_plot_frequency",
+        "usccss.g2.u03.l16.plant_plot_total",
+        "usccss.g2.u03.l16.plant_plot_greater_than",
+        "usccss.g2.u03.l16.plant_plot_range",
+        "usccss.g2.u03.l17.fictional_plot_frequency",
+        "usccss.g2.u03.l17.fictional_plot_total",
+        "usccss.g2.u03.l17.fictional_plot_range",
+        "usccss.g2.u03.l17.fictional_plot_above_threshold"
+      ]
+    },
+    {
+      "id": "statistics.read_bar_graph",
+      "domain": "statistics",
+      "canonicalName": "Read values, categories and differences from a visible scaled/unscaled bar graph (2.MD.D.10)",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g2.u01.l17.read_bar_graph_difference"
+      ]
+    },
+    {
+      "id": "usccss.g2.count_grouped_collection_to120",
+      "domain": "number",
+      "canonicalName": "Count collections in groups of five and ten up to 120, preserving countable objects (2.NBT.A.2 precursor)",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g2.u01.l17.count_groups_of_ten",
+        "usccss.g2.u01.l17.count_groups_of_five"
+      ]
+    },
+    {
+      "id": "measurement.data.interpret",
+      "domain": "measurement",
+      "canonicalName": "Read explicitly given measurement line-plot values and synthetic bar figures without guessing hidden source data (2.MD.D.9–10)",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g2.u07.l18.new_chart_difference",
+        "usccss.g2.u07.l18.new_chart_sum",
+        "usccss.g2.u07.l18.new_chart_leftover",
+        "usccss.g2.u07.l18.new_chart_known_bars",
+        "usccss.g2.u09.l04.invented_line_plot_count",
+        "usccss.g2.u09.l04.invented_line_plot_max",
+        "usccss.g2.u09.l04.invented_line_plot_difference",
+        "usccss.g2.u09.l04.invented_measurement_total"
+      ]
+    },
+    {
+      "id": "geometry.lines.parallel_intersect.classify_dot_grid",
+      "domain": "geometry",
+      "canonicalName": "Distinguish two distinct parallel and intersecting straight lines using dot-grid positions",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ]
+    },
+    {
+      "id": "geometry.angles.identify_shared_ray_vertex",
+      "domain": "geometry",
+      "canonicalName": "Recognize an angle as two rays with a common starting vertex and distinct directions",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l05.angle_common_vertex_rays"
+      ]
+    },
+    {
+      "id": "geometry.angles.compare_opening_compass_turn",
+      "domain": "geometry",
+      "canonicalName": "Compare and describe two non-reflex angle openings by their turn, independent of arm length",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l06.compare_angle_openings"
+      ]
+    },
+    {
+      "id": "geometry.angles.compare_exact_hour_clock_turns",
+      "domain": "geometry",
+      "canonicalName": "Compare smaller angle openings from exact-hour clock hand positions by counting equal turns",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l07.clock_hour_angle_turn_compare"
+      ]
+    },
+    {
+      "id": "geometry.angles.degree_benchmark_full_turn_fraction",
+      "domain": "geometry",
+      "canonicalName": "Relate a full 360-degree ray rotation to fractional turns and benchmark angles",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l08.full_turn_degree_benchmarks"
+      ]
+    },
+    {
+      "id": "geometry.angles.protractor_read_from_correct_zero",
+      "domain": "geometry",
+      "canonicalName": "Choose the angle size on a protractor scale whose zero is aligned to the initial ray",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l09.protractor_dual_scale_reading"
+      ]
+    },
+    {
+      "id": "geometry.lines.perpendicular_by_right_angle",
+      "domain": "geometry",
+      "canonicalName": "Identify perpendicular intersecting supporting lines by whether their measured corner equals ninety degrees",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment"
+      ]
+    },
+    {
+      "id": "geometry.angles.classify_acute_right_obtuse_straight",
+      "domain": "geometry",
+      "canonicalName": "Classify angles by exact degree bounds as acute, right, obtuse or straight",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l12.classify_angles_by_degree_bounds"
+      ]
+    },
+    {
+      "id": "geometry.angles.compose_decompose_known_turn",
+      "domain": "geometry",
+      "canonicalName": "Decompose a right straight or full turn into adjacent degree measures",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u07.l13.additive_angle_part"
+      ]
+    },
+    {
+      "id": "geometry.symmetry.count_lines_for_defined_shapes",
+      "domain": "geometry",
+      "canonicalName": "Count reflection symmetry lines of precisely defined elementary geometric shape",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u08.l04.symmetry_axis_counts"
+      ]
+    },
+    {
+      "id": "geometry.perimeter_area.add_polygon_sides",
+      "domain": "geometry",
+      "canonicalName": "Add side lengths around a three- or four-sided polygon to find perimeter",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u08.l07.polygon_perimeter_sum"
+      ]
+    },
+    {
+      "id": "number.whole.multiply.two_digit_partial_products",
+      "domain": "number",
+      "canonicalName": "Multiply two 2-digit numbers by distributive partial products and standard algorithm",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g4.u09.l05.two_digit_partial_products"
+      ]
+    },
+    {
+      "id": "fractions.divide_whole_numbers",
+      "domain": "fractions",
+      "canonicalName": "Interpret whole-number division as fractional fair shares",
+      "semantics": "Interpret a quotient as equal sharing of a whole-number quantity, including fractional shares and equivalent representations.",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g5.u02.l01.source_fair_share_choice",
+        "usccss.g5.u02.l02.unit_share_equivalence",
+        "usccss.g5.u02.l03.fraction_division_direction",
+        "usccss.g5.u02.l04.blueberry_division_context",
+        "usccss.g5.u02.l05.fraction_division_generalization"
+      ]
+    },
+    {
+      "id": "geometry.area",
+      "domain": "geometry",
+      "canonicalName": "Model area of rectangles with fractional and mixed-number dimensions",
+      "semantics": "Interpret and decompose rectangles with positive whole, fraction, and mixed-number side lengths; preserve square-area units and distributive reasoning.",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g5.u02.l09.area_whole_by_unit_fraction",
+        "usccss.g5.u02.l10.area_whole_by_nonunit_fraction",
+        "usccss.g5.u02.l11.area_fraction_greater_than_one",
+        "usccss.g5.u02.l12.decomposed_mixed_rectangle_area",
+        "usccss.g5.u02.l13.distributive_area_expressions"
+      ]
+    },
+    {
+      "id": "geometry.area_tiling",
+      "domain": "geometry",
+      "canonicalName": "Reason about area using triangular unit-tile coverage",
+      "semantics": "Compare congruent triangular unit tiles, non-overlapping coverage, and equal-area tiling arrangements; constructions remain subject to teacher review.",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g6.u01.l01.triangular_unit_tile_area",
+        "usccss.g6.u01.l01.structured_tiling_coverage"
+      ]
+    },
+    {
+      "id": "geometry.similarity.scale_factor",
+      "domain": "geometry",
+      "canonicalName": "Identify corresponding lengths in scaled geometric copies",
+      "semantics": "Determine consistent positive scale factors between corresponding lengths and distinguish scale from shape distortion.",
+      "v2Status": "ShadowVerified",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "usccss.g7.u01.l01.scaled_copy_correspondence"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l14-2021-source-html-firstparty-unverified-pdf-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L14",
+      "CultureCode": "en",
+      "Title": "Nearest Multiples of 10 and 100",
+      "ExplanationParagraphs": [
+        "This lesson compares a whole number with its enclosing multiples of 100 and of 10. The mathematically nearest multiple is determined by distance, not by naming a convenient benchmark; the teacher also reviews the representations that make the distance visible.",
+        "Warm-up (10 min). The original 2021 page shows an unlabeled point somewhere between 100 and 200 on a 0–200 number line. Pupils make too-low, about-right and too-high estimates. Because the original figure pixels have not been recovered and verified, do not assign an exact value or auto-grade these estimates.",
+        "Activity 1 (20 min): locate 128, 272, 436, 89 and 351 on hundred-interval number lines. The source asks for the nearest hundred and then the nearest ten. Record the enclosing tens first for 128: 120 and 130, with 130 nearer because 128 is 2 from 130 and 8 from 120.",
+        "Source values and first-party mathematical checks: 128 -> 100 and 130; 272 -> 300 and 270; 436 -> 400 and 440; 89 -> 100 and 90; 351 -> 400 and 350. The first result in each pair is the nearest multiple of 100; the second is the nearest multiple of 10.",
+        "Activity 2 (15 min): explain how 349 is nearer 300 than 400 but nearer 350 than 340; 712 is nearer 700 than 800 but nearer 710 than 720; 568 is nearer 600 than 500 but nearer 570 than 560. Compare actual distances, then explain how place value lets you do the comparison without plotting.",
+        "Apply to the original numbers 324 (nearest hundred 300, nearest ten 320) and 89 (nearest hundred 100, nearest ten 90). These numeric anchors can be checked independently; a teacher must still review source-number-line construction, oral reasoning, the unrestricted estimate and the unverified publisher Cool-down.",
+        "The five 100-wide number-line templates and one warm-up picture described by the archive are only alt-text/source-link evidence. No claim is made to copy publisher drawings or prove pixel parity. This independent text and teaching proposal has not passed Stage D or live Rich V2 verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Enclosing multiples of 100",
+          "Definition": "The neighboring multiples of 100 on either side of a number.",
+          "Rule": "For 272, compare 200 and 300 using the distances 72 and 28.",
+          "Example": "272 is nearest 300."
+        },
+        {
+          "Title": "Enclosing multiples of 10",
+          "Definition": "The neighboring multiples of 10 on either side of a number.",
+          "Rule": "For 272, compare 270 and 280 using 2 and 8.",
+          "Example": "272 is nearest 270."
+        },
+        {
+          "Title": "Nearest and rounding",
+          "Definition": "Round to the nearest requested place by choosing the nearer benchmark.",
+          "Rule": "Compare both endpoint distances. At an exact midpoint, a stated rounding convention is needed.",
+          "Example": "351 is nearer 400 than 300, but nearer 350 than 360."
+        },
+        {
+          "Title": "Number-line evidence",
+          "Definition": "Relative position can justify which of two benchmarks is nearest.",
+          "Rule": "Locate the number accurately on an interval with correct scale; discuss placement with a teacher.",
+          "Example": "349 is 49 from 300 and 51 from 400."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two nearest benchmarks for 128",
+          "Question": "From the source list, find both nearest hundred and nearest ten for 128.",
+          "Method": "Compare the two containing intervals.",
+          "Steps": [
+            "128 lies between 100 and 200: it is 28 from 100, 72 from 200.",
+            "128 lies between 120 and 130: it is 8 from 120, 2 from 130.",
+            "The closer hundred is 100; the closer ten is 130."
+          ],
+          "Answer": "Nearest hundred: 100; nearest ten: 130.",
+          "Check": "128 rounds differently at the two place values."
+        },
+        {
+          "Title": "The contrast in 349",
+          "Question": "Which benchmark is nearer to 349: 300 or 400? 340 or 350?",
+          "Method": "Compare distances.",
+          "Steps": [
+            "349-300=49; 400-349=51, so choose 300.",
+            "349-340=9; 350-349=1, so choose 350.",
+            "Explain why the two choices measure different scales."
+          ],
+          "Answer": "Nearest hundred: 300; nearest ten: 350.",
+          "Check": "The place value changes the benchmark interval."
+        },
+        {
+          "Title": "Mentally round 568",
+          "Question": "For source number 568, which hundred and ten are nearest?",
+          "Method": "Use number place value and verify with distances.",
+          "Steps": [
+            "568 is 68 from 500 and 32 from 600.",
+            "568 is 8 from 560 and 2 from 570.",
+            "Choose 600 and 570, respectively."
+          ],
+          "Answer": "600 (hundred), 570 (ten).",
+          "Check": "Both checks use strict smaller distance."
+        },
+        {
+          "Title": "Source exit examples",
+          "Question": "What are the nearest hundred and ten to 324 and 89?",
+          "Method": "Compare benchmark endpoints.",
+          "Steps": [
+            "324 is nearer 300 than 400; nearer 320 than 330.",
+            "89 is nearer 100 than 0; nearer 90 than 80.",
+            "Check both benchmarks: 324 is 24 from 300 and 4 from 320, while 89 is 11 from 100 and 1 from 90."
+          ],
+          "Answer": "324 -> 300 and 320; 89 -> 100 and 90.",
+          "Check": "Do not treat the tens answer as a hundreds answer."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use the nearest ten when the task asks for the nearest hundred.",
+          "WhyWrong": "The reference benchmarks differ by place value.",
+          "Correction": "Label which place value is requested before selecting endpoints."
+        },
+        {
+          "Mistake": "Choose 300 for 351 because the first digit is 3.",
+          "WhyWrong": "351 is 49 from 400 and 51 from 300.",
+          "Correction": "Check distance to the next hundred; 400 is nearer."
+        },
+        {
+          "Mistake": "Give only 130 for 128 without naming its surrounding tens.",
+          "WhyWrong": "The original source asks pupils to identify and compare the two enclosing tens.",
+          "Correction": "Identify 120 and 130, compare 8 and 2, and justify 130."
+        },
+        {
+          "Mistake": "Treat the warm-up estimate and drawing quality as an integer auto-grade.",
+          "WhyWrong": "The original point's exact position and pupils' justifications require the original picture and teacher feedback.",
+          "Correction": "Keep warm-up and drawing tasks teacher-reviewed."
+        }
+      ],
+      "SummaryPoints": [
+        "For nearest hundred, compare neighboring multiples of 100; for nearest ten, compare neighboring multiples of 10.",
+        "Source list: 128 -> 100/130; 272 -> 300/270; 436 -> 400/440; 89 -> 100/90; 351 -> 400/350.",
+        "Source comparisons: 349 -> 300/350; 712 -> 700/710; 568 -> 600/570; 324 -> 300/320.",
+        "A number line shows a reason, not just a rounded integer; independent numeric checks do not certify teacher-observed work.",
+        "Source PDF, original figure geometry/pixels and publisher Cool-down remain unverified; status is A_C_EXPLICIT_GAP."
+      ]
+    }
+  ]
+}

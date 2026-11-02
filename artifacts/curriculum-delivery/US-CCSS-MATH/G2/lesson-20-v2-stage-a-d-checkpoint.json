@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 20,
+  "unitNumber": 2,
+  "lessonNumber": 2,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L02",
+  "sourceTitle": "Find the Unknown Addend",
+  "canonicalTitle": "Find the Unknown Addend PLC Activity",
+  "sourceEdition": "Illustrative Mathematics K–5 2021 first edition",
+  "officialOutcomeCodes": [
+    "CCSS:2.NBT.A.2",
+    "CCSS:2.NBT.B.5",
+    "CCSS:2.NBT.B.9"
+  ],
+  "stageA": {
+    "status": "COMPLETE_PUBLIC_IM2021_PREPARATION_AND_SOURCE_STUDENT_TASK_READ",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-2/preparation.html",
+    "studentTeacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-2/lesson.html",
+    "canonicalBodySha256": "99e8a4aa53fc2789aa45a718dca857b4d20be5c669cd5807ec2d6585433032f0",
+    "sourceSemanticSha256": "c835f6852625bbaa8dc1c69fed5ce6cbbcd4209f748d71dc39022c3fda9bf5fa",
+    "addressing": [
+      "2.NBT.A.2",
+      "2.NBT.B.5",
+      "2.NBT.B.9"
+    ],
+    "warmup": "Choral Count from 97 decreasing by 10: 97,87,77,67,57,47,37,27,17,7. Learners explain tens/ones pattern.",
+    "activity1": "How Did You Find It? Students compare base-ten blocks and connecting cubes; solve original 41+?=84 =>43 with varied addition/subtraction and place-value methods; real blocks and partner conversations teacher assessed.",
+    "activity2": "You Go This Way, I'll Go That Way. Han starts with 17, Mai with 48, both solve17+?=48 =>31. Independent partner task21+?=96=>75; select from strategies that add-on or subtract. Actual pair roleplay teacher assessed.",
+    "synthesis": "Original 67−55=12 and55+?=67 =>12, compare subtraction with missing addition.",
+    "sourceRestriction": "Add/subtract within100 without regrouping tens, connect both operation methods, use base-ten blocks and connecting cubes purposefully.",
+    "educatorRestrictedCoolDown": "Find the Unknown Addend; Edulytics must independently author its exit ticket, not assert publisher restricted question text.",
+    "sourceMaterials": "Group of 2, 90–100 connecting cubes total with no more than three to five ten-towers initially, plus base-ten blocks; no claim of digital simulation being actual physical manipulation.",
+    "sourceRights": "Original source values and learning goals attributed; no copied publisher artwork. Teacher-only original collaborative reasoning cannot be machine certified.",
+    "sourceNamingCaveat": "Canonical includes 'PLC Activity' suffix, public source page simply titles it 'Find the Unknown Addend'."
+  },
+  "stageB": {
+    "status": "COMPLETE_EXACT_SOURCE_GUARDED_RICH_V2_UNKNOWN_ADDEND",
+    "guardedCorrection": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2UnknownAddendTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "Exact original 2021 source URL, canonical content SHA, three ordered Addressing 2.NBT outcomes, prior six learner fields, exact prior materialized rich content version required.",
+    "repairs": "Explains choral count backwards97 to7 by10, real connecting cubes versus base-ten blocks, 41+43=84, Han/Mai17+31=48 inverse methods,21+75=96 and67−55=12/55+12=67.",
+    "rights": "Mathematical facts and source goals attributed; visual rods/number symbols independently authored; protected original Cool-down not copied."
+  },
+  "stageC": {
+    "status": "COMPLETE_EXACT_UNKNOWN_ADDEND_NUMERIC_FAMILIES_AND_STUDENT_TOOL_RUBRIC",
+    "sourceProblems": "41+?=84=>43;17+?=48=>31;21+?=96=>75;67−55=12 checked by55+12=67.",
+    "sourceWarmup": "97,87,77,67,57,47,37,27,17,7; original countdown number gaps digitally checked, oral pattern teacher reviewed.",
+    "originalFirstPartyCooldown": "34+?=78 ->44,62+?=85 ->23,76−54=22, each without regrouping.",
+    "numericVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2SecondLessonUnknownAddends.cs",
+    "practiceContracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson2UnknownAddendContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson2UnknownAddendQuestions.cs",
+    "families": [
+      "usccss.g2.u02.l02.count_back_tens",
+      "usccss.g2.u02.l02.unknown_addend_add_on",
+      "usccss.g2.u02.l02.unknown_addend_take_away"
+    ],
+    "randomizedNoRegroup": "Every generated unknown addend satisfies known+missing=total<=99 with ones sum under10, complete integer recompute; each countdown subtracts full tens, preserves ones.",
+    "studentModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson20Page.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson20ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson20Activities/Index.cshtml",
+    "teacherRubric": "Teacher evaluates actual 90–100 connecting cubes / base-ten manipulations, student-selected tools, originals drawings, MLR8 partner conversations and oral counts; integers alone never attest to participation.",
+    "security": "StudentPortal role, checked adoption/lesson and published content, anti-forgery submission, no official grade or production data changes.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2UnknownAddendTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2SecondLessonUnknownAddendsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson2UnknownAddendQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson20ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "officialSchoolGradeSaved": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "productionRuntimeVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO",
+    "note": "Source-specific A–C authoring only; no Stage D or actual tests/CI, authenticated runtime persistence, classroom evidence or official academic score asserted."
+  },
+  "nextAction": "BEGIN_G2_U02_L03_GRADE_ORDINAL_21_ONLY_AFTER_20_CLOSED"
+}

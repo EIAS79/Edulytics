@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 61,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L09",
+  "title": "The Difference Between Numbers",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "ORIGINAL_PUBLISHER_SOURCE_REVIEWED",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-9/preparation.html",
+    "sourceBodySha256": "54b2b10fb7e95ee9f5d5ccc701e46aae02051ff394f47a8bb70c29f4f56d0721",
+    "sourceSemanticSha256": "cba3b07964d39bfe23a89390bffbd8bb7825ace66bda9aa0a5b04ae4ae7c54c3",
+    "officialOutcomes": [
+      "CCSS:2.MD.B.5",
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5"
+    ],
+    "teacherOnly": "Original publisher diagrams, physical arrow drawings, partner discourse, formal source Cool-down not invented"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_SIX_FIELD_INSTRUCTIONAL_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4DifferenceStrategiesCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "persistedGuard": "Exact original source URL/SHA, ordered CCSS outcomes, original six learner fields and approved predecessor content version"
+  },
+  "stageC": {
+    "status": "PROTECTED_STUDENT_SOURCE_ACTIVITIES_AND_FOUR_INDEPENDENT_EXACT_FAMILIES_WRITTEN",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4ArrowActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4ArrowActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4ArrowLessonsQuestions.cs",
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "familyIDs": [
+      "usccss.g2.u04.l09.takeaway_difference",
+      "usccss.g2.u04.l09.count_on_unknown_addend",
+      "usccss.g2.u04.l09.fictional_string_remaining",
+      "usccss.g2.u04.l09.point_difference"
+    ],
+    "sourceBoundary": "Elena and Han actual string problems with counting on/back and teacher selected two real source diagrams",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal61OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal61DirectionalMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal61ExactArrowFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal61ArrowRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "runtimeCompilationVerified": false,
+    "stageDExecuted": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO_UNVERIFIED"
+  },
+  "nextSequentialLesson": 62
+}

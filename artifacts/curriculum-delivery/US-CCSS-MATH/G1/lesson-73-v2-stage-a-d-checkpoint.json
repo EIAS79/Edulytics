@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 73,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L08",
+  "title": "Different Representations of Tens and Ones PLC Activity",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "c5a8fdd8bfd16ee332095959eae1b68950aee11abb9f692fea75b11bc045084e",
+    "teacherPreparationSha256": "206a5a74e868c135313e05544f08468863ac99fe8bd23d78d53b4fb278aef1f8",
+    "studentHtmlSha256": "5893c1a00a8ef433a62d6a0321c324ca9cef9740338bd915bbbb142c0cb2fda8",
+    "teacherHeadings": [
+      "Activity 1: Compare Representations of a Collection (10 minutes)",
+      "Activity 2: Card Sort: Base-ten Representations (15 minutes)",
+      "Activity 3: Introduce Grab and Count, Ones Cubes (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing How many do you see? [visual] [visual] </sv",
+      "Student Facing Each student counted and showed a collection. Clare drew [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,6",
+      "Student Facing Your teacher will give you a set of cards that show different representations of a two-digit number. Find the cards that match. Be ready to explain your re"
+    ],
+    "sourceSpecificFinding": "Kiran 3 ones+7 tens and Priya 70+3 both 73; original estimation and teacher card sort",
+    "classification": "CONTENT_REPAIR",
+    "originalAccessibleSourceActivitiesIndependentlyReviewed": true,
+    "originalSourceTitle": "Different Representations of Tens and Ones",
+    "sourceMath": "Kiran 3 ones+7 tens=73 and Priya70+3=73; original matching card example 41 versus 14; J/S match 32 but E shows 23; V=95",
+    "teacherOnlyObservation": "Physical estimation, original diagrams, actual three-card groups and Grab and Count",
+    "originalPublisherSectionBCheckpointVerbatimVerified": false,
+    "allOriginalFigureAndStudentTasksFullyAudited": null
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false,
+    "independentFirstPartyVersion": "us-ccss-g1-u04-l08-original-student-activities-v7",
+    "originalTitleRestored": true,
+    "v6ToV7OnlyThisLesson": true
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": false,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "sourceTaskToDigitalMathParity": "VERIFIED_SOURCE_GOAL_WITH_INDEPENDENT_EDULYTICS_REPRESENTATION",
+    "modesAdded": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "numericMatchingAndNegativeTestsAuthoredNotExecuted": true
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-73-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherProtectedCheckpointVerified": false,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "nextAction": "A-C source goal and digital matching/math independently reviewed. Original physical estimation and card sort teacher-observed; final CI/D frozen. Continue ordinal 74.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 73,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L08",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-73-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

@@ -1,0 +1,37 @@
+name: B001 500 Original Student PDF Structural Inspection
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/curriculum/us-ccss-b001-audit-original-student-pdfs.cjs'
+      - 'tests/us-ccss-b001-original-student-pdf-content-audit.test.cjs'
+      - '.github/workflows/us-ccss-b001-original-student-pdf-inspection.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect-500-student-pdfs:
+    name: b001-500-original-student-pdf-inspection
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install Poppler PDF inspection utilities
+        run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils
+      - name: Syntax and offline contract tests
+        run: |
+          node --check tools/curriculum/us-ccss-b001-audit-original-student-pdfs.cjs
+          node --test tests/us-ccss-b001-original-student-pdf-content-audit.test.cjs
+      - name: Read actual 2021 original task PDFs for all 500 B001 lessons
+        run: node tools/curriculum/us-ccss-b001-audit-original-student-pdfs.cjs --output b001-500-original-student-pdf-evidence.json
+      - name: Upload metadata and review flags only, never PDF contents
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b001-500-original-student-pdf-evidence
+          path: b001-500-original-student-pdf-evidence.json
+          if-no-files-found: warn
+          retention-days: 14

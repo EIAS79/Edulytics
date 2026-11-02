@@ -1,0 +1,108 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l13-2021-four-numberlines-six-whole-checks-three-column-table-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L13",
+      "CultureCode": "en",
+      "Title": "Whole Numbers and Fractions",
+      "ExplanationParagraphs": [
+        "Source 2021 warm-up Notice and Wonder: Four Number Lines. The ORIGINAL first diagram shows four co-located scales spanning the same 0–3 wholes: whole steps 0 to 3, halves 0 to 6/2, thirds 0 to 9/3, fourths 0 to 12/4. These are different names for the same positions of 1, 2, 3; accept multiple student observations and questions with teacher review, not a fixed odd-one-out.",
+        "Activity1 Hidden Whole Numbers: on original 0–6/2, 0–9/3 and 0–12/4 lines, circle fraction positions exactly at WHOLE-number ticks; the first whole is 2/2=3/3=4/4=1, the second 4/2=6/3=8/4=2 and the third 6/2=9/3=12/4=3. Original teacher shows 4/2=2 and students must write FIVE OTHER distinct equations for fractions at whole numbers; many valid sets, so preserve student selection and teacher checks.",
+        "Activity1 six separate SOURCE yes/no fraction checks: 11/2=5.5 NOT a whole number; 5/1=5 YES; 12/6=2 YES; 10/3=3+1/3 NOT whole; 12/8=1+1/2 NOT whole; 16/4=4 YES. Fractions are whole exactly when the denominator divides numerator without remainder. Be careful not to classify 'numerator > denominator' as sufficient for a whole or treat 12/8 as a whole.",
+        "Activity2 Write Them as Fractions is a cooperative THREE-COLUMN TABLE with top whole numbers exactly 4, 5, 6. In Step1, each pupil writes two fractions equivalent to EACH whole number: SIX entries across those columns, then passes the paper right. Step2 participants add one NEW valid fraction to a chosen column and pass again, repeating to complete the table. There is NO single fixed full table: the original student sheet preprints 4/1 under 4, 30/6 under 5 and 48/8 under 6 as anchors, and offers denominator rows including 2, 3 and 4. Accept all n/d matching 4, 5 or 6, with d>0, consistent with original group workflow.",
+        "First-party table examples 4=4/1=8/2=12/3=16/4; 5=5/1=10/2=15/3=20/4=30/6; 6=6/1=12/2=18/3=24/4=48/8 are illustrative, not imposed as student answers. Teachers check that the paper was rotated, students wrote new valid entries, and any repeated forms fit the actual whole-number column.",
+        "Source section summary also illustrates 3/4=6/8 on a 0–1 line and that whole numbers can be represented as fractions. Public teacher and preparation HTML, along with eleven unique image URLs, were inspected on Our-CS; source publisher artwork or photography are not copied. The original publisher Cool-down Fraction to Whole Number and Whole Number to Fraction is gated and was not retrieved; neither original student task PDF nor runtime or tests were certified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Whole numbers as fractional points",
+          "Definition": "Every whole number k is a fraction kn/n for any positive integer n.",
+          "Rule": "kn/n=k",
+          "Example": "4/2=2; 9/3=3; 12/4=3."
+        },
+        {
+          "Title": "Whole-number criterion",
+          "Definition": "A nonzero denominator yields a whole number exactly if it divides the numerator.",
+          "Rule": "a/b is whole if a mod b =0 for positive integers.",
+          "Example": "12/6 is whole but 12/8 is not."
+        },
+        {
+          "Title": "Fixed whole across multiple number lines",
+          "Definition": "One unit always occupies the same length across differently partitioned aligned number lines.",
+          "Rule": "n/n=1, 2n/n=2, 3n/n=3.",
+          "Example": "2/2,3/3,4/4 lie at 1."
+        },
+        {
+          "Title": "Open group-generated fraction table",
+          "Definition": "A whole-number column can contain many equivalent fractions, not one exact answer.",
+          "Rule": "For whole k and chosen positive denominator d, numerator is kd.",
+          "Example": "5=30/6 while 6=48/8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Aligned fraction number lines",
+          "Question": "Locate one, two and three on halves, thirds and fourths lines.",
+          "Method": "Count equal parts per whole, twice for two and three times for three.",
+          "Steps": [
+            "Whole 1 is 2/2,3/3,4/4.",
+            "Whole 2 is 4/2,6/3,8/4.",
+            "Whole 3 is 6/2,9/3,12/4."
+          ],
+          "Answer": "1,2,3 at matching aligned positions",
+          "Check": "All source lines span zero to three."
+        },
+        {
+          "Title": "Six exact whole-number checks",
+          "Question": "Which of 11/2,5/1,12/6,10/3,12/8,16/4 are whole?",
+          "Method": "Divide numerator by denominator and examine remainder.",
+          "Steps": [
+            "11/2 is not whole; 5/1 is whole.",
+            "12/6 is whole; 10/3 is not whole.",
+            "12/8 is not whole;16/4 is whole."
+          ],
+          "Answer": "5/1,12/6,16/4",
+          "Check": "3 of 6 original fractions are whole."
+        },
+        {
+          "Title": "Original group table",
+          "Question": "Generate several fractions in columns for 4,5 and6.",
+          "Method": "Multiply chosen positive denominator by each column's whole number.",
+          "Steps": [
+            "4/1,8/2,12/3,16/4 all equal 4.",
+            "5/1,10/2,15/3,30/6 all equal 5.",
+            "6/1,12/2,18/3,48/8 all equal 6."
+          ],
+          "Answer": "Multiple valid tables; no fixed complete response",
+          "Check": "Preserve printed anchors 4/1,30/6,48/8 and student contribution."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 11/2 or 12/8 as whole numbers because numerator exceeds denominator.",
+          "WhyWrong": "Those are 5.5 and 1.5, not integers.",
+          "Correction": "Check divisibility; remainder must be zero."
+        },
+        {
+          "Mistake": "Divide a 0–3 entire line into six equal pieces and call the first 1/2 of the unit.",
+          "WhyWrong": "Six intervals over three whole units have size 1/2, but the first unit itself must have TWO intervals and ends at tick 2.",
+          "Correction": "Keep the 0–1 unit consistent across all aligned scales."
+        },
+        {
+          "Mistake": "Require one predetermined fraction for the group table or FIVE exact equations.",
+          "WhyWrong": "The source asks pupils to generate valid choices, explain and pass their paper.",
+          "Correction": "Grade validity and distinctness where requested; teacher verifies participation."
+        }
+      ],
+      "SummaryPoints": [
+        "Original four aligned lines: 0–3 wholes, 0–6/2, 0–9/3, 0–12/4.",
+        "Activity1 4/2=2 plus five OTHER examples; any legitimate whole-number fractions acceptable.",
+        "Six source checks: NO 11/2, YES 5/1, YES 12/6, NO 10/3, NO 12/8, YES 16/4.",
+        "Activity2 group table anchors 4/1,30/6,48/8 in columns 4,5,6; many valid entries with passing right.",
+        "Visuals need teacher comparison. Publisher student PDF, Cool-down, tests and Stage D deferred."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+@model Edulytics.Services.Analytics.AnalyticsStudentsEvaluationPage
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using Edulytics.Core.Analytics
+@using System.Globalization
+@{
+    ViewData["Title"] = A["AllStudents"].Value;
+
+    string TrendLabel(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving => "↑↑ Rapidly improving",
+        EvaluationTrendBand.Improving => "↑ Improving",
+        EvaluationTrendBand.Stable => "→ Stable",
+        EvaluationTrendBand.Declining => "↓ Declining",
+        EvaluationTrendBand.RapidlyDeclining => "↓↓ Rapidly declining",
+        _ => A["InsufficientEvidence"].Value
+    };
+
+    string TrendClass(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving or EvaluationTrendBand.Improving => "is-positive",
+        EvaluationTrendBand.RapidlyDeclining or EvaluationTrendBand.Declining => "is-negative",
+        EvaluationTrendBand.Stable => "is-neutral",
+        _ => "is-muted"
+    };
+
+    string Value(decimal? value) =>
+        value.HasValue ? $"{value.Value:0.#}%" : "—";
+
+    string ConfidenceLabel(EvaluationConfidenceBand value) => value switch
+    {
+        EvaluationConfidenceBand.VeryStrong => "Very strong",
+        EvaluationConfidenceBand.Strong => "Strong",
+        EvaluationConfidenceBand.Moderate => "Moderate",
+        EvaluationConfidenceBand.Limited => "Limited",
+        _ => "Insufficient"
+    };
+
+    string GradeLabel(decimal? mastery) =>
+        !mastery.HasValue ? A["InsufficientEvidence"].Value :
+        mastery.Value < 40m ? A["MasteryCritical"].Value :
+        mastery.Value < 60m ? A["NeedsFocus"].Value :
+        mastery.Value < 75m ? A["MasteryDeveloping"].Value :
+        mastery.Value < 90m ? A["MasterySecure"].Value :
+        A["MasteryStrong"].Value;
+
+    string GradeClass(decimal? mastery) =>
+        !mastery.HasValue ? "is-muted" :
+        mastery.Value < 40m ? "is-critical" :
+        mastery.Value < 60m ? "is-focus" :
+        mastery.Value < 75m ? "is-developing" :
+        mastery.Value < 90m ? "is-secure" :
+        "is-strong";
+
+    var totalStudents = Math.Max(1, Model.Distribution.TotalStudents);
+    decimal Share(int count) => count * 100m / totalStudents;
+
+    var secureShare = Share(Model.Distribution.StrongOrSecure);
+    var developingShare = Share(Model.Distribution.Developing);
+    var focusShare = Share(Model.Distribution.NeedsFocus);
+    var criticalShare = Share(Model.Distribution.Critical);
+    var secureEnd = secureShare;
+    var developingEnd = secureEnd + developingShare;
+    var focusEnd = developingEnd + focusShare;
+    var criticalEnd = focusEnd + criticalShare;
+
+    var currentMasteryValues = Model.Students
+        .Where(x => x.CurrentMasteryPercentage.HasValue)
+        .Select(x => x.CurrentMasteryPercentage!.Value)
+        .ToArray();
+    var averageMastery = currentMasteryValues.Length == 0
+        ? (decimal?)null
+        : decimal.Round(currentMasteryValues.Average(), 1, MidpointRounding.AwayFromZero);
+    var averageCoverage = Model.Students.Count == 0
+        ? 0m
+        : decimal.Round(Model.Students.Average(x => x.CoveragePercentage), 1, MidpointRounding.AwayFromZero);
+    var averageConfidence = Model.Students.Count == 0
+        ? 0m
+        : decimal.Round(Model.Students.Average(x => x.ConfidencePercentage), 1, MidpointRounding.AwayFromZero);
+    var needsAttention = Model.Distribution.NeedsFocus + Model.Distribution.Critical;
+}
+
+<section class="analytics-page evaluation-page evaluation-class-page">
+    <header class="evaluation-class-hero">
+        <div class="evaluation-class-hero-brand">
+            <div class="evaluation-class-brand-mark">
+                <partial name="_LocalizedBrand" />
+            </div>
+            <div>
+                <div class="user-eyebrow">@A["ClassEvaluation"]</div>
+                <h1>@Model.ClassName</h1>
+                <p>@Model.AcademicYearName · @Model.SubjectName</p>
+            </div>
+        </div>
+
+        <div class="evaluation-student-hero-actions">
+            <a class="school-button school-button-secondary"
+               asp-action="Index"
+               asp-route-academicYearId="@Model.AcademicYearId"
+               asp-route-classGroupId="@Model.ClassGroupId"
+               asp-route-subjectId="@Model.SubjectId">
+                @A["EvaluationOverview"]
+            </a>
+            <a class="school-button"
+               asp-action="ClassReportPdf"
+               asp-route-academicYearId="@Model.AcademicYearId"
+               asp-route-classGroupId="@Model.ClassGroupId"
+               asp-route-subjectId="@Model.SubjectId">
+                @A["DownloadPdf"]
+            </a>
+        </div>
+    </header>
+
+    <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
+        <a asp-action="Index"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">
+            @A["EvaluationOverview"]
+        </a>
+        <a class="is-active"
+           asp-action="Students"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">
+            @A["AllStudents"]
+        </a>
+        <a asp-action="TopicsSkills"
+           asp-route-academicYearId="@Model.AcademicYearId"
+           asp-route-classGroupId="@Model.ClassGroupId"
+           asp-route-subjectId="@Model.SubjectId">
+            @A["TopicsSkills"]
+        </a>
+    </nav>
+
+    <section class="evaluation-class-kpis" aria-label="Class evaluation summary">
+        <article>
+            <span>@A["Students"]</span>
+            <strong>@Model.Distribution.TotalStudents</strong>
+            <small>students in the selected class</small>
+        </article>
+        <article>
+            <span>Average current mastery</span>
+            <strong>@Value(averageMastery)</strong>
+            <small>across students with evidence</small>
+        </article>
+        <article class="is-warning">
+            <span>Needs attention</span>
+            <strong>@needsAttention</strong>
+            <small>below 60% current mastery</small>
+        </article>
+        <article>
+            <span>@A["Coverage"]</span>
+            <strong>@averageCoverage.ToString("0.#")%</strong>
+            <small>average curriculum coverage</small>
+        </article>
+        <article>
+            <span>Evidence confidence</span>
+            <strong>@averageConfidence.ToString("0.#")%</strong>
+            <small>coverage-adjusted confidence</small>
+        </article>
+    </section>
+
+    <section class="evaluation-visual-grid evaluation-class-visuals"
+             aria-label="@A["VisualAnalytics"]">
+        <article class="evaluation-chart-panel evaluation-distribution-panel">
+            <header>
+                <div>
+                    <h2>@A["MasteryDistribution"]</h2>
+                    <p>Every color represents a mastery band. This is grading, not evidence confidence.</p>
+                </div>
+            </header>
+
+            <div class="evaluation-distribution-layout">
+                <div class="evaluation-distribution-donut"
+                     style="--secure-end:@secureEnd.ToString(CultureInfo.InvariantCulture); --developing-end:@developingEnd.ToString(CultureInfo.InvariantCulture); --focus-end:@focusEnd.ToString(CultureInfo.InvariantCulture); --critical-end:@criticalEnd.ToString(CultureInfo.InvariantCulture);">
+                    <div class="evaluation-distribution-donut-content">
+                        <strong>@Model.Distribution.TotalStudents</strong>
+                        <small>@A["Students"]</small>
+                    </div>
+                </div>
+
+                <div class="evaluation-distribution-legend" aria-label="Mastery band legend">
+                    <div class="is-secure">
+                        <i></i>
+                        <span>@A["MasterySecure"] / @A["MasteryStrong"]</span>
+                        <strong>@Model.Distribution.StrongOrSecure</strong>
+                        <small>@secureShare.ToString("0.#")%</small>
+                    </div>
+                    <div class="is-developing">
+                        <i></i>
+                        <span>@A["MasteryDeveloping"]</span>
+                        <strong>@Model.Distribution.Developing</strong>
+                        <small>@developingShare.ToString("0.#")%</small>
+                    </div>
+                    <div class="is-focus">
+                        <i></i>
+                        <span>@A["NeedsFocus"]</span>
+                        <strong>@Model.Distribution.NeedsFocus</strong>
+                        <small>@focusShare.ToString("0.#")%</small>
+                    </div>
+                    <div class="is-critical">
+                        <i></i>
+                        <span>@A["MasteryCritical"]</span>
+                        <strong>@Model.Distribution.Critical</strong>
+                        <small>@criticalShare.ToString("0.#")%</small>
+                    </div>
+                    <div class="is-muted">
+                        <i></i>
+                        <span>@A["InsufficientEvidence"]</span>
+                        <strong>@Model.Distribution.InsufficientEvidence</strong>
+                        <small>@Share(Model.Distribution.InsufficientEvidence).ToString("0.#")%</small>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["MovementDistribution"]</h2>
+                    <p>Trend is independent from grade: a low-performing student can be improving and a secure student can be declining.</p>
+                </div>
+            </header>
+
+            <div class="evaluation-bars evaluation-movement-bars" data-evaluation-chart="bars">
+                <div class="evaluation-bar-row is-practice">
+                    <span>@A["Improving"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@Share(Model.Distribution.Improving).ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@Model.Distribution.Improving · @Share(Model.Distribution.Improving).ToString("0")%</strong>
+                </div>
+                <div class="evaluation-bar-row">
+                    <span>@A["Stable"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@Share(Model.Distribution.Stable).ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@Model.Distribution.Stable · @Share(Model.Distribution.Stable).ToString("0")%</strong>
+                </div>
+                <div class="evaluation-bar-row is-danger">
+                    <span>@A["Declining"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@Share(Model.Distribution.Declining).ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@Model.Distribution.Declining · @Share(Model.Distribution.Declining).ToString("0")%</strong>
+                </div>
+            </div>
+
+            <div class="evaluation-grading-scale">
+                <strong>Mastery grading</strong>
+                <span class="is-critical">Critical &lt; 40%</span>
+                <span class="is-focus">Needs focus 40–59%</span>
+                <span class="is-developing">Developing 60–74%</span>
+                <span class="is-secure">Secure 75–89%</span>
+                <span class="is-strong">Strong 90–100%</span>
+            </div>
+        </article>
+    </section>
+
+    <section class="analytics-panel evaluation-students-panel">
+        <header class="evaluation-students-heading">
+            <div>
+                <span class="user-eyebrow">@A["AllStudents"]</span>
+                <h2>Student evaluation</h2>
+                <p>Mastery grade, Assessment and Practice performance, evidence coverage, trend and gaps are separated so they cannot be confused with each other.</p>
+            </div>
+        </header>
+
+        <div class="evaluation-student-list">
+            @foreach (var item in Model.Students)
+            {
+                var assessmentBar = Math.Clamp(
+                    item.AssessmentMasteryPercentage ?? 0m,
+                    0m,
+                    100m);
+                var practiceBar = Math.Clamp(
+                    item.PracticeMasteryPercentage ?? 0m,
+                    0m,
+                    100m);
+                var gapClass = !item.TransferGapPercentagePoints.HasValue
+                    ? "is-neutral"
+                    : item.TransferGapPercentagePoints.Value <= -10m
+                        ? "is-negative"
+                        : item.TransferGapPercentagePoints.Value >= 10m
+                            ? "is-positive"
+                            : "is-neutral";
+                var gradeClass = GradeClass(item.CurrentMasteryPercentage);
+
+                <article class="evaluation-student-card-row">
+                    <div class="evaluation-student-card-primary">
+                        <div class="evaluation-student-card-identity">
+                            <strong>@item.DisplayName</strong>
+                            <small>@item.StudentNumber</small>
+                        </div>
+
+                        <div class="evaluation-student-grade @gradeClass">
+                            <span>@A["CurrentMastery"]</span>
+                            <strong>@Value(item.CurrentMasteryPercentage)</strong>
+                            <small>@GradeLabel(item.CurrentMasteryPercentage)</small>
+                        </div>
+                    </div>
+
+                    <div class="evaluation-student-performance">
+                        <div class="evaluation-student-metric-bar">
+                            <div>
+                                <span>@A["AssessmentMastery"]</span>
+                                <strong>@Value(item.AssessmentMasteryPercentage)</strong>
+                            </div>
+                            <span class="evaluation-mastery-track @(item.AssessmentMasteryPercentage.HasValue ? "" : "is-missing")">
+                                <i style="--mastery-value:@assessmentBar.ToString(CultureInfo.InvariantCulture)"></i>
+                            </span>
+                        </div>
+
+                        <div class="evaluation-student-metric-bar is-practice">
+                            <div>
+                                <span>@A["PracticeMastery"]</span>
+                                <strong>@Value(item.PracticeMasteryPercentage)</strong>
+                            </div>
+                            <span class="evaluation-mastery-track @(item.PracticeMasteryPercentage.HasValue ? "" : "is-missing")">
+                                <i style="--mastery-value:@practiceBar.ToString(CultureInfo.InvariantCulture)"></i>
+                            </span>
+                        </div>
+
+                        <div class="evaluation-student-gap @gapClass">
+                            <span>@A["TransferGap"]</span>
+                            <strong>
+                                @(item.TransferGapPercentagePoints.HasValue
+                                    ? $"{item.TransferGapPercentagePoints.Value:+0.#;-0.#;0} pts"
+                                    : "—")
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="evaluation-student-evidence">
+                        <div class="evaluation-evidence-item">
+                            <span>@A["Coverage"]</span>
+                            <strong>@item.CoveragePercentage.ToString("0.#")%</strong>
+                            <span class="evaluation-inline-progress">
+                                <span style="width:@Math.Clamp(item.CoveragePercentage, 0m, 100m).ToString(CultureInfo.InvariantCulture)%"></span>
+                            </span>
+                        </div>
+
+                        <div class="evaluation-evidence-item">
+                            <span>Evidence confidence</span>
+                            <strong>@item.ConfidencePercentage.ToString("0.#")%</strong>
+                            <small>@ConfidenceLabel(item.ConfidenceBand)</small>
+                        </div>
+
+                        <div class="evaluation-evidence-item">
+                            <span>@A["ShortTrend"]</span>
+                            <strong class="evaluation-trend-chip @TrendClass(item.ShortTermTrend)">
+                                @TrendLabel(item.ShortTermTrend)
+                            </strong>
+                        </div>
+
+                        <div class="evaluation-evidence-item">
+                            <span>@A["CriticalGaps"]</span>
+                            <strong>
+                                <span class="evaluation-gap-count @(item.CriticalSkillCount > 0 ? "has-gaps" : "")">
+                                    @item.CriticalSkillCount
+                                </span>
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="analytics-student-row-actions evaluation-student-card-actions">
+                        <a class="school-button school-button-secondary"
+                           asp-action="Student"
+                           asp-route-studentProfileId="@item.StudentProfileId"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@Model.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            @A["ViewEvaluation"]
+                        </a>
+                        <a class="school-button school-button-secondary"
+                           asp-action="StudentReport"
+                           asp-route-studentProfileId="@item.StudentProfileId"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@Model.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            @A["Report"]
+                        </a>
+                        <a class="school-button"
+                           asp-action="StudentReportPdf"
+                           asp-route-studentProfileId="@item.StudentProfileId"
+                           asp-route-academicYearId="@Model.AcademicYearId"
+                           asp-route-classGroupId="@Model.ClassGroupId"
+                           asp-route-subjectId="@Model.SubjectId">
+                            PDF
+                        </a>
+                    </div>
+                </article>
+            }
+        </div>
+    </section>
+</section>
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,19 @@
+<section class="panel" aria-label="Missing-side source figures">
+    <h2>Warm-up — Mystery Sides</h2>
+    <p>Record what you notice and wonder. Think quietly and discuss with a partner. Can the known horizontal and vertical lengths help you find the missing sides and area?</p>
+    @await Html.PartialAsync("_Grade3MissingSideFigure","warmup")
+    <h2>Activity 1 — The Mystery Side</h2>
+    <p>Tyler says the missing side is 5 meters because it looks longer than the 4-meter sides. Do you agree? Use the labelled lengths to explain your reasoning; an estimate from the picture is not proof.</p>
+    @await Html.PartialAsync("_Grade3MissingSideFigure","meters")
+    <h2>Activity 2 — Practice with Mystery Sides</h2>
+    <p>Figure A is the meter figure above. Independently find its area. Discuss first with someone using the same method, then someone using a different method. Restate the other method using “I heard you say …”; the original speaker can clarify. Be ready to explain the partner’s method to the class.</p>
+    <h3>Figure B</h3>
+    @await Html.PartialAsync("_Grade3MissingSideFigure","feet")
+    <p>Work with your current partner to find Figure B’s area. Find any lengths your method needs, label a non-overlapping split and write a matching expression. Two or three rectangles can work. Your teacher reviews missing-side reasoning, units, the partition and actual discussion.</p>
+    <h3>Section summary</h3>
+    <p>Opposite sides of rectangles help determine missing lengths. Add areas of parts that cover the whole without overlaps or gaps. Return to the warm-up figure and explain how you would now solve it.</p>
+    <h3>New Edulytics Cool-down figure</h3>
+    <p>This separate figure uses new measurements. Find its missing side lengths, then calculate its area and explain a non-overlapping decomposition.</p>
+    @await Html.PartialAsync("_Grade3MissingSideFigure","cooldown")
+    <p><a href="https://cms-assets.illustrativemathematics.org/afhv5jshasc4k2li4g22qeqf228w" target="_blank" rel="noopener noreferrer">Original 2021 four-page Student Task Statements</a>. The displayed figures are independently drawn; no publisher paths, artwork or gated Cool-down are copied.</p>
+</section>

@@ -1,0 +1,10 @@
+# G4 ordinal 85 — More Perimeter Problems
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-5_lesson-17_preparation.html SHA256=6dcd14a8af9f54e9c3792f2904051b731ecfe9727da6a2ffd40da5d8804d3ace
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-5\lesson-17\lesson.html SHA256=a734208b4d225ba34fe687b1edf9a7acf2a5c9eef8baf011095c4e97834b9a27
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-5\lesson-17\lesson.html SHA256=767ed92f5622d4312886321276e3f8d7470b68d4deae46bf7955fbb2c6f2c80f
+- Preserved existing learning explanation: Learning goal: You will solve geometric problems using your understanding of length measurements, unit conversion, multiplicative comparison, and addition or subtraction of fractions. In a previous lesson, you were reminded about the relationship between the side lengths and the perimeter of a rectangle and reasoned multiplicatively to solve problems about those measurements. In this lesson, you continue to do so but in contexts that require them to convert the units and interpret them.
+- Original 2021 sections: Warm-up:  True or False: Fractions and Whole Numbers	 (10 minutes); Activity 1:  Along the Walls in Tiny Steps	 (15 minutes); Activity 2:  Missing Measurements	 (20 minutes); Cool-down:  A Rectangle and a Trapezoid	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 30/2-5 = 10.
+- Edulytics first-party Cool-down: A rectangle has perimeter 42 cm and length 12 cm. Find width.; teacher key: 9 cm.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

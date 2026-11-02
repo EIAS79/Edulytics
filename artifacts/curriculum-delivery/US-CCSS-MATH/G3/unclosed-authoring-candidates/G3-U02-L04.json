@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 25,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L04",
+  "unitNumber": 2,
+  "lessonNumber": 4,
+  "title": "Area of Rectangles",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-2/lesson-4/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-4/lesson.html",
+  "stageA": {
+    "status": "IM_2021_4_PAGE_STUDENT_PDF_13_VISUALS_AND_42_ORIGINAL_ELEMENTS_INDIVIDUALLY_SOURCE_MAPPED",
+    "goals": "Describe and represent the area of a rectangle as the total number of unit squares arranged in equal groups of rows and columns. Find the area of rectangles (within 60 square units) by counting unit squares.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 11,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "publicOriginal2021TeacherStudentPageRead": true,
+    "sourceWarmupCounts": {
+      "A": 20,
+      "B": 24,
+      "C": 20,
+      "D": 20
+    },
+    "sourceActivity1": "Partner A hidden picture, describes row and column arrangement without disclosing square count; B recreates, compare, switch roles.",
+    "sourceAreaFigures": [
+      {
+        "ordinal": 1,
+        "rows": 2,
+        "columns": 9,
+        "area": 18
+      },
+      {
+        "ordinal": 2,
+        "rows": 6,
+        "columns": 5,
+        "area": 30
+      },
+      {
+        "ordinal": 3,
+        "verified": false,
+        "area": null
+      },
+      {
+        "ordinal": 4,
+        "rows": 5,
+        "columns": 9,
+        "area": 45
+      }
+    ],
+    "original2021SourceImageBytesInspected": true,
+    "originalAssetCountInspected": 13,
+    "originalStudentPdfSha256": "2748a084931744f539be5fa74abef08644690f4e7c18d72000d8140293cde990",
+    "originalStudentTaskPdfPagesRead": 4,
+    "sourceElementsIdentified": 42,
+    "sourceElementsSemanticallyMapped": 42,
+    "semanticMappingPercent": 100,
+    "sourceThirdRectangle": {
+      "rows": 6,
+      "columns": 10,
+      "areaInSquareUnits": 60,
+      "sourceVisualVerified": true
+    }
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_RICH_V2_V1_EMBEDDED_CANONICAL_GUARD_ROUTED_AND_FIRST_PARTY_FOUR_RECTANGLE_VISUALS",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U02:L04",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "88cfe9429d98f2f882ff19325128c2c8c64c85fb1939eb8e36dbe17b66a32231",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificHiddenPartnerRectangleTaskAuthored": true,
+    "numericSourceAreaItemsRequireTeacherReviewedUnits": true,
+    "sourceRichV2Version": "g3-u02-l04-2021-source-abc-firstparty-20261024-v1",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson4RichV2.cs",
+    "sourceVisualCopied": false,
+    "RazorNoStaleSourceGap": true
+  },
+  "stageC": {
+    "status": "ELEVEN_SOURCE_ORIGINAL_LEARNER_TASKS_MAPPED_FOUR_EXACT_AREAS_18_30_60_45_AND_THREE_HUMAN_TASKS_TESTS_WRITTEN_NOT_RUN",
+    "family": "rectangle-area",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity What Did I Create? with your teacher. Show the representation and explain how it meets the goal: Let’s find the area of more rectangles.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceElevenIndividualSubtasksWritten": true,
+    "originalAreaFigure3TeacherOnly": true,
+    "authoringRegressionWrittenNotRun": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson4RectangleAreaSourceTests.cs",
+    "originalTeacherOnlyItemsRemainHumanReviewed": true
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U02-L04-HEADING-01",
+      "sourceSection": "Warm-up: Which One Doesn't Belong: Area and Arrays (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L04-HEADING-02",
+      "sourceSection": "Activity 1: What Did I Create? (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L04-HEADING-03",
+      "sourceSection": "Activity 2: Find the Area (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L04-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L04-HEADING-05",
+      "sourceSection": "Cool-down: What's the Area? (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L04-HEADING-06",
+      "sourceSection": "Student Section Summary",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U02-L04-IMAGE-01",
+      "observedAltText": "A rectangle partitioned into same size squares.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-02",
+      "observedAltText": "A rectangle with 24 same size squares and a dot inside each.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-03",
+      "observedAltText": "Array. 4 rows of 5 dots.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-04",
+      "observedAltText": "5 groups of 4.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-05",
+      "observedAltText": "A blank graph.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-06",
+      "observedAltText": "12 unit by 12 unit square grid.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-07",
+      "observedAltText": "Diagram. Rectangle partitioned into 2 rows of 9 of the same size squares.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-08",
+      "observedAltText": "Diagram. Rectangle partitioned into 6 rows of 5 of the same size squares.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-09",
+      "observedAltText": "Diagram. Rectangle partitioned into 5 rows of 9 of the same size squares.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-10",
+      "observedAltText": "Area diagram. Length, 6. Width, 4.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L04-IMAGE-11",
+      "observedAltText": "Rectangle. 3 rows of 6 unit tiles. Tiles have gaps and overlaps.",
+      "originalReference": "unit-2/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 6,
+    "imageDescriptions": 11,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Find the area of a rectangle with side lengths 4 units and 6 units.",
+    "answerType": "integer",
+    "expected": "24"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-25-2021-original-source-abc-evidence-20261024.json",
+  "originalSourceElementCount": 42,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    ".NET/C# tests not run",
+    "Published Rich V2 and actual learner DB still require Stage D",
+    "Original copyright images and original gated Cool-down not reproduced",
+    "Student hidden drawings, peer descriptions, square-unit justifications need teacher evaluation"
+  ]
+}

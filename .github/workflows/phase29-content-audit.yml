@@ -1,0 +1,33 @@
+name: Phase29 Content Audit
+
+on:
+  push:
+    branches:
+      - phase29/curriculum-experience-and-content
+    paths:
+      - 'src/Edulytics.Core/Curriculum/Packs/**'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/**'
+      - 'tools/phase29/full_curriculum_closure_audit.py'
+      - 'docs/PHASE_29_COMMON_CORE_CONTENT_ROLLOUT_AUDIT.json'
+      - '.github/workflows/phase29-content-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Audit Phase 29 full curriculum coverage
+        run: |
+          set -euo pipefail
+          python3 tools/phase29/full_curriculum_closure_audit.py --write-report
+      - name: Upload audit report
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: phase29-full-curriculum-closure-audit-${{ github.sha }}
+          path: artifacts/phase29/full-curriculum-closure-audit.json
+          retention-days: 14

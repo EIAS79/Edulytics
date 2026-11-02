@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 80,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L15",
+  "title": "Greater Than, Less Than",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "03b7fb51dd40741eb9ea181b2441fcf4954451e7e1eb6921ba3f11b45ca088ac",
+    "teacherPreparationSha256": "2f860ae1cd7c3dd963a5ecc39594caaf4c49c25ad67fb9bddcade11a67c1f7c5",
+    "studentHtmlSha256": "0ae74d9fe789b1e4539fa545d20716cc369c914894bca5b117521219004d4322",
+    "teacherHeadings": [
+      "Activity 1: Which is Greater, Which is Less? (20 minutes)",
+      "Activity 2: True or False Comparisons (15 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(35 + 10\\) \\(52 + 10\\) \\(52 -10\\) \\(83-10\\) Student Response Teachers with a valid work email address can clic",
+      "Student Facing Circle the statement that is true in each pair. Be ready to explain how you know so that others will understand. \\(27 < 17\\) \\(17<27\\) \\(34 < 36\\) \\(36 < 3",
+      "Student Facing Read each statement. Determine whether each statement is true or false. Be ready to explain how you know so that others will understand. \\(17 < 47\\) \\(58 ="
+    ],
+    "sourceSpecificFinding": "Three canonical source hashes matched checkpoint on read-only Our-CS. Full original 2021 teacher Student Facing reviewed: 35±10/52±10/83−10 warmup, 9 ordered two-digit true-comparison choices, five original true/false symbol statements, launch and synthesis. Original 5-min publisher True Comparisons Cool-down protected.",
+    "classification": "CANONICAL_2021_SOURCE_HASH_AND_STUDENT_FACING_MATH_REVIEWED_COOLDOWN_BLOCKED",
+    "originalStudentTeacherVisibleNumericTasksIndependentlyReviewed": true,
+    "canonicalSourceSHA256Rechecked": true
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "228f19392553db5d48992783daf5520d84bb1ab7",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false,
+    "originalLearnerTeachingAllNinePairsAndFiveLiteralStatementsReviewed": true,
+    "existingTextReusedNoVersionChanged": true
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "practiceImplementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeTwoDigitOperationsQuestions.cs",
+    "sourceExactCases": [
+      "17 < 27 (versus 27 < 17)",
+      "34 < 36 (versus 36 < 34)",
+      "17 < 47 true/false comparison"
+    ],
+    "mathEngineCommit": "1d3857ca08c93ef50e747314636e6d5e36a739f3",
+    "testImplementationCommit": "f30aab09baeb33234f57eb9d6d28dce8436b013f",
+    "testsAuthoredButNotExecuted": true,
+    "sourceParityStillUnverified": false,
+    "authoringStatus": "READY_FOR_STAGE_D",
+    "sourceExactTruthStatementModes": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "extraSourceExactPairMode": 12,
+    "originalMathAndWrongAnswerOraclesAuthored": true,
+    "questionContractImplementationCommit": "0d625632ace34b0aefff4a0f0c0677b7f79f9f88",
+    "promptClarityCommit": "e9418c7259a2a18a5782b96521cdc811aba58d5e",
+    "negativeCorrectnessTestsCommit": "3f9d72b340553b4aa6e0f127cd64986cac32a400",
+    "testsExecuted": false,
+    "independentEdulyticsFormativeExit": {
+      "kind": "FIRST_PARTY_NOT_PUBLISHER_COOLDOWN",
+      "mode": 13,
+      "sourceGoal": "Compare two-digit values by tens, then ones",
+      "problem": "68 compared with 86",
+      "expected": "SYMBOL=<;TENS_LEFT=6;TENS_RIGHT=8",
+      "implementationCommit": "0103ea0341da86d16b55e024acf6310bc3652aeb",
+      "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson80IndependentComparisonExitTests.cs",
+      "testsAuthoredCommit": "5440f7344a0a5c019daec5a71bde0e03a90bfbda",
+      "testsExecuted": false
+    }
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": false,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalAccessibleStudentMathAndTeacherTasksReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-80-stage-a-c-source-implementation-audit-20261020.md",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true,
+    "finalSeedRegressionRequired": true,
+    "independentFirstPartyFormativeVerifiedAsSourceGoal": true,
+    "sourceBoundary": "Protected five-minute original 2021 Cool-down NOT accessed or copied; first-party Edulytics numeric assessment of the same public lesson target created, clearly differentiated from original publisher assessment."
+  },
+  "nextAction": "Proceed ordinal81 by stable grade order. Stage D/CI/authenticated grading/rights and final academic acceptance deferred until content freeze.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 80,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L15",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-80-stage-a-c-source-implementation-audit-20261020.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

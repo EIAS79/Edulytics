@@ -1,0 +1,59 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson55Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade2 — Unlabeled Tick Marks";}
+<style>
+.g2l55{max-width:990px;margin:auto;padding:20px;color:#234556}
+.g2l55 .panel{background:#fff;border:1px solid #c8dce5;border-radius:12px;padding:18px;margin:15px 0}
+.g2l55 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px}
+.g2l55 label{display:block;font-weight:700;margin:10px 0 5px}
+.g2l55 input,.g2l55 textarea{width:100%;max-width:550px;font:inherit;padding:10px;border-radius:8px;border:1px solid #879ca8}
+.g2l55 .action{border:0;border-radius:9px;background:#147e91;color:white;font-weight:700;padding:12px 20px}
+.g2l55 .ok{border-left:4px solid #268557;padding-left:12px}
+.g2l55 .bad{border-left:4px solid #be4757;padding-left:12px}
+.g2l55 .review{border-left:4px solid #ab8735;padding-left:12px}
+</style>
+<main class="g2l55"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Unlabeled Tick Marks</h1>
+<p>A number line still contains ALL whole-number unit positions even when printed labels skip by 5 or 10. If the visible image starts at20 or60, the underlying positions still count distances from zero. See the ACTUAL publisher diagrams with your teacher for points and ticks.</p>
+<form asp-controller="Grade2Lesson55Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Original Notice and Wonder: three 0–30 number lines</h2>
+<p>View the genuine published diagrams A, B, C with your teacher. One counts by ones, another shows six 5-unit jumps, and another three 10-unit jumps from0 to30. Explain aloud how the same end point can be reached using differently grouped jumps.</p></section>
+<section class="panel"><h2>2. Original Activity1: mark SOURCE target points</h2>
+<p>Using the teacher's authentic source diagrams, place a REAL dot at 24 on0..30 labeled by5; at37 on0..40 labeled by10; at48 on20..60 labeled by10; and at83 on60..90 labeled by5. Enter each target as a number, but your teacher must inspect the physical point mark.</p>
+<div class="grid">
+<div><label asp-for="Answers.Original24">Number to mark on 0–30</label><input asp-for="Answers.Original24" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Original37">Number to mark on 0–40</label><input asp-for="Answers.Original37" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Original48">Number to mark on 20–60</label><input asp-for="Answers.Original48" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.Original83">Number to mark on 60–90</label><input asp-for="Answers.Original83" type="number" min="0" max="100" required/></div>
+</div>
+<p>Explain the equal one-unit moves to each target, using these nearest printed anchors:</p>
+<div class="grid">
+<div><label asp-for="Answers.OffsetBefore25">24: how many units LEFT of25?</label><input asp-for="Answers.OffsetBefore25" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.OffsetBefore40">37: how many units LEFT of40?</label><input asp-for="Answers.OffsetBefore40" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.OffsetBefore50">48: how many units LEFT of50?</label><input asp-for="Answers.OffsetBefore50" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.OffsetAfter80">83: how many units RIGHT of80?</label><input asp-for="Answers.OffsetAfter80" type="number" min="0" max="10" required/></div>
+</div>
+<label asp-for="Answers.OriginalSource24Point">How did you physically position24 on the ACTUAL diagram?</label><textarea asp-for="Answers.OriginalSource24Point" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalSource37Point">How did you physically position37?</label><textarea asp-for="Answers.OriginalSource37Point" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalSource48Point">How did you physically position48?</label><textarea asp-for="Answers.OriginalSource48Point" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalSource83Point">How did you physically position83?</label><textarea asp-for="Answers.OriginalSource83Point" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>3. Source Activity2: use each actual original number-line figure</h2>
+<p>Mark17,59,43 and35 on FOUR separate publisher source figures. For17 a teacher-supplied image has marks from10 to40, so17 is two units after15. For43 the pictured line spans35 to55, with43 three after40. The original figures for59 and35 are NOT fully described numerically in accessible source text: only your teacher can confirm what is printed and where the points belong.</p>
+<label asp-for="Answers.OriginalSource17Diagram">17: actual source ticks, labels and marked point evidence</label><textarea asp-for="Answers.OriginalSource17Diagram" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalSource59Diagram">59: ONLY use actual publisher image, no fabricated source labels</label><textarea asp-for="Answers.OriginalSource59Diagram" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalSource43Diagram">43: actual source ticks, labels and point evidence</label><textarea asp-for="Answers.OriginalSource43Diagram" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalSource35Diagram">35: ONLY use actual publisher image, no fabricated source labels</label><textarea asp-for="Answers.OriginalSource35Diagram" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.OriginalPartnerExplanation">How did your real partner justify positions despite missing labels?</label><textarea asp-for="Answers.OriginalPartnerExplanation" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. New Edulytics numerical checks — NOT restricted publisher assessment</h2>
+<div class="grid">
+<div><label asp-for="Answers.FirstParty83">Distance in units from0 to83?</label><input asp-for="Answers.FirstParty83" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyGap40to60">On a one-unit line, how many intervals from40 to60?</label><input asp-for="Answers.FirstPartyGap40to60" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyGap17to43">First-party gap43−17?</label><input asp-for="Answers.FirstPartyGap17to43" type="number" min="0" max="100" required/></div>
+</div><button class="action" type="submit">Check numbers — teacher checks real diagrams</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var row in Model.Feedback){<div class="@(row.Correct==true?"ok":row.Correct==false?"bad":"review")"><h3>@row.Section</h3><p>@(row.Correct==true?"Numerically correct":row.Correct==false?"Check the calculation":"Teacher review required"). @row.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher-only inspection rubric</h2><ul>@foreach(var s in UsCcssG2Unit4ThirdLessonUnlabeledTicks.TeacherRubric){<li>@s</li>}</ul><p>Source IM K–5 2021 Grade2 Unit4 Lesson3, CCSS 2.MD.B.6,2.NBT.A.2. Publisher images not reconstructed; protected Cool-down not copied. No official grade.</p></section></main>

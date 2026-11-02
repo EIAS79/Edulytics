@@ -1,0 +1,10 @@
+# G4 ordinal 53 — Beyond 100,000
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-4_lesson-8_preparation.html SHA256=e32be78c2927cc75de5fc1f6584700d85f5e4402bc50e5e15218fd4f9aca574a
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-4\lesson-8\lesson.html SHA256=62a110a6d39de6ce1a971d24f4c40514ac81688159bc246565707a23f22b7695
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-4\lesson-8\lesson.html SHA256=8c9d0f83815236001a5c975cef87761e2d7421e1fb9fe21c87194bd7a302683a
+- Preserved existing learning explanation: Learning goal: You will read, write, and represent numbers within 1,000,000 using base-ten blocks, diagrams, and expanded form. In previous grades, you used base-ten blocks, diagrams, and expanded form, a specific way of writing a number as a sum of hundreds, tens, and ones, to represent numbers within 1,000. In this lesson, you extend your understanding of place value to write and represent numbers within 1,000,000. The reasoning you use helps to develop conceptual understanding of expanded for
+- Original 2021 sections: Warm-up:  How Many Do You See?	 (10 minutes); Activity 1:  Lin’s Representation (15 minutes); Activity 2:  What Number is Represented?	 (10 minutes); Activity 3:  Build Hundred-thousands	 (10 minutes); Cool-down: Represent 234,000 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 15710*10 = 157100.
+- Edulytics first-party Cool-down: A block was 100 when the unit cube meant 1; what is its value when the unit cube means 10?; teacher key: 1,000.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

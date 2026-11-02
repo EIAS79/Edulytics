@@ -1,0 +1,316 @@
+using Edulytics.Core.Curriculum;
+using Edulytics.Core.Entities;
+
+namespace Edulytics.Data.Seeding;
+
+/// <summary>
+/// Single grade-wide continuation: first-party source-goal teaching corrections
+/// for G1 ordinals 103–146, excluding the 14 lessons previously corrected in
+/// original source-bound audit. No false certification of source student PDFs,
+/// physical classroom activity, oral demonstration, drawing, or pupil authorship.
+/// </summary>
+public static class CommonCoreG1FullGradeUnit6To8ContentCorrections
+{
+    public const string Version = "us-ccss-g1-full-grade-u06-u08-source-teaching-v1";
+    public const string Unit6OriginalSourceVersion="us-ccss-g1-u06-original-student-source-activities-v2";
+    public const string Unit6Lesson4Stage3SourceVersion="us-ccss-g1-u06-l04-how-close-stage3-source-v3";
+    public const string Unit6Lesson6MeasurementSourceVersion="us-ccss-g1-u06-l06-paperclip-source-activity-v3";
+    public const string Unit6Lesson7ThreeUnitsSourceVersion="us-ccss-g1-u06-l07-three-unit-measurement-v3";
+    public const string Unit6Lesson10EstimateFirstSourceVersion="us-ccss-g1-u06-l10-estimate-measure-compare-v3";
+    public const string Unit6Lesson12SourceVersion="us-ccss-g1-u06-l12-two-original-bracelet-stories-v3";
+    public const string Unit7Unit8OriginalSourceVersion="us-ccss-g1-u07-u08-original-student-source-activities-v2";
+    public const string Unit8Lesson9SourceVersion="us-ccss-g1-u08-l09-original-clues-and-equations-v2";
+    private static bool IsReviewedUnit7Unit8Lesson(string code)=>code is
+        "PED:US-CCSS-MATH:G1:U07:L01" or "PED:US-CCSS-MATH:G1:U07:L03" or
+        "PED:US-CCSS-MATH:G1:U07:L09" or "PED:US-CCSS-MATH:G1:U07:L10" or
+        "PED:US-CCSS-MATH:G1:U07:L11" or "PED:US-CCSS-MATH:G1:U07:L12" or
+        "PED:US-CCSS-MATH:G1:U07:L17" or
+        "PED:US-CCSS-MATH:G1:U08:L01" or "PED:US-CCSS-MATH:G1:U08:L02" or
+        "PED:US-CCSS-MATH:G1:U08:L03" or "PED:US-CCSS-MATH:G1:U08:L04" or
+        "PED:US-CCSS-MATH:G1:U08:L05" or "PED:US-CCSS-MATH:G1:U08:L06" or
+        "PED:US-CCSS-MATH:G1:U08:L07" or "PED:US-CCSS-MATH:G1:U08:L10";
+    private static bool IsReviewedUnit6Lesson(string code)=>
+        code.StartsWith("PED:US-CCSS-MATH:G1:U06:",StringComparison.Ordinal);
+    private sealed record Repair(string Code,string SourceUrl,string OriginalSha,string[] Outcomes,
+        string Title,string Explanation,string Examples,string Steps,string Mistakes,string Summary);
+    private static readonly Repair[] Repairs =
+    [
+        new(@"PED:US-CCSS-MATH:G1:U06:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-1/preparation.html",@"1e7c5a4544f35d093f56b1c369e46977617cee4b14761a6972b3f9d4e78583f0",[@"CCSS:1.MD.A.1",@"CCSS:1.NBT.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
+            @"Compare Lengths",
+            @"Compare lengths directly by aligning starting endpoints. Original 2021 pupils compare two classroom objects twice, contrast objects with 3-cube and 8-cube towers, then choose an object SHORTER than the pupil's FOOT and an object LONGER than the pupil's POINTER FINGER, giving an original comparison sentence for each. Next select three objects and order them shortest-to-longest, trace or draw them, then pick THREE NEW objects to order longest-to-shortest. Original centers: Target Numbers, Five in a Row, Get Your Numbers in Order. Physical alignment, foot/finger references, object choice, drawings and peer observations require teacher evidence.",
+            @"Example 1: A strip starts at the same line as another strip. The red strip ends after the blue one, so red is longer. Example 2: 5 cubes, 7 cubes, 9 cubes ordered by identical unit are shortest to longest.",
+            @"Step 1: Put one end of each object at the same starting line. Step 2: Compare where the other ends stop. Step 3: Order three objects. Step 4: Describe 'shorter than' or 'longer than'.",
+            @"Do not compare objects from different starting positions or confuse the number of objects with their length.",
+            @"I can compare and order lengths by aligning starting points."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-4/preparation.html",@"581639bdcf507873e2e385bc2c3a1699e9047f95df19faa384c0a59e18f27126",[@"CCSS:1.NBT.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
+            @"Center Day 1",
+            @"Original 2021 How Close? Stage 3 Add to 100 asks pupils to pick SEVEN digit cards and choose FOUR to make TWO two-digit numbers, add them and select the sum closest to 100 WITHOUT GOING OVER 100. The original teacher removes card 10, gives each partner SEVEN cards, and requires FOUR different cards to make two two-digit addends. Original center choices: Target Numbers, Five in a Row and Get Your Numbers in Order. Warm-up 9+6,29+6,39+7,39+9. Existing digital arithmetic can check addition, but cannot certify classroom card choices or the seven-card physical center.",
+            @"Example 1: 35+24=59 using tens and ones. Example 2: 8+7=15 and 18-3=15, so those expressions are equal. Original 2021 mental warm-up: 9+6=15;29+6=35;39+7=46;39+9=48. The How Close Stage 3 goal is TWO two-digit addends whose total is as close as possible to 100 WITHOUT EXCEEDING 100, not merely a within-20 comparison. First-party example with seven distinct digit cards 0,1,2,4,5,7,9: choose 5,1,4,9 exactly once to make 51+49=100; do not choose a sum above 100.",
+            @"Step 1: For original How Close? Stage 3, remove the 10 card and take seven digit cards. Step 2: Choose four different drawn cards to make two two-digit numbers without leading zero. Step 3: Add them and reject sums above 100; find the largest allowed total at or below 100. Step 4: Compare your valid total with your partner's and explain how near it is to 100. The other centers (Target Numbers, Five in a Row, Get Your Numbers in Order) are separate teacher-facilitated choices.",
+            @"Do not count a sum above 100 as a valid How Close? Stage 3 result. Do not reuse a digit card or use a leading zero in a two-digit number. Do not confuse a generic within-20 expression comparison with the seven-card source game.",
+            @"I can select four of seven digit cards, form two two-digit numbers, add without going over 100, and compare how close valid sums are to 100; physical partner play is teacher-facilitated."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-6/preparation.html",@"d2f09da62e97e4c09ef87f1d9f12b196f0739758ac79e86127959e2e8a2b449e",[@"CCSS:1.MD.A.2"],
+            @"Measure with Paper Clips",
+            @"Original 2021 source asks pupils to critique Andre, Tyler and Clare workbook measurements for gaps or overlap, using the ACTUAL drawings. Pupils also measure SIX different tape strips A–F in equal paper clip units. Paper clips must be same size, end to end and leave no gaps or overlaps; record the count and unit. Source-first lesson tasks: (1) look carefully at EACH classmate's workbook diagram and tell the teacher whether the clips form a continuous row of identical units, quoting the visible gap or overlap as evidence; (2) take paper clips of ONE size and measure original tape strips A, B, C, D, E and F separately; (3) record a length AND the unit for EACH of the SIX strips; (4) explain why one missing space, overlap or mixed clip size invalidates a measurement. Actual source diagrams and physical measurement are teacher-reviewed, not certified by synthetic digital prompts.",
+            @"Example 1: A pencil spans 8 equally sized paper clips in a continuous row, so it is 8 paper clips long. Example 2: Four short clips cannot be compared directly with four long clips as equal lengths. Example 3 (FIRST-PARTY, NOT A PUBLISHER IMAGE): Eight same-size clips with their edges touching and endpoints aligned give a valid count of eight; if a gap appears between the fourth and fifth, the raw count no longer measures the entire object; if two overlap, the raw count overstates covered length.",
+            @"Step 1: Examine Andre, Tyler and Clare workbook diagrams with the teacher; do NOT guess which student is correct without checking the actual diagrams. Step 2: Choose paper clips of exactly one size, start at the endpoint and align them consecutively with no gaps or overlap. Step 3: Measure TAPE A, TAPE B, TAPE C, TAPE D, TAPE E and TAPE F separately from the original classroom/student sheet. Step 4: For EACH of the six tape strips, write the observed count AND 'paper clips'; compare counts only when the unit size is the same. Step 5: Explain and correct one gap, one overlap and one mixed-unit example. First-party numeric Practice tests valid or invalid arrangements; it does not measure the actual source strips or grade teacher-observed work.",
+            @"Do not leave spaces, overlap clips, or mix clip lengths and then trust the count as a length. Do not declare an actual Andre/Tyler/Clare diagram correct from a fabricated digital image, and do not record invented source-strip lengths A–F.",
+            @"I can measure an object accurately with repeated identical paper clips."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-7/preparation.html",@"f7456562f66997352ad3572adcfa3f9f579d7f1d8e07c82e52925a3ae523fc3d",[@"CCSS:1.MD.A.2"],
+            @"Measure Length with Different Length Units",
+            @"Original 2021 learners measure Jeison's foot using THREE selected unit types among connecting cubes, small cubes, small paper clips and large paper clips. For the ORIGINAL class task choose and USE THREE different units, each internally equal in size; record three observed counts and the NAME of every unit, then compare each count for exactly the same foot outline. Learners also critique Andre, Jada, Clare and Kiran measurements of the teacher's shoe based on the ACTUAL source drawings. Check each depicted start, endpoint, gap, overlap and unit length before deciding whether a classmate's method is valid. The first-party digital three-unit mathematical model uses a hypothetical 6- or 12-unit strip, not the true physical lengths of Jeison's foot or the original classmate figures. Diagram judgments and physical measurements require verified teacher observation.",
+            @"Example 1: A strip measures 6 short blocks but 3 double-length blocks; the strip did not change. Example 2: 4 equal paper clips may cover the same length as 8 half-length units. Example 3 (FIRST-PARTY THREE-UNIT MODEL, not an original source measurement): one strip of length 12 unit blocks is covered by 12 one-block units, or 6 two-block units, or 4 three-block units. All THREE descriptions cover the SAME length, 12 unit blocks; smaller units give a larger count.",
+            @"Step 1: Trace the same physical Jeison-foot outline and choose THREE different measuring unit types from the original source choices. Step 2: For the FIRST unit, align ends, use identical copies and record the observed count and unit name. Step 3: Measure the SAME outline again with the SECOND size, then again with the THIRD size; never mix unit lengths within one count. Step 4: Record all THREE counts together with THREE unit names, rather than reporting only two. Step 5: Compare why equal physical length may produce different numbers. Step 6: Examine the original Andre, Jada, Clare and Kiran shoe diagrams with the teacher before judging their measurements; digital Practice validates only first-party mathematical models.",
+            @"Do not conclude that the object became longer merely because the count using smaller units increased. Do not replace the source requirement of THREE different real measuring tools with a single unit-size conversion. Do not guess individual students' original diagram verdicts without inspecting the drawings.",
+            @"I can explain how choice of length unit changes the number in a measurement."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-8/preparation.html",@"b625fea9b79d9f98966d0d0859def6ac325d9cf01a6637900d006f2b226018ec",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1"],
+            @"Groups Up to 110 PLC Activity",
+            @"Original 2021 choral count goes from 80 to 110 by ones. Learners measure a real long strip with MORE THAN 100 same-size small cubes, then organize the actual count into tens. They also compare base-ten diagrams and written values near or above 100. The original physical strip count and learner representations are teacher observed, not invented from numeric examples.",
+            @"Example 1: 8 full groups of ten cubes and 6 extra cubes total 86 units. Example 2: 10 groups of ten and 7 loose units total 107.",
+            @"Step 1: Lay cubes in a continuous length with no gaps. Step 2: Count the equal cube units. Step 3: Bundle counts of ten to avoid losing track. Step 4: Read the final count up to 110.",
+            @"Do not count a gap as a cube unit or read 10 tens and 7 ones as 17.",
+            @"I can group and read up to 110 equal length units."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-9/preparation.html",@"d5eacde6dde26130eda406c988167c58bbad3d0575c7f5b817e3fd4b05c95b64",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1"],
+            @"Write Numbers to 120",
+            @"Original 2021 choral count runs from 90 through 120 by ones. Pupils measure animal-length tape strips between 95 and 120 cubes and write the actual length for BEAVER, DOG, GIANT ANTEATER, RACCOON, RED FOX and SNAKE. Authentic length observations depend on original strips and physical units, not guessed values. Model 100 as ten tens and distinguish 111 from 101.",
+            @"Example 1: After 99 come 100, 101, 102. Example 2: Eleven tens and 4 ones make 114, which is less than 120. Example 3: A length of 103 cubes is 100 plus three equal cube units.",
+            @"Step 1: Count by tens to a useful landmark. Step 2: Add leftover ones without skipping. Step 3: Say and write the number up to 120. Step 4: Check digits and unit count.",
+            @"Do not write 110 as 101 or jump from 109 to 200. Numbers from 100 through 120 have three digits.",
+            @"I can read and write counts and measurements through 120."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-10/preparation.html",@"b0392f033a63a72b6eaa5a30d1d1ff78ffbf2ecff6759cbb44b39c2b7ddc88c1",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.C.4",@"CCSS:1.NBT.C.5",@"CCSS:1.OA.C.5",@"CCSS:1.OA.C.6"],
+            @"Center Day 2",
+            @"Original 2021 Estimate and Measure, Choose Your Unit center: choose object and uniform length unit, ESTIMATE first, then measure to nearest whole unit. Warm-up asks 24+30=44 FALSE,24+40=64 TRUE,30+45=75 TRUE,32+45=76 FALSE. Other centers: How Close?, Target Numbers, Five in a Row. Genuine object measurement and classroom gameplay are teacher-reviewed.",
+            @"Example 1: 36+25=61 using tens and ones. Example 2: A line covered by 9 equal connecting cubes measures 9 cube-length units. Example 3 (FIRST-PARTY DIGITAL MODEL): BEFORE measuring, estimate a strip as 9 cubes; after checking equal cube units with no gaps, it measures 12 cubes; the estimate is LOW by 3 units. If the estimate were 15, it would be HIGH by 3; if 12, EXACT. These are teaching examples, NOT fabricated observations of the original classroom objects.",
+            @"Step 1: Choose the original Estimate and Measure center task, SELECT a real measuring object and a uniform unit such as same-size cubes. Step 2: BEFORE measuring, WRITE an estimated number of these units and name your chosen unit. Step 3: Align the first unit at the object's endpoint and MEASURE using identical units end to end without gaps or overlaps. Step 4: RECORD the observed count and unit, alongside the estimate, then compare whether the estimate was higher, lower or exact and by how much. Step 5: For other teacher-facilitated centers, solve and explain the assigned arithmetic; do not replace estimating and measuring with arithmetic alone. A first-party numeric Practice estimate-check cannot prove actual pupil measurements.",
+            @"Do not substitute arithmetic for actual measurement, or count units of mixed sizes as though they are interchangeable. An estimate must be made BEFORE looking at the measured count, not copied afterward; one numeric length alone does not complete original Estimate and Measure.",
+            @"I can add or measure accurately in an appropriate teacher-led center."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-12/preparation.html",@"363d352cea320e9ccd94af0b40e318eaa9d62365af11578b202ceae7c15df3b1",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
+            @"Compare Measurements",
+            @"Original 2021: Han's bracelet is 14 cubes; Priya's is FOUR shorter, so Priya's length is 10. In the second story, Priya is 10 cubes and Han is FOUR longer, so Han is 14. Solve Compare Bigger Unknown and Compare Smaller Unknown measurement stories, as in the original 2021 lesson. When one bracelet is four cubes fewer or longer than the other, the UNKNOWN is the second bracelet's LENGTH, not the difference already supplied. Draw or explain a same-unit bar model and solve the missing length.",
+            @"Example 1 (Smaller Unknown): Han's bracelet is 14 cubes long; Priya's is 4 fewer, so Priya measures 14-4=10 cubes. Example 2 (Bigger Unknown, ORIGINAL 2021): Priya measures 10 cubes; Han is 4 longer, so Han measures 10+4=14 cubes. The given difference is NOT the requested unknown length.",
+            @"Step 1: Read whose length is known and who is longer or shorter; identify the MISSING bracelet length. Step 2: Use identical cube-length units and draw a bar showing the known length plus or minus the stated difference. Step 3: For Smaller Unknown subtract the difference; for Bigger Unknown add the difference. Step 4: Check that the two resulting lengths actually differ by the stated amount, and include cube-length units.",
+            @"Do not answer 4 just because the story says one bracelet is four cubes shorter; four is the KNOWN difference, not the unknown length. Use same-sized units, and choose addition for Bigger Unknown or subtraction for Smaller Unknown.",
+            @"I can find an unknown bigger or smaller bracelet length using a known length and the stated difference, and verify it with a same-unit bar model."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L13",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-13/preparation.html",@"62ab518f62ff56349f745ece86db222fb39e2d4ac3c6333665492000a8fa743c",[@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
+            @"Solve Take From Story Problems",
+            @"Original 2021 Elena bracelet-bead story: she takes out 9 beads and has 11 left, so the UNKNOWN starting count is 20. A second source activity shows 15-5=10, □-5=10 and 15-□=10 as different Take From stories. Use counters and related addition/subtraction, keeping the unknown in the original position.",
+            @"Example 1: There were 16 cubes, 7 were taken, 9 remain: 16-7=9. Example 2: 15 were present, some taken, 6 remain: 15-□=6, so 9 taken. Example 3: Some cubes present, 4 taken, 8 remain: □-4=8, so 12 originally.",
+            @"Step 1: Identify the story's original total, removed amount and remaining amount. Step 2: Place the unknown correctly. Step 3: Solve using a model or related fact. Step 4: Check the story.",
+            @"Do not assume every subtraction question asks for the amount left; unknowns can occur in any position.",
+            @"I can solve Take From stories with the unknown in different positions."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L14",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-14/preparation.html",@"f33bbb87cd343930eedd91a620add7ffc259147edd5bb1e301e1326770cddb06",[@"CCSS:1.OA.A.1",@"CCSS:1.OA.B.4",@"CCSS:1.OA.C.6"],
+            @"Which Equation Matches? PLC Activity",
+            @"Original 2021 U06 L14 starts with a Which One Does Not Belong? equation warm-up, then pupils SORT different story types by unknown position. The original Student Facing activity contains SIX separate story contexts and asks pupils to CIRCLE TWO matching equations for EACH, not merely name one operation or solve one equation. Original situations feature Jada pictures, Kiran giving away pictures, Han and Lin collages, Elena and Andre stickers, Noah and Tyler stamps, and Clare giving stickers away. Classroom group sorting, drawings, and reasons for choosing the equations require genuine learner/teacher evidence; numerical Practice alone does not certify those actions.",
+            @"Original 2021 source task 1 (Jada): 8 people pictures and an unknown animal-picture count total 11, so 8+□=11 and 11-8=□; the blank is 3. Source task 2 (Kiran): 19 pictures, some given away, 11 remain, so 19-□=11 and 19-11=□; the blank is 8. Source task 3 (Han and Lin): Han has 16 stamps, Lin 10 fewer, so 10+□=16 and 16-10=□; Lin has 6. Source task 4 (Elena and Andre): Elena has nine MORE stickers than Andre who has 5, so 9+5=14 and 5+9=14 are BOTH true. Source task 5 (Noah and Tyler): Noah has 6 stamps, Tyler 16, so 6+□=16 and 16-6=□; the difference is 10. Source task 6 (Clare): she gives away 9 stickers, 5 remain, so 5+9=□ and □-9=5; she started with 14. Warm-up comparisons: 10=6+4,16-5=11,11=6+4+1 and 3+□=11 have different structures; valid reasons for choosing an unlike item vary.",
+            @"Step 1: Read each ORIGINAL source story and identify its starting quantity, change, result, and the unknown position. Step 2: Examine all THREE proposed equations in that original task. Step 3: Circle TWO equations that represent the same quantities and relationship truthfully; for the 9-more-stickers story both addition orders are correct. Step 4: Check each blank using actual arithmetic, explaining whether addition, subtraction, or inverse addition matches the story. Step 5: Repeat separately for all SIX source story contexts; partner sorting, original drawings, and explanations require teacher observation.",
+            @"Do not choose addition for a leaving story simply because it contains the same numbers, unless using inverse addition to solve a missing value.",
+            @"I can explain which equation matches a story and where its unknown belongs."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L15",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-15/preparation.html",@"e571c6469550156f7be3ef50c61f02865a0872176c04123b15a9bb4f867e5632",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
+            @"Write Equations for Story Problems",
+            @"Write, not just select, an addition or subtraction equation matching a story with a missing start, change, or result.",
+            @"Example 1: Original origami story: Clare gives 12 paper cranes away and has seven left, so □-12=7 and she STARTED with 19. Example 2: Tyler made 15 butterflies and Jada made 9 fewer, so Jada made 6. Example 3: Nine people, five join: 9+5=14. Example 4: □ children plus 6 children makes 13, so □+6=13 and □=7. Example 5: 17-□=8 means 9 were TAKEN away, while 8 remain.",
+            @"Step 1: Read the whole story before calculating. Step 2: Draw or describe its quantities. Step 3: Put the box in the correct equation position. Step 4: Find the unknown and verify the equation matches the story.",
+            @"Do not always place □ at the end. In □+6=13 the unknown START equals 7, not 19.",
+            @"I can write accurate equations for different addition/subtraction stories."),
+        new(@"PED:US-CCSS-MATH:G1:U06:L16",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-16/preparation.html",@"98a1d3eb2f4843aa29f09f970e8198d8bce3344bc72740319287f4fe605dad78",[@"CCSS:1.MD.A.2",@"CCSS:1.NBT.A.1",@"CCSS:1.NBT.C.4"],
+            @"Center Day 3",
+            @"Original 2021 number talk: 65+20=85,85+1=86,65+20+1=86,65+21=86. Counting Collections Stage 3 estimates and counts a real collection of up to 120 objects. Center choices include Write Numbers and Estimate and Measure. Physical collections and classroom turns remain teacher-facilitated.",
+            @"Example 1: 9 tens and 5 ones represent 95 objects. Example 2: 42+37=79. Example 3: a strip measuring 8 identical cubes is 8 cube lengths.",
+            @"Step 1: Identify which center objective the task actually uses. Step 2: Count tens/ones, measure equal units, or add two numbers as appropriate. Step 3: Record quantity, units or equation. Step 4: Verify.",
+            @"Do not automatically certify paper-and-cube measurement from a digital numerical answer or omit the unit.",
+            @"I can choose accurate counting, measuring, and adding strategies for center tasks."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-1/preparation.html",@"5c26bc734e52785fea17276fee37c16eda2de2b5a278a3ec8f2f5f57a506cbfa",[@"CCSS:MP.6"],
+            @"Shapes That Are Solid",
+            @"Original 2021 students sort SOLID three-dimensional shapes into their OWN categories and then sort them again in a different way, explaining both decisions. In the Describe and Find Shapes activity, a partner FEELS an object hidden in a bag without seeing it, describes its attributes, guesses, and then checks by looking. Physical tactile evidence and authentic descriptions require teacher observation.",
+            @"Example 1: A sphere rolls and has a curved surface. Example 2: A cube has six flat square faces. Example 3: A cylinder has two flat circular faces and one curved side.",
+            @"Step 1: Observe each object from several directions. Step 2: Choose a characteristic (flat faces, curved surfaces, rolling). Step 3: Group and explain the reason. Step 4: Check all members meet the stated rule.",
+            @"Do not treat a drawing of a circle as a physical sphere or require every shape to have corners.",
+            @"I can classify and describe solid shapes in my own accurate words."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L03",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-3/preparation.html",@"bc5f15aa21a4b577cb3792712de3c0d94d06ec5433583f71f44bdc4e1dc04506",[@"CCSS:MP.3",@"CCSS:MP.6"],
+            @"Shapes That Are Flat",
+            @"Original 2021 flat-shape Card Sort asks students to sort picture cards using their own observable attributes of straight sides, curves and corners; the gallery walk includes descriptions of GROUP 1, GROUP 2 and GROUP 3 sorting rules, not just one number of sides. Physical student-selected categories and real gallery commentary require teacher evidence.",
+            @"Example 1: A triangle is a closed flat shape with three straight sides. Example 2: A rectangle has four straight sides and four corners. Example 3: A circle has no straight sides or corners.",
+            @"Step 1: Examine each flat shape. Step 2: Count straight sides and corners, or notice curves. Step 3: Sort by the chosen shared feature. Step 4: Explain why each shape belongs.",
+            @"Do not confuse a 3D cube with its flat square face. A rotated triangle remains a triangle.",
+            @"I can sort and describe flat shapes using their attributes."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L05",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-5/preparation.html",@"500b3b0559d2ed9f75fc326a50b4bb6ea7d39a3cb482d183234450bd3dfcc93f",[@"CCSS:1.G.A.1",@"CCSS:1.NBT.C.4",@"CCSS:1.OA.C.6"],
+            @"Some Triangles, All Triangles",
+            @"ORIGINAL STUDENT FACING TASK: DRAW THREE DIFFERENT TRIANGLES, not just a single triangle. Distinguish triangles from non-triangles by their defining attributes: each of three connected straight sides closes the outline. Compare different sizes, angles and orientations. DRAW THREE other closed or open figures that are NOT triangles and explain exactly why each is not a triangle (wrong side count, curve or unclosed boundary). The teacher reviews three genuinely different valid triangles PLUS three non-triangle figures; a digital SIDES=3 answer cannot prove drawing.",
+            @"Example 1: A small, tilted triangle is still a triangle because it has three connected straight sides. Example 2: Three separate sticks that do not form a closed boundary are not a triangle.",
+            @"Step 1: Draw three straight line segments. Step 2: Join their endpoints into one closed shape. Step 3: Count the three sides and vertices. Step 4: Change size or rotation and identify which features stay the same.",
+            @"Do not say a triangle must point up or have two matching sides. Rotation and color do not determine triangle membership.",
+            @"I can draw triangles and distinguish defining from non-defining features."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-9/preparation.html",@"caddbf353a123c3ffc3030c6c2b8d84a17a3a4f0af852ad3100d7504f9fa3789",[@"CCSS:1.G.A.3"],
+            @"Equal Pieces",
+            @"Original 2021 pupil activities: build a circle from pieces, showing why only equal pieces constitute equal shares. Cut out BOTH a CIRCLE and a SQUARE and fold each into TWO equal pieces, then repeat with FOUR equal pieces. Next draw halves and fourths in source shapes. Distinguish equal AREA from merely having two or four pieces; physical folding and diagrams require real observation.",
+            @"Example 1: A rectangle split down its middle into two equal rectangles has halves. Example 2: A circle split through its center by two perpendicular diameters has four equal fourths. Unequal pieces are not halves.",
+            @"Step 1: Identify the complete circle or rectangle. Step 2: Divide into two equal areas for halves. Step 3: Divide into four equal areas for fourths. Step 4: Compare the piece sizes and name the equal shares.",
+            @"Do not call any two pieces halves: they must have equal area. Different-looking pieces must be checked rather than assumed equal.",
+            @"I can partition circles and rectangles into halves and fourths."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-10/preparation.html",@"a533c8a407a83aae674d36464cd91dac2f7e1da0c48e5f0ce787f5cf23fcd12a",[@"CCSS:1.G.A.3"],
+            @"One of the Pieces, All of the Pieces",
+            @"ORIGINAL 2021: divide a SQUARE into halves and color ONE half; divide a CIRCLE into fourths and color ONE fourth. Then sort shaded-piece CARDS into the FOUR explicit categories: ONE FOURTH/QUARTER shaded, ONE HALF shaded, WHOLE shaded, and NOT EQUAL PIECES. Finally match words such as two halves shaded or four fourths shaded to the relevant source pictures. Actual drawing, cutting and card placement require teacher review.",
+            @"Example 1: Two equal halves of a rectangle make one whole. Example 2: Four equal fourths of a circle make one whole. Example 3: One of four equal squares in a partitioned rectangle is one fourth of the rectangle.",
+            @"Step 1: Show the whole. Step 2: Verify pieces are equal in area. Step 3: Count two equal halves or four equal fourths. Step 4: Identify one piece using a correct part-of-whole description.",
+            @"Do not call one of three unequal pieces a fourth. Names halves and fourths depend on the total number of equal pieces.",
+            @"I can describe a whole and its equal halves or fourths."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L11",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-11/preparation.html",@"a199f08ddd0cb1403a645394d2d0764eefd51711383028a6d8b2aaa45c01e8c5",[@"CCSS:1.G.A.3",@"CCSS:1.NBT.C.5"],
+            @"A Bigger Piece PLC Activity",
+            @"Original 2021 pairs fold and cut identical circles and then squares into HALVES versus FOURTHS and compare the physical pieces. Priya says she wants HALF of the roti because halves are bigger than fourths, while Han incorrectly claims a FOURTH is bigger because 4 is more than 2. For the SAME whole, one half has greater area than one fourth, and two fourths have the same area as one half; pupils explain using drawings/words and teacher-reviewed cut pieces.",
+            @"Example 1: One half of the same rectangle is larger in area than one fourth. Example 2: Two fourths cover the same area as one half of the same whole.",
+            @"Step 1: Draw one rectangle and two identical copies. Step 2: Split one into two equal halves and another into four equal fourths. Step 3: Compare a single piece in each. Step 4: Explain that more equal pieces means smaller individual pieces.",
+            @"Do not compare one fourth of a big shape to one half of a much smaller shape and claim a universal ordering.",
+            @"I can explain why fourths are smaller than halves of the same whole."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L12",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-12/preparation.html",@"6692ba8a9610988d4524132b41a6df55517496cb28390274e50aea0dc880e4e5",[@"CCSS:1.G.A.1",@"CCSS:1.G.A.2",@"CCSS:1.NBT.C.4",@"CCSS:1.OA.C.6"],
+            @"Center Day 2",
+            @"Original 2021 Center Day 2 introduces Can You Draw It? Grade 1 Shapes STAGE 1, where partners draw source shape cards and explain defining attributes. Separate later center choices: Picture Books, Match Mine, Capture Squares and Target Numbers. Digital arithmetic alone cannot certify drawing a triangle/rectangle from verbal instructions, authentic partner observations or physical shape construction.",
+            @"Example 1: A cube and rectangular prism can be arranged into a new solid structure. Example 2: 47+28=75 by combining tens and ones. Example 3: 9-4=5.",
+            @"Step 1: Identify the selected activity's exact goal. Step 2: For shapes, describe and build with appropriate solids. Step 3: For mathematics, use a suitable addition or subtraction method. Step 4: Explain the result to the teacher.",
+            @"Do not replace a three-dimensional composition with an unrelated arithmetic question and claim the shape objective was assessed.",
+            @"I can work accurately with solids, addition within 100 and subtraction within 10 in their respective centers."),
+        new(@"PED:US-CCSS-MATH:G1:U07:L17",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-17/preparation.html",@"88d2973aea89e988e30f779e8d1b31e6ff5bf599a818f43706f5b029333c1fa1",[@"CCSS:1.G.A.2",@"CCSS:1.MD.B.3",@"CCSS:1.NBT.C.4",@"CCSS:1.OA.C.6"],
+            @"Center Day 3",
+            @"Original 2021 Center Day 3 introduces Which One? Grade 1 Shapes STAGE 2, requiring reasoning about SHAPE cards and a chosen descriptive property. Other choices: Can You Draw It?, Match Mine, Capture Squares and Target Numbers. Teacher supervises the original shape selection and explanations; digital sums cannot certify the game.",
+            @"Example 1: 35+46=81. Example 2: 8-3=5. Example 3: A flat triangle has three straight sides; a three-dimensional cone has a circular base and curved surface.",
+            @"Step 1: Read the center's task and expected representation. Step 2: Use place-value addition, small subtraction or shape attributes as appropriate. Step 3: Check and explain your result. Step 4: Teacher validates hands-on shape activity and partner work.",
+            @"Do not claim the hands-on shape activity is complete merely because one number was entered digitally.",
+            @"I can choose correct calculation and shape language in teacher-led centers."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L01",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-1/preparation.html",@"c07592bb2a67aabeeb002747901ce73a0a6df94021c10c0552f1327d1184e56f",[@"CCSS:1.OA.C.6"],
+            @"Addition Fluency Within 10",
+            @"Original 2021 pupils COLOR sums WITHIN TEN they ALREADY know from memory on the source sheet, copy each unknown fact to a PERSONAL index card and practice those facts. Original centers: Check It Off, Number Puzzles and Capture Squares. Numeric Practice can assess a correct sum but does NOT establish the pupil personally identified their unknown facts or completed index cards.",
+            @"Example 1: 6+4=10, two parts make a ten. Example 2: 5+3=8 by starting at five and counting three more. Example 3: 4+4=8 is a known double.",
+            @"Step 1: Read the addends (sum no more than 10). Step 2: Try a familiar fact, double or count-on. Step 3: State the sum accurately. Step 4: Check with counters or related fact.",
+            @"Do not confuse speed with accuracy or use a sum above ten as evidence of fluency within ten.",
+            @"I can find sums within ten using facts and a strategy I understand."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L02",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-2/preparation.html",@"72db439ba6f87caafe696606b4ab7db25a14b1cbb5a2f3b1ffeeafd701e57be3",[@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.8"],
+            @"Relate Addition and Subtraction",
+            @"Original 2021 pupils make addition AND subtraction equations for the SAME two-part cube tower, then solve each unknown number in 4+□=9,9-5=□,□+5=8,8-3=□,7-4=□,8=2+□,8-□=4. They then COLOR differences they know from memory and create PERSONAL fact cards for the differences still unknown, adding a helpful addition equation. Digital grading cannot certify physical cube building or the learner's chosen self-assessment.",
+            @"Example 1: If 5+4=9, then 9-4=5 and 9-5=4. Example 2: 6+3=9 and 9-6=3.",
+            @"Step 1: Find two parts and their whole, at most ten. Step 2: Write a true addition fact. Step 3: Begin a subtraction with the whole. Step 4: Remove one part to find the other. Step 5: Check.",
+            @"Do not write 5-9=4 for a within-ten part-whole fact; start subtraction from the whole nine.",
+            @"I can use addition to explain and check subtraction."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L03",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-3/preparation.html",@"e5b135f819e30a6304ea07854cfa2b0e7a7963c8f8c4a2697da2628535ec933c",[@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.8"],
+            @"Add and Subtract Within 20 PLC Activity",
+            @"Original 2021 pupils CIRCLE ONE addition expression and ONE subtraction expression from 5+9,14-8,4+7,15-9,6+4+4,13-6, then find each value using AS MANY different valid strategies as possible. Original Heads Up center records the equation in SIX rounds. Partner drawings, multiple strategies and real cards need teacher evidence, while digital arithmetic can check the mathematical value.",
+            @"Example 1: 9+8=9+1+7=17. Example 2: 15-7=15-5-2=8. Example 3: 8+6=14 and 14-6=8.",
+            @"Step 1: Decide whether to add or subtract. Step 2: Choose making ten, known fact or count-on. Step 3: Show an equivalent calculation. Step 4: Check with inverse operation. Step 5: Explain the choice.",
+            @"Do not lose leftover ones when making ten or treat a teacher conversation as complete merely by submitting a numeric answer.",
+            @"I can use efficient addition and subtraction strategies within twenty."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L04",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-4/preparation.html",@"d06b8875654892a2317c4ce01a5cf75965ef0c5b365cc516b3a5bd52a079c51c",[@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6"],
+            @"Change Unknown Story Problems PLC Activity",
+            @"Original 2021 aquarium Student Facing has FOUR distinct CHANGE-UNKNOWN stories: Clare saw 8 sea turtles then some joined, 15 total (8+□=15); 17 penguins were sitting on rocks and 5 remain (17-□=5); seals ate some from a bucket of 20 fish and 3 remain (20-□=3); Tyler first felt 6 stingrays then sea stars until he touched 14 creatures (6+□=14). Another original Activity 2 asks the pupil to HELP Andre solve 16-□=9 bullfrogs and explain WHY the chosen addition or subtraction method works. Warm-up decompositions include 10+7=17,8+2+7=17,10+5+2=17. Source photographs and actual drawings require independent rights and teacher review; digital arithmetic does not certify physical activity.",
+            @"Example 1: Original Clare sea turtles: 8+□=15, so 7 turtles JOINED. Example 2: Original 17 penguins, 5 remain on rocks: 17-□=5, so 12 penguins SWAM AWAY. Example 3: Original seal bucket had 20 fish, 3 remain: 20-□=3, so the seals ATE 17 fish. Example 4: Original Tyler touches 6 stingrays and then sea stars, 14 animals total: 6+□=14, so he felt 8 sea stars. Example 5: Original bullfrogs: 16-□=9, so 7 swam away; Andre can check via 9+7=16 as well as 16-7=9. The warm-up 8+2+7 and 10+5+2 both total 17.",
+            @"Step 1: Identify the original aquarium story, its START and END quantities, including the four different contexts. Step 2: Decide whether new animals JOINED or previous animals LEFT or were eaten. Step 3: Represent the unknown CHANGE with □ in the middle of an addition or subtraction equation. Step 4: Solve and check both operations against source quantities: 8+7=15,17-12=5,20-17=3,6+8=14. Step 5: For Andre and the bullfrogs, use 16-7=9 and check by inverse addition 9+7=16. Original student drawings and strategy explanations remain teacher-reviewed.",
+            @"Do not automatically place the box at the result: in 7+□=12 the missing number is 5.",
+            @"I can find the unknown change in joining or leaving stories."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L05",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-5/preparation.html",@"514cff5609b881c3fbd91b38d4bfd318e4c64f88b1e3bb3e6c42b062786f2a83",[@"CCSS:1.NBT.C.4",@"CCSS:1.OA.A.1",@"CCSS:1.OA.C.6",@"CCSS:1.OA.D.7"],
+            @"Put Together and Take Apart Story Problems",
+            @"Original 2021 planetarium Student Facing activity has FOUR different missing-part stories: 7 first graders plus second graders total 18 (7+□=18); 18 stars with 13 bright and the remainder dim (13+□=18); Diego saw 6 of the 15 shooting stars seen by Diego and Tyler together (6+□=15); Elena bought 12 star stickers and some planet stickers, 20 total (12+□=20). A SECOND activity asks pupils to CIRCLE TWO accurate equations out of three for EACH of TWO separate stories: Noah painted 9 white stars within 17 total, and Kiran saw 11 stars among 16 sky objects, the rest planets. Explain why the third equation is wrong, not merely compute a difference. Warm-up true/false: 57+20=59 FALSE,66-4=62 TRUE,17+76=59 FALSE. Source photographs/drawings and partner explanations need teacher review.",
+            @"Original Source Task 1: 7+□=18 means 11 second graders. Source Task 2: 13+□=18 means five dim stars. Source Task 3: Diego saw 6 shooting stars, Diego and Tyler saw 15; 6+□=15 or 15-6=□ gives NINE stars for Tyler. Source Task 4: Elena bought 12 star stickers plus planet stickers, 20 total; 12+□=20 or 20-12=□ gives EIGHT planet stickers. Original equation-CHOICE Noah: 9 white among 17 total; BOTH 17-9=□ and 9+□=17 are correct, giving eight yellow stars, but 9+17=□ does NOT represent the story. Original equation-CHOICE Kiran: 16 sky objects, 11 stars; BOTH 11+□=16 and 16-11=□ are correct, giving five planets, but 16+11=□ is NOT a matching story equation.",
+            @"Step 1: For EACH original planetarium story, identify the WHOLE and given PART, placing a blank for the unknown other part. Step 2: Solve each of the FOUR source contexts (7+□=18;13+□=18;6+□=15;12+□=20) using subtraction or count-on addition. Step 3: For BOTH source equation-choice stories, examine the THREE proposed equations, not just one. Step 4: CIRCLE exactly TWO matching equations for NOAH and two for KIRAN and explain why the other alternative does not represent the context. Step 5: Verify all results and explain them in their original units; original pupil drawings and partner explanations are teacher-reviewed.",
+            @"Do not add the WHOLE to a PART to find the missing part: 9+17 and 16+11 are the original incorrect distractor equations. For Noah, both 17-9=□ and 9+□=17 are valid. For Kiran, both 11+□=16 and 16-11=□ are valid. Do not omit the two additional original stories about Diego and Tyler or Elena's planet stickers. A machine-graded numeric answer does not imply the student selected all original equations or produced a teacher-observed drawing.",
+            @"I can solve a missing-part Put Together/Take Apart story."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L06",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-6/preparation.html",@"a710a0be36e7f09a9c1506eaaca2bb7b05b17ff0747ece123bb118a8c5f5e695",[@"CCSS:1.OA.A.1",@"CCSS:1.OA.A.2",@"CCSS:1.OA.C.6"],
+            @"Compare Story Problems",
+            @"Original 2021 School Carnival Student Facing FOUR comparison stories: Lin has 7 ride tickets and Mai 12, so Mai has FIVE more; blue cotton candy 17 bags versus pink 7, so TEN more blue; 13 toys versus 9 stuffed animals, so FOUR fewer stuffed animals than toys; a ferris wheel holds 20 people and swings 14, so the swings hold SIX fewer. Then original How Many Rides? asks EACH learner to WRITE and ANSWER TWO original questions based on five actual given counts: Diego 7 rides, Priya 11, Jada 3, Kiran 6 and Noah 9. The TWO authored questions may ask valid compare or put-together questions; source drawing, child authorship, real cards and explanations need teacher review, not inferred numerical grading.",
+            @"Original source compare 1: Lin 7 tickets versus Mai 12 means Mai has 12-7=5 MORE tickets. Source compare 2: blue 17 cotton-candy bags versus pink 7 means 17-7=10 MORE blue. Source compare 3: 13 toys and 9 stuffed animals means 13-9=4 FEWER stuffed animals. Source compare 4: ferris wheel capacity 20 versus swings 14 means 20-14=6 FEWER people on swings. Original authored rides data: Diego 7, Priya 11, Jada 3, Kiran 6 and Noah 9. Valid learner-created example A: How many MORE rides did Priya take than Jada? 11-3=8. Valid learner-created example B: How many MORE rides did Noah take than Kiran? 9-6=3. These are first-party SAMPLE questions; the original task asks the pupil to create their OWN TWO different questions and answer both.",
+            @"Step 1: Solve the FOUR original school carnival compare situations with the given quantities and units. Step 2: Identify which is MORE/FEWER and subtract smaller from larger, or count on, then CHECK with addition. Step 3: Read the ORIGINAL How Many Rides? table: Diego 7, Priya 11, Jada 3, Kiran 6, Noah 9. Step 4: WRITE and ANSWER TWO new questions using the supplied data; the questions must each be a coherent and mathematically answerable question, not just two numbers to subtract. Step 5: Show an equation, answer and unit (rides) for EACH self-authored question, then let a teacher review your question wording, originality and mathematical reasoning.",
+            @"Do not add 12+7=19 when the question asks how many MORE tickets: subtract to find five. Do not omit the ORIGINAL fourth carnival source problem (ferris wheel 20 versus swings 14). Do not produce a single teacher-provided calculation in place of WRITE and ANSWER TWO ORIGINAL learner-authored ride questions; teacher review of actual student wording cannot be inferred from an auto-scored difference.",
+            @"I can solve a Compare story to find the difference."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L07",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-7/preparation.html",@"c5d06c8b7c5608bf81a5c260702dd0cc6c83e6f4a45994f1b471c2bf93a7bae9",[@"CCSS:1.NBT.A.1"],
+            @"Count Large Collections",
+            @"Original 2021 warm-up invites learners to REPRESENT the number 103 in their own way. The Last Number Wins center starts counting from numbers other than one, with an actual classroom circle. The Count and Represent activity counts a REAL classroom collection; the How Many Cats? source image is counted through groups of ten, and its exact total cannot be certified from text alone. Digital arithmetic supports number skills but not physical collection or picture observations.",
+            @"Example 1: Count on from 87: 88,89,90,91. Example 2: Eleven tens and six ones make 116. Example 3: Count from 109 to 110,111,112.",
+            @"Step 1: Read the starting number. Step 2: Count on by ones, regrouping at a new ten or hundred. Step 3: Make full tens groups when counting a collection. Step 4: Record and check the total, at most 120.",
+            @"Do not restart from one when a different start is specified, or skip 110 after 109.",
+            @"I can count and represent large collections and start from a number other than one."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L08",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-8/preparation.html",@"fccd90f84c40b1cd77b77acd7c94f39fbdb9d78f08cf00f499de4f05d2cd2b73",[@"CCSS:1.NBT.A.1",@"CCSS:1.OA.C.6"],
+            @"Show Me All the Ways PLC Activity",
+            @"ORIGINAL 2021 teacher/student activity: In Represent Our Favorite Numbers, pick your favorite number BETWEEN 20 AND 100, plan an original page for a CLASS NUMBER BOOK, and show it using as many different correct drawings, words, tens-and-ones models, equations and expressions as possible; the original teacher launch specifically requires AT LEAST THREE different EXPRESSIONS. Original example uses 84, which can be represented by 8 tens 4 ones, 7 tens 14 ones, and also only 6 tens plus 24 ones. A gallery walk then compares classmates' pages. Original estimation warm-up requests too low/about right/too high estimates of source pictures, and the center choices are Compare, How Close? and Write Numbers. Teacher checks actually created pages and classroom discussion; digital place-value Practice can certify only a bounded mathematical subskill and must not invent pupil work, copies of proprietary illustrations or classroom attendance.",
+            @"Original 2021 source example: 84=8 tens 4 ones=7 tens 14 ones=6 tens 24 ones=80+4=70+14=60+24. Three DISTINCT addition EXPRESSIONS for 84 could be 80+4, 70+14 and 60+24 (all equal 84), with matching tens/ones drawings. Other valid example within source range: 54=5 tens 4 ones=4 tens 14 ones; express 54 as 50+4,40+14 and 30+24. For a source number of 100, a valid 100 model is ten groups of ten or 100 ones; do not falsely label 100 a two-digit numeral. Classroom estimation of original photos is teacher-verified, not fabricated.",
+            @"Step 1: Choose a favorite number as specified by the ORIGINAL source: BETWEEN 20 AND 100, without artificially limiting source work to a two-digit number. Step 2: Plan a PAGE for the class NUMBER BOOK; show the same number in drawings, words and tens-and-ones representations. Step 3: Write AT LEAST THREE mathematically distinct ADDITION EXPRESSIONS that all equal your selected number. Step 4: Exchange tens for ones to produce additional correct regroupings; verify every total stays unchanged. Step 5: Share and explain the page during a teacher-led GALLERY WALK; peers may have additional valid representations. Teacher-reviewed artwork/pages and the original image-estimation activity cannot be inferred from a digital regrouping answer.",
+            @"Do not change the TOTAL when regrouping, for example 4 tens and 14 ones is 54, not 414. Do not omit the ORIGINAL teacher instruction to show AT LEAST THREE expressions, or replace a pupil-authored class number book page with one auto-scored regrouping. Do not claim the teacher's original task permits ONLY two-digit numbers without checking the source wording BETWEEN 20 AND 100. Real drawings, school photos and gallery observation remain teacher-reviewed.",
+            @"I can create and compare different representations of the same number."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L09",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-9/preparation.html",@"dd74764b87e53b0d6900a35e30a905dfc05d30acab9db978ed2e9ac11626720b",[@"CCSS:1.NBT.B.3"],
+            @"Solve Number Riddles",
+            @"Solve 2021 place-value NUMBER RIDDLES progressively. The FIRST clues may admit SEVERAL different numbers, and the final clue selects ONE unique number. List all candidates that fit the ones digit and the upper/lower bounds before deciding on the secret number. Then check every proposed clue. Teacher-led partner cards and oral reasoning are not digitally claimed.",
+            @"Example 1 (original source task): The number is MORE than 30, LESS than 60, and has 4 ones. ALL possible numbers are 34, 44, 54; the first three clues do not yet fix one secret number. Example 2 (ORIGINAL FINAL CLUE): A final clue says the number is the SUM of 24 and 20, so the unique answer is 44. Example 3 (ORIGINAL SOURCE SYNTHESIS): More than six tens, less than 100, eight tens, and the sum of 51+32 gives 83. Original warm-up: 65>35 TRUE, 65=75-10 TRUE, 65>35+30 FALSE since 35+30=65.",
+            @"Step 1: Read the lower and upper bounds and identify the ones digit. Step 2: Write ALL possible two-digit numbers meeting these early clues, not just one guess. Step 3: Apply the next/final clue to remove candidates until ONE secret number remains. Step 4: Check every clue and reject contradictions. Step 5: Explain why each excluded number fails at least one clue.",
+            @"Do not claim that three initial clues always identify one secret number: 34, 44, and 54 all satisfy greater than 30, less than 60, and four ones. A last clue can select 44. Do not accept a false equality: 60 is not 25+45.",
+            @"I can list ALL possible numbers for initial clues, then find a single secret number using the final clue and prove why it fits."),
+        new(@"PED:US-CCSS-MATH:G1:U08:L10",@"https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-10/preparation.html",@"b05db505b2fc2f6fd1a6d0ef8e5e1ff62c6d3fc13bcf03e941504436f748dd59",[@"CCSS:1.NBT.C.4"],
+            @"Write Number Riddles",
+            @"Original 2021 pupils WRITE a personally authored riddle for a chosen number 1–120 on FOUR index cards, with the LAST clue an addition expression; partners solve and explain authentic work. Warm-up equations: 60=25+45 is FALSE (sum 70), 70=24+46 is TRUE, 80=32+37 is FALSE (sum 69). A numeric Practice answer does not prove authorship or peer participation.",
+            @"Example 1: Choose 47. Four clues: (1) Greater than 40, (2) less than 50, (3) four tens and seven ones, (4) 40 + 7. Each clue fits 47. Example 2: Choose 112. Four clues: (1) greater than 110, (2) less than 115, (3) one hundred, one ten and two ones, (4) 100 + 12. Each clue fits 112.",
+            @"Step 1: Choose a secret number from 1 through 120. Step 2: Write exactly four clues: use true ranges/place value and make the FINAL clue a matching addition expression. Step 3: Check all four clues against the same secret number; notice 100–120 can contain one hundred and extra tens/ones. Step 4: Have a partner attempt the riddle and explain the number. Step 5: Revise an unclear or inconsistent clue after a teacher checks the written work.",
+            @"Do not make an incorrect final addition clue: 40 + 8 cannot describe 47. A two-digit-only limit incorrectly excludes valid targets 100 through 120. Do not claim an auto-scored answer proves that the learner authored four coherent clues.",
+            @"I can write an accurate number riddle and explain its solution.")
+    ];
+    private static Repair? Find(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson)=>
+        doc.PackCode==MathematicsCurriculumPackRegistry.CommonCoreCode&&
+        doc.VersionCode=="CCSSM-2010"
+        ? Repairs.SingleOrDefault(x=>x.Code==lesson.LessonCode):null;
+    public static bool IsTarget(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson)=>
+        Find(doc,lesson)!=null;
+    private static Repair Checked(CanonicalLessonContentPackDocument doc,CanonicalLessonContentPackLesson lesson)
+    {
+        var r=Find(doc,lesson)??throw new InvalidOperationException("Not a full-grade G1 U06–U08 repair");
+        if(lesson.SourceUrl!=r.SourceUrl||
+           !string.Equals(lesson.CanonicalBodySha256,r.OriginalSha,StringComparison.OrdinalIgnoreCase)||
+           !lesson.OutcomeCodes.SequenceEqual(r.Outcomes))
+            throw new InvalidOperationException("Original teacher source, SHA or outcomes drift: "+lesson.LessonCode);
+        return r;
+    }
+    public static void Apply(CanonicalLessonContentPackDocument doc)
+    {
+        foreach(var lesson in doc.Lessons)
+        {
+            if(!IsTarget(doc,lesson))continue;
+            var r=Checked(doc,lesson);
+            var en=lesson.Translations.Single(x=>x.CultureCode=="en");
+            if(en.Explanation==r.Explanation&&en.WorkedExamples==r.Examples&&
+               en.StepByStepSolutions==r.Steps&&en.CommonMistakes==r.Mistakes&&en.QuickSummary==r.Summary)continue;
+            if(!en.WorkedExamples.StartsWith("Example 1:",StringComparison.Ordinal)||
+               !en.StepByStepSolutions.StartsWith("Step 1:",StringComparison.Ordinal))
+                throw new InvalidOperationException("G1 U06–U08 unexpected original learner content: "+lesson.LessonCode);
+            en.Title=r.Title;en.Explanation=r.Explanation;en.KeyConceptsAndRules=r.Explanation;
+            en.WorkedExamples=r.Examples;en.StepByStepSolutions=r.Steps;
+            en.CommonMistakes=r.Mistakes;en.QuickSummary=r.Summary;
+        }
+    }
+    public static string GetExpectedContentVersion(CanonicalLessonContentPackDocument doc,
+        CanonicalLessonContentPackLesson lesson,string previous)=>
+        IsTarget(doc,lesson)?
+            (lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"?Unit6Lesson4Stage3SourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"?Unit6Lesson6MeasurementSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"?Unit6Lesson7ThreeUnitsSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10"?Unit6Lesson10EstimateFirstSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L12"?Unit6Lesson12SourceVersion:
+             IsReviewedUnit6Lesson(lesson.LessonCode)?Unit6OriginalSourceVersion:
+             lesson.LessonCode=="PED:US-CCSS-MATH:G1:U08:L09"?Unit8Lesson9SourceVersion:
+             IsReviewedUnit7Unit8Lesson(lesson.LessonCode)?Unit7Unit8OriginalSourceVersion:
+             Version):previous;
+    public static bool CanUpgradeExisting(CanonicalLessonContentPackDocument doc,
+        CanonicalLessonContentPackLesson lesson,string previous)=>
+        IsTarget(doc,lesson)&&
+        (previous==CommonCoreRichContentCorrections.CorrectionContentVersion||
+         ((IsReviewedUnit6Lesson(lesson.LessonCode)||IsReviewedUnit7Unit8Lesson(lesson.LessonCode)||lesson.LessonCode=="PED:US-CCSS-MATH:G1:U08:L09")&&previous==Version)||
+         ((lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L04"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L06"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L07"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L10"||
+           lesson.LessonCode=="PED:US-CCSS-MATH:G1:U06:L12")&&previous==Unit6OriginalSourceVersion));
+    public static void ValidateExistingBodyBeforeUpgrade(CanonicalLessonContentPackDocument doc,
+        CanonicalLessonContentPackLesson lesson,string previous,
+        IReadOnlyCollection<CurriculumLessonContentTranslation> translations)
+    {
+        Checked(doc,lesson);
+        if(!CanUpgradeExisting(doc,lesson,previous))
+            throw new InvalidOperationException("Unexpected previous G1 U06–U08 content version: "+lesson.LessonCode);
+        if(translations.Count==0)return;
+        if(translations.Count!=1||translations.Single().CultureCode!="en"||
+           !translations.Single().WorkedExamples.StartsWith("Example 1:",StringComparison.Ordinal)||
+           !translations.Single().StepByStepSolutions.StartsWith("Step 1:",StringComparison.Ordinal))
+            throw new InvalidOperationException("Existing G1 U06–U08 translation drift: "+lesson.LessonCode);
+    }
+}

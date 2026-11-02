@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 10,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L10",
+  "lessonTitle": "Represent Data Using Picture Graphs and Bar Graphs",
+  "unitNumber": 1,
+  "lessonNumber": 10,
+  "officialOutcomeCodes": [
+    "CCSS:2.MD.D.10"
+  ],
+  "sourceEdition": "Illustrative Mathematics K-5 2021, first edition",
+  "stageA": {
+    "status": "COMPLETE_SOURCE_ALIGNED_PUBLIC_2021_TEACHER_LESSON_AND_PREPARATION",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-10/preparation.html",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-10/lesson.html",
+    "warmup": "Which One Doesn't Belong? Compare four distinct displays: horizontal bar graph, vertical bar graph, one-symbol picture graph and data table; accept multiple mathematically supported distinctions.",
+    "activity1": "Each learner receives an original data table, draws a picture graph with title, category labels and chosen symbol key; partner provides one strength and one question.",
+    "activity2": "Learners swap tables and draw a numbered-scale bar graph from different real or independent data; explain bar height, category labels and the differences between representations.",
+    "synthesis": "Teacher assesses mathematical explanation and graph revision based on peer feedback.",
+    "originalPublisherCoolDown": "Fruits We Love Graphs requires educator login; independent first-party Edulytics exit ticket authored from same skill, not a reproduction.",
+    "sourceOriginalSportsGraph": "Gymnastics 5, Basketball 4, Hockey 2, Soccer 6 in public student-facing example",
+    "artRights": "No publisher artwork reproduced; new tables, symbol choices, CSS bars, and accessible graph descriptions.",
+    "curriculumStandard": "2.MD.D.10",
+    "studentTaskTextRead": true,
+    "publisherPrintTaskNotDuplicated": true
+  },
+  "stageB": {
+    "status": "COMPLETE_STRICT_SOURCE_PROVENANCE_GUARDED_ORIGINAL_GRAPH_AUTHORING_TEXT",
+    "sourceCorrection": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1ConstructGraphsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedPreviousVersionGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "learnerRichV2Reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "fixes": "Removed raw publisher-caption/table placeholders; explains authoring of both graph types, one-symbol key, numbered scale from zero, accurate categories and different partner table.",
+    "versionPrecondition": "Exact original source URL, canonical body SHA, CCSS 2.MD.D.10 and old learner fields or exact guarded correction."
+  },
+  "stageC": {
+    "status": "COMPLETE_FIRST_PARTY_GRAPH_AUTHORING_INTERACTION_AND_EXACT_SUBSKILL_PRACTICE",
+    "digitalFamilies": [
+      "usccss.g2.u01.l10.picture_symbol_count",
+      "usccss.g2.u01.l10.bar_height_for_category",
+      "usccss.g2.u01.l10.picture_bar_same_data"
+    ],
+    "coreContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson10ConstructGraphsContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson10ConstructGraphsQuestions.cs",
+    "firstPartyGraphChecker": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1TenthLessonGraphConstruction.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson10ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson10Activities/Index.cshtml",
+    "studentEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "assessment": "Student chooses title, picture symbol/key, count per named category, bar title and unit scale, produces user-constructed graphs from correct table and checks independent Table C in both displays.",
+    "teacherScoring": "Student physical drawings, feature comparisons, Which One Doesn't Belong alternative reasons, partner work and explanation are teacher-scored by embedded independent rubric; integer check does not claim those performances.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1ConstructGraphsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson10ConstructGraphsQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1TenthLessonGraphConstructionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson10ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "studentGradePolicy": "Instant companion-feedback only, not persisted as official school assessment."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "AUTHORING_COMPLETE_TESTS_WRITTEN",
+    "testExecution": "NOT_RUN_PER_STAGE_A_C_POLICY",
+    "CIExecution": "NOT_RUN",
+    "stageDExecuted": false,
+    "mainMerge": false,
+    "renderDeploy": false,
+    "humanAcademicApproval": "NOT_ASSERTED",
+    "productionRelease": "NO_GO_UNTESTED",
+    "note": "Source-aligned authoring checkpoint only; do not confuse with compilation/runtime tests, official student-grade persistence, classroom observations or academic human signoff."
+  },
+  "nextAction": "GRADE2_U01_L11_ONLY_AFTER_L10_A_B_C_AUTHORING_CLOSURE"
+}

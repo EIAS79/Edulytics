@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "gradeOrdinal": 129,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U08:L01",
+  "sourceEdition": "Illustrative Mathematics K5 First Edition 2021",
+  "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-1/lesson.html",
+  "sourceStudentPDFUrl": "https://cms-assets.illustrativemathematics.org/74v7trfnyclz2m7lzw3v559z8256",
+  "sourceStudentPdfPagesIndividuallyReviewed": 4,
+  "sourceSHA256": {
+    "teacherHtml": "30ac7612d28f521052af0829691f99d0c219e8266b703133ecfaf7eb878a8cde",
+    "preparationHtml": "73a5cee7b312ad7bb41a1783d4d183004a1ebae1f380d883d094f615a815f9de",
+    "studentTaskPdf": "1521ba63af5860607a93799c07bd96cb766050c9e3c1bd1b00d5022d7cf71305",
+    "originalBlackline": null
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U08-L01-SOURCE-01",
+      "activity": "Warm-up: Which One Doesn't Belong?",
+      "originalStudentPdfPage": 1,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U08-L01-SOURCE-02",
+      "activity": "1.1 Estimation Exploration: Diagram",
+      "originalStudentPdfPage": 2,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U08-L01-SOURCE-03",
+      "activity": "1.2 Estimation Exploration: Fraction Strip",
+      "originalStudentPdfPage": 3,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U08-L01-SOURCE-04",
+      "activity": "1.3 Estimation Exploration: Number Line",
+      "originalStudentPdfPage": 4,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U08-L01-SOURCE-05",
+      "activity": "Lesson Synthesis",
+      "originalStudentPdfPage": 4,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U08-L01-PUBLISHER-COOLDOWN",
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
+    }
+  ],
+  "sourceSpecificEvidence": {
+    "originalPages": 4,
+    "warmup": "Four distinct A–D figures, no unique excluded one",
+    "diagram": {
+      "optionalExact": "5/8",
+      "required": "three estimates"
+    },
+    "strip": {
+      "optionalExact": "1/3",
+      "required": "three estimates"
+    },
+    "numberLine": {
+      "optionalExact": "4/3",
+      "required": "three estimates",
+      "range": "0–2"
+    },
+    "stages": "warmup10, Activity1 15, Activity2 10, Activity3 10, synthesis10, gated cool-down5"
+  },
+  "rightsAndTeachingBoundary": "Three-part too-low/about-right/too-high estimates and multi-answer warm-up require teacher assessment; optional exact fraction values are not substitutes for original estimator and partner revision tasks.",
+  "sourceGraphicsEmbedded": false,
+  "sourcePublisherFullParityPercent": null,
+  "codePathRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l01-2021.rich-lesson-v2.json",
+  "codePathTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson1SourceAuditTests.cs",
+  "seedBindingAudit": {
+    "finding": "Unit8Lesson1 materializer previously pointed to Unit7Lesson13 embedded resource; corrected to Unit8Lesson1.",
+    "resourcePointer": "Edulytics.Data.Grade3.Unit8Lesson1RichV2",
+    "regressionTestAdded": true,
+    "build": "NOT_VERIFIED_MISSING_NUGET_RESTORE_ASSETS_NETSDK1004",
+    "testExecution": "NOT_VERIFIED"
+  },
+  "stageABC": "READY_FOR_STAGE_D_AUTHORING_ONLY",
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_RUN",
+  "executedTests": false,
+  "academicApproval": "NOT_CLAIMED"
+}

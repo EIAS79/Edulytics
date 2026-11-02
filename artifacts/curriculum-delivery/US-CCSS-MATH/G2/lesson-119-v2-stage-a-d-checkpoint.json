@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 119,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U07:L17",
+  "title": "Center Day 3 (optional)",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_PUBLIC_TEXT_REVIEWED_HUMAN_MEDIA",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-119-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-7/lesson-17/preparation.html",
+    "sourceSha256": "394ce0a0fe5dba47575c368b508524e64350174ee97bfa2e5a17253978b99530",
+    "standards": [
+      "CCSS:2.NBT.B.7",
+      "CCSS:2.NBT.B.8"
+    ]
+  },
+  "stageB": {
+    "status": "SIX_FIELD_SOURCE_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit7LastTenCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-119-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_INDEPENDENT_MATH_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit7LastTenQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit7ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit7Activities/Index.cshtml",
+    "teacherOnly": "Source original dice outcomes, partner decisions, target scoring, original game boards and student-selected explanations are NOT predetermined or automatically certified.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal119OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal119SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal119ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal119StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 120
+}

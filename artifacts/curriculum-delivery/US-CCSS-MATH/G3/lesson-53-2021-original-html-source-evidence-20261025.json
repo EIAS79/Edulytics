@@ -1,0 +1,143 @@
+{
+  "ordinal": 53,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L17",
+  "sourceDevice": "Our-CS",
+  "originalLocalLessonHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-3\\lesson-17\\lesson.html",
+  "sourceHtmlSha256": "bcee99a037a71b157c677015f892615af46d4866971ef74583ba6d604fe27e18",
+  "localPreparationSha256": "85085d3e2a4bdc2dec029204a8ed4a3d95fdb791a30f032a4f19f1b1f185a3f9",
+  "sourceSemanticElements": [
+    {
+      "key": "WU",
+      "source": "2021 student section1 comparisons132+115>200;228+195>400;217+151>400",
+      "mode": "THREE_EXACT_LEFT_SIDE_ORACLES_PLUS_TEACHER_TRUTH_JUDGEMENT",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A1-PRIYA",
+      "source": "212−98+308 Priya near 400 estimate",
+      "mode": "EXACT_422_ANCHOR_ESTIMATE_JUDGEMENT_TEACHER",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A1-CLARE",
+      "source": "252−92+203",
+      "mode": "EXACT_363_ANCHOR_ESTIMATION_TEACHER",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A1-HAN",
+      "source": "558+302−250",
+      "mode": "EXACT_610_ANCHOR_ESTIMATION_TEACHER",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A2-JADA",
+      "source": "326−32−84",
+      "mode": "EXACT_210_AND_TEACHER_METHOD",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A2-NOAH",
+      "source": "624+132+48",
+      "mode": "EXACT_804_AND_TEACHER_METHOD",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "PARTNER",
+      "source": "Partner exchange and reasonableness check",
+      "mode": "TEACHER_REVIEW_ONLY",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "BEAD-PHOTO",
+      "source": "Source 2021 wooden bead picture alt and credit",
+      "mode": "NO_PUBLISHER_PIXEL_REUSE_TEACHER_EXTERNAL",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "PUBLISHER-CD",
+      "source": "Gated Beads in the Bin",
+      "mode": "GATED_NOT_COPIED_FIRSTPARTY_EXIT_ONLY",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    }
+  ],
+  "originalStudentSections": 3,
+  "originalFigureAlt": "Wooden beads",
+  "publisherFigurePixelsReviewed": false,
+  "originalStudentPdfRead": false,
+  "arithmetics": [
+    [
+      "132 + 115",
+      247,
+      200,
+      true
+    ],
+    [
+      "228 + 195",
+      423,
+      400,
+      true
+    ],
+    [
+      "217 + 151",
+      368,
+      400,
+      false
+    ]
+  ],
+  "sourceStories": [
+    {
+      "key": "PRIYA",
+      "name": "Priya",
+      "equation": "212 − 98 + 308",
+      "ans": 422,
+      "source": "212 initial, 98 used, 308 added",
+      "role": "Is about 400 reasonable?"
+    },
+    {
+      "key": "CLARE",
+      "name": "Clare",
+      "equation": "252 − 92 + 203",
+      "ans": 363,
+      "source": "252 initially, 92 used, 203 received",
+      "role": "Estimate then compute if necessary."
+    },
+    {
+      "key": "HAN",
+      "name": "Han",
+      "equation": "558 + 302 − 250",
+      "ans": 610,
+      "source": "558 and 302 combined, 250 spent",
+      "role": "Estimate remaining amount."
+    },
+    {
+      "key": "JADA",
+      "name": "Jada",
+      "equation": "326 − 32 − 84",
+      "ans": 210,
+      "source": "326 initially, 32 given, 84 used",
+      "role": "Solve one problem; check reasonableness."
+    },
+    {
+      "key": "NOAH",
+      "name": "Noah",
+      "equation": "624 + 132 + 48",
+      "ans": 804,
+      "source": "624 Monday,132 Tuesday,48 Wednesday",
+      "role": "Solve one problem; check reasonableness."
+    }
+  ],
+  "sourceNumericChecks": 8,
+  "teacherTasks": 9,
+  "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson17BeadsReasonablenessSourceTests.cs",
+  "status": "READY_FOR_STAGE_D_A_B_C_SEMANTIC_ONLY"
+}

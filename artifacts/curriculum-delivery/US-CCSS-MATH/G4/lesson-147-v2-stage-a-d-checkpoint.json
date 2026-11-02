@@ -1,0 +1,52 @@
+{
+  "ordinal": 147,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L10",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_ORIGINAL_PREP_STUDENT_SOURCE_INTAKE_REUSED",
+    "B": "ESTIMATION_BOUNDS_ASSUMPTIONS_DENTAL_2_MINUTES_TWICE_DAILY_AND_STUDENT_AUTHORED_EXPLORATION_RESTORED",
+    "C": "EXISTING_MULTISTEP_ARITHMETIC_REUSED_SUBSKILL_SCOPED_TEST_WRITTEN_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "80a136f79c5cd75a57b632bfad535a63e2e0d1bcfc21efc88380d408f8f50f0a",
+    "teacher": "e2853d1b6465672e5288fe1a1b1f05e30d7e658eb7dbcaa7deca20a7242838e2"
+  },
+  "firstPartyCooldown": {
+    "prompt": "If this routine holds for 30 days, estimate the total brushing minutes.",
+    "teacherAnswer": "120 minutes."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 local Our-CS source-only inspection",
+    "originalSourceActivities": [
+      "Warm-up: Estimation Exploration: No Driver Required (10 minutes)",
+      "Activity 1: Dental Care (10 minutes)",
+      "Activity 2: Get Your Classmates to Estimate (15 minutes)",
+      "Activity 3: Facilitate Your “Estimation Exploration” Activity (10 minutes)",
+      "Cool-down: Reflection (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Here are pictures showing the exterior and interior of a parking tower in Wolfstadt, Germany. The parking is automated: each car goes up on a lift and is then placed in a parking space. | Attribution: By falco. Pixabay. Pixabay. Source. | Attribution: By pxher",
+      "Jada brushes for 2 minutes, twice a day. She changes her toothbrush every 3 months.​​​​​​ | Based on this information, make some estimates and show your reasoning: | Attribution: By PDPics. Pixabay. Pixabay. Source.",
+      "It’s your turn to create an estimation problem. | Think of situations or look around for images that would make interesting estimation problems. Write down 4–5 ideas or possible topics. | Choose your favorite idea. Then:"
+    ],
+    "allowedFamily": "usccss.g4.u06.l23.four_operation_contexts",
+    "teacherOnlyTasks": [
+      "Original parking tower photographs with estimation bounds",
+      "Each student's 4–5 idea brainstorming, written prompt and peer presentation",
+      "Original teacher reflection Cool-down"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal147EstimationTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
+}

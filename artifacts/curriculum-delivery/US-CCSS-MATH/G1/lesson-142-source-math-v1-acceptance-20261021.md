@@ -1,0 +1,23 @@
+# Grade 1 ordinal 142 | Unit 8, Lesson 6 — Internal V1 original source / teaching / Practice acceptance
+
+Source edition: Illustrative Mathematics (2021 first edition), teacher preparation: https://im.kendallhunt.com/k5/teachers/grade-1/unit-8/lesson-6/preparation.html. Authorized read-only Our-CS teacher full HTML SHA-256 c3543159e0b1e5c757e3b171caf6425ae856bd2e86838df886d4aea1637dba08; student mirror SHA-256 4e41fb1f943c740a41f4ab6a9f8522d47db4bcb6f6ee14dd8117b6bcaa8a3b00; teacher preparation SHA-256 7d14dd3dc06dda21e14bc0eccd0e7961daf7b1ab7e8ae184c48b2640b48e44a0; rehashed 2026-10-21 without modifying original source files.
+
+## A: Original source student tasks and mathematical objectives
+Four original carnival comparisons with differences 5, 10, 4 and 6; students WRITE TWO original ride questions using the given Diego/Priya/Jada/Kiran/Noah totals, subject to source-specific teacher rubric.
+Source checkpoint task review: {"reviewedStudentFacingText": true, "originalFourCarnivalComparisons": [{"context": "Mai 12 vs Lin 7 ride tickets", "difference": 5}, {"context": "17 blue vs 7 pink cotton-candy bags", "difference": 10}, {"context": "13 toys vs 9 stuffed animals", "difference": 4}, {"context": "Ferris wheel capacity 20 vs swings 14", "difference": 6}], "originalSourceAuthoredTask": "Using rides Diego7, Priya11, Jada3, Kiran6, Noah9, student must WRITE and ANSWER TWO distinct questions", "discoveredGap": "Existing authored teaching omitted Ferris wheel context and instructed only generic computation instead of clearly requiring two student-authored source questions"}
+
+## B: Edulytics first-party learner teaching
+Already authored Rich V2 source-goal instruction, version and corrections are reused; stage B record: {"existingSourceSpecificContentReused": true, "repairFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs", "repairCommit": "19a8c3387bbb936fbee8a1ad23ef06b89293f687", "firstPartyTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-142-original-two-ride-questions-authorship-rubric.json", "rubricCommit": "442c39e0eca19b73c8911c2dc5216969642e9c97", "sourcePhotoCopied": false}. Neither publisher artwork nor unverified third-party image rights are asserted.
+
+## C: Independent first-party Practice and negative controls
+Exact registered source-goal family/families: usccss.g1.u08.l06.compare_difference_story. Verified first-party C# tests: tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit8ReviewPracticeTests.cs [SHA-256 183822c226f6b9f5b3360e2ed358ec3be6bca73b0c45339e04e2764ef1a5213d], tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons137To146SourceMathTests.cs [SHA-256 4cc7f1dd9b6d864a1d534f9a803a19f302b03c13072411ecd54705db9f3ea406]. Source-goal generation, correct/incorrect or malformed answers and open-answer alternatives are checked by the referenced test suites. Previous unchanged-code G1 maths suite 779/779 and Mathematics Foundation 1800/1800 succeeded on GitHub.
+
+## D: Actual learner HTML / persistence proof
+Pinned application code SHA 5fb0d3786d52379e60de01e3773297afc34d3721, authenticated disposable-school HTTPS run https://github.com/EIAS79/Edulytics/actions/runs/39600111939, student evidence artifact 12345398813, individual technical reconciliation artifact 12346166910. Per-lesson genuine signed-in HTML-unescaped response digest c4dd16fc90db84de58f9c1a3d9be8c4ac75c8fa519322376c51438bbdc6efa0d includes volatile tokens. Two selected original teaching snippets and real persisted correct / well-formed wrong / malformed digital score were checked. This is NOT pixel parity or pupil-authored classroom submission.
+
+## Original authored learning task and teacher rubric
+First-party learner instructions and the source-specific rubric artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-142-original-two-ride-questions-authorship-rubric.json preserve actual authored work for teacher review. No actual student's drawing, stories, schedules or real teacher observation is claimed.
+
+## Limits and release decision
+Four original carnival comparisons with numerical differences 5,10,4,6 and separate learner-authored TWO ride questions from Diego/Priya/Jada/Kiran/Noah ride totals; teacher-authored rubric covers actual original questions.
+CC BY 4.0 2021 edition textual source attribution does not by itself clear publisher trademarks, original graphics or third-party artwork; Edulytics uses independently authored teaching and maths. Scope is internal first-party source-goal academic readiness only: no external signature, no actual original child's work, no owner production UAT, no PR merge, no live production proof. Grade release: NO_GO.

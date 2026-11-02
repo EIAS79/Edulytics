@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "stage": "07 INDEPENDENT ARITHMETIC ORACLE, NOT FULL ACADEMIC RUBRIC",
+  "verificationPolicy": "Independent C# test oracle uses only raw sampled question parameters; never expectedAnswer or engine Solve as oracle",
+  "expectedCases": 900,
+  "gradeBandBreakdown": {
+    "grade3": 60,
+    "grade5": 60,
+    "grade6": 60,
+    "highSchool": 720
+  },
+  "families": 15,
+  "clauses": 15,
+  "seedCasesPerFamily": 60,
+  "sourceGapsUnresolved": 15,
+  "parentAddressingStillMissing": 7,
+  "humanAcademicSignoffCount": 0,
+  "lessonPracticePromotionCount": 0,
+  "certification": "NO-GO",
+  "limitations": [
+    "Sampled numeric output agreement is not proof of all possible values nor diagram/construction/explanation grading",
+    "Some child clauses require multiple representations and justification beyond the numeric family",
+    "Publisher does not explicitly reference these 15 child clauses in canonical blueprint evidence",
+    "Tests do not grant student routing, assessment/mastery, or academic approval"
+  ],
+  "files": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCommonCoreOrphanChildIndependentOracleTests.cs"
+  ]
+}

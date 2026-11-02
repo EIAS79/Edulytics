@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 63,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L26",
+  "title": "What's the Story?",
+  "sourceBasis": {
+    "device": "Our-CS original 2021 Grade 1 cached textbook (READ ONLY)",
+    "teacherLessonRelativePath": "unit-3/lesson-26/lesson.html",
+    "indexedSourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json",
+    "reusedExistingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json"
+  },
+  "stageA": {
+    "originalStudentTeacherActivitiesRead": [
+      "Number Talk 15−10,15−12,16−10,16−13",
+      "Two Elena unknown-change stories: 6+□=18 and 18−□=6",
+      "Four distinct Han pencils unknown-position stories and student explanations"
+    ],
+    "existingCandidateCompared": true,
+    "documentedGap": "Existing teaching included first Elena task but did not fully represent opposite story and Han's four original story forms",
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "allAccessibleOriginalStudentAndTeacherTasksCompared": true,
+    "originalWarmup": "15−10,15−12,16−10,16−13",
+    "originalElenaPairs": [
+      "6+□=18 =>12",
+      "18−□=6 =>12"
+    ],
+    "originalHanFourPositions": [
+      "□+9=15 =>6",
+      "15−□=9 =>6",
+      "9+□=15 =>6",
+      "15−9=□ =>6"
+    ],
+    "protectedSourceSectionDCheckpointVerified": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": null
+  },
+  "stageB": {
+    "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
+    "existingRichV2Reused": true,
+    "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
+    "versionField": "StorySourceContentVersion",
+    "sourceArtworkCopied": false,
+    "contentVersion": "us-ccss-g1-u03-l26-original-activities-v7",
+    "v6ToV7PersistedUpgradeGuarded": true,
+    "allFourOriginalHanUnknownRolesInLearnerText": true
+  },
+  "stageC": {
+    "reuseOfExistingPractice": true,
+    "existingMathGeneratorAndVerifierPreserved": true,
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "storyGeneratorModesReviewed": [
+      1,
+      2,
+      4,
+      6,
+      7
+    ],
+    "newOriginalHanStory3AndStory4Generated": true,
+    "independentCorrectWrongMalformedAndSeededMathTestsAuthored": true,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "assertionCommit": "89b32ac0e91fe9505d632467a0a8f6362d163095",
+    "CIExecutedDuringAuthoring": false,
+    "targetedTestPassClaimed": false,
+    "authenticatedGradeRendering": "PENDING_FINAL_CI",
+    "realPracticeScorePersistence": "PENDING_FINAL_CI",
+    "rightsAndVisualEvidence": "PENDING",
+    "lessonAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "academicStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "A-C source math and first-party code closed for original publicly accessible 2021 Elena/Han tasks. Hold at D; proceed 64; no CI until grade freeze.",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-63-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherCheckpointVerbatimVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 63,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U03:L26",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Stage D code/runtime tested in the exact-run GitHub artifact; full original-V1 internal acceptance separately governed by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-63-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

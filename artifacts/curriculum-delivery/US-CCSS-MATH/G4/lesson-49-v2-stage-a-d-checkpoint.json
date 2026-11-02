@@ -1,0 +1,44 @@
+{
+  "ordinal": 49,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L04",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_supporting.decimals.compare_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "4f6b697d2de9732883e91eff50d3f873c0dd22dc5ad926325718eb872b1e549b",
+    "teacherLesson": "e12333708414604805c1b5a940b4d8ef579d70b16a89e9764ed6722d1ab9b032",
+    "studentPdf": "7fa1fe7fc1d3e04520273384ce324166d58d7fcef1499e45f0e00aa1bf049b26"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up:  Estimation Exploration\t (10 minutes)",
+    "Activity 1:  All in Order\t (15 minutes)",
+    "Activity 2:  400-Meter Dash in a Flash\t (20 minutes)",
+    "Cool-down:  From Least to Greatest\t (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "supporting.decimals.compare"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-49-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:44+01:00",
+  "closeAtLocal": "2026-10-26T22:41:44+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

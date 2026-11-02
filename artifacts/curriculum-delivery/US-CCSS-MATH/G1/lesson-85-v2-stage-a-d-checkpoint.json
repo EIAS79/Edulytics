@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 85,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L20",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "57008ac700f8814140758da2674b96827731fe205d1f34affdf9da5509b53b09",
+    "studentSha256": "fdb83085d0c895b3b2b5ba1a05873e12a6d5f0fb7b4814c3772e2f2ae5f2052a",
+    "teacherPreparationSha256": "20097467e88523e23a1343d1eed83849ea7be50d2c556fd33e544620e97b550e",
+    "teacherActivityHeadings": [
+      "Activity 1: All The Ways to Make 94 (20 minutes)",
+      "Activity 2: Mystery Bags (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Original make 94 all permitted regroupings and source mystery bag A–D task; existing source-corrected content reused",
+    "classification": "REUSE_CONFIRMED_PRE_FINAL_EVIDENCE",
+    "original2021PublicTeacherPage": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-4/lesson-20/lesson.html",
+    "originalNumberTasks": [
+      "94 tens-and-ones decompositions",
+      "Bag A: five tens, two ones => 52",
+      "Bag B: four tens, twenty-five ones => 65",
+      "Bag C: 49 with 29 ones => 2 tens",
+      "Bag D: 36 with 2 tens => 16 ones"
+    ],
+    "originalWarmupKnownActual": 76,
+    "originalEstimatedFigureAndPartnerDiscussionNotAutoGraded": true
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
+    "sourceCorrectionsCommits": [],
+    "publisherArtworkNotClaimedLicensed": true
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "allTen94DecompositionsMathOracle": "94 = 10*tens + ones for tens from 0 through 9; 10 possible representations",
+    "originalSourceFourBagStrictCorrectWrongTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson85Original94WaysAndMysteryBagTests.cs",
+    "authoredExactSourceTestsCommit": "0a3cb411c6886f571223a7d0edd0b25aa23e1a1c",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": false,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue original ordinal86 without running Stage D or CI. Whole-grade publish remains NO_GO.",
+  "originalSourceBagCases20261020": {
+    "sourceActivity": "U04 L20 original 2021 mystery bags",
+    "exactCases": [
+      {
+        "bag": "A",
+        "tens": 5,
+        "ones": 2,
+        "number": 52,
+        "required": "number"
+      },
+      {
+        "bag": "B",
+        "tens": 4,
+        "ones": 25,
+        "number": 65,
+        "required": "number"
+      },
+      {
+        "bag": "C",
+        "ones": 29,
+        "number": 49,
+        "required": "tens=2"
+      },
+      {
+        "bag": "D",
+        "tens": 2,
+        "number": 36,
+        "required": "ones=16"
+      }
+    ],
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit4FinalQuestions.cs",
+    "sourceModes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "priorRegroupingModes": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "independentOracle": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4Unit5IndependentMathOracleTests.cs",
+    "negativeControls": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit4FinalPracticeTests.cs",
+    "codeImplemented": true,
+    "testsPassedAtFrozenHead": false,
+    "authRealStudentGradeAndPersist": "PENDING",
+    "originalFiguresProvenance": "PENDING",
+    "teacherAuthoredDrawings": "NOT_CLAIMED",
+    "academicAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyBoundaries": "76-cube illustrated estimation before reveal, physical cube drawings, partner-authored mystery bags and oral reasoning not graded as completed by numeric contracts",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "sourceBoundary": "Source-exact 94 ways and four numeric bags in existing engine; independent teacher assessment of drawings/estimates outside auto-grading; original protected 68 Cool-down inaccessible, not represented as copied or verified."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 85,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L20",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-85-stage-a-c-source-implementation-20261021.md",
+    "exactRunProofBoundary": "All ten 94 tens/ones groupings and 4 original bag math cases independently verified; actual pupil drawings/physical class work not certified"
+  }
+}

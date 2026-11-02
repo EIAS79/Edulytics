@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 64,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L12",
+  "title": "Equations with Unknowns",
+  "stageA": {
+    "status": "SOURCE_REVIEWED_PUBLIC_IM2021",
+    "originalTeacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-12/preparation.html",
+    "originalTeacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-12/lesson.html",
+    "originalCanonicalBodySha256": "83eedaf9016fa030f05ec35783ce909c8f204cd669679045f618d42d9295b202",
+    "orderedOutcomeCodes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "authenticSourceSpecificTasks": "Original True/False warm-up: 40=10+27+3 TRUE;47=20+7+3+10 FALSE (right side40);60=3+47+10 TRUE. Original Activity1 unknown in every position. Source riddle: start15 jump right17 end32; unknown start and jump20 LEFT end33 gives start53; start42 end80 jump38;76 jump27 LEFT end49; unknown start jump19 RIGHT end67 gives start48. Source uses '?' in equations, honest student working on genuine 0..100 number lines, not just answer key. Teacher checks diagrams and reasoned inverse relationship.",
+    "restrictedBoundary": "Actual riddle number-line jumps, mathematical equations with unknown marked ?, source partner modelling observed by teacher."
+  },
+  "stageB": {
+    "status": "SOURCE_SHA_GUARDED_SIX_FIELDS_WRITTEN",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4UnknownArrowRiddlesCorrection.cs",
+    "persistedPredecessorValidation": true
+  },
+  "stageC": {
+    "status": "PENDING"
+  },
+  "closure": {
+    "aCStatus": "A_C_PENDING",
+    "stageD": "NOT_STARTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "G2_U04_L12_STAGE_C"
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 25,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L07",
+  "title": "Subtract Two Digits",
+  "unitNumber": 2,
+  "lessonNumber": 7,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ORIGINAL_TEACHER_PREPARATION_LESSON_REVIEW",
+    "sourceBook": "Local read-only archived Grade2 Unit2 lesson7 HTML",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-7/preparation.html",
+    "sourceBodySha256": "6d246684c5e242e12b86473c71f243dfd45405df937540dc65105fc8f01ddf10",
+    "sourceSemanticSha256": "a251def0ef67117314e17d6f4435baaba456c90dc25052c49310f4788a95a25b",
+    "addressingStandards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.6",
+      "CCSS:2.NBT.B.9"
+    ],
+    "warmup": "Source two visually different ways to compose55, two groups of five as one ten.",
+    "activity1": "Original 46−28=18 and93−54=39. Exchange one ten for ten ones, compare alternate correct student methods in MLR8 partner discussion.",
+    "activity2": "Original four-person game Use Blocks to Take Away: Diego/Lin/Jada/Han printed player and action cards; two authentic updates per player; group combines ending numbers.",
+    "sourceGap": "Values printed on original game card sheets not exposed by local public teacher HTML; NOT invented or misattributed.",
+    "coolDown": "Teacher-only Decompose to Subtract sheet not copied. Independent authored exit explicitly separate."
+  },
+  "stageB": {
+    "status": "COMPLETE_EXACT_SHA_SOURCE_PREDECESSOR_GUARDED_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2TwoDigitTradeTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original source URL, canonical body SHA, ordered outcomes, six unchanged predecessor learner fields, allowed previous persisted content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_STUDENT_PRACTICE_FOUR_EXACT_MATH_FAMILIES_TESTS_WRITTEN_NOT_RUN",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2SeventhLessonSubtractTwoDigits.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson7SubtractTwoDigitsContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson25ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson25Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l07.subtract_two_digits_trade",
+      "usccss.g2.u02.l07.trade_ten_ones_count",
+      "usccss.g2.u02.l07.check_inverse_addition",
+      "usccss.g2.u02.l07.firstparty_two_digit_subtraction"
+    ],
+    "independentExamples": "64−27=37;72−35=37",
+    "independentExit": "73−46=27;85−57=28;62−34=28",
+    "teacherOnly": "Actual block/partner/group card reading, authentic card-number actions and group ending totals require teacher; numeric entry cannot certify them.",
+    "security": "Protected StudentPortal role, verified adoption and published lesson; antiforgery POST, max input length, no official grade stored.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2TwoDigitTradeTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2SeventhLessonSubtractTwoDigitsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson7SubtractTwoDigitsQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson25ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "ciExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "readyForStageD": true,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "productionRelease": "NO_GO",
+    "mainMerge": false,
+    "deployed": false
+  },
+  "nextAction": "BEGIN_G2_U02_L08_GRADE_ORDINAL26_STAGE_A_B_C_SEQUENTIAL"
+}

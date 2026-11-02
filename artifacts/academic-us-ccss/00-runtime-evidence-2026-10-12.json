@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "version": "CCSSM-2010",
+  "observedDate": "2026-10-12",
+  "verification": "LIVE_READ_ONLY",
+  "academicGate": "PARTIAL",
+  "academicCertification": "NO-GO",
+  "schoolDataMutated": false,
+  "scope": {
+    "grades": "1-12",
+    "kindergartenIncluded": false,
+    "pedagogicalLessons": 1560,
+    "parentStandards": 363,
+    "childClauses": 121,
+    "sourceBlueprints": 17
+  },
+  "github": {
+    "mainBaselineSha": "fd72849823ae31b92e58fb420a373218fc25b328",
+    "pr": 464,
+    "prBranch": "audit/us-ccss-academic-gates-20261011",
+    "observedPrHeadSha": "9d7d99d4605bf03f937ad5d0de0e03c0d4668875",
+    "prIsDraft": true,
+    "doesNotRepresentCertifiedRelease": true
+  },
+  "render": {
+    "workspaceId": "tea-dakq3dh594qs7395pgt0",
+    "serviceId": "srv-dakq5n2fngtc73a62i10",
+    "productionServiceName": "Edulytics",
+    "deployId": "dep-db5v77gu01pc73f3b390",
+    "liveDeployCommitSha": "fd72849823ae31b92e58fb420a373218fc25b328",
+    "liveDeploymentStatus": "live",
+    "finishedAtUtc": "2026-10-11T20:40:50.480198Z",
+    "source": "Render deployment list for production service",
+    "notStagingAcceptance": true
+  },
+  "neon": {
+    "projectId": "tiny-lab-44877119",
+    "productionBranchId": "br-frosty-block-b52tnjky",
+    "observedAtUtc": "2026-10-11T23:59:34.883Z",
+    "frameworkCode": "US-CCSS-MATH",
+    "frameworkVersion": "CCSSM-2010",
+    "importIsComplete": true,
+    "persistedPedagogicalLessonCount": 1560,
+    "sourceDigest": "5f80bbc801950969d2f4085cd31b113851fd09fc07d3066d5395eb7102c9df36",
+    "contentDigest": "b9e10bdceab9cb587ba9ea25797336d85b9ef76442b8783dff0ef770696c747f",
+    "ambiguousActiveHighSchoolAdoptions": 8,
+    "legacyDistributionByLogicalLevel": {
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2
+    },
+    "legacyPathway": "Course/pathway mapping",
+    "authorizesContentMigration": false,
+    "backupSnapshotStatus": "NOT_FRESHLY_VERIFIED"
+  },
+  "phase00Exit": {
+    "sourceBaselineLocked": true,
+    "productionDeploymentVerifiedReadOnly": true,
+    "productionDatabaseVerifiedReadOnly": true,
+    "fullCandidateShaLocked": false,
+    "authenticatedStagingVerified": false,
+    "independentAcademicReviewerAssigned": false,
+    "sourceLicensingSigned": false,
+    "status": "PARTIAL_NOT_PASS"
+  },
+  "note": "Proof of observed code/deployed/database state, not academic correctness. None of the eight legacy school records has been rebound. CI checks and academic review remain independent release gates."
+}

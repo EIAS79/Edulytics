@@ -1,0 +1,42 @@
+{
+  "ordinal": 60,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L15",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "f0949e515d9fa4a976e0169f76a63e2b8c1745889b330ec778685e6ff6a29ecd",
+    "teacher": "d8b1a653f46fede6aaa14178f913425587159babc5b14937d3b9eab3883866b8",
+    "student": "bd81069ebe97aad3e85f9a148a4406f1c82f542b5552af74054309f9b6468043"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Is 374,500 closer to 370,000 or 380,000?",
+    "teacherAnswer": "370,000"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:12:57+01:00",
+  "closeAtLocal": "2026-10-26T23:12:57+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-60-local-source-guard.test.cjs"
+  }
+}

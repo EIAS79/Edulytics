@@ -1,0 +1,204 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.6.25-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L25",
+      "CultureCode": "en",
+      "Title": "Paper Flower Decorations (optional)",
+      "ExplanationParagraphs": [
+        "Optional 2021 IM Grade 4 lesson: Create paper flowers and analyse repeating patterns while solving multi-step problems. No new content standards are introduced; work supports 4.OA.A.3 and 4.OA.C.5 and mathematical modelling.",
+        "Warm-up: count the displayed sixteen flowers and describe repeated colours and arrangements. Activity 1 is physical paper-flower construction with six tissue-paper layers and teacher observation. Activity 2 compares Priya's 2 big + 2 small and Jada's 1 big + 2 small cycles across twelve-flower garlands. Activity 3 invites student-authored word problems and teacher-led peer review.",
+        "Priya's twelve-flower pattern has three four-flower cycles, giving six big and six small. Jada's has four three-flower cycles, giving four big and eight small. Twenty-five of each type need 250 big and 350 small flowers, for 600 flowers total.",
+        "With 155 flowers and sixteen required per garland, exactly nine whole garlands use 144 flowers and eleven remain. Each flower takes one minute of cutting and two of finishing, requiring 465 worker-minutes in total; if two pupils split 78 and 77 while working simultaneously, completion takes 234 minutes.",
+        "First-party Cool-down: fourteen Priya-pattern garlands and nine Jada-pattern garlands need 14×6+9×4 = 120 big flowers. This is independently authored; the optional publisher lesson has no specified original Cool-down.",
+        "Real flower construction, reading photographs, creating garland diagrams, original student-generated problems and partner reasoning require teacher review. The numerical Practice family does not pretend to grade craftwork or drawing quality."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Repeat a pattern over complete cycles",
+          "Definition": "A twelve-flower garland is built by repeating a short colour/size pattern.",
+          "Rule": "Divide total positions by cycle length; multiply each size count by the number of cycles.",
+          "Example": "Priya: 12/4=3 cycles, so 3×2=6 big and 6 small; Jada: 12/3=4 cycles, so 4 big and 8 small."
+        },
+        {
+          "Title": "Combine garland counts without double-counting",
+          "Definition": "Each pattern yields a different number of big and small flowers per garland.",
+          "Rule": "Multiply each per-garland count, then add compatible flower sizes.",
+          "Example": "25 Priya and 25 Jada garlands need 25×(6+4)=250 big flowers."
+        },
+        {
+          "Title": "Interpret whole garlands and working time",
+          "Definition": "A partial group of sixteen cannot make a complete garland; two workers share labour.",
+          "Rule": "Use integer quotient and remainder for complete garlands; distinguish total worker-minutes from elapsed parallel time.",
+          "Example": "155 = 9×16+11; 155×3=465 worker-minutes; 78 flowers×3min =234min longest parallel share."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Warm-up: sixteen paper flowers",
+          "Question": "The 2021 flower display has four rows of four flowers. How many flowers do you see? Describe a way to group them.",
+          "Method": "Arrays or groups of four.",
+          "Steps": [
+            "There are four rows.",
+            "Each row has four flowers.",
+            "Four groups of four total 4×4=16 flowers."
+          ],
+          "Answer": "16 flowers",
+          "Check": "4+4+4+4=16; teacher reviews colour grouping in original photograph."
+        },
+        {
+          "Title": "Priya's twelve-flower garland",
+          "Question": "Priya repeats two big flowers then two small flowers on a 12-flower garland. How many of each size?",
+          "Method": "Represent three cycles.",
+          "Steps": [
+            "The cycle contains four flowers: 2 big and 2 small.",
+            "A twelve-flower garland has 12÷4=3 complete cycles.",
+            "Three cycles make 3×2=6 big and 6 small."
+          ],
+          "Answer": "6 big, 6 small",
+          "Check": "6+6=12."
+        },
+        {
+          "Title": "Jada's twelve-flower garland",
+          "Question": "Jada repeats one big flower then two small flowers on a 12-flower garland. How many of each size?",
+          "Method": "Represent four cycles.",
+          "Steps": [
+            "The cycle contains three flowers: 1 big and 2 small.",
+            "A twelve-flower garland has 12÷3=4 complete cycles.",
+            "Four cycles make 4 big and 8 small."
+          ],
+          "Answer": "4 big, 8 small",
+          "Check": "4+8=12."
+        },
+        {
+          "Title": "Twenty-five garlands of each type",
+          "Question": "Priya and Jada make 25 garlands of each twelve-flower pattern. How many big and small flowers altogether?",
+          "Method": "Multiply per-garland size counts.",
+          "Steps": [
+            "Each Priya garland needs six big and six small; each Jada garland needs four big and eight small.",
+            "Big flowers: 25×6+25×4=150+100=250.",
+            "Small flowers: 25×6+25×8=150+200=350.",
+            "Together they need 250+350=600 flowers."
+          ],
+          "Answer": "250 big and 350 small",
+          "Check": "25×12+25×12=600 total."
+        },
+        {
+          "Title": "One hundred fifty-five flowers and sixteen-flower garlands",
+          "Question": "Diego and Kiran have 155 paper flowers. Each garland uses 16. How many complete garlands can they make, and how many remain?",
+          "Method": "Use quotient and remainder in context.",
+          "Steps": [
+            "Nine garlands need 9×16=144 flowers.",
+            "Ten garlands would need 160, more than 155.",
+            "155−144=11 flowers remain unused."
+          ],
+          "Answer": "9 complete garlands; 11 leftover",
+          "Check": "155=16×9+11, and 0≤11<16."
+        },
+        {
+          "Title": "Two students' flower-making time",
+          "Question": "Each flower needs one minute to cut strips and two to finish. Two students make 155 flowers, dividing the count as equally as possible and working simultaneously. How long until all are finished?",
+          "Method": "Clarified independent parallel-work interpretation; original is open-ended.",
+          "Steps": [
+            "One flower requires 1+2=3 minutes of work.",
+            "The workers make 78 and 77 flowers; the total work is 155×3=465 worker-minutes.",
+            "The first worker spends 78×3=234 minutes; the second spends 77×3=231 minutes.",
+            "Because they work at the same time, all flowers are finished after the longer 234-minute shift."
+          ],
+          "Answer": "234 minutes (3 hours 54 minutes)",
+          "Check": "78+77=155; if not simultaneous, 465 total worker-minutes."
+        },
+        {
+          "Title": "Independent Edulytics Cool-down",
+          "Question": "An Edulytics first-party plan needs 14 Priya-pattern garlands and 9 Jada-pattern garlands. How many big flowers are needed?",
+          "Method": "Use both pattern rules.",
+          "Steps": [
+            "A Priya garland needs six big flowers, so fourteen use 14×6=84.",
+            "A Jada garland needs four big flowers, so nine use 9×4=36.",
+            "Add both amounts: 84+36=120 big flowers."
+          ],
+          "Answer": "120 big flowers",
+          "Check": "14×6+9×4=120."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating two large plus two small as two of each on the entire twelve-flower garland.",
+          "WhyWrong": "The cycle repeats three times.",
+          "Correction": "Divide 12 by 4 cycles and multiply each size count by three."
+        },
+        {
+          "Mistake": "Rounding 155÷16 up to ten complete garlands.",
+          "WhyWrong": "Ten full garlands require 160 flowers, five more than available.",
+          "Correction": "Nine complete garlands use 144 and eleven remain."
+        },
+        {
+          "Mistake": "Reporting 465 minutes of elapsed parallel time for the two students.",
+          "WhyWrong": "465 is combined worker-minutes, not the time when both work simultaneously.",
+          "Correction": "Explicitly state the split and whether workers operate in parallel; with 78/77 and identical rates elapsed time is 234 minutes."
+        }
+      ],
+      "SummaryPoints": [
+        "Priya's repeating garland uses 6 big and 6 small; Jada's uses 4 big and 8 small per 12 flowers.",
+        "25 garlands of each type require 250 big and 350 small flowers.",
+        "155 flowers make 9 complete 16-flower garlands with 11 remaining.",
+        "155 flowers require 465 worker-minutes; with two equal-rate workers splitting 78/77 in parallel, elapsed time is 234 minutes.",
+        "Teacher reviews original craftwork and student-created questions; independent Cool-down needs 120 big flowers."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Two twelve-flower repeating patterns",
+          "Description": "First-party size-count model, not the publisher's flower photographs.",
+          "PrimaryLabel": "Priya: (big,big,small,small)×3",
+          "SecondaryLabel": "Jada: (big,small,small)×4",
+          "Items": [
+            "Priya: 6 big and 6 small",
+            "Jada: 4 big and 8 small",
+            "25 pairs of garlands: 250 big, 350 small"
+          ],
+          "SecondaryItems": [
+            "Teacher checks actual student-drawn colour and size patterns."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Full garlands and unused flowers",
+          "Description": "Independent quotient-and-remainder diagram expressed as equations.",
+          "PrimaryLabel": "155 flowers, groups of 16",
+          "SecondaryLabel": "9 full garlands, 11 unused",
+          "Items": [
+            "16×9=144",
+            "16×10=160>155",
+            "155−144=11"
+          ],
+          "SecondaryItems": [
+            "Only complete garlands count."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Two-worker production time",
+          "Description": "Independent arithmetic model; requires the explicit parallel-work assumption.",
+          "PrimaryLabel": "155 flowers at 3 minutes each",
+          "SecondaryLabel": "234min until all completed",
+          "Items": [
+            "78+77=155",
+            "78×3=234min",
+            "77×3=231min",
+            "Total effort=465 worker-minutes"
+          ],
+          "SecondaryItems": [
+            "Student-authored problems remain teacher reviewed."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

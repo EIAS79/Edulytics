@@ -1,0 +1,39 @@
+@model Edulytics.Web.Curriculum.Grade3.Grade3MultiplicationTable
+@if(Model.Size is >= 1 and <= 10 &&
+    Model.RectangleRows >= 0 && Model.RectangleRows <= Model.Size &&
+    Model.RectangleColumns >= 0 && Model.RectangleColumns <= Model.Size) {
+    <div style="overflow-x:auto;margin:12px 0">
+        <table style="border-collapse:collapse;text-align:center;table-layout:fixed;width:@((Model.Size+1)*36)px;min-width:@((Model.Size+1)*36)px">
+            <caption>@Model.Size by @Model.Size multiplication table. Headers label factors; only data squares count toward area.
+                @if(Model.RectangleRows > 0 && Model.RectangleColumns > 0) {
+                    <span>Outlined area: @Model.RectangleRows rows and @Model.RectangleColumns columns, starting at the upper-left data square.</span>
+                }
+            </caption>
+            <thead><tr><th scope="col" style="border:1px solid #47758a;background:#d4e8ee">×</th>
+                @for(var c=1;c<=Model.Size;c++) {
+                    <th scope="col" style="border:1px solid #47758a;background:#d4e8ee;padding:0;box-sizing:border-box;width:36px;height:36px">@c</th>
+                }
+            </tr></thead>
+            <tbody>
+                @for(var r=1;r<=Model.Size;r++) {
+                    <tr><th scope="row" style="border:1px solid #47758a;background:#d4e8ee;padding:0;box-sizing:border-box;width:36px;height:36px">@r</th>
+                        @for(var c=1;c<=Model.Size;c++) {
+                            var inside=r<=Model.RectangleRows && c<=Model.RectangleColumns;
+                            var corner=inside && r==Model.RectangleRows && c==Model.RectangleColumns;
+                            var given=Model.SeedTwos && ((r==2 && c<=5) || (c==2 && r<=5));
+                            var cellStyle="border:1px solid #47758a;height:36px;width:36px;box-sizing:border-box;padding:0;background:"+(inside?"#e7f3ed":"#fff")+";";
+                            if(inside && r==1) cellStyle+="border-top:3px solid #183d52;";
+                            if(inside && c==1) cellStyle+="border-left:3px solid #183d52;";
+                            if(inside && r==Model.RectangleRows) cellStyle+="border-bottom:3px solid #183d52;";
+                            if(inside && c==Model.RectangleColumns) cellStyle+="border-right:3px solid #183d52;";
+                            <td style="@cellStyle">
+                                @if((Model.ShowRectangleProduct && corner) || given) { <span>@(r*c)</span> }
+                                else { <span class="visually-hidden">Blank</span> }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

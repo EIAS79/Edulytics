@@ -1,0 +1,120 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l06-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L06",
+      "CultureCode": "en",
+      "Title": "Use Strategies and Algorithms to Add",
+      "ExplanationParagraphs": [
+        "Use Strategies and Algorithms to Add: choose between place-value algorithms and alternative strategies based on the structure of the two addends; both must produce accurate within-1,000 sums. A valid algorithm uses systematic steps, whereas a strategy such as rounding and compensating may be specially convenient for certain numbers.",
+        "Warm-up Number Talk (10 minutes): mentally evaluate 300+156=456, 299+156=455, 303+156=459, and 204+376=580. Record one expression at a time; use 300 or 200 as a friendly anchor, then adjust without changing the true value. Explain patterns, and revoice classmates' different methods.",
+        "Activity 1 Just Ones (15 minutes): compare two ways of recording 657+286=943. One method writes the composed values 10 and 100 at the top; the other writes one digit 1 in the tens and hundreds columns. The digit 1 is a unit of ten or of one hundred depending on its place, never simply one individual unit. In this sum, 7+6=13 makes a new ten and 50+80+10=140 makes a new hundred. Use MLR8 to revoice the meaning of the carried digits.",
+        "Activity 1 numeric examples: apply the compact recording to 602+179=781, 493+161=654, 438+364=802, 329+381=710. Show the place-value exchanges and compare representations with a partner; the computer can check totals but cannot certify how the carries were recorded.",
+        "Activity 2 How Would You Add? (20 minutes): independently compute 199+348=547, 264+359=623, 203+75=278, 316+198=514, and 399+499=898. A smart strategy is to notice that 199 and 399 or 499 are near hundreds; for example, 399+499=400+500−2=898. For 264+359, a written algorithm may be convenient; students may still justify a different valid approach.",
+        "Group dialogue: first find a partner who used the same algorithm or strategy, then find one who used a different strategy; explain the reasoning for one or two chosen sums. The teacher reviews whether the chosen methods are clear and efficient and how the different representations connect. Original source classroom photograph not copied.",
+        "Lesson synthesis (10 minutes): students explain why a particular sum was easier using compensation, a number line, blocks or the algorithm and which strategy they wish to practice. The source section summary notes that algorithms work reliably if performed correctly and that a choice of strategy depends on the values.",
+        "Optional centers: Target Numbers stage 6, Five in a Row addition/subtraction stage 8, Rectangle Rumble stage 2. Their publisher original boards have not been individually inspected or reproduced. The original teacher-locked Algorithm or Another Strategy? Cool-down is unavailable; Edulytics independent practice and exit check are original tasks, not copies. Source original Student Task Statements PDF could not be fetched and its figures are not certified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Flexible addition",
+          "Definition": "A valid algorithm or other strategy can find the same sum.",
+          "Rule": "Choose by the numbers and check the exact result.",
+          "Example": "399+499=400+500−2=898."
+        },
+        {
+          "Title": "Composed units",
+          "Definition": "A carried 1 in tens represents ten; a carried 1 in hundreds represents one hundred.",
+          "Rule": "Regroup 10 ones into 1 ten and 10 tens into 1 hundred without loss of value.",
+          "Example": "657+286=943 with newly composed ten and hundred."
+        },
+        {
+          "Title": "Meaning of algorithm",
+          "Definition": "A sequence of steps that succeeds when performed correctly.",
+          "Rule": "Explain why digit positions and composed units are accurate.",
+          "Example": "602+179=781 by standard place-value recording."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare carried-unit recordings",
+          "Question": "Compute 657+286 and show where the newly composed units go.",
+          "Method": "Place value and compositions.",
+          "Steps": [
+            "7+6=13: put 3 ones and a new ten in the tens place.",
+            "5 tens+8 tens+1 ten=14 tens: put 4 tens and a new hundred.",
+            "6 hundreds+2 hundreds+1 hundred=9 hundreds.",
+            "943."
+          ],
+          "Answer": "943",
+          "Check": "943−286=657."
+        },
+        {
+          "Title": "Use an algorithm with composed units",
+          "Question": "Compute 438+364.",
+          "Method": "Add ones,tens,hundreds with composition.",
+          "Steps": [
+            "8+4=12 ones, write 2 and compose a ten.",
+            "30+60+10=100, write 0 tens and compose a hundred.",
+            "400+300+100=800.",
+            "The total is 802."
+          ],
+          "Answer": "802",
+          "Check": "802−438=364."
+        },
+        {
+          "Title": "Use compensation for a near-hundred pair",
+          "Question": "Compute 399+499 efficiently.",
+          "Method": "Round both up by one then subtract two.",
+          "Steps": [
+            "399+1=400 and 499+1=500.",
+            "400+500=900.",
+            "Two units were added, so subtract 2.",
+            "The sum is 898."
+          ],
+          "Answer": "898",
+          "Check": "898−499=399."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating carried 1 in a tens column as one single one.",
+          "WhyWrong": "Position determines value.",
+          "Correction": "State explicitly that the new 1 represents ten in the tens place, or a hundred in the hundreds place."
+        },
+        {
+          "Mistake": "Returning 843 for 657+286.",
+          "WhyWrong": "A newly composed hundred is missing.",
+          "Correction": "7+6=13 and 5 tens+8 tens+1 new ten=14 tens; the result is 943."
+        },
+        {
+          "Mistake": "Returning 900 for 399+499.",
+          "WhyWrong": "Rounding both addends upward by one increases the total by two.",
+          "Correction": "Subtract 2 to get 898."
+        },
+        {
+          "Mistake": "Forcing one algorithm even for near-hundred problems.",
+          "WhyWrong": "The lesson assesses an informed choice of algorithm versus strategy.",
+          "Correction": "Allow justified valid methods and ask what makes them efficient for the numbers."
+        },
+        {
+          "Mistake": "Accepting a numeric answer as evidence of discussion about how the carried digit was written.",
+          "WhyWrong": "Original method comparisons and peer dialogue are open teacher-scored activities.",
+          "Correction": "Review verbal explanations, partner exchange and original materials separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Number Talk values:456,455,459,580.",
+        "Both carried-unit formats show 657+286=943.",
+        "Algorithm practice values:781,654,802,710.",
+        "Choice-of-method source sums:547,623,278,514,898.",
+        "Discuss same-strategy and different-strategy partner reasoning with teacher.",
+        "The source original PDF, publisher artwork, original gameboards and gated Cool-down are not certified."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

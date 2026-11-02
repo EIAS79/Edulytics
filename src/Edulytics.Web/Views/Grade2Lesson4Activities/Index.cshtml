@@ -1,0 +1,100 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson4PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · How Close and within 20";
+    var cards=UsCcssG2Unit1FourthLessonEdulyticsCoolDown.DigitCards;
+}
+<style>
+.g2-l04{max-width:900px;margin:auto;padding:20px 18px 42px;color:#1c354a}
+.g2-l04 h1{font-size:1.8rem}.g2-l04 .panel{background:#fff;border:1px solid #d9e5ee;border-radius:15px;margin:18px 0;padding:24px}
+.g2-l04 .cards{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.g2-l04 .card{font-size:1.6rem;font-weight:800;border:2px solid #14768b;border-radius:9px;background:#ebf8fa;width:65px;height:79px;display:flex;align-items:center;justify-content:center}
+.g2-l04 label{display:block;font-weight:700;margin:15px 0 5px}
+.g2-l04 input,.g2-l04 textarea{font:inherit;border:1px solid #738b9c;border-radius:8px;padding:12px;width:100%;max-width:490px}
+.g2-l04 .muted{color:#526978}
+.g2-l04 .button{border:0;background:#097a8e;color:white;font:inherit;font-weight:750;border-radius:8px;padding:12px 21px;cursor:pointer}
+.g2-l04 .success{border-left:4px solid #258154;padding-left:12px}
+.g2-l04 .error{border-left:4px solid #bb3d47;padding-left:12px}
+.g2-l04 .review{border-left:4px solid #ba842b;padding-left:12px}
+</style>
+<main class="g2-l04">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+    <header>
+        <p>EDULYTICS · ORIGINAL LEARNING TASKS</p>
+        <h1>How Close? Add and subtract within 20</h1>
+        <p class="muted">An Edulytics-authored companion to Grade 2 Unit 1
+        Lesson 4. We use original digit-card diagrams and our own questions,
+        not copies of the publisher's restricted Cool-down.</p>
+    </header>
+    <section class="panel">
+        <h2>1. Make a ten</h2>
+        <p>Think about 8 + 2, 8 + 3, 8 + 5 and 7 + 6.
+        Explain why 7 + 6 can become 7 + 3 + 3 = 13.</p>
+    </section>
+    <section class="panel">
+        <h2>2. How Close to 20?</h2>
+        <p>Choose <strong>THREE of the five digit cards</strong> and add them.
+        Find the sum closest to 20. The number 10 is not one of the cards.
+        Write your actual chosen equation and compare it with your partner's.</p>
+        <div class="cards" role="img" aria-label="Five number cards: five, eight, two, four, six">
+            @foreach(var card in cards){
+                <span class="card" aria-hidden="true">@card</span>
+            }
+        </div>
+        <p>Different cards may make equally close sums in later rounds.
+        A mathematically valid choice must use three different physical cards
+        and get the minimum distance from twenty, not just an arbitrary sum.</p>
+    </section>
+    <section class="panel">
+        <h2>3. Use your own method within 20</h2>
+        <p>Work with expressions such as 4 + 9, 15 − 3, 17 − 9,
+        12 − 4 and 6 + 12. Try making a ten, using a number bond,
+        or decomposing a number; explain your strategy with a drawing or words.</p>
+        <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+            <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+            <input type="hidden" name="lessonId" value="@Model.LessonId" />
+            <button class="button" type="submit">Practice more addition and subtraction</button>
+        </form>
+    </section>
+    <form class="panel" asp-controller="Grade2Lesson4Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <h2>4. Independent Edulytics Cool-down</h2>
+        <label for="equation">Use three different shown digit cards and write the addition equation closest to 20</label>
+        <input id="equation" name="cardEquation" value="@Model.CardEquation" maxlength="50" placeholder="e.g. 5 + 8 + 6" required />
+        <label for="subtraction">17 − 9 = ?</label>
+        <input id="subtraction" name="seventeenMinusNine" value="@Model.SeventeenMinusNine" type="number" min="0" max="20" required />
+        <label for="addition">7 + 6 = ?</label>
+        <input id="addition" name="sevenPlusSix" value="@Model.SevenPlusSix" type="number" min="0" max="20" required />
+        <label for="strategy">Explain one make-ten or another valid method using words or a drawing</label>
+        <textarea id="strategy" name="explanation" rows="4" maxlength="2000">@Model.Explanation</textarea>
+        <p class="muted">Your teacher evaluates original expression records,
+        strategy and partner explanation. Arithmetic checking alone does not do so.</p>
+        <button class="button" type="submit">Check my mathematical answers</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Feedback</h2>
+            @foreach(var item in Model.Feedback){
+                <div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+                    <h3>@item.Task</h3>
+                    <p>@(item.Correct==true?"Mathematically correct":item.Correct==false?"Try again":"Teacher review"). @item.Reason</p>
+                </div>
+            }
+            <p class="muted">These are practice-only results. An official school
+            grade or real classroom participation is not claimed.</p>
+        </section>
+    }
+    <section class="panel">
+        <h2>Teacher evidence criteria</h2>
+        <ul>
+            @foreach(var item in UsCcssG2Unit1FourthLessonEdulyticsCoolDown.TeacherRubric){<li>@item</li>}
+        </ul>
+    </section>
+    <p class="muted">Curriculum reference: IM 2021 Grade 2 Unit 1 Lesson 4,
+    CCSS 2.OA.B.2. Digit cards and assessment text authored by Edulytics.</p>
+</main>

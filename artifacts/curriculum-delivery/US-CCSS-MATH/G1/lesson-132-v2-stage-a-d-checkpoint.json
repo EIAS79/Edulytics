@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 Stage A–D original 2021 source-task parity repair checkpoint; no signoff claim",
+  "grade": "G1",
+  "ordinal": 132,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L13",
+  "title": "Tell Time in Hours",
+  "sourceBasis": {
+    "sourceEdition": "IM K-5 2021",
+    "fullTeacherLessonRelativePath": "unit-7/lesson-13/lesson.html",
+    "observedOriginalSourceSha256": "1e3e780104ff93572151c32c95e2663e5c57fba42e8875ac65f12d5debdee639",
+    "sourceInventoryHashMatched": true,
+    "sourceReviewMethod": "Read-only full teacher HTML Student Facing text; no original figures redistributed"
+  },
+  "stageA": {
+    "sourceTasksDirectlyInspected": true,
+    "originalActivities": [
+      "Card Sort Clocks: analog cards with only hour hand intentionally shown",
+      "Connect analog hour-hand cards to matching digital whole-hour times",
+      "Our School Day: fill NINE individual clocks for Arrival, Reading, Snack, Math, Lunch, Recess, Art, Dismissal and Homework, source times read from original illustrated schedule",
+      "Lesson synthesis adds the minute hand at 12 for exact hours"
+    ],
+    "realGap": "Existing authored teaching stated both minute and hour hands and clock-card matching but omitted original intro-only hour hand cards and nine school-day clocks; original start-time diagram remains visually uninspected."
+  },
+  "stageB": {
+    "existingSourceSpecificCorrectionReused": true,
+    "teachingPath": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "repairCommit": "e130be1eca54880a7ce866289e965332fa95530d",
+    "sourceArtworkCopies": 0,
+    "sourceVisualTimes": "NOT_INVENTED"
+  },
+  "stageC": {
+    "existingNumericPracticeReused": true,
+    "digitalCoverage": "Reading and matching whole-hour times",
+    "remainingStudentTaskBoundary": "Original physical sorting of cards and nine student-drawn clock faces require real review; do not treat one digital clock answer as covering all",
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "sourceClockVariantCommit": "2a315430a4c3d6f27be61e360adc1557406616e0",
+    "openClockAlternativesAccepted": false,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "974288c336f63ebac84741150ce72d10423d66e7",
+    "currentHeadDotNet": "NOT_RUN",
+    "authenticatedCurrentHeadRendering": "PENDING",
+    "actualGradingPersistenceCurrentHead": "PENDING",
+    "sourceVisualRightsAndA11y": "PENDING",
+    "internalOriginalV1AcademicSignoff": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "crossLessonMathRenderingRepairs20261020": {
+    "evidenceType": "SOURCE_DOMAIN_AND_RENDERING_CODE_REPAIR_NOT_ACADEMIC_APPROVAL",
+    "reviewedSourceMathSubset": "Original source SAME/DIFFERENT analog/digital card comparison now rejects contradictory DIFFERENT claims when both hours match; aligns the renderer with the existing engine parameter validator.",
+    "sourceChanges": [
+      "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit7GeometryTimeQuestions.cs",
+      "src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1FullGradeClock.cs"
+    ],
+    "negativeControlsAuthoredAt": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeAnalogClockSourceVisualTests.cs"
+    ],
+    "correctnessOutcome": "SOURCE_BOUNDARY_CODE_REPAIRED_TESTS_AUTHORED_NOT_EXECUTED_AT_FROZEN_SHA",
+    "actualAuthenticatedPracticePersistence": "PENDING",
+    "originalStudentTaskToEffectiveTeachingCompleteParity": "NOT_CLAIMED",
+    "finalDotNetAndProtectedCI": "DEFERRED_UNTIL_WHOLE_GRADE_FREEZE",
+    "internalAcceptance": "NOT_CLAIMED"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceBoundary": "Original first cards show HOUR hand alone, pair with digital hour; nine school-day clock drawings source time diagram unverified. Source hour-only digital mode4.",
+    "accessibleOriginalTaskTextReviewed": true,
+    "numericTeachingAndVerifierReviewed": true,
+    "originalIllustratedTimesNotGuessed": true,
+    "originalPupilDrawingsAndGameplayTeacherOnly": true,
+    "originalPublisherClockFiguresNotLicensed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "nextAction": "Original V1 internal acceptance documented; continue next ordinal, do not repeat technical Stage D or deploy.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 132,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U07:L13",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-132-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original first cards show HOUR hand alone, pair with digital hour; nine school-day clock drawings source time diagram unverified. Source hour-only digital mode4."
+  }
+}

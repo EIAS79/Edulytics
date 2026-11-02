@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Preserve prior whole-grade source/task and candidate implementation evidence. This record is an A-D RESUMPTION checkpoint, NOT evidence-based academic acceptance.",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 115,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L13",
+  "unit": 6,
+  "lessonNumber": 13,
+  "title": "Solve Take From Story Problems",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics K–5 2021",
+    "device": "Our-CS (read-only)",
+    "originalFullTeacherRelativePath": "unit-6/lesson-13/lesson.html",
+    "originalFullTeacherSha256": "997f1161670ac8d0e986eec63bbc6bcb597543553a2a1b7c72329fbfcab05b9e",
+    "originalTeacherPreparationSha256": "b388ee70ac8272c764915c94e4f1b6481249ca694d157ba06e33131992579aa2",
+    "originalStudentFacingHtmlSha256": "4af6727972a25a3ccc9f1a79a7a5259831d787e975d2a340264453803ed94a0f",
+    "teacherPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-6/lesson-13/preparation.html",
+    "readOnlyFullTeacherHashMatched20261020": true,
+    "publisherArtworkReproductionOrLicense": "NOT_CLAIMED"
+  },
+  "stageA": {
+    "sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256",
+    "sourceOriginalTeacherActivityHeadings": [
+      "Activity 1: How Many to Start? (20 minutes)",
+      "Activity 2: One Representation, Three Stories (15 minutes)"
+    ],
+    "originalStudentFacingExcerptCount": 3,
+    "originalStudentFacingExcerptSamples": [
+      "Student Facing Find the value of each expression mentally. \\(15 + 10\\) \\(15 + 15\\) \\(25 + 25\\) \\(25 + 28\\) Student Response Teachers with a valid work email address can c",
+      "Student Facing Elena bought a bag of beads to make bracelets. She takes out 9 beads to make a bracelet. There are 11 beads left in the bag. How many beads were in the bag",
+      "Student Facing Discuss with your partner how the drawing shows each problem. [visual] [visual] <div class="
+    ],
+    "sourceOriginalTaskInterpretation": "Find Elena's initial bead count when 9 were removed and 11 remain; match one representation to three story problems.",
+    "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json",
+    "candidateSourceInitialTriageCohort": "INITIAL_SOURCE_EXCERPT_TRIAGE",
+    "priorSourceGapStatement": "Check start-unknown relation 20-9=11 and different equations/story positions; original drawings need review.",
+    "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING",
+    "allOriginalFigureAndStudentTasksFullyAudited": false,
+    "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false
+  },
+  "stageB": {
+    "existingRichV2CandidateReused": true,
+    "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs",
+    "newLearnerTeachingCodeAuthoredInThisCheckpoint": false,
+    "previousSourceSpecificTeachingCorrectionsPreserved": true,
+    "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA",
+    "publisherFiguresCopiedOrLicensedByThisCheckpoint": false
+  },
+  "stageC": {
+    "existingAssessmentMode": "DIGITAL_PRACTICE",
+    "existingFamily": "usccss.g1.u06.l13.take_from_unknown",
+    "allowedMappedFamilies": [
+      "usccss.g1.u06.l13.take_from_unknown"
+    ],
+    "existingCandidateReused": true,
+    "originalSourceTaskToPracticeParity": "PARTIAL_OR_UNPROVEN",
+    "mathCorrectWrongMalformedIndependentVerificationAtFrozenSha": "PENDING",
+    "authenticatedScoringAndPersistenceAtFrozenSha": "PENDING",
+    "nonNumericTeacherFacilitatedWork": "SOURCE_REQUIRES_SEPARATE_AUTHENTIC_TEACHER_OR_LEARNER_EVIDENCE_WHEN_APPLICABLE",
+    "sourceAuthoredRubric": null,
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
+  },
+  "stageD": {
+    "regressionTestsExistingButExactScopedSourceCoverage": "NOT_INDEPENDENTLY_PROVEN_FOR_THIS_LESSON",
+    "newTestsExecutedInThisCheckpoint": false,
+    "githubActionsManuallyTriggeredDuringContinuousAuthoring": false,
+    "readOnlyOriginalTeacherFullSourceShaPassed": true,
+    "authenticatedLearnerRendering": "PENDING",
+    "independentMathNegativeControls": "PENDING_FROZEN_SHA",
+    "persistedCorrectAndWrongAndMalformedStudentAnswers": "PENDING",
+    "visualAccessibilityAndPublisherRights": "PENDING",
+    "originalV1PerLessonAcademicAcceptance": "NOT_CLAIMED",
+    "wholeGradeRelease": "NO_GO"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal 116 in order; D/CI deferred.",
+  "crossLessonSourcePracticeResumption20261020": {
+    "sourceSpecificSubset": {
+      "sourceTeacherActivityRetained": true,
+      "sourceSubset": "Source Elena's bead bracelet: nine removed, eleven remain, 20 start; new mode 4 and independent gradeable check",
+      "engine": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+      "unitTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+      "independentMathOracle": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeSourceIndependentMathOracleTests.cs",
+      "legacyModesRetained": true,
+      "negativeControlsAuthored": true,
+      "testsAtFrozenSHA": "NOT_RUN",
+      "originalStudentTaskCurrentAuthenticatedRichV2": "NOT_VERIFIED",
+      "academicAcceptance": "NOT_CLAIMED"
+    },
+    "material": "REUSE_ORIGINAL_STUDENT_TASK_AND_GRADED_PRACTICE_CANDIDATE",
+    "notSourceComplete": true,
+    "notASubstituteForAuthenticatedGradingOrLegalVisualInspection": true,
+    "originalV1Approval": "NOT_CLAIMED",
+    "release": "NO_GO"
+  },
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Original Elena start-unknown beads: nine removed, eleven left, original twenty; physical drawing and story selection teacher-only.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 115,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U06:L13",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-115-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Elena start-unknown beads: nine removed, eleven left, original twenty; physical drawing and story selection teacher-only."
+  }
+}

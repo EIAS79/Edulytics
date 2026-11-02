@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 78,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L13",
+  "title": "Center Day 2",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS (read-only)",
+    "edition": "IM-K5 2021",
+    "originalFullTeacherLessonSha256": "ed9502bae50434a90c6d02fc65174df640774f14a71aab3ce932f2650a954ac4",
+    "teacherPreparationSha256": "863dc31852ab4bff585e28839806c52eab34a4ee0705a831aec4293830bc7708",
+    "studentHtmlSha256": "2a1eaca8bf9cde20a32da210b3a773f2561e3d5ab752795300785819cf9160dd",
+    "teacherHeadings": [
+      "Activity 1: Centers: Choice Time (20 minutes)",
+      "Activity 2: Centers Choice Time (20 minutes)"
+    ],
+    "existingOriginalTaskInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalActivitiesReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(10 + 4\\) \\(9 + 4\\) \\(9 + 6\\) \\(15 - 6\\) Student Response Teachers with a valid work email address can click h",
+      "Student Facing Choose a center. Grab and Count [visual] [visual] <div class=\"im-c-modal__",
+      "Student Facing Choose a center. How Close? [visual] [visual] <svg aria-hidden=\"true\" class=\"im-c-icon im-c-i"
+    ],
+    "sourceSpecificFinding": "Re-read 2021 original teacher/student-facing Number Talk 10+4,9+4,9+6,15-6; Activity 1 Grab and Count/Five in a Row/Check It Off; Activity 2 How Close/Number Puzzles/Shake and Spill; teacher numeric examples 70 and 20 ->50 or90, 8+7+5=20; no original L13 Cool-down. Canonical teacher, preparation and student HTML hashes matched sourceBasis.",
+    "classification": "CANONICAL_SOURCE_VERIFIED_ACTUAL_TEACHER_STUDENT_FACING_TASKS_REVIEWED",
+    "originalTeacherStudentActivityAndTeacherSynthesisIndependentlyReviewed": true,
+    "originalSourceFullTeacherSha256Rechecked": true,
+    "originalSourceStudentAndPreparationSha256Rechecked": true
+  },
+  "stageB": {
+    "originalRichV2Reused": true,
+    "targetedRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "teachingRepairCommit": "5f1285a27fb52dba4b0bad44601ea00c5a9eed52",
+    "correctedVersion": "us-ccss-g1-u04-l06-l15-original-student-activities-v6",
+    "publisherAssetsRedistributed": false,
+    "version": "us-ccss-g1-u04-l13-original-student-activities-v7",
+    "sixNamedOriginalCentersAndStagesRestored": true,
+    "migrationRegressionTestCommit": "54776c82be98e05f24ba5cc6e15a063785067ce2",
+    "learnerSourceParityStaticReviewPassed": true
+  },
+  "stageC": {
+    "existingPracticeFamiliesReused": true,
+    "mathEngineChangedForThisLesson": true,
+    "sourceTaskBoundary": "Teaching original tasks restored; auto-graded math cannot certify classroom drawings, source visual diagrams, gallery visits, game play, student estimates or authentic teacher review",
+    "sourceSpecificModesAdded": [
+      4,
+      5,
+      6
+    ],
+    "sourceSpecificNumericTasks": [
+      "70+20=90 and 70-20=50",
+      "8+7+5=20 using three distinct cards from 8,4,1,7,5",
+      "9+6=15 and 15-6=9"
+    ],
+    "testsAuthoredButNotExecuted": true,
+    "independentStaticGeneratorVerifierReview": true,
+    "scopedModes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "exactSourceOracles": [
+      "ADD=90;SUBTRACT=50",
+      "TOTAL=20;CARDS=8+7+5",
+      "ADD=15;SUBTRACT=9"
+    ],
+    "negativeAnswerAndOperandTestsAuthoredButNotExecuted": true,
+    "teacherOnlyCenterParticipationNotMachineCertified": true,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "newSourceAssertionsPrepared": true,
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "commit": "9eb222231b385abc342b1f0d0b84b785124778d7",
+    "noCITriggeredDuringAuthoring": true,
+    "testsPassedClaimed": false,
+    "actualAuthenticatedLearnerRendering": "PENDING_FROZEN_CANDIDATE",
+    "realPracticeAttemptAndPersistence": "PENDING_FROZEN_CANDIDATE",
+    "visualAndRightsEvidence": "PENDING",
+    "academicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "existingAuthoritativeLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "originalLessonCoolDownPresentInAccessibleTeacherSource": false,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalCenterMenuAndTeacherOnlyBoundaryReviewed": true,
+    "canonicalSourceSHA256Matched": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-78-stage-a-c-source-implementation-audit-20261020.md",
+    "codeCommit": "5f1285a27fb52dba4b0bad44601ea00c5a9eed52",
+    "teachingTestsCommit": "54776c82be98e05f24ba5cc6e15a063785067ce2",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true,
+    "teacherOnlyActivityBoundary": "Original six pupil-choice physical centers, collaboration and explanations require teacher-observed evidence; only specified digital numeric subproblems can be auto-graded"
+  },
+  "nextAction": "A-C evidence and corrections completed for lesson78; READY_FOR_STAGE_D authoring only. Stage D/CI/authenticated grading deferred until frozen whole grade. Continue ordinal79.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 78,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L13",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-78-stage-a-c-source-implementation-audit-20261020.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

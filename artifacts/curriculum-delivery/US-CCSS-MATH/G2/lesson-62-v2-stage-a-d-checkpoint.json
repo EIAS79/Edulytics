@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 62,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L10",
+  "title": "Place Value and the Number Line",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "SOURCE_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-10/preparation.html",
+    "sourceSemanticSha256": "a4adb4cfac91bfa6338e7aa7ab519b80d0f2b2b5bcf2d3d0142567b9974af659",
+    "originalBodySha256": "4d89c06b99b5ee5bf8c77567b4de987c36ca9601e1f16eca2b65864e6c2f1233",
+    "orderedOfficialOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5"
+    ],
+    "authenticOriginalSourceNote": "Specific IM2021 U04 Lesson 10 teacher lesson and its content reviewed; source figures, game boards, physical work and restricted publisher assessment not synthesized."
+  },
+  "stageB": {
+    "status": "SOURCE_SHA_AND_SIX_FIELD_GUARDED_TEACHING_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4PlaceValueLineCorrection.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedPredecessorGuard": true
+  },
+  "stageC": {
+    "status": "AUTHORING_COMPLETED_NOT_EXECUTED",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FinalSixSourcePractice.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FinalSixContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4FinalSixQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4FinalSixActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4FinalSixActivities/Index.cshtml",
+    "allowedFamilies": [
+      "usccss.g2.u04.l10.subtract_tens_ones",
+      "usccss.g2.u04.l10.add_tens_ones",
+      "usccss.g2.u04.l10.remaining_after_subtraction",
+      "usccss.g2.u04.l10.difference_count_on"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal62OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal62SourceActivityMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal62ExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal62StudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "sourceBoundary": "Publisher-specific graphics and authentic student physical or personal activities are teacher-only. No official grade."
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "status": "READY_FOR_STAGE_D",
+    "stageDExecuted": false,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "Grade 2 ordinal 63 Stage A-B-C"
+}

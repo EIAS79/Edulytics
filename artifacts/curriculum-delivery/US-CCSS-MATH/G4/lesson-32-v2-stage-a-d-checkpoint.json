@@ -1,0 +1,44 @@
+{
+  "ordinal": 32,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L07",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "05f86caf77e652f41dbca61776944640b65e0847e02ee4b09d6bfcb742d46c06",
+    "teacherLesson": "cd024c7710dea0887e76a109fb27c5851698f1f31fe46507b5e13d565df96775",
+    "studentPdf": "c439c88b4f640efff531f9800b39f88a0ede7b51f78a0e76bd295c99b103c647"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Choral Count: Three-fourths at a Time (10 minutes)",
+    "Activity 1: Barley Soup (20 minutes)",
+    "Activity 2: Sums in Fifths and Thirds (15 minutes)",
+    "Cool-down: Make a Sum of $\\frac{7}{4}$ (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.build"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-32-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:38+01:00",
+  "closeAtLocal": "2026-10-26T22:40:38+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

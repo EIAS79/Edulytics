@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 11,
+  "unitNumber": 1,
+  "lessonNumber": 11,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L11",
+  "lessonTitle": "Questions About Data",
+  "officialOutcomes": [
+    "CCSS:2.MD.D.10",
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "Illustrative Mathematics K-5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_PUBLIC_2021_TEACHER_STUDENT_SOURCE_ACTIVITIES",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-11/lesson.html",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-11/preparation.html",
+    "warmup": "Number talk making ten: 3+7;3+7+2;5+7;2+4+8; teacher asks for different mathematically valid decompositions",
+    "activity1": "Each student retrieves picture/bar graphs constructed in preceding lesson. Learner writes FOUR original answerable questions, TWO for each graph in mixed order; at least one combines/compares two categories. Partner checks wording.",
+    "activity2": "Student exchanges questions and diagrams with a NEW partner, answers, identifies graph providing evidence, compares reasoning and revises unclear wording.",
+    "lessonSynthesis": "Teacher discusses which graph questions were easiest/hardest and what graph labels/keys supported the answers.",
+    "originalPublisherCoolDown": "Requires educator login; Edulytics-authored original source-goal count/combine/number-talk exit check used instead, not portrayed as publisher source.",
+    "originalSourceSummary": "Image of picture graph/bar graph with favorite pets cat6 dog10 fish5 lizard3 publicly described; not copied as an asset",
+    "priorLessonDependency": "L10 original picture/ bar graphs and their independently authored table data are reused; companion activity does not falsely claim cross-lesson persistence",
+    "artRights": "No publisher protected diagram or Cool-down copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_ORIGINAL_PREVIOUS_PROSE_GUARDED_QUESTION_WRITING_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1QuestionsAboutDataTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedLessonGuard": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceLocks": "Exact 2021 URL, original canonical body SHA, ordered 2.MD.D.10 and 2.OA.B.2, exact six old English fields and previous stored content version.",
+    "improvements": "Removed source blank underline artifacts, replaced with four question-writing steps, two source graphs, one multi-category prompt, partner-check rubric and make-ten Number Talk."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTIC_ORIGINAL_QUESTION_AUTHORING_UI_AND_NUMERIC_SKILLS",
+    "numericalFamilies": [
+      "usccss.g2.u01.l11.graph_question_count",
+      "usccss.g2.u01.l11.graph_question_combine",
+      "usccss.g2.u01.l11.graph_question_compare"
+    ],
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "corePractice": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson11GraphQuestionsContracts.cs",
+    "exactEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson11GraphQuestions.cs",
+    "fourQuestionAuthoringAndIndependentCoolDown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1EleventhLessonGraphQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson11ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson11Activities/Index.cshtml",
+    "readerEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "correctness": "Exactly four unique questions and two per previously created graph, at least one combine/compare, select real category and graph, grade proposed partner numeric answer and source-aligned independent Cool-down",
+    "teacherReview": "Free question text might not match selected arithmetic operation; semantic validation, genuine partner exchange, original drawing and explanation REQUIRE teacher assessment and are explicitly never auto-certifiable.",
+    "crossLessonPersistence": "NOT_CLAIMED; prompts rely on child's carried-over drawings and Edulytics Table A/B references rather than inventing stored answers.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1QuestionsAboutDataTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1EleventhLessonGraphQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson11GraphQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson11ActivitiesWebContractTests.cs"
+    ],
+    "testExecution": "WRITTEN_NOT_EXECUTED"
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_UNEXECUTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "academicHumanApproval": "NOT_ASSERTED",
+    "productionRuntimeVerified": false,
+    "merge": false,
+    "renderDeploy": false,
+    "productionRelease": "NO_GO",
+    "note": "Authoring-only A-C handoff. Stage D must separately establish compilation/tests/runtime evidence and academic acceptance; no fake student activity is certified."
+  },
+  "nextAction": "BEGIN STRICTLY G2 U01 L12 ONLY AFTER L11 A+B+C CLOSE"
+}

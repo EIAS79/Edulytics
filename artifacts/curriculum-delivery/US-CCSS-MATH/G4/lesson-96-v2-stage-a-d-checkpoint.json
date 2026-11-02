@@ -1,0 +1,42 @@
+{
+  "ordinal": 96,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L10",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "ce909f075576ec35ca61d83950de404daf37688f4bff62da174be5405d14210c",
+    "teacher": "21abcfaf65cb9701f777920b5adec0bef73c077078fe21e5a5dee1e0f2ab924e",
+    "student": "ccced45cd7f1e74964118189f684f6eda510af56ad6a112973a676ead4970a53"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Compute 32 \u00d7 24.",
+    "teacherAnswer": "768"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:34:53+01:00",
+  "closeAtLocal": "2026-10-26T23:34:54+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-96-local-source-guard.test.cjs"
+  }
+}

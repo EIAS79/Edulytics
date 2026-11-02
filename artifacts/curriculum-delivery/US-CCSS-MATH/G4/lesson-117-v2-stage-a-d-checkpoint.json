@@ -1,0 +1,70 @@
+{
+  "ordinal": 117,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U07:L06",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_PREPARATION_AND_TEACHER_STUDENT_FACING_3_PLUS_CATEGORY_CARD_SORT_AND_A_TO_P_ORDER_RECORDED",
+    "B": "SOURCE_GOAL_ANGLE_OPENINGS_NOT_RAY_LENGTH_WITH_SOURCE_TASKS_FIRST_PARTY_EXAMPLES_AND_NEW_TURN_COOLDOWN",
+    "C": "EXACT_COMPASS_ANGLE_COMPARISON_8_CASE_MODES_3_TEST_METHODS_AUTHORED_NOT_RUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "3efcc5b10bd48188ea2440aaf698b3c778ab9ae128810e3cb85b5c7732976b8e",
+    "teacher": "98bc10a3c70036224025761d2473b8fd3fb8a9602f3afeb55d8300e69bb435b1"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Which angle opening is larger, a quarter turn or a half turn? Explain without using ray length.",
+    "teacherAnswer": "Half turn is larger: two quarter turns make a half turn; arm length cannot change opening."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-117-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-117-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "3efcc5b10bd48188ea2440aaf698b3c778ab9ae128810e3cb85b5c7732976b8e",
+    "sourceTeacherSha256": "98bc10a3c70036224025761d2473b8fd3fb8a9602f3afeb55d8300e69bb435b1",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-102-149-original-source-intake.json",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-117-2021-source-evidence.json",
+    "sourceElementsCount": 13,
+    "sourceFigurePixelParityVerified": false,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "primarySkillId": "geometry.angles.compare_opening_compass_turn",
+    "allowedFamily": "usccss.g4.u07.l06.compare_angle_openings",
+    "firstPartyCoolDown": {
+      "prompt": "Which angle opening is larger, a quarter turn or a half turn? Explain without using ray length.",
+      "teacherAnswer": "Half turn is larger: two quarter turns make a half turn; arm length cannot change opening."
+    },
+    "teacherOnlyTasks": [
+      "Which One Doesn't Belong original angle illustrations",
+      "Angle Card Sort in >=3 meaningful categories",
+      "Original all A-P cards full ordering smallest to largest",
+      "Student explanation and teacher assessment of actual original card images"
+    ],
+    "digitalPracticeScope": "8 first-party compass descriptions of two angle openings, each at most half turn; single exact comparison only",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal117CompareAngleOpeningsTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Original 16 publisher source angle cards A-P and source warm-up figures have not been independently verified visually, nor any exact original ordering key.",
+    "New first-party compass-direction Practice and Rich V2 require Stage D compilation and authenticated learner scoring/persistence; no execution was performed.",
+    "Original publisher protected Cool-down is not copied. Independent teacher-reviewed equivalent is not a verbatim publisher assessment."
+  ]
+}

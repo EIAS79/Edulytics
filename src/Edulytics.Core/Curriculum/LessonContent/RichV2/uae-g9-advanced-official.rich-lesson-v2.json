@@ -1,0 +1,271 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "rich-v2-uae-g9-advanced-official-pilot-2026-09-22",
+  "PackCode": "UAE-MOE-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:UAE:G9:ADV:T1:L2-1",
+      "CultureCode": "en",
+      "Title": "Equations, Proportions and Applications — L2-1",
+      "ExplanationParagraphs": [
+        "This lesson focuses on writing equations from relationships described in words, tables or contexts. An equation is a mathematical statement that two expressions have the same value. The equal sign means both sides represent the same quantity; it is not an instruction to calculate only the expression on the left.",
+        "The central skill is translating a situation into algebra without changing its meaning. First identify the unknown quantity and choose a variable. Then identify the operations that connect the unknown to the known quantities. Phrases such as “five more than”, “three times”, “half of” and “a total of” describe different operations, so the order of those operations matters.",
+        "A good equation can be checked before it is solved. Ask whether the units match, whether the variable represents the quantity you intended, and whether substituting an easy value would make the equation describe the same relationship as the original words. This check prevents common translation errors before any algebra begins.",
+        "Some situations can be represented by more than one equivalent equation. For example, if a taxi fare is a fixed 8 AED plus 3 AED per kilometre, the total cost C for k kilometres can be written C = 8 + 3k or C = 3k + 8. Both express the same relationship because addition is commutative."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Variable",
+          "Definition": "A variable is a symbol used to represent an unknown or changing quantity.",
+          "Rule": "Define the variable before writing the equation so every symbol has a clear meaning.",
+          "Example": "Let n be the number of notebooks."
+        },
+        {
+          "Title": "Equality",
+          "Definition": "An equation states that the value on the left side equals the value on the right side.",
+          "Rule": "Every operation or relationship written in the equation must preserve the meaning of the original situation.",
+          "Example": "3n + 5 = 26 means three groups of n, then 5 more, total 26."
+        },
+        {
+          "Title": "Operation order in phrases",
+          "Definition": "The wording determines which quantity an operation acts on.",
+          "Rule": "Translate the structure, not individual words in isolation. “Five less than x” is x − 5, while “five minus x” is 5 − x.",
+          "Example": "Twice a number increased by 7 is written 2x + 7."
+        },
+        {
+          "Title": "Equivalent equations",
+          "Definition": "Different-looking equations can describe the same relationship.",
+          "Rule": "Reordering addition or simplifying an expression is allowed when the value of each side is preserved.",
+          "Example": "C = 8 + 3k and C = 3k + 8 are equivalent."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Translate a verbal statement",
+          "Question": "Write an equation for: seven more than three times a number is 31.",
+          "Method": "Define a variable, identify the multiplication, then the addition, then the equality.",
+          "Steps": [
+            "Let x represent the unknown number.",
+            "Three times the number is 3x.",
+            "Seven more than that is 3x + 7.",
+            "The phrase “is 31” gives the equality 3x + 7 = 31."
+          ],
+          "Answer": "3x + 7 = 31",
+          "Check": "If x = 8, then 3(8) + 7 = 31, so the sentence is represented correctly."
+        },
+        {
+          "Title": "Write an equation from a cost context",
+          "Question": "A service charges a fixed 12 AED fee plus 5 AED for each hour h. The total bill is 47 AED. Write an equation.",
+          "Method": "Separate the fixed amount from the repeating rate.",
+          "Steps": [
+            "The fixed fee contributes 12.",
+            "The hourly part contributes 5h.",
+            "Together they make the total 47.",
+            "Write 12 + 5h = 47."
+          ],
+          "Answer": "12 + 5h = 47",
+          "Check": "Both sides are measured in AED, and the hourly amount increases by 5 AED for each additional hour."
+        },
+        {
+          "Title": "Represent a perimeter relationship",
+          "Question": "A rectangle has width w cm and length w + 4 cm. Its perimeter is 40 cm. Write an equation.",
+          "Method": "Use the perimeter formula and substitute the expressions for length and width.",
+          "Steps": [
+            "Perimeter of a rectangle is 2(length) + 2(width).",
+            "Substitute length w + 4 and width w.",
+            "This gives 2(w + 4) + 2w = 40.",
+            "The equation now represents the geometric condition."
+          ],
+          "Answer": "2(w + 4) + 2w = 40",
+          "Check": "Every side of the rectangle is counted exactly once in the perimeter expression."
+        },
+        {
+          "Title": "Distinguish two similar phrases",
+          "Question": "Write equations for: “five less than a number is 12” and “five minus a number is 12”.",
+          "Method": "Identify which quantity is being reduced in each phrase.",
+          "Steps": [
+            "Let x be the number.",
+            "Five less than x means start with x and subtract 5: x − 5.",
+            "Five minus x means start with 5 and subtract x: 5 − x.",
+            "Attach the stated value 12 to each expression."
+          ],
+          "Answer": "x − 5 = 12 and 5 − x = 12",
+          "Check": "The two equations are not interchangeable because subtraction is not commutative."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Translating each word separately without preserving the sentence structure.",
+          "WhyWrong": "This can reverse subtraction or place multiplication around the wrong quantity.",
+          "Correction": "Identify the whole relationship first, then translate one operation layer at a time."
+        },
+        {
+          "Mistake": "Using the equal sign as if it means “calculate next”.",
+          "WhyWrong": "An equal sign states that two expressions have the same value.",
+          "Correction": "Read every equation aloud as “has the same value as” and check both sides describe equal quantities."
+        },
+        {
+          "Mistake": "Using a variable without defining what it represents.",
+          "WhyWrong": "The algebra may be correct but disconnected from the context or units.",
+          "Correction": "Write a short definition such as “let h be the number of hours” before forming the equation."
+        }
+      ],
+      "SummaryPoints": [
+        "Define the unknown quantity before writing algebra.",
+        "Translate the relationship in operation order rather than word by word.",
+        "Use the equal sign only when both sides represent the same quantity.",
+        "Check units and substitute a sensible value to verify that the equation matches the original situation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Words to equations",
+          "Description": "Four examples show how verbal relationships become equations without changing their meaning.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "three times x, plus 7 = 31  →  3x + 7 = 31",
+            "12 AED plus 5 AED per hour = 47 AED  →  12 + 5h = 47",
+            "perimeter 40  →  2(w + 4) + 2w = 40",
+            "five less than x = 12  →  x − 5 = 12"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:UAE:G9:ADV:T1:L2-3",
+      "CultureCode": "en",
+      "Title": "Equations, Proportions and Applications — L2-3",
+      "ExplanationParagraphs": [
+        "This lesson develops solving multi-step linear equations. Solving an equation means finding every value of the variable that makes the equation true. The guiding principle is balance: because both sides are equal, performing the same valid operation on both sides preserves equality.",
+        "Before undoing operations, simplify each side when useful. Expand brackets with the distributive property, combine like terms, and then isolate the variable. When the variable appears on both sides, move variable terms to one side and constants to the other using equivalent operations.",
+        "There is no single fixed sequence that works for every equation, so choose steps that reduce complexity. For 3(x − 2) + 5 = 20, expanding first is efficient. For (x + 4)/5 = 7, multiplying both sides by 5 first removes the denominator immediately. Each line should be equivalent to the previous line.",
+        "Always verify a solution by substitution into the original equation, not only into the simplified final line. Substitution detects arithmetic errors, sign mistakes and invalid transformations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Balance principle",
+          "Definition": "An equation remains equivalent when the same valid operation is applied to both sides.",
+          "Rule": "Whatever you add, subtract, multiply or divide by on one side must be applied to the other side; never divide by zero.",
+          "Example": "x + 9 = 20 becomes x = 11 after subtracting 9 from both sides."
+        },
+        {
+          "Title": "Simplify before isolating",
+          "Definition": "Expressions can often be made easier by expanding brackets and combining like terms.",
+          "Rule": "Use the distributive property a(b + c) = ab + ac and combine only like terms.",
+          "Example": "3(x − 2) + 5 becomes 3x − 6 + 5 = 3x − 1."
+        },
+        {
+          "Title": "Variables on both sides",
+          "Definition": "A linear equation may contain the variable on each side.",
+          "Rule": "Use the same subtraction or addition on both sides to collect variable terms on one side.",
+          "Example": "5x + 2 = 2x + 20 becomes 3x + 2 = 20 after subtracting 2x."
+        },
+        {
+          "Title": "Verification",
+          "Definition": "A solution is valid only if it makes the original equation true.",
+          "Rule": "Substitute the proposed value into both original sides and compare the results.",
+          "Example": "For x = 6 in 5x + 2 = 2x + 20, both sides equal 32."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Expand, simplify and solve",
+          "Question": "Solve 3(x − 2) + 5 = 20.",
+          "Method": "Expand the bracket, combine constants, then isolate x.",
+          "Steps": [
+            "Expand: 3x − 6 + 5 = 20.",
+            "Combine constants: 3x − 1 = 20.",
+            "Add 1 to both sides: 3x = 21.",
+            "Divide both sides by 3: x = 7."
+          ],
+          "Answer": "x = 7",
+          "Check": "3(7 − 2) + 5 = 15 + 5 = 20."
+        },
+        {
+          "Title": "Remove a denominator first",
+          "Question": "Solve (x + 4)/5 = 7.",
+          "Method": "Undo the division by multiplying both sides by 5.",
+          "Steps": [
+            "Multiply both sides by 5: x + 4 = 35.",
+            "Subtract 4 from both sides.",
+            "Obtain x = 31.",
+            "Substitute 31 into the original equation."
+          ],
+          "Answer": "x = 31",
+          "Check": "(31 + 4)/5 = 35/5 = 7."
+        },
+        {
+          "Title": "Variable on both sides",
+          "Question": "Solve 5x + 2 = 2x + 20.",
+          "Method": "Collect variable terms on one side and constants on the other.",
+          "Steps": [
+            "Subtract 2x from both sides: 3x + 2 = 20.",
+            "Subtract 2 from both sides: 3x = 18.",
+            "Divide by 3: x = 6.",
+            "Check in the original equation."
+          ],
+          "Answer": "x = 6",
+          "Check": "Left: 5(6)+2=32. Right: 2(6)+20=32."
+        },
+        {
+          "Title": "Fraction coefficient",
+          "Question": "Solve (3/4)x − 5 = 16.",
+          "Method": "Undo the constant first, then undo multiplication by 3/4 using its reciprocal.",
+          "Steps": [
+            "Add 5 to both sides: (3/4)x = 21.",
+            "Multiply both sides by 4/3.",
+            "x = 21 × 4/3 = 28.",
+            "Substitute x = 28 in the original equation."
+          ],
+          "Answer": "x = 28",
+          "Check": "(3/4)(28) − 5 = 21 − 5 = 16."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Changing the sign of a term when moving it across the equal sign without performing an operation on both sides.",
+          "WhyWrong": "Terms do not physically move; the sign change is shorthand for adding or subtracting the same amount on both sides.",
+          "Correction": "Write the balancing operation explicitly until the transformation is secure."
+        },
+        {
+          "Mistake": "Distributing to only the first term inside a bracket.",
+          "WhyWrong": "The multiplier applies to every term in the bracket.",
+          "Correction": "For a(b + c), write ab + ac before combining any terms."
+        },
+        {
+          "Mistake": "Checking the answer only in a simplified equation.",
+          "WhyWrong": "A mistake may have occurred during simplification.",
+          "Correction": "Substitute the final value into the original equation and verify that both original sides match."
+        }
+      ],
+      "SummaryPoints": [
+        "Preserve equality by performing the same valid operation on both sides.",
+        "Simplify expressions when useful before isolating the variable.",
+        "Collect variables and constants systematically when the variable appears on both sides.",
+        "Verify every final solution in the original equation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Equivalent equation chain",
+          "Description": "Each line is equivalent to the one before it, so the solution set is preserved.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "3(x − 2) + 5 = 20",
+            "3x − 1 = 20",
+            "3x = 21",
+            "x = 7"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

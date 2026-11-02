@@ -1,0 +1,184 @@
+@model Edulytics.Services.AdaptivePractice.AdaptiveQuestionLogView
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Question log";
+
+    var sessions = Model.Questions
+        .GroupBy(x => x.SessionId)
+        .OrderByDescending(group => group.Max(x => x.PresentedAtUtc))
+        .ToArray();
+
+    static string ReasonText(string code) => code switch
+    {
+        "SESSION_BASELINE" =>
+            "This was your starting question.",
+        "MISCONCEPTION_REMEDIATION" or
+        "REPRESENTATION_RECOVERY" or
+        "PREREQUISITE_RECOVERY" or
+        "UNCLASSIFIED_RECOVERY" or
+        "REMEDIATION_LOCK_ACTIVE" =>
+            "This question gives you more practice with the part you found difficult.",
+        "MISCONCEPTION_CONFIRMATION_REQUIRED" or
+        "CONFIRMATION_PASSED" =>
+            "This question checks that you can now solve it independently.",
+        "COMPLEXITY_PROGRESS" or
+        "PROGRESSION_ELIGIBLE" =>
+            "You answered recent questions correctly, so Edulytics increased the challenge.",
+        "COMPLEXITY_REDUCE" or
+        "PROGRESSION_BLOCKED_REPEATED_FAILURE" =>
+            "Edulytics lowered the challenge so you can strengthen the skill before moving on.",
+        "COMPLEXITY_CONSOLIDATE" =>
+            "This question checks that you are confident at your current level.",
+        _ =>
+            "This question was chosen from your recent answers in this practice session."
+    };
+
+    static string DifficultyText(
+        Edulytics.Services.AdaptivePractice.AdaptiveQuestionLogRow item)
+    {
+        if (item.Difficulty == Edulytics.Core.Enums.AssessmentItemDifficulty.Medium)
+            return "Standard";
+
+        return item.MathematicalComplexityScore switch
+        {
+            <= 55 => "Standard",
+            <= 67 => "Stretch",
+            _ => "Challenge"
+        };
+    }
+}
+
+<section class="student-progress-page adaptive-question-log">
+    <header class="student-progress-hero">
+        <div>
+            <span class="student-eyebrow">Edulytics Practice</span>
+            <h1>Question log</h1>
+            <p>@Model.QuestionCount questions across @Model.SessionCount practice sessions.</p>
+            <small>
+                Sessions are separated below so current Practice evidence is not mixed with older historical sessions.
+            </small>
+        </div>
+    </header>
+
+    @if (Model.Questions.Count == 0)
+    {
+        <section class="student-panel">
+            <p class="student-empty">No adaptive questions have been recorded yet.</p>
+        </section>
+    }
+    else
+    {
+        <div class="adaptive-log-session-list">
+            @foreach (var session in sessions)
+            {
+                var orderedQuestions = session
+                    .OrderBy(x => x.Sequence)
+                    .ToArray();
+                var newest = session.Max(x => x.PresentedAtUtc);
+                var sessionInfo = session.First();
+
+                <section class="student-panel adaptive-log-session">
+                    <header class="adaptive-log-session__header">
+                        <div>
+                            <span class="student-eyebrow">Practice session</span>
+                            <h2>@sessionInfo.CurriculumLabel — @sessionInfo.LessonTitle</h2>
+                            <p>
+                                <time datetime="@newest.ToString("O")">
+                                    @newest.ToString("yyyy-MM-dd HH:mm") UTC
+                                </time>
+                            </p>
+                        </div>
+                        <strong class="adaptive-log-session__count">
+                            @orderedQuestions.Length question@(orderedQuestions.Length == 1 ? "" : "s")
+                        </strong>
+                    </header>
+
+                    <div class="student-progress-skill-list">
+                        @foreach (var item in orderedQuestions)
+                        {
+                            <article class="student-progress-skill-row adaptive-log-question">
+                                <div class="student-progress-skill-name">
+                                    <strong>#@item.Sequence</strong>
+                                    <span class="student-skill-status @(item.IsCorrect == true ? "is-positive" : item.IncorrectAttemptCount > 0 || item.IsCorrect == false ? "is-negative" : "is-muted")">
+                                        @(item.IsCorrect == true
+                                            ? item.IncorrectAttemptCount > 0
+                                                ? "Correct after retry"
+                                                : "Correct first attempt"
+                                            : item.IsCorrect == false
+                                                ? "Closed incorrect"
+                                                : item.IncorrectAttemptCount > 0
+                                                    ? "Retry in progress"
+                                                    : "Not answered")
+                                    </span>
+                                </div>
+
+                                <p class="adaptive-log-question__prompt">@item.Prompt</p>
+
+                                <div class="student-progress-skill-metrics">
+                                    <div>
+                                        <span>Difficulty</span>
+                                        <strong>@DifficultyText(item)</strong>
+                                    </div>
+                                    <div>
+                                        <span>Complexity</span>
+                                        <strong>@item.MathematicalComplexityScore</strong>
+                                    </div>
+                                    <div>
+                                        <span>Representation</span>
+                                        <strong>@(item.Representation ?? "—")</strong>
+                                    </div>
+                                </div>
+
+                                @if (item.IncorrectAttemptCount > 0)
+                                {
+                                    <p><strong>Incorrect attempts:</strong> @item.IncorrectAttemptCount</p>
+                                    @if (!string.IsNullOrWhiteSpace(item.LastIncorrectAnswer))
+                                    {
+                                        <p><strong>Last incorrect answer:</strong> @item.LastIncorrectAnswer</p>
+                                    }
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(item.SubmittedAnswer))
+                                {
+                                    if (item.IsCorrect == true)
+                                    {
+                                        <p><strong>Final accepted answer:</strong> @item.SubmittedAnswer</p>
+                                    }
+                                    else
+                                    {
+                                        <p><strong>Final submitted answer:</strong> @item.SubmittedAnswer</p>
+                                    }
+                                }
+
+                                @if (item.IsCorrect == true &&
+                                     item.IncorrectAttemptCount > 0)
+                                {
+                                    <p><strong>Item outcome:</strong> Correct after retrying the same question.</p>
+                                }
+                                else if (item.IsCorrect == false)
+                                {
+                                    <p><strong>Item outcome:</strong> Closed after the allowed retry was used.</p>
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(item.DecisionReasonCode))
+                                {
+                                    <p class="adaptive-log-question__why">
+                                        <strong>Why this question:</strong>
+                                        @ReasonText(item.DecisionReasonCode)
+                                    </p>
+                                }
+
+                                @if (item.IsIndependentConfirmation)
+                                {
+                                    <p><strong>Independent confirmation:</strong> yes</p>
+                                }
+
+
+                            </article>
+                        }
+                    </div>
+                </section>
+            }
+        </div>
+    }
+</section>

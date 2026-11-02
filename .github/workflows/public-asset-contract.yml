@@ -1,0 +1,31 @@
+name: Public asset bundle contract
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/public-asset-contract.yml'
+      - 'public-frontdoor/build.sh'
+      - 'src/Edulytics.Web/Controllers/PublicAssetBundleController.cs'
+      - 'src/Edulytics.Web/wwwroot/css/**'
+      - 'src/Edulytics.Web/wwwroot/js/**'
+      - 'tools/public-asset-contract.cjs'
+      - 'tests/public-asset-contract.test.cjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  parity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check static builder syntax
+        run: bash -n public-frontdoor/build.sh
+      - name: Verify identical public bundles without network access
+        run: node --test tests/public-asset-contract.test.cjs

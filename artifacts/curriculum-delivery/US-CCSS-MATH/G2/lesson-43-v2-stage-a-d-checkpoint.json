@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 43,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L09",
+  "title": "From Feet to Inches",
+  "unitNumber": 3,
+  "lessonNumber": 9,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_TEACHER_PREPARATION_AND_ORIGINAL_LESSON_REVIEW",
+    "sourceReadOnly": "Local original Grade2 Unit3 Lesson9 preparation/lesson HTML; not a repository checkout",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-9/preparation.html",
+    "canonicalBodySha256": "9dd9e384db73f5a4fc7dcc85599337d686d42f51dff96133b2b6640a993b5c06",
+    "sourceSemanticSha256": "83525c67722d14266a01430ee253d7c08eea4278f4e44342d1aa72ba7f052890",
+    "orderedOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.2",
+      "CCSS:2.MD.A.3"
+    ],
+    "warmup": "Original Estimation Exploration Small Fry Big Fish, source Cobia fish and boy7 years old48 inches tall; estimates too low/about right/too high, no exact source fish measurement implied.",
+    "activity1": "Teacher prepares four REAL floor tape strips: largemouth bass A2ft; spiny dogfish shark B4ft; catfish C3ft; koi D2ft6in. Students measure first using12-inch ruler foot span then inch segments, avoiding gaps due to physical overhangs.",
+    "activity2": "Inches or Feet? Pupils FIRST estimate and choose units/tools for classroom objects, then ACTUALLY measure with inch ruler/tape measure, record and discuss with classmates.",
+    "principle": "Physical foot equals12 inches; source explicitly says G2 students NOT EXPECTED TO CONVERT measurement units formally. Compare different counts for larger/smaller units by hands-on iteration.",
+    "coolDown": "Measure in Inches and Feet original educator-login restricted; independent Edulytics virtual exercises clearly separated.",
+    "teacherOnly": "Original source fish illustration and classroom real measurements, tool accuracy, ruler endpoint and group MLR2 conversation teacher assessed.",
+    "rights": "Mathematical source acknowledged; no reprint of source fish artwork or protected student-response images."
+  },
+  "stageB": {
+    "status": "COMPLETE_ORIGINAL_SOURCE_SHA_PREDECESSOR_SIX_FIELD_GUARD",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3FeetFishTapeTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original URL, exact content pack body SHA, ordered three CCSS codes, old six English fields and approved persisted rich-content predecessor."
+  },
+  "stageC": {
+    "status": "COMPLETE_PROTECTED_FEET_INCH_MEASUREMENT_COMPANION_FOUR_EXACT_FAMILIES_WRITTEN_UNRUN_TESTS",
+    "numericVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3NinthLessonFishFeet.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson9FishFeetContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson9FishFeetQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson43ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson43Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l09.one_foot_twelve_tiles",
+      "usccss.g2.u03.l09.repeat_full_ruler_spans",
+      "usccss.g2.u03.l09.repeat_and_extra_inch_tiles",
+      "usccss.g2.u03.l09.compare_inches_and_feet_counts"
+    ],
+    "firstPartyExamples": "Virtual repeated spans12,36,30 inch intervals; source actual tape model targets 2ft,4ft,3ft,2ft6in; teacher verifies real physical lengths.",
+    "explicitLimitation": "No abstract unit conversion curriculum requirement at Grade2, no claimed direct observation of real tapes or peers.",
+    "studentSecurity": "StudentPortal role, verified selected adoption/published lesson, antiforgery submit and bounded answer input, no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3FeetFishTapeTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3NinthLessonFishFeetTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson9FishFeetQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson43ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L10_GRADE_ORDINAL44_SOURCE_A_THEN_B_C"
+}

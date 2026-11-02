@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "kind": "US_CCSS_ACADEMIC_10_LESSON_BATCH_MANIFEST",
+  "policyId": "EDULYTICS-INTERNAL-SOURCE-VERIFIED-CERTIFICATION-V2",
+  "executionMode": "FIXED_10_LESSON_BATCHES",
+  "batchId": "T001",
+  "batchNumber": 1,
+  "batchSize": 10,
+  "totalBatches": 156,
+  "totalCurriculumLessons": 1560,
+  "ordinalStart": 1,
+  "ordinalEnd": 10,
+  "expectedLessonCount": 10,
+  "original500Manifest": "Historical PR #492 B01 500 manifest (not included in this isolated release)",
+  "baseMainCommit": "9bdfc8b8c73f0a534abe426ed8d34db0f0c5c6ab",
+  "sourceAuditPath": "artifacts/academic-us-ccss/04-lesson-academic-audit.json",
+  "canonicalLedgerPath": "artifacts/academic-us-ccss/04-lesson-certification-records.json",
+  "previousBatch": null,
+  "existingCertifiedPilot": {
+    "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
+    "pr": 488,
+    "recordStatus": "INTERNALLY_CERTIFIED",
+    "sourceCandidateCommit": "23786adefd0962e90a074342267baaa5216dddf5",
+    "effectiveContentSha256": "2555913fbe468d3a3733aa5f3ead3642d7ff46767b952c95566fc62256506680",
+    "requiresLiveLedgerRecheck": true
+  },
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 1,
+      "title": "Count and Add",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/preparation.html",
+      "sourceSemanticSha256": "7cfadc8705f32496614fef2205ec8b583ef272542448c5c0dd82feaaf707f074",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 2,
+      "title": "Explore Expressions and Sums",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-2/preparation.html",
+      "sourceSemanticSha256": "fdcaa650396daf2509379d57c4695bd2fefcf04ed67ed28ad2030c887a56396e",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L03",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 3,
+      "title": "Add 1 or 2",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-3/preparation.html",
+      "sourceSemanticSha256": "6e6b111c7b160269e20ecbb1813aee1873e58ef14aaa8ab586a9448fbfb13900",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 4,
+      "title": "More Work with 1 and 2",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-4/preparation.html",
+      "sourceSemanticSha256": "a312a02a53f253b44a0e302c2722ba98b507673cfeead08209bc1f8c6abfcf17",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L05",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 5,
+      "title": "Explore Addition and Subtraction PLC Activity",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-5/preparation.html",
+      "sourceSemanticSha256": "c85b2a707f082cccdc65445b3cfa361836e3570df5f5bfe98d70f19d115cbd69",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L06",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 6,
+      "title": "Center Day 1",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-6/preparation.html",
+      "sourceSemanticSha256": "0c29ed573ce26724b95f189ba9b03c4ddb39a0cb66e17202c36312a9b059e5ca",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L07",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 7,
+      "title": "Sort Math Tools",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-7/preparation.html",
+      "sourceSemanticSha256": "e600f6dac7a4db359d60cb3e3470efa49479c9ba37b7e364aa0ce15d91a05e23",
+      "officialOutcomeCodes": [
+        "CCSS:1.MD.C.4",
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L08",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 8,
+      "title": "Sort and Count Shape Cards PLC Activity",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-8/preparation.html",
+      "sourceSemanticSha256": "690013d4bf5507057df122e5fdbf8946615ffe7259feda92b5c56c00552cb012",
+      "officialOutcomeCodes": [
+        "CCSS:1.MD.C.4"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L09",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 9,
+      "title": "What is Your Favorite ______________ ?",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-9/preparation.html",
+      "sourceSemanticSha256": "72b9274b2ba1a841bd6149587eb9dbb665775b4e7a85bbd324e724f6dbf067d3",
+      "officialOutcomeCodes": [
+        "CCSS:1.MD.C.4",
+        "CCSS:1.OA.C.5"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L10",
+      "gradeOrCourse": "Grade 1",
+      "unitNumber": 1,
+      "lessonNumber": 10,
+      "title": "Center Day 2",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-10/preparation.html",
+      "sourceSemanticSha256": "c95283dd92e113f137c8979872243c6f41a9e57002d67fb86439cf56ba409f4b",
+      "officialOutcomeCodes": [
+        "CCSS:1.OA.B.4",
+        "CCSS:1.OA.C.5",
+        "CCSS:1.OA.C.6"
+      ],
+      "sourceBlueprintCode": "US-CCSS-MATH:G1:IM-K5-2021"
+    }
+  ]
+}

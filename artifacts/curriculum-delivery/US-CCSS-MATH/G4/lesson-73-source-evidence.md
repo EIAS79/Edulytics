@@ -1,0 +1,10 @@
+# G4 ordinal 73 — One- and Two-step Comparison Problems
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-5_lesson-5_preparation.html SHA256=15f1a818f5a6b680d8fc1e89475cab88d7df04520d9205a7c5788d575ddce5a2
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-5\lesson-5\lesson.html SHA256=47cbedfbefb347c4a462984f1137e2410d68f66496bb6da42b371989db20e91d
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-5\lesson-5\lesson.html SHA256=d0e046aefbbf5a98fe5f99e50dac96c4a79e9f20175398da63fc4685fd72cf9e
+- Preserved existing learning explanation: Learning goal: You will solve multiplicative comparison word problems with one or two steps. In this lesson, you apply what you learned about interpreting and representing multiplicative comparison situations to problems in context. The numbers you encounter here are larger, encouraging them to transition from discrete diagrams to more-abstract tape diagrams in which each section is labeled to represent a quantity (MP2). You continue to write equations with symbols representing the unknown and t
+- Original 2021 sections: Warm-up:  Which One Doesn’t Belong: Something's Missing (10 minutes); Activity 1:  The Book Fair	 (20 minutes); Activity 2:  More Book Fair Purchases	 (15 minutes); Cool-down:  Comics and Posters	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 6*8+4 = 52.
+- Edulytics first-party Cool-down: A display contains 5 groups of 12 books and 7 extras. Total?; teacher key: 67 books.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

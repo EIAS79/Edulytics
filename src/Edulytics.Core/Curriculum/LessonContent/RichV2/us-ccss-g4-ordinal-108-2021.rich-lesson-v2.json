@@ -1,0 +1,189 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.6.22-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L22",
+      "CultureCode": "en",
+      "Title": "Problems About Perimeter and Area",
+      "ExplanationParagraphs": [
+        "Source 2021 goal: convert measures with multiplication/division and solve multi-step area and perimeter problems, preserving units and teacher-observed geometric models.",
+        "Warm-up: shaded rectilinear grid; Activity 1: 36-in × 24-in poster cut to an 8-in-high, 8-ft-long banner; Activity 2: a six-sided classroom measured in inches, yards and feet. Teacher checks original diagrams.",
+        "Banner: 36×24=864 in². Eight feet=96 inches, so 8×96=768 in²; 96 square inches spare. Cutting three 36×8-in strips and trimming 12×8 inches can actually make a 96×8-in banner.",
+        "Classroom sides: bottom 204in=17ft, right 4yd=12ft, inset left 3yd=9ft, inset rise 3ft, top 8ft and left 180in=15ft.",
+        "Perimeter=17+12+9+3+8+15=64ft=768in; the 1200-inch delivery is enough with 432 inches spare. Area=(17×12)+(8×3)=228ft².",
+        "First-party Cool-down (not the gated publisher item): a 12ft by 8ft room has area 96ft² and perimeter 40ft. Student drawing and physical cutting remain teacher reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Convert all linear units first",
+          "Definition": "Twelve inches make one foot; three feet make one yard.",
+          "Rule": "Use matching units before addition or area multiplication.",
+          "Example": "204in=17ft, 180in=15ft, 4yd=12ft, 3yd=9ft."
+        },
+        {
+          "Title": "Area conserved by cutting and rearranging",
+          "Definition": "A cut-and-rejoined rectangle can preserve the amount of paper.",
+          "Rule": "Compare square inches AND demonstrate a feasible arrangement.",
+          "Example": "Poster 864in², banner 768in², spare 96in²."
+        },
+        {
+          "Title": "Rectilinear perimeter and floor area",
+          "Definition": "Perimeter adds outside linear lengths; area adds non-overlapping rectangles.",
+          "Rule": "Use all six sides for perimeter and partition the L-shaped floor.",
+          "Example": "64ft perimeter, 768in baseboard, 228ft² carpet."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Banner measurement and a feasible cut",
+          "Question": "Is a 36in-by-24in sheet enough for a banner 8in high and 8ft long?",
+          "Method": "Convert to inches, compare area and show construction.",
+          "Steps": [
+            "36×24=864in² sheet area.",
+            "8ft=96in, so banner area=96×8=768in².",
+            "864−768=96in² left. Cut three 36×8 strips, join to 108×8 and trim 12×8."
+          ],
+          "Answer": "Yes, with 96in² remaining.",
+          "Check": "Required 96×8 rectangle has area 768in²."
+        },
+        {
+          "Title": "Poster paper area",
+          "Question": "What is the area of the original 36in-by-24in paper?",
+          "Method": "Multiply dimensions in inches.",
+          "Steps": [
+            "Area=length×width.",
+            "36×24=36×(20+4)=720+144.",
+            "The area is 864 square inches."
+          ],
+          "Answer": "864in²",
+          "Check": "24×36=864."
+        },
+        {
+          "Title": "Six-sided classroom baseboard length",
+          "Question": "Classroom sides 204in, 4yd, 3yd, 3ft, 8ft, 180in: how many feet and inches of baseboard?",
+          "Method": "Convert first, then add all six outside lengths.",
+          "Steps": [
+            "204in=17ft, 4yd=12ft, 3yd=9ft, 180in=15ft.",
+            "Perimeter=17+12+9+3+8+15=64ft.",
+            "Multiply by 12: 64ft=768in."
+          ],
+          "Answer": "64ft or 768in",
+          "Check": "Every outside side is included exactly once."
+        },
+        {
+          "Title": "Check baseboard delivery",
+          "Question": "A delivery has 1200in of baseboard. Is it enough for a perimeter of 768in?",
+          "Method": "Subtract required length from supplied length.",
+          "Steps": [
+            "Required length is 64×12=768in.",
+            "1200 is greater than 768.",
+            "1200−768=432in remain."
+          ],
+          "Answer": "Yes; 432in spare.",
+          "Check": "768+432=1200."
+        },
+        {
+          "Title": "Carpet for the L-shaped floor",
+          "Question": "The floor is a 17ft-by-12ft base plus an 8ft-by-3ft upper extension. How much carpet?",
+          "Method": "Sum non-overlapping rectangle areas.",
+          "Steps": [
+            "Base area 17×12=204ft².",
+            "Extension area 8×3=24ft².",
+            "Total area 204+24=228ft²."
+          ],
+          "Answer": "228ft²",
+          "Check": "Alternative 8×15+9×12=228ft²."
+        },
+        {
+          "Title": "Independent Edulytics Cool-down",
+          "Question": "Find the area and perimeter of a 12ft by 8ft rectangular room.",
+          "Method": "Area is product; perimeter is twice the sum.",
+          "Steps": [
+            "Area=12×8=96ft².",
+            "12+8=20ft for two adjacent sides.",
+            "Perimeter=2×20=40ft."
+          ],
+          "Answer": "Area 96ft², perimeter 40ft.",
+          "Check": "Keep squared and linear units distinct."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 8 feet of banner length as 8 inches.",
+          "WhyWrong": "A foot has twelve inches; the required banner length is 96in.",
+          "Correction": "Convert 8×12=96in before multiplying by 8in height."
+        },
+        {
+          "Mistake": "Add yard, foot and inch numbers without conversion.",
+          "WhyWrong": "The numerical sum cannot represent a consistent perimeter.",
+          "Correction": "Convert all six sides to feet: 17+12+9+3+8+15=64ft."
+        },
+        {
+          "Mistake": "Use a full 17-by-15 rectangle for the L-shaped room.",
+          "WhyWrong": "The absent 9ft-by-3ft corner would be counted as carpet.",
+          "Correction": "228ft²=(17×12)+(8×3), not 255ft²."
+        }
+      ],
+      "SummaryPoints": [
+        "Convert 8ft=96in and 3yd=9ft before calculating.",
+        "36×24in paper has 864in²; 8×96in banner needs 768in².",
+        "Room baseboard is 64ft=768in, so 1200in delivery leaves 432in.",
+        "L-shaped carpet area is 228ft², using non-overlapping rectangles.",
+        "Teacher reviews source figures, inch tiles and construction; Cool-down is independent."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Paper available and required",
+          "Description": "Independent Edulytics mathematical diagram; not reproduced publisher artwork.",
+          "PrimaryLabel": "36×24in versus 96×8in",
+          "SecondaryLabel": "864−768=96in²",
+          "Items": [
+            "8ft=96in",
+            "36×24=864",
+            "96×8=768"
+          ],
+          "SecondaryItems": [
+            "Original construction and explanation require teacher review."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Classroom outside six sides",
+          "Description": "Independent Edulytics mathematical diagram; not reproduced publisher artwork.",
+          "PrimaryLabel": "17ft,12ft,9ft,3ft,8ft,15ft",
+          "SecondaryLabel": "64ft=768in",
+          "Items": [
+            "204in=17ft, 180in=15ft",
+            "4yd=12ft, 3yd=9ft",
+            "64×12=768; 1200−768=432"
+          ],
+          "SecondaryItems": [
+            "Original construction and explanation require teacher review."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "L-shaped carpet by parts",
+          "Description": "Independent Edulytics mathematical diagram; not reproduced publisher artwork.",
+          "PrimaryLabel": "17×12 + 8×3",
+          "SecondaryLabel": "228ft²",
+          "Items": [
+            "17×12=204",
+            "8×3=24",
+            "204+24=228"
+          ],
+          "SecondaryItems": [
+            "Original construction and explanation require teacher review."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

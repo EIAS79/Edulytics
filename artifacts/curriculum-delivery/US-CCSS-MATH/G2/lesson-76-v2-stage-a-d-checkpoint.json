@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 76,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L09",
+  "title": "Compare Numbers on the Number Line PLC Activity",
+  "stageA": {
+    "status": "PUBLISHER_IM2021_ORIGINAL_LESSON_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-9/preparation.html",
+    "lessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-9/lesson.html",
+    "sourceBodySha256": "e69fffdc4e17ba4c3984af198e764e462d5dabf84f25b6b84a694322e440a314",
+    "sourceSemanticSha256": "fb9bd4676bb2c09390bcd12687756a2ebe319f9397d6f5ef3d9bb15f683f7f2e",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.A.1",
+      "CCSS:2.NBT.A.4"
+    ],
+    "activityEvidence": "Original warmup and BOTH student-facing activities source-specific, including any optional real-center tasks; authentic figures and subjective response human-only",
+    "restricted": "Teacher-only source Cool-down inaccessible and never reconstructed"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_EXACT_SIX_FIELD_SOURCE_LESSON_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5ComparisonSourceCorrections.cs",
+    "sourceVersion": "usccss-g2-u05-original-ordinal76-v2",
+    "originalAllFieldsAndOrderedStandardsGuarded": true
+  },
+  "stageC": {
+    "status": "SOURCE_LIMITED_FOUR_FIRST_PARTY_EXACT_SKILL_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "sourceRubric": "Original figures/number lines, deliberate multiple-solution estimates, card games and physical object counts reserved for educator",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit5ComparisonActivitiesController.cs",
+    "studentPage": "src/Edulytics.Web/Views/Grade2Unit5ComparisonActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5ComparisonQuestions.cs",
+    "families": [
+      "usccss.g2.u05.l09.further_right_number",
+      "usccss.g2.u05.l09.numeric_comparison_gap",
+      "usccss.g2.u05.l09.place_value_tens_compare",
+      "usccss.g2.u05.l09.open_estimation_interval"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal76OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal76SourceMathematicsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal76IndependentExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal76WebStudentContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 77
+}

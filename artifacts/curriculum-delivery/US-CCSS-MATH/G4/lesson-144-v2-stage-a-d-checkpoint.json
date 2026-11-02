@@ -1,0 +1,51 @@
+{
+  "ordinal": 144,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L07",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "ORIGINAL_LOCAL_IMKH_2021_TEACHER_AND_STUDENT_SOURCE_INTAKE_REUSED",
+    "B": "SOURCE_MULTIPLICATIVE_COMPARE_EXPLANATION_BASE_TIMES_FACTOR_AND_FIRST_PARTY_COOLDOWN_RETAINED",
+    "C": "EXISTING_MULTIPLICATION_FACT_VERIFIER_REUSED_TEST_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "dc1430e0f5fd883327236ca9a8869198d74ba4fdc1a8039ad5f7ec08baf6d3f9",
+    "teacher": "e62182238165ba73807268f41b73c9b6d45dac6f83c96334ed0b7df486603111"
+  },
+  "firstPartyCooldown": {
+    "prompt": "A product costs $7 and another is four times as much. Find the second price.",
+    "teacherAnswer": "$28."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 local Our-CS source intake",
+    "sourceStudentExcerpts": [
+      "What do you notice? What do you wonder? | San Francisco, CA | Fort Wayne, IN",
+      "Bermuda is the most expensive country in the world and India is one of the least expensive. | Attribution: By Bilingual2000. CC BY-SA 4.0. Wikipedia. Source. | The table shows how prices of some things in the two countries compare. Estimate or calculate the mi",
+      "The cost of living in the United States is higher than in Ghana. | Attribution: By Amanor kwaku. CC BY-SA 4.0. Wikimedia Commons. Source. | Attribution: By Muntaka Chasant. CC BY-SA 4.0. Wikimedia Commons. Source."
+    ],
+    "originalSourceActivities": [
+      "Warm-up: Notice and Wonder: Two Cities (10 minutes)",
+      "Activity 1: The Most and Least Expensive (20 minutes)",
+      "Activity 2: The Cost of Living (15 minutes)",
+      "Cool-down: Restaurant Budget (5 minutes)"
+    ],
+    "allowedFamily": "number.whole.multiply.fact_recall.apply",
+    "teacherOnlyTasks": [
+      "Original Bermuda India source price table",
+      "Original US Ghana cost-of-living figures",
+      "Numerical source costs and model discussion require actual teacher source figures"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal144ComparisonTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
+}

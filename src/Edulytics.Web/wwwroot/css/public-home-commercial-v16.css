@@ -1,0 +1,278 @@
+/* Home v16 — consolidated final visual fixes for hero controls, Arabic RTL alignment and mascot presentation. */
+
+/* Hero balance: reserve clear side gutters for carousel controls on desktop. */
+.ed-home .ed-home-v12-hero{
+  min-height:620px;
+}
+
+.ed-home .ed-home-v12-slide-grid{
+  width:min(1480px,calc(100% - 220px));
+  min-height:620px;
+  padding:28px 0 42px;
+  grid-template-columns:minmax(0,1.08fr) minmax(580px,.92fr);
+  gap:34px;
+  align-items:center;
+}
+
+.ed-home .ed-home-v12-copy{
+  max-width:850px;
+  min-width:0;
+}
+
+/* Wider/shorter visual footprint for the photo slide. */
+.ed-home .ed-home-v12-visual{
+  width:100%;
+  max-width:720px;
+  min-height:0!important;
+  aspect-ratio:3 / 2;
+  justify-self:end;
+}
+
+/* Mascot slide needs a slightly taller stage so the full square artwork can remain visible. */
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+  aspect-ratio:4 / 3;
+  min-height:0!important;
+  overflow:visible!important;
+}
+
+/* Use the supplied transparent mascot directly and contain the complete artwork on both axes. */
+.ed-home .ed-home-v16-mascot-canvas{
+  position:absolute;
+  inset:0;
+  width:auto;
+  height:auto;
+  max-width:96%;
+  max-height:96%;
+  margin:auto;
+  display:block;
+  object-fit:contain;
+  filter:drop-shadow(0 18px 28px rgba(35,73,111,.12));
+}
+
+.ed-home .ed-home-v12-photo,
+.ed-home .ed-home-v12-photo-image,
+.ed-home .ed-home-v12-photo-wash{
+  border-radius:inherit;
+}
+
+/* Carousel arrows sit in dedicated side gutters instead of over copy or imagery. */
+@media(min-width:1181px){
+  .ed-home .ed-home-v12-prev{left:24px!important}
+  .ed-home .ed-home-v12-next{right:24px!important}
+}
+
+/* Arabic hero: real RTL alignment with more breathing room between heading lines. */
+.ed-home.is-site-ar .ed-home-v12-hero,
+.ed-home .ed-home-v12-hero.is-rtl{
+  direction:rtl;
+}
+
+.ed-home.is-site-ar .ed-home-v12-copy,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy{
+  direction:rtl;
+  text-align:right!important;
+}
+
+.ed-home.is-site-ar .ed-home-v12-kicker,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-kicker{
+  width:100%;
+  justify-content:flex-start;
+  text-align:right;
+}
+
+.ed-home.is-site-ar .ed-home-v12-copy h1,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy h1{
+  max-width:820px;
+  margin-inline-start:0;
+  margin-inline-end:0;
+  letter-spacing:0!important;
+  line-height:1.36!important;
+  text-align:right;
+  text-wrap:balance;
+}
+
+.ed-home.is-site-ar .ed-home-v12-body,
+.ed-home.is-site-ar .ed-home-v12-note,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-body,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-note{
+  max-width:790px;
+  line-height:1.9!important;
+  text-align:right;
+}
+
+.ed-home.is-site-ar .ed-home-v12-actions,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-actions{
+  direction:rtl;
+  justify-content:flex-start!important;
+}
+
+/* Arabic mega menus: explicit RTL direction/alignment for headings, cards, links, dots and icons. */
+.ed-home.is-site-ar .ed-home-v11-mega,
+.ed-home.is-site-ar .ed-home-v11-mega-grid,
+.ed-home.is-site-ar .ed-home-v11-mega-lead,
+.ed-home.is-site-ar .ed-home-v11-mega-group{
+  direction:rtl;
+  text-align:right;
+}
+
+.ed-home.is-site-ar .ed-home-v11-mega-lead strong,
+.ed-home.is-site-ar .ed-home-v11-mega-lead p,
+.ed-home.is-site-ar .ed-home-v11-mega-group h3{
+  text-align:right!important;
+}
+
+.ed-home.is-site-ar .ed-home-v11-mega-group h3{
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+
+.ed-home.is-site-ar .ed-home-v14-menu-link{
+  direction:rtl;
+  justify-content:flex-start;
+  text-align:right!important;
+}
+
+.ed-home.is-site-ar .ed-home-v14-menu-link:hover,
+.ed-home.is-site-ar .ed-home-v14-menu-link:focus-visible{
+  transform:translateX(-2px)!important;
+}
+
+.ed-home.is-site-ar .ed-home-v14-menu-icon,
+.ed-home.is-site-ar .ed-home-v14-menu-dot{
+  flex-shrink:0;
+}
+
+.ed-home.is-site-ar .ed-home-v11-mobile-group,
+.ed-home.is-site-ar .ed-home-v11-mobile-group>summary,
+.ed-home.is-site-ar .ed-home-v11-mobile-submenu{
+  direction:rtl;
+  text-align:right;
+}
+
+@media(max-width:1450px){
+  .ed-home .ed-home-v12-hero{min-height:570px}
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(1240px,calc(100% - 190px));
+    min-height:570px;
+    grid-template-columns:minmax(0,1.04fr) minmax(520px,.96fr);
+    gap:30px;
+    padding:24px 0 36px;
+  }
+  .ed-home .ed-home-v12-visual{max-width:650px}
+  .ed-home .ed-home-v16-mascot-canvas{max-width:96%;max-height:96%}
+  .ed-home .ed-home-v12-prev{left:18px!important}
+  .ed-home .ed-home-v12-next{right:18px!important}
+}
+
+@media(max-width:1180px) and (min-width:1041px){
+  .ed-home .ed-home-v12-slide-grid{
+    width:calc(100% - 170px);
+    grid-template-columns:minmax(0,1fr) minmax(470px,1fr);
+    gap:24px;
+  }
+  .ed-home .ed-home-v12-visual{max-width:600px}
+  .ed-home .ed-home-v12-arrow{
+    width:60px!important;
+    height:60px!important;
+  }
+  .ed-home .ed-home-v12-arrow span{font-size:2.9rem!important}
+  .ed-home .ed-home-v12-prev{left:12px!important}
+  .ed-home .ed-home-v12-next{right:12px!important}
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-hero{min-height:auto}
+  .ed-home .ed-home-v12-slide-grid{
+    width:min(900px,calc(100% - 42px));
+    min-height:auto;
+    grid-template-columns:1fr;
+    gap:26px;
+    padding:34px 0 94px;
+  }
+  .ed-home .ed-home-v12-visual{
+    justify-self:center;
+    width:min(100%,760px);
+    max-width:760px;
+    aspect-ratio:16 / 10;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+    aspect-ratio:4 / 3;
+  }
+  .ed-home .ed-home-v16-mascot-canvas{
+    max-width:94%;
+    max-height:94%;
+  }
+  .ed-home .ed-home-v12-arrow{
+    top:auto!important;
+    bottom:18px!important;
+    width:58px!important;
+    height:58px!important;
+    transform:none!important;
+  }
+  .ed-home .ed-home-v12-arrow:hover{transform:scale(1.04)!important}
+  .ed-home .ed-home-v12-prev{left:18px!important}
+  .ed-home .ed-home-v12-next{right:18px!important}
+  .ed-home.is-site-ar .ed-home-v12-copy,
+  .ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy{
+    text-align:right!important;
+  }
+  .ed-home.is-site-ar .ed-home-v12-actions,
+  .ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-actions{
+    justify-content:flex-start!important;
+  }
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v12-slide-grid{
+    width:calc(100% - 28px);
+    gap:20px;
+    padding:26px 0 82px;
+  }
+  .ed-home .ed-home-v12-visual,
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual{
+    width:100%;
+    aspect-ratio:4 / 3;
+  }
+  .ed-home .ed-home-v16-mascot-canvas{
+    max-width:94%;
+    max-height:94%;
+  }
+  .ed-home.is-site-ar .ed-home-v12-copy h1,
+  .ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-copy h1{
+    line-height:1.4!important;
+  }
+}
+
+@media(max-width:390px){
+  .ed-home .ed-home-v12-slide-grid{width:calc(100% - 20px)}
+}
+
+/* v16 hotfix: the carousel mechanics must stay LTR in every locale.
+   Only the Arabic slide content is RTL. This preserves the existing
+   translate3d(-100%) motion and keeps slide 2 visible in Arabic. */
+.ed-home.is-site-ar .ed-home-v12-hero,
+.ed-home .ed-home-v12-hero.is-rtl,
+.ed-home.is-site-ar .ed-home-v12-viewport,
+.ed-home.is-site-ar .ed-home-v12-track,
+.ed-home.is-site-ar .ed-home-v12-slide,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-viewport,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-track,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-slide{
+  direction:ltr!important;
+}
+
+.ed-home.is-site-ar .ed-home-v12-slide-grid,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-slide-grid{
+  direction:rtl!important;
+}
+
+/* Prevent bidirectional text rules from mirroring the ‹ / › glyphs. */
+.ed-home .ed-home-v12-arrow,
+.ed-home .ed-home-v12-arrow span,
+.ed-home.is-site-ar .ed-home-v12-arrow,
+.ed-home.is-site-ar .ed-home-v12-arrow span,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-arrow,
+.ed-home .ed-home-v12-hero.is-rtl .ed-home-v12-arrow span{
+  direction:ltr!important;
+  unicode-bidi:isolate!important;
+}

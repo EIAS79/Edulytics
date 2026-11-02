@@ -1,0 +1,61 @@
+{
+  "ordinal": 113,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U07:L02",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_PREPARATION_AND_TEACHER_STUDENT_FACING_NUMBER_TALK_ALL_4_VALUES_AND_4_CARD_CATEGORIES_6_POLYGONS_3_CHARACTER_DRAWINGS_REVIEWED",
+    "B": "FOUR_SOURCE_MATH_EXAMPLES_WITH_FIRST_PARTY_GEOMETRY_CLASSIFICATION_AND_THREE_TEXT_VISUAL_MODELS; ORIGINAL_CONSTRUCTIONS_TEACHER_LED",
+    "C": "SINGLE_SOURCE_GOAL_EXACT_FAMILY_EIGHT_MODES_4_GEOMETRY_4_SUBTRACTION; FOCUSED_2_OF_2_GREEN; CORRECT_WRONG_MALFORMED_TAMPERED_REJECTED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "0536d09eb4afd60a91f94af6cddbedd834363fa7ccd54068960a8132b4cf6568",
+    "teacher": "093dfabcfb1b4bd7099bb0399dfe5fb6ba58902b12815a88010d50746ab04a39"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Draw and label a ray starting at P through Q, and segment PQ.",
+    "teacherAnswer": "Ray PQ begins at P and extends through Q; segment PQ stops at both points."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-113-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-113-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceTeacherSha256": "093dfabcfb1b4bd7099bb0399dfe5fb6ba58902b12815a88010d50746ab04a39",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceElementsCount": 26,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "teacherOnlyTasks": [
+      "Original blackline four-category sort with explanation",
+      "Six geometric polygon drawings",
+      "Uppercase letter, numeral, lowercase letter drawn with rays and line segments",
+      "Student oral explanation and teacher assessment"
+    ],
+    "firstPartyCoolDown": {
+      "prompt": "Draw and label a ray starting at P through Q, and segment PQ.",
+      "teacherAnswer": "Ray PQ begins at P and extends through Q; segment PQ stops at both points."
+    },
+    "allowedFamily": "usccss.g4.u07.l02.geometry_cards_number_talk",
+    "focusedTestRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40558489341",
+    "focusedTestCandidateSha": "1fc9a04bf6c82cda78a3c508c2d49d7a7c76d5fb",
+    "focusedTestsPassed": 2,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Original publisher card image pixel parity not verified; teacher-led equivalent not original digital card artwork.",
+    "Student drawings and oral work require teacher, not numeric auto grading.",
+    "End-user session/attempt persistence and full-registry materialization require Stage D."
+  ]
+}

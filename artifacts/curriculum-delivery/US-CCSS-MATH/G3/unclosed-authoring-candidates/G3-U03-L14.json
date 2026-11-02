@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 50,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L14",
+  "unitNumber": 3,
+  "lessonNumber": 14,
+  "title": "Nearest Multiples of 10 and 100",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-14/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-14/lesson.html",
+  "stageA": {
+    "status": "2021_LOCAL_PUBLIC_TEACHER_STUDENT_HTML_READ_THREE_STUDENT_SECTIONS_ALL_SOURCE_NUMBER_ANCHORS_AND_IMAGE_ALTS_MAPPED",
+    "goals": "Identify the closest multiples of 10 and 100 for numbers within 1,000. Understand that rounding is a formal way to say which number a given number is closer to, and that number is often a multiple of 10 or 100. Understand the meaning of “the closest multiple of 10.”",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 6,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "studentFacingSourceSectionsRead": 3,
+    "localStudentHtmlSha256": "a5eeb918e62ea3afab4784dfe8c86486fb9b29b6c972ea76615fc6083384aac4",
+    "localPreparationHtmlSha256": "1addd4a0e85d8e6aa207f38121ee97682c238d2c2d49ed51543964cdc070eb83",
+    "textAndImageAltComparisonsDone": true,
+    "figurePixelParityCertified": false
+  },
+  "stageB": {
+    "status": "GUARDED_LOCAL_2021_HTML_SPECIFIC_RICH_V2_FIRST_PARTY_NUMBER_LINES_TEACHER_IMAGE_ESTIMATION_NOT_PUBLISHER_COPY",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L14",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "6479b97d092996aca022f17f7c2cb1126d9a2ca8e52b1b6f7c51b500b63c7ffd",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l14-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson14.cshtml",
+    "firstPartyNumberLineIllustrations": 5,
+    "sourceSpecificRichV2AuthoringCompared": true
+  },
+  "stageC": {
+    "status": "20_ORIGINAL_HTML_NUMBER_ANCHORS_NINE_TEACHER_REVIEW_CONSTRUCTIONS_UNRUN_TESTS",
+    "family": "rounding-estimation",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Close to Multiples of 10 with your teacher. Show the representation and explain how it meets the goal: For a given number, let’s find the closest multiple of 100 and the closest multiple of 10. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Act",
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson14NearestTensHundredsSourceTests.cs",
+    "sourceTextNumericChecks": 20,
+    "teacherReviewTasks": 9
+  },
+  "sourceElements": [
+    {
+      "key": "GOAL",
+      "source": "Original local 2021 lesson and preparation goals",
+      "mode": "SOURCE_GOAL_MAPPED",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false
+    },
+    {
+      "key": "WU-POINT",
+      "source": "Archived 2021 Student Facing section 1: number line 0–200 point between 100 and 200",
+      "mode": "ORIGINAL_POINT_PIXEL_NOT_AVAILABLE_TEACHER_LEADS_AND_EDULYTICS_INDEPENDENT_ESTIMATION",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "WU-ESTIMATES",
+      "source": "Section 1: too low/about right/too high estimates",
+      "mode": "TEACHER_ORAL_ESTIMATION",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A1-128",
+      "source": "Archived Student Facing section 2",
+      "mode": "ORIGINAL_VALUE_INDEPENDENT_NEAREST_TEN_HUNDRED_AND_FIRSTPARTY_NUMBERLINE",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A1-272",
+      "source": "Archived Student Facing section 2",
+      "mode": "ORIGINAL_VALUE_INDEPENDENT_NEAREST_TEN_HUNDRED_AND_FIRSTPARTY_NUMBERLINE",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A1-436",
+      "source": "Archived Student Facing section 2",
+      "mode": "ORIGINAL_VALUE_INDEPENDENT_NEAREST_TEN_HUNDRED_AND_FIRSTPARTY_NUMBERLINE",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A1-89",
+      "source": "Archived Student Facing section 2",
+      "mode": "ORIGINAL_VALUE_INDEPENDENT_NEAREST_TEN_HUNDRED_AND_FIRSTPARTY_NUMBERLINE",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A1-351",
+      "source": "Archived Student Facing section 2",
+      "mode": "ORIGINAL_VALUE_INDEPENDENT_NEAREST_TEN_HUNDRED_AND_FIRSTPARTY_NUMBERLINE",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A1-128-BOTH-TENS",
+      "source": "Section 2 enclosing tens for 128",
+      "mode": "TEACHER_PAIR_120_130_PLUS_NUMERIC_130",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A2-349",
+      "source": "Section 3 nearest ten/hundred comparison",
+      "mode": "NUMERIC_ORACLE_PLUS_TEACHER_DISTANCES",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A2-712",
+      "source": "Section 3 nearest ten/hundred comparison",
+      "mode": "NUMERIC_ORACLE_PLUS_TEACHER_DISTANCES",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A2-568",
+      "source": "Section 3 nearest ten/hundred comparison",
+      "mode": "NUMERIC_ORACLE_PLUS_TEACHER_DISTANCES",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A2-EXPLAIN",
+      "source": "Section 3 explain method without plotting",
+      "mode": "TEACHER_REASONING_NOT_AUTOGRADED",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "A2-324-89",
+      "source": "Section 3 final 324 and 89",
+      "mode": "TWO_PRECISION_NUMERIC_CHECKS_PLUS_TEACHER_REVIEW",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "FIGURES-6",
+      "source": "Six figure URL/alt descriptions from local original HTML (warm-up + five line ranges)",
+      "mode": "NOT_REPRODUCED_OR_PIXEL_VERIFIED_FIRST_PARTY_SCHEMATIC_AND_TEACHER_SOURCE",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    },
+    {
+      "key": "PUBLISHER-COOLDOWN",
+      "source": "Original gated publisher Cool-down",
+      "mode": "PUBLISHER_MATERIAL_NOT_READ_FIRST_PARTY_INDEPENDENT_GOAL_EQUIVALENT_AND_TEACHER_ORIGINAL_REQUIRED",
+      "semanticAuthoringVerified": true,
+      "publisherPixelParity": false,
+      "teacherReviewRequired": true
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L14-IMAGE-01",
+      "observedAltText": "Number line. Scale 0 to 200 by 100's. Point between 100 and 200.",
+      "originalReference": "unit-3/lesson-14/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L14-IMAGE-02",
+      "observedAltText": "Number line. Scale 0 to 100 by 100's. Evenly spaced tick marks.",
+      "originalReference": "unit-3/lesson-14/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L14-IMAGE-03",
+      "observedAltText": "Number line. Scale 100 to 200 by 100's. Evenly spaced tick marks.",
+      "originalReference": "unit-3/lesson-14/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L14-IMAGE-04",
+      "observedAltText": "Number line. Scale 200 to 300 by 100's. Evenly spaced tick marks.",
+      "originalReference": "unit-3/lesson-14/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L14-IMAGE-05",
+      "observedAltText": "Number line. Scale 300 to 400 by 100's. Evenly spaced tick marks.",
+      "originalReference": "unit-3/lesson-14/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L14-IMAGE-06",
+      "observedAltText": "Number line. Scale 400 to 500 by 100's. Evenly spaced tick marks.",
+      "originalReference": "unit-3/lesson-14/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "mappedSemanticSourceElements": 16,
+    "figurePixelVerified": 0,
+    "publisherGatedCooldownVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Round 332 to the nearest hundred (fifty rounds up).",
+    "answerType": "integer",
+    "expected": "300"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original publisher student PDF and six original image pixels remain unavailable/unverified; first-party line drawings are independent teaching equivalents, not claimed source art parity.",
+    "Publisher original gated Cool-down not read or copied; separate goal-equivalent first-party Cool-down used.",
+    "Runtime .NET tests, authenticated UAT, Stage D/CI, final academic signoff, deployment and publication not executed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_ORIGINAL_2021_LOCAL_HTML_SEMANTIC_AUTHORING_ONLY__NOT_PUBLISHER_IMAGE_PIXEL_OR_RUNTIME_PARITY"
+}

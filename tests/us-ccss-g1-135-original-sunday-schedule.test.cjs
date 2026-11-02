@@ -1,0 +1,23 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const text=fs.readFileSync(path.join(root,'src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs'),'utf8');
+const original=read('artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json').rows.find(x=>x.ordinal===135);
+const rubric=read('artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-135-original-sunday-schedule-authorship-rubric.json');
+const map=read('artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json').records.find(x=>x.ordinal===135);
+test('2021 learner-authored Sunday schedule teaching, source trace and teacher rubric exist without fabricated pupil data',()=>{
+ assert.equal(rubric.lessonOrdinal,135);
+ assert.equal(rubric.status,'TEACHER_REVIEW_REQUIRED_NOT_CERTIFIED');
+ assert.equal(map.lessonCode,rubric.lessonCode);
+ assert.equal(map.assessmentMode,'DIGITAL_AND_SOURCE_AUTHORED_TASK');
+ assert.equal(map.candidateFamily,rubric.digitalPracticeFamily);
+ assert.ok(original.studentFacingTaskExcerpts.some(x=>/Sunday schedule/i.test(x)));
+ assert.match(text,/ORIGINAL STUDENT FACING TASK: create your OWN ideal Sunday schedule/);
+ assert.match(text,/Write YOUR ideal Sunday schedule/);
+ assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Authorship'));
+ assert.ok(rubric.teacherRubric.some(x=>x.criterion==='Math accuracy'));
+ assert.equal(rubric.actualAuthenticatedLearnerAuthoredWorkVerified,false);
+ assert.equal(rubric.teacherObservationClaimed,false);
+ assert.equal(rubric.academicInternalApproval,'NOT_CLAIMED');
+});

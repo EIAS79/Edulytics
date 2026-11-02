@@ -1,0 +1,45 @@
+{
+  "ordinal": 33,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L08",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "fd558c0b7923c6cb1e9a095ef6ea51acbe0fb0a6d491ef5f19294c398f2c765c",
+    "teacherLesson": "3ce78bb76f3ef527b35c2d1ba79667201128558f6f0915c601c80b461ca8fd6e",
+    "studentPdf": "383776775ffdf84c1dfa83b27fa5e1131bd0f275339a4ee6ed763d99a5b654a1"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Notice and Wonder: A Fraction on a Number Line (10 minutes)",
+    "Activity 1: Sum of Jumps (20 minutes)",
+    "Activity 2: What is the Sum? (15 minutes)",
+    "Activity 3: Make Two Jumps [OPTIONAL] (20 minutes)",
+    "Cool-down: Lucky Thirteen-tenths (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.build"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-33-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:38+01:00",
+  "closeAtLocal": "2026-10-26T22:40:38+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

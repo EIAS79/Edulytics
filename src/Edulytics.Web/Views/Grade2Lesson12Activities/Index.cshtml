@@ -1,0 +1,193 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson12PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Sort and Display center";
+ var centers=UsCcssG2Unit1TwelfthLessonSortAndDisplay.CenterChoices;
+}
+<style>
+.g2-l12{max-width:965px;margin:0 auto;padding:20px 18px 40px;color:#1e364b}
+.g2-l12 h1{font-size:1.8rem}.g2-l12 h2{font-size:1.3rem}
+.g2-l12 .panel{background:#fff;border:1px solid #d6e4ed;border-radius:14px;padding:22px;margin:17px 0}
+.g2-l12 .muted{color:#4d6578}
+.g2-l12 label{font-weight:720;display:block;margin:13px 0 5px}
+.g2-l12 input,.g2-l12 select,.g2-l12 textarea{font:inherit;border:1px solid #708999;border-radius:8px;padding:11px;width:100%;max-width:520px}
+.g2-l12 input:focus,.g2-l12 select:focus,.g2-l12 textarea:focus{outline:3px solid #98dce7}
+.g2-l12 .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px}
+.g2-l12 .category{background:#f5fafc;border:1px solid #b2cbd6;padding:13px;border-radius:10px}
+.g2-l12 .button{background:#087d8c;color:white;border:0;border-radius:9px;padding:13px 22px;font:inherit;font-weight:750;cursor:pointer}
+.g2-l12 .graph{background:#f2f8fc;border:1px solid #9ab7c8;border-radius:11px;padding:16px;margin:15px 0}
+.g2-l12 .symbols{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}
+.g2-l12 .symbol{display:inline-block;width:15px;height:15px;border-radius:50%;background:#1d92a2;border:1px solid #096d7e}
+.g2-l12 .bars{display:flex;gap:16px;align-items:end;min-height:230px;border-left:2px solid #647c8a;border-bottom:2px solid #647c8a;padding:0 10px;max-width:420px}
+.g2-l12 .bar-column{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center}
+.g2-l12 .bar{background:#238da1;border:1px solid #0f6072;width:36px;max-height:220px}
+.g2-l12 .success{border-left:4px solid #267c50;padding-left:12px}
+.g2-l12 .error{border-left:4px solid #b93b4e;padding-left:12px}
+.g2-l12 .review{border-left:4px solid #b1802f;padding-left:12px}
+</style>
+<main class="g2-l12">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+<header>
+<p>EDULYTICS · OPTIONAL CENTER DAY</p>
+<h1>Sort real objects and make your graph</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 12. Work with a partner. Count an
+actual collection of 20–30 objects, sort it into exactly three different
+categories, and choose a picture graph OR bar graph to show the true counts.
+The display and independent check are authored by Edulytics.</p>
+</header>
+<section class="panel">
+<h2>1. Number Talk: subtraction using ten</h2>
+<p>Think mentally about <strong>17 − 7, 17 − 9, 15 − 5, 15 − 8</strong>.
+Explain how you can first reach ten and then subtract what remains.
+Your teacher can accept different correct strategies.</p>
+</section>
+<section class="panel">
+<h2>2. Sort and Display — Stage 2</h2>
+<p>Gather <strong>20 to 30 REAL objects</strong> such as blocks, connecting
+cubes or other items your teacher provides. Sort each object exactly ONCE
+into THREE categories. Decide what each category is called and count
+the objects. Work with a partner to compare your sorting choices.</p>
+<p>Draw a picture graph with a one-object-per-symbol key, OR a bar graph
+with equally spaced numbers beginning at zero. Show all three labeled
+categories and a meaningful graph title. The teacher reviews the REAL
+sorted objects, not just the numerical totals.</p>
+</section>
+<section class="panel">
+<h2>3. Choose a mathematics center</h2>
+<p>Choose from an earlier center: What's Behind My Back?,
+How Close?, or Number Puzzles. Work with a partner and explain the
+arithmetic skill you practised.</p>
+<form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<button type="submit" class="button">Practice three-category graph calculations</button>
+</form>
+</section>
+<form class="panel" asp-controller="Grade2Lesson12Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>4. Edulytics original center activity and short check</h2>
+<label asp-for="Answers.CollectionContext">What REAL objects did you sort? (Do not include classmates' names)</label>
+<input asp-for="Answers.CollectionContext" maxlength="250" required
+placeholder="e.g. classroom pattern blocks" />
+<div class="three">
+<div class="category">
+<label asp-for="Answers.CategoryA">Category A — name</label><input asp-for="Answers.CategoryA" required maxlength="40" />
+<label asp-for="Answers.CountA">Category A — number of objects</label>
+<input asp-for="Answers.CountA" type="number" min="1" max="30" required />
+</div>
+<div class="category">
+<label asp-for="Answers.CategoryB">Category B — name</label><input asp-for="Answers.CategoryB" required maxlength="40" />
+<label asp-for="Answers.CountB">Category B — number of objects</label>
+<input asp-for="Answers.CountB" type="number" min="1" max="30" required />
+</div>
+<div class="category">
+<label asp-for="Answers.CategoryC">Category C — name</label><input asp-for="Answers.CategoryC" required maxlength="40" />
+<label asp-for="Answers.CountC">Category C — number of objects</label>
+<input asp-for="Answers.CountC" type="number" min="1" max="30" required />
+</div>
+</div>
+<label asp-for="Answers.GraphTitle">Title for the graph you created</label>
+<input asp-for="Answers.GraphTitle" maxlength="120" required />
+<label asp-for="Answers.GraphKind">Which representation did you create?</label>
+<select asp-for="Answers.GraphKind" required>
+<option value="">Choose a graph</option>
+<option value="Picture">Picture graph</option>
+<option value="Bar">Bar graph</option>
+</select>
+<div class="three">
+<div><label asp-for="Answers.PictureKey">For PICTURE graph: one symbol represents how many objects?</label>
+<input asp-for="Answers.PictureKey" type="number" min="1" max="30" /></div>
+<div><label asp-for="Answers.BarStart">For BAR graph: starting number of vertical scale</label>
+<input asp-for="Answers.BarStart" type="number" min="0" max="30" /></div>
+<div><label asp-for="Answers.BarStep">For BAR graph: each tick increases by how many?</label>
+<input asp-for="Answers.BarStep" type="number" min="1" max="30" /></div>
+</div>
+<h3>Write and answer TWO original graph questions</h3>
+<p>For this Edulytics short check, your FIRST question must ask how many
+objects belong to Category A. Your SECOND question must ask how many
+objects belong to Categories B and C <strong>combined</strong>. Write
+your questions in your own words, then record the actual partner's answers.</p>
+<label asp-for="Answers.QuestionOne">My first question (one category)</label>
+<textarea asp-for="Answers.QuestionOne" rows="2" maxlength="500" required></textarea>
+<label asp-for="Answers.AnswerOne">Partner's answer to question 1</label>
+<input asp-for="Answers.AnswerOne" type="number" min="0" max="30" required />
+<label asp-for="Answers.QuestionTwo">My second question (combining B and C)</label>
+<textarea asp-for="Answers.QuestionTwo" rows="2" maxlength="500" required></textarea>
+<label asp-for="Answers.AnswerTwo">Partner's answer to question 2</label>
+<input asp-for="Answers.AnswerTwo" type="number" min="0" max="30" required />
+<h3>Make-ten Number Talk check</h3>
+<div class="three">
+<div><label asp-for="Answers.WarmOne">17 − 7 = ?</label><input asp-for="Answers.WarmOne" type="number" min="0" max="30" required /></div>
+<div><label asp-for="Answers.WarmTwo">17 − 9 = ?</label><input asp-for="Answers.WarmTwo" type="number" min="0" max="30" required /></div>
+<div><label asp-for="Answers.WarmThree">15 − 5 = ?</label><input asp-for="Answers.WarmThree" type="number" min="0" max="30" required /></div>
+<div><label asp-for="Answers.WarmFour">15 − 8 = ?</label><input asp-for="Answers.WarmFour" type="number" min="0" max="30" required /></div>
+</div>
+<label asp-for="Answers.CenterChoice">The previously introduced center I chose</label>
+<select asp-for="Answers.CenterChoice" required>
+<option value="">Choose your center</option>
+@foreach(var center in centers){<option value="@center">@center</option>}
+</select>
+<label asp-for="Answers.Explanation">Explain how you sorted the real objects, checked your graph and helped your partner</label>
+<textarea asp-for="Answers.Explanation" rows="3" maxlength="2000"></textarea>
+<p class="muted">This extra Edulytics check is NOT a reproduction of an original
+publisher Cool-down. A teacher evaluates the actual collection and drawings
+rather than pretending a form can observe physical participation.</p>
+<button type="submit" class="button">Check and display my recorded graph</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>My submitted representation</h2>
+@if(Model.ValidatedCollection is not null && Model.CorrectGraph){
+    var d=Model.ValidatedCollection;
+    var rows=new[]{new{Label=d.CategoryA,Count=d.CountA},
+        new{Label=d.CategoryB,Count=d.CountB},
+        new{Label=d.CategoryC,Count=d.CountC}};
+    <div class="graph">
+        <h3>@Model.Answers.GraphTitle</h3>
+        <p>Total independently recorded physical items: <strong>@d.Total</strong>.
+        The teacher must verify the actual objects.</p>
+        @if(Model.Answers.GraphKind=="Picture"){
+            <p>Picture key: one dot represents one real sorted item.</p>
+            @foreach(var item in rows){
+                <div><strong>@item.Label (@item.Count)</strong>
+                <div class="symbols" role="img" aria-label="@item.Count symbols for @item.Label">
+                @for(var i=0;i<item.Count;i++){<span class="symbol" aria-hidden="true"></span>}
+                </div></div>
+            }
+        }else{
+            <p>Bar scale: zero upwards by ones. Displaying the three category counts.</p>
+            <div class="bars" role="img" aria-label="@string.Join("; ",rows.Select(x=>x.Label+": "+x.Count))">
+            @foreach(var item in rows){
+                <div class="bar-column" aria-hidden="true"><span>@item.Count</span>
+                <span class="bar" style="height:@(item.Count*6)px"></span><span>@item.Label</span></div>
+            }
+            </div>
+        }
+    </div>
+}
+<h2>Review of submitted mathematics</h2>
+@foreach(var result in Model.Feedback){
+<div class="@(result.Correct==true?"success":result.Correct==false?"error":"review")">
+<h3>@result.Activity</h3>
+<p>@(result.Correct==true?"Numerically consistent":result.Correct==false?"Needs revision":"Teacher review"). @result.Feedback</p>
+</div>
+}
+<p class="muted">Immediate practice feedback, not a persisted official
+school grade or evidence that actual collection sorting took place.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher observation and evidence rubric</h2>
+<ul>
+@foreach(var item in UsCcssG2Unit1TwelfthLessonSortAndDisplay.TeacherRubric){<li>@item</li>}
+</ul>
+</section>
+<p class="muted">Curriculum reference: IM K–5 2021 Grade 2 Unit 1 Lesson 12,
+CCSS 2.MD.D.10, 2.NBT.B.5, 2.OA.B.2. Edulytics first-party visual
+and assessment; source optional center day has no separate public Cool-down.</p>
+</main>

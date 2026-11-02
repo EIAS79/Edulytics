@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L03",
+  "sourceEdition": "Illustrative Mathematics K–5 first edition 2021",
+  "date": "2026-10-24",
+  "teacherSource": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-3/lesson.html",
+  "original2021TeacherGuidePdf": "https://cms-assets.illustrativemathematics.org/49w6zcnda7ycoimt136p0k2kqc0b",
+  "sourceElementTotal": 8,
+  "verifiedOriginalSourceElements": 8,
+  "authoringSemanticCoveragePercent": 100,
+  "status": "READY_FOR_STAGE_D",
+  "originalPublisherImageCopied": false,
+  "originalSourcePrintedPdfByteIdentityClaimed": false,
+  "runtimeBuilt": false,
+  "stageD": "NOT_STARTED",
+  "testsRun": false,
+  "academicApproval": "NOT_CLAIMED",
+  "elements": [
+    {
+      "id": "G3-U01-L03-goals",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "First-edition 2021 lesson goal for single-/five-/two-unit scaled pictures and authored Rich V2 teaching, original catalogue lesson identity retained",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l03-2021.rich-lesson-v2.json",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-warmup",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "10min original mental number talk 50+10, 50+12, 60+13, 65+13; spoken reasoning and partner strategies",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-activity1",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Identical sports data Football25 Soccer15 Basketball20 Tennis5, represented with 65 key-one symbols versus 13 key-five symbols, multiple numeric checks and teacher comparison",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson3ScaledPictureGraph.cs",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-activity2",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Two original source activity graphs: flowers scale5 2/1/5/3 → 10/5/25/15 and books scale2 4/1/4/3 → 8/2/8/6; all counts, book 'how you know', TWO questions per graph teacher reviewed",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-synthesis",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "10min synthesis before Cool-down; key comparison, peer talk and individual Doing Math reflection AFTER Cool-down; center game options teacher-led",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-cooldown",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Original public 2021 Birds in the Park source Cool-down mathematical data: key2 birds; Cardinals4 Blue Jays6 Pigeons8 Sparrows10, original two source tasks count 10 and author one question teacher reviewed; independent optional library survey separate",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson3SourceCoolDown.cs",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-visual_rights",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "First-party numerical diagram representations match original mathematics but do NOT reuse exact publisher art; category/scale data independently checked from public source and teacher guide",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    },
+    {
+      "id": "G3-U01-L03-student_pdf",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "All original Student Facing prompts from first-edition 2021 public teacher HTML/teacher guide reviewed; corresponding authoring responses are independent and teacher scored; original printed PDF file byte identity not required for original mathematical text coverage",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson3Activities/Index.cshtml",
+      "originalArtworkCopied": false,
+      "stageDExecution": "DEFERRED"
+    }
+  ]
+}

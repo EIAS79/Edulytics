@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 21,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L21",
+  "unitNumber": 1,
+  "lessonNumber": 21,
+  "title": "Game Night Seating Plan (optional)",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-1/lesson-21/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-21/lesson.html",
+  "stageA": {
+    "status": "FIRST_EDITION_2021_TEACHER_PREPARATION_STUDENT_PDF_3_PAGES_WARMUP_SIX_TABLE_SVG_30_OF_30_SOURCE_ELEMENTS",
+    "goals": "Make choices and assumptions. Represent data using scaled bar graphs to communicate results. Solve real-world problems involving equal groups.",
+    "sourceHeadingsCount": 4,
+    "originalImageDescriptionsCount": 1,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "public2021OptionalStudentSourceRead": true,
+    "originalWarmup": "Six groups of four dots around six square tables. Source artwork not copied.",
+    "originalGamePlayerRequirements": {
+      "A": 2,
+      "B": 4,
+      "C": 5,
+      "D": 10
+    },
+    "originalTotalTables": 16,
+    "originalSeatingRule": "One person can sit on each exposed side of each square table; joined sides are blocked",
+    "originalActivity2": "Individually draw scaled bar chart of guests participating in games A/B/C/D; include title and labels; scale jumps other than 1",
+    "originalStudentTaskPdfSHA256": "59ee15e0618f291985c6bef540cd857c7bbbef1a7483e609b66bf9af15616628",
+    "originalStudentTaskPdfPagesRead": 3,
+    "originalWarmupSvgInspected": true,
+    "originalWarmupSvgSHA256": "2441b3406a595d65f21f1322487e6c073f09493989df47001e8294b84323ba07",
+    "originalSourceElements": 30,
+    "mappedSourceElements": 30,
+    "sourceSemanticCoveragePercent": 100
+  },
+  "stageB": {
+    "status": "FIRST_PARTY_RICH_V2_V2_CANONICAL_GUARDED_SOURCE_AND_INDEPENDENT_SIX_TABLE_CONTEXT_REVEAL_AND_16_TABLE_OPTIONAL_PROJECT",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U01:L21",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "8f30af56d84ce0d04500f12e0bd8dae4513c3765df8d339cf1cde346637d64aa",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "firstPartyFeasibleSample": "Two simultaneous games each of A,B,C,D; table allocations 2+2+4+8=16; guests 4+8+10+20=42. EXAMPLE ONLY, not official source answer.",
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l21-2021.rich-lesson-v2.json",
+    "firstPartyWarmupMathVerified": true,
+    "sourceSpecificRichV2Version": "g3-u01-l21-2021-source-abc-firstparty-20261024-v2",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson21RichV2.cs",
+    "sourceOriginalImageCopied": false
+  },
+  "stageC": {
+    "status": "FIVE_ORIGINAL_OPEN_DESIGN_POSTER_GRAPH_SYNTHESIS_TASKS_TEACHER_ONLY_UNRUN_TESTS",
+    "family": "design-project",
+    "practiceAnswerType": "teacher",
+    "coolDownAnswerType": "teacher",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Game Night with your teacher. Show the representation and explain how it meets the goal: Let’s plan a game night.",
+    "teacherReviewNote": "Optional multi-step project; no numeric automatic grade.",
+    "allFiveProjectItemsTeacherOnly": true,
+    "noUniqueCorrectNumericGrade": true,
+    "newDeferredVisualContractTestWritten": true,
+    "sourceTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson21SeatingPlanningTests.cs",
+    "noUniqueNumericAutoGrade": true
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U01-L21-HEADING-01",
+      "sourceSection": "Warm-up: Notice and Wonder: Squares and Circles (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-1/lesson-21/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U01-L21-HEADING-02",
+      "sourceSection": "Activity 1: Game Night (25 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-1/lesson-21/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U01-L21-HEADING-03",
+      "sourceSection": "Activity 2: Game Night on a Graph (10 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-1/lesson-21/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U01-L21-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-1/lesson-21/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U01-L21-IMAGE-01",
+      "observedAltText": "6 groups of figures. Each with 4 dots centered around 1 square.",
+      "originalReference": "unit-1/lesson-21/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 4,
+    "imageDescriptions": 1,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Create a different seating layout for a game night and justify the scale and how groups fit.",
+    "answerType": "teacher",
+    "expected": null
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-21-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 30,
+  "sourceElementsSemanticallyMapped": 30,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Teacher-observed project poster, decisions, per-student bar graphs remain human reviewed in classroom",
+    "Original 2021 U01 L21 contains no fifth-minute publisher Cool-down; independent original Edulytics revision only",
+    "No runtime tests, CI, Stage D, live learner rendering or deployment."
+  ]
+}

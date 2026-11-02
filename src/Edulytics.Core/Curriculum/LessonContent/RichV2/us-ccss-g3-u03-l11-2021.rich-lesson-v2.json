@@ -1,0 +1,114 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l11-2021-source-abc-firstparty-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L11",
+      "CultureCode": "en",
+      "Title": "Analyze Subtraction Algorithms",
+      "ExplanationParagraphs": [
+        "Analyze subtraction algorithms by deciding when to decompose (exchange) place-value units. The original 2021 lesson compares an algorithm that decomposes first with one that subtracts from the ones column and only decomposes when necessary. Use mathematical reasoning, not a mechanically memorized shortcut.",
+        "Warm-up — Number Talk, 10 minutes: calculate 400−200=200, 450−200=250, 450−205=245, and 450−215=235 mentally. Tell the teacher how subtracting an additional 5 or 10 ones alters an otherwise similar difference.",
+        "Activity 1 — Compare Two Subtraction Algorithms, 20 minutes. The source shows the first step for two methods before asking partners to apply both to 824−541=283. Algorithm A starts by checking which place-value columns need decomposition and performs exchanges before subtraction. Algorithm B proceeds right-to-left, exchanging only when a column cannot be subtracted directly.",
+        "For 824−541, calculate 4−1=3 ones, and 2 tens cannot remove 4 tens. Trade one of 8 hundreds for ten tens so 8 hundreds,2 tens become 7 hundreds,12 tens. Now 12−4=8 tens and 7−5=2 hundreds. Thus 824−541=283. In algorithm A the exchange is established before taking any differences; in algorithm B the exchange happens on reaching the tens column.",
+        "The partner discussion asks whether one strategy is easier to keep organized. Method A permits the teacher to check all necessary exchanges first and may work from either side; Method B allows subtraction to start immediately and trades units only if needed. Both must conserve value. Discuss original two algorithm illustrations with the teacher; these are independently worded explanations, not copies of source images.",
+        "Activity 2 — Use an Algorithm?, 15 minutes: Noah attempts 301−167. Elena says 0 tens means there are not enough ones to subtract 7. Think about this statement: exchange a hundred for 10 tens, then exchange one ten for 10 ones. Rewrite 301 as 2 hundreds, 9 tens and 11 ones.",
+        "After regrouping, subtract 11−7=4 ones, 9−6=3 tens, 2−1=1 hundred, so 301−167=134. Present this in expanded blocks and in one written algorithm. Revisit Elena's claim: the algorithm works when the decompositions are correctly recorded, even though the original tens digit was zero.",
+        "Use MLR8 Discussion Supports to restate a partner's thinking and use correct phrases 'one hundred equals ten tens' and 'one ten equals ten ones.' A correct scalar does not prove the original teacher-led comparison and explanation were completed.",
+        "Synthesis: contrast pre-decomposition with on-demand decomposition, then identify an advantage of each, without declaring a single method compulsory. Original publisher images remain with publisher; original gated Subtraction Reflection Cool-down is not reproduced. Edulytics separately assesses 301−167=134 and checks reasoning with a teacher."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exchange before subtracting",
+          "Definition": "Inspect all necessary tens/hundreds exchanges first.",
+          "Rule": "Exchange one hundred for ten tens or a ten for ten ones before calculating differences.",
+          "Example": "824−541: decompose 8 hundreds and 2 tens into 7 hundreds and 12 tens, then subtract 283."
+        },
+        {
+          "Title": "Exchange when necessary",
+          "Definition": "Start subtracting in the ones column; only exchange when a lower place does not have enough units.",
+          "Rule": "The total value must remain invariant at every step.",
+          "Example": "301−167: 3h0t1o -> 2h10t1o -> 2h9t11o -> 1h3t4o."
+        },
+        {
+          "Title": "Algorithm comparison",
+          "Definition": "Two different step orders can implement the same equivalent place-value mathematics.",
+          "Rule": "A valid method conserves the original minuend's value and matches the context.",
+          "Example": "Both source methods obtain 824−541=283."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Algorithm A and B on the same subtraction",
+          "Question": "Compute 824−541 with both orderings of decomposition.",
+          "Method": "Exchange before or as-needed.",
+          "Steps": [
+            "Start with 8 hundreds, 2 tens, 4 ones.",
+            "The tens cannot subtract 4 tens from 2 tens. Exchange a hundred into ten tens.",
+            "Now subtract 4−1=3 ones, 12−4=8 tens, and 7−5=2 hundreds.",
+            "The answer is 283."
+          ],
+          "Answer": "283",
+          "Check": "541+283=824."
+        },
+        {
+          "Title": "Exchanging across a zero",
+          "Question": "Find 301−167 and explain Elena's zero-tens concern.",
+          "Method": "Exchange a hundred into tens and one of those tens into ones.",
+          "Steps": [
+            "3 hundreds 0 tens 1 one become 2 hundreds 10 tens 1 one.",
+            "Exchange one ten: 2 hundreds, 9 tens and 11 ones.",
+            "11−7=4, 9−6=3, 2−1=1.",
+            "Answer 134."
+          ],
+          "Answer": "134",
+          "Check": "167+134=301."
+        },
+        {
+          "Title": "Original mental subtraction warm-up",
+          "Question": "Calculate 450−215 using the previous warm-up expression 450−205.",
+          "Method": "Subtract ten more from a known difference",
+          "Steps": [
+            "450−200=250.",
+            "Subtract another 5: 250−5=245, so 450−205=245.",
+            "Subtract ten more: 245−10=235, so 450−215=235."
+          ],
+          "Answer": "235",
+          "Check": "215+235=450; a teacher still checks student reasoning."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtracting 7 ones from 1 without decomposing in 301−167.",
+          "WhyWrong": "One one is insufficient, and there are initially zero tens.",
+          "Correction": "Trade a hundred for ten tens, then trade a ten for ten ones, giving 11 ones."
+        },
+        {
+          "Mistake": "Trading a hundred into ten tens without decreasing the hundreds count.",
+          "WhyWrong": "Would increase 301 by 100.",
+          "Correction": "3h0t1o=2h10t1o=2h9t11o."
+        },
+        {
+          "Mistake": "Treating the two source algorithms as different arithmetic rules.",
+          "WhyWrong": "Both exchange ten units for one larger unit of equal value.",
+          "Correction": "Compare when exchanges are recorded, not the numerical result."
+        },
+        {
+          "Mistake": "Auto-certifying class discussion after checking 134 or 283.",
+          "WhyWrong": "Original explanation about sequence and tradeoffs is teacher-led.",
+          "Correction": "Use the separate process rubric for algorithm steps and partner explanation."
+        }
+      ],
+      "SummaryPoints": [
+        "Number Talk: 200, 250, 245, 235.",
+        "Method A decomposes first; Method B decomposes when the column needs additional units.",
+        "Both yield 824−541=283.",
+        "Across zero: 301−167=134 by exchanging a hundred and a ten.",
+        "The independent Edulytics Cool-down assesses 301−167=134; the publisher's gated original prompt was not read."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

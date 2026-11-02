@@ -1,0 +1,35 @@
+name: US CCSS Public Production HTTP Smoke
+
+# A green run proves only current anonymous HTTP accessibility, not
+# authenticated acceptance, deployment SHA, or academic certification.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'tools/us-ccss-public-production-http-smoke.cjs'
+      - 'tests/academic-us-ccss-public-production-http-smoke.test.cjs'
+      - '.github/workflows/us-ccss-public-production-http-smoke.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/us-ccss-public-production-http-smoke.cjs'
+      - 'tests/academic-us-ccss-public-production-http-smoke.test.cjs'
+      - '.github/workflows/us-ccss-public-production-http-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-anonymous-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate fixed allowlist, response and redirect guards without network
+        run: node --test tests/academic-us-ccss-public-production-http-smoke.test.cjs
+      - name: Check live public production HTTP endpoints from independent GitHub runner
+        run: node tools/us-ccss-public-production-http-smoke.cjs

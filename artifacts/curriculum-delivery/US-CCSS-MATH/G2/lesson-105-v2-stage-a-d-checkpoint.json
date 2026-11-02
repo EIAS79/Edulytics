@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 105,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U07:L03",
+  "title": "Count on or Count Back to Subtract",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_TEXT_REVIEWED_HUMAN_MEDIA",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-105-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-7/lesson-3/preparation.html",
+    "sourceSha256": "202d7795eb6b9e9c2737e8375711da40fcb1edf3ee112628a66363693fb71ff3",
+    "standards": [
+      "CCSS:2.NBT.B.7"
+    ]
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_ALL_SIX_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit7FirstFourCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-105-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "AUTHORING_CLOSED_FIRST_PARTY_FOUR_EXACT_FAMILIES_TESTS_WRITTEN_NOT_RUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit7FirstFourQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit7ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit7Activities/Index.cshtml",
+    "teacherOnly": "Publisher original paint-splatter images, open number-line drawings, comparisons and method explanations remain educator-reviewed. Unavailable protected Cool-down not reconstructed.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal105OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal105SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal105ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal105StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 106
+}

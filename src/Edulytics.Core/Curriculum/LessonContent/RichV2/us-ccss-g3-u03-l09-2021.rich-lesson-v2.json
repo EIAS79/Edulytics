@@ -1,0 +1,115 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l09-2021-source-abc-firstparty-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L09",
+      "CultureCode": "en",
+      "Title": "Subtraction Algorithms (Part 2)",
+      "ExplanationParagraphs": [
+        "Subtraction Algorithms (Part 2): critique another person's subtraction and revise a correct place-value algorithm. Focus on exchanging a hundred for ten tens when the minuend has fewer tens than the amount removed. The standard 3.NBT.A.2 goal is to subtract within 1,000 using a method students understand.",
+        "Warm-up — True or False: Does It Commute? (10 minutes): 4 × 5 = 5 × 4 is true and 125 + 200 = 200 + 125 is true; switching terms in subtraction does not generally work, so 300 − 100 = 100 − 300 is false. Student must explain why the last expression is different and may refer to counting or blocks. This is a teacher-scored discussion (MP3).",
+        "Activity 1 — Revise Subtraction Work (15 minutes): the public 2021 teacher narration describes Lin's erroneous expanded-form subtraction of 428 − 156. Lin tried to subtract 20 from 50 when the requested subtraction was 50 from 20. This flips the subtraction order because 20 has fewer tens than 50. Correct method is to decompose a hundred: 428 is 400 + 20 + 8 = 300 + 120 + 8. Then 300 − 100 = 200, 120 − 50 = 70 and 8 − 6 = 2, giving 272.",
+        "Partner reasoning: first think silently, then discuss the mistake, use a base-ten block model to show a hundred turning into ten tens, and describe to Lin why subtraction is not commutative. Do not pretend the independently written correction reproduces her original publisher artwork.",
+        "Activity 2 — Try the Algorithm (20 minutes): present the earlier expanded-form subtraction algorithm, then invite each student to try at least three of the five source problems: 283 − 159 = 124, 425 − 192 = 233, 639 − 465 = 174, 591 − 128 = 463, and 832 − 575 = 257. Choosing three of five is an original accessibility option, not a reason to require all five. If appropriate, compare the methods for the remaining sums.",
+        "Show regrouping honestly: 283−159 requires trading one ten into ones so 13−9=4; 832−575 requires trading one hundred into tens and one ten into ones so 12−5=7 ones,12−7=5 tens and 7−5=2 hundreds. The check is always a valid addition inverse, such as 257+575=832.",
+        "Use MLR8 Discussion Supports. Encourage the exact mathematical language decompose, ones, tens, and hundreds. Allow concrete base-ten blocks, verbal explanation and partner check. Teacher checks the justification and whether the correction actually reflects Lin's error; a number-only answer is not sufficient.",
+        "Synthesis: subtraction is not commutative; when subtracting with a written algorithm, make equivalent exchanges rather than swapping a larger and smaller digit within the same column. Explain why the student's revised method works for the original quantities.",
+        "An independent Edulytics Cool-down uses 704 − 286 = 418 with exchanging through a zero, unrelated to the publisher-restricted How Did Andre Subtract? task. Original source illustration, optional original gameboards and teacher-gated Cool-down are NOT embedded or asserted pixel-identical. Original four-page 2021 Student Task Statements PDF and offline teacher HTML were read on the authorized source device."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Subtraction order matters",
+          "Definition": "Subtraction is not commutative.",
+          "Rule": "A−B is not necessarily B−A.",
+          "Example": "300−100=200 but100−300≠200."
+        },
+        {
+          "Title": "Decompose a hundred into ten tens",
+          "Definition": "An equivalent place-value exchange preserves the number.",
+          "Rule": "When 20 tens-value is too small to remove 50, exchange one hundred for ten tens.",
+          "Example": "400+20+8=300+120+8."
+        },
+        {
+          "Title": "An algorithm records meaningful steps",
+          "Definition": "Expanded hundreds, tens and ones are subtracted in corresponding units.",
+          "Rule": "Explain each exchange and inverse-check the final difference.",
+          "Example": "428−156=272; 272+156=428."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Correct Lin's subtraction",
+          "Question": "Lin's expanded form for 428−156 incorrectly reversed 20−50. Revise it.",
+          "Method": "Regroup one hundred into ten tens.",
+          "Steps": [
+            "428=400+20+8.",
+            "Exchange 100 from hundreds:300+120+8.",
+            "Subtract 100+50+6:200+70+2=272.",
+            "Check272+156=428."
+          ],
+          "Answer": "272",
+          "Check": "272+156=428."
+        },
+        {
+          "Title": "Subtract with exchanging tens",
+          "Question": "Calculate 283−159.",
+          "Method": "Decompose a ten so the ones can be subtracted.",
+          "Steps": [
+            "283=200+80+3=200+70+13.",
+            "13−9=4;70−50=20;200−100=100.",
+            "Answer 124."
+          ],
+          "Answer": "124",
+          "Check": "124+159=283."
+        },
+        {
+          "Title": "Exchange hundreds and tens",
+          "Question": "Find 832−575.",
+          "Method": "Regroup into 7 hundreds,12 tens,12 ones.",
+          "Steps": [
+            "832=8 hundreds3 tens2 ones.",
+            "Exchange one hundred into ten tens, then one ten into ten ones.",
+            "7 hundreds12 tens12 ones, minus5 hundreds7 tens5 ones.",
+            "Difference2 hundreds5 tens7 ones=257."
+          ],
+          "Answer": "257",
+          "Check": "257+575=832."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Switching 20 and 50 to make a positive 30 within Lin's tens calculation.",
+          "WhyWrong": "Subtraction is not commutative and the intended units do not reverse.",
+          "Correction": "Trade one hundred for ten tens before subtracting 50 from120."
+        },
+        {
+          "Mistake": "Treating a carried hundred as one ten.",
+          "WhyWrong": "A hundred equals ten tens.",
+          "Correction": "Show equivalent 400+20 as300+120."
+        },
+        {
+          "Mistake": "Requiring every child to finish all five source expressions.",
+          "WhyWrong": "Original 2021 teacher access explicitly allows choice of at least three.",
+          "Correction": "Provide three-of-five choice when needed and review methods."
+        },
+        {
+          "Mistake": "Auto-grading Lin's critique from the final difference alone.",
+          "WhyWrong": "Student must identify the exact faulty step and show how to correct it.",
+          "Correction": "Keep the human teacher rubric for critiques and representation."
+        }
+      ],
+      "SummaryPoints": [
+        "True:4×5=5×4 and125+200=200+125. False:300−100=100−300.",
+        "Lin 428−156=272 after exchanging a hundred into tens.",
+        "Five source subtraction answers in order:124,233,174,463,257.",
+        "Original access permits selecting at least three of five for the practice activity.",
+        "Teacher verifies representation, partner critique and MLR8 language supports.",
+        "Edulytics independently authors 704−286=418 as an exit task; publisher original gated prompt not copied."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

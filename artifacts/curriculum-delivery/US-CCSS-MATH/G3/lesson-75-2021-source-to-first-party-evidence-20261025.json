@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 75,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U04:L18",
+  "sourceHtmlSHA256": "b75ae7d82b94279bd6a824001ba38bbde330355ea368b0c3e6a38c7a8bb1e30f",
+  "sourcePrepSHA256": "1f13791f3ab71213314c83cfac2be0ff870681facb2544e794905f613ea2203a",
+  "originalAquariumImageSHA256": "063280af6cd04e0dd9d5291ee2aa9d832c1135fce5557b9d0ca3f8f82510e875",
+  "originalAquariumImageViewed": true,
+  "sourceSourceMath": [
+    {
+      "expression": "48÷4",
+      "answer": 12,
+      "unit": "groups",
+      "divisorRole": "group size"
+    },
+    {
+      "expression": "72÷3",
+      "answer": 24,
+      "unit": "people per bus",
+      "divisorRole": "group count"
+    },
+    {
+      "expression": "72÷12",
+      "answer": 6,
+      "unit": "tables",
+      "divisorRole": "group size"
+    }
+  ],
+  "derivedChecks": [
+    [
+      "A1-4X12",
+      "Groups on a Field Trip",
+      "4×12 check for48 pupils",
+      48
+    ],
+    [
+      "A1-40DIV4",
+      "Independent source-related component",
+      "40÷4 first ten groups",
+      10
+    ],
+    [
+      "A1-8DIV4",
+      "Independent source-related component",
+      "8÷4 remaining two groups",
+      2
+    ],
+    [
+      "A2-BUS",
+      "Bus Ride and Lunch Groups",
+      "72 people share equally across3 buses",
+      24
+    ],
+    [
+      "A2-3X24",
+      "Bus Ride and Lunch Groups",
+      "3×24 check72 people",
+      72
+    ],
+    [
+      "A2-TABLES",
+      "Bus Ride and Lunch Groups",
+      "72 people at tables of12; how many tables",
+      6
+    ],
+    [
+      "A2-12X6",
+      "Bus Ride and Lunch Groups",
+      "12×6 check72 people",
+      72
+    ],
+    [
+      "A2-60DIV3",
+      "Independent source-related component",
+      "60÷3 chunk of 72÷3",
+      20
+    ],
+    [
+      "A2-12DIV3",
+      "Independent source-related component",
+      "12÷3 remaining chunk",
+      4
+    ]
+  ],
+  "numericOracles": 10,
+  "humanReviewTasks": 12,
+  "originalImageNotCopied": true,
+  "studentTaskPdfRead": false,
+  "gatedCoolDownRead": false,
+  "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson18FieldTripDivisionSourceTests.cs",
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "authoringClosure": "READY_FOR_STAGE_D"
+}

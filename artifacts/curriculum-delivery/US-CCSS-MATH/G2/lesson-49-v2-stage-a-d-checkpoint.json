@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 49,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L15",
+  "title": "Create Line Plots PLC Activity",
+  "unitNumber": 3,
+  "lessonNumber": 15,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ORIGINAL_IM2021_TEACHER_PREPARATION_AND_LESSON_REVIEW",
+    "sourceReadOnly": "Local original G2 U03 L15 teacher preparation/lesson HTML, no local project access",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-15/preparation.html",
+    "sourceSemanticSha256": "1e4abf13b1c722b685fb2001382470d60ace425cecf6ba3201bf39cb623e0bd7",
+    "sourceBodySha256": "bc28fa5862d09ad831fb3aeaa740f1871152cd7df821d348ebd157c4858ac2d9",
+    "orderedOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.D.9",
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "47−20=27,47−24=23,36−10=26,36−15=21.",
+    "activity1": "Groups4 measure 10–12 genuine pencils in centimeters, TWO different students check each pencil, create appropriately titled and labeled equal-size X line plot with their authentic data.",
+    "activity2": "Source Group C lengths: Andre12 Clare10 Diego10 Elena10 Han13 Jada12 Kiran14 Noah16 Priya14 Tyler13 cm. A nonzero-start scale may show 10..16 and must include 11,15 empty ticks. mode10cm, longest16cm, shortest10cm, total10 and 5 lengths>12.",
+    "synthesis": "Original MLR8 compares two plots of SAME data with different numerical start labels and correct ruler-like consecutive tick interval.",
+    "sourceCooldown": "Hand Spans of Mai’s Group restricted educator login, independently authored exit separate.",
+    "rights": "Published teacher mathematical facts attributed; fictional Edulytics sample separately declared; authentic group measurement cannot be inferred digitally."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_AND_SIX_OLD_FIELDS_PREDECESSOR_GUARDED_NONZERO_AXIS_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3PencilLinePlotTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original source URI, SHA256, ordered 3 standards, six original predecessor rich learner fields and approved persisted version."
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_GROUP_C_REAL_CLASS_SEPARATION_FOUR_EXACT_FAMILIES_TESTS_UNRUN",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3FifteenthLessonPencilPlot.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson15PencilLinePlotContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson15PencilLinePlotQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson49ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson49Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l15.pencil_plot_frequency",
+      "usccss.g2.u03.l15.pencil_plot_total",
+      "usccss.g2.u03.l15.pencil_plot_modal_length",
+      "usccss.g2.u03.l15.pencil_plot_empty_tick"
+    ],
+    "sourceNumeric": "10:3 Xs,11:0,12:2,13:2,14:2,15:0,16:1, sum10.",
+    "independentFictional": "11cm2,12cm1,13cm3,14cm2,15cm1,16cm1. Mode13,total10,range5cm; not real students' pencils.",
+    "teacherOnly": "True group of4 source measurements, physical rulers, two-person measurement checks and MLR8 student-made diagram discussions not digitally certified.",
+    "security": "StudentPortal authorization, adoption/published lesson guard, anti-forgery, bounded text, no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3PencilLinePlotTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3FifteenthLessonPencilPlotTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson15PencilLinePlotQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson49ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L16_ORDINAL50_STAGE_A_B_C"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 74,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L07",
+  "title": "Center Day 1 (optional)",
+  "stageA": {
+    "status": "PUBLISHER_IM2021_ORIGINAL_LESSON_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-7/preparation.html",
+    "lessonUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-7/lesson.html",
+    "sourceBodySha256": "fc5517a9c6a940a221cfae873c6739ac981bb60d8f1157c14068adeea61cf2ee",
+    "sourceSemanticSha256": "77d68015bb48937410eb8b4a33452c4a562e6f78955739591279478ef10f72cd",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.A.1",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.B.2"
+    ],
+    "activityEvidence": "Original warmup and BOTH student-facing activities source-specific, including any optional real-center tasks; authentic figures and subjective response human-only",
+    "restricted": "Teacher-only source Cool-down inaccessible and never reconstructed"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_EXACT_SIX_FIELD_SOURCE_LESSON_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5ComparisonSourceCorrections.cs",
+    "sourceVersion": "usccss-g2-u05-original-ordinal74-v2",
+    "originalAllFieldsAndOrderedStandardsGuarded": true
+  },
+  "stageC": {
+    "status": "SOURCE_LIMITED_FOUR_FIRST_PARTY_EXACT_SKILL_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "sourceRubric": "Original figures/number lines, deliberate multiple-solution estimates, card games and physical object counts reserved for educator",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit5ComparisonActivitiesController.cs",
+    "studentPage": "src/Edulytics.Web/Views/Grade2Unit5ComparisonActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5ComparisonQuestions.cs",
+    "families": [
+      "usccss.g2.u05.l07.compare_100_boolean",
+      "usccss.g2.u05.l07.mystery_htoval",
+      "usccss.g2.u05.l07.mystery_tens_digit",
+      "usccss.g2.u05.l07.centers_sum_to_100"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal74OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal74SourceMathematicsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal74IndependentExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal74WebStudentContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 75
+}

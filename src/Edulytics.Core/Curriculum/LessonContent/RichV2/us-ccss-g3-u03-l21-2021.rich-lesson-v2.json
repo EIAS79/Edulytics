@@ -1,0 +1,98 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l21-budget-price-discrepancy-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L21",
+      "CultureCode": "en",
+      "Title": "Classroom Supplies (optional)",
+      "ExplanationParagraphs": [
+        "The original 2021 optional classroom supplies activity invites each pupil to spend a hypothetical $1,000 in ways that benefit the classroom. It does not impose one correct list: repeats of items are permitted, and there can be leftover money or overspend to discuss.",
+        "Warm-up — Notice and Wonder: the original list includes a box of25 markers for$5, crayons100 for$8, a history books set20 for$250, storybook$8, reading carpet$65, aquarium$159, board games$15 and interactive computer games$75. Important source discrepancy: the longer Activity1 shopping table gives aquarium$150, not$159. Preserve these as two different source display values; for Activity1 shopping use$150.",
+        "Activity1 — Make a Wish List: prices include markers5, crayons8, pencils5, printer paper40, pads of lined paper15, construction paper32, history books250, nature books400, individual storybooks8, maps45, carpet65, aquarium150, fishfood15, zoo trip350, puzzles12, board games15 and interactive math games75. Multiple units are allowed.",
+        "An independent Edulytics example list—not the original publisher's required unique answer—chooses markers5, crayons8, printer paper40, lined paper15 (supplies68), history books250+nature books400+storybook8 (books658), aquarium150+carpet65+fishfood15 (special230) and one board game15 (games15). Total 68+658+230+15=971, so $29 remain.",
+        "Students create THEIR OWN purchasing plan, use approximate arithmetic to anticipate the total, calculate source categories and total exactly, then decide how much is left or how far over budget. A numeric response of971 is not a required answer for anyone else's choices.",
+        "Activity2 — What's on Your List? Exchange class wish lists with another group, compare amounts spent by each category and overall, and justify how choices meet classroom needs. Teacher must assess the open plan, spending rationale and collaborative differences. No third-party artwork or gated publisher assessment is copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Budget constraint",
+          "Definition": "Chosen items cost money subject to a given classroom allowance.",
+          "Rule": "Sum price×quantity and compare with1000.",
+          "Example": "971 costs leave29."
+        },
+        {
+          "Title": "Four source categories",
+          "Definition": "Group purchases into supplies, books/maps, specials and entertainment.",
+          "Rule": "Each purchased item contributes to exactly one subtotal.",
+          "Example": "68+658+230+15=971."
+        },
+        {
+          "Title": "Source price inconsistency",
+          "Definition": "The original warm-up and Activity1 list give different amounts for aquarium.",
+          "Rule": "Activity1 uses150; warmup teaser159. Do not silently merge.",
+          "Example": "The displays differ by9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "One independent budget",
+          "Question": "Compute totals for the independent Edulytics selected list.",
+          "Method": "Four category subtotals then budget remainder.",
+          "Steps": [
+            "Work supplies5+8+40+15=68.",
+            "Books250+400+8=658.",
+            "Special aquarium150+carpet65+fishfood15=230.",
+            "Games15.",
+            "Sum68+658+230+15=971;1000−971=29."
+          ],
+          "Answer": "971 spent; 29 remaining.",
+          "Check": "This example is not a mandatory original student source choice."
+        },
+        {
+          "Title": "Publisher source price inconsistency (not a mandated wish-list)",
+          "Question": "The warm-up lists the aquarium as $159 while the student Activity 1 table lists it as $150. How much do they differ?",
+          "Method": "Compare the two original displayed prices without conflating sources",
+          "Steps": [
+            "Read the warm-up label $159.",
+            "Read Activity 1's shopping table label $150.",
+            "159−150=9; use $150 for source Activity 1 budget calculations."
+          ],
+          "Answer": "$9",
+          "Check": "This explains a source inconsistency; it is not a publisher-defined correct student wish-list."
+        },
+        {
+          "Title": "Independent budget with two optional source products",
+          "Question": "As a first-party example, buy one box of markers for $5 and crayons for $8 from a $1,000 classroom budget. What remains?",
+          "Method": "Add selected prices then subtract from the budget",
+          "Steps": [
+            "5+8=13 dollars spent.",
+            "1000−13=987 dollars left.",
+            "Students may choose different products, quantities or priorities."
+          ],
+          "Answer": "$987",
+          "Check": "This example is not the original student's only permitted answer; student wish-lists require teacher review."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Auto-grade all student wish lists against971.",
+          "WhyWrong": "The original task permits many lists, quantities and spending totals.",
+          "Correction": "Validate each student's own selected items and amounts with teacher review."
+        },
+        {
+          "Mistake": "Substitute aquarium159 as the cost in the source Activity1 table.",
+          "WhyWrong": "159 appears in the warmup, while the source task Activity1 states150.",
+          "Correction": "Use each source section's own price without concealing the discrepancy."
+        }
+      ],
+      "SummaryPoints": [
+        "Original allowance $1000; repeated products allowed and many acceptable purchase plans.",
+        "Aquarium listed $159 in the warmup but $150 in Activity1.",
+        "Independent example categories68,658,230,15 yield total971 and change29.",
+        "Teacher evaluates student-chosen plans, price multiplication and peer explanations."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 125,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U07:L12",
+  "unitNumber": 7,
+  "lessonNumber": 12,
+  "title": "Rectangles with the Same Area",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-7/lesson-12/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-12/lesson.html",
+  "stageA": {
+    "status": "FIRST_EDITION_TEACHER_PREP_4_PAGE_PUPIL_PDF_AND_STANDARD_DOT_GRID_VERIFIED",
+    "goals": "Draw rectangles with the same area and different perimeters.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 2,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "3ef5df683c39437353ea8d1102e6ebfac028ffd51abefdf8552f04f1081e35bc",
+    "originalStudentPdfPagesRead": 4,
+    "originalBlacklinePdfSha256": "f42610da0d7505ee78eddc51c4550ff2917e9e32fae88b0a30debab3a3ada504",
+    "originalGridVerified": true
+  },
+  "stageB": {
+    "status": "SOURCE_AREA_FACTOR_PAIRS_DISTINCT_PERIMETER_CANONICAL_RICHV2_GUARDED",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U07:L12",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "b5cfa197ca8006e8ae8435000c8baa576791f4a965a38660a38ab06d7a373388",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l12-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson12RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson12.cshtml",
+    "authoredContentVersion": "g3-u07-l12-2021-equal-area-different-perimeter-source-drawing-v1",
+    "publisherArtEmbedded": false
+  },
+  "stageC": {
+    "status": "FOUR_DIVISION_MENTAL_ANCHORS_AND_FOUR_UNIT_GRID_BOUNDED_SAME_AREA_RECTANGLE_PAIR_CHECKS_TESTS_WRITTEN_UNRUN",
+    "family": "perimeter-area-relationship",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Area of 24 with your teacher. Show the representation and explain how it meets the goal: Let’s explore rectangles with the same area.",
+    "teacherReviewNote": "Compare area and perimeter as distinct quantities and units; teacher verifies shape construction.",
+    "sourceNumericAnchorCount": 8,
+    "teacherOnlyTasks": 5,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson12SameAreaTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U07-L12-WARMUP-01",
+      "originalSourceStudentPdfPages": [
+        1
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "10",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-WARMUP-02",
+      "originalSourceStudentPdfPages": [
+        1
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "15",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-WARMUP-03",
+      "originalSourceStudentPdfPages": [
+        1
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "20",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-WARMUP-04",
+      "originalSourceStudentPdfPages": [
+        1
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "24",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-A1",
+      "originalSourceStudentPdfPages": [
+        2
+      ],
+      "coverage": "MATCHED_TEACHER_ONLY",
+      "firstPartyExpected": null,
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-A2-AREA12",
+      "originalSourceStudentPdfPages": [
+        2
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "12",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-A2-AREA20",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "20",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-A2-AREA42",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "42",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-A2-AREA48",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartyExpected": "48",
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-OWN",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_TEACHER_ONLY",
+      "firstPartyExpected": null,
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-POSTER",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_TEACHER_ONLY",
+      "firstPartyExpected": null,
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-GALLERY",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_TEACHER_ONLY",
+      "firstPartyExpected": null,
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-SUMMARY",
+      "originalSourceStudentPdfPages": [
+        3,
+        4
+      ],
+      "coverage": "MATCHED_TEACHER_ONLY",
+      "firstPartyExpected": null,
+      "teacherRequired": true
+    },
+    {
+      "id": "G3-U07-L12-COOLDOWN",
+      "coverage": "PUBLISHER_GATED_NOT_REPRODUCED",
+      "teacherRequired": true
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U07-L12-IMAGE-01",
+      "observedAltText": "4 quadrilaterals on a dot grid",
+      "originalReference": "unit-7/lesson-12/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_VISUAL_REVIEWED_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L12-IMAGE-02",
+      "observedAltText": "rectangles on a dot grid",
+      "originalReference": "unit-7/lesson-12/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_VISUAL_REVIEWED_NOT_EMBEDDED"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 14,
+    "digitallyCheckableWithTeacherReview": 8,
+    "teacherOnly": 5,
+    "rightsRestricted": 1
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "A rectangle is 3 cm by 4 cm. What is its area in square centimetres?",
+    "answerType": "integer",
+    "expected": "12"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_RUN",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-125-2021-original-same-area-distinct-perimeters-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Publisher original gated Cool-down not copied.",
+    "Student drawings, posters, and gallery walk require teacher; typed dimension pair alone cannot certify.",
+    "Runtime tests, Stage D, production publication and academic approval not executed."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L13"
+}

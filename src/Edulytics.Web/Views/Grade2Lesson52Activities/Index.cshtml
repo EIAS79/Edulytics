@@ -1,0 +1,54 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson52Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Make a Yard Stick optional";}
+<style>
+.g2l52{max-width:970px;margin:auto;padding:20px;color:#244252}.g2l52 .panel{background:#fff;border:1px solid #cbdce5;border-radius:12px;padding:18px;margin:15px 0}.g2l52 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}.g2l52 label{display:block;margin:12px 0 5px;font-weight:700}.g2l52 input,.g2l52 textarea{font:inherit;width:100%;max-width:560px;border:1px solid #8095a2;border-radius:8px;padding:10px}.g2l52 .action{padding:13px 20px;border:0;border-radius:8px;background:#107f93;color:white;font-weight:700}.g2l52 .ok{border-left:4px solid #288458;padding-left:12px}.g2l52 .bad{border-left:4px solid #b64a5b;padding-left:12px}.g2l52 .review{border-left:4px solid #b58b35;padding-left:12px}
+</style>
+<main class="g2l52">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Make a Yard Stick — optional</h1>
+<p>Use an ACTUAL 3×5-inch index card to construct a TRUE 36-inch tool on paper, not an onscreen approximation. All inch intervals must be equal and start at0. The teacher evaluates the genuine paper model and classroom measurements.</p>
+<form asp-controller="Grade2Lesson52Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk — three and five</h2><div class="grid">
+<div><label asp-for="Answers.TalkA">3+5</label><input asp-for="Answers.TalkA" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.TalkB">5−3</label><input asp-for="Answers.TalkB" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.TalkC">5−3+5</label><input asp-for="Answers.TalkC" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.TalkD">3+5+3+3</label><input asp-for="Answers.TalkD" type="number" min="0" max="50" required/></div></div></section>
+<section class="panel"><h2>2. Make a REAL yardstick using only a 3-by-5 inch card</h2>
+<p>With your partner place a real 3×5-inch index card alongside at least36 inches of paper, marking EVERY inch from1 to36. The short edge measures3in, the long5in. One inch can be made by subtracting3+3−5; two inches by5−3. Check equal spacing on paper, not just arithmetic, and swap roles halfway.</p>
+<div class="grid">
+<div><label asp-for="Answers.OneInch">3+3−5 (inches)</label><input asp-for="Answers.OneInch" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.TwoInches">5−3 (inches)</label><input asp-for="Answers.TwoInches" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.ElevenInches">5+3+3 (inches)</label><input asp-for="Answers.ElevenInches" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.ThirtySixInches">Six 5-inch segments and two 3-inch segments</label><input asp-for="Answers.ThirtySixInches" type="number" min="0" max="36" required/></div>
+</div>
+<label asp-for="Answers.RealInchMarks">Explain how your ACTUAL paper ruler has all marks1..36, equal unit intervals and correct zero</label>
+<textarea asp-for="Answers.RealInchMarks" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPairRoles">What real card-holding and marking roles did you swap halfway?</label>
+<textarea asp-for="Answers.RealPairRoles" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>3. Measure and compare classroom DESK heights using your yardsticks</h2>
+<p>Partners measure the height of the same physical desk in INCHES, put an X sticky note on the actual class line plot, compare tallest−shortest and discuss measurement errors. Correct real paper marks if needed. Source provides NO fixed desk height figures.</p>
+<label asp-for="Answers.RealDeskHeight">Your actual desk height (inches) — teacher checks the physical measurement</label><input asp-for="Answers.RealDeskHeight" type="number" min="0" max="100"/>
+<label asp-for="Answers.ActualDeskLinePlot">Describe genuine class X marks, shortest, tallest and range</label><textarea asp-for="Answers.ActualDeskLinePlot" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealRevision">What were your actual paper tool's inaccuracies, and how did you revise them?</label><textarea asp-for="Answers.RealRevision" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. OPTIONAL — measure hands and forearms with a real partner</h2>
+<p>Source: hand from wrist to TOP of middle finger; forearm from OUTSIDE of elbow to wrist. Each real partner has their own values. Write TWO equations and two statements; no numbers have been assumed.</p>
+<label asp-for="Answers.RealPartnerHandsAndArms">Authentic partner A/B hand and forearm lengths (inches)</label><textarea asp-for="Answers.RealPartnerHandsAndArms" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealTwoEquations">Two equations with actual measured values</label><textarea asp-for="Answers.RealTwoEquations" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealContextSentences">Two statements explaining what your equations mean</label><textarea asp-for="Answers.RealContextSentences" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>5. Independently authored Edulytics FICTIONAL arithmetic</h2>
+<p>These made-up heights and body measures are NOT measurements from actual children, desks or original source tables.</p>
+<div class="grid">
+<div><label asp-for="Answers.FictionDeskA">Fictional desk1 (28in)</label><input asp-for="Answers.FictionDeskA" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.FictionDeskB">Fictional desk2 (30in)</label><input asp-for="Answers.FictionDeskB" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.FictionDeskDifference">Difference30−28</label><input asp-for="Answers.FictionDeskDifference" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.FictionRemaining">36−17 inches</label><input asp-for="Answers.FictionRemaining" type="number" min="0" max="36" required/></div>
+<div><label asp-for="Answers.FictionForearmMinusHand">Fictional forearm16−hand7</label><input asp-for="Answers.FictionForearmMinusHand" type="number" min="0" max="36" required/></div>
+</div><button class="action" type="submit">Check mathematics and show teacher-observation rubric</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Check calculation":"Teacher review required"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var r in UsCcssG2Unit3EighteenthLessonYardstick.TeacherRubric){<li>@r</li>}</ul>
+<p>Source IM K–5 2021 Grade2 Unit3 Lesson18. Optional modeling unit, CCSS2.MD.A.1, 2.MD.A.4, 2.MD.B.5/.6, 2.MD.D.9, 2.OA.B.2. No official grades.</p></section></main>

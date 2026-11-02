@@ -1,0 +1,43 @@
+{
+  "ordinal": 87,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L01",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "77f37bad22b8d68e495b47466a41d79bfc68df3b17dab45d2b61b5ba11bcbefb",
+    "teacher": "b74d818d2cdda714c75edd5c9e02e5f0f05ef585767aecebb63f76b51e9c4772",
+    "student": "0a18fe91f206d627aae8fa7d9d5cd648e9f5cc33a4ea596e240646ff1ce77992"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "A design grows by two caps each stage: 5, 7, 9. Next stage?",
+    "teacherAnswer": "11 caps"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:29:52+01:00",
+  "closeAtLocal": "2026-10-26T23:29:53+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-87-local-source-guard.test.cjs"
+  }
+}

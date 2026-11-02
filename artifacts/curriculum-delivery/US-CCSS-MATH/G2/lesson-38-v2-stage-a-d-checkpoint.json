@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 38,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L04",
+  "title": "Measure and Estimate in Centimeters",
+  "unitNumber": 3,
+  "lessonNumber": 4,
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_PREPARATION_AND_TEACHER_LESSON_REVIEW",
+    "localSource": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\02_Grade_2_IM_K5\\unit-3\\lesson-4",
+    "originalPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-4/preparation.html",
+    "originalLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-4/lesson.html",
+    "canonicalBodySha256": "655f031b245a477ee25ae17c5172a3b2bef9484e673b5cc74de6a04791e77cd3",
+    "sourceSemanticSha256": "7b4df15924d90f30ee89ef4cd52f9b68a06f92719605eb993cad5379d01f9758",
+    "outcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.3"
+    ],
+    "warmup": "Original source A/B/D correct four-centimeter ruler intervals, C incorrect interval; D from1 to5 spans4 cm.",
+    "activity1": "Estimate authentic classroom objects mostly5–30cm, one50–90cm. Too low/about right/too high notebook estimation then revise against real10cm benchmark, two-student discussion.",
+    "activity2": "Measure SAME actual classroom objects with standard centimeter rulers, align true zero tick versus physical edge appropriately, record cm and compare earlier estimates. Iterate ruler placement on long objects.",
+    "sourceCoolDown": "The Pencil teacher login restricted; first-party virtual ruler exit not claimed publisher content.",
+    "teacherOnly": "Original A–D images, actual physical ruler zero, real object lengths, partner estimates and MLR2 vocabulary require human observation.",
+    "copyright": "Mathematical facts source-attributed, no original publisher images reproduced."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_BODY_SHA_PREDECESSOR_SIX_FIELDS_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3EstimateMeasureCmTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original pack URL, source SHA, ordered two CCSS outcomes, prior six English fields and allowed old persisted content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_STUDENT_MEASUREMENT_COMPANION_FOUR_EXACT_FAMILIES_AND_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3FourthLessonEstimateCm.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson4EstimateMeasureCmContracts.cs",
+    "exactEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson4EstimateMeasureCmQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson38ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson38Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l04.cm_segment_zero_offset",
+      "usccss.g2.u03.l04.cm_segment_shifted_mark",
+      "usccss.g2.u03.l04.cm_ruler_iteration",
+      "usccss.g2.u03.l04.cm_estimate_about_right"
+    ],
+    "firstPartyExamples": "Mark2–17 is15 cm, 2*30+8=68cm, mark3–14 is11cm; none represent a measured real notebook.",
+    "reviewBoundary": "Teacher assesses real physical objects, authentic images A-D, standard ruler zero-tick and interval lengths, MLR2 partner talk.",
+    "studentSecurity": "StudentPortal authorization, adoption and published student lesson check, anti-forgery POST, max2000 chars/string, no official grading.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3EstimateMeasureCmTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3FourthLessonEstimateCmTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson4EstimateMeasureCmQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson38ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L05_GRADE_ORDINAL39_STAGE_A_B_C_SOURCE_LOCAL_ONLY"
+}

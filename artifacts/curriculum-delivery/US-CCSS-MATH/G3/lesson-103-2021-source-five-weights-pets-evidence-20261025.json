@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "gradeOrdinal": 103,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L06",
+  "device": "Our-CS",
+  "teacherHtmlSHA256": "f558afcf987db0da134a7722c160fd27b3a9fdc9585682f29bf60a49185370e1",
+  "preparationHtmlSHA256": "ac934d245ddfec9fb1bd156f294ef31e79bc5674b1ca35c4df72c4dbfc882d26",
+  "sourceBenchmarkWeights": [
+    "1 gram",
+    "10 grams",
+    "100 grams",
+    "1 kilogram",
+    "2 kilograms"
+  ],
+  "sourceWeightRanges": [
+    "less than 1 gram",
+    "between 1 gram and 100 grams",
+    "between 100 grams and 1 kilogram",
+    "more than 1 kilogram"
+  ],
+  "sourceOriginalPets": [
+    "guinea pig",
+    "dog",
+    "small fish",
+    "cat"
+  ],
+  "sourceFourWeightChoiceCards": [
+    "20 kilograms",
+    "1 kilogram",
+    "3 kilograms",
+    "3 grams"
+  ],
+  "plausibleOneToOneMapping": [
+    {
+      "pet": "guinea pig",
+      "approxWeight": "1 kilogram"
+    },
+    {
+      "pet": "dog",
+      "approxWeight": "20 kilograms"
+    },
+    {
+      "pet": "small fish",
+      "approxWeight": "3 grams"
+    },
+    {
+      "pet": "cat",
+      "approxWeight": "3 kilograms"
+    }
+  ],
+  "actualAnimalsMeasured": false,
+  "originalStudentFacingSectionsReviewed": 3,
+  "sourcePictureDescriptions": 7,
+  "sourcePicturesNotPixelVerified": true,
+  "sourceStandAloneStudentPdfNotInspected": true,
+  "sourceCoolDownGated": true,
+  "sourceScaleUseOptional": true,
+  "sourceGroupRotation": {
+    "groups": 5,
+    "minutesPerWeight": 2,
+    "benchmarks": 5
+  },
+  "sourceMaterialsPrepare": [
+    "chart paper",
+    "markers",
+    "physical gram/kilogram weights"
+  ],
+  "firstPartyRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l06-2021.rich-lesson-v2.json",
+  "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson6.cshtml",
+  "firstPartyTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson6EstimateWeightTests.cs",
+  "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-103-physical-weight-teacher-rubric-20261025.json",
+  "testsNotRun": true,
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "authoringState": "READY_FOR_STAGE_D"
+}

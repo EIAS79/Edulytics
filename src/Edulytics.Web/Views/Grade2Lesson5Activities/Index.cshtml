@@ -1,0 +1,114 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson5PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · Adding within fifty";
+    var cards=UsCcssG2Unit1FifthLessonEdulyticsCoolDown.SevenCards;
+}
+<style>
+.g2-l05{max-width:930px;margin:auto;padding:20px;color:#1c394d}
+.g2-l05 h1{font-size:1.85rem}.g2-l05 h2{font-size:1.35rem}
+.g2-l05 .panel{padding:24px;margin:18px 0;background:white;border:1px solid #d8e4ed;border-radius:15px}
+.g2-l05 .cards{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+.g2-l05 .card{font-size:1.5rem;display:flex;align-items:center;justify-content:center;height:78px;width:59px;background:#e5f6fa;border:2px solid #177a91;border-radius:9px;font-weight:800}
+.g2-l05 label{font-weight:700;display:block;margin:14px 0 6px}
+.g2-l05 input,.g2-l05 textarea{padding:12px;border:1px solid #6b8a9b;border-radius:8px;font:inherit;width:100%;max-width:500px}
+.g2-l05 .button{padding:12px 23px;border:0;border-radius:9px;background:#087c8f;color:#fff;font-weight:750;font:inherit;cursor:pointer}
+.g2-l05 .muted{color:#4a6576}
+.g2-l05 .success{border-left:4px solid #247b50;padding-left:12px}
+.g2-l05 .error{border-left:4px solid #b74651;padding-left:12px}
+.g2-l05 .review{border-left:4px solid #ad8436;padding-left:12px}
+.g2-l05 .g2-place{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
+.g2-l05 .bundle{background:#cff0f1;border:2px solid #1e7b82;border-radius:8px;padding:8px}
+</style>
+<main class="g2-l05">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+    <header>
+        <p>EDULYTICS · ORIGINAL LEARNING ACTIVITIES</p>
+        <h1>Add within 50 using tens and ones</h1>
+        <p class="muted">Grade 2 Unit 1 Lesson 5. These digit cards, representations
+        and Cool-down questions were independently authored for Edulytics.</p>
+    </header>
+    <section class="panel">
+        <h2>1. Warm-up: two digits and one digit</h2>
+        <p>Mentally find 16 + 3, 16 + 5, 26 + 5, and 38 + 6.
+        Which method helps you make the next ten?</p>
+    </section>
+    <section class="panel">
+        <h2>2. How Close? Two two-digit numbers</h2>
+        <p>Here are seven <strong>physical</strong> digit cards. Choose exactly
+        FOUR cards, arrange them into TWO two-digit numbers, and make their
+        sum as close as possible to 50. A digit may appear twice because
+        the two matching printed cards are separate physical cards.</p>
+        <div class="cards" role="img"
+            aria-label="Seven digit cards: three, eight, four, six, six, two and one.">
+            @foreach(var card in cards){<span aria-hidden="true" class="card">@card</span>}
+        </div>
+        <p>Write an equation such as two two-digit addends joined by +.
+        Compare with a partner and explain what makes your choice close to 50.
+        Never use one physical card twice.</p>
+    </section>
+    <section class="panel">
+        <h2>3. Place value and regrouping</h2>
+        <p>To calculate 27 + 15, add two tens and one ten, then seven ones
+        and five ones. The twelve ones make one ten and two ones, so
+        the whole result is four tens and two ones.</p>
+        <div class="g2-place" role="img"
+             aria-label="Four groups of ten and two single units equal forty two.">
+            @for(var i=0;i<4;i++){<span class="bundle" aria-hidden="true">10</span>}
+            <span class="bundle" aria-hidden="true">1</span>
+            <span class="bundle" aria-hidden="true">1</span>
+        </div>
+        <p>Solve other additions within 50 using cubes, place-value drawings,
+        making ten or a different correct method. Explain your thinking with
+        your teacher or partner.</p>
+        <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+            <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+            <input type="hidden" name="lessonId" value="@Model.LessonId" />
+            <button class="button" type="submit">Practice more addition within fifty</button>
+        </form>
+    </section>
+    <form class="panel" asp-controller="Grade2Lesson5Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <h2>4. Independently authored Edulytics Cool-down</h2>
+        <label for="card-equation">Choose four cards and write two two-digit numbers whose sum is as close to 50 as possible</label>
+        <input id="card-equation" name="twoDigitEquation" value="@Model.TwoDigitEquation"
+               placeholder="e.g. 38 + 12" maxlength="40" required />
+        <label for="mental">38 + 6 = ?</label>
+        <input id="mental" name="mental" value="@Model.Mental" type="number" min="0" max="50" required />
+        <label for="regroup">27 + 15 = ?</label>
+        <input id="regroup" name="regroup" value="@Model.Regroup" type="number" min="0" max="50" required />
+        <label for="fifty">39 + 11 = ?</label>
+        <input id="fifty" name="toFifty" value="@Model.ToFifty" type="number" min="0" max="50" required />
+        <label for="explain">Explain your tens-and-ones strategy with a drawing, an equation or words</label>
+        <textarea id="explain" name="explanation" rows="3" maxlength="2000">@Model.Explanation</textarea>
+        <p class="muted">Student-created equations, explanations and partner
+        participation require the teacher's rubric, not just an automatic integer score.</p>
+        <button class="button" type="submit">Check my mathematics</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Practice feedback</h2>
+            @foreach(var result in Model.Feedback){
+                <div class="@(result.Correct==true?"success":result.Correct==false?"error":"review")">
+                    <h3>@result.Task</h3>
+                    <p>@(result.Correct==true?"Mathematically correct":result.Correct==false?"Try again":"Teacher review"). @result.Feedback</p>
+                </div>
+            }
+            <p class="muted">Immediate feedback here is not a persisted
+            school grade or an assertion that the classroom activity took place.</p>
+        </section>
+    }
+    <section class="panel">
+        <h2>Teacher rubric</h2>
+        <ul>
+            @foreach(var criterion in UsCcssG2Unit1FifthLessonEdulyticsCoolDown.TeacherRubric){<li>@criterion</li>}
+        </ul>
+    </section>
+    <p class="muted">Curriculum reference: Illustrative Mathematics 2021
+    Grade 2 Unit 1 Lesson 5, CCSS 2.NBT.B.5. Figures and exit ticket authored by Edulytics.</p>
+</main>

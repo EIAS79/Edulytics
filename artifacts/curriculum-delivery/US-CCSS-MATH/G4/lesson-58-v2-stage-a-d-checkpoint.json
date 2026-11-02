@@ -1,0 +1,42 @@
+{
+  "ordinal": 58,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L13",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "be9799739a86ebab8b5d8e2d154ce9948c2dc84a0151f0ce3eb70875bdda2901",
+    "teacher": "0499c6a751daf3ecf4efc941ec935f0c433ccf1e749a56d867be209ae49eddab",
+    "student": "33e7e6989c9df5284e94977dbcc8de7459530098a3a833e539fc556b7c8d40de"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Order 30,510; 35,100; 31,500 from least to greatest.",
+    "teacherAnswer": "30,510 < 31,500 < 35,100"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:12:22+01:00",
+  "closeAtLocal": "2026-10-26T23:12:22+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-58-local-source-guard.test.cjs"
+  }
+}

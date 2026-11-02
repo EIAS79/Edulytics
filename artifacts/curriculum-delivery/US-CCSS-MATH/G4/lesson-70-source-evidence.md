@@ -1,0 +1,10 @@
+# G4 ordinal 70 — Interpret Representations of Multiplicative Comparison
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-5_lesson-2_preparation.html SHA256=142e426e1b60573a1ffd1b1f530fc532ed85d615bec8dc1208444e7d1d74e184
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-5\lesson-2\lesson.html SHA256=f676ba8d3a67e589cb8ca5b24406be363c1ebb510c7bbb9df73673fec2fb8276
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-5\lesson-2\lesson.html SHA256=d54b8db6341e02189ccd473dad879efea4fe4c07082d010952425cd983d6936b
+- Preserved existing learning explanation: Learning goal: You will represent situations and descriptions of multiplicative comparison using diagrams and equations. In this lesson, you analyze and interpret images of discrete objects (connecting cubes) and discrete tape diagrams in which each unit is visible. These diagrams are precursors for more abstract tape diagrams that are used in future lessons. You also make connections between the multiplicative comparison language and multiplication equations.
+- Original 2021 sections: Warm-up:  How Many Do You See: Times as Many	 (10 minutes); Activity 1: Represent “Times as Many”	 (20 minutes); Activity 2:  Diagrams to Solve Multiplicative Comparison Problems	 (15 minutes); Cool-down:  Comparing Cubes	 (5 minutes)
+- Corrections: removed non-publisher PLC title suffix; removed irrelevant generic concept; repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 4*5 = 20.
+- Edulytics first-party Cool-down: What equation represents 5 equal groups of 3 cubes?; teacher key: 5 × 3 = 15.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

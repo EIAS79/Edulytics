@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 32,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L11",
+  "title": "Area and the Multiplication Table (optional)",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-2/lesson-11/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U02.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L11.json",
+  "stageA": {
+    "state": "THREE_PDF_PAGES_ORIGINAL_TEACHER_PREPARATION_AND_TEN_VISUAL_CONTEXTS_INDIVIDUALLY_REVIEWED",
+    "originalAllVisualGeometryVerified": true,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Create a rectangle of area 24 square units inside the nine-by-nine multiplication table, starting at its upper-left DATA square. Enter its number of rows and columns as two whole numbers separated by a comma (each from 1 to 9). Show and explain your drawing. More than one answer works.",
+      "answerType": "rectangle-dimensions",
+      "expected": null,
+      "dimensionConstraint": {
+        "targetArea": 24,
+        "maximumSide": 9
+      }
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-2/lesson-11/lesson.html",
+      "verified": "ORIGINAL_2021_TEACHER_PREPARATION_AND_THREE_STUDENT_PDF_PAGES_SEMANTIC_REVIEW",
+      "figurePixelsInspected": true
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: How Many Do You See: Arrays that Grow (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-2/lesson-11/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source elements and independent learner teaching/tasks in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-32-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Area and the Multiplication Table (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-11/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source elements and independent learner teaching/tasks in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-32-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Products in the Multiplication Table (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-11/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source elements and independent learner teaching/tasks in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-32-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-2/lesson-11/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individually located source elements and independent learner teaching/tasks in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-32-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: What's the Product? (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-2/lesson-11/lesson.html",
+        "currentOneToOneStatus": "FIRST_PARTY_GOAL_EQUIVALENT_ALTERNATIVE",
+        "reason": "See individually located source elements and independent learner teaching/tasks in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-32-2021-source-to-first-party-evidence-20261024.json"
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Array. 2 rows of 4 dots.",
+      "A group of dots.",
+      "Groups of dots.",
+      "Multiplication table showing 3 times 1.",
+      "A multiplication table showing 2 times 3.",
+      "Multiplication table showing 3 times 3.",
+      "Multiplication table with a rectangular outline.",
+      "5-by-5 multiplication table.",
+      "A multiplication table.",
+      "A multiplication table with the column and row for 2 partially filled in."
+    ],
+    "originalElementsFullyOneToOneVerified": 28,
+    "originalStudentTaskPdfRead": true,
+    "allAvailablePublicTeacherInstructionsReviewed": true,
+    "protectedTeacherResponsesAndCoolDownRead": false
+  },
+  "stageB": {
+    "state": "GUARDED_CANONICAL_FIRST_PARTY_RICH_V2_AND_COMPANION_AUTHORED_RUNTIME_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Create a rectangle of area 24 square units inside the nine-by-nine multiplication table, starting at its upper-left DATA square. Enter its number of rows and columns as two whole numbers separated by a comma (each from 1 to 9). Show and explain your drawing. More than one answer works.",
+      "answerType": "rectangle-dimensions",
+      "expected": null,
+      "dimensionConstraint": {
+        "targetArea": 24,
+        "maximumSide": 9
+      }
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s explore area and the multiplication table.",
+      "sourceLearningGoals": "Explore connections between area and the multiplication table.",
+      "teachingSteps": [
+        "Decompose the growing dot arrays into nonoverlapping blocks.",
+        "Read the four three-row rectangles from factor headers and lower-right product cells.",
+        "Construct your own rectangle in the five-by-five table, then a 24-square rectangle in the nine-by-nine table.",
+        "Use familiar products of 2, 5 and 10 to find more facts; explain row and column patterns with equations.",
+        "Compare strategies and complete the independently authored seven-by-four Cool-down."
+      ],
+      "caution": "Exclude header cells; keep each rectangle inside its specified table. Many valid rectangles and explanations are possible; do not require completion of every table cell.",
+      "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson11RichV2"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l11-2021.rich-lesson-v2.json"
+  },
+  "stageC": {
+    "state": "INDEPENDENT_BOUNDED_FACTOR_PAIRS_AND_PATTERN_EQUATIONS_REVIEWED_TESTS_UNRUN",
+    "firstPartyPractice": {
+      "prompt": "Independently draw a rectangle from the upper-left DATA square of a multiplication table, covering 4 rows and 6 columns. What product belongs in its lower-right cell? Explain how you checked the area.",
+      "answerType": "integer",
+      "expected": "24"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "New Edulytics task: draw a rectangle covering 7 rows and 4 columns in a ten-by-ten multiplication table. Enter the product in its lower-right cell. Draw or describe the rotated rectangle and explain how it checks your answer.",
+      "answerType": "integer",
+      "expected": "28"
+    },
+    "humanRubric": "Check that rectangles start at the upper-left DATA square and exclude headers. The 24-square task accepts 3×8, 8×3, 4×6 and 6×4; 2×12 cannot fit the nine-by-nine table. Inspect drawings, lower-right product placement, factor-header alignment, student-authored pattern equations, notices/questions, partner explanations and optional-center work. Filling every cell is not required. A numeric answer never establishes discussion or completion of these tasks.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson11MultiplicationTableSourceTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": true
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": 100,
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false,
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "teacherOnlyAuthoredActivityRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "classroomTeacherEvidenceObserved": false,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-32-2021-source-to-first-party-evidence-20261024.json",
+    "basis": "STATIC_A_B_C_AUTHORING_NOT_EXECUTED_STAGE_D"
+  },
+  "sourcePdf": {
+    "pageCount": 3,
+    "bytes": 63265,
+    "sha256": "45e5d5470fbe0b35ab896ae3ad48af60f389163b38ea6004fb34540bbf632f99",
+    "unit": 2,
+    "lesson": 11,
+    "url": "https://cms-assets.illustrativemathematics.org/y5sf1a9phst6bjq0u8o441ld0psb",
+    "allPagesRead": true,
+    "inspection": "ALL_THREE_ORIGINAL_STUDENT_PDF_PAGE_RENDERINGS_AND_TEACHER_PREPARATION_TEXT_REVIEWED; ORIGINAL_BYTES_HASHED_READ_ONLY_IN_MEMORY; NO_PUBLISHER_ART_COPIED"
+  },
+  "matchingScope": "Positive bounded whole-number row/column counts and product; all four area24 orientations accepted within9×9. Independent arithmetic, swapped equations and dot totals checked; drawings and arbitrary pattern authorship always human-reviewed.",
+  "deferredStageDRequirements": [
+    "Compile .NET and Razor; run new lesson32 and affected shared grader/materialization contracts at grade freeze.",
+    "Inspect actual authenticated canonical Rich V2 and companion rendering, table headers/blank cells, screen-reader descriptions and mobile overflow.",
+    "Verify right/wrong/malformed submissions, anti-forgery/tenant scope and persisted attempts in the existing authenticated flow.",
+    "Teacher reviews learner-authored rectangles, equation patterns and actual dialogue; no classroom evidence has been observed."
+  ]
+}

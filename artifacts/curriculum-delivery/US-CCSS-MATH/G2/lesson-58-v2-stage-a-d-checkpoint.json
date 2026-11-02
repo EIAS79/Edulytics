@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 58,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L06",
+  "title": "Center Day 1 (optional)",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-6/preparation.html",
+  "stageA": {
+    "status": "COMPLETE_SOURCE_REVIEW_PUBLIC",
+    "sourceSemanticSha256": "7dde0dc10d46e58de40c828588e8a34d4c776a6659a5bd4d51f549f9647b67a4",
+    "sourceBodySha256": "d56627a509a6e2fe8575ec3b180b282b773ad986ac49e549e2220dfe2746a6ed",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.A.2",
+      "CCSS:2.NBT.B.5"
+    ],
+    "sourceEvidence": "Reviewed exact IM2021 teacher Lesson public activities and Preparation. Source-bound physical/inaccessible artwork and student observation never invented."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4CenterDay1NumberLineCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "guard": "Exact source URL, SHA, outcome order, all six predecessor fields; safe persisted content version"
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHORING_SOURCE_DISTINCT_FIRST_PARTY_FAMILIES",
+    "sourceActivity": "public publisher IM2021 G2 Unit4 Lesson6 student tasks, teacher-only work maintained",
+    "protectedController": "src/Edulytics.Web/Controllers/Grade2Unit4NextThreeActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4NextThreeActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4NextThreeQuestions.cs",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4NextThreePracticeContracts.cs",
+    "testFiles": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal58SourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal58SourceActivitiesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal58ExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal58WebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "boundaries": "Actual spinner/gameboard lengths, exact-end captures and optional center performance teacher-only"
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "status": "READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false,
+    "productionRelease": "NO_GO_UNVERIFIED"
+  },
+  "nextSequentialLesson": 59
+}

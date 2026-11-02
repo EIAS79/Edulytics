@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 102,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L14",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "7a2e3ed4d8e2ccb705f24d97457d2e528bea0510119d46cf2aad2dc446091288",
+    "teacherPreparationSha256": "aef287abd6682c3b9c5665c66a1800b9424f481a181437f425675fa59b674ac3",
+    "studentMirrorSha256": "2120af8d7f9be1503686809385c13cde90d3e94f5b26e27c677774ec7dff5a22",
+    "teacherActivityHeadings": [
+      "Activity 1: Cans for the Food Drive (20 minutes)",
+      "Activity 2: Boxes of Cans (20 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing How many cans did the first graders collect for the food drive? [visual] [visual]",
+      "Student Facing Student Cans Collected Lin 18 Priya 24 Han 13 Tyler 30 Partner A: Write an equation to represent your thinking. How many cans did Lin and Priya collect alt",
+      "Student Facing Room Cans Collected on Day 1 Kindergarten 18 1st grade 51 2nd grade 23 3rd grade 13 4th grade 39 5th grade 40 6th grade 8 7th grade 29 8th grade 30 Find di",
+      "Directly re-read original cached 2021 full teacher HTML Student Facing: Partner B asks Tyler+Priya and Lin+Han; final challenge asks LEAST number of boxes for all nine grade groups after optional three-grade packing."
+    ],
+    "sourceSpecificComparison": "Previously built food-drive candidate and four numerical modes reused, but original Partner B named pairing and whole-school minimum-box challenge were missing from learner teaching and digital Practice; both now addressed without reauthoring other lessons.",
+    "classification": "SOURCE_SPECIFIC_CONTENT_AND_PRACTICE_REPAIR_PRE_FINAL_EVIDENCE",
+    "sourceSpecificVerifiedPupilPairing": {
+      "PartnerA": "Lin18 + Priya24 = 42",
+      "PartnerB": "Tyler30 + Priya24 = 54, Lin18 + Han13 = 31, all four=85",
+      "totalAllNineGrades": 251,
+      "minimumNumberOfBoxes": 4,
+      "originalSourceCapacity": "35-65 per box; optional three-grade grouping to accommodate all nine grade groups"
+    }
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "ed2cf54cb7a6902e956b57d11991f7e1fbf7ef95",
+    "repairDetails": "Restored Partner B named grouping, total 251 and source final minimum boxes challenge; math witness 65+64+63+59 using all nine grade totals and one 3-grade box; guarded content version bumped from v1 to v2 with v1 upgrade compatibility.",
+    "originalSourceNamedPartnerBRestoredInPriorCommit": true,
+    "existingTeachingAndNumericSourceReused": true,
+    "originalPhysicalFoodDriveNotDigitallyCertified": true
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": false,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "addedOriginalMinimumBoxMode": "mode=4, source nine-grade Day1 table, a=0,b=0, MIN_BOXES=4; independent proof from 251 >3*65 and four capacity-respecting boxes; disjoint grade grouping and actual packing remain teacher-reviewed.",
+    "practiceCodeCommit": "01b708bc69ff0fb997d5a7be7f4f6cd0693e5a46",
+    "sourceTaskRegressionCommit": "829f7724cff4a2521166db73ffa02b1551f84dd1",
+    "independentlyVerifiedSourceNamedPairContract": "FIRST_PAIR=54;SECOND_PAIR=31;ALL=85",
+    "mathematicalFourBoxWitness": [
+      "18+39+8=65",
+      "51+13=64",
+      "23+40=63",
+      "29+30=59"
+    ],
+    "authoredAdditionalTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson102OriginalNamedFoodDrivePairsTests.cs",
+    "authoredAdditionalTestCommit": "4f8899bba1816afab23b86134bdf28681c1be381",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs; tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5AdditionPracticeTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue ordinal103 U06 Measurement. Stage D/CI and release not started.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleOriginalStudentAndTeacherNumericTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "originalFourNamedPupilValuesAndNineGradeTotalsChecked": true,
+    "numericGeneratorAndAnswerVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "boundary": "Original Student Facing class/pupil quantities and grouped-source arithmetic modeled without asserting pupils collected actual cans or completed packing. Full original partner discussion, free-form box packing witness, copyright/source images and authenticated grade persistence require Stage D/human validation."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 102,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L14",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-102-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Student Facing class/pupil quantities and grouped-source arithmetic modeled without asserting pupils collected actual cans or completed packing. Full original partner discussion, free-form box packing witness, copyright/source images and authenticated grade persistence require Stage D/human validation."
+  }
+}

@@ -1,0 +1,88 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson34Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Our Market's Inventory";}
+<style>
+.market34{max-width:1000px;margin:auto;padding:24px 16px;color:#284456}
+.market34 .panel{background:#fff;border:1px solid #cbdde6;border-radius:12px;padding:20px;margin:15px 0}
+.market34 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.market34 label{display:block;font-weight:700;margin:11px 0 4px}
+.market34 input,.market34 textarea{font:inherit;border:1px solid #7e97a5;padding:10px;width:100%;max-width:580px;border-radius:7px}
+.market34 .go{background:#09829c;color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:700}
+.market34 .ok{border-left:4px solid #258660;padding-left:12px}
+.market34 .bad{border-left:4px solid #b94b5c;padding-left:12px}
+.market34 .review{border-left:4px solid #b88e33;padding-left:12px}
+</style>
+<main class="market34">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Our Market's Inventory — optional</h1>
+<p>Be a real buyer or seller in a classroom market. Keep exactly <strong>100</strong> items of three kinds, with <strong>one stock below10</strong> and <strong>two stocks above10</strong>. The teacher checks actual transactions; digital sample numbers are separate.</p>
+<form asp-controller="Grade2Lesson34Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Notice and Wonder — Han's shopping cart</h2>
+<p>Your teacher displays the REAL source shopping-cart image. Speak with a partner about the groceries; the original image is not reproduced here.</p>
+<label asp-for="Answers.CartObservation">What did you notice or wonder about the original cart?</label>
+<textarea asp-for="Answers.CartObservation" maxlength="2000" rows="2"></textarea>
+</section>
+<section class="panel">
+<h2>2. Stock 100 items in your store</h2>
+<p>Choose three kinds of goods and your own quantities. Check all the strict constraints.</p>
+<div class="grid">
+<div><label asp-for="Answers.ProductA">Product 1</label><input asp-for="Answers.ProductA" maxlength="100"/></div>
+<div><label asp-for="Answers.StockA">Starting count 1</label><input asp-for="Answers.StockA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ProductB">Product 2</label><input asp-for="Answers.ProductB" maxlength="100"/></div>
+<div><label asp-for="Answers.StockB">Starting count 2</label><input asp-for="Answers.StockB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ProductC">Product 3</label><input asp-for="Answers.ProductC" maxlength="100"/></div>
+<div><label asp-for="Answers.StockC">Starting count 3</label><input asp-for="Answers.StockC" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.ModelExplanation">Prove that exactly one category has fewer than 10 and that the sum is exactly 100</label>
+<textarea asp-for="Answers.ModelExplanation" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>3. Actual buyers and sellers</h2>
+<p>With a real partner, roll ONE physical number cube THREE TIMES, recording each result. Strategically create one- and two-digit purchasing quantities, but only buy amounts the seller has in stock. Update each original paper inventory sheet.</p>
+<div class="grid">
+<div><label asp-for="Answers.ActualRoll1">Real roll 1</label><input asp-for="Answers.ActualRoll1" type="number" min="1" max="6"/></div>
+<div><label asp-for="Answers.ActualRoll2">Real roll 2</label><input asp-for="Answers.ActualRoll2" type="number" min="1" max="6"/></div>
+<div><label asp-for="Answers.ActualRoll3">Real roll 3</label><input asp-for="Answers.ActualRoll3" type="number" min="1" max="6"/></div>
+</div>
+<label asp-for="Answers.RealSalesDescription">Describe true partner orders and how you avoided overselling</label>
+<textarea asp-for="Answers.RealSalesDescription" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independent Edulytics model of sales and restocking</h2>
+<p><strong>First-party example only:</strong> fruit 7, cards 42, books 51. Illustrative sales are 3, 23 and 25. These are NOT claimed to be actual publisher transactions.</p>
+<div class="grid">
+<div><label asp-for="Answers.ExampleStockA">Example fruit stock</label><input asp-for="Answers.ExampleStockA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleStockB">Example card stock</label><input asp-for="Answers.ExampleStockB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleStockC">Example book stock</label><input asp-for="Answers.ExampleStockC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleSaleA">Example fruit sales</label><input asp-for="Answers.ExampleSaleA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleSaleB">Example card sales</label><input asp-for="Answers.ExampleSaleB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleSaleC">Example book sales</label><input asp-for="Answers.ExampleSaleC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleLeftA">Fruit left</label><input asp-for="Answers.ExampleLeftA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleLeftB">Cards left</label><input asp-for="Answers.ExampleLeftB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleLeftC">Books left</label><input asp-for="Answers.ExampleLeftC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleTotalSold">Total sold</label><input asp-for="Answers.ExampleTotalSold" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleTotalLeft">Total left</label><input asp-for="Answers.ExampleTotalLeft" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExampleRestock">Total restock needed</label><input asp-for="Answers.ExampleRestock" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.RealSalesReport">Optional: summarize your REAL sales report, as checked by teacher</label>
+<textarea asp-for="Answers.RealSalesReport" maxlength="2000" rows="3"></textarea>
+</section>
+<section class="panel"><h2>5. Independent exit</h2>
+<p>A different store begins with36 items of one kind and sells19. What remains, and how many must be restocked to return to36?</p>
+<div class="grid">
+<div><label asp-for="Answers.ExitLeft">Remaining</label><input asp-for="Answers.ExitLeft" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitRestock">Restock</label><input asp-for="Answers.ExitRestock" type="number" min="0" max="100" required/></div>
+</div><button type="submit" class="go">Check numbers and teacher-review tasks</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var result in Model.Feedback){<div class="@(result.Correct==true?"ok":result.Correct==false?"bad":"review")">
+<h3>@result.Section</h3><p>@(result.Correct==true?"Numerically correct":result.Correct==false?"Recheck constraints or math":"Teacher review required"). @result.Message</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2SixteenthLessonMarketInventory.TeacherRubric){<li>@item</li>}</ul>
+<p>Source IM K–5 2021 G2 U02 L16 optional; CCSS 2.NBT.B.5, 2.NBT.B.6 and 2.OA.A.1. No official school grade or actual transaction recorded by this numerical companion.</p>
+</section></main>

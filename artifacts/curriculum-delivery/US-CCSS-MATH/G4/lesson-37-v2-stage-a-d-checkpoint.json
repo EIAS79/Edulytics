@@ -1,0 +1,44 @@
+{
+  "ordinal": 37,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L12",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "ff8159a637d08c84f60667464743fbe16af021ff5efafe262dd192a1c569ed2e",
+    "teacherLesson": "9eb4edd60871025c4872164bd6e1d37002df4000eb4c0fe02921ae59511826fd",
+    "studentPdf": "02bcb8eb5629bccb299ad7ba0329d3d80cb57a581fd3ee6772acfd58981ef206"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Number Talk: Subtract Some Eighths (10 minutes)",
+    "Activity 1: Make It True (20 minutes)",
+    "Activity 2: To Decompose or Not to Decompose (15 minutes)",
+    "Cool-down: How Would You Find the Difference? (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-37-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:42+01:00",
+  "closeAtLocal": "2026-10-26T22:40:42+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

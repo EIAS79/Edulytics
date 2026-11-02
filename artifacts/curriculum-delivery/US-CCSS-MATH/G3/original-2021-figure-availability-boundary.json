@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 3,
+  "sourceEdition": "Illustrative Mathematics K-5 First Edition 2021",
+  "localSourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5",
+  "localSourceInspection": {
+    "scope": "Read-only folder extension inventory on connected authorized Windows device",
+    "totalFiles": 1447,
+    "htmlFiles": 1447,
+    "nonHtmlFilesObserved": 0,
+    "meaning": "The local HTML points at image assets but original image files are not stored alongside it."
+  },
+  "httpReadOnlyProbes": [
+    {
+      "url": "https://cms-assets.illustrativemathematics.org/al25x2pat2xxhw4d9beaqiyeskr4",
+      "observedStatus": 200,
+      "contentType": "image/svg+xml",
+      "sourceLesson": "G3 U01 L09",
+      "meaning": "Original publisher SVG can be reached remotely, not fully semantically/pixel verified."
+    },
+    {
+      "url": "https://im.kendallhunt.com/tikz_files/136095.svg",
+      "observedStatus": 404,
+      "sourceLesson": "G3 U01 L01",
+      "meaning": "One sample relative TikZ SVG cannot be retrieved from this apparent public host path. Other URLs must not be assumed to have the same status."
+    }
+  ],
+  "enumeratedSourceFigureReferences": {
+    "lessonScopedRefs": 796,
+    "distinctWithinUnitsSummed": 779,
+    "emptyAltAttributes": 119,
+    "relativeUrlReferences": 43
+  },
+  "evidenceManifestFolder": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-figure-url-intake/",
+  "blockedFullSourceFidelity": [
+    "Original figure pixels, vector geometry and any unlabeled mathematical diagrams need direct inspection.",
+    "Image asset rights and third-party photo licenses need independent checks.",
+    "Original student-task and teacher-authenticated assets were not all visually reviewed."
+  ],
+  "ownerActionNotYetMandatory": "Continue with verified public source where possible. If unresolved mathematical SVG or activity cards remain inaccessible after reasonable verification, use legally accessible official PDF or image originals to close the affected lesson; do not invent missing values.",
+  "falselyClaimingAccess": false,
+  "sourceFigurePixelParityVerified": false,
+  "noProductionChange": true,
+  "noPublisherArtBundled": true,
+  "academicClosureAllowed": false,
+  "testOrCiExecuted": false
+}

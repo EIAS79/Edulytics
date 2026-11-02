@@ -1,0 +1,58 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson32Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Solve It Your Way";}
+<style>
+.g2l32{max-width:960px;margin:auto;padding:20px;color:#274352}.g2l32 .panel{background:#fff;border:1px solid #ccdae3;border-radius:12px;padding:20px;margin:16px 0}.g2l32 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l32 label{display:block;margin:12px 0 5px;font-weight:700}.g2l32 input,.g2l32 textarea{width:100%;max-width:550px;font:inherit;padding:10px;border:1px solid #8196a4;border-radius:8px}.g2l32 .action{background:#06839a;color:#fff;border:0;border-radius:8px;padding:13px 20px;font-weight:bold}.g2l32 .ok{border-left:4px solid #2d8459;padding-left:12px}.g2l32 .bad{border-left:4px solid #bc4758;padding-left:12px}.g2l32 .review{border-left:4px solid #ae8b32;padding-left:12px}
+</style>
+<main class="g2l32">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Solve It Your Way — one and TWO steps</h1>
+<p>Find each story quantity first; then look for a SECOND question that asks you to combine those quantities. Real partner work and gallery conversations are assessed by your teacher.</p>
+<form asp-controller="Grade2Lesson32Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk — multiple addends</h2>
+<div class="grid">
+<div><label asp-for="Answers.WarmupOne">5+9+5</label><input asp-for="Answers.WarmupOne" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmupTwo">25+9+5</label><input asp-for="Answers.WarmupTwo" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmupThree">25+15+19</label><input asp-for="Answers.WarmupThree" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmupFour">25+30+15+19</label><input asp-for="Answers.WarmupFour" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.WarmupStrategy">Which addends did you combine to make full tens?</label><textarea asp-for="Answers.WarmupStrategy" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. Put It All Together — Andre's source TWO-part story</h2>
+<p>Andre first gathers25 sunflower seeds and17 squash seeds. How many? Later he also gathers35 cucumber seeds. How many SEEDS ALTOGETHER after BOTH parts?</p>
+<div class="grid">
+<div><label asp-for="Answers.AndreFirst">25+17 (intermediate)</label><input asp-for="Answers.AndreFirst" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.AndreTotal">25+17+35 (final)</label><input asp-for="Answers.AndreTotal" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.AndreDiagram">How does a real tape diagram or two equations show both steps?</label>
+<textarea asp-for="Answers.AndreDiagram" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>3. Select, Solve and Share — actual three-person group</h2>
+<p>Choose one original story per person, solve it yourself, and THEN work together on the additional group-total question.</p>
+<div class="grid">
+<div><p>Priya has24 FEWER seeds than Tyler, who has53. How many Priya?</p><label asp-for="Answers.PriyaSmaller">53−24</label><input asp-for="Answers.PriyaSmaller" type="number" min="0" max="100" required/></div>
+<div><p>Jada and Mai have61 altogether; Jada39. How many Mai?</p><label asp-for="Answers.MaiMissing">61−39</label><input asp-for="Answers.MaiMissing" type="number" min="0" max="100" required/></div>
+<div><p>Kiran starts24 and WINS17. How many now?</p><label asp-for="Answers.KiranResult">24+17</label><input asp-for="Answers.KiranResult" type="number" min="0" max="100" required/></div>
+<div><p>Now combine the answers: How many seeds do Priya, Mai and Kiran have IN ALL?</p><label asp-for="Answers.GroupTotal">Priya+Mai+Kiran</label><input asp-for="Answers.GroupTotal" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.RealGroupDiagram">Describe authentic group diagrams and something learned at the MLR7 gallery walk</label>
+<textarea asp-for="Answers.RealGroupDiagram" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Source student section summary and independent Edulytics exit</h2>
+<p>Original public section summary: Jada started with some seeds, then won28 and now has65.</p>
+<label asp-for="Answers.JadaStart">?+28=65. What is the start?</label><input asp-for="Answers.JadaStart" type="number" min="0" max="100" required/>
+<p>The following extra questions are FIRST-PARTY, not protected Jada's Seeds Cool-down:</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyTriple">25+18+31</label><input asp-for="Answers.FirstPartyTriple" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartySmaller">67−17</label><input asp-for="Answers.FirstPartySmaller" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyPart">58−26</label><input asp-for="Answers.FirstPartyPart" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyResult">29+14</label><input asp-for="Answers.FirstPartyResult" type="number" min="0" max="100" required/></div>
+</div>
+<button type="submit" class="action">Check source mathematics and independent arithmetic</button></section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Recalculate":"Teacher review required"). @r.Feedback</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var x in UsCcssG2Unit2FourteenthLessonTwoStepSeeds.TeacherRubric){<li>@x</li>}</ul>
+<p>Original IM K–5 2021 G2 Unit2 Lesson14, CCSS2.NBT.B.5 and 2.OA.A.1. Publisher protected cool-down not copied, no school grade.</p></section></main>

@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "sourceBaselineSha": "367a24ecc4385878c95f58f510f498bc1d13a222",
+  "purpose": "PHASE_04_TARGETED_CONTENT_REPAIR_CANDIDATES_NOT_CERTIFIED",
+  "totalSourceLessons": 1560,
+  "changedCandidateLessons": 7,
+  "mathVerificationScope": "Seven exact lesson-body repairs; arithmetic counterchecks and digest/identity assertions in CI",
+  "independentHumanReview": {
+    "reviewed": 0,
+    "approved": 0,
+    "signatures": 0
+  },
+  "academicGate": "NO-GO",
+  "routingAndDatabasePolicy": "NO_CHANGE_TO_STUDENT_ROUTING_ASSESSMENT_OR_NEON",
+  "evidenceManifest": "docs/curriculum/us-ccss-phase04-hs-content-repair-pilot.json",
+  "testFile": "tests/academic-us-ccss-phase04-hs-repairs.test.cjs",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:COMPLEX:U01:L01",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-complex-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "414882cc1224f02d23d355318af600c2becddfcfc950ad429d4ab2a8a5cac58d",
+      "candidateBodySha256": "ae23672bda4e80100fc695406822546f81b70141fe491b2c84842c346cd1dce7",
+      "publisherSourceSha256Preserved": "27dac39569fca34f2199b780b425d62ec96e8b30357007fe10da00580eae802d",
+      "sourceOutcomeCodes": [
+        "CCSS:HSN-CN.A.3",
+        "CCSS:HSN-CN.B.4",
+        "CCSS:HSN-CN.B.5",
+        "CCSS:HSN-CN.B.6"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "a7e75836a2258b9c42b8ea8acc2894c2e9872ef1e45a1c3019c1c0cc52ee8b0e",
+      "candidateBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "publisherSourceSha256Preserved": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+      "sourceOutcomeCodes": [
+        "CCSS:HSA-REI.C.8",
+        "CCSS:HSA-REI.C.9"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "4955b26a30b684bad5928e4dcb5800c6e32f4cffcde336fd7bd33b46739e84b7",
+      "candidateBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "publisherSourceSha256Preserved": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+      "sourceOutcomeCodes": [
+        "CCSS:HSF-BF.B.5"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L02",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-vector-matrix-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "a6f8114d3f407976e2e86a9251e6dac59a54c55714ca39fcc983abc8519b4ba2",
+      "candidateBodySha256": "cc0a1a5a3ab9209a9e81ca6b70cb9bba324365789a5d15a51a01d392ec1cce20",
+      "publisherSourceSha256Preserved": "53c43399d9c73e4097fd2493c310f0707fd1519b1687cdbd832dbb0328921482",
+      "sourceOutcomeCodes": [
+        "CCSS:HSN-VM.C.10",
+        "CCSS:HSN-VM.C.12"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L03",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-vector-matrix-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "782d2437335a6f08868d49bbde4ea9cb576b2793f6a8a21e71be0e0368d96ebd",
+      "candidateBodySha256": "b0a121f76ef7bce3b87ca5822597ec311135651160d422e6468134531de103fa",
+      "publisherSourceSha256Preserved": "53c43399d9c73e4097fd2493c310f0707fd1519b1687cdbd832dbb0328921482",
+      "sourceOutcomeCodes": [
+        "CCSS:HSN-VM.C.11"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L04",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-vector-matrix-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "1d4dc04d441eb2e35f871b6b23252e6a9c0c6a4d3e1daab769efccd842ab41de",
+      "candidateBodySha256": "e0c213fdbc2ed90560b39a494601d0528cc773eb6ad8b805c562ab741c66954d",
+      "publisherSourceSha256Preserved": "a85caa4453dfc8d607a5eef13aa68cf061b7e8de1feb4c9ff8a632cb636be187",
+      "sourceOutcomeCodes": [
+        "CCSS:HSN-VM.C.6",
+        "CCSS:HSN-VM.C.7",
+        "CCSS:HSN-VM.C.8"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L05",
+      "sourceFile": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-vector-matrix-phase29-v1.lesson-content-pack.json",
+      "originalBodySha256": "9d93d729d9e54e53ef1ec48fe2029a5144f53298e530b9ec0e718302814d92ec",
+      "candidateBodySha256": "4eac61819907a412dcee4197a2835011cd3099be2ae7f02d0137777511883d1a",
+      "publisherSourceSha256Preserved": "53c43399d9c73e4097fd2493c310f0707fd1519b1687cdbd832dbb0328921482",
+      "sourceOutcomeCodes": [
+        "CCSS:HSN-VM.C.9"
+      ],
+      "editorialDecision": "REWORK_CANDIDATE_PREPARED",
+      "academicDecision": "NOT_CERTIFIED",
+      "remainingEvidence": [
+        "publisher edition/license review",
+        "independent lesson-level mathematics and didactics approval",
+        "rendering/learner delivery staging proof",
+        "full assessment/skill coverage proof"
+      ]
+    }
+  ]
+}

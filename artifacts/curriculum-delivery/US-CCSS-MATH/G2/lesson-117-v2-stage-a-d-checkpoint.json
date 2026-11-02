@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 117,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U07:L15",
+  "title": "Decompose a Ten and a Hundred to Subtract",
+  "stageA": {
+    "status": "PUBLIC_ORIGINAL_TEXT_REVIEWED_HUMAN_MEDIA",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-117-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-7/lesson-15/preparation.html",
+    "sourceSha256": "78c45196c086fcaec7aee0981fd6c91394c44f882a1c3584abf551cc1f0a5ea5",
+    "standards": [
+      "CCSS:2.NBT.A.2",
+      "CCSS:2.NBT.B.7",
+      "CCSS:2.NBT.B.9"
+    ]
+  },
+  "stageB": {
+    "status": "SIX_FIELD_GUARDED_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit7LastTenCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-117-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_EXACT_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit7LastTenQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit7ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit7Activities/Index.cshtml",
+    "teacherOnly": "Authentic original photo, student-created diagrams/recording, physical card pairs and rationale have no predetermined source answers and require teacher.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal117OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal117SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal117ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal117StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 118
+}

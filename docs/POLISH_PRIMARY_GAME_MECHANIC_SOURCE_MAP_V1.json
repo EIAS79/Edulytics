@@ -1,0 +1,178 @@
+{
+  "version": "1.0-draft",
+  "framework": "PL-NATIONAL-MATH",
+  "sourceAuthority": "Polish education authorities / ELI",
+  "sourceUrl": "https://eli.gov.pl/api/acts/DU/2024/996/text.html",
+  "mappingKey": "SourceLocator unit/strand + core item number",
+  "note": "Paraphrased mechanic routing derived from the official requirement identified by SourceLocator. The official wording is not duplicated here.",
+  "stages": {
+    "I-III": {
+      "Osiągnięcia w zakresie rozumienia stosunków przestrzennych i cech wielkościowych": {
+        "1": {"workspace":"GEOMETRY","mechanic":"POSITION_ROUTE"},
+        "2": {"workspace":"MEASUREMENT","mechanic":"MEASURE_COMPARE","secondary":["SORT_CLASSIFY"]},
+        "3": {"workspace":"GEOMETRY","mechanic":"LINE_RELATIONS"}
+      },
+      "Osiągnięcia w zakresie rozumienia liczb i ich własności": {
+        "1": {"workspace":"NUMBER_SYSTEM","mechanic":"NUMBER_LINE_SEQUENCE"},
+        "2": {"workspace":"NUMBER_SYSTEM","mechanic":"SYMBOL_VALUE_MATCH"},
+        "3": {"workspace":"NUMBER_SYSTEM","mechanic":"PLACE_VALUE_BUILD","secondary":["ORDINAL_POSITION"]},
+        "4": {"workspace":"NUMBER_SYSTEM","mechanic":"COMPARE_ORDER"}
+      },
+      "Osiągnięcia w zakresie posługiwania się liczbami": {
+        "1": {"workspace":"OPERATIONS","mechanic":"RELATIONSHIP_MODEL"},
+        "2": {"workspace":"OPERATIONS","mechanic":"FACT_FLUENCY"},
+        "3": {"profileType":"COMPOSITE_SESSION","profiles":[{"workspace":"OPERATIONS","mechanic":"FACT_FLUENCY"},{"workspace":"RATIO_ALGEBRA","mechanic":"BALANCE_EQUATION"}]},
+        "4": {"workspace":"OPERATIONS","mechanic":"WRITTEN_ALGORITHM","secondary":["FACT_FLUENCY"]}
+      },
+      "Osiągnięcia w zakresie czytania tekstów matematycznych": {
+        "1": {"workspace":"REASONING_MODELING","mechanic":"MULTI_STEP_SCENARIO","secondary":["MODEL_SELECT"]},
+        "2": {"workspace":"REASONING_MODELING","mechanic":"CONSTRAINT_PUZZLE","secondary":["DESIGN_CONSTRAINT_TASK"]}
+      },
+      "Osiągnięcia w zakresie rozumienia pojęć geometrycznych": {
+        "1": {"workspace":"GEOMETRY","mechanic":"SHAPE_BUILDER","secondary":["SHAPE_IDENTIFY_COMPARE"]},
+        "2": {"workspace":"MEASUREMENT","mechanic":"RULER_ALIGN","secondary":["UNIT_CONVERSION"]},
+        "3": {"workspace":"GEOMETRY","mechanic":"PERIMETER_TRACE"},
+        "4": {"workspace":"GEOMETRY","mechanic":"SYMMETRY_MIRROR"}
+      },
+      "Osiągnięcia w zakresie stosowania matematyki w sytuacjach życiowych oraz w innych": {
+        "1": {"profileType":"COMPOSITE_SESSION","profiles":[{"workspace":"OBJECT_COUNTING","mechanic":"SORT_CLASSIFY"},{"workspace":"NUMBER_SYSTEM","mechanic":"PATTERN_BUILD"}]},
+        "2": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_PARTITION"},
+        "3": {"workspace":"TIME_MONEY","mechanic":"MONEY_VALUE","secondary":["CHANGE_TRANSACTION"]},
+        "4": {"profileType":"COMPOSITE_SESSION","profiles":[{"workspace":"TIME_MONEY","mechanic":"CLOCK_FACE"},{"workspace":"TIME_MONEY","mechanic":"CALENDAR_ORDER"}]},
+        "5": {"workspace":"MEASUREMENT","mechanic":"TEMPERATURE_SCALE"},
+        "6": {"workspace":"REASONING_MODELING","mechanic":"ESTIMATE_CHECK"},
+        "7": {"profileType":"COMPOSITE_SESSION","profiles":[{"workspace":"MEASUREMENT","mechanic":"MASS_BALANCE"},{"workspace":"MEASUREMENT","mechanic":"CAPACITY_FILL"}]},
+        "8": {"workspace":"REASONING_MODELING","mechanic":"STRATEGY_GAME"},
+        "9": {"workspace":"REASONING_MODELING","mechanic":"MULTI_STEP_SCENARIO"}
+      }
+    },
+    "IV-VI": {
+      "Liczby naturalne w dziesiątkowym układzie pozycyjnym": {
+        "1": {"workspace":"NUMBER_SYSTEM","mechanic":"SYMBOL_VALUE_MATCH"},
+        "2": {"workspace":"NUMBER_SYSTEM","mechanic":"NUMBER_LINE_SEQUENCE"},
+        "3": {"workspace":"NUMBER_SYSTEM","mechanic":"COMPARE_ORDER"},
+        "4": {"workspace":"NUMBER_SYSTEM","mechanic":"ESTIMATE_CHECK"},
+        "5": {"workspace":"NUMBER_SYSTEM","mechanic":"NUMERAL_SYSTEM_CONVERT"}
+      },
+      "Działania na liczbach naturalnych": {
+        "1": {"workspace":"OPERATIONS","mechanic":"FACT_FLUENCY"},
+        "2": {"workspace":"OPERATIONS","mechanic":"WRITTEN_ALGORITHM"},
+        "3": {"workspace":"OPERATIONS","mechanic":"WRITTEN_ALGORITHM","secondary":["FACT_FLUENCY"]},
+        "4": {"workspace":"OPERATIONS","mechanic":"OPERATION_PROPERTY"},
+        "5": {"workspace":"OPERATIONS","mechanic":"RELATIONSHIP_MODEL"},
+        "6": {"workspace":"OPERATIONS","mechanic":"FACTOR_MULTIPLE_ARRAY"},
+        "7": {"workspace":"OPERATIONS","mechanic":"FACTOR_MULTIPLE_ARRAY"},
+        "8": {"workspace":"OPERATIONS","mechanic":"POWER_BUILD"},
+        "9": {"workspace":"OPERATIONS","mechanic":"EXPRESSION_ORDER"},
+        "10": {"workspace":"REASONING_MODELING","mechanic":"ESTIMATE_CHECK"},
+        "11": {"workspace":"OPERATIONS","mechanic":"FACTOR_MULTIPLE_ARRAY"},
+        "12": {"workspace":"OPERATIONS","mechanic":"FACTOR_MULTIPLE_ARRAY"},
+        "13": {"workspace":"OPERATIONS","mechanic":"NUMBER_PROPERTY_SORT"},
+        "14": {"workspace":"OPERATIONS","mechanic":"PRIME_FACTOR_BUILD"},
+        "15": {"workspace":"OPERATIONS","mechanic":"SHARE_REMAINDER"}
+      },
+      "Liczby całkowite": {
+        "1": {"workspace":"NUMBER_SYSTEM","mechanic":"INTEGER_CONTEXT"},
+        "2": {"workspace":"NUMBER_SYSTEM","mechanic":"NUMBER_LINE_SEQUENCE"},
+        "3": {"workspace":"NUMBER_SYSTEM","mechanic":"DISTANCE_ON_NUMBER_LINE"},
+        "4": {"workspace":"NUMBER_SYSTEM","mechanic":"COMPARE_ORDER"},
+        "5": {"workspace":"OPERATIONS","mechanic":"FACT_FLUENCY"}
+      },
+      "Ułamki zwykłe i dziesiętne": {
+        "1": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_MODEL"},
+        "2": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_MODEL"},
+        "3": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_EQUIVALENCE"},
+        "4": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_EQUIVALENCE"},
+        "5": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_CONVERT"},
+        "6": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"DECIMAL_UNIT_CONVERT"},
+        "7": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_NUMBER_LINE"},
+        "8": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_DECIMAL_LINK"},
+        "9": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_DECIMAL_LINK"},
+        "10": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_DECIMAL_LINK"},
+        "11": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"ESTIMATE_CHECK"},
+        "12": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_COMPARE"},
+        "13": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_MODEL"},
+        "14": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_SCALE"}
+      },
+      "Działania na ułamkach zwykłych i dziesiętnych": {
+        "1": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_OPERATIONS"},
+        "2": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"DECIMAL_OPERATIONS"},
+        "3": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_COMPARE"},
+        "4": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_MODEL"},
+        "5": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"FRACTION_OPERATIONS"},
+        "6": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"DECIMAL_OPERATIONS"},
+        "7": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"EXPRESSION_ORDER"}
+      },
+      "Elementy algebry": {
+        "1": {"workspace":"RATIO_ALGEBRA","mechanic":"EXPRESSION_BUILD"},
+        "2": {"workspace":"RATIO_ALGEBRA","mechanic":"EXPRESSION_BUILD"},
+        "3": {"workspace":"RATIO_ALGEBRA","mechanic":"BALANCE_EQUATION"}
+      },
+      "Proste i odcinki": {
+        "1": {"workspace":"GEOMETRY","mechanic":"LINE_RELATIONS"},
+        "2": {"workspace":"GEOMETRY","mechanic":"LINE_RELATIONS"},
+        "3": {"workspace":"GEOMETRY","mechanic":"LINE_DRAW"},
+        "4": {"workspace":"MEASUREMENT","mechanic":"RULER_ALIGN"},
+        "5": {"workspace":"GEOMETRY","mechanic":"POINT_LINE_DISTANCE"}
+      },
+      "Kąty": {
+        "1": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB"},
+        "2": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"MEASURE"},
+        "3": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"DRAW"},
+        "4": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"CLASSIFY"},
+        "5": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"COMPARE"},
+        "6": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"RELATIONSHIPS"}
+      },
+      "Wielokąty, koła i okręgi": {
+        "1": {"workspace":"GEOMETRY","mechanic":"SHAPE_IDENTIFY_COMPARE","mode":"TRIANGLES"},
+        "2": {"workspace":"GEOMETRY","mechanic":"SHAPE_BUILDER","mode":"TRIANGLE_CONSTRAINTS"},
+        "3": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"TRIANGLE_SUM"},
+        "4": {"workspace":"GEOMETRY","mechanic":"SHAPE_IDENTIFY_COMPARE","mode":"QUADRILATERALS"},
+        "5": {"workspace":"GEOMETRY","mechanic":"SHAPE_IDENTIFY_COMPARE","secondary":["SYMMETRY_MIRROR"]},
+        "6": {"workspace":"GEOMETRY","mechanic":"CIRCLE_PARTS"},
+        "7": {"workspace":"GEOMETRY","mechanic":"CIRCLE_CONSTRUCT"},
+        "8": {"profileType":"COMPOSITE_SESSION","profiles":[{"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"ISOSCELES"},{"workspace":"GEOMETRY","mechanic":"PERIMETER_TRACE","mode":"ISOSCELES"}]}
+      },
+      "Bryły": {
+        "1": {"workspace":"GEOMETRY","mechanic":"SHAPE_IDENTIFY_COMPARE","mode":"SOLIDS"},
+        "2": {"workspace":"GEOMETRY","mechanic":"SHAPE_IDENTIFY_COMPARE","mode":"PRISMS_CUBOIDS"},
+        "3": {"workspace":"GEOMETRY","mechanic":"SHAPE_NET_BUILD","mode":"RECOGNISE"},
+        "4": {"workspace":"GEOMETRY","mechanic":"SHAPE_NET_BUILD","mode":"DRAW"},
+        "5": {"workspace":"GEOMETRY","mechanic":"RELATIONSHIP_MODEL","mode":"EDGE_LENGTHS"}
+      },
+      "Obliczenia w geometrii": {
+        "1": {"workspace":"GEOMETRY","mechanic":"ANGLE_LAB","mode":"CALCULATE"},
+        "2": {"workspace":"GEOMETRY","mechanic":"PERIMETER_TRACE"},
+        "3": {"workspace":"GEOMETRY","mechanic":"AREA_TILE","secondary":["AREA_CALCULATE"]},
+        "4": {"workspace":"MEASUREMENT","mechanic":"UNIT_CONVERSION","mode":"AREA_UNITS"},
+        "5": {"workspace":"GEOMETRY","mechanic":"AREA_TILE","mode":"DECOMPOSE_COMPOSE"},
+        "6": {"workspace":"GEOMETRY","mechanic":"VOLUME_BUILD","secondary":["SURFACE_AREA_BUILD"]},
+        "7": {"workspace":"MEASUREMENT","mechanic":"UNIT_CONVERSION","mode":"VOLUME_CAPACITY"}
+      },
+      "Obliczenia praktyczne": {
+        "1": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"PERCENT_MODEL"},
+        "2": {"workspace":"FRACTION_DECIMAL_PERCENT","mechanic":"PERCENT_MODEL","mode":"PERCENT_OF_AMOUNT"},
+        "3": {"workspace":"TIME_MONEY","mechanic":"TIMELINE","mode":"CLOCK_CALCULATION"},
+        "4": {"workspace":"TIME_MONEY","mechanic":"CALENDAR_ORDER","mode":"CALENDAR_CALCULATION"},
+        "5": {"workspace":"MEASUREMENT","mechanic":"TEMPERATURE_SCALE"},
+        "6": {"workspace":"MEASUREMENT","mechanic":"UNIT_CONVERSION","mode":"LENGTH"},
+        "7": {"workspace":"MEASUREMENT","mechanic":"UNIT_CONVERSION","mode":"MASS"},
+        "8": {"workspace":"RATIO_ALGEBRA","mechanic":"RATIO_SCALE","mode":"MAP_SCALE"},
+        "9": {"workspace":"RATIO_ALGEBRA","mechanic":"SPEED_DISTANCE_TIME"}
+      },
+      "Elementy statystyki opisowej": {
+        "1": {"workspace":"DATA_STATISTICS","mechanic":"DATA_SORT","secondary":["TABLE_BUILD"]},
+        "2": {"workspace":"DATA_STATISTICS","mechanic":"PLOT_READ"}
+      },
+      "Zadania tekstowe": {
+        "1": {"workspace":"REASONING_MODELING","mechanic":"EVIDENCE_ORDER"},
+        "2": {"workspace":"REASONING_MODELING","mechanic":"MODEL_SELECT"},
+        "3": {"workspace":"REASONING_MODELING","mechanic":"RELATIONSHIP_MODEL"},
+        "4": {"workspace":"REASONING_MODELING","mechanic":"MULTI_STEP_SCENARIO"},
+        "5": {"workspace":"REASONING_MODELING","mechanic":"MULTI_STEP_SCENARIO","mode":"MIXED_ARITHMETIC_GEOMETRY"},
+        "6": {"workspace":"REASONING_MODELING","mechanic":"ERROR_ANALYSIS","secondary":["ESTIMATE_CHECK"]},
+        "7": {"workspace":"REASONING_MODELING","mechanic":"CONSTRAINT_PUZZLE","mode":"CREATE_AND_SOLVE"}
+      }
+    }
+  }
+}

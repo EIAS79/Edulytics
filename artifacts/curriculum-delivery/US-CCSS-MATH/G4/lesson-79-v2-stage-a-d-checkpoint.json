@@ -1,0 +1,42 @@
+{
+  "ordinal": 79,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L11",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "0855973c694289ffb75904155326f1d85366b8bf60bb080996f7ef0ba942fc3c",
+    "teacher": "63edec70a0148b17767e804cf80c709a33754303e897a9cc7607c12a7e6203f3",
+    "student": "1285804c4e03caad3c6a6dfa64b514348c57bf4f6baf39ebe2b8fd6f7611320f"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Express 40 ounces as pounds and ounces.",
+    "teacherAnswer": "2 lb 8 oz"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:23:15+01:00",
+  "closeAtLocal": "2026-10-26T23:23:16+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-79-local-source-guard.test.cjs"
+  }
+}

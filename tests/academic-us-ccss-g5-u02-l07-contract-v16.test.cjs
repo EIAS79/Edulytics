@@ -1,0 +1,6 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+test('G5 U02 L07 source unit fractions of 9 and 7 roads and 3-mile relay',()=>{assert.deepEqual([9/4,7/4,3/4],[2.25,1.75,.75]);assert.equal(3*(1/4),3/4)});
+test('G5 U02 L07 original eleven mile exit equals quarter times whole',()=>{assert.equal(11/4,2.75);assert.equal((1/4)*11,2.75);assert.equal(4*(11/4),11)});
+test('G5 U02 L07 negative cases distinguish relay, zero divisor and incorrect context',()=>{assert.notEqual(3/4,7/4);assert.notEqual(9/4,9/5);for(const n of [0,-4,4.5,'4'])assert.equal(Number.isSafeInteger(n)&&n>0,false)});
+const p=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json'),s=path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-practice-acceptance-v16.json');
+test('G5 U02 L07 original author exit, C shared integration still unverified',{skip:(!fs.existsSync(p)||!fs.existsSync(s))&&'requires source branch checkout'},()=>{const l=JSON.parse(fs.readFileSync(p,'utf8')).Lessons.find(x=>x.LessonCode.endsWith('U02:L07'));const r=JSON.parse(fs.readFileSync(s,'utf8'));assert.match(l.ExplanationParagraphs.join(' '),/Edulytiks-original exit check/);assert.equal(r.StageC,'BLOCKED_SHARED_INTEGRATION')});

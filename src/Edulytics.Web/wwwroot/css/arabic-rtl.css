@@ -1,0 +1,93 @@
+/* Arabic application localization: UI direction only.
+   Academic lesson bodies keep their curriculum-defined language. */
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .ed-v3-shell,
+html[dir="rtl"] .student-app-shell,
+html[dir="rtl"] .ed-login-v28-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .ed-v3-nav-link,
+html[dir="rtl"] .student-nav-link,
+html[dir="rtl"] .ed-login-v28-audience,
+html[dir="rtl"] .field-group,
+html[dir="rtl"] .student-panel,
+html[dir="rtl"] .evaluation-chart-panel {
+    text-align: right;
+}
+
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="password"],
+html[dir="rtl"] input[data-ltr],
+html[dir="rtl"] code,
+html[dir="rtl"] pre {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="rtl"] .ed-v3-topbar-actions,
+html[dir="rtl"] .student-topbar,
+html[dir="rtl"] .student-access-account,
+html[dir="rtl"] .ed-login-v28-topbar {
+    direction: rtl;
+}
+
+html[dir="rtl"] .ed-login-v28-language {
+    padding-left: 0;
+    padding-right: 18px;
+    border-left: 0;
+    border-right: 1px solid rgba(26, 58, 96, .14);
+}
+
+.app-language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+}
+
+.app-language-form {
+    margin: 0;
+}
+
+.app-language-option {
+    appearance: none;
+    border: 1px solid rgba(94, 109, 134, .28);
+    background: transparent;
+    color: inherit;
+    border-radius: 999px;
+    min-height: 32px;
+    padding: 5px 9px;
+    font: inherit;
+    font-size: .78rem;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.app-language-option:hover,
+.app-language-option:focus-visible {
+    border-color: currentColor;
+}
+
+.app-language-option.is-active {
+    background: rgba(77, 115, 247, .12);
+    border-color: rgba(77, 115, 247, .5);
+    font-weight: 700;
+}
+
+.ed-v3-sidebar .app-language-switcher,
+.student-sidebar .app-language-switcher {
+    color: inherit;
+}
+
+@media (max-width: 760px) {
+    .app-language-option {
+        min-height: 30px;
+        padding-inline: 8px;
+    }
+}

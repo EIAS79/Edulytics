@@ -1,0 +1,134 @@
+@using System.Globalization
+@{
+    Layout = "_PublicLayout";
+    var polish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    ViewData["Title"] = polish ? "Polityka prywatności" : "Privacy Policy";
+    string L(string en, string pl) => polish ? pl : en;
+}
+
+<div class="ed-home ed-legal-page">
+    <partial name="_PublicSiteHeader" />
+
+    <main class="ed-legal-shell">
+        <header class="ed-legal-hero">
+            <span class="ed-legal-eyebrow">@L("Legal", "Informacje prawne")</span>
+            <h1 class="ed-legal-default">@L("Privacy Policy", "Polityka prywatności")</h1>
+            <h1 class="ed-legal-ar">سياسة الخصوصية</h1>
+            <p class="ed-legal-default">@L("How OUR-CS Sp. z o.o. processes personal data when schools, school staff, students and visitors use Edulytics.", "Jak OUR-CS Sp. z o.o. przetwarza dane osobowe podczas korzystania z Edulytics przez szkoły, pracowników szkół, uczniów i odwiedzających.")</p>
+            <p class="ed-legal-ar">توضح هذه السياسة كيفية معالجة OUR-CS Sp. z o.o. للبيانات الشخصية عند استخدام المدارس وموظفيها والطلاب والزوار لمنصة Edulytics.</p>
+        </header>
+
+        <article class="ed-legal-document ed-legal-default">
+            <section>
+                <h2>@L("1. Our role", "1. Nasza rola")</h2>
+                <p>@L("Edulytics is primarily provided to schools and educational organisations. When a school uses Edulytics to manage teachers, students, classes, assessments, curriculum information and learning data, the school normally acts as the Data Controller and OUR-CS Sp. z o.o. acts as a Data Processor acting on the school's documented instructions.", "Edulytics jest przeznaczony przede wszystkim dla szkół i organizacji edukacyjnych. Gdy szkoła korzysta z Edulytics do zarządzania nauczycielami, uczniami, klasami, ocenianiem, informacjami programowymi i danymi o nauce, szkoła co do zasady działa jako administrator danych, a OUR-CS Sp. z o.o. jako podmiot przetwarzający działający na udokumentowane polecenie szkoły.")</p>
+                <p>@L("For information relating directly to our contractual relationship with a school, website enquiries, billing and platform administration, OUR-CS Sp. z o.o. may act as an independent Data Controller.", "W odniesieniu do danych związanych bezpośrednio z relacją umowną ze szkołą, zapytaniami ze strony internetowej, rozliczeniami i administracją platformą OUR-CS Sp. z o.o. może działać jako odrębny administrator danych.")</p>
+            </section>
+
+            <section>
+                <h2>@L("2. Who may use Edulytics", "2. Kto może korzystać z Edulytics")</h2>
+                <p>@L("Edulytics is licensed to schools and educational organisations. Students and school staff do not purchase Edulytics directly from us. Student accounts are created or authorised by the relevant school and may be activated through an invitation sent to the student's registered email address.", "Edulytics jest licencjonowany szkołom i organizacjom edukacyjnym. Uczniowie i pracownicy szkół nie kupują Edulytics bezpośrednio od nas. Konta uczniów są tworzone lub autoryzowane przez właściwą szkołę i mogą być aktywowane za pomocą zaproszenia wysłanego na zarejestrowany adres e-mail ucznia.")</p>
+            </section>
+
+            <section>
+                <h2>@L("3. Personal data we may process", "3. Dane osobowe, które możemy przetwarzać")</h2>
+                <p>@L("Depending on how a school configures and uses Edulytics, we may process:", "W zależności od sposobu konfiguracji i korzystania z Edulytics przez szkołę możemy przetwarzać:")</p>
+                <ul>
+                    <li>@L("name and account identification information;", "imię, nazwisko i dane identyfikujące konto;")</li>
+                    <li>@L("email address;", "adres e-mail;")</li>
+                    <li>@L("school, class, year group and curriculum information;", "informacje o szkole, klasie, poziomie nauczania i programie;")</li>
+                    <li>@L("user role and permissions;", "rolę użytkownika i uprawnienia;")</li>
+                    <li>@L("assessments, questions, answers and scores;", "oceny, pytania, odpowiedzi i wyniki;")</li>
+                    <li>@L("learning outcomes, curriculum progress, mastery and confidence indicators;", "efekty uczenia się, postęp w programie oraz wskaźniki opanowania i pewności;")</li>
+                    <li>@L("diagnostic, practice and learning activity;", "aktywność diagnostyczną, ćwiczeniową i edukacyjną;")</li>
+                    <li>@L("technical logs, security records and audit information;", "logi techniczne, zapisy bezpieczeństwa i informacje audytowe;")</li>
+                    <li>@L("communications, contractual and billing information relating to the school.", "komunikację oraz informacje umowne i rozliczeniowe dotyczące szkoły.")</li>
+                </ul>
+                <p>@L("We do not intentionally require unnecessary sensitive personal data to provide the core Edulytics service.", "Nie wymagamy celowo zbędnych szczególnych kategorii danych osobowych do świadczenia podstawowej usługi Edulytics.")</p>
+            </section>
+
+            <section>
+                <h2>@L("4. Why personal data is processed", "4. Cele przetwarzania danych")</h2>
+                <p>@L("Personal data may be processed to create and manage authorised accounts, provide the educational platform, deliver assessments and practice, measure progress against learning outcomes, calculate learning indicators, provide diagnostic and adaptive learning functionality, support teachers and schools, maintain security, investigate technical issues, provide support and meet legal, contractual, accounting and operational obligations.", "Dane osobowe mogą być przetwarzane w celu tworzenia i zarządzania autoryzowanymi kontami, świadczenia platformy edukacyjnej, prowadzenia oceniania i ćwiczeń, mierzenia postępu względem efektów uczenia się, obliczania wskaźników edukacyjnych, zapewniania funkcji diagnostycznych i adaptacyjnych, wspierania nauczycieli i szkół, utrzymywania bezpieczeństwa, badania problemów technicznych, świadczenia pomocy oraz realizacji obowiązków prawnych, umownych, księgowych i operacyjnych.")</p>
+            </section>
+
+            <section>
+                <h2>@L("5. Learning analytics and automated processing", "5. Analityka uczenia się i przetwarzanie automatyczne")</h2>
+                <p>@L("Edulytics uses automated learning analytics and adaptive assessment logic to process educational data such as assessment results, previous responses, mastery levels, confidence levels and learning outcomes. These functions may identify areas of strength or weakness, select relevant learning outcomes, adjust diagnostic or practice difficulty, recommend learning or recovery activities and generate learning-performance indicators.", "Edulytics wykorzystuje zautomatyzowaną analitykę uczenia się i logikę oceniania adaptacyjnego do przetwarzania danych edukacyjnych, takich jak wyniki ocen, wcześniejsze odpowiedzi, poziomy opanowania, poziomy pewności i efekty uczenia się. Funkcje te mogą identyfikować mocne i słabe obszary, wybierać odpowiednie efekty uczenia się, dostosowywać trudność zadań diagnostycznych lub ćwiczeniowych, rekomendować działania edukacyjne lub naprawcze oraz tworzyć wskaźniki postępów.")</p>
+                <p>@L("Student learning analytics and adaptive assessment functions are processed within the Edulytics service and are designed to support authorised school staff. They are not intended to make final high-impact educational decisions about a student without appropriate human review. Final decisions concerning grading, promotion, disciplinary action, school placement or other significant educational matters remain the responsibility of the school and its authorised staff.", "Analityka ucznia i funkcje oceniania adaptacyjnego są przetwarzane w ramach usługi Edulytics i służą wsparciu upoważnionych pracowników szkoły. Nie są przeznaczone do samodzielnego podejmowania ostatecznych decyzji edukacyjnych o dużym znaczeniu bez odpowiedniej oceny człowieka. Ostateczne decyzje dotyczące ocen, promocji, działań dyscyplinarnych, przydziału szkolnego lub innych istotnych kwestii edukacyjnych należą do szkoły i jej upoważnionego personelu.")</p>
+            </section>
+
+            <section>
+                <h2>@L("6. Legal basis", "6. Podstawa prawna")</h2>
+                <p>@L("Where OUR-CS Sp. z o.o. processes student or staff data on behalf of a school, the school determines the applicable legal basis under data protection law and OUR-CS Sp. z o.o. processes the information according to the school's documented instructions and the applicable Data Processing Agreement.", "Gdy OUR-CS Sp. z o.o. przetwarza dane uczniów lub pracowników w imieniu szkoły, szkoła określa właściwą podstawę prawną na gruncie przepisów o ochronie danych, a OUR-CS Sp. z o.o. przetwarza informacje zgodnie z udokumentowanymi poleceniami szkoły i właściwą umową powierzenia przetwarzania danych.")</p>
+                <p>@L("Where OUR-CS Sp. z o.o. acts as an independent Data Controller, processing may be based on performance of a contract, compliance with legal obligations, legitimate interests in operating and protecting the service, or consent where consent is specifically required.", "Gdy OUR-CS Sp. z o.o. działa jako odrębny administrator danych, przetwarzanie może opierać się na wykonaniu umowy, obowiązku prawnym, prawnie uzasadnionym interesie związanym z prowadzeniem i ochroną usługi albo zgodzie, gdy jest ona wyraźnie wymagana.")</p>
+            </section>
+
+            <section>
+                <h2>@L("7. Children's data", "7. Dane dzieci")</h2>
+                <p>@L("Edulytics is designed for use in an educational environment. Schools control the creation and management of student accounts. We do not rely on children independently purchasing or subscribing to Edulytics. The relevant school is responsible for ensuring that its use of student personal data has an appropriate legal basis and that any notices or permissions required by applicable law are provided.", "Edulytics jest przeznaczony do użytku w środowisku edukacyjnym. Szkoły kontrolują tworzenie i zarządzanie kontami uczniów. Nie opieramy usługi na samodzielnym zakupie lub subskrypcji Edulytics przez dzieci. Właściwa szkoła odpowiada za zapewnienie odpowiedniej podstawy prawnej korzystania z danych osobowych uczniów oraz przekazanie wymaganych informacji lub uzyskanie wymaganych uprawnień zgodnie z obowiązującym prawem.")</p>
+            </section>
+
+            <section>
+                <h2>@L("8. Service providers and recipients", "8. Dostawcy usług i odbiorcy danych")</h2>
+                <p>@L("We may use carefully selected service providers for cloud hosting, database infrastructure, email delivery, security, backup and other technical operations required to run Edulytics. Such providers may process personal data only to the extent necessary to provide their services and are subject to appropriate contractual and data-protection requirements. Relevant information is made available to school customers where required by law or contract.", "Możemy korzystać ze starannie wybranych dostawców usług hostingu chmurowego, infrastruktury baz danych, dostarczania wiadomości e-mail, bezpieczeństwa, kopii zapasowych oraz innych operacji technicznych niezbędnych do działania Edulytics. Dostawcy ci mogą przetwarzać dane osobowe wyłącznie w zakresie niezbędnym do świadczenia swoich usług i podlegają odpowiednim wymogom umownym oraz ochrony danych. Wymagane prawem lub umową informacje są udostępniane klientom szkolnym.")</p>
+            </section>
+
+            <section>
+                <h2>@L("9. International data transfers", "9. Międzynarodowe przekazywanie danych")</h2>
+                <p>@L("Where personal data is transferred outside the European Economic Area, we apply safeguards required by applicable data-protection law, such as an adequacy decision, Standard Contractual Clauses or another legally recognised transfer mechanism where applicable.", "Jeżeli dane osobowe są przekazywane poza Europejski Obszar Gospodarczy, stosujemy zabezpieczenia wymagane przez obowiązujące przepisy o ochronie danych, takie jak decyzja stwierdzająca odpowiedni stopień ochrony, standardowe klauzule umowne lub inny prawnie uznany mechanizm przekazywania danych, gdy ma zastosowanie.")</p>
+            </section>
+
+            <section>
+                <h2>@L("10. Data retention", "10. Okres przechowywania danych")</h2>
+                <p>@L("Personal data is retained only for as long as necessary for the purpose for which it was collected, including the duration of the school's subscription and applicable legal, accounting, security or contractual retention periods. Schools may request return or deletion of data in accordance with the applicable agreement and Data Processing Agreement. Certain records may be retained where required by law or necessary to establish, exercise or defend legal claims.", "Dane osobowe są przechowywane wyłącznie tak długo, jak jest to niezbędne do celu, dla którego zostały zebrane, w tym przez okres subskrypcji szkoły oraz przez właściwe okresy wynikające z prawa, księgowości, bezpieczeństwa lub umowy. Szkoły mogą żądać zwrotu lub usunięcia danych zgodnie z właściwą umową i umową powierzenia przetwarzania danych. Niektóre zapisy mogą być przechowywane, jeśli wymaga tego prawo lub jest to niezbędne do ustalenia, dochodzenia lub obrony roszczeń.")</p>
+            </section>
+
+            <section>
+                <h2>@L("11. Security", "11. Bezpieczeństwo")</h2>
+                <p>@L("We use technical and organisational measures designed to protect personal data against unauthorised access, alteration, disclosure, loss or destruction. Measures may include access controls, role-based permissions, authentication controls, audit logging, database protection, encrypted communications, security monitoring, software security testing, vulnerability analysis and backup and recovery procedures. No internet-based system can guarantee absolute security.", "Stosujemy środki techniczne i organizacyjne mające chronić dane osobowe przed nieuprawnionym dostępem, zmianą, ujawnieniem, utratą lub zniszczeniem. Środki te mogą obejmować kontrolę dostępu, uprawnienia oparte na rolach, mechanizmy uwierzytelniania, logi audytowe, ochronę bazy danych, szyfrowaną komunikację, monitorowanie bezpieczeństwa, testy bezpieczeństwa oprogramowania, analizę podatności oraz procedury kopii zapasowych i odtwarzania. Żaden system internetowy nie może zagwarantować bezpieczeństwa absolutnego.")</p>
+            </section>
+
+            <section>
+                <h2>@L("12. Cookies and local storage", "12. Pliki cookie i pamięć lokalna")</h2>
+                <p>@L("Edulytics does not currently use advertising, behavioural profiling or marketing tracking technologies. The service may use strictly necessary technologies for authentication, security, session management, service operation and remembering language or interface preferences. If non-essential tracking technologies are introduced in the future, appropriate information and consent controls will be implemented where required.", "Edulytics nie korzysta obecnie z technologii reklamowych, profilowania behawioralnego ani śledzenia marketingowego. Usługa może korzystać z technologii ściśle niezbędnych do uwierzytelniania, bezpieczeństwa, zarządzania sesją, działania usługi oraz zapamiętywania preferencji językowych lub interfejsu. Jeżeli w przyszłości zostaną wprowadzone niekonieczne technologie śledzące, zostaną wdrożone odpowiednie informacje i mechanizmy zgody tam, gdzie będzie to wymagane.")</p>
+            </section>
+
+            <section>
+                <h2>@L("13. Your rights", "13. Twoje prawa")</h2>
+                <p>@L("Depending on the circumstances and applicable law, individuals may have rights of access, rectification, erasure, restriction, objection, data portability, withdrawal of consent where processing is based on consent, and the right to lodge a complaint with the competent data-protection authority. For educational records controlled by a school, requests should normally be directed first to the relevant school.", "W zależności od okoliczności i obowiązującego prawa osobom mogą przysługiwać prawa dostępu, sprostowania, usunięcia, ograniczenia, sprzeciwu, przenoszenia danych, wycofania zgody, gdy przetwarzanie opiera się na zgodzie, oraz prawo wniesienia skargi do właściwego organu ochrony danych. W odniesieniu do dokumentacji edukacyjnej kontrolowanej przez szkołę wnioski należy co do zasady kierować najpierw do właściwej szkoły.")</p>
+            </section>
+
+            <section>
+                <h2>@L("14. Changes to this Policy", "14. Zmiany Polityki")</h2>
+                <p>@L("We may update this Privacy Policy when Edulytics changes or where required by law. Material changes will be communicated or made available in an appropriate manner.", "Możemy aktualizować niniejszą Politykę prywatności w związku ze zmianami w Edulytics lub gdy wymaga tego prawo. Istotne zmiany będą komunikowane lub udostępniane w odpowiedni sposób.")</p>
+            </section>
+
+            <section class="ed-legal-contact-card">
+                <h2>@L("15. Contact", "15. Kontakt")</h2>
+                <p><strong>OUR-CS Sp. z o.o.</strong><br />Aleje Jerozolimskie 81, lok. 7.10<br />02-001 Warszawa, Poland</p>
+                <p><strong>@L("Privacy enquiries:", "Zapytania dotyczące prywatności:")</strong> <a href="/contact/message">info@our-cs.com</a></p>
+            </section>
+        </article>
+
+        <article class="ed-legal-document ed-legal-ar" lang="ar" dir="rtl">
+            <section><h2>1. دورنا</h2><p>تُقدَّم Edulytics أساسًا للمدارس والمؤسسات التعليمية. عندما تستخدم مدرسة Edulytics لإدارة المعلمين والطلاب والفصول والتقييمات وبيانات المناهج والتعلّم، تعمل المدرسة عادةً بصفتها المتحكم في البيانات، بينما تعمل OUR-CS Sp. z o.o. بصفتها معالجًا للبيانات وفق تعليمات المدرسة الموثقة. وقد تعمل OUR-CS Sp. z o.o. كمتحكم مستقل فيما يتعلق بالعلاقة التعاقدية مع المدرسة، والاستفسارات، والفوترة، وإدارة المنصة.</p></section>
+            <section><h2>2. من يمكنه استخدام Edulytics</h2><p>يتم ترخيص Edulytics للمدارس والمؤسسات التعليمية. لا يشتري الطلاب أو موظفو المدارس الخدمة مباشرةً منا. تنشئ المدرسة المختصة حسابات الطلاب أو تعتمدها، وقد يتم تفعيل الحساب عبر دعوة تُرسل إلى البريد الإلكتروني المسجل للطالب.</p></section>
+            <section><h2>3. البيانات الشخصية التي قد نعالجها</h2><p>بحسب إعداد المدرسة للمنصة واستخدامها، قد نعالج بيانات التعريف بالحساب والبريد الإلكتروني والمدرسة والفصل والمستوى الدراسي والمنهج والدور والصلاحيات والتقييمات والأسئلة والإجابات والدرجات ونتائج التعلّم والتقدم في المنهج ومؤشرات الإتقان والثقة والنشاط التشخيصي والتدريبي والتعليمي والسجلات التقنية والأمنية وسجلات التدقيق والاتصالات والبيانات التعاقدية والفوترة المتعلقة بالمدرسة.</p><p>لا نطلب عمدًا بيانات شخصية حساسة غير ضرورية لتقديم الخدمة الأساسية.</p></section>
+            <section><h2>4. أغراض المعالجة</h2><p>قد تتم معالجة البيانات لإنشاء الحسابات المصرح بها وإدارتها، وتقديم المنصة التعليمية، وتشغيل التقييمات والتدريب، وقياس التقدم مقابل نتائج التعلّم، وحساب مؤشرات التعلّم، وتشغيل الوظائف التشخيصية والتكيفية، ودعم المعلمين والمدارس، والحفاظ على الأمان، والتحقيق في المشكلات التقنية، وتقديم الدعم، والوفاء بالالتزامات القانونية والتعاقدية والمحاسبية والتشغيلية.</p></section>
+            <section><h2>5. تحليلات التعلّم والمعالجة الآلية</h2><p>تستخدم Edulytics تحليلات تعلّم آلية ومنطق تقييم تكيفي لمعالجة بيانات تعليمية مثل نتائج التقييم والإجابات السابقة ومستويات الإتقان والثقة ونتائج التعلّم. وقد تُستخدم هذه الوظائف لتحديد نقاط القوة والضعف واختيار نتائج التعلّم المناسبة وضبط صعوبة الأنشطة التشخيصية أو التدريبية واقتراح أنشطة تعليمية أو علاجية وإنشاء مؤشرات للأداء.</p><p>تتم معالجة تحليلات تعلّم الطلاب ووظائف التقييم التكيفي داخل خدمة Edulytics بهدف دعم موظفي المدرسة المصرح لهم. وهي غير مخصصة لاتخاذ قرارات تعليمية نهائية عالية التأثير بشأن الطالب دون مراجعة بشرية مناسبة. وتبقى القرارات النهائية المتعلقة بالدرجات أو الترفيع أو الإجراءات التأديبية أو التسكين المدرسي أو غيرها من القرارات التعليمية المهمة مسؤولية المدرسة وموظفيها المصرح لهم.</p></section>
+            <section><h2>6. الأساس القانوني</h2><p>عندما تعالج OUR-CS Sp. z o.o. بيانات الطلاب أو الموظفين نيابةً عن المدرسة، تحدد المدرسة الأساس القانوني المناسب وتتم المعالجة وفق تعليماتها الموثقة واتفاقية معالجة البيانات المعمول بها. وعندما تعمل OUR-CS Sp. z o.o. كمتحكم مستقل، قد تستند المعالجة إلى تنفيذ العقد أو الالتزام القانوني أو المصالح المشروعة في تشغيل الخدمة وحمايتها أو الموافقة عندما تكون مطلوبة تحديدًا.</p></section>
+            <section><h2>7. بيانات الأطفال</h2><p>صُممت Edulytics للاستخدام في بيئة تعليمية، وتتحكم المدارس في إنشاء حسابات الطلاب وإدارتها. لا تعتمد الخدمة على شراء الأطفال أو اشتراكهم بشكل مستقل. وتتحمل المدرسة المختصة مسؤولية ضمان وجود أساس قانوني مناسب لاستخدام بيانات الطلاب وتقديم الإشعارات أو الحصول على التصاريح التي يطلبها القانون.</p></section>
+            <section><h2>8. مقدمو الخدمات ومستلمو البيانات</h2><p>قد نستخدم مقدمي خدمات مختارين بعناية للاستضافة السحابية والبنية التحتية لقواعد البيانات وتسليم البريد الإلكتروني والأمان والنسخ الاحتياطي والعمليات التقنية اللازمة لتشغيل Edulytics. ولا يجوز لهم معالجة البيانات إلا بالقدر اللازم لتقديم خدماتهم وبموجب متطلبات تعاقدية مناسبة لحماية البيانات. وتتاح المعلومات ذات الصلة لعملاء المدارس عندما يقتضي القانون أو العقد ذلك.</p></section>
+            <section><h2>9. نقل البيانات دوليًا</h2><p>عند نقل بيانات شخصية خارج المنطقة الاقتصادية الأوروبية، نطبق الضمانات التي يتطلبها قانون حماية البيانات المعمول به، بما في ذلك آليات النقل المعترف بها قانونًا عند انطباقها.</p></section>
+            <section><h2>10. الاحتفاظ بالبيانات</h2><p>نحتفظ بالبيانات فقط للمدة اللازمة للغرض الذي جُمعت من أجله، بما في ذلك مدة اشتراك المدرسة وفترات الاحتفاظ القانونية أو المحاسبية أو الأمنية أو التعاقدية ذات الصلة. ويمكن للمدارس طلب إعادة البيانات أو حذفها وفق الاتفاقية واتفاقية معالجة البيانات المعمول بهما، مع جواز الاحتفاظ ببعض السجلات إذا كان القانون يفرض ذلك أو كانت لازمة لإثبات الحقوق أو ممارستها أو الدفاع عنها.</p></section>
+            <section><h2>11. الأمان</h2><p>نطبق تدابير تقنية وتنظيمية لحماية البيانات من الوصول أو التغيير أو الكشف أو الفقد أو الإتلاف غير المصرح به، وقد تشمل ضوابط الوصول والصلاحيات المبنية على الأدوار والمصادقة وسجلات التدقيق وحماية قواعد البيانات والاتصالات المشفرة والمراقبة الأمنية واختبارات أمن البرمجيات وتحليل الثغرات وإجراءات النسخ الاحتياطي والاستعادة. ولا يمكن لأي نظام متصل بالإنترنت ضمان الأمان المطلق.</p></section>
+            <section><h2>12. ملفات تعريف الارتباط والتخزين المحلي</h2><p>لا تستخدم Edulytics حاليًا تقنيات إعلانية أو تتبعًا تسويقيًا أو تنميطًا سلوكيًا. وقد تستخدم الخدمة تقنيات ضرورية للمصادقة والأمان وإدارة الجلسة وتشغيل الخدمة وتذكر تفضيلات اللغة أو الواجهة. وإذا أُضيفت مستقبلًا تقنيات تتبع غير ضرورية، فسيتم توفير المعلومات وآليات الموافقة المطلوبة قانونًا.</p></section>
+            <section><h2>13. حقوقك</h2><p>بحسب الظروف والقانون المطبق، قد تشمل الحقوق الوصول والتصحيح والمحو والتقييد والاعتراض ونقل البيانات وسحب الموافقة عندما تستند المعالجة إليها وتقديم شكوى إلى جهة حماية البيانات المختصة. وبالنسبة للسجلات التعليمية التي تتحكم فيها المدرسة، ينبغي عادةً توجيه الطلب أولًا إلى المدرسة المعنية.</p></section>
+            <section><h2>14. تغييرات هذه السياسة</h2><p>قد نقوم بتحديث سياسة الخصوصية عند تغير Edulytics أو عندما يقتضي القانون ذلك. وسيتم إبلاغ التغييرات الجوهرية أو إتاحتها بطريقة مناسبة.</p></section>
+            <section class="ed-legal-contact-card"><h2>15. التواصل</h2><p><strong>OUR-CS Sp. z o.o.</strong><br />Aleje Jerozolimskie 81, lok. 7.10<br />02-001 Warszawa, Poland</p><p><strong>استفسارات الخصوصية:</strong> <a href="/contact/message">info@our-cs.com</a></p></section>
+        </article>
+    </main>
+
+    <partial name="_PublicSiteFooter" />
+</div>

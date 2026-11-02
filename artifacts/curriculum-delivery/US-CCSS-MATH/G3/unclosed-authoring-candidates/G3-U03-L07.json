@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 43,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L07",
+  "unitNumber": 3,
+  "lessonNumber": 7,
+  "title": "Subtract Your Way",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-7/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-7/lesson.html",
+  "stageA": {
+    "status": "FOUR_PAGE_ORIGINAL_2021_STUDENT_PDF_FOUR_WARMUP_THREE_SUBTRACTION_AND_BASE_TEN_IMAGES_REVIEWED",
+    "goals": "Subtract within 1,000 in a way that makes sense to them.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 5,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceNumericAnchors": [
+      {
+        "expression": "50 - 10",
+        "value": 40
+      },
+      {
+        "expression": "58 - 10",
+        "value": 48
+      },
+      {
+        "expression": "258 - 20",
+        "value": 238
+      },
+      {
+        "expression": "258 - 24",
+        "value": 234
+      },
+      {
+        "expression": "428 - 213",
+        "value": 215
+      },
+      {
+        "expression": "505 - 398",
+        "value": 107
+      },
+      {
+        "expression": "394 - 127",
+        "value": 267
+      },
+      {
+        "expression": "262 - 135",
+        "value": 127
+      },
+      {
+        "expression": "252 - 181",
+        "value": 71
+      },
+      {
+        "expression": "252 - 132",
+        "value": 120
+      }
+    ],
+    "originalSourceVisualsVerified": false,
+    "sourceOriginalPdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/8x37i4q7p7lahfk53tx2928n8khw",
+      "pages": 4,
+      "bytes": 69540,
+      "sha256": "b177da9a5935ca8d3e85914c23813346ec8465b0505f14694963117754d178e2",
+      "sourceArchivedTeacherLessonSha256": "be3b816bbe3e8d05f3217b1031b6f0d4ab9590497ab53b6f0aa7f4e91be68ca0",
+      "sourceArchivedPreparationSha256": "a0629ae9e16638f77025506b4ed6581d43c0c2fbf730c52f96ecf57e9d0c8132",
+      "sourceOriginalPdfRead": true,
+      "sourceDiagramBytesNotRepublished": true
+    },
+    "sourceNumericOracles": [
+      40,
+      48,
+      238,
+      234,
+      215,
+      107,
+      267,
+      127,
+      71,
+      120
+    ]
+  },
+  "stageB": {
+    "status": "GUARDED_FIRST_PARTY_RICH_V2_INDEPENDENT_262_MINUS_135_BASE_TEN_DECOMPOSITION_VISUAL_SOURCE_ALIGNED",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L07",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "0df338331ec18cf56cb5871b236916fd52c6fd93030f8cf5b6a502983b4cda72",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l07-2021.rich-lesson-v2.json",
+    "sourceSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson7.cshtml"
+  },
+  "stageC": {
+    "status": "TEN_ORIGINAL_SOURCE_MATH_ANCHORS_HUMAN_DIAGRAM_MATCH_DISTINCT_117_COOLDOWN_TESTS_UNRUN",
+    "family": "subtraction-within-1000",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Strategies to Subtract with your teacher. Show the representation and explain how it meets the goal: Let’s subtract numbers within 1,000.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 15,
+    "numericChecksWritten": 10,
+    "newRegressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson7OriginalMathSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "HEADING-1",
+      "sourceSection": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "HEADING-2",
+      "sourceSection": "Activity 1: Strategies to Subtract (25 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "HEADING-3",
+      "sourceSection": "Activity 2: Base-ten Drawings (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "HEADING-4",
+      "sourceSection": "Lesson Synthesis",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "HEADING-5",
+      "sourceSection": "Cool-down: Subtract within 1,000 (5 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S1-NUM1",
+      "sourceSection": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S1-NUM2",
+      "sourceSection": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S1-NUM3",
+      "sourceSection": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S1-NUM4",
+      "sourceSection": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S2-NUM5",
+      "sourceSection": "Activity 1: Strategies to Subtract (25 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S2-NUM6",
+      "sourceSection": "Activity 1: Strategies to Subtract (25 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S2-NUM7",
+      "sourceSection": "Activity 1: Strategies to Subtract (25 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S3-NUM8",
+      "sourceSection": "Activity 2: Base-ten Drawings (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S3-NUM9",
+      "sourceSection": "Activity 2: Base-ten Drawings (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "STUDENT-S3-NUM10",
+      "sourceSection": "Activity 2: Base-ten Drawings (10 minutes)",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": false,
+      "firstPartyCoverage": "SOURCE_2021_SUBTRACTION_NUMERIC_ANCHOR",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "TEACHER-OPEN-1",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "TEACHER-OPEN-2",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "TEACHER-OPEN-3",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "TEACHER-OPEN-4",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "ORIGINAL_2021_SOURCE_TEACHER_EXPLANATION_TASK",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "SOURCE-IMAGE-1",
+      "sourceSection": "Original 2021 source art",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "2021_SOURCE_DRAWING_VALUE_MAPPED_WITH_INDEPENDENT_TEXT_MODEL",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "SOURCE-IMAGE-2",
+      "sourceSection": "Original 2021 source art",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "2021_SOURCE_DRAWING_VALUE_MAPPED_WITH_INDEPENDENT_TEXT_MODEL",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "SOURCE-IMAGE-3",
+      "sourceSection": "Original 2021 source art",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "2021_SOURCE_DRAWING_VALUE_MAPPED_WITH_INDEPENDENT_TEXT_MODEL",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "SOURCE-IMAGE-4",
+      "sourceSection": "Original 2021 source art",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "2021_SOURCE_DRAWING_VALUE_MAPPED_WITH_INDEPENDENT_TEXT_MODEL",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    },
+    {
+      "id": "SOURCE-IMAGE-5",
+      "sourceSection": "Original 2021 source art",
+      "semanticAuthoringAccountedFor": true,
+      "teacherRubricRequired": true,
+      "firstPartyCoverage": "2021_SOURCE_DRAWING_VALUE_MAPPED_WITH_INDEPENDENT_TEXT_MODEL",
+      "originalSourceArtworkCopied": false,
+      "publisherPixelParityClaimed": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L07-IMAGE-01",
+      "observedAltText": "Base ten diagram. 2 hundreds, 1 crossed out. 6 tens, 4 crossed out with arrow pointing to 10 ones with 3 crossed out and 2 ones crossed out.",
+      "originalReference": "unit-3/lesson-7/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L07-IMAGE-02",
+      "observedAltText": "Base ten diagram. 2 hundreds, 1 crossed out. 6 tens, 4 crossed out with arrow pointing to a ten with 3 crossed out and 2 ones crossed out.",
+      "originalReference": "unit-3/lesson-7/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L07-IMAGE-03",
+      "observedAltText": "Base ten diagram. 2 hundreds with 1 crossed out, 6 tens with 4 crossed out with arrow pointing to 1 ten with 3 crossed out and two ones crossed out.",
+      "originalReference": "unit-3/lesson-7/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L07-IMAGE-04",
+      "observedAltText": "Base ten diagram. 2 hundreds, one crossed out. 5 tens, 3 crossed out. Two ones, both crossed out.",
+      "originalReference": "unit-3/lesson-7/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L07-IMAGE-05",
+      "observedAltText": "Base ten diagram. 2 hundreds crossed out with arrow pointing to 1 hundred with three tens crossed out and five tens crossed out. Two ones, 1 crossed out.",
+      "originalReference": "unit-3/lesson-7/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 24,
+    "semanticAuthoringAccounted": 24
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Calculate 438 − 176. Show regrouping or another strategy.",
+    "answerType": "integer",
+    "expected": "262"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-43-2021-source-to-first-party-evidence-20261024.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-43-academic-source-coverage-and-human-rubric-20261025.json",
+  "deferredStageD": [
+    "Original publisher gated Cool-down not reproduced; 506−389=117 independent first-party task used instead.",
+    "Original Jada and Han illustrations not copied; first-party value diagrams and teacher visual rubric substituted.",
+    "Optional original gameboards not copied; teacher-led context remains.",
+    "No tests/run/merge/publish, no Stage D or academic signoff."
+  ]
+}

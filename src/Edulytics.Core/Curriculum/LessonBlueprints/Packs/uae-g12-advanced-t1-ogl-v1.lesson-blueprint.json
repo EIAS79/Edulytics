@@ -1,0 +1,1535 @@
+{
+  "SchemaVersion": 1,
+  "BlueprintCode": "UAE-G12-ADVANCED-T1-OGL-V1:OGL-V1",
+  "PackCode": "UAE-MOE-MATH",
+  "VersionCode": "MOE-2026-2027-T1",
+  "LogicalLevel": 12,
+  "NativeLevel": "Grade 12",
+  "Pathway": "Advanced",
+  "OfficialAuthority": "UAE Ministry of Education",
+  "OfficialSourceUrl": "https://minhaji.moe.gov.ae/",
+  "PedagogicalSourceType": "OpenEducationalResource",
+  "SourceTitle": "GCE AS and A level Mathematics subject content",
+  "SourcePublisher": "UK Department for Education",
+  "SourceEdition": "GCE AS/A level Mathematics subject content / current GOV.UK publication",
+  "SourceRootUrl": "https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics",
+  "SourceCheckedAtUtc": "2026-10-04T00:00:00Z",
+  "SourceLicense": "Open Government Licence v3.0",
+  "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+  "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
+  "SourceSelectionEvidence": "Grade 12 Advanced rebuilt from the UAE Advanced Calculus Student Edition. The annual book gives Chapters 1-7; T3 current book begins at Chapter 6, supporting the T1=1-3, T2=4-5, T3=6-7 term partition. No invented outcome codes are used.",
+  "SourceEvidenceUrls": [
+    "https://minhaji.moe.gov.ae/"
+  ],
+  "SourceRightsNote": "Official UAE textbook evidence is used only for scope, lesson titles, ordering and reference provenance. Learner-facing explanations are independently authored by Edulytics.",
+  "SemanticGraphSha256": "360308da4463e86a8839da631728fafb930deebba62f3a5d7264bc07685e9b74",
+  "AcquisitionDiagnostics": {
+    "UnitCount": 7,
+    "LessonCount": 53,
+    "OfficialStandardCount": 0,
+    "AddressingCoverageCount": 0,
+    "FormalMappingCount": 0,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
+    "LessonsWithoutNumberedAddressingStandard": 53,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 53,
+    "MultiStandardLessons": 0
+  },
+  "Units": [
+    {
+      "Number": 1,
+      "UnitCode": "UAE-G12-ADVANCED:U01",
+      "SortOrder": 1,
+      "Title": "Preliminaries of Calculus",
+      "LessonCount": 5,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "97f04112ec16c5a5a429e64ade56b5108a35f96819b41d5348e25382506a5813"
+    },
+    {
+      "Number": 2,
+      "UnitCode": "UAE-G12-ADVANCED:U02",
+      "SortOrder": 2,
+      "Title": "Limits and Continuity",
+      "LessonCount": 7,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "bc9166c5159456fae3b65b6937200202cfa344bd5dc2f8e922b5a3e4ffea8007"
+    },
+    {
+      "Number": 3,
+      "UnitCode": "UAE-G12-ADVANCED:U03",
+      "SortOrder": 3,
+      "Title": "Differentiation",
+      "LessonCount": 10,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8a61348d630c8ab8d5c356c0b23c9bdb44b92ea2bddc3990fec14399054c7583"
+    },
+    {
+      "Number": 4,
+      "UnitCode": "UAE-G12-ADVANCED:U04",
+      "SortOrder": 4,
+      "Title": "Applications of Differentiation",
+      "LessonCount": 9,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8b37bfd419469559e376570f3db07a31a72039d3fb7316813d7cf49fdc9ff45c"
+    },
+    {
+      "Number": 5,
+      "UnitCode": "UAE-G12-ADVANCED:U05",
+      "SortOrder": 5,
+      "Title": "Integration",
+      "LessonCount": 8,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "a6c3f80cd265126b8b641ed01a5e8a9cec008b07dda88f18ed0011e26c40461c"
+    },
+    {
+      "Number": 6,
+      "UnitCode": "UAE-G12-ADVANCED:U06",
+      "SortOrder": 6,
+      "Title": "Applications of the Definite Integral",
+      "LessonCount": 7,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "0108594f6157481b0045c333df6d95cccc364ba0c6b50e7f7b98a3a139c21e4c"
+    },
+    {
+      "Number": 7,
+      "UnitCode": "UAE-G12-ADVANCED:U07",
+      "SortOrder": 7,
+      "Title": "Integration Techniques and First-Order Differential Equations",
+      "LessonCount": 7,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "bfbadf98122357af8e252140d5268bdecd246192f446d303e60d7213159ae94e"
+    }
+  ],
+  "Lessons": [
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U01:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:01:POLYNOMIALS-AND-RATIONAL-FUNCTIONS",
+      "UnitNumber": 1,
+      "UnitTitle": "Preliminaries of Calculus",
+      "LessonNumber": 1,
+      "Title": "Polynomials and Rational Functions",
+      "SortOrder": 1,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "ca42c6b8155df3df2d6efc8728ced3cff14a353184238a90f8a9bd4fb54a78df",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U01:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:02:INVERSE-FUNCTIONS",
+      "UnitNumber": 1,
+      "UnitTitle": "Preliminaries of Calculus",
+      "LessonNumber": 2,
+      "Title": "Inverse Functions",
+      "SortOrder": 2,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "0eaee4ca54a00310698241636146c45c0631ae7a591e76409e5cf1d9ee018749",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U01:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:03:TRIGONOMETRIC-AND-INVERSE-TRIGONOMETRIC-FUNCTIONS",
+      "UnitNumber": 1,
+      "UnitTitle": "Preliminaries of Calculus",
+      "LessonNumber": 3,
+      "Title": "Trigonometric and Inverse Trigonometric Functions",
+      "SortOrder": 3,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "6c62dddf5bcc9b0714c1c0a170a9b0550c40c1794060678a4659a4ad63c84846",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U01:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:04:EXPONENTIAL-AND-LOGARITHMIC-FUNCTIONS",
+      "UnitNumber": 1,
+      "UnitTitle": "Preliminaries of Calculus",
+      "LessonNumber": 4,
+      "Title": "Exponential and Logarithmic Functions",
+      "SortOrder": 4,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "2230025af21fb207b8fe0e699cb0e6cbd1e732ce46c9116eb778fd7e39bc8f45",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U01:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:01:05:TRANSFORMATIONS-OF-FUNCTIONS",
+      "UnitNumber": 1,
+      "UnitTitle": "Preliminaries of Calculus",
+      "LessonNumber": 5,
+      "Title": "Transformations of Functions",
+      "SortOrder": 5,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "f4fb13edf66a1a6905319367c6b7f648156ab7cb1333ae11044e49f1beb5fc70",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U01:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:01:A-BRIEF-PREVIEW-OF-CALCULUS-TANGENT-LINES-AND-THE-LENGTH-OF-A-CURVE",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 1,
+      "Title": "A Brief Preview of Calculus: Tangent Lines and the Length of a Curve",
+      "SortOrder": 6,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "40854db44fc0157975f9ae298a026478506b5d89525136782c68fd1f915ba6a4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:02:THE-CONCEPT-OF-LIMIT",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 2,
+      "Title": "The Concept of Limit",
+      "SortOrder": 7,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "87674ac3ad6b5b473ade218789ed62bf96c8a1ba92a8d95eb47bed65d311d0a2",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:03:COMPUTATION-OF-LIMITS",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 3,
+      "Title": "Computation of Limits",
+      "SortOrder": 8,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "e890e1357aa90b9aa1673660bdf78b9c495e7574bc92e9c221939ef482135529",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:04:CONTINUITY-AND-ITS-CONSEQUENCES",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 4,
+      "Title": "Continuity and Its Consequences",
+      "SortOrder": 9,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "140d17dd39ba9f72c53d7b0ff0ffd891b1c6b22f9f99cba31b1f96d6930bbaf4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:05:LIMITS-INVOLVING-INFINITY-ASYMPTOTES",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 5,
+      "Title": "Limits Involving Infinity; Asymptotes",
+      "SortOrder": 10,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "1980ea07d28eb9dec7e077f385516eba0391a37056f0ca151e4b0f45b662f852",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:06:FORMAL-DEFINITION-OF-THE-LIMIT",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 6,
+      "Title": "Formal Definition of the Limit",
+      "SortOrder": 11,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "63bbe87d7cb12cf5d886509db20788b71022273d923b0b314586b71719cb4a03",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L06",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U02:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:02:07:LIMITS-AND-LOSS-OF-SIGNIFICANCE-ERRORS",
+      "UnitNumber": 2,
+      "UnitTitle": "Limits and Continuity",
+      "LessonNumber": 7,
+      "Title": "Limits and Loss-of-Significance Errors",
+      "SortOrder": 12,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8b825f3bc489234a345e846d3b6d5ebbe24196a08173515390b416cc75503690",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L07",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U02:L07"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:01:TANGENT-LINES-AND-VELOCITY",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 1,
+      "Title": "Tangent Lines and Velocity",
+      "SortOrder": 13,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "9b744fd0716ffa6e1adcc25b566e54a646ee0bc21c4c5117fe8533e31f022ba3",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:02:THE-DERIVATIVE",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 2,
+      "Title": "The Derivative",
+      "SortOrder": 14,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "bbe8b391ee7fbd63d1d2b585e986069f9699cfe8b956cdf7397df4d34046424b",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:03:COMPUTATION-OF-DERIVATIVES-THE-POWER-RULE",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 3,
+      "Title": "Computation of Derivatives: The Power Rule",
+      "SortOrder": 15,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "937213477d87ceec860cb38862c7654ee09e218a9ede7465de90d02a3bee1de3",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:04:THE-PRODUCT-AND-QUOTIENT-RULES",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 4,
+      "Title": "The Product and Quotient Rules",
+      "SortOrder": 16,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "ee73821d1a191659daba9f7aa495a54b2e0b82b5c7709e2573f294be3b53d696",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:05:THE-CHAIN-RULE",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 5,
+      "Title": "The Chain Rule",
+      "SortOrder": 17,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "5623c7dac75f3ff0568ef6fe96f88c061b09da538662e850484b9c8023c2ecfc",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:06:DERIVATIVES-OF-TRIGONOMETRIC-FUNCTIONS",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 6,
+      "Title": "Derivatives of Trigonometric Functions",
+      "SortOrder": 18,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "e1377119c12cba8ee9b6fe6bb8af86c5df0411c4db1725833012edc87a3f11c3",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L06",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:07:DERIVATIVES-OF-EXPONENTIAL-AND-LOGARITHMIC-FUNCTIONS",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 7,
+      "Title": "Derivatives of Exponential and Logarithmic Functions",
+      "SortOrder": 19,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "968422455b670ff01c283a6fe4f4682985963f60a856c0a17e4abc5aad386465",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L07",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L07"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:08:IMPLICIT-DIFFERENTIATION-AND-INVERSE-TRIGONOMETRIC-FUNCTIONS",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 8,
+      "Title": "Implicit Differentiation and Inverse Trigonometric Functions",
+      "SortOrder": 20,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "f22655368b916648b1ceafc1a434a0a6f8915b1c5a34a78cc8ede8d74ffed74f",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L08",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L08"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L09",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:09:THE-HYPERBOLIC-FUNCTIONS",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 9,
+      "Title": "The Hyperbolic Functions",
+      "SortOrder": 21,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "0cf71aece42605f8b59e742a474ab193c1c172e80493874abf3d132ea5f95200",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L09",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L09"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U03:L10",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:03:10:THE-MEAN-VALUE-THEOREM",
+      "UnitNumber": 3,
+      "UnitTitle": "Differentiation",
+      "LessonNumber": 10,
+      "Title": "The Mean Value Theorem",
+      "SortOrder": 22,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "54bb3c70c60c753345f699dbb5dece33e0182b7a02a07c8cb6a7f5c81812eecf",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L10",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T1:U03:L10"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:01:LINEAR-APPROXIMATIONS-AND-NEWTON-S-METHOD",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 1,
+      "Title": "Linear Approximations and Newton’s Method",
+      "SortOrder": 23,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "88827c04f8a53c6fe3b2fb1e3486f49d43fc26d08075b1434f16463d2f53ca48",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:02:INDETERMINATE-FORMS-AND-L-HOPITAL-S-RULE",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 2,
+      "Title": "Indeterminate Forms and L’Hopital’s Rule",
+      "SortOrder": 24,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "be9f4f933a38dfa345858525c5bc3a2b477462ea0c69b474beef9b12ee2e79c5",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:03:MAXIMUM-AND-MINIMUM-VALUES",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 3,
+      "Title": "Maximum and Minimum Values",
+      "SortOrder": 25,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "9ba777caed0d000c7ea85a5820855a017419d5daeb121889163e9ed1bcfe51df",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:04:INCREASING-AND-DECREASING-FUNCTIONS",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 4,
+      "Title": "Increasing and Decreasing Functions",
+      "SortOrder": 26,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "aafb871a85974438a47d64f923114ebc2f07bd587050d7e2d3b35a5aa91f5cf9",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:05:CONCAVITY-AND-THE-SECOND-DERIVATIVE-TEST",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 5,
+      "Title": "Concavity and the Second Derivative Test",
+      "SortOrder": 27,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "c4b52cc6363e58b6ac71a58502092754d281c493066e8c9828b9592672eba468",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:06:OVERVIEW-OF-CURVE-SKETCHING",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 6,
+      "Title": "Overview of Curve Sketching",
+      "SortOrder": 28,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "712a7ba30232408aee765b429620c30d66317c1c5fa4f6976947317d738183c7",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L06",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:07:OPTIMIZATION",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 7,
+      "Title": "Optimization",
+      "SortOrder": 29,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "296f61303c8cb2ddd3bfa7890670c6cc9c037f9b7cafcd4f469a8969dcc95271",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L07",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L07"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:08:RELATED-RATES",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 8,
+      "Title": "Related Rates",
+      "SortOrder": 30,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "4dadea6e6ba545c6df70153df3d4811ed31a7ce08b344b2edb7b1bc8d96196a4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L08",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L08"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U04:L09",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:04:09:RATES-OF-CHANGE-IN-ECONOMICS-AND-THE-SCIENCES",
+      "UnitNumber": 4,
+      "UnitTitle": "Applications of Differentiation",
+      "LessonNumber": 9,
+      "Title": "Rates of Change in Economics and the Sciences",
+      "SortOrder": 31,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "44aabda6dae0eeece8442bc9c1968f81d8ba6acdb8a41dae16ae55581bebdca0",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L09",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U04:L09"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:01:ANTIDERIVATIVES",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 1,
+      "Title": "Antiderivatives",
+      "SortOrder": 32,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "3fe6d372a43565a1710f4d9075bb7056371ac8a4b5694ac1fef97cc31cd3356f",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:02:SUMS-AND-SIGMA-NOTATION",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 2,
+      "Title": "Sums and Sigma Notation",
+      "SortOrder": 33,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "dac0a28a44fd4d072b17817449032c2f4461ab07c96a1ec1aef621bb48cc91e7",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:03:AREA",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 3,
+      "Title": "Area",
+      "SortOrder": 34,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "885e879310bfd4ebe8a6a0314cf62f9652bc28a12bb642a369c47fb5769b213d",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:04:THE-DEFINITE-INTEGRAL",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 4,
+      "Title": "The Definite Integral",
+      "SortOrder": 35,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "2f53c8c6881618dec1e64d44939dca72ccb4701b484112a5a1604f02131188b7",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:05:THE-FUNDAMENTAL-THEOREM-OF-CALCULUS",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 5,
+      "Title": "The Fundamental Theorem of Calculus",
+      "SortOrder": 36,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "18276f4acf5ea76555bc49de805f1a1f17830d0428b3ea650c4db1680b0e49df",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:06:INTEGRATION-BY-SUBSTITUTION",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 6,
+      "Title": "Integration by Substitution",
+      "SortOrder": 37,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "de274a5da50ba15725b886d8610bab58e8ee5b1b378ca735ba4c6e496460d34a",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L06",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:07:NUMERICAL-INTEGRATION",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 7,
+      "Title": "Numerical Integration",
+      "SortOrder": 38,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "fe1e6b69da2fd68a5cc161b50a378d63b5b231ab300ab5d9a758dbf342ba1807",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L07",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L07"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U05:L08",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:05:08:THE-NATURAL-LOGARITHM-AS-AN-INTEGRAL",
+      "UnitNumber": 5,
+      "UnitTitle": "Integration",
+      "LessonNumber": 8,
+      "Title": "The Natural Logarithm as an Integral",
+      "SortOrder": 39,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "59dddd284718f7b9fb4bf990429ac55d47ca1046e5b89b39ef109f2e8405eb3f",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L08",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T2:U05:L08"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:01:AREA-BETWEEN-CURVES",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 1,
+      "Title": "Area Between Curves",
+      "SortOrder": 40,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "f9bfede7aab96be3649782bcdec5d1b4cde71dca4e7aae69e21be0fb6e4af93e",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:02:VOLUME-SLICING-DISKS-AND-WASHERS",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 2,
+      "Title": "Volume: Slicing, Disks and Washers",
+      "SortOrder": 41,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "8fcb24ef4ecc877b95a36db2bd26e1fa8283708921698997a970053d26df47b0",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:03:VOLUMES-BY-CYLINDRICAL-SHELLS",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 3,
+      "Title": "Volumes by Cylindrical Shells",
+      "SortOrder": 42,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "cbceed4aa8b37ee0d4e8d937e03e8567f9c8e533f24ec07bad3fb9cffddc9300",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:04:ARC-LENGTH-AND-SURFACE-AREA",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 4,
+      "Title": "Arc Length and Surface Area",
+      "SortOrder": 43,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "03e4d8ae9c226f117db5d9c19fd649eef7d55f4fb9baa984a3fc8e41b1ca0987",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:05:PROJECTILE-MOTION",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 5,
+      "Title": "Projectile Motion",
+      "SortOrder": 44,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "db807830eeae51c50b9dc8990217851cebb0397fd888458683e129bc05dead5d",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:06:APPLICATIONS-OF-INTEGRATION-TO-PHYSICS-AND-ENGINEERING",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 6,
+      "Title": "Applications of Integration to Physics and Engineering",
+      "SortOrder": 45,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "77a2a83a7e426ac120580b0da0802daf768e0f4cab841df3b41e2ed480f26ad4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L06",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U06:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:06:07:PROBABILITY",
+      "UnitNumber": 6,
+      "UnitTitle": "Applications of the Definite Integral",
+      "LessonNumber": 7,
+      "Title": "Probability",
+      "SortOrder": 46,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "b83bbc682ecc7f15aa5f2c884a1fa1ee5399f6bad5c8d4a2ba82182e96b14af4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L07",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U06:L07"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L01",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:01:REVIEW-OF-FORMULAS-AND-TECHNIQUES",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 1,
+      "Title": "Review of Formulas and Techniques",
+      "SortOrder": 47,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "a7bd41a8dca4abf24f426360ebc3d84d05039bac28956bfe51ab3ccaad2c9149",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L01",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L01"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L02",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:02:INTEGRATION-BY-PARTS",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 2,
+      "Title": "Integration by Parts",
+      "SortOrder": 48,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "76094391b2a2ac73ad7ab9a85ebfff09effe2da388089f2d152a5c2d07058adb",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L02",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L02"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L03",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:03:TRIGONOMETRIC-TECHNIQUES-OF-INTEGRATION",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 3,
+      "Title": "Trigonometric Techniques of Integration",
+      "SortOrder": 49,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "26d42e1c1df7ea975176392dbdfa684ce594f1a192abd33f2eb913a60d3c0373",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L03",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L03"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L04",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:04:INTEGRATION-OF-RATIONAL-FUNCTIONS-USING-PARTIAL-FRACTIONS",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 4,
+      "Title": "Integration of Rational Functions Using Partial Fractions",
+      "SortOrder": 50,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "23bc0f67e7a8d21307813d2a70ccf80146d265aeb00c1157288c383f6d99882b",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L04",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L04"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L05",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:05:INTEGRATION-TABLES-AND-COMPUTER-ALGEBRA-SYSTEMS",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 5,
+      "Title": "Integration Tables and Computer Algebra Systems",
+      "SortOrder": 51,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "34211b7fa221853419a281aa29360813ee2b605f902dea1a151ee80bded35332",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L05",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L05"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L06",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:06:MODELING-WITH-DIFFERENTIAL-EQUATIONS",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 6,
+      "Title": "Modeling with Differential Equations",
+      "SortOrder": 52,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "7f18b7caecb850e78b6dde8a5b058cb99fd41e6f6767f17d61b685fcf64b8505",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L06",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L06"
+    },
+    {
+      "SourceLessonCode": "EDU:UAE-MOE-MATH:L12:ADVANCED:U07:L07",
+      "LessonCode": "PED:UAE-MOE-MATH:L12:ADVANCED:07:07:SEPARABLE-DIFFERENTIAL-EQUATIONS",
+      "UnitNumber": 7,
+      "UnitTitle": "Integration Techniques and First-Order Differential Equations",
+      "LessonNumber": 7,
+      "Title": "Separable Differential Equations",
+      "SortOrder": 53,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SemanticSha256": "5dd391eb31fad2bf085c6176d5d8b8dc60538aae3a529d543cd9f3c9c30c677a",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L07",
+          "ReferenceKind": "OfficialReference",
+          "ResolutionKind": "ExactAcceptedReference",
+          "OutcomeCode": null,
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "UAE-G12-ADVANCED-T1-OGL-V1"
+      ],
+      "FormalTargets": [],
+      "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G12:ADVANCED:T3:U07:L07"
+    }
+  ]
+}

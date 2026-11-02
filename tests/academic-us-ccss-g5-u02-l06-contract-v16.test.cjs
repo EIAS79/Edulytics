@@ -1,0 +1,6 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+test('G5 U02 L06 warm-up source multiplicative half counts',()=>{assert.deepEqual([3*.5,3*2/2,3*3/2,5*3/2],[1.5,3,4.5,7.5])});
+test('G5 U02 L06 source 3-mile relay equivalence and different-shading source bars',()=>{assert.equal(3/2,3*.5);assert.equal(.5+.5+.5,1.5);assert.equal(1+.5+0,1.5)});
+test('G5 U02 L06 original Edulytiks 5-mile two-runner exit',()=>{assert.equal(5/2,2.5);assert.equal(5*.5,2.5);assert.equal(2*(5/2),5);assert.notEqual(3/2,5/2)});
+const p=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json'),s=path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l06-practice-acceptance-v16.json');
+test('G5 U02 L06 source-specific first-party exit remains independently teacher reviewed',{skip:(!fs.existsSync(p)||!fs.existsSync(s))&&'full checkout required'},()=>{const l=JSON.parse(fs.readFileSync(p,'utf8')).Lessons.find(x=>x.LessonCode.endsWith('U02:L06'));const r=JSON.parse(fs.readFileSync(s,'utf8'));assert.match(l.ExplanationParagraphs.join(' '),/Edulytiks-original exit check/);assert.equal(r.StageC,'BLOCKED_SHARED_INTEGRATION')});

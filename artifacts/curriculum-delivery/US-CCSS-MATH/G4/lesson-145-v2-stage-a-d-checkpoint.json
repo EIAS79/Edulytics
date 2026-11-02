@@ -1,0 +1,54 @@
+{
+  "ordinal": 145,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L08",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_ORIGINAL_LOCAL_IMKH_SOURCE_INTAKE_REUSED",
+    "B": "RESTORED_BUS_375_WITH_27_OR_48_SEATS_AND_BUILDING_STORY_TRUE_CLAIM",
+    "C": "REUSED_CONTEXTUAL_REMAINDER_AND_MULTISTEP_EXACT_SUBSKILLS_FOCUSED_XUNIT_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "da8c589850385cc0b7b0737a4b030c951f2b33b61a5c9058e63c7d111b0f043e",
+    "teacher": "99a8f550a5cd6e55453188eb05e0e14929c81063e73bee3887705e104b7ca104"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Forty-nine students need buses with 20 seats each. How many buses?",
+    "teacherAnswer": "3 buses."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 original local Our-CS source-only intake",
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(848 \\div 8\\) | \\(4,\\!848 \\div 8\\)",
+      "Here are three situations. Which ones are true? Which ones are not true? | Show how you know. | Situation A: A high-rise building has 53 stories. The first floor is 17 feet tall, but all other stories are each 11 feet tall. The building is 589 feet tall.",
+      "A school is taking everyone on a field trip. It needs buses to transport 375 people. | Bus Company A has small buses with 27 seats in each. | Bus Company B has large buses with 48 seats in each."
+    ],
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Divide by 8 (10 minutes)",
+      "Activity 1: Two Truths and a Lie, or Two Lies and a Truth? (15 minutes)",
+      "Activity 2: Buses for a Field Trip (20 minutes)",
+      "Cool-down: To and Fro (5 minutes)"
+    ],
+    "allowedFamilies": [
+      "usccss.g4.u06.l20.contextual_remainder_decisions",
+      "usccss.g4.u06.l21.multistep_contexts"
+    ],
+    "teacherOnlyTasks": [
+      "Remaining original Three Situations truth claims beyond A",
+      "Complete original bus company condition and cost constraints",
+      "Original publisher Cool-down To and Fro"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal145BusCapacityTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
+}

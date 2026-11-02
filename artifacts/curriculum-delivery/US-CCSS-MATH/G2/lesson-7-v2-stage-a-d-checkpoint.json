@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 2",
+  "programme": "US-CCSS-MATH",
+  "gradeOrdinal": 7,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L07",
+  "lessonTitle": "Collect and Represent Data",
+  "unitNumber": 1,
+  "lessonNumber": 7,
+  "officialOutcomeCodes": [
+    "CCSS:2.MD.D.10"
+  ],
+  "edition": "IM 2021 1st Edition",
+  "stageA": {
+    "status": "COMPLETE_2021_PUBLIC_ORIGINAL_TEACHER_STUDENT_ACTIVITIES_AND_INDEPENDENT_COOLDOWN",
+    "originalSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/lesson.html",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-7/preparation.html",
+    "lessonTitle": "Collect and Represent Data",
+    "warmup": "Notice and Wonder transport image types: walk/car/train/school bus; pair discussion",
+    "activity1": "Students truthfully identify their own travel mode today, create an initially freely arranged class display; teacher does not enforce grouping at this point",
+    "activity2": "Reorganize SAME actual responses into a clearer student-authored grouped visual, pictures, tally marks, category names; compare two representations",
+    "synthesis": "Teacher facilitates comparison of displays and explaining that grouped labels make counts clearer",
+    "sourceCoolDown": "Publisher Organize Data restricted; independently authored Edulytics real-observation regrouping/interpretation check, not copied",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.D.10"
+    ],
+    "visualRights": "Independent pictograms and CSS response chips only, no publisher images",
+    "authenticDataRule": "Real anonymous classroom data supplied by learners/teacher only; no generated classmates or fabricated categories",
+    "originalPrintLayoutNotReproduced": true
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_ID_AND_PREDECESSOR_GUARDED_REAL_DATA_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CentersAndRealDataCorrections.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentRichV2Reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceAlignment": "Initial unorganized genuine class responses deliberately permitted, authentic dataset not simulated, student's second display reorganizes SAME observations, classroom discussion rubric preserved",
+    "sourceGuard": "original source URL/body SHA, ordered official outcome codes and old learner prose exactly verified before replacing"
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTIC_DATA_ENTRY_ORIGINAL_COMPARISON_COOLDOWN_AND_TEACHER_RUBRIC",
+    "firstPartyDataContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1SeventhLessonClassData.cs",
+    "teacherRubric": "Real classroom survey, child-designed representation and gallery walk explanations require teacher not just numerical marking",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson7ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson7Activities/Index.cshtml",
+    "lessonReaderEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "originalSourceActivityLearning": "Warm-up transport categories, original unorganized responses, grouped pictograph with same counts, visual comparison",
+    "authoredCoolDown": "Real classroom input drives exact group counts, total participants, bus category, absolute car vs train comparison; missing data not silently mocked",
+    "privacy": "No names accepted, only categories and no official mark/response database write by companion activity",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CentersAndRealDataCorrectionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1SeventhLessonClassDataTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson7ActivitiesWebContractTests.cs"
+    ],
+    "testExecution": "NOT_EXECUTED_STAGE_D",
+    "independentVisuals": "Emoji pictograms and grouped CSS symbols, no original publisher imagery"
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "sourceAccess": "PUBLIC_TEACHER_STUDENT_TEXT_READ_AND_ORIGINAL_EDULYTICS_ASSESSMENT",
+    "actualStudentPerformance": "NOT_CLAIMED_AS_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "humanAcademicApproval": "NOT_ASSERTED",
+    "originalRestrictedCoolDown": "INDEPENDENT_ORIGINAL_EDULYTICS_REPLACEMENT",
+    "release": "NO_GO",
+    "merge": false,
+    "renderDeploy": false,
+    "note": "Authoring complete; Stage D separate verification of compilation, student view, tests, acceptance and release policy."
+  },
+  "nextAction": "BEGIN_GRADE2_U01_L08_STRICTLY_AFTER_ORDINAL7_A_C_COMPLETED"
+}

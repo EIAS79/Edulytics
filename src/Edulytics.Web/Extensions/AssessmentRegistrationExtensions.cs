@@ -1,0 +1,39 @@
+using Edulytics.Core.Constants;
+using Edulytics.Core.Interfaces;
+using Edulytics.Data.Repositories;
+using Edulytics.Services.Assessments;
+using Edulytics.Web.Filters;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Edulytics.Web.Extensions;
+
+public static class AssessmentRegistrationExtensions
+{
+    public static IServiceCollection AddAssessmentsPhase08(
+        this IServiceCollection services)
+    {
+        services.AddScoped<IAssessmentRepository, AssessmentRepository>();
+        services.AddScoped<IAssessmentService, AssessmentService>();
+        services.AddScoped<IAssessmentBuilderRepository, AssessmentBuilderRepository>();
+        services.AddScoped<IAssessmentBuilderService, AssessmentBuilderService>();
+        services.AddScoped<IAssessmentBuilderBulkApprovalService, AssessmentBuilderBulkApprovalService>();
+        services.AddScoped<IAssessmentDeliverySettingsService, AssessmentDeliverySettingsService>();
+        services.AddScoped<IStudentAssessmentDeliveryService, StudentAssessmentDeliveryService>();
+        services.AddScoped<AssessmentMaxScoreLockFilter>();
+
+        services.Configure<MvcOptions>(
+            options => options.Filters.AddService<AssessmentMaxScoreLockFilter>());
+
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy(
+                "AssessmentManagement",
+                policy => policy.RequireRole(
+                    RoleNames.SchoolAdmin,
+                    RoleNames.SubjectSupervisor,
+                    RoleNames.Teacher));
+        });
+
+        return services;
+    }
+}

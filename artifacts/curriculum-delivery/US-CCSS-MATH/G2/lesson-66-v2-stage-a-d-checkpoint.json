@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 66,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L14",
+  "title": "Center Day 2 (optional)",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_REVIEWED",
+    "url": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-14/preparation.html",
+    "bodySha256": "baa4248104aaba69cf51caf7d8bf676cff352c19b3908c06747b923c58231772",
+    "semanticSha256": "98d66fd0b3067a16f1d2c6e8763b3dc88db3ea96e0a884fc2432977c66c4421a",
+    "orderedOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5"
+    ],
+    "teacherOnly": "Optional original Jump the Line targets, triple spinners, real 2-target winning rule and authentic student practice must be observed"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_TEACHING_AUTHORED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4JumpTheLineCenterCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "sixPredecessorFieldsGuarded": true
+  },
+  "stageC": {
+    "status": "SHARED_FOUR_FAMILIES_AND_STUDENT_PAGE_WRITTEN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4FinalSixQuestions.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FinalSixContracts.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4FinalSixActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4FinalSixActivities/Index.cshtml",
+    "families": [
+      "usccss.g2.u04.l14.target_line_move",
+      "usccss.g2.u04.l14.exact_target_hit",
+      "usccss.g2.u04.l14.overshot_target",
+      "usccss.g2.u04.l14.captures_to_win"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal66OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal66SourceActivityMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal66ExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal66StudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "stageD": "NOT_STARTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 67
+}

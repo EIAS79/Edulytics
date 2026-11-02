@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 146,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U09:L13",
+  "title": "Let’s Solve Our Story Problems",
+  "stageA": {
+    "status": "PUBLIC_IM2021_SOURCE_TEXT_REVIEWED_ORIGINAL_POSTER_HUMAN",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-146-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-9/lesson-13/preparation.html",
+    "sourceSha256": "d06a0120de3209c2c81684edfe7db8065fff36692067056ed038ba3456358a9e",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ]
+  },
+  "stageB": {
+    "status": "SIX_FIELD_SOURCE_GUARD",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit9SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-146-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_EXACT_FAMILIES_FOUR_TESTS_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit9ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit9ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit9Activities/Index.cshtml",
+    "teacherOnly": "No publisher-prescribed unique student's chosen story, poster, gallery feedback, picture, equation or outcome exists. All student-authored story coherence and solution reasoning need real educator assessment. Numeric first-party companion is an independent activity, not a publisher story completion.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal146OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal146SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal146ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal146StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": null
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 15,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L15",
+  "unitNumber": 1,
+  "lessonNumber": 15,
+  "title": "Diagrams with All Kinds of Compare Problems",
+  "officialOutcomeCodes": [
+    "CCSS:2.OA.A.1",
+    "CCSS:2.OA.B.2"
+  ],
+  "sourceEdition": "Illustrative Mathematics K-5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_PUBLIC_2021_TEACHER_STUDENT_SOURCE_REVIEW",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-15/lesson.html",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-15/preparation.html",
+    "warmup": "Number Talk sum 4+8+2=14;4+5+3+2=14;9+3+1=13;9+5=14; students explain decomposing to make ten.",
+    "activity1": "Original Shell Collections: context first without numbers; Diego55 shells, Lin20 fewer, so unknown SMALLER quantity Lin35, tape labels Diego55, Lin? and outlined difference20; related 55−20=35, 35+20=55.",
+    "activity2": "Card Sort: At the Beach; story, tape diagram and potentially MORE THAN ONE matching equation; compare unknown larger, smaller, difference; actual printed cards restricted/not directly copied. Independently authored Edulytics stories provide each unknown.",
+    "sourceSynthesis": "Diagram question mark on larger/ smaller / difference; teachers discuss why equation and story structures match; multiple valid equivalent equations.",
+    "restrictedOriginalCooldown": "At the Beach only accessible after educator login. New Edulytics independent three-unknown-position ticket with numeric answer key and teacher rubric.",
+    "firstPartyArt": "New CSS tape diagrams and fictional Tale/Rami/Nora/Omar cards, no publisher protected image or blackline.",
+    "sourceStandard": "2.OA.A.1 and 2.OA.B.2, ordered",
+    "officialContentPackSourceHash": "ecb8c8c64a965e0680d39195d58a4c4b03ed79f77c86a161a993d059bf43df92",
+    "scope": "Source publicly attributed; independent assessment explicitly distinct."
+  },
+  "stageB": {
+    "status": "COMPLETE_GUARDED_SOURCE_SPECIFIC_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "changes": "Warm-up make ten, original Diego/Lin unknown SMALLER story, additional independent unknown larger/difference, 3 card match structures, equivalent equations, step-by-step teaching and errors.",
+    "provenance": "Exact 2021 source URL, original body SHA, two ordered outcome codes, previous six English fields and expected prior rich-content version or refuse overwrite."
+  },
+  "stageC": {
+    "status": "COMPLETE_THREE_EXACT_UNKNOWN_POSITION_FAMILIES_AND_STUDENT_CARD_SORT",
+    "families": [
+      "usccss.g2.u01.l15.compare_unknown_smaller",
+      "usccss.g2.u01.l15.compare_unknown_larger",
+      "usccss.g2.u01.l15.compare_unknown_difference"
+    ],
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson15CompareContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson15CompareQuestions.cs",
+    "equivalentCardLogic": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1FifteenthLessonCompareCards.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson15ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson15Activities/Index.cshtml",
+    "studentEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "machineGrading": "Exactly matching missing position and independent Edulytics diagram key plus distinct, structurally true equivalent addition/subtraction equations, within100 numeric positions and Cool-down 37/76/14.",
+    "teacherRubric": "Open story wording, physical or digital diagram construction, genuine card sort, partner dialogue and Number Talk strategies require separate teacher assessment, not machine certified.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1ThreeUnknownPositionsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1FifteenthLessonCompareCardsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson15CompareQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson15ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "noOfficialSchoolGrade": true
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "AUTHORING_COMPLETE_TESTS_WRITTEN_UNEXECUTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "academicHumanSignoff": "NOT_ASSERTED",
+    "productionRuntimeVerified": false,
+    "mainMerge": false,
+    "renderDeploy": false,
+    "productionRelease": "NO_GO",
+    "note": "Sequential A–C authoring checkpoint only; CI/runtime and academic acceptance remain Stage D."
+  },
+  "nextAction": "GRADE2_U01_L16_STRICTLY_AFTER_G2_U01_L15_CLOSED"
+}

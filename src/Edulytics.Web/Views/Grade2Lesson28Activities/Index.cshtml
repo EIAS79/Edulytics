@@ -1,0 +1,80 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson28Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Center Day 2";
+}
+<style>
+.g2l28{max-width:960px;margin:auto;padding:20px;color:#264253}
+.g2l28 .panel{background:#fff;border:1px solid #cddce5;border-radius:12px;padding:20px;margin:16px 0}
+.g2l28 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2l28 label{font-weight:700;display:block;margin:12px 0 5px}
+.g2l28 input,.g2l28 textarea,.g2l28 select{font:inherit;width:100%;max-width:550px;border:1px solid #8396a1;border-radius:8px;padding:10px}
+.g2l28 .action{background:#0b8094;color:#fff;border:0;border-radius:8px;padding:13px 20px;font-weight:bold}
+.g2l28 .dice{display:inline-flex;background:#e7f2f6;border:2px solid #628f9f;border-radius:10px;width:49px;height:49px;align-items:center;justify-content:center;font-weight:bold;margin:3px}
+.g2l28 .ok{border-left:4px solid #2d845c;padding-left:12px}
+.g2l28 .bad{border-left:4px solid #bc4659;padding-left:12px}
+.g2l28 .review{border-left:4px solid #b18831;padding-left:12px}
+</style>
+<main class="g2l28">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Center Day 2 — Optional</h1>
+<p>Target Numbers Stage5 uses <strong>three real number cubes</strong> and starts at <strong>100</strong>. Choose two DIFFERENT cubes to make a two-digit amount to subtract. Teacher observes real moves, group work and the winner.</p>
+<form asp-controller="Grade2Lesson28Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Notice and Wonder — compare representations</h2>
+<p>Compare the original teacher diagram with the matching equations for66−28. One ten was exchanged to make66=50+16, so the difference is38.</p>
+<div class="grid">
+<div><label asp-for="Answers.SourceWarmup">66−28</label><input asp-for="Answers.SourceWarmup" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.WarmupTens">Tens groups after exchanging one ten</label><input asp-for="Answers.WarmupTens" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.WarmupOnes">Ones after exchanging, before subtracting</label><input asp-for="Answers.WarmupOnes" type="number" min="0" max="19" required/></div>
+</div>
+<label asp-for="Answers.WhatNoticed">What did you notice about actual original source diagram versus equations?</label>
+<textarea asp-for="Answers.WhatNoticed" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>2. Target Numbers Stage 5 — three number cubes</h2>
+<p>In authentic partner play each begins100, rolls3 cubes, selects one cube for tens and another for ones and subtracts without going below0. Use real blocks and source paper recording sheets. The source teacher narrative describes closest-to-zero after six rounds, while the launch says first below10. Ask your teacher which official game-end rule to use.</p>
+<p>Source synthesis demonstration — these are ALTERNATIVE choices from 73, not sequential rounds:</p>
+<div aria-label="Three dice show four, two and five" role="img"><span class="dice">4</span><span class="dice">2</span><span class="dice">5</span></div>
+<div class="grid">
+<div><label asp-for="Answers.SourceDiceCurrent">Starting illustration value</label><input asp-for="Answers.SourceDiceCurrent" type="number" min="73" max="73" required/></div>
+<div><label asp-for="Answers.SourceDiceBorrowChoice">Choose 24 (trade a ten)</label><input asp-for="Answers.SourceDiceBorrowChoice" type="number" min="10" max="99" required/></div>
+<div><label asp-for="Answers.SourceDiceBorrowAnswer">73−24</label><input asp-for="Answers.SourceDiceBorrowAnswer" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SourceDiceSimpleChoice">Choose52 (no exchange)</label><input asp-for="Answers.SourceDiceSimpleChoice" type="number" min="10" max="99" required/></div>
+<div><label asp-for="Answers.SourceDiceSimpleAnswer">73−52</label><input asp-for="Answers.SourceDiceSimpleAnswer" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.ActualDiceAndRounds">Describe the dice you ACTUALLY rolled, two distinct cube positions, and your real rounds</label>
+<textarea asp-for="Answers.ActualDiceAndRounds" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Choice Time — actual centers</h2>
+<p>Choose from real Target Numbers Stage4/5, Capture Squares Stage3/4, or Five in a Row Stage6. Use authentic materials, classmates and turn rules.</p>
+<label asp-for="Answers.ActualCenterChosen">Which actual center did you choose?</label>
+<select asp-for="Answers.ActualCenterChosen">
+<option value="">Teacher-observed choice</option>
+<option>Target Numbers Stage4/5</option>
+<option>Capture Squares Stage3/4</option>
+<option>Five in a Row Stage6</option>
+</select>
+<label asp-for="Answers.ActualPartnerExplanation">How did you help or learn from your genuine partner?</label>
+<textarea asp-for="Answers.ActualPartnerExplanation" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Original Edulytics independent arithmetic check</h2>
+<p>Not a reproduced or attributed publisher Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.IndependentA">82−35</label><input asp-for="Answers.IndependentA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.IndependentB">94−56</label><input asp-for="Answers.IndependentB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.IndependentC">70−24</label><input asp-for="Answers.IndependentC" type="number" min="0" max="100" required/></div>
+</div><button class="action" type="submit">Check arithmetic and show teacher review</button>
+</section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite">
+<h2>Feedback</h2>@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Revise the arithmetic":"Teacher review only"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2TenthLessonCenterDay2.TeacherRubric){<li>@item</li>}</ul>
+<p>Source IM K–5 2021 G2 U02 L10; CCSS2.NBT.B.5, 2.NBT.B.9, 2.OA.B.2. Digital answers are not game wins or official grades.</p>
+</section></main>

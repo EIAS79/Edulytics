@@ -1,0 +1,76 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson37Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade2 — Create and Use a Ruler";}
+<style>
+.g2r37{max-width:950px;margin:auto;padding:20px;color:#284452}
+.g2r37 .panel{background:#fff;border:1px solid #cddbe4;border-radius:12px;margin:15px 0;padding:20px}
+.g2r37 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px}
+.g2r37 label{display:block;font-weight:700;margin:12px 0 5px}
+.g2r37 input,.g2r37 textarea{width:100%;max-width:560px;font:inherit;border:1px solid #869aa7;border-radius:7px;padding:10px}
+.g2r37 .action{background:#0e8098;color:white;border:0;border-radius:8px;padding:13px 20px;font-weight:bold}
+.g2r37 .ruler{display:grid;grid-template-columns:repeat(26,minmax(14px,1fr));padding:14px 2px;max-width:770px;overflow-x:auto}
+.g2r37 .tick{border-left:2px solid #53738b;min-height:38px;text-align:left;font-size:11px;padding-left:3px}
+.g2r37 .tick:last-child{border-right:2px solid #53738b}
+.g2r37 .ok{border-left:4px solid #2d845e;padding-left:12px}.g2r37 .bad{border-left:4px solid #b64a59;padding-left:12px}.g2r37 .review{border-left:4px solid #b18a32;padding-left:12px}
+</style>
+<main class="g2r37">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Create and Use a Ruler</h1>
+<p>Build a real centimeter ruler with <strong>equally spaced tick marks from 0 to25</strong>. Numbers belong at TICK MARKS, not between them. The following ruler is an original Edulytics digital schematic, not your physical ruler.</p>
+<form asp-controller="Grade2Lesson37Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk — Subtract Two Digits</h2>
+<div class="grid">
+<div><label asp-for="Answers.TalkA">63−3</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">63−20</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">63−23</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">63−24</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.TalkExplain">How can63−23 help with63−24?</label><textarea asp-for="Answers.TalkExplain" maxlength="2000" rows="2"></textarea>
+</section>
+<section class="panel"><h2>2. Create a real ruler — source Activity1</h2>
+<p>With the source ruler template, centimeter blocks and scissors, mark <strong>0 first</strong>, then use actual 1cm cubes to mark1,2...25 centimeters. Check tick intervals with your partner.</p>
+<div class="ruler" role="img" aria-label="First-party horizontal ruler with 26 equidistant marks numbered zero through twenty five">
+@for(var n=0;n<=25;n++){<span class="tick">@(n%5==0 || n==1 || n==25?n.ToString():"")</span>}
+</div>
+<p>The length between 0 and1 equals1cm. Between0 and10 equals10cm. Between a nonzero start and an endpoint, subtract the starting label.</p>
+<div class="grid">
+<div><label asp-for="Answers.RulerTickZero">Origin tick label</label><input asp-for="Answers.RulerTickZero" type="number" min="0" max="25" required/></div>
+<div><label asp-for="Answers.RulerTickOne">First tick label</label><input asp-for="Answers.RulerTickOne" type="number" min="0" max="25" required/></div>
+<div><label asp-for="Answers.RulerTickTen">Tenth tick label</label><input asp-for="Answers.RulerTickTen" type="number" min="0" max="25" required/></div>
+<div><label asp-for="Answers.RulerStart">First-party ruler span starts at</label><input asp-for="Answers.RulerStart" type="number" min="0" max="25" required/></div>
+<div><label asp-for="Answers.RulerEnd">Span ends at</label><input asp-for="Answers.RulerEnd" type="number" min="0" max="25" required/></div>
+<div><label asp-for="Answers.RulerLength">Span actual length in cm</label><input asp-for="Answers.RulerLength" type="number" min="0" max="25" required/></div>
+</div>
+<label asp-for="Answers.RealRulerObservation">Describe how you physically spaced and labeled your OWN source ruler</label>
+<textarea asp-for="Answers.RealRulerObservation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Measure authentic rectangles A–F</h2>
+<p>Use your real homemade ruler and the source printed rectangle pictures. Measure all six rectangles and then calculate A longer than B, F longer than D, identify two longest and join their lengths. This online form does NOT know the lengths of the original printed images.</p>
+<label asp-for="Answers.ActualRectangleMeasures">Report authentic rectangle A–F measurements, with cm units (teacher reviews)</label>
+<textarea asp-for="Answers.ActualRectangleMeasures" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.ActualRectangleDifferences">Original A−B, F−D and joined-longest reasoning (teacher reviews)</label>
+<textarea asp-for="Answers.ActualRectangleDifferences" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independent Edulytics virtual ruler arithmetic</h2>
+<p>Two INVENTED sample rectangles measure23cm and17cm; joined INVENTED lengths11cm and8cm. Do not claim these values are from source rectangle A–F.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyLong">Invented longer rectangle (23)</label><input asp-for="Answers.FirstPartyLong" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyShort">Invented shorter rectangle (17)</label><input asp-for="Answers.FirstPartyShort" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyGap">How many cm longer?</label><input asp-for="Answers.FirstPartyGap" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyJoin">Joined11cm+8cm length</label><input asp-for="Answers.FirstPartyJoin" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.ExitLength">Independent exit: marks4→21 span length?</label><input asp-for="Answers.ExitLength" type="number" min="0" max="25" required/></div>
+</div>
+<label asp-for="Answers.PartnerReasoning">What is easier about your ruler compared to individually placing cubes?</label>
+<textarea asp-for="Answers.PartnerReasoning" rows="2" maxlength="2000"></textarea>
+<button type="submit" class="action">Check tick and interval math</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")">
+<h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Revise the measurement":"Teacher review required"). @r.Feedback</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var rule in UsCcssG2Unit3ThirdLessonBuildRuler.TeacherRubric){<li>@rule</li>}</ul>
+<p>Source IM K–5 2021 G2 U03 L03, CCSS2.MD.A.1,2.MD.A.4,2.MD.B.6,2.NBT.B.5; original printed ruler and rectangle A–F artwork not reproduced; no official grade.</p>
+</section></main>

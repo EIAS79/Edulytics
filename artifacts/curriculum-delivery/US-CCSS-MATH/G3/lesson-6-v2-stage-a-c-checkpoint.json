@@ -1,0 +1,346 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 6,
+  "unitNumber": 1,
+  "lessonNumber": 6,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L06",
+  "title": "Choose a Scale",
+  "sourceEdition": "IM K–5 First Edition (2021)",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-6/lesson.html",
+  "localTeacherSourceHtml": "03_Grade_3_IM_K5/unit-1/lesson-6/lesson.html",
+  "targetSourceParityPercent": 100,
+  "claimedSourceParityPercent": null,
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "stageA": {
+    "status": "FIRST_EDITION_2021_13_OF_13_SOURCE_SEMANTIC_AUTHORING_ELEMENTS_MATCHED",
+    "sourceLifespanOfPets": [
+      [
+        "Cat",
+        16
+      ],
+      [
+        "Dog",
+        13
+      ],
+      [
+        "Guinea Pig",
+        6
+      ],
+      [
+        "Goldfish",
+        10
+      ],
+      [
+        "Python",
+        30
+      ]
+    ],
+    "sourceWarmupAxes": [
+      {
+        "min": 0,
+        "max": 30,
+        "step": 1
+      },
+      {
+        "min": 0,
+        "max": 60,
+        "step": 2
+      },
+      {
+        "min": 0,
+        "max": 300,
+        "step": 10
+      }
+    ],
+    "sourcePatternBlockCategories": [
+      "Triangle",
+      "Square",
+      "Trapezoid",
+      "Hexagon"
+    ],
+    "sourcePatternBlockPictureCountsNotAudited": false,
+    "sourceScaleOptions": [
+      2,
+      5,
+      10
+    ],
+    "sourceSeasons": [
+      [
+        "Winter",
+        24
+      ],
+      [
+        "Spring",
+        13
+      ],
+      [
+        "Summer",
+        40
+      ],
+      [
+        "Fall",
+        22
+      ]
+    ],
+    "originalStudentTaskPdfRead": false,
+    "sourcePatternBlockCounts": {
+      "Triangle": 26,
+      "Square": 5,
+      "Trapezoid": 15,
+      "Hexagon": 10
+    },
+    "sourcePatternSvgEvidence": {
+      "url": "https://cms-assets.illustrativemathematics.org/7053kvgtyqg9pibtx7gto33ajaea",
+      "bytes": 16919,
+      "filledSvgPaths": 57,
+      "duplicateIdenticalGreenPaths": 1,
+      "visibleShapeTotal": 56,
+      "geometryInspected": true
+    },
+    "originalSourceCoolDown": {
+      "title": "Reflection on Bar Graphs and Scale",
+      "sourceQuestions": [
+        "Why this scale for your seasonal graph?",
+        "What did you learn for the next scaled bar graph?"
+      ],
+      "answerType": "TWO_DISTINCT_TEACHER_REVIEWED_TEXTS",
+      "teacherGuideUrl": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf"
+    },
+    "originalPublicStudentHtmlReviewed": true,
+    "noPublisherArtworkCopied": true,
+    "rights": "Source mathematics and semantics matched, original artwork coordinates and bitmaps not replicated."
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_RICH_V2_AND_STUDENT_SOURCE_GRAPH_CONSTRUCTION_AND_ORIGINAL_REFLECTION_COOL_DOWN_AUTHORED",
+    "files": {
+      "math": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson6ChooseScale.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson6ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson6PracticePage.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "studentLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "sourceActivities": [
+      "10-minute three original pet graph scale visual warm-up and human discussion",
+      "20-minute four source pattern-block categories visually redrawn first-party with exact audited counts",
+      "Student scale 2/5/10 selected, pattern graph created from submitted tallies and teacher-reviewed",
+      "15-minute four source season bar inputs, exact plotted values and scales, group discussion",
+      "10-minute synthesis BEFORE source Cool-down",
+      "5-minute ORIGINAL-source two open written reflections",
+      "Math Community after Cool-down, two teacher-led centers",
+      "Optional Edulytics fictional club numerical EXTRA never claimed as source Cool-down"
+    ],
+    "petWarmupOriginalOrientationAndScaleAuthored": "Corrected earlier HORIZONTAL progress bars into vertical bar graphs, 372px baseline; 31 ticks each. Original image still inaccessible for pixel parity.",
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+      "version": "g3-u01-l06-first-edition-rich-v2-20261024-v1",
+      "authoringSemanticParity": true,
+      "stageDRuntimeDeferred": true
+    },
+    "effectiveLearnerBodyCompared": false,
+    "currentContentStatus": "SOURCE_AUTHORING_COMPLETE_STAGE_D_RUNTIME_NOT_STARTED",
+    "sourceFigurePixelsCopied": false
+  },
+  "stageC": {
+    "status": "SOURCE_PATTERN_AND_SEASON_BAR_FAMILIES_GRADED_PLUS_TWO_OPEN_SOURCE_COOL_DOWN_TEACHER_REVIEW_TESTS_AUTHORED_NOT_RUN",
+    "studentRoute": "student/practice/grade3-u01-l06",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+    "numericQuestions": 15,
+    "testsRun": false,
+    "teacherReviewRequired": true,
+    "newVerticalPetScaleRegressionWrittenUnrun": true,
+    "testsPath": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs"
+    ],
+    "sourceNumericPatternFamilies": 4,
+    "sourceNumericSeasonBarFamilies": 4,
+    "teacherRubricGates": [
+      "Graph category/zero axis and scale accuracy",
+      "Scale choice reason and partner critique",
+      "TWO separate source Cool-down open questions",
+      "Math Community norms"
+    ],
+    "gradeSourcePatternCounts": true,
+    "sourceSeasonsDirectStudentBarInputs": true
+  },
+  "sourceElements": [
+    {
+      "id": "identity_goal_and_timeline",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 L06 preparation and Teacher Guide pp.65–66",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Lesson 6 Choose a Scale; CCSS 3.MD.B.3; warm-up10, activity1 20, activity2 15, synthesis10, original 5min Cool-down",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "warmup_three_original_pet_graphs",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 teacher L06 Warm-up page and five-data figure ALT, vector URLs",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Cat16 Dog13 GuineaPig6 Goldfish10 Python30; THREE VERTICAL graphs with ranges 0–30/1, 0–60/2, 0–300/10 and separate zero-based tick marks",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "warmup_notice_wonder_partner",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher L06 Warm-up launch/activity/synthesis",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Notice and Wonder one minute quiet plus one minute partner; explain different vertical scaling with identical counts; teacher oral evidence",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity1_pattern_original_svg_count",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 student L06 Activity1 picture, asset 7053kvgtyqg9pibtx7gto33ajaea",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "The original public 16919-byte dvisvgm SVG was fetched on authorized user machine; 57 colored paths but one EXACT DUPLICATE green path, hence 56 unique visible block geometries: 26 green triangles,5 orange squares,15 red trapezoids,10 yellow hexagons. First-party layout differs.",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson6ChooseScale.cs",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity1_scale_options_mai_noah_priya",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 L06 Activity1 Student Facing subpart 1",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Mai=2, Noah=5, Priya=10; choose whom you agree with and justify; teacher rubric, no artificially unique answer.",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity1_four_tallies_and_vertical_graph",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 L06 Activity1 Student Facing subpart 2 blank drawing grid",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "First-party independent 56-shape picture; four entered category counts graded against image, chosen 2/5/10 step, four student-created vertical bar heights zero-based; teacher evaluates scale/title/labels and nonmultiples.",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity1_partner_access_support",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 L06 Activity1 Teacher Launch and Access for Perception",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Partner graph creation 12min, source-selected work displayed, critique reasons; physical pattern blocks available to teacher, not invented as machine-graded.",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity2_source_season_table",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 L06 Activity2 Student Facing school survey table",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Winter24 Spring13 Summer40 Fall22 school data (not local class opinion); students see original table, choose 2/5/10.",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson6ChooseScale.cs",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity2_four_student_bar_heights",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 L06 Activity2 Student Facing create scaled bar graph, blank grid",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "All four category bar-height input fields and numeric graders, graph GENERATED FROM learner submissions not prefabricated; preserves 24,13,40,22 exactly between ticks.",
+      "codePath": "src/Edulytics.Web/Controllers/Grade3Lesson6ActivitiesController.cs",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "activity2_group_mlr8_and_l07_carryover",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 L06 Activity2 Teacher launch, group work, next-day reuse",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "5–7 min independent drawing, 2–3min groups of four comparison, MLR8 restate partner, preserve or print graph for next lesson; live observations await classroom execution.",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "synthesis_before_source_cooldown",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 L06 lesson synthesis, Teacher Guide pp.72–73",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "10-minute graph scale decision reflection placed BEFORE publisher source two-part Cool-down; written synthesis captured.",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "original_cooldown_two_open_subparts",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.65 and public L06 source Cool-down PDF",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Two distinct teacher-reviewed prompts: why did you select the final activity's scale, and what did you learn for making the next scaled bar graph? Separately captured; independent club numerics marked optional EXTRA.",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    },
+    {
+      "id": "community_and_two_optional_centers",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 L06 teacher preparation, source Guide p.73",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Math Community norms AFTER Cool-down; teacher-led Sort and Display Stage3 Scaled Graphs and Five in a Row Stage6 within100; no fake student numeric completion.",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+      "authoredTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs",
+      "sourceOriginalGraphicsUsed": false,
+      "sourceTeachingAuthoringOnly": true,
+      "stageDRuntimeOrAcademicSignoff": false
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 13,
+    "fullyMappedAndVerified": 13,
+    "verificationScope": "SEMANTIC_STAGE_A_B_C_AUTHORING_NOT_RUNTIME_OR_PUBLISHER_ART_PIXEL_COPY",
+    "publishedRichV2Inspected": false,
+    "sourceStudentTaskPdfRead": false,
+    "originalStudentFacingHtmlMatched": true,
+    "sourceTeacherGuidePdfTextReviewed": true,
+    "originalFigureSvgGeometryInspected": true
+  },
+  "openGaps": [],
+  "originalCoolDownPolicy": "OWNER_APPROVED_EDULYTICS_ORIGINAL_EQUIVALENT",
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSemanticAuthoringCoveragePercent": 100,
+  "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-6-stage-a-b-c-authoring-closure-evidence-20261024.json",
+  "nextAction": "Proceed U01:L07 on same PR. U01:L06 authoring closed A–C on source-semantic scope; Stage D build/tests, runtime/deployment/teacher academic signoff and publisher-art pixel identity NOT claimed."
+}

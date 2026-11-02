@@ -1,0 +1,56 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson54Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Features of a Number Line";}
+<style>
+.g2l54{max-width:990px;margin:auto;padding:20px;color:#234257}.g2l54 .panel{background:white;border:1px solid #c9dbe4;padding:18px;border-radius:12px;margin:15px 0}
+.g2l54 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.g2l54 label{display:block;font-weight:700;margin:10px 0 5px}.g2l54 input,.g2l54 textarea{font:inherit;width:100%;max-width:530px;border:1px solid #839ba8;border-radius:8px;padding:10px}
+.g2l54 .action{border:0;border-radius:8px;padding:12px 20px;background:#137f92;color:white;font-weight:700}
+.g2l54 .ok{border-left:4px solid #288758;padding-left:12px}
+.g2l54 .bad{border-left:4px solid #bb4d53;padding-left:12px}
+.g2l54 .review{border-left:4px solid #b39035;padding-left:12px}
+</style>
+<main class="g2l54"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Features of a Number Line</h1>
+<p>Original IM 2021: count by fives, build a REAL class 0–30 number line on taut yarn, and examine the original number-line diagrams of Jada, Andre and Elena. Only the teacher can check real cards, drawings and group conversations.</p>
+<form asp-controller="Grade2Lesson54Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Source warm-up — Choral Count by 5, zero to 100</h2>
+<p>Say the full sequence aloud with your group and describe why every second +5 reaches the next ten. Enter landmark values.</p>
+<div class="grid">
+<div><label asp-for="Answers.FiveFirst">After0</label><input asp-for="Answers.FiveFirst" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FiveNext">After5</label><input asp-for="Answers.FiveNext" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FiveFifty">Halfway to100</label><input asp-for="Answers.FiveFifty" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FiveLast">Final number in the original count</label><input asp-for="Answers.FiveLast" type="number" min="0" max="100" required/></div>
+</div></section>
+<section class="panel"><h2>2. Source Activity 1 — REAL classroom number line, 0–30</h2>
+<p>Stretch a physical taut yarn line across the classroom. Start with zero and place students' REAL number cards in changing/random order. Revise the card positions as new numbers join: number order ALONE does not guarantee equal unit length.</p>
+<label asp-for="Answers.RealYarnZeroAndSpacing">How did your real class anchor zero and keep equal intervals?</label><textarea asp-for="Answers.RealYarnZeroAndSpacing" maxlength="2000" rows="2"></textarea>
+<label asp-for="Answers.RealRandomCardPlacements">Which real card placements did you observe?</label><textarea asp-for="Answers.RealRandomCardPlacements" maxlength="2000" rows="2"></textarea>
+<label asp-for="Answers.RealCardRevisions">Which cards were really moved to correct a length error?</label><textarea asp-for="Answers.RealCardRevisions" maxlength="2000" rows="2"></textarea></section>
+<section class="panel"><h2>3. Source Activity 2 — examine actual Jada, Andre and Elena images</h2>
+<p>Examine the ORIGINAL diagrams with your teacher. For each, explain one feature done well and one revision. The written source indicates Jada has an extra blank tick between 1 and 2 and between 5 and 6; the accessible text does NOT give sufficient information to reconstruct Andre's or Elena's specific figure. Don't guess their values.</p>
+<label asp-for="Answers.JadaActualImageReview">Jada: what original image evidence supports your revision?</label><textarea asp-for="Answers.JadaActualImageReview" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.AndreActualImageReview">Andre: use teacher's actual original figure, not invented labels</label><textarea asp-for="Answers.AndreActualImageReview" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.ElenaActualImageReview">Elena: use teacher's actual original figure, not invented labels</label><textarea asp-for="Answers.ElenaActualImageReview" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.RealPeerDiscussion">Group of3: one good feature and one revision for each, including spacing and labels</label><textarea asp-for="Answers.RealPeerDiscussion" maxlength="2000" rows="3"></textarea></section>
+<section class="panel"><h2>4. Source finish — complete 11 equally spaced ticks, 0–10</h2>
+<p>The source diagram has the FIRST tick labeled0 and ten more unlabeled ticks. Fill all labels1..10 on your real paper, then check these endpoints.</p>
+<div class="grid">
+<div><label asp-for="Answers.MissingAfterZero">First label after0</label><input asp-for="Answers.MissingAfterZero" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.MissingFive">Middle label</label><input asp-for="Answers.MissingFive" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.MissingTen">Final label</label><input asp-for="Answers.MissingTen" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.FullTickCount">Total number of ticks counting0 and10</label><input asp-for="Answers.FullTickCount" type="number" min="0" max="21" required/></div></div></section>
+<section class="panel"><h2>5. First-party numerical arithmetic — NOT publisher Cool-down</h2>
+<div class="grid">
+<div><label asp-for="Answers.FictionCardEighteen">Abstract card18: intervals from zero?</label><input asp-for="Answers.FictionCardEighteen" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.FictionDistanceSix">Abstract gap from12 to18?</label><input asp-for="Answers.FictionDistanceSix" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.FictionFiveCountTotal">Total numbers0,5,10,...100 (including0)?</label><input asp-for="Answers.FictionFiveCountTotal" type="number" min="0" max="30" required/></div>
+</div><button class="action" type="submit">Check numeric features and show teacher boundaries</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numerically valid":r.Correct==false?"Check your number":"Teacher review required"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation checklist</h2><ul>@foreach(var s in UsCcssG2Unit4SecondLessonNumberLineFeatures.TeacherRubric){<li>@s</li>}</ul>
+<p>IM K–5 2021 G2 U04 L02, CCSS2.MD.B.6 and2.NBT.A.2. The publisher's diagrams and restricted Cool-down are not reproduced. No official grade.</p></section></main>

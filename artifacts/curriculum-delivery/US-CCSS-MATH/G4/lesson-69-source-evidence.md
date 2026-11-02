@@ -1,0 +1,10 @@
+# G4 ordinal 69 — Times as Many
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-5_lesson-1_preparation.html SHA256=f61b4dc9ef9bdd0d13ce228666e2e752f3c7959938a779049e2072e8b4629f1b
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-5\lesson-1\lesson.html SHA256=d7a2ffd0b0508a0642b10a4632b0538e8920250b808ab4f7a1f3fc6d58337cf5
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-5\lesson-1\lesson.html SHA256=b4e58405afd68eefd68fb9be6b66c8def755c2dde7161c78758122b44dda2172
+- Preserved existing learning explanation: Learning goal: You will interpret and represent multiplicative comparison situations using objects and diagrams. In previous grades, you learned how to represent additive comparison situations using discrete diagrams, tape diagrams, and addition and subtraction equations that use symbols to represent an unknown quantity. You used these representations to find differences. In this lesson, you interpret the language of “times as many” in multiplicative comparison situations and connect this langua
+- Original 2021 sections: Warm-up:  Notice and Wonder: Compare Cubes	 (10 minutes); Activity 1:  Twice as Many	 (10 minutes); Activity 2:  Times as Many	 (20 minutes); Activity 3:  Make $n$ Times as Many	 [OPTIONAL] (15 minutes); Cool-down:  Three Times as Many Cubes	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 3*8 = 24.
+- Edulytics first-party Cool-down: Show six times as many as four cubes using a tape diagram.; teacher key: Six equal groups of four; total 24 cubes.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

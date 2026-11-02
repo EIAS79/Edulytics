@@ -1,0 +1,538 @@
+using Edulytics.Core.Curriculum;
+using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
+using Edulytics.Core.Lessons;
+using Edulytics.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
+namespace Edulytics.Data.Repositories;
+
+public sealed class LessonContentRepository : ILessonContentRepository
+{
+    private readonly EdulyticsDbContext _db;
+    private readonly bool _readFromJson;
+    private static readonly EmbeddedCanonicalLessonContentIndex JsonIndex = new();
+
+    public LessonContentRepository(
+        EdulyticsDbContext db,
+        Microsoft.Extensions.Configuration.IConfiguration? configuration = null)
+    {
+        _db = db;
+        _readFromJson = configuration?.GetValue<bool>(
+            "Edulytics:LessonContent:ReadFromJson") == true;
+    }
+
+    public async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ListStaffAdoptionsAsync(
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
+    {
+        var adoptions = await _db.SchoolCurriculumAdoptions
+            .AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.IsActive &&
+                x.IsPrimary)
+            .ToArrayAsync(cancellationToken);
+
+        return await HydrateContextsAsync(
+            schoolId,
+            adoptions,
+            cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> ListStudentAdoptionsAsync(
+        Guid actorUserId,
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
+    {
+        var profile = await _db.StudentProfiles
+            .AsNoTracking()
+            .SingleOrDefaultAsync(
+                x =>
+                    x.SchoolId == schoolId &&
+                    x.UserId == actorUserId &&
+                    !x.IsArchived &&
+                    x.Status == AcademicStructureStatus.Active,
+                cancellationToken);
+
+        if (profile is null)
+            return [];
+
+        var enrollments = await _db.StudentEnrollments
+            .AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.StudentProfileId == profile.Id)
+            .ToArrayAsync(cancellationToken);
+
+        if (enrollments.Length == 0)
+            return [];
+
+        var classIds = enrollments
+            .Select(x => x.ClassGroupId)
+            .Distinct()
+            .ToArray();
+
+        var classes = await _db.ClassGroups
+            .AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                classIds.Contains(x.Id))
+            .ToArrayAsync(cancellationToken);
+
+        if (classes.Length == 0)
+            return [];
+
+        var explicitAdoptionIds = classes
+            .Where(x => x.CurriculumAdoptionId.HasValue)
+            .Select(x => x.CurriculumAdoptionId!.Value)
+            .Distinct()
+            .ToArray();
+
+        var explicitAdoptions = explicitAdoptionIds.Length == 0
+            ? []
+            : await _db.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    x.IsActive &&
+                    x.IsPrimary &&
+                    explicitAdoptionIds.Contains(x.Id))
+                .ToArrayAsync(cancellationToken);
+
+        var explicitById = explicitAdoptions.ToDictionary(x => x.Id);
+
+        var legacyClasses = classes
+            .Where(x => !x.CurriculumAdoptionId.HasValue)
+            .ToArray();
+
+        var legacyProgramIds = legacyClasses
+            .Select(x => x.AcademicProgramId)
+            .Distinct()
+            .ToArray();
+        var legacyGradeIds = legacyClasses
+            .Select(x => x.GradeLevelId)
+            .Distinct()
+            .ToArray();
+        var legacyYearIds = legacyClasses
+            .Select(x => x.AcademicYearId)
+            .Distinct()
+            .ToArray();
+
+        var legacyCandidates = legacyClasses.Length == 0
+            ? []
+            : await _db.SchoolCurriculumAdoptions
+                .AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    x.IsActive &&
+                    x.IsPrimary &&
+                    legacyProgramIds.Contains(x.AcademicProgramId) &&
+                    legacyGradeIds.Contains(x.GradeLevelId) &&
+                    (!x.AcademicYearId.HasValue ||
+                     legacyYearIds.Contains(x.AcademicYearId.Value)))
+                .ToArrayAsync(cancellationToken);
+
+        var selected = new Dictionary<Guid, Edulytics.Core.Entities.SchoolCurriculumAdoption>();
+
+        foreach (var classGroup in classes)
+        {
+            if (classGroup.CurriculumAdoptionId.HasValue)
+            {
+                if (!explicitById.TryGetValue(
+                        classGroup.CurriculumAdoptionId.Value,
+                        out var adoption))
+                {
+                    continue;
+                }
+
+                // Explicit class identity is authoritative and must belong to
+                // the class academic year. A mismatch is rejected, not guessed.
+                if (adoption.AcademicYearId != classGroup.AcademicYearId)
+                    continue;
+
+                selected.TryAdd(adoption.Id, adoption);
+                continue;
+            }
+
+            // Compatibility-only fallback for pre-identity classes. Exactly one
+            // adoption must match program + grade + year compatibility.
+            var matches = legacyCandidates
+                .Where(x =>
+                    x.AcademicProgramId == classGroup.AcademicProgramId &&
+                    x.GradeLevelId == classGroup.GradeLevelId &&
+                    (!x.AcademicYearId.HasValue ||
+                     x.AcademicYearId.Value == classGroup.AcademicYearId))
+                .ToArray();
+
+            if (matches.Length == 1)
+                selected.TryAdd(matches[0].Id, matches[0]);
+        }
+
+        return await HydrateContextsAsync(
+            schoolId,
+            selected.Values.ToArray(),
+            cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<PedagogicalLessonRecord>> ListPedagogicalLessonsAsync(
+        IReadOnlyCollection<Guid> frameworkVersionIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (frameworkVersionIds.Count == 0)
+            return [];
+
+        var versionIds = frameworkVersionIds
+            .Distinct()
+            .ToArray();
+
+        var lessons = await _db.CurriculumPedagogicalLessons
+            .AsNoTracking()
+            .Where(x => versionIds.Contains(x.FrameworkVersionId))
+            .OrderBy(x => x.FrameworkVersionId)
+            .ThenBy(x => x.LogicalLevelFrom)
+            .ThenBy(x => x.Pathway)
+            .ThenBy(x => x.SortOrder)
+            .ThenBy(x => x.Code)
+            .ToArrayAsync(cancellationToken);
+
+        if (lessons.Length == 0)
+            return [];
+
+        var lessonIds = lessons
+            .Select(x => x.Id)
+            .ToArray();
+
+        var outcomeCounts = await _db.CurriculumPedagogicalLessonOutcomes
+            .AsNoTracking()
+            .Where(x => lessonIds.Contains(x.PedagogicalLessonId))
+            .GroupBy(x => x.PedagogicalLessonId)
+            .Select(x => new
+            {
+                LessonId = x.Key,
+                Count = x.Count()
+            })
+            .ToArrayAsync(cancellationToken);
+
+        var countByLesson = outcomeCounts
+            .ToDictionary(x => x.LessonId, x => x.Count);
+
+        return lessons
+            .Select(x => new PedagogicalLessonRecord(
+                x.Id,
+                x.FrameworkVersionId,
+                x.OfficialLessonNodeId,
+                x.Code,
+                x.UnitKey,
+                x.UnitTitle,
+                x.Title,
+                x.Pathway,
+                x.LogicalLevelFrom,
+                x.LogicalLevelTo,
+                x.SortOrder,
+                countByLesson.GetValueOrDefault(x.Id))
+            {
+                IsSupporting =
+                    CanonicalLessonRoleRegistry.TryGetIsSupporting(
+                        x.Code,
+                        out var isSupporting)
+                        ? isSupporting
+                        : null
+            })
+            .ToArray();
+    }
+
+    public async Task<IReadOnlyList<CanonicalLessonContentRecord>> ListCanonicalContentsAsync(
+        IReadOnlyCollection<Guid> pedagogicalLessonIds,
+        CancellationToken cancellationToken = default)
+    {
+        if (pedagogicalLessonIds.Count == 0)
+            return [];
+
+        var lessonIds = pedagogicalLessonIds
+            .Distinct()
+            .ToArray();
+
+        if (_readFromJson)
+        {
+            // Query only the compact public-lesson identity and publication fields.
+            // The associated authorized lesson body is read from embedded JSON.
+            // This is ONE SQL statement: avoid independently fetching Content and
+            // CurriculumPedagogicalLesson then joining the result in application code.
+            var metadata = await (
+                from content in _db.CurriculumLessonContents.AsNoTracking()
+                join lesson in _db.CurriculumPedagogicalLessons.AsNoTracking()
+                    on content.PedagogicalLessonId equals lesson.Id
+                where lessonIds.Contains(content.PedagogicalLessonId)
+                select new
+                {
+                    content.Id,
+                    content.FrameworkVersionId,
+                    content.PedagogicalLessonId,
+                    content.Status,
+                    content.ContentVersion,
+                    content.VerifiedAtUtc,
+                    content.PublishedAtUtc,
+                    content.UpdatedAtUtc,
+                    LessonCode = lesson.Code
+                }).ToArrayAsync(cancellationToken);
+
+            var result = new List<CanonicalLessonContentRecord>(metadata.Length);
+            foreach (var item in metadata)
+            {
+                if (!JsonIndex.TryGet(item.LessonCode, out var body))
+                {
+                    // Fail closed: no approved JSON body, no learner content.
+                    continue;
+                }
+
+                if (!string.Equals(item.ContentVersion, body.ContentVersion,
+                        StringComparison.Ordinal) || item.Status != body.Status)
+                {
+                    throw new InvalidOperationException(
+                        "Canonical JSON/metadata version or publication drift: " +
+                        item.LessonCode);
+                }
+
+                result.Add(new CanonicalLessonContentRecord(
+                    item.Id,
+                    item.FrameworkVersionId,
+                    item.PedagogicalLessonId,
+                    item.Status,
+                    item.ContentVersion,
+                    item.VerifiedAtUtc,
+                    item.PublishedAtUtc,
+                    item.UpdatedAtUtc,
+                    body.Translations));
+            }
+
+            return result;
+        }
+
+        var contents = await _db.CurriculumLessonContents
+            .AsNoTracking()
+            .Where(x => lessonIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(cancellationToken);
+
+        if (contents.Length == 0)
+            return [];
+
+        var contentIds = contents
+            .Select(x => x.Id)
+            .ToArray();
+
+        var translations = await _db.CurriculumLessonContentTranslations
+            .AsNoTracking()
+            .Where(x => contentIds.Contains(x.CurriculumLessonContentId))
+            .OrderBy(x => x.CultureCode)
+            .ToArrayAsync(cancellationToken);
+
+        return contents
+            .Select(c => new CanonicalLessonContentRecord(
+                c.Id,
+                c.FrameworkVersionId,
+                c.PedagogicalLessonId,
+                c.Status,
+                c.ContentVersion,
+                c.VerifiedAtUtc,
+                c.PublishedAtUtc,
+                c.UpdatedAtUtc,
+                translations
+                    .Where(t => t.CurriculumLessonContentId == c.Id)
+                    .Select(t => new CanonicalLessonTranslationRecord(
+                        t.CultureCode,
+                        t.Title,
+                        t.Explanation,
+                        t.KeyConceptsAndRules,
+                        t.WorkedExamples,
+                        t.StepByStepSolutions,
+                        t.CommonMistakes,
+                        t.QuickSummary))
+                    .ToArray()))
+            .ToArray();
+    }
+
+    public async Task<IReadOnlyList<LessonOutcomeRecord>> ListOfficialOutcomesAsync(
+        Guid frameworkVersionId,
+        Guid pedagogicalLessonId,
+        CancellationToken cancellationToken = default)
+    {
+        var mappings = await _db.CurriculumPedagogicalLessonOutcomes
+            .AsNoTracking()
+            .Where(x =>
+                x.FrameworkVersionId == frameworkVersionId &&
+                x.PedagogicalLessonId == pedagogicalLessonId)
+            .OrderBy(x => x.SortOrder)
+            .ToArrayAsync(cancellationToken);
+
+        if (mappings.Length == 0)
+            return [];
+
+        var outcomeIds = mappings
+            .Select(x => x.OutcomeNodeId)
+            .Distinct()
+            .ToArray();
+
+        var nodes = await _db.CurriculumPackContentNodes
+            .AsNoTracking()
+            .Where(x =>
+                x.FrameworkVersionId == frameworkVersionId &&
+                x.IsActive &&
+                x.IsOfficial &&
+                (x.NodeKind == "Standard" || x.NodeKind == "Outcome") &&
+                outcomeIds.Contains(x.Id))
+            .ToArrayAsync(cancellationToken);
+
+        var byId = nodes.ToDictionary(x => x.Id);
+
+        return mappings
+            .Select((mapping, index) =>
+            {
+                if (!byId.TryGetValue(mapping.OutcomeNodeId, out var node))
+                    return null;
+
+                return new LessonOutcomeRecord(
+                    node.Id,
+                    node.Code,
+                    node.OfficialText ??
+                    node.AuthorDescription ??
+                    node.Title,
+                    mapping.SortOrder != 0
+                        ? mapping.SortOrder
+                        : index + 1);
+            })
+            .Where(x => x is not null)
+            .Select(x => x!)
+            .GroupBy(x => x.Id)
+            .Select(x => x.First())
+            .OrderBy(x => x.Order)
+            .ToArray();
+    }
+
+    private async Task<IReadOnlyList<CanonicalCurriculumContextRecord>> HydrateContextsAsync(
+        Guid schoolId,
+        IReadOnlyCollection<Edulytics.Core.Entities.SchoolCurriculumAdoption> adoptions,
+        CancellationToken cancellationToken)
+    {
+        if (adoptions.Count == 0)
+            return [];
+
+        var subjectIds = adoptions
+            .Select(x => x.SubjectId)
+            .Distinct()
+            .ToArray();
+        var gradeIds = adoptions
+            .Select(x => x.GradeLevelId)
+            .Distinct()
+            .ToArray();
+        var versionIds = adoptions
+            .Select(x => x.FrameworkVersionId)
+            .Distinct()
+            .ToArray();
+        var programIds = adoptions
+            .Select(x => x.AcademicProgramId)
+            .Distinct()
+            .ToArray();
+
+        var programs = await _db.AcademicPrograms
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && programIds.Contains(x.Id))
+            .ToArrayAsync(cancellationToken);
+        var subjects = await _db.Subjects
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && subjectIds.Contains(x.Id))
+            .ToArrayAsync(cancellationToken);
+        var grades = await _db.GradeLevels
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && gradeIds.Contains(x.Id))
+            .ToArrayAsync(cancellationToken);
+        var versions = await _db.CurriculumFrameworkVersions
+            .AsNoTracking()
+            .Where(x => versionIds.Contains(x.Id) && x.IsActive)
+            .ToArrayAsync(cancellationToken);
+
+        var frameworkIds = versions
+            .Select(x => x.FrameworkId)
+            .Distinct()
+            .ToArray();
+        var frameworks = await _db.CurriculumFrameworks
+            .AsNoTracking()
+            .Where(x => frameworkIds.Contains(x.Id) && x.IsActive)
+            .ToArrayAsync(cancellationToken);
+
+        var programsById = programs.ToDictionary(x => x.Id);
+        var subjectsById = subjects.ToDictionary(x => x.Id);
+        var gradesById = grades.ToDictionary(x => x.Id);
+        var versionsById = versions.ToDictionary(x => x.Id);
+        var frameworksById = frameworks.ToDictionary(x => x.Id);
+
+        var result = new List<CanonicalCurriculumContextRecord>();
+
+        foreach (var adoption in adoptions)
+        {
+            if (!programsById.TryGetValue(adoption.AcademicProgramId, out var program) ||
+                !subjectsById.TryGetValue(adoption.SubjectId, out var subject) ||
+                !gradesById.TryGetValue(adoption.GradeLevelId, out var grade) ||
+                !versionsById.TryGetValue(adoption.FrameworkVersionId, out var version) ||
+                !frameworksById.TryGetValue(version.FrameworkId, out var framework))
+            {
+                continue;
+            }
+
+            var legacyIdentity =
+                string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey) ||
+                !adoption.CurriculumLogicalLevel.HasValue
+                    ? CurriculumLevelIdentityRegistry.ResolveLegacy(
+                        framework.Code,
+                        grade.Name,
+                        grade.Order)
+                    : null;
+
+            var levelKey = !string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey)
+                ? adoption.CurriculumLevelKey
+                : legacyIdentity?.Key;
+            var logicalLevel = adoption.CurriculumLogicalLevel ?? legacyIdentity?.LogicalLevel;
+            var levelLabel = !string.IsNullOrWhiteSpace(adoption.CurriculumLevelLabel)
+                ? adoption.CurriculumLevelLabel
+                : legacyIdentity?.Label;
+            var stage = !string.IsNullOrWhiteSpace(adoption.CurriculumStage)
+                ? adoption.CurriculumStage
+                : legacyIdentity?.Stage;
+            var pathway = !string.IsNullOrWhiteSpace(adoption.CurriculumLevelKey)
+                ? adoption.CurriculumPathway
+                : legacyIdentity?.Pathway;
+
+            result.Add(new CanonicalCurriculumContextRecord(
+                version.Id,
+                framework.Code,
+                framework.Name,
+                version.Name,
+                subject.Id,
+                subject.Name,
+                subject.Code,
+                grade.Id,
+                grade.Name,
+                grade.Order)
+            {
+                CurriculumAdoptionId = adoption.Id,
+                CurriculumLevelKey = levelKey,
+                CurriculumLogicalLevel = logicalLevel,
+                CurriculumLevelLabel = levelLabel,
+                CurriculumStage = stage,
+                CurriculumPathway = pathway,
+                AcademicProgramId = program.Id,
+                AcademicProgramName = program.Name,
+                AcademicProgramCode = program.Code
+            });
+        }
+
+        return result
+            .Distinct()
+            .OrderBy(x => x.SubjectCode)
+            .ThenBy(x => x.CurriculumLogicalLevel ?? x.GradeOrder)
+            .ThenBy(x => x.CurriculumPathway ?? string.Empty)
+            .ThenBy(x => x.FrameworkName)
+            .ToArray();
+    }
+}

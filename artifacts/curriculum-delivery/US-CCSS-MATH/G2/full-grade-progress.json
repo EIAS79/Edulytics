@@ -1,0 +1,2965 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 2",
+  "programme": "US-CCSS-MATH",
+  "branch": "curriculum/g2-continuous-authoring-20261021",
+  "baseBranch": "main",
+  "sourceBlueprintBlobSha": "f7dd1f97194cb65c5a6f91e688f268a1de9ccda3",
+  "cursor": {
+    "lastConsecutiveACClosed": 146,
+    "firstUnclosedLesson": null,
+    "nextSequentialLesson": null,
+    "currentWork": "G2 Stage D named digital tests and authenticated generic B001 passed 146/146; source companion authenticated GET+cross-school deny 44/44; original teacher/source material approval 0/146, release NO_GO_UNVERIFIED.",
+    "lastConsecutiveDigitalStageDPassed": 146,
+    "firstDigitalStageDPending": null,
+    "firstAcademicReviewPending": 1
+  },
+  "stagePolicy": "A-B-C_ONLY_NO_TEST_EXECUTION",
+  "stageD": "D_TESTS_PASSED__ACADEMIC_APPROVAL_PENDING",
+  "release": "NO_GO_UNVERIFIED",
+  "notes": [
+    "Every lesson status was initialized PENDING, not carried over from unrelated Grade 1 history.",
+    "A source-grounded teaching fix for G2 U01 L01 existed before this branch; reused unchanged.",
+    "Four newly authored exact digital families for G2 U01 L01 require Stage D execution before any technical approval.",
+    "Original partner game expression authorship, oral reasoning, classroom math community chart, and registered-only Cool-down are not certified by numerical grading.",
+    "Print student task PDF could not be fetched in the source check; never mark full A source parity based on this text manifest.",
+    "G2 U01 L02 source uses a ten-cube hidden-part partner game, related addition/subtraction equations, tower-to-equation matching; current keyConceptsAndRules says 'within 20' and generic steps do not teach the exact target.",
+    "G2 content pack reviewEvidence narrative says 143 of 146 included but the live JSON catalogue has 146 lesson records, all isSupporting=false and all with OutcomeCodes. No historical approval inferred.",
+    "U01 L02 and L03 now have ten/twenty-cube original-source contracts, actual teaching corrections and unexecuted source-specific tests. Existing published content untouched on main.",
+    "2026-10-21 user corrected workflow: strict lesson by lesson A->B->C, mark A_C completed with READY_FOR_STAGE_D only after full evidence; only then begin next ordinal. Earlier cursor 9 was incorrect.",
+    "Original publisher Cool-down can be replaced as a pedagogical task by independently authored Edulytics Cool-down matching verified objective, with no claim of verbatim source reproduction. Do not require original restricted content to close authoring Stage A-C.",
+    "Grade 2 ordinal 1 has separate original Edulytics Cool-down, learner-visible expression check and teacher rubric; source public lesson reviewed. No tests, CI, Stage D, merge or release executed.",
+    "Sequential Grade 2 lesson2 closed after independent Cool-down, color-cube teacher rubric and authenticated student page completed.",
+    "Sequential G2 U01 L03 closure: first-party twenty-cube representations, independent assessment, teacher rubric, exact graded scope.",
+    "G2 U01 L17 optional Center Day 3 A-C source reviewed and source-locked; real objects and partner game cannot be automatically verified. Four new tests written NOT EXECUTED; digital counting groups and first-party Cool-down are distinct from classroom evidence.",
+    "G2 U01 L18 source-guarded optional class survey/peer question/tape authoring A–C complete; four unexecuted tests; real survey/peer work remains teacher-scored, no official grades or production verification.",
+    "G2 U02 L01/grade ordinal19 source mismatch found 32−18 and27+15 wrongly require ten regrouping; guarded correction restores source graph32/16/21 and trains46/22 without borrowing/carrying; 4 tests authored unrun.",
+    "G2 U02 L02 (ordinal20) source/cube tools and three unknown-addend exact families authored with 4 unexecuted tests. Source restricted Cool-down replaced, real classroom collaboration teacher-only.",
+    "G2 U02 L03 ordinal21 zoo four source stories, 4 randomized exact no-regroup families, MLR6 teacher observation rubric and independently written unrun tests added to branch.",
+    "G2 U02 L04 optional centers original Stage6 includes composing a ten, contrary to generic opening no-regroup phrase; source faithfully restored and four unexecuted test files written.",
+    "G2 ordinal23 teacher lesson and preparation read ONLY from local books; source-correct regrouping of ten 82−9 and Diego's55−20−8 authored on GitHub; four tests not run.",
+    "G2 ordinal24 source archived on desktop read-only, original Target Numbers Stage4 student companion and four exact families authored on GitHub; no real gameplay claimed, tests deferred.",
+    "G2 ordinal25 source reviewed from local books read-only, files committed to GitHub only; source card values not invented, tests written not executed.",
+    "Ordinal26 local teacher source reviewed, comparison Lin/Clare/Andre and original independent practice authored GitHub-only; no tests executed.",
+    "G2 ordinal27 source lesson and preparation locally read only, all authoring changes GitHub; printed card images not fabricated, StageD unrun.",
+    "G2 ordinal28 source read from desktop books ONLY, writes GitHub ONLY; real Stage5 3-cube rules and conflicting end-conditions preserved; four unrun tests.",
+    "G2 ordinal29 source archived teacher HTML read ONLY from local books; all project edits committed GitHub; independent numeric exit and four source story structures, no D run.",
+    "G2 ordinal30 source files read only from desktop books, GitHub branch only edited; match-diagrams-only source activity preserved, no protected card images invented.",
+    "G2 ordinal31 locally archived teacher sources read-only; source 4 seeds equations, four exact question families and four unrun tests committed only GitHub.",
+    "Grade2 ordinal32 source locally reviewed read-only, authoring writes only GitHub, source grouped two-step story, tests written not executed.",
+    "G2 ordinal33 local teacher lesson source read-only and GitHub-only authorship, optional tape-diagram Stage5, four tests written but unrun.",
+    "G2 ordinal34 optional Our Market's Inventory locally read from books only and authored on GitHub only; strict inventory constraints, real classroom roles and independent sample separated; four tests not run.",
+    "G2 ordinal35 2021 source reviewed read-only local, physical Priya40cm units and teacher-only manipulation distinguished, all GitHub-only writes; StageD tests not run.",
+    "G2 ordinal36 source read only from local original, GitHub-only updates; original printed reptile lengths left for teacher and first-party numerical answers clearly distinguished. No StageD.",
+    "G2 ordinal37 read local original teacher HTML only, GitHub-only authoring, no invented published A-F rectangle lengths, four test files not executed.",
+    "Grade2 ordinal38 original local lesson read-only, all project writes GitHub; real classroom object lengths unasserted, authentic original diagrams not copied, D tests not run.",
+    "Ordinal39 local source teacher prep and lesson read-only, original A–G tape lengths explicitly sourced, GitHub-only writes, no tests/CI.",
+    "G2 ordinal40 U03 L06 original local teacher source only read from desktop; GitHub authoring preserves surprising compare words vs unknown roles, no real partner work claimed. Four tests unrun.",
+    "G2 ordinal41 source lesson archive read desktop only, GitHub writer only. Source notebook20/31cm example separated from real pupil measurement; four tests written unrun.",
+    "Ordinal42 local original lesson source read-only, all code writing on GitHub; triangle side between5 and6 with true physical endpoint not assumed, tests unrun.",
+    "G2 ordinal43 IM2021 original fish tape classroom measurements and Grade2 no formal abstract conversion constraint source reviewed; GitHub-only authoring closure, tests not run.",
+    "Grade2 ordinal44 local original teacher lesson read only, source true torn tape two original examples and four exact virtual practice families GitHub-only; tests written unrun.",
+    "G2 ordinal45 local original source ribbon start-unknown math validated by authoring and GitHub-only changes, tests written not executed.",
+    "G2 ordinal46 two-step sources read-only from local books, authoring GitHub-only, unit-specific chained equations plus 4 tests unrun.",
+    "G2 ordinal47 local book read-only, GitHub-only source guard and optional ruler/number puzzle features authored, StageD not executed.",
+    "Ordinal48 locally read teacher source; distinct original class data vs first-party numerical line plot, all GitHub writes, tests unrun.",
+    "G2 ordinal49 local book read-only, preserved original Group C 10cm mode vs 16cm longest and empty 11,15cm ticks; GitHub-only A–C, StageD unrun.",
+    "Ordinal50 original GroupB plant height data source reviewed local read-only, line plots25..35, four exact families, independent fictional data, four unrun test files GitHub-only.",
+    "G2 ordinal51 locally archived teacher source read-only, optional Stage1 creating plots, 8-item first-party not source dataset, four unexecuted regression files; GitHub writes only.",
+    "G2 ordinal52 2021 optional physical 36in yardstick with REAL 3x5in card, zero-aligned equal1in intervals, same physical desk, revised ruler and optional hand/forearm actual equations preserved; four tests written NOT EXECUTED, digital fictional calculations never certify physical measurements.",
+    "G2 ordinal53 CCSS2.MD.B.6 first source 0..10 missing labels3,4,6,7 and open-choice point tasks, second real 0..20 student line with dots3 and13 and teacher pair discussion. Four numeric exact families plus test files written, tests NOT EXECUTED, Stage D NOT STARTED.",
+    "Grade2 ordinal54 2.4.2 count-by5 and original 0..30 yarn + original 3 student image error analysis Stage A-C authored; image-specific Andre/Elena exact faults withheld from digital guesses; four exact families and four UNRUN test files; no StageD.",
+    "G2 ordinal55 IM2021 original U04 L03 unlabeled tick marks on number line upto100, SHAs guarded, true unit-distance from zero, some source diagrams image-only teacher, four exact families and four test files unrun; tests/CI/StageD NOT EXECUTED.",
+    "2026-10-22: strict consecutive Grade2 ordinals56–58 Stage A-B-C authored as a batch with independent first-party arithmetic; restricted original images, source player data, and physical outcomes teacher-only. 12 regression test files written UNRUN; no StageD/CI/production claim.",
+    "G2 original IM2021 ordinal59-61 batch complete A-B-C authored: source-number-line original direction and two models, protected student activities, 12 independent exact families/12 UNRUN tests, stageD NOT STARTED.",
+    "G2 ordinal62 U04 L10: A-C source-SHA-guarded, real-source teacher-only visuals/physical work; four exact shared-engine practice families and four regression files written UNRUN. No academic acceptance or Stage D.",
+    "G2 ordinal63 U04 L11: A-C source-SHA-guarded, real-source teacher-only visuals/physical work; four exact shared-engine practice families and four regression files written UNRUN. No academic acceptance or Stage D.",
+    "G2 ordinal64 U04 L12: A-C source-SHA-guarded, real-source teacher-only visuals/physical work; four exact shared-engine practice families and four regression files written UNRUN. No academic acceptance or Stage D.",
+    "G2 ordinal65 U04 L13: A-C source-SHA-guarded, real-source teacher-only visuals/physical work; four exact shared-engine practice families and four regression files written UNRUN. No academic acceptance or Stage D.",
+    "G2 ordinal66 original IM2021 A-B-C source-guarded, student page+four shared exact families, four regression tests written UNRUN.",
+    "G2 ordinal67 original IM2021 A-B-C source-guarded, student page+four shared exact families, four regression tests written UNRUN.",
+    "Grade2 ordinal68 source reviewed, teaching repaired and four first-party exact families authored; four tests written UNRUN; no academic approval or Stage D.",
+    "Grade2 ordinal69 source reviewed, teaching repaired and four first-party exact families authored; four tests written UNRUN; no academic approval or Stage D.",
+    "Grade2 ordinal70 source reviewed, teaching repaired and four first-party exact families authored; four tests written UNRUN; no academic approval or Stage D.",
+    "Ordinal71: source-specific original Unit5 2021 content, guarded six fields, first-party mathematical families, protected portal and four unrun written regression tests.",
+    "Ordinal72: source-specific original Unit5 2021 content, guarded six fields, first-party mathematical families, protected portal and four unrun written regression tests.",
+    "Ordinal73: source-specific original Unit5 2021 content, guarded six fields, first-party mathematical families, protected portal and four unrun written regression tests.",
+    "Ordinal74 IM2021 U05 L7, guarded exact source teaching, protected student page, four exact first-party families and four test files written UNRUN. Academic signoff absent.",
+    "Ordinal75 IM2021 U05 L8, guarded exact source teaching, protected student page, four exact first-party families and four test files written UNRUN. Academic signoff absent.",
+    "Ordinal76 IM2021 U05 L9, guarded exact source teaching, protected student page, four exact first-party families and four test files written UNRUN. Academic signoff absent.",
+    "Ordinal77 IM2021 U05 L10, guarded exact source teaching, protected student page, four exact first-party families and four test files written UNRUN. Academic signoff absent.",
+    "Grade2 original ordinal78 Unit5 lesson11 source guard and first-party separate 4 families, tests authored but NOT executed.",
+    "Grade2 original ordinal79 Unit5 lesson12 source guard and first-party separate 4 families, tests authored but NOT executed.",
+    "Grade2 original ordinal80 Unit5 lesson13 source guard and first-party separate 4 families, tests authored but NOT executed.",
+    "Grade2 original ordinal81 Unit5 lesson14 source guard and first-party separate 4 families, tests authored but NOT executed.",
+    "Ordinal82 Grade2 original U06 L1 A-C authoring with authentic human-visual boundary, 4 independent exact question families and 4 written UNRUN test files.",
+    "Ordinal146 IM2021 U09 L13 A-C authoring documented with 4 first-party exact questions, original student posters human-only and 4 UNRUN xUnit test files. Grade2 146/146 A-C authoring closed; NO StageD, CI, test execution, merge, deploy or academic acceptance.",
+    "2026-10-23 Stage D factual reconciliation on exact tested source c2e67c9: 15/15 GitHub CI green, 2,869 math tests passed, 146/146 named digital tests, 146/146 generic B001, 44/44 source-companion authenticated E2E GET+denial; academic approvals still 0/146. Earlier 'NOT_STARTED' and 'WRITTEN_NOT_EXECUTED' fields have been superseded with actual CI evidence, historical source notes retained."
+  ],
+  "lessonStatuses": [
+    {
+      "gradeOrdinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L01",
+      "sourceReview": "GRADE2_2021_PUBLIC_TEACHER_AND_STUDENT_HTML_REVIEWED_AND_FIRST_PARTY_ALTERNATIVES_AUTHORED",
+      "teaching": "COMPLETE_VERIFIED_SOURCE_ALIGNED_PREEXISTING_CORRECTION_AND_RICH_V2_VIEW",
+      "practice": "FOUR_NUMERIC_FAMILIES_EXPRESSION_CHECKER_INDEPENDENT_COOLDOWN_AND_STUDENT_UI_AUTHORED",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L02",
+      "sourceReview": "ORIGINAL_2021_TEACHER_STUDENT_FACING_HTML_REVIEWED_INDEPENDENT_COOLDOWN_TOWER_RENDERED",
+      "teaching": "SOURCE_GUARDED_RICH_V2_TEN_CUBE_SPECIFIC_TEACHING_COMPLETED",
+      "practice": "THREE_SOURCE_GOAL_FAMILIES_ORIGINAL_COOLDOWN_UI_TEACHER_RUBRIC_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L03",
+      "sourceReview": "ORIGINAL_TEACHER_STUDENT_TASKS_HTML_READ_INDEPENDENT_2021_MATH_GOAL_ASSESSMENT",
+      "teaching": "SOURCE_GUARDED_TWENTY_CUBE_RICH_V2_READER_COMPLETE",
+      "practice": "THREE_TWENTY_CUBE_FAMILIES_ORIGINAL_COOLDOWN_AND_STUDENT_VIEW_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L04",
+      "sourceReview": "ORIGINAL_PUBLIC_TEACHER_STUDENT_TASKS_AND_INDEPENDENT_COOLDOWN_COMPLETE",
+      "teaching": "GUARDED_HOW_CLOSE_RICH_V2_SOURCE_TUTORIAL_COMPLETE",
+      "practice": "THREE_OF_FIVE_MATH_EQUATION_CHECKER_AUTHENTICATED_COOLDOWN_TEACHER_RUBRIC_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L05",
+      "sourceReview": "ORIGINAL_2021_PUBLISHED_STUDENT_AND_TEACHER_TASKS_REVIEWED_EDULYTICS_COOLDOWN",
+      "teaching": "GUARDED_RICH_V2_SEVEN_CARD_50_GOAL_COMPLETED",
+      "practice": "OPTIMAL_FOUR_PHYSICAL_CARDS_TWO_TWO_DIGITS_INDEPENDENT_COOLDOWN_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L06",
+      "sourceReview": "PUBLIC_ORIGINAL_OPTIONAL_LESSON_HTML_A_COMPLETED",
+      "teaching": "STRICT_ORIGINAL_CENTERS_TEACHING_B_COMPLETED",
+      "practice": "INDEPENDENT_CARD_BOARD_WITH_GLOBAL_UNIQUE_CARD_GRADING_LEARNER_UI_AND_TEACHER_RUBRIC_C_COMPLETED",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L07",
+      "sourceReview": "ORIGINAL_2021_TEACHER_STUDENT_HTML_REVIEWED_REAL_CLASS_TRANSPORT_SURVEY",
+      "teaching": "STRICT_ORIGINAL_UNGROUPED_THEN_GROUPED_CLASS_DATA_RICH_V2_SOURCE_CORRECTION_COMPLETE",
+      "practice": "REAL_ANONYMOUS_CLASS_RESPONSES_FIRST_PARTY_DYNAMIC_PICTOGRAPH_INDEPENDENT_COOLDOWN_AND_TEACHER_RUBRIC_COMPLETE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L08",
+      "sourceReview": "IM2021_PUBLIC_TEACHER_PREPARATION_STUDENT_PICTOGRAPH_ACTIVITY_GOALS_REVIEWED",
+      "teaching": "SOURCE_ORIGINAL_PICTURE_GRAPH_KEY_CATEGORY_POPULATION_TEACHING_READY",
+      "practice": "THREE_EXACT_GRAPH_FAMILIES_PLUS_ORIGINAL_FIRST_PARTY_COOLDOWN_STUDENT_ENTRY_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L09",
+      "sourceReview": "ORIGINAL_PUBLIC_IM2021_FIELD_TRIP_AND_SEASONS_SOURCE_REVIEWED_INDEPENDENT_COOLDOWN",
+      "teaching": "SOURCE_PREVIOUS_BODY_AND_SCALE_PEDAGOGY_GUARDED_BAR_GRAPH_FIX_COMPLETE",
+      "practice": "THREE_BAR_COUNT_SCALE_FAMILIES_FIRST_PARTY_GRAPH_VIEW_AND_TEACHER_RUBRIC_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L10",
+      "sourceReview": "2021_PUBLIC_TEACHER_STUDENT_GRAPHS_CONSTRUCTION_WARMUP_TWO_ACTIVITIES_REVIEWED",
+      "teaching": "SOURCE_GUARDED_PLACEHOLDER_FREE_PICTURE_AND_BAR_GRAPH_PROSE_COMPLETE",
+      "practice": "THREE_EXACT_TABLE_TO_PICTURE_BAR_FAMILIES_AUTHENTICATED_STUDENT_CONSTRUCTION_AND_ORIGINAL_COOLDOWN_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L11",
+      "sourceReview": "IM2021_ORIGINAL_FOUR_STUDENT_WRITTEN_GRAPH_QUESTIONS_TWO_EACH_PARTNER_SOURCE_REVIEWED",
+      "teaching": "SIX_PREVIOUS_FIELDS_SOURCE_LOCKED_2021_L11_QUESTION_WRITING_PEDAGOGY_READY",
+      "practice": "THREE_QUESTION_COUNT_COMBINE_COMPARE_FAMILIES_PLUS_FOUR_ORIGINAL_QUESTION_AND_TEACHER_RUBRIC_UI_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L12",
+      "sourceReview": "2021_ORIGINAL_OPTIONAL_G2_L12_REAL_20_30_OBJECTS_THREE_CATEGORIES_SOURCE_REVIEWED",
+      "teaching": "SOURCE_PREDECESSOR_LOCKED_OPTIONAL_SORT_AND_DISPLAY_AND_CENTER_TEACHING_READY",
+      "practice": "TWO_BOUNDED_SAMPLE_NUMERIC_FAMILIES_GENUINE_COLLECTION_GRAPH_TWO_QUESTIONS_AUTHENTICATED_UI_TEACHER_RUBRIC_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L13",
+      "sourceReview": "2021_ORIGINAL_TWO_BAR_PETS_DOGS_COUNT_ON_BACK_WARMUP_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_LOCKED_COUNT_ON_BACK_AND_INVERSE_COMPARE_EQUATIONS_RICH_V2_DONE",
+      "practice": "THREE_UNKNOWN_DIFFERENCE_PLUS_ADDITION_SUBTRACTION_FAMILIES_AUTHENTICATED_FIRST_PARTY_BAR_GRAPHS_COOLDOWN_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L14",
+      "sourceReview": "ORIGINAL_IM2021_JUICE_AND_PARTY_TAPE_ACTIVITY_SOURCE_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_LOCKED_TAPE_UNKNOWN_DIFF_AND_GRAPH_TUTORIAL_COMPLETE",
+      "practice": "THREE_TAPE_FAMILIES_INDEPENDENT_VISUALS_AUTHENTICATED_STUDENT_COOLDOWN_TEACHER_RUBRIC_COMPLETE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L15",
+      "sourceReview": "IM2021_SHELL_DIEGO55_LIN20_FEWER_CARD_SORT_ALL_UNKNOWN_POSITIONS_REVIEWED",
+      "teaching": "SHA_AND_PREDECESSOR_GUARDED_SOURCE_ALL_COMPARE_TYPES_AND_EQUIVALENT_EQUATIONS_READY",
+      "practice": "THREE_UNKNOWN_POSITION_FAMILIES_FIRST_PARTY_TAPE_MATCHES_STUDENT_AUTH_AND_INDEPENDENT_COOLDOWN_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L16",
+      "sourceReview": "ORIGINAL_IM2021_LIBRARY_PR29_ANDRE8_MORE_AND_FOUR_THREE_READS_COMPARE_STORIES_REVIEWED",
+      "teaching": "SOURCE_SHA_AND_PREVIOUS_VERSION_GUARDED_MAKE_TEN_ALL_COMPARE_WITHIN100_COMPLETE",
+      "practice": "THREE_DIFFERENT_UNKNOWN_POSITIONS_AUTHENTICATED_SIX_STORY_UI_AND_FIRST_PARTY_COOLDOWN_COMPLETE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L17",
+      "sourceReview": "ORIGINAL_IM2021_G2_L17_100_TO120_GROUPS_FIVE_TEN_AND_FOUR_OPTIONAL_CENTERS_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_TENS_FIVES_AUTHENTIC_COLLECTION_RICH_V2_COMPLETE",
+      "practice": "FIVE_VIRTUAL_EXACT_FAMILIES_AUTHENTICATED_FIRST_PARTY_CENTER_CHOICE_AND_COOLDOWN_TEACHER_RUBRIC_READY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U01:L18",
+      "sourceReview": "ORIGINAL_IM2021_OPTIONAL_REAL_3_OR4_CATEGORY_SURVEY_PICTURE_OR_BAR_PEER_QUESTIONS_AND_TAPE_SOURCE_REVIEWED",
+      "teaching": "ORIGINAL_SOURCE_SHA_GUARDED_REAL_SURVEY_RICH_V2_REPAIRED_AND_STUDENT_READER_LINKED",
+      "practice": "AUTHENTICATED_THREE_OR_FOUR_CATEGORY_SURVEY_QUESTION_GRAPH_TAPE_UI_PLUS_FOUR_EXACT_FIRST_PARTY_FAMILIES_AND_INDEPENDENT_COOLDOWN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L01",
+      "sourceReview": "ORIGINAL_IM2021_SNACKS32_16_21_TRAIN46_22_PLACE_VALUE_NO_REGROUP_SOURCE_AND_MISMATCH_REVIEWED",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_EXACT_STUDENT_RICH_V2_WITH_CORRECT_NO_REGROUP_MATH",
+      "practice": "FOUR_EXACT_NO_REGROUP_SNACK_GRAPH_AND_CUBE_TRAIN_FAMILIES_STUDENT_UI_INDEPENDENT_COOLDOWN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L02",
+      "sourceReview": "ORIGINAL_IM2021_CHORAL97_BY_TEN_UNKNOWNS41_84_17_48_21_96_HAN_MAI_TOOLS_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_PREDECESSOR_GUARDED_PLACE_VALUE_BLOCKS_AND_INVERSE_ADDENDS_RICH_V2_COMPLETE",
+      "practice": "THREE_EXACT_COUNT_TENS_INVERSE_ADDEND_FAMILIES_AUTHENTICATED_STUDENT_UI_FIRST_PARTY_COOLDOWN_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 21,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L03",
+      "sourceReview": "ORIGINAL_IM2021_THREE_READS_BUS34_TO55_MONKEY65_23_BEAR58_27_BIRDS88_34_REVIEWED",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_TRUE_FOUR_ZOO_STORIES_AND_BASE_TEN_RICH_V2",
+      "practice": "FOUR_EXACT_NO_REGROUP_STORY_STRUCTURES_AUTHENTICATED_STUDENT_UI_TEACHER_RUBRIC_INDEPENDENT_COOLDOWN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 22,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L04",
+      "sourceReview": "ORIGINAL_IM2021_NUMBER_TALK_CAPTURE_STAGE3_AND_FIVE_ROW_STAGE6_INCLUDING_COMPOSING_TEN_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_CENTER_GAMES_CONTENT_CONTRADICTION_RESOLVED_RICH_V2",
+      "practice": "FOUR_EXACT_PLACE_VALUE_CAPTURE_COMPOSE_NONCOMPOSE_FAMILIES_AUTH_STUDENT_NUMERIC_COMPANION_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 23,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L05",
+      "sourceReview": "LOCAL_IM2021_SOURCE_PREPARATION_AND_LESSON_REVIEWED_82_MINUS9_DIEGO55_MINUS20_MINUS8",
+      "teaching": "EXACT_SOURCE_SHA_GUARDED_DECOMPOSE_ONE_TEN_RICH_V2",
+      "practice": "FOUR_EXACT_TEN_EXCHANGE_FAMILIES_AUTHENTICATED_STUDENT_VIEW_INDEPENDENT_COOLDOWN_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 24,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L06",
+      "sourceReview": "ORIGINAL_LOCAL_TEACHER_PREPARATION_LESSON_64_EQUIVALENCE_82_MINUS9_TARGET_NUMBERS_STAGE4",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_EXACT_COMPARATIVE_DIAGRAMS_RICH_V2",
+      "practice": "FOUR_EXACT_TENS_ONES_TARGET_STAGE4_NUMERIC_FAMILIES_AUTHENTICATED_STUDENT_FIRST_PARTY_COOLDOWN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 25,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L07",
+      "sourceReview": "ORIGINAL_LOCAL_2021_G2_U02_L07_46_MINUS28_93_MINUS54_GROUP_REAL_CARDS_REVIEWED",
+      "teaching": "PREDECESSOR_SHA_GUARDED_TWO_DIGIT_BORROW_SOURCE_EXACT_RICH_V2",
+      "practice": "FOUR_EXACT_TWO_DIGIT_TRADE_FAMILIES_AUTH_STUDENT_COMPANION_INDEPENDENT_EXIT_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 26,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L08",
+      "sourceReview": "ORIGINAL_LOCAL_2021_G2_U02_L08_NUMBER_TALK_LIN_CLARE_71_MINUS56_ANDRE_65_MINUS28_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_TRUE_TWO_DIGIT_REGROUPING_RICH_V2",
+      "practice": "FOUR_EXACT_SOURCE_COMPARATIVE_SUBTRACTION_FAMILIES_PROTECTED_STUDENT_PAGE_ORIGINAL_EXIT",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 27,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L09",
+      "sourceReview": "IM2021_LOCAL_G2_U02_L09_MIXED_ADD_SUBTRACT_SOURCE_27_PLUS47_55_MINUS27_36_PLUS38_82_MINUS39",
+      "teaching": "SHA_PREDECESSOR_SOURCE_GUARDED_MIXED_ARITHMETIC_RICH_V2",
+      "practice": "FOUR_EXACT_COMPOSE_DECOMPOSE_ADD_SUB_FAMILIES_PROTECTED_STUDENT_MATH_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 28,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L10",
+      "sourceReview": "ORIGINAL_LOCAL_SOURCE_IM2021_G2_U02_L10_THREE_DICE_TARGET_STAGE5_AND_CHOICE_CENTERS_REVIEWED",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_TRUE_OPTIONAL_STAGE5_RULE_CONFLICT_EXPLICIT_RICH_V2",
+      "practice": "FOUR_EXACT_THREE_DICE_NUMERIC_FAMILIES_AUTHENTICATED_STUDENT_COMPANION_NO_WINNER_CLAIM",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 29,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L11",
+      "sourceReview": "ORIGINAL_LOCAL_2021_G2_U02_L11_FOUR_SEED_STORY_TYPES_WITHIN50_REVIEWED",
+      "teaching": "ORIGINAL_SOURCE_SHA_PREDECESSOR_GUARDED_COMPARE_TAKEAWAY_PART_SMALLER_RICH_V2",
+      "practice": "FOUR_EXACT_SEED_STRUCTURES_WITHIN50_AUTHENTICATED_STUDENT_COMPANION_ORIGINAL_EXIT",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 30,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L12",
+      "sourceReview": "ORIGINAL_2021_G2_U02_L12_MANCALA_FOUR_54_16_TAPE_DIAGRAM_MATCHING_READ_LOCAL",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_ACTIVITY1_MATCH_NOT_SOLVE_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_MANCALA_RELATION_FAMILIES_PROTECTED_STUDENT_DIAGRAM_COMPANION",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 31,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L13",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U02_L13_LIN_ANDRE_DIEGO_NOAH_KIRAN_EQUATIONS_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_FOUR_UNKNOWN_POSITIONS_RICH_V2",
+      "practice": "FOUR_EXACT_START_CHANGE_TOTAL_PART_FAMILIES_WITH_PROTECTED_STUDENT_UI_AND_FIRST_PARTY_EXIT",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 32,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L14",
+      "sourceReview": "ORIGINAL_LOCAL_2021_TWO_STEP_ANDRE_PRIYA_MAI_KIRAN_SEEDS_REVIEWED",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_TRUE_TWO_STEP_STORIES_RICH_V2",
+      "practice": "FOUR_EXACT_THREE_ADDENDS_COMPARE_MISSING_PART_ADD_RESULT_STUDENT_ACTIVITIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 33,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L15",
+      "sourceReview": "LOCAL_IM2021_U02_L15_OPTIONAL_TAPE_STORIES_STAGE5_AND_COMPENSATION_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_OPTIONAL_SOURCE_TAPE_CENTER_RICH_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_TAPE_TOTAL_MISSING_COMPARE_COMPENSATE_NUMERIC_FAMILIES_STUDENT_AUTH",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 34,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U02:L16",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U02_L16_OPTIONAL_MARKET_100_INVENTORY_REAL_BUYER_SELLER_REPORT",
+      "teaching": "SHA_URL_PREDECESSOR_GUARDED_OPTIONAL_MARKET_INVENTORY_SOURCE_RICH_V2",
+      "practice": "FOUR_EXACT_STOCK_SALE_RESTOCK_FAMILIES_AUTHENTICATED_STUDENT_PAGE_ORIGINAL_EXIT_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 35,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L01",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U03_L01_40CM_RIBBON_STRAWS5_AND10_CM_CUBES",
+      "teaching": "ORIGINAL_SOURCE_SHA_PREDECESSOR_GUARDED_STANDARD_CM_UNITS_RICH_V2",
+      "practice": "FOUR_EXACT_CM_ITERATION_FAMILIES_PROTECTED_STUDENT_PHYSICAL_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 36,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L02",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U03_L02_BEARD_DRAGON_24CM_REPTILE_MEASUREMENT",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_TEN_CM_ROD_PLUS_CM_CUBES_RICH_V2",
+      "practice": "FOUR_EXACT_CENTIMETER_UNIT_AND_COMPARISON_FAMILIES_AUTHENTICATED_STUDENT_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 37,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L03",
+      "sourceReview": "ORIGINAL_IM2021_LOCAL_G2_U03_L03_RULER_MARKS0_25_SOURCE_RECTANGLES_A_F",
+      "teaching": "SHA_PREDECESSOR_GUARDED_RULER_TICK_0_TO25_SOURCE_RICH_V2",
+      "practice": "FOUR_EXACT_RULER_INTERVAL_COMPARE_JOIN_FAMILIES_PROTECTED_STUDENT_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 38,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L04",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_U03L04_A_B_D_4CM_C_WRONG_OBJECTS_5_30_50_90_CM_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_OLD_FIELDS_GUARDED_RULER_ZERO_ESTIMATE_RICH_V2",
+      "practice": "FOUR_EXACT_CM_INTERVAL_ESTIMATE_AND_ITERATION_FAMILIES_STUDENT_UI_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 39,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L05",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_U03_L05_REPTILE_TAPE_A58_B72_C44_D180_E336_F190_G282_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_SIX_FIELD_GUARDED_METERSTICK_EXACT_CM_CONVERSION_RICH_V2",
+      "practice": "FOUR_EXACT_METER_TAPE_FAMILIES_AUTHENTICATED_STUDENT_NUMERIC_COMPANION_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 40,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L06",
+      "sourceReview": "ORIGINAL_LOCAL_2021_G2_U03_L06_LIN_JADA_MAI_DIEGO_TWO_REVERSED_KEYWORDS_AND_A_B_REPTILES",
+      "teaching": "SHA_PREDECESSOR_GUARDED_SOURCE_REPTILE_COMPARE_STORIES_RICH_V2",
+      "practice": "FOUR_EXACT_COMPARISON_FAMILIES_SOURCE_EIGHT_REPTILES_AUTHENTICATED_STUDENT_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 41,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L07",
+      "sourceReview": "ORIGINAL_IM2021_LOCAL_G2_U03_L07_NUMBER_TALK_STAGE2_REAL_CM_ESTIMATE_MEASURE_MATH_STORIES_CHOICE",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_OPTIONAL_STAGE2_ESTIMATE_BEFORE_CM_MEASURING_RICH_V2",
+      "practice": "FOUR_EXACT_ORIGINAL_ILLUSTRATIVE_ABSOLUTE_GAP_FAMILIES_AUTHENTICATED_STUDENT_AND_REAL_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 42,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L08",
+      "sourceReview": "ORIGINAL_LOCAL_2021_G2_U03_L08_INCH_TILE_RULER_TWO_REAL_OBJECTS_AND_SOURCE_SHAPES",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_INCH_MEASURE_SOURCE_TRUE_WHOLE_NOT_HALF_RICH_V2",
+      "practice": "FOUR_EXACT_INCH_TILE_RULER_VIRTUAL_NEAREST_WHOLE_FAMILIES_AUTH_STUDENT_PHYSICAL_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 43,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L09",
+      "sourceReview": "ORIGINAL_LOCAL_G2_U03_L09_FISH_ESTIMATION_REAL_SOURCE_TAPE_A2_B4_C3_D2FT6_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_FEET_INCH_SOURCE_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_VIRTUAL_FEET_INCH_REPETITION_FAMILIES_AUTH_STUDENT_TEACHER_REAL_MEASUREMENT",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 44,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L10",
+      "sourceReview": "ORIGINAL_LOCAL_G2_U03_L10_TRUE_FALSE_JADA_HAN_2_TO10_LIN_DESK_16_TO34_REVIEWED",
+      "teaching": "PREDECESSOR_SHA_GUARDED_SOURCE_TRUE_NONZERO_RULER_MEASUREMENT_RICH_V2",
+      "practice": "FOUR_EXACT_NONZERO_RULER_INTERVAL_FAMILIES_AUTHENTICATED_STUDENT_VIRTUAL_EXAMPLES_TEACHER_ACTUAL_RULER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 45,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L11",
+      "sourceReview": "ORIGINAL_IM2021_G2_U03_L11_RIBBON_54_16_44_18_58_27_64_28_AND_START25_PLUS38_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_LOCKED_SAREE_TAPE_START_UNKNOWN_RICH_V2",
+      "practice": "FOUR_EXACT_RIBBON_STORY_STRUCTURES_AUTH_STUDENT_FIRST_PARTY_COOLDOWN_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 46,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L12",
+      "sourceReview": "LOCAL_ORIGINAL_G2_U03_L12_92_35_28_TWO_STEP_HAN_CLARE_ANDRE_MAI_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_FRIENDSHIP_TWO_STEP_RIBBON_RICH_V2",
+      "practice": "FOUR_EXACT_TWO_STEP_RIBBON_VARIANTS_AUTH_STUDENT_PAGE_INDEPENDENT_EXIT_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 47,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L13",
+      "sourceReview": "IM2021_LOCAL_G2_U03_L13_TARGET_MEASUREMENTS_STAGE1_NUMBER_PUZZLES_STAGE4",
+      "teaching": "ORIGINAL_SHA_PREDECESSOR_GUARDED_OPTIONAL_CENTER_RICH_V2",
+      "practice": "FOUR_EXACT_CM_IN_ABSOLUTE_MEASURE_ERRORS_PUZZLE_MISSING_FAMILIES_PROTECTED_STUDENT",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 48,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L14",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U03_L14_HANDSPAN_CLASS_LINEPLOT_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_NUMERIC_LINE_PLOT_RICH_V2",
+      "practice": "FOUR_EXACT_FICTIONAL_DATA_LINE_PLOT_FAMILIES_STUDENT_COMPANION_TEACHER_OBSERVATION",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 49,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L15",
+      "sourceReview": "ORIGINAL_LOCAL_IM2021_G2_U03_L15_PENCILS_GROUP_C_NONZERO_SCALE_REVIEWED",
+      "teaching": "SOURCE_SHA_AND_SIX_PREDECESSOR_GUARDED_PENCIL_LINEPLOT_RICH_V2",
+      "practice": "FOUR_EXACT_FICTIONAL_PENCIL_PLOT_FAMILIES_SOURCE_GROUPC_PROTECTED_STUDENT_VIEW",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 50,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L16",
+      "sourceReview": "LOCAL_IM2021_G2_U03_L16_SOURCE_GROUPB_HEIGHTS_25_TO35_AND_HAN_IMAGE_BOUNDARY_REVIEWED",
+      "teaching": "SOURCE_SHA_PREDECESSOR_GUARDED_GROUPB_NONZERO_LINE_PLOT_RICH_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_PLOT_FAMILIES_AUTHENTICATED_STUDENT_SOURCE_GROUPB_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 51,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L17",
+      "sourceReview": "LOCAL_IM2021_G2_U03_L17_OPTIONAL_REAL_MEASURE8_TWO_PARTNER_QUESTIONS_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_ORIGINAL_INCH_CM_LINE_PLOT_SOURCE_RICH_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_LE8_PLOT_FAMILIES_SECURE_STUDENT_REAL_SOURCE_TEACHER_RUBRIC",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 52,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U03:L18",
+      "sourceReview": "LOCAL_IM2021_G2_U03_L18_OPTIONAL_REAL_INDEX_CARD_3X5_YARDSTICK_36IN_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_ORIGINAL_3_AND_5_INCH_CARD_MEASUREMENT_RICH_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_MEASUREMENT_FAMILIES_STUDENT_AUTH_REAL_PAPER_AND_DESK_TEACHER_ONLY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 53,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L01",
+      "sourceReview": "LOCAL_IM2021_G2_U04_L01_NUMBER_LINE_SOURCE_0_10_0_20_REVIEWED",
+      "teaching": "SHA_GUARDED_ORIGINAL_NUMBER_LINE_ZERO_UNIT_INTERVAL_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_NUMBER_LINE_FAMILIES_SOURCE_POINT_OPEN_CHOICE_AND_PHYSICAL_TEACHER_ONLY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 54,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L02",
+      "sourceReview": "LOCAL_IM2021_G2_U04_L02_CHORAL_BY5_0_100_YARN_CLASS_0_30_AND_THREE_SOURCE_IMAGE_BOUNDS_REVIEWED",
+      "teaching": "SOURCE_SHA_SIX_FIELD_GUARDED_NUMBER_LINE_FEATURES_CLASSROOM_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_FIVE_COUNT_CARD_INTERVAL_AND_TICK_FAMILIES_PLUS_PROTECTED_REAL_TEACHER_ONLY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 55,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L03",
+      "sourceReview": "LOCAL_IM2021_G2_U04_L03_UNLABELED_TICKS_24_37_48_83_17_59_43_35_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_0_100_FIVE_TEN_LANDMARK_AND_TRUE_ONE_UNIT_LENGTH_RICH_V2",
+      "practice": "FOUR_EXACT_FIRST_PARTY_SPARSE_NUMBER_LINES_PLUS_TEACHER_ORIGINAL_IMAGE_PLACEMENTS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 56,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L04",
+      "sourceReview": "IM2021_G2_U04_L04_PUBLIC_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_SIX_FIELD_SOURCE_BOUND_NUMBER_LINE_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_FAMILIES_SOURCE_HUMAN_REVIEW_BOUND_ACTUAL_DICE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 57,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L05",
+      "sourceReview": "IM2021_G2_U04_L05_PUBLIC_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_SIX_FIELD_SOURCE_BOUND_NUMBER_LINE_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_FAMILIES_SOURCE_HUMAN_REVIEW_BOUND_OPEN_ESTIMATION",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 58,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L06",
+      "sourceReview": "IM2021_G2_U04_L06_PUBLIC_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_SIX_FIELD_SOURCE_BOUND_NUMBER_LINE_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_FAMILIES_SOURCE_HUMAN_REVIEW_BOUND_OPTIONAL_CENTERS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 59,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L07",
+      "sourceReview": "PUBLIC_IM2021_G2_U04_L07_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_SOURCE_DIRECTIONAL_NUMBER_LINE_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_NUMBER_LINE_FAMILIES_TEACHER_SOURCE_REVIEW_ONLY_7",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 60,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L08",
+      "sourceReview": "PUBLIC_IM2021_G2_U04_L08_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_SOURCE_DIRECTIONAL_NUMBER_LINE_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_NUMBER_LINE_FAMILIES_TEACHER_SOURCE_REVIEW_ONLY_8",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 61,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L09",
+      "sourceReview": "PUBLIC_IM2021_G2_U04_L09_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SHA_GUARDED_SOURCE_DIRECTIONAL_NUMBER_LINE_TEACHING_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_NUMBER_LINE_FAMILIES_TEACHER_SOURCE_REVIEW_ONLY_9",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 62,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L10",
+      "sourceReview": "IM2021_G2_U04_L10_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_SIX_FIELD_GUARDED_ORIGINAL_TEACHING",
+      "practice": "SHARED_ENGINE_FOUR_EXACT_FIRST_PARTY_FAMILIES_G2_U04_L10",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 63,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L11",
+      "sourceReview": "IM2021_G2_U04_L11_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_SIX_FIELD_GUARDED_ORIGINAL_TEACHING",
+      "practice": "SHARED_ENGINE_FOUR_EXACT_FIRST_PARTY_FAMILIES_G2_U04_L11",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 64,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L12",
+      "sourceReview": "IM2021_G2_U04_L12_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_SIX_FIELD_GUARDED_ORIGINAL_TEACHING",
+      "practice": "SHARED_ENGINE_FOUR_EXACT_FIRST_PARTY_FAMILIES_G2_U04_L12",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 65,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L13",
+      "sourceReview": "IM2021_G2_U04_L13_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "SOURCE_SHA_SIX_FIELD_GUARDED_ORIGINAL_TEACHING",
+      "practice": "SHARED_ENGINE_FOUR_EXACT_FIRST_PARTY_FAMILIES_G2_U04_L13",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 66,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L14",
+      "sourceReview": "IM2021_G2_U04_L14_SOURCE_REVIEWED",
+      "teaching": "SHA_SOURCE_SIX_FIELDS_GUARDED",
+      "practice": "FOUR_SHARED_SOURCE_SPECIFIC_EXACT_FAMILIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 67,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U04:L15",
+      "sourceReview": "IM2021_G2_U04_L15_SOURCE_REVIEWED",
+      "teaching": "SHA_SOURCE_SIX_FIELDS_GUARDED",
+      "practice": "FOUR_SHARED_SOURCE_SPECIFIC_EXACT_FAMILIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 68,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L01",
+      "sourceReview": "ORIGINAL_IM2021_G2_U05_L01_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_GRADE2_HUNDREDS_RICH_V2",
+      "practice": "FOUR_REAL_LESSON_SKILL_SPECIFIC_EXACT_FAMILIES_AND_TEACHER_SOURCE_BOUNDARY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 69,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L02",
+      "sourceReview": "ORIGINAL_IM2021_G2_U05_L02_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_GRADE2_HUNDREDS_RICH_V2",
+      "practice": "FOUR_REAL_LESSON_SKILL_SPECIFIC_EXACT_FAMILIES_AND_TEACHER_SOURCE_BOUNDARY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 70,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L03",
+      "sourceReview": "ORIGINAL_IM2021_G2_U05_L03_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_GRADE2_HUNDREDS_RICH_V2",
+      "practice": "FOUR_REAL_LESSON_SKILL_SPECIFIC_EXACT_FAMILIES_AND_TEACHER_SOURCE_BOUNDARY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 71,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L04",
+      "sourceReview": "PUBLIC_2021_IM_G2_U05_L4_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_RICH_PLACE_VALUE_V2",
+      "practice": "EXACT_SOURCE_SPECIFIC_NUMERIC_FAMILIES_PLUS_ACTUAL_PUBLISHER_TEACHER_BOUNDARY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 72,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L05",
+      "sourceReview": "PUBLIC_2021_IM_G2_U05_L5_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_RICH_PLACE_VALUE_V2",
+      "practice": "EXACT_SOURCE_SPECIFIC_NUMERIC_FAMILIES_PLUS_ACTUAL_PUBLISHER_TEACHER_BOUNDARY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 73,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L06",
+      "sourceReview": "PUBLIC_2021_IM_G2_U05_L6_REVIEWED",
+      "teaching": "SOURCE_SHA_GUARDED_RICH_PLACE_VALUE_V2",
+      "practice": "EXACT_SOURCE_SPECIFIC_NUMERIC_FAMILIES_PLUS_ACTUAL_PUBLISHER_TEACHER_BOUNDARY",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 74,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L07",
+      "sourceReview": "IM2021_G2_U05_L7_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_SIX_FIELDS_RICH_REPAIR",
+      "practice": "FOUR_AUTHENTIC_SKILL_SPECIFIC_FIRST_PARTY_EXACT_FAMILIES_REAL_PUBLISHER_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 75,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L08",
+      "sourceReview": "IM2021_G2_U05_L8_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_SIX_FIELDS_RICH_REPAIR",
+      "practice": "FOUR_AUTHENTIC_SKILL_SPECIFIC_FIRST_PARTY_EXACT_FAMILIES_REAL_PUBLISHER_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 76,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L09",
+      "sourceReview": "IM2021_G2_U05_L9_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_SIX_FIELDS_RICH_REPAIR",
+      "practice": "FOUR_AUTHENTIC_SKILL_SPECIFIC_FIRST_PARTY_EXACT_FAMILIES_REAL_PUBLISHER_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 77,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L10",
+      "sourceReview": "IM2021_G2_U05_L10_ORIGINAL_SOURCE_REVIEWED",
+      "teaching": "EXACT_SOURCE_SHA_SIX_FIELDS_RICH_REPAIR",
+      "practice": "FOUR_AUTHENTIC_SKILL_SPECIFIC_FIRST_PARTY_EXACT_FAMILIES_REAL_PUBLISHER_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 78,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L11",
+      "sourceReview": "IM2021_G2_U05_L11_PUBLIC_ORIGINAL_REVIEW",
+      "teaching": "SIX_FIELD_EXACT_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_SOURCE_SPECIFIC_EXACT_FIRST_PARTY_QUESTION_FAMILIES_AND_HUMAN_SOURCE_BOUNDARIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 79,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L12",
+      "sourceReview": "IM2021_G2_U05_L12_PUBLIC_ORIGINAL_REVIEW",
+      "teaching": "SIX_FIELD_EXACT_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_SOURCE_SPECIFIC_EXACT_FIRST_PARTY_QUESTION_FAMILIES_AND_HUMAN_SOURCE_BOUNDARIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 80,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L13",
+      "sourceReview": "IM2021_G2_U05_L13_PUBLIC_ORIGINAL_REVIEW",
+      "teaching": "SIX_FIELD_EXACT_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_SOURCE_SPECIFIC_EXACT_FIRST_PARTY_QUESTION_FAMILIES_AND_HUMAN_SOURCE_BOUNDARIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 81,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L14",
+      "sourceReview": "IM2021_G2_U05_L14_PUBLIC_ORIGINAL_REVIEW",
+      "teaching": "SIX_FIELD_EXACT_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_SOURCE_SPECIFIC_EXACT_FIRST_PARTY_QUESTION_FAMILIES_AND_HUMAN_SOURCE_BOUNDARIES",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 82,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L01",
+      "sourceReview": "IM2021_G2_U06_L01_SOURCE_TEXT_REVIEW_TEACHER_IMAGES_BOUNDARY",
+      "teaching": "SIX_FIELD_SOURCE_SHA_OUTCOME_GUARDED_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_FAMILIES_SEPARATE_FROM_REAL_SOURCE_HUMAN_REVIEW",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 83,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L02",
+      "sourceReview": "IM2021_G2_U06_L02_ORIGINAL_SOURCE_AND_OPEN_DRAWINGS_TEACHER_ONLY",
+      "teaching": "SOURCE_SHA_SIX_FIELD_RICH_V2",
+      "practice": "FOUR_INDEPENDENT_EXACT_SHAPE_FAMILIES_AND_HUMAN_ORIGINAL_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 84,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L03",
+      "sourceReview": "IM2021_G2_U06_L03_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 85,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L04",
+      "sourceReview": "IM2021_G2_U06_L04_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 86,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L05",
+      "sourceReview": "IM2021_G2_U06_L05_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 87,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L06",
+      "sourceReview": "IM2021_G2_U06_L06_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 88,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L07",
+      "sourceReview": "IM2021_G2_U06_L07_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 89,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L08",
+      "sourceReview": "IM2021_G2_U06_L08_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 90,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L09",
+      "sourceReview": "IM2021_G2_U06_L09_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 91,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L10",
+      "sourceReview": "IM2021_G2_U06_L10_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 92,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L11",
+      "sourceReview": "IM2021_G2_U06_L11_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 93,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L12",
+      "sourceReview": "IM2021_G2_U06_L12_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 94,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L13",
+      "sourceReview": "IM2021_G2_U06_L13_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 95,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L14",
+      "sourceReview": "IM2021_G2_U06_L14_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 96,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L15",
+      "sourceReview": "IM2021_G2_U06_L15_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 97,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L16",
+      "sourceReview": "IM2021_G2_U06_L16_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 98,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L17",
+      "sourceReview": "IM2021_G2_U06_L17_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 99,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L18",
+      "sourceReview": "IM2021_G2_U06_L18_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 100,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L19",
+      "sourceReview": "IM2021_G2_U06_L19_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 101,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L20",
+      "sourceReview": "IM2021_G2_U06_L20_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 102,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U06:L21",
+      "sourceReview": "IM2021_G2_U06_L21_SOURCE_REVIEW_AND_HUMAN_OPEN_EVIDENCE",
+      "teaching": "SIX_FIELD_EXACT_SHA_RICH_V2",
+      "practice": "FOUR_MATH_FAMILIES_TEACHER_OPEN_DRAWINGS",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": false,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 103,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L01",
+      "sourceReview": "IM2021_G2_U07_L01_PUBLIC_TASKS_HUMAN_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_EXACT_FIRSTPARTY_AND_PRIVATE_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 104,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L02",
+      "sourceReview": "IM2021_G2_U07_L02_PUBLIC_TASKS_HUMAN_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_EXACT_FIRSTPARTY_AND_PRIVATE_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 105,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L03",
+      "sourceReview": "IM2021_G2_U07_L03_PUBLIC_SOURCE_OPEN_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_EXACT_FIRSTPARTY_AND_PRIVATE_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 106,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L04",
+      "sourceReview": "IM2021_G2_U07_L04_PUBLIC_SOURCE_OPEN_METHODS",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_EXACT_FIRSTPARTY_AND_PRIVATE_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 107,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L05",
+      "sourceReview": "IM2021_G2_U07_L05_ORIGINAL_TASK_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_SEPARATE_OPEN_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 108,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L06",
+      "sourceReview": "IM2021_G2_U07_L06_ORIGINAL_TASK_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_EXACT_SEPARATE_OPEN_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 109,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L07",
+      "sourceReview": "IM2021_G2_U07_L07_SOURCE_TEXT_DIAGRAMS_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_SEPARATE_ORIGINAL_SOURCE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 110,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L08",
+      "sourceReview": "IM2021_G2_U07_L08_SOURCE_TEXT_DIAGRAMS_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SHA_GUARDED_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_SEPARATE_ORIGINAL_SOURCE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 111,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L09",
+      "sourceReview": "IM2021_G2_U07_L09_PUBLIC_AUTHENTIC_TASKS_AND_TEACHER_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_NUMERIC_HUMAN_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 112,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L10",
+      "sourceReview": "IM2021_G2_U07_L10_PUBLIC_AUTHENTIC_TASKS_AND_TEACHER_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_NUMERIC_HUMAN_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 113,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L11",
+      "sourceReview": "IM2021_G2_U07_L11_PUBLIC_AUTHENTIC_TASKS_AND_TEACHER_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_NUMERIC_HUMAN_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 114,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L12",
+      "sourceReview": "IM2021_G2_U07_L12_PUBLIC_AUTHENTIC_TASKS_AND_TEACHER_MEDIA",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_NUMERIC_HUMAN_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 115,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L13",
+      "sourceReview": "IM2021_G2_U07_L13_PUBLIC_ORIGINAL_DIAGRAMS_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_NUMERIC_PLUS_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 116,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L14",
+      "sourceReview": "IM2021_G2_U07_L14_PUBLIC_ORIGINAL_DIAGRAMS_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_NUMERIC_PLUS_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 117,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L15",
+      "sourceReview": "IM2021_G2_U07_L15_PUBLIC_ORIGINAL_DIAGRAMS_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_NUMERIC_PLUS_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 118,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L16",
+      "sourceReview": "IM2021_G2_U07_L16_PUBLIC_ORIGINAL_DIAGRAMS_TEACHER_ONLY",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRST_PARTY_NUMERIC_PLUS_SOURCE_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 119,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L17",
+      "sourceReview": "IM2021_G2_U07_L17_ACTUAL_SOURCE_OPEN_HUMAN",
+      "teaching": "SIX_FIELD_GUARDED_RICH_V2",
+      "practice": "FOUR_EXACT_FIRSTPARTY_SOURCE_ORIGINAL_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 120,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U07:L18",
+      "sourceReview": "IM2021_G2_U07_L18_ACTUAL_SOURCE_OPEN_HUMAN",
+      "teaching": "SIX_FIELD_GUARDED_RICH_V2",
+      "practice": "FOUR_EXACT_FIRSTPARTY_SOURCE_ORIGINAL_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 121,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L01",
+      "sourceReview": "IM2021_G2_U08_L01_PUBLISHER_SOURCE_ORIGINAL_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 122,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L02",
+      "sourceReview": "IM2021_G2_U08_L02_PUBLISHER_SOURCE_ORIGINAL_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 123,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L03",
+      "sourceReview": "IM2021_G2_U08_L03_PUBLISHER_SOURCE_ORIGINAL_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 124,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L04",
+      "sourceReview": "IM2021_G2_U08_L04_PUBLISHER_SOURCE_ORIGINAL_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 125,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L05",
+      "sourceReview": "IM2021_G2_U08_L05_HUMAN_OPEN_SOURCE",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 126,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L06",
+      "sourceReview": "IM2021_G2_U08_L06_HUMAN_OPEN_SOURCE",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 127,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L07",
+      "sourceReview": "IM2021_G2_U08_L07_HUMAN_OPEN_SOURCE",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 128,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L08",
+      "sourceReview": "IM2021_G2_U08_L08_PUBLIC_SOURCE_ARRAYS_TEACHER",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 129,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L09",
+      "sourceReview": "IM2021_G2_U08_L09_PUBLIC_SOURCE_ARRAYS_TEACHER",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 130,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L10",
+      "sourceReview": "IM2021_G2_U08_L10_PUBLIC_SOURCE_ARRAYS_TEACHER",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_MEDIA_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 131,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L11",
+      "sourceReview": "IM2021_G2_U08_L11_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_SOURCE_TEACHER_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 132,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L12",
+      "sourceReview": "IM2021_G2_U08_L12_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_SOURCE_TEACHER_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 133,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U08:L13",
+      "sourceReview": "IM2021_G2_U08_L13_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_SOURCE_TEACHER_OPEN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 134,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L01",
+      "sourceReview": "IM2021_G2_U09_L01_PUBLIC_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_OPEN_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 135,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L02",
+      "sourceReview": "IM2021_G2_U09_L02_PUBLIC_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_OPEN_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 136,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L03",
+      "sourceReview": "IM2021_G2_U09_L03_PUBLIC_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_OPEN_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 137,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L04",
+      "sourceReview": "IM2021_G2_U09_L04_PUBLIC_ORIGINAL_MEDIA_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_OPEN_TEACHER",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 138,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L05",
+      "sourceReview": "IM2021_G2_U09_L05_ORIGINAL_SOURCE_HUMAN",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 139,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L06",
+      "sourceReview": "IM2021_G2_U09_L06_ORIGINAL_SOURCE_HUMAN",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 140,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L07",
+      "sourceReview": "IM2021_G2_U09_L07_ORIGINAL_SOURCE_HUMAN",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 141,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L08",
+      "sourceReview": "IM2021_G2_U09_L08_ORIGINAL_SOURCE_HUMAN",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_ORIGINAL_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 142,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L09",
+      "sourceReview": "IM2021_G2_U09_L09_PUPIL_CREATED_STORY_TEACHER",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_AND_HUMAN_OPEN_SOURCE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 143,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L10",
+      "sourceReview": "IM2021_G2_U09_L10_PUPIL_CREATED_STORY_TEACHER",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_AND_HUMAN_OPEN_SOURCE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 144,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L11",
+      "sourceReview": "IM2021_G2_U09_L11_PUPIL_CREATED_STORY_TEACHER",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_AND_HUMAN_OPEN_SOURCE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 145,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L12",
+      "sourceReview": "IM2021_G2_U09_L12_PUPIL_CREATED_STORY_TEACHER",
+      "teaching": "SIX_FIELD_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_AND_HUMAN_OPEN_SOURCE",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    },
+    {
+      "gradeOrdinal": 146,
+      "lessonCode": "PED:US-CCSS-MATH:G2:U09:L13",
+      "sourceReview": "IM2021_G2_U09_L13_ORIGINAL_PERSONAL_STORY_POSTER_HUMAN",
+      "teaching": "SIX_FIELD_SOURCE_SHA_RICH_V2",
+      "practice": "FOUR_FIRSTPARTY_EXACT_STUDENT_ORIGINAL_HUMAN",
+      "tests": "REAL_NAMED_TESTS_PASSED_PLUS_FULL_MATHEMATICS_FOUNDATION_CI",
+      "aCStatus": "A_C_COMPLETED",
+      "stageD": "D_TESTS_PASSED",
+      "acceptance": "APPROVAL_PENDING",
+      "currentStageDEvidence": {
+        "testedSourceSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+        "namedDigitalTestsPassed": true,
+        "genericAuthenticatedPracticePassed": true,
+        "authenticatedSourceCompanionGET": true,
+        "academicAccepted": false,
+        "mathRunId": 39868577702
+      }
+    }
+  ],
+  "returnQueue": [],
+  "executionPolicy": {
+    "mode": "STRICT_ONE_LESSON_FULL_A_B_C_THEN_NEXT",
+    "startOrdinal": 1,
+    "allowedNextOrdinalRule": "A lesson N+1 is eligible only if ALL earlier lessons 1..N have documented READY_FOR_STAGE_D (A_C_COMPLETED) and independent source-aligned Stage A, Stage B, Stage C evidence.",
+    "completionLabel": "READY_FOR_STAGE_D",
+    "completionMeaning": "A_B_C_COMPLETED_AUTHORING_ONLY_NOT_STAGE_D_TESTED",
+    "cannotSkipOnExplicitGap": true,
+    "stageDAndCIExecutionAllowed": false,
+    "preexistingOutOfOrderDrafts": "L02-L08 edits exist but remain unverified and must be assessed afresh only when reached sequentially; never count as closed.",
+    "globalStaticPreflight": "DISCOVERY_ONLY_NOT_A_C_ACCEPTANCE",
+    "haltedAtFirstUnclosedLesson": false,
+    "blockerState": "GRADE2_A_C_AUTHORING_COMPLETED_STAGE_D_UNVERIFIED",
+    "independentCooldownAllowed": true,
+    "publisherRestrictedCooldownNotRequiredWhenIndependentSkillEquivalentAuthored": true,
+    "noLegacyACGapStatus": true,
+    "higherOrdinalsEligible": false
+  },
+  "currentStageDVerification": {
+    "state": "D_TESTS_PASSED",
+    "exactCandidateSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+    "reportAsOf": "2026-10-23",
+    "digitalNamedLessonCount": 146,
+    "digitalGenericPracticeE2ELessonCount": 146,
+    "originalLateCompanionE2ELessonCount": 44,
+    "newHumanAcademicApprovedLessonCount": 0,
+    "firstAcademicReviewOrdinalPending": 1,
+    "lastDigitalNamedTestOrdinal": 146,
+    "globalCI": {
+      "testedCandidateSHA": "c2e67c975af1c243e98a5a755a3e3e3459fd9774",
+      "workflows": 15,
+      "succeeded": 15,
+      "failed": 0,
+      "skipped": 0,
+      "pending": 0,
+      "fullRunUrl": "https://github.com/EIAS79/Edulytics/commit/c2e67c975af1c243e98a5a755a3e3e3459fd9774/checks",
+      "mathFoundation": {
+        "runId": 39868577702,
+        "passed": 2869,
+        "failed": 0,
+        "skipped": 0,
+        "workflowUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39868577702"
+      },
+      "authenticated": {
+        "workflowUrl": "https://github.com/EIAS79/Edulytics/actions/runs/undefined",
+        "technicalOnly": true,
+        "g2B001Lessons": 146,
+        "gradedAnswerAndMalformedRejectionPersists": true
+      },
+      "g2LateCompanions": {
+        "jobId": 120136950731,
+        "artifactId": 12466020894,
+        "lessonCount": 44,
+        "firstOrdinal": 103,
+        "lastOrdinal": 146,
+        "passedAuthenticatedStudentGet": 44,
+        "passedCrossSchoolDenial": 44,
+        "teacherOriginalTaskAcceptance": "NOT_EVALUATED"
+      },
+      "g1Regression": {
+        "runId": 39868577872,
+        "negativeControl": "SUCCESS",
+        "grade1AcademicReapproval": "NOT_REQUESTED"
+      },
+      "testedScope": "This exact GitHub Actions matrix verifies runtime/code + scoped Grade 2 digital E2E; never represents human/academic source/physical task approval."
+    },
+    "sequentialBatches": [
+      {
+        "batch": "D1",
+        "from": 1,
+        "to": 49,
+        "status": "D_TESTS_PASSED"
+      },
+      {
+        "batch": "D2",
+        "from": 50,
+        "to": 98,
+        "status": "D_TESTS_PASSED"
+      },
+      {
+        "batch": "D3",
+        "from": 99,
+        "to": 146,
+        "status": "D_TESTS_PASSED"
+      }
+    ],
+    "evidenceLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/stage-d-execution-ledger.json",
+    "independentReviewIssue": "https://github.com/EIAS79/Edulytics/issues/572",
+    "releasePermission": "NO_GO_UNVERIFIED__NOT_MERGED_NOT_DEPLOYED"
+  }
+}

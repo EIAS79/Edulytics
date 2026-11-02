@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 34,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L13",
+  "title": "Find the Area of Figures",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-2/lesson-13/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U02.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L13.json",
+  "stageA": {
+    "state": "THREE_2021_PDF_PAGES_FOUR_SVG_GEOMETRIES_PHOTO_CONTEXT_AND_TEACHER_PREPARATION_REVIEWED",
+    "originalAllVisualGeometryVerified": true,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Find the area of the T-shaped Figure 2 shown above. Count the equal unit intervals to infer its rectangle side lengths, split it without overlap, and enter the area with square units. Explain your reasoning.",
+      "answerType": "area-with-unit",
+      "expected": "32 square units"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-2/lesson-13/lesson.html",
+      "verified": "ORIGINAL_THREE_PAGE_2021_STUDENT_PDF_FOUR_SVG_GEOMETRIES_PHOTO_CONTEXT_TEACHER_PREPARATION_REVIEW",
+      "figurePixelsInspected": true
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: Extend Make a Ten (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-2/lesson-13/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Bye-Bye Squares (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-13/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: How Many Pavers Do We Need? (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-13/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-2/lesson-13/lesson.html",
+        "currentOneToOneStatus": "SEMANTICALLY_MAPPED",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json"
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Find the Area (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-2/lesson-13/lesson.html",
+        "currentOneToOneStatus": "FIRST_PARTY_GOAL_EQUIVALENT_ALTERNATIVE",
+        "reason": "See individual source elements in artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json"
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "A figure for finding area.",
+      "T-shaped figure. If split horizontally, 2 rectangles. Top, 8 tick marks by 3 tick marks. Bottom, 4 tick marks by 2 tick marks.",
+      "6-sided shape. Straight sides. All side lengths meet at right angles. Bottom, 3 ft. Right side rises 2 ft, then goes right 6 ft, up 4 ft. Top side length, 9 ft. Left side length, 6 ft.",
+      "Photograph of patio. Floor paved with square tiles."
+    ],
+    "originalElementsFullyOneToOneVerified": 26,
+    "originalStudentTaskPdfRead": true,
+    "allAvailablePublicTeacherInstructionsReviewed": true,
+    "protectedTeacherResponsesAndCoolDownRead": false
+  },
+  "stageB": {
+    "state": "GUARDED_PARTIAL_GRID_INTERVAL_AND_UNGRIDDED_AREA_RICH_V2_FIRST_PARTY_MODELS",
+    "learnerSourceCheck": {
+      "prompt": "Find the area of the T-shaped Figure 2 shown above. Count the equal unit intervals to infer its rectangle side lengths, split it without overlap, and enter the area with square units. Explain your reasoning.",
+      "answerType": "area-with-unit",
+      "expected": "32 square units"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s find the area of figures.",
+      "sourceLearningGoals": "Calculate the area of ungridded figures made of rectangles using multiplication and addition.",
+      "teachingSteps": [
+        "Use make-ten or place-value reasoning for113,123,243,253.",
+        "Ask what information is missing from an outline with no unit or lengths.",
+        "Infer side lengths from partial grid squares and boundary intervals; multiply non-overlapping rectangle areas.",
+        "Find Noah’s 42-paver count and42 ft² area using two splits.",
+        "Make and compare labelled displays, then solve the distinct ungridded Cool-down."
+      ],
+      "caution": "Do not confuse the44-square partial figure,32-square T-shape and42-ft² patio. Count intervals, exclude overlaps, and distinguish counts from square units.",
+      "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit2Lesson13RichV2"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l13-2021.rich-lesson-v2.json"
+  },
+  "stageC": {
+    "state": "DISTINCT_44_32_42_COUNT_AND_UNIT_AREAS_TEACHER_METHOD_RUBRIC_UNRUN_TESTS",
+    "firstPartyPractice": {
+      "prompt": "A separate first-party patio is made from two non-overlapping rectangles:8 ft by3 ft and4 ft by2 ft. How many pavers covering 1 ft² each are needed? Enter the count. Draw the parts and explain; this is a different patio from Noah’s.",
+      "answerType": "integer",
+      "expected": "32"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "New Edulytics ungridded figure: use the separately labelled Cool-down model above. Find its area, including square units. Show a non-overlapping decomposition and a matching expression, then explain another split.",
+      "answerType": "area-with-unit",
+      "expected": "35 square units"
+    },
+    "humanRubric": "Opening outline has no determined numerical area until a unit/measurements are supplied. Figure 1 has area44 square units; Figure 2 T-shape has32. Count intervals rather than short marks. Noah’s different patio requires42 one-ft² pavers and has42 ft² area, using 36+6 or18+24. Review inferred side lengths, non-overlap, labelled display, measurement choices, explanation and actual MLR7 partner/group comparison. Numeric results do not certify these tasks.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson13UngridAreaSourceTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": true
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": 100,
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false,
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "teacherOnlyAuthoredActivityRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "classroomTeacherEvidenceObserved": false,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-34-2021-source-to-first-party-evidence-20261024.json",
+    "basis": "STATIC_A_B_C_AUTHORING_NOT_EXECUTED_STAGE_D"
+  },
+  "sourcePdf": {
+    "pageCount": 3,
+    "bytes": 2294290,
+    "sha256": "a053c14ae90948cbb45ca7201d5a649d20806a0a0362181d182afc51d93a90db",
+    "unit": 2,
+    "lesson": 13,
+    "url": "https://cms-assets.illustrativemathematics.org/4l5vnfu1bzmx76uo8226vheh8ndx",
+    "allPagesRead": true,
+    "inspection": "ALL_THREE_ORIGINAL_2021_STUDENT_PDF_RENDERINGS_FOUR_ORIGINAL_SVG_GEOMETRIES_PHOTO_CONTEXT_AND_PUBLIC_TEACHER_PREPARATION_REVIEWED_READ_ONLY"
+  },
+  "matchingScope": "Distinct partial44-square, T32-square and Noah42-paver/42-ft² contracts; counts and unit-labelled areas separated. No determined numerical area for opening unlabelled outline. Inference/explanation/display/interaction require teacher review.",
+  "deferredStageDRequirements": [
+    "Compile .NET/Razor and execute this lesson’s new and affected shared contracts at grade freeze.",
+    "Inspect authenticated canonical teaching/companion rendering, first-party figures, accessibility and responsive behavior.",
+    "Verify valid/wrong/malformed submissions, tenant and anti-forgery boundaries and saved attempts in the existing authenticated flow.",
+    "Actual learner construction, explanations, teacher evaluation and classroom participation remain unobserved."
+  ]
+}

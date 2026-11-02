@@ -1,0 +1,21 @@
+name: Grade4 2021 lesson 105 focused ABC
+# Recheck explicit runtime routing after mathematical core passed
+on:
+  push:
+    branches:
+      - curriculum/g4-sequential-abc-20261026
+    paths:
+      - '.github/workflows/g4-2021-l105-focused.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lesson-105:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4Ordinal105PartialQuotientsRemainderTests --configuration Release --verbosity minimal

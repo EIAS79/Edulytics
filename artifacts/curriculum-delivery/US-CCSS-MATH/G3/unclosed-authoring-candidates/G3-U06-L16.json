@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 113,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L16",
+  "unitNumber": 6,
+  "lessonNumber": 16,
+  "title": "Design a Carnival Game (optional)",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-6/lesson-16/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-16/lesson.html",
+  "stageA": {
+    "status": "2021_LOCAL_OPTIONAL_GAME_SOURCE_WARMUP_AND_STUDENT_TASKS_READ_WITH_TWO_OF_FOUR_CONSTRAINTS",
+    "goals": "Apply knowledge of measurement and operations to design a game.",
+    "sourceHeadingsCount": 3,
+    "originalImageDescriptionsCount": 0,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false
+  },
+  "stageB": {
+    "status": "FIRSTPARTY_OPTIONAL_GAME_PLAY_AND_MATH_REDESIGN_RICHV2",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U06:L16",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "7d649f657cdcce0420737c9903f93059763bd6e3e6c9a4ca8fda16f439c7a6c0",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": true,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l16-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson16.cshtml"
+  },
+  "stageC": {
+    "status": "GAME_REDESIGN_SOURCE_CONSTRAINT_TESTS_AND_TEACHER_RUBRIC_WRITTEN_UNRUN",
+    "family": "carnival-project",
+    "practiceAnswerType": "teacher",
+    "coolDownAnswerType": "teacher",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Create Your Own Carnival Game with your teacher. Show the representation and explain how it meets the goal: Let’s design a carnival game.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson16CarnivalGameTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U06-L16-HEADING-01",
+      "sourceSection": "Warm-up: Notice and Wonder: Carnival Games (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-6/lesson-16/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_PUBLIC_LOCAL_OPTIONAL_GAME_AUTHORING",
+      "grading": "TEACHER_GAME_MODEL",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U06-L16-HEADING-02",
+      "sourceSection": "Activity 1: Create Your Own Carnival Game (45 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-6/lesson-16/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_PUBLIC_LOCAL_OPTIONAL_GAME_AUTHORING",
+      "grading": "TEACHER_GAME_MODEL",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U06-L16-HEADING-03",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-6/lesson-16/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_PUBLIC_LOCAL_OPTIONAL_GAME_AUTHORING",
+      "grading": "TEACHER_GAME_MODEL",
+      "claimedParity": false
+    }
+  ],
+  "images": [],
+  "sourceElementCounts": {
+    "headings": 3,
+    "imageDescriptions": 0,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Explain how to test a new carnival-game measurement and justify the scoring system.",
+    "answerType": "teacher",
+    "expected": null
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original publisher student PDF not inspected locally.",
+    "Original three images with empty alt text not visually/pixel verified or copied.",
+    "Classroom physical game testing and math redesign teacher-evaluated, not a fixed automatic answer.",
+    "No original publisher Cool-down for this optional lesson listed in local source.",
+    "Tests, CI, Stage D, approval, merge and deployment not performed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "8b6242caaa64209b52d046393ab321dd9655b619ca84b566646dc7434132fb81",
+  "originalPreparationHtmlSHA256": "a4960ca9ca0c24de4a4b90d83505feb0044efa4253ae211d14bdd35df8c8f485",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-113-2021-optional-game-source-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-113-optional-game-teacher-rubric-20261025.json"
+}

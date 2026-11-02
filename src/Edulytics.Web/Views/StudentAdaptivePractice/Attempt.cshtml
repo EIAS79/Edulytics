@@ -1,0 +1,792 @@
+@using System.Globalization
+@using System.Text.RegularExpressions
+@using Edulytics.Core.AdaptivePractice
+@using Edulytics.Core.Mathematics.Practice
+@using Edulytics.Services.AdaptivePractice
+@using Edulytics.Web.Presentation
+@model AdaptivePracticeSessionView
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject AdaptivePracticeV2Policy AdaptivePolicy
+@{
+    Layout = "_StudentLayout";
+
+    var locale =
+        CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var lessonTitle =
+        ViewData["LessonTitle"]?.ToString() ?? "Mathematics";
+    var unitTitle =
+        ViewData["LessonUnitTitle"]?.ToString() ?? string.Empty;
+    ViewData["Title"] = lessonTitle;
+
+    var review =
+        ViewData["AdaptiveReview"] as AdaptivePracticeReviewView;
+    var isReview = review is not null;
+    var question =
+        review?.Question ?? Model.CurrentQuestion;
+    var displaySequence =
+        review?.Question.Sequence ??
+        (Model.IsCompleted
+            ? Model.TargetQuestionCount
+            : Model.CurrentSequence);
+    var answeredCount =
+        review?.Question.Sequence ??
+        (Model.IsCompleted
+            ? Model.TargetQuestionCount
+            : Math.Max(0, Model.CurrentSequence - 1));
+    var progress = Model.TargetQuestionCount <= 0
+        ? 0d
+        : Math.Min(
+            100d,
+            answeredCount * 100d /
+            Model.TargetQuestionCount);
+
+    LessonPracticeInteractionContract? interaction = null;
+    if (!string.IsNullOrWhiteSpace(
+            question?.GenerationFamily))
+    {
+        LessonPracticeInteractionRegistry.TryResolve(
+            question.GenerationFamily,
+            out interaction);
+    }
+
+    var visualSvg = question is null
+        ? null
+        : PracticeMathVisualRenderer.RenderSvg(
+            question.GenerationFamily,
+            question.GenerationParametersJson);
+
+    var authoredTaskKind = question?.GenerationFamily switch
+    {
+        "usccss.t001.g1.write_dot_expression" => "expression",
+        "usccss.t001.g1.construct_tool_sort" => "sort",
+        "usccss.t001.g1.collect_survey_graph" => "survey",
+        _ => null
+    };
+
+    var isConstructShapeGraph = string.Equals(question?.GenerationFamily,
+        "usccss.t001.g1.construct_shape_graph", StringComparison.Ordinal);
+    var prompt = question?.Prompt ?? string.Empty;
+    var optionMatches = Regex.Matches(
+        prompt,
+        @"(?<![A-Za-z0-9])([A-D])\)\s*",
+        RegexOptions.CultureInvariant);
+
+    var isPromptMultipleChoice =
+        question is not null &&
+        optionMatches.Count >= 2 &&
+        optionMatches[0].Index > 0;
+
+    var stem = isPromptMultipleChoice
+        ? prompt[..optionMatches[0].Index].Trim()
+        : prompt;
+
+    var choices = new List<(string Label, string Value)>();
+    if (isPromptMultipleChoice)
+    {
+        for (var index = 0;
+             index < optionMatches.Count;
+             index++)
+        {
+            var match = optionMatches[index];
+            var start = match.Index + match.Length;
+            var end = index + 1 < optionMatches.Count
+                ? optionMatches[index + 1].Index
+                : prompt.Length;
+            var value = prompt[start..end].Trim();
+
+            if (value.Length > 0)
+            {
+                choices.Add(
+                    (match.Groups[1].Value, value));
+            }
+        }
+
+        isPromptMultipleChoice =
+            choices.Count >= 2;
+    }
+
+    var feedbackKind =
+        review is not null
+            ? review.IsCorrect
+                ? "correct"
+                : "incorrect"
+            : TempData["PracticeFeedback"]?.ToString();
+    var feedbackSolution =
+        review?.Feedback ??
+        TempData["PracticeSolution"]?.ToString();
+
+    var reviewAnswer =
+        review?.SubmittedAnswer ?? string.Empty;
+    var retryAnswer =
+        TempData["PracticeSubmittedAnswer"]?.ToString() ?? string.Empty;
+    var isRetryFeedback =
+        !isReview &&
+        string.Equals(
+            feedbackKind,
+            "incorrect",
+            StringComparison.OrdinalIgnoreCase);
+
+    var baselineGuidance =
+        Edulytics.Web.GameRouting.LessonPracticeHintResolver.Resolve(
+            question?.GenerationFamily,
+            question?.GenerationParametersJson,
+            locale);
+
+    var guidanceText =
+        !string.IsNullOrWhiteSpace(question?.RemediationHint)
+            ? question.RemediationHint!
+            : baselineGuidance;
+
+    var workedExample =
+        question?.WorkedExample;
+
+    var practiceLabel = locale switch
+    {
+        "pl" => "Ćwiczenie Edulytics",
+        "ar" => "تدريب Edulytics",
+        _ => "Edulytics Practice"
+    };
+
+    var missionLabel = locale switch
+    {
+        "pl" => "TWOJE ZADANIE",
+        "ar" => "مهمتك",
+        _ => "YOUR MISSION"
+    };
+
+    var confirmationLabel = locale switch
+    {
+        "pl" => "NIEZALEŻNE POTWIERDZENIE",
+        "ar" => "تأكيد مستقل",
+        _ => "FRESH CONFIRMATION"
+    };
+
+    var retryLabel = locale switch
+    {
+        "pl" => "Spróbuj ponownie",
+        "ar" => "حاول مرة أخرى",
+        _ => "Try again"
+    };
+
+    var remediationLabel = locale switch
+    {
+        "pl" => "Wskazówka naprawcza",
+        "ar" => "مساعدة علاجية",
+        _ => "Guided remediation"
+    };
+
+    var nextLabel = locale switch
+    {
+        "pl" => "Dalej",
+        "ar" => "التالي",
+        _ => "Next"
+    };
+
+    var correctLabel =
+        S["PracticeCorrect"].Value;
+    var incorrectLabel =
+        S["PracticeIncorrect"].Value;
+
+    var eddyMessage =
+        feedbackKind == "correct"
+            ? string.IsNullOrWhiteSpace(feedbackSolution)
+                ? correctLabel
+                : $"{correctLabel}: {feedbackSolution}"
+            : feedbackKind == "incorrect"
+                ? string.IsNullOrWhiteSpace(feedbackSolution)
+                    ? $"{incorrectLabel}. {retryLabel}."
+                    : isReview
+                        ? $"{incorrectLabel}: {feedbackSolution}"
+                        : $"{incorrectLabel}: {feedbackSolution} {retryLabel}."
+                : question is not null &&
+                  string.Equals(
+                      question.RemediationStageCode,
+                      AdaptiveRemediationStageCodes.TargetedRetry,
+                      StringComparison.Ordinal)
+                    ? $"{remediationLabel}: {guidanceText}"
+                    : question?.IsIndependentConfirmation == true
+                        ? confirmationLabel
+                        : !string.IsNullOrWhiteSpace(workedExample)
+                            ? $"{remediationLabel}: {workedExample}"
+                            : guidanceText;
+}
+
+@section Head {
+    <link rel="stylesheet"
+          href="~/css/game-workspace-v1.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/curriculum-workspace-runtime.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/eddy-overlap-v1.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/practice-unified-ui-v2.css"
+          asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-shape-chart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-authored-practice.css" asp-append-version="true" />
+    <style>
+        .adaptive-gw-shell {
+            display: grid;
+            gap: 14px;
+            width: min(1280px, 100%);
+            margin: 0 auto;
+        }
+
+        .adaptive-gw-shell .gw-game {
+            min-height: 585px !important;
+        }
+
+        .adaptive-gw-shell .gw-stage {
+            min-height: 440px !important;
+            padding-bottom: 138px !important;
+        }
+
+        .adaptive-gw-shell .lp-server-card {
+            display: grid;
+            place-items: center;
+            gap: 20px;
+            width: min(920px, 100%);
+            min-height: 235px;
+            margin: 0 auto;
+            padding: 18px 22px 28px;
+            border: 0;
+            background: transparent;
+        }
+
+        .adaptive-gw-shell .lp-server-visual {
+            width: min(620px, 100%);
+            margin: 0 auto 16px;
+            padding: 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.95);
+            color: #123547;
+        }
+
+        .adaptive-gw-shell .lp-server-visual svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 330px;
+        }
+
+        .adaptive-gw-shell .lp-server-form {
+            display: grid;
+            gap: 12px;
+            justify-items: center;
+            width: min(760px, 100%);
+        }
+
+        .adaptive-gw-shell .lp-server-input {
+            width: min(430px, 100%);
+            min-height: 56px;
+            border: 3px solid rgba(255,212,95,.92);
+            border-radius: 16px;
+            background: #fff;
+            color: #173543;
+            padding: 10px 18px;
+            text-align: center;
+            font-size: 1.65rem;
+            font-weight: 900;
+            outline: none;
+        }
+
+        .adaptive-gw-shell .lp-server-input:focus {
+            box-shadow: 0 0 0 5px rgba(255,212,95,.2);
+        }
+
+        .adaptive-gw-shell .gw-mission {
+            width: min(820px, calc(100% - 24px)) !important;
+            margin-bottom: 16px !important;
+        }
+
+        .adaptive-gw-shell .gw-eddy {
+            width: min(760px, calc(100% - 48px)) !important;
+            min-height: 96px !important;
+            padding-right: 22px !important;
+        }
+
+        .adaptive-gw-shell .gw-eddy p {
+            max-width: 58ch;
+            line-height: 1.4;
+        }
+
+        .adaptive-gw-shell .lp-server-choice-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .adaptive-gw-shell .lp-server-form[data-submitting="true"] {
+            opacity: .78;
+        }
+
+        .adaptive-gw-shell .lp-server-form[data-submitting="true"] button[type="submit"] {
+            pointer-events: none;
+            cursor: wait;
+        }
+
+        .adaptive-gw-shell .lp-server-choice {
+            min-width: 126px;
+            border: 2px solid rgba(255,255,255,.68);
+            border-radius: 18px;
+            padding: 13px 18px;
+            background: linear-gradient(180deg,#fff2cf,#ead8ad);
+            color: #173c47;
+            font-size: 1.05rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 5px 0 rgba(111,85,39,.68);
+        }
+
+        .adaptive-gw-shell .lp-server-choice.is-selected {
+            outline: 4px solid rgba(113,224,196,.52);
+            background: linear-gradient(180deg,#d8ffe7,#8fe5b0);
+        }
+
+        .adaptive-gw-shell .lp-server-choice:has(input:disabled) {
+            cursor: default;
+            opacity: 1;
+        }
+
+        .adaptive-review-form {
+            display: grid;
+            gap: 12px;
+            justify-items: center;
+            width: min(760px, 100%);
+        }
+
+        .adaptive-feedback {
+            width: min(100%, 1180px);
+            margin: 0 auto;
+            padding: 13px 16px;
+            border-radius: 16px;
+            font-weight: 850;
+        }
+
+        .adaptive-feedback--ok {
+            color: #155c4a;
+            background: #e8faf3;
+            border: 1px solid #b3ead7;
+        }
+
+        .adaptive-feedback--bad {
+            color: #8a3028;
+            background: #fff1ef;
+            border: 1px solid #f1bbb4;
+        }
+
+        .adaptive-worked-example {
+            width: min(920px, 100%);
+            margin: 0 auto 8px;
+            padding: 16px 18px;
+            border: 1px solid rgba(255,212,95,.42);
+            border-radius: 18px;
+            background: rgba(255,244,203,.10);
+            color: #fff3c2;
+            line-height: 1.55;
+        }
+
+        .adaptive-worked-example strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #ffe18b;
+        }
+
+        .adaptive-remediation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255,212,95,.16);
+            color: #ffe18b;
+            border: 1px solid rgba(255,212,95,.34);
+            font-size: .78rem;
+            font-weight: 900;
+        }
+
+        .adaptive-complete {
+            width: min(560px,100%);
+            margin: 28px auto;
+            padding: 32px;
+            text-align: center;
+            border-radius: 26px;
+            background: rgba(4,28,45,.84);
+            color: #fff;
+        }
+
+        .adaptive-complete img {
+            width: 92px;
+            height: 92px;
+            object-fit: contain;
+        }
+
+        .adaptive-complete-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        @@media (max-width: 720px) {
+            .adaptive-gw-shell .gw-game {
+                min-height: 680px !important;
+            }
+
+            .adaptive-gw-shell .lp-server-card {
+                padding-inline: 12px;
+            }
+        }
+    </style>
+}
+
+<section class="adaptive-gw-shell"
+         data-practice-retry-feedback="@(isRetryFeedback ? "true" : "false")">
+    @if (TempData["Error"] is string error)
+    {
+        <div class="adaptive-feedback adaptive-feedback--bad"
+             role="alert">@error</div>
+    }
+
+    <section class="gw-game gw-universal"
+             aria-label="@practiceLabel">
+        <div class="gw-hud">
+            <div class="gw-brand">
+                <div class="gw-brand-mark"
+                     aria-hidden="true">◆</div>
+                <div>
+                    <strong>EDULYTICS PRACTICE</strong>
+                    <small>@unitTitle</small>
+                </div>
+            </div>
+
+            <div class="gw-hud-right">
+                <span class="gw-pill">
+                    @displaySequence
+                    /
+                    @Model.TargetQuestionCount
+                </span>
+                <button class="gw-icon"
+                        type="button"
+                        data-practice-sound
+                        aria-label="Sound"
+                        aria-pressed="true">🔊</button>
+            </div>
+        </div>
+
+        <div class="gw-progress"
+             role="progressbar"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="@progress">
+            <span style="width:@progress%"></span>
+        </div>
+
+        <div class="gw-stage">
+            @if (Model.IsPaused && !isReview)
+            {
+                <section class="adaptive-complete"
+                         data-practice-terminal>
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt="" />
+                    <h2>Practice safely paused</h2>
+                    <p>Your latest learning evidence was saved. Please try again later.</p>
+                    <div class="adaptive-complete-actions">
+                        <a class="gw-primary"
+                           asp-controller="StudentPortal"
+                           asp-action="Lesson"
+                           asp-route-id="@Model.LessonId">Back to lesson</a>
+                    </div>
+                </section>
+            }
+            else if (Model.IsCompleted && !isReview)
+            {
+                <section class="adaptive-complete"
+                         data-practice-terminal>
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt="" />
+                    <h2>@S["PracticeFinish"]</h2>
+                    <p>Your answers and learning evidence have been saved.</p>
+                    <div class="adaptive-complete-actions">
+                        <a class="gw-primary"
+                           asp-controller="StudentPortal"
+                           asp-action="Lesson"
+                           asp-route-id="@Model.LessonId">Back to lesson</a>
+                        @if (AdaptivePolicy.EnableQuestionLog)
+                        {
+                            <a class="gw-primary"
+                               asp-controller="StudentAdaptiveIntelligence"
+                               asp-action="QuestionLog">Question log</a>
+                        }
+                    </div>
+                </section>
+            }
+            else if (question is not null)
+            {
+                <div class="gw-mission">
+                    <span>
+                        @(question.IsIndependentConfirmation
+                            ? confirmationLabel
+                            : missionLabel)
+                        · @question.Sequence / @Model.TargetQuestionCount
+                    </span>
+                    <strong data-practice-question>@stem</strong>
+                    <small>@unitTitle</small>
+                    @if (string.Equals(
+                            question.RemediationStageCode,
+                            AdaptiveRemediationStageCodes.TargetedRetry,
+                            StringComparison.Ordinal))
+                    {
+                        <div class="adaptive-remediation-badge">
+                            @remediationLabel · one retry of this item
+                        </div>
+                    }
+                    else if (string.Equals(
+                        question.RemediationStageCode,
+                        AdaptiveRemediationStageCodes.ScaffoldedRecovery,
+                        StringComparison.Ordinal))
+                    {
+                        <div class="adaptive-remediation-badge">
+                            @remediationLabel · fresh recovery item
+                        </div>
+                    }
+                </div>
+
+                @if (!string.IsNullOrWhiteSpace(workedExample))
+                {
+                    <aside class="adaptive-worked-example"
+                           data-practice-scaffold
+                           role="note">
+                        <strong>@remediationLabel</strong>
+                        <span>@workedExample</span>
+                    </aside>
+                }
+
+                <section class="gw-runtime-board lp-server-card">
+                    @if (!string.IsNullOrWhiteSpace(visualSvg))
+                    {
+                        <div class="lp-server-visual">
+                            @Html.Raw(visualSvg)
+                        </div>
+                    }
+
+                    @if (isReview)
+                    {
+                        <div class="adaptive-review-form"
+                             data-practice-review>
+                            @if (authoredTaskKind is not null)
+                            {
+                                <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                     data-t001-source="@stem" data-t001-locale="@locale"
+                                     data-t001-readonly="true" data-t001-initial="@reviewAnswer"></div>
+                            }
+                            else if (isConstructShapeGraph)
+                            {
+                                <div class="t001-shape-chart" data-t001-shape-chart
+                                     data-t001-readonly="true" data-t001-locale="@locale"
+                                     data-t001-initial="@reviewAnswer"></div>
+                            }
+                            else if (isPromptMultipleChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     role="radiogroup"
+                                     aria-label="@S["YourAnswer"]"
+                                     aria-readonly="true">
+                                    @foreach (var choice in choices)
+                                    {
+                                        var selected =
+                                            string.Equals(
+                                                choice.Value,
+                                                reviewAnswer,
+                                                StringComparison.OrdinalIgnoreCase);
+                                        <label class="lp-server-choice @(selected ? "is-selected" : null)">
+                                            <input type="radio"
+                                                   name="review-answer"
+                                                   value="@choice.Value"
+                                                   checked="@selected"
+                                                   disabled />
+                                            <span>@choice.Label) @choice.Value</span>
+                                        </label>
+                                    }
+                                </div>
+                            }
+                            else if (
+                                interaction?.InteractionKind ==
+                                LessonPracticeInteractionKind.RelationChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     role="radiogroup"
+                                     aria-label="@S["YourAnswer"]"
+                                     aria-readonly="true">
+                                    @foreach (var relation in new[] { "<", "=", ">" })
+                                    {
+                                        var selected =
+                                            string.Equals(
+                                                relation,
+                                                reviewAnswer,
+                                                StringComparison.Ordinal);
+                                        <label class="lp-server-choice @(selected ? "is-selected" : null)">
+                                            <input type="radio"
+                                                   name="review-answer"
+                                                   value="@relation"
+                                                   checked="@selected"
+                                                   disabled />
+                                            <span>@relation</span>
+                                        </label>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <input id="lesson-practice-answer"
+                                       class="lp-server-input"
+                                       value="@reviewAnswer"
+                                       readonly
+                                       aria-readonly="true"
+                                       aria-label="@S["YourAnswer"]" />
+                            }
+
+                            <a class="gw-primary"
+                               asp-controller="StudentPractice"
+                               asp-action="AdaptiveLessonAttempt"
+                               asp-route-id="@Model.SessionId"
+                               data-practice-next>
+                                @nextLabel
+                            </a>
+                        </div>
+                    }
+                    else if (interaction is null)
+                    {
+                        <div class="gw-error">
+                            This Practice interaction is not available.
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-action="AnswerAdaptiveLessonAttempt"
+                              asp-route-id="@Model.SessionId"
+                              method="post"
+                              class="lp-server-form"
+                              data-adaptive-answer-form>
+                            @Html.AntiForgeryToken()
+                            <input type="hidden"
+                                   name="sequence"
+                                   value="@question.Sequence" />
+
+                            @if (authoredTaskKind is not null)
+                            {
+                                <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                     data-t001-source="@stem" data-t001-locale="@locale"
+                                     data-t001-readonly="false" data-t001-initial="@retryAnswer"><noscript>Enable JavaScript to complete the activity.</noscript></div>
+                                <input type="hidden" name="answer" value="" data-t001-authored-answer />
+                                <button class="gw-primary" type="submit" data-t001-authored-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isConstructShapeGraph)
+                            {
+                                <div class="t001-shape-chart" data-t001-shape-chart
+                                     data-t001-locale="@locale" data-t001-initial="@retryAnswer">
+                                    <noscript>Enable JavaScript to construct your graph.</noscript>
+                                </div>
+                                <input type="hidden" name="answer" value="" data-t001-shape-answer />
+                                <button class="gw-primary" type="submit" data-t001-shape-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isPromptMultipleChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     role="radiogroup"
+                                     aria-label="@S["YourAnswer"]">
+                                    @foreach (var choice in choices)
+                                    {
+                                        var retrySelected =
+                                            string.Equals(
+                                                choice.Value,
+                                                retryAnswer,
+                                                StringComparison.OrdinalIgnoreCase);
+                                        <button class="lp-server-choice @(retrySelected ? "is-selected" : null)"
+                                                type="submit"
+                                                name="answer"
+                                                value="@choice.Value"
+                                                aria-pressed="@(retrySelected ? "true" : "false")">
+                                            @choice.Label) @choice.Value
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else if (
+                                interaction.InteractionKind ==
+                                LessonPracticeInteractionKind.RelationChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     aria-label="@S["YourAnswer"]">
+                                    @foreach (var relation in new[] { "<", "=", ">" })
+                                    {
+                                        var retrySelected =
+                                            string.Equals(
+                                                relation,
+                                                retryAnswer,
+                                                StringComparison.Ordinal);
+                                        <button class="lp-server-choice @(retrySelected ? "is-selected" : null)"
+                                                type="submit"
+                                                name="answer"
+                                                value="@relation"
+                                                aria-pressed="@(retrySelected ? "true" : "false")">
+                                            @relation
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <input id="lesson-practice-answer"
+                                       class="lp-server-input"
+                                       name="answer"
+                                       value="@retryAnswer"
+                                       maxlength="128"
+                                       required
+                                       autocomplete="off"
+                                       autofocus
+                                       aria-label="@S["YourAnswer"]" />
+
+                                <button class="gw-primary"
+                                        type="submit">
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                        </form>
+                    }
+                </section>
+
+                <aside class="gw-eddy">
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt=""
+                         width="98"
+                         height="132" />
+                    <div>
+                        <span>EDDY</span>
+                        <p data-practice-hint
+                           role="status"
+                           aria-live="polite">@eddyMessage</p>
+                    </div>
+                </aside>
+            }
+        </div>
+    </section>
+</section>
+
+@section Scripts {
+    <script src="~/js/practice-voice-runtime.js"
+            asp-append-version="true"></script>
+    <script src="~/js/student-lesson-practice.js"
+            asp-append-version="true"></script>
+    <script src="~/js/t001-shape-chart.js" asp-append-version="true"></script>
+    <script src="~/js/t001-authored-practice.js" asp-append-version="true"></script>
+}

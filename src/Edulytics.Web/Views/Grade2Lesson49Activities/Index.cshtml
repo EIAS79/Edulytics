@@ -1,0 +1,60 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson49Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Create Line Plots"; }
+<style>
+.g2l49{max-width:980px;margin:auto;padding:20px;color:#264253}.g2l49 .panel{background:#fff;border:1px solid #cbdce5;border-radius:12px;margin:15px 0;padding:20px}.g2l49 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.g2l49 label{display:block;font-weight:700;margin:10px 0 5px}.g2l49 input,.g2l49 textarea{font:inherit;width:100%;max-width:560px;border:1px solid #8197a1;border-radius:8px;padding:10px}.g2l49 .action{padding:12px 18px;border:0;border-radius:8px;background:#0d8295;color:white;font-weight:700}.g2l49 .plot{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;max-width:600px}.g2l49 .plot div{display:flex;flex-direction:column;justify-content:flex-end;min-height:108px;text-align:center;border-bottom:3px solid #4e7b90}.g2l49 .plot span{font-weight:bold;color:#19798d}.g2l49 .plot strong{padding-top:6px}.g2l49 .ok{border-left:4px solid #218558;padding-left:12px}.g2l49 .bad{border-left:4px solid #b3475a;padding-left:12px}.g2l49 .review{border-left:4px solid #ad862c;padding-left:12px}
+</style>
+<main class="g2l49">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Create Line Plots — centimeters</h1>
+<p>Real pencil measurements use physical rulers and the unit <strong>cm</strong>. A line plot can begin ABOVE ZERO; it must nevertheless show equally-spaced consecutive centimeter labels, including lengths with zero pencils.</p>
+<form asp-controller="Grade2Lesson49Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk</h2><div class="grid">
+<div><label asp-for="Answers.TalkA">47−20</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">47−24</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">36−10</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">36−15</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
+</div></section>
+<section class="panel"><h2>2. Measure and Plot Pencil Lengths — authentic center</h2>
+<p>In a group of four, use 10–12 REAL pencils with different lengths. Two different people measure EACH pencil in centimeters, from ruler zero. Record the group measurements. Make your own titled, accurately labeled line plot with one equal-size X per pencil.</p>
+<label asp-for="Answers.RealPencilMeasurements">Real measured pencil lengths in cm</label>
+<textarea asp-for="Answers.RealPencilMeasurements" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealTwoMeasurersExplanation">How did two partners check each pencil?</label>
+<textarea asp-for="Answers.RealTwoMeasurersExplanation" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPlotDescription">Describe your REAL line plot title, labels, ticks and X placement</label>
+<textarea asp-for="Answers.RealPlotDescription" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. SOURCE Group C data — may start the axis at 10</h2>
+<p>Original published Group C pencil measurements in cm: Andre12, Clare10, Diego10, Elena10, Han13, Jada12, Kiran14, Noah16, Priya14, Tyler13. Unlike your REAL pencil group, these numbers are given by the source.</p>
+<div class="plot" role="img" aria-label="Source Group C pencil plot in centimeters: ten three Xs, eleven zero, twelve two, thirteen two, fourteen two, fifteen zero, sixteen one">
+@foreach(var pair in new[]{(10,3),(11,0),(12,2),(13,2),(14,2),(15,0),(16,1)}){
+<div>@for(var j=0;j<pair.Item2;j++){<span>X</span>}<strong>@pair.Item1</strong></div>}
+</div><p>Pencil length <strong>(cm)</strong>. Missing-data tick labels 11 and15 must be included even with no Xs.</p>
+<div class="grid">
+<div><label asp-for="Answers.SourceTotal">How many pencils?</label><input asp-for="Answers.SourceTotal" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.SourceMode">Most COMMON length (cm)</label><input asp-for="Answers.SourceMode" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.SourceShortest">Shortest length (cm)</label><input asp-for="Answers.SourceShortest" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.SourceLongest">Longest length (cm)</label><input asp-for="Answers.SourceLongest" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.SourceLongerThan12">Count longer than 12cm</label><input asp-for="Answers.SourceLongerThan12" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.EmptyAt11">Xs at 11cm</label><input asp-for="Answers.EmptyAt11" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.EmptyAt15">Xs at 15cm</label><input asp-for="Answers.EmptyAt15" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.CountAt10">Xs at 10cm</label><input asp-for="Answers.CountAt10" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.CountAt16">Xs at 16cm</label><input asp-for="Answers.CountAt16" type="number" min="0" max="10" required/></div>
+</div>
+<label asp-for="Answers.ExplainNonzeroStart">Explain why the line plot can start at 10 but must label 11 and 15</label>
+<textarea asp-for="Answers.ExplainNonzeroStart" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Independent Edulytics FICTIONAL pencil plot</h2>
+<p>This is not the source Group C table or your real class pencils. Invented measurements:11cm twice;12cm once;13cm three times;14cm twice;15cm once;16cm once.</p>
+<div class="grid">
+<div><label asp-for="Answers.IndependentMode">Fictional most common length (cm)</label><input asp-for="Answers.IndependentMode" type="number" min="0" max="30" required/></div>
+<div><label asp-for="Answers.IndependentTotal">Fictional number of pencils</label><input asp-for="Answers.IndependentTotal" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.IndependentRange">Fictional longest−shortest (cm)</label><input asp-for="Answers.IndependentRange" type="number" min="0" max="30" required/></div>
+</div><button class="action" type="submit">Check numeric plots and show teacher-review steps</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numbers correct":r.Correct==false?"Review X counts":"Teacher review required"). @r.Message</p></div>}</section>}
+<section class="panel"><h2>Teacher rubric</h2><ul>@foreach(var s in UsCcssG2Unit3FifteenthLessonPencilPlot.TeacherRubric){<li>@s</li>}</ul>
+<p>Source: IM K–5 2021 G2 U03 L15, CCSS 2.MD.A.1, 2.MD.D.9, 2.NBT.B.5. Protected source Cool-down not copied; no official grade.</p></section>
+</main>

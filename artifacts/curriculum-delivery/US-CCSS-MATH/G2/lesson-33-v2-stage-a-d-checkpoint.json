@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 33,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L15",
+  "title": "Center Day 3 (optional)",
+  "unitNumber": 2,
+  "lessonNumber": 15,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_IM2021_ORIGINAL_TEACHER_PREPARATION_AND_LESSON",
+    "source": "Local read-only G2 U02 L15 teacher preparation and lesson HTML",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-15/preparation.html",
+    "sourceSemanticSha256": "2f0c3ab71a665a3363acf307548027f38bfe357b5ab5b7f7dfb36ff9ff94d09f",
+    "originalBodySha256": "26fcef0fc88a6f71b34e5ed2d2141d9f65e924ed7bbd0b59af1ddbe6684d044c",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1",
+      "CCSS:2.OA.B.2"
+    ],
+    "warmup": "25−10=15,35−10=25,35−20=15,35−19=16 by subtract20 then add one back.",
+    "activity1": "Original optional Math Stories Stage5 Tape Diagrams: actual printed cards in pairs, each learner authors a fitting story and equation, partner solves.",
+    "activity2": "Choice among actual Target Numbers Stage4/5, Capture Squares Stage3/4 and Five in a Row Stage6.",
+    "sourceAssetGap": "Printed publisher diagram card values and artwork unavailable in source HTML text, no fabricated source cards.",
+    "coolDown": "No source public cool-down; independently authored Edulytics arithmetic explicitly separate.",
+    "teacherOnly": "Genuine taped source story card, creative student-authored story and live partner work cannot be certified online.",
+    "rights": "Public mathematical goals attributed, source print master artworks not copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_URL_PREDECESSOR_LOCKED_OPTIONAL_TAPE_CENTER_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2TapeStoriesCenterTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Exact source URL, SHA, standards order, old six fields and previously approved rich content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTICATED_NUMERIC_COMPANION_FOUR_EXACT_FAMILIES_TESTS_WRITTEN_UNRUN",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2FifteenthLessonTapeStoriesCenter.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson15TapeStoriesCenterContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson15TapeStoriesQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson33ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson33Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l15.tape_combine_total",
+      "usccss.g2.u02.l15.tape_part_missing",
+      "usccss.g2.u02.l15.tape_compare_gap",
+      "usccss.g2.u02.l15.compensate_minus19"
+    ],
+    "independentExamples": "32+17=49,72−45=27,64−39=25",
+    "firstPartyExit": "45−19=26,57+18=75,80−36=44",
+    "teacherOnly": "Authentic selected card, story/diagram/equation fit, partner response, original choice center and fair turns.",
+    "security": "StudentPortal role, adoption and published source lesson gate, antiforgery POST, bounded text, no grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2TapeStoriesCenterTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2FifteenthLessonTapeStoriesCenterTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson15TapeStoriesQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson33ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_UNIT3_LESSON1_GRADE_ORDINAL34_STRICT_NEXT_SOURCE_A_B_C"
+}

@@ -1,0 +1,43 @@
+{
+  "ordinal": 76,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L08",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "b90fd7f973844d174ff8968b461440e48f0c59dc014a0b9681460101fde4026e",
+    "teacher": "9b0ebb78c004a43cce0562e4580d2db470b15c5552c8a679cdbcca0954bd1887",
+    "student": "a6aa5a82402b9ca896a906dc29f276cd38ee072ce511a08421221c0191e9f08d"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Convert 2 km 450 m to meters.",
+    "teacherAnswer": "2,450 m"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:22:02+01:00",
+  "closeAtLocal": "2026-10-26T23:22:02+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-76-local-source-guard.test.cjs"
+  }
+}

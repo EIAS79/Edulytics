@@ -1,0 +1,448 @@
+@model Edulytics.Services.Analytics.AnalyticsDashboard
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using System.Globalization
+@using Edulytics.Web.ViewModels.Analytics
+
+@{
+    var d = Model;
+    var language = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var lessonWeaknessTitle = language switch
+    {
+        "pl" => "Analiza słabych lekcji",
+        "ar" => "تحليل نقاط الضعف حسب الدرس",
+        _ => "Lesson weakness analysis"
+    };
+    var lessonEvidenceHelp = language switch
+    {
+        "pl" => "Wyłącznie na podstawie ocenionych pytań z jednoznacznie zapisanym identyfikatorem lekcji.",
+        "ar" => "يعتمد فقط على الأسئلة المصححة التي تحمل معرّف درس محفوظًا بشكل صريح.",
+        _ => "Based only on scored questions with an explicitly persisted lesson identity."
+    };
+    var classMasteryLabel = language switch
+    {
+        "pl" => "Opanowanie klasy",
+        "ar" => "إتقان الصف",
+        _ => "Class mastery"
+    };
+    var assessmentsLabel = language switch
+    {
+        "pl" => "Testy",
+        "ar" => "الاختبارات",
+        _ => "Assessments"
+    };
+
+    var evidenceStudentTotal = Math.Max(1, d.StudentsWithEvidence);
+    var atRiskShare = d.AtRiskStudents * 100m / evidenceStudentTotal;
+    var lowestOutcomes = d.Outcomes
+        .OrderBy(x => x.MasteryPercentage)
+        .ThenByDescending(x => x.AtRiskStudentCount)
+        .ThenBy(x => x.OutcomeCode)
+        .Take(6)
+        .ToArray();
+    var trendValues = string.Join(
+        ",",
+        d.Trends.Select(x =>
+            x.AveragePercentage.ToString(CultureInfo.InvariantCulture)));
+    var trendLabels = string.Join(
+        "|",
+        d.Trends.Select(x =>
+            $"{x.AssessmentDate:MM-dd} {x.AssessmentTitle}".Replace("|", "/")));
+    var latestTrend = d.Trends.LastOrDefault();
+}
+
+        <section class="analytics-overview-layout"
+                 aria-label="@A["VisualAnalytics"]">
+            <article class="evaluation-chart-panel analytics-mastery-overview">
+                <header>
+                    <div>
+                        <h2>@A["OverallMastery"]</h2>
+                        <p>One class-level signal, with the evidence and risk context beside it instead of repeating the same values in separate cards.</p>
+                    </div>
+                </header>
+
+                <div class="analytics-mastery-hero">
+                    <div class="evaluation-donut"
+                         data-evaluation-chart="donut"
+                         data-value="@d.OverallMasteryPercentage.ToString(CultureInfo.InvariantCulture)"
+                         data-suffix="%"
+                         data-decimals="1"
+                         aria-label="@A["OverallMastery"]: @d.OverallMasteryPercentage.ToString("0.#")%">
+                        <div class="evaluation-donut-content">
+                            <strong data-chart-number>@d.OverallMasteryPercentage.ToString("0.#")%</strong>
+                            <small>@A["OverallMastery"]</small>
+                        </div>
+                    </div>
+
+                    <div class="analytics-overview-facts">
+                        <div>
+                            <span>@A["StudentsWithEvidence"]</span>
+                            <strong>@d.StudentsWithEvidence</strong>
+                        </div>
+                        <div class="is-warning">
+                            <span>@A["AtRiskStudents"]</span>
+                            <strong>@d.AtRiskStudents</strong>
+                            <small>@atRiskShare.ToString("0.#")% of students with evidence</small>
+                        </div>
+                        <div>
+                            <span>@A["Outcomes"]</span>
+                            <strong>@d.Outcomes.Count</strong>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="evaluation-chart-panel analytics-outcome-focus">
+                <header>
+                    <div>
+                        <h2>Outcome mastery profile</h2>
+                        <p>The lowest-mastery outcomes in the current scope, using their actual mastery percentages.</p>
+                    </div>
+                </header>
+
+                @if (lowestOutcomes.Length == 0)
+                {
+                    <p class="analytics-empty-inline">@A["NoOutcomes"]</p>
+                }
+                else
+                {
+                    <div class="evaluation-lollipop-list"
+                         data-evaluation-chart="lollipop">
+                        @foreach (var item in lowestOutcomes)
+                        {
+                            <div class="evaluation-lollipop-row @(item.MasteryPercentage < 40m ? "is-danger" : item.MasteryPercentage < 60m ? "is-warning" : "")">
+                                <span class="evaluation-lollipop-label"
+                                      title="@item.OutcomeDescription">
+                                    @item.OutcomeCode
+                                </span>
+                                <span class="evaluation-lollipop-track">
+                                    <i class="evaluation-lollipop-stick"
+                                       data-chart-value="@item.MasteryPercentage.ToString(CultureInfo.InvariantCulture)"
+                                       style="--bar-value:@item.MasteryPercentage.ToString(CultureInfo.InvariantCulture)"></i>
+                                </span>
+                                <strong>@item.MasteryPercentage.ToString("0.#")%</strong>
+                            </div>
+                        }
+                    </div>
+                }
+            </article>
+        </section>
+
+        <section class="analytics-panel">
+            <header>
+                <h2>@A["ClassHeatmap"]</h2>
+                <p>@A["ClassHeatmapHelp"]</p>
+            </header>
+
+            @if (d.Outcomes.Count == 0)
+            {
+                <p class="analytics-empty-inline">
+                    @A["NoOutcomes"]
+                </p>
+            }
+            else
+            {
+                <div class="analytics-table-wrap">
+                    <table class="analytics-table analytics-heatmap">
+                        <thead>
+                            <tr>
+                                <th>@A["AcademicYear"]</th>
+                                <th>@A["Class"]</th>
+                                <th>@A["Subject"]</th>
+                                <th>@A["Outcome"]</th>
+                                <th>@A["Mastery"]</th>
+                                <th>@A["Students"]</th>
+                                <th>@A["AtRisk"]</th>
+                                <th>@A["Evidence"]</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in d.Outcomes)
+                            {
+                                <tr>
+                                    <td data-label="@A["AcademicYear"]">
+                                        @item.AcademicYearName
+                                    </td>
+
+                                    <td data-label="@A["Class"]">
+                                        @item.ClassName
+                                    </td>
+
+                                    <td data-label="@A["Subject"]">
+                                        @item.SubjectName
+                                    </td>
+
+                                    <td data-label="@A["Outcome"]">
+                                        <strong>@item.OutcomeCode</strong>
+                                        <span>@item.OutcomeDescription</span>
+                                    </td>
+
+                                    <td data-label="@A["Mastery"]">
+                                        <span class="analytics-band @AnalyticsIndexViewModel.BandClass(item.Band)">
+                                            @item.MasteryPercentage.ToString("0.##")%
+                                            ·
+                                            @A[AnalyticsIndexViewModel.BandKey(item.Band)]
+                                        </span>
+                                    </td>
+
+                                    <td data-label="@A["Students"]">
+                                        @item.StudentCount
+                                    </td>
+
+                                    <td data-label="@A["AtRisk"]">
+                                        @item.AtRiskStudentCount
+                                    </td>
+
+                                    <td data-label="@A["Evidence"]">
+                                        @item.EvidenceCount
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </section>
+
+        <section class="analytics-panel">
+            <header>
+                <h2>@lessonWeaknessTitle</h2>
+                <p>@lessonEvidenceHelp</p>
+            </header>
+
+            @if (d.Lessons.Count == 0)
+            {
+                <p class="analytics-empty-inline">
+                    @(language switch
+                    {
+                        "pl" => "Dane o opanowaniu lekcji są niedostępne, ponieważ ocenione pytania nie są powiązane z konkretnymi lekcjami.",
+                        "ar" => "إتقان الدروس غير متاح لأن أسئلة التقييم المصححة غير مرتبطة بدروس محددة.",
+                        _ => "Lesson mastery is unavailable because scored assessment questions are not linked to specific lessons."
+                    })
+                </p>
+            }
+            else
+            {
+                <div class="analytics-topic-grid">
+                    @foreach (var item in d.Lessons)
+                    {
+                        <article class="analytics-topic-card">
+                            <div class="analytics-topic-heading">
+                                <div>
+                                    <strong>@item.LessonTitle</strong>
+                                    <small>
+                                        @item.UnitTitle · @item.ClassName · @item.SubjectName
+                                    </small>
+                                </div>
+
+                                <span class="analytics-band @AnalyticsIndexViewModel.BandClass(item.Band)">
+                                    @classMasteryLabel: @item.MasteryPercentage.ToString("0.##")%
+                                </span>
+                            </div>
+
+                            <progress max="100"
+                                      value="@item.MasteryPercentage.ToString(CultureInfo.InvariantCulture)"
+                                      aria-label="@classMasteryLabel">
+                            </progress>
+
+                            <dl>
+                                <div>
+                                    <dt>@A["Students"]</dt>
+                                    <dd>@item.StudentCount</dd>
+                                </div>
+                                <div>
+                                    <dt>@A["AtRisk"]</dt>
+                                    <dd>@item.AtRiskStudentCount</dd>
+                                </div>
+                                <div>
+                                    <dt>@A["Evidence"]</dt>
+                                    <dd>@item.EvidenceCount</dd>
+                                </div>
+                                <div>
+                                    <dt>@assessmentsLabel</dt>
+                                    <dd>@item.AssessmentCount</dd>
+                                </div>
+                            </dl>
+                        </article>
+                    }
+                </div>
+            }
+        </section>
+
+        <section class="analytics-panel">
+            <header>
+                <h2>@A["TopicAnalysis"]</h2>
+            </header>
+
+            @if (d.Topics.Count == 0)
+            {
+                <p class="analytics-empty-inline">
+                    @A["NoTopics"]
+                </p>
+            }
+            else
+            {
+                <div class="analytics-topic-grid">
+                    @foreach (var item in d.Topics)
+                    {
+                        <article class="analytics-topic-card">
+                            <div class="analytics-topic-heading">
+                                <div>
+                                    <strong>@item.TopicName</strong>
+                                    <small>
+                                        @item.ClassName · @item.SubjectName
+                                    </small>
+                                </div>
+
+                                <span class="analytics-band @AnalyticsIndexViewModel.BandClass(item.Band)">
+                                    @item.MasteryPercentage.ToString("0.##")%
+                                </span>
+                            </div>
+
+                            <progress max="100"
+                                      value="@item.MasteryPercentage.ToString(CultureInfo.InvariantCulture)"
+                                      aria-label="@A["Mastery"]">
+                            </progress>
+
+                            <dl>
+                                <div>
+                                    <dt>@A["Outcomes"]</dt>
+                                    <dd>@item.OutcomeCount</dd>
+                                </div>
+
+                                <div>
+                                    <dt>@A["WeakOutcomes"]</dt>
+                                    <dd>@item.WeakOutcomeCount</dd>
+                                </div>
+
+                                <div>
+                                    <dt>@A["Students"]</dt>
+                                    <dd>@item.StudentCount</dd>
+                                </div>
+                            </dl>
+                        </article>
+                    }
+                </div>
+            }
+        </section>
+
+        <section class="evaluation-chart-panel analytics-progress-panel">
+            <header>
+                <div>
+                    <h2>@A["ProgressOverTime"]</h2>
+                    <p>Assessment averages are plotted as one time series instead of repeated score cards.</p>
+                </div>
+                @if (latestTrend is not null)
+                {
+                    <div class="analytics-progress-latest">
+                        <span>Latest</span>
+                        <strong>@latestTrend.AveragePercentage.ToString("0.#")%</strong>
+                        <small>@latestTrend.AssessmentDate.ToString("yyyy-MM-dd")</small>
+                    </div>
+                }
+            </header>
+
+            @if (d.Trends.Count < 2)
+            {
+                <p class="analytics-empty-inline">@A["NoTrend"]</p>
+            }
+            else
+            {
+                <div class="evaluation-line-chart-scroll">
+                    <div class="evaluation-line-chart"
+                         data-evaluation-chart="line"
+                         data-values="@trendValues"
+                         data-labels="@trendLabels"
+                         data-aria-label="@A["ProgressOverTime"]">
+                    </div>
+                </div>
+            }
+        </section>
+
+        <section class="analytics-panel">
+            <header>
+                <h2>@A["RiskStudents"]</h2>
+            </header>
+
+            @if (d.RiskStudents.Count == 0)
+            {
+                <p class="analytics-empty-inline">
+                    @A["NoRisks"]
+                </p>
+            }
+            else
+            {
+                <div class="analytics-risk-grid">
+                    @foreach (var item in d.RiskStudents)
+                    {
+                        <article class="analytics-risk-card">
+                            <div>
+                                <strong>@item.DisplayName</strong>
+                                <span>
+                                    @A["StudentNumber"]:
+                                    @item.StudentNumber
+                                </span>
+                                <span>
+                                    @item.AcademicYearName
+                                    ·
+                                    @item.ClassName
+                                </span>
+                            </div>
+
+                            <span class="analytics-band @AnalyticsIndexViewModel.BandClass(item.Band)">
+                                @item.MasteryPercentage.ToString("0.##")%
+                            </span>
+
+                            <span>
+                                @A["CriticalGaps"]:
+                                <strong>@item.CriticalOutcomeCount</strong>
+                            </span>
+
+                            @if (d.SelectedSubjectId.HasValue)
+                            {
+                                <a class="school-button"
+                                   asp-controller="Analytics"
+                                   asp-action="StudentReportPdf"
+                                   asp-route-studentProfileId="@item.StudentProfileId"
+                                   asp-route-academicYearId="@item.AcademicYearId"
+                                   asp-route-classGroupId="@item.ClassGroupId"
+                                   asp-route-subjectId="@d.SelectedSubjectId.Value">
+                                    @(language switch
+                                    {
+                                        "pl" => "PDF ucznia",
+                                        "ar" => "PDF الطالب",
+                                        _ => "Student PDF"
+                                    })
+                                </a>
+                            }
+                        </article>
+                    }
+                </div>
+            }
+        </section>
+
+        <section class="analytics-panel analytics-legend">
+            <h2>@A["MasteryLegend"]</h2>
+
+            <div>
+                <span class="analytics-band analytics-band-critical">
+                    @A["MasteryCritical"] · 0–39
+                </span>
+
+                <span class="analytics-band analytics-band-weak">
+                    @A["MasteryWeak"] · 40–59
+                </span>
+
+                <span class="analytics-band analytics-band-developing">
+                    @A["MasteryDeveloping"] · 60–74
+                </span>
+
+                <span class="analytics-band analytics-band-secure">
+                    @A["MasterySecure"] · 75–89
+                </span>
+
+                <span class="analytics-band analytics-band-strong">
+                    @A["MasteryStrong"] · 90–100
+                </span>
+            </div>
+        </section>

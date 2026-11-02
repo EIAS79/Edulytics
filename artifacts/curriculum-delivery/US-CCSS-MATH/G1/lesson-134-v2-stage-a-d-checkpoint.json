@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Source/task parity and existing candidate correction checkpoint under original V1 A-D; not academic approval",
+  "grade": "G1",
+  "ordinal": 134,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U07:L15",
+  "title": "Write Times",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics Grade 1 (2021)",
+    "fullTeacherHtmlRelativePath": "unit-7/lesson-15/lesson.html",
+    "observedReadOnlySourceSha256": "3f2ec47baa9e0b37693927e8c12f7fa66b4ca64cc73b49199fb8bcdb4dfad670",
+    "sourceShaMatchedIndexedRegistry": true
+  },
+  "stageA": {
+    "sourceStudentFacingReadDirectly": true,
+    "originalWarmup": "30=30 TRUE;10+15=15+10 TRUE;10+10+10=3 FALSE",
+    "originalTasks": [
+      "Count around analog clock from 12 to half-turn and circle 6 at minute 30",
+      "READ and WRITE times for each complete clock",
+      "DRAW the missing MINUTE hand on incomplete clocks and write the time",
+      "Given ONLY a minute hand, draw one possible HOUR hand, write resulting time and propose alternative valid hours"
+    ],
+    "identifiedGap": "Existing learner instructions covered reading/half-hour minutes but omitted drawing a missing minute hand and open-choice hour hand; digital clock-value grading cannot substitute for original drawing."
+  },
+  "stageB": {
+    "existingCandidateReused": true,
+    "correctedSourceFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "sourceTeachingRepairCommit": "f6541cc01e27f0e3f7ee1776b960032977869a51",
+    "newlineFormattingCommit": "ca5a702e3ab6a5bc09a82292d42d3e1019be76f6",
+    "sourceBoundary": "Only first-party text; real pupil clock-face diagrams remain teacher-reviewed; no publisher picture copied"
+  },
+  "stageC": {
+    "existingFamilyReused": "usccss.g1.u07.l15.write_hours_halfhours",
+    "digitalPartialSkill": "Recognize hour/half-hour and write numerical time",
+    "originalSourceAuthoredTask": "Open-choice drawing with multiple possible valid hours cannot be proven by one auto-scored time answer",
+    "sourceMathRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons121To136SourceMathTests.cs",
+    "sourceMathRegressionCommit": "8891bd6bedca4d0181affb726e111db462eaab15",
+    "sourceClockVariantCommit": "2a315430a4c3d6f27be61e360adc1557406616e0",
+    "openClockAlternativesAccepted": true,
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceAssertions": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "testCommit": "93e94d9bda2616401bddb69a5721edd7ad537a2e",
+    "githubCiAuthoring": "NOT_RUN_AS_SCHEDULED",
+    "dotNetTests": "NOT_RUN",
+    "authenticatedStudentRenderingAndPersistence": "PENDING",
+    "visualRightsAccessibility": "PENDING",
+    "originalV1AtoDInternalAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceBoundary": "Original missing minute hand and ANY valid hour hand for minute hand SIX; source mode4 permits all 12 half-past hours, student drawings teacher examined.",
+    "accessibleOriginalTaskTextReviewed": true,
+    "numericTeachingAndVerifierReviewed": true,
+    "originalIllustratedTimesNotGuessed": true,
+    "originalPupilDrawingsAndGameplayTeacherOnly": true,
+    "originalPublisherClockFiguresNotLicensed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "nextAction": "Original V1 internal acceptance documented; continue next ordinal, do not repeat technical Stage D or deploy.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D3",
+    "ordinal": 134,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U07:L15",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-134-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original missing minute hand and ANY valid hour hand for minute hand SIX; source mode4 permits all 12 half-past hours, student drawings teacher examined."
+  }
+}

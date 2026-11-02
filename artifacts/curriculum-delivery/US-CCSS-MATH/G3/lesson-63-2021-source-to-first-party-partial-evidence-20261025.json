@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 63,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U04:L06",
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "source2021Edition": true,
+  "sourceLocalHtml": "unit-4/lesson-6/lesson.html",
+  "sourceHtmlSha256": "b67beb99ea10ed315c4023d14d28f85d317178915e74f558f929790a85dc2f51",
+  "sourcePrepSha256": "e56b9def239f6e8b0efaa741fa45dc08fdc069854ea0b7c2e9365da6e7aba240",
+  "accessImStudentHtmlSha256": "849e67ee84169de6b8570e59a7f6fa8959b5794b714b3b7da6574a1961c99850",
+  "readOnDevice": true,
+  "sourceSections": [
+    {
+      "id": "WU",
+      "status": "MATCHED_DIGITAL",
+      "source": "3×?=12 and12÷3=?; value4",
+      "test": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson6UnknownFactorPartialSourceTests.cs"
+    },
+    {
+      "id": "A1",
+      "status": "MATCHED_DIGITAL_PLUS_TEACHER",
+      "source": "14 onions/2 bags; 2×?=14 and14÷2=?;7; both Lin and Mai correct",
+      "test": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson6UnknownFactorPartialSourceTests.cs"
+    },
+    {
+      "id": "A2",
+      "status": "MATCHED_SEMANTIC_FOUR_SOURCE_ROWS_IMAGE_READ",
+      "source": "Source Activity2 Farmers’ Market figure with multirow table",
+      "originalAssetReference": "https://cms-assets.illustrativemathematics.org/7ntff0qrn11b15ptktm174b4zsct",
+      "alternateAccessImAssetReference": "https://cms-assets.illustrativemathematics.org/ixfnpsbe8oyuj5pks18c2x8fwxis",
+      "reason": "Original table cells and diagrams unavailable in local HTML and current device PDF inventory; source CDN fetch not completed. Numeric/source row content MUST NOT be inferred.",
+      "nextRequired": "Access actual original figure/Student Task PDF and map all table rows one to one.",
+      "originalPngSha256": "a4fc8e344712fe7c743dcba4cd5c81f0daad1a6a55d0efecaf7036a7a3bee612",
+      "verification": "Read original source PNG pixels on authorized Our-CS; four printed rows and deliberate blank situation fourth row mapped",
+      "matchingRows": [
+        {
+          "index": 1,
+          "person": "Elena",
+          "originalContext": "18 avocados in bags of three each",
+          "sourceDrawing": "six equal bags, each with three blue dots",
+          "multiply": "6 × 3 = 18",
+          "divide": "18 ÷ 3 = 6",
+          "answer": "6",
+          "asked": "number of bags",
+          "numberOfGroups": 6,
+          "sizeOfGroup": 3,
+          "sourceBlank": "division result and multiplication equation"
+        },
+        {
+          "index": 2,
+          "person": "Andre",
+          "originalContext": "25 tomatoes in five equally sized bunches",
+          "sourceDrawing": "missing in original 2021 table",
+          "multiply": "5 × 5 = 25",
+          "divide": "25 ÷ 5 = 5",
+          "answer": "5",
+          "asked": "tomatoes in each bunch",
+          "numberOfGroups": 5,
+          "sizeOfGroup": 5,
+          "sourceBlank": "diagram / unknown factor / quotient"
+        },
+        {
+          "index": 3,
+          "person": "Lin",
+          "originalContext": "6 banana fritters served equally on two plates",
+          "sourceDrawing": "two plates each with three blue dots",
+          "multiply": "2 × 3 = 6",
+          "divide": "6 ÷ 2 = 3",
+          "answer": "3",
+          "asked": "fritters per plate",
+          "numberOfGroups": 2,
+          "sizeOfGroup": 3,
+          "sourceBlank": "division equation / unknown factor"
+        },
+        {
+          "index": 4,
+          "person": "Blank situation to be authored by student",
+          "originalContext": "No printed situation: original row has drawing of three sets of ten dots and blank situation cell",
+          "sourceDrawing": "three groups of ten dots each",
+          "multiply": "3 × 10 = 30",
+          "divide": "30 ÷ 10 = 3",
+          "answer": "3",
+          "asked": "group count, when ten in each group",
+          "numberOfGroups": 3,
+          "sizeOfGroup": 10,
+          "sourceBlank": "situation text / first factor and quotient"
+        }
+      ]
+    },
+    {
+      "id": "SYNTHESIS",
+      "status": "MATCHED_TEACHER_LED",
+      "source": "define quotient7 using onion context"
+    },
+    {
+      "id": "PHOTO",
+      "status": "RIGHTS_RESTRICTED",
+      "source": "2021 farmer market photo third party not copied"
+    },
+    {
+      "id": "COOLDOWN",
+      "status": "SOURCE_UNAVAILABLE",
+      "source": "teacher-gated Boxed Muffins"
+    }
+  ],
+  "numericKnownOracles": 8,
+  "teacherTasks": 11,
+  "unresolvedMathTable": false,
+  "sourceMaterialParityClaimed": false,
+  "originalStudentPdfRead": false,
+  "testsNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson6UnknownFactorPartialSourceTests.cs",
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "advanceTo64": true,
+  "sourceDiagramPixelsInspected": true,
+  "sourceImagePixelVerified": "FARMERS_MARKET_TABLE_ONLY",
+  "sourceStudentTaskPdfVerified": false,
+  "note": "Market activity blocker removed. First-party original figures are not replicated; teacher signoff and publisher Cool-down remain pending."
+}

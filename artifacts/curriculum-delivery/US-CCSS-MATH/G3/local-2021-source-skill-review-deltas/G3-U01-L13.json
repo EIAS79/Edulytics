@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 13,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L13",
+  "title": "Multiplication Equations",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-1/lesson-13/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U01.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U01.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L13.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Five pairs of socks have how many individual socks?",
+      "answerType": "integer",
+      "expected": "10"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-1/lesson-13/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Which One Doesn't Belong: Representations (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-1/lesson-13/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Multiplication Equation Match (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-1/lesson-13/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Write Multiplication Equations (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-1/lesson-13/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-1/lesson-13/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Match the Equation (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-1/lesson-13/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "3 groups of 5 dots.",
+      "Diagram. 2 equal parts, each labeled 10. Total length, 20.",
+      "3 dot cubes of 5.",
+      "Diagram. A rectangle split into 4 parts, each labeled 5. Total length, 20.",
+      "Array. 5 arrays of 10 dots each.",
+      "Diagram. A rectangle split into 7 parts, each labeled 2. Total length, 14.",
+      "9 groups of 2 dots.",
+      "Diagram. A rectangle split into 6 parts, each labeled 10. Total length, 60.",
+      "8 groups of 5 dots."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Five pairs of socks have how many individual socks?",
+      "answerType": "integer",
+      "expected": "10"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
+      "sourceLearningGoals": "Relate equations to multiplication situations and diagrams. Write equations for multiplication situations and diagrams using a symbol for the unknown number.",
+      "teachingSteps": [
+        "Represent each identical group or equal row in a drawing.",
+        "Explain how group count and group size relate.",
+        "Use a multiplication expression or equation when introduced in this lesson, then explain the result."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Four packs of 10 markers contain how many markers? Write an equation.",
+      "answerType": "integer",
+      "expected": "40"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Six groups of five objects are represented by an equation. Find their total.",
+      "answerType": "integer",
+      "expected": "30"
+    },
+    "humanRubric": "An equation requires equality and factors that agree with the situation.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

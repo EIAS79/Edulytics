@@ -1,0 +1,911 @@
+using System.Globalization;
+using System.Net;
+using System.Text;
+using System.Text.Json;
+using Edulytics.Core.Mathematics.Practice;
+
+namespace Edulytics.Web.Presentation;
+
+/// <summary>
+/// Deterministic learner-facing mathematics visuals generated only from
+/// server-owned exact question-family parameters. No arbitrary HTML or
+/// model-generated image content is accepted.
+/// </summary>
+public static partial class PracticeMathVisualRenderer
+{
+    public static string? RenderSvg(string? family, string? generationParametersJson)
+    {
+        if (string.IsNullOrWhiteSpace(family) || string.IsNullOrWhiteSpace(generationParametersJson))
+            return null;
+
+        try
+        {
+            using var document = JsonDocument.Parse(generationParametersJson);
+            var root = document.RootElement;
+            var parameters = root.TryGetProperty("parameters", out var nested)
+                ? nested
+                : root;
+
+            var svg = family switch
+            {
+                "supporting.circle.arc_angle_degrees" => CircleArc(parameters),
+                "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
+                "geometry.coordinate.evaluate_linear_rule" or
+                "geometry.coordinate.y_intercept_from_rule" => StraightLine(parameters),
+                "geometry.angles.parallel_lines" => ParallelLines(parameters),
+                "geometry.angles.supplementary" => Supplementary(parameters),
+                "geometry.angles.algebraic_supplementary" => AlgebraicSupplementary(parameters),
+                "geometry.similarity.find_missing_length" or
+                "geometry.similarity.scale_factor" => Similarity(parameters),
+                "geometry.congruence.identify_criterion" => Congruence(parameters),
+                "geometry.surface_area.rectangular_prism" or
+                "geometry.volume.rectangular_prism" or
+                "geometry.surface_area_volume.rectangular_prism_surface_area" or
+                "geometry.surface_area_volume.rectangular_prism_volume" => RectangularPrism(parameters),
+                "geometry.rectangle.area.exact" or
+                "geometry.rectangle.perimeter.exact" or
+                "geometry.perimeter_area.rectangle_area" or
+                "geometry.perimeter_area.rectangle_perimeter" => Rectangle(parameters),
+                "geometry.perimeter_area.rectangle_missing_side" => RectangleMissingSide(parameters),
+                "geometry.perimeter_area.triangle_area" => TriangleArea(parameters),
+                "geometry.polygons.interior_angle_sum" or
+                "geometry.polygons.missing_interior_angle" or
+                "geometry.polygons.regular_interior_angle" => Polygon(parameters),
+                "geometry.right_triangle.pythagorean.exact" or
+                "geometry.right_triangle.pythagorean.find_leg_exact" or
+                "trigonometry.right_triangle.ratio_exact" or
+                "trigonometry.right_triangle.find_side_exact" or
+                "trigonometry.right_triangle.find_angle_exact" or
+                "trigonometry.modelling.contextual" => RightTriangle(parameters),
+                "usccss.g5.u03.l02.unit_fraction_of_unit_fraction" or
+                "usccss.g5.u03.l02.same_original_whole_order_comparison"
+                    => GradeFiveUnitFractionAreaVisual(family, parameters),
+                "fractions.represent.interpret.fraction_bar" => FractionBar(parameters),
+                "vectors.add.exact_rational" or
+                "vectors.subtract.exact_rational" or
+                "vectors.scalar_multiply.exact_rational" or
+                "vectors.dot.exact_rational" or
+                "vectors.magnitude.exact" or
+                "vectors.between_points.exact" or
+                "supporting.vectors.add" or
+                "supporting.vectors.magnitude" => VectorPlane(parameters),
+                "fractions.equivalent.number_line" => NumberLineParameters(parameters),
+                "supporting.geometry.analytic.mixed" or
+                "supporting.geometry.axis_distance" or
+                "supporting.geometry.midpoint" or
+                "supporting.geometry.reflect_axis" or
+                "supporting.geometry.rotate90" or
+                "supporting.geometry.translate_point" or
+                "supporting.transformations.mixed" => CoordinateParameterVisual(parameters),
+                "supporting.geometry.angle_around_point" or
+                "supporting.geometry.angle_classify" or
+                "supporting.geometry.turn_degrees" => AngleParameterVisual(parameters),
+                "supporting.geometry.circle_area_pi_coefficient" or
+                "supporting.geometry.circle_circumference_pi_coefficient" => CircleParameterVisual(parameters),
+                "supporting.geometry.locus_equidistant" => LocusEquidistantVisual(parameters),
+                "supporting.geometry.cuboid_volume" or
+                "supporting.geometry.solid.mixed" or
+                "supporting.geometry.surface_area_cuboid" => SolidParameterVisual(parameters),
+                "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => GradeFourLShapedMeasurementVisual(parameters),
+                "supporting.geometry.shape_dimension" => ShapeDimensionVisual(parameters),
+                "supporting.geometry.compound_area" or
+                "supporting.geometry.parallelogram_area" or
+                "supporting.geometry.plane.mixed" or
+                "supporting.geometry.triangle_area" => PlaneGeometryParameterVisual(parameters),
+                "supporting.trigonometry.graph_special" => TrigonometryGraphVisual(parameters),
+                "usccss.hs.rational_hole_or_pole" => UsRationalGraph(parameters, hasHole: true),
+                "usccss.hs.rational_branch_limit_sign" => UsRationalGraph(parameters, hasHole: false),
+                "usccss.vector.head_tail_endpoint_y" => UsVectorHeadTailDiagram(parameters),
+                "usccss.vector.scalar_direction_class" => UsVectorScalarDiagram(parameters),
+                "usccss.g1.u06.l01.compare_lengths" or
+                "usccss.g1.u06.l02.indirect_length_comparison" or
+                "usccss.g1.u06.l03.choose_indirect_comparison" or
+                "usccss.g1.u06.l05.measure_connecting_cubes" or
+                "usccss.g1.u06.l06.measure_paperclips" or
+                "usccss.g1.u06.l07.unit_length_matters"
+                    => GradeOneSourceMeasurementVisual(family,parameters),
+                "usccss.g1.u04.l05.center.tens_and_within20"
+                    => GetInt(parameters,"mode")>=4
+                        ? GradeOneOriginalCheckItOffBoard(parameters)
+                        : null,
+                "usccss.g1.u04.l01.count.groups_of_ten"
+                    => GradeOneOriginalSourceCountCollectionsVisual(parameters),
+                "usccss.g1.u04.l03.tens.add_or_remove_one"
+                    => GetInt(parameters,"mode")>=2
+                        ? GradeOneOriginalTenTowerSequenceVisual(parameters)
+                        : null,
+                "usccss.g1.u04.l04.tens.add_remove_multiples"
+                    => GradeOneOriginalBagsOfTenVisual(parameters),
+                "usccss.g1.u04.l06.collection.tens_ones" or
+                "usccss.g1.u04.l07.read.two_digit" or
+                "usccss.g1.u04.l08.match.tens_ones_expression" or
+                "usccss.g1.u04.l09.show.expanded_form" or
+                "usccss.g1.u04.l10.write.two_digit_numeral" or
+                "usccss.g1.u06.l08.count_to110_cube_groups" or
+                "usccss.g1.u06.l09.write_number_to120" or
+                "usccss.g1.u08.l08.same_number_tens_ones"
+                    => GradeOneNewTensOnesVisual(family,parameters),
+                "usccss.g1.u08.l07.count_on_to120"
+                    => GradeOneNewCountOnPath(parameters),
+                "usccss.g1.u03.l14.center.add_subtract"
+                    => GradeOneFullGradeNumberPuzzleBoard(parameters),
+                "usccss.g1.u07.l01.sort_solids_attributes" or
+                "usccss.g1.u07.l02.compose_solids_components" or
+                "usccss.g1.u07.l03.sort_flat_shapers" or
+                "usccss.g1.u07.l04.draw_shape_attribute_check" or
+                "usccss.g1.u07.l05.defining_triangles" or
+                "usccss.g1.u07.l06.square_and_rectangle_properties" or
+                "usccss.g1.u07.l07.compose_flat_shapers" or
+                "usccss.g1.u07.l08.center_shapes_add_subtract" or
+                "usccss.g1.u07.l12.center_shape_number" or
+                "usccss.g1.u07.l17.center_geometry_and_time"
+                    => GradeOneSourceShapeVisual(family,parameters),
+                "usccss.g1.u07.l09.equal_halves_fourths" or
+                "usccss.g1.u07.l10.parts_make_whole" or
+                "usccss.g1.u07.l11.bigger_piece_halves_fourths"
+                    => GradeOneSourceEqualAreaVisual(family,parameters),
+                "usccss.g1.u07.l13.hour_clock" or
+                "usccss.g1.u07.l14.half_hour_clock" or
+                "usccss.g1.u07.l15.write_hours_halfhours" or
+                "usccss.g1.u07.l16.daily_schedule_time"
+                    => GradeOneFullGradeClockFace(family,parameters),
+                "usccss.g1.u02.pets.write_two_equations" or
+                "usccss.g1.u02.shake_spill.enumerate_partitions" or
+                "usccss.g1.u02.shake_cover.write_missing_addend" or
+                "usccss.g1.u02.story.compare_unknowns_equations" or
+                "usccss.g1.u02.center.capture_squares.select_legal_edge"
+                    => GradeOneUnit2NextFiveVisual(family,parameters),
+                "usccss.g1.u02.compare.equal_cubes_write_equation" or
+                "usccss.g1.u02.compare.school_supplies_difference" or
+                "usccss.g1.u02.compare.art_supply_data_difference" or
+                "usccss.g1.u02.compare.write_related_equations" or
+                "usccss.g1.u02.compare.mixed_story_equation"
+                    => GradeOneUnit2CompareFiveVisual(family,parameters),
+                "usccss.g1.u03.l09.ten.add_frame" or
+                "usccss.g1.u03.l09.ten.missing_equation" or
+                "usccss.g1.u03.l10.teen.story_unknown" or
+                "usccss.g1.u03.l10.teen.related_equations" or
+                "usccss.g1.u03.l11.teen.add_story" or
+                "usccss.g1.u03.l11.teen.add_missing" or
+                "usccss.g1.u03.l12.teen.take_from" or
+                "usccss.g1.u03.l12.teen.equations_missing" or
+                "usccss.g1.u03.l13.teen.result_unknown" or
+                "usccss.g1.u03.l13.teen.change_unknown"
+                    => GradeOneTeenFiveVisual(family,parameters),
+                "usccss.g1.u03.l04.make_ten.complement" or
+                "usccss.g1.u03.l04.make_ten.systematic_pattern" or
+                "usccss.g1.u03.l05.difference.related_addition" or
+                "usccss.g1.u03.l05.difference.number_string" or
+                "usccss.g1.u03.l06.story.start_unknown" or
+                "usccss.g1.u03.l06.story.other_unknown_positions" or
+                "usccss.g1.u03.l07.center.compare_cards" or
+                "usccss.g1.u03.l07.center.find_pair_to_ten" or
+                "usccss.g1.u03.l08.ten_unit.compose" or
+                "usccss.g1.u03.l08.ten_unit.four_teen_numbers"
+                    => GradeOneNextSourceFiveVisual(family,parameters),
+                "usccss.g1.u02.l21.number_puzzles.distinct_cards" or
+                "usccss.g1.u02.l21.related_missing_values" or
+                "usccss.g1.u02.l22.survey.three_equations" or
+                "usccss.g1.u02.l22.survey.compare_question" or
+                "usccss.g1.u03.l01.sums.fluency_selfcheck" or
+                "usccss.g1.u03.l01.sums.favorite_and_reason" or
+                "usccss.g1.u03.l02.count_on.start_steps_total" or
+                "usccss.g1.u03.l02.commutativity.two_equations" or
+                "usccss.g1.u03.l03.expressions.compare_both_sides" or
+                "usccss.g1.u03.l03.expressions.sort_equal_sums"
+                    => GradeOneNextFiveVisual(family,parameters),
+                "usccss.g1.u02.story.compare_structure_and_equation" or
+                "usccss.g1.u02.story.match_equation_with_unknown_box" or
+                "usccss.g1.u02.story.two_matching_equations" or
+                "usccss.g1.u02.story.compose_scaffold_from_equation"
+                    => GradeOneUnit2EquationStoryFiveVisual(family,parameters),
+                "usccss.g1.u02.center.picture_story_equation" or
+                "usccss.g1.u02.center.author_math_story" => GradeOneCenterStoryPicture(parameters),
+                "supporting.trigonometry.area_sine_double" or
+                "supporting.trigonometry.bearing" or
+                "supporting.trigonometry.cosine_rule_square" or
+                "supporting.trigonometry.sine_rule_exact" => TrigonometryTriangleVisual(parameters),
+                _ => null
+            };
+
+            var leakCheck =
+                PracticeAnswerLeakValidator.ValidateVisual(
+                    family,
+                    correctAnswer: null,
+                    svg);
+            return leakCheck.IsSafe ? svg : null;
+        }
+        catch (JsonException)
+        {
+            return null;
+        }
+    }
+
+    private static string FractionBar(JsonElement p)
+    {
+        var numerator = GetInt(p, "numerator");
+        var denominator = GetInt(p, "denominator");
+        if (denominator <= 0 || numerator < 0 || numerator > denominator)
+            throw new JsonException("Invalid fraction-bar parameters.");
+
+        var sb = SvgStart("Fraction bar divided into equal parts with the required number shaded.");
+        const double x = 45;
+        const double y = 92;
+        const double width = 330;
+        const double height = 82;
+        var cell = width / denominator;
+
+        for (var i = 0; i < denominator; i++)
+        {
+            var cx = x + i * cell;
+            var fillClass = i < numerator ? "fraction-shaded" : "fraction-empty";
+            sb.Append($"<rect x='{F(cx)}' y='{F(y)}' width='{F(cell)}' height='{F(height)}' class='fraction-cell {fillClass}'/>");
+        }
+
+        Text(sb, 210, 208, $"{numerator} shaded out of {denominator} equal parts", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string CircleArc(JsonElement p)
+    {
+        var numerator = GetInt(p, "numerator");
+        var denominator = GetInt(p, "denominator");
+        if (denominator <= 0 || numerator <= 0 || numerator >= denominator)
+            throw new JsonException("Invalid circle-arc fraction.");
+
+        var angle = 360d * numerator / denominator;
+        var endRadians = (-90d + angle) * Math.PI / 180d;
+        const double cx = 210;
+        const double cy = 130;
+        const double radius = 88;
+        var sx = cx;
+        var sy = cy - radius;
+        var ex = cx + radius * Math.Cos(endRadians);
+        var ey = cy + radius * Math.Sin(endRadians);
+        var largeArc = angle > 180 ? 1 : 0;
+
+        var sb = SvgStart("Circle showing the stated arc as a fraction of a full turn.");
+        sb.Append("<circle cx='210' cy='130' r='88' class='shape fill'/>");
+        sb.Append($"<path d='M {F(sx)} {F(sy)} A {F(radius)} {F(radius)} 0 {largeArc} 1 {F(ex)} {F(ey)}' class='arc-highlight'/>");
+        sb.Append($"<line x1='210' y1='130' x2='{F(sx)}' y2='{F(sy)}' class='shape'/>");
+        sb.Append($"<line x1='210' y1='130' x2='{F(ex)}' y2='{F(ey)}' class='shape'/>");
+        Text(sb, 210, 135, $"{numerator}/{denominator} turn", "label");
+        return SvgEnd(sb);
+    }
+
+    private static string CoordinateGradient(JsonElement p)
+    {
+        var x1 = GetInt(p, "x1");
+        var y1 = GetInt(p, "y1");
+        var x2 = GetInt(p, "x2");
+        var y2 = GetInt(p, "y2");
+
+        var all = new[] { x1, y1, x2, y2, -1, 1 };
+        var max = Math.Max(4, all.Max(v => Math.Abs(v)) + 1);
+        double X(int value) => 210 + value * (170d / max);
+        double Y(int value) => 130 - value * (100d / max);
+
+        var sb = SvgStart("Coordinate grid showing the two points and the line joining them.");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='20' x2='210' y2='240' class='axis'/>");
+
+        for (var i = -max; i <= max; i++)
+        {
+            var px = F(X(i));
+            var py = F(Y(i));
+            sb.Append($"<line x1='{px}' y1='126' x2='{px}' y2='134' class='tick'/>");
+            sb.Append($"<line x1='206' y1='{py}' x2='214' y2='{py}' class='tick'/>");
+        }
+
+        sb.Append($"<line x1='{F(X(x1))}' y1='{F(Y(y1))}' x2='{F(X(x2))}' y2='{F(Y(y2))}' class='shape'/>");
+        Point(sb, X(x1), Y(y1), $"({x1}, {y1})");
+        Point(sb, X(x2), Y(y2), $"({x2}, {y2})");
+        return SvgEnd(sb);
+    }
+
+    private static string StraightLine(JsonElement p)
+    {
+        var gradient = GetInt(p, "gradient");
+        var intercept = GetInt(p, "intercept");
+        var xValue = TryGetInt(p, "x");
+        var yValue = xValue.HasValue ? gradient * xValue.Value + intercept : (int?)null;
+
+        var max = Math.Max(
+            6,
+            new[] {
+                Math.Abs(intercept),
+                Math.Abs(xValue ?? 0),
+                Math.Abs(yValue ?? 0),
+                Math.Abs(gradient * 4 + intercept),
+                Math.Abs(-gradient * 4 + intercept)
+            }.Max() + 1);
+
+        double X(int value) => 210 + value * (160d / max);
+        double Y(int value) => 130 - value * (100d / max);
+
+        var sb = SvgStart("Coordinate grid showing the straight-line rule from the question.");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='20' x2='210' y2='240' class='axis'/>");
+
+        var leftX = -max;
+        var rightX = max;
+        var leftY = gradient * leftX + intercept;
+        var rightY = gradient * rightX + intercept;
+        sb.Append($"<line x1='{F(X(leftX))}' y1='{F(Y(leftY))}' x2='{F(X(rightX))}' y2='{F(Y(rightY))}' class='shape'/>");
+
+        Point(sb, X(0), Y(intercept), $"(0, {intercept})");
+        if (xValue.HasValue && yValue.HasValue)
+            Point(sb, X(xValue.Value), Y(yValue.Value), $"({xValue.Value}, {yValue.Value})");
+
+        Text(sb, 210, 246, $"y = {gradient}x {(intercept >= 0 ? "+" : "−")} {Math.Abs(intercept)}", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string ParallelLines(JsonElement p)
+    {
+        var known = GetInt(p, "knownAngle");
+        var relationship = GetInt(p, "relationship");
+
+        var sb = SvgStart("Two parallel lines cut by a transversal with one known angle and one unknown angle.");
+        sb.Append("<line x1='45' y1='75' x2='375' y2='75' class='shape'/>");
+        sb.Append("<line x1='45' y1='190' x2='375' y2='190' class='shape'/>");
+        sb.Append("<line x1='120' y1='230' x2='300' y2='30' class='shape'/>");
+        sb.Append("<path d='M80 66 l12 0 M84 72 l12 0' class='mark'/>");
+        sb.Append("<path d='M310 181 l12 0 M314 187 l12 0' class='mark'/>");
+        Text(sb, 230, 61, $"{known}°", "label");
+        Text(sb, relationship == 0 ? 270 : 200, relationship == 0 ? 176 : 105, "x°", "unknown");
+        return SvgEnd(sb);
+    }
+
+    private static string Supplementary(JsonElement p)
+    {
+        var known = GetInt(p, "knownAngle");
+        var sb = SvgStart("A straight line split into two adjacent angles.");
+        sb.Append("<line x1='45' y1='185' x2='375' y2='185' class='shape'/>");
+        sb.Append("<line x1='210' y1='185' x2='295' y2='55' class='shape'/>");
+        sb.Append("<path d='M260 185 A50 50 0 0 0 237 143' class='arc'/>");
+        sb.Append("<path d='M205 135 A50 50 0 0 0 160 185' class='arc'/>");
+        Text(sb, 270, 155, $"{known}°", "label");
+        Text(sb, 155, 155, "x°", "unknown");
+        return SvgEnd(sb);
+    }
+
+    private static string AlgebraicSupplementary(JsonElement p)
+    {
+        var coefficientA = GetInt(p, "coefficientA");
+        var offsetA = GetInt(p, "offsetA");
+        var coefficientB = GetInt(p, "coefficientB");
+        var offsetB = GetInt(p, "offsetB");
+
+        var sb = SvgStart("A straight line split into two adjacent algebraic angles.");
+        sb.Append("<line x1=\"45\" y1=\"185\" x2=\"375\" y2=\"185\" class=\"shape\"/>");
+        sb.Append("<line x1=\"210\" y1=\"185\" x2=\"295\" y2=\"55\" class=\"shape\"/>");
+        sb.Append("<path d=\"M260 185 A50 50 0 0 0 237 143\" class=\"arc\"/>");
+        sb.Append("<path d=\"M205 135 A50 50 0 0 0 160 185\" class=\"arc\"/>");
+        Text(sb, 270, 155, $"({coefficientA}x + {offsetA})°", "label");
+        Text(sb, 125, 155, $"({coefficientB}x + {offsetB})°", "label");
+        return SvgEnd(sb);
+    }
+
+    private static string Similarity(JsonElement p)
+    {
+        var source = GetInt(p, "sourceLength");
+        var target = TryGetInt(p, "targetLength");
+        var factor = TryGetInt(p, "scaleFactor");
+
+        var sb = SvgStart("Two similar triangles showing corresponding sides.");
+        sb.Append("<polygon points='45,205 145,205 95,105' class='shape fill'/>");
+        sb.Append("<polygon points='220,220 385,220 302,55' class='shape fill'/>");
+        Text(sb, 85, 224, source.ToString(CultureInfo.InvariantCulture), "label");
+        Text(sb, 290, 242, target?.ToString(CultureInfo.InvariantCulture) ?? "?", "label");
+        Text(sb, 94, 90, "A", "point-label");
+        Text(sb, 301, 40, "A′", "point-label");
+        if (factor.HasValue)
+            Text(sb, 210, 28, $"scale factor {factor.Value}", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string Congruence(JsonElement p)
+    {
+        var sideA = GetInt(p, "sideA");
+        var sideB = GetInt(p, "sideB");
+        var sideC = GetInt(p, "sideC");
+        var criterion = GetInt(p, "criterion");
+
+        var sb = SvgStart("Two triangles with corresponding equality information for a congruence question.");
+        sb.Append("<polygon points='35,205 155,205 105,85' class='shape fill'/>");
+        sb.Append("<polygon points='240,205 380,205 305,85' class='shape fill'/>");
+        Text(sb, 72, 222, sideA.ToString(CultureInfo.InvariantCulture), "label");
+        Text(sb, 285, 222, sideA.ToString(CultureInfo.InvariantCulture), "label");
+
+        if (criterion == 0)
+        {
+            Text(sb, 42, 145, sideB.ToString(CultureInfo.InvariantCulture), "label");
+            Text(sb, 350, 145, sideB.ToString(CultureInfo.InvariantCulture), "label");
+            Text(sb, 125, 145, sideC.ToString(CultureInfo.InvariantCulture), "label");
+            Text(sb, 250, 145, sideC.ToString(CultureInfo.InvariantCulture), "label");
+        }
+
+        Text(sb, 210, 35, "corresponding measurements are equal", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string Rectangle(JsonElement p)
+    {
+        var length = GetInt(p, "length");
+        var width = GetInt(p, "width");
+        var sb = SvgStart("Rectangle with labelled length and width.");
+        sb.Append("<rect x='75' y='60' width='270' height='145' class='shape fill'/>");
+        Text(sb, 202, 230, length.ToString(CultureInfo.InvariantCulture), "label");
+        Text(sb, 48, 137, width.ToString(CultureInfo.InvariantCulture), "label");
+        return SvgEnd(sb);
+    }
+
+    private static string RectangleMissingSide(JsonElement p)
+    {
+        var knownSide = GetInt(p, "knownSide");
+        var area = GetInt(p, "area");
+        var sb = SvgStart("Rectangle with one known side and its area; the other side is unknown.");
+        sb.Append("<rect x='75' y='60' width='270' height='145' class='shape fill'/>");
+        Text(sb, 202, 230, knownSide.ToString(CultureInfo.InvariantCulture), "label");
+        Text(sb, 48, 137, "x", "unknown");
+        Text(sb, 210, 135, $"area = {area}", "hint");
+        return SvgEnd(sb);
+    }
+
+    private static string TriangleArea(JsonElement p)
+    {
+        var @base = GetInt(p, "base");
+        var height = GetInt(p, "height");
+        var sb = SvgStart("Triangle with labelled base and perpendicular height.");
+        sb.Append("<polygon points='70,205 350,205 240,55' class='shape fill'/>");
+        sb.Append("<line x1='240' y1='55' x2='240' y2='205' class='dash shape'/>");
+        sb.Append("<path d='M240 185 L260 185 L260 205' class='mark'/>");
+        Text(sb, 202, 232, $"base = {@base}", "label");
+        Text(sb, 252, 135, $"h = {height}", "label");
+        return SvgEnd(sb);
+    }
+
+    private static string Polygon(JsonElement p)
+    {
+        var sides = GetInt(p, "sides");
+        if (sides < 3 || sides > 20)
+            throw new JsonException("Unsupported polygon side count.");
+
+        var sb = SvgStart($"A {sides}-sided polygon for an interior-angle question.");
+        var points = new List<string>(sides);
+        const double cx = 210;
+        const double cy = 132;
+        const double radius = 95;
+        for (var i = 0; i < sides; i++)
+        {
+            var angle = -Math.PI / 2 + 2 * Math.PI * i / sides;
+            var x = cx + radius * Math.Cos(angle);
+            var y = cy + radius * Math.Sin(angle);
+            points.Add($"{F(x)},{F(y)}");
+        }
+        sb.Append($"<polygon points='{string.Join(" ", points)}' class='shape fill'/>");
+        Text(sb, 210, 244, $"{sides} sides", "hint");
+
+        if (p.TryGetProperty("knownSum", out var known) && known.TryGetInt32(out var knownSum))
+            Text(sb, 210, 132, $"known angles total {knownSum}°", "label");
+        else
+            Text(sb, 210, 132, "interior angles", "label");
+
+        return SvgEnd(sb);
+    }
+
+    private static string RectangularPrism(JsonElement p)
+    {
+        var length = GetInt(p, "length");
+        var width = GetInt(p, "width");
+        var height = GetInt(p, "height");
+        var sb = SvgStart("Rectangular prism with labelled length, width and height.");
+        sb.Append("<polygon points='95,85 290,85 350,45 155,45' class='shape fill'/>");
+        sb.Append("<polygon points='95,85 290,85 290,205 95,205' class='shape fill'/>");
+        sb.Append("<polygon points='290,85 350,45 350,165 290,205' class='shape fill'/>");
+        sb.Append("<line x1='95' y1='85' x2='155' y2='45' class='shape'/>");
+        sb.Append("<line x1='155' y1='45' x2='155' y2='165' class='shape dash'/>");
+        sb.Append("<line x1='155' y1='165' x2='350' y2='165' class='shape dash'/>");
+        sb.Append("<line x1='95' y1='205' x2='155' y2='165' class='shape dash'/>");
+        Text(sb, 180, 229, $"l = {length}", "label");
+        Text(sb, 330, 195, $"w = {width}", "label");
+        Text(sb, 64, 150, $"h = {height}", "label");
+        return SvgEnd(sb);
+    }
+
+    private static string RightTriangle(JsonElement p)
+    {
+        var legA = TryGetInt(p, "legA");
+        var legB = TryGetInt(p, "legB");
+        var opposite = TryGetInt(p, "opposite");
+        var adjacent = TryGetInt(p, "adjacent");
+        var hypotenuse = TryGetInt(p, "hypotenuse");
+        var expectedAngle = TryGetInt(p, "expectedAngle");
+        var knownLeg = TryGetInt(p, "knownLeg");
+        var askLeg = TryGetInt(p, "askLeg");
+
+        int? vertical;
+        int? horizontal;
+        string? verticalLabel = null;
+        string? horizontalLabel = null;
+
+        if (knownLeg.HasValue && askLeg.HasValue)
+        {
+            if (askLeg.Value == 0)
+            {
+                vertical = null;
+                horizontal = knownLeg.Value;
+                verticalLabel = "x";
+            }
+            else
+            {
+                vertical = knownLeg.Value;
+                horizontal = null;
+                horizontalLabel = "x";
+            }
+        }
+        else
+        {
+            vertical = opposite ?? legA;
+            horizontal = adjacent ?? legB;
+        }
+
+        var sb = SvgStart("Right triangle with side and angle labels tied to the question values.");
+        sb.Append("<polygon points='85,215 335,215 85,55' class='shape fill'/>");
+        sb.Append("<path d='M85 195 L105 195 L105 215' class='mark'/>");
+        Text(sb, 45, 140, verticalLabel ?? vertical?.ToString(CultureInfo.InvariantCulture) ?? "opposite", "label");
+        Text(sb, 205, 238, horizontalLabel ?? horizontal?.ToString(CultureInfo.InvariantCulture) ?? "adjacent", "label");
+        Text(sb, 225, 122, hypotenuse?.ToString(CultureInfo.InvariantCulture) ?? "hypotenuse", hypotenuse.HasValue ? "label" : "hint");
+        Text(sb, 306, 198, expectedAngle.HasValue ? $"{expectedAngle.Value}°" : "θ", "unknown");
+        return SvgEnd(sb);
+    }
+
+    private static string VectorPlane(JsonElement p)
+    {
+        var ax = TryGetInt(p, "ax") ?? TryGetInt(p, "x1") ?? 2;
+        var ay = TryGetInt(p, "ay") ?? TryGetInt(p, "y1") ?? 1;
+        var bx = TryGetInt(p, "bx") ?? TryGetInt(p, "x2") ?? -1;
+        var by = TryGetInt(p, "by") ?? TryGetInt(p, "y2") ?? 3;
+        var max = Math.Max(4, new[] { ax, ay, bx, by }.Max(v => Math.Abs(v)) + 1);
+        double X(int value) => 210 + value * (160d / max);
+        double Y(int value) => 130 - value * (100d / max);
+
+        var sb = SvgStart("Coordinate plane with directed vector arrows.");
+        sb.Append("<defs><marker id='practice-vector-arrow' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L0,6 L7,3 z' class='arrow-head'/></marker></defs>");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='20' x2='210' y2='240' class='axis'/>");
+        sb.Append($"<line x1='210' y1='130' x2='{F(X(ax))}' y2='{F(Y(ay))}' class='vector' marker-end='url(#practice-vector-arrow)'/>");
+        sb.Append($"<line x1='210' y1='130' x2='{F(X(bx))}' y2='{F(Y(by))}' class='vector secondary' marker-end='url(#practice-vector-arrow)'/>");
+        Text(sb, X(ax) + 10, Y(ay) - 8, "a", "label");
+        Text(sb, X(bx) + 10, Y(by) - 8, "b", "label");
+        return SvgEnd(sb);
+    }
+
+    private static string NumberLineParameters(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var numerator = ValueOr(values, "numerator", "n", "leftNumerator", "sourceNumerator");
+        var denominator = Math.Max(1, ValueOr(values, "denominator", "d", "leftDenominator", "sourceDenominator", fallback: 4));
+        numerator = Math.Clamp(numerator == 0 ? 1 : numerator, 0, denominator);
+
+        var sb = SvgStart("Number line showing an exact fraction position.");
+        const double x0 = 55;
+        const double x1 = 365;
+        const double y = 132;
+        sb.Append($"<line x1='{F(x0)}' y1='{F(y)}' x2='{F(x1)}' y2='{F(y)}' class='axis'/>");
+        for (var i = 0; i <= denominator; i++)
+        {
+            var x = x0 + (x1 - x0) * i / denominator;
+            sb.Append($"<line x1='{F(x)}' y1='124' x2='{F(x)}' y2='140' class='tick'/>");
+        }
+        var px = x0 + (x1 - x0) * numerator / denominator;
+        Point(sb, px, y, $"{numerator}/{denominator}");
+        Text(sb, x0, 162, "0", "label");
+        Text(sb, x1 - 5, 162, "1", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string CoordinateParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var x1 = ValueOr(values, "x", "x1", "sourceX", "startX", fallback: values.Values.ElementAtOrDefault(0));
+        var y1 = ValueOr(values, "y", "y1", "sourceY", "startY", fallback: values.Values.ElementAtOrDefault(1));
+        var x2 = ValueOr(values, "x2", "targetX", "endX", fallback: values.Values.ElementAtOrDefault(2));
+        var y2 = ValueOr(values, "y2", "targetY", "endY", fallback: values.Values.ElementAtOrDefault(3));
+        var max = Math.Max(4, new[] { x1, y1, x2, y2 }.Max(v => Math.Abs(v)) + 2);
+        double X(int value) => 210 + value * (155d / max);
+        double Y(int value) => 130 - value * (95d / max);
+
+        var sb = SvgStart("Coordinate plane showing the values used by the transformation or analytic-geometry question.");
+        sb.Append("<line x1='40' y1='130' x2='380' y2='130' class='axis'/>");
+        sb.Append("<line x1='210' y1='25' x2='210' y2='235' class='axis'/>");
+        Point(sb, X(x1), Y(y1), $"A({x1}, {y1})");
+        if (values.Count >= 4 || x2 != 0 || y2 != 0)
+            Point(sb, X(x2), Y(y2), $"B({x2}, {y2})");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string AngleParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var angle = Math.Clamp(
+            Math.Abs(ValueOr(values, "angle", "knownAngle", "degrees", "turn", fallback: values.Values.FirstOrDefault())),
+            0,
+            360);
+        var radians = -angle * Math.PI / 180d;
+        const double cx = 150;
+        const double cy = 175;
+        const double radius = 100;
+        var ex = cx + radius * Math.Cos(radians);
+        var ey = cy + radius * Math.Sin(radians);
+
+        var sb = SvgStart("Angle diagram tied to the generated question values.");
+        sb.Append($"<line x1='{F(cx)}' y1='{F(cy)}' x2='{F(cx + radius)}' y2='{F(cy)}' class='shape'/>");
+        sb.Append($"<line x1='{F(cx)}' y1='{F(cy)}' x2='{F(ex)}' y2='{F(ey)}' class='shape'/>");
+        sb.Append($"<path d='M {F(cx + 48)} {F(cy)} A 48 48 0 0 0 {F(cx + 48 * Math.Cos(radians))} {F(cy + 48 * Math.Sin(radians))}' class='arc'/>");
+        Text(sb, 185, 145, angle > 0 ? $"{angle}°" : "θ", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string LocusEquidistantVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var mode = ValueOr(values, "mode", fallback: 0);
+        var sb = SvgStart("Two fixed points for an equidistance locus question. The required locus is not drawn.");
+
+        const double y = 132;
+        var ax = 120d;
+        var bx = 300d;
+        sb.Append($"<line x1='{F(ax)}' y1='{F(y)}' x2='{F(bx)}' y2='{F(y)}' class='shape'/>");
+        Point(sb, ax, y, "A");
+        Point(sb, bx, y, "B");
+
+        if (mode == 1 &&
+            values.TryGetValue("start", out var start) &&
+            values.TryGetValue("end", out var end))
+        {
+            Text(sb, ax, 165, $"({start}, 0)", "label");
+            Text(sb, bx, 165, $"({end}, 0)", "label");
+        }
+        else if (mode == 3 &&
+                 values.TryGetValue("distance", out var distance))
+        {
+            const double px = 210d;
+            const double py = 55d;
+            Point(sb, px, py, "P");
+            sb.Append($"<line x1='{F(px)}' y1='{F(py)}' x2='{F(ax)}' y2='{F(y)}' class='shape'/>");
+            sb.Append($"<line x1='{F(px)}' y1='{F(py)}' x2='{F(bx)}' y2='{F(y)}' class='shape dash'/>");
+            Text(sb, 155, 82, $"PA = {distance}", "label");
+            Text(sb, 275, 82, "PB = ?", "unknown");
+        }
+
+        return SvgEnd(sb);
+    }
+
+    private static string CircleParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var radius = Math.Max(1, Math.Abs(ValueOr(values, "radius", "r", "distance", fallback: values.Values.FirstOrDefault())));
+        var sb = SvgStart("Circle or locus diagram tied to the generated question values.");
+        sb.Append("<circle cx='190' cy='125' r='82' class='shape fill'/>");
+        sb.Append("<line x1='190' y1='125' x2='272' y2='125' class='shape'/>");
+        Text(sb, 222, 116, $"r = {radius}", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string SolidParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var length = Math.Abs(ValueOr(values, "length", "l", "a", fallback: values.Values.ElementAtOrDefault(0)));
+        var width = Math.Abs(ValueOr(values, "width", "w", "b", fallback: values.Values.ElementAtOrDefault(1)));
+        var height = Math.Abs(ValueOr(values, "height", "h", "c", fallback: values.Values.ElementAtOrDefault(2)));
+        length = length == 0 ? 1 : length;
+        width = width == 0 ? 1 : width;
+        height = height == 0 ? 1 : height;
+
+        var sb = SvgStart("Solid-geometry diagram tied to the generated dimensions.");
+        sb.Append("<polygon points='90,85 285,85 345,45 150,45' class='shape fill'/>");
+        sb.Append("<polygon points='90,85 285,85 285,205 90,205' class='shape fill'/>");
+        sb.Append("<polygon points='285,85 345,45 345,165 285,205' class='shape fill'/>");
+        sb.Append("<line x1='90' y1='85' x2='150' y2='45' class='shape'/>");
+        Text(sb, 175, 228, $"l={length}", "label");
+        Text(sb, 315, 193, $"w={width}", "label");
+        Text(sb, 62, 150, $"h={height}", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string? ShapeDimensionVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        if (!values.TryGetValue("shape", out var shape) ||
+            !values.TryGetValue("dimension", out var dimension) ||
+            shape is < 0 or > 7 ||
+            dimension is < 2 or > 3)
+        {
+            // Never show a generic geometry picture when the generator has not
+            // persisted enough semantic information to draw the stated shape.
+            return null;
+        }
+
+        var sb = SvgStart("Diagram of the shape named in the question.");
+        switch (shape)
+        {
+            case 0: // square
+                sb.Append("<rect x='120' y='50' width='180' height='160' class='shape fill'/>");
+                break;
+            case 1: // rectangle
+                sb.Append("<rect x='85' y='75' width='250' height='120' class='shape fill'/>");
+                break;
+            case 2: // triangle
+                sb.Append("<polygon points='210,45 75,210 345,210' class='shape fill'/>");
+                break;
+            case 3: // circle
+                sb.Append("<circle cx='210' cy='130' r='85' class='shape fill'/>");
+                break;
+            case 4: // cube
+                sb.Append("<rect x='110' y='75' width='140' height='130' class='shape fill'/>");
+                sb.Append("<rect x='165' y='40' width='140' height='130' class='shape fill'/>");
+                sb.Append("<line x1='110' y1='75' x2='165' y2='40' class='shape'/>");
+                sb.Append("<line x1='250' y1='75' x2='305' y2='40' class='shape'/>");
+                sb.Append("<line x1='250' y1='205' x2='305' y2='170' class='shape'/>");
+                sb.Append("<line x1='110' y1='205' x2='165' y2='170' class='shape'/>");
+                break;
+            case 5: // cuboid
+                sb.Append("<rect x='80' y='85' width='210' height='115' class='shape fill'/>");
+                sb.Append("<rect x='145' y='45' width='210' height='115' class='shape fill'/>");
+                sb.Append("<line x1='80' y1='85' x2='145' y2='45' class='shape'/>");
+                sb.Append("<line x1='290' y1='85' x2='355' y2='45' class='shape'/>");
+                sb.Append("<line x1='290' y1='200' x2='355' y2='160' class='shape'/>");
+                sb.Append("<line x1='80' y1='200' x2='145' y2='160' class='shape'/>");
+                break;
+            case 6: // sphere
+                sb.Append("<circle cx='210' cy='130' r='88' class='shape fill'/>");
+                sb.Append("<ellipse cx='210' cy='130' rx='88' ry='30' class='dash shape'/>");
+                break;
+            default: // cylinder
+                sb.Append("<ellipse cx='210' cy='62' rx='82' ry='28' class='shape fill'/>");
+                sb.Append("<line x1='128' y1='62' x2='128' y2='196' class='shape'/>");
+                sb.Append("<line x1='292' y1='62' x2='292' y2='196' class='shape'/>");
+                sb.Append("<ellipse cx='210' cy='196' rx='82' ry='28' class='shape fill'/>");
+                break;
+        }
+
+        // Do not render learner-visible answer-bearing dimension labels.
+        // The exact dimension remains in server-owned parameters for solving
+        // and verification, but the diagram itself must remain neutral.
+        return SvgEnd(sb);
+    }
+
+    private static string PlaneGeometryParameterVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var a = Math.Abs(ValueOr(values, "base", "length", "a", "width", fallback: values.Values.ElementAtOrDefault(0)));
+        var b = Math.Abs(ValueOr(values, "height", "b", fallback: values.Values.ElementAtOrDefault(1)));
+        a = a == 0 ? 1 : a;
+        b = b == 0 ? 1 : b;
+
+        var sb = SvgStart("Plane-geometry diagram tied to the generated dimensions.");
+        sb.Append("<polygon points='70,205 330,205 280,70 120,70' class='shape fill'/>");
+        sb.Append("<line x1='120' y1='70' x2='120' y2='205' class='dash shape'/>");
+        Text(sb, 185, 230, $"base = {a}", "label");
+        Text(sb, 130, 145, $"h = {b}", "label");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string TrigonometryTriangleVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var sb = SvgStart("Triangle diagram tied to the generated trigonometry values.");
+        sb.Append("<polygon points='75,210 345,210 125,55' class='shape fill'/>");
+        sb.Append("<path d='M125 190 A35 35 0 0 1 153 174' class='arc'/>");
+        Text(sb, 145, 176, "θ", "unknown");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static string TrigonometryGraphVisual(JsonElement p)
+    {
+        var values = IntegerParameters(p);
+        var sb = SvgStart("Trigonometric graph with deterministic axes and generated parameters.");
+        sb.Append("<line x1='35' y1='130' x2='385' y2='130' class='axis'/>");
+        sb.Append("<line x1='55' y1='25' x2='55' y2='235' class='axis'/>");
+        var points = new List<string>();
+        for (var i = 0; i <= 32; i++)
+        {
+            var x = 55 + i * 10;
+            var y = 130 - 70 * Math.Sin(i * Math.PI / 8);
+            points.Add($"{F(x)},{F(y)}");
+        }
+        sb.Append($"<polyline points='{string.Join(" ", points)}' class='shape'/>");
+        AppendParameterSummary(sb, values);
+        return SvgEnd(sb);
+    }
+
+    private static SortedDictionary<string, int> IntegerParameters(JsonElement p)
+    {
+        var result = new SortedDictionary<string, int>(StringComparer.Ordinal);
+        if (p.ValueKind != JsonValueKind.Object)
+            return result;
+        foreach (var property in p.EnumerateObject())
+        {
+            if (property.Value.TryGetInt32(out var value))
+                result[property.Name] = value;
+        }
+        return result;
+    }
+
+    private static int ValueOr(
+        IReadOnlyDictionary<string, int> values,
+        string first,
+        string? second = null,
+        string? third = null,
+        string? fourth = null,
+        int fallback = 0)
+    {
+        foreach (var key in new[] { first, second, third, fourth })
+        {
+            if (key is not null && values.TryGetValue(key, out var value))
+                return value;
+        }
+        return fallback;
+    }
+
+    private static void AppendParameterSummary(
+        StringBuilder sb,
+        IReadOnlyDictionary<string, int> values)
+    {
+        var summary = string.Join(
+            "   ",
+            values.Take(4).Select(pair => $"{pair.Key}={pair.Value}"));
+        if (!string.IsNullOrWhiteSpace(summary))
+            Text(sb, 210, 250, summary, "hint");
+    }
+
+    private static StringBuilder SvgStart(string label)
+    {
+        var safeLabel = WebUtility.HtmlEncode(label);
+        var sb = new StringBuilder();
+        sb.Append($"<svg class='practice-math-visual' viewBox='0 0 420 260' role='img' aria-label='{safeLabel}'>");
+        sb.Append("<style>.fraction-cell{stroke:currentColor;stroke-width:2}.fraction-shaded{fill:rgba(18,114,133,.38)}.fraction-empty{fill:rgba(255,255,255,.35)}.shape{stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.fill{fill:rgba(255,255,255,.28)}.axis{stroke:currentColor;stroke-width:1.5;opacity:.55}.tick{stroke:currentColor;stroke-width:1;opacity:.45}.mark,.arc{stroke:currentColor;stroke-width:2;fill:none}.arc-highlight{stroke:currentColor;stroke-width:8;fill:none;stroke-linecap:round}.dash{stroke-dasharray:7 6;opacity:.7}.label{font:700 16px system-ui,sans-serif;fill:currentColor}.unknown{font:800 18px system-ui,sans-serif;fill:currentColor}.hint{font:600 12px system-ui,sans-serif;fill:currentColor;opacity:.75}.point-label{font:700 13px system-ui,sans-serif;fill:currentColor}.point{fill:currentColor}.vector{stroke:currentColor;stroke-width:3}.secondary{stroke-dasharray:4 3}.arrow-head{fill:currentColor}</style>");
+        return sb;
+    }
+
+    private static string SvgEnd(StringBuilder sb)
+    {
+        sb.Append("</svg>");
+        return sb.ToString();
+    }
+
+    private static void Point(StringBuilder sb, double x, double y, string label)
+    {
+        sb.Append($"<circle cx='{F(x)}' cy='{F(y)}' r='5' class='point'/>");
+        Text(sb, x + 8, y - 8, label, "point-label");
+    }
+
+    private static void Text(StringBuilder sb, double x, double y, string text, string cssClass)
+    {
+        sb.Append($"<text x='{F(x)}' y='{F(y)}' class='{cssClass}'>{WebUtility.HtmlEncode(text)}</text>");
+    }
+
+    private static int GetInt(JsonElement p, string name)
+    {
+        if (!p.TryGetProperty(name, out var value) || !value.TryGetInt32(out var result))
+            throw new JsonException($"Missing integer diagram parameter: {name}");
+        return result;
+    }
+
+    private static int? TryGetInt(JsonElement p, string name) =>
+        p.TryGetProperty(name, out var value) && value.TryGetInt32(out var result)
+            ? result
+            : null;
+
+    private static string F(double value) =>
+        value.ToString("0.##", CultureInfo.InvariantCulture);
+}

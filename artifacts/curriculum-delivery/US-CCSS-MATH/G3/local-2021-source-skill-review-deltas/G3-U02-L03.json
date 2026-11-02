@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 24,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L03",
+  "title": "Tile Rectangles",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-2/lesson-3/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U02.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L03.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "The source asks learners to draw a rectangle covering 8 square units. How many equal square tiles must cover it?",
+      "answerType": "integer",
+      "expected": "8"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-2/lesson-3/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Which One Doesn't Belong: Tiles (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-2/lesson-3/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Time to Tile (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-3/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Card Sort: Rectangles (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-3/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-2/lesson-3/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Tile a Rectangle (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-2/lesson-3/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Rectangle partitioned into 4 rows of 6 of the same size squares, with every other square shaded.",
+      "A partially tiled rectangle.",
+      "Diagram. Rectangle partitioned into 4 rows of 6 of the same size squares.",
+      "Rectangle. 6 rows of 4 square tiles. Tiles have gaps and overlaps.",
+      "A square with 4 of the same size square tiles in it.",
+      "3 square tiles inside a rectangle.",
+      "7 square tiles inside a rectangle.",
+      "Rectangle made of inch tiles.",
+      "Shaded area diagram. Length, 4. Width, 3.",
+      "Area diagram. Length, 4. Width, 3.",
+      "Diagram. Rectangle partitioned into 6 rows of 10 same size squares.",
+      "Rectangle with square units.",
+      "Diagram. Rectangle partitioned into 2 rows of 8 of the same size squares.",
+      "Diagram. Rectangle partitioned into 8 rows of 3 of the same size squares.",
+      "Area diagram. Length, 4. Width, 4.",
+      "Diagram. Rectangle partitioned into one column of 12 of the same size squares.",
+      "Diagram. Rectangle partitioned into 12 rows of 2 of the same size squares.",
+      "Diagram. Rectangle partitioned into 20 rows of 20 of the same size squares."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "The source asks learners to draw a rectangle covering 8 square units. How many equal square tiles must cover it?",
+      "answerType": "integer",
+      "expected": "8"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s count square tiles.",
+      "sourceLearningGoals": "Explain that rectangles that can be covered by the same number of unit squares without gaps or overlaps have the same area. Find the area of rectangles (within 24 square units) by counting unit squares.",
+      "teachingSteps": [
+        "Identify unit squares and the area being measured.",
+        "Represent the shape or rectangle with equal-area units.",
+        "Calculate or compare area with units and check any decomposition."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s count square tiles.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "A rectangle is tiled with 4 rows of 6 unit squares. What is the area?",
+      "answerType": "integer",
+      "expected": "24"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Make a rectangle containing two rows of seven equal unit squares. What is its area?",
+      "answerType": "integer",
+      "expected": "14"
+    },
+    "humanRubric": "Check the rectangle shape, same-sized tiles and no gaps/overlap, as well as source card-sort.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
+  "source": "Original IM K5 U02:L05 2021 teacher lesson, preparation, embedded Student Facing on Our-CS",
+  "sourceActivities": [
+    "True/False 5÷2=5/2 true, 5/2=5 1/2 false, 6/2=3 true",
+    "Relate Pounds to People: more than 1, exactly 1, less than 1 and 1/2 pound cases, including seven pounds and three recipients rows",
+    "Why Does It Work?: explain a÷b=a/b for any nonnegative whole a and positive b"
+  ],
+  "reuse": "Existing Rich V2 correct, preserves general proof and constrained table; only first-party exit added",
+  "positiveCases": [
+    "7÷5=7/5>1",
+    "4÷4=1",
+    "2÷3=2/3<1",
+    "3÷6=1/2",
+    "7÷4=7/4=1 3/4",
+    "0÷5=0",
+    "6÷1=6"
+  ],
+  "negativeCases": [
+    "5/2=5 1/2",
+    "a÷0 treated as defined",
+    "one numerical example claimed to prove all a/b",
+    "3 pounds six people claimed 2 pounds each",
+    "malformed a negative/fractional or b zero"
+  ],
+  "teacherRubric": [
+    "General division-to-fraction argument for arbitrary integer a≥0,b>0 via identical whole partition into b equal parts",
+    "Show why b=0 cannot be a denominator or valid recipient count",
+    "Explain why larger numerator a than b means each receives more than one whole, equal case exactly one, smaller below one",
+    "Use valid choice rows; teacher scores generality of student argument, not just isolated numeric output"
+  ],
+  "PracticeStrategy": "REUSE exact fraction quotient and mixed-number numerical family as supplemental; shared writer EXTEND proof/explanation human scored task",
+  "staticMapping": "NO_EXPLICIT_U02L05; official 5.NF.B.3 fallback numeric families need actual selected verification",
+  "selectedContract": "NOT_VERIFIED",
+  "StageA": "COMPLETE_WITH_EVIDENCE",
+  "StageB": "COMPLETE_WITH_EVIDENCE",
+  "StageC": "BLOCKED_SHARED_INTEGRATION",
+  "sourceAssets": "First-party explanations; publisher figures not copied",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED",
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "owner": "Supervisor 1 designated single writer #592"
+}

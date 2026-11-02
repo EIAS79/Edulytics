@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original V1 A-D individual source/task and candidate review checkpoint; NOT academic signoff",
+  "grade": "G1",
+  "ordinal": 104,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L02",
+  "title": "Compare the Length of Objects Indirectly PLC Activity",
+  "sourceBasis": {
+    "edition": "Illustrative Mathematics 2021, Grade 1",
+    "fullTeacherHtmlPath": "unit-6/lesson-2/lesson.html (Our-CS original source, read-only)",
+    "observedFullTeacherHtmlSha256": "ea6bc52203032df01439e188edd0fac8c338778df37e39da92f46a278155c14d",
+    "sourceHashMatchesExistingRegistry": true,
+    "teacherActivityHeadings": [
+      "Which is Longer? Which is Shorter?",
+      "Measure Your Desk"
+    ],
+    "sourceArtFiguresRights": "NOT_YET_INDEPENDENTLY_CLEARED"
+  },
+  "stageA": {
+    "originalStudentFacingTextCompared": true,
+    "sourceWarmup": "35+20, 35+25, 30+45, 37+45. Important: arithmetic is warm-up only, not the measurement goal.",
+    "originalStudentTasks": [
+      "Choose TWO objects longer than the unsharpened pencil and TWO other objects shorter than the pencil; write FOUR individual comparative sentences",
+      "Compare the length of a desk SIDE and one LEG with an unchanged string, explaining which is longer with drawing or words"
+    ],
+    "existingCandidate": "CommonCoreG1SourceGroundedInstructionalCorrections already supplied the indirect-comparison method but omitted these exact source task demands",
+    "finding": "CONTENT_REPAIR, not a new generator or a new academic standard",
+    "sourceSpecificWarmupMath": [
+      "35+20=55",
+      "35+25=60",
+      "30+45=75",
+      "37+45=82"
+    ],
+    "originalPhysicalTaskBoundaries": [
+      "Choose and compare two objects LONGER than the actual pencil.",
+      "Choose and compare two different objects SHORTER than the actual pencil.",
+      "Reuse one unchanged string to compare real desk side and leg.",
+      "Draw or write the four comparison sentences and the desk reasoning for teacher review."
+    ]
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "changedFile": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "originalSourceSpecificRepairCommit": "2f9abe173b38656a87d76cb811f46917b3efa7a1",
+    "newlinePreservationCommit": "55a53aa83befffe9333f0efacd3ae81e3292cc1e",
+    "correction": "Restored both original learner activities and entire four-expression warm-up while retaining existing indirect-comparison worked method",
+    "publisherArtworkCopied": false,
+    "teacherFacilitatedActivityAsDigitalCompletionClaimed": false,
+    "originalPencilDeskTeachingRepairPreviouslySaved": true,
+    "numericWarmupTeachingSourceMathRevisited": true,
+    "originalPencilAndDeskDimensionsNotInvented": true
+  },
+  "stageC": {
+    "existingCandidatePracticeReused": true,
+    "digitalFamily": "usccss.g1.u06.l02.indirect_length_comparison",
+    "numericEvidenceMayDemonstrate": "Some comparative reasoning on first-party representation",
+    "teacherOnlyBoundary": "Actual selected objects, unchanged string, measured desk and student drawings require genuine teacher review, not inferred graded completion",
+    "originalSourceWarmupModes": [
+      4,
+      7
+    ],
+    "originalSourceWarmupContracts": [
+      "RESULT=55",
+      "RESULT=60",
+      "RESULT=75",
+      "RESULT=82"
+    ],
+    "sameStringDigitalProxyModes": [
+      0,
+      3
+    ],
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+    "sourceWarmupAndHonestyCommit": "fb418d7b4ac3b74eccaaf50ae298268d3d5cd2b7",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson104SourceWarmupAndStringComparisonTests.cs",
+    "authoredTestsCommit": "fddeed93abcfddbcbf08083427606d2e735af4e4",
+    "testsExecuted": false,
+    "physicallyMeasuredPencilObjectsDeskStringTeacherOnly": true
+  },
+  "stageD": {
+    "addedSourceRegressionTest": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "regressionCommit": "a53dc32d964676fa02f4f9246e603a69aedd61f5",
+    "currentHeadDotNetTests": "NOT_RUN",
+    "githubActionsDuringAuthoring": "NOT_TRIGGERED_PER_APPROVED_TIMING",
+    "authenticatedLearnerSourceTaskRenderingAtFrozenSha": "PENDING",
+    "mathOracleRightWrongAndPersistedAttemptAtFrozenSha": "PENDING",
+    "mediaAccessibilityRights": "PENDING",
+    "originalV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "authoritativeProgressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentTextAndWarmupCompared": true,
+    "firstPartyTeachingSourceTaskFidelityReviewed": true,
+    "mathematicsGeneratorAndVerifierStaticallyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "boundary": "Four original warm-up sums digitally gradeable. No source measurements for classroom pencil/desk invented; same-string math is an authored example, real desk/leg/string/object choice and drawings human-graded. Stage D validates actual learner display, tests, physical lesson acceptance and permissions."
+  },
+  "nextAction": "Continue ordinal105, separate real furniture/route measurement from first-party indirect comparison.",
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 104,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U06:L02",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-104-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Four original warm-up sums digitally gradeable. No source measurements for classroom pencil/desk invented; same-string math is an authored example, real desk/leg/string/object choice and drawings human-graded. Stage D validates actual learner display, tests, physical lesson acceptance and permissions."
+  }
+}

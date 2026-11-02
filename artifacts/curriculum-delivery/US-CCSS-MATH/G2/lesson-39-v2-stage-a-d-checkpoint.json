@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 39,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L05",
+  "title": "Measure in Meters",
+  "unitNumber": 3,
+  "lessonNumber": 5,
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_LOCAL_ARCHIVED_TEACHER_PREP_AND_LESSON_REVIEW",
+    "localSource": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\02_Grade_2_IM_K5\\unit-3\\lesson-5",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-5/preparation.html",
+    "canonicalBodySha256": "a23f00bf366db1a1c13b1bed0ab1f70daa96d07b7225742cc61a3512b8653fb6",
+    "sourceSemanticSha256": "4fa94c9e8b1d8c00a71c4c6499c98cfce6ae8b9b6eb06f57551aab154dac646d",
+    "officialOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.NBT.A.2"
+    ],
+    "buildingTowards": "CCSS:2.MD.A.2 (not Addressing)",
+    "warmup": "Choral count from20 through30, from120 through130, compare +100 shift.",
+    "activity1": "Real teacher-prepared floor TAPE strips A gila58cm B baby alligator72cm C baby cobra44cm D komodo180cm, groups3–4 measure with cm tools and record cm.",
+    "activity2": "Meterstick introduced:1m=100cm, D remeasured as1m80cm, E adult alligator3m36cm, F adult cobra1m90cm, G ribbon snake2m82cm.",
+    "synthesis": "Exact D 180cm approximates2 meters but NOT exactly2m; moving a meterstick fewer times better than centimeter rulers.",
+    "teacherOnly": "Real floor tape precision, actual groups, tool alignment and MLR2 language human review.",
+    "sourceCoolDown": "Measure in Meters restricted teacher-login only, not reproduced.",
+    "rights": "Source public teacher preparation exactly defines original tape lengths; no original protected photos, assessment or workbook sheet copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_ORIGINAL_BODY_SHA_SIX_OLD_FIELDS_GUARDED_RICH_SOURCE_CONTENT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3MetersReptileTapeTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Exact old pack URL/SHA/standards/6 English fields and allowed old persisted version; no unrelated lesson rewrite."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTICATED_REPTILE_CM_METER_COMPANION_FOUR_EXACT_NUMERIC_FAMILIES_AND_TESTS_UNRUN",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3FifthLessonMeters.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson5MetersContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson5MetersQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson39ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson39Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l05.meters_centimeters_to_cm",
+      "usccss.g2.u03.l05.cm_to_remaining_centimeters",
+      "usccss.g2.u03.l05.full_meter_sticks_plus_remainder",
+      "usccss.g2.u03.l05.compare_reptile_tape_lengths"
+    ],
+    "firstPartyExit": "2m47cm=247cm,365cm=3m65cm,4m12cm=412cm; not official restricted cooldown.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3MetersReptileTapeTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3FifthLessonMetersTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson5MetersQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson39ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "studentSecurity": "StudentPortal role, selected adoption and published lesson access, antiforgery, bounded strings, no official grade.",
+    "teacherReview": "Authentic tape layout, real ruler/meterstick readings, group interactions and tool choices not automatically certified."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L06_GRADE_ORDINAL40_SOURCE_A_B_C"
+}

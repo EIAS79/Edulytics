@@ -1,0 +1,20 @@
+@using Edulytics.Web.Curriculum.Grade3
+<section class="panel" aria-label="Partially gridded and ungridded composite-area figures">
+    <h2>Activity 1 — Bye-Bye Squares</h2>
+    <p>Notice and wonder: what information would help you find the area of this outline? No unit length or measurements are given yet.</p>
+    @await Html.PartialAsync("_Grade3CompositeAreaFigure",new Grade3CompositeAreaFigure(7,5,3,3,4))
+    <h3>Figure 1 — a partial grid</h3>
+    <p>Use the remaining unit squares and boundary intervals to find side lengths. Work with a partner, decompose the figure without overlap, and explain your area calculation. Try multiplying side lengths before filling in every missing square.</p>
+    @await Html.PartialAsync("_Grade3CompositeAreaFigure",new Grade3CompositeAreaFigure(7,5,3,3,4,ShowTicks:true,PartialGridRows:3,PartialGridStartColumn:3))
+    <h3>Figure 2 — boundary intervals</h3>
+    <p>Think quietly before discussing how to find area from the equal-unit intervals. The interior grid is gone. Count the gaps rather than the number of short marks; then identify the two rectangles and multiply.</p>
+    @await Html.PartialAsync("_Grade3CompositeAreaFigure",new Grade3CompositeAreaFigure(8,3,2,4,3,ShowTicks:true))
+    <h2>Activity 2 — How Many Pavers Do We Need?</h2>
+    <p>Noah wants to cover this community-garden patio with square pavers. Each paver is 1 foot by 1 foot, covering 1 square foot. Find the number of pavers and, separately, the area. Explain how the measurements support your non-overlapping split.</p>
+    @await Html.PartialAsync("_Grade3CompositeAreaFigure",new Grade3CompositeAreaFigure(9,4,3,2,0,ShowDimensions:true,Unit:"ft"))
+    <p>Prepare a labelled visual explanation. Compare methods with other groups, identify which measurements each method uses, and explain why different methods give the same area. Your teacher reviews this discussion. The original patio photograph supplies context; no photograph is copied here.</p>
+    <h3>New Edulytics Cool-down</h3>
+    <p>Find the area of this separate figure from its labelled side lengths. Write a matching expression, explain why the pieces do not overlap, and check another decomposition.</p>
+    @await Html.PartialAsync("_Grade3CompositeAreaFigure",new Grade3CompositeAreaFigure(9,3,2,4,0,ShowDimensions:true,Unit:"units"))
+    <p><a href="https://cms-assets.illustrativemathematics.org/4l5vnfu1bzmx76uo8226vheh8ndx" target="_blank" rel="noopener noreferrer">Original 2021 three-page Student Task Statements</a>. All displayed figures are independently drawn mathematical models, without publisher SVG paths, logos or photographs.</p>
+</section>

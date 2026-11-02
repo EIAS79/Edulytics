@@ -1,0 +1,1192 @@
+{
+  "SchemaVersion": 1,
+  "BlueprintCode": "CAMBRIDGE-PRIMARY-S6:DFE-OGL-V1",
+  "PackCode": "CAMBRIDGE-INTL-MATH",
+  "VersionCode": "CAMBRIDGE-PATHWAY-2026",
+  "LogicalLevel": 6,
+  "NativeLevel": "Cambridge Primary Stage 6",
+  "Pathway": null,
+  "OfficialAuthority": "Cambridge International Education",
+  "OfficialSourceUrl": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-primary/curriculum/mathematics/",
+  "PedagogicalSourceType": "OpenEducationalResource",
+  "SourceTitle": "Mathematics guidance: year 6",
+  "SourcePublisher": "UK Department for Education",
+  "SourceEdition": "DfE-00115-2020 / June 2020",
+  "SourceRootUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+  "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
+  "SourceLicense": "Open Government Licence v3.0",
+  "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+  "SourceSelectionReason": "Cambridge official material remains reference-only. DfE primary Mathematics guidance supplies an open, structured pedagogical sequence that Edulytics can lawfully adapt for commercial use.",
+  "SourceSelectionEvidence": "Official Cambridge identifiers remain reference-only. Formal mappings in this blueprint were source-audited against the current Cambridge framework/syllabus; learner-facing pedagogy remains independently authored from lawful open sources and Cambridge objective prose is not reproduced. Unmapped legacy enrichment that did not fit the current Cambridge stage or syllabus was replaced in-place with independently authored source-aligned lessons while preserving stable lesson identities.",
+  "SourceEvidenceUrls": [
+    "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
+    "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+    "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  ],
+  "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. No government logos or identified third-party copyright material is reproduced. Cambridge objective prose is not reproduced.",
+  "SemanticGraphSha256": "6a2bb6e90f45cbd0aa95f022fa6ab310ee0d93cd10ee6bee5a2cfbcfab43a6bb",
+  "AcquisitionDiagnostics": {
+    "UnitCount": 4,
+    "LessonCount": 24,
+    "OfficialStandardCount": 54,
+    "AddressingCoverageCount": 54,
+    "FormalMappingCount": 73,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
+    "LessonsWithoutNumberedAddressingStandard": 0,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 0,
+    "MultiStandardLessons": 13
+  },
+  "Units": [
+    {
+      "Number": 3,
+      "UnitCode": "S6-U03-AS",
+      "SortOrder": 3,
+      "Title": "Additive Structures and Relationships",
+      "LessonCount": 8,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "a82a0b1239a2fff74ccd426c4b0a4aec4dcdf0335d707eed07ed40a578fefb02"
+    },
+    {
+      "Number": 5,
+      "UnitCode": "S6-U05-F",
+      "SortOrder": 5,
+      "Title": "Fractions",
+      "LessonCount": 6,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "0375f95c47f0212c1da5a528218bd5e5fe2d3b49219a8498e8f108dc6306f479"
+    },
+    {
+      "Number": 6,
+      "UnitCode": "S6-U06-G",
+      "SortOrder": 6,
+      "Title": "Geometry and Measure",
+      "LessonCount": 2,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "4c13447edbb6feaab5e33ee367446f821b7e21d894a86e21522a760347b5457d"
+    },
+    {
+      "Number": 1,
+      "UnitCode": "S6-U01-NPV",
+      "SortOrder": 1,
+      "Title": "Number and Place Value",
+      "LessonCount": 8,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "36e3c6ac42cbb64adcb63555bc9908101cb9d2286255d68f304423da0fd35fee"
+    }
+  ],
+  "Lessons": [
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 1,
+      "Title": "Quantify additive and multiplicative relationships: Build the Idea",
+      "SortOrder": 1,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "41977cdbbaeb595bc7768839c7dbdf3862b377a2f07885f4118980974de7fe64",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.03",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nc.02",
+        "CAM:OUT:0096:6Nc.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-1:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 2,
+      "Title": "Quantify additive and multiplicative relationships: Reason and Apply",
+      "SortOrder": 2,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "de259378d4573c3c14b9e6f1acd48c64af6c079bde7fd9bc46e7aa06aed89d3a",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.03",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.04",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.01",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.09",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.09",
+          "SortOrder": 5
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nc.02",
+        "CAM:OUT:0096:6Nc.03",
+        "CAM:OUT:0096:6Nc.04",
+        "CAM:OUT:0096:6Ni.01",
+        "CAM:OUT:0096:6Nf.09"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-2:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 3,
+      "Title": "Derive related calculations: Build the Idea",
+      "SortOrder": 3,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "ca97c340a28b1f84989720bc4553adef200be762b226fe41897c1b20387eddc9",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ss.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ss.01",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ss.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ss.02",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ss.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ss.04",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ss.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ss.03",
+          "SortOrder": 5
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Ni.02",
+        "CAM:OUT:0096:6Ss.01",
+        "CAM:OUT:0096:6Ss.02",
+        "CAM:OUT:0096:6Ss.04",
+        "CAM:OUT:0096:6Ss.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-2:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 4,
+      "Title": "Derive related calculations: Reason and Apply",
+      "SortOrder": 4,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "de2eb3442c165f69aeec4b64504ef6da35e3d9e41d8eb930e3ea4af912c6baea",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.05",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.04",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.06",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.07",
+          "SortOrder": 5
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.08",
+          "SortOrder": 6
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.10",
+          "SortOrder": 7
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.11",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.11",
+          "SortOrder": 8
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Ni.02",
+        "CAM:OUT:0096:6Ni.05",
+        "CAM:OUT:0096:6Ni.04",
+        "CAM:OUT:0096:6Ni.06",
+        "CAM:OUT:0096:6Ni.07",
+        "CAM:OUT:0096:6Ni.08",
+        "CAM:OUT:0096:6Nf.10",
+        "CAM:OUT:0096:6Nf.11"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-3:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 5,
+      "Title": "Solve problems involving ratio relationships: Build the Idea",
+      "SortOrder": 5,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "bdfa27be4d4cef5960e0f7ed7f79ad9ac7500d881b53d74c68136a7b92bf6fd1",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.12",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.12",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.13",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.13",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.12",
+        "CAM:OUT:0096:6Nf.13"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-3:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 6,
+      "Title": "Solve problems involving ratio relationships: Reason and Apply",
+      "SortOrder": 6,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "c7b0292baad79b273a6357ca54590a14917bf588d544d966452aae946bb6b7af",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.12",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.12",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.13",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.13",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.12",
+        "CAM:OUT:0096:6Nf.13"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-4:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:BUILD",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 7,
+      "Title": "Solve problems with 2 unknowns: Build the Idea",
+      "SortOrder": 7,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "2c57c1bfc3af40b13c5b80709820191ace4cbffc2a1796db4ef26337a8ed5392",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nc.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6AS-MD-4:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6AS-MD-4:APPLY",
+      "UnitNumber": 3,
+      "UnitTitle": "Additive Structures and Relationships",
+      "LessonNumber": 8,
+      "Title": "Solve problems with 2 unknowns: Reason and Apply",
+      "SortOrder": 8,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "3555c0ddea3e58922b5a55c11cceb200a21df9eb25a9e34f503083d13f22e0c4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nc.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6F-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 1,
+      "Title": "Simplify fractions: Build the Idea",
+      "SortOrder": 9,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "06ac108b43e7fa048576422c75600edc45098056a8a36b9e809ca7cae3b207c0",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.03",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gp.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gp.01",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gp.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gp.02",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gp.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gp.03",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gp.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gp.04",
+          "SortOrder": 5
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gp.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gp.05",
+          "SortOrder": 6
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Sp.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Sp.03",
+          "SortOrder": 7
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Sp.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Sp.04",
+          "SortOrder": 8
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.03",
+        "CAM:OUT:0096:6Gp.01",
+        "CAM:OUT:0096:6Gp.02",
+        "CAM:OUT:0096:6Gp.03",
+        "CAM:OUT:0096:6Gp.04",
+        "CAM:OUT:0096:6Gp.05",
+        "CAM:OUT:0096:6Sp.03",
+        "CAM:OUT:0096:6Sp.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6F-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-1:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 2,
+      "Title": "Simplify fractions: Reason and Apply",
+      "SortOrder": 10,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "2b2a84198e1b91f5b7fbae9a01ac84f95dabb7769bcad65a46022352cefcf599",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.03",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.01",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.04",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.02",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.06",
+          "SortOrder": 5
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.07",
+          "SortOrder": 6
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.03",
+        "CAM:OUT:0096:6Nf.01",
+        "CAM:OUT:0096:6Nf.04",
+        "CAM:OUT:0096:6Nf.02",
+        "CAM:OUT:0096:6Nf.06",
+        "CAM:OUT:0096:6Nf.07"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6F-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 3,
+      "Title": "Express fractions in a common denomination: Build the Idea",
+      "SortOrder": 11,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "49b23c0f3b6b645f16d26c7866235317bc175d22906ef3b99bc48a3acf3bb499",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.05",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.05"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6F-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-2:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 4,
+      "Title": "Express fractions in a common denomination: Reason and Apply",
+      "SortOrder": 12,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "7bd4bf0bc1dd9d03c49de872a2641eaaca1f882b0ab47d46db26a3320206b547",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.05",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Sp.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Sp.01",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Sp.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Sp.02",
+          "SortOrder": 3
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.05",
+        "CAM:OUT:0096:6Sp.01",
+        "CAM:OUT:0096:6Sp.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6F-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:BUILD",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 5,
+      "Title": "Compare fractions with different denominators: Build the Idea",
+      "SortOrder": 13,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "eeec528e44134147e36d79d4e35f0df86d3330f9949afd535480b3329c646b16",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.08",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.08"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6F-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6F-3:APPLY",
+      "UnitNumber": 5,
+      "UnitTitle": "Fractions",
+      "LessonNumber": 6,
+      "Title": "Compare fractions with different denominators: Reason and Apply",
+      "SortOrder": 14,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "b1a055f48b117ba765ac3a5130b70005d621dacc849d39b9411b9d21d798db47",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nf.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nf.08",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Nf.08"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6G-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6G-1:BUILD",
+      "UnitNumber": 6,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 1,
+      "Title": "Draw, compose and decompose shapes: Build the Idea",
+      "SortOrder": 15,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "2624cea254e5eb2ccb46ca5423da5df0d5f7f3f00d20805fa5a5f765e70d32af",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.04",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.06",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Gg.04",
+        "CAM:OUT:0096:6Gg.06"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6G-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6G-1:APPLY",
+      "UnitNumber": 6,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 2,
+      "Title": "Draw, compose and decompose shapes: Reason and Apply",
+      "SortOrder": 16,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "266a2f260f0cade16e842993d176710927aad5208b44fbd89f1373b9e60f1057",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.04",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.06",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.01",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.08",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.03",
+          "SortOrder": 5
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.02",
+          "SortOrder": 6
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.11",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.11",
+          "SortOrder": 7
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.09",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.09",
+          "SortOrder": 8
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.10",
+          "SortOrder": 9
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.07",
+          "SortOrder": 10
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gg.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gg.05",
+          "SortOrder": 11
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Gg.04",
+        "CAM:OUT:0096:6Gg.06",
+        "CAM:OUT:0096:6Gg.01",
+        "CAM:OUT:0096:6Gg.08",
+        "CAM:OUT:0096:6Gg.03",
+        "CAM:OUT:0096:6Gg.02",
+        "CAM:OUT:0096:6Gg.11",
+        "CAM:OUT:0096:6Gg.09",
+        "CAM:OUT:0096:6Gg.10",
+        "CAM:OUT:0096:6Gg.07",
+        "CAM:OUT:0096:6Gg.05"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-1:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 1,
+      "Title": "Powers of 10: Build the Idea",
+      "SortOrder": 17,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "4094b5c1986640049629bdf998a14a241886090ccb0501f02ca4cf41964fd89e",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-1:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-1:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 2,
+      "Title": "Powers of 10: Reason and Apply",
+      "SortOrder": 18,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "46ca6c805ccf3fb03094ad4004c0ae04d5d585ad4ba6d788b8664a0cd948ce8e",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-2:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-2:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 3,
+      "Title": "Place value in numbers up to 10,000,000: Build the Idea",
+      "SortOrder": 19,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "eb00788e594e63ffd7a79f9eb0bf464af994f6f6015eb4014ba79fb26b8ccf0c",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.03",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.02",
+        "CAM:OUT:0096:6Np.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-2:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-2:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 4,
+      "Title": "Place value in numbers up to 10,000,000: Reason and Apply",
+      "SortOrder": 20,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "47edd42cb88aae068df3adb90bbee51a27f0d194078b0b15d2ae64254c669614",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.03",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Nc.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Nc.01",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Ni.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Ni.03",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.01",
+          "SortOrder": 5
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Gt.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Gt.01",
+          "SortOrder": 6
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.02",
+        "CAM:OUT:0096:6Np.03",
+        "CAM:OUT:0096:6Nc.01",
+        "CAM:OUT:0096:6Ni.03",
+        "CAM:OUT:0096:6Np.01",
+        "CAM:OUT:0096:6Gt.01"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-3:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-3:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 5,
+      "Title": "Numbers up to 10 million in the linear number system: Build the Idea",
+      "SortOrder": 21,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "9370968070c11fc50caed506394124e6c9f9901b6002931c038c75eac9bf886a",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-3:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-3:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 6,
+      "Title": "Numbers up to 10 million in the linear number system: Reason and Apply",
+      "SortOrder": 22,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "61cba86b1e01777e47c1d4edcfb22f246c414747a4a7369f8468a644e686c936",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-4:BUILD",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:BUILD",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 7,
+      "Title": "Round decimals to the nearest tenth or whole number: Build the Idea",
+      "SortOrder": 23,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "086f3c73769d8a3b87de288a2c26ad46cd765ea2e5e794e7faf91943aaac1b1e",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "DFE-Y6:6NPV-4:APPLY",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:S6:6NPV-4:APPLY",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Place Value",
+      "LessonNumber": 8,
+      "Title": "Round decimals to the nearest tenth or whole number: Reason and Apply",
+      "SortOrder": 24,
+      "SourceUrl": "https://assets.publishing.service.gov.uk/media/614094a6d3bf7f05afde045f/Maths_guidance_year_6.pdf",
+      "SemanticSha256": "dafdf8e7a33e7cb74b974d21712c4e76878328c8c61cc14497e54272a4f2d564",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "6Np.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0096:6Np.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0096:6Np.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-PRIMARY-S6"
+      ],
+      "FormalTargets": []
+    }
+  ]
+}

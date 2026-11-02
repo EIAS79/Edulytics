@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 9,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L09",
+  "unitNumber": 1,
+  "lessonNumber": 9,
+  "title": "Interpret Bar Graphs PLC Activity",
+  "officialOutcomes": [
+    "CCSS:2.MD.D.10"
+  ],
+  "sourceEdition": "IM K-5 2021, first edition",
+  "stageA": {
+    "status": "COMPLETE_2021_TEACHER_STUDENT_PUBLIC_BAR_GRAPH_TASKS_AND_INDEPENDENT_ASSESSMENT",
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-9/preparation.html",
+    "lesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-9/lesson.html",
+    "warmUp": "Notice and Wonder favorite pets: picture graph vs bar graph shows the same category counts (cat 6, dog 10, fish 5, lizard 3). Interpret bar heights using a numbered vertical scale.",
+    "activity1": "Groups read different classroom field-trip-choice bar graphs; author several mathematically true statements, combine/compare categories, and identify which classroom graph was discussed.",
+    "activity2": "Our Favorite Seasons source heights winter7 spring3 summer13 fall3; ask summer, spring+fall, all pairs with total ten, and whole count; learner uses bar scale.",
+    "sourceSynthesis": "Describe why a bar graph's numbered scale simplifies counting versus picture symbols; teacher observes group discussion and actual student-generated statements",
+    "originalCoolDown": "Publisher Animals at the Zoo restricted; independent original Edulytics school-club Cool-down authored, not presented as publisher assessment",
+    "charts": "First-party CSS rectangles and semantic accessible text: no publisher image reuse. Fictional class A/B graphs explicitly described as hypothetical rather than real class observations.",
+    "sourceActivityPrintPdfCopied": false
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_LOCKED_BAR_SCALE_AND_MULTIPLE_STATEMENTS_TEACHING",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1BarGraphsSourceTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentRichV2Reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "sourceGuard": "2021 preparation URL, original canonical body SHA and 2.MD.D.10, prior exact English fields plus prior published content version",
+    "improvedTeaching": "Read numbered scale, differentiate same-data picture graph/bar graph, field-trip classroom labels, source multiple valid seasonal pairs and total 26"
+  },
+  "stageC": {
+    "status": "COMPLETE_THREE_EXACT_BAR_NUMERIC_FAMILIES_INDEPENDENT_COOLDOWN_AND_TEACHER_RUBRIC",
+    "practiceFamilies": [
+      "usccss.g2.u01.l09.bar_category_height",
+      "usccss.g2.u01.l09.bar_combine_or_compare",
+      "usccss.g2.u01.l09.bar_total"
+    ],
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson9BarGraphContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson9BarGraphQuestions.cs",
+    "independentCooldown": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1NinthLessonEdulyticsCoolDown.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson9ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson9Activities/Index.cshtml",
+    "studentEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "studentGradePolicy": "Immediate numeric/checker feedback does not persist official school grades and does not substitute teacher assessment of original written statements and partner discourse.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson9BarGraphQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1BarGraphsSourceTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1NinthLessonEdulyticsCoolDownTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson9ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "actualTestsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "humanAcademicApproval": "NOT_ASSERTED",
+    "productionRelease": "NO_GO",
+    "merged": false,
+    "deployed": false,
+    "note": "Authoring-only sequential gate, technical correctness and runtime tests remain to be determined during Stage D."
+  },
+  "nextAction": "GRADE2_U01_L10_ONLY_AFTER_L09_A_B_C_COMPLETED"
+}

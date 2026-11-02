@@ -1,0 +1,21 @@
+namespace Edulytics.Core.Mathematics.Practice;
+internal static class UsCcssG2Unit8LessonPracticeContracts
+{
+ public const string Version="im2021-g2-u08-firstparty-source-separate-v1";
+ public static readonly IReadOnlyList<LessonPracticeContract> Reviewed=[
+new("PED:US-CCSS-MATH:G2:U08:L01","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l01.equal_share_count","usccss.g2.u08.l01.share_leftover","usccss.g2.u08.l01.even_leftover","usccss.g2.u08.l01.pair_count"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L02","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l02.pairs_made","usccss.g2.u08.l02.pairs_eighteen","usccss.g2.u08.l02.pairs_twenty","usccss.g2.u08.l02.one_unpaired"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L03","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l03.even_no_left","usccss.g2.u08.l03.odd_one_left","usccss.g2.u08.l03.two_equal_groups","usccss.g2.u08.l03.odd_pairs"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L04","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l04.even_double","usccss.g2.u08.l04.odd_double_plus_one","usccss.g2.u08.l04.half_even","usccss.g2.u08.l04.odd_remainder"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L05","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l05.plus_one_parity","usccss.g2.u08.l05.plus_two_parity","usccss.g2.u08.l05.next_even","usccss.g2.u08.l05.next_odd"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L06","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l06.skip_two","usccss.g2.u08.l06.skip_five","usccss.g2.u08.l06.skip_ten","usccss.g2.u08.l06.skip_two_three_jumps"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L07","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l07.six_array","usccss.g2.u08.l07.nine_array","usccss.g2.u08.l07.seven_not_rectangular","usccss.g2.u08.l07.three_by_four"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L08","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l08.columns_total","usccss.g2.u08.l08.columns_count","usccss.g2.u08.l08.rows_count","usccss.g2.u08.l08.column_skip_sum"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L09","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l09.waffle_tray_total","usccss.g2.u08.l09.array_sum","usccss.g2.u08.l09.row_addends","usccss.g2.u08.l09.column_addends"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L10","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l10.row_repeated_sum","usccss.g2.u08.l10.column_repeated_sum","usccss.g2.u08.l10.number_rows","usccss.g2.u08.l10.number_columns"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L11","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l11.tile_rectangle_total","usccss.g2.u08.l11.tile_columns","usccss.g2.u08.l11.tile_rows","usccss.g2.u08.l11.tiles_after_one_removed"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L12","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l12.partition_total","usccss.g2.u08.l12.horizontal_boundaries","usccss.g2.u08.l12.vertical_boundaries","usccss.g2.u08.l12.equal_squares"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version),
+new("PED:US-CCSS-MATH:G2:U08:L13","number.whole.add_subtract","G2_U08_FIRSTPARTY_SOURCE_HUMAN",new string[]{"usccss.g2.u08.l13.four_pairs_sum","usccss.g2.u08.l13.three_pairs_sum","usccss.g2.u08.l13.compare_equal_addends","usccss.g2.u08.l13.skip_two_next"},"IM2021_G2_U08_INDEPENDENT_EXACT","READY_VERIFIED",Version)
+
+ ];
+}

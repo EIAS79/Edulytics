@@ -1,0 +1,868 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DashboardTitle" xml:space="preserve">
+    <value>Platform dashboard</value>
+  </data>
+  <data name="PlatformContext" xml:space="preserve">
+    <value>Platform administration</value>
+  </data>
+  <data name="DashboardMessage" xml:space="preserve">
+    <value>Your secure Edulytics platform workspace is ready.</value>
+  </data>
+  <data name="SignedInAs" xml:space="preserve">
+    <value>Signed in as</value>
+  </data>
+  <data name="NavSchools" xml:space="preserve">
+    <value>Schools</value>
+  </data>
+  <data name="DashboardSchoolsTitle" xml:space="preserve">
+    <value>School management</value>
+  </data>
+  <data name="DashboardSchoolsDescription" xml:space="preserve">
+    <value>Create and manage school tenants, statuses and core school information.</value>
+  </data>
+  <data name="ManageSchools" xml:space="preserve">
+    <value>Manage schools</value>
+  </data>
+  <data name="SchoolsTitle" xml:space="preserve">
+    <value>Schools</value>
+  </data>
+  <data name="SchoolsSubtitle" xml:space="preserve">
+    <value>Manage school tenants across the Edulytics platform.</value>
+  </data>
+  <data name="CreateSchool" xml:space="preserve">
+    <value>Create school</value>
+  </data>
+  <data name="EmptyTitle" xml:space="preserve">
+    <value>No schools yet</value>
+  </data>
+  <data name="EmptyDescription" xml:space="preserve">
+    <value>Create the first school tenant to start configuring the platform.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>School name</value>
+  </data>
+  <data name="SchoolCode" xml:space="preserve">
+    <value>School code</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Contact email</value>
+  </data>
+  <data name="DefaultCulture" xml:space="preserve">
+    <value>Default language</value>
+  </data>
+  <data name="TimeZoneId" xml:space="preserve">
+    <value>Time zone</value>
+  </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="UpdatedAt" xml:space="preserve">
+    <value>Last updated</value>
+  </data>
+  <data name="ArchivedAt" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="BackToSchools" xml:space="preserve">
+    <value>Back to schools</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create school</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SchoolDetails" xml:space="preserve">
+    <value>School details</value>
+  </data>
+  <data name="SchoolInformation" xml:space="preserve">
+    <value>School information</value>
+  </data>
+  <data name="StatusActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="StatusSuspended" xml:space="preserve">
+    <value>Suspended</value>
+  </data>
+  <data name="StatusArchived" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="Suspend" xml:space="preserve">
+    <value>Suspend</value>
+  </data>
+  <data name="Reactivate" xml:space="preserve">
+    <value>Reactivate</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="ConfirmSuspend" xml:space="preserve">
+    <value>Suspend this school?</value>
+  </data>
+  <data name="ConfirmReactivate" xml:space="preserve">
+    <value>Reactivate this school?</value>
+  </data>
+  <data name="ConfirmArchive" xml:space="preserve">
+    <value>Archive this school? This action cannot be reversed in the current workflow.</value>
+  </data>
+  <data name="CreateSuccess" xml:space="preserve">
+    <value>School created successfully.</value>
+  </data>
+  <data name="UpdateSuccess" xml:space="preserve">
+    <value>School updated successfully.</value>
+  </data>
+  <data name="SuspendSuccess" xml:space="preserve">
+    <value>School suspended successfully.</value>
+  </data>
+  <data name="ReactivateSuccess" xml:space="preserve">
+    <value>School reactivated successfully.</value>
+  </data>
+  <data name="ArchiveSuccess" xml:space="preserve">
+    <value>School archived successfully.</value>
+  </data>
+  <data name="RequiredName" xml:space="preserve">
+    <value>School name is required.</value>
+  </data>
+  <data name="NameTooLong" xml:space="preserve">
+    <value>School name is too long.</value>
+  </data>
+  <data name="RequiredSchoolCode" xml:space="preserve">
+    <value>School code is required.</value>
+  </data>
+  <data name="SchoolCodeTooLong" xml:space="preserve">
+    <value>School code is too long.</value>
+  </data>
+  <data name="InvalidSchoolCode" xml:space="preserve">
+    <value>School code may contain only A-Z, 0-9 and hyphens.</value>
+  </data>
+  <data name="DuplicateSchoolCode" xml:space="preserve">
+    <value>A school with this code already exists.</value>
+  </data>
+  <data name="RequiredCountryCode" xml:space="preserve">
+    <value>Country code is required.</value>
+  </data>
+  <data name="CountryCodeTooLong" xml:space="preserve">
+    <value>Country code is too long.</value>
+  </data>
+  <data name="RequiredCity" xml:space="preserve">
+    <value>City is required.</value>
+  </data>
+  <data name="CityTooLong" xml:space="preserve">
+    <value>City is too long.</value>
+  </data>
+  <data name="RequiredContactEmail" xml:space="preserve">
+    <value>Contact email is required.</value>
+  </data>
+  <data name="ContactEmailTooLong" xml:space="preserve">
+    <value>Contact email is too long.</value>
+  </data>
+  <data name="InvalidContactEmail" xml:space="preserve">
+    <value>Enter a valid contact email address.</value>
+  </data>
+  <data name="RequiredDefaultCulture" xml:space="preserve">
+    <value>Default language is required.</value>
+  </data>
+  <data name="InvalidDefaultCulture" xml:space="preserve">
+    <value>Select English or Polish.</value>
+  </data>
+  <data name="RequiredTimeZoneId" xml:space="preserve">
+    <value>Time zone is required.</value>
+  </data>
+  <data name="TimeZoneIdTooLong" xml:space="preserve">
+    <value>Time zone identifier is too long.</value>
+  </data>
+  <data name="SchoolNotFound" xml:space="preserve">
+    <value>The school could not be found.</value>
+  </data>
+  <data name="ArchivedCannotEdit" xml:space="preserve">
+    <value>Archived schools cannot be edited.</value>
+  </data>
+  <data name="InvalidStatusTransition" xml:space="preserve">
+    <value>This school status change is not allowed.</value>
+  </data>
+  <data name="ConcurrencyConflict" xml:space="preserve">
+    <value>This school was changed by another user. Reload the page and try again.</value>
+  </data>
+  <data name="PersistenceError" xml:space="preserve">
+    <value>The school could not be saved. Try again.</value>
+  </data>
+  <data name="CultureEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="CulturePolish" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="ImmutableCodeHelp" xml:space="preserve">
+    <value>The school code is permanent after creation.</value>
+  </data>
+  <data name="CreateIntro" xml:space="preserve">
+    <value>Enter the school's core information.</value>
+  </data>
+  <data name="EditIntro" xml:space="preserve">
+    <value>Update the school's core information.</value>
+  </data>
+  <data name="UtcSuffix" xml:space="preserve">
+    <value>UTC</value>
+  </data>
+  <data name="ManageSchoolUsers" xml:space="preserve">
+    <value>Manage users</value>
+  </data>
+  <data name="SchoolUsersTitle" xml:space="preserve">
+    <value>School users</value>
+  </data>
+  <data name="SchoolUsersSubtitle" xml:space="preserve">
+    <value>School user accounts and access status.</value>
+  </data>
+  <data name="CreateSchoolUser" xml:space="preserve">
+    <value>Create user</value>
+  </data>
+  <data name="NoSchoolUsers" xml:space="preserve">
+    <value>No school users yet</value>
+  </data>
+  <data name="NoSchoolUsersDescription" xml:space="preserve">
+    <value>Create the first user account for this school.</value>
+  </data>
+  <data name="UserEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="AccountStatus" xml:space="preserve">
+    <value>Account status</value>
+  </data>
+  <data name="LockState" xml:space="preserve">
+    <value>Lock status</value>
+  </data>
+  <data name="UserActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="UserInactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="UserLocked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="UserUnlocked" xml:space="preserve">
+    <value>Unlocked</value>
+  </data>
+  <data name="UserDetails" xml:space="preserve">
+    <value>User details</value>
+  </data>
+  <data name="UserInformation" xml:space="preserve">
+    <value>User information</value>
+  </data>
+  <data name="BackToUsers" xml:space="preserve">
+    <value>Back to users</value>
+  </data>
+  <data name="BackToSchool" xml:space="preserve">
+    <value>Back to school</value>
+  </data>
+  <data name="BackToDashboard" xml:space="preserve">
+    <value>Back to dashboard</value>
+  </data>
+  <data name="CreateUserIntro" xml:space="preserve">
+    <value>Create a school-scoped account and assign one role.</value>
+  </data>
+  <data name="PasswordSetupTitle" xml:space="preserve">
+    <value>Set password</value>
+  </data>
+  <data name="InitialSetupExplanation" xml:space="preserve">
+    <value>The account is created without a password. A secure setup link will be generated after creation.</value>
+  </data>
+  <data name="PasswordSetupLink" xml:space="preserve">
+    <value>Password setup link</value>
+  </data>
+  <data name="CopyLinkInstruction" xml:space="preserve">
+    <value>Copy this link and send it securely to the user.</value>
+  </data>
+  <data name="SetupLinkSecurityNote" xml:space="preserve">
+    <value>Treat this link as sensitive. Anyone with the link can set the account password while the token remains valid.</value>
+  </data>
+  <data name="CreateUserSuccess" xml:space="preserve">
+    <value>User created successfully.</value>
+  </data>
+  <data name="ActivateUser" xml:space="preserve">
+    <value>Activate user</value>
+  </data>
+  <data name="DeactivateUser" xml:space="preserve">
+    <value>Deactivate user</value>
+  </data>
+  <data name="ActivateUserSuccess" xml:space="preserve">
+    <value>User activated successfully.</value>
+  </data>
+  <data name="DeactivateUserSuccess" xml:space="preserve">
+    <value>User deactivated successfully.</value>
+  </data>
+  <data name="LockUser" xml:space="preserve">
+    <value>Lock user</value>
+  </data>
+  <data name="UnlockUser" xml:space="preserve">
+    <value>Unlock user</value>
+  </data>
+  <data name="LockUserSuccess" xml:space="preserve">
+    <value>User locked successfully.</value>
+  </data>
+  <data name="UnlockUserSuccess" xml:space="preserve">
+    <value>User unlocked successfully.</value>
+  </data>
+  <data name="ChangeRole" xml:space="preserve">
+    <value>Change role</value>
+  </data>
+  <data name="RoleChangeSuccess" xml:space="preserve">
+    <value>User role changed successfully.</value>
+  </data>
+  <data name="GeneratePasswordLink" xml:space="preserve">
+    <value>Generate new password link</value>
+  </data>
+  <data name="PasswordResetLinkSuccess" xml:space="preserve">
+    <value>A new password setup link was generated.</value>
+  </data>
+  <data name="PasswordResetWarning" xml:space="preserve">
+    <value>Generating a new link removes the current password and invalidates existing sessions.</value>
+  </data>
+  <data name="RoleSchoolAdmin" xml:space="preserve">
+    <value>School administrator</value>
+  </data>
+  <data name="RoleSubjectSupervisor" xml:space="preserve">
+    <value>Subject supervisor</value>
+  </data>
+  <data name="RoleTeacher" xml:space="preserve">
+    <value>Teacher</value>
+  </data>
+  <data name="RoleStudent" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="You" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="InvalidRoleState" xml:space="preserve">
+    <value>Invalid role configuration</value>
+  </data>
+  <data name="ArchivedUsersReadOnly" xml:space="preserve">
+    <value>This school is archived. User accounts are read-only.</value>
+  </data>
+  <data name="SelfManagementProtected" xml:space="preserve">
+    <value>Your own account is protected on this screen. Role, activation, lock and password-management actions are unavailable.</value>
+  </data>
+  <data name="UserAccessDenied" xml:space="preserve">
+    <value>You do not have permission to manage these users.</value>
+  </data>
+  <data name="UserSchoolArchived" xml:space="preserve">
+    <value>Users cannot be modified because this school is archived.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>The user could not be found.</value>
+  </data>
+  <data name="UserRequiredEmail" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+  <data name="UserInvalidEmail" xml:space="preserve">
+    <value>Enter a valid email address.</value>
+  </data>
+  <data name="UserEmailTooLong" xml:space="preserve">
+    <value>Email is too long.</value>
+  </data>
+  <data name="UserDuplicateEmail" xml:space="preserve">
+    <value>A user with this email already exists.</value>
+  </data>
+  <data name="UserInvalidRole" xml:space="preserve">
+    <value>Select a valid school role.</value>
+  </data>
+  <data name="UserCannotManageSelf" xml:space="preserve">
+    <value>You cannot perform this action on your own protected account.</value>
+  </data>
+  <data name="UserPersistenceError" xml:space="preserve">
+    <value>The user change could not be saved. Try again.</value>
+  </data>
+  <data name="UserInvalidPasswordSetup" xml:space="preserve">
+    <value>This password setup link is invalid or has expired.</value>
+  </data>
+  <data name="UserPasswordPolicy" xml:space="preserve">
+    <value>The password does not meet the required security policy.</value>
+  </data>
+  <data name="UserIdentityConflict" xml:space="preserve">
+    <value>The account changed while you were working. Reload and try again.</value>
+  </data>
+  <data name="PasswordSetupIntro" xml:space="preserve">
+    <value>Create a secure password for your Edulytics account.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="PasswordPolicyDescription" xml:space="preserve">
+    <value>Use at least 12 characters with uppercase, lowercase, number, and special character.</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Set password</value>
+  </data>
+  <data name="PasswordSetTitle" xml:space="preserve">
+    <value>Password created</value>
+  </data>
+  <data name="PasswordSetSuccess" xml:space="preserve">
+    <value>Your password has been set successfully. You can now sign in.</value>
+  </data>
+  <data name="GoToLogin" xml:space="preserve">
+    <value>Go to sign in</value>
+  </data>
+  <data name="SchoolDashboardTitle" xml:space="preserve">
+    <value>School dashboard</value>
+  </data>
+  <data name="SchoolDashboardSubtitle" xml:space="preserve">
+    <value>A clear view of your school workspace, responsibilities and next actions.</value>
+  </data>
+  <data name="YourSchool" xml:space="preserve">
+    <value>Your school</value>
+  </data>
+  <data name="YourRole" xml:space="preserve">
+    <value>Your role</value>
+  </data>
+  <data name="AccountReady" xml:space="preserve">
+    <value>Workspace overview</value>
+  </data>
+  <data name="ManageUsers" xml:space="preserve">
+    <value>Manage users</value>
+  </data>
+  <data name="InvitationEmailSubject" xml:space="preserve">
+    <value>Your Edulytics account invitation</value>
+  </data>
+  <data name="InvitationEmailIntro" xml:space="preserve">
+    <value>You have been invited to Edulytics for {0}.</value>
+  </data>
+  <data name="InvitationEmailInstruction" xml:space="preserve">
+    <value>Use the secure link below to set up your password.</value>
+  </data>
+  <data name="InvitationEmailAction" xml:space="preserve">
+    <value>Set up your password</value>
+  </data>
+  <data name="InvitationEmailFallback" xml:space="preserve">
+    <value>If the button does not work, copy the link below into your browser.</value>
+  </data>
+  <data name="InvitationEmailSecurity" xml:space="preserve">
+    <value>If you did not expect this invitation, you can ignore this email.</value>
+  </data>
+  <data name="CreateUserInvitationSentSuccess" xml:space="preserve">
+    <value>User created. Invitation queued for delivery to {0}.</value>
+  </data>
+  <data name="ResendInvitation" xml:space="preserve">
+    <value>Resend invitation</value>
+  </data>
+  <data name="ResendInvitationDescription" xml:space="preserve">
+    <value>Send a new password setup email to this user.</value>
+  </data>
+  <data name="InvitationResentSuccess" xml:space="preserve">
+    <value>Invitation queued for durable delivery.</value>
+  </data>
+  <data name="InvitationDeliveryFailed" xml:space="preserve">
+    <value>Invitation could not be queued for delivery.</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">\n    <value>The email address or password is incorrect.</value>\n  </data>\n  <data name="SubjectSupervisorAssignmentsTitle" xml:space="preserve">
+    <value>Subject supervisor assignments</value>
+  </data>
+  <data name="SubjectSupervisorAssignmentsSubtitle" xml:space="preserve">
+    <value>Assign subject supervisors to the subjects they are allowed to oversee across the school.</value>
+  </data>
+  <data name="ManageSubjectSupervisorAssignments" xml:space="preserve">
+    <value>Manage subject supervisors</value>
+  </data>
+  <data name="AssignSubjectSupervisor" xml:space="preserve">
+    <value>Assign supervisor</value>
+  </data>
+  <data name="SubjectSupervisorAssignmentHelp" xml:space="preserve">
+    <value>Each assignment grants one active subject supervisor access to analytics for one active subject across the whole school.</value>
+  </data>
+  <data name="SubjectSupervisorSupervisor" xml:space="preserve">
+    <value>Subject supervisor</value>
+  </data>
+  <data name="SubjectSupervisorSubject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SubjectSupervisorCurrentAssignments" xml:space="preserve">
+    <value>Current assignments</value>
+  </data>
+  <data name="SubjectSupervisorNoEligibleSupervisors" xml:space="preserve">
+    <value>There are no active, unlocked users with the Subject Supervisor role.</value>
+  </data>
+  <data name="SubjectSupervisorNoActiveSubjects" xml:space="preserve">
+    <value>There are no active subjects available for assignment.</value>
+  </data>
+  <data name="SubjectSupervisorNoAssignments" xml:space="preserve">
+    <value>No subject supervisor assignments</value>
+  </data>
+  <data name="SubjectSupervisorNoAssignmentsHelp" xml:space="preserve">
+    <value>Create an assignment to grant a subject supervisor scoped analytics access.</value>
+  </data>
+  <data name="SubjectSupervisorRemoveAssignment" xml:space="preserve">
+    <value>Remove assignment</value>
+  </data>
+  <data name="SubjectSupervisorAssignmentCreated" xml:space="preserve">
+    <value>Subject supervisor assignment created successfully.</value>
+  </data>
+  <data name="SubjectSupervisorAssignmentRemoved" xml:space="preserve">
+    <value>Subject supervisor assignment removed successfully.</value>
+  </data>
+  <data name="SubjectSupervisorErrorSupervisorNotEligible" xml:space="preserve">
+    <value>The selected user must be active, unlocked and have exactly the Subject Supervisor role.</value>
+  </data>
+  <data name="SubjectSupervisorErrorSubjectInactive" xml:space="preserve">
+    <value>The selected subject is not active.</value>
+  </data>
+  <data name="SubjectSupervisorErrorDuplicateAssignment" xml:space="preserve">
+    <value>This supervisor is already assigned to this subject.</value>
+  </data>
+  <data name="SubjectSupervisorErrorPersistenceError" xml:space="preserve">
+    <value>The assignment could not be saved. Try again.</value>
+  </data>
+  <data name="SubjectSupervisorErrorAccessDenied" xml:space="preserve">
+    <value>You are not allowed to manage subject supervisor assignments.</value>
+  </data>
+  <data name="SubjectSupervisorErrorSupervisorNotFound" xml:space="preserve">
+    <value>The selected subject supervisor could not be found.</value>
+  </data>
+  <data name="SubjectSupervisorErrorSubjectNotFound" xml:space="preserve">
+    <value>The selected subject could not be found.</value>
+  </data>
+  <data name="SubjectSupervisorErrorAssignmentNotFound" xml:space="preserve">
+    <value>The assignment could not be found.</value>
+  </data>
+  <data name="CountryPoland" xml:space="preserve">
+    <value>Poland (PL)</value>
+  </data>
+  <data name="CountryUnitedArabEmirates" xml:space="preserve">
+    <value>United Arab Emirates (UAE)</value>
+  </data>
+  <data name="TimeZoneAutoHelp" xml:space="preserve">
+    <value>Set automatically from the selected country.</value>
+  </data>
+  <data name="InvalidCountryCode" xml:space="preserve">
+    <value>Select Poland or the United Arab Emirates.</value>
+  </data>
+  <data name="SchoolUsersAdminSubtitle" xml:space="preserve">
+    <value>View school users and account status. User account changes are handled by the subject supervisor.</value>
+  </data>
+  <data name="SchoolUsersSupervisorSubtitle" xml:space="preserve">
+    <value>Create and manage Teacher and Student accounts for this school.</value>
+  </data>
+  <data name="SchoolUsersPlatformSubtitle" xml:space="preserve">
+    <value>Create and manage school-scoped user accounts.</value>
+  </data>
+  <data name="CreateOperationalUserIntro" xml:space="preserve">
+    <value>Create a Teacher or Student account. A secure password setup link is generated after creation.</value>
+  </data>
+  <data name="DashboardRoleScope" xml:space="preserve">
+    <value>Your access</value>
+  </data>
+  <data name="AccessView" xml:space="preserve">
+    <value>View only</value>
+  </data>
+  <data name="AccessManage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="AccessMonitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="AccessTeach" xml:space="preserve">
+    <value>Teach &amp; assess</value>
+  </data>
+  <data name="AccessExport" xml:space="preserve">
+    <value>Manage &amp; export</value>
+  </data>
+  <data name="DashboardSchoolUsersAdminDescription" xml:space="preserve">
+    <value>Review school users, roles and account status without changing accounts.</value>
+  </data>
+  <data name="DashboardSchoolUsersSupervisorDescription" xml:space="preserve">
+    <value>Create and manage Teacher and Student accounts and their access state.</value>
+  </data>
+  <data name="DashboardSupervisorAssignmentsDescription" xml:space="preserve">
+    <value>Assign existing subject supervisors to the subjects they oversee.</value>
+  </data>
+  <data name="DashboardAcademicViewDescription" xml:space="preserve">
+    <value>Review years, terms, grades, classes, subjects, assignments and enrollment.</value>
+  </data>
+  <data name="DashboardAcademicManageDescription" xml:space="preserve">
+    <value>Manage years, terms, grades, classes, subjects, teacher assignments and enrollment.</value>
+  </data>
+  <data name="DashboardCurriculumViewDescription" xml:space="preserve">
+    <value>Review the adopted curriculum, topics and official learning outcomes.</value>
+  </data>
+  <data name="DashboardCurriculumManageDescription" xml:space="preserve">
+    <value>Manage the adopted curriculum, topics and official learning outcomes.</value>
+  </data>
+  <data name="DashboardAssessmentMonitorDescription" xml:space="preserve">
+    <value>Monitor assessments, questions, learning-outcome coverage and student results.</value>
+  </data>
+  <data name="DashboardAssessmentTeacherDescription" xml:space="preserve">
+    <value>Create assessments, manage questions and learning-outcome mappings, and enter results.</value>
+  </data>
+  <data name="DashboardAnalyticsDescription" xml:space="preserve">
+    <value>Explore mastery, outcome gaps, progress and students who may need intervention.</value>
+  </data>
+  <data name="DashboardReportsViewDescription" xml:space="preserve">
+    <value>Review school reports and previously generated exports within your role scope.</value>
+  </data>
+  <data name="DashboardReportsManageDescription" xml:space="preserve">
+    <value>Create role-scoped reports and request CSV/XLSX exports.</value>
+  </data>
+  <data name="DashboardImportsViewDescription" xml:space="preserve">
+    <value>Review import history, batch status and validation results.</value>
+  </data>
+  <data name="DashboardImportsManageDescription" xml:space="preserve">
+    <value>Validate and import school data from CSV or Excel files.</value>
+  </data>
+  <data name="DashboardNotificationsDescription" xml:space="preserve">
+    <value>Review your notification inbox and email delivery status.</value>
+  </data>
+  <data name="ViewUsers" xml:space="preserve">
+    <value>View users</value>
+  </data>
+  <data name="ManageUsersOperational" xml:space="preserve">
+    <value>Manage users</value>
+  </data>
+  <data name="ManageSupervisors" xml:space="preserve">
+    <value>Manage supervisors</value>
+  </data>
+  <data name="ViewStructure" xml:space="preserve">
+    <value>View structure</value>
+  </data>
+  <data name="ManageStructure" xml:space="preserve">
+    <value>Manage structure</value>
+  </data>
+  <data name="ViewCurriculum" xml:space="preserve">
+    <value>View curriculum</value>
+  </data>
+  <data name="ManageCurriculumLink" xml:space="preserve">
+    <value>Manage curriculum</value>
+  </data>
+  <data name="MonitorAssessments" xml:space="preserve">
+    <value>Monitor assessments</value>
+  </data>
+  <data name="ManageAssessmentsLink" xml:space="preserve">
+    <value>Manage assessments</value>
+  </data>
+  <data name="ViewAnalytics" xml:space="preserve">
+    <value>View analytics</value>
+  </data>
+  <data name="ViewReports" xml:space="preserve">
+    <value>View reports</value>
+  </data>
+  <data name="ManageReportsLink" xml:space="preserve">
+    <value>Open reports &amp; exports</value>
+  </data>
+  <data name="ViewImportHistory" xml:space="preserve">
+    <value>View import history</value>
+  </data>
+  <data name="ManageImportsLink" xml:space="preserve">
+    <value>Manage imports</value>
+  </data>
+  <data name="OpenNotificationsLink" xml:space="preserve">
+    <value>Open notifications</value>
+  </data>
+  <data name="AccessExportOwn" xml:space="preserve">
+    <value>Export own scope</value>
+  </data>
+  <data name="DashboardReportsTeacherDescription" xml:space="preserve">
+    <value>Review reports for your assigned scope and request CSV/XLSX exports for that scope.</value>
+  </data>
+  <data name="ExportOwnScope" xml:space="preserve">
+    <value>Export own scope</value>
+  </data>
+  <data name="StudentSetupTitle" xml:space="preserve"><value>Student account setup</value></data>
+  <data name="StudentSetupDescription" xml:space="preserve"><value>Student role requires a linked student profile and class enrollment. These fields are used when saving the Student role.</value></data>
+  <data name="StudentNumber" xml:space="preserve"><value>Student number</value></data>
+  <data name="FirstName" xml:space="preserve"><value>First name</value></data>
+  <data name="LastName" xml:space="preserve"><value>Last name</value></data>
+  <data name="StudentClass" xml:space="preserve"><value>Class</value></data>
+  <data name="SelectStudentClass" xml:space="preserve"><value>Select a class</value></data>
+  <data name="StudentSetupCurrentEnrollment" xml:space="preserve"><value>Current enrollment</value></data>
+  <data name="StudentSetupComplete" xml:space="preserve"><value>Setup complete</value></data>
+  <data name="StudentSetupIncomplete" xml:space="preserve"><value>Setup required</value></data>
+  <data name="StudentSetupUnavailable" xml:space="preserve"><value>Student setup is unavailable for this action or account.</value></data>
+  <data name="StudentRoleSetupSuccess" xml:space="preserve"><value>Student role, profile and enrollment were saved successfully.</value></data>
+  <data name="StudentSetupMissingFields" xml:space="preserve"><value>Student number, first name, last name and class are required for the Student role.</value></data>
+  <data name="StudentSetupClassNotFound" xml:space="preserve"><value>The selected class is not available in this school.</value></data>
+  <data name="StudentSetupEnrollmentConflict" xml:space="preserve"><value>This student already has a different class enrollment for the same academic year.</value></data>
+  <data name="StudentSetupFailed" xml:space="preserve"><value>Student setup could not be completed. No incomplete Teacher-to-Student conversion was left behind.</value></data>
+  <data name="StudentSetupRecoveryFailed" xml:space="preserve"><value>Student setup failed and automatic recovery could not be completed. Review this account before retrying.</value></data>
+
+  <data name="StudentSetupDuplicateStudentNumber" xml:space="preserve"><value>This student number already exists. Enter a different student number.</value></data>
+  <data name="StudentSetupSeatLimitReached" xml:space="preserve"><value>The committed student-seat limit has been reached. Increase the committed seats before adding another active student.</value></data>
+  <data name="StudentSetupInvalidStudentAccount" xml:space="preserve"><value>This account cannot be linked as an active Student account. Review the account status and role.</value></data>
+  <data name="StudentSetupDuplicateStudentUserLink" xml:space="preserve"><value>This login account is already linked to a student profile.</value></data>
+  <data name="StudentSetupDuplicateEnrollment" xml:space="preserve"><value>This student is already enrolled in a class for this academic year.</value></data>
+  <data name="StudentSetupProfileStateChanged" xml:space="preserve"><value>The student profile changed while setup was running. Reload the account before retrying.</value></data>
+  <data name="StudentSetupConcurrencyConflict" xml:space="preserve"><value>This student record changed while you were saving. Reload the account and try again.</value></data>
+  <data name="StudentSetupInvalidStudentNumber" xml:space="preserve"><value>The student number is invalid. Use only A-Z, 0-9 and hyphen.</value></data>
+  <data name="StudentSetupInvalidName" xml:space="preserve"><value>The student's first or last name is invalid or too long.</value></data>
+  <data name="StudentSetupPersistenceError" xml:space="preserve"><value>The student setup could not be saved. The role change was rolled back. Reload the account and try again.</value></data>
+  <data name="StatusTrial" xml:space="preserve">
+    <value>Trial</value>
+  </data>
+  <data name="Trial" xml:space="preserve">
+    <value>Trial</value>
+  </data>
+  <data name="TrialStarts" xml:space="preserve">
+    <value>Trial starts</value>
+  </data>
+  <data name="TrialEnds" xml:space="preserve">
+    <value>Trial ends</value>
+  </data>
+  <data name="TrialAccess" xml:space="preserve">
+    <value>Trial access</value>
+  </data>
+  <data name="TrialAvailable" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="TrialExpired" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="TrialDurationDays" xml:space="preserve">
+    <value>Trial duration (days)</value>
+  </data>
+  <data name="StartTrial" xml:space="preserve">
+    <value>Start trial</value>
+  </data>
+  <data name="TrialStartedSuccess" xml:space="preserve">
+    <value>The trial has started successfully.</value>
+  </data>
+  <data name="InvalidTrialDuration" xml:space="preserve">
+    <value>Trial duration must be between 1 and 365 days.</value>
+  </data>
+  <data name="TrialAlreadyExists" xml:space="preserve">
+    <value>A trial has already been created for this school.</value>
+  </data>
+  <data name="AllUsers" xml:space="preserve">
+    <value>All users</value>
+  </data>
+  <data name="UserDirectoryFilters" xml:space="preserve">
+    <value>User directory filters</value>
+  </data>
+  <data name="SearchUsers" xml:space="preserve">
+    <value>Search users</value>
+  </data>
+  <data name="SearchUsersPlaceholder" xml:space="preserve">
+    <value>Name, email, student number or user ID</value>
+  </data>
+  <data name="AllStatuses" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="RowsPerPage" xml:space="preserve">
+    <value>Rows per page</value>
+  </data>
+  <data name="ApplyFilters" xml:space="preserve">
+    <value>Apply filters</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ShowingUsers" xml:space="preserve">
+    <value>Showing {0}–{1} of {2} users</value>
+  </data>
+  <data name="Pagination" xml:space="preserve">
+    <value>Pagination</value>
+  </data>
+  <data name="PreviousPage" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="PageOf" xml:space="preserve">
+    <value>Page {0} of {1}</value>
+  </data>
+  <data name="IdentityFilters" xml:space="preserve">
+    <value>Identity</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="UserNameFilterPlaceholder" xml:space="preserve">
+    <value>Search by student name</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="UserIdFilterPlaceholder" xml:space="preserve">
+    <value>Paste exact user ID</value>
+  </data>
+  <data name="UserEmailFilterPlaceholder" xml:space="preserve">
+    <value>Search by email</value>
+  </data>
+  <data name="AcademicFilters" xml:space="preserve">
+    <value>Academic context</value>
+  </data>
+  <data name="AcademicYearFilter" xml:space="preserve">
+    <value>Academic year</value>
+  </data>
+  <data name="CurriculumFilter" xml:space="preserve">
+    <value>Curriculum</value>
+  </data>
+  <data name="ClassFilter" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="AllAcademicYears" xml:space="preserve">
+    <value>All academic years</value>
+  </data>
+  <data name="AllCurricula" xml:space="preserve">
+    <value>All curricula</value>
+  </data>
+  <data name="AllClasses" xml:space="preserve">
+    <value>All classes</value>
+  </data>
+  <data name="AccountFilters" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="UserNameAndId" xml:space="preserve">
+    <value>Name / ID</value>
+  </data>
+  <data name="AcademicContext" xml:space="preserve">
+    <value>Academic context</value>
+  </data>
+  <data name="NameUnavailable" xml:space="preserve">
+    <value>Name unavailable</value>
+  </data>
+  <data name="StudentNumberLabel" xml:space="preserve">
+    <value>Student no.</value>
+  </data>
+  <data name="NoAcademicContext" xml:space="preserve">
+    <value>No class assignment</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>more</value>
+  </data>
+</root>

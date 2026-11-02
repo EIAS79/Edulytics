@@ -1,0 +1,44 @@
+{
+  "ordinal": 40,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L15",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.common_denominator.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "c843955b812f522e3c86d177da5c44b6be9b012a1f6360c53fac30864760c9cd",
+    "teacherLesson": "8ce0d026cd91c628f919dd4213b37d94910a75cc0331d059bf5d82bb379a22a7",
+    "studentPdf": "3235c5b28ac296104a7ed68f5236dae88af1a8cf249c7dcc98308d4030a2ca1d"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Which One Doesn't Belong: Halves, Fourths, Sixths, and Eights (10 minutes)",
+    "Activity 1: All the Way to the Top (15 minutes)",
+    "Activity 2: Stacks of Blocks (20 minutes)",
+    "Cool-down: Which Stack is Taller? (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.common_denominator.build"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-40-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:44+01:00",
+  "closeAtLocal": "2026-10-26T22:40:44+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

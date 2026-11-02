@@ -1,0 +1,41 @@
+name: US CCSS B001 Mathematics Capability Triage
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'tools/curriculum/us-ccss-b001-readiness.py'
+      - 'tools/math_intelligence/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-*'
+      - '.github/workflows/us-ccss-b001-readiness.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json'
+      - 'tools/curriculum/us-ccss-b001-readiness.py'
+      - 'tools/math_intelligence/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-*'
+      - '.github/workflows/us-ccss-b001-readiness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-linked-math-capability:
+    name: b001-math-capability-triage
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate readiness scope and write report
+        run: python3 tools/curriculum/us-ccss-b001-readiness.py --write-report
+      - name: Store preliminary non-certifying audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: us-ccss-b001-preliminary-math-capability-triage
+          path: artifacts/curriculum-delivery/US-CCSS-MATH/B001/skill-capability-triage.json
+          retention-days: 30

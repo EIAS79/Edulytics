@@ -1,0 +1,114 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u06-l10-2021-two-24min-bus-waits-and-optional-38min-strategy-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U06:L10",
+      "CultureCode": "en",
+      "Title": "Solve Problems Involving Time (Part 1)",
+      "ExplanationParagraphs": [
+        "Original 2021 Grade3 Unit6 Lesson10 under CCSS3.MD.A.1 was checked from original local teacher lesson.html SHA256 8861bdf095f49521cdfccc9900498a2d86337cbe7e8f4a51364cf8a15cbe9758 and preparation.html SHA256 b8cb792b57d638f78b1ed14f6e71b6e38f7635863ac174b6bf8bd6e78169062a. The two original student-facing activities and warmup teacher routine were individually compared with the locally indexed source text; original standalone Student Task Statements PDF and original clock/bus pixels were not inspected. The publisher teacher-only Cool-down Soccer Time remains unverified.",
+        "Warm-up Choral Count Fifteens (10 min): start12:00, count in 15-minute intervals, STOP at3:00. Original full ordered count is 12:00,12:15,12:30,12:45,1:00,1:15,1:30,1:45,2:00,2:15,2:30,2:45,3:00. The teacher asks children to identify repeated patterns. Source reflection questions include time between1:15 and1:45 =30 minutes and between1:15 and2:30=75 minutes, allowing verbal explanation rather than prescribing one representation.",
+        "Activity1 Time at the Bus Stop (25 min), ORIGINAL problem Kiran: arrived3:27 p.m., waited EXACTLY24 minutes, resulting3:51 p.m. A source-backed strategy is adding3 minutes to3:30 then21 minutes to3:51, or adding20+4 in two jumps. Pupils must show a followable representation or reasoning, not only typed end time.",
+        "Activity1 second ORIGINAL problem Elena: arrived3:45 p.m., also waited EXACTLY24 minutes, resulting4:09 p.m. This crosses the hour boundary; split24 into15 minutes to4:00 and9 minutes to4:09. Preserve the 24-minute interval for BOTH source problems and the difference in end times. Accept correct tables, number lines, labeled clock jumps, numerical expressions or words.",
+        "Activity2 Time on the Bus (10 min), original story: Elena boards at6:32 p.m. and gets off at7:10 p.m. The task explicitly asks WHICH STRATEGY OR REPRESENTATION from Activity1 pupils would use and WHY. Source teacher narrative clarifies pupils ARE NOT REQUIRED TO SOLVE the numeric elapsed-time question; some may optionally compute38 minutes as an extension. Do not machine-fail a source-compliant answer that states a mathematically valid strategy without38, though38 is correct when solved.",
+        "Source strategy choices include drawing jumps on number line or clock, making a time table, writing equations, or describing progress in words. For optional38:6:32→7:00=28 minutes, then7:00→7:10=10, so28+10=38. Or6:32→6:40=8 then6:40→7:00=20 then→7:10=10. Teacher asks students to connect how24/38-minute intervals appear in different representations.",
+        "Lesson synthesis compares representations and asks which strategies to keep for later, including recognizing crossing from one hour to next. Neither original physical bus stop picture nor clock art is copied or pixel-certified. Gated original Soccer Time cool-down, separate pupil PDF, tests, Stage D and academic approval have not been executed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Add elapsed minutes to time",
+          "Definition": "An end time can be found by adding a known positive duration to the start.",
+          "Rule": "Split interval at nearest full hour or friendly landmark.",
+          "Example": "3:27+24min=3:51."
+        },
+        {
+          "Title": "Cross an hour boundary",
+          "Definition": "Time increases from 3:59 to4:00 after one minute, not3:60.",
+          "Rule": "Carry60 minutes into next hour.",
+          "Example": "3:45+15min=4:00; add9min=4:09."
+        },
+        {
+          "Title": "Find elapsed duration",
+          "Definition": "Subtract or count forward from a start clock reading to a later one.",
+          "Rule": "Break at whole hours and sum jumps.",
+          "Example": "6:32→7:00 is28min; 7:00→7:10 is10min; total38."
+        },
+        {
+          "Title": "Reasoning matters",
+          "Definition": "Original Activity2 asks for a suitable strategy and explanation, not compulsory arithmetic completion.",
+          "Rule": "Evaluate coherent representational plan for Activity2 even without explicit38.",
+          "Example": "A labeled number line from6:32 to7:10 divided at7:00."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Kiran source wait",
+          "Question": "Kiran is at stop3:27pm, waits24min. When does bus arrive?",
+          "Method": "Add20 then4 minutes.",
+          "Steps": [
+            "3:27+20=3:47.",
+            "3:47+4=3:51.",
+            "Show exactly24 total minutes."
+          ],
+          "Answer": "3:51 p.m.",
+          "Check": "Source start3:27 and wait24 preserved."
+        },
+        {
+          "Title": "Elena source wait",
+          "Question": "Elena at stop3:45pm, waits24min. When bus arrives?",
+          "Method": "Jump to next hour then remaining time.",
+          "Steps": [
+            "3:45+15min=4:00.",
+            "24−15=9min.",
+            "4:00+9min=4:09."
+          ],
+          "Answer": "4:09 p.m.",
+          "Check": "Cross-hour calculation exact."
+        },
+        {
+          "Title": "Elena bus strategy",
+          "Question": "Bus ride6:32pm to7:10pm; choose solution strategy.",
+          "Method": "Split at7:00 on a number line.",
+          "Steps": [
+            "Draw jump from6:32 to7:00 representing28minutes.",
+            "Draw second jump7:00 to7:10 representing10minutes.",
+            "Explain what adding interval jumps would accomplish."
+          ],
+          "Answer": "Valid number-line explanation; optional38min",
+          "Check": "Original Activity2 does not require numeric solution."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat three forty-five plus twenty-four as3:69.",
+          "WhyWrong": "Clock minutes reset at60.",
+          "Correction": "After15 min it is4:00, then remaining9 makes4:09."
+        },
+        {
+          "Mistake": "Make the original second wait a different number of minutes.",
+          "WhyWrong": "Both source Kiran and Elena waited24 minutes.",
+          "Correction": "Preserve original two identical elapsed intervals."
+        },
+        {
+          "Mistake": "Fail Activity2 student for not stating38.",
+          "WhyWrong": "Source teacher expressly says the task is to propose and explain strategy, not compulsory solve.",
+          "Correction": "Assess mathematical strategy as fully responsive;38 optionally checks accuracy."
+        },
+        {
+          "Mistake": "Count choral fifteens as ending2:45.",
+          "WhyWrong": "Original says stop counting3:00.",
+          "Correction": "Include final3:00 item."
+        }
+      ],
+      "SummaryPoints": [
+        "Choral count every15 minutes from12:00 to3:00 inclusive (13 stated timestamps).",
+        "Original Kiran3:27PM +24 minutes=3:51PM.",
+        "Original Elena3:45PM +24 minutes=4:09PM, crossing4:00.",
+        "Original strategy-only prompt Elena6:32PM→7:10PM optionally38min; SOURCE DOES NOT REQUIRE numeric answer.",
+        "Teacher evaluates clear reasoning in tables, number lines, clocks, words; separate original PDF and publisher gated Cool-down uninspected."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 128,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U08:L08",
+  "title": "Count Columns and Objects in Columns",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_TEXT_REVIEWED_MEDIA_HUMAN",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-128-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-8/lesson-8/preparation.html",
+    "sourceSha256": "be9f247e9eedf7d2ebbae8cc3636da6283c8bd8d2837aefb48b60a301134a5ad",
+    "standards": [
+      "CCSS:2.OA.B.2",
+      "CCSS:2.OA.C.3",
+      "CCSS:2.OA.C.4"
+    ]
+  },
+  "stageB": {
+    "status": "GUARDED_SOURCE_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit8SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-128-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "FOUR_FIRSTPARTY_FAMILIES_FOUR_TESTS_WRITTEN_UNRUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit8ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit8ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit8Activities/Index.cshtml",
+    "teacherOnly": "Original source printed visuals, real student-built arrays, class activities and drawings are assessed by teacher, not by new independent numeric family.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal128OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal128SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal128ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal128StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 129
+}

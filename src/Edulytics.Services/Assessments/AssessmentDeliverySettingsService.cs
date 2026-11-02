@@ -1,0 +1,179 @@
+using Edulytics.Core.Constants;
+using Edulytics.Core.Enums;
+using Edulytics.Core.Interfaces;
+
+namespace Edulytics.Services.Assessments;
+
+public sealed record AssessmentDeliverySettingsWorkspace(
+    AssessmentListItem Assessment,
+    IReadOnlyList<AssessmentTargetStudentOption> TargetStudents);
+
+public interface IAssessmentDeliverySettingsService
+{
+    Task<AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>> GetAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default);
+
+    Task<AssessmentCommandResult> UpdateAsync(
+        Guid actorUserId,
+        UpdateAssessmentDeliverySettingsRequest request,
+        CancellationToken cancellationToken = default);
+}
+
+public sealed class AssessmentDeliverySettingsService(
+    IAssessmentService assessments,
+    IAssessmentBuilderRepository repository,
+    IAssessmentRepository assessmentRepository,
+    ISchoolUserRepository users) : IAssessmentDeliverySettingsService
+{
+    public async Task<AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>> GetAsync(
+        Guid actorUserId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default)
+    {
+        var actor = await users.GetActorAsync(actorUserId, cancellationToken);
+        if (actor is null || !actor.IsActive || actor.IsLocked || !actor.SchoolId.HasValue ||
+            actor.Roles.Count != 1 || actor.Roles[0] != RoleNames.Teacher)
+            return AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>.Failure(
+                AssessmentErrorCode.AccessDenied);
+
+        var details = await assessments.GetDetailsAsync(actorUserId, assessmentId, cancellationToken);
+        if (details.Value is null)
+            return AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>.Failure(
+                details.Error ?? AssessmentErrorCode.AccessDenied);
+
+        var students = await repository.ListTargetStudentsAsync(
+            actor.SchoolId.Value, assessmentId, cancellationToken);
+
+        return AssessmentQueryResult<AssessmentDeliverySettingsWorkspace>.Success(
+            new AssessmentDeliverySettingsWorkspace(
+                details.Value.Assessment,
+                students
+                    .Select(x => new AssessmentTargetStudentOption(x.Id, x.StudentNumber, x.DisplayName))
+                    .ToArray()));
+    }
+
+    public async Task<AssessmentCommandResult> UpdateAsync(
+        Guid actorUserId,
+        UpdateAssessmentDeliverySettingsRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var actor = await users.GetActorAsync(actorUserId, cancellationToken);
+        if (actor is null || !actor.IsActive || actor.IsLocked || !actor.SchoolId.HasValue ||
+            actor.Roles.Count != 1 || actor.Roles[0] != RoleNames.Teacher)
+            return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AccessDenied);
+
+        var details = await assessments.GetDetailsAsync(actorUserId, request.AssessmentId, cancellationToken);
+        if (details.Value is null)
+            return AssessmentCommandResult.Failure(
+                string.Empty, details.Error ?? AssessmentErrorCode.AccessDenied);
+
+        if (!Enum.IsDefined(request.TargetType) ||
+            !Enum.IsDefined(request.DeliveryMode) ||
+            !Enum.IsDefined(request.DifficultyBand))
+            return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.Required);
+
+        var assessment = details.Value.Assessment;
+        if (assessment.AssessmentType == AssessmentType.Homework &&
+            request.DeliveryMode != AssessmentDeliveryMode.Online)
+        {
+            return AssessmentCommandResult.Failure(
+                nameof(request.DeliveryMode),
+                AssessmentErrorCode.InvalidDeliveryModeForType);
+        }
+
+        var isDraft = assessment.Status == AssessmentStatus.Draft;
+        var isPreStartScheduledExam =
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.AvailableFromUtc.HasValue &&
+            DateTime.UtcNow < assessment.AvailableFromUtc.Value;
+
+        if (isPreStartScheduledExam)
+        {
+            var snapshot = await assessmentRepository.GetSnapshotAsync(
+                actor.SchoolId.Value,
+                cancellationToken);
+
+            isPreStartScheduledExam =
+                !snapshot.AssessmentAttempts.Any(x => x.AssessmentId == assessment.Id) &&
+                !snapshot.Results.Any(x => x.AssessmentId == assessment.Id);
+        }
+
+        var isSafeOpenOfflineToOnlineCorrection =
+            assessment.AssessmentType == AssessmentType.Exam &&
+            assessment.Status == AssessmentStatus.Open &&
+            assessment.DeliveryMode == AssessmentDeliveryMode.Offline &&
+            request.DeliveryMode == AssessmentDeliveryMode.Online &&
+            request.TargetType == assessment.TargetType &&
+            request.TargetStudentProfileId == assessment.TargetStudentProfileId &&
+            request.DifficultyBand == assessment.DifficultyBand;
+
+        if (!isDraft && !isPreStartScheduledExam && !isSafeOpenOfflineToOnlineCorrection)
+            return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotDraft);
+
+        if (isSafeOpenOfflineToOnlineCorrection)
+        {
+            var results = await assessments.GetResultsAsync(
+                actorUserId,
+                request.AssessmentId,
+                cancellationToken);
+            if (results.Value is null)
+                return AssessmentCommandResult.Failure(
+                    string.Empty,
+                    results.Error ?? AssessmentErrorCode.AccessDenied);
+
+            if (results.Value.Students.Any(x => x.ResultId.HasValue))
+                return AssessmentCommandResult.Failure(
+                    string.Empty,
+                    AssessmentErrorCode.AssessmentNotDraft);
+        }
+
+        var context = await repository.GetContextAsync(
+            actor.SchoolId.Value, request.AssessmentId, cancellationToken);
+        if (context is null)
+            return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.AssessmentNotFound);
+
+        if (isDraft || isPreStartScheduledExam)
+        {
+            Guid? targetStudentId = null;
+            if (request.TargetType == AssessmentTargetType.Student)
+            {
+                if (!request.TargetStudentProfileId.HasValue || request.TargetStudentProfileId.Value == Guid.Empty)
+                    return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.StudentNotFound);
+
+                var eligible = await repository.ListTargetStudentsAsync(
+                    actor.SchoolId.Value, request.AssessmentId, cancellationToken);
+                if (eligible.All(x => x.Id != request.TargetStudentProfileId.Value))
+                    return AssessmentCommandResult.Failure(string.Empty, AssessmentErrorCode.StudentNotEnrolled);
+
+                targetStudentId = request.TargetStudentProfileId.Value;
+            }
+
+            context.Assessment.TargetType = request.TargetType;
+            context.Assessment.TargetStudentProfileId = targetStudentId;
+            context.Assessment.DifficultyBand = request.DifficultyBand;
+        }
+
+        // Once an assessment is Open, the only allowed correction is
+        // Offline -> Online before any result has been recorded. Targeting and
+        // difficulty remain immutable, and Online -> Offline is never allowed.
+        context.Assessment.DeliveryMode =
+            context.Assessment.AssessmentType == AssessmentType.Homework
+                ? AssessmentDeliveryMode.Online
+                : request.DeliveryMode;
+        context.Assessment.UpdatedAtUtc = DateTime.UtcNow;
+
+        var saved = await repository.SaveAsync(
+            context.Assessment, request.AssessmentRowVersion, cancellationToken);
+
+        return saved.Succeeded
+            ? AssessmentCommandResult.Success(context.Assessment.Id)
+            : AssessmentCommandResult.Failure(
+                string.Empty,
+                saved.Error == Edulytics.Core.Assessments.AssessmentPersistenceError.Conflict
+                    ? AssessmentErrorCode.ConcurrencyConflict
+                    : AssessmentErrorCode.PersistenceError);
+    }
+}

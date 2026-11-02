@@ -1,0 +1,23 @@
+using Edulytics.Core.Interfaces;
+using Edulytics.Data.Repositories;
+using Edulytics.Data.Seeding;
+using Edulytics.Services.Curriculum;
+
+namespace Edulytics.Web.Extensions;
+
+public static class CurriculumRegistrationExtensions
+{
+    public static IServiceCollection AddCurriculumPhase07(
+        this IServiceCollection services)
+    {
+        services.AddScoped<ICurriculumRepository, CurriculumRepository>();
+        services.AddScoped<ICurriculumService, CurriculumService>();
+        services.AddScoped<IExplicitCurriculumLevelService, ExplicitCurriculumLevelService>();
+        services.AddScoped<IExplicitCurriculumLevelUiQuery, ExplicitCurriculumLevelUiQuery>();
+        services.AddScoped<IExplicitCurriculumContentUiQuery, ExplicitCurriculumContentUiQuery>();
+        services.AddScoped<IOfficialCurriculumStructureService, OfficialCurriculumStructureService>();
+        services.AddScoped<CurriculumLevelIdentityBackfill>();
+        services.AddScoped<MathematicsCurriculumPackSeeder>();
+        return services;
+    }
+}

@@ -1,0 +1,208 @@
+{
+  "packCode": "US-CCSS-MATH",
+  "versionCode": "CCSSM-2010",
+  "contentVersion": "phase30-common-core-rich-content-v1",
+  "sourcePolicyVersion": 2,
+  "targetCurriculumPeriod": "2026-2027",
+  "sourceCurriculumPeriod": "Common Core State Standards 2010",
+  "sourceVersionLabel": "Common Core State Standards for Mathematics (2010)",
+  "sourceAuthority": "NGA Center / CCSSO",
+  "sourceUrl": "https://corestandards.org/wp-content/uploads/2023/09/ADA-Compliant-Math-Standards.pdf",
+  "sourceCheckedAtUtc": "2026-08-29T00:00:00Z",
+  "sourceResolution": "CurrentOfficial",
+  "fallbackReason": "",
+  "pedagogicalSourceType": "OpenEducationalResource",
+  "pedagogicalSourceTitle": "Mathematics Vision Project",
+  "pedagogicalSourcePublisher": "Mathematics Vision Project",
+  "pedagogicalSourceEdition": "Phase 29 locked source",
+  "pedagogicalSourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/introdcution_to_the_materials_math_1.pdf",
+  "pedagogicalSourceCheckedAtUtc": "2026-08-29T00:00:00Z",
+  "pedagogicalSourceSelectionReason": "Phase 29 accepted High School pedagogical source strategy.",
+  "pedagogicalSourceSelectionEvidence": "Immutable Phase 29 High School source, placement, evidence, sequence and Blueprint V2 contract locks.",
+  "pedagogicalSourceRightsNote": "Use restricted to accepted Phase 29 commercial-safe license lock.",
+  "reviewMethod": "Exact source-grounded learner-facing rebuild from approved Common Core pedagogical sources; official mappings and provenance preserved; teacher logistics removed from learner content.",
+  "status": "Published",
+  "reviewedBy": "Edulytics Curriculum Review — deterministic Phase 29 QA",
+  "reviewEvidence": "Blueprint US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX (3de388be759e184422a6cde4aba5bd4093914aaa0598c7e1920c3eb03223357d) contains 5 source-driven pedagogical lessons. Exactly 5 have accepted formal Common Core targets and are included in this canonical pack; 0 source-valid supporting-only lessons are deliberately excluded. Each included lesson was bound to its exact blueprint OutcomeCodes/FormalTargets and official CCSS node text. The deterministic Phase 29 authoring pipeline has no generic fallback: unsupported standard families stop generation. Worked examples and step-by-step answers are produced from computed operands and recomputed results, bilingual body fields are structurally audited, and source provenance remains attached to every lesson title.",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L01",
+      "titleProvenance": "PedagogicalSource",
+      "titleSourceReference": "MVP-MATH1:M08:T07H — https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/g1_mod6h_tn_82017f.pdf",
+      "outcomeCodes": [
+        "CCSS:HSN-VM.A.1",
+        "CCSS:HSN-VM.A.2",
+        "CCSS:HSN-VM.A.3",
+        "CCSS:HSN-VM.B.4",
+        "CCSS:HSN-VM.B.5"
+      ],
+      "isSupporting": false,
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/g1_mod6h_tn_82017f.pdf",
+      "sourceLocator": "{\"pdfPagesContainingTitle\": [4, 105, 110], \"section\": \"The Arithmetic of Vectors\"}",
+      "sourceTitle": "Mathematics Vision Project",
+      "sourcePublisher": "Mathematics Vision Project",
+      "sourceEdition": "Phase 29 locked source",
+      "sourceRights": "Use restricted to accepted Phase 29 commercial-safe license lock.",
+      "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+      "canonicalBodySha256": "5364e307194f1a7ea4a9944ef4e47eec1fbcb04dea89e36904b7ea551c985210",
+      "sourceVerifiedAtUtc": "20240903135047",
+      "retrievalUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/g1_mod6h_tn_82017f.pdf",
+      "retrievalChannel": "INTERNET_ARCHIVE",
+      "retrievalTimestamp": "20240903135047",
+      "adaptationStatus": "SOURCE_FAITHFUL_ADAPTED",
+      "translations": [
+        {
+          "cultureCode": "en",
+          "title": "The Arithmetic of Vectors",
+          "explanation": "A vector has magnitude and direction. In the coordinate plane, write v = (vₓ, vᵧ), where its components give the horizontal and vertical displacement. Two vectors can be added head-to-tail or by combining their components; both methods give the same resultant. Subtracting w means adding its opposite −w. Multiplying by a scalar k multiplies each component by k; a negative scalar reverses the direction. The magnitude of (x, y) is √(x² + y²). Distinguish vector magnitude from the sum of magnitudes. To find a resultant from magnitude-and-direction information, first resolve each vector into horizontal and vertical components. These methods address CCSS HSN-VM.B.4.a–c and HSN-VM.B.5.a–b; the graphical methods should be represented with head-to-tail and parallelogram diagrams in teacher-led work.",
+          "keyConceptsAndRules": "Vector addition: (a,b)+(c,d)=(a+c,b+d). Head-to-tail and the parallelogram diagonal represent the same sum. Vector subtraction: (a,b)−(c,d)=(a−c,b−d)=(a,b)+(−c,−d). Scalar multiplication: k(a,b)=(ka,kb). Length: ||(a,b)||=√(a²+b²). Scalar length: ||kv||=|k|·||v||, not k·||v|| for negative k. For k>0 direction is preserved; for k<0 it is reversed; for k=0 the zero vector has no direction. If u=(r cos θ,r sin θ) is given in magnitude-and-direction form, convert to components, then add and compute the resultant length and angle. For nonzero (x,y), identify the quadrant before interpreting its direction.",
+          "workedExamples": "Example 1 — addition by components and head-to-tail: Let u=(3,2) and v=(−1,4). Draw u from (0,0) to (3,2); from its head draw v to (2,6). The resulting diagonal from (0,0) to (2,6) is u+v=(2,6). Its magnitude is √40=2√10, not ||u||+||v||. Example 2 — subtracting and scalar multiplication: u=(4,−1), v=(2,3). Then u−v=(2,−4); −2v=(−4,−6) has twice v’s magnitude and opposite direction. Example 3 — magnitude/direction of a sum: a has magnitude 3 at 0° and b has magnitude 4 at 90°. Their components are (3,0) and (0,4). The sum is (3,4), its magnitude is 5, and its direction is arctan(4/3)≈53.13° above the positive x-axis.",
+          "stepByStepSolutions": "1. Express the given vectors as ordered component pairs; resolve magnitude-and-direction data if necessary. 2. For addition, add corresponding x- and y-components. For subtraction, negate the second vector and add. 3. For scalar multiplication, multiply both components by the signed scalar. 4. If asked for magnitude, apply the Pythagorean formula to the resulting components. 5. If asked for direction, use the signs of the components to locate the quadrant; then find the angle from their ratio. 6. Verify graphically when possible: head-to-tail and the parallelogram rule must agree, and a negative scalar must reverse direction.",
+          "commonMistakes": "Do not add vector magnitudes instead of components; lengths generally do not add. For u−v, negate both components of v. A negative scalar changes direction, but magnitude uses its absolute value. Do not compute the direction of the zero vector. When using inverse tangent, check the quadrant; an acute reference angle is not always the correct direction.",
+          "quickSummary": "Vectors describe size and direction. Add and subtract components, represent addition with head-to-tail/parallelogram diagrams, scale both components, and check ||kv||=|k|·||v||. Use components to compute the resultant magnitude and direction."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L02",
+      "titleProvenance": "PedagogicalSource",
+      "titleSourceReference": "MVP-MATH1:M08:T09H — https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "outcomeCodes": [
+        "CCSS:HSN-VM.C.10",
+        "CCSS:HSN-VM.C.12"
+      ],
+      "isSupporting": false,
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "sourceLocator": "{\"pdfPagesContainingTitle\": [3, 75, 78, 80, 108], \"section\": \"The Determinant of a Matrix\"}",
+      "sourceTitle": "Mathematics Vision Project",
+      "sourcePublisher": "Mathematics Vision Project",
+      "sourceEdition": "Phase 29 locked source",
+      "sourceRights": "Use restricted to accepted Phase 29 commercial-safe license lock.",
+      "sourceSha256": "53c43399d9c73e4097fd2493c310f0707fd1519b1687cdbd832dbb0328921482",
+      "canonicalBodySha256": "cc0a1a5a3ab9209a9e81ca6b70cb9bba324365789a5d15a51a01d392ec1cce20",
+      "sourceVerifiedAtUtc": "20170627185700",
+      "retrievalUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "retrievalChannel": "INTERNET_ARCHIVE",
+      "retrievalTimestamp": "20170627185700",
+      "adaptationStatus": "SOURCE_FAITHFUL_ADAPTED",
+      "translations": [
+        {
+          "cultureCode": "en",
+          "title": "The Determinant of a Matrix",
+          "explanation": "A 2×2 matrix A=[[a,b],[c,d]] transforms plane vectors by mapping (x,y) to (ax+by,cx+dy). The determinant det(A)=ad−bc tells us the signed scale factor for oriented area. The image of the unit square is the parallelogram spanned by the transformed basis vectors (a,c) and (b,d). Its area is |det(A)|. A negative determinant reverses orientation, a positive determinant preserves it, and determinant zero collapses the plane into a lower-dimensional image. A square matrix has an inverse exactly when its determinant is nonzero. Determinants must be interpreted as signed area scaling, not as a sum of the matrix entries.",
+          "keyConceptsAndRules": "For A=[[a,b],[c,d]], det(A)=ad−bc. Area of transformed region=|det(A)|×original area for a linear plane transformation. For det(A)≠0, A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]]. det(A)=0 means there is no inverse. det(AB)=det(A)det(B); det(I)=1. Exchanging two basis directions changes determinant sign but not physical area. A two-dimensional parallelogram has area |ad−bc| for edge vectors (a,c) and (b,d).",
+          "workedExamples": "Example 1: A=[[2,1],[1,3]] sends e₁=(1,0) to (2,1) and e₂=(0,1) to (1,3). The resulting parallelogram area is |2×3−1×1|=5 square units. det(A)=5>0, so orientation is preserved. Its inverse is (1/5)[[3,−1],[−1,2]]. Verify A·A⁻¹=[[1,0],[0,1]]. Example 2: B=[[1,2],[2,4]] has det(B)=4−4=0. Both columns point in the same direction, so the unit square collapses to a line segment, transformed area is zero, and B has no matrix inverse. Example 3: reflection R=[[-1,0],[0,1]] has det(R)=−1; it preserves areas while reversing orientation.",
+          "stepByStepSolutions": "1. Interpret the two columns as images of e₁ and e₂ and sketch the parallelogram they span. 2. For a 2×2 matrix label a,b,c,d in row order. 3. Multiply diagonal entries to find ad and bc, then subtract ad−bc. 4. Use the absolute value for ordinary area and the sign for orientation. 5. If an inverse is requested, verify det(A)≠0 before applying the 2×2 inverse formula. 6. Multiply A by the proposed inverse to check the identity matrix. 7. For a composite transformation use det(AB)=det(A)det(B) as an independent area-scaling check.",
+          "commonMistakes": "Determinant is ad−bc, not ad+bc or the sum of all entries. Absolute determinant gives nonnegative area; negative determinant does not imply negative geometric area. For the unit-square image, use COLUMNS of A as transformed basis vectors, not its rows by default. A zero determinant cannot be inverted. The 2×2 inverse formula swaps a and d and negates b and c before dividing; forgetting the division produces a wrong inverse.",
+          "quickSummary": "For A=[[a,b],[c,d]], determinant ad−bc is oriented area scaling; the actual area factor is |ad−bc|. Nonzero determinant gives an inverse, zero determinant collapses area."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L03",
+      "titleProvenance": "PedagogicalSource",
+      "titleSourceReference": "MVP-MATH1:M08:T11H — https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "outcomeCodes": [
+        "CCSS:HSN-VM.C.11"
+      ],
+      "isSupporting": false,
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "sourceLocator": "{\"pdfPagesContainingTitle\": [98], \"section\": \"Transformations with Matrices\"}",
+      "sourceTitle": "Mathematics Vision Project",
+      "sourcePublisher": "Mathematics Vision Project",
+      "sourceEdition": "Phase 29 locked source",
+      "sourceRights": "Use restricted to accepted Phase 29 commercial-safe license lock.",
+      "sourceSha256": "53c43399d9c73e4097fd2493c310f0707fd1519b1687cdbd832dbb0328921482",
+      "canonicalBodySha256": "b0a121f76ef7bce3b87ca5822597ec311135651160d422e6468134531de103fa",
+      "sourceVerifiedAtUtc": "20170627185700",
+      "retrievalUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "retrievalChannel": "INTERNET_ARCHIVE",
+      "retrievalTimestamp": "20170627185700",
+      "adaptationStatus": "SOURCE_FAITHFUL_ADAPTED",
+      "translations": [
+        {
+          "cultureCode": "en",
+          "title": "Transformations with Matrices",
+          "explanation": "A matrix can represent a linear transformation of vectors. If A is a 2×2 matrix and v=(x,y), the transformed vector Av is a column whose entries are dot products of the matrix rows with (x,y). The first column of A shows where (1,0) moves, and the second shows where (0,1) moves. Rotations, reflections, stretches, and shears can all be modeled this way. To compose two transformations, perform the rightmost matrix first: ABv=A(Bv). Reversing the order may give a different point. Track the movement of a simple labeled triangle or basis grid to understand the transformation rather than treating multiplication as a decorative symbol.",
+          "keyConceptsAndRules": "With A=[[a,b],[c,d]], A[x,y]ᵀ=[ax+by,cx+dy]ᵀ. Identity I=[[1,0],[0,1]] preserves vectors. Counterclockwise 90° rotation R=[[0,−1],[1,0]] sends (x,y)→(−y,x). Reflection across the y-axis F=[[-1,0],[0,1]] sends (x,y)→(−x,y). Stretch S=[[2,0],[0,1]] doubles horizontal coordinates. Composite ABv applies B to v first, then A. Nonzero determinant means the transformation is reversible; |det(A)| measures area scale.",
+          "workedExamples": "Example 1 — rotation: R=[[0,−1],[1,0]], v=(2,1). Rv=(−1,2). The vector length remains √5 and the direction rotates 90° counterclockwise. Example 2 — image of a triangle: vertices (0,0),(2,0),(0,1) under S=[[2,0],[0,1]] become (0,0),(4,0),(0,1), doubling triangular area from 1 to 2 square units. Example 3 — transformation order: let R be the 90° rotation and F the y-axis reflection. RF(2,1)=R(−2,1)=(−1,−2), whereas FR(2,1)=F(−1,2)=(1,2). Thus RF≠FR.",
+          "stepByStepSolutions": "1. Identify whether each input is a row or column; here vectors are 2×1 columns. 2. Check dimensions before multiplying. 3. Multiply each matrix row by the vector column and sum pairwise products. 4. Apply the transform to basis vectors and labeled shape vertices to sketch its geometric effect. 5. For a product AB, apply B to the points first, then A. 6. Check geometry: rotations preserve lengths, stretches change scale, reflections reverse orientation. 7. Compare determinants or lengths when that offers an independent verification.",
+          "commonMistakes": "Do not multiply corresponding entries and stop; matrix–vector multiplication requires row-by-column dot products. Composition is ordered: ABv means B first, not A first. A 2×2 matrix cannot directly multiply a 3×1 vector. Reflection across the y-axis changes the x-coordinate sign, not y. A 90° counterclockwise rotation maps (x,y) to (−y,x), not (y,−x).",
+          "quickSummary": "A 2×2 matrix maps (x,y) to (ax+by,cx+dy), with columns showing transformed basis vectors. Model rotations, reflections and stretches by moving points; compose right-to-left."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L04",
+      "titleProvenance": "PedagogicalSource",
+      "titleSourceReference": "MVP-MATH1:M04:T07H — https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod4_seh_52016f.pdf",
+      "outcomeCodes": [
+        "CCSS:HSN-VM.C.6",
+        "CCSS:HSN-VM.C.7",
+        "CCSS:HSN-VM.C.8"
+      ],
+      "isSupporting": false,
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod4_seh_52016f.pdf",
+      "sourceLocator": "{\"pdfPagesContainingTitle\": [3, 34, 39], \"section\": \"Cafeteria Consumption and Cost\"}",
+      "sourceTitle": "Mathematics Vision Project",
+      "sourcePublisher": "Mathematics Vision Project",
+      "sourceEdition": "Phase 29 locked source",
+      "sourceRights": "Use restricted to accepted Phase 29 commercial-safe license lock.",
+      "sourceSha256": "a85caa4453dfc8d607a5eef13aa68cf061b7e8de1feb4c9ff8a632cb636be187",
+      "canonicalBodySha256": "e0c213fdbc2ed90560b39a494601d0528cc773eb6ad8b805c562ab741c66954d",
+      "sourceVerifiedAtUtc": "20170627202514",
+      "retrievalUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod4_seh_52016f.pdf",
+      "retrievalChannel": "INTERNET_ARCHIVE",
+      "retrievalTimestamp": "20170627202514",
+      "adaptationStatus": "SOURCE_FAITHFUL_ADAPTED",
+      "translations": [
+        {
+          "cultureCode": "en",
+          "title": "Cafeteria Consumption and Cost",
+          "explanation": "Matrices organize numerical data such as the number of meals sold at different times and the unit costs of their components. A quantity table with rows for days and columns for products can be multiplied by a column of prices to obtain a cost for each day. This is not just a shortcut: row-by-column multiplication explicitly pairs each unit count with the corresponding price. Multiplying all prices by a scalar changes every calculated cost proportionally. If two independent groups' quantities use the same column order and shape, their matrices can be added before costs are computed. Every output must carry the correct physical unit, and unmatched dimensions cannot be multiplied.",
+          "keyConceptsAndRules": "Let Q be a days×products quantity matrix, and p a products×1 unit-price vector. Total cost by day is c=Qp with shape days×1. For Q=[[10,5],[8,7]] (sandwiches, fruits) and p=[4,2]ᵀ dollars per item, c=[50,46]ᵀ dollars. Matrix addition requires equal dimensions and aligned columns. Scalar kQ multiplies every count by k. For compatible dimensions, (Q+R)p=Qp+Rp and Q(kp)=k(Qp); physical meaning requires compatible units. Entrywise multiplication is not a replacement for the row-by-column rule.",
+          "workedExamples": "Example 1 — daily totals: Monday sells 10 sandwiches and 5 fruit cups; Tuesday sells 8 sandwiches and 7 fruit cups. Prices are $4 and $2. Multiply Q=[[10,5],[8,7]] by p=[4,2]ᵀ. Monday: 10×4+5×2=$50; Tuesday: 8×4+7×2=$46. Total $96 for both days. Example 2 — price increase: if every price rises 10%, the new price column is 1.1p=[4.4,2.2]ᵀ. New totals are 1.1c=[55,50.6]ᵀ, not c+0.1 dollars. Example 3 — combine sites: two cafés with same item columns can add their 2×2 quantity tables entrywise and then multiply the combined table by p; the resulting cost vector equals the sum of separate cost vectors.",
+          "stepByStepSolutions": "1. Label the rows and columns, including units and their ordering. 2. Confirm quantity-column count matches the number of unit prices. 3. Multiply each row of counts by the price column, adding the products to obtain a cost per row. 4. State resulting units (items×dollars/item=dollars). 5. Add matrices only if both the dimensions and item meanings agree. 6. For revised prices, apply the scalar consistently to every entry. 7. Check results manually by adding the two individual product costs for each day.",
+          "commonMistakes": "Do not reorder sandwich and fruit prices without reordering the quantity columns. Matrix product requires dimensions to match; a 2×2 quantity matrix times an unrelated 3×1 vector is undefined. Adding two matrices with different shapes is not allowed. Multiplying a cost by 1.1 represents a 10% increase; adding 0.1 is not equivalent. Maintain units and do not interpret item counts as prices.",
+          "quickSummary": "Use a quantity matrix Q and price column p to compute costs Qp by row-by-column multiplication. Matrices can represent data, and compatible addition, scalar multiplication and multiplication preserve meaningful units."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:VECTOR-MATRIX:U01:L05",
+      "titleProvenance": "PedagogicalSource",
+      "titleSourceReference": "MVP-MATH1:M08:T08H — https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "outcomeCodes": [
+        "CCSS:HSN-VM.C.9"
+      ],
+      "isSupporting": false,
+      "sourceUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "sourceLocator": "{\"pdfPagesContainingTitle\": [3, 66, 70, 86], \"section\": \"More Arithmetic of Matrices\"}",
+      "sourceTitle": "Mathematics Vision Project",
+      "sourcePublisher": "Mathematics Vision Project",
+      "sourceEdition": "Phase 29 locked source",
+      "sourceRights": "Use restricted to accepted Phase 29 commercial-safe license lock.",
+      "sourceSha256": "53c43399d9c73e4097fd2493c310f0707fd1519b1687cdbd832dbb0328921482",
+      "canonicalBodySha256": "4eac61819907a412dcee4197a2835011cd3099be2ae7f02d0137777511883d1a",
+      "sourceVerifiedAtUtc": "20170627185700",
+      "retrievalUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/m1_mod8_teh_52016f.pdf",
+      "retrievalChannel": "INTERNET_ARCHIVE",
+      "retrievalTimestamp": "20170627185700",
+      "adaptationStatus": "SOURCE_FAITHFUL_ADAPTED",
+      "translations": [
+        {
+          "cultureCode": "en",
+          "title": "More Arithmetic of Matrices",
+          "explanation": "Matrix multiplication is generally NOT commutative: even for two square matrices, AB may differ from BA. It remains associative, so (AB)C=A(BC), and distributive, so A(B+C)=AB+AC for compatible dimensions. Matrix products describe composition of linear transformations, where order matters. The identity matrix acts like 1 under multiplication (AI=IA=A). A zero matrix acts like 0 under addition (A+0=A). When testing a claimed algebraic property, choose compatible matrices, compute BOTH orders and explain why a counterexample disproves a universal commutativity claim.",
+          "keyConceptsAndRules": "For 2×2 matrices, (AB)ᵢⱼ=ΣₖAᵢₖBₖⱼ. Matrix multiplication AB exists when columns(A)=rows(B). In general AB≠BA; even when both products exist, they may differ. For compatible dimensions, (AB)C=A(BC), A(B+C)=AB+AC, and (A+B)C=AC+BC. Square identity I satisfies AI=IA=A; the zero matrix 0 satisfies A+0=A. The identity and inverse have different roles: only invertible A has A⁻¹, with AA⁻¹=A⁻¹A=I.",
+          "workedExamples": "Example 1 — noncommutativity: A=[[1,2],[0,1]], B=[[1,0],[3,1]]. AB=[[7,2],[3,1]], while BA=[[1,2],[3,7]]. Therefore AB≠BA although both products are 2×2. Example 2 — identity: with I=[[1,0],[0,1]], AI=IA=[[1,2],[0,1]]. Example 3 — distributivity: take C=I. A(B+I)=AB+A=[[8,4],[3,2]], which equals AB+AI. This verifies the identity for these specific matrices, while the general property follows from the row-by-column sum rule.",
+          "stepByStepSolutions": "1. Record the dimensions of every matrix and confirm the proposed products exist. 2. For AB, use each row of A with each column of B; write out at least one dot product explicitly. 3. Repeat from scratch for BA if commutativity is being tested; do not assume equality. 4. For expressions with parentheses, preserve order but use associativity where compatible. 5. Check distributivity by calculating A(B+C) and AB+AC independently. 6. Check that multiplying by I leaves A unchanged and adding a conformable zero matrix leaves A unchanged. 7. State whether the result is a counterexample or a proof of a property in general.",
+          "commonMistakes": "AB and BA are not interchangeable, and one of them may be undefined for rectangular matrices. Matrix product entries come from dot products, not entrywise multiplication. An example in which AB=BA does not prove that all matrices commute. Associativity changes grouping, not the order of factors. Identity matrices must have the compatible size. The zero matrix is the additive identity, whereas I is the multiplicative identity.",
+          "quickSummary": "Matrix multiplication composes operations in a specific order; AB generally differs from BA. It is associative and distributive for compatible dimensions, with I as multiplicative identity and 0 as additive identity."
+        }
+      ]
+    }
+  ],
+  "academicLanguage": "en",
+  "curriculumTranslationRequired": false
+}

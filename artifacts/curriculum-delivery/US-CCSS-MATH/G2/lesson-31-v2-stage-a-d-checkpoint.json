@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 31,
+  "unitNumber": 2,
+  "lessonNumber": 13,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L13",
+  "title": "Story Problems and Equations",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ORIGINAL_TEACHER_LESSON_PREPARATION_REVIEW",
+    "localTeacherSource": "Local read-only Grade2 Unit2 lesson-13 teacher preparation and lesson HTML",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-13/preparation.html",
+    "sourceSemanticSha256": "34f8d3007933c2976b301c0d8afcf84309bd210ec62f0416e04633457e5774c5",
+    "originalBodySha256": "ceb1109613f7aef430f0d77e17f819b52b39dcc756df5cbb45784c204b95b6c9",
+    "standards": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "warmup": "27+?=40; missing13. Source teacher-displayed Which One Doesn't Belong diagrams not recreated from missing picture metadata.",
+    "activity1": "Actual source printed A–I story cards and equation cards for groups2–4; multi-equation matches can be valid when justified.",
+    "activity2": "Original Lin?+36=64 ->28 start; Andre32+?=57 ->25 won; Diego22+48=70 total; Noah/Kiran53+?=92 ->39 missing part.",
+    "keyInsight": "Story actions may be represented by addition even when subtraction computes a missing addend; e.g. Andre32+?=57 versus57−32=25.",
+    "coolDown": "Publisher Match the Equation restricted teacher access, independently authored Edulytics exercise explicitly distinct.",
+    "teacherOnly": "Original diagrams, authentic equation cards, real MLR8 partner discussion and base-ten blocks cannot be asserted by numeric input.",
+    "rights": "Public source math and names credited, no protected card contents or source artwork reproduced."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_SHA_PREDECESSOR_GUARDED_RICH_CONTENT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2StoryEquationsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gates": "Exact source URL, canonical body SHA, standards order, six old learner fields, approved rich content predecessor version."
+  },
+  "stageC": {
+    "status": "COMPLETE_STUDENT_AUTHENTICATED_NUMERIC_COMPANION_FOUR_EXACT_FAMILIES_AND_TESTS_WRITTEN",
+    "numeric": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2ThirteenthLessonStoryEquations.cs",
+    "contracts": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson13StoryEquationsContracts.cs",
+    "questions": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson13StoryEquationsQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson31ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson31Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l13.add_to_start_unknown",
+      "usccss.g2.u02.l13.add_to_change_unknown",
+      "usccss.g2.u02.l13.put_together_total_unknown",
+      "usccss.g2.u02.l13.put_together_part_unknown"
+    ],
+    "firstPartyExamples": "?+27=63->36;41+?=75->34;18+47=65;56+?=91->35",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2StoryEquationsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2ThirteenthLessonStoryEquationsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson13StoryEquationsQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson31ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "studentSecurity": "Authorised StudentPortal, actual selected adoption and published lesson, anti-forgery, bounded form inputs, no school mark.",
+    "teacherOnly": "Actual A–I card match and tape diagram/deliberation teacher-only."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L14_GRADE_ORDINAL32_SOURCE_A_THEN_B_C"
+}

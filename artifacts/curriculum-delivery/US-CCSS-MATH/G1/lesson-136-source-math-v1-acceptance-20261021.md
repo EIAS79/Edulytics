@@ -1,0 +1,23 @@
+# Grade 1 ordinal 136 | Unit 7, Lesson 17 — Internal V1 original source / teaching / Practice acceptance
+
+Source edition: Illustrative Mathematics (2021 first edition), teacher preparation: https://im.kendallhunt.com/k5/teachers/grade-1/unit-7/lesson-17/preparation.html. Authorized read-only Our-CS teacher full HTML SHA-256 d43c914747290a154566d4ba4e32805adaf8b79773ae8edecb35ee263eb98c21; student mirror SHA-256 a0303f6963b27834d6640466d6c8bfe3a615d38d5f7bbfc7e36487406dcdd907; teacher preparation SHA-256 290eca13c9d22a5c8ceade880ca7f0e6c8aa5195a08cabb9ec8e641c8e790778; rehashed 2026-10-21 without modifying original source files.
+
+## A: Original source student tasks and mathematical objectives
+Source centers ask learners to choose, construct/draw and describe flat/solid shapes and justify mathematical shape attributes.
+Source checkpoint task review: {"sourceFullTeacherHtmlByteIntegrity": "VERIFIED_SHA256", "sourceOriginalTeacherActivityHeadings": ["Activity 1: Introduce Which One, Grade 1 Shapes (20 minutes)", "Activity 2: Centers: Choice Time (20 minutes)"], "originalStudentFacingExcerptCount": 2, "originalStudentFacingExcerptSamples": ["Student Facing Which one doesn't belong? A [visual] [visual] <path d=\"M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,1162.5", "Student Facing Choose a center. Can You Draw It? [visual] [visual] <path d=\"M1162.5,198.75,"], "sourceOriginalTaskInterpretation": "Play shape centers, choose and explain flat or solid shapes, and draw shapes.", "existingRiskRegisterSource": "G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json", "candidateSourceInitialTriageCohort": "PRIOR_DETAILED_TARGETED_REVIEW", "priorSourceGapStatement": "Drawing center and teacher-led choice/participation not evidenced by a shape name.", "classification": "REUSE_PREVIOUS_SOURCE_INDEX_AND_EXISTING_CANDIDATE; FULL_TASK_PARITY_PENDING", "allOriginalFigureAndStudentTasksFullyAudited": false, "sourceGoalAgainstEffectiveAuthenticatedContentApproved": false}
+
+## B: Edulytics first-party learner teaching
+Already authored Rich V2 source-goal instruction, version and corrections are reused; stage B record: {"existingRichV2CandidateReused": true, "candidateSourceRepairPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit6To8ContentCorrections.cs", "newLearnerTeachingCodeAuthoredInThisCheckpoint": false, "previousSourceSpecificTeachingCorrectionsPreserved": true, "teacherSourceToEffectiveLearnerRendering": "PENDING_CURRENT_FROZEN_SHA", "publisherFiguresCopiedOrLicensedByThisCheckpoint": false}. Neither publisher artwork nor unverified third-party image rights are asserted.
+
+## C: Independent first-party Practice and negative controls
+Exact registered source-goal family/families: usccss.g1.u07.l17.center_geometry_and_time. Verified first-party C# tests: tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit7GeometryTimePracticeTests.cs [SHA-256 05deadeb2b404b28c364be430e497e93fa2712bc3bd4118c89c2ca193819b1fa]. Source-goal generation, correct/incorrect or malformed answers and open-answer alternatives are checked by the referenced test suites. Previous unchanged-code G1 maths suite 779/779 and Mathematics Foundation 1800/1800 succeeded on GitHub.
+
+## D: Actual learner HTML / persistence proof
+Pinned application code SHA 5fb0d3786d52379e60de01e3773297afc34d3721, authenticated disposable-school HTTPS run https://github.com/EIAS79/Edulytics/actions/runs/39600111939, student evidence artifact 12345398813, individual technical reconciliation artifact 12346166910. Per-lesson genuine signed-in HTML-unescaped response digest 5945fa956df5c777b10031ebcb680a681b7f7e21c7dcce439e0eee5d152e0e68 includes volatile tokens. Two selected original teaching snippets and real persisted correct / well-formed wrong / malformed digital score were checked. This is NOT pixel parity or pupil-authored classroom submission.
+
+## Teacher-facilitated source tasks
+Original physical, visual, drawing and discussion activities remain source-inspired instructional tasks and are not counted as completed pupil performances.
+
+## Limits and release decision
+Original Which One? shape center plus Can You Draw It/Match Mine choices. Digital shape attributes/arithmetic only, source cards and real drawings teacher-reviewed.
+CC BY 4.0 2021 edition textual source attribution does not by itself clear publisher trademarks, original graphics or third-party artwork; Edulytics uses independently authored teaching and maths. Scope is internal first-party source-goal academic readiness only: no external signature, no actual original child's work, no owner production UAT, no PR merge, no live production proof. Grade release: NO_GO.

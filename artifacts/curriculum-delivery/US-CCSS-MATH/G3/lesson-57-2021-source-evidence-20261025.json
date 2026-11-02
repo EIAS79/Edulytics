@@ -1,0 +1,140 @@
+{
+  "gradeOrdinal": 57,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L21",
+  "localSourceHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-3\\lesson-21\\lesson.html",
+  "sourceSha256": "a2e7948721915a6275d7e87623ae30876179810bbabb04d82a493d5a3f07efa3",
+  "prepSha256": "ce18187dffaf65ff8d93494fbcfcb3bb0d9797834064abb2d20431b8b1fbee23",
+  "sourceSpecificDelta": "Original warmup aquarium159, original Activity1 aquarium150",
+  "sourcePriceAnchors": [
+    [
+      "SOURCE-MARKERS",
+      "Original Activity1 price of a box of25 markers",
+      5
+    ],
+    [
+      "SOURCE-NATURE",
+      "Original set of nature books price",
+      400
+    ],
+    [
+      "SOURCE-AQUARIUM",
+      "Original Activity1 aquarium price (not the warmup display)",
+      150
+    ],
+    [
+      "SOURCE-ZOO",
+      "Original zoo trip price",
+      350
+    ]
+  ],
+  "independentExampleCosts": [
+    [
+      "EXAMPLE-SUPPLIES",
+      "First-party plan supplies5+8+40+15",
+      68
+    ],
+    [
+      "EXAMPLE-BOOKS",
+      "First-party plan books250+400+8",
+      658
+    ],
+    [
+      "EXAMPLE-SPECIAL",
+      "First-party plan aquarium150+carpet65+fishfood15",
+      230
+    ],
+    [
+      "EXAMPLE-GAMES",
+      "First-party plan board game",
+      15
+    ],
+    [
+      "EXAMPLE-TOTAL",
+      "First-party total of category amounts68+658+230+15",
+      971
+    ],
+    [
+      "EXAMPLE-CHANGE",
+      "First-party budget1000 less total971",
+      29
+    ]
+  ],
+  "sourceTaskMap": [
+    {
+      "key": "WARMUP",
+      "source": "Source example product prices incl aquarium159",
+      "mode": "TEACHER_NOTICE_WITH_DISCREPANCY",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "PRICE-TABLE",
+      "source": "Source Activity1 classroom shopping prices incl aquarium150",
+      "mode": "SOURCE_PRICE_ANCHORS",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "WISHLIST",
+      "source": "Original $1000 budget, unlimited valid purchase quantity choices",
+      "mode": "FIRSTPARTY_NONUNIQUE_EXAMPLE_TEACHER_OPEN",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "CATEGORIES",
+      "source": "Four separate category subtotals",
+      "mode": "FOUR_INDEPENDENT_EXAMPLE_SUMS",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "REMAINDER",
+      "source": "Leftover or over budget",
+      "mode": "FIRSTPARTY_1000_MINUS_971_EXAMPLE",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "PEER",
+      "source": "Share and compare spending by category/total",
+      "mode": "TEACHER_REVIEW",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    }
+  ],
+  "humanRubric": [
+    [
+      "NOTICE",
+      "Original warm-up school supplies list includes aquarium price159, while task Activity1 list prices the aquarium150. Discuss discrepancy explicitly; do not silently overwrite."
+    ],
+    [
+      "FREE-CHOICE",
+      "Create an arbitrary wish list for the source1000 budget; repeated items are permitted. No single correct purchase list."
+    ],
+    [
+      "CATEGORIES",
+      "Compute totals for supplies, books/maps, special items and puzzles/games on the pupil's own choices."
+    ],
+    [
+      "BALANCE",
+      "Compare total with1000, determine leftover OR overspend based on arbitrary choice and justify using estimation and exact sum."
+    ],
+    [
+      "COLLABORATE",
+      "Trade lists, explain item value and compare each category plus total spending difference."
+    ],
+    [
+      "PRICE-BOUNDARY",
+      "Teacher decides how the source discrepant 159 versus150 aquarium displays are represented, retaining original provenance."
+    ],
+    [
+      "OPTIONAL",
+      "The 2021 lesson is optional and does not provide a normal original publisher gated Cool-down for duplication."
+    ]
+  ],
+  "testsNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson21BudgetSourceTests.cs",
+  "originalPdfRead": false,
+  "stageD": "NOT_STARTED",
+  "authoringState": "READY_FOR_STAGE_D_NONUNIQUE_FIRSTPARTY"
+}

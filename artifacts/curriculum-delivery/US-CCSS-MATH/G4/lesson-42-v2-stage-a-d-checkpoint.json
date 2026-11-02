@@ -1,0 +1,45 @@
+{
+  "ordinal": 42,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L17",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.related.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "a7711f790d3cf25c82e7b3e7a856b4ce36ec6b741c4b6d0e29e37c1ea6aed447",
+    "teacherLesson": "a6845a97cf218d775c3a67cbde7b9c9e8c31bdc17ee1528bcea4e86a2be5db0f",
+    "studentPdf": "3b6b7c98f75903a52854f6148f16d00bf7a9c1d6865326a8faaae9d4cedf3f65"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Which One Doesn\u2019t Belong: Tenths and Hundredths (10 minutes)",
+    "Activity 1: Card Sort: Less Than, Equal to, or Greater Than 1? (20 minutes)",
+    "Activity 2: What\u2019s Missing? (15 minutes)",
+    "Activity 3: Fraction Action: Tenths, Hundredths [OPTIONAL] (20 minutes)",
+    "Cool-down: Missing Fractions (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.related.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-42-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:39+01:00",
+  "closeAtLocal": "2026-10-26T22:41:40+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 2",
+  "programme": "US-CCSS-MATH",
+  "gradeOrdinal": 35,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L01",
+  "unitNumber": 3,
+  "lessonNumber": 1,
+  "title": "Standard Units of Measure",
+  "stageA": {
+    "status": "COMPLETE_READ_ONLY_LOCAL_IM2021_TEACHER_PREP_AND_LESSON",
+    "sourcePath": "Read-only local Grade2 Unit3 Lesson1 teacher files",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-1/preparation.html",
+    "sourceSemanticSha256": "fa0c69434230bc02f76e2e568ce29d29f578e0e1147e3c51eb829ffc72d1a5ad",
+    "canonicalBodySha256": "973bb81c2c24fcfea9547ae7f84d7b3b6929beb0d77930cdbae64b9f1df623bb",
+    "sourcePackOutcomes": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.2"
+    ],
+    "standardsNote": "Original teacher preparation lists Addressing 2.MD.A, Building Towards2.MD.A.1/2 and Building On1.MD.A.2; these are NOT misrepresented as 2.MD.A.1/2 already mastered.",
+    "warmup": "What Do You Know About Measuring? Teacher records prior ideas about unit iteration.",
+    "activity1": "Priya’s Pet original 40cm teacher-prepared ribbon; 10cm straws4 vs 5cm straws8, same string, groups2–3, no gaps or overlaps.",
+    "activity2": "Same40cm string with true1cm cubes:40 centimeter cubes; teacher compares connector cubes and1cm cubes and why standards are necessary.",
+    "synthesis": "Centimeter is an agreed standard unit; source comparison '40 cubes' versus more precise '40 centimeter cubes'.",
+    "coolDown": "Publisher Measure a Rectangle restricted original assessment not copied; independent digital30cm line example.",
+    "teacherOnly": "Real physical string/cube iteration, actual peer talk, teacher verification of start/end and gap-free measurement."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_SHA_PREDECESSOR_GUARDED_RICH_TEXT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3StandardUnitsTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original source URL, canonical body SHA, original outcome codes order, six unchanged predecessor text fields and persisted version."
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_MEASURE_UNIT_NUMERIC_COMPANION_4_EXACT_FAMILIES_AND_WRITTEN_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3FirstLessonStandardUnits.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson1StandardUnitsContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson1StandardUnitsQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson35ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson35Activities/Index.cshtml",
+    "viewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson35Page.cs",
+    "families": [
+      "usccss.g2.u03.l01.count_five_cm_straws",
+      "usccss.g2.u03.l01.count_ten_cm_straws",
+      "usccss.g2.u03.l01.count_one_cm_cubes",
+      "usccss.g2.u03.l01.compare_straw_unit_counts"
+    ],
+    "independentExit": "30cm line: 3 ten-cm pieces,6 five-cm pieces,30 one-cm edges, NOT a physical classroom claim.",
+    "security": "StudentPortal policy, selected adoption and published lesson guard, antiforgery POST, bounded input and no school grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3StandardUnitsTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3FirstLessonStandardUnitsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson1StandardUnitsQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson35ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L02_ORDINAL36_STAGE_A_B_C_SEQUENCE"
+}

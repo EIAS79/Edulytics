@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 65,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L13",
+  "title": "Represent Story Problems",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "SOURCE_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-13/preparation.html",
+    "sourceSemanticSha256": "cdea8bc00688bfaab1197922b6bd76d31fcbbc7727e8bff81c3d1ae46a6e12b0",
+    "originalBodySha256": "e91a93b2c1693784ad98771db75b788883f10b679cad4ce9419f55d4728a573a",
+    "orderedOfficialOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "authenticOriginalSourceNote": "Specific IM2021 U04 Lesson 13 teacher lesson and its content reviewed; source figures, game boards, physical work and restricted publisher assessment not synthesized."
+  },
+  "stageB": {
+    "status": "SOURCE_SHA_AND_SIX_FIELD_GUARDED_TEACHING_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4StoryRepresentationCorrection.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedPredecessorGuard": true
+  },
+  "stageC": {
+    "status": "AUTHORING_COMPLETED_NOT_EXECUTED",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FinalSixSourcePractice.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FinalSixContracts.cs",
+    "questionEngine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4FinalSixQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4FinalSixActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4FinalSixActivities/Index.cshtml",
+    "allowedFamilies": [
+      "usccss.g2.u04.l13.train_missing_part",
+      "usccss.g2.u04.l13.train_combined_parts",
+      "usccss.g2.u04.l13.train_length_difference",
+      "usccss.g2.u04.l13.tape_missing_part"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal65OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal65SourceActivityMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal65ExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal65StudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "sourceBoundary": "Publisher-specific graphics and authentic student physical or personal activities are teacher-only. No official grade."
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "status": "READY_FOR_STAGE_D",
+    "stageDExecuted": false,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "Grade 2 ordinal 66 Stage A-B-C"
+}

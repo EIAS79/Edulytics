@@ -1,0 +1,54 @@
+{
+  "ordinal": 124,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U07:L13",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "REUSED_PREVIOUS_2021_LOCAL_OUR_CS_SOURCE_INTAKE_UNIT7_L13",
+    "B": "REPAIRED_ADJACENT_ANGLE_ADDING_UNKNOWN_PART_WITH_TEACHER_SOURCE_P_Q_R_S_AND_PAPER_KITE",
+    "C": "EXTENDED_EXISTING_EXACT_KERNEL_WITH_EIGHT_90_180_360_ANGLE_CASES_AND_3_XUNIT_METHODS_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "6ee57e7259aaa99620ee5e599ff2ad6b919606bfe1c1986e26a1cf78c603e6ce",
+    "teacher": "1531626084abf9597827f315034317f0ebd9b3b01434e14c115460906258f217"
+  },
+  "firstPartyCooldown": {
+    "prompt": "A straight angle contains a 73° part. What is the other adjacent angle?",
+    "teacherAnswer": "107°."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "2021 IM/KH First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-124-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-124-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 local teacher/student source intake ordinal124",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-124-2021-source-evidence.json",
+    "sourceElementsCount": 12,
+    "primarySkillId": "geometry.angles.compose_decompose_known_turn",
+    "allowedFamily": "usccss.g4.u07.l13.additive_angle_part",
+    "firstPartyCoolDown": {
+      "prompt": "A straight angle contains a 73° part. What is the other adjacent angle?",
+      "teacherAnswer": "107°."
+    },
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal124AdditiveAngleTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "sourceFigurePixelParityVerified": false,
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Publisher p,q,r,s source cutouts and three-step folded kite require teacher visual/physical assessment.",
+    "New exact C# family and focused xUnit uncompiled/unrun; no CI, UI or gradebook evidence.",
+    "Original source Cool-down access gated; independent first-party substitute only."
+  ]
+}

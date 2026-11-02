@@ -1,0 +1,5 @@
+# Lesson 85 — independent source review
+
+Read the original 2021 teacher Student Facing activities on Our-CS. The estimation warm-up asks for too low, about right, and too high estimates of an initially unorganized and then organized cube display; teacher confirms 76 cubes. The main activity asks pupils to find all representations of 94 as tens and loose ones (including 9 tens and 4 ones and 0 tens and 94 ones). Mystery Bags source cases: A 5 tens + 2 ones = 52; B 4 tens + 25 ones = 65; C 49 total with 29 ones implies 2 tens; D 36 total with 2 tens implies 16 ones. Student-created bag story and teacher evaluation remain non-auto-graded.
+
+Teaching and digital numeric contract currently cover 94 and four bags; source-based estimation warm-up and visual-asset verification remain an explicit open A-C audit boundary. Do not mark the lesson ready or claim publisher artwork parity, protected assessment access, .NET tests or Stage D success without the associated evidence. Existing branch ledger remains NO_GO.

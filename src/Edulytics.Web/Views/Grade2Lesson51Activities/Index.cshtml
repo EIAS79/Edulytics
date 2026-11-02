@@ -1,0 +1,55 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson51Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Center Day 3 optional";}
+<style>
+.g2l51{max-width:970px;margin:auto;padding:20px;color:#254353}.g2l51 .panel{background:#fff;border:1px solid #cad9e3;border-radius:12px;padding:19px;margin:16px 0}.g2l51 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}.g2l51 label{display:block;margin:12px 0 5px;font-weight:700}.g2l51 input,.g2l51 select,.g2l51 textarea{width:100%;max-width:550px;border:1px solid #8298a5;border-radius:7px;padding:10px;font:inherit}.g2l51 .action{padding:12px 20px;border:0;border-radius:8px;background:#0c8194;color:white;font-weight:700}.g2l51 .ok{border-left:4px solid #2c885a;padding-left:12px}.g2l51 .bad{border-left:4px solid #ba4a60;padding-left:12px}.g2l51 .review{border-left:4px solid #b28b33;padding-left:12px}
+</style>
+<main class="g2l51">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Center Day 3 — optional</h1>
+<p>Measure <strong>up to eight real objects</strong> with a partner, using centimeters OR inches. Represent YOUR measurements in a line plot and ask each other TWO genuine questions. The first-party numbers later on this page are fictional.</p>
+<form asp-controller="Grade2Lesson51Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel"><h2>1. Number Talk — subtract from multiples of ten</h2><div class="grid">
+<div><label asp-for="Answers.TalkA">60−10</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkB">60−11</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkC">60−21</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.TalkD">70−32</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required/></div>
+</div></section>
+<section class="panel"><h2>2. Creating Line Plots Stage1 — real physical measurements</h2>
+<p>Use a genuine ruler starting at zero to measure at most8 different physical objects to the nearest whole centimeter or inch. Do NOT mix centimeters and inches in the same plot. Draw consecutive equally spaced length ticks, your unit and a title, then one X for each actual object.</p>
+<label asp-for="Answers.RealUnit">Unit used on REAL ruler</label><select asp-for="Answers.RealUnit"><option value="">Teacher-observed choice</option><option value="cm">Centimeters (cm)</option><option value="in">Inches (in)</option></select>
+<label asp-for="Answers.RealMeasuredObjects">List only REAL objects and their own measured lengths</label><textarea asp-for="Answers.RealMeasuredObjects" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPlotTitleAndTicks">Describe your actual line plot title, tick labels and identical Xs</label><textarea asp-for="Answers.RealPlotTitleAndTicks" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.PartnerFirstQuestion">Your first genuine partner question based on the plot</label><textarea asp-for="Answers.PartnerFirstQuestion" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.PartnerSecondQuestion">Your second genuine partner question based on the plot</label><textarea asp-for="Answers.PartnerSecondQuestion" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.PartnerResponses">What did your partner answer? What evidence in your plot supports the answer?</label><textarea asp-for="Answers.PartnerResponses" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Choice Time — actual existing centers</h2>
+<p>Choose the REAL existing Estimate and Measure Stage2, Number Puzzles Stages2–4 or Target Measurements Stage1. Teacher observes actual partner turns and diagrams.</p>
+<label asp-for="Answers.RealChoiceCenter">Center choice</label>
+<select asp-for="Answers.RealChoiceCenter"><option value="">Teacher-observed choice</option><option>Estimate and Measure — Stage2</option><option>Number Puzzles — Stages2–4</option><option>Target Measurements — Stage1</option></select>
+<label asp-for="Answers.PartnerPraise">What did your genuine partner do well today?</label><textarea asp-for="Answers.PartnerPraise" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>4. Fictional Edulytics line plot, NOT real source measurements</h2>
+<p>FICTIONAL cm values: 9, 10, 10, 11, 12, 12, 13, 14. No source student measured these objects.</p>
+<div class="grid">
+<div><label asp-for="Answers.FictionTotal">Total fictional objects</label><input asp-for="Answers.FictionTotal" type="number" min="0" max="8" required/></div>
+<div><label asp-for="Answers.FictionAt10">How many exactly10cm?</label><input asp-for="Answers.FictionAt10" type="number" min="0" max="8" required/></div>
+<div><label asp-for="Answers.FictionAt12">How many exactly12cm?</label><input asp-for="Answers.FictionAt12" type="number" min="0" max="8" required/></div>
+<div><label asp-for="Answers.FictionMin">Shortest (cm)</label><input asp-for="Answers.FictionMin" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FictionMax">Longest (cm)</label><input asp-for="Answers.FictionMax" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FictionAbove11">Number longer than11cm</label><input asp-for="Answers.FictionAbove11" type="number" min="0" max="8" required/></div>
+</div>
+<p>Independent first-party subtraction practice, not a publisher test:</p>
+<div class="grid"><div><label asp-for="Answers.CoolA">80−23</label><input asp-for="Answers.CoolA" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolB">91−35</label><input asp-for="Answers.CoolB" type="number" min="0" max="100" required/></div></div>
+<button class="action" type="submit">Check numeric practice and show teacher-review checklist</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var f in Model.Feedback){<div class="@(f.Correct==true?"ok":f.Correct==false?"bad":"review")"><h3>@f.Section</h3><p>@(f.Correct==true?"Numbers valid":f.Correct==false?"Revise the numbers":"Teacher must observe"). @f.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation checklist</h2>
+<ul>@foreach(var x in UsCcssG2Unit3SeventeenthLessonLinePlotCenter.TeacherRubric){<li>@x</li>}</ul>
+<p>Source IM K–5 2021 G2 Unit3 Lesson17, OPTIONAL; 2.MD.A.1/.3/.4, 2.MD.D.9, 2.NBT.B.5, 2.OA.B.2. No official school grade stored.</p></section>
+</main>

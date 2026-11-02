@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "auditId": "G1-2026-10-19-OUR-CS-READONLY-CACHE-INTEGRITY",
+  "assessedCandidateSha": "300b206a9fe3d2c3ffd2c934ed89daafbd0931fc",
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V1",
+  "curriculum": "US-CCSS-MATH",
+  "grade": "G1",
+  "scope": {
+    "firstOrdinal": 51,
+    "lastOrdinal": 146,
+    "lessons": 96
+  },
+  "sourceDevice": "Our-CS (read-only curriculum reference, no repository mutation)",
+  "sourceEditionDeclaredByManifest": "1st Edition (2021)",
+  "sourcePathsRelativeToGradeLibrary": {
+    "teacher": "Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-{unit}_lesson-{lesson}_preparation.html",
+    "student": "Student_Public_Mirror/unit-{unit}/lesson-{lesson}/lesson.html"
+  },
+  "method": "Read-only Get-FileHash SHA256 on each local teacher preparation and student lesson HTML file, compared with grade-manifest.json teacherPreparationSha256 and studentSourceHtmlSha256 at assessed SHA. No materials copied or modified.",
+  "unitResults": [
+    {
+      "unit": 3,
+      "checked": 15,
+      "teacherMatched": 15,
+      "studentMatched": 15
+    },
+    {
+      "unit": 4,
+      "checked": 23,
+      "teacherMatched": 23,
+      "studentMatched": 23
+    },
+    {
+      "unit": 5,
+      "checked": 14,
+      "teacherMatched": 14,
+      "studentMatched": 14
+    },
+    {
+      "unit": 6,
+      "checked": 17,
+      "teacherMatched": 17,
+      "studentMatched": 17
+    },
+    {
+      "unit": 7,
+      "checked": 17,
+      "teacherMatched": 17,
+      "studentMatched": 17
+    },
+    {
+      "unit": 8,
+      "checked": 10,
+      "teacherMatched": 10,
+      "studentMatched": 10
+    }
+  ],
+  "aggregate": {
+    "lessonsChecked": 96,
+    "teacherFilesSha256Matched": 96,
+    "studentFilesSha256Matched": 96,
+    "missingFiles": 0,
+    "hashMismatches": 0
+  },
+  "publisherLibraryVariantObservation": {
+    "accessimTeacherAndStudentLessonPages": 148,
+    "canonicalManifestLessons": 146,
+    "additionalPages": [
+      {
+        "sourceLessonCode": "1.2.23",
+        "sourceTitle": "Story Problem Information (Optional)",
+        "canonicalManifestIncluded": false
+      },
+      {
+        "sourceLessonCode": "1.7.18",
+        "sourceTitle": "Halves and Fourths in Our World (Optional)",
+        "canonicalManifestIncluded": false
+      }
+    ],
+    "publisherPageVariant": "Locally mirrored accessim_teacher/accessim_student HTML identifies itself as v.360; canonical teacher Exact_Sources/student Student_Public_Mirror set used for 2021-manifest checksum comparison is distinct.",
+    "openDecision": "Confirm edition-specific optional-lesson inclusion/exclusion and licensing/provenance explicitly; do not renumber historically released Grade 1 lessons."
+  },
+  "acceptanceBoundaries": {
+    "authenticSourceFilesIdentified": true,
+    "lessonSourceGoalParityVerified": false,
+    "actualStudentTaskParityVerified": false,
+    "mathematicsIndependentlyVerified": false,
+    "authenticLearnerRenderingVerified": false,
+    "realPracticeDatabasePersistenceVerified": false,
+    "materialLicensingOrOriginalGraphicsReviewVerified": false,
+    "academicReviewApproved": false,
+    "ownerUatApproved": false,
+    "productionReleaseApproved": false
+  },
+  "decision": "INTEGRITY_CHECK_PASSED_ACADEMIC_AND_RELEASE_NO_GO",
+  "notes": "This report records a performed offline filesystem integrity check, not a fresh CI-run comparison or academic approval. No textbook HTML is committed. Publisher material is a reference for first-party authored content, not a license to redistribute protected assets."
+}

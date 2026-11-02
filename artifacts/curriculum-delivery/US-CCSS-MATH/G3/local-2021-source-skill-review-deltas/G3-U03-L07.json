@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 43,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L07",
+  "title": "Subtract Your Way",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-3/lesson-7/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U03.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U03.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L07.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "The source asks students to subtract 135 from 262 with base-ten drawings. What difference?",
+      "answerType": "integer",
+      "expected": "127"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-3/lesson-7/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: Subtract Two-Digit Numbers (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-3/lesson-7/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Strategies to Subtract (25 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-7/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Base-ten Drawings (10 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-7/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-3/lesson-7/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Subtract within 1,000 (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-3/lesson-7/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Base ten diagram. 2 hundreds, 1 crossed out. 6 tens, 4 crossed out with arrow pointing to 10 ones with 3 crossed out and 2 ones crossed out.",
+      "Base ten diagram. 2 hundreds, 1 crossed out. 6 tens, 4 crossed out with arrow pointing to a ten with 3 crossed out and 2 ones crossed out.",
+      "Base ten diagram. 2 hundreds with 1 crossed out, 6 tens with 4 crossed out with arrow pointing to 1 ten with 3 crossed out and two ones crossed out.",
+      "Base ten diagram. 2 hundreds, one crossed out. 5 tens, 3 crossed out. Two ones, both crossed out.",
+      "Base ten diagram. 2 hundreds crossed out with arrow pointing to 1 hundred with three tens crossed out and five tens crossed out. Two ones, 1 crossed out."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "The source asks students to subtract 135 from 262 with base-ten drawings. What difference?",
+      "answerType": "integer",
+      "expected": "127"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s subtract numbers within 1,000.",
+      "sourceLearningGoals": "Subtract within 1,000 in a way that makes sense to them.",
+      "teachingSteps": [
+        "Identify hundreds, tens and ones in each number.",
+        "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
+        "Check the answer by the inverse operation or a reasonable estimate."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s subtract numbers within 1,000.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Calculate 428 − 213 using an appropriate decomposition.",
+      "answerType": "integer",
+      "expected": "215"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Subtract 505 − 398 and check with addition.",
+      "answerType": "integer",
+      "expected": "107"
+    },
+    "humanRubric": "Teacher checks correct tens/ones decomposition in Jada and Han's distinct drawings.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

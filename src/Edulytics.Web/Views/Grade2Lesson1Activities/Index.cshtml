@@ -1,0 +1,162 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson1PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 2 · Addition and subtraction within 10";
+}
+<style>
+.g2-original {max-width:900px;margin:0 auto 32px;padding:20px;color:#17334a}
+.g2-original .g2-panel {background:#fff;border:1px solid #dae5ed;border-radius:16px;padding:22px;margin:18px 0}
+.g2-original h1 {font-size:1.8rem;line-height:1.3}
+.g2-original h2 {font-size:1.3rem}
+.g2-original .g2-note {color:#456075;max-width:72ch}
+.g2-original .g2-grid {display:grid;grid-template-columns:repeat(5,minmax(34px,1fr));gap:6px;max-width:330px;margin:12px 0}
+.g2-original .g2-square {border:2px solid #7391a6;aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;background:#e9f7fa;font-size:1.25rem}
+.g2-original .g2-square--other {background:#ffefd1}
+.g2-original .g2-field {margin:15px 0}
+.g2-original label {display:block;font-weight:700;margin-bottom:6px}
+.g2-original input,.g2-original textarea {width:100%;max-width:490px;border:1px solid #668298;border-radius:8px;padding:12px;font:inherit}
+.g2-original input:focus,.g2-original textarea:focus {outline:3px solid #94d5e1}
+.g2-original .g2-two {display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.g2-original .g2-formula {display:inline-block;background:#f3f8fb;border-radius:8px;padding:7px 12px;margin:4px;font-size:1.1rem}
+.g2-original .g2-success {border-left:4px solid #146c43;padding-left:12px}
+.g2-original .g2-review {border-left:4px solid #9a6a15;padding-left:12px}
+.g2-original .g2-error {border-left:4px solid #aa2837;padding-left:12px}
+.g2-original .g2-button {background:#08788d;color:#fff;border:0;border-radius:9px;padding:13px 24px;font:inherit;font-weight:750;cursor:pointer}
+.g2-original .g2-source {font-size:.93rem;color:#4b6272}
+</style>
+<div class="g2-original">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+    <header>
+        <p>EDULYTICS · ORIGINAL ACTIVITIES</p>
+        <h1>Grade 2 · Add and subtract within 10</h1>
+        <p class="g2-note">A student activity and end-of-lesson check authored by Edulytics.
+        The questions, ten-frame diagram and recording tasks here are new; they
+        are not presented as the publisher's restricted Cool-down.</p>
+    </header>
+
+    <section class="g2-panel" aria-labelledby="warmup-title">
+        <h2 id="warmup-title">1. Math community warm-up</h2>
+        <p>What do you know about doing mathematics? Share an idea or question
+        with a classmate. Think quietly first, then listen to another strategy.</p>
+        <p class="g2-note">Your teacher observes how you explain ideas and
+        participate. This is not a right-or-wrong number question.</p>
+    </section>
+
+    <section class="g2-panel" aria-labelledby="cards-title">
+        <h2 id="cards-title">2. Check It Off — number cards</h2>
+        <p>Choose two digit cards from 0 to 10. Use addition or subtraction to
+        make one result between 0 and 10. Record your expressions against the
+        number you checked off. There can be different correct expressions
+        for the same number. Keep your original card draw visible to your partner
+        so they can check how you got the result.</p>
+        <div aria-label="Values from zero to ten for a student recording sheet">
+            @for(var i=0;i<=10;i++) { <span class="g2-formula">@i</span> }
+        </div>
+    </section>
+
+    <section class="g2-panel" aria-labelledby="patterns-title">
+        <h2 id="patterns-title">3. What is the value?</h2>
+        <p>Match an expression to its total or difference. Try a few different
+        expressions, then look for all the combinations that make ten.</p>
+        <p>
+            <span class="g2-formula">5 + 3 = ?</span>
+            <span class="g2-formula">10 − 7 = ?</span>
+            <span class="g2-formula">6 + 4 = ?</span>
+        </p>
+        <p>First-party number-bond visual: the rows below show two parts
+        that fill a ten-frame — eight teal counters and two golden counters.</p>
+        <div class="g2-grid" role="img"
+            aria-label="Ten frame containing eight blue-green counters and two golden counters. Eight plus two equals ten.">
+            @for(var i=0;i<10;i++) {
+                <span class="g2-square @(i>=8?"g2-square--other":"")" aria-hidden="true">●</span>
+            }
+        </div>
+        <p>What changes about one part when the other part increases, while
+        the total stays ten? Explain it to your teacher.</p>
+        <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+            <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+            <input type="hidden" name="lessonId" value="@Model.LessonId" />
+            <button type="submit" class="g2-button">Practice more matched expressions</button>
+        </form>
+    </section>
+
+    <form asp-controller="Grade2Lesson1Activities" asp-action="Submit" method="post" class="g2-panel">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <h2>4. Edulytics Cool-down</h2>
+        <p>Answer these short questions to show what you learned.
+        Questions 1–3 have mathematical checks; your teacher reviews explanations
+        and drawings.</p>
+        <div class="g2-field">
+            <label for="cd-one">@Model.CoolDownTasks[0].Prompt</label>
+            <input id="cd-one" name="answerOne" value="@Model.AnswerOne" inputmode="numeric" required maxlength="20" autocomplete="off" />
+        </div>
+        <div class="g2-field">
+            <label for="cd-two">@Model.CoolDownTasks[1].Prompt</label>
+            <input id="cd-two" name="answerTwo" value="@Model.AnswerTwo" inputmode="numeric" required maxlength="20" autocomplete="off" />
+        </div>
+        <div class="g2-field">
+            <p><strong>@Model.CoolDownTasks[2].Prompt</strong></p>
+            <div class="g2-two">
+                <div><label for="expr-one">First expression</label><input id="expr-one" name="expressionOne" value="@Model.ExpressionOne" required maxlength="40" placeholder="e.g. 4 + 2" /></div>
+                <div><label for="expr-two">Second DIFFERENT expression</label><input id="expr-two" name="expressionTwo" value="@Model.ExpressionTwo" required maxlength="40" placeholder="e.g. 10 − 4" /></div>
+            </div>
+        </div>
+        <div class="g2-field">
+            <label for="cd-explain">@Model.CoolDownTasks[3].Prompt</label>
+            <textarea id="cd-explain" name="explanation" rows="3" maxlength="2000"
+                placeholder="Explain in words, or show and discuss a drawing with your teacher.">@Model.Explanation</textarea>
+            <p class="g2-note">Your teacher checks the representation and reasoning.
+            A number-only answer does not prove this explanation is complete.</p>
+        </div>
+        <h3>Check It Off — two ways to make your chosen target</h3>
+        <div class="g2-field">
+            <label for="target">Which number did you check off? (0–10)</label>
+            <input id="target" name="checkOffTarget" value="@Model.CheckOffTarget"
+                type="number" min="0" max="10" required />
+        </div>
+        <div class="g2-two">
+            <div class="g2-field"><label for="rec-one">First card expression</label>
+                <input id="rec-one" name="checkOffExpressionOne" value="@Model.CheckOffExpressionOne"
+                    required maxlength="40" /></div>
+            <div class="g2-field"><label for="rec-two">Second DIFFERENT card expression</label>
+                <input id="rec-two" name="checkOffExpressionTwo" value="@Model.CheckOffExpressionTwo"
+                    required maxlength="40" /></div>
+        </div>
+        <button type="submit" class="g2-button">Check my mathematical answers</button>
+    </form>
+
+    @if (Model.Submitted)
+    {
+        <section class="g2-panel" aria-live="polite" aria-label="Learning feedback">
+            <h2>Feedback for this practice</h2>
+            @foreach(var result in Model.Results) {
+                <div class="@(result.MachineCorrect==true?"g2-success":result.MachineCorrect==false?"g2-error":"g2-review")">
+                    <h3>@result.Label</h3>
+                    <p>@(result.MachineCorrect==true?"Mathematically correct":result.MachineCorrect==false?"Try again":"Teacher review required"). @result.Feedback</p>
+                    @if(result.TeacherReviewNeeded) { <p class="g2-note">A teacher reviews the student explanation or actual game record.</p> }
+                </div>
+            }
+            <p class="g2-note">This page gives immediate feedback. It does not
+            save an official assessment grade or certify that a class activity
+            took place. Use the school's approved assessment workflow for grades.</p>
+        </section>
+    }
+    <section class="g2-panel" aria-labelledby="teacher-title">
+        <h2 id="teacher-title">For teacher review</h2>
+        <p>Evidence of the student's ten-frame explanation:</p>
+        <ul>
+            @foreach(var criterion in Model.TeacherRubric){<li>@criterion</li>}
+        </ul>
+        <p>Also review the partner's card draws, correct recorded expression,
+        patterns the student noticed in make-ten pairs, and the group math
+        community discussion. These are deliberately not awarded automatic scores.</p>
+    </section>
+    <p class="g2-source">Curriculum alignment: IM 2021 Grade 2 Unit 1 Lesson 1
+        and CCSS 2.OA.B.2. Content and ten-frame above are independently authored
+        by Edulytics; this is not a reproduction of publisher's educator-only assessment.</p>
+</div>

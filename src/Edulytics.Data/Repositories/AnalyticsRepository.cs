@@ -1,0 +1,285 @@
+using System.Data;
+using Edulytics.Core.Analytics;
+using Edulytics.Core.Entities;
+using Edulytics.Core.Interfaces;
+using Edulytics.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+
+namespace Edulytics.Data.Repositories;
+
+public sealed class AnalyticsRepository : IAnalyticsRepository
+{
+    private readonly EdulyticsDbContext _db;
+
+    public AnalyticsRepository(EdulyticsDbContext db)
+    {
+        _db = db;
+    }
+
+    public async Task<AnalyticsSourceSnapshot> GetSourceSnapshotAsync(
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
+    {
+        IDbContextTransaction? transaction = null;
+
+        if (_db.Database.IsRelational())
+        {
+            transaction = await _db.Database.BeginTransactionAsync(
+                IsolationLevel.RepeatableRead,
+                cancellationToken);
+        }
+
+        try
+        {
+            var officialPracticeAttemptIds = _db.PracticeAttempts.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+                .Select(x => x.Id);
+
+            var snapshot = new AnalyticsSourceSnapshot(
+                await _db.AcademicYears.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.ClassGroups.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.Subjects.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.StudentProfiles.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.StudentEnrollments.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.TeacherAssignments.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.CurriculumTopics.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.LearningOutcomes.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.Assessments.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.AssessmentQuestions.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.QuestionLearningOutcomes.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.AssessmentResults.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.StudentAnswers.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId)
+                    .ToListAsync(cancellationToken),
+                await _db.PracticeAttempts.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+                    .ToListAsync(cancellationToken),
+                await _db.LearningEvidence.AsNoTracking()
+                    .Where(x => x.SchoolId == schoolId && officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
+                    .ToListAsync(cancellationToken));
+
+            if (transaction is not null)
+                await transaction.CommitAsync(cancellationToken);
+
+            return snapshot;
+        }
+        finally
+        {
+            if (transaction is not null)
+                await transaction.DisposeAsync();
+        }
+    }
+
+    public async Task<AnalyticsProjectionSnapshot> GetProjectionSnapshotAsync(
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
+    {
+        var items = await _db.AssessmentItems.AsNoTracking()
+            .Where(x => x.SchoolId == schoolId)
+            .ToListAsync(cancellationToken);
+
+        var officialPracticeAttemptIds = _db.PracticeAttempts
+            .AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+            .Select(x => x.Id);
+
+        var officialPracticeAttemptItemIds = _db.PracticeAttemptItems
+            .AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
+            .Select(x => x.Id);
+        var lessonIds = items
+            .Where(x => x.CurriculumPedagogicalLessonId.HasValue)
+            .Select(x => x.CurriculumPedagogicalLessonId!.Value)
+            .Distinct()
+            .ToArray();
+        var lessons = lessonIds.Length == 0
+            ? Array.Empty<CurriculumPedagogicalLesson>()
+            : await _db.CurriculumPedagogicalLessons.AsNoTracking()
+                .Where(x => lessonIds.Contains(x.Id))
+                .ToArrayAsync(cancellationToken);
+
+        return new AnalyticsProjectionSnapshot(
+            await _db.AcademicYears.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.ClassGroups.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.Subjects.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.StudentProfiles.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.TeacherAssignments.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.CurriculumTopics.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.LearningOutcomes.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.StudentOutcomeMasteries.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.ClassOutcomeSummaries.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.ClassTopicSummaries.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.ClassAssessmentTrends.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken),
+            await _db.SchoolAnalyticsSnapshots.AsNoTracking().Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken))
+        {
+            Terms = await _db.Terms.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            StudentEnrollments = await _db.StudentEnrollments.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            Assessments = await _db.Assessments.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentQuestions = await _db.AssessmentQuestions.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            OutcomeMappings = await _db.QuestionLearningOutcomes.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentItems = items,
+            AssessmentItemOutcomes = await _db.AssessmentItemOutcomes.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            AssessmentResults = await _db.AssessmentResults.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            StudentAnswers = await _db.StudentAnswers.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId)
+                .ToListAsync(cancellationToken),
+            PracticeAttempts = await _db.PracticeAttempts.AsNoTracking()
+                .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+                .ToListAsync(cancellationToken),
+            PracticeAttemptItems = await _db.PracticeAttemptItems.AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
+                .ToListAsync(cancellationToken),
+            PracticeResponses = await _db.PracticeResponses.AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    officialPracticeAttemptItemIds.Contains(x.PracticeAttemptItemId))
+                .ToListAsync(cancellationToken),
+            LearningEvidence = await _db.LearningEvidence.AsNoTracking()
+                .Where(x =>
+                    x.SchoolId == schoolId &&
+                    officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
+                .ToListAsync(cancellationToken),
+            PedagogicalLessons = lessons
+        };
+    }
+
+    public async Task<DateTime?> GetLatestSourceUpdateAsync(
+        Guid schoolId,
+        CancellationToken cancellationToken = default)
+    {
+        var resultMax = await _db.AssessmentResults
+            .Where(x => x.SchoolId == schoolId)
+            .Select(x => (DateTime?)x.UpdatedAtUtc)
+            .MaxAsync(cancellationToken);
+
+        var answerMax = await _db.StudentAnswers
+            .Where(x => x.SchoolId == schoolId)
+            .Select(x => (DateTime?)x.UpdatedAtUtc)
+            .MaxAsync(cancellationToken);
+
+        var officialPracticeAttemptIds = _db.PracticeAttempts.AsNoTracking()
+            .Where(x => x.SchoolId == schoolId && !x.IsPrivate)
+            .Select(x => x.Id);
+
+        var evidenceMax = await _db.LearningEvidence
+            .Where(x => x.SchoolId == schoolId && officialPracticeAttemptIds.Contains(x.PracticeAttemptId))
+            .Select(x => (DateTime?)x.OccurredAtUtc)
+            .MaxAsync(cancellationToken);
+
+        return new[] { resultMax, answerMax, evidenceMax }
+            .Where(x => x.HasValue)
+            .Select(x => x!.Value)
+            .DefaultIfEmpty()
+            .Max() is var latest && latest != default
+                ? latest
+                : null;
+    }
+
+    public async Task<AnalyticsPersistenceResult> ReplaceProjectionsAsync(
+        Guid schoolId,
+        AnalyticsProjectionSet projections,
+        CancellationToken cancellationToken = default)
+    {
+        IDbContextTransaction? transaction = null;
+
+        try
+        {
+            if (_db.Database.IsRelational())
+            {
+                transaction = await _db.Database.BeginTransactionAsync(
+                    IsolationLevel.Serializable,
+                    cancellationToken);
+            }
+
+            var oldStudent = await _db.StudentOutcomeMasteries.Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken);
+            var oldOutcome = await _db.ClassOutcomeSummaries.Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken);
+            var oldTopic = await _db.ClassTopicSummaries.Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken);
+            var oldTrend = await _db.ClassAssessmentTrends.Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken);
+            var oldSchool = await _db.SchoolAnalyticsSnapshots.Where(x => x.SchoolId == schoolId).ToListAsync(cancellationToken);
+
+            _db.RemoveRange(oldStudent);
+            _db.RemoveRange(oldOutcome);
+            _db.RemoveRange(oldTopic);
+            _db.RemoveRange(oldTrend);
+            _db.RemoveRange(oldSchool);
+            await _db.SaveChangesAsync(cancellationToken);
+
+            await _db.StudentOutcomeMasteries.AddRangeAsync(projections.StudentOutcomeMasteries, cancellationToken);
+            await _db.ClassOutcomeSummaries.AddRangeAsync(projections.ClassOutcomeSummaries, cancellationToken);
+            await _db.ClassTopicSummaries.AddRangeAsync(projections.ClassTopicSummaries, cancellationToken);
+            await _db.ClassAssessmentTrends.AddRangeAsync(projections.ClassAssessmentTrends, cancellationToken);
+            await _db.SchoolAnalyticsSnapshots.AddRangeAsync(projections.SchoolSnapshots, cancellationToken);
+            await _db.SaveChangesAsync(cancellationToken);
+
+            if (transaction is not null)
+                await transaction.CommitAsync(cancellationToken);
+
+            _db.ChangeTracker.Clear();
+            return AnalyticsPersistenceResult.Success();
+        }
+        catch (DbUpdateException)
+        {
+            if (transaction is not null)
+                await transaction.RollbackAsync(cancellationToken);
+
+            _db.ChangeTracker.Clear();
+            return AnalyticsPersistenceResult.Failure(AnalyticsPersistenceError.Constraint);
+        }
+        catch
+        {
+            if (transaction is not null)
+                await transaction.RollbackAsync(cancellationToken);
+
+            _db.ChangeTracker.Clear();
+            return AnalyticsPersistenceResult.Failure(AnalyticsPersistenceError.Unknown);
+        }
+        finally
+        {
+            if (transaction is not null)
+                await transaction.DisposeAsync();
+        }
+    }
+}

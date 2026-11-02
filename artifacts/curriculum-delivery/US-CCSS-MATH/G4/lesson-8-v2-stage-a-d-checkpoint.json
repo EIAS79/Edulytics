@@ -1,0 +1,30 @@
+{
+  "ordinal": 8,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U01:L08",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "optional": true,
+  "stageA": "ORIGINAL_TEACHER_SOURCE_AND_STUDENT_PDF_3P_VERIFIED",
+  "stageB": "FIXED_FIVE_GENERIC_PROSE_FIELDS_RICHV2_FIRSTPARTY",
+  "stageC": "REUSED_EXISTING_AREA_AND_PRIME_CLASSIFICATION_NUMERIC_FAMILIES; ART_TEACHER_LED",
+  "stageD": "NOT_RUN",
+  "sourceHashes": {
+    "teacherPrep": "0c2de99120437eb8934d105d412594e79cabc31a09d15575c7d8e35588e0f315",
+    "teacherLesson": "9840cb177eb6c16db3eac16a9da4ca308e4cc08e8e2588a8b7cc2e7536481802",
+    "studentPdf": "8b22a381ed80ce40ad83839be567ec8253cc67c8c80aed5076c5a453fbe8a307"
+  },
+  "originalPublisherCooldownSeen": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "testsWritten": true,
+  "testsRun": true,
+  "targetedTest": {
+    "file": "tests/academic-us-ccss-g4-u01-l08-source-guard.test.cjs",
+    "count": 2,
+    "pass": 2,
+    "fail": 0,
+    "execution": "node --test from temporary GitHub snapshot pinned c452717b85d62c38fc96cd55f807dae67a8cb7aa",
+    "scope": "static source goals and reuse contract",
+    "stageD": false
+  }
+}

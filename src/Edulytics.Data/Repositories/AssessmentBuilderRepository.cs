@@ -1,0 +1,256 @@
+using Edulytics.Core.Assessments;
+using Edulytics.Core.Entities;
+using Edulytics.Core.Interfaces;
+using Edulytics.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
+
+namespace Edulytics.Data.Repositories;
+
+public sealed class AssessmentBuilderRepository(EdulyticsDbContext db) : IAssessmentBuilderRepository
+{
+    public async Task<AssessmentBuilderPersistenceContext?> GetContextAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default)
+    {
+        var assessment = await db.Assessments
+            .SingleOrDefaultAsync(x => x.SchoolId == schoolId && x.Id == assessmentId, cancellationToken);
+        if (assessment is null)
+            return null;
+
+        var classGroup = await db.ClassGroups.AsNoTracking()
+            .SingleOrDefaultAsync(x => x.SchoolId == schoolId && x.Id == assessment.ClassGroupId, cancellationToken);
+        if (classGroup is null)
+            return null;
+
+        SchoolCurriculumAdoption? adoption = null;
+        if (classGroup.CurriculumAdoptionId.HasValue)
+        {
+            adoption = await db.SchoolCurriculumAdoptions.AsNoTracking()
+                .SingleOrDefaultAsync(
+                    x => x.SchoolId == schoolId && x.Id == classGroup.CurriculumAdoptionId.Value && x.IsActive,
+                    cancellationToken);
+        }
+
+        adoption ??= await db.SchoolCurriculumAdoptions.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.IsActive &&
+                x.AcademicProgramId == classGroup.AcademicProgramId &&
+                x.GradeLevelId == classGroup.GradeLevelId &&
+                x.SubjectId == assessment.SubjectId &&
+                (x.AcademicYearId == assessment.AcademicYearId || x.AcademicYearId == null))
+            .OrderByDescending(x => x.AcademicYearId.HasValue)
+            .ThenByDescending(x => x.IsPrimary)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (adoption is not null)
+        {
+            await OfficialCurriculumOutcomeMaterializer.EnsureAsync(
+                db,
+                adoption,
+                cancellationToken);
+        }
+
+        var questions = await db.AssessmentQuestions
+            .Where(x => x.SchoolId == schoolId && x.AssessmentId == assessmentId)
+            .OrderBy(x => x.Order)
+            .ToListAsync(cancellationToken);
+        var questionIds = questions.Select(x => x.Id).ToArray();
+
+        var items = await db.AssessmentItems
+            .Where(x => x.SchoolId == schoolId && questionIds.Contains(x.Id))
+            .ToListAsync(cancellationToken);
+
+        var questionMappings = await db.QuestionLearningOutcomes
+            .Where(x => x.SchoolId == schoolId && questionIds.Contains(x.AssessmentQuestionId))
+            .ToListAsync(cancellationToken);
+
+        var itemMappings = await db.AssessmentItemOutcomes
+            .Where(x => x.SchoolId == schoolId && questionIds.Contains(x.AssessmentItemId))
+            .ToListAsync(cancellationToken);
+
+        var adoptionId = adoption?.Id;
+        var outcomes = await db.LearningOutcomes.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.AcademicProgramId == classGroup.AcademicProgramId &&
+                x.GradeLevelId == classGroup.GradeLevelId &&
+                x.SubjectId == assessment.SubjectId &&
+                (!adoptionId.HasValue || x.CurriculumAdoptionId == adoptionId.Value || x.CurriculumAdoptionId == null))
+            .OrderBy(x => x.Order)
+            .ThenBy(x => x.Code)
+            .ToListAsync(cancellationToken);
+
+        await MathematicsOutcomeSemanticHintLoader.ApplyAsync(
+            db,
+            adoption,
+            outcomes,
+            cancellationToken);
+
+        var summaries = await db.ClassOutcomeSummaries.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.AcademicYearId == assessment.AcademicYearId &&
+                x.ClassGroupId == assessment.ClassGroupId &&
+                x.SubjectId == assessment.SubjectId)
+            .ToListAsync(cancellationToken);
+
+        var pedagogicalLessons = Array.Empty<CurriculumPedagogicalLesson>();
+        var pedagogicalLessonOutcomes = Array.Empty<CurriculumPedagogicalLessonOutcome>();
+        if (adoption is not null && adoption.CurriculumLogicalLevel.HasValue)
+        {
+            var logicalLevel = adoption.CurriculumLogicalLevel.Value;
+            var pathway = string.IsNullOrWhiteSpace(adoption.CurriculumPathway)
+                ? null
+                : adoption.CurriculumPathway.Trim();
+
+            pedagogicalLessons = await db.CurriculumPedagogicalLessons.AsNoTracking()
+                .Where(x =>
+                    x.FrameworkVersionId == adoption.FrameworkVersionId &&
+                    x.LogicalLevelFrom <= logicalLevel &&
+                    x.LogicalLevelTo >= logicalLevel &&
+                    (pathway == null
+                        ? x.Pathway == null || x.Pathway == string.Empty
+                        : x.Pathway == pathway))
+                .OrderBy(x => x.SortOrder)
+                .ThenBy(x => x.Code)
+                .ToArrayAsync(cancellationToken);
+
+            var lessonIds = pedagogicalLessons.Select(x => x.Id).ToArray();
+            pedagogicalLessonOutcomes = lessonIds.Length == 0
+                ? []
+                : await db.CurriculumPedagogicalLessonOutcomes.AsNoTracking()
+                    .Where(x =>
+                        x.FrameworkVersionId == adoption.FrameworkVersionId &&
+                        lessonIds.Contains(x.PedagogicalLessonId))
+                    .OrderBy(x => x.PedagogicalLessonId)
+                    .ThenBy(x => x.SortOrder)
+                    .ToArrayAsync(cancellationToken);
+        }
+
+        return new AssessmentBuilderPersistenceContext(
+            assessment,
+            classGroup,
+            adoption,
+            questions,
+            items,
+            questionMappings,
+            itemMappings,
+            outcomes,
+            summaries,
+            pedagogicalLessons,
+            pedagogicalLessonOutcomes);
+    }
+
+    public async Task<IReadOnlyList<StudentProfile>> ListTargetStudentsAsync(
+        Guid schoolId,
+        Guid assessmentId,
+        CancellationToken cancellationToken = default)
+    {
+        var assessment = await db.Assessments.AsNoTracking()
+            .SingleOrDefaultAsync(x => x.SchoolId == schoolId && x.Id == assessmentId, cancellationToken);
+        if (assessment is null)
+            return [];
+
+        var studentIds = await db.StudentEnrollments.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                x.AcademicYearId == assessment.AcademicYearId &&
+                x.ClassGroupId == assessment.ClassGroupId)
+            .Select(x => x.StudentProfileId)
+            .Distinct()
+            .ToArrayAsync(cancellationToken);
+
+        return await db.StudentProfiles.AsNoTracking()
+            .Where(x =>
+                x.SchoolId == schoolId &&
+                studentIds.Contains(x.Id) &&
+                !x.IsArchived &&
+                x.Status == Edulytics.Core.Enums.AcademicStructureStatus.Active)
+            .OrderBy(x => x.DisplayName)
+            .ThenBy(x => x.StudentNumber)
+            .ToListAsync(cancellationToken);
+    }
+
+    public void AddBundle(AssessmentBuilderQuestionBundle bundle)
+    {
+        db.AssessmentQuestions.Add(bundle.Question);
+        db.AssessmentItems.Add(bundle.Item);
+        db.QuestionLearningOutcomes.AddRange(bundle.QuestionOutcomeMappings);
+        db.AssessmentItemOutcomes.AddRange(bundle.ItemOutcomeMappings);
+    }
+
+    public void ReplaceOutcomeMappings(
+        IReadOnlyCollection<QuestionLearningOutcome> currentQuestionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> currentItemMappings,
+        IReadOnlyCollection<QuestionLearningOutcome> replacementQuestionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> replacementItemMappings)
+    {
+        db.QuestionLearningOutcomes.RemoveRange(currentQuestionMappings);
+        db.AssessmentItemOutcomes.RemoveRange(currentItemMappings);
+        db.QuestionLearningOutcomes.AddRange(replacementQuestionMappings);
+        db.AssessmentItemOutcomes.AddRange(replacementItemMappings);
+    }
+
+    public void RemoveQuestionBundle(
+        AssessmentQuestion question,
+        AssessmentItem? item,
+        IReadOnlyCollection<QuestionLearningOutcome> questionMappings,
+        IReadOnlyCollection<AssessmentItemOutcome> itemMappings)
+    {
+        db.QuestionLearningOutcomes.RemoveRange(questionMappings);
+        db.AssessmentItemOutcomes.RemoveRange(itemMappings);
+        if (item is not null)
+            db.AssessmentItems.Remove(item);
+        db.AssessmentQuestions.Remove(question);
+    }
+
+    public async Task<AssessmentPersistenceResult> SaveAsync(
+        Assessment assessment,
+        byte[] expectedRowVersion,
+        CancellationToken cancellationToken = default)
+    {
+        var assessmentEntry = db.Entry(assessment);
+        var itemEntries = db.ChangeTracker.Entries<AssessmentItem>()
+            .Where(x => x.State == EntityState.Modified)
+            .ToArray();
+        var approvalOnly = itemEntries.Length > 0 &&
+            itemEntries.All(entry =>
+                entry.Properties
+                    .Where(property => property.IsModified)
+                    .All(property => property.Metadata.Name == nameof(AssessmentItem.ValidationMetadataJson))) &&
+            db.ChangeTracker.Entries()
+                .Where(entry => entry.State is EntityState.Added or EntityState.Deleted or EntityState.Modified)
+                .Where(entry => entry.Entity is not AssessmentItem && !ReferenceEquals(entry.Entity, assessment))
+                .Any() == false &&
+            assessmentEntry.Properties
+                .Where(property => property.IsModified)
+                .All(property => property.Metadata.Name == nameof(Assessment.UpdatedAtUtc));
+
+        if (approvalOnly && !assessment.RowVersion.SequenceEqual(expectedRowVersion))
+            return AssessmentPersistenceResult.Failure(AssessmentPersistenceError.Conflict);
+
+        // Keep the Assessment row in the approval-only unit of work. UpdatedAtUtc is
+        // intentionally persisted so EF applies the submitted RowVersion in the UPDATE
+        // predicate and EdulyticsDbContext rotates the application-managed RowVersion.
+        // The Assessment update and every modified AssessmentItem are committed by the
+        // same SaveChanges transaction, preserving all-or-none bulk approval while also
+        // rejecting stale browser pages and concurrent assessment edits.
+        assessmentEntry.Property(x => x.RowVersion).OriginalValue = expectedRowVersion;
+
+        try
+        {
+            await db.SaveChangesAsync(cancellationToken);
+            return AssessmentPersistenceResult.Success();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            return AssessmentPersistenceResult.Failure(AssessmentPersistenceError.Conflict);
+        }
+        catch (DbUpdateException)
+        {
+            return AssessmentPersistenceResult.Failure(AssessmentPersistenceError.Constraint);
+        }
+    }
+}

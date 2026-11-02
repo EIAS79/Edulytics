@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 31,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L10",
+  "title": "Solve Area Problems",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-2/lesson-10/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U02.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L10.json",
+  "stageA": {
+    "state": "ALL_PUBLIC_ORIGINAL_TASKS_AND_MEDIA_CONTEXTS_REVIEWED_30_SOURCE_ELEMENTS",
+    "originalAllVisualGeometryVerified": true,
+    "teacherManualOrManipulativesFullyReviewed": true,
+    "sourceTextSkillAdaptation": {
+      "prompt": "In the source Noah paints a wall 6 metres wide and 3 metres high. How many square metres?",
+      "answerType": "area-with-unit",
+      "expected": "18 m²"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-2/lesson-10/lesson.html",
+      "verified": "FULL_2021_ORIGINAL_STUDENT_PDF_FIVE_PAGES_AND_EIGHT_PUBLISHER_VISUAL_ASSETS_INSPECTED",
+      "figurePixelsInspected": true
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: One More Group (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-2/lesson-10/lesson.html",
+        "currentOneToOneStatus": "SEMANTIC_AUTHORING_MAPPED",
+        "reason": "See granular evidence map. Publisher gated Cool-down prompt not read; independent equivalent authorized. No runtime or academic approval."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Paint a Wall (10 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-10/lesson.html",
+        "currentOneToOneStatus": "SEMANTIC_AUTHORING_MAPPED",
+        "reason": "See granular evidence map. Publisher gated Cool-down prompt not read; independent equivalent authorized. No runtime or academic approval."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Create a Garden (25 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-10/lesson.html",
+        "currentOneToOneStatus": "SEMANTIC_AUTHORING_MAPPED",
+        "reason": "See granular evidence map. Publisher gated Cool-down prompt not read; independent equivalent authorized. No runtime or academic approval."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-2/lesson-10/lesson.html",
+        "currentOneToOneStatus": "SEMANTIC_AUTHORING_MAPPED",
+        "reason": "See granular evidence map. Publisher gated Cool-down prompt not read; independent equivalent authorized. No runtime or academic approval."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: How Much Fabric? (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-2/lesson-10/lesson.html",
+        "currentOneToOneStatus": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
+        "reason": "See granular evidence map. Publisher gated Cool-down prompt not read; independent equivalent authorized. No runtime or academic approval."
+      },
+      {
+        "sourceElementId": "S-6",
+        "heading": "Student Section Summary",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-2/lesson-10/lesson.html",
+        "currentOneToOneStatus": "SEMANTIC_AUTHORING_MAPPED",
+        "reason": "See granular evidence map. Publisher gated Cool-down prompt not read; independent equivalent authorized. No runtime or academic approval."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Rectangle. Horizontal side, 6 meters. Vertical side, 3 meters.",
+      "Picture of small, medium, and large paint containers.",
+      "Raised garden bed.",
+      "Area diagram. Length, 6. Width, 3.",
+      "Rectangle. Width, 3 tick marks. Length, 6 tick marks.",
+      "Rectangle. Horizontal side, 6. Vertical side, 3.",
+      "Unit square. Labeled square inch.",
+      "Girls holding a square meter frame."
+    ],
+    "originalElementsFullyOneToOneVerified": 30,
+    "originalStudentTaskPdfRead": true
+  },
+  "stageB": {
+    "state": "SOURCE_RICH_V2_CANONICAL_BRIDGE_AUTHORED_STATICALLY_REVIEWED_NOT_PUBLISHED",
+    "learnerSourceCheck": {
+      "prompt": "In the source Noah paints a wall 6 metres wide and 3 metres high. How many square metres?",
+      "answerType": "area-with-unit",
+      "expected": "18 m²"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Solve area problems in a community garden",
+      "sourceLearningGoals": "Solve real-world and mathematical problems involving area.",
+      "teachingSteps": [
+        "Calculate each Number Talk expression mentally; explain what one extra group changes.",
+        "Use a labelled wall diagram to find square-meter area, then compare several sufficient paint purchases.",
+        "Garden first read: discuss the situation. Second read: identify the quantities. Keep the questions closed until the third read.",
+        "On the third read, open the garden tasks, create a labelled poster, and compare group strategies in a gallery walk."
+      ],
+      "caution": "Do not turn the source paint-buying or garden-design tasks into one numeric target; costs/prices are not specified. Square meters and square feet are not interchangeable.",
+      "targetRichV2Field": "2021 source-specific canonical Rich V2 bridge authored"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false,
+    "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l10-2021.rich-lesson-v2.json",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson10RichV2.cs"
+  },
+  "stageC": {
+    "state": "MULTI_ANSWER_COVERAGE_AND_EXACT_LENGTH_FEASIBILITY_PLUS_TEACHER_RUBRIC_AUTHORED_UNRUN",
+    "firstPartyPractice": {
+      "prompt": "Extra Edulytics question with an added condition: use ONLY containers covering 10 m² each to paint an 18 m² wall. What is the minimum number? This is different from the open source purchase-choice task.",
+      "answerType": "integer",
+      "expected": "2"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "New Edulytics planter: one side is 2 ft and the area must be at least 12 ft² but no more than 18 ft². Give ONE possible other side, with ft, and explain your choice. Whole numbers, decimals and fractions may be used.",
+      "answerType": "constrained-side-length",
+      "expected": null,
+      "rectangleConstraint": {
+        "fixedSide": 2,
+        "minimumArea": 12,
+        "maximumArea": 18,
+        "linearUnit": "ft"
+      }
+    },
+    "humanRubric": "Source-informed rubric: check equal-group strategies; 6 m × 3 m = 18 m²; accept any non-negative whole-container purchase covering at least 18 m² with sizes 3/10/40 m², without invented prices or a minimum-can restriction. Keep garden side 3 ft and area 20–30 ft² inclusive. Whole-foot other sides 7/8/9/10 ft work; other feasible measured lengths also work. Review units, drawings, coherent explanations, an organized poster, a description of another group strategy and THREE specific gallery observations. MLR8 annotated rows/columns, MLR6 Three Reads, inch tiles, centimeter grid paper as a scale model, visual-display tools and equitable group roles are authored. Numeric feasibility never proves classroom participation or teacher sign-off.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson10AreaChoicesSourceTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": true
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": 100,
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false,
+  "sourceEvidenceMap": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-31-2021-source-to-first-party-evidence-20261024.json",
+  "deferredStageDRequirements": [
+    "Compile .NET/Razor and execute the new and affected shared regression suites at grade freeze.",
+    "Run actual canonical materialization and inspect authenticated learner Rich V2 and companion render.",
+    "Verify server-scoped submissions, right/wrong feedback, anti-forgery and tenant ownership in the existing authenticated flow.",
+    "Review keyboard operation, responsive independent diagrams and third-read details after real rendering.",
+    "Actual classroom poster/gallery/teacher evaluation not observed or certified."
+  ],
+  "parityScope": "SEMANTIC_A_B_C_AUTHORING_ONLY_NOT_SOURCE_WORDING_OR_ARTWORK_NOT_LIVE_CONTENT"
+}

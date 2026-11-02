@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 53,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L01",
+  "title": "Whole Numbers on the Number Line",
+  "unitNumber": 4,
+  "lessonNumber": 1,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_ORIGINAL_IM2021_SOURCE_PREPARATION_AND_ACTIVITIES_REVIEWED",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-1/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-1/lesson.html",
+    "sourceSemanticSha256": "cb781aa1c388f4c20fbdc54bab10b52dd3a12e0e1775ccc17b9e26771001904c",
+    "sourceBodySha256": "b9bf1f4c584581c4eda97feb0f144dcf4d2d8d07fafa0cb35e86673a88a0e120",
+    "orderedOfficialOutcomes": [
+      "CCSS:2.MD.B.6"
+    ],
+    "warmup": "Notice and Wonder ruler 0..12 versus number-line diagram; oral teacher-only",
+    "activity1": "Original 0..10 11 equal ticks first labels0,1,2,5,8,9,10 => missing3,4,6,7, dot6, one chosen>6; second labels0,5,10, dot9 and one chosen<9",
+    "activity2": "Original build real paper 0..20 with each student-chosen but internally constant unit, put dots3 and13, compare partner lines",
+    "copyright": "CC BY 4.0 public math tasks paraphrased; no copied protected original images or login-only publisher Cool-down"
+  },
+  "stageB": {
+    "status": "COMPLETE_EXACT_ORIGINAL_SHA_AND_SIX_FIELD_GUARDED_TEACHING_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4NumberLineTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact source URL, original lesson canonical-body SHA, exact 2.MD.B.6 outcome, six predecessor fields and allowed prior content version; no overwriting unrecognized persisted translations"
+  },
+  "stageC": {
+    "status": "COMPLETE_SOURCE_CORRECT_STUDENT_AND_FOUR_EXACT_NUMERIC_FAMILIES_WITH_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FirstLessonNumberLine.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4Lesson01NumberLineContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4Lesson01NumberLineQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson53ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson53Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u04.l01.missing_tick_label",
+      "usccss.g2.u04.l01.point_from_zero",
+      "usccss.g2.u04.l01.greater_point",
+      "usccss.g2.u04.l01.unit_interval_gap"
+    ],
+    "sourceBoundary": "Publisher original answer free choice greater than6 permits7..10, less than9 permits0..8; actual teacher observes image-specific dot and paper location",
+    "firstPartyExample": "Independent whole-number gap from3 to13=10; from0 to13=13 intervals; 0..20 has21 ticks; not publisher Cool-down or evidence of physical work",
+    "teacherOnly": "Original warm-up oral comparison, genuine evenly spaced 0..20 paper, pair discourse, actual points3/13, physical model accuracy",
+    "security": "StudentPortal selected adoption, authorized published lesson content, CSRF, input length bounds, no official grades",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit4NumberLineTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit4FirstLessonNumberLineTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit4Lesson01NumberLineQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson53ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U04_L02_GRADE_ORDINAL54_STAGE_A_B_C_NO_SKIP"
+}

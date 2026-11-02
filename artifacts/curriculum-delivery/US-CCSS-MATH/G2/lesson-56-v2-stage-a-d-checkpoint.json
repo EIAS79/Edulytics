@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 56,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L04",
+  "title": "Compare Numbers on a Number Line",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-4/preparation.html",
+  "stageA": {
+    "status": "COMPLETE_SOURCE_REVIEW_PUBLIC",
+    "sourceSemanticSha256": "8bab5a33b60822628337e854711d917bde5fe170241aeb117658688ce60d3862",
+    "sourceBodySha256": "d2482530d3b7c83eb48bb27c7e6f95cd438ce7f6d8e077089a7c7fb33b6ee11c",
+    "officialOutcomeCodes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5"
+    ],
+    "sourceEvidence": "Reviewed exact IM2021 teacher Lesson public activities and Preparation. Source-bound physical/inaccessible artwork and student observation never invented."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4CompareNumberLinesCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "guard": "Exact source URL, SHA, outcome order, all six predecessor fields; safe persisted content version"
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHORING_SOURCE_DISTINCT_FIRST_PARTY_FAMILIES",
+    "sourceActivity": "public publisher IM2021 G2 Unit4 Lesson4 student tasks, teacher-only work maintained",
+    "protectedController": "src/Edulytics.Web/Controllers/Grade2Unit4NextThreeActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4NextThreeActivities/Index.cshtml",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4NextThreeQuestions.cs",
+    "practiceContract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4NextThreePracticeContracts.cs",
+    "testFiles": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal56SourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal56SourceActivitiesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal56ExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Ordinal56WebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "boundaries": "Actual three-cube and two-cube physical partner rolls and comparison teacher-only"
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "status": "READY_FOR_STAGE_D",
+    "stageD": "NOT_STARTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false,
+    "productionRelease": "NO_GO_UNVERIFIED"
+  },
+  "nextSequentialLesson": 57
+}

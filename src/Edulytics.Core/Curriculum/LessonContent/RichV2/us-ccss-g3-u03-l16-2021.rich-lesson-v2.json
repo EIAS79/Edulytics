@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l16-original2021-rounding-range-mystery-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L16",
+      "CultureCode": "en",
+      "Title": "Round and Round Again",
+      "ExplanationParagraphs": [
+        "Warm-up (10 minutes) is a multiplication Number Talk: calculate 5×7=35, 4×7=28, 6×7=42 and 4×8=32 mentally, explaining how a nearby number of groups or group size changes the product.",
+        "Activity 1 (15 minutes) asks for ALL whole numbers that round to 50 to nearest ten, 70 to nearest ten and 600 to nearest hundred. Apply the 2021 halfway-up rounding convention. For nearest-ten 50, the integers are 45 to 54 inclusive; 44 rounds to 40 and 55 rounds to 60.",
+        "Likewise nearest-ten 70 has inclusive integers 65 through 74. Nearest-hundred 600 has inclusive integers 550 through 649. A 10-wide rounding cell contains ten whole numbers and a 100-wide cell contains a hundred whole numbers.",
+        "Source extensions: nearest-hundred 100 includes whole numbers 50 through149; nearest-hundred 500 includes450 through549. No signed-negative or decimal interpretation is intended by this source-grade whole-number discussion.",
+        "Activity 2 (20 minutes) uses the 2021 What's My Mystery Number? partner game. Write a hidden number between100 and1,000. Supply THREE consistent clues: parity (odd/even), a number it rounds to, and a range it lies between. Other pupils guess with explanations; multiple guesses may satisfy ambiguous clues, and the teacher discusses why.",
+        "Independent Edulytics example: mystery number 746 is even, rounds to750 to nearest ten, and lies strictly between745 and747; the three clues uniquely identify746. This is NOT the original publisher mystery card.",
+        "Teacher must judge constructed lists, drawn number lines, partner talk and mystery clues; the three original image assets and Clare's gated publisher Cool-down have not been copied. Our independent exit question is goal-equivalent only."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rounding preimage",
+          "Definition": "All whole numbers that yield a given rounded benchmark.",
+          "Rule": "For target T and rounding step m, inclusive integers run from T-m/2 to T+m/2-1 when m is even and halfway rounds up.",
+          "Example": "50 to tens:45..54;600 to hundreds:550..649."
+        },
+        {
+          "Title": "Halfway boundaries",
+          "Definition": "A halfway integer between consecutive tens or hundreds belongs to the upper rounded interval.",
+          "Rule": "45→50 and55→60; 550→600 and650→700.",
+          "Example": "The 50 interval stops at54, not55."
+        },
+        {
+          "Title": "Mystery number clues",
+          "Definition": "Parity, rounded result and an interval together constrain possible candidates.",
+          "Rule": "Check all three and explain whether exactly one integer survives.",
+          "Example": "Even, round to750 to tens, strictly745–747 =>746."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find all values that round to 70",
+          "Question": "Which whole numbers round to70 to nearest ten?",
+          "Method": "Find midpoint boundaries and apply halfway-up.",
+          "Steps": [
+            "65 is halfway between60 and70, so it rounds up to70.",
+            "74 is closer to70 than80.",
+            "75 rounds up to80.",
+            "List 65,66,67,68,69,70,71,72,73,74."
+          ],
+          "Answer": "65–74 inclusive (10 integers).",
+          "Check": "64 and75 are outside."
+        },
+        {
+          "Title": "All numbers for nearest hundred 600",
+          "Question": "Find all whole numbers rounding to600 to nearest hundred.",
+          "Method": "Compare midpoint550 and650.",
+          "Steps": [
+            "550 is halfway and rounds to600.",
+            "649 still rounds to600.",
+            "650 is halfway and rounds to700.",
+            "The set contains550–649 inclusive, exactly100 integers."
+          ],
+          "Answer": "550–649 inclusive.",
+          "Check": "Endpoints must be included/excluded correctly."
+        },
+        {
+          "Title": "Create an unambiguous mystery card",
+          "Question": "Propose three clues for mystery number746.",
+          "Method": "Use parity, ten-rounding and close interval.",
+          "Steps": [
+            "State that the number is even.",
+            "State it rounds to750 to nearest ten.",
+            "State it is strictly between745 and747.",
+            "Only integer746 satisfies all three."
+          ],
+          "Answer": "746",
+          "Check": "Check every condition independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Include55 in the set rounding to50 to nearest ten.",
+          "WhyWrong": "55 is halfway between50 and60; the convention rounds up.",
+          "Correction": "Use45..54, excluding55."
+        },
+        {
+          "Mistake": "Exclude550 from values rounding to600 to nearest hundred.",
+          "WhyWrong": "550 is halfway and assigned to the upper hundred.",
+          "Correction": "Include550..649."
+        },
+        {
+          "Mistake": "Auto-grade arbitrary hidden-number clues without checking uniqueness.",
+          "WhyWrong": "More than one number may satisfy broad clues.",
+          "Correction": "Have teacher assess the clue set and explain ambiguity."
+        }
+      ],
+      "SummaryPoints": [
+        "Number Talk: 5×7=35,4×7=28,6×7=42,4×8=32.",
+        "Round to50(tens):45–54; to70(tens):65–74; to600(hundreds):550–649.",
+        "Extensions: to100(hundreds):50–149; to500(hundreds):450–549.",
+        "Mystery cards include odd/even, rounded benchmark and interval clues; partner reasoning is teacher-assessed.",
+        "Original picture pixels, source PDF and gated publisher Cool-down remain unverified."
+      ]
+    }
+  ]
+}

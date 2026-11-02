@@ -1,0 +1,613 @@
+@using System.Globalization
+@using System.Text.RegularExpressions
+@using Edulytics.Core.Enums
+@using Edulytics.Core.Mathematics.Practice
+@using Edulytics.Services.Practice
+@using Edulytics.Web.Presentation
+@model PracticeAttemptDetails
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.StudentResource> S
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.LessonPracticeResource> P
+@{
+    Layout = null;
+
+    var curriculumAdoptionId =
+        ViewData["CurriculumAdoptionId"] is Guid adoptionId
+            ? adoptionId
+            : Guid.Empty;
+    var lessonId =
+        ViewData["LessonId"] is Guid currentLessonId
+            ? currentLessonId
+            : Guid.Empty;
+    var lessonTitle =
+        ViewData["LessonTitle"]?.ToString()
+        ?? S["PrivatePracticeAttemptTitle"].Value;
+    var unitTitle =
+        ViewData["LessonUnitTitle"]?.ToString()
+        ?? string.Empty;
+    var locale =
+        CultureInfo.CurrentUICulture
+            .TwoLetterISOLanguageName;
+    var isRtl =
+        string.Equals(
+            locale,
+            "ar",
+            StringComparison.OrdinalIgnoreCase);
+
+    var orderedQuestions =
+        Model.Questions
+            .OrderBy(x => x.Order)
+            .ToArray();
+    var answeredCount =
+        orderedQuestions.Count(x => x.IsCorrect == true);
+    var totalQuestions =
+        orderedQuestions.Length;
+    var progressPercent =
+        totalQuestions == 0
+            ? 0d
+            : answeredCount * 100d / totalQuestions;
+    var reviewAttemptItemId =
+        ViewData["ReviewAttemptItemId"] is Guid reviewId
+            ? reviewId
+            : (Guid?)null;
+    var reviewQuestion =
+        reviewAttemptItemId.HasValue
+            ? orderedQuestions.SingleOrDefault(
+                x =>
+                    x.AttemptItemId == reviewAttemptItemId.Value &&
+                    x.Answered)
+            : null;
+    var isReviewing =
+        reviewQuestion is not null;
+    var isIncorrectReview =
+        reviewQuestion?.IsCorrect == false;
+    var isCorrectReview =
+        reviewQuestion?.IsCorrect == true;
+    var currentQuestion =
+        reviewQuestion
+        ?? orderedQuestions.FirstOrDefault(x => x.IsCorrect != true);
+    var displayedQuestionNumber =
+        currentQuestion?.Order
+        ?? Math.Min(answeredCount + 1, totalQuestions);
+
+    var prompt =
+        currentQuestion?.Prompt
+        ?? string.Empty;
+
+    var optionMatches =
+        Regex.Matches(
+            prompt,
+            @"(?<![A-Za-z0-9])([A-D])\)\s*",
+            RegexOptions.CultureInvariant);
+
+    var isPromptMultipleChoice =
+        currentQuestion is not null &&
+        optionMatches.Count >= 2 &&
+        optionMatches[0].Index > 0;
+
+    var stem =
+        isPromptMultipleChoice
+            ? prompt[..optionMatches[0].Index].Trim()
+            : prompt;
+
+    var choices =
+        new List<(string Label, string Value)>();
+
+    if (isPromptMultipleChoice)
+    {
+        for (var choiceIndex = 0;
+             choiceIndex < optionMatches.Count;
+             choiceIndex++)
+        {
+            var match =
+                optionMatches[choiceIndex];
+            var start =
+                match.Index + match.Length;
+            var end =
+                choiceIndex + 1 < optionMatches.Count
+                    ? optionMatches[choiceIndex + 1].Index
+                    : prompt.Length;
+            var value =
+                prompt[start..end].Trim();
+
+            if (value.Length > 0)
+            {
+                choices.Add(
+                    (
+                        match.Groups[1].Value,
+                        value
+                    ));
+            }
+        }
+
+        isPromptMultipleChoice =
+            choices.Count >= 2;
+    }
+
+    LessonPracticeInteractionContract? interaction = null;
+    var generationFamily =
+        currentQuestion?.GenerationFamily;
+
+    if (!string.IsNullOrWhiteSpace(generationFamily))
+    {
+        LessonPracticeInteractionRegistry.TryResolve(
+            generationFamily,
+            out interaction);
+    }
+
+    var authoredTaskKind = generationFamily switch
+    {
+        "usccss.t001.g1.write_dot_expression" => "expression",
+        "usccss.t001.g1.construct_tool_sort" => "sort",
+        "usccss.t001.g1.collect_survey_graph" => "survey",
+        _ => null
+    };
+
+    var isConstructShapeGraph = string.Equals(generationFamily,
+        "usccss.t001.g1.construct_shape_graph", StringComparison.Ordinal);
+
+    var visualSvg =
+        currentQuestion is null
+            ? null
+            : PracticeMathVisualRenderer.RenderSvg(
+                currentQuestion.GenerationFamily,
+                currentQuestion.GenerationParametersJson);
+
+    var backLabel = locale switch
+    {
+        "pl" => "← Powrót do lekcji",
+        "ar" => "العودة إلى الدرس →",
+        _ => "← Back to lesson"
+    };
+
+    var practiceLabel = locale switch
+    {
+        "pl" => "Ćwiczenie Edulytics",
+        "ar" => "تدريب Edulytics",
+        _ => "Edulytics Practice"
+    };
+
+    var missionLabel = locale switch
+    {
+        "pl" => "TWOJE ZADANIE",
+        "ar" => "مهمتك",
+        _ => "YOUR MISSION"
+    };
+
+    var guidanceText =
+        Edulytics.Web.GameRouting.LessonPracticeHintResolver.Resolve(
+            generationFamily,
+            currentQuestion?.GenerationParametersJson,
+            locale);
+
+    var nextQuestionLabel = locale switch
+    {
+        "pl" => "Następne pytanie",
+        "ar" => "السؤال التالي",
+        _ => "Next question"
+    };
+
+    var continueLabel = locale switch
+    {
+        "pl" => "Kontynuuj",
+        "ar" => "متابعة",
+        _ => "Continue"
+    };
+
+    var reviewActionLabel =
+        currentQuestion?.Order >= totalQuestions
+            ? continueLabel
+            : nextQuestionLabel;
+
+    var eddyMessage =
+        isIncorrectReview
+            ? $"{S["PracticeIncorrect"].Value} {guidanceText}"
+            : isCorrectReview
+                ? string.Join(
+                    " ",
+                    new[]
+                    {
+                        S["PracticeCorrect"].Value,
+                        currentQuestion?.Feedback
+                    }.Where(x => !string.IsNullOrWhiteSpace(x)))
+                : guidanceText;
+}
+<!DOCTYPE html>
+<html lang="@locale" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>@lessonTitle - Edulytics Practice</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/game-workspace-v1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/curriculum-workspace-runtime.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/eddy-overlap-v1.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/practice-unified-ui-v2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-shape-chart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t001-authored-practice.css" asp-append-version="true" />
+    <style>
+        .lp-server-card {
+            display: grid;
+            place-items: center;
+            gap: 22px;
+            width: min(920px, 100%);
+            min-height: 330px;
+            margin: 0 auto;
+            padding: 28px 24px 42px;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+        .lp-server-visual {
+            width: min(620px,100%);
+            margin: 0 auto 22px;
+            padding: 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.94);
+            color: #123547;
+        }
+        .lp-server-visual svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 340px;
+        }
+        .lp-server-form {
+            display: grid;
+            gap: 16px;
+            justify-items: center;
+        }
+        .lp-server-input {
+            width: min(420px,100%);
+            min-height: 64px;
+            border: 3px solid rgba(255,212,95,.92);
+            border-radius: 16px;
+            background: #fff;
+            color: #173543;
+            padding: 10px 18px;
+            text-align: center;
+            font-size: 1.65rem;
+            font-weight: 900;
+            outline: none;
+        }
+        .lp-server-input:focus {
+            box-shadow: 0 0 0 5px rgba(255,212,95,.18);
+        }
+        .lp-server-choice-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .lp-server-choice {
+            min-width: 126px;
+            border: 2px solid rgba(255,255,255,.68);
+            border-radius: 18px;
+            padding: 13px 18px;
+            background: linear-gradient(180deg,#fff2cf,#ead8ad);
+            color: #173c47;
+            font-size: 1.05rem;
+            font-weight: 1000;
+            cursor: pointer;
+            box-shadow: 0 5px 0 rgba(111,85,39,.68);
+        }
+        .lp-server-choice input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .lp-server-choice:has(input:checked) {
+            outline: 4px solid rgba(113,224,196,.52);
+            background: linear-gradient(180deg,#d8ffe7,#8fe5b0);
+        }
+        .lp-server-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .lp-server-feedback {
+            width: min(760px,calc(100% - 48px));
+            margin: 14px auto 0;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-weight: 800;
+        }
+        .lp-server-feedback--ok {
+            background: rgba(113,224,196,.2);
+            color: #e6fff7;
+            border: 1px solid rgba(113,224,196,.5);
+        }
+        .lp-server-feedback--bad {
+            background: rgba(255,143,131,.18);
+            color: #fff0ee;
+            border: 1px solid rgba(255,143,131,.48);
+        }
+        .lp-complete {
+            width: min(560px,100%);
+            margin: 90px auto;
+            padding: 34px;
+            text-align: center;
+            border-radius: 26px;
+            background: rgba(4,28,45,.84);
+            color: #fff;
+        }
+        .lp-complete h2 {
+            margin-top: 0;
+            font-size: 2.3rem;
+        }
+        .lp-score {
+            color: var(--gw-gold);
+            font-size: 2.2rem;
+            font-weight: 1000;
+        }
+        @@media (max-width: 620px) {
+            .lp-server-card { min-height: 350px; padding: 20px 12px 34px; }
+            .lp-server-feedback { width: calc(100% - 28px); }
+        }
+    </style>
+</head>
+<body class="gw-page">
+<main class="gw-wrap">
+    <a class="gw-back"
+       asp-controller="StudentPortal"
+       asp-action="Lesson"
+       asp-route-id="@lessonId">@backLabel</a>
+
+    <header class="gw-head">
+        <p>@practiceLabel</p>
+        <h1>@lessonTitle</h1>
+        <p>@unitTitle</p>
+    </header>
+
+    <section class="gw-game gw-universal"
+             aria-label="@practiceLabel">
+        <div class="gw-hud">
+            <div class="gw-brand">
+                <div class="gw-brand-mark" aria-hidden="true">◆</div>
+                <div>
+                    <strong>EDULYTICS PRACTICE</strong>
+                    <small>@unitTitle</small>
+                </div>
+            </div>
+            <div class="gw-hud-right">
+                <span class="gw-pill">
+                    @displayedQuestionNumber
+                    /
+                    @totalQuestions
+                </span>
+                <button class="gw-icon"
+                        type="button"
+                        data-practice-sound
+                        aria-label="Sound">🔊</button>
+            </div>
+        </div>
+
+        <div class="gw-progress"
+             role="progressbar"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="@progressPercent">
+            <span style="width:@progressPercent%"></span>
+        </div>
+
+        @if (TempData["Error"] is string error)
+        {
+            <div class="lp-server-feedback lp-server-feedback--bad"
+                 role="alert">@error</div>
+        }
+
+        <div class="gw-stage">
+            @if (Model.Status == PracticeAttemptStatus.Submitted)
+            {
+                <section class="lp-complete">
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt=""
+                         width="96"
+                         height="96" />
+                    <h2>@S["PracticeFinish"]</h2>
+                    <p class="lp-score">
+                        @Model.Percentage.ToString("0.##")%
+                    </p>
+                    <p>
+                        <strong>@S["Score"]:</strong>
+                        @Model.Score.ToString("0.##")
+                        /
+                        @Model.MaxScore.ToString("0.##")
+                    </p>
+                    <a class="gw-primary"
+                       asp-controller="StudentPortal"
+                       asp-action="Lesson"
+                       asp-route-id="@lessonId">@backLabel</a>
+                </section>
+            }
+            else if (currentQuestion is not null)
+            {
+                <div class="gw-mission">
+                    <span>@missionLabel</span>
+                    <strong data-practice-question>@stem</strong>
+                    <small>@unitTitle</small>
+                </div>
+
+                <section class="gw-runtime-board lp-server-card">
+
+                    @if (!string.IsNullOrWhiteSpace(visualSvg))
+                    {
+                        <div class="lp-server-visual">
+                            @Html.Raw(visualSvg)
+                        </div>
+                    }
+
+                    @if (isCorrectReview && currentQuestion is not null)
+                    {
+                        @if (authoredTaskKind is not null)
+                        {
+                            <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                 data-t001-source="@stem" data-t001-locale="@locale"
+                                 data-t001-readonly="true" data-t001-initial="@currentQuestion.SubmittedAnswer"></div>
+                        }
+                        @if (isConstructShapeGraph)
+                        {
+                            <div class="t001-shape-chart" data-t001-shape-chart
+                                 data-t001-readonly="true" data-t001-locale="@locale"
+                                 data-t001-initial="@currentQuestion.SubmittedAnswer"></div>
+                        }
+                        <div class="lp-server-actions">
+                            <a class="gw-primary"
+                               asp-action="LessonAttempt"
+                               asp-route-id="@Model.AttemptId"
+                               asp-route-curriculumAdoptionId="@curriculumAdoptionId"
+                               asp-route-lessonId="@lessonId">
+                                @reviewActionLabel
+                            </a>
+                        </div>
+                    }
+                    else if (interaction is null)
+                    {
+                        <div class="gw-error">
+                            This Practice interaction is not available.
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-action="AnswerLessonAttempt"
+                              asp-route-id="@Model.AttemptId"
+                              method="post"
+                              class="lp-server-form">
+                            @Html.AntiForgeryToken()
+
+                            <input type="hidden"
+                                   name="curriculumAdoptionId"
+                                   value="@curriculumAdoptionId" />
+                            <input type="hidden"
+                                   name="lessonId"
+                                   value="@lessonId" />
+                            <input type="hidden"
+                                   name="attemptItemId"
+                                   value="@(currentQuestion!.AttemptItemId)" />
+
+                            @if (authoredTaskKind is not null)
+                            {
+                                <div class="t001-authored" data-t001-authored-task="@authoredTaskKind"
+                                     data-t001-source="@stem" data-t001-locale="@locale"
+                                     data-t001-readonly="false" data-t001-initial=""><noscript>Enable JavaScript to complete the activity.</noscript></div>
+                                <input type="hidden" name="answer" value="" data-t001-authored-answer />
+                                <button class="gw-primary" type="submit" data-t001-authored-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isConstructShapeGraph)
+                            {
+                                <div class="t001-shape-chart" data-t001-shape-chart data-t001-locale="@locale">
+                                    <noscript>Enable JavaScript to construct your graph.</noscript>
+                                </div>
+                                <input type="hidden" name="answer" value="" data-t001-shape-answer />
+                                <button class="gw-primary" type="submit" data-t001-shape-submit disabled>
+                                    @S["PracticeCheckAnswer"]
+                                </button>
+                            }
+                            else if (isPromptMultipleChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     role="radiogroup"
+                                     aria-label="@S["YourAnswer"]">
+                                    @foreach (var choice in choices)
+                                    {
+                                        <label class="lp-server-choice">
+                                            <input type="radio"
+                                                   name="answer"
+                                                   value="@choice.Value"
+                                                   required />
+                                            <span>
+                                                @choice.Label) @choice.Value
+                                            </span>
+                                        </label>
+                                    }
+                                </div>
+                            }
+                            else if (
+                                interaction.InteractionKind ==
+                                LessonPracticeInteractionKind.RelationChoice)
+                            {
+                                <div class="lp-server-choice-row"
+                                     aria-label="@S["YourAnswer"]">
+                                    @foreach (var relation in new[] { "<", "=", ">" })
+                                    {
+                                        <button class="lp-server-choice"
+                                                type="submit"
+                                                name="answer"
+                                                value="@relation">
+                                            @relation
+                                        </button>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <input id="lesson-practice-answer"
+                                       class="lp-server-input"
+                                       name="answer"
+                                       maxlength="128"
+                                       required
+                                       autocomplete="off"
+                                       autofocus
+                                       inputmode="@(interaction.InteractionKind is LessonPracticeInteractionKind.IntegerKeypad or LessonPracticeInteractionKind.NumericEntry or LessonPracticeInteractionKind.FractionEntry ? "decimal" : "text")"
+                                       aria-label="@S["YourAnswer"]" />
+
+                                <div class="lp-server-actions">
+                                    <button class="gw-primary"
+                                            type="submit">
+                                        @S["PracticeCheckAnswer"]
+                                    </button>
+                                </div>
+                            }
+                        </form>
+                    }
+                </section>
+
+                <aside class="gw-eddy">
+                    <img src="~/images/public/edulaytiks-character.png?v=43"
+                         alt=""
+                         width="98"
+                         height="132" />
+                    <div>
+                        <span>EDDY</span>
+                        <p data-practice-hint
+                           role="status"
+                           aria-live="polite">@eddyMessage</p>
+                    </div>
+                </aside>
+            }
+            else
+            {
+                <section class="lp-complete">
+                    <h2>@S["PracticeAnswerAll"]</h2>
+                    <form asp-action="SubmitLessonAttempt"
+                          asp-route-id="@Model.AttemptId"
+                          method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden"
+                               name="curriculumAdoptionId"
+                               value="@curriculumAdoptionId" />
+                        <input type="hidden"
+                               name="lessonId"
+                               value="@lessonId" />
+                        <button class="gw-primary"
+                                type="submit">
+                            @S["PracticeFinish"]
+                        </button>
+                    </form>
+                </section>
+            }
+        </div>
+    </section>
+</main>
+<script src="~/js/practice-voice-runtime.js"
+        asp-append-version="true"></script>
+<script src="~/js/student-lesson-practice.js"
+        asp-append-version="true"></script>
+<script src="~/js/t001-shape-chart.js" asp-append-version="true"></script>
+<script src="~/js/t001-authored-practice.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "ordinal": 70,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L02",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "142e426e1b60573a1ffd1b1f530fc532ed85d615bec8dc1208444e7d1d74e184",
+    "teacher": "f676ba8d3a67e589cb8ca5b24406be363c1ebb510c7bbb9df73673fec2fb8276",
+    "student": "d54b8db6341e02189ccd473dad879efea4fe4c07082d010952425cd983d6936b"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "removed irrelevant generic concept",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "What equation represents 5 equal groups of 3 cubes?",
+    "teacherAnswer": "5 \u00d7 3 = 15"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:20:01+01:00",
+  "closeAtLocal": "2026-10-26T23:20:02+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-70-local-source-guard.test.cjs"
+  }
+}

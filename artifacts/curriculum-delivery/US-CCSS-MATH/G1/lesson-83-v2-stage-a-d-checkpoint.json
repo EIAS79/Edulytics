@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 83,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L18",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "092f14ec7dd25e67f71615cc3528c37ed9eacf1bfca8779f436cec9fa75bd2e6",
+    "studentSha256": "13ae2e9414d3632e01eda90baa90a7f19f6842c348b716d011323d0291ce242c",
+    "teacherPreparationSha256": "dac90ffdc5f8c127bb6d8cc1746912e668defcb49269cd2e03249e3437242f83",
+    "teacherActivityHeadings": [
+      "Activity 1: Introduce Get Your Numbers In Order, Two-digit Numbers (20 minutes)",
+      "Activity 2: Centers: Choice Time (20 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Source original 2021 four mental tens tasks 32+10,32+10+10,32+20,32-20; Get Your Numbers in Order physical center rules with pass penalty; Activity2 choice Greatest of Them All, Grab and Count, Write Numbers; no 2021 lesson cool-down.",
+    "classification": "CONTENT_REPAIR",
+    "original2021TeacherAndStudentFacingTasksIndependentlyReviewed": true,
+    "canonicalSourceSHA256MatchedExistingSourceEvidence": true,
+    "sourceRechecked": "2026-10-20"
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
+    "sourceCorrectionsCommits": [
+      "cde32354e5be2b4fb955930fe04a30672174488c",
+      "caf0ae5eab014f47f717dfb886a5a5d1f7bbf19e"
+    ],
+    "publisherArtworkNotClaimedLicensed": true,
+    "lessonSpecificContentVersion": "us-ccss-g1-u04-l18-original-student-activities-v3",
+    "migrationTeachingTestCommit": "aaa24f697de85d637a400021e42bcf7068a3d3f4"
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "generatorAndVerifierIndependentlyStaticallyReviewed": true,
+    "testsAuthoredButNotExecuted": true,
+    "original2021NumberTalkModes": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sourceMathRepairCommit": "de0c20f4bc13c54cb562ccd42e0d75554ee7cb07",
+    "authoredMathTestsCommit": "31a2d0e0370d0d6487e8600cfefa998105ee732c"
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": true,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "L83 original maths and centers source/teaching/Practice reviewed; READY_FOR_STAGE_D authoring only. Final grade CI, visual/authenticated grading and academic acceptance deferred. Continue L84.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "originalLessonCoolDownPresentInAccessibleTeacherSource": false,
+    "teacherOnlyPartnerGameplayCannotBeAutoGraded": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-83-stage-a-c-source-implementation-audit-20261020.md",
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 83,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L18",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-83-stage-a-c-source-implementation-audit-20261020.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

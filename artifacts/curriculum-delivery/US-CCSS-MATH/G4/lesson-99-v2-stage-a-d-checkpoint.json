@@ -1,0 +1,42 @@
+{
+  "ordinal": 99,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L13",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "c18fc691cd0de9491ff8e51def0b74b5d104a1c27e4c04971c53954efcd2a98e",
+    "teacher": "5b6f3de9b3c979a80f97e0edf1e11f516dc00a56e2b77269a2934aa0739fc0f4",
+    "student": "11acb6137c07171144e3fcd3292ed6672012f738f6095aee914e93228a2c82b0"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Forty-eight paletas are packed 6 per box. How many boxes?",
+    "teacherAnswer": "8 boxes"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:36:23+01:00",
+  "closeAtLocal": "2026-10-26T23:36:23+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-99-local-source-guard.test.cjs"
+  }
+}

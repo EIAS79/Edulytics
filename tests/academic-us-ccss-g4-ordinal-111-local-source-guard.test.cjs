@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L111: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L25").translations[0];assert.ok(t.explanation.startsWith('Optional 2021 IM Grade 4 lesson:'));assert.ok(t.keyConceptsAndRules.includes("Repeat a pattern over complete cycles:"));assert.ok(t.quickSummary.includes("Priya's repeating garland uses 6 big and 6 small"));assert.equal(12/4*2,6);assert.equal(3*12,36);});
+test('L111: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-111-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"7a840f26e77493dd4a35c3e431d3892d40d8379075ee5fba22922552b91dd0c1");assert.equal(c.readyForStageD,true);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

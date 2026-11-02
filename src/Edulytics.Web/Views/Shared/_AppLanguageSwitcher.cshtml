@@ -1,0 +1,31 @@
+@using System.Globalization
+@{
+    var currentCulture = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    var returnUrl =
+        $"{Context.Request.PathBase}" +
+        $"{Context.Request.Path}" +
+        $"{Context.Request.QueryString}";
+}
+
+<nav class="app-language-switcher" aria-label="Language">
+    @foreach (var option in new[]
+    {
+        (Code: "en", Label: "EN"),
+        (Code: "pl", Label: "PL"),
+        (Code: "ar", Label: "العربية")
+    })
+    {
+        <form method="post"
+              asp-controller="Home"
+              asp-action="SetCulture"
+              class="app-language-form">
+            <input type="hidden" name="culture" value="@option.Code" />
+            <input type="hidden" name="returnUrl" value="@returnUrl" />
+            <button type="submit"
+                    class="app-language-option @(currentCulture == option.Code ? "is-active" : null)"
+                    aria-pressed="@(currentCulture == option.Code ? "true" : "false")">
+                @option.Label
+            </button>
+        </form>
+    }
+</nav>

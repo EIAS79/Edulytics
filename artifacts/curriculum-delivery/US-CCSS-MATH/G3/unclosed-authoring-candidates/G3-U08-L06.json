@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 134,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U08:L06",
+  "unitNumber": 8,
+  "lessonNumber": 6,
+  "title": "Survey the Class, Survey the School",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-8/lesson-6/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-6/lesson.html",
+  "stageA": {
+    "status": "2021_SOURCE_PUBLIC_SURVEY_QUESTION_SIX_CHOICE_REAL_SCHOOL_COLLECTION_SOURCE_REVIEWED_IMAGE_GAP",
+    "goals": "Collect categorical data to create a data set with several categories.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 1,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "93ce5d9b68179d176ffff5a9a8300c32ba3cac484970254b68033e745db8aa0a",
+    "sourcePreparationHtmlSHA256": "d34234d2a3a2b3998fb22dd8d9d55c297685040fad2ba99ebc7f8c746700222c",
+    "originalGraphPixelsInspected": false,
+    "originalSurveyMasterPdfInspected": false
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_SURVEY_RICHV2_GUARDED_MATERIALIZER_AND_RAZOR",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U08:L06",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "11339d6e386a0d8cb03ae5790ab897333f755ebcef2bd2d01d0f7ad88b7ed9ef",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l06-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson6RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson6.cshtml",
+    "sourceSpecificVersion": "g3-u08-l06-2021-authentic-six-category-large-group-survey-data-v1"
+  },
+  "stageC": {
+    "status": "AUTHENTIC_SURVEY_UP_TO_SIX_CATEGORIES_NO_DUPLICATES_TEACHER_GATE_TARGETED_TESTS_PASSED",
+    "family": "survey-scaled-bar-graphs",
+    "practiceAnswerType": "teacher",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": true,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Create a Survey with your teacher. Show the representation and explain how it meets the goal: Let’s survey a large group.",
+    "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson6SourceAuditTests.cs",
+    "sourceItemCount": 4,
+    "sourceTeacherItems": 4
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U08-L06-HEADING-01",
+      "sourceSection": "Warm-up: Notice and Wonder: Survey (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-8/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L06-HEADING-02",
+      "sourceSection": "Activity 1: Create a Survey (10 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-8/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L06-HEADING-03",
+      "sourceSection": "Activity 2: Survey a Large Group (25 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-8/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L06-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-8/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L06-HEADING-05",
+      "sourceSection": "Cool-down: Reflect on Collecting Data (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-8/lesson-6/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "RIGHTS_RESTRICTED_NOT_READ",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U08-L06-IMAGE-1",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/1hqf1xkf8h5h8706hdwzbpolce6r",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "SOURCE_URL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "G3-U08-L06-IMAGE-2",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/55mtrosm16qr1ojtbxqe3w41bzq6",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "SOURCE_URL_REVIEW_REQUIRED"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 2,
+    "fullyVerified": 4
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Fictional data: 20 students chose club A and 15 club B. How many MORE chose the larger club?",
+    "answerType": "integer",
+    "expected": "5"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Blank survey blackline master and standalone pupil PDF not inspected; graphic 2 pixel images not validated.",
+    "Real school survey itself cannot be simulated or numerically completed without authentic responses.",
+    "Publisher gated Reflect on Collecting Data Cool-down not inspected.",
+    "Teacher must verify participant uniqueness, survey choices, counts, consent/privacy and next-lesson data use.",
+    "Local .NET compilation and four targeted xUnit tests passed; full Stage D authenticated UAT, academic approval and source visual parity are still pending."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "LOCAL_DOTNET_10_0_200_BUILD_AND_FOUR_TARGETED_XUNIT_TESTS_PASSED_GITHUB_CI_PENDING",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-134-2021-authentic-large-group-six-category-survey-evidence-20261025.json"
+}

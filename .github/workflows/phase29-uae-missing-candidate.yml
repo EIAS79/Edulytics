@@ -1,0 +1,77 @@
+name: Phase29 missing UAE advanced scope candidate verification
+
+on:
+  push:
+    branches: [feat/neon-clean-bootstrap-json-content-20261008]
+    paths:
+      - '.github/workflows/phase29-uae-missing-candidate.yml'
+      - 'tools/phase29/complete_remaining_curricula.py'
+      - 'src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-candidate-only:
+    name: Generate unreviewed support lesson candidates (never publish)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate draft candidates from existing source policy
+        run: |
+          set -euo pipefail
+          python3 tools/phase29/complete_remaining_curricula.py --write-audit
+          python3 tools/phase29/full_curriculum_closure_audit.py --strict --write-report
+      - name: Inspect generated scopes and mark not approved
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          target = Path("artifacts/phase29/uae-advanced-candidates")
+          target.mkdir(parents=True, exist_ok=True)
+          root = Path("src/Edulytics.Core/Curriculum")
+          counts = {}
+          for grade in (5, 6):
+              stem = f"uae-g{grade}-advanced-t1-ogl-v1"
+              content_file = root / "LessonContent/Packs" / (stem + ".lesson-content-pack.json")
+              blueprint_file = root / "LessonBlueprints/Packs" / (stem + ".lesson-blueprint.json")
+              if not content_file.is_file() or not blueprint_file.is_file():
+                  raise AssertionError(f"Missing generated candidate: {stem}")
+              content = json.loads(content_file.read_text(encoding="utf-8"))
+              blueprint = json.loads(blueprint_file.read_text(encoding="utf-8"))
+              lessons = content.get("Lessons") or []
+              if not lessons or len(lessons) != len(blueprint.get("Lessons") or []):
+                  raise AssertionError(f"Invalid candidate lessons: {stem}")
+              if any(l.get("OutcomeCodes") or [] for l in lessons):
+                  raise AssertionError("Generated supporting candidates must not invent official outcomes")
+              counts[stem] = {
+                  "lessonCount": len(lessons),
+                  "outcomeMappingVerified": False,
+                  "humanMathReviewCompleted": False,
+                  "releaseApproved": False,
+              }
+              (target / content_file.name).write_bytes(content_file.read_bytes())
+              (target / blueprint_file.name).write_bytes(blueprint_file.read_bytes())
+          (target / "REVIEW_REQUIRED.json").write_text(
+              json.dumps({"approvalStatus": "UNREVIEWED_CANDIDATE_ONLY",
+                          "candidateScopes": counts,
+                          "warning": "64/64 source-coverage audit success here is NOT approval to publish; mathematical and UAE source alignment review are pending."}, indent=2) + "\n",
+              encoding="utf-8")
+          print(json.dumps(counts, indent=2))
+          PY
+      - name: Upload candidates for human source/math review (no repository write)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: uae-advanced-unreviewed-candidates
+          path: artifacts/phase29/uae-advanced-candidates/
+          if-no-files-found: warn
+          retention-days: 14

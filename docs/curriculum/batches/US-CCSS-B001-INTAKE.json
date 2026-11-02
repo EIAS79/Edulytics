@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-500-V2",
+  "batchId": "US-CCSS-B001",
+  "status": "PRODUCTION_METADATA_AND_RICH_COMPOSER_VERIFIED_AWAITING_ACADEMIC_AND_LIVE_UAT",
+  "sourceInventory": "docs/curriculum/us-ccss-g1-g12-structural-audit.json",
+  "sourceInventoryGeneratedUtc": "2026-10-11T20:55:36.562Z",
+  "snapshotLessonCount": 1560,
+  "batchPlannedTotal": 500,
+  "exactLessonCodesResolved": true,
+  "catalogueDatabaseReconciliation": "500_OF_500_CANONICAL_CODES_GRADE_ORDINALS_TITLES_MATCHED_READ_ONLY",
+  "sourceLicenseReview": "FIRST_EDITION_2021_GLOBAL_CC_BY_4_CONFIRMED_ATTRIBUTION_AND_THIRD_PARTY_ASSET_CHECKS_PENDING",
+  "segments": [
+    {
+      "gradeOrCourse": "Grade 1",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 146
+      },
+      "plannedCount": 146,
+      "historicalT001LessonCount": 10
+    },
+    {
+      "gradeOrCourse": "Grade 2",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 146
+      },
+      "plannedCount": 146,
+      "historicalT001LessonCount": 0
+    },
+    {
+      "gradeOrCourse": "Grade 3",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 143
+      },
+      "plannedCount": 143,
+      "historicalT001LessonCount": 0
+    },
+    {
+      "gradeOrCourse": "Grade 4",
+      "inclusiveGradeOrdinals": {
+        "start": 1,
+        "end": 65
+      },
+      "plannedCount": 65,
+      "historicalT001LessonCount": 0
+    }
+  ],
+  "historicalT001": {
+    "count": 10,
+    "source": "docs/curriculum/T001_AUTOMATED_LESSON_ACCEPTANCE.md",
+    "alreadyPublishedPerPriorPlan": true,
+    "driftVerification": "NOT_STARTED",
+    "newWorkCount": 0
+  },
+  "unprocessedPositionsIncludingHistorical": 500,
+  "newLessonsRequiringReconciliationOrProcessing": 485,
+  "actualLessonCodesInventoried": 500,
+  "newLessonsReviewed": 0,
+  "newLessonsTested": 0,
+  "lessonsInternallyAcceptedUnderThisBatch": 0,
+  "blocked": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L01",
+      "reason": "Source-goal/learner steps mismatch; correction prepared in draft PR #506, not released"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L02",
+      "reason": "Generic/unfinished learner instruction; correction prepared in draft PR #506, not released"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G2:U05:L03",
+      "reason": "Three-digit regrouping missing in effective learner steps; correction prepared in draft PR #506, not released"
+    }
+  ],
+  "nextUnprocessedCursor": {
+    "gradeOrCourse": "Grade 1",
+    "gradeOrdinal": 16,
+    "reason": "G1 L01-L15 were previously published in separate releases; B001 drift verification is still pending for those 15."
+  },
+  "github": {
+    "policyPr": "https://github.com/EIAS79/Edulytics/pull/500",
+    "inventoryPr": "https://github.com/EIAS79/Edulytics/pull/501",
+    "mathTriagePr": "https://github.com/EIAS79/Edulytics/pull/502",
+    "measuredCheckpointPr": "https://github.com/EIAS79/Edulytics/pull/503",
+    "releaseGatePr": "https://github.com/EIAS79/Edulytics/pull/505",
+    "sourceCorrectionDraftPr": "https://github.com/EIAS79/Edulytics/pull/506",
+    "verifiedBatchCommitSha": null,
+    "implementationStatus": "Pre-release staging and evidence; no B001 500-lesson approval",
+    "engineSamplingPr": "https://github.com/EIAS79/Edulytics/pull/508",
+    "gateHardeningPr": "https://github.com/EIAS79/Edulytics/pull/509",
+    "currentB001AcceptanceDecision": "NO_GO",
+    "recordedP4ToP5Pr": "https://github.com/EIAS79/Edulytics/pull/542"
+  },
+  "deployment": {
+    "verifiedLiveSha": null,
+    "renderDeployId": null,
+    "ownerUat": "NOT_STARTED",
+    "status": "B001_FULL_BATCH_NO_GO_500_TECHNICAL_EVIDENCE_RECONCILED"
+  },
+  "notes": [
+    "All 500 real canonical LessonCodes were extracted from the 2021 Grade 1-4 IM-based source blueprints, and linked to 500 stored content records by matching titles, canonical codes, outcomes and source URLs.",
+    "Structural presence of content does not verify pedagogical correctness, real student-visible runtime composition, generator fidelity, publisher validity/licence, or database consistency.",
+    "Actual production database reconciliation and independent question/answer verification are NOT_RUN; the 490 non-T001 lessons are NOT_REVIEWED.",
+    "Ten historical T001 rows need exact-commit/content drift checks before their prior published status may contribute to a new batch acceptance gate.",
+    "Regenerate the source/content catalogue with node tools/curriculum/us-ccss-b001-inventory.cjs --write; run --check before each acceptance attempt.",
+    "Grade ordinals must not be confused with unit lesson numbers; B001 ends at PED:US-CCSS-MATH:G4:U04:L20.",
+    "On 16 Oct 2026 B001 500-lesson static math capability triage completed in GitHub Actions run 38877987637: 497 registry READY_VERIFIED, 3 require review; semantic content 383 UNCLASSIFIED, 104 PASS_WITH_WARNINGS, 13 PASS_TARGETED.",
+    "Three Grade 2 Unit 5 records require source-grounded content repair. No automatic promotion to acceptance from these numbers.",
+    "Actual independent Practice/answer tests, DB parity, published runtime, production UAT still NOT_RUN.",
+    "Read-only Neon production SQL confirms 500/500 B001 source LessonCodes with exact NativeLevel, SortOrder, Title on 2026-10-16; this does not establish actual learner content or Practice parity.",
+    "Historical 15 Grade 1 lessons are already shipped in T001 first ten and G1 batch03 five (commit 54833b16, prior Render deployment dep-db8opibbc2fs738nuvd0); correct next not previously released ordinal is G1 #16.",
+    "500/500 release acceptance remains NO_GO. The fail-closed release evidence gate is merged in PR #505; G2 source correction draft PR #506 is held from production until batch gates are satisfied.",
+    "GitHub Actions 38881061253 successfully generated/verified engine samples for all 500 B001 codes at three difficulties with deliberately invalid-answer negative controls; not 500 independent academic approvals.",
+    "Full per-lesson canonical learning objective/rendered text fidelity, authenticated response persistence, source licences, exact checked commit evidence and owner UAT still pending.",
+    "2026-10-16: Run 38884041697 tested exact 500 effective in-repository canonical bodies and composed Rich V2 output; 500 technically composable, 128 source-body generic patterns, heuristic quality 496 NeedsExpansion/4 Good, no independent academic approvals.",
+    "Production Neon read-only B001 parity 500/500 published Status=3 with matching lesson identities and content versions. Production persisted translation rows are zero under ReadFromJson model; actual deployed JSON/HTTP body remains unverified.",
+    "Grade-level 128 generic patterns: Grade 2=55, Grade 3=43, Grade 4=30, Grade 1=0. Preserve issue #513 as remedial academic review queue. B001 release gate remains NO_GO."
+  ],
+  "sourceContentIndexFile": "docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json",
+  "sourceContentIndexGenerator": "tools/curriculum/us-ccss-b001-inventory.cjs",
+  "catalogueSourceContentStructuralReconciliation": "500_UNIQUE_CODES_AND_500_STORED_CONTENT_RECORDS_MATCHED",
+  "storedEnglishLessonRecordsWithRequiredFields": 500,
+  "mathStaticAudit": {
+    "status": "COMPLETED_STATIC_TRIAGE_NOT_RUNTIME_ACCEPTANCE",
+    "ciRunId": 38877987637,
+    "ciRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/38877987637",
+    "ciConclusion": "success",
+    "reportArtifact": "us-ccss-b001-preliminary-math-capability-triage",
+    "reportProducer": "tools/curriculum/us-ccss-b001-readiness.py",
+    "lessonsAnalysed": 500,
+    "skillResolution": {
+      "EXISTING_VERIFIED_MAPPING": 500
+    },
+    "generationReadiness": {
+      "READY_VERIFIED": 497,
+      "REQUIRES_ACADEMIC_REVIEW": 3
+    },
+    "semanticContent": {
+      "PASS_TARGETED": 13,
+      "PASS_WITH_WARNINGS": 104,
+      "UNCLASSIFIED": 383
+    },
+    "actualQuestionGenerationIndependentlyVerified": 0,
+    "runtimeGradingVerified": 0,
+    "newlyAcademicallyAccepted": 0,
+    "sourceContentRemediationTargets": [
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G2:U05:L01",
+        "title": "How Do We Compose a Hundred?",
+        "issue": "Generic/misaligned measurement steps and weak worked solution; source aim is 10 tens = 100 ones"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G2:U05:L02",
+        "title": "Make Hundreds PLC Activity",
+        "issue": "Generic worked-solution steps and clipped examples; source aim is representing multiples of 100"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G2:U05:L03",
+        "title": "Compose Three-digit Numbers",
+        "issue": "Generic worked-solution steps not demonstrating regrouping of hundreds/tens/ones; source aim is three-digit place-value composition"
+      }
+    ],
+    "safetyRule": "READY_VERIFIED is a registry/capability classification, NOT independent question correctness or internal academic acceptance. All 500 require runtime evidence before acceptance."
+  },
+  "productionDatabaseReadEvidence": {
+    "provider": "Neon",
+    "projectId": "tiny-lab-44877119",
+    "branchId": "br-frosty-block-b52tnjky",
+    "observationDate": "2026-10-16",
+    "queryType": "SELECT-only canonical lesson identity cross-check",
+    "comparedCodes": 500,
+    "exactCodeGradeOrdinalTitleMatches": 500,
+    "mismatches": 0,
+    "totalCodesForGrade1ThroughGrade4": 584,
+    "outOfBatchGrade4Codes": 84,
+    "limitations": "No production content-body parity, effective-materialized SHA, authenticated Practice response or database write tests covered by this identity query.",
+    "matchedSourceGradeOrdinalTitleCodes": 500,
+    "publishedLessonContentRows": 500,
+    "publishedAtPresent": 500,
+    "statusCode3Rows": 500,
+    "nonemptyContentVersionRows": 500,
+    "persistedTranslationRows": 0,
+    "readFromJsonEmbeddedBodyContentParity": "NOT_VERIFIED_ON_LIVE_RENDER",
+    "queryArtifact": "tools/curriculum/us-ccss-b001-neon-metadata-parity.readonly.sql",
+    "queryPr": "https://github.com/EIAS79/Edulytics/pull/512",
+    "explanation": "Production content is linked by CurriculumLessonContents.LessonNodeId = CurriculumPedagogicalLessons.Id; OfficialLessonNodeId is NULL for these records. No stored translations is expected for ReadFromJson configuration but effective deployed learner content needs separate SHA/HTTP testing."
+  },
+  "priorPublishedLessonBaseline": {
+    "total": 15,
+    "historicalT001FirstTen": 10,
+    "grade1Batch03Lessons11To15": 5,
+    "historicalBatch03Commit": "54833b1669fe33f39c0043ac229f7440e1c8da9a",
+    "historicalBatch03RenderDeployment": "dep-db8opibbc2fs738nuvd0",
+    "historicalBatch03RenderState": "previously_live_then_superseded",
+    "editionAndCodeDriftChecksForB001": "NOT_RUN",
+    "limitations": "Previous release ≠ B001 academic acceptance. Prior first-15 must be compared against current effective content and actual live lesson behavior."
+  },
+  "practiceEngineExecution": {
+    "status": "PASSED_REAL_GENERATION_AND_INVALID_INPUT_SAMPLING_NOT_END_TO_END",
+    "githubWorkflowRun": "https://github.com/EIAS79/Edulytics/actions/runs/38881061253",
+    "workflowConclusion": "success",
+    "pullRequest": "https://github.com/EIAS79/Edulytics/pull/508",
+    "artifactUrl": "https://github.com/EIAS79/Edulytics/actions/runs/38881061253/artifacts/12037203560",
+    "auditedRealLessonCodes": 500,
+    "samplePassCount": 500,
+    "sampleFailureCount": 0,
+    "difficulties": [
+      "Standard",
+      "Stretch",
+      "Challenge"
+    ],
+    "independentCorrectAnswerCheck": true,
+    "malformedAnswerRejectionCheck": true,
+    "minGeneratedCases": 1500,
+    "actualAuthenticatedResponsePersistence": "NOT_TESTED",
+    "effectiveStudentVisibleTeachingApproval": "NOT_TESTED",
+    "productionDataParity": "NOT_TESTED",
+    "isInternalAcademicCertification": false
+  },
+  "effectiveLearnerContentAudit": {
+    "status": "500_OF_500_EFFECTIVE_EMBEDDED_RICH_V2_COMPOSABLE_NOT_ACADEMICALLY_ACCEPTED",
+    "githubActionRun": "https://github.com/EIAS79/Edulytics/actions/runs/38884041697",
+    "pullRequest": "https://github.com/EIAS79/Edulytics/pull/511",
+    "reportArtifact": "b001-500-effective-learner-content-triage",
+    "lessonCodesProcessed": 500,
+    "canonicalContentAndRichCompositionTechnicalFailures": 0,
+    "richV2RuntimeComposed": 500,
+    "richV2Curated": 0,
+    "canonicalRichQualityHeuristic": {
+      "Good": 4,
+      "NeedsExpansion": 496
+    },
+    "canonicalTemplatePlaceholderLessons": 128,
+    "templatePlaceholderByGrade": {
+      "Grade 1": 0,
+      "Grade 2": 55,
+      "Grade 3": 43,
+      "Grade 4": 30
+    },
+    "caveat": "NeedsExpansion is a heuristic measuring section lengths/math signals/examples/visual structure in canonical lesson bodies, not verified mathematical error or factual grade. Rich V2 compilation itself does not verify exact source objective fidelity.",
+    "academicSourceGoalApproval": 0,
+    "authenticatedPersistenceVerifiedInThisRun": 0,
+    "productionBrowserLessonUat": "NOT_RUN",
+    "remediationIssue": "https://github.com/EIAS79/Edulytics/issues/513"
+  },
+  "historical15SourceCodeDiff": {
+    "baselineCommit": "54833b1669fe33f39c0043ac229f7440e1c8da9a",
+    "comparisonEndpoint": "https://github.com/EIAS79/Edulytics/compare/54833b1669fe33f39c0043ac229f7440e1c8da9a...main",
+    "runtimeSourceChangesObservedThroughMainAtAudit": 0,
+    "note": "Source code file diff absent in the initial commit comparison, but no authenticated production E2E reassessment or effective content fingerprint parity performed; do not promote 15 baseline lessons to newly accepted B001."
+  },
+  "postIntakeTechnicalVerification": {
+    "observationDate": "2026-10-16",
+    "scope": "500 B001 canonical lesson IDs; separate from 500 internal academic acceptance",
+    "authenticatedDisposableHttps": {
+      "workflowRunId": 38951234465,
+      "url": "https://github.com/EIAS79/Edulytics/actions/runs/38951234465",
+      "exactTestedCommit": "e1f38d22294857766cd6ab23e6c4152c3330e86e",
+      "workflowConclusion": "success",
+      "authenticatedLessonPagesVerified": 500,
+      "practiceGenerateAndGradePersistenceProbeCount": 500,
+      "selfConsistentGradesPersisted": 498,
+      "syntheticSurveyTalliesPersisted": 2,
+      "malformedAnswersRejectedAndPersisted": 500,
+      "knownLimits": "Disposable student/school accounts and synthetic survey data, not independent comparison to original lesson objectives, real survey respondents, production login or academic UAT."
+    },
+    "laterSourceCandidateEngineSampling": {
+      "runId": 38978957362,
+      "url": "https://github.com/EIAS79/Edulytics/actions/runs/38978957362",
+      "exactCandidateCommit": "212272bee30a88b207bd8c4958ce806a8ca27828",
+      "workflowConclusion": "success",
+      "canonicalCodesCovered": 500,
+      "testShape": "One test iterates all 500 lesson codes at Standard, Stretch and Challenge, including malformed-answer controls. Not 500 separate lesson-content approvals."
+    },
+    "all500SourceRemediation": {
+      "pullRequest": "https://github.com/EIAS79/Edulytics/pull/538",
+      "candidateTool": "tools/curriculum/us-ccss-b001-source-remediation-500.cjs",
+      "rawPackRiskAuditCoverage": 500,
+      "sourceGoalExcerptMissing": 1,
+      "rawEmbeddedStepsRepeatedInFiveOrMoreGradeLessons": 463,
+      "riskSignalOnly": true,
+      "originalPublisherActivityAndEffectiveContentParity": "NOT_ESTABLISHED",
+      "auditWorkflowConclusion": "success",
+      "note": "All 500 exact source/embedded metadata identities were cross-checked. Raw template repetition is NOT evidence of a wrong student-visible page, especially where code materializes source-specific corrections. Academic acceptance is not granted.",
+      "optionalLessonG2U02L16SourceGoalAbsenceVerified": true,
+      "unresolvedMissingGoalExtractionCount": 0
+    },
+    "academicAcceptedUnderB001": 0,
+    "releaseDecision": "NO_GO",
+    "whyNoGo": "Publisher-source teaching, interactive original student activities and lesson-specific independent academic proof not completed for all 500 on the same candidate SHA. Post-release live and owner UAT not done.",
+    "recordedP4IntoExistingP5": {
+      "observedUtc": "2026-10-16T23:55:46Z",
+      "workflow": "https://github.com/EIAS79/Edulytics/actions/runs/38983916786",
+      "proofArtifact": "https://github.com/EIAS79/Edulytics/actions/runs/38983916786/artifacts/12081833841",
+      "bridgePr": "https://github.com/EIAS79/Edulytics/pull/542",
+      "branchHeadSha": "02d24dd3c26ae644d630a822d68536044eed083f",
+      "verifiedGitHubTestMergeSha": "d38dad69d15398ec2b1ac6a54927338a07e21f5b",
+      "testRuns": {
+        "engine": "https://github.com/EIAS79/Edulytics/actions/runs/38982303443",
+        "effectiveContent": "https://github.com/EIAS79/Edulytics/actions/runs/38982303426",
+        "authenticatedHttps": "https://github.com/EIAS79/Edulytics/actions/runs/38982303414"
+      },
+      "sourceLedgerContainsExactly500Codes": true,
+      "sameTestCheckoutShaAcrossEngineAndComposer": true,
+      "allThreeRunsSameGitHubBranchHead": true,
+      "technicalRichV2Composable": 500,
+      "realEngineQuestionAndMalformedCheckPassed": 500,
+      "disposableSchoolGradingAndRejectionPersisted": 500,
+      "syntheticSurveyFixtureRows": 2,
+      "academicContentGoalParityIndependentlyAccepted": 0,
+      "newAcademicAcceptance": 0,
+      "existingP5GateOutcome": "NO_GO",
+      "missingOrInvalidAcademicProofRecords": 500,
+      "missingEvidenceKinds": [
+        "source_provenance_and_licence",
+        "effective_learner_visible_content",
+        "lesson_specific_mathematics_oracle",
+        "student_and_school_isolation"
+      ],
+      "missingAdditionalFields": [
+        "effectiveBodySha256",
+        "INTERNALLY_ACCEPTED decision",
+        "historicalT001DriftVerified for 15 prior lessons",
+        "production owner UAT after batch approval"
+      ],
+      "caveats": "These are 500 per-lesson real prior P4 technical results from a verified PR test-merge commit, not proof of original source pedagogy, licensing, independent mathematical oracle, live production UAT or 500/500 internal academic acceptance. The existing P5 gate consumes these results without replaying tests and correctly returns NO_GO."
+    },
+    "original2021StudentTaskPdfInspection": {
+      "reportGeneratedUtc": "2026-10-17T00:00:03Z",
+      "workflowRun": "https://github.com/EIAS79/Edulytics/actions/runs/38984222729",
+      "originalMetadataOnlyArtifact": "https://github.com/EIAS79/Edulytics/actions/runs/38984222729/artifacts/12081519261",
+      "testedMainCommitSha": "3ecd051c50a65ff9e22bf2de7f59b0a59596293a",
+      "originalTaskPdfCount": 500,
+      "structurallyRead": 500,
+      "failedToRead": 0,
+      "publisherPdfSha256RecordedPerLesson": true,
+      "sourceTaskTextLexicalSupportOnly": 432,
+      "lexicalSupportInconclusive": 56,
+      "lowLexicalSupportNeedsReview": 2,
+      "missingStudentPromptExcerptForComparison": 8,
+      "sourcePromptExcerptTooGenericForComparison": 2,
+      "lowTextDensityVisualReviewRequired": 3,
+      "nonLexicallySupportedDoesNotProveIncorrect": 68,
+      "gradeBreakdown": {
+        "Grade 1": {
+          "total": 146,
+          "lexicalSupport": 112,
+          "inconclusive": 26,
+          "noStudentPrompt": 5,
+          "lowSupport": 1,
+          "genericPrompt": 2
+        },
+        "Grade 2": {
+          "total": 146,
+          "lexicalSupport": 115,
+          "inconclusive": 27,
+          "noStudentPrompt": 3,
+          "lowSupport": 1,
+          "genericPrompt": 0
+        },
+        "Grade 3": {
+          "total": 143,
+          "lexicalSupport": 140,
+          "inconclusive": 3,
+          "noStudentPrompt": 0,
+          "lowSupport": 0,
+          "genericPrompt": 0
+        },
+        "Grade 4": {
+          "total": 65,
+          "lexicalSupport": 65,
+          "inconclusive": 0,
+          "noStudentPrompt": 0,
+          "lowSupport": 0,
+          "genericPrompt": 0
+        }
+      },
+      "threeSparseVisualPdfLessonCodes": [
+        "PED:US-CCSS-MATH:G1:U01:L01",
+        "PED:US-CCSS-MATH:G1:U03:L21",
+        "PED:US-CCSS-MATH:G2:U06:L05"
+      ],
+      "independentStudentVisualSourceActivityParityAccepted": 0,
+      "originalPublisherLicenceIndependentlyApproved": 0,
+      "internalAcademicAcceptanceGranted": 0,
+      "releaseDecision": "NO_GO",
+      "scopeLimits": "This is genuine original 2021 PDF structural/text-token evidence only. Lexical corroboration (432) does not establish full pedagogical alignment, math answer or source-image fidelity, student drawing/game representation, intellectual-property licence validation, or live authenticated release. All 500 require V2 lesson-specific evidence."
+    },
+    "officialFirstEditionLicence": {
+      "verifiedOn": "2026-10-17",
+      "edition": "IM K–12 Math (first edition © 2019–2021), including IM K–5 original 2021 Kendall Hunt OER",
+      "publishedTermsUrl": "https://illustrativemathematics.org/terms-of-use/",
+      "publishedIpGuidanceUrl": "https://illustrativemathematics.org/site-ip-content/",
+      "originalOerHost": "https://im.kendallhunt.com/",
+      "originalCurriculumLicence": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "permitsCommercialReuseAndAdaptationWithAttribution": true,
+      "attributionRequired": true,
+      "adaptationDisclosureRequired": true,
+      "urlToCcBy4Licence": "https://creativecommons.org/licenses/by/4.0/",
+      "imNameAndLogoRightsIncludedInCcLicence": false,
+      "reuseOfThirdPartyImagesAutomaticallyCovered": false,
+      "exception": "IM v.360 © 2024 is licensed CC BY-NC 4.0 and is not in B001's first-edition 2021 source scope. Other publishers' adapted curriculum editions may carry different terms. Do not import them as if they were first-edition IM CC BY 4.0.",
+      "recommendedAttribution": "Based on IM® K–12 Math by Illustrative Mathematics®, CC BY 4.0. Adapted for Edulytics. See original source and licence links.",
+      "sourceEditionRightsVerifiedGlobally": true,
+      "perLessonOriginalSourceProvenanceChecked": 500,
+      "thirdPartyAssetAttributionAndTrademarkComplianceIndependentlyAudited": 0,
+      "finalPerLessonProvenanceAndLicenceP5Pass": 0,
+      "releaseDecision": "NO_GO",
+      "note": "Official source confirms first-edition curriculum licence terms, not per-lesson authoring, third-party illustration licence, compliant user-visible attribution, IM mark/logo rights or published learner activities. Do not mark source_provenance_and_licence PASS before those checks."
+    }
+  }
+}

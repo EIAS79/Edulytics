@@ -1,0 +1,120 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l05-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L05",
+      "CultureCode": "en",
+      "Title": "Another Addition Algorithm",
+      "ExplanationParagraphs": [
+        "Another Addition Algorithm: build on partial-sums recording to develop a written method that places one digit in each place-value position. Newly composed tens or hundreds must be recorded rather than discarded. This is grounded in place-value understanding, not a memorized symbol rule.",
+        "Warm-up — Notice and Wonder: Another Curious Table (10 minutes). Row and column headers are 98, 99, 100, 101 and 102. In the row for 100, the two question-mark cells under columns 99 and 101 are 199 and 201. Notice symmetry of 98+99=99+98=197, odd/even sum patterns, and sums staying equal from bottom-left to top-right; the teacher reviews observations instead of requiring all missing table cells.",
+        "Activity 1 — A New Addition Algorithm (15 minutes). Compare Han and Elena for 367+231=598. Han writes the partial sums 8 (ones), 90 (tens), and 500 (hundreds), then combines 8+90+500. Elena records a single digit for each place position, building 8 ones, 9 tens and 5 hundreds as 598. Explain why both algorithms add the same like units and give the same value. The original publisher picture layouts are not embedded; this first-party rendering preserves the mathematics only.",
+        "Activity 2 — Compose New Units (20 minutes). On 365+182=547, the ones are 5+2=7, the tens are 60+80=140 (14 tens), and the hundreds are 300+100=400. Han may record 7+140+400. Elena writes 7 ones and 4 tens with a composed hundred, giving 5 hundreds, 4 tens, 7 ones. Both methods account for the full 14 tens. Partner discussion explains where the new hundred goes.",
+        "Students practise Elena's algorithm with 174+352=526, 273+619=892, 354+198=552 and 525+376=901. For 354+198, 4+8=12 ones makes 1 new ten; 50+90+10=150 makes 1 new hundred; 300+100+100=500. The digits are 5 hundreds, 5 tens and 2 ones: 552. For 525+376, compose both a new ten and a hundred to obtain 901, not 801.",
+        "Teacher synthesis asks how recording the ten or hundred above the addends and recording partial sums below are connected to place-value exchanges. Pupils explain how the methods differ visually and why they remain equivalent; use MLR8 discussion support and speech or blocks to explain, rather than demanding a solitary scalar response.",
+        "The original first-edition teacher lesson suggests independent thinking, partner comparison and teacher-guided conversation; these are recorded as teacher-led elements. Optional centers remain separate and their original sheets have not been copied.",
+        "The independently authored Edulytics practice and Cool-down assess addition with composing. They are not the publisher's gated Use an Algorithm for Addition Cool-down. Original source student PDF, algorithm artwork and optional gameboard fidelity remain unverified; no 100% source-material claim is made."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Partial sums",
+          "Definition": "One may record all like-unit totals separately.",
+          "Rule": "Add the values for ones, tens, hundreds, then combine them.",
+          "Example": "365+182=7+140+400=547."
+        },
+        {
+          "Title": "Single digit per place",
+          "Definition": "The value of a place in the sum is recorded as one digit, with composed units transferred.",
+          "Rule": "10 ones become one ten; 10 tens become one hundred.",
+          "Example": "14 tens becomes 4 tens and one hundred."
+        },
+        {
+          "Title": "Conservation of value",
+          "Definition": "Different correct records represent the same total.",
+          "Rule": "No carried ten or hundred can disappear.",
+          "Example": "354+198=552, with composed ones and tens."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Han and Elena agree",
+          "Question": "Calculate 367+231 in both representations.",
+          "Method": "Separate into like units then record compact digits.",
+          "Steps": [
+            "7+1=8 ones.",
+            "60+30=90 tens.",
+            "300+200=500 hundreds.",
+            "8+90+500=598; compact form has digits 5,9,8."
+          ],
+          "Answer": "598",
+          "Check": "598−231=367."
+        },
+        {
+          "Title": "Compose 14 tens",
+          "Question": "Add 365 and 182.",
+          "Method": "Record the whole 140 tens-value and exchange for 1 hundred plus 4 tens.",
+          "Steps": [
+            "5+2=7.",
+            "60+80=140; this is 14 tens.",
+            "300+100=400; 400+140+7=547.",
+            "Record 5 hundreds,4 tens,7 ones."
+          ],
+          "Answer": "547",
+          "Check": "547−182=365."
+        },
+        {
+          "Title": "Compose tens and hundreds",
+          "Question": "Calculate 354+198.",
+          "Method": "Carry newly composed values consistently.",
+          "Steps": [
+            "4+8=12 ones: write 2, carry one ten.",
+            "5 tens + 9 tens + 1 carried ten =15 tens: write 5, carry one hundred.",
+            "3 hundreds +1 hundred +1 carried hundred =5 hundreds.",
+            "The value is 552."
+          ],
+          "Answer": "552",
+          "Check": "552−198=354."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Missing the 140 when 60+80 is added.",
+          "WhyWrong": "Fourteen tens includes one additional hundred.",
+          "Correction": "Record 140 or one carried hundred plus four tens."
+        },
+        {
+          "Mistake": "Treating Elena's step as a different arithmetic rule from Han's.",
+          "WhyWrong": "Both still combine ones with ones, tens with tens, hundreds with hundreds.",
+          "Correction": "Explain the location, not the existence, of the partial sums."
+        },
+        {
+          "Mistake": "Failing to carry twice for 354+198.",
+          "WhyWrong": "The units and tens both compose new higher units.",
+          "Correction": "12 ones -> 2 ones plus 1 ten; 15 tens -> 5 tens plus 1 hundred."
+        },
+        {
+          "Mistake": "Reporting 525+376=801.",
+          "WhyWrong": "A composed hundred has been lost.",
+          "Correction": "525+376=901."
+        },
+        {
+          "Mistake": "Certifying an algorithm explanation solely from a correct number.",
+          "WhyWrong": "The source requires discussion of the two recordings and place-value transfers.",
+          "Correction": "Teacher judges step sequencing and equivalence explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "Two central missing entries in the curious table are 199 and 201.",
+        "Han and Elena both obtain 367+231=598.",
+        "On 365+182, fourteen tens must be represented faithfully; sum=547.",
+        "The four source additions are 526,892,552 and 901.",
+        "The student compares the algorithms rather than only writing totals.",
+        "No original publisher algorithm screenshots or gated Cool-down are asserted as copied."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

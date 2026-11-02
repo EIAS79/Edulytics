@@ -1,0 +1,10 @@
+# G4 ordinal 90 — Numerical Patterns
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-4_preparation.html SHA256=a17a8487737c90a6f2ad18e50e5378b0aacfbc9fbc395cb0aebe4d07916b052b
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-4\lesson.html SHA256=9cf7f8e69b494952dae58da35e1dd7bccd27c714bd401892d862115fe2a21d92
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-4\lesson.html SHA256=cef6a848fccb4a3f82e27fca9c2242352f380ea2ee92121ad1bc03024917b7c1
+- Preserved existing learning explanation: Learning goal: You will analyze numerical patterns and use your understanding of place value and operations to find a rule and explain features of the pattern. Previously, you examined numerical patterns alongside visual patterns (diagrams of pattern blocks, arrangements of shapes, attributes of rectangles, and so on). In this lesson, you focus solely on numerical patterns, without a visual representation. You use your understanding of operations and place value to make sense of and explain patt
+- Original 2021 sections: Warm-up:  Which One Doesn’t Belong: Stacked Squares	 (10 minutes); Activity 1:  Count by 10 and by 9	 (20 minutes); Activity 2:  Count by 99	 (15 minutes); Activity 3:   Count by 15	 [OPTIONAL] (20 minutes); Cool-down:  Count by 8	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 27+9 = 36.
+- Edulytics first-party Cool-down: Continue 10, 19, 28 by two terms.; teacher key: 37, 46.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

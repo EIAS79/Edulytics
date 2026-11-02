@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 41,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U03:L07",
+  "title": "Center Day 1 (optional)",
+  "unitNumber": 3,
+  "lessonNumber": 7,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_IM2021_TEACHER_SOURCE_PREPARATION_AND_LESSON",
+    "sourceReadOnly": "Local archive Grade2 Unit3 Lesson7, preparation.html and lesson.html",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-3/lesson-7/preparation.html",
+    "sourceSemanticSha256": "944ddc505442f0fe3f2aea8be2ff2d8146dd478c6359ff1861bda3f04d0601b2",
+    "originalBodySha256": "89bf5ec0017086d9aaa8716d9bb43eaa2a70295ac7442d792c1503e6231e3091",
+    "standards": [
+      "CCSS:2.MD.A.1",
+      "CCSS:2.MD.A.3",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "warmup": "Number Talk37−20=17;37−21=16;37−17=20;37−16=21.",
+    "activity1": "Stage2 Estimate and Measure real objects, rulers and meter sticks; each pair estimates BEFORE zero-aligned physical measurement in centimeters only; teacher verifies real records, optional absolute difference.",
+    "sourceExample": "Publisher notebook estimate20 cm versus observed31 cm =11 cm, a lesson synthesis illustrative row not proof of student work.",
+    "activity2": "Real choice time Estimate and Measure Stage2 or Math Stories Stage5.",
+    "rights": "No original protected recording sheet or teacher-access materials reproduced; first-party numeric data labeled illustrative."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_URL_SHA_PREDECESSOR_SIX_FIELD_GUARD",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Source URL, original canonical SHA, ordered outcomes, six previous learner fields and predecessor rich content version."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTICATED_NUMERIC_COMPANION_FOUR_EXACT_FAMILIES_WRITTEN_TESTS_UNRUN",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3SeventhLessonEstimateMeasureStage2.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit3Lesson7EstimateMeasureStage2Contracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit3Lesson7EstimateMeasureStage2Questions.cs",
+    "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson41Page.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson41ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson41Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u03.l07.estimate_below_actual_gap",
+      "usccss.g2.u03.l07.estimate_above_actual_gap",
+      "usccss.g2.u03.l07.absolute_estimate_gap",
+      "usccss.g2.u03.l07.closest_of_two_estimates_gap"
+    ],
+    "independentNumbers": "45/38 gap7,24/29 gap5,34/32 gap2; not publisher actual classroom measurements.",
+    "teacherOnly": "Actual object selection, real estimates before tool use, ruler zero alignment and physical endpoint, authentic partner center participation.",
+    "security": "Authorized StudentPortal, selected adoption and published lesson checks, CSRF POST and limited fields; no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit3EstimateMeasureStage2TeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3SeventhLessonEstimateMeasureStage2Tests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit3Lesson7EstimateMeasureStage2QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson41ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U03_L08_GRADE_ORDINAL42_STAGE_A_B_C"
+}

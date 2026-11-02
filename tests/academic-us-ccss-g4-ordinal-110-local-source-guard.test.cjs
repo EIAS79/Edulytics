@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L110: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L24").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Addition and subtraction of historical data:"));assert.ok(t.quickSummary.includes("Navajo − Yupik difference is 147,076"));assert.equal(166826-19750,147076);});
+test('L110: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-110-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"b80a8d574e9d96e0529c2169d29a7ef6924f151e698db7a4836173d8a3c650f2");assert.equal(c.readyForStageD,true);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

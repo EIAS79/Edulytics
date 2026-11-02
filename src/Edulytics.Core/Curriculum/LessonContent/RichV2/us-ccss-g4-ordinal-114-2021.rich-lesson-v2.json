@@ -1,0 +1,160 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.7.3-source-abc-2021-v2-lines",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U07:L03",
+      "CultureCode": "en",
+      "Title": "Two or More Lines",
+      "ExplanationParagraphs": [
+        "Learning goal (2021 Grade 4 Unit 7 Lesson 3): identify and DRAW parallel and intersecting lines. Two distinct straight lines in a plane are parallel when they have the same direction and never meet, even when extended. Nonparallel straight lines in the same plane meet at exactly one point.",
+        "Warm-up — How Many Do You See? (10 min): the original source shows a composed image of line segments. Students count and defend different ways to group the segments. The teacher must display legitimately available original artwork or an independently authored substitute; no unseen segment count is asserted here.",
+        "Activity 1 — Four Lines (15 min): in the 2021 source three lines cross to form a triangle, then students consider whether a fourth line can make a quadrilateral using the lines. On a separate FIRST-PARTY diagram, a new line cutting off one corner of a triangle can bound a four-sided region. Students should DRAW their fourth line and justify which four line pieces bound the region; the original dot-field solution remains teacher-scored.",
+        "Activity 2 — To Cross or Not to Cross (20 min): on a field of dots, draw line h through at least two dots, then another line g through at least two dots and intersecting h. Mark the meeting point. Explore parallel lines that stay distinct when extended; do not mistake the ends of drawn strokes for endpoints of the mathematical lines.",
+        "Independent Edulytics Cool-down (5 min, NOT the gated publisher assessment): draw and label one pair of parallel straight lines and one pair of intersecting straight lines. Mark the intersection and write one sentence explaining each pair. Teacher checks the constructed lines and explanation.",
+        "First-party digital Practice is supplementary: interpret explicitly stated row/column dots on a 5×5 grid and choose 1=parallel or 2=intersecting. The mathematical relation is checked using exact direction cross-products and a distinct-line requirement; no coordinate-slope formula is required of Grade 4 learners. Drawing, artwork interpretation, partner talk, and the original teacher-only tasks are never inferred from the numeric selection."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parallel lines",
+          "Definition": "Two DISTINCT straight lines in one plane that never meet however far they are extended.",
+          "Rule": "They stay in the same direction and do not share a point; a coincident line is not a second distinct parallel line.",
+          "Example": "On a dot field, a line along row 1 and a line along row 3 are parallel when both extend horizontally."
+        },
+        {
+          "Title": "Intersecting lines",
+          "Definition": "Two straight lines in the same plane that meet at a point.",
+          "Rule": "The intersection can be on a grid dot or between two dots; the drawn portion need not reach the crossing.",
+          "Example": "A horizontal line along row 2 and a vertical line along column 3 meet at row 2, column 3."
+        },
+        {
+          "Title": "Teacher-reviewed construction",
+          "Definition": "Drawing a line through two dots determines one straight line; drawing a quadrilateral from four lines requires showing four valid sides.",
+          "Rule": "Use at least two distinct dots for each line and extend the line beyond the dots; check labels h and g and the required intersections.",
+          "Example": "Draw h along two dots in row 3; draw g along two dots in column 3; explain where they cross."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two parallel horizontal lines",
+          "Question": "On a 5×5 field of dots, h goes through (row 1, column 1) and (row 1, column 4). g goes through (row 3, column 1) and (row 3, column 4). Are the complete lines parallel or intersecting?",
+          "Method": "Check whether the two lines have the same direction and different positions.",
+          "Steps": [
+            "Both dots for h are on row 1, so h runs horizontally.",
+            "Both dots for g are on row 3, so g also runs horizontally.",
+            "The lines occupy different rows and continue in the same direction; extending them does not produce a crossing."
+          ],
+          "Answer": "Parallel (option 1).",
+          "Check": "Rows 1 and 3 are distinct; neither line changes row as column changes."
+        },
+        {
+          "Title": "Intersecting horizontal and vertical lines",
+          "Question": "h goes through (row 2, column 1) and (row 2, column 5). g goes through (row 1, column 3) and (row 4, column 3). Are they parallel or intersecting?",
+          "Method": "Trace the row and column and find their common location.",
+          "Steps": [
+            "h runs horizontally along row 2.",
+            "g runs vertically along column 3.",
+            "Both pass through row 2, column 3, so they have one intersection."
+          ],
+          "Answer": "Intersecting (option 2); meeting point is (row 2, column 3).",
+          "Check": "The crossing belongs to each complete line."
+        },
+        {
+          "Title": "Two diagonal lines can cross BETWEEN grid dots",
+          "Question": "h passes through row 1,col 1 and row 4,col 4; g passes through row 1,col 4 and row 4,col 1. Must they be parallel because the crossing is not itself a marked dot?",
+          "Method": "Compare direction and extend both diagonal paths.",
+          "Steps": [
+            "As the row increases, the first line moves to later columns.",
+            "As the row increases, the second line moves to earlier columns.",
+            "Their directions differ, and their extensions meet between dots near the grid centre."
+          ],
+          "Answer": "Intersecting (option 2), not parallel.",
+          "Check": "Both diagonals meet halfway between rows 2 and 3 and columns 2 and 3."
+        },
+        {
+          "Title": "Original 2021 activity 1 — four lines (teacher-scored)",
+          "Question": "Three straight lines on the original dot field form a triangle. Can a fourth line make a quadrilateral? Draw and explain.",
+          "Method": "Explore where the fourth line crosses two sides to create a bounded four-sided region.",
+          "Steps": [
+            "Identify the original triangle and its three bounding lines.",
+            "Try a fourth straight line that cuts across two sides near one vertex; identify the new four-sided region.",
+            "Name its four sides and explain each intersection; check the ORIGINAL drawn source task with a teacher."
+          ],
+          "Answer": "A valid four-sided region and explanation are possible; student construction is teacher assessed.",
+          "Check": "A verbal or numeric answer alone does not demonstrate the original drawing."
+        },
+        {
+          "Title": "Original 2021 activity 2 — h and g (teacher-scored)",
+          "Question": "On the source dot field draw line h through at least two dots; draw line g through at least two dots that intersects h.",
+          "Method": "Choose two distinct grid dots for each line, use a straightedge and mark the common point.",
+          "Steps": [
+            "Draw h through two marked dots, extending past the dots.",
+            "Choose another two dots that determine a different-direction line g.",
+            "Draw g, label both lines and point to their intersection; teacher inspects the actual diagram."
+          ],
+          "Answer": "Two correctly labelled intersecting lines with at least two source dots per line.",
+          "Check": "Teacher verifies line drawing and intersection, not a guessed source image."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling two short non-touching strokes parallel just because no crossing is visible.",
+          "WhyWrong": "Mathematical lines continue forever in both directions; their extensions might intersect.",
+          "Correction": "Imagine both straight strokes extended. Decide whether the complete lines meet."
+        },
+        {
+          "Mistake": "Treating two overlapping/coincident names for the same line as two distinct parallel lines.",
+          "WhyWrong": "Parallel pairs in this lesson are two different straight lines, not the very same line.",
+          "Correction": "Check both direction AND whether the lines occupy different positions."
+        },
+        {
+          "Mistake": "Claiming intersecting lines must meet exactly at a printed dot.",
+          "WhyWrong": "The crossing can lie between dots on the grid.",
+          "Correction": "Extend both lines and mark the crossing even when the location is unmarked."
+        }
+      ],
+      "SummaryPoints": [
+        "Parallel: two distinct coplanar lines, same direction, never meet; intersecting: meet once.",
+        "Two dots determine a line; drawn finite strokes do not limit the full geometric line.",
+        "Use a fourth line to make and justify a four-sided region from the original three-line triangle; draw h and g through dots and show their intersection.",
+        "First-party digital dot-grid classification is supplementary; source figures, segment counting, drawing, partner talk and publisher Cool-down are not automatically assessed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Original Edulytics dot-grid descriptions — no publisher figures",
+          "Description": "Textual coordinates specify complete straight lines, not copied source artwork.",
+          "PrimaryLabel": "h: row 1 col 1 → row 1 col 4",
+          "SecondaryLabel": "g: row 3 col 1 → row 3 col 4",
+          "Items": [
+            "Both run horizontally.",
+            "They are on different rows.",
+            "Result: PARALLEL"
+          ],
+          "SecondaryItems": [
+            "Teacher can show an independently drawn grid."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Crossing on the dot field",
+          "Description": "Two full lines cross at an ordinary grid point.",
+          "PrimaryLabel": "h: row 2 col 1 → row 2 col 5",
+          "SecondaryLabel": "g: row 1 col 3 → row 4 col 3",
+          "Items": [
+            "Horizontal and vertical directions differ.",
+            "Common point is row 2, column 3.",
+            "Result: INTERSECTING"
+          ],
+          "SecondaryItems": [
+            "Only the relationship choice is auto-graded."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

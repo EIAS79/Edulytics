@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "programmeStages": [
+    26,
+    27,
+    28
+  ],
+  "status": "COMPLETE",
+  "completionBoundary": "CONTROLLED_PRODUCTION_ROLLOUT",
+  "securityAndResourceControls": {
+    "policy": "fail-closed-before-untrusted-mathematics-execution",
+    "limits": {
+      "maxInputLength": 4096,
+      "maxTokenCount": 512,
+      "maxAstDepth": 64,
+      "maxAstNodes": 4096,
+      "maxPolynomialDegree": 12,
+      "maxMatrixDimension": 12,
+      "solverTimeoutMilliseconds": 2000,
+      "maxEstimatedMemoryBytes": 8388608,
+      "maxConcurrentOperations": 8
+    },
+    "enforcedAt": [
+      "MathematicsResourceGuard",
+      "MathematicsExecutionBudget",
+      "ExactSkillContractQuestionEngine"
+    ]
+  },
+  "observability": {
+    "meter": "Edulytics.Mathematics",
+    "metrics": [
+      "edulytics.math.generation.success",
+      "edulytics.math.solver.success",
+      "edulytics.math.verification.failure",
+      "edulytics.math.alignment.rejection",
+      "edulytics.math.fallback",
+      "edulytics.math.unsupported",
+      "edulytics.math.timeout",
+      "edulytics.math.answer_equivalence.disagreement",
+      "edulytics.math.content_mapping.conflict"
+    ]
+  },
+  "productionRollout": {
+    "modes": [
+      "LegacyOnly",
+      "ShadowV2",
+      "V2VerifiedOnly",
+      "V2Preferred",
+      "V2Only"
+    ],
+    "selectors": [
+      "domain",
+      "skill",
+      "curriculum",
+      "grade"
+    ],
+    "explicitNonLegacyModeRequiresSelector": true,
+    "v2OnlyBlocksUnsupportedInsteadOfFallingBack": true,
+    "legacyGrade16Compatibility": true,
+    "advancedShadowVerifiedAutoPromotion": false,
+    "globalV2OnlyEnabled": false,
+    "currentProductionBoundary": "READY_VERIFIED approved Grade 1-6 exact routes remain eligible; unsupported/contextual advanced capabilities remain blocked or shadow-only."
+  },
+  "truthfulCapabilityBoundary": {
+    "proof": "UNSUPPORTED",
+    "unfamiliarTransfer": "UNSUPPORTED",
+    "ibAaHlGlobalClaimAllowed": false,
+    "aLevel9709GlobalClaimAllowed": false,
+    "igcseExtendedGlobalClaimAllowed": false,
+    "unsupportedCasesBlocked": true
+  }
+}

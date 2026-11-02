@@ -1,0 +1,145 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u07-l09-2021-missing-lengths-context-area-route-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U07:L09",
+      "CultureCode": "en",
+      "Title": "Perimeter Problems",
+      "ExplanationParagraphs": [
+        "Based on the original first-edition 2021 Grade 3 Unit 7 Lesson 9: five source PDF student pages, teacher lesson and preparation were individually inspected on the connected owner device. The source photograph and route diagram are not embedded; both link to original source PDF. Publisher-gated Cool-down Sides of a Pool was not accessed or reproduced. Original mathematical tasks are distinguished from independent Edulytics checks.",
+        "CCSS 3.MD.D.8: solve perimeter word problems and infer missing side lengths. Source timeline: Statue of Liberty estimation 10 min; Missing Measurements 15 min; Can I Use Perimeter? 20 min; synthesis 10 min; gated publisher Cool-down 5 min. MLR8 partner discussion and teacher observation remain mandatory.",
+        "Warm-up: Statue of Liberty photograph shows large square base with side length 132 feet, perimeter 528 feet, and smaller square base whose exact length is not supplied. Student provides too-low/about-right/too-high estimates. No unique numeric estimate is supported by the original; do not automatically mark one guessed number correct.",
+        "Original Activity 9.1 (page 2) has three tasks. (1) A pentagon perimeter 32 cm, four known sides 10, 2, 11, 4 cm: missing fifth side 32-(10+2+11+4)=5 cm. (2) A rectangle perimeter 56 feet, one short side 8 ft: its three other sides are 8,20,20 feet, since 56=2(8+20). All three lengths are required. (3) A five-equal-side pentagon perimeter 65 inches: each side 65/5=13 inches. Use exact printed units.",
+        "Original Activity 9.2 (pages 3–4): rectangular park fenced around a 70-foot and 120-foot rectangle needs 2(70+120)=380 feet. Square picture 9-inch side needs 4×9=36 inches of frame ribbon. Flowerbed rectangular boundary 32 feet, one side 12 feet: the THREE OTHER sides are 12,4,4 feet. Return full side multiset, not just 4 ft.",
+        "Kiran dog-walk source raster: the route begins and ends at the house half-way along the west street and travels up 1.5 blocks, east 2, south 1, east 1, north 1, east 1, south 2, west 1, south 1, west 3, north 1.5 to home = 16 blocks. The two half-block segments sum to one block. This numeric source answer is a gradeable anchor but the actual traced route and explanation remain teacher-reviewed.",
+        "Room floor source problem: covering a 10-foot by 8-foot floor with one-square-foot tiles requires AREA 10×8=80 square feet, hence 80 tiles; using its perimeter 36 feet would be a category error. Perimeter measures linear exterior boundary, area counts square units in the interior.",
+        "Original Section Summary on page 5 contrasts summing sides with repeated groups for a 21 by 9 cm rectangle, P=60 cm; then displays a 32-ft perimeter rectangle with one 12-ft side and remaining 12,4,4 ft sides. This summary is independent teaching context, not additional publisher student exercise.",
+        "Strategies: subtract known side lengths, infer opposite rectangle sides, divide among equal sides; check all original unit labels and avoid counting area as perimeter. The source-image estimation and mathematical explanations need teacher assessment. Stage D, runtime execution, CI, production parity and academic signoff have not been performed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unknown side",
+          "Definition": "A missing side equals the known perimeter minus all known sides.",
+          "Rule": "P−known sum.",
+          "Example": "32−27=5 cm for source pentagon."
+        },
+        {
+          "Title": "Three other rectangle sides",
+          "Definition": "Opposite sides are equal; total requires four boundaries.",
+          "Rule": "Given P56 and one side 8, others 8,20,20 feet.",
+          "Example": "Original 9.1 #2."
+        },
+        {
+          "Title": "Equal-side polygon",
+          "Definition": "All sides equal means one side is P divided by the number of sides.",
+          "Rule": "65/5=13 inches per side.",
+          "Example": "Original pentagon with five equal sides."
+        },
+        {
+          "Title": "Choosing a measurement",
+          "Definition": "Fencing and ribbon use perimeter; floor tiles use area.",
+          "Rule": "Linear ft/in for boundaries, square ft for coverage.",
+          "Example": "70×120 park fence 380 ft; 10×8 room has 80 one-square-foot tiles."
+        },
+        {
+          "Title": "Map route",
+          "Definition": "A traveled route can turn and include partial blocks.",
+          "Rule": "Sum the printed street intervals and halves, not an enclosing rectangle.",
+          "Example": "Original Kiran route is 16 block lengths."
+        },
+        {
+          "Title": "Estimation",
+          "Definition": "Source without a smaller square base length cannot have an exact answer.",
+          "Rule": "Too low/about right/too high responses need teacher review.",
+          "Example": "Larger square perimeter 528 ft is only an upper-bound reference."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Pentagon missing side",
+          "Question": "P=32 cm, known edges 10,2,11,4 cm.",
+          "Method": "Subtract known edges.",
+          "Steps": [
+            "Known sum 27 cm.",
+            "32−27=5 cm.",
+            "Recheck 27+5=32."
+          ],
+          "Answer": "5 cm",
+          "Check": "Retain cm unit."
+        },
+        {
+          "Title": "Original rectangle unknown trio",
+          "Question": "P56 ft, known short side 8 ft; give all three unlabelled sides.",
+          "Method": "Opposite sides match.",
+          "Steps": [
+            "Other short side 8 ft.",
+            "Remaining 56−16=40 ft.",
+            "Other long sides 20 ft each."
+          ],
+          "Answer": "8 ft,20 ft,20 ft",
+          "Check": "8+8+20+20=56."
+        },
+        {
+          "Title": "Kiran route",
+          "Question": "What length is the drawn dog-walk?",
+          "Method": "Trace street and half-block segments.",
+          "Steps": [
+            "One side uses 1.5-block initial and 1.5-block closing legs.",
+            "Other printed route steps sum to 13 blocks.",
+            "Total 16 blocks."
+          ],
+          "Answer": "16 blocks",
+          "Check": "Teacher inspects the original raster drawing."
+        },
+        {
+          "Title": "Area is not perimeter",
+          "Question": "Tiles to cover 10-ft ×8-ft floor, one square foot each.",
+          "Method": "Interior area.",
+          "Steps": [
+            "Area 10×8=80 square feet.",
+            "Divide by one square foot per tile.",
+            "Eighty square-foot tiles cover the 80-square-foot surface; the 36-foot edge length is not a tile count."
+          ],
+          "Answer": "80 tiles",
+          "Check": "36-ft perimeter is irrelevant to tile count."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Invent exact Statue smaller base measurement.",
+          "WhyWrong": "No such numeric length is printed.",
+          "Correction": "Use justified estimates checked by teacher."
+        },
+        {
+          "Mistake": "Return only 20 for source rectangle missing sides.",
+          "WhyWrong": "Three sides are missing, not one.",
+          "Correction": "All 8,20,20 ft must appear."
+        },
+        {
+          "Mistake": "Return only 4 for flowerbed other sides.",
+          "WhyWrong": "Two short and one long opposite side missing.",
+          "Correction": "12,4,4 ft."
+        },
+        {
+          "Mistake": "Use 36 as tile count.",
+          "WhyWrong": "36 ft is exterior length not covered area.",
+          "Correction": "80 tiles, each one square foot."
+        },
+        {
+          "Mistake": "Use housing perimeter instead of dog route.",
+          "WhyWrong": "Actual route has turns and halves.",
+          "Correction": "Trace eleven street segments on original diagram for 16 blocks."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up smaller square estimation teacher-only; 132 ft belongs to larger square.",
+        "9.1 answers 5 cm; missing trio 8,20,20 ft; 13 inches.",
+        "9.2 answers 380 feet fence, 36 inches ribbon, 12/4/4 ft flowerbed, 16 route blocks, 80 tiles (area).",
+        "Original section summary 21×9 rectangle 60 cm and 32-ft rectangle missing 12/4/4 ft.",
+        "Original publisher Cool-down restricted. Stage D, CI and test execution not run."
+      ]
+    }
+  ]
+}

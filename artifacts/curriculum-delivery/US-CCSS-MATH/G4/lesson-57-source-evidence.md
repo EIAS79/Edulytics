@@ -1,0 +1,10 @@
+# G4 ordinal 57 — Compare Multi-digit Numbers
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-4_lesson-12_preparation.html SHA256=f315ee1075560a06a4eb23fc3c6c208f79834a79cc132843624f3bd2ce687024
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-4\lesson-12\lesson.html SHA256=ca45b345832ec34f8107d50325f7ede79d3095ece472f96391be045141f99e99
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-4\lesson-12\lesson.html SHA256=9580f0c6f41d90a087c3aec36621d68db208a7146f2c1548f6d6164ce0c9774d
+- Preserved existing learning explanation: Learning goal: You will compare two multi-digit whole numbers within 1,000,000 by reasoning about place value and to explain how you make comparisons. Previously, you learned to build, read, name, and write multi-digit whole numbers up to six digits. You also developed an understanding of the relationship between a digit in one place and the same digit in the place immediately to its right. Through that work, you built your intuition for the relative size of numbers.
+- Original 2021 sections: Warm-up:  Which One Doesn’t Belong: Friendly Numbers 	 (10 minutes); Activity 1:  Which is Greater?	 (15 minutes); Activity 2:  Incomplete Numbers	 (10 minutes); Activity 3:  Is It Possible?	 [OPTIONAL] (20 minutes); Cool-down:  Two Numbers To Compare	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 817-762 = 55.
+- Edulytics first-party Cool-down: Compare 504,210 and 540,120 using < or >.; teacher key: 504,210 < 540,120.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

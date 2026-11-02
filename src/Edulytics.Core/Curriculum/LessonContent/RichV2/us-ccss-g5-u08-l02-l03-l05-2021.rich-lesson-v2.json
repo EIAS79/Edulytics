@@ -1,0 +1,737 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u08-l02-l03-l05-im2021-source-parity-richv2-v11-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L02",
+      "CultureCode": "en",
+      "Title": "More Multiplication",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L02 practices standard algorithm and place-value scaling for products of multi-digit numbers including trailing zeros; children inspect another pupil's WRONG written multiplication before correcting it.",
+        "Warm-up Estimation Exploration original9999×896, close to10000×900≈9000000; exact product8959104. Too-low/about-right/too-high responses are estimates, not fixed printed choices.",
+        "Activity1 Kiran's Work original multiplication650×27: his displayed first partial650×7=4550 is correct; he writes second partial1300, but 2 represents TWENTY so 650×20=13000. Printed total5850 is incorrect; correct sum4550+13000=17550. Teacher reviews what is right and wrong in image rather than replacing with unrelated740×36 example.",
+        "Activity2 Zero the Hero has four original written multiplication image problems labeled1–4 whose exact factors are not recoverable from text-only captions. Do not invent them or claim all source products verified without image inspection. Teacher checks actual figures; bounded selected cases cover Kiran and the printed warm-up.",
+        "Previous first-party740×36 and670×89 examples remain optional extensions clearly labeled. A–B–C authoring handoff is not Stage D or proof of a runtime student renderer.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: assess whether partial-product multiplication of a large whole number is plausible, locate a place-value error in another learner's written work, and then practice products with trailing zeros. The source includes an intentionally unreasonable solution; pupils must critique what they agree and disagree with.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: estimate 740×36. Since 740×30=22200, any purported exact product smaller than 20000 is suspect. Estimation is a check, not a replacement for careful multiplication.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — independently authored error critique: a fictional student correctly calculates 740×6=4440 but records the second partial product for the factor 30 as 2220 rather than 22200, then claims the total is6660. Explain why the 3 in 36 represents THREE TENS, so 740×30=22200, and the correct total is26640. Review the student's first partial product without blindly rejecting every step.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — trailing zeros: calculate 670×89 as 67×89×10=59630 and 6700×89 as67×89×100=596300. Explain why increasing one factor tenfold increases the product tenfold and contrast the reasoning with merely guessing a zero count.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the learner's diagnostic argument, independently revised working, reasonable estimate and place-value language must be reviewed by a teacher. Numeric products may be checked but do not replace interpreting another student's erroneous written method."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tens digit produces tens partial product",
+          "Definition": "The tens digit 3 in 36 denotes thirty, not three.",
+          "Rule": "740×36=740×6+740×30.",
+          "Example": "4440+22200=26640."
+        },
+        {
+          "Title": "Factor-of-ten scaling",
+          "Definition": "Multiplying an integer factor by ten multiplies the product by ten.",
+          "Rule": "6700×89=10×(670×89).",
+          "Example": "596300=10×59630."
+        },
+        {
+          "Title": "Estimate before trusting a result",
+          "Definition": "One easy partial product can supply a lower bound for a positive product.",
+          "Rule": "740×36>740×30=22200.",
+          "Example": "6660 cannot be correct."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — More Multiplication",
+          "Question": "Original source warmup9999×896 exact product",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "8959104",
+          "Check": "Original numeric source example; incorrect distractors 8960000 and 8959000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — More Multiplication",
+          "Question": "Original source Kiran650×27 exact product",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "17550",
+          "Check": "Original numeric source example; incorrect distractors 5850 and 15750 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — More Multiplication",
+          "Question": "Original source Kiran first partial product650×7",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "4550",
+          "Check": "Original numeric source example; incorrect distractors 4500 and 455 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — More Multiplication",
+          "Question": "Original source Kiran second partial product650×20",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "13000",
+          "Check": "Original numeric source example; incorrect distractors 1300 and 130 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Find the student error",
+          "Question": "Why is 740×36=6660 impossible?",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Use 740×30=22200 as a lower bound.",
+            "Check the ones partial product: 740×6=4440.",
+            "Correct the tens partial product to 22200 and add."
+          ],
+          "Answer": "26640.",
+          "Check": "740×36=26640; teacher evaluates critique of the wrong place value."
+        },
+        {
+          "Title": "Optional existing extension — Multiply with one trailing zero",
+          "Question": "Find 670×89.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Write 670 as 67×10.",
+            "Calculate 67×89=5963.",
+            "Scale once by ten."
+          ],
+          "Answer": "59630.",
+          "Check": "670×(90−1)=60300−670=59630."
+        },
+        {
+          "Title": "Optional existing extension — Scale by another ten",
+          "Question": "Find 6700×89.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Use 6700=67×100.",
+            "Use the known product 67×89=5963.",
+            "Multiply by100 and compare to670×89."
+          ],
+          "Answer": "596300.",
+          "Check": "Ten times 59630 gives 596300."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a tens-digit partial product as the product with a ones digit",
+          "WhyWrong": "The digit's position changes factor size by ten.",
+          "Correction": "Compute a product with 30, not 3."
+        },
+        {
+          "Mistake": "Judge a result solely because its final digit looks plausible",
+          "WhyWrong": "Reasonableness depends on magnitude and all partial products.",
+          "Correction": "Compare the proposed product against 740×30 first."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warmup exact8959104.",
+        "Kiran first partial4550 correct, second must13000, total17550 not5850.",
+        "Source four image-only problems teacher checked.",
+        "Optional prior: Diagnose the incorrect PLACE VALUE, retaining correct portions of a peer's method.",
+        "Optional prior: Check the order of magnitude before computing and correct trailing-zero scaling.",
+        "Optional prior: The source's annotated student-work critique requires teacher review.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-2/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "More Multiplication — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source warmup9999×896 exact product",
+              "Cells": [
+                "8959104",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Kiran650×27 exact product",
+              "Cells": [
+                "17550",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Kiran first partial product650×7",
+              "Cells": [
+                "4550",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source Kiran second partial product650×20",
+              "Cells": [
+                "13000",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Kiran printed total5850 for650×27 is correct?",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source factor27 tens digit2 has value",
+              "Cells": [
+                "20",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — More Multiplication — first-party model",
+          "Description": "Original text table for accessibility; no publisher handwritten-work image or copyrighted lesson art copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "740×6",
+                "740×30",
+                "740×36",
+                "670×89",
+                "6700×89"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "4440",
+                "22200",
+                "26640",
+                "59630",
+                "596300"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L03",
+      "CultureCode": "en",
+      "Title": "Factors as a Factor in Our Strategy Choice",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L03 asks children to choose among mental number facts, compensating near ten/hundred, distributivity and standard multi-digit multiplication on the actual PRINTED factors, and justify their strategy rather than claiming a single required technique.",
+        "Warm-up Number Talk Increasing Factors original230×10=2300,230×12=2760,230×15=3450,232×15=3480. Children compare how adding two to one factor increases result by30 for multiplier15.",
+        "Activity1 Choose a Multiplication Strategy printed14×3=42,14×101=1414,14×25=350,14×9=126,14×136=1904. Pupils choose methods; for14×101 use14×(100+1), for14×9 use14×(10−1).",
+        "Activity2 Compare Strategies printed29×7=203,12×45=540,15×199=2985,24×154=3696. Students compare efficiency and error risk with a partner; no one official method for every problem.",
+        "Previous invented18×3/18×101 problems in Rich V2 remain explicitly labeled Edulytiks extensions. Exact selected cases support original numerical answers but explanation and strategy choice are teacher reviewed.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: choose a multiplication strategy based on the structure of the particular factors, explain that decision and compare another student's approach. The 2021 source presents products with factors close to 10, 100, round numbers and less convenient combinations so one fixed algorithm is not imposed.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: consider 17×9 and17×101. Rather than repeatedly adding, use17×(10−1) and17×(100+1). State the corrections explicitly and explain why the product of 17 by101 must exceed17×100.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — independent set of factor structures: calculate 18×3=54 by a known fact, 18×101=1818 by distribution, 18×25=450 by quarter of18×100, and18×9=162 by compensation from18×10. Compute18×136=2448 by partial products18×(100+30+6). Ask the learner to name a preferred strategy for each and compare its efficiency with standard multiplication.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — contrast products: 29×7=203, 12×45=540, 15×199=2985 and24×154=3696. For15×199 use15×(200−1); for24×154 distribute into 24×(150+4). Highlight why a strategy effective for 15×199 is less attractive for24×154.",
+        "Optional previous source-aligned or independently authored extension — Assessment: the official lesson assesses choosing and justifying methods, not merely numeric products. Peer comparisons and claims of efficiency have multiple defensible responses and require teacher evaluation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Compensate around friendly factors",
+          "Definition": "A factor just below or above a round ten-power can be replaced by that round number plus a correction.",
+          "Rule": "15×199=15×200−15.",
+          "Example": "2985."
+        },
+        {
+          "Title": "Distributive partial products",
+          "Definition": "A multi-digit factor can be partitioned by place value.",
+          "Rule": "18×136=18×100+18×30+18×6.",
+          "Example": "1800+540+108=2448."
+        },
+        {
+          "Title": "Choose a context-appropriate method",
+          "Definition": "The number structure can make a quarter, near-hundred or standard multiplication easiest.",
+          "Rule": "18×25=(18×100)/4.",
+          "Example": "450."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup230×10",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2300",
+          "Check": "Original numeric source example; incorrect distractors 230 and 23000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup230×12",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "2760",
+          "Check": "Original numeric source example; incorrect distractors 2300 and 2500 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup230×15",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3450",
+          "Check": "Original numeric source example; incorrect distractors 2760 and 3000 must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Factors as a Factor in Our Strategy Choice",
+          "Question": "Original warmup232×15",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "3480",
+          "Check": "Original numeric source example; incorrect distractors 3450 and 2320 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Just below two hundred",
+          "Question": "Calculate 15×199.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Replace 199 with200−1.",
+            "Compute15×200=3000.",
+            "Subtract15 once."
+          ],
+          "Answer": "2985.",
+          "Check": "15×199=2985."
+        },
+        {
+          "Title": "Optional existing extension — Use a quarter of a hundred",
+          "Question": "Calculate 18×25.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Notice25 is a quarter of100.",
+            "Compute18×100=1800.",
+            "Divide the total by four."
+          ],
+          "Answer": "450.",
+          "Check": "25×(20−2)=500−50=450."
+        },
+        {
+          "Title": "Optional existing extension — Use partial products",
+          "Question": "Find24×154.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Decompose154 into100+50+4.",
+            "Multiply24 by each part:2400,1200,96.",
+            "Add the partial products."
+          ],
+          "Answer": "3696.",
+          "Check": "24×154=3696."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use compensation but omit the correction on every group",
+          "WhyWrong": "Distributive multiplication requires scaling the correction by the other factor.",
+          "Correction": "15×(200−1)=3000−15, not3000−1."
+        },
+        {
+          "Mistake": "Present a numerical answer as a complete strategy comparison",
+          "WhyWrong": "The source asks why an algorithm fits certain factor structures.",
+          "Correction": "Name the chosen property and compare with an alternative."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warmup2300,2760,3450,3480.",
+        "Activity1 42,1414,350,126,1904.",
+        "Activity2 203,540,2985,3696.",
+        "Optional prior: Compare methods on the numbers, not a mandatory one-size-fits-all algorithm.",
+        "Optional prior: Use factors near 10/100/200 and known quarters to simplify when justified.",
+        "Optional prior: A credible strategy and reasoned comparison need teacher review.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-3/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Factors as a Factor in Our Strategy Choice — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original warmup230×10",
+              "Cells": [
+                "2300",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup230×12",
+              "Cells": [
+                "2760",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup230×15",
+              "Cells": [
+                "3450",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original warmup232×15",
+              "Cells": [
+                "3480",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×3",
+              "Cells": [
+                "42",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×101",
+              "Cells": [
+                "1414",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×25",
+              "Cells": [
+                "350",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Activity1 14×9",
+              "Cells": [
+                "126",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Factors as a Factor in Our Strategy Choice — first-party model",
+          "Description": "Original text table for accessibility; no publisher handwritten-work image or copyrighted lesson art copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "18×9",
+                "18×25",
+                "15×199",
+                "24×154"
+              ]
+            },
+            {
+              "Label": "Method",
+              "Cells": [
+                "18×(10−1)",
+                "18×100÷4",
+                "15×(200−1)",
+                "24×(150+4)"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "162",
+                "450",
+                "2985",
+                "3696"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L05",
+      "CultureCode": "en",
+      "Title": "More Division",
+      "ExplanationParagraphs": [
+        "Original IM2021 G5 U08:L05 revisits PARTIAL QUOTIENT division with deliberate peer error analysis, where the divisor is two digit and the dividend four digit. Source estimates are used to reject implausible small quotients.",
+        "Warm-up Estimation Exploration original9953÷37 equals269, close to10000÷40≈250; teacher scores three plausible estimates rather than a single prescribed low/about-right/high number.",
+        "Activity1 Elena's Work original6773÷13. The printed image claims partial quotients50,2,1 giving53 with the first subtraction650 while the displayed remainder273 would require subtraction6500. Correct result521 because500×13=6500 leaves273 and20×13=260 leaves13 then1×13=13. The reported53 is not a reasonable 6773÷13 estimate.",
+        "Activity2 Partial Quotients Practice Partner A/B original expressions are embedded in picture-only task boxes, not verifiably extractable from text. Students compare alternative partial-quotient decompositions rather than just supply one key. The printed section summary illustrates1782÷27=66 using60+6 or30+30+5+1.",
+        "Previous invented division cases remain optional Edulytiks extensions, not original. Numeric selected Practice covers source warmup and Elena error, original diagrams and learner's own partial-quotient work require teacher review.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Goal: revisit partial quotients with multi-digit divisors, judge whether another learner's division answer can be reasonable, and explain which large partial products have been subtracted. A student-written long-division layout may contain a correct remainder calculation but a wrong place value in the hundreds portion.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: use 13×500=6500 to estimate 6773÷13. Any positive quotient much smaller than500 cannot be correct because more than6500 was available to partition.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — diagnostic learner critique: an original false partial-quotient calculation for 6773÷13 subtracts 6500 correctly but labels its partial quotient as50 instead of500; it then subtracts260 (20 groups), leaving13, and subtracts13 (1 group). Recording50+20+1=71 is wrong, while500+20+1=521 is correct. Explain the value of each subtracted chunk, not just its written position.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — independent division: divide 7392 by24 using partial quotients. Subtract24×300=7200, leaving192; subtract24×8=192, leaving zero. Conclude308. Alternatively use24×(300+8)=7392; compare partial-quotient methods with a peer.",
+        "Optional previous source-aligned or independently authored extension — Assessment: numerical quotient and inverse check can be verified, but the selected partial-quotient chunks, estimation of order of magnitude and critique of a fictional student solution require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Partial quotient records number of groups",
+          "Definition": "Subtract divisor×a chosen group count; the written partial quotient must represent the correct magnitude.",
+          "Rule": "13×500=6500, not13×50.",
+          "Example": "The first partial quotient is500."
+        },
+        {
+          "Title": "Combine valid partial quotients",
+          "Definition": "When the remainder reaches zero, add all partial group counts.",
+          "Rule": "6773÷13=500+20+1.",
+          "Example": "521."
+        },
+        {
+          "Title": "Verify by multiplication",
+          "Definition": "Divisor multiplied by quotient should reproduce the dividend for exact division.",
+          "Rule": "24×308=7392.",
+          "Example": "Zero remainder."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Partial Quotients",
+          "Question": "Source warmup9953÷37 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "269",
+          "Check": "Original numeric source example; incorrect distractors 270 and 260 must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Partial Quotients",
+          "Question": "Source Elena's printed6773÷13 exact quotient",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "521",
+          "Check": "Original numeric source example; incorrect distractors 53 and 520 must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Partial Quotients",
+          "Question": "Original Elena's printed partial quotient53 for6773÷13 is correct true/false",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "false",
+          "Check": "Original numeric source example; incorrect distractors true and unknown must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Partial Quotients",
+          "Question": "Source Elena intended partial first subtraction for500 groups of13",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "6500",
+          "Check": "Original numeric source example; incorrect distractors 650 and 5000 must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Detect wrong magnitude",
+          "Question": "A learner records71 for6773÷13 while subtracting chunks6500,260 and13. Correct the reasoning.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Compute6500÷13=500, not50.",
+            "Compute260÷13=20 and13÷13=1.",
+            "Sum the proper partial quotients."
+          ],
+          "Answer": "521.",
+          "Check": "13×521=6773; 13×71 is much too small."
+        },
+        {
+          "Title": "Optional existing extension — Create your own partial quotients",
+          "Question": "Divide7392 by24.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Subtract24×300=7200, leaving192.",
+            "Subtract24×8=192.",
+            "Add300 and8."
+          ],
+          "Answer": "308.",
+          "Check": "24×308=7392."
+        },
+        {
+          "Title": "Optional existing extension — Use a second chunking",
+          "Question": "Find6773÷13 by subtracting a big round chunk first.",
+          "Method": "Original Grade 5 explanation. Exact computation is only a supporting check; critique, diagrams and independent strategy decisions are teacher-reviewed.",
+          "Steps": [
+            "Remove13×400=5200, leaving1573.",
+            "Remove13×100=1300, leaving273.",
+            "Remove13×20=260 and13×1=13."
+          ],
+          "Answer": "521.",
+          "Check": "400+100+20+1=521."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Write 50 as the quotient associated with subtracting 6500 by13",
+          "WhyWrong": "6500 contains five HUNDRED groups of13.",
+          "Correction": "Label the chosen group count500 explicitly."
+        },
+        {
+          "Mistake": "Accept a small division quotient when the dividend is thousands and divisor about ten",
+          "WhyWrong": "Magnitude matters: 13×500 already accounts for6500.",
+          "Correction": "Estimate with known divisor multiples before or after dividing."
+        },
+        {
+          "Mistake": "Replace original printed multi-digit factors and numerical source strategies with fictional practice without attribution.",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Use original exact figures and maintain the visual/teacher review boundary for figure-only computations and open strategy explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "Warmup exact269.",
+        "Original6773÷13=521, incorrect image53 due to missing place-value scaling.",
+        "Summary1782÷27=66 can be decomposed60+6 or30+30+5+1.",
+        "Optional prior: Partial quotients can be chosen in different valid sizes but must sum to the true quotient.",
+        "Optional prior: A place-value critique is distinct from checking only the remainder.",
+        "Optional prior: Peer explanations and annotated chunking are teacher-reviewed.",
+        "Optional prior: Provenance: original 2021 Illustrative Mathematics Grade 5 Unit 8 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-5/lesson.html. Student Facing and teacher activity from approved Primary/Our-CS 2021 lesson HTML inspected read-only 2026-10-29. Full separate Student Task PDF and gated Cool-down not verified. Numerical examples and visual tables are first-party Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Partial Quotients — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Source warmup9953÷37 exact quotient",
+              "Cells": [
+                "269",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Elena's printed6773÷13 exact quotient",
+              "Cells": [
+                "521",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original Elena's printed partial quotient53 for6773÷13 is correct true",
+              "Cells": [
+                "false",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Elena intended partial first subtraction for500 groups of13",
+              "Cells": [
+                "6500",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source remaining6773−6500 after first partial quotient500",
+              "Cells": [
+                "273",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source 273÷13 quotient",
+              "Cells": [
+                "21",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source summary alternate quotient1782÷27",
+              "Cells": [
+                "66",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source summary partial quotients60+6",
+              "Cells": [
+                "66",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — More Division — first-party model",
+          "Description": "Original text table for accessibility; no publisher handwritten-work image or copyrighted lesson art copied.",
+          "Rows": [
+            {
+              "Label": "Dividend ÷ divisor",
+              "Cells": [
+                "6773÷13",
+                "7392÷24"
+              ]
+            },
+            {
+              "Label": "Partial groups",
+              "Cells": [
+                "500+20+1",
+                "300+8"
+              ]
+            },
+            {
+              "Label": "Answer",
+              "Cells": [
+                "521",
+                "308"
+              ]
+            },
+            {
+              "Label": "Inverse",
+              "Cells": [
+                "521×13=6773",
+                "308×24=7392"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

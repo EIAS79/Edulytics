@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "grade": "G1",
+  "ordinal": 81,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U04:L16",
+  "sourceEvidence": {
+    "OurCsReadOnly2021": true,
+    "fullTeacherSha256": "9b253f98a275d7d5bfc748ae8b09bf99a984df736851e4099cb3e2e8ba6387d4",
+    "studentSha256": "80e2fabe1b92b8ed634546b8d9da43d7d2ff650da4cdec6bc812649d683fb459",
+    "teacherPreparationSha256": "be018f07997b639f971c5b68899d5694a72cbc94f170fe5a5e3c595af4c145f0",
+    "teacherActivityHeadings": [
+      "Activity 1: Introduce Greatest of Them All, Two-digit Numbers (20 minutes)",
+      "Activity 2: Make the Statement True (15 minutes)"
+    ]
+  },
+  "stageA": {
+    "originalTaskReview": "Read original teacher+embedded Student Facing: 49>45 and45<49, physical Greatest of Them All fixed digit card placement game, five sign blanks (56/26,72/78,6/55,92/29,23/23) and five number boxes (□>78,39<□,13=□,□<□,□>□). All canonical full teacher/preparation/student cache hashes match. Original five-minute Make Comparison Statements Cool-down remains authenticated/inaccessible.",
+    "classification": "CANONICAL_2021_SOURCE_VERIFIED_ORIGINAL_TEN_TASKS_COMPARED_WITH_PROTECTED_COOLDOWN",
+    "sourceHashesVerifiedOnOurCs": "2026-10-20"
+  },
+  "stageB": {
+    "existingTeachingReused": true,
+    "sourceCodeFile": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeFinalUnit4Corrections.cs",
+    "sourceCorrectionsCommits": [
+      "cde32354e5be2b4fb955930fe04a30672174488c"
+    ],
+    "publisherArtworkNotClaimedLicensed": true,
+    "sourceCodeCommit": "4853c21b3707c2aa1cbe37b84084002bc9111652",
+    "correctedVersion": "us-ccss-g1-u04-l16-original-student-activities-v3",
+    "exactFiveOpenSourceBoxesAndNonuniqueAnswersReviewed": true,
+    "authoredRegressionCommit": "989c19a0896c89082a3c365d0a409b3b4d0de59b"
+  },
+  "stageC": {
+    "existingSourceSpecificPracticePreserved": true,
+    "teacherOnlyActivitiesNotNumericallyCertified": true,
+    "independentGeneratorVerifierStaticReview": true,
+    "exactSourceSymbolModes": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "originalOpenEndedNumberBoxModes": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "multipleValidOpenAnswersNotConstrainedToSingleSolverValue": true,
+    "implementationCommit": "207d7a0c6e2f0c7ced419ac560ef42cae2e78458",
+    "authoredWrongAnswerTestsCommit": "fcee38c3091446dc4acb92fb6b381b4c0807522e",
+    "testsAuthoredButNotExecuted": true,
+    "original2021PublicMathModes": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "independentEdulyticsFormativeExit": {
+      "mode": 14,
+      "problem": "Compare 63 and 36 by tens",
+      "answer": "SYMBOL=>;TENS_LEFT=6;TENS_RIGHT=3",
+      "source": "FIRST_PARTY_NOT_PROTECTED_PUBLISHER_COOLDOWN",
+      "implementationCommit": "5e6c8ba4cbbd853c8665f9671a9f0a847ff2cd50",
+      "authoredTestsCommit": "c532b6f242a321f52f12ee0cb9163c4368af7bde",
+      "testsExecuted": false
+    },
+    "testsExecuted": false,
+    "authoringStatus": "READY_FOR_STAGE_D"
+  },
+  "stageD": {
+    "pendingExactHeadCI": true,
+    "CIExecutedDuringAuthoring": false,
+    "sourceTaskTestsAdded": true,
+    "authenticatedRealPracticeRendering": "PENDING",
+    "correctWrongPersistence": "PENDING",
+    "originalVisualAndRightsEvidence": "PENDING",
+    "perLessonV1AcademicAcceptance": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue canonical ordinal82; no CI, Stage D, approval or deployment until grade content freeze.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-81-stage-a-c-source-implementation-audit-20261020.md",
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true,
+    "seedRegressionRequiredAtFrozenCandidate": true,
+    "protectedOriginalCoolDownAccessible": false,
+    "sourceBoundary": "Original 2021 accessible ten math prompts are faithfully represented and original physical center is teacher-assessed; independent Edulytics formative of same skill is NOT the publisher 5-minute Cool-down."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 81,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U04:L16",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-81-stage-a-c-source-implementation-audit-20261020.md",
+    "exactRunProofBoundary": "Verified first-party digital 2021 source math, authentic grade persistence; no copied publisher art or authentic classroom participation"
+  }
+}

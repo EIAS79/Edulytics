@@ -1,0 +1,3821 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "edition": "IM K-5 First Edition (2021)",
+  "scope": {
+    "units": 9,
+    "lessons": 149
+  },
+  "initialAuthoringSha": "e06060b22b7c8b51a2400694f4c2acb88f587285",
+  "previousDiagnosticCommit": "3d81897a4c6adec4e41142fe23056035703a19a8",
+  "stageDTestingSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+  "firstIncompleteLessonOrdinal": 1,
+  "stageDVerified": 0,
+  "academicApproved": 0,
+  "releaseStatus": "NO_GO_TECHNICAL",
+  "note": "149/149 rich structures and 181/181 scoped .NET plus 306/306 source-shard tests passed on pinned candidate; selected technical suites only. Zero D_VERIFIED and zero academic approvals; original-source/rights/authenticated E2E and full-grade required gates remain blocked. Documentation-only commits after candidate do not inherit full PR-release CI green.",
+  "knownRisks": [
+    "L01 Source PLC title mismatch must be resolved against 2021 original source",
+    "Blueprint formal mapping count 253 vs 263 and standards count 28 vs 30 require reconciliation",
+    "49 late lesson maps have 36 STAGE_C_AUTHORED_PENDING_STAGE_D metadata declarations",
+    "Original publisher diagrams, gated Cool-downs and student-authored responses are not automatically certified",
+    "No production deployment or human approval is implied",
+    "13 B001 Grade 4 catalog-to-canonical English lesson TITLE_MISMATCH defects; index PLC Activity is distinct from individual preparation page titles",
+    "U06:L15 source catalog title mismatches individual 2021 teacher preparation page",
+    "Required 35 reviewed source routes unavailable; verified 1:1 source-element denominator and rights unproven",
+    "Authenticated E2E cannot proceed past original-blueprint/unapproved teaching-body preflight",
+    "Candidate code SHA a031ffbe... passed Grade4 diagnostics only; academic reviewer and authorized independent release decision absent"
+  ],
+  "lessons": [
+    {
+      "lessonOrdinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U01:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 21,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L13",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 22,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L14",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 23,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L15",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 24,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L16",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 25,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U02:L17",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 26,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 27,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 28,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 29,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 30,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 31,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 32,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 33,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 34,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 35,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 36,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 37,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 38,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L13",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 39,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L14",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 40,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L15",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 41,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L16",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 42,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L17",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 43,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L18",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 44,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L19",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 45,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U03:L20",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 46,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 47,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 48,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 49,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 50,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 51,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 52,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 53,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 54,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 55,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 56,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 57,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 58,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L13",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 59,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L14",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 60,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L15",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 61,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L16",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 62,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L17",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 63,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L18",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 64,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L19",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 65,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L20",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "CATALOG_TO_CANONICAL_TITLE_MISMATCH"
+      ]
+    },
+    {
+      "lessonOrdinal": 66,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L21",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 67,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L22",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 68,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U04:L23",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 69,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 70,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 71,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 72,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 73,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 74,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 75,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 76,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 77,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 78,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 79,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 80,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 81,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L13",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 82,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L14",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 83,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L15",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 84,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L16",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 85,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L17",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 86,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U05:L18",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 87,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 88,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 89,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 90,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 91,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 92,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 93,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 94,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 95,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 96,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 97,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 98,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 99,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L13",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 100,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L14",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 101,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "INDEX_PLC_VS_PREPARATION_TITLE_SOURCE_DISPOSITION_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 102,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L16",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 103,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L17",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 104,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L18",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 105,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L19",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 106,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L20",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 107,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L21",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 108,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L22",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 109,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L23",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 110,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L24",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 111,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L25",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 112,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 113,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING"
+      ]
+    },
+    {
+      "lessonOrdinal": 114,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 115,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 116,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 117,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 118,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 119,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 120,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 121,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 122,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 123,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 124,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L13",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 125,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L14",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 126,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L15",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 127,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L16",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 128,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 129,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 130,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 131,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 132,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 133,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 134,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 135,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 136,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 137,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 138,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L01",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 139,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L02",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 140,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L03",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 141,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L04",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 142,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L05",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 143,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L06",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 144,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L07",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 145,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L08",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 146,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L09",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 147,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L10",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 148,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L11",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    },
+    {
+      "lessonOrdinal": 149,
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L12",
+      "sourceEdition": "IM K-5 First Edition 2021",
+      "aCStatus": "READY_FOR_STAGE_D",
+      "technicalStatus": "D_TESTS_PASSED",
+      "academicStatus": "PENDING",
+      "sourceParity": "UNKNOWN",
+      "contentVersion": "phase30-common-core-rich-content-v1",
+      "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+      "actionsRunIds": [
+        40596583316
+      ],
+      "verifiedDigitalTestCount": 0,
+      "verifiedSourceElementCount": null,
+      "sourceElementCount": null,
+      "defects": [],
+      "dStatus": "D_BLOCKED",
+      "technicalTestScope": "GRADE4_SHARED_SOURCE_GUARDS_AND_RICHV2_AND_FOCUSED_DOTNET_ONLY",
+      "releaseBlockers": [
+        "SOURCE_ELEMENT_1_TO_1_AND_RIGHTS_NOT_CERTIFIED",
+        "REQUIRED_AUTHENTICATED_E2E_AND_VISUAL_ACCESSIBILITY_NOT_CERTIFIED",
+        "INDEPENDENT_ACADEMIC_REVIEW_MISSING",
+        "PRACTICE_MAPPING_STAGE_C_PENDING_STAGE_D_CONFIRMATION"
+      ]
+    }
+  ],
+  "lastDiagnosticEvidence": {
+    "candidateSha": "a031ffbe5f4fd5a02d90126a847958e35367d824",
+    "runId": 40596583316,
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40596583316",
+    "richV2StructurallyValid": 149,
+    "richV2StructurallyInvalid": 0,
+    "nodeSourceGuardsPassed": 306,
+    "nodeSourceGuardsFailed": 0,
+    "grade4FocusedDotNetPassed": 181,
+    "grade4FocusedDotNetFailed": 0,
+    "grade4DigitalDiagnostics": "SUCCESS",
+    "sourceAndAcademicFinalGate": "FAILED",
+    "authenticatedAcademicAcceptance": "FAILED",
+    "humanAcademicApprovals": 0
+  }
+}

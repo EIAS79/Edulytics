@@ -1,0 +1,44 @@
+{
+  "ordinal": 28,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "e19e4f14ba1575ca0fe5f9e049b7f43a5bab39ca9556f9332a64adadb7a09e77",
+    "teacherLesson": "cae9b49b32891a06f53be4075a80f86827a0c444bb70381e9e0f65c71fd190b2",
+    "studentPdf": "779ff77d592a47cb92c346ab5ec5e22ae8937b6b3a7509d5f69f6fd7b88af2cf"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Choral Count: $\\frac{1}{4}$ and $\\frac{1}{8}$ (10 minutes)",
+    "Activity 1: Describe the Pattern (15 minutes)",
+    "Activity 2: What's Missing? (20 minutes)",
+    "Cool-down: Fraction Multiplication (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.build"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-28-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:23+01:00",
+  "closeAtLocal": "2026-10-26T22:40:23+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

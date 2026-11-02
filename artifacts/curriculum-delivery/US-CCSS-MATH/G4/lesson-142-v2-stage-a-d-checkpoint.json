@@ -1,0 +1,50 @@
+{
+  "ordinal": 142,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L05",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_ORIGINAL_TWO_DIGIT_MULTIPLICATION_SOURCE_REUSED",
+    "B": "34_TIMES_21_PARTIAL_PRODUCTS_AND_SEVEN_CUBED_RIDDLE_REPAIRED",
+    "C": "EXTENDED_EXISTING_EXACT_KERNEL_TWO_DIGIT_MULTIPLICATION_EIGHT_CASES_TEST_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "25d8a0482555e40cecb0717127e5273365da3f26636e49c5548de7e71cc4fa6d",
+    "teacher": "f8e3f8de0c293a2fcb49dd7782b4ba02b9058d3ba80a0801836153885bc843fb"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Find 26 × 13 using partial products.",
+    "teacherAnswer": "338."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS 2021 original source intake",
+    "originalSourceActivities": [
+      "Warm-up: Estimation Exploration: A Silly Riddle (10 minutes)",
+      "Activity 1: Two Methods Revisited (20 minutes)",
+      "Activity 2: Two by Two (15 minutes)",
+      "Cool-down: Four by One and Two by Two (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Seven teachers are going to the park. | Each teacher is taking 7 students. | Each student is bringing 7 fishbowls.",
+      "Earlier in the course, we used these two ways to multiply numbers: | A | Caption: A",
+      "Here are two ways to find the value of \\(34 \\times 21\\). | A | Caption: A"
+    ],
+    "allowedFamily": "usccss.g4.u09.l05.two_digit_partial_products",
+    "primarySkillId": "number.whole.multiply.two_digit_partial_products",
+    "teacherOnlyTasks": [
+      "Original A/B partial products and standard algorithm figures",
+      "Estimate riddle strategy and source printed material"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal142TwoDigitMultiplicationTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

@@ -1,0 +1,1498 @@
+@using System.Security.Claims
+@using Edulytics.Core.Academics
+@using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
+@using Edulytics.Services.Curriculum
+@model Edulytics.Services.Academics.AcademicStructureDashboard
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AcademicResource> A
+@inject IExplicitCurriculumLevelUiQuery ExplicitClassQuery
+
+@{
+    ViewData["Title"] = A["AcademicStructureTitle"].Value;
+    var canManageAcademic = User.IsInRole(RoleNames.SubjectSupervisor);
+    var explicitCurriculum =
+        ViewData["ExplicitCurriculum"] as ExplicitCurriculumLevelDashboard ??
+        new ExplicitCurriculumLevelDashboard([], []);
+
+    var actorId = Guid.TryParse(
+        User.FindFirstValue(ClaimTypes.NameIdentifier),
+        out var parsedActorId)
+        ? parsedActorId
+        : Guid.Empty;
+
+    var explicitClasses = actorId == Guid.Empty
+        ? Array.Empty<ExplicitCurriculumClassItem>()
+        : (await ExplicitClassQuery.ListClassesAsync(actorId)).ToArray();
+
+    var mathematicsSubjects = Model.Subjects
+        .Where(x => string.Equals(x.Code, "MATH", StringComparison.OrdinalIgnoreCase))
+        .ToArray();
+}
+
+<section class="academic-page @(canManageAcademic ? "" : "is-readonly")">
+    <header class="academic-header">
+        <div>
+            <div class="user-eyebrow">@A["School"]</div>
+            <h1>@A["AcademicStructureTitle"]</h1>
+            <p>@(canManageAcademic ? A["AcademicStructureSubtitle"] : A["AcademicStructureViewSubtitle"])</p>
+            <strong>@Model.SchoolName</strong>
+        </div>
+        <a class="school-button"
+           asp-controller="SchoolHome"
+           asp-action="Dashboard">
+            @A["BackToDashboard"]
+        </a>
+    </header>
+
+    @if (TempData["AcademicSuccess"] is string success)
+    {
+        <div class="academic-alert academic-alert-success" role="status">@success</div>
+    }
+
+    @if (TempData["AcademicError"] is string error)
+    {
+        <div class="academic-alert academic-alert-error" role="alert">@error</div>
+    }
+
+    <nav class="academic-nav" aria-label="@A["AcademicStructureTitle"]">
+        <a href="#years">@A["AcademicYears"]</a>
+        <a href="#terms">@A["Terms"]</a>
+        <a href="#programs">@A["AcademicPrograms"]</a>
+        <a href="#grades">Curriculum Levels</a>
+        <a href="#classes">@A["Classes"]</a>
+        <a href="#subjects">Mathematics</a>
+        <a href="#teachers">@A["TeacherAssignments"]</a>
+        <a href="#students">@A["Students"]</a>
+    </nav>
+
+    <section id="years" class="academic-section">
+        <h2>@A["AcademicYears"]</h2>
+        <div class="academic-two-column">
+            @if (canManageAcademic)
+            {
+                <form asp-action="CreateAcademicYear" method="post"
+                      class="academic-card academic-form">
+                    <h3>@A["CreateAcademicYear"]</h3>
+                    <label for="year-name">@A["Name"]</label>
+                    <input id="year-name" name="name" maxlength="100" required />
+                    <label for="year-start">@A["StartsOn"]</label>
+                    <input id="year-start" name="startsOn" type="date" required />
+                    <label for="year-end">@A["EndsOn"]</label>
+                    <input id="year-end" name="endsOn" type="date" required />
+                    <label for="year-status">@A["Status"]</label>
+                    <select id="year-status" name="status">
+                        <option value="@((int)AcademicStructureStatus.Active)">@A["StatusActive"]</option>
+                        <option value="@((int)AcademicStructureStatus.Inactive)">@A["StatusInactive"]</option>
+                    </select>
+                    <button class="school-button school-button-primary" type="submit">
+                        @A["CreateAcademicYear"]
+                    </button>
+                </form>
+            }
+
+            <div class="academic-card">
+                @if (Model.AcademicYears.Count == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["Name"]</th>
+                            <th>@A["YearDates"]</th>
+                            <th>@A["Status"]</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.AcademicYears)
+                        {
+                            <tr>
+                                <td data-label="@A["Name"]">@item.Name</td>
+                                <td data-label="@A["YearDates"]">
+                                    @item.StartsOn.ToString("yyyy-MM-dd") – @item.EndsOn.ToString("yyyy-MM-dd")
+                                </td>
+                                <td data-label="@A["Status"]">@A[$"Status{item.Status}"]</td>
+                                <td>
+                                    @if (canManageAcademic)
+                                    {
+                                        <a asp-action="EditAcademicYear" asp-route-id="@item.Id">@A["Edit"]</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="terms" class="academic-section">
+        <h2>@A["Terms"]</h2>
+        <div class="academic-two-column">
+            @if (canManageAcademic)
+            {
+                <form asp-action="CreateTerm" method="post"
+                      class="academic-card academic-form">
+                    <h3>@A["CreateTerm"]</h3>
+                    <label for="term-year">@A["AcademicYear"]</label>
+                    <select id="term-year" name="academicYearId" required>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var year in Model.AcademicYears)
+                        {
+                            <option value="@year.Id">@year.Name</option>
+                        }
+                    </select>
+                    <label for="term-name">@A["Name"]</label>
+                    <input id="term-name" name="name" maxlength="100" required />
+                    <label for="term-start">@A["StartsOn"]</label>
+                    <input id="term-start" name="startsOn" type="date" required />
+                    <label for="term-end">@A["EndsOn"]</label>
+                    <input id="term-end" name="endsOn" type="date" required />
+                    <label for="term-status">@A["Status"]</label>
+                    <select id="term-status" name="status">
+                        <option value="@((int)AcademicStructureStatus.Active)">@A["StatusActive"]</option>
+                        <option value="@((int)AcademicStructureStatus.Inactive)">@A["StatusInactive"]</option>
+                    </select>
+                    <button class="school-button school-button-primary" type="submit">@A["CreateTerm"]</button>
+                </form>
+            }
+
+            <div class="academic-card">
+                @if (Model.Terms.Count == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["AcademicYear"]</th>
+                            <th>@A["Name"]</th>
+                            <th>@A["YearDates"]</th>
+                            <th>@A["Status"]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.Terms)
+                        {
+                            <tr>
+                                <td data-label="@A["AcademicYear"]">@item.AcademicYearName</td>
+                                <td data-label="@A["Name"]">@item.Name</td>
+                                <td data-label="@A["YearDates"]">
+                                    @item.StartsOn.ToString("yyyy-MM-dd") – @item.EndsOn.ToString("yyyy-MM-dd")
+                                </td>
+                                <td data-label="@A["Status"]">@A[$"Status{item.Status}"]</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="academic-section">
+        <h2>@A["AcademicPrograms"]</h2>
+        <p class="academic-help">
+            Select which school stream is offered in each academic year. Each stream maps to one controlled Mathematics curriculum pack.
+        </p>
+
+        <div class="academic-card academic-form academic-programs-group">
+            <div class="academic-form academic-programs-context">
+                <label for="program-year-filter">@A["AcademicYear"]</label>
+                <select id="program-year-filter">
+                    @if (Model.AcademicYears.Count == 0)
+                    {
+                        <option value="">@A["SelectOption"]</option>
+                    }
+                    else
+                    {
+                        @foreach (var year in Model.AcademicYears)
+                        {
+                            <option value="@year.Id">@year.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="academic-two-column academic-programs-subgroups">
+                @if (canManageAcademic)
+                {
+                    <form asp-action="CreateAcademicProgram"
+                          method="post"
+                          class="academic-card academic-form academic-programs-subgroup">
+                        <h3>@A["AddProgramToAcademicYear"]</h3>
+                        <input id="program-offer-year"
+                               type="hidden"
+                               name="academicYearId" />
+                        <label for="program-choice">@A["Name"]</label>
+                        <select id="program-choice"
+                                name="programChoice"
+                                required>
+                            <option value="">@A["SelectOption"]</option>
+                            @foreach (var choice in AcademicProgramCatalog.All)
+                            {
+                                var existingProgram = Model.AcademicPrograms
+                                    .FirstOrDefault(program =>
+                                        string.Equals(
+                                            program.Code,
+                                            choice.Code,
+                                            StringComparison.OrdinalIgnoreCase));
+
+                                var offeredYears = existingProgram is null
+                                    ? string.Empty
+                                    : string.Join(
+                                        "|",
+                                        Model.AcademicYearProgramOfferings
+                                            .Where(offering =>
+                                                offering.AcademicProgramId == existingProgram.Id &&
+                                                offering.IsOffered)
+                                            .Select(offering => offering.AcademicYearId));
+
+                                <option value="@choice.Key"
+                                        data-offered-years="@offeredYears">
+                                    @choice.Name
+                                </option>
+                            }
+                        </select>
+                        <button class="school-button school-button-primary academic-programs-add-action"
+                                type="submit">
+                            @A["AddProgramButton"]
+                        </button>
+                    </form>
+                }
+
+                <div class="academic-card academic-programs-subgroup">
+                    <table class="academic-table" id="program-year-table">
+                        <thead>
+                        <tr>
+                            <th>@A["Name"]</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var offering in Model.AcademicYearProgramOfferings.Where(x => x.IsOffered))
+                        {
+                            var program = Model.AcademicPrograms
+                                .FirstOrDefault(x => x.Id == offering.AcademicProgramId);
+
+                            if (program is null || program.IsDefault)
+                            {
+                                continue;
+                            }
+
+                            <tr data-program-offering-row
+                                data-year-id="@offering.AcademicYearId">
+                                <td>@program.Name</td>
+                                <td>
+                                    @if (canManageAcademic)
+                                    {
+                                        <form asp-action="StopAcademicProgramForYear"
+                                              asp-route-academicProgramId="@program.Id"
+                                              asp-route-academicYearId="@offering.AcademicYearId"
+                                              method="post">
+                                            <input type="hidden"
+                                                   name="rowVersion"
+                                                   value="@Convert.ToBase64String(offering.RowVersion)" />
+                                            <button type="submit"
+                                                    class="school-button school-button-small academic-programs-remove-action">
+                                                @A["RemoveProgramButton"]
+                                            </button>
+                                        </form>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                    <p id="program-year-empty" class="academic-help" hidden>
+                        @A["NoProgramsOfferedForAcademicYear"]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="grades" class="academic-section">
+        <h2>Curriculum Levels</h2>
+        <p class="academic-help">
+            Grade/Year is supplied by the selected curriculum pack. Manual Grade name and Order creation is disabled in the normal workflow.
+        </p>
+
+        <div class="academic-two-column">
+            @if (canManageAcademic)
+            {
+                <form asp-action="AdoptCurriculumLevel"
+                      method="post"
+                      class="academic-card academic-form">
+                    <h3>Add Curriculum Level</h3>
+
+                    <label for="level-year">@A["AcademicYear"]</label>
+                    <select id="level-year" name="academicYearId" required>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var year in Model.AcademicYears)
+                        {
+                            <option value="@year.Id">@year.Name</option>
+                        }
+                    </select>
+
+                    <label for="level-program">@A["AcademicProgram"]</label>
+                    <select id="level-program" name="academicProgramId" required disabled>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var program in Model.AcademicPrograms
+                            .Where(x => x.Status == AcademicStructureStatus.Active && !x.IsDefault))
+                        {
+                            var offeredYears = string.Join(
+                                "|",
+                                Model.AcademicYearProgramOfferings
+                                    .Where(x =>
+                                        x.AcademicProgramId == program.Id &&
+                                        x.IsOffered)
+                                    .Select(x => x.AcademicYearId));
+
+                            <option value="@program.Id"
+                                    data-offered-years="@offeredYears"
+                                    hidden
+                                    disabled>
+                                @program.Name
+                            </option>
+                        }
+                    </select>
+
+                    <label for="level-key">Curriculum Level</label>
+                    <select id="level-key" name="curriculumLevelKey" required disabled>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var level in explicitCurriculum.AvailableLevels)
+                        {
+                            <option value="@level.LevelKey"
+                                    data-program-id="@level.AcademicProgramId"
+                                    hidden
+                                    disabled>
+                                @level.DisplayLabel
+                            </option>
+                        }
+                    </select>
+
+                    <button class="school-button school-button-primary" type="submit">
+                        Add Curriculum Level
+                    </button>
+                </form>
+            }
+
+            <div class="academic-card">
+                @if (explicitCurriculum.Adoptions.Count == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["AcademicYear"]</th>
+                            <th>@A["AcademicProgram"]</th>
+                            <th>Curriculum Level</th>
+                            <th>Stage / Pathway</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in explicitCurriculum.Adoptions)
+                        {
+                            <tr>
+                                <td data-label="@A["AcademicYear"]">@item.AcademicYearName</td>
+                                <td data-label="@A["AcademicProgram"]">@item.AcademicProgramName</td>
+                                <td data-label="Curriculum Level">@item.Label</td>
+                                <td data-label="Stage / Pathway">
+                                    @item.Stage
+                                    @if (!string.IsNullOrWhiteSpace(item.Pathway))
+                                    {
+                                        <span> — @item.Pathway</span>
+                                    }
+                                    @if (item.FrameworkCode == "US-CCSS-MATH" &&
+                                        item.LogicalLevel is >= 10 and <= 13 &&
+                                        item.Pathway == "Course/pathway mapping")
+                                    {
+                                        <p role="alert" class="academic-help">
+                                            Course selection required before high-school lesson Practice.
+                                            This choice changes the adopted course for all linked classes.
+                                        </p>
+                                        @if (canManageAcademic)
+                                        {
+                                            <form asp-action="ReconcileLegacyUsHighSchoolCourse" method="post">
+                                                <input type="hidden" name="curriculumAdoptionId" value="@item.Id" />
+                                                <input type="hidden" name="rowVersion"
+                                                       value="@Convert.ToBase64String(item.RowVersion)" />
+                                                <label for="legacy-course-@item.Id">Confirm the school's actual course</label>
+                                                <select id="legacy-course-@item.Id"
+                                                        name="curriculumLevelKey" required>
+                                                    <option value="">Choose course (no default)</option>
+                                                    @foreach (var course in explicitCurriculum.AvailableLevels
+                                                        .Where(x => x.AcademicProgramId == item.AcademicProgramId &&
+                                                            x.LogicalLevel == item.LogicalLevel &&
+                                                            x.CourseCode is not null))
+                                                    {
+                                                        <option value="@course.LevelKey">@course.DisplayLabel</option>
+                                                    }
+                                                </select>
+                                                <button class="school-button school-button-small" type="submit">
+                                                    Confirm course
+                                                </button>
+                                            </form>
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="classes" class="academic-section">
+        <h2>@A["Classes"]</h2>
+        <p class="academic-help">
+            A class belongs directly to one adopted Curriculum Level. Program, Mathematics and compatibility Grade are inferred from that adoption.
+        </p>
+
+        <div class="academic-two-column">
+            @if (canManageAcademic)
+            {
+                <form asp-action="CreateCurriculumClass"
+                      method="post"
+                      class="academic-card academic-form">
+                    <h3>@A["CreateClass"]</h3>
+                    <label for="class-year">@A["AcademicYear"]</label>
+                    <select id="class-year" name="academicYearId" required>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var year in Model.AcademicYears)
+                        {
+                            <option value="@year.Id">@year.Name</option>
+                        }
+                    </select>
+
+                    <label for="class-adoption">Curriculum Level</label>
+                    <select id="class-adoption" name="curriculumAdoptionId" required disabled>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var adoption in explicitCurriculum.Adoptions)
+                        {
+                            <option value="@adoption.Id"
+                                    data-year-id="@adoption.AcademicYearId"
+                                    hidden
+                                    disabled>
+                                @adoption.AcademicProgramName — @adoption.Label@(string.IsNullOrWhiteSpace(adoption.Pathway) ? string.Empty : $" — {adoption.Pathway}")
+                            </option>
+                        }
+                    </select>
+
+                    <label for="class-name">@A["Name"]</label>
+                    <input id="class-name" name="name" maxlength="150" required />
+
+                    <label for="class-status">@A["Status"]</label>
+                    <select id="class-status" name="status">
+                        <option value="@((int)AcademicStructureStatus.Active)">@A["StatusActive"]</option>
+                        <option value="@((int)AcademicStructureStatus.Inactive)">@A["StatusInactive"]</option>
+                    </select>
+
+                    <button class="school-button school-button-primary" type="submit">@A["CreateClass"]</button>
+                </form>
+            }
+
+            <div class="academic-card">
+                @if (explicitClasses.Length == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["Name"]</th>
+                            <th>@A["AcademicYear"]</th>
+                            <th>@A["AcademicProgram"]</th>
+                            <th>Curriculum Level</th>
+                            <th>@A["Status"]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in explicitClasses)
+                        {
+                            <tr>
+                                <td data-label="@A["Name"]">@item.Name</td>
+                                <td data-label="@A["AcademicYear"]">@item.AcademicYearName</td>
+                                <td data-label="@A["AcademicProgram"]">@item.AcademicProgramName</td>
+                                <td data-label="Curriculum Level">
+                                    @item.CurriculumLevelLabel
+                                    @if (!string.IsNullOrWhiteSpace(item.CurriculumPathway))
+                                    {
+                                        <span> — @item.CurriculumPathway</span>
+                                    }
+                                </td>
+                                <td data-label="@A["Status"]">@A[$"Status{item.Status}"]</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="subjects" class="academic-section">
+        <h2>Mathematics</h2>
+        <div class="academic-card">
+            <p class="academic-help">
+                Mathematics is the fixed subject for the current Edulytics product. Subject code is MATH; the normal UI does not create MATH6/MATH7 or arbitrary subjects.
+            </p>
+
+            @if (mathematicsSubjects.Length == 0)
+            {
+                <p>Mathematics will be created automatically when the first Curriculum Level is adopted.</p>
+            }
+            else
+            {
+                <table class="academic-table">
+                    <thead>
+                    <tr>
+                        <th>@A["Code"]</th>
+                        <th>@A["Name"]</th>
+                        <th>@A["Status"]</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in mathematicsSubjects)
+                    {
+                        <tr>
+                            <td data-label="@A["Code"]">@item.Code</td>
+                            <td data-label="@A["Name"]">@item.Name</td>
+                            <td data-label="@A["Status"]">@A[$"Status{item.Status}"]</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </section>
+
+    <section id="teachers" class="academic-section">
+        <h2>@A["TeacherAssignments"]</h2>
+        <div class="academic-two-column">
+            @if (canManageAcademic)
+            {
+                <form asp-action="CreateCurriculumTeacherAssignment"
+                      method="post"
+                      class="academic-card academic-form">
+                    <h3>@A["AssignTeacher"]</h3>
+
+                    <label for="teacher-search">@A["SearchTeachers"]</label>
+                    <input id="teacher-search"
+                           type="search"
+                           autocomplete="off"
+                           placeholder="@A["SearchTeachersPlaceholder"]" />
+
+                    <label for="teacher-id">@A["Teacher"]</label>
+                    <select id="teacher-id" name="teacherUserId" required>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var teacher in Model.TeacherCandidates)
+                        {
+                            <option value="@teacher.Id">@teacher.Email</option>
+                        }
+                    </select>
+                    <p id="teacher-search-status" class="academic-help" aria-live="polite"></p>
+
+                    <div class="academic-assignment-filter-grid">
+                        <label for="teacher-year-filter">
+                            <span>@A["AcademicYear"]</span>
+                            <select id="teacher-year-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                @foreach (var year in explicitClasses
+                                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                                    .GroupBy(x => new { x.AcademicYearId, x.AcademicYearName })
+                                    .Select(x => x.Key)
+                                    .OrderByDescending(x => x.AcademicYearName))
+                                {
+                                    <option value="@year.AcademicYearId">@year.AcademicYearName</option>
+                                }
+                            </select>
+                        </label>
+
+                        <label for="teacher-program-filter">
+                            <span>@A["Curriculum"]</span>
+                            <select id="teacher-program-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                @foreach (var program in explicitClasses
+                                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                                    .GroupBy(x => new { x.AcademicProgramId, x.AcademicProgramName })
+                                    .Select(x => x.Key)
+                                    .OrderBy(x => x.AcademicProgramName))
+                                {
+                                    <option value="@program.AcademicProgramId">@program.AcademicProgramName</option>
+                                }
+                            </select>
+                        </label>
+
+                        <label for="teacher-level-filter">
+                            <span>@A["Grade"] / @A["CurriculumLevel"]</span>
+                            <select id="teacher-level-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                @foreach (var level in explicitClasses
+                                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                                    .GroupBy(x => new { x.CurriculumLevelKey, x.CurriculumLogicalLevel, x.CurriculumLevelLabel, x.CurriculumPathway })
+                                    .Select(x => x.Key)
+                                    .OrderBy(x => x.CurriculumLogicalLevel)
+                                    .ThenBy(x => x.CurriculumPathway ?? string.Empty))
+                                {
+                                    <option value="@level.CurriculumLevelKey">
+                                        @level.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(level.CurriculumPathway) ? string.Empty : $" · {level.CurriculumPathway}")
+                                    </option>
+                                }
+                            </select>
+                        </label>
+
+                        <label for="teacher-assignment-filter">
+                            <span>@A["AssignmentStatus"]</span>
+                            <select id="teacher-assignment-filter">
+                                <option value="">@A["AllOptions"]</option>
+                                <option value="assigned">@A["Assigned"]</option>
+                                <option value="unassigned">@A["Unassigned"]</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label for="teacher-class">@A["Class"]</label>
+                    <select id="teacher-class" name="classGroupId" required>
+                        <option value="">@A["SelectOption"]</option>
+                        @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                        {
+                            var hasAssignment = Model.TeacherAssignments.Any(
+                                x => x.ClassGroupId == item.ClassGroupId);
+                            <option value="@item.ClassGroupId"
+                                    data-year-id="@item.AcademicYearId"
+                                    data-program-id="@item.AcademicProgramId"
+                                    data-level-key="@item.CurriculumLevelKey"
+                                    data-assignment-state="@(hasAssignment ? "assigned" : "unassigned")">
+                                @item.Name — @item.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(item.CurriculumPathway) ? string.Empty : $" — {item.CurriculumPathway}") — @item.AcademicYearName
+                            </option>
+                        }
+                    </select>
+
+                    <p class="academic-help">@A["MathematicsAssignmentContextHelp"]</p>
+                    <button class="school-button school-button-primary" type="submit">@A["AssignTeacher"]</button>
+                </form>
+            }
+
+            <div class="academic-card">
+                @if (Model.TeacherAssignments.Count == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["Teacher"]</th>
+                            <th>@A["Class"]</th>
+                            <th>@A["Subject"]</th>
+                            <th>@A["AcademicYear"]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.TeacherAssignments)
+                        {
+                            <tr>
+                                <td data-label="@A["Teacher"]">@item.TeacherEmail</td>
+                                <td data-label="@A["Class"]">@item.ClassName</td>
+                                <td data-label="@A["Subject"]">@item.SubjectName</td>
+                                <td data-label="@A["AcademicYear"]">@item.AcademicYearName</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="students" class="academic-section">
+        <h2>@A["Students"]</h2>
+
+        <div class="academic-section-actions">
+            <a class="school-button school-button-secondary"
+               asp-controller="SchoolUsers"
+               asp-action="Index"
+               asp-route-role="@RoleNames.Student">
+                @A["ManageStudentAccounts"]
+            </a>
+        </div>
+
+        <section class="academic-card academic-class-browser academic-class-browser-modern">
+            <div class="academic-class-browser-heading">
+                <div>
+                    <span class="academic-class-browser-eyebrow">@A["Classes"]</span>
+                    <h3>@A["ClassOverview"]</h3>
+                    <p class="academic-help">@A["ClassOverviewHelp"]</p>
+                </div>
+            </div>
+
+            @if (explicitClasses.Length == 0)
+            {
+                <p>@A["NoRecords"]</p>
+            }
+            else
+            {
+                @foreach (var yearGroup in explicitClasses
+                    .Where(x => x.Status == AcademicStructureStatus.Active)
+                    .GroupBy(x => new { x.AcademicYearId, x.AcademicYearName })
+                    .OrderByDescending(x => x.Key.AcademicYearName))
+                {
+                    <section class="academic-class-year-group">
+                        <div class="academic-class-group-heading">
+                            <span class="academic-class-group-kicker">@A["AcademicYear"]</span>
+                            <h4>@yearGroup.Key.AcademicYearName</h4>
+                        </div>
+
+                        @foreach (var programGroup in yearGroup
+                            .GroupBy(x => new { x.AcademicProgramId, x.AcademicProgramName })
+                            .OrderBy(x => x.Key.AcademicProgramName))
+                        {
+                            <section class="academic-class-program-group">
+                                <div class="academic-class-program-heading">
+                                    <h5>@programGroup.Key.AcademicProgramName</h5>
+                                    <span>@programGroup.Count() @A["Classes"]</span>
+                                </div>
+
+                                <div class="academic-class-browser-grid">
+                                    @foreach (var classItem in programGroup
+                                        .OrderBy(x => x.CurriculumLogicalLevel)
+                                        .ThenBy(x => x.CurriculumPathway ?? string.Empty)
+                                        .ThenBy(x => x.Name))
+                                    {
+                                        var classStudents = Model.StudentEnrollments
+                                            .Where(x => x.ClassGroupId == classItem.ClassGroupId)
+                                            .OrderBy(x => x.StudentDisplayName)
+                                            .ToArray();
+                                        var classTeachers = Model.TeacherAssignments
+                                            .Where(x => x.ClassGroupId == classItem.ClassGroupId)
+                                            .Select(x => x.TeacherEmail)
+                                            .Where(x => !string.IsNullOrWhiteSpace(x))
+                                            .Distinct(StringComparer.OrdinalIgnoreCase)
+                                            .OrderBy(x => x)
+                                            .ToArray();
+                                        var primaryTeacher = classTeachers.FirstOrDefault();
+                                        var additionalTeachers = Math.Max(0, classTeachers.Length - 1);
+                                        var classDialogId = $"class-details-{classItem.ClassGroupId:N}";
+
+                                        <article class="academic-class-browser-card academic-class-browser-card-modern">
+                                            <div class="academic-class-card-topline">
+                                                <span class="academic-class-level-badge">
+                                                    @A["GradeLevel"] @classItem.CurriculumLogicalLevel
+                                                </span>
+                                                @if (!string.IsNullOrWhiteSpace(classItem.CurriculumPathway))
+                                                {
+                                                    <span class="academic-class-pathway-badge">
+                                                        @classItem.CurriculumPathway
+                                                    </span>
+                                                }
+                                            </div>
+
+                                            <div class="academic-class-card-title">
+                                                <h6 title="@classItem.Name">@classItem.Name</h6>
+                                                <p title="@classItem.CurriculumLevelLabel">
+                                                    @classItem.CurriculumLevelLabel
+                                                </p>
+                                            </div>
+
+                                            <div class="academic-class-card-stats">
+                                                <div>
+                                                    <strong>@classStudents.Length</strong>
+                                                    <span>@A["Students"]</span>
+                                                </div>
+                                                <div>
+                                                    <strong>@classTeachers.Length</strong>
+                                                    <span>@A["Teachers"]</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="academic-class-teacher-preview">
+                                                <span class="academic-class-teacher-icon" aria-hidden="true">@@</span>
+                                                @if (string.IsNullOrWhiteSpace(primaryTeacher))
+                                                {
+                                                    <span class="academic-class-teacher-empty">
+                                                        @A["NoAssignedTeacher"]
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <a class="academic-class-teacher-email"
+                                                       href="mailto:@primaryTeacher"
+                                                       title="@primaryTeacher">
+                                                        @primaryTeacher
+                                                    </a>
+                                                    @if (additionalTeachers > 0)
+                                                    {
+                                                        <span class="academic-class-more-count">
+                                                            +@additionalTeachers
+                                                        </span>
+                                                    }
+                                                }
+                                            </div>
+
+                                            <button type="button"
+                                                    class="academic-class-details-button"
+                                                    data-class-details-open="@classDialogId">
+                                                <span>@A["ViewClassDetails"]</span>
+                                                <span aria-hidden="true">→</span>
+                                            </button>
+                                        </article>
+
+                                        <dialog id="@classDialogId"
+                                                class="academic-class-details-dialog">
+                                            <div class="academic-class-details-header">
+                                                <div>
+                                                    <span class="academic-class-browser-eyebrow">
+                                                        @yearGroup.Key.AcademicYearName · @programGroup.Key.AcademicProgramName
+                                                    </span>
+                                                    <h3>@classItem.Name</h3>
+                                                    <p>
+                                                        @classItem.CurriculumLevelLabel@(string.IsNullOrWhiteSpace(classItem.CurriculumPathway) ? string.Empty : $" · {classItem.CurriculumPathway}")
+                                                    </p>
+                                                </div>
+                                                <button type="button"
+                                                        class="academic-class-dialog-close"
+                                                        data-class-details-close
+                                                        aria-label="@A["Close"]">
+                                                    ×
+                                                </button>
+                                            </div>
+
+                                            <div class="academic-class-details-summary">
+                                                <div>
+                                                    <strong>@classStudents.Length</strong>
+                                                    <span>@A["Students"]</span>
+                                                </div>
+                                                <div>
+                                                    <strong>@classTeachers.Length</strong>
+                                                    <span>@A["Teachers"]</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="academic-class-details-grid">
+                                                <section>
+                                                    <h4>@A["AssignedTeachers"]</h4>
+                                                    @if (classTeachers.Length == 0)
+                                                    {
+                                                        <p class="academic-help">@A["NoAssignedTeacher"]</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <ul class="academic-class-teacher-list">
+                                                            @foreach (var teacherEmail in classTeachers)
+                                                            {
+                                                                <li>
+                                                                    <span class="academic-class-teacher-icon" aria-hidden="true">@@</span>
+                                                                    <a href="mailto:@teacherEmail"
+                                                                       title="@teacherEmail">
+                                                                        @teacherEmail
+                                                                    </a>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </section>
+
+                                                <section>
+                                                    <h4>@A["Students"]</h4>
+                                                    @if (classStudents.Length == 0)
+                                                    {
+                                                        <p class="academic-help">@A["NoStudentsInClass"]</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <ul class="academic-class-student-list academic-class-student-list-modern">
+                                                            @foreach (var enrollment in classStudents)
+                                                            {
+                                                                var profile = Model.StudentProfiles
+                                                                    .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
+                                                                var studentInitial = string.IsNullOrWhiteSpace(enrollment.StudentDisplayName)
+                                                                    ? "?"
+                                                                    : enrollment.StudentDisplayName.Trim()[..1].ToUpperInvariant();
+
+                                                                <li>
+                                                                    <span class="academic-class-student-avatar" aria-hidden="true">@studentInitial</span>
+                                                                    <span>
+                                                                        <strong>@enrollment.StudentDisplayName</strong>
+                                                                        @if (profile is not null)
+                                                                        {
+                                                                            <small>@profile.StudentNumber</small>
+                                                                        }
+                                                                    </span>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </section>
+                                            </div>
+
+                                            <div class="academic-class-details-actions">
+                                                <button type="button"
+                                                        class="school-button school-button-primary"
+                                                        data-class-details-close>
+                                                    @A["Close"]
+                                                </button>
+                                            </div>
+                                        </dialog>
+                                    }
+                                </div>
+                            </section>
+                        }
+                    </section>
+                }
+            }
+        </section>
+
+        @if (canManageAcademic)
+        {
+            <section class="academic-card academic-student-move academic-student-move-modern">
+                <div class="academic-move-header">
+                    <div>
+                        <span class="academic-move-eyebrow">@A["Students"]</span>
+                        <h3>@A["MoveStudents"]</h3>
+                        <p class="academic-help">@A["MoveStudentsHelp"]</p>
+                    </div>
+                    <span id="student-move-header-count"
+                          class="academic-move-count-badge"
+                          data-selected-template="@A["SelectedStudentsValue", "{0}"]">
+                        @A["SelectedStudentsValue", 0]
+                    </span>
+                </div>
+
+                <form id="student-move-form"
+                      asp-controller="AcademicStructureBulk"
+                      asp-action="PlaceStudents"
+                      method="post"
+                      data-select-source="@A["SelectSourceClassHelp"]"
+                      data-no-students="@A["NoStudentsInClass"]"
+                      data-selected-template="@A["SelectedStudentsValue", "{0}"]">
+                    @Html.AntiForgeryToken()
+
+                    <ol class="academic-move-stepper" aria-label="@A["MoveStudents"]">
+                        <li id="student-move-step-source" class="is-active">
+                            <span class="academic-move-step-number">1</span>
+                            <span>
+                                <strong>@A["FromClass"]</strong>
+                                <small>@A["SelectOption"]</small>
+                            </span>
+                        </li>
+                        <li id="student-move-step-students">
+                            <span class="academic-move-step-number">2</span>
+                            <span>
+                                <strong>@A["Students"]</strong>
+                                <small id="student-move-step-students-copy">@A["SelectSourceClassHelp"]</small>
+                            </span>
+                        </li>
+                        <li id="student-move-step-target">
+                            <span class="academic-move-step-number">3</span>
+                            <span>
+                                <strong>@A["ToClass"]</strong>
+                                <small>@A["ReviewMove"]</small>
+                            </span>
+                        </li>
+                    </ol>
+
+                    <div class="academic-move-workspace">
+                        <section class="academic-move-panel academic-move-source-panel">
+                            <div class="academic-move-panel-heading">
+                                <span class="academic-move-panel-index">01</span>
+                                <div>
+                                    <strong>@A["FromClass"]</strong>
+                                    <small>@A["SelectSourceClassHelp"]</small>
+                                </div>
+                            </div>
+
+                            <label class="academic-form-field" for="move-source-class">
+                                <span>@A["Class"]</span>
+                                <select id="move-source-class"
+                                        name="sourceClassGroupId"
+                                        required>
+                                    <option value="">@A["SelectOption"]</option>
+                                    @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                                    {
+                                        <option value="@item.ClassGroupId"
+                                                data-year-id="@item.AcademicYearId"
+                                                data-program-id="@item.AcademicProgramId"
+                                                data-adoption-id="@item.CurriculumAdoptionId"
+                                                data-level-key="@item.CurriculumLevelKey"
+                                                data-class-label="@item.DisplayLabel">
+                                            @item.DisplayLabel · @item.AcademicYearName
+                                        </option>
+                                    }
+                                </select>
+                            </label>
+
+                            <div id="student-move-source-meta"
+                                 class="academic-move-context"
+                                 hidden></div>
+                        </section>
+
+                        <section id="student-move-students-panel"
+                                 class="academic-move-panel academic-move-students-panel is-disabled">
+                            <div class="academic-move-panel-heading">
+                                <span class="academic-move-panel-index">02</span>
+                                <div>
+                                    <strong>@A["Students"]</strong>
+                                    <small id="student-move-visible-count">@A["SelectSourceClassHelp"]</small>
+                                </div>
+                            </div>
+
+                            <div class="academic-student-picker-toolbar">
+                                <label for="student-move-search">
+                                    <span>@A["SearchStudents"]</span>
+                                    <input id="student-move-search"
+                                           type="search"
+                                           autocomplete="off"
+                                           disabled
+                                           placeholder="@A["SearchStudentsPlaceholder"]" />
+                                </label>
+
+                                <label class="academic-check-inline academic-select-all-card">
+                                    <input id="student-move-select-all"
+                                           type="checkbox"
+                                           disabled />
+                                    <span>@A["SelectAllVisible"]</span>
+                                </label>
+                            </div>
+
+                            <div id="student-move-empty"
+                                 class="academic-move-empty-state">
+                                <span class="academic-move-empty-icon" aria-hidden="true">↳</span>
+                                <strong>@A["SelectSourceClassHelp"]</strong>
+                            </div>
+
+                            <div id="student-move-list"
+                                 class="academic-student-move-list"
+                                 aria-live="polite">
+                                @foreach (var enrollment in Model.StudentEnrollments
+                                    .OrderBy(x => x.StudentDisplayName))
+                                {
+                                    var profile = Model.StudentProfiles
+                                        .FirstOrDefault(x => x.Id == enrollment.StudentProfileId);
+                                    var searchValue = $"{enrollment.StudentDisplayName} {profile?.StudentNumber} {profile?.UserEmail}"
+                                        .ToLowerInvariant();
+                                    var studentInitial = string.IsNullOrWhiteSpace(enrollment.StudentDisplayName)
+                                        ? "?"
+                                        : enrollment.StudentDisplayName.Trim()[..1].ToUpperInvariant();
+
+                                    <label class="academic-student-move-row"
+                                           data-student-move-row
+                                           data-class-id="@enrollment.ClassGroupId"
+                                           data-search="@searchValue"
+                                           data-student-name="@enrollment.StudentDisplayName"
+                                           hidden>
+                                        <input type="checkbox"
+                                               name="studentProfileIds"
+                                               value="@enrollment.StudentProfileId"
+                                               disabled />
+                                        <span class="academic-student-avatar" aria-hidden="true">
+                                            @studentInitial
+                                        </span>
+                                        <span class="academic-student-move-copy">
+                                            <strong>@enrollment.StudentDisplayName</strong>
+                                            <small>
+                                                @(profile?.StudentNumber ?? string.Empty)
+                                                @if (!string.IsNullOrWhiteSpace(profile?.UserEmail))
+                                                {
+                                                    <span> · @profile.UserEmail</span>
+                                                }
+                                            </small>
+                                        </span>
+                                        <span class="academic-student-selected-mark" aria-hidden="true">✓</span>
+                                    </label>
+                                }
+                            </div>
+                        </section>
+
+                        <section id="student-move-target-panel"
+                                 class="academic-move-panel academic-move-target-panel is-disabled">
+                            <div class="academic-move-panel-heading">
+                                <span class="academic-move-panel-index">03</span>
+                                <div>
+                                    <strong>@A["ToClass"]</strong>
+                                    <small>@A["ReviewMove"]</small>
+                                </div>
+                            </div>
+
+                            <label class="academic-form-field" for="move-target-class">
+                                <span>@A["Class"]</span>
+                                <select id="move-target-class"
+                                        name="classGroupId"
+                                        required
+                                        disabled>
+                                    <option value="">@A["SelectOption"]</option>
+                                    @foreach (var item in explicitClasses.Where(x => x.Status == AcademicStructureStatus.Active))
+                                    {
+                                        <option value="@item.ClassGroupId"
+                                                data-year-id="@item.AcademicYearId"
+                                                data-program-id="@item.AcademicProgramId"
+                                                data-adoption-id="@item.CurriculumAdoptionId"
+                                                data-level-key="@item.CurriculumLevelKey"
+                                                data-class-label="@item.DisplayLabel"
+                                                hidden
+                                                disabled>
+                                            @item.DisplayLabel · @item.AcademicYearName
+                                        </option>
+                                    }
+                                </select>
+                            </label>
+
+                            <div id="student-move-target-hint"
+                                 class="academic-move-context">
+                                @A["SelectSourceClassHelp"]
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="academic-move-summary academic-move-actionbar">
+                        <div>
+                            <strong id="student-move-selected"
+                                    data-selected-template="@A["SelectedStudentsValue", "{0}"]">
+                                @A["SelectedStudentsValue", 0]
+                            </strong>
+                            <small id="student-move-ready-copy">@A["SelectSourceClassHelp"]</small>
+                        </div>
+                        <button id="student-move-review"
+                                type="button"
+                                class="school-button school-button-primary academic-move-review-button"
+                                disabled>
+                            @A["ReviewMove"]
+                        </button>
+                    </div>
+                </form>
+
+                <dialog id="student-move-dialog"
+                        class="academic-move-dialog academic-move-dialog-modern">
+                    <div class="academic-move-dialog-heading">
+                        <span class="academic-move-panel-index">✓</span>
+                        <div>
+                            <h3>@A["MoveStudents"]</h3>
+                            <p class="academic-help">@A["ReviewMove"]</p>
+                        </div>
+                    </div>
+                    <dl>
+                        <div>
+                            <dt>@A["FromClass"]</dt>
+                            <dd id="student-move-review-from">—</dd>
+                        </div>
+                        <div>
+                            <dt>@A["ToClass"]</dt>
+                            <dd id="student-move-review-to">—</dd>
+                        </div>
+                        <div>
+                            <dt>@A["Students"]</dt>
+                            <dd id="student-move-review-count">0</dd>
+                        </div>
+                    </dl>
+                    <ul id="student-move-review-students"
+                        class="academic-move-review-students"></ul>
+                    <div class="academic-move-dialog-actions">
+                        <button id="student-move-cancel"
+                                type="button"
+                                class="school-button school-button-secondary">
+                            @A["Cancel"]
+                        </button>
+                        <button type="submit"
+                                form="student-move-form"
+                                class="school-button school-button-primary">
+                            @A["ConfirmMove"]
+                        </button>
+                    </div>
+                </dialog>
+            </section>
+        }
+
+        <details class="academic-card academic-legacy-student-tools">
+            <summary>@A["AdditionalStudentAdministration"]</summary>
+        <div class="academic-two-column academic-list-grid">
+            <div class="academic-card">
+                <h3>@A["Students"]</h3>
+                @if (Model.StudentProfiles.Count == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["StudentNumber"]</th>
+                            <th>@A["Name"]</th>
+                            <th>@A["LinkedUser"]</th>
+                            <th>@A["Status"]</th>
+                            <th>@A["StudentCommercialState"]</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.StudentProfiles)
+                        {
+                            <tr>
+                                <td data-label="@A["StudentNumber"]">@item.StudentNumber</td>
+                                <td data-label="@A["Name"]">@item.DisplayName</td>
+                                <td data-label="@A["LinkedUser"]">@(item.UserEmail ?? A["NoLinkedAccount"].Value)</td>
+                                <td data-label="@A["Status"]">@A[$"Status{item.Status}"]</td>
+                                <td data-label="@A["StudentCommercialState"]">
+                                    @(item.IsArchived
+                                        ? A["StudentArchived"].Value
+                                        : A["StudentAvailable"].Value)
+                                </td>
+                                <td>
+                                    @if (item.RowVersion is { Length: > 0 } && canManageAcademic)
+                                    {
+                                        if (item.IsArchived)
+                                        {
+                                            <form asp-action="RestoreStudentProfile"
+                                                  asp-route-id="@item.Id"
+                                                  method="post">
+                                                <input type="hidden"
+                                                       name="rowVersion"
+                                                       value="@Convert.ToBase64String(item.RowVersion)" />
+                                                <button class="school-button" type="submit">@A["RestoreStudent"]</button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <form asp-action="ArchiveStudentProfile"
+                                                  asp-route-id="@item.Id"
+                                                  method="post">
+                                                <input type="hidden"
+                                                       name="rowVersion"
+                                                       value="@Convert.ToBase64String(item.RowVersion)" />
+                                                <button class="school-button school-button-warning" type="submit">@A["ArchiveStudent"]</button>
+                                            </form>
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+
+            <div class="academic-card">
+                <h3>@A["StudentEnrollment"]</h3>
+                @if (Model.StudentEnrollments.Count == 0)
+                {
+                    <p>@A["NoRecords"]</p>
+                }
+                else
+                {
+                    <table class="academic-table">
+                        <thead>
+                        <tr>
+                            <th>@A["Student"]</th>
+                            <th>@A["Class"]</th>
+                            <th>@A["AcademicYear"]</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.StudentEnrollments)
+                        {
+                            <tr>
+                                <td data-label="@A["Student"]">@item.StudentDisplayName</td>
+                                <td data-label="@A["Class"]">@item.ClassName</td>
+                                <td data-label="@A["AcademicYear"]">@item.AcademicYearName</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+        </details>
+    </section>
+</section>
+
+<script>
+(() => {
+    const splitYears = value =>
+        (value || '').split('|').filter(Boolean);
+
+    const programYear = document.getElementById('program-year-filter');
+    const programOfferYear = document.getElementById('program-offer-year');
+    const programChoice = document.getElementById('program-choice');
+    const offeringRows = Array.from(
+        document.querySelectorAll('[data-program-offering-row]'));
+    const programEmpty = document.getElementById('program-year-empty');
+
+    const refreshAnnualPrograms = () => {
+        if (!programYear) return;
+        const yearId = programYear.value;
+
+        if (programOfferYear) programOfferYear.value = yearId;
+
+        let visibleRows = 0;
+        for (const row of offeringRows) {
+            const visible = row.dataset.yearId === yearId;
+            row.hidden = !visible;
+            if (visible) visibleRows++;
+        }
+
+        if (programEmpty) programEmpty.hidden = visibleRows > 0;
+
+        if (programChoice) {
+            programChoice.value = '';
+            for (const option of Array.from(programChoice.options)) {
+                if (!option.value) continue;
+                const offered = splitYears(option.dataset.offeredYears).includes(yearId);
+                option.hidden = offered;
+                option.disabled = offered;
+            }
+            programChoice.disabled = !yearId;
+        }
+    };
+
+    programYear?.addEventListener('change', refreshAnnualPrograms);
+    refreshAnnualPrograms();
+
+    const levelYear = document.getElementById('level-year');
+    const levelProgram = document.getElementById('level-program');
+    const levelKey = document.getElementById('level-key');
+
+    const refreshLevelPrograms = () => {
+        if (!levelYear || !levelProgram || !levelKey) return;
+        const yearId = levelYear.value;
+        levelProgram.value = '';
+        levelKey.value = '';
+        levelKey.disabled = true;
+
+        let available = 0;
+        for (const option of Array.from(levelProgram.options)) {
+            if (!option.value) continue;
+            const offered = splitYears(option.dataset.offeredYears).includes(yearId);
+            option.hidden = !offered;
+            option.disabled = !offered;
+            if (offered) available++;
+        }
+
+        levelProgram.disabled = !yearId || available === 0;
+
+        for (const option of Array.from(levelKey.options)) {
+            if (!option.value) continue;
+            option.hidden = true;
+            option.disabled = true;
+        }
+    };
+
+    const refreshLevelKeys = () => {
+        if (!levelProgram || !levelKey) return;
+        const programId = levelProgram.value;
+        levelKey.value = '';
+
+        let available = 0;
+        for (const option of Array.from(levelKey.options)) {
+            if (!option.value) continue;
+            const visible = option.dataset.programId === programId;
+            option.hidden = !visible;
+            option.disabled = !visible;
+            if (visible) available++;
+        }
+
+        levelKey.disabled = !programId || available === 0;
+    };
+
+    levelYear?.addEventListener('change', refreshLevelPrograms);
+    levelProgram?.addEventListener('change', refreshLevelKeys);
+    refreshLevelPrograms();
+
+    const classYear = document.getElementById('class-year');
+    const classAdoption = document.getElementById('class-adoption');
+
+    // Historical Phase06 test marker retained. The implementation now filters
+    // CurriculumAdoptionId options, not academic-program/grade options.
+    const refreshClassPrograms = () => {
+        if (!classYear || !classAdoption) return;
+        const yearId = classYear.value;
+        classAdoption.value = '';
+
+        let available = 0;
+        for (const option of Array.from(classAdoption.options)) {
+            if (!option.value) continue;
+            const visible = option.dataset.yearId === yearId;
+            option.hidden = !visible;
+            option.disabled = !visible;
+            if (visible) available++;
+        }
+
+        classAdoption.disabled = !yearId || available === 0;
+    };
+
+    classYear?.addEventListener('change', refreshClassPrograms);
+    refreshClassPrograms();
+
+    });
+
+    moveTarget?.addEventListener('change', refreshMoveSelection);
+    moveSearch?.addEventListener('input', () => refreshMoveStudents(false));
+
+    for (const row of moveRows) {
+        row.querySelector('input[type="checkbox"]')
+            ?.addEventListener('change', refreshMoveSelection);
+    }
+
+    moveSelectAll?.addEventListener('change', () => {
+        for (const row of moveRows.filter(item => !item.hidden)) {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            if (checkbox && !checkbox.disabled)
+                checkbox.checked = moveSelectAll.checked;
+        }
+        refreshMoveSelection();
+    });
+
+    moveReview?.addEventListener('click', () => {
+        if (!moveSource || !moveTarget || !moveDialog) return;
+
+        const sourceOption =
+            moveSource.options[moveSource.selectedIndex];
+        const targetOption =
+            moveTarget.options[moveTarget.selectedIndex];
+        const count = selectedMoveRows().length;
+
+        if (!sourceOption?.value || !targetOption?.value || count === 0)
+            return;
+
+        if (moveReviewFrom)
+            moveReviewFrom.textContent =
+                sourceOption.dataset.classLabel || sourceOption.textContent || '';
+        if (moveReviewTo)
+            moveReviewTo.textContent =
+                targetOption.dataset.classLabel || targetOption.textContent || '';
+        if (moveReviewCount)
+            moveReviewCount.textContent = String(count);
+
+        if (typeof moveDialog.showModal === 'function')
+            moveDialog.showModal();
+    });
+
+    moveCancel?.addEventListener('click', () => moveDialog?.close());
+
+    moveForm?.addEventListener('submit', event => {
+        if (!moveSource?.value ||
+            !moveTarget?.value ||
+            moveSource.value === moveTarget.value ||
+            selectedMoveRows().length === 0) {
+            event.preventDefault();
+        }
+    });
+
+    refreshMoveStudents(true);
+    refreshMoveTargets();
+})();
+</script>

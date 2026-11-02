@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 84,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L05",
+  "title": "To the Number Line",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-5/lesson-5/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U05.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U05.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L05.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "On a zero-to-one number line with two equal intervals, what fraction is the single interior tick?",
+      "answerType": "rational",
+      "expected": "1/2"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-5/lesson-5/lesson.html",
+      "verified": "STUDENT_FACING_SOURCE_TEXT_REVIEWED",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Notice and Wonder: Two Number Lines (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-5/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Card Sort: Number Lines (10 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Fold and Label the Number Line (25 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-5/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Reflection (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-5/lesson-5/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Number lines.",
+      "Number line. Evenly spaced tick marks labeled 0 and 8 with one tick mark in between. First tick mark, 0. Last tick mark, 8.",
+      "Number line. 0 to 1 with 3 evenly spaced tick marks between. First tick mark, 0. Last tick mark, 1.",
+      "Number line. Evenly spaced tick marks 0 to 3 with a tick mark between each. First tick mark, 0. Last tick mark 3.",
+      "Number line. 0 to 2 with another tick mark between each number. First tick mark, 0. Last tick mark, 2.",
+      "Number line. Evenly spaced tick marks. First one, 0. Last one, 4. Three unlabeled tick marks between 0 and 4.",
+      "Number line. Tick marks at 0 and 1 with 5 unlabeled tick marks in between.",
+      "Number line. 0 to 6. First tick mark 0, two unlabeled tick marks, last tick mark, 6.",
+      "Number line. Evenly spaced tick marks 0 to 2 with two tick marks between 0 and 1 and two tick marks between 1 and 2. First tick mark, 0. Last tick mark, 2.",
+      "Number line. Evenly spaced tick marks labeled 0, 2, and 4, with 3 unlabeled tick marks between 0 and 2 and between 2 and 4.",
+      "Two students sorting cards.",
+      "Number line.",
+      "Number line. Tick marks at 0 and 1 with an unlabeled tick mark in between. Two labels of one half below number line with no corresponding tick marks.",
+      "Number line. Evenly spaced tick marks labeled zero, one half, and one. Point plotted at one half."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "On a zero-to-one number line with two equal intervals, what fraction is the single interior tick?",
+      "answerType": "rational",
+      "expected": "1/2"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s learn about fractions on the number line.",
+      "sourceLearningGoals": "Extend understanding of whole numbers on the number line to see fractions on a number line.",
+      "teachingSteps": [
+        "Choose the whole interval from zero to one.",
+        "Partition it into equal intervals according to the denominator.",
+        "Count intervals from zero to locate and name the numerator position."
+      ],
+      "caution": "Intervals must be equal; tick count is not the same as interval count from zero.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Partition 0–1 into fourths. What fraction is the third mark after zero?",
+      "answerType": "rational",
+      "expected": "3/4"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Partition 0–1 into six equal intervals. What fraction is at the fifth mark?",
+      "answerType": "rational",
+      "expected": "5/6"
+    },
+    "humanRubric": "Student must locate positions on correctly partitioned number lines, not assign labels to intervals.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

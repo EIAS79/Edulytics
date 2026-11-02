@@ -1,0 +1,1344 @@
+{
+  "SchemaVersion": 1,
+  "BlueprintCode": "CAMBRIDGE-LOWER-STAGE7-OGL-V1:OGL-V1",
+  "PackCode": "CAMBRIDGE-INTL-MATH",
+  "VersionCode": "CAMBRIDGE-PATHWAY-2026",
+  "LogicalLevel": 7,
+  "NativeLevel": "Cambridge Lower Secondary Stage 7",
+  "Pathway": null,
+  "OfficialAuthority": "Cambridge International Education",
+  "OfficialSourceUrl": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-lower-secondary/curriculum/mathematics/",
+  "PedagogicalSourceType": "OpenEducationalResource",
+  "SourceTitle": "National curriculum in England: Mathematics programmes of study — Key Stage 3",
+  "SourcePublisher": "UK Department for Education",
+  "SourceEdition": "Key Stage 3 Mathematics programme of study / current GOV.UK publication",
+  "SourceRootUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+  "SourceCheckedAtUtc": "2026-09-01T00:00:00Z",
+  "SourceLicense": "Open Government Licence v3.0",
+  "RequiredDigitalAttribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+  "SourceSelectionReason": "The official curriculum source remains the academic authority. Edulytics uses open DfE Mathematics material only as lawful pedagogical scaffolding for independently authored lesson explanations where official copyrighted or source-linked prose is not reproduced.",
+  "SourceSelectionEvidence": "Official Cambridge identifiers remain reference-only. Formal mappings in this blueprint were source-audited against the current Cambridge framework/syllabus; learner-facing pedagogy remains independently authored from lawful open sources and Cambridge objective prose is not reproduced. Unmapped legacy enrichment that did not fit the current Cambridge stage or syllabus was replaced in-place with independently authored source-aligned lessons while preserving stable lesson identities.",
+  "SourceEvidenceUrls": [
+    "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-lower-secondary/curriculum/mathematics/",
+    "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+    "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  ],
+  "SourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official Cambridge International Education wording is not reproduced. Edulytics learner-facing bodies are independently authored.",
+  "SemanticGraphSha256": "992088f5a46b1c1373908aa53430508bc21d811a92441fc2e2fe0e1ab36d8d99",
+  "AcquisitionDiagnostics": {
+    "UnitCount": 4,
+    "LessonCount": 32,
+    "OfficialStandardCount": 63,
+    "AddressingCoverageCount": 63,
+    "FormalMappingCount": 73,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 0,
+    "LessonsWithoutNumberedAddressingStandard": 0,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 0,
+    "MultiStandardLessons": 20
+  },
+  "Units": [
+    {
+      "Number": 1,
+      "UnitCode": "CAMBRIDGE-LOWER-STAGE7-OGL-V1:U01",
+      "SortOrder": 1,
+      "Title": "Number and Proportional Reasoning",
+      "LessonCount": 8,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "a83685c0169aa974ad678db22e2538904c6036c7f28796ca1fee0e1e2cc26970"
+    },
+    {
+      "Number": 2,
+      "UnitCode": "CAMBRIDGE-LOWER-STAGE7-OGL-V1:U02",
+      "SortOrder": 2,
+      "Title": "Algebra",
+      "LessonCount": 8,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "bccf3a8eab701b8753137232f26ae87f95c7dc33f2739b5b53967374ee9d8092"
+    },
+    {
+      "Number": 3,
+      "UnitCode": "CAMBRIDGE-LOWER-STAGE7-OGL-V1:U03",
+      "SortOrder": 3,
+      "Title": "Geometry and Measure",
+      "LessonCount": 8,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "60424aed458ab73a7c127a1d0514763aa59ea10e75dd03977aed54eb8cda36b2"
+    },
+    {
+      "Number": 4,
+      "UnitCode": "CAMBRIDGE-LOWER-STAGE7-OGL-V1:U04",
+      "SortOrder": 4,
+      "Title": "Statistics and Probability",
+      "LessonCount": 8,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "297165acc78f9598474cdeb2b9e12946f27ba400d9cf886cae484e08cf122eea"
+    }
+  ],
+  "Lessons": [
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L01",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:01:INTEGERS-AND-DIRECTED-NUMBER",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 1,
+      "Title": "Integers and directed number",
+      "SortOrder": 1,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "12ccac14a4e9f4ef00c47e64999f193c64c4bd190daac0a35a575246b292d24c",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ni.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ni.01",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ni.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ni.03",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ni.01",
+        "CAM:OUT:0862:7Ni.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L02",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:02:FRACTIONS-AND-MIXED-NUMBERS",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 2,
+      "Title": "Fractions and mixed numbers",
+      "SortOrder": 2,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "a8d80e09e5e599e0e924ec86f6609064571d3a7f34860a425fd607e4c5b7b429",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.03",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.04",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.05",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.06",
+          "SortOrder": 5
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.01",
+          "SortOrder": 6
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Nf.02",
+        "CAM:OUT:0862:7Nf.03",
+        "CAM:OUT:0862:7Nf.04",
+        "CAM:OUT:0862:7Nf.05",
+        "CAM:OUT:0862:7Nf.06",
+        "CAM:OUT:0862:7Gp.01"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L03",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:03:DECIMALS-AND-ROUNDING",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 3,
+      "Title": "Decimals and rounding",
+      "SortOrder": 3,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "d212bad596d73e18a7f6f6e285178bd1ec74ce1b8df340a00f39f7de37a39fd3",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Np.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Np.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.07",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.08",
+          "SortOrder": 3
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Np.02",
+        "CAM:OUT:0862:7Nf.07",
+        "CAM:OUT:0862:7Nf.08"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L04",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:04:PERCENTAGES",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 4,
+      "Title": "Percentages",
+      "SortOrder": 4,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "a24c7fc528840b1734fb6d7da9188302c1971daa0c768709b94f71a8122c86c7",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.01",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Nf.01"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L05",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:05:RATIO-AND-PROPORTION",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 5,
+      "Title": "Ratio and proportion",
+      "SortOrder": 5,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "ac91d140c2b67362ab9607b7a00ba6f2c3ffcaa19d710ffcfd371da0570853bf",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.09",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.09",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.10",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.11",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.11",
+          "SortOrder": 3
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Nf.09",
+        "CAM:OUT:0862:7Nf.10",
+        "CAM:OUT:0862:7Nf.11"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L06",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:06:RATES-AND-UNIT-RATES",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 6,
+      "Title": "Rates and unit rates",
+      "SortOrder": 6,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "fb50ab1ca6c2a8891b59799abe8727d456ae07e8d4f9f0ca105891a415d10c63",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Nf.09",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Nf.09",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Nf.09"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L07",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:07:POWERS-AND-ROOTS",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 7,
+      "Title": "Powers and roots",
+      "SortOrder": 7,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "79e614779d2ea11a3f3223124de4a4f0e732a8f1b44bd92617025802764461a8",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ni.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ni.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ni.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ni.06",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ni.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ni.05",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ni.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ni.04",
+          "SortOrder": 4
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ni.02",
+        "CAM:OUT:0862:7Ni.06",
+        "CAM:OUT:0862:7Ni.05",
+        "CAM:OUT:0862:7Ni.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U01:L08",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:01:08:STANDARD-FORM-AND-ESTIMATION",
+      "UnitNumber": 1,
+      "UnitTitle": "Number and Proportional Reasoning",
+      "LessonNumber": 8,
+      "Title": "Standard form and estimation",
+      "SortOrder": 8,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "41aec2be2d0db5eb7335b22e253a331fdd71c23ffb5b82e3bcee19c693b00bb7",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Np.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Np.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Np.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L01",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:01:ALGEBRAIC-EXPRESSIONS",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 1,
+      "Title": "Algebraic expressions",
+      "SortOrder": 9,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "02c31c7130b7a2c9927c4f54e5712c49759fca9c9df370c858b6215d824e6d54",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.01",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.02",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.03",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.04",
+          "SortOrder": 4
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ae.01",
+        "CAM:OUT:0862:7Ae.02",
+        "CAM:OUT:0862:7Ae.03",
+        "CAM:OUT:0862:7Ae.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L02",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:02:SUBSTITUTION",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 2,
+      "Title": "Substitution",
+      "SortOrder": 10,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "bf27972e4663665ec343b83928af297a78cd96b20c0fe6e98f5e545dca71a875",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.05",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Np.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Np.01",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ae.05",
+        "CAM:OUT:0862:7Np.01"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L03",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:03:EXPANDING-BRACKETS",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 3,
+      "Title": "Expanding brackets",
+      "SortOrder": 11,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "90aabac1e31f7a272b362e348932b25a04d0f9205998be29b4250e6b9d0fc389",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.03",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.03",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.04",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.07",
+          "SortOrder": 4
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ae.03",
+        "CAM:OUT:0862:7As.03",
+        "CAM:OUT:0862:7As.04",
+        "CAM:OUT:0862:7As.07"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L04",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:04:FACTORISING-EXPRESSIONS",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 4,
+      "Title": "Factorising expressions",
+      "SortOrder": 12,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "5021e10ccf659ce3d58cba246953dfa245431587d5a0f006898924f76e116b0f",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ae.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L05",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:05:LINEAR-EQUATIONS",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 5,
+      "Title": "Linear equations",
+      "SortOrder": 13,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "7e8eaa0481cd1e70e82ccd685de2209b28f51f80ed9de68ceb59a427f876a03b",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.06",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ae.06"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L06",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:06:INEQUALITIES",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 6,
+      "Title": "Inequalities",
+      "SortOrder": 14,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "011ed760a971e66833149534985b52bfdbb3691f685f6393d7848dee4a1205d4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ae.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ae.07",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ae.07"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L07",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:07:SEQUENCES",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 7,
+      "Title": "Sequences",
+      "SortOrder": 15,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "aed1e7af1a5b05590d50d623d119a6be8d7f0886c4ffcc363cccf8747d74fe69",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.01",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.02",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7As.01",
+        "CAM:OUT:0862:7As.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U02:L08",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:02:08:COORDINATES-AND-STRAIGHT-LINE-GRAPHS",
+      "UnitNumber": 2,
+      "UnitTitle": "Algebra",
+      "LessonNumber": 8,
+      "Title": "Coordinates and straight-line graphs",
+      "SortOrder": 16,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "d932200e6b0f205c11a745e3ac64792e0f44c2899f9fefe7eaf7abaeb1756d3b",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.05",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7As.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7As.06",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7As.05",
+        "CAM:OUT:0862:7As.06"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L01",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:01:ANGLE-RELATIONSHIPS",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 1,
+      "Title": "Angle relationships",
+      "SortOrder": 17,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "4a630b24d94627e77a1443bc2d9a200a22d3f59c592122a9fa51616cb9fc144e",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.11",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.11",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.12",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.12",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.13",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.13",
+          "SortOrder": 3
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gg.11",
+        "CAM:OUT:0862:7Gg.12",
+        "CAM:OUT:0862:7Gg.13"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L02",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:02:POLYGONS",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 2,
+      "Title": "Polygons",
+      "SortOrder": 18,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "7486aeace0ad7d601983584a13ac0092b53897237167b202803515744085da58",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.01",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.11",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.11",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gg.01",
+        "CAM:OUT:0862:7Gg.11"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L03",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:03:CONGRUENCE-AND-SIMILARITY",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 3,
+      "Title": "Congruence and similarity",
+      "SortOrder": 19,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "e8fbf4fba219aa3c290e0abed55741258b2315c93a8f172a57723c2965ccdf4e",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.02",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.06",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.10",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.10",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.03",
+          "SortOrder": 4
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.04",
+          "SortOrder": 5
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gg.02",
+        "CAM:OUT:0862:7Gp.06",
+        "CAM:OUT:0862:7Gg.10",
+        "CAM:OUT:0862:7Gg.03",
+        "CAM:OUT:0862:7Gg.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L04",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:04:TRANSFORMATIONS",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 4,
+      "Title": "Transformations",
+      "SortOrder": 20,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "8225ffca0f6502e412b0072ab22c87cf49bf3d41c4c3d9ea3b0fb691f387881d",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.03",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.04",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.05",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.06",
+          "SortOrder": 4
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gp.03",
+        "CAM:OUT:0862:7Gp.04",
+        "CAM:OUT:0862:7Gp.05",
+        "CAM:OUT:0862:7Gp.06"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L05",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:05:PERIMETER-AND-AREA",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 5,
+      "Title": "Perimeter and area",
+      "SortOrder": 21,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "11bf5fe007a5b85e6ea5ac10edf8464495840d037c1ce6471925307da246cb8b",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.05",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gg.05"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L06",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:06:SURFACE-AREA-AND-VOLUME",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 6,
+      "Title": "Surface area and volume",
+      "SortOrder": 22,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "705a5cdf4d6650e9cd41db114071a2460b582ff52140f081495e6057552af1d0",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.07",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.07",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.09",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.09",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.06",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.06",
+          "SortOrder": 3
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.08",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.08",
+          "SortOrder": 4
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gg.07",
+        "CAM:OUT:0862:7Gg.09",
+        "CAM:OUT:0862:7Gg.06",
+        "CAM:OUT:0862:7Gg.08"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L07",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:07:PYTHAGORAS-THEOREM",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 7,
+      "Title": "Coordinate distance on horizontal and vertical lines",
+      "SortOrder": 23,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "3ab249cdbc91f8304e7511d3413452c69e59dad9c28d3b201584e911169811e4",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gp.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gp.02",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gp.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U03:L08",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:03:08:CONSTRUCTIONS-AND-LOCI",
+      "UnitNumber": 3,
+      "UnitTitle": "Geometry and Measure",
+      "LessonNumber": 8,
+      "Title": "Constructions and loci",
+      "SortOrder": 24,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "043d301739d607995f405405e1b53c64a00b869e4ec04e0188916cdb47afa996",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Gg.14",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Gg.14",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Gg.14"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L01",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:01:COLLECTING-DATA",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 1,
+      "Title": "Collecting data",
+      "SortOrder": 25,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "840de1898febbe28ad3539bf0713c52566dc8dff798af3999fbd7626f6e260ec",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.01",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.02",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ss.01",
+        "CAM:OUT:0862:7Ss.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L02",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:02:TABLES-AND-CHARTS",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 2,
+      "Title": "Tables and charts",
+      "SortOrder": 26,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "3a6d44719c796507402979611982d1d34977f43937442c003ebfa1679a257d2f",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ss.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L03",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:03:MEAN-MEDIAN-AND-RANGE",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 3,
+      "Title": "Mean, median and range",
+      "SortOrder": 27,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "7f11bc40e29b01241ef472dcabf05845c07ba2d08e7f4a3bbdc1e7056b42f689",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.04",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ss.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L04",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:04:SCATTER-GRAPHS",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 4,
+      "Title": "Scatter graphs",
+      "SortOrder": 28,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "05c1dfe7e1c52d4d474d5414f4507ef9b24b054ce47d44d2af18b2a04aeba33d",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.03",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.05",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ss.03",
+        "CAM:OUT:0862:7Ss.05"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L05",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:05:EXPERIMENTAL-PROBABILITY",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 5,
+      "Title": "Experimental probability",
+      "SortOrder": 29,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "3ef2808a018e318c24b98d5875e57d18ff6af60cb2bce7567356b291a84105ba",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Sp.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Sp.05",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Sp.01",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Sp.01",
+          "SortOrder": 2
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Sp.02",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Sp.02",
+          "SortOrder": 3
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Sp.05",
+        "CAM:OUT:0862:7Sp.01",
+        "CAM:OUT:0862:7Sp.02"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L06",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:06:THEORETICAL-PROBABILITY",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 6,
+      "Title": "Theoretical probability",
+      "SortOrder": 30,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "1c7ea2861279316bc083b261edd97830173af7bb1eb6b7ba906c23f9c3b563fd",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Sp.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Sp.03",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Sp.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Sp.04",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Sp.03",
+        "CAM:OUT:0862:7Sp.04"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L07",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:07:SAMPLE-SPACES",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 7,
+      "Title": "Sample spaces",
+      "SortOrder": 31,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "c6d64fb5bbd1f7d5d6bf2532c52e2a777643c6ae9d8eb7695ee98ef6a4b05fb1",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Sp.03",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Sp.03",
+          "SortOrder": 1
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Sp.03"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "EDU:CAMBRIDGE-INTL-MATH:L7:SHARED:U04:L08",
+      "LessonCode": "PED:CAMBRIDGE-INTL-MATH:L7:SHARED:04:08:COMPARING-DISTRIBUTIONS",
+      "UnitNumber": 4,
+      "UnitTitle": "Statistics and Probability",
+      "LessonNumber": 8,
+      "Title": "Comparing distributions",
+      "SortOrder": 32,
+      "SourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study",
+      "SemanticSha256": "9308f3f8e5f50788bcdc81faefac4a47b66fd5233e256f754f0a3a18cfa6caaf",
+      "Alignments": [
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.04",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.04",
+          "SortOrder": 1
+        },
+        {
+          "Role": "Addressing",
+          "ReferenceCode": "7Ss.05",
+          "ReferenceKind": "NumberedStandard",
+          "ResolutionKind": "ExactAcceptedStandard",
+          "OutcomeCode": "CAM:OUT:0862:7Ss.05",
+          "SortOrder": 2
+        }
+      ],
+      "OutcomeCodes": [
+        "CAM:OUT:0862:7Ss.04",
+        "CAM:OUT:0862:7Ss.05"
+      ],
+      "ApplicableCourses": [
+        "CAMBRIDGE-LOWER-STAGE7-OGL-V1"
+      ],
+      "FormalTargets": []
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson19Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Add and Subtract to Compare";
+}
+<style>
+.g2-u2l1{max-width:950px;margin:0 auto;padding:24px 16px 44px;color:#254051}
+.g2-u2l1 .panel{border:1px solid #cddde4;background:#fff;border-radius:13px;margin:16px 0;padding:22px}
+.g2-u2l1 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:13px}
+.g2-u2l1 label{display:block;font-weight:700;margin:12px 0 6px}
+.g2-u2l1 input,.g2-u2l1 textarea{border:1px solid #79919e;border-radius:8px;padding:11px;font:inherit;width:100%;max-width:500px}
+.g2-u2l1 input:focus,.g2-u2l1 textarea:focus{outline:3px solid #9bd6dd}
+.g2-u2l1 .bar-row{display:grid;grid-template-columns:100px 1fr 43px;gap:9px;align-items:center;margin:10px 0}
+.g2-u2l1 .bar-track{border-left:2px solid #536b7b;border-bottom:2px solid #536b7b;background:#f3f9fb}
+.g2-u2l1 .bar{height:33px;background:#62afbf;border:1px solid #28768d}
+.g2-u2l1 .train{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0}
+.g2-u2l1 .ten{background:#cbecf2;border:2px solid #277c91;padding:8px;border-radius:6px;font-weight:bold;min-width:38px;text-align:center}
+.g2-u2l1 .ones{background:#ffedc4;border:2px dashed #ab862d;padding:8px;border-radius:6px}
+.g2-u2l1 .action{background:#087f92;color:white;border:0;border-radius:9px;padding:13px 22px;font-weight:700}
+.g2-u2l1 .muted{color:#516d7b}.g2-u2l1 .ok{border-left:4px solid #2f8757;padding-left:12px}
+.g2-u2l1 .err{border-left:4px solid #b54455;padding-left:12px}
+.g2-u2l1 .review{border-left:4px solid #a98a33;padding-left:12px}
+</style>
+<main class="g2-u2l1">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Add and Subtract to Compare</h1>
+<p>Grade 2 Unit 2 Lesson 1. Learn with graphs and tens-and-ones blocks.
+<strong>All source addition and subtraction in today's lesson happens WITHOUT trading or breaking a ten.</strong>
+You can use drawings, cubes, place value or an explained accurate method.</p>
+<section class="panel">
+<h2>1. Which One Doesn't Belong?</h2>
+<p>Compare four ways to represent a relationship: (A) tens-and-ones pictures,
+(B) two aligned tape bars with an unknown difference,
+(C) colored cube trains, and (D) a category bar graph.
+Which display would YOU choose as different, and why? More than one mathematically justified answer is possible.</p>
+</section>
+<form asp-controller="Grade2Lesson19Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<label asp-for="Answers.WarmupReason">My own mathematical explanation (teacher reviewed)</label>
+<textarea asp-for="Answers.WarmupReason" rows="3" maxlength="2000"></textarea>
+<section class="panel">
+<h2>2. Movie Snacks — read the source-category values</h2>
+<p>These authentic published source NUMBER VALUES are shown in independently written Edulytics graph bars (not copied publisher artwork). Each full bar starts at zero; the numbers are the exact counts.</p>
+@foreach(var row in new[]{new{Label="Nachos",Count=32},new{Label="Pretzels",Count=16},new{Label="Popcorn",Count=21}}){
+<div class="bar-row">
+<strong>@row.Label</strong>
+<div class="bar-track"><div class="bar" style="width:@(row.Count*100.0/34)%"></div></div>
+<span>@row.Count</span>
+</div>
+}
+<div class="grid">
+<div><label asp-for="Answers.SnackSum">How many chose popcorn OR pretzels?</label>
+<input asp-for="Answers.SnackSum" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SnackAdditionEquation">Addition equation (e.g. 21+16=37)</label><input asp-for="Answers.SnackAdditionEquation" maxlength="100" required/></div>
+<div><label asp-for="Answers.SnackDifference">How many MORE chose nachos than popcorn?</label><input asp-for="Answers.SnackDifference" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.SnackDifferenceEquation">Difference equation (e.g. 32-21=11)</label><input asp-for="Answers.SnackDifferenceEquation" maxlength="100" required/></div>
+</div>
+<label asp-for="Answers.SnackRepresentation">Explain how you counted on, used tens/ones or drew this difference</label>
+<textarea asp-for="Answers.SnackRepresentation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>3. Build and Compare — real partner cube trains</h2>
+<p>Partner A actually builds a train with 46 blocks and partner B with 22;
+use towers of TEN and loose singles. Make your own labeled drawing.
+The following first-party symbols are only a DIGITAL MATHEMATICS EXAMPLE,
+not evidence the real cube trains were built.</p>
+<div role="img" aria-label="Partner A forty-six cubes: four ten-object towers and six singles.">
+<strong>Partner A, 46:</strong>
+<div class="train">@for(var i=0;i<4;i++){<span class="ten" aria-label="one tower of ten cubes">10</span>}<span class="ones">6 singles</span></div>
+</div>
+<div role="img" aria-label="Partner B twenty-two cubes: two ten-object towers and two singles.">
+<strong>Partner B, 22:</strong>
+<div class="train">@for(var i=0;i<2;i++){<span class="ten" aria-label="one tower of ten cubes">10</span>}<span class="ones">2 singles</span></div>
+</div>
+<div class="grid">
+<div><label asp-for="Answers.CubeTotal">How many blocks ALL TOGETHER?</label><input asp-for="Answers.CubeTotal" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CubeDifference">How many MORE in Partner A's train?</label><input asp-for="Answers.CubeDifference" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CubeInverseEquation">Missing-addend check: 22+?=46</label><input asp-for="Answers.CubeInverseEquation" maxlength="100" required/></div>
+</div>
+<label asp-for="Answers.CubeDrawingExplanation">Describe your original physical grouping/drawing (teacher reviewed)</label><textarea asp-for="Answers.CubeDrawingExplanation" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. Independent Edulytics Cool-down — NO regrouping</h2>
+<p>These first-party exercises target today's mathematics but are NOT the publisher's restricted Compare the Trains assessment.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolAdd">34 + 23 = ?</label><input asp-for="Answers.CoolAdd" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolSubtract">74 − 31 = ?</label><input asp-for="Answers.CoolSubtract" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.CoolCompare">Fictional two-bar graph with heights43 and22: missing gap?</label><input asp-for="Answers.CoolCompare" type="number" min="0" max="100" required/></div>
+</div>
+<label asp-for="Answers.PartnerReflection">Tell how you compared YOUR strategy with a partner's method</label><textarea asp-for="Answers.PartnerReflection" rows="3" maxlength="2000"></textarea>
+<button class="action" type="submit">Check numbers and show teacher-review tasks</button>
+</section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var row in Model.Feedback){
+<div class="@(row.Correct==true?"ok":row.Correct==false?"err":"review")">
+<h3>@row.Activity</h3><p>@(row.Correct==true?"Mathematically correct":row.Correct==false?"Revise calculation":"Teacher evaluation required"). @row.Explanation</p>
+</div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit2FirstLessonCompareActivities.TeacherRubric){<li>@item</li>}</ul>
+</section>
+<p class="muted">Based on IM K–5 2021 Grade 2 Unit 2 Lesson 1, 2.MD.D.10 and 2.NBT.B.5 Addressing; 2.OA.A.1 Building Towards. Original mathematical quantities attributed, independently authored virtual bars, cube symbols and assessment.</p>
+</main>

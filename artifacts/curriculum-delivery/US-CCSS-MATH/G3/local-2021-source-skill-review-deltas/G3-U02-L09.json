@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 30,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L09",
+  "title": "Measure to Find the Area",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-2/lesson-9/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U02.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U02.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L09.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "The source drawing has 6 equal unit intervals by 3 equal unit intervals. What rectangle area does that show?",
+      "answerType": "integer",
+      "expected": "18"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-2/lesson-9/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Notice and Wonder: Groups and Arrays (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-2/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Measure to Find Area (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Create a Rectangle (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-2/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-2/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Find the Area (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-2/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "6 groups of 3 dots.�15 black dots, 3 blue dots.",
+      "Rectangular array of dots. 6 groups of 3 dots.�15 black dots, 3 blue dots.",
+      "Rectangle. Length, 6 tick marks. Width, 3 tick marks.",
+      "A rectangle.",
+      "Picture of ruler. Scale, 0 to 8, by 1's. 4 tick marks between each unit.",
+      "a rectangle."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "The source drawing has 6 equal unit intervals by 3 equal unit intervals. What rectangle area does that show?",
+      "answerType": "integer",
+      "expected": "18"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s measure the sides of rectangles and find the area.",
+      "sourceLearningGoals": "Find the area of rectangles by measuring and multiplying the side lengths.",
+      "teachingSteps": [
+        "Identify unit squares and the area being measured.",
+        "Represent the shape or rectangle with equal-area units.",
+        "Calculate or compare area with units and check any decomposition."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s measure the sides of rectangles and find the area.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "A measured rectangle is 7 cm by 4 cm. Find the area in cm².",
+      "answerType": "integer",
+      "expected": "28"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "A rectangular space is 5 ft by 6 ft. Find its area in square feet.",
+      "answerType": "integer",
+      "expected": "30"
+    },
+    "humanRubric": "Ruler use and zero alignment must be checked visually; creating assigned square-foot areas requires a physical task.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

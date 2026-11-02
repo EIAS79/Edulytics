@@ -1,0 +1,52 @@
+{
+  "ordinal": 131,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U08:L04",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "ARCHIVED_LOCAL_2021_ORIGINAL_TEACHER_SOURCE_REUSED",
+    "B": "SYMMETRY_REFLECTION_FOLDING_NOT_ROTATION_SHAPE_CASES_AND_OPTIONAL_ACTIVITY_NOTED",
+    "C": "EXTENDED_EXISTING_EXACT_ENGINE_EIGHT_DEFINED_SHAPE_SYMMETRY_CASES_XUNIT_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "2026ad966da78942e6ed1983feb78ff82cfe05c141d1507031b95535c79afca1",
+    "teacher": "3a6a0b1a5b79f77b8ec84853a3f42551ff00b9f7778961177e3340212a7ffe19"
+  },
+  "firstPartyCooldown": {
+    "prompt": "How many lines of symmetry does a non-square rectangle have?",
+    "teacherAnswer": "Two (horizontal and vertical through its center)."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Original 2021 Our-CS source-only intake",
+    "originalSourceActivities": [
+      "Warm-up: Notice and Wonder: Seeing Double (10 minutes)",
+      "Activity 1: Perfect Matches (20 minutes)",
+      "Activity 2: In Search of Symmetry (15 minutes)",
+      "Activity 3: Just Keep Folding [OPTIONAL] (10 minutes)",
+      "Cool-down: One Line or More than One? (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "What do you notice? What do you wonder? | Description: an image composed of pattern blocks. left and right sides of pattern are the same. each side has 2 green triangles, 2 blue parallelograms, 4 tan rhombuses, 2 red trapezoids, 2 yellow hexagons. | Student Re",
+      "Lin has pieces of paper in different shapes. She folds each piece of paper once, creating two smaller parts. | She then sorts the pieces into two categories based on the folding lines. | Study the figures in each category. What do you think a line of symmetry ",
+      "Your teacher will give your group a set of cards. | Sort the figures on the cards by the number of lines of symmetry they have. | 0 lines of symmetry"
+    ],
+    "allowedFamily": "usccss.g4.u08.l04.symmetry_axis_counts",
+    "primarySkillId": "geometry.symmetry.count_lines_for_defined_shapes",
+    "teacherOnlyTasks": [
+      "Original paper folds matching halves",
+      "Original pattern-block figure",
+      "Original student cards and optional fold activity"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal131SymmetryAxisTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

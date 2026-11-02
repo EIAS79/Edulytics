@@ -1,0 +1,37 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Unit4ArrowPage
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]=Model.Title;}
+<style>.g2arrows{max-width:990px;margin:auto;padding:22px;color:#264353}
+.g2arrows section{background:white;border:1px solid #cbdbe4;border-radius:12px;padding:18px;margin:15px 0}
+.g2arrows .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}
+.g2arrows label{display:block;font-weight:700;margin:12px 0 5px}
+.g2arrows input,.g2arrows textarea{font:inherit;width:100%;max-width:600px;border:1px solid #839aa5;border-radius:8px;padding:10px}
+.g2arrows .action{border:0;border-radius:8px;background:#137f93;color:white;font-weight:700;padding:12px 20px}
+.g2arrows .ok{border-left:4px solid #208454;padding-left:12px}.g2arrows .bad{border-left:4px solid #ba4e5c;padding-left:12px}
+.g2arrows .teacher{border-left:4px solid #b29036;padding-left:12px}</style>
+<main class="g2arrows"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>@Model.Title</h1><p>IM2021 Grade2 Unit4 Lesson @Model.LessonNumber — start and end points, number-line jumps, and authentic physical source review.</p>
+<form asp-controller="Grade2Unit4ArrowActivities" asp-action="Submit" asp-route-lessonNumber="@Model.LessonNumber" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section><h2>1. Original source mathematics</h2><p>@Model.SourceActivity1</p>
+@{var src=new[]{"SourceA","SourceB","SourceC","SourceD"};}
+<div class="grid">@for(var i=0;i<4;i++){<div><label for="source-@i">@Model.SourceQuestions[i]</label>
+<input id="source-@i" name="@("Answers."+src[i])" type="number" min="0" max="100" required/></div>}</div></section>
+<section><h2>2. Original real source activity — teacher review</h2><p>@Model.SourceActivity2</p>
+<label asp-for="Answers.AuthenticDiagramReason">Explain only actual printed publisher arrow images, start/end and length</label><textarea asp-for="Answers.AuthenticDiagramReason" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.AuthenticStudentWork">Describe real paper, diagrams, partner representations or original story</label><textarea asp-for="Answers.AuthenticStudentWork" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.PartnerDiscussion">What reasoning did your REAL partner provide?</label><textarea asp-for="Answers.PartnerDiscussion" maxlength="2000" rows="3"></textarea></section>
+<section><h2>3. Original Edulytics independent exact questions</h2><p>Not the publisher restricted Cool-down or actual classroom data.</p>
+@{var own=new[]{"IndependentA","IndependentB","IndependentC","IndependentD"};}
+<div class="grid">@for(var i=0;i<4;i++){<div><label for="new-@i">@Model.IndependentQuestions[i]</label>
+<input id="new-@i" name="@("Answers."+own[i])" type="number" min="0" max="100" required/></div>}</div>
+<button class="action" type="submit">Check calculations and show human review boundary</button></section>
+</form>
+@if(Model.Submitted){<section aria-live="polite"><h2>Feedback</h2>
+@foreach(var f in Model.Feedback){<div class="@(f.Correct==true?"ok":f.Correct==false?"bad":"teacher")"><h3>@f.Section</h3><p>@f.Feedback</p></div>}
+</section>}
+<section><h2>Teacher-only original source review</h2><p>@Model.TeacherBoundary</p>
+<ul>@foreach(var item in UsCcssG2Unit4ArrowLessons.TeacherRubrics[Model.LessonNumber]){<li>@item</li>}</ul>
+<p>Digital correct answers never claim original figure completion, formal academic marks or working CI tests.</p></section>
+</main>

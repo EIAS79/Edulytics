@@ -1,0 +1,42 @@
+{
+  "ordinal": 98,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L12",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "53be4196b97981fedbc339601af5d7cb225ba87c1f1c41fa08bae7c9d6884b94",
+    "teacher": "f380979bda112dc202cf58cc749c6264dca60102cd96b645a0461d95e464cd91",
+    "student": "3ed80a8c4cd4cdefdf9b9769e421034630ffbed3508a44a0498d9e64ad34b220"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "A class makes 28 packages with 12 stickers each. Total?",
+    "teacherAnswer": "336 stickers"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:35:49+01:00",
+  "closeAtLocal": "2026-10-26T23:35:49+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-98-local-source-guard.test.cjs"
+  }
+}

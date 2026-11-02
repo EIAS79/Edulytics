@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 67,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L15",
+  "title": "Riddles (optional)",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_REVIEWED",
+    "url": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-15/preparation.html",
+    "bodySha256": "f1d65383452dcb2bed10a548a8626118ce9d23db843f8770e6f602cc68102d74",
+    "semanticSha256": "aa3a61fefb89b2fa22616826bf46752d423706e286e87e832ee4cbab9e473a58",
+    "orderedOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "teacherOnly": "Optional original Kiran age chains, personal invented age riddles and real publisher candle images require teacher observation"
+  },
+  "stageB": {
+    "status": "SHA_GUARDED_TEACHING_AUTHORED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4AgeRiddlesCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "sixPredecessorFieldsGuarded": true
+  },
+  "stageC": {
+    "status": "SHARED_FOUR_FAMILIES_AND_STUDENT_PAGE_WRITTEN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4FinalSixQuestions.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4FinalSixContracts.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit4FinalSixActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit4FinalSixActivities/Index.cshtml",
+    "families": [
+      "usccss.g2.u04.l15.older_sister_age",
+      "usccss.g2.u04.l15.mother_age_jump",
+      "usccss.g2.u04.l15.younger_brother_age",
+      "usccss.g2.u04.l15.grandmother_age_jump"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal67OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal67SourceActivityMathTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal67ExactFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal67StudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "aCStatus": "A_C_COMPLETED",
+    "stageD": "NOT_STARTED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 68
+}

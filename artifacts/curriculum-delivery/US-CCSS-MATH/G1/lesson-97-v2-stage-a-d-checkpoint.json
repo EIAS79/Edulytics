@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 97,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U05:L09",
+  "sourceBasis": {
+    "device": "Our-CS read-only cached original IM 2021 full teacher lesson",
+    "fullTeacherSourceSha256": "c8f3f91e51f4013e8771beb2cf3d1ea0206be8d3afa2812182cd024f9ff1e032",
+    "teacherPreparationSha256": "960e6eb093f63dc4a0a0d1ad2581381ee13cd4d9131bda919c2ebfe6d044f2ab",
+    "studentMirrorSha256": "f0b17fad278a12c6be8ae9fbe47255a7f47c8c852a92d01044e89b9df177ef90",
+    "teacherActivityHeadings": [
+      "Activity 1: How Did You Find the Value? (20 minutes)",
+      "Activity 2: Grab and Add (15 minutes)"
+    ],
+    "existingSourceInventory": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json"
+  },
+  "stageA": {
+    "originalStudentTaskExcerptReviewed": [
+      "Student Facing Find the value of each expression mentally. \\(38 + 2\\) \\(40 + 3\\) \\(38 + 5\\) \\(38 + 15\\) Student Response Teachers with a valid work email address can clic",
+      "Student Facing Find the value of \\(17 + 36\\) . Show your thinking using drawings, numbers, or words. Student Response Teachers with a valid work email address can click h",
+      "Student Facing Round 1: Grab a handful of towers of ten and a handful of single cubes. I have ______________ cubes and my partner has ______________ cubes. How many cubes"
+    ],
+    "sourceSpecificComparison": "Original 17+36=53; Grab and Add physical cubes, repeated partner rounds",
+    "classification": "CONTENT_REPAIR",
+    "originalWarmupMath": [
+      "38+2=40",
+      "40+3=43",
+      "38+5=43",
+      "38+15=53"
+    ],
+    "originalStudentTaskMath": "17+36=53; 7+6=13 ones, exchange ten ones to get five tens and three ones.",
+    "humanBoundary": "Grab and Add physical towers/cubes and repeated partner rounds teacher-verified, not reproduced or digitally certified."
+  },
+  "stageB": {
+    "existingContentReused": true,
+    "sourceGroundedChanges": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeUnit5ContentCorrections.cs",
+    "repairCommit": "64dde08d4a2e5669e0bf0d2318ac1885e211def6",
+    "existingLearnerTeachingMathReviewed": true,
+    "sourceSpecificTeaching": "Source 17+36 and four original number-talk warmups, 17+30=47 then +6=53, exchange of ten ones, human-only Grab and Add."
+  },
+  "stageC": {
+    "existingPracticeReused": true,
+    "permittedDigitRangeAndArithmeticUnchanged": true,
+    "teacherFacilitationNotClaimedNumerically": true,
+    "originalWarmupModes": [
+      4,
+      7
+    ],
+    "sourceSpecific17Plus36Mode": 8,
+    "originalSourceNumericExpected": "TENS=5;ONES=3;TOTAL=53",
+    "implementationPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit5AdditionQuestions.cs",
+    "implementationCommit": "d93f39072ca8739a48411104f75503b663b591b4",
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lesson97OriginalSeventeenPlusThirtySixTests.cs",
+    "authoredTestsCommit": "8f31710a87e709d48e73c6d06a4388d3ccc51f4e",
+    "testsExecuted": false
+  },
+  "stageD": {
+    "sourceSpecificAssertionsPrepared": true,
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit5TeachingTests.cs",
+    "ciRunDuringAuthoring": false,
+    "testsPassedClaimed": false,
+    "learnerRenderingExactFrozenSha": "PENDING",
+    "authenticatedGradePersistence": "PENDING",
+    "independentMathAndLegalMediaEvidence": "PENDING",
+    "originalV1InternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "Continue original V1 review at 98; no merge or deployment.",
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "accessibleOriginalSourceMathCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "mathGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "testsAuthoredButNotExecuted": true,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "boundary": "Original 17+36 and warmups source-true numeric follow-up. Actual student-created drawings and real handful measurements/partner rounds not digitally certified; Stage D handles compiler/tests, authenticated persistence, rights, rendered site, math approval."
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 97,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U05:L09",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-97-stage-a-d-source-math-acceptance-20261021.md",
+    "exactRunProofBoundary": "Original Grab and Add cube handfuls and freehand strategies remain teacher-observed."
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u08-l05-2021-one-room-one-thousand-budget-independent-cost-example-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U08:L05",
+      "CultureCode": "en",
+      "Title": "Tiny House: Cost",
+      "ExplanationParagraphs": [
+        "Original 2021 Grade 3 Unit 8 Lesson 5 links the tiny-house design from Lesson 4 to the cost of finishing ONE room. Original public teacher HTML inspected locally. Warm-up 10 minutes, source activity 35 minutes, teacher synthesis and gated five-minute Cool-down. The 2021 source item-cost sheet, original labelled bus image and standalone student-task PDF have not been individually verified; any invented numbers here are independent Edulytics examples, NOT original item prices.",
+        "Warm-up Estimation Exploration: Cost of a Room (10 minutes). Original 2021 bus image contains labelled purchasable items. With teacher and partner, estimate an amount TOO LOW, ABOUT RIGHT, and TOO HIGH for the items. Ask what a plausible price means and how items contribute to a sum. Source image labelled values cannot be guessed from text. Teacher checks actual source picture before judging.",
+        "Activity 1 What Is the Cost? (35 minutes). Reuse the authentic learner floor plan from original Lesson 4. Choose one room. Independently choose items from the ORIGINAL SOURCE COST SHEET and calculate item × quantity and total cost in US dollars. The original budget is EXACTLY $1,000 maximum (spending at most $1,000); justify required furniture, plumbing and flooring. Begin with 10–12 minutes independent work, then 10–15 minutes independent or partner discussion. Teacher checks the source cost sheet and chosen quantities; no unique answer exists.",
+        "For any room, total spending equals the sum of cost per item multiplied by quantity. Budget constraint: 0 <= spent <= $1,000. Money remaining is $1,000 minus total spent and must be nonnegative. Rounding can estimate expenses but final spending must use exact item prices supplied by the classroom cost sheet.",
+        "Separate FIRST-PARTY DEMONSTRATION ONLY (NOT 2021 SOURCE PRICES): a room design uses one $450 floor finish, one $200 bed, one $100 light fixture and one $180 cabinet. The total is 450+200+100+180=$930, leaving $70. This fabricated practice dataset only illustrates multi-step addition, estimation and subtraction; teacher/student must use the actual source cost sheet for the authentic lesson.",
+        "If the genuine learner proposal costs more than $1,000, revise one or more item choices or quantities, recalculate and verify feasibility; replacing price figures with guessed estimates is not an acceptable correction. Link furniture needs to the room design from Lesson 4 and explain how floor area or room choice affects finishing requirements.",
+        "At activity synthesis learners circulate to view and discuss different room budgets, record one notice and one wonder, and share with a partner. Lesson synthesis asks students to justify why they chose items, quantities and a room. All open design and expense decisions remain teacher-reviewed, not graded by a single independent numeric sample.",
+        "Publisher gated Cool-down Find the Cost? is not copied or compared. Original source-linked bus image and cost sheet need authorized verification; no photos or publisher charts are embedded. .NET tests are authored but remain unexecuted; Stage D and academic signoff remain unclaimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Budget constraint",
+          "Definition": "A budget is a maximum total allowable spend.",
+          "Rule": "Sum of price × quantity must not exceed $1,000.",
+          "Example": "$930 is feasible because $930 <= $1,000."
+        },
+        {
+          "Title": "Remaining money",
+          "Definition": "The balance after purchasing selected items.",
+          "Rule": "$1,000 minus total spent is nonnegative for valid plans.",
+          "Example": "$1,000 − $930 = $70."
+        },
+        {
+          "Title": "Source versus independent examples",
+          "Definition": "The 2021 cost sheet is used for the original activity; practice figures can illustrate arithmetic but do not represent publisher prices.",
+          "Rule": "Verify costs from actual teacher materials and distinguish estimated and exact totals.",
+          "Example": "Illustrative Edulytics prices $450, $200, $100, $180 are separate from the 2021 cost list."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent room-finishing budget",
+          "Question": "First-party invented costs: $450 floor, $200 bed, $100 lighting, $180 cabinet. Is this within the original $1,000 cap?",
+          "Method": "Add prices and compare to 1,000; subtract to find remaining budget.",
+          "Steps": [
+            "Sum 450+200+100+180=930 dollars.",
+            "Compare 930 <= 1000; this example plan is affordable.",
+            "Subtract 1000 − 930 = 70 dollars."
+          ],
+          "Answer": "$930 spent; $70 left.",
+          "Check": "These item amounts were invented independently and are NOT taken from the 2021 cost sheet."
+        },
+        {
+          "Title": "Optional budget revision without cabinet",
+          "Question": "Using the independent demonstration prices, omit the $180 cabinet. How much is spent and how much remains under $1,000?",
+          "Method": "Independent first-party source-aligned reasoning; not a copy of the publisher's original image or student-authored work",
+          "Steps": [
+            "Use only invented example prices: $450 floor, $200 bed and $100 lights.",
+            "Add 450 + 200 + 100 = $750.",
+            "Subtract from the source cap: 1000 − 750 = $250; teacher still checks original item list."
+          ],
+          "Answer": "$750 spent; $250 remaining.",
+          "Check": "Teacher separately checks the original source, pupil drawing or physical activity; this illustration is not an original-source parity certificate."
+        },
+        {
+          "Title": "Budget overrun detection",
+          "Question": "A fictional student independently chooses a $750 floor, $200 furnishing and $100 light for a $1,000 budget. Is the set affordable?",
+          "Method": "Independent first-party source-aligned reasoning; not a copy of the publisher's original image or student-authored work",
+          "Steps": [
+            "Add the invented costs: 750 + 200 + 100 = 1050 dollars.",
+            "Compare 1050 with the source maximum 1000.",
+            "1050 − 1000 = 50, so revise the choices instead of claiming source prices."
+          ],
+          "Answer": "$50 over budget; not feasible.",
+          "Check": "Teacher separately checks the original source, pupil drawing or physical activity; this illustration is not an original-source parity certificate."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat $1,000 as the amount students must spend exactly.",
+          "WhyWrong": "It is the cap, not a required target.",
+          "Correction": "Any nonnegative exact total <= $1,000 is financially feasible."
+        },
+        {
+          "Mistake": "Assume independent sample prices are source original.",
+          "WhyWrong": "Original source cost sheet was not independently read; sample numbers are unrelated.",
+          "Correction": "Verify actual source price list and item quantities before scoring original design."
+        },
+        {
+          "Mistake": "Use rounded estimate for final approval.",
+          "WhyWrong": "The total could exceed $1,000 even if rounding suggests it fits.",
+          "Correction": "Use rounding for plausibility, exact arithmetic to validate."
+        },
+        {
+          "Mistake": "Assign one fixed total to every design.",
+          "WhyWrong": "Room and chosen quantities vary across legitimate student projects.",
+          "Correction": "Teacher checks each itemized design individually."
+        }
+      ],
+      "SummaryPoints": [
+        "Reuse your own Lesson 4 tiny-house plan.",
+        "Finish one selected room with real cost-sheet items and quantities.",
+        "Spend no more than $1,000; compare, revise and explain choices.",
+        "Warm-up source bus image requires original teacher review; estimates too low/about right/too high.",
+        "Independent $930 example is not a copied publisher cost sheet; original photos and gated Cool-down not reproduced."
+      ]
+    }
+  ]
+}

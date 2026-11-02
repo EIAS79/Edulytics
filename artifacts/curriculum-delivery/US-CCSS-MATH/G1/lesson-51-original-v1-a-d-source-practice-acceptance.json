@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "originalPerLessonStandard": "EDULYTICS-GRADE-FIRST-5-V1 A-D",
+  "grade": "G1",
+  "ordinal": 51,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L14",
+  "title": "Center Day 2",
+  "source": {
+    "edition": "Illustrative Mathematics / Kendall Hunt 2021 First Edition",
+    "device": "Our-CS - READ ONLY",
+    "relativeFiles": [
+      "01_Grade_1_IM_K5/Exact_Sources/im.kendallhunt.com_k5_teachers_grade-1_unit-3_lesson-14_preparation.html",
+      "01_Grade_1_IM_K5/unit-3/lesson-14/lesson.html",
+      "01_Grade_1_IM_K5/Student_Public_Mirror/unit-3/lesson-14/lesson.html",
+      "01_Grade_1_IM_K5/center--number-puzzles-addition-and-subtraction-1-4/center.html"
+    ],
+    "teacherPreparationSha256": "fe19d293e214a19212ee74fa2cd634e0381a77916645fa6b600f40d9c9c5eef2",
+    "fullTeacherLessonSha256": "9d9fabad803c0b7353b5247d651525c32c193541764bbd80211c0f046902511c",
+    "studentMirrorSha256": "c20420c7d07ba8245603a358063ff217a279cdfd3a2088117454dbdad4793ef9",
+    "reusedHistoricalAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-STUDENT-TASK-AUDIT-51-52-53-65-146.json"
+  },
+  "stageA": {
+    "sourceAndStudentTasksAudited": true,
+    "sourceTasks": [
+      "True/false expressions on both sides with explanation",
+      "Stage 2 Number Puzzles: add/subtract within 20, two digit cards different, no repeated card on one board",
+      "Teacher-led partner centers and strategies, not digitally impersonated"
+    ],
+    "fixedDefect": "Original generator mode-0 addition occasionally exceeded the source within-20 bound"
+  },
+  "stageB": {
+    "existingRichV2Reused": true,
+    "teaching": [
+      "correct and false equality reasoning",
+      "within-20 add/subtract",
+      "digit-card no reuse",
+      "teacher-led physical center separated from digital portion"
+    ],
+    "originalPublisherArtworkUsed": false,
+    "rightsFinding": "Candidate uses first-party text and generated SVG with explicit source attribution; no copied publisher image, photograph or blackline master is bundled. This statement does NOT grant rights to redistribute unused publisher material."
+  },
+  "stageC": {
+    "allowedFamilies": [
+      "usccss.g1.u03.l14.center.add_subtract"
+    ],
+    "correctWrongMalformedVerified": true,
+    "cardModeAcceptsTwoDifferentDigits": true,
+    "cardModeDoesNotPreFillAnswers": true,
+    "assessedSkill": "within-20 addition/subtraction and missing-number card equations; physical center activity is teacher facilitated"
+  },
+  "stageD": {
+    "sourceCheckedPrHead": "e5ee6331a546dbfdb1f02957b1e3037462240e48",
+    "authenticatedRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748370",
+    "sourceMathRun": "https://github.com/EIAS79/Edulytics/actions/runs/39276748405",
+    "authenticatedSignals": [
+      "G1_L51_AUTHENTICATED_SOURCE_GOAL_TEXT_PASS",
+      "G1_L51_AUTHENTICATED_TWO_CARD_SOURCE_BOARD_PASS",
+      "G1_ORIGINAL_95_WELL_FORMED_WRONG_HTTPS_ATTEMPT 51",
+      "B001_DISPOSABLE_500_REAL_PRACTICE_PROBE 51"
+    ],
+    "positiveMalformedAndWellFormedWrongGradingPersisted": true,
+    "actualStudentPracticeBoardRendered": true,
+    "sourceVisualBoundary": "The first-party accessible two-blank SVG recreates the assessed mathematical work, not pixel-level publisher gameboard art.",
+    "unclaimed": [
+      "actual child participation",
+      "physical partner game",
+      "teacher-observed pupil work",
+      "license for unused publisher artwork",
+      "post-deploy owner UAT"
+    ]
+  },
+  "academicScope": "Original-V1 internal academic source/teaching/Practice/targeted-test acceptance for the first-party digital lesson only, not physical center participation.",
+  "gradeRelease": "NO_GO_UNTIL_ALL_96_NEW_LESSONS_ACCEPTED",
+  "reviewedRightsBoundary": "Source-book and publisher center gameboard are reference only; no third-party figures are copied into shipped Edulytics authored SVG."
+}

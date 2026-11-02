@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "purpose": "Original 2021 per-lesson V1 A–D source-teaching-Practice preparation, with deferred CI and no approval",
+  "grade": "G1",
+  "ordinal": 113,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U06:L11",
+  "title": "How Long Are Our Shoes?",
+  "sourceBasis": {
+    "sourceDevice": "Our-CS",
+    "mode": "READ_ONLY original 2021 teacher full lesson HTML, no files changed",
+    "relativePath": "unit-6/lesson-11/lesson.html",
+    "sourceHashes": "Use existing registered source SHA in full-grade original-source risk register; no new SHA calculated",
+    "noPublisherFiguresCopied": true
+  },
+  "stageA": {
+    "reviewedOriginalStudentFacing": true,
+    "physicalMeasurementTask": "Trace and record actual teacher, learner and partner shoe in closest whole connecting cubes; add learner+partner lengths and compare which longer/shorter",
+    "fourNumericalSourceStories": [
+      "Clare9+Han7=16",
+      "Kiran7+older9+younger4=20",
+      "Diego8 vs father13 gives 5 longer",
+      "Jada8 plus Elena unknown together17, so Elena9"
+    ],
+    "actualOriginalBaseLearnerSource": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g1-phase29-v1.lesson-content-pack.json",
+    "provenGap": "The effective historical source correction already contained valid general shoe measures; it omitted all four source-named shoe stories and exact actual teacher/learner/partner measurement task.",
+    "classification": "CONTENT_AND_PRACTICE_REPAIR_PRE_FINAL_EVIDENCE",
+    "confirmedSourceCorrectionLineage": "Original historical source-guarded learner correction was ALREADY present before this work; only missing original task fidelity was extended. Comparing the uncorrected base content alone cannot prove an effective Rich V2 mismatch."
+  },
+  "stageB": {
+    "reusedLearnerRenderer": true,
+    "changedPath": "src/Edulytics.Data/Seeding/CommonCoreG1SourceGroundedInstructionalCorrections.cs",
+    "contentCommit": "7b0aa116f815793e87648dee16b539a51f8c839e",
+    "newContent": "Original source-specific FOUR named Shoe Stories, teacher/own/partner real measurements and correct teacher-only boundaries appended to existing single source-guarded teaching repair.",
+    "publisherArtworkCopied": false
+  },
+  "stageC": {
+    "existingFamilyReused": "usccss.g1.u06.l11.compare_shoe_lengths",
+    "previousHypotheticalComparisonModes": "0-3 preserved",
+    "sourceSpecificModes": "4-7 added",
+    "sourceCaseAnswers": [
+      "TOTAL=16",
+      "TOTAL=20",
+      "DIFFERENCE=5",
+      "ELENA=9"
+    ],
+    "changedPath": "src/Edulytics.Services/Mathematics/UsCcssG1FullGradeUnit6MeasurementQuestions.cs",
+    "codeCommit": "5884913f6c716dd15cdd9eb54cd79ce6962f921c",
+    "sourceOnlyGradingBoundary": "Digital can grade numbers but cannot claim actual shoe measurements, student tracings or partner work.",
+    "authoredRegressionFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1Lessons107To119SourceScopedRegressionTests.cs",
+    "authoredRegressionCommit": "9952aad859e17cb957ba4af07dd9337be60f27c0"
+  },
+  "stageD": {
+    "contentRegression": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG1SourceGroundedInstructionalCorrectionsTests.cs",
+    "practiceRegression": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeUnit6MeasurementPracticeTests.cs",
+    "testsCommitted": [
+      "0c6732dbf617613eaa5eb225b4fd85d532c8bb51",
+      "a9166c3be98f5b676380cb36b52f0f856b3ae916"
+    ],
+    "testsExecuted": false,
+    "githubCiManuallyTriggered": false,
+    "authenticLearnerGradeAndPersistence": "PENDING_FROZEN_SHA",
+    "rightsAndAccessibility": "PENDING",
+    "internalAcademicApproval": "NOT_CLAIMED"
+  },
+  "ledgerStatus": "IN_PROGRESS",
+  "gradeRelease": "NO_GO",
+  "nextAction": "Continue ordinal 114 in order; D/CI deferred.",
+  "singleSourceTeachingPathConfirmed": true,
+  "v1ToV2HistoricalSourceMigrationGuarded": true,
+  "aToCClosure": {
+    "outcome": "READY_FOR_STAGE_D",
+    "sourceScope": "Four named shoe source stories (16,20,5,9) represented, real student/teacher shoe tracing and peer work teacher-only.",
+    "originalStudentAndTeacherTextCompared": true,
+    "firstPartyTeachingAndMathReviewed": true,
+    "originalActualMeasurementTeacherOnly": true,
+    "sourceImagesNotCertified": true,
+    "testsAuthoredButNotExecuted": true,
+    "stageDExecuted": false,
+    "ciExecutedDuringAuthoring": false,
+    "openACDefects": []
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D2",
+    "ordinal": 113,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U06:L11",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Exact-run GitHub authenticated technical evidence; final internal acceptance governed separately by full-grade-progress.json",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-113-source-math-v1-acceptance-20261021.md",
+    "exactRunProofBoundary": "Four named shoe source stories (16,20,5,9) represented, real student/teacher shoe tracing and peer work teacher-only."
+  }
+}

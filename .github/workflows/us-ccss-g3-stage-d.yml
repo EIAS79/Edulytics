@@ -1,0 +1,155 @@
+name: Grade 3 Stage D 143-Lesson CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g3-stage-d.yml'
+      - 'tools/curriculum/g3-stage-d-test-matrix.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G3/**'
+      - 'src/Edulytics.Web/Controllers/Grade3Lesson4ActivitiesController.cs'
+      - 'src/Edulytics.Web/Curriculum/Grade3/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
+      - 'src/Edulytics.Data/Seeding/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  g3-source-inventory:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Stage D results must be attributed to the exact authored head,
+          # not the synthetic pull_request merge ref used by default.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact Grade 3 candidate SHA
+        env:
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD_SHA"
+          echo "G3_STAGE_D_TESTED_SHA=$EXPECTED_HEAD_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify all 143 lesson IDs, ready checkpoints and their test classes
+        run: |
+          set -euo pipefail
+          node tools/curriculum/g3-stage-d-test-matrix.cjs verify
+          node tools/curriculum/g3-stage-d-test-matrix.cjs inventory > /tmp/g3-stage-d-inventory.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-143-test-class-inventory
+          path: /tmp/g3-stage-d-inventory.json
+          if-no-files-found: warn
+
+  g3-shared-build:
+    needs: g3-source-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Stage D results must be attributed to the exact authored head,
+          # not the synthetic pull_request merge ref used by default.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact Grade 3 candidate SHA
+        env:
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD_SHA"
+          echo "G3_STAGE_D_TESTED_SHA=$EXPECTED_HEAD_SHA"
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and compile application dependencies and all Grade 3 tests once
+        run: |
+          set -euo pipefail
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+          test -s tests/Edulytics.Tests/bin/Release/net10.0/Edulytics.Tests.dll
+      - uses: actions/upload-artifact@v4
+        with:
+          name: g3-stage-d-test-binaries
+          path: tests/Edulytics.Tests/bin/Release/net10.0/
+          retention-days: 7
+          if-no-files-found: error
+
+  g3-test-matrix:
+    needs: g3-shared-build
+    name: Grade3-${{ matrix.batch }}-source-tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Stage D results must be attributed to the exact authored head,
+          # not the synthetic pull_request merge ref used by default.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact Grade 3 candidate SHA
+        env:
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD_SHA"
+          echo "G3_STAGE_D_TESTED_SHA=$EXPECTED_HEAD_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/download-artifact@v4
+        with:
+          name: g3-stage-d-test-binaries
+          path: tests/Edulytics.Tests/bin/Release/net10.0/
+      - name: Fail closed on source-specific worked examples with fewer than three explicit steps
+        run: node tools/curriculum/g3-stage-d-rich-example-contract.cjs '${{ matrix.batch }}'
+      - name: Execute source mathematics, answer grading and teacher-review tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          filter="$(node tools/curriculum/g3-stage-d-test-matrix.cjs filter '${{ matrix.batch }}')"
+          test -n "$filter"
+          mkdir -p stage-d-results
+          dotnet vstest tests/Edulytics.Tests/bin/Release/net10.0/Edulytics.Tests.dll \
+            --TestCaseFilter:"$filter" \
+            --Logger:"trx;LogFileName=g3-${{ matrix.batch }}.trx" \
+            --ResultsDirectory:stage-d-results
+          test -s "stage-d-results/g3-${{ matrix.batch }}.trx"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-stage-d-${{ matrix.batch }}-trx
+          path: stage-d-results/
+          retention-days: 30
+          if-no-files-found: warn
+
+  g3-digital-result:
+    name: g3-stage-d-143-digital-tests
+    needs: [g3-source-inventory, g3-shared-build, g3-test-matrix]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Fail closed when a build or independent test batch fails
+        env:
+          INVENTORY: ${{ needs.g3-source-inventory.result }}
+          BUILD: ${{ needs.g3-shared-build.result }}
+          MATRIX: ${{ needs.g3-test-matrix.result }}
+        run: |
+          set -euo pipefail
+          test "$INVENTORY" = success
+          test "$BUILD" = success
+          test "$MATRIX" = success
+          echo "143 Grade 3 lesson tests passed over three batches, DIGITAL ONLY. Not 100% original-source parity, per-lesson HTTPS E2E or academic approval."

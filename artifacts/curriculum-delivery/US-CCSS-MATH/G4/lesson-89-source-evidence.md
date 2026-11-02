@@ -1,0 +1,10 @@
+# G4 ordinal 89 — From Visual Patterns to Numerical Patterns
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-3_preparation.html SHA256=4095ad4d71ee40ff6318484b142ad5a3a248faeb358c9c0cf1b3352c14fc70b9
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-3\lesson.html SHA256=de9ada0ed3713769b70696d614ca864f2dd3383efa00e0b3ea1c67e4dc2e2440
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-3\lesson.html SHA256=9d1f65a86adcbeb4717d7ae4d382c4fc575bf2813d2590fff868b3e14a8e2a64
+- Preserved existing learning explanation: Learning goal: You will analyze, describe, and extend numerical patterns that follow a rule. Previously, you explored growing and repeating patterns and reasoned about the patterns using words, numbers, and operations. In this lesson, you investigate patterns in a geometric context and explore how the side lengths, area, perimeter, and other features of a rectangle change when the rectangle changes by a rule. In doing so, you practice looking for and making use of structure (MP7).
+- Original 2021 sections: Warm-up:  Number Talk: Patterns in Multiplication	 (10 minutes); Activity 1:  Growing Rectangles	 (20 minutes); Activity 2:  More Growing Rectangles	 [OPTIONAL] (20 minutes); Activity 3:   No Grid This Time!	 (15 minutes); Cool-down:  Another Set of Rectangles	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 7+2 = 9.
+- Edulytics first-party Cool-down: If the sequence continues 3, 5, 7, 9, what is the fifth count?; teacher key: 11.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

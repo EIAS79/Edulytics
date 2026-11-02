@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 28,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L10",
+  "unitNumber": 2,
+  "lessonNumber": 10,
+  "title": "Center Day 2 (optional)",
+  "stageA": {
+    "status": "COMPLETE_IM2021_SOURCE_LOCAL_TEACHER_PREPARATION_AND_LESSON",
+    "sourceBook": "Local read-only G2 Unit2 Lesson10 preparation and lesson HTML",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-10/preparation.html",
+    "originalBodySha256": "7a841f3ab2beb2bb27c0701e7e611b56bcae6ad37600cf104538895177308b14",
+    "sourceSemanticSha256": "6327cb06e644b5b64834742735378765c2b9518b90c32ab8d7e1ea37e503ab21",
+    "officialOutcomes": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.NBT.B.9",
+      "CCSS:2.OA.B.2"
+    ],
+    "warmup": "Notice and Wonder original66−28=38, 66=50+16,16−8=8,50−20=30,30+8=38.",
+    "activity1": "Target Numbers Stage5 real two-player game starts100, rolls3 number cubes, chooses distinct cubes for tens and ones, subtracts legal two-digit number, records next remainder and never goes negative.",
+    "activity1SourceExample": "From73 with source dice4,2,5: choose24 ->49 with a trade; choose52 ->21 without a trade; choices are alternatives, not sequential rounds.",
+    "sourceRuleConflict": "Public narrative says closest zero within six rounds, but source launch says first below10 wins. Both recorded; teacher resolves actual real gameplay winner, no digital winner assertion.",
+    "activity2": "Optional choice between Target Numbers Stages4–5, Capture Squares Stages3–4 and Five in a Row Stage6, real teacher-observed partner centers.",
+    "coolDown": "No teacher-only source cool-down on public page; independent Edulytics maths only.",
+    "rights": "Actual published image/record sheet not copied; Edulytics illustration and numeric exit independently authored."
+  },
+  "stageB": {
+    "status": "COMPLETE_SOURCE_SHA_OLD_SIX_FIELDS_PERSISTED_PREDECESSOR_GUARDED",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Original source URL+canonical SHA+ordered outcomes and six original learner fields; previous rich content persisted version explicitly enforced."
+  },
+  "stageC": {
+    "status": "COMPLETE_NUMERIC_THREE_DICE_FAMILIES_AUTHENTICATED_COMPANION_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2TenthLessonCenterDay2.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson10TargetStage5Contracts.cs",
+    "questionGenerator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson10TargetStage5Questions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson28ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson28Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l10.dice_make_two_digit",
+      "usccss.g2.u02.l10.dice_subtract_decompose",
+      "usccss.g2.u02.l10.dice_subtract_no_decompose",
+      "usccss.g2.u02.l10.dice_valid_remainder"
+    ],
+    "paramGuard": "All 3 dice in1..6; chosen tensIndex and onesIndex in0..2 must differ; constructed amount<=current; borrow and no-borrow family ones comparison enforced.",
+    "firstPartyExit": "82−35=47,94−56=38,70−24=46; independently authored and not publisher source cooldown.",
+    "humanOnly": "Teacher verifies real dice rolls, multiple physical turns, winner under chosen authentic end rule, observed choice-time collaboration.",
+    "studentSecurity": "Protected StudentPortal, selected adoption, published content, antiforgery POST, bounded text, no official grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2CenterDay2TargetStage5TeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2TenthLessonCenterDay2Tests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson10TargetStage5QuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson28ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO",
+    "humanAcademicSignoff": "NOT_ASSERTED"
+  },
+  "nextAction": "BEGIN_G2_U02_L11_GRADE_ORDINAL29_SOURCE_A_B_C"
+}

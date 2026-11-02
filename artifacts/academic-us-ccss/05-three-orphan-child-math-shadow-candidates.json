@@ -1,0 +1,2609 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH/CCSSM-2010/G1-G12",
+  "basis": "PINNED_PUBLISHER_BLUEPRINT_PARENT_RELATION_AND_OFFICIAL_SUBCLAUSE_TEXT",
+  "sourcePublisherExactCoverageBefore": {
+    "total": 121,
+    "exact": 106,
+    "unresolved": 15
+  },
+  "sourcePublisherExactCoverageAfter": {
+    "total": 121,
+    "exact": 106,
+    "unresolved": 15
+  },
+  "reviewState": "MATHEMATICAL_NUMERIC_SHADOW_CASES_ONLY",
+  "skillFamilyProductionReady": false,
+  "studentPracticeRouting": false,
+  "independentHumanAcademicReviews": 0,
+  "mathematicalCaseCount": 184,
+  "newShadowFamilies": 3,
+  "limitations": [
+    "Only primitive numerical/oracle probes are independently recomputed; written reasoning, diagrams and human marking rubrics remain unreviewed",
+    "Related publisher lessons do NOT assert exact child-standard Addressing source",
+    "No generated questions, practice routing, assessment, student data, grade mappings or official wording changed"
+  ],
+  "clauses": [
+    {
+      "clause": "3.MD.C.7.a",
+      "parent": "3.MD.C.7",
+      "officialUrl": "https://www.thecorestandards.org/Math/Content/3/MD/C/7/a/",
+      "mathematicalFamily": "rectangle_tiling_product",
+      "rawPublisherChildAddressingCount": 0,
+      "candidateLesson": {
+        "lessonCode": "PED:US-CCSS-MATH:G3:U02:L05",
+        "expectedTitle": "Represent Products as Areas PLC Activity",
+        "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-5/preparation.html",
+        "blueprintFile": "us-ccss-math-grade3-im-k5-2021.lesson-blueprint.json",
+        "publisherRelation": "PARENT_OUTCOME_AND_SIBLING_B_NOT_EXACT_A"
+      },
+      "releaseStatus": "SHADOW_ONLY_NOT_STUDENT_ROUTED",
+      "humanAcademicReviewerId": null,
+      "verifiedCases": 100,
+      "questionCases": [
+        {
+          "id": "tile-1x1",
+          "rows": 1,
+          "columns": 1,
+          "tileRows": [
+            "#"
+          ],
+          "answerArea": 1,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x2",
+          "rows": 1,
+          "columns": 2,
+          "tileRows": [
+            "##"
+          ],
+          "answerArea": 2,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x3",
+          "rows": 1,
+          "columns": 3,
+          "tileRows": [
+            "###"
+          ],
+          "answerArea": 3,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x4",
+          "rows": 1,
+          "columns": 4,
+          "tileRows": [
+            "####"
+          ],
+          "answerArea": 4,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x5",
+          "rows": 1,
+          "columns": 5,
+          "tileRows": [
+            "#####"
+          ],
+          "answerArea": 5,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x6",
+          "rows": 1,
+          "columns": 6,
+          "tileRows": [
+            "######"
+          ],
+          "answerArea": 6,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x7",
+          "rows": 1,
+          "columns": 7,
+          "tileRows": [
+            "#######"
+          ],
+          "answerArea": 7,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x8",
+          "rows": 1,
+          "columns": 8,
+          "tileRows": [
+            "########"
+          ],
+          "answerArea": 8,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x9",
+          "rows": 1,
+          "columns": 9,
+          "tileRows": [
+            "#########"
+          ],
+          "answerArea": 9,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-1x10",
+          "rows": 1,
+          "columns": 10,
+          "tileRows": [
+            "##########"
+          ],
+          "answerArea": 10,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x1",
+          "rows": 2,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#"
+          ],
+          "answerArea": 2,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x2",
+          "rows": 2,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##"
+          ],
+          "answerArea": 4,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x3",
+          "rows": 2,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###"
+          ],
+          "answerArea": 6,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x4",
+          "rows": 2,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####"
+          ],
+          "answerArea": 8,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x5",
+          "rows": 2,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####"
+          ],
+          "answerArea": 10,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x6",
+          "rows": 2,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######"
+          ],
+          "answerArea": 12,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x7",
+          "rows": 2,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######"
+          ],
+          "answerArea": 14,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x8",
+          "rows": 2,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########"
+          ],
+          "answerArea": 16,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x9",
+          "rows": 2,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########"
+          ],
+          "answerArea": 18,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-2x10",
+          "rows": 2,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########"
+          ],
+          "answerArea": 20,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x1",
+          "rows": 3,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 3,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x2",
+          "rows": 3,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 6,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x3",
+          "rows": 3,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 9,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x4",
+          "rows": 3,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 12,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x5",
+          "rows": 3,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 15,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x6",
+          "rows": 3,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 18,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x7",
+          "rows": 3,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 21,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x8",
+          "rows": 3,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 24,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x9",
+          "rows": 3,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 27,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-3x10",
+          "rows": 3,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 30,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x1",
+          "rows": 4,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 4,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x2",
+          "rows": 4,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 8,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x3",
+          "rows": 4,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 12,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x4",
+          "rows": 4,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 16,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x5",
+          "rows": 4,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 20,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x6",
+          "rows": 4,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 24,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x7",
+          "rows": 4,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 28,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x8",
+          "rows": 4,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 32,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x9",
+          "rows": 4,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 36,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-4x10",
+          "rows": 4,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 40,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x1",
+          "rows": 5,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 5,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x2",
+          "rows": 5,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 10,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x3",
+          "rows": 5,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 15,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x4",
+          "rows": 5,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 20,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x5",
+          "rows": 5,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 25,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x6",
+          "rows": 5,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 30,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x7",
+          "rows": 5,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 35,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x8",
+          "rows": 5,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 40,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x9",
+          "rows": 5,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 45,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-5x10",
+          "rows": 5,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 50,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x1",
+          "rows": 6,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 6,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x2",
+          "rows": 6,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 12,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x3",
+          "rows": 6,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 18,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x4",
+          "rows": 6,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 24,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x5",
+          "rows": 6,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 30,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x6",
+          "rows": 6,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 36,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x7",
+          "rows": 6,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 42,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x8",
+          "rows": 6,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 48,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x9",
+          "rows": 6,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 54,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-6x10",
+          "rows": 6,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 60,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x1",
+          "rows": 7,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 7,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x2",
+          "rows": 7,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 14,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x3",
+          "rows": 7,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 21,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x4",
+          "rows": 7,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 28,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x5",
+          "rows": 7,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 35,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x6",
+          "rows": 7,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 42,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x7",
+          "rows": 7,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 49,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x8",
+          "rows": 7,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 56,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x9",
+          "rows": 7,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 63,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-7x10",
+          "rows": 7,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 70,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x1",
+          "rows": 8,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 8,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x2",
+          "rows": 8,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 16,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x3",
+          "rows": 8,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 24,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x4",
+          "rows": 8,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 32,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x5",
+          "rows": 8,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 40,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x6",
+          "rows": 8,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 48,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x7",
+          "rows": 8,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 56,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x8",
+          "rows": 8,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 64,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x9",
+          "rows": 8,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 72,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-8x10",
+          "rows": 8,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 80,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x1",
+          "rows": 9,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 9,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x2",
+          "rows": 9,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 18,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x3",
+          "rows": 9,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 27,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x4",
+          "rows": 9,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 36,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x5",
+          "rows": 9,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 45,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x6",
+          "rows": 9,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 54,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x7",
+          "rows": 9,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 63,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x8",
+          "rows": 9,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 72,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x9",
+          "rows": 9,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 81,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-9x10",
+          "rows": 9,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 90,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x1",
+          "rows": 10,
+          "columns": 1,
+          "tileRows": [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          "answerArea": 10,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x2",
+          "rows": 10,
+          "columns": 2,
+          "tileRows": [
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##",
+            "##"
+          ],
+          "answerArea": 20,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x3",
+          "rows": 10,
+          "columns": 3,
+          "tileRows": [
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###",
+            "###"
+          ],
+          "answerArea": 30,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x4",
+          "rows": 10,
+          "columns": 4,
+          "tileRows": [
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####",
+            "####"
+          ],
+          "answerArea": 40,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x5",
+          "rows": 10,
+          "columns": 5,
+          "tileRows": [
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####",
+            "#####"
+          ],
+          "answerArea": 50,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x6",
+          "rows": 10,
+          "columns": 6,
+          "tileRows": [
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######",
+            "######"
+          ],
+          "answerArea": 60,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x7",
+          "rows": 10,
+          "columns": 7,
+          "tileRows": [
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######",
+            "#######"
+          ],
+          "answerArea": 70,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x8",
+          "rows": 10,
+          "columns": 8,
+          "tileRows": [
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########",
+            "########"
+          ],
+          "answerArea": 80,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x9",
+          "rows": 10,
+          "columns": 9,
+          "tileRows": [
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########",
+            "#########"
+          ],
+          "answerArea": 90,
+          "answerUnit": "square units"
+        },
+        {
+          "id": "tile-10x10",
+          "rows": 10,
+          "columns": 10,
+          "tileRows": [
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########",
+            "##########"
+          ],
+          "answerArea": 100,
+          "answerUnit": "square units"
+        }
+      ]
+    },
+    {
+      "clause": "5.MD.C.3.a",
+      "parent": "5.MD.C.3",
+      "officialUrl": "https://www.thecorestandards.org/Math/Content/5/MD/C/3/a/",
+      "mathematicalFamily": "unit_cube_recognition",
+      "rawPublisherChildAddressingCount": 0,
+      "candidateLesson": {
+        "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+        "expectedTitle": "What Is Volume?",
+        "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-1/preparation.html",
+        "blueprintFile": "us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
+        "publisherRelation": "PARENT_OUTCOME_ONLY_NOT_EXACT_CHILD"
+      },
+      "releaseStatus": "SHADOW_ONLY_NOT_STUDENT_ROUTED",
+      "humanAcademicReviewerId": null,
+      "verifiedCases": 24,
+      "questionCases": [
+        {
+          "id": "unit-cm-1x1x1",
+          "edgeDimensions": [
+            1,
+            1,
+            1
+          ],
+          "lengthUnit": "cm",
+          "isUnitCube": true,
+          "answerUnit": "one cubic cm"
+        },
+        {
+          "id": "unit-cm-1x1x2",
+          "edgeDimensions": [
+            1,
+            1,
+            2
+          ],
+          "lengthUnit": "cm",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-cm-1x2x1",
+          "edgeDimensions": [
+            1,
+            2,
+            1
+          ],
+          "lengthUnit": "cm",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-cm-2x1x1",
+          "edgeDimensions": [
+            2,
+            1,
+            1
+          ],
+          "lengthUnit": "cm",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-cm-2x2x2",
+          "edgeDimensions": [
+            2,
+            2,
+            2
+          ],
+          "lengthUnit": "cm",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-cm-3x3x3",
+          "edgeDimensions": [
+            3,
+            3,
+            3
+          ],
+          "lengthUnit": "cm",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-m-1x1x1",
+          "edgeDimensions": [
+            1,
+            1,
+            1
+          ],
+          "lengthUnit": "m",
+          "isUnitCube": true,
+          "answerUnit": "one cubic m"
+        },
+        {
+          "id": "unit-m-1x1x2",
+          "edgeDimensions": [
+            1,
+            1,
+            2
+          ],
+          "lengthUnit": "m",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-m-1x2x1",
+          "edgeDimensions": [
+            1,
+            2,
+            1
+          ],
+          "lengthUnit": "m",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-m-2x1x1",
+          "edgeDimensions": [
+            2,
+            1,
+            1
+          ],
+          "lengthUnit": "m",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-m-2x2x2",
+          "edgeDimensions": [
+            2,
+            2,
+            2
+          ],
+          "lengthUnit": "m",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-m-3x3x3",
+          "edgeDimensions": [
+            3,
+            3,
+            3
+          ],
+          "lengthUnit": "m",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-in-1x1x1",
+          "edgeDimensions": [
+            1,
+            1,
+            1
+          ],
+          "lengthUnit": "in",
+          "isUnitCube": true,
+          "answerUnit": "one cubic in"
+        },
+        {
+          "id": "unit-in-1x1x2",
+          "edgeDimensions": [
+            1,
+            1,
+            2
+          ],
+          "lengthUnit": "in",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-in-1x2x1",
+          "edgeDimensions": [
+            1,
+            2,
+            1
+          ],
+          "lengthUnit": "in",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-in-2x1x1",
+          "edgeDimensions": [
+            2,
+            1,
+            1
+          ],
+          "lengthUnit": "in",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-in-2x2x2",
+          "edgeDimensions": [
+            2,
+            2,
+            2
+          ],
+          "lengthUnit": "in",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-in-3x3x3",
+          "edgeDimensions": [
+            3,
+            3,
+            3
+          ],
+          "lengthUnit": "in",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-ft-1x1x1",
+          "edgeDimensions": [
+            1,
+            1,
+            1
+          ],
+          "lengthUnit": "ft",
+          "isUnitCube": true,
+          "answerUnit": "one cubic ft"
+        },
+        {
+          "id": "unit-ft-1x1x2",
+          "edgeDimensions": [
+            1,
+            1,
+            2
+          ],
+          "lengthUnit": "ft",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-ft-1x2x1",
+          "edgeDimensions": [
+            1,
+            2,
+            1
+          ],
+          "lengthUnit": "ft",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-ft-2x1x1",
+          "edgeDimensions": [
+            2,
+            1,
+            1
+          ],
+          "lengthUnit": "ft",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-ft-2x2x2",
+          "edgeDimensions": [
+            2,
+            2,
+            2
+          ],
+          "lengthUnit": "ft",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        },
+        {
+          "id": "unit-ft-3x3x3",
+          "edgeDimensions": [
+            3,
+            3,
+            3
+          ],
+          "lengthUnit": "ft",
+          "isUnitCube": false,
+          "answerUnit": "not a unit cube"
+        }
+      ]
+    },
+    {
+      "clause": "6.SP.B.5.a",
+      "parent": "6.SP.B.5",
+      "officialUrl": "https://www.thecorestandards.org/Math/Content/6/SP/B/5/a/",
+      "mathematicalFamily": "number_of_observations",
+      "rawPublisherChildAddressingCount": 0,
+      "candidateLesson": {
+        "lessonCode": "PED:US-CCSS-MATH:G6:U08:L17",
+        "expectedTitle": "Using Box Plots",
+        "sourceUrl": "https://im.kendallhunt.com/MS/teachers/1/8/17/preparation.html",
+        "blueprintFile": "us-ccss-math-grade6-our-2017.lesson-blueprint.json",
+        "publisherRelation": "PARENT_OUTCOME_ONLY_NOT_EXACT_CHILD"
+      },
+      "releaseStatus": "SHADOW_ONLY_NOT_STUDENT_ROUTED",
+      "humanAcademicReviewerId": null,
+      "verifiedCases": 60,
+      "questionCases": [
+        {
+          "id": "count-1-pattern-0",
+          "measurements": [
+            0
+          ],
+          "answerCount": 1,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-1-pattern-1",
+          "measurements": [
+            0
+          ],
+          "answerCount": 1,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-1-pattern-2",
+          "measurements": [
+            -2
+          ],
+          "answerCount": 1,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-1-pattern-3",
+          "measurements": [
+            0
+          ],
+          "answerCount": 1,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-1-pattern-4",
+          "measurements": [
+            0
+          ],
+          "answerCount": 1,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-2-pattern-0",
+          "measurements": [
+            0,
+            0
+          ],
+          "answerCount": 2,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-2-pattern-1",
+          "measurements": [
+            0,
+            1
+          ],
+          "answerCount": 2,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-2-pattern-2",
+          "measurements": [
+            -2,
+            3
+          ],
+          "answerCount": 2,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-2-pattern-3",
+          "measurements": [
+            -1,
+            0
+          ],
+          "answerCount": 2,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-2-pattern-4",
+          "measurements": [
+            0,
+            0
+          ],
+          "answerCount": 2,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-3-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0
+          ],
+          "answerCount": 3,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-3-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2
+          ],
+          "answerCount": 3,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-3-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2
+          ],
+          "answerCount": 3,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-3-pattern-3",
+          "measurements": [
+            -1,
+            0,
+            1
+          ],
+          "answerCount": 3,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-3-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1
+          ],
+          "answerCount": 3,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-4-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 4,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-4-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0
+          ],
+          "answerCount": 4,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-4-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3
+          ],
+          "answerCount": 4,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-4-pattern-3",
+          "measurements": [
+            -2,
+            -1,
+            0,
+            1
+          ],
+          "answerCount": 4,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-4-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "answerCount": 4,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-5-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 5,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-5-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "answerCount": 5,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-5-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2
+          ],
+          "answerCount": 5,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-5-pattern-3",
+          "measurements": [
+            -2,
+            -1,
+            0,
+            1,
+            2
+          ],
+          "answerCount": 5,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-5-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "answerCount": 5,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-6-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 6,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-6-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "answerCount": 6,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-6-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3
+          ],
+          "answerCount": 6,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-6-pattern-3",
+          "measurements": [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2
+          ],
+          "answerCount": 6,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-6-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "answerCount": 6,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-7-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 7,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-7-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0
+          ],
+          "answerCount": 7,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-7-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2
+          ],
+          "answerCount": 7,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-7-pattern-3",
+          "measurements": [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "answerCount": 7,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-7-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          "answerCount": 7,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-8-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 8,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-8-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "answerCount": 8,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-8-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3
+          ],
+          "answerCount": 8,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-8-pattern-3",
+          "measurements": [
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "answerCount": 8,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-8-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3
+          ],
+          "answerCount": 8,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-9-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 9,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-9-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "answerCount": 9,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-9-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2
+          ],
+          "answerCount": 9,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-9-pattern-3",
+          "measurements": [
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "answerCount": 9,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-9-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4
+          ],
+          "answerCount": 9,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-10-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 10,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-10-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0
+          ],
+          "answerCount": 10,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-10-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3
+          ],
+          "answerCount": 10,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-10-pattern-3",
+          "measurements": [
+            -5,
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "answerCount": 10,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-10-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ],
+          "answerCount": 10,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-11-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 11,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-11-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1
+          ],
+          "answerCount": 11,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-11-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2
+          ],
+          "answerCount": 11,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-11-pattern-3",
+          "measurements": [
+            -5,
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answerCount": 11,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-11-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5
+          ],
+          "answerCount": 11,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-12-pattern-0",
+          "measurements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answerCount": 12,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-12-pattern-1",
+          "measurements": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          "answerCount": 12,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-12-pattern-2",
+          "measurements": [
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3,
+            -2,
+            3
+          ],
+          "answerCount": 12,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-12-pattern-3",
+          "measurements": [
+            -6,
+            -5,
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "answerCount": 12,
+          "answerUnit": "observations"
+        },
+        {
+          "id": "count-12-pattern-4",
+          "measurements": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "answerCount": 12,
+          "answerUnit": "observations"
+        }
+      ]
+    }
+  ]
+}

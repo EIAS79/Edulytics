@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "ordinal": 5,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
+  "authoringClosure": "READY_FOR_STAGE_D",
+  "evidenceDate": "2026-10-24",
+  "sourceEdition": "IM K-5 2021 first edition",
+  "sourceTeacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/lesson.html",
+  "teacherGuidePublicExtract": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+  "teacherGuidePageRange": "57–64",
+  "sourceElements": [
+    {
+      "id": "goals_timeline",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.57–58, Prep",
+      "evidence": "Scaled bar graphs, 3.MD.B.3, Number Talk 10, compare 10, create 25, synthesis 10, Cool-down 5",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "number_talk_four_exact",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.59, local teacher HTML",
+      "evidence": "Four 2s=8, eight 2s=16, four 5s=20, eight 5s=40, mental doubling and teacher talk",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "activity1_same_graph_data",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.60–61",
+      "evidence": "Original fixed category counts Bike12, Walk4, Bus or Van6, Car3 across axes by 1 and 2, zero baseline, labels and correct values",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "activity1_open_comparison",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher HTML Activity1",
+      "evidence": "1-minute quiet think, 4-minute partner explanation of same categories and different vertical scale, source three-part graph talk teacher reviewed",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "activity2_prior_l04_class_survey",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.61–62",
+      "evidence": "Actual pupils' own L04 paper pictograph of six named travel choices and teacher attested same data, not fabricated four-category graph",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "activity2_two_or_five_scale",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.61–63",
+      "evidence": "Choose axis step 2 or 5, zero based; source blank graph by2 to16 and by5 to40; nonmultiples exact between ticks, optional both charts",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "activity2_access_and_partner",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.62–63",
+      "evidence": "12-minute pair construction, discussion, MLR7 Compare and Connect, teacher chunked feedback, no numeric-only credit",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "synthesis_then_community",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide pp.63–64",
+      "evidence": "Synthesis BEFORE Cool-down; Math Community 2–3 min AFTER Cool-down, teacher revises norms, source activity preserved",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "original_source_cooldown_zoo",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.57–58",
+      "evidence": "Zoo Elephant17 Tiger10 Giraffe14 Otter4, missing source bars Tiger10 and Otter4; vertical ticks by FIVE with exact endpoints, teacher draws reviews",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    },
+    {
+      "id": "centers_rights_and_figures",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.64",
+      "evidence": "Sort and Display Stage3 Scaled Graphs, Five in a Row Stage6, original figures not copied; first-party axes and teacher-led centers",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceOriginalPublisherPixelsCopied": false,
+      "sourceStudentExecutionDeferredToStageD": true
+    }
+  ],
+  "sourceElementsIdentified": 10,
+  "sourceElementsSemanticallyAuthored": 10,
+  "sourceSemanticAuthoringPercent": 100,
+  "sourceMathematicalProof": {
+    "warmupExpected": [
+      8,
+      16,
+      20,
+      40
+    ],
+    "activity1BikeWalkBusVanCar": [
+      12,
+      4,
+      6,
+      3
+    ],
+    "source2021ZooCoolDownElephantTigerGiraffeOtter": [
+      17,
+      10,
+      14,
+      4
+    ],
+    "requiredMissingBarCounts": {
+      "Tiger": 10,
+      "Otter": 4
+    },
+    "zooSourceAxisStep": 5,
+    "activity2ClassAxisChoice": [
+      2,
+      5
+    ]
+  },
+  "authoringPaths": {
+    "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+    "view": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+    "controller": "src/Edulytics.Web/Controllers/Grade3Lesson5ActivitiesController.cs",
+    "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson5PracticePage.cs",
+    "rich": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+    "tests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5ScaledBarGraphTests.cs",
+    "richTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5RichV2SourceCoverageTests.cs"
+  },
+  "realClassSurveyAndStudentDrawingTeacherReviewedAtRuntime": false,
+  "originalSourcePdfByteIdentityClaimed": false,
+  "originalPublisherFigurePixelIdentityClaimed": false,
+  "publisherArtworkCopied": false,
+  "testsWrittenNotRun": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5ScaledBarGraphTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5RichV2SourceCoverageTests.cs"
+  ],
+  "compilerNotRun": true,
+  "stageD": "NOT_STARTED",
+  "ciIntentionallyTriggered": false,
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureMeaning": "Authoring of first-edition source math, source-specific first-party graph renderings, teacher-reviewed task fields, numeric graders and written tests; runtime and teacher observations deliberately excluded from A–C readiness."
+}

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "corpus": "Edulytics Stage 25 IB AA HL-style engine benchmark corpus",
+  "claimBoundary": "ENGINE_STYLE_CAPABILITY_ONLY",
+  "globalClaimAllowed": false,
+  "benchmarkCount": 15,
+  "requiredCategories": [
+    "Routine",
+    "Multi-step",
+    "Modelling",
+    "Reasoning",
+    "Proof",
+    "Unfamiliar transfer"
+  ],
+  "unsupportedCategories": [
+    "Proof",
+    "Unfamiliar transfer"
+  ],
+  "benchmarks": [
+    {
+      "benchmarkId": "ib-routine-quadratic",
+      "category": "Routine",
+      "skillId": "algebra.quadratic.solve.real_roots",
+      "questionFamilyId": "algebra.quadratic.solve.integer_coefficients.real_roots",
+      "factory": "ExactQuadraticQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Routine exact algebraic solving slice."
+    },
+    {
+      "benchmarkId": "ib-routine-function-eval",
+      "category": "Routine",
+      "skillId": "functions.evaluate.exact",
+      "questionFamilyId": "functions.evaluate.exact_rational",
+      "factory": "ExactFunctionEvaluationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Routine exact function-evaluation slice."
+    },
+    {
+      "benchmarkId": "ib-routine-vector-dot",
+      "category": "Routine",
+      "skillId": "vectors.dot.exact",
+      "questionFamilyId": "vectors.dot.exact_rational",
+      "factory": "ExactVectorDotProductQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Routine exact vector operation slice."
+    },
+    {
+      "benchmarkId": "ib-routine-frequency-mean",
+      "category": "Routine",
+      "skillId": "statistics.mean.frequency_table.exact",
+      "questionFamilyId": "statistics.mean.frequency_table.exact",
+      "factory": "ExactFrequencyMeanQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Routine exact statistics slice."
+    },
+    {
+      "benchmarkId": "ib-routine-arithmetic-sequence",
+      "category": "Routine",
+      "skillId": "sequences.arithmetic.nth_term",
+      "questionFamilyId": "sequences.arithmetic.nth_term.exact",
+      "factory": "ExactArithmeticSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Routine exact sequence-term slice."
+    },
+    {
+      "benchmarkId": "ib-multistep-derivative",
+      "category": "Multi-step",
+      "skillId": "calculus.polynomial.differentiate",
+      "questionFamilyId": "calculus.polynomial.derivative.exact",
+      "factory": "ExactPolynomialDerivativeQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Solver-grounded calculus slice with planning, solving and verification."
+    },
+    {
+      "benchmarkId": "ib-multistep-integral",
+      "category": "Multi-step",
+      "skillId": "calculus.polynomial.integrate.definite",
+      "questionFamilyId": "calculus.polynomial.definite_integral.exact",
+      "factory": "ExactPolynomialDefiniteIntegralQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Solver-grounded exact definite-integration slice."
+    },
+    {
+      "benchmarkId": "ib-multistep-bisection",
+      "category": "Multi-step",
+      "skillId": "numerical.roots.bisection.iterate",
+      "questionFamilyId": "numerical.roots.bisection.fixed_iterations.exact_rational",
+      "factory": "ExactBisectionIterationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Fixed-iteration numerical-method slice with explicit strategy planning."
+    },
+    {
+      "benchmarkId": "ib-multistep-newton",
+      "category": "Multi-step",
+      "skillId": "numerical.roots.newton.iterate",
+      "questionFamilyId": "numerical.roots.newton.fixed_iterations.exact_rational",
+      "factory": "ExactNewtonIterationQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Fixed-iteration Newton-method slice with explicit strategy planning."
+    },
+    {
+      "benchmarkId": "ib-modelling-velocity",
+      "category": "Modelling",
+      "skillId": "mechanics.kinematics.constant_acceleration.velocity",
+      "questionFamilyId": "mechanics.kinematics.constant_acceleration.velocity.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Exact constant-acceleration model slice."
+    },
+    {
+      "benchmarkId": "ib-modelling-displacement",
+      "category": "Modelling",
+      "skillId": "mechanics.kinematics.constant_acceleration.displacement",
+      "questionFamilyId": "mechanics.kinematics.constant_acceleration.displacement.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Exact displacement model slice."
+    },
+    {
+      "benchmarkId": "ib-modelling-work-energy",
+      "category": "Modelling",
+      "skillId": "mechanics.energy.work_energy",
+      "questionFamilyId": "mechanics.energy.work_energy.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Exact work-energy model slice."
+    },
+    {
+      "benchmarkId": "ib-modelling-power",
+      "category": "Modelling",
+      "skillId": "mechanics.power.work_over_time",
+      "questionFamilyId": "mechanics.power.work_over_time.exact",
+      "factory": "ExactMechanicsQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Exact power model slice."
+    },
+    {
+      "benchmarkId": "ib-reasoning-arithmetic-sequence",
+      "category": "Reasoning",
+      "skillId": "sequences.arithmetic.nth_term",
+      "questionFamilyId": "sequences.arithmetic.nth_term.exact",
+      "factory": "ExactArithmeticSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Narrow pattern-reasoning slice; not general proof."
+    },
+    {
+      "benchmarkId": "ib-reasoning-geometric-sequence",
+      "category": "Reasoning",
+      "skillId": "sequences.geometric.nth_term",
+      "questionFamilyId": "sequences.geometric.nth_term.exact",
+      "factory": "ExactGeometricSequenceQuestionFactory",
+      "requiredDifficultyBands": [
+        1,
+        2,
+        3
+      ],
+      "requiredChecks": [
+        "generate",
+        "solve",
+        "verify",
+        "grade",
+        "strategy-plan",
+        "difficulty-calibrate"
+      ],
+      "evidenceLevel": "ENGINE_EVIDENCE_ONLY",
+      "officialIbMapping": false,
+      "note": "Narrow pattern-reasoning slice; not general proof."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+@model Edulytics.Web.Controllers.G5L02RubricRow[]
+@{ ViewData["Title"] = "Grade 5 U03:L02 — Teacher rubric queue"; }
+<h1>Grade 5 U03:L02 — Teacher review queue</h1>
+<p>Only students enrolled in classes assigned to you in the corresponding mathematics subject are shown.</p>
+<ul>
+@foreach(var entry in Model)
+{
+    <li><a href="/school/g5/u03/l02/rubric/@entry.Id">@entry.StudentProfileId</a> — @entry.SubmittedAtUtc.ToString("u") — @(entry.ReviewedAtUtc.HasValue ? "Reviewed" : "Pending review")</li>
+}
+</ul>

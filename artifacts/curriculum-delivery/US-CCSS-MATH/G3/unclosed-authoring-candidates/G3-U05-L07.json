@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 86,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L07",
+  "unitNumber": 5,
+  "lessonNumber": 7,
+  "title": "Non-unit Fractions on the Number Line PLC Activity",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-5/lesson-7/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-7/lesson.html",
+  "stageA": {
+    "status": "ORIGINAL_2021_CHORAL_16_QUARTERS_NUMBERLINE_SCOOT_FOUR_PAIRS_AND_OPEN_PARTNER_TASK_REVIEWED",
+    "goals": "Locate non-unit fractions on the number line (including fractions greater than 1).",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 5,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false
+  },
+  "stageB": {
+    "status": "FIRSTPARTY_RICHV2_AND_INDEPENDENT_0_TO_2_FRACTION_LINES_WITH_SCOOT_SCOPE_GATES",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U05:L07",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "0add60463e0de86e22049f7f150ae69100cdadd646e5b36067c286e1308bc6dd",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l07-2021.rich-lesson-v2.json"
+  },
+  "stageC": {
+    "status": "SIXTEEN_QUARTER_WARMUP_EIGHT_FRACTION_LOCATIONS_SCOOT_RUBRIC_TESTS_WRITTEN_UNRUN",
+    "family": "fractions-number-line",
+    "practiceAnswerType": "rational",
+    "coolDownAnswerType": "rational",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Number Line Scoot with your teacher. Show the representation and explain how it meets the goal: Let’s locate non-unit fractions on the number line.",
+    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson7NonUnitNumberLineTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U05-L07-HEADING-01",
+      "sourceSection": "Warm-up: Choral Count: One-fourths (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_PUBLIC_TEXT_AND_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_AND_TEACHER_SPLIT",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L07-HEADING-02",
+      "sourceSection": "Activity 1: Number Line Scoot (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_PUBLIC_TEXT_AND_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_AND_TEACHER_SPLIT",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L07-HEADING-03",
+      "sourceSection": "Activity 2: Fractions on the Number Line (10 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_PUBLIC_TEXT_AND_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_AND_TEACHER_SPLIT",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L07-HEADING-04",
+      "sourceSection": "Activity 3: What's the Fraction? (10 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_PUBLIC_TEXT_AND_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_AND_TEACHER_SPLIT",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L07-HEADING-05",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L07-HEADING-06",
+      "sourceSection": "Cool-down: Where is $\\frac{5}{3}$? (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U05-L07-IMAGE-01",
+      "observedAltText": "Number line. 0 to 2 by ones. Evenly spaced tick marks. First tick mark, 0. Last tick mark, 2.",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_ORIGINAL_SOURCE_IMAGES_FOR_MATH_REVIEW_NO_ART_REUSE"
+    },
+    {
+      "id": "G3-U05-L07-IMAGE-02",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled zero, one, and two.",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_ORIGINAL_SOURCE_IMAGES_FOR_MATH_REVIEW_NO_ART_REUSE"
+    },
+    {
+      "id": "G3-U05-L07-IMAGE-03",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled 0, 1, and 2.",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_ORIGINAL_SOURCE_IMAGES_FOR_MATH_REVIEW_NO_ART_REUSE"
+    },
+    {
+      "id": "G3-U05-L07-IMAGE-04",
+      "observedAltText": "Students working together.",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_ORIGINAL_SOURCE_IMAGES_FOR_MATH_REVIEW_NO_ART_REUSE"
+    },
+    {
+      "id": "G3-U05-L07-IMAGE-05",
+      "observedAltText": "Number line.",
+      "originalReference": "unit-5/lesson-7/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_ORIGINAL_SOURCE_IMAGES_FOR_MATH_REVIEW_NO_ART_REUSE"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 6,
+    "imageDescriptions": 5,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Divide the zero-to-one number line into 6 equal intervals. Write the fraction at the first tick after zero.",
+    "answerType": "rational",
+    "expected": "1/6"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Publisher standalone Student Task PDF and Stage 2 Scoot blackline gameboard/directions not inspected; original game must use teacher-supplied materials.",
+    "Publisher assessment body teacher-gated, only public title known.",
+    "Original source image pixel-perfect reuse not approved or implemented; independent Edulytics math lines.",
+    "Physical game outcomes and student-authored partner answers require teacher, not scalar grade.",
+    "No Stage D/tests/CI/runtime persistence/production deployment/academic approval executed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "4a2189f8a7f945bbf5d65b164584674876046aff5eed6e7860462e94ba579cf5",
+  "originalPreparationHtmlSHA256": "84c60d1b54843a1acc91f0d34971a2ff333fe8769f60d443d2f940df727bfa92",
+  "originalSourceAssetsDownloadedForReadOnlyReview": 10,
+  "originalSourceAssetHashes": [
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "58fbf3313189ad29f3f59def7784922cc18dc3ecb2345ee200d12473ca484b82",
+    "3a655cd0b887dd3723e4fcf0253cdc0a2e0b142e8b25da24d5caaf59a35f10b6",
+    "8c8ed536b534e842089ea6ae685eb0f1aa9e81c935756c4f13187dfcf2f3e726",
+    "579413ac4c74064684024147dfad40c499966d4fe7459c6a01361c4856203d39"
+  ],
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-academic-source-coverage-and-human-rubric-20261025.json"
+}

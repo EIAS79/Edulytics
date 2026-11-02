@@ -1,0 +1,10 @@
+# G4 ordinal 87 — Patterns that Grow
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-1_preparation.html SHA256=77f37bad22b8d68e495b47466a41d79bfc68df3b17dab45d2b61b5ba11bcbefb
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-1\lesson.html SHA256=b74d818d2cdda714c75edd5c9e02e5f0f05ef585767aecebb63f76b51e9c4772
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-1\lesson.html SHA256=0a18fe91f206d627aae8fa7d9d5cd648e9f5cc33a4ea596e240646ff1ce77992
+- Preserved existing learning explanation: Learning goal: You will analyze, describe, and extend visual patterns in which one or more shapes grow by a rule. In grade 3, you identified patterns in numbers and used mathematical operations to explain them. In this lesson and the next few, you continue the work of analyzing and describing shape and number patterns, looking for features of patterns that are not apparent in the rule. The patterns in this lesson consist of shapes that use an increasing number of objects in each step.
+- Original 2021 sections: Warm-up:  Notice and Wonder: Sets of Circles	 (10 minutes); Activity 1: Bottle Cap Patterns	 (15 minutes); Activity 2:  Taller and Taller	 (20 minutes); Cool-down: Andre's House Pattern (5 minutes)
+- Corrections: removed non-publisher PLC title suffix; repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 10+3 = 13.
+- Edulytics first-party Cool-down: A design grows by two caps each stage: 5, 7, 9. Next stage?; teacher key: 11 caps.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

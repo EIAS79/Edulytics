@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 80,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L01",
+  "unitNumber": 5,
+  "lessonNumber": 1,
+  "title": "Name the Parts",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-5/lesson-1/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-1/lesson.html",
+  "stageA": {
+    "status": "2021_LOCAL_SOURCE_17_ORIGINAL_SVGS_AND_A_L_DOM_LABEL_CROSSWALK_VISUALLY_VERIFIED",
+    "goals": "Partition shapes into 2, 3, 4, 6, or 8 parts with equal area and name those parts as halves, thirds, fourths, sixths, and eighths. Recognize that equal-size parts in a shape can be named with numbers called fractions.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 13,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": true
+  },
+  "stageB": {
+    "status": "FIRSTPARTY_SOURCE_SPECIFIC_FRACTION_CARD_SORT_EQUAL_AREA_RICH_V2_FOLDING",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U05:L01",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "36b30473f29a14dd4eace5ca2fbb5e8caf038a7e90d9e6be54a99d14c63d8889",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": true,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l01-2021.rich-lesson-v2.json"
+  },
+  "stageC": {
+    "status": "17_PART_COUNT_DENOMINATOR_CHECKS_30_TEACHER_SOURCE_TASKS_TESTS_WRITTEN_UNRUN",
+    "family": "fractions-equal-partition",
+    "practiceAnswerType": "rational",
+    "coolDownAnswerType": "rational",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Card Sort: Partitions with your teacher. Show the representation and explain how it meets the goal: Let’s name parts of a whole.",
+    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
+    "individualMathOracles": 17,
+    "teacherJudgementTasks": 30
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U05-L01-HEADING-01",
+      "sourceSection": "Warm-up: Which One Doesn't Belong: Shapes with Parts (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIGURE_LABELS_INDEPENDENT_FIRSTPARTY_MATCHED",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L01-HEADING-02",
+      "sourceSection": "Activity 1: Card Sort: Partitions (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIGURE_LABELS_INDEPENDENT_FIRSTPARTY_MATCHED",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L01-HEADING-03",
+      "sourceSection": "Activity 2: Fold and Name (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIGURE_LABELS_INDEPENDENT_FIRSTPARTY_MATCHED",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L01-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIGURE_LABELS_INDEPENDENT_FIRSTPARTY_MATCHED",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L01-HEADING-05",
+      "sourceSection": "Cool-down: Partition a Rectangle (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "GATED",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U05-L01-IMAGE-01",
+      "observedAltText": "Diagram. Rectangle partitioned diagonally into 2 equal parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-02",
+      "observedAltText": "Diagram. Rectangle partitioned into 2 parts, one part shaded.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-03",
+      "observedAltText": "Diagram. Circle partitioned into 2 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-04",
+      "observedAltText": "Diagram. Rectangle partitioned into 2 unequal parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-05",
+      "observedAltText": "Diagram. Square partitioned into 2 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-06",
+      "observedAltText": "Diagram. Square partitioned into 4 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-07",
+      "observedAltText": "Diagram. Rectangle partitioned into 2 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-08",
+      "observedAltText": "Diagram. Circle partitioned into 3 equal parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-09",
+      "observedAltText": "Diagram. Rectangle partitioned into 3 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-10",
+      "observedAltText": "Diagram. Circle partitioned into 4 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-11",
+      "observedAltText": "Diagram. Circle partitioned into 3 unequal parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-12",
+      "observedAltText": "Diagram. Rectangle partitioned into 4 parts.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    },
+    {
+      "id": "G3-U05-L01-IMAGE-13",
+      "observedAltText": "Fraction strips.",
+      "originalReference": "unit-5/lesson-1/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_ORIGINAL_VISUALLY_VERIFIED_INDEPENDENT_REPRESENTATION"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 13,
+    "fullyVerified": 4
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "An equal-area whole has 4 parts; exactly one part is selected. Write its unit fraction.",
+    "answerType": "rational",
+    "expected": "1/4"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "17 unique original source SVGs visually inspected, mathematical card A–L label mapping confirmed directly from original HTML DOM.",
+    "Original publisher SVG paths not copied; Edulytics area representations independently authored.",
+    "Physical Card Sort/Fold and Name publisher blackline pixel layouts and original student task PDF not independently inspected.",
+    "Publisher source Partition a Rectangle Cool-down gated, not copied.",
+    "Human review required for arbitrary justified two-category sorts and physically folded equal-area rectangles; tests/Stage D/CI/academic approval not performed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-80-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-80-academic-source-coverage-and-human-rubric-20261025.json"
+}

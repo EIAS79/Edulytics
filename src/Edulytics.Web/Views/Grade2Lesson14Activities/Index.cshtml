@@ -1,0 +1,164 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson14Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";
+ ViewData["Title"]="Grade 2 — Make tape diagrams to compare";
+ var tables=new[]{
+    new {Title="Juice flavors from the source warm-up",Values=UsCcssG2Unit1FourteenthLessonTapeDiagrams.JuiceVotes},
+    new {Title="Party food choices — two activities",Values=UsCcssG2Unit1FourteenthLessonTapeDiagrams.PartyVotes},
+    new {Title="Independent Edulytics Cool-down: imaginary library club choices",Values=UsCcssG2Unit1FourteenthLessonTapeDiagrams.NewLibraryVotes}
+ };
+}
+<style>
+.g2-l14{max-width:960px;margin:auto;padding:20px 17px 42px;color:#203849}
+.g2-l14 .panel{padding:22px;background:white;border:1px solid #dae5ec;border-radius:15px;margin:18px 0}
+.g2-l14 h1{font-size:1.84rem}.g2-l14 h2{font-size:1.3rem}
+.g2-l14 .muted{color:#526a7b}.g2-l14 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:13px}
+.g2-l14 label{display:block;font-weight:730;margin:13px 0 5px}
+.g2-l14 input,.g2-l14 select,.g2-l14 textarea{border:1px solid #7993a1;border-radius:8px;font:inherit;padding:11px;width:100%;max-width:520px}
+.g2-l14 .button{border:0;border-radius:9px;background:#087b8f;color:white;font:inherit;font-weight:730;padding:13px 23px;cursor:pointer}
+.g2-l14 .graph{background:#f1f9fc;border:1px solid #b1cad6;border-radius:12px;padding:15px;margin:12px 0}
+.g2-l14 .barrow{display:flex;align-items:center;gap:10px;margin:9px 0}
+.g2-l14 .barlabel{width:110px;flex-shrink:0;font-weight:730;font-size:.88rem}
+.g2-l14 .bartrack{height:28px;width:min(100%,410px);border-left:2px solid #5d7584;background:repeating-linear-gradient(to right,transparent 0,transparent 19px,#dae7ec 20px)}
+.g2-l14 .bar{height:22px;background:#409bac;border:1px solid #136278;border-radius:0 4px 4px 0}
+.g2-l14 .tapes{margin:15px 0}
+.g2-l14 .tape{display:flex;align-items:center;gap:0;margin:7px 0}
+.g2-l14 .strip{background:#bee9e7;border:2px solid #147980;padding:7px 1px;text-align:center;font-size:.83rem;min-height:35px}
+.g2-l14 .extra{border:2px dashed #b17c28;background:#fff4db;padding:7px 1px;text-align:center;min-height:35px}
+.g2-l14 .tape-name{font-weight:800;width:102px;flex-shrink:0}
+.g2-l14 .success{border-left:4px solid #207e50;padding-left:12px}
+.g2-l14 .error{border-left:4px solid #bc4352;padding-left:12px}
+.g2-l14 .review{border-left:4px solid #b28630;padding-left:12px}
+</style>
+<main class="g2-l14">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to lesson</a>
+<header>
+<p>EDULYTICS · ORIGINAL TAPE DIAGRAM ACTIVITIES</p>
+<h1>Use diagrams to compare two amounts</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 14. Starting from a BAR graph,
+make two aligned rectangular strips, then show the missing difference
+as a dashed section with a question mark. The illustrations and
+independent Cool-down are first-party Edulytics creations.</p>
+</header>
+<section class="panel">
+<h2>1. Notice and Wonder — from graph to tape</h2>
+<p>The source example uses juice choices: lemonade 12, fruit punch 6,
+apple 15 and grape 8. Notice the apple bar is longer than the grape bar.
+A tape diagram shows the SAME difference without relying on the numeric
+grid marks of a bar graph.</p>
+<div class="graph">
+<h3>Juice flavor data — Edulytics redrawing</h3>
+@foreach(var row in tables[0].Values){
+<div class="barrow"><span class="barlabel">@row.Key</span>
+<div class="bartrack" role="img" aria-label="@row.Key @row.Value votes">
+<div class="bar" style="width:@(row.Value*20)px" aria-hidden="true"></div>
+</div><strong>@row.Value</strong></div>
+}
+<h3>Apple compared with grape</h3>
+<div class="tapes" role="img" aria-label="Tape diagram: apple fifteen, grape eight plus a dashed unknown missing difference to reach fifteen.">
+<div class="tape"><span class="tape-name">Apple</span>
+<div class="strip" style="width:300px">15</div></div>
+<div class="tape"><span class="tape-name">Grape</span>
+<div class="strip" style="width:160px">8</div><div class="extra" style="width:140px">?</div></div>
+</div>
+</div>
+<p>Write the difference and its two related equations. Explain what
+the question mark represents and which actual category each strip names.</p>
+</section>
+<section class="panel">
+<h2>2. Party Time — make your own strips</h2>
+<p>The public source party graph shows pizza 19, burgers 8 and hot dogs 14.
+Create or cut out YOUR OWN rectangles, label them, and align strips
+to make a comparison diagram. Write two different true statements
+about hot dogs and burgers using MORE and FEWER.</p>
+<div class="graph">
+@foreach(var row in tables[1].Values){
+<div class="barrow"><span class="barlabel">@row.Key</span>
+<div class="bartrack" role="img" aria-label="@row.Key @row.Value votes">
+<div class="bar" style="width:@(row.Value*20)px" aria-hidden="true"></div>
+</div><strong>@row.Value</strong></div>
+}
+</div>
+<h3>Part 2 — complete TWO different tape comparisons</h3>
+<p>Compare pizza 19 with burgers 8, then pizza 19 with hot dogs 14.
+The dashed missing pieces are different lengths. Create a related
+addition equation and subtraction equation for EACH diagram.</p>
+<form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<button class="button" type="submit">Practice more missing tape differences</button>
+</form>
+</section>
+<form class="panel" asp-controller="Grade2Lesson14Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>3. Check your original tape diagram mathematics</h2>
+<div class="two">
+<div><label asp-for="Answers.AppleGrapeGap">How many MORE chose Apple than Grape?</label><input asp-for="Answers.AppleGrapeGap" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.AppleGrapeAdd">Apple/Grape: smaller + ? = larger</label><input asp-for="Answers.AppleGrapeAdd" placeholder="8+?=15, fill the number" maxlength="40" required /></div>
+<div><label asp-for="Answers.AppleGrapeSub">Apple/Grape: larger − smaller = ?</label><input asp-for="Answers.AppleGrapeSub" maxlength="40" required /></div>
+</div>
+<h3>Party Time Part 1 — choose one truthful pair</h3>
+<div class="two">
+<div><label asp-for="Answers.PartyMore">Food with MORE votes</label><select asp-for="Answers.PartyMore" required>
+<option value="">Choose</option>
+@foreach(var name in UsCcssG2Unit1FourteenthLessonTapeDiagrams.PartyVotes.Keys){<option value="@name">@name</option>}
+</select></div>
+<div><label asp-for="Answers.PartyFewer">Food with FEWER votes</label><select asp-for="Answers.PartyFewer" required>
+<option value="">Choose</option>
+@foreach(var name in UsCcssG2Unit1FourteenthLessonTapeDiagrams.PartyVotes.Keys){<option value="@name">@name</option>}
+</select></div>
+<div><label asp-for="Answers.PartyGap">Missing outlined difference</label><input asp-for="Answers.PartyGap" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.PartyAdd">Related addition: smaller + difference = larger</label><input asp-for="Answers.PartyAdd" maxlength="40" required /></div>
+<div><label asp-for="Answers.PartySub">Related subtraction: larger − smaller = difference</label><input asp-for="Answers.PartySub" maxlength="40" required /></div>
+</div>
+<h3>Party Time Part 2 — exact tape diagrams</h3>
+<div class="two">
+<div><label asp-for="Answers.PizzaBurgerGap">Pizza 19 vs Burgers 8: ?</label><input asp-for="Answers.PizzaBurgerGap" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.PizzaBurgerAdd">Smaller + difference = 19</label><input asp-for="Answers.PizzaBurgerAdd" maxlength="40" required /></div>
+<div><label asp-for="Answers.PizzaBurgerSub">19 − smaller = difference</label><input asp-for="Answers.PizzaBurgerSub" maxlength="40" required /></div>
+<div><label asp-for="Answers.PizzaHotdogsGap">Pizza 19 vs Hot dogs 14: ?</label><input asp-for="Answers.PizzaHotdogsGap" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.PizzaHotdogsAdd">Smaller + difference = 19</label><input asp-for="Answers.PizzaHotdogsAdd" maxlength="40" required /></div>
+<div><label asp-for="Answers.PizzaHotdogsSub">19 − smaller = difference</label><input asp-for="Answers.PizzaHotdogsSub" maxlength="40" required /></div>
+</div>
+<h3>4. Independent Edulytics Cool-down</h3>
+<p>Fictional library club choices: Adventure 16, Fantasy 9. Draw an
+original longer and shorter tape, then show the missing dashed part.</p>
+<div class="graph">
+<div class="tapes" role="img" aria-label="Library clubs: Adventure 16 and Fantasy 9, a dashed missing part represents the unknown difference.">
+<div class="tape"><span class="tape-name">Adventure</span><span class="strip" style="width:320px">16</span></div>
+<div class="tape"><span class="tape-name">Fantasy</span><span class="strip" style="width:180px">9</span><span class="extra" style="width:140px">?</span></div>
+</div></div>
+<div class="two">
+<div><label asp-for="Answers.CoolGap">How many more Adventure than Fantasy?</label><input asp-for="Answers.CoolGap" type="number" min="0" max="20" required /></div>
+<div><label asp-for="Answers.CoolAdd">Related addition equation</label><input asp-for="Answers.CoolAdd" maxlength="40" required /></div>
+<div><label asp-for="Answers.CoolSub">Related subtraction equation</label><input asp-for="Answers.CoolSub" maxlength="40" required /></div>
+</div>
+<label asp-for="Answers.TeacherExplanation">Explain what ? means in a tape diagram and tell a story for a diagram to your teacher</label>
+<textarea asp-for="Answers.TeacherExplanation" rows="3" maxlength="2000"></textarea>
+<p class="muted">The teacher observes genuine strip construction, original
+story and comparison language. No automatic school grade is given here.</p>
+<button type="submit" class="button">Check my tape diagrams and Cool-down</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var item in Model.Feedback){
+<div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+<h3>@item.Task</h3><p>@(item.Correct==true?"Numerically correct":item.Correct==false?"Revise your diagram":"Teacher review needed"). @item.Feedback</p></div>
+}
+<p class="muted">Immediate numerical feedback is not a saved official school grade.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher assessment rubric</h2><ul>
+@foreach(var item in UsCcssG2Unit1FourteenthLessonTapeDiagrams.TeacherRubric){<li>@item</li>}
+</ul>
+</section>
+<p class="muted">Curriculum reference IM2021 Grade2 U01 L14, CCSS 2.MD.D.10.
+2.OA.A.1 is building-towards, not an additional mapped addressing outcome.
+First-party Edulytics illustrations and assessment.</p>
+</main>

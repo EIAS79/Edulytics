@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L16",
+  "edition": "Illustrative Mathematics K5 First Edition 2021",
+  "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/lesson.html",
+  "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/preparation.html",
+  "date": "2026-10-24",
+  "originalSourceElements": 9,
+  "sourceMap": [
+    {
+      "id": "PREP",
+      "source": "Original materials: >=60 connecting cubes per pair for Activity 2",
+      "kind": "TEACHER_MATERIAL",
+      "status": "RICH_V2_AUTHORED_NOT_OBSERVED",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "WU",
+      "source": "Egg carton 12 eggs; Notice and Wonder",
+      "kind": "ORIGINAL_IMAGE_AND_ORAL",
+      "status": "ORIGINAL_MEDIA_PIXELS_NOT_VERIFIED",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A1-Q1",
+      "source": "20 dots compared across four circles of five and rectangular array",
+      "kind": "OPEN_EXPLANATION",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A1-Q2",
+      "source": "Explain why Noah is mistaken to deny array equal groups",
+      "kind": "ARGUMENT",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A2-Q1",
+      "source": "Build 6 groups of 5 into an array with connecting cubes",
+      "kind": "PHYSICAL_CONSTRUCTION",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A2-Q2",
+      "source": "Make different rectangular arrays using all 20 cubes",
+      "kind": "MULTIPLE_VALID_DRAWINGS",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "A2-Q3",
+      "source": "Make different rectangular arrays using all 24 cubes; exhaustiveness not required",
+      "kind": "MULTIPLE_VALID_DRAWINGS",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "SYN",
+      "source": "Teacher discussion about equal rows, columns, groups and arrays",
+      "kind": "OPEN_ORAL_REVIEW",
+      "status": "TEACHER_ONLY",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    },
+    {
+      "id": "CD",
+      "source": "Original 2021 gated Array Arrangement Cool-down",
+      "kind": "PUBLISHER_RESTRICTED",
+      "status": "FIRST_PARTY_EQUIVALENT_SEPARATE",
+      "firstParty": "Edulytics source companion and source-specific Rich V2",
+      "numericAutoPassAllowed": false
+    }
+  ],
+  "sourceOneToOneRuntimeVerified": 0,
+  "sourceFirstPartyTeacherItems": 7,
+  "sourceArrays": [
+    "6 groups x 5 = 30 cubes",
+    "20 cubes multiple valid rectangular arrangements",
+    "24 cubes multiple valid rectangular arrangements, not exhaustive"
+  ],
+  "sourceSensitiveOriginals": [
+    "12-egg carton photo",
+    "publisher 20-dot original drawings",
+    "original gated Cool-down"
+  ],
+  "candidateRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+  "sourceCompanion": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+  "unrunTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "testsRun": false,
+  "ciRun": false,
+  "academicApproval": false,
+  "stageD": "NOT_STARTED",
+  "merged": false,
+  "deployed": false,
+  "openGaps": [],
+  "detailedSourceElementMap": [
+    {
+      "id": "PREP-GOAL",
+      "sourceSection": "Preparation",
+      "originalMathematicalOrTeachingElement": "Build arrays with cubes and explain row/column equal groups (grade 2 prior experience).",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "TEACHER_OBSERVATION",
+      "note": null
+    },
+    {
+      "id": "PREP-MATERIALS",
+      "sourceSection": "Preparation",
+      "originalMathematicalOrTeachingElement": "At least 60 linking cubes PER GROUP OF TWO students.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "TEACHER_PREPARATION",
+      "note": null
+    },
+    {
+      "id": "PREP-STANDARDS",
+      "sourceSection": "Preparation",
+      "originalMathematicalOrTeachingElement": "2.OA.C.4 builds on; addresses 3.OA.A.1; MP3/MP7.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "PEDAGOGY",
+      "note": null
+    },
+    {
+      "id": "PREP-MR8",
+      "sourceSection": "Activity 2 Narrative",
+      "originalMathematicalOrTeachingElement": "Display several arrays, annotate with rows, columns, equal groups using MLR8.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "ORAL_VISUAL_TEACHER",
+      "note": null
+    },
+    {
+      "id": "PREP-REPRESENT",
+      "sourceSection": "Activity 2 Narrative",
+      "originalMathematicalOrTeachingElement": "Representation, Internalize Comprehension sentence frame for future array construction.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "TEACHER_DIALOGUE",
+      "note": null
+    },
+    {
+      "id": "PREP-REFLECTION",
+      "sourceSection": "Preparation",
+      "originalMathematicalOrTeachingElement": "Ask how previous ten-frame experience supports array grouping.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "TEACHER_REFLECTION",
+      "note": null
+    },
+    {
+      "id": "PREP-CENTER-1",
+      "sourceSection": "Preparation",
+      "originalMathematicalOrTeachingElement": "Capture Squares Stage 5: multiply by 2, 5 and 10.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "OPTIONAL_CLASSROOM_CENTER",
+      "note": null
+    },
+    {
+      "id": "PREP-CENTER-2",
+      "sourceSection": "Preparation",
+      "originalMathematicalOrTeachingElement": "Five in a Row: Multiplication Stage 1, factors 1–5 and 10.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "OPTIONAL_CLASSROOM_CENTER",
+      "note": null
+    },
+    {
+      "id": "WU-NW",
+      "sourceSection": "Warm-up",
+      "originalMathematicalOrTeachingElement": "Original open carton has twelve eggs; notice/wonder rows and columns (10 minutes).",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "ORAL_TEACHER",
+      "note": "Original actual egg photo geometry not inspected."
+    },
+    {
+      "id": "WU-SYN",
+      "sourceSection": "Warm-up Synthesis",
+      "originalMathematicalOrTeachingElement": "Compare viewing two equal rows of six versus six equal columns of two; define array.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "ORAL_TEACHER",
+      "note": null
+    },
+    {
+      "id": "A1-GROUPS",
+      "sourceSection": "Activity 1",
+      "originalMathematicalOrTeachingElement": "Compare 4 circles with 5 dots per circle vs rectangular array of 20 dots; explain organization.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "TEACHER_DRAWING_AND_REVIEW",
+      "note": null
+    },
+    {
+      "id": "A1-NOAH",
+      "sourceSection": "Activity 1",
+      "originalMathematicalOrTeachingElement": "Refute Noah's claim that array has no equal groups, distinguish rows and columns.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "TEACHER_JUSTIFICATION",
+      "note": null
+    },
+    {
+      "id": "A1-SYN",
+      "sourceSection": "Activity 1 Synthesis",
+      "originalMathematicalOrTeachingElement": "Explain array rows and columns also are equal groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "ORAL_TEACHER",
+      "note": null
+    },
+    {
+      "id": "A2-30",
+      "sourceSection": "Activity 2 Student Facing",
+      "originalMathematicalOrTeachingElement": "With real cubes form 6 groups of 5 and then arrange equal array; explain construction.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "PHYSICAL_TEACHER_ONLY",
+      "note": null
+    },
+    {
+      "id": "A2-20",
+      "sourceSection": "Activity 2 Student Facing",
+      "originalMathematicalOrTeachingElement": "Build as many rectangular arrays as possible with exactly 20 cubes, describe groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "PHYSICAL_TEACHER_ONLY",
+      "note": "Source explicitly does not require exhaustive factor-pair enumeration."
+    },
+    {
+      "id": "A2-24",
+      "sourceSection": "Activity 2 Student Facing",
+      "originalMathematicalOrTeachingElement": "Build as many rectangular arrays as possible with exactly 24 cubes, describe groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "PHYSICAL_TEACHER_ONLY",
+      "note": "Not all arrays are mandatory Grade 3."
+    },
+    {
+      "id": "A2-SYN",
+      "sourceSection": "Activity 2 Synthesis",
+      "originalMathematicalOrTeachingElement": "Discuss multiple ways to arrange 24 objects, relate to equal groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "ORAL_TEACHER",
+      "note": null
+    },
+    {
+      "id": "LESSON-SYN",
+      "sourceSection": "Lesson Synthesis",
+      "originalMathematicalOrTeachingElement": "Teacher discusses how same number can be arranged in rows and columns of equal groups.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "ORAL_TEACHER",
+      "note": null
+    },
+    {
+      "id": "CD-FIRST-PARTY",
+      "sourceSection": "Cool-down",
+      "originalMathematicalOrTeachingElement": "Publisher original educator-gated Array Arrangement task is not reproduced; teacher-reviewed independent 24-counter model.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "FIRST_PARTY_SKILL_EQUIVALENT",
+      "note": "Mathematically equivalent goal, original publisher wording not certified."
+    },
+    {
+      "id": "IMG-EGGS",
+      "sourceSection": "Warm-up visual",
+      "originalMathematicalOrTeachingElement": "Original 12-egg open carton image, located on 2021 publisher lesson page.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": false,
+      "originalSourceSHA256": "6999dbfb9780e83e761f29882e7341358e8f3693acf8b0b947fe6daaea924b58",
+      "originalSourceGeometryOrPages": "12 eggs in two rows of 6 and six columns of 2; first-party 12-token grid rendered by Razor"
+    },
+    {
+      "id": "IMG-GROUP-CIRCLES",
+      "sourceSection": "Activity 1 visual",
+      "originalMathematicalOrTeachingElement": "Publisher 4 circles of 5 dots source drawing.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": false,
+      "originalSourceSHA256": "d3dd212006ad2d6818eb06dcfa2f1c22e0480ede761a5dfcaa1107dcbf664e8e",
+      "originalSourceGeometryOrPages": "four bounded groups of exactly five blue points, arranged as a two by two group display; first-party CSS drawing"
+    },
+    {
+      "id": "IMG-ARRAY",
+      "sourceSection": "Activity 1 visual",
+      "originalMathematicalOrTeachingElement": "Publisher 20-dot rectangle arrangement image, alt text incomplete.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceOriginalPixelsInspected": true,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": false,
+      "originalSourceSHA256": "24efb503f327e19a9bd64cc993517a0b47a453465cf526ed2970c30a2dd8e525",
+      "originalSourceGeometryOrPages": "4 rows and 5 columns of circles, 20 total; first-party CSS grid uses 4 by 5 dots"
+    },
+    {
+      "id": "STUDENT-PDF",
+      "sourceSection": "Student Task Statements",
+      "originalMathematicalOrTeachingElement": "Original first-edition 2021 PDF task layout and source image geometry uninspected.",
+      "status": "MATCHED_TEACHER_LED",
+      "firstPartyFile": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceOriginalPixelsInspected": false,
+      "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson16PhysicalArraysTests.cs",
+      "grading": "HUMAN_PHYSICAL_AND_EXPLANATION_NO_AUTO_PASS",
+      "note": "Original first-edition source reviewed through read-only URL streams on authorized Our-CS (no file download to device). First-party images generated with CSS/dots, no source-owned image copied or embedded. Original PDF page artwork not duplicated.",
+      "sourcePdfVisuallyReviewed": true,
+      "originalSourceSHA256": "bc6876ee4678fae7ecf3a2d72afcdb51936e572dfc024307ff3a68f52b5e9e15",
+      "originalSourceGeometryOrPages": "3-page first-edition Student Task Statements: eggs Notice/Wonder; four-group and 20-dot-array two source questions; six-by-five, 20-cube and 24-cube source tasks"
+    }
+  ],
+  "sourceElementCountsV2": {
+    "identified": 23,
+    "sourceMathSemanticallyAuthored": 23,
+    "sourceMaterialUnverified": 0,
+    "coveragePercent": 100
+  },
+  "firstPartyCanonicalRichV2Bridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson16RichV2.cs",
+  "guardMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+  "firstPartyRichV2ContentVersion": "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v3",
+  "originalSourceFigures": [
+    {
+      "url": "https://cms-assets.illustrativemathematics.org/m1ky45arlzmlnbce30cgk775klid",
+      "role": "original twelve-egg carton",
+      "originalPixelsInspected": true,
+      "originalSourceSHA256": "6999dbfb9780e83e761f29882e7341358e8f3693acf8b0b947fe6daaea924b58",
+      "firstPartyIndependentSemanticEquivalent": true,
+      "copiedPublisherArtwork": false
+    },
+    {
+      "url": "https://cms-assets.illustrativemathematics.org/g7piscffyx7nhvxdkxpvrdsnjmuc",
+      "role": "four grouped circles",
+      "originalPixelsInspected": true,
+      "originalSourceSHA256": "d3dd212006ad2d6818eb06dcfa2f1c22e0480ede761a5dfcaa1107dcbf664e8e",
+      "firstPartyIndependentSemanticEquivalent": true,
+      "copiedPublisherArtwork": false
+    },
+    {
+      "url": "https://cms-assets.illustrativemathematics.org/hj9a2sxq80ttvubrb3vg0phg1t7e",
+      "role": "source rectangular array",
+      "originalPixelsInspected": true,
+      "originalSourceSHA256": "24efb503f327e19a9bd64cc993517a0b47a453465cf526ed2970c30a2dd8e525",
+      "firstPartyIndependentSemanticEquivalent": true,
+      "copiedPublisherArtwork": false
+    }
+  ],
+  "originalStudentTaskPdfRead": true,
+  "sourcePracticeGrading": "TEACHER_ONLY_ARRAYS_AND_EVIDENCE_REQUIRED",
+  "originalStudentTaskPdf": {
+    "url": "https://cms-assets.illustrativemathematics.org/em9wi1n3z74vgkyzs2anen7kqho1",
+    "sha256": "bc6876ee4678fae7ecf3a2d72afcdb51936e572dfc024307ff3a68f52b5e9e15",
+    "bytes": 102014,
+    "pageCount": 3,
+    "pagesRead": [
+      1,
+      2,
+      3
+    ],
+    "fileStoredOnOurCS": false,
+    "sourceMathComparedAgainstTeacherHtmlAndEdulytics": true
+  },
+  "originalVisualChecks": [
+    {
+      "id": "IMG-EGGS",
+      "url": "https://cms-assets.illustrativemathematics.org/m1ky45arlzmlnbce30cgk775klid",
+      "sha256": "6999dbfb9780e83e761f29882e7341358e8f3693acf8b0b947fe6daaea924b58",
+      "model": "12 eggs in two rows of 6 and six columns of 2; first-party 12-token grid rendered by Razor"
+    },
+    {
+      "id": "IMG-GROUP-CIRCLES",
+      "url": "https://cms-assets.illustrativemathematics.org/g7piscffyx7nhvxdkxpvrdsnjmuc",
+      "sha256": "d3dd212006ad2d6818eb06dcfa2f1c22e0480ede761a5dfcaa1107dcbf664e8e",
+      "model": "four bounded groups of exactly five blue points, arranged as a two by two group display; first-party CSS drawing"
+    },
+    {
+      "id": "IMG-ARRAY",
+      "url": "https://cms-assets.illustrativemathematics.org/hj9a2sxq80ttvubrb3vg0phg1t7e",
+      "sha256": "24efb503f327e19a9bd64cc993517a0b47a453465cf526ed2970c30a2dd8e525",
+      "model": "4 rows and 5 columns of circles, 20 total; first-party CSS grid uses 4 by 5 dots"
+    }
+  ],
+  "authoringScopeLimitations": [
+    "All 23 individually identified original 2021 elements have source-to-first-party semantic/teaching correspondence. This does not certify publisher-owned pixel identity or license rights; none reused.",
+    "Source original gated Cool-down not copied; an independent Edulytics-equivalent open-ended teacher-graded 24-cube model is available, matching the source learning goal.",
+    "Actual student construction, human review and classroom participation must happen in lessons; no student pass has been awarded.",
+    "No .NET tests, CI, Stage D, merge, publishing, deployment, Neon or Render modification occurred."
+  ],
+  "sourcePerfectPublisherArtworkParityClaimed": false
+}

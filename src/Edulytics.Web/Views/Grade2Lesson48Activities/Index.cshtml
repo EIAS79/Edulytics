@@ -1,0 +1,56 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson48Page
+@using Edulytics.Core.Mathematics.Practice
+@{ Layout="_StudentLayout";ViewData["Title"]="Grade 2 — What is a Line Plot?"; }
+<style>
+.g2l48{max-width:970px;margin:auto;padding:20px;color:#264352}.g2l48 .panel{background:#fff;border:1px solid #cddbe3;border-radius:12px;padding:19px;margin:16px 0}.g2l48 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.g2l48 label{display:block;font-weight:bold;margin:10px 0 5px}.g2l48 input,.g2l48 textarea{font:inherit;width:100%;max-width:540px;border:1px solid #8197a4;border-radius:8px;padding:10px}.g2l48 .action{background:#0a8194;color:white;border:0;border-radius:8px;padding:12px 20px;font-weight:bold}.g2l48 .plot{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-width:530px}.g2l48 .plot div{text-align:center;border-bottom:3px solid #537b8c;min-height:116px;display:flex;flex-direction:column;justify-content:flex-end}.g2l48 .plot strong{margin-top:8px}.g2l48 .plot span{color:#287c91;font-size:1.1rem;font-weight:900}.g2l48 .ok{border-left:4px solid #298359;padding-left:12px}.g2l48 .bad{border-left:4px solid #b64b5c;padding-left:12px}.g2l48 .review{border-left:4px solid #ae8531;padding-left:12px}
+</style>
+<main class="g2l48">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>What is a Line Plot?</h1>
+<p>Compare glove-size categories on a BAR graph with hand-span LENGTHS (in inches) on a LINE plot. On a line plot each X means ONE measurement, and each horizontal number is a measured length.</p>
+<form asp-controller="Grade2Lesson48Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/><input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Handy Graphs — Notice and Wonder</h2>
+<p>Inspect your teacher's original glove-size bar graph and hand-span numerical line plot. One groups CATEGORIES, while the other groups measured INCH values.</p>
+<label asp-for="Answers.WarmupCompare">Which graph uses numerical length and how do the axes differ?</label><textarea asp-for="Answers.WarmupCompare" rows="3" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>2. Measure Our Hand Spans — authentic class data</h2>
+<p>Spread thumb and pinky, trace your own hand, draw from TIP to TIP and use a real ruler to measure to nearest whole INCH. Check with a partner. Put exactly ONE same-sized X sticky note over your measured length on the real 0–10 class line plot.</p>
+<label asp-for="Answers.RealHandSpanInches">My ACTUAL hand span, nearest whole inch</label><input asp-for="Answers.RealHandSpanInches" type="number" min="0" max="10"/>
+<label asp-for="Answers.RealPartnerCheck">How did your partner verify your ruler measurement?</label><textarea asp-for="Answers.RealPartnerCheck" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel"><h2>3. Interpret Our Numerical Data — authentic class plot</h2>
+<p>Use your REAL class line plot with title 'Class hand spans' and horizontal label 'Hand span (inches)'. Horizontal positions give LENGTH; vertical X piles give COUNTS. Enter values only after teacher provides real class chart.</p>
+<div class="grid">
+<div><label asp-for="Answers.RealClassShortest">ACTUAL class shortest length (in)</label><input asp-for="Answers.RealClassShortest" type="number" min="0" max="10"/></div>
+<div><label asp-for="Answers.RealClassLongest">ACTUAL class longest length (in)</label><input asp-for="Answers.RealClassLongest" type="number" min="0" max="10"/></div>
+<div><label asp-for="Answers.RealClassMode">ACTUAL class most common length (in)</label><input asp-for="Answers.RealClassMode" type="number" min="0" max="10"/></div>
+<div><label asp-for="Answers.RealClassTotalXs">ACTUAL X total measurements</label><input asp-for="Answers.RealClassTotalXs" type="number" min="0" max="100"/></div>
+</div>
+<label asp-for="Answers.RealClassStatement">Write another observation supported by the REAL chart</label><textarea asp-for="Answers.RealClassStatement" rows="2" maxlength="2000"></textarea>
+</section>
+<section class="panel">
+<h2>4. FIRST-PARTY Edulytics fictional line plot</h2>
+<p>This invented nine-student set is <strong>NOT your class's data</strong>. Read the measured hand span along the bottom (inches) and count Xs in the column.</p>
+<div class="plot" role="img" aria-label="Fictional hand span measurements: four inches one X, five inches two Xs, six inches three Xs, seven inches two Xs, eight inches one X">
+@foreach(var pair in new[]{(4,1),(5,2),(6,3),(7,2),(8,1)}){
+<div>@for(var i=0;i<pair.Item2;i++){<span>X</span>}<strong>@pair.Item1 in</strong></div>}
+</div>
+<div class="grid">
+<div><label asp-for="Answers.FictionalShortest">Shortest length (in)</label><input asp-for="Answers.FictionalShortest" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.FictionalLongest">Longest length (in)</label><input asp-for="Answers.FictionalLongest" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.FictionalMode">Most common length (in)</label><input asp-for="Answers.FictionalMode" type="number" min="0" max="10" required/></div>
+<div><label asp-for="Answers.FictionalTotal">Number of X measurements TOTAL</label><input asp-for="Answers.FictionalTotal" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.FictionalSevenCount">How many measured7in?</label><input asp-for="Answers.FictionalSevenCount" type="number" min="0" max="40" required/></div>
+<div><label asp-for="Answers.FictionalRange">Longest−shortest (in)</label><input asp-for="Answers.FictionalRange" type="number" min="0" max="10" required/></div>
+</div><button type="submit" class="action">Check fictional arithmetic and show teacher review tasks</button>
+</section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numbers correct":r.Correct==false?"Review X counts":"Teacher must verify"). @r.Message</p></div>}
+</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>
+@foreach(var x in UsCcssG2Unit3FourteenthLessonHandSpanLinePlot.TeacherRubric){<li>@x</li>}</ul>
+<p>Source IM K–5 2021 G2 Unit3 Lesson14, CCSS 2.MD.A.1 and 2.MD.D.9; independent fictional plot not a copied source figure. No official grade recorded.</p>
+</section></main>

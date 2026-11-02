@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L06",
+  "branch": "curriculum/g3-continuous-authoring-20261023",
+  "commitHeadBeforeEvidence": "8feca9931177c7281c6844dc40d326bd94255a97",
+  "authoringAt": "2026-10-24",
+  "source2021Documents": {
+    "teacherPage": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-6/lesson.html",
+    "localTeacherHtml": "03_Grade_3_IM_K5/unit-1/lesson-6/lesson.html",
+    "prep": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-6/preparation.html",
+    "originalTeacherGuidePublicCopy": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "originalStudentWorkbookPublicUrl": "https://cms-assets.illustrativemathematics.org/ln8qtli68dc1hbe87jb6u5j226wg",
+    "localStudentHtml": "03_Grade_3_IM_K5/accessim_student/unit-1/section-a/lesson-6.html",
+    "originalPatternSvgUrl": "https://cms-assets.illustrativemathematics.org/7053kvgtyqg9pibtx7gto33ajaea",
+    "svgRetrievedByAuthorizedDesktop": true,
+    "svgBytes": 16919,
+    "svgFilledPathOccurrences": {
+      "greenTriangles": 27,
+      "orangeSquares": 5,
+      "redTrapezoids": 15,
+      "yellowHexagons": 10
+    },
+    "svgExactlyDuplicatedTrianglePathOccurrences": 1,
+    "distinctVisibleSourceShapeCounts": {
+      "Triangle": 26,
+      "Square": 5,
+      "Trapezoid": 15,
+      "Hexagon": 10
+    },
+    "original2021SvgUsedAsRenderAsset": false
+  },
+  "sourceNumericalContracts": {
+    "pets": [
+      16,
+      13,
+      6,
+      10,
+      30
+    ],
+    "warmupRanges": [
+      {
+        "from": 0,
+        "to": 30,
+        "by": 1
+      },
+      {
+        "from": 0,
+        "to": 60,
+        "by": 2
+      },
+      {
+        "from": 0,
+        "to": 300,
+        "by": 10
+      }
+    ],
+    "patternShapes": [
+      26,
+      5,
+      15,
+      10
+    ],
+    "sourceScaleOptions": [
+      2,
+      5,
+      10
+    ],
+    "seasons": [
+      24,
+      13,
+      40,
+      22
+    ],
+    "cooldownType": "TWO distinct OPEN source reflections",
+    "cooldownCount": 2
+  },
+  "stageA": {
+    "totalIdentifiedElements": 13,
+    "semanticallyMatchedForAuthoring": 13,
+    "originalPdfTeacherTextCrosschecked": true,
+    "studentFacingTextMatched": true,
+    "sourceImageVectorGeometricCountsAudited": true,
+    "graphicsRightsPolicy": "first-party redraw only; no publisher artwork reused"
+  },
+  "stageB": {
+    "sourceRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l06-2021.rich-lesson-v2.json",
+    "richVersion": "g3-u01-l06-first-edition-rich-v2-20261024-v1",
+    "sourceScalesPreserved": true,
+    "sourceTimelinePreserved": true,
+    "originalCoolDownRestored": true,
+    "teacherLedMapped": true,
+    "liveEffectiveDatabaseRichV2Inspected": false,
+    "pixelEquivalenceNotClaimed": true
+  },
+  "stageC": {
+    "numericCore": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson6ChooseScale.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade3Lesson6Activities/Index.cshtml",
+    "postGrader": "src/Edulytics.Web/Controllers/Grade3Lesson6ActivitiesController.cs",
+    "numericOriginalPatternCountFamily": 4,
+    "numericOriginalSeasonStudentBarFamily": 4,
+    "supplementarySourcePetCountFamily": 3,
+    "independentClubNumericQuestions": 3,
+    "sourceCooldownOpenQuestionCount": 2,
+    "teacherGraphAndRationaleRubric": true,
+    "tests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6ChooseScaleTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson6RichV2SourceCoverageTests.cs"
+    ],
+    "testsWritten": true,
+    "testsExecuted": false
+  },
+  "deferredStageDNotNeededForAuthoringClosure": [
+    "Compile/build and test execution",
+    "Student page rendering and deployed DB migration/seed",
+    "Live teacher review and pupil submissions",
+    "Original publisher artwork pixel-identity check (not used in Edulytics)"
+  ],
+  "academicApproval": "NOT_CLAIMED",
+  "sourceMaterialIdentity": "NOT_CLAIMED",
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_MANUALLY_RUN",
+  "merged": false,
+  "deployed": false,
+  "result": {
+    "authoringState": "READY_FOR_STAGE_D",
+    "scope": "FULL_2021_SOURCE_SEMANTIC_AUTHORING_COVERAGE_ONLY",
+    "sourceElementsIdentified": 13,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 13,
+    "unresolvedFixableACCodeGaps": 0
+  }
+}

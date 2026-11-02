@@ -1,0 +1,44 @@
+{
+  "ordinal": 43,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L18",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.related.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "6e5f3e5b116f63a89bdd73fc1fc3233afb33beace515f782448bd6193b44579a",
+    "teacherLesson": "66a3c04229580fe221082fce38272ae1471dc9ee6e9306499d65bdf5a9cd79b2",
+    "studentPdf": "64a2a8946568b411a05b141b9789865a5bf6d81d4e2c79fd38f2e4d89ec7cd7a"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Number Talk: A Bunch of Numbers (10 minutes)",
+    "Activity 1: Stack Centavos and Pesos (25 minutes)",
+    "Activity 2: More Than Two Fractions (10 minutes)",
+    "Cool-down: U.S. Coins (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.related.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-43-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:40+01:00",
+  "closeAtLocal": "2026-10-26T22:41:40+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

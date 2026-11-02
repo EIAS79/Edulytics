@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": 2,
+  "gradeOrdinal": 71,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U05:L04",
+  "title": "Write Three-digit Numbers",
+  "stageA": {
+    "status": "ORIGINAL_PUBLIC_TEACHER_SOURCE_REVIEWED",
+    "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-4/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-5/lesson-4/lesson.html",
+    "originalCanonicalBodySha256": "f714865b7b652313f3d05f3708c0f3b4bca94450ca66151de3d32d03ed876f8f",
+    "officialOutcomes": [
+      "CCSS:2.NBT.A.1",
+      "CCSS:2.NBT.A.3"
+    ],
+    "observedOriginalActivities": "Original U05 L4 teacher lesson: all authentic student-facing mathematical examples and warm-up reviewed against editorial Rich V2.",
+    "originalImages": "Authentic diagrams and peer gallery/number words or physical blocks require real teacher. Restricted Cool-down not reproduced."
+  },
+  "stageB": {
+    "status": "ORIGINAL_SHA_GUARDED_RICH_6_FIELD_CORRECTION",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit5OriginalRichContentCorrections.cs",
+    "note": "Strong exact six-predecessor field validation for unmodified original 4–6; Source SHA+official outcome guarded"
+  },
+  "stageC": {
+    "status": "FOUR_INDEPENDENT_EXACT_FAMILIES_AND_SOURCE_TEACHER_COMPANION_WRITTEN",
+    "sourceMath": "Original source numerical quantities checked, open images and actual writing reserved for teacher",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Unit5FirstSixActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Unit5FirstSixActivities/Index.cshtml",
+    "exactGenerator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit5FirstSixQuestions.cs",
+    "exactFamilies": [
+      "usccss.g2.u05.l04.three_digit_riddle",
+      "usccss.g2.u05.l04.zero_tens_placeholder",
+      "usccss.g2.u05.l04.reordered_units_value",
+      "usccss.g2.u05.l04.digit_place_value"
+    ],
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal71OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal71MathAndTeacherBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal71ExactQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal71PrivateStudentRouteTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextSequentialLesson": 72
+}

@@ -1,0 +1,36 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Unit5ComparisonPage
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]=Model.Title;}
+<style>.g2u5b{max-width:980px;margin:auto;padding:22px;color:#234455}
+.g2u5b section{background:#fff;border:1px solid #c4d7df;border-radius:11px;padding:18px;margin:15px 0}
+.g2u5b label{display:block;font-weight:700;margin:10px 0 4px}
+.g2u5b .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.g2u5b input,.g2u5b textarea{font:inherit;width:100%;border:1px solid #869cab;border-radius:8px;padding:9px;max-width:550px}
+.g2u5b button{background:#177c91;color:#fff;border:0;border-radius:9px;padding:12px 18px;font-weight:700}</style>
+<main class="g2u5b"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>@Model.Title</h1><p>Original public IM2021 G2 Unit5 Lesson @Model.LessonNumber: arithmetic tied to the genuine lesson. Publisher images, subjective estimates, actual games and classroom bean counts require teacher verification.</p>
+<form asp-controller="Grade2Unit5ComparisonActivities" asp-action="Submit" asp-route-lessonNumber="@Model.LessonNumber" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section><h2>Source mathematical facts</h2><div class="grid">
+<div><label asp-for="Answers.SourceA">@Model.SourcePrompts[0]</label><input asp-for="Answers.SourceA" min="0" max="1000" type="number" required/></div>
+<div><label asp-for="Answers.SourceB">@Model.SourcePrompts[1]</label><input asp-for="Answers.SourceB" min="0" max="1000" type="number" required/></div>
+<div><label asp-for="Answers.SourceC">@Model.SourcePrompts[2]</label><input asp-for="Answers.SourceC" min="0" max="1000" type="number" required/></div>
+<div><label asp-for="Answers.SourceD">@Model.SourcePrompts[3]</label><input asp-for="Answers.SourceD" min="0" max="1000" type="number" required/></div>
+</div></section>
+<section><h2>Actual original lesson — teacher only</h2><ul>@foreach(var item in Model.SourceTeacherRubric){<li>@item</li>}</ul>
+<label asp-for="Answers.OriginalImageObservations">Describe original image you really inspected (not an invented image)</label><textarea asp-for="Answers.OriginalImageObservations" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.OriginalDiagramOrNumberLine">Actual original point diagrams or place-value drawing you made</label><textarea asp-for="Answers.OriginalDiagramOrNumberLine" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.SourceCenterOrBeanCount">Physical game/card/bean count you really performed (if applicable)</label><textarea asp-for="Answers.SourceCenterOrBeanCount" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.PeerReasoning">Actual peer explanation or alternate correct estimate you gave</label><textarea asp-for="Answers.PeerReasoning" maxlength="2000" rows="3"></textarea></section>
+<section><h2>Independently authored Edulytics numerical practice</h2><p>These fictional numeric models are not the publisher restricted Cool-down nor claims about class work.</p><div class="grid">
+<div><label asp-for="Answers.IndependentA">@Model.IndependentPrompts[0]</label><input asp-for="Answers.IndependentA" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.IndependentB">@Model.IndependentPrompts[1]</label><input asp-for="Answers.IndependentB" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.IndependentC">@Model.IndependentPrompts[2]</label><input asp-for="Answers.IndependentC" type="number" min="0" max="1000" required/></div>
+<div><label asp-for="Answers.IndependentD">@Model.IndependentPrompts[3]</label><input asp-for="Answers.IndependentD" type="number" min="0" max="1000" required/></div>
+</div><button type="submit">Check mathematics — separate real teacher evidence</button></section>
+</form>
+@if(Model.Submitted){<section aria-live="polite"><h2>Result</h2>@foreach(var row in Model.Feedback){<h3>@row.Section</h3><p>@row.Feedback</p>}</section>}
+<p>All student-authored justifications, source images and physically observed activities are teacher-reviewed. No official grade.</p>
+</main>

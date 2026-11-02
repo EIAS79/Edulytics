@@ -1,0 +1,10 @@
+# G4 ordinal 98 — Solve Problems Involving Multiplication
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-12_preparation.html SHA256=53be4196b97981fedbc339601af5d7cb225ba87c1f1c41fa08bae7c9d6884b94
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-12\lesson.html SHA256=f380979bda112dc202cf58cc749c6264dca60102cd96b645a0461d95e464cd91
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-12\lesson.html SHA256=3ed80a8c4cd4cdefdf9b9769e421034630ffbed3508a44a0498d9e64ad34b220
+- Preserved existing learning explanation: Learning goal: You will solve contextual problems that involve multiplication of a single-digit number and a whole number of up to four digits, or multiplication of 2 two-digit numbers. This lesson gives you the opportunity to apply the multiplication strategies you have learned to solve various contextual problems involving measurement. The problems vary in format and complexity—some involve a single computation and others require multiple steps to solve. The work here prompts you to make sense
+- Original 2021 sections: Warm-up:  What Do You Know About 1 Year?	 (10 minutes); Activity 1:  Time Flies When We Leap Years	 (25 minutes); Activity 2:  Coin Collection	 (10 minutes); Cool-down:  Leap Year	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 365*4 = 1460.
+- Edulytics first-party Cool-down: A class makes 28 packages with 12 stickers each. Total?; teacher key: 336 stickers.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

@@ -1,0 +1,323 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 8,
+  "unitNumber": 1,
+  "lessonNumber": 8,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L08",
+  "title": "More Questions about Scaled Bar Graphs",
+  "edition": "IM K–5 First Edition (2021)",
+  "localSourceHtml": "03_Grade_3_IM_K5/unit-1/lesson-8/lesson.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-8/lesson.html",
+  "targetParityPercent": 100,
+  "verifiedParityPercent": null,
+  "authoringState": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stageA": {
+    "status": "SOURCE_2021_13_OF_13_AUTHORING_SEMANTIC_ELEMENTS_MATCHED",
+    "warmup": "Publisher's public 2021 warm-up explicitly has four sequential expressions: 2×5, 2×6, 5×6, 5×7 written as repeated addition.",
+    "sourceFeelings": {
+      "Excited": 55,
+      "Nervous": 23,
+      "Curious": 25
+    },
+    "sourceFeelingsAxis": {
+      "min": 0,
+      "max": 60,
+      "step": 5
+    },
+    "sourceTrees": {
+      "Oak": 29,
+      "Pine": 82,
+      "Maple": 15,
+      "Fir": 58
+    },
+    "sourceTreesAxis": {
+      "min": 0,
+      "max": 100,
+      "step": 10
+    },
+    "sourceQuestions": [
+      "Excited compared to nervous AND curious",
+      "Pine-fir",
+      "Pine compared with oak or maple together",
+      "Oak fewer than pine",
+      "Oak or maple fewer than fir"
+    ],
+    "threeReadsRoutine": "Read problem context, then quantities, then mathematical strategies",
+    "sourceOriginalCoolDown": "Reading Time, owner-approved independent replacement",
+    "pdfRead": false,
+    "originalCoolDown": "Reading Time two approximate comparisons (human-graded)",
+    "originalSourceReadGraphApprox": [
+      12,
+      25,
+      23,
+      44
+    ],
+    "sourcePdfTeacherGuideTextReviewed": true,
+    "localStudentHtmlCompared": true,
+    "sourceArtworkNotCopied": true
+  },
+  "stageB": {
+    "status": "SOURCE_RICH_V2_THREE_READS_ORIGINAL_READING_TIME_AND_STUDENT_SUMMARY_AUTHORED",
+    "files": {
+      "math": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson8TwoStepDataProblems.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson8ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson8PracticePage.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "lessonLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "coolDown": {
+      "source": "Edulytics original fictional book survey",
+      "counts": {
+        "Adventure": 60,
+        "Science": 23,
+        "Comics": 18
+      }
+    },
+    "sourceArtworkCopied": false,
+    "sourceVerticalChartAndNumberTalkCorrection": "Replaced horizontal percentage strips with first-party vertical bar charts, correct tick marks and category captions; exact source warm-up repeated addition sequence restored.",
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l08-2021.rich-lesson-v2.json",
+      "version": "g3-u01-l08-first-edition-rich-v2-20261024-v1",
+      "sourceSemanticAuthoringComplete": true,
+      "runtimeVerificationDeferred": true
+    },
+    "original2021SourceCoolDownRestored": true,
+    "sourceSynthesisBeforeCooldown": true
+  },
+  "stageC": {
+    "status": "FIVE_SOURCE_EXACT_AND_TWO_ORIGINAL_TEACHER_REVIEW_APPROXIMATE_GRADERS_TESTS_UNRUN",
+    "numericQuestions": 8,
+    "teacherTasks": [
+      "Three Reads explanation",
+      "Two valid solution methods",
+      "Student drawing of a scaled bar graph",
+      "Cool-down explanation"
+    ],
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+    "testsRun": false,
+    "route": "student/practice/grade3-u01-l08",
+    "unrunVerticalBarAndFourExpressionContractWritten": true,
+    "sourceExactNumeric": 5,
+    "sourceHumanReviewCoolDown": 2,
+    "testsAuthoredNotExecuted": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+    ]
+  },
+  "sourceElements": [
+    {
+      "id": "lesson_goal_and_2021_timeline",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "One- and two-step comparisons within 100; warmup10, activity1 20, activity2 15, synthesis10, original cool-down5",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l08-2021.rich-lesson-v2.json",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "warmup_four_exact_source_expressions",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Original sequences five2=10 six2=12 six5=30 seven5=35, preserved in UI",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "warmup_mental_strategy",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Number Talk and one-more-equal-addend thinking, teacher open reasoning",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l08-2021.rich-lesson-v2.json",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "activity1_school_feelings_graph",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Original source feelings Excited55 Nervous23 Curious25; 0–60 by five and exact in-between values",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "activity1_three_reads",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "MLR6 first context, second quantities, third question and strategy; teacher stages reveal",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "activity1_excited_two_step",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "55−(23+25)=7, or 55−23−25=7; alternate method explanations captured",
+      "firstPartyCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson8TwoStepDataProblems.cs",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "activity2_trees_source_graph",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Source Oak29 Pine82 Maple15 Fir58 on original 0–100 by-ten graph",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "activity2_four_original_tasks",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Source questions answers 24,38,53,14 and exact graders",
+      "firstPartyCodePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson8TwoStepDataProblems.cs",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "activity2_teacher_compare_and_MLR8",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Teacher reviews independent work and two strategies including tens/ones, partner rehearsal",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l08-2021.rich-lesson-v2.json",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "lesson_synthesis_and_student_section_summary",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Ten-minute synthesis and scaled graph Section A summary before assessment",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "source_reading_time_cooldown_graph",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "First-edition Reading Time approximate Morning11–12 Lunch25 Afternoon23 Evening44 on 0–50 by5, independent first-party redraw",
+      "firstPartyCodePath": "src/Edulytics.Web/Views/Grade3Lesson8Activities/Index.cshtml",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "source_two_reading_time_comparisons",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Morning fewer than Afternoon about12, Evening more than Morning or Lunch about7; teacher guide varies Morning visual reading, human judgment no exact auto-pass",
+      "firstPartyCodePath": "src/Edulytics.Web/Controllers/Grade3Lesson8ActivitiesController.cs",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    },
+    {
+      "id": "optional_centers_rights_and_followup",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 IM K–5 Grade 3 Unit 1 Lesson 8 Teacher Guide and Student Facing respective section",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Sort and Display Stage3 / Five in a Row Stage6 teacher led, next-day correction, optional Edulytics books not source assessment; publisher art not copied",
+      "firstPartyCodePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l08-2021.rich-lesson-v2.json",
+      "testsAuthoredUnrun": [
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8TwoStepDataProblemsTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8OriginalSourceTests.cs",
+        "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson8RichV2SourceCoverageTests.cs"
+      ],
+      "publisherArtCopied": false,
+      "stageDRuntimeUnverified": true
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 13,
+    "sourceSemanticAuthoringVerified": 13,
+    "originalTeacherGuideAndStudentHtmlCompared": true,
+    "effectivePublishedRichV2RuntimeUnverified": true,
+    "originalPublisherArtworkNotCopied": true
+  },
+  "openGaps": [],
+  "coolDownPolicy": "OWNER_APPROVED_INDEPENDENT_EDULYTICS_EQUIVALENT",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "merged": false,
+  "deployed": false,
+  "sourceSemanticAuthoringCoveragePercent": 100,
+  "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-8-stage-a-b-c-authoring-closure-evidence-20261024.json"
+}

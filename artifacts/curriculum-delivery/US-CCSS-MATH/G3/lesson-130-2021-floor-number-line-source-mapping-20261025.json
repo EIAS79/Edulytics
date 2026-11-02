@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "gradeOrdinal": 130,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U08:L02",
+  "sourceEdition": "Illustrative Mathematics K-5 First Edition 2021",
+  "localTeacherSource": "03_Grade_3_IM_K5/unit-8/lesson-2/lesson.html",
+  "teacherHtmlSHA256": "9ce9c7ad5e4a03bc4cb3cf1ac2ddab6c28dcb1e7a5852ce4ac96417495ccc71a",
+  "preparationHtmlSHA256": "751a41d0c4ee457f45f90c17025db9356c340e7a865ae1ed2a84974bea9073c9",
+  "originalStudentPdfInspected": false,
+  "originalWarmupImagePixelsInspected": false,
+  "originalWarmupImageUrls": [
+    "https://cms-assets.illustrativemathematics.org/gvxbtbefokf49eg62k2vg0kg9m79",
+    "https://cms-assets.illustrativemathematics.org/c9igxvyt1rgjtkkrjsb3x74ez3t2",
+    "https://cms-assets.illustrativemathematics.org/krfqoboond38miyy1ey5984sg0zh",
+    "https://cms-assets.illustrativemathematics.org/u5gwykvi56xb5jg2y5kh9rwrjp7h"
+  ],
+  "sourceTasks": [
+    {
+      "stage": "warmup",
+      "durationMinutes": 10,
+      "source": "four images A-D, justify which differs",
+      "review": "teacher",
+      "sourcePictureVisualValidation": false
+    },
+    {
+      "stage": "activity1",
+      "durationMinutes": 25,
+      "source": "physical number line, group 3–4, tape and markers, 13 fractions",
+      "fractions": [
+        "1/2",
+        "1/3",
+        "6/2",
+        "12/3",
+        "1/4",
+        "5/4",
+        "6/6",
+        "5/6",
+        "9/8",
+        "15/8",
+        "5/3",
+        "18/6",
+        "2/8"
+      ],
+      "sourceStudentPartCount": 1,
+      "review": "teacher"
+    },
+    {
+      "stage": "activity2",
+      "durationMinutes": 10,
+      "source": "6 comparison statements, two each of > = <, explain 2",
+      "review": "teacher"
+    },
+    {
+      "stage": "synthesis",
+      "source": "choice of line length, same ordering under consistent scaling",
+      "review": "teacher"
+    },
+    {
+      "stage": "cooldown",
+      "durationMinutes": 5,
+      "source": "Where Do I Go? publisher gated",
+      "coverage": "NOT_READ_NOT_REPRODUCED"
+    }
+  ],
+  "sourceMathematicalVerification": {
+    "sourceFractionOccurrences": 13,
+    "distinctRationalCoordinates": 11,
+    "highestWhole": 4,
+    "equivalences": [
+      "1/4=2/8",
+      "6/2=18/6"
+    ],
+    "firstPartySixValidExamples": [
+      {
+        "operator": "=",
+        "left": "6/2",
+        "right": "18/6",
+        "reason": "Both are 3 whole units."
+      },
+      {
+        "operator": "=",
+        "left": "1/4",
+        "right": "2/8",
+        "reason": "Both mark one quarter."
+      },
+      {
+        "operator": ">",
+        "left": "12/3",
+        "right": "6/2",
+        "reason": "4 > 3."
+      },
+      {
+        "operator": ">",
+        "left": "15/8",
+        "right": "5/3",
+        "reason": "1.875 > 1.666..."
+      },
+      {
+        "operator": "<",
+        "left": "1/3",
+        "right": "1/2",
+        "reason": "One third is less than one half."
+      },
+      {
+        "operator": "<",
+        "left": "5/6",
+        "right": "6/6",
+        "reason": "Five sixths is less than one."
+      }
+    ],
+    "exampleUse": "INDEPENDENT_NOT_ORIGINAL_UNIQUE_ANSWER"
+  },
+  "authoringRightsBoundary": "Teacher-linked 2021 HTML; original figures and gated publisher assessment not embedded.",
+  "codeRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l02-2021.rich-lesson-v2.json",
+  "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson2SourceAuditTests.cs",
+  "stagesABC": "READY_FOR_STAGE_D_AUTHORING_ONLY",
+  "stageD": "NOT_STARTED",
+  "testsExecuted": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceFullParityClaimed": false
+}

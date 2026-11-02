@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l15-firstedition2021-exact-source-firstparty-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L15",
+      "CultureCode": "en",
+      "Title": "Round to the Nearest Ten and Hundred",
+      "ExplanationParagraphs": [
+        "Round to nearest ten and hundred by comparing the enclosing multiples. If a value is exactly in the middle, this 2021 lesson explicitly introduces rounding the halfway tie UP, while recognizing both endpoints are equally near.",
+        "Warm-up: Count chorally by tens from 0 to 200 and by hundreds from 0 to 900. Notice why 100 and 200 are multiples of both ten and one hundred.",
+        "Activity 1: Round the original values 18, 97, 312, 439 and 601 separately to each place. Source table pairs in (nearest ten, nearest hundred) order: 18 -> (20,0); 97 -> (100,100); 312 -> (310,300); 439 -> (440,400); 601 -> (600,600).",
+        "Kiran says 415 has no single nearest ten, and Priya says 750 has no single nearest hundred. They are correct about the equal distances, but the classroom rounding convention resolves the midpoint upward: 415 -> 420, 750 -> 800.",
+        "Activity 2: Predict which school estimate is greater. The original 2021 people counts are playground94, cafeteria163, art room36, library13, classrooms216, gymnasium109, music room52. Andre rounds EACH to nearest hundred: 100,200,0,0,200,100,100; sum700. Lin rounds EACH to nearest ten: 90,160,40,10,220,110,50; sum680. Their actual unrounded sum is683, so Lin's estimate is 3 lower and Andre's is 17 higher.",
+        "Discuss two observations about the table, whether your prediction held and why the higher estimate is not always more accurate. These discussion tasks require teacher assessment. An Edulytics independent Cool-down replaces, but does not reproduce, the original restricted publisher one."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Nearest-ten rounding",
+          "Definition": "Compare the two enclosing tens.",
+          "Rule": "Choose the closer or, in an exact tie, the higher ten.",
+          "Example": "415 rounds to420."
+        },
+        {
+          "Title": "Nearest-hundred rounding",
+          "Definition": "Compare the two enclosing hundreds.",
+          "Rule": "Choose the closer or, in an exact tie, the higher hundred.",
+          "Example": "750 rounds to800."
+        },
+        {
+          "Title": "Coincident results",
+          "Definition": "Some values round to the same multiple of 10 and 100.",
+          "Rule": "Compute each place separately.",
+          "Example": "97 -> 100 and100."
+        },
+        {
+          "Title": "Estimate total by rounding components",
+          "Definition": "Round each entry and then sum rounded estimates.",
+          "Rule": "Do not confuse this operation with rounding the exact total.",
+          "Example": "Andre700, Lin680, actual683."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "97 at two precisions",
+          "Question": "Round 97 to nearest ten and hundred.",
+          "Method": "Compare neighboring multiples at each place.",
+          "Steps": [
+            "97 is closer to100 than90.",
+            "97 is closer to100 than0.",
+            "Both answers are100."
+          ],
+          "Answer": "Nearest ten 100 and hundred 100.",
+          "Check": "97 is three from100."
+        },
+        {
+          "Title": "Equidistant midpoint rule",
+          "Question": "Round 415 to the nearest ten and 750 to the nearest hundred.",
+          "Method": "First identify equal distances; then adopt stated tie convention.",
+          "Steps": [
+            "415 sits between410 and420, five away from each.",
+            "Choose the upper ten420.",
+            "750 sits between700 and800, fifty away from each.",
+            "Choose the upper hundred800."
+          ],
+          "Answer": "420;800.",
+          "Check": "Distance does not break ties; the convention does."
+        },
+        {
+          "Title": "Seven school locations",
+          "Question": "Which of Andre and Lin obtains larger and closer estimates?",
+          "Method": "Round each original category and then sum.",
+          "Steps": [
+            "Andre:100+200+0+0+200+100+100=700.",
+            "Lin:90+160+40+10+220+110+50=680.",
+            "Original counts total 683.",
+            "Andre differs by17; Lin differs by3."
+          ],
+          "Answer": "Andre larger; Lin closer.",
+          "Check": "Be careful not to round only the total683."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat an equal-distance midpoint as impossible to round.",
+          "WhyWrong": "Rounding has an explicit convention.",
+          "Correction": "State halfway-up and answer 420 for415, 800 for750."
+        },
+        {
+          "Mistake": "Round only total683 instead of the seven parts.",
+          "WhyWrong": "The source compares sums of individually rounded estimates.",
+          "Correction": "Round each row then sum for each strategy."
+        },
+        {
+          "Mistake": "Treat the larger estimate as more accurate.",
+          "WhyWrong": "Accuracy depends on absolute error.",
+          "Correction": "700 differs by17, 680 differs by3."
+        }
+      ],
+      "SummaryPoints": [
+        "Source table: 18=>20/0,97=>100/100,312=>310/300,439=>440/400,601=>600/600 (ten/hundred).",
+        "Halfway-up: 415=>420 to nearest ten; 750=>800 to nearest hundred.",
+        "Seven school counts: Andre 700; Lin 680; exact 683.",
+        "Teacher evaluates explanation and prediction; original gated Cool-down not copied."
+      ]
+    }
+  ]
+}

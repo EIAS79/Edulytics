@@ -1,0 +1,268 @@
+using Edulytics.Core.Constants;
+using Edulytics.Data.Contexts;
+using Edulytics.Data.Identity;
+using Edulytics.Data.Seeding;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+namespace Edulytics.Web.Bootstrap;
+
+public sealed class EdulyticsDatabaseBootstrapper
+{
+    private static readonly string[] RequiredRoleNames =
+    [
+        RoleNames.SuperAdmin,
+        RoleNames.SchoolAdmin,
+        RoleNames.SubjectSupervisor,
+        RoleNames.Teacher,
+        RoleNames.Student
+    ];
+
+    private const long BootstrapAdvisoryLockKey =
+        25000025L;
+
+    private static readonly TimeSpan DatabaseOpenTimeout =
+        TimeSpan.FromSeconds(30);
+
+    private static readonly TimeSpan AdvisoryLockTimeout =
+        TimeSpan.FromSeconds(30);
+
+    private static readonly TimeSpan AdvisoryLockRetryDelay =
+        TimeSpan.FromMilliseconds(250);
+
+    private readonly RoleManager<ApplicationRole> _roleManager;
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IConfiguration _configuration;
+    private readonly EdulyticsDbContext _db;
+
+    public EdulyticsDatabaseBootstrapper(
+        RoleManager<ApplicationRole> roleManager,
+        UserManager<ApplicationUser> userManager,
+        IConfiguration configuration,
+        EdulyticsDbContext db)
+    {
+        _roleManager = roleManager ?? throw new ArgumentNullException(nameof(roleManager));
+        _userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+        _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+        _db = db ?? throw new ArgumentNullException(nameof(db));
+    }
+
+    public async Task InitializeAsync()
+    {
+        var cleanBootstrap =
+            CleanBootstrapPolicy.ShouldSkipOptionalProvisioning(_configuration);
+
+        if (!_db.Database.IsNpgsql())
+        {
+            await EnsureRolesExistAsync();
+            if (!cleanBootstrap)
+                await EnsureSuperAdminAsync();
+            await SeedCurriculumIfRequestedAsync();
+            return;
+        }
+
+        using var openConnectionTimeout =
+            new CancellationTokenSource(DatabaseOpenTimeout);
+
+        try
+        {
+            await _db.Database.OpenConnectionAsync(
+                openConnectionTimeout.Token);
+        }
+        catch (OperationCanceledException exception)
+            when (openConnectionTimeout.IsCancellationRequested)
+        {
+            throw new TimeoutException(
+                $"Database bootstrap could not open a PostgreSQL connection within {DatabaseOpenTimeout.TotalSeconds:0} seconds.",
+                exception);
+        }
+
+        var advisoryLockAcquired = false;
+
+        try
+        {
+            advisoryLockAcquired =
+                await TryAcquireAdvisoryLockAsync();
+
+            if (!advisoryLockAcquired)
+            {
+                throw new TimeoutException(
+                    $"Database bootstrap could not acquire its PostgreSQL advisory lock within {AdvisoryLockTimeout.TotalSeconds:0} seconds.");
+            }
+
+            await EnsureRolesExistAsync();
+            if (!cleanBootstrap)
+                await EnsureSuperAdminAsync();
+            await SeedCurriculumIfRequestedAsync();
+
+        }
+        finally
+        {
+            if (advisoryLockAcquired)
+            {
+                await ReleaseAdvisoryLockAsync();
+            }
+
+            await _db.Database.CloseConnectionAsync();
+        }
+    }
+
+    private async Task SeedCurriculumIfRequestedAsync()
+    {
+        if (!_configuration.GetValue<bool>(
+                "Edulytics:Deployment:SeedCurriculum"))
+        {
+            return;
+        }
+
+        var environmentName =
+            _configuration["ASPNETCORE_ENVIRONMENT"] ??
+            _configuration["DOTNET_ENVIRONMENT"];
+
+        if (!string.Equals(
+                environmentName,
+                "Staging",
+                StringComparison.OrdinalIgnoreCase))
+        {
+            throw new InvalidOperationException(
+                "Edulytics:Deployment:SeedCurriculum is staging-only and cannot run outside the Staging environment.");
+        }
+
+        await new MathematicsCurriculumPackSeeder(_db)
+            .SeedAsync();
+        await new MathematicsPedagogicalLessonSeeder(_db)
+            .SeedAsync();
+        var contentSeeder = new MathematicsCanonicalLessonContentSeeder(_db);
+        if (_configuration.GetValue<bool>(
+                "Edulytics:LessonContent:ReadFromJson"))
+        {
+            await contentSeeder.SeedMetadataOnlyAsync();
+        }
+        else
+        {
+            await contentSeeder.SeedAsync();
+        }
+    }
+
+    private async Task<bool> TryAcquireAdvisoryLockAsync()
+    {
+        var deadlineUtc =
+            DateTime.UtcNow + AdvisoryLockTimeout;
+
+        do
+        {
+            await using var command =
+                _db.Database
+                    .GetDbConnection()
+                    .CreateCommand();
+
+            command.CommandText =
+                $"SELECT pg_try_advisory_lock({BootstrapAdvisoryLockKey});";
+            command.CommandTimeout = 5;
+
+            var result =
+                await command.ExecuteScalarAsync();
+
+            if (result is bool acquired && acquired)
+            {
+                return true;
+            }
+
+            await Task.Delay(AdvisoryLockRetryDelay);
+        }
+        while (DateTime.UtcNow < deadlineUtc);
+
+        return false;
+    }
+
+    private async Task ReleaseAdvisoryLockAsync()
+    {
+        await using var command =
+            _db.Database
+                .GetDbConnection()
+                .CreateCommand();
+
+        command.CommandText =
+            $"SELECT pg_advisory_unlock({BootstrapAdvisoryLockKey});";
+        command.CommandTimeout = 5;
+
+        _ = await command.ExecuteScalarAsync();
+    }
+
+    private async Task EnsureRolesExistAsync()
+    {
+        foreach (var roleName in RequiredRoleNames)
+        {
+            if (!await _roleManager.RoleExistsAsync(roleName))
+            {
+                var role = new ApplicationRole { Name = roleName };
+                var result = await _roleManager.CreateAsync(role);
+
+                if (!result.Succeeded)
+                {
+                    throw new InvalidOperationException($"Failed to create role '{roleName}': {string.Join("; ", result.Errors.Select(e => e.Description))}");
+                }
+            }
+        }
+    }
+
+    private async Task EnsureSuperAdminAsync()
+    {
+        var superAdminEmail = _configuration["Edulytics:SuperAdmin:Email"];
+        var superAdminPassword = _configuration["Edulytics:SuperAdmin:Password"];
+
+        // If no bootstrap credentials are configured, skip SuperAdmin provisioning.
+        // This allows the application to run normally after SuperAdmin has been created once.
+        // It also prevents accidental startup failures due to missing environment/secret configuration.
+        if (string.IsNullOrWhiteSpace(superAdminEmail) || string.IsNullOrWhiteSpace(superAdminPassword))
+        {
+            return;
+        }
+
+        var existingUser = await _userManager.FindByEmailAsync(superAdminEmail.Trim());
+
+        if (existingUser is not null)
+        {
+            if (existingUser.SchoolId is not null)
+            {
+                throw new InvalidOperationException(
+                    $"Configured SuperAdmin email '{superAdminEmail}' already belongs to a school-scoped user. Refusing to modify that account or remove SchoolId.");
+            }
+
+            if (!await _userManager.IsInRoleAsync(existingUser, RoleNames.SuperAdmin))
+            {
+                var roleResult = await _userManager.AddToRoleAsync(existingUser, RoleNames.SuperAdmin);
+                if (!roleResult.Succeeded)
+                {
+                    throw new InvalidOperationException($"Failed to add existing SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", roleResult.Errors.Select(e => e.Description))}");
+                }
+            }
+
+            return;
+        }
+
+        // Create SuperAdmin only if email and password are both provided and user does not exist.
+        var user = new ApplicationUser
+        {
+            UserName = superAdminEmail.Trim(),
+            Email = superAdminEmail.Trim(),
+            EmailConfirmed = true,
+            IsActive = true,
+            SchoolId = null,
+            CreatedAtUtc = DateTime.UtcNow,
+            UpdatedAtUtc = DateTime.UtcNow
+        };
+
+        var createResult = await _userManager.CreateAsync(user, superAdminPassword);
+        if (!createResult.Succeeded)
+        {
+            throw new InvalidOperationException($"Failed to create SuperAdmin user: {string.Join("; ", createResult.Errors.Select(e => e.Description))}");
+        }
+
+        var roleResultForNewUser = await _userManager.AddToRoleAsync(user, RoleNames.SuperAdmin);
+        if (!roleResultForNewUser.Succeeded)
+        {
+            throw new InvalidOperationException($"Failed to add created SuperAdmin user to role '{RoleNames.SuperAdmin}': {string.Join("; ", roleResultForNewUser.Errors.Select(e => e.Description))}");
+        }
+    }
+}

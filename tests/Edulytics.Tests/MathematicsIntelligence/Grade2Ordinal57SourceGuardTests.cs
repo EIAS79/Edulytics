@@ -1,0 +1,33 @@
+using Edulytics.Data.Seeding;
+namespace Edulytics.Tests.MathematicsIntelligence;
+
+public sealed class Grade2Ordinal57SourceGuardTests
+{
+    [Fact]
+    public void OriginalSourceFieldsVersionAndImageOrClassBoundariesHold()
+    {
+        var row=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .SelectMany(d=>d.Lessons.Where(l=>CommonCoreG2Unit4EstimateNumberLineCorrection.IsTarget(d,l))
+            .Select(l=>(Document:d,Lesson:l))).Single();
+        var english=row.Lesson.Translations.Single(t=>t.CultureCode=="en");
+        Assert.Contains("deliberately NOT REVEALED",english.Explanation);
+        Assert.NotEmpty(english.StepByStepSolutions);
+        Assert.Equal(CommonCoreG2Unit4EstimateNumberLineCorrection.Version,
+            CanonicalLessonContentMaterializer.GetEffectiveContentVersion(row.Document,row.Lesson));
+    }
+    [Fact]
+    public void ChangedOriginalBodyAndUnapprovedPersistedVersionsFailClosed()
+    {
+        var row=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .SelectMany(d=>d.Lessons.Where(l=>CommonCoreG2Unit4EstimateNumberLineCorrection.IsTarget(d,l))
+            .Select(l=>(Document:d,Lesson:l))).Single();
+        Assert.False(CommonCoreG2Unit4EstimateNumberLineCorrection.CanUpgradeExisting(row.Document,row.Lesson,"arbitrary-unapproved"));
+        var previous=row.Lesson.CanonicalBodySha256;
+        try
+        {
+            row.Lesson.CanonicalBodySha256=new string('0',64);
+            Assert.Throws<InvalidOperationException>(()=>CommonCoreG2Unit4EstimateNumberLineCorrection.Apply(row.Document));
+        }
+        finally { row.Lesson.CanonicalBodySha256=previous; }
+    }
+}

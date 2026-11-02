@@ -1,0 +1,42 @@
+{
+  "ordinal": 93,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L07",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "f716bfb1cc21b4fea2fc4300c5572fdcc59557d07805269176dbb651f4dea12f",
+    "teacher": "392b12d1f5810445377d2e499ec38b16dd6f4a76891f80cf72d8e44553949fc8",
+    "student": "8f4c70304331ed285ca2e7cbfa85c06b50bdfe07d8f01d5457cf186a924a2604"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Compute 312 \u00d7 4.",
+    "teacherAnswer": "1,248"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:32:44+01:00",
+  "closeAtLocal": "2026-10-26T23:32:44+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-93-local-source-guard.test.cjs"
+  }
+}

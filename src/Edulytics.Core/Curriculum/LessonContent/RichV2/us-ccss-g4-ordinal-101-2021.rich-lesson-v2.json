@@ -1,0 +1,287 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-u06-l15-source-abc-2021-v2",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+      "CultureCode": "en",
+      "Title": "Situations Involving Area",
+      "ExplanationParagraphs": [
+        "Learning goal: You will use partial quotients to solve division problems that involve tiling squares and finding a side length of a rectangle with a known area.\nIn this lesson, you encounter division as you find a side length of a rectangle whose area is a three-digit number and one side is a one-digit number. The context involves tiling rectangles with square tiles. This enables you to connect the dividend to the number of tiles in the rectangle and the divisor to the number of rectangles along one side.",
+        "Area is measured in square units. An unknown side length equals area divided by the known side length.",
+        "Source teacher sequence: Estimation Exploration: Area of a Soccer Field; Elena's Mural; Tyler's Mural; Lesson Synthesis. Use grid-paper/physical diagrams with teacher support when needed.",
+        "Elena: 189 square tiles ÷ 7 tiles across = 27 tiles long. Tyler: 197 ÷ 6 gives 32 complete columns with 5 leftover tiles.",
+        "First-party Edulytics Cool-down (not the publisher's gated item): A garden has an area of 168 square metres and is 6 metres wide. Find the missing length using partial quotients.",
+        "Original student-mirror URL saved locally returns 404; the 2021 teacher page contains Student Facing task text. Original figures and classroom gallery-walk fidelity are not certified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area-to-division relationship",
+          "Definition": "Area of a rectangle = width × length.",
+          "Rule": "Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context.",
+          "Example": "189 tiles with a width of 7 tiles make a length of 27 tiles."
+        },
+        {
+          "Title": "Original task representation",
+          "Definition": "Use partial quotients to find unknown rectangle side lengths.",
+          "Rule": "Honor the original quantities, units, diagrams and type of student response.",
+          "Example": "Elena used 189 tiles in a mural seven tiles wide"
+        },
+        {
+          "Title": "Evidence and checking",
+          "Definition": "Verify the original task using a mathematically meaningful representation.",
+          "Rule": "Show why the result or drawn figure satisfies every given condition; teacher judges open construction.",
+          "Example": "Elena's mural"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Elena's mural: partial quotients",
+          "Question": "189 square tiles form a rectangular mural 7 tiles wide. How long is it?",
+          "Method": "Split the area into 140 + 49, then divide each part by 7.",
+          "Steps": [
+            "189 = 140 + 49.",
+            "140 ÷ 7 = 20 and 49 ÷ 7 = 7.",
+            "20 + 7 = 27.",
+            "7 × 27 = 189 confirms the missing length."
+          ],
+          "Answer": "27 tiles",
+          "Check": "7 × 27 = 189 tiles."
+        },
+        {
+          "Title": "Tyler's leftover tiles",
+          "Question": "197 tiles are available for a 6-tile-wide complete rectangular mural. How long can it be?",
+          "Method": "Partial quotients with a contextual remainder.",
+          "Steps": [
+            "197 = 180 + 12 + 5.",
+            "180 ÷ 6 = 30 and 12 ÷ 6 = 2.",
+            "30 + 2 = 32 complete columns; 5 tiles remain.",
+            "6 × 32 = 192 tiles used; 33 columns would need 198 tiles."
+          ],
+          "Answer": "32 tiles long; 5 unused",
+          "Check": "197 = 6 × 32 + 5, with 0 ≤ 5 < 6."
+        },
+        {
+          "Title": "Soccer-field estimation and exact area check",
+          "Question": "A rectangular soccer field has an area of 2,280 m² and a width of 40 m. What length is reasonable? Then find its exact length.",
+          "Method": "Use estimated benchmarks before dividing area by width; write partial quotients.",
+          "Steps": [
+            "Estimate: 40 × 50 = 2,000 m² and 40 × 60 = 2,400 m², so a reasonable length is between 50 m and 60 m.",
+            "Partition 2,280 = 2,000 + 280, where 2,000 ÷ 40 = 50 and 280 ÷ 40 = 7.",
+            "Combine 50 + 7 = 57 m and verify 40 × 57 = 2,280 m².",
+            "For the original estimation discussion, accept defensible too-low, approximately-right, and too-high estimates separately from the exact computed length."
+          ],
+          "Answer": "57 m (exact); estimates near 50–60 m must be reasoned about separately",
+          "Check": "40 × 57 = 2,280 m²"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rounding up a remainder to create one more full column.",
+          "WhyWrong": "33 columns of width 6 require 198 tiles, but only 197 exist.",
+          "Correction": "Interpret quotient 32 as complete columns and remainder 5 as unused tiles."
+        },
+        {
+          "Mistake": "Reporting a plausible number or classification without matching the task's required model.",
+          "WhyWrong": "A response lacking the original drawing, units, reasoning or construction does not demonstrate the required objective.",
+          "Correction": "Use Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context. and verify the original task constraints."
+        }
+      ],
+      "SummaryPoints": [
+        "Original learning goal and source activity sequence retained.",
+        "Division/partial-quotient methods match area models.",
+        "Teacher reviews original diagrams, classroom gallery walk and open explanations.",
+        "First-party Cool-down: 168 ÷ 6 = 28 metres; not a publisher-gated task."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Independent area calculation for the soccer field",
+          "Description": "First-party symbolic support, not a copy of the publisher's diagram. Estimate before finding the exact unknown side.",
+          "PrimaryLabel": "Area: 2,280 m²; width: 40 m",
+          "SecondaryLabel": "Unknown length: metres",
+          "Items": [
+            "40 × 50 = 2,000 m² (too small)",
+            "40 × 60 = 2,400 m² (too large)",
+            "2,280 ÷ 40 = (2,000 ÷ 40) + (280 ÷ 40)",
+            "Length = 50 + 7 = 57 m"
+          ],
+          "SecondaryItems": [
+            "Use 40 × length = 2,280 to check.",
+            "The original estimation prompts require a teacher to assess students' reasons."
+          ],
+          "Rows": [
+            {
+              "Label": "Field width and area model",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "40 m width × 50 m length = 2,000 m²",
+                "40 m × 7 m = 280 m²",
+                "50 m + 7 m = 57 m",
+                "40 m × 57 m = 2,280 m²"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "189-tile mural: area partition",
+          "Description": "Edulytics first-party tabular area grid: seven equal rows, each split 20+7 = 27 positions, for 7×27 = 189 square tiles. Not a copy of the original publisher artwork.",
+          "PrimaryLabel": "Width = 7 tiles; total area = 189 square tiles",
+          "SecondaryLabel": "Length = 20 + 7 = 27 tiles",
+          "Items": [
+            "189 = 140 + 49",
+            "140 = 7 × 20",
+            "49 = 7 × 7",
+            "7 × (20 + 7) = 189"
+          ],
+          "SecondaryItems": [
+            "Keep the width of 7 tiles fixed in both sub-rectangles.",
+            "This is first-party symbolic support; the original publisher's image is not reproduced."
+          ],
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 6",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 7",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "197 available tiles and a complete 6-wide mural",
+          "Description": "Edulytics first-party 6-row area grid with 32 columns per row (192 used tiles); five spare tiles are outside the full rectangle. A 33rd column would need six. Original 2021 publisher gallery walk remains teacher-led.",
+          "PrimaryLabel": "197 = (6 × 32) + 5",
+          "SecondaryLabel": "32 complete columns; 5 unused tiles",
+          "Items": [
+            "197 = 180 + 12 + 5",
+            "180 ÷ 6 = 30 and 12 ÷ 6 = 2",
+            "Length = 30 + 2 = 32",
+            "6 × 33 = 198 > 197, so 33 complete columns are impossible."
+          ],
+          "SecondaryItems": [
+            "The remaining five tiles cannot make a sixth tile in the next column.",
+            "Teacher checks the student's grid drawing, model and verbal justification."
+          ],
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 6",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

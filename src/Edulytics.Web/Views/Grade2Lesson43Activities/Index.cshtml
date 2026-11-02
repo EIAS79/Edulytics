@@ -1,0 +1,66 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson43Page
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]="Grade 2 — From Feet to Inches";}
+<style>
+.g2l43{max-width:970px;margin:auto;padding:20px;color:#254557}
+.g2l43 .panel{background:#fff;border:1px solid #cbdce5;border-radius:12px;margin:16px 0;padding:20px}
+.g2l43 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.g2l43 label{display:block;margin:12px 0 5px;font-weight:bold}
+.g2l43 input,.g2l43 textarea{font:inherit;width:100%;max-width:560px;border:1px solid #8496a6;border-radius:8px;padding:10px}
+.g2l43 .action{background:#087f93;color:white;border:0;border-radius:8px;padding:12px 20px;font-weight:700}
+.g2l43 .ok{border-left:4px solid #2e8156;padding-left:12px}
+.g2l43 .bad{border-left:4px solid #bc4860;padding-left:12px}
+.g2l43 .review{border-left:4px solid #ae8a35;padding-left:12px}
+.g2l43 .foot{display:inline-flex;align-items:center;justify-content:center;width:65px;height:32px;background:#d7eef4;border:2px solid #43889f;border-radius:5px;margin:3px}
+</style>
+<main class="g2l43">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>From Feet to Inches</h1>
+<p>Use a real inch ruler and measuring tape to explore the FOOT. One foot covers the physical length of twelve 1-inch marks. In Grade2 the source does <strong>not</strong> require abstract conversions: explore repeated actual units first.</p>
+<form asp-controller="Grade2Lesson43Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel"><h2>1. Estimation Exploration — Small Fry, Big Fish</h2>
+<p>Study the teacher's original fish picture. BEFORE extra information choose a too-low, about-right and too-high estimate. Then learn the pictured boy is7 years old and48 inches tall and revise the estimate. The fish's true measurement is NOT provided, so no exact fish-length answer is graded.</p>
+<div class="grid">
+<div><label asp-for="Answers.WarmupInitialLow">Initial estimate too low (inches)</label><input asp-for="Answers.WarmupInitialLow" type="number" min="0" max="300"/></div>
+<div><label asp-for="Answers.WarmupAboutRight">Initially about right (inches)</label><input asp-for="Answers.WarmupAboutRight" type="number" min="0" max="300"/></div>
+<div><label asp-for="Answers.WarmupHigh">Initially too high (inches)</label><input asp-for="Answers.WarmupHigh" type="number" min="0" max="300"/></div>
+<div><label asp-for="Answers.WarmupRevisedAfterBoy48">Revised estimate after boy's height48 in</label><input asp-for="Answers.WarmupRevisedAfterBoy48" type="number" min="0" max="300"/></div>
+</div></section>
+<section class="panel"><h2>2. Fish floor tapes — authentic teacher-built models</h2>
+<p>With your real group measure teacher-laid floor tape in FEET first using zero-to12 ruler segments (avoid plastic overhang). Then measure the same strip in one-INCH units. These values are specified TARGET lengths of the tape models, not confirmed measurements by a pupil.</p>
+<div class="grid">
+<div><p>A largemouth bass</p><label asp-for="Answers.TapeAFeet">A full feet (source target)</label><input asp-for="Answers.TapeAFeet" type="number" min="0" max="5" required/></div>
+<div><p>B spiny dogfish shark</p><label asp-for="Answers.TapeBFeet">B full feet (source target)</label><input asp-for="Answers.TapeBFeet" type="number" min="0" max="5" required/></div>
+<div><p>C catfish</p><label asp-for="Answers.TapeCFeet">C full feet (source target)</label><input asp-for="Answers.TapeCFeet" type="number" min="0" max="5" required/></div>
+<div><p>D koi</p><label asp-for="Answers.TapeDFeet">D full feet</label><input asp-for="Answers.TapeDFeet" type="number" min="0" max="5" required/></div>
+<div><label asp-for="Answers.TapeDExtraInches">D extra inches after full feet</label><input asp-for="Answers.TapeDExtraInches" type="number" min="0" max="11" required/></div>
+</div>
+<p>The following one-inch interval counts correspond to the source's precisely prepared strips. Counting intervals is a physical exploration, not a general conversion examination.</p>
+<div class="grid">
+<div><label asp-for="Answers.TapeAInches">A 1-inch intervals</label><input asp-for="Answers.TapeAInches" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.TapeBInches">B 1-inch intervals</label><input asp-for="Answers.TapeBInches" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.TapeCInches">C 1-inch intervals</label><input asp-for="Answers.TapeCInches" type="number" min="0" max="60" required/></div>
+<div><label asp-for="Answers.TapeDInches">D 1-inch intervals</label><input asp-for="Answers.TapeDInches" type="number" min="0" max="60" required/></div>
+</div></section>
+<section class="panel"><h2>3. Inches or Feet? — true classroom objects</h2>
+<p>Choose your own REAL classroom objects, make a guess with labeled feet or inches BEFORE touching the tool, then physically measure with an appropriate marked ruler or measuring tape.</p>
+<label asp-for="Answers.RealEstimateBeforeMeasuring">Actual object and my genuine prior estimate with unit</label><textarea asp-for="Answers.RealEstimateBeforeMeasuring" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealInchOrFeetChoice">Why did you choose inches or feet?</label><textarea asp-for="Answers.RealInchOrFeetChoice" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealToolAndMeasurement">Actual tool, zero alignment and observed measurement with unit</label><textarea asp-for="Answers.RealToolAndMeasurement" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerExplanation">Describe authentic MLR2 discussion comparing short/long units and real estimates</label><textarea asp-for="Answers.RealPartnerExplanation" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. First-party Edulytics illustration: inch tiles covering feet-long spans</h2>
+<p>All examples below are CREATED by Edulytics, not fish floor measurements or required abstract conversions.</p>
+<div role="img" aria-label="Three original drawn ruler spans with twelve one-inch intervals each">
+<span class="foot">12 tiles</span><span class="foot">12 tiles</span><span class="foot">12 tiles</span>
+</div>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyOneSpan">One complete 12-inch span: one-inch tiles?</label><input asp-for="Answers.FirstPartyOneSpan" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyThreeSpans">Three complete spans: one-inch intervals?</label><input asp-for="Answers.FirstPartyThreeSpans" type="number" min="0" max="100" required/></div>
+<div><label asp-for="Answers.FirstPartyMixed">Two spans plus6 one-inch tiles: total inch intervals?</label><input asp-for="Answers.FirstPartyMixed" type="number" min="0" max="100" required/></div>
+</div><button class="action" type="submit">Check interval counts and show physical measurement rubric</button></section></form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var r in Model.Feedback){<div class="@(r.Correct==true?"ok":r.Correct==false?"bad":"review")"><h3>@r.Section</h3><p>@(r.Correct==true?"Numbers correct":r.Correct==false?"Review unit iteration":"Teacher review needed"). @r.Feedback</p></div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var item in UsCcssG2Unit3NinthLessonFishFeet.TeacherRubric){<li>@item</li>}</ul><p>IM K–5 2021 G2 Unit3 Lesson9, CCSS2.MD.A.1,2.MD.A.2,2.MD.A.3. No source protected assessment copied; no official grade.</p></section></main>

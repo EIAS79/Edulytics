@@ -1,0 +1,10 @@
+# G4 ordinal 100 — Situations Involving Factors and Multiples
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-14_preparation.html SHA256=a1965d863d250844bd4928ac4b288a0092aa82f61937849bc60bd909a998c094
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-14\lesson.html SHA256=162622d68f171862ba39e30886cb1eb6b199d8abe30fded7f04a13f295055fad
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-14\lesson.html SHA256=633aca11cee65d1eae03234e47d46ee3b928633a413584804b887fe5261747d7
+- Preserved existing learning explanation: Learning goal: You will solve division problems that involve finding unknown factors. In this lesson, you relate problems about factors and multiples to division. To solve the problems, you rely on the relationship between multiplication and division, and your understanding of division as a way to find an unknown factor. You continue to interpret division in terms of finding the number of groups (“If we write multiples of 5, how many numbers will we need to write to get to 105?”) and the size of
+- Original 2021 sections: Warm-up:   Number Talk: Dividing by 7	 (10 minutes); Activity 1:  Write Multiples	 (20 minutes); Activity 2:  Jada’s Mystery Number	 (15 minutes); Cool-down:  Reaching 161 with Multiples	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 42/7 = 6.
+- Edulytics first-party Cool-down: List four positive multiples of eight.; teacher key: 8, 16, 24, 32.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

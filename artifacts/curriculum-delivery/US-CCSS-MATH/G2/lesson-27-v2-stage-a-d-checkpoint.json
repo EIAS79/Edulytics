@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 27,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L09",
+  "title": "Add and Subtract Within 100",
+  "unitNumber": 2,
+  "lessonNumber": 9,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ORIGINAL_SOURCE_TEACHER_LESSON_AND_PREPARATION_REVIEW",
+    "sourceBook": "Local read-only G2 Unit2 Lesson9 preparation and lesson HTML",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-9/preparation.html",
+    "sourceSemanticSha256": "8d506bf43de06f3ecbd2103c704da25561c09d19104057037775cfa8c80ecf3b",
+    "originalBodySha256": "d07bbae229eab645c91ba8806e764b9113eafa193c1bfe50096334a1fc89895f",
+    "outcomes": [
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "Source A–D Which One Doesn't Belong? base-ten images available on authentic local teacher page but graphic geometry not reconstructed from text.",
+    "activity1": "Sort and Find the Value original expression-picture cards in real groups2–3; choose one addition and one subtraction; public example35+42=77.",
+    "activity2": "Four authentic arithmetic tasks 27+47=74;55−27=28;36+38=74;82−39=43. Compare different actual drawings in MLR7 gallery walk.",
+    "summary": "Student section source task63−18=45.",
+    "sourceGap": "Specific source printed match-card picture/value pairs not asserted; first-party mathematical companion separate.",
+    "sourceAssessment": "Find the Value Your Way official Cool-down restricted teacher-only, not copied.",
+    "rights": "Source mathematical facts attributed; original media and restricted print cards not copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_AND_PREDECESSOR_GUARDED_TRUE_MIXED_ARITHMETIC_RICH_CONTENT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2MixedAddSubtractTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "gate": "Exact source URL, SHA, standards, original six learner fields and allowable persisted version."
+  },
+  "stageC": {
+    "status": "COMPLETE_FOUR_EXACT_OPERATION_FAMILIES_PROTECTED_PAGE_WRITTEN_UNRUN_TESTS",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2NinthLessonAddSubtract100.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson9MixedAddSubtractContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson9MixedAddSubtractQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson27ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson27Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l09.add_compose_ten",
+      "usccss.g2.u02.l09.add_no_compose",
+      "usccss.g2.u02.l09.subtract_decompose_ten",
+      "usccss.g2.u02.l09.subtract_no_decompose"
+    ],
+    "firstPartyExit": "46+27=73,75−48=27,58+26=84; not official publisher assessment.",
+    "humanOnly": "Authentic original A-D diagrams, printed match cards, MLR7 gallery walk, physical blocks and original class drawings.",
+    "studentSecurity": "StudentPortal policy, adoption and published lesson check, antiforgery submit, bounded form text, no grade.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2MixedAddSubtractTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2NinthLessonAddSubtract100Tests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson9MixedAddSubtractQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson27ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L10_GRADE_ORDINAL28_STAGE_A_B_C"
+}

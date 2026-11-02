@@ -1,0 +1,675 @@
+@model Edulytics.Services.Analytics.AnalyticsStudentEvaluationPage
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AnalyticsResource> A
+@using Edulytics.Core.Analytics
+@using Edulytics.Core.Constants
+@using Edulytics.Core.Enums
+@using System.Globalization
+@{
+    ViewData["Title"] = A["Student360"].Value;
+    var e = Model.Evaluation;
+
+    string Value(decimal? value) =>
+        value.HasValue ? $"{value.Value:0.#}%" : "—";
+
+    string TrendLabel(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving => "↑↑ Rapidly improving",
+        EvaluationTrendBand.Improving => "↑ Improving",
+        EvaluationTrendBand.Stable => "→ Stable",
+        EvaluationTrendBand.Declining => "↓ Declining",
+        EvaluationTrendBand.RapidlyDeclining => "↓↓ Rapidly declining",
+        _ => A["InsufficientEvidence"].Value
+    };
+
+    string TrendClass(EvaluationTrendBand value) => value switch
+    {
+        EvaluationTrendBand.RapidlyImproving or EvaluationTrendBand.Improving => "is-positive",
+        EvaluationTrendBand.RapidlyDeclining or EvaluationTrendBand.Declining => "is-negative",
+        EvaluationTrendBand.Stable => "is-neutral",
+        _ => "is-muted"
+    };
+
+    string StatusLabel(EvaluationSkillStatus value) => value switch
+    {
+        EvaluationSkillStatus.Strong => A["MasteryStrong"].Value,
+        EvaluationSkillStatus.Secure => A["MasterySecure"].Value,
+        EvaluationSkillStatus.Developing => A["MasteryDeveloping"].Value,
+        EvaluationSkillStatus.NeedsFocus => A["NeedsFocus"].Value,
+        EvaluationSkillStatus.Critical => A["MasteryCritical"].Value,
+        EvaluationSkillStatus.NotYetAssessed => A["NotYetAssessed"].Value,
+        _ => A["InsufficientEvidence"].Value
+    };
+
+    string StatusClass(EvaluationSkillStatus value) => value switch
+    {
+        EvaluationSkillStatus.Strong or EvaluationSkillStatus.Secure => "is-positive",
+        EvaluationSkillStatus.Developing => "is-neutral",
+        EvaluationSkillStatus.NeedsFocus => "is-warning",
+        EvaluationSkillStatus.Critical => "is-negative",
+        _ => "is-muted"
+    };
+
+    var assessmentSeries = string.Join(
+        ",",
+        Model.Assessments.Select(x =>
+            x.Percentage.ToString(CultureInfo.InvariantCulture)));
+
+    var assessmentLabels = string.Join(
+        "|",
+        Model.Assessments.Select(x =>
+            x.AssessmentDate.ToString("MM-dd", CultureInfo.InvariantCulture)));
+
+    var assessmentWaterfallLabels = string.Join(
+        "|",
+        Model.Assessments.Select(x =>
+            x.Title.Replace("|", "/", StringComparison.Ordinal)));
+
+    var assessmentDeltas = string.Join(
+        ",",
+        Model.Assessments.Skip(1).Select(x =>
+            (x.OverallChangePercentagePoints ?? 0m)
+                .ToString(CultureInfo.InvariantCulture)));
+
+    var assessmentStart =
+        Model.Assessments.Count > 0
+            ? Model.Assessments[0].Percentage
+                .ToString(CultureInfo.InvariantCulture)
+            : string.Empty;
+}
+
+<section class="analytics-page evaluation-page">
+    <header class="evaluation-student-hero">
+        <div>
+            <div class="user-eyebrow">@A["Student360"]</div>
+            <h1>@e.DisplayName</h1>
+            <p>
+                @e.StudentNumber · @e.AcademicYearName · @e.ClassName · @e.SubjectName
+            </p>
+        </div>
+        <div class="evaluation-student-hero-actions">
+            <a class="school-button school-button-secondary"
+               asp-action="Students"
+               asp-route-academicYearId="@e.AcademicYearId"
+               asp-route-classGroupId="@e.ClassGroupId"
+               asp-route-subjectId="@e.SubjectId">
+                @A["BackToStudents"]
+            </a>
+            <a class="school-button school-button-secondary"
+               asp-action="StudentReport"
+               asp-route-studentProfileId="@e.StudentProfileId"
+               asp-route-academicYearId="@e.AcademicYearId"
+               asp-route-classGroupId="@e.ClassGroupId"
+               asp-route-subjectId="@e.SubjectId">
+                @A["ViewReport"]
+            </a>
+            <a class="school-button"
+               asp-action="StudentReportPdf"
+               asp-route-studentProfileId="@e.StudentProfileId"
+               asp-route-academicYearId="@e.AcademicYearId"
+               asp-route-classGroupId="@e.ClassGroupId"
+               asp-route-subjectId="@e.SubjectId">
+                PDF
+            </a>
+        </div>
+    </header>
+
+    <nav class="evaluation-nav" aria-label="@A["AnalyticsTitle"]">
+        <a asp-action="Index"
+           asp-route-academicYearId="@e.AcademicYearId"
+           asp-route-classGroupId="@e.ClassGroupId"
+           asp-route-subjectId="@e.SubjectId">@A["EvaluationOverview"]</a>
+        <a asp-action="Students"
+           asp-route-academicYearId="@e.AcademicYearId"
+           asp-route-classGroupId="@e.ClassGroupId"
+           asp-route-subjectId="@e.SubjectId">@A["AllStudents"]</a>
+        <a asp-action="TopicsSkills"
+           asp-route-academicYearId="@e.AcademicYearId"
+           asp-route-classGroupId="@e.ClassGroupId"
+           asp-route-subjectId="@e.SubjectId">@A["TopicsSkills"]</a>
+    </nav>
+
+    <section class="evaluation-hero-grid">
+        <article class="evaluation-primary-score">
+            <span>@A["CurrentMastery"]</span>
+            <div class="evaluation-donut"
+                 data-evaluation-chart="donut"
+                 data-value="@(e.CurrentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"
+                 data-suffix="%"
+                 data-decimals="1"
+                 aria-label="@A["CurrentMastery"]: @Value(e.CurrentMasteryPercentage)">
+                <div class="evaluation-donut-content">
+                    <strong data-chart-number>@Value(e.CurrentMasteryPercentage)</strong>
+                    <small>@A["CurrentMastery"]</small>
+                </div>
+            </div>
+            <small>@e.EvaluatedSkillCount / @e.ExpectedSkillCount skills evaluated</small>
+        </article>
+
+        <div class="evaluation-summary-grid">
+            <article>
+                <span>@A["AssessmentMastery"]</span>
+                <strong>@Value(e.AssessmentMasteryPercentage)</strong>
+            </article>
+            <article>
+                <span>@A["PracticeMastery"]</span>
+                <strong>@Value(e.PracticeMasteryPercentage)</strong>
+            </article>
+            <article>
+                <span>@A["TransferGap"]</span>
+                <strong>
+                    @(e.PracticeToAssessmentGapPercentagePoints.HasValue
+                        ? $"{e.PracticeToAssessmentGapPercentagePoints.Value:+0.#;-0.#;0} pts"
+                        : "—")
+                </strong>
+            </article>
+            <article>
+                <span>@A["Coverage"]</span>
+                <strong>@e.CurriculumCoveragePercentage.ToString("0.#")%</strong>
+            </article>
+            <article>
+                <span>@A["Confidence"]</span>
+                <strong>@e.ConfidencePercentage.ToString("0.#")%</strong>
+                <small>@e.ConfidenceBand</small>
+            </article>
+            <article>
+                <span>@A["ShortTrend"]</span>
+                <strong class="@TrendClass(e.ShortTermTrend)">@TrendLabel(e.ShortTermTrend)</strong>
+            </article>
+            <article>
+                <span>@A["LongTrend"]</span>
+                <strong class="@TrendClass(e.LongTermTrend)">@TrendLabel(e.LongTermTrend)</strong>
+            </article>
+            <article>
+                <span>@A["CriticalGaps"]</span>
+                <strong>@e.CriticalSkillCount</strong>
+                <small>@e.NeedsFocusSkillCount @A["NeedsFocus"].Value.ToLowerInvariant()</small>
+            </article>
+        </div>
+    </section>
+
+    <section class="evaluation-visual-grid" aria-label="@A["VisualAnalytics"]">
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["PerformanceComparison"]</h2>
+                    <p>@A["PerformanceComparisonHelp"]</p>
+                </div>
+            </header>
+            <div class="evaluation-bars"
+                 data-evaluation-chart="bars">
+                <div class="evaluation-bar-row">
+                    <span>@A["AssessmentMastery"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@(e.AssessmentMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
+                    </span>
+                    <strong>@Value(e.AssessmentMasteryPercentage)</strong>
+                </div>
+                <div class="evaluation-bar-row is-practice">
+                    <span>@A["PracticeMastery"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@(e.PracticeMasteryPercentage?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
+                    </span>
+                    <strong>@Value(e.PracticeMasteryPercentage)</strong>
+                </div>
+                <div class="evaluation-bar-row is-warning">
+                    <span>@A["Coverage"]</span>
+                    <span class="evaluation-bar-track">
+                        <i class="evaluation-bar-fill"
+                           data-chart-value="@e.CurriculumCoveragePercentage.ToString(CultureInfo.InvariantCulture)"></i>
+                    </span>
+                    <strong>@e.CurriculumCoveragePercentage.ToString("0.#")%</strong>
+                </div>
+            </div>
+            <div class="evaluation-chart-callout">
+                <span class="evaluation-chart-score">
+                    @(e.PracticeToAssessmentGapPercentagePoints.HasValue
+                        ? e.PracticeToAssessmentGapPercentagePoints.Value.ToString("+0.#;-0.#;0")
+                        : "—")
+                </span>
+                <span>@A["TransferGap"] · @A["TransferGapHelp"]</span>
+            </div>
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["AssessmentProgressChart"]</h2>
+                    <p>@A["AssessmentProgressChartHelp"]</p>
+                </div>
+            </header>
+            <div class="evaluation-line-chart-scroll">
+                <div class="evaluation-line-chart"
+                     data-evaluation-chart="line"
+                     data-values="@assessmentSeries"
+                     data-labels="@assessmentLabels"
+                     data-aria-label="@A["AssessmentProgressChart"]"
+                     data-empty-label="@A["InsufficientEvidence"]">
+                </div>
+            </div>
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["TopicMasteryChart"]</h2>
+                    <p>@A["TopicMasteryChartHelp"]</p>
+                </div>
+            </header>
+            @if (Model.Topics.Count == 0)
+            {
+                <div class="evaluation-chart-empty">@A["InsufficientEvidence"]</div>
+            }
+            else
+            {
+                <div class="evaluation-lollipop-list"
+                     data-evaluation-chart="lollipop">
+                    @foreach (var topic in Model.Topics
+                        .OrderBy(x => x.CurrentMasteryPercentage ?? 101m)
+                        .Take(8))
+                    {
+                        var topicValue = topic.CurrentMasteryPercentage;
+                        var topicClass = !topicValue.HasValue
+                            ? string.Empty
+                            : topicValue.Value < 40m
+                                ? "is-danger"
+                                : topicValue.Value < 60m
+                                    ? "is-warning"
+                                    : string.Empty;
+                        <div class="evaluation-lollipop-row @topicClass">
+                            <span class="evaluation-lollipop-label"
+                                  title="@topic.TopicName">
+                                @topic.TopicName
+                            </span>
+                            <span class="evaluation-lollipop-track">
+                                <i class="evaluation-lollipop-stick"
+                                   data-chart-value="@(topicValue?.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"></i>
+                            </span>
+                            <strong>@Value(topic.CurrentMasteryPercentage)</strong>
+                        </div>
+                    }
+                </div>
+            }
+        </article>
+
+        <article class="evaluation-chart-panel">
+            <header>
+                <div>
+                    <h2>@A["AssessmentChangeWaterfall"]</h2>
+                    <p>@A["AssessmentChangeWaterfallHelp"]</p>
+                </div>
+            </header>
+            <div class="evaluation-waterfall"
+                 data-evaluation-chart="waterfall"
+                 data-start="@assessmentStart"
+                 data-deltas="@assessmentDeltas"
+                 data-labels="@assessmentWaterfallLabels"
+                 data-empty-label="@A["InsufficientEvidence"]">
+            </div>
+        </article>
+    </section>
+
+    <section class="analytics-panel">
+        <header>
+            <h2>@A["TopicsSkills"]</h2>
+            <p>Exact skills are evaluated independently so broad topic averages cannot hide a critical underlying gap.</p>
+        </header>
+
+        <div class="analytics-table-wrap">
+            <table class="analytics-table evaluation-skill-table">
+                <thead>
+                    <tr>
+                        <th>@A["Skill"]</th>
+                        <th>@A["CurrentMastery"]</th>
+                        <th>@A["AssessmentMastery"]</th>
+                        <th>@A["PracticeMastery"]</th>
+                        <th>@A["Status"]</th>
+                        <th>@A["Trend"]</th>
+                        <th>@A["Evidence"]</th>
+                        <th>@A["Confidence"]</th>
+                        <th>@A["Priority"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var skill in e.Skills)
+                    {
+                        <tr>
+                            <td data-label="@A["Skill"]">
+                                <strong>@skill.SkillName</strong>
+                                <small>@skill.SkillKey</small>
+                                @if (skill.WeakPrerequisiteSkillKeys.Count > 0)
+                                {
+                                    <span class="evaluation-prerequisite-warning">
+                                        @A["WeakPrerequisites"]:
+                                        @string.Join(", ", skill.WeakPrerequisiteSkillKeys)
+                                    </span>
+                                }
+                            </td>
+                            <td data-label="@A["CurrentMastery"]">@Value(skill.CurrentMasteryPercentage)</td>
+                            <td data-label="@A["AssessmentMastery"]">@Value(skill.AssessmentMasteryPercentage)</td>
+                            <td data-label="@A["PracticeMastery"]">@Value(skill.PracticeMasteryPercentage)</td>
+                            <td data-label="@A["Status"]">
+                                <span class="evaluation-status @StatusClass(skill.Status)">
+                                    @StatusLabel(skill.Status)
+                                </span>
+                            </td>
+                            <td data-label="@A["Trend"]">
+                                <span class="evaluation-trend-chip @TrendClass(skill.ShortTermTrend)">
+                                    @TrendLabel(skill.ShortTermTrend)
+                                </span>
+                            </td>
+                            <td data-label="@A["Evidence"]">
+                                <strong>@skill.Evidence.TotalEvidence</strong>
+                                <small>
+                                    A @skill.Evidence.AssessmentEvidence · P @skill.Evidence.PracticeEvidence
+                                </small>
+                            </td>
+                            <td data-label="@A["Confidence"]">
+                                @skill.ConfidencePercentage.ToString("0.#")%
+                                <small>@skill.ConfidenceBand</small>
+                            </td>
+                            <td data-label="@A["Priority"]">
+                                <div class="evaluation-priority-actions">
+                                    <span class="evaluation-priority priority-@skill.InterventionPriority.ToString().ToLowerInvariant()">
+                                        @skill.InterventionPriority
+                                    </span>
+
+                                    @if (User.IsInRole(RoleNames.Teacher) &&
+                                         skill.TargetedCheckAvailable &&
+                                         skill.InterventionPriority != EvaluationPriority.None &&
+                                         skill.Status is not EvaluationSkillStatus.NotYetAssessed and
+                                             not EvaluationSkillStatus.InsufficientEvidence)
+                                    {
+                                        <form method="post"
+                                              asp-action="CreateInterventionCheck"
+                                              asp-route-studentProfileId="@e.StudentProfileId"
+                                              class="evaluation-intervention-form">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="academicYearId" value="@e.AcademicYearId" />
+                                            <input type="hidden" name="classGroupId" value="@e.ClassGroupId" />
+                                            <input type="hidden" name="subjectId" value="@e.SubjectId" />
+                                            <input type="hidden" name="learningOutcomeId" value="@skill.LearningOutcomeId" />
+                                            <input type="hidden" name="skillKey" value="@skill.SkillKey" />
+                                            <input type="hidden" name="questionCount" value="5" />
+                                            <button type="submit"
+                                                    class="school-button school-button-secondary evaluation-intervention-button"
+                                                    title="@A["InterventionCheckHint"]">
+                                                @A["CreateInterventionCheck"]
+                                            </button>
+                                        </form>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="evaluation-two-column">
+        <article class="analytics-panel">
+            <header>
+                <h2>@A["TopicAnalysis"]</h2>
+            </header>
+            <div class="evaluation-topic-stack">
+                @foreach (var topic in Model.Topics)
+                {
+                    <article>
+                        <div>
+                            <strong>@topic.TopicName</strong>
+                            <small>@topic.EvaluatedSkillCount / @topic.SkillCount skills evaluated</small>
+                        </div>
+                        <div>
+                            <strong>@Value(topic.CurrentMasteryPercentage)</strong>
+                            <span class="evaluation-trend-chip @TrendClass(topic.Trend)">@TrendLabel(topic.Trend)</span>
+                        </div>
+                        <span class="evaluation-inline-progress">
+                            <span style="width:@Math.Clamp(topic.CoveragePercentage, 0m, 100m).ToString(System.Globalization.CultureInfo.InvariantCulture)%"></span>
+                        </span>
+                    </article>
+                }
+            </div>
+        </article>
+
+        <article class="analytics-panel">
+            <header>
+                <h2>@A["AssessmentHistory"]</h2>
+            </header>
+            @if (Model.Assessments.Count == 0)
+            {
+                <p class="analytics-empty-inline">@A["NoTrend"]</p>
+            }
+            else
+            {
+                <div class="evaluation-assessment-timeline">
+                    @foreach (var assessment in Model.Assessments)
+                    {
+                        <article>
+                            <span class="evaluation-timeline-dot" aria-hidden="true"></span>
+                            <div>
+                                <strong>@assessment.Title</strong>
+                                @if (assessment.IsPersonalizedCheck)
+                                {
+                                    <span class="evaluation-personalized-badge">@A["PersonalizedCheck"]</span>
+                                }
+                                <small>
+                                    @assessment.AssessmentDate.ToString("yyyy-MM-dd")
+                                    @if (!string.IsNullOrWhiteSpace(assessment.TermName))
+                                    {
+                                        <text> · @assessment.TermName</text>
+                                    }
+                                </small>
+                            </div>
+                            <div class="evaluation-assessment-score">
+                                <strong>@assessment.Percentage.ToString("0.#")%</strong>
+                                @if (assessment.OverallChangePercentagePoints.HasValue)
+                                {
+                                    <small>
+                                        @A["OverallChange"]:
+                                        @assessment.OverallChangePercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                                    </small>
+                                }
+                                @if (assessment.ComparableSkillChangePercentagePoints.HasValue)
+                                {
+                                    <small>
+                                        @A["ComparableSkillGrowth"]:
+                                        @assessment.ComparableSkillChangePercentagePoints.Value.ToString("+0.#;-0.#;0") pts
+                                        · @assessment.ComparableSkillCount skills
+                                    </small>
+                                }
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+        </article>
+    </section>
+
+    <section class="evaluation-two-column">
+        <article class="analytics-panel">
+            <header>
+                <h2>@A["PracticeMastery"]</h2>
+                <p>Practice engagement is shown separately from formal Assessment performance.</p>
+            </header>
+            <div class="evaluation-practice-grid">
+                <div>
+                    <span>@A["PracticeSessions"]</span>
+                    <strong>@Model.Practice.SessionCount</strong>
+                </div>
+                <div>
+                    <span>@A["Evidence"]</span>
+                    <strong>@Model.Practice.EvidenceCount</strong>
+                </div>
+                <div>
+                    <span>@A["ActiveDays"]</span>
+                    <strong>@Model.Practice.ActiveDayCount</strong>
+                </div>
+                <div>
+                    <span>@A["SkillsPracticed"]</span>
+                    <strong>@Model.Practice.SkillCount</strong>
+                </div>
+                <div>
+                    <span>@A["PracticeMastery"]</span>
+                    <strong>@Value(Model.Practice.MasteryPercentage)</strong>
+                </div>
+                <div>
+                    <span>@A["Trend"]</span>
+                    <strong class="@TrendClass(Model.Practice.Trend)">
+                        @TrendLabel(Model.Practice.Trend)
+                    </strong>
+                </div>
+            </div>
+            @if (Model.Practice.LatestPracticeAtUtc.HasValue)
+            {
+                <p class="evaluation-muted-note">
+                    @A["LatestPractice"]:
+                    @Model.Practice.LatestPracticeAtUtc.Value.ToString("yyyy-MM-dd HH:mm 'UTC'")
+                </p>
+            }
+        </article>
+
+        <article class="analytics-panel">
+            <header>
+                <h2>@A["Term"]</h2>
+                <p>Term comparisons keep Assessment and Practice separate and calculate growth only across skills present in both periods.</p>
+            </header>
+            @if (Model.Terms.Count == 0)
+            {
+                <p class="analytics-empty-inline">@A["InsufficientEvidence"]</p>
+            }
+            else
+            {
+                <div class="analytics-table-wrap">
+                    <table class="analytics-table evaluation-term-table">
+                        <thead>
+                            <tr>
+                                <th>@A["Term"]</th>
+                                <th>@A["AssessmentMastery"]</th>
+                                <th>@A["PracticeMastery"]</th>
+                                <th>@A["CombinedMastery"]</th>
+                                <th>@A["ComparableSkillGrowth"]</th>
+                                <th>@A["Evidence"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var term in Model.Terms)
+                            {
+                                <tr>
+                                    <td>
+                                        <strong>@term.TermName</strong>
+                                        <small>@term.StartsOn.ToString("yyyy-MM-dd") — @term.EndsOn.ToString("yyyy-MM-dd")</small>
+                                    </td>
+                                    <td>@Value(term.AssessmentMasteryPercentage)</td>
+                                    <td>@Value(term.PracticeMasteryPercentage)</td>
+                                    <td>@Value(term.CombinedMasteryPercentage)</td>
+                                    <td>
+                                        @(term.ComparableSkillGrowthPercentagePoints.HasValue
+                                            ? $"{term.ComparableSkillGrowthPercentagePoints.Value:+0.#;-0.#;0} pts"
+                                            : "—")
+                                        @if (term.ComparableSkillCount > 0)
+                                        {
+                                            <small>@term.ComparableSkillCount skills</small>
+                                        }
+                                    </td>
+                                    <td>@term.EvidenceCount</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </article>
+    </section>
+
+    <section class="analytics-panel evaluation-recommendations-panel">
+        <header>
+            <h2>@A["RecommendedNextSteps"]</h2>
+            <p>Priorities are derived from mastery, evidence confidence, decline, retention, prerequisite dependencies and transfer—not from a hidden AI score.</p>
+        </header>
+
+        @if (Model.Recommendations.Count == 0)
+        {
+            <p class="analytics-empty-inline">No intervention priority is currently supported by the available evidence.</p>
+        }
+        else
+        {
+            <div class="evaluation-recommendation-list">
+                @foreach (var item in Model.Recommendations)
+                {
+                    <article>
+                        <div class="evaluation-recommendation-rank">
+                            <span class="evaluation-priority priority-@item.Priority.ToString().ToLowerInvariant()">
+                                @item.Priority
+                            </span>
+                        </div>
+                        <div>
+                            <strong>@item.SkillName</strong>
+                            <small>@item.SkillKey · @Value(item.CurrentMasteryPercentage)</small>
+                            <p>@item.Reason</p>
+                            @if (item.RecommendedPrerequisitePath.Count > 0)
+                            {
+                                <div class="evaluation-prerequisite-path">
+                                    @foreach (var prerequisite in item.RecommendedPrerequisitePath)
+                                    {
+                                        <span>@prerequisite</span>
+                                        <b aria-hidden="true">→</b>
+                                    }
+                                    <span>@item.SkillKey</span>
+                                </div>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+        }
+    </section>
+
+    <section class="analytics-panel">
+        <header>
+            <h2>@A["EvidenceDetails"]</h2>
+            <p>Every evaluation can be traced back to the source evidence used to calculate it.</p>
+        </header>
+
+        <details class="evaluation-evidence-details">
+            <summary>@A["EvidenceDetails"] (@Model.Evidence.Count)</summary>
+            <div class="analytics-table-wrap">
+                <table class="analytics-table">
+                    <thead>
+                        <tr>
+                            <th>@A["When"]</th>
+                            <th>@A["Source"]</th>
+                            <th>@A["Skill"]</th>
+                            <th>@A["Difficulty"]</th>
+                            <th>@A["Result"]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Evidence)
+                        {
+                            <tr>
+                                <td>@item.OccurredAtUtc.ToString("yyyy-MM-dd HH:mm")</td>
+                                <td>
+                                    <strong>@item.Source</strong>
+                                    <small>@item.SourceTitle</small>
+                                </td>
+                                <td>
+                                    <strong>@item.SkillName</strong>
+                                    <small>@item.OutcomeCode</small>
+                                </td>
+                                <td>@(item.Difficulty?.ToString() ?? "—")</td>
+                                <td><strong>@item.Percentage.ToString("0.#")%</strong></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </section>
+</section>
+
+
+@section Scripts {
+    <script src="~/js/evaluation-charts.js" asp-append-version="true"></script>
+}

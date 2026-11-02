@@ -1,0 +1,433 @@
+using Edulytics.Core.Curriculum;
+using Edulytics.Data.Seeding;
+
+namespace Edulytics.Tests.MathematicsIntelligence;
+
+public sealed class UsCcssG1FullGradeStartingTeachingTests
+{
+    [Fact]
+    public void FirstFiveNewGradeLessons_HaveSourceBoundCorrectedTeaching()
+    {
+        var doc=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
+            .Single(x=>x.PackCode=="US-CCSS-MATH"&&x.VersionCode=="CCSSM-2010"&&
+                x.Lessons.Any(l=>l.LessonCode=="PED:US-CCSS-MATH:G1:U03:L15"));
+        CanonicalLessonContentMaterializer.Materialize(doc);
+        string text(int n)
+        {
+            var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U03:L{n:00}");
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
+            var expectedVersion=n switch
+            {
+                20=>CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion,
+                21=>CommonCoreG1FullGradeStartingContentCorrections.CenterSourceContentVersion,
+                22=>CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion,
+                23=>CommonCoreG1FullGradeStartingContentCorrections.TenSubtractSourceContentVersion,
+                24=>CommonCoreG1FullGradeStartingContentCorrections.CountRelationSourceContentVersion,
+                25=>CommonCoreG1FullGradeStartingContentCorrections.ChooseSubtractSourceContentVersion,
+                26=>CommonCoreG1FullGradeStartingContentCorrections.StorySourceContentVersion,
+                27=>CommonCoreG1FullGradeStartingContentCorrections.CenterFourSourceContentVersion,
+                _=>CommonCoreG1FullGradeStartingContentCorrections.Version
+            };
+            Assert.Equal(expectedVersion,
+                CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
+            var tr=row.Translations.Single(x=>x.CultureCode=="en");
+            return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes+"\n"+tr.QuickSummary;
+        }
+        Assert.Contains("13 - 7 = 6",text(14));
+        Assert.Contains("3 + 8 + 7 = 10 + 8 = 18",text(15));
+        Assert.Contains("WRITE THEIR OWN bird story with 9 birds, 8 birds, and 1 bird",text(15));
+        Assert.Contains("teacher reviews",text(15),StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("6 + 5 + 4 = 15 + 10 is FALSE",text(16));
+        Assert.Contains("8 + 6 = 10 + 4 = 14",text(17));
+        Assert.Contains("9 + 4 = 8 + 5 = 7 + 6 = 13",text(18));
+        Assert.Contains("7+8=7+7+1=14+1=15",text(19));
+        Assert.Contains("5+3+4=12",text(20));
+        Assert.Contains("3+6+7=3+7+6=10+6=16",text(21));
+        Assert.Contains("14-6=14-4-2=8",text(22));
+        Assert.Contains("13-6=13-3-3=10-3=7",text(23));
+        Assert.Contains("8 to 10 is 2",text(24));
+        Assert.Contains("larger subtractor 15-12=3",text(24));
+        Assert.Contains("reversed equality □=14-6",text(24));
+        Assert.Contains("5+□=18, 13=□+6, 20=15+□",text(24));
+        Assert.Contains("Section D Checkpoint",text(24));
+        Assert.Contains("all four Han situations",text(26),StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("6+9=15 (missing start)",text(26));
+        Assert.Contains("15-6=9 (missing removed amount)",text(26));
+        Assert.Contains("9+6=15 (missing new amount)",text(26));
+        Assert.Contains("15-9=6 (missing result)",text(26));
+        Assert.Contains("Section D Checkpoint",text(26));
+        Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",text(25));
+        Assert.Contains("Solve 16-7",text(25));
+        Assert.Contains("9+7=16",text(25));
+        Assert.Contains("Clare 8+□=15",text(25));
+        Assert.Contains("Kiran 17-□=9",text(25));
+        Assert.Contains("How Close? Subtract from 20, Stage 2",text(27));
+        Assert.Contains("four numeral cards",text(27));
+        Assert.Contains("6,4,9,8",text(27));
+        Assert.Contains("20-6-4-9=1",text(27));
+        Assert.Contains("zero is a valid card",text(27));
+        Assert.Contains("0 through 10",text(27));
+        Assert.Contains("9+6 and 19-6",text(27));
+        Assert.Contains("selects TWO or THREE cards",text(27));
+        Assert.Contains("ORIGINAL Set A: fill 12-7=□, 18-5=□",text(24));
+        Assert.Contains("ORIGINAL Set B: fill 5+□=18, 13=□+6, 20=15+□",text(24));
+        Assert.Contains("8 snakes, 7 iguanas and 5 frogs",text(20));
+        Assert.Contains("3 herons, 6 hawks and 7 hummingbirds",text(20));
+        Assert.Contains("8+2+4=14 and 8+6=14",text(20));
+        Assert.Contains("7+3+6=16 and 7+9=16",text(20));
+        Assert.Contains("8+2+5+5=20",text(20));
+        Assert.Contains("8 lions, 4 tigers and 3 cheetahs",text(20));
+        Assert.Contains("8 goats, 7 sheep and 4 pigs",text(20));
+        Assert.Contains("4+8+6=4+6+8=10+8=18",text(20));
+        Assert.Contains("4+8=4+6+2=10+2=12",text(20));
+        Assert.Contains("four red and six yellow counters",text(20));
+        Assert.Contains("not the original publisher artwork",text(20));
+        Assert.Contains("8 monkeys, 4 gorillas, and 7 orangutans",text(20));
+        Assert.Contains("8+4+7=8+2+2+7=10+9=19 primates",text(20));
+        Assert.Contains("2021 login-protected cool-down",text(20));
+        Assert.Contains("digital equation check verifies arithmetic",text(20));
+        Assert.Contains("What do you know about 20?",text(21));
+        Assert.Contains("10+10=13+7=20",text(21));
+        Assert.Contains("14-4=10 helps solve 14-5=9",text(22));
+        Assert.Contains("Elena has 16 crayons",text(22));
+        Assert.Contains("subtractor cards 0–9",text(22));
+        Assert.Contains("19-0=19",text(22));
+        Assert.Contains("addition equation with a missing addend",text(22));
+        Assert.Contains("16-7=9 crayons",text(22));
+        Assert.Contains("17-7-1=9",text(23));
+        Assert.Contains("Diego's and Andre's different ten-frame methods",text(23));
+        Assert.Contains("14-5=9 and 13-6=7",text(23));
+        Assert.Contains("Andre takes 8 from the full ten",text(23));
+        Assert.Contains("digit subtractor 0–9",text(23));
+        Assert.Contains("17-4=13",text(23));
+        Assert.Contains("19-0=19",text(23));
+        Assert.Contains("EDULYTICS ORIGINAL COOL-DOWN",text(23));
+        Assert.Contains("You have 14 counters. Remove 8",text(23));
+        Assert.Contains("independently authored, not a reconstruction",text(23));
+        Assert.Contains("two stages TO10 and REST",text(23));
+        var zoo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L20");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,zoo,CommonCoreG1FullGradeStartingContentCorrections.Version));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v6"));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,zoo,"us-ccss-g1-u03-l20-zoo-2021-source-v7"));
+        var center=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L21");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,center,"us-ccss-g1-u03-l21-centers-2021-source-v6"));
+        Assert.Equal("us-ccss-g1-u03-l21-centers-2021-source-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.CenterSourceContentVersion);
+        var subtract=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L22");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,subtract,"us-ccss-g1-u03-l22-teen-2021-source-v6"));
+        Assert.Equal("us-ccss-g1-u03-l22-teen-2021-source-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.TeenSubtractSourceContentVersion);
+        var centerFourth=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L27");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,centerFourth,"us-ccss-g1-u03-l27-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l27-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.CenterFourSourceContentVersion);
+        var storyUnknown=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L26");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,storyUnknown,"us-ccss-g1-u03-l26-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l26-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.StorySourceContentVersion);
+        var chooseSubtract=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L25");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,chooseSubtract,"us-ccss-g1-u03-l25-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l25-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.ChooseSubtractSourceContentVersion);
+        var useCount=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L24");
+        Assert.Equal("Relate Counting to Addition and Subtraction",
+            useCount.Translations.Single(x=>x.CultureCode=="en").Title);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,useCount,"us-ccss-g1-u03-l24-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u03-l24-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.CountRelationSourceContentVersion);
+        var useTen=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L23");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,useTen,"us-ccss-g1-u03-l23-ten-2021-source-v6"));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,useTen,"us-ccss-g1-u03-l23-ten-2021-source-v7"));
+        Assert.Equal("us-ccss-g1-u03-l23-ten-2021-source-v8",
+            CommonCoreG1FullGradeStartingContentCorrections.TenSubtractSourceContentVersion);
+        Assert.Equal("us-ccss-g1-u03-l20-zoo-2021-source-v8",
+            CommonCoreG1FullGradeStartingContentCorrections.ZooSourceContentVersion);
+        foreach(var number in new[]{21,22,23,24,25,26,27})
+        {
+            var lesson=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U03:L{number:00}");
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+                doc,lesson,CommonCoreG1FullGradeStartingContentCorrections.Version));
+        }
+        var flexible=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L19");
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,flexible,CommonCoreG1FullGradeStartingContentCorrections.Version));
+        Assert.Contains("display five numeral cards",text(21));
+        Assert.Contains("number-card set is 0 through 10",text(21));
+        Assert.Contains("permitted cards are 0 through 9",text(21));
+        Assert.Contains("no 11 card",text(21));
+        Assert.Contains("choose to add 7, 8 or 9",text(21));
+        Assert.Contains("five markers consecutively in a row",text(21));
+        Assert.Contains("12-7=5 pencils",text(25));
+        Assert.Contains("8+7=15",text(25));
+        Assert.Contains("17-8=9",text(25));
+        Assert.Contains("20-15=5",text(25));
+        Assert.Contains("7+5=12",text(26));
+        Assert.Contains("BACKWARD by one from 50 to 20",text(24));
+        Assert.Contains("16-3=13, 17-8=9 and 18-15=3",text(24));
+        Assert.Contains("18-5=□",text(24));
+        Assert.Contains("20=15+□",text(24));
+        Assert.Contains("FORWARD from 50 through 100",text(25));
+        Assert.Contains("19-3=16, 13-5=8, 18-9=9 and 17-15=2",text(25));
+        Assert.Contains("Clare 8+□=15",text(25));
+        Assert.Contains("Kiran 17-□=9",text(25));
+        Assert.Contains("15-10=5, 15-12=3, 16-10=6, 16-13=3",text(26));
+        Assert.Contains("Han story 1: □+9=15",text(26));
+        Assert.Contains("Han story 2: 15-□=9",text(26));
+        Assert.Contains("Han story 3: 9+□=15",text(26));
+        Assert.Contains("Han story 4: 15-9=6",text(26));
+        Assert.Contains("20-10-1=9, 18-10-4=4",text(27));
+        Assert.Contains("9+6=15 is greater than 19-6=13",text(27));
+        Assert.Contains("Elena has 6 counters",text(26));
+        Assert.Contains("16-9=7",text(27));
+        var preexistingStory=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L28");
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,preexistingStory));
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(doc,preexistingStory));
+        Assert.Contains("4 + 3 + 5 = 12",preexistingStory.Translations.Single(x=>x.CultureCode=="en").WorkedExamples);
+        var preexistingTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L03");
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,preexistingTens));
+        Assert.True(CommonCoreG1SourceGroundedInstructionalCorrections.IsTarget(doc,preexistingTens));
+
+        string unit4Text(int n)
+        {
+            var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
+            Assert.Equal(n==6
+                    ?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion
+                    :n==7?CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion
+                    :n==8?CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion
+                    :n==9?CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion
+                    :n==10?CommonCoreG1FullGradeStartingContentCorrections.UnitFourWriteNumeralSourceContentVersion
+                    :n==11?CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion
+                    :n==12?CommonCoreG1FullGradeStartingContentCorrections.UnitFourTenMoreLessSourceContentVersion
+                    :n==13?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterDayTwoSourceContentVersion
+                    :n==14?CommonCoreG1FullGradeStartingContentCorrections.UnitFourCompareWordsSourceContentVersion
+                    :CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion,
+                CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+                doc,row,CommonCoreG1FullGradeStartingContentCorrections.Version));
+            var tr=row.Translations.Single(x=>x.CultureCode=="en");
+            return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+tr.StepByStepSolutions+"\n"+tr.CommonMistakes;
+        }
+        string earlierUnit4Text(int n)
+        {
+            var row=doc.Lessons.Single(x=>x.LessonCode==$"PED:US-CCSS-MATH:G1:U04:L{n:00}");
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,row));
+            var expectedVersion=n switch
+            {
+                1=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourCollectionSourceContentVersion,
+                2=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourTensMatchSourceContentVersion,
+                4=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourMultipleTensSourceContentVersion,
+                5=>CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterSourceContentVersion,
+                _=>throw new InvalidOperationException()
+            };
+            Assert.Equal(expectedVersion,CanonicalLessonContentMaterializer.GetEffectiveContentVersion(doc,row));
+            Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+                doc,row,CommonCoreG1FullGradeStartingContentCorrections.Version));
+            var tr=row.Translations.Single(x=>x.CultureCode=="en");
+            return tr.Explanation+"\n"+tr.KeyConceptsAndRules+"\n"+tr.WorkedExamples+"\n"+
+                tr.StepByStepSolutions+"\n"+tr.CommonMistakes+"\n"+tr.QuickSummary;
+        }
+        Assert.Contains("physical collection of 40 objects",earlierUnit4Text(1));
+        Assert.Contains("START at 30, count FORWARD by tens through 100, then BACKWARD by tens to 30",earlierUnit4Text(1));
+        Assert.Contains("Bag A has 20, B has 40, C has 50, D has 60, E has 30 and F has 10",earlierUnit4Text(1));
+        Assert.Contains("A=20, B=40, C=50, D=60, E=30, F=10",earlierUnit4Text(1));
+        Assert.Contains("physical bag exchange cannot be inferred",earlierUnit4Text(1));
+        var collection=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L01");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,collection,"us-ccss-g1-u04-l01-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l01-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourCollectionSourceContentVersion);
+        Assert.Contains("five complete tens and two remaining ones",unit4Text(6));
+        Assert.Contains("DECISION=DISAGREE;TENS=4;ONES=8;TOTAL=48;CLAIM=50",unit4Text(6));
+        Assert.Contains("3 full tens and 7 ones",unit4Text(6));
+        Assert.Contains("1 ten and 4 ones=14",unit4Text(10));
+        Assert.Contains("7+40=47",unit4Text(10));
+        Assert.Contains("2 ones and 8 tens=82",unit4Text(10));
+        Assert.Contains("Clare writes 702 for seventy-two",unit4Text(10));
+        Assert.Contains("NUMBER=83 and EXPANDED=80+3",unit4Text(10));
+        Assert.Contains("60+23=83",unit4Text(11));
+        Assert.Contains("30+65=95",unit4Text(11));
+        Assert.Contains("EDULYTICS INDEPENDENT MISSING-DIGIT",unit4Text(11));
+        Assert.Contains("4□+20=65",unit4Text(11));
+        Assert.Contains("4□+20=75",unit4Text(11));
+        Assert.Contains("46+30=76",unit4Text(11));
+        Assert.Contains("56+□0=96",unit4Text(11));
+        Assert.Contains("□3+30=74",unit4Text(11));
+        Assert.Contains("missing TENS DIGIT is 4",unit4Text(11));
+        Assert.Contains("ONES_LEFT=3;ONES_RIGHT=4",unit4Text(11));
+        Assert.Contains("The Missing Digit image accessibility descriptions",unit4Text(11),StringComparison.OrdinalIgnoreCase);
+        var addTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L11");
+        Assert.Equal("us-ccss-g1-u04-l11-original-student-activities-v8",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourAddTensSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,addTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,addTens,"us-ccss-g1-u04-l11-original-student-activities-v7"));
+
+        Assert.Contains("7, 70, 17 and 71",unit4Text(10));
+        var writeNumbers=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L10");
+        Assert.Equal("us-ccss-g1-u04-l10-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourWriteNumeralSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,writeNumbers,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.Contains("partners draw two digit cards",unit4Text(9));
+        Assert.Contains("AT LEAST FOUR actual classmates' collections",unit4Text(9));
+        Assert.Contains("Collection 1, Collection 2, Collection 3 and Collection 4",unit4Text(9));
+        Assert.Contains("7 tens and 3 ones",unit4Text(9));
+        Assert.Contains("TEACHER RUBRIC",unit4Text(9));
+        Assert.Contains("Digitally graded equivalence alone does not certify",unit4Text(9));
+        var showOwnNumber=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L09");
+        Assert.Equal("us-ccss-g1-u04-l09-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourShowNumberSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,showOwnNumber,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.Contains("Kiran 3 ones plus 7 tens agrees with Priya 70+3",unit4Text(8));
+        Assert.Contains("J and S both represent 32 but E represents 23",unit4Text(8));
+        Assert.Contains("9 groups of ten and 5 single ones",unit4Text(8));
+        Assert.Contains("Grab and Count",unit4Text(8));
+        var matchRepresentations=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L08");
+        Assert.Equal("Different Representations of Tens and Ones",
+            matchRepresentations.Translations.Single(x=>x.CultureCode=="en").Title);
+        Assert.Equal("us-ccss-g1-u04-l08-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourRepresentationsSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,matchRepresentations,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.Contains("35 OR 53",unit4Text(7));
+        Assert.Contains("Clare claims a shown model is 68",unit4Text(7));
+        Assert.Contains("Diego claims 86",unit4Text(7));
+        Assert.Contains("Tyler's drawing of 4 tens and 2 ones is 42",unit4Text(7));
+        Assert.Contains("any number from 60 through 69",unit4Text(7));
+        var readTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L07");
+        Assert.Equal("us-ccss-g1-u04-l07-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourReadNumberSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,readTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+
+        Assert.Contains("50 to 81",unit4Text(6));
+        var countLarge=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L06");
+        Assert.Equal("us-ccss-g1-u04-l06-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourCountLargerSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,countLarge,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,countLarge,"us-ccss-g1-u04-l06-unrecognized-v3"));
+        Assert.Contains("ten-cube towers",earlierUnit4Text(2));
+        Assert.Contains("other TWO children",earlierUnit4Text(2));
+        Assert.Contains("three-column number / number of tens / drawing chart",earlierUnit4Text(2));
+        Assert.Contains("10 through 90",earlierUnit4Text(2));
+        Assert.Contains("TENS=7;NUMBER=70;WORD=SEVENTY",earlierUnit4Text(2));
+        Assert.Contains("too-low, about-right, and too-high estimate",earlierUnit4Text(2));
+        var tensMatch=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L02");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,tensMatch,"us-ccss-g1-u04-l02-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l02-original-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourTensMatchSourceContentVersion);
+        Assert.Contains("30+10=40, 40+10=50, 80-10=70 and 70-10=60",earlierUnit4Text(4));
+        Assert.Contains("20+60=80; 70-20=50; 90-70=20; 40+40=80",earlierUnit4Text(4));
+        Assert.Contains("EDULYTICS ORIGINAL EXIT CHECK",earlierUnit4Text(4));
+        Assert.Contains("ADDITION=80;SUBTRACTION=50",earlierUnit4Text(4));
+        Assert.Contains("two pictured",earlierUnit4Text(4));
+        var moreTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L04");
+        Assert.Equal("More Addition and Subtraction with Tens",moreTens.Translations.Single(x=>x.CultureCode=="en").Title);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(doc,moreTens,"us-ccss-g1-u04-l04-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l04-original-activities-v7",CommonCoreG1FullGradeStartingContentCorrections.UnitFourMultipleTensSourceContentVersion);
+        Assert.Contains("Jada counts 30 cubes",earlierUnit4Text(4));
+        Assert.Contains("7 towers of ten in Bag C",earlierUnit4Text(4));
+        Assert.Contains("90-70=20",earlierUnit4Text(4));
+        Assert.Contains("Check It Off Stage 2",earlierUnit4Text(5));
+        Assert.Contains("Source card domain includes ZERO and NINETY",earlierUnit4Text(5));
+        Assert.Contains("90-10=80",earlierUnit4Text(5));
+        Assert.Contains("0 through 90",earlierUnit4Text(5));
+        Assert.Contains("50-40=10",earlierUnit4Text(5));
+        var sourceCenter=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L05");
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(doc,sourceCenter,"us-ccss-g1-u04-l05-original-activities-v6"));
+        Assert.Equal("us-ccss-g1-u04-l05-original-activities-v7",CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterSourceContentVersion);
+        Assert.DoesNotContain("Check It Off Stage 3",earlierUnit4Text(5));
+        Assert.Contains("90 is already marked",earlierUnit4Text(5));
+        Assert.Contains("30+7=37",unit4Text(6));
+        Assert.Contains("fifty-eight",unit4Text(7));
+        Assert.Contains("50+3 = 53",unit4Text(8));
+        Assert.Contains("60+4",unit4Text(9));
+        Assert.Contains("30+7",unit4Text(10));
+        Assert.Contains("34+20=54",unit4Text(11));
+        Assert.Contains("Ten more than 58 is 68",unit4Text(12));
+        Assert.Contains("43+20=63",unit4Text(13));
+        Assert.Contains("64 is GREATER THAN 57",unit4Text(14));
+        Assert.Contains("52 > 39",unit4Text(15));
+        Assert.Contains("Noah",unit4Text(6));
+        Assert.Contains("40+8=48",unit4Text(6));
+        Assert.Contains("52 objects",unit4Text(6));
+        Assert.Contains("Clare/Diego",unit4Text(7));
+        Assert.Contains("EIGHT tens and SIX ones",unit4Text(7));
+        Assert.Contains("73",unit4Text(8));
+        Assert.Contains("too-low, about-right and too-high estimate",unit4Text(8));
+        Assert.Contains("AT LEAST FOUR real collections",unit4Text(9));
+        Assert.Contains("1 ten and 4 ones=14",unit4Text(10));
+        Assert.Contains("2 ones and 8 tens=82",unit4Text(10));
+        Assert.Contains("Write Numbers Stage 1 center",unit4Text(10));
+        Assert.Contains("37+20=57",unit4Text(11));
+        Assert.Contains("30+65=95",unit4Text(11));
+        Assert.Contains("The Missing Digit image accessibility descriptions",unit4Text(11));
+        Assert.Contains("67+10=77",unit4Text(12));
+        Assert.Contains("99-10-10-10=69",unit4Text(12));
+        foreach(var expectedWarmup in new[]{"3+10=13","10+5=15","13-10=3","15-10=5"})
+            Assert.Contains(expectedWarmup,unit4Text(12));
+        foreach(var intermediate in new[]{"67+10+10=87","67+10+10+10=97","99-10=89","99-10-10=79"})
+            Assert.Contains(intermediate,unit4Text(12));
+        var mentalTens=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L12");
+        Assert.Equal("us-ccss-g1-u04-l12-original-student-activities-v8",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourTenMoreLessSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,mentalTens,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,mentalTens,"us-ccss-g1-u04-l12-original-student-activities-v7"));
+        Assert.Contains("teacher supervises real gameplay.\nOriginal teacher lesson synthesis:",unit4Text(12));
+        Assert.DoesNotContain(@"gameplay.\nOriginal",unit4Text(12));
+        Assert.Contains("Write Numbers Stage 2 center",unit4Text(12));
+        Assert.Contains("8+7+5=20",unit4Text(13));
+        foreach(var sourceCenterLabel in new[]{"Grab and Count (Stage 2)","Five in a Row (Stages 1-4)","Check It Off (Stages 1-3)","How Close? (Stages 1-2)","Number Puzzles (Stages 1-2)","Shake and Spill (Stages 3-5)"})
+            Assert.Contains(sourceCenterLabel,unit4Text(13));
+        foreach(var warmup in new[]{"10+4=14","9+4=13","9+6=15","15-6=9"})
+            Assert.Contains(warmup,unit4Text(13));
+        var centerDayTwo=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L13");
+        Assert.Equal("us-ccss-g1-u04-l13-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourCenterDayTwoSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,centerDayTwo,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.Contains("Elena argues 75>65",unit4Text(14));
+        foreach(var sourcePhrase in new[]{"starts at 3 and adds TEN until 93", "93 is GREATER THAN 26", "62 is LESS THAN 64", "Write Numbers, Grab and Count, or Five in a Row", "43+20=63", "64 is GREATER THAN 44", "54 is LESS THAN 59"})
+            Assert.Contains(sourcePhrase,unit4Text(14));
+        var compareWords=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U04:L14");
+        Assert.Equal("us-ccss-g1-u04-l14-original-student-activities-v7",
+            CommonCoreG1FullGradeStartingContentCorrections.UnitFourCompareWordsSourceContentVersion);
+        Assert.True(CommonCoreG1FullGradeStartingContentCorrections.CanUpgradeExisting(
+            doc,compareWords,CommonCoreG1FullGradeStartingContentCorrections.UnitFourLaterSourceContentVersion));
+        Assert.Contains("39<41",unit4Text(14));
+        Assert.Contains("17<27",unit4Text(15));
+        Assert.Contains("58=53 FALSE",unit4Text(15));
+        var historical=doc.Lessons.Single(x=>x.LessonCode=="PED:US-CCSS-MATH:G1:U03:L13");
+        Assert.False(CommonCoreG1FullGradeStartingContentCorrections.IsTarget(doc,historical));
+    }
+    [Fact]
+    public void SourceBoundFiveTargets_ExcludePrior50AndAllOtherGrades()
+    {
+        var docs=MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var targets=docs.SelectMany(d=>d.Lessons.Where(l=>
+            CommonCoreG1FullGradeStartingContentCorrections.IsTarget(d,l)))
+            .Select(l=>l.LessonCode).ToArray();
+        Assert.Equal(28,targets.Length);
+        Assert.Equal(28,targets.Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(new[]{14,15,16,17,18,19,20,21,22,23,24,25,26,27}.Select(n=>$"PED:US-CCSS-MATH:G1:U03:L{n:00}").Concat(new[]{1,2,4,5,6,7,8,9,10,11,12,13,14,15}.Select(n=>$"PED:US-CCSS-MATH:G1:U04:L{n:00}")),targets);
+    }
+}

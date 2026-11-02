@@ -1,0 +1,98 @@
+{
+  "ordinal": 101,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_STUDENT_FACING_FROM_ORIGINAL_TEACHER_HTML_REVIEWED; PROTECTED_COOLDOWN_REPLACED_WITH_FIRST_PARTY; SOURCE_PDF_AND_ARTWORK_ORIGINALS_NOT_REPRODUCED",
+    "B": "2021_SOCCER_ELENA_TYLER_CORRECT_AND_7_BY_27_AND_6_BY_32_FIRST_PARTY_VISUAL_ROWS_LOADED_BY_RUNTIME",
+    "C": "SOURCE_SPECIFIC_TWO_FAMILY_RUNTIME_ROUTE_AND_INDEPENDENT_CORRECT_WRONG_MALFORMED_VERIFIER_FOCUSED_4_OF_4_GREEN; TEACHER_ONLY_ORAL_DRAWING",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "be4451688aa968d6285998c697630fc5bac156fcee59e4db8805e221e2e167a7",
+    "teacher": "2a33c4929ab0a847c121a43b4e51861d06280d42153275d6e8a836a1777d893f",
+    "studentMirror404": "f03b210aea0f822804abed9b7c6c18089d4c86f228fac96349c4e7c612380182"
+  },
+  "firstPartyCooldown": {
+    "prompt": "A rectangular garden has an area of 168 square metres and width 6 metres. Find its length using partial quotients.",
+    "teacherAnswer": "28 metres: 168 = 120 + 48; 120/6 + 48/6 = 20 + 8 = 28"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "studentMirrorValid": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "activeCurriculumEdition": "2021",
+  "exactPracticeContract": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-2021-exact-practice-contract.json",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-2021-source-element-ledger.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-2021-teacher-led-handoff.md",
+  "sourceElementDenominatorComplete": false,
+  "bStageVisuals": {
+    "authoredFirstParty": 3,
+    "sourceOriginalImagesOpened": 0,
+    "graphicRenderingVerified": false,
+    "studentGraphicSubmissionVerified": false,
+    "teacherDeliveryVerified": false
+  },
+  "focusedTestEvidence": {
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "testSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "workflow": "g4-2021-l101-focused.yml",
+    "filter": "FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests",
+    "failed": 0,
+    "passed": 2,
+    "skipped": 0,
+    "total": 2,
+    "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+  },
+  "newestFocusedTestEvidence": {
+    "sha": "cb3705a5decab6c98313a8a760d37898ce5de420",
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "createdUtc": "2026-10-27T14:49:29Z",
+    "finishedUtc": "2026-10-27T14:51:16Z",
+    "runSeconds": 107,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "lastStageCRedGreenEvidence": {
+    "failed": "https://github.com/EIAS79/Edulytics/actions/runs/40524243428",
+    "passed": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "reason": "Previously unintended fallback was discovered and corrected."
+  },
+  "focusedTestEvidenceLatest": {
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40531550626",
+    "sha": "633de6b82ada9b1ae19ef4e34a5c9d6eb4f4c1e8",
+    "passed": 4,
+    "failed": 0,
+    "scope": "L101 exact Practice families, correct/wrong/malformed, runtime route and real Rich V2 source-correct lesson lookup"
+  },
+  "stageDRisks": [
+    "Authentic browser-rendered student lesson and saved gradebook submissions not yet tested.",
+    "Other Grade 4 preexisting Rich V2 files require full-grade Stage D audit.",
+    "Original publisher images and inaccessible student document/Cool-down are not represented as verified; independent teaching visuals and Edulytics Cool-down used."
+  ],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "originalStudentAndTeacherTasksCompared": true,
+    "originalSourceBasis": "Saved local 2021 preparation and teacher Student Facing HTML; protected student PDF inaccessible; no source figure pixel parity claimed",
+    "learnerTeachingSourceParityReviewed": true,
+    "firstPartyVisualModel": "Source-math-verified 7-row and 6-row independently authored area grids in Rich V2",
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "teacherOnlyActivitiesRubricIndependentlyReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "https://github.com/EIAS79/Edulytics/actions/runs/40532615281",
+    "testedCommit": "63f0383f7bb79231590e42798b48c565620c761e",
+    "focusedPassCount": 4,
+    "focusedFailCount": 0,
+    "releaseApproved": false
+  }
+}

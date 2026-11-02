@@ -1,0 +1,10 @@
+# G4 ordinal 56 — Large Numbers on a Number Line
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-4_lesson-11_preparation.html SHA256=c0520aef8541759ceaf9e2b630cd5ac04dab366d31ce760ac1fd436bf9bf6c8f
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-4\lesson-11\lesson.html SHA256=112da106ebc31c741dd63342f69f9fae57261368ee33ab097c0b642f6b0a785a
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-4\lesson-11\lesson.html SHA256=933a5b690d7f484134878851325568915af897791b65b0e36e6dee1127fbdc14
+- Preserved existing learning explanation: Learning goal: You will use place value understanding to locate large numbers on a number line and describe number relationships in which one multi-digit number is ten times as much as another. In this lesson, you both estimate and precisely locate numbers through the hundred-thousands place on a number line. This lesson is designed to deepen your understanding of the relative position of multi-digit numbers to multiples of 100, 1,000, 10,000, and 100,000. You learn that when numbers are related
+- Original 2021 sections: Warm-up:  Estimation Exploration: What Number Could This Be?	 (10 minutes); Activity 1:  Locate Large Numbers	 (20 minutes); Activity 2:  So Many Numbers, So Little Line	 (15 minutes); Cool-down:  Ten Times on a Number Line	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 3470*100 = 347000.
+- Edulytics first-party Cool-down: A number line is labelled 0, 10,000, 20,000; where is 15,000?; teacher key: Halfway between 10,000 and 20,000.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

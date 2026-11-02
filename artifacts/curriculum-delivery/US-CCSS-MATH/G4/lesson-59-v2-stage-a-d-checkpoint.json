@@ -1,0 +1,42 @@
+{
+  "ordinal": 59,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L14",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "a1c9e69d5ab86e4777ce1aa493950bf242ca42590fbeba4e53ab83673c5cf5ee",
+    "teacher": "6b587bb2164cd44a8232fed00393d30481e333d35e916d2f61529bf8e707d5f1",
+    "student": "0a7466765db8ab55fc999af164222ad1d92d7962abec0c24e09d36d6a1668f8a"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Between which two consecutive multiples of 100,000 does 235,000 lie?",
+    "teacherAnswer": "200,000 and 300,000"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:12:39+01:00",
+  "closeAtLocal": "2026-10-26T23:12:39+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-59-local-source-guard.test.cjs"
+  }
+}

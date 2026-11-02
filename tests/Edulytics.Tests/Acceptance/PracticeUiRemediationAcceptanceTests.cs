@@ -1,0 +1,335 @@
+using Edulytics.Web.Presentation;
+
+namespace Edulytics.Tests.Acceptance;
+
+public sealed class PracticeUiRemediationAcceptanceTests
+{
+    [Fact]
+    public void UnifiedPracticeShell_IsLoadedByBothLessonPracticeEntryViews()
+    {
+        var game = Read("src/Edulytics.Web/Views/StudentPractice/Game.cshtml");
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+        var css = Read("src/Edulytics.Web/wwwroot/css/practice-unified-ui-v2.css");
+
+        Assert.Contains("practice-unified-ui-v2.css", game, StringComparison.Ordinal);
+        Assert.Contains("practice-unified-ui-v2.css", attempt, StringComparison.Ordinal);
+        Assert.Contains("--practice-shell-max: 1240px", css, StringComparison.Ordinal);
+        Assert.Contains(".gw-head h1 + p", css, StringComparison.Ordinal);
+        Assert.Contains(".gw-runtime-board", css, StringComparison.Ordinal);
+        Assert.Contains("width: min(920px, 100%) !important", css, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ActivePracticeRuntimes_UseApprovedCurrentCharacter()
+    {
+        var runtimePaths = new[]
+        {
+            "src/Edulytics.Web/wwwroot/js/angle-explorer-preview.js",
+            "src/Edulytics.Web/wwwroot/js/count-touch-preview.js",
+            "src/Edulytics.Web/wwwroot/js/curriculum-specialized-practice-v3.js",
+            "src/Edulytics.Web/wwwroot/js/curriculum-workspace-runtime-v2.js",
+            "src/Edulytics.Web/wwwroot/js/fraction-forge-preview.js",
+            "src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-stage22.js",
+            "src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v1.js",
+            "src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v2.js",
+            "src/Edulytics.Web/wwwroot/js/solid-geometry-runtime.js"
+        };
+
+        foreach (var path in runtimePaths)
+        {
+            var runtime = Read(path);
+            Assert.Contains(
+                "/images/public/edulaytiks-character.png?v=43",
+                runtime,
+                StringComparison.Ordinal);
+            Assert.DoesNotContain(
+                "/images/game/v9/eddy-guide.webp",
+                runtime,
+                StringComparison.Ordinal);
+            Assert.DoesNotContain(
+                "/images/game/v9/eddy-hint.webp",
+                runtime,
+                StringComparison.Ordinal);
+        }
+
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+        Assert.Contains(
+            "~/images/public/edulaytiks-character.png?v=43",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "~/images/game/v9/eddy-guide.webp",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LearnerFacingPractice_DoesNotExposeRuntimeImplementationLabels()
+    {
+        var stage22 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-stage22.js");
+        var v2 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v2.js");
+        var v1 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v1.js");
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.DoesNotContain("SERVER-VERIFIED PRACTICE", stage22, StringComparison.Ordinal);
+        Assert.DoesNotContain("EXACT-SKILL PRACTICE", v2, StringComparison.Ordinal);
+        Assert.DoesNotContain("LESSON-GROUNDED PRACTICE", v1, StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "round.skillId + ' · ' + round.questionFamily",
+            stage22,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "InteractionKind.ToString()",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LessonPresentationParser_PreservesMathematicalComparisonOperators()
+    {
+        const string examples =
+            "Example B: Compare 3/5 and 5/8. " +
+            "A common denominator is 40: 3/5 = 24/40 and 5/8 = 25/40, so 3/5 < 5/8. " +
+            "Example C: A student says 3/8 > 1/2 because 8 > 2. " +
+            "This is false: 1/2 = 4/8, and 4/8 > 3/8.";
+
+        var parsedExamples = LessonPresentationParser.Parse(
+            examples,
+            sectionKind: "examples");
+
+        var renderedExamples = string.Join(
+            " ",
+            parsedExamples
+                .Where(x => !x.IsVisual)
+                .Select(x => x.Text));
+
+        Assert.Contains("3/5 < 5/8", renderedExamples, StringComparison.Ordinal);
+        Assert.Contains("3/8 > 1/2", renderedExamples, StringComparison.Ordinal);
+        Assert.Contains("4/8 > 3/8", renderedExamples, StringComparison.Ordinal);
+
+        var parsedSummary = LessonPresentationParser.Parse(
+            "Compare the values and justify <, > or =.",
+            sectionKind: "summary");
+
+        var renderedSummary = string.Join(
+            " ",
+            parsedSummary
+                .Where(x => !x.IsVisual)
+                .Select(x => x.Text));
+
+        Assert.Contains("<, > or =", renderedSummary, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void LessonPresentationParser_RemovesRealMarkupWithoutRemovingEncodedMath()
+    {
+        const string source =
+            "<p>Compare 3/5 &lt; 5/8.</p>" +
+            "<script>alert('no')</script>" +
+            "<strong>Keep this text.</strong>";
+
+        var plain = LessonPresentationParser.ToPlainText(source);
+
+        Assert.Contains("3/5 < 5/8", plain, StringComparison.Ordinal);
+        Assert.Contains("Keep this text.", plain, StringComparison.Ordinal);
+        Assert.DoesNotContain("<p>", plain, StringComparison.Ordinal);
+        Assert.DoesNotContain("<strong>", plain, StringComparison.Ordinal);
+        Assert.DoesNotContain("alert", plain, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void ServerPractice_UsesApprovedUniversalShellAndHint()
+    {
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains("gw-game gw-universal", attempt, StringComparison.Ordinal);
+        Assert.Contains("gw-runtime-board lp-server-card", attempt, StringComparison.Ordinal);
+        Assert.Contains("<strong data-practice-question>@stem</strong>", attempt, StringComparison.Ordinal);
+        Assert.Contains("<span>EDDY</span>", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("<span>EDULYTICS</span>", attempt, StringComparison.Ordinal);
+        Assert.Contains("data-practice-hint", attempt, StringComparison.Ordinal);
+        Assert.Contains("LessonPracticeHintResolver.Resolve", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("lp-server-prompt", attempt, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void PracticeVoiceRuntime_IsLoadedByBothPracticeEntryPaths()
+    {
+        var game = Read("src/Edulytics.Web/Views/StudentPractice/Game.cshtml");
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+        var voice = Read("src/Edulytics.Web/wwwroot/js/practice-voice-runtime.js");
+        var stage22 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-stage22.js");
+        var v2 = Read("src/Edulytics.Web/wwwroot/js/lesson-grounded-practice-v2.js");
+
+        Assert.Contains("practice-voice-runtime.js", game, StringComparison.Ordinal);
+        Assert.Contains("practice-voice-runtime.js", attempt, StringComparison.Ordinal);
+        Assert.Contains("SpeechSynthesisUtterance", voice, StringComparison.Ordinal);
+        Assert.Contains("speakMany([round.prompt, round.hint])", stage22, StringComparison.Ordinal);
+        Assert.Contains("speakMany([main, guidance || ''])", v2, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_HoldsAnsweredQuestionUntilNextIsSelected()
+    {
+        var controller = Read(
+            "src/Edulytics.Web/Controllers/StudentPracticeController.cs");
+        var attempt = Read(
+            "src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains(
+            "Guid? reviewAttemptItemId",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reviewAttemptItemId = result.Value.AttemptItemId",
+            controller,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "x.AttemptItemId == reviewAttemptItemId.Value &&",
+            controller,
+            StringComparison.Ordinal);
+
+        Assert.Contains(
+            "var reviewQuestion =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var isReviewing =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "reviewQuestion\n        ?? orderedQuestions.FirstOrDefault(x => x.IsCorrect != true)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "Next question",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "asp-action=\"LessonAttempt\"",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var isIncorrectReview =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var isCorrectReview =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "var eddyMessage =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PracticeIncorrect",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "PracticeCorrect",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "aria-live=\"polite\">@eddyMessage",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "data-practice-feedback",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "TempData[\"PracticeFeedback\"]",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_WrongAnswerRemainsRetryableAndDoesNotAdvanceProgress()
+    {
+        var attempt = Read(
+            "src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains(
+            "orderedQuestions.Count(x => x.IsCorrect == true)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "@if (isCorrectReview && currentQuestion is not null)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "else if (interaction is null)",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "<form asp-action=\"AnswerLessonAttempt\"",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "id=\"lesson-practice-answer\"",
+            attempt,
+            StringComparison.Ordinal);
+
+        // The review branch only captures a solved question, so an incorrect
+        // response falls through to the answer form for another try.
+        Assert.DoesNotContain(
+            "@if (isReviewing && currentQuestion is not null)",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_ReviewUsesTheReviewedQuestionNumber()
+    {
+        var attempt = Read(
+            "src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+
+        Assert.Contains(
+            "var displayedQuestionNumber =",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.Contains(
+            "@displayedQuestionNumber",
+            attempt,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain(
+            "@Math.Min(answeredCount + 1, totalQuestions)",
+            attempt,
+            StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void ServerPractice_DoesNotRenderGenericOnScreenKeypad()
+    {
+        var game = Read("src/Edulytics.Web/Views/StudentPractice/Game.cshtml");
+        var attempt = Read("src/Edulytics.Web/Views/StudentPractice/LessonAttempt.cshtml");
+        var css = Read("src/Edulytics.Web/wwwroot/css/practice-unified-ui-v2.css");
+
+        Assert.DoesNotContain("calculator", game, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("calculator", attempt, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("calculator", css, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("lp-server-keypad", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("data-practice-key", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("⌫", attempt, StringComparison.Ordinal);
+        Assert.DoesNotContain("backspace", attempt, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string Read(string relativePath)
+    {
+        var root = FindRoot();
+        return File.ReadAllText(Path.Combine(root, relativePath));
+    }
+
+    private static string FindRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+        while (directory is not null &&
+               !File.Exists(Path.Combine(directory.FullName, "Edulytics.sln")))
+        {
+            directory = directory.Parent;
+        }
+
+        return directory?.FullName
+            ?? throw new DirectoryNotFoundException("Edulytics solution root not found.");
+    }
+}

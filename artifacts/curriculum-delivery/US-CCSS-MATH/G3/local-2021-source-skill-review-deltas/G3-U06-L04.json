@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 101,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L04",
+  "title": "Interpret Measurement Data on Line Plots",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-6/lesson-4/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U06.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U06.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U06-L04.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Inspect the source twig line plot with quarter-inch marks. Answer its shortest, longest, count and most common measurement questions from the actual plot.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-6/lesson-4/lesson.html",
+      "verified": "SOURCE_STUDENT_FACING_TEXT",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Notice and Wonder: A List and a Line Plot (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-6/lesson-4/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: A Set of Seedlings (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-6/lesson-4/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: All About Twigs (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-6/lesson-4/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-6/lesson-4/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Interpret and Choose (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-6/lesson-4/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Line plot from 0 to 7 by ones. Horizontal axis, length in inches. Beginning at 3, the number of X's above each number is 2, 5, 4, 3, 1.",
+      "Line plot from 0 to 6 by ones. Horizontal axis, height of seedlings in inches. Hash marks at halves. Beginning at one half, the number of X's above each one half increment is 4, 3, 6, 1, 3, 2, 0, 2, 0, 1.",
+      "Illustration. A seedling.",
+      "Line plot from 0 to 8 by ones. Horizontal axis, length of twigs in inches. Hash marks by fourths."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Inspect the source twig line plot with quarter-inch marks. Answer its shortest, longest, count and most common measurement questions from the actual plot.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s make sense of line plots with lengths in half inches and quarter inches. Required Preparation CCSS Standards Building On 2.MD.D.9 Addressing 3.MD.B.4 Building Towards 3.MD.B.4 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min",
+      "sourceLearningGoals": "Interpret line plots that display measurement data in fractions of an inch.",
+      "teachingSteps": [
+        "Read the fractional inch unit and tick marks first.",
+        "Place one mark for each measurement at the correct location.",
+        "Count or compare the marks, keeping fractional units consistent."
+      ],
+      "caution": "Marks on a line plot represent observations, not units to be accumulated across different scales.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "A line plot has four X marks at 2 inches, three at 3 inches, and two at 4 inches. How many recorded measurements?",
+      "answerType": "integer",
+      "expected": "9"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "A line plot shows 5 marks at 1/2 inch and 7 marks at 3/4 inch. How many marks altogether?",
+      "answerType": "integer",
+      "expected": "12"
+    },
+    "humanRubric": "Source twig line plot uses fourths and a separate seedling plot in halves; verify locations before scoring.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

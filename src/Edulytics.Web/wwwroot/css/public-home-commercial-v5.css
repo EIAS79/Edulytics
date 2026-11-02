@@ -1,0 +1,70 @@
+/* Home v5 — commercial landing refinement. Loaded after v4. */
+.ed-home-container{width:min(1480px,calc(100% - 72px))}
+.ed-home-nav-shell{width:min(1540px,calc(100% - 56px));min-height:76px}
+
+/* Hero: use the available desktop width instead of compressing the copy. */
+.ed-home-hero{min-height:660px;background:linear-gradient(180deg,#edf7ff 0%,#f5fbff 74%,#fff 100%)}
+.ed-home-hero-grid{width:min(1540px,calc(100% - 64px));min-height:660px;grid-template-columns:minmax(520px,.92fr) minmax(650px,1.08fr);gap:54px;padding-block:44px 58px}
+.ed-home-hero-copy{max-width:720px}
+.ed-home-hero-copy h1{font-size:clamp(3.25rem,4.25vw,4.7rem);line-height:1.02;max-width:700px;letter-spacing:-.05em;text-wrap:balance}
+.ed-home-hero-copy>p{font-size:clamp(1.08rem,1.25vw,1.22rem);line-height:1.62;max-width:690px}
+.ed-home-hero-visual{min-height:510px;border-width:16px;border-radius:34px;transform:none;box-shadow:0 30px 70px rgba(28,62,112,.18),inset 0 0 0 1px rgba(179,203,234,.45)}
+.ed-home-hero.is-slide-assessment .ed-home-hero-visual,.ed-home-hero.is-slide-student .ed-home-hero-visual{transform:none}
+.hero-illustration{width:106%;max-width:900px}
+.ed-home-hero-actions{gap:16px}.ed-home-cta-large{min-height:58px;padding-inline:30px;border-radius:10px}
+.ed-home-hero-checks{margin-top:25px;gap:16px 22px}.ed-home-hero-checks span{font-size:.92rem}
+
+/* Make the slider unmistakable, with arrows at the visual edges like a real hero carousel. */
+.ed-home-slider-controls{position:static;transform:none;background:transparent;box-shadow:none;padding:0;display:block}
+.ed-home-slide-dots{position:absolute;z-index:9;left:50%;bottom:18px;transform:translateX(-50%);padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.86);box-shadow:0 6px 20px rgba(25,57,101,.11)}
+.ed-home-slide-arrow{position:absolute;z-index:9;top:50%;transform:translateY(-50%);width:50px;height:50px;font-size:1.8rem;border:1px solid #e0e8f3;box-shadow:0 9px 28px rgba(28,61,110,.16)}
+.ed-home-slide-prev{left:18px}.ed-home-slide-next{right:18px}
+
+/* Commercial message panels injected by v5 JS. */
+.ed-home-v5-story{position:relative;padding:88px 0;overflow:hidden}
+.ed-home-v5-story.is-student{background:#f1f8ff}.ed-home-v5-story.is-teacher{background:#fff}
+.ed-home-v5-story-grid{width:min(1480px,calc(100% - 72px));margin:auto;display:grid;grid-template-columns:minmax(0,.94fr) minmax(520px,1.06fr);gap:72px;align-items:center}
+.ed-home-v5-story.is-teacher .ed-home-v5-story-grid{grid-template-columns:minmax(520px,1.06fr) minmax(0,.94fr)}
+.ed-home-v5-story.is-teacher .ed-home-v5-story-copy{order:2}.ed-home-v5-story.is-teacher .ed-home-v5-story-visual{order:1}
+.ed-home-v5-story-copy{max-width:720px}.ed-home-v5-story-copy .eyebrow{display:block;margin-bottom:14px;color:#2f66e8;font-weight:900;letter-spacing:.13em;font-size:.8rem;text-transform:uppercase}
+.ed-home-v5-story-copy h2{margin:0 0 20px;font-size:clamp(2.6rem,3.6vw,4rem);line-height:1.04;font-weight:950;color:#10244a;letter-spacing:-.045em}
+.ed-home-v5-story-copy p{margin:0 0 28px;max-width:690px;font-size:1.13rem;line-height:1.75;color:#405570}
+.ed-home-v5-story-actions{display:flex;gap:14px;flex-wrap:wrap}
+.ed-home-v5-story-visual{position:relative;min-height:430px;border:14px solid #fff;border-radius:32px;background:linear-gradient(145deg,#fff,#eaf5ff);box-shadow:0 24px 62px rgba(22,51,92,.14);overflow:hidden;display:grid;place-items:center}
+.ed-home-v5-story-visual svg{width:100%;height:100%;min-height:430px;display:block}
+.ed-home-v5-story-chip{position:absolute;padding:12px 16px;background:#fff;border:1px solid #dce6f3;border-radius:14px;box-shadow:0 10px 24px rgba(22,51,92,.10);font-weight:850;color:#10244a}
+.ed-home-v5-story-chip.one{left:28px;top:30px}.ed-home-v5-story-chip.two{right:28px;bottom:28px}
+
+/* Existing sections: broader rhythm, cleaner cards, more breathing room. */
+.ed-home-audience-band{padding:56px 0 78px}.ed-home-audience-grid{gap:24px;margin-top:34px}.audience-card{border-radius:24px;padding:16px 16px 24px}.audience-picture{border-radius:18px}.audience-card h3{font-size:1.38rem}
+.ed-home-commercial-ribbon{width:min(1480px,calc(100% - 72px));margin:0 auto 12px;border:1px solid #dce6f3;border-radius:22px;overflow:hidden;box-shadow:0 12px 35px rgba(22,51,92,.07)}
+.ed-home-commercial-ribbon>div{padding:29px 24px}.ed-home-commercial-ribbon strong{font-size:1.08rem}.ed-home-commercial-ribbon span{font-size:.92rem;line-height:1.45}
+.ed-home-value-band,.ed-home-section,.ed-home-start,.ed-home-final-cta{padding-top:88px!important;padding-bottom:88px!important}
+.ed-home-center-head{max-width:940px;margin-inline:auto}.ed-home-center-head h2{font-size:clamp(2.35rem,3.2vw,3.5rem)}.ed-home-center-head p{font-size:1.1rem;line-height:1.65}
+.ed-home-curriculum-showcase,.ed-home-experience-grid,.ed-home-ai-grid{border-radius:28px}
+.ed-home-why-grid{gap:22px}.ed-home-why-grid article{padding:28px!important;border:1px solid #e1e9f4;background:#fff;box-shadow:0 9px 28px rgba(22,51,92,.06)}
+.ed-home-final-cta{background:linear-gradient(135deg,#102f65,#173f83)!important}.ed-home-final-cta .ed-home-container{align-items:center}
+
+@media(max-width:1280px){
+  .ed-home-container,.ed-home-v5-story-grid{width:min(1180px,calc(100% - 48px))}
+  .ed-home-hero-grid{width:min(1240px,calc(100% - 48px));grid-template-columns:minmax(430px,.9fr) minmax(520px,1.1fr);gap:34px}
+  .ed-home-hero-copy h1{font-size:clamp(3rem,4.4vw,4rem)}
+  .ed-home-v5-story-grid,.ed-home-v5-story.is-teacher .ed-home-v5-story-grid{grid-template-columns:1fr 1fr;gap:44px}
+}
+@media(max-width:980px){
+  .ed-home-hero-grid{grid-template-columns:1fr;gap:30px;padding-top:42px}.ed-home-hero-copy{max-width:820px;text-align:center;margin:auto}.ed-home-hero-copy h1,.ed-home-hero-copy>p{max-width:820px;margin-left:auto;margin-right:auto}.ed-home-hero-actions,.ed-home-hero-checks{justify-content:center}.ed-home-hero-visual{min-height:440px}
+  .ed-home-slide-prev{left:10px}.ed-home-slide-next{right:10px}
+  .ed-home-v5-story-grid,.ed-home-v5-story.is-teacher .ed-home-v5-story-grid{grid-template-columns:1fr;gap:34px}.ed-home-v5-story.is-teacher .ed-home-v5-story-copy,.ed-home-v5-story.is-teacher .ed-home-v5-story-visual{order:initial}.ed-home-v5-story-copy{text-align:center;max-width:820px;margin:auto}.ed-home-v5-story-actions{justify-content:center}.ed-home-v5-story-visual{min-height:390px}
+  .ed-home-commercial-ribbon{grid-template-columns:repeat(2,1fr);width:calc(100% - 48px)}
+}
+@media(max-width:820px){
+  .ed-home-container,.ed-home-v5-story-grid{width:calc(100% - 30px)}.ed-home-hero-grid{width:calc(100% - 30px)}
+  .ed-home-hero-copy h1{font-size:clamp(2.55rem,10vw,3.4rem)}.ed-home-hero-copy>p{font-size:1.02rem}.ed-home-hero-visual{min-height:340px;border-width:10px;border-radius:25px}.hero-illustration{width:112%}
+  .ed-home-slider-controls{display:block}.ed-home-slide-arrow{width:42px;height:42px}.ed-home-slide-dots{bottom:10px}
+  .ed-home-v5-story{padding:64px 0}.ed-home-v5-story-copy h2{font-size:clamp(2.2rem,9vw,3rem)}.ed-home-v5-story-copy p{font-size:1.03rem}.ed-home-v5-story-visual,.ed-home-v5-story-visual svg{min-height:320px}
+  .ed-home-commercial-ribbon{width:calc(100% - 30px);grid-template-columns:1fr}.ed-home-commercial-ribbon>div{text-align:left}
+}
+@media(max-width:560px){
+  .ed-home-hero-grid{padding-bottom:70px}.ed-home-hero-copy h1{font-size:2.45rem}.ed-home-hero-actions{display:grid}.ed-home-hero-actions a{width:100%}.ed-home-hero-checks{display:grid;justify-content:start;text-align:left;margin-inline:auto;width:max-content;max-width:100%}.ed-home-slide-arrow{top:auto;bottom:8px}.ed-home-slide-prev{left:14px}.ed-home-slide-next{right:14px}
+  .ed-home-v5-story-actions{display:grid}.ed-home-v5-story-actions a{width:100%}.ed-home-v5-story-visual{border-width:9px;border-radius:22px}.ed-home-v5-story-chip{font-size:.8rem;padding:9px 11px}.ed-home-v5-story-chip.one{left:12px;top:12px}.ed-home-v5-story-chip.two{right:12px;bottom:12px}
+}

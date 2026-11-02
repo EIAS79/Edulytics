@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 24,
+  "unitNumber": 2,
+  "lessonNumber": 6,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L06",
+  "title": "Compare Methods for Subtraction",
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_LOCAL_ORIGINAL_TEACHER_PREPARATION_LESSON_REVIEW",
+    "sourceBook": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\02_Grade_2_IM_K5\\unit-2\\lesson-6",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-6/preparation.html",
+    "sourceLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-6/lesson.html",
+    "sourceSemanticSha256": "2ca5ba7288358ac3403d1148fe479205635cef79698fbf116ae3b85f5c4c26b6",
+    "canonicalBodySha256": "2ee2bc7faca1a769c37fcc684803314bb3d621224f137261329171fded300a37",
+    "originalStandards": [
+      "CCSS:2.NBT.B.5"
+    ],
+    "warmup": "True or False64=60+4 True;64=50+14 True;64=30+24 False since54≠64.",
+    "activity1": "Different Ways to Decompose: Diego, Elena and Tyler each explain 82−9=73 using7 tens+12 ones / equivalent reconfiguration.",
+    "activity2": "Target Numbers Stage4 real partner center: begin99; remove0 and10 cards; choose card1–9, subtract card ones OR tens, track start and nonnegative result, play6 rounds or stop0, closest to0 wins.",
+    "synthesis": "50−7=43 by trading a ten; multiple diagrams and methods with MLR2 language support.",
+    "sourceCooldown": "Mai's Method restricted educator login; independent Edulytics exit not represented as source.",
+    "rights": "Public source maths attributed, no original publisher image or recording sheet copied, physical participation teacher-verified only."
+  },
+  "stageB": {
+    "status": "COMPLETE_EXACT_PREDECESSOR_SHA_GUARDED_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2TargetNumbersStage4TeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedSeeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Original URL, exact canonical body hash, ordered 2.NBT.B.5 only, six predecessor learner fields, approved rich-content persisted version.",
+    "content": "Exact true/false, two 82−9 representation variants, Target Numbers Stage4 mechanics and first-party Cool-down."
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHENTICATED_NUMERIC_COMPANION_EXACT_FAMILIES_AND_UNRUN_TESTS",
+    "studentModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson24Page.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson24ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson24Activities/Index.cshtml",
+    "numericVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2SixthLessonCompareMethods.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson6TargetNumbersContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson6TargetNumbersQuestions.cs",
+    "families": [
+      "usccss.g2.u02.l06.rewrite_tens_ones_equivalently",
+      "usccss.g2.u02.l06.compare_decomposed_82_style",
+      "usccss.g2.u02.l06.target_stage4_subtract_ones",
+      "usccss.g2.u02.l06.target_stage4_subtract_tens"
+    ],
+    "independentCooldown": "71−8=63;60−7=53;92−8=84; all original and publisher Cool-down not claimed.",
+    "humanOnly": "MLR2 partner language, diagrams, actual cards/blocks/six turns, true nearest-to-zero game winner require teacher.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2TargetNumbersStage4TeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2SixthLessonCompareMethodsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson6TargetNumbersQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson24ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "security": "StudentPortal authorization, selected adoption, published content, anti-forgery POST, bounded input, no official grade."
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U02_L07_GRADE_ORDINAL25_STAGE_A_B_C_SEQUENTIAL"
+}

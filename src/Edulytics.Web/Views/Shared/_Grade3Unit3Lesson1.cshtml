@@ -1,0 +1,41 @@
+@using Edulytics.Web.Curriculum.Grade3
+<section class="panel" aria-label="Number forms and place-value activities">
+    <h2>Warm-up — Which One Doesn’t Belong?</h2>
+    <p>Choose one and justify your choice. Think quietly, then discuss with a partner. Different choices can be supported by different mathematical reasons.</p>
+    <p><strong>A — base-ten diagram</strong></p>
+    @await Html.PartialAsync("_Grade3BaseTenDiagram",new Grade3BaseTenDiagram(3,7,0))
+    <p><strong>B:</strong> 300 + 70 + 1 &nbsp; <strong>C:</strong> 300 + 60 + 10 &nbsp; <strong>D:</strong> 400 − 30</p>
+    <p>Explain the terms hundreds, tens, ones and expanded form. Write 482 in standard expanded form: one term for each digit’s value. A different decomposition may name the same whole without being standard expanded form.</p>
+    <h2>Activity 1 — Match Number Forms</h2>
+    <p>Work with a partner. Match all cards naming the same whole and record each group. Take turns explaining: “I noticed …, so I matched …”. Ask for clarification if you disagree. Begin with a smaller subset if helpful; base-ten blocks are available through your teacher.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px">
+        @{
+            var cards=new[] { (Id:"A",Text:"175"),(Id:"B",Text:"800 + 10 + 3"),
+                (Id:"C",Text:"base-ten diagram"),(Id:"D",Text:"two hundred ninety-nine"),
+                (Id:"E",Text:"three hundred twenty-nine"),(Id:"F",Text:"371"),
+                (Id:"G",Text:"one hundred seventy-five"),(Id:"H",Text:"813"),
+                (Id:"I",Text:"299"),(Id:"J",Text:"base-ten diagram"),
+                (Id:"K",Text:"329"),(Id:"L",Text:"100 + 60 + 15") };
+        }
+        @foreach(var card in cards) {
+            <article style="border:1px solid #7d93a8;border-radius:8px;padding:14px">
+                <h3>Card @card.Id</h3>
+                @if(card.Id=="C") { @await Html.PartialAsync("_Grade3BaseTenDiagram",new Grade3BaseTenDiagram(3,7,1)) }
+                else if(card.Id=="J") { @await Html.PartialAsync("_Grade3BaseTenDiagram",new Grade3BaseTenDiagram(2,9,9)) }
+                else { <p>@card.Text</p> }
+            </article>
+        }
+    </div>
+    <h2>Activity 2 — Numbers in Different Forms Round Table</h2>
+    <p>First discuss ways to decompose 365. Then work in a group of four. Each student chooses a three-digit number and writes it in Box 1 of a fresh recording sheet. At the teacher’s signal, pass the paper right and receive from the left; fill the next box with a different decomposition of the original number.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:10px">
+        @for(var box=1;box<=4;box++) {
+            <div style="border:1px solid #7d93a8;min-height:100px;padding:12px"><strong>Box @box</strong><p>@(box==1?"Your three-digit number":"A different decomposition of the original number")</p></div>
+        }
+    </div>
+    <p>Pause after each box. Pass after Boxes 2 and 3, and once more after Box 4 to return each sheet to its original writer. Discuss the hardest box and what helped. Independently record connections among the decompositions on your sheet, then compare all four sheets for patterns. Exchanges must preserve the same whole; Boxes 2, 3 and 4 must be different.</p>
+    <h3>Bring the ideas together</h3>
+    <p>Find different decompositions of 253. For 253 + 134, choose a helpful decomposition and explain why. Teacher review checks every card match, word/diagram interpretation, distinct decomposition, sheet-passing sequence and actual partner reasoning.</p>
+    <p>Optional centers: Target Numbers stage 6 adds chosen hundreds/tens/ones over six rounds to approach 1,000 without going over; Five in a Row stage 8 uses partner sums and counters to make a row of five. Obtain the original materials with your teacher if using these optional games.</p>
+    <p><a href="https://cms-assets.illustrativemathematics.org/6bukcq8kh74wuw99hzi2qz7tviu9" target="_blank" rel="noopener noreferrer">Original 2021 three-page Student Task Statements</a> · <a href="https://cms-assets.illustrativemathematics.org/f0v87odg19t68j9m3v1a0hng0yif" target="_blank" rel="noopener noreferrer">Official blackline masters ZIP: cards, round-table sheet and optional centers</a>. The displayed cards, diagrams and blank boxes are independently authored mathematical representations; publisher artwork is not embedded.</p>
+</section>

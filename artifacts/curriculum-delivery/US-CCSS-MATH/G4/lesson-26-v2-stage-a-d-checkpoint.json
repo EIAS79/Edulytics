@@ -1,0 +1,44 @@
+{
+  "ordinal": 26,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L01",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "7ebfe6bdf3376c322afc3ae7f3be7d1ebb3326318612589301917f690df99599",
+    "teacherLesson": "9965e3ec238330a0d212fe5543cf21f54203d777f881ae5a37f2e54de5734d3d",
+    "studentPdf": "9e5ff7641685abd8796450e6285f0dfc49b793aff8375d3e53474aef5ba5b69a"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: How Many Do You See: Oranges (10 minutes)",
+    "Activity 1: Crackers, Kiwis, and More (20 minutes)",
+    "Activity 2: What Could It Mean? (15 minutes)",
+    "Cool-down: Sandwiches on Plates (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.build"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-26-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:21+01:00",
+  "closeAtLocal": "2026-10-26T22:40:22+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-GRADE-FIRST-FULL-GRADE-V2",
+  "programme": "US-CCSS-MATH",
+  "grade": "G1",
+  "ordinal": 61,
+  "lessonCode": "PED:US-CCSS-MATH:G1:U03:L24",
+  "title": "Relate Counting to Addition and Subtraction PLC Activity",
+  "sourceBasis": {
+    "device": "Our-CS original 2021 Grade 1 cached textbook (READ ONLY)",
+    "teacherLessonRelativePath": "unit-3/lesson-24/lesson.html",
+    "indexedSourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-original-student-facing-task-inventory.json",
+    "reusedExistingSourceAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/G1-SOURCE-ORIGINAL-TASK-PARITY-REMAINING-RISKS.json"
+  },
+  "stageA": {
+    "originalStudentTeacherActivitiesRead": [
+      "Backward choral count from 50 to 20",
+      "Diego versus Tyler methods applied to 16−3,17−8,18−15",
+      "Original full Set A five missing-value equations; full Set B three missing-addend equations"
+    ],
+    "existingCandidateCompared": true,
+    "documentedGap": "Source activities were partially summarized but exact student sets and counting routine missing",
+    "classification": "CONTENT_REPAIR",
+    "allOriginalFigureAndStudentTasksFullyAudited": null,
+    "accessible2021StudentTeacherTaskTextReviewed": true,
+    "sourceCoolDownTitle": "Unit 3, Section D Checkpoint (0 minutes)",
+    "protectedPublisherCheckpointVerified": false
+  },
+  "stageB": {
+    "method": "Unchanged original Five-Lesson V1 A–D source review and minimal teaching repair",
+    "existingRichV2Reused": true,
+    "codePath": "src/Edulytics.Data/Seeding/CommonCoreG1FullGradeStartingContentCorrections.cs",
+    "codeCommit": "c30d0f59c21408f8c56fdd6c7d17809327368036",
+    "versionField": "CountRelationSourceContentVersion",
+    "sourceArtworkCopied": false,
+    "effectiveContentVersion": "us-ccss-g1-u03-l24-original-activities-v7"
+  },
+  "stageC": {
+    "reuseOfExistingPractice": true,
+    "existingMathGeneratorAndVerifierPreserved": true,
+    "teacherOnlyBoundary": "Actual classroom authored strategies, card play, physical counters, partner discussion not digitally certified",
+    "originalSourceTaskToPracticeParity": "VERIFIED",
+    "reviewedMathCorrections": "Fixed double-digit subtraction; source Set A=5, Set B=3, Diego and Tyler=3 with exact numeric grading; actual drawings require teacher review"
+  },
+  "stageD": {
+    "originalTaskAssertionsAdded": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG1FullGradeStartingTeachingTests.cs",
+    "assertionCommit": "89b32ac0e91fe9505d632467a0a8f6362d163095",
+    "CIExecutedDuringAuthoring": false,
+    "targetedTestPassClaimed": false,
+    "authenticatedGradeRendering": "PENDING_FINAL_CI",
+    "realPracticeScorePersistence": "PENDING_FINAL_CI",
+    "rightsAndVisualEvidence": "PENDING",
+    "lessonAcceptance": "NOT_CLAIMED"
+  },
+  "progressLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json",
+  "academicStatus": "IN_PROGRESS",
+  "release": "NO_GO",
+  "nextAction": "A-C complete for reviewed accessible original 2021 mathematical tasks; proceed to lesson 62; defer final D, CI and academic acceptance.",
+  "aToCClosure": {
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "openACDefects": [],
+    "evidenceReference": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-61-stage-a-c-source-implementation-audit-20261020.md",
+    "outcome": "READY_FOR_STAGE_D",
+    "originalPublisherCheckpointVerified": false,
+    "ciExecutedDuringAuthoring": false,
+    "stageDExecuted": false,
+    "testsAuthoredButNotExecuted": true
+  },
+  "stageDClosure": {
+    "schemaVersion": 1,
+    "phase": "D",
+    "status": "D_VERIFIED",
+    "verificationScope": "FIRST_PARTY_SOURCE_SCOPED_AUTHENTICATED_RUNTIME_AND_PRACTICE",
+    "batch": "D1",
+    "ordinal": 61,
+    "lessonCode": "PED:US-CCSS-MATH:G1:U03:L24",
+    "testedCodeSha": "5fb0d3786d52379e60de01e3773297afc34d3721",
+    "authenticatedRunId": 39600111939,
+    "authenticatedLearnerArtifactId": 12345398813,
+    "technicalReportArtifactId": 12346166910,
+    "authenticatedLearnerPageRendered": true,
+    "selectedSourceTaskTextChecked": true,
+    "assessmentMode": "DIGITAL_PRACTICE",
+    "correctWrongMalformedPersisted": true,
+    "authoredOnlyInstructionsRendered": false,
+    "digitallyCertifiedPupilAuthorship": false,
+    "actualClassroomParticipationClaimed": false,
+    "approvalFromTeacherAcademicOrExternalBodyRequired": false,
+    "sourcePixelParityClaimed": false,
+    "originalStageDDeferredFieldsAreHistoricalAuthoringSnapshot": true,
+    "formalInternalV1Acceptance": "INTERNALLY_ACCEPTED",
+    "gradeRelease": "NO_GO",
+    "evidenceExplanation": "Stage D code/runtime tested in the exact-run GitHub artifact; full original-V1 internal acceptance separately governed by full-grade-progress.json",
+    "internalAcceptanceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G1/lesson-61-stage-a-c-source-implementation-audit-20261020.md",
+    "internalAcceptanceCandidateSha": "5fb0d3786d52379e60de01e3773297afc34d3721"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "ordinal": 141,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L04",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_ORIGINAL_LOCAL_SOURCE_INTAKE_REUSED",
+    "B": "SOURCE_REGROUPING_ZEROS_PRIYA_HAN_COMPARISON_AND_CORRECT_19528",
+    "C": "REUSED_COLUMNAR_APPLY_EXACT_SUBSKILL_TEST_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "bb65d84769216c0dc53e5d4f12057cac3cd12f1eb5a445dd14719a85dc384b88",
+    "teacher": "c4922a6b77650996d527ab95415831e463cd17a704fc3aeb3a53bce0e4feb335"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Find 9,000 − 463 and verify by addition.",
+    "teacherAnswer": "8,537."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 Our-CS local original teacher intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Differences (10 minutes)",
+      "Activity 1: Lots of Zeros (15 minutes)",
+      "Activity 2: Ways of Finding Differences (20 minutes)",
+      "Cool-down: A Couple of Differences (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each difference mentally. | \\(87 - 24\\) | \\(387 - 124\\)",
+      "Find the value of each difference. | a. | Caption: a.",
+      "To find the value of \\(20,\\!000 - 472\\), Priya and Han set up their calculations differently. | Priya | Caption: Priya"
+    ],
+    "allowedFamily": "number.whole.add_subtract.columnar.apply",
+    "teacherOnlyTasks": [
+      "Original Priya/Han comparison figures and student regrouping process",
+      "Method choice explanations"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal141SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

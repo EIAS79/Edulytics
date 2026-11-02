@@ -1,0 +1,105 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson17Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Optional Center Day 3";
+}
+<style>
+.g2-l17{max-width:960px;margin:auto;padding:20px 16px 45px;color:#243947}
+.g2-l17 .panel{padding:19px;margin:16px 0;border:1px solid #c9dae3;border-radius:12px;background:#fff}
+.g2-l17 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px}
+.g2-l17 label{display:block;font-weight:700;margin:12px 0 5px}
+.g2-l17 input,.g2-l17 select,.g2-l17 textarea{width:100%;max-width:480px;font:inherit;border:1px solid #718b9b;border-radius:8px;padding:10px}
+.g2-l17 input:focus,.g2-l17 select:focus,.g2-l17 textarea:focus{outline:3px solid #8fd9e0}
+.g2-l17 .bundle{display:inline-flex;align-items:center;justify-content:center;width:49px;height:49px;border:2px solid #237f8f;background:#c7eff2;margin:4px;border-radius:7px;font-weight:bold}
+.g2-l17 .single{display:inline-flex;width:28px;height:28px;background:#fbe6ad;border:2px solid #ac821c;margin:4px;align-items:center;justify-content:center;border-radius:5px}
+.g2-l17 .action{background:#087b8c;color:white;padding:12px 20px;border:0;border-radius:8px;cursor:pointer;font-weight:700}
+.g2-l17 .fine{color:#536c7e}
+.g2-l17 .ok{border-left:4px solid #28835d;padding-left:12px}
+.g2-l17 .no{border-left:4px solid #b33e50;padding-left:12px}
+.g2-l17 .review{border-left:4px solid #ab812b;padding-left:12px}
+</style>
+<main class="g2-l17">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to lesson</a>
+<h1>Optional Center Day 3 — Count, add and graph</h1>
+<p>First, work with a partner on a REAL collection of 100–120 objects. Our separate digital model has a known number of objects so that its arithmetic can be checked. Select two familiar centers. This activity does not record an official school mark.</p>
+<form asp-controller="Grade2Lesson17Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section class="panel">
+<h2>1. Number Talk — Add ten more</h2>
+<p>Think mentally; explain how the tens change but the ones stay the same.</p>
+<div class="grid">
+<div><label asp-for="Answers.WarmOne">27 + 10</label><input asp-for="Answers.WarmOne" type="number" min="0" max="120" required/></div>
+<div><label asp-for="Answers.WarmTwo">27 + 10 + 10</label><input asp-for="Answers.WarmTwo" type="number" min="0" max="120" required/></div>
+<div><label asp-for="Answers.WarmThree">27 + 30</label><input asp-for="Answers.WarmThree" type="number" min="0" max="120" required/></div>
+<div><label asp-for="Answers.WarmFour">37 + 30</label><input asp-for="Answers.WarmFour" type="number" min="0" max="120" required/></div>
+</div>
+</section>
+<section class="panel">
+<h2>2. Counting Collections, Stage 3 — real partner task</h2>
+<p>Ask your teacher for a bag containing 100–120 REAL objects. Estimate before opening and counting; make equal groups of five or ten, keep leftovers, draw or write the number sentence and compare both partners' records. A typed estimate alone does not prove a physical count.</p>
+<div class="grid">
+<div><label asp-for="Answers.Estimate">My estimate before counting</label><input asp-for="Answers.Estimate" type="number" min="0" max="120"/></div>
+<div><label asp-for="Answers.ActualGrouping">Group real objects by</label><select asp-for="Answers.ActualGrouping"><option value="Tens">Tens</option><option value="Fives">Fives</option></select></div>
+<div><label asp-for="Answers.ActualGroups">Number of complete groups</label><input asp-for="Answers.ActualGroups" type="number" min="0" max="24"/></div>
+<div><label asp-for="Answers.ActualRemainder">Loose leftover objects</label><input asp-for="Answers.ActualRemainder" type="number" min="0" max="9"/></div>
+<div><label asp-for="Answers.ActualTotal">Counted total (100–120)</label><input asp-for="Answers.ActualTotal" type="number" min="100" max="120"/></div>
+</div>
+<label asp-for="Answers.ActualRepresentation">Describe or sketch how you organized the real objects</label>
+<textarea asp-for="Answers.ActualRepresentation" maxlength="2000" rows="3"></textarea>
+<p class="fine">Only the group-count equation can be checked digitally. Your teacher checks the real items and your original drawing.</p>
+</section>
+<section class="panel">
+<h2>3. Separate Edulytics virtual collection (112 objects)</h2>
+<p class="fine">Each blue card is one group of TEN real-world objects, not one item. The two gold symbols are single items. This is independent digital practice, not a photo of your classroom's bag.</p>
+<div role="img" aria-label="Eleven blue groups of ten objects each, and two separate single objects. Total one hundred twelve.">
+@for(var i=0;i<11;i++){<span class="bundle" aria-label="ten objects">10</span>}
+<span class="single" aria-label="one object">1</span><span class="single" aria-label="one object">1</span>
+</div>
+<div class="grid">
+<div><label asp-for="Answers.DigitalGrouping">How will you count?</label><select asp-for="Answers.DigitalGrouping"><option value="Tens">Groups of 10</option><option value="Fives">Groups of 5</option></select></div>
+<div><label asp-for="Answers.DigitalGroups">How many complete groups?</label><input asp-for="Answers.DigitalGroups" type="number" min="0" max="24" required/></div>
+<div><label asp-for="Answers.DigitalRemainder">How many single leftovers?</label><input asp-for="Answers.DigitalRemainder" type="number" min="0" max="9" required/></div>
+<div><label asp-for="Answers.DigitalTotal">How many objects altogether?</label><input asp-for="Answers.DigitalTotal" type="number" min="100" max="120" required/></div>
+</div>
+</section>
+<section class="panel">
+<h2>4. Centers: choice time</h2>
+<p>Choose two different previously taught centers, one after the other. For each, answer its FIRST-PARTY short mathematics example; the actual game, student-built board or authentic sort/graph remains a partner/teacher task.</p>
+<p><strong>Examples:</strong> Behind My Back? 20 cubes, 12 visible: how many hidden? How Close? 18+25. Number Puzzles 24+16. Sort and Display graph: red 4, blue 7, yellow 6; how many MORE blue than red?</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstCenter">My first center</label><select asp-for="Answers.FirstCenter" required><option value="">Choose a center</option><option value="BehindBack">What's Behind My Back?</option><option value="HowClose">How Close?</option><option value="NumberPuzzles">Number Puzzles</option><option value="SortDisplay">Sort and Display</option></select></div>
+<div><label asp-for="Answers.FirstAnswer">First center example answer</label><input asp-for="Answers.FirstAnswer" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.SecondCenter">My second center (different)</label><select asp-for="Answers.SecondCenter" required><option value="">Choose another center</option><option value="BehindBack">What's Behind My Back?</option><option value="HowClose">How Close?</option><option value="NumberPuzzles">Number Puzzles</option><option value="SortDisplay">Sort and Display</option></select></div>
+<div><label asp-for="Answers.SecondAnswer">Second center example answer</label><input asp-for="Answers.SecondAnswer" type="number" min="0" max="50" required/></div>
+</div>
+</section>
+<section class="panel">
+<h2>5. Independent Edulytics Cool-down</h2>
+<p>New tasks based on the same mathematical ideas. Not copied from a publisher assessment.</p>
+<div class="grid">
+<div><label asp-for="Answers.CoolCount">23 groups of five and two extra objects: total?</label><input asp-for="Answers.CoolCount" type="number" min="100" max="120" required/></div>
+<div><label asp-for="Answers.CoolAdd">19 + 24 = ? (within 50)</label><input asp-for="Answers.CoolAdd" type="number" min="0" max="50" required/></div>
+<div><label asp-for="Answers.CoolGraph">Picture graph with one symbol per object: 8 blue and 5 red; how many more blue?</label><input asp-for="Answers.CoolGraph" type="number" min="0" max="20" required/></div>
+</div>
+<label asp-for="Answers.Reflection">What counting strategy did you use? How did the graph key or groups help? What did your partner explain?</label>
+<textarea asp-for="Answers.Reflection" maxlength="2000" rows="3"></textarea>
+<button type="submit" class="action">Check my digital math and show teacher-review tasks</button>
+</section>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var row in Model.Feedback){
+<div class="@(row.Correct==true?"ok":row.Correct==false?"no":"review")">
+<h3>@row.Activity</h3><p>@(row.Correct==true?"Numerically correct":row.Correct==false?"Review your calculation":"Teacher review required"). @row.Explanation</p>
+</div>}
+</section>
+}
+<section class="panel">
+<h2>Teacher observation rubric</h2>
+<ul>@foreach(var item in UsCcssG2Unit1SeventeenthLessonCenters.TeacherRubric){<li>@item</li>}</ul>
+</section>
+<p class="fine">Aligned to Illustrative Mathematics K–5 2021 Grade 2 Unit 1 Lesson 17; CCSS 2.MD.D.10, 2.NBT.A.2, 2.NBT.B.5. Source tasks described, all virtual cards and assessment questions independently authored for Edulytics.</p>
+</main>

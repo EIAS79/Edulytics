@@ -1,0 +1,38 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Unit5FirstSixPage
+@using Edulytics.Core.Mathematics.Practice
+@{Layout="_StudentLayout";ViewData["Title"]=Model.Title;}
+<style>.g2u5{max-width:980px;margin:auto;padding:20px;color:#23465a}.g2u5 section{border:1px solid #c2d5e1;border-radius:10px;background:white;padding:18px;margin:16px 0}
+.g2u5 .cells{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2u5 label{display:block;font-weight:700;margin:8px 0 4px}
+.g2u5 input,.g2u5 textarea{font:inherit;border:1px solid #839aaa;border-radius:7px;padding:9px;width:100%;max-width:560px}
+.g2u5 button{background:#157b90;color:white;padding:12px 18px;font-weight:700;border:0;border-radius:8px}</style>
+<main class="g2u5"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>@Model.Title</h1><p>Grade2 Unit5 Lesson @Model.LessonNumber. These numbers connect to the original 2021 teacher lesson. The original physical diagrams, student word writing and partner work remain educator assessed.</p>
+<form asp-controller="Grade2Unit5FirstSixActivities" asp-action="Submit" asp-route-lessonNumber="@Model.LessonNumber" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section><h2>Original source quantities (numbers only)</h2>
+<div class="cells">
+<div><label asp-for="Answers.SourceA">@Model.SourcePrompts[0]</label><input asp-for="Answers.SourceA" type="number" min="0" max="999" required/></div>
+<div><label asp-for="Answers.SourceB">@Model.SourcePrompts[1]</label><input asp-for="Answers.SourceB" type="number" min="0" max="999" required/></div>
+<div><label asp-for="Answers.SourceC">@Model.SourcePrompts[2]</label><input asp-for="Answers.SourceC" type="number" min="0" max="999" required/></div>
+<div><label asp-for="Answers.SourceD">@Model.SourcePrompts[3]</label><input asp-for="Answers.SourceD" type="number" min="0" max="999" required/></div>
+</div></section>
+<section><h2>Real publisher activities — educator review only</h2>
+<ul>@foreach(var item in Model.AuthenticRubric){<li>@item</li>}</ul>
+<label asp-for="Answers.ActualSourceDiagram">Actual original publisher image or drawing: describe what YOU actually see</label><textarea asp-for="Answers.ActualSourceDiagram" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.ActualTeacherObservedBlocks">Blocks genuinely built and regrouped in class</label><textarea asp-for="Answers.ActualTeacherObservedBlocks" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.RealPartnerReasoning">Actual conversation and explanation with your partner</label><textarea asp-for="Answers.RealPartnerReasoning" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.OriginalNumberNamesOrPoster">Your OWN original number words or classroom gallery poster (not automatically graded)</label><textarea asp-for="Answers.OriginalNumberNamesOrPoster" maxlength="2000" rows="3"></textarea></section>
+<section><h2>Independent, first-party Edulytics arithmetic — NOT publisher Cool-down</h2><div class="cells">
+<div><label asp-for="Answers.IndependentA">@Model.FirstPartyPrompts[0]</label><input asp-for="Answers.IndependentA" type="number" min="0" max="999" required/></div>
+<div><label asp-for="Answers.IndependentB">@Model.FirstPartyPrompts[1]</label><input asp-for="Answers.IndependentB" type="number" min="0" max="999" required/></div>
+<div><label asp-for="Answers.IndependentC">@Model.FirstPartyPrompts[2]</label><input asp-for="Answers.IndependentC" type="number" min="0" max="999" required/></div>
+<div><label asp-for="Answers.IndependentD">@Model.FirstPartyPrompts[3]</label><input asp-for="Answers.IndependentD" type="number" min="0" max="999" required/></div>
+</div><button type="submit">Check mathematics</button></section>
+</form>
+@if(Model.Submitted){<section aria-live="polite"><h2>Mathematical checks and teacher review</h2>
+@foreach(var x in Model.Feedback){<h3>@x.Section</h3><p>@x.Explanation</p>}</section>}
+<p>Original 2021 IM K–5 source mathematics; images not copied. Human review required for all material-dependent and expressive tasks; no official grades.</p>
+</main>

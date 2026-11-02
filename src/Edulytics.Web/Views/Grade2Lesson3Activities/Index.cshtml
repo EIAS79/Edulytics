@@ -1,0 +1,128 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson3PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · Hidden cubes with twenty";
+}
+<style>
+.g2-l03{max-width:930px;margin:auto;padding:20px 18px 42px;color:#19354c}
+.g2-l03 h1{font-size:1.85rem}.g2-l03 h2{font-size:1.32rem}
+.g2-l03 .panel{border:1px solid #dae3eb;border-radius:15px;background:white;margin:18px 0;padding:24px}
+.g2-l03 .twotens{display:flex;gap:20px;flex-wrap:wrap;margin:15px 0}
+.g2-l03 .ten{display:grid;grid-template-columns:repeat(5,29px);gap:5px}
+.g2-l03 .cube{width:29px;height:29px;border:2px solid #09607c;border-radius:4px;background:#a9dfea}
+.g2-l03 .cube--hidden{background:#ffe3a2;border-color:#ac7d24}
+.g2-l03 .muted{color:#4c6575}
+.g2-l03 label{display:block;margin:16px 0 5px;font-weight:700}
+.g2-l03 input,.g2-l03 textarea{padding:12px;font:inherit;border:1px solid #6e879b;border-radius:8px;width:100%;max-width:500px}
+.g2-l03 input:focus,.g2-l03 textarea:focus{outline:3px solid #9bd8e5}
+.g2-l03 .button{background:#087a8e;border:0;border-radius:9px;padding:13px 21px;font:inherit;font-weight:750;color:white;cursor:pointer}
+.g2-l03 .success{border-left:4px solid #22754f;padding-left:12px}
+.g2-l03 .error{border-left:4px solid #b03c49;padding-left:12px}
+.g2-l03 .review{border-left:4px solid #bb8b30;padding-left:12px}
+.g2-l03 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:16px}
+</style>
+<main class="g2-l03">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+    <header>
+        <p>EDULYTICS · ORIGINAL ACTIVITIES</p>
+        <h1>Two tens make twenty</h1>
+        <p class="muted">Grade 2, Unit 1, Lesson 3. All questions and colored
+        ten-cube diagrams on this page were authored for Edulytics, not copied
+        from a publisher-only Cool-down or image.</p>
+    </header>
+    <section class="panel">
+        <h2>1. Warm-up — make ten</h2>
+        <p>Mentally calculate 7 + 3, 10 − 7, 10 − 2, and 10 − 4.
+        How can a known addition fact help with subtraction? Tell a partner
+        one strategy and listen to another correct method.</p>
+    </section>
+    <section class="panel">
+        <h2>2. Twenty cubes: which part is hidden?</h2>
+        <p>Start with TWO towers of ten connecting cubes. A partner breaks
+        off some cubes and hides them. The other partner records an addition
+        equation with a blank BEFORE finding the hidden cubes.</p>
+        <div class="twotens" role="img"
+             aria-label="Two groups of ten squares. Seven blue-green visible counters and thirteen golden hidden counters, representing seven plus thirteen equals twenty.">
+            @for(var tower=0;tower<2;tower++){
+                <div class="ten">
+                    @for(var i=0;i<10;i++){
+                        var index=tower*10+i;
+                        <span class="cube @(index>=7?"cube--hidden":"")" aria-hidden="true"></span>
+                    }
+                </div>
+            }
+        </div>
+        <p><strong>7 + ? = 20</strong>. How many cubes are hidden?
+        Check your answer using <strong>20 − 7</strong>, or make a ten and
+        then count one more ten.</p>
+    </section>
+    <section class="panel">
+        <h2>3. Make every equation true</h2>
+        <p>An unknown number may appear at the beginning, in the middle,
+        or at the end of an equation. Pay attention to where it goes.</p>
+        <ul>
+            <li>9 + ? = 20</li>
+            <li>? + 7 = 20</li>
+            <li>20 − ? = 9</li>
+            <li>20 − 15 = ?</li>
+            <li>Optional extension: ? − 5 = 20. Here the starting number is above 20.</li>
+        </ul>
+        <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+            <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+            <input type="hidden" name="lessonId" value="@Model.LessonId" />
+            <button type="submit" class="button">Practice more twenty-cube equations</button>
+        </form>
+    </section>
+    <form class="panel" asp-controller="Grade2Lesson3Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <h2>4. Independent Edulytics Cool-down</h2>
+        <label for="hidden">20 cubes altogether, 7 are visible. How many are hidden?</label>
+        <input id="hidden" name="hidden" type="number" min="0" max="20" value="@Model.Hidden" required />
+        <label for="removed">Complete 20 − ? = 9. What number is missing?</label>
+        <input id="removed" name="removed" type="number" min="0" max="20" value="@Model.Removed" required />
+        <h3>Which equations are true?</h3>
+        <p>Enter 1 for true, or 0 for false.</p>
+        <div class="grid2">
+            <div><label for="statement-one">20 − 8 = 12</label>
+                <input id="statement-one" name="statementOne" value="@Model.StatementOne" type="number" min="0" max="1" required /></div>
+            <div><label for="statement-two">20 − 8 = 13</label>
+                <input id="statement-two" name="statementTwo" value="@Model.StatementTwo" type="number" min="0" max="1" required /></div>
+        </div>
+        <label for="extension">Optional extension: ? − 5 = 20. Which number is missing at the start?</label>
+        <input id="extension" name="extension" value="@Model.Extension" type="number" min="0" max="100" />
+        <label for="reasoning">Explain your 20-cube representation and method to your teacher</label>
+        <textarea id="reasoning" name="explanation" rows="3" maxlength="2000">@Model.Explanation</textarea>
+        <p class="muted">Open reasoning is teacher-scored separately; we do not
+        automatically certify classroom performance or award an official mark here.</p>
+        <button class="button" type="submit">Check my mathematical answers</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Feedback</h2>
+            @foreach(var item in Model.Feedback){
+                <div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+                    <h3>@item.Task</h3>
+                    <p>@(item.Correct==true?"Mathematically correct":item.Correct==false?"Try again":"Teacher review needed"). @item.Message</p>
+                </div>
+            }
+            <p class="muted">This immediate feedback is not an official saved
+            student grade. Teacher assessment is required for drawing, partner
+            explanations and math community discussions.</p>
+        </section>
+    }
+    <section class="panel">
+        <h2>Teacher review criteria</h2>
+        <ul>
+            @foreach(var row in UsCcssG2Unit1ThirdLessonEdulyticsCoolDown.TeacherRubric){
+                <li>@row</li>
+            }
+        </ul>
+    </section>
+    <p class="muted">Curriculum alignment: IM K–5 2021 Grade 2 Unit 1 Lesson 3,
+    CCSS 2.OA.B.2. This activity and its diagram are new Edulytics creations.</p>
+</main>

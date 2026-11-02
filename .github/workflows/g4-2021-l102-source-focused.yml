@@ -1,0 +1,43 @@
+name: G4 IM2021 lesson 102 focused A-C
+on:
+  push:
+    branches: [curriculum/g4-sequential-abc-20261026]
+    paths:
+      - '.github/workflows/g4-2021-l102-source-focused.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  source-102:
+    if: github.repository == 'EIAS79/Edulytics'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Extend existing exact division engine only for L102
+        run: |
+          node tools/curriculum/g4-l102-engine-surgical-patch.cjs
+          node tools/curriculum/g4-l102-mapping-patch.cjs
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Focused tests (L102 only, including real registry and wrong submissions)
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4Ordinal102BaseTenSourceTests --configuration Release --verbosity minimal
+      - name: Commit verified L102 engine and metadata to isolated GitHub branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs
+          git add src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json
+          git add src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix(g4-2021-l102): stage-C base-ten equal-groups exact mechanic after focused green'
+            git push origin HEAD:curriculum/g4-sequential-abc-20261026
+          fi

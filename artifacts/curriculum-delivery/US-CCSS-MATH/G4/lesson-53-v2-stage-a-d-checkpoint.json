@@ -1,0 +1,42 @@
+{
+  "ordinal": 53,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L08",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "e32be78c2927cc75de5fc1f6584700d85f5e4402bc50e5e15218fd4f9aca574a",
+    "teacher": "62a110a6d39de6ce1a971d24f4c40514ac81688159bc246565707a23f22b7695",
+    "student": "8c9d0f83815236001a5c975cef87761e2d7421e1fb9fe21c87194bd7a302683a"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "A block was 100 when the unit cube meant 1; what is its value when the unit cube means 10?",
+    "teacherAnswer": "1,000"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:09:45+01:00",
+  "closeAtLocal": "2026-10-26T23:09:45+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-53-local-source-guard.test.cjs"
+  }
+}

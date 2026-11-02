@@ -1,0 +1,46 @@
+@model Edulytics.Web.ViewModels.Academics.ClassGroupEditViewModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Edulytics.Web.AcademicResource> A
+@using Edulytics.Core.Enums
+@{ ViewData["Title"] = A["EditClass"].Value; }
+
+<section class="academic-page academic-edit-page">
+    <a asp-action="Index">@A["BackToDashboard"]</a>
+    <form method="post" class="academic-card academic-form">
+        <h1>@A["EditClass"]</h1>
+        <input type="hidden" name="rowVersion"
+               value="@Convert.ToBase64String(Model.ClassGroup.RowVersion)" />
+
+        <input type="hidden"
+               name="academicProgramId"
+               value="@Model.ClassGroup.AcademicProgramId" />
+        <input type="hidden"
+               name="gradeLevelId"
+               value="@Model.ClassGroup.GradeLevelId" />
+
+        <label>@A["AcademicYear"]</label>
+        <input value="@Model.ClassGroup.AcademicYearName" disabled />
+
+        <label>@A["AcademicProgram"]</label>
+        <input value="@Model.ClassGroup.AcademicProgramName" disabled />
+
+        <label>@A["GradeLevel"]</label>
+        <input value="@Model.ClassGroup.GradeLevelName" disabled />
+
+        <label for="name">@A["Name"]</label>
+        <input id="name" name="name" value="@Model.ClassGroup.Name" maxlength="150" required />
+
+        <label for="status">@A["Status"]</label>
+        <select id="status" name="status">
+            <option value="@((int)AcademicStructureStatus.Active)"
+                    selected="@(Model.ClassGroup.Status == AcademicStructureStatus.Active ? "selected" : null)">
+                @A["StatusActive"]
+            </option>
+            <option value="@((int)AcademicStructureStatus.Inactive)"
+                    selected="@(Model.ClassGroup.Status == AcademicStructureStatus.Inactive ? "selected" : null)">
+                @A["StatusInactive"]
+            </option>
+        </select>
+
+        <button type="submit" class="school-button school-button-primary">@A["SaveChanges"]</button>
+    </form>
+</section>

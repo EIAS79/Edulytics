@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 17,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U01:L17",
+  "unitNumber": 1,
+  "lessonNumber": 17,
+  "title": "Center Day 3 (optional)",
+  "sourceEdition": "IM K-5 2021 first edition",
+  "officialOutcomeCodes": [
+    "CCSS:2.MD.D.10",
+    "CCSS:2.NBT.A.2",
+    "CCSS:2.NBT.B.5"
+  ],
+  "stageA": {
+    "status": "COMPLETE_PUBLIC_ORIGINAL_2021_TEACHER_STUDENT_HTML_REVIEW",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-17/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-1/lesson-17/lesson.html",
+    "sourceSemanticSha256": "607c3f15b403b39d2629a80b9d76c27bbead505159eff163c1f20ed3ea1e1bc1",
+    "originalPackBodySha256": "8578ce50b353f313353dcd8560935f23a9b72ee1204667fa99bc141c9f69f3f2",
+    "sourceWarmUp": "Mental 27+10=37;27+10+10=47;27+30=57;37+30=67, discuss tens.",
+    "sourceActivity1": "Optional Counting Collections stage3 estimate AND physically count a genuine 100–120 item bag by groups of 5 or 10 with partner, independent written count/representation.",
+    "sourceActivity2": "Choose two previously introduced centers: What's Behind My Back? stages2/3, How Close? stages1–3, Number Puzzles stages1/2, Sort and Display stage2. Focus addition within50 or labeled data representations.",
+    "sourceLessonSynthesis": "Discuss methods for counting, why grouped items represent numbers, what learners already know about place value and possible support.",
+    "sourceCoolDown": "No public independently accessible publisher Cool-down copied; new Edulytics independent exit assesses grouped count, addition within50 and one-to-one picture graph difference.",
+    "standardsAddressing": [
+      "2.MD.D.10",
+      "2.NBT.A.2",
+      "2.NBT.B.5"
+    ],
+    "materials": "Real bags of 100–120 objects, paper/own drawings, optional 10-frames and previously introduced centers. Publisher PDF/recording sheet not claimed reviewed.",
+    "rights": "Independent explanatory prose and CSS digital groups with attribution; do not reproduce publisher imagery or protected recording sheets.",
+    "authenticClassroomParticipationProven": false
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_PREDECESSOR_GUARDED_OPTIONAL_CENTER_RICH_V2",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "persistedSeeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "scope": "Exact original pack identity, URL/body SHA, outcomes order, six prior learner fields and expected previous materialized rich-content version; unrelated lessons unchanged.",
+    "replacements": "Explain count by fives/tens to120, mathematical 27+10 number talk, teacher-only physical counting and two-center choice, accurate real vs fictional graph provenance and representations."
+  },
+  "stageC": {
+    "status": "COMPLETE_EXACT_DIGITAL_FAMILIES_AUTHENTICATED_STUDENT_CENTERS_ORIGINAL_COOLDOWN",
+    "families": [
+      "usccss.g2.u01.l17.count_groups_of_ten",
+      "usccss.g2.u01.l17.count_groups_of_five",
+      "usccss.g2.u01.l17.add_multiples_of_ten",
+      "usccss.g2.u01.l17.add_within_fifty",
+      "usccss.g2.u01.l17.read_bar_graph_difference"
+    ],
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1Lesson17CentersContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit1Lesson17CenterQuestions.cs",
+    "interactiveOriginal": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit1SeventeenthLessonCenters.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson17ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson17Activities/Index.cshtml",
+    "studentViewModel": "src/Edulytics.Web/ViewModels/LessonContent/Grade2Lesson17Page.cs",
+    "studentReaderEntry": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "independentCoolDown": "23 bundles of five+2=117, 19+24=43, fictitious one-symbol-per-object picture graph blue8-red5 gap3.",
+    "machineGrading": "Warmup four exact tens sums, first-party virtual 112 in tens or fives, arithmetic consistency ONLY for self-reported real collection, two different center examples, and independent Cool-down.",
+    "teacherRubric": "True physical objects, prior estimate, own drawing, data provenance, partner collaboration, genuine selected centers, narrative fluency and original graph are never automatically certified.",
+    "auth": "StudentPortal policy, enrolled/adopted selected lesson, published lesson permission, antiforgery, bounded inputs; no official score saved.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit1CountingCollectionsCenterTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1SeventeenthLessonCentersTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit1Lesson17CenterQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson17ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "ciExecuted": false,
+    "gradeSaved": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "runtimeCompilationVerified": false,
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO",
+    "note": "Only academic/technical authorship checkpoint. Stage D and authenticated runtime CI remain unexecuted. No real student or teacher activity evidenced."
+  },
+  "nextAction": "GRADE2_U01_L18_CLASS_SURVEYS_OPTIONAL_STRICT_A_B_C"
+}

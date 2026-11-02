@@ -1,0 +1,154 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson8PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · Interpret picture graphs";
+    var graphs = new[] {
+        new {Title="Sports chosen by children",Values=UsCcssG2Unit1EighthLessonEdulyticsCoolDown.ChildrenSports},
+        new {Title="Sports chosen by adults",Values=UsCcssG2Unit1EighthLessonEdulyticsCoolDown.AdultsSports},
+        new {Title="Favorite art supplies chosen by children",Values=UsCcssG2Unit1EighthLessonEdulyticsCoolDown.ArtSupplies}
+    };
+}
+<style>
+.g2-l08{max-width:950px;margin:0 auto;padding:20px 18px 40px;color:#1d374d}
+.g2-l08 .panel{background:#fff;border:1px solid #d9e4ed;border-radius:16px;padding:24px;margin:18px 0}
+.g2-l08 h1{font-size:1.85rem}.g2-l08 h2{font-size:1.3rem}.g2-l08 h3{font-size:1.12rem}
+.g2-l08 .muted{color:#4c6979}.g2-l08 .graphs{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px}
+.g2-l08 .graph{border:1px solid #b1c4d0;border-radius:13px;background:#f5fafc;padding:12px}
+.g2-l08 .category{border-bottom:1px solid #d2dfe8;padding:10px 0}
+.g2-l08 .symbols{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0}
+.g2-l08 .symbol{width:21px;height:21px;background:#3f99ac;border:1px solid #16617a;border-radius:50%;display:inline-block}
+.g2-l08 label{display:block;font-weight:700;margin:14px 0 6px}
+.g2-l08 input,.g2-l08 select,.g2-l08 textarea{font:inherit;border:1px solid #758da0;border-radius:8px;padding:12px;width:100%;max-width:490px}
+.g2-l08 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px}
+.g2-l08 .button{padding:13px 24px;background:#087a8c;color:#fff;border:0;border-radius:8px;font:inherit;font-weight:750;cursor:pointer}
+.g2-l08 .success{border-left:4px solid #25835a;padding-left:12px}
+.g2-l08 .error{border-left:4px solid #bb3d50;padding-left:12px}
+.g2-l08 .review{border-left:4px solid #b78a2c;padding-left:12px}
+.g2-l08 .dot-row{display:flex;gap:6px;flex-wrap:wrap}
+.g2-l08 .dot{display:inline-block;border-radius:50%;background:#147c90;width:17px;height:17px}
+</style>
+<main class="g2-l08">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Return to your lesson</a>
+<header>
+<p>EDULYTICS · ORIGINAL LEARNING ACTIVITIES</p>
+<h1>Read and interpret picture graphs</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 8. These diagrams and the Cool-down
+were independently authored for Edulytics. Every circle represents exactly
+one response — not a picture licensed from the publisher.</p>
+</header>
+<section class="panel">
+<h2>1. Warm-up — dots within ten</h2>
+<p>How many do you see? Can you see a group of five and another group of three?
+Explain to your partner how you counted without counting every dot.</p>
+<div class="dot-row" role="img" aria-label="Five dots and three dots; eight dots total">
+@for(var i=0;i<8;i++){<span class="dot" aria-hidden="true"></span>}
+</div>
+<p class="muted">Different valid grouping strategies should be compared with a teacher.</p>
+</section>
+<section class="panel">
+<h2>2. Look carefully at different picture graphs</h2>
+<p><strong>Key: each circle means one person's recorded preference.</strong>
+Notice that the first two graphs represent DIFFERENT populations: children
+versus adults. The art-supply graph concerns children. Categories are labeled
+so that every response has a clear meaning.</p>
+<div class="graphs">
+@foreach(var graph in graphs){
+ <div class="graph">
+ <h3>@graph.Title</h3>
+ @foreach(var item in graph.Values){
+  <div class="category">
+   <strong>@item.Key: @item.Value</strong>
+   <div class="symbols" role="img" aria-label="@item.Value people prefer @item.Key in the dataset titled @graph.Title">
+   @for(var j=0;j<item.Value;j++){
+    <span class="symbol" aria-hidden="true"></span>
+   }
+   </div>
+  </div>
+ }
+ </div>
+}
+</div>
+<p>How many adults prefer basketball? How many more CHILDREN than adults
+prefer soccer? Check the population label before calculating.</p>
+</section>
+<section class="panel">
+<h2>3. Does the graph contain the information we need?</h2>
+<p>Some questions can be solved by reading counts, adding or subtracting.
+Others require information that was never recorded — such as WHY someone
+preferred a particular item. A picture graph cannot answer those questions
+without asking people again.</p>
+<form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<button class="button" type="submit">Practice more picture-graph questions</button>
+</form>
+</section>
+<form class="panel" asp-controller="Grade2Lesson8Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>4. Independent Edulytics Cool-down</h2>
+<h3>Sports: compare children and adults</h3>
+<div class="two">
+<div><label asp-for="Answers.AdultsBasketball">How many ADULTS chose basketball?</label>
+<input asp-for="Answers.AdultsBasketball" inputmode="numeric" required maxlength="20" /></div>
+<div><label asp-for="Answers.ChildrenAdultsSoccerGap">How many more CHILDREN than ADULTS chose soccer?</label>
+<input asp-for="Answers.ChildrenAdultsSoccerGap" inputmode="numeric" required maxlength="20" /></div>
+</div>
+<h3>Children's art supplies</h3>
+<div class="two">
+<div><label asp-for="Answers.Markers">How many chose markers?</label><input asp-for="Answers.Markers" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.CrayonsAndClay">How many chose crayons OR clay together?</label><input asp-for="Answers.CrayonsAndClay" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.MoreMarkersThanCrayons">How many more chose markers than crayons?</label><input asp-for="Answers.MoreMarkersThanCrayons" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.PaintAndMarkers">How many chose paint OR markers altogether?</label><input asp-for="Answers.PaintAndMarkers" inputmode="numeric" maxlength="20" required /></div>
+</div>
+<h3>Decide if the art-supplies graph can answer each question</h3>
+<p>Choose YES if the answer is in the pictured data; NO if it is missing.</p>
+<div class="two">
+<div><label asp-for="Answers.CanAskOne">How many children selected crayons?</label>
+<select asp-for="Answers.CanAskOne" required><option value="">Choose</option><option value="1">YES</option><option value="0">NO</option></select></div>
+<div><label asp-for="Answers.CanAskTwo">How many chose clay and paint together?</label>
+<select asp-for="Answers.CanAskTwo" required><option value="">Choose</option><option value="1">YES</option><option value="0">NO</option></select></div>
+<div><label asp-for="Answers.CanAskThree">Why did the children choose their favorite supply?</label>
+<select asp-for="Answers.CanAskThree" required><option value="">Choose</option><option value="1">YES</option><option value="0">NO</option></select></div>
+<div><label asp-for="Answers.CanAskFour">How many more chose markers than crayons?</label>
+<select asp-for="Answers.CanAskFour" required><option value="">Choose</option><option value="1">YES</option><option value="0">NO</option></select></div>
+<div><label asp-for="Answers.CanAskFive">What is the total number who chose paint or markers?</label>
+<select asp-for="Answers.CanAskFive" required><option value="">Choose</option><option value="1">YES</option><option value="0">NO</option></select></div>
+</div>
+<h3>Finish the Edulytics Cool-down</h3>
+<div class="two">
+<div><label asp-for="Answers.CoolTotal">How many children answered the art-supply survey altogether?</label><input asp-for="Answers.CoolTotal" inputmode="numeric" required maxlength="20" /></div>
+<div><label asp-for="Answers.CoolDifference">How many more chose markers than clay?</label><input asp-for="Answers.CoolDifference" inputmode="numeric" required maxlength="20" /></div>
+</div>
+<label asp-for="Answers.Explanation">Explain a question this graph CAN answer and one it CANNOT, with evidence</label>
+<textarea asp-for="Answers.Explanation" rows="3" maxlength="2000"></textarea>
+<p class="muted">The teacher will review your explanation and graph-reading
+strategy, not just your numerical answers.</p>
+<button class="button" type="submit">Check my picture-graph answers</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var result in Model.Feedback){
+<div class="@(result.Correct==true?"success":result.Correct==false?"error":"review")">
+<h3>@result.Task</h3>
+<p>@(result.Correct==true?"Mathematically correct":result.Correct==false?"Try again":"Teacher review"). @result.Text</p>
+</div>
+}
+<p class="muted">The lesson companion provides immediate practice feedback,
+not an official saved school grade or proof of a classroom discussion.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher review rubric</h2>
+<ul>
+@foreach(var item in UsCcssG2Unit1EighthLessonEdulyticsCoolDown.TeacherRubric){<li>@item</li>}
+</ul>
+</section>
+<p class="muted">Source alignment: IM 2021 Grade 2 U01 L08, CCSS 2.MD.D.10.
+These counts and first-party circles were created by Edulytics.</p>
+</main>

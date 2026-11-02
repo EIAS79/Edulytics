@@ -1,0 +1,2248 @@
+#!/usr/bin/env python3
+"""Real HTTPS two-tenant smoke test. Run only against disposable CI PostgreSQL."""
+import html
+import hashlib
+import http.cookiejar
+import json
+import os
+from pathlib import Path
+import re
+import ssl
+import subprocess
+import urllib.error
+import urllib.parse
+import urllib.request
+
+BASE = "https://localhost:5052"
+CTX = ssl.create_default_context(cafile="/tmp/phase-uat-cert.pem")
+PASSWORD = os.environ["Edulytics__MeetingDemo__Password"]
+PROGRAMME = os.environ.get("EDULYTICS_CI_REHEARSAL_PROGRAMME", "CAMBRIDGE")
+if PROGRAMME == "US-CCSS":
+    SCHOOLS = [
+        ("commoncore-primary", "Liberty American Primary School"),
+        ("commoncore-secondary", "Liberty American Secondary School"),
+    ]
+    SCHOOL_CODES = {
+        "commoncore-primary": "REHEARSAL-US-PRIMARY",
+        "commoncore-secondary": "REHEARSAL-US-SECONDARY",
+    }
+elif PROGRAMME == "CAMBRIDGE":
+    SCHOOLS = [
+        ("cambridge-primary", "Horizon British Primary School"),
+        ("cambridge-middle", "Horizon British Middle School"),
+    ]
+    SCHOOL_CODES = {
+        "cambridge-primary": "REHEARSAL-GB-PRIMARY",
+        "cambridge-middle": "REHEARSAL-GB-MIDDLE",
+    }
+else:
+    raise RuntimeError("Unsupported disposable rehearsal programme")
+
+
+
+# Grade 3 title reconciliation is exact-source-bound technical evidence only.
+# This never counts as original publisher title parity or academic acceptance.
+_G3_REPO_ROOT = Path(__file__).resolve().parents[2]
+_G3_ALIAS_FILE = _G3_REPO_ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G3/stage-d-source-bound-display-title-reconciliation.json"
+_G3_TITLE_ALIASES = ({row["lessonCode"]: row for row in json.loads(
+    _G3_ALIAS_FILE.read_text(encoding="utf-8"))["entries"]}
+    if PROGRAMME == "US-CCSS" else {})
+
+def sql(query):
+    return subprocess.check_output(
+        ["psql", "-h", "127.0.0.1", "-U", "postgres", "-d",
+         "edulytics_clean_ci", "-A", "-t", "-F", "|", "-c", query],
+        text=True,
+    ).strip()
+
+
+rows = tuple(map(int, sql("""SELECT
+    (SELECT count(*) FROM "Schools"),
+    (SELECT count(*) FROM "AspNetUsers"),
+    (SELECT count(*) FROM "StudentProfiles"),
+    (SELECT count(*) FROM "Assessments"),
+    (SELECT count(*) FROM "AssessmentResults"),
+    (SELECT count(*) FROM "PracticeAttempts"),
+    (SELECT count(*) FROM "SchoolAnalyticsSnapshots");""").split("|")))
+print("DISPOSABLE_ACADEMIC_REHEARSAL_COUNTS", rows)
+assert rows[:2] == (2, 12), rows
+assert all(count > 0 for count in rows[2:]), rows
+assert sql("""SELECT count(*) FROM "Schools" WHERE "SchoolCode" LIKE 'REHEARSAL-%';""") == "2"
+
+
+def connect(key, role, student_suffix="primary"):
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(
+        urllib.request.HTTPCookieProcessor(jar),
+        urllib.request.HTTPSHandler(context=CTX),
+    )
+    with opener.open(BASE + "/account/login?culture=en", timeout=20) as res:
+        html = res.read().decode("utf-8")
+    match = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', html)
+    assert match, (key, role, "missing CSRF")
+    if role == "SchoolAdmin":
+        user = f"{key}.admin@edulytiks.com"
+    elif role == "SubjectSupervisor":
+        user = f"{key}.supervisor@edulytiks.com"
+    elif role == "Teacher":
+        user = f"{key}.teacher.primary@edulytiks.com"
+    else:
+        user = f"{key}.student.{student_suffix}@edulytiks.com"
+    payload = urllib.parse.urlencode({
+        "Email": user, "Password": PASSWORD, "AccountType": role,
+        "__RequestVerificationToken": match.group(1),
+    }).encode()
+    with opener.open(urllib.request.Request(
+        BASE + "/account/login?culture=en", data=payload, method="POST",
+    ), timeout=20) as res:
+        final = urllib.parse.urlparse(res.url).path.lower()
+        assert res.status == 200 and final != "/account/login", (user, final)
+    assert any(c.secure for c in jar), (role, "missing secure auth cookie")
+    return opener
+
+
+def get_page(opener, path):
+    with opener.open(BASE + path, timeout=30) as res:
+        assert res.status == 200, (path, res.status)
+        assert urllib.parse.urlparse(res.url).path.lower() != "/account/login"
+        return res.read().decode("utf-8")
+
+
+def deny(opener, path):
+    try:
+        with opener.open(BASE + path, timeout=30) as res:
+            final = urllib.parse.urlparse(res.url).path.lower()
+            assert final != path.lower(), ("cross-tenant resource accessible", path)
+    except urllib.error.HTTPError as exc:
+        assert exc.code in (401, 403, 404), (path, exc.code)
+
+
+teachers = {}
+students = {}
+practice_attempts = {}
+for key, schoolname in SCHOOLS:
+    admin = connect(key, "SchoolAdmin")
+    supervisor = connect(key, "SubjectSupervisor")
+    teacher = connect(key, "Teacher")
+    student = connect(key, "Student")
+    for opener in (admin, supervisor, teacher):
+        dash = get_page(opener, "/school/dashboard")
+        assert schoolname in dash, (key, "wrong school context")
+        other = next(name for k, name in SCHOOLS if k != key)
+        assert other not in dash, (key, "foreign school context visible")
+    get_page(admin, "/school/reports")
+    get_page(supervisor, "/school/reports")
+    get_page(teacher, "/school/assessments")
+    get_page(student, "/student/dashboard")
+    get_page(student, "/student/learning")
+    if PROGRAMME == "US-CCSS" and key == "commoncore-primary":
+        # EXACT one-lesson student-facing authenticated HTTPS regression.
+        # No claim about deployed Render staging; CI runs a disposable school.
+        pilot_code = "PED:US-CCSS-MATH:G1:U01:L01"
+        pilot_ids = sql("""
+            SELECT "Id"::text FROM "CurriculumPedagogicalLessons"
+            WHERE "Code"='PED:US-CCSS-MATH:G1:U01:L01';""").splitlines()
+        assert len(pilot_ids) == 1, ("Count and Add source identity", pilot_ids)
+        pilot_lesson_id = pilot_ids[0]
+        pilot_meta = sql("""
+            SELECT l."Code", l."LogicalLevelFrom"::text,
+                   l."LogicalLevelTo"::text,
+                   COALESCE(c."Status"::text, 'NO_CANONICAL_CONTENT'),
+                   COALESCE(c."ContentVersion", 'NO_CONTENT_VERSION')
+            FROM "CurriculumPedagogicalLessons" l
+            LEFT JOIN "CurriculumLessonContents" c
+              ON c."LessonNodeId"=l."Id"
+            WHERE l."Id"='""" + pilot_lesson_id + """';""")
+        print("DISPOSABLE_G1_U01_L01_CONTENT_METADATA", pilot_meta, flush=True)
+        try:
+            pilot_page = html.unescape(
+                get_page(student, "/student/learning/lesson/" + pilot_lesson_id))
+        except urllib.error.HTTPError:
+            # Access remains fail-closed. Do not fake a student page to pass L6.
+            print("DISPOSABLE_G1_U01_L01_NOT_VISIBLE_TO_STUDENT",
+                  pilot_meta, flush=True)
+            raise
+        for required in (
+            "Count and Add",
+            "Count and show 16 counters",
+            "Add dots on two cubes",
+            "5 + 3 = 8",
+            "16 counters",
+            "rich-lesson-visual",
+            "rich-lesson-section",
+            "CC BY 4.0",
+            "im.kendallhunt.com/k5/teachers/grade-1/unit-1/lesson-1/lesson.html",
+        ):
+            assert required in pilot_page, (
+                "G1 U01 L01 authenticated Rich V2 content missing", required)
+        assert "rich-lesson-visual--placevaluechart" in pilot_page, (
+            "G1 U01 L01 ten-frame and dot-cube representation is not rendered")
+        # Real Chromium rendering at desktop + mobile viewport. The validated
+        # student login cookie is transferred only into the disposable CI browser.
+        # This does not interact with Render or a real user's school account.
+        from playwright.sync_api import sync_playwright
+        jar = next(
+            handler.cookiejar for handler in student.handlers
+            if isinstance(handler, urllib.request.HTTPCookieProcessor))
+        cookies = [{"name": cookie.name, "value": cookie.value, "url": BASE}
+                   for cookie in jar if cookie.secure]
+        assert cookies, "Authenticated Grade 1 browser session lacks secure cookies"
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(headless=True, args=["--no-sandbox"])
+            try:
+                for screen, width, height in (
+                    ("desktop", 1440, 900),
+                    ("mobile", 390, 844),
+                ):
+                    context = browser.new_context(
+                        ignore_https_errors=True,
+                        viewport={"width": width, "height": height})
+                    try:
+                        context.add_cookies(cookies)
+                        page = context.new_page()
+                        response = page.goto(
+                            BASE + "/student/learning/lesson/" + pilot_lesson_id,
+                            wait_until="domcontentloaded", timeout=40000)
+                        assert response is not None and response.status == 200, (
+                            screen, "Grade 1 browser lesson was not accessible")
+                        # Rendering without CSS previously gave misleading
+                        # green DOM checks but a huge unstyled brand logo.
+                        # Require actual static asset delivery AND applied CSS.
+                        site_css=page.request.get(BASE+"/css/site.css",timeout=20000)
+                        assert (site_css.status==200
+                                and "text/css" in site_css.headers.get("content-type","")
+                                and len(site_css.body())>20000), (
+                            "T001 student site.css absent or replaced by HTML",
+                            screen,site_css.status,
+                            site_css.headers.get("content-type",""),
+                            len(site_css.body()),site_css.url)
+                        brand_box=page.locator(
+                            ".student-brand-link .localized-brand-logo").bounding_box()
+                        assert brand_box and 0<brand_box["height"]<=90, (
+                            "T001 student brand oversized / CSS not applied",
+                            screen,brand_box)
+                        if screen=="desktop":
+                            shell_display=page.locator(
+                                ".student-app-shell").evaluate(
+                                    "(element) => getComputedStyle(element).display")
+                            assert shell_display=="grid", (
+                                "T001 desktop app shell CSS missing",shell_display)
+                        print("DISPOSABLE_T001_STYLESHEET_LAYOUT_PASS",
+                              screen,round(brand_box["height"]),flush=True)
+                        figures = page.locator(
+                            "figure.rich-lesson-visual--placevaluechart")
+                        assert figures.count() == 2, (
+                            screen, "expected both Count and Add representations")
+                        assert figures.nth(0).locator(
+                            ".rich-lesson-table td").all_text_contents().count("●") == 16, (
+                            screen, "10+6 model lost counters")
+                        assert figures.nth(1).locator(
+                            ".rich-lesson-table td").all_text_contents().count("●") == 8, (
+                            screen, "5+3 cube model lost dots")
+                        assert figures.nth(0).get_by_text(
+                            "Count and show 16 counters").is_visible(), (
+                            screen, "counting representation not visible")
+                        assert figures.nth(1).get_by_text(
+                            "Add dots on two cubes").is_visible(), (
+                            screen, "cube representation not visible")
+                        assert page.get_by_text("CC BY 4.0").first.is_visible(), (
+                            screen, "publisher source attribution hidden")
+                        page.screenshot(
+                            path=f"/tmp/g1-u01-l01-{screen}.png", full_page=True)
+                        print("DISPOSABLE_G1_L01_CHROMIUM_VIEWPORT_PASS",
+                              screen, width, height, flush=True)
+                        # Full visual proof for all ten T001 lessons at
+                        # both viewports. This checks the actual browser DOM
+                        # and licensed source attribution, not merely HTTP.
+                        lesson_rows=sql("""
+                            SELECT "Code" || '|' || "Id"::text
+                            FROM "CurriculumPedagogicalLessons"
+                            WHERE "Code" LIKE 'PED:US-CCSS-MATH:G1:U01:L%'
+                            ORDER BY "Code";""").splitlines()
+                        assert len(lesson_rows)>=10, (
+                            "Source-backed G1 unit 1 lesson IDs missing",lesson_rows)
+                        candidates=[
+                            row.split("|",1) for row in lesson_rows
+                            if row.split("|",1)[0].split(":")[-1] in
+                               ["L"+str(v).zfill(2) for v in range(1,11)]
+                        ]
+                        assert len(candidates)==10, (
+                            "T001 visual source lesson identity count",candidates)
+                        for lesson_code, rendered_id in candidates:
+                            if lesson_code==pilot_code:
+                                continue
+                            rendered=page.goto(
+                                BASE+"/student/learning/lesson/"+rendered_id,
+                                wait_until="domcontentloaded", timeout=40000)
+                            assert rendered and rendered.status==200, (
+                                "T001 browser lesson inaccessible",lesson_code,screen)
+                            assert page.locator(".rich-lesson-section").count()>0, (
+                                "T001 browser Rich V2 missing",lesson_code,screen)
+                            assert page.get_by_text(
+                                "Worked model — lesson skill").first.is_visible(), (
+                                "T001 source-goal worked model not in student runtime",
+                                lesson_code,screen)
+                            assert page.get_by_text(
+                                "— question forms",exact=False).count()==0, (
+                                "T001 answer-filled question wall should stay in Practice",
+                                lesson_code,screen)
+                            assert page.get_by_text(
+                                "you may lead them",exact=False).count()==0, (
+                                "T001 grade-one page still exposes teacher-guide instructions",
+                                lesson_code,screen)
+                            assert page.get_by_text(
+                                "MP7, MP8",exact=False).count()==0, (
+                                "T001 grade-one page still exposes teacher-only standards shorthand",
+                                lesson_code,screen)
+                            assert page.get_by_text(
+                                "Learning goal:",exact=False).first.is_visible(), (
+                                "T001 source-goal learner explanation not rendered",
+                                lesson_code,screen)
+                            if lesson_code.endswith(":L09"):
+                                assert page.get_by_text(
+                                    "real survey",exact=False).first.is_visible(), (
+                                    "L09 must require real survey collection",
+                                    lesson_code,screen)
+                            assert page.get_by_text("CC BY 4.0").first.is_visible(), (
+                                "T001 publisher license invisible",lesson_code,screen)
+                            suffix=lesson_code.split(":")[-1]
+                            expected_source=(
+                                "https://im.kendallhunt.com/k5/teachers/"
+                                "grade-1/unit-1/lesson-"
+                                +str(int(suffix[1:]))+"/lesson.html")
+                            displayed_source=page.locator(
+                                ".lesson-source-attribution a").first.get_attribute("href")
+                            assert displayed_source==expected_source, (
+                                "T001 source attribution points to wrong original lesson",
+                                lesson_code,displayed_source,expected_source)
+                            assert page.locator(
+                                "figure.rich-lesson-visual--placevaluechart"
+                            ).count()>0, (
+                                "T001 original skill visual missing",
+                                lesson_code,screen)
+                            visual_models={
+                                "L02":"Two dot cards make an addition expression",
+                                "L03":"Start at five, count forward two",
+                                "L04":"Start at eight, take away two",
+                                "L05":"Joining and taking away are different actions",
+                            }
+                            if suffix in visual_models:
+                                assert page.get_by_text(
+                                    visual_models[suffix],exact=True).first.is_visible(), (
+                                    "T001 actual counter/counting model not displayed",
+                                    lesson_code,screen)
+                            # The displayed chart must use the SAME counts
+                            # as the authored worked example in these lessons.
+                            model_rows={
+                                "L07":["Counters — 4","Pattern blocks — 3",
+                                       "Inch tiles — 2"],
+                                "L08":["Triangles — 3","Squares — 2",
+                                       "Circles — 4"],
+                                "L09":["Apples — 5","Bananas — 3",
+                                       "Oranges — 2"],
+                            }
+                            if suffix in model_rows:
+                                figure=page.locator(
+                                    "figure.rich-lesson-visual--placevaluechart"
+                                ).first
+                                for row_label in model_rows[suffix]:
+                                    assert row_label in figure.inner_text(), (
+                                        "T001 displayed category count contradicts "
+                                        "the lesson's worked model",
+                                        lesson_code,row_label,screen)
+                            if screen=="desktop":
+                                rendered_sections=page.locator(
+                                    ".rich-lesson-section").all_inner_texts()
+                                rendered_text="\\n".join(
+                                    item.strip() for item in rendered_sections)
+                                assert (len(rendered_text)>400
+                                        and "Worked model" in rendered_text), (
+                                    "T001 rendered academic body unexpectedly empty",
+                                    lesson_code,len(rendered_text))
+                                digest=hashlib.sha256(
+                                    rendered_text.encode("utf-8")).hexdigest()
+                                print("T001_RENDERED_LESSON_SHA256",
+                                      lesson_code,digest,
+                                      "sections",len(rendered_sections),
+                                      "characters",len(rendered_text),
+                                      flush=True)
+                            page.screenshot(
+                                path=f"/tmp/g1-u01-{suffix.lower()}-{screen}.png",
+                                full_page=True)
+                            print("DISPOSABLE_T001_CHROMIUM_RENDER_PASS",
+                                  lesson_code,screen,flush=True)
+
+                        # Real authenticated L08 chart-building interaction
+                        # on each desktop/mobile viewport, not answer injection.
+                        l08_id=next(lid for code,lid in candidates
+                                    if code.endswith(":L08"))
+                        page.goto(BASE+"/student/learning/lesson/"+l08_id,
+                                  wait_until="domcontentloaded",timeout=40000)
+                        practice_start=page.locator(
+                            'form[action*="/student/practice/lesson/start"]').first
+                        assert practice_start.count()==1, (
+                            "L08 Practice start action missing",screen)
+                        practice_start.locator('button[type="submit"]').first.click()
+                        graph=page.locator("[data-t001-shape-chart]")
+                        graph.wait_for(timeout=40000)
+                        page.locator(".t001-chart-column").first.wait_for(timeout=20000)
+                        stem=page.locator("[data-practice-question]").inner_text()
+                        cards=stem.split("Cards: ",1)[1].split(". Build",1)[0].split(", ")
+                        counts=[cards.count("▲"),cards.count("■"),cards.count("●")]
+                        assert all(1<=n<=5 for n in counts) and sum(counts)<=10, (
+                            "L08 source cards/counts invalid",counts)
+                        assert page.locator("[data-t001-shape-submit]").is_disabled(), (
+                            "L08 empty graph must not submit",screen)
+                        columns=page.locator(".t001-chart-column")
+                        assert columns.count()==3, ("L08 must have three columns",screen)
+                        for column_index,amount in enumerate(counts):
+                            for _ in range(amount):
+                                columns.nth(column_index).locator(
+                                    "button.t001-chart-step").nth(1).click()
+                        answer=",".join(str(value) for value in counts)
+                        assert page.locator("[data-t001-shape-answer]").input_value()==answer, (
+                            "L08 learner graph did not serialize counts",screen)
+                        assert page.locator("[data-t001-shape-submit]").is_enabled(), (
+                            "L08 complete graph not submittable",screen)
+                        page.screenshot(
+                            path=f"/tmp/t001-l08-built-shape-graph-{screen}.png",
+                            full_page=True)
+                        page.locator("[data-t001-shape-submit]").click()
+                        page.wait_for_load_state("domcontentloaded")
+                        assert "/student/practice/" in page.url, (
+                            "L08 answer submission escaped Practice",page.url)
+                        graph_attempt=re.search(
+                            r"/student/practice/lesson-attempt/([0-9a-fA-F-]{36})",
+                            urllib.parse.urlparse(page.url).path)
+                        assert graph_attempt, (
+                            "L08 browser did not reach persisted lesson Practice",
+                            page.url)
+                        stored=sql("""
+                            SELECT r."Answer",
+                                   CASE WHEN r."IsCorrect" THEN '1' ELSE '0' END,
+                                   r."Score"::text, i."CorrectAnswer"
+                            FROM "PracticeResponses" r
+                            JOIN "PracticeAttemptItems" ai
+                              ON ai."Id"=r."PracticeAttemptItemId"
+                            JOIN "AssessmentItems" i
+                              ON i."Id"=ai."AssessmentItemId"
+                            WHERE ai."PracticeAttemptId"='""" +
+                            graph_attempt.group(1) +
+                            """' AND i."GenerationFamily"=
+                            'usccss.t001.g1.construct_shape_graph'
+                            ORDER BY r."AnsweredAtUtc" DESC LIMIT 1;""")
+                        saved_parts=stored.split("|")
+                        assert (len(saved_parts)==4 and
+                                saved_parts[0]==answer and saved_parts[1]=="1" and
+                                float(saved_parts[2])==1.0 and
+                                saved_parts[3]==answer), (
+                            "L08 browser-built graph was not marked and persisted correctly",
+                            screen,answer,stored)
+                        print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_DB_PASS",
+                              screen,stored,flush=True)
+                        print("DISPOSABLE_T001_L08_GRAPH_CONSTRUCTED_BROWSER_PASS",
+                              screen,answer,page.url,flush=True)
+
+                        # L02/L07/L09: actual student-authored controls,
+                        # authenticated form submission, and persisted grade.
+                        for suffix,kind,family in (
+                            ("L02","expression","usccss.t001.g1.write_dot_expression"),
+                            ("L07","sort","usccss.t001.g1.construct_tool_sort"),
+                            ("L09","survey","usccss.t001.g1.collect_survey_graph"),
+                        ):
+                            authored_id=next(lid for code,lid in candidates
+                                             if code.endswith(":"+suffix))
+                            page.goto(BASE+"/student/learning/lesson/"+authored_id,
+                                      wait_until="domcontentloaded",timeout=40000)
+                            start_form=page.locator(
+                                'form[action*="/student/practice/lesson/start"]').first
+                            assert start_form.count()==1,(suffix,"Practice start missing",screen)
+                            start_form.locator('button[type="submit"]').first.click()
+                            root=page.locator("[data-t001-authored-task='"+kind+"']")
+                            root.wait_for(timeout=40000)
+                            assert page.locator("[data-t001-authored-submit]").is_disabled(), (
+                                suffix,"Empty task should not submit",screen)
+                            stem=page.locator("[data-practice-question]").inner_text()
+                            if kind=="expression":
+                                dots=re.search(r"Dot cards: (●+) \| (●+)\.",stem)
+                                assert dots,(suffix,"Dot sources missing",stem)
+                                a,b=len(dots.group(1)),len(dots.group(2))
+                                fields=page.locator(".t001-authored-number")
+                                assert fields.count()==3
+                                for i,n in enumerate((a,b,a+b)):
+                                    fields.nth(i).fill(str(n))
+                                authored_answer=f"{a}+{b}={a+b}"
+                            elif kind=="sort":
+                                mixed=stem.split("Items: ",1)[1].split(". Sort EVERY",1)[0]
+                                cards=mixed.split(", ")
+                                assert 7<=len(cards)<=9
+                                kinds={"counter":0,"pattern block":1,"inch tile":2}
+                                selects=page.locator(".t001-authored-select")
+                                assert selects.count()==len(cards)
+                                for i,tool in enumerate(cards):
+                                    selects.nth(i).select_option(str(kinds[tool]))
+                                authored_answer=",".join(str(kinds[tool]) for tool in cards)
+                                assert page.locator(".t001-authored-bin-items .t001-authored-chip").count()==len(cards)
+                            else:
+                                assert "REAL CLASS SURVEY" in stem, (suffix,stem)
+                                required=re.search(
+                                    r"Ask ([5-8]) to 10 real participants",stem)
+                                assert required,(suffix,"Missing authentic survey scope",stem)
+                                survey_votes=[i%3 for i in range(int(required.group(1)))]
+                                for choice in survey_votes:
+                                    page.locator(f"[data-vote-add='{choice}']").click()
+                                survey_counts=[survey_votes.count(i) for i in range(3)]
+                                for choice,n in enumerate(survey_counts):
+                                    for _ in range(n):
+                                        page.locator(f"[data-graph-add='{choice}']").click()
+                                authored_answer="v:"+''.join(str(i) for i in survey_votes)+(
+                                    "|g:"+','.join(str(i) for i in survey_counts))
+                            assert page.locator("[data-t001-authored-answer]").input_value()==authored_answer, (
+                                suffix,"Authored response mismatch",screen,
+                                authored_answer,page.locator("[data-t001-authored-answer]").input_value())
+                            assert page.locator("[data-t001-authored-submit]").is_enabled(), (
+                                suffix,"Valid completed task disabled",screen)
+                            page.screenshot(path=f"/tmp/t001-{suffix.lower()}-authored-{screen}.png",
+                                            full_page=True)
+                            page.locator("[data-t001-authored-submit]").click()
+                            page.wait_for_load_state("domcontentloaded")
+                            attempt_url=urllib.parse.urlparse(page.url).path
+                            attempt_match=re.search(
+                                r"/student/practice/lesson-attempt/([0-9a-fA-F-]{36})",
+                                attempt_url)
+                            assert attempt_match,(suffix,"No persisted lesson review",page.url)
+                            persisted=sql("""
+                                SELECT r."Answer",
+                                  CASE WHEN r."IsCorrect" THEN '1' ELSE '0' END,
+                                  r."Score"::text, i."GenerationFamily"
+                                FROM "PracticeResponses" r
+                                JOIN "PracticeAttemptItems" ai
+                                  ON ai."Id"=r."PracticeAttemptItemId"
+                                JOIN "AssessmentItems" i
+                                  ON i."Id"=ai."AssessmentItemId"
+                                WHERE ai."PracticeAttemptId"='""" +
+                                attempt_match.group(1) +
+                                """' AND i."GenerationFamily"='""" + family + """'
+                                ORDER BY r."AnsweredAtUtc" DESC LIMIT 1;""")
+                            # Survey payload itself contains '|'; split off only
+                            # the three trusted SQL columns from the RIGHT.
+                            parts=persisted.rsplit("|",3)
+                            assert len(parts)==4 and parts[0]==authored_answer and (
+                                parts[1]=="1" and float(parts[2])==1.0 and parts[3]==family), (
+                                suffix,"Written/sorted/surveyed work not graded/saved",
+                                screen,persisted)
+                            assert page.locator("[data-t001-authored-readonly]").count()==0
+                            print("DISPOSABLE_T001_AUTHORED_PRACTICE_DB_PASS",
+                                  suffix,screen,persisted,flush=True)
+                    finally:
+                        context.close()
+            finally:
+                browser.close()
+        print("DISPOSABLE_US_CCSS_G1_U01_L01_STUDENT_RICH_V2_RENDER_PASS",
+              pilot_code, pilot_lesson_id)
+    get_page(student, "/student/practice")
+    deny(student, "/school/assessments")
+    deny(teacher, "/student/dashboard")
+    # Complete a real student assessment: GET form, CSRF-protected POST,
+    # and verify a new submitted assessment attempt in this disposable DB.
+    student_index = get_page(student, "/student/assessments")
+    open_link = re.search(
+        r'href="([^"]*/student/assessments/([0-9a-fA-F-]{36}))"',
+        student_index, re.IGNORECASE)
+    assert open_link, (key, "no available assessment")
+    assessment_id = open_link.group(2)
+    before_attempts = int(sql('SELECT count(*) FROM "AssessmentAttempts";'))
+    attempt_html = get_page(student, "/student/assessments/" + assessment_id)
+    attempt_csrf = re.search(
+        r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+        attempt_html)
+    question_ids = re.findall(
+        r'name="questionIds"[^>]*value="([0-9a-fA-F-]{36})"',
+        attempt_html)
+    assert attempt_csrf and question_ids, (key, "assessment form incomplete")
+    fields = [("__RequestVerificationToken", attempt_csrf.group(1))]
+    for question_id in question_ids:
+        fields.extend((("questionIds", question_id), ("responses", "")))
+    try:
+        with student.open(urllib.request.Request(
+            BASE + "/student/assessments/" + assessment_id + "/submit",
+        data=urllib.parse.urlencode(fields).encode(), method="POST"
+        ), timeout=40) as submitted:
+            assert submitted.status == 200, (key, "submit POST failed")
+            result_html = submitted.read().decode("utf-8")
+            assert "student-assessment" in result_html or "Submitted" in result_html, key
+    except urllib.error.HTTPError as error:
+        print("STUDENT_SUBMIT_FAILURE", key, error.code, error.url)
+        raise
+    after_attempts = int(sql('SELECT count(*) FROM "AssessmentAttempts";'))
+    assert after_attempts > before_attempts, (key, before_attempts, after_attempts)
+    get_page(student, "/student/results")
+    print("DISPOSABLE_STUDENT_ASSESSMENT_SUBMISSION_PASS", key, assessment_id)
+
+    # Generate actual private Practice through HTTPS; these attempts exist
+    # only in the disposable localhost PostgreSQL database.
+    practice_html = get_page(student, "/student/practice")
+    practice_token = re.search(
+        r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+        practice_html)
+    adoption = re.search(
+        r'name="curriculumAdoptionId"[^>]*value="([0-9a-fA-F-]{36})"',
+        practice_html)
+    assert practice_token and adoption, (key, "private Practice form missing")
+    before_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
+    practice_fields = {
+        "curriculumAdoptionId": adoption.group(1),
+        "scope": "WholeCurriculum",
+        "difficulty": "AtClassLevel",
+        "questionCount": "1",
+        "__RequestVerificationToken": practice_token.group(1),
+    }
+    expected_families = None
+    chosen_lesson_id = None
+    if PROGRAMME == "US-CCSS":
+        # Do not mistake "an American student can log in" for "the
+        # American curriculum is actually assigned to this student."
+        framework = sql("""
+            SELECT f."Code" || '|' || v."VersionCode"
+            FROM "SchoolCurriculumAdoptions" a
+            JOIN "CurriculumFrameworkVersions" v ON v."Id"=a."FrameworkVersionId"
+            JOIN "CurriculumFrameworks" f ON f."Id"=v."FrameworkId"
+            WHERE a."Id"='""" + adoption.group(1) + """';""")
+        assert framework == "US-CCSS-MATH|CCSSM-2010", (key, "wrong curriculum", framework)
+
+        # Select a real lesson displayed to the student and independently
+        # prove the lesson has a READY_VERIFIED, exact-family US route.
+        offered_ids = re.findall(
+            r'<option value="([0-9a-fA-F-]{36})"\s+data-learning-focus-node-ids=',
+            practice_html)
+        assert offered_ids, (key, "no US student lessons offered")
+        mappings_path = Path("src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json")
+        mappings = json.loads(mappings_path.read_text(encoding="utf-8"))["mappings"]
+        verified = {
+            row["lessonCode"]: row["allowedQuestionFamilies"]
+            for row in mappings
+            if row.get("lessonCode", "").startswith("PED:US-CCSS-MATH:")
+            and row.get("practiceReadiness") == "READY_VERIFIED"
+            and row.get("allowedQuestionFamilies")
+        }
+        ids = ",".join("'" + i + "'" for i in offered_ids)
+        offered = sql("""
+            SELECT l."Id"::text || '|' || l."Code"
+            FROM "CurriculumPedagogicalLessons" l
+            WHERE l."Id" IN (""" + ids + """)
+            ORDER BY l."Code";""").splitlines()
+        if key == "commoncore-secondary":
+            # The same publisher pathway spans Algebra 1, Geometry and
+            # Algebra 2. This accepted fixture explicitly chose ALG1; verify
+            # HTTPS did not offer any other high-school source course.
+            native_levels = sql("""
+                SELECT DISTINCT l."NativeLevel"
+                FROM "CurriculumPedagogicalLessons" l
+                WHERE l."Id" IN (""" + ids + """)
+                ORDER BY l."NativeLevel";""").splitlines()
+            assert native_levels == ["Algebra 1"], (
+                "secondary practice leaked another source course", native_levels)
+            configured = sql("""
+                SELECT "CurriculumLevelKey" || '|' ||
+                       "CurriculumPathway" || '|' ||
+                       "CurriculumLevelLabel"
+                FROM "SchoolCurriculumAdoptions"
+                WHERE "Id"='""" + adoption.group(1) + """';""")
+            assert configured == (
+                "US-CCSS-MATH:L11:TRADITIONAL:COURSE-ALG1|Traditional|Algebra 1"
+            ), ("secondary adoption lacks explicit course identity", configured)
+            print("DISPOSABLE_US_CCSS_HS_ALG1_COURSE_ISOLATION_PASS")
+        candidates = []
+        for row in offered:
+            parts = row.split("|", 1)
+            if len(parts) == 2 and parts[1] in verified:
+                candidates.append((parts[0], parts[1]))
+        if key == "commoncore-primary":
+            # Source-grounded lesson-specific contract: this must prove the
+            # actual first Grade 1 lesson, not any unrelated mapped lesson.
+            target = [row.split("|", 1) for row in offered if
+                      row.endswith("|PED:US-CCSS-MATH:G1:U01:L01")]
+            assert len(target) == 1, (
+                "G1 Count and Add is not offered to the actual Grade 1 student", target)
+            chosen_lesson_id, chosen_lesson_code = target[0]
+            practice_fields["questionCount"] = "2"  # cover BOTH publisher lesson activities
+            expected_families = [
+                "usccss.g1.u01.l01.count_collection_to20",
+                "usccss.g1.u01.l01.add_dot_cubes_to10",
+            ]
+        else:
+            assert candidates, (key, "no learner-visible READY_VERIFIED US CCSS lesson")
+            chosen_lesson_id, chosen_lesson_code = candidates[0]
+            expected_families = verified[chosen_lesson_code]
+        practice_fields["scope"] = "Lesson"
+        practice_fields["lessonId"] = chosen_lesson_id
+        print("DISPOSABLE_US_CCSS_LESSON_ROUTE_READY", key, chosen_lesson_code)
+    practice_body = urllib.parse.urlencode(practice_fields).encode()
+    with student.open(urllib.request.Request(
+        BASE + "/student/practice/generate",
+        data=practice_body, method="POST"
+    ), timeout=60) as generated:
+        generated_path = urllib.parse.urlparse(generated.url).path.lower()
+        assert generated.status == 200, (key, generated.status)
+        match_attempt = re.fullmatch(
+            r"/student/practice/attempt/([0-9a-f-]{36})", generated_path)
+        assert match_attempt, (key, "practice generation did not open an attempt", generated_path)
+        generated_body = generated.read().decode("utf-8")
+        assert "practice" in generated_body.lower(), (key, "no Practice page content")
+    after_practice = int(sql('SELECT count(*) FROM "PracticeAttempts";'))
+    assert after_practice > before_practice, (key, before_practice, after_practice)
+
+    if PROGRAMME == "US-CCSS":
+        # Verify the persisted question's exact family and lesson identity,
+        # not merely that the HTTP redirect showed a Practice page.
+        item_rows = sql("""
+            SELECT a."CurriculumPedagogicalLessonId"::text, i."GenerationFamily",
+                   pi."Id"::text, i."CorrectAnswer"
+            FROM "PracticeAttempts" a
+            JOIN "PracticeAttemptItems" pi ON pi."PracticeAttemptId"=a."Id"
+            JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
+            WHERE a."Id"='""" + match_attempt.group(1) + """'
+            ORDER BY pi."Order";""").splitlines()
+        expected_count = 2 if key == "commoncore-primary" else 1
+        assert len(item_rows) == expected_count, (key, "missing generated exact items", item_rows)
+        generated_items = [row.split("|", 3) for row in item_rows]
+        assert all(row[0] == chosen_lesson_id for row in generated_items), (
+            key, "practice lesson identity mismatch")
+        assert all(row[1] in expected_families and row[3].strip()
+                   for row in generated_items), (
+            key, "unexpected family or missing exact answer", generated_items)
+        if key == "commoncore-primary":
+            assert {row[1] for row in generated_items} == set(expected_families), (
+                "G1 counting and dot-cube activities both must be assessed", generated_items)
+
+        # Exercise authenticated student grading for BOTH lesson activity goals,
+        # not a random successful item from some other American lesson.
+        csrf = re.search(
+            r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+            generated_body)
+        assert csrf, (key, "missing personal test CSRF token")
+        answer_fields = [("__RequestVerificationToken", csrf.group(1))]
+        for index, (_, family, item_id, expected_answer) in enumerate(generated_items):
+            html_id = re.search(
+                r'name="attemptItemIds\[' + str(index) +
+                r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                generated_body)
+            assert html_id and html_id.group(1) == item_id, (
+                key, "personal test item identity mismatch", family, index)
+            answer_fields.extend([
+                ("attemptItemIds[" + str(index) + "]", item_id),
+                ("answers[" + str(index) + "]", expected_answer),
+            ])
+        with student.open(urllib.request.Request(
+            BASE + "/student/practice/attempt/" + match_attempt.group(1)
+            + "/personal-test-submit",
+            data=urllib.parse.urlencode(answer_fields).encode(), method="POST",
+        ), timeout=60) as submitted_practice:
+            assert submitted_practice.status == 200, (key, "Practice submission HTTP failure")
+        evidence = sql("""
+            SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                   p."Score"::text, COUNT(r."Id")::text
+            FROM "PracticeAttempts" p
+            JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+            LEFT JOIN "PracticeResponses" r
+                ON r."PracticeAttemptItemId"=ai."Id" AND r."IsCorrect"=true
+            WHERE p."Id"='""" + match_attempt.group(1) + """'
+            GROUP BY p."Id", p."SubmittedAtUtc", p."Score";""")
+        complete, score, correct_responses = evidence.split("|")
+        assert complete == "1" and float(score) == float(expected_count) and int(correct_responses) == expected_count, (
+            key, "exact Practice answers not correctly scored/persisted", evidence)
+        print("DISPOSABLE_US_CCSS_EXACT_LESSON_ANSWER_PASS", key,
+              ",".join(row[1] for row in generated_items), flush=True)
+
+        # T001 isolated 10-lesson candidate: one actual authenticated
+        # StudentPortal GET, generation, correct-answer marking and persisted
+        # attempt for EACH remaining lesson 02-10. CI fixtures only.
+        # The already-proven L01 pilot is assessed above.
+        if key == "commoncore-primary":
+            t001 = {
+                "02": ["usccss.t001.g1.write_dot_expression",
+                       "usccss.t001.g1.dot_pair_sum",
+                       "usccss.t001.g1.choose_dot_expression"],
+                "03": ["usccss.t001.g1.add_one_or_two"],
+                "04": ["usccss.t001.g1.subtract_one_or_two"],
+                "05": ["usccss.t001.g1.mixed_add_subtract"],
+                "06": ["usccss.t001.g1.make_ten_missing_part",
+                       "usccss.t001.g1.mixed_add_subtract"],
+                "07": ["usccss.t001.g1.construct_tool_sort",
+                       "usccss.t001.g1.sort_math_tools",
+                       "usccss.t001.g1.choose_tool_sort"],
+                "08": ["usccss.t001.g1.construct_shape_graph",
+                       "usccss.t001.g1.sort_shape_cards",
+                       "usccss.t001.g1.choose_shape_chart"],
+                "09": ["usccss.t001.g1.collect_survey_graph",
+                       "usccss.t001.g1.class_survey_categories",
+                       "usccss.t001.g1.choose_survey_table"],
+                "10": ["usccss.t001.g1.make_ten_missing_part",
+                       "usccss.t001.g1.mixed_add_subtract"],
+            }
+            offered_by_code = {
+                code: lesson_id
+                for lesson_id, code in (
+                    row.split("|", 1) for row in offered if "|" in row)
+            }
+            for suffix, expected in t001.items():
+                code = "PED:US-CCSS-MATH:G1:U01:L" + suffix
+                assert code in offered_by_code, (
+                    "T001 lesson not offered to the actual Grade 1 pupil", code)
+                lesson_id = offered_by_code[code]
+                lesson_html = html.unescape(
+                    get_page(student, "/student/learning/lesson/" + lesson_id))
+                assert "rich-lesson-section" in lesson_html, (
+                    "T001 rendered lesson lacks Rich V2", code)
+                if suffix == "05":
+                    assert "4 + 2 = 6" in lesson_html and "6 - 2 = 4" in lesson_html, (
+                        "T001 L05 cannot teach both operations", code)
+                if suffix == "06":
+                    assert "7 + 3 = 10" in lesson_html and "10 - 7 = 3" in lesson_html, (
+                        "T001 L06 missing make-ten instruction", code)
+                if suffix in ("07", "08", "09"):
+                    assert "rich-lesson-visual--placevaluechart" in lesson_html, (
+                        "T001 category picture not rendered", code)
+                form = get_page(student, "/student/practice")
+                token = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    form)
+                assert token, ("T001 practice form missing CSRF", code)
+                fields = {
+                    "curriculumAdoptionId": adoption.group(1),
+                    "scope": "Lesson",
+                    "lessonId": lesson_id,
+                    "difficulty": "AtClassLevel",
+                    "questionCount": str(len(expected)),
+                    "__RequestVerificationToken": token.group(1),
+                }
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(fields).encode(), method="POST",
+                ), timeout=60) as response:
+                    assert response.status == 200, (code, "generation HTTP failure")
+                    attempt_url = urllib.parse.urlparse(response.url).path.lower()
+                    found = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})",
+                        attempt_url)
+                    assert found, (code, "did not create Practice attempt", attempt_url)
+                    attempt_id = found.group(1)
+                    attempt_body = response.read().decode("utf-8")
+                recorded = sql("""
+                    SELECT a."CurriculumPedagogicalLessonId"::text,
+                           i."GenerationFamily",pi."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" a
+                    JOIN "PracticeAttemptItems" pi
+                      ON pi."PracticeAttemptId"=a."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=pi."AssessmentItemId"
+                    WHERE a."Id"='""" + attempt_id + """'
+                    ORDER BY pi."Order";""").splitlines()
+                items = [line.split("|", 3) for line in recorded]
+                assert len(items) == len(expected), (
+                    code, "missing persisted exact generated items", items)
+                assert all(row[0] == lesson_id and row[1] in expected
+                           for row in items), (
+                    code, "wrong lesson or out-of-scope Practice family", items)
+                assert {row[1] for row in items} == set(expected), (
+                    code, "incomplete source goal question families", items)
+                csrf = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    attempt_body)
+                assert csrf, (code, "no attempt CSRF token")
+                response_fields = [
+                    ("__RequestVerificationToken", csrf.group(1))]
+                for index, (_, family, item_id, answer) in enumerate(items):
+                    posted_id = re.search(
+                        r'name="attemptItemIds\[' + str(index) +
+                        r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        attempt_body)
+                    assert posted_id and posted_id.group(1) == item_id, (
+                        code, family, "item mismatch")
+                    if family == "usccss.t001.g1.collect_survey_graph":
+                        # Personal Test uses the actual student response
+                        # protocol rather than the internal generator sentinel.
+                        # Construct a *synthetic* anonymous survey matching
+                        # this item's server-owned minimum participant count.
+                        minimum_text = sql("""
+                            SELECT "GenerationParametersJson"::jsonb
+                              ->'parameters'->>'minimumVotes'
+                            FROM "PracticeAttemptItems" pi
+                            JOIN "AssessmentItems" i
+                              ON i."Id"=pi."AssessmentItemId"
+                            WHERE pi."Id"='""" + item_id + """';""")
+                        minimum = int(minimum_text)
+                        assert 5 <= minimum <= 8, (
+                            code, "L09 invalid source-owned survey quorum", minimum)
+                        votes = [n % 3 for n in range(minimum)]
+                        counts = [votes.count(i) for i in range(3)]
+                        answer = ("v:" + "".join(str(n) for n in votes)
+                                  + "|g:" + ",".join(str(n) for n in counts))
+                    response_fields.extend([
+                        ("attemptItemIds[" + str(index) + "]", item_id),
+                        ("answers[" + str(index) + "]", answer),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/attempt/" + attempt_id
+                    + "/personal-test-submit",
+                    data=urllib.parse.urlencode(response_fields).encode(),
+                    method="POST",
+                ), timeout=60) as grade_result:
+                    assert grade_result.status == 200, (
+                        code, "student answer submission failed")
+                saved = sql("""
+                    SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                           p."Score"::text,COUNT(r."Id")::text
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai
+                      ON ai."PracticeAttemptId"=p."Id"
+                    LEFT JOIN "PracticeResponses" r
+                      ON r."PracticeAttemptItemId"=ai."Id"
+                     AND r."IsCorrect"=true
+                    WHERE p."Id"='""" + attempt_id + """'
+                    GROUP BY p."Id",p."SubmittedAtUtc",p."Score";""")
+                completed, score, correct = saved.split("|")
+                assert completed == "1" and float(score) == len(items) \
+                       and int(correct) == len(items), (
+                    code, "student correct-answer grading/persistence failed",
+                    saved)
+                print("DISPOSABLE_T001_AUTHENTICATED_L6_PRACTICE_PASS",
+                      code,attempt_id,",".join(expected),flush=True)
+
+            # V1 G1-004 L16/L17: exercise learner-authored expression/equation
+            # submissions through REAL disposable HTTPS + persisted Practice rows.
+            for lesson_suffix, authored_family in (
+                ("01", "usccss.g1.u02.story.write_expression"),
+                ("02", "usccss.g1.u02.story.write_equation"),
+                ("03", "usccss.g1.u02.story.write_change_unknown_equation"),
+                ("04", "usccss.g1.u02.story.write_result_or_change_equation"),
+                ("06", "usccss.g1.u02.pets.write_two_equations"),
+                ("07", "usccss.g1.u02.shake_spill.enumerate_partitions"),
+                ("08", "usccss.g1.u02.shake_cover.write_missing_addend"),
+                ("09", "usccss.g1.u02.story.compare_unknowns_equations"),
+                ("10", "usccss.g1.u02.center.capture_squares.select_legal_edge"),
+                # V1 G1-006: five original first-edition 2021 source lessons.
+                ("11", "usccss.g1.u02.compare.equal_cubes_write_equation"),
+                ("12", "usccss.g1.u02.compare.school_supplies_difference"),
+                ("13", "usccss.g1.u02.compare.art_supply_data_difference"),
+                ("14", "usccss.g1.u02.compare.write_related_equations"),
+                ("15", "usccss.g1.u02.compare.mixed_story_equation"),
+                # V1 G1-007: exactly the next five original 2021 lessons.
+                # L16 reuses proven Capture Squares generator, no duplicate.
+                ("16", "usccss.g1.u02.center.capture_squares.select_legal_edge"),
+                ("17", "usccss.g1.u02.story.compare_structure_and_equation"),
+                ("18", "usccss.g1.u02.story.match_equation_with_unknown_box"),
+                ("19", "usccss.g1.u02.story.two_matching_equations"),
+                ("20", "usccss.g1.u02.story.compose_scaffold_from_equation"),
+                # V1 G1-008: original 2021 lessons 36-40 across units 2 and 3.
+                ("21", "usccss.g1.u02.l21.number_puzzles.distinct_cards"),
+                ("22", "usccss.g1.u02.l22.survey.three_equations"),
+                ("03:01", "usccss.g1.u03.l01.sums.fluency_selfcheck"),
+                ("03:02", "usccss.g1.u03.l02.count_on.start_steps_total"),
+                ("03:03", "usccss.g1.u03.l03.expressions.compare_both_sides"),
+                # G1-009: five original 2021 Grade 1 U03 lessons 4–8.
+                ("03:04", "usccss.g1.u03.l04.make_ten.complement"),
+                ("03:05", "usccss.g1.u03.l05.difference.related_addition"),
+                ("03:06", "usccss.g1.u03.l06.story.start_unknown"),
+                ("03:07", "usccss.g1.u03.l07.center.compare_cards"),
+                ("03:08", "usccss.g1.u03.l08.ten_unit.compose"),
+                # V1 G1-010: five original IM2021 unit 3 lessons 9–13.
+                ("03:09", "usccss.g1.u03.l09.ten.add_frame"),
+                ("03:10", "usccss.g1.u03.l10.teen.story_unknown"),
+                ("03:11", "usccss.g1.u03.l11.teen.add_story"),
+                ("03:12", "usccss.g1.u03.l12.teen.take_from"),
+                ("03:13", "usccss.g1.u03.l13.teen.result_unknown"),
+            ):
+                code = ("PED:US-CCSS-MATH:G1:U03:L" + lesson_suffix.split(":", 1)[1]
+                        if lesson_suffix.startswith("03:") else
+                        "PED:US-CCSS-MATH:G1:U02:L" + lesson_suffix)
+                assert code in offered_by_code, ("V1 lesson not available to student", code)
+                lesson_id = offered_by_code[code]
+                lesson_html = get_page(student, "/student/learning/lesson/" + lesson_id)
+                assert "rich-lesson-section" in lesson_html, (code, "learner lesson missing")
+                if lesson_suffix in ("11", "12", "13", "14", "15",
+                                    "16", "17", "18", "19", "20",
+                                    "21", "22", "03:01", "03:02", "03:03",
+                                    "03:04", "03:05", "03:06", "03:07", "03:08",
+                                    "03:09", "03:10", "03:11", "03:12", "03:13"):
+                    assert "Goal:" in lesson_html, (code, "publisher goal absent")
+                    # Rich V2 deliberately transforms source Step N prose into
+                    # numbered <li> nodes in rendered worked-example cards.
+                    # Assert the actual learner-facing worked method structure,
+                    # not a raw storage marker that the template never prints.
+                    assert "rich-solution-card" in lesson_html and re.search(
+                        r'<ol[^>]*>\s*<li[^>]*>[^<]+</li>', lesson_html, re.I
+                    ), (code, "learner-facing worked methods absent")
+                    assert "The source task combines" not in lesson_html, (
+                        code, "historical generic example leaked")
+                if lesson_suffix == "14":
+                    assert "Compare with Addition and Subtraction" in html.unescape(lesson_html), (
+                        code, "2021 original title not projected")
+                if lesson_suffix == "19":
+                    assert "Story Problems and Equations" in html.unescape(lesson_html), (
+                        code, "2021 original L19 title not projected")
+                form = get_page(student, "/student/practice")
+                token = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    form)
+                assert token, (code, "CSRF missing")
+                payload = {
+                    "curriculumAdoptionId": adoption.group(1),
+                    "scope": "Lesson", "lessonId": lesson_id,
+                    "difficulty": "AtClassLevel", "questionCount": "5",
+                    "__RequestVerificationToken": token.group(1),
+                }
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(payload).encode(), method="POST"
+                ), timeout=60) as response:
+                    attempt_path = urllib.parse.urlparse(response.url).path.lower()
+                    match = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})", attempt_path)
+                    assert match and response.status == 200, (
+                        code, "cannot start lesson practice", attempt_path)
+                    attempt_id = match.group(1)
+                    attempt_html = response.read().decode("utf-8")
+                rows = sql("""
+                    SELECT p."CurriculumPedagogicalLessonId"::text,
+                           i."GenerationFamily",ai."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=ai."AssessmentItemId"
+                    WHERE p."Id"='""" + attempt_id + """'
+                    ORDER BY ai."Order";""").splitlines()
+                items = [row.split("|", 3) for row in rows]
+                assert len(items) == 5 and all(row[0] == lesson_id for row in items), (
+                    code, "wrong student lesson or incomplete items", items)
+                if lesson_suffix in ("10", "16"):
+                    assert any(row[1] ==
+                        "usccss.g1.u02.center.mental_subtraction_within10"
+                        for row in items), (
+                            code, "source mental subtraction warm-up absent", items)
+                authored_indexes = [
+                    index for index, row in enumerate(items) if row[1] == authored_family
+                ]
+                if lesson_suffix in ("21","22","03:01","03:02","03:03",
+                                     "03:04","03:05","03:06","03:07","03:08",
+                                     "03:09","03:10","03:11","03:12","03:13"):
+                    # Both source-specific activity skills must appear, not just
+                    # some correct generic addition items from the same outcome.
+                    pairs={
+                        "21": "usccss.g1.u02.l21.related_missing_values",
+                        "22": "usccss.g1.u02.l22.survey.compare_question",
+                        "03:01": "usccss.g1.u03.l01.sums.favorite_and_reason",
+                        "03:02": "usccss.g1.u03.l02.commutativity.two_equations",
+                        "03:03": "usccss.g1.u03.l03.expressions.sort_equal_sums",
+                        "03:04": "usccss.g1.u03.l04.make_ten.systematic_pattern",
+                        "03:05": "usccss.g1.u03.l05.difference.number_string",
+                        "03:06": "usccss.g1.u03.l06.story.other_unknown_positions",
+                        "03:07": "usccss.g1.u03.l07.center.find_pair_to_ten",
+                        "03:08": "usccss.g1.u03.l08.ten_unit.four_teen_numbers",
+                        "03:09": "usccss.g1.u03.l09.ten.missing_equation",
+                        "03:10": "usccss.g1.u03.l10.teen.related_equations",
+                        "03:11": "usccss.g1.u03.l11.teen.add_missing",
+                        "03:12": "usccss.g1.u03.l12.teen.equations_missing",
+                        "03:13": "usccss.g1.u03.l13.teen.change_unknown",
+                    }
+                    assert all(row[1] in (authored_family,pairs[lesson_suffix])
+                               for row in items), (code,"unrelated fallback",items)
+                    assert authored_indexes and any(row[1]==pairs[lesson_suffix]
+                               for row in items), (code,"missing source activity",items)
+                else:
+                    assert len(authored_indexes) >= 2, (
+                        code, "authored skills not present", items)
+                assert re.search(r"\bwrite\b", html.unescape(attempt_html), re.I), (
+                    code, "student did not receive authored instructions")
+                wrong_index = authored_indexes[-1]
+                csrf = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    attempt_html)
+                assert csrf, (code, "attempt CSRF missing")
+                post = [("__RequestVerificationToken", csrf.group(1))]
+                for index, (_, family, item_id, answer) in enumerate(items):
+                    posted_id = re.search(
+                        r'name="attemptItemIds\[' + str(index) +
+                        r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        attempt_html)
+                    assert posted_id and posted_id.group(1) == item_id, (
+                        code, "HTML and persisted item do not match", family)
+                    post.extend([
+                        ("attemptItemIds[" + str(index) + "]", item_id),
+                        ("answers[" + str(index) + "]",
+                         "999" if index == wrong_index else answer),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/attempt/" + attempt_id
+                    + "/personal-test-submit",
+                    data=urllib.parse.urlencode(post).encode(), method="POST"
+                ), timeout=60) as response:
+                    assert response.status == 200, (code, "submit failed")
+                results = sql("""
+                    SELECT ai."Order"::text,CASE WHEN r."IsCorrect" THEN '1' ELSE '0' END,
+                           COALESCE(r."Answer",'')
+                    FROM "PracticeAttemptItems" ai
+                    JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
+                    WHERE ai."PracticeAttemptId"='""" + attempt_id + """'
+                    ORDER BY ai."Order";""").splitlines()
+                assert len(results) == 5, (code, "responses not persisted", results)
+                for index, line in enumerate(results):
+                    order, correct, saved_answer = line.split("|", 2)
+                    expected_answer = "999" if index == wrong_index else items[index][3]
+                    assert order == str(index+1) and saved_answer == expected_answer and (
+                        correct == ("0" if index == wrong_index else "1")
+                    ), (code, "incorrect grading or persisted answer", line)
+                print("V1_G1_010_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("03:09","03:10","03:11","03:12","03:13") else
+                      "V1_G1_009_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("03:04", "03:05", "03:06", "03:07", "03:08") else
+                      "V1_G1_008_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("21", "22", "03:01", "03:02", "03:03") else
+                      "V1_G1_007_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("16", "17", "18", "19", "20") else
+                      "V1_G1_006_AUTHORED_LEARNER_HTTPS_PERSISTED" if lesson_suffix in
+                      ("11", "12", "13", "14", "15") else
+                      "V1_G1_004_AUTHORED_LEARNER_HTTPS_PERSISTED",
+                      code, "4 correct / 1 wrong", flush=True)
+
+
+            # V1 G1-004 L20: real authenticated first-party picture and grading.
+            picture_code = "PED:US-CCSS-MATH:G1:U02:L05"
+            assert picture_code in offered_by_code, (
+                "Source-bound picture-story lesson not offered", picture_code)
+            picture_id = offered_by_code[picture_code]
+            picture_form = get_page(student, "/student/practice")
+            token = re.search(
+                r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                picture_form)
+            assert token, ("Picture-story Practice missing CSRF", picture_code)
+            payload = {
+                "curriculumAdoptionId": adoption.group(1),
+                "scope": "Lesson", "lessonId": picture_id,
+                "difficulty": "AtClassLevel", "questionCount": "1",
+                "__RequestVerificationToken": token.group(1),
+            }
+            with student.open(urllib.request.Request(
+                BASE + "/student/practice/generate",
+                data=urllib.parse.urlencode(payload).encode(),method="POST"),
+                timeout=60) as response:
+                attempt_path=urllib.parse.urlparse(response.url).path.lower()
+                found=re.fullmatch(
+                    r"/student/practice/attempt/([0-9a-f-]{36})",attempt_path)
+                assert found and response.status==200, (
+                    picture_code,"cannot begin picture task",attempt_path)
+                picture_attempt_id=found.group(1)
+                picture_html=response.read().decode("utf-8")
+            assert "practice-math-visual" in picture_html and (
+                "JOINING" in picture_html or "LEAVING" in picture_html), (
+                    picture_code,"first-party count picture missing")
+            rows=sql("""
+                SELECT p."CurriculumPedagogicalLessonId"::text,
+                       i."GenerationFamily",ai."Id"::text,i."CorrectAnswer"
+                FROM "PracticeAttempts" p
+                JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                JOIN "AssessmentItems" i ON i."Id"=ai."AssessmentItemId"
+                WHERE p."Id"='""" + picture_attempt_id + """';""").splitlines()
+            assert len(rows)==1,(picture_code,"wrong picture item count",rows)
+            lesson_id,family,item_id,answer=rows[0].split("|",3)
+            assert lesson_id==picture_id and family==(
+                "usccss.g1.u02.center.picture_story_equation"),(
+                picture_code,"wrong story family",family)
+            csrf = re.search(
+                r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                picture_html)
+            assert csrf, (picture_code,"attempt CSRF missing")
+            post={
+                "__RequestVerificationToken":csrf.group(1),
+                "attemptItemIds[0]":item_id,
+                "answers[0]":answer,
+            }
+            with student.open(urllib.request.Request(
+                BASE + "/student/practice/attempt/" + picture_attempt_id
+                + "/personal-test-submit",
+                data=urllib.parse.urlencode(post).encode(),method="POST"),
+                timeout=60) as response:
+                assert response.status==200,(picture_code,"submit failed")
+            persisted=sql("""
+                SELECT CASE WHEN p."SubmittedAtUtc" IS NOT NULL THEN 1 ELSE 0 END,
+                       p."Score"::text,COALESCE(r."Answer",''),
+                       CASE WHEN r."IsCorrect" THEN 1 ELSE 0 END
+                FROM "PracticeAttempts" p
+                JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
+                WHERE p."Id"='""" + picture_attempt_id + """';""")
+            stored=persisted.split("|")
+            assert len(stored)==4 and stored[0]=="1" and (
+                float(stored[1])==1 and stored[2]==answer and stored[3]=="1"),(
+                    picture_code,"picture task grading/persistence failed",stored)
+            print("V1_G1_004_PICTURE_STORY_HTTPS_PERSISTED",
+                  picture_code,flush=True)
+
+
+            # L20: a pupil-authored story and full equation are materially
+            # different from a preselected 1/2 equation. Check the real HTML,
+            # two distinct server-generated families and two separate DB writes.
+            for wrong_story in (False, True):
+                form = get_page(student, "/student/practice")
+                token = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    form)
+                assert token, ("L20 story practice missing CSRF", wrong_story)
+                payload = {
+                    "curriculumAdoptionId": adoption.group(1),
+                    "scope": "Lesson", "lessonId": picture_id,
+                    "difficulty": "AtClassLevel", "questionCount": "2",
+                    "__RequestVerificationToken": token.group(1),
+                }
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/generate",
+                    data=urllib.parse.urlencode(payload).encode(),method="POST"),
+                    timeout=60) as response:
+                    path = urllib.parse.urlparse(response.url).path.lower()
+                    found = re.fullmatch(
+                        r"/student/practice/attempt/([0-9a-f-]{36})", path)
+                    assert found and response.status==200, (
+                        picture_code, "authoring practice start failed", path)
+                    authored_attempt=found.group(1)
+                    authored_html=response.read().decode("utf-8")
+                assert "practice-math-visual" in authored_html and (
+                    "Tell a story" in html.unescape(authored_html)), (
+                    picture_code,"source picture/story not visible to learner")
+                item_rows=sql("""
+                    SELECT i."GenerationFamily",ai."Id"::text,i."CorrectAnswer"
+                    FROM "PracticeAttempts" p
+                    JOIN "PracticeAttemptItems" ai ON ai."PracticeAttemptId"=p."Id"
+                    JOIN "AssessmentItems" i ON i."Id"=ai."AssessmentItemId"
+                    WHERE p."Id"='""" + authored_attempt + """'
+                    ORDER BY ai."Order";""").splitlines()
+                items = [line.split("|",2) for line in item_rows]
+                assert len(items)==2 and {x[0] for x in items}=={
+                    "usccss.g1.u02.center.picture_story_equation",
+                    "usccss.g1.u02.center.author_math_story"
+                }, (picture_code,"missing authored story family",items)
+                csrf = re.search(
+                    r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',
+                    authored_html)
+                assert csrf, (picture_code,"authored story CSRF absent")
+                post=[("__RequestVerificationToken",csrf.group(1))]
+                expected_saved=[]
+                for index,(family,item_id,answer) in enumerate(items):
+                    matched=re.search(
+                        r'name="attemptItemIds\['+str(index)+r'\]"[^>]*value="([0-9a-fA-F-]{36})"',
+                        authored_html)
+                    assert matched and matched.group(1)==item_id, (
+                        picture_code, "HTML item identity mismatch",family)
+                    if family=="usccss.g1.u02.center.author_math_story" and wrong_story:
+                        answer="42"
+                    expected_saved.append((item_id,answer))
+                    post.extend([
+                        ("attemptItemIds["+str(index)+"]",item_id),
+                        ("answers["+str(index)+"]",answer),
+                    ])
+                with student.open(urllib.request.Request(
+                    BASE + "/student/practice/attempt/" + authored_attempt
+                    + "/personal-test-submit",
+                    data=urllib.parse.urlencode(post).encode(),method="POST"),
+                    timeout=60) as response:
+                    assert response.status==200, (picture_code,"story submit failed")
+                persisted=sql("""
+                    SELECT ai."Id"::text,r."Answer",
+                           CASE WHEN r."IsCorrect" THEN 1 ELSE 0 END
+                    FROM "PracticeAttemptItems" ai
+                    JOIN "PracticeResponses" r ON r."PracticeAttemptItemId"=ai."Id"
+                    WHERE ai."PracticeAttemptId"='""" + authored_attempt + """'
+                    ORDER BY ai."Order";""").splitlines()
+                assert len(persisted)==2, (picture_code,"story rows missing",persisted)
+                for index,row in enumerate(persisted):
+                    item_id,answer,is_correct=row.split("|",2)
+                    assert (item_id,answer)==expected_saved[index], (
+                        picture_code,"lost submitted story",row)
+                    should_be_correct=not (wrong_story and items[index][0]==(
+                        "usccss.g1.u02.center.author_math_story"))
+                    assert is_correct==("1" if should_be_correct else "0"), (
+                        picture_code,"story misgraded",row)
+                print("V1_G1_004_AUTHORED_STORY_HTTPS_PERSISTED",
+                    picture_code, "negative" if wrong_story else "correct",
+                    flush=True)
+
+
+    practice_attempts[key] = match_attempt.group(1)
+    students[key] = student
+    teachers[key] = teacher
+    print("DISPOSABLE_STUDENT_PRIVATE_PRACTICE_PASS", key)
+    print("DISPOSABLE_ACADEMIC_ROLE_WORKFLOWS_PASS", key)
+
+
+for source, _ in SCHOOLS:
+    target = next(key for key, _ in SCHOOLS if key != source)
+    query = ("""SELECT a."Id" FROM "Assessments" a JOIN "Schools" s
+        ON s."Id"=a."SchoolId" WHERE s."SchoolCode"='"""
+        + SCHOOL_CODES[target] + """' ORDER BY a."Id" LIMIT 1;""")
+    foreign_id = sql(query)
+    assert re.fullmatch(r"[0-9a-fA-F-]{36}", foreign_id), (target, foreign_id)
+    deny(teachers[source], "/school/assessments/" + foreign_id)
+    deny(students[source], "/student/assessments/" + foreign_id)
+    deny(students[source], "/student/practice/attempt/" + practice_attempts[target])
+    print("DISPOSABLE_CROSS_TENANT_ASSESSMENT_DENIAL_PASS", source, target)
+    print("DISPOSABLE_CROSS_TENANT_STUDENT_DENIAL_PASS", source, target)
+
+# Optional B001 breadth check: real authenticated GET for all 146 Grade 1
+# canonical pages using the existing disposable, school-scoped student account.
+# This DOES NOT grade 146 Practice attempts, certify publisher fidelity, or
+# permit a cross-grade student to access lessons outside the assigned school.
+if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_G1_ALL_READS") == "1":
+    grade_rows = sql("""
+        SELECT "Code", "Id"::text, "Title"
+        FROM "CurriculumPedagogicalLessons"
+        WHERE "NativeLevel"='Grade 1'
+          AND "Code" LIKE 'PED:US-CCSS-MATH:G1:%'
+        ORDER BY "SortOrder";""").splitlines()
+    assert len(grade_rows) == 146, ("unexpected G1 catalogue size", len(grade_rows))
+    seen_codes = set()
+    grade1_student = students["commoncore-primary"]
+    for index, record in enumerate(grade_rows, 1):
+        code, lesson_id, lesson_title = record.split("|", 2)
+        assert code.startswith("PED:US-CCSS-MATH:G1:"), ("wrong programme", code)
+        assert code not in seen_codes, ("duplicated lesson", code)
+        seen_codes.add(code)
+        assert re.fullmatch(r"[a-f0-9-]{36}", lesson_id), ("bad canonical GUID", code)
+        body = html.unescape(
+            get_page(grade1_student, "/student/learning/lesson/" + lesson_id))
+        assert "rich-lesson-section" in body, (code, "no rich teaching in authenticated HTML")
+        rendered_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
+        expected_title = re.sub(r"\s+", " ", html.unescape(lesson_title)).casefold()
+        assert expected_title in rendered_text, (
+            code, "canonical title missing from student HTML", expected_title)
+        print("B001_DISPOSABLE_G1_AUTHENTICATED_PAGE_PASS", index, code, flush=True)
+    assert len(seen_codes) == 146
+    print("B001_DISPOSABLE_G1_146_AUTHENTICATED_READS_PASS",len(seen_codes),flush=True)
+
+# Whole-B001 authenticated HTML breadth on real HTTPS and disposable school DB.
+# A single release scope: exactly the 500 ordered canonical IDs, not batches
+# of five lessons. This does not approve teaching/PDF/Practice/grades.
+if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "1":
+    catalogue_path = Path("docs/curriculum/batches/US-CCSS-B001-CATALOGUE.json")
+    catalogue = json.loads(catalogue_path.read_text(encoding="utf-8"))
+    source_lessons = catalogue["lessons"]
+    assert len(source_lessons) == 500
+    assert len({x["lessonCode"] for x in source_lessons}) == 500
+    grade_counts = [sum(
+        re.search(r":G([1-4]):", row["lessonCode"]).group(1) == str(grade)
+        for row in source_lessons
+    ) for grade in (1, 2, 3, 4)]
+    assert grade_counts == [146, 146, 143, 65], grade_counts
+    all_us_rows = sql("""
+        SELECT "Code", "Id"::text, "Title", "NativeLevel"
+        FROM "CurriculumPedagogicalLessons"
+        WHERE "Code" LIKE 'PED:US-CCSS-MATH:G%';""").splitlines()
+    by_code = {}
+    for raw in all_us_rows:
+        code, lesson_id, title, level = raw.split("|", 3)
+        assert code not in by_code, ("duplicate disposable lesson", code)
+        by_code[code] = (lesson_id, title, level)
+    # Strictly source-pinned source-title replacements for three G1 catalogue
+    # aliases. A correction must NOT relax any other exact-title check.
+    title_corrections = {
+        "PED:US-CCSS-MATH:G1:U03:L24": (
+            "Relate Counting to Addition and Subtraction PLC Activity",
+            "Relate Counting to Addition and Subtraction",
+            "3fd5d2c854c79d76d2678582f6cf6d3285a8004ed7e608a62fe54d2777be9761",
+            3, 24),
+        "PED:US-CCSS-MATH:G1:U04:L04": (
+            "More Addition and Subtraction with Tens PLC Activity",
+            "More Addition and Subtraction with Tens",
+            "aea5b61803df4c4b9df6fd46f89e9413a5bb48d0ef33c3e8178327ec9e22b5c7",
+            4, 4),
+        "PED:US-CCSS-MATH:G1:U04:L08": (
+            "Different Representations of Tens and Ones PLC Activity",
+            "Different Representations of Tens and Ones",
+            "f3fa805d6421b2677b3a20200f257432271cbfee1e3b9c1ec6d34b8ba855d4da",
+            4, 8),
+    }
+    reviewed_starting_content = Path(
+        "src/Edulytics.Data/Seeding/"
+        "CommonCoreG1FullGradeStartingContentCorrections.cs"
+    ).read_text(encoding="utf-8")
+    # The Grade 1 fixture student must never be granted arbitrary cross-grade
+    # access. Keep that student intact; re-enrol only the SECOND synthetic
+    # primary-school student in a real existing class per grade (CI DB only).
+    primary_fixture_student = students["commoncore-primary"]
+    grade_student = primary_fixture_student
+    active_grade = 1
+    secondary_email = "commoncore-primary.student.secondary@edulytiks.com"
+    original_secondary_enrolments = sql("""
+        SELECT e."ClassGroupId"::text
+        FROM "StudentEnrollments" e
+        JOIN "StudentProfiles" p ON p."Id" = e."StudentProfileId"
+        JOIN "AspNetUsers" u ON u."Id" = p."UserId"
+        WHERE u."Email"='commoncore-primary.student.secondary@edulytiks.com';""").splitlines()
+    assert len(original_secondary_enrolments) == 1, (
+        "secondary fixture must have one original class enrollment")
+    from b001_practice_form_coverage import has_lesson_start_form, has_lesson_start_nonce, coverage_report
+    b001_practice_forms = []
+    b001_e2e_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_ATTEMPTS") == "1"
+    b001_negative_enabled = os.environ.get("EDULYTICS_B001_PROBE_500_MALFORMED_ANSWERS") == "1"
+    b001_e2e_rows = []
+    # Candidate family map is NOT academic approval: it detects an unrelated
+    # fallback family from real authenticated Grade 1 student attempts.
+    g1_map_path = Path(__file__).resolve().parents[2] / "artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-practice-candidate-map.json"
+    g1_scope = json.loads(g1_map_path.read_text(encoding="utf-8"))
+    g1_expected = {r["lessonCode"]: r for r in g1_scope["records"]}
+    assert len(g1_expected) == 96 and len(set(g1_expected)) == 96
+    assert g1_scope["digitalLessonCount"] == 95
+    g1_e2e_rows = []
+    if b001_e2e_enabled:
+        from b001_practice_attempt_probe import (
+            probe_lesson, summarize, extract_csrf, extract_adoption,
+            extract_idempotency_key)
+
+    for ordinal, lesson in enumerate(source_lessons, 1):
+        code = lesson["lessonCode"]
+        assert code in by_code, ("missing canonical DB lesson", ordinal, code)
+        lesson_id, title, level = by_code[code]
+        assert re.fullmatch(r"[a-f0-9-]{36}", lesson_id), ("invalid lesson ID", code)
+        grade_match = re.search(r":G([1-4]):", code)
+        assert grade_match and level == "Grade " + grade_match.group(1), (
+            "grade misrouting", code, level)
+        target_grade = int(grade_match.group(1))
+        if target_grade != active_grade:
+            assert target_grade in (2, 3, 4)
+            # CCSS logical level 1=K, 2=G1, 3=G2, 4=G3, 5=G4.
+            class_rows = sql("""
+                SELECT c."Id"::text FROM "ClassGroups" c
+                JOIN "Schools" s ON s."Id" = c."SchoolId"
+                WHERE s."SchoolCode"='REHEARSAL-US-PRIMARY'
+                  AND c."Code" LIKE 'L""" + str(target_grade + 1).zfill(2) + """-%';""").splitlines()
+            assert len(class_rows) == 1, ("missing genuine grade class", target_grade)
+            assignment = sql("""
+                WITH reassignment AS (
+                UPDATE "StudentEnrollments" e
+                SET "ClassGroupId"='""" + class_rows[0] + """'
+                FROM "StudentProfiles" p
+                JOIN "AspNetUsers" u ON u."Id" = p."UserId"
+                WHERE e."StudentProfileId"=p."Id" AND u."Email"='""" + secondary_email + """'
+                RETURNING e."Id"
+                ) SELECT count(*) FROM reassignment;""")
+            assert assignment == "1", ("must update one disposable enrollment", target_grade, assignment)
+            grade_student = connect("commoncore-primary", "Student", "secondary")
+            active_grade = target_grade
+            print("B001_DISPOSABLE_GRADE_SCOPED_STUDENT", target_grade, flush=True)
+        body = html.unescape(
+            get_page(grade_student, "/student/learning/lesson/" + lesson_id))
+        assert "rich-lesson-section" in body, (
+            code, "missing learner lesson content in authenticated HTML")
+        rendered = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).casefold()
+        effective_title = title
+        if code in title_corrections:
+            historical, original_heading, source_sha, source_unit, source_lesson = (
+                title_corrections[code])
+            assert title == historical, (
+                code, "unrecognized catalogue title: no alias bypass", title)
+            official_url = (
+                "https://im.kendallhunt.com/k5/teachers/grade-1/unit-"
+                + str(source_unit) + "/lesson-" + str(source_lesson)
+                + "/preparation.html")
+            exact_record = (
+                'new(@"' + code + '",@"' + official_url
+                + '",@"' + source_sha + '"')
+            at = reviewed_starting_content.find(exact_record)
+            assert at >= 0, (code, "source-pinned title correction missing")
+            boundary = reviewed_starting_content.find(
+                '\n        new(@"', at + len(exact_record))
+            reviewed_row = reviewed_starting_content[
+                at:boundary if boundary >= 0 else None]
+            assert '@"' + original_heading + '"' in reviewed_row, (
+                code, "unrecognized corrected publisher heading")
+            effective_title = original_heading
+        elif code in _G3_TITLE_ALIASES:
+            alias = _G3_TITLE_ALIASES[code]
+            assert title == alias["historicalCatalogueTitle"], (
+                code, "historical title identity changed")
+            assert lesson["sourceUrl"] == alias["sourceUrl"], (
+                code, "source-preparation identity changed")
+            candidates = json.loads((_G3_REPO_ROOT / alias["authoringCandidatePath"])
+                .read_text(encoding="utf-8"))
+            original = json.loads((_G3_REPO_ROOT /
+                "artifacts/curriculum-delivery/US-CCSS-MATH/G3/grade-manifest.json")
+                .read_text(encoding="utf-8"))
+            source_rows = [s for s in original["lessons"] if s["lessonCode"] == code]
+            assert len(source_rows) == 1
+            assert source_rows[0]["originalSemanticSha256"] == alias["originalSemanticSha256"]
+            assert source_rows[0]["sourceTeacherUrl"] == alias["sourceUrl"]
+            assert source_rows[0]["title"] == alias["historicalCatalogueTitle"]
+            authored = json.loads((_G3_REPO_ROOT / alias["richV2Path"])
+                .read_text(encoding="utf-8"))
+            assert len(authored["Lessons"]) == 1
+            assert authored["Lessons"][0]["LessonCode"] == code
+            assert authored["Lessons"][0]["Title"] == alias["firstPartyDisplayTitle"]
+            assert candidates["lessonCode"] == code
+            assert candidates["authoringState"] == "READY_FOR_STAGE_D"
+            assert candidates["readyForStageD"] is True
+            effective_title = alias["firstPartyDisplayTitle"]
+        expected = re.sub(
+            r"\s+", " ", html.unescape(effective_title)).casefold()
+        assert expected in rendered, (
+            code, "missing exact source-reviewed lesson title", expected)
+        # Stage D: lesson-specific original 2021 learner BODY evidence for
+        # 57–64 (Unit 3), 66–88 (Unit 4), 89–102 (Unit 5), and
+        # 103–146 except 127 (Units 6–8; 127 Match Mine source-specific
+        # learner text is unverified and must remain D_TESTS_PASSED).
+        # Candidate phrases come from source-verified A–C teaching repairs;
+        # they must appear in real authenticated Student lesson HTML, not just
+        # in a static repository file. Classroom drawings/artwork/partner
+        # participation and teacher academic signoff remain independent.
+        original_g1_source_bodies_stage_d = {
+            57: (
+                "8 snakes, 7 iguanas and 5 frogs",
+                "8 lions, 4 tigers and 3 cheetahs",
+                "8 goats, 7 sheep and 4 pigs",
+                "8 monkeys, 4 gorillas, and 7 orangutans",
+            ),
+            58: (
+                "display five numeral cards",
+                "number-card set is 0 through 10",
+                "no 11 card",
+            ),
+            59: (
+                "14-4=10 helps solve 14-5=9",
+                "elena has 16 crayons",
+                "subtractor cards 0–9",
+            ),
+            60: (
+                "diego's and andre's different ten-frame methods",
+                "edulytics original cool-down",
+                "you have 14 counters. remove 8",
+            ),
+            61: (
+                "8 to 10 is 2",
+                "larger subtractor 15-12=3",
+                "section d checkpoint",
+            ),
+            62: (
+                "solve 16-7",
+                "12-7=5 pencils",
+                "17-8=9",
+            ),
+            63: (
+                "all four han situations",
+                "6+9=15 (missing start)",
+                "15-6=9 (missing removed amount)",
+            ),
+            64: (
+                "how close? subtract from 20, stage 2",
+                "zero is a valid card",
+                "20-6-4-9=1",
+            ),
+            65: (
+                "target answer less than 20",
+                "poster that includes the story and question",
+                "solve four peers",
+            ),
+            66: (
+                "original 2021 first collection: 40 objects",
+                "bag a has 20, b has 40, c has 50",
+            ),
+            67: (
+                "seven towers of ten",
+                "too-low, about-right and too-high estimate",
+            ),
+            68: (
+                "one ten",
+                "eight totals each way",
+            ),
+            69: (
+                "jada counts 30 cubes in bag a",
+                "tyler has 7 towers of ten in bag c",
+            ),
+            70: (
+                "check it off stage 2",
+                "90 is already marked",
+            ),
+            71: (
+                "noah discussion",
+                "40+8=48",
+            ),
+            72: (
+                "clare claims a shown model is 68 and diego claims 86",
+                "eight tens and six ones",
+            ),
+            73: (
+                "kiran describes 3 ones and 7 tens",
+                "cards j and s both represent",
+            ),
+            74: (
+                "at least four actual classmates' collections",
+                "create a collection",
+            ),
+            75: (
+                "clare writes 702",
+                "80+3=83",
+            ),
+            76: (
+                "56+40=96",
+                "37+20=57",
+            ),
+            77: (
+                "99-10-10-10=69",
+                "67+10+10+10=97",
+            ),
+            78: (
+                "grab and count (stage 2)",
+                "8+7+5=20",
+            ),
+            79: (
+                "noah incorrectly claims 39>41",
+                "seven tens exceeds six tens",
+            ),
+            80: (
+                "17<47 true",
+                "35+10=45",
+            ),
+            81: (
+                "49>45 and 45<49",
+                "56>26",
+            ),
+            82: (
+                "insert 49, 8, 25, 98 and 13",
+                "1, 5, 8, 10, 13, 25, 49, 50, 98, 99",
+            ),
+            83: (
+                "Original 2021 number talk: 32+10=42",
+                "cards that cannot fit cause a PASS",
+            ),
+            84: (
+                "FIVE existing ten-towers and FIFTEEN loose ones",
+                "36+1=37 and 35+2=37",
+            ),
+            85: (
+                "94 = 9 tens 4 ones",
+                "Bag C has 49 cubes with 29 ones",
+            ),
+            86: (
+                "5 tens and 32 ones (82)",
+                "7 tens and 2 ones (72)",
+            ),
+            87: (
+                "92=90+2 TRUE",
+                "partner guesses after each clue",
+            ),
+            88: (
+                "THREE two-handful estimation/counting experiments",
+                "LESS THAN 20, 20 TO 50, and MORE THAN 50",
+            ),
+            89: (
+                "Original student equations: 43+50=93",
+                "remove number cards 0 and 6 to 10",
+            ),
+            90: (
+                "Original student-facing task asks for 23+45",
+                "Original Elena/Andre task 63+25=88",
+            ),
+            91: (
+                "Original 2021 warm-up sums 13+21, 13+31, 23+31, 33+41",
+                "original 23+74=97",
+            ),
+            92: (
+                "Kiran has 14 marbles, Priya has 23",
+                "Original Number Puzzles Stage 3",
+            ),
+            93: (
+                "Original 2021 Choose a Way to Add uses 8+47",
+                "37+7=44 dollars",
+            ),
+            94: (
+                "34+6=40",
+                "9+1=10",
+            ),
+            95: (
+                "32+□ with a ONE-DIGIT",
+                "16+□ with a ONE-DIGIT",
+            ),
+            96: (
+                "Original Target Numbers Stage 2 STARTS AT 25",
+                "45+7=52",
+            ),
+            97: (
+                "Original 17+36=53",
+                "Activity 2 Grab and Add",
+            ),
+            98: (
+                "Original Priya 37+26",
+                "28+56",
+            ),
+            99: (
+                "37 plastic bottles and 25 paper wrappers",
+                "23+68=91",
+            ),
+            100: (
+                "Original 2021 pupils calculate 48+15 and 57+36",
+                "number cards 37,22,18,56,41",
+            ),
+            101: (
+                "count backward by ONES from 100 to 70",
+                "Five in a Row Stage 6",
+            ),
+            102: (
+                "FOUR-STUDENT Food Drive table",
+                "LEAST NUMBER OF BOXES",
+            ),
+            103: (
+                "3-cube and 8-cube towers",
+                "THREE NEW objects to order longest-to-shortest",
+            ),
+            104: (
+                "TWO classroom objects longer than an unsharpened pencil",
+                "desk side with one desk leg",
+            ),
+            105: (
+                "Mai and Clare walk different school routes",
+                "teacher desk fit through the DOOR",
+            ),
+            106: (
+                "pick SEVEN digit cards and choose FOUR",
+                "WITHOUT GOING OVER 100",
+            ),
+            107: (
+                "caterpillar teacher example is FOUR cubes long",
+                "grasshopper teacher example is FIVE cube units long",
+            ),
+            108: (
+                "critique Andre, Tyler and Clare workbook measurements",
+                "measure SIX different tape strips A–F",
+            ),
+            109: (
+                "Jeison's foot using THREE selected unit types",
+                "connecting cubes, small cubes, small paper clips and large paper clips",
+            ),
+            110: (
+                "choral count goes from 80 to 110",
+                "MORE THAN 100 same-size small cubes",
+            ),
+            111: (
+                "choral count runs from 90 through 120",
+                "BEAVER, DOG, GIANT ANTEATER, RACCOON, RED FOX and SNAKE",
+            ),
+            112: (
+                "ESTIMATE first, then measure",
+                "24+30=44 FALSE",
+            ),
+            113: (
+                "TRACE and MEASURE the TEACHER'S, their OWN and a PARTNER'S shoes",
+                "Clare's shoe 9 cubes plus Han's 7",
+            ),
+            114: (
+                "Han's bracelet is 14 cubes",
+                "Han is FOUR longer",
+            ),
+            115: (
+                "Elena bracelet-bead story",
+                "she takes out 9 beads and has 11 left",
+            ),
+            116: (
+                "SIX separate story contexts",
+                "CIRCLE TWO matching equations for EACH",
+            ),
+            117: (
+                "Clare gives 12 paper cranes away",
+                "STARTED with 19",
+            ),
+            118: (
+                "65+20=85,85+1=86,65+20+1=86,65+21=86",
+                "Counting Collections Stage 3",
+            ),
+            119: (
+                "Compare story problems about puppies and origami tulips",
+                "Lina makes 7 puppy models and 4 tulips",
+            ),
+            120: (
+                "sort SOLID three-dimensional shapes into their OWN categories",
+                "partner FEELS an object hidden in a bag",
+            ),
+            121: (
+                "Construct a larger three-dimensional solid",
+                "Join 2 identical cubes face to face",
+            ),
+            122: (
+                "flat-shape Card Sort",
+                "GROUP 1, GROUP 2 and GROUP 3",
+            ),
+            123: (
+                "EACH partner must DRAW the given flat shape on dot paper",
+                "take turns DESCRIBING the drawn shape",
+            ),
+            124: (
+                "DRAW THREE DIFFERENT TRIANGLES",
+                "DRAW THREE other closed or open figures",
+            ),
+            125: (
+                "DRAW FIVE rectangles and THREE shapes that are NOT rectangles",
+                "DRAW FIVE squares and THREE shapes that are NOT squares",
+            ),
+            126: (
+                "BUILD a new flat figure with pattern blocks",
+                "SAME resulting figure again with DIFFERENT pattern blocks",
+            ),
+            127: (
+                "Compose and describe flat and solid shapes",
+                "Join 3 equal cubes face to face",
+            ),
+            128: (
+                "Cut out BOTH a CIRCLE and a SQUARE",
+                "FOUR equal pieces",
+            ),
+            129: (
+                "ONE FOURTH/QUARTER shaded",
+                "NOT EQUAL PIECES",
+            ),
+            130: (
+                "Priya says she wants HALF of the roti",
+                "Han incorrectly claims a FOURTH is bigger",
+            ),
+            131: (
+                "Can You Draw It? Grade 1 Shapes STAGE 1",
+                "Capture Squares",
+            ),
+            132: (
+                "ONLY THE HOUR HAND",
+                "NINE scheduled",
+            ),
+            133: (
+                "SORT the clock cards into O'CLOCK",
+                "HALF PAST (color RED)",
+            ),
+            134: (
+                "START at 12, COUNT",
+                "CIRCLE where you stop",
+            ),
+            135: (
+                "create your OWN ideal Sunday schedule",
+                "teacher reviews each authored entry",
+            ),
+            136: (
+                "Which One? Grade 1 Shapes STAGE 2",
+                "Capture Squares and Target Numbers",
+            ),
+            137: (
+                "COLOR sums WITHIN TEN they ALREADY know",
+                "PERSONAL index card",
+            ),
+            138: (
+                "4+□=9,9-5=□",
+                "PERSONAL fact cards",
+            ),
+            139: (
+                "CIRCLE ONE addition expression and ONE subtraction expression",
+                "5+9,14-8,4+7,15-9,6+4+4,13-6",
+            ),
+            140: (
+                "FOUR distinct CHANGE-UNKNOWN stories",
+                "Clare saw 8 sea turtles",
+            ),
+            141: (
+                "FOUR different missing-part stories",
+                "7 first graders plus second graders total 18",
+            ),
+            142: (
+                "FOUR comparison stories",
+                "Lin has 7 ride tickets and Mai 12",
+            ),
+            143: (
+                "REPRESENT the number 103",
+                "How Many Cats? source image",
+            ),
+            144: (
+                "BETWEEN 20 AND 100",
+                "CLASS NUMBER BOOK",
+            ),
+            145: (
+                "ALL possible numbers are 34, 44, 54",
+                "MORE than 30, LESS than 60",
+            ),
+            146: (
+                "FOUR index cards",
+                "LAST clue an addition expression",
+            ),
+        }
+        source_body_fragments_verified = None
+        if ordinal in original_g1_source_bodies_stage_d:
+            source_unit, source_lesson = (
+                (3, ordinal - 37) if 57 <= ordinal <= 65 else
+                (4, ordinal - 65) if 66 <= ordinal <= 88 else
+                (5, ordinal - 88) if 89 <= ordinal <= 102 else
+                (6, ordinal - 102) if 103 <= ordinal <= 119 else
+                (7, ordinal - 119) if 120 <= ordinal <= 136 else
+                (8, ordinal - 136) if 137 <= ordinal <= 146 else
+                (None, None)
+            )
+            assert source_unit is not None and source_lesson is not None, (
+                ordinal, "unmapped original lesson code for Stage D")
+            expected_lesson_code = (
+                f"PED:US-CCSS-MATH:G1:U{source_unit:02}:L{source_lesson:02}")
+            assert target_grade == 1 and code == expected_lesson_code, (
+                ordinal, code, "misrouted ordered original source review")
+            source_fragments = original_g1_source_bodies_stage_d[ordinal]
+            # Keep the actual source words and their order, while ignoring
+            # typographic commas/hyphens in otherwise identical learner text.
+            # This is not a fuzzy keyword match and still fails closed if
+            # required source activity words are absent.
+            rendered_source_words = re.sub(r"[^\\w]+", " ", rendered).strip()
+            absent_fragments = [
+                phrase for phrase in source_fragments
+                if re.sub(r"[^\\w]+", " ", phrase.casefold()).strip()
+                not in rendered_source_words
+            ]
+            assert not absent_fragments, (
+                ordinal, code, "original source learning task missing from "
+                "actual authenticated learner body", absent_fragments)
+            source_body_fragments_verified = len(source_fragments)
+            print("G1_STAGE_D_AUTHENTICATED_SOURCE_BODY_PASS",
+                  ordinal, code, source_body_fragments_verified, flush=True)
+        if code == "PED:US-CCSS-MATH:G1:U03:L14":
+            # Original 2021 source inspected read-only on Our-CS: Number
+            # Puzzles Stage 2 is within 20, both operations and distinct
+            # digit cards; the warm-up includes true/false equalities.
+            # This asserts the ACTUAL authenticated learner-facing teaching,
+            # without claiming physical center participation or gameboard
+            # figure parity.
+            source_goal_terms = (
+                "number puzzles", "digit card", "addition",
+                "subtraction", "true", "false"
+            )
+            absent = [term for term in source_goal_terms if term not in rendered]
+            assert not absent, (
+                code, "source 2021 lesson 51 learner goal not rendered",
+                absent)
+            print("G1_L51_AUTHENTICATED_SOURCE_GOAL_TEXT_PASS", flush=True)
+        # Exact CI-response fingerprint, not stable pedagogical-content identity:
+        # unescaping the HTML is part of this pre-existing learner-page read.
+        g1_learner_response_sha = (hashlib.sha256(body.encode("utf-8")).hexdigest()
+                                   if code in g1_expected else None)
+
+        b001_practice_forms.append({
+            "ordinal": ordinal,
+            "lessonCode": code,
+            "hasLessonStartForm": has_lesson_start_form(body),
+            "hasUniqueLessonStartNonce": has_lesson_start_nonce(body),
+        })
+
+        if b001_e2e_enabled:
+            # Fresh actual form for every attempt. CSRF is reusable, while
+            # the explicit idempotency nonce must be unique per form render.
+            try:
+                practice_index = get_page(grade_student, "/student/practice")
+                csrf = extract_csrf(practice_index)
+                adoption = extract_adoption(practice_index)
+                nonce = extract_idempotency_key(practice_index)
+            except (urllib.error.HTTPError, AssertionError):
+                csrf = adoption = nonce = None
+            result = probe_lesson(grade_student, BASE, lesson_id,
+                                  adoption, csrf, nonce, sql)
+            if b001_negative_enabled:
+                # A separate real Practice attempt is needed because a graded
+                # one-question personal test is immutable after submission.
+                try:
+                    malformed_form = get_page(grade_student, "/student/practice")
+                    bad_csrf = extract_csrf(malformed_form)
+                    bad_adoption = extract_adoption(malformed_form)
+                    bad_nonce = extract_idempotency_key(malformed_form)
+                except (urllib.error.HTTPError, AssertionError):
+                    bad_csrf = bad_adoption = bad_nonce = None
+                negative = probe_lesson(grade_student, BASE, lesson_id,
+                                       bad_adoption, bad_csrf, bad_nonce, sql,
+                                       answer_mode="malformed")
+                result["negativeStatus"] = negative["status"]
+                result["negativeFamily"] = negative.get("family")
+                print("B001_DISPOSABLE_500_MALFORMED_ANSWER_PROBE",
+                      ordinal, code, negative["status"],
+                      negative.get("httpStatus",""), flush=True)
+            if b001_e2e_enabled and code in g1_expected and ordinal!=65:
+                # Third authenticated, unique student attempt: a different
+                # algebraically wrong yet well-formed submission. Correct and
+                # malformed trials alone DO NOT prove genuine wrong-answer
+                # grading for this exact original Grade 1 lesson.
+                try:
+                    wrong_form=get_page(grade_student,"/student/practice")
+                    wrong_csrf=extract_csrf(wrong_form)
+                    wrong_adoption=extract_adoption(wrong_form)
+                    wrong_nonce=extract_idempotency_key(wrong_form)
+                except (urllib.error.HTTPError,AssertionError):
+                    wrong_csrf=wrong_adoption=wrong_nonce=None
+                valid_wrong=probe_lesson(grade_student,BASE,lesson_id,
+                                         wrong_adoption,wrong_csrf,wrong_nonce,
+                                         sql,answer_mode="well_formed_wrong")
+                result["wellFormedWrongStatus"]=valid_wrong["status"]
+                result["wellFormedWrongFamily"]=valid_wrong.get("family")
+                print("G1_ORIGINAL_95_WELL_FORMED_WRONG_HTTPS_ATTEMPT",
+                      ordinal,code,valid_wrong["status"],flush=True)
+            result["ordinal"] = ordinal
+            result["lessonCode"] = code
+            b001_e2e_rows.append(result)
+            l51_board_verified=False
+            if ordinal==51:
+                # V1 Stage-D source-task fidelity for the already-authored
+                # original Stage 2 number-card board. The first normal
+                # attempt may have been a numeric arithmetic mode, so
+                # exercise a bounded number of additional disposable,
+                # server-generated modes until the authentic student page
+                # actually renders the TWO-card construction question.
+                l51_board_verified=result.get("numberPuzzleBoardRendered") is True
+                for board_trial in range(16):
+                    if l51_board_verified:
+                        break
+                    retry_form=get_page(grade_student,"/student/practice")
+                    board_attempt=probe_lesson(
+                        grade_student,BASE,lesson_id,
+                        extract_adoption(retry_form),extract_csrf(retry_form),
+                        extract_idempotency_key(retry_form),sql)
+                    assert board_attempt["status"]=="SELF_CONSISTENT_GRADE_PERSISTED", (
+                        code,"stage 2 board attempt failed",board_trial,board_attempt)
+                    assert board_attempt.get("family")==(
+                        "usccss.g1.u03.l14.center.add_subtract"), (
+                        code,"wrong puzzle source family",board_attempt)
+                    l51_board_verified=board_attempt.get("numberPuzzleBoardRendered") is True
+                assert l51_board_verified, (
+                    code,"authentic student card-puzzle SVG was never rendered")
+                print("G1_L51_AUTHENTICATED_TWO_CARD_SOURCE_BOARD_PASS",
+                      flush=True)
+            if code in g1_expected:
+                candidate=g1_expected[code]
+                assert candidate["ordinal"] == ordinal, (code, ordinal)
+                source_mode=candidate["assessmentMode"]
+                if source_mode=="SOURCE_AUTHORED_TASK":
+                    # Original optional U03 L28 writing task is NOT assessed
+                    # by this general-purpose auto-grader; check the learner
+                    # instruction exists and leave teacher observation unclaimed.
+                    assert "story" in rendered and "write" in rendered, (
+                        code, "learner-authored story teaching missing")
+                    g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
+                        "assessmentMode":source_mode,
+                        "learnerTeachingRendered":True,
+                        "unescapedAuthenticatedLearnerHtmlSha256":g1_learner_response_sha,
+                        "authenticStudentAuthorshipNotClaimed":True,
+                        "originalSourceBodyFragmentsVerified":source_body_fragments_verified})
+                else:
+                    assert source_mode in ("DIGITAL_PRACTICE",
+                                           "DIGITAL_AND_SOURCE_AUTHORED_TASK")
+                    assert result["status"]=="SELF_CONSISTENT_GRADE_PERSISTED", (
+                        code,"correct answer persistence failed",result)
+                    # The only source-pinned upgraded family (U06 L04) intentionally
+                    # routes NEW student attempts to the versioned How Close?
+                    # contract. Its legacy center family remains supported only
+                    # for older persisted attempts. Do not mistake that explicit
+                    # source-goal upgrade for an unrelated fallback.
+                    expected_family=candidate.get(
+                        "preferredSourceGoalFamily",candidate["candidateFamily"])
+                    if "preferredSourceGoalFamily" in candidate:
+                        assert expected_family in candidate["candidateFamilies"], (
+                            code,"unregistered preferred source-goal family",candidate)
+                    assert result.get("family")==expected_family, (
+                        code,"unrelated fallback Practice family",result.get("family"),
+                        expected_family)
+                    assert result.get("negativeStatus")==(
+                        "MALFORMED_ANSWER_REJECTED_AND_PERSISTED"), (
+                        code,"malformed answer accepted or not saved",result)
+                    assert result.get("wellFormedWrongStatus")==(
+                        "WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED"), (
+                        code,"mathematically wrong but well-formed answer accepted or not saved",
+                        result)
+                    assert result.get("wellFormedWrongFamily")==expected_family, (
+                        code,"well-formed wrong answer used different source-goal family",
+                        expected_family,result)
+                    if ordinal==102:
+                        assert "food drive" in rendered and "35" in rendered and (
+                            "65" in rendered or "sixty-five" in rendered), (
+                            code,"source Food Drive grouping/packing objective missing")
+                    if source_mode=="DIGITAL_AND_SOURCE_AUTHORED_TASK":
+                        if ordinal==146:
+                            assert "riddle" in rendered and "write" in rendered, (
+                                code,"learner riddle-authorship teaching missing")
+                        elif ordinal==74:
+                            # Source: student creates their own collection and
+                            # represents AT LEAST FOUR classmates' collections
+                            # in the real gallery. This validates the delivered
+                            # lesson teaching, not physical pupil participation.
+                            assert "collection" in rendered and (
+                                "show" in rendered or "represent" in rendered), (
+                                code,"original learner-chosen collection task missing")
+                            assert ("at least four" in rendered or
+                                    "at least 4" in rendered), (
+                                code,"original four-collection gallery target missing")
+                        elif ordinal==119:
+                            assert "puppi" in rendered and "tulip" in rendered and (
+                                "write" in rendered or "create" in rendered), (
+                                code,"learner comparison-story-authorship teaching missing")
+                        elif ordinal==142:
+                            # A learner writes AND answers two actual questions
+                            # using named ride counts; checking one generated
+                            # numeric comparison cannot claim that authorship.
+                            assert ("how many rides" in rendered or
+                                    "rides" in rendered) and (
+                                "write" in rendered or "create" in rendered), (
+                                code,"authored ride-question teaching missing")
+                            assert ("two" in rendered or "2" in rendered) and (
+                                "answer" in rendered), (
+                                code,"two original ride questions and answers missing")
+                        elif ordinal==144:
+                            # Student chooses 20–100, creates an original page
+                            # and shows at least three distinct expressions.
+                            # This does not claim a real teacher-reviewed page.
+                            assert ("number book" in rendered or
+                                    "favorite number" in rendered), (
+                                code,"class number-book source task missing")
+                            assert ("three" in rendered or "3" in rendered) and (
+                                "expression" in rendered), (
+                                code,"three authentic addition expressions missing")
+                        elif ordinal in (123,124,125,126):
+                            assert "draw" in rendered or "trace" in rendered, (
+                                code,"original learner-drawn or composed shape teaching missing")
+                            expected_fragment={
+                                123:"dot paper",
+                                124:"three different triangles",
+                                125:"five",
+                                126:"pattern blocks"
+                            }[ordinal]
+                            assert expected_fragment in rendered, (
+                                code,"source-specific geometric authorship target missing",
+                                expected_fragment)
+                            if ordinal in (124,125):
+                                assert ("not triangles" if ordinal==124
+                                        else "not rectangles") in rendered, (
+                                    code,"original source requires multiple drawn nonexamples")
+                            if ordinal==126:
+                                assert "same" in rendered and "different" in rendered, (
+                                    code,"original pattern-block reconstruction goal missing")
+                        elif ordinal==135:
+                            assert "sunday" in rendered and "schedule" in rendered and (
+                                "draw" in rendered or "clock" in rendered), (
+                                code,"source learner-authored Sunday schedule teaching missing")
+                        else:
+                            raise AssertionError((code,"unexpected authored-plus-digital lesson"))
+                    g1_e2e_rows.append({"ordinal":ordinal,"lessonCode":code,
+                        "assessmentMode":source_mode,
+                        "actualFamily":result["family"],
+                        "unescapedAuthenticatedLearnerHtmlSha256":g1_learner_response_sha,
+                        "correctAnswerSelfConsistentAndPersisted":True,
+                        "malformedAnswerRejectedAndPersisted":True,
+                        "wellFormedIncorrectAnswerRejectedAndPersisted":True,
+                        "l51AuthenticatedTwoCardSourceBoardVerified":(
+                            l51_board_verified if ordinal==51 else None),
+                        "authenticStudentAuthorshipNotClaimed":True,
+                        "originalSourceBodyFragmentsVerified":source_body_fragments_verified})
+            print("B001_DISPOSABLE_500_REAL_PRACTICE_PROBE",
+                  ordinal, code, result["status"], result.get("httpStatus", ""), flush=True)
+
+        print("B001_500_DISPOSABLE_AUTHENTICATED_PAGE_PASS",
+              ordinal, code, flush=True)
+    print("B001_500_DISPOSABLE_AUTHENTICATED_HTML_COMPLETE",
+          len(source_lessons), grade_counts, flush=True)
+
+    practice_matrix = coverage_report(b001_practice_forms)
+    Path("/tmp/b001-500-lesson-practice-form-preflight.json").write_text(
+        json.dumps(practice_matrix, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8")
+    print("B001_500_LESSON_PRACTICE_CTA_PREFLIGHT",
+          practice_matrix["lessonStartFormsPresent"],
+          practice_matrix["missingLessonStartForms"], flush=True)
+    if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_PRACTICE_CTA") == "1":
+        assert practice_matrix["missingLessonStartForms"] == 0, (
+            "B001 Practice CTA remains incomplete for a 500-lesson release",
+            practice_matrix["missingLessonStartForms"])
+        assert practice_matrix["missingLessonStartNonces"] == 0, (
+            "B001 Practice lesson-start forms lack per-render idempotency nonces",
+            practice_matrix["missingLessonStartNonces"])
+
+    if b001_e2e_enabled:
+        b001_attempts = summarize(b001_e2e_rows)
+        Path("/tmp/b001-500-real-practice-generation-and-grading-probe.json").write_text(
+            json.dumps(b001_attempts, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        print("B001_500_REAL_PRACTICE_GENERATE_AND_GRADE_SUMMARY",
+              b001_attempts["generationAndSelfGradingPassed"],
+              b001_attempts["notSelfGraded"],
+              json.dumps(b001_attempts["byStatus"], sort_keys=True), flush=True)
+        if b001_negative_enabled:
+            print("B001_500_MALFORMED_ANSWER_REJECTION_SUMMARY",
+                  b001_attempts["malformedAnswersRejectedAndPersisted"],
+                  b001_attempts["malformedAnswersNotVerified"], flush=True)
+        if os.environ.get("EDULYTICS_B001_REQUIRE_ALL500_GRADED") == "1":
+            assert b001_attempts["notSelfGraded"] == 0, (
+                "B001 500-lesson student Practice grading gate NO_GO",
+                b001_attempts["byStatus"])
+            if b001_negative_enabled:
+                assert b001_attempts["malformedAnswersNotVerified"] == 0, (
+                    "B001 500-lesson malformed-answer rejection gate NO_GO",
+                    b001_attempts["malformedAnswersNotVerified"])
+
+    if b001_e2e_enabled:
+        assert len(g1_e2e_rows)==96, ("G1 full-grade runtime evidence incomplete",
+                                     len(g1_e2e_rows))
+        assert sum(r["assessmentMode"]!="SOURCE_AUTHORED_TASK"
+                   for r in g1_e2e_rows)==95
+        assert sum(r.get("wellFormedIncorrectAnswerRejectedAndPersisted") is True
+                   for r in g1_e2e_rows)==95
+        # Persisted CI artifact must agree with per-lesson authenticated source
+        # assertions. A log-only PASS without an ordinal evidence row is a bug.
+        assert all(isinstance(r.get("unescapedAuthenticatedLearnerHtmlSha256"), str)
+                   and len(r["unescapedAuthenticatedLearnerHtmlSha256"]) == 64
+                   for r in g1_e2e_rows)
+        source_rows=[r for r in g1_e2e_rows
+                     if isinstance(r.get("originalSourceBodyFragmentsVerified"), int)]
+        assert len(source_rows) == 90, (
+            "90 original lesson source-body claims must be persisted",len(source_rows))
+        assert sorted(r["ordinal"] for r in source_rows)==list(range(57,147))
+        assert sum(r["originalSourceBodyFragmentsVerified"] for r in source_rows)==190
+        source_only=next(r for r in g1_e2e_rows if r["ordinal"]==65)
+        assert source_only["assessmentMode"]=="SOURCE_AUTHORED_TASK"
+        assert source_only["learnerTeachingRendered"] is True
+        assert source_only["originalSourceBodyFragmentsVerified"]==3
+        assert source_only["authenticStudentAuthorshipNotClaimed"] is True
+        assert all(r.get("authenticStudentAuthorshipNotClaimed") is True
+                   for r in g1_e2e_rows)
+        print("G1_STAGE_D_96_ARTIFACT_SOURCE_PROVENANCE_COMPLETE",
+              len(source_rows),190,flush=True)
+        Path("/tmp/g1-96-source-family-https-candidate-evidence.json").write_text(
+            json.dumps({"scope":"G1_51_TO_146_ONLY",
+                "testedCheckoutSha":subprocess.check_output(
+                    ["git","rev-parse","HEAD"],text=True).strip(),
+                "claim":"Authenticated disposable-school learner HTML hashes, exact source-family and grading technology ONLY; NOT visual source-task parity, publisher rights, or academic lesson signoff",
+                "learnerHtmlHashSemantics":"SHA-256 of HTML-unescaped authenticated HTTP response for this CI attempt; volatile tokens prevent treating it as canonical content identity",
+                "rows":g1_e2e_rows},indent=2,ensure_ascii=False)+"\n",
+            encoding="utf-8")
+        print("G1_96_CANDIDATE_SOURCE_FAMILY_HTTPS_PASS",
+              len(g1_e2e_rows),flush=True)
+    restored = sql("""
+        WITH restoration AS (
+        UPDATE "StudentEnrollments" e
+        SET "ClassGroupId"='""" + original_secondary_enrolments[0] + """'
+        FROM "StudentProfiles" p
+        JOIN "AspNetUsers" u ON u."Id"=p."UserId"
+        WHERE e."StudentProfileId"=p."Id"
+          AND u."Email"='""" + secondary_email + """'
+        RETURNING e."Id"
+        ) SELECT count(*) FROM restoration;""")
+    assert restored == "1", "must restore disposable fixture grade enrollment"
+
+# POST real teacher assessment and validate persistence on disposable DB.
+import uuid
+teacher = teachers[SCHOOLS[0][0]]
+values = sql("""SELECT a."ClassGroupId",a."SubjectId",a."TermId"
+FROM "Assessments" a JOIN "Schools" s ON a."SchoolId"=s."Id"
+WHERE s."SchoolCode"='""" + SCHOOL_CODES[SCHOOLS[0][0]] + """' LIMIT 1;""").split("|")
+assert len(values) == 3, values
+html = get_page(teacher, "/school/assessments")
+token = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', html)
+assert token
+title = "CI acceptance " + uuid.uuid4().hex[:12]
+data = urllib.parse.urlencode({
+    "classGroupId": values[0], "subjectId": values[1],
+    "termId": values[2], "title": title,
+    "assessmentDate": "2026-10-09", "maxScore": "100",
+    "assessmentType": "Exam", "deliveryMode": "Online",
+    "__RequestVerificationToken": token.group(1)
+}).encode()
+with teacher.open(urllib.request.Request(
+    BASE+"/school/assessments", data=data, method="POST"
+), timeout=30) as response:
+    assert response.status == 200
+assert sql('SELECT count(*) FROM "Assessments" WHERE "Title"=\''+title+'\';') == "1"
+print("DISPOSABLE_TEACHER_ASSESSMENT_POST_PASS")
+
+print("DISPOSABLE_TWO_SCHOOL_FULL_DATA_HTTP_REHEARSAL_PASS")

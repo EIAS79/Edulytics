@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 97,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U06:L16",
+  "title": "Identify Quarters PLC Activity",
+  "stageA": {
+    "status": "ORIGINAL_SOURCE_TEXT_REVIEWED_TEACHER_ONLY_MEDIA",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-97-stage-a-b-checkpoint.json",
+    "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-6/lesson-16/preparation.html",
+    "sourceSha256": "e932f98fe77b9468b727f303ca4daf5e704be37d30bf43f7b4bf2d115edecb39",
+    "standards": [
+      "CCSS:2.MD.C.8",
+      "CCSS:2.NBT.A.2",
+      "CCSS:2.NBT.B.5"
+    ]
+  },
+  "stageB": {
+    "status": "SOURCE_GUARDED_ALL_SIX_FIELDS",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit6SourceCorrections.cs",
+    "sourceReviewFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G2/lesson-97-stage-a-b-checkpoint.json"
+  },
+  "stageC": {
+    "status": "AUTHORING_CLOSED_FIRST_PARTY_FOUR_EXACT_FAMILIES_TESTS_WRITTEN_NOT_RUN",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit6ExactQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Unit6ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Unit6Activities/Index.cshtml",
+    "teacherOnly": "Genuine Elena/Tyler coin collections and visual 66-cent combinations are teacher-reviewed, not proven by a numeric proxy.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal97OriginalSourceGuardTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal97SourceAndNumericBoundaryTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal97ExactPracticeFamiliesTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/G2Ordinal97StudentCompanionProtectionTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "compilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mergedToMain": false,
+    "deployed": false
+  },
+  "nextSequentialLesson": 98
+}

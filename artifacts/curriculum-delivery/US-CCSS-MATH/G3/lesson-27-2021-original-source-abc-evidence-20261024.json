@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L06",
+  "gradeOrdinal": 27,
+  "edition": "2021 first edition IM K–5",
+  "sourceTeacher": "unit-2/lesson-6/lesson.html",
+  "originalStudentPdf": {
+    "pageCount": 3,
+    "pagesRead": [
+      1,
+      2,
+      3
+    ],
+    "bytes": 54307,
+    "sha256": "ad6062317d3375cee4fd30e552566eeb675417a1f2f31f47552496c0cef6d4b7",
+    "copiedIntoProduct": false
+  },
+  "sourceBlackline": {
+    "zipSha256": "c26b853da51d15056fd367f7c1d0bc5f5aa78295ee09d5afa94e121a27135804",
+    "gridPdfSha256": "a4be953efd2366ce1704867cabdd61ad1035288fee1b667b593e6737078f279d",
+    "originalGridPagesRead": [
+      1,
+      2,
+      3
+    ],
+    "twoPhysicalUnitScales": true
+  },
+  "sourceVisuals": [
+    {
+      "name": "warmup_A",
+      "sha256": "4c007b1760e715858d7b0221ef2b65c4b8b92bbcedf7586f3358f63f333a2947",
+      "originalSemanticGeometry": "same-outer-rectangle five-by-ten =50 cells",
+      "originalSourceViewed": true,
+      "originalPixelsCopied": false
+    },
+    {
+      "name": "warmup_B",
+      "sha256": "534fa46982b3cb8ac575f6d4f71b91e0561c48e168f6f2c7de433d2293323935",
+      "originalSemanticGeometry": "same-outer-rectangle three-by-six=18 cells",
+      "originalSourceViewed": true,
+      "originalPixelsCopied": false
+    },
+    {
+      "name": "warmup_C",
+      "sha256": "676e9573de789182e8c3d2ff142e59eca7aca8a2bc7e2163720ac78b6e48a013",
+      "originalSemanticGeometry": "same-outer-rectangle two-by-four=8 cells",
+      "originalSourceViewed": true,
+      "originalPixelsCopied": false
+    },
+    {
+      "name": "warmup_D",
+      "sha256": "899ce8f6e7685f7fd488c9ef21ae1d58746d56a6c0736baf7ab5e7045de08a42",
+      "originalSemanticGeometry": "same-outer-rectangle one-by-two=2 square cells",
+      "originalSourceViewed": true,
+      "originalPixelsCopied": false
+    },
+    {
+      "name": "measured_square",
+      "sha256": "cb2d26b2429d0dec992a0caa530aefbda0a15391f1d4c12f23118acf380eea43",
+      "originalSemanticGeometry": "source plain square measured with real source grids",
+      "originalSourceViewed": true,
+      "originalPixelsCopied": false
+    }
+  ],
+  "sourceElements": [
+    {
+      "id": "PREP-GOAL",
+      "originalSourceSection": "2021 teacher preparation",
+      "originalEducationalElement": "3.MD.C.6: square inches versus square centimeters, area units, physical drawing.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-TIME",
+      "originalSourceSection": "2021 teacher lesson",
+      "originalEducationalElement": "Warm-up 10; Activity1 15; Activity2 20; Cool-down 5 minutes.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-MATERIAL-1",
+      "originalSourceSection": "2021 teacher lesson",
+      "originalEducationalElement": "Whole-unit rulers, square-inch tiles, centimeter cube face, scissors, patty/tracing paper.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-MATERIAL-2",
+      "originalSourceSection": "2021 teacher lesson",
+      "originalEducationalElement": "One blackline master per pair plus fresh measurement grids; 1 inch versus 1 centimeter square sides.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-MLR8",
+      "originalSourceSection": "2021 Activity1",
+      "originalEducationalElement": "MLR8 Discussion Supports, pair restates area unit observations.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-MLR2",
+      "originalSourceSection": "2021 Activity2",
+      "originalEducationalElement": "MLR2 Collect and Display source language for unit-size comparison.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-ACCESS",
+      "originalSourceSection": "2021 Activity2",
+      "originalEducationalElement": "Action and Expression, physical square inch and square centimeter reference pieces.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-REFLECT",
+      "originalSourceSection": "2021 teacher preparation",
+      "originalEducationalElement": "Which question was missing today and why?",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-CENTER-A",
+      "originalSourceSection": "2021 teacher preparation",
+      "originalEducationalElement": "Capture Squares Stage 6 multiply 1–5.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-CENTER-B",
+      "originalSourceSection": "2021 teacher preparation",
+      "originalEducationalElement": "Rectangle Rumble Stage 1 factors 1,2,5,10.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "PREP-CENTER-C",
+      "originalSourceSection": "2021 teacher preparation",
+      "originalEducationalElement": "Five in a Row Addition/Subtraction Stage 6.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "WU-A",
+      "originalSourceSection": "2021 original Student PDF p1",
+      "originalEducationalElement": "ORIGINAL picture A occupies identical outer rectangle, but 5 rows × 10 equal square cells (50) of different PHYSICAL sizes; source real drawing reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": "G3-U02-L06-WU-A",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "WU-B",
+      "originalSourceSection": "2021 original Student PDF p1",
+      "originalEducationalElement": "ORIGINAL picture B occupies identical outer rectangle, but 3 rows × 6 equal square cells (18) of different PHYSICAL sizes; source real drawing reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": "G3-U02-L06-WU-B",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "WU-C",
+      "originalSourceSection": "2021 original Student PDF p1",
+      "originalEducationalElement": "ORIGINAL picture C occupies identical outer rectangle, but 2 rows × 4 equal square cells (8) of different PHYSICAL sizes; source real drawing reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": "G3-U02-L06-WU-C",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "WU-D",
+      "originalSourceSection": "2021 original Student PDF p1",
+      "originalEducationalElement": "ORIGINAL picture D occupies identical outer rectangle, but 1 rows × 2 equal square cells (2) of different PHYSICAL sizes; source real drawing reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": "G3-U02-L06-WU-D",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "WU-DISCUSS",
+      "originalSourceSection": "2021 warmup synthesis",
+      "originalEducationalElement": "Notice and wonder how unit-square size impacts same region tile count.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-01-INCH",
+      "originalSourceSection": "2021 Student PDF p2",
+      "originalEducationalElement": "Partner 1 draws 2×5 =10 cells on INCH grid, 10 in², image/drawing teacher reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A1-01",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-01-CM",
+      "originalSourceSection": "2021 Student PDF p2",
+      "originalEducationalElement": "Partner 2 draws 2×5 =10 cells on CENTIMETER grid, 10 cm², different physical area",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A1-01",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-02-INCH",
+      "originalSourceSection": "2021 Student PDF p2",
+      "originalEducationalElement": "Partner 1 draws 7×3 =21 cells on INCH grid, 21 in², image/drawing teacher reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A1-02",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-02-CM",
+      "originalSourceSection": "2021 Student PDF p2",
+      "originalEducationalElement": "Partner 2 draws 7×3 =21 cells on CENTIMETER grid, 21 cm², different physical area",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A1-02",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-03-INCH",
+      "originalSourceSection": "2021 Student PDF p2",
+      "originalEducationalElement": "Partner 1 draws 6×8 =48 cells on INCH grid, 48 in², image/drawing teacher reviewed",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A1-03",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-03-CM",
+      "originalSourceSection": "2021 Student PDF p2",
+      "originalEducationalElement": "Partner 2 draws 6×8 =48 cells on CENTIMETER grid, 48 cm², different physical area",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A1-03",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-RULER",
+      "originalSourceSection": "2021 teacher Activity1 synthesis",
+      "originalEducationalElement": "Verify square inch side = 1 inch; square centimeter side = 1 cm, by ruler.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A1-COMPARE",
+      "originalSourceSection": "2021 teacher Activity1 synthesis",
+      "originalEducationalElement": "For SAME row/column count different-sized unit grids cover different physical area.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-EST-INCH",
+      "originalSourceSection": "2021 Student PDF p3",
+      "originalEducationalElement": "Before measuring, estimate number of square inches in source approximately two-inch square.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A2-ESTIMATE",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-EST-CM",
+      "originalSourceSection": "2021 Student PDF p3",
+      "originalEducationalElement": "Before measuring, estimate number of square centimeters in SAME source square.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A2-ESTIMATE",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-TRACE",
+      "originalSourceSection": "2021 teacher Activity2",
+      "originalEducationalElement": "Trace/cut original figure and overlay on both blackline original printed grids.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-MEAS-INCH",
+      "originalSourceSection": "2021 Student PDF p3 Q1",
+      "originalEducationalElement": "Observe exact inch-square count for original 2-inches-per-side square (~4 in²), teacher checks actual print.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A2-MEASURE",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-MEAS-CM",
+      "originalSourceSection": "2021 Student PDF p3 Q1",
+      "originalEducationalElement": "Observe centimeter grid square coverage; DO NOT require exactly 25 square centimeters.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A2-MEASURE",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-EXPR-INCH",
+      "originalSourceSection": "2021 Student PDF p3 Q2",
+      "originalEducationalElement": "Write row × column multiplication expression in SQUARE INCHES.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A2-MEASURE",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-EXPR-CM",
+      "originalSourceSection": "2021 Student PDF p3 Q2",
+      "originalEducationalElement": "Write separate row × column multiplication expression in SQUARE CENTIMETERS.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-A2-MEASURE",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "A2-MLR2",
+      "originalSourceSection": "2021 teacher Activity2 synthesis",
+      "originalEducationalElement": "Public display of precise unit comparison words, collect student language.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "SYN",
+      "originalSourceSection": "2021 teacher lesson synthesis",
+      "originalEducationalElement": "Explain why several different-size square units are useful.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": "G3-U02-L06-SYNTH",
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "CD-INDEPENDENT",
+      "originalSourceSection": "2021 teacher gated Cool-down",
+      "originalEducationalElement": "Publisher original 'Which Square?' unavailable; independently authored first-party 24 in² with correct unit and teacher drawing review.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "SOURCE-PDF",
+      "originalSourceSection": "Original 2021 Student Task Statements",
+      "originalEducationalElement": "Three-page original from first edition, warmup+2 physical activities; source read.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "SOURCE-BLACKLINE",
+      "originalSourceSection": "Original 2021 physical blackline",
+      "originalEducationalElement": "Three-page inch and centimeter grid source documents visually read and physical sizes investigated.",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "IMG-warmup_A",
+      "originalSourceSection": "2021 teacher source actual SVG",
+      "originalEducationalElement": "same-outer-rectangle five-by-ten =50 cells; source SHA256 4c007b1760e715858d7b0221ef2b65c4b8b92bbcedf7586f3358f63f333a2947; visual source geometry inspected",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "IMG-warmup_B",
+      "originalSourceSection": "2021 teacher source actual SVG",
+      "originalEducationalElement": "same-outer-rectangle three-by-six=18 cells; source SHA256 534fa46982b3cb8ac575f6d4f71b91e0561c48e168f6f2c7de433d2293323935; visual source geometry inspected",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "IMG-warmup_C",
+      "originalSourceSection": "2021 teacher source actual SVG",
+      "originalEducationalElement": "same-outer-rectangle two-by-four=8 cells; source SHA256 676e9573de789182e8c3d2ff142e59eca7aca8a2bc7e2163720ac78b6e48a013; visual source geometry inspected",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "IMG-warmup_D",
+      "originalSourceSection": "2021 teacher source actual SVG",
+      "originalEducationalElement": "same-outer-rectangle one-by-two=2 square cells; source SHA256 899ce8f6e7685f7fd488c9ef21ae1d58746d56a6c0736baf7ab5e7045de08a42; visual source geometry inspected",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    },
+    {
+      "id": "IMG-measured_square",
+      "originalSourceSection": "2021 teacher source actual SVG",
+      "originalEducationalElement": "source plain square measured with real source grids; source SHA256 cb2d26b2429d0dec992a0caa530aefbda0a15391f1d4c12f23118acf380eea43; visual source geometry inspected",
+      "sourceMath2021Reviewed": true,
+      "firstPartyLocation": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+      "sourceCompanionTaskId": null,
+      "mappingState": "SOURCE_EDUCATIONAL_SEMANTIC_MATCH",
+      "teacherScoringRequired": true,
+      "publisherOriginalPixelsCopied": false
+    }
+  ],
+  "sourceElementsIdentified": 41,
+  "sourceElementsSemanticallyMappedForAuthoring": 41,
+  "semanticAuthoringCoveragePercent": 100,
+  "originalCopyrightArtworkPixelParity": false,
+  "stageA": "COMPLETE_FOR_FIRST_EDITION_EDUCATIONAL_SEMANTICS",
+  "stageB": {
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson6RichV2.cs",
+    "firstPartyVisuals": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "sourceOriginalArtCopied": false
+  },
+  "stageC": {
+    "sourceOriginalTenTasksAllTeacherReviewed": true,
+    "firstPartyStrictAreaUnitExamples": [
+      "21 cm²",
+      "24 in²"
+    ],
+    "writtenUnrunTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson6SourceUnitMeasurementTests.cs",
+    "testsExecuted": false
+  },
+  "readyForStageD": true,
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED",
+  "academicApproval": "NOT_CLAIMED",
+  "releaseRestrictions": [
+    "The original 2021 cm² result requires empirical teacher measurement, never exact 25 cm²",
+    "Original source image PDFs not copied to Edulytics",
+    "Effective published RichV2 DB and C# test execution remain Stage D"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u04-l04-firstedition2021-two-divisor-meanings-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U04:L04",
+      "CultureCode": "en",
+      "Title": "Interpret Division Expressions",
+      "ExplanationParagraphs": [
+        "Division means putting a total into equal groups. The divisor can identify HOW MANY groups are already given or HOW MANY items belong in each group. The same expression may represent two different stories; the mathematical quotient alone does not identify the story's unknown.",
+        "Warm-up — Number Talk: More or Less? (10 min): 500−475=25, 504−475=29, 512−475=37 and 512−449=63. Use mental subtraction and notice that raising the starting value increases the difference; decreasing the number subtracted also increases it.",
+        "Activity1 — Spinning Tops (10 min): match five source situations to the expression choices: Clare’s four equal colour sets from24→24÷4 (source C); two painters sharing24→24÷2 (A); 24 in six equal boxes→24÷6 (E); 12 gifts at two per person→12÷2 (B); and 12 shared by six friends→12÷6 (D). Explain why the divisor names the known group quantity in every story.",
+        "Activity2 — Cars in Boxes (10 min): Han has21 toy cars. Three BOXES of equal size requires21÷3=7 cars per box. THREE CARS in each box also requires21÷3=7, but now seven is the count of boxes. The divisor has two different meanings; teach both explicitly and preserve the bilingual MLR2 collection of precise terms.",
+        "Activity3 — Stacks of Blocks (15 min): source diagram A shows2 stacks of3, and B shows3 stacks of2. The original expressions C=6÷2 and D=6÷3. Kiran (two blocks in each stack)→B,C; Han (two equal stacks)→A,C; Jada (three per stack)→A,D; Mai (three equal stacks)→B,D. These are not four interchangeable drawings; context controls which is correct.",
+        "Lesson synthesis (10 min): explain that the same expression can refer to different division types, while the same finished drawing can correspond to different expressions when the divisor describes a different known quantity. A teacher evaluates sketches, written justifications, partner reasoning and precise units.",
+        "Original source is the 2021 first edition, not the independently authored Edulytics exit task. Original photos (some third-party) are not copied; original student PDF pixels and gated Han’s Tops publisher Cool-down remain outside verified scope. Stage D and tests have not run."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unknown group size",
+          "Definition": "Total and group count are known.",
+          "Rule": "group size = total ÷ known group count",
+          "Example": "21 cars into3 boxes →7 in each"
+        },
+        {
+          "Title": "Unknown group count",
+          "Definition": "Total and group size are known.",
+          "Rule": "group count = total ÷ known group size",
+          "Example": "21 cars,3 in each box →7 boxes"
+        },
+        {
+          "Title": "The divisor",
+          "Definition": "The quantity by which a total is divided; the story establishes its meaning.",
+          "Rule": "The divisor is not automatically the group count.",
+          "Example": "21÷3 means both Han stories; interpretation changes"
+        },
+        {
+          "Title": "Story and drawing",
+          "Definition": "A group diagram identifies the number of groups and items per group.",
+          "Rule": "Check both representation and division expression against the question.",
+          "Example": "Two stacks of3 can be described by6÷2 or6÷3 depending on question"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Five spinning-top expression matches",
+          "Question": "Which original expressions match five original contexts?",
+          "Method": "Identify total and known grouping quantity.",
+          "Steps": [
+            "Clare four colour groups:24÷4=6, C.",
+            "Priya two painters:24÷2=12, A.",
+            "Shop six boxes:24÷6=4, E.",
+            "Diego two gifts per friend:12÷2=6, B.",
+            "Six friends share12:12÷6=2, D."
+          ],
+          "Answer": "C,A,E,B,D in order; answers6,12,4,6,2.",
+          "Check": "Re-multiply group count by group size for all five."
+        },
+        {
+          "Title": "Two interpretations of 21÷3",
+          "Question": "Does21÷3 represent three boxes or three cars per box?",
+          "Method": "Use the context to define the divisor.",
+          "Steps": [
+            "21÷3=7 in either story.",
+            "Three boxes given: seven cars PER box.",
+            "Three cars per box given: seven BOXES.",
+            "Answer units and picture differ despite the same numerical quotient."
+          ],
+          "Answer": "Both original situations;7 per box OR7 boxes.",
+          "Check": "3×7=21 in both arrangements; identify the unknown separately."
+        },
+        {
+          "Title": "Four block matches",
+          "Question": "Match six-block stories to diagrams A/B and expressions C/D.",
+          "Method": "Diagram A=2×3; B=3×2. Expression C=6÷2; D=6÷3.",
+          "Steps": [
+            "Kiran two per stack→3 stacks; source B/C.",
+            "Han two stacks→3 per stack; source A/C.",
+            "Jada three per stack→2 stacks; source A/D.",
+            "Mai three stacks→2 per stack; source B/D."
+          ],
+          "Answer": "Kiran B/C; Han A/C; Jada A/D; Mai B/D.",
+          "Check": "Each picture holds six; group count and group size are consistent."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Always read the divisor as the number of groups.",
+          "WhyWrong": "For the store,6 is known box count; for Diego,2 is a known number of tops per friend.",
+          "Correction": "State what the divisor describes in this specific story."
+        },
+        {
+          "Mistake": "Only select the correct numerical result, not the correct source diagram.",
+          "WhyWrong": "Kiran and Han both use6÷2 but need different drawings.",
+          "Correction": "Validate group count and group size against the story."
+        },
+        {
+          "Mistake": "Assume drawing A automatically means expression C.",
+          "WhyWrong": "Han uses A/C; Jada uses A/D, so the drawing alone does not identify which given number is divisor.",
+          "Correction": "Refer to the original context for the unknown quantity."
+        },
+        {
+          "Mistake": "Read 512−449 as the same difference as 512−475.",
+          "WhyWrong": "The subtrahend decreases by26, so the difference rises by26 from37 to63.",
+          "Correction": "Compare the numbers being subtracted as well as the starting value."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up answers25,29,37,63.",
+        "Spinning Tops five expression letters C,A,E,B,D in source story order.",
+        "Two Han21÷3 situations both have quotient7 but different units.",
+        "Block drawing A=2 groups3, B=3 groups2; Kiran B/C, Han A/C, Jada A/D, Mai B/D.",
+        "Source photos and teacher-gated Cool-down are not copied; teacher reasoning review, Stage D and tests remain pending."
+      ]
+    }
+  ]
+}

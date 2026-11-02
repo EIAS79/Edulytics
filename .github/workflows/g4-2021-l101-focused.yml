@@ -1,0 +1,24 @@
+name: Grade 4 2021 lesson 101 focused Stage C check
+on:
+  push:
+    branches:
+      - curriculum/g4-sequential-abc-20261026
+    paths:
+      - '.github/workflows/g4-2021-l101-focused.yml'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal101AreaDivisionExactTests.cs'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-area-division:
+    if: github.repository == 'EIAS79/Edulytics'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Run focused L101 exact-area and leftover verifier cases (no Stage D)
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --filter FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests --verbosity minimal

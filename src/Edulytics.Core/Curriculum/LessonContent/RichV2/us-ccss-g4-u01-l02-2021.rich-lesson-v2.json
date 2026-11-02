@@ -1,0 +1,222 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g4-u01-l02-im2021-source-goal-richv2-20261026-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U01:L02",
+      "CultureCode": "en",
+      "Title": "Factor Pairs",
+      "ExplanationParagraphs": [
+        "Grade 4 U01 Lesson 2, IM K–5 Math First Edition 2021: the target is to find all whole-number factor pairs by drawing every distinct rectangular array of a FIXED area. The learner-facing source Student Task Statements PDF is three pages. This Edulytics guidance is independently authored, not a copy of publisher artwork.",
+        "Warm-up — Number Talk (10 min): mentally find 2×7, 4×7, 3×7, 7×7. Explain strategies. For example 3×7 + 4×7 = 7×7. Teacher shows one expression at a time, elicits multiple strategies, and records them.",
+        "Activity 1 — How Many Rectangles? (20 min): divide students into eight groups A–H and assign TWO areas per group: A 11 and 27; B 25 and 5; C 16 and 8; D 9 and 18; E 24 and 12; F 14 and 28; G 15 and 30; H 19 and 20 (all square units). Use tiles and centimeter grid paper; independently/with peers draw EVERY possible rectangular model for EACH area, mark sides in units and area in square units, cut and display on a separate poster for each assigned area. Do not count rotations separately.",
+        "Activity 2 — How Many Rectangles: Gallery Walk (15 min): groups walk in pairs to examine all area posters and explain mathematical comparisons using the source 'I notice…' sentence frames. For any fixed area, explicitly show why no additional positive-whole-number side pair exists. Area 21 has unordered factor pairs (1,21) and (3,7), not (7,3) as an extra rectangle. Teacher assesses completeness and quality of explanation.",
+        "Lesson synthesis (10 min): a factor pair is any pair of whole numbers whose product is the area. List all distinct pairs for 24: (1,24), (2,12), (3,8), (4,6); for 45: (1,45), (3,15), (5,9). Check candidates from 1 up to the square root to make sure no pairs are omitted. Math Community reflection (2–3 min) follows the separate Cool-down.",
+        "Edulytics ORIGINAL Cool-down (5 min, user-approved first-party substitute, not source-identical): 'A rectangle has area 18 square units. Find every unordered whole-number pair of sides and explain how you know your list is complete.' Teacher checks the three pairs and a complete explanation. A separately generated count-of-factor-pairs question is automatically gradeable; the physical drawing and explanatory reasoning are teacher-reviewed. Original publisher Cool-down is educator-gated and is not represented as verified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Whole-number factor pairs",
+          "Definition": "Pairs of positive whole numbers whose product is the given area.",
+          "Rule": "Each whole-number factor pair (a,b) satisfies a×b=n.",
+          "Example": "Area 15 gives (1,15) and (3,5)."
+        },
+        {
+          "Title": "Rotations are not new pairs",
+          "Definition": "Changing which side is horizontal does not create a different unordered factor pair.",
+          "Rule": "List each pair only once; (3,7) and (7,3) are one pair.",
+          "Example": "Area 21 has two distinct unordered pairs."
+        },
+        {
+          "Title": "Proving all pairs are found",
+          "Definition": "Check candidate divisors from 1 through the square root of the area.",
+          "Rule": "For every divisor d ≤ √n, include exactly one pair (d,n÷d); no other pair exists.",
+          "Example": "For 24, factors up to 4 give (1,24),(2,12),(3,8),(4,6)."
+        },
+        {
+          "Title": "Square areas",
+          "Definition": "A square area may have an equal-sided pair.",
+          "Rule": "If n is a perfect square, count √n × √n once.",
+          "Example": "Area 25 has (1,25) and (5,5)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Number Talk: multiplying by seven",
+          "Question": "Compute 2×7,4×7,3×7 and 7×7 mentally.",
+          "Method": "Use distributive reasoning and previously computed facts.",
+          "Steps": [
+            "2×7=14 and 4×7=28.",
+            "3×7=21.",
+            "Split 7×7 into (3+4)×7=21+28."
+          ],
+          "Answer": "14, 28, 21, 49",
+          "Check": "21+28=49."
+        },
+        {
+          "Title": "All rectangles for area 21",
+          "Question": "Which unique whole-number rectangles have area 21 square units?",
+          "Method": "Check possible divisors in ascending order, ignoring rotations.",
+          "Steps": [
+            "1 divides 21: 1×21.",
+            "2 does not divide 21.",
+            "3 divides 21: 3×7.",
+            "Stop because 4×4<21 and further widths only reverse known pairs."
+          ],
+          "Answer": "(1,21) and (3,7)",
+          "Check": "1×21=21;3×7=21;no other divisor ≤√21."
+        },
+        {
+          "Title": "All pairs for 24",
+          "Question": "How can your group prove it has every possible rectangular model for area 24?",
+          "Method": "Test candidate widths up to √24.",
+          "Steps": [
+            "1 gives 1×24; 2 gives 2×12.",
+            "3 gives 3×8; 4 gives 4×6.",
+            "5×5=25 exceeds 24, so no unexplored pair with smaller width exists."
+          ],
+          "Answer": "(1,24),(2,12),(3,8),(4,6)",
+          "Check": "Four unordered pairs, each with product 24."
+        },
+        {
+          "Title": "Area 25 shows the square case",
+          "Question": "How many distinct rectangular factor pairs does area 25 have?",
+          "Method": "Try divisors 1..5 and count each unordered pair once.",
+          "Steps": [
+            "1×25 works.",
+            "2,3,4 do not divide 25.",
+            "5×5 works and is one pair."
+          ],
+          "Answer": "Two: (1,25) and (5,5).",
+          "Check": "25 has factors 1,5,25 and no extra orientations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting the same rectangular model twice after rotation.",
+          "WhyWrong": "The source explicitly treats widths 4×6 and 6×4 as the same factor pair.",
+          "Correction": "Order each pair with smaller factor first."
+        },
+        {
+          "Mistake": "Leaving out 1×n or omitting a square pair.",
+          "WhyWrong": "One is a factor of every positive integer, and a perfect square has a valid repeated factor.",
+          "Correction": "Start at width 1, then test each candidate up to the square root."
+        },
+        {
+          "Mistake": "Only multiplying mentally and skipping posters/gallery explanations.",
+          "WhyWrong": "The original learning task requires showing all distinct rectangles, labels and a class gallery comparison.",
+          "Correction": "Complete both assigned area posters and give evidence that all factor pairs were found; teacher reviews the models."
+        }
+      ],
+      "SummaryPoints": [
+        "The original 2021 three-page student task was read from the PDF linked inside the local teacher source; warm-up mental products, two assigned-area drawings and gallery questions are all distinct tasks.",
+        "Eight groups A–H each take two original area targets; students draw ALL unique whole-number factor-pair rectangles per target and display separate labeled posters.",
+        "Every pair multiplies to the area; rotations are counted only once. Check divisors systematically up to the square root to prove completeness.",
+        "Teacher/partner gallery discussion and poster artwork are teacher-reviewed, not counted as automatically graded practice.",
+        "The five-minute exit ticket is independently authored by Edulytics using the same factor-pair skill, not the source-identical educator-gated publisher Cool-down."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Teacher reference: all original eight groups and factor-pair areas",
+          "Description": "Each group works on exactly two areas and produces one display per area; the list is for teacher checking after the learner constructs original rectangles.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Group A",
+              "Cells": [
+                "11: 1×11",
+                "27: 1×27, 3×9"
+              ]
+            },
+            {
+              "Label": "Group B",
+              "Cells": [
+                "25: 1×25, 5×5",
+                "5: 1×5"
+              ]
+            },
+            {
+              "Label": "Group C",
+              "Cells": [
+                "16: 1×16, 2×8, 4×4",
+                "8: 1×8, 2×4"
+              ]
+            },
+            {
+              "Label": "Group D",
+              "Cells": [
+                "9: 1×9, 3×3",
+                "18: 1×18, 2×9, 3×6"
+              ]
+            },
+            {
+              "Label": "Group E",
+              "Cells": [
+                "24: 1×24, 2×12, 3×8, 4×6",
+                "12: 1×12, 2×6, 3×4"
+              ]
+            },
+            {
+              "Label": "Group F",
+              "Cells": [
+                "14: 1×14, 2×7",
+                "28: 1×28, 2×14, 4×7"
+              ]
+            },
+            {
+              "Label": "Group G",
+              "Cells": [
+                "15: 1×15, 3×5",
+                "30: 1×30, 2×15, 3×10, 5×6"
+              ]
+            },
+            {
+              "Label": "Group H",
+              "Cells": [
+                "19: 1×19",
+                "20: 1×20, 2×10, 4×5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Factor-pair discovery for area 24",
+          "Description": "Distinct unordered whole-number rectangle side lengths; grid drawings and originality are teacher-reviewed.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "1 × 24",
+              "Cells": [
+                "Area 24 square units"
+              ]
+            },
+            {
+              "Label": "2 × 12",
+              "Cells": [
+                "Area 24 square units"
+              ]
+            },
+            {
+              "Label": "3 × 8",
+              "Cells": [
+                "Area 24 square units"
+              ]
+            },
+            {
+              "Label": "4 × 6",
+              "Cells": [
+                "Area 24 square units"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

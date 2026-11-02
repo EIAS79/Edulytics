@@ -1,0 +1,215 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson10PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 — Draw picture graphs and bar graphs";
+    var tableA=UsCcssG2Unit1TenthLessonGraphConstruction.TableA;
+    var tableB=UsCcssG2Unit1TenthLessonGraphConstruction.TableB;
+    var exit=UsCcssG2Unit1TenthLessonGraphConstruction.ExitTicketTable;
+}
+<style>
+.g2-l10{max-width:980px;margin:auto;padding:20px 18px 48px;color:#1f3b50}
+.g2-l10 .panel{background:#fff;border:1px solid #d6e4eb;border-radius:15px;padding:22px;margin:18px 0}
+.g2-l10 h1{font-size:1.85rem}.g2-l10 h2{font-size:1.3rem}
+.g2-l10 .muted{color:#4b6778}.g2-l10 .tables{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.g2-l10 table{border-collapse:collapse;width:100%}.g2-l10 th,.g2-l10 td{border:1px solid #a5bbc8;padding:9px}
+.g2-l10 th{background:#eaf3f7}
+.g2-l10 label{display:block;font-weight:750;margin:13px 0 6px}
+.g2-l10 input,.g2-l10 textarea{padding:11px;font:inherit;border:1px solid #7290a0;border-radius:8px;width:100%;max-width:490px}
+.g2-l10 input:focus,.g2-l10 textarea:focus{outline:3px solid #9fe1e9}
+.g2-l10 .count-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.g2-l10 .button{border:0;background:#077c90;color:#fff;font:inherit;font-weight:700;border-radius:8px;padding:13px 22px;cursor:pointer}
+.g2-l10 .graph-panel{border:1px solid #b4c7d2;border-radius:12px;background:#f5fafc;padding:16px;margin:16px 0}
+.g2-l10 .symbols{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0}
+.g2-l10 .symbol{background:#e1f3f5;border:1px solid #83adb7;border-radius:5px;padding:4px}
+.g2-l10 .bars{display:grid;grid-template-columns:repeat(4,minmax(48px,1fr));gap:9px;align-items:end;min-height:220px;border-left:2px solid #5e7789;border-bottom:2px solid #5e7789;background:repeating-linear-gradient(to top,transparent 0,transparent 19px,#d8e4ea 20px);padding:0 10px}
+.g2-l10 .column{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.83rem}
+.g2-l10 .bar{background:#3a99b0;border:1px solid #17647b;width:36px;border-radius:4px 4px 0 0}
+.g2-l10 .success{border-left:4px solid #208356;padding-left:12px}
+.g2-l10 .error{border-left:4px solid #b23e4c;padding-left:12px}
+.g2-l10 .review{border-left:4px solid #a17d32;padding-left:12px}
+</style>
+<main class="g2-l10">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+<header>
+<p>EDULYTICS · FIRST-PARTY MATHEMATICS ACTIVITIES</p>
+<h1>Make your own picture and bar graphs</h1>
+<p class="muted">Grade 2, Unit 1, Lesson 10. Your job is to CREATE two graphs,
+not just answer questions about someone else's graph. These fictional
+teaching tables, visual symbols and Cool-down are original to Edulytics.</p>
+</header>
+<section class="panel">
+<h2>1. Warm-up: Which One Doesn't Belong?</h2>
+<p>Consider a data table, a picture graph, a vertical bar graph and a
+horizontal bar graph about the same type of choices. Which one might be
+different? Think of as many valid mathematical reasons as you can.
+A different reason may support a different choice.</p>
+<p>Bar graphs use a numbered scale, while picture graphs use a symbol key.
+In each correct display of the SAME data, category totals are unchanged.</p>
+</section>
+<section class="panel">
+<h2>2. Two independent practice data tables</h2>
+<p>First draw a picture graph using <strong>Table A</strong>. Then trade data
+tables with a partner and draw a bar graph using <strong>Table B</strong>
+(the independent partner table in this Edulytics demonstration).
+The two initial graphs do not need identical counts because their TABLES
+are different. The final Cool-down will use the same Table C for both.</p>
+<div class="tables">
+@foreach(var item in new[]{new{Title="Table A: books",Values=tableA},new{Title="Table B: clubs",Values=tableB}}){
+<section>
+<h3>@item.Title</h3>
+<table><thead><tr><th scope="col">Category</th><th scope="col">Responses</th></tr></thead><tbody>
+@foreach(var row in item.Values){<tr><th scope="row">@row.Key</th><td>@row.Value</td></tr>}
+</tbody></table>
+</section>
+}
+</div>
+</section>
+<form class="panel" asp-controller="Grade2Lesson10Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>3. My picture graph — Table A</h2>
+<p>Choose your OWN title and easy-to-draw symbol. The key must show
+that <strong>one symbol represents one response</strong>. Put the correct
+number of symbols in every named category.</p>
+<label asp-for="Answers.PictureTitle">My graph title</label>
+<input asp-for="Answers.PictureTitle" maxlength="120" required />
+<label asp-for="Answers.PictureSymbol">My one-character or short symbol (e.g. ★)</label>
+<input asp-for="Answers.PictureSymbol" maxlength="12" required />
+<label asp-for="Answers.PictureKey">Number of responses represented by one symbol</label>
+<input asp-for="Answers.PictureKey" type="number" min="1" max="10" required />
+<div class="count-grid">
+@{
+    var aIndex=0;
+}
+@foreach(var row in tableA){
+<div><label for="pic-@aIndex">@row.Key — number of symbols</label>
+<input id="pic-@aIndex" name="Answers.PictureCounts[@aIndex]"
+ value="@(Model.Answers.PictureCounts?.ElementAtOrDefault(aIndex))"
+ type="number" min="0" max="10" required /></div>
+aIndex++;
+}
+</div>
+<h2>4. My partner's bar graph — Table B</h2>
+<p>Use a title, labels and a NUMBERED scale. Draw one bar for
+each category. For this table the vertical scale starts at zero
+and increases in steps of one.</p>
+<label asp-for="Answers.BarTitle">Bar-graph title</label>
+<input asp-for="Answers.BarTitle" maxlength="120" required />
+<div class="count-grid">
+<div><label asp-for="Answers.BarStart">Lowest axis number</label><input asp-for="Answers.BarStart" type="number" min="0" max="10" required /></div>
+<div><label asp-for="Answers.BarStep">Number added at each tick</label><input asp-for="Answers.BarStep" type="number" min="1" max="10" required /></div>
+</div>
+<div class="count-grid">
+@{
+    var bIndex=0;
+}
+@foreach(var row in tableB){
+<div><label for="bar-@bIndex">@row.Key — bar height</label>
+<input id="bar-@bIndex" name="Answers.BarCounts[@bIndex]"
+ value="@(Model.Answers.BarCounts?.ElementAtOrDefault(bIndex))"
+ type="number" min="0" max="10" required /></div>
+bIndex++;
+}
+</div>
+<h2>5. Independent Edulytics Cool-down: same data in two graphs</h2>
+<p><strong>Table C: school lunch choices.</strong>
+Make BOTH a picture graph and a bar graph of these EXACT same counts.
+Explain how they show the same total even though the pictures look different.</p>
+<table><thead><tr><th scope="col">Lunch choice</th><th scope="col">Responses</th></tr></thead><tbody>
+@foreach(var row in exit){<tr><th scope="row">@row.Key</th><td>@row.Value</td></tr>}
+</tbody></table>
+<label asp-for="Answers.ExitTitle">Shared title for my two Table C graphs</label>
+<input asp-for="Answers.ExitTitle" maxlength="120" required />
+<label asp-for="Answers.ExitSymbol">Symbol for picture graph C</label>
+<input asp-for="Answers.ExitSymbol" maxlength="12" required />
+<label asp-for="Answers.ExitKey">How many responses does one picture symbol mean?</label>
+<input asp-for="Answers.ExitKey" type="number" min="1" max="10" required />
+<div class="count-grid">
+@{
+    var cIndex=0;
+}
+@foreach(var row in exit){
+<div><label for="exit-p-@cIndex">@row.Key — picture symbols</label>
+<input id="exit-p-@cIndex" name="Answers.ExitPictureCounts[@cIndex]"
+ value="@(Model.Answers.ExitPictureCounts?.ElementAtOrDefault(cIndex))"
+ type="number" min="0" max="10" required />
+<label for="exit-b-@cIndex">@row.Key — bar height (0–10, by ones)</label>
+<input id="exit-b-@cIndex" name="Answers.ExitBarCounts[@cIndex]"
+ value="@(Model.Answers.ExitBarCounts?.ElementAtOrDefault(cIndex))"
+ type="number" min="0" max="10" required /></div>
+cIndex++;
+}
+</div>
+<label asp-for="Answers.WhichDoesNotBelong">Explain which one of four data displays doesn't belong, using a mathematical reason</label>
+<textarea asp-for="Answers.WhichDoesNotBelong" rows="3" maxlength="2000"></textarea>
+<label asp-for="Answers.Reflection">Explain what changed in your graphs after your partner's feedback</label>
+<textarea asp-for="Answers.Reflection" rows="3" maxlength="2000"></textarea>
+<p class="muted">This form checks category counts, titles, key and bar scale.
+Your teacher still evaluates the ORIGINAL student-created drawings,
+partner work, and mathematical explanations.</p>
+<button class="button" type="submit">Check and display my graphs</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>My submitted graph representations</h2>
+@if(Model.GraphOneCorrect){
+<div class="graph-panel">
+<h3>@Model.Answers.PictureTitle — picture graph</h3>
+<p>Key: one @Model.Answers.PictureSymbol represents ONE response</p>
+@foreach(var row in tableA){
+<div><strong>@row.Key</strong>
+<div class="symbols">
+@for(var j=0;j<row.Value;j++){
+<span class="symbol" aria-hidden="true">@Model.Answers.PictureSymbol</span>
+}
+<span class="muted">@row.Value</span>
+</div></div>
+}
+</div>
+}
+@if(Model.GraphTwoCorrect){
+<div class="graph-panel">
+<h3>@Model.Answers.BarTitle — bar graph</h3>
+<p>Numbered vertical scale from 0 to 10, one response per tick.</p>
+<div class="bars" role="img" aria-label="Student-authored bar graph, @string.Join("; ",tableB.Select(x=>x.Key+": "+x.Value))">
+@foreach(var row in tableB){
+<div class="column" aria-hidden="true"><span>@row.Value</span>
+<span class="bar" style="height:@(row.Value * 20)px"></span><span>@row.Key</span></div>
+}
+</div></div>
+}
+@if(Model.CoolDownCorrect){
+<div class="graph-panel">
+<h3>@Model.Answers.ExitTitle — picture and bar graph from Table C</h3>
+@foreach(var row in exit){
+<div><strong>@row.Key (@row.Value): </strong>
+@for(var i=0;i<row.Value;i++){<span class="symbol">@Model.Answers.ExitSymbol</span>}
+</div>
+}
+<p>Each category above has exactly the same number of symbols as its
+corresponding numbered bar. The total responses are @exit.Values.Sum().</p>
+</div>
+}
+<h2>Source-goal feedback</h2>
+@foreach(var feedback in Model.Feedback){
+<div class="@(feedback.Correct==true?"success":feedback.Correct==false?"error":"review")">
+<h3>@feedback.Activity</h3>
+<p>@(feedback.Correct==true?"Numerically correct":feedback.Correct==false?"Check your graph":"Teacher review needed"). @feedback.Reason</p>
+</div>
+}
+<p class="muted">The companion gives immediate feedback, not a
+persisted official school grade or proof of real classroom partner work.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher evidence criteria</h2>
+<ul>
+@foreach(var statement in UsCcssG2Unit1TenthLessonGraphConstruction.TeacherRubric){<li>@statement</li>}
+</ul>
+</section>
+<p class="muted">Curriculum reference: IM K–5 2021 Grade 2 U01 L10,
+CCSS 2.MD.D.10. Edulytics-authored tables and CSS visuals, not
+publisher figures or restricted source assessment.</p>
+</main>

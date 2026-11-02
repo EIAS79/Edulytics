@@ -1,0 +1,47 @@
+@using Edulytics.Web.Curriculum.Grade3
+<section class="panel" aria-label="Area and multiplication table representations">
+    <h2>Warm-up — Arrays that Grow</h2>
+    <p>Look at one arrangement at a time. Think quietly, then tell a partner how many dots you see and how you see them. Compare decompositions into smaller arrays.</p>
+    @{
+        var arrays=new[] {
+            new[] { "1111", "1111" },
+            new[] { "0011", "0011", "1111", "1111" },
+            new[] { "001100", "001100", "111111", "111111" }
+        };
+        var descriptions=new[] {
+            "Two rows of four dots",
+            "Two rows of two dots aligned above the right two columns of two rows of four dots",
+            "Two rows of two dots aligned above the middle two columns of two rows of six dots"
+        };
+    }
+    @for(var a=0;a<arrays.Length;a++) {
+        <figure><figcaption>Arrangement @(a+1)</figcaption>
+            <div role="img" aria-label="@descriptions[a]" style="display:grid;grid-template-columns:repeat(@(arrays[a][0].Length),22px);gap:5px;width:max-content;margin:12px">
+                @foreach(var row in arrays[a]) {
+                    @foreach(var dot in row) {
+                        <span aria-hidden="true" style="display:block;width:18px;height:18px;border-radius:50%;background:@(dot=='1'?"#183d52":"transparent")"></span>
+                    }
+                }
+            </div>
+        </figure>
+    }
+    <h2>Activity 1 — Area and the Multiplication Table</h2>
+    <p>Notice and wonder: compare these four examples. Each rectangle begins at the upper-left data square, excluding the factor headers. Its product is written in its lower-right square.</p>
+    @for(var columns=1;columns<=4;columns++) {
+        @await Html.PartialAsync("_Grade3MultiplicationTable",new Grade3MultiplicationTable(5,3,columns,true))
+    }
+    <h3>Your own rectangle</h3>
+    <p>Use a copy of this five-by-five table on paper. Create your own rectangle, record its product in its lower-right square, and explain how the factors match the area.</p>
+    @await Html.PartialAsync("_Grade3MultiplicationTable",new Grade3MultiplicationTable(5))
+    <h3>A rectangle of 24 square units</h3>
+    <p>Use this nine-by-nine table. Start at the upper-left DATA square, draw a rectangle of area 24 square units, and record its product in the lower-right square. Both sides must fit the table. Compare a different valid rectangle with a partner.</p>
+    @await Html.PartialAsync("_Grade3MultiplicationTable",new Grade3MultiplicationTable(9))
+    <h2>Activity 2 — Products in the Multiplication Table</h2>
+    <p>Record a notice and a question about the starting table below. Independently find as many other products as you can; start with rows and columns for 2, 5 and 10. You do not have to fill every cell. With the class, complete the rows and columns for 2 and 5. Explain patterns in the row AND column for 5 with your own equations.</p>
+    @await Html.PartialAsync("_Grade3MultiplicationTable",new Grade3MultiplicationTable(10,SeedTwos:true))
+    <p>Rehearse your explanation with a partner, then share it. Your teacher checks the actual drawings, equations, questions and discussion.</p>
+    <h3>Independent practice and new Edulytics Cool-down</h3>
+    <p>Use fresh copies of a ten-by-ten table for the separate practice and Cool-down prompts below. Draw each requested rectangle and show your reasoning on paper or in the original-work response field.</p>
+    @await Html.PartialAsync("_Grade3MultiplicationTable",new Grade3MultiplicationTable(10))
+    <p><a href="https://cms-assets.illustrativemathematics.org/y5sf1a9phst6bjq0u8o441ld0psb" target="_blank" rel="noopener noreferrer">Original 2021 three-page Student Task Statements</a>. These tables and dot arrangements are independently drawn mathematical models. No publisher image files or SVG paths are embedded.</p>
+</section>

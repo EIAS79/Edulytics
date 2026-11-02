@@ -1,0 +1,59 @@
+@model Edulytics.Web.ViewModels.DirectStudent.DirectStudentRegistrationViewModel
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = "Join Edulytics Premium";
+}
+
+<section class="auth-shell">
+    <div class="auth-card">
+        <div class="auth-heading">
+            <h1>Join Edulytics Premium</h1>
+            <p>Create your personal student account. You will choose curriculum, grade and subject before payment.</p>
+        </div>
+
+        <form asp-controller="DirectStudent"
+              asp-action="Join"
+              method="post"
+              class="auth-form">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly"
+                 class="validation-summary"
+                 role="alert"></div>
+
+            <div class="field-group">
+                <label asp-for="FirstName" class="form-label">First name</label>
+                <input asp-for="FirstName" class="form-control ed-input" autocomplete="given-name" />
+                <span asp-validation-for="FirstName" class="field-validation"></span>
+            </div>
+
+            <div class="field-group">
+                <label asp-for="LastName" class="form-label">Last name</label>
+                <input asp-for="LastName" class="form-control ed-input" autocomplete="family-name" />
+                <span asp-validation-for="LastName" class="field-validation"></span>
+            </div>
+
+            <div class="field-group">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control ed-input" autocomplete="email" />
+                <span asp-validation-for="Email" class="field-validation"></span>
+            </div>
+
+            <div class="field-group">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control ed-input" autocomplete="new-password" />
+                <span asp-validation-for="Password" class="field-validation"></span>
+            </div>
+
+            <div class="field-group">
+                <label asp-for="ConfirmPassword" class="form-label">Confirm password</label>
+                <input asp-for="ConfirmPassword" class="form-control ed-input" autocomplete="new-password" />
+                <span asp-validation-for="ConfirmPassword" class="field-validation"></span>
+            </div>
+
+            <button type="submit" class="btn ed-primary-button">
+                Create student account
+            </button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 2",
+  "gradeOrdinal": 55,
+  "lessonCode": "PED:US-CCSS-MATH:G2:U04:L03",
+  "title": "Unlabeled Tick Marks",
+  "unitNumber": 4,
+  "lessonNumber": 3,
+  "sourceEdition": "IM K–5 2021 first edition",
+  "stageA": {
+    "status": "COMPLETE_PUBLIC_IM2021_TEACHER_SOURCE_REVIEW",
+    "teacherPreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-3/preparation.html",
+    "teacherLesson": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-4/lesson-3/lesson.html",
+    "sourceSemanticSha256": "d5ba108c016f4f604d110f7ac527d4fe9f4e21bd63abc7f8f94e41172e0f7850",
+    "sourceBodySha256": "f52cfba81e09474a951333db5d4a62d83c3145c74d8dd7c5ecbcaadb97bcdb99",
+    "orderedOutcomes": [
+      "CCSS:2.MD.B.6",
+      "CCSS:2.NBT.A.2"
+    ],
+    "warmup": "Original three0..30 diagrams with ones, six5-unit hops, three10-unit hops, teacher image judgment",
+    "activity1": "Original dots24 on0..30 labeled by5,37 on0..40 labeled by10,48 on20..60 labeled by10,83 on60..90 labeled by5",
+    "activity2": "Source 4 actual partial-label diagrams target17,59,43,35; detailed source image only partially numeric for17 and43; teacher checks59/35 with original figures",
+    "imageOnlyBoundary": "NO invented image ticks, labels or graphics for inaccessible drawings. Physical dots and student partner evidence teacher-only",
+    "copyright": "CC BY 4.0 public source arithmetic attributed/paraphrased, no protected original Cool-down or source images"
+  },
+  "stageB": {
+    "status": "COMPLETE_SHA_SOURCE_GUARDED_SIX_LEARNER_FIELD_REPAIR",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit4UnlabeledTicksTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "studentReader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "guard": "Exact original CCSS source URL+canonical body SHA, ordered two outcomes, six approved old learner fields, persisted translation and content-version guards"
+  },
+  "stageC": {
+    "status": "COMPLETE_AUTHORING_PROTECTED_REAL_ORIGINAL_DIAGRAM_COMPANION_AND_FOUR_EXACT_INDEPENDENT_FAMILIES",
+    "core": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4ThirdLessonUnlabeledTicks.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit4Lesson03UnlabeledTicksContracts.cs",
+    "generator": "src/Edulytics.Services/Mathematics/UsCcssG2Unit4Lesson03UnlabeledTicksQuestions.cs",
+    "controller": "src/Edulytics.Web/Controllers/Grade2Lesson55ActivitiesController.cs",
+    "view": "src/Edulytics.Web/Views/Grade2Lesson55Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u04.l03.before_five_ten_anchor",
+      "usccss.g2.u04.l03.after_five_ten_anchor",
+      "usccss.g2.u04.l03.window_one_unit_ticks",
+      "usccss.g2.u04.l03.unit_point_gap"
+    ],
+    "teacherOnly": "Source figure actual one-unit point placement, Notice & Wonder, visual original image for17/59/43/35, partner discourse and restricted Cool-down",
+    "independent": "New first-party randomly generated windows0..30,0..40,20..60,60..90, valid cardinal one-unit spacing and printed5/10 landmarks; computed answers exact but NO assertion of image-grading",
+    "security": "StudentPortal selected adoption and published lesson, CSRF, user input max2000 chars, no official academic grade",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit4UnlabeledTicksTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit4ThirdLessonUnlabeledTicksTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit4Lesson03UnlabeledTicksQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson55ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "readyForStageD": true,
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "humanAcademicSignoff": "NOT_ASSERTED",
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "CONTINUE_G2_U04_L04_GRADE_ORDINAL56_STAGE_A_B_C_NO_SKIP"
+}

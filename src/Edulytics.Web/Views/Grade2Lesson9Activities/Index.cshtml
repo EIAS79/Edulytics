@@ -1,0 +1,160 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson9PracticePage
+@using Edulytics.Core.Mathematics.Practice
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 2 · Interpret bar graphs";
+    var charts = new[] {
+        new {Title="Pet preferences — pictured as bars", Values=UsCcssG2Unit1NinthLessonEdulyticsCoolDown.WarmupPets},
+        new {Title="Hypothetical Class A field trip choices", Values=UsCcssG2Unit1NinthLessonEdulyticsCoolDown.SampleFieldTripClassA},
+        new {Title="Hypothetical Class B field trip choices", Values=UsCcssG2Unit1NinthLessonEdulyticsCoolDown.SampleFieldTripClassB},
+        new {Title="Our Favorite Seasons — source numerical facts", Values=UsCcssG2Unit1NinthLessonEdulyticsCoolDown.SourceSeasonHeights},
+        new {Title="Edulytics school-club example — independent Cool-down", Values=UsCcssG2Unit1NinthLessonEdulyticsCoolDown.EdulyticsClubHeights}
+    };
+}
+<style>
+.g2-l09{max-width:1020px;margin:auto;padding:20px 18px 40px;color:#1c364b}
+.g2-l09 .panel{background:#fff;border:1px solid #d5e1e9;border-radius:16px;padding:24px;margin:18px 0}
+.g2-l09 h1{font-size:1.85rem}.g2-l09 h2{font-size:1.3rem}.g2-l09 h3{font-size:1.1rem}
+.g2-l09 .muted{color:#536b7d}
+.g2-l09 .graphs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px}
+.g2-l09 .graph{border:1px solid #b4c7d2;border-radius:12px;background:#f6fafc;padding:16px}
+.g2-l09 .chart-layout{display:flex;align-items:stretch;min-height:224px}
+.g2-l09 .y-axis{display:flex;flex-direction:column;justify-content:space-between;font-size:.7rem;color:#465d70;padding-right:7px;border-right:2px solid #566a78;min-width:23px}
+.g2-l09 .bar-area{display:grid;grid-template-columns:repeat(4,minmax(44px,1fr));align-items:end;gap:8px;border-bottom:2px solid #566a78;flex:1;padding:10px 5px 0}
+.g2-l09 .bar-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;text-align:center;font-size:.75rem;min-width:0}
+.g2-l09 .bar{background:#24869f;border:1px solid #145f79;border-radius:4px 4px 0 0;min-height:0;width:34px;max-width:100%}
+.g2-l09 label{display:block;font-weight:750;margin:14px 0 5px}
+.g2-l09 input,.g2-l09 textarea{font:inherit;border:1px solid #708b9c;border-radius:8px;padding:11px;width:100%;max-width:510px}
+.g2-l09 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.g2-l09 .button{font:inherit;font-weight:750;background:#08788f;color:white;border:0;border-radius:9px;padding:13px 24px;cursor:pointer}
+.g2-l09 .success{border-left:4px solid #23865a;padding-left:12px}
+.g2-l09 .error{border-left:4px solid #b94351;padding-left:12px}
+.g2-l09 .review{border-left:4px solid #a37e36;padding-left:12px}
+.g2-l09 .pet-pictures{display:flex;gap:5px;flex-wrap:wrap}
+.g2-l09 .pet-pic{border:1px solid #90a7b6;background:#e7f5f9;border-radius:5px;padding:4px}
+</style>
+<main class="g2-l09">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to your lesson</a>
+<header>
+<p>EDULYTICS · SOURCE-GOAL LEARNING</p>
+<h1>How can we read bar graphs?</h1>
+<p class="muted">Grade 2 Unit 1 Lesson 9. This lesson uses first-party CSS bars
+and an independently authored Cool-down. Do not treat hypothetical charts
+as actual classroom surveys.</p>
+</header>
+<section class="panel">
+<h2>1. Warm-up — picture graph and bar graph</h2>
+<p>In a picture graph each picture can stand for one response. In a bar graph
+each vertical bar's height corresponds to a NUMBER on the left-hand scale.</p>
+<p>Source numerical warm-up: cat 6, dog 10, fish 5, lizard 3. How can the
+two visual forms communicate these SAME counts?</p>
+<div class="two">
+@foreach(var item in UsCcssG2Unit1NinthLessonEdulyticsCoolDown.WarmupPets){
+ <div>
+ <strong>@item.Key — @item.Value pictures</strong>
+ <div class="pet-pictures" role="img" aria-label="@item.Value image symbols for @item.Key, each equals one response">
+ @for(var j=0;j<item.Value;j++){<span aria-hidden="true" class="pet-pic">●</span>}
+ </div>
+ </div>
+}
+</div>
+</section>
+<section class="panel">
+<h2>2. Graphs with a numbered vertical scale</h2>
+<p><strong>Read each graph title, horizontal category label and vertical axis.</strong>
+All original Edulytics bar illustrations here use a scale of ONE response
+per numbered unit. Compare the height with the scale instead of counting
+picture symbols. The Class A and Class B choices below are fictional examples
+created for teaching, NOT real class results.</p>
+<div class="graphs">
+@foreach(var graph in charts){
+ <div class="graph">
+ <h3>@graph.Title</h3>
+ <p class="muted">Vertical scale: 0–14, one respondent per tick.</p>
+ <div class="chart-layout">
+ <div class="y-axis" aria-hidden="true">
+ @for(var y=14;y>=0;y--){<span>@y</span>}
+ </div>
+ <div class="bar-area" role="img"
+ aria-label="Bar graph @graph.Title; @string.Join("; ",graph.Values.Select(e => e.Key+": "+e.Value))">
+ @foreach(var item in graph.Values){
+ <div class="bar-col" aria-hidden="true">
+  <span>@item.Value</span>
+  <span class="bar" style="height:@(item.Value * 12)px"></span>
+  <span>@item.Key</span>
+ </div>
+ }
+ </div>
+ </div>
+ </div>
+}
+</div>
+<p class="muted">The numeric values are shown in the text and accessible chart
+descriptions as well as in the independent CSS bars.</p>
+</section>
+<section class="panel">
+<h2>3. Write multiple true statements about a field-trip graph</h2>
+<p>Compare the independently authored Class A and Class B graphs.
+Write at least TWO different true statements about one specific class.
+Examples may compare categories or combine counts. Explain how the
+numbered scale supports your statement. Your teacher reviews the
+actual reasoning, not just a numerical answer.</p>
+<p>In the seasons graph, summer has 13 votes, spring and fall each have
+3, and winter has 7. Find both different pairs totaling ten.</p>
+<form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
+ @Html.AntiForgeryToken()
+ <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
+ <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+ <input type="hidden" name="lessonId" value="@Model.LessonId" />
+ <button class="button" type="submit">Practice more numbered-scale bar graph questions</button>
+</form>
+</section>
+<form class="panel" asp-controller="Grade2Lesson9Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<h2>4. Independent Edulytics Cool-down and source math questions</h2>
+<div class="two">
+<div><label asp-for="Answers.Summer">How many chose summer?</label><input asp-for="Answers.Summer" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.SpringAndFall">How many selected spring or fall together?</label><input asp-for="Answers.SpringAndFall" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.PairOfSeasonsMakingTen">Name two DIFFERENT seasons totaling 10 votes (e.g. Winter + Spring)</label><input asp-for="Answers.PairOfSeasonsMakingTen" maxlength="80" required /></div>
+<div><label asp-for="Answers.AllSeasonVotes">How many total votes are represented?</label><input asp-for="Answers.AllSeasonVotes" inputmode="numeric" maxlength="20" required /></div>
+</div>
+<h3>New Edulytics school-club graph — independent assessment</h3>
+<div class="two">
+<div><label asp-for="Answers.ClubFootball">How many chose football?</label><input asp-for="Answers.ClubFootball" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.ClubTotal">How many chose any club altogether?</label><input asp-for="Answers.ClubTotal" inputmode="numeric" maxlength="20" required /></div>
+<div><label asp-for="Answers.ClubFootballMinusArt">How many more chose football than art?</label><input asp-for="Answers.ClubFootballMinusArt" inputmode="numeric" maxlength="20" required /></div>
+</div>
+<label asp-for="Answers.FirstTrueFieldTripStatement">Write your FIRST true statement about Class A or B</label>
+<textarea asp-for="Answers.FirstTrueFieldTripStatement" rows="2" maxlength="1000"></textarea>
+<label asp-for="Answers.SecondTrueFieldTripStatement">Write a DIFFERENT true statement</label>
+<textarea asp-for="Answers.SecondTrueFieldTripStatement" rows="2" maxlength="1000"></textarea>
+<label asp-for="Answers.GraphComparisonExplanation">Explain one way a bar graph and picture graph show the SAME data differently</label>
+<textarea asp-for="Answers.GraphComparisonExplanation" rows="3" maxlength="2000"></textarea>
+<p class="muted">The student-generated statements and partner explanation
+are scored by a teacher using the rubric, not by invented automatic grades.</p>
+<button class="button" type="submit">Check my bar graph mathematics</button>
+</form>
+@if(Model.Submitted){
+<section class="panel" aria-live="polite">
+<h2>Feedback</h2>
+@foreach(var item in Model.Feedback){
+ <div class="@(item.Correct==true?"success":item.Correct==false?"error":"review")">
+ <h3>@item.Task</h3>
+ <p>@(item.Correct==true?"Mathematically correct":item.Correct==false?"Try again":"Teacher review"). @item.Feedback</p>
+ </div>
+}
+<p class="muted">Immediate practice feedback only. This does not persist an
+official school grade or claim that the original classroom activity took place.</p>
+</section>
+}
+<section class="panel">
+<h2>Teacher review rubric</h2>
+<ul>
+@foreach(var item in UsCcssG2Unit1NinthLessonEdulyticsCoolDown.TeacherRubric){<li>@item</li>}
+</ul>
+</section>
+<p class="muted">Original curriculum reference: IM 2021 Grade 2 U01 L09,
+CCSS 2.MD.D.10. All rendered bars and exit-ticket text authored by Edulytics.</p>
+</main>

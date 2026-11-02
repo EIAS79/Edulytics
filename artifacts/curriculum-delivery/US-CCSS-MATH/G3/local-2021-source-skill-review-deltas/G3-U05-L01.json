@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 80,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L01",
+  "title": "Name the Parts",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-5/lesson-1/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U05.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U05.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L01.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Fold and label a rectangle into three, six, four, or eight equal-area parts as requested in the source. Demonstrate that parts are equal.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-5/lesson-1/lesson.html",
+      "verified": "STUDENT_FACING_SOURCE_TEXT_REVIEWED",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Which One Doesn't Belong: Shapes with Parts (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-5/lesson-1/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Card Sort: Partitions (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-1/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Fold and Name (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-1/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-5/lesson-1/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: Partition a Rectangle (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-5/lesson-1/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Diagram. Rectangle partitioned diagonally into 2 equal parts.",
+      "Diagram. Rectangle partitioned into 2 parts, one part shaded.",
+      "Diagram. Circle partitioned into 2 parts.",
+      "Diagram. Rectangle partitioned into 2 unequal parts.",
+      "Diagram. Square partitioned into 2 parts.",
+      "Diagram. Square partitioned into 4 parts.",
+      "Diagram. Rectangle partitioned into 2 parts.",
+      "Diagram. Circle partitioned into 3 equal parts.",
+      "Diagram. Rectangle partitioned into 3 parts.",
+      "Diagram. Circle partitioned into 4 parts.",
+      "Diagram. Circle partitioned into 3 unequal parts.",
+      "Diagram. Rectangle partitioned into 4 parts.",
+      "Fraction strips."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Fold and label a rectangle into three, six, four, or eight equal-area parts as requested in the source. Demonstrate that parts are equal.",
+      "answerType": "teacher",
+      "expected": null
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s name parts of a whole.",
+      "sourceLearningGoals": "Partition shapes into 2, 3, 4, 6, or 8 parts with equal area and name those parts as halves, thirds, fourths, sixths, and eighths. Recognize that equal-size parts in a shape can be named with numbers called fractions.",
+      "teachingSteps": [
+        "Identify the whole and divide it into equal parts.",
+        "Represent the fraction with a number line or equal-area drawing.",
+        "Explain the unit fractions, position, equality or comparison."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s name parts of a whole.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Fold a rectangular whole into six equal parts, shade one and name the unit fraction.",
+      "answerType": "rational",
+      "expected": "1/6"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "A whole is split into eight equal-area parts; one is highlighted. Name the fraction.",
+      "answerType": "rational",
+      "expected": "1/8"
+    },
+    "humanRubric": "Partition cards and actual fold lines are physical/visual tasks, not numerically certified.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

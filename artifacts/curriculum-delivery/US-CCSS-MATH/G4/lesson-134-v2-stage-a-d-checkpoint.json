@@ -1,0 +1,51 @@
+{
+  "ordinal": 134,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U08:L07",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "REUSED_2021_LOCAL_SOURCE_FOUR_SIDES_AND_FRACTION_MILES",
+    "B": "SOURCE_POLYGON_A_94_FT_B_2_MILES_AND_OPTIONAL_ACTIVITY_REPAIRED",
+    "C": "EXTENDED_EXACT_SHARED_KERNEL_8_POLYGON_PERIMETER_CASES_FOCUSED_XUNIT_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "09fa17b92f5f705d197524db866e59fc981f948d7887aa1259c4a69dd68f09df",
+    "teacher": "ef4c77c569c8d0e6e35ff53abca0a9d6778c0eb9d0b575dce76733a7ef567294"
+  },
+  "firstPartyCooldown": {
+    "prompt": "What is the perimeter of a triangle whose three sides are each 7 cm?",
+    "teacherAnswer": "21 cm."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 original Our-CS source intake",
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(6 \\times \\frac{1}{3}\\) | \\(30 \\times \\frac{1}{3}\\)",
+      "Find the perimeter of each shape. Write an expression that shows how you find the perimeter. | Description: 4 shapes. A. 4 sides, 18 feet, 26 feet, 13 feet, 37 feet. B. 4 sides. 1 fifth mile, 4 fifths mile, 1 fifth mile, 4 fifths mile. C. 3 equal sides. each 7",
+      "Here are four shapes and what we know about them: | A, B, and C have no lines of symmetry. | A has no parallel sides."
+    ],
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Multiple Thirds (10 minutes)",
+      "Activity 1: All the Way Around (20 minutes)",
+      "Activity 2: Ponder Perimeter (15 minutes)",
+      "Activity 3: Perimeter Expressions [OPTIONAL] (10 minutes)",
+      "Cool-down: What's the Perimeter? (5 minutes)"
+    ],
+    "allowedFamily": "usccss.g4.u08.l07.polygon_perimeter_sum",
+    "primarySkillId": "geometry.perimeter_area.add_polygon_sides",
+    "teacherOnlyTasks": [
+      "Fractional-mile publisher figure B separate from integer practice",
+      "Ponder Perimeter source geometric constraints"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal134PerimeterTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

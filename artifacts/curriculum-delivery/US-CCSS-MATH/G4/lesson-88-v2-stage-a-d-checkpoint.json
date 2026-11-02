@@ -1,0 +1,42 @@
+{
+  "ordinal": 88,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L02",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "cd95587840c45fd1b3696caeed17bada5d8a689531961b85a4015c1b0db2be77",
+    "teacher": "49061b4dc0792e3653bc77f9edc99261a35705368d9491ad98e451a7812b50f9",
+    "student": "9de300c49ebcc24f7379dc90cc21d190e7fa37933f8289ce14894409ec62dccc"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Red, blue, green repeats: what is the eighth color?",
+    "teacherAnswer": "Blue"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:30:30+01:00",
+  "closeAtLocal": "2026-10-26T23:30:31+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-88-local-source-guard.test.cjs"
+  }
+}

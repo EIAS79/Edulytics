@@ -1,0 +1,146 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u02-l03-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U02:L03",
+      "CultureCode": "en",
+      "Title": "Tile Rectangles — Equal Square Units, No Gaps and No Overlaps",
+      "ExplanationParagraphs": [
+        "Reference: IM K–5 First Edition 2021, Grade 3 Unit 2 Lesson 3. Source student task PDF SIX pages; original teacher material, 19 source lesson graphics, the two-page Time to Tile and one-page Card Sort: Rectangles printed masters have been reviewed. The Edulytics content is independently authored, with no publisher assets copied.",
+        "Warm-up (10 minutes), Which One Doesn't Belong: four distinct original images A/B/C/D. A is 4×6=24 equal-square rectangle with alternating colored squares; B only partly tiles a rectangle; C fully tiles a 4×6 region; D has 24 loose tiles laid out about 6×4 but with gaps and overlaps, so counting 24 pieces does NOT establish covered area. Students defend several different reasons to exclude each diagram, using teacher review. Newly authored illustrations must preserve each unique visual flaw or advantage.",
+        "Activity 1 (15 minutes), Time to Tile: the ORIGINAL source two-page printed master has FOUR rectangles a/b/c/d with partial, misplaced, or overlapping inch squares. Students move existing tiles and add additional equal tiles so the entire original outlined rectangle is filled with no gaps and overlaps. The verified total areas, FROM the physical source geometry, are a=5×5=25, b=5×3=15, c=6×4=24, d=3×4=12 square units. The lesson's teacher preparation gives a pair a set of 24 one-inch tiles, so for a=25 students may need to show/draw the missing tile if constructing all 25 simultaneously is infeasible. Numeric anchors check counts; teachers must separately verify actual tile placement and explanations.",
+        "Students then articulate why area of any fully tiled rectangle can be measured by counting congruent unit squares without overlaps or uncovered spaces. Original activity requires showing or describing the tiling for each of four printed shapes rather than merely entering four numbers. MLR1/MLR8 student explanation and feedback must be evaluated by the teacher.",
+        "Activity 2 (20 minutes), Card Sort: Rectangles: notice/wonder three original area-12 representations (physical inch squares, 4×3 shaded area, 4×3 grid); draw a rectangle whose area is exactly 8 square units on the source blank grid. Any valid 1×8, 2×4, 4×2, or 8×1 rectangle can be defended, but an answer of only '8' does not satisfy the drawing task.",
+        "The original single-page 2021 Card Sort master has six cards. Verified source geometry: A=4×3=12, C=1×12=12, D=8×2=16, E=4×4=16, B=3×8=24, F=2×12=24. Pupils first sort by a defensible rule of their choice, then sort by equal AREA into groups {A,C}, {D,E}, {B,F}. For EACH equal-area family create another different valid rectangular array of congruent unit squares and justify its area; this construction is teacher-scored.",
+        "Synthesis contrasts objects counted in groups with square-unit area of covered space, without gaps and overlaps. Identical numbers of badly arranged tiles do not prove equal area; the correctly tiled examples do. Original restricted source Cool-down 'Tile a Rectangle' is educator-gated; independently authored Edulytics practice/Cool-down is a separate skill-equivalent, not a claim of verbatim publisher parity. Neither .NET tests, CI, Stage D nor runtime publication is executed in A–B–C."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit square",
+          "Definition": "A single congruent square measuring one square unit.",
+          "Rule": "Use same-size square tiles; each covers one standard unit of two-dimensional area.",
+          "Example": "A rectangle with three rows of four congruent tiles has 12 square units."
+        },
+        {
+          "Title": "Cover without gaps or overlap",
+          "Definition": "Every piece of a plane region is tiled exactly once by unit squares.",
+          "Rule": "An apparent arrangement of 24 loose squares is invalid if tile edges leave uncovered gaps or are stacked.",
+          "Example": "Warm-up D has 24 tiles but incomplete coverage."
+        },
+        {
+          "Title": "Rectangular arrays and total area",
+          "Definition": "Whole rows and columns of congruent square units can represent the tiled rectangle's area.",
+          "Rule": "Count rows × columns only after confirming congruent tiles completely cover the rectangular boundary.",
+          "Example": "Five rows of five tiles cover 25 square units."
+        },
+        {
+          "Title": "Different rectangles may have the same area",
+          "Definition": "A 1×12 rectangle and a 4×3 rectangle both cover 12 square units.",
+          "Rule": "Sort cards by square-unit totals rather than by outside shape.",
+          "Example": "Original Card Sort A and C have equal area 12 despite different profiles."
+        },
+        {
+          "Title": "Teacher judgement of constructions",
+          "Definition": "A correct numerical answer is not sufficient proof of a drawing, model, card sort, or physical tiling.",
+          "Rule": "Individually inspect rows/columns, gaps, overlap, explanation and card grouping.",
+          "Example": "A student's '8' cannot automatically grade the required eight-square drawing."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Valid source warm-up areas",
+          "Question": "What is the difference between a fully tiled 4×6 rectangle and an incorrect 6×4 tiling?",
+          "Method": "Inspect tiles, not just the count.",
+          "Steps": [
+            "Both arrangements may contain 24 physical squares.",
+            "A and C fully cover a 4-by-6 rectangle without gaps.",
+            "D shows gaps/overlaps despite 24 tile pieces.",
+            "The area is only verified from complete congruent coverage."
+          ],
+          "Answer": "The correct complete model covers 24 square units; D is invalid until rearranged.",
+          "Check": "Teacher must inspect the visual."
+        },
+        {
+          "Title": "Four original Time to Tile rectangles",
+          "Question": "Determine original rectangles a/b/c/d after all gaps and overlaps are corrected.",
+          "Method": "Cover the exact source outlines in inch-square units.",
+          "Steps": [
+            "a: 5 rows of 5 -> 25 square units.",
+            "b: 5 rows of 3 -> 15 square units.",
+            "c: 6 rows of 4 -> 24 square units.",
+            "d: 3 rows of 4 -> 12 square units.",
+            "Explain repositioning and gapless coverage on the source blackline master."
+          ],
+          "Answer": "a 25; b 15; c 24; d 12 square units.",
+          "Check": "Correct numbers must not auto-approve a physical tile placement."
+        },
+        {
+          "Title": "Draw exactly eight units",
+          "Question": "Draw a rectangle covering eight unit squares.",
+          "Method": "Arrange congruent unit squares with no gaps.",
+          "Steps": [
+            "Pick two rows and four columns.",
+            "Draw eight squares edge-to-edge.",
+            "Explain that 2×4=8.",
+            "Teacher inspects source-grid drawing."
+          ],
+          "Answer": "Any valid eight-unit rectangle, e.g., 2×4.",
+          "Check": "Teacher observes drawing; typed 8 alone not a pass."
+        },
+        {
+          "Title": "Sort source rectangle cards by area",
+          "Question": "Which original cards have matching areas?",
+          "Method": "Read each original card's rows and columns.",
+          "Steps": [
+            "Card A 4×3=12 and C 1×12=12.",
+            "D 8×2=16 and E 4×4=16.",
+            "B 3×8=24 and F 2×12=24.",
+            "Propose another rectangle for each of the three area groups."
+          ],
+          "Answer": "{A,C} at 12; {D,E} at 16; {B,F} at 24.",
+          "Check": "Teacher checks physical sorting and each new drawing."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating 24 overlapping tiles as a measured 24-square-unit area.",
+          "WhyWrong": "Overlaps count the same patch twice and gaps leave uncovered areas.",
+          "Correction": "Move tiles until entire rectangle is covered exactly once."
+        },
+        {
+          "Mistake": "Assuming the publisher's partly tiled rectangles have areas equal to the number of pre-drawn squares.",
+          "WhyWrong": "Partial squares are merely a starting layout.",
+          "Correction": "Measure the full outlined rectangle after completing tiling: a 25, b 15, c 24, d 12."
+        },
+        {
+          "Mistake": "Guessing all original source figures contain no more than 24 squares.",
+          "WhyWrong": "The actual source rectangle a has 5×5=25 despite the 24-tile material allocation.",
+          "Correction": "Record 25 for a; recognize the drawing/supplemental-square constraint."
+        },
+        {
+          "Mistake": "Sorting original cards by size of perimeter rather than area.",
+          "WhyWrong": "Different side dimensions can cover the same number of square units.",
+          "Correction": "Group by A/C=12, D/E=16, B/F=24."
+        },
+        {
+          "Mistake": "Automarking an eight-unit rectangle drawing as correct from the numeric response 8.",
+          "WhyWrong": "The authentic source requires an actual rectangle constructed from eight equal square units.",
+          "Correction": "Teacher verifies the real drawing and an explanation."
+        }
+      ],
+      "SummaryPoints": [
+        "First-edition 2021 source materials inspected: six-page Student Task Statements; 19 source figures; two-page Time to Tile and one-page Card Sort print masters.",
+        "Warm-up originals: A and C show valid 24-unit complete tile regions; B partial, D gap/overlap invalid.",
+        "Original four Time to Tile rectangle areas: a 25, b 15, c 24, d 12 square units after gap-free coverage.",
+        "Original Card Sort six cards: A/C 12, D/E 16, B/F 24 square units; one more drawn rectangle per group.",
+        "Original student activity also requires a valid NEW eight-square drawing, not merely the number 8.",
+        "All original student physical construction, card sorting and reasoning teacher-reviewed; supplemental first-party numeric checks must never certify the original action.",
+        "No original copyrighted image/pixel/master asset copied into Edulytics, no CI/tests/Stage D/deployment performed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

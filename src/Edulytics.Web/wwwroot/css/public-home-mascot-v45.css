@@ -1,0 +1,61 @@
+/* Home v45 — keep the public character fully visible without horizontal page overflow. */
+.ed-home{
+  max-width:100%;
+  overflow-x:hidden!important;
+}
+
+.ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+  width:min(100%,620px)!important;
+  max-width:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  overflow:visible!important;
+  display:grid;
+  place-items:center;
+  justify-self:center;
+}
+
+.ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:min(100%,560px)!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  margin:0 auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+}
+
+@media(max-width:1450px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+    width:min(100%,560px)!important;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+    width:min(100%,510px)!important;
+  }
+}
+
+@media(max-width:1040px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+    width:min(100%,600px)!important;
+    overflow:visible!important;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+    width:min(92vw,520px)!important;
+  }
+}
+
+@media(max-width:680px){
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v12-visual.ed-home-v40-mascot-stage{
+    width:100%!important;
+    aspect-ratio:auto!important;
+  }
+  .ed-home .ed-home-v12-slide:first-child .ed-home-v40-mascot-image{
+    width:min(88vw,430px)!important;
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 85,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L06",
+  "unitNumber": 5,
+  "lessonNumber": 6,
+  "title": "Locate Unit Fractions on the Number Line",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-5/lesson-6/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-6/lesson.html",
+  "stageA": {
+    "status": "ORIGINAL_2021_TEACHER_HTML_PREPARATION_AND_22_DISTINCT_IMAGE_URLS_SOURCE_REVIEWED_ANDRE_NINE_UNIT_FRACTIONS",
+    "goals": "Partition the interval from 0 to 1 and locate unit fractions within that interval.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 18,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false
+  },
+  "stageB": {
+    "status": "FIRST_PARTY_RICH_V2_NINE_SOURCE_UNIT_FRACTION_LINES_AND_THREE_PUPIL_COMPARISON",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U05:L06",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "2d361034e44e6bbf2f8e97a319fca32fe9bcd88db11a3b5b9192f260193ed55a",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l06-2021.rich-lesson-v2.json"
+  },
+  "stageC": {
+    "status": "NINE_SOURCE_MATH_ORACLES_AND_THREE_PUPIL_ERROR_PROOFS_TESTS_WRITTEN_UNRUN",
+    "family": "fractions-number-line",
+    "practiceAnswerType": "rational",
+    "coolDownAnswerType": "rational",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Partition Fourths with your teacher. Show the representation and explain how it meets the goal: Let’s partition the number line to locate unit fractions. Required Preparation CCSS Standards Addressing 3.NF.A.2 3.NF.A.2.a Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
+    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson6UnitFractionSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U05-L06-HEADING-01",
+      "sourceSection": "Warm-up: Which One Doesn't Belong: Fraction Details (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "THREE_ORIGINAL_PUBLIC_STUDENT_FACING_ACTIVITIES_TO_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L06-HEADING-02",
+      "sourceSection": "Activity 1: Partition Fourths (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "THREE_ORIGINAL_PUBLIC_STUDENT_FACING_ACTIVITIES_TO_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L06-HEADING-03",
+      "sourceSection": "Activity 2: Unit Fractions on the Number Line (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "THREE_ORIGINAL_PUBLIC_STUDENT_FACING_ACTIVITIES_TO_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L06-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L06-HEADING-05",
+      "sourceSection": "Cool-down: Locate and Label (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U05-L06-IMAGE-01",
+      "observedAltText": "Diagram. Rectangle partitioned into 3 equal parts, 1 part shaded and labeled one third.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-02",
+      "observedAltText": "Number line. Tick marks labeled zero and one with two unlabeled tick marks in between.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-03",
+      "observedAltText": "Number line. Tick marks labeled zero and one. Point plotted at one third.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-04",
+      "observedAltText": "Number line. Evenly spaced tick marks. First tick mark, zero. Last tick mark, one. Three tick marks between zero and one, the first with a point labeled one fourth.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-05",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled zero, one, two with unlabeled tick marks in between.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-06",
+      "observedAltText": "Number line. First tick mark, 0. Last tick mark, 2. Three unlabeled tick marks between 0 and 1.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-07",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled zero, one, and two, with 4 unlabeled tick marks between 0 and 1.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-08",
+      "observedAltText": "Two students talking.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-09",
+      "observedAltText": "Number line. Tick marks labeled zero and one.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-10",
+      "observedAltText": "Number line. 2 tick marks, 0 and 1.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-11",
+      "observedAltText": "Number line. 0 to 1. First tick mark, 0. Last tick mark, 1.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-12",
+      "observedAltText": "Number line. 0 to 4 by ones. Evenly spaced tick marks. First tick mark, 0. Last tick mark, 4.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-13",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled 0, 1, and 2.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-14",
+      "observedAltText": "Number line. Scale 0 to 4 by ones. Evenly spaced tick marks. First tick mark, 0. Last tick mark, 4.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-15",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled 0, 1, 2, 3.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-16",
+      "observedAltText": "Number line.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-17",
+      "observedAltText": "Diagram.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    },
+    {
+      "id": "G3-U05-L06-IMAGE-18",
+      "observedAltText": "Diagram. Rectangle partitioned into 4 equal parts labeled one fourth. One part shaded.",
+      "originalReference": "unit-5/lesson-6/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "READ_ONLY_2021_SOURCE_IMAGE_BYTES_REVIEWED_NOT_COPIED_TO_PRODUCT"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 18,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Divide the zero-to-one number line into 4 equal intervals. Write the fraction at the first tick after zero.",
+    "answerType": "rational",
+    "expected": "1/4"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original standalone publisher Student Task Statements PDF and gated publisher Cool-down not inspected.",
+    "First-party mathematical reconstruction not publisher pixel/parity certification.",
+    "Teacher review still required for drawn tick spacings, discussion and comparative explanations.",
+    "Stage D, execution of new tests, runtime Rich V2 materialization, merge, deploy, academic approval not done."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "6d0056c4629ef2f9a58f6e2b0cfc91aac757f6a3e26c9b3c463107e4936d66e7",
+  "originalPreparationHtmlSHA256": "237e34407bcaf5fcdd995513dd99370527fb5b9005c655299130448143e2633d",
+  "originalSourceAssetsDownloadedForReadOnlyReview": 22,
+  "originalSvgGeometryFilesRead": 21,
+  "sourceNineSubtasks": [
+    {
+      "ordinal": 1,
+      "fraction": "1/4",
+      "denominator": 4,
+      "sourceFigure": 9,
+      "lineEnd": 1
+    },
+    {
+      "ordinal": 2,
+      "fraction": "1/8",
+      "denominator": 8,
+      "sourceFigure": 10,
+      "lineEnd": 1
+    },
+    {
+      "ordinal": 3,
+      "fraction": "1/3",
+      "denominator": 3,
+      "sourceFigure": 11,
+      "lineEnd": 1
+    },
+    {
+      "ordinal": 4,
+      "fraction": "1/6",
+      "denominator": 6,
+      "sourceFigure": 12,
+      "lineEnd": 1
+    },
+    {
+      "ordinal": 5,
+      "fraction": "1/2",
+      "denominator": 2,
+      "sourceFigure": 13,
+      "lineEnd": 4
+    },
+    {
+      "ordinal": 6,
+      "fraction": "1/4",
+      "denominator": 4,
+      "sourceFigure": 14,
+      "lineEnd": 2
+    },
+    {
+      "ordinal": 7,
+      "fraction": "1/8",
+      "denominator": 8,
+      "sourceFigure": 15,
+      "lineEnd": 4
+    },
+    {
+      "ordinal": 8,
+      "fraction": "1/3",
+      "denominator": 3,
+      "sourceFigure": 16,
+      "lineEnd": 3
+    },
+    {
+      "ordinal": 9,
+      "fraction": "1/6",
+      "denominator": 6,
+      "sourceFigure": 17,
+      "lineEnd": 2
+    }
+  ],
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-85-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-85-academic-source-coverage-and-human-rubric-20261025.json"
+}

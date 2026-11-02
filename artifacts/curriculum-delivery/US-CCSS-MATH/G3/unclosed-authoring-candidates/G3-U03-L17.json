@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 53,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L17",
+  "unitNumber": 3,
+  "lessonNumber": 17,
+  "title": "Does It Make Sense?",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-17/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-17/lesson.html",
+  "stageA": {
+    "status": "ORIGINAL_2021_LOCAL_HTML_3_SOURCE_SECTIONS_3_INEQUALITIES_5_BEADS_STORIES_AND_PARTNER_REVIEW",
+    "goals": "Assess the reasonableness of answers using mental computation and estimation strategies including rounding. Solve two-step word problems using addition and subtraction in a way that makes sense to them.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 1,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "bcee99a037a71b157c677015f892615af46d4866971ef74583ba6d604fe27e18",
+    "prepSha256": "85085d3e2a4bdc2dec029204a8ed4a3d95fdb791a30f032a4f19f1b1f185a3f9",
+    "originalSourceTitleCorrected": "Does It Make Sense?"
+  },
+  "stageB": {
+    "status": "2021_ORIGINAL_BEAD_STORIES_FIRST_PARTY_RICH_V2_CONCRETE_MENTAL_ESTIMATES",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L17",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "6f867b098ed4cacdafe7477fb159005cb78ccdf33df378191689c9dad235f740",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l17-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson17.cshtml",
+    "canonicalPLCActivitySuffixRemoved": true
+  },
+  "stageC": {
+    "status": "8_ORIGINAL_EXACT_VALUE_ORACLES_9_HUMAN_ESTIMATE_TASKS_UNRUN",
+    "family": "rounding-estimation",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Quick Estimates with your teacher. Show the representation and explain how it meets the goal: Let’s decide if our answers make sense. Required Preparation CCSS Standards Addressing 3.OA.D.8 Building Towards 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "sourceNumericChecks": 8,
+    "teacherTasks": 9,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson17BeadsReasonablenessSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "key": "WU",
+      "source": "2021 student section1 comparisons132+115>200;228+195>400;217+151>400",
+      "mode": "THREE_EXACT_LEFT_SIDE_ORACLES_PLUS_TEACHER_TRUTH_JUDGEMENT",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A1-PRIYA",
+      "source": "212−98+308 Priya near 400 estimate",
+      "mode": "EXACT_422_ANCHOR_ESTIMATE_JUDGEMENT_TEACHER",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A1-CLARE",
+      "source": "252−92+203",
+      "mode": "EXACT_363_ANCHOR_ESTIMATION_TEACHER",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A1-HAN",
+      "source": "558+302−250",
+      "mode": "EXACT_610_ANCHOR_ESTIMATION_TEACHER",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A2-JADA",
+      "source": "326−32−84",
+      "mode": "EXACT_210_AND_TEACHER_METHOD",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "A2-NOAH",
+      "source": "624+132+48",
+      "mode": "EXACT_804_AND_TEACHER_METHOD",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "PARTNER",
+      "source": "Partner exchange and reasonableness check",
+      "mode": "TEACHER_REVIEW_ONLY",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "BEAD-PHOTO",
+      "source": "Source 2021 wooden bead picture alt and credit",
+      "mode": "NO_PUBLISHER_PIXEL_REUSE_TEACHER_EXTERNAL",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    },
+    {
+      "key": "PUBLISHER-CD",
+      "source": "Gated Beads in the Bin",
+      "mode": "GATED_NOT_COPIED_FIRSTPARTY_EXIT_ONLY",
+      "sourceSemanticAuthoringCovered": true,
+      "publisherImagePixelProven": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L17-IMAGE-01",
+      "observedAltText": "Wooden beads.",
+      "originalReference": "unit-3/lesson-17/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 1,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Round 353 to the nearest hundred (fifty rounds up).",
+    "answerType": "integer",
+    "expected": "400"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original publisher wooden bead image pixels and student PDF not reviewed; local public teacher/student 2021 HTML is semantic source.",
+    "Original source Cool-down gated/unread; independent exit task only.",
+    "Stage D/CI/tests/manual UAT/approval/merge/deployment unrun."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_LOCAL_ORIGINAL_2021_SOURCE_SEMANTIC_AUTHORING_NOT_PUBLISHER_ART_OR_RUNTIME"
+}

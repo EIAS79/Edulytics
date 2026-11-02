@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 29,
+  "grade": "Grade 2",
+  "programme": "US-CCSS-MATH",
+  "lessonCode": "PED:US-CCSS-MATH:G2:U02:L11",
+  "title": "How Do You Solve Story Problems?",
+  "unitNumber": 2,
+  "lessonNumber": 11,
+  "stageA": {
+    "status": "COMPLETE_LOCAL_SOURCE_IM2021_TEACHER_PREPARATION_LESSON",
+    "sourceBook": "Read-only local IM2021 Grade2 Unit2 Lesson11 preparation and lesson",
+    "sourcePreparation": "https://im.kendallhunt.com/k5/teachers/grade-2/unit-2/lesson-11/preparation.html",
+    "sourceSemanticSha256": "8c0a50b0dcdc730e7bf8cb58fbf45520a6e296da485e5095158fd5854f917780",
+    "originalBodySha256": "14eaf3af53e16402569aa86a7047665640dce646e3489fd7a938d30c5fc77730",
+    "originalOutcomes": [
+      "CCSS:2.NBT.B.5",
+      "CCSS:2.OA.A.1"
+    ],
+    "warmup": "What Do You Know About Story Problems? open discussion, teacher observed.",
+    "activity1": "How Many Seeds? Diego42 orange/Jada16 apple, compare difference unknown =26.",
+    "activity2": "Lin31 seeds gives15=>16 remain; Noah37 total28 yellow=>9 blue; Elena50 pumpkin/Andre23 fewer=>27 smaller.",
+    "distinctions": "Four mathematical story structures, not four identical take-away contexts; under50 with decomposition when subtracting by place.",
+    "humanOnly": "Original students draw/make tape diagrams and use genuine cubes, MLR2 partner discussion, teacher checks interpretation.",
+    "coolDown": "Tyler's Seeds educator-login restricted; independently authored Edulytics numeric exit not passed off as original.",
+    "rights": "Public mathematical problem numbers and goals attributed, original protected assessment not copied."
+  },
+  "stageB": {
+    "status": "COMPLETE_EXACT_SOURCE_URL_SHA_OUTCOMES_OLD_FIELDS_GUARDED_RICH_LEARNER_CONTENT",
+    "correction": "src/Edulytics.Data/Seeding/CommonCoreG2Unit2SeedsStoryTypesTeachingCorrection.cs",
+    "materializer": "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+    "seeder": "src/Edulytics.Data/Seeding/MathematicsCanonicalLessonContentSeeder.cs",
+    "reader": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "predecessor": "Exact six old learner fields and prior persisted rich version must match before upgrade."
+  },
+  "stageC": {
+    "status": "COMPLETE_FOUR_NUMERIC_SOURCE_STRUCTURES_STUDENT_COMPANION_AND_UNRUN_TESTS",
+    "math": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2EleventhLessonSeeds.cs",
+    "contract": "src/Edulytics.Core/Mathematics/Practice/UsCcssG2Unit2Lesson11SeedsStoryContracts.cs",
+    "engine": "src/Edulytics.Services/Mathematics/UsCcssG2Unit2Lesson11SeedsStoryQuestions.cs",
+    "studentController": "src/Edulytics.Web/Controllers/Grade2Lesson29ActivitiesController.cs",
+    "studentView": "src/Edulytics.Web/Views/Grade2Lesson29Activities/Index.cshtml",
+    "families": [
+      "usccss.g2.u02.l11.compare_difference_unknown",
+      "usccss.g2.u02.l11.take_from_result_unknown",
+      "usccss.g2.u02.l11.put_together_missing_part",
+      "usccss.g2.u02.l11.compare_smaller_unknown"
+    ],
+    "firstPartyExit": "44−18=26,32−17=15,41−26=15,50−28=22; separate from source publisher.",
+    "teacherOnly": "Physical manipulatives, genuine student representations, MLR2 dialogue, restricted Tyler Seeds cooling.",
+    "security": "StudentPortal role, published student content and selected adoption guard, antiforgery, bounded inputs, no official marks.",
+    "testsWritten": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG2Unit2SeedsStoryTypesTeachingCorrectionTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2EleventhLessonSeedsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG2Unit2Lesson11SeedsStoryQuestionsTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/Grade2Lesson29ActivitiesWebContractTests.cs"
+    ],
+    "testsExecuted": false,
+    "CIExecuted": false
+  },
+  "closure": {
+    "status": "READY_FOR_STAGE_D",
+    "aCStatus": "A_C_COMPLETED",
+    "stageA": "COMPLETE",
+    "stageB": "COMPLETE",
+    "stageC": "COMPLETE_AUTHORING_TESTS_WRITTEN",
+    "readyForStageD": true,
+    "testsExecuted": false,
+    "CIExecuted": false,
+    "stageDExecuted": false,
+    "runtimeCompilationVerified": false,
+    "academicAcceptance": "NOT_ASSERTED",
+    "mainMerge": false,
+    "deployed": false,
+    "productionRelease": "NO_GO"
+  },
+  "nextAction": "BEGIN_G2_U02_L12_GRADE_ORDINAL30_A_B_C"
+}

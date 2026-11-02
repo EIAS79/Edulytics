@@ -1,0 +1,10 @@
+# G4 ordinal 51 — How Much is 10,000?
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-4_lesson-6_preparation.html SHA256=2e87620fef9bfe0939de2994a156535811ec8fe039b488c45db828a007fde4b4
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-4\lesson-6\lesson.html SHA256=b0ae0592639ed41f286beba914e3926f9a807a00833fcd486a7921da2f586560
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-4\lesson-6\lesson.html SHA256=32c44502d852ee9edaab49c79ddedc9e860ee7f0b5aff3aeb87f2efa18a8a89a
+- Preserved existing learning explanation: Learning goal: You will develop a relative sense of ten-thousand and understand it as a unit consisting of 10 units of one-thousand. In this lesson, you build on your understanding of the base-ten structure to develop a sense of the magnitude of 10,000. You first use base-ten blocks and base-ten diagrams to build four-digit and five-digit numbers. You then use a 10-by-10 grid to represent 100 and work together to build a representation of 1,000, and then 10,000.
+- Original 2021 sections: Warm-up:  What Do You Know about 1,000?	 (10 minutes); Activity 1:  Build Numbers	 (15 minutes); Activity 2:  What is 10,000?	 (20 minutes); Cool-down:  Represent Numbers	 (5 minutes)
+- Corrections: removed non-publisher PLC title suffix; removed irrelevant generic concept; repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 10*1000 = 10000.
+- Edulytics first-party Cool-down: How many 1,000-blocks represent 20,000?; teacher key: 20 blocks.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

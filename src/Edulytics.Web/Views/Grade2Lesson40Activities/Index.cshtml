@@ -1,0 +1,78 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Lesson40Page
+@using Edulytics.Core.Mathematics.Practice
+@{
+ Layout="_StudentLayout";ViewData["Title"]="Grade 2 — Compare Reptile Lengths";
+}
+<style>
+.g2l40{max-width:970px;margin:auto;padding:20px;color:#254457}
+.g2l40 .panel{background:#fff;border:1px solid #ccdce4;border-radius:12px;padding:20px;margin:16px 0}
+.g2l40 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.g2l40 label{font-weight:bold;display:block;margin:12px 0 5px}
+.g2l40 input,.g2l40 textarea{width:100%;max-width:540px;padding:10px;font:inherit;border:1px solid #7d94a5;border-radius:8px}
+.g2l40 .action{padding:13px 20px;color:white;background:#09809a;border:none;border-radius:8px;font-weight:bold}
+.g2l40 .ok{border-left:4px solid #298355;padding-left:12px}
+.g2l40 .bad{border-left:4px solid #b4475d;padding-left:12px}
+.g2l40 .review{border-left:4px solid #b18a30;padding-left:12px}
+.g2l40 .tape{display:flex;align-items:center;gap:6px;max-width:570px;margin:9px 0}
+.g2l40 .bar{display:block;background:#d8edf4;border:2px solid #408d9e;height:28px;border-radius:5px;padding-left:8px}
+</style>
+<main class="g2l40">
+<a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>Compare Reptile Lengths in Story Problems</h1>
+<p>The word SHORTER may require addition, and LONGER may require subtraction. Locate the unknown on your genuine tape diagram before choosing an operation. Every number below measures centimeters.</p>
+<form asp-controller="Grade2Lesson40Activities" asp-action="Submit" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+<input type="hidden" name="lessonId" value="@Model.LessonId" />
+<section class="panel"><h2>1. Number Talk — Fives and Tens</h2>
+<div class="grid">
+<div><label asp-for="Answers.TalkA">5+5</label><input asp-for="Answers.TalkA" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkB">15+5</label><input asp-for="Answers.TalkB" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkC">15+15</label><input asp-for="Answers.TalkC" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.TalkD">15+25</label><input asp-for="Answers.TalkD" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.TalkStrategy">What makes each subsequent value ten more?</label>
+<textarea asp-for="Answers.TalkStrategy" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>2. Whose Pet Is Longer? — original source stories</h2>
+<p><strong>Lin</strong> has a pet lizard 62 cm long. It is 19 cm SHORTER than Jada's. How long is <strong>Jada's longer</strong> lizard?</p>
+<div class="tape" role="img" aria-label="Original Edulytics relational tape illustration, Lin's known 62 cm shorter than unknown Jada's length by 19 cm">
+<span style="width:65px">Lin</span><span class="bar" style="width:62%">62 cm</span>
+</div>
+<div class="tape"><span style="width:65px">Jada</span><span class="bar" style="width:62%">62 cm</span><span class="bar" style="width:19%">+19</span></div>
+<label asp-for="Answers.JadaLizard">Jada's longer lizard (cm)</label><input asp-for="Answers.JadaLizard" type="number" min="0" max="100" required />
+<p><strong>Mai</strong> has a snake71 cm long. It is17 cm LONGER than Diego's. How long is <strong>Diego's shorter</strong> snake?</p>
+<label asp-for="Answers.DiegoSnake">Diego's shorter snake (cm)</label><input asp-for="Answers.DiegoSnake" type="number" min="0" max="100" required />
+<label asp-for="Answers.DiagramDescription">Explain how your REAL tape diagrams identify the unknown and why the operations differ</label>
+<textarea asp-for="Answers.DiagramDescription" rows="3" maxlength="2000"></textarea></section>
+<section class="panel"><h2>3. Guess My Reptiles — REAL partner lists</h2>
+<p>With a partner choose one reptile from A and one from B. Keep selections SECRET and give an accurate shorter/longer clue; the partner deduces the animals using a diagram. Entering these known lengths does not verify real guessing activity.</p>
+<div class="grid">
+<div><h3>Partner A source list</h3>
+<label asp-for="Answers.DayGecko">Day gecko (cm)</label><input asp-for="Answers.DayGecko" type="number" min="0" max="100" required />
+<label asp-for="Answers.Komodo">Komodo dragon (cm)</label><input asp-for="Answers.Komodo" type="number" min="0" max="100" required />
+<label asp-for="Answers.BabyCobra">Baby cobra (cm)</label><input asp-for="Answers.BabyCobra" type="number" min="0" max="100" required />
+<label asp-for="Answers.Iguana">Iguana (cm)</label><input asp-for="Answers.Iguana" type="number" min="0" max="100" required /></div>
+<div><h3>Partner B source list</h3>
+<label asp-for="Answers.Ribbon">Ribbon snake (cm)</label><input asp-for="Answers.Ribbon" type="number" min="0" max="100" required />
+<label asp-for="Answers.Gila">Gila monster (cm)</label><input asp-for="Answers.Gila" type="number" min="0" max="100" required />
+<label asp-for="Answers.Alligator">Baby alligator (cm)</label><input asp-for="Answers.Alligator" type="number" min="0" max="100" required />
+<label asp-for="Answers.Ringneck">Ringneck snake (cm)</label><input asp-for="Answers.Ringneck" type="number" min="0" max="100" required /></div>
+</div>
+<label asp-for="Answers.SecretPartnerReptiles">Which two reptiles did you SECRETLY choose during authentic partner activity?</label>
+<textarea asp-for="Answers.SecretPartnerReptiles" rows="2" maxlength="2000"></textarea>
+<label asp-for="Answers.RealPartnerClue">Describe the true comparison clue and its matching tape diagram</label>
+<textarea asp-for="Answers.RealPartnerClue" rows="2" maxlength="2000"></textarea></section>
+<section class="panel"><h2>4. Independently written Edulytics exit</h2>
+<p>These are separate maths checks, not the protected original Kiran and Han Compare Pets Cool-down.</p>
+<div class="grid">
+<div><label asp-for="Answers.FirstPartyLonger">48 cm reptile is16 cm shorter; longer length (cm)?</label><input asp-for="Answers.FirstPartyLonger" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.FirstPartyShorter">92 cm snake is27 cm longer; shorter length (cm)?</label><input asp-for="Answers.FirstPartyShorter" type="number" min="0" max="100" required /></div>
+<div><label asp-for="Answers.FirstPartyGap">Reptiles73 and39 cm; difference (cm)?</label><input asp-for="Answers.FirstPartyGap" type="number" min="0" max="100" required /></div>
+</div><button type="submit" class="action">Check the numbers and show teacher-review tasks</button></section>
+</form>
+@if(Model.Submitted){<section class="panel" aria-live="polite"><h2>Feedback</h2>
+@foreach(var f in Model.Feedback){<div class="@(f.Correct==true?"ok":f.Correct==false?"bad":"review")">
+<h3>@f.Section</h3><p>@(f.Correct==true?"Numerically correct":f.Correct==false?"Revisit the unknown":"Teacher must review"). @f.Feedback</p>
+</div>}</section>}
+<section class="panel"><h2>Teacher observation rubric</h2><ul>@foreach(var r in UsCcssG2Unit3SixthLessonReptileStories.TeacherRubric){<li>@r</li>}</ul><p>IM K–5 2021 Grade2 Unit3 Lesson6, CCSS2.MD.B.5,2.NBT.B.5,2.OA.A.1,2.OA.B.2. No official grade.</p></section>
+</main>

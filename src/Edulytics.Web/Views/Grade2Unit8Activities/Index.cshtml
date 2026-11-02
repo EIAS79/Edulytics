@@ -1,0 +1,34 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade2Unit8Page
+@{Layout="_StudentLayout";ViewData["Title"]=Model.Title;}
+<style>
+.g2u8{max-width:960px;margin:auto;padding:20px;color:#294556}
+.g2u8 section{padding:16px;border:1px solid #c1d7e2;border-radius:11px;background:white;margin:15px 0}
+.g2u8 label{font-weight:700;display:block;margin:10px 0 5px}
+.g2u8 input,.g2u8 textarea{font:inherit;border:1px solid #859fac;border-radius:8px;padding:9px;max-width:640px;width:100%}
+.g2u8 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.g2u8 button{padding:12px 18px;background:#15798c;border:0;border-radius:8px;font-weight:700;color:#fff}
+</style>
+<main class="g2u8"><a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+<h1>@Model.Title</h1><p>IM K–5 Grade2 Unit8 Lesson @Model.LessonNumber. This page separates teacher-observed ORIGINAL hands-on work from first-party Edulytics numerical exercises.</p>
+<section><h2>Publisher source-specific original task</h2><p>@Model.AuthenticSourceRequirement</p>
+<p>Complete genuine publisher number-line, base-ten, dice or strategy-comparison activities with your teacher. This numerical companion does not mark the original student-created representations.</p></section>
+<form asp-controller="Grade2Unit8Activities" asp-action="Submit" asp-route-lessonNumber="@Model.LessonNumber" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId"/>
+<input type="hidden" name="lessonId" value="@Model.LessonId"/>
+<section><h2>1. Original publisher task — educator assessment</h2><p>The actual counters, diagrams, square tiling, alternative equal groupings, and partner work must be reviewed by a teacher. Original source activity numeric answers are not simulated by Edulytics.</p></section>
+<section><h2>2. Your genuine published source work — teacher review</h2>
+<label asp-for="Answers.ActualSourceShapeOrImage">Describe the actual original number line, base-ten model, or student strategy you observed.</label><textarea asp-for="Answers.ActualSourceShapeOrImage" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.StudentCreatedDrawingOrWords">Show your own original number line, base-ten drawing or justification in words.</label><textarea asp-for="Answers.StudentCreatedDrawingOrWords" maxlength="2000" rows="3"></textarea>
+<label asp-for="Answers.RealPhysicalGameOrCoins">Actual dice, physical blocks, partner comparisons and student-selected solution method</label><textarea asp-for="Answers.RealPhysicalGameOrCoins" maxlength="2000" rows="3"></textarea>
+<p>Teacher observations and approval must be recorded by an authenticated teacher, not entered by the student.</p></section>
+<section><h2>3. Edulytics first-party independent numerical examples</h2>
+<p>These independently authored Edulytics expressions are NOT the publisher Cool-down. They do not certify original pictures, student representations, or classroom discussions.</p><div class="grid">
+<div><label asp-for="Answers.OwnA">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][0])</label><input asp-for="Answers.OwnA" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnB">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][1])</label><input asp-for="Answers.OwnB" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnC">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][2])</label><input asp-for="Answers.OwnC" type="number" min="0" max="1000"/></div>
+<div><label asp-for="Answers.OwnD">@(Edulytics.Core.Mathematics.Practice.UsCcssG2Unit8OriginalActivities.IndependentNumericExamples[Model.LessonNumber][3])</label><input asp-for="Answers.OwnD" type="number" min="0" max="1000"/></div>
+</div><button type="submit">Check numeric results</button></section></form>
+@if(Model.Submitted){<section aria-live="polite"><h2>Results — numeric checks are not original teacher acceptance</h2>
+@foreach(var f in Model.Feedback){<h3>@f.Section</h3><p>@f.Comment</p>}</section>}
+<p>Stage D tests, CI, academic acceptance and publication are not asserted.</p></main>

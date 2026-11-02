@@ -1,0 +1,131 @@
+@using Edulytics.Web.Support
+@using System.Globalization
+@{
+    Layout = "_PublicLayout";
+    var isPolish = string.Equals(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, "pl", StringComparison.OrdinalIgnoreCase);
+    var loginLabel = isPolish ? "Zaloguj się" : "Log in";
+    var demoLabel = isPolish ? "Poproś o demo" : "Request a demo";
+}
+
+<div class="ed-home ed-contact-page">
+    <header class="ed-home-header">
+        <div class="ed-home-nav-shell">
+            <div class="ed-home-brand-row">
+                <a class="ed-home-brand" href="/" aria-label="Edulytics"><partial name="_LocalizedBrand" /></a>
+                <span class="ed-home-flag" aria-label="Polska"><span class="flag-top"></span><span class="flag-bottom"></span></span>
+                <span class="ed-home-lang-label">@(isPolish ? "PL" : "EN")</span>
+            </div>
+            <nav class="ed-home-links" aria-label="@(isPolish ? "Nawigacja główna" : "Main navigation")">
+                <a href="/#platform">@(isPolish ? "Platforma" : "Platform")</a>
+                <a href="/#schools">@(isPolish ? "Dla szkół" : "For schools")</a>
+                <a href="/#teachers">@(isPolish ? "Dla nauczycieli" : "For teachers")</a>
+                <a href="/#students">@(isPolish ? "Dla uczniów" : "For students")</a>
+                <a href="/#curricula">@(isPolish ? "Programy" : "Curricula")</a>
+                <a class="is-current" href="/contact">@(isPolish ? "Kontakt" : "Contact")</a>
+            </nav>
+            <div class="ed-home-actions">
+                <div class="ed-home-lang">
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="pl" /><input type="hidden" name="returnUrl" value="/contact" /><button type="submit" class="@(isPolish ? "is-active" : "")">PL</button></form>
+                    <form asp-controller="Home" asp-action="SetCulture" method="post">@Html.AntiForgeryToken()<input type="hidden" name="culture" value="en" /><input type="hidden" name="returnUrl" value="/contact" /><button type="submit" class="@(!isPolish ? "is-active" : "")">EN</button></form>
+                </div>
+                <a class="ed-home-login" asp-controller="Account" asp-action="Login">@loginLabel</a>
+                <a class="ed-home-cta" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel</a>
+                <details class="ed-home-mobile-menu">
+                    <summary aria-label="Menu">☰</summary>
+                    <div class="ed-home-mobile-panel">
+                        <a href="/#platform">@(isPolish ? "Platforma" : "Platform")</a>
+                        <a href="/#schools">@(isPolish ? "Dla szkół" : "For schools")</a>
+                        <a href="/#teachers">@(isPolish ? "Dla nauczycieli" : "For teachers")</a>
+                        <a href="/#students">@(isPolish ? "Dla uczniów" : "For students")</a>
+                        <a href="/#curricula">@(isPolish ? "Programy" : "Curricula")</a>
+                        <a href="/contact">@(isPolish ? "Kontakt" : "Contact")</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="ed-contact-hero">
+            <span class="contact-blob contact-blob-a"></span>
+            <span class="contact-blob contact-blob-b"></span>
+            <div class="ed-home-container ed-contact-hero-grid">
+                <div class="ed-contact-copy">
+                    <div class="ed-home-kicker">@(isPolish ? "POROZMAWIAJMY" : "LET'S TALK")</div>
+                    <h1>@(isPolish ? "Jak możemy pomóc Twojej szkole?" : "How can we help your school?")</h1>
+                    <p>@(isPolish ? "Niezależnie od tego, czy chcesz zobaczyć Edulytics w działaniu, porozmawiać o wdrożeniu czy uzyskać wsparcie — wybierz najlepszą drogę kontaktu." : "Whether you want to see Edulytics in action, discuss a school rollout or get support, choose the contact path that fits you best.")</p>
+                </div>
+                <div class="ed-contact-illustration" aria-hidden="true">
+                    <svg viewBox="0 0 520 360" role="img">
+                        <rect x="65" y="44" width="388" height="240" rx="34" fill="#fff" stroke="#d8e6f7" stroke-width="4"/>
+                        <rect x="92" y="75" width="166" height="24" rx="12" fill="#dbe9ff"/>
+                        <rect x="92" y="120" width="310" height="14" rx="7" fill="#edf3fb"/>
+                        <rect x="92" y="150" width="270" height="14" rx="7" fill="#edf3fb"/>
+                        <rect x="92" y="198" width="120" height="46" rx="13" fill="#2f66e8"/>
+                        <circle cx="390" cy="216" r="76" fill="#6d4bed"/>
+                        <circle cx="390" cy="198" r="33" fill="#f1b783"/>
+                        <path d="M350 275c10-52 74-61 91 0" fill="#1f4fb5"/>
+                        <path d="M366 195c4-25 45-31 54 0-16-7-38-7-54 0Z" fill="#4b302a"/>
+                        <circle cx="380" cy="200" r="3" fill="#222"/><circle cx="400" cy="200" r="3" fill="#222"/>
+                        <path d="M381 215c10 8 20 7 27 0" fill="none" stroke="#a65b50" stroke-width="3" stroke-linecap="round"/>
+                        <g transform="translate(20 245)"><rect width="160" height="77" rx="24" fill="#fff" stroke="#d8e6f7" stroke-width="3"/><circle cx="36" cy="38" r="19" fill="#eaf3ff"/><path d="M26 37h20M36 27v20" stroke="#2f66e8" stroke-width="4" stroke-linecap="round"/><rect x="66" y="24" width="68" height="10" rx="5" fill="#2f66e8"/><rect x="66" y="44" width="48" height="8" rx="4" fill="#b7c9e4"/></g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="ed-contact-audiences">
+            <div class="ed-home-container">
+                <div class="ed-home-center-head">
+                    <h2>@(isPolish ? "Wybierz, czego potrzebujesz" : "Choose what you need")</h2>
+                    <p>@(isPolish ? "Skontaktuj się z odpowiednim zespołem bez zbędnych kroków." : "Reach the right team without unnecessary steps.")</p>
+                </div>
+                <div class="ed-contact-grid">
+                    <article class="ed-contact-card is-sales">
+                        <span class="contact-icon">✦</span>
+                        <h3>@(isPolish ? "Dla szkół i nauczycieli" : "For schools and teachers")</h3>
+                        <p>@(isPolish ? "Zobacz demonstrację, omów wdrożenie, programy nauczania i sposób pracy z ocenianiem oraz AI." : "See a demo, discuss rollout, curricula, assessment workflows and Edulytics AI.")</p>
+                        <a class="ed-home-cta" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20school%20demo">@(isPolish ? "Poproś o demo" : "Request a demo") →</a>
+                    </article>
+                    <article class="ed-contact-card is-support">
+                        <span class="contact-icon">?</span>
+                        <h3>@(isPolish ? "Wsparcie" : "Support")</h3>
+                        <p>@(isPolish ? "Masz pytanie dotyczące konta, dostępu lub działania platformy? Napisz do nas bezpośrednio." : "Have a question about your account, access or platform behavior? Contact us directly.")</p>
+                        <a class="ed-home-secondary" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20support">@(isPolish ? "Napisz do wsparcia" : "Contact support") →</a>
+                    </article>
+                    <article class="ed-contact-card is-partner">
+                        <span class="contact-icon">↗</span>
+                        <h3>@(isPolish ? "Partnerzy i współpraca" : "Partners and collaboration")</h3>
+                        <p>@(isPolish ? "Jeśli reprezentujesz partnera edukacyjnego, organizację lub chcesz omówić współpracę, skontaktuj się z nami." : "If you represent an education partner, organisation or want to discuss collaboration, contact us.")</p>
+                        <a class="ed-home-secondary" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20partnership">@(isPolish ? "Porozmawiajmy" : "Let's talk") →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="ed-contact-direct">
+            <div class="ed-home-container ed-contact-direct-grid">
+                <div>
+                    <span class="ed-home-kicker">@(isPolish ? "KONTAKT BEZPOŚREDNI" : "DIRECT CONTACT")</span>
+                    <h2>@(isPolish ? "Jesteśmy dostępni, gdy chcesz porozmawiać." : "We're available when you're ready to talk.")</h2>
+                    <p>@(isPolish ? "Dla zapytań sprzedażowych, demonstracji produktu i wsparcia możesz skontaktować się z nami bezpośrednio." : "For sales enquiries, product demonstrations and support, you can reach us directly.")</p>
+                </div>
+                <div class="ed-contact-details">
+                    <a href="mailto:@SupportContactOptions.Email"><small>Email</small><strong>@SupportContactOptions.Email</strong></a>
+                    <a href="@SupportContactOptions.PhoneUri"><small>@(isPolish ? "Telefon" : "Phone")</small><strong>@SupportContactOptions.PhoneDisplay</strong></a>
+                    <a href="@SupportContactOptions.CompanyWebsiteUrl" target="_blank" rel="noopener noreferrer"><small>@(isPolish ? "Firma" : "Company")</small><strong>@SupportContactOptions.CompanyWebsiteDisplay</strong></a>
+                    <a href="@SupportContactOptions.ProductWebsiteUrl" target="_blank" rel="noopener noreferrer"><small>Edulytics</small><strong>@SupportContactOptions.ProductWebsiteDisplay</strong></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ed-contact-cta-band">
+            <div class="ed-home-container">
+                <div class="ed-contact-cta-panel">
+                    <div><span>@(isPolish ? "GOTOWI ZOBACZYĆ EDULYTICS?" : "READY TO SEE EDULYTICS?")</span><h2>@(isPolish ? "Pokażemy Ci platformę na realnym scenariuszu szkolnym." : "We'll show you the platform in a real school workflow.")</h2></div>
+                    <a class="ed-contact-white-cta" href="mailto:@SupportContactOptions.Email?subject=Edulytics%20demo">@demoLabel →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

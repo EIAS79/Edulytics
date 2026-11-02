@@ -1,0 +1,45 @@
+{
+  "ordinal": 38,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L13",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "dba63a7a62ff6fb935eb02d7b73ca7352f83eccca768fd2966babb9be29a2712",
+    "teacherLesson": "5aa2260aa595504bc6b0b18ff688263738ce5ad055e82a75c506381d0cc53789",
+    "studentPdf": "81d78e9c83d39c35e724fbae655aaf4719de4141e0871f3130082aec9fbc066c"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Notice and Wonder: Which Ruler? \t (10 minutes)",
+    "Activity 1:  Measure to the Nearest $\\frac{1}{4}$ and $\\frac{1}{8}$ Inch\t [OPTIONAL] (25 minutes)",
+    "Activity 2:  Colored-pencil Measurements\t (20 minutes)",
+    "Activity 3: Noah's Colored Pencils (15 minutes)",
+    "Cool-down: Jada\u2019s Pencil Data (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-38-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:43+01:00",
+  "closeAtLocal": "2026-10-26T22:40:43+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

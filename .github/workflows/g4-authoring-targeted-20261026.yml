@@ -1,0 +1,28 @@
+name: Grade 4 authoring targeted content tests
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grade4-targeted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run lesson-specific source and content tests for 101-149
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=()
+          for n in $(seq 101 149); do
+            f="tests/academic-us-ccss-g4-ordinal-${n}-local-source-guard.test.cjs"
+            test -f "$f" || { echo "Missing $f" >&2; exit 1; }
+            files+=("$f")
+          done
+          node --test "${files[@]}"
