@@ -160,6 +160,12 @@ test('U03:L02 educator rubric persistence is lesson-scoped, separately migrated 
   assert.match(controller,/TeacherUserId" IS NULL/);
   assert.match(controller,/marks\.Any\(x => x is not 0 and not 1\)/);
   assert.match(controller,/TeacherFeedback/);
+  const acceptanceScript=fs.readFileSync(path.join(root,
+    'tools/phase29/g5_stage_d_authenticated_https.py'),'utf8');
+  assert.match(acceptanceScript,/Cross-school teacher accessed Grade5 rubric/);
+  assert.match(acceptanceScript,/Teacher revised immutable reviewed rubric/);
+  assert.match(acceptanceScript,/foreignTeacherDenied/);
+  assert.match(acceptanceScript,/duplicateScoreUpdateRejected/);
   assert.match(controller,/ON CONFLICT/);
   assert.match(migration,/CreateTable/);
   assert.match(migration,/UX_G5U03L02Rubric_SchoolClassStudentLesson/);

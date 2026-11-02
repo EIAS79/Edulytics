@@ -2,8 +2,8 @@
 """Grade 5 Stage D real authenticated learner source + Practice persistence.
 
 Disposable GitHub Actions PostgreSQL only, 148 source-linked G5 lessons.
-This is technical E2E evidence, not 148/148 academic source parity or
-persisted open-response teacher rubric scoring.
+This is technical E2E evidence, not 148/148 academic source parity.
+The U03:L02 original teacher-rubric persistence is independently verified.
 """
 import hashlib
 import html
@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import ssl
 import subprocess
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -242,6 +243,26 @@ def verify_l02_teacher_rubric(student, lesson_id, adoption_id):
     if score != "6" or json.loads(rubric_json) != [1] * 6 or (
             stored_feedback != feedback):
         raise AssertionError("Teacher rubric did not persist all criteria")
+    # Independent denial checks on the authenticated immutable response:
+    # a teacher from the other disposable school must never read it, and
+    # a second review POST must never change the stored score.
+    foreign_teacher = login_actor(
+        "commoncore-secondary.teacher.primary@edulytiks.com", "Teacher")
+    try:
+        get_page(foreign_teacher,
+                 "/school/g5/u03/l02/rubric/" + submission_id)
+        raise AssertionError("Cross-school teacher accessed Grade5 rubric")
+    except urllib.error.HTTPError as exc:
+        if exc.code not in (403, 404):
+            raise
+    try:
+        teacher.open(urllib.request.Request(
+            BASE + "/school/g5/u03/l02/rubric/" + submission_id,
+            data=payload, method="POST"), timeout=45)
+        raise AssertionError("Teacher revised immutable reviewed rubric")
+    except urllib.error.HTTPError as exc:
+        if exc.code != 409:
+            raise
     student_page = get_page(student, path)
     if "Teacher score:" not in student_page or feedback not in student_page:
         raise AssertionError("Original student cannot read teacher feedback")
@@ -249,7 +270,9 @@ def verify_l02_teacher_rubric(student, lesson_id, adoption_id):
           submission_id, flush=True)
     return {"sourceSubmission": submission_id, "score": 6,
             "sixTeacherSelectedCriteriaPersisted": True,
-            "originalStudentCanReadFeedback": True}
+            "originalStudentCanReadFeedback": True,
+            "foreignTeacherDenied": True,
+            "duplicateScoreUpdateRejected": True}
 
 def all_grade5_lesson_rows():
     """Fail closed if the seeded runtime is missing any officially indexed lesson."""
