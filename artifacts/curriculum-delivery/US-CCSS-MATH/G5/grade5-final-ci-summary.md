@@ -1,23 +1,19 @@
-# Grade 5 Stage D — evidence on current candidate: NO_GO_TECHNICAL
+# Grade 5 Stage D — current candidate and CI: NO_GO_TECHNICAL
 
-**Release decision is unchanged.** Draft [PR #596](https://github.com/EIAS79/Edulytics/pull/596), no merge, no deployment, no production data access.
+**Code CandidateSha:** `c26984c677abb7dcb2ae21148d698eb07ef229c2`. **Authenticated PR merge SHA:** `ee5645fab76b93e9966e4e3deaaf8dff90be48d8`. This documentation commit is **not** another tested code SHA.
 
-## Current tested evidence (not a claim that Stage D is complete)
+## Verified new technical coverage
 
-- **Grade 5 code HEAD tested:** `56909a344340fa5b98342fd0728b88b6eb77cb5c`; [Stage D run 41366005943](https://github.com/EIAS79/Edulytics/actions/runs/41366005943).
-- 148/148 unique lesson mappings: **PASS**. Shared .NET build and selected Grade5 mathematical/unit suite: **1352 passed, 0 failed, 0 skipped**. Per-lesson TRX: **120 direct lessons; 28 linked through Node**, not all individually end-to-end.
-- Node D1: **129 passed, 0 failed, 1 TODO**. D2 and D3 source shard jobs successful; their 98 lessons rely on linked C# tests rather than Node suites.
-- Original-source audit: **136/148 lessons with unknown original element denominator**; 12 itemized, 11 complete source snapshots. Hashed **483 first-edition Student Facing sections** are provenance, **not** independent full semantic or PDF/rights parity. Source gate correctly **failed closed**.
-- [Authenticated acceptance run 41366005732](https://github.com/EIAS79/Edulytics/actions/runs/41366005732): **PASS** on PR synthetic merge SHA `332bd159804f0a8710c6810d6843b3fda19474a0`. Main-to-content technical parity passed; disposable HTTPS authenticated learner pages, selected Practice generation, persisted correct/malformed responses passed for **U01:L01 and U03:L02**. Actual U03:L02 student SVG geometry also passed. **Teacher rubric grading/persistence is not verified, and the other 146 lessons were not authenticated-E2E tested.**
-- Cross-grade mathematical foundation [run 41366005827](https://github.com/EIAS79/Edulytics/actions/runs/41366005827) **FAIL**: G6 U01:L01 ten-item generation capacity and registry blockers; full V2 regression [41366005844](https://github.com/EIAS79/Edulytics/actions/runs/41366005844) **FAIL**: same capacity issue and Phase29 selector expected 294 / actual 286. Do not suppress unrelated guards.
+- [Authenticated US CCSS Actions run #41368693063](https://github.com/EIAS79/Edulytics/actions/runs/41368693063) **SUCCESS**. Actual job log records **148 separate `G5_DISPOSABLE_HTTPS_LESSON_PASS` lines** and final `G5_REAL_AUTHENTICATED_HTTPS_TECHNICAL_PASS 148/148`. The synthetic Grade 5 student opened all 148 Rich V2 lesson pages and ran a real lesson-scoped generated Practice attempt, with one correct and one malformed answer persisted for **each lesson**. Two exact-source lessons retain stronger content assertions; U03:L02 additionally passed actual learner SVG geometric rendering. [Per-lesson artifact #13108636335](https://github.com/EIAS79/Edulytics/actions/runs/41368693063/artifacts/13108636335).
+- [Grade 5 Stage D run #41368692993](https://github.com/EIAS79/Edulytics/actions/runs/41368692993): Blueprint/pack/hand-off integrity **PASS 148/148**; .NET selected G5 suite **1352 PASS, 0 FAIL, 0 SKIP** on code SHA `c26984c677abb7dcb2ae21148d698eb07ef229c2`. D2/D3 linked source shards PASS. D1 Node suite **129 PASS, 0 FAIL, 1 TODO** (authenticated teacher rubric persistence not closed).
+- Main-to-content technical parity on disposable staging is green. This does **not** independently approve source semantics, image rights, every possible family/response, or teacher-led tasks.
 
-## Acceptance and blockers
+## Still blocking Stage D and release
 
-- **A–B–C authoring handoff flags:** 148/148, not independently certified original-source parity.
-- **D_VERIFIED:** 0/148. **Academic approvals independently evidenced:** 0/148. **Full 148-lesson authenticated E2E:** not completed.
-- Open: 136 unknown original source-element denominators, U01:L04–L07 explicit original-source gaps, original media/PDF rights, required authorized review, untested teacher rubric persistence, 1 D1 TODO, incomplete full runtime coverage, cross-grade CI failures and final full-grade gates.
-- First incomplete acceptance ordinal **1**. Blocked lessons remain blocked until individually verified; no automatic acceptance from green shared jobs.
+- Original source 1:1 evidence gate **FAIL-CLOSED**: **136/148 lessons have unknown original element denominators**; 12 itemized, 11 full source snapshots; original 2021 Student Facing hashed provenance covers 483 sections but is not semantic acceptance. U01:L04–L07 have explicit source gaps. Independently academically approved lessons: **0/148**.
+- Teacher open-response rubric scoring/persistence is not verified. Rights, PDF/image review and authorizing human sign-offs are incomplete. Full visual/accessibility and all-question-family coverage are not proved by one real selected Practice question per lesson.
+- Cross-grade Mathematics Intelligence Foundation, V2 regression and Full Grade Gate are not all green. Preserve independent failure evidence and do not weaken checks.
+- Stage D `D_VERIFIED = 0/148`, `ACADEMICALLY_APPROVED = 0/148`. First incomplete lesson ordinal remains **1**, with blockedLessons retained. The 148 real HTTPS technical samples do **not** automatically close Stage D.
 
-The **tested code SHA** and the **later documentation-only evidence commit SHA** must remain distinct. No evidence-only update grants a PASS. Reference [Issue #619](https://github.com/EIAS79/Edulytics/issues/619) for source/rights blockers.
+**Release decision: NO_GO_TECHNICAL**. Draft [PR #596](https://github.com/EIAS79/Edulytics/pull/596) remains unmerged. No Render deploy or production mutation. [Academic/source blockers #619](https://github.com/EIAS79/Edulytics/issues/619).
 
-**NO_GO_TECHNICAL — NO MERGE / NO DEPLOY.**
