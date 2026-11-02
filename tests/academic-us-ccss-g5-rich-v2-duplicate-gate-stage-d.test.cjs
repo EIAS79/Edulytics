@@ -80,3 +80,58 @@ test('Grade5 first-party visual inventory and 2021 CC BY source attribution are 
   assert.match(row.sourceUrl,/^https:\/\/im\.kendallhunt\.com\//);
  }
 });
+
+
+test('Grade5 original 2021 teacher source titles exclude non-title PLC badges',()=>{
+ const blueprint=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json'),'utf8'));
+ const pack=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json'),'utf8'));
+ const canonical={
+  "PED:US-CCSS-MATH:G5:U01:L04": "Use Layers to Determine Volume",
+  "PED:US-CCSS-MATH:G5:U01:L05": "Side Lengths of Rectangular Prisms",
+  "PED:US-CCSS-MATH:G5:U01:L10": "Represent Volume with Expressions",
+  "PED:US-CCSS-MATH:G5:U02:L03": "Interpret Equations",
+  "PED:US-CCSS-MATH:G5:U02:L07": "Divide to Multiply Unit Fractions",
+  "PED:US-CCSS-MATH:G5:U02:L11": "Fractional Side Lengths Greater Than 1",
+  "PED:US-CCSS-MATH:G5:U03:L03": "Multiply Unit Fractions",
+  "PED:US-CCSS-MATH:G5:U03:L12": "Represent Division of Unit Fractions by Whole Numbers",
+  "PED:US-CCSS-MATH:G5:U03:L17": "Fraction Multiplication and Division Situations",
+  "PED:US-CCSS-MATH:G5:U04:L06": "Standard Algorithm: Multi-digit Numbers with Composing",
+  "PED:US-CCSS-MATH:G5:U04:L11": "Different Partial Quotients",
+  "PED:US-CCSS-MATH:G5:U04:L19": "Trash Talk",
+  "PED:US-CCSS-MATH:G5:U05:L07": "Round Doubloons",
+  "PED:US-CCSS-MATH:G5:U05:L11": "Make Sense of Decimal Addition",
+  "PED:US-CCSS-MATH:G5:U05:L20": "Products in the Hundredths Place",
+  "PED:US-CCSS-MATH:G5:U05:L22": "Divide Whole Numbers by 0.1 and 0.01",
+  "PED:US-CCSS-MATH:G5:U06:L02": "Powers of 10",
+  "PED:US-CCSS-MATH:G5:U06:L08": "Add and Subtract Fractions",
+  "PED:US-CCSS-MATH:G5:U06:L19": "Compare to 1",
+  "PED:US-CCSS-MATH:G5:U07:L02": "Points on the Coordinate Grid",
+  "PED:US-CCSS-MATH:G5:U07:L05": "Trapezoids",
+  "PED:US-CCSS-MATH:G5:U07:L11": "Patterns and Ordered Pairs",
+  "PED:US-CCSS-MATH:G5:U08:L01": "Find the Largest Product",
+  "PED:US-CCSS-MATH:G5:U08:L06": "Revisit Volume",
+  "PED:US-CCSS-MATH:G5:U08:L13": "Multiply Fractions Game Day",
+  "PED:US-CCSS-MATH:G5:U08:L16": "Number Talk"
+};
+ assert.equal(Object.keys(canonical).length,26);
+ assert.equal(blueprint.Lessons.length,148);
+ for(const entry of blueprint.Lessons){
+  const locale=pack.lessons.find(x=>x.lessonCode===entry.LessonCode)?.translations.find(x=>x.cultureCode==='en');
+  assert.ok(locale,entry.LessonCode);
+  assert.equal(locale.title,entry.Title,'Live Grade5 title drift '+entry.LessonCode);
+  assert.ok(!/ PLC Activity$/.test(entry.Title),'PLC teacher badge leaked into source title '+entry.LessonCode);
+  if(canonical[entry.LessonCode])
+   assert.equal(entry.Title,canonical[entry.LessonCode]);
+ }
+ const canonicalTitle=new Map(blueprint.Lessons.map(x=>[x.LessonCode,x.Title]));
+ const richFiles=fs.readdirSync(dir).filter(n=>/^us-ccss-g5-.*\.rich-lesson-v2\.json$/.test(n));
+ for(const file of richFiles){
+  const doc=JSON.parse(fs.readFileSync(path.join(dir,file),'utf8'));
+  for(const lesson of doc.Lessons||[]){
+   assert.ok(!/ PLC Activity$/.test(lesson.Title),'Rich V2 publisher source title drift '+lesson.LessonCode);
+   assert.equal(lesson.Title,canonicalTitle.get(lesson.LessonCode),'Original first-edition student Rich V2 title misaligned: '+lesson.LessonCode);
+  }
+ }
+});
