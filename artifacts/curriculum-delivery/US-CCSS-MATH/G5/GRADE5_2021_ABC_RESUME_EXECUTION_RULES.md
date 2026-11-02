@@ -29,3 +29,8 @@
 - Reused existing exact irregular unit-cube count family and 2021 source-aligned Rich V2. Original publisher Cool-down explicitly remains SOURCE_UNAVAILABLE; existing first-party teacher-reviewed alternative approved by owner and retained. Static selected Practice contract present; Stage D runtime is NOT_RUN.
 - Source SHA-256 lesson 2: `2d2ad558cf24be326217d4ec18da8fc217d16f35d5440733d70fc24fb3b258fc`; preparation: `a37655d8ee484e83a6a476caa974d9276e7be3990c6e93d6253f89cf28ddb984`.
 - Next active lesson: **U01:L03**. Preserve this closure and all previous content; do not rerun Stage D/CI.
+
+## Sequential closure checkpoint: Grade 5 U01:L03
+- First Edition 2021 teacher lesson and preparation compared to the existing Rich V2; four original Edulytiks printable prism-build card models now supplied, alongside reused 40/60/80 cube math and original first-party Cool-down. Original publisher cards/Cool-down remain SOURCE_UNAVAILABLE, never certified as reproduced.
+- Source SHA-256 lesson: `830299e9528c83bcdb2a779422555272264375154cca22100e05f6e616422690`; preparation: `2b7223772b6f4ee077911c54d22252b9208a66671ca026ea2e448da4b1d3f43a`.
+- A–B–C authored and closed; Stage D / CI NOT_RUN. Next active **U01:L04**.
