@@ -157,3 +157,8 @@ Re-read original teacher lesson/preparation locally: WODB diagrams with multiple
 - Source-reviewed U04:L01–L21 using 2021 local original teacher HTML and previously closed authoring and selected Practice. Individual sequential revalidation evidence added for L01–L21. Confirmed error in U04:L06 prior closure (carried **one hundred** erroneously called one thousand) fixed in commit `0638e411`.
 - Unit closure `u04-2021-abc-sequential-revalidation-unit-closure-20261102.md` commit `463e546554051813f40d84234105b24edf195844`.
 - **Active revalidation cursor: U05:L01**, 70 of 148 source-reviewed for functional A–B–C handoff, *not* 100% original publisher asset parity; tests/Stage D/CI NOT_RUN and publisher gated items remain explicit.
+
+## Unit 5 sequential first-edition revalidation — 2026-11-02
+- Original teacher lesson/preparation sources for U05:L01–L26 compared to existing authoring artifacts; per-lesson revalidations saved sequentially. No duplicated engines. U05 lesson authoring conditions were retained, source image/PDF limitations explicit.
+- Unit report: `u05-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `3743dbaa8d390aadfe4ba26be81c715a0c9ee8e3`.
+- **Current sequential revalidation cursor: U06:L01 (97th lesson); 96/148 lessons re-reviewed.** No Stage D, CI intentionally run, Merge or Deploy. Academic original asset source-exact 100% NOT claimed.
