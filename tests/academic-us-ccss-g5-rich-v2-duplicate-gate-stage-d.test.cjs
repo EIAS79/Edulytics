@@ -180,8 +180,9 @@ test('student title preserves immutable owner-consented data but renders 2021 so
 
 // Stage D diagnostic: these are 215 distinct lesson/outcome projections, not
 // 232 resolved alignment records (a lesson can repeat an outcome via roles).
-// Keep the owner's exact approved *content pack* blob untouched: this checks
-// the separately maintained blueprint evidence, not asset licenses or parity.
+// Preserve the main-locked blueprint and owner's approved content pack blobs.
+// SourceSelectionEvidence is stale historical prose; the lesson records and
+// AcquisitionDiagnostics contain the reproducible 215/27 correct counts.
 test('Grade5 canonical lesson-outcome projection counts match source-lock diagnostics',()=>{
  const blueprint=JSON.parse(fs.readFileSync(path.join(root,
   'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json'),'utf8'));
@@ -207,6 +208,11 @@ test('Grade5 canonical lesson-outcome projection counts match source-lock diagno
  assert.equal(blueprint.AcquisitionDiagnostics.FormalMappingCount,pairs.size);
  assert.equal(blueprint.AcquisitionDiagnostics.OfficialStandardCount,covered.size);
  assert.equal(blueprint.AcquisitionDiagnostics.AddressingCoverageCount,covered.size);
+ const check=require('../tools/curriculum/g5-stage-d-diagnostic.cjs').inventory();
+ assert.equal(check.mappingCount,pairs.size);
+ assert.equal(check.addressedStandardCount,covered.size);
+ assert.deepEqual(check.errors,[],'Stage D preflight must reject genuine metadata drift');
  assert.match(blueprint.SourceSelectionEvidence,
-  /215 formal mappings, 27\/27 accepted Grade 5 Standards/);
+  /210 formal mappings, 26\/26 accepted Grade 5 Standards/,
+  'Main-locked source prose remains historical until a separately authorized source-lock revision');
 });

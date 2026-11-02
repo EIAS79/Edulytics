@@ -32,11 +32,40 @@ function inventory(){
     if(!pc.translations?.length)errors.push('PACK_TRANSLATION_MISSING_'+code);
     records.push({ordinal:i+1,code,test,evidence:ev});
   }
-  return {errors,records,blueprintCount:b?.length,packCount:c?.length,ledgerCount:a?.length};
+  // The signed source-lock narrative is historical (210/26). It cannot be
+  // edited in place without breaking main's exact blueprint parity gate.
+  // Stage D instead derives 215 unique lesson-to-outcome mappings and 27
+  // addressing standards from the immutable per-lesson records.
+  const lessonOutcomes=new Set(),addressingStandards=new Set();
+  for(const lesson of b||[]){
+    const resolved=new Set((lesson.Alignments||[])
+      .filter(x=>typeof x.OutcomeCode==='string'&&x.OutcomeCode.length)
+      .map(x=>x.OutcomeCode));
+    const projected=new Set(lesson.OutcomeCodes||[]);
+    if(resolved.size!==projected.size||[...resolved].some(x=>!projected.has(x)))
+      errors.push('LESSON_OUTCOME_PROJECTION_MISMATCH_'+lesson.LessonCode);
+    for(const outcome of projected)lessonOutcomes.add(lesson.LessonCode+'|'+outcome);
+    for(const alignment of lesson.Alignments||[])
+      if(alignment.Role==='Addressing'&&alignment.ReferenceKind==='NumberedStandard')
+        addressingStandards.add(alignment.ReferenceCode);
+  }
+  const mappingCount=lessonOutcomes.size, addressedStandardCount=addressingStandards.size;
+  const counts=blueprint.AcquisitionDiagnostics||{};
+  if(counts.FormalMappingCount!==mappingCount||mappingCount!==215)
+    errors.push('G5_FORMAL_LESSON_OUTCOME_COUNT_MISMATCH_'+mappingCount);
+  if(counts.OfficialStandardCount!==addressedStandardCount||
+     counts.AddressingCoverageCount!==addressedStandardCount||
+     addressedStandardCount!==27)
+    errors.push('G5_ADDRESSING_STANDARD_COUNT_MISMATCH_'+addressedStandardCount);
+  return {errors,records,blueprintCount:b?.length,packCount:c?.length,ledgerCount:a?.length,
+    mappingCount,addressedStandardCount,legacyLockedSourceNarrative:blueprint.SourceSelectionEvidence};
 }
 function preflight(){
   const q=inventory();
-  console.log('G5_STAGE_D_MANIFEST '+JSON.stringify({expected:148,blueprint:q.blueprintCount,pack:q.packCount,ledger:q.ledgerCount,linkage:q.records.length,errors:q.errors.slice(0,30),errorCount:q.errors.length}));
+  console.log('G5_STAGE_D_MANIFEST '+JSON.stringify({expected:148,blueprint:q.blueprintCount,pack:q.packCount,ledger:q.ledgerCount,linkage:q.records.length,formalMappings:q.mappingCount,
+    addressedStandards:q.addressedStandardCount,lockedNarrativeStale:
+      /210 formal mappings, 26\/26/.test(q.legacyLockedSourceNarrative||''),
+    errors:q.errors.slice(0,30),errorCount:q.errors.length}));
   if(q.errors.length)process.exitCode=1;
 }
 function shard(name){
@@ -387,5 +416,5 @@ if(require.main===module){
   else if(mode==='source-evidence')sourceEvidenceAudit();
   else throw Error('Unknown mode '+mode);
 }
-module.exports={analyzeElementInventory,analyzeEditionPair,grade5EditionManifests,original2021StudentFacingLocator,ownerAcademicConsent,
+module.exports={inventory,analyzeElementInventory,analyzeEditionPair,grade5EditionManifests,original2021StudentFacingLocator,ownerAcademicConsent,
   validateOriginal2021StudentFacingUnit,original2021StudentFacingSectionProvenance};
