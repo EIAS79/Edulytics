@@ -172,3 +172,9 @@ Re-read original teacher lesson/preparation locally: WODB diagrams with multiple
 - U07:L01–L13 compared one-by-one with local original teacher lesson/preparation, prior authoring closures and selected lesson Practice. Revalidation JSON artifacts committed in lesson order; no engine rewrite.
 - Unit report `u07-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `574c72e01028e4912a5664a2867fb3aed5090e42`. U07:L13 original teaching commentary makes imprecise claim 16/5~3 1/3 although exact value 3.2; flagged as source text discrepancy without propagating math error.
 - **Active sequential cursor: U08:L01, reviewed 130/148**. Original publisher asset-exact 100%, authenticated runtime, Stage D and CI NOT certified/run. No merge or deploy.
+
+## Grade 5 First Edition 2021 sequential A–B–C revalidation FINISHED — 2026-11-02
+- U08:L01–L18 teacher original lesson/preparation content compared in order to prior source-specific 2026-11-01 A–B–C authoring closures; revalidation files written to GitHub one by one. Unit8 report `u08-2021-abc-sequential-revalidation-unit-closure-20261102.md` committed as `086d4c31059a93c6da15d0c13d2d191b85489a76`.
+- Final aggregate review `GRADE5_IM2021_148_ABC_SEQUENTIAL_REVALIDATION_FINAL_REPORT_20261102.md` commit `e057003678ea74da1bded229e924c23a3c2ca824`.
+- **Static sequential lesson-level source revalidation coverage 148/148 across 8 units.** Existing previous authoring retained; true original publisher source-element/assets parity 100% NOT VERIFIED; prior rights/illustrations/cool-down/student-PDF source limits explicit. Tests/Stage D/CI intentionally NOT RUN; NO merge or deploy.
+- **Cursor: PED:US-CCSS-MATH:G5:ABC_REVALIDATION_REVIEW_COMPLETE**. Next task is user/owner review of final report; never start Stage D without explicit permission. Any subsequent A–B–C repair should be limited to a demonstrated source or implementation defect, not a restart.
