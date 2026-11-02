@@ -62,3 +62,7 @@
 ## Sequential closure checkpoint: Grade 5 U01:L09
 - Original first-edition 2021 source and correct 78 ft³/259 in³/42 cubes/420 in³ composite expressions retained. Existing selected lesson-specific numeric Practice and teacher partition explanations retained. Previous source review false READY status reconciled; gated original publisher Cool-down separately SOURCE_UNAVAILABLE while independent Edulytiks 78 ft³ reasoning exit accepted functionally.
 - Teacher SHA-256 `1096c393903be379c1071785ea657f8be4f3d945727c85e0b82c4c067cb08cc2`; preparation `bd20cf59b7ac2a38a2c78b1f746cade09962af5d23963428c4e9cb54164f60d4`. No tests/CI/Stage D run. Next **U01:L10**.
+
+## Sequential closure checkpoint: Grade 5 U01:L10
+- Source-matched measured composite 95 units and 168 cubic feet, two additive splits and bounding-prism subtraction preserved; existing exact family used. Historical source review not-ready reconciled using existing 2021 teacher data. Original gated publisher Cool-down restored as SOURCE_UNAVAILABLE, and existing first-party 168-cubic-foot reasoning exit accepted functionally (not publisher-exact).
+- Teacher SHA-256 `569f66c2d9bb588da02cf7f0b042642d1a9582f32e80888e995bb5ab52a560ec`; preparation SHA-256 `5bfc12c436a2c040a63c30057c4694908d7fa6b482de3b9b92c97b67379c3f59`. CI/tests/Stage D NOT_RUN. Next **U01:L11**.
