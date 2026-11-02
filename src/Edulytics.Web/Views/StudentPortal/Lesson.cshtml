@@ -100,6 +100,23 @@
         </nav>
     }
 
+    @* G5 U03:L02: independently authored free-response construction,
+       explicitly teacher scored and never auto-mastery. *@
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G5:U03:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 5 teacher-reviewed equal-area construction">
+            <h2>Equal-area construction — teacher review</h2>
+            <p>Explain both unit-fraction multiplication orders and compare 2-by-5
+                and 5-by-3 unit-square models. A qualified teacher scores all six criteria.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade5U03L02RubricStudent" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open teacher-reviewed construction and explanation
+            </a>
+        </section>
+    }
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L01" &&
          grade3AuthoredActivityAdoptionId.HasValue)
     {

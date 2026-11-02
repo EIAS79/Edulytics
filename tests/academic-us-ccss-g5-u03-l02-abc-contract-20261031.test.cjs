@@ -164,6 +164,11 @@ test('U03:L02 educator rubric persistence is lesson-scoped, separately migrated 
   assert.match(migration,/CreateTable/);
   assert.match(migration,/UX_G5U03L02Rubric_SchoolClassStudentLesson/);
   assert.match(migration,/CK_G5U03L02Rubric_ReviewConsistent/);
+  const studentLesson=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'),'utf8');
+  assert.match(studentLesson,/PED:US-CCSS-MATH:G5:U03:L02/);
+  assert.match(studentLesson,/asp-controller="Grade5U03L02RubricStudent"/);
+  assert.match(studentLesson,/Open teacher-reviewed construction and explanation/);
   assert.match(student,/__RequestVerificationToken|AntiForgeryToken/);
   assert.match(teacher,/AntiForgeryToken/);
   assert.match(queue,/Pending review/);

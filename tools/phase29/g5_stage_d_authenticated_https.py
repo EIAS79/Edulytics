@@ -323,6 +323,10 @@ def run():
             for term in required:
                 if term.casefold() not in page.casefold():
                     raise AssertionError(f"G5 {code}: missing actual authenticated content: {term}")
+            if code.endswith("U03:L02") and (
+                    "Open teacher-reviewed construction and explanation" not in page or
+                    "/student/g5/u03/l02/rubric" not in page):
+                raise AssertionError("U03:L02 student page must link the real teacher-reviewed form")
             form = get_page(student, "/student/practice")
             csrf = extract_csrf(form)
             adoption = extract_adoption(form)
