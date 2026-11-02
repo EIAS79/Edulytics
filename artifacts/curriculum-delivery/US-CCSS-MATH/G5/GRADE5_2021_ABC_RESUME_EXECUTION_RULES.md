@@ -70,3 +70,8 @@
 ## Sequential closure checkpoint: Grade 5 U01:L11
 - Reused 2021 source-aligned packed 300-cube box, 180-ft³ storage, 270-ft³ closet, and 216-ft³ connected garden with alternate designs. First-party teacher-reviewed garden exit already present. Original publisher sandbox cooldown recorded SOURCE_UNAVAILABLE as element 25, rather than elided. Selected exact practice code checked statically; Stage D not run.
 - Teacher SHA-256 `a15d3f83ab96832d6b6d8e87c5b4ba3396ae5d0951dc4ed06ac8045500c59c6a`, preparation SHA-256 `d60d1e80a67ea019c4124e2d2e34bc2429d0072de6fd09759ed1ace52c9a821c`. Next **U01:L12**.
+
+## U01 L12 and Unit 1 completion (2021 first-edition)
+- Optional source L12 is valid and has NO official publisher Cool-down. Its third-party truck photo remains `RIGHTS_RESTRICTED` and was NOT imported; independent Edulytiks text/array activities and own reflection reused.
+- U01:L01–L12 sequential A–B–C source/teaching/practice revalidated with first-party authorized alternatives and explicit original publisher limits. See `u01-abc-first-edition-2021-revalidation-closure-20261102.json`.
+- Current pass 12/148 revalidated; previous 148 READY labels are historical, not 2021 revalidation. CI/tests and Stage D NOT_RUN. Next **U02:L01**.
