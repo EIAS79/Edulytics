@@ -21,3 +21,24 @@ test('grade5 L03 hidden full cube layers selected; picture/model assessed by tea
  assert.ok(source.includes('hidden from view'));
  for (const [depth,answer] of [[2,40],[3,60],[4,80]])assert.equal(4*depth*5,answer);
 });
+
+test('L03 first-party prism cards respect the 48-cube material limit, including the 24+30 pair', () => {
+ const doc = JSON.parse(fs.readFileSync(docPath, 'utf8'));
+ const lesson = doc.Lessons.find(x => x.LessonCode === 'PED:US-CCSS-MATH:G5:U01:L03');
+ assert.ok(lesson);
+ const visual = lesson.Visuals.find(x =>
+   x.Title === 'Edulytiks-original printable prism-build cards (independent 2021 skill equivalents)');
+ assert.ok(visual);
+ const cards = visual.Rows.filter(row => /^Card E\d/.test(row.Label));
+ assert.equal(cards.length, 4);
+ const volumes = cards.map(card => Number(card.Label.match(/(\d+) cubes$/)?.[1]));
+ assert.deepEqual(volumes, [12, 18, 24, 30]);
+ const maximumPair = Math.max(...volumes.flatMap((a, i) =>
+   volumes.slice(i + 1).map(b => a + b)));
+ assert.equal(maximumPair, 54);
+ assert.ok(maximumPair > 48, 'simultaneously building E3 and E4 exceeds the budget');
+ assert.match(visual.Description, /E3 \(24 cubes\) and E4 \(30 cubes\) need 54 cubes together/);
+ assert.match(visual.Description, /build these two sequentially/);
+ const teacher = visual.Rows.find(x => x.Label === 'Teacher validation');
+ assert.match(teacher.Cells[0], /build them sequentially/);
+});
