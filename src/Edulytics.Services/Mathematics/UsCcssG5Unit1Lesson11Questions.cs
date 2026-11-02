@@ -21,13 +21,20 @@ internal static class UsCcssG5Unit1Lesson11Questions
         if(!Supports(family))throw new InvalidOperationException("Not G5 L11");
         ArgumentNullException.ThrowIfNull(random);
         var v=random.Next(32);
+        var baseArea=v switch {0=>60,1=>36,2=>30,3=>54,_=>(v+4)*(v+2)};
+        var height=v switch {0=>5,1=>5,2=>9,3=>4,_=>3};
+        var unitCode=v==0?0:v<4?3:2; // cubes, feet, inches.
         return new Problem(family,PromptFor(v),v<IndependentAnswers.Length?"Teacher reviews contextual units, physical/sketched 300-cube box and two-part 216-ft3 garden redesign, including no double-counting at joints.":"Teacher checks the unit labels and base-area times height; numerical correctness alone does not grade the written explanation.",AssessmentItemType.Numeric,
-            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v});
+            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v,["baseArea"]=baseArea,["height"]=height,["unitCode"]=unitCode});
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p){
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G5 L11 source variant");
-        return AnswerFor(p["variant"]).ToString(CultureInfo.InvariantCulture);
+        return (p["baseArea"]*p["height"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? a)=>Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
-    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<32;
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==4&&
+        p.TryGetValue("variant",out var v)&&v>=0&&v<32&&
+        p.TryGetValue("baseArea",out var baseArea)&&baseArea==(v switch {0=>60,1=>36,2=>30,3=>54,_=>(v+4)*(v+2)})&&
+        p.TryGetValue("height",out var height)&&height==(v switch {0=>5,1=>5,2=>9,3=>4,_=>3})&&
+        p.TryGetValue("unitCode",out var unitCode)&&unitCode==(v==0?0:v<4?3:2);
 }

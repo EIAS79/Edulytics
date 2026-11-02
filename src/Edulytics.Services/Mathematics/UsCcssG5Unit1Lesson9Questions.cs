@@ -21,13 +21,20 @@ internal static class UsCcssG5Unit1Lesson9Questions
         if(!Supports(family))throw new InvalidOperationException("Not G5 L09");
         ArgumentNullException.ThrowIfNull(random);
         var v=random.Next(32);
+        var left=v switch {0=>70,1=>175,2=>240,_=>6*(v+2)};
+        var right=v switch {0=>8,1=>84,2=>180,_=>8*(v+1)};
+        var unitCode=v==0?3:2;
         return new Problem(family,PromptFor(v),"Teacher reviews missing-edge deductions, two genuine geometric cuts and feet-vs-inches labels; numerical totals alone do not certify a correctly marked original source figure.",AssessmentItemType.Numeric,
-            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v});
+            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v,["leftCubes"]=left,["rightCubes"]=right,["unitCode"]=unitCode});
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p){
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G5 L09 source model");
-        return AnswerFor(p["variant"]).ToString(CultureInfo.InvariantCulture);
+        return (p["leftCubes"]+p["rightCubes"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? a)=>Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
-    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<32;
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==4&&
+        p.TryGetValue("variant",out var v)&&v>=0&&v<32&&
+        p.TryGetValue("leftCubes",out var left)&&left==(v switch {0=>70,1=>175,2=>240,_=>6*(v+2)})&&
+        p.TryGetValue("rightCubes",out var right)&&right==(v switch {0=>8,1=>84,2=>180,_=>8*(v+1)})&&
+        p.TryGetValue("unitCode",out var unitCode)&&unitCode==(v==0?3:2);
 }

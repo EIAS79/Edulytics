@@ -20,13 +20,18 @@ internal static class UsCcssG5Unit1Lesson8Questions
         if(!Supports(family))throw new InvalidOperationException("Not G5 L08");
         ArgumentNullException.ThrowIfNull(random);
         var v=random.Next(32);
+        var left=v switch {0=>12,1=>12,2=>45,_=>6*(v+2)};
+        var right=v switch {0=>10,1=>18,2=>1,_=>6*(v+1)};
         return new Problem(family,PromptFor(v),"Build and explain nonoverlapping attached prisms; show different valid cuts and check no double-counting. WODB and the original publisher Cool-down are not auto-scored.",AssessmentItemType.Numeric,
-            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v});
+            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v,["leftCubes"]=left,["rightCubes"]=right});
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p){
         if(!Valid(family,p))throw new InvalidOperationException("Bad G5 L08 source variant");
-        return AnswerFor(p["variant"]).ToString(CultureInfo.InvariantCulture);
+        return (p["leftCubes"]+p["rightCubes"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? a)=>Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
-    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<32;
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==3&&
+        p.TryGetValue("variant",out var v)&&v>=0&&v<32&&
+        p.TryGetValue("leftCubes",out var left)&&left==(v switch {0=>12,1=>12,2=>45,_=>6*(v+2)})&&
+        p.TryGetValue("rightCubes",out var right)&&right==(v switch {0=>10,1=>18,2=>1,_=>6*(v+1)});
 }

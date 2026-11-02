@@ -21,13 +21,20 @@ internal static class UsCcssG5Unit1Lesson10Questions
         if(!Supports(family))throw new InvalidOperationException("Not G5 L10");
         ArgumentNullException.ThrowIfNull(random);
         var v=random.Next(32);
+        var primary=v switch {0=>75,1=>125,2=>48,_=>15*(v+6)};
+        var secondary=v switch {0=>20,1=>30,2=>120,_=>12};
+        var operation=(v==1||v>=3)?1:0; // 0 add, 1 subtract.
         return new Problem(family,PromptFor(v),"Teacher reviews two real prism partitions, equivalent expressions and correct choice of removed region. Right total with wrong geometry is not accepted as a full solution.",AssessmentItemType.Numeric,
-            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v});
+            new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v,["primaryCubes"]=primary,["secondaryCubes"]=secondary,["operation"]=operation});
     }
     public static string Solve(string family,IReadOnlyDictionary<string,int> p){
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G5 L10 source variant");
-        return AnswerFor(p["variant"]).ToString(CultureInfo.InvariantCulture);
+        return (p["operation"]==0?p["primaryCubes"]+p["secondaryCubes"]:p["primaryCubes"]-p["secondaryCubes"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? a)=>Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
-    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<32;
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==4&&
+        p.TryGetValue("variant",out var v)&&v>=0&&v<32&&
+        p.TryGetValue("primaryCubes",out var primary)&&primary==(v switch {0=>75,1=>125,2=>48,_=>15*(v+6)})&&
+        p.TryGetValue("secondaryCubes",out var secondary)&&secondary==(v switch {0=>20,1=>30,2=>120,_=>12})&&
+        p.TryGetValue("operation",out var operation)&&operation==((v==1||v>=3)?1:0);
 }

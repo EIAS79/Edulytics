@@ -34,7 +34,13 @@ internal static class UsCcssG5Unit1Lesson7Questions
         if(!Supports(family))throw new InvalidOperationException("Unsupported Grade5 source family");
         ArgumentNullException.ThrowIfNull(random);
         var variant=random.Next(32);
-        var parameters=new Dictionary<string,int>(StringComparer.Ordinal) {["variant"]=variant};
+        var length=variant switch {0=>4,1=>2,2=>2,_=>variant+1};
+        var width=variant switch {0=>2,1=>3,2=>3,_=>variant+2};
+        var height=variant switch {0=>3,1=>4,2=>5,_=>3};
+        var unitCode=AnswerFor(variant);
+        var parameters=new Dictionary<string,int>(StringComparer.Ordinal)
+        {["variant"]=variant,["length"]=length,["width"]=width,
+         ["height"]=height,["unitCode"]=unitCode};
         var solution="Original info-gap questioning, open size/context unit choices and physical cubic units are reviewed by teacher; no invented missing edge.";
         return new Problem(family,PromptFor(variant),solution,
             AssessmentItemType.Numeric,parameters);
@@ -47,6 +53,11 @@ internal static class UsCcssG5Unit1Lesson7Questions
     public static bool Verify(string family,IReadOnlyDictionary<string,int> parameters,string? answer) =>
         Valid(family,parameters)&&string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p) =>
-        Supports(family)&&p is not null&&p.Count==1&&
-        p.TryGetValue("variant",out var v)&&v>=0&&v<32;
+        Supports(family)&&p is not null&&
+        p.TryGetValue("variant",out var v)&&v>=0&&v<32&&
+        p.Count==5&&
+        p.TryGetValue("length",out var length)&&length==(v switch {0=>4,1=>2,2=>2,_=>v+1})&&
+        p.TryGetValue("width",out var width)&&width==(v switch {0=>2,1=>3,2=>3,_=>v+2})&&
+        p.TryGetValue("height",out var height)&&height==(v switch {0=>3,1=>4,2=>5,_=>3})&&
+        p.TryGetValue("unitCode",out var unit)&&unit==AnswerFor(v);
 }

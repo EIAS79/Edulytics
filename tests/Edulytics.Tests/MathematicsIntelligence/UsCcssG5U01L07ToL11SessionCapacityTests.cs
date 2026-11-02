@@ -1,4 +1,6 @@
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Core.Enums;
+using Edulytics.Services.Practice;
 using Edulytics.Services.Mathematics;
 using Xunit;
 
@@ -42,10 +44,17 @@ public sealed class UsCcssG5U01L07ToL11SessionCapacityTests
                 [family],ExactSkillQuestionDifficulty.Standard,10,20261101,[]);
             Assert.Equal(10,questions.Count);
             Assert.Equal(10,questions.Select(x=>x.ExposureFingerprint).Distinct().Count());
+            Assert.Equal(10,questions.Select(x=>
+                PracticeSemanticQuestionIdentityPolicy.Create(x.Family,x.Parameters).Key)
+                .Distinct(StringComparer.Ordinal).Count());
             Assert.All(questions,question=>
             {
                 Assert.Equal(family,question.Family);
-                Assert.Single(question.Parameters);
+                Assert.True(question.Parameters.Count>=3,
+                    "Mathematically identifying parameters are required; variant alone collapses semantic diversity.");
+                var semantic=PracticeSemanticQuestionIdentityPolicy.Create(
+                    question.Family,question.Parameters);
+                Assert.DoesNotContain("|constant",semantic.Key,StringComparison.Ordinal);
                 var variant=question.Parameters["variant"];
                 Assert.InRange(variant,0,31);
                 Assert.Equal(IndependentExpected(family,variant,originals).ToString(
@@ -68,6 +77,23 @@ public sealed class UsCcssG5U01L07ToL11SessionCapacityTests
                     .Distinct(StringComparer.Ordinal).Count());
                 Assert.All(more,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
                     q.Family,q.Parameters,q.CorrectAnswer)));
+            }
+            // Stage18's actual semantic de-duplication previously collapsed all
+            // variant-only questions to family|constant, leaving fewer than three.
+            var contract=LessonPracticeContractRegistry.All.Single(x=>
+                x.LessonCode=="PED:US-CCSS-MATH:G5:U01:"+lesson)
+                .ToLegacyStage18Contract();
+            var composer=new Stage18SkillContractPracticeEngine();
+            foreach(var seed in new[]{20261102,20260923})
+            {
+                var items=composer.GenerateComposed(
+                    Guid.NewGuid(),Guid.NewGuid(),Guid.NewGuid(),
+                    contract,StudentPrivatePracticeDifficulty.MyLevel,10,
+                    seed,[],Guid.NewGuid());
+                Assert.True(items.Count>=3,
+                    "Exact composed Practice must sustain a nontrivial unique session for "+lesson);
+                Assert.Equal(items.Count,items.Select(x=>x.ExposureFingerprint)
+                    .Distinct(StringComparer.Ordinal).Count());
             }
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,
                 new Dictionary<string,int>{{"variant",32}},"1"));
