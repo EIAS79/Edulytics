@@ -160,6 +160,8 @@ test('student title preserves immutable owner-consented data but renders 2021 so
  assert.match(view,/Model\.Title\.EndsWith\(" PLC Activity"/);
  assert.match(view,/ViewData\["Title"\]\s*=\s*grade5OriginalDisplayTitle/);
  assert.match(view,/<h1>@grade5OriginalDisplayTitle<\/h1>/);
+ assert.match(view,/Model\.LessonCode,\s*grade5OriginalDisplayTitle,\s*Model\.GradeName/,
+  'Lesson media header also uses the canonical first-edition title');
  const official=JSON.parse(fs.readFileSync(path.join(root,
   'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json'),'utf8'));
  const pack=JSON.parse(fs.readFileSync(path.join(root,
