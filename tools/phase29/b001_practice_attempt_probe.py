@@ -175,7 +175,19 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             final=urllib.parse.urlparse(response.url).path.lower()
             match=re.fullmatch(r"/student/practice/attempt/("+UUID+r")",final)
             if response.status!=200 or not match:
-                return {"status":"GENERATION_ROUTE_NOT_ATTEMPT","httpStatus":response.status}
+                # A 200 response can be the application's redirect to
+                # the practice index after a genuine generation failure.
+                # Surface only the user-facing alert, never auth tokens.
+                response_body=response.read().decode("utf-8",errors="replace")
+                import html
+                alert=re.search(
+                    r'<div[^>]*class="[^"]*school-alert-error[^"]*"[^>]*>(.*?)</div>',
+                    response_body, flags=re.IGNORECASE|re.DOTALL)
+                failure_message=(re.sub(r'<[^>]+>',' ',html.unescape(alert.group(1)))
+                                 if alert else '').strip()
+                return {"status":"GENERATION_ROUTE_NOT_ATTEMPT",
+                        "httpStatus":response.status,"redirectPath":final,
+                        "failureMessage":failure_message[:250]}
             attempt_id=match.group(1)
             page=response.read().decode("utf-8")
         # Real DB evidence prevents false success from HTTP 200 on an error page.
