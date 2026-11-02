@@ -60,6 +60,9 @@ builder.Services
     .AddEdulyticsIdentityAndData(
         builder.Configuration);
 
+// Grade 5 U03:L02 teacher-reviewed open-response persistence lives outside controllers.
+builder.Services.AddScoped<Edulytics.Web.Controllers.Grade5U03L02RubricService>();
+
 builder.Services
     .AddMultiInstanceScalePhase25(
         builder.Configuration,
