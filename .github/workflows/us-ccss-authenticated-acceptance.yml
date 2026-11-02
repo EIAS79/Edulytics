@@ -166,19 +166,19 @@ jobs:
             sleep 3
           done
           test "$ready" = true
-          # Grade 5 Stage D: two exact 2021 lesson learner pages, generated
+          # Grade 5 Stage D: all 148 learner pages and selected Practice, plus two exact 2021 source checks.
           # selected families and disposable persisted correct/malformed grades.
           # The script restores the synthetic G5 enrollment before legacy B001
           # probes. Do not use this for the unimplemented teacher-rubric signoff.
           python3 tools/phase29/g5_stage_d_authenticated_https.py
           python3 tools/phase29/acceptance_two_school_https.py
           python3 tools/phase29/g2_late_companion_https.py
-      - name: Preserve G5 real authenticated two-lesson rendering and persisted Practice evidence
+      - name: Preserve G5 real authenticated 148-lesson rendering and persisted Practice evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: g5-stage-d-authenticated-two-lessons-technical-not-teacher-approval
-          path: /tmp/g5-stage-d-authenticated-two-lessons.json
+          name: g5-stage-d-authenticated-148-lessons-technical-not-teacher-approval
+          path: /tmp/g5-stage-d-authenticated-148-lessons.json
           if-no-files-found: warn
           retention-days: 14
       - name: Preserve exact 500 lesson disposable real Practice generation and grading evidence
