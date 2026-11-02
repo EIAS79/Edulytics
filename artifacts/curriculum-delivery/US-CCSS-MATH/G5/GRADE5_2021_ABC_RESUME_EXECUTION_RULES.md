@@ -115,3 +115,6 @@ Local teacher lesson/preparation checked: estimate fractional area >half of seve
 
 ## U02:L11 (ordinal 23) IM first edition 2021 revalidation
 Source teacher lesson/preparation compared: warm-up 10÷3=10×1/3 and 10/3=5×2/3; 4 2/3×4=56/3 select-all correct (A,C,D), 2 1/4×2 and 3 3/4×3 geometric examples. Source-aligned Rich V2 reused and independent 3×5/4 first-party area exit appended with diagram rubric. Static exact family `usccss.g5.u02.l11.area_fraction_greater_than_one` retained; publisher Find the Area gated and no source-verbatim 100% claim. Test authored NOT_RUN, CI/Stage D NOT_RUN. Next U02:L12.
+
+## U02:L12 (ordinal 24) source revalidation 2021
+Original local teacher lesson/preparation inspected: number talk 3×20,3×24,5×2,5×2 1/2; Noah 5×6 1/4=31 1/4 square yards versus Priya 6×5 1/4=31 1/2; six decomposition strategy starters for 4×5 1/2=22. Reused existing math/teacher rubric/source-specific static family `usccss.g5.u02.l12.decomposed_mixed_rectangle_area`; independent exit added asking two decompositions of 4×5 1/2. Publisher Decompose Rectangles gated; first-party equivalent not claimed publisher text. Test authored NOT_RUN; CI/Stage D NOT_RUN. Next U02:L13.

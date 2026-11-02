@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L12",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L13",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
@@ -1732,16 +1732,16 @@
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L12",
       "originalLocalSourcePaths": [
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-12\\lesson.html",
-        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-12\\preparation.html"
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-12\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-12\\preparation.html"
       ],
       "reuseFinding": "SOURCE_RICH_V2_REVIEWED_AND_REUSED_PER_COMMITTED_U02-L12-ABC-SEQUENTIAL-CLOSURE-20261030.JSON",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
       "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "SOURCE_EXACT_DIGITAL_SUBSKILL_PLUS_TEACHER_REVIEW: usccss.g5.u02.l12.decomposed_mixed_rectangle_area",
-      "CooldownOriginalStatus": "GATED_FIRST_PARTY_EDULYTIKS_EXIT",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=SOURCE_UNAVAILABLE_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED_TEACHER_REVIEW",
       "testFile": "tests/academic-us-ccss-g5-u02-sequential-abc-20261030.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": null,
@@ -1786,7 +1786,20 @@
       "sourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l12-abc-sequential-closure-20261030.json",
       "lastClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l12-abc-sequential-closure-20261030.json",
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l12-abc-sequential-closure-20261030.json",
-      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE"
+      "closureEvidenceKind": "ORIGINAL_SEQUENTIAL_ABC_CLOSURE",
+      "abcRevalidation20261102": {
+        "status": "READY_FOR_STAGE_D",
+        "source": "local IM 2021 teacher lesson/preparation",
+        "sourceMath": "Noah 5×6 1/4 vs Priya 6×5 1/4; 31 1/4 and 31 1/2 sq yards; decomposition 4×5 1/2=22",
+        "richV2": "REUSED_AND_ADDED_FIRST_PARTY_EXIT",
+        "staticFamily": "usccss.g5.u02.l12.decomposed_mixed_rectangle_area",
+        "originalPublisherCooldown": "SOURCE_UNAVAILABLE",
+        "source100PercentClaimed": false,
+        "teacherReviewRequired": true,
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l12-2021-source-revalidation-20261102.json"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L13",
