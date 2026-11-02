@@ -54,3 +54,7 @@
 - Existing 2021 six-object cubic-unit choice, two-party information-gap lesson, source dimensions (4 feet, 2-foot data card; other dimension must be requested), independent 24-cubic-foot exit and source-specific exact unit-choice Practice reused. Information-gap card element recorded explicitly; inaccessible original publisher Cool-down preserved as SOURCE_UNAVAILABLE with first-party replacement.
 - Teacher lesson SHA-256 `956878ef2019e4e1650b8ce7e50421b580f092fff10326af06035d0648e9d763`, preparation SHA-256 `11a861b7578ba63160fc29bb89b48da9187c063429dcd4f5a4dd054e1b69dd30`.
 - Original publisher text parity NOT claimed; CI, Stage D and tests NOT_RUN. Next **U01:L08**.
+
+## Sequential closure checkpoint: Grade 5 U01:L08
+- First Edition 2021 Put It Together and source 22, 30, 46, 50, 60, 57 disjoint prism calculations retained. Previous stale ABC source-review `readyForStageD=false` reconciled with source-specific registered practice and user-authorized independent teacher-reviewed 30-cube exit; original publisher Cool-down still SOURCE_UNAVAILABLE and NOT claimed exact.
+- Teacher SHA-256 `347ec03c60ad4125aef80609cfab5ef05646325793ca51534570f17ed16c9420`; preparation `c409f8cc52224e79f6d64618ce8f8886154817b6465db385ff9388e4c1544279`. No tests/CI/Stage D run. Next **U01:L09**.

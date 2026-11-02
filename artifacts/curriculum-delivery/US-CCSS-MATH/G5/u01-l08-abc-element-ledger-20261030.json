@@ -3,8 +3,8 @@
   "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
   "edition": "2021 IM K–5",
   "source": {
-    "teacher": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\lesson.html",
-    "preparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\preparation.html",
+    "teacher": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\lesson.html",
+    "preparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\preparation.html",
     "headings": [
       "Warm-up: Which One Doesn’t Belong: Different Figures (10 minutes)",
       "Activity 1: Put It Together (20 minutes)",
@@ -516,6 +516,35 @@
       "ContentVersion": "g5-u01-l07-l12-im2021-v23-abc-20261030",
       "CandidateSha": "FOLLOWING_COMMIT",
       "UpdatedUtc": "2026-10-30"
+    },
+    {
+      "LessonOrdinal": 8,
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
+      "Unit": 1,
+      "SourceEdition": "IM 2021",
+      "SourceSnapshotId": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\lesson.html",
+      "SourceElementId": "G5-U01-L08-CD-PUBLISHER-COMPOSITE",
+      "ParentElementId": null,
+      "Category": "publisher-cool-down",
+      "SourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\lesson.html#COOLDOWN-VOLUME-FIGURE-PRISMS",
+      "ExpectedMathematics": "Original publisher 'Volume of a Figure Made of Prisms' prompt is gated, exact geometry not independently verified",
+      "TeacherOrStudentAudience": "Student",
+      "RightsStatus": "PUBLISHER_ORIGINAL_TEXT_NOT_COPIED",
+      "ImplementationType": "BLOCKED",
+      "VerificationMethod": "2021 original source identifies the skill; independent Edulytiks 3x2x2 plus 3x2x3 composite check is reviewed by teacher. Not exact publisher prompt parity.",
+      "TestNames": [
+        "tests/academic-us-ccss-g5-u01-l08-20261030.test.cjs"
+      ],
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l08-abc-element-ledger-20261030.json",
+      "Reviewer": "Grade5 ABC source reconciling",
+      "Status": "SOURCE_UNAVAILABLE",
+      "IssueId": "G5-U01-L08-PUBLISHER-COOLDOWN",
+      "ContentVersion": "g5-u01-l07-l12-im2021-v23-abc-20261030",
+      "CandidateSha": "SOURCE_REVIEW_COMMITTED_REFER_TO_GIT_HISTORY",
+      "UpdatedUtc": "2026-11-02",
+      "OwnerAuthorizedFirstPartyAlternative": "Edulytiks 3x2x2 + 3x2x3 disjoint/prism regrouping = 30 cubic units",
+      "FunctionalReplacementStatus": "MATCHED_TEACHER_LED",
+      "OriginalPublisherPromptVerified": false
     }
   ],
   "denominatorComplete": false,
@@ -554,5 +583,21 @@
   "currentContentVersion": "g5-u01-l07-l12-im2021-v48-composite-source-20261030",
   "practiceExactFamily": "usccss.g5.u01.l08.add_nonoverlap_prism_volumes",
   "teacherLedBoundary": "Build and explain nonoverlapping attached prisms; show different valid cuts and check no double-counting. WODB and the original publisher Cool-down are not auto-scored.",
-  "sourceMaterialStatus": "Publisher card pixels/Cool-down inaccessible; author-created independent exit; literal source parity not certified"
+  "sourceMaterialStatus": "Publisher card pixels/Cool-down inaccessible; author-created independent exit; literal source parity not certified",
+  "sourceCoverage100Percent": false,
+  "sourceElementsCount": 18,
+  "sourceElementsAccepted": 17,
+  "abcRevalidation20261102": {
+    "atUtc": "2026-11-02T16:02:18.462Z",
+    "status": "READY_FOR_STAGE_D",
+    "originalPublisherCoolDown": "SOURCE_UNAVAILABLE",
+    "ownerAuthorizedAlternative": "MATCHED_TEACHER_LED",
+    "originalMathVerified": "12+10=22,12+18=30,45+1=46,45+5=50,54+6=60,45+12=57",
+    "teacherLessonSha256": "347ec03c60ad4125aef80609cfab5ef05646325793ca51534570f17ed16c9420",
+    "preparationSha256": "c409f8cc52224e79f6d64618ce8f8886154817b6465db385ff9388e4c1544279",
+    "practiceFamily": "usccss.g5.u01.l08.add_nonoverlap_prism_volumes",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageD": "NOT_RUN",
+    "exactPublisherParityNotClaimed": true
+  }
 }
