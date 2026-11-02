@@ -6,8 +6,8 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U03:L03",
-  "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:ABC_REVALIDATION_REVIEW_COMPLETE",
+  "authoringCursorUnrelated": null,
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
@@ -6656,7 +6656,7 @@
     }
   ],
   "updatedAtUtc": "2026-11-01T18:31:58.706094+00:00",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L02",
+  "nextIndependentCursor": null,
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -6779,10 +6779,13 @@
     },
     "grade": {
       "scope148": 148,
-      "lessonsRevalidatedThisPass": 13,
-      "remainingThisPass136": 135,
-      "nextLesson": "PED:US-CCSS-MATH:G5:U02:L02",
-      "historicalReadyCount": 148
+      "lessonsRevalidatedThisPass": 148,
+      "remainingThisPass136": 0,
+      "nextLesson": null,
+      "historicalReadyCount": 148,
+      "unitCount": 8,
+      "completionEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/GRADE5_IM2021_148_ABC_SEQUENTIAL_REVALIDATION_FINAL_REPORT_20261102.md",
+      "completionKind": "SEQUENTIAL_STATIC_SOURCE_REVALIDATION_NOT_ATOMIC_100_PERCENT_PARITY"
     },
     "ci": "NOT_RUN",
     "stageD": "NOT_RUN",
@@ -6795,6 +6798,20 @@
       "nextLesson": "PED:US-CCSS-MATH:G5:U02:L02",
       "sourceTeacher2021": true,
       "stageD": "NOT_RUN"
-    }
+    },
+    "currentReviewStatus": "COMPLETE_148_OF_148_STATIC_HANDOFF",
+    "historicalCursorWarning": "Earlier unit02 and v5StrictUnit fields preserve dated snapshots and must not be treated as active cursors. Separate 2021 revalidation progression supersedes them. No Stage D or source-asset 100% certification."
+  },
+  "abc2021ReviewCurrentState": {
+    "authoritativeSourceEdition": "Illustrative Mathematics K-5 Grade 5 First Edition (2021)",
+    "confirmedLessonReviewCount": 148,
+    "confirmedUnits": 8,
+    "nextLessonToReview": null,
+    "stageD": "NOT_AUTHORIZED",
+    "sourceExactAllAssets100Percent": "NOT_VERIFIED",
+    "tests": "WRITTEN_NOT_RUN",
+    "lastReport": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/GRADE5_IM2021_148_ABC_SEQUENTIAL_REVALIDATION_FINAL_REPORT_20261102.md",
+    "historicalCommitReference": "97d36d6518e3765dbd56a36152379135a769f0bd",
+    "note": "Do not restart from U02:L05 or U03:L03; those are older checkpoints."
   }
 }
