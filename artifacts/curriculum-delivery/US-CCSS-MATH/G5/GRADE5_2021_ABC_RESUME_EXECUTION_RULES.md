@@ -45,3 +45,7 @@
 - First Edition 2021 original teacher source reviewed, 4×10 growing base and heights 1/2/3/10/25, source reverse-question task and existing exact Practice retained. Original protected publisher Cool-down restored as 25th source element with SOURCE_UNAVAILABLE; independent existing Edulytiks 60-cube alternate-base exit accepted functionally with manual scoring.
 - Original teacher source SHA-256 `dce46e63cad9ce3e60e7a2836f90505455391743f7da46338be14e92aad138af`, preparation `b4d1ecc3e77cc9e675452af275d2e85fd8c767c067d052e923f348e9de4d5e50`.
 - No original exact-source parity claim, Stage D/CI/tests NOT_RUN; next **U01:L06**.
+
+## Sequential closure checkpoint: Grade 5 U01:L06
+- Existing first-edition 2021 true/false warm-up, source 90/72/84 examples, optional Two Truths and a Lie, source-specific exact family, and Edulytiks original Cool-down retained. Added six independent text-accessible prism-expression cards as original first-party Activity 1 alternative. Source publisher card blackline and original gated Cool-down recorded as SOURCE_UNAVAILABLE, not hidden.
+- Teacher SHA-256 `6b6c0e624f3445483a276742c2de655586a7edf8b276477dab5c7a0de62d8ad6`, preparation `d37110791a47146e20f89ce48506ea92c73556ca6cc295b94ef769223898885c`. Stage D, CI, tests NOT_RUN. Next **U01:L07**.
