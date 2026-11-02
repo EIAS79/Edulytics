@@ -121,3 +121,6 @@ Original local teacher lesson/preparation inspected: number talk 3×20,3×24,5×
 
 ## U02:L13 (ordinal 25) source revalidation 2021
 Original teacher lesson/preparation: parenthesis number talk; card sort expressions/diagrams with multiple matches, diagram C 3×5 2/5, B (5×3)−(5×2/5); later 4×5 1/3 and 7×3 3/4 using distributive area expressions. Reused source-specific static family `usccss.g5.u02.l13.distributive_area_expressions` and existing Rich V2. Added teacher-reviewed 7×3 3/4 independent cooldown with additive/subtractive decompositions, not the publisher gated Equivalent Expressions. Tests WRITTEN_NOT_RUN, Stage D/CI NOT_RUN. Next U02:L14.
+
+## U02:L14 (ordinal 26) 2021 local original revalidation
+Number talk source 3×(10÷2),3/2×10,14/7×10,14×10/7; two-role Info Gap: Area involves missing side length and querying relation, original gated master not verified; optional Fill in the Blank fractional products preserved. Reused Rich V2 and static family `usccss.g5.u02.l14.fraction_multiplication_info_gap`. Added teacher-reviewed first-party 8m width 3/4 length info-gap exit ->48 sq m without claiming original publisher Evaluate Expressions. Tests authored NOT_RUN, CI/Stage D NOT_RUN. Next U02:L15.
