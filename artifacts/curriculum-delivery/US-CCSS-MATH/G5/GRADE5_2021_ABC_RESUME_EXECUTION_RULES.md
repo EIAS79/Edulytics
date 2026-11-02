@@ -106,3 +106,6 @@ Original teacher lesson/preparation checked: estimate number line between 0 and 
 
 ## U02:L08 (ordinal 20), sequential 2021 source revalidation
 Read local teacher lesson and preparation: source true/false unit-fraction thirds vs fourths; 1/5,2/5,3/5 times three; 3×2/5=2×(3÷5)=6/5 with shaded fifths and teacher rationale. Preserved existing source-aligned Rich V2 and static selected `usccss.g5.u02.l08.nonunit_fraction_of_whole` family. Fixed actual absence of an explicit independent Cool-down: added original 2/3 of 6 liters (=4 liters) with diagram/equivalent-expression teacher rubric; not the publisher's gated Two Thirds. Appended authored-not-run source fixture; no tests/CI/Stage D run. Next U02:L09.
+
+## U02:L09 (ordinal 21) first edition 2021 revalidation
+Read teacher lesson/preparation: warm-up compare four area shapes; six-unit length with heights 1,1/2,1/3,1/4 produces 6,3,2,1 1/2 square units; four half-height 1,2,3,4 wide grid drawings and partly hidden area estimations. Reused existing Rich V2 and static area family; added missing independent teacher-reviewed 6×1/4 vs 3×1/2 rectangle exit, not the publisher-gated Fractional Pieces. Test authored NOT_RUN; Stage D/CI NOT_RUN. Next U02:L10.
