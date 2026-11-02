@@ -66,3 +66,7 @@
 ## Sequential closure checkpoint: Grade 5 U01:L10
 - Source-matched measured composite 95 units and 168 cubic feet, two additive splits and bounding-prism subtraction preserved; existing exact family used. Historical source review not-ready reconciled using existing 2021 teacher data. Original gated publisher Cool-down restored as SOURCE_UNAVAILABLE, and existing first-party 168-cubic-foot reasoning exit accepted functionally (not publisher-exact).
 - Teacher SHA-256 `569f66c2d9bb588da02cf7f0b042642d1a9582f32e80888e995bb5ab52a560ec`; preparation SHA-256 `5bfc12c436a2c040a63c30057c4694908d7fa6b482de3b9b92c97b67379c3f59`. CI/tests/Stage D NOT_RUN. Next **U01:L11**.
+
+## Sequential closure checkpoint: Grade 5 U01:L11
+- Reused 2021 source-aligned packed 300-cube box, 180-ft³ storage, 270-ft³ closet, and 216-ft³ connected garden with alternate designs. First-party teacher-reviewed garden exit already present. Original publisher sandbox cooldown recorded SOURCE_UNAVAILABLE as element 25, rather than elided. Selected exact practice code checked statically; Stage D not run.
+- Teacher SHA-256 `a15d3f83ab96832d6b6d8e87c5b4ba3396ae5d0951dc4ed06ac8045500c59c6a`, preparation SHA-256 `d60d1e80a67ea019c4124e2d2e34bc2429d0072de6fd09759ed1ace52c9a821c`. Next **U01:L12**.
