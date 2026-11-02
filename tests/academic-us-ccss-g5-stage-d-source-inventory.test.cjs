@@ -3,6 +3,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
+const {spawnSync}=require('node:child_process');
 const {analyzeElementInventory,analyzeEditionPair,grade5EditionManifests}=
   require('../tools/curriculum/g5-stage-d-diagnostic.cjs');
 
@@ -76,7 +77,7 @@ test('reject duplicated source ID, wrong lesson, missing snapshot and incorrect 
   assert.equal(audit.matched,1);
 });
 
-test('every first-edition teacher lesson has a wrong-edition v.360 student mirror, preventing Grade 5 source signoff',()=>{
+test('archived v360 student mirror is detected but never substitutes for active IM2021 source',()=>{
   const entries=grade5EditionManifests();
   assert.equal(entries.size,148);
   for(const [lessonCode,rows] of entries){
@@ -109,4 +110,35 @@ test('missing, duplicate, forged and cross-edition student evidence cannot pass 
     editionMatch:'IM2021_STUDENT_CANDIDATE_SOURCE'
   }]);
   assert.ok(titleOnly.blockers.includes('TEACHER_STUDENT_SEMANTIC_PARITY_NOT_CERTIFIED'));
+});
+
+// Regression: obsolete v360 Student_Public_Mirror snapshots are kept for audit,
+// never used to re-open 148 closed 2021 second-pass Grade 5 authoring handoffs.
+test('Stage D consumes 148 closed 2021 second-pass reviews and isolates all archival v360 mirrors',()=>{
+  const p=spawnSync(process.execPath,['tools/curriculum/g5-stage-d-diagnostic.cjs','source-evidence'],
+    {cwd:root,encoding:'utf8',timeout:30000});
+  assert.ok([0,2].includes(p.status),'audit must exit successfully only with no real blockers');
+  const result=JSON.parse(fs.readFileSync(path.join(root,'stage-d-results/grade5-source-evidence.json'),'utf8'));
+  assert.equal(result.scopeLessons,148);
+  assert.equal(result.reviewed2021SecondPassLessons,148);
+  assert.equal(result.archivedV360StudentMirrors,148);
+  assert.equal(result.wrongEditionStudentLessons,0,
+    'historic student mirrors cannot invalidate the 2021 source-referenced lesson');
+  assert.equal(result.original2021TeacherStudentFacingLessons,148);
+  assert.equal(result.original2021TeacherSectionHashLinkedCount,483);
+  assert.equal(result.independentlySourceApprovedLessons,
+    result.rows.filter(x=>x.independentElementReviewPassed).length);
+  assert.equal(result.blockedLessons,result.rows.filter(x=>x.blockers.length>0).length,
+    'only real remaining blockers can fail the source gate');
+  assert.equal(p.status,result.blockedLessons===0?0:2);
+  for(const lesson of result.rows){
+    assert.equal(lesson.reviewed2021SecondPass?.status,'REVIEW_COMPLETE_2021',lesson.lessonCode);
+    assert.equal(lesson.editionEvidence.scope,'ARCHIVAL_DIAGNOSTIC_ONLY_NOT_ACTIVE_2021_STUDENT_SOURCE');
+    assert.ok(lesson.editionEvidence.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT'));
+    assert.ok(!lesson.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT'),
+      'obsolete archival v360 is not an active lesson source blocker');
+    if(!lesson.independentElementReviewPassed)
+      assert.ok(lesson.blockers.includes('INDEPENDENT_SOURCE_ELEMENT_REVIEW_NOT_EVIDENCED'),
+        'teacher review must not be forged by 2021 handoff');
+  }
 });

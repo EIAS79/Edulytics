@@ -324,9 +324,35 @@ function ownerAcademicConsent(){
     thirdPartyRightsCertified:false,studentTeacherE2ECertified:false,releaseCertified:false};
 }
 
+// Grade 5 Stage D must consume the *completed second-pass 2021 handoff* rather
+// than promoting or rejecting lessons using obsolete student mirror snapshots.
+function secondPass2021Reviews(){
+  const ledger=read(rel+'g5-2021-second-pass-review-ledger-v1.json');
+  if(ledger.reviewComplete2021Count!==148||ledger.existingStageDReadyCount!==148||
+     ledger.unitsCompleted!==8||ledger.lessons?.length!==148)
+    throw Error('G5_SECOND_PASS_2021_LEDGER_INCOMPLETE');
+  const map=new Map();
+  for(let i=0;i<ledger.lessons.length;i++){
+    const row=ledger.lessons[i];
+    if(row?.ordinal!==i+1||row.REVIEW_COMPLETE_2021!==true||
+       row.readyForStageDPreviousPass!==true||row.reviewState!=='CLOSED'||
+       row.sourceEditionVerified!=='IM K-5 Grade 5 First Edition 2021'||
+       !/^[a-f0-9]{40}$/.test(row.reviewCommitSha||'')||
+       !exists(row.reviewEvidencePath)||map.has(row.lessonCode))
+      throw Error('G5_SECOND_PASS_2021_CLOSURE_INVALID_'+(i+1));
+    const proof=read(row.reviewEvidencePath);
+    if(proof.lessonCode!==row.lessonCode||
+       (proof.REVIEW_COMPLETE_2021??proof.secondPassReviewComplete2021)!==true)
+      throw Error('G5_SECOND_PASS_2021_EVIDENCE_INVALID_'+(i+1));
+    map.set(row.lessonCode,{status:'REVIEW_COMPLETE_2021',evidencePath:row.reviewEvidencePath,
+      commitSha:row.reviewCommitSha,sourceEdition:row.sourceEditionVerified});
+  }
+  return map;
+}
 function sourceEvidenceAudit(){
   const ownerConsent=ownerAcademicConsent();
   const q=inventory();
+  const secondPass=secondPass2021Reviews();
   const editionLookup=grade5EditionManifests();
   const firstEditionStudentFacing=original2021StudentFacingLocator();
   const originalSectionProvenance=original2021StudentFacingSectionProvenance(
@@ -337,7 +363,14 @@ function sourceEvidenceAudit(){
     const {sourceElements,hasSourceElementArray,descriptiveOutlineCount,
       identified,matched,statusCounts,blockers}=analyzeElementInventory(evidence,item.code);
     const editionEvidence=analyzeEditionPair(item.code,editionLookup.get(item.code)||[]);
-    blockers.push(...editionEvidence.blockers);
+    // Historical v360 Student_Public_Mirror is NEVER the active IM2021 source.
+    // Preserve its warning as provenance but do not block the reviewed 2021
+    // lesson simply because a separate archived mirror has the wrong edition.
+    // The authentic 2021 teacher hash/section proof remains fail-closed below.
+    blockers.push(...editionEvidence.blockers.filter(x=>
+      x==='TEACHER_IM2021_EDITION_NOT_VERIFIED'));
+    const reviewed2021=secondPass.get(item.code)||null;
+    if(!reviewed2021)blockers.push('SECOND_PASS_2021_REVIEW_NOT_CLOSED');
     const sourceStudentFacing=firstEditionStudentFacing.get(item.code)||null;
     const sectionSource=originalSectionProvenance.get(item.code)||null;
     if(!sectionSource)blockers.push('ORIGINAL_2021_STUDENT_FACING_SOURCE_SECTION_HASH_MISSING');
@@ -356,7 +389,9 @@ function sourceEvidenceAudit(){
       sourceSnapshotId:evidence.sourceSnapshotId||null,identifiedElementCount:identified,
       hasSourceElementArray,descriptiveOutlineElementCount:descriptiveOutlineCount,
       itemizedElementCount:sourceElements?.length??null,matchedElementCount:matched,
-      sourceElementStatusCounts:statusCounts,editionEvidence,
+      sourceElementStatusCounts:statusCounts,
+      editionEvidence:{...editionEvidence,scope:'ARCHIVAL_DIAGNOSTIC_ONLY_NOT_ACTIVE_2021_STUDENT_SOURCE'},
+      reviewed2021SecondPass:reviewed2021,
       original2021StudentFacing:sourceStudentFacing,
       original2021StudentFacingSectionProvenance:sectionSource,
       sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
@@ -378,7 +413,12 @@ function sourceEvidenceAudit(){
     noElementArrayLessons:rows.filter(x=>!x.hasSourceElementArray).length,
     unknownSourceDenominatorLessons:rows.filter(x=>x.itemizedElementCount===null ||
       String(read(x.sourceEvidencePath).sourceCoverageDenominator||'').startsWith('UNKNOWN_FULL_SOURCE_')).length,
+    // Report historic mirrors separately; zero *active-source* v360 blockers
+    // does NOT prove independent publisher Student PDF/semantic parity.
     wrongEditionStudentLessons:rows.filter(x=>x.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT')).length,
+    archivedV360StudentMirrors:rows.filter(x=>
+      x.editionEvidence.blockers.includes('SOURCE_EDITION_MISMATCH_V360_STUDENT')).length,
+    reviewed2021SecondPassLessons:rows.filter(x=>x.reviewed2021SecondPass?.status==='REVIEW_COMPLETE_2021').length,
     original2021TeacherStudentFacingLessons:rows.filter(x=>x.original2021StudentFacing?.sections>0).length,
     original2021TeacherStudentFacingSections:rows.reduce((n,x)=>n+(x.original2021StudentFacing?.sections||0),0),
     original2021TeacherSectionHashLinkedLessons:rows.filter(x=>
@@ -397,6 +437,8 @@ function sourceEvidenceAudit(){
     itemized:result.itemizedLessonCount,completeSnapshots:result.completeElementSnapshotLessons,
     unknownDenominators:result.unknownSourceDenominatorLessons,
     wrongEditionStudentLessons:result.wrongEditionStudentLessons,
+    archivedV360StudentMirrors:result.archivedV360StudentMirrors,
+    reviewed2021SecondPassLessons:result.reviewed2021SecondPassLessons,
     original2021StudentFacingLessons:result.original2021TeacherStudentFacingLessons,
     original2021StudentFacingSections:result.original2021TeacherStudentFacingSections,
     sourceHashLinkedLessons:result.original2021TeacherSectionHashLinkedLessons,
