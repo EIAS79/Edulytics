@@ -56,8 +56,13 @@ test('Grade5 first-party visual inventory and 2021 CC BY source attribution are 
   }
  }
  assert.equal(codes.size,148,'Grade 5 first-edition lesson count');
- assert.equal(figures,282,'current first-party Grade5 visual inventory');
+ assert.equal(figures,283,'Grade5 first-party visual inventory, including four-model U01:L01 SVG');
  assert.equal(videos,0,'no unreviewed external Grade5 video embeds');
+ const grade5Intro=JSON.parse(fs.readFileSync(path.join(dir,
+  'us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json'),'utf8'));
+ const first=grade5Intro.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G5:U01:L01');
+ assert.equal(first.Visuals.filter(x=>x.Kind==='Grade5Unit1CubeComparison').length,1,
+  'one independently drawn original 2021 WODB four-model illustration');
 
  const metadata=JSON.parse(fs.readFileSync(path.join(root,
   'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json'),'utf8'));
