@@ -141,6 +141,10 @@ test('L02 selected Practice is lesson-scoped, has both exact families and a shar
 test('U03:L02 educator rubric persistence is lesson-scoped, separately migrated and secured', () => {
   const controller=fs.readFileSync(path.join(root,
     'src/Edulytics.Web/Controllers/Grade5U03L02RubricController.cs'),'utf8');
+  const service=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Services/Grade5U03L02RubricService.cs'),'utf8');
+  const startup=fs.readFileSync(path.join(root,
+    'src/Edulytics.Web/Program.cs'),'utf8');
   const migration=fs.readFileSync(path.join(root,
     'src/Edulytics.Data/Migrations/20261102023000_Grade5U03L02TeacherRubric.cs'),'utf8');
   const student=fs.readFileSync(path.join(root,
@@ -149,24 +153,29 @@ test('U03:L02 educator rubric persistence is lesson-scoped, separately migrated 
     'src/Edulytics.Web/Views/Grade5U03L02RubricTeacher/Review.cshtml'),'utf8');
   const queue=fs.readFileSync(path.join(root,
     'src/Edulytics.Web/Views/Grade5U03L02RubricTeacher/Index.cshtml'),'utf8');
-  assert.match(controller,/PED:US-CCSS-MATH:G5:U03:L02/);
-  assert.match(controller,/Authorize\(Policy = "StudentPortal"\)/);
+  assert.match(service,/PED:US-CCSS-MATH:G5:U03:L02/);
+  assert.match(controller,/Grade5U03L02RubricService rubric/);
+  assert.match(controller,/rubric\.StudentScopeAsync/);
+  assert.match(controller,/rubric\.MayReviewAsync/);
+  assert.doesNotMatch(controller,/EdulyticsDbContext|\bDbContext\b/);
+  assert.match(startup,/AddScoped<Edulytics\.Web\.Controllers\.Grade5U03L02RubricService>/);
+    assert.match(controller,/Authorize\(Policy = "StudentPortal"\)/);
   assert.match(controller,/Authorize\(Roles = RoleNames.Teacher\)/);
   assert.equal((controller.match(/ValidateAntiForgeryToken/g)||[]).length,2);
-  assert.match(controller,/Grade5U03L02TeacherRubrics/);
-  assert.match(controller,/TeacherAssignments/);
-  assert.match(controller,/StudentEnrollments/);
-  assert.match(controller,/t\.SubjectId == adoption\.SubjectId/);
-  assert.match(controller,/TeacherUserId" IS NULL/);
+  assert.match(service,/Grade5U03L02TeacherRubrics/);
+  assert.match(service,/TeacherAssignments/);
+  assert.match(service,/StudentEnrollments/);
+  assert.match(service,/t\.SubjectId == adoption\.SubjectId/);
+  assert.match(service,/TeacherUserId" IS NULL/);
   assert.match(controller,/marks\.Any\(x => x is not 0 and not 1\)/);
-  assert.match(controller,/TeacherFeedback/);
+  assert.match(service,/TeacherFeedback/);
   const acceptanceScript=fs.readFileSync(path.join(root,
     'tools/phase29/g5_stage_d_authenticated_https.py'),'utf8');
   assert.match(acceptanceScript,/Cross-school teacher accessed Grade5 rubric/);
   assert.match(acceptanceScript,/Teacher revised immutable reviewed rubric/);
   assert.match(acceptanceScript,/foreignTeacherDenied/);
   assert.match(acceptanceScript,/duplicateScoreUpdateRejected/);
-  assert.match(controller,/ON CONFLICT/);
+  assert.match(service,/ON CONFLICT/);
   assert.match(migration,/CreateTable/);
   assert.match(migration,/UX_G5U03L02Rubric_SchoolClassStudentLesson/);
   assert.match(migration,/CK_G5U03L02Rubric_ReviewConsistent/);
