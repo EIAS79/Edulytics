@@ -20,7 +20,7 @@ internal static class UsCcssG5Unit1Lesson9Questions
     public static Problem Build(string family,Random random){
         if(!Supports(family))throw new InvalidOperationException("Not G5 L09");
         ArgumentNullException.ThrowIfNull(random);
-        var v=random.Next(12);
+        var v=random.Next(32);
         return new Problem(family,PromptFor(v),"Teacher reviews missing-edge deductions, two genuine geometric cuts and feet-vs-inches labels; numerical totals alone do not certify a correctly marked original source figure.",AssessmentItemType.Numeric,
             new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v});
     }
@@ -29,5 +29,5 @@ internal static class UsCcssG5Unit1Lesson9Questions
         return AnswerFor(p["variant"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? a)=>Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
-    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<12;
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<32;
 }

@@ -33,7 +33,7 @@ internal static class UsCcssG5Unit1Lesson7Questions
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported Grade5 source family");
         ArgumentNullException.ThrowIfNull(random);
-        var variant=random.Next(12);
+        var variant=random.Next(32);
         var parameters=new Dictionary<string,int>(StringComparer.Ordinal) {["variant"]=variant};
         var solution="Original info-gap questioning, open size/context unit choices and physical cubic units are reviewed by teacher; no invented missing edge.";
         return new Problem(family,PromptFor(variant),solution,
@@ -48,5 +48,5 @@ internal static class UsCcssG5Unit1Lesson7Questions
         Valid(family,parameters)&&string.Equals(answer,Solve(family,parameters),StringComparison.Ordinal);
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p) =>
         Supports(family)&&p is not null&&p.Count==1&&
-        p.TryGetValue("variant",out var v)&&v>=0&&v<12;
+        p.TryGetValue("variant",out var v)&&v>=0&&v<32;
 }

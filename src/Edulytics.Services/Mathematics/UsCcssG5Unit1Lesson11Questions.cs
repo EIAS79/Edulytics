@@ -20,7 +20,7 @@ internal static class UsCcssG5Unit1Lesson11Questions
     public static Problem Build(string family,Random random){
         if(!Supports(family))throw new InvalidOperationException("Not G5 L11");
         ArgumentNullException.ThrowIfNull(random);
-        var v=random.Next(12);
+        var v=random.Next(32);
         return new Problem(family,PromptFor(v),v<IndependentAnswers.Length?"Teacher reviews contextual units, physical/sketched 300-cube box and two-part 216-ft3 garden redesign, including no double-counting at joints.":"Teacher checks the unit labels and base-area times height; numerical correctness alone does not grade the written explanation.",AssessmentItemType.Numeric,
             new Dictionary<string,int>(StringComparer.Ordinal){["variant"]=v});
     }
@@ -29,5 +29,5 @@ internal static class UsCcssG5Unit1Lesson11Questions
         return AnswerFor(p["variant"]).ToString(CultureInfo.InvariantCulture);
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? a)=>Valid(family,p)&&string.Equals(a,Solve(family,p),StringComparison.Ordinal);
-    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<12;
+    private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p)=>Supports(family)&&p is not null&&p.Count==1&&p.TryGetValue("variant",out var v)&&v>=0&&v<32;
 }

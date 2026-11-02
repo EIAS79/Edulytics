@@ -47,7 +47,7 @@ public sealed class UsCcssG5U01L07ToL11SessionCapacityTests
                 Assert.Equal(family,question.Family);
                 Assert.Single(question.Parameters);
                 var variant=question.Parameters["variant"];
-                Assert.InRange(variant,0,11);
+                Assert.InRange(variant,0,31);
                 Assert.Equal(IndependentExpected(family,variant,originals).ToString(
                     System.Globalization.CultureInfo.InvariantCulture),question.CorrectAnswer);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(
@@ -56,8 +56,21 @@ public sealed class UsCcssG5U01L07ToL11SessionCapacityTests
                     question.Family,question.Parameters,"-1"));
             });
             Assert.Contains(questions,x=>x.Parameters["variant"]>=originals.Length);
+            // The original source questions remain pinned at the first variants.
+            // Check additional deterministic sessions; ten-item readiness must
+            // not depend on a lucky seed or reuse an exposure fingerprint.
+            foreach(var seed in new[]{20260923,20261102,20300923})
+            {
+                var more=engine.Generate("g5-u01-session-capacity",
+                    "PED:US-CCSS-MATH:G5:U01:"+lesson,
+                    [family],ExactSkillQuestionDifficulty.Standard,10,seed,[]);
+                Assert.Equal(10,more.Select(x=>x.ExposureFingerprint)
+                    .Distinct(StringComparer.Ordinal).Count());
+                Assert.All(more,q=>Assert.True(ExactSkillContractQuestionEngine.Verify(
+                    q.Family,q.Parameters,q.CorrectAnswer)));
+            }
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,
-                new Dictionary<string,int>{{"variant",12}},"1"));
+                new Dictionary<string,int>{{"variant",32}},"1"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,
                 new Dictionary<string,int>{{"variant",-1}},"1"));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family,
