@@ -261,8 +261,18 @@ def verify_l02_teacher_rubric(student, lesson_id, adoption_id):
             data=payload, method="POST"), timeout=45)
         raise AssertionError("Teacher revised immutable reviewed rubric")
     except urllib.error.HTTPError as exc:
-        if exc.code != 409:
+        if exc.code not in (403, 404, 409):
             raise
+    # Any fail-closed response is valid, provided the already-reviewed
+    # teacher rubric remains exactly unchanged in PostgreSQL.
+    unchanged = only_one_row("""
+        SELECT "TeacherScore"::text || '|' || "CriteriaJson" || '|' ||
+               "TeacherFeedback"
+        FROM "Grade5U03L02TeacherRubrics"
+        WHERE "Id"='""" + submission_id + """';""",
+        "immutable previously stored Grade 5 teacher rubric")
+    if unchanged != reviewed:
+        raise AssertionError("Rejected duplicate teacher POST changed prior score")
     student_page = get_page(student, path)
     if "Teacher score:" not in student_page or feedback not in student_page:
         raise AssertionError("Original student cannot read teacher feedback")
