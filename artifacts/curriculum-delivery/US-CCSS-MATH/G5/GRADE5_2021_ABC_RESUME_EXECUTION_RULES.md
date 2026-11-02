@@ -178,3 +178,13 @@ Re-read original teacher lesson/preparation locally: WODB diagrams with multiple
 - Final aggregate review `GRADE5_IM2021_148_ABC_SEQUENTIAL_REVALIDATION_FINAL_REPORT_20261102.md` commit `e057003678ea74da1bded229e924c23a3c2ca824`.
 - **Static sequential lesson-level source revalidation coverage 148/148 across 8 units.** Existing previous authoring retained; true original publisher source-element/assets parity 100% NOT VERIFIED; prior rights/illustrations/cool-down/student-PDF source limits explicit. Tests/Stage D/CI intentionally NOT RUN; NO merge or deploy.
 - **Cursor: PED:US-CCSS-MATH:G5:ABC_REVALIDATION_REVIEW_COMPLETE**. Next task is user/owner review of final report; never start Stage D without explicit permission. Any subsequent A–B–C repair should be limited to a demonstrated source or implementation defect, not a restart.
+
+## Owner-directed SECOND A–B–C review pass, independent status — 2026-11-02
+
+**Active new pass starts at U01:L01.** The previous `ABC_REVALIDATION_REVIEW_COMPLETE` is historical pass closure and must NOT be misread as completion of the newly requested 2021-only second-pass review. The owner requires **two independent statuses per lesson**: preserve original `READY_FOR_STAGE_D` and set `REVIEW_COMPLETE_2021` only on new per-lesson closure evidence.
+
+- Mandatory process: `GRADE5_2021_SECOND_PASS_EXECUTION_PROTOCOL.md` in this directory.
+- Active **single source of truth for new pass progress**: `g5-2021-second-pass-review-ledger-v1.json` in this directory. Initial verified baseline: 148 old READY, 0 new REVIEW_COMPLETE_2021, next `PED:US-CCSS-MATH:G5:U01:L01`.
+- The previous 148 static 2021 review records remain reusable but are **not automatically certified** as second-pass lesson closures.
+- GitHub Actions manual no-tests ledger integrity workflow: `.github/workflows/g5-2021-second-pass-ledger-check.yml`. This validates state/evidence bookkeeping; it cannot inspect local 2021 source files on a hosted runner. Never substitute its success for source examination.
+- Retain 2021 local source read-only; fix only proven v360/content mismatches. Run no Stage D, tests, CI suites, merge or deploy. Finish each lesson then unit, report per unit and proceed without waiting for another instruction.
