@@ -382,6 +382,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g8.u03.l12.ordered_pair_membership",
+      "version": 1,
+      "skillId": "algebra.linear.two_variable.membership",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "independent-exact-ordered-pair-substitution-into-Ax-plus-By-equals-C",
+      "representations": [
+        "symbolic",
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "algebra.linear.inequality.ax_plus_b_relation_c",
       "version": 1,
       "skillId": "algebra.linear.inequality.solve",
