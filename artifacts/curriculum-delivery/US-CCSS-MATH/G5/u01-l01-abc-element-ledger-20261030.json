@@ -167,13 +167,10 @@
   "stageB": "CONTENT_TEACHING_REPAIRED_STATICALLY; B_RUNTIME_UNVERIFIED_STAGE_D",
   "stageC": "EXACT_GRADE5_DIGITAL_COMPARISON_SELECTED_STATICALLY_AND_8_POINT_TEACHER_REVIEW_WRITTEN_NOT_RUN",
   "academicAccepted": false,
-  "readyForStageD": false,
+  "readyForStageD": true,
   "stageDTests": "WRITTEN_NOT_RUN",
   "sourceRights": "No publisher figure pixels copied; HTML alt/source meaning paraphrased into first-party text tables. Third-party artwork reuse remains unclaimed.",
-  "activeBlockers": [
-    "ORIGINAL_2021_PUBLISHER_COOLDOWN_SOURCE_UNAVAILABLE",
-    "FULL_SOURCE_1_TO_1_PARITY_NOT_VERIFIED"
-  ],
+  "activeBlockers": [],
   "lessonElements": [
     {
       "LessonOrdinal": 1,
@@ -930,7 +927,13 @@
         "validatedAgainstActualLocalPdf": true,
         "present": false,
         "reason": "Original 2021 Student Task Statements PDF has no cool-down section; original teacher cool-down access is gated"
-      }
+      },
+      "OriginalPublisherContentStatus": "SOURCE_UNAVAILABLE_GATED",
+      "OriginalPublisherExactTextMatched": false,
+      "DeliveryAcceptance": "FUNCTIONAL_ALTERNATIVE_TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceResearchExceptionApprovedBy": "OWNER_EXPLICIT_2026-11-02",
+      "AssessmentEvidence": "Edulytics authored 8-vs-9 identical cube comparison requiring teacher explanation; source preparation explicitly targets volume comparison, and the 2021 teacher lesson asks which object has greater volume; teacher rubric preserved.",
+      "OriginalSourceParityClaimed": false
     },
     {
       "LessonOrdinal": 1,
@@ -1179,5 +1182,24 @@
     "dStageTests": "NOT_RUN",
     "noTestsExecutedInThisChange": true,
     "sourceReadDevice": "Our-CS read-only"
+  },
+  "status": "READY_FOR_STAGE_D",
+  "sourceFunctionallyEquivalentWithAuthorizedExceptions": true,
+  "originalPublisherPromptLiteralCoverage100Percent": false,
+  "sourceExceptionDecision20261102": {
+    "exceptionId": "G5-U01-L01-PUBLISHER-COOLDOWN",
+    "exceptionType": "USER_AUTHORIZED_FIRST_PARTY_COOLDOWN_GOAL_MATCH",
+    "ownerAuthorized": true,
+    "originalSourceStatus": "SOURCE_UNAVAILABLE_GATED",
+    "requirement": "Use lesson learning objective, student volume comparison and teacher-reviewed open response instead of inaccessible publisher original",
+    "implementedReplacement": "G5-U01-L01-CD-AUTHOR-Q01",
+    "existingEdulyticsReplacementReused": true,
+    "conceptualGoalMatched": true,
+    "originalPublisherTextVerified": false,
+    "sourceExactParityNotClaimed": true,
+    "lessonABCStatus": "READY_FOR_STAGE_D",
+    "stageDTests": "NOT_RUN",
+    "academicSignoffNotClaimed": true,
+    "reason": "2021 teacher lesson/preparation identify purpose; original publisher literal cooldown hidden behind teacher login; user explicitly authorized independently authored alternative and instructed that inaccessible original text must not block A-B-C lesson closure"
   }
 }

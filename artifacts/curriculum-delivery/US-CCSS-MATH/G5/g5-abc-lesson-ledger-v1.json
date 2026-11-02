@@ -6,18 +6,18 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L01",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L02",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L02",
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 147,
+    "A_CLOSED": 148,
     "B_CLOSED": 148,
     "C_PREPARED": 148,
-    "READY_FOR_D": 147,
+    "READY_FOR_D": 148,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 1
+    "BLOCKED": 0,
+    "REMAINING": 0
   },
   "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. U03:L01 was accepted A-B-C in the new sequential closure evidence after shared Practice integration; its closure SHA is sealed in a separate commit. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -30,7 +30,7 @@
         "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html"
       ],
       "reuseFinding": "REUSE_2021_TEACHER_LESSON_SOURCE_COMPARISON_AND_908b09d_CUBE_MODELS__PRECISE_ACTIVITY_1_WARMUP_TASKS__ORIGINAL_ACCESSIBLE_FOUR_MODEL_PROMPT_AND_TEACHER_CHECK; NO_SOURCE_ART_COPIED",
-      "A_STATUS": "A_C_EXPLICIT_GAP",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE_AND_OWNER_AUTHORIZED_COOLDOWN_ALTERNATIVE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
       "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE_NUMERIC_SUPPLEMENT_ONLY__EXTEND_EXISTING_SHARED_FAMILY_OR_TEACHER_RUBRIC_PENDING_SELECTED_CONTRACT; NO_NEW_ENGINE_DEFAULT",
@@ -53,8 +53,8 @@
       "closedAt": "2026-10-30T19:08:36.365Z",
       "elapsedSeconds": 42892,
       "commitSHA": null,
-      "blocker": "G5-U01-L01-CD-SOURCE-Q01:ORIGINAL_2021_PUBLISHER_COOLDOWN_SOURCE_UNAVAILABLE; owner-authorized first-party replacement exists but exact source parity not proven",
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "edition": "2021 IM K–5 first edition",
         "inspected": "Local 2021 teacher lesson.html, preparation.html; student-facing activity text present in teacher lesson. Additional AccessIM student 2024 site inspected but not substituted as 2021 publisher proof.",
@@ -191,14 +191,20 @@
       "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
       "closureEvidenceKind": "ORIGINAL_ABC_ELEMENT_LEDGER_WITH_SOURCE_LIMITS",
       "abcRevalidation20261102": {
-        "status": "A_C_EXPLICIT_GAP",
+        "status": "READY_FOR_STAGE_D",
         "sourceLessonSha256": "88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb",
         "sourcePreparationSha256": "0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195",
         "correctedWrongEditionSourceLocator": true,
         "publisherCoolDownUnseen": true,
         "firstPartyAlternativeRetained": true,
         "relatedEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
-        "testExecution": "WRITTEN_NOT_RUN"
+        "testExecution": "WRITTEN_NOT_RUN",
+        "sourceExceptionApproved": "USER_AUTHORIZED_FIRST_PARTY_COOLDOWN_GOAL_MATCH",
+        "originalPublisherCoolDownUnseen": true,
+        "originalSourceVerbatimParityClaimed": false,
+        "sourceExceptionEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
+        "reviewerSignoffNotClaimed": true,
+        "tests": "WRITTEN_NOT_RUN"
       }
     },
     {
@@ -6268,7 +6274,7 @@
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
-      "reason": "Original 2021 publisher Cool-down exact text unavailable; first-party equivalent retained, 1:1 claim not proven; source/reviewer evidence required to clear."
+      "reason": "SOURCE_EXCEPTION_ACCEPTED_A_C_ONLY: 2021 publisher text gated, original first-party equivalent authored and owner-authorized; exact original publisher parity NOT approved and D technical acceptance NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
