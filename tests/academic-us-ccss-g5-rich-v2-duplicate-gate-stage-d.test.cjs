@@ -176,3 +176,37 @@ test('student title preserves immutable owner-consented data but renders 2021 so
  }
  assert.equal(displayCorrected,26,'26 previously source-mismatched Grade5 displays');
 });
+
+
+// Stage D diagnostic: these are 215 distinct lesson/outcome projections, not
+// 232 resolved alignment records (a lesson can repeat an outcome via roles).
+// Keep the owner's exact approved *content pack* blob untouched: this checks
+// the separately maintained blueprint evidence, not asset licenses or parity.
+test('Grade5 canonical lesson-outcome projection counts match source-lock diagnostics',()=>{
+ const blueprint=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json'),'utf8'));
+ assert.equal(blueprint.Lessons.length,148);
+ assert.equal(blueprint.Units.length,8);
+ const pairs=new Set();
+ const covered=new Set();
+ for(const lesson of blueprint.Lessons){
+  const fromAlignments=new Set((lesson.Alignments||[])
+   .filter(x=>typeof x.OutcomeCode==='string'&&x.OutcomeCode.length)
+   .map(x=>x.OutcomeCode));
+  const outcomes=new Set(lesson.OutcomeCodes||[]);
+  assert.deepEqual([...outcomes].sort(),[...fromAlignments].sort(),
+   'Resolved outcomes must agree with lesson projection: '+lesson.LessonCode);
+  for(const outcome of outcomes)pairs.add(lesson.LessonCode+'|'+outcome);
+  for(const mapping of lesson.Alignments||[]){
+   if(mapping.Role==='Addressing'&&mapping.ReferenceKind==='NumberedStandard')
+    covered.add(mapping.ReferenceCode);
+  }
+ }
+ assert.equal(pairs.size,215,'148 lessons must retain 215 unique formal lesson/outcome mappings');
+ assert.equal(covered.size,27,'27 uniquely addressed numbered Grade 5 standards');
+ assert.equal(blueprint.AcquisitionDiagnostics.FormalMappingCount,pairs.size);
+ assert.equal(blueprint.AcquisitionDiagnostics.OfficialStandardCount,covered.size);
+ assert.equal(blueprint.AcquisitionDiagnostics.AddressingCoverageCount,covered.size);
+ assert.match(blueprint.SourceSelectionEvidence,
+  /215 formal mappings, 27\/27 accepted Grade 5 Standards/);
+});
