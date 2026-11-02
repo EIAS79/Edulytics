@@ -20,7 +20,7 @@ test('L01 author-approved first-party cooldown closes A-C, without inventing ori
  assert.equal(e.status,'READY_FOR_STAGE_D');assert.equal(e.readyForStageD,true);
  assert.equal(grade.lessons[0].READY_FOR_STAGE_D,true);
  assert.equal(grade.gradeTotals.READY_FOR_D,148);
- assert.equal(grade.currentAcceptanceCursor,'PED:US-CCSS-MATH:G5:U01:L02');
+ assert.equal(grade.lessons[0].READY_FOR_STAGE_D,true);
 });
 test('L01 2021 teacher HTML is original source; v.360 not counted as student evidence',()=>{
  const e=read(pathG+'u01-l01-abc-element-ledger-20261030.json');

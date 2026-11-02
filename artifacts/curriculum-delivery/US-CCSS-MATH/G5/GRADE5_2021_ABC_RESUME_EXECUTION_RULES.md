@@ -40,3 +40,8 @@
 - Previously deleted original publisher gated Cool-down is now **restored to denominator** as `G5-U01-L04-CD-Q01` / `SOURCE_UNAVAILABLE`; 20 original elements matched, denominator 21. Owner-authorized independent alternative is functionally accepted A–B–C, **not** claimed identical to the original source.
 - Teacher lesson SHA-256 `79f825be60d5a797fa64d549643093610503477f38f3d252e04cffb1279ddc12`; preparation `31baa2dca687f0a5916c90db93cb2c20ca30d1e06c4284c68ed8b462ce23396d` from 2021 source review.
 - Stale practice-rubric `BLOCKED_SHARED_INTEGRATION` corrected to selected static lesson practice evidence; Stage D and tests NOT_RUN. Next **U01:L05**.
+
+## Sequential closure checkpoint: Grade 5 U01:L05
+- First Edition 2021 original teacher source reviewed, 4×10 growing base and heights 1/2/3/10/25, source reverse-question task and existing exact Practice retained. Original protected publisher Cool-down restored as 25th source element with SOURCE_UNAVAILABLE; independent existing Edulytiks 60-cube alternate-base exit accepted functionally with manual scoring.
+- Original teacher source SHA-256 `dce46e63cad9ce3e60e7a2836f90505455391743f7da46338be14e92aad138af`, preparation `b4d1ecc3e77cc9e675452af275d2e85fd8c767c067d052e923f348e9de4d5e50`.
+- No original exact-source parity claim, Stage D/CI/tests NOT_RUN; next **U01:L06**.

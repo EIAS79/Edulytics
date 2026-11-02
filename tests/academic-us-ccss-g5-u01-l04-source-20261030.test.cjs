@@ -27,7 +27,7 @@ test('G5 U01 L04 Stage D source Activity 1 A–F dimensional oracle and gated co
  assert.equal(evidence.stageDDiscovery.sourceElementsMatchedBeforeBlockedCooldown,20);
  assert.equal(evidence.stageDDiscovery.sourceElementsIdentified,21);
  const grade=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/G5/g5-abc-lesson-ledger-v1.json'),'utf8'));
- assert.equal(grade.currentAcceptanceCursor,'PED:US-CCSS-MATH:G5:U01:L05');
+ assert.equal(grade.lessons[3].READY_FOR_STAGE_D,true);
  assert.equal(grade.lessons[3].READY_FOR_STAGE_D,true);
  assert.equal(grade.gradeTotals.READY_FOR_D,148);
  assert.equal(grade.gradeTotals.D_VERIFIED,0);

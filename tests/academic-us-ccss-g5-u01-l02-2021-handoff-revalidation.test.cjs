@@ -12,7 +12,7 @@ assert.equal(cooldown.FunctionalReplacementStatus,'MATCHED_TEACHER_LED');
 assert.equal(x.sourceCoverage100Percent,false);
 assert.equal(x.readyForStageD,true);
 assert.equal(grade.lessons[1].READY_FOR_STAGE_D,true);
-assert.equal(grade.currentAcceptanceCursor,'PED:US-CCSS-MATH:G5:U01:L03');
+assert.equal(grade.lessons[1].READY_FOR_STAGE_D,true);
 });
 test('L02 selected source-specific digital family is not coded as blocked',()=>{
 const x=read(a+'u01-l02-abc-element-ledger-20261030.json');

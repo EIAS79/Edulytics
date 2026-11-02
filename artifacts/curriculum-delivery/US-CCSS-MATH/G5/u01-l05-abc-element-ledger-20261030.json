@@ -4,8 +4,8 @@
   "lessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
   "source": {
     "edition": "2021",
-    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-5\\lesson.html",
-    "preparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-5\\preparation.html",
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-5\\lesson.html",
+    "preparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-5\\preparation.html",
     "headings": [
       "Warm-up: Notice and Wonder: Prism Print (10 minutes)",
       "Activity 1: All About That Base (10 minutes)",
@@ -727,6 +727,36 @@
       "ContentVersion": "g5-u01-l04-l06-im2021-v20-a-b-c-source-20261030",
       "CandidateSha": "SOURCE_REVIEW_COMMITTED_REFER_TO_GIT_HISTORY",
       "UpdatedUtc": "2026-10-30"
+    },
+    {
+      "LessonOrdinal": 5,
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
+      "Unit": 1,
+      "SourceEdition": "IM2021",
+      "SourceSnapshotId": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-5\\lesson.html",
+      "SourceElementId": "G5-U01-L05-CD-Q01",
+      "ParentElementId": null,
+      "Category": "publisher-cool-down",
+      "SourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-5\\lesson.html#COOLDOWN-DETERMINE-THE-VOLUME",
+      "ExpectedMathematics": "Original publisher 'Determine the Volume' Cool-down is teacher-login gated and the exact question is not known; do not invent exact 2021 prompt",
+      "TeacherOrStudentAudience": "Student",
+      "RightsStatus": "PUBLISHER_PROMPT_GATED_NOT_COPIED",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json#PED:US-CCSS-MATH:G5:U01:L05",
+      "ImplementationType": "BLOCKED",
+      "VerificationMethod": "Source title from 2021 teacher HTML; Edulytiks original 3x4x5 prism / alternate bases is teacher-assessed functional alternative, NOT claimed verbatim publisher task",
+      "TestNames": [
+        "tests/academic-us-ccss-g5-u01-l05-contract-v15.test.cjs"
+      ],
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l05-abc-element-ledger-20261030.json",
+      "Reviewer": "Grade5 ABC revalidation",
+      "Status": "SOURCE_UNAVAILABLE",
+      "IssueId": "G5-U01-L05-PUBLISHER-COOLDOWN",
+      "ContentVersion": "g5-u01-l04-l06-im2021-v20-a-b-c-source-20261030",
+      "CandidateSha": "SOURCE_REVIEW_COMMITTED_REFER_TO_GIT_HISTORY",
+      "UpdatedUtc": "2026-11-02",
+      "OwnerAuthorizedFirstPartyAlternative": "Edulytiks original fully-packed 3x4x5 prism / rotated base choices 60 cubic units",
+      "FunctionalReplacementStatus": "MATCHED_TEACHER_LED",
+      "PublisherOriginalExactTextVerified": false
     }
   ],
   "originalMediaUsed": "TEXT_ALTS_ONLY",
@@ -756,7 +786,7 @@
     "tests": "WRITTEN_NOT_RUN",
     "capabilityReadiness": "GRADE5_L05_EXACT_SOURCE_GROWING_PRISM_WRITTEN_NOT_RUN_TEACHER_LED"
   },
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "readyForStageD": true,
   "statusVocabulary": "MATCHED_DIGITAL|MATCHED_TEACHER_LED|SOURCE_UNAVAILABLE|RIGHTS_RESTRICTED|SOURCE_CONFLICT|MISMATCH_BLOCKED",
   "sourceElementsAccepted": 24,
@@ -820,5 +850,21 @@
     "independentAcademicSignoffRecorded": false,
     "stageDVerified": false,
     "currentLegacyGapStatusPreserved": "A_C_EXPLICIT_GAP"
+  },
+  "sourceElementsCount": 25,
+  "revalidation20261102": {
+    "atUtc": "2026-11-02T15:55:34.253Z",
+    "edition": "IM K5 First Edition 2021",
+    "teacherLessonSha256": "dce46e63cad9ce3e60e7a2836f90505455391743f7da46338be14e92aad138af",
+    "preparationSha256": "b4d1ecc3e77cc9e675452af275d2e85fd8c767c067d052e923f348e9de4d5e50",
+    "matchedOriginalElements": 24,
+    "publisherCoolDown": "SOURCE_UNAVAILABLE",
+    "firstPartyAlternativeFunctional": "MATCHED_TEACHER_LED",
+    "mathVerified": "4x10 base with heights 1,2,3,10,25 => 40,80,120,400,1000; reverse 3x4x5 questions => 3,5,12,60",
+    "selectedFamily": "usccss.g5.u01.l05.growing_prism_fixed_base",
+    "noPublisherVerbatimParityClaim": true,
+    "tests": "WRITTEN_NOT_RUN",
+    "stageD": "NOT_RUN",
+    "status": "READY_FOR_STAGE_D"
   }
 }
