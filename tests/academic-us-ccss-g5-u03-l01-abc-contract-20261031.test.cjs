@@ -74,8 +74,11 @@ test('source comparison, first-party diagrams, teacher rubric and honest gate st
   const rubric = load(rubricPath);
   assert.ok(lesson);
   assert.equal(evidence.lessonCode, target);
-  assert.equal(evidence.status, 'BLOCKED_CURRENT_LESSON');
-  assert.equal(evidence.READY_FOR_STAGE_D, false);
+  assert.equal(evidence.status, 'BLOCKED_CURRENT_LESSON'); // historical 2026-10-31 snapshot, preserved
+  assert.equal(evidence.READY_FOR_STAGE_D, false); // historical state only
+  const closure=load('artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-abc-sequential-closure-20261031.json');
+  assert.equal(closure.readyForStageD,true);
+  assert.equal(closure.stageC,'ACCEPTED_LESSON_SELECTED_EXACT_DIGITAL_GENERATOR_SOLVER_VERIFIER_AUTHORED_NOT_RUN');
   assert.equal(evidence.testExecutionStatus, 'AUTHORED_NOT_RUN');
   assert.equal(rubric.source, 'FIRST_PARTY_EDULYTICS_NOT_ORIGINAL_GATED_2021_COOLDOWN');
   assert.match(lesson.ExplanationParagraphs.join(' '), /between one third and one half/);
