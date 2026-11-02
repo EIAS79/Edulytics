@@ -4,8 +4,8 @@
   "lessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
   "source": {
     "edition": "2021",
-    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\lesson.html",
-    "preparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\preparation.html",
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\lesson.html",
+    "preparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\preparation.html",
     "headings": [
       "Warm-up: Estimation Exploration: How Many Cubes? (10 minutes)",
       "Activity 1: Layers in Rectangular Prisms (20 minutes)",
@@ -603,6 +603,38 @@
       "ContentVersion": "g5-u01-l04-l06-im2021-v19-a-b-c-source-20261030",
       "CandidateSha": "SOURCE_REVIEW_COMMITTED_REFER_TO_GIT_HISTORY",
       "UpdatedUtc": "2026-10-30"
+    },
+    {
+      "LessonOrdinal": 4,
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
+      "Unit": 1,
+      "SourceEdition": "IM2021",
+      "SourceSnapshotId": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\lesson.html",
+      "SourceElementId": "G5-U01-L04-CD-Q01",
+      "ParentElementId": null,
+      "Category": "publisher-cool-down",
+      "SourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\lesson.html#COOLDOWN-USE-EXPRESSIONS",
+      "ExpectedMathematics": "Publisher original Use Expressions (5 minutes) actual prompt is teacher-login gated; exact source mathematics NOT independently verified",
+      "TeacherOrStudentAudience": "Student",
+      "RightsStatus": "PUBLISHER_PROMPT_GATED_NOT_COPIED",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json#PED:US-CCSS-MATH:G5:U01:L04",
+      "ImplementationType": "BLOCKED",
+      "VerificationMethod": "Original 2021 teacher lesson indicates Cool-down title but not protected prompt. Independent Edulytiks 3x4x5 prism alternative with equivalent layer groups retained and teacher-reviewed; source exact not asserted.",
+      "TestNames": [
+        "tests/academic-us-ccss-g5-u01-l04-source-20261030.test.cjs",
+        "tests/academic-us-ccss-g5-u01-l04-contract-v15.test.cjs"
+      ],
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-abc-element-ledger-20261030.json",
+      "Reviewer": "Grade5 ABC revalidation",
+      "Status": "SOURCE_UNAVAILABLE",
+      "IssueId": "G5-U01-L04-PUBLISHER-COOLDOWN",
+      "ContentVersion": "g5-u01-l04-l06-im2021-v34-source-estimation-and-120-20261030",
+      "CandidateSha": "SOURCE_REVIEW_COMMITTED_REFER_TO_GIT_HISTORY",
+      "UpdatedUtc": "2026-11-02",
+      "OwnerAuthorizedFirstPartyAlternative": "G5-U01-L04-EDULYTIKS-ORIGINAL-COOLDOWN",
+      "FunctionalReplacementStatus": "MATCHED_TEACHER_LED",
+      "OriginalPublisherPromptCopied": false,
+      "OriginalPublisherVerbatimParityCertified": false
     }
   ],
   "originalMediaUsed": "TEXT_ALTS_ONLY",
@@ -632,7 +664,7 @@
     "tests": "WRITTEN_NOT_RUN",
     "capabilityReadiness": "GRADE5_L04_EXACT_COMPLETE_PRISM_LAYERS_TEACHER_INFERENCE_WRITTEN_NOT_RUN"
   },
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "readyForStageD": true,
   "statusVocabulary": "MATCHED_DIGITAL|MATCHED_TEACHER_LED|SOURCE_UNAVAILABLE|RIGHTS_RESTRICTED|SOURCE_CONFLICT|MISMATCH_BLOCKED",
   "sourceElementsAccepted": 20,
@@ -701,5 +733,21 @@
     "independentAcademicSignoffRecorded": false,
     "stageDVerified": false,
     "currentLegacyGapStatusPreserved": "A_C_EXPLICIT_GAP"
+  },
+  "sourceElementsCount": 21,
+  "sourceEditionException20261102": {
+    "asOfUtc": "2026-11-02T15:53:22.242Z",
+    "sourceVersion": "IM K5 First Edition 2021",
+    "teacherLessonSha256": "79f825be60d5a797fa64d549643093610503477f38f3d252e04cffb1279ddc12",
+    "preparationSha256": "31baa2dca687f0a5916c90db93cb2c20ca30d1e06c4284c68ed8b462ce23396d",
+    "preservedMatchedSourceElements": 20,
+    "originalPublisherCoolDownGated": true,
+    "originalPublisherExactSourceParity": false,
+    "ownerAuthorizedFunctionalAlternative": "3x4x5 first-party prism: 60 cubic units, geometric grouping teacher review",
+    "sourceMath": "Original 2021 A-F prisms 24,30,30,24,8,84; 120 cube prism 5x24=6x20=4x30; incomplete front figure depth unknown",
+    "practiceFamily": "usccss.g5.u01.l04.full_prism_layer_groups",
+    "abcStatus": "READY_FOR_STAGE_D",
+    "tests": "WRITTEN_NOT_RUN",
+    "stageD": "NOT_RUN"
   }
 }

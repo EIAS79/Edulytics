@@ -27,8 +27,14 @@ test('G5 U01 L04 Stage D source Activity 1 A–F dimensional oracle and gated co
  assert.equal(evidence.stageDDiscovery.sourceElementsMatchedBeforeBlockedCooldown,20);
  assert.equal(evidence.stageDDiscovery.sourceElementsIdentified,21);
  const grade=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/G5/g5-abc-lesson-ledger-v1.json'),'utf8'));
- assert.equal(grade.currentAcceptanceCursor,'PED:US-CCSS-MATH:G5:ABC_COMPLETE');
+ assert.equal(grade.currentAcceptanceCursor,'PED:US-CCSS-MATH:G5:U01:L05');
  assert.equal(grade.lessons[3].READY_FOR_STAGE_D,true);
  assert.equal(grade.gradeTotals.READY_FOR_D,148);
  assert.equal(grade.gradeTotals.D_VERIFIED,0);
+ const abc=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-abc-element-ledger-20261030.json'),'utf8'));
+ assert.equal(abc.elements.length,21);
+ assert.equal(abc.elements.find(x=>x.SourceElementId==='G5-U01-L04-CD-Q01').Status,'SOURCE_UNAVAILABLE');
+ assert.equal(abc.elements.find(x=>x.SourceElementId==='G5-U01-L04-CD-Q01').FunctionalReplacementStatus,'MATCHED_TEACHER_LED');
+ assert.equal(abc.sourceCoverage100Percent,false);
+ assert.equal(abc.status,'READY_FOR_STAGE_D');
 });

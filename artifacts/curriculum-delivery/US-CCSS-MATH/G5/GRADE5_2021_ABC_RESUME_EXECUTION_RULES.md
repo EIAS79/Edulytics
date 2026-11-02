@@ -34,3 +34,9 @@
 - First Edition 2021 teacher lesson and preparation compared to the existing Rich V2; four original Edulytiks printable prism-build card models now supplied, alongside reused 40/60/80 cube math and original first-party Cool-down. Original publisher cards/Cool-down remain SOURCE_UNAVAILABLE, never certified as reproduced.
 - Source SHA-256 lesson: `830299e9528c83bcdb2a779422555272264375154cca22100e05f6e616422690`; preparation: `2b7223772b6f4ee077911c54d22252b9208a66671ca026ea2e448da4b1d3f43a`.
 - A–B–C authored and closed; Stage D / CI NOT_RUN. Next active **U01:L04**.
+
+## Sequential closure checkpoint: Grade 5 U01:L04
+- Existing source-matched six prisms, source 120-cube layer-expression explanations, independent teacher-reviewed 60-cube Cool-down and exact practice reused (no rebuild).
+- Previously deleted original publisher gated Cool-down is now **restored to denominator** as `G5-U01-L04-CD-Q01` / `SOURCE_UNAVAILABLE`; 20 original elements matched, denominator 21. Owner-authorized independent alternative is functionally accepted A–B–C, **not** claimed identical to the original source.
+- Teacher lesson SHA-256 `79f825be60d5a797fa64d549643093610503477f38f3d252e04cffb1279ddc12`; preparation `31baa2dca687f0a5916c90db93cb2c20ca30d1e06c4284c68ed8b462ce23396d` from 2021 source review.
+- Stale practice-rubric `BLOCKED_SHARED_INTEGRATION` corrected to selected static lesson practice evidence; Stage D and tests NOT_RUN. Next **U01:L05**.
