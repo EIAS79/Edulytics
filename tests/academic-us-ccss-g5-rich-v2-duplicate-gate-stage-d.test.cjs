@@ -216,3 +216,37 @@ test('Grade5 canonical lesson-outcome projection counts match source-lock diagno
   /210 formal mappings, 26\/26 accepted Grade 5 Standards/,
   'Main-locked source prose remains historical until a separately authorized source-lock revision');
 });
+
+
+test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without shadow activation',()=>{
+ const skills=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json'),'utf8')).skills;
+ const families=JSON.parse(fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'),'utf8')).families;
+ const bySkill=new Map(skills.map(row=>[row.id,row]));
+ const expected=new Map([
+  ['fractions.divide_whole_numbers',5],
+  ['geometry.area',5],
+  ['geometry.area_tiling',2],
+  ['geometry.similarity.scale_factor',1]
+ ]);
+ for(const [skillId,count] of expected){
+  const skill=bySkill.get(skillId);
+  assert.ok(skill,'Missing registered domain skill '+skillId);
+  assert.equal(skill.v2Status,'ShadowVerified');
+  const matching=families.filter(f=>f.skillId===skillId);
+  assert.equal(matching.length,count,'Expected source-specific question families: '+skillId);
+  assert.deepEqual(new Set(skill.v2QuestionFamilies),
+   new Set(matching.map(f=>f.id)),'Two-way skill/family mapping mismatch: '+skillId);
+  for(const family of matching){
+   assert.equal(family.status,'ShadowVerified');
+   assert.equal(family.productionRouting,false,'Never activate shadow family '+family.id);
+   for(const capability of family.requiredCapabilities||[])
+    assert.ok(skill.v2Capabilities.includes(capability),
+      'Missing required verification/generation capability '+capability+' in '+skillId);
+  }
+ }
+ // Check all 1,300 families; a source-specific repair must not create other dangling IDs.
+ for(const family of families)
+  assert.ok(bySkill.has(family.skillId),'Orphaned family '+family.id+' -> '+family.skillId);
+});
