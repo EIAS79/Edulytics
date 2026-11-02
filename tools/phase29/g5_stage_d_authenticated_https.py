@@ -371,6 +371,22 @@ def run():
                                      html.unescape(drawing.group(0))):
                         raise AssertionError("G5 U01:L01 missing correctly counted model " + label)
                 print("G5_U01_L01_FIRST_PARTY_34_CUBE_SVG_PASS", flush=True)
+            if code.endswith("U01:L02"):
+                # The original source asks for four distinct WODB cube models.
+                # Count rendered three-face unit cubes and verify accessible
+                # labels rather than merely checking that metadata exists.
+                drawing = re.search(
+                    r'<svg[^>]*viewBox="0 0 960 650"[^>]*>.*?</svg>',
+                    page, re.DOTALL)
+                if drawing is None:
+                    raise AssertionError("G5 U01:L02 four-model SVG absent")
+                if drawing.group(0).count("<polygon") != 141:
+                    raise AssertionError("G5 U01:L02 expected 47 first-party rendered cubes")
+                for label, count in (("A", 12), ("B", 11), ("C", 12), ("D", 12)):
+                    if not re.search(r">" + label + r"[^<]*" + str(count) + r" cubes<",
+                                     drawing.group(0)):
+                        raise AssertionError("G5 U01:L02 model/count mismatch " + label)
+                print("G5_U01_L02_FIRST_PARTY_47_CUBE_SVG_PASS",flush=True)
             if code.endswith("U03:L02") and (
                     "Open teacher-reviewed construction and explanation" not in page or
                     "/student/g5/u03/l02/rubric" not in page):
