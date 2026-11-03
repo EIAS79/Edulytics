@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics • Diagram ratios • Grade 6 Unit 2 Lesson 2</title><style>
+body{font-family:system-ui,Arial,sans-serif;background:#f8fafc;color:#182233;margin:0}main{max-width:880px;margin:auto;padding:1.5rem}section{background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:1rem;margin:1rem 0}
+label{display:block;margin:.6rem 0}input{font:inherit;min-width:5rem;padding:.4rem}button{font:inherit;cursor:pointer;padding:.4rem .8rem}.row{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}.token{width:1.5rem;height:1.5rem;border-radius:4px;border:2px solid #475569;background:#c7d2fe}.small{color:#475569}.teacher{border-left:4px solid #64748b;background:#e2e8f0;padding:.8rem}
+</style></head><body><main><h1>Represent ratios with labeled diagrams</h1>
+<p>Make your own groups. Every marker stands for one unit of the quantity named in its row. Unlike measurements stay labeled (cups, tablespoons, teaspoons): never silently treat unlike units as identical physical units.</p>
+<section><h2>Activity 2.1 • Quarter and dividing by four</h2><p>24 ÷ 4 = 6 and one quarter of 24 = 6. Explain why those expressions give the same count.</p></section>
+<section><h2>Activity 2.2–2.3 • Two-row diagrams</h2>
+<label>First quantity name and unit <input id="firstLabel" value="white paint (cups)"></label>
+<label>First quantity count <input id="firstCount" type="number" min="1" max="30" value="2"></label>
+<label>Second quantity name and unit <input id="secondLabel" value="blue paint (tablespoons)"></label>
+<label>Second quantity count <input id="secondCount" type="number" min="1" max="30" value="6"></label>
+<button id="draw" type="button">Draw labeled quantity rows</button><div id="diagram" role="region" aria-live="polite" aria-label="Labeled quantity diagram"></div>
+<p>Write two complete sentences describing the ratio, retaining each unit. Trade your diagram with a partner and check their category order.</p></section>
+<section><h2>Activity 2.4 • Three-ingredient card sort</h2><p>Example: 2 cups raisins, 4 cups pretzels and 6 cups almonds. Use twelve equal markers, grouped and labeled by ingredient. Ordered raisins:pretzels:almonds = 2:4:6. Give a different two-category ratio using the same diagram.</p>
+<p>Another first-party model: 4 cups sauce, 2 tablespoons oil, 1 teaspoon spice. Use distinct symbols and the correct units in a three-row display. Compare with a partner and discuss whether a swapped label can make a statement false.</p></section>
+<section><h2>Independent Edulytics Cool-down</h2><p>There are three four-legged animals and two two-legged animals. Show a labeled discrete diagram of their legs, then state the ratio of four-legged legs to two-legged legs. Explain your grouping.</p>
+<div class="teacher"><strong>Teacher rubric:</strong> 12 legs from the first group and 4 from the second, so 12:4; labels must name legs, not animal counts. Review drawn groups, units, ordered ratio sentences and reasoning. The numerical Practice response does not automatically certify an authentic student sketch.</div></section>
+<script>
+function draw(){const root=document.getElementById('diagram');root.replaceChildren();const values=[['firstLabel','firstCount'],['secondLabel','secondCount']];for(const [key,count] of values){const name=document.getElementById(key).value.trim();const n=Number(document.getElementById(count).value);if(!name||!Number.isInteger(n)||n<1||n>30){root.textContent='Provide both named units and counts from 1 to 30.';return}const p=document.createElement('p');p.textContent=name+' : '+n;const row=document.createElement('div');row.className='row';row.setAttribute('aria-label',name+' '+n+' units');for(let i=0;i<n;i++){const s=document.createElement('span');s.className='token';s.setAttribute('aria-hidden','true');row.appendChild(s)}root.append(p,row)}}document.getElementById('draw').addEventListener('click',draw);draw();
+</script></main></body></html>

@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u02.l02.labeled_two_row_ratios",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_ordered_ratio",
+      "verificationPolicy": "two-row-diagram-original-P1-ordered-category-and-unlike-units",
+      "representations": ["discrete_diagram", "ratio_notation"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u02.l02.three_ingredient_ratio_cards",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_ordered_ratio_three_term",
+      "verificationPolicy": "three-ingredient-source-P2-recipe-order-and-labeled-units",
+      "representations": ["discrete_diagram", "three_way_ratio"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u02.l01.ordered_collection_ratios",
       "version": 1,
       "skillId": "ratio.unit_rate",

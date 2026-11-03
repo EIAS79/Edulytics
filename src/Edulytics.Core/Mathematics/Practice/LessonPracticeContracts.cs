@@ -1661,6 +1661,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 U02:L02 local original diagrams: source snap cubes, 2 cups white
+        // paint vs 6 tablespoons blue, recipe card diagrams with ordered 3 terms.
+        // Typed ratios are auto-scored, drawing/card matching teacher-scored.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DISCRETE_TWO_ROW_AND_THREE_INGREDIENT_DIAGRAMS",
+            [
+                "usccss.g6.u02.l02.labeled_two_row_ratios",
+                "usccss.g6.u02.l02.three_ingredient_ratio_cards"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
