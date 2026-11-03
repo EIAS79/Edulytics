@@ -133,6 +133,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0408GroupSizeNumbers = "usccss.g6.u04.l08.fraction_group_size";
     public const string L0408GroupSizeLogic = "usccss.g6.u04.l08.fraction_group_size_reasoning";
 
+    public const string L0409SourceWordValues = "usccss.g6.u04.l09.contextual_fraction_division";
+    public const string L0409ModelReasoning = "usccss.g6.u04.l09.division_word_model_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1673,6 +1676,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("For fractions, an amount can be less than the size of a whole group, requiring quotient below1. 1=yes,0=no.",1,"Fraction of group."),
             new("A picture-based tape diagram should identify which section is one whole. 1=yes,0=no.",1,"Reference needed."),
             new("A numeric quotient alone proves a student's original drawn source diagram accurate. 1=yes,0=no.",0,"Teacher verifies diagram.")
+        ],
+        [L0409SourceWordValues] =
+        [
+            new("Friends share2½lb berries, each gets5/4lb. Number of friends?",2,"(5/2)/(5/4)=2."),
+            new("Friends share2½lb berries equally among5. Pounds per person in HALF-POUND UNITS?",1,"2.5/5=0.5lb."),
+            new("Two-fifths kg soil is one-third of container. Full container kg in FIFTHS?",6,"2/5÷1/3=6/5kg."),
+            new("A container holds6/5kg. Can1kg fit? Enter1 yes,0 no.",1,"1<6/5."),
+            new("Three quarters hour rain fills2/5 gauge. Minutes elapsed?",45,"3/4hour=45min."),
+            new("Rain fills2/5 gauge in45min. Filled fraction after60min in FIFTEENTHS?",8,"2/5×60/45=8/15."),
+            new("Three museum tickets cost1275cents. Price per ticket in CENTS?",425,"1275/3=425."),
+            new("Three museum tickets cost1275cents. Five tickets cost in CENTS?",2125,"425×5=2125."),
+            new("Elena walks60m in15sec. Meters per second?",4,"60/15=4."),
+            new("Noah walks50m in10sec. Meters per second?",5,"50/10=5."),
+            new("Who faster at4m/s Elena or5m/s Noah? Enter1 Elena,2 Noah.",2,"Noah5>4."),
+            new("Trail mix1 batch uses2cups cereal. Four batches use cereal CUPS?",8,"2×4=8."),
+            new("Trail mix1 batch uses1/3cup almonds. Three batches use almonds CUPS?",1,"3×1/3=1."),
+            new("Trail mix1 batch uses1/4cup raisins. Four batches use raisins CUPS?",1,"4×1/4=1."),
+            new("Trail mix1 batch uses1/3cup almonds. Two batches in THIRD-CUP portions?",2,"2/3cups."),
+            new("Trail mix1 batch uses1/4cup raisins. Three batches in QUARTER-CUP portions?",3,"3/4cup."),
+            new("Trail mix1 batch uses2cups cereal. Three batches use cereal CUPS?",6,"3×2=6."),
+            new("Rain fills2/5 gauge in3/4hour. Fraction filled in15minutes in FIFTEENTHS?",2,"2/5×15/45=2/15.")
+        ],
+        [L0409ModelReasoning] =
+        [
+            new("2½lb split into5/4lb groups gives2groups. 1=yes,0=no.",1,"2.5/1.25=2."),
+            new("2½lb split among5 people gives½lb each. 1=yes,0=no.",1,"2.5/5=.5."),
+            new("2/5kg fills1/3 of a container, so full holds6/5kg. 1=yes,0=no.",1,"2/5÷1/3=6/5."),
+            new("One kg fits in a6/5kg capacity container. 1=yes,0=no.",1,"1<1.2."),
+            new("Rain gauge2/5 full at45min will be8/15 full after60min at steady rainfall. 1=yes,0=no.",1,"2/5×4/3=8/15."),
+            new("The equation3/4÷2/5 directly gives fraction filled at60minutes. 1=yes,0=no.",0,"It gives time per full-gauge scale, not filled fraction at60min."),
+            new("Three tickets cost12.75dollars, so five cost21.25 at constant rate. 1=yes,0=no.",1,"4.25 each."),
+            new("Noah5m/sec is faster than Elena4m/sec. 1=yes,0=no.",1,"Speed per equal second."),
+            new("Trail mix cereal amount for4 batches is8cups at2cups/batch. 1=yes,0=no.",1,"2×4=8."),
+            new("Three batches of trail mix at1/3cup almonds per batch require1cup almonds. 1=yes,0=no.",1,"3×1/3=1."),
+            new("Four batches each1/4cup raisins require1cup. 1=yes,0=no.",1,"4×1/4=1."),
+            new("An unscripted fraction word problem may require deciding which quantity represents groups. 1=yes,0=no.",1,"Contextual interpretation."),
+            new("A tape diagram can help check whether a model treats rate as constant. 1=yes,0=no.",1,"Corresponding segments."),
+            new("Rainfall must remain steady to infer future gauge fill from a short observation. 1=yes,0=no.",1,"Constant-rate assumption.")
         ]
     };
 
