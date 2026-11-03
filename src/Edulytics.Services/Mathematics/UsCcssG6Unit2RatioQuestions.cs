@@ -85,6 +85,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0309RateValues = "usccss.g6.u03.l09.source_unit_rate_calculations";
     public const string L0309ComparisonLogic = "usccss.g6.u03.l09.solve_rate_comparison";
 
+    public const string L0310PercentNumbers = "usccss.g6.u03.l10.percent_coin_values";
+    public const string L0310PercentLogic = "usccss.g6.u03.l10.percent_comparison_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1014,6 +1017,45 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The heart-shaped polygon's exact area can be confirmed from an unlabeled text summary alone without inspecting the drawing. 1=yes,0=no.",0,"Teacher/source image dimensions matter."),
             new("An exact arithmetic result for a source problem does not automatically grade a student's open-ended visual justification. 1=yes,0=no.",1,"Human review remains needed."),
             new("A percentage can be interpreted as a rate per100 in next lessons. 1=yes,0=no.",1,"100-based ratio.")
+        ],
+        [L0310PercentNumbers] =
+        [
+            new("Four US dimes are40 cents. Percent of one dollar?",40,"40/100=40%."),
+            new("One nickel and three pennies total8 cents. Percent of one dollar?",8,"5+3=8cents=8%."),
+            new("Five quarters and one dime total135cents. Percent of one dollar?",135,"5×25+10=135cents=135%."),
+            new("Three dimes total30cents. Percent of one dollar?",30,"30%."),
+            new("One quarter plus one nickel total30cents. Percent of one dollar?",30,"25+5=30%."),
+            new("Five quarters, one dime and one nickel total140cents. Percent of one dollar?",140,"125+10+5=140%."),
+            new("A historical half-cent coin is what TENTHS of a PERCENT of a dollar?",5,"0.5cent/100cents=0.5%=5tenths of a percent."),
+            new("A 3-cent coin is what percent of one dollar?",3,"3cents=3%."),
+            new("A 20-cent coin is what percent of one dollar?",20,"20%."),
+            new("A 2.5-dollar historical coin is what percent of a dollar?",250,"2.5×100%=250%."),
+            new("A 5-dollar coin is what percent of a dollar?",500,"5×100%=500%."),
+            new("Elena buys8 tokens for440cents. Cents per token?",55,"440/8=55cents."),
+            new("Elena buys8 tokens for440cents. Tokens purchasable with605cents?",11,"605/55=11."),
+            new("Elena buys8 tokens for440cents. Cost of19 tokens in CENTS?",1045,"19×55=1045cents."),
+            new("Snail travels10cm in4minutes. Seconds needed for24cm at constant speed?",576,"24×4/10=9.6min=576sec."),
+            new("Snail travels10cm in4minutes. Cm in6minutes?",15,"10/4×6=15cm."),
+            new("Three tacos cost18 dollars. Dollars per taco?",6,"18/3=6."),
+            new("Three tacos cost18 dollars. Total DOLLARS for4 tacos?",24,"6×4=24."),
+            new("Three tacos cost18 dollars. Total DOLLARS for5 tacos?",30,"6×5=30."),
+            new("Three tacos cost18 dollars. Total DOLLARS for6 tacos?",36,"6×6=36.")
+        ],
+        [L0310PercentLogic] =
+        [
+            new("40cents is40% of one dollar. 1=yes,0=no.",1,"One dollar=100cents."),
+            new("135 cents is135% of one dollar. 1=yes,0=no.",1,"Percentage can exceed100 when comparing quantities."),
+            new("A percentage can never be more than100% for any type of comparison. 1=yes,0=no.",0,"Comparison quantities can exceed the reference."),
+            new("If 25% of a water bottle is consumed, the consumed portion cannot exceed the whole bottle in that part-whole context. 1=yes,0=no.",1,"Part of the reference whole."),
+            new("Two and a half dollars equals250% of a dollar. 1=yes,0=no.",1,"2.5 times the reference."),
+            new("A 5dollar amount equals5% of a dollar. 1=yes,0=no.",0,"It equals500%."),
+            new("Four dimes and one quarter total65% of a dollar. 1=yes,0=no.",1,"40+25=65cents."),
+            new("Two quarters equal50% of one dollar. 1=yes,0=no.",1,"50/100=50%."),
+            new("A 30-cent coin collection is30% of a dollar. 1=yes,0=no.",1,"30 cents per100cents."),
+            new("Percent means per hundred, so100% represents the full reference amount. 1=yes,0=no.",1,"Rate per100."),
+            new("At55 cents per token, 11tokens cost605cents. 1=yes,0=no.",1,"11×55=605."),
+            new("A snail10cm in4min travels24cm in6min at the same rate. 1=yes,0=no.",0,"6min yields15cm."),
+            new("Three tacos for18 dollars gives each taco6dollars. 1=yes,0=no.",1,"18/3=6.")
         ]
     };
 
