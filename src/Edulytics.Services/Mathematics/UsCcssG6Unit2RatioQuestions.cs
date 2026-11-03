@@ -256,6 +256,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0617SpeedTables = "usccss.g6.u06.l17.constant_speed_numeric";
     public const string L0617SpeedLogic = "usccss.g6.u06.l17.constant_speed_equation_interpretation";
 
+    public const string L0618RelationValues = "usccss.g6.u06.l18.related_area_volume_growth";
+    public const string L0618RelationLogic = "usccss.g6.u06.l18.inverse_and_exponential_relationships";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3465,6 +3468,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("5x(1+6-3) equals20x. 1=yes,0=no.",1,"Original D."),
             new("x(5+30x-15x) is equivalent to20x for all x. 1=yes,0=no.",0,"Extra x multiplication."),
             new("Source constant-speed graph must carry both time and distance units. 1=yes,0=no.",1,"Axis meaning.")
+        ],
+        [L0618RelationValues] =
+        [
+            new("Parallelogram area12sqin and base1.5in. Height INCHES?",8,"12/1.5=8."),
+            new("Parallelogram area12sqin base3in. Height?",4,"12/3=4."),
+            new("Parallelogram area12sqin base4in. Height?",3,"12/4=3."),
+            new("Bike trip24miles at3mph. Hours?",8,"24/3=8."),
+            new("Bike trip24miles at4mph. Hours?",6,"24/4=6."),
+            new("Bike trip24miles at6mph. Hours?",4,"24/6=4."),
+            new("V=10s³ when s=2. Volume?",80,"10×8=80."),
+            new("V=10s³ when s=4. Volume?",640,"10×64=640."),
+            new("V=10s³ when s=3. Volume?",270,"10×27=270."),
+            new("Coin doubles daily: day1 number?",2,"2¹=2."),
+            new("Coin day2 number?",4,"2²=4."),
+            new("Coin day3 number?",8,"2³=8."),
+            new("Coin day7 number?",128,"2⁷=128."),
+            new("Coin day10 number?",1024,"2^10=1024."),
+            new("Coin day12 number?",4096,"2^12=4096."),
+            new("Coin day15 number?",32768,"2^15=32768."),
+            new("Coin day16 number?",65536,"2^16=65536."),
+            new("Coin day28 number?",268435456,"2^28."),
+            new("Peaches3.1lb cost772cents. Approx unit cents PER POUND rounded nearest cent?",249,"772/3.1≈249.03cents/lb."),
+            new("Lemonade sales980cents, each cup35cents. Cups sold?",28,"980/35=28."),
+            new("Cost15cents per cup for28cups. Total cost CENTS?",420,"28×15=420."),
+            new("Profit on sales980cents with420cents cost. Profit CENTS?",560,"980-420=560.")
+        ],
+        [L0618RelationLogic] =
+        [
+            new("Parallelogram area12sqin gives height h=12/b for base b>0. 1=yes,0=no.",1,"Area base×height."),
+            new("With constant area12, doubling base halves height. 1=yes,0=no.",1,"Inverse relationship."),
+            new("A24mile ride at constant rate rmph takes t=24/r hours. 1=yes,0=no.",1,"Distance/speed."),
+            new("At3mph,24mile ride takes8hours. 1=yes,0=no.",1,"24/3=8."),
+            new("At6mph,24mile ride takes4hours. 1=yes,0=no.",1,"24/6=4."),
+            new("V=10s³ gives V80 for s2. 1=yes,0=no.",1,"10×8."),
+            new("V=10s³ gives V640 for s4. 1=yes,0=no.",1,"10×64."),
+            new("Doubling s in V=10s³ multiplies V by8. 1=yes,0=no.",1,"Cubic scaling."),
+            new("Starting one magical coin doubles to2 coins day1, number at day d is2^d. 1=yes,0=no.",1,"Source doubling."),
+            new("Day15 magical coin value32768dollars is lower than50000dollars. 1=yes,0=no.",1,"32768<50000."),
+            new("Day16 coin value65536 exceeds50000. 1=yes,0=no.",1,"Crossing threshold."),
+            new("Day28 magical doubling produces268435456 coins. 1=yes,0=no.",1,"2^28."),
+            new("The doubling coins grow linearly by adding2 each day. 1=yes,0=no.",0,"Exponential doubling."),
+            new("At7.72 dollars for3.1lb peaches, nearest-cent price/lb2.49 dollars. 1=yes,0=no.",1,"772/3.1≈249.03."),
+            new("Selling28 lemonades at35c each gives9.80 dollars. 1=yes,0=no.",1,"28×.35=9.8."),
+            new("Making28 lemonades at15c each costs4.20 dollars. 1=yes,0=no.",1,"28×.15=4.2."),
+            new("At those sales/costs, profit5.60 dollars. 1=yes,0=no.",1,"9.8-4.2."),
+            new("An inverse constant-area graph follows the same straight line through origin as a fixed unit price. 1=yes,0=no.",0,"Hyperbolic inverse versus proportional."),
+            new("Source graph points require units and explanation when students invent a story. 1=yes,0=no.",1,"Context meaningful.")
         ]
     };
 
