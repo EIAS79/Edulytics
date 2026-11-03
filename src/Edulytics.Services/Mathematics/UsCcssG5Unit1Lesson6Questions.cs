@@ -14,7 +14,7 @@ internal static class UsCcssG5Unit1Lesson6Questions
     {
         if(!Supports(family))throw new InvalidOperationException("Not G5 lesson 6");
         ArgumentNullException.ThrowIfNull(random);
-        
+
 int w=random.Next(2,11),d=random.Next(2,11),h=random.Next(2,11);
 if(d==2&&h==2)d=3;
 var choice=random.Next(2);
