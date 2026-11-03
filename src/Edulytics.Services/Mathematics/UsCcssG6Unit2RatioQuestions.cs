@@ -250,6 +250,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0615ExponentVariables = "usccss.g6.u06.l15.exponential_variable_values";
     public const string L0615ExponentVariablesLogic = "usccss.g6.u06.l15.exponential_expression_reasoning";
 
+    public const string L0616RatesAndTables = "usccss.g6.u06.l16.related_quantities_numeric";
+    public const string L0616RelatedLogic = "usccss.g6.u06.l16.two_variable_equation_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3369,6 +3372,51 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Reading5pages per20min means15 pages in1hour. 1=yes,0=no.",1,"Three times."),
             new("3x² is equivalent to(3x)² for all x. 1=yes,0=no.",0,"3x² vs9x²."),
             new("The coefficient in3x² is3, multiplying the square ofx. 1=yes,0=no.",1,"Exponent first.")
+        ],
+        [L0616RatesAndTables] =
+        [
+            new("Brownie recipe uses1/2cup sugar per batch. Cups for8batches in HALF-CUP units?",8,"8×1/2=4cups."),
+            new("Brownies1/2cup sugar per batch. Three batches sugar in HALF-CUP units?",3,"3half-cups."),
+            new("Brownies1/2cup sugar per batch. Six batches sugar CUPS?",3,"6/2=3."),
+            new("Brownies1/2cup sugar per batch. Two batches sugar CUPS?",1,"2×.5=1."),
+            new("Fruit snack90calories per serving. Five servings calories?",450,"90×5=450."),
+            new("Fruit snack90calories per serving.720 calories how many servings?",8,"720/90=8."),
+            new("Fruit snack90calories per serving. Three servings calories?",270,"270."),
+            new("Book sale20% off. Percentage original price paid?",80,"100-20=80%."),
+            new("Original book5dollars. Sale price in CENTS?",400,"5×.8=4 dollars."),
+            new("Original book9dollars. Sale price in CENTS?",720,"9×.8=7.20."),
+            new("Original book10dollars. Sale price in CENTS?",800,"10×.8=8."),
+            new("Evaluate(6-x)^3+y withx=4,y=6.",14,"2³+6=14."),
+            new("Evaluate2+x³ forx=4?",66,"2+64=66."),
+            new("Evaluate2^x-2y forx=4,y=6?",4,"16-12=4."),
+            new("(1/2)^x forx=4 in SIXTEENTHS?",1,"1/16."),
+            new("1^x+2^x forx=4?",17,"1+16=17."),
+            new("2^x/x² forx=4?",1,"16/16=1."),
+            new("12.34×0.7 in THOUSANDTHS?",8638,"8.638."),
+            new("302.1÷0.5 in TENTHS?",6042,"604.2."),
+            new("12.15÷0.02 in HALVES?",1215,"607.5=1215halves."),
+            new("1.375÷0.11 in HALVES?",25,"12.5=25 halves."),
+            new("Brownie graph point(8,4) shows sugar cups?",4,"Eight batches require4cups.")
+        ],
+        [L0616RelatedLogic] =
+        [
+            new("Brownie sugar cups s and batches x follow s=x/2. 1=yes,0=no.",1,"0.5cup per batch."),
+            new("Point(8,4) means8 brownie batches require4cups sugar. 1=yes,0=no.",1,"Graph coordinates."),
+            new("Point(8,4) means8cups sugar produce4batches. 1=yes,0=no.",0,"Axes reversed."),
+            new("At brownie rate,4batches use2cups sugar. 1=yes,0=no.",1,"4×.5."),
+            new("Fruit snack calories c and servings n follow c=90n. 1=yes,0=no.",1,"90 each."),
+            new("Fruit snack servings n can be written n=c/90. 1=yes,0=no.",1,"Inverse equation."),
+            new("Book20% off means sale price80% of original. 1=yes,0=no.",1,"Complement."),
+            new("Book sale price s and original p follow s=0.8p. 1=yes,0=no.",1,"20% discount."),
+            new("At p=9dollars, book sale price is7.20. 1=yes,0=no.",1,"9×.8."),
+            new("The brownie graph for s=x/2 includes origin(0,0). 1=yes,0=no.",1,"No batches, no sugar."),
+            new("The equation s=x/2 produces a straight-line proportional relationship. 1=yes,0=no.",1,"Constant ratio."),
+            new("The equation s=0.8p describes a proportional discount relation. 1=yes,0=no.",1,"Constant multiplier."),
+            new("Forx=4,y=6, (6-x)^3+y=14. 1=yes,0=no.",1,"8+6."),
+            new("Forx=4,y=6,2^x-2y=4. 1=yes,0=no.",1,"16-12."),
+            new("12.34×0.7=8.638. 1=yes,0=no.",1,"Decimal product."),
+            new("1.375÷0.11=12.5. 1=yes,0=no.",1,"Division."),
+            new("In a coordinate graph, x and y axis units are necessary for interpreting points meaningfully. 1=yes,0=no.",1,"Quantity meaning.")
         ]
     };
 
