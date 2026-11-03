@@ -283,6 +283,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0706AbsoluteValues = "usccss.g6.u07.l06.absolute_distance_values";
     public const string L0706AbsoluteLogic = "usccss.g6.u07.l06.absolute_value_reasoning";
 
+    public const string L0707OrderMagnitude = "usccss.g6.u07.l07.signed_comparisons_absolute";
+    public const string L0707OrderLogic = "usccss.g6.u07.l07.order_and_absolute_value_inequalities";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3905,6 +3908,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("7^10/7^8=49. 1=yes,0=no.",1,"7²."),
             new("A larger absolute value necessarily means a greater signed number. 1=yes,0=no.",0,"-100 has magnitude100 but <0."),
             new("Absolute value can represent depth below sea surface without a sign indicating direction. 1=yes,0=no.",1,"Magnitude only.")
+        ],
+        [L0707OrderMagnitude] =
+        [
+            new("Absolute value-7feet?",7,"7 feet from0."),
+            new("Absolute value-63?",63,"63."),
+            new("Compare-32 to15. Enter1 if first greater,0 equal,2 smaller.",2,"-32<15."),
+            new("Compare|-32| to|15|. Enter1 if first greater,0 equal,2 smaller.",1,"32>15."),
+            new("Compare5 to-5. Enter1 if first greater,0 equal,2 smaller.",1,"5>-5."),
+            new("Compare|5| to|-5|. Enter1 if first greater,0 equal,2 smaller.",0,"Equal5."),
+            new("Compare2 to-17. Enter1 if first greater,0 equal,2 smaller.",1,"2>-17."),
+            new("Compare2 to|-17|. Enter1 if first greater,0 equal,2 smaller.",2,"2<17."),
+            new("Compare|-27| to|-45|. Enter1 if first greater,0 equal,2 smaller.",2,"27<45."),
+            new("Compare|-27| to-45. Enter1 if first greater,0 equal,2 smaller.",1,"27>-45."),
+            new("Mai receives25 dollars. Signed change?",25,"Credit."),
+            new("Mai earns14 dollars babysitting. Signed change?",14,"Credit."),
+            new("Mai spends10 dollars concert. Signed change?",-10,"Expense."),
+            new("Mai donates3 dollars charity. Signed change?",-3,"Expense."),
+            new("Mai earns2 dollars interest. Signed change?",2,"Credit."),
+            new("Death Valley record temperature°F?",-45,"Source historical record."),
+            new("Danbury record temperature°F?",-37,"Source historical record."),
+            new("Monticello FL record temperature°F?",-2,"Source historical record."),
+            new("East Saint Louis record temperature°F?",-36,"Source historical record."),
+            new("Greenville GA record temperature°F?",-17,"Source historical record."),
+            new("How much colder GA-17 than FL-2 in DEGREES?",15,"-2-(-17)=15."),
+            new("0.024÷0.015 in FIFTHS?",8,"1.6=8/5."),
+            new("0.24÷0.015=?",16,"16."),
+            new("0.024÷0.15 in HUNDREDTHS?",16,"0.16."),
+            new("24÷15 in FIFTHS?",8,"1.6.")
+        ],
+        [L0707OrderLogic] =
+        [
+            new("|-7|=7. 1=yes,0=no.",1,"A corresponds4."),
+            new("|-63|>4. 1=yes,0=no.",1,"B corresponds1."),
+            new("4>-4. 1=yes,0=no.",1,"C corresponds5."),
+            new("|4|=|-4|. 1=yes,0=no.",1,"D corresponds6."),
+            new("-63<4. 1=yes,0=no.",1,"E corresponds2."),
+            new("|-63|>|4|. 1=yes,0=no.",1,"F corresponds3."),
+            new("-32>15. 1=yes,0=no.",0,"Negative less."),
+            new("|-32|>|15|. 1=yes,0=no.",1,"32>15."),
+            new("5>-5. 1=yes,0=no.",1,"Positive greater."),
+            new("|5|=|-5|. 1=yes,0=no.",1,"Both5."),
+            new("2>|-17|. 1=yes,0=no.",0,"2<17."),
+            new("|-27|<|-45|. 1=yes,0=no.",1,"27<45."),
+            new("|-27|>-45. 1=yes,0=no.",1,"27>-45."),
+            new("Death Valley-45F is lowest of five cited records. 1=yes,0=no.",1,"-45 minimum."),
+            new("Florida-2F is colder than Georgia-17F. 1=yes,0=no.",0,"-17 colder."),
+            new("Connecticut-37F is colder than Illinois-36F. 1=yes,0=no.",1,"-37 colder."),
+            new("0.024÷0.015=1.6. 1=yes,0=no.",1,"24/15."),
+            new("The minus symbol on -a may produce positive number if a itself is negative. 1=yes,0=no.",1,"Opposite."),
+            new("An absolute value inequality compares magnitude, not necessarily signed order. 1=yes,0=no.",1,"Distinguish.")
         ]
     };
 
