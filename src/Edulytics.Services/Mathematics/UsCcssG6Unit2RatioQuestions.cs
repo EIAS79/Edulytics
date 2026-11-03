@@ -328,6 +328,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0802StatisticalClassifications = "usccss.g6.u08.l02.statistical_question_classification";
     public const string L0802StatsLogic = "usccss.g6.u08.l02.expected_data_variation_reasoning";
 
+    public const string L0803Frequency = "usccss.g6.u08.l03.dotplot_frequency_counts";
+    public const string L0803PlotLogic = "usccss.g6.u08.l03.frequency_plot_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4665,6 +4668,60 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("When graphing fractional third units, a1/6 unit tick can locate1/6 and thirds precisely. 1=yes,0=no.",1,"2 sixths per third."),
             new("A coordinate axis is properly scaled only if x and y use identical units and increments. 1=yes,0=no.",0,"Can differ appropriately."),
             new("A response of12 minutes to wait is numeric, while a yes/no fan response is categorical. 1=yes,0=no.",1,"Different variable types.")
+        ],
+        [L0803Frequency] =
+        [
+            new("Basket attempts data1,2,1,3,1,4,4,3,1,2,5,2. Number of students?",12,"Twelve observations."),
+            new("Same basket attempts data. Frequency of1 attempt?",4,"Four1s."),
+            new("Same basket attempts data. Frequency of2 attempts?",3,"Three2s."),
+            new("Same basket attempts data. Frequency of3 attempts?",2,"Two3s."),
+            new("Same basket attempts data. Frequency of4 attempts?",2,"Two4s."),
+            new("Same basket attempts data. Frequency of5 attempts?",1,"One5."),
+            new("Total dots from frequencies4,3,2,2,1?",12,"4+3+2+2+1=12."),
+            new("Most frequent basket-attempt count?",1,"Mode1."),
+            new("Largest basket-attempt count?",5,"Max5."),
+            new("Smallest basket-attempt count?",1,"Min1."),
+            new("Basket attempts range (max minus min)?",4,"5-1=4."),
+            new("Number of basket-attempt observations requiring at most2 attempts?",7,"4+3=7."),
+            new("Number of basket-attempt observations requiring at least3 attempts?",5,"2+2+1=5."),
+            new("Is class size measured numerically? Enter1 yes,0 no.",1,"Count per class."),
+            new("Are car colors numerical dot-plot data? Enter1 yes,0 no.",0,"Categories."),
+            new("Are favorite sports numerical dot-plot data? Enter1 yes,0 no.",0,"Categories."),
+            new("Are newborn baby birth weights numerical measurements? Enter1 yes,0 no.",1,"Quantitative mass."),
+            new("Are goals scored per soccer match numerical data? Enter1 yes,0 no.",1,"Count per game."),
+            new("Solve9v=1. v in NINTHS?",1,"v=1/9."),
+            new("Solve1.37w=0. w?",0,"w=0."),
+            new("Solve1=7/10 x. x in SEVENTHS?",10,"x=10/7."),
+            new("Solve12.1=12.1+y. y?",0,"Subtract12.1."),
+            new("Solve3/5+z=1. z in FIFTHS?",2,"z=2/5."),
+            new("Fraction2/5 divided by2, answer in FIFTHS?",1,"1/5."),
+            new("Fraction2/5 divided by5, answer in TWENTY-FIFTHS?",2,"2/25."),
+            new("Two divided by2/5 equals?",5,"2×5/2=5."),
+            new("Five divided by2/5, answer in HALVES?",25,"5×5/2=25/2."),
+            new("Triangle A right base5 height5, area in HALVES of square unit?",25,"25/2."),
+            new("Triangle B base4 height3, area in square units?",6,"4×3÷2=6."),
+            new("Triangle C base4 height4, area in square units?",8,"4×4÷2=8.")
+        ],
+        [L0803PlotLogic] =
+        [
+            new("One dot in a dot plot conventionally represents one observation. 1=yes,0=no.",1,"Count frequency."),
+            new("The basket attempts example has four students with1 attempt. 1=yes,0=no.",1,"Four1 entries."),
+            new("The basket attempts example has five students with2 attempts. 1=yes,0=no.",0,"Three2 entries."),
+            new("The basket attempt value3 has frequency2. 1=yes,0=no.",1,"Two3 entries."),
+            new("Dot plots of numerical data can stack repeated values as multiple dots. 1=yes,0=no.",1,"Displays frequency."),
+            new("A soccer-goal count across games is suitable for a numerical dot plot. 1=yes,0=no.",1,"Goals integer counts."),
+            new("Favorite sport labels are better shown by categorical bar chart, not numerical dot plot. 1=yes,0=no.",1,"Categories distinct."),
+            new("Car colors are quantitative numbers because paint colors have names. 1=yes,0=no.",0,"Categorical labels."),
+            new("Weights of newborn babies measured in kilograms can be numerical dot-plot data. 1=yes,0=no.",1,"Measured values."),
+            new("The original 20inch estimation dot plot can be given an exact class count without inspecting its picture. 1=yes,0=no.",0,"Source image count must be observed."),
+            new("A frequency table can be transformed to a dot plot using one dot per observation. 1=yes,0=no.",1,"Equivalent summary."),
+            new("The total of all frequencies should equal sample size. 1=yes,0=no.",1,"Every observation assigned."),
+            new("Basket attempts frequency totals4+3+2+2+1=12. 1=yes,0=no.",1,"Twelve students."),
+            new("The basket attempt data has range5-1=4. 1=yes,0=no.",1,"Max-min."),
+            new("Triangle area with base5 height5 equals25 square units. 1=yes,0=no.",0,"Half product,12.5."),
+            new("Triangle B base4 height3 area6. 1=yes,0=no.",1,"4×3/2."),
+            new("Two divided by2/5 equals5. 1=yes,0=no.",1,"Multiply reciprocal."),
+            new("The student must label dot plots with the numeric variable and units where applicable. 1=yes,0=no.",1,"Meaningful presentation.")
         ]
     };
 
