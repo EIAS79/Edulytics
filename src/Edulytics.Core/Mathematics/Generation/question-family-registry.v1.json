@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u09.l01.first_party_fermi_source_rates",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-ant18mm-per-sec-LA-to-NY3944km-and-independent-warehouse-monument-assumptions",
+      "representations": [
+        "numeric",
+        "rate_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u09.l01.first_party_fermi_modeling_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-open-ended-models-not-exact-shipping-warehouse-building-current-realworld-measurements",
+      "representations": [
+        "boolean_reasoning",
+        "model_assumptions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l18.first_party_statistics_context",
       "version": 1,
       "skillId": "ratio.unit_rate",

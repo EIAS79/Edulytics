@@ -376,6 +376,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0818SourceStatistics = "usccss.g6.u08.l18.first_party_statistics_context";
     public const string L0818SelectionLogic = "usccss.g6.u08.l18.first_party_statistical_report_selection";
 
+    public const string L0901EstimateNumbers = "usccss.g6.u09.l01.first_party_fermi_source_rates";
+    public const string L0901AssumptionLogic = "usccss.g6.u09.l01.first_party_fermi_modeling_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5489,6 +5492,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A full teacher assessment should evaluate chosen graph, center, spread and limitations. 1=yes,0=no.",1,"Project rubric."),
             new("An independent first-party numerical check does not certify original lesson artwork or scientific claims. 1=yes,0=no.",1,"Selected practice boundary."),
             new("A sample statistic is an estimate/description, not necessarily a causal population conclusion. 1=yes,0=no.",1,"Statistical inference limitations.")
+        ],
+        [L0901EstimateNumbers] =
+        [
+            new("Original suggested ant rate18millimeters per second. Millimeters per minute?",1080,"18×60=1080mm/min."),
+            new("Ant18mm/s. Millimeters per hour?",64800,"18×3600=64800mm/hour."),
+            new("Ant18mm/s. Meters per hour in TENTHS?",648,"64800mm=64.8meters,648tenths."),
+            new("LA to NYC approximate source distance3944kilometers. How many THOUSANDS of meters?",3944,"3944km=3,944,000meters."),
+            new("LA to NYC source distance3944km. How many MILLIONS of millimeters?",3944,"3944km=3,944 million millimeters."),
+            new("Ant18mm/s for2seconds. Millimeters?",36,"2×18."),
+            new("Ant18mm/s for100seconds. Millimeters?",1800,"1800."),
+            new("Ant18mm/s for1day. Millimeters?",1555200,"18×86400=1,555,200mm."),
+            new("Ant18mm/s for1day. Meters rounded to whole meter?",1555,"1555.2m rounded1555."),
+            new("Ant18mm/s across3944km nonstop. Estimated days rounded to nearest WHOLE DAY?",2536,"3,944,000,000÷(18×86400)≈2536days."),
+            new("Same ant estimated years rounded to nearest whole year365days/year?",7,"2536/365≈6.95years."),
+            new("Independent warehouse model20million cereal boxes each0.5cuft. Total volume in MILLIONS of cubic feet?",10,"20 million×0.5=10 million."),
+            new("Independent warehouse10millioncuft storage and10ft height. Floor area in MILLIONS of sqft?",1,"10million/10=1million."),
+            new("Independent warehouse floor1000ft×1000ft. Area in SQUARE FEET?",1000000,"1,000,000sqft."),
+            new("Warehouse model height10ft and floor1million sqft. Volume in MILLIONS cuft?",10,"10millionft³."),
+            new("Independent example trapezoid face parallel widths20ft,40ft and altitude500ft. Area in SQUARE FEET?",15000,"(20+40)/2×500=15000."),
+            new("Independent four equal assumed monument trapezoid faces of15000sqft each. Total SIDE AREA sqft?",60000,"4×15000."),
+            new("Independent model walls60000sqft and1sqft tile. Number tiles before waste?",60000,"60000/1."),
+            new("Independent model tile area4sqft. Tiles for60000sqft before waste?",15000,"60000/4."),
+            new("A warehouse floor300ft×500ft. Area sqft?",150000,"300×500."),
+            new("If tile waste increases estimated15000tiles by10%, total tiles?",16500,"15000×1.1."),
+            new("One kilometer equals how many METERS?",1000,"1000m."),
+            new("One kilometer equals how many MILLIMETERS?",1000000,"1000×1000.")
+        ],
+        [L0901AssumptionLogic] =
+        [
+            new("Original first Fermi question estimates travel for an ant between Los Angeles and New York City. 1=yes,0=no.",1,"Source1.1."),
+            new("Original teacher guidance suggests ant speed18mm/s and travel3944km as reasonable modeling inputs. 1=yes,0=no.",1,"Historical classroom scenario."),
+            new("An estimate from ant speed18mm/s assumes constant nonstop travel. 1=yes,0=no.",1,"Simplification."),
+            new("An ant would certainly survive seven years crossing the country without food or rest. 1=yes,0=no.",0,"Prediction not biological guarantee."),
+            new("A reasonable Fermi estimate should state its numerical assumptions. 1=yes,0=no.",1,"Traceability."),
+            new("One km equals1000000millimeters. 1=yes,0=no.",1,"Length conversions."),
+            new("A warehouse volume divided by height estimates floor area under uniform filling assumptions. 1=yes,0=no.",1,"V=area×height."),
+            new("Exactly computed warehouse floor area proves an actual cereal storage plan fits without aisles or gaps. 1=yes,0=no.",0,"Packing needs design."),
+            new("The source warehouse question specifies height10feet and requests possible floor lengths. 1=yes,0=no.",1,"Source1.2."),
+            new("The amount of cereal bought nationwide annually is fixed by a provided original numerical total in the student prompt. 1=yes,0=no.",0,"Modeling asks students to estimate."),
+            new("The original monument activity involves estimating number of tiles covering its exterior. 1=yes,0=no.",1,"Source1.3."),
+            new("For four modeled trapezoid faces, all four visible or hidden faces should be accounted for. 1=yes,0=no.",1,"Three-dimensional surface."),
+            new("Surface tiling units are square feet or inches, not cubic feet. 1=yes,0=no.",1,"Area dimension."),
+            new("The independent trapezoid20/40/500ft model is an actual measured monument dimension verified in the original source. 1=yes,0=no.",0,"Illustrative numbers only."),
+            new("For a trapezoid with parallel sides20,40 and altitude500, area15000. 1=yes,0=no.",1,"Average bases×altitude."),
+            new("A10% waste allowance multiplies material count by1.1. 1=yes,0=no.",1,"Additional materials."),
+            new("Two estimates with different credible assumptions may both be mathematically valid. 1=yes,0=no.",1,"Explicit scenario."),
+            new("Source artwork and open-ended model defense should receive teacher review, not false exact grading. 1=yes,0=no.",1,"Human rubric."),
+            new("A rough estimate should communicate precision limits rather than claim exact physical truth. 1=yes,0=no.",1,"Model limitations.")
         ]
     };
 

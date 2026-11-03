@@ -3372,6 +3372,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit9 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FERMI_ESTIMATES_RATES_GEOMETRY_ASSUMPTIONS",
+            [
+                "usccss.g6.u09.l01.first_party_fermi_source_rates",
+                "usccss.g6.u09.l01.first_party_fermi_modeling_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
