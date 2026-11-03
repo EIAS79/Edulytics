@@ -6,6 +6,7 @@ on:
       - '.github/workflows/us-ccss-g6-stage-d.yml'
       - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
       - 'tools/phase29/g6_stage_d_authenticated_https.py'
+      - 'tools/phase29/g6_stage_d_visual_https.py'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
@@ -21,6 +22,7 @@ on:
       - '.github/workflows/us-ccss-g6-stage-d.yml'
       - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
       - 'tools/phase29/g6_stage_d_authenticated_https.py'
+      - 'tools/phase29/g6_stage_d_visual_https.py'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
@@ -234,6 +236,10 @@ jobs:
           dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore --output /tmp/g6-d-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install isolated Chromium for real Grade 6 visual checks
+        run: |
+          python3 -m pip install --disable-pip-version-check playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
       - name: Real HTTPS students, teachers, 147 lessons and persisted Practice attempts
         env:
           RENDER_SERVICE_ID: ci-disposable
@@ -285,11 +291,23 @@ jobs:
             tail -n 75 /tmp/g6-d-web.log
             exit 1
           fi
+          if ! python3 tools/phase29/g6_stage_d_visual_https.py; then
+            echo G6_CHROMIUM_STAGE_D_VISUAL_FAILURE
+            tail -n 75 /tmp/g6-d-web.log
+            exit 1
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: g6-d-isolated-authenticated-147-evidence-not-release
           path: /tmp/g6-147-isolated-auth-https-evidence.json
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g6-d-real-9unit-chromium-mobile-desktop-spotchecks
+          path: /tmp/g6-stage-d-visual/
           if-no-files-found: warn
           retention-days: 30
   diagnostic:

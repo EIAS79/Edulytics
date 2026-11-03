@@ -138,6 +138,43 @@ def main():
         save()
         print("G6_D_AUTH_HTTPS_PASS",ordinal,code,family,flush=True)
     require(len(REPORT["lessons"])==147,"incomplete G6 real-runtime coverage")
+    # Real Grade 6 teacher assessment creation against the SAME disposable DB.
+    # Creating a draft is not approval, publication or learner submission.
+    import datetime
+    import uuid
+    fields=sql(f"""SELECT c."Id"::text,a."SubjectId"::text,t."Id"::text
+        FROM "ClassGroups" c
+        JOIN "SchoolCurriculumAdoptions" a ON a."Id"=c."CurriculumAdoptionId"
+        JOIN "Terms" t ON t."AcademicYearId"=c."AcademicYearId"
+        WHERE c."Id"='{classes[0]}' AND t."Name"='Term 1'
+        ORDER BY t."Id" LIMIT 1;""").split("|")
+    require(len(fields)==3 and fields[0].lower()==classes[0].lower(),
+        "Grade6 assessment class/subject/term fixture missing")
+    teaching_page=page(teacher,"/school/assessments")
+    csrf=re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"',teaching_page)
+    require(csrf,"real teacher assessment CSRF missing")
+    title="G6 Stage D CI "+uuid.uuid4().hex[:12]
+    data=urllib.parse.urlencode({
+        "classGroupId":fields[0],"subjectId":fields[1],"termId":fields[2],
+        "title":title,"assessmentDate":datetime.date.today().isoformat(),
+        "maxScore":"100","assessmentType":"Exam","deliveryMode":"Online",
+        "__RequestVerificationToken":csrf.group(1)}).encode()
+    with teacher.open(urllib.request.Request(BASE+"/school/assessments",
+            data=data,method="POST"),timeout=40) as response:
+        require(response.status==200,"teacher assessment POST not accepted")
+    saved=sql(f"""SELECT a."Id"::text FROM "Assessments" a
+        JOIN "Schools" s ON s."Id"=a."SchoolId"
+        WHERE a."Title"='{title}'
+          AND a."ClassGroupId"='{classes[0]}'
+          AND s."SchoolCode"='REHEARSAL-US-MIDDLE';""").splitlines()
+    require(len(saved)==1 and re.fullmatch(r"[0-9a-fA-F-]{36}",saved[0]),
+        "Grade6 teacher assessment not persisted correctly")
+    other_teacher=connect("commoncore-secondary","Teacher")
+    cross_denied(other_teacher,"/school/assessments/"+saved[0])
+    REPORT["grade6TeacherAssessmentCreatedAndStored"]=True
+    REPORT["crossSchoolTeacherAssessmentAccess"]="DENIED"
+    REPORT["teacherFinalAcademicApproval"]="NOT_CLAIMED"
+    print("G6_D_TEACHER_GRADE6_ASSESSMENT_POST_AND_TENANT_DENIAL_PASS",flush=True)
     REPORT.update(status="G6_147_REAL_AUTHENTICATED_HTTPS_PASS",
         correctGradedAndPersisted=147,invalidRejectedAndPersisted=147,
         crossSchoolDenied=147,studentRichPagesPassed=147,stageDVerified=0)
