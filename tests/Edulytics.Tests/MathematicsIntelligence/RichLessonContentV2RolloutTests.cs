@@ -115,7 +115,7 @@ public sealed class RichLessonContentV2RolloutTests
 
         Assert.Equal(5110, rows.Count);
         Assert.Equal(
-            26 + 143 + 149,
+            26 + 143 + 149 + 148,
             readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);

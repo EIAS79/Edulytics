@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "recordType": "GRADE5_PROJECT_OWNER_ACADEMIC_APPROVAL_AND_RELEASE_AUTHORIZATION",
+  "recordedDate": "2026-11-03",
+  "recordingActor": "Edulytics assistant acting on owner's explicit project-conversation instruction",
+  "publicAuditNote": "https://github.com/EIAS79/Edulytics/pull/596#issuecomment-6591728599",
+  "notCryptographicOwnerSignature": true,
+  "scope": {
+    "repository": "EIAS79/Edulytics",
+    "pullRequest": 596,
+    "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+    "grade": "G5",
+    "units": 8,
+    "lessons": 148,
+    "reviewState": "REVIEW_COMPLETE_2021",
+    "readyState": "READY_FOR_STAGE_D",
+    "sourceReferenceEdition": "IM K-5 First Edition 2021",
+    "authorizationBaseSha": "ec3864a7f44c83bf28a6efc907e0b6b998b5c21a"
+  },
+  "ownerDecision": {
+    "academicApprovalOfEdulyticsAuthoredMathematics": true,
+    "productionPublicationAuthorized": true,
+    "originalMathContentAuthorshipAssertedByOwner": true,
+    "similarityInLearningObjectivesDoesNotAloneProveCopying": true,
+    "originalPublisherBrandNotRequestedForIndependentlyAuthoredWork": true
+  },
+  "authorizedContentPack": {
+    "path": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json",
+    "gitBlobSha": "0769be253207c06d144f6bb9f745a57b86207178"
+  },
+  "approvalScope": "EDULYTICS_ORIGINAL_AUTHORING_AND_OWNER_ACADEMIC_DECISION",
+  "releaseAuthorizationStatus": "OWNER_APPROVED_EXECUTION_SUBJECT_TO_VERIFIABLE_RELEASE_GATES",
+  "nonClaims": {
+    "independentExactPublisherSourceParityVerified": false,
+    "originalPublisherStudentPdfFullyVerified": false,
+    "individualThirdPartyMediaRightsVerified": false,
+    "thirdPartyCreativeCommonsAttributionsAutomaticallyWaived": false,
+    "entireDigitalOrVisualCoverageVerified": false,
+    "allRequiredCandidateShaCIPassed": false,
+    "productionDeploymentOccurred": false
+  },
+  "rightsAndAttributionPolicy": "Independently authored mathematical concepts, explanations and illustrations need no invented publisher attribution. If actual third-party copyrighted expression or material licensed under CC BY 4.0 is reused or adapted, license conditions including proper attribution must be met; technical similarity alone does not decide copying. No trademark endorsement or use of protected publisher marks is authorized.",
+  "decisionSeparation": {
+    "academicOwnerApproval": "GRANTED",
+    "ownerReleasePermission": "GRANTED",
+    "independentSourceParity": "UNVERIFIED_NOT_CLAIMED",
+    "thirdPartyAssetLicenseCompliance": "NOT_YET_INDEPENDENTLY_AUDITED",
+    "stageDFinalCI": "MUST_PROVE_ON_CANDIDATE_SHA",
+    "actualDeploy": "NOT_EXECUTED"
+  }
+}

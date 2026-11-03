@@ -1,0 +1,10 @@
+# Grade 5 — Unit 7 — 2021 First Edition sequential A–B–C revalidation
+
+- U07:L01–L13, 13 lessons, ordinals 118–130; all original teacher `lesson.html` / `preparation.html` read from approved local 2021 archive and compared with existing A–B–C lesson authoring closures.
+- One per-lesson revalidation JSON added in original order `u07-l01-2021-source-revalidation-20261102.json` … `u07-l13-2021-source-revalidation-20261102.json`. Existing correct Rich V2, selected Practice and first-party teacher review rubric retained, not rebuilt.
+- Source topics: coordinate-grid secret rectangles/points, axis coordinates and horizontal/vertical line patterns; quadrilateral hierarchy with *inclusive* trapezoid convention explicitly adopted by this course; triangle-side/angle classification; two related numerical-pattern sequences on a coordinate plane; real-data coin plots and rectangle dimensions from fixed area/perimeter.
+- A specific **source textual inconsistency** exists in U07:L13: 2021 teacher answer says width `16/5` for area16 and length5, correctly 3.2, but adjoining prose refers to an estimate near `3 1/3`. This is not an identity: 3 1/3≠3.2. The revalidation evidence retains mathematically correct `16/5=3.2` and flags the publisher's incidental approximate-description discrepancy, without asserting an Edulytiks defect absent comparison proof.
+- Original publisher shape cards, diagrams, independently downloaded student PDF, graphics/rights and login-gated Cool-downs remain outside source-exact asset certification; teacher-designed alternatives are not publisher-original photocopies and open drawing/peer work remains human reviewed.
+- Prior A–B–C authoring evidence retained with limitations; no authenticated runtime, Stage D, CI, intentional test run, merge or deployment in this pass. Tests `AUTHORED_NOT_RUN`.
+- Total sequentially reviewed lessons **130/148**, U07 **13/13** reviewed; not 100% certified source-exact artwork or independent production acceptance.
+- Next **U08:L01**, 18 lessons in remaining unit.

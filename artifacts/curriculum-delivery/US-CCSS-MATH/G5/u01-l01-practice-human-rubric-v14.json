@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "kind": "GRADE_OWNED_SHARED_PRACTICE_REQUIREMENTS_NOT_IMPLEMENTED",
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+  "grade": 5,
+  "sourceEdition": "IM K–5 2021",
+  "stageA": "COMPLETE_WITH_EVIDENCE",
+  "stageB": "COMPLETE_WITH_EVIDENCE",
+  "stageC": "SOURCE_GOAL_COVERED_WITH_EXACT_COMPARISON_AND_TEACHER_REVIEW_WRITTEN_NOT_RUN",
+  "sourcePaths": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html"
+  ],
+  "sourceBoundaries": {
+    "verified": "Original 2021 teacher lesson and embedded Student Facing; goals and two eight-cube comparison pairs, group builds and connected nine-cube construction. 2021 preparation materials 24 cubes per pair; dot paper optional.",
+    "notVerified": [
+      "Separate original 2021 Student Task PDF",
+      "Exact original 2021 four-object and comparison-pair image pixel/shape identity",
+      "Access-gated original 2021 Cool-down",
+      "Third-party image-specific reproduction rights"
+    ],
+    "treatment": "No source art or unseen copyrighted figure copied. All source-function visuals clearly labelled original Edulytiks models, mathematically equivalent to task goals, not pixel-faithful.",
+    "publisherCooldown": "NOT_VERIFIED_GATED",
+    "edulytiksCooldown": "ORIGINAL_AUTHORED"
+  },
+  "outputsRequired": {
+    "selectedRuntimeLessonPracticeContract": "Source-specific Grade 5 U01:L01 contract override authored at src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit1Lesson1PracticeContracts.cs; runtime tests deferred to D",
+    "staticLegacyFamily": "usccss.g5.unit_cube_count",
+    "staticLegacyFamilyStatus": "usccss.g5.unit_cube_count excluded from selected L01 family: multiplication-only supplemental skill",
+    "strategy": "REUSE numeric measurement only as supplementary practice; EXTEND existing family/teacher-rubric workflow for construction if source-grounded and demonstrably missing; NEW_ENGINE only upon proof REUSE/EXTEND inadequate",
+    "mustNotAssume": "A numerical answer 8 or 9, or a rectangular-prism dimension multiplication item, verifies physical model construction or explanation.",
+    "escalation": "https://github.com/EIAS79/Edulytics/issues/592",
+    "singleWriter": "Supervisor 1 designated shared integration writer",
+    "digitalFamily": "usccss.g5.u01.l01.compare_connected_cube_models",
+    "digitalScope": "Connected unequal/equal cube-count comparison only; teacher checks physical WODB, 9-cube connectedness, open models, explanation, own cooldown",
+    "teacherReviewPath": "Existing 8-point RichV2 manual rubric; teacher evidence submission UI not asserted until D"
+  },
+  "taskContracts": [
+    {
+      "task": "WODB_four_objects",
+      "response": [
+        "defended choice with mathematical justification",
+        "oral/written/tactile accessible response"
+      ],
+      "rubric": [
+        "Accept more than one coherent excluded object",
+        "Reason accurately about cube count, arrangement, geometric shape or orientation"
+      ],
+      "evaluation": "TEACHER_REVIEW"
+    },
+    {
+      "task": "compare_two_eight_cube_pairs",
+      "response": [
+        "compare model A versus B and A versus C",
+        "explain that equal cube count of congruent cubes entails equal volume despite different heights"
+      ],
+      "rubric": [
+        "Preserve distinct arrangements; compare space occupied not height",
+        "No scalar-only auto-pass"
+      ],
+      "evaluation": "TEACHER_REVIEW"
+    },
+    {
+      "task": "order_four_group_constructions",
+      "response": [
+        "four distinct student-generated objects with measured cube counts",
+        "ascending/descending correctly ordered volumes with explanation"
+      ],
+      "rubric": [
+        "Order by equal-unit cube counts even when height disagrees",
+        "Explain ties where present; arbitrary valid counts accepted"
+      ],
+      "evaluation": "TEACHER_REVIEW"
+    },
+    {
+      "task": "construct_nine_connected",
+      "response": [
+        "valid connected nonoverlapping nine-cube coordinates or teacher-observed real models",
+        "two different arrangements with same count and justified equality"
+      ],
+      "rubric": [
+        "Exactly nine congruent cubes per object; one face-connected solid",
+        "Different coordinate arrangements up to translation and rotation to prove genuinely different shape",
+        "Allow tactile, drawing, verbal or physical alternative with teacher verification"
+      ],
+      "evaluation": "HUMAN_REQUIRED; independent static coordinate oracle is not a deployed verifier"
+    },
+    {
+      "task": "edulytiks_original_exit_check",
+      "response": [
+        "two distinct connected eight-cube arrangements",
+        "explanation that each occupies eight equal-size cube spaces"
+      ],
+      "rubric": [
+        "Accept accurate representation, correct counts and mathematical explanation",
+        "Reject scalar-only 8 or unverified disconnected pile",
+        "Teacher verifies drawing, oral/physical/tactile responses"
+      ],
+      "evaluation": "TEACHER_REVIEW"
+    }
+  ],
+  "independentFixtureExpectations": [
+    {
+      "name": "correct_eight_connected",
+      "expected": "VALID",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "correct_nine_connected_stair_and_slab",
+      "expected": "VALID_DISTINCT_SAME_VOLUME",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "correct_rotated_equivalent",
+      "expected": "VALID_EQUIVALENT_ROTATION",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "incorrect_volume_by_height",
+      "expected": "REJECT_REASONING",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "incorrect_count_seven_given_eight",
+      "expected": "REJECT",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "disconnected_nine",
+      "expected": "REJECT",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "duplicate_overlap",
+      "expected": "REJECT",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "malformed_coordinates",
+      "expected": "REJECT",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    },
+    {
+      "name": "numeric_answer_only",
+      "expected": "HUMAN_ASSESSMENT_INCOMPLETE",
+      "provenance": "EDULYTIKS_ORIGINAL"
+    }
+  ],
+  "testStatus": "WRITTEN_NOT_RUN",
+  "runtimeContractTestStatus": "STAGE_D_NOT_RUN",
+  "release": "NO_GO"
+}
