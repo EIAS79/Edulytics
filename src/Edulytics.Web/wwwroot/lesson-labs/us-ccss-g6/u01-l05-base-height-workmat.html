@@ -121,6 +121,19 @@ code{white-space:normal}
 <label for="explanation">Your formula, construction method and reasoning (teacher assessed)</label>
 <textarea id="explanation" placeholder="Draw separately on paper and write your explanation here."></textarea>
 <p>Practice: A 1 m² square contains nine identical small squares; each is cut into two equal triangles. Determine the exact area of six triangles, and the number of these triangles needed to cover 1½ m². Show a fraction model and reasoning.</p>
+<section aria-labelledby="edulytics-cd-heading" class="printbox">
+<h2 id="edulytics-cd-heading">Edulytics original Cool-down — two corresponding heights</h2>
+<p><strong>Independent Edulytics-authored exit task, not publisher question 5.4.</strong> A parallelogram has area <strong>36 cm²</strong>. One possible base is <strong>9 cm</strong>; a different possible base is <strong>6 cm</strong>. Find the perpendicular height for each base, draw and label two valid base-height pairs, then explain why the two products describe the same region.</p>
+<form id="cooldown-form">
+<fieldset>
+<div><label for="cd-h1">Corresponding height for the 9 cm base (cm)</label><input id="cd-h1" type="text" inputmode="decimal" required></div>
+<div><label for="cd-h2">Corresponding height for the 6 cm base (cm)</label><input id="cd-h2" type="text" inputmode="decimal" required></div>
+</fieldset>
+<button type="submit">Check numeric heights</button>
+<output id="cd-feedback" aria-live="polite"></output>
+</form>
+<p><strong>Teacher rubric:</strong> (1) both heights perpendicular to their selected bases; (2) lengths 4 and 6 cm correctly paired with bases 9 and 6 cm; (3) both products 36 cm² with squared units; (4) an explanation based on unchanged area, not mixing dimensions. Numeric feedback is not a grade for the drawing or explanation.</p>
+</section>
 <button type="button" id="print">Print workmat for teacher review</button>
 <p class="notice">Official publisher Cool-down 5.4 and authenticated teacher response key are not reproduced. Teacher must assign an authorized Cool-down separately.</p>
 </section>
@@ -140,6 +153,18 @@ document.getElementById("area-form").addEventListener("submit",event=>{
     });
     document.getElementById("area-feedback").textContent=results.join("; ")+
        ". "+correct+" of 4 numeric areas matched. A teacher must still assess the drawings and explanations.";
+});
+document.getElementById("cooldown-form").addEventListener("submit",event=>{
+    event.preventDefault();
+    const ids=["cd-h1","cd-h2"], targets=[4,6];
+    const correct=ids.map((id,i)=>{
+        const v=document.getElementById(id).value.trim();
+        return /^(?:0|[1-9][0-9]*)(?:\.0+)?$/.test(v)&&Number(v)===targets[i];
+    });
+    document.getElementById("cd-feedback").textContent=
+      correct.every(Boolean)
+        ?"Both numeric heights are correct. Submit your right-angle diagrams and written justification to the teacher."
+        :"Recheck each corresponding base-height pair using 36 ÷ the chosen base. Teacher still reviews your diagrams.";
 });
 document.getElementById("print").addEventListener("click",()=>window.print());
 </script>

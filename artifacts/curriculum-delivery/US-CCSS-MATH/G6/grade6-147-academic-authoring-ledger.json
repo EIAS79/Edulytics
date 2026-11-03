@@ -211,9 +211,9 @@
       "nextOfficialLessonTriage": "PED:US-CCSS-MATH:G6:U01:L05",
       "exceptionNotice": "U01:L05 through U03:L06 remain unreviewed by current A-C acceptance sequence, not automatically BLOCKED; U03:L07 closed as explicit mapped independent exception, not blanket approval to skip earlier."
     },
-    "confirmedABCAuthoredClosures": 4,
-    "abcAuthoredReadyForStageD": 4,
-    "abcClosureNextLesson": "PED:US-CCSS-MATH:G6:U01:L05"
+    "confirmedABCAuthoredClosures": 5,
+    "abcAuthoredReadyForStageD": 5,
+    "abcClosureNextLesson": "PED:US-CCSS-MATH:G6:U01:L06"
   },
   "sharedBlockers": [
     {
@@ -880,7 +880,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Source 5.1–5.3 and original practice were repaired with selected numeric/geometry Practice and first-party diagrams. A–B–C remains OPEN: original 5.4 publisher Cool-down and authenticated answer keys are not in the local archive; full source denominator incomplete. Keep current L05 active until source/rights evidence is resolved, then finish Stage A–B–C.",
+      "nextStep": "A–B–C authoring complete under owner-authorized independent Edulytics Cool-down. Publisher original 5.4/teacher answer transcript remains SOURCE_UNAVAILABLE (publisher text parity not 100%); learner runtime and teacher rubric belong to Stage D. Next lesson U01:L06.",
       "abcAuthoringCandidate": {
         "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l05-abc-candidate-source-gated-20261103.json",
         "elementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l05-element-coverage-20261103.json",
@@ -901,6 +901,21 @@
         ],
         "nextLessonPermission": false,
         "stageD": "NOT_RUN"
+      },
+      "abcAuthoringClosure": {
+        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l05-abc-authoring-closure-20261103.json",
+        "codeSha": "f0b4d47cc9a0b39200b7e9f7f46145c1b033d452",
+        "readyForStageD": true,
+        "gradeLabel": "ready for stage D",
+        "reviewComplete2021MarkerAdded": false,
+        "ownerAuthorizedCooldownSubstitute": true,
+        "publisherSourceTextParity100": false,
+        "sourceUnavailableItemsPreserved": 2,
+        "testStatus": "AUTHORED_NOT_RUN",
+        "stageC": "SELECTED_EXACT_PRACTICE_STATIC_AUTHORED",
+        "stageD": "NOT_RUN",
+        "nextLesson": "PED:US-CCSS-MATH:G6:U01:L06",
+        "note": "Prior explicit-gap candidate is preserved as historical source access evidence; replaced by the owner's independent first-party Cool-down exception, NOT by an invented publisher text or 100% claim."
       }
     },
     {
@@ -14169,7 +14184,7 @@
   "lastRubricCandidateCommit": "b0b44dace99266d33938bbb0062443876a35922a",
   "lastGradeSourceBoundaryTestCommit": "d076067c37ef3c059b1a27056ab4a8c99da8b1c8",
   "nextUnreviewedPublicSourceTaskLesson": "PED:US-CCSS-MATH:G6:U01:L04",
-  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U01:L05",
+  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U01:L06",
   "nextSharedCapabilityWork": "Owner-designated single-writer trace of actual selected Practice contract and teacher-rubric persistence for U01 L01-L03 (then all 147) + protected metadata predecessor study",
   "fullSourceIndexFiles": {
     "student": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
@@ -14183,7 +14198,7 @@
     "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l15-l16-source-nets-area-volume-boundaries.json"
   ],
   "nextDeepOriginalSourceActivityReview": null,
-  "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L05",
+  "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L06",
   "nextSharedIntegrationAction": "Supervisor 1-designated single-writer shared RichV2 test coexistence with G7 PR #590, exact G6 lesson Practice, rubric storage, guarded Grade6 content materialization/promotion; issue #592 comment 6484465498",
   "lastSourceIndicesVerified": {
     "studentTitleMatches": 147,
@@ -14425,7 +14440,7 @@
     "failed": 0,
     "claimBoundary": "Independent numerical calculations only; committed grade-specific tests and real app have NOT_RUN"
   },
-  "lastConfirmedClosedAbcLesson": "PED:US-CCSS-MATH:G6:U01:L04",
-  "activeLesson": "PED:US-CCSS-MATH:G6:U01:L05",
+  "lastConfirmedClosedAbcLesson": "PED:US-CCSS-MATH:G6:U01:L05",
+  "activeLesson": "PED:US-CCSS-MATH:G6:U01:L06",
   "courseReadyForStageD": false
 }
