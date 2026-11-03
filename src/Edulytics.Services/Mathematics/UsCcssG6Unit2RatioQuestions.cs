@@ -142,6 +142,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0411DivisionFluency = "usccss.g6.u04.l11.divide_fractions_exact";
     public const string L0411DivisionLogic = "usccss.g6.u04.l11.fraction_algorithm_reasoning";
 
+    public const string L0412LengthValues = "usccss.g6.u04.l12.fractional_length_comparisons";
+    public const string L0412LengthReasoning = "usccss.g6.u04.l12.fractional_comparison_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1797,6 +1800,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("For phone fraction charged2/5 in1/3hour, 2/5÷1/3 directly gives full time. 1=yes,0=no.",0,"It gives fraction per hour6/5."),
             new("2/5 of a full bucket weighs2.5lb, so full bucket water weighs6.25lb. 1=yes,0=no.",1,"2.5÷.4=6.25."),
             new("Multiplying by a fraction's reciprocal works only when the divisor is nonzero. 1=yes,0=no.",1,"Zero denominator not allowed.")
+        ],
+        [L0412LengthValues] =
+        [
+            new("One inch is about2 11/20cm. Three inches in TWENTIETHS of a centimeter?",153,"3×51/20=153/20cm."),
+            new("One inch is about51/20cm. One centimeter as fraction of inch in FIFTY-FIRSTS?",20,"1÷51/20=20/51in."),
+            new("Ten cm divided by2 11/20cm per inch: inches in FIFTY-FIRSTS?",200,"10×20/51=200/51in."),
+            new("Zookeeper6¼ft, giraffe9⅜ft. Giraffe height compared with zookeeper in HALF-UNITS?",3,"(75/8)/(25/4)=3/2."),
+            new("Zookeeper6¼ft, giraffe9⅜ft. Zookeeper height as fraction of giraffe in THIRDS?",2,"(25/4)/(75/8)=2/3."),
+            new("A rectangular tile is1½ft long, bathroom length10½ft. Number of tiles along length?",7,"10.5/1.5=7."),
+            new("Tile span1½ft, floor width6½ft. Number of TILE SPANS in THIRDS?",13,"6.5/1.5=13/3 tile lengths."),
+            new("Floor width6½ft and tile side1½ft. Minimum WHOLE tiles across row if pieces may not combine?",5,"Need cover4⅓ tile spans, round up5 tiles."),
+            new("In3/4cup oatmeal there is1/10 daily iron. Daily iron fraction per1cup in FIFTEENTHS?",2,"(1/10)/(3/4)=2/15."),
+            new("What fraction of1/2 is1/3? Answer in THIRDS?",2,"(1/3)/(1/2)=2/3."),
+            new("How many groups of4/5 are in2? Answer in HALF-GROUP UNITS?",5,"2÷4/5=5/2 groups."),
+            new("The zookeeper6¼ft tall expressed in QUARTER-FOOT portions?",25,"25/4feet."),
+            new("Giraffe9⅜ft expressed in EIGHTH-FOOT portions?",75,"75/8feet."),
+            new("3 inches at2.55cm per inch, in HUNDREDTHS of centimeter?",765,"3×2.55=7.65cm."),
+            new("A floor is10½ft long with tiles1½ft each. Total feet of7 tile lengths in HALVES?",21,"7×1.5=10.5ft=21 halves."),
+            new("One cup iron fraction2/15. Three cups iron fraction in FIFTHS?",2,"3×2/15=2/5."),
+            new("A box6 feet high compared with a1½-foot item. Multiplicative ratio?",4,"6/1.5=4.")
+        ],
+        [L0412LengthReasoning] =
+        [
+            new("A giraffe9⅜ft is one and a half times6¼ft. 1=yes,0=no.",1,"9.375/6.25=1.5."),
+            new("The zookeeper6¼ft is two-thirds as tall as the giraffe9⅜ft. 1=yes,0=no.",1,"6.25/9.375=2/3."),
+            new("Three inches at2.55cm per inch are7.65cm. 1=yes,0=no.",1,"3×2.55."),
+            new("One centimeter is20/51 of an inch given51/20cm per inch. 1=yes,0=no.",1,"Reciprocal."),
+            new("Seven tiles of1.5ft span exactly10.5ft. 1=yes,0=no.",1,"7×1.5=10.5."),
+            new("Six and a half feet contains exactly4 whole1.5ft spans with no remainder. 1=yes,0=no.",0,"There are4⅓ spans."),
+            new("Across6.5ft using1.5ft squares, at least5 tile-length positions are required if no reused cuts. 1=yes,0=no.",1,"Round up from4⅓."),
+            new("Three quarters cup containing1/10 daily iron implies1cup contains2/15. 1=yes,0=no.",1,"1/10÷3/4=2/15."),
+            new("One third is two thirds of one half. 1=yes,0=no.",1,"1/3÷1/2=2/3."),
+            new("Two contains two and a half groups of4/5. 1=yes,0=no.",1,"2÷4/5=2.5."),
+            new("Comparison questions 'how many times as tall' can be modeled by dividing heights in same units. 1=yes,0=no.",1,"Multiplicative comparison."),
+            new("A number of tile-span lengths always equals the integer number of physical uncut tiles purchased. 1=yes,0=no.",0,"Fractional spans and cuts differ."),
+            new("A source ruler with approximate inch-centimeter factor should be marked approximate, not an exact standard. 1=yes,0=no.",1,"2.55 is approximate."),
+            new("Original source diagrams can be evaluated using a numeric quotient only without checking lengths. 1=yes,0=no.",0,"Teacher checks representations.")
         ]
     };
 

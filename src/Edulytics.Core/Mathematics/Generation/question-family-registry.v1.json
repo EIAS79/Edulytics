@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u04.l12.fractional_length_comparisons",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-inch-2and11twentieth-cm-zookeeper-giraffe-fraction-tile-and-iron",
+      "representations": [
+        "numeric",
+        "length_tape"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u04.l12.fractional_comparison_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "how-many-times-as-tall-vs-fraction-of-and-physical-tile-cuts",
+      "representations": [
+        "boolean_reasoning",
+        "tape_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u04.l11.divide_fractions_exact",
       "version": 1,
       "skillId": "ratio.unit_rate",
