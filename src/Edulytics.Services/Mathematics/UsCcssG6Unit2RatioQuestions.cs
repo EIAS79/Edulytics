@@ -268,6 +268,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0702OppositeNumbers = "usccss.g6.u07.l02.signed_opposites_values";
     public const string L0702OppositeLogic = "usccss.g6.u07.l02.opposite_number_line_reasoning";
 
+    public const string L0703Comparisons = "usccss.g6.u07.l03.signed_order_comparisons";
+    public const string L0703SignedLogic = "usccss.g6.u07.l03.signed_inequality_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3661,6 +3664,50 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A yard is36in and 91.44cm when one inch is2.54cm. 1=yes,0=no.",1,"36×2.54."),
             new("Zero occupies the midpoint between any two numbers that are opposites. 1=yes,0=no.",1,"Symmetry."),
             new("A signed number's opposite always has a different absolute value. 1=yes,0=no.",0,"Same distance from0.")
+        ],
+        [L0703Comparisons] =
+        [
+            new("Compare -5 and2. Enter1 if first larger,0 equal,2 if smaller.",2,"-5<2."),
+            new("Compare3 and-8. Enter1 if first larger,0 equal,2 if smaller.",1,"3>-8."),
+            new("Compare-12 and-15. Enter1 if first larger,0 equal,2 if smaller.",1,"-12>-15."),
+            new("Compare-12.5 and-12. Enter1 if first larger,0 equal,2 if smaller.",2,"-12.5<-12."),
+            new("Compare-8.7 and-8.4. Enter1 if first larger,0 equal,2 if smaller.",2,"-8.7<-8.4."),
+            new("Compare0.4 and-1.5. Enter1 if first larger,0 equal,2 if smaller.",1,"Positive>negative."),
+            new("Compare-1.7 and-1.1. Enter1 if first larger,0 equal,2 if smaller.",2,"-1.7<-1.1."),
+            new("Compare-1.5 and-1.7. Enter1 if first larger,0 equal,2 if smaller.",1,"-1.5>-1.7."),
+            new("Lowest elevation California in feet?",-282,"Below sea."),
+            new("Lowest elevation Colorado feet?",3350,"Positive."),
+            new("Lowest elevation Louisiana feet?",-8,"Negative."),
+            new("Lowest elevation New Mexico feet?",2842,"Positive."),
+            new("Lowest elevation Wyoming feet?",3099,"Positive."),
+            new("Track400meters per lap. 2laps meters?",800,"2×400."),
+            new("Track400meters per lap. 5laps meters?",2000,"5×400."),
+            new("Track400meters per lap. 14laps meters?",5600,"14×400."),
+            new("7600meters at400m per lap. Laps?",19,"7600÷400."),
+            new("Stadium16000 capacity,13920 attendees. Percent filled?",87,"13920/16000=.87."),
+            new("Stadium16000 capacity,13920 attendees. Percent NOT filled?",13,"100-87."),
+            new("Number of empty seats at capacity16000 with13920 attendees?",2080,"16000-13920."),
+            new("Difference from elevation-282ft to-8ft in FEET?",274,"-8-(-282)=274.")
+        ],
+        [L0703SignedLogic] =
+        [
+            new("-5>2 is true. 1=yes,0=no.",0,"Negative less than positive."),
+            new("3>-8 is true. 1=yes,0=no.",1,"Positive greater."),
+            new("-12>-15 is true. 1=yes,0=no.",1,"-12 to right."),
+            new("-12.5>-12 is true. 1=yes,0=no.",0,"-12.5 left."),
+            new("-8.7<-8.4 is true. 1=yes,0=no.",1,"Original statement."),
+            new("-8.7 is left of-8.4. 1=yes,0=no.",1,"Original choice B."),
+            new("-8.4 is greater than-8.7. 1=yes,0=no.",1,"Original F."),
+            new("-8.7 is farther right than-8.4. 1=yes,0=no.",0,"Actually left."),
+            new("Zero is greater than every negative number. 1=yes,0=no.",1,"Number-line order."),
+            new("A number farther from zero is always greater, including negatives. 1=yes,0=no.",0,"Negative reversal."),
+            new("California elevation-282ft is lower than Louisiana-8ft. 1=yes,0=no.",1,"-282<-8."),
+            new("Colorado3350ft is higher than Wyoming3099ft. 1=yes,0=no.",1,"3350>3099."),
+            new("Wyoming3099ft is higher than New Mexico2842ft. 1=yes,0=no.",1,"3099>2842."),
+            new("-1.5 is greater than-1.7. 1=yes,0=no.",1,"-1.5 right."),
+            new("At400m/lap,7600m equals19laps. 1=yes,0=no.",1,"Division."),
+            new("Stadium13920 of16000 seats filled is87%. 1=yes,0=no.",1,"13920/16000."),
+            new("On a number line, if a is right of b then a>b. 1=yes,0=no.",1,"Definition order.")
         ]
     };
 
