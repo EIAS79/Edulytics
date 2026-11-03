@@ -1866,6 +1866,22 @@
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />
+            @* Grade 6 A-B-C authoring has six complete canonical Edulytics
+               teaching sections. Rich V2 can compress away the exact lesson
+               goal, source-skill reasoning and worked examples. Retain Rich
+               V2 interactions, and keep the canonical instructional sections
+               visible and accessible for every G6 learner. This does not
+               auto-grade teacher-led drawing or discussion activities. *@
+            @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G6:", StringComparison.Ordinal))
+            {
+                <div class="lesson-source-aligned-activities"
+                     aria-label="Grade 6 full first-party lesson teaching">
+                    @foreach (var canonicalSection in sections)
+                    {
+                        <partial name="_LessonReaderSection" model="canonicalSection" />
+                    }
+                </div>
+            }
             @* A-C source-corrected original U03 L20-L27 teaching lives in the
                canonical translation. The V2 runtime composer compresses the
                worked examples/steps and can otherwise hide essential original

@@ -4,6 +4,9 @@ on:
     branches: [curriculum/us-ccss-g6-full-grade-20261028]
     paths:
       - '.github/workflows/us-ccss-g6-stage-d.yml'
+      - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
+      - 'tools/phase29/g6_stage_d_authenticated_https.py'
+      - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
       - 'tests/academic-us-ccss-g6-*.test.cjs'
@@ -16,6 +19,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/us-ccss-g6-stage-d.yml'
+      - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
+      - 'tools/phase29/g6_stage_d_authenticated_https.py'
+      - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
       - 'tests/academic-us-ccss-g6-*.test.cjs'
