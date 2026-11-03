@@ -115,6 +115,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0402DivisionNumbers = "usccss.g6.u04.l02.division_groups_and_size";
     public const string L0402DivisionMeaningLogic = "usccss.g6.u04.l02.division_interpretations";
 
+    public const string L0403ContextualDivision = "usccss.g6.u04.l03.division_contextual_results";
+    public const string L0403DivisionInterpretation = "usccss.g6.u04.l03.division_explanation_checks";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1430,6 +1433,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("If a/6 is less than1 for positive a, a must be greater than6. 1=yes,0=no.",0,"a<6."),
             new("The quotient can represent either number of groups or amount per group depending on units. 1=yes,0=no.",1,"Context determines unit of unknown."),
             new("At3mph versus2.8mph for3h, distance difference is0.6mile. 1=yes,0=no.",1,"9 vs8.4 miles.")
+        ],
+        [L0403ContextualDivision] =
+        [
+            new("Mai has36 dollars and movie tickets cost4.50dollars each. Number of tickets?",8,"36÷4.50=8."),
+            new("Sixteen items arranged in groups of8. Number of groups?",2,"16÷8=2."),
+            new("Sixteen items arranged in2 groups. Items per group?",8,"16÷2=8."),
+            new("Four divided by one and one-third equals how many groups?",3,"4÷(4/3)=3."),
+            new("Mini muffins cost300cents per12. Price per muffin in CENTS?",25,"300÷12=25."),
+            new("At25cents per muffin, how many muffins can be bought for200cents?",8,"200÷25=8."),
+            new("At25cents per muffin, price of16 muffins in CENTS?",400,"16×25=400."),
+            new("Family monthly budget2400 dollars,44% housing. Dollars on housing?",1056,"2400×0.44=1056."),
+            new("Family monthly budget2400 dollars,23% food. Dollars on food?",552,"2400×0.23=552."),
+            new("Family monthly budget2400 dollars,6% clothing. Dollars on clothing?",144,"2400×0.06=144."),
+            new("Family monthly budget2400 dollars,17% transportation. Dollars on transport?",408,"2400×0.17=408."),
+            new("Family budget2400 with44% housing23% food6% clothing17% transport. Percent savings?",10,"100-44-23-6-17=10%."),
+            new("Family budget2400 dollars with10% remaining. Savings in DOLLARS?",240,"2400×0.1=240."),
+            new("A whole4 is divided into groups of4/3. How many groups?",3,"Three groups of4/3 make4."),
+            new("Noah says division always reduces positive values. Counterexample2 divided by0.5 equals?",4,"2÷0.5=4."),
+            new("Movie tickets cost450cents each. Cost for8 tickets in CENTS?",3600,"450×8=3600."),
+            new("Twelve muffins cost300cents, cost of24 muffins in CENTS?",600,"2×300=600.")
+        ],
+        [L0403DivisionInterpretation] =
+        [
+            new("36 dollars at4.50 dollars per ticket purchases8 tickets. 1=yes,0=no.",1,"8×4.50=36."),
+            new("For16÷8=2, 2 can represent number of equal groups with8 in each. 1=yes,0=no.",1,"16=2×8."),
+            new("For16÷2=8, 8 can represent group size if there are2 equal groups. 1=yes,0=no.",1,"16=2×8."),
+            new("Both16÷8=2 and16÷2=8 can be represented by the same group arrangement with differing unknowns. 1=yes,0=no.",1,"Groups and items per group swap."),
+            new("4÷(1⅓)=3 because3 groups of1⅓ make4. 1=yes,0=no.",1,"3×4/3=4."),
+            new("Dividing by a positive fraction less than1 always gives a smaller positive result than the dividend. 1=yes,0=no.",0,"E.g.2÷0.5=4."),
+            new("Mini muffins are25cents each if a dozen costs300cents. 1=yes,0=no.",1,"300÷12=25."),
+            new("Two dollars buys8 muffins at25cents each. 1=yes,0=no.",1,"200÷25=8."),
+            new("Sixteen mini muffins at25cents each cost4 dollars. 1=yes,0=no.",1,"16×25=400cents."),
+            new("In a budget44%+23%+6%+17%=90%, leaving10% savings. 1=yes,0=no.",1,"Total allocated90%."),
+            new("Housing44% of2400dollars equals1056dollars. 1=yes,0=no.",1,"2400×.44=1056."),
+            new("A correct multiplication equation can check a division quotient. 1=yes,0=no.",1,"Inverse relationship."),
+            new("The division quotient always has the same real-world units as the dividend. 1=yes,0=no.",0,"Depends on grouping interpretation."),
+            new("Teacher review is needed for a student-created visual diagram even when arithmetic is automatically checked. 1=yes,0=no.",1,"Diagram correctness needs a separate rubric.")
         ]
     };
 
