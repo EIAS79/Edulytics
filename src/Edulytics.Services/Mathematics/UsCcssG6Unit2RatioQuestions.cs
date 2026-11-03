@@ -127,6 +127,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0406TapeValues = "usccss.g6.u04.l06.fraction_division_values";
     public const string L0406TapeLogic = "usccss.g6.u04.l06.fraction_tape_interpretation";
 
+    public const string L0407FractionGroups = "usccss.g6.u04.l07.fraction_of_group_numeric";
+    public const string L0407FractionLogic = "usccss.g6.u04.l07.fractional_group_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1595,6 +1598,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("25% of160 is40. Enter1=yes,0=no.",1,"One quarter."),
             new("50% of350 is175. Enter1=yes,0=no.",1,"One half."),
             new("A diagram must label the reference whole before counting fractional groups. Enter1=yes,0=no.",1,"Fraction definition depends on whole.")
+        ],
+        [L0407FractionGroups] =
+        [
+            new("One batch needs1/2lb flour. How many batches with1lb?",2,"1÷1/2=2."),
+            new("One batch needs1/2lb flour. With3/4lb, batches in HALF-BATCH UNITS?",3,"3/4÷1/2=3/2 batches."),
+            new("One batch needs1/2lb flour. With1/4lb, batches in HALF-BATCH UNITS?",1,"1/4÷1/2=1/2 batch."),
+            new("Whiskers weighs2⅔kg and Piglio4kg. Whiskers as fraction of Piglio, in THIRDS?",2,"(8/3)/4=2/3."),
+            new("Piglio4kg to Whiskers2⅔kg. Piglio as fraction in HALF-UNITS?",3,"4/(8/3)=3/2."),
+            new("Andre's trip is1⅝km, walked1/3km. Fraction completed in THIRTY-NINTHS?",8,"(1/3)/(13/8)=8/39."),
+            new("What fraction of2½ is4/5? Answer in TWENTY-FIFTHS?",8,"(4/5)/(5/2)=8/25."),
+            new("How many groups of3/4 are in11/4? Answer in THIRDS?",11,"(11/4)/(3/4)=11/3 groups."),
+            new("How many groups of3/4 are in6½? Answer in THIRDS?",26,"(13/2)×(4/3)=26/3."),
+            new("Four divided by2/7 gives how many groups?",14,"4×7/2=14."),
+            new("One-fourth divided by one-half, answer in HALF-GROUPS?",1,"1/4÷1/2=1/2 group."),
+            new("One-third divided by one-half, answer in THIRD-GROUP UNITS?",2,"1/3÷1/2=2/3 group."),
+            new("Two-thirds divided by four-thirds, answer in HALF-GROUPS?",1,"(2/3)/(4/3)=1/2."),
+            new("One-sixth divided by one-third, answer in HALF-GROUPS?",1,"1/6÷1/3=1/2."),
+            new("A full group is1/2kg, available1/8kg. Fraction of full group in QUARTERS?",1,"1/8÷1/2=1/4."),
+            new("Two whole kilograms split into half-kilogram groups. Number of groups?",4,"2÷1/2=4.")
+        ],
+        [L0407FractionLogic] =
+        [
+            new("One-quarter pound flour makes half of a batch needing one-half pound. 1=yes,0=no.",1,"1/4÷1/2=1/2."),
+            new("Three-quarters pound makes one and one-half batches needing half-pound each. 1=yes,0=no.",1,"3/4÷1/2=1.5."),
+            new("One pound flour makes only half a batch needing half-pound each. 1=yes,0=no.",0,"Makes2 batches."),
+            new("Whiskers2⅔kg is2/3 as heavy as Piglio4kg. 1=yes,0=no.",1,"8/3÷4=2/3."),
+            new("Piglio4kg is1½ as heavy as Whiskers2⅔kg. 1=yes,0=no.",1,"4÷8/3=1.5."),
+            new("The equation ?×1⅝=1/3 asks what fraction of Andre's trip has been walked. 1=yes,0=no.",1,"Part divided by total."),
+            new("The equation ?×1⅝=1/3 asks what trip distance remains in kilometers. 1=yes,0=no.",0,"It asks fractional portion."),
+            new("Four divided by2/7 asks how many two-seventh-sized groups fit into four. 1=yes,0=no.",1,"Original choice B."),
+            new("Four divided by2/7 is equal to4×2/7. 1=yes,0=no.",0,"Division uses reciprocal."),
+            new("If an amount is smaller than one whole group, the number of groups can be between0 and1. 1=yes,0=no.",1,"Fractional group."),
+            new("A group-count model uses group count×group size=total amount. 1=yes,0=no.",1,"Multiplicative structure."),
+            new("11/4 divided by3/4 gives11/3 groups. 1=yes,0=no.",1,"Cancel quarters."),
+            new("The original unit whole matters when describing a fraction of a group. 1=yes,0=no.",1,"Reference and scale must be defined."),
+            new("A small positive dividend divided by a larger positive divisor yields a quotient greater than1. 1=yes,0=no.",0,"Quotient below1.")
         ]
     };
 
