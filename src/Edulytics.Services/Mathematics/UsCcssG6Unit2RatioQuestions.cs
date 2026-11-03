@@ -73,6 +73,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0305Rates = "usccss.g6.u03.l05.source_speed_price_values";
     public const string L0305Comparisons = "usccss.g6.u03.l05.same_rate_price_speed_reasoning";
 
+    public const string L0306Rates = "usccss.g6.u03.l06.source_reciprocal_rate_values";
+    public const string L0306InterpretRate = "usccss.g6.u03.l06.reciprocal_rate_meaning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -851,6 +854,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Comparing prices of packages of different sizes is best done after finding per-item price. 1=yes,0=no.",1,"Common unit price."),
             new("When comparing two moving rates, distance alone proves who is faster even when times differ. 1=yes,0=no.",0,"Use distance/time for each."),
             new("A price per square foot must include dollars and square-foot units. 1=yes,0=no.",1,"Units explain the quotient.")
+        ],
+        [L0306Rates] =
+        [
+            new("Raspberries cost12 dollars for3 pints. Cost per pint in DOLLARS?",4,"12/3=4dollars/pint."),
+            new("Raspberries cost12 dollars for3 pints. Number of QUARTER-PINT portions per dollar?",1,"3/12=1/4pint per dollar, one quarter-pint portion."),
+            new("Raspberries cost12 dollars for3 pints. Pints purchasable with20 dollars?",5,"20/4=5pints."),
+            new("Raspberries cost12 dollars for3 pints. Cost for8 pints in DOLLARS?",32,"8×4=32."),
+            new("Pink paint uses4 cups WHITE for3 cups RED. White cups for6 cups red?",8,"Double both."),
+            new("Pink paint4 white:3 red. Red cups for8 white?",6,"Double both."),
+            new("Pink paint4 white:3 red. For1 cup WHITE, red amount in QUARTER-CUP portions?",3,"3/4cup is3 quarter-cup units."),
+            new("Pink paint4 white:3 red. For1 cup RED, white amount in THIRD-CUP portions?",4,"4/3cups white is4 third-cup units."),
+            new("Polenta uses5 cups water for2 cups cornmeal. For3 cups water, cornmeal in FIFTH-CUP portions?",6,"3×2/5=6/5cups, six fifth-cup portions."),
+            new("Polenta uses5 cups water for2 cups cornmeal. For3 cups cornmeal, water in HALF-CUP portions?",15,"3×5/2=7.5cups, fifteen half-cup portions."),
+            new("Paint covers350square feet per gallon. Gallons for1750square feet?",5,"1750/350=5gallons."),
+            new("Andre types208 words in4 minutes. Words per minute?",52,"208/4=52."),
+            new("Noah types342 words in6 minutes. Words per minute?",57,"342/6=57."),
+            new("Andre52words/min and Noah57words/min. Enter1 for Andre faster,2 for Noah faster.",2,"Noah types5words/minute more."),
+            new("Eight ears corn cost256 cents. Cost per ear in CENTS?",32,"256/8=32cents."),
+            new("Twelve ears corn cost432cents. Cost per ear in CENTS?",36,"432/12=36cents."),
+            new("Which corn package is lower cost per ear? Enter1=8ears256cents,2=12ears432cents.",1,"32cents is less than36cents."),
+            new("100meters is approximately109yards. Which original choice A33.3 B91 C100 D109 is nearest? Enter OPTION NUMBER.",4,"D≈109yards.")
+        ],
+        [L0306InterpretRate] =
+        [
+            new("At3pints for12 dollars, the price is4 dollars per pint. 1=yes,0=no.",1,"12/3=4."),
+            new("At3pints for12 dollars, each dollar buys4 pints. 1=yes,0=no.",0,"One dollar buys1/4pint."),
+            new("The reciprocal unit rate of4 dollars/pint is1/4 pint per dollar. 1=yes,0=no.",1,"Reciprocal when both quantities positive."),
+            new("At3pints for12 dollars,20 dollars buys5 pints. 1=yes,0=no.",1,"20/4=5."),
+            new("For polenta5 water:2 cornmeal,3cups water needs1.2cups cornmeal. 1=yes,0=no.",1,"3×2/5=1.2."),
+            new("For polenta5 water:2 cornmeal,3cups cornmeal needs7.5cups water. 1=yes,0=no.",1,"3×5/2=7.5."),
+            new("For paint350sqft per gallon,1750sqft requires5gallons. 1=yes,0=no.",1,"1750/350=5."),
+            new("For paint350sqft per gallon, each square foot uses350 gallons. 1=yes,0=no.",0,"Each square foot uses1/350 gallon."),
+            new("Typing Andre208/4 gives52wpm and Noah342/6 gives57wpm. Noah is faster. 1=yes,0=no.",1,"57>52."),
+            new("Corn8 for256cents is a better unit price than12 for432cents. 1=yes,0=no.",1,"32cents per ear <36."),
+            new("A rate a/b answers amount of first quantity per one second quantity. 1=yes,0=no.",1,"Units determine interpretation."),
+            new("The reciprocal b/a gives a different unit interpretation of the same nonzero quantity relationship. 1=yes,0=no.",1,"E.g. dollars/pint and pints/dollar."),
+            new("A rate per one should be reported without units because only the numeral matters. 1=yes,0=no.",0,"Units are essential.")
         ]
     };
 

@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u03.l06.source_reciprocal_rate_values",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-pink4white3red-raspberries3pints12dollars-polenta5water2cornmeal-paint1750sf350sf-gallon",
+      "representations": [
+        "numeric",
+        "ratio_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u03.l06.reciprocal_rate_meaning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-both-unit-rates-mean-dollars-per-pint-vs-pints-per-dollar-and-different-questions",
+      "representations": [
+        "boolean_reasoning",
+        "rate_interpretation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u03.l05.source_speed_price_values",
       "version": 1,
       "skillId": "ratio.unit_rate",
