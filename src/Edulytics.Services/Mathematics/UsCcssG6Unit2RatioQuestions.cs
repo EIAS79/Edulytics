@@ -364,6 +364,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0814CenterValues = "usccss.g6.u08.l14.mean_median_outlier_changes";
     public const string L0814CenterLogic = "usccss.g6.u08.l14.mean_median_choice_reasoning";
 
+    public const string L0815QuartileValues = "usccss.g6.u08.l15.quartiles_five_number_summary";
+    public const string L0815QuartileLogic = "usccss.g6.u08.l15.quartile_spread_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5279,6 +5282,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Changing an extreme observation without changing ranks can leave median unchanged. 1=yes,0=no.",1,"Order-middle stable."),
             new("A dot plot with symmetric cluster may suggest mean close to median. 1=yes,0=no.",1,"Often close."),
             new("A student choice of center requires justification with data context. 1=yes,0=no.",1,"Teacher rubric.")
+        ],
+        [L0815QuartileValues] =
+        [
+            new("A dataset has20 all-different ordered values. How many lie strictly between first and third quartile using median-of-halves convention?",10,"Ranks6..15."),
+            new("20 distinct ordered values. Number strictly between Q1 and median using split-halves convention?",5,"Ranks6..10."),
+            new("Bowling Mai median120 IQR5, Priya median118 IQR15. Which has less variability by IQR? Enter1 Mai,2 Priya.",1,"5<15."),
+            new("Bowling Mai IQR5 vs Priya15. Difference in IQR?",10,"15-5=10."),
+            new("US travel times2,2,7,7,8,8,8,11,17,20. Median?",8,"Middle eighth values8,8."),
+            new("US sorted travel times first quartile Q1?",7,"Lower five middle7."),
+            new("US sorted travel times third quartile Q3?",11,"Upper five middle11."),
+            new("US travel-time IQR?",4,"11-7=4."),
+            new("Canada sorted1,2,5,5,7,7,10,15,28,30. Median?",7,"Two7s."),
+            new("Canada first quartile?",5,"Middle of lower five5."),
+            new("Canada third quartile?",15,"Middle upper five15."),
+            new("Canada IQR?",10,"15-5=10."),
+            new("Australia sorted5,7,9,15,15,20,20,20,25,45. Median in HALVES?",35,"(15+20)/2=17.5."),
+            new("Australia first quartile?",9,"Lower five median9."),
+            new("Australia third quartile?",20,"Upper five median20."),
+            new("Australia IQR?",11,"20-9=11."),
+            new("New Zealand sorted3,6,7,10,10,15,15,15,20,24. Median in HALVES?",25,"(10+15)/2=12.5."),
+            new("New Zealand first quartile?",7,"Lower five median7."),
+            new("New Zealand third quartile?",15,"Upper five median15."),
+            new("New Zealand IQR?",8,"15-7=8."),
+            new("South Africa sorted5,5,10,10,15,15,30,40,45,60. Median?",15,"Middle two15."),
+            new("South Africa first quartile?",10,"Lower five middle10."),
+            new("South Africa third quartile?",40,"Upper five middle40."),
+            new("South Africa IQR?",30,"40-10=30."),
+            new("Jar has20 pennies equal16% of coins. Total number coins?",125,"20/.16=125."),
+            new("Dataset2,4,6,8,10. Range?",8,"10-2=8.")
+        ],
+        [L0815QuartileLogic] =
+        [
+            new("IQR equals third quartile minus first quartile. 1=yes,0=no.",1,"Q3-Q1."),
+            new("Five-number summary comprises min,Q1,median,Q3,max. 1=yes,0=no.",1,"Definition."),
+            new("Median is the second quartile Q2. 1=yes,0=no.",1,"50th percentile."),
+            new("Q1 marks an approximate lower-quarter cut in ordered data. 1=yes,0=no.",1,"25th percentile."),
+            new("Q3 marks the upper-three-quarter cut. 1=yes,0=no.",1,"75th percentile."),
+            new("For20 distinct ordered values under split-half convention, ten values fall betweenQ1 andQ3. 1=yes,0=no.",1,"Central ten."),
+            new("Mai IQR5 shows less middle-half variability than Priya IQR15. 1=yes,0=no.",1,"Smaller spread."),
+            new("US commute IQR4, Canada10, Australia11, NZ8, SA30 match source five plots. 1=yes,0=no.",1,"Computed from sorted times."),
+            new("South African commute IQR30 is largest among the five. 1=yes,0=no.",1,"30."),
+            new("US commute IQR4 is smallest among the five. 1=yes,0=no.",1,"4."),
+            new("US median8 and Australia median17.5 differ. 1=yes,0=no.",1,"17.5>8."),
+            new("A smaller IQR always guarantees a smaller full range. 1=yes,0=no.",0,"Outliers may extend range."),
+            new("The interquartile range measures spread of middle50% of ordered data. 1=yes,0=no.",1,"Central half."),
+            new("The range max-min can be sensitive to unusual extremes. 1=yes,0=no.",1,"Outliers."),
+            new("Source 20pennies make16% of jar of125 coins. 1=yes,0=no.",1,"20/.16=125."),
+            new("The exact values of the original word-game scores can be recovered without observing their dot-plot image. 1=yes,0=no.",0,"Image required."),
+            new("An IQR is an average of absolute deviations from mean. 1=yes,0=no.",0,"That's MAD."),
+            new("A student must label quartiles with the underlying measurement unit when presenting data. 1=yes,0=no.",1,"Context.")
         ]
     };
 
