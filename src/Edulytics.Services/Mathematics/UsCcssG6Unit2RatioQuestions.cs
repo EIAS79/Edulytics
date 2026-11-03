@@ -172,6 +172,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0504PreciseArithmetic = "usccss.g6.u05.l04.precise_decimal_add_subtract";
     public const string L0504DecimalReasoning = "usccss.g6.u05.l04.placevalue_high_precision_logic";
 
+    public const string L0505DecimalProducts = "usccss.g6.u05.l05.decimal_products_base_ten";
+    public const string L0505DecimalLogic = "usccss.g6.u05.l05.decimal_product_placevalue_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2218,6 +2221,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("63 customers at2 loaves per9 need14 loaves. 1=yes,0=no.",1,"63/9×2."),
             new("20 loaves at2 for9 customers correspond to90 customers. 1=yes,0=no.",1,"20/2×9."),
             new("In decimal subtraction, digits should be aligned by place value even when numbers have different displayed precision. 1=yes,0=no.",1,"Decimal points aligned.")
+        ],
+        [L0505DecimalProducts] =
+        [
+            new("122.1×1/100 in THOUSANDTHS?",1221,"122.1/100=1.221."),
+            new("11.8×1/100 in TEN-THOUSANDTHS?",1180,"11.8/100=.118=1180 ten-thousandths."),
+            new("1350.1×1/100 in THOUSANDTHS?",13501,"13.501."),
+            new("1.704×1/100 in HUNDRED-THOUSANDTHS?",1704,"1.704/100=.01704, 1704 hundred-thousandths."),
+            new("0.06×0.154 in HUNDRED-THOUSANDTHS?",924,".00924=924 hundred-thousandths."),
+            new("0.01×0.02 in TEN-THOUSANDTHS?",2,".0002."),
+            new("0.3×0.2 in HUNDREDTHS?",6,".06."),
+            new("1.2×5 in TENTHS?",60,"6.0=60tenths."),
+            new("0.9×1.1 in HUNDREDTHS?",99,".99."),
+            new("1.5×2 in TENTHS?",30,"3.0."),
+            new("0.0004×0.005 in MILLIONTHS?",2,".000002."),
+            new("33.1+1.95 in HUNDREDTHS?",3505,"35.05."),
+            new("1.075+27.105 in THOUSANDTHS?",28180,"28.180."),
+            new("0.401+9.28 in THOUSANDTHS?",9681,"9.681."),
+            new("13.2-1.78 in HUNDREDTHS?",1142,"11.42."),
+            new("23.11-0.376 in THOUSANDTHS?",22734,"22.734."),
+            new("0.9-0.245 in THOUSANDTHS?",655,"0.655."),
+            new("An area diagram represents0.3×0.2 in HUNDREDTH-SQUARE-UNIT parts?",6,"6 of100 equal unit squares.")
+        ],
+        [L0505DecimalLogic] =
+        [
+            new("0.06×0.154=0.00924. 1=yes,0=no.",1,"6×154=924 scaled by1/100000."),
+            new("0.06×0.154 can be written6×1/100×154×1/1000. 1=yes,0=no.",1,"Source option A."),
+            new("0.06×0.154 can be written6×154×1/100000. 1=yes,0=no.",1,"Source option B."),
+            new("0.06×0.154 can be written6×0.1×154×0.01. 1=yes,0=no.",0,"This equals.924, not.00924."),
+            new("0.06×0.154 can be written6×154×0.00001. 1=yes,0=no.",1,"Source option D."),
+            new("0.01×0.02=0.0002. 1=yes,0=no.",1,"1/100×2/100."),
+            new("0.3×0.2=0.06. 1=yes,0=no.",1,"3/10×2/10."),
+            new("0.9×1.1=0.99. 1=yes,0=no.",1,"9×11/100."),
+            new("0.0004×0.005=0.000002. 1=yes,0=no.",1,"4×5×10^-7=2×10^-6."),
+            new("Multiplying positive number by1/100 reduces its value to one hundredth. 1=yes,0=no.",1,"Shift place values by factor100."),
+            new("Moving decimal points is a shortcut for scaling base-ten units, not a new arbitrary arithmetic rule. 1=yes,0=no.",1,"Place-value interpretation."),
+            new("1.2×5=6. 1=yes,0=no.",1,"Six whole units."),
+            new("A quadrilateral's drawn area must be graded using the actual polygon, not just a numeric result. 1=yes,0=no.",1,"Teacher geometry rubric."),
+            new("The equivalent representations of decimal factors rely on associative and commutative multiplication. 1=yes,0=no.",1,"Regrouping factors.")
         ]
     };
 
