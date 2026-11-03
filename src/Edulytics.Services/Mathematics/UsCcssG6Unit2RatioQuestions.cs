@@ -199,6 +199,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0513DecimalQuotients = "usccss.g6.u05.l13.decimal_divisor_quotients";
     public const string L0513DecimalLogic = "usccss.g6.u05.l13.decimal_divisor_reasoning";
 
+    public const string L0514DecimalContext = "usccss.g6.u05.l14.decimal_context_calculations";
+    public const string L0514DecimalReasoning = "usccss.g6.u05.l14.decimal_application_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2592,6 +2595,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("School bus110% of460 walkers equals506. 1=yes,0=no.",1,"Scale factor1.10."),
             new("Scaling only divisor changes quotient. 1=yes,0=no.",1,"Denominator factor."),
             new("The original penny count assumes penny-only mass, ignoring bag mass. 1=yes,0=no.",1,"Model assumption.")
+        ],
+        [L0514DecimalContext] =
+        [
+            new("A12m ribbon has9 pieces cut at0.4m each. Remaining ribbon in TENTHS OF METER?",84,"12-9×.4=8.4."),
+            new("Diego has8.4m remaining ribbon. Each wreath needs0.6m. Number of wreaths?",14,"8.4/.6=14."),
+            new("Amazon rainforest6.42million km² in1994, 2014 at50/59. Closest WHOLE TENTH million km²?",54,"6.42×50/59≈5.44million, about5.4."),
+            new("Jada homework141 test scores87,81,91. Total points earned?",400,"141+87+81+91=400."),
+            new("Maximum before final homework150 plus3 tests100 each. Total possible?",450,"150+300=450."),
+            new("Jada with400/450 before final. Percentage in NINTHS OF PERCENT?",800,"400/450×100=800/9 percent."),
+            new("Jada receives92 of100 final. Total earned?",492,"400+92=492."),
+            new("After92 final, total possible points?",550,"450+100=550."),
+            new("Jada needs90% of550 total points. Minimum points required?",495,"550×.9=495."),
+            new("Jada has400 before final and needs495 total. Minimum final score?",95,"495-400=95."),
+            new("0.151-0.028 in THOUSANDTHS?",123,"0.123."),
+            new("0.106-0.0315 in TEN-THOUSANDTHS?",745,"0.0745."),
+            new("3.572-2.6014 in TEN-THOUSANDTHS?",9706,"0.9706."),
+            new("24.2÷1.1 equals?",22,"242÷11=22."),
+            new("13.25÷0.4 in EIGHTHS?",265,"13.25/.4=33.125=265 eighths."),
+            new("For170.28÷0.08, quotient in HALVES?",4257,"2128.5=4257 halves."),
+            new("Remainder after9 ribbon cuts of0.4m from12m in CENTIMETERS?",840,"8.4m=840cm."),
+            new("12m ribbon divided into0.6m sections before cuts. Number?",20,"12/.6=20."),
+            new("If class total550 points,90% is how many?",495,"550×.9=495.")
+        ],
+        [L0514DecimalReasoning] =
+        [
+            new("Ribbon12m minus9 pieces0.4m leaves8.4m. 1=yes,0=no.",1,"12-3.6=8.4."),
+            new("Eight point four meters can be cut into14 pieces of0.6m. 1=yes,0=no.",1,"8.4/.6=14."),
+            new("Amazon6.42million×50/59 is approximately5.4million. 1=yes,0=no.",1,"50/59≈.847."),
+            new("Jada earns400 points of450 possible before final, less than90%. 1=yes,0=no.",1,"400/450≈88.89%."),
+            new("If Jada scores92 on100-point final she reaches90% overall. 1=yes,0=no.",0,"492/550≈89.45%."),
+            new("Jada needs95 on final to reach495 of550 total points. 1=yes,0=no.",1,"495/550=90%."),
+            new("Jada can compute final course percentage by averaging homework/test percentages without accounting for point totals. 1=yes,0=no.",0,"Use points earned/total possible."),
+            new("0.151-0.028=0.123. 1=yes,0=no.",1,"Align decimals."),
+            new("0.106-0.0315=0.0745. 1=yes,0=no.",1,"Decimal difference."),
+            new("3.572-2.6014=.9706. 1=yes,0=no.",1,"Decimal difference."),
+            new("24.2÷1.1=22. 1=yes,0=no.",1,"Both×10."),
+            new("13.25÷0.4=33.125. 1=yes,0=no.",1,"Scale10."),
+            new("170.28÷0.08=2128.5. 1=yes,0=no.",1,"Scale100."),
+            new("On hurdle diagrams, intervals between hurdles are counted between markers, not automatically equal to total hurdle count. 1=yes,0=no.",1,"Geometry of marked gaps."),
+            new("An estimate may be preferable when original source asks closest value rather than exact value. 1=yes,0=no.",1,"Precision appropriate to task.")
         ]
     };
 
