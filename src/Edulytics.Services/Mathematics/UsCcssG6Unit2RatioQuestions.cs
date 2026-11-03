@@ -229,6 +229,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0608ExpressionValues = "usccss.g6.u06.l08.equivalent_expression_evaluation";
     public const string L0608EquivalentLogic = "usccss.g6.u06.l08.equivalent_for_all_values_reasoning";
 
+    public const string L0609DistributeNumbers = "usccss.g6.u06.l09.distributive_numeric_products";
+    public const string L0609DistributeLogic = "usccss.g6.u06.l09.distributive_area_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3033,6 +3036,48 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("2.3×1.4=3.22. 1=yes,0=no.",1,"Decimal multiplication."),
             new("1.72×2.6=4.472. 1=yes,0=no.",1,"Decimal multiplication."),
             new("An equivalent-expression length model should preserve the same variable part structure for every value of the variable. 1=yes,0=no.",1,"Structural identity.")
+        ],
+        [L0609DistributeNumbers] =
+        [
+            new("Rectangle height5, width2+4. Area?",30,"5×6=30."),
+            new("Rectangle height5, left width2. Left area?",10,"5×2=10."),
+            new("Rectangle height5, right width4. Right area?",20,"5×4=20."),
+            new("19×50=?",950,"(10+9)×50=500+450."),
+            new("20×50 minus50=?",950,"1000-50."),
+            new("98×24=?",2352,"(100-2)×24=2400-48."),
+            new("21×15=?",315,"(20+1)×15=300+15."),
+            new("0.51×40 in TENTHS?",204,"20.4=204tenths."),
+            new("Eight friends each buy popcorn for299cents. Total CENTS?",2392,"8×299=2392."),
+            new("120% of x is78. x?",65,"78/1.2=65."),
+            new("Kiran15years; aunt17 older. Aunt age?",32,"15+17=32."),
+            new("Kiran30years; aunt17 older. Aunt age?",47,"30+17=47."),
+            new("Aunt age60,17 older than Kiran. Kiran age?",43,"60-17=43."),
+            new("Four copies of a=3 have total value?",12,"4×3=12."),
+            new("Four copies of a=2 have total value?",8,"4×2=8."),
+            new("4a with a=1=?",4,"4×1."),
+            new("8 popcorn bags at3dollars each cost in CENTS?",2400,"8×300=2400."),
+            new("Popcorn 299c each for8 bags saves how many CENTS vs300c each?",8,"8×1=8cents."),
+            new("(100-2)×24: amount subtracted from2400?",48,"2×24=48."),
+            new("5×(2+4) decomposed to5×2+5×4 total?",30,"10+20=30.")
+        ],
+        [L0609DistributeLogic] =
+        [
+            new("5(2+4) is the area of rectangle height5 width6. 1=yes,0=no.",1,"Original A."),
+            new("5×2+5×4 gives same outer rectangle area. 1=yes,0=no.",1,"Original C."),
+            new("5×6 gives same area. 1=yes,0=no.",1,"Original F."),
+            new("5×2+4 gives same area as5(2+4). 1=yes,0=no.",0,"14 vs30."),
+            new("5×2×4 gives same area as5×6. 1=yes,0=no.",0,"40 vs30."),
+            new("19×50 can be found by10×50 plus9×50. 1=yes,0=no.",1,"Additive distribution."),
+            new("19×50 can be found from20×50 minus50. 1=yes,0=no.",1,"Subtraction distribution."),
+            new("98×24=(100-2)×24. 1=yes,0=no.",1,"Decompose98."),
+            new("21×15=(20+1)×15. 1=yes,0=no.",1,"Decompose21."),
+            new("0.51×40=0.5×40+0.01×40. 1=yes,0=no.",1,"Distribution decimals."),
+            new("8 popcorn bags at2.99 each cost23.92 dollars. 1=yes,0=no.",1,"8×3 minus8cents."),
+            new("a+a+a+a and4a are equivalent for every real a. 1=yes,0=no.",1,"Repeated addition."),
+            new("120% of65 is78. 1=yes,0=no.",1,"1.2×65=78."),
+            new("Kiran aunt17years older: aunt age is x+17 when Kiran x. 1=yes,0=no.",1,"Add17."),
+            new("Kiran aunt60years, Kiran43. 1=yes,0=no.",1,"60-17=43."),
+            new("For a rectangle partition, total area equals sum of non-overlapping subareas. 1=yes,0=no.",1,"Area additivity.")
         ]
     };
 
