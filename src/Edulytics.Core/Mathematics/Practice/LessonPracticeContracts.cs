@@ -2840,6 +2840,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit7 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SIGNED_TEMPERATURE_ELEVATION_NUMBER_LINE",
+            [
+                "usccss.g6.u07.l01.signed_temperatures_elevation",
+                "usccss.g6.u07.l01.signed_number_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

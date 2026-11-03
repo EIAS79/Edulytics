@@ -262,6 +262,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0619BoundedRelationships = "usccss.g6.u06.l19.first_party_equation_table_examples";
     public const string L0619InterpretRelationships = "usccss.g6.u06.l19.first_party_relationship_interpretation";
 
+    public const string L0701SignedValues = "usccss.g6.u07.l01.signed_temperatures_elevation";
+    public const string L0701SignLogic = "usccss.g6.u07.l01.signed_number_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3566,6 +3569,48 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A graph produced from a table must use consistent scale on each axis. 1=yes,0=no.",1,"Correct plotting."),
             new("Equations, graphs, tables and verbal descriptions may represent one underlying relationship. 1=yes,0=no.",1,"Multiple representations."),
             new("A student can change their graph without revising their equation if the represented quantities no longer agree. 1=yes,0=no.",0,"All representations must remain consistent.")
+        ],
+        [L0701SignedValues] =
+        [
+            new("Temperature8degrees drops10degrees. New temperature?",-2,"8-10=-2."),
+            new("Diver at-25ft below sea rises15ft. New elevation feet?",-10,"-25+15=-10."),
+            new("Whale at sea surface elevation feet?",0,"Surface reference zero."),
+            new("Whale swims300ft down. Elevation?",-300,"0-300=-300."),
+            new("Whale swims150ft farther down from-300. Elevation?",-450,"-300-150=-450."),
+            new("Difference between temperatures-11 and-15 in DEGREES?",4,"-11-(-15)=4."),
+            new("A submarine at-8ft descends2ft. Elevation?",-10,"-8-2=-10."),
+            new("A location10ft below sea level. Signed elevation?",-10,"Negative means below reference."),
+            new("A location8ft above sea level. Signed elevation?",8,"Positive above zero."),
+            new("Temperature3degrees below zero. Signed degrees?",-3,"-3."),
+            new("Temperature5degrees above zero. Signed degrees?",5,"+5."),
+            new("Temperature6degrees above zero. Signed degrees?",6,"+6."),
+            new("Temperature2¾degrees below zero, answer in QUARTER-DEGREE units?",-11,"-11/4 degrees."),
+            new("2.1÷1.5 in TENTHS?",14,"=1.4."),
+            new("Andre drank15oz, which is3/5 bottle. Full bottle OUNCES?",25,"15÷3/5=25."),
+            new("Bottle15oz, Jada drinks8.5oz. Left in HALF-OUNCE UNITS?",13,"6.5oz=13halves."),
+            new("Second bottle16oz is8/5 first bottle. First bottle capacity?",10,"16÷8/5=10."),
+            new("Rectangle area24 sq units, one side2¾. Other side in ELEVENTHS?",96,"24÷11/4=96/11."),
+            new("Whale elevation after first300ft descent and150ft more, difference from surface feet?",450,"450 below, difference magnitude450."),
+            new("From diver-25ft to-10ft ascent distance?",15,"15ft upward.")
+        ],
+        [L0701SignLogic] =
+        [
+            new("Temperature-11degrees is warmer than-15degrees. 1=yes,0=no.",1,"-11>-15."),
+            new("Elevation-10ft is closer to sea surface than-8ft. 1=yes,0=no.",0,"Distance10>8."),
+            new("Zero elevation marks sea level in the example. 1=yes,0=no.",1,"Reference."),
+            new("Whale at surface has elevation0ft. 1=yes,0=no.",1,"Sea level."),
+            new("Whale300ft below sea level has elevation-300ft. 1=yes,0=no.",1,"Negative below."),
+            new("Further descent150ft from-300 gives-150ft. 1=yes,0=no.",0,"It is-450."),
+            new("A temperature drop10 from8 gives-2. 1=yes,0=no.",1,"8-10=-2."),
+            new("A diver rising15ft from-25ft reaches-10ft. 1=yes,0=no.",1,"-25+15=-10."),
+            new("On a vertical elevation line, numbers above0 are positive. 1=yes,0=no.",1,"Standard orientation."),
+            new("-15 is greater than-11. 1=yes,0=no.",0,"-15 lies lower/left."),
+            new("Below-zero temperatures can be written with a minus sign. 1=yes,0=no.",1,"Signed notation."),
+            new("Negative elevation always means impossibility. 1=yes,0=no.",0,"Under sea level exists."),
+            new("The convention zero degrees C can represent freezing point of water. 1=yes,0=no.",1,"Temperature reference."),
+            new("Zero is neither positive nor negative. 1=yes,0=no.",1,"Signed-number definitions."),
+            new("The number line can extend to values below0. 1=yes,0=no.",1,"Negative numbers."),
+            new("Elevation-10ft is farther from sea level than-8ft. 1=yes,0=no.",1,"Distances10 versus8.")
         ]
     };
 
