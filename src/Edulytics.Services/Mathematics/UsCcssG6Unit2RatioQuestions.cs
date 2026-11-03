@@ -355,6 +355,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0811MadValues = "usccss.g6.u08.l11.mean_absolute_deviation_amounts";
     public const string L0811MadReasoning = "usccss.g6.u08.l11.mad_interpretation_logic";
 
+    public const string L0812CompareMeans = "usccss.g6.u08.l12.mean_mad_source_datasets";
+    public const string L0812CompareLogic = "usccss.g6.u08.l12.mean_mad_spread_context";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5128,6 +5131,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Multiplying every observed quantity by2 doubles MAD. 1=yes,0=no.",1,"Scaled distances."),
             new("A labeled dot plot can show center and spread simultaneously. 1=yes,0=no.",1,"Visual context."),
             new("The student's open-ended second-dot-plot design needs teacher review. 1=yes,0=no.",1,"Many valid solutions.")
+        ],
+        [L0812CompareMeans] =
+        [
+            new("US travel times2,2,6,6,7,7,7,11,17,20. Total in minutes?",85,"Sum85."),
+            new("US data mean in TENTHS MINUTES?",85,"85/10=8.5min."),
+            new("US data MAD in TENTHS MINUTES?",45,"4.5min."),
+            new("Australia times5,7,9,15,15,20,20,20,25,45. Total minutes?",181,"Sum181."),
+            new("Australia mean in TENTHS minutes?",181,"181/10=18.1."),
+            new("Australia MAD in TENTHS minutes?",79,"7.9min."),
+            new("South Africa times5,5,10,10,15,15,30,40,45,60. Total minutes?",235,"Sum235."),
+            new("South Africa mean in TENTHS minutes?",235,"23.5min."),
+            new("South Africa MAD in TENTHS minutes?",162,"16.2min."),
+            new("Which has greater MAD US or Australia? Enter1 US,2 Australia.",2,"7.9>4.5."),
+            new("Which has lower mean South Africa or Australia? Enter1 SA,2 Australia.",2,"18.1<23.5."),
+            new("Which has lower MAD SA or Australia? Enter1 SA,2 Australia.",2,"7.9<16.2."),
+            new("US mean8.5, Australia18.1. Difference in TENTHS MINUTES?",96,"18.1-8.5=9.6."),
+            new("SA mean23.5, Australia18.1. Difference in TENTHS MINUTES?",54,"23.5-18.1=5.4."),
+            new("Sunnyside mean score50, MAD4; Shadyside mean60, MAD15. Which is MORE consistent? Enter1 Sunnyside,2 Shadyside.",1,"Smaller MAD4."),
+            new("Which basketball team has higher mean points? Enter1 Sunnyside,2 Shadyside.",2,"60>50."),
+            new("Sunnyside MAD4, Shadyside15. Difference in MAD points?",11,"15-4=11."),
+            new("Rectangle side lengths a=4,b=6. Perimeter?",20,"2a+2b=20."),
+            new("Compare -2 and-8. Which is GREATER? Enter -2 or -8.",-2,"-2 closer zero."),
+            new("Elephant seal expected weight5500lbs,5 seals exactly same? Enter1 guaranteed,0 no.",0,"Population varies."),
+            new("Independent data2,2,2,2 mean?",2,"All values2."),
+            new("Independent data2,2,2,2 MAD?",0,"No variation."),
+            new("Independent data0,0,10,10 mean?",5,"20/4=5."),
+            new("Independent data0,0,10,10 MAD?",5,"Average absolute deviation5.")
+        ],
+        [L0812CompareLogic] =
+        [
+            new("US dataset mean8.5 and MAD4.5 based on given ten values. 1=yes,0=no.",1,"Recomputed."),
+            new("Australia dataset mean18.1 MAD7.9. 1=yes,0=no.",1,"Recomputed."),
+            new("Australia's MAD is significantly greater than US MAD in source option D. 1=yes,0=no.",1,"7.9>4.5."),
+            new("South Africa data mean23.5 MAD16.2. 1=yes,0=no.",1,"Source given times."),
+            new("Australia's mean is smaller than South Africa mean. 1=yes,0=no.",1,"18.1<23.5."),
+            new("Australia's MAD is smaller than South Africa MAD. 1=yes,0=no.",1,"7.9<16.2."),
+            new("A smaller MAD means commuters are more consistent relative to their group's mean. 1=yes,0=no.",1,"Less average deviation."),
+            new("A smaller mean means commuters typically have shorter travel times. 1=yes,0=no.",1,"Lower average."),
+            new("Sunnyside50 mean4 MAD is more consistent than Shadyside60 mean15 MAD. 1=yes,0=no.",1,"Smaller spread."),
+            new("Shadyside has higher mean points but greater variability. 1=yes,0=no.",1,"60>50,15>4."),
+            new("Mean and MAD provide the same type of information, so MAD alone gives typical score. 1=yes,0=no.",0,"MAD measures spread."),
+            new("Rectangle perimeter a+a+b+b and2a+2b are equivalent expressions. 1=yes,0=no.",1,"Combine like terms."),
+            new("Numbers -3,-5,-7 lie strictly between-8 and-2. 1=yes,0=no.",1,"All within open interval."),
+            new("-9 lies between-8 and-2. 1=yes,0=no.",0,"Outside."),
+            new("Five elephant seals all weigh exactly5500lb simply because adults generally average about5500lb. 1=yes,0=no.",0,"Variation."),
+            new("Statistical variability means individual values can differ around a reported typical value. 1=yes,0=no.",1,"Data distribution."),
+            new("Shifting all data by10 increases mean10 and leaves MAD same. 1=yes,0=no.",1,"Offsets unchanged."),
+            new("Teacher assesses source graphs and explanations of comparability. 1=yes,0=no.",1,"Multiple valid responses.")
         ]
     };
 

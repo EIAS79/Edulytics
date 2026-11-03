@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u08.l12.mean_mad_source_datasets",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-ten-US-Australia-SouthAfrica-commute-mean-mad-and-highschool-teams",
+      "representations": [
+        "dot_plot",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u08.l12.mean_mad_spread_context",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-MAD-Australia-significantly-more-than-US-SouthAfrica-mean-and-MAD",
+      "representations": [
+        "boolean_reasoning",
+        "context_variability"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
       "version": 1,
       "skillId": "ratio.unit_rate",
