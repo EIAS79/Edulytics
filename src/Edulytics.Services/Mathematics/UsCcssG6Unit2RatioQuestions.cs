@@ -184,6 +184,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0508ProductArithmetic = "usccss.g6.u05.l08.multiplication_calculation_values";
     public const string L0508ProductLogic = "usccss.g6.u05.l08.decimal_product_reasoning";
 
+    public const string L0509WholeDivision = "usccss.g6.u05.l09.partial_quotient_results";
+    public const string L0509DivisionLogic = "usccss.g6.u05.l09.partial_quotient_principles";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2382,6 +2385,47 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A partial area diagram's total is the sum of non-overlapping subrectangle areas. 1=yes,0=no.",1,"Partition geometry."),
             new("Decimal-product answers should be rounded to cents only when the money context requires it. 1=yes,0=no.",1,"Intermediate precision matters."),
             new("The original pictured subrectangle mapping is automatically verified by a total numeric product. 1=yes,0=no.",0,"Image requires teacher review.")
+        ],
+        [L0509WholeDivision] =
+        [
+            new("2105÷5 equals?",421,"400+20+1=421."),
+            new("657÷3 equals?",219,"200+10+9=219."),
+            new("1150÷46 equals?",25,"46×25=1150."),
+            new("534÷6 equals?",89,"6×(80+9)=534."),
+            new("1032÷43 equals?",24,"43×24=1032."),
+            new("In 2105÷5 partial quotients, subtract2000 and first partial quotient?",400,"5×400=2000."),
+            new("After subtracting2000 from2105, remainder?",105,"2105-2000=105."),
+            new("From105 divide by5 using partial quotient20, subtract how much?",100,"5×20=100."),
+            new("After subtracting100 from105, remainder?",5,"105−100=5."),
+            new("From657÷3, Andre uses partial quotient200. Subtraction amount?",600,"3×200=600."),
+            new("For657÷3, Andre uses200,10,9. Their SUM?",219,"219."),
+            new("For657÷3, Jada uses50,100,60,9. Sum?",219,"50+100+60+9=219."),
+            new("534÷6 quotient partial80 and9. Subtraction for80?",480,"80×6=480."),
+            new("534−480 remainder?",54,"534-480=54."),
+            new("Rectangle3.25in×6.1in area in THOUSANDTHS of in²?",19825,"3.25×6.1=19.825."),
+            new("Square side4.6in area in HUNDREDTHS of in²?",2116,"4.6²=21.16."),
+            new("Parallelogram base5.875 height3.5in area in TEN-THOUSANDTHS?",205625,"5.875×3.5=20.5625."),
+            new("Triangle base7.18 height5.4in area in THOUSANDTHS?",19386,"7.18×5.4/2=19.386."),
+            new("Which polygon has largest area? Enter1 rectangle,2 square,3 parallelogram,4 triangle.",2,"Square21.16 > parallelogram20.5625."),
+            new("Spider web4micrometers, fiber1/100000m=10 micrometers. Difference in MICROMETERS?",6,"10-4=6 micrometers."),
+            new("Which is thicker:1 spider web4micrometers or2 fabric fiber10micrometers? Enter1 or2.",2,"Fiber10>4.")
+        ],
+        [L0509DivisionLogic] =
+        [
+            new("2105÷5=421. 1=yes,0=no.",1,"5×421=2105."),
+            new("657÷3=219. 1=yes,0=no.",1,"3×219=657."),
+            new("Andre and Jada may choose different partial quotients for657÷3 yet reach219. 1=yes,0=no.",1,"Same total quotient."),
+            new("Andre's200+10+9 equals219. 1=yes,0=no.",1,"Sum partial quotients."),
+            new("Jada's50+100+60+9 equals219. 1=yes,0=no.",1,"Valid alternative."),
+            new("1150÷46=25. 1=yes,0=no.",1,"46×25=1150."),
+            new("534÷6=89. 1=yes,0=no.",1,"6×89=534."),
+            new("1032÷43=24. 1=yes,0=no.",1,"43×24=1032."),
+            new("Partial quotients are pieces of the quotient whose divisor products are subtracted from dividend. 1=yes,0=no.",1,"Repeated subtract multiples."),
+            new("One must subtract only multiples of the divisor to preserve the quotient decomposition. 1=yes,0=no.",1,"Place-value structure."),
+            new("A correct final quotient automatically confirms every step of a student's partial-quotient notation is valid. 1=yes,0=no.",0,"Teacher checks reasoning."),
+            new("Square side4.6 has area21.16sqin, largest among source polygons. 1=yes,0=no.",1,"Compare measured areas."),
+            new("A shirt fiber10micrometers is thicker than4micrometer web. 1=yes,0=no.",1,"10>4."),
+            new("One micrometer is one millionth of a meter. 1=yes,0=no.",1,"Metric definition.")
         ]
     };
 
