@@ -103,6 +103,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0315PercentAmounts = "usccss.g6.u03.l15.percent_of_quantity_exact";
     public const string L0315PercentProperties = "usccss.g6.u03.l15.percent_of_quantity_reasoning";
 
+    public const string L0316FindPercent = "usccss.g6.u03.l16.find_percent_from_two_amounts";
+    public const string L0316FindPercentLogic = "usccss.g6.u03.l16.percent_division_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1262,6 +1265,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A 3:20 chaperone:student ratio with92 total people gives12 chaperones. 1=yes,0=no.",1,"23 parts, each4."),
             new("A percent multiplication factor over1 can produce a value greater than the reference. 1=yes,0=no.",1,"Such as152%."),
             new("When finding A% of B, multiplying B by A/100 gives the amount. 1=yes,0=no.",1,"Definition of percent per100.")
+        ],
+        [L0316FindPercent] =
+        [
+            new("A ride minimum height is40 inches.34in is what percent of40in?",85,"34/40×100=85%."),
+            new("A ride minimum height is40 inches.54in is what percent of40in?",135,"54/40×100=135%."),
+            new("Tool normally costs80dollars, savings12dollars. Savings percent?",15,"12/80×100=15%."),
+            new("A tub capacity80gallons and fills4gal/minute for6minutes. Gallons filled?",24,"4×6=24."),
+            new("A tub capacity80gallons and fills4gal/minute for6minutes. Percent filled?",30,"24/80×100=30%."),
+            new("Backpack30dollars, sale price85% of usual. Sale price in CENTS?",2550,"30×0.85=25.50dollars."),
+            new("Sweatshirt18dollars, sale85% of usual. Sale price in CENTS?",1530,"18×0.85=15.30dollars."),
+            new("Soccer ball24dollars80cents, sale85% of usual. Sale price in CENTS?",2108,"2480×0.85=2108cents."),
+            new("Eight six-packs of hot dogs at210cents each cost how many CENTS?",1680,"8×210=1680."),
+            new("Six eight-packs of hot dogs at312cents each cost how many CENTS?",1872,"6×312=1872."),
+            new("Both hotdog package offers supply48 hotdogs. Cheaper choice? Enter1 for six-packs,2 for eight-packs.",1,"1680cents <1872cents."),
+            new("Elena56in tall; centimeters using2.54cm per inch, answer in HUNDREDTHS OF CM?",14224,"56×2.54=142.24cm."),
+            new("Elena56in tall; meters in TEN-THOUSANDTHS of meter?",14224,"142.24cm=1.4224meters."),
+            new("Usual price80 dollars reduced12. Sale price in DOLLARS?",68,"80-12=68."),
+            new("85% of80 is how many DOLLARS?",68,"0.85×80=68."),
+            new("40in minimum; 34in is how many INCHES below minimum?",6,"40-34=6."),
+            new("40in minimum;54in is how many INCHES above minimum?",14,"54-40=14."),
+            new("Tub80gal fills24gal. Gallons still unfilled?",56,"80-24=56.")
+        ],
+        [L0316FindPercentLogic] =
+        [
+            new("To find the percent C is of B (B nonzero), compute C/B×100. 1=yes,0=no.",1,"Definition of percent relative to reference."),
+            new("34inches is85% of40inches. 1=yes,0=no.",1,"34/40=.85."),
+            new("54inches is135% of40inches. 1=yes,0=no.",1,"54/40=1.35."),
+            new("54inches cannot be135% of40inches because percentages never exceed100. 1=yes,0=no.",0,"Comparison may exceed100."),
+            new("Saving12dollars off80 represents15% of usual price. 1=yes,0=no.",1,"12/80=.15."),
+            new("Saving12dollars off80 represents85% of usual price. 1=yes,0=no.",0,"85% is the price remaining."),
+            new("A tub80gallons with24gallons is30% full. 1=yes,0=no.",1,"24/80=.3."),
+            new("Sale price85% of30dollars is25.50 dollars. 1=yes,0=no.",1,"0.85×30=25.5."),
+            new("Sale price85% of24.80dollars is21.08 dollars. 1=yes,0=no.",1,"0.85×24.8=21.08."),
+            new("For48 hotdogs, eight six-packs at2.10 each are cheaper than six eight-packs at3.12. 1=yes,0=no.",1,"16.80<18.72."),
+            new("56 inches equals142.24cm given2.54cm per inch. 1=yes,0=no.",1,"56×2.54."),
+            new("The reference quantity B is the100% amount when asking what percent C is of B. 1=yes,0=no.",1,"C/B×100%."),
+            new("40inches is100% of the ride minimum40inches. 1=yes,0=no.",1,"Equal amounts."),
+            new("A percentage based on one reference can be transferred to another unrelated reference without recalculating the amount. 1=yes,0=no.",0,"Amounts depend on base.")
         ]
     };
 
