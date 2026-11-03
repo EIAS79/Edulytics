@@ -286,6 +286,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0707OrderMagnitude = "usccss.g6.u07.l07.signed_comparisons_absolute";
     public const string L0707OrderLogic = "usccss.g6.u07.l07.order_and_absolute_value_inequalities";
 
+    public const string L0708InequalityExamples = "usccss.g6.u07.l08.inequality_bound_examples";
+    public const string L0708InequalityLogic = "usccss.g6.u07.l08.inequality_constraints_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3958,6 +3961,51 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("0.024÷0.015=1.6. 1=yes,0=no.",1,"24/15."),
             new("The minus symbol on -a may produce positive number if a itself is negative. 1=yes,0=no.",1,"Opposite."),
             new("An absolute value inequality compares magnitude, not necessarily signed order. 1=yes,0=no.",1,"Distinguish.")
+        ],
+        [L0708InequalityExamples] =
+        [
+            new("Book sale price must be less than5 dollars. Is499cents permitted? Enter1 yes,0 no.",1,"4.99<5."),
+            new("Book sale price must be less than5 dollars. Is500cents permitted? Enter1 yes,0 no.",0,"Strict inequality."),
+            new("Book sale price must be less than5 dollars. Is450cents permitted? Enter1 yes,0 no.",1,"4.50<5."),
+            new("If book prices are multiples of one cent below5 dollars, maximum positive price in CENTS?",499,"4.99."),
+            new("Kiran homework starts before7pm ends after8pm. Minimum elapsed exceeds how many HOURS?",1,"Strictly >1."),
+            new("Rectangular prism dimensions4,d,d. Volume for d=1?",4,"4×1²=4."),
+            new("Prism dimensions4,d,d. Volume for d=2?",16,"4×4=16."),
+            new("Prism dimensions4,d,d. Volume for d=1/2?",1,"4×1/4=1."),
+            new("A number -15 lies left of-12. Enter1 yes,0 no.",1,"-15<-12."),
+            new("Absolute value-15?",15,"Magnitude15."),
+            new("Absolute value-12?",12,"Magnitude12."),
+            new("Compare -15 and-12. Enter1 if first greater,0 equal,2 smaller.",2,"-15<-12."),
+            new("2a+7a when a=3?",27,"9a=27."),
+            new("5z-10 when z=4?",10,"20-10=10."),
+            new("c-2cd with c=3,d=2?",-9,"3-12=-9."),
+            new("r+r+r+r with r=7?",28,"4r=28."),
+            new("2x-1/2 with x=3 in HALF-UNITS?",11,"6-.5=5.5=11 halves."),
+            new("A book costs4.98 dollars, maximum budget5. Difference in CENTS?",2,"500-498=2."),
+            new("If strict x<5, is x=5 a solution? Enter1 yes,0 no.",0,"Boundary excluded."),
+            new("If x>9, is x=10 a solution? Enter1 yes,0 no.",1,"10>9."),
+            new("If x<9, is x=8 a solution? Enter1 yes,0 no.",1,"8<9.")
+        ],
+        [L0708InequalityLogic] =
+        [
+            new("A book sale where every price is less than5 dollars uses p<5. 1=yes,0=no.",1,"Strict upper bound."),
+            new("At a p<5 sale, price5dollars is permitted. 1=yes,0=no.",0,"Excluded."),
+            new("If priced to nearest cent,4.99 is most expensive strictly under5. 1=yes,0=no.",1,"Discrete cent step."),
+            new("If prices are arbitrary real dollars strictly below5, there is a single largest real price. 1=yes,0=no.",0,"No maximum."),
+            new("Kiran begins homework before7pm and ends after8pm, so h>1 hour is definitely true. 1=yes,0=no.",1,"Elapsed strictly greater than1."),
+            new("That homework duration must be greater than2hours. 1=yes,0=no.",0,"Could be1.5."),
+            new("That homework duration can be less than1hour. 1=yes,0=no.",0,"Impossible."),
+            new("That homework duration may be less than2hours. 1=yes,0=no.",1,"Possible, not guaranteed."),
+            new("A prism4×d×d has V=4d². 1=yes,0=no.",1,"Multiply edges."),
+            new("Atd=1/2, V=1. 1=yes,0=no.",1,"4×quarter."),
+            new("|-15|>|-12|. 1=yes,0=no.",1,"15>12."),
+            new("|-12|=12. 1=yes,0=no.",1,"Magnitude."),
+            new("-15<-12. 1=yes,0=no.",1,"Signed order."),
+            new("|-12|>-15. 1=yes,0=no.",1,"12>-15."),
+            new("12>-12. 1=yes,0=no.",1,"Positive greater."),
+            new("An inequality with variable measurement may have infinitely many possible solutions. 1=yes,0=no.",1,"Continuous domain."),
+            new("A count of books must generally be a whole nonnegative number, even if inequality includes real fractions. 1=yes,0=no.",1,"Contextual domain."),
+            new("Strict bounds are marked with open circles on a number line. 1=yes,0=no.",1,"Endpoint excluded.")
         ]
     };
 
