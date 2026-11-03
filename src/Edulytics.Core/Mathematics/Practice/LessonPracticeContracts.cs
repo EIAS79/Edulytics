@@ -1479,6 +1479,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original IM 6-8 Grade6 U01:L09: reuse the selected L08 triangle
+        // formula exact adapter; teacher must review student diagrams,
+        // three possible base/height choices, and derivation of one half.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L09",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_TRIANGLE_AREA_FORMULA_AND_HEIGHT_VALIDITY",
+            [
+                "usccss.g6.u01.l09.triangle_formula_source_area",
+                "usccss.g6.u01.l09.triangle_height_validity"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L09_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
