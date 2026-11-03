@@ -343,6 +343,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0807HistogramCompare = "usccss.g6.u08.l07.histogram_center_spread_numeric";
     public const string L0807HistogramLogic = "usccss.g6.u08.l07.center_spread_and_inequality_interpretation";
 
+    public const string L0808ShapeNumbers = "usccss.g6.u08.l08.histogram_shape_and_cumulative";
+    public const string L0808ShapeLogic = "usccss.g6.u08.l08.histogram_shape_explanations";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4925,6 +4928,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A graph's apparent shape may depend on bin width choices. 1=yes,0=no.",1,"Grouping effect."),
             new("A source comparison about number of messages must label each horizontal axis in messages per week. 1=yes,0=no.",1,"Meaningful units."),
             new("Teacher should review a student's second 40-runner histogram for center, spread and bin frequency consistency. 1=yes,0=no.",1,"Open-ended graph.")
+        ],
+        [L0808ShapeNumbers] =
+        [
+            new("Original histogram summarizes how many wild bears?",143,"143 stated in prompt; individual bins image-dependent."),
+            new("Independent histogram bin frequencies1,4,6,4,1. Sample size?",16,"1+4+6+4+1=16."),
+            new("Independent histogram frequencies1,4,6,4,1. Highest frequency?",6,"Center bin frequency6."),
+            new("Independent histogram frequencies1,4,6,4,1. Number in two outermost bins combined?",2,"1+1=2."),
+            new("Independent histogram frequencies1,4,6,4,1. Total observations in three central bins?",14,"4+6+4=14."),
+            new("Independent histogram bins[0,5),[5,10),[10,15),[15,20),[20,25). Middle bin index1–5?",3,"Third bin[10,15)."),
+            new("Histogram frequencies4,0,0,3 over four bins. How many empty bins?",2,"Second and third."),
+            new("Histogram frequencies4,0,0,3. Total observations?",7,"4+3=7."),
+            new("Histogram frequencies2,3,2 over three bins. Total observations?",7,"2+3+2=7."),
+            new("Compute4×1³?",4,"4."),
+            new("Compute4×2³?",32,"4×8=32."),
+            new("Compute4×(1/2)³ in HALVES?",1,"4×1/8=1/2."),
+            new("Compute4×3³?",108,"4×27=108."),
+            new("Water bottle has12ounces, which is60% full. Capacity in OUNCES?",20,"12/.6=20oz."),
+            new("Same bottle full20oz, current12oz. Ounces to fill?",8,"20-12=8."),
+            new("Same bottle full20oz, 40% remaining. Ounces remaining?",8,"20×.4=8."),
+            new("A histogram bin[10,15) includes value14? Enter1 yes,0 no.",1,"14<15."),
+            new("A histogram bin[10,15) includes15? Enter1 yes,0 no.",0,"Upper endpoint excluded."),
+            new("A distribution of frequencies3,0,5 has how many nonempty bins?",2,"First and third."),
+            new("Independent histogram frequencies1,4,6,4,1. Is it symmetric? Enter1 yes,0 no.",1,"Mirrored counts."),
+            new("Independent frequencies1,4,6,4,1 have number of peaked bins with maximum6?",1,"One maximum bin."),
+            new("In a 143-bear source sample, an arbitrary random bin frequency cannot be inferred from only143. Enter1 possible exact inference,0 no.",0,"Need source image.")
+        ],
+        [L0808ShapeLogic] =
+        [
+            new("Histogram bars summarize numerical intervals, while bar graphs often display category counts. 1=yes,0=no.",1,"Different variable types."),
+            new("Histogram shape may be symmetric, skewed, clustered, gapped or have an unusual bar. 1=yes,0=no.",1,"Qualitative features."),
+            new("Symmetry means approximately similar frequencies on either side of a central region. 1=yes,0=no.",1,"Mirror structure."),
+            new("The independent histogram1,4,6,4,1 has symmetric bar counts. 1=yes,0=no.",1,"Mirror."),
+            new("Frequencies4,0,0,3 have two empty bins. 1=yes,0=no.",1,"Gaps."),
+            new("A gap is an interval containing no observed values. 1=yes,0=no.",1,"Frequency zero."),
+            new("A peak is an interval with relatively many observations. 1=yes,0=no.",1,"High bar."),
+            new("Data of pop album song lengths may be more nearly symmetric than schoolwide phone talk durations, though actual data are needed to be certain. 1=yes,0=no.",1,"Plausible model, not guarantee."),
+            new("A histogram of students' favorite colors can be interpreted as a numerical length distribution without converting variable type. 1=yes,0=no.",0,"Categories not lengths."),
+            new("A bar graph's category order is intrinsic numeric order like histogram bins. 1=yes,0=no.",0,"Categories often arbitrary."),
+            new("An exact range for143 bear lengths can be calculated from sample count143 alone. 1=yes,0=no.",0,"Need observed values."),
+            new("Student age distribution in one sixth-grade class is likely tightly grouped in ages. 1=yes,0=no.",1,"Students similar age."),
+            new("A family restaurant with adults and children could show multiple age clusters or gaps. 1=yes,0=no.",1,"Context-dependent."),
+            new("A histogram's appearance may change when bin widths change. 1=yes,0=no.",1,"Binning influences shape."),
+            new("Four times(1/2)cubed equals one half. 1=yes,0=no.",1,"4/8=1/2."),
+            new("Four times2 cubed equals16. 1=yes,0=no.",0,"32."),
+            new("12ounces as60% full means20-ounce bottle. 1=yes,0=no.",1,"12/0.6=20."),
+            new("A data set with two separated clusters necessarily has exactly one central peak. 1=yes,0=no.",0,"Can be bimodal."),
+            new("Appropriate narrative can distinguish descriptive appearance from numerical certainty. 1=yes,0=no.",1,"Avoid fabricated chart readings.")
         ]
     };
 
