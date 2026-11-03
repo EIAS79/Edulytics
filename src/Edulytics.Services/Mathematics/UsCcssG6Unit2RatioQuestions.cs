@@ -301,6 +301,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0712PlotAndScale = "usccss.g6.u07.l12.four_quadrant_plot_and_axis_scale";
     public const string L0712ScaleReasoning = "usccss.g6.u07.l12.axis_precision_and_plot_logic";
 
+    public const string L0713CoordinatesData = "usccss.g6.u07.l13.coordinate_context_numeric";
+    public const string L0713ContextLogic = "usccss.g6.u07.l13.interpret_axes_and_extrema";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4205,6 +4208,57 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A reported point(1.75,1) on graph cost vs notebooks represents one notebook costing1.75. 1=yes,0=no.",0,"Coordinates reversed; (1,1.75) works."),
             new("A grid axis scale may use an interval50 rather than 1 for data ranging-250 to350. 1=yes,0=no.",1,"Clarity depends on range."),
             new("Appropriate labels, equal axis tick spacing, and origin placement matter to interpretation. 1=yes,0=no.",1,"Correct geometry and communication.")
+        ],
+        [L0713CoordinatesData] =
+        [
+            new("Submarine time0hours after noon, elevation in meters?",-567,"Given table at t=0."),
+            new("Submarine after1hour, elevation in meters?",-892,"Source table t=1."),
+            new("Submarine after2hours, elevation in meters?",-1606,"Source table t=2."),
+            new("Submarine after3hours, elevation in meters?",-1289,"Source table t=3."),
+            new("Submarine after4hours, elevation in meters?",-990,"Source table t=4."),
+            new("Submarine after5hours, elevation in meters?",-702,"Source table t=5."),
+            new("Submarine after6hours, elevation in meters?",-365,"Source table t=6."),
+            new("Which time after noon has LOWEST submarine elevation? Enter hour0–6.",2,"-1606meters is lowest at2."),
+            new("Which time after noon has HIGHEST submarine elevation? Enter hour0–6.",6,"-365 is largest elevation."),
+            new("From t0 elevation-567m to t1 -892m, signed elevation change?",-325,"-892-(-567)=-325meters."),
+            new("From t2 elevation-1606m to t3 -1289m, signed change?",317,"-1289-(-1606)=+317m."),
+            new("From t5 elevation-702m to t6 -365m, signed change?",337,"-365-(-702)=337."),
+            new("On graph x=hours relative noon, y=temp°C, at9a.m., time coordinate?",-3,"9 is3hours before noon."),
+            new("On graph x=hours relative noon, y=temp°C, at11a.m., time coordinate?",-1,"One hour before noon."),
+            new("At9a.m. below freezing on x=time relative noon,y=temp, quadrant number?",3,"Negative time and temperature."),
+            new("At11a.m.10°C on that plane, quadrant number?",2,"Negative x positive y."),
+            new("At noon and 0°C, quadrant code0 for on origin?",0,"(0,0) is origin."),
+            new("Solve3a=12. What is a?",4,"a=12/3=4."),
+            new("Solve b+3.3=8.9. b in TENTHS?",56,"b=5.6=56tenths."),
+            new("Solve1=1/4 c. What is c?",4,"Multiply both sides4."),
+            new("Solve5.5=d+1/4. d in QUARTERS?",21,"d=5.25=21/4."),
+            new("Solve2e=6.4. e in TENTHS?",32,"e=3.2=32tenths."),
+            new("Ride accepts height greater than42 and less than60inches. Is55 accepted? Enter1 yes,0 no.",1,"42<55<60."),
+            new("Ride accepts h>42 and h<60. Is42 accepted? Enter1 yes,0 no.",0,"Strict inequality excludes42."),
+            new("Ride accepts h>42 and h<60. Is60 accepted? Enter1 yes,0 no.",0,"Strict inequality excludes60.")
+        ],
+        [L0713ContextLogic] =
+        [
+            new("The ordered pair(2,-1606) means2hours after noon and elevation-1606meters. 1=yes,0=no.",1,"x=time,y=elevation."),
+            new("The ordered pair(-1606,2) means the same when x=time and y=elevation. 1=yes,0=no.",0,"Coordinate order matters."),
+            new("Among listed submarine elevations, -1606m is deepest. 1=yes,0=no.",1,"Lowest numeric elevation."),
+            new("The submarine elevation rises by317m from hour2 to hour3. 1=yes,0=no.",1,"-1289-(-1606)=317."),
+            new("An underwater elevation of-365m is greater than-1606m. 1=yes,0=no.",1,"Closer to sea level."),
+            new("For time before/after noon,9a.m. maps to x=-3. 1=yes,0=no.",1,"Three hours before."),
+            new("At9a.m. below freezing point(x,y) lies in quadrantIII. 1=yes,0=no.",1,"Both negative."),
+            new("At11a.m.10°C point(-1,10) lies in quadrantII. 1=yes,0=no.",1,"Negative x positive y."),
+            new("The point(0,0) represents noon at0°C for this graph. 1=yes,0=no.",1,"Zero both quantities."),
+            new("At noon5°C, the point lies on positive y-axis and not within a quadrant. 1=yes,0=no.",1,"x=0."),
+            new("Ride rule h>42 and h<60 includes height42 inches. 1=yes,0=no.",0,"Strict greater than42."),
+            new("Ride rule h>42 and h<60 includes height59 inches. 1=yes,0=no.",1,"59 within interval."),
+            new("Ride rule42<h<60 includes height60 inches. 1=yes,0=no.",0,"Strict smaller than60."),
+            new("Submarine time axis may use1hour ticks while elevation uses200m ticks if labeled clearly. 1=yes,0=no.",1,"Axis scales can differ."),
+            new("A coordinate plane without units or reference can be interpreted uniquely as submarine elevation and time. 1=yes,0=no.",0,"Context labels needed."),
+            new("3a=12 has a=4. 1=yes,0=no.",1,"3×4=12."),
+            new("b+3.3=8.9 gives b=5.6. 1=yes,0=no.",1,"Subtract3.3."),
+            new("5½=d+¼ gives d=5¼. 1=yes,0=no.",1,"Subtract quarter."),
+            new("When graphing before/after noon, times before noon may have negative x values. 1=yes,0=no.",1,"Signed time reference."),
+            new("A point representing hour0,-567m is on negative y-axis, not in quadrantIV. 1=yes,0=no.",1,"x=0.")
         ]
     };
 
