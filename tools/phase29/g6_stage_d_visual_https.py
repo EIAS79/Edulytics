@@ -32,7 +32,9 @@ def main():
             locale="en-US",device_scale_factor=1)
         tab=context.new_page()
         tab.goto(BASE+"/account/login?culture=en",wait_until="domcontentloaded",timeout=40000)
-        tab.locator("#role-student").check(force=True)
+        tab.locator('label[for="role-student"]').click()
+        require(tab.locator("#role-student").is_checked(),
+                "student role card did not select AccountType")
         tab.locator("#Email").fill("commoncore-middle.student.primary@edulytiks.com")
         tab.locator("#Password").fill(os.environ["Edulytics__MeetingDemo__Password"])
         tab.locator("#login-form button[type=submit]").click(timeout=30000)
