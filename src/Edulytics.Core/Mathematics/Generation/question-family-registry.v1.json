@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u08.l14.mean_median_outlier_changes",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-Priya-1-8-6-2-4-change8to18-Han-history-six100-95-90-zero",
+      "representations": [
+        "numeric",
+        "ordered_data"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u08.l14.mean_median_choice_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-outlier-changes-mean-more-than-median-and-teacher-datagraph",
+      "representations": [
+        "boolean_reasoning",
+        "dot_plot"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l13.median_sorted_samples",
       "version": 1,
       "skillId": "ratio.unit_rate",

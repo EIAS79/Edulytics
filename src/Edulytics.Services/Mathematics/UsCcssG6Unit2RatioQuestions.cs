@@ -361,6 +361,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0813Medians = "usccss.g6.u08.l13.median_sorted_samples";
     public const string L0813MedianLogic = "usccss.g6.u08.l13.median_interpretations";
 
+    public const string L0814CenterValues = "usccss.g6.u08.l14.mean_median_outlier_changes";
+    public const string L0814CenterLogic = "usccss.g6.u08.l14.mean_median_choice_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5229,6 +5232,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The original wild-bear histogram exact largest bear weight cannot be recovered from given sample size143 alone. 1=yes,0=no.",1,"Bin limits needed."),
             new("If a histogram bins measurements, exact individual median may not be determined without within-bin values. 1=yes,0=no.",1,"Approximate interval only."),
             new("A dataset with equal numbers above and below middle observation may use that observation as median. 1=yes,0=no.",1,"Middle split.")
+        ],
+        [L0814CenterValues] =
+        [
+            new("Priya's first data1,8,6,2,4. Sum?",21,"1+8+6+2+4=21."),
+            new("Priya's first data1,8,6,2,4. Mean in FIFTHS?",21,"21/5=4.2."),
+            new("Priya's first data1,8,6,2,4. Median?",4,"Ordered1,2,4,6,8."),
+            new("Replace8 with18; revised sum?",31,"1+18+6+2+4=31."),
+            new("Replace8 with18; revised mean in FIFTHS?",31,"31/5=6.2."),
+            new("Replace8 with18; revised median?",4,"Ordered1,2,4,6,18."),
+            new("Mean increase from4.2 to6.2 in WHOLE units?",2,"Increase10/5=2."),
+            new("Original choice for mean increase and median unchanged: A=1 B=2 C=3 D=4. Enter number.",2,"Option B."),
+            new("Han homework scores100,100,100,100,95,100,90,100,0. Number of scores?",9,"Nine assignments."),
+            new("Han's nine homework scores. Sum?",785,"6×100+95+90+0=785."),
+            new("Han's homework mean in NINTHS?",785,"785/9."),
+            new("Han's homework median?",100,"Fifth score in sorted0,90,95,100,100,100,100,100,100."),
+            new("Han scored100 how many times?",6,"Six100s."),
+            new("Han's lowest homework score?",0,"Zero."),
+            new("Han's highest homework score?",100,"One hundred."),
+            new("Independent data4,5,5,6,100. Median?",5,"Third5."),
+            new("Independent data4,5,5,6,100. Sum?",120,"120."),
+            new("Independent data4,5,5,6,100. Mean?",24,"120/5."),
+            new("Independent comparison4,5,5,6,100: mean exceeds median by?",19,"24-5=19."),
+            new("Coordinate A(1,0). Quadrant code0 for axis?",0,"y=0 on x axis."),
+            new("Coordinate B(0,0.5). Quadrant code0 for axis?",0,"x=0 on y axis."),
+            new("Coordinate C(4,3.5). Quadrant 1–4?",1,"Both positive."),
+            new("Coordinate D(1.5,0.5). Quadrant 1–4?",1,"Both positive.")
+        ],
+        [L0814CenterLogic] =
+        [
+            new("Replacing8 with18 in five values changes mean from4.2 to6.2. 1=yes,0=no.",1,"Add10 across5 -> +2."),
+            new("Replacing8 with18 changes median from4 to18. 1=yes,0=no.",0,"Median remains4."),
+            new("Original mean increases while median remains unchanged, choice B. 1=yes,0=no.",1,"Sorted center unaffected."),
+            new("Six100s,95,90,0 scores have median100. 1=yes,0=no.",1,"Fifth of9 is100."),
+            new("Those Han scores have mean approximately87.2. 1=yes,0=no.",1,"785/9≈87.22."),
+            new("The zero homework outlier reduces mean more than median. 1=yes,0=no.",1,"Extreme value."),
+            new("A median can be preferable for describing typical scores when an exceptional zero distorts mean. 1=yes,0=no.",1,"Resistance to outliers."),
+            new("Mean and median must always coincide for symmetric distributions. 1=yes,0=no.",0,"Often near, but not mathematical universal absent conditions."),
+            new("For nearly symmetric distributions mean and median often are close. 1=yes,0=no.",1,"Distribution shape."),
+            new("Teacher ages may have few unusually old values that pull mean upward relative to median. 1=yes,0=no.",1,"Right tail."),
+            new("The original teacher-age exact mean can be certified from an ambiguous plot description alone. 1=yes,0=no.",0,"Requires source plot verification."),
+            new("Data4,5,5,6,100 have mean24 and median5. 1=yes,0=no.",1,"Big outlier."),
+            new("When data contains extreme outlier, median always becomes incorrect statistic for every question. 1=yes,0=no.",0,"Choice depends on purpose."),
+            new("Mean can still be useful for totals and shared resources even if outlier exists. 1=yes,0=no.",1,"Fair share."),
+            new("Median depends on sorted relative position rather than total sum. 1=yes,0=no.",1,"Middle statistic."),
+            new("Changing an extreme observation without changing ranks can leave median unchanged. 1=yes,0=no.",1,"Order-middle stable."),
+            new("A dot plot with symmetric cluster may suggest mean close to median. 1=yes,0=no.",1,"Often close."),
+            new("A student choice of center requires justification with data context. 1=yes,0=no.",1,"Teacher rubric.")
         ]
     };
 
