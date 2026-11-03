@@ -70,6 +70,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0304Conversions = "usccss.g6.u03.l04.source_ratio_unit_conversions";
     public const string L0304DirectionChecks = "usccss.g6.u03.l04.conversion_direction_and_units";
 
+    public const string L0305Rates = "usccss.g6.u03.l05.source_speed_price_values";
+    public const string L0305Comparisons = "usccss.g6.u03.l05.same_rate_price_speed_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -812,6 +815,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("For trail mix7oz almonds5oz raisins, a16oz bag needs16oz almonds to retain composition. 1=yes,0=no.",0,"Almonds are7/12 of total."),
             new("There are16tablespoons per cup and2cups per pint, so32tablespoons per pint. 1=yes,0=no.",1,"16×2=32."),
             new("A ratio table can help carry measurement units through cross-system conversions. 1=yes,0=no.",1,"Matching labels prevent reciprocal errors.")
+        ],
+        [L0305Rates] =
+        [
+            new("Mai scoots15 meters in6 seconds. Speed in TENTHS of a meter per second?",25,"15/6=2.5m/s=25tenths."),
+            new("Priya scoots22 meters in10 seconds. Speed in TENTHS of meter per second?",22,"22/10=2.2m/s=22tenths."),
+            new("Mai travels15m in6s and Priya22m in10s. Enter1 for Mai faster,2 for Priya faster.",1,"Mai2.5m/s exceeds Priya2.2m/s."),
+            new("Store X sells4 same-size juice cans for248cents. Unit price in CENTS?",62,"248/4=62."),
+            new("Store Y sells5 same-size juice cans for300cents. Unit price in CENTS?",60,"300/5=60."),
+            new("Store Z sells one juice can for59cents. Unit price in CENTS?",59,"Given price59."),
+            new("Stores X62c/can,Y60c/can,Z59c/can. Enter1 for X,2 for Y,3 for Z as cheapest.",3,"Z at59cents."),
+            new("A 450-square-foot apartment costs540000 dollars. Dollars per SQUARE FOOT?",1200,"540000/450=1200 dollars/sqft."),
+            new("A 2100-square-foot home costs110 dollars per square foot. Total cost in DOLLARS?",231000,"2100×110=231000 dollars."),
+            new("A liter contains33.8 US fluid ounces and a gallon128 US fluid ounces. Approximately how many WHOLE liters per gallon?",4,"128/33.8≈3.787≈4 liters."),
+            new("A unit rate comparison has128 fl oz per gallon and33.8 fl oz per liter. Which listed number (2,3,4,5) estimates liters/gallon best?",4,"128/33.8≈3.79, nearest4."),
+            new("Diego is165 centimeters tall. Andre is1.7meters tall. Enter1 for Diego taller,2 for Andre taller.",2,"1.7m=170cm, Andre taller."),
+            new("A 1.7-meter height is how many CENTIMETERS?",170,"1.7×100=170cm."),
+            new("Two scooter rates15m/6s and22m/10s: difference in TENTHS m/s?",3,"2.5-2.2=0.3m/s=3tenths."),
+            new("Store X unit price62c/can and Store Z59c/can. Savings in CENTS per can from choosing Z?",3,"62-59=3cents."),
+            new("A home with1200 dollars/sqft for450sqft has total price in DOLLARS?",540000,"1200×450=540000 dollars."),
+            new("A unit rate of 110dollars/sqft applies to100sqft. Cost in DOLLARS?",11000,"110×100=11000 dollars.")
+        ],
+        [L0305Comparisons] =
+        [
+            new("Mai15m in6s has faster speed than Priya22m in10s. 1=yes,0=no.",1,"2.5m/s >2.2m/s."),
+            new("Mai15m in6s is slower than Priya22m in10s because Mai covered less distance. 1=yes,0=no.",0,"Time durations differ; compare per second."),
+            new("Store X4cans for248cents means62cents per can. 1=yes,0=no.",1,"248/4=62."),
+            new("Store Y5cans for300cents means59cents per can. 1=yes,0=no.",0,"300/5=60."),
+            new("Store Z at59cents per can is cheaper than Y at60cents. 1=yes,0=no.",1,"59<60."),
+            new("An apartment costing540000 dollars for450sqft has unit price1200 dollars/sqft. 1=yes,0=no.",1,"540000/450=1200."),
+            new("A 2100sqft home at110 dollars/sqft costs231000 dollars. 1=yes,0=no.",1,"2100×110=231000."),
+            new("Given gallon128fl oz and liter33.8fl oz, rounding to4liters slightly OVERestimates actual liters per gallon. 1=yes,0=no.",1,"128/33.8≈3.787."),
+            new("One meter equals100 centimeters, so1.7m is170cm. 1=yes,0=no.",1,"1.7×100=170."),
+            new("165cm is taller than1.7m. 1=yes,0=no.",0,"1.7m=170cm."),
+            new("Comparing prices of packages of different sizes is best done after finding per-item price. 1=yes,0=no.",1,"Common unit price."),
+            new("When comparing two moving rates, distance alone proves who is faster even when times differ. 1=yes,0=no.",0,"Use distance/time for each."),
+            new("A price per square foot must include dollars and square-foot units. 1=yes,0=no.",1,"Units explain the quotient.")
         ]
     };
 
