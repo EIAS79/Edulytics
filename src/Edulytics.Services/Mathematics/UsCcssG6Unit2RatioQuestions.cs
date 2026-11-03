@@ -67,6 +67,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0303SourceAmounts = "usccss.g6.u03.l03.measurement_source_quantity";
     public const string L0303AttributeClassification = "usccss.g6.u03.l03.measurement_attribute_identification";
 
+    public const string L0304Conversions = "usccss.g6.u03.l04.source_ratio_unit_conversions";
+    public const string L0304DirectionChecks = "usccss.g6.u03.l04.conversion_direction_and_units";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -773,6 +776,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Identify attribute for kilograms of animal mass. Codes1=length,2=area,3=volume,4=mass.",4,"Kilograms measure mass."),
             new("Identify attribute for meters of string. Codes1=length,2=area,3=volume,4=mass.",1,"Meters measure length."),
             new("Identify attribute for square kilometers of land. Codes1=length,2=area,3=volume,4=mass.",2,"Square kilometers measure area.")
+        ],
+        [L0304Conversions] =
+        [
+            new("Currency example:4250pesos for250dollars. Pesos per dollar?",17,"4250/250=17pesos per dollar."),
+            new("Currency example:4250pesos for250dollars. Sweater510pesos costs how many DOLLARS?",30,"510/17=30dollars."),
+            new("Currency example:4250pesos for250dollars. Pesos for3 dollars?",51,"3×17=51pesos."),
+            new("One gallon is approximated as3785milliliters. How many mL in3gallons?",11355,"3785×3=11355mL."),
+            new("One gallon contains4quarts. How many quarts in3gallons?",12,"4×3=12quarts."),
+            new("One gallon approx3785mL. About how many mL in1quart rounded to WHOLE mL?",946,"3785/4=946.25mL, rounded946."),
+            new("Six quarts makes how many HALF-GALLONS?",3,"6 quarts=1.5 gallons=3 half-gallons."),
+            new("One kilogram weighs approximately35ounces. A28ounce bat weighs how many TENTHS of kilogram?",8,"28/35=0.8kg=8 tenths."),
+            new("One kilogram is approximately35ounces. A28ounce bat weighs about how many GRAMS?",800,"0.8kg=800grams under stated approximation."),
+            new("Trail mix7oz almonds5oz raisins. Ounces total in one batch?",12,"7+5=12."),
+            new("Trail mix7 almonds5 raisins for12 total. In16oz mix, almond quantity in THIRD-OUNCE UNITS?",28,"16×7/12=28/3oz, or28 third-ounce units."),
+            new("An ant moves980inches in5minutes. Distance in inches in1minute?",196,"980/5=196inches."),
+            new("An ant moves980inches in5minutes. Distance in inches in7minutes?",1372,"196×7=1372inches."),
+            new("A quarter cup contains4tablespoons. How many TABLESPOONS in1cup?",16,"4quarters×4tablespoons=16."),
+            new("Two cups make1pint. How many TABLESPOONS per PINT?",32,"16×2=32."),
+            new("One gallon contains4quarts. How many quarts in6 gallons?",24,"4×6=24quarts.")
+        ],
+        [L0304DirectionChecks] =
+        [
+            new("To convert6 quarts to gallons, divide by4. 1=yes,0=no.",1,"6/4=1.5gal."),
+            new("To convert6 quarts to gallons, multiply by4 giving24gallons. 1=yes,0=no.",0,"Quarts are smaller than gallons."),
+            new("One gallon contains4quarts;3gallons contains12quarts. 1=yes,0=no.",1,"Multiply3×4."),
+            new("One quart is approximately946.25mL when one gallon is approximated as3785mL. 1=yes,0=no.",1,"3785/4."),
+            new("One kg≈35ounces;28ounces≈0.8kg. 1=yes,0=no.",1,"28/35=0.8."),
+            new("One kg≈35ounces;28ounces≈35kg. 1=yes,0=no.",0,"Wrong direction/size."),
+            new("A mile is a length unit and a cup is a volume unit. 1=yes,0=no.",1,"Different measurement attributes."),
+            new("A gram is a volume unit equivalent to a milliliter for every material. 1=yes,0=no.",0,"Mass/volume depend on density."),
+            new("Converting a distance from feet to centimeters changes the physical distance. 1=yes,0=no.",0,"Only the numerical representation changes."),
+            new("An ant's980 inches in5 minutes implies1372 inches in7 minutes at constant speed. 1=yes,0=no.",1,"Both quantities scale by7/5."),
+            new("A currency rate17 pesos per dollar means510pesos is30dollars. 1=yes,0=no.",1,"510/17=30."),
+            new("For trail mix7oz almonds5oz raisins, a16oz bag needs16oz almonds to retain composition. 1=yes,0=no.",0,"Almonds are7/12 of total."),
+            new("There are16tablespoons per cup and2cups per pint, so32tablespoons per pint. 1=yes,0=no.",1,"16×2=32."),
+            new("A ratio table can help carry measurement units through cross-system conversions. 1=yes,0=no.",1,"Matching labels prevent reciprocal errors.")
         ]
     };
 
