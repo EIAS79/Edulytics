@@ -16,13 +16,17 @@ internal static class UsCcssG6Unit1Lesson8TriangleAreaQuestions
     // Reuse the existing triangle-area engine for the next original IM lesson.
     public const string L09Area = "usccss.g6.u01.l09.triangle_formula_source_area";
     public const string L09Height = "usccss.g6.u01.l09.triangle_height_validity";
+    // Source U01:L10 shares the existing triangle area numeric model.
+    public const string L10Area = "usccss.g6.u01.l10.triangle_corresponding_height_area";
+    public const string L10Validity = "usccss.g6.u01.l10.height_construction_validity";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     public static bool Supports(string? family) =>
-        family is TriangleArea or Preserve or Decimal or L09Area or L09Height;
+        family is TriangleArea or Preserve or Decimal or L09Area or L09Height
+           or L10Area or L10Validity;
     private static int Count(string family) => family==TriangleArea?7:
         family==Preserve?7:family==Decimal?3:family==L09Area?14:
-        family==L09Height?7:0;
+        family==L09Height?7:family==L10Area?14:family==L10Validity?8:0;
 
     public static Problem Build(string family, Random random)
     {
@@ -32,7 +36,9 @@ internal static class UsCcssG6Unit1Lesson8TriangleAreaQuestions
         var text=family==TriangleArea?TriangleProblem(v):
                  family==Preserve?MethodProblem(v):
                  family==Decimal?DecimalProblem(v):
-                 family==L09Area?L09AreaProblem(v):L09HeightProblem(v);
+                 family==L09Area?L09AreaProblem(v):
+                 family==L09Height?L09HeightProblem(v):
+                 family==L10Area?L10AreaProblem(v):L10ValidityProblem(v);
         return new Problem(family,text.Item1,text.Item2+
            " Teacher reviews actual cuts, duplication count, rectangles, " +
            "perpendicular altitudes, diagrams and student's written proof.",
@@ -80,6 +86,29 @@ internal static class UsCcssG6Unit1Lesson8TriangleAreaQuestions
             0=>1m,1=>0m,2=>0m,3=>0m,4=>1m,5=>0m,6=>0m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
+        L10Area=>v switch
+        {
+            0=>22.5m, // Source 10.3 A grid base9 height5
+            1=>44m, // Source 10.3 B horizontal top11 height8
+            2=>36m, // Source 10.3 C vertical base4 horizontal height18
+            3=>33m, // Source 10.3 D vertical base6 horizontal height11
+            4=>8m, // Source practice2 A base4 height4
+            5=>8m, // Source practice2 B base4 height4
+            6=>7.5m, // Source practice2 C base3 height5, NOT area8
+            7=>8m, // Source practice2 D base4 height4
+            8=>8m, // Source practice2 E base8 height2
+            9=>12m, // Source practice3 triangle base6 height4
+            10=>18m, // Source practice5 6-sided within 6-by-5 bounds
+            11=>11m, // Source 10.3 optional first triangle b5.5 h4
+            12=>18m, // Source 10.3 optional second triangle b4 h9
+            13=>12m, // Owner-independent Cool-down b6 h4
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L10Validity=>v switch
+        {
+            0=>1m,1=>0m,2=>1m,3=>1m,4=>0m,5=>1m,6=>1m,7=>0m,
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
         Decimal=>v switch
         {
             0=>7m, // Original practice5A parallelogram 3.5×2
@@ -100,7 +129,7 @@ internal static class UsCcssG6Unit1Lesson8TriangleAreaQuestions
     {
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(s)||s!=s.Trim())return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Preserve||family==L09Height)return s is ("0" or "1") &&
+        if(family==Preserve||family==L09Height||family==L10Validity)return s is ("0" or "1") &&
             s==expected.ToString(CultureInfo.InvariantCulture);
         var parts=s.Split('/');
         if(parts.Length==2)
@@ -171,6 +200,38 @@ internal static class UsCcssG6Unit1Lesson8TriangleAreaQuestions
         4=>("Original9.1 statement5: a corresponding height must be perpendicular to the chosen base. 1=true,0=false.","The height is perpendicular distance from the base line to the opposite vertex."),
         5=>("Original9.1 statement6: after choosing the base, only ONE location of a height segment can represent its distance to the opposite vertex. 1=true,0=false.","Perpendicular distance has many representative segments between the parallel base and opposite-vertex lines."),
         6=>("Original9.1 statement7: a representative height segment MUST pass through the opposite vertex. 1=true,0=false.","A translated perpendicular with the same length may represent the height; it need not pass through the vertex."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string,string) L10AreaProblem(int v)=>v switch
+    {
+        0=>("Original IM 10.3 grid triangle A has horizontal base9 grid units and vertical perpendicular height5. Find its area.","9×5÷2 = 22.5 square units."),
+        1=>("Original 10.3 grid triangle B has horizontal top side11 units and perpendicular vertical distance8 units. Find area.","11×8÷2 = 44 square units."),
+        2=>("Original 10.3 grid triangle C has vertical base4 and horizontal distance18. What is its area?","4×18÷2 = 36; chosen vertical base pairs with horizontal height."),
+        3=>("Original 10.3 grid triangle D has vertical side6 and perpendicular horizontal distance11. Find area.","6×11÷2 = 33 square units."),
+        4=>("Original practice2 figure A: corresponding base4 height4. Find triangle area.","4×4÷2 = 8."),
+        5=>("Original practice2 figure B: corresponding base4 height4. Find triangle area.","4×4÷2 = 8, though triangle shape differs."),
+        6=>("Original practice2 figure C: corresponding base3 height5. Find triangle area.","3×5÷2 = 7.5; this is NOT an 8-unit triangle."),
+        7=>("Original practice2 figure D: corresponding base4 height4. Find triangle area.","4×4÷2 = 8."),
+        8=>("Original practice2 figure E: corresponding base8 height2. Find triangle area.","8×2÷2 = 8."),
+        9=>("Original practice3 grid triangle: selected base6 height4. Find area.","6×4÷2 = 12 square units."),
+        10=>("Original practice5 source six-sided shape: enclose in a 6-by-5 grid rectangle, subtract four outer right-triangle corners of combined area12. Find shaded area.","Outer area30; missing upper corners6 and lower corners6; shaded area18 square units."),
+        11=>("Source 10.3 extension, first shaded triangle: base5.5 units, matching height4. Find area.","5.5×4÷2 = 11."),
+        12=>("Source 10.3 extension, second shaded triangle: vertical base4, horizontal perpendicular height9. Find area.","4×9÷2 = 18."),
+        13=>("Edulytiks-original independent Cool-down, not publisher 10.4: draw an obtuse triangle with base6 and corresponding exterior height4. Find its area.","6×4÷2 = 12; teacher grades true perpendicular construction and justification."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string,string) L10ValidityProblem(int v)=>v switch
+    {
+        0=>("Original 10.2: when chosen base is extended for obtuse triangle, an exterior perpendicular from the opposite vertex can be its height. 1=true,0=false.","Perpendicular distance can land on the extension of a side."),
+        1=>("Original 10.2: a triangle's slanted side is ALWAYS the height for a horizontal base, even without a right angle. 1=true,0=false.","Slant length is not generally perpendicular to selected base."),
+        2=>("Original 10.2: aligning an index card edge along the selected base and sliding its perpendicular edge through the opposite vertex locates the height. 1=true,0=false.","A right-angle tool checks the perpendicular correctly."),
+        3=>("Original 10.2: ANY of the triangle's three sides can be chosen as a base if the corresponding height is used. 1=true,0=false.","Every triangle admits three base/height pairings."),
+        4=>("Original 10.2: rotating a triangle changes its area even though its side lengths are unchanged. 1=true,0=false.","Rigid rotation preserves area and corresponding height lengths."),
+        5=>("Original 10.2: for an obtuse triangle the foot of a perpendicular height may be outside the drawn segment of the selected base. 1=true,0=false.","Extend the supporting line when the perpendicular meets outside."),
+        6=>("Source 10.1: a triangle of area12 may have base6 and height4, regardless of whether the opposite vertex is directly over the base's midpoint. 1=true,0=false.","Any vertex on the parallel line at distance4 gives area12 for base6."),
+        7=>("Original 10.3: a vertical segment is ALWAYS the correct height even when the chosen base is slanted and no right angle is marked. 1=true,0=false.","Corresponding height must meet that exact base at90 degrees."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 
