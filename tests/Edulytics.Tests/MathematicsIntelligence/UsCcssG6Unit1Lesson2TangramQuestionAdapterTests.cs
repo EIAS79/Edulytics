@@ -5,7 +5,7 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 /// <summary>
 /// G6 U01:L02 independent authoring fixtures only; NOT_RUN until Stage D.
-/// This adapter is not a production-selected Practice family yet.
+/// The adapter is selected by the G6 U01:L02 original-IM lesson Practice contract.
 /// </summary>
 public sealed class UsCcssG6Unit1Lesson2TangramQuestionAdapterTests
 {
@@ -19,6 +19,8 @@ public sealed class UsCcssG6Unit1Lesson2TangramQuestionAdapterTests
     [InlineData(3, "1", "1/1")]
     [InlineData(4, "2", "2/1")]
     [InlineData(5, "8", "16/2")]
+    [InlineData(6, "1.5", "3/2")]
+    [InlineData(7, "1.5", "6/4")]
     public void SourceKitPieceAreas_AcceptEquivalentExactAnswers(int variant,
         string expected, string fraction)
     {
@@ -52,7 +54,7 @@ public sealed class UsCcssG6Unit1Lesson2TangramQuestionAdapterTests
         Assert.False(UsCcssG6Unit1Lesson2TangramQuestions.Verify(
             Area,new Dictionary<string,int>(), "1"));
         Assert.False(UsCcssG6Unit1Lesson2TangramQuestions.Verify(
-            Area,new Dictionary<string,int>{{"variant",6}}, "1"));
+            Area,new Dictionary<string,int>{{"variant",8}}, "1"));
         Assert.False(UsCcssG6Unit1Lesson2TangramQuestions.Verify(
             Equal,new Dictionary<string,int>{{"variant",4}}, "1"));
         Assert.False(UsCcssG6Unit1Lesson2TangramQuestions.Verify(

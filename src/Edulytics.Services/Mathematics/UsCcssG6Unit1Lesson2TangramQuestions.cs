@@ -6,8 +6,8 @@ namespace Edulytics.Services.Mathematics;
 
 /// <summary>
 /// Lesson-local, source-specific, exact tangram area question adapter.
-/// NOT wired to LessonPracticeContractRegistry: that three-file shared integration
-/// needs its own exclusive writer grant. Drawings and justifications are teacher reviewed.
+/// Routed by the exact G6 U01:L02 lesson contract and question engine;
+/// drawings, gap/overlap checks and justifications remain teacher reviewed.
 /// </summary>
 internal static class UsCcssG6Unit1Lesson2TangramQuestions
 {
@@ -22,7 +22,7 @@ internal static class UsCcssG6Unit1Lesson2TangramQuestions
     {
         if (!Supports(family)) throw new ArgumentException("Unknown tangram family", nameof(family));
         ArgumentNullException.ThrowIfNull(random);
-        int variant = random.Next(family == PieceArea ? 6 : 4);
+        int variant = random.Next(family == PieceArea ? 8 : 4);
         var parameters = new Dictionary<string, int>(StringComparer.Ordinal)
         {
             ["variant"] = variant
@@ -37,7 +37,9 @@ internal static class UsCcssG6Unit1Lesson2TangramQuestions
                 2 => "all four small right triangles",
                 3 => "one medium right triangle",
                 4 => "one large right triangle",
-                _ => "the full tangram kit"
+                5 => "the full tangram kit",
+                6 => "three small right triangles",
+                _ => "one medium right triangle and one small right triangle"
             };
             prompt = $"An area-1 square is the unit. A small right triangle has area 1/2, " +
                 $"a medium triangle area 1 and a large triangle area 2. " +
@@ -103,7 +105,7 @@ internal static class UsCcssG6Unit1Lesson2TangramQuestions
     private static bool Valid(string? family, IReadOnlyDictionary<string, int>? parameters) =>
         Supports(family) && parameters is { Count: 1 } &&
         parameters.TryGetValue("variant", out int v) &&
-        v >= 0 && v < (family == PieceArea ? 6 : 4);
+        v >= 0 && v < (family == PieceArea ? 8 : 4);
 
     private static int HalfUnits(Tangram.Pieces pieces)
     {
@@ -121,6 +123,8 @@ internal static class UsCcssG6Unit1Lesson2TangramQuestions
         3 => new(0, 0, 1, 0),
         4 => new(0, 0, 0, 1),
         5 => Tangram.FullKit,
+        6 => new(0, 3, 0, 0), // Source practice: 3 small halves = 1½ units
+        7 => new(0, 1, 1, 0), // Source practice: medium + small = 1½
         _ => throw new ArgumentOutOfRangeException(nameof(variant))
     };
 

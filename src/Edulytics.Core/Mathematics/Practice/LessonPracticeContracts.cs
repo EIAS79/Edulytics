@@ -1363,6 +1363,22 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original IM 6-8 (OUR/Kendall Hunt, 2017-2019) G6 U01:L02:
+        // exact piece areas and numerical area equivalence only. Physical/digital
+        // tangram outlines, distinct shapes, no gaps or overlaps, and proofs
+        // remain teacher-reviewed rather than falsely marked by the numeric engine.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L02",
+            "geometry.area_tiling",
+            "G6_SOURCE_TANGRAM_AREA_CONSERVATION_EXACT_NUMERIC_TEACHER_REVIEW",
+            [
+                "usccss.g6.u01.l02.tangram_piece_area",
+                "usccss.g6.u01.l02.tangram_equal_area"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L02_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

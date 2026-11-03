@@ -4,6 +4,36 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l02.tangram_piece_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-6-8-modified-eight-piece-tangram-exact-half-square-inventory",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l02.tangram_equal_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-6-8-tangram-equivalent-numeric-area-only-teacher-verifies-constructions",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
       "version": 1,
       "skillId": "geometry.area_tiling",
