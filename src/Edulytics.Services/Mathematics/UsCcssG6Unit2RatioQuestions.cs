@@ -217,6 +217,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0604SolveValues = "usccss.g6.u06.l04.equation_context_solutions";
     public const string L0604EquationReasoning = "usccss.g6.u06.l04.equation_choice_and_reasoning";
 
+    public const string L0605FractionBarNumeric = "usccss.g6.u06.l05.rational_fraction_bar_division";
+    public const string L0605FractionBarLogic = "usccss.g6.u06.l05.fraction_bar_meaning_and_solutions";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2853,6 +2856,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("21.2×0.02=.424. 1=yes,0=no.",1,"Place-value multiplication."),
             new("2.05×0.004=.0082. 1=yes,0=no.",1,"Place-value product."),
             new("One can solve a linear equation using a diagram, inverse operation, or equality-preserving steps. 1=yes,0=no.",1,"Strategies flexible.")
+        ],
+        [L0605FractionBarNumeric] =
+        [
+            new("3.15÷0.45 equals?",7,"315/45=7."),
+            new("3/4×x=15. Find x.",20,"15÷3/4=20."),
+            new("4a=32. a?",8,"32/4=8."),
+            new("4=32b. b in EIGHTHS?",1,"b=1/8."),
+            new("10c=26. c in TENTHS?",26,"c=2.6."),
+            new("26=100d. d in HUNDREDTHS?",26,"d=0.26."),
+            new("3/4+x=2. x in QUARTERS?",5,"x=5/4."),
+            new("1.5x=6. x?",4,"6/1.5=4."),
+            new("Lilac mixture20% blue uses4cups. Total batch CUPS?",20,"4/0.2=20."),
+            new("Lilac mix40% white and total20cups. White cups?",8,"20×.4=8."),
+            new("Lilac mix20% blue40% white. Red percentage?",40,"Remaining40%."),
+            new("Lilac mix20cups with40% red. Red cups?",8,"20×.4=8."),
+            new("Triangle P base12in height8in. Area SQ IN?",48,"12×8/2=48."),
+            new("Triangle Q base15in height6.5in. Area in EIGHTHS sqin?",390,"15×6.5/2=48.75=390eighths."),
+            new("Triangle Q area48.75, P area48. Difference in HUNDREDTHS sqin?",75,"0.75."),
+            new("Compare triangles P48 and Q48.75. Enter1 P larger,2 Q larger.",2,"Q bigger."),
+            new("Fraction2.5/0.5 equals?",5,"2.5÷0.5=5."),
+            new("Fraction half over three-fifths, answer in SIXTHS?",5,"(1/2)/(3/5)=5/6.")
+        ],
+        [L0605FractionBarLogic] =
+        [
+            new("3.15/0.45=3.15÷0.45. 1=yes,0=no.",1,"Fraction bar is division."),
+            new("3.15/0.45=7. 1=yes,0=no.",1,"Divide315/45."),
+            new("3.15×0.45 represents same value as3.15/0.45. 1=yes,0=no.",0,"Multiplication versus division."),
+            new("3.15×(1/0.45) equals3.15/0.45. 1=yes,0=no.",1,"Reciprocal product."),
+            new("3.15÷45/100 equals3.15/0.45. 1=yes,0=no.",1,"0.45=45/100."),
+            new("3.15×100/45 equals3.15÷0.45. 1=yes,0=no.",1,"Multiply reciprocal."),
+            new("For3/4 x=15, x=15÷3/4 is valid. 1=yes,0=no.",1,"Original choice A/E."),
+            new("For3/4 x=15, x=(4/3)×15 is valid. 1=yes,0=no.",1,"Original choice C."),
+            new("For3/4 x=15, x=(3/4)×15 is valid. 1=yes,0=no.",0,"Wrong operation."),
+            new("4=32b gives b=1/8. 1=yes,0=no.",1,"Four thirty-seconds."),
+            new("26=100d givesd=0.26. 1=yes,0=no.",1,"Division100."),
+            new("Lilac paint with20% blue4cups has20cups total. 1=yes,0=no.",1,"4÷.2=20."),
+            new("White40% and red40% each8cups in20cup lilac batch. 1=yes,0=no.",1,"40%×20=8."),
+            new("Triangle Q with15in base6.5in height has larger area than triangle P12in base8in height. 1=yes,0=no.",1,"48.75>48."),
+            new("A denominator0 is allowed for arbitrary fraction bar expressions. 1=yes,0=no.",0,"Division by zero invalid."),
+            new("Diagram of a fundraiser thermometer requires reading the tick spacing rather than guessing from unlabeled art. 1=yes,0=no.",1,"Visual source must be checked.")
         ]
     };
 

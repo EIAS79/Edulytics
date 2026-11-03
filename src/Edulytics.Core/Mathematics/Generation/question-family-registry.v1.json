@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u06.l05.rational_fraction_bar_division",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-3point15overpoint45-solving-coefficient-equations-and-lilac",
+      "representations": [
+        "numeric",
+        "equation_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u06.l05.fraction_bar_meaning_and_solutions",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "fraction-as-quotient-and-equivalent-expression-choice",
+      "representations": [
+        "boolean_reasoning",
+        "fraction_tape"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u06.l04.equation_context_solutions",
       "version": 1,
       "skillId": "ratio.unit_rate",
