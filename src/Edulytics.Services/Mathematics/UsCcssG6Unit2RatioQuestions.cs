@@ -313,6 +313,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0716Factors = "usccss.g6.u07.l16.gcf_source_numbers_and_groups";
     public const string L0716GcfLogic = "usccss.g6.u07.l16.factor_context_and_sign_logic";
 
+    public const string L0717Multiples = "usccss.g6.u07.l17.least_common_multiple_source_cycles";
+    public const string L0717LcmLogic = "usccss.g6.u07.l17.multiple_cycle_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4412,6 +4415,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Giraffe96miles/3hours exceeds elephant75miles/3hours by21miles. 1=yes,0=no.",1,"96-75=21."),
             new("GCF finds the biggest equal-group count that divides two totals with no leftovers. 1=yes,0=no.",1,"Common divisor."),
             new("A correct count of bags proves a student's chosen arrangement is understandable without inspecting their drawing. 1=yes,0=no.",0,"Teacher evaluates grouping representation.")
+        ],
+        [L0717Multiples] =
+        [
+            new("Green light every4 seconds, yellow every5 seconds. First simultaneous blink after start in SECONDS?",20,"LCM(4,5)=20."),
+            new("Red light every12 seconds, blue every9 seconds. First simultaneous blink in SECONDS?",36,"LCM(12,9)=36."),
+            new("Least common multiple of10 and15?",30,"30 divisible by10 and15."),
+            new("Least common multiple of8 and12?",24,"24 divisible by8 and12."),
+            new("Cups sold8/pack, napkins12/pack. Fewest number of CUP packs for equal items?",3,"24 cups needs3 packs."),
+            new("Cups sold8/pack, napkins12/pack. Fewest NAPKIN packs for equal items?",2,"24 napkins needs2 packs."),
+            new("With3 cup packs of8 and2 napkin packs of12, number of matched sets?",24,"24 cups and24 napkins."),
+            new("Which of20,25,30,35 is a multiple of both10 and15? Enter number.",30,"30 shared multiple."),
+            new("Next simultaneous blink of lights4sec and5sec AFTER20s, enter time?",40,"Multiples of20."),
+            new("Next simultaneous blink of12sec and9sec AFTER36s, enter time?",72,"Multiples of36."),
+            new("Least common multiple of6 and8?",24,"24 divisible by6 and8."),
+            new("Least common multiple of4 and6?",12,"12 divisible by4 and6."),
+            new("Least common multiple of9 and12?",36,"36 divisible by9 and12."),
+            new("Least common multiple of7 and5?",35,"Relatively prime."),
+            new("Top horizontal edge from(-5,3) to(3,3). Length?",8,"3-(-5)=8."),
+            new("Bottom horizontal edge from(1,-2) to(-3,-2). Length?",4,"1-(-3)=4."),
+            new("Rectangle A(-6,9),B(5,9), C(5,2),D(-6,2). Width?",11,"5-(-6)=11."),
+            new("Same sample rectangle height?",7,"9-2=7."),
+            new("School fundraising goal2500dollars, raised20%. Dollars raised?",500,"2500×.2=500."),
+            new("School fundraising goal2500dollars, raised175%. Dollars raised?",4375,"2500×1.75=4375."),
+            new("Fundraising175% of2500. Dollars ABOVE goal?",1875,"4375-2500=1875."),
+            new("For lights4sec and5sec, how many green blinks by time20sec excluding time0?",5,"20/4=5."),
+            new("For lights4sec and5sec, how many yellow blinks by time20sec excluding time0?",4,"20/5=4.")
+        ],
+        [L0717LcmLogic] =
+        [
+            new("20 is the least positive common multiple of4 and5. 1=yes,0=no.",1,"LCM=20."),
+            new("36 is least positive common multiple of12 and9. 1=yes,0=no.",1,"36=3×12=4×9."),
+            new("Multiples of10 up to100 include10,20,30,40,50,60,70,80,90,100. 1=yes,0=no.",1,"Successive tens."),
+            new("Multiples of15 up to100 include15,30,45,60,75,90. 1=yes,0=no.",1,"Six multiples under100."),
+            new("LCM(10,15)=15. 1=yes,0=no.",0,"15 not divisible by10."),
+            new("LCM(10,15)=30. 1=yes,0=no.",1,"Smallest common multiple."),
+            new("Three packages of8 cups and two packages of12 napkins give24 matched place settings. 1=yes,0=no.",1,"24 each."),
+            new("Two packs of8 cups and two of12 napkins make the same count. 1=yes,0=no.",0,"16 vs24."),
+            new("LCM is the smallest positive number divisible by both inputs. 1=yes,0=no.",1,"Definition."),
+            new("The greatest common factor and least common multiple are always equal. 1=yes,0=no.",0,"Different operations."),
+            new("Lights blinking at4-second and5-second intervals coincide at20,40,60sec. 1=yes,0=no.",1,"Multiples20."),
+            new("The source top edge(-5,3) to(3,3) is8units long. 1=yes,0=no.",1,"|3+5|=8."),
+            new("The source bottom edge(1,-2) to(-3,-2) is4units long. 1=yes,0=no.",1,"|1+3|=4."),
+            new("Given rectangle A(-6,9) B(5,9), other vertices have to be uniquely(5,2),(-6,2). 1=yes,0=no.",0,"Many heights/placements possible."),
+            new("20% of2500dollars is500dollars. 1=yes,0=no.",1,"One fifth."),
+            new("175% of2500dollars is4375dollars. 1=yes,0=no.",1,"1.75×2500."),
+            new("Equivalent package groups should have no leftover cups or napkins in the minimum matched-set example. 1=yes,0=no.",1,"Exactly24 each."),
+            new("An LCM story usually concerns a shared repeat time or minimum equal multiple, not maximum equal group size. 1=yes,0=no.",1,"GCF handles equal largest groups.")
         ]
     };
 
