@@ -226,6 +226,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0607PercentEquations = "usccss.g6.u06.l07.percent_equation_unknown_whole";
     public const string L0607PercentEquationLogic = "usccss.g6.u06.l07.percent_equation_interpretation";
 
+    public const string L0608ExpressionValues = "usccss.g6.u06.l08.equivalent_expression_evaluation";
+    public const string L0608EquivalentLogic = "usccss.g6.u06.l08.equivalent_for_all_values_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2986,6 +2989,50 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("0.0045÷0.002=2.25. 1=yes,0=no.",1,"4.5/2."),
             new("Identifying the100% reference is necessary to interpret a percent equation. 1=yes,0=no.",1,"Defines whole."),
             new("A double number line should align0%,100% with0 and the full reference amount. 1=yes,0=no.",1,"Proportional marks.")
+        ],
+        [L0608ExpressionValues] =
+        [
+            new("x+3 at x=1?",4,"1+3=4."),
+            new("2x at x=1?",2,"2×1=2."),
+            new("x+3 at x=2?",5,"2+3=5."),
+            new("2x at x=2?",4,"2×2=4."),
+            new("x+3 at x=3?",6,"3+3=6."),
+            new("2x at x=3?",6,"2×3=6."),
+            new("x+3 at x=4?",7,"4+3=7."),
+            new("2x at x=4?",8,"2×4=8."),
+            new("4x at x=5?",20,"4×5=20."),
+            new("15+x at x=5?",20,"15+5=20."),
+            new("4x at x=6?",24,"4×6=24."),
+            new("15+x at x=6?",21,"15+6=21."),
+            new("2b+b at b=3?",9,"3×3=9."),
+            new("3b at b=3?",9,"3×3=9."),
+            new("80% of x=100. Find x.",125,"100/.8=125."),
+            new("Jada dog5½in puppy and grows14½in. Current height in INCHES?",20,"5.5+14.5=20."),
+            new("Lin picked9¾lb apples,3 times Andre. Andre in QUARTER-POUND UNITS?",13,"9.75/3=3.25=13quarters."),
+            new("2.3×1.4 in HUNDREDTHS?",322,"3.22."),
+            new("1.72×2.6 in THOUSANDTHS?",4472,"4.472."),
+            new("18.2×0.2 in HUNDREDTHS?",364,"3.64."),
+            new("15×1.2=?",18,"18."),
+            new("141.75÷2.5 in TENTHS?",567,"56.7.")
+        ],
+        [L0608EquivalentLogic] =
+        [
+            new("x+3 and2x are equal for x=3. 1=yes,0=no.",1,"Both6."),
+            new("x+3 and2x are equivalent for EVERY x. 1=yes,0=no.",0,"Atx=1,4vs2."),
+            new("x+3 and2x are equal at x=1. 1=yes,0=no.",0,"4vs2."),
+            new("4x and15+x are equal whenx=5. 1=yes,0=no.",1,"20 each."),
+            new("4x and15+x are equivalent for everyx. 1=yes,0=no.",0,"Atx=6,24vs21."),
+            new("2b+b and3b are equivalent for everyb. 1=yes,0=no.",1,"Combine like terms."),
+            new("2b+b and3b have equal values for b=1,2,3. 1=yes,0=no.",1,"Identity."),
+            new("Two expressions equal at one selected variable value must be equivalent. 1=yes,0=no.",0,"Counterexample sufficient."),
+            new("To disprove equivalence, provide one input where evaluated values differ. 1=yes,0=no.",1,"Counterexample."),
+            new("To prove equivalence, checking only x=3 suffices for all possible x. 1=yes,0=no.",0,"Not proof."),
+            new("80%x=100 gives x=125. 1=yes,0=no.",1,"0.8×125=100."),
+            new("Dog puppy height5.5 plus14.5 growth gives20in. 1=yes,0=no.",1,"Add."),
+            new("Andre picked3.25lb if Lin picked9.75lb triple Andre. 1=yes,0=no.",1,"9.75/3=3.25."),
+            new("2.3×1.4=3.22. 1=yes,0=no.",1,"Decimal multiplication."),
+            new("1.72×2.6=4.472. 1=yes,0=no.",1,"Decimal multiplication."),
+            new("An equivalent-expression length model should preserve the same variable part structure for every value of the variable. 1=yes,0=no.",1,"Structural identity.")
         ]
     };
 
