@@ -106,6 +106,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0316FindPercent = "usccss.g6.u03.l16.find_percent_from_two_amounts";
     public const string L0316FindPercentLogic = "usccss.g6.u03.l16.percent_division_reasoning";
 
+    public const string L0317PaintCalculations = "usccss.g6.u03.l17.first_party_bounded_room_paint_math";
+    public const string L0317PaintReasoning = "usccss.g6.u03.l17.first_party_paint_model_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1303,6 +1306,47 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The reference quantity B is the100% amount when asking what percent C is of B. 1=yes,0=no.",1,"C/B×100%."),
             new("40inches is100% of the ride minimum40inches. 1=yes,0=no.",1,"Equal amounts."),
             new("A percentage based on one reference can be transferred to another unrelated reference without recalculating the amount. 1=yes,0=no.",0,"Amounts depend on base.")
+        ],
+        [L0317PaintCalculations] =
+        [
+            new("Given east wall9ft long and8ft high, its area in SQUARE FEET?",72,"9×8=72sqft."),
+            new("Given total paintable wall area300sqft and two coats, total paint coverage in SQUARE FEET?",600,"300×2=600 square feet of coverage."),
+            new("Source paint covers175sqft with2quarts. Coverage per QUART in HALF-SQUARE-FOOT UNITS?",175,"175/2=87.5sqft per quart, or175 half-sqft units."),
+            new("Two coats require600sqft coverage and each2quarts covers175sqft. Minimum WHOLE QUARTS to buy?",7,"600/(175/2)=6.857... quarts, so7 whole quarts."),
+            new("Paint costs1090cents per quart. Cost of7quarts WITHOUT discount in CENTS?",7630,"7×1090=7630cents."),
+            new("Paint costs1090cents per quart with20% off. Discount per QUART in CENTS?",218,"0.2×1090=218."),
+            new("Paint costs1090cents per quart with20% off. Sale price per QUART in CENTS?",872,"1090-218=872cents."),
+            new("Seven quart paint cans with20% discount cost how many CENTS?",6104,"7×872=6104cents."),
+            new("One gallon costs3490cents and3quarts each1090cents before discount. Total in CENTS?",6760,"3490+3×1090=6760cents."),
+            new("One gallon3490cents plus3discounted quarts872cents each. Total in CENTS?",6106,"3490+3×872=6106cents."),
+            new("Two gallons cost3490cents each. Total in CENTS?",6980,"2×3490=6980."),
+            new("Compare seven discounted quart cans6104cents with one gallon plus3 discounted quarts6106cents. Savings in CENTS by choosing seven quarts?",2,"6106-6104=2cents."),
+            new("Source east wall72sqft of total300sqft. Percent of wall area represented by east wall?",24,"72/300×100=24%."),
+            new("Painting east72sqft with two coats takes96minutes. Minutes per SQUARE FOOT of wall area, in THIRD-MINUTE UNITS?",4,"96/72=4/3min/sqft."),
+            new("At same solo pace as east wall96min/72sqft, solo minutes for entire300sqft?",400,"300×96/72=400min."),
+            new("At same solo pace, remaining minutes after east wall96 of solo total400?",304,"400-96=304."),
+            new("With friend, remaining painting takes150minutes instead of304solo. Minutes saved?",154,"304-150=154minutes."),
+            new("Room's south window5ft by3ft not painted. Area excluded in SQFT?",15,"5×3=15 square feet."),
+            new("A narrow paintable wall face measures0.5ft wide by8ft tall. Area in SQUARE FEET?",4,"0.5×8=4sqft."),
+            new("Paint purchase: seven quarts supply how many HALF-SQUARE-FOOT COVERAGE UNITS given each quart87.5 sqft?",1225,"7×87.5=612.5sqft, or1225 half-square-foot units.")
+        ],
+        [L0317PaintReasoning] =
+        [
+            new("Two coats on300sqft of walls require covering600sqft in total. 1=yes,0=no.",1,"Two complete coats double coverage needed."),
+            new("If each quart covers87.5sqft and600sqft must be coated,6 whole quarts are sufficient. 1=yes,0=no.",0,"6×87.5=525, need7."),
+            new("Seven quarts can cover612.5sqft at87.5sqft per quart, enough for600sqft. 1=yes,0=no.",1,"Capacity exceeds need."),
+            new("The east wall72sqft is25% of300sqft total. 1=yes,0=no.",0,"72/300=24%."),
+            new("The east wall72sqft is24% of300sqft total. 1=yes,0=no.",1,"72/300×100=24%."),
+            new("A painter's quoted rate96min for72sqft can estimate solo time for300sqft as400min under unchanged conditions. 1=yes,0=no.",1,"96/72×300=400."),
+            new("If the rest takes304min alone but150min with a friend, saved painting time is154min. 1=yes,0=no.",1,"304-150=154."),
+            new("Quarts sold with20% discount have an effective price872cents when original is1090cents. 1=yes,0=no.",1,"1090×.8=872."),
+            new("One gallon and3 discounted quarts cost6106cents given gallon3490 and quart872. 1=yes,0=no.",1,"3490+2616=6106."),
+            new("Seven discounted quarts cost6104cents, two cents less than one gallon plus3 discounted quarts. 1=yes,0=no.",1,"6106-6104=2."),
+            new("Drying breaks must be added to painting minutes to answer a question restricted to active painting time. 1=yes,0=no.",0,"Prompt excludes drying/lunch pauses."),
+            new("Open-ended project supplies costs have one guaranteed identical total for every valid purchase plan. 1=yes,0=no.",0,"Container and extra supplies decisions vary."),
+            new("Areas of doors and windows should be excluded if those surfaces are not painted. 1=yes,0=no.",1,"Subtract nonpainted surfaces."),
+            new("A numerically correct practice answer automatically verifies a student's floor-plan diagram and supply rationale. 1=yes,0=no.",0,"Teacher review is required."),
+            new("The original lesson has numbered work on preparing, budgeting and painting time, even though it has no separate practice.html. 1=yes,0=no.",1,"Activities17.1–17.3 form the original capstone.")
         ]
     };
 
