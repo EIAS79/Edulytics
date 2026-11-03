@@ -367,6 +367,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0815QuartileValues = "usccss.g6.u08.l15.quartiles_five_number_summary";
     public const string L0815QuartileLogic = "usccss.g6.u08.l15.quartile_spread_reasoning";
 
+    public const string L0816BoxPlotValues = "usccss.g6.u08.l16.box_plot_source_quartiles";
+    public const string L0816BoxPlotLogic = "usccss.g6.u08.l16.five_number_box_plot_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5332,6 +5335,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The exact values of the original word-game scores can be recovered without observing their dot-plot image. 1=yes,0=no.",0,"Image required."),
             new("An IQR is an average of absolute deviations from mean. 1=yes,0=no.",0,"That's MAD."),
             new("A student must label quartiles with the underlying measurement unit when presenting data. 1=yes,0=no.",1,"Context.")
+        ],
+        [L0816BoxPlotValues] =
+        [
+            new("Given five-number seconds min40 Q1=45 median48 Q3=50 max60. Range in seconds?",20,"60-40=20."),
+            new("Same box plot. IQR seconds?",5,"50-45=5."),
+            new("Same box plot. Left whisker length from min to Q1?",5,"45-40=5."),
+            new("Same box plot. Right whisker length from Q3 to max?",10,"60-50=10."),
+            new("Same box plot. Left half of box Q1 to median length?",3,"48-45=3."),
+            new("Same box plot. Right half of box median to Q3 length?",2,"50-48=2."),
+            new("Homework data3,10,12,4,7,9,5,5,11,11,5,12,11. Count?",13,"Thirteen values."),
+            new("Same homework data sorted. Minimum?",3,"Min3."),
+            new("Same homework data sorted. Maximum?",12,"Max12."),
+            new("Same homework data sorted. Median?",9,"Seventh ordered value9."),
+            new("Same homework data. First quartile Q1?",5,"Lower6 median5."),
+            new("Same homework data. Third quartile Q3?",11,"Upper6 median11."),
+            new("Same homework data. IQR?",6,"11-5=6."),
+            new("Same homework data. Range?",9,"12-3=9."),
+            new("Given100 mice and box interval Q1 to Q3, percentage represented?",50,"Middle half."),
+            new("Given100 mice and interval Q1 to median, approximate count?",25,"Quarter of100."),
+            new("Jada donates26 dollars, one of three equal spending/saving/donating portions. Total earnings in DOLLARS?",78,"26×3=78."),
+            new("Earnings78dollars across babysitting30, walking dogs28, errands20. Total?",78,"30+28+20."),
+            new("Same earnings78, donation26. Remaining for spending and saving combined?",52,"26+26=52."),
+            new("A box summary40,45,48,50,60. Lower quartile in SECONDS?",45,"Q1=45."),
+            new("A box summary40,45,48,50,60. Upper quartile in SECONDS?",50,"Q3=50."),
+            new("Dataset3,4,5,5,5,7,9,10,11,11,11,12,12. How many values below9?",6,"Six values."),
+            new("A box spanning45 to50 seconds has width in SECONDS?",5,"IQR."),
+            new("For a box plot of100 subjects, middle50% corresponds to how many subjects?",50,"About50 observations.")
+        ],
+        [L0816BoxPlotLogic] =
+        [
+            new("A box plot displays minimum,Q1,median,Q3,maximum. 1=yes,0=no.",1,"Five-number summary."),
+            new("The original seconds example has Q1=45, median48 and Q3=50. 1=yes,0=no.",1,"Given."),
+            new("For summary40,45,48,50,60 the IQR equals5 seconds. 1=yes,0=no.",1,"50-45."),
+            new("For summary40,45,48,50,60 range equals20 seconds. 1=yes,0=no.",1,"60-40."),
+            new("A box plot normally reveals all exact observed values like a dot plot. 1=yes,0=no.",0,"It compresses data."),
+            new("A box includes the middle50% of data betweenQ1 andQ3. 1=yes,0=no.",1,"Quartile interval."),
+            new("13 homework values have median9 hours. 1=yes,0=no.",1,"Seventh after sorting."),
+            new("13 homework values have Q1=5 and Q3=11. 1=yes,0=no.",1,"Medians of lower and upper6."),
+            new("13 homework values IQR6 hours. 1=yes,0=no.",1,"11-5."),
+            new("In a100-mouse study, roughly50 lie within theQ1–Q3 box. 1=yes,0=no.",1,"Middle half."),
+            new("The original 100-mice box interval0.5–1sec can be counted exactly without source graph/percentile positions. 1=yes,0=no.",0,"Needs actual figure."),
+            new("Jada donates one-third of earnings and gave26 dollars, so total78. 1=yes,0=no.",1,"3×26."),
+            new("The breakdown of78 dollars by three jobs is uniquely determined from donation alone. 1=yes,0=no.",0,"Many valid."),
+            new("A dot plot may show individual frequency lost in box plot. 1=yes,0=no.",1,"Summary only."),
+            new("The original books-read maximum and median can be assigned exact source values using only the text prompt without box plot. 1=yes,0=no.",0,"Image needed."),
+            new("The numeric type of a box plot scale must match measured variable units. 1=yes,0=no.",1,"e.g. seconds/hours."),
+            new("A five-number summary can be computed from ordered raw data. 1=yes,0=no.",1,"Sort."),
+            new("A lower IQR indicates tighter middle half but not necessarily smaller total range. 1=yes,0=no.",1,"Extremes may differ.")
         ]
     };
 
