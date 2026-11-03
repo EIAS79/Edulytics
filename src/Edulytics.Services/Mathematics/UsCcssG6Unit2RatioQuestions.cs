@@ -139,6 +139,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0410AlgorithmValues = "usccss.g6.u04.l10.fraction_division_steps";
     public const string L0410AlgorithmLogic = "usccss.g6.u04.l10.division_reciprocal_reasoning";
 
+    public const string L0411DivisionFluency = "usccss.g6.u04.l11.divide_fractions_exact";
+    public const string L0411DivisionLogic = "usccss.g6.u04.l11.fraction_algorithm_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1757,6 +1760,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Dividing by a fraction less than1 always makes the quotient smaller for positive dividend. 1=yes,0=no.",0,"It gets larger."),
             new("A tape diagram and reciprocal algorithm should produce the same correct quotient. 1=yes,0=no.",1,"Equivalent reasoning."),
             new("One must avoid using0 as the divisor of a fraction-division expression. 1=yes,0=no.",1,"Division by zero undefined.")
+        ],
+        [L0411DivisionFluency] =
+        [
+            new("14/15 divided by7/5, answer in THIRDS?",2,"14/15×5/7=2/3."),
+            new("4/3 divided by5/2, answer in FIFTEENTHS?",8,"4/3×2/5=8/15."),
+            new("15/4 divided by5/8 equals?",6,"15/4×8/5=6."),
+            new("Kiran has2¾lb flour and fills4⅛ equal bags. Pounds per bag in THIRDS?",2,"(11/4)/(33/8)=2/3lb."),
+            new("Four and a half divided by1/8 equals?",36,"9/2×8=36."),
+            new("Four and a half divided by1/4 equals?",18,"9/2×4=18."),
+            new("Four and a half divided by1/6 equals?",27,"9/2×6=27."),
+            new("A phone reaches2/5 charged in1/3hour at constant rate. Time to full in MINUTES?",50,"(1/3)/(2/5)=5/6h=50min."),
+            new("A bucket2/5 full holds2½lb water. Weight when full in QUARTER-POUND units?",25,"5/2÷2/5=25/4lb."),
+            new("14/15 divided by7/5: multiplying first by5 and then dividing by7 gives numerator in THIRDS?",2,"14/15×5÷7=2/3."),
+            new("4/3 divided by5/2: reciprocal multiplier denominator?",5,"Reciprocal of5/2 is2/5."),
+            new("4/3 divided by5/2: reciprocal multiplier numerator?",2,"Reciprocal is2/5."),
+            new("A phone needs50min per charge. Time for3 charges at same constant model in MINUTES?",150,"3×50=150."),
+            new("A bucket full holds25/4lb. Half-full water in EIGHTH-POUND units?",25,"Half of25/4=25/8lb."),
+            new("Two and three-quarters pounds is how many QUARTER-POUND portions?",11,"11/4 divided by1/4=11."),
+            new("Four and one-eighth bags expressed in EIGHTH-BAG portions?",33,"4⅛=33/8."),
+            new("A fraction6/5 is what number of FIFTHS?",6,"Six fifths.")
+        ],
+        [L0411DivisionLogic] =
+        [
+            new("14/15÷7/5=2/3. 1=yes,0=no.",1,"14/15×5/7=2/3."),
+            new("For14/15÷7/5, multiply14/15 by5 and then by1/7; valid. 1=yes,0=no.",1,"Original option A."),
+            new("For14/15÷7/5, multiply14/15 by5 then divide7; valid. 1=yes,0=no.",1,"Original option D."),
+            new("For14/15÷7/5, multiply14/15 by7 then divide5; valid. 1=yes,0=no.",0,"Incorrect reciprocal."),
+            new("Clare4/3÷5/2=10/3 is correct. 1=yes,0=no.",0,"Correct8/15."),
+            new("Dividing4/3 by5/2 means multiply4/3 by2/5. 1=yes,0=no.",1,"Reciprocal algorithm."),
+            new("15/4 divided by5/8 equals6. 1=yes,0=no.",1,"15/4×8/5=6."),
+            new("2¾lb divided into4⅛ equal bags yields2/3lb per bag. 1=yes,0=no.",1,"11/4÷33/8=2/3."),
+            new("4½ divided by1/8 equals36. 1=yes,0=no.",1,"9/2×8=36."),
+            new("At2/5 charge in1/3hour, constant rate full charge time is5/6hour. 1=yes,0=no.",1,"1/3÷2/5=5/6."),
+            new("For phone fraction charged2/5 in1/3hour, 2/5×?=1/3 is a valid equation for full time. 1=yes,0=no.",1,"Unknown time5/6."),
+            new("For phone fraction charged2/5 in1/3hour, 2/5÷1/3 directly gives full time. 1=yes,0=no.",0,"It gives fraction per hour6/5."),
+            new("2/5 of a full bucket weighs2.5lb, so full bucket water weighs6.25lb. 1=yes,0=no.",1,"2.5÷.4=6.25."),
+            new("Multiplying by a fraction's reciprocal works only when the divisor is nonzero. 1=yes,0=no.",1,"Zero denominator not allowed.")
         ]
     };
 
