@@ -186,6 +186,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson2TangramQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
@@ -416,6 +417,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson2TangramQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family))
             return UsCcssG6Unit1Lesson3ShadedAreaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson4ParallelogramQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1745,6 +1748,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family))
         {
             var item = UsCcssG6Unit1Lesson3ShadedAreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson4ParallelogramQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Explanation,
                 item.ItemType, item.Parameters);
         }
@@ -4898,6 +4907,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson2TangramQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson3ShadedAreaQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson4ParallelogramQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))

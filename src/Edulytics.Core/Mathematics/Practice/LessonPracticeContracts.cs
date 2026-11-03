@@ -1394,6 +1394,23 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original IM 6-8 G6 U01:L04 Parallelograms: classify both
+        // opposite parallel side pairs, numeric area via dissection/enclosure,
+        // and area invariance under true perpendicular height. Drawings,
+        // constructions, distinct decompositions and proofs stay teacher-scored.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L04",
+            "geometry.area_tiling",
+            "G6_SOURCE_PARALLELOGRAM_CLASSIFY_AREA_REARRANGE_EXACT",
+            [
+                "usccss.g6.u01.l04.parallelogram_exact_area",
+                "usccss.g6.u01.l04.two_pairs_parallel",
+                "usccss.g6.u01.l04.equal_area_rearrangement"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L04_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
