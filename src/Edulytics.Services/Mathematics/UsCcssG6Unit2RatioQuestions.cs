@@ -178,6 +178,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0506Products = "usccss.g6.u05.l06.decimal_multiplication_methods";
     public const string L0506MethodsLogic = "usccss.g6.u05.l06.decimal_product_scale_reasoning";
 
+    public const string L0507ProductValues = "usccss.g6.u05.l07.decimal_partial_product_values";
+    public const string L0507PartialLogic = "usccss.g6.u05.l07.partial_product_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2300,6 +2303,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Products may be computed using fractions, powers of ten or partial area products. 1=yes,0=no.",1,"Equivalent strategies."),
             new("A numeric product alone guarantees a student's drawn area partitions are correct. 1=yes,0=no.",0,"Teacher visual review."),
             new("Multiplication by a positive number below1 produces a smaller positive product than the original factor. 1=yes,0=no.",1,"Scale factor below1.")
+        ],
+        [L0507ProductValues] =
+        [
+            new("3×0.6 in TENTHS?",18,"1.8."),
+            new("0.4×2 in TENTHS?",8,"0.8."),
+            new("0.4×0.6 in HUNDREDTHS?",24,"0.24."),
+            new("3×2 in UNITS?",6,"6."),
+            new("3.1×1.4 in HUNDREDTHS?",434,"4.34."),
+            new("For3.1×1.4, area3×1 in HUNDREDTHS?",300,"3."),
+            new("For3.1×1.4, area3×0.4 in HUNDREDTHS?",120,"1.2."),
+            new("For3.1×1.4, area0.1×1 in HUNDREDTHS?",10,"0.1."),
+            new("For3.1×1.4, area0.1×0.4 in HUNDREDTHS?",4,"0.04."),
+            new("0.36×0.53 in TEN-THOUSANDTHS?",1908,".1908."),
+            new("2.5×1.4 in TENTHS?",35,"3.5."),
+            new("0.64×0.81 in TEN-THOUSANDTHS?",5184,"0.5184."),
+            new("Diego buys12 muffins for420cents. Price per muffin in CENTS?",35,"420/12=35."),
+            new("Diego buys12 muffins for420cents. Price for4 in CENTS?",140,"4×35=140."),
+            new("Diego buys muffins35cents each. Maximum with300cents?",8,"300/35=8 whole,20c leftover."),
+            new("0.4×0.6 plus0.4×2 in HUNDREDTHS?",104,".24+.8=1.04."),
+            new("Rectangle18×23 whole units. Area?",414,"18×23=414."),
+            new("An area3×0.6 plus0.4×2 plus0.4×0.6 plus3×2 in HUNDREDTHS?",884,"1.8+.8+.24+6=8.84.")
+        ],
+        [L0507PartialLogic] =
+        [
+            new("3.1×1.4=4.34. 1=yes,0=no.",1,"3×1+3×.4+.1×1+.1×.4=4.34."),
+            new("0.36×0.53=0.1908. 1=yes,0=no.",1,"36×53/10000."),
+            new("2.5×1.4=3.5. 1=yes,0=no.",1,"25×14/100."),
+            new("0.64×0.81=0.5184. 1=yes,0=no.",1,"64×81/10000."),
+            new("The area3×0.6 equals1.8. 1=yes,0=no.",1,"Source subrectangle."),
+            new("The area0.4×0.6 equals0.24. 1=yes,0=no.",1,"Two decimal factors."),
+            new("3.1×1.4 can be partitioned into four subrectangles using3+.1 and1+.4. 1=yes,0=no.",1,"Distributive law."),
+            new("The sum of partial products equals the full rectangle area. 1=yes,0=no.",1,"No overlaps/gaps."),
+            new("12 muffins for4.20 means four cost1.40. 1=yes,0=no.",1,"35c each."),
+            new("A3-dollar budget buys9 whole35-cent muffins. 1=yes,0=no.",0,"9 cost315c; maximum8."),
+            new("Adding digits from different decimal place columns without respecting units preserves all values. 1=yes,0=no.",0,"Regroup properly."),
+            new("The method of whole-number partial products also extends to decimals after accounting for scale. 1=yes,0=no.",1,"Place-value decomposition."),
+            new("A numeric correct answer alone validates a drawn source rectangle's placement labels. 1=yes,0=no.",0,"Requires visual checking."),
+            new("An area model can represent products smaller than1 square unit. 1=yes,0=no.",1,"Fractional side lengths.")
         ]
     };
 
