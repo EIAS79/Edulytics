@@ -2532,6 +2532,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit5 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SCALE_DECIMAL_DIVISION_BY_TEN_POWERS",
+            [
+                "usccss.g6.u05.l13.decimal_divisor_quotients",
+                "usccss.g6.u05.l13.decimal_divisor_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

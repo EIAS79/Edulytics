@@ -196,6 +196,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0512DecimalDivision = "usccss.g6.u05.l12.decimal_divided_by_whole";
     public const string L0512DecimalScaleLogic = "usccss.g6.u05.l12.division_scale_equivalence";
 
+    public const string L0513DecimalQuotients = "usccss.g6.u05.l13.decimal_divisor_quotients";
+    public const string L0513DecimalLogic = "usccss.g6.u05.l13.decimal_divisor_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2551,6 +2554,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Equal split of dollars can be checked by converting the result to cents before division. 1=yes,0=no.",1,"Avoids decimal point confusion."),
             new("When scaling division, zero cannot be used as a multiplier for both numbers, because divisor would be0. 1=yes,0=no.",1,"Undefined."),
             new("Paper area is found by multiplying both side lengths in same unit. 1=yes,0=no.",1,"Square units.")
+        ],
+        [L0513DecimalQuotients] =
+        [
+            new("109.2÷6, quotient in TENTHS?",182,"109.2/6=18.2."),
+            new("31.59÷13, quotient in HUNDREDTHS?",243,"31.59/13=2.43."),
+            new("61.12÷3.2, quotient in TENTHS?",191,"61.12/3.2=19.1."),
+            new("611.2÷32, quotient in TENTHS?",191,"Equivalent scaling."),
+            new("6112÷320, quotient in TENTHS?",191,"Equivalent scaling."),
+            new("Bag weighs5.1kilograms and each penny2.5grams. Approximate count of pennies?",2040,"5100g/2.5g=2040."),
+            new("2.5-1.6, answer in TENTHS?",9,"0.9."),
+            new("0.72-0.4, answer in HUNDREDTHS?",32,"0.32."),
+            new("11.3-1.75, answer in HUNDREDTHS?",955,"9.55."),
+            new("73-1.3, answer in TENTHS?",717,"71.7."),
+            new("Plant B6⅔in, Plant C4 4/15in. Plant C as fraction of B in TWENTY-FIFTHS?",16,"(64/15)/(20/3)=16/25."),
+            new("Plant B6⅔in, C4 4/15in. Difference in FIFTHS of inch?",12,"20/3-64/15=12/5."),
+            new("460 students walk.20% public transit count?",92,"460×.20=92."),
+            new("460 students walk.5% bike count?",23,"460×.05=23."),
+            new("460 students walk.110% school bus count?",506,"460×1.1=506."),
+            new("2.43×13 in HUNDREDTHS?",3159,"31.59."),
+            new("A 5.1kg bag is how many GRAMS?",5100,"1kg=1000grams."),
+            new("1092÷60, result in TENTHS?",182,"18.2.")
+        ],
+        [L0513DecimalLogic] =
+        [
+            new("109.2÷6=1092÷60. 1=yes,0=no.",1,"Multiply both by10."),
+            new("109.2÷6=18.2. 1=yes,0=no.",1,"Check18.2×6."),
+            new("31.59÷13=2.43. 1=yes,0=no.",1,"13×2.43=31.59."),
+            new("In 31.59÷13, the subtraction52 from55 in long division represents TENTHS. 1=yes,0=no.",1,"55 tenths step."),
+            new("In31.59÷13, the subtraction39 from39 in long division represents HUNDREDTHS. 1=yes,0=no.",1,"39 hundredths step."),
+            new("61.12÷3.2=611.2÷32. 1=yes,0=no.",1,"Scale×10."),
+            new("61.12÷3.2=19.1. 1=yes,0=no.",1,"3.2×19.1=61.12."),
+            new("Bag5.1kg containing2.5gram pennies has about2040 pennies neglecting bag weight. 1=yes,0=no.",1,"5100/2.5."),
+            new("0.72-0.4=0.32. 1=yes,0=no.",1,"Subtract with place value."),
+            new("11.3-1.75=9.55. 1=yes,0=no.",1,"Difference."),
+            new("Plant C4 4/15 is16/25 as tall as plant B6⅔. 1=yes,0=no.",1,"Fraction ratio."),
+            new("School bus110% of460 walkers equals506. 1=yes,0=no.",1,"Scale factor1.10."),
+            new("Scaling only divisor changes quotient. 1=yes,0=no.",1,"Denominator factor."),
+            new("The original penny count assumes penny-only mass, ignoring bag mass. 1=yes,0=no.",1,"Model assumption.")
         ]
     };
 
