@@ -130,6 +130,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0407FractionGroups = "usccss.g6.u04.l07.fraction_of_group_numeric";
     public const string L0407FractionLogic = "usccss.g6.u04.l07.fractional_group_reasoning";
 
+    public const string L0408GroupSizeNumbers = "usccss.g6.u04.l08.fraction_group_size";
+    public const string L0408GroupSizeLogic = "usccss.g6.u04.l08.fraction_group_size_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1634,6 +1637,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("11/4 divided by3/4 gives11/3 groups. 1=yes,0=no.",1,"Cancel quarters."),
             new("The original unit whole matters when describing a fraction of a group. 1=yes,0=no.",1,"Reference and scale must be defined."),
             new("A small positive dividend divided by a larger positive divisor yields a quotient greater than1. 1=yes,0=no.",0,"Quotient below1.")
+        ],
+        [L0408GroupSizeNumbers] =
+        [
+            new("One cup strawberries makes3/4 cake. Cups for full cake in THIRD-CUP units?",4,"1÷3/4=4/3cups."),
+            new("1½cups raspberries make3/4 cake. Cups for full cake?",2,"1.5÷0.75=2."),
+            new("A painter covers9/2 square yards with3 gallons. Gallons per square yard in THIRD-GALLON units?",2,"3/(9/2)=2/3gallons per sqyd."),
+            new("A painter covers9/2 square yards with3 gallons. Square yards per gallon in HALF-SQUARE-YARD units?",3,"(9/2)/3=3/2sqyd per gallon."),
+            new("Han walks1/4mile and is1/3 of way to school. Full distance in QUARTER-MILE units?",3,"1/4÷1/3=3/4mile,3quarters."),
+            new("Four fifths divided by two thirds: answer in FIFTH-GROUP UNITS?",6,"(4/5)/(2/3)=6/5groups."),
+            new("Books1.5in wide fill a36in shelf. How many books?",24,"36÷1.5=24."),
+            new("Fifty-six divided by8 equals?",7,"56/8=7."),
+            new("56 divided by8000000 in MILLIONTHS?",7,"56/8000000=7/1000000."),
+            new("56 divided by0.000008 equals?",7000000,"56×125000=7000000."),
+            new("Choose a divisor16 for56÷16. Answer in HALF-UNITS?",7,"56/16=3.5, or7 halves."),
+            new("One cup enough for3/4 cake. How many cups for half cake in THIRD-CUP units?",2,"Full4/3 cups; half2/3 cups."),
+            new("A wall covers4.5 square yards with3 gallons. Gallons per1.5square yards?",1,"Divide into3 sections1.5sqyd each."),
+            new("A cake requires4/3 cups strawberries. 3 whole cakes need how many cups?",4,"3×4/3=4."),
+            new("Raspberry cake needs2 cups per cake. 5 cakes need how many cups?",10,"2×5=10."),
+            new("If Han's full journey3/4mile and he walked1/4mile, remaining distance in QUARTER-MILE units?",2,"3/4-1/4=2/4 mile.")
+        ],
+        [L0408GroupSizeLogic] =
+        [
+            new("One cup for3/4 cake means4/3 cups for full cake. 1=yes,0=no.",1,"1÷3/4=4/3."),
+            new("One and one-half cups for3/4 cake means2 cups per full cake. 1=yes,0=no.",1,"1.5÷.75=2."),
+            new("Three gallons for4.5square yards means2/3 gallon per square yard. 1=yes,0=no.",1,"3/4.5=2/3."),
+            new("One-quarter mile is1/3 of3/4mile. 1=yes,0=no.",1,"(1/4)/(3/4)=1/3."),
+            new("Four-fifths divided by two-thirds equals6/5. 1=yes,0=no.",1,"Multiply by reciprocal."),
+            new("Twenty-four books of1.5in each fit a36in shelf. 1=yes,0=no.",1,"24×1.5=36."),
+            new("56÷8million is much less than1. 1=yes,0=no.",1,"Seven millionths."),
+            new("56÷0.000008 is far greater than1. 1=yes,0=no.",1,"7million."),
+            new("56÷8 equals7, so it is between1 and7. 1=yes,0=no.",0,"Equals7, not strictly less."),
+            new("56÷16 equals3.5, strictly between1 and7. 1=yes,0=no.",1,"1<3.5<7."),
+            new("If size of each group is unknown, total÷number of groups finds the group size. 1=yes,0=no.",1,"Partition interpretation."),
+            new("For fractions, an amount can be less than the size of a whole group, requiring quotient below1. 1=yes,0=no.",1,"Fraction of group."),
+            new("A picture-based tape diagram should identify which section is one whole. 1=yes,0=no.",1,"Reference needed."),
+            new("A numeric quotient alone proves a student's original drawn source diagram accurate. 1=yes,0=no.",0,"Teacher verifies diagram.")
         ]
     };
 
