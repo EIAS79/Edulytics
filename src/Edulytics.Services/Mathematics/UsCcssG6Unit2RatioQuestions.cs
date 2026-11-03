@@ -136,6 +136,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0409SourceWordValues = "usccss.g6.u04.l09.contextual_fraction_division";
     public const string L0409ModelReasoning = "usccss.g6.u04.l09.division_word_model_logic";
 
+    public const string L0410AlgorithmValues = "usccss.g6.u04.l10.fraction_division_steps";
+    public const string L0410AlgorithmLogic = "usccss.g6.u04.l10.division_reciprocal_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1714,6 +1717,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("An unscripted fraction word problem may require deciding which quantity represents groups. 1=yes,0=no.",1,"Contextual interpretation."),
             new("A tape diagram can help check whether a model treats rate as constant. 1=yes,0=no.",1,"Corresponding segments."),
             new("Rainfall must remain steady to infer future gauge fill from a short observation. 1=yes,0=no.",1,"Constant-rate assumption.")
+        ],
+        [L0410AlgorithmValues] =
+        [
+            new("24 apples divided into half-apple shares. Number of shares?",48,"24÷1/2=48."),
+            new("One divided by1/10 equals?",10,"1×10=10."),
+            new("Four divided by1/10 equals?",40,"4×10=40."),
+            new("Eighteen divided by1/10 equals?",180,"18×10=180."),
+            new("Four divided by2/10 equals?",20,"4×10/2=20."),
+            new("Four divided by8/10 equals?",5,"4×10/8=5."),
+            new("Five divided by1/10 equals?",50,"5×10=50."),
+            new("Five divided by3/10, answer in THIRDS?",50,"5×10/3=50/3."),
+            new("Five divided by9/10, answer in NINTHS?",50,"5×10/9=50/9."),
+            new("Two and a half divided by1/8 equals?",20,"5/2×8=20."),
+            new("Two and a half divided by5/8 equals?",4,"5/2×8/5=4."),
+            new("Road paving3/5km per week. Time to pave1km in THIRD-WEEK UNITS?",5,"1÷3/5=5/3weeks."),
+            new("Pancake mix1¾lb; using7/8lb. Fraction used in HALF-UNIT FRACTIONS?",1,"7/8÷7/4=1/2."),
+            new("Twenty-five percent of400?",100,"One-quarter400."),
+            new("Fifty percent of90?",45,"One-half90."),
+            new("Seventy-five percent of200?",150,"Three quarters200."),
+            new("Ten percent of8000?",800,"One tenth."),
+            new("Five percent of20?",1,"One twentieth."),
+            new("4÷0.2 gives?",20,"4÷1/5=20."),
+            new("4÷0.8 gives?",5,"4÷4/5=5.")
+        ],
+        [L0410AlgorithmLogic] =
+        [
+            new("Dividing a positive number by1/10 is the same as multiplying by10. 1=yes,0=no.",1,"Reciprocal of1/10."),
+            new("24÷1/2=12. 1=yes,0=no.",0,"24 half-apple shares double to48."),
+            new("4÷2/10 equals20. 1=yes,0=no.",1,"Multiply by10 and divide by2."),
+            new("4÷8/10 equals5. 1=yes,0=no.",1,"4×10/8=5."),
+            new("To divide by2/5, multiply by5 and then divide by2. 1=yes,0=no.",1,"Reciprocal5/2."),
+            new("5÷3/10 equals50/3. 1=yes,0=no.",1,"5×10/3."),
+            new("5÷9/10 equals50/9. 1=yes,0=no.",1,"5×10/9."),
+            new("2½÷5/8 equals4. 1=yes,0=no.",1,"20÷5=4."),
+            new("Paving3/5km per week takes5/3 weeks per kilometer at a constant rate. 1=yes,0=no.",1,"1/(3/5)=5/3."),
+            new("A box1¾lb of pancake mix with7/8lb used has half used. 1=yes,0=no.",1,"7/8÷14/8=1/2."),
+            new("The numerator and denominator of a nonzero divisor fraction can be swapped to multiply by the reciprocal. 1=yes,0=no.",1,"a÷(b/c)=a×(c/b)."),
+            new("Dividing by a fraction less than1 always makes the quotient smaller for positive dividend. 1=yes,0=no.",0,"It gets larger."),
+            new("A tape diagram and reciprocal algorithm should produce the same correct quotient. 1=yes,0=no.",1,"Equivalent reasoning."),
+            new("One must avoid using0 as the divisor of a fraction-division expression. 1=yes,0=no.",1,"Division by zero undefined.")
         ]
     };
 
