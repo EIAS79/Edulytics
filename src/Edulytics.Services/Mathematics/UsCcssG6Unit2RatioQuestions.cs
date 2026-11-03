@@ -145,6 +145,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0412LengthValues = "usccss.g6.u04.l12.fractional_length_comparisons";
     public const string L0412LengthReasoning = "usccss.g6.u04.l12.fractional_comparison_reasoning";
 
+    public const string L0413AreaValues = "usccss.g6.u04.l13.rectangle_area_fractional_sides";
+    public const string L0413AreaLogic = "usccss.g6.u04.l13.rectangle_area_diagram_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1837,6 +1840,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A number of tile-span lengths always equals the integer number of physical uncut tiles purchased. 1=yes,0=no.",0,"Fractional spans and cuts differ."),
             new("A source ruler with approximate inch-centimeter factor should be marked approximate, not an exact standard. 1=yes,0=no.",1,"2.55 is approximate."),
             new("Original source diagrams can be evaluated using a numeric quotient only without checking lengths. 1=yes,0=no.",0,"Teacher checks representations.")
+        ],
+        [L0413AreaValues] =
+        [
+            new("Rectangle area11square meters, known side3⅔meters. Other side in METERS?",3,"11÷11/3=3."),
+            new("TV area462square inches and length16½in. Width in INCHES?",28,"462÷16.5=28."),
+            new("Rectangle area17½square inches, shorter side3½in. Longer side INCHES?",5,"17.5÷3.5=5."),
+            new("A floor is12ft by15ft. Total area in SQUARE FEET?",180,"12×15=180."),
+            new("Square tile side1⅓ft. Its area in NINTHS OF SQUARE FOOT?",16,"(4/3)²=16/9."),
+            new("Floor length12ft with tile edge1⅓ft. Number of complete tile lengths?",9,"12÷4/3=9."),
+            new("Floor width15ft with tile edge1⅓ft. Number of tile-edge spans in QUARTERS?",45,"15÷4/3=45/4."),
+            new("42inch bookshelf with1½inch books fits how many BOOKS?",28,"42÷1.5=28."),
+            new("Five shelves each42in long. Total shelf space in INCHES?",210,"5×42=210."),
+            new("Five shelves each42in long. Total shelf space in HALF-FEET?",35,"210in=17.5feet=35 half-feet."),
+            new("5/32 divided by25/4, quotient in FORTIETHS?",1,"(5/32)×(4/25)=1/40."),
+            new("How many1⅔ groups in1⅚? Answer in TENTHS?",11,"11/6÷5/3=11/10."),
+            new("How many1⅔ groups in4⅓? Answer in FIFTHS?",13,"13/3÷5/3=13/5."),
+            new("How many1⅔ groups in5/6? Answer in HALVES?",1,"5/6÷5/3=1/2."),
+            new("A hose fills3gallons in1¼minutes. Seconds to fill50gallons at same rate?",1250,"50×(5/4)/3×60=1250 seconds."),
+            new("A rectangle3m by3⅔m has area in SQUARE METERS?",11,"3×11/3=11."),
+            new("TV width28in and length16½in. Area in SQUARE INCHES?",462,"28×16.5=462."),
+            new("Original area11m² with one side11/3m. Unknown side in THIRD-METER units?",9,"3meters=9 thirds.")
+        ],
+        [L0413AreaLogic] =
+        [
+            new("A rectangle of area11m² and side3⅔m has other side3m. 1=yes,0=no.",1,"11÷11/3=3."),
+            new("TV equation16½×w=462 can represent its area. 1=yes,0=no.",1,"Original option B."),
+            new("TV equation462÷16½=w can represent its missing width. 1=yes,0=no.",1,"Original option C."),
+            new("TV equation462÷w=16½ can represent its length. 1=yes,0=no.",1,"Original option D."),
+            new("TV equation w×462=16½ correctly relates original dimensions. 1=yes,0=no.",0,"Original option A invalid."),
+            new("A rectangular area17½in² divided by side3½in gives other side5in. 1=yes,0=no.",1,"17.5/3.5=5."),
+            new("A square with side1⅓ft has area16/9 square feet. 1=yes,0=no.",1,"4/3 squared."),
+            new("A12ft by15ft floor has180sqft area. 1=yes,0=no.",1,"12×15=180."),
+            new("The fraction101¼ tile-areas can itself be purchased as101¼ whole uncut physical tiles without cutting. 1=yes,0=no.",0,"Geometric area units differ from purchasing constraints."),
+            new("A floor width15ft requires11¼ tile-width spans of1⅓ft each. 1=yes,0=no.",1,"15÷4/3=45/4."),
+            new("Five shelves each42in contain17½feet of total length. 1=yes,0=no.",1,"210in/12=17.5ft."),
+            new("The dimensions of a rectangle should share units before calculating the product area. 1=yes,0=no.",1,"Convert lengths consistently."),
+            new("A diagram with a fractional side can be verified by multiply side lengths to get area. 1=yes,0=no.",1,"Inverse operations."),
+            new("Teacher inspection of the actual tile layout is needed before claiming an exact purchase count. 1=yes,0=no.",1,"Cuts and reuse assumptions matter.")
         ]
     };
 
