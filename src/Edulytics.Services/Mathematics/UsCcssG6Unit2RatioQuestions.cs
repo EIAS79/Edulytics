@@ -310,6 +310,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0715PolygonNumbers = "usccss.g6.u07.l15.polygon_perimeter_signed_coordinates";
     public const string L0715PolygonChecks = "usccss.g6.u07.l15.polygon_coordinate_reasoning";
 
+    public const string L0716Factors = "usccss.g6.u07.l16.gcf_source_numbers_and_groups";
+    public const string L0716GcfLogic = "usccss.g6.u07.l16.factor_context_and_sign_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4359,6 +4362,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Horizontal/vertical segments may cross zero; using absolute coordinate differences yields correct length. 1=yes,0=no.",1,"Nonnegative length."),
             new("Polygon vertex order is irrelevant to shape if connected in a different arbitrary order. 1=yes,0=no.",0,"Different order can alter edges."),
             new("A coordinate polygon may contain both positive and negative vertex coordinates. 1=yes,0=no.",1,"Four-quadrant figures.")
+        ],
+        [L0716Factors] =
+        [
+            new("Gift bags24 pencils,36 stickers split equally without leftovers. Maximum bag count?",12,"GCF(24,36)=12."),
+            new("12 gift bags distribute24pencils. Pencils per bag?",2,"24/12=2."),
+            new("12 gift bags distribute36stickers. Stickers per bag?",3,"36/12=3."),
+            new("6 equal gift bags distribute24pencils. Pencils per bag?",4,"24/6=4."),
+            new("6 equal gift bags distribute36stickers. Stickers per bag?",6,"36/6=6."),
+            new("4 gift bags distribute24pencils. Pencils per bag?",6,"24/4=6."),
+            new("4 gift bags distribute36stickers. Stickers per bag?",9,"36/4=9."),
+            new("List factors of42. Largest factor?",42,"42 divides itself."),
+            new("Is7 a factor of42? Enter1 yes,0 no.",1,"42/7=6."),
+            new("Is8 a factor of42? Enter1 yes,0 no.",0,"42 not divisible by8."),
+            new("Greatest common factor of42 and15?",3,"42 factors1,2,3,6,7,14,21,42;15 factors1,3,5,15."),
+            new("Greatest common factor of42 and50?",2,"Both divisible by2; larger common factors none."),
+            new("Greatest common factor of90 and75?",15,"90=6×15,75=5×15."),
+            new("Chorus90 sixth graders and75 seventh graders. Maximum identical mixed groups?",15,"GCF90,75=15."),
+            new("With15 identical groups, sixth graders per group?",6,"90/15=6."),
+            new("With15 identical groups, seventh graders per group?",5,"75/15=5."),
+            new("Fraction1/7÷1/8, answer in SEVENTHS?",8,"1/7×8=8/7."),
+            new("Fraction12/5÷6/5 equals?",2,"12/5×5/6=2."),
+            new("Fraction1/10÷10, answer in HUNDREDTHS?",1,"1/100."),
+            new("Fraction9/10÷10/9, answer in HUNDREDTHS?",81,"9/10×9/10=81/100."),
+            new("Elephant runs25miles/hour. Distance in3hours?",75,"25×3=75."),
+            new("Giraffe runs16miles perhalf-hour. Miles per HOUR?",32,"16/.5=32."),
+            new("Giraffe at32mph. Distance in3hours?",96,"32×3=96."),
+            new("Giraffe32mph vs elephant25mph. Speed difference mph?",7,"32-25=7.")
+        ],
+        [L0716GcfLogic] =
+        [
+            new("12 is a common factor of24 and36. 1=yes,0=no.",1,"Both multiples of12."),
+            new("18 is a common factor of24 and36. 1=yes,0=no.",0,"24 not multiple18."),
+            new("The greatest common factor of24 and36 is12. 1=yes,0=no.",1,"Largest dividing both."),
+            new("Making 5 equal bags with24 pencils and36 stickers leaves no remainder. 1=yes,0=no.",0,"Neither divisible by5."),
+            new("Making 3 equal bags with24 pencils and36 stickers leaves no remainder. 1=yes,0=no.",1,"8 pencils and12 stickers per bag."),
+            new("42 and15 have GCF3. 1=yes,0=no.",1,"Both divisible by3."),
+            new("42 and50 have GCF2. 1=yes,0=no.",1,"Common factors1,2."),
+            new("For90 sixth and75 seventh, groups of15 have6 sixth and5 seventh in each. 1=yes,0=no.",1,"90/15=6,75/15=5."),
+            new("For mixed identical chorus groups, count should be a common divisor of both class totals. 1=yes,0=no.",1,"Each grade splits equally."),
+            new("Monday paycheck deposit650dollars is a positive balance change. 1=yes,0=no.",1,"Deposit adds funds."),
+            new("Tuesday40dollar ATM withdrawal is negative signed balance change. 1=yes,0=no.",1,"Money withdrawn."),
+            new("Wednesday20dollar returned-merchandise credit is negative balance change. 1=yes,0=no.",0,"Credit increases balance."),
+            new("Thursday125dollar phone charge is negative balance change. 1=yes,0=no.",1,"Deduction."),
+            new("Friday45dollar written check is negative balance change. 1=yes,0=no.",1,"Outgoing check."),
+            new("Saturday80dollar withdrawal is negative balance change. 1=yes,0=no.",1,"Money outgoing."),
+            new("Sunday10dollar cash-back deposit is negative balance change. 1=yes,0=no.",0,"Credit increases balance."),
+            new("Giraffe32mph is faster than elephant25mph under given constant-rate assumptions. 1=yes,0=no.",1,"32>25."),
+            new("Giraffe96miles/3hours exceeds elephant75miles/3hours by21miles. 1=yes,0=no.",1,"96-75=21."),
+            new("GCF finds the biggest equal-group count that divides two totals with no leftovers. 1=yes,0=no.",1,"Common divisor."),
+            new("A correct count of bags proves a student's chosen arrangement is understandable without inspecting their drawing. 1=yes,0=no.",0,"Teacher evaluates grouping representation.")
         ]
     };
 
