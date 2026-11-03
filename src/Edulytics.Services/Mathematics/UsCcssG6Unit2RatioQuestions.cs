@@ -322,6 +322,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0719FirstPartyPlotting = "usccss.g6.u07.l19.first_party_plotting_coordinates";
     public const string L0719FirstPartyPictureLogic = "usccss.g6.u07.l19.first_party_picture_precision_rules";
 
+    public const string L0801ClassifyData = "usccss.g6.u08.l01.numerical_vs_categorical_sources";
+    public const string L0801DataReasoning = "usccss.g6.u08.l01.data_type_and_dotplot_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4566,6 +4569,50 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The drawn order of points can create line segments crossing multiple quadrants. 1=yes,0=no.",1,"Lines connect across axes."),
             new("A valid first-party Cool-down can be independent from a protected or absent publisher question and use teacher scoring. 1=yes,0=no.",1,"Owner authorized."),
             new("Mirror symmetry can be checked by opposite x coordinates and matching y coordinates. 1=yes,0=no.",1,"Across y-axis.")
+        ],
+        [L0801ClassifyData] =
+        [
+            new("Favorite breakfast food produces1=categorical,2=numerical. Enter code.",1,"Foods are category labels."),
+            new("How students got to school produces1=categorical,2=numerical. Enter code.",1,"Walking, bus, etc are categories."),
+            new("Number of different teachers for a student produces1=categorical,2=numerical. Enter code.",2,"A count is numerical."),
+            new("Last item eaten or drunk produces1=categorical,2=numerical. Enter code.",1,"Item names are categories."),
+            new("Minutes from waking to leaving produces1=categorical,2=numerical. Enter code.",2,"Measured duration in minutes."),
+            new("Students' heights in centimeters produce1=categorical,2=numerical. Enter code.",2,"Quantitative length."),
+            new("Favorite sport produces1=categorical,2=numerical. Enter code.",1,"Sport labels."),
+            new("Number of siblings produces1=categorical,2=numerical. Enter code.",2,"Quantitative count."),
+            new("Lunch preference (rice or pasta) produces1=categorical,2=numerical. Enter code.",1,"Label not amount."),
+            new("Distance from home to school in kilometers produces1=categorical,2=numerical. Enter code.",2,"Measured numerical distance."),
+            new("Student ID number produces1=categorical identifier,2=quantitative measurement. Enter code.",1,"Digits are identifiers, not magnitudes."),
+            new("A class of10 surveyed students should show how many total dots on a one-dot-per-student plot?",10,"One dot per observation."),
+            new("Independent fictional travel data5,7,8,10,10,12,12,12,15,18min. How many observations?",10,"Ten values."),
+            new("Same independent data: frequency for12minutes?",3,"12 occurs3 times."),
+            new("Same independent data: frequency for10minutes?",2,"10 occurs twice."),
+            new("Same independent data: smallest commute duration in MINUTES?",5,"Minimum5."),
+            new("Same independent data: largest commute duration in MINUTES?",18,"Maximum18."),
+            new("Same independent data: range in MINUTES?",13,"18-5=13."),
+            new("Triangle DEF with D(-4,-4),E(-2,-4),F(-3,-1). Horizontal base length?",2,"|-2-(-4)|=2."),
+            new("Same triangle vertical altitude to base y=-4 from F y=-1?",3,"-1-(-4)=3."),
+            new("Same triangle area in SQUARE UNITS?",3,"(2×3)/2=3.")
+        ],
+        [L0801DataReasoning] =
+        [
+            new("Favorite breakfast produces categorical responses such as eggs or oatmeal. 1=yes,0=no.",1,"Categories."),
+            new("Number of teachers produces numerical responses such as4 or5. 1=yes,0=no.",1,"Counts."),
+            new("A dot plot of ten individual commute times should have ten dots if every response is included once. 1=yes,0=no.",1,"One dot per student."),
+            new("Numerical commute time observations should be labeled with minutes. 1=yes,0=no.",1,"Measurement units."),
+            new("If a plotted dot represents a student and the title says ten students, a count of eight dots is complete. 1=yes,0=no.",0,"Two responses missing."),
+            new("Favorite sport is more appropriately described using categories than arithmetic averages. 1=yes,0=no.",1,"Names not quantitative."),
+            new("Categorical data can always be meaningfully averaged numerically. 1=yes,0=no.",0,"No numeric magnitude."),
+            new("A dot plot of numerical values stacks dots at equal values. 1=yes,0=no.",1,"Frequency stacking."),
+            new("A numerical survey variable should identify units when measuring durations or lengths. 1=yes,0=no.",1,"E.g. minutes, centimeters."),
+            new("The source graph with a school-commute survey needs teacher checking of the original image and dot count. 1=yes,0=no.",1,"Image-specific assessment."),
+            new("A child answering 'walked' for school transport gives categorical data. 1=yes,0=no.",1,"Method category."),
+            new("A child answering '12 minutes' to readiness time gives numeric data. 1=yes,0=no.",1,"Time measurement."),
+            new("A triangle with horizontal base2 and perpendicular height3 has area3 square units. 1=yes,0=no.",1,"2×3÷2."),
+            new("The area of triangle DEF is6 because base2×height3 without halving. 1=yes,0=no.",0,"Area3."),
+            new("A dot plot should preserve how many responses each distinct numeric value received. 1=yes,0=no.",1,"Frequency information."),
+            new("Numerical data may be either integer counts or noninteger measurements. 1=yes,0=no.",1,"Both numerical."),
+            new("The teacher can assess open-ended student-created survey questions beyond an exact-integer grader. 1=yes,0=no.",1,"Rubric needed.")
         ]
     };
 
