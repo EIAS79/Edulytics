@@ -24,8 +24,8 @@ public sealed class UsCcssG6Unit1Lesson9SelectedPracticeTests
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(Area));
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(Heights));
         Assert.DoesNotContain("v360",c.SourceType,StringComparison.OrdinalIgnoreCase);
-        Assert.False(c.AllowedQuestionFamilies.Contains(
-            UsCcssG6Unit1Lesson8TriangleAreaQuestions.TriangleArea));
+        Assert.DoesNotContain(UsCcssG6Unit1Lesson8TriangleAreaQuestions.TriangleArea,
+            c.AllowedQuestionFamilies);
     }
 
     [Theory]

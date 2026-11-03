@@ -25,8 +25,8 @@ public sealed class UsCcssG6Unit1Lesson3SelectedPracticeRouteTests
         Assert.Equal(new[] { Shaded, Conservation }, contract.AllowedQuestionFamilies);
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(Shaded));
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(Conservation));
-        Assert.False(contract.AllowedQuestionFamilies.Contains(
-            "usccss.g6.u01.l02.tangram_piece_area"));
+        Assert.DoesNotContain("usccss.g6.u01.l02.tangram_piece_area",
+            contract.AllowedQuestionFamilies);
         Assert.DoesNotContain("v360", contract.SourceType, StringComparison.OrdinalIgnoreCase);
     }
 
