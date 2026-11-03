@@ -388,6 +388,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0904VoteNumbers = "usccss.g6.u09.l04.first_party_two_choice_voting_math";
     public const string L0904VoteInterpretations = "usccss.g6.u09.l04.first_party_supermajority_and_sampling_logic";
 
+    public const string L0905VotingMath = "usccss.g6.u09.l05.first_party_multichoice_voting_arithmetic";
+    public const string L0905VotingLogic = "usccss.g6.u09.l05.first_party_multichoice_election_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5710,6 +5713,63 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A supermajority rule depends on explicit fraction and the number of eligible votes. 1=yes,0=no.",1,"Threshold applied to denominator."),
             new("A numerical answer alone certifies a student's ethical view about the best restaurant. 1=yes,0=no.",0,"Interpretation teacher-reviewed."),
             new("Open-ended voting diagrams need teacher check of subgroup shares and labels. 1=yes,0=no.",1,"Diagram accuracy.")
+        ],
+        [L0905VotingMath] =
+        [
+            new("Field day votes softball16, scavenger10, dancing8, marshmallow4, none2. Total votes?",40,"16+10+8+4+2=40."),
+            new("Field day softball16 of40. Percent?",40,"16/40=40%."),
+            new("Field day non-softball first choices count?",24,"40-16=24."),
+            new("Field day non-softball first choices percent?",60,"24/40=60%."),
+            new("Field day which activity has highest first-choice votes? Enter1 softball,2 scavenger,3 dancing,4 marshmallow.",1,"Softball16 highest."),
+            new("Did softball first choice gain more than50%? Enter1 yes,0 no.",0,"40% below majority."),
+            new("School lunch clubs21 BBQ,13 Garden,7 Sports,9 Film. Total voters?",50,"21+13+7+9=50."),
+            new("School lunch first-choice Meat Lovers from BBQ club count?",21,"BBQ21."),
+            new("School lunch first-choice Vegetarian from Garden club count?",13,"Garden13."),
+            new("School lunch first-choice Something for Everyone from Film club count?",9,"Film9."),
+            new("School lunch first-choice Concession Stand from Sports club count?",7,"Sports7."),
+            new("School lunch plurality winner? Enter1 Meat,2 Vegetarian,3 Everyone,4 Concession.",1,"21 Meat highest."),
+            new("School lunch first round needs at least26 of50 for strict majority. Is21 enough? Enter1 yes,0 no.",0,"21<26."),
+            new("Runoff first eliminated option with7first-choice votes? Enter1 Meat,2 Vegetarian,3 Everyone,4 Concession.",4,"Concession Stand7."),
+            new("After eliminating Concession, Sports7 ballots transfer to their next still-active option Something for Everyone. Its new count?",16,"9+7=16."),
+            new("After eliminating next Something for Everyone, its16 votes transfer to Vegetarian under shown rankings. Vegetarian new votes?",29,"13+16=29."),
+            new("After runoff, Vegetarian29 vs Meat21. Who wins? Enter1 Meat,2 Vegetarian.",2,"Vegetarian majority29."),
+            new("Weekend choice cooking point scores from Clare2 Han2 Mai2 Tyler0 Noah0. Total?",6,"2+2+2=6."),
+            new("Weekend hiking points1,1,1,2,2. Total?",7,"1+1+1+2+2=7."),
+            new("Weekend bowling points0,0,0,1,1. Total?",2,"2."),
+            new("Weekend point-score winner? Enter1 cooking,2 hiking,3 bowling.",2,"Hiking7>cooking6."),
+            new("Weekend first-choice plurality cooking vs hiking firsts? Cooking votes?",3,"Clare,Han,Mai."),
+            new("Weekend first-choice plurality hiking firsts?",2,"Tyler,Noah."),
+            new("Weekend plurality winner? Enter1 cooking,2 hiking,3 bowling.",1,"Cooking3."),
+            new("School lunch illustrative point scheme rank1=3, rank2=2, rank3=1, rank4=0. Meat points?",63,"BBQ21×3; others0."),
+            new("Same point scheme vegetarian points?",97,"BBQ42+Garden39+Sports7+Film9."),
+            new("Same point scheme Everyone points?",75,"BBQ21+Garden13+Sports14+Film27."),
+            new("Same point scheme Concession points?",65,"Garden26+Sports21+Film18."),
+            new("Point-score winner for original lunch clubs under stated ranking? Enter1 Meat,2 Vegetarian,3 Everyone,4 Concession.",2,"Vegetarian97highest.")
+        ],
+        [L0905VotingLogic] =
+        [
+            new("Field day softball receives40% of40votes and wins first-choice plurality. 1=yes,0=no.",1,"16 highest."),
+            new("Field day softball has a strict majority of votes. 1=yes,0=no.",0,"40%<50."),
+            new("A plurality winner always has more than50% of votes. 1=yes,0=no.",0,"Highest can be minority."),
+            new("School lunch BBQ21/Garden13/Sports7/Film9 totals50voters. 1=yes,0=no.",1,"Sum50."),
+            new("Meat Lovers wins lunch-menu initial plurality with21 of50 first choices. 1=yes,0=no.",1,"Highest."),
+            new("Meat Lovers has a majority in first lunch vote. 1=yes,0=no.",0,"21<26."),
+            new("Under source rankings, first eliminated from lunch runoff is Concession Stand7. 1=yes,0=no.",1,"Smallest firsts."),
+            new("Sports7 next available choice after eliminating Concession is Something for Everyone. 1=yes,0=no.",1,"Second ranking."),
+            new("After eliminating Concession, Everyone has16 votes. 1=yes,0=no.",1,"9+7."),
+            new("When Everyone eliminated, those16 transfers to Vegetarian under original rankings. 1=yes,0=no.",1,"Remaining preference."),
+            new("Under that sequential runoff, Vegetarian wins with29 of50. 1=yes,0=no.",1,"29>25."),
+            new("Different voting methods can select different winning choices from same rankings. 1=yes,0=no.",1,"Plurality vs points/runoff."),
+            new("Weekend points give cooking6, hiking7, bowling2. 1=yes,0=no.",1,"Rank weights."),
+            new("Weekend first-choice votes give cooking3 vs hiking2. 1=yes,0=no.",1,"Plurality."),
+            new("Weekend point-score method selects hiking while plurality selects cooking. 1=yes,0=no.",1,"Different aggregation rules."),
+            new("Points first choice2, second1, last0 for3 alternatives may differ from a formal instant-runoff elimination method. 1=yes,0=no.",1,"Scoring and elimination are distinct algorithms."),
+            new("Calling a point-weighted ranking 'instant runoff' without explaining the rule can confuse separate election methods. 1=yes,0=no.",1,"Specify rule."),
+            new("A score winner can be determined without knowing how ties are resolved in every possible election. 1=yes,0=no.",0,"Ties require rule."),
+            new("A numerical winner alone proves an election rule is universally fair. 1=yes,0=no.",0,"Normative criterion."),
+            new("Teacher should evaluate each student's actual class votes and stated rules before asserting a unique result. 1=yes,0=no.",1,"Open-ended."),
+            new("At first vote, number of voters who did not choose softball is24 of40. 1=yes,0=no.",1,"40-16."),
+            new("A ranked ballot's secondary preferences matter if the first preference is eliminated. 1=yes,0=no.",1,"Transfer mechanism.")
         ]
     };
 

@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u09.l05.first_party_multichoice_voting_arithmetic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-fieldday-16-10-8-4-2-school-lunch-clubs21-13-7-9-weekend-rankpoints",
+      "representations": [
+        "vote_table",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u09.l05.first_party_multichoice_election_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-plurality-vs-majority-runoff-scoring-rankings-and-teacher-pref-dependent",
+      "representations": [
+        "boolean_reasoning",
+        "ranked_choice"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l04.first_party_two_choice_voting_math",
       "version": 1,
       "skillId": "ratio.unit_rate",
