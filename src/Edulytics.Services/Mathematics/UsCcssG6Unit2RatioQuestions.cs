@@ -15,6 +15,8 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L01Shade = "usccss.g6.u02.l01.shaded_area_ratio_counts";
     public const string L02Diagrams = "usccss.g6.u02.l02.labeled_two_row_ratios";
     public const string L02Cards = "usccss.g6.u02.l02.three_ingredient_ratio_cards";
+    public const string L03RecipeBatches = "usccss.g6.u02.l03.recipe_batch_scale";
+    public const string L03EqualTaste = "usccss.g6.u02.l03.same_taste_equivalent_ratios";
 
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
@@ -83,8 +85,47 @@ internal static class UsCcssG6Unit2RatioQuestions
         ("cardboard",4,"sheets","glue",1,"bottle","paint",6,"tubes")
     ];
 
+    // Original source numerical skills, independently worded and keyed.
+    private static readonly (string Prompt,int Answer,string Explanation)[] RecipeBatches =
+    [
+        ("Base recipe: 3 tsp mustard seeds, 5 tsp chili powder and 1 tsp salt. Diagram shows 9, 15 and 3 tsp respectively. How many complete batches?",3,"Every ingredient is multiplied by 3."),
+        ("A batch of chocolate milk has 2 cups milk and 5 tablespoons cocoa. Find milk cups for TWO batches.",4,"2 × 2 = 4 cups milk."),
+        ("A batch of chocolate milk has 2 cups milk and 5 tablespoons cocoa. Find cocoa tablespoons for TWO batches.",10,"5 × 2 = 10 tablespoons."),
+        ("Sparkling-water:concentrate recipe is 3:1. How many cups sparkling water for TWO batches?",6,"3 × 2 = 6."),
+        ("Sparkling-water:concentrate recipe is 3:1. How many cups concentrate for THREE batches?",3,"1 × 3 = 3."),
+        ("Cookies use 5 cups flour and 2 tsp vanilla per batch. Flour for TWO batches?",10,"5 × 2 = 10 cups."),
+        ("Cookies use 5 cups flour and 2 tsp vanilla per batch. Vanilla for TWO batches?",4,"2 × 2 = 4 tsp."),
+        ("Cookies use 5 cups flour and 2 tsp vanilla per batch. Flour for THREE batches?",15,"5 × 3 = 15 cups."),
+        ("Cookies use 5 cups flour and 2 tsp vanilla per batch. Vanilla for THREE batches?",6,"2 × 3 = 6 tsp."),
+        ("Cookies use 5 cups flour and 2 tsp vanilla per batch. Flour for FIVE batches?",25,"5 × 5 = 25 cups."),
+        ("Cookies use 5 cups flour and 2 tsp vanilla per batch. Vanilla for FIVE batches?",10,"2 × 5 = 10 tsp."),
+        ("A drink recipe uses 1 cup water and 4 tsp powder. How many tsp powder for TWO batches?",8,"4 × 2 = 8 tsp."),
+        ("A drink recipe uses 1 cup water and 4 tsp powder. How many cups water for TWO batches?",2,"1 × 2 = 2 cups."),
+        ("Sparkling water:juice concentrate is 3:1. How many cups sparkling water for FIVE batches?",15,"3 × 5 = 15 cups."),
+        ("Sparkling water:juice concentrate is 3:1. How many cups concentrate for FIVE batches?",5,"1 × 5 = 5 cups."),
+        ("Chocolate milk is 2 cups milk and 5 tbsp cocoa per batch. Milk cups for FOUR batches?",8,"2 × 4 = 8 cups."),
+        ("Chocolate milk is 2 cups milk and 5 tbsp cocoa per batch. Cocoa tablespoons for FOUR batches?",20,"5 × 4 = 20 tablespoons."),
+        ("Cumulative cube review: from 80 unit cubes, what is the maximum whole-number cube EDGE length?",4,"4 cubed=64, 5 cubed=125 exceeds 80."),
+        ("Cumulative cube review: from 80 unit cubes, what is the VOLUME of the largest cube you can build?",64,"The largest perfect cube no more than 80 is 4 cubed=64."),
+        ("Cumulative ratio language: 6 dogs for every 5 cats. How many cats in three such groups?",15,"5 × 3 = 15 cats.")
+    ];
+
+    private static readonly (string Prompt,int Answer,string Explanation)[] EqualTaste =
+    [
+        ("Are 1 cup water + 4 tsp powder and 2 cups water + 8 tsp powder equal-strength batches? 1=yes,0=no.",1,"Both quantities doubled."),
+        ("Are 1 cup water + 4 tsp powder and 2 cups water + 4 tsp powder equal-strength batches? 1=yes,0=no.",0,"Only water doubled."),
+        ("Do sparkling water:grape concentrate 3:1 and 6:2 preserve the recipe? 1=yes,0=no.",1,"Both values doubled."),
+        ("Do sparkling water:grape concentrate 3:1 and 6:3 preserve the recipe? 1=yes,0=no.",0,"Different scaling of the two quantities."),
+        ("Do cookie flour:vanilla 5:2 and 10:4 preserve the recipe? 1=yes,0=no.",1,"Both doubled."),
+        ("Do cookie flour:vanilla 5:2 and 10:3 preserve the recipe? 1=yes,0=no.",0,"The vanilla quantity was not doubled."),
+        ("Do chocolate-milk milk:cocoa 2:5 and 4:10 preserve the recipe? 1=yes,0=no.",1,"Both doubled."),
+        ("Do chocolate-milk milk:cocoa 2:5 and 4:9 preserve the recipe? 1=yes,0=no.",0,"Ratio changed."),
+        ("Do spice-mix mustard:chili:salt 3:5:1 and 9:15:3 preserve the batch ratio? 1=yes,0=no.",1,"All three ingredients tripled."),
+        ("Do spice-mix mustard:chili:salt 3:5:1 and 9:15:2 preserve the batch ratio? 1=yes,0=no.",0,"Salt was doubled rather than tripled.")
+    ];
+
     public static bool Supports(string? family) =>
-        family is L01Collections or L01Shade or L02Diagrams or L02Cards;
+        family is L01Collections or L01Shade or L02Diagrams or L02Cards or L03RecipeBatches or L03EqualTaste;
 
     public static Problem Build(string family, Random random)
     {
@@ -96,8 +137,17 @@ internal static class UsCcssG6Unit2RatioQuestions
             L01Shade => Shades.Length,
             L02Diagrams => Diagrams.Length,
             L02Cards => Cards.Length,
+            L03RecipeBatches => RecipeBatches.Length,
+            L03EqualTaste => EqualTaste.Length,
             _ => throw new ArgumentOutOfRangeException(nameof(family))
         });
+        if (family is L03RecipeBatches or L03EqualTaste)
+        {
+            var row=family==L03RecipeBatches?RecipeBatches[variant]:EqualTaste[variant];
+            return new(family,row.Prompt,
+                row.Explanation+" Teacher checks the student's physical recipe grouping, visual ratios, ingredient units and explanation separately.",
+                AssessmentItemType.Numeric,new Dictionary<string,int>{{"variant",variant}});
+        }
         if (family == L02Diagrams)
         {
             var (first,a,unitA,second,b,unitB)=Diagrams[variant];
@@ -140,6 +190,8 @@ internal static class UsCcssG6Unit2RatioQuestions
             L01Shade => Shades.Length,
             L02Diagrams => Diagrams.Length,
             L02Cards => Cards.Length,
+            L03RecipeBatches => RecipeBatches.Length,
+            L03EqualTaste => EqualTaste.Length,
             _ => 0
         });
 
@@ -147,6 +199,11 @@ internal static class UsCcssG6Unit2RatioQuestions
     {
         if (!Valid(family,p)) throw new ArgumentException("Invalid ratio-family variant.");
         var v=p["variant"];
+        if (family is L03RecipeBatches or L03EqualTaste)
+        {
+            var row=family==L03RecipeBatches?RecipeBatches[v]:EqualTaste[v];
+            return row.Answer.ToString(CultureInfo.InvariantCulture);
+        }
         if (family==L02Diagrams)
         {
             var d=Diagrams[v];
@@ -172,6 +229,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     {
         if (!Valid(family,p) || string.IsNullOrWhiteSpace(answer)) return false;
         var expected=Solve(family,p!);
+        if (family is L03RecipeBatches or L03EqualTaste)
+            return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var n)
+                && n.ToString(CultureInfo.InvariantCulture)==expected;
         if (family==L01Shade)
             return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var value)
                 && value.ToString(CultureInfo.InvariantCulture)==expected;

@@ -1676,6 +1676,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 U02:L03 Recipes: scaling all ingredient quantities by equal
+        // factors; numeric practice and taste equivalence; student models and
+        // actual taste claims remain teacher-reviewed, not certified by grader.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_RECIPE_BATCHES_AND_EQUAL_TASTE",
+            [
+                "usccss.g6.u02.l03.recipe_batch_scale",
+                "usccss.g6.u02.l03.same_taste_equivalent_ratios"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
