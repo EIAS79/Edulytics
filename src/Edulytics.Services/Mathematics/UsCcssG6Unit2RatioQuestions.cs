@@ -280,6 +280,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0705SignedChanges = "usccss.g6.u07.l05.positive_negative_changes";
     public const string L0705ChangeLogic = "usccss.g6.u07.l05.signed_context_representations";
 
+    public const string L0706AbsoluteValues = "usccss.g6.u07.l06.absolute_distance_values";
+    public const string L0706AbsoluteLogic = "usccss.g6.u07.l06.absolute_value_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3855,6 +3858,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("10²+5²=125. 1=yes,0=no.",1,"100+25."),
             new("A signed number for expense or stock loss depends on a declared sign convention. 1=yes,0=no.",1,"Define perspective."),
             new("A negative inventory change need not mean negative current stock. 1=yes,0=no.",1,"Quantity difference vs total.")
+        ],
+        [L0706AbsoluteValues] =
+        [
+            new("Absolute value of-7?",7,"Distance7."),
+            new("Absolute value of7?",7,"Distance7."),
+            new("Absolute value of0?",0,"0."),
+            new("Absolute value of-1.5 in HALF-UNITS?",3,"1.5=3 halves."),
+            new("Absolute value of3/2 in HALF-UNITS?",3,"3/2."),
+            new("Absolute value of-2.7 in TENTHS?",27,"2.7."),
+            new("Absolute value of-1?",1,"1."),
+            new("Absolute value of-6?",6,"6."),
+            new("Absolute value of6?",6,"6."),
+            new("Travel target325miles,26 completed. Percent?",8,"26/325=.08."),
+            new("Trip target325miles,72% completed. Miles?",234,".72×325=234."),
+            new("Trip target325miles,377 traveled. Percent?",116,"377/325=1.16."),
+            new("Elena donates4.44 dollars from37 earned. Percent?",12,"4.44/37=.12."),
+            new("Elena donates1.80 from15 earned. Percent?",12,"1.8/15=.12."),
+            new("Elena donates3.12 from26 earned. Percent?",12,"3.12/26=.12."),
+            new("Elena donates3.60 from30 earned. Percent?",12,"3.6/30=.12."),
+            new("Three to fourth power relative to three cubed: ratio?",3,"3^(4-3)=3."),
+            new("Five cubed relative to five squared: ratio?",5,"5."),
+            new("Seven to tenth power relative to seventh to eighth: ratio?",49,"7²=49."),
+            new("Seventeen to sixth power relative to seventeenth to fourth: ratio?",289,"17²."),
+            new("Five to tenth power relative five to fourth: ratio?",15625,"5⁶=15625."),
+            new("A donation m=50 dollars at12% in DOLLARS?",6,".12×50=6."),
+            new("Absolute value of-100?",100,"Distance100.")
+        ],
+        [L0706AbsoluteLogic] =
+        [
+            new("Numbers with absolute value3/2 include -3/2 and+3/2. 1=yes,0=no.",1,"Equal distances."),
+            new("Only temperature-6C is6 degrees from0, not+6C. 1=yes,0=no.",0,"Both±6."),
+            new("Temperature-6C is6 degrees from0. 1=yes,0=no.",1,"Source B."),
+            new("Temperature+6C is6degrees from0. 1=yes,0=no.",1,"Source D."),
+            new("|-2.7|=2.7. 1=yes,0=no.",1,"Magnitude."),
+            new("|-1|=1. 1=yes,0=no.",1,"Magnitude."),
+            new("Order0,1,1.3,2,2.7 for source transformed list is ascending. 1=yes,0=no.",1,"Absolute first."),
+            new("Absolute value of any real number is nonnegative. 1=yes,0=no.",1,"Distance."),
+            new("|-7|<|3|. 1=yes,0=no.",0,"7>3."),
+            new("|-7|=|7|. 1=yes,0=no.",1,"Opposites."),
+            new("26 miles of325 equals8% of total. 1=yes,0=no.",1,"26/325=.08."),
+            new("377 miles of325 is116%, above100%. 1=yes,0=no.",1,"1.16."),
+            new("Elena's donations4.44/37 and1.80/15 represent same12%. 1=yes,0=no.",1,"Both .12."),
+            new("Donation d from earned m at fixed12% can be written d=.12m. 1=yes,0=no.",1,"Dependent donation."),
+            new("3^4 is three times3^3. 1=yes,0=no.",1,"Power ratio3."),
+            new("7^10/7^8=49. 1=yes,0=no.",1,"7²."),
+            new("A larger absolute value necessarily means a greater signed number. 1=yes,0=no.",0,"-100 has magnitude100 but <0."),
+            new("Absolute value can represent depth below sea surface without a sign indicating direction. 1=yes,0=no.",1,"Magnitude only.")
         ]
     };
 
