@@ -352,6 +352,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0810BalanceNumbers = "usccss.g6.u08.l10.mean_balance_source_data";
     public const string L0810BalanceLogic = "usccss.g6.u08.l10.balance_point_interpretation";
 
+    public const string L0811MadValues = "usccss.g6.u08.l11.mean_absolute_deviation_amounts";
+    public const string L0811MadReasoning = "usccss.g6.u08.l11.mad_interpretation_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5078,6 +5081,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A mean need not equal any original observation. 1=yes,0=no.",1,"Possible."),
             new("The values2,4,6,8,10 have mean6. 1=yes,0=no.",1,"Sum30/5."),
             new("The positive deviations from mean may exactly offset negative deviations. 1=yes,0=no.",1,"Zero sum.")
+        ],
+        [L0811MadValues] =
+        [
+            new("Han reads25,28,32,36,42pages in5days. Sum pages?",163,"25+28+32+36+42=163."),
+            new("Han's mean pages in TENTHS?",326,"163/5=32.6."),
+            new("Distance25pages from mean32.6 in TENTHS?",76,"|25-32.6|=7.6."),
+            new("Distance28pages from mean32.6 in TENTHS?",46,"4.6."),
+            new("Distance32pages from mean32.6 in TENTHS?",6,"0.6."),
+            new("Distance36pages from mean32.6 in TENTHS?",34,"3.4."),
+            new("Distance42pages from mean32.6 in TENTHS?",94,"9.4."),
+            new("Sum absolute deviations in TENTHS?",256,"7.6+4.6+.6+3.4+9.4=25.6."),
+            new("Mean absolute deviation for5 days in HUNDREDTHS?",512,"25.6/5=5.12."),
+            new("Travel time mean9minutes and MAD4.2minutes. Which is typical travel time? Enter9 or42 tenths-coded as9 or42.",9,"Mean9, MAD4.2 is spread."),
+            new("GroupA mean9 MAD4.2, GroupB mean9 MAD7. Which has more variability? Enter1 A,2 B.",2,"B MAD7>4.2."),
+            new("An archer first mean distance1.6in, MAD1.3in, second round farther but more consistent: example mean2.4in MAD0.5in. Mean in TENTHS?",24,"Chosen valid example2.4."),
+            new("Same archer example second MAD0.5in in TENTHS?",5,"Smaller than1.3."),
+            new("Independent data3,4,5,6,7. Mean?",5,"25/5=5."),
+            new("Independent data3,4,5,6,7. Sum absolute distances from mean?",6,"2+1+0+1+2=6."),
+            new("Independent data3,4,5,6,7. MAD in TENTHS?",12,"6/5=1.2."),
+            new("Independent data5,5,5,5,5. Mean?",5,"All five equal5."),
+            new("Independent data5,5,5,5,5. MAD?",0,"No deviation."),
+            new("Independent data0,0,9,9. Mean in HALVES?",9,"9/2=4.5."),
+            new("Independent data0,0,9,9. MAD in HALVES?",9,"4.5."),
+            new("Source Han data max pages?",42,"42 maximum."),
+            new("Source Han data min pages?",25,"25 minimum."),
+            new("Source Han data range pages?",17,"42-25=17.")
+        ],
+        [L0811MadReasoning] =
+        [
+            new("Mean absolute deviation is the mean of distances of each value from their mean. 1=yes,0=no.",1,"Definition."),
+            new("MAD may be negative for mostly negative numbers. 1=yes,0=no.",0,"Absolute distances nonnegative."),
+            new("Han's page counts25,28,32,36,42 have mean32.6. 1=yes,0=no.",1,"163/5=32.6."),
+            new("Han's five days have MAD5.12 pages. 1=yes,0=no.",1,"25.6/5=5.12."),
+            new("Han's page mean is exactly30. 1=yes,0=no.",0,"32.6."),
+            new("Travel-time mean9min describes typical commute more directly than MAD4.2min. 1=yes,0=no.",1,"Mean center."),
+            new("MAD4.2min describes typical size of variation from the mean. 1=yes,0=no.",1,"Spread."),
+            new("Two groups with equal mean9 but MAD7 and4.2 have equally spread times. 1=yes,0=no.",0,"MAD7 more spread."),
+            new("If mean grows but MAD shrinks, values may be farther from zero but more consistent around their own mean. 1=yes,0=no.",1,"Mean location and variation differ."),
+            new("Archer farther on second round means second mean distance can be above1.6 inches. 1=yes,0=no.",1,"Greater average distance."),
+            new("Archer more consistent second round means second MAD may be below1.3 inches. 1=yes,0=no.",1,"Smaller spread."),
+            new("An archer round with mean2.4in and MAD0.5in is a possible valid example. 1=yes,0=no.",1,"Meets two inequalities."),
+            new("If every value in a dataset is equal, MAD equals zero. 1=yes,0=no.",1,"No deviations."),
+            new("Mean and MAD always represent the same number. 1=yes,0=no.",0,"Center vs spread."),
+            new("Adding10 to every observation increases mean by10 but leaves MAD unchanged. 1=yes,0=no.",1,"All deviations same."),
+            new("Multiplying every observed quantity by2 doubles MAD. 1=yes,0=no.",1,"Scaled distances."),
+            new("A labeled dot plot can show center and spread simultaneously. 1=yes,0=no.",1,"Visual context."),
+            new("The student's open-ended second-dot-plot design needs teacher review. 1=yes,0=no.",1,"Many valid solutions.")
         ]
     };
 
