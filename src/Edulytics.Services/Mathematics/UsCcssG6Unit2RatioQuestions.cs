@@ -175,6 +175,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0505DecimalProducts = "usccss.g6.u05.l05.decimal_products_base_ten";
     public const string L0505DecimalLogic = "usccss.g6.u05.l05.decimal_product_placevalue_reasoning";
 
+    public const string L0506Products = "usccss.g6.u05.l06.decimal_multiplication_methods";
+    public const string L0506MethodsLogic = "usccss.g6.u05.l06.decimal_product_scale_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2259,6 +2262,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("1.2×5=6. 1=yes,0=no.",1,"Six whole units."),
             new("A quadrilateral's drawn area must be graded using the actual polygon, not just a numeric result. 1=yes,0=no.",1,"Teacher geometry rubric."),
             new("The equivalent representations of decimal factors rely on associative and commutative multiplication. 1=yes,0=no.",1,"Regrouping factors.")
+        ],
+        [L0506Products] =
+        [
+            new("1.2×0.11 in THOUSANDTHS?",132,"0.132."),
+            new("0.34×0.02 in TEN-THOUSANDTHS?",68,"0.0068."),
+            new("120×0.002 in THOUSANDTHS?",240,"0.24."),
+            new("0.3×0.5 in HUNDREDTHS?",15,"0.15."),
+            new("Buffalo gasoline price per gallon in CENTS?",229,"Given $2.29."),
+            new("Toronto gasoline91cents per liter,3.8 liters/gallon. Cost per gallon rounded to CENTS?",346,"91×3.8=345.8cents≈346."),
+            new("Gas Toronto≈346cents/gal vs Buffalo229cents/gal. Difference in CENTS?",117,"346−229=117."),
+            new("10.3+3.7 in TENTHS?",140,"14.0."),
+            new("20.99−4.97 in HUNDREDTHS?",1602,"16.02."),
+            new("15.99+23.51 in HUNDREDTHS?",3950,"39.50."),
+            new("1.893−0.353 in THOUSANDTHS?",1540,"1.540."),
+            new("49/50 divided by7/6, answer in TWENTY-FIFTHS?",21,"(49/50)×(6/7)=21/25."),
+            new("1.05×2.8 in HUNDREDTHS?",294,"2.94."),
+            new("0.0015×0.024 in MILLIONTHS?",36,"0.000036."),
+            new("0.25×1.6 in TENTHS?",4,"0.4."),
+            new("One gallon3.8L, at91cents/L. Price in TENTHS OF CENT?",3458,"91×3.8=345.8cents."),
+            new("0.3×0.5 in THOUSANDTHS?",150,"0.150."),
+            new("A rectangular area model of0.3by0.5 has how many HUNDREDTH-SQUARE-UNIT parts?",15,"3tenths×5tenths=15hundredths.")
+        ],
+        [L0506MethodsLogic] =
+        [
+            new("1.2×0.11=0.132. 1=yes,0=no.",1,"12×11=132 thousandths."),
+            new("0.34×0.02=0.0068. 1=yes,0=no.",1,"34×2=68 ten-thousandths."),
+            new("120×0.002=0.24. 1=yes,0=no.",1,"120×2 thousandths."),
+            new("0.3×0.5=0.15. 1=yes,0=no.",1,"15 hundredths."),
+            new("An area model for0.3×0.5 can have cells each0.01 square unit. 1=yes,0=no.",1,"3×5 of hundredth squares."),
+            new("In Toronto,3.8 liters at0.91 dollars/L cost about3.46 dollars. 1=yes,0=no.",1,"3.458 rounds3.46."),
+            new("Buffalo2.29dollars/gal is more expensive than Toronto3.46/gal under source conversion. 1=yes,0=no.",0,"Toronto costs more."),
+            new("Difference between Toronto3.46 and Buffalo2.29 is1.17 dollars. 1=yes,0=no.",1,"3.46−2.29=1.17."),
+            new("1.05×2.8=2.94 because105×28=2940 and product scale is thousandths. 1=yes,0=no.",1,"2940/1000=2.94."),
+            new("0.0015×0.024=0.000036. 1=yes,0=no.",1,"15×24=360, scale1/10000000."),
+            new("49/50÷7/6=21/25. 1=yes,0=no.",1,"49×6/(50×7)=21/25."),
+            new("Products may be computed using fractions, powers of ten or partial area products. 1=yes,0=no.",1,"Equivalent strategies."),
+            new("A numeric product alone guarantees a student's drawn area partitions are correct. 1=yes,0=no.",0,"Teacher visual review."),
+            new("Multiplication by a positive number below1 produces a smaller positive product than the original factor. 1=yes,0=no.",1,"Scale factor below1.")
         ]
     };
 
