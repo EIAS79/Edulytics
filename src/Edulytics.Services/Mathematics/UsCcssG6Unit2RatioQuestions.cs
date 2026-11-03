@@ -334,6 +334,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0804PlotValues = "usccss.g6.u08.l04.source_dotplot_comparisons";
     public const string L0804InterpretPlot = "usccss.g6.u08.l04.dotplot_center_spread_logic";
 
+    public const string L0805DotPlotValues = "usccss.g6.u08.l05.dotplot_source_comparisons";
+    public const string L0805DotPlotLogic = "usccss.g6.u08.l05.dotplot_center_spread_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4774,6 +4777,55 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("5.01÷4.8=1.04375. 1=yes,0=no.",1,"Division."),
             new("A frequency graph should show both scale and a description of measurement units. 1=yes,0=no.",1,"Context."),
             new("A source student-created plot with one outlier needs teacher review, not just one keyed numeral. 1=yes,0=no.",1,"Open-ended drawing.")
+        ],
+        [L0805DotPlotValues] =
+        [
+            new("Source dotplot A has most data 7–9 and likely what? Enter1=ages,2=school-night sleep,3=non-school sleep.",2,"A typical7–9hours school sleep."),
+            new("Source dotplot B has wider sleep values5–12. Enter1=ages,2=school-night sleep,3=non-school sleep.",3,"B non-school sleep."),
+            new("Source dotplot C has ages10–12. Enter1=ages,2=school-night sleep,3=non-school sleep.",1,"C ages."),
+            new("Source plot A frequencies5:1,6:1,7:3,8:3,9:2. Total observations?",10,"1+1+3+3+2=10."),
+            new("Source plot B frequencies5:1,7:1,8:1,9:3,10:2,11:1,12:1. Total observations?",10,"Sum10."),
+            new("Source plot C frequencies10:1,11:3,12:6. Total observations?",10,"1+3+6=10."),
+            new("Source plot C mode?",12,"Six dots at12."),
+            new("Source plot A minimum value?",5,"Smallest5."),
+            new("Source plot B maximum value?",12,"Largest12."),
+            new("Travel times US approximate min2max20. Range in MINUTES?",18,"20-2=18."),
+            new("Travel times Canada approximate min1max30. Range MINUTES?",29,"30-1=29."),
+            new("Travel times Australia approx min5max45. Range MINUTES?",40,"45-5=40."),
+            new("Travel times New Zealand approx min3max24. Range MINUTES?",21,"24-3=21."),
+            new("Travel times South Africa approx min5max60. Range MINUTES?",55,"60-5=55."),
+            new("Which country had largest approximate range? Enter1 US,2 Canada,3 Australia,4 New Zealand,5 South Africa.",5,"South Africa range55."),
+            new("Which country had smallest approximate range? Enter1 US,2 Canada,3 Australia,4 New Zealand,5 South Africa.",1,"US range18."),
+            new("Which country has lower approximate median time, Canada or Australia? Enter1 Canada,2 Australia.",1,"Approx Canada7min, Australia17.5min."),
+            new("Cherries cost4dollars per pound, Tyler has10dollars. Maximum amount in HALF-POUND UNITS?",5,"10/4=2.5 pounds=5 halves."),
+            new("Can Tyler buy2lb cherries for10dollars? Enter1 yes,0 no.",1,"2×4=8≤10."),
+            new("Can Tyler buy3lb cherries for10dollars? Enter1 yes,0 no.",0,"12>10."),
+            new("Can Tyler buy negative1lb cherries? Enter1 yes,0 no.",0,"Quantity nonnegative."),
+            new("Could Tyler spend10.50dollars with budget10? Enter1 yes,0 no.",0,"Cannot exceed10."),
+            new("Could Tyler spend8 dollars with budget10? Enter1 yes,0 no.",1,"8 within budget."),
+            new("Could Tyler spend2 dollars with budget10 if fraction of pound sold? Enter1 yes,0 no.",1,"Half pound at4/lb costs2."),
+            new("Cherries1.5lb at4dollars per pound cost in CENTS?",600,"1.5×4=6dollars.")
+        ],
+        [L0805DotPlotLogic] =
+        [
+            new("Ages around10–12 fit a set of sixth-graders plausibly better than sleep hours10–12 every night. 1=yes,0=no.",1,"Original plot C ages."),
+            new("A class age distribution can be tightly centered around11 or12. 1=yes,0=no.",1,"Similar age peers."),
+            new("A data set with large min-to-max range has greater range than one with smaller range. 1=yes,0=no.",1,"Definition."),
+            new("South Africa approximate listed commute-time range55minutes is greater than US18minutes. 1=yes,0=no.",1,"55>18."),
+            new("The source's approximate United States travel times have no variability because all students are sixth graders. 1=yes,0=no.",0,"Different travel durations."),
+            new("The source Canada times have approximate min1 and max30, range29minutes. 1=yes,0=no.",1,"30-1=29."),
+            new("The source New Zealand range24-3=21minutes. 1=yes,0=no.",1,"21."),
+            new("A country with greater range must also have greater average travel time. 1=yes,0=no.",0,"Spread and center distinct."),
+            new("The source dot plots about student ages and hours of sleep share numeric labels but need different measured units. 1=yes,0=no.",1,"Years versus hours."),
+            new("A 0–10 importance-of-pollution scale supports numerical rating analysis. 1=yes,0=no.",1,"Ordinal rating scale."),
+            new("An exact claim that pollution rating6 is or is not center needs the original dot plot's frequency, not guessed distribution. 1=yes,0=no.",1,"Inspect figure."),
+            new("Cherry cost4dollars per pound with budget10 implies0≤c≤2.5lb. 1=yes,0=no.",1,"Divide cost constraint4c≤10."),
+            new("Cherry quantity c=3lb is permitted with10dollars. 1=yes,0=no.",0,"Costs12."),
+            new("Cherry quantity c=2lb is permitted with10dollars. 1=yes,0=no.",1,"Costs8."),
+            new("Cherry quantity c=-1lb is valid because it gives a negative cost. 1=yes,0=no.",0,"Purchases nonnegative."),
+            new("For Tyler's budget, amount spent m can be between0 and10dollars inclusive. 1=yes,0=no.",1,"0≤m≤10."),
+            new("The amount spent m=10.5dollars fits budget10. 1=yes,0=no.",0,"Exceeds10."),
+            new("Dot plots with equal centers can have different spreads, so both should be described. 1=yes,0=no.",1,"Distribution characteristics.")
         ]
     };
 

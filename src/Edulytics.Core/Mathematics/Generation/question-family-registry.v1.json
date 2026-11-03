@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u08.l05.dotplot_source_comparisons",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-aged-vs-sleep-plots-A-B-C-country-travel-ranges-and-cherry-budget",
+      "representations": [
+        "numeric",
+        "dot_plot"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u08.l05.dotplot_center_spread_interpretation",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-contextual-matching-and-variable-spread-with-human-plot-reading",
+      "representations": [
+        "boolean_reasoning",
+        "distribution"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l04.source_dotplot_comparisons",
       "version": 1,
       "skillId": "ratio.unit_rate",
