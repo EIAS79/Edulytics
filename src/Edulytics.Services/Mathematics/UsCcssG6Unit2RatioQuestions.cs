@@ -337,6 +337,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0805DotPlotValues = "usccss.g6.u08.l05.dotplot_source_comparisons";
     public const string L0805DotPlotLogic = "usccss.g6.u08.l05.dotplot_center_spread_interpretation";
 
+    public const string L0806HistogramNumerics = "usccss.g6.u08.l06.histogram_bin_frequencies";
+    public const string L0806HistogramLogic = "usccss.g6.u08.l06.histogram_vs_dotplot_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4826,6 +4829,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("For Tyler's budget, amount spent m can be between0 and10dollars inclusive. 1=yes,0=no.",1,"0≤m≤10."),
             new("The amount spent m=10.5dollars fits budget10. 1=yes,0=no.",0,"Exceeds10."),
             new("Dot plots with equal centers can have different spreads, so both should be described. 1=yes,0=no.",1,"Distribution characteristics.")
+        ],
+        [L0806HistogramNumerics] =
+        [
+            new("Source histogram A corresponds to which dot plot1–5?",3,"A shares bins with plot3."),
+            new("Source histogram B corresponds to which dot plot1–5?",1,"B shows31–49 distribution plot1."),
+            new("Source histogram C corresponds to which dot plot1–5?",5,"C corresponds plot5 broad0–50 bins."),
+            new("Source histogram D corresponds to which dot plot1–5?",2,"D begins20–25 matching plot2."),
+            new("Source histogram E corresponds to which dot plot1–5?",4,"E matches plot4 values9–36."),
+            new("40 runners: 4 to less than6 minutes frequency?",1,"Given1."),
+            new("40 runners: 6 to less than8 minutes frequency?",5,"Given5."),
+            new("40 runners: 8 to less than10 minutes frequency?",13,"Given13."),
+            new("40 runners:10 to less than12 minutes frequency?",12,"Given12."),
+            new("40 runners:12 to less than14 minutes frequency?",7,"Given7."),
+            new("40 runners:14 to less than16 minutes frequency?",2,"Given2."),
+            new("Total frequency of run-time bins1,5,13,12,7,2?",40,"Sum40."),
+            new("How many runners took less than8minutes?",6,"1+5=6."),
+            new("How many runners took8 to under12minutes?",25,"13+12=25."),
+            new("How many runners took at least12minutes?",9,"7+2=9."),
+            new("Which run-time interval has highest frequency? Enter1 for4-6,2 for6-8,3 for8-10,4 for10-12,5 for12-14,6 for14-16.",3,"8–10 has13."),
+            new("Square vertex(-2,3) with other corners(2,3),(2,-1),(-2,-1). Side length?",4,"2-(-2)=4."),
+            new("Same square area in SQUARE UNITS?",16,"4×4=16."),
+            new("Same square perimeter in UNITS?",16,"4×4=16."),
+            new("A histogram bin from8 up to but not including10 includes time9? Enter1 yes,0 no.",1,"8≤9<10."),
+            new("A histogram bin from8 up to but not including10 includes time10? Enter1 yes,0 no.",0,"Right endpoint excluded."),
+            new("A 4-minute to6-minute histogram bin has width in MINUTES?",2,"6-4=2.")
+        ],
+        [L0806HistogramLogic] =
+        [
+            new("Histograms group numerical observations into value intervals. 1=yes,0=no.",1,"Bins."),
+            new("Dot plots can display each individual measured value more directly than grouped histograms. 1=yes,0=no.",1,"Values vs frequency bins."),
+            new("A bar for interval8 to less than10 includes10 as right endpoint. 1=yes,0=no.",0,"Upper bound excluded."),
+            new("The six run-time bins have frequencies summing40. 1=yes,0=no.",1,"1+5+13+12+7+2=40."),
+            new("The most frequent source run-time bin is8–10minutes. 1=yes,0=no.",1,"13."),
+            new("More runners were10–12 than8–10 minutes. 1=yes,0=no.",0,"12 versus13."),
+            new("The source run-time histogram counts25 students in8–12minute intervals. 1=yes,0=no.",1,"13+12=25."),
+            new("Exactly13 runners finished in9minutes based only on8–10 histogram bin. 1=yes,0=no.",0,"Bin includes different times."),
+            new("Using adjacent bars for a numerical histogram helps show contiguous intervals. 1=yes,0=no.",1,"Bin structure."),
+            new("A histogram can be constructed for 40 runner times from the provided frequency table without knowing each exact original time. 1=yes,0=no.",1,"Bin counts known."),
+            new("The source shark histogram's exact total and maximum can be asserted from the text-only prompt without its figure. 1=yes,0=no.",0,"Teacher must view chart."),
+            new("A square from(-2,3),(2,3),(2,-1),(-2,-1) has side4. 1=yes,0=no.",1,"Four-unit spans."),
+            new("Two histograms with same bins but different frequencies represent different distributions. 1=yes,0=no.",1,"Counts differ."),
+            new("Numerical histograms and categorical bar charts are interchangeable without changing the meaning of x positions. 1=yes,0=no.",0,"Categories versus ordered intervals."),
+            new("Bin choice can affect apparent shape but not the observations being summarized. 1=yes,0=no.",1,"Grouping."),
+            new("A frequency table and its corresponding histogram must agree in every bin count. 1=yes,0=no.",1,"Consistency."),
+            new("The first source histogram A aligns with plot3 by bin aggregates. 1=yes,0=no.",1,"A↔3."),
+            new("The source histogram B aligns with plot1. 1=yes,0=no.",1,"B↔1."),
+            new("The source histogram D aligns with plot2. 1=yes,0=no.",1,"D↔2.")
         ]
     };
 
