@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u03.l14.percent_unknowns",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-160-is-what-percent-of40-40-is160percent-of-unknown-20percent-sale-and-scarf",
+      "representations": [
+        "numeric",
+        "percent_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u03.l14.percent_compare_and_inverse",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-options-over100-A-D-F-and-information-gap-percentage-problems",
+      "representations": [
+        "boolean_reasoning",
+        "percent_tape"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u03.l13.benchmark_percent_values",
       "version": 1,
       "skillId": "ratio.unit_rate",

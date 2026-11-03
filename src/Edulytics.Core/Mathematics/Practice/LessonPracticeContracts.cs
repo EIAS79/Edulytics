@@ -2070,6 +2070,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit3 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENT_FIND_PART_WHOLE_OR_RATE",
+            [
+                "usccss.g6.u03.l14.percent_unknowns",
+                "usccss.g6.u03.l14.percent_compare_and_inverse"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

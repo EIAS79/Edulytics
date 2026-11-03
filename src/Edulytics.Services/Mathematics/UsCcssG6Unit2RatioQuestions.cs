@@ -97,6 +97,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0313BenchmarkNumbers = "usccss.g6.u03.l13.benchmark_percent_values";
     public const string L0313BenchmarkLogic = "usccss.g6.u03.l13.benchmark_percent_reasoning";
 
+    public const string L0314PercentComputations = "usccss.g6.u03.l14.percent_unknowns";
+    public const string L0314PercentInterpretation = "usccss.g6.u03.l14.percent_compare_and_inverse";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1175,6 +1178,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("75% of10dollars and25% of30dollars are equal. 1=yes,0=no.",1,"Both7.50dollars."),
             new("Lin2.5mph and Andre3mph start22miles apart and move toward each other, meeting after4hours. 1=yes,0=no.",1,"Combined speed5.5mph."),
             new("A 10% reduction of350dollars saves35 dollars. 1=yes,0=no.",1,"350×0.1=35.")
+        ],
+        [L0314PercentComputations] =
+        [
+            new("160 is what percentage of40?",400,"160/40×100=400%."),
+            new("40 is160% of what number?",25,"40/1.6=25."),
+            new("What number is40% of160?",64,"0.4×160=64."),
+            new("An item is20% off and Mai saves13 dollars. Original price in DOLLARS?",65,"13/0.2=65."),
+            new("A scarf originally costs16 dollars and a shopper saves12 dollars. Percent discount?",75,"12/16×100=75%."),
+            new("A scarf originally costs16 dollars and shopper saves12. Sale price in DOLLARS?",4,"16-12=4."),
+            new("Evaluate120% of100.",120,"1.2×100=120."),
+            new("Evaluate50% of150.",75,"0.5×150=75."),
+            new("Evaluate150% of50.",75,"1.5×50=75."),
+            new("Evaluate20% of800.",160,"0.2×800=160."),
+            new("Evaluate200% of30.",60,"2×30=60."),
+            new("Evaluate500% of400.",2000,"5×400=2000."),
+            new("Evaluate1% of1000.",10,"0.01×1000=10."),
+            new("An ant travels30cm in2minutes. Speed in centimeters per minute?",15,"30/2=15cm/min."),
+            new("An ant travels30cm in2minutes. SECONDS per centimeter?",4,"120sec/30cm=4sec/cm."),
+            new("Three and a half US cups at236.6mL per cup: total in TENTHS OF MILLILITER?",8281,"3.5×236.6=828.1mL."),
+            new("One meter is approximately100cm. 75% of a meter in CENTIMETERS?",75,"0.75×100=75cm."),
+            new("A coupon saves15 dollars on an original75-dollar price. What discount percent?",20,"15/75×100=20%.")
+        ],
+        [L0314PercentInterpretation] =
+        [
+            new("160 is400% of40. Enter1=yes,0=no.",1,"Four times the reference."),
+            new("40 is160% of25. Enter1=yes,0=no.",1,"1.6×25=40."),
+            new("40% of160 is64. Enter1=yes,0=no.",1,"0.4×160=64."),
+            new("A20% sale saving13 dollars implies original65 dollars. Enter1=yes,0=no.",1,"13/0.2=65."),
+            new("A12-dollar saving from16 dollars is a75% discount. Enter1=yes,0=no.",1,"12/16=0.75."),
+            new("120% of100 exceeds100. Enter1=yes,0=no.",1,"120>100."),
+            new("50% of150 exceeds100. Enter1=yes,0=no.",0,"75<100."),
+            new("150% of50 exceeds100. Enter1=yes,0=no.",0,"75<100."),
+            new("20% of800 exceeds100. Enter1=yes,0=no.",1,"160>100."),
+            new("200% of30 exceeds100. Enter1=yes,0=no.",0,"60<100."),
+            new("500% of400 exceeds100. Enter1=yes,0=no.",1,"2000>100."),
+            new("1% of1000 exceeds100. Enter1=yes,0=no.",0,"10<100."),
+            new("3.5 cups at236.6mL each contains less than1liter. Enter1=yes,0=no.",1,"828.1mL<1000mL."),
+            new("An ant that travels30cm in2minutes travels15cm per minute. Enter1=yes,0=no.",1,"30/2=15."),
+            new("Solving an information-gap percentage problem requires identifying the100% reference. Enter1=yes,0=no.",1,"Percent comparisons require a known or inferred whole."),
+            new("A discount of20% is always20 dollars regardless of original price. Enter1=yes,0=no.",0,"Discount depends on the reference price.")
         ]
     };
 
