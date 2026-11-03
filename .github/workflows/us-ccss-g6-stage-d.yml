@@ -1,5 +1,15 @@
 name: Grade 6 Stage D 147-Lesson Diagnostics
 on:
+  push:
+    branches: [curriculum/us-ccss-g6-full-grade-20261028]
+    paths:
+      - '.github/workflows/us-ccss-g6-stage-d.yml'
+      - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
+      - 'tests/academic-us-ccss-g6-*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6*.cs'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
   pull_request:
     branches: [main]
     paths:
