@@ -1,0 +1,139 @@
+name: Grade 6 Stage D 147-Lesson Diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g6-stage-d.yml'
+      - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
+      - 'tests/academic-us-ccss-g6-*.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6*.cs'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$HEAD_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: |
+          node tools/curriculum/g6-stage-d-test-matrix.cjs verify
+          mkdir -p /tmp/g6
+          node tools/curriculum/g6-stage-d-test-matrix.cjs inventory > /tmp/g6/inventory.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g6-147-lesson-inventory
+          path: /tmp/g6/inventory.json
+          if-no-files-found: warn
+  build:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - run: |
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+          test -s tests/Edulytics.Tests/bin/Release/net10.0/Edulytics.Tests.dll
+      - uses: actions/upload-artifact@v4
+        with:
+          name: g6-d-compiled-test-assemblies
+          path: tests/Edulytics.Tests/bin/Release/net10.0/
+          if-no-files-found: error
+  math:
+    needs: build
+    name: g6-d-${{ matrix.batch }}-math
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/download-artifact@v4
+        with:
+          name: g6-d-compiled-test-assemblies
+          path: tests/Edulytics.Tests/bin/Release/net10.0/
+      - name: Execute per-lesson selected math suites with real VSTest
+        shell: bash
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          FILTER="$(node tools/curriculum/g6-stage-d-test-matrix.cjs filter "$BATCH")"
+          test -n "$FILTER"
+          mkdir -p g6-stage-d-results
+          dotnet vstest tests/Edulytics.Tests/bin/Release/net10.0/Edulytics.Tests.dll --TestCaseFilter:"$FILTER" --Logger:"trx;LogFileName=g6-$BATCH.trx" --ResultsDirectory:g6-stage-d-results
+          test -s "g6-stage-d-results/g6-$BATCH.trx"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g6-d-${{ matrix.batch }}-math-results
+          path: g6-stage-d-results/
+          if-no-files-found: warn
+  node:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: |
+          set -euo pipefail
+          set -- tests/academic-us-ccss-g6-*.test.cjs
+          test -f "$1"
+          mkdir -p g6-stage-d-results
+          node --test "$@" > g6-stage-d-results/node.tap
+          cat g6-stage-d-results/node.tap
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g6-d-node-regressions
+          path: g6-stage-d-results/
+          if-no-files-found: warn
+  diagnostic:
+    name: g6-d-diagnostics-not-academic-or-release
+    needs: [inventory, build, math, node]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - env:
+          INVENTORY: ${{ needs.inventory.result }}
+          BUILD: ${{ needs.build.result }}
+          MATH: ${{ needs.math.result }}
+          NODE: ${{ needs.node.result }}
+        run: |
+          set -euo pipefail
+          test "$INVENTORY" = success
+          test "$BUILD" = success
+          test "$MATH" = success
+          test "$NODE" = success
+          echo "Technical suites only. Not original element parity, authenticated E2E, DB/Auth, visual/accessibility, human academic signoff or release. NO GO."
