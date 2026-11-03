@@ -129,7 +129,7 @@ def main():
             extract_csrf(f),extract_idempotency_key(f),sql,answer_mode="malformed")
         require(negative.get("status")=="MALFORMED_ANSWER_REJECTED_AND_PERSISTED",
             "incorrect answer accepted or not persisted "+code+" "+repr(negative))
-        REPORT["lessons"].append({"ordinal":ordinal,"lessonCode":code,"unit":int(code.split(":U")[1][:2]),
+        REPORT["lessons"].append({"ordinal":ordinal,"lessonCode":code,"unit":int(re.search(r":G6:U(\d{2}):L\d{2}$",code).group(1)),
             "authenticatedLearnerRichV2":"PASS","firstPartyTitleAndGoal":"PASS",
             "practiceFormAndNonce":"PASS","realGeneratedFamily":family,
             "correctAnswerStoredWithScoreOne":"PASS","malformedAnswerStoredWithScoreZero":"PASS",
