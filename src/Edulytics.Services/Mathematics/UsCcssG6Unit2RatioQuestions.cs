@@ -19,6 +19,8 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L03EqualTaste = "usccss.g6.u02.l03.same_taste_equivalent_ratios";
     public const string L04ColorAmounts = "usccss.g6.u02.l04.color_mixture_quantities";
     public const string L04EqualShade = "usccss.g6.u02.l04.same_shade_proportions";
+    public const string L05Equivalence = "usccss.g6.u02.l05.equivalent_ratio_definition";
+    public const string L05ScaleMissing = "usccss.g6.u02.l05.scaled_ratio_missing_term";
 
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
@@ -167,15 +169,62 @@ internal static class UsCcssG6Unit2RatioQuestions
         ("Does 1 cup flour:5 tbsp water and2 cups flour:6 tbsp water preserve proportions? 1=yes,0=no.",0,"Scaling is not common for both quantities.")
     ];
 
+    // Extensible per-lesson numerical selected Practice bank: avoid creating a
+    // new engine or modifying the shared exact dispatcher for each Unit 2 lesson.
+    // Every bank question is source-scoped; diagrams/explanations are teacher reviewed.
+    private sealed record LaterRatioProblem(string Prompt,int Answer,string Explanation);
+    private static readonly Dictionary<string,LaterRatioProblem[]> AdditionalLessonFamilies = new(StringComparer.Ordinal)
+    {
+        [L05Equivalence] =
+        [
+            new("Are 4:5 and 8:10 equivalent? Enter 1=yes,0=no.",1,"Scale both terms by2."),
+            new("Are 18:3 and 6:1 equivalent? 1=yes,0=no.",1,"Divide both by3."),
+            new("Are 2:7 and10000:35000 equivalent? 1=yes,0=no.",1,"Both multiply by5000."),
+            new("Are 6:4 and18:8 equivalent? 1=yes,0=no.",0,"6-to18 scales ×3,4-to8 ×2."),
+            new("Are 3:6 and6:3 equivalent? 1=yes,0=no.",0,"Reversing terms changes the ratio."),
+            new("Are 8:12 and12:18 equivalent? 1=yes,0=no.",1,"Both scale ×1.5."),
+            new("Are 2:3 and4:5 equivalent? 1=yes,0=no.",0,"Adding2 to each does not preserve a ratio."),
+            new("Are 3:4 and15:20 equivalent? 1=yes,0=no.",1,"Scale both by5."),
+            new("Are 3:4 and9:10 equivalent? 1=yes,0=no.",0,"Scaling factors3 and2.5 differ."),
+            new("Are 3:6:10 and15:30:50 equivalent ordered ingredient ratios? 1=yes,0=no.",1,"All ingredients scale ×5."),
+            new("Are 3:6:10 and15:30:40 equivalent? 1=yes,0=no.",0,"Soup changes by different factor."),
+            new("Are 4:6 and2:3 equivalent? 1=yes,0=no.",1,"Divide both by2."),
+            new("Are 6:4 and18:12 equivalent? 1=yes,0=no.",1,"Both scale ×3."),
+            new("Are 6:4 and3:2 equivalent? 1=yes,0=no.",1,"Both divide by2."),
+            new("Are 6:4 and18:8 equivalent? 1=yes,0=no.",0,"18/6 differs from8/4.")
+        ],
+        [L05ScaleMissing] =
+        [
+            new("One original ratio4:5 becomes ?:10 when both terms double. Find missing first term.",8,"4×2=8."),
+            new("One original ratio4:5 becomes 8:? when both terms double. Find missing second term.",10,"5×2=10."),
+            new("18:3 simplifies to ?:1. Find first term.",6,"Divide both by3."),
+            new("3 cups pasta,6 ounces tuna,10 ounces soup per batch. Soup ounces for HALF a batch?",5,"10×1/2=5 ounces."),
+            new("3 cups pasta,6 ounces tuna,10 ounces soup. Pasta cups for FIVE batches?",15,"3×5=15 cups."),
+            new("3 cups pasta,6 ounces tuna,10 ounces soup. Tuna ounces for FIVE batches?",30,"6×5=30 ounces."),
+            new("3 cups pasta,6 ounces tuna,10 ounces soup. Soup ounces for FIVE batches?",50,"10×5=50 ounces."),
+            new("A fixed-height 9 by18 inch casserole tray has base area in square inches?",162,"9×18=162 square inches."),
+            new("Same-height casserole double batch needs double the 162 sq-in original base area. New base area?",324,"162×2=324 square inches."),
+            new("Same-height casserole half batch needs half the 162 sq-in original base area. New base area?",81,"162/2=81 square inches."),
+            new("Source fruit bowl:6 bananas,4 apples,3 oranges. If bananas scale by2, new banana count?",12,"6×2=12."),
+            new("Source fruit bowl:6 bananas,4 apples,3 oranges. If oranges scale by6, new orange count?",18,"3×6=18."),
+            new("In a4:6 ratio, multiply both terms by3. What is the NEW second term?",18,"6×3=18."),
+            new("In a4:5 ratio, multiply both terms by4. What is the NEW second term?",20,"5×4=20."),
+            new("Source fruit bowl:6 bananas and3 oranges. How many bananas for EACH orange?",2,"6/3=2."),
+            new("In a 6:4 pair, simplifying both by2 gives3:?. Find missing second term.",2,"4/2=2.")
+        ]
+    };
+
     public static bool Supports(string? family) =>
         family is L01Collections or L01Shade or L02Diagrams or L02Cards or L03RecipeBatches or L03EqualTaste
-        or L04ColorAmounts or L04EqualShade;
+        or L04ColorAmounts or L04EqualShade ||
+        (family is not null && AdditionalLessonFamilies.ContainsKey(family));
 
     public static Problem Build(string family, Random random)
     {
         if (!Supports(family)) throw new ArgumentException("Unknown G6 U02 ratio family",nameof(family));
         ArgumentNullException.ThrowIfNull(random);
-        var variant = random.Next(family switch
+        var variant = random.Next(AdditionalLessonFamilies.TryGetValue(family,out var extras)
+            ? extras.Length : family switch
         {
             L01Collections => Pairs.Length,
             L01Shade => Shades.Length,
@@ -187,6 +236,13 @@ internal static class UsCcssG6Unit2RatioQuestions
             L04EqualShade => EqualShades.Length,
             _ => throw new ArgumentOutOfRangeException(nameof(family))
         });
+        if (AdditionalLessonFamilies.TryGetValue(family,out var authored))
+        {
+            var item=authored[variant];
+            return new(family,item.Prompt,item.Explanation+
+                " Teacher checks source diagrams, ratio reasoning and physical groupings.",
+                AssessmentItemType.Numeric,new Dictionary<string,int>{{"variant",variant}});
+        }
         if (family is L04ColorAmounts or L04EqualShade)
         {
             var r=family==L04ColorAmounts?ColorAmounts[variant]:EqualShades[variant];
@@ -236,7 +292,8 @@ internal static class UsCcssG6Unit2RatioQuestions
 
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p) =>
         Supports(family) && p is {Count:1} && p.TryGetValue("variant",out var v) &&
-        v >= 0 && v < (family switch
+        v >= 0 && v < (AdditionalLessonFamilies.TryGetValue(family!,out var additional)
+            ? additional.Length : family switch
         {
             L01Collections => Pairs.Length,
             L01Shade => Shades.Length,
@@ -253,6 +310,8 @@ internal static class UsCcssG6Unit2RatioQuestions
     {
         if (!Valid(family,p)) throw new ArgumentException("Invalid ratio-family variant.");
         var v=p["variant"];
+        if (AdditionalLessonFamilies.TryGetValue(family,out var authored))
+            return authored[v].Answer.ToString(CultureInfo.InvariantCulture);
         if (family is L04ColorAmounts or L04EqualShade)
         {
             var r=family==L04ColorAmounts?ColorAmounts[v]:EqualShades[v];
@@ -288,6 +347,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     {
         if (!Valid(family,p) || string.IsNullOrWhiteSpace(answer)) return false;
         var expected=Solve(family,p!);
+        if (AdditionalLessonFamilies.ContainsKey(family))
+            return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var bankNumber)
+                && bankNumber.ToString(CultureInfo.InvariantCulture)==expected;
         if (family is L04ColorAmounts or L04EqualShade)
             return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var colorNumber)
                 && colorNumber.ToString(CultureInfo.InvariantCulture)==expected;

@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u02.l05.equivalent_ratio_definition",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-common-factor-defines-equivalence-source-practice-4to5-18to3-2to7-and-nonexamples",
+      "representations": ["numeric", "discrete_diagram"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u02.l05.scaled_ratio_missing_term",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "common-positive-factor-and-labeled-recipe-tray-area-source",
+      "representations": ["numeric", "ratio_table"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u02.l04.color_mixture_quantities",
       "version": 1,
       "skillId": "ratio.unit_rate",

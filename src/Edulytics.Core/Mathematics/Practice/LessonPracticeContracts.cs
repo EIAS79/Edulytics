@@ -1706,6 +1706,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 U02:L05 source first-edition equivalent-ratio definitions;
+        // numeric selected Practice plus teacher-scored multiple-batch drawings.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EQUIVALENT_RATIO_DEFINITION_AND_SCALE",
+            [
+                "usccss.g6.u02.l05.equivalent_ratio_definition",
+                "usccss.g6.u02.l05.scaled_ratio_missing_term"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
