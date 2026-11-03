@@ -247,6 +247,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0614ExponentEvaluation = "usccss.g6.u06.l14.exponent_order_numeric";
     public const string L0614ExponentOrderLogic = "usccss.g6.u06.l14.exponent_evaluation_reasoning";
 
+    public const string L0615ExponentVariables = "usccss.g6.u06.l15.exponential_variable_values";
+    public const string L0615ExponentVariablesLogic = "usccss.g6.u06.l15.exponential_expression_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3316,6 +3319,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("2.4y=13.75 can be solved by13.75÷2.4. 1=yes,0=no.",1,"Original C,D."),
             new("15×23 can be partitioned to10×23+5×23=345. 1=yes,0=no.",1,"Distribution."),
             new("Parentheses determine whether product is exponent's base. 1=yes,0=no.",1,"Order of operations.")
+        ],
+        [L0615ExponentVariables] =
+        [
+            new("2 to power x whenx=3?",8,"2³=8."),
+            new("x squared whenx=3?",9,"3²=9."),
+            new("1 to power x whenx=3?",1,"1³=1."),
+            new("x to first power whenx=3?",3,"3¹=3."),
+            new("(1/2)^x whenx=3, answer in EIGHTHS?",1,"1/8."),
+            new("2+x cubed whenx=3?",29,"2+27=29."),
+            new("x squared whenx=1/2, answer in QUARTERS?",1,"(1/2)²=1/4."),
+            new("3x²+y forx=5,y=3?",78,"3×25+3=78."),
+            new("10y+x² forx=6,y=4?",76,"40+36=76."),
+            new("2 cubed equals?",8,"2³=8."),
+            new("3 squared equals?",9,"3²=9."),
+            new("1 to power31 equals?",1,"1^31=1."),
+            new("31 to first power equals?",31,"31¹=31."),
+            new("4 squared equals?",16,"4²=16."),
+            new("2 to fourth power equals?",16,"2⁴=16."),
+            new("(1/2)^3, answer in EIGHTHS?",1,"1/8."),
+            new("(1/3)^2, answer in NINTHS?",1,"1/9."),
+            new("7+x²=16, positive x?",3,"x²=9."),
+            new("5-x²=1, positive x?",2,"x²=4."),
+            new("2×2³=2^x. Find x?",4,"2^4=16."),
+            new("3^4/3^x=27. Find x?",1,"81/3=27."),
+            new("Adult pass costs1.6×child5dollars. Adult DOLLARS?",8,"1.6×5=8."),
+            new("Adult pass if child10dollars?",16,"1.6×10=16."),
+            new("Adult pass if child15dollars?",24,"1.6×15=24."),
+            new("Jada reads5pages/20min. Pages in60minutes?",15,"Three groups of20min.")
+        ],
+        [L0615ExponentVariablesLogic] =
+        [
+            new("Forx=3,2^x=8. 1=yes,0=no.",1,"2³."),
+            new("Forx=3,x²=9. 1=yes,0=no.",1,"3²."),
+            new("Forx=3,1^x=3. 1=yes,0=no.",0,"One to any positive whole exponent1."),
+            new("Forx=3,(1/2)^x=1/8. 1=yes,0=no.",1,"1/2 cubed."),
+            new("Forx=3,2+x³=29. 1=yes,0=no.",1,"2+27."),
+            new("Forx=1/2,x²=1/4. 1=yes,0=no.",1,"Square."),
+            new("Forx=5,y=3,3x²+y=78. 1=yes,0=no.",1,"3×25+3."),
+            new("Forx=6,y=4,10y+x²=76. 1=yes,0=no.",1,"40+36."),
+            new("2³ is greater than3². 1=yes,0=no.",0,"8<9."),
+            new("4² equals2⁴. 1=yes,0=no.",1,"16."),
+            new("(1/2)^3 is greater than(1/3)^2. 1=yes,0=no.",1,"1/8>1/9."),
+            new("7+x²=16 has positive solution x3. 1=yes,0=no.",1,"3²=9."),
+            new("5-x²=1 has positive solution x2. 1=yes,0=no.",1,"x²=4."),
+            new("2×2³=2^4. 1=yes,0=no.",1,"16."),
+            new("3^4/3¹=27. 1=yes,0=no.",1,"81÷3."),
+            new("Adult pass1.6times child price has equation a=1.6w. 1=yes,0=no.",1,"Proportional."),
+            new("Reading5pages per20min means15 pages in1hour. 1=yes,0=no.",1,"Three times."),
+            new("3x² is equivalent to(3x)² for all x. 1=yes,0=no.",0,"3x² vs9x²."),
+            new("The coefficient in3x² is3, multiplying the square ofx. 1=yes,0=no.",1,"Exponent first.")
         ]
     };
 
