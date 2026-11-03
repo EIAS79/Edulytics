@@ -259,6 +259,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0618RelationValues = "usccss.g6.u06.l18.related_area_volume_growth";
     public const string L0618RelationLogic = "usccss.g6.u06.l18.inverse_and_exponential_relationships";
 
+    public const string L0619BoundedRelationships = "usccss.g6.u06.l19.first_party_equation_table_examples";
+    public const string L0619InterpretRelationships = "usccss.g6.u06.l19.first_party_relationship_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3515,6 +3518,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("At those sales/costs, profit5.60 dollars. 1=yes,0=no.",1,"9.8-4.2."),
             new("An inverse constant-area graph follows the same straight line through origin as a fixed unit price. 1=yes,0=no.",0,"Hyperbolic inverse versus proportional."),
             new("Source graph points require units and explanation when students invent a story. 1=yes,0=no.",1,"Context meaningful.")
+        ],
+        [L0619BoundedRelationships] =
+        [
+            new("A walking model has d=4t miles after t hours. Distance at t=3?",12,"4×3=12miles."),
+            new("At4mph, time for20miles in HOURS?",5,"20/4=5."),
+            new("An ideal snack relation has c=90n calories for n servings. Calories in3 servings?",270,"90×3=270."),
+            new("At90calories/serving,630calories gives how many servings?",7,"630/90=7."),
+            new("A brownie relation s=x/2 cups for x batches. Sugar at x=8 in CUPS?",4,"8/2=4."),
+            new("At half cup per batch,5 batches sugar in HALF-CUP UNITS?",5,"Five halves."),
+            new("Book sale price s=.8p dollars, for p=20 dollars sale DOLLARS?",16,".8×20=16."),
+            new("At20% discount, original50dollars sale DOLLARS?",40,".8×50=40."),
+            new("A rectangular banner has area12sqin and base b=3in. Height h?",4,"12/3=4."),
+            new("Banner h=12/b, at b=6in height?",2,"12/6=2."),
+            new("A24mile ride at speed r=6mph. Time t hours?",4,"24/6=4."),
+            new("A24mile ride at r=4mph. Time hours?",6,"24/4=6."),
+            new("Prism relation V=10s³ at s=2. Volume?",80,"10×2³=80."),
+            new("Prism relation V=10s³ at s=4. Volume?",640,"10×4³=640."),
+            new("A fictional doubling sequence has n=2^d at day d. Count day5?",32,"2^5=32."),
+            new("A fictional doubling sequence day d=10. Count?",1024,"2^10=1024."),
+            new("A taxi-like abstract fixed price example has cost c=5x for x rides. Cost at x=7 in DOLLARS?",35,"5×7."),
+            new("A unit price example has 3 tickets each8dollars, total cost?",24,"3×8."),
+            new("An equation y=3x+2 gives y at x=4?",14,"3×4+2."),
+            new("A matching table for y=3x+2 has x=0. What y?",2,"Intercept2."),
+            new("An equation y=2x² gives y at x=3?",18,"2×9=18."),
+            new("A source-aligned arbitrary equation d=25t has distance at t=4 in MILES?",100,"25×4=100.")
+        ],
+        [L0619InterpretRelationships] =
+        [
+            new("At constant4mph, graph point(3,12) with hours first and miles second fits d=4t. 1=yes,0=no.",1,"t3,d12."),
+            new("At4mph, graph point(3,12) means3miles in12hours when time is the horizontal axis. 1=yes,0=no.",0,"Axes reversed."),
+            new("Relation c=90n has a straight line through origin when n is servings and c calories. 1=yes,0=no.",1,"Constant proportional rate."),
+            new("Brownie relation s=x/2 at x=8 gives4 cups sugar. 1=yes,0=no.",1,"Half per batch."),
+            new("Book sale s=0.8p represents paying80% of original price. 1=yes,0=no.",1,"20% off."),
+            new("For banner area12, b×h=12 and h=12/b for positive base. 1=yes,0=no.",1,"Inverse relation."),
+            new("At constant area, doubling base means doubling height. 1=yes,0=no.",0,"Height halves."),
+            new("Travel time t=24/r for fixed24mile trip decreases as positive speed increases. 1=yes,0=no.",1,"Inverse relation."),
+            new("V=10s³ yields eight times the volume when positive s doubles. 1=yes,0=no.",1,"Cubic scaling."),
+            new("Doubling n=2^d grows by adding2 coins every day. 1=yes,0=no.",0,"Geometric growth."),
+            new("The relation y=3x+2 passes through(0,0). 1=yes,0=no.",0,"Intercept2."),
+            new("The relation y=3x+2 at x=4 yields14. 1=yes,0=no.",1,"Substitute."),
+            new("All real-world graphs follow straight lines through the origin. 1=yes,0=no.",0,"Inverse, nonlinear and intercept models."),
+            new("If an equation and table match, each table row substituted into the equation gives true equality. 1=yes,0=no.",1,"Test all rows."),
+            new("Units and axis labels are required to interpret a graphed point as a real-world statement. 1=yes,0=no.",1,"Context."),
+            new("The original capstone contains nine equation-table relationships requiring teacher-verified matching. 1=yes,0=no.",1,"Original project statement."),
+            new("One first-party fixed numeric example by itself proves the original nine source diagrams have been checked. 1=yes,0=no.",0,"Teacher original task check needed."),
+            new("A graph produced from a table must use consistent scale on each axis. 1=yes,0=no.",1,"Correct plotting."),
+            new("Equations, graphs, tables and verbal descriptions may represent one underlying relationship. 1=yes,0=no.",1,"Multiple representations."),
+            new("A student can change their graph without revising their equation if the represented quantities no longer agree. 1=yes,0=no.",0,"All representations must remain consistent.")
         ]
     };
 
