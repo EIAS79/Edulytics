@@ -124,6 +124,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0405FractionValues = "usccss.g6.u04.l05.fraction_group_quotients";
     public const string L0405FractionMeaning = "usccss.g6.u04.l05.fractional_group_interpretation";
 
+    public const string L0406TapeValues = "usccss.g6.u04.l06.fraction_division_values";
+    public const string L0406TapeLogic = "usccss.g6.u04.l06.fraction_tape_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1554,6 +1557,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Seven cups sugar needs17.5 cups flour at ratio5:2. 1=yes,0=no.",1,"7×5/2."),
             new("A division equation can be verified by multiplying quotient times divisor. 1=yes,0=no.",1,"Unknown factor."),
             new("A drawing of a half group requires identifying the entire reference group first. 1=yes,0=no.",1,"Whole reference matters.")
+        ],
+        [L0406TapeValues] =
+        [
+            new("Three divided by1/4 equals how many groups?",12,"3×4=12."),
+            new("Three divided by3/5 equals how many groups?",5,"3×5/3=5."),
+            new("Seven days split into1/2-day periods. Number of periods?",14,"7×2=14."),
+            new("One divided by5/6 gives how many FIFTH-GROUP UNITS?",6,"1÷5/6=6/5groups."),
+            new("One divided by4/5 gives how many QUARTER-GROUP UNITS?",5,"1÷4/5=5/4 groups."),
+            new("Ten percent of70?",7,"70/10=7."),
+            new("Ten percent of110?",11,"110/10=11."),
+            new("Twenty-five percent of160?",40,"160/4=40."),
+            new("Twenty-five percent of48?",12,"48/4=12."),
+            new("Fifty percent of90?",45,"90/2=45."),
+            new("Fifty percent of350?",175,"350/2=175."),
+            new("Seventy-five percent of300?",225,"300×3/4=225."),
+            new("Seventy-five percent of48?",36,"48×3/4=36."),
+            new("How many1/2 groups fit into2 wholes?",4,"2×2=4."),
+            new("How many3/4 groups fit into3 wholes?",4,"3÷.75=4."),
+            new("How many2/5 groups fit into4 wholes?",10,"4÷.4=10."),
+            new("An unknown number of4/5 groups makes1 whole. Answer in QUARTER-GROUP UNITS?",5,"Unknown=5/4 groups."),
+            new("How many1/3 groups fit into2 wholes?",6,"2×3=6.")
+        ],
+        [L0406TapeLogic] =
+        [
+            new("3÷1/4=12. Enter1=yes,0=no.",1,"Twelve quarter groups fit3."),
+            new("3÷3/5=5. Enter1=yes,0=no.",1,"Five groups of3/5 make3."),
+            new("A week has14 half-day periods. Enter1=yes,0=no.",1,"7÷1/2=14."),
+            new("There are6/5 groups of5/6 in1 whole. Enter1=yes,0=no.",1,"(6/5)×(5/6)=1."),
+            new("1÷4/5=5/4. Enter1=yes,0=no.",1,"Reciprocal factor."),
+            new("The equation ?×4/5=1 represents how many4/5-sized groups fit in1. Enter1=yes,0=no.",1,"Original choice D."),
+            new("The equation 1÷4/5=? represents how many4/5-sized groups fit in1. Enter1=yes,0=no.",1,"Original choice E."),
+            new("The equation 4/5÷1=? represents how many4/5-sized groups fit in1. Enter1=yes,0=no.",0,"It asks about division by1."),
+            new("Tape intervals may be unequal even when representing equal-size fractional groups. Enter1=yes,0=no.",0,"Group-size intervals should match."),
+            new("75% of48 is36. Enter1=yes,0=no.",1,"Three quarters."),
+            new("10% of70 is7. Enter1=yes,0=no.",1,"One tenth."),
+            new("25% of160 is40. Enter1=yes,0=no.",1,"One quarter."),
+            new("50% of350 is175. Enter1=yes,0=no.",1,"One half."),
+            new("A diagram must label the reference whole before counting fractional groups. Enter1=yes,0=no.",1,"Fraction definition depends on whole.")
         ]
     };
 
