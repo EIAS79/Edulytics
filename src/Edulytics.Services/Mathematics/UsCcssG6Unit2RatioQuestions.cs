@@ -202,6 +202,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0514DecimalContext = "usccss.g6.u05.l14.decimal_context_calculations";
     public const string L0514DecimalReasoning = "usccss.g6.u05.l14.decimal_application_reasoning";
 
+    public const string L0515FirstPartyMeasurements = "usccss.g6.u05.l15.first_party_fixed_paper_box_scaling";
+    public const string L0515MeasurementLogic = "usccss.g6.u05.l15.measurement_precision_and_area_scaling";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2635,6 +2638,47 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("170.28÷0.08=2128.5. 1=yes,0=no.",1,"Scale100."),
             new("On hurdle diagrams, intervals between hurdles are counted between markers, not automatically equal to total hurdle count. 1=yes,0=no.",1,"Geometry of marked gaps."),
             new("An estimate may be preferable when original source asks closest value rather than exact value. 1=yes,0=no.",1,"Precision appropriate to task.")
+        ],
+        [L0515FirstPartyMeasurements] =
+        [
+            new("A6-inch square sheet is how many CENTIMETERS at2.54cm/in, in HUNDREDTHS?",1524,"6×2.54=15.24cm."),
+            new("An8-inch square sheet is how many CENTIMETERS in HUNDREDTHS?",2032,"8×2.54=20.32cm."),
+            new("A12-inch square sheet in HUNDREDTHS of cm?",3048,"12×2.54=30.48cm."),
+            new("Paper12in side compared with6in side. Length ratio?",2,"12/6=2."),
+            new("Paper8in vs6in side. Ratio in THIRDS?",4,"8/6=4/3."),
+            new("Paper9in vs6in side. Ratio in HALVES?",3,"9/6=3/2."),
+            new("Area of6in square sheet in SQUARE INCHES?",36,"6×6=36."),
+            new("Area of12in square sheet in SQUARE INCHES?",144,"12²=144."),
+            new("Area of12in square as multiple of6in square?",4,"144/36=4."),
+            new("An ideal open-top box has square base4cm side and height1cm. Surface area in SQCM?",32,"4²+4×4×1=32."),
+            new("Ideal open-top box base8cm side height2cm. Surface area in SQCM?",128,"8²+4×8×2=128."),
+            new("Ideal open-top box base8cm height2cm: height relative to1cm box?",2,"2/1=2."),
+            new("Ideal open-top box base8cm height2cm: area relative to base4cm height1cm box?",4,"128/32=4."),
+            new("A sheet12in is how many TIMES area of6in sheet?",4,"Double sides gives quadruple area."),
+            new("A24in sheet compared with6in sheet has side multiplier?",4,"24/6=4."),
+            new("Area multiplier of24in vs6in square sheets?",16,"4²=16."),
+            new("A12in sheet compared with6in, difference in INCHES of side?",6,"12-6=6."),
+            new("An ideal base4×4cm and height1cm open box, base area in SQCM?",16,"4×4."),
+            new("An ideal base8×8cm and height2cm open box, four side areas total SQCM?",64,"4×8×2."),
+            new("Two independently measured box heights1.0 and2.0cm. Height ratio?",2,"2/1=2.")
+        ],
+        [L0515MeasurementLogic] =
+        [
+            new("A12-inch square has twice the side length of a6-inch square. 1=yes,0=no.",1,"12/6=2."),
+            new("Doubling a square's side length doubles its area. 1=yes,0=no.",0,"Area scales by factor4."),
+            new("A12inch square has4times area of6inch square. 1=yes,0=no.",1,"144/36=4."),
+            new("The quotient of the lengths of an8in and6in sheet is4/3. 1=yes,0=no.",1,"8/6=4/3."),
+            new("A 12-inch side is30.48cm at2.54cm per inch. 1=yes,0=no.",1,"12×2.54."),
+            new("Open-top box surface area includes the top cover as a full sixth face. 1=yes,0=no.",0,"No top."),
+            new("An ideal open box with base4cm square and height1cm has surface area32sqcm. 1=yes,0=no.",1,"16+16=32."),
+            new("Doubling all physical box dimensions increases surface area by factor4. 1=yes,0=no.",1,"Squared scale."),
+            new("Doubling all box dimensions increases volume by factor8. 1=yes,0=no.",1,"Cubed scale."),
+            new("If paper measurements are only precise to about1mm, quoting ratios to six decimal places may imply unsupported precision. 1=yes,0=no.",1,"Precision limitation."),
+            new("Different students can measure slightly different folded box edges owing to folds and paper thickness. 1=yes,0=no.",1,"Real-world uncertainty."),
+            new("An original physical box's exact height is guaranteed by the nominal paper side length even without measuring or knowing fold method. 1=yes,0=no.",0,"Depends on folds."),
+            new("The source lesson is an optional hands-on capstone with two project activities. 1=yes,0=no.",1,"Folding and measurement comparison."),
+            new("Without original measured dimensions one cannot validly auto-grade a specific student's origami box surface area against a fixed answer. 1=yes,0=no.",1,"Teacher evaluates measured inputs and tolerance."),
+            new("A box surface area formula needs square units, while side lengths need linear units. 1=yes,0=no.",1,"Dimension analysis.")
         ]
     };
 
