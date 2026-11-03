@@ -193,6 +193,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0511DecimalQuotients = "usccss.g6.u05.l11.whole_division_decimal_results";
     public const string L0511DivisionReasoning = "usccss.g6.u05.l11.decimal_quotient_placevalue_logic";
 
+    public const string L0512DecimalDivision = "usccss.g6.u05.l12.decimal_divided_by_whole";
+    public const string L0512DecimalScaleLogic = "usccss.g6.u05.l12.division_scale_equivalence";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2510,6 +2513,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("1.24×.15=.186. 1=yes,0=no.",1,"Use place-value scaling from124×15."),
             new("A base-ten diagram can justify a quotient even when long division supplies the decimal digits. 1=yes,0=no.",1,"Equivalent representations."),
             new("Every quotient of two whole numbers has a terminating decimal. 1=yes,0=no.",0,"Some repeat, e.g.1/3.")
+        ],
+        [L0512DecimalDivision] =
+        [
+            new("4.5÷0.09 equals?",50,"Scale both×100:450÷9=50."),
+            new("45÷0.9 equals?",50,"Scale both×10."),
+            new("450÷9 equals?",50,"450/9=50."),
+            new("4500÷90 equals?",50,"4500/90=50."),
+            new("7.89÷2, result in THOUSANDTHS?",3945,"3.945×1000."),
+            new("39.54÷3, result in HUNDREDTHS?",1318,"13.18×100."),
+            new("0.176÷5, result in TEN-THOUSANDTHS?",352,"0.0352×10000."),
+            new("Four students share17.52 dollars profit. Cents per person?",438,"1752÷4=438 cents."),
+            new("11 inches in centimeters, using2.54cm/in, answer in HUNDREDTHS cm?",2794,"11×2.54=27.94cm."),
+            new("8.5 inches in centimeters, using2.54cm/in, answer in THOUSANDTHS cm?",21590,"8.5×2.54=21.59cm or21590thousandths."),
+            new("US letter paper11×8.5 inches. Area in TENTHS of square inch?",935,"11×8.5=93.5sqin."),
+            new("European A4 paper21.0×29.7cm. Area in TENTHS of square centimeter?",6237,"21×29.7=623.7."),
+            new("US letter27.94cm×21.59cm. Area in TEN-THOUSANDTHS sqcm?",6032246,"27.94×21.59=603.2246."),
+            new("Compare A4 area623.7sqcm and US letter603.2246sqcm. Enter1 for A4 larger,2 for letter larger.",1,"623.7>603.2246."),
+            new("Three equal groups divide9.6. Size of each group in TENTHS?",32,"9.6÷3=3.2."),
+            new("One and a half divided by5. Answer in TENTHS?",3,"1.5÷5=0.3."),
+            new("Eight and four tenths divided by4, result in TENTHS?",21,"8.4÷4=2.1."),
+            new("Four point five divided by0.09 is same as450 divided by9. Quotient?",50,"Scale100.")
+        ],
+        [L0512DecimalScaleLogic] =
+        [
+            new("4.5÷0.09=45÷0.9=450÷9=50. 1=yes,0=no.",1,"Scale both amounts."),
+            new("Multiplying both nonzero divisor and dividend by same positive factor preserves quotient. 1=yes,0=no.",1,"Ratio invariant."),
+            new("Multiplying dividend alone by10 preserves quotient. 1=yes,0=no.",0,"Changes result tenfold."),
+            new("7.89÷2=3.945. 1=yes,0=no.",1,"Long division."),
+            new("39.54÷3=13.18. 1=yes,0=no.",1,"13.18×3=39.54."),
+            new("0.176÷5=0.0352. 1=yes,0=no.",1,"0.0352×5=0.176."),
+            new("17.52 dollars evenly split among4 gives4.38 dollars each. 1=yes,0=no.",1,"1752cents/4."),
+            new("US letter dimensions converted by2.54cm/in are27.94cm and21.59cm. 1=yes,0=no.",1,"Multiply each inch length."),
+            new("A4 area21×29.7cm exceeds US letter area27.94×21.59cm. 1=yes,0=no.",1,"623.7>603.2246."),
+            new("A base-ten diagram can represent decimal quantities split into equal groups. 1=yes,0=no.",1,"Fractional place values."),
+            new("4.5÷0.09=0.5. 1=yes,0=no.",0,"Quotient50."),
+            new("Equal split of dollars can be checked by converting the result to cents before division. 1=yes,0=no.",1,"Avoids decimal point confusion."),
+            new("When scaling division, zero cannot be used as a multiplier for both numbers, because divisor would be0. 1=yes,0=no.",1,"Undefined."),
+            new("Paper area is found by multiplying both side lengths in same unit. 1=yes,0=no.",1,"Square units.")
         ]
     };
 
