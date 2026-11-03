@@ -1524,6 +1524,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM Grade6 U01:L12 surface area of rectangular prisms
+        // and exposed unit cube faces. User-built figures and reasoning require
+        // teacher review; only source numerical / true-false skills auto-check.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L12",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_EXPOSED_FACE_PRISM_SURFACE_AREA",
+            [
+                "usccss.g6.u01.l12.prism_exposed_face_area",
+                "usccss.g6.u01.l12.surface_area_meaning"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L12_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

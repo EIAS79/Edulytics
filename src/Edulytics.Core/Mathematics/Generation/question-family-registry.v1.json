@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l12.prism_exposed_face_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-g6-u01l12-five-face-cabinet-and-cube-prism-exterior-surface-area",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l12.surface_area_meaning",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-g6-u01l12-volume-vs-exposed-unit-faces-and-practice-trunk",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l11.polygon_classification",
       "version": 1,
       "skillId": "geometry.area_tiling",
