@@ -154,6 +154,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0415Volumes = "usccss.g6.u04.l15.fractional_prism_volume";
     public const string L0415VolumeLogic = "usccss.g6.u04.l15.prism_unit_cube_reasoning";
 
+    public const string L0416AllOperations = "usccss.g6.u04.l16.fraction_operations_context";
+    public const string L0416OperationsLogic = "usccss.g6.u04.l16.fraction_ops_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1963,6 +1966,47 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Cubic inches and square inches are interchangeable units when finding a prism's volume. 1=yes,0=no.",0,"Different dimensions."),
             new("One and two-fifths groups of1⅔in is7/3in. 1=yes,0=no.",1,"7/5×5/3=7/3."),
             new("1cup flour to1/2cup water means4cups flour require2cups water. 1=yes,0=no.",1,"Scale both×4.")
+        ],
+        [L0416AllOperations] =
+        [
+            new("Each orange yields1/4cup juice. Number of oranges needed for2½cups?",10,"2.5÷.25=10."),
+            new("Hiking sign shows3/4mile back to parking and1½miles ahead to summit. Total hike in QUARTER-MILE UNITS?",9,"3/4+6/4=9/4=2.25mi."),
+            new("Hiking sign3/4mi back1½mi ahead. Fraction of full hike already traveled in THIRDS?",1,"(3/4)/(9/4)=1/3."),
+            new("Hiking sign3/4mi back1½mi ahead. Remaining as a MULTIPLE of distance walked?",2,"1.5÷0.75=2."),
+            new("Hiking total2¼mi compared with3/4 already walked. Whole as multiple of walked?",3,"2.25÷.75=3."),
+            new("Priya cat5½lb, dog8¼lb. Cat as fraction of dog in THIRDS?",2,"(11/2)/(33/4)=2/3."),
+            new("Priya cat5½lb, dog8¼lb. Combined weight in QUARTER-POUND UNITS?",55,"11/2+33/4=55/4."),
+            new("Priya cat5½lb, dog8¼lb. Dog heavier in QUARTER-POUND UNITS?",11,"33/4-22/4=11/4."),
+            new("Ice box7½ft×6ft×6ft with cubes1½ft per edge. Cubes along first edge?",5,"7.5÷1.5=5."),
+            new("Ice box7½ft×6ft×6ft with cubes1½ft per edge. Cubes along second edge?",4,"6÷1.5=4."),
+            new("Ice box7½ft×6ft×6ft with cubes1½ft edge. Total cubes?",80,"5×4×4=80."),
+            new("School club sold300shirts,31% to fifth graders. Number?",93,"300×.31=93."),
+            new("School club sold300shirts,52% to sixth graders. Number?",156,"300×.52=156."),
+            new("School club sold300shirts, remaining17% to teachers. Number?",51,"300×.17=51."),
+            new("Jada pennies:dimes2:3, total55coins. Pennies?",22,"55÷5=11 per part;2×11=22."),
+            new("Jada pennies:dimes2:3, total55coins. Dimes?",33,"3×11=33."),
+            new("Jada22pennies33dimes. Total VALUE in CENTS?",352,"22×1+33×10=352."),
+            new("Ratio of pennies:dimes2:3 with no total. Can exact coin counts be determined? Enter1 yes,0 no.",0,"Scale factor unknown."),
+            new("Ten oranges supply how many QUARTER-CUP portions of juice?",10,"10×1/4cup=2.5cups."),
+            new("Cubic ice blocks of edge1½ft have volume in EIGHTH-CUBIC-FT UNITS?",27,"(3/2)³=27/8ft³.")
+        ],
+        [L0416OperationsLogic] =
+        [
+            new("2½cups orange juice at1/4cup per orange requires10 oranges. 1=yes,0=no.",1,"Divide target by per-orange amount."),
+            new("The equation?×1/4=2½ models required oranges. 1=yes,0=no.",1,"Original option A."),
+            new("The equation2½÷1/4=? models required oranges. 1=yes,0=no.",1,"Original option D."),
+            new("The equation1/4÷2½=? models required oranges. 1=yes,0=no.",0,"Wrong direction."),
+            new("At hiking sign3/4mi back to lot and1½mi ahead to summit, distance already walked is1/3 of whole. 1=yes,0=no.",1,"3/4 of9/4 total."),
+            new("At hiking sign, distance remaining is twice the already walked distance. 1=yes,0=no.",1,"1.5/.75=2."),
+            new("At hiking sign, total hike is triple distance already walked. 1=yes,0=no.",1,"2.25/.75=3."),
+            new("Cat5½lb is2/3 as heavy as dog8¼lb. 1=yes,0=no.",1,"5.5/8.25=2/3."),
+            new("Dog8¼lb is2¾lb heavier than cat5½lb. 1=yes,0=no.",1,"8.25-5.5=2.75."),
+            new("An ice box7½×6×6ft can hold80 cubes of1½ft edges with no gaps. 1=yes,0=no.",1,"5×4×4."),
+            new("300shirts 31% fifth+52% sixth leaves17% teachers. 1=yes,0=no.",1,"100-83=17%."),
+            new("From pennies:dimes2:3 alone, exact coin counts can be determined without a total. 1=yes,0=no.",0,"Only proportion, not scale."),
+            new("With55coins at ratio2:3, Jada has22pennies and33dimes. 1=yes,0=no.",1,"11 per ratio unit."),
+            new("The value of22pennies and33dimes is3 dollars52 cents. 1=yes,0=no.",1,"22+330=352cents."),
+            new("Choice of fraction operation depends on whether total, difference, rate or number of groups is unknown. 1=yes,0=no.",1,"Meaning drives operation.")
         ]
     };
 
