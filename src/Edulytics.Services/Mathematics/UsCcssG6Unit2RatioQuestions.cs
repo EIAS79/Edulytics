@@ -223,6 +223,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0606Expressions = "usccss.g6.u06.l06.expression_evaluation_contexts";
     public const string L0606ExpressionLogic = "usccss.g6.u06.l06.expression_interpretation";
 
+    public const string L0607PercentEquations = "usccss.g6.u06.l07.percent_equation_unknown_whole";
+    public const string L0607PercentEquationLogic = "usccss.g6.u06.l07.percent_equation_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2941,6 +2944,48 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("x/3 evaluated at x=21 equals7. 1=yes,0=no.",1,"Substitution."),
             new("The expression24-x represents empty ounces only when x is contents between0 and24. 1=yes,0=no.",1,"Contextual domain."),
             new("Expression meaning remains unchanged for all valid x even as numerical value varies. 1=yes,0=no.",1,"Generalization.")
+        ],
+        [L0607PercentEquations] =
+        [
+            new("Crew paves3/4mile,50% of job. Total road in HALF-MILE UNITS?",3,"3/4÷.5=1.5miles=3halves."),
+            new("40% of x is35. x in HALVES?",175,"35/.4=87.5, or175halves."),
+            new("Priya finishes9 questions,60% of exam. Total questions?",15,"9/.6=15."),
+            new("20% of a is11. a?",55,"11/.2=55."),
+            new("75% of b is12. b?",16,"12/.75=16."),
+            new("80% of c is20. c?",25,"20/.8=25."),
+            new("200% of d is18. d?",9,"18/2=9."),
+            new("2n-3=7. Find n.",5,"2n=10."),
+            new("2n-3=7. Coefficient of n?",2,"2."),
+            new("(2/5)x=1/8. x in SIXTEENTHS?",5,"1/8÷2/5=5/16."),
+            new("0.009÷0.001=?",9,"Scale thousand."),
+            new("0.009÷0.002 in HALVES?",9,"4.5=9halves."),
+            new("0.0045÷0.001 in HALVES?",9,"4.5."),
+            new("0.0045÷0.002 in QUARTERS?",9,"2.25=9quarters."),
+            new("A goal is87.50dollars and40% achieved. Dollars achieved in CENTS?",3500,"87.5×.4=35."),
+            new("A goal is15 questions,60% completed. Completed?",9,".6×15=9."),
+            new("A road1.5miles total,50% complete. Completed in QUARTER-MILE UNITS?",3,"0.75mile=3quarters."),
+            new("A quantity9 is200% of a reference. Reference in HALF-UNITS?",9,"9/2=4.5,9 halves."),
+            new("20% of55=?",11,"0.2×55."),
+            new("75% of16=?",12,"0.75×16.")
+        ],
+        [L0607PercentEquationLogic] =
+        [
+            new("40% of x is35 can be written0.4x=35. 1=yes,0=no.",1,"Percent as decimal multiplier."),
+            new("40% of x=35 has x=87.5. 1=yes,0=no.",1,"Divide by.4."),
+            new("60% of exam is9 questions means exam has15 questions. 1=yes,0=no.",1,"9/.6=15."),
+            new("A crew's3/4mile paved is50%, so whole road1.5miles. 1=yes,0=no.",1,"Double."),
+            new("20% of a=11 implies a=2.2. 1=yes,0=no.",0,"Actual55."),
+            new("75% of b=12 implies b=16. 1=yes,0=no.",1,"12/.75."),
+            new("80% of c=20 implies c=25. 1=yes,0=no.",1,"20/.8."),
+            new("200% of d=18 implies d=9. 1=yes,0=no.",1,"2d=18."),
+            new("Percent comparisons can exceed100% when the compared amount exceeds reference. 1=yes,0=no.",1,"200%=double."),
+            new("2n-3=7 has n=5. 1=yes,0=no.",1,"2×5-3=7."),
+            new("In2n-3=7, coefficient of n is2. 1=yes,0=no.",1,"Multiplies variable."),
+            new("x=5/16 solves (2/5)x=1/8. 1=yes,0=no.",1,"2/5×5/16=1/8."),
+            new("0.009÷0.002=4.5. 1=yes,0=no.",1,"9/2."),
+            new("0.0045÷0.002=2.25. 1=yes,0=no.",1,"4.5/2."),
+            new("Identifying the100% reference is necessary to interpret a percent equation. 1=yes,0=no.",1,"Defines whole."),
+            new("A double number line should align0%,100% with0 and the full reference amount. 1=yes,0=no.",1,"Proportional marks.")
         ]
     };
 
