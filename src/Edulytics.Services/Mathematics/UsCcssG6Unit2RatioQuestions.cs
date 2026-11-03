@@ -349,6 +349,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0809Means = "usccss.g6.u08.l09.mean_and_balanced_total";
     public const string L0809MeanLogic = "usccss.g6.u08.l09.mean_fair_share_reasoning";
 
+    public const string L0810BalanceNumbers = "usccss.g6.u08.l10.mean_balance_source_data";
+    public const string L0810BalanceLogic = "usccss.g6.u08.l10.balance_point_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5028,6 +5031,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Mean equals total sum divided by number of observations. 1=yes,0=no.",1,"Formula."),
             new("If all values in dataset increase by2, mean also increases by2. 1=yes,0=no.",1,"Shift all values."),
             new("Teacher can assess a student's balancing drawing and explanations beyond numeric total. 1=yes,0=no.",1,"Rubric.")
+        ],
+        [L0810BalanceNumbers] =
+        [
+            new("Kiran walks16,11,18,12,13 minutes across5days. Sum minutes?",70,"16+11+18+12+13=70."),
+            new("Kiran walks16,11,18,12,13. Mean in minutes?",14,"70/5=14."),
+            new("Deviation for16min from mean14. Distance?",2,"16-14=2."),
+            new("Deviation for11min from mean14. Absolute distance?",3,"14-11=3."),
+            new("Deviation for18min from mean14. Absolute distance?",4,"18-14=4."),
+            new("Deviation for12min from mean14. Absolute distance?",2,"14-12=2."),
+            new("Deviation for13min from mean14. Absolute distance?",1,"14-13=1."),
+            new("Sum distances to LEFT of mean14 for11,12,13?",6,"3+2+1=6."),
+            new("Sum distances to RIGHT mean14 for16,18?",6,"2+4=6."),
+            new("Noah20 points, Mai30, Clare unknown. Mean40 across3. Total score target?",120,"3×40=120."),
+            new("Noah20, Mai30, mean40 across3. Clare points?",70,"120-20-30=70."),
+            new("Compare -2 vs3. Enter1 first larger,0 equal,2 smaller.",2,"-2<3."),
+            new("Compare |-12| vs |15|. Enter1 first larger,0 equal,2 smaller.",2,"12<15."),
+            new("Compare3 vs-4. Enter1 first larger,0 equal,2 smaller.",1,"3>-4."),
+            new("Compare |15| vs|-12|. Enter1 first larger,0 equal,2 smaller.",1,"15>12."),
+            new("Compare7 vs-11. Enter1 first larger,0 equal,2 smaller.",1,"7>-11."),
+            new("Compare -4 vs |5|. Enter1 first larger,0 equal,2 smaller.",2,"-4<5."),
+            new("Compare2/3 and3/4. Which is larger? Enter1 for2/3,2 for3/4.",2,"2/3=8/12,3/4=9/12."),
+            new("Rectangle has height5, width x+y. Area if x=3 and y=2?",25,"5(3+2)=25."),
+            new("Rectangle height5 left width x=3 right width y=2. Left area?",15,"5×3=15."),
+            new("Rectangle height5 left width3 right width2. Right area?",10,"5×2=10."),
+            new("Independent set2,4,6,8,10. Mean?",6,"Sum30/5=6."),
+            new("Independent set2,4,6,8,10. Sum signed deviations from mean?",0,"-4-2+0+2+4=0.")
+        ],
+        [L0810BalanceLogic] =
+        [
+            new("Mean of Kiran's16,11,18,12,13-minute times is14minutes. 1=yes,0=no.",1,"Sum70/5."),
+            new("15minutes is exact mean of Kiran's walks. 1=yes,0=no.",0,"Mean14."),
+            new("For Kiran's data, total distances left of mean equal distances right of mean. 1=yes,0=no.",1,"6 on each side."),
+            new("Kiran's16min time is2minutes to right of mean14. 1=yes,0=no.",1,"+2."),
+            new("Kiran's11min time is3minutes to left of mean14. 1=yes,0=no.",1,"-3."),
+            new("Mean is a balance point because signed deviations sum zero. 1=yes,0=no.",1,"Positive and negative offsets cancel."),
+            new("All values must be identical for their mean to be a balance point. 1=yes,0=no.",0,"Varied data can balance."),
+            new("Noah20, Mai30 and Clare70 have mean40. 1=yes,0=no.",1,"120/3=40."),
+            new("If Noah20 and Mai30, Clare40 produces mean40. 1=yes,0=no.",0,"Sum90 mean30."),
+            new("2/3 is less than3/4. 1=yes,0=no.",1,"8/12<9/12."),
+            new("Rectangle area height5 width x+y equals5(x+y). 1=yes,0=no.",1,"Distributive."),
+            new("Rectangle area5(x+y) equals5x+5y. 1=yes,0=no.",1,"Distributive property."),
+            new("Rectangle total area equals5+xy under source geometry. 1=yes,0=no.",0,"Incorrect area."),
+            new("Absolute distance from mean ignores which side but signed difference records side. 1=yes,0=no.",1,"Distance versus direction."),
+            new("Mean uses total of all data divided by count. 1=yes,0=no.",1,"Fair share."),
+            new("A mean need not equal any original observation. 1=yes,0=no.",1,"Possible."),
+            new("The values2,4,6,8,10 have mean6. 1=yes,0=no.",1,"Sum30/5."),
+            new("The positive deviations from mean may exactly offset negative deviations. 1=yes,0=no.",1,"Zero sum.")
         ]
     };
 
