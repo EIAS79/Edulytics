@@ -187,6 +187,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0509WholeDivision = "usccss.g6.u05.l09.partial_quotient_results";
     public const string L0509DivisionLogic = "usccss.g6.u05.l09.partial_quotient_principles";
 
+    public const string L0510LongDivisionNumbers = "usccss.g6.u05.l10.long_division_quotient_results";
+    public const string L0510LongDivisionLogic = "usccss.g6.u05.l10.long_division_placevalue_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2426,6 +2429,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Square side4.6 has area21.16sqin, largest among source polygons. 1=yes,0=no.",1,"Compare measured areas."),
             new("A shirt fiber10micrometers is thicker than4micrometer web. 1=yes,0=no.",1,"10>4."),
             new("One micrometer is one millionth of a meter. 1=yes,0=no.",1,"Metric definition.")
+        ],
+        [L0510LongDivisionNumbers] =
+        [
+            new("696 divided by12 equals?",58,"12×58=696."),
+            new("For696÷12, first quotient5 represents which place? Enter1 hundreds,2 tens,3 ones,4 tenths.",2,"5tens means50."),
+            new("917÷7 equals?",131,"7×131=917."),
+            new("972÷9 equals?",108,"9×108=972."),
+            new("180×9 equals?",1620,"Han's erroneous result doesn't equal972."),
+            new("For917÷7,7×100 removed first from917 gives remainder?",217,"917-700=217."),
+            new("For917÷7,7×30 removes how much?",210,"7×30=210."),
+            new("For917÷7, after removing700 and210, remainder?",7,"917-700-210=7."),
+            new("For972÷9, first quotient100 removes how much?",900,"9×100=900."),
+            new("For972÷9, after removing900 remains?",72,"972−900=72."),
+            new("For972÷9, next quotient8 removes how much?",72,"9×8=72."),
+            new("One ounce yogurt contains1.2grams sugar,14.25oz contains grams in TENTHS?",171,"14.25×1.2=17.1g."),
+            new("Coin2mass27.22g minus coin1mass16.718g in THOUSANDTHS OF GRAM?",10502,"27.220−16.718=10.502."),
+            new("12 multiplied by50 equals?",600,"First tens quotient of696/12."),
+            new("696−600 equals?",96,"Remainder after first step."),
+            new("96 divided by12 equals?",8,"Second quotient digit8."),
+            new("For917÷7, how many HUNDREDS are in first partial quotient?",1,"100 groups of7."),
+            new("If quotient58 and divisor12, dividend?",696,"58×12=696.")
+        ],
+        [L0510LongDivisionLogic] =
+        [
+            new("696÷12=58. 1=yes,0=no.",1,"12×58=696."),
+            new("The leading5 in quotient58 for696÷12 represents5 tens. 1=yes,0=no.",1,"50, not5 ones."),
+            new("The leading5 in quotient58 for696÷12 represents5 hundreds. 1=yes,0=no.",0,"Not enough hundreds."),
+            new("917÷7=131. 1=yes,0=no.",1,"7×131=917."),
+            new("In917÷7, subtracting the7 written under initial9 refers to7 hundreds in the place-value algorithm. 1=yes,0=no.",1,"Place-value interpretation."),
+            new("Han's result180 for972÷9 is correct. 1=yes,0=no.",0,"180×9=1620."),
+            new("972÷9=108. 1=yes,0=no.",1,"9×108=972."),
+            new("The0 in quotient108 represents the fact that there are no tens of groups in the middle step. 1=yes,0=no.",1,"Place holder matters."),
+            new("14.25 ounces at1.2grams per ounce yields17.1grams sugar. 1=yes,0=no.",1,"Multiply14.25×1.2."),
+            new("27.22grams minus16.718grams is10.502grams. 1=yes,0=no.",1,"Decimal place alignment."),
+            new("A long-division digit's place value matters for each subtraction. 1=yes,0=no.",1,"Compressed notation."),
+            new("Long division and partial quotients can yield the same quotient with different recording formats. 1=yes,0=no.",1,"Equivalent algorithms."),
+            new("Checking a division by multiplication can reveal an impossible quotient. 1=yes,0=no.",1,"Divisor×quotient should equal dividend for zero remainder."),
+            new("A correct total quotient alone automatically confirms the source diagram and student regrouping work. 1=yes,0=no.",0,"Teacher checks steps.")
         ]
     };
 
