@@ -28,6 +28,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L07LineValues = "usccss.g6.u02.l07.created_double_number_line_values";
     public const string L07LineLogic = "usccss.g6.u02.l07.double_number_line_units_per";
 
+    public const string L08UnitPrices = "usccss.g6.u02.l08.unit_prices_and_counts";
+    public const string L08PriceLogic = "usccss.g6.u02.l08.unit_price_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -285,6 +288,41 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("14 cups red and49 cups white represent seven 2:7 pink-paint batches. 1=yes,0=no.",1,"Both ×7."),
             new("For a double number line, aligned positions show the same batch count across two labeled scales. 1=yes,0=no.",1,"Parallel lines connect paired quantities."),
             new("In 6pints red:2pints yellow, there are3pints red per1pint yellow. 1=yes,0=no.",1,"6:2=3:1.")
+        ],
+        [L08UnitPrices] =
+        [
+            new("Source model: 2oz gold cost2640 dollars. Price for1oz in DOLLARS?",1320,"2640÷2=1320 dollars per ounce."),
+            new("Source model: 2oz gold cost2640 dollars. Price for3oz in DOLLARS?",3960,"3×1320=3960 dollars."),
+            new("Source model: 2oz gold cost2640 dollars. Price for4oz in DOLLARS?",5280,"4×1320=5280 dollars."),
+            new("Tomatoes:4lb cost14 dollars. Price for1lb in CENTS?",350,"1400 cents÷4=350 cents per pound."),
+            new("Tomatoes:4lb cost14 dollars. Price for2lb in CENTS?",700,"350×2=700 cents."),
+            new("Tomatoes:4lb cost14 dollars. Price for3lb in CENTS?",1050,"350×3=1050 cents."),
+            new("Four movie tickets cost48 dollars. Price for1 ticket in DOLLARS?",12,"48÷4=12 dollars per ticket."),
+            new("Four movie tickets cost48 dollars. Price for5 tickets in DOLLARS?",60,"12×5=60 dollars."),
+            new("Four movie tickets cost48 dollars. Price for11 tickets in DOLLARS?",132,"12×11=132 dollars."),
+            new("Twelve eggs cost3 dollars. Price for1 egg in CENTS?",25,"300÷12=25 cents per egg."),
+            new("Three pounds of peanuts cost7 dollars50 cents. Price per pound in CENTS?",250,"750÷3=250 cents."),
+            new("Four rolls of toilet paper cost2 dollars. Price per roll in CENTS?",50,"200÷4=50 cents."),
+            new("Ten apples cost3 dollars50 cents. Price per apple in CENTS?",35,"350÷10=35 cents."),
+            new("Clare smoothie uses2 tsp chocolate syrup; doubled recipe requires how many tsp syrup?",4,"Double2 to4 teaspoons, not5."),
+            new("Clare smoothie doubled should use4 tsp syrup but Kiran added5 tsp. How many tsp EXTRA used?",1,"5-4=1 tsp extra."),
+            new("Trapezoidal stage base20ft/10ft with height12ft. What is the area of one trapezoid in ft squared?",180,"(20+10)×12/2=180."),
+            new("Trapezoidal stage horizontal top area180ft², perimeter56ft, vertical depth2ft. Area including top and all side panels, excluding bottom?",292,"180+56×2=292 square feet.")
+        ],
+        [L08PriceLogic] =
+        [
+            new("If4 tickets cost48 dollars, a ticket costs12 dollars. 1=yes,0=no.",1,"48÷4=12."),
+            new("If4 tickets cost48 dollars, 11 tickets cost120 dollars at the same rate. 1=yes,0=no.",0,"11×12=132 dollars."),
+            new("If4lb tomatoes cost14 dollars, 1lb costs3 dollars50 cents. 1=yes,0=no.",1,"1400cents÷4=350."),
+            new("If4lb tomatoes cost14 dollars, 3lb cost12 dollars. 1=yes,0=no.",0,"3lb=10.50 dollars."),
+            new("If12 eggs cost3 dollars, each egg costs25 cents. 1=yes,0=no.",1,"300÷12=25 cents."),
+            new("If12 eggs cost3 dollars, 6 eggs cost2 dollars at the same rate. 1=yes,0=no.",0,"6×25cents=150cents."),
+            new("If10 apples cost3 dollars50 cents, one apple costs35 cents. 1=yes,0=no.",1,"350÷10=35."),
+            new("A price per item compares price and number of items, with units attached. 1=yes,0=no.",1,"Unit price expresses currency for one item."),
+            new("At a constant price, doubling the number of items without increasing cost preserves price per item. 1=yes,0=no.",0,"Cost must scale too."),
+            new("Two ounces gold2640 dollars makes 3 ounces3960 dollars at this rate. 1=yes,0=no.",1,"1320 dollars per ounce."),
+            new("Doubling 1cup yogurt3tbsp peanut butter2tsp syrup requires2cups6tbsp4tsp. 1=yes,0=no.",1,"All quantities double."),
+            new("Source smoother with2cups yogurt6tbsp peanut butter5tsp syrup matches twice the original recipe exactly. 1=yes,0=no.",0,"Syrup should4tsp.")
         ]
     };
 
