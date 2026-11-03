@@ -370,6 +370,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0816BoxPlotValues = "usccss.g6.u08.l16.box_plot_source_quartiles";
     public const string L0816BoxPlotLogic = "usccss.g6.u08.l16.five_number_box_plot_interpretation";
 
+    public const string L0817BoxPlotValues = "usccss.g6.u08.l17.boxplot_athlete_pineapple_statistics";
+    public const string L0817BoxPlotLogic = "usccss.g6.u08.l17.interpret_center_and_spread_boxplots";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5383,6 +5386,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The numeric type of a box plot scale must match measured variable units. 1=yes,0=no.",1,"e.g. seconds/hours."),
             new("A five-number summary can be computed from ordered raw data. 1=yes,0=no.",1,"Sort."),
             new("A lower IQR indicates tighter middle half but not necessarily smaller total range. 1=yes,0=no.",1,"Extremes may differ.")
+        ],
+        [L0817BoxPlotValues] =
+        [
+            new("Athlete basketball median height in TENTHS of inch?",785,"78.5in."),
+            new("Football median in TENTHS of inch?",738,"73.8in."),
+            new("Hockey median in TENTHS of inch?",731,"73.1in."),
+            new("Baseball median in TENTHS of inch?",728,"72.8in."),
+            new("Basketball IQR in TENTHS of inch using Q3 80.3 Q1 76.1?",42,"4.2in."),
+            new("Football IQR in TENTHS of inch Q3 75.1 Q1 70.1?",50,"5.0in."),
+            new("Hockey IQR in TENTHS of inch Q3 75 Q1 72?",30,"3in."),
+            new("Baseball IQR in TENTHS of inch Q3 74.5 Q1 72?",25,"2.5in."),
+            new("Which sport has largest full range? Enter1 basket,2 football,3 hockey,4 baseball.",1,"Basketball 91.1-67.3=23.8in."),
+            new("Which sport has smallest full range? Enter1 basket,2 football,3 hockey,4 baseball.",4,"Baseball 76.2-70=6.2in."),
+            new("Which two sports show most similar median heights? Enter1 hockey+baseball,2 hockey+basketball,3 football+basketball.",1,"73.1 vs72.8in."),
+            new("Pineapple Crate1 median in TENTHS of pound?",40,"4lb."),
+            new("Pineapple Crate2 median in TENTHS of pound?",20,"2lb."),
+            new("Pineapple Crate3 median in TENTHS of pound?",41,"4.1lb."),
+            new("Crate1 IQR in HUNDREDTHS of pound Q1=3.25 Q3=4.6?",135,"1.35lb."),
+            new("Crate2 IQR in HUNDREDTHS Q1=1.25 Q3=2.25?",100,"1lb."),
+            new("Crate3 IQR in HUNDREDTHS Q1=3.6 Q3=4.4?",80,"0.8lb."),
+            new("Which crate has greatest full range? Enter1,2,3.",1,"1:1.5 to6=4.5."),
+            new("Which crate has heaviest maximum pineapple? Enter1,2,3.",1,"Crate1 max6lb."),
+            new("Which crate has lightest minimum? Enter1,2,3.",2,"Crate2 min0.75lb."),
+            new("A TV show mean age35 years MAD20, another mean30 MAD5. Which show more variable? Enter1 former,2 latter.",1,"MAD20>5."),
+            new("A TV show mean35 years MAD20, another mean30 MAD5. Which has lower mean age? Enter1 former,2 latter.",2,"30<35."),
+            new("Approximately what fraction of100 calls are at or below Q3 in box plot? Whole percent?",75,"Q3 around75th percentile."),
+            new("Fire response times of100 calls, about how many lie above Q3?",25,"Upper quarter."),
+            new("Crate1 max6lb vs Crate2 max3.4lb, difference in TENTHS lb?",26,"2.6lb.")
+        ],
+        [L0817BoxPlotLogic] =
+        [
+            new("Hockey and baseball box plots have close median heights73.1 and72.8. 1=yes,0=no.",1,"Near centers."),
+            new("Basketball athlete heights have largest full range in source. 1=yes,0=no.",1,"Range23.8."),
+            new("Baseball has smallest full range of four sports. 1=yes,0=no.",1,"6.2."),
+            new("Basketball has smallest IQR of four sports. 1=yes,0=no.",0,"Baseball IQR2.5; basketball4.2."),
+            new("Football IQR5in exceeds hockey3in. 1=yes,0=no.",1,"5>3."),
+            new("Pineapple crate1 most variable by full range. 1=yes,0=no.",1,"Original option A."),
+            new("Pineapple heaviest in crate1 (max6lb). 1=yes,0=no.",1,"Original B."),
+            new("Pineapple lightest in crate1. 1=yes,0=no.",0,"Crate2 min0.75."),
+            new("Crate3 has greatest median AND greatest IQR. 1=yes,0=no.",0,"IQR crate1 greater."),
+            new("More than half pineapple samples in crates1 and3 exceed Crate2 maximum3.4lb according to their medians. 1=yes,0=no.",1,"Medians4 and4.1 above3.4, source E."),
+            new("Crate1 and Crate3 medians4 and4.1 are close. 1=yes,0=no.",1,"Difference0.1."),
+            new("A box plot middle interval Q1–Q3 covers about half of data. 1=yes,0=no.",1,"IQR span."),
+            new("A fire response-time box plot is sufficient to determine exact 100 individual times. 1=yes,0=no.",0,"Only summary."),
+            new("If response-time Q3 is13min, about75% of values are at or below13min. 1=yes,0=no.",1,"75th percentile under given premise."),
+            new("Whether source fire response Q3 equals13min must be inspected from original chart. 1=yes,0=no.",1,"Missing graphical measurements."),
+            new("A TV show with MAD20 has greater age variability than a show with MAD5. 1=yes,0=no.",1,"MAD spread."),
+            new("One cannot infer every viewer's age from mean and MAD only. 1=yes,0=no.",1,"Insufficient detail."),
+            new("Same IQR and different median means similar middle-half spread but different center. 1=yes,0=no.",1,"Center vs spread."),
+            new("Teacher should review open-ended box plot reasoning and original images. 1=yes,0=no.",1,"Human-reviewed graphical task.")
         ]
     };
 
