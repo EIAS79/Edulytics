@@ -274,6 +274,12 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0704RationalOrder = "usccss.g6.u07.l04.order_signed_numbers_source";
     public const string L0704OrderLogic = "usccss.g6.u07.l04.signed_ordering_logic";
 
+    public const string L0704Ordering = "usccss.g6.u07.l04.rational_order_and_temperature";
+    public const string L0704SourceChecks = "usccss.g6.u07.l04.rational_order_explanations_and_cumulative";
+
+    public const string L0705SignedChanges = "usccss.g6.u07.l05.positive_negative_changes";
+    public const string L0705ChangeLogic = "usccss.g6.u07.l05.signed_context_representations";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3758,6 +3764,97 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("99×15=1485. 1=yes,0=no.",1,"(100-1)15."),
             new("1/2÷2=1/4. 1=yes,0=no.",1,"Half split2."),
             new("A positive quantity doubles in pounds, so its equivalent kilograms double, assuming fixed unit conversion. 1=yes,0=no.",1,"Constant scaling.")
+        ],
+        [L0704Ordering] =
+        [
+            new("Compare -6 and -5. Enter1 for greater,0 for equal,2 for less.",2,"-6<-5."),
+            new("Compare -12 and -5. Enter1 for greater,0 for equal,2 for less.",2,"-12<-5."),
+            new("Compare 1.3 and -5. Enter1 for greater,0 for equal,2 for less.",1,"1.3>-5."),
+            new("Compare 1/7 and -5. Enter1 for greater,0 for equal,2 for less.",1,"A positive fraction is greater than a negative number."),
+            new("Compare -1 and -5. Enter1 for greater,0 for equal,2 for less.",1,"-1 lies to the right of -5."),
+            new("Compare -4 and -5. Enter1 for greater,0 for equal,2 for less.",1,"-4>-5."),
+            new("Order -1.5,-1,-0.5,0,0.5,1. Which is LEAST? Enter numerical answer in HALVES.",-3,"-1.5=-3/2 is least."),
+            new("Order -1.5,-1,-0.5,0,0.5,1. Which negative is SECOND least? Enter whole number.",-1,"-1 comes after -1.5."),
+            new("Order -1.5,-1,-0.5,0,0.5,1. Which is THIRD least? Enter HALF UNITS.",-1,"-0.5=-1 half unit."),
+            new("Order -1.5,-1,-0.5,0,0.5,1. Which is FOURTH least?",0,"0 is after all three negatives."),
+            new("Which element has the lowest listed boiling point in °C? Enter1=Argon -185.8,2=Chlorine -34,3=Fluorine -188.1,4=Hydrogen -252.87,5=Krypton -153.2.",4,"Hydrogen has the smallest temperature -252.87."),
+            new("Which element has the HIGHEST listed boiling point? Enter1=Argon,2=Chlorine,3=Fluorine,4=Hydrogen,5=Krypton.",2,"-34°C for chlorine is largest."),
+            new("Of fluorine -188.1 and argon -185.8, which is LOWER? Enter1 fluorine,2 argon.",1,"-188.1<-185.8."),
+            new("Of krypton -153.2 and argon -185.8, which is HIGHER? Enter1 krypton,2 argon.",1,"-153.2>-185.8."),
+            new("Among -34,-153.2,-185.8,-188.1,-252.87, which is SECOND smallest, in TENTHS OF °C?",-1881,"Fluorine -188.1 is second smallest."),
+            new("What is the opposite of zero?",0,"Zero is its own opposite."),
+            new("Compare -1/2 and 0. Enter1 for greater,0 equal,2 less.",2,"Negative half less than zero."),
+            new("Compare 1/2 and 0. Enter1 for greater,0 equal,2 less.",1,"Positive half greater than zero."),
+            new("Compare -1.5 and -0.5. Enter1 for greater,0 equal,2 less.",2,"-1.5<-0.5."),
+            new("Compare 0 and -1. Enter1 for greater,0 equal,2 less.",1,"0>-1.")
+        ],
+        [L0704SourceChecks] =
+        [
+            new("Of options1.3,-6,-12,1/7,-1,-4, 1.3 is greater than -5. Enter1 yes,0 no.",1,"1.3>-5."),
+            new("Of the options, -6 is greater than -5. Enter1 yes,0 no.",0,"-6<-5."),
+            new("Of the options, -12 is greater than -5. Enter1 yes,0 no.",0,"-12<-5."),
+            new("Of the options, 1/7 is greater than -5. Enter1 yes,0 no.",1,"Positive fractions exceed negatives."),
+            new("Of the options, -1 is greater than -5. Enter1 yes,0 no.",1,"-1>-5."),
+            new("Of the options, -4 is greater than -5. Enter1 yes,0 no.",1,"-4>-5."),
+            new("Zero is its own additive opposite because0+0=0. Enter1 yes,0 no.",1,"Opposite of a is -a; -0=0."),
+            new("All negative rational numbers are less than all positive rational numbers. Enter1 yes,0 no.",1,"Negative values lie left of0, positive right."),
+            new("On a horizontal number line -12 lies LEFT of -5. Enter1 yes,0 no.",1,"-12<-5."),
+            new("Hydrogen -252.87°C has lower listed boiling point than fluorine -188.1°C. Enter1 yes,0 no.",1,"-252.87<-188.1."),
+            new("99 plus54 equals?",153,"100+54-1=153."),
+            new("244 minus99 equals?",145,"244-100+1=145."),
+            new("99 times6 equals?",594,"(100-1)×6=594."),
+            new("99 times15 equals?",1485,"1500-15=1485."),
+            new("One half divided by2: numerator in FOURTHS?",1,"1/2÷2=1/4."),
+            new("Two divided by2 equals?",1,"2/2=1."),
+            new("One half divided by one half equals?",1,"Equal positive operands have quotient1."),
+            new("38/79 divided by38/79 equals?",1,"A nonzero number divided by itself equals1."),
+            new("A baby's weight doubling in pounds implies its kilograms measurement also doubles using fixed conversion. Enter1 yes,0 no.",1,"Unit conversion multiplies by a fixed constant."),
+            new("If5°C is greater than -5°C, its opposite -5°C is greater than5°C. Enter1 yes,0 no.",0,"Order reverses under negation.")
+        ],
+        [L0705SignedChanges] =
+        [
+            new("Tuesday high is4degrees less than Monday. Signed change?",-4,"A decrease."),
+            new("Wednesday high is3.5degrees less than Tuesday. Change in HALF-DEGREE UNITS?",-7,"-3.5."),
+            new("Thursday high is6.5degrees more than Wednesday. Change in HALF-DEGREE UNITS?",13,"+6.5."),
+            new("Friday high is2degrees less than Thursday. Signed change?",-2,"Decreased2."),
+            new("Puppy gains5lb. Signed weight change?",5,"Positive gain."),
+            new("Aquarium leaks2gallons. Signed volume change?",-2,"Loss."),
+            new("Andre receives10dollars. Signed account change?",10,"Income."),
+            new("Kiran gives gift10dollars. Signed money change?",-10,"Expense."),
+            new("Climber descends550ft. Signed elevation change?",-550,"Downward."),
+            new("Bank has50dollars and a20dollar charge. Balance?",30,"50-20."),
+            new("Bank has50dollars and80dollar charge, allowing overdraft. Balance?",-30,"50-80=-30."),
+            new("Two points4 units from0. Positive point?",4,"+4."),
+            new("Two points4 units from0. Negative point?",-4,"-4."),
+            new("Distance between-5/2 and+5/2 units?",5,"Separation5."),
+            new("2 cubed times3?",24,"8×3."),
+            new("4 squared divided by2?",8,"16/2."),
+            new("3 to power1?",3,"3."),
+            new("6 squared divided by4?",9,"36/4."),
+            new("2 cubed minus2?",6,"8-2."),
+            new("10 squared plus5 squared?",125,"100+25."),
+            new("From Monday7°, Tuesday4° lower, Tuesday temperature?",3,"7-4."),
+            new("Tuesday3°, Wednesday3.5° lower, Wednesday in HALF-DEGREES?",-1,"-0.5, one negative half.")
+        ],
+        [L0705ChangeLogic] =
+        [
+            new("Tuesday4 degrees lower than Monday is signed change-4. 1=yes,0=no.",1,"Decrease."),
+            new("Wednesday3.5 degrees lower is change-3.5. 1=yes,0=no.",1,"Decrease."),
+            new("Thursday6.5 degrees higher is change+6.5. 1=yes,0=no.",1,"Increase."),
+            new("A puppy gains5lb, represented by+5. 1=yes,0=no.",1,"Gain."),
+            new("Aquarium leaks2 gallons, represented by-2. 1=yes,0=no.",1,"Loss."),
+            new("Receiving10dollars can be represented by+10. 1=yes,0=no.",1,"Receipt."),
+            new("Giving away10dollars can be represented by-10. 1=yes,0=no.",1,"Expense."),
+            new("Climber descends550ft, represented by-550. 1=yes,0=no.",1,"Down."),
+            new("A balance50 dollars minus80 can be-30 if overdraft is allowed. 1=yes,0=no.",1,"Debt."),
+            new("Negative change always means a negative final quantity. 1=yes,0=no.",0,"May remain positive."),
+            new("Positive change always yields positive final quantity. 1=yes,0=no.",0,"Starting negative may remain negative."),
+            new("-4 and4 are each distance4 from0. 1=yes,0=no.",1,"Opposites."),
+            new("Numbers-5/2 and5/2 are distance5 apart. 1=yes,0=no.",1,"5/2-(-5/2)=5."),
+            new("2³×3=24. 1=yes,0=no.",1,"8×3."),
+            new("10²+5²=125. 1=yes,0=no.",1,"100+25."),
+            new("A signed number for expense or stock loss depends on a declared sign convention. 1=yes,0=no.",1,"Define perspective."),
+            new("A negative inventory change need not mean negative current stock. 1=yes,0=no.",1,"Quantity difference vs total.")
         ]
     };
 
