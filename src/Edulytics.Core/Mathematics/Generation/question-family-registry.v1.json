@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u09.l04.first_party_two_choice_voting_math",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-poetry24-16-vs18-9-purple26-14-vs31-19-supermajorities240-153-and-restaurant",
+      "representations": [
+        "ratio_table",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u09.l04.first_party_supermajority_and_sampling_logic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-different-denominators-2thirds-and-55pct-threshold-and-claim-80pct-voters-vs-town",
+      "representations": [
+        "boolean_reasoning",
+        "percent_tape"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l03.first_party_rectangle_square_decomposition",
       "version": 1,
       "skillId": "ratio.unit_rate",

@@ -385,6 +385,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0903SquareEuclid = "usccss.g6.u09.l03.first_party_rectangle_square_decomposition";
     public const string L0903SquareLogic = "usccss.g6.u09.l03.first_party_square_tiling_fraction_reasoning";
 
+    public const string L0904VoteNumbers = "usccss.g6.u09.l04.first_party_two_choice_voting_math";
+    public const string L0904VoteInterpretations = "usccss.g6.u09.l04.first_party_supermajority_and_sampling_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5656,6 +5659,57 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Square area scales with square of side length, not linearly with side. 1=yes,0=no.",1,"s²."),
             new("Student-drawn decompositions and written continued fraction arguments require teacher review. 1=yes,0=no.",1,"Source optional project."),
             new("A valid rectangle decomposition preserves total area when partitioned into squares. 1=yes,0=no.",1,"Nonoverlap total.")
+        ],
+        [L0904VoteNumbers] =
+        [
+            new("Math poetry classA yes24 no16. Total votes?",40,"24+16=40."),
+            new("Math poetry classA yes24 of40. Percent yes?",60,"24/40=.60."),
+            new("Math poetry classB yes18 no9. Total votes?",27,"18+9=27."),
+            new("Math poetry classB yes18 of27. Percent yes rounded nearest whole?",67,"18/27≈66.7%."),
+            new("Which class voted more favorably for math poetry by percentage? Enter1 A,2 B.",2,"B≈66.7% vs A60%."),
+            new("Math poetry A24yes16no. Yes:no ratio in lowest terms numerator?",3,"24:16=3:2."),
+            new("Math poetry A24yes16no. Yes:no ratio in lowest terms denominator?",2,"3:2."),
+            new("Purple classA26yes14no. Total?",40,"26+14=40."),
+            new("Purple classA26 of40. Yes percentage?",65,"26/40=65%."),
+            new("Purple classB31yes19no. Total?",50,"31+19=50."),
+            new("Purple classB31 of50. Yes percentage?",62,"31/50=62%."),
+            new("Which class is more pro-purple by yes percentage? Enter1 A,2 B.",1,"65%>62%."),
+            new("School color requires2/3 of240votes. Minimum yes count?",160,"240×2/3=160."),
+            new("Color vote gives153yes. Additional yes votes needed for160?",7,"160-153=7."),
+            new("Mascot vote requires55% of240. Minimum yes votes?",132,"240×.55=132."),
+            new("Color requires160, mascot132. Difference?",28,"160-132=28."),
+            new("Source town newspapers subscribers25%, voters20% of subscribers. Percent of all town who vote?",5,".25×.20=.05=5%."),
+            new("Of town5% voted and80% those voted favor restaurant. Percent of ENTIRE TOWN definitely recorded as favor in vote?",4,"5%×80%=4%."),
+            new("Illustrative town1000 inhabitants, subscribers25%. Count subscribers?",250,"1000×.25=250."),
+            new("Illustrative town1000,250 subscribers and20% vote. Voters?",50,"250×.2=50."),
+            new("Illustrative town1000,50 voters and80% choose restaurant. Supporters counted?",40,"50×.8=40."),
+            new("Illustrative town1000 and40 recorded supporters. Percent town?",4,"40/1000=4%."),
+            new("Illustrative town1000, subscriptions250 but only50 vote. Not-voting subscribers?",200,"250-50=200."),
+            new("Supermajority2/3 equals what percent rounded WHOLE?",67,"66⅔%, rounds67."),
+            new("A55% threshold out of200 votes needs at least how many yes?",110,"200×.55=110.")
+        ],
+        [L0904VoteInterpretations] =
+        [
+            new("Poetry classA has more raw yes votes24 than classB18, yet a lower yes percentage. 1=yes,0=no.",1,"60% vs66⅔%."),
+            new("Poetry classB 18yes9no has yes proportion2/3. 1=yes,0=no.",1,"18/27=2/3."),
+            new("Purple classA has26/40=65% yes. 1=yes,0=no.",1,"Correct."),
+            new("Purple classB has31/50=62% yes. 1=yes,0=no.",1,"Correct."),
+            new("Purple classA is more favorable by fraction than classB. 1=yes,0=no.",1,"65>62."),
+            new("Color change153yes of240 satisfies2/3 supermajority. 1=yes,0=no.",0,"Needs160."),
+            new("Color change requires160yes out of240. 1=yes,0=no.",1,"2/3."),
+            new("Mascot 55% of240 requires132yes. 1=yes,0=no.",1,".55×240=132."),
+            new("Color two-thirds threshold requires more yes votes than mascot55% threshold. 1=yes,0=no.",1,"160>132."),
+            new("In the newspaper example only subscribers vote and20% subscribers cast votes. 1=yes,0=no.",1,"Source selection."),
+            new("If25% subscribe and20% subscribers vote, total voters5% of all people. 1=yes,0=no.",1,"0.25×0.2=0.05."),
+            new("If80% of the voters choose a restaurant, this proves80% of the entire town favors it. 1=yes,0=no.",0,"Only4% town recorded favor."),
+            new("In that scenario the recorded supporters equal4% of the entire town. 1=yes,0=no.",1,"0.25×.20×.80=.04."),
+            new("An accurate display should specify percentage denominator, such as voters rather than town. 1=yes,0=no.",1,"Reference population."),
+            new("An 80% claim can be true for those who voted but misleading if implied all residents. 1=yes,0=no.",1,"Sampling frame."),
+            new("Two classes with different enrollment can have different raw counts and proportion orderings. 1=yes,0=no.",1,"Different denominators."),
+            new("A two-thirds supermajority requirement is the same as simple majority50%. 1=yes,0=no.",0,"Higher threshold."),
+            new("A supermajority rule depends on explicit fraction and the number of eligible votes. 1=yes,0=no.",1,"Threshold applied to denominator."),
+            new("A numerical answer alone certifies a student's ethical view about the best restaurant. 1=yes,0=no.",0,"Interpretation teacher-reviewed."),
+            new("Open-ended voting diagrams need teacher check of subgroup shares and labels. 1=yes,0=no.",1,"Diagram accuracy.")
         ]
     };
 
