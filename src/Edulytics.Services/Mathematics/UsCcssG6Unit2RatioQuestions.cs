@@ -43,6 +43,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L12TableCalculations = "usccss.g6.u02.l12.table_missing_quantity";
     public const string L12TableStrategies = "usccss.g6.u02.l12.table_equivalence_methods";
 
+    public const string L13RepresentationValues = "usccss.g6.u02.l13.table_line_ratio_values";
+    public const string L13RepresentationLogic = "usccss.g6.u02.l13.representation_selection";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -476,6 +479,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("20miles in half hour and30miles in one full hour represent same speed. 1=yes,0=no.",0,"40 vs30mph."),
             new("A ratio table allows multiplying both quantities by a common nonzero positive factor to reach a new row. 1=yes,0=no.",1,"Same multiplicative relationship."),
             new("Clare earns90 dollars in5hours; she earns25 cents in50sec at that constant rate. 1=yes,0=no.",1,"18 dollars/hour=0.5 cents/sec.")
+        ],
+        [L13RepresentationValues] =
+        [
+            new("Bread recipe3 tablespoons olive oil to2 cloves garlic. Oil tablespoons for4 batches?",12,"3 times4=12."),
+            new("Bread recipe3 tablespoons oil to2 cloves garlic. Garlic cloves for4 batches?",8,"2 times4=8."),
+            new("Bread recipe3 tablespoons oil to2 cloves garlic. Oil tablespoons for2 batches?",6,"3 times2=6."),
+            new("Bread recipe3 tablespoons oil to2 cloves garlic. Garlic cloves for5 batches?",10,"2 times5=10."),
+            new("Clare travels72 miles in2hours. Miles per hour?",36,"72 divided by2=36mph."),
+            new("Clare travels72 miles in2hours. Miles in3hours?",108,"36 times3=108."),
+            new("Clare travels72 miles in2hours. Miles in6hours?",216,"36 times6=216."),
+            new("Clare travels72 miles in2hours. Miles in13 HALF-HOURS?",234,"13 times18=234 miles in6.5h."),
+            new("Clare travels72 miles in2hours. Miles in1hour?",36,"One half of72 is36."),
+            new("Lin travels23mi in half hour. Miles in1hour at same rate?",46,"23 times2=46mph."),
+            new("Diego travels25mi in half hour. Miles in1hour at same rate?",50,"25 times2=50mph."),
+            new("Lin takes65 minutes to travel60miles, Diego70minutes. Who is faster? Enter1 for Lin,2 for Diego.",1,"For same60miles Lin takes fewer minutes."),
+            new("Sports drink uses5/3 tbsp powder per12oz water. How many batches with5 tbsp powder?",3,"5 divided by5/3 is3."),
+            new("Sports drink uses5/3 tbsp powder per12oz water. How many batches with36oz water?",3,"36/12=3."),
+            new("Three tbsp olive oil per two cloves garlic. How many tbsp oil for10 cloves?",15,"10/2 times3=15."),
+            new("A car at36mph travels how many miles in HALF an hour?",18,"36/2=18.")
+        ],
+        [L13RepresentationLogic] =
+        [
+            new("A ratio table can list equivalent rows in non-increasing order. 1=yes,0=no.",1,"Table row ordering is independent of geometric distance."),
+            new("The physical spacing on a double number line encodes differences in the two quantities. 1=yes,0=no.",1,"Both axes map numerical distances."),
+            new("A table is always invalid for very small fractions. 1=yes,0=no.",0,"Tables can show fractional values."),
+            new("A ratio table is often easier than a physically drawn long number line for very large values. 1=yes,0=no.",1,"Geometry can become impractical."),
+            new("3tbsp oil:2 garlic cloves and6tbsp oil:4 cloves preserve recipe ratio. 1=yes,0=no.",1,"Both double."),
+            new("3tbsp oil:2 garlic cloves and6tbsp oil:5 cloves preserve ratio. 1=yes,0=no.",0,"Factors differ."),
+            new("Clare72miles in2h travels at36 miles per hour. 1=yes,0=no.",1,"72/2=36."),
+            new("Lin23mi in30min is faster than Diego25mi in30min. 1=yes,0=no.",0,"Same time, Diego covers more distance."),
+            new("For same60miles, Lin65min is faster than Diego70min. 1=yes,0=no.",1,"Less time for same distance."),
+            new("A drink with5/3 tablespoons powder and12oz water is exactly3 batches when using5 tbsp and36oz. 1=yes,0=no.",1,"Scale both by3."),
+            new("For bread 3 tbsp oil:2 cloves garlic,5 tablespoons oil corresponds to10 cloves at the same rate. 1=yes,0=no.",0,"10 cloves needs15 tbsp."),
+            new("A table and a double number line may describe the same equivalent ratio family. 1=yes,0=no.",1,"Both preserve corresponding pair values.")
         ]
     };
 
