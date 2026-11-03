@@ -133,7 +133,7 @@ test('U04 L15-L17 exact volume, limiting recipes and feasible axis-aligned shipm
   assert.equal((1/2)/(3/4),2/3);
   assert.equal((3/4)/(1/2),3/2);
   assert.equal(13/4-3/2,7/4);
-  assert.equal((16/3)/(4/5),20/3);
+  assert.ok(near((16/3)/(4/5),20/3));
   assert.equal(8/9+7/3,29/9);
   assert.equal((8/9)/(2/3),4/3);
   assert.equal((29/2)/(9/2),29/9);

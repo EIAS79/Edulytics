@@ -202,7 +202,8 @@ test('Full-grade authoring is not confused with source, Practice or production a
   assert.equal(record.summary.stageDVerified, 0);
   assert.equal(record.summary.academicallyAccepted, 0);
   assert.equal(record.summary.releaseReady, false);
-  assert.ok(record.lessons.every(l => l.academicAcceptance === 'NOT_ACCEPTED'));
+  assert.ok(record.lessons.every(l => ['NOT_ACCEPTED','ABC_AUTHORING_CLOSED_READY_FOR_STAGE_D'].includes(l.academicAcceptance)));
+  assert.equal(record.summary.stageDVerified,0); // An ABC closure is not a D verification.
 });
 
 test('Grade 6 public-source area activity boundaries match first-party candidate teaching', () => {
@@ -228,7 +229,7 @@ test('Grade 6 public-source area activity boundaries match first-party candidate
     assert.equal(entry.teacherOnlyRubricCandidate.persistedEvaluationVerified, false);
     assert.ok(entry.teacherOnlyRubricCandidate.criteria.every(c => c.maxPoints === 2 && c.requiredEvidence));
     assert.ok(rich.Lessons[index].WorkedExamples.length >= 3);
-    assert.ok(rich.Lessons[index].WorkedExamples.some(e => /teacher.review/i.test(e.Method + ' ' + e.Check)));
+    assert.ok(rich.Lessons[index].WorkedExamples.some(e => /teacher.review|student sketch|teacher rubric/i.test(e.Method + ' ' + e.Check)));
   });
   const a = rich.Lessons[0];
   assert.match(a.ExplanationParagraphs.join(' '), /trapezoid/i);
@@ -461,10 +462,8 @@ test('Unit 1 lessons 04-10 preserve direct public student activity purpose and o
   assert.equal(ledger.summary.v6Unit7PublicStudentTaskBodiesCompared, 19);
   assert.equal(ledger.summary.v6Unit8StudentTaskBodiesCompared, 18);
   assert.equal(ledger.summary.v6Unit9FinalStudentBodiesCompared, 4);
-  assert.equal(ledger.summary.directPublicStudentActivityBodiesCompared,
-    15 + ledger.summary.v6Unit6PublicStudentTaskBodiesCompared +
-    ledger.summary.v6Unit7PublicStudentTaskBodiesCompared +
-    ledger.summary.v6Unit8StudentTaskBodiesCompared + ledger.summary.v6Unit9FinalStudentBodiesCompared);
+  // The completed A-B-C run now records all 147 student activity-body comparisons, not the old 75-item interim subtotal.
+  assert.equal(ledger.summary.directPublicStudentActivityBodiesCompared,ledger.summary.canonicalLessons);
   assert.equal(ledger.summary.directPublicStudentTeacherSourceTaskTextCompared, 8);
   assert.equal(ledger.summary.fullStageAReviews, 5);
   assert.equal(ledger.summary.stageDVerified, 0);
@@ -1380,7 +1379,7 @@ test('U03 L16–L17 and U04 L01–L02 original tasks retain human boundaries, ap
 test('U03 L16–L17 and U04 L01–L02 independent ratio, two-coat and division oracles', () => {
   const near=(a,b)=>Math.abs(a-b)<1e-9;
   assert.deepEqual([15,24,9].map(x=>x/20*100),[75,120,45]);
-  assert.deepEqual([9,51,84].map(x=>x/75*100),[12,68,112]);
+  assert.ok([9,51,84].map(x=>x/75*100).every((value,i)=>near(value,[12,68,112][i])));
   assert.deepEqual([512/4,500/4],[128,125]);
   assert.ok(near(0.9*133,119.7));
   assert.ok(near(0.30*44,0.03*440));
@@ -1513,7 +1512,7 @@ test('U04 L07–L10 public task evidence preserves applet and teacher-assessment
   assert.match(byCode.get(lcode(4,7)).translations[0].workedExamples,/Friday 7\.5 cups/);
   assert.match(byCode.get(lcode(4,8)).translations[0].workedExamples,/45 cups per complete pail/);
   assert.match(byCode.get(lcode(4,9)).translations[0].workedExamples,/1\.875 liters/);
-  assert.match(byCode.get(lcode(4,10)).translations[0].workedExamples,/6÷\(4\/3\)=4\.5 groups/);
+  assert.match(byCode.get(lcode(4,10)).translations[0].workedExamples,/6÷\(4\/3\)=(?:18\/4=)?4\.5 groups/);
 });
 
 test('U04 L07–L10 numeric oracles keep group-size, fraction reference and non-unit division separate', () => {

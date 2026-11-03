@@ -10,7 +10,7 @@ const validArea=(base,height,unit)=>Number.isFinite(base)&&Number.isFinite(heigh
 test('L05 base-to-height pairs correct and invalid pair rejected',()=>{
   assert.equal(6*4,24);assert.equal(5*4.8,24);assert.equal(36/9,4);assert.equal(36/6,6);assert.notEqual(9*6,36);
   assert.equal(validArea(6,4,'square_units'),true);assert.equal(validArea(6,Infinity,'square_units'),false);assert.equal(validArea(0,4,'square_units'),false);assert.equal(validArea(6,4,'cm'),false);
-  assert.match(lesson(5).workedExamples,/Edulytiks-original exit check/);
+  assert.match(lesson(5).workedExamples,/Edulytiks-authored independent Cool-down/);
 });
 test('L06 fixed-height slant invariance, missing height and known shaded area',()=>{
   const polygonArea=pts=>Math.abs(pts.reduce((v,p,i)=>v+p[0]*pts[(i+1)%pts.length][1]-pts[(i+1)%pts.length][0]*p[1],0))/2;

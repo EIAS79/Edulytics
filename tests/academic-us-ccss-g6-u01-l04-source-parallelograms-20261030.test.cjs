@@ -9,7 +9,7 @@ test('two original first-party slants preserve equal area at fixed base and heig
  assert.equal(6*4,24);assert.notEqual(6*5,24);
 });
 test('classification correct, incorrect, incomplete student structures',()=>{
- const classify=s=>s&&typeof s==='object'&&s.sideCount===4&&s.parallelOppositePairs===2;
+ const classify=s=>Boolean(s&&typeof s==='object'&&s.sideCount===4&&s.parallelOppositePairs===2);
  assert.equal(classify({sideCount:4,parallelOppositePairs:2}),true);
  assert.equal(classify({sideCount:4,parallelOppositePairs:1}),false);
  assert.equal(classify({sideCount:5,parallelOppositePairs:2}),false);
