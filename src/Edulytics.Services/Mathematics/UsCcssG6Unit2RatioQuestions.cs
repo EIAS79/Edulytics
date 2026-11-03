@@ -58,6 +58,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L17FermiAssumptions = "usccss.g6.u02.l17.first_party_fermi_assumption_arithmetic";
     public const string L17FermiSensitivity = "usccss.g6.u02.l17.first_party_fermi_sensitivity";
 
+    public const string L0301PerOne = "usccss.g6.u03.l01.per_one_source_rate";
+    public const string L0301RateMeaning = "usccss.g6.u03.l01.source_rate_meaning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -657,6 +660,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("One can multiply estimated riders per bus by buses to estimate passenger capacity. 1=yes,0=no.",1,"Capacity scales multiplicatively."),
             new("A rough estimate should be presented as an exact observed count solely because arithmetic is correct. 1=yes,0=no.",0,"Assumptions remain uncertain."),
             new("Recording an assumption's source and how changing it affects the result strengthens the estimate. 1=yes,0=no.",1,"Transparent model assumptions support review.")
+        ],
+        [L0301PerOne] =
+        [
+            new("Source elevator moves310 feet in10 seconds. Feet per second?",31,"310/10=31 feet per second."),
+            new("Source elevator moves310 feet in10 seconds. Feet traveled in12 seconds at constant speed?",372,"31×12=372 feet."),
+            new("Source elevator moves310 feet in10 seconds. Feet traveled in5 seconds?",155,"31×5=155 feet."),
+            new("Han earns33 dollars for4 hours babysitting. Hourly pay in CENTS?",825,"3300/4=825 cents."),
+            new("Han earns33 dollars for4 hours babysitting. Pay for7 hours in CENTS?",5775,"7×825=5775 cents."),
+            new("Han earns33 dollars for4 hours babysitting. Pay for8 hours in DOLLARS?",66,"Two batches of4 hours."),
+            new("Five dog-food cans cost435 cents. Price for one can in CENTS?",87,"435/5=87 cents."),
+            new("Five dog-food cans cost435 cents. Cost of11 cans in CENTS?",957,"87×11=957 cents."),
+            new("A restaurant clears4 tables in10minutes. Minutes to clear26 tables at same rate?",65,"26×10/4=65 minutes."),
+            new("A restaurant clears4 tables in10minutes. How many tables in30minutes at this rate?",12,"4×3=12 tables."),
+            new("Sandwich uses4 ounces meat and3 ounces cheese. Combined ounces per sandwich?",7,"4+3=7 ounces."),
+            new("Sandwich shop used91 total ounces meat and cheese at7oz per sandwich. How many sandwiches?",13,"91/7=13."),
+            new("Sandwich shop made13 sandwiches using4 ounces meat each. Meat used in ounces?",52,"13×4=52."),
+            new("Sandwich shop made13 sandwiches using3 ounces cheese each. Cheese used in ounces?",39,"13×3=39."),
+            new("The modeled building climb is828meters in6hours. Meters per hour?",138,"828/6=138 m/h."),
+            new("At modeled138meters/hour, meters climbed in2 hours?",276,"138×2=276m."),
+            new("At modeled138meters/hour, meters climbed in5 hours?",690,"138×5=690m."),
+            new("Window washing:15 windows in18minutes. Minutes for10 windows at same active pace?",12,"18/15×10=12min."),
+            new("Window washing:15 windows per18minutes. Total active washing time for24348 windows in TENTHS OF MINUTES?",292176,"24348×18/15=29217.6 min or292176 tenths.")
+        ],
+        [L0301RateMeaning] =
+        [
+            new("An elevator going310feet in10seconds has a modeled constant speed31feet per second. 1=yes,0=no.",1,"310÷10=31."),
+            new("An elevator going310feet in10seconds covers372feet in12seconds at the same rate. 1=yes,0=no.",1,"31×12=372."),
+            new("Han's pay33dollars in4hours predicts7hours pays57.75dollars at constant rate. 1=yes,0=no.",1,"8.25dollars/hour×7."),
+            new("Han's pay33dollars in4hours means11dollars per hour. 1=yes,0=no.",0,"Correct rate8.25."),
+            new("Five cans for435cents means 11 cans cost957cents. 1=yes,0=no.",1,"87cents per can."),
+            new("Five cans for435cents means 11 cans cost870cents. 1=yes,0=no.",0,"11×87=957cents."),
+            new("Four tables in10minutes means26 tables require65minutes at same pace. 1=yes,0=no.",1,"2.5 minutes per table."),
+            new("One sandwich with4oz meat and3oz cheese uses7oz total. 1=yes,0=no.",1,"4+3=7oz."),
+            new("A modeling assumption that window washing remains constant guarantees real workers never take breaks. 1=yes,0=no.",0,"A simplified prediction cannot guarantee conditions."),
+            new("Reciprocal units minutes/window and windows/minute describe related but different rate questions. 1=yes,0=no.",1,"Swap numerator and denominator."),
+            new("A mathematical prediction of a building's window-washing time proves the current real window count. 1=yes,0=no.",0,"The window count and rate are historical classroom assumptions."),
+            new("A per-one rate is expressed using named units, such as feet per second or dollars per hour. 1=yes,0=no.",1,"Units determine the interpretation.")
         ]
     };
 
