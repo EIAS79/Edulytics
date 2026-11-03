@@ -265,6 +265,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0701SignedValues = "usccss.g6.u07.l01.signed_temperatures_elevation";
     public const string L0701SignLogic = "usccss.g6.u07.l01.signed_number_interpretation";
 
+    public const string L0702OppositeNumbers = "usccss.g6.u07.l02.signed_opposites_values";
+    public const string L0702OppositeLogic = "usccss.g6.u07.l02.opposite_number_line_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3611,6 +3614,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Zero is neither positive nor negative. 1=yes,0=no.",1,"Signed-number definitions."),
             new("The number line can extend to values below0. 1=yes,0=no.",1,"Negative numbers."),
             new("Elevation-10ft is farther from sea level than-8ft. 1=yes,0=no.",1,"Distances10 versus8.")
+        ],
+        [L0702OppositeNumbers] =
+        [
+            new("Opposite of-5?",5,"+5."),
+            new("Opposite of28?",-28,"-28."),
+            new("Opposite of-10.4 in TENTHS?",104,"10.4 positive."),
+            new("Opposite of0.875 in THOUSANDTHS?",-875,"-0.875."),
+            new("Opposite of0?",0,"Zero."),
+            new("Opposite of-8003?",8003,"+8003."),
+            new("Opposite of-2?",2,"+2."),
+            new("Opposite of0.5 in HALVES?",-1,"-1/2."),
+            new("Opposite of-1.5 in HALF-UNITS?",3,"+1.5."),
+            new("Negative four thirds in THIRDS?",-4,"-4/3."),
+            new("5degrees above0. Temperature?",5,"+5."),
+            new("3degrees below0. Temperature?",-3,"-3."),
+            new("6degrees above0. Temperature?",6,"+6."),
+            new("2¾degrees below0 in QUARTER-DEGREE units?",-11,"-11/4."),
+            new("8x=2/3. x in TWELFTHS?",1,"x=1/12."),
+            new("1½=2x. x in QUARTERS?",3,"x=3/4."),
+            new("5x=2/7. x in THIRTY-FIFTHS?",2,"2/35."),
+            new("(1/4)x=5. x?",20,"5×4."),
+            new("(2/3)x=1/5. x in TENTHS?",3,"3/10."),
+            new("2x=3. x in HALVES?",3,"1.5."),
+            new("5y=3. y in FIFTHS?",3,"3/5."),
+            new("0.3z=.009. z in THOUSANDTHS?",30,".03."),
+            new("6in=15.24cm. One foot in HUNDREDTHS CM?",3048,"30.48cm."),
+            new("6in=15.24cm. One yard in HUNDREDTHS CM?",9144,"91.44cm.")
+        ],
+        [L0702OppositeLogic] =
+        [
+            new("-5 and+5 are opposites. 1=yes,0=no.",1,"Equal distance5 opposite sides."),
+            new("-10.4 and+10.4 are opposites. 1=yes,0=no.",1,"Same magnitude."),
+            new("0 is its own opposite. 1=yes,0=no.",1,"-0=0."),
+            new("28 and-28 are the same number. 1=yes,0=no.",0,"Opposites distinct nonzero."),
+            new("The opposite of-8003 is8003. 1=yes,0=no.",1,"Sign reversal."),
+            new("Negative1.5 and positive3/2 are opposite numbers. 1=yes,0=no.",1,"Equal magnitude."),
+            new("Negative3/2 and negative1.5 are two different locations on number line. 1=yes,0=no.",0,"Same value."),
+            new("Opposite of0.5 is-0.5. 1=yes,0=no.",1,"Reflection around zero."),
+            new("The numbers -1.5 and-4/3 are equal. 1=yes,0=no.",0,"-1.5 vs-1.333."),
+            new("The opposite of a positive number is negative. 1=yes,0=no.",1,"Except zero not positive."),
+            new("A folded number line at0 pairs numbers equidistant on each side. 1=yes,0=no.",1,"Reflection."),
+            new("Temperatures-2¾ and-3: -2¾ is warmer. 1=yes,0=no.",1,"-2.75>-3."),
+            new("If8x=2/3 then x=1/12. 1=yes,0=no.",1,"Division8."),
+            new("If(1/4)x=5 thenx=20. 1=yes,0=no.",1,"Multiply4."),
+            new("A yard is36in and 91.44cm when one inch is2.54cm. 1=yes,0=no.",1,"36×2.54."),
+            new("Zero occupies the midpoint between any two numbers that are opposites. 1=yes,0=no.",1,"Symmetry."),
+            new("A signed number's opposite always has a different absolute value. 1=yes,0=no.",0,"Same distance from0.")
         ]
     };
 
