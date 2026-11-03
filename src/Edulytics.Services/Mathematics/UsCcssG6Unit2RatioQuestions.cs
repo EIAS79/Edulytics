@@ -121,6 +121,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0404FractionGroups = "usccss.g6.u04.l04.fraction_groups_exact";
     public const string L0404FractionModels = "usccss.g6.u04.l04.fraction_division_reasoning";
 
+    public const string L0405FractionValues = "usccss.g6.u04.l05.fraction_group_quotients";
+    public const string L0405FractionMeaning = "usccss.g6.u04.l05.fractional_group_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1513,6 +1516,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("An8-person ticket charge totaling100dollars means12.50 dollars per student, so13dollars is sufficient. 1=yes,0=no.",1,"13>12.50."),
             new("When a yellow pattern-block hexagon represents1 whole, a one-third block covers one of3 equal area parts. 1=yes,0=no.",1,"Unit whole fixed by hexagon."),
             new("Fraction models must clearly label which shape represents the unit whole. 1=yes,0=no.",1,"Reference matters.")
+        ],
+        [L0405FractionValues] =
+        [
+            new("How many1/3 groups are in1/2? Answer in HALF-GROUP UNITS.",3,"1/2÷1/3=3/2 groups, three half-groups."),
+            new("Seven divided by1/2 gives how many groups?",14,"7×2=14."),
+            new("Six divided by3/8 gives how many groups?",16,"6×8/3=16."),
+            new("One and7/8 divided by5/16 equals how many groups?",6,"15/8×16/5=6."),
+            new("One and1/2 divided by2/5 equals how many QUARTER-GROUPS?",15,"3/2×5/2=15/4, fifteen quarter-groups."),
+            new("Three wholes contain how many ONE-FOURTH pieces?",12,"3÷1/4=12."),
+            new("Six wholes contain how many TWO-THIRDS pieces?",9,"6÷2/3=9."),
+            new("Milk vendor A sells2L for380cents. Unit price in CENTS per liter?",190,"380/2=190cents/L."),
+            new("Milk vendor B sells1.5L for270cents. Unit price in CENTS per liter?",180,"270/1.5=180cents/L."),
+            new("For milk, vendor A190c/L, vendor B180c/L. Cheaper vendor? Enter1 A or2 B.",2,"B is10cents/L cheaper."),
+            new("Flour:sugar recipe5cups:2cups. Sugar per cup flour in FIFTH-CUP portions?",2,"2/5cup sugar per cup flour."),
+            new("Flour:sugar recipe5:2. Flour per cup sugar in HALF-CUP portions?",5,"5/2cup flour, five half-cup portions."),
+            new("Flour:sugar recipe5:2. With7 cups sugar, flour cups in HALF-CUP units?",35,"7×5/2=17.5cups,35 half-cups."),
+            new("Flour:sugar recipe5:2. With6 cups flour, sugar in FIFTH-CUP units?",12,"6×2/5=12/5cups."),
+            new("A third of one whole fits in one half how many HALF-COUNTS?",3,"1.5 groups=3 halves."),
+            new("One whole is divided into thirds. How many thirds?",3,"1÷1/3=3."),
+            new("Three dollars80 cents buys2L. Price for4L in CENTS?",760,"Double."),
+            new("The first milk vendor sells2L for380cents. Cost per HALF-LITER in CENTS?",95,"190c/L×0.5=95.")
+        ],
+        [L0405FractionMeaning] =
+        [
+            new("One half contains one and a half one-third groups. 1=yes,0=no.",1,"1/2÷1/3=1.5."),
+            new("Half divided by third equals two-thirds. 1=yes,0=no.",0,"Correct3/2."),
+            new("Seven has fourteen one-half groups. 1=yes,0=no.",1,"7×2=14."),
+            new("Six has sixteen groups of3/8. 1=yes,0=no.",1,"6÷3/8=16."),
+            new("1⅞ contains6 groups of5/16. 1=yes,0=no.",1,"30/16÷5/16=6."),
+            new("1½ contains3¾ groups of2/5. 1=yes,0=no.",1,"1.5÷0.4=3.75."),
+            new("The number of equal groups may be a non-integer fraction or mixed number. 1=yes,0=no.",1,"Partial group fits."),
+            new("The yellow hexagon, rather than the red trapezoid, must be1 whole in every task. 1=yes,0=no.",0,"Source lesson compares different whole references."),
+            new("One-half divided by one-third can be shown using equivalent sixths:3 sixths versus2 sixths. 1=yes,0=no.",1,"Three sixths contains1.5 pairs of sixths."),
+            new("Milk vendor B at180cents per liter is cheaper than vendor A at190cents per liter. 1=yes,0=no.",1,"Compare same units."),
+            new("Six whole cups of flour requires12/5 cups sugar at ratio5:2. 1=yes,0=no.",1,"6×2/5."),
+            new("Seven cups sugar needs17.5 cups flour at ratio5:2. 1=yes,0=no.",1,"7×5/2."),
+            new("A division equation can be verified by multiplying quotient times divisor. 1=yes,0=no.",1,"Unknown factor."),
+            new("A drawing of a half group requires identifying the entire reference group first. 1=yes,0=no.",1,"Whole reference matters.")
         ]
     };
 
