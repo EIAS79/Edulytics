@@ -56,6 +56,8 @@ jobs:
         run: node --test tests/academic-us-ccss-g5-im2021-student-facing-section-provenance.test.cjs
       - name: Validate owner academic consent is scoped to Grade 5 only and cannot authorize unverified release
         run: node --test tests/academic-us-ccss-g5-owner-academic-consent-stage-d.test.cjs
+      - name: Record explicit 2026-11-03 project-owner academic approval and release permission without inventing source rights
+        run: node --test tests/academic-us-ccss-g5-owner-release-authorization.test.cjs
   source-element-evidence:
     name: grade5-source-element-provenance-and-approval-fail-closed
     runs-on: ubuntu-24.04

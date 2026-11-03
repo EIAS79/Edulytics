@@ -4,6 +4,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const cp=require('node:child_process');
+const crypto=require('node:crypto');
 const ROOT=path.resolve(__dirname,'../..');
 const rel='artifacts/curriculum-delivery/US-CCSS-MATH/G5/';
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),'utf8'));
@@ -349,8 +350,32 @@ function secondPass2021Reviews(){
   }
   return map;
 }
+// Record the owner's explicit academic decision for Edulytics-authored work.
+// This is a different claim from verified publisher-source or media-rights parity.
+function ownerAcademicReleaseDecision(){
+  const doc=read(rel+'grade5-owner-academic-release-authorization-20261103.json');
+  const expected='src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json';
+  if(doc.schemaVersion!==1||doc.scope?.repository!=='EIAS79/Edulytics'||
+     doc.scope?.pullRequest!==596||doc.scope?.grade!=='G5'||
+     doc.scope?.lessons!==148||doc.scope?.units!==8||
+     doc.ownerDecision?.academicApprovalOfEdulyticsAuthoredMathematics!==true||
+     doc.ownerDecision?.productionPublicationAuthorized!==true||
+     doc.notCryptographicOwnerSignature!==true||
+     doc.authorizedContentPack?.path!==expected||
+     Object.values(doc.nonClaims||{}).length!==7||
+     Object.values(doc.nonClaims||{}).some(x=>x!==false))
+    throw Error('G5_OWNER_ACADEMIC_RELEASE_DECISION_INVALID');
+  const bytes=fs.readFileSync(path.join(ROOT,expected));
+  const sha=crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
+  if(sha!==doc.authorizedContentPack.gitBlobSha)
+    throw Error('G5_OWNER_ACADEMIC_APPROVAL_PACK_BLOB_CHANGED');
+  return {academicFirstPartyApproved:true,releasePermissionGranted:true,
+    independentPublisherSourceParityApproved:false,thirdPartyRightsApproved:false,
+    evidence:doc.publicAuditNote};
+}
 function sourceEvidenceAudit(){
   const ownerConsent=ownerAcademicConsent();
+  const ownerReleaseDecision=ownerAcademicReleaseDecision();
   const q=inventory();
   const secondPass=secondPass2021Reviews();
   const editionLookup=grade5EditionManifests();
@@ -395,14 +420,15 @@ function sourceEvidenceAudit(){
       original2021StudentFacing:sourceStudentFacing,
       original2021StudentFacingSectionProvenance:sectionSource,
       sourceParity:evidence.sourceCoverage100Percent===true?'CLAIMED_IN_AC_REQUIRES_INDEPENDENT_VALIDATION':'UNKNOWN',
-      academicApproval:ownerConsent.ownerContentConsent
-        ? 'OWNER_APPROVED_GRADE5_CONTENT_SOURCE_VERIFICATION_PENDING'
-        : evidence.academicAccepted===true?'CLAIMED_IN_AC_REQUIRES_SIGNED_REVIEW':'NOT_APPROVED',
+      academicApproval:ownerReleaseDecision.academicFirstPartyApproved
+        ? 'OWNER_ACADEMICALLY_APPROVED_EDULYTICS_ORIGINAL_CONTENT_SOURCE_PARITY_UNVERIFIED'
+        : ownerConsent.ownerContentConsent?'OWNER_CONTENT_CONSENT_ONLY':'NOT_APPROVED',
       ownerContentApproved:ownerConsent.ownerContentConsent,independentElementReviewPassed:acceptedReviewer,
       blockers});
   }
   const result={schemaVersion:1,reportType:'SOURCE_ELEMENT_EVIDENCE_DIAGNOSTIC_NOT_ACADEMIC_CERTIFICATION',
     ownerAcademicConsent:ownerConsent,
+    ownerAcademicReleaseDecision:ownerReleaseDecision,
     gitCandidateSha:cp.execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim(),
     scopeLessons:148,lessonCount:rows.length,
     rawElementArrayLessons:rows.filter(x=>x.hasSourceElementArray).length,
@@ -427,6 +453,8 @@ function sourceEvidenceAudit(){
       n+(x.original2021StudentFacingSectionProvenance?.studentFacingSections.length||0),0),
     sourceParityVerifiedLessons:0,
     ownerContentApprovedLessons:ownerConsent.ownerContentConsent?rows.length:0,
+    ownerAcademicApprovedOriginalLessons:ownerReleaseDecision.academicFirstPartyApproved?rows.length:0,
+    ownerReleasePermissionGranted:ownerReleaseDecision.releasePermissionGranted,
     independentlySourceApprovedLessons:0,
     lessonsWithExplicitACGap:rows.filter(x=>x.blockers.includes('A_C_EXPLICIT_GAP')).map(x=>x.lessonCode),
     blockedLessons:rows.filter(x=>x.blockers.length).length,rows};
@@ -444,6 +472,8 @@ function sourceEvidenceAudit(){
     sourceHashLinkedLessons:result.original2021TeacherSectionHashLinkedLessons,
     sourceHashLinkedSections:result.original2021TeacherSectionHashLinkedCount,
     ownerContentApprovedLessons:result.ownerContentApprovedLessons,
+    ownerAcademicApprovedOriginalLessons:result.ownerAcademicApprovedOriginalLessons,
+    ownerReleasePermissionGranted:result.ownerReleasePermissionGranted,
     independentlySourceApprovedLessons:result.independentlySourceApprovedLessons,
     explicitGaps:result.lessonsWithExplicitACGap,blocked:result.blockedLessons,
     artifact:'stage-d-results/grade5-source-evidence.json'}));
