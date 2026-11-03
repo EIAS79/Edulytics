@@ -325,6 +325,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0801ClassifyData = "usccss.g6.u08.l01.numerical_vs_categorical_sources";
     public const string L0801DataReasoning = "usccss.g6.u08.l01.data_type_and_dotplot_reasoning";
 
+    public const string L0802StatisticalClassifications = "usccss.g6.u08.l02.statistical_question_classification";
+    public const string L0802StatsLogic = "usccss.g6.u08.l02.expected_data_variation_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4613,6 +4616,55 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A dot plot should preserve how many responses each distinct numeric value received. 1=yes,0=no.",1,"Frequency information."),
             new("Numerical data may be either integer counts or noninteger measurements. 1=yes,0=no.",1,"Both numerical."),
             new("The teacher can assess open-ended student-created survey questions beyond an exact-integer grader. 1=yes,0=no.",1,"Rubric needed.")
+        ],
+        [L0802StatisticalClassifications] =
+        [
+            new("Sixth-grade students asked what grade they are in: statistical? Enter1 yes,0 no.",0,"All responses sixth grade, no expected variability."),
+            new("Ice-cream question A: How far ARE WE from the ice cream shop now? Statistical? Enter1 yes,0 no.",0,"Single fixed distance."),
+            new("Ice-cream question B: Most popular flavor this week? Statistical? Enter1 yes,0 no.",1,"Different orders supply variable responses."),
+            new("Ice-cream question C: What does a group of four people typically spend? Statistical? Enter1 yes,0 no.",1,"Different groups spend differently."),
+            new("Ice-cream question D: Do kids usually prefer a cup or cone? Statistical? Enter1 yes,0 no.",1,"Preferences vary."),
+            new("Ice-cream question E: Number of toppings available right now? Statistical? Enter1 yes,0 no.",0,"A fixed shop count."),
+            new("School question A: most popular lunch choice? Statistical? Enter1 yes,0 no.",1,"Lunch choices vary."),
+            new("School question B: What school do these students attend, given one named school? Statistical? Enter1 yes,0 no.",0,"All from same school."),
+            new("School question C: How many math teachers work in the school? Statistical? Enter1 yes,0 no.",0,"Single school count."),
+            new("School question D: Common age of teachers? Statistical? Enter1 yes,0 no.",1,"Teacher ages differ."),
+            new("School question E: Typical hours of sleep students get? Statistical? Enter1 yes,0 no.",1,"Sleep times vary."),
+            new("School question F: Usually travel to school by which method? Statistical? Enter1 yes,0 no.",1,"Modes vary."),
+            new("Height of many female athletes numerical(2) or categorical(1)? Enter code.",2,"Height measured quantitatively."),
+            new("School adults football fan yes/no data numerical(2) or categorical(1)? Enter code.",1,"Response category."),
+            new("Driver red-light waiting time in seconds numerical(2) or categorical(1)? Enter code.",2,"Measured seconds."),
+            new("What is the numerical y-scale interval in halves if each tick is1/6 unit? Enter number of TWELFTHS?",2,"1/6=2/12."),
+            new("Water bottle between1 and1.5 quarts. Is4/3 a possible amount? Enter1 yes,0 no.",1,"4/3≈1.333 in interval."),
+            new("Water bottle between1 and1.5 quarts. Is5/4 possible? Enter1 yes,0 no.",1,"1.25 in interval."),
+            new("Water bottle between1 and1.5 quarts. Is5/3 possible? Enter1 yes,0 no.",0,"1.667 exceeds1.5."),
+            new("Water bottle between1 and1.5 quarts. Is3/4 possible? Enter1 yes,0 no.",0,"0.75 below1."),
+            new("Absolute value of-17?",17,"Distance17 from zero."),
+            new("Absolute value of-18?",18,"Distance18 from zero."),
+            new("Among-18,17,18,19,20, which least?",-18,"Only negative."),
+            new("For point(-4/3,2/3), quadrant1-4?",2,"Negative x positive y."),
+            new("With data x from-40 to20, choose tick5 or tick100? Enter5 or100.",5,"Five unit scale fits increments and range.")
+        ],
+        [L0802StatsLogic] =
+        [
+            new("A statistical question anticipates varying responses from the group being studied. 1=yes,0=no.",1,"Variability central."),
+            new("What grade are students in if all are known sixth graders? Statistical. 1=yes,0=no.",0,"No variability expected."),
+            new("What grade do students in a school attend across grades6-8? Statistical. 1=yes,0=no.",1,"Grade varies."),
+            new("Favorite ice cream flavor across customers is statistical. 1=yes,0=no.",1,"Different flavors."),
+            new("How many toppings are on a fixed menu right now is statistical because counts are numbers. 1=yes,0=no.",0,"Number alone not variability."),
+            new("The question of a typical wait at a red light requires data from multiple observed waits. 1=yes,0=no.",1,"Durations vary."),
+            new("Does each adult like football? As survey of adults it can vary categorically. 1=yes,0=no.",1,"Yes/no variation."),
+            new("To study athletes' heights, use a numeric length unit such as centimeters. 1=yes,0=no.",1,"Units specified."),
+            new("To study preferences, category labels are valid data even though they are not numbers. 1=yes,0=no.",1,"Categorical variation."),
+            new("A statistical question always must have numerical responses. 1=yes,0=no.",0,"May be categorical."),
+            new("Water amount w between1 and1.5 means1<w<1.5. 1=yes,0=no.",1,"Strict interval."),
+            new("w=1 or w=1.5 fits 1<w<1.5. 1=yes,0=no.",0,"Endpoints excluded."),
+            new("w=4/3 fits 1<w<1.5. 1=yes,0=no.",1,"≈1.333."),
+            new("w=5/4 fits1<w<1.5. 1=yes,0=no.",1,"1.25."),
+            new("Order |-17|,|-18|,-18,|19|,20 from least to greatest as -18,17,18,19,20. 1=yes,0=no.",1,"Absolute values positive."),
+            new("When graphing fractional third units, a1/6 unit tick can locate1/6 and thirds precisely. 1=yes,0=no.",1,"2 sixths per third."),
+            new("A coordinate axis is properly scaled only if x and y use identical units and increments. 1=yes,0=no.",0,"Can differ appropriately."),
+            new("A response of12 minutes to wait is numeric, while a yes/no fan response is categorical. 1=yes,0=no.",1,"Different variable types.")
         ]
     };
 
