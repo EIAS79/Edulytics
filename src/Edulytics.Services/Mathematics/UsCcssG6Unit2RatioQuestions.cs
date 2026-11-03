@@ -25,6 +25,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L06DoubleLineAmounts = "usccss.g6.u02.l06.double_number_line_amounts";
     public const string L06DoubleLineLogic = "usccss.g6.u02.l06.double_number_line_structure";
 
+    public const string L07LineValues = "usccss.g6.u02.l07.created_double_number_line_values";
+    public const string L07LineLogic = "usccss.g6.u02.l07.double_number_line_units_per";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -248,6 +251,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A double number line can use different numerical scales on the two parallel axes while ticks align as batches. 1=yes,0=no.",1,"Same batch positions but different units/scales."),
             new("The ratio 5 cups flour:3 eggs equals 6 cups flour:4 eggs. 1=yes,0=no.",0,"5×4 differs from6×3."),
             new("The ratio2 yellow:3 red equals4 yellow:6 red. 1=yes,0=no.",1,"Both double.")
+        ],
+        [L07LineValues] =
+        [
+            new("One cinnamon-roll batch uses2 tablespoons sugar per1 teaspoon cinnamon. Sugar tbsp for3 batches?",6,"2×3=6 tablespoons."),
+            new("One cinnamon-roll batch uses2 tbsp sugar per1 tsp cinnamon. Cinnamon tsp for3 batches?",3,"1×3=3 teaspoons."),
+            new("One cinnamon-roll batch uses2 tbsp sugar per1 tsp cinnamon. Sugar tbsp for4 batches?",8,"2×4=8 tablespoons."),
+            new("One cinnamon-roll batch uses2 tbsp sugar per1 tsp cinnamon. Cinnamon tsp for4 batches?",4,"4 teaspoons."),
+            new("One cinnamon-roll batch uses2 tbsp sugar per1 tsp cinnamon. Sugar tbsp for5 batches?",10,"2×5=10 tablespoons."),
+            new("One cinnamon-roll batch uses2 tbsp sugar per1 tsp cinnamon. Cinnamon tsp for5 batches?",5,"5 teaspoons."),
+            new("Meatloaf uses2 pounds beef per half cup of bread crumbs. Beef pounds for4 batches?",8,"2×4=8 pounds."),
+            new("Meatloaf uses2 pounds beef per half cup bread crumbs. Breadcrumb HALF-CUP UNITS for4 batches?",4,"Four halves make2 actual cups."),
+            new("Fruit punch has4 cups pineapple juice and5 cups orange juice. Pineapple cups for3 batches?",12,"4×3=12 cups."),
+            new("Fruit punch has4 cups pineapple juice and5 cups orange juice. Orange cups for3 batches?",15,"5×3=15 cups."),
+            new("Fruit punch has4 cups pineapple juice and5 cups orange juice. Orange cups for5 batches?",25,"5×5=25 cups."),
+            new("Pink paint has2 cups red per7 cups white. Red14 cups means how many batches?",7,"14÷2=7."),
+            new("Pink paint has2 cups red per7 cups white. White cups for7 batches?",49,"7×7=49."),
+            new("A triple batch of a fruit punch with one-third cup lime per batch uses how many THIRD-CUP portions of lime?",3,"3×1/3 cup=1 cup, or3 third-cup portions."),
+            new("Find a ratio equivalent to3:11 scaled by4. What is the first term?",12,"3×4=12."),
+            new("Find a ratio equivalent to3:11 scaled by4. What is the second term?",44,"11×4=44.")
+        ],
+        [L07LineLogic] =
+        [
+            new("For one cinnamon roll filling, 2 tablespoons sugar PER teaspoon cinnamon means for each teaspoon. 1=yes,0=no.",1,"Per means for each."),
+            new("A double number line may use uneven tick spacing while claiming equal consecutive batches. 1=yes,0=no.",0,"Equal batches need equally spaced ticks along each line."),
+            new("For cinnamon2 sugar:1 cinnamon, three batches6:3 preserve the amounts per batch. 1=yes,0=no.",1,"Both triple."),
+            new("For cinnamon2 sugar:1 cinnamon, three batches6:4 preserve amounts per batch. 1=yes,0=no.",0,"Cinnamon quadrupled."),
+            new("For meatloaf2lb beef:1/2cup crumbs, 4lb beef:1cup crumbs is equivalent. 1=yes,0=no.",1,"Both double."),
+            new("For meatloaf2lb beef:1/2cup crumbs,4lb beef:2cups crumbs is equivalent. 1=yes,0=no.",0,"Different multipliers."),
+            new("Fruit punch4 pineapple:5 orange,12 pineapple:15 orange has the same ratio. 1=yes,0=no.",1,"Both triple."),
+            new("Fruit punch4 pineapple:5 orange,12 pineapple:20 orange has the same ratio. 1=yes,0=no.",0,"Scaling ×3 vs×4."),
+            new("A label of cups cannot be silently replaced with pounds in a double number line. 1=yes,0=no.",1,"Unit semantics matter."),
+            new("14 cups red and49 cups white represent seven 2:7 pink-paint batches. 1=yes,0=no.",1,"Both ×7."),
+            new("For a double number line, aligned positions show the same batch count across two labeled scales. 1=yes,0=no.",1,"Parallel lines connect paired quantities."),
+            new("In 6pints red:2pints yellow, there are3pints red per1pint yellow. 1=yes,0=no.",1,"6:2=3:1.")
         ]
     };
 
