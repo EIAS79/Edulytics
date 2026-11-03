@@ -1554,6 +1554,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM G6 U01:L14: reuse the exact solid model from L12/L13
+        // for original nets A/B/C and source homework, but teacher marks the
+        // actual foldability, adjacency and sketched proof.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L14",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_POLYHEDRA_NET_FACE_AREA_AND_FOLD_LOGIC",
+            [
+                "usccss.g6.u01.l14.source_net_surface_area",
+                "usccss.g6.u01.l14.net_folding_face_logic"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L14_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

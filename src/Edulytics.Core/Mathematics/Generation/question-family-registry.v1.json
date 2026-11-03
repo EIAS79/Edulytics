@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l14.source_net_surface_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-IM-G6-U01L14-source-nets-ABC-and-triangular-prism-practice",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l14.net_folding_face_logic",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-IM-G6-U01L14-matching-nets-folding-face-inventory-and-square-area-units",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l13.polyhedron_and_net_logic",
       "version": 1,
       "skillId": "geometry.area_tiling",

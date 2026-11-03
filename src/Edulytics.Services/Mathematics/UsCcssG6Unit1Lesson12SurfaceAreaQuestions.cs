@@ -15,12 +15,16 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     // Unit 1 Lesson 13 uses the same solid-geometry exact infrastructure.
     public const string L13Polyhedra = "usccss.g6.u01.l13.polyhedron_and_net_logic";
     public const string L13Measures = "usccss.g6.u01.l13.source_faces_edges_vertices";
+    public const string L14NetArea = "usccss.g6.u01.l14.source_net_surface_area";
+    public const string L14NetLogic = "usccss.g6.u01.l14.net_folding_face_logic";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
-    public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures;
+    public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures
+       or L14NetArea or L14NetLogic;
     private static int Count(string family)=>family==Prism?14:family==Meaning?8:
-        family==L13Polyhedra?15:family==L13Measures?13:0;
+        family==L13Polyhedra?15:family==L13Measures?13:
+        family==L14NetArea?10:family==L14NetLogic?11:0;
 
     public static Problem Build(string family,Random random)
     {
@@ -28,7 +32,9 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         ArgumentNullException.ThrowIfNull(random);
         int v=random.Next(Count(family));
         var t=family==Prism?PrismProblem(v):family==Meaning?MeaningProblem(v):
-            family==L13Polyhedra?L13PolyhedraProblem(v):L13MeasuresProblem(v);
+            family==L13Polyhedra?L13PolyhedraProblem(v):
+            family==L13Measures?L13MeasuresProblem(v):
+            family==L14NetArea?L14NetAreaProblem(v):L14NetLogicProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -53,6 +59,26 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L14NetArea=>v switch
+        {
+            0=>82m, // Source original14.2 net A 5×6×1 box
+            1=>48m, // Source 14.2 net B square base4×4 and four triangular faces b4 h4
+            2=>48m, // Source 14.2 net C 3-4-5 right triangular prism length3
+            3=>72m, // Original practice2 net 3-4-5 triangular prism length5
+            4=>52m, // Original lesson summary 4×3×2 cuboid
+            5=>40m, // Separate first-party pyramid b4 h3
+            6=>5m, // Triangular prism total faces
+            7=>6m, // Rectangular prism total faces
+            8=>5m, // Square pyramid total faces
+            9=>12m, // Original practice2 P2 two 3-4-5 right triangle end faces
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L14NetLogic=>v switch
+        {
+            0=>1m,1=>1m,2=>1m,3=>0m,4=>1m,5=>0m,
+            6=>1m,7=>1m,8=>0m,9=>1m,10=>0m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         L13Polyhedra=>v switch
@@ -105,7 +131,7 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer!=answer.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Meaning||family==L13Polyhedra)return answer is ("0" or "1") &&
+        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -141,6 +167,37 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L14NetAreaProblem(int v)=>v switch
+    {
+        0=>("ORIGINAL14.2 source net A: rectangular-prism face pairs 5×6 twice, 5×1 twice and 6×1 twice. Find total surface area.","2×(30+5+6)=82 square units."),
+        1=>("ORIGINAL14.2 source net B: square pyramid has square base side4 and FOUR triangular sides each base4 perpendicular triangular height4. Find surface area.","Base16 + 4×(4×4÷2)=16+32=48."),
+        2=>("ORIGINAL14.2 source net C: right triangular-prism base has legs3 and4, hypotenuse5; prism length3. Three rectangular sides are 3×3, 4×3, 5×3 and two right triangular ends each area6. Find total surface area.","Rectangles9+12+15=36; two triangular ends12; total48."),
+        3=>("ORIGINAL practice2 source net: triangular prism length5 with a 3–4–5 right triangle at each end. Three rectangles 3×5,4×5,5×5. Find total surface area.","15+20+25+2×(3×4÷2)=60+12=72."),
+        4=>("Original lesson summary: a rectangular prism has face pairs4×2,3×2 and4×3. Find total surface area.","2×(8+6+12)=52."),
+        5=>("Separate existing Edulytiks worked example, not publisher net B: square pyramid base side4, four triangular sides each perpendicular face height3. Find surface area.","16+4×(4×3÷2)=40; distinct from original net B whose face height4."),
+        6=>("Original14.2 source net C forms a triangular prism with two triangular ends and three rectangles. How many exterior faces?","2+3=5."),
+        7=>("Original14.2 source net A is a rectangular prism with three pairs of congruent rectangles. How many outside faces?","Three pairs make6."),
+        8=>("Original14.2 source net B forms a square pyramid. How many outside faces?","Square base1 plus triangular sides4 equals5."),
+        9=>("Original practice2 right-triangle end face base4 height3: the triangular prism has two congruent triangular ends. Find their COMBINED area.","2×(3×4÷2)=12."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L14NetLogicProblem(int v)=>v switch
+    {
+        0=>("Original 14.1: a valid cube net can be folded without overlapping faces, using exactly six square faces. 1=true,0=false.","Six correct squares and complete nonoverlapping adjacency are required."),
+        1=>("Original14.2: the UNFOLDED two-dimensional net shows every exterior face, so adding exactly those polygon areas gives surface area. 1=true,0=false.","A valid net exposes all the solid's outer polygons."),
+        2=>("Original14.2: temporary unshaded glue/tape FLAPS are not exterior faces when folded. 1=true,0=false.","Only the colored faces contribute to surface area."),
+        3=>("Original14.2: if a net has the right six polygons, it MUST fold into a prism even when face adjacency makes overlap. 1=true,0=false.","Matching face inventory alone is insufficient; adjacency must fold."),
+        4=>("Original14.1: a triangular prism net has TWO congruent triangles and THREE rectangles. 1=true,0=false.","Prism has triangular parallel bases and3 lateral rectangular faces."),
+        5=>("Original14.1: a net of only SIX rectangles can form a triangular prism. 1=true,0=false.","Triangular prism requires two triangular faces."),
+        6=>("Original14.2: net A has three pairs of congruent rectangles and may form a rectangular prism. 1=true,0=false.","Rectangular prism net source A has six rectangles of paired dimensions."),
+        7=>("Original14.2: net B consists of one square plus four triangles that fold into a square pyramid. 1=true,0=false.","Net B has exactly pyramid base and4 triangular lateral faces."),
+        8=>("Original14.2: net C's two triangular faces and three rectangles fold to a RECTANGULAR prism rather than a triangular prism. 1=true,0=false.","Those are the five faces of a triangular prism."),
+        9=>("Original practice5: square meters and square inches are valid UNITS for surface area. 1=true,0=false.","Surface area is measured in two-dimensional square units."),
+        10=>("Original practice5: meters CUBED describe the total surface area of a polyhedron. 1=true,0=false.","Cubic units describe volume, not surface area."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 
