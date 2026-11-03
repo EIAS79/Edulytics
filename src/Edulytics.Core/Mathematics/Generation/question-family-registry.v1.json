@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u09.l02.first_party_population_ratio_quantities",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-historical-7point4b-world-model-30students14rice12under20-5Africa",
+      "representations": [
+        "ratio_table",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u09.l02.first_party_population_model_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-population-stale-approximation-whole-person-rounding-teacher-project",
+      "representations": [
+        "boolean_reasoning",
+        "population_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l01.first_party_fermi_source_rates",
       "version": 1,
       "skillId": "ratio.unit_rate",

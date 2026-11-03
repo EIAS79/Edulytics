@@ -379,6 +379,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0901EstimateNumbers = "usccss.g6.u09.l01.first_party_fermi_source_rates";
     public const string L0901AssumptionLogic = "usccss.g6.u09.l01.first_party_fermi_modeling_reasoning";
 
+    public const string L0902PopulationMath = "usccss.g6.u09.l02.first_party_population_ratio_quantities";
+    public const string L0902PopulationLogic = "usccss.g6.u09.l02.first_party_population_model_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5540,6 +5543,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Two estimates with different credible assumptions may both be mathematically valid. 1=yes,0=no.",1,"Explicit scenario."),
             new("Source artwork and open-ended model defense should receive teacher review, not false exact grading. 1=yes,0=no.",1,"Human rubric."),
             new("A rough estimate should communicate precision limits rather than claim exact physical truth. 1=yes,0=no.",1,"Model limitations.")
+        ],
+        [L0902PopulationMath] =
+        [
+            new("Historical source model world7.4billion people represented by30-student class. How many class students total?",30,"Given class30."),
+            new("Among30,14 eat rice as main food in source model. Number who do NOT?",16,"30-14=16."),
+            new("Among30,12 under20 years in source model. Percentage under20?",40,"12/30=40%."),
+            new("Among30,5 from Africa source model. Percent in WHOLE percent, nearest integer?",17,"5/30≈16.67%, nearest17%."),
+            new("At historical base7.4billion, fraction5/30 Africa => approximate population in MILLIONS rounded whole?",1233,"7.4billion×5/30=1.23333b≈1233million."),
+            new("Historical base7.4billion. How many MILLIONS people is that?",7400,"7.4billion=7400million."),
+            new("Given1.2billion Africa vs7.4billion historical world, ratio percent rounded whole?",16,"1.2/7.4≈16.2%."),
+            new("For hypothetical25-student class at16% Africa, approximate number?",4,"25×0.16=4."),
+            new("Hypothetical25-student class at10% Europe. Nearest whole number students with standard rounding?",3,"25×.1=2.5 rounds3; 2 also justified when approximating."),
+            new("If2 of25 students modeled Europe, percent?",8,"2/25×100=8%."),
+            new("If3 of25 modeled Europe, percent?",12,"3/25×100=12%."),
+            new("Hypothetical100 student school with40% under20, number?",40,"100×0.4=40."),
+            new("Historical model30 students,10% representing one group is how many?",3,"30×0.1=3."),
+            new("In30-student sample, rice14 of30. Rice percentage rounded whole?",47,"14/30×100≈46.67%."),
+            new("In30-student sample, non-rice16 of30. Percentage rounded whole?",53,"16/30×100≈53.33%."),
+            new("If a class has25 students and20% represent a category, count?",5,"25/5=5."),
+            new("If a class has25 students and60% represent a category, count?",15,"25×.6=15."),
+            new("Suppose10 out of25 students represent car ownership. Percentage?",40,"10/25=40%."),
+            new("Historical estimate world7.4billion, a15% group corresponds to MILLIONS?",1110,"7400million×.15=1110million."),
+            new("Historical estimate world7.4billion, a25% group corresponds to MILLIONS?",1850,"7400million÷4."),
+            new("A ratio5 of30 is equal to fraction1/6. Numerator when denominator6?",1,"5/30=1/6."),
+            new("Two students of25 are exactly what percent?",8,"2/25=8%."),
+            new("Three students of25 are exactly what percent?",12,"3/25=12%.")
+        ],
+        [L0902PopulationLogic] =
+        [
+            new("The original world-population figure7.4billion is historical classroom data, not a verified 2026 live estimate. 1=yes,0=no.",1,"Historical source assumptions."),
+            new("14 of30 rice as main food means16 do not in the model. 1=yes,0=no.",1,"30-14=16."),
+            new("12 of30 under20 means40% in the class model. 1=yes,0=no.",1,"12/30=.4."),
+            new("5 of30 Africa gives about16.7% population representation. 1=yes,0=no.",1,"5/30≈.1667."),
+            new("7.4billion×5/30 is about1.23billion. 1=yes,0=no.",1,"Approximate."),
+            new("5 of30 models an exactly known current Africa population under all conditions. 1=yes,0=no.",0,"Rough proportional model."),
+            new("For25 students, an estimated10% group yields2.5 people and must be represented by a feasible whole count such as2 or3. 1=yes,0=no.",1,"Cannot split a person."),
+            new("2 of25 is8%, while3 of25 is12%. 1=yes,0=no.",1,"Both approximate10%."),
+            new("The lesson invites students to investigate other population characteristics and display class ratios. 1=yes,0=no.",1,"Original2.2–2.3."),
+            new("A historical population estimate can be reused as a classroom mathematical assumption if labeled with time and limitations. 1=yes,0=no.",1,"Not live fact."),
+            new("The numbers of cars and numbers of people who own cars are necessarily equal. 1=yes,0=no.",0,"One person multiple cars/none."),
+            new("A person must be represented as whole number when drawing student class count. 1=yes,0=no.",1,"Discrete units."),
+            new("A25-member class with16% represented category has4 students. 1=yes,0=no.",1,"25×.16=4."),
+            new("About10% of25 can reasonably be depicted as2 or3 people. 1=yes,0=no.",1,"8% or12%."),
+            new("All proportions can be rendered exactly with a small class count. 1=yes,0=no.",0,"Rounding errors."),
+            new("A comparison diagram should label reference as class size and world total. 1=yes,0=no.",1,"Denominators matter."),
+            new("School-wide survey data are different from world population census estimates. 1=yes,0=no.",1,"Source populations differ."),
+            new("Ratios for a 30-person class and7.4billion historical world may be approximately equivalent, not perfect. 1=yes,0=no.",1,"Rounded populations."),
+            new("The teacher should assess assumptions and interpretation of class-level visual model. 1=yes,0=no.",1,"Open-ended project.")
         ]
     };
 
