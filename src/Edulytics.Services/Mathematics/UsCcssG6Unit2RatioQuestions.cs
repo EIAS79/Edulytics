@@ -64,6 +64,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0302UnitMagnitudes = "usccss.g6.u03.l02.unit_magnitude_and_conversion";
     public const string L0302UnitCategories = "usccss.g6.u03.l02.choose_appropriate_unit_category";
 
+    public const string L0303SourceAmounts = "usccss.g6.u03.l03.measurement_source_quantity";
+    public const string L0303AttributeClassification = "usccss.g6.u03.l03.measurement_attribute_identification";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -736,6 +739,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("It is sensible to measure a large lake volume in cubic kilometers. 1=yes,0=no.",1,"Large-scale volume."),
             new("It is sensible to measure a spaghetti noodle length in centimeters. 1=yes,0=no.",1,"Small length."),
             new("A tissue box surface area can be measured in square inches. 1=yes,0=no.",1,"Surface area uses square units.")
+        ],
+        [L0303SourceAmounts] =
+        [
+            new("A height of57 inches is approximately how many CENTIMETERS rounded to nearest whole centimeter?",145,"57×2.54=144.78cm≈145cm."),
+            new("The original multiple-choice height57in in cm gives options A22.4,B57,C144.8,D3551. Enter the correct OPTION NUMBER 1–4.",3,"C is144.8cm≈57×2.54."),
+            new("A pot holding20 US quarts is about how many LITERS rounded to nearest whole liter?",19,"20×0.94635≈18.93L≈19L."),
+            new("The original pot20quarts choices A7.57,B19,C21,D75.7 liters. Enter correct OPTION NUMBER 1–4.",2,"B≈19L."),
+            new("An object weighing4.5 pounds is about how many kilograms rounded to nearest whole kg?",2,"4.5×0.4536≈2.04kg, about2kg."),
+            new("Original choice4.5lb in kg offers A2.04,B4.5,C9.92,D4500. Enter correct OPTION NUMBER 1–4.",1,"A≈2.04kg."),
+            new("Noah buys15 baseball cards for900cents. Cost per card in CENTS?",60,"900÷15=60 cents."),
+            new("Noah buys15 baseball cards for900cents. Cost of30 cards in CENTS?",1800,"30×60=1800cents."),
+            new("Noah buys15 baseball cards for900cents. Cost of12 cards in CENTS?",720,"12×60=720cents."),
+            new("Jada travels135miles in3hours. Speed in miles per hour?",45,"135÷3=45mph."),
+            new("Andre travels228miles in6hours. Speed in miles per hour?",38,"228÷6=38mph."),
+            new("Jada45mph and Andre38mph. Enter1 for Jada faster,2 for Andre faster.",1,"45>38mph."),
+            new("Classroom length11 meters: centimeters in that length?",1100,"11×100=1100 centimeters."),
+            new("One yard is3 feet. A6-foot rope is how many yards?",2,"6÷3=2 yards."),
+            new("If a room is11meters long, will its yard measure be MORE than11? Enter1=yes,0=no.",1,"A yard is shorter than a meter, so it takes more yards."),
+            new("A box with a geometric volume of3 liters is how many MILLILITERS?",3000,"3×1000=3000mL.")
+        ],
+        [L0303AttributeClassification] =
+        [
+            new("Identify the attribute for centimeters across a handprint. Codes1=length,2=area,3=volume,4=mass. Enter code.",1,"Centimeters measure length."),
+            new("Identify attribute for square inches needed to wrap a box. Codes1=length,2=area,3=volume,4=mass.",2,"Square inches measure surface area."),
+            new("Identify attribute for gallons in a fish tank. Codes1=length,2=area,3=volume,4=mass.",3,"Gallons measure volume/capacity."),
+            new("Identify attribute for pounds in a bag of potatoes. Codes1=length,2=area,3=volume,4=mass.",4,"Pounds measure weight."),
+            new("Identify attribute for feet across a swimming pool. Codes1=length,2=area,3=volume,4=mass.",1,"Feet measure length."),
+            new("Identify attribute for ounces of grapes as weight. Codes1=length,2=area,3=volume,4=mass.",4,"Ounces as labeled weight measure mass/weight."),
+            new("Identify attribute for liters in a punch bowl. Codes1=length,2=area,3=volume,4=mass.",3,"Liters measure volume."),
+            new("Identify attribute for square feet of grass in a lawn. Codes1=length,2=area,3=volume,4=mass.",2,"Square feet measure area."),
+            new("Identify attribute for cubic centimeters inside a box. Codes1=length,2=area,3=volume,4=mass.",3,"Cubic centimeters measure volume."),
+            new("Identify attribute for kilograms of animal mass. Codes1=length,2=area,3=volume,4=mass.",4,"Kilograms measure mass."),
+            new("Identify attribute for meters of string. Codes1=length,2=area,3=volume,4=mass.",1,"Meters measure length."),
+            new("Identify attribute for square kilometers of land. Codes1=length,2=area,3=volume,4=mass.",2,"Square kilometers measure area.")
         ]
     };
 

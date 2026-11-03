@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u03.l03.measurement_source_quantity",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-57in-to-cm-20qt-to-L-4point5lb-to-kg-15cards9dollars-travel-rates",
+      "representations": [
+        "numeric",
+        "unit_conversion"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u03.l03.measurement_attribute_identification",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-length-area-volume-weight-source-P1-attribute-matching",
+      "representations": [
+        "numeric_code",
+        "measurement_attribute"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u03.l02.unit_magnitude_and_conversion",
       "version": 1,
       "skillId": "ratio.unit_rate",
