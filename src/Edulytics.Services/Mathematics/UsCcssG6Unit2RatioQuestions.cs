@@ -88,6 +88,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0310PercentNumbers = "usccss.g6.u03.l10.percent_coin_values";
     public const string L0310PercentLogic = "usccss.g6.u03.l10.percent_comparison_logic";
 
+    public const string L0311PercentValues = "usccss.g6.u03.l11.percent_scaled_amounts";
+    public const string L0311PercentReasoning = "usccss.g6.u03.l11.percent_of_quantity_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1056,6 +1059,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("At55 cents per token, 11tokens cost605cents. 1=yes,0=no.",1,"11×55=605."),
             new("A snail10cm in4min travels24cm in6min at the same rate. 1=yes,0=no.",0,"6min yields15cm."),
             new("Three tacos for18 dollars gives each taco6dollars. 1=yes,0=no.",1,"18/3=6.")
+        ],
+        [L0311PercentValues] =
+        [
+            new("Mai attempted40 free throws and made25%. Successful throws?",10,"40×25/100=10."),
+            new("Priya previously made12 free throws and today made150% as many. Successful throws today?",18,"12×1.5=18."),
+            new("200mg vitamin C is250% of daily recommended amount. Daily100% in MILLIGRAMS?",80,"200/2.5=80mg."),
+            new("At school100 students represent40% who prefer hip hop. Total sixth graders?",250,"100/0.4=250."),
+            new("20% of150 apples is how many apples?",30,"150×0.2=30."),
+            new("75% of80 students is how many?",60,"80×3/4=60."),
+            new("The scooter traveled1020inches in5seconds. Distance in TENTHS OF A CENTIMETER?",25908,"1020×2.54=2590.8cm=25908tenths."),
+            new("Skateboard traveled90feet in5seconds. Distance in TENTHS OF A CENTIMETER?",27432,"90×30.48=2743.2cm=27432tenths."),
+            new("Bike traveled4800centimeters in5seconds. Distance in CENTIMETERS?",4800,"Given4800cm."),
+            new("Go-cart traveled0.03kilometers in5seconds. Distance in CENTIMETERS?",3000,"0.03km=30meters=3000cm."),
+            new("Fastest of skateboard90ft, scooter1020in, bike4800cm, go-cart0.03km in same5s. Enter1=skateboard,2=scooter,3=bike,4=go-cart.",3,"Bike4800cm in5s is farthest."),
+            new("A batch uses10lb potatoes for15lb mashed potatoes. Mash in HALF-POUND units from15lb raw potatoes?",45,"15×1.5=22.5lb=45half-pound units."),
+            new("A recipe uses10lb potatoes to make15lb mash. Raw pounds needed for50lb mash in THIRD-POUND units?",100,"50×10/15=100/3lb=100 third-pound units."),
+            new("A medium bottle has320mL reference,150% of reference is how many mL?",480,"320×1.5=480mL."),
+            new("Forty free throws correspond to100%. Number corresponding to50%?",20,"Half of40=20."),
+            new("Twelve successful throws represent100%. Number at125%?",15,"12×1.25=15."),
+            new("200mg is250% of reference. Quantity for50% of reference, in mg?",40,"Reference80mg, half=40.")
+        ],
+        [L0311PercentReasoning] =
+        [
+            new("25% of40 attempts is10 successful throws. 1=yes,0=no.",1,"40/4=10."),
+            new("150% of12 is18, which is larger than the reference12. 1=yes,0=no.",1,"150% is one and a half times."),
+            new("150% of12 must be less than12 because percentages cannot exceed100. 1=yes,0=no.",0,"Comparison percentages may exceed100."),
+            new("200mg as250% of allowance means allowance80mg. 1=yes,0=no.",1,"200/2.5=80."),
+            new("If100 pupils are40% of a group, the whole group consists of250 pupils. 1=yes,0=no.",1,"100/0.4=250."),
+            new("If100 pupils are40% of a group, total pupils=140. 1=yes,0=no.",0,"40% of140=56."),
+            new("On a percent double number line the100% reference aligns with the entire reference quantity. 1=yes,0=no.",1,"Corresponding marks."),
+            new("Skateboard90ft equals2743.2cm using30.48cm/foot. 1=yes,0=no.",1,"90×30.48."),
+            new("Go-cart0.03km equals3000cm. 1=yes,0=no.",1,"0.03km=30m."),
+            new("Bike4800cm in5seconds is faster than go-cart3000cm in5seconds. 1=yes,0=no.",1,"Same time, greater distance."),
+            new("Potatoes10lbs produce15lbs mash, so15lbs potatoes make22.5lbs mash at constant rate. 1=yes,0=no.",1,"Both×1.5."),
+            new("Percentage comparisons should identify which amount is100%. 1=yes,0=no.",1,"Without reference the percentage is ambiguous."),
+            new("A 200mg quantity can be250% of a smaller80mg reference. 1=yes,0=no.",1,"200/80=2.5.")
         ]
     };
 
