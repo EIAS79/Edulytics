@@ -331,6 +331,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0803Frequency = "usccss.g6.u08.l03.dotplot_frequency_counts";
     public const string L0803PlotLogic = "usccss.g6.u08.l03.frequency_plot_interpretation";
 
+    public const string L0804PlotValues = "usccss.g6.u08.l04.source_dotplot_comparisons";
+    public const string L0804InterpretPlot = "usccss.g6.u08.l04.dotplot_center_spread_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4722,6 +4725,55 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Triangle B base4 height3 area6. 1=yes,0=no.",1,"4×3/2."),
             new("Two divided by2/5 equals5. 1=yes,0=no.",1,"Multiply reciprocal."),
             new("The student must label dot plots with the numeric variable and units where applicable. 1=yes,0=no.",1,"Meaningful presentation.")
+        ],
+        [L0804PlotValues] =
+        [
+            new("Homework dot plots A14..21,B11..20,C16..20. Lowest typical homework hours grade plot? Enter1 A,2 B,3 C.",2,"Plot B has lower center."),
+            new("Source homework plots: narrowest spread and tenth-grade plot? Enter1 A,2 B,3 C.",3,"C ranges16..20, narrower."),
+            new("Which source homework plot represents eighth grade? Enter1 A,2 B,3 C.",1,"B sixth, C tenth, A eighth."),
+            new("Homework plot A runs hours14..21. Range in HOURS?",7,"21-14=7."),
+            new("Homework plot B runs hours11..20. Range in HOURS?",9,"20-11=9."),
+            new("Homework plot C runs hours16..20. Range in HOURS?",4,"20-16=4."),
+            new("Homework plot A counts1,1,2,3,3,4,3,3. Sample size?",20,"Sum20."),
+            new("Homework plot B counts1,0,3,2,2,4,3,3,1,1. Sample size?",20,"Sum20."),
+            new("Homework plot C counts2,6,9,2,1. Sample size?",20,"Sum20."),
+            new("Homework plot C most frequent time in HOURS?",18,"9 dots above18."),
+            new("Homework plot C frequency of17hours?",6,"6 dots above17."),
+            new("Homework plot A most frequent time in HOURS?",19,"4 dots above19."),
+            new("Homework plot B most frequent time in HOURS?",16,"4 dots above16."),
+            new("Animated movie G is most plausibly age plot A,B,C. Enter1 A,2 B,3 C.",2,"B has many young children."),
+            new("Which movie age plot is centered near30years? Enter1 A,2 B,3 C.",3,"C mostly21–39, around30."),
+            new("Movie A is mostly adults near40 years. Closest typical age among 8,30,41? Enter8,30 or41.",41,"A mode cluster late thirties–forties."),
+            new("Independent Mai games points8,9,9,10,11,12,13,14,14,20. Number of games?",10,"Ten observations."),
+            new("Same Mai example: number of games in8–14 points?",9,"Nine within range."),
+            new("Same Mai example: number of games >18 points?",1,"Only20."),
+            new("3.727+1.384 in THOUSANDTHS?",5111,"5.111."),
+            new("3.727-1.384 in THOUSANDTHS?",2343,"2.343."),
+            new("5.01×4.8 in THOUSANDTHS?",24048,"24.048."),
+            new("5.01÷4.8 in HUNDRED-THOUSANDTHS?",104375,"1.04375.")
+        ],
+        [L0804InterpretPlot] =
+        [
+            new("Plot B homework data have lower typical hours than plots A and C. 1=yes,0=no.",1,"More hours around15–17."),
+            new("Plot C homework data have less spread than plot A. 1=yes,0=no.",1,"C range4, A range7."),
+            new("The tenth-grade plot is C because its values are more alike. 1=yes,0=no.",1,"Narrowest."),
+            new("The eighth-grade plot is A and sixth-grade plot B under source summary. 1=yes,0=no.",1,"Relative centers and spreads."),
+            new("A dot plot with more dots at18hours has a common value18hours. 1=yes,0=no.",1,"Frequency."),
+            new("One extreme value may be an outlier relative to a cluster. 1=yes,0=no.",1,"Unusual observation."),
+            new("Mai reports most games8–14 points and one game more than twice typical9, so one game can be20points. 1=yes,0=no.",1,"20>18."),
+            new("A game with17points is more than twice typical9points. 1=yes,0=no.",0,"17<18."),
+            new("For a G-rated animated movie, distribution with many very young attendees is plausible. 1=yes,0=no.",1,"Movie B."),
+            new("A plot centered around30years is more likely movie C than movie A in the source descriptions. 1=yes,0=no.",1,"C mostly 20s–30s."),
+            new("Movie A has ages primarily around forty rather than three-to-ten years. 1=yes,0=no.",1,"Source image text."),
+            new("Center describes typical location of data and spread describes variation. 1=yes,0=no.",1,"Distinct statistical descriptions."),
+            new("Two plots can have similar centers but different spreads. 1=yes,0=no.",1,"Different variability."),
+            new("A claim of an exact image count must be based on the actual original dot plot, not a guessed figure. 1=yes,0=no.",1,"Teacher-verifiable source."),
+            new("The class with larger range necessarily has larger typical value. 1=yes,0=no.",0,"Range vs center different."),
+            new("3.727+1.384=5.111. 1=yes,0=no.",1,"Decimal addition."),
+            new("5.01×4.8=24.048. 1=yes,0=no.",1,"Multiplication."),
+            new("5.01÷4.8=1.04375. 1=yes,0=no.",1,"Division."),
+            new("A frequency graph should show both scale and a description of measurement units. 1=yes,0=no.",1,"Context."),
+            new("A source student-created plot with one outlier needs teacher review, not just one keyed numeral. 1=yes,0=no.",1,"Open-ended drawing.")
         ]
     };
 

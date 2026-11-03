@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u08.l04.source_dotplot_comparisons",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-homework-plots-A-B-C-sixth-B-eighth-A-tenth-C-and-movie-ages",
+      "representations": [
+        "dot_plot",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u08.l04.dotplot_center_spread_logic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-center-typical-spread-interpretations-no-arbitrary-publisher-image-key",
+      "representations": [
+        "boolean_reasoning",
+        "dot_plot"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l03.dotplot_frequency_counts",
       "version": 1,
       "skillId": "ratio.unit_rate",
