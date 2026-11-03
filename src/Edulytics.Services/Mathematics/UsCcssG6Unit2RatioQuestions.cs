@@ -37,6 +37,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L10CompareAmounts = "usccss.g6.u02.l10.rate_comparison_quantities";
     public const string L10EquivalentContexts = "usccss.g6.u02.l10.compare_rates_reasoning";
 
+    public const string L11TableAmounts = "usccss.g6.u02.l11.table_equivalent_ratio_values";
+    public const string L11TableLogic = "usccss.g6.u02.l11.ratio_table_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -401,6 +404,41 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("One-quarter pound beef at5 dollars per pound costs one-quarter of5 dollars. 1=yes,0=no.",1,"125cents."),
             new("Spice garlic6:salt15 is equivalent to garlic2:salt5. 1=yes,0=no.",1,"Both÷3."),
             new("With equal travel TIME, the runner covering more DISTANCE has greater average speed. 1=yes,0=no.",1,"Distance per same time comparison.")
+        ],
+        [L11TableAmounts] =
+        [
+            new("A car travels70km every hour. Distance in km after14 hours?",980,"70Ã—14=980km."),
+            new("A car travels70km every hour. Distance in km after3 hours?",210,"70Ã—3=210km."),
+            new("Olives20 pounds make3 liters olive oil. How many liters from3000 pounds?",450,"3000/20Ã—3=450 liters."),
+            new("Olives20 pounds make3 liters. How many liters from100 pounds?",15,"100/20Ã—3=15 liters."),
+            new("A recess needs2 adults for24 children. Adults needed for72 children?",6,"72/24Ã—2=6."),
+            new("A recess needs2 adults for24 children. Children for8 adults?",96,"8/2Ã—24=96."),
+            new("A recess needs2 adults for24 children. Children for4 adults?",48,"24Ã—2=48."),
+            new("A recess needs2 adults for24 children. Children for6 adults?",72,"24Ã—3=72."),
+            new("Jogging at25 beats every10s, beats in60s?",150,"25Ã—6=150beats per minute."),
+            new("Six ears corn cost180cents. Price per ear in CENTS?",30,"180/6=30."),
+            new("Twelve apples cost288cents. Price per apple in CENTS?",24,"288/12=24."),
+            new("Five tomatoes cost310cents. Price per tomato in CENTS?",62,"310/5=62."),
+            new("Orange paint source first row5 quarts yellow for6 quarts red. Yellow quarts for3 batches?",15,"5Ã—3=15."),
+            new("Orange paint source first row5 quarts yellow for6 quarts red. Red quarts for3 batches?",18,"6Ã—3=18."),
+            new("Olive oil20lb for3L. Pounds olives for15L?",100,"15/3Ã—20=100."),
+            new("A car goes70km per hour. How many hours to travel210km?",3,"210/70=3hours."),
+            new("For2 adults and24 children per group, total people in3 equal groups?",78,"3Ã—(2+24)=78.")
+        ],
+        [L11TableLogic] =
+        [
+            new("Car1hour70km and14hours980km are a constant-rate ratio. 1=yes,0=no.",1,"Scale both quantitiesÃ—14."),
+            new("Car1hour70km and14hours900km keep the same speed. 1=yes,0=no.",0,"14Ã—70=980km."),
+            new("20lb olives3L and100lb olives15L are equivalent. 1=yes,0=no.",1,"BothÃ—5."),
+            new("20lb olives3L and100lb olives12L are equivalent. 1=yes,0=no.",0,"Liters should15."),
+            new("2 adults24children and6 adults72children are equivalent ratios. 1=yes,0=no.",1,"BothÃ—3."),
+            new("2 adults24children and6 adults48children are equivalent. 1=yes,0=no.",0,"AdultsÃ—3 but childrenÃ—2."),
+            new("A ratio table can list equivalent pairs in any row order, unlike an ordered number line. 1=yes,0=no.",1,"Rows need not follow geometric ordering."),
+            new("Table entries must preserve correct labeled units for both columns. 1=yes,0=no.",1,"Column units give ratios meaning."),
+            new("Jogging25 beats in10seconds is150bpm, which is lower than160bpm. 1=yes,0=no.",1,"25Ã—6=150."),
+            new("Jogging25 beats in10seconds exceeds160bpm. 1=yes,0=no.",0,"It is150bpm."),
+            new("Six corn ears for180cents means30cents per ear. 1=yes,0=no.",1,"Divide180 by6."),
+            new("Two ratio table rows can be equivalent if only one column is multiplied by2. 1=yes,0=no.",0,"Both corresponding values scale equally.")
         ]
     };
 
