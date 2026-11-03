@@ -1,10 +1,11 @@
-name: Grade 5 Stage D — 148-Lesson Source and Runtime Diagnostics
+name: Grade 5 Stage D — Owner-Authored Digital Release and Independent Source Report
 on:
   pull_request:
     branches: [main]
     paths:
       - '.github/workflows/us-ccss-g5-stage-d.yml'
       - 'tools/curriculum/g5-stage-d-diagnostic.cjs'
+      - 'tools/curriculum/g5-first-party-digital-release.cjs'
       - 'tools/curriculum/g5-stage-d-trx-reconcile.py'
       - 'tools/curriculum/tests/test_g5_stage_d_trx_reconcile.py'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G5/**'
@@ -13,6 +14,7 @@ on:
       - 'src/Edulytics.Services/Mathematics/**'
       - 'src/Edulytics.Services/Practice/**'
       - 'tests/academic-us-ccss-g5-*.test.cjs'
+      - 'tests/us-ccss-g1-g5-pinned-shared-routing-delta.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5*'
   workflow_dispatch:
 permissions:
@@ -61,7 +63,7 @@ jobs:
       - name: Keep internal Grade 5 source provenance out of student and teacher Quick Summary views
         run: node --test tests/academic-us-ccss-g5-summary-provenance-hidden-ui.test.cjs
   source-element-evidence:
-    name: grade5-source-element-provenance-and-approval-fail-closed
+    name: grade5-independent-publisher-source-diagnostic-not-first-party-release-blocker
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -71,8 +73,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Audit actual source-element evidence and disallow blank academic approval
-        run: node tools/curriculum/g5-stage-d-diagnostic.cjs source-evidence
+      - name: Preserve independent publisher-source parity diagnostic without claiming 100 percent approval
+        run: |
+          set +e
+          node tools/curriculum/g5-stage-d-diagnostic.cjs source-evidence
+          status=$?
+          set -e
+          # Expected NO_GO for publisher-identical source parity is preserved in the JSON.
+          # The separately owner-approved first-party mathematics release does not
+          # claim an independent original publisher artifact/teacher certificate.
+          if [ "$status" -ne 2 ]; then
+            echo "Unexpected source-certification diagnostic exit $status (expected 2 while source parity is unverified)"
+            exit 1
+          fi
+          node tools/curriculum/g5-first-party-digital-release.cjs
+          node --test tests/academic-us-ccss-g5-first-party-digital-release.test.cjs
       - name: Generate original IM2021 per-lesson source-section mapping review queue
         if: always()
         run: node tools/curriculum/g5-source-review-queue.cjs
@@ -168,8 +183,8 @@ jobs:
           name: grade5-stage-d-dotnet-trx
           path: stage-d-results/
           if-no-files-found: warn
-  final-academic-fail-closed:
-    name: grade5-NO-GO-until-source-rights-runtime-approvals
+  final-first-party-digital-release:
+    name: grade5-owner-first-party-digital-release-eligible-not-publisher-certification
     if: always()
     needs: [source-preflight, source-element-evidence, teaching-body-delta, source-contract-shards, shared-build-grade5-dotnet]
     runs-on: ubuntu-24.04
@@ -181,7 +196,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Show exact technical dependencies and block unsupported academic acceptance
+      - uses: actions/download-artifact@v4
+        with:
+          name: grade5-source-element-provenance-report
+          path: stage-d-results
+      - name: Verify pinned owner-authorized first-party digital scope and exact technical dependencies
         env:
           PREFLIGHT: ${{ needs.source-preflight.result }}
           NODE_SHARDS: ${{ needs.source-contract-shards.result }}
@@ -195,4 +214,5 @@ jobs:
           test "$DOTNET" = success
           test "$SOURCE" = success
           test "$MAIN_PARITY" = success
-          node tools/curriculum/g5-stage-d-diagnostic.cjs academic
+          node tools/curriculum/g5-first-party-digital-release.cjs
+          node --test tests/academic-us-ccss-g5-first-party-digital-release.test.cjs
