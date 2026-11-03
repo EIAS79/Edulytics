@@ -340,6 +340,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0806HistogramNumerics = "usccss.g6.u08.l06.histogram_bin_frequencies";
     public const string L0806HistogramLogic = "usccss.g6.u08.l06.histogram_vs_dotplot_reasoning";
 
+    public const string L0807HistogramCompare = "usccss.g6.u08.l07.histogram_center_spread_numeric";
+    public const string L0807HistogramLogic = "usccss.g6.u08.l07.center_spread_and_inequality_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4876,6 +4879,52 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The first source histogram A aligns with plot3 by bin aggregates. 1=yes,0=no.",1,"A↔3."),
             new("The source histogram B aligns with plot1. 1=yes,0=no.",1,"B↔1."),
             new("The source histogram D aligns with plot2. 1=yes,0=no.",1,"D↔2.")
+        ],
+        [L0807HistogramCompare] =
+        [
+            new("Two source text-message histograms show sixth and seventh grade, which has wider approximate range? Enter6 or7.",6,"Sixth graph spans many more bins."),
+            new("Original sixth-grade message graph spans approx45 to155. Approx span in MESSAGES?",110,"155-45≈110."),
+            new("Original seventh-grade graph spans approx75 to125. Approx span in MESSAGES?",50,"125-75≈50."),
+            new("Original first-grade? Here use sixth message range110 versus seventh50. Difference in approximate spans?",60,"110-50≈60."),
+            new("Jada has d dimes worth strictly over30cents and strictly under100cents. Smallest possible d?",4,"Four dimes=40cents."),
+            new("Jada d dimes with30<10d<100. Largest possible d?",9,"Nine dimes=90cents."),
+            new("How many integer dime counts satisfy30<10d<100?",6,"d=4,5,6,7,8,9."),
+            new("Could Jada own10dimes under strict total less than1dollar? Enter1 yes,0 no.",0,"10dimes=100cents excluded."),
+            new("Could Jada own3dimes under strict total over30cents? Enter1 yes,0 no.",0,"3=30cents excluded."),
+            new("Could Jada own6dimes? Enter1 yes,0 no.",1,"60cents allowed."),
+            new("Rank4,7/4,1/4,0,-5/4,-3.5,-4. Greatest value?",4,"4 highest."),
+            new("Same ordered list: second greatest in QUARTERS?",7,"7/4=1.75."),
+            new("Same ordered list: third greatest in QUARTERS?",1,"1/4."),
+            new("Same ordered list: fourth greatest?",0,"Zero."),
+            new("Same list: fifth greatest in QUARTERS?",-5,"-5/4."),
+            new("Same list: sixth greatest in HALVES?",-7,"-3.5=-7/2."),
+            new("Same list: least value?",-4,"-4 smallest."),
+            new("A histogram group of40 runners should have how many total observations across bins?",40,"Source sample size40."),
+            new("A40-runner histogram with all40 in a single 9–11minute interval has how many observations outside that interval?",0,"All inside."),
+            new("A comparison histogram from40 students with bins [8,9):5,[9,10):15,[10,11):15,[11,12):5. Total?",40,"5+15+15+5."),
+            new("The independent example bin [9,10) has frequency?",15,"Given15."),
+            new("What is the distance between3.5 and-4 on number line in HALF-UNITS?",15,"3.5-(-4)=7.5=15 halves.")
+        ],
+        [L0807HistogramLogic] =
+        [
+            new("Two histograms can have similar typical values but very different spread. 1=yes,0=no.",1,"Center and spread are distinct."),
+            new("The source sixth-grade message histogram is more spread out than seventh-grade histogram. 1=yes,0=no.",1,"More extreme bins."),
+            new("The source text describing 100-student histograms has inconsistent OCR-style frequency totals; exact dot counts must be confirmed from actual figure. 1=yes,0=no.",1,"Description not fully reliable."),
+            new("Bin counts must sum to sample size for a verified histogram. 1=yes,0=no.",1,"Frequency consistency."),
+            new("A histogram centered near10 minutes can have less variability by clustering more observations near10. 1=yes,0=no.",1,"Narrower distribution."),
+            new("A histogram with all40 times in9–11min has no students outside9–11. 1=yes,0=no.",1,"No outside observations."),
+            new("Jada's dimes condition is30<10d<100 cents. 1=yes,0=no.",1,"Strict bounds."),
+            new("Jada can have d=3 under this strict condition. 1=yes,0=no.",0,"Exactly30 not over."),
+            new("Jada can have d=9 under this strict condition. 1=yes,0=no.",1,"90cents."),
+            new("Jada can have d=10 under this strict condition. 1=yes,0=no.",0,"Exactly1dollar."),
+            new("Jada has six integer solutions d=4 through9. 1=yes,0=no.",1,"Six possibilities."),
+            new("Seven quarters (7/4) is greater than4. 1=yes,0=no.",0,"1.75<4."),
+            new("One-quarter is positive, so it is greater than0. 1=yes,0=no.",1,"0.25>0."),
+            new("-3½ is greater than-5/4. 1=yes,0=no.",0,"-3.5<-1.25."),
+            new("-4 is the least among -4,-3½,-5/4,0,¼,7/4,4. 1=yes,0=no.",1,"Farthest left."),
+            new("A graph's apparent shape may depend on bin width choices. 1=yes,0=no.",1,"Grouping effect."),
+            new("A source comparison about number of messages must label each horizontal axis in messages per week. 1=yes,0=no.",1,"Meaningful units."),
+            new("Teacher should review a student's second 40-runner histogram for center, spread and bin frequency consistency. 1=yes,0=no.",1,"Open-ended graph.")
         ]
     };
 
