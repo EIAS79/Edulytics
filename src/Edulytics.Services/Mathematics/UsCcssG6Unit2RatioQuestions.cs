@@ -55,6 +55,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L16MultistepRatio = "usccss.g6.u02.l16.multistep_ratio_totals";
     public const string L16RepresentationChoice = "usccss.g6.u02.l16.ratio_tool_selection";
 
+    public const string L17FermiAssumptions = "usccss.g6.u02.l17.first_party_fermi_assumption_arithmetic";
+    public const string L17FermiSensitivity = "usccss.g6.u02.l17.first_party_fermi_sensitivity";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -624,6 +627,36 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("One model is required for every ratio problem even when another representation is valid. 1=yes,0=no.",0,"Students may choose a fitting tool."),
             new("The nickels:dimes ratio4:6 simplifies to2:3. 1=yes,0=no.",1,"Divide both by2."),
             new("The dimes:quarters ratio6:15 simplifies to2:5. 1=yes,0=no.",1,"Divide both by3.")
+        ],
+        [L17FermiAssumptions] =
+        [
+            new("FIRST-PARTY Fermi assumption: a school has24 classrooms with25 students each. Estimated TOTAL students?",600,"24×25=600 under these explicit assumptions."),
+            new("FIRST-PARTY Fermi assumption:600 students use3 pages each daily. Daily pages?",1800,"600×3=1800 pages daily."),
+            new("FIRST-PARTY Fermi assumption: a class has25 students, each uses4 pencils in a term. Class pencils?",100,"25×4=100 pencils."),
+            new("FIRST-PARTY Fermi assumption:40 classes each use100 pencils per term. School pencils?",4000,"40×100=4000 pencils."),
+            new("FIRST-PARTY Fermi assumption: 5 schooldays per week,40 weeks. Total schooldays?",200,"5×40=200 days."),
+            new("FIRST-PARTY Fermi assumption:600 students make2 journeys per schoolday over200 schooldays. Total one-way journeys?",240000,"600×2×200=240000."),
+            new("FIRST-PARTY Fermi assumption: a bus holds40 riders. Buses needed to carry600 riders in one trip?",15,"600/40=15 buses."),
+            new("FIRST-PARTY Fermi assumption: bookshelves each hold30 books, library has45 shelves. Estimated books?",1350,"45×30=1350 books."),
+            new("FIRST-PARTY Fermi assumption: 1200 bottles discarded over5 days. Bottles per day under a uniform model?",240,"1200/5=240 bottles/day."),
+            new("FIRST-PARTY Fermi assumption: a hallway has80 floor tiles per row and6 rows. Total tiles?",480,"80×6=480 tiles."),
+            new("FIRST-PARTY Fermi assumption: school cafeteria serves250 lunches a day for20 days. Monthly lunches?",5000,"250×20=5000 lunches."),
+            new("FIRST-PARTY Fermi assumption: 300 pupils each walk2000 meters per day. Total meters walked?",600000,"300×2000=600000 meters.")
+        ],
+        [L17FermiSensitivity] =
+        [
+            new("Assuming24 classrooms each contain25 students gives600 students, not an exact census. 1=yes,0=no.",1,"600 is an estimate under assumptions."),
+            new("Assuming24 classrooms have25 students each proves every actual class has25 students. 1=yes,0=no.",0,"Model assumptions are not observations."),
+            new("If assumed students per class double and number of classes stays fixed, predicted total doubles. 1=yes,0=no.",1,"Multiplicative scaling."),
+            new("If number of classes doubles but student count per class stays fixed, predicted total stays unchanged. 1=yes,0=no.",0,"Predicted total doubles."),
+            new("Two different plausible assumptions can produce different legitimate Fermi estimates. 1=yes,0=no.",1,"Open-ended estimates depend on premises."),
+            new("The exact numeric answer from a fixed-assumptions exercise automatically proves a student's open Fermi research project correct. 1=yes,0=no.",0,"Teacher must assess assumptions, evidence and process."),
+            new("Choosing upper and lower bounds is useful for evaluating sensitivity of an estimate. 1=yes,0=no.",1,"Bounds communicate uncertainty."),
+            new("A Fermi estimate should always omit units to make arithmetic easier. 1=yes,0=no.",0,"Units are essential."),
+            new("Breaking a broad question into smaller measurable questions is appropriate Fermi modeling. 1=yes,0=no.",1,"Subquestions make estimates manageable."),
+            new("One can multiply estimated riders per bus by buses to estimate passenger capacity. 1=yes,0=no.",1,"Capacity scales multiplicatively."),
+            new("A rough estimate should be presented as an exact observed count solely because arithmetic is correct. 1=yes,0=no.",0,"Assumptions remain uncertain."),
+            new("Recording an assumption's source and how changing it affects the result strengthens the estimate. 1=yes,0=no.",1,"Transparent model assumptions support review.")
         ]
     };
 
