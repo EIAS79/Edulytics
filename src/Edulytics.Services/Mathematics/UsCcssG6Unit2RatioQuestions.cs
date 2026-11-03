@@ -220,6 +220,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0605FractionBarNumeric = "usccss.g6.u06.l05.rational_fraction_bar_division";
     public const string L0605FractionBarLogic = "usccss.g6.u06.l05.fraction_bar_meaning_and_solutions";
 
+    public const string L0606Expressions = "usccss.g6.u06.l06.expression_evaluation_contexts";
+    public const string L0606ExpressionLogic = "usccss.g6.u06.l06.expression_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2896,6 +2899,48 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Triangle Q with15in base6.5in height has larger area than triangle P12in base8in height. 1=yes,0=no.",1,"48.75>48."),
             new("A denominator0 is allowed for arbitrary fraction bar expressions. 1=yes,0=no.",0,"Division by zero invalid."),
             new("Diagram of a fundraiser thermometer requires reading the tick spacing rather than guessing from unlabeled art. 1=yes,0=no.",1,"Visual source must be checked.")
+        ],
+        [L0606Expressions] =
+        [
+            new("Blue ribbon10in, red7in shorter. Red inches?",3,"10-7=3."),
+            new("Blue ribbon27in, red7in shorter. Red inches?",20,"27-7=20."),
+            new("Red ribbon12in, blue7in longer. Blue inches?",19,"12+7=19."),
+            new("Tyler has3times as many books as Mai. Tyler15. Mai books?",5,"15/3=5."),
+            new("Tyler21books, Mai one third as many. Mai?",7,"21/3=7."),
+            new("Tyler18books, Mai one third. Mai?",6,"18/3=6."),
+            new("Bottle holds24oz, has x=9oz currently. Empty capacity?",15,"24-9=15."),
+            new("Bottle holds24oz and x=17oz water. Empty capacity?",7,"24-17=7."),
+            new("Han house450m from school. Lin135m closer. Lin distance?",315,"450-135=315."),
+            new("Tyler36 songs, Noah one-quarter as many. Noah songs?",9,"36/4=9."),
+            new("50dollars spent10% clothes,20% games. Clothes dollars?",5,".1×50=5."),
+            new("50dollars spent10% clothes,20% games. Games dollars?",10,".2×50=10."),
+            new("50dollars after clothes and games, rest books. Books dollars?",35,"50-5-10=35."),
+            new("Bin capacity50gal,5gal content percent?",10,"5/50×100=10."),
+            new("Bin capacity50gal,30gal content percent?",60,"30/50=60%."),
+            new("Bin capacity50gal,45gal content percent?",90,"45/50=90%."),
+            new("Bin capacity50gal,100gal hypothetical amount percent?",200,"100/50=200% comparison, exceeds physical capacity."),
+            new("Three times x at x=6?",18,"3×6."),
+            new("x-7 for x=27?",20,"27-7."),
+            new("x/3 for x=21?",7,"21/3.")
+        ],
+        [L0606ExpressionLogic] =
+        [
+            new("Blue ribbon length x and red7in shorter: red length expression x-7. 1=yes,0=no.",1,"Difference."),
+            new("Blue x and red7 shorter: red expression7-x. 1=yes,0=no.",0,"Reversed order."),
+            new("Blue x and red7 shorter: blue length if red12 is19. 1=yes,0=no.",1,"12+7=19."),
+            new("Tyler has3times Mai's books, Tyler x books: Mai expression x/3. 1=yes,0=no.",1,"Divide3."),
+            new("Tyler3times Mai, Tyler x: Mai expression3x. 1=yes,0=no.",0,"3x is Tyler in terms of Mai."),
+            new("Bottle holds24oz, has x oz now:24-x is available space. 1=yes,0=no.",1,"Capacity minus contents."),
+            new("A variable expression can be meaningful without being an equation with equals sign. 1=yes,0=no.",1,"Expression denotes value."),
+            new("Han450m from school, Lin135 closer means Lin315m away. 1=yes,0=no.",1,"450-135=315."),
+            new("Noah one quarter of Tyler36songs has9. 1=yes,0=no.",1,"36/4."),
+            new("Of50dollars, spending10% plus20% leaves70% for books. 1=yes,0=no.",1,"100-30=70."),
+            new("5gal is10% of50gal bin capacity. 1=yes,0=no.",1,"5/50=.1."),
+            new("100gal is200% of50gal reference, though exceeds the actual bin capacity. 1=yes,0=no.",1,"Comparison vs physical limit."),
+            new("x-7 evaluated at x=10 equals3. 1=yes,0=no.",1,"Substitution."),
+            new("x/3 evaluated at x=21 equals7. 1=yes,0=no.",1,"Substitution."),
+            new("The expression24-x represents empty ounces only when x is contents between0 and24. 1=yes,0=no.",1,"Contextual domain."),
+            new("Expression meaning remains unchanged for all valid x even as numerical value varies. 1=yes,0=no.",1,"Generalization.")
         ]
     };
 

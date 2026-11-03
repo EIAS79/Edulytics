@@ -2644,6 +2644,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit6 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_VARIABLE_EXPRESSIONS_FROM_RELATIONSHIPS",
+            [
+                "usccss.g6.u06.l06.expression_evaluation_contexts",
+                "usccss.g6.u06.l06.expression_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
