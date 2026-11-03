@@ -22,6 +22,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L05Equivalence = "usccss.g6.u02.l05.equivalent_ratio_definition";
     public const string L05ScaleMissing = "usccss.g6.u02.l05.scaled_ratio_missing_term";
 
+    public const string L06DoubleLineAmounts = "usccss.g6.u02.l06.double_number_line_amounts";
+    public const string L06DoubleLineLogic = "usccss.g6.u02.l06.double_number_line_structure";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -211,6 +214,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("In a4:5 ratio, multiply both terms by4. What is the NEW second term?",20,"5×4=20."),
             new("Source fruit bowl:6 bananas and3 oranges. How many bananas for EACH orange?",2,"6/3=2."),
             new("In a 6:4 pair, simplifying both by2 gives3:?. Find missing second term.",2,"4/2=2.")
+        ],
+        [L06DoubleLineAmounts] =
+        [
+            new("Paint has 2 cups yellow for every 3 cups red. YELLOW cups in 3 batches?",6,"2×3=6 yellow."),
+            new("Paint has 2 cups yellow for every 3 cups red. RED cups in 3 batches?",9,"3×3=9 red."),
+            new("Cookies use 5 cups flour per 3 eggs. FLOUR cups in 2 batches?",10,"5×2=10 flour."),
+            new("Cookies use 5 cups flour per 3 eggs. EGGS in 2 batches?",6,"3×2=6 eggs."),
+            new("Cookies use 5 cups flour per 3 eggs. FLOUR cups in 3 batches?",15,"5×3=15 cups."),
+            new("Cookies use 5 cups flour per 3 eggs. EGGS in 3 batches?",9,"3×3=9."),
+            new("Cookies use 5 cups flour per 3 eggs. FLOUR cups in 4 batches?",20,"5×4=20."),
+            new("Cookies use 5 cups flour per 3 eggs. EGGS in 4 batches?",12,"3×4=12."),
+            new("Cookies use 5 cups flour per 3 eggs. FLOUR cups with 6 eggs?",10,"Two batches need10 cups flour."),
+            new("Cookies use 5 cups flour per 3 eggs. EGGS with 15 cups flour?",9,"Three batches need9 eggs."),
+            new("Purple paint uses 3 cups red to 2 cups blue per batch. Number of BATCHES for 12 cups red?",4,"12÷3=4 batches."),
+            new("Purple paint uses 3 cups red to 2 cups blue per batch. Number of BATCHES for 6 cups blue?",3,"6÷2=3 batches."),
+            new("A pizza plan uses 3 pizzas for every 7 children. How many pizzas for 21 children?",9,"Three sets of 7 children need9 pizzas."),
+            new("A parallelogram has base 6 units and perpendicular height4 units. Find its area.",24,"6×4=24 square units."),
+            new("A triangle has base8 units and perpendicular height6 units. Find its area.",24,"8×6÷2=24 square units."),
+            new("Purple paint uses 3 red cups for every 2 blue cups. How many red cups in 2 batches?",6,"3×2=6 red cups.")
+        ],
+        [L06DoubleLineLogic] =
+        [
+            new("Both axes of a double number line share aligned zero marks for their quantities. 1=yes,0=no.",1,"The axes show the same number of batches at aligned ticks."),
+            new("For a 2-yellow:3-red mix, 6 yellow and 9 red represent3 batches. 1=yes,0=no.",1,"Both quantities ×3."),
+            new("For a 2-yellow:3-red mix, 6 yellow and 6 red preserve the shade. 1=yes,0=no.",0,"6:6 differs from2:3."),
+            new("For cookies 5 flour:3 eggs, four batches are 20 cups flour and12 eggs. 1=yes,0=no.",1,"Both quantities ×4."),
+            new("For cookies 5 flour:3 eggs, four batches are15 cups flour and12 eggs. 1=yes,0=no.",0,"Flour scales×3, eggs×4."),
+            new("Purple ratio3red:2blue,12red:8blue is the same shade. 1=yes,0=no.",1,"Both ×4."),
+            new("Purple ratio3red:2blue,12red:6blue is the same shade. 1=yes,0=no.",0,"Factors4 and3 differ."),
+            new("Pizza ratio7 kids:3 pizzas,21 kids:9 pizzas is equivalent. 1=yes,0=no.",1,"Both triple."),
+            new("Pizza ratio7 kids:3 pizzas,21 kids:3 pizzas is equivalent. 1=yes,0=no.",0,"Only children triple."),
+            new("A double number line can use different numerical scales on the two parallel axes while ticks align as batches. 1=yes,0=no.",1,"Same batch positions but different units/scales."),
+            new("The ratio 5 cups flour:3 eggs equals 6 cups flour:4 eggs. 1=yes,0=no.",0,"5×4 differs from6×3."),
+            new("The ratio2 yellow:3 red equals4 yellow:6 red. 1=yes,0=no.",1,"Both double.")
         ]
     };
 
