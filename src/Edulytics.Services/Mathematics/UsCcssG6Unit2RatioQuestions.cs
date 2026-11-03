@@ -91,6 +91,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0311PercentValues = "usccss.g6.u03.l11.percent_scaled_amounts";
     public const string L0311PercentReasoning = "usccss.g6.u03.l11.percent_of_quantity_reasoning";
 
+    public const string L0312TapePercent = "usccss.g6.u03.l12.tape_diagram_percent_amounts";
+    public const string L0312TapeStructure = "usccss.g6.u03.l12.percent_tape_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1095,6 +1098,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Potatoes10lbs produce15lbs mash, so15lbs potatoes make22.5lbs mash at constant rate. 1=yes,0=no.",1,"Both×1.5."),
             new("Percentage comparisons should identify which amount is100%. 1=yes,0=no.",1,"Without reference the percentage is ambiguous."),
             new("A 200mg quantity can be250% of a smaller80mg reference. 1=yes,0=no.",1,"200/80=2.5.")
+        ],
+        [L0312TapePercent] =
+        [
+            new("Bakery has40 muffin flavors;25% contain chocolate. Number with chocolate?",10,"40×1/4=10."),
+            new("Bakery has40 flavors;25% chocolate. Number without chocolate?",30,"40-10=30."),
+            new("School band70 students:40% sixth graders. Count sixth graders?",28,"70×0.4=28."),
+            new("School band70 students:20% seventh graders. Count seventh graders?",14,"70×0.2=14."),
+            new("Band70 with40% sixth and20% seventh. Percentage eighth graders?",40,"100-40-20=40%."),
+            new("Band70 with40% sixth and20% seventh. Count eighth graders?",28,"70×40%=28."),
+            new("Jada spent60dollars, which is120% of budget. Monthly budget in DOLLARS?",50,"60/1.2=50."),
+            new("Jada budget50dollars. Spending120% of budget in DOLLARS?",60,"50×1.2=60."),
+            new("Five tickets cost12dollars50cents. Price per ticket in CENTS?",250,"1250/5=250cents."),
+            new("Eight tickets cost20dollars16cents. Price per ticket in CENTS?",252,"2016/8=252cents."),
+            new("Buying5 tickets for12.50 dollars or8 for20.16 dollars, which is cheaper per ticket? Enter1 for five-pack,2 for eight-pack.",1,"250cents vs252cents."),
+            new("An athlete runs8miles in50minutes. Time for9miles in SECONDS at same rate?",3375,"9×50/8=56.25min=3375sec."),
+            new("An athlete runs8miles in50minutes. Distance traveled in60minutes in TENTHS OF A MILE?",96,"8×60/50=9.6miles=96tenths."),
+            new("Under a tape model, one quarter of80 students is how many?",20,"80/4=20."),
+            new("Under a tape model, three quarters of80 students is how many?",60,"3×20=60."),
+            new("A bill of60dollars is120% of a monthly50dollar budget. Amount OVER budget in DOLLARS?",10,"60-50=10."),
+            new("Forty muffin flavors with ten chocolate flavors: percent chocolate?",25,"10/40×100%=25.")
+        ],
+        [L0312TapeStructure] =
+        [
+            new("25% of40 muffin flavors is10 flavors. 1=yes,0=no.",1,"One of four equal quarters."),
+            new("25% of40 muffin flavors is25 flavors. 1=yes,0=no.",0,"It is10."),
+            new("Band40% sixth and20% seventh leaves40% eighth. 1=yes,0=no.",1,"100-40-20=40%."),
+            new("Band70 members with40% sixth has28 sixth graders. 1=yes,0=no.",1,"0.4×70=28."),
+            new("Band70 members with20% seventh has20 seventh graders. 1=yes,0=no.",0,"20% of70=14."),
+            new("A tape with four equal blocks can model25% as one block. 1=yes,0=no.",1,"One-quarter equals25% of amount."),
+            new("Jada60dollars spent is120% of a50dollar budget. 1=yes,0=no.",1,"60/50=120%."),
+            new("If60dollars is120% of budget, budget is72dollars. 1=yes,0=no.",0,"Budget is50."),
+            new("Five tickets cost1250cents, so250cents per ticket. 1=yes,0=no.",1,"1250/5=250."),
+            new("Eight tickets cost2016cents, so252cents per ticket. 1=yes,0=no.",1,"2016/8=252."),
+            new("One can determine exact walking percentages from an original image without knowing the picture's measured quantities. 1=yes,0=no.",0,"Diagram data needed."),
+            new("Tapes can represent both percentages below100 and comparisons larger than100 by extending beyond the reference whole. 1=yes,0=no.",1,"Extend tape beyond100%."),
+            new("At8miles per50minutes,9miles takes56.25minutes. 1=yes,0=no.",1,"50×9/8=56.25.")
         ]
     };
 
