@@ -17,12 +17,14 @@ public sealed class UsCcssG6Unit2Lesson5SelectedPracticeTests
         Assert.Equal(new[]{Equiv,Missing},c.AllowedQuestionFamilies);
         Assert.All(c.AllowedQuestionFamilies,f=>Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f)));
     }
+    // Independent arithmetic cross-check: 6:4 equals 18:12 (variant 12);
+    // a 4:6 ratio scaled by 3 gives 12:18, and 6:4 reduced by 2 is 3:2.
     [Theory]
     [InlineData(0,"1")][InlineData(1,"1")][InlineData(2,"1")]
     [InlineData(3,"0")][InlineData(4,"0")][InlineData(5,"1")]
     [InlineData(6,"0")][InlineData(7,"1")][InlineData(8,"0")]
     [InlineData(9,"1")][InlineData(10,"0")][InlineData(11,"1")]
-    [InlineData(12,"0")][InlineData(13,"1")][InlineData(14,"0")]
+    [InlineData(12,"1")][InlineData(13,"1")][InlineData(14,"0")]
     public void AllOriginalAndFirstPartyRatioComparisonVariants(int v,string correct)
     {
         var p=new Dictionary<string,int>{{"variant",v}};
@@ -35,8 +37,8 @@ public sealed class UsCcssG6Unit2Lesson5SelectedPracticeTests
     [InlineData(3,"5")][InlineData(4,"15")][InlineData(5,"30")]
     [InlineData(6,"50")][InlineData(7,"162")][InlineData(8,"324")]
     [InlineData(9,"81")][InlineData(10,"12")][InlineData(11,"18")]
-    [InlineData(12,"24")][InlineData(13,"20")][InlineData(14,"2")]
-    [InlineData(15,"3")]
+    [InlineData(12,"18")][InlineData(13,"20")][InlineData(14,"2")]
+    [InlineData(15,"2")]
     public void RatioAndCasseroleScaleSourceMathVariants(int v,string correct)
     {
         var p=new Dictionary<string,int>{{"variant",v}};

@@ -5851,7 +5851,7 @@ internal static class UsCcssG6Unit2RatioQuestions
             var (firstName,a,secondName,b) = Pairs[variant];
             return new(family,
                 $"A labeled collection has {a} {firstName} and {b} {secondName}. Give the ratio of {firstName} to {secondName}, in that order, using A:B notation.",
-                $"The order is {firstName} first ({a}) and {secondName} second ({b}), so {a}:{b}. Equivalent positive ratios are accepted. Student-created category choices and diagrams require teacher review.",
+                $"The order is {firstName} first ({a}) and {secondName} second ({b}), so {a}:{b}. Equivalent positive ratios are accepted. Teacher reviews student-created category choices and diagrams.",
                 AssessmentItemType.ShortAnswer,new Dictionary<string,int>{{"variant",variant}});
         }
 
@@ -5922,8 +5922,16 @@ internal static class UsCcssG6Unit2RatioQuestions
         if (!Valid(family,p) || string.IsNullOrWhiteSpace(answer)) return false;
         var expected=Solve(family,p!);
         if (AdditionalLessonFamilies.ContainsKey(family))
-            return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var bankNumber)
+        {
+            // Signed quantities (elevations, temperatures, coordinates) are valid
+            // only when this specific source-scoped variant actually expects them.
+            // Preserve the stricter unsigned parsing for nonnegative answers.
+            var styles = expected.StartsWith("-", StringComparison.Ordinal)
+                ? NumberStyles.AllowLeadingSign
+                : NumberStyles.None;
+            return int.TryParse(answer,styles,CultureInfo.InvariantCulture,out var bankNumber)
                 && bankNumber.ToString(CultureInfo.InvariantCulture)==expected;
+        }
         if (family is L04ColorAmounts or L04EqualShade)
             return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var colorNumber)
                 && colorNumber.ToString(CultureInfo.InvariantCulture)==expected;
