@@ -181,6 +181,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0507ProductValues = "usccss.g6.u05.l07.decimal_partial_product_values";
     public const string L0507PartialLogic = "usccss.g6.u05.l07.partial_product_reasoning";
 
+    public const string L0508ProductArithmetic = "usccss.g6.u05.l08.multiplication_calculation_values";
+    public const string L0508ProductLogic = "usccss.g6.u05.l08.decimal_product_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2341,6 +2344,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The method of whole-number partial products also extends to decimals after accounting for scale. 1=yes,0=no.",1,"Place-value decomposition."),
             new("A numeric correct answer alone validates a drawn source rectangle's placement labels. 1=yes,0=no.",0,"Requires visual checking."),
             new("An area model can represent products smaller than1 square unit. 1=yes,0=no.",1,"Fractional side lengths.")
+        ],
+        [L0508ProductArithmetic] =
+        [
+            new("0.54×3.8 in THOUSANDTHS?",2052,"2.052."),
+            new("0.54×0.8 in THOUSANDTHS?",432,".432 source partial area."),
+            new("0.54×3 in HUNDREDTHS?",162,"1.62."),
+            new("0.03×0.65 in TEN-THOUSANDTHS?",195,".0195."),
+            new("5.4×2.4 in HUNDREDTHS?",1296,"12.96."),
+            new("1.67×3.5 in THOUSANDTHS?",5845,"5.845."),
+            new("Blueberries0.6lb at398cents/lb. Cost in THOUSANDTHS OF DOLLAR?",2388,".6×3.98=2.388dollars."),
+            new("Clementines1.8lb at249cents/lb. Cost in THOUSANDTHS OF DOLLAR?",4482,"1.8×2.49=4.482dollars."),
+            new("Combined fruit cost2.388+4.482 in CENTS?",687,"6.870dollars=687cents."),
+            new("7.4−0.0022 in TEN-THOUSANDTHS?",73978,"7.3978."),
+            new("7.39−0.0012 in TEN-THOUSANDTHS?",73888,"7.3888."),
+            new("Which difference is greater:7.4-.0022 or7.39-.0012? Enter1 first,2 second.",1,"7.3978>7.3888."),
+            new("Andre plants3 saplings in30minutes. Minutes per sapling?",10,"30÷3=10."),
+            new("Andre plants14 saplings at10minutes each. Total MINUTES?",140,"14×10=140."),
+            new("0.54×3.8 represented in TEN-THOUSANDTHS?",20520,"2.052=20520 ten-thousandths."),
+            new("Three times65 equals?",195,"3×65=195."),
+            new("5.4×2.4 as partial 5×2+5×.4+.4×2+.4×.4, HUNDREDTHS?",1296,"10+2+.8+.16=12.96."),
+            new("1.67×3.5 in TEN-THOUSANDTHS?",58450,"5.8450.")
+        ],
+        [L0508ProductLogic] =
+        [
+            new("0.54×3.8=2.052. 1=yes,0=no.",1,".54×(3+.8)=1.62+.432."),
+            new("0.54×0.8=0.432. 1=yes,0=no.",1,"54×8 thousandths."),
+            new("0.54×3=1.62. 1=yes,0=no.",1,"54hundredths×3."),
+            new("0.03×0.65=0.0195. 1=yes,0=no.",1,"3×65/10000."),
+            new("5.4×2.4=12.96. 1=yes,0=no.",1,"54×24/100."),
+            new("1.67×3.5=5.845. 1=yes,0=no.",1,"167×35/1000."),
+            new("Blueberries.6lb at3.98 and clementines1.8lb at2.49 have combined cost6.87 dollars rounded to cents. 1=yes,0=no.",1,"2.388+4.482=6.87."),
+            new("7.4-.0022 is greater than7.39-.0012. 1=yes,0=no.",1,"7.3978>7.3888."),
+            new("Andre at10min per sapling needs140min for14. 1=yes,0=no.",1,"14×10."),
+            new("Decimal multiplication can be checked against an estimate of product magnitude. 1=yes,0=no.",1,"Reasonableness."),
+            new("A decimal algorithm can be explained by using whole-number multiplication then a compensating power of ten. 1=yes,0=no.",1,"Place-value scaling."),
+            new("A partial area diagram's total is the sum of non-overlapping subrectangle areas. 1=yes,0=no.",1,"Partition geometry."),
+            new("Decimal-product answers should be rounded to cents only when the money context requires it. 1=yes,0=no.",1,"Intermediate precision matters."),
+            new("The original pictured subrectangle mapping is automatically verified by a total numeric product. 1=yes,0=no.",0,"Image requires teacher review.")
         ]
     };
 
