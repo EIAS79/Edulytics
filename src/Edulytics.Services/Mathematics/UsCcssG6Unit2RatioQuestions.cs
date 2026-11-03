@@ -31,6 +31,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L08UnitPrices = "usccss.g6.u02.l08.unit_prices_and_counts";
     public const string L08PriceLogic = "usccss.g6.u02.l08.unit_price_interpretation";
 
+    public const string L09SpeedDistances = "usccss.g6.u02.l09.constant_speed_quantities";
+    public const string L09SpeedComparisons = "usccss.g6.u02.l09.constant_speed_equivalence";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -323,6 +326,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Two ounces gold2640 dollars makes 3 ounces3960 dollars at this rate. 1=yes,0=no.",1,"1320 dollars per ounce."),
             new("Doubling 1cup yogurt3tbsp peanut butter2tsp syrup requires2cups6tbsp4tsp. 1=yes,0=no.",1,"All quantities double."),
             new("Source smoother with2cups yogurt6tbsp peanut butter5tsp syrup matches twice the original recipe exactly. 1=yes,0=no.",0,"Syrup should4tsp.")
+        ],
+        [L09SpeedDistances] =
+        [
+            new("A scooter travels30 feet in2 seconds. Speed in feet per SECOND?",15,"30÷2=15 feet per second."),
+            new("A scooter travels30 feet in2 seconds. Feet traveled after1 second at constant speed?",15,"15×1=15 feet."),
+            new("A scooter travels30 feet in2 seconds. Feet after3 seconds?",45,"15×3=45 feet."),
+            new("A scooter travels30 feet in2 seconds. Feet after4 seconds?",60,"15×4=60 feet."),
+            new("A scooter travels30 feet in2 seconds. Feet after5 seconds?",75,"15×5=75 feet."),
+            new("Cargo ship travels150 nautical miles in6 hours. Nautical miles in ONE hour?",25,"150÷6=25 nautical miles per hour."),
+            new("Cargo ship travels150 nautical miles in6 hours. Nautical miles in3 hours?",75,"25×3=75 nautical miles."),
+            new("Han runs10m in2.7sec. At the same speed, time to run50m in TENTHS OF A SECOND?",135,"5×2.7=13.5 seconds or135 tenths."),
+            new("Priya runs10m in2.4sec. At the same speed, time to run50m in TENTHS OF A SECOND?",120,"5×2.4=12 seconds or120 tenths."),
+            new("Pasta dough uses150 grams flour per egg. Grams for6 eggs?",900,"150×6=900g."),
+            new("Pasta dough uses150 grams flour per egg. Eggs for450g flour?",3,"450÷150=3 eggs."),
+            new("Four frozen vegetable bags cost11 dollars96 cents. Price for one bag in CENTS?",299,"1196÷4=299 cents."),
+            new("Four frozen vegetable bags cost11 dollars96 cents. Nine bags cost how many CENTS?",2691,"299×9=2691 cents."),
+            new("Five cats have4 paws per cat. Total number of PAWS?",20,"5×4=20 paws."),
+            new("Five cats have2 ears per cat. Total number of EARS?",10,"5×2=10 ears."),
+            new("Five cats have4 paws and2 ears each. How many MORE paws than ears in total?",10,"20-10=10."),
+            new("At constant speed2 meters every4 seconds, how many meters in10 seconds?",5,"2/4=1/2m/s;10×1/2=5m."),
+            new("At constant speed5m every10s, how many seconds to travel20m?",40,"4×10=40 seconds.")
+        ],
+        [L09SpeedComparisons] =
+        [
+            new("Han runs10m in2.7 seconds while Priya runs10m in2.4 seconds. Is Priya faster? 1=yes,0=no.",1,"Same distance in less time means faster."),
+            new("Han runs10m in2.7sec while Priya runs10m in2.4sec. Is Han faster? 1=yes,0=no.",0,"Priya takes less time."),
+            new("Scooter30ft in2sec versus skateboard55ft in4sec: is scooter faster? 1=yes,0=no.",1,"15ft/s exceeds13.75ft/s."),
+            new("Scooter30ft in2sec versus skateboard55ft in4sec: is skateboard faster? 1=yes,0=no.",0,"13.75ft/s below15ft/s."),
+            new("A scooter travels30ft in2sec. Can it travel75ft in5sec at constant speed? 1=yes,0=no.",1,"15ft/s×5=75ft."),
+            new("A scooter travels30ft in2sec. Can it travel55ft in5sec at constant speed? 1=yes,0=no.",0,"At15ft/s,5sec makes75ft."),
+            new("A ship at150 nautical miles per6hours travels25 nautical miles per hour. 1=yes,0=no.",1,"150÷6=25."),
+            new("A ship at150 nautical miles per6hours travels30 nautical miles per hour. 1=yes,0=no.",0,"Rate is25."),
+            new("On a constant-speed double number line, equal time steps yield equal distance steps. 1=yes,0=no.",1,"Each step repeats the same distance/time ratio."),
+            new("Five cats have paws-to-ears ratio20:10=2:1. 1=yes,0=no.",1,"20/10=2."),
+            new("The ratios198:1287 and2:13 are equivalent. 1=yes,0=no.",1,"198×13=1287×2."),
+            new("At the same distance, the runner taking MORE seconds has greater average speed. 1=yes,0=no.",0,"More time for same distance means lower speed.")
         ]
     };
 

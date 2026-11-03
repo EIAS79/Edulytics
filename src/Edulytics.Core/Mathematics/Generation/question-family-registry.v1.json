@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u02.l09.constant_speed_quantities",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-scooter30feet2seconds-ship150miles6hours-runner-10m-and-grocery-review",
+      "representations": [
+        "double_number_line",
+        "distance_time_numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u02.l09.constant_speed_equivalence",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-runner-faster-vs-scooter-board-distance-time-per-same-time",
+      "representations": [
+        "boolean_reasoning",
+        "double_number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u02.l08.unit_prices_and_counts",
       "version": 1,
       "skillId": "ratio.unit_rate",
