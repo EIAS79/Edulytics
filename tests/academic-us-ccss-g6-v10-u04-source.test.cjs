@@ -134,14 +134,14 @@ test('U04 L15-L17 exact volume, limiting recipes and feasible axis-aligned shipm
   assert.equal((3/4)/(1/2),3/2);
   assert.equal(13/4-3/2,7/4);
   assert.ok(near((16/3)/(4/5),20/3));
-  assert.equal(8/9+7/3,29/9);
-  assert.equal((8/9)/(2/3),4/3);
-  assert.equal((29/2)/(9/2),29/9);
-  assert.equal((9/2)*(12/5),54/5);
+  assert.ok(near(8/9+7/3,29/9));
+  assert.ok(near((8/9)/(2/3),4/3));
+  assert.ok(near((29/2)/(9/2),29/9));
+  assert.ok(near((9/2)*(12/5),54/5));
   assert.ok(near((22/5)-(17/8),91/40));
   assert.equal((22/5)/(2/5),11);
-  assert.equal((17/4)/(3/4),17/3);
-  assert.equal((3/2)/(1/3),9/2);
+  assert.ok(near((17/4)/(3/4),17/3));
+  assert.ok(near((3/2)/(1/3),9/2));
   assert.equal(Math.floor(Math.min(17/3,9/2)),4);
   const small=[7/4,9/4,3/4];
   const permutations=[[small[0],small[1],small[2]],[small[0],small[2],small[1]],
