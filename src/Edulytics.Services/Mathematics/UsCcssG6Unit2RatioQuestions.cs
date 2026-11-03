@@ -241,6 +241,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0612ExponentValues = "usccss.g6.u06.l12.exponents_numeric_values";
     public const string L0612ExponentReasoning = "usccss.g6.u06.l12.exponent_and_distributive_reasoning";
 
+    public const string L0613ExponentNumbers = "usccss.g6.u06.l13.exponents_with_rational_bases";
+    public const string L0613ExponentTruth = "usccss.g6.u06.l13.exponent_equation_truth";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3220,6 +3223,49 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("16% of250 equals250% of16. 1=yes,0=no.",1,"Both40."),
             new("An exponent of3 counts three factors of same base, not base multiplied by3. 1=yes,0=no.",1,"Repeated multiplication."),
             new("A graphical repeated-times3 dot pattern can be represented using powers of3. 1=yes,0=no.",1,"Exponential growth.")
+        ],
+        [L0613ExponentNumbers] =
+        [
+            new("3×3×3×3×3 equals?",243,"3^5=243."),
+            new("Noah adds5 four times. Result?",20,"4×5=20."),
+            new("Diego starts1 multiplies5 four times. Result?",625,"5^4=625."),
+            new("9×9×3 equals?",243,"81×3=243."),
+            new("3 to power5 equals?",243,"243."),
+            new("7+7+7 equals?",21,"21."),
+            new("3 repeated addition7 times equals?",21,"7×3."),
+            new("A square side3/5units has area in TWENTY-FIFTHS?",9,"(3/5)²=9/25."),
+            new("Square area1/16sq units. Side length in QUARTERS?",1,"Positive side1/4."),
+            new("Cube edge2/3unit. Volume in TWENTY-SEVENTHS?",8,"(2/3)^3=8/27."),
+            new("Cube volume27/64 cubic units. Edge length in QUARTERS?",3,"Cube edge3/4."),
+            new("Shaded rectangle total width10, left part c=4, height3. Shaded area?",18,"3(10-4)=18."),
+            new("Movie ticket850cents, sales29886dollars. Number of tickets?",3516,"29886/8.50=3516."),
+            new("Garden8½ft by6⅓ft. Perimeter in THIRDS of foot?",89,"2×(17/2+19/3)=89/3ft."),
+            new("Fence perimeter89/3ft, panels2/3ft wide. Panel span count in HALVES?",89,"89/3÷2/3=89/2 spans."),
+            new("Minimum whole panels needed for fence89/2 panel spans (no joint reuse)?",45,"Round44.5 up to45."),
+            new("(1/7)^3 denominator?",343,"7³."),
+            new("4 to first power equals?",4,"4^1=4."),
+            new("6 cubed equals?",216,"6×6×6=216."),
+            new("3 cubed times3 squared equals?",243,"3^5=243.")
+        ],
+        [L0613ExponentTruth] =
+        [
+            new("3×3×3×3×3=3^5. 1=yes,0=no.",1,"Original B,C equivalence."),
+            new("3×5=3^5. 1=yes,0=no.",0,"15 vs243."),
+            new("9×9×3=3^5. 1=yes,0=no.",1,"3²×3²×3=3^5."),
+            new("7+7+7=3+3+3+3+3+3+3. 1=yes,0=no.",1,"21 both."),
+            new("(1/7)^3=3/7. 1=yes,0=no.",0,"1/343 not3/7."),
+            new("4^1=4×1. 1=yes,0=no.",1,"Both4."),
+            new("6+6+6=6³. 1=yes,0=no.",0,"18 vs216."),
+            new("Noah four additions of5 yields20. 1=yes,0=no.",1,"Repeated addition."),
+            new("Diego starts1 and multiplies5 four times, yields625. 1=yes,0=no.",1,"5^4."),
+            new("A square of side3/5 has area9/25sq units. 1=yes,0=no.",1,"Square side."),
+            new("Cube side2/3 has volume8/27cu units. 1=yes,0=no.",1,"Cubic exponent."),
+            new("Cube volume27/64 has positive side3/4. 1=yes,0=no.",1,"(3/4)^3."),
+            new("Shaded rectangle area with height3, total width10, left widthc is3(10-c). 1=yes,0=no.",1,"Original A."),
+            new("The same shaded area equals30-3c. 1=yes,0=no.",1,"Original E."),
+            new("The shaded area equals3(c-10) when 0<c<10. 1=yes,0=no.",0,"Negative."),
+            new("At850cents/ticket,29886dollars sales represents3516 tickets. 1=yes,0=no.",1,"Exact division."),
+            new("A fence 44.5 panel-widths long requires rounding up to45 whole panels when panels are whole units and no reuse. 1=yes,0=no.",1,"Purchase constraint.")
         ]
     };
 
