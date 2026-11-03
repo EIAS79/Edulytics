@@ -211,9 +211,9 @@
       "nextOfficialLessonTriage": "PED:US-CCSS-MATH:G6:U01:L05",
       "exceptionNotice": "U01:L05 through U03:L06 remain unreviewed by current A-C acceptance sequence, not automatically BLOCKED; U03:L07 closed as explicit mapped independent exception, not blanket approval to skip earlier."
     },
-    "confirmedABCAuthoredClosures": 18,
-    "abcAuthoredReadyForStageD": 18,
-    "abcClosureNextLesson": "PED:US-CCSS-MATH:G6:U01:L19"
+    "confirmedABCAuthoredClosures": 19,
+    "abcAuthoredReadyForStageD": 19,
+    "abcClosureNextLesson": "PED:US-CCSS-MATH:G6:U02:L01"
   },
   "sharedBlockers": [
     {
@@ -2340,7 +2340,22 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify source diagram/applet accessibility, authenticated effective lesson, exact selected Practice and persisted teacher rubric; no full grade A-D evidence"
+      "nextStep": "Original two-part open tent capstone and 74×34in source sleeping-bag geometry authored with floor-required teacher rubric and independent fixed-answer practice; no source numeric practice.html. Stage D runtime/teacher persistence NOT_RUN.",
+      "abcAuthoringClosure": {
+        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l19-abc-authoring-closure-20261103.json",
+        "readyForStageD": true,
+        "gradeLabel": "ready for stage D",
+        "reviewComplete2021MarkerAdded": false,
+        "publisherSourceTextParity100": false,
+        "ownerAcademicApproval": true,
+        "ownerPublicationPermission": true,
+        "ownerAuthorizedCooldownSubstitute": true,
+        "testStatus": "AUTHORED_NOT_RUN",
+        "stageC": "REUSED_EXISTING_GEOMETRY_SELECTED_PRACTICE_TWO_CAPSTONE_SKILL_FAMILIES_AND_TEACHER_RUBRIC",
+        "stageD": "NOT_RUN",
+        "nextLesson": "PED:US-CCSS-MATH:G6:U02:L01",
+        "note": "Source bag is74×34 inches not independent2×6ft; source-compatible floor12×7ft total243ft² and longer12×8ft total270ft², both independently authored. Original 19 project remains teacher-scored with no standalone source practice file."
+      }
     },
     {
       "sortOrder": 20,
@@ -14353,7 +14368,7 @@
   "lastRubricCandidateCommit": "b0b44dace99266d33938bbb0062443876a35922a",
   "lastGradeSourceBoundaryTestCommit": "d076067c37ef3c059b1a27056ab4a8c99da8b1c8",
   "nextUnreviewedPublicSourceTaskLesson": "PED:US-CCSS-MATH:G6:U01:L04",
-  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U01:L19",
+  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U02:L01",
   "nextSharedCapabilityWork": "Owner-designated single-writer trace of actual selected Practice contract and teacher-rubric persistence for U01 L01-L03 (then all 147) + protected metadata predecessor study",
   "fullSourceIndexFiles": {
     "student": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
@@ -14367,7 +14382,7 @@
     "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l15-l16-source-nets-area-volume-boundaries.json"
   ],
   "nextDeepOriginalSourceActivityReview": null,
-  "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L19",
+  "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U02:L01",
   "nextSharedIntegrationAction": "Supervisor 1-designated single-writer shared RichV2 test coexistence with G7 PR #590, exact G6 lesson Practice, rubric storage, guarded Grade6 content materialization/promotion; issue #592 comment 6484465498",
   "lastSourceIndicesVerified": {
     "studentTitleMatches": 147,
@@ -14609,7 +14624,7 @@
     "failed": 0,
     "claimBoundary": "Independent numerical calculations only; committed grade-specific tests and real app have NOT_RUN"
   },
-  "lastConfirmedClosedAbcLesson": "PED:US-CCSS-MATH:G6:U01:L18",
-  "activeLesson": "PED:US-CCSS-MATH:G6:U01:L19",
+  "lastConfirmedClosedAbcLesson": "PED:US-CCSS-MATH:G6:U01:L19",
+  "activeLesson": "PED:US-CCSS-MATH:G6:U02:L01",
   "courseReadyForStageD": false
 }

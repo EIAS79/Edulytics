@@ -25,20 +25,23 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     public const string L17Concepts = "usccss.g6.u01.l17.square_cube_exponent_meaning";
     public const string L18CubeAreas = "usccss.g6.u01.l18.source_cube_surface_and_volume";
     public const string L18Units = "usccss.g6.u01.l18.cube_net_dimension_and_units";
+    public const string L19TentAreas = "usccss.g6.u01.l19.first_party_tent_panel_area";
+    public const string L19TentReasoning = "usccss.g6.u01.l19.open_design_reasoning";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures
        or L14NetArea or L14NetLogic or L15BoxArea or L15NetLogic
        or L16Measures or L16Concepts or L17Measures or L17Concepts
-       or L18CubeAreas or L18Units;
+       or L18CubeAreas or L18Units or L19TentAreas or L19TentReasoning;
     private static int Count(string family)=>family==Prism?14:family==Meaning?8:
         family==L13Polyhedra?15:family==L13Measures?13:
         family==L14NetArea?10:family==L14NetLogic?11:
         family==L15BoxArea?14:family==L15NetLogic?9:
         family==L16Measures?13:family==L16Concepts?9:
         family==L17Measures?19:family==L17Concepts?10:
-        family==L18CubeAreas?16:family==L18Units?11:0;
+        family==L18CubeAreas?16:family==L18Units?11:
+        family==L19TentAreas?26:family==L19TentReasoning?15:0;
 
     public static Problem Build(string family,Random random)
     {
@@ -56,7 +59,9 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             family==L16Concepts?L16ConceptsProblem(v):
             family==L17Measures?L17MeasuresProblem(v):
             family==L17Concepts?L17ConceptsProblem(v):
-            family==L18CubeAreas?L18CubeAreaProblem(v):L18UnitProblem(v);
+            family==L18CubeAreas?L18CubeAreaProblem(v):
+            family==L18Units?L18UnitProblem(v):
+            family==L19TentAreas?L19TentAreaProblem(v):L19TentReasoningProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -81,6 +86,23 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L19TentAreas=>v switch
+        {
+            0=>48m,1=>5m,2=>60m,3=>24m,4=>132m,
+            5=>64m,6=>80m,7=>168m,8=>36m,9=>12m,
+            10=>8m,11=>84m,12=>104m,
+            13=>136m,14=>74m,15=>144m,16=>84m,17=>7.5m,
+            18=>105m,19=>54m,20=>243m,21=>96m,22=>120m,
+            23=>270m,24=>27m,25=>10m,
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L19TentReasoning=>v switch
+        {
+            0=>1m,1=>0m,2=>0m,3=>1m,4=>1m,
+            5=>0m,6=>1m,7=>1m,8=>0m,9=>1m,
+            10=>0m,11=>1m,12=>1m,13=>0m,14=>1m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         L18CubeAreas=>v switch
@@ -226,7 +248,7 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
                 long.TryParse(f[1],NumberStyles.None,CultureInfo.InvariantCulture,out long d) &&
                 n>0 && d>0 && n<=1000000 && d<=1000000 && n*27==d;
         }
-        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts||family==L17Concepts||family==L18Units)return answer is ("0" or "1") &&
+        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts||family==L17Concepts||family==L18Units||family==L19TentReasoning)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -262,6 +284,59 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    // First-party worked-model practice for the student-led Unit 1 tent capstone.
+    // These are NOT single-answer solutions for the open-ended design assignment.
+    private static (string Prompt,string Explanation) L19TentAreaProblem(int v)=>v switch
+    {
+        0=>("Design example: four sleeping bags each2×6ft placed side by side with no aisle. Floor minimum8×6ft. Find FLOOR fabric area.","8×6=48 square feet; the floor is required."),
+        1=>("Design example: isosceles triangular tent cross-section has base8ft and vertical height3ft. Half the base is4ft. Find one sloping side length.","3–4–5 right triangle: sqrt(9+16)=5ft."),
+        2=>("Design example: tent length6ft and two sloping roof faces each5ft wide. Find combined ROOF fabric area.","2×5×6=60 square feet."),
+        3=>("Design example: tent triangular ends have base8ft and perpendicular height3ft. Find combined TWO END panels.","2×(8×3/2)=24 square feet."),
+        4=>("Design example: floor48ft², two roofs60ft² and two triangular ends24ft². Find ALL-panel fabric including floor, before door/seam/waste.","48+60+24=132 square feet."),
+        5=>("Independent roomy option: tent floor8ft wide by8ft long. Find floor fabric.","8×8=64 square feet."),
+        6=>("Independent roomy option: tent length8ft and two roof panels each sloping5ft. Find roof area.","2×5×8=80 square feet."),
+        7=>("Independent roomy option: floor64ft², roof80ft² and triangular end panels24ft². Find all-panel fabric.","64+80+24=168 square feet."),
+        8=>("Compare both independent tent models: compact area132ft² and longer tent168ft². Find increased fabric.","168-132=36 square feet."),
+        9=>("One triangular end is8ft wide and3ft tall. Find its area.","8×3÷2=12 square feet."),
+        10=>("Four sleeping bags each2ft wide placed side by side without gaps. Find total minimum floor width.","4×2=8 feet."),
+        11=>("Compact tent: roof60ft² and two ends24ft². Find the INCOMPLETE total if the required48ft² floor were accidentally forgotten.","60+24=84 square feet; incomplete because the floor is missing."),
+        12=>("Longer tent: roof80ft² and end panels24ft². Find the INCOMPLETE sum when the required64ft² floor is omitted.","80+24=104 square feet; incomplete because floor64ft² is missing."),
+        13=>("Source dimensions: one standard sleeping bag is34 inches wide. Four side-by-side bags occupy how many inches across?","4×34=136 inches, or 11 feet 4 inches, before an aisle."),
+        14=>("Source dimensions: a standard sleeping bag is74 inches long. State its exact length in inches.","74 inches = 6 feet 2 inches, not 6 feet."),
+        15=>("Source-aligned model: choose a 12-foot-wide tent floor. What is the floor width in inches?","12×12=144 inches, leaving 8 inches beyond four 34-inch bag widths."),
+        16=>("Source-aligned model: a 12-by-7-foot fabric floor accommodates four 74-by-34-inch sleeping bags without an aisle. Find its area.","12×7=84 square feet; width clearance8 inches and length clearance10 inches."),
+        17=>("Source-aligned model: triangle half-width6ft and height4.5ft. Find the sloping roof edge.","Pythagorean triple4.5–6–7.5; roof slope7.5ft."),
+        18=>("Source-aligned model: tent length7ft with two roof panels of sloping width7.5ft. Find both roof fabric areas combined.","2×7×7.5=105 square feet."),
+        19=>("Source-aligned model: two triangular ends each base12ft and height4.5ft. Find both end fabric panels.","2×(12×4.5÷2)=54 square feet."),
+        20=>("Source-aligned model with floor84ft², two roof faces105ft², two triangular ends54ft². Find all required panel fabric.","84+105+54=243 square feet, excluding seams, openings and waste."),
+        21=>("Longer source-aligned option width12ft length8ft, same bag fit assumptions. Find floor fabric area.","12×8=96 square feet."),
+        22=>("Longer source-aligned option: two roof faces each8ft long by7.5ft sloping width. Combined roof area?","2×8×7.5=120 square feet."),
+        23=>("Longer source-aligned option: floor96ft², roof120ft², end panels54ft². Find all required fabric.","96+120+54=270 square feet."),
+        24=>("Compare source-aligned length7ft model243ft² and length8ft model270ft². Additional fabric?","270-243=27 square feet."),
+        25=>("Source-aligned 7-foot floor has length84 inches; one sleeping bag length74 inches. How much spare floor length is available?","84-74=10 inches; a real tent also needs clearances and exit accessibility.") ,
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L19TentReasoningProblem(int v)=>v switch
+    {
+        0=>("Tent-design project: must a fabric estimate include a FLOOR in addition to roof and end panels? 1=yes,0=no.","The project expressly requires a floor."),
+        1=>("Every valid learner-designed tent for up to four people must use exactly132ft² of fabric. 1=yes,0=no.","132ft² is merely one first-party sample under declared assumptions, not a universal project answer."),
+        2=>("A chosen tent for four campers is valid solely because its numeric panel sum is correct, even if its floor cannot fit the sleeping bags. 1=yes,0=no.","Teacher must inspect capacity, dimensions and fit, not just arithmetic."),
+        3=>("For a sample triangular cross section base8ft and height3ft, the sloping edge equals5ft. 1=yes,0=no.","Half width4 with vertical height3 forms a3–4–5 triangle."),
+        4=>("A tent net needs each required fabric panel, with appropriate dimensions and adjoining edges. 1=yes,0=no.","Floor, end panels and sloping roof must be accounted for."),
+        5=>("A fabric estimate in square feet may simply count cubic feet of tent capacity instead. 1=yes,0=no.","Fabric is two-dimensional surface area, not three-dimensional volume."),
+        6=>("The sample floor8×6ft supports four2×6ft sleeping bags side by side, but leaves no spare aisle. 1=yes,0=no.","The sample is deliberately tight and names its no-aisle assumption."),
+        7=>("Tent designers should explain and compare why size, height and shape affect fabric area, rather than report one number only. 1=yes,0=no.","Design reasoning and peer comparison are essential."),
+        8=>("If two tent designs have equal fabric area, they must provide identical headroom and usable floor area. 1=yes,0=no.","Different distributions of surface area can give different usable space."),
+        9=>("A teacher should examine a learner's drawing, stated assumptions, panel decomposition and peer explanation independently of auto-checked numeric practice. 1=yes,0=no.","Open geometry and design trade-offs require a teacher rubric."),
+        10=>("Four 34-inch-wide sleeping bags fit side by side across a 6-foot-wide floor. 1=yes,0=no.","Four bags need 136 inches width; 6 feet gives only72 inches."),
+        11=>("A 12-foot-wide floor gives 8 inches extra total width after placing four 34-inch-wide bags side by side. 1=yes,0=no.","144-136=8 inches."),
+        12=>("A 7-foot-long floor gives10 inches extra length after placing a74-inch-long bag. 1=yes,0=no.","84-74=10 inches."),
+        13=>("Source-aligned 12-by-7-foot floor provides a generous aisle beside four side-by-side sleeping bags. 1=yes,0=no.","Only8 inches total spare width; no usable aisle."),
+        14=>("In the source-aligned larger tent example, increasing length to8 feet increases the required fabric by27 square feet. 1=yes,0=no.","The two roof panels and floor increase total area from243 to270.") ,
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 

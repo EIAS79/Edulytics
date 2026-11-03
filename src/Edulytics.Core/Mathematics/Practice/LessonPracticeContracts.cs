@@ -1629,6 +1629,22 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Grade 6 U01:L19: open-ended student-designed tent capstone.
+        // Selected Practice reinforces polygon-area decomposition under named
+        // assumptions; the student project, drawing and peer review remain
+        // TEACHER_REVIEW_REQUIRED, never certified by a numeric score.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L19",
+            "geometry.area_tiling",
+            "G6_TENT_CAPSTONE_FLOOR_ROOF_ENDS_AND_DESIGN",
+            [
+                "usccss.g6.u01.l19.first_party_tent_panel_area",
+                "usccss.g6.u01.l19.open_design_reasoning"
+            ],
+            "G6_U01_L19_OWNER_ORIGINAL_MATH_TEACHER_REVIEW_OPEN_PROJECT",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
