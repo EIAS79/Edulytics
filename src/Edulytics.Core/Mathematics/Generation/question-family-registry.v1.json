@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u02.l04.color_mixture_quantities",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-original-color-ingredient-model-and-source-Diego-Practice-P2",
+      "representations": ["numeric", "colored_mix_discrete_diagram"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u02.l04.same_shade_proportions",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "true-false-cross-multiplication-preserves-mixture-proportions-under-same-materials",
+      "representations": ["numeric", "accessible_dough_alternative"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u02.l03.recipe_batch_scale",
       "version": 1,
       "skillId": "ratio.unit_rate",

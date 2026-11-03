@@ -17,6 +17,8 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L02Cards = "usccss.g6.u02.l02.three_ingredient_ratio_cards";
     public const string L03RecipeBatches = "usccss.g6.u02.l03.recipe_batch_scale";
     public const string L03EqualTaste = "usccss.g6.u02.l03.same_taste_equivalent_ratios";
+    public const string L04ColorAmounts = "usccss.g6.u02.l04.color_mixture_quantities";
+    public const string L04EqualShade = "usccss.g6.u02.l04.same_shade_proportions";
 
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
@@ -124,8 +126,50 @@ internal static class UsCcssG6Unit2RatioQuestions
         ("Do spice-mix mustard:chili:salt 3:5:1 and 9:15:2 preserve the batch ratio? 1=yes,0=no.",0,"Salt was doubled rather than tripled.")
     ];
 
+    // Color-mixing ratios from original teacher/student/practice tasks, recast
+    // as authored single-number selected Practice. Physical color matching and
+    // accessibility/tactile dough experiments are teacher-assessed.
+    private static readonly (string Prompt,int Answer,string Explanation)[] ColorAmounts =
+    [
+        ("For a mixture 5 mL blue and 15 mL yellow, how many mL BLUE for TWO identical batches?",10,"Both ingredient quantities double."),
+        ("For a mixture 5 mL blue and 15 mL yellow, how many mL YELLOW for TWO identical batches?",30,"15 × 2 = 30 mL."),
+        ("Diego uses 10 tbsp yellow and 2 tbsp blue. How many tbsp yellow would go with 3 tbsp blue to preserve shade?",15,"Yellow-to-blue is 5:1; 3 blue needs 15 yellow."),
+        ("Diego uses 10 tbsp yellow and 2 tbsp blue. How many tbsp blue with 15 tbsp yellow to preserve shade?",3,"15:3 = 10:2."),
+        ("A 1:3 blue:yellow formula has 25 mL blue. How many total mL yellow does it need?",75,"25 × 3 = 75 mL yellow."),
+        ("An altered 5:15 mL blue:yellow mixture received +20 mL of EACH and now is 25:35. How many MORE mL yellow to restore 1:3?",40,"Target yellow75; 75-35=40 mL."),
+        ("A 17 mL blue and 13 mL yellow mixture needs 1:3 blue:yellow. How much EXTRA yellow must be added?",38,"Yellow target51; 51-13=38 mL."),
+        ("Clare's sky blue uses 2 cups blue for 1 gallon white. For TWO batches, how many cups BLUE?",4,"2 × 2 = 4 cups blue."),
+        ("Clare's sky blue uses 2 cups blue for 1 gallon white. For TWO batches, how many gallons WHITE?",2,"1 × 2 = 2 gallons white."),
+        ("Diego has 10 tbsp yellow for 2 tbsp blue. If BOTH double, how many tbsp yellow?",20,"10 × 2 = 20 tbsp."),
+        ("Diego has 10 tbsp yellow for 2 tbsp blue. If BOTH double, how many tbsp blue?",4,"2 × 2 = 4 tbsp."),
+        ("Purple formula blue:red=8:3. Jada has 24 mL blue. How many mL red preserve the ratio?",9,"Scale both by3: 24:9."),
+        ("Diego's original yellow:blue=10:2. How many tbsp yellow for ONE tbsp blue?",5,"10:2 equivalent to 5:1."),
+        ("Diego's original yellow:blue=10:2. How many tbsp blue for 30 tbsp yellow?",6,"Triple every component:30:6."),
+        ("An independent orange mix uses3 tbsp red and6 tbsp yellow. Four batches: how many tbsp RED?",12,"3 ×4=12 tbsp red."),
+        ("Diego's original green mix has10 tbsp yellow and2 tbsp blue. How many tbsp BLUE in one batch?",2,"Given count is 2 tablespoons blue."),
+        ("A purple mix uses 8 mL blue and 3 mL red. How many mL BLUE in the source-size batch?",8,"The first named ingredient quantity is 8 mL."),
+        ("Cumulative square area: a square of side5ft occupies how many square feet?",25,"5×5=25 square feet.")
+    ];
+
+    private static readonly (string Prompt,int Answer,string Explanation)[] EqualShades =
+    [
+        ("Will 5:15 blue:yellow and10:30 blue:yellow predict the same shade under consistent ingredients? 1=yes,0=no.",1,"Both double."),
+        ("Will 5:15 blue:yellow and25:35 blue:yellow predict the same shade? 1=yes,0=no.",0,"Adding 20 to each does not preserve the ratio."),
+        ("Will 10:2 yellow:blue and15:3 yellow:blue preserve Diego's shade? 1=yes,0=no.",1,"Both yellow:blue ratios are 5:1."),
+        ("Will 10:2 yellow:blue and11:3 yellow:blue preserve Diego's shade? 1=yes,0=no.",0,"11:3 is not 5:1."),
+        ("Will 8:3 blue:red and24:9 blue:red preserve the purple recipe? 1=yes,0=no.",1,"Both scaled by3."),
+        ("Will 8:3 blue:red and16:9 blue:red preserve the purple recipe? 1=yes,0=no.",0,"Scale factors are inconsistent."),
+        ("Will 2 cups blue:1 gallon white and4 cups blue:2 gallons white preserve the two-batch recipe? 1=yes,0=no.",1,"Both ingredient amounts double in their own units."),
+        ("Will 2 cups blue:1 gallon white and4 cups blue:1 gallon white preserve the recipe? 1=yes,0=no.",0,"Only blue increases."),
+        ("Will 5:15 blue:yellow and17:51 blue:yellow preserve the numeric ratio? 1=yes,0=no.",1,"Both simplify to1:3."),
+        ("Will 5:15 blue:yellow and17:13 blue:yellow preserve the ratio? 1=yes,0=no.",0,"17:13 differs from1:3."),
+        ("Does 1 cup flour:5 tbsp water and2 cups flour:10 tbsp water preserve proportions? 1=yes,0=no.",1,"Equal scaling can preserve dough texture under consistent mixing."),
+        ("Does 1 cup flour:5 tbsp water and2 cups flour:6 tbsp water preserve proportions? 1=yes,0=no.",0,"Scaling is not common for both quantities.")
+    ];
+
     public static bool Supports(string? family) =>
-        family is L01Collections or L01Shade or L02Diagrams or L02Cards or L03RecipeBatches or L03EqualTaste;
+        family is L01Collections or L01Shade or L02Diagrams or L02Cards or L03RecipeBatches or L03EqualTaste
+        or L04ColorAmounts or L04EqualShade;
 
     public static Problem Build(string family, Random random)
     {
@@ -139,11 +183,19 @@ internal static class UsCcssG6Unit2RatioQuestions
             L02Cards => Cards.Length,
             L03RecipeBatches => RecipeBatches.Length,
             L03EqualTaste => EqualTaste.Length,
+            L04ColorAmounts => ColorAmounts.Length,
+            L04EqualShade => EqualShades.Length,
             _ => throw new ArgumentOutOfRangeException(nameof(family))
         });
+        if (family is L04ColorAmounts or L04EqualShade)
+        {
+            var r=family==L04ColorAmounts?ColorAmounts[variant]:EqualShades[variant];
+            return new(family,r.Prompt,
+                r.Explanation+" Teacher checks actual mixture observations, same-shade model, correct units and labeled discrete diagrams.",
+                AssessmentItemType.Numeric,new Dictionary<string,int>{{"variant",variant}});
+        }
         if (family is L03RecipeBatches or L03EqualTaste)
         {
-            var row=family==L03RecipeBatches?RecipeBatches[variant]:EqualTaste[variant];
             return new(family,row.Prompt,
                 row.Explanation+" Teacher checks the student's physical recipe grouping, visual ratios, ingredient units and explanation separately.",
                 AssessmentItemType.Numeric,new Dictionary<string,int>{{"variant",variant}});
@@ -192,6 +244,8 @@ internal static class UsCcssG6Unit2RatioQuestions
             L02Cards => Cards.Length,
             L03RecipeBatches => RecipeBatches.Length,
             L03EqualTaste => EqualTaste.Length,
+            L04ColorAmounts => ColorAmounts.Length,
+            L04EqualShade => EqualShades.Length,
             _ => 0
         });
 
@@ -199,6 +253,11 @@ internal static class UsCcssG6Unit2RatioQuestions
     {
         if (!Valid(family,p)) throw new ArgumentException("Invalid ratio-family variant.");
         var v=p["variant"];
+        if (family is L04ColorAmounts or L04EqualShade)
+        {
+            var r=family==L04ColorAmounts?ColorAmounts[v]:EqualShades[v];
+            return r.Answer.ToString(CultureInfo.InvariantCulture);
+        }
         if (family is L03RecipeBatches or L03EqualTaste)
         {
             var row=family==L03RecipeBatches?RecipeBatches[v]:EqualTaste[v];
@@ -229,6 +288,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     {
         if (!Valid(family,p) || string.IsNullOrWhiteSpace(answer)) return false;
         var expected=Solve(family,p!);
+        if (family is L04ColorAmounts or L04EqualShade)
+            return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var colorNumber)
+                && colorNumber.ToString(CultureInfo.InvariantCulture)==expected;
         if (family is L03RecipeBatches or L03EqualTaste)
             return int.TryParse(answer,NumberStyles.None,CultureInfo.InvariantCulture,out var n)
                 && n.ToString(CultureInfo.InvariantCulture)==expected;

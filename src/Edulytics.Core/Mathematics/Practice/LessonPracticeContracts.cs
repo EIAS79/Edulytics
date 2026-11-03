@@ -1691,6 +1691,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 U02:L04 Color Mixtures. Original first-edition teacher
+        // model uses physical paint/colored water and optional accessible dough.
+        // Exact selected math checks quantities and proportionality, not shade.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COLOR_MIXTURES_SAME_SHADE_AND_SCALE",
+            [
+                "usccss.g6.u02.l04.color_mixture_quantities",
+                "usccss.g6.u02.l04.same_shade_proportions"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
