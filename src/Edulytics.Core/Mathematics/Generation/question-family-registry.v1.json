@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u03.l02.unit_magnitude_and_conversion",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-string-yard-feet-inches-length-volume-mass-and-cumulative-apple-juice-hats-light",
+      "representations": [
+        "numeric",
+        "unit_benchmark"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u03.l02.choose_appropriate_unit_category",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "physical-magnitude-comparisons-and-attribute-appropriate-units-source-P1-to-P3",
+      "representations": [
+        "boolean_reasoning",
+        "measurement_units"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u03.l01.per_one_source_rate",
       "version": 1,
       "skillId": "ratio.unit_rate",

@@ -61,6 +61,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0301PerOne = "usccss.g6.u03.l01.per_one_source_rate";
     public const string L0301RateMeaning = "usccss.g6.u03.l01.source_rate_meaning";
 
+    public const string L0302UnitMagnitudes = "usccss.g6.u03.l02.unit_magnitude_and_conversion";
+    public const string L0302UnitCategories = "usccss.g6.u03.l02.choose_appropriate_unit_category";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -697,6 +700,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Reciprocal units minutes/window and windows/minute describe related but different rate questions. 1=yes,0=no.",1,"Swap numerator and denominator."),
             new("A mathematical prediction of a building's window-washing time proves the current real window count. 1=yes,0=no.",0,"The window count and rate are historical classroom assumptions."),
             new("A per-one rate is expressed using named units, such as feet per second or dollars per hour. 1=yes,0=no.",1,"Units determine the interpretation.")
+        ],
+        [L0302UnitMagnitudes] =
+        [
+            new("A 2-yard piece of string equals how many FEET?",6,"2 yards×3feet/yard=6 feet."),
+            new("A 2-yard piece of string equals how many INCHES?",72,"2×36inches=72 inches."),
+            new("One yard of string equals how many INCHES?",36,"3 feet×12inches/foot=36."),
+            new("One meter equals how many CENTIMETERS?",100,"One meter=100cm."),
+            new("One liter equals how many MILLILITERS?",1000,"One liter=1000mL."),
+            new("A 200mL volume is what whole-number FIFTH of one liter? Enter numerator when denominator5.",1,"200/1000=1/5."),
+            new("A recipe uses5 cups apple juice and2 cups sparkling water per7 total cups. For35 cups total, APPLE cups?",25,"35/7×5=25."),
+            new("A recipe uses5 cups apple juice and2 cups sparkling water per7 total cups. For35 cups total, SPARKLING cups?",10,"35/7×2=10."),
+            new("Three hats cost2250 cents. Cost per hat in CENTS?",750,"2250/3=750cents."),
+            new("Three hats cost2250 cents. Number of hats purchasable with6000 cents at same price?",8,"6000/750=8."),
+            new("Light travels180 million km in10minutes in model. Millions of km per MINUTE?",18,"180/10=18 million."),
+            new("Light travels180 million km in10minutes in model. Kilometers per SECOND?",300000,"180000000/600=300000 km/s."),
+            new("A yard equals3feet. A string of4yards is how many feet?",12,"4×3=12."),
+            new("A string is72inches long. How many yards?",2,"72/36=2 yards."),
+            new("A milliliter is one THOUSANDTH of a liter. How many milliliters in3liters?",3000,"3×1000=3000mL."),
+            new("Source benchmark: two meters of string correspond to how many CENTIMETERS?",200,"2×100=200cm.")
+        ],
+        [L0302UnitCategories] =
+        [
+            new("A centimeter is a unit of length, not of volume. 1=yes,0=no.",1,"cm measures length."),
+            new("A square centimeter is an appropriate unit of linear length. 1=yes,0=no.",0,"Square cm measures area."),
+            new("A cubic centimeter measures volume. 1=yes,0=no.",1,"Three-dimensional extent."),
+            new("A kilogram is an appropriate unit of mass for a hippopotamus. 1=yes,0=no.",1,"Large animal mass."),
+            new("A millimeter is larger than a meter. 1=yes,0=no.",0,"One meter=1000mm."),
+            new("A kilometer is larger than a meter. 1=yes,0=no.",1,"1km=1000m."),
+            new("A yard is longer than a foot. 1=yes,0=no.",1,"1yard=3feet."),
+            new("A quart is smaller than a cup in customary volume measurement. 1=yes,0=no.",0,"1quart=4cups."),
+            new("A pound is larger than an ounce in customary weight measurement. 1=yes,0=no.",1,"1pound=16ounces."),
+            new("A liter is larger than a milliliter. 1=yes,0=no.",1,"1liter=1000mL."),
+            new("A gram is larger than a kilogram. 1=yes,0=no.",0,"1kg=1000g."),
+            new("It is sensible to measure a large lake volume in cubic kilometers. 1=yes,0=no.",1,"Large-scale volume."),
+            new("It is sensible to measure a spaghetti noodle length in centimeters. 1=yes,0=no.",1,"Small length."),
+            new("A tissue box surface area can be measured in square inches. 1=yes,0=no.",1,"Surface area uses square units.")
         ]
     };
 
