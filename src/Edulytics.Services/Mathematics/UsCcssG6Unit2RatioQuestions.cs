@@ -166,6 +166,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0502PlaceValueArithmetic = "usccss.g6.u05.l02.base_ten_decimal_arithmetic";
     public const string L0502PlaceValueLogic = "usccss.g6.u05.l02.align_decimal_place_values";
 
+    public const string L0503DecimalCalculations = "usccss.g6.u05.l03.decimal_sum_difference_results";
+    public const string L0503DecimalPrinciples = "usccss.g6.u05.l03.placevalue_borrowing_correctness";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2138,6 +2141,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A physical base-ten block representation can show same decimal using different regroupings. 1=yes,0=no.",1,"E.g.10 thousandths=hundredth."),
             new("A decimal point should be aligned in vertical addition to match place value. 1=yes,0=no.",1,"Column unit alignment."),
             new("Teacher should verify blocks and visual digit placement separately from a numeric sum. 1=yes,0=no.",1,"Drawing rubric.")
+        ],
+        [L0503DecimalCalculations] =
+        [
+            new("1.13 minus0.46, answer in HUNDREDTHS?",67,"113-46=67 hundredths."),
+            new("0.027+0.004 in THOUSANDTHS?",31,"27+4=31 thousandths."),
+            new("0.203+0.01 in THOUSANDTHS?",213,"203+10=213."),
+            new("1.2+0.145 in THOUSANDTHS?",1345,"1200+145=1345."),
+            new("20-1.97 in HUNDREDTHS?",1803,"2000-197=1803."),
+            new("0.3-0.006 in THOUSANDTHS?",294,"300-6=294."),
+            new("14.6-1.4 in TENTHS?",132,"146-14=132."),
+            new("38.60-6.75 in HUNDREDTHS?",3185,"3860-675=3185."),
+            new("241.76-2.18 in HUNDREDTHS?",23958,"24176-218=23958."),
+            new("Three pencils each30cents cost in CENTS?",90,"3×30=90."),
+            new("A hat1450cents and2binders320cents each. Cost in CENTS?",2090,"1450+640=2090."),
+            new("Three pencils30c each,hat1450c,2binders320c each. Total in CENTS?",2180,"90+1450+640=2180."),
+            new("Pencils cost30c each; maximum whole pencils purchasable with500cents?",16,"500/30=16 remainder20."),
+            new("Prism7½cm×12cm×15½cm. Volume in CUBIC CENTIMETERS?",1395,"7.5×12×15.5=1395."),
+            new("Prism7½×12×15½cm packed with1/2cm cubes. Number of small cubes?",11160,"15×24×31=11160."),
+            new("Car travels75miles in60minutes. Distance in18minutes in HALF-MILE units?",45,"75×18/60=22.5miles."),
+            new("0.012-0.007 in THOUSANDTHS?",5,"12-7=5."),
+            new("0.300-0.006 in THOUSANDTHS?",294,"300-6=294.")
+        ],
+        [L0503DecimalPrinciples] =
+        [
+            new("1.13-0.46=0.67. 1=yes,0=no.",1,"113-46=67 hundredths."),
+            new("0.027+0.004=0.031. 1=yes,0=no.",1,"31 thousandths."),
+            new("0.203+0.01=0.213. 1=yes,0=no.",1,"Align hundredths."),
+            new("1.2+0.145=1.345. 1=yes,0=no.",1,"1.200+0.145."),
+            new("20-1.97 cannot be calculated because20 has no decimal digits. 1=yes,0=no.",0,"20.00-1.97=18.03."),
+            new("0.3-0.006=0.294. 1=yes,0=no.",1,"0.300-.006=.294."),
+            new("0.3-0.006=0.024. 1=yes,0=no.",0,"Wrong place-value borrowing."),
+            new("14.6-1.4=13.2. 1=yes,0=no.",1,"14.6-1.4=13.2."),
+            new("38.60-6.75=31.85. 1=yes,0=no.",1,"Regroup hundredths/tenths."),
+            new("241.76-2.18=239.58. 1=yes,0=no.",1,"Subtract using aligned decimal."),
+            new("Three pencils+hat+two binders cost21.80 dollars and exceed20 dollars. 1=yes,0=no.",1,".90+14.50+6.40=21.80."),
+            new("A 0.5cm cube volume is0.125cm³, so11160 of them pack1395cm³. 1=yes,0=no.",1,"11160×1/8=1395."),
+            new("75miles in60minutes means22.5miles in18minutes at constant rate. 1=yes,0=no.",1,"75×18/60."),
+            new("The same decimal number can be written with trailing zeros without changing its value. 1=yes,0=no.",1,"0.3=0.300.")
         ]
     };
 
