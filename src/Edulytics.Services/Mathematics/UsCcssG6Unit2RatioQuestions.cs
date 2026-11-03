@@ -253,6 +253,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0616RatesAndTables = "usccss.g6.u06.l16.related_quantities_numeric";
     public const string L0616RelatedLogic = "usccss.g6.u06.l16.two_variable_equation_interpretation";
 
+    public const string L0617SpeedTables = "usccss.g6.u06.l17.constant_speed_numeric";
+    public const string L0617SpeedLogic = "usccss.g6.u06.l17.constant_speed_equation_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3417,6 +3420,51 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("12.34×0.7=8.638. 1=yes,0=no.",1,"Decimal product."),
             new("1.375÷0.11=12.5. 1=yes,0=no.",1,"Division."),
             new("In a coordinate graph, x and y axis units are necessary for interpreting points meaningfully. 1=yes,0=no.",1,"Quantity meaning.")
+        ],
+        [L0617SpeedTables] =
+        [
+            new("Car speed50mph. Distance in2hours MILES?",100,"50×2=100."),
+            new("Car speed50mph. Distance in1.5hours MILES?",75,"50×1.5=75."),
+            new("Car speed50mph. Hours for50miles?",1,"50/50=1."),
+            new("Car speed50mph. Hours for300miles?",6,"300/50=6."),
+            new("Ship plot says25miles in1hour. Speed mph?",25,"25/1=25."),
+            new("Ship25mph. Hours for100miles?",4,"100/25=4."),
+            new("Ship25mph. Hours for250miles?",10,"250/25=10."),
+            new("Ship25mph. Distance in8hours MILES?",200,"25×8=200."),
+            new("2^x=8, find x?",3,"2³=8."),
+            new("2^x=2, x?",1,"2¹=2."),
+            new("x²=100, positive x?",10,"10²=100."),
+            new("x²=1/100, positive x in TENTHS?",1,"x=1/10."),
+            new("x¹=7, x?",7,"x=7."),
+            new("2^x×2³=2⁷. x?",4,"x+3=7."),
+            new("2^x÷2³=2⁵. x?",8,"x-3=5."),
+            new("5x+30x-15x at x=3?",60,"20x=60."),
+            new("Forx=1,y=2,z=3, evaluate7x²-z?",4,"7-3=4."),
+            new("Forx=1,y=2,z=3, (x+4)³-y?",123,"125-2=123."),
+            new("Forx=1,y=2,z=3, y(x+3³)?",56,"2×28=56."),
+            new("Forx=1,y=2,z=3, (7-y+z)²?",64,"8²=64."),
+            new("Forx=1,y=2,z=3, .241x+x³ in THOUSANDTHS?",1241,"1.241.")
+        ],
+        [L0617SpeedLogic] =
+        [
+            new("Car50mph distance d and time t satisfy d=50t. 1=yes,0=no.",1,"Constant speed."),
+            new("In d=50t, when time input t is chosen, distance d is dependent. 1=yes,0=no.",1,"Depends on time."),
+            new("Car50mph distance d=300 gives time6hours. 1=yes,0=no.",1,"300/50=6."),
+            new("Ship graph point(25,1) on axes distance,time means25miles in1hour. 1=yes,0=no.",1,"Original axes."),
+            new("Ship speed25mph gives t=d/25. 1=yes,0=no.",1,"Time as function of distance."),
+            new("Ship point(250,10) means250hours in10miles. 1=yes,0=no.",0,"Reversed axes."),
+            new("A car50mph and ship25mph cover same distance in same positive time. 1=yes,0=no.",0,"Car twice speed."),
+            new("For a fixed positive speed, distance and time form a proportional linear relationship. 1=yes,0=no.",1,"d=vt."),
+            new("If one switches which variable is independent, equation and axes should be interpreted accordingly. 1=yes,0=no.",1,"Inverse relation t=d/v."),
+            new("2^x=8 hasx=3. 1=yes,0=no.",1,"Exponent."),
+            new("2^x×2³=2⁷ givesx=4. 1=yes,0=no.",1,"Same base."),
+            new("2^x÷2³=2⁵ givesx=8. 1=yes,0=no.",1,"Same base."),
+            new("5x+30x-15x=20x for all x. 1=yes,0=no.",1,"Equivalent."),
+            new("5(x+6x-3x) equals5x+30x-15x. 1=yes,0=no.",1,"Original A."),
+            new("(5+30-15)x equals20x. 1=yes,0=no.",1,"Original B."),
+            new("5x(1+6-3) equals20x. 1=yes,0=no.",1,"Original D."),
+            new("x(5+30x-15x) is equivalent to20x for all x. 1=yes,0=no.",0,"Extra x multiplication."),
+            new("Source constant-speed graph must carry both time and distance units. 1=yes,0=no.",1,"Axis meaning.")
         ]
     };
 
