@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u09.l06.first_party_proportional_allocation_math",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-families16children8computers-schools120with10advisors-mascot72votes-50blockmap",
+      "representations": [
+        "ratio_table",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u09.l06.first_party_representatives_fairness_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-representatives-vs-individual-ballots-proportions-whole-people-connected-district-maps",
+      "representations": [
+        "boolean_reasoning",
+        "teacher_map_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l05.first_party_multichoice_voting_arithmetic",
       "version": 1,
       "skillId": "ratio.unit_rate",

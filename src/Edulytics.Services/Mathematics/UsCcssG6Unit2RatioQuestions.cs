@@ -391,6 +391,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0905VotingMath = "usccss.g6.u09.l05.first_party_multichoice_voting_arithmetic";
     public const string L0905VotingLogic = "usccss.g6.u09.l05.first_party_multichoice_election_reasoning";
 
+    public const string L0906Allocations = "usccss.g6.u09.l06.first_party_proportional_allocation_math";
+    public const string L0906RepresentationLogic = "usccss.g6.u09.l06.first_party_representatives_fairness_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5770,6 +5773,65 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Teacher should evaluate each student's actual class votes and stated rules before asserting a unique result. 1=yes,0=no.",1,"Open-ended."),
             new("At first vote, number of voters who did not choose softball is24 of40. 1=yes,0=no.",1,"40-16."),
             new("A ranked ballot's secondary preferences matter if the first preference is eliminated. 1=yes,0=no.",1,"Transfer mechanism.")
+        ],
+        [L0906Allocations] =
+        [
+            new("Five source families have4,2,6,2,2 children. Total children?",16,"4+2+6+2+2=16."),
+            new("These families share8 computers equally per child. Children per computer?",2,"16/8=2."),
+            new("A family with4 children should receive how many of8 computers at2children/computer?",2,"4/2=2."),
+            new("A family with2 children should receive computers under exact ratio?",1,"2/2=1."),
+            new("A family with6 children should receive computers under exact ratio?",3,"6/2=3."),
+            new("Second source group families3,1,2,5,1,8 children. Total children?",20,"3+1+2+5+1+8=20."),
+            new("Second group20 children and8 computers. Children per computer in HALVES?",5,"20/8=2.5 children/computer."),
+            new("Second group20 children and8 computers. Ideal computer share for8-child family in FIFTHS?",16,"8/(20/8)=3.2=16/5."),
+            new("In second group, ideal computer allocation to5-child family?",2,"5/(20/8)=2."),
+            new("Three source classes mascot votes A9banana3sea,B14banana10sea,C6banana30sea. Total banana votes?",29,"9+14+6=29."),
+            new("Same classes. Total sea lion votes?",43,"3+10+30=43."),
+            new("Same classes. All student ballots total?",72,"29+43=72."),
+            new("One-vote-per-class rule gives how many class votes for banana slugs?",2,"Classes A andB vote banana."),
+            new("One-vote-per-class rule gives how many class votes for sea lions?",1,"Class C votes sea."),
+            new("School district D48,E12,F24,G36. Total pupils?",120,"48+12+24+36=120."),
+            new("District120 pupils10 advisers. Pupils per adviser?",12,"120/10=12."),
+            new("School D48 students gets how many proportional advisers?",4,"48/12=4."),
+            new("School E12 students gets how many proportional advisers?",1,"12/12=1."),
+            new("School F24 students gets how many proportional advisers?",2,"24/12=2."),
+            new("School G36 students gets how many proportional advisers?",3,"36/12=3."),
+            new("Different district schools500,200,140,10. Total students?",850,"500+200+140+10=850."),
+            new("Different district850 pupils for10 advisers. Average pupils per adviser?",85,"850/10=85."),
+            new("Town has50 blocks with20 gold and30 green. What percent GOLD?",40,"20/50=40%."),
+            new("Town50 blocks with20 gold and30 green. What percent GREEN?",60,"30/50=60%."),
+            new("Five districts each contain10 blocks; how many blocks total?",50,"5×10=50."),
+            new("If each district is one original color row, how many districts prefer green?",3,"Three bottom green rows."),
+            new("Independent equitable allocation: schools15,30,45 pupils share6 representatives. Total pupils?",90,"15+30+45=90."),
+            new("Same independent example. Pupils per representative?",15,"90/6=15."),
+            new("Independent example: school15 pupils gets how many proportional representatives?",1,"15/15=1."),
+            new("Independent example: school30 pupils gets how many proportional representatives?",2,"30/15=2."),
+            new("Independent example: school45 pupils gets how many proportional representatives?",3,"45/15=3.")
+        ],
+        [L0906RepresentationLogic] =
+        [
+            new("The first computer distribution16 children8 computers can allocate2 children per computer exactly. Enter1 yes,0 no.",1,"16/8=2."),
+            new("A source family with6 children receives3 computers at2 children/computer. Enter1 yes,0 no.",1,"6/2=3."),
+            new("The second group with20 children8 computers has an average2.5 children per computer. Enter1 yes,0 no.",1,"20/8=2.5."),
+            new("2.5 computers is a practical physical handout to a family without splitting computers. Enter1 yes,0 no.",0,"Only whole devices."),
+            new("One representative per class may produce a different choice from counting every student ballot. Enter1 yes,0 no.",1,"Class A/B vs combined student totals."),
+            new("In source mascot totals banana29 versus sea43, individual ballots favor sea lions. Enter1 yes,0 no.",1,"43>29."),
+            new("With one class vote each, classes A and B select banana while C selects sea. Enter1 yes,0 no.",1,"2 to1 class vote."),
+            new("District schools48,12,24,36 with10 advisers can allocate4,1,2,3 exactly. Enter1 yes,0 no.",1,"All integer quotas."),
+            new("District pupils per adviser under exact120/10 allocation equal12. Enter1 yes,0 no.",1,"120/10."),
+            new("Schools500,200,140,10 have total850 students. Enter1 yes,0 no.",1,"Sum850."),
+            new("When ideal quotas are fractional, a fixed total of whole representatives requires an explicit rounding/allocation rule. Enter1 yes,0 no.",1,"Indivisible seats."),
+            new("In the source with10 advisers and a school of10 students, guaranteeing at least one adviser can conflict with exact proportional quotas. Enter1 yes,0 no.",1,"Ideal quota10/85<1."),
+            new("Towns with20 gold and30 green blocks have40% gold and60% green. Enter1 yes,0 no.",1,"Block shares."),
+            new("Five districts of10 blocks each cover50 blocks. Enter1 yes,0 no.",1,"5×10."),
+            new("Changing district boundaries may change the representative outcome even when individual preferences are unchanged. Enter1 yes,0 no.",1,"Aggregation effects."),
+            new("Any five equally sized districts necessarily give the same representative outcome regardless of how contiguous boundaries are drawn. Enter1 yes,0 no.",0,"Boundaries matter."),
+            new("An original district-drawing task requires visual inspection of connected areas, equal sizes and vote totals. Enter1 yes,0 no.",1,"Teacher-scored geometry."),
+            new("One class vote per class automatically respects the number of pupils in that class. Enter1 yes,0 no.",0,"Different class sizes."),
+            new("Fairness requires an explicit comparison rule and is not settled by one unique publisher numerical answer. Enter1 yes,0 no.",1,"Model choice."),
+            new("This lesson's optional project includes no standalone source practice.html. Enter1 yes,0 no.",1,"Original archive absent."),
+            new("A rounded seat allocation should always be checked for total seats and minimum eligibility constraints. Enter1 yes,0 no.",1,"Feasibility."),
+            new("Proportional comparisons and map-district design should be discussed as mathematical models, not political endorsements. Enter1 yes,0 no.",1,"Neutral instruction.")
         ]
     };
 
