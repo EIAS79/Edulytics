@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u07.l12.four_quadrant_plot_and_axis_scale",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-fifths-coordinate-pairs-and-axis-data-minus250-to350",
+      "representations": [
+        "scaled_coordinate_grid",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u07.l12.axis_precision_and_plot_logic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-scale-different-coordinates-to-fit-and-unit-correct-graph",
+      "representations": [
+        "boolean_reasoning",
+        "coordinate_grid"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u07.l11.coordinates_and_axis_locations",
       "version": 1,
       "skillId": "ratio.unit_rate",

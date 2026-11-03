@@ -298,6 +298,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0711Coordinates = "usccss.g6.u07.l11.coordinates_and_axis_locations";
     public const string L0711CoordinateLogic = "usccss.g6.u07.l11.coordinate_reasoning";
 
+    public const string L0712PlotAndScale = "usccss.g6.u07.l12.four_quadrant_plot_and_axis_scale";
+    public const string L0712ScaleReasoning = "usccss.g6.u07.l12.axis_precision_and_plot_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4155,6 +4158,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("20 bars at1.50dollars means30dollars per box. 1=yes,0=no.",1,"20×1.5=30."),
             new("In m=30b the number of boxes b is independent if revenue depends on box count. 1=yes,0=no.",1,"m scales from b."),
             new("If the point's graph source image is missing, automatically guessing coordinate readings is safe. 1=yes,0=no.",0,"Teacher verifies visual descriptions and scale.")
+        ],
+        [L0712PlotAndScale] =
+        [
+            new("Point(1/5,4/5). Quadrant 1–4?",1,"Both positive, quadrant I."),
+            new("Point(-3/5,2/5). Quadrant 1–4?",2,"Negative x,positive y."),
+            new("Point(-1 1/5,-4/5). Quadrant 1–4?",3,"Both negative."),
+            new("Point(1/5,-3/5). Quadrant 1–4?",4,"Positive x,negative y."),
+            new("Point(-1 1/5,-4/5). x in FIFTHS?",-6,"-1 1/5=-6/5."),
+            new("Point(1/5,4/5). y in FIFTHS?",4,"4/5."),
+            new("Point(-3/5,2/5). x in FIFTHS?",-3,"-3/5."),
+            new("Point(1/5,-3/5). y in FIFTHS?",-3,"-3/5."),
+            new("Data points (-50,0),(150,100),(200,-100),(350,50),(-250,0). Minimum x?",-250,"-250 is smallest x."),
+            new("Data points (-50,0),(150,100),(200,-100),(350,50),(-250,0). Maximum x?",350,"350 is largest x."),
+            new("For those data points, minimum y?",-100,"-100."),
+            new("For those data points, maximum y?",100,"100."),
+            new("A uniform coordinate axis with tick interval50 from-250 through350 spans how many intervals?",12,"(350-(-250))/50=12."),
+            new("Square centered at origin with corners(-3,-3),(-3,3),(3,3),(3,-3). Side length?",6,"3-(-3)=6."),
+            new("Square centered origin with corners ±3,±3. Area in square units?",36,"6²=36."),
+            new("Jada buys notebooks at175cents each. Cost of2 notebooks in CENTS?",350,"2×175."),
+            new("Jada buys notebooks at175cents each. Cost of5 in CENTS?",875,"5×175."),
+            new("Jada buys notebooks at175cents each. Cost of10 in CENTS?",1750,"10×175."),
+            new("At175cents per notebook, is point(2,3.50) consistent with x=count,y=dollars? Enter1 yes,0 no.",1,"2×1.75=3.50."),
+            new("At175cents per notebook, is point(5,8.75) consistent? Enter1 yes,0 no.",1,"5×1.75=8.75."),
+            new("At175cents per notebook, is point(9,15.35) consistent? Enter1 yes,0 no.",0,"9×1.75=15.75, not15.35."),
+            new("At175cents per notebook, is point(17.50,10) consistent? Enter1 yes,0 no.",0,"Count not integer and equation fails."),
+            new("Water use15,000,000 gallons for28.6 acres. Nearest of 5000,50000,500000,5000000 gallons per acre? Enter option1–4.",3,"15million/28.6≈524,476, nearest500,000."),
+            new("Loss of4 points represented as signed change?",-4,"Decrease4."),
+            new("Loss of10 dollars represented as signed change?",-10,"Decrease10.")
+        ],
+        [L0712ScaleReasoning] =
+        [
+            new("To plot fifth-coordinate values, intervals of1/5 on the axes can represent them precisely. 1=yes,0=no.",1,"Ticks in fifths."),
+            new("The x and y axes must always share the same numeric scale. 1=yes,0=no.",0,"Axes can use appropriate different scales with labels."),
+            new("The point(-250,0) lies on negative x-axis, not in a quadrant. 1=yes,0=no.",1,"y=0."),
+            new("The point(200,-100) is in quadrantIV. 1=yes,0=no.",1,"x>0,y<0."),
+            new("The point(150,100) is in quadrantI. 1=yes,0=no.",1,"Both coordinates positive."),
+            new("A tick interval of50 can display every integer-coordinate value of sample (-50,0),(150,100),(200,-100),(350,50),(-250,0) at ticks. 1=yes,0=no.",1,"All sample coordinates multiples of50."),
+            new("Choosing an x-axis only from0 to200 displays both-250 and350 accurately. 1=yes,0=no.",0,"Range excludes values."),
+            new("Four corners at(-3,-3),(-3,3),(3,3),(3,-3) make a square centered at origin. 1=yes,0=no.",1,"Symmetric corners ±3."),
+            new("A loss of4 points is represented by-4. 1=yes,0=no.",1,"Signed decrease."),
+            new("A gain of50 yards is represented by+50. 1=yes,0=no.",1,"Signed increase."),
+            new("An elevation above sea level is ordinarily modeled with positive sign. 1=yes,0=no.",1,"Above reference zero."),
+            new("The equation c=1.75n models notebook cost c in dollars for n notebooks. 1=yes,0=no.",1,"Unit rate."),
+            new("If c=1.75n, plotting notebooks on x-axis and cost on y-axis is consistent. 1=yes,0=no.",1,"n independent,c dependent."),
+            new("A reported point(1.75,1) on graph cost vs notebooks represents one notebook costing1.75. 1=yes,0=no.",0,"Coordinates reversed; (1,1.75) works."),
+            new("A grid axis scale may use an interval50 rather than 1 for data ranging-250 to350. 1=yes,0=no.",1,"Clarity depends on range."),
+            new("Appropriate labels, equal axis tick spacing, and origin placement matter to interpretation. 1=yes,0=no.",1,"Correct geometry and communication.")
         ]
     };
 
