@@ -1584,6 +1584,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original optional OUR/IM G6 U01:L16: same-volume eight cube
+        // constructs and source equal-area 1×11,2×7,3×5 base rectangles.
+        // Actual physical arrangements, notebooks and reasons need a teacher.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L16",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_OPTIONAL_SURFACE_AREA_VS_VOLUME",
+            [
+                "usccss.g6.u01.l16.source_equal_surface_different_volume",
+                "usccss.g6.u01.l16.surface_volume_unit_logic"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L16_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

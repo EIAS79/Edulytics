@@ -19,15 +19,19 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     public const string L14NetLogic = "usccss.g6.u01.l14.net_folding_face_logic";
     public const string L15BoxArea = "usccss.g6.u01.l15.source_box_nets_surface_volume";
     public const string L15NetLogic = "usccss.g6.u01.l15.net_design_and_volume_reasoning";
+    public const string L16Measures = "usccss.g6.u01.l16.source_equal_surface_different_volume";
+    public const string L16Concepts = "usccss.g6.u01.l16.surface_volume_unit_logic";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures
-       or L14NetArea or L14NetLogic or L15BoxArea or L15NetLogic;
+       or L14NetArea or L14NetLogic or L15BoxArea or L15NetLogic
+       or L16Measures or L16Concepts;
     private static int Count(string family)=>family==Prism?14:family==Meaning?8:
         family==L13Polyhedra?15:family==L13Measures?13:
         family==L14NetArea?10:family==L14NetLogic?11:
-        family==L15BoxArea?14:family==L15NetLogic?9:0;
+        family==L15BoxArea?14:family==L15NetLogic?9:
+        family==L16Measures?13:family==L16Concepts?9:0;
 
     public static Problem Build(string family,Random random)
     {
@@ -39,7 +43,9 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             family==L13Measures?L13MeasuresProblem(v):
             family==L14NetArea?L14NetAreaProblem(v):
             family==L14NetLogic?L14NetLogicProblem(v):
-            family==L15BoxArea?L15BoxAreaProblem(v):L15NetLogicProblem(v);
+            family==L15BoxArea?L15BoxAreaProblem(v):
+            family==L15NetLogic?L15NetLogicProblem(v):
+            family==L16Measures?L16MeasuresProblem(v):L16ConceptsProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -64,6 +70,18 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L16Measures=>v switch
+        {
+            0=>46m,1=>11m,2=>46m,3=>14m,4=>46m,5=>15m,
+            6=>24m,7=>28m,8=>34m,
+            9=>18m,10=>160m,11=>22m,12=>22m,
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L16Concepts=>v switch
+        {
+            0=>1m,1=>0m,2=>1m,3=>0m,4=>1m,5=>0m,6=>1m,7=>0m,8=>1m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         L15BoxArea=>v switch
@@ -160,7 +178,7 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer!=answer.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic)return answer is ("0" or "1") &&
+        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -196,6 +214,38 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L16MeasuresProblem(int v)=>v switch
+    {
+        0=>("Original optional IM16.3 prism A has height1cm and rectangular base1cm×11cm. Find six-face surface area.","2×(1+11+11)=46 cm²."),
+        1=>("Original IM16.3 prism A is1×1×11cm. Find volume.","1×1×11=11cm³."),
+        2=>("Original IM16.3 prism B height1cm with base2cm×7cm. Find surface area.","2×(2+7+14)=46cm²."),
+        3=>("Original IM16.3 prism B is1×2×7cm. Find volume.","1×2×7=14cm³."),
+        4=>("Original IM16.3 prism C height1cm with base3cm×5cm. Find surface area.","2×(3+5+15)=46cm²."),
+        5=>("Original IM16.3 prism C is1×3×5cm. Find volume.","1×3×5=15cm³."),
+        6=>("Original16.2 eight unit cubes compacted as2×2×2 cube: find exposed square faces.","6×4=24."),
+        7=>("Original16.2 eight cube skill: a1×2×4 prism has surface area how many unit squares?","2×(2+4+8)=28."),
+        8=>("Original16.2 eight cube skill: a1×1×8 prism has surface area how many unit squares?","2×(1+8+8)=34."),
+        9=>("Original practice picture four unit cubes arranged as1×1×4 rectangular prism. Find outside surface area.","2×(1+4+4)=18."),
+        10=>("Original practice pictured2×5×10cm rectangular prism. Find surface area.","2×(10+20+50)=160."),
+        11=>("EDULYTICS independent example not publisher16.3 prism A:1×1×5. Find outside area.","2×(1+5+5)=22."),
+        12=>("EDULYTICS independent example not publisher16.3 prism B:1×2×3. Find outside area.","2×(2+3+6)=22."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L16ConceptsProblem(int v)=>v switch
+    {
+        0=>("Original16.1 square meters are area units and cubic meters are volume units. 1=true,0=false.","Exponents in units indicate dimensionality."),
+        1=>("Original16.1 liters or cubic kilometers measure a planar length only. 1=true,0=false.","Volume units are three-dimensional."),
+        2=>("Original16.2 two connected solids of exactly8 unit cubes each have equal VOLUME though they may expose different face counts. 1=true,0=false.","Each contains8 cubic units."),
+        3=>("Original16.2 any two figures made of8 cubes have identical SURFACE AREA. 1=true,0=false.","Cube contact patterns hide different numbers of faces."),
+        4=>("Original16.3 the three SOURCE rectangular prisms A/B/C all have surface area46 square centimeters. 1=true,0=false.","Their bases1×11,2×7,3×5 at height1 give same six-face sum."),
+        5=>("Original16.3 the three SOURCE rectangular prisms A/B/C have the same volume. 1=true,0=false.","Volumes are11,14,15 cubic centimeters."),
+        6=>("Original practice: surface area measures exposed square-unit covering; volume measures cubic-unit filling. 1=true,0=false.","The physical attributes and units differ."),
+        7=>("Original practice: doubling the number of touching cubes necessarily doubles exposed surface area regardless of shape. 1=true,0=false.","Added cubes share faces and can hide previously exposed faces."),
+        8=>("Original16.2 a1×2×4 and a2×2×2 arrangement can each contain8 cubes while having different surface areas28 and24. 1=true,0=false.","More compact figures generally expose fewer square faces."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 
