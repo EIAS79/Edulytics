@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u08.l18.first_party_statistics_context",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-30-cookies-mean21-MAD5point6-five-number-9-16-20point5-26-34",
+      "representations": [
+        "box_plot",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u08.l18.first_party_statistical_report_selection",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-wild-bears-jada-homework-yellow-perch-teacher-analysis-and-confidence-limits",
+      "representations": [
+        "boolean_reasoning",
+        "data_story"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l17.boxplot_athlete_pineapple_statistics",
       "version": 1,
       "skillId": "ratio.unit_rate",

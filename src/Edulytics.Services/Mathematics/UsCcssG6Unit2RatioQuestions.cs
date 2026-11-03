@@ -373,6 +373,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0817BoxPlotValues = "usccss.g6.u08.l17.boxplot_athlete_pineapple_statistics";
     public const string L0817BoxPlotLogic = "usccss.g6.u08.l17.interpret_center_and_spread_boxplots";
 
+    public const string L0818SourceStatistics = "usccss.g6.u08.l18.first_party_statistics_context";
+    public const string L0818SelectionLogic = "usccss.g6.u08.l18.first_party_statistical_report_selection";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5436,6 +5439,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("One cannot infer every viewer's age from mean and MAD only. 1=yes,0=no.",1,"Insufficient detail."),
             new("Same IQR and different median means similar middle-half spread but different center. 1=yes,0=no.",1,"Center vs spread."),
             new("Teacher should review open-ended box plot reasoning and original images. 1=yes,0=no.",1,"Human-reviewed graphical task.")
+        ],
+        [L0818SourceStatistics] =
+        [
+            new("Source student summary cookie-weight sample. How many cookies?",30,"30 cookies measured."),
+            new("Source cookie weights mean in GRAMS?",21,"Given mean21g."),
+            new("Source cookie weights MAD in TENTHS of gram?",56,"5.6g."),
+            new("Source five-number summary cookie minimum grams?",9,"Given min9g."),
+            new("Source cookie Q1 grams?",16,"Given Q1 16."),
+            new("Source cookie median in HALF-GRAM UNITS?",41,"20.5g."),
+            new("Source cookie Q3 grams?",26,"Given26."),
+            new("Source cookie maximum grams?",34,"Given max34."),
+            new("Source cookie IQR grams?",10,"26-16=10."),
+            new("Source cookie full range grams?",25,"34-9=25."),
+            new("Source cookie mean21g over30 cookies. Total combined weight in GRAMS?",630,"21×30=630g."),
+            new("Source cookie mean21g and MAD5.6g. Lower mean-minus-MAD in TENTHS GRAMS?",154,"21-5.6=15.4."),
+            new("Source cookie mean21g and MAD5.6g. Upper mean-plus-MAD in TENTHS GRAMS?",266,"21+5.6=26.6."),
+            new("Source cookie mean21g median20.5g. Difference in HALF-GRAM UNITS?",1,"0.5g."),
+            new("Source cookie five-number: lower whisker Q1-min in GRAMS?",7,"16-9=7."),
+            new("Source cookie five-number: upper whisker max-Q3 in GRAMS?",8,"34-26=8."),
+            new("Independent hypothetical perch ages1,2,2,3,4. Sample size?",5,"Five fictional observations."),
+            new("Same illustrative ages1,2,2,3,4. Mean in FIFTHS OF YEAR?",12,"12/5=2.4."),
+            new("Same fictional perch ages1,2,2,3,4. Median years?",2,"Middle third2."),
+            new("Same fictional perch ages1,2,2,3,4. Range years?",3,"4-1=3."),
+            new("Illustrative homework count0,0,2,4,4,10. Sum?",20,"20 problems."),
+            new("Illustrative homework count0,0,2,4,4,10. Mean in THIRDS?",10,"20/6=10/3."),
+            new("Illustrative homework count0,0,2,4,4,10. Median?",3,"Middle2 and4 average3."),
+            new("Illustrative homework0,0,2,4,4,10. Range?",10,"10-0=10.")
+        ],
+        [L0818SelectionLogic] =
+        [
+            new("The original U08:L18 is a statistical application lesson with Wild Bears, Math Homework and Yellow Perch tasks. 1=yes,0=no.",1,"Original task headings."),
+            new("The original U08:L18 has a separate original practice.html worksheet. 1=yes,0=no.",0,"Archive has no practice.html."),
+            new("The original U08:L18 includes a teacher-restricted Cool-down heading18.5 about Time Spent on Chores. 1=yes,0=no.",1,"Source teacher index."),
+            new("The source student summary includes30 cookie weights with mean21grams. 1=yes,0=no.",1,"Student summary."),
+            new("Source cookie MAD equals5.6grams. 1=yes,0=no.",1,"Student summary."),
+            new("Source cookie median equals20.5grams. 1=yes,0=no.",1,"Five-number."),
+            new("Source cookie Q1=16 and Q3=26 give IQR10grams. 1=yes,0=no.",1,"26-16=10."),
+            new("Source cookie minimum9 and maximum34 give range25grams. 1=yes,0=no.",1,"34-9=25."),
+            new("The mean21g multiplied by30 cookies gives total630g in mathematical model. 1=yes,0=no.",1,"Mean×count."),
+            new("An outlier can make median/IQR more informative than mean/MAD for a skewed distribution. 1=yes,0=no.",1,"Context matters."),
+            new("The choice of mean versus median must be justified using the statistical question and data shape. 1=yes,0=no.",1,"Not fixed rule."),
+            new("A box plot is the best tool when exact frequencies of every original individual value are essential. 1=yes,0=no.",0,"Dot plot retains individuals."),
+            new("A histogram can show patterns of larger samples by intervals. 1=yes,0=no.",1,"Bins summarize."),
+            new("Different histogram bin widths may change visual appearance. 1=yes,0=no.",1,"Grouping choice."),
+            new("A project claim that yellow perch populations will definitely survive can be proven solely by a sample histogram. 1=yes,0=no.",0,"Observational data and uncertainty."),
+            new("Original Lake Michigan fish statistics should be represented with labeled actual data rather than fabricated measurements. 1=yes,0=no.",1,"Source evidence."),
+            new("The illustrative ages1,2,2,3,4 are NOT claimed original yellow-perch research data. 1=yes,0=no.",1,"Independent example."),
+            new("A full teacher assessment should evaluate chosen graph, center, spread and limitations. 1=yes,0=no.",1,"Project rubric."),
+            new("An independent first-party numerical check does not certify original lesson artwork or scientific claims. 1=yes,0=no.",1,"Selected practice boundary."),
+            new("A sample statistic is an estimate/description, not necessarily a causal population conclusion. 1=yes,0=no.",1,"Statistical inference limitations.")
         ]
     };
 
