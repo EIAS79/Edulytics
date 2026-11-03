@@ -1379,6 +1379,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original IM 6-8 G6 U01:L03: calculate known shaded areas by
+        // decomposition, enclosing/subtracting and rearrangement. Original
+        // plots, diagrams and justifications are still teacher-reviewed.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L03",
+            "geometry.area_tiling",
+            "G6_SOURCE_SHADED_AREA_DECOMPOSE_SUBTRACT_REARRANGE_EXACT",
+            [
+                "usccss.g6.u01.l03.source_shaded_area",
+                "usccss.g6.u01.l03.area_conservation"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L03_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

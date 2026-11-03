@@ -4,6 +4,36 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l03.source_shaded_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-6-8-g6-l03-decompose-and-subtract-known-shaded-areas",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l03.area_conservation",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-6-8-g6-l03-rearrangement-and-tile-area-equivalence-numeric-only",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l02.tangram_piece_area",
       "version": 1,
       "skillId": "geometry.area_tiling",
