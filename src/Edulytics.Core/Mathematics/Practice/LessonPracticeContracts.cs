@@ -2574,6 +2574,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit6 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TAPE_DIAGRAM_ADDITIVE_MULTIPLICATIVE_EQUATIONS",
+            [
+                "usccss.g6.u06.l01.tape_equation_unknown_values",
+                "usccss.g6.u06.l01.tape_diagram_equation_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

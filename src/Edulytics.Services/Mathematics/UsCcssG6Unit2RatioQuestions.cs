@@ -205,6 +205,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0515FirstPartyMeasurements = "usccss.g6.u05.l15.first_party_fixed_paper_box_scaling";
     public const string L0515MeasurementLogic = "usccss.g6.u05.l15.measurement_precision_and_area_scaling";
 
+    public const string L0601Unknowns = "usccss.g6.u06.l01.tape_equation_unknown_values";
+    public const string L0601TapeLogic = "usccss.g6.u06.l01.tape_diagram_equation_interpretation";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2679,6 +2682,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The source lesson is an optional hands-on capstone with two project activities. 1=yes,0=no.",1,"Folding and measurement comparison."),
             new("Without original measured dimensions one cannot validly auto-grade a specific student's origami box surface area against a fixed answer. 1=yes,0=no.",1,"Teacher evaluates measured inputs and tolerance."),
             new("A box surface area formula needs square units, while side lengths need linear units. 1=yes,0=no.",1,"Dimension analysis.")
+        ],
+        [L0601Unknowns] =
+        [
+            new("x+4=17. Find x.",13,"17-4=13."),
+            new("5×x=35. Find x.",7,"35÷5=7."),
+            new("x+3=9. Find x.",6,"9-3=6."),
+            new("3×x=9. Find x.",3,"9÷3=3."),
+            new("9=3×x. Find x.",3,"9÷3=3."),
+            new("3+x=9. Find x.",6,"9-3=6."),
+            new("x=9-3. Find x.",6,"x=6."),
+            new("x=9÷3. Find x.",3,"x=3."),
+            new("x+x+x=9. Find x.",3,"3x=9."),
+            new("x+9=16. Find x.",7,"16-9=7."),
+            new("4×x=28. Find x.",7,"28÷4=7."),
+            new("Potatoes cost252cents for4.5lb. Cents per POUND?",56,"252/4.5=56."),
+            new("Broccoli cost775cents for2.5lb. Cents per POUND?",310,"775/2.5=310."),
+            new("Pears cost245cents for2.5lb. Cents per POUND?",98,"245/2.5=98."),
+            new("Sports drink16.9fl oz; Andre drinks80%. Amount in HUNDREDTHS fl oz?",1352,"16.9×.8=13.52."),
+            new("Calcium reference1200mg, one cup milk provides25%. Milligrams?",300,"1200/4=300."),
+            new("A tape has17 total, known part4. Unknown part?",13,"17-4=13."),
+            new("A tape has5 equal segments totaling35. Each segment?",7,"35/5=7.")
+        ],
+        [L0601TapeLogic] =
+        [
+            new("Equation x+4=17 can be shown with two adjoining parts x and4 totaling17. 1=yes,0=no.",1,"Additive diagram."),
+            new("Equation5x=35 can be shown by5 equal x parts totaling35. 1=yes,0=no.",1,"Multiplicative diagram."),
+            new("x+3=9 and3+x=9 describe same additive diagram. 1=yes,0=no.",1,"Commutative addition."),
+            new("3x=9 and9=3x describe same equal-group relation. 1=yes,0=no.",1,"Symmetry of equality."),
+            new("3x=9 andx+3=9 represent same unknown value. 1=yes,0=no.",0,"x=3 vsx=6."),
+            new("x+x+x=9 can represent3x=9. 1=yes,0=no.",1,"Three equal parts."),
+            new("x+9=16 has x=7. 1=yes,0=no.",1,"7+9=16."),
+            new("4x=28 has x=7. 1=yes,0=no.",1,"4×7=28."),
+            new("A tape representing5x=35 should contain exactly5 equal-sized unknown pieces. 1=yes,0=no.",1,"Repeated equal groups."),
+            new("An equation and tape model should use same total and part sizes. 1=yes,0=no.",1,"Represent same relationship."),
+            new("Potato unit price252cents/4.5lb equals56cents/lb. 1=yes,0=no.",1,"Rate division."),
+            new("Broccoli775cents/2.5lb equals310cents/lb. 1=yes,0=no.",1,"Rate division."),
+            new("Drinking80% of16.9fl oz yields13.52fl oz. 1=yes,0=no.",1,"Multiply by.8."),
+            new("25% of1200mg is300mg. 1=yes,0=no.",1,"Quarter1200."),
+            new("A correct x numerical value alone certifies that a student's drawn tape diagram correctly represents the equation. 1=yes,0=no.",0,"Teacher must check arrangement."),
+            new("Division and multiplication equations with the same numeric x always require same visual number of pieces. 1=yes,0=no.",0,"Additive and multiplicative structure differ.")
         ]
     };
 
