@@ -190,6 +190,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson6AreaQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
@@ -428,6 +429,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson6AreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family))
             return UsCcssG6Unit1Lesson7TriangleQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson8TriangleAreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1781,6 +1784,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family))
         {
             var item = UsCcssG6Unit1Lesson7TriangleQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson8TriangleAreaQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Explanation,
                 item.ItemType, item.Parameters);
         }
@@ -4942,6 +4951,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson6AreaQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson7TriangleQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson7TriangleQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson8TriangleAreaQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))

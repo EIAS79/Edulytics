@@ -1463,6 +1463,22 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original IM/OUR G6 U01:L08: two COMPLETE matching triangles form
+        // doubled-area parallelogram; cut pieces of ONE triangle rearrange
+        // to a SAME-area parallelogram. Keep these distinct pedagogically.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L08",
+            "geometry.area_tiling",
+            "G6_SOURCE_TRIANGLE_HALF_AREA_VS_SAME_AREA_REARRANGEMENT",
+            [
+                "usccss.g6.u01.l08.triangle_half_area",
+                "usccss.g6.u01.l08.decomposition_invariance",
+                "usccss.g6.u01.l08.original_decimal_practice"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L08_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
