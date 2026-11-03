@@ -2308,6 +2308,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit3 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TRIANGLE_BASE_HEIGHT_AND_FRACTIONAL_PRISM_VOLUME",
+            [
+                "usccss.g6.u04.l14.triangle_height_and_cube_counts",
+                "usccss.g6.u04.l14.cube_and_triangle_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

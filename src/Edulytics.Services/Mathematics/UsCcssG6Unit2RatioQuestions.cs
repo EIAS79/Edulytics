@@ -148,6 +148,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0413AreaValues = "usccss.g6.u04.l13.rectangle_area_fractional_sides";
     public const string L0413AreaLogic = "usccss.g6.u04.l13.rectangle_area_diagram_reasoning";
 
+    public const string L0414GeometryNumbers = "usccss.g6.u04.l14.triangle_height_and_cube_counts";
+    public const string L0414GeometryLogic = "usccss.g6.u04.l14.cube_and_triangle_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1878,6 +1881,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The dimensions of a rectangle should share units before calculating the product area. 1=yes,0=no.",1,"Convert lengths consistently."),
             new("A diagram with a fractional side can be verified by multiply side lengths to get area. 1=yes,0=no.",1,"Inverse operations."),
             new("Teacher inspection of the actual tile layout is needed before claiming an exact purchase count. 1=yes,0=no.",1,"Cuts and reuse assumptions matter.")
+        ],
+        [L0414GeometryNumbers] =
+        [
+            new("A larger cube has4inch sides and is built of1/2inch cubes. Number of cubes along one edge?",8,"4/(1/2)=8."),
+            new("A larger cube has4inch sides and is built of1/2inch cubes. Total small cubes?",512,"8³=512."),
+            new("Triangle area7⅞cm² and base5¼cm. Height in CENTIMETERS?",3,"2×(63/8)/(21/4)=3."),
+            new("Prism1½in by2in by2½in. Volume in HALF-CUBIC-INCH UNITS?",15,"1.5×2×2.5=7.5in³=15 halves."),
+            new("Prism1½in by2in by2½in, packed with 1/2inch cubes. Number of small cubes?",60,"3×4×5=60 cubes."),
+            new("One cube of side1/2inch. Volume in EIGHTH-CUBIC-INCH UNITS?",1,"(1/2)³=1/8in³."),
+            new("A prism5×5×8 units. Its volume in CUBIC UNITS?",200,"5×5×8=200."),
+            new("Prism5×5×8 packed with1/3-unit cubes. Number of little cubes?",5400,"15×15×24=5400."),
+            new("Fence boards6¼in wide for150in fence with no gaps. Number of boards?",24,"150÷25/4=24."),
+            new("Two and1/7 divided by2/7, answer in HALF-GROUPS?",15,"15/7÷2/7=15/2."),
+            new("17/20 divided by1/4, answer in FIFTHS?",17,"17/20×4=17/5."),
+            new("Bucket holds11⅔ gallons and is5/6 full. Full capacity in GALLONS?",14,"35/3÷5/6=14."),
+            new("Gym has80 children,75% wearing socks. How many wearing socks?",60,"80×.75=60."),
+            new("Gym has80 children,75% wearing socks. How many NOT wearing socks?",20,"80×.25=20."),
+            new("Lin wants75 dollars and saved37.50. Percent saved?",50,"37.5/75=50%."),
+            new("Noah wants60dollars and saved45. Percent saved?",75,"45/60=75%."),
+            new("Lin saved50% of trip goal. Percent remaining?",50,"100-50=50%."),
+            new("Noah saved75% of concert ticket goal. Percent remaining?",25,"100-75=25%."),
+            new("Triangle with base5¼cm and height3cm has area in EIGHTH-SQUARE-CM units?",63,"5.25×3÷2=7.875=63/8."),
+            new("A4-inch cube volume in CUBIC INCHES?",64,"4³=64.")
+        ],
+        [L0414GeometryLogic] =
+        [
+            new("A cube of side4in contains8 half-inch edges along each side. 1=yes,0=no.",1,"4÷0.5=8."),
+            new("A cube of side4in contains512 smaller half-inch cubes. 1=yes,0=no.",1,"8³=512."),
+            new("Triangle area7⅞cm² base5¼cm has perpendicular height3cm. 1=yes,0=no.",1,"A=bh/2."),
+            new("A slanted triangle side can automatically be used as height even when not perpendicular to base. 1=yes,0=no.",0,"Height is perpendicular."),
+            new("A prism1.5×2×2.5in has volume7.5 cubic inches. 1=yes,0=no.",1,"Multiply three edges."),
+            new("A half-inch cube volume equals1/2 cubic inch. 1=yes,0=no.",0,"Cube volume1/8."),
+            new("A1.5×2×2.5in prism contains60 half-inch cubes. 1=yes,0=no.",1,"3×4×5."),
+            new("Five by five by eight prism can contain5400 cubes with edge1/3unit. 1=yes,0=no.",1,"15×15×24."),
+            new("Multiplying whole-prism volume200 by27 gives count of1/3-unit cubes. 1=yes,0=no.",1,"Each tiny cube volume1/27."),
+            new("A150inch fence with6.25inch boards and no gaps needs24 boards. 1=yes,0=no.",1,"150/6.25=24."),
+            new("A bucket11⅔gallons at5/6 full has capacity14 gallons. 1=yes,0=no.",1,"11⅔÷5/6=14."),
+            new("75% of80 kids are wearing socks so20 are not. 1=yes,0=no.",1,"25%×80=20."),
+            new("Volume uses cubic units, not squared units. 1=yes,0=no.",1,"Three dimensions."),
+            new("The small cube count equals the ratio of large volume to small cube volume. 1=yes,0=no.",1,"Volume quotient.")
         ]
     };
 

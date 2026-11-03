@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u04.l14.triangle_height_and_cube_counts",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-half-inch-cubes-4inch-side-triangle63eighths-area-prism-halfunit",
+      "representations": [
+        "numeric",
+        "geometry_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u04.l14.cube_and_triangle_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-fractional-volume-unit-cubes-count-and-triangle-perpendicular-height",
+      "representations": [
+        "boolean_reasoning",
+        "geometry_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u04.l13.rectangle_area_fractional_sides",
       "version": 1,
       "skillId": "ratio.unit_rate",
