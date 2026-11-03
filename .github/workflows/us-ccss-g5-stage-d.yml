@@ -58,6 +58,8 @@ jobs:
         run: node --test tests/academic-us-ccss-g5-owner-academic-consent-stage-d.test.cjs
       - name: Record explicit 2026-11-03 project-owner academic approval and release permission without inventing source rights
         run: node --test tests/academic-us-ccss-g5-owner-release-authorization.test.cjs
+      - name: Keep internal Grade 5 source provenance out of student and teacher Quick Summary views
+        run: node --test tests/academic-us-ccss-g5-summary-provenance-hidden-ui.test.cjs
   source-element-evidence:
     name: grade5-source-element-provenance-and-approval-fail-closed
     runs-on: ubuntu-24.04
