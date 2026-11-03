@@ -382,6 +382,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0902PopulationMath = "usccss.g6.u09.l02.first_party_population_ratio_quantities";
     public const string L0902PopulationLogic = "usccss.g6.u09.l02.first_party_population_model_reasoning";
 
+    public const string L0903SquareEuclid = "usccss.g6.u09.l03.first_party_rectangle_square_decomposition";
+    public const string L0903SquareLogic = "usccss.g6.u09.l03.first_party_square_tiling_fraction_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5591,6 +5594,68 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("School-wide survey data are different from world population census estimates. 1=yes,0=no.",1,"Source populations differ."),
             new("Ratios for a 30-person class and7.4billion historical world may be approximately equivalent, not perfect. 1=yes,0=no.",1,"Rounded populations."),
             new("The teacher should assess assumptions and interpretation of class-level visual model. 1=yes,0=no.",1,"Open-ended project.")
+        ],
+        [L0903SquareEuclid] =
+        [
+            new("Source rectangle AF=5,FD=2. Whole AD length?",7,"5+2=7."),
+            new("Source rectangle BC=10,BE=6. Segment EC?",4,"10-6=4."),
+            new("Source rectangle AF=12,FD=5. For square ABEF, segment FE?",12,"FE same as AF because ABEF square."),
+            new("Source rectangle AD=9,AB=5 and ABEF square. Remainder FD?",4,"9-5=4."),
+            new("Rectangle16×5. Number of full5×5 squares removed first?",3,"16/5=3 remainder1."),
+            new("Rectangle16×5. Remainder width after three5×5 squares?",1,"16-15=1."),
+            new("Rectangle16×5. Number of final1×1 squares?",5,"1×5 strip gives5 unit squares."),
+            new("Greatest common factor16 and5?",1,"GCF1."),
+            new("Rectangle21×6. Initial number6×6 squares?",3,"21=3×6+3."),
+            new("Rectangle21×6. Remaining strip width?",3,"21-18=3."),
+            new("Rectangle21×6. Number of final3×3 squares?",2,"3×6 strip gives two."),
+            new("GCF21 and6?",3,"Euclidean remainder3."),
+            new("Rectangle28×12. Number of initial12×12 squares?",2,"28=2×12+4."),
+            new("Rectangle28×12. Number of final4×4 squares?",3,"4×12 strip has3."),
+            new("GCF28 and12?",4,"Final4square."),
+            new("Fraction16/5 as mixed number. Whole part?",3,"3+1/5."),
+            new("Fraction21/6 as mixed number. Whole part?",3,"3+1/2."),
+            new("Fraction28/12 as mixed number. Whole part?",2,"2+1/3."),
+            new("Rectangle9×4. Number of4×4 squares first?",2,"9=2×4+1."),
+            new("Rectangle9×4. Final1×1 squares?",4,"Remainder1×4."),
+            new("GCF9 and4?",1,"Coprime."),
+            new("Rectangle27×12. Number of12×12 squares first?",2,"27=2×12+3."),
+            new("Rectangle27×12. Final3×3 squares?",4,"3×12 strip."),
+            new("GCF27 and12?",3,"Final square side3."),
+            new("Rectangle37×16. Number of initial16×16 squares?",2,"37=2×16+5."),
+            new("Rectangle37×16. Number of5×5 squares next?",3,"16=3×5+1."),
+            new("Rectangle37×16. Final unit1×1 squares?",5,"5×1 remainder."),
+            new("GCF37 and16?",1,"Final square side1."),
+            new("Rectangle52×15. Initial15×15 squares?",3,"52=3×15+7."),
+            new("Rectangle52×15. Next7×7 squares?",2,"15=2×7+1."),
+            new("Rectangle52×15. Final1×1 squares?",7,"7×1 remainder."),
+            new("GCF52 and15?",1,"Final unit."),
+            new("Rectangle98×21. Initial21×21 squares?",4,"98=4×21+14."),
+            new("Rectangle98×21. Next14×14 squares?",1,"21=1×14+7."),
+            new("Rectangle98×21. Final7×7 squares?",2,"14=2×7."),
+            new("GCF98 and21?",7,"Final square7.")
+        ],
+        [L0903SquareLogic] =
+        [
+            new("A16×5 rectangle can begin with three5×5 squares. 1=yes,0=no.",1,"15 of16 units."),
+            new("A16×5 rectangle has GCF5. 1=yes,0=no.",0,"GCF1."),
+            new("21×6 rectangle decomposes to three6×6 squares and two3×3 squares. 1=yes,0=no.",1,"21=3×6+3 and6=2×3."),
+            new("28×12 rectangle decomposes to two12×12 squares and three4×4 squares. 1=yes,0=no.",1,"28=2×12+4."),
+            new("The smallest final square side in Euclidean decomposition equals GCF of rectangle sides. 1=yes,0=no.",1,"Euclidean algorithm."),
+            new("GCF21 and6 is3. 1=yes,0=no.",1,"21/3=7,6/3=2."),
+            new("GCF28 and12 is4. 1=yes,0=no.",1,"28/4=7,12/4=3."),
+            new("Fractions21/6 and7/2 are equivalent. 1=yes,0=no.",1,"Divide by3."),
+            new("Fractions28/12 and7/3 are equivalent. 1=yes,0=no.",1,"Divide by4."),
+            new("Fractions9/4 and27/12 are equivalent. 1=yes,0=no.",1,"Multiply both by3."),
+            new("GCF9/4 numerator denominator is1, while GCF27 and12 is3. 1=yes,0=no.",1,"Scaled rectangle."),
+            new("Rectangle37×16 leads continued fraction2+1/(3+1/5), equal37/16. 1=yes,0=no.",1,"2+5/16."),
+            new("Rectangle52×15 leads3+1/(2+1/7), equal52/15. 1=yes,0=no.",1,"3+7/15."),
+            new("Rectangle98×21 leads4+1/(1+7/14) equal14/3 or98/21. 1=yes,0=no.",1,"4+2/3."),
+            new("GCF98 and21 equals7. 1=yes,0=no.",1,"98/7=14,21/7=3."),
+            new("It is reasonable to use repeated square tiling to visualize Euclidean quotient remainders. 1=yes,0=no.",1,"Repeated subtraction."),
+            new("One may automatically certify the original complex33×75 square diagram solely from dimensions without reading its arrangement. 1=yes,0=no.",0,"Original geometry drawing differs."),
+            new("Square area scales with square of side length, not linearly with side. 1=yes,0=no.",1,"s²."),
+            new("Student-drawn decompositions and written continued fraction arguments require teacher review. 1=yes,0=no.",1,"Source optional project."),
+            new("A valid rectangle decomposition preserves total area when partitioned into squares. 1=yes,0=no.",1,"Nonoverlap total.")
         ]
     };
 

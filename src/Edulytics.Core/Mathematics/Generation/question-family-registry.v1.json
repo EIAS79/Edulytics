@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u09.l03.first_party_rectangle_square_decomposition",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-rectangle16x5-21x6-28x12-9x4-27x12-37x16-52x15-98x21",
+      "representations": [
+        "area_grid",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u09.l03.first_party_square_tiling_fraction_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-geometric-Euclidean-gcf-fraction-continued-fractions-open-ended-drawings",
+      "representations": [
+        "boolean_reasoning",
+        "square_tiling"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u09.l02.first_party_population_ratio_quantities",
       "version": 1,
       "skillId": "ratio.unit_rate",
