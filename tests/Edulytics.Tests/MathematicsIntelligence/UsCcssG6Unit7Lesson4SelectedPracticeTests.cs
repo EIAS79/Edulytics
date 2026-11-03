@@ -8,8 +8,8 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UsCcssG6Unit7Lesson4SelectedPracticeTests
 {
     private const string Lesson = "PED:US-CCSS-MATH:G6:U07:L04";
-    private const string FamilyA = UsCcssG6Unit2RatioQuestions.L0704Ordering;
-    private const string FamilyB = UsCcssG6Unit2RatioQuestions.L0704SourceChecks;
+    private const string FamilyA = UsCcssG6Unit2RatioQuestions.L0704RationalOrder;
+    private const string FamilyB = UsCcssG6Unit2RatioQuestions.L0704OrderLogic;
 
     [Fact] public void BothFamiliesAreLessonScopedAndSupported()
     {
@@ -23,48 +23,49 @@ public sealed class UsCcssG6Unit7Lesson4SelectedPracticeTests
 
     public static IEnumerable<object[]> SourceMathVariants()
     {
-        // usccss.g6.u07.l04.rational_order_and_temperature
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,0,"2"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,1,"2"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,2,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,3,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,4,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,5,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,6,"-3"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,7,"-1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,8,"-1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,9,"0"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,10,"4"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,11,"2"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,12,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,13,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,14,"-1881"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,15,"0"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,16,"2"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,17,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,18,"2"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704Ordering,19,"1"};
-        // usccss.g6.u07.l04.rational_order_explanations_and_cumulative
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,0,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,1,"0"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,2,"0"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,3,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,4,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,5,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,6,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,7,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,8,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,9,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,10,"153"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,11,"145"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,12,"594"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,13,"1485"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,14,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,15,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,16,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,17,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,18,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704SourceChecks,19,"0"};
+        // usccss.g6.u07.l04.order_signed_numbers_source
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,0,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,1,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,2,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,3,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,4,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,5,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,6,"-3"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,7,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,8,"-1858"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,9,"-34"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,10,"-1881"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,11,"-25287"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,12,"-1532"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,13,"153"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,14,"145"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,15,"594"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,16,"1485"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,17,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,18,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,19,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,20,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,21,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,22,"-34"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704RationalOrder,23,"0"};
+        // usccss.g6.u07.l04.signed_ordering_logic
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,0,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,1,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,2,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,3,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,4,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,5,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,6,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,7,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,8,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,9,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,10,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,11,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,12,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,13,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,14,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,15,"1"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0704OrderLogic,16,"1"};
     }
 
     [Theory]

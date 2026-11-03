@@ -2896,20 +2896,6 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
-        // G6 original first edition Unit7 Lesson4; exact math only.
-        // Student diagrams and contextual explanations require teacher assessment.
-        byLesson["PED:US-CCSS-MATH:G6:U07:L04"] = new LessonPracticeContract(
-            "PED:US-CCSS-MATH:G6:U07:L04",
-            "ratio.unit_rate",
-            "G6_ORIGINAL_RATIONAL_ORDER_NEGATIVES_FRACTIONS_AND_TEMPERATURES",
-            [
-                "usccss.g6.u07.l04.rational_order_and_temperature",
-                "usccss.g6.u07.l04.rational_order_explanations_and_cumulative"
-            ],
-            "OUR_IM_ORIGINAL_G6_U07_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
-            "READY_VERIFIED",
-            Version);
-
         // G6 original first edition Unit7 Lesson5; exact math only.
         // Student diagrams and contextual explanations require teacher assessment.
         byLesson["PED:US-CCSS-MATH:G6:U07:L05"] = new LessonPracticeContract(
