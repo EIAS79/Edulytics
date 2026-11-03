@@ -109,6 +109,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0317PaintCalculations = "usccss.g6.u03.l17.first_party_bounded_room_paint_math";
     public const string L0317PaintReasoning = "usccss.g6.u03.l17.first_party_paint_model_reasoning";
 
+    public const string L0401SourceNumerics = "usccss.g6.u04.l01.division_and_source_quantities";
+    public const string L0401QuotientScale = "usccss.g6.u04.l01.predict_quotient_size";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1347,6 +1350,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Areas of doors and windows should be excluded if those surfaces are not painted. 1=yes,0=no.",1,"Subtract nonpainted surfaces."),
             new("A numerically correct practice answer automatically verifies a student's floor-plan diagram and supply rationale. 1=yes,0=no.",0,"Teacher review is required."),
             new("The original lesson has numbered work on preparing, budgeting and painting time, even though it has no separate practice.html. 1=yes,0=no.",1,"Activities17.1–17.3 form the original capstone.")
+        ],
+        [L0401SourceNumerics] =
+        [
+            new("To obtain a quotient CLOSEST to1 with divisor40.01, choose dividend4,40,4000. Enter chosen number.",40,"40/40.01≈0.99975."),
+            new("To obtain a quotient MUCH LESS than1 with divisor40.01, choose dividend4,40,4000. Enter chosen number.",4,"4/40.01≈0.1."),
+            new("To obtain a quotient MUCH GREATER than1 with divisor40.01, choose dividend4,40,4000. Enter chosen number.",4000,"4000/40.01≈100."),
+            new("100 divided by1/1000 equals?",100000,"100×1000=100000."),
+            new("Rocking horse limit60 pounds;33 pounds is what PERCENT of limit?",55,"33/60×100=55%."),
+            new("Rocking horse limit60 pounds;114 pounds is what PERCENT of limit?",190,"114/60×100=190%."),
+            new("Rocking horse limit60 pounds;95% of weight limit in POUNDS?",57,"0.95×60=57."),
+            new("Playlist has90 songs.40% rock. Number of rock songs?",36,"0.4×90=36."),
+            new("Playlist has90 songs.10% country. Number of country songs?",9,"0.1×90=9."),
+            new("Playlist has90 songs.30% hip hop. Number of hip-hop songs?",27,"0.3×90=27."),
+            new("Playlist has90 songs. Rest electronica after40% rock10% country30% hip hop. Count?",18,"20%×90=18."),
+            new("Garden hose emits9quarts in6seconds. Seconds to emit12quarts at same rate?",8,"9/6=1.5qt/s;12/1.5=8sec."),
+            new("Garden hose emits9quarts in6seconds. Quarts in10seconds?",15,"1.5×10=15quarts."),
+            new("Compare decimals0.7 and0.70. Enter1 if first is larger,0 if equal,2 if smaller.",0,"Trailing zero does not change value."),
+            new("Compare0.03+6/10 with0.30+6/100. Enter1 if first larger,0 equal,2 smaller.",1,"0.63>0.36."),
+            new("Compare0.9 vs0.12. Enter1 if first larger,0 equal,2 smaller.",1,"0.9>0.12.")
+        ],
+        [L0401QuotientScale] =
+        [
+            new("100 divided by1/1000 is much greater than1. 1=yes,0=no.",1,"Dividing by a tiny positive number produces large quotient."),
+            new("50 and1/3 divided by50 and1/4 is close to1. 1=yes,0=no.",1,"Dividend and divisor almost equal."),
+            new("4.7 divided by5.2 is close to1. 1=yes,0=no.",1,"Quotient≈0.904."),
+            new("2 divided by7335 is much smaller than1. 1=yes,0=no.",1,"Divisor greatly exceeds dividend."),
+            new("2000001 divided by9 is much greater than1. 1=yes,0=no.",1,"Dividend greatly exceeds divisor."),
+            new("0.002 divided by2000 is much smaller than1. 1=yes,0=no.",1,"One millionth."),
+            new("40 divided by40.01 is close to1. 1=yes,0=no.",1,"Quotient≈0.99975."),
+            new("4 divided by40.01 is much greater than1. 1=yes,0=no.",0,"Quotient≈0.10."),
+            new("4000 divided by40.01 is much greater than1. 1=yes,0=no.",1,"Quotient≈99.975."),
+            new("For positive a, dividing a by a positive number smaller than1 may produce a quotient larger than a. 1=yes,0=no.",1,"E.g.2/0.5=4."),
+            new("Dividing by a positive number much larger than a positive dividend gives quotient less than1. 1=yes,0=no.",1,"Ratio dividend/divisor<1."),
+            new("A thicker object generally needs MORE copies than thin object to fill same stack height. 1=yes,0=no.",0,"Thicker means fewer copies."),
+            new("For a positive dividend, a larger positive divisor produces a larger quotient. 1=yes,0=no.",0,"Monotonic inverse relationship."),
+            new("Two numerically close positive numbers yield a quotient close to1. 1=yes,0=no.",1,"Provided one is not zero and difference small relative to magnitude.")
         ]
     };
 
