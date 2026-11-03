@@ -244,6 +244,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0613ExponentNumbers = "usccss.g6.u06.l13.exponents_with_rational_bases";
     public const string L0613ExponentTruth = "usccss.g6.u06.l13.exponent_equation_truth";
 
+    public const string L0614ExponentEvaluation = "usccss.g6.u06.l14.exponent_order_numeric";
+    public const string L0614ExponentOrderLogic = "usccss.g6.u06.l14.exponent_evaluation_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3266,6 +3269,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The shaded area equals3(c-10) when 0<c<10. 1=yes,0=no.",0,"Negative."),
             new("At850cents/ticket,29886dollars sales represents3516 tickets. 1=yes,0=no.",1,"Exact division."),
             new("A fence 44.5 panel-widths long requires rounding up to45 whole panels when panels are whole units and no reuse. 1=yes,0=no.",1,"Purchase constraint.")
+        ],
+        [L0614ExponentEvaluation] =
+        [
+            new("Eight multiplied by3 squared equals?",72,"8×9=72."),
+            new("(8×3) squared equals?",576,"24²=576."),
+            new("8×2 cubed equals?",64,"8×8=64."),
+            new("7+2 cubed=?",15,"7+8=15."),
+            new("9×3 to first power=?",27,"9×3=27."),
+            new("20 minus2 to fourth power=?",4,"20-16=4."),
+            new("2×6 squared equals?",72,"2×36=72."),
+            new("8×(1/2) squared equals?",2,"8×1/4=2."),
+            new("1/3×3 cubed equals?",9,"27/3=9."),
+            new("(1/5×5) to fifth power=?",1,"1^5=1."),
+            new("(4×5) cubed equals?",8000,"20³=8000."),
+            new("4×5 cubed equals?",500,"4×125=500."),
+            new("Han has10 separate cubes side5in each. Total volume CUBIC INCHES?",1250,"10×5³=1250."),
+            new("Han has10 separate cubes side5in each. Total exterior surface area SQ INCHES ignoring shared faces?",1500,"10×6×5²=1500."),
+            new("125% of e=30. e?",24,"30/1.25=24."),
+            new("35% of f=14. f?",40,"14/.35=40."),
+            new("2.4y=13.75. y in FORTY-EIGHTHS?",275,"13.75/2.4=275/48."),
+            new("15×23=?",345,"10×23+5×23=230+115."),
+            new("5 squared equals?",25,"5²."),
+            new("3 cubed equals?",27,"3³."),
+            new("1/3 to fourth power denominator?",81,"3^4=81."),
+            new("2 to fourth power equals?",16,"16.")
+        ],
+        [L0614ExponentOrderLogic] =
+        [
+            new("8×3²=72. 1=yes,0=no.",1,"Original A."),
+            new("3²×8=72. 1=yes,0=no.",1,"Original D."),
+            new("72 equals8×3². 1=yes,0=no.",1,"Original F."),
+            new("(8×3)²=72. 1=yes,0=no.",0,"576."),
+            new("8×2³=72. 1=yes,0=no.",0,"64."),
+            new("7+2³=15. 1=yes,0=no.",1,"Evaluate8 first."),
+            new("20-2⁴=4. 1=yes,0=no.",1,"Subtract16."),
+            new("8×(½)²=2. 1=yes,0=no.",1,"8×¼=2."),
+            new("1/3×3³=9. 1=yes,0=no.",1,"27÷3."),
+            new("(4×5)³=8000. 1=yes,0=no.",1,"Original B,E,G."),
+            new("4×5³=8000. 1=yes,0=no.",0,"500."),
+            new("Ten separate5-inch cubes total1250cuin. 1=yes,0=no.",1,"10×125."),
+            new("Ten separate5-inch cubes each surface150sqin total1500sqin if faces separate. 1=yes,0=no.",1,"10×6×25."),
+            new("(1/3)^4=4/3. 1=yes,0=no.",0,"1/81."),
+            new("125% of24 is30. 1=yes,0=no.",1,"1.25×24."),
+            new("35% of40 is14. 1=yes,0=no.",1,".35×40."),
+            new("2.4y=13.75 can be solved by13.75÷2.4. 1=yes,0=no.",1,"Original C,D."),
+            new("15×23 can be partitioned to10×23+5×23=345. 1=yes,0=no.",1,"Distribution."),
+            new("Parentheses determine whether product is exponent's base. 1=yes,0=no.",1,"Order of operations.")
         ]
     };
 
