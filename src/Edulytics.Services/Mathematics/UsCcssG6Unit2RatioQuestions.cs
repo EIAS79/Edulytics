@@ -208,6 +208,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0601Unknowns = "usccss.g6.u06.l01.tape_equation_unknown_values";
     public const string L0601TapeLogic = "usccss.g6.u06.l01.tape_diagram_equation_interpretation";
 
+    public const string L0602EquationSolutions = "usccss.g6.u06.l02.variable_equation_solutions";
+    public const string L0602EquationTruth = "usccss.g6.u06.l02.equation_truth_and_model_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2722,6 +2725,48 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("25% of1200mg is300mg. 1=yes,0=no.",1,"Quarter1200."),
             new("A correct x numerical value alone certifies that a student's drawn tape diagram correctly represents the equation. 1=yes,0=no.",0,"Teacher must check arrangement."),
             new("Division and multiplication equations with the same numeric x always require same visual number of pieces. 1=yes,0=no.",0,"Additive and multiplicative structure differ.")
+        ],
+        [L0602EquationSolutions] =
+        [
+            new("Bottle24oz and10oz remain. Amount x consumed in OUNCES?",14,"24-10=14."),
+            new("Five equal pencils total34.5in. One length x in TENTHS OF INCH?",69,"34.5/5=6.9in."),
+            new("2a=4.6. a in TENTHS?",23,"a=2.3."),
+            new("b+2=4.6. b in TENTHS?",26,"b=2.6."),
+            new("c÷2=4.6. c in TENTHS?",92,"c=9.2."),
+            new("d-2=4.6. d in TENTHS?",66,"d=6.6."),
+            new("e+3/8=2. e in EIGHTHS?",13,"e=13/8."),
+            new("(1/8)f=3. Find f.",24,"f=24."),
+            new("g÷(8/5)=1. g in FIFTHS?",8,"g=8/5."),
+            new("One orange supplies75% of45mg recommended vitamin C. Amount in HUNDREDTHS MG?",3375,"45×.75=33.75."),
+            new("Band90 children,20% own instruments. Owner count?",18,"90×.2=18."),
+            new("Band90 children, remaining80% rent. Renter count?",72,"90×.8=72."),
+            new("Band90 children, percentage renters?",80,"100-20=80%."),
+            new("0.25×1.4 in HUNDREDTHS?",35,"0.35."),
+            new("0.061×0.43 in HUNDRED-THOUSANDTHS?",2623,"0.02623."),
+            new("1.017×0.072 in MILLIONTHS?",73224,"0.073224."),
+            new("5.226×0.037 in MILLIONTHS?",193362,"0.193362."),
+            new("If x+10=24. Find x.",14,"Subtract10."),
+            new("If5x=34.5, find x in TENTHS?",69,"Divide by5.")
+        ],
+        [L0602EquationTruth] =
+        [
+            new("5+0=0 is true. 1=yes,0=no.",0,"5≠0."),
+            new("15×0=0 is true. 1=yes,0=no.",1,"Zero product."),
+            new("1.4+2.7=4.1 is true. 1=yes,0=no.",1,"Decimal sum."),
+            new("(2/3)×(5/9)=7/12 is true. 1=yes,0=no.",0,"Product10/27."),
+            new("4⅔=5-⅓ is true. 1=yes,0=no.",1,"Both14/3."),
+            new("24-10=x models consumed water from24 to10. 1=yes,0=no.",1,"Original C."),
+            new("x+10=24 models water consumed. 1=yes,0=no.",1,"Original D."),
+            new("10x=24 models consumed water. 1=yes,0=no.",0,"Different multiplicative relation."),
+            new("5x=34.5 models five pencils length x each. 1=yes,0=no.",1,"Original B."),
+            new("34.5÷5=x models each pencil. 1=yes,0=no.",1,"Original C."),
+            new("5+x=34.5 models five identical pencil lengths totaling34.5. 1=yes,0=no.",0,"Wrong operation."),
+            new("For2a=4.6, a=2.3 makes equality true. 1=yes,0=no.",1,"Check2×2.3=4.6."),
+            new("A variable stands for a quantity, and a solution makes the equation true. 1=yes,0=no.",1,"Definition."),
+            new("Writing10m can mean10×m. 1=yes,0=no.",1,"Juxtaposition notation."),
+            new("A number may be a solution without satisfying an arbitrary different equation. 1=yes,0=no.",1,"Equation-dependent truth."),
+            new("20% of90band students own instruments, so80% rent. 1=yes,0=no.",1,"Complement100%."),
+            new("1.4+2.7=4.1, so1.4 and2.7 must be equal. 1=yes,0=no.",0,"Equality relates sums, not addends.")
         ]
     };
 
