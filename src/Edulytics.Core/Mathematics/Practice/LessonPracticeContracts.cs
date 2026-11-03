@@ -1509,6 +1509,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM G6 U01:L11: classify simple polygons and compute
+        // areas of first-edition source quadrilaterals, hexagon, trapezoid,
+        // triangle, pinwheel. Drawings/proofs are teacher-assessed.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L11",
+            "geometry.area_tiling",
+            "G6_SOURCE_POLYGON_CLASSIFICATION_AND_COMPOSITE_AREA",
+            [
+                "usccss.g6.u01.l11.polygon_classification",
+                "usccss.g6.u01.l11.source_polygon_area"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L11_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
