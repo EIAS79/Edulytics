@@ -79,6 +79,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0307UnitRateValues = "usccss.g6.u03.l07.unit_rate_table_quantities";
     public const string L0307RateInvariance = "usccss.g6.u03.l07.unit_rate_equivalence";
 
+    public const string L0308SpeedAmounts = "usccss.g6.u03.l08.speed_distance_time_quantities";
+    public const string L0308PaceMeaning = "usccss.g6.u03.l08.speed_pace_comparison";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -934,6 +937,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("At35miles/gallon,15gallons is525 miles of modeled range. 1=yes,0=no.",1,"15×35=525."),
             new("If two pairs represent equivalent ratios, their unit rates must match for the same quantity order and units. 1=yes,0=no.",1,"Equal quotient."),
             new("A table's unit-rate column should change if quantities scale by the same positive factor. 1=yes,0=no.",0,"Unit rate is invariant.")
+        ],
+        [L0308SpeedAmounts] =
+        [
+            new("Kangaroo hops2km in3minutes. Time for5km at constant speed in SECONDS?",450,"5×3/2=7.5min=450seconds."),
+            new("Kangaroo hops2km in3minutes. Distance in2minutes in THIRD-KILOMETER units?",4,"2×(2/3)=4/3km, four thirds."),
+            new("Kangaroo hops2km in3minutes. Time in MINUTES to travel4km?",6,"Twice the distance, twice the time."),
+            new("Mai runs4 laps of400m track. Total distance in METERS?",1600,"4×400=1600m."),
+            new("Mai runs250meters/minute. Time for4 laps totaling1600meters, in TENTHS OF MINUTE?",64,"1600/250=6.4minutes=64tenths."),
+            new("Mai runs250m/min. Time for4 laps of400m each in SECONDS?",384,"1600/250×60=384seconds."),
+            new("Han runs at12min/mile. Distance in HALF-MILE units after30minutes?",5,"30/12=2.5miles=five half-miles."),
+            new("Han runs at12min/mile. Distance in MILES after60minutes?",5,"60/12=5miles."),
+            new("Tyler runs at15min/mile. Distance in MILES after60minutes?",4,"60/15=4miles."),
+            new("Han and Tyler start opposite ends of10miles: Han5mi and Tyler4mi after one hour. Gap in MILES after1hour?",1,"10-(5+4)=1mile."),
+            new("Han12min/mile and Tyler15min/mile start10mi apart opposite. Time to meet in SECONDS assuming constant speeds?",4000,"Their closing rate=1/12+1/15=3/20mi/min,10/(3/20)=200/3min=4000sec."),
+            new("Skateboarder A moves15ft/s, B22ft/s. Speed DIFFERENCE feet per second?",7,"22-15=7ft/s."),
+            new("Skateboarder B22ft/s vs A15ft/s over4minutes. Distance difference in FEET?",1680,"4min=240s;7×240=1680ft."),
+            new("Four tablespoons equal1/4cup. Tablespoons in1 cup?",16,"4×4=16tbsp."),
+            new("Four tbsp equal1/4cup,2cups per pint. Tablespoons in1PINT?",32,"16×2=32tbsp."),
+            new("Cube A side2 units, cube B side4 units. Surface area of A in SQUARE UNITS?",24,"6×2²=24."),
+            new("Cube B side4 units. Surface area in SQUARE UNITS?",96,"6×4²=96."),
+            new("Cube A side2 units, cube B side4 units. B-to-A volume multiplication FACTOR?",8,"4³/2³=64/8=8.")
+        ],
+        [L0308PaceMeaning] =
+        [
+            new("A kangaroo hopping2km in3min needs7.5min for5km at constant speed. 1=yes,0=no.",1,"Multiply3min by5/2."),
+            new("A kangaroo hopping2km in3min covers5km in5min at same speed. 1=yes,0=no.",0,"It takes7.5min."),
+            new("Mai at250m/min completes4×400m laps in6.4min. 1=yes,0=no.",1,"1600/250=6.4min."),
+            new("Han12min/mile runs faster than Tyler15min/mile. 1=yes,0=no.",1,"Fewer minutes per mile means faster."),
+            new("Han12min/mile and Tyler15min/mile run toward each other10mi apart, they meet within1hour. 1=yes,0=no.",0,"They cover5+4=9miles in an hour."),
+            new("Han12min/mile and Tyler15min/mile cover a combined9miles in1hour. 1=yes,0=no.",1,"5+4=9."),
+            new("Two skateboarders22ft/s and15ft/s differ by1680feet after4minutes. 1=yes,0=no.",1,"240sec×7ft/s."),
+            new("A 4minute period contains4 seconds. 1=yes,0=no.",0,"Four minutes=240 seconds."),
+            new("A cube of side4 has double the surface area of cube side2. 1=yes,0=no.",0,"Surface area scales by4."),
+            new("A cube of side4 has eight times the volume of a cube side2. 1=yes,0=no.",1,"Volume scales by2 cubed=8."),
+            new("A pace measured in minutes per mile is the reciprocal of speed in miles per minute for a constant positive rate. 1=yes,0=no.",1,"Reciprocal quantities/units."),
+            new("Time to travel a fixed distance at constant speed halves if speed doubles. 1=yes,0=no.",1,"time=distance/speed."),
+            new("On a constant-speed table, doubling time doubles distance traveled from the same origin. 1=yes,0=no.",1,"Proportional movement.")
         ]
     };
 
