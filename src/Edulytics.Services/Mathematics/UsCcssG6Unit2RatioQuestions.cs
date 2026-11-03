@@ -163,6 +163,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0501DecimalArithmetic = "usccss.g6.u05.l01.shopping_decimal_arithmetic";
     public const string L0501DecimalEstimation = "usccss.g6.u05.l01.shopping_reasonableness";
 
+    public const string L0502PlaceValueArithmetic = "usccss.g6.u05.l02.base_ten_decimal_arithmetic";
+    public const string L0502PlaceValueLogic = "usccss.g6.u05.l02.align_decimal_place_values";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2097,6 +2100,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("1½L bottle fills7½ one-fifth-liter glasses. 1=yes,0=no.",1,"1.5/.2=7.5."),
             new("Two triangles with same base5½ and perpendicular height7 have area19¼. 1=yes,0=no.",1,"5.5×7÷2=19.25."),
             new("Adding decimal prices with misaligned decimal places may produce a different numerical result. 1=yes,0=no.",1,"Place value matters.")
+        ],
+        [L0502PlaceValueArithmetic] =
+        [
+            new("0.137 +0.284 expressed in THOUSANDTHS?",421,"137+284=421 thousandths."),
+            new("3.25 +1 expressed in HUNDREDTHS?",425,"325+100=425 hundredths."),
+            new("0.5+1.15 expressed in HUNDREDTHS?",165,"50+115=165."),
+            new("10.6+1.7 expressed in TENTHS?",123,"106+17=123 tenths."),
+            new("123+0.2 expressed in TENTHS?",1232,"1230+2=1232."),
+            new("0.216 expressed as number of THOUSANDTHS?",216,"2tenths+1hundredth+6thousandths=216."),
+            new("0.304 expressed as number of THOUSANDTHS?",304,"3tenths+4thousandths=304."),
+            new("In0.137 there are how many THOUSANDTHS altogether?",137,"0.137=137 thousandths."),
+            new("In0.284 there are how many THOUSANDTHS altogether?",284,"0.284=284 thousandths."),
+            new("0.137+0.284 includes how many HUNDREDTHS beyond regrouping? Enter whole hundredths in0.421.",42,"0.421=42hundredths plus1thousandth."),
+            new("Andre completes135 facts in90sec. Facts per second in HALF-FACT units?",3,"135/90=1.5facts/s=3half-facts."),
+            new("Noah completes75 facts in60sec. Facts per second in QUARTER-FACT units?",5,"75/60=1.25facts/s=5quarter-facts."),
+            new("Andre1.5facts/s and Noah1.25facts/s. Enter1 Andre faster,2 Noah faster.",1,"1.5>1.25."),
+            new("Andre and Noah rate gap in QUARTER-FACTS per second?",1,"1.5-1.25=.25."),
+            new("The value0.137+0.284 expressed in TEN-THOUSANDTHS?",4210,"0.421=4210 ten-thousandths."),
+            new("The sum0.5+1.15 expressed in THOUSANDTHS?",1650,"1.65=1650thousandths."),
+            new("The difference1.15 minus0.5 in HUNDREDTHS?",65,"115-50=65."),
+            new("If ten thousandths combine, how many HUNDREDTHS?",1,"10 thousandths=1 hundredth.")
+        ],
+        [L0502PlaceValueLogic] =
+        [
+            new("0.137+0.284=0.421. 1=yes,0=no.",1,"137+284=421thousandths."),
+            new("0.137+0.284=0.311. 1=yes,0=no.",0,"Requires regrouping hundredths."),
+            new("3.25+1=4.25. 1=yes,0=no.",1,"Align ones."),
+            new("0.5+1.15=1.65. 1=yes,0=no.",1,"0.50+1.15."),
+            new("10.6+1.7=12.3. 1=yes,0=no.",1,"106tenths+17tenths."),
+            new("123+0.2=123.2. 1=yes,0=no.",1,"Place-value alignment."),
+            new("Ten thousandths equal one hundredth. 1=yes,0=no.",1,"10×.001=.01."),
+            new("Twelve hundredths can be regrouped as one tenth and2 hundredths. 1=yes,0=no.",1,"0.12=0.1+0.02."),
+            new("One can add a ones-place digit directly to a tenths-place digit without converting units. 1=yes,0=no.",0,"Convert or align same units."),
+            new("0.5 is numerically equal to0.50. 1=yes,0=no.",1,"Trailing zeros don't change value."),
+            new("Andre135facts/90sec is faster than Noah75facts/60sec. 1=yes,0=no.",1,"1.5 vs1.25facts/s."),
+            new("A physical base-ten block representation can show same decimal using different regroupings. 1=yes,0=no.",1,"E.g.10 thousandths=hundredth."),
+            new("A decimal point should be aligned in vertical addition to match place value. 1=yes,0=no.",1,"Column unit alignment."),
+            new("Teacher should verify blocks and visual digit placement separately from a numeric sum. 1=yes,0=no.",1,"Drawing rubric.")
         ]
     };
 

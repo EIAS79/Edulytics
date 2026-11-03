@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u05.l02.base_ten_decimal_arithmetic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-0point137+0point284-3point25+1-0point5+1point15-and-AndreNoah-speed",
+      "representations": [
+        "numeric",
+        "base_ten_units"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u05.l02.align_decimal_place_values",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-base-ten-unit-relationships-and-decimal-alignment",
+      "representations": [
+        "boolean_reasoning",
+        "base_ten_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u05.l01.shopping_decimal_arithmetic",
       "version": 1,
       "skillId": "ratio.unit_rate",
