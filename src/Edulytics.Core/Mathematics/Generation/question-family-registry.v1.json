@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u05.l04.precise_decimal_add_subtract",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-7point2-minus3point67-16minus1point4-0point384minus0point3798-and-missing-addends",
+      "representations": [
+        "numeric",
+        "decimal_columns"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u05.l04.placevalue_high_precision_logic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-decimal-place-alignment-and-equal-number-trailing-zero",
+      "representations": [
+        "boolean_reasoning",
+        "decimal_algorithm"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u05.l03.decimal_sum_difference_results",
       "version": 1,
       "skillId": "ratio.unit_rate",

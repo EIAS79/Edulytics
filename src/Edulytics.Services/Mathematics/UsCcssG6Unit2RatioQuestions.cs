@@ -169,6 +169,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0503DecimalCalculations = "usccss.g6.u05.l03.decimal_sum_difference_results";
     public const string L0503DecimalPrinciples = "usccss.g6.u05.l03.placevalue_borrowing_correctness";
 
+    public const string L0504PreciseArithmetic = "usccss.g6.u05.l04.precise_decimal_add_subtract";
+    public const string L0504DecimalReasoning = "usccss.g6.u05.l04.placevalue_high_precision_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2179,6 +2182,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A 0.5cm cube volume is0.125cm³, so11160 of them pack1395cm³. 1=yes,0=no.",1,"11160×1/8=1395."),
             new("75miles in60minutes means22.5miles in18minutes at constant rate. 1=yes,0=no.",1,"75×18/60."),
             new("The same decimal number can be written with trailing zeros without changing its value. 1=yes,0=no.",1,"0.3=0.300.")
+        ],
+        [L0504PreciseArithmetic] =
+        [
+            new("7.2-3.67 expressed in HUNDREDTHS?",353,"7.20-3.67=3.53."),
+            new("16-1.4 expressed in TENTHS?",146,"16.0-1.4=14.6."),
+            new("1-0.1978 in TEN-THOUSANDTHS?",8022,"1.0000-.1978=.8022."),
+            new("Chocolates label0.384lb, actual0.3798lb. Difference in TEN-THOUSANDTHS of pound?",42,"0.3840-.3798=.0042."),
+            new("1.036 plus what decimal equals4? Unknown in THOUSANDTHS?",2964,"4-1.036=2.964."),
+            new("0.738 plus what equals1? Unknown in THOUSANDTHS?",262,"1-.738=.262."),
+            new("0.5137 plus what equals1? Unknown in TEN-THOUSANDTHS?",4863,"1-.5137=.4863."),
+            new("Large cube10ft edge packs small cubes2½ft edge. Number along one edge?",4,"10/2.5=4."),
+            new("Large cube10ft edge packs2½ft edge cubes. Number of crates?",64,"4³=64."),
+            new("Chef bakes2 loaves for9 customers. Loaves for63 customers?",14,"63/9×2=14."),
+            new("Chef bakes2 loaves for9 customers. Customers when making20 loaves?",90,"20/2×9=90."),
+            new("Chef bakes2 loaves for9 customers. Fraction of loaf per customer in NINTHS?",2,"2/9 loaf per customer."),
+            new("Six loaves at2 per9 customers feed how many customers?",27,"6/2×9=27."),
+            new("0.3840-0.3798 equals how many MILLIONTHS of a pound?",4200,".0042=4200 millionths."),
+            new("14.6-1.4 in HUNDREDTHS?",1320,"13.2=1320hundredths.")
+        ],
+        [L0504DecimalReasoning] =
+        [
+            new("7.2-3.67=3.53. 1=yes,0=no.",1,"7.20-3.67."),
+            new("7.2-3.67=3.05. 1=yes,0=no.",0,"Misaligned place value."),
+            new("16-1.4=14.6. 1=yes,0=no.",1,"16.0-1.4."),
+            new("1-0.1978=0.8022. 1=yes,0=no.",1,"1.0000-.1978=.8022."),
+            new("0.3840 is equal to0.384. 1=yes,0=no.",1,"Trailing zero."),
+            new("0.3798lb chocolates are lighter than0.384lb label by0.0042lb. 1=yes,0=no.",1,"Subtract label minus actual."),
+            new("0.3798lb are heavier than0.384lb. 1=yes,0=no.",0,"Actual less."),
+            new("1.036+2.964=4. 1=yes,0=no.",1,"Regroup thousandths."),
+            new("0.738+0.262=1. 1=yes,0=no.",1,"Sum1000thousandths."),
+            new("0.5137+0.4863=1. 1=yes,0=no.",1,"Ten-thousandths complement."),
+            new("2.5ft cubes along10ft edge fit4 each side. 1=yes,0=no.",1,"10/2.5=4."),
+            new("Cube10ft edge packs64 cubes of2.5ft edge when aligned. 1=yes,0=no.",1,"4³=64."),
+            new("63 customers at2 loaves per9 need14 loaves. 1=yes,0=no.",1,"63/9×2."),
+            new("20 loaves at2 for9 customers correspond to90 customers. 1=yes,0=no.",1,"20/2×9."),
+            new("In decimal subtraction, digits should be aligned by place value even when numbers have different displayed precision. 1=yes,0=no.",1,"Decimal points aligned.")
         ]
     };
 
