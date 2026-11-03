@@ -1447,6 +1447,22 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM G6 U01:L07 triangle/diagonal composition; exact
+        // fractions and numeric responses only. Drawing and congruence proof
+        // are assessed by a teacher using the source-matched rubric.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L07",
+            "geometry.area_tiling",
+            "G6_SOURCE_TRIANGLE_DIAGONAL_CONGRUENCE_AND_FRACTIONS",
+            [
+                "usccss.g6.u01.l07.parallelogram_diagonal_half",
+                "usccss.g6.u01.l07.original_fraction_dimensions",
+                "usccss.g6.u01.l07.triangle_composition_logic"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L07_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
