@@ -307,6 +307,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0714Distances = "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances";
     public const string L0714DistanceLogic = "usccss.g6.u07.l14.distance_same_axis_reasoning";
 
+    public const string L0715PolygonNumbers = "usccss.g6.u07.l15.polygon_perimeter_signed_coordinates";
+    public const string L0715PolygonChecks = "usccss.g6.u07.l15.polygon_coordinate_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4310,6 +4313,52 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A checked bag limited to50lb is allowed at50.6lb. 1=yes,0=no.",0,"50.6 exceeds maximum."),
             new("The factor22lb per10kg is approximate, so a careful solution marks50.6lb approximate. 1=yes,0=no.",1,"Rounded conversion."),
             new("For axis-aligned distance, subtract coordinates and take absolute value to ensure nonnegative length. 1=yes,0=no.",1,"Length must be nonnegative.")
+        ],
+        [L0715PolygonNumbers] =
+        [
+            new("Rectangle corners(3,0),(3,-5),(-4,0),(-4,-5). Horizontal side length?",7,"|3-(-4)|=7."),
+            new("Same rectangle vertical side length?",5,"|0-(-5)|=5."),
+            new("Same rectangle perimeter?",24,"2(7+5)=24."),
+            new("Same rectangle area in square units?",35,"7×5=35."),
+            new("A square has perimeter20. Length of each side?",5,"20/4=5."),
+            new("An axis-aligned square uses vertex(-3,5) with side5 to the right and down. Second vertex x?",2,"-3+5=2."),
+            new("Same square from(-3,5), second vertex y?",5,"Stay horizontal at5."),
+            new("Same square corners(-3,5),(2,5),(2,0),(-3,0). Area in SQUARE UNITS?",25,"5×5=25."),
+            new("Source polygon(-3,2)->(2,2). First horizontal edge length?",5,"2-(-3)=5."),
+            new("Source polygon(2,2)->(2,-4). Second vertical edge length?",6,"2-(-4)=6."),
+            new("Source polygon(2,-4)->(-1,-4). Third edge length?",3,"2-(-1)=3."),
+            new("Source polygon(-1,-4)->(-1,-2). Fourth edge length?",2,"-2-(-4)=2."),
+            new("Source polygon(-1,-2)->(-3,-2). Fifth edge length?",2,"-1-(-3)=2."),
+            new("Source polygon(-3,-2)->(-3,2). Sixth edge length?",4,"2-(-2)=4."),
+            new("Total perimeter of source six-edge polygon?",22,"5+6+3+2+2+4=22."),
+            new("Jada's cat mass3.45kg and Andre's cat1.2kg more. Andre mass in HUNDREDTHS OF KG?",465,"3.45+1.2=4.65kg."),
+            new("Andre cat4.65kg, Jada3.45kg. Difference in HUNDREDTHS KG?",120,"4.65-3.45=1.2kg."),
+            new("Apples cost1.60 dollars/lb in market, grocery charges1.5times. Grocery cost in CENTS per lb?",240,"160×1.5=240cents."),
+            new("A square side5 with bottom-left(-3,0). Top-right x coordinate?",2,"x=-3+5=2."),
+            new("A square side5 with bottom-left(-3,0). Top-right y coordinate?",5,"y=0+5."),
+            new("Source six-edge polygon perimeter22. Half its perimeter in UNITS?",11,"22/2=11.")
+        ],
+        [L0715PolygonChecks] =
+        [
+            new("Rectangle x values3 and-4 has width7. 1=yes,0=no.",1,"|3-(-4)|=7."),
+            new("Rectangle y values0 and-5 has height5. 1=yes,0=no.",1,"|0-(-5)|=5."),
+            new("A7-by5 rectangle has perimeter24 and area35. 1=yes,0=no.",1,"2(7+5) and7×5."),
+            new("Square perimeter20 means side length4. 1=yes,0=no.",0,"Side5."),
+            new("Points(-3,5),(2,5),(2,0),(-3,0) are corners of a square of side5. 1=yes,0=no.",1,"Five units both axes."),
+            new("Source six-edge polygon has total perimeter22. 1=yes,0=no.",1,"5+6+3+2+2+4."),
+            new("Source polygon edge(-1,-4) to(-1,-2) is horizontal. 1=yes,0=no.",0,"x constant, vertical."),
+            new("Source polygon edge(2,-4) to(-1,-4) is horizontal length3. 1=yes,0=no.",1,"y constant."),
+            new("Perimeter adds lengths of all outer edges, rather than area squares inside. 1=yes,0=no.",1,"Boundary length."),
+            new("Teacher should check graph orientation/scale and vertex connections, not just a numeric perimeter. 1=yes,0=no.",1,"Diagram evidence distinct from math."),
+            new("Andre cat mass x=3.45+1.2 is a valid original equation. 1=yes,0=no.",1,"Heavier by1.2."),
+            new("Andre cat mass x-1.2=3.45 is also valid. 1=yes,0=no.",1,"Subtract difference."),
+            new("Andre cat mass x=3.45-1.2 is valid when he weighs more. 1=yes,0=no.",0,"Would be lighter."),
+            new("Grocery apples price y=1.5×1.60 is valid. 1=yes,0=no.",1,"Multiplier of market price."),
+            new("Grocery apples price y/1.5=1.60 is valid. 1=yes,0=no.",1,"Equivalent equation."),
+            new("Grocery apples price y=1.60/1.5 is valid for more expensive grocery. 1=yes,0=no.",0,"Incorrect inverse."),
+            new("Horizontal/vertical segments may cross zero; using absolute coordinate differences yields correct length. 1=yes,0=no.",1,"Nonnegative length."),
+            new("Polygon vertex order is irrelevant to shape if connected in a different arbitrary order. 1=yes,0=no.",0,"Different order can alter edges."),
+            new("A coordinate polygon may contain both positive and negative vertex coordinates. 1=yes,0=no.",1,"Four-quadrant figures.")
         ]
     };
 
