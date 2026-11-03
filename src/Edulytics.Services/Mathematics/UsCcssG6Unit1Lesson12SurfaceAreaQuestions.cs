@@ -17,14 +17,17 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     public const string L13Measures = "usccss.g6.u01.l13.source_faces_edges_vertices";
     public const string L14NetArea = "usccss.g6.u01.l14.source_net_surface_area";
     public const string L14NetLogic = "usccss.g6.u01.l14.net_folding_face_logic";
+    public const string L15BoxArea = "usccss.g6.u01.l15.source_box_nets_surface_volume";
+    public const string L15NetLogic = "usccss.g6.u01.l15.net_design_and_volume_reasoning";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures
-       or L14NetArea or L14NetLogic;
+       or L14NetArea or L14NetLogic or L15BoxArea or L15NetLogic;
     private static int Count(string family)=>family==Prism?14:family==Meaning?8:
         family==L13Polyhedra?15:family==L13Measures?13:
-        family==L14NetArea?10:family==L14NetLogic?11:0;
+        family==L14NetArea?10:family==L14NetLogic?11:
+        family==L15BoxArea?14:family==L15NetLogic?9:0;
 
     public static Problem Build(string family,Random random)
     {
@@ -34,7 +37,9 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         var t=family==Prism?PrismProblem(v):family==Meaning?MeaningProblem(v):
             family==L13Polyhedra?L13PolyhedraProblem(v):
             family==L13Measures?L13MeasuresProblem(v):
-            family==L14NetArea?L14NetAreaProblem(v):L14NetLogicProblem(v);
+            family==L14NetArea?L14NetAreaProblem(v):
+            family==L14NetLogic?L14NetLogicProblem(v):
+            family==L15BoxArea?L15BoxAreaProblem(v):L15NetLogicProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -59,6 +64,30 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L15BoxArea=>v switch
+        {
+            0=>42m, // source original15.3 A SA
+            1=>18m, // source15.3 A volume
+            2=>54m, // source original15.3 B SA
+            3=>18m, // source15.3 B volume
+            4=>54m, // source original15.3 C SA
+            5=>27m, // source15.3 C volume
+            6=>60m, // source practice1 corrected Jada net area
+            7=>272m, // source practice2 cereal 8×2×12
+            8=>36m, // source practice3 12 cube steps all faces
+            9=>30m, // source practice3 after top2 cubes removed
+            10=>56m, // source P5 separate square pyramid side4 slant height5
+            11=>84m, // existing independent triangle prism 3–4–5 length6
+            12=>72m, // existing independent box 2×3×6 area
+            13=>66m, // existing independent box 3×3×4 area
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L15NetLogic=>v switch
+        {
+            0=>1m,1=>0m,2=>1m,3=>1m,4=>0m,
+            5=>1m,6=>0m,7=>1m,8=>0m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         L14NetArea=>v switch
@@ -131,7 +160,7 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer!=answer.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic)return answer is ("0" or "1") &&
+        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -167,6 +196,39 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L15BoxAreaProblem(int v)=>v switch
+    {
+        0=>("Original source 15.3 box A rectangular prism dimensions3×3×2cm. Find exterior area.","2×(9+6+6)=42."),
+        1=>("Original source 15.3 box A dimensions3×3×2cm. Find volume in cubic centimeters.","3×3×2=18."),
+        2=>("Original source 15.3 box B rectangular prism3×1×6cm. Find exterior surface area.","2×(3+18+6)=54."),
+        3=>("Original source 15.3 box B dimensions3×1×6cm. Find volume.","3×1×6=18."),
+        4=>("Original source 15.3 box C is a cube3×3×3cm. Find surface area.","6×9=54."),
+        5=>("Original source 15.3 box C cube3×3×3cm. Find volume.","3×3×3=27."),
+        6=>("Original practice1 Jada's triangular-prism net has rectangular faces5×4,4×4,3×4 and two right-triangle end faces each base4 height3. Find the CORRECT total surface area.","Rectangular faces20+16+12=48. Each triangle area6, not Jada's12. Total60."),
+        7=>("Original practice2 cereal box8×2×12 inches. Find all outside surface area.","2×(16+96+24)=272 square inches."),
+        8=>("Original practice3 stair arrangement twelve unit cubes, three steps heights1,2,3 and thickness2. Find exposed area.","72 faces minus36 hidden shared faces yields36."),
+        9=>("Original practice3 remove uppermost two cubes, remaining ten cubes steps heights1,2,2 and thickness2. Find exposed area.","60 original cube faces minus30 internal shared faces yields30."),
+        10=>("Original practice5 square pyramid net base4×4, four triangles each base4 and perpendicular face height5. Find total area.","Base16+4×(4×5÷2)=56."),
+        11=>("Independent Edulytiks triangular prism sample: right triangle3–4–5, prism length6, find outside area.","Two triangles12, lateral rectangles72, total84."),
+        12=>("Independent Edulytiks sample box2×3×6, find outside area, distinct from original source box A.","2×(6+12+18)=72."),
+        13=>("Independent Edulytiks sample box3×3×4, find outside area, distinct from original source box C.","2×(9+12+12)=66."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L15NetLogicProblem(int v)=>v switch
+    {
+        0=>("Original15.3 boxes A and B have equal volume18, but exterior areas42 and54 differ. 1=true,0=false.","Equal volumes do not force equal surface areas."),
+        1=>("Original15.3 boxes B and C both have surface area54, so MUST have equal volume. 1=true,0=false.","Box B volume18 differs from C27."),
+        2=>("Original15.3 box A uses least cardboard, area42 vs B54 and C54. 1=true,0=false.","Least surface area corresponds to least ideal cardboard."),
+        3=>("Original15.3 box C fits more unit cubes (27) than A or B (18). 1=true,0=false.","Volume of C is3 cubed."),
+        4=>("Original practice1 Jada's two triangular end faces with base4 and height3 each have area12. 1=true,0=false.","Each right-triangle face is4×3÷2=6."),
+        5=>("Original15.2 drawing a net from a given prism must represent every exterior face once with matching side lengths and foldable adjoining edges. 1=true,0=false.","Both polygon inventory and edge adjacency are needed."),
+        6=>("Original15.2 nets with the same numeric face-area sum MUST fold to congruent solids. 1=true,0=false.","Area alone neither validates net folding nor shape congruence."),
+        7=>("Original15.3 a cube admits multiple different valid six-square nets. 1=true,0=false.","Cube nets can differ in arrangement and still fold."),
+        8=>("Original15.1 wrapping box with an unknown height has a unique EXACT six-face surface area even without estimating that dimension. 1=true,0=false.","Missing height prevents unique exact calculation."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 

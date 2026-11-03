@@ -1569,6 +1569,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM G6 U01:L15: original box nets and capacities,
+        // Jada's false triangle area, stepped cube faces and correct folding.
+        // Reuse prior solid exact-question service. Actual drawn nets teacher marked.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L15",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_NETS_BOX_SURFACE_VS_VOLUME",
+            [
+                "usccss.g6.u01.l15.source_box_nets_surface_volume",
+                "usccss.g6.u01.l15.net_design_and_volume_reasoning"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L15_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

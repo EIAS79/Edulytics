@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics Grade 6 U01:L15 — More Nets, More Surface Area</title>
+<style>:root{color-scheme:light;font-family:system-ui,sans-serif}body{max-width:930px;padding:17px;margin:auto;color:#18273c;line-height:1.5}
+h1,h2{line-height:1.3}section{border-top:1px solid #afbccd;padding-top:12px;margin-top:18px}
+.notice{background:#eef4f9;border-left:4px solid #466a91;padding:12px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #aab8c6;padding:8px;text-align:left}
+fieldset{display:flex;flex-wrap:wrap;gap:12px}label{display:block;max-width:210px}input{display:block;width:8em;padding:8px;margin-top:5px}button{padding:9px 12px;cursor:pointer}output{display:block;padding:11px;min-height:14px}.rubric{background:#f6f8fa;padding:12px}@media print{button{display:none}.notice,.rubric{background:white}body{padding:0}}</style>
+</head><body>
+<h1>G6 · U01:L15 — More Nets, More Surface Area</h1>
+<p class="notice"><strong>Independently authored Edulytics workmat</strong> aligned to original OUR/IM first-edition Lesson 15.2–15.3 and practice. No publisher source artwork, teacher keys or protected original 15.4 Cool-down are copied. Numeric checks do not grade drawn nets, folding, or written explanations.</p>
+<section><h2>15.3 — Three original source boxes (centimeters)</h2>
+<table><thead><tr><th>Box</th><th>Dimensions</th><th>Surface area (cm²)</th><th>Volume (cm³)</th></tr></thead><tbody>
+<tr><td>A</td><td>3 × 3 × 2</td><td>42</td><td>18</td></tr>
+<tr><td>B</td><td>3 × 1 × 6</td><td>54</td><td>18</td></tr>
+<tr><td>C</td><td>3 × 3 × 3 cube</td><td>54</td><td>27</td></tr>
+</tbody></table>
+<p><strong>Reason:</strong> A and B have equal capacity but different cardboard needed. B and C use equal cardboard, but C holds 9 more unit cubes. Do not confuse these with the independent 2×3×6 or3×3×4 examples elsewhere in Edulytics.</p></section>
+<section><h2>Original Practice 1 — Correct Jada's areas</h2>
+<p>A triangular prism net has three rectangles of areas 20, 16, and 12 cm², and TWO right triangles each base4cm and perpendicular height3cm. Jada wrote <strong>12 cm² per triangle</strong>. Identify her mistake, replace each triangle area with <strong>6 cm²</strong>, then add all five outside faces for <strong>60 cm²</strong>. The hypotenuse is 5cm, but it is not the perpendicular height to the 4cm base.</p></section>
+<section><h2>Original Practice 3 — Twelve unit-cube steps</h2>
+<p>Build a stair shape with three adjacent columns of heights <strong>1,2,3</strong>, each TWO cubes deep: total 2×(1+2+3)=12 cubes. All outer square faces total <strong>36</strong>. Remove the top two cubes from the highest column, leaving heights 1,2,2; outer area becomes <strong>30</strong>. Teachers examine the actual 3D build to ensure all hidden faces are included or excluded correctly.</p></section>
+<section><h2>Numeric check</h2>
+<form id="quiz"><fieldset>
+<label for="qa">Original box A surface<input required inputmode="decimal" id="qa"></label>
+<label for="qb">Original box B surface<input required inputmode="decimal" id="qb"></label>
+<label for="qc">Original box C volume<input required inputmode="decimal" id="qc"></label>
+<label for="qjada">Correct original Jada net area<input required inputmode="decimal" id="qjada"></label>
+<label for="qsteps">Steps after removing top two cubes<input required inputmode="decimal" id="qsteps"></label>
+</fieldset><button type="submit">Check five numbers</button><output id="feedback" aria-live="polite"></output></form>
+</section>
+<section><h2>Edulytics independent Cool-down (NOT original publisher 15.4)</h2>
+<p>Cut out or draw a foldable net for a right-triangular prism with triangular legs3cm and4cm (hypotenuse5cm) and prism length6cm. Show both congruent triangular faces and all three lateral rectangles. Calculate surface area <strong>84 cm²</strong> and write why all five outside polygons are needed.</p>
+<p class="rubric"><strong>Teacher rubric:</strong> two congruent 3–4–5 right triangles area6 each; three rectangles areas18,24,30; sum84; all shared edges match in the drawn/folded net, no overlaps/gaps; explanation distinguishes area in cm² from prism capacity in cm³. Only the teacher checks the geometry and argument.</p>
+<div style="border:1px dashed #8a9aa9;min-height:165px" aria-label="Blank sketch area"></div></section>
+<button type="button" id="print">Print</button>
+<script>"use strict";
+document.getElementById("quiz").addEventListener("submit",e=>{e.preventDefault();const ids=["qa","qb","qc","qjada","qsteps"],answer=[42,54,27,60,30];
+const v=ids.map((id,i)=>{const s=document.getElementById(id).value.trim();return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(s)&&Number.isFinite(Number(s))&&Number(s)===answer[i]});
+const n=v.filter(Boolean).length;document.getElementById("feedback").textContent=n===5?"5/5 numbers correct; teacher grades actual nets and written justification.":n+"/5 numbers correct; recheck face counting, prism volume versus area, and Jada's triangle formula."});
+document.getElementById("print").addEventListener("click",()=>window.print());</script>
+</body></html>

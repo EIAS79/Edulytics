@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l15.source_box_nets_surface_volume",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-g6-u01l15-source-abc-box-nets-and-jada-triangle-prism",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l15.net_design_and_volume_reasoning",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-g6-u01l15-volume-not-surface-area-and-construction-logic",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l14.source_net_surface_area",
       "version": 1,
       "skillId": "geometry.area_tiling",
