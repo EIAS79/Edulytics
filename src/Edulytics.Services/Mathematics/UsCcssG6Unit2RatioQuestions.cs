@@ -112,6 +112,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0401SourceNumerics = "usccss.g6.u04.l01.division_and_source_quantities";
     public const string L0401QuotientScale = "usccss.g6.u04.l01.predict_quotient_size";
 
+    public const string L0402DivisionNumbers = "usccss.g6.u04.l02.division_groups_and_size";
+    public const string L0402DivisionMeaningLogic = "usccss.g6.u04.l02.division_interpretations";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1386,6 +1389,47 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A thicker object generally needs MORE copies than thin object to fill same stack height. 1=yes,0=no.",0,"Thicker means fewer copies."),
             new("For a positive dividend, a larger positive divisor produces a larger quotient. 1=yes,0=no.",0,"Monotonic inverse relationship."),
             new("Two numerically close positive numbers yield a quotient close to1. 1=yes,0=no.",1,"Provided one is not zero and difference small relative to magnitude.")
+        ],
+        [L0402DivisionNumbers] =
+        [
+            new("20 pounds strawberries shared by5 people. Pounds PER PERSON?",4,"20÷5=4lb per person."),
+            new("20 pounds strawberries shared5lb per person. Number of PEOPLE?",4,"20÷5=4people."),
+            new("A museum needs180 dollars. Tickets cost15 dollars EACH. Number of tickets?",12,"180÷15=12 tickets."),
+            new("A museum needs180 dollars for15 tickets. Price per ticket in DOLLARS?",12,"180÷15=12 dollars."),
+            new("Ten divided by5 equals?",2,"5×2=10."),
+            new("Four and a half divided by3, answer in HALVES?",3,"4.5÷3=1.5=3halves."),
+            new("One half divided by4, answer in EIGHTHS?",1,"1/2÷4=1/8."),
+            new("Two and a half gallons divided equally among5 bottles. Fill per bottle in HALF-GALLONS?",1,"2.5÷5=0.5gallon."),
+            new("200 golf balls divided into4 buckets. Balls per bucket?",50,"200÷4=50."),
+            new("Sixteen socks in pairs. Number of pairs?",8,"16÷2=8."),
+            new("a divided by6 equals1. What is a?",6,"6/6=1."),
+            new("a divided by6 is greater than1, and a is a positive integer. Smallest a?",7,"Any a>6 works; smallest integer7."),
+            new("a divided by6 is less than1 and positive a is a whole number. Largest positive a?",5,"Largest positive whole a<6 is5."),
+            new("0.25 is what PERCENT of1?",25,"0.25×100=25."),
+            new("0.1 is what PERCENT of1?",10,"0.1×100=10."),
+            new("0.75 is what PERCENT of1?",75,"0.75×100=75."),
+            new("1.5 is what PERCENT of1?",150,"1.5×100=150."),
+            new("1.4 is what PERCENT of1?",140,"1.4×100=140."),
+            new("Jada walks3mph, Elena2.8mph, both for3hours. Difference in TENTHS OF MILE?",6,"(3-2.8)×3=0.6mile=6tenths."),
+            new("Two and a half gallons split five equal bottles. Number of QUARTS each, assuming4quarts per gallon?",2,"0.5gallon=2quarts.")
+        ],
+        [L0402DivisionMeaningLogic] =
+        [
+            new("20÷5=4 can mean20lb shared among5 people gives4lb per person. 1=yes,0=no.",1,"Number of groups known."),
+            new("20÷5=4 can mean20lb split into5lb portions yields4 people. 1=yes,0=no.",1,"Size of each group known."),
+            new("20÷5=4 has one and only one possible contextual interpretation. 1=yes,0=no.",0,"Unknown groups or unknown group size."),
+            new("180÷15=12 can represent12 tickets at15 dollars each. 1=yes,0=no.",1,"12×15=180."),
+            new("180÷15=12 can represent15 tickets at12 dollars each. 1=yes,0=no.",1,"15×12=180."),
+            new("4.5÷3=1.5 can be checked by multiplying1.5×3=4.5. 1=yes,0=no.",1,"Inverse operation."),
+            new("1/2 divided by4 equals1/8. 1=yes,0=no.",1,"Four equal parts of a half."),
+            new("Two and a half gallons among5 bottles means each gets2 gallons. 1=yes,0=no.",0,"Each gets half a gallon."),
+            new("200 balls among4 equal buckets means50 per bucket. 1=yes,0=no.",1,"200/4=50."),
+            new("Sixteen socks in pairs make8 pairs. 1=yes,0=no.",1,"16/2=8."),
+            new("If a/6 is greater than1 for positive a, then a>6. 1=yes,0=no.",1,"Divisor6."),
+            new("If a/6=1 then a=6. 1=yes,0=no.",1,"Equal factors."),
+            new("If a/6 is less than1 for positive a, a must be greater than6. 1=yes,0=no.",0,"a<6."),
+            new("The quotient can represent either number of groups or amount per group depending on units. 1=yes,0=no.",1,"Context determines unit of unknown."),
+            new("At3mph versus2.8mph for3h, distance difference is0.6mile. 1=yes,0=no.",1,"9 vs8.4 miles.")
         ]
     };
 
