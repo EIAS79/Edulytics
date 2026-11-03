@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u04.l17.first_party_fixed_orientation_packing_math",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "bounded-original-historical-classroom-box-dimensions-with-specified-uniform-axis-orientation",
+      "representations": [
+        "numeric",
+        "rectangular_prism"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u04.l17.first_party_orientation_model_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-historical-usps-rates-no-unproven-global-optimum-and-orientation-dependent-geometry",
+      "representations": [
+        "boolean_reasoning",
+        "optimization_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u04.l16.fraction_operations_context",
       "version": 1,
       "skillId": "ratio.unit_rate",

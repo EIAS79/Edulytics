@@ -157,6 +157,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0416AllOperations = "usccss.g6.u04.l16.fraction_operations_context";
     public const string L0416OperationsLogic = "usccss.g6.u04.l16.fraction_ops_reasoning";
 
+    public const string L0417BoundedPacking = "usccss.g6.u04.l17.first_party_fixed_orientation_packing_math";
+    public const string L0417PackingModelLogic = "usccss.g6.u04.l17.first_party_orientation_model_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2007,6 +2010,52 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("With55coins at ratio2:3, Jada has22pennies and33dimes. 1=yes,0=no.",1,"11 per ratio unit."),
             new("The value of22pennies and33dimes is3 dollars52 cents. 1=yes,0=no.",1,"22+330=352cents."),
             new("Choice of fraction operation depends on whether total, difference, rate or number of groups is unknown. 1=yes,0=no.",1,"Meaning drives operation.")
+        ],
+        [L0417BoundedPacking] =
+        [
+            new("An artist must ship270 jewelry boxes. SMALL shipping box can fit3×3×2 boxes under specified orientation. Capacity per carton?",18,"3×3×2=18."),
+            new("A SMALL carton fits18 jewelry boxes. Cartons needed for270 jewelry boxes?",15,"270/18=15."),
+            new("SMALL cartons each cost680cents. Shipping270 items using15 cartons costs how many CENTS?",10200,"15×680=10200cents."),
+            new("MEDIUM 1 orientation fits6×11×2 jewelry boxes. Capacity?",132,"6×11×2=132."),
+            new("MEDIUM 1 cartons fit132 jewelry boxes each. How many cartons for270?",3,"Ceiling270/132=3."),
+            new("Three MEDIUM 1 shipping cartons at1345cents each cost CENTS?",4035,"3×1345=4035."),
+            new("MEDIUM 2 orientation fits6×4×6 jewelry boxes. Capacity?",144,"6×4×6=144."),
+            new("MEDIUM 2 cartons fit144 per carton. How many needed for270?",2,"Ceiling270/144=2."),
+            new("Two MEDIUM 2 cartons at1345cents each cost CENTS?",2690,"2×1345=2690."),
+            new("LARGE carton chosen orientation fits16×5×3 jewelry boxes. Capacity?",240,"16×5×3=240."),
+            new("LARGE cartons fit240 each. How many needed for270?",2,"Ceiling270/240=2."),
+            new("Two LARGE shipping cartons at1875cents each cost CENTS?",3750,"2×1875=3750."),
+            new("Two MEDIUM 2 cartons can hold how many jewelry boxes with144-per-carton packing?",288,"2×144=288."),
+            new("If two MEDIUM 2 cartons hold288 in total but only270 ordered, unused item SLOTS?",18,"288-270=18 slots."),
+            new("One MEDIUM 2 carton fits144 and one MEDIUM 1 fits132. Combined capacity?",276,"144+132=276."),
+            new("One MEDIUM 2 and one MEDIUM 1 at1345cents each cost CENTS?",2690,"2×1345=2690."),
+            new("One LARGE carton fits240, one MEDIUM 1 fits132. Combined capacity?",372,"240+132=372."),
+            new("One LARGE and one MEDIUM 1 cost CENTS at1875 and1345cents?",3220,"1875+1345=3220."),
+            new("A jewelry box has edge lengths1¾in,2¼in,¾in. Volume in SIXTY-FOURTHS OF CUBIC INCH?",189,"7/4×9/4×3/4=189/64in³."),
+            new("Small box5⅜in along a1¾in jewelry-box edge. Maximum full boxes along this axis?",3,"5.375/1.75=3.071, floor3."),
+            new("Small box8⅝in along a2¼in jewelry-box edge. Maximum full boxes along this axis?",3,"8.625/2.25=3.833, floor3."),
+            new("Small box1⅝in along a¾in jewelry-box edge. Maximum full boxes along this axis?",2,"1.625/.75=2.166, floor2."),
+            new("Large box12in edge along¾in jewelry-box edge. Count along that axis?",16,"12/.75=16."),
+            new("Large box12in edge along2¼in jewelry-box edge. Count along that axis?",5,"12/2.25=5.333, floor5."),
+            new("Large box5½in edge along1¾in jewelry-box edge. Count along that axis?",3,"5.5/1.75=3.14, floor3.")
+        ],
+        [L0417PackingModelLogic] =
+        [
+            new("Under one fixed orientation, per-axis full-box counts can be multiplied to get a rectangular grid capacity. 1=yes,0=no.",1,"Product of three integer packing counts."),
+            new("Jewelry boxes may have different packing capacities when rotated. 1=yes,0=no.",1,"Different edge alignment."),
+            new("A capacity of144 per carton can ship270 items using just1 carton. 1=yes,0=no.",0,"Need2."),
+            new("Two cartons each144 capacity can hold288 jewelry boxes. 1=yes,0=no.",1,"2×144=288."),
+            new("At the historical source classroom prices, two medium2 cartons cost26.90 dollars. 1=yes,0=no.",1,"2×13.45=26.90."),
+            new("Two medium2 cartons at historical prices are cheaper than two large cartons at18.75 each. 1=yes,0=no.",1,"26.90<37.50."),
+            new("A chosen fixed orientation costing26.90 dollars proves global optimality among all mixed packing schemes and live USPS rates. 1=yes,0=no.",0,"This is a bounded model, not complete optimization or current pricing."),
+            new("Small box packing counts3×3×2 imply18 jewelry boxes per carton. 1=yes,0=no.",1,"Product18."),
+            new("Two medium1 cartons each132 would hold270 jewelry boxes. 1=yes,0=no.",0,"264<270; need3."),
+            new("One medium2 capacity144 and one medium1 capacity132 total276, enough for270. 1=yes,0=no.",1,"276≥270."),
+            new("Packaging material thickness, damaged capacity and real postal restrictions may change a physical shipping decision. 1=yes,0=no.",1,"Assumptions matter."),
+            new("The source's historical flat-rate prices should be treated as verified current USPS prices in2026. 1=yes,0=no.",0,"Historical classroom dataset, not live prices."),
+            new("A student-created orientation drawing needs human assessment even when a per-axis multiplication is correct. 1=yes,0=no.",1,"Actual packing feasibility must be reviewed."),
+            new("For270 boxes with carton capacity144, the count is rounded UP to2 cartons. 1=yes,0=no.",1,"Ceiling, not rounding to nearest."),
+            new("The cheapest plan among only four uniform-orientation illustrated methods may not be the cheapest unconstrained plan. 1=yes,0=no.",1,"Mixed orientations and cartons may change optimum.")
         ]
     };
 
