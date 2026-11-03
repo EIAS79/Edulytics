@@ -52,6 +52,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L15TapeParts = "usccss.g6.u02.l15.tape_diagram_part_whole";
     public const string L15TapeLogic = "usccss.g6.u02.l15.part_to_whole_reasoning";
 
+    public const string L16MultistepRatio = "usccss.g6.u02.l16.multistep_ratio_totals";
+    public const string L16RepresentationChoice = "usccss.g6.u02.l16.ratio_tool_selection";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -587,6 +590,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Four sunny days for every rainy day means rainy:total=1:5. 1=yes,0=no.",1,"Four sunny and one rainy part."),
             new("At32miles per160minutes,100miles takes500minutes at same pace. 1=yes,0=no.",1,"5 minutes/mile."),
             new("A 3-pound orange bag4 dollars has lower cost per pound than an8-pound bag9 dollars. 1=yes,0=no.",0,"4/3=1.333 vs9/8=1.125.")
+        ],
+        [L16MultistepRatio] =
+        [
+            new("Piggy bank ratios nickels:dimes=2:3 and dimes:quarters=2:5. Combined smallest integer ratio for NICKELS?",4,"Bring dime ratio to6: nickels4,dimes6,quarters15."),
+            new("Piggy bank ratios nickels:dimes=2:3 and dimes:quarters=2:5. Combined smallest ratio for DIMES?",6,"Nickels4:dimes6:quarters15."),
+            new("Piggy bank ratios nickels:dimes=2:3 and dimes:quarters=2:5. Combined smallest ratio for QUARTERS?",15,"Nickels4:dimes6:quarters15."),
+            new("Piggy bank has500 coins with nickels:dimes:quarters=4:6:15. How many NICKELS?",80,"500 divided by25=20;4×20=80."),
+            new("Piggy bank has500 coins with nickels:dimes:quarters=4:6:15. How many DIMES?",120,"6×20=120."),
+            new("Piggy bank has500 coins with nickels:dimes:quarters=4:6:15. How many QUARTERS?",300,"15×20=300."),
+            new("Piggy bank has80nickels120dimes300quarters. Total VALUE in CENTS?",9100,"80×5+120×10+300×25=9100."),
+            new("Horse A gallops32ft/sec and horse B28ft/sec. How many feet farther after5sec?",20,"(32-28)×5=20 feet."),
+            new("Horse A gallops32ft/sec. Distance in feet after5sec?",160,"32×5=160feet."),
+            new("Horse B gallops28ft/sec. Distance in feet after5sec?",140,"28×5=140feet."),
+            new("Andre paid13 dollars for3 books. At the same rate Diego pays how many DOLLARS for12 books?",52,"12/3×13=52 dollars."),
+            new("Andre paid13 dollars for3 books. At same rate, how many dollars for6 books?",26,"6/3×13=26."),
+            new("Nickels:dimes:quarters=4:6:15 has how many total RATIO PARTS?",25,"4+6+15=25."),
+            new("A ratio2:3 scales to 6:9. If total objects are15, how many FIRST category?",6,"2/5 of15=6."),
+            new("A rectangular area model needs 3 equal parts width and5 height. Area in square units?",15,"3×5=15."),
+            new("Horse A and B rates differ by how many FEET PER SECOND?",4,"32-28=4.")
+        ],
+        [L16RepresentationChoice] =
+        [
+            new("Nickels:dimes2:3 and dimes:quarters2:5 together give4:6:15. 1=yes,0=no.",1,"Common dime amount6."),
+            new("Nickels:dimes2:3 and dimes:quarters2:5 together give2:3:5. 1=yes,0=no.",0,"The dime count must agree across ratios."),
+            new("A bank with nickels80,dimes120,quarters300 has500 total coins. 1=yes,0=no.",1,"80+120+300=500."),
+            new("The value of80 nickels,120 dimes and300 quarters is91 dollars. 1=yes,0=no.",1,"400+1200+7500=9100cents."),
+            new("32ft/s and28ft/s differ by20ft after5seconds. 1=yes,0=no.",1,"Difference4ft/s times5=20ft."),
+            new("If two horses have speeds32 and28 feet/sec, their distance difference shrinks over time. 1=yes,0=no.",0,"It grows4feet each second."),
+            new("Books priced3 for13 dollars cost52 dollars for12 at same rate. 1=yes,0=no.",1,"Four groups of3 books cost4×13."),
+            new("For a ratio-total question, a tape diagram can help count the number of equal parts. 1=yes,0=no.",1,"Equal blocks depict the whole."),
+            new("For constant speeds over time, a double number line can show aligned elapsed time and distance. 1=yes,0=no.",1,"Same time steps align rates."),
+            new("One model is required for every ratio problem even when another representation is valid. 1=yes,0=no.",0,"Students may choose a fitting tool."),
+            new("The nickels:dimes ratio4:6 simplifies to2:3. 1=yes,0=no.",1,"Divide both by2."),
+            new("The dimes:quarters ratio6:15 simplifies to2:5. 1=yes,0=no.",1,"Divide both by3.")
         ]
     };
 
