@@ -190,6 +190,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0510LongDivisionNumbers = "usccss.g6.u05.l10.long_division_quotient_results";
     public const string L0510LongDivisionLogic = "usccss.g6.u05.l10.long_division_placevalue_interpretation";
 
+    public const string L0511DecimalQuotients = "usccss.g6.u05.l11.whole_division_decimal_results";
+    public const string L0511DivisionReasoning = "usccss.g6.u05.l11.decimal_quotient_placevalue_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2467,6 +2470,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Long division and partial quotients can yield the same quotient with different recording formats. 1=yes,0=no.",1,"Equivalent algorithms."),
             new("Checking a division by multiplication can reveal an impossible quotient. 1=yes,0=no.",1,"Divisor×quotient should equal dividend for zero remainder."),
             new("A correct total quotient alone automatically confirms the source diagram and student regrouping work. 1=yes,0=no.",0,"Teacher checks steps.")
+        ],
+        [L0511DecimalQuotients] =
+        [
+            new("Three quarters as a decimal in HUNDREDTHS?",75,"3÷4=0.75."),
+            new("Three fiftieths as a decimal in HUNDREDTHS?",6,"3÷50=0.06."),
+            new("Seven twenty-fifths as a decimal in HUNDREDTHS?",28,"7÷25=0.28."),
+            new("Mai walked1/8 of30-mile trail. Distance in EIGHTH-MILE UNITS?",30,"30÷8=3.75miles=30 eighths."),
+            new("Mai walked1/8 of30-mile trail. Distance in HUNDREDTHS of mile?",375,"3.75miles."),
+            new("99 divided by12, quotient in HUNDREDTHS?",825,"99/12=8.25."),
+            new("216 divided by5, quotient in TENTHS?",432,"216/5=43.2."),
+            new("1988 divided by8, quotient in HUNDREDTHS?",24850,"1988/8=248.5."),
+            new("Nine twenty-fifths as decimal in HUNDREDTHS?",36,"9/25=.36."),
+            new("Eighteen fiftieths as decimal in HUNDREDTHS?",36,"18/50=.36."),
+            new("Thirty-six hundredths as decimal in HUNDREDTHS?",36,"36/100=.36."),
+            new("Five minus which decimal equals4.329? Answer in THOUSANDTHS?",671,"5-4.329=.671."),
+            new("One minus which decimal equals0.015? Answer in THOUSANDTHS?",985,"1-.015=.985."),
+            new("One minus which decimal equals0.863? Answer in THOUSANDTHS?",137,"1-.863=.137."),
+            new("1.24×0.15, answer in TEN-THOUSANDTHS?",1860,"1.24×0.15=.186."),
+            new("124×15 equals?",1860,"Exact source fact."),
+            new("7/25 as hundredths count?",28,"Multiply numerator and denominator by4."),
+            new("1/8 of80 miles gives how many MILES?",10,"80÷8=10.")
+        ],
+        [L0511DivisionReasoning] =
+        [
+            new("3/4=0.75. 1=yes,0=no.",1,"75/100."),
+            new("3/50=0.6. 1=yes,0=no.",0,"Correct.06."),
+            new("7/25=0.28. 1=yes,0=no.",1,"28/100."),
+            new("99÷12=8.25. 1=yes,0=no.",1,"12×8.25=99."),
+            new("216÷5=43.2. 1=yes,0=no.",1,"43.2×5=216."),
+            new("1988÷8=248.5. 1=yes,0=no.",1,"8×248.5=1988."),
+            new("9/25=18/50=36/100. 1=yes,0=no.",1,"Equivalent fractions."),
+            new("18/50=0.36. 1=yes,0=no.",1,"36/100."),
+            new("A decimal point may be appended with zero digits when extending a whole number dividend to find decimal quotient. 1=yes,0=no.",1,"Equivalent numerical value."),
+            new("A terminating decimal quotient can be checked by multiplying it by divisor. 1=yes,0=no.",1,"Inverse relationship."),
+            new("5-0.671=4.329. 1=yes,0=no.",1,"Subtraction."),
+            new("1-.985=.015. 1=yes,0=no.",1,"Subtraction."),
+            new("1-.137=.863. 1=yes,0=no.",1,"Subtraction."),
+            new("1.24×.15=.186. 1=yes,0=no.",1,"Use place-value scaling from124×15."),
+            new("A base-ten diagram can justify a quotient even when long division supplies the decimal digits. 1=yes,0=no.",1,"Equivalent representations."),
+            new("Every quotient of two whole numbers has a terminating decimal. 1=yes,0=no.",0,"Some repeat, e.g.1/3.")
         ]
     };
 

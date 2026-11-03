@@ -2504,6 +2504,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit5 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TERMINATING_DECIMAL_QUOTIENT_FROM_WHOLE_DIVISION",
+            [
+                "usccss.g6.u05.l11.whole_division_decimal_results",
+                "usccss.g6.u05.l11.decimal_quotient_placevalue_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
