@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u08.l13.median_sorted_samples",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-game-scores-ten-values-median145-and-Clare12-better12-worse",
+      "representations": [
+        "ordered_data",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u08.l13.median_interpretations",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-sort-odd-even-12higher12lower-mean-different-center",
+      "representations": [
+        "boolean_reasoning",
+        "ordered_dot_plot"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u08.l12.mean_mad_source_datasets",
       "version": 1,
       "skillId": "ratio.unit_rate",

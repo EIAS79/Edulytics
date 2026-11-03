@@ -358,6 +358,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0812CompareMeans = "usccss.g6.u08.l12.mean_mad_source_datasets";
     public const string L0812CompareLogic = "usccss.g6.u08.l12.mean_mad_spread_context";
 
+    public const string L0813Medians = "usccss.g6.u08.l13.median_sorted_samples";
+    public const string L0813MedianLogic = "usccss.g6.u08.l13.median_interpretations";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -5179,6 +5182,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Statistical variability means individual values can differ around a reported typical value. 1=yes,0=no.",1,"Data distribution."),
             new("Shifting all data by10 increases mean10 and leaves MAD same. 1=yes,0=no.",1,"Offsets unchanged."),
             new("Teacher assesses source graphs and explanations of comparability. 1=yes,0=no.",1,"Multiple valid responses.")
+        ],
+        [L0813Medians] =
+        [
+            new("Game scores130,150,120,170,130,120,160,160,190,140. Count observations?",10,"Ten rounds."),
+            new("Same scores sorted. Fifth smallest score?",140,"120,120,130,130,140,150,160,160,170,190."),
+            new("Same scores sorted. Sixth smallest score?",150,"Sixth150."),
+            new("Same scores median?",145,"(140+150)/2=145, source choiceB."),
+            new("Same scores smallest?",120,"Lowest120."),
+            new("Same scores largest?",190,"Highest190."),
+            new("Same scores range?",70,"190-120=70."),
+            new("Same scores total?",1470,"130+150+120+170+130+120+160+160+190+140=1470."),
+            new("Same scores mean?",147,"1470/10=147."),
+            new("Clare has exactly12 students with higher scores and12 lower; number of students including Clare?",25,"12+1+12."),
+            new("Clare with12 above and12 below occupies which rank from LOWEST?",13,"Middle13th."),
+            new("Independent five-value data5,7,12,12,14. Median?",12,"Middle third12."),
+            new("Independent five-value data5,7,12,12,14. Mean?",10,"Sum50/5."),
+            new("Independent five-value data5,7,12,12,14. Range?",9,"14-5=9."),
+            new("Independent data1,3,5,9. Median?",4,"Average middle3 and5."),
+            new("Independent data1,3,5,9. Mean in HALVES?",9,"18/4=4.5."),
+            new("Source dot plot median candidates6,12,13,15. Which is largest listed median?",15,"Largest15."),
+            new("Source dot plot candidates6,12,13,15. Which smallest?",6,"Smallest6."),
+            new("Five-value set2,8,12,13,15. Median?",12,"Third in ordered list."),
+            new("Five-value set2,8,12,13,15. Mean?",10,"Sum50/5."),
+            new("Ten pupils sleep example independent6,7,7,7,8,8,8,9,9,10. Median in HALVES?",16,"(8+8)/2=8=16halves."),
+            new("Median of odd sample1,5,7?",5,"Middle5."),
+            new("Median of even sample1,5,7,9?",6,"(5+7)/2=6.")
+        ],
+        [L0813MedianLogic] =
+        [
+            new("To calculate median, first order numerical data from least to greatest. 1=yes,0=no.",1,"Ordered center."),
+            new("Ten game scores have median145 after averaging middle140 and150. 1=yes,0=no.",1,"Source choice B."),
+            new("The median of10 scores is always the fifth smallest observation without averaging. 1=yes,0=no.",0,"Average fifth and sixth."),
+            new("If exactly12 students scored higher and12 lower than Clare, Clare is median in25 students. 1=yes,0=no.",1,"Middle13th."),
+            new("An odd sample of five has median third ordered observation. 1=yes,0=no.",1,"Position3."),
+            new("An even sample of four has median average of second and third ordered values. 1=yes,0=no.",1,"Two middle."),
+            new("Median must equal the mean for any numerical data. 1=yes,0=no.",0,"Different measures."),
+            new("Game scores source mean147 and median145 differ. 1=yes,0=no.",1,"Sum1470/10 vs median145."),
+            new("Extreme unusually large values can change mean more strongly than median. 1=yes,0=no.",1,"Median resistant."),
+            new("The median may be a value not actually observed in even datasets. 1=yes,0=no.",1,"Average middles."),
+            new("Five-value independent set5,7,12,12,14 has median12 but mean10. 1=yes,0=no.",1,"Middle12 sum50."),
+            new("A median of an odd data set is calculated without sorting if points are given in random order. 1=yes,0=no.",0,"Must identify middle by rank."),
+            new("Dot plot heights represent frequencies needed to determine ordered middle observations. 1=yes,0=no.",1,"Cumulative counts."),
+            new("A statistical question about number of siblings can use median. 1=yes,0=no.",1,"Numerical counts."),
+            new("A favorite lunch category cannot meaningfully be median as a numerical quantity. 1=yes,0=no.",1,"No numerical order."),
+            new("The original wild-bear histogram exact largest bear weight cannot be recovered from given sample size143 alone. 1=yes,0=no.",1,"Bin limits needed."),
+            new("If a histogram bins measurements, exact individual median may not be determined without within-bin values. 1=yes,0=no.",1,"Approximate interval only."),
+            new("A dataset with equal numbers above and below middle observation may use that observation as median. 1=yes,0=no.",1,"Middle split.")
         ]
     };
 
