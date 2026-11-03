@@ -100,6 +100,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0314PercentComputations = "usccss.g6.u03.l14.percent_unknowns";
     public const string L0314PercentInterpretation = "usccss.g6.u03.l14.percent_compare_and_inverse";
 
+    public const string L0315PercentAmounts = "usccss.g6.u03.l15.percent_of_quantity_exact";
+    public const string L0315PercentProperties = "usccss.g6.u03.l15.percent_of_quantity_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1218,6 +1221,47 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("An ant that travels30cm in2minutes travels15cm per minute. Enter1=yes,0=no.",1,"30/2=15."),
             new("Solving an information-gap percentage problem requires identifying the100% reference. Enter1=yes,0=no.",1,"Percent comparisons require a known or inferred whole."),
             new("A discount of20% is always20 dollars regardless of original price. Enter1=yes,0=no.",0,"Discount depends on the reference price.")
+        ],
+        [L0315PercentAmounts] =
+        [
+            new("Forty percent of75?",30,"0.4×75=30."),
+            new("Priya practices152% as long as Han's75 minutes. How many minutes?",114,"1.52×75=114."),
+            new("Tyler practices64% as long as Han's75 minutes. How many minutes?",48,"0.64×75=48."),
+            new("Amusement park has1575 visitors.56% adults. How many adults?",882,"1575×0.56=882."),
+            new("Amusement park has1575 visitors.16% teens. How many teenagers?",252,"1575×0.16=252."),
+            new("Amusement park has1575 visitors.28% children. How many children?",441,"1575×0.28=441."),
+            new("Find55% of180.",99,"180×0.55=99."),
+            new("Find300% of26.",78,"26×3=78."),
+            new("Find12% of700.",84,"700×0.12=84."),
+            new("Find20% of60.",12,"60÷5=12."),
+            new("25% of which number equals6?",24,"6÷0.25=24."),
+            new("What percent of100 is14?",14,"14/100=14%."),
+            new("Find50% of90.",45,"90÷2=45."),
+            new("10% of which number is7?",70,"7÷0.1=70."),
+            new("Find30% of70.",21,"70×0.3=21."),
+            new("Six sandwich rolls cost528 cents. Per roll price in CENTS?",88,"528/6=88."),
+            new("Four sandwich rolls cost340 cents. Per roll price in CENTS?",85,"340/4=85."),
+            new("For24 rolls four six-packs at528cents each cost how many CENTS?",2112,"4×528=2112."),
+            new("For24 rolls six four-packs at340cents each cost how many CENTS?",2040,"6×340=2040."),
+            new("Trip chaperone:student ratio3:20,92 total people. How many chaperones?",12,"92÷23=4 parts groups;3×4=12."),
+            new("Trip chaperone:student ratio3:20,92 total. How many students?",80,"20×4=80.")
+        ],
+        [L0315PercentProperties] =
+        [
+            new("Two fifths of75 equals40% of75. 1=yes,0=no.",1,"2/5=0.4."),
+            new("Two fifths of any number equals40% of that number. 1=yes,0=no.",1,"Equivalent factors."),
+            new("152% of75 minutes is114minutes. 1=yes,0=no.",1,"75×1.52=114."),
+            new("64% of75 minutes is64minutes. 1=yes,0=no.",0,"It is48min."),
+            new("Amusement park categories56%,16%,28% sum to100%. 1=yes,0=no.",1,"56+16+28=100."),
+            new("Of1575 people56% adults equals882. 1=yes,0=no.",1,"1575×0.56."),
+            new("55% of180 is greater than300% of26. 1=yes,0=no.",1,"99>78."),
+            new("12% of700 is greater than55% of180. 1=yes,0=no.",0,"84<99."),
+            new("300% of26 equals78. 1=yes,0=no.",1,"Triple26."),
+            new("A six-pack of rolls for528cents is a better unit price than four-pack for340cents. 1=yes,0=no.",0,"88c versus85c each."),
+            new("Four six-packs cost2112cents and six four-packs cost2040cents for24 rolls. 1=yes,0=no.",1,"Four-packs save72 cents."),
+            new("A 3:20 chaperone:student ratio with92 total people gives12 chaperones. 1=yes,0=no.",1,"23 parts, each4."),
+            new("A percent multiplication factor over1 can produce a value greater than the reference. 1=yes,0=no.",1,"Such as152%."),
+            new("When finding A% of B, multiplying B by A/100 gives the amount. 1=yes,0=no.",1,"Definition of percent per100.")
         ]
     };
 
