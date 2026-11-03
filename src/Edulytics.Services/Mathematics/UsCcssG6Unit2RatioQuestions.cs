@@ -232,6 +232,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0609DistributeNumbers = "usccss.g6.u06.l09.distributive_numeric_products";
     public const string L0609DistributeLogic = "usccss.g6.u06.l09.distributive_area_reasoning";
 
+    public const string L0610VariableArea = "usccss.g6.u06.l10.variable_distributive_values";
+    public const string L0610AreaReasoning = "usccss.g6.u06.l10.variable_distributive_equivalence";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3078,6 +3081,48 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Kiran aunt17years older: aunt age is x+17 when Kiran x. 1=yes,0=no.",1,"Add17."),
             new("Kiran aunt60years, Kiran43. 1=yes,0=no.",1,"60-17=43."),
             new("For a rectangle partition, total area equals sum of non-overlapping subareas. 1=yes,0=no.",1,"Area additivity.")
+        ],
+        [L0610VariableArea] =
+        [
+            new("Rectangle height a=3, widths2+3+4. Total area?",27,"3×9=27."),
+            new("Height a=5, widths2,3,4. Area left segment?",10,"5×2=10."),
+            new("Height a=5, widths2,3,4. Area middle segment?",15,"5×3=15."),
+            new("Height a=5, widths2,3,4. Area right segment?",20,"5×4=20."),
+            new("Height a=5, total width9. Total area?",45,"9×5=45."),
+            new("A rectangle height6, total width m=8, unshaded width2. Shaded area?",36,"6×(8-2)=36."),
+            new("Rectangle height t=3, partition widths5,4. Total area?",27,"(5+4)×3=27."),
+            new("35×91-35×89=?",70,"35×(91-89)=70."),
+            new("22×87+22×13=?",2200,"22×100=2200."),
+            new("(9/11)×(7/10)-(9/11)×(3/10), answer in FIFTY-FIFTHS?",18,"9/11×4/10=18/55."),
+            new("111=14a. a in FOURTEENTHS?",111,"a=111/14."),
+            new("13.65=b+4.88. b in HUNDREDTHS?",877,"8.77."),
+            new("c+1/3=5⅛. c in TWENTY-FOURTHS?",115,"41/8-1/3=115/24."),
+            new("(2/5)d=17/4. d in EIGHTHS?",85,"17/4×5/2=85/8."),
+            new("5.16=4e. e in HUNDREDTHS?",129,"1.29."),
+            new("Andre5½laps in8minutes. Minutes per lap in ELEVENTHS?",16,"8/(11/2)=16/11."),
+            new("4b where b=6?",24,"4×6."),
+            new("b+b+b+b where b=6?",24,"4×6."),
+            new("Rectangle area2a+3a+4a at a=7?",63,"9a=63."),
+            new("For6(m-2) when m=5, shaded area?",18,"6×3=18.")
+        ],
+        [L0610AreaReasoning] =
+        [
+            new("2a+3a+4a=(2+3+4)a. 1=yes,0=no.",1,"Both9a."),
+            new("2a+3a+4a=9a for every a. 1=yes,0=no.",1,"Combine like terms."),
+            new("A rectangle of height6 total widthm with unshaded width2 has shaded area6(m-2). 1=yes,0=no.",1,"Subtract narrow area."),
+            new("That shaded rectangle area is6(2-m) for positive m>2. 1=yes,0=no.",0,"Wrong sign."),
+            new("5t+4t and9t represent same rectangle area. 1=yes,0=no.",1,"Original A,C."),
+            new("t(5+4) represents same area as9t. 1=yes,0=no.",1,"Original E."),
+            new("t+5+4 represents same rectangle area as9t for every t. 1=yes,0=no.",0,"Original invalid B."),
+            new("4×5×t represents same area as9t for every t. 1=yes,0=no.",0,"Original invalid D."),
+            new("35×91-35×89=35×2. 1=yes,0=no.",1,"Distribute common factor."),
+            new("22×87+22×13=22×100. 1=yes,0=no.",1,"Group factors."),
+            new("4b is equivalent to b+b+b+b. 1=yes,0=no.",1,"Original A."),
+            new("4b is equivalent to2b+2b. 1=yes,0=no.",1,"Original C."),
+            new("4b is equivalent to b÷1/4. 1=yes,0=no.",1,"Original E."),
+            new("5½ laps in8min at steady pace gives16/11 minutes per lap. 1=yes,0=no.",1,"8÷11/2."),
+            new("A variable rectangle area diagram can justify equivalent expressions for ALL values of the variable. 1=yes,0=no.",1,"Symbolic partition."),
+            new("Area measured in square units must equal length times height with same linear unit. 1=yes,0=no.",1,"Dimensional relationship.")
         ]
     };
 

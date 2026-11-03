@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u06.l10.variable_distributive_values",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-a-height-2-3-4-width-partitions-6mminus2-35x91-89-22x100",
+      "representations": [
+        "numeric",
+        "area_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u06.l10.variable_distributive_equivalence",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-shaded-rectangle6(mminus2)-wrong-choices-B-D-and-equivalent4b",
+      "representations": [
+        "boolean_reasoning",
+        "variable_area"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u06.l09.distributive_numeric_products",
       "version": 1,
       "skillId": "ratio.unit_rate",
