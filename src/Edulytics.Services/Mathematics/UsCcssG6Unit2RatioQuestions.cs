@@ -319,6 +319,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0718FactorMultipleChoices = "usccss.g6.u07.l18.gcf_lcm_context_problems";
     public const string L0718DecisionLogic = "usccss.g6.u07.l18.factor_multiple_selection_reasoning";
 
+    public const string L0719FirstPartyPlotting = "usccss.g6.u07.l19.first_party_plotting_coordinates";
+    public const string L0719FirstPartyPictureLogic = "usccss.g6.u07.l19.first_party_picture_precision_rules";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4515,6 +4518,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("3.5 times40 plus3.5 times60 is350. 1=yes,0=no.",1,"3.5×100."),
             new("999×5=4995. 1=yes,0=no.",1,"5000-5."),
             new("A correct numeric result alone validates the optional student-generated Factors and Multiples Bingo activity. 1=yes,0=no.",0,"Teacher reviews constructed activity.")
+        ],
+        [L0719FirstPartyPlotting] =
+        [
+            new("Independent coordinate design includes point(-4,-2). Quadrant?",3,"Both negative: quadrantIII."),
+            new("Design point(-4,2). Quadrant?",2,"Negative x and positive y."),
+            new("Design point(-2,4). Quadrant?",2,"Negative x and positive y."),
+            new("Design point(0,2). Code0 for axis?",0,"x=0 lies on y-axis."),
+            new("Design point(2,4). Quadrant?",1,"Both positive."),
+            new("Design point(4,2). Quadrant?",1,"Both positive."),
+            new("Design point(4,-2). Quadrant?",4,"Positive x negative y."),
+            new("Horizontal distance between(-4,-2) and(4,-2)?",8,"x difference8."),
+            new("Vertical distance between(-4,-2) and(-4,2)?",4,"y difference4."),
+            new("Vertical distance between(4,-2) and(4,2)?",4,"y difference4."),
+            new("Horizontal distance between(-2,4) and(2,4)?",4,"x difference4."),
+            new("Mirror of(-4,2) across y-axis. New x?",4,"Negate x."),
+            new("Mirror of(-4,2) across y-axis. New y?",2,"y unchanged."),
+            new("Mirror of(-2,4) across y-axis. New x?",2,"Negate x."),
+            new("Mirror of(2,4) across x-axis. New y?",-4,"Negate y."),
+            new("A design with corners(-2,-1),(-2,3),(2,3),(2,-1) has width?",4,"2-(-2)=4."),
+            new("Same rectangle height?",4,"3-(-1)=4."),
+            new("Same rectangle perimeter?",16,"2(4+4)=16."),
+            new("Same rectangle area in square units?",16,"4×4=16."),
+            new("To connect vertices in source-described order of a closed drawing, final point should repeat first? Enter1 yes,0 no.",1,"Repeating start closes the polyline."),
+            new("If a plot uses x values-4 to4, total x span?",8,"4-(-4)=8."),
+            new("Point(-3,0) lies on which code? Enter0 for axis,1-4 quadrants.",0,"y=0 on x-axis."),
+            new("Point(0,-2) lies on which code? Enter0 for axis,1-4 quadrants.",0,"x=0 on y-axis.")
+        ],
+        [L0719FirstPartyPictureLogic] =
+        [
+            new("Coordinates(3,-2) place a point in quadrantIV. 1=yes,0=no.",1,"Positive x negative y."),
+            new("Coordinates(-3,2) place a point in quadrantI. 1=yes,0=no.",0,"Negative x positive y isII."),
+            new("Points(-4,2),(4,2) reflect across y-axis. 1=yes,0=no.",1,"Opposite x same y."),
+            new("Points(-2,4),(2,4) reflect across y-axis. 1=yes,0=no.",1,"Symmetric."),
+            new("To mirror a point across y-axis, negate its y coordinate and keep x. 1=yes,0=no.",0,"Negate x."),
+            new("To mirror across x-axis, negate y while preserving x. 1=yes,0=no.",1,"Reflection across horizontal axis."),
+            new("A point with x=0 belongs to one of four quadrants. 1=yes,0=no.",0,"On y-axis."),
+            new("A point with y=0 lies on x-axis. 1=yes,0=no.",1,"Horizontal axis."),
+            new("If a drawing app connects points in entered order, changing order may change the picture. 1=yes,0=no.",1,"Polyline path depends on sequence."),
+            new("A coordinate-picture application should accurately honor each entered ordered pair rather than guessing intent. 1=yes,0=no.",1,"Precision goal."),
+            new("The original 7.19 is an optional creative coordinate plotting capstone. 1=yes,0=no.",1,"Teacher lesson narrative."),
+            new("The original 7.19 archive includes a standalone practice.html with a source-keyed numeric answer. 1=yes,0=no.",0,"No standalone practice."),
+            new("The original 7.19 has a numbered original Cool-down question. 1=yes,0=no.",0,"Only activities19.1 and19.2."),
+            new("A student-made cat picture can be automatically certified identical to source art solely by checking rectangle perimeter. 1=yes,0=no.",0,"Teacher/artifact comparison required."),
+            new("An independently authored rectangle calculation is different from the original Cat Pictures artwork activity. 1=yes,0=no.",1,"Not a publisher image key."),
+            new("A graph with x/y axes not labeled can still be mathematically evaluated without considering scale. 1=yes,0=no.",0,"Scale matters."),
+            new("The drawn order of points can create line segments crossing multiple quadrants. 1=yes,0=no.",1,"Lines connect across axes."),
+            new("A valid first-party Cool-down can be independent from a protected or absent publisher question and use teacher scoring. 1=yes,0=no.",1,"Owner authorized."),
+            new("Mirror symmetry can be checked by opposite x coordinates and matching y coordinates. 1=yes,0=no.",1,"Across y-axis.")
         ]
     };
 
