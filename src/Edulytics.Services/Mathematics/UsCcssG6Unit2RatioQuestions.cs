@@ -118,6 +118,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0403ContextualDivision = "usccss.g6.u04.l03.division_contextual_results";
     public const string L0403DivisionInterpretation = "usccss.g6.u04.l03.division_explanation_checks";
 
+    public const string L0404FractionGroups = "usccss.g6.u04.l04.fraction_groups_exact";
+    public const string L0404FractionModels = "usccss.g6.u04.l04.fraction_division_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1470,6 +1473,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A correct multiplication equation can check a division quotient. 1=yes,0=no.",1,"Inverse relationship."),
             new("The division quotient always has the same real-world units as the dividend. 1=yes,0=no.",0,"Depends on grouping interpretation."),
             new("Teacher review is needed for a student-created visual diagram even when arithmetic is automatically checked. 1=yes,0=no.",1,"Diagram correctness needs a separate rubric.")
+        ],
+        [L0404FractionGroups] =
+        [
+            new("A bag holds3lb cat food and cat eats3/4lb each week. Weeks per bag?",4,"3÷(3/4)=4weeks."),
+            new("How many one-third units are in one and two-thirds?",5,"5/3 divided by1/3=5."),
+            new("Unknown ? multiplied by1/8 equals3. What is??",24,"24×1/8=3."),
+            new("Fifteen multiplied by2/5 yields what whole number?",6,"15×2/5=6."),
+            new("Six divided by2/5 yields what whole number?",15,"6×5/2=15."),
+            new("Six divided by15, expressed in FIFTHS?",2,"6/15=2/5, two fifths."),
+            new("Six multiplied by4/3 yields what whole number?",8,"6×4/3=8."),
+            new("Eight divided by4/3 yields what whole number?",6,"8×3/4=6."),
+            new("Eight divided by6, expressed in THIRDS?",4,"8/6=4/3, four thirds."),
+            new("Sixteen multiplied by7/8 yields what whole number?",14,"16×7/8=14."),
+            new("Fourteen divided by7/8 yields what whole number?",16,"14×8/7=16."),
+            new("Fourteen divided by16, expressed in EIGHTHS?",7,"14/16=7/8."),
+            new("Eight amusement park tickets total100 dollars. Price per ticket in CENTS?",1250,"10000/8=1250cents."),
+            new("Noah brings13 dollars, ticket costs12.50. How many CENTS remain if he buys one?",50,"1300-1250=50cents."),
+            new("Eight divided by0.001 equals?",8000,"8×1000=8000."),
+            new("Twelve is150% of what number?",8,"12/1.5=8."),
+            new("Five is50% of what number?",10,"5/0.5=10."),
+            new("10% of what number is300?",3000,"300/0.10=3000."),
+            new("5% of what number is72?",1440,"72/0.05=1440."),
+            new("Twenty is80% of what number?",25,"20/0.8=25.")
+        ],
+        [L0404FractionModels] =
+        [
+            new("Three pounds divided by3/4 pound per week lasts4weeks. 1=yes,0=no.",1,"4×3/4=3."),
+            new("Three pounds divided by3/4 pound per week lasts3weeks. 1=yes,0=no.",0,"3×3/4=2.25."),
+            new("One and two-thirds contains5 one-third groups. 1=yes,0=no.",1,"5/3÷1/3=5."),
+            new("The equation?×1/8=3 asks how many eighths fit in3. 1=yes,0=no.",1,"Answer24."),
+            new("The equation?×1/8=3 asks for one eighth of3. 1=yes,0=no.",0,"It asks count of1/8 groups."),
+            new("Fifteen times2/5 equals6. 1=yes,0=no.",1,"30/5=6."),
+            new("Six times4/3 equals8. 1=yes,0=no.",1,"6×4/3=8."),
+            new("Sixteen times7/8 equals14. 1=yes,0=no.",1,"16×7/8=14."),
+            new("One whole divided into thirds contains3 one-third parts. 1=yes,0=no.",1,"1÷1/3=3."),
+            new("Two wholes contain6 one-third parts. 1=yes,0=no.",1,"2×3=6."),
+            new("The number of groups can increase when dividing by a positive fraction less than1. 1=yes,0=no.",1,"3÷3/4=4."),
+            new("An8-person ticket charge totaling100dollars means12.50 dollars per student, so13dollars is sufficient. 1=yes,0=no.",1,"13>12.50."),
+            new("When a yellow pattern-block hexagon represents1 whole, a one-third block covers one of3 equal area parts. 1=yes,0=no.",1,"Unit whole fixed by hexagon."),
+            new("Fraction models must clearly label which shape represents the unit whole. 1=yes,0=no.",1,"Reference matters.")
         ]
     };
 
