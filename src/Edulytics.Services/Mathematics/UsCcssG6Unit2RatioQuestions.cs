@@ -76,6 +76,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0306Rates = "usccss.g6.u03.l06.source_reciprocal_rate_values";
     public const string L0306InterpretRate = "usccss.g6.u03.l06.reciprocal_rate_meaning";
 
+    public const string L0307UnitRateValues = "usccss.g6.u03.l07.unit_rate_table_quantities";
+    public const string L0307RateInvariance = "usccss.g6.u03.l07.unit_rate_equivalence";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -891,6 +894,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A rate a/b answers amount of first quantity per one second quantity. 1=yes,0=no.",1,"Units determine interpretation."),
             new("The reciprocal b/a gives a different unit interpretation of the same nonzero quantity relationship. 1=yes,0=no.",1,"E.g. dollars/pint and pints/dollar."),
             new("A rate per one should be reported without units because only the numeral matters. 1=yes,0=no.",0,"Units are essential.")
+        ],
+        [L0307UnitRateValues] =
+        [
+            new("A car travels55 miles per hour. Distance in miles after2 hours?",110,"55×2=110 miles."),
+            new("A car travels55mph. Distance in HALF-MILE UNITS after half an hour?",55,"0.5h×55=27.5miles=55 half-miles."),
+            new("A car travels55mph. Distance in HALF-MILE UNITS after1.5 hours?",165,"1.5×55=82.5miles=165 half-miles."),
+            new("Salsa recipe:2oz onions for16oz tomatoes. Tomatoes ounces per1 onion ounce?",8,"16/2=8."),
+            new("Salsa recipe:6oz onions for48oz tomatoes. Tomatoes per onion ounce?",8,"48/6=8."),
+            new("Ten burritos for12 dollars. Price per burrito in CENTS?",120,"1200/10=120cents."),
+            new("Six burritos for7.50 dollars. Price per burrito in CENTS?",125,"750/6=125cents."),
+            new("Party needs60 burritos. Cost of6 ten-burrito specials in DOLLARS?",72,"6×12=72 dollars."),
+            new("Party needs60 burritos. Cost of10 six-burrito specials in DOLLARS?",75,"10×7.50=75 dollars."),
+            new("A banana costs50 cents. Price for4 bananas in CENTS?",200,"50×4=200 cents."),
+            new("A banana costs50 cents. Price for6 bananas in CENTS?",300,"50×6=300 cents."),
+            new("A banana costs50 cents. Price for7 bananas in CENTS?",350,"50×7=350 cents."),
+            new("A banana costs50 cents. Price for10 bananas in CENTS?",500,"50×10=500 cents."),
+            new("Bananas cost50 cents each. Number purchasable for10 dollars?",20,"1000cents/50=20 bananas."),
+            new("Bananas cost50 cents each. Number purchasable for16.50 dollars?",33,"1650cents/50=33."),
+            new("Plane A travels2800 miles in5 hours. Miles per hour?",560,"2800/5=560."),
+            new("Plane B travels3885 miles in7 hours. Miles per hour?",555,"3885/7=555."),
+            new("A vehicle has15 gallons gas at35 miles/gallon. Total range in miles?",525,"15×35=525 miles."),
+            new("Gas used for100 miles at35miles/gallon, expressed in SEVENTHS OF A GALLON: how many sevenths?",20,"100/35=20/7 gallons."),
+            new("Cereal weighs600grams,1kg≈2.2lb. Weight in HUNDREDTHS OF A POUND?",132,"600g=0.6kg≈1.32lb=132hundredths.")
+        ],
+        [L0307RateInvariance] =
+        [
+            new("Onions2oz tomatoes16oz and onions6oz tomatoes48oz have the same tomatoes per onion ounce. 1=yes,0=no.",1,"Both8 tomato ounces per1 onion ounce."),
+            new("Onions2oz tomatoes16oz and onions6oz tomatoes40oz have the same rate. 1=yes,0=no.",0,"40/6≠8."),
+            new("Car55miles per hour travels110miles in2hours. 1=yes,0=no.",1,"Both same unit rate55mph."),
+            new("Car55mph travels100miles in2hours at that rate. 1=yes,0=no.",0,"It travels110."),
+            new("10 burritos/$12 has a lower price per burrito than6 burritos/$7.50. 1=yes,0=no.",1,"1.20<1.25 per burrito."),
+            new("Six orders of10 burritos for12dollars each cost less than ten orders of6 for7.50dollars each. 1=yes,0=no.",1,"72<75dollars."),
+            new("A banana at50cents each,4 for200cents and7 for350cents are equivalent ratios. 1=yes,0=no.",1,"Same50cents per banana."),
+            new("A banana at50cents each,4 for200cents and7 for300cents are equivalent ratios. 1=yes,0=no.",0,"300/7 differs from50."),
+            new("Plane A2800mi/5h=560mph and plane B3885mi/7h=555mph, so A is faster. 1=yes,0=no.",1,"560>555."),
+            new("Plane B3885mi/7h is faster than A2800mi/5h because total distance is longer. 1=yes,0=no.",0,"Compare speed not total distance."),
+            new("35miles per gallon and1/35 gallon per mile are reciprocal rates of a modeled constant fuel efficiency. 1=yes,0=no.",1,"Units reverse."),
+            new("At35miles/gallon,15gallons is525 miles of modeled range. 1=yes,0=no.",1,"15×35=525."),
+            new("If two pairs represent equivalent ratios, their unit rates must match for the same quantity order and units. 1=yes,0=no.",1,"Equal quotient."),
+            new("A table's unit-rate column should change if quantities scale by the same positive factor. 1=yes,0=no.",0,"Unit rate is invariant.")
         ]
     };
 
