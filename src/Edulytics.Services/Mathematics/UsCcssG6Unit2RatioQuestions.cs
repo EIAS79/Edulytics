@@ -214,6 +214,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0603HangerValues = "usccss.g6.u06.l03.hanger_equation_unknowns";
     public const string L0603HangerLogic = "usccss.g6.u06.l03.balance_equation_reasoning";
 
+    public const string L0604SolveValues = "usccss.g6.u06.l04.equation_context_solutions";
+    public const string L0604EquationReasoning = "usccss.g6.u06.l04.equation_choice_and_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2810,6 +2813,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A matching tape diagram and hanger must represent same unknown, parts and total. 1=yes,0=no.",1,"Structural equivalence."),
             new("A correct numerical x automatically proves student drew the original hanger geometry correctly. 1=yes,0=no.",0,"Teacher checks drawing."),
             new("The equation3x=6 is additive3 copies of x, not multiplication x cubed. 1=yes,0=no.",1,"x+x+x=3x.")
+        ],
+        [L0604SolveValues] =
+        [
+            new("Kiran backpack3lb lighter than Clare14lb. Weight Kiran in POUNDS?",11,"14-3=11."),
+            new("Each notebook has60 sheets. Five notebooks total sheets?",300,"5×60=300."),
+            new("2x=5. x in HALVES?",5,"x=2.5."),
+            new("y+1.8=14.7. y in TENTHS?",129,"y=12.9."),
+            new("6=(1/2)z. Find z.",12,"z=12."),
+            new("3¼=½+w. w in QUARTERS?",11,"13/4-2/4=11/4."),
+            new("2.5t=10. Find t.",4,"10/2.5=4."),
+            new("3x=18. Find x.",6,"x=6."),
+            new("3+x=18. Find x.",15,"x=15."),
+            new("17-6=x. Find x.",11,"x=11."),
+            new("21.2×0.02 in THOUSANDTHS?",424,"0.424."),
+            new("2.05×0.004 in TEN-THOUSANDTHS?",82,"0.0082."),
+            new("Twenty-five percent of60grams in GRAMS?",15,"60/4=15."),
+            new("Kiran weight11lb, Clare14lb. Difference in POUNDS?",3,"14-11=3."),
+            new("Four notebooks60 sheets each. Total sheets?",240,"4×60=240."),
+            new("A backpack weighs11lb and is3lb lighter than Clare's. Clare's weight?",14,"11+3=14."),
+            new("If2.5t=10, t repeated twice and half a time has total10. t?",4,"2.5×4=10."),
+            new("Equation3¼=½+w, verify w=11/4. Sum in QUARTERS?",13,"2/4+11/4=13/4.")
+        ],
+        [L0604EquationReasoning] =
+        [
+            new("x+3=14 models Kiran's lighter backpack compared to14lb. 1=yes,0=no.",1,"Original appropriate equation."),
+            new("x=14-3 models Kiran's weight. 1=yes,0=no.",1,"Difference."),
+            new("3x=14 models Kiran's lighter backpack. 1=yes,0=no.",0,"Wrong relation."),
+            new("For notebooks5×60 sheets, y=5×60 models total sheets. 1=yes,0=no.",1,"Source valid."),
+            new("For five notebooks60 sheets each, y/5=60 models total y. 1=yes,0=no.",1,"Equivalent."),
+            new("For five notebooks60 sheets each,5y=60 is correct for total y. 1=yes,0=no.",0,"Would give12."),
+            new("2x=5 has x=2.5. 1=yes,0=no.",1,"Divide2."),
+            new("y+1.8=14.7 has y=12.9. 1=yes,0=no.",1,"Subtract1.8."),
+            new("6=½z has z=12. 1=yes,0=no.",1,"Double."),
+            new("3¼=½+w has w=2¾. 1=yes,0=no.",1,"Subtract½."),
+            new("2.5t=10 has t=4. 1=yes,0=no.",1,"Divide2.5."),
+            new("3x=18 and3+x=18 both have same solution6. 1=yes,0=no.",0,"Second x15."),
+            new("25% of60 equals quarter of60. 1=yes,0=no.",1,"15."),
+            new("21.2×0.02=.424. 1=yes,0=no.",1,"Place-value multiplication."),
+            new("2.05×0.004=.0082. 1=yes,0=no.",1,"Place-value product."),
+            new("One can solve a linear equation using a diagram, inverse operation, or equality-preserving steps. 1=yes,0=no.",1,"Strategies flexible.")
         ]
     };
 
