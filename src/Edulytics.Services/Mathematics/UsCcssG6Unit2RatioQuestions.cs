@@ -49,6 +49,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L14InfoGapNumbers = "usccss.g6.u02.l14.info_gap_ratio_quantities";
     public const string L14InfoGapReasoning = "usccss.g6.u02.l14.rate_information_requests";
 
+    public const string L15TapeParts = "usccss.g6.u02.l15.tape_diagram_part_whole";
+    public const string L15TapeLogic = "usccss.g6.u02.l15.part_to_whole_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -550,6 +553,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("An info-gap solver should ask specifically for the missing relevant quantity and explain why. 1=yes,0=no.",1,"Ask precise what/why questions."),
             new("A learner must guess unknown source information rather than ask their partner in an info-gap. 1=yes,0=no.",0,"The activity expects explicit requests."),
             new("For a price-to-weight problem, the unit price can be used to scale the required weight. 1=yes,0=no.",1,"Multiply dollars/pound by pounds.")
+        ],
+        [L15TapeParts] =
+        [
+            new("Kennel has cats:dogs=4:5, 27 animals total. Animals per ratio PART?",3,"27 divided by9 parts=3."),
+            new("Kennel has cats:dogs=4:5, 27 total. How many cats?",12,"4 parts times3=12."),
+            new("Kennel has cats:dogs=4:5, 27 total. How many dogs?",15,"5 parts times3=15."),
+            new("Kennel has cats:dogs=4:5, 27 total. Number of ratio parts?",9,"4+5=9."),
+            new("Weather has sunny:rainy=4:1, 30 total days. How many rainy days?",6,"30 divided by5parts=6."),
+            new("Weather has sunny:rainy=4:1,30 total days. How many sunny days?",24,"4 times6=24."),
+            new("Bike ride covers32miles in160minutes. Minutes per mile?",5,"160/32=5min per mile."),
+            new("Bike ride covers32miles in160minutes. Minutes for100miles?",500,"100 times5=500minutes."),
+            new("Cashier earns58 dollars in8hours. Hourly pay in CENTS?",725,"5800cents/8=725 cents."),
+            new("Cashier earns58 dollars in8hours. Earnings for3hours in CENTS?",2175,"725 times3=2175cents."),
+            new("Three-pound orange bags cost4 dollars. Price per pound in CENTS rounded to nearest whole cent?",133,"400/3=133.333 cents, rounded 133."),
+            new("Eight-pound orange bags cost9 dollars. Price per pound in THOUSANDTHS of a DOLLAR?",1125,"9/8=1.125dollars per pound."),
+            new("First-party mixture3 cups yellow and2 cups blue. Total green mixture volume in CUPS under additive liquids?",5,"3+2=5cups."),
+            new("First-party mixture3 cups yellow and2 cups blue. Total cups for4 identical batches?",20,"4 times(3+2)=20."),
+            new("A ratio3 red to2 yellow has5 total parts. If there are25 total cups, red cups?",15,"25/5 times3=15."),
+            new("A ratio3 red to2 yellow has5 total parts. If there are25 total cups, yellow cups?",10,"25/5 times2=10.")
+        ],
+        [L15TapeLogic] =
+        [
+            new("For cats:dogs4:5, part-to-whole cats:total is4:9. 1=yes,0=no.",1,"Total parts4+5=9."),
+            new("For cats:dogs4:5, part-to-whole dogs:total is5:4. 1=yes,0=no.",0,"Dogs to whole=5:9."),
+            new("At cats:dogs4:5 with27 animals, 12 cats and15 dogs fits. 1=yes,0=no.",1,"Both are3 times ratio terms."),
+            new("At cats:dogs4:5 with27 animals, 15 cats and12 dogs fits. 1=yes,0=no.",0,"Order is reversed."),
+            new("At sunny:rainy4:1 over30 days, there are6 rainy days. 1=yes,0=no.",1,"One part6."),
+            new("At sunny:rainy4:1 over30 days, there are10 rainy days. 1=yes,0=no.",0,"Total5parts, each6."),
+            new("When two paint liquids have compatible volume units, 3cups yellow+2cups blue models5cups of mixture, assuming additive volumes. 1=yes,0=no.",1,"Sums compatible liquid volumes under model assumptions."),
+            new("You may always add measured cups of dry oatmeal to water and claim the same total fluid volume. 1=yes,0=no.",0,"Volume can be nonadditive."),
+            new("For a ratio a:b, the whole consists of a+b equal ratio parts in the part-part-whole model. 1=yes,0=no.",1,"Sum ratio units for two categories."),
+            new("Four sunny days for every rainy day means rainy:total=1:5. 1=yes,0=no.",1,"Four sunny and one rainy part."),
+            new("At32miles per160minutes,100miles takes500minutes at same pace. 1=yes,0=no.",1,"5 minutes/mile."),
+            new("A 3-pound orange bag4 dollars has lower cost per pound than an8-pound bag9 dollars. 1=yes,0=no.",0,"4/3=1.333 vs9/8=1.125.")
         ]
     };
 
