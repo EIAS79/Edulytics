@@ -40,6 +40,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L11TableAmounts = "usccss.g6.u02.l11.table_equivalent_ratio_values";
     public const string L11TableLogic = "usccss.g6.u02.l11.ratio_table_reasoning";
 
+    public const string L12TableCalculations = "usccss.g6.u02.l12.table_missing_quantity";
+    public const string L12TableStrategies = "usccss.g6.u02.l12.table_equivalence_methods";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -439,6 +442,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Jogging25 beats in10seconds exceeds160bpm. 1=yes,0=no.",0,"It is150bpm."),
             new("Six corn ears for180cents means30cents per ear. 1=yes,0=no.",1,"Divide180 by6."),
             new("Two ratio table rows can be equivalent if only one column is multiplied by2. 1=yes,0=no.",0,"Both corresponding values scale equally.")
+        ],
+        [L12TableCalculations] =
+        [
+            new("Each penny has mass2.5g. Priya collected2400g. Number of pennies?",960,"2400 divided by2.5 equals960 pennies."),
+            new("Each penny weighs2.5g. Priya collected2400g. Total money in CENTS?",960,"960 pennies are960 cents."),
+            new("Kiran reads5 pages in20 minutes. Minutes for11 pages at same pace?",44,"20 divided by5 is4minutes per page; 11 takes44minutes."),
+            new("Kiran reads5 pages in20 minutes. Minutes per page?",4,"20 divided by5 gives4minutes."),
+            new("Mai makes4 pizzas with10 ounces of cheese. Ounces per pizza in HALF-OUNCE units?",5,"10/4=2.5oz=5 half-ounce units."),
+            new("Mai makes4 pizzas with10 ounces cheese. Ounces for15 pizzas in HALF-OUNCE units?",75,"15×2.5=37.5oz=75 half-ounce units."),
+            new("Clare earns90 dollars for5 hours. Dollars per hour?",18,"90 divided by5 gives18dollars/hour."),
+            new("Clare earns90 dollars for5 hours. Seconds needed to earn25 cents at same rate?",50,"18dollars/hour is1800 cents/3600 sec=0.5 cents/sec, so25 cents needs50sec."),
+            new("Car travels20miles in half hour. Miles per hour?",40,"20 divided by0.5=40mph."),
+            new("Car travels30miles in three-quarter hour. Miles per hour?",40,"30 divided by0.75=40mph."),
+            new("A fruit mixture has9fl oz cranberry and21fl oz apple. Cranberry fl oz for2 groups of3:7?",6,"One scaled3:7 pair repeats twice to6:14."),
+            new("A fruit mixture has9fl oz cranberry and21fl oz apple. Apple fl oz for2 groups of3:7?",14,"2×7=14."),
+            new("600:450 simplifies to4:3 by dividing first term by what positive whole number?",150,"600/150=4."),
+            new("From a ratio4:3, multiplying both terms by15 gives what FIRST term?",60,"4×15=60."),
+            new("Mai uses10oz cheese for4 pizzas. Cheese ounces for8 pizzas?",20,"Double both quantities."),
+            new("A table has5pages per20min. Pages read in60minutes?",15,"60/20×5=15pages.")
+        ],
+        [L12TableStrategies] =
+        [
+            new("600:450 and60:45 are equivalent ratios. 1=yes,0=no.",1,"Both divide by10."),
+            new("60:45 and4:3 are equivalent ratios. 1=yes,0=no.",1,"Both divide by15."),
+            new("600:450 and4:3 are equivalent ratios. 1=yes,0=no.",1,"Both divide by150."),
+            new("600:450 and60:40 are equivalent ratios. 1=yes,0=no.",0,"Second must45."),
+            new("5 pages in20min means reading each page at an average4 minutes. 1=yes,0=no.",1,"20/5=4."),
+            new("5 pages in20min means11 pages take40 minutes at same pace. 1=yes,0=no.",0,"11×4=44."),
+            new("4 pizzas need10oz cheese, so one pizza uses2.5oz. 1=yes,0=no.",1,"10/4=2.5."),
+            new("4 pizzas need10oz cheese, so15 pizzas need30oz. 1=yes,0=no.",0,"15×2.5=37.5."),
+            new("20miles in half hour and30miles in three-quarter hour represent same speed. 1=yes,0=no.",1,"Both40mph."),
+            new("20miles in half hour and30miles in one full hour represent same speed. 1=yes,0=no.",0,"40 vs30mph."),
+            new("A ratio table allows multiplying both quantities by a common nonzero positive factor to reach a new row. 1=yes,0=no.",1,"Same multiplicative relationship."),
+            new("Clare earns90 dollars in5hours; she earns25 cents in50sec at that constant rate. 1=yes,0=no.",1,"18 dollars/hour=0.5 cents/sec.")
         ]
     };
 
