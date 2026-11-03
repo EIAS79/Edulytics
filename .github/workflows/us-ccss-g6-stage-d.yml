@@ -8,6 +8,8 @@ on:
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
       - 'tests/academic-us-ccss-g6-*.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6*.cs'
+      - 'tests/Edulytics.Tests/Acceptance/LevelAwareMathematicsGenerationTests.cs'
+      - 'src/Edulytics.Services/Edulytics.Services.csproj'
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
   pull_request:
@@ -18,6 +20,8 @@ on:
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
       - 'tests/academic-us-ccss-g6-*.test.cjs'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6*.cs'
+      - 'tests/Edulytics.Tests/Acceptance/LevelAwareMathematicsGenerationTests.cs'
+      - 'src/Edulytics.Services/Edulytics.Services.csproj'
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
   workflow_dispatch:
