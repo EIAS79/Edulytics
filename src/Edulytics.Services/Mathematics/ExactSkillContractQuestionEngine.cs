@@ -193,6 +193,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit2RatioQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
@@ -435,6 +436,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson8TriangleAreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family))
             return UsCcssG6Unit1Lesson11PolygonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit2RatioQuestions.Supports(family))
+            return UsCcssG6Unit2RatioQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family))
             return UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
@@ -1804,6 +1807,11 @@ public sealed class ExactSkillContractQuestionEngine
             var item = UsCcssG6Unit1Lesson11PolygonQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Explanation,
                 item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit2RatioQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit2RatioQuestions.Build(family, random);
+            return new ExactProblem(item.Family,item.Prompt,item.Explanation,item.ItemType,item.Parameters);
         }
         if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family))
         {
@@ -4973,6 +4981,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson8TriangleAreaQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson11PolygonQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson11PolygonQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit2RatioQuestions.Supports(problem.Family))
+            return UsCcssG6Unit2RatioQuestions.Solve(problem.Family,p);
         if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))

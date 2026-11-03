@@ -1645,6 +1645,22 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM G6 U02:L01. Ratios are ordered comparisons of
+        // named object categories; the 24-unit two-color model is source skill.
+        // Student sorting, diagrams, other-shape shading and explanation are
+        // teacher-reviewed; exact Practice checks the typed ratios/counts only.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_ORDERED_CATEGORY_RATIOS_AND_AREA_COLOR_MODEL",
+            [
+                "usccss.g6.u02.l01.ordered_collection_ratios",
+                "usccss.g6.u02.l01.shaded_area_ratio_counts"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u02.l01.ordered_collection_ratios",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_ordered_ratio",
+      "verificationPolicy": "positive-cross-products-ordered-named-categories-source-P1-with-own-collection-examples",
+      "representations": ["discrete_objects", "ratio_notation"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u02.l01.shaded_area_ratio_counts",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "equal-square-units-24-area-two-colors-and-representational-transfer",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l19.first_party_tent_panel_area",
       "version": 1,
       "skillId": "geometry.area_tiling",
