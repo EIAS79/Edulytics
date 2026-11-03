@@ -1431,6 +1431,22 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original IM/OUR G6 U01:L06 numerical area, missing corresponding
+        // dimensions and equal-area reasoning. Drawings/justifications remain
+        // teacher reviewed; the publisher's 6.3 Cool-down remains protected.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L06",
+            "geometry.area_tiling",
+            "G6_SOURCE_PARALLELOGRAM_AREA_MISSING_DIMENSION_COMPOSITE",
+            [
+                "usccss.g6.u01.l06.area_missing_dimension",
+                "usccss.g6.u01.l06.equal_area_reasoning",
+                "usccss.g6.u01.l06.composite_area"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L06_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

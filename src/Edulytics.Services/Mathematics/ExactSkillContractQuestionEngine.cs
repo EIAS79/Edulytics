@@ -188,6 +188,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson6AreaQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
@@ -422,6 +423,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson4ParallelogramQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family))
             return UsCcssG6Unit1Lesson5BaseHeightQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson6AreaQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson6AreaQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1763,6 +1766,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family))
         {
             var item = UsCcssG6Unit1Lesson5BaseHeightQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson6AreaQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson6AreaQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Explanation,
                 item.ItemType, item.Parameters);
         }
@@ -4920,6 +4929,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG6Unit1Lesson4ParallelogramQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson5BaseHeightQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson6AreaQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson6AreaQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
