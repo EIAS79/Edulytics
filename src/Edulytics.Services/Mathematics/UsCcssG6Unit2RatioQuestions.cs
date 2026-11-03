@@ -211,6 +211,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0602EquationSolutions = "usccss.g6.u06.l02.variable_equation_solutions";
     public const string L0602EquationTruth = "usccss.g6.u06.l02.equation_truth_and_model_logic";
 
+    public const string L0603HangerValues = "usccss.g6.u06.l03.hanger_equation_unknowns";
+    public const string L0603HangerLogic = "usccss.g6.u06.l03.balance_equation_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2767,6 +2770,46 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A number may be a solution without satisfying an arbitrary different equation. 1=yes,0=no.",1,"Equation-dependent truth."),
             new("20% of90band students own instruments, so80% rent. 1=yes,0=no.",1,"Complement100%."),
             new("1.4+2.7=4.1, so1.4 and2.7 must be equal. 1=yes,0=no.",0,"Equality relates sums, not addends.")
+        ],
+        [L0603HangerValues] =
+        [
+            new("Balanced hanger has3 equal x shapes against6 unit weights. x?",2,"3x=6."),
+            new("Two identical circles x balance3 unit squares. x in HALVES?",3,"2x=3 gives1.5."),
+            new("Hanger w+1.3=2.7. Value w in TENTHS?",14,"w=1.4."),
+            new("Hanger3y=5.1. Value y in TENTHS?",17,"y=1.7."),
+            new("Hanger z+1/3=1/2. z in SIXTHS?",1,"z=1/6."),
+            new("12-m=4. Find m.",8,"12-4=8."),
+            new("12=4m. Find m.",3,"12/4=3."),
+            new("m-4=12. Find m.",16,"12+4=16."),
+            new("m/4=12. Find m.",48,"4×12=48."),
+            new("Rectangle area14sq units, x=2⅓. Other side y?",6,"14/(7/3)=6."),
+            new("Rectangle area14sq units, x=4⅕. Other side y in THIRDS?",10,"14/(21/5)=10/3."),
+            new("Rectangle area14sq units, x=7/6. Other side y?",12,"14/(7/6)=12."),
+            new("Lin game goal20dollars,25% saved. Dollars?",5,"20×1/4=5."),
+            new("Lin game goal20dollars,75% saved. Dollars?",15,"20×3/4=15."),
+            new("Lin game goal20dollars,125% saved. Dollars?",25,"20×1.25=25."),
+            new("A balanced scale has 3x=6, if one x removed from each side where possible, x remains?",2,"x=2."),
+            new("Three identical weights y balance5.1units. Weight y in HUNDREDTHS?",170,"5.1/3=1.7."),
+            new("A hanger has z+1/3=1/2. z in TWELFTHS?",2,"1/6=2/12.")
+        ],
+        [L0603HangerLogic] =
+        [
+            new("A hanger with3 identical x and6 unit weights is represented by3x=6. 1=yes,0=no.",1,"Original options A,C."),
+            new("For3x=6, the equation x×x×x=6 is equivalent. 1=yes,0=no.",0,"Product x³ rather than3x."),
+            new("Removing equal weights from each side of a balanced hanger keeps balance. 1=yes,0=no.",1,"Equality-preserving step."),
+            new("Adding an amount to one side only always keeps a balanced hanger in balance. 1=yes,0=no.",0,"Breaks equality."),
+            new("Two circles x balance three unit squares represents2x=3. 1=yes,0=no.",1,"Source hanger A."),
+            new("w+1.3=2.7 gives w=1.4. 1=yes,0=no.",1,"Subtract1.3."),
+            new("3y=5.1 gives y=1.7. 1=yes,0=no.",1,"Divide both sides3."),
+            new("z+1/3=1/2 gives z=1/6. 1=yes,0=no.",1,"Subtract one third."),
+            new("If3x=6, dividing both sides by3 preserves the solution. 1=yes,0=no.",1,"x=2."),
+            new("12-m=4 means m=8. 1=yes,0=no.",1,"Subtract8."),
+            new("12=4m means m=3. 1=yes,0=no.",1,"Divide4."),
+            new("m-4=12 means m=16. 1=yes,0=no.",1,"Add4."),
+            new("m/4=12 means m=48. 1=yes,0=no.",1,"Multiply4."),
+            new("A matching tape diagram and hanger must represent same unknown, parts and total. 1=yes,0=no.",1,"Structural equivalence."),
+            new("A correct numerical x automatically proves student drew the original hanger geometry correctly. 1=yes,0=no.",0,"Teacher checks drawing."),
+            new("The equation3x=6 is additive3 copies of x, not multiplication x cubed. 1=yes,0=no.",1,"x+x+x=3x.")
         ]
     };
 
