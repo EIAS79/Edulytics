@@ -160,6 +160,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0417BoundedPacking = "usccss.g6.u04.l17.first_party_fixed_orientation_packing_math";
     public const string L0417PackingModelLogic = "usccss.g6.u04.l17.first_party_orientation_model_reasoning";
 
+    public const string L0501DecimalArithmetic = "usccss.g6.u05.l01.shopping_decimal_arithmetic";
+    public const string L0501DecimalEstimation = "usccss.g6.u05.l01.shopping_reasonableness";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -2056,6 +2059,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A student-created orientation drawing needs human assessment even when a per-axis multiplication is correct. 1=yes,0=no.",1,"Actual packing feasibility must be reviewed."),
             new("For270 boxes with carton capacity144, the count is rounded UP to2 cartons. 1=yes,0=no.",1,"Ceiling, not rounding to nearest."),
             new("The cheapest plan among only four uniform-orientation illustrated methods may not be the cheapest unconstrained plan. 1=yes,0=no.",1,"Mixed orientations and cartons may change optimum.")
+        ],
+        [L0501DecimalArithmetic] =
+        [
+            new("Mai has1450 cents, spends435 cents at snack bar and525 at arcade. Amount LEFT in CENTS?",490,"1450-435-525=490 cents."),
+            new("A large pizza costs750 cents. With4000 cents, maximum number of WHOLE pizzas?",5,"4000/750=5 and remainder250 cents."),
+            new("Five pizzas at750cents each cost how many CENTS?",3750,"5×750=3750."),
+            new("Adults tickets550cents, students425cents. Two adult tickets in CENTS?",1100,"2×550=1100."),
+            new("Three student tickets425cents each cost in CENTS?",1275,"3×425=1275."),
+            new("Two adults at550cents plus3 students at425cents cost in CENTS?",2375,"1100+1275=2375."),
+            new("Family paid2500cents for2375cents tickets. Change in CENTS?",125,"2500-2375=125."),
+            new("Chicken costs320cents/lb. Three pounds cost in CENTS?",960,"320×3=960."),
+            new("Beef costs459cents/lb. Three pounds cost in CENTS?",1377,"459×3=1377."),
+            new("Three pounds of beef versus chicken; difference in CENTS?",417,"1377-960=417."),
+            new("A bottle holds1½L, glass holds1/5L. How many glasses in HALF-GLASS UNITS?",15,"3/2÷1/5=15/2 glasses."),
+            new("A jug holds16L, bottle1½L. Number of bottles in THIRD-BOTTLE UNITS?",32,"16÷3/2=32/3 bottles."),
+            new("Triangle base5½ units area19¼ units². Height in UNITS?",7,"2×19.25/5.5=7."),
+            new("Five sixths divided by1/6 equals?",5,"5/6×6=5."),
+            new("One and1/6 divided by1/12 equals?",14,"7/6×12=14."),
+            new("10/6 divided by1/24 equals?",40,"10/6×24=40."),
+            new("A chicken price320cents/lb. Price per pound in DOLLAR-CENTS?",320,"Money amount in cents is320."),
+            new("Mai has1450cents and spends960cents total. Remainder CENTS?",490,"1450-960=490.")
+        ],
+        [L0501DecimalEstimation] =
+        [
+            new("Mai spent4.35+5.25=9.60 dollars. 1=yes,0=no.",1,"435+525=960cents."),
+            new("Mai has4.90 dollars left from14.50 after spending4.35 and5.25. 1=yes,0=no.",1,"14.50-9.60=4.90."),
+            new("40 dollars buys6 whole pizzas priced7.50 dollars each. 1=yes,0=no.",0,"6×7.50=45>40."),
+            new("40 dollars buys5 pizzas at7.50 dollars each. 1=yes,0=no.",1,"5×7.50=37.50."),
+            new("Two adult tickets and3 student tickets cost23.75 dollars. 1=yes,0=no.",1,"11+12.75=23.75."),
+            new("When ticket cost23.75 is paid with25 dollars, change is1.25. 1=yes,0=no.",1,"25-23.75=1.25."),
+            new("Three pounds of beef priced4.59/lb cost13.77 dollars. 1=yes,0=no.",1,"3×4.59=13.77."),
+            new("Three pounds of chicken priced3.20/lb cost9.60 dollars. 1=yes,0=no.",1,"3×3.20=9.60."),
+            new("Three pounds of beef cost4.17 dollars more than chicken at source prices. 1=yes,0=no.",1,"13.77-9.60=4.17."),
+            new("An estimate can help reject an impossible total before exact decimal calculation. 1=yes,0=no.",1,"Benchmark estimate validates reasonableness."),
+            new("Money units must be consistent when combining dollars and cents. 1=yes,0=no.",1,"Convert to same unit."),
+            new("1½L bottle fills7½ one-fifth-liter glasses. 1=yes,0=no.",1,"1.5/.2=7.5."),
+            new("Two triangles with same base5½ and perpendicular height7 have area19¼. 1=yes,0=no.",1,"5.5×7÷2=19.25."),
+            new("Adding decimal prices with misaligned decimal places may produce a different numerical result. 1=yes,0=no.",1,"Place value matters.")
         ]
     };
 

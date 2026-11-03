@@ -2364,6 +2364,20 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // G6 original first edition Unit5 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_BUDGETING_ESTIMATION_AND_EXACT_OPERATIONS",
+            [
+                "usccss.g6.u05.l01.shopping_decimal_arithmetic",
+                "usccss.g6.u05.l01.shopping_reasonableness"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
