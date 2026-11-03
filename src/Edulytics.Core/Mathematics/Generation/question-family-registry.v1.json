@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u07.l09.inequality_solution_values",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-kgreater5-speedlimit60-Boston52through60-and-power-equations",
+      "representations": [
+        "numeric",
+        "inequality_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u07.l09.inequality_solution_set_logic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-open-vs-closed-boundaries-multiple-solutions",
+      "representations": [
+        "boolean_reasoning",
+        "numberline"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u07.l08.inequality_bound_examples",
       "version": 1,
       "skillId": "ratio.unit_rate",

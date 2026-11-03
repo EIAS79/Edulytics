@@ -289,6 +289,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0708InequalityExamples = "usccss.g6.u07.l08.inequality_bound_examples";
     public const string L0708InequalityLogic = "usccss.g6.u07.l08.inequality_constraints_logic";
 
+    public const string L0709BoundedSolutions = "usccss.g6.u07.l09.inequality_solution_values";
+    public const string L0709SolutionLogic = "usccss.g6.u07.l09.inequality_solution_set_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4006,6 +4009,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("An inequality with variable measurement may have infinitely many possible solutions. 1=yes,0=no.",1,"Continuous domain."),
             new("A count of books must generally be a whole nonnegative number, even if inequality includes real fractions. 1=yes,0=no.",1,"Contextual domain."),
             new("Strict bounds are marked with open circles on a number line. 1=yes,0=no.",1,"Endpoint excluded.")
+        ],
+        [L0709BoundedSolutions] =
+        [
+            new("Inequality k>5. Is4 a solution? Enter1 yes,0 no.",0,"4≤5."),
+            new("Inequality k>5. Is5 a solution?",0,"Strictly greater."),
+            new("Inequality k>5. Is6 a solution?",1,"6>5."),
+            new("Inequality k>5. Is5.2 a solution?",1,"5.2>5."),
+            new("Inequality k>5. Is5.01 a solution?",1,"5.01>5."),
+            new("Inequality k>5. Is0.5 a solution?",0,".5<5."),
+            new("Speed limit60mph. Is60mph permitted?",1,"s≤60."),
+            new("Speed limit60mph. Is61mph permitted?",0,"Exceeds limit."),
+            new("Boston low52F and high60F. Is52F included in range?",1,"Inclusive extremes."),
+            new("Boston low52 high60F. Is60F included?",1,"Inclusive."),
+            new("Boston low52 high60F. Is61F permitted?",0,"Above high."),
+            new("Source true claim -5<|-5|? Enter1 yes,0 no.",1,"-5<5."),
+            new("Source true claim |-6|<-5? Enter1 yes,0 no.",0,"6<-5 false."),
+            new("Source true claim |-6|<3? Enter1 yes,0 no.",0,"6<3 false."),
+            new("Source true claim4<|-7|? Enter1 yes,0 no.",1,"4<7."),
+            new("Source true claim|-7|<|-8|? Enter1 yes,0 no.",1,"7<8."),
+            new("Positive solution x to x^4=81?",3,"3^4=81."),
+            new("Positive x to x²=100?",10,"10²."),
+            new("x³=64. x?",4,"4³."),
+            new("x⁵=32. x?",2,"2^5."),
+            new("Phone usual250dollars paid150dollars. Paid percentage?",60,"150/250=60%."),
+            new("Phone usual250dollars 75% paid. Dollars in QUARTERS?",750,"187.5=750 quarters."),
+            new("At t=55F, is temperature between52 and60 inclusive?",1,"52≤55≤60.")
+        ],
+        [L0709SolutionLogic] =
+        [
+            new("6 is a solution to k>5. 1=yes,0=no.",1,"6>5."),
+            new("5 is a solution to k>5. 1=yes,0=no.",0,"Excluded endpoint."),
+            new("5.01 is a solution to k>5. 1=yes,0=no.",1,"Positive difference."),
+            new("The solution set k>5 includes infinitely many real numbers. 1=yes,0=no.",1,"Unbounded continuum."),
+            new("A posted maximum speed60mph can be represented by s≤60. 1=yes,0=no.",1,"At most60."),
+            new("Exactly60mph violates a60mph speed limit in the mathematical example. 1=yes,0=no.",0,"At limit allowed."),
+            new("A car speed must be nonnegative in usual speed magnitude context. 1=yes,0=no.",1,"Contextual domain."),
+            new("Temperature from low52F through high60F can be represented52≤T≤60. 1=yes,0=no.",1,"Inclusive high/low."),
+            new("The temperatures52 and60 are excluded from a daily recorded low/high interval. 1=yes,0=no.",0,"Both recorded."),
+            new("-5<|-5|. 1=yes,0=no.",1,"-5<5."),
+            new("|-6|<-5. 1=yes,0=no.",0,"6<-5 false."),
+            new("4<|-7|. 1=yes,0=no.",1,"4<7."),
+            new("|-7|<|-8|. 1=yes,0=no.",1,"7<8."),
+            new("x^4=81 has positive integer solution3. 1=yes,0=no.",1,"3^4=81."),
+            new("A phone bought150 from250 normal costs60% of usual. 1=yes,0=no.",1,".6."),
+            new("75% of250dollars is187.50dollars. 1=yes,0=no.",1,"187.5."),
+            new("An inequality's solution is a value making its statement true. 1=yes,0=no.",1,"Substitution."),
+            new("For k>5, the endpoint5 is drawn with an open circle. 1=yes,0=no.",1,"Strict."),
+            new("For s≤60, the endpoint60 is drawn with a filled circle. 1=yes,0=no.",1,"Inclusive.")
         ]
     };
 
