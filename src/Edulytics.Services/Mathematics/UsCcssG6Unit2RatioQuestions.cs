@@ -346,6 +346,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0808ShapeNumbers = "usccss.g6.u08.l08.histogram_shape_and_cumulative";
     public const string L0808ShapeLogic = "usccss.g6.u08.l08.histogram_shape_explanations";
 
+    public const string L0809Means = "usccss.g6.u08.l09.mean_and_balanced_total";
+    public const string L0809MeanLogic = "usccss.g6.u08.l09.mean_fair_share_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4975,6 +4978,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("12ounces as60% full means20-ounce bottle. 1=yes,0=no.",1,"12/0.6=20."),
             new("A data set with two separated clusters necessarily has exactly one central peak. 1=yes,0=no.",0,"Can be bimodal."),
             new("Appropriate narrative can distinguish descriptive appearance from numerical certainty. 1=yes,0=no.",1,"Avoid fabricated chart readings.")
+        ],
+        [L0809Means] =
+        [
+            new("Four boxes blocks32,18,41,9. Total blocks?",100,"32+18+41+9=100."),
+            new("Four boxes blocks32,18,41,9. Equal share per box?",25,"100/4=25."),
+            new("Box1 has32 blocks, should end25. Number to remove?",7,"32-25=7."),
+            new("Box2 has18, should end25. Number to add?",7,"25-18=7."),
+            new("Box3 has41, should end25. Number to remove?",16,"41-25=16."),
+            new("Box4 has9, should end25. Number to add?",16,"25-9=16."),
+            new("Correct source choices for block equalization A or E: enter1 if A valid,0 otherwise.",1,"A four equal piles25."),
+            new("Correct source choices for block equalization: enter1 if E valid,0 otherwise.",1,"Transfer7 from1 to2 and16 from3 to4."),
+            new("Source choice D transfer7 from1 to2 and21 from3 to4 makes all boxes equal? Enter1 yes,0 no.",0,"Third20 fourth30."),
+            new("Mini-golf strokes2,3,1,4,5,2,3,4,3. Number of holes?",9,"Nine greens."),
+            new("Same mini-golf strokes. Total strokes?",27,"Sum27."),
+            new("Same mini-golf strokes. Mean strokes per hole?",3,"27/9=3."),
+            new("Library fundraising three classes2550,4975,3725 CENTS. Combined in CENTS?",11250,"2550+4975+3725=11250."),
+            new("Same classes collected11250 cents. Equal share per class in CENTS?",3750,"11250/3=3750cents."),
+            new("Quiz scores first3 are4,3,4; target average4 over4 quizzes. Total target points?",16,"4×4=16."),
+            new("Quiz scores4,3,4,x target average4. Required last score?",5,"16-11=5."),
+            new("Earthworm sample source container A has how many measured worms?",25,"Original states25 per container."),
+            new("Earthworm sample source container B has how many measured worms?",25,"Original states25 per container."),
+            new("Which earthworm container tends longer? Enter1 A,2 B.",1,"A has more measurements around40–60mm."),
+            new("Which earthworm container has many around15mm? Enter1 A,2 B.",2,"B has many5–20mm."),
+            new("If x=3, compute x²?",9,"3×3=9."),
+            new("A solution to x²=16 among3,4,5 is?",4,"4²=16; negative4 also solves."),
+            new("Mean of five numbers1,2,3,4,5?",3,"Sum15/5."),
+            new("Mean of three numbers2,4,9?",5,"15/3=5."),
+            new("Mean of four numbers5,5,5,5?",5,"20/4=5.")
+        ],
+        [L0809MeanLogic] =
+        [
+            new("Mean can be interpreted as each group's value if total were fairly redistributed across same number of groups. 1=yes,0=no.",1,"Fair share."),
+            new("Redistributing100 blocks among4 boxes equally gives25 each. 1=yes,0=no.",1,"100/4."),
+            new("Removing7 from32 and adding7 to18 makes both25. 1=yes,0=no.",1,"Balance pair."),
+            new("Removing21 from41 and adding21 to9 makes them equal25. 1=yes,0=no.",0,"20 and30."),
+            new("Removing16 from41 and adding16 to9 makes both25. 1=yes,0=no.",1,"25 and25."),
+            new("The total must remain constant during pure redistribution. 1=yes,0=no.",1,"No extra blocks."),
+            new("Mini-golf scores across9 holes sum27, so mean3. 1=yes,0=no.",1,"27/9=3."),
+            new("A mean always has to equal one of original observed values. 1=yes,0=no.",0,"Can be fractional/non-observed."),
+            new("Three classes total112.50 dollars divided equally means37.50 each. 1=yes,0=no.",1,"112.5/3=37.5."),
+            new("Quiz grades4,3,4,5 average4 across four quizzes. 1=yes,0=no.",1,"16/4=4."),
+            new("Quiz grades4,3,4,4 average4 across four quizzes. 1=yes,0=no.",0,"15/4=3.75."),
+            new("Container A worm lengths tend longer than B in source histograms. 1=yes,0=no.",1,"A higher interval clusters."),
+            new("A worm length15mm is plausible as a typical value in container B. 1=yes,0=no.",1,"Most B short."),
+            new("The displayed exact times for each worm can be reconstructed from grouped source histograms. 1=yes,0=no.",0,"Only interval counts."),
+            new("x=3 satisfies x²=16. 1=yes,0=no.",0,"3²=9."),
+            new("x=-4 satisfies x²=16. 1=yes,0=no.",1,"(-4)²=16."),
+            new("Mean equals total sum divided by number of observations. 1=yes,0=no.",1,"Formula."),
+            new("If all values in dataset increase by2, mean also increases by2. 1=yes,0=no.",1,"Shift all values."),
+            new("Teacher can assess a student's balancing drawing and explanations beyond numeric total. 1=yes,0=no.",1,"Rubric.")
         ]
     };
 
