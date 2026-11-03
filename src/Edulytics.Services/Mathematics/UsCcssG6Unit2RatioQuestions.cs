@@ -316,6 +316,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0717Multiples = "usccss.g6.u07.l17.least_common_multiple_source_cycles";
     public const string L0717LcmLogic = "usccss.g6.u07.l17.multiple_cycle_reasoning";
 
+    public const string L0718FactorMultipleChoices = "usccss.g6.u07.l18.gcf_lcm_context_problems";
+    public const string L0718DecisionLogic = "usccss.g6.u07.l18.factor_multiple_selection_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4462,6 +4465,56 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("175% of2500dollars is4375dollars. 1=yes,0=no.",1,"1.75×2500."),
             new("Equivalent package groups should have no leftover cups or napkins in the minimum matched-set example. 1=yes,0=no.",1,"Exactly24 each."),
             new("An LCM story usually concerns a shared repeat time or minimum equal multiple, not maximum equal group size. 1=yes,0=no.",1,"GCF handles equal largest groups.")
+        ],
+        [L0718FactorMultipleChoices] =
+        [
+            new("Mai6minutes per sign, Clare8minutes. First simultaneous completion in MINUTES?",24,"LCM(6,8)=24."),
+            new("Mai6minutes per sign, Noah5minutes. First simultaneous completion in MINUTES?",30,"LCM(6,5)=30."),
+            new("Clare8minutes per sign, Noah5minutes. First simultaneous completion in MINUTES?",40,"LCM(8,5)=40."),
+            new("Mai6,Clare8,Noah5 minute sign intervals. First simultaneous completion of ALL THREE in minutes?",120,"LCM(6,8,5)=120."),
+            new("Within30 minutes, do Mai and Clare finish a sign simultaneously? Enter1 yes,0 no.",1,"They coincide at24min."),
+            new("Within30 minutes, do Mai and Noah finish simultaneously? Enter1 yes,0 no.",1,"They coincide at30min."),
+            new("Within30 minutes, do Clare and Noah finish simultaneously? Enter1 yes,0 no.",0,"First at40min."),
+            new("Within30 minutes, do all three finish simultaneously? Enter1 yes,0 no.",0,"First at120min."),
+            new("Diego has48 chocolate chip,64 vanilla,100 raisin cookies. Greatest possible identical bags?",4,"GCF(48,64,100)=4."),
+            new("With4 bags, chocolate chip cookies per bag?",12,"48/4=12."),
+            new("With4 bags, vanilla cookies per bag?",16,"64/4=16."),
+            new("With4 bags, raisin cookies per bag?",25,"100/4=25."),
+            new("With2 equal bags, chocolate chip cookies per bag?",24,"48/2=24."),
+            new("With2 equal bags, vanilla cookies per bag?",32,"64/2=32."),
+            new("With2 equal bags, raisin cookies per bag?",50,"100/2=50."),
+            new("Product12×8?",96,"96."),
+            new("Greatest common factor of12 and8?",4,"Factors common1,2,4."),
+            new("Least common multiple of12 and8?",24,"24 divisible by12 and8."),
+            new("Product GCF(12,8)×LCM(12,8)?",96,"4×24=96."),
+            new("Given point(5.5,-7), choose second(5.5,1). Vertical length in UNITS?",8,"|1-(-7)|=8."),
+            new("Given point(3,3.5), choose second(8,3.5). Horizontal length in UNITS?",5,"|8-3|=5."),
+            new("Half times37 minus half times7 equals?",15,"(37-7)/2=15."),
+            new("3.5×40+3.5×60 equals?",350,"3.5×100=350."),
+            new("999×5 equals?",4995,"(1000-1)×5=4995.")
+        ],
+        [L0718DecisionLogic] =
+        [
+            new("Mai6-minute and Clare8-minute signs can coincide at24min. 1=yes,0=no.",1,"LCM24."),
+            new("Mai6-minute and Noah5-minute signs can coincide at30min. 1=yes,0=no.",1,"LCM30."),
+            new("Clare8-minute and Noah5-minute signs coincide by30min. 1=yes,0=no.",0,"First40min."),
+            new("All three 6,8,5 minute sign patterns have a shared completion by30min. 1=yes,0=no.",0,"LCM120."),
+            new("Using GCF is appropriate for finding maximum number of identical full cookie bags with no leftovers. 1=yes,0=no.",1,"Largest shared divisor."),
+            new("Using LCM is appropriate for first matching future completion time of periodic events. 1=yes,0=no.",1,"Smallest shared positive multiple."),
+            new("Cookie totals48,64,100 have greatest common factor4. 1=yes,0=no.",1,"Four is largest dividing all."),
+            new("Eight identical cookie bags divide48,64,100 without leftovers. 1=yes,0=no.",0,"100 not divisible by8."),
+            new("Four equal cookie bags contain12 chocolate,16 vanilla,25 raisin each. 1=yes,0=no.",1,"All exact."),
+            new("Two equal cookie bags contain24 chocolate,32 vanilla,50 raisin each. 1=yes,0=no.",1,"Alternative."),
+            new("For positive whole numbers12 and8, GCF×LCM equals12×8. 1=yes,0=no.",1,"4×24=96."),
+            new("GCF(12,8)=24. 1=yes,0=no.",0,"GCF is4."),
+            new("LCM(12,8)=24. 1=yes,0=no.",1,"Smallest shared multiple."),
+            new("A vertical segment must share the same x coordinate at both endpoints. 1=yes,0=no.",1,"x constant."),
+            new("A horizontal segment must share the same y coordinate at both endpoints. 1=yes,0=no.",1,"y constant."),
+            new("The only possible vertical point paired with(5.5,-7) is(5.5,1). 1=yes,0=no.",0,"Many shared-x points."),
+            new("Half times37 minus half times7 is15. 1=yes,0=no.",1,"Distributive property."),
+            new("3.5 times40 plus3.5 times60 is350. 1=yes,0=no.",1,"3.5×100."),
+            new("999×5=4995. 1=yes,0=no.",1,"5000-5."),
+            new("A correct numeric result alone validates the optional student-generated Factors and Multiples Bingo activity. 1=yes,0=no.",0,"Teacher reviews constructed activity.")
         ]
     };
 

@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u07.l18.gcf_lcm_context_problems",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-signmakers6-8-5in30minutes-cookies48-64-100-12and8-productidentity",
+      "representations": [
+        "numeric",
+        "number_line_cycles"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u07.l18.factor_multiple_selection_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-when-to-select-gcf-maxbags-or-lcm-meeting-times-and-identity",
+      "representations": [
+        "boolean_reasoning",
+        "factor_multiples_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u07.l17.least_common_multiple_source_cycles",
       "version": 1,
       "skillId": "ratio.unit_rate",
