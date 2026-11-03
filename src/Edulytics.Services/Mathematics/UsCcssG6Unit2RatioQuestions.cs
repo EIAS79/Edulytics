@@ -5825,16 +5825,17 @@ internal static class UsCcssG6Unit2RatioQuestions
         }
         if (family is L03RecipeBatches or L03EqualTaste)
         {
+            var row=family==L03RecipeBatches?RecipeBatches[variant]:EqualTaste[variant];
             return new(family,row.Prompt,
                 row.Explanation+" Teacher checks the student's physical recipe grouping, visual ratios, ingredient units and explanation separately.",
                 AssessmentItemType.Numeric,new Dictionary<string,int>{{"variant",variant}});
         }
         if (family == L02Diagrams)
         {
-            var (first,a,unitA,second,b,unitB)=Diagrams[variant];
+            var (firstName,a,unitA,secondName,b,unitB)=Diagrams[variant];
             return new(family,
-                $"A labeled two-row diagram has {a} marks for {first} ({unitA}) and {b} marks for {second} ({unitB}). What is the ratio of the FIRST row to the SECOND? Enter the depicted A:B counts.",
-                $"The labeled diagram represents {a} {unitA} of {first} for {b} {unitB} of {second}; order is {a}:{b}. Units must remain attached to their labels. Teacher checks physical cube arrangement and student sketches.",
+                $"A labeled two-row diagram has {a} marks for {firstName} ({unitA}) and {b} marks for {secondName} ({unitB}). What is the ratio of the FIRST row to the SECOND? Enter the depicted A:B counts.",
+                $"The labeled diagram represents {a} {unitA} of {firstName} for {b} {unitB} of {secondName}; order is {a}:{b}. Units must remain attached to their labels. Teacher checks physical cube arrangement and student sketches.",
                 AssessmentItemType.ShortAnswer,new Dictionary<string,int>{{"variant",variant}});
         }
         if (family == L02Cards)
@@ -5847,10 +5848,10 @@ internal static class UsCcssG6Unit2RatioQuestions
         }
         if (family == L01Collections)
         {
-            var (first,a,second,b) = Pairs[variant];
+            var (firstName,a,secondName,b) = Pairs[variant];
             return new(family,
-                $"A labeled collection has {a} {first} and {b} {second}. Give the ratio of {first} to {second}, in that order, using A:B notation.",
-                $"The order is {first} first ({a}) and {second} second ({b}), so {a}:{b}. Equivalent positive ratios are accepted. Student-created category choices and diagrams require teacher review.",
+                $"A labeled collection has {a} {firstName} and {b} {secondName}. Give the ratio of {firstName} to {secondName}, in that order, using A:B notation.",
+                $"The order is {firstName} first ({a}) and {secondName} second ({b}), so {a}:{b}. Equivalent positive ratios are accepted. Student-created category choices and diagrams require teacher review.",
                 AssessmentItemType.ShortAnswer,new Dictionary<string,int>{{"variant",variant}});
         }
 
