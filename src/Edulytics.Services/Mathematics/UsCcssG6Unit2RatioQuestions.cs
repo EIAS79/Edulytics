@@ -46,6 +46,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L13RepresentationValues = "usccss.g6.u02.l13.table_line_ratio_values";
     public const string L13RepresentationLogic = "usccss.g6.u02.l13.representation_selection";
 
+    public const string L14InfoGapNumbers = "usccss.g6.u02.l14.info_gap_ratio_quantities";
+    public const string L14InfoGapReasoning = "usccss.g6.u02.l14.rate_information_requests";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -513,6 +516,40 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A drink with5/3 tablespoons powder and12oz water is exactly3 batches when using5 tbsp and36oz. 1=yes,0=no.",1,"Scale both by3."),
             new("For bread 3 tbsp oil:2 cloves garlic,5 tablespoons oil corresponds to10 cloves at the same rate. 1=yes,0=no.",0,"10 cloves needs15 tbsp."),
             new("A table and a double number line may describe the same equivalent ratio family. 1=yes,0=no.",1,"Both preserve corresponding pair values.")
+        ],
+        [L14InfoGapNumbers] =
+        [
+            new("Vinegar costs3 dollars for2 gallons. Cost of1 gallon in CENTS?",150,"300cents divided by2=150cents."),
+            new("Vinegar costs3 dollars for2 gallons. Cost of15 gallons in CENTS?",2250,"15 times150cents=2250cents."),
+            new("Vinegar costs3 dollars for2 gallons. Cost of30 gallons in CENTS?",4500,"30 times150=4500cents."),
+            new("Eight pounds pasta cost12 dollars. Price for1 pound in CENTS?",150,"1200 divided by8=150cents."),
+            new("Eight pounds pasta cost12 dollars. Price for21 pounds in CENTS?",3150,"21 times150=3150cents."),
+            new("Lin reads20pages in35minutes. At same rate, time for47 pages in QUARTER-MINUTES?",329,"47 times35 divided by20=82.25minutes=329quarter-minute units."),
+            new("Lin reads20pages in35minutes. Additional time beyond1hour for47pages, in SECONDS?",1335,"82.25minutes minus60=22.25minutes=1335seconds."),
+            new("Diego types140words in4minutes. Words per minute?",35,"140 divided by4=35words/min."),
+            new("Diego types140words in4minutes. Minutes for385words?",11,"385/35=11minutes."),
+            new("Diego types140words in4minutes. Words in15minutes?",525,"35 times15=525words."),
+            new("Train travels30miles in one-third hour. Miles per hour?",90,"30 divided by1/3=90mph."),
+            new("Train travels20miles in half hour. Miles per hour?",40,"20 divided by1/2=40mph."),
+            new("Triangular-prism net has three rectangle faces length12,10,10 and height4 inches. Total area of rectangles in square inches?",128,"4 times(12+10+10)=128."),
+            new("Two congruent triangles each base12in and height8in. Combined triangle area in square inches?",96,"Two triangles each12 times8 divided by2=48, combined96."),
+            new("Prism source net combines rectangular area128 and triangular ends96 square inches. Total surface area?",224,"128+96=224square inches."),
+            new("A rate of140words per4minutes, words in2minutes?",70,"35 times2=70words.")
+        ],
+        [L14InfoGapReasoning] =
+        [
+            new("At a constant cost of3 dollars per2gallons,1gallon costs1.50 dollars. 1=yes,0=no.",1,"Divide both amounts by2."),
+            new("At3 dollars per2 gallons,4 gallons cost3 dollars. 1=yes,0=no.",0,"Four gallons cost6 dollars."),
+            new("At3 dollars per2 gallons,30 gallons cost45 dollars. 1=yes,0=no.",1,"15 times the source pair."),
+            new("At3 dollars per2 gallons,2 dollars buys30 gallons. 1=yes,0=no.",0,"2 dollars buys4/3 gallons."),
+            new("At3 dollars per2 gallons,1 dollar buys2/3 gallon. 1=yes,0=no.",1,"Divide both by3."),
+            new("For21lb pasta at8lb per12dollars, knowing the unit price helps. 1=yes,0=no.",1,"1.50 dollars per pound."),
+            new("Lin47pages at20pages/35minutes will finish within60minutes. 1=yes,0=no.",0,"It takes82.25minutes."),
+            new("Diego140words in4minutes has a constant rate35words/minute. 1=yes,0=no.",1,"140/4=35."),
+            new("A train30miles in1/3hour is faster than another20miles in1/2hour. 1=yes,0=no.",1,"90mph exceeds40mph."),
+            new("An info-gap solver should ask specifically for the missing relevant quantity and explain why. 1=yes,0=no.",1,"Ask precise what/why questions."),
+            new("A learner must guess unknown source information rather than ask their partner in an info-gap. 1=yes,0=no.",0,"The activity expects explicit requests."),
+            new("For a price-to-weight problem, the unit price can be used to scale the required weight. 1=yes,0=no.",1,"Multiply dollars/pound by pounds.")
         ]
     };
 

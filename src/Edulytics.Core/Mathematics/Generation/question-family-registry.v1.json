@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u02.l14.info_gap_ratio_quantities",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-vinegar-two-gallons-three-dollars-pasta-eight-pounds-twelve-dollars-reading47pages-typing140words",
+      "representations": [
+        "numeric",
+        "ratio_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u02.l14.rate_information_requests",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-what-information-is-needed-verify-ratio-model-source-vinegar-reading",
+      "representations": [
+        "boolean_reasoning",
+        "what_why_info_gap"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u02.l13.table_line_ratio_values",
       "version": 1,
       "skillId": "ratio.unit_rate",
