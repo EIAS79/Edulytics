@@ -151,6 +151,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0414GeometryNumbers = "usccss.g6.u04.l14.triangle_height_and_cube_counts";
     public const string L0414GeometryLogic = "usccss.g6.u04.l14.cube_and_triangle_reasoning";
 
+    public const string L0415Volumes = "usccss.g6.u04.l15.fractional_prism_volume";
+    public const string L0415VolumeLogic = "usccss.g6.u04.l15.prism_unit_cube_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1921,6 +1924,45 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("75% of80 kids are wearing socks so20 are not. 1=yes,0=no.",1,"25%×80=20."),
             new("Volume uses cubic units, not squared units. 1=yes,0=no.",1,"Three dimensions."),
             new("The small cube count equals the ratio of large volume to small cube volume. 1=yes,0=no.",1,"Volume quotient.")
+        ],
+        [L0415Volumes] =
+        [
+            new("Pool24ft by15ft, water height1⅓ft. Volume in CUBIC FEET?",480,"24×15×4/3=480."),
+            new("Prism2⅖in×3⅕in×2in. Volume in TWENTY-FIFTHS of a cubic inch?",384,"12/5×16/5×2=384/25."),
+            new("Prism2⅖in×3⅕in×2in. Count of1/5inch cubes along first edge?",12,"(12/5)/(1/5)=12."),
+            new("Prism2⅖in×3⅕in×2in. Count1/5in cubes along second edge?",16,"(16/5)/(1/5)=16."),
+            new("Prism2⅖in×3⅕in×2in. Count1/5in cubes along third edge?",10,"2/(1/5)=10."),
+            new("Prism2⅖in×3⅕in×2in. Total count1/5inch unit cubes?",1920,"12×16×10=1920."),
+            new("Prism2⅖in×3⅕in×2in. Total count2/5inch cubes?",240,"6×8×5=240."),
+            new("A1/5inch cube has volume in ONE-HUNDRED-TWENTY-FIFTH cubic-inch units?",1,"1/5³=1/125."),
+            new("A right triangle legs3/4 and1 unit. Area in EIGHTHS of sq unit?",3,"3/4×1÷2=3/8."),
+            new("Right triangle area3/8 and hypotenuse base5/4, perpendicular height in FIFTHS?",3,"2×3/8÷5/4=3/5."),
+            new("Salt lick cube edge5/12ft. Volume in 1728THS cubic feet?",125,"5³/12³=125/1728."),
+            new("Salt lick packing box1¼ft×1⅔ft×5/6ft. Cubes along first edge of5/12ft?",3,"5/4÷5/12=3."),
+            new("Salt lick packing box1¼ft×1⅔ft×5/6ft. Cubes along second edge?",4,"5/3÷5/12=4."),
+            new("Salt lick packing box1¼ft×1⅔ft×5/6ft. Cubes along third edge?",2,"5/6÷5/12=2."),
+            new("Salt lick packing box1¼ft×1⅔ft×5/6ft. Total count of5/12ft cubes?",24,"3×4×2=24."),
+            new("How many groups of1/3inch fit in3/4inch? Answer in QUARTER-GROUP UNITS?",9,"3/4÷1/3=9/4."),
+            new("One and2/5 groups of1⅔in. Length in THIRDS of inch?",7,"7/5×5/3=7/3in."),
+            new("Art paste uses1cup flour per1/2cup water. Water cups for4flour?",2,"4×1/2=2."),
+            new("Art paste1cup flour per1/2cup water. Flour cups with3cups water?",6,"3×2=6.")
+        ],
+        [L0415VolumeLogic] =
+        [
+            new("Pool24×15×1⅓feet contains480 cubic feet at given water height. 1=yes,0=no.",1,"24×15×4/3=480."),
+            new("A prism2⅖×3⅕×2in has volume384/25in³. 1=yes,0=no.",1,"Multiply edge lengths."),
+            new("A prism packed with1/5in cubes has1920 of them under stated dimensions. 1=yes,0=no.",1,"12×16×10."),
+            new("A prism packed with2/5in cubes has240 of them under stated dimensions. 1=yes,0=no.",1,"6×8×5."),
+            new("Larger2/5in cubes require MORE cubes than smaller1/5in cubes to fill same prism. 1=yes,0=no.",0,"Larger cubes take more volume each."),
+            new("A1/5in unit cube has volume1/5 cubic inch. 1=yes,0=no.",0,"Volume1/125."),
+            new("A right triangle with perpendicular legs3/4 and1 has area3/8 sq unit. 1=yes,0=no.",1,"Multiply legs÷2."),
+            new("If triangle area3/8 and new base5/4, its perpendicular altitude is3/5. 1=yes,0=no.",1,"2A/b=3/5."),
+            new("Salt lick cube side5/12ft has volume smaller than1 cubic foot. 1=yes,0=no.",1,"125/1728<1."),
+            new("Salt lick shipping box with3×4×2 cube counts can hold24 equal cubes. 1=yes,0=no.",1,"Multiply fit counts."),
+            new("A fractional prism volume requires expressing lengths in a common measurement unit. 1=yes,0=no.",1,"Unit consistency."),
+            new("Cubic inches and square inches are interchangeable units when finding a prism's volume. 1=yes,0=no.",0,"Different dimensions."),
+            new("One and two-fifths groups of1⅔in is7/3in. 1=yes,0=no.",1,"7/5×5/3=7/3."),
+            new("1cup flour to1/2cup water means4cups flour require2cups water. 1=yes,0=no.",1,"Scale both×4.")
         ]
     };
 
