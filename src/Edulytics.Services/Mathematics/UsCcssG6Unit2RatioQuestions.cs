@@ -235,6 +235,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0610VariableArea = "usccss.g6.u06.l10.variable_distributive_values";
     public const string L0610AreaReasoning = "usccss.g6.u06.l10.variable_distributive_equivalence";
 
+    public const string L0611AlgebraEvaluation = "usccss.g6.u06.l11.expansion_factor_values";
+    public const string L0611DistributionLogic = "usccss.g6.u06.l11.distributive_equivalence_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3123,6 +3126,51 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("5½ laps in8min at steady pace gives16/11 minutes per lap. 1=yes,0=no.",1,"8÷11/2."),
             new("A variable rectangle area diagram can justify equivalent expressions for ALL values of the variable. 1=yes,0=no.",1,"Symbolic partition."),
             new("Area measured in square units must equal length times height with same linear unit. 1=yes,0=no.",1,"Dimensional relationship.")
+        ],
+        [L0611AlgebraEvaluation] =
+        [
+            new("4(x+2) at x=3?",20,"4×5=20."),
+            new("Expanded4x+8 at x=3?",20,"12+8=20."),
+            new("(6+8)x at x=3?",42,"14×3=42."),
+            new("4(2x+3) at x=5?",52,"4×13=52."),
+            new("8x+12 at x=5?",52,"40+12=52."),
+            new("6(x+y+z) atx=1,y=2,z=3?",36,"6×6=36."),
+            new("8y-24 at y=5?",16,"40-24=16."),
+            new("8(y-3) at y=5?",16,"8×2=16."),
+            new("2(4y-12) at y=5?",16,"2(20-12)=16."),
+            new("16x+36 at x=2?",68,"32+36=68."),
+            new("4(4x+9) at x=2?",68,"4×17=68."),
+            new("2(8x+18) at x=2?",68,"2×34=68."),
+            new("Square side3cm. Perimeter in CM?",12,"4×3=12."),
+            new("Square side7cm. Perimeter in CM?",28,"4×7=28."),
+            new("Square perimeter360cm. Side length CM?",90,"360÷4=90."),
+            new("Square side3cm. Area SQCM?",9,"3²=9."),
+            new("Square side7cm. Area SQCM?",49,"7²=49."),
+            new("Square area121cm². Side length CM?",11,"11²=121."),
+            new("10=4a. a in HALVES?",5,"a=2.5."),
+            new("5b=17.5. b in TENTHS?",35,"b=3.5."),
+            new("1.036=10c. c in TEN-THOUSANDTHS?",1036,"c=.1036."),
+            new("0.6d=1.8. d?",3,"d=3."),
+            new("15=0.1e. e?",150,"e=150.")
+        ],
+        [L0611DistributionLogic] =
+        [
+            new("4(x+2) and4x+8 are equivalent. 1=yes,0=no.",1,"Distribution."),
+            new("(6+8)x and14x equivalent. 1=yes,0=no.",1,"Combine coefficients."),
+            new("4(2x+3) equals8x+12 for all x. 1=yes,0=no.",1,"Expand."),
+            new("6(x+y+z)=6x+6y+6z for all x,y,z. 1=yes,0=no.",1,"Distribution."),
+            new("8y-24=8(y-3) for all y. 1=yes,0=no.",1,"Priya correct."),
+            new("8y-24=2(4y-12) for all y. 1=yes,0=no.",1,"Han correct."),
+            new("16x+36=4(4x+9). 1=yes,0=no.",1,"Original C."),
+            new("16x+36=2(8x+18). 1=yes,0=no.",1,"Original D."),
+            new("16x+36=16(x+20) for all x. 1=yes,0=no.",0,"Adds320."),
+            new("16x+36=2(8x+36) for all x. 1=yes,0=no.",0,"Constant72."),
+            new("(1/2)z equals z÷2. 1=yes,0=no.",1,"Original B."),
+            new("(1/2)z equals(1/4)z+(1/4)z. 1=yes,0=no.",1,"Original D."),
+            new("(1/2)z equals z+z for every z. 1=yes,0=no.",0,"2z vs half."),
+            new("Square perimeter4s and area s² for side s. 1=yes,0=no.",1,"Geometry formulas."),
+            new("A121sqcm square has11cm side. 1=yes,0=no.",1,"Square root."),
+            new("An optional practice lesson can be useful without introducing a brand-new mathematical topic. 1=yes,0=no.",1,"Spiraled distribution practice.")
         ]
     };
 

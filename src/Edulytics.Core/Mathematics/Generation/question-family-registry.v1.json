@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u06.l11.expansion_factor_values",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-4xplus2-expand-8yminus24-factored-16xplus36-and-square-perimeter",
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u06.l11.distributive_equivalence_logic",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "optional-source-factoring-algebraic-equivalence-and-squares",
+      "representations": [
+        "boolean_reasoning",
+        "area_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u06.l10.variable_distributive_values",
       "version": 1,
       "skillId": "ratio.unit_rate",
