@@ -34,6 +34,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L09SpeedDistances = "usccss.g6.u02.l09.constant_speed_quantities";
     public const string L09SpeedComparisons = "usccss.g6.u02.l09.constant_speed_equivalence";
 
+    public const string L10CompareAmounts = "usccss.g6.u02.l10.rate_comparison_quantities";
+    public const string L10EquivalentContexts = "usccss.g6.u02.l10.compare_rates_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -362,6 +365,42 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Five cats have paws-to-ears ratio20:10=2:1. 1=yes,0=no.",1,"20/10=2."),
             new("The ratios198:1287 and2:13 are equivalent. 1=yes,0=no.",1,"198×13=1287×2."),
             new("At the same distance, the runner taking MORE seconds has greater average speed. 1=yes,0=no.",0,"More time for same distance means lower speed.")
+        ],
+        [L10CompareAmounts] =
+        [
+            new("Slug travels3 cm in3 sec. Speed in centimeters per second?",1,"3/3=1cm per second."),
+            new("Snail travels6 cm in6 sec. Speed in centimeters per second?",1,"6/6=1cm per second."),
+            new("Plane travels3360 miles in6 hours. Speed in miles per hour?",560,"3360/6=560mph."),
+            new("Plane travels3360 miles in6 hours. Miles in10 hours at same speed?",5600,"560×10=5600 miles."),
+            new("Ground beef costs5 dollars per pound. Price for3 pounds in CENTS?",1500,"3×500=1500cents."),
+            new("Ground beef costs5 dollars per pound. Price for one-half pound in CENTS?",250,"500/2=250cents."),
+            new("Ground beef costs5 dollars per pound. Price for one-quarter pound in CENTS?",125,"500/4=125cents."),
+            new("Ground beef costs5 dollars per pound. Price for three-quarters of a pound in CENTS?",375,"500×3/4=375cents."),
+            new("Ground beef costs5 dollars per pound. Price for3¾ pounds in CENTS?",1875,"500×15/4=1875cents."),
+            new("Tulips cost11 dollars for5 bulbs at store A. Price per bulb in CENTS?",220,"1100/5=220 cents."),
+            new("Tulips cost13 dollars for6 bulbs at store B. Price for12 bulbs at that rate in CENTS?",2600,"Two six-bulb bundles cost26 dollars."),
+            new("Purple paint model has5 cups purple and2cups white. For 15cups purple, white cups at same ratio?",6,"Scale both×3:15purple6white."),
+            new("Purple paint model has5 cups purple and2cups white. For 3 batches, purple cups?",15,"5×3=15."),
+            new("Spice mix6tsp garlic to15tsp salt. Garlic tsp for5tsp salt?",2,"6:15=2:5."),
+            new("Spice mix6tsp garlic to15tsp salt. Salt tsp for8tsp garlic?",20,"8×5/2=20."),
+            new("Spice mix6tsp garlic to15tsp salt. If total14tsp at same ratio, salt tsp?",10,"2:5 ratio, 14total gives4garlic10salt."),
+            new("Spice mix6tsp garlic to15tsp salt. How much MORE salt than garlic in original recipe?",9,"15-6=9tsp."),
+            new("Slugs3cm in3sec and snails6cm in6sec: for a10 second period at1cm/sec, distance in cm?",10,"Constant rate1cm/sec×10=10cm.")
+        ],
+        [L10EquivalentContexts] =
+        [
+            new("Slug3cm in3sec and snail6cm in6sec travel at the same speed. 1=yes,0=no.",1,"Both1cm per second."),
+            new("Snail6cm in6sec is faster than slug3cm in3sec because its distance is larger. 1=yes,0=no.",0,"Rate is the same."),
+            new("Milkshake2 chocolate scoops:1cup milk is more chocolate-heavy than3 scoops:2cups milk. 1=yes,0=no.",1,"2 per cup exceeds1.5 per cup."),
+            new("Milkshake3 chocolate scoops:2cups milk is more chocolate-heavy than2 scoops:1cup milk. 1=yes,0=no.",0,"3/2<2."),
+            new("Purple mix B15 purple:8 white has MORE white per purple than A5 purple:2 white. 1=yes,0=no.",1,"8/15>2/5."),
+            new("Purple mix B15 purple:8white preserves A5 purple:2white ratio exactly. 1=yes,0=no.",0,"3×5=15 but3×2=6, not8."),
+            new("Store A5 tulips for11dollars and store B6 for13dollars have exactly equal unit prices. 1=yes,0=no.",0,"A=2.20 dollars each, B≈2.17."),
+            new("Store B6 tulips for13dollars is cheaper per bulb than A5 for11dollars. 1=yes,0=no.",1,"13/6<11/5."),
+            new("Plane3360 miles in6hours moves at560 miles per hour. 1=yes,0=no.",1,"3360/6=560."),
+            new("One-quarter pound beef at5 dollars per pound costs one-quarter of5 dollars. 1=yes,0=no.",1,"125cents."),
+            new("Spice garlic6:salt15 is equivalent to garlic2:salt5. 1=yes,0=no.",1,"Both÷3."),
+            new("With equal travel TIME, the runner covering more DISTANCE has greater average speed. 1=yes,0=no.",1,"Distance per same time comparison.")
         ]
     };
 
