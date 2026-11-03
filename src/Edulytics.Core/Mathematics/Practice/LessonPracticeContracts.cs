@@ -1539,6 +1539,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM Grade6 U01:L13 Polyhedra: existing solid engine
+        // now covers source polyhedron classification, nets and face/edge/
+        // vertex counts; actual cutting/folding requires teacher review.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L13",
+            "geometry.area_tiling",
+            "G6_SOURCE_POLYHEDRON_PRISM_PYRAMID_NET_COUNTS",
+            [
+                "usccss.g6.u01.l13.polyhedron_and_net_logic",
+                "usccss.g6.u01.l13.source_faces_edges_vertices"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L13_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

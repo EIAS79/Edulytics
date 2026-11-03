@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l13.polyhedron_and_net_logic",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-g6-u01l13-polygonal-solid-vs-curve-prism-pyramid-valid-net",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l13.source_faces_edges_vertices",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-g6-u01l13-source-geometry-polyhedra-faces-edges-vertices-and-practice",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l12.prism_exposed_face_area",
       "version": 1,
       "skillId": "geometry.area_tiling",

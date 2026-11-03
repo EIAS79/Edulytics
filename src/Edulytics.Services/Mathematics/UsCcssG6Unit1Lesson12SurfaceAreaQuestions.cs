@@ -12,18 +12,23 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
 {
     public const string Prism = "usccss.g6.u01.l12.prism_exposed_face_area";
     public const string Meaning = "usccss.g6.u01.l12.surface_area_meaning";
+    // Unit 1 Lesson 13 uses the same solid-geometry exact infrastructure.
+    public const string L13Polyhedra = "usccss.g6.u01.l13.polyhedron_and_net_logic";
+    public const string L13Measures = "usccss.g6.u01.l13.source_faces_edges_vertices";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
-    public static bool Supports(string? family)=>family is Prism or Meaning;
-    private static int Count(string family)=>family==Prism?14:family==Meaning?8:0;
+    public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures;
+    private static int Count(string family)=>family==Prism?14:family==Meaning?8:
+        family==L13Polyhedra?15:family==L13Measures?13:0;
 
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new ArgumentException("Unknown Grade 6 L12 source family",nameof(family));
         ArgumentNullException.ThrowIfNull(random);
         int v=random.Next(Count(family));
-        var t=family==Prism?PrismProblem(v):MeaningProblem(v);
+        var t=family==Prism?PrismProblem(v):family==Meaning?MeaningProblem(v):
+            family==L13Polyhedra?L13PolyhedraProblem(v):L13MeasuresProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -48,6 +53,30 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L13Polyhedra=>v switch
+        {
+            0=>1m,1=>1m,2=>0m,3=>1m,4=>0m,
+            5=>0m,6=>1m,7=>0m,8=>0m,9=>1m,
+            10=>1m,11=>0m,12=>1m,13=>1m,14=>0m,
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L13Measures=>v switch
+        {
+            0=>5m, // Triangular prism faces
+            1=>5m, // Square pyramid faces
+            2=>4m, // Tetrahedron faces
+            3=>6m, // Tetrahedron edges
+            4=>4m, // Tetrahedron vertices
+            5=>10m, // Octagonal prism faces
+            6=>24m, // Octagonal prism edges
+            7=>16m, // Octagonal prism vertices
+            8=>9m, // Original practice4 6*3/2
+            9=>31m, // Original practice5 2*(7*5/2)-2*2
+            10=>6m, // Cube faces
+            11=>12m, // Cube edges
+            12=>8m, // Cube vertices
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         Meaning=>v switch
@@ -76,7 +105,7 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer!=answer.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Meaning)return answer is ("0" or "1") &&
+        if(family==Meaning||family==L13Polyhedra)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -112,6 +141,44 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L13PolyhedraProblem(int v)=>v switch
+    {
+        0=>("Original practice1 picture A is a closed rectangular pyramid with all flat polygonal faces. Polyhedron? 1=yes,0=no.","Pyramid is a closed polyhedron."),
+        1=>("Original practice1 picture B is a closed many-faced solid whose faces are polygons. Polyhedron? 1=yes,0=no.","Number of faces does not disqualify a fully closed polygon-faced solid."),
+        2=>("Original practice1 picture C is a cone with a curved lateral surface. Polyhedron? 1=yes,0=no.","Curved sides are not polygonal faces."),
+        3=>("Original practice1 picture D is a closed hexagonal prism. Polyhedron? 1=yes,0=no.","A prism with flat polygon faces is a polyhedron."),
+        4=>("Original practice1 picture E is a smooth sphere. Polyhedron? 1=yes,0=no.","A sphere has a curved exterior, not polygonal faces."),
+        5=>("Original practice3: Tyler says a SQUARE-BASED prism net is impossible unless ALL six faces are squares. Is his claim correct? 1=yes,0=no.","Two square bases and four connecting rectangles can fold into a square prism that is not a cube."),
+        6=>("Original13.2: a prism has two congruent PARALLEL polygonal bases joined by lateral polygons. 1=true,0=false.","The two matching bases characterize a prism."),
+        7=>("Original13.2: a pyramid has two identical parallel polygonal bases like a prism. 1=true,0=false.","A pyramid has ONE base and lateral triangles meeting at an apex."),
+        8=>("Original13.2: four triangles that touch only at isolated VERTICES automatically form a foldable tetrahedron net. 1=true,0=false.","Complete shared edges are needed for a net."),
+        9=>("Original13.2: source net3 cannot fold into Pyramid P because faces would overlap or meet only at vertices. 1=true,0=false.","Net3 is an original explicitly invalid fold arrangement."),
+        10=>("Original13.2: a triangular prism has two triangular bases and three rectangles joining them. 1=true,0=false.","Two triangles and three lateral rectangles give five faces."),
+        11=>("Original13.1: an OPEN-top box without its closing face is a closed polyhedron enclosing a 3D region. 1=true,0=false.","Open surfaces do not enclose the space as a polyhedron."),
+        12=>("Original13.2: source triangular-pyramid net1 is foldable, using four triangles in a connected strip. 1=true,0=false.","A valid four-triangle edge-connected strip may fold as tetrahedron."),
+        13=>("Original13.2: source triangular-pyramid net2 folds into a tetrahedron from four triangles arranged as a larger triangle. 1=true,0=false.","Central triangle with three outward triangles is a valid tetrahedron net."),
+        14=>("Original13.2: source net3, four triangles touching at vertices but overlapping when folded, is a valid tetrahedron net. 1=true,0=false.","Net3 fails the source folding test."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L13MeasuresProblem(int v)=>v switch
+    {
+        0=>("First-party model aligned to original13.2: a triangular prism has 2 triangular and3 rectangular faces. How many total faces?","2+3=5 faces."),
+        1=>("First-party model aligned to original13.2: a square pyramid has1 square and4 triangular side faces. How many faces?","1+4=5."),
+        2=>("Original13.2: a tetrahedron is the polyhedron with the fewest faces. How many triangular faces?","Four triangular faces."),
+        3=>("A tetrahedron has four triangular faces meeting edge-to-edge. How many edges does it have?","Six edges, each shared by2 faces."),
+        4=>("A tetrahedron has four triangular faces. How many vertices?","Four vertices."),
+        5=>("Original practice2 figure is an OCTAGONAL PRISM: two octagon bases and eight rectangles. How many faces?","2+8=10 faces."),
+        6=>("Original practice2 octagonal prism: eight top, eight bottom and eight lateral edges. How many edges?","3×8=24 edges."),
+        7=>("Original practice2 octagonal prism: two octagonal bases have how many vertices in total?","2×8=16 vertices."),
+        8=>("Original practice4 from prior area lesson: all source triangles have base6 units height3 units. Find one area.","6×3÷2=9 square units."),
+        9=>("Original practice5: two congruent right triangles each base7 cm and height5 cm touch along their heights; remove an unshaded square2 cm by2 cm. Find shaded combined area.","2×(7×5÷2)-4=35-4=31 cm²."),
+        10=>("Original13.2 cube net has six squares. How many faces does its closed cube have?","A cube has6 faces."),
+        11=>("Original13.2 model cube: how many edges are there?","Cube edges total12."),
+        12=>("Original13.2 model cube: how many vertices does it have?","Cube vertices total8."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 
