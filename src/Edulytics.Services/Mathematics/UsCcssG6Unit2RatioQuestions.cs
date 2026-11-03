@@ -271,6 +271,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0703Comparisons = "usccss.g6.u07.l03.signed_order_comparisons";
     public const string L0703SignedLogic = "usccss.g6.u07.l03.signed_inequality_reasoning";
 
+    public const string L0704RationalOrder = "usccss.g6.u07.l04.order_signed_numbers_source";
+    public const string L0704OrderLogic = "usccss.g6.u07.l04.signed_ordering_logic";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3708,6 +3711,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("At400m/lap,7600m equals19laps. 1=yes,0=no.",1,"Division."),
             new("Stadium13920 of16000 seats filled is87%. 1=yes,0=no.",1,"13920/16000."),
             new("On a number line, if a is right of b then a>b. 1=yes,0=no.",1,"Definition order.")
+        ],
+        [L0704RationalOrder] =
+        [
+            new("Compare1.3 to-5. Enter1 if1.3 greater,0 otherwise.",1,"Positive>negative."),
+            new("Compare-6 to-5. Enter1 if-6 greater,0 otherwise.",0,"-6<-5."),
+            new("Compare-12 to-5. Enter1 if-12 greater,0 otherwise.",0,"-12<-5."),
+            new("Compare1/7 to-5. Enter1 if fraction greater,0 otherwise.",1,"Positive>negative."),
+            new("Compare-1 to-5. Enter1 if-1 greater,0 otherwise.",1,"-1 right."),
+            new("Compare-4 to-5. Enter1 if-4 greater,0 otherwise.",1,"-4>-5."),
+            new("Of ordered list -1.5,-1,-.5,0,.5,1, least in HALF-UNITS?",-3,"-1.5= -3 halves."),
+            new("Of ordered list -1.5,-1,-.5,0,.5,1, greatest?",1,"+1."),
+            new("Argon boiling point-185.8C in TENTHS?",-1858,"-185.8."),
+            new("Chlorine boiling point-34C?",-34,"-34."),
+            new("Fluorine boiling point-188.1C in TENTHS?",-1881,"-188.1."),
+            new("Hydrogen boiling point-252.87C in HUNDREDTHS?",-25287,"-252.87."),
+            new("Krypton boiling point-153.2C in TENTHS?",-1532,"-153.2."),
+            new("99+54=?",153,"100+54-1."),
+            new("244-99=?",145,"244-100+1."),
+            new("99×6=?",594,"600-6."),
+            new("99×15=?",1485,"1500-15."),
+            new("1/2 divided by2 in QUARTERS?",1,"1/4."),
+            new("2÷2=?",1,"1."),
+            new("1/2 divided by1/2=?",1,"1."),
+            new("38/79 divided by38/79=?",1,"1."),
+            new("Opposite of0?",0,"0."),
+            new("Greatest boiling point of selected elements, in DEGREES C?",-34,"Chlorine-34 C."),
+            new("Compare-188.1 to-185.8. Enter1 if first greater,0 otherwise.",0,"Fluorine colder.")
+        ],
+        [L0704OrderLogic] =
+        [
+            new("1.3>-5 is true. 1=yes,0=no.",1,"A."),
+            new("-6>-5 is true. 1=yes,0=no.",0,"B false."),
+            new("-12>-5 is true. 1=yes,0=no.",0,"C false."),
+            new("1/7>-5 is true. 1=yes,0=no.",1,"D."),
+            new("-1>-5 is true. 1=yes,0=no.",1,"E."),
+            new("-4>-5 is true. 1=yes,0=no.",1,"F."),
+            new("-1.5<-1<-0.5<0<0.5<1 is correctly ordered. 1=yes,0=no.",1,"From left to right."),
+            new("Hydrogen boiling-252.87C is lower than fluorine-188.1C. 1=yes,0=no.",1,"More negative."),
+            new("Argon-185.8C is higher than krypton-153.2C. 1=yes,0=no.",0,"-185.8<-153.2."),
+            new("Chlorine-34C is highest of five listed elements. 1=yes,0=no.",1,"Least negative."),
+            new("Zero is its own opposite. 1=yes,0=no.",1,"-0=0."),
+            new("Every negative number is smaller than every positive number. 1=yes,0=no.",1,"Number-line order."),
+            new("A negative number with larger absolute value is always greater than a negative with smaller absolute value. 1=yes,0=no.",0,"Reverse."),
+            new("99×6=594. 1=yes,0=no.",1,"(100-1)6."),
+            new("99×15=1485. 1=yes,0=no.",1,"(100-1)15."),
+            new("1/2÷2=1/4. 1=yes,0=no.",1,"Half split2."),
+            new("A positive quantity doubles in pounds, so its equivalent kilograms double, assuming fixed unit conversion. 1=yes,0=no.",1,"Constant scaling.")
         ]
     };
 
