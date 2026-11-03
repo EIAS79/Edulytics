@@ -292,6 +292,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0709BoundedSolutions = "usccss.g6.u07.l09.inequality_solution_values";
     public const string L0709SolutionLogic = "usccss.g6.u07.l09.inequality_solution_set_logic";
 
+    public const string L0710ContextSolutions = "usccss.g6.u07.l10.inequality_context_solutions";
+    public const string L0710ConstraintLogic = "usccss.g6.u07.l10.inequality_context_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4057,6 +4060,53 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("An inequality's solution is a value making its statement true. 1=yes,0=no.",1,"Substitution."),
             new("For k>5, the endpoint5 is drawn with an open circle. 1=yes,0=no.",1,"Strict."),
             new("For s≤60, the endpoint60 is drawn with a filled circle. 1=yes,0=no.",1,"Inclusive.")
+        ],
+        [L0710ContextSolutions] =
+        [
+            new("Egg carton holds12, e eggs satisfies0<e<12. Is e=0 allowed?1 yes0 no.",0,"Excluded."),
+            new("Egg carton0<e<12. Is e=1 allowed?1 yes0 no.",1,"1 in interval."),
+            new("Egg carton0<e<12. Is e=11 allowed?1 yes0 no.",1,"11<12."),
+            new("Egg carton0<e<12. Is e=12 allowed?1 yes0 no.",0,"Full cart excluded."),
+            new("Egg carton0<e<12 whole eggs. Largest possible e?",11,"Eleven."),
+            new("Jada taller54in and shorter60in. Is j=55 allowed?1 yes0 no.",1,"54<55<60."),
+            new("Jada taller54in and shorter60in. Is j=54 allowed?1 yes0 no.",0,"Strict lower."),
+            new("Jada taller54in and shorter60in. Is j=60 allowed?1 yes0 no.",0,"Strict upper."),
+            new("Jada54<j<60. If integer inches, smallest j?",55,"55."),
+            new("Jada54<j<60. If integer inches, largest j?",59,"59."),
+            new("Tyler money t>10. Elena e>t. Mai m>e. Is m>10 necessarily true?1 yes0 no.",1,"Transitivity."),
+            new("Tyler t>10, Elena e>t, Mai m>e. Is e>10 necessarily true?1 yes0 no.",1,"Transitivity."),
+            new("Tyler t>10. Is t>10 true?1 yes0 no.",1,"Given."),
+            new("Tyler t<e. Is that necessarily true?1 yes0 no.",1,"Elena more."),
+            new("Elena e>m. Is that necessarily true?1 yes0 no.",0,"Mai more than Elena."),
+            new("Compare -9/20 vs-0.5. Enter1 if first greater,0 equal,2 smaller.",1,"-0.45>-0.5."),
+            new("(1/2)^3 in EIGHTHS?",1,"One eighth."),
+            new("(1/2)^3 denominator?",8,"2³=8."),
+            new("Elena is5ft tall. Inches?",60,"5×12."),
+            new("Diego4ft6in. Inches?",54,"4×12+6."),
+            new("Difference in height threshold60-54 inches?",6,"6in."),
+            new("Of eggs1 through11, number of integer possibilities?",11,"11."),
+            new("A square weighs s grams and circle12grams. Which is heavier when s=15? Enter1 square,2 circle.",1,"15>12.")
+        ],
+        [L0710ConstraintLogic] =
+        [
+            new("Egg carton0<e<12 allows11 whole eggs. 1=yes,0=no.",1,"11<12."),
+            new("Egg count e can be3.7 eggs. 1=yes,0=no.",0,"Discrete whole count."),
+            new("Egg carton0<e<12 excludes0 and12. 1=yes,0=no.",1,"Strict."),
+            new("Height j>54 and j<60 means54<j<60. 1=yes,0=no.",1,"Combined bounds."),
+            new("Jada can be54in if she is taller than Diego54in. 1=yes,0=no.",0,"Strictly taller."),
+            new("Jada can be59.5in if shorter than Elena60in. 1=yes,0=no.",1,"Continuous height."),
+            new("If Tyler has over10 dollars and Elena more than Tyler, Elena must have over10. 1=yes,0=no.",1,"Transitivity."),
+            new("If Mai more than Elena more than Tyler, Mai more than Tyler. 1=yes,0=no.",1,"Transitivity."),
+            new("Tyler has over10, so Tyler must have exactly11 dollars. 1=yes,0=no.",0,"Could be10.01 etc."),
+            new("-9/20 is greater than-0.5. 1=yes,0=no.",1,"-0.45>-0.5."),
+            new("(1/2)^3=1/8. 1=yes,0=no.",1,"Source A,B,E."),
+            new("1/6 is equivalent to(1/2)^3. 1=yes,0=no.",0,"1/6≠1/8."),
+            new("A real-world hanger that tips must be modeled with a strict or non-strict inequality according to physical evidence. 1=yes,0=no.",1,"Weight comparison."),
+            new("A positive physical square weight s cannot be0 even if a symbolic inequality alone seems to allow0. 1=yes,0=no.",1,"Domain."),
+            new("A single numeric solution is enough to describe all values satisfying an inequality. 1=yes,0=no.",0,"Solution set matters."),
+            new("The question's context can rule out negative numbers even when symbolic inequality allows them. 1=yes,0=no.",1,"Physical quantities."),
+            new("A strict inequality's endpoint is not included. 1=yes,0=no.",1,"Open interval."),
+            new("An inequality can compare two unknown quantities, such as m>e>t. 1=yes,0=no.",1,"Relational constraints.")
         ]
     };
 
