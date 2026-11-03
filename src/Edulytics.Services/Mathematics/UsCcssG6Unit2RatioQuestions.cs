@@ -295,6 +295,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0710ContextSolutions = "usccss.g6.u07.l10.inequality_context_solutions";
     public const string L0710ConstraintLogic = "usccss.g6.u07.l10.inequality_context_reasoning";
 
+    public const string L0711Coordinates = "usccss.g6.u07.l11.coordinates_and_axis_locations";
+    public const string L0711CoordinateLogic = "usccss.g6.u07.l11.coordinate_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4107,6 +4110,51 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The question's context can rule out negative numbers even when symbolic inequality allows them. 1=yes,0=no.",1,"Physical quantities."),
             new("A strict inequality's endpoint is not included. 1=yes,0=no.",1,"Open interval."),
             new("An inequality can compare two unknown quantities, such as m>e>t. 1=yes,0=no.",1,"Relational constraints.")
+        ],
+        [L0711Coordinates] =
+        [
+            new("Coordinate point(-2,3). Which quadrant? Enter1-4.",2,"Negative x positive y is quadrant II."),
+            new("Coordinate point(2,3). Which quadrant? Enter1-4.",1,"Both coordinates positive, quadrant I."),
+            new("Coordinate point(-2,-3). Which quadrant? Enter1-4.",3,"Both negative, quadrant III."),
+            new("Coordinate point(2,-3). Which quadrant? Enter1-4.",4,"Positive x negative y, quadrant IV."),
+            new("Original four vertices x=-2/2 and y=3/-3 form rectangle. Width in units?",4,"2-(-2)=4."),
+            new("Original rectangle vertices x=-2/2,y=3/-3. Height in units?",6,"3-(-3)=6."),
+            new("Original rectangle area in SQUARE UNITS?",24,"4×6=24."),
+            new("Original rectangle perimeter in UNITS?",20,"2(4+6)=20."),
+            new("Source figure point A is1 unit right from origin on x-axis. Enter x coordinate.",1,"A=(1,0)."),
+            new("Source figure point A lies on x-axis. Enter y coordinate.",0,"A=(1,0)."),
+            new("Source figure point B on y-axis halfway between-2 and-4. Enter y coordinate.",-3,"B=(0,-3)."),
+            new("Source figure point C x=-6, halfway between y=4 and6. Enter y coordinate.",5,"C=(-6,5)."),
+            new("Source figure point D x halfway-4 and-2, y halfway-4 and-6. Enter x coordinate.",-3,"D=(-3,-5)."),
+            new("Source figure point D x=-3,y halfway between-4 and-6. Enter y coordinate.",-5,"D=(-3,-5)."),
+            new("Source figure point E x between-2 and0, y=4. Enter x coordinate.",-1,"E=(-1,4)."),
+            new("A horizontal line passes(-3.5,4),(0,4),(6.2,4). Enter constant y.",4,"Any point on same horizontal line has y=4."),
+            new("Minneapolis and Tucson temperatures are opposites, Tucson24°C warmer. Tucson temperature in °C?",12,"Let Tucson t and Minneapolis -t: t-(-t)=24 so t=12."),
+            new("Lin runs29meters in10seconds. Distance in TENTHS of a meter per second?",29,"29/10=2.9m/s,29 tenths."),
+            new("Lin runs29meters in10seconds at constant speed. Distance in METERS per minute?",174,"2.9×60=174m."),
+            new("Each chocolate box has20 bars sold at150cents each. Revenue per box in CENTS?",3000,"20×150=3000cents."),
+            new("At30dollars per chocolate box, sales of7boxes collect in DOLLARS?",210,"7×30=210."),
+            new("At30dollars per chocolate box, collected240dollars indicates boxes sold?",8,"240/30=8.")
+        ],
+        [L0711CoordinateLogic] =
+        [
+            new("Coordinate(-2,3) is in quadrantII. 1=yes,0=no.",1,"x negative, y positive."),
+            new("Coordinate(2,-3) is in quadrantIII. 1=yes,0=no.",0,"Positive x, negative y gives quadrantIV."),
+            new("Coordinate(-2,-3) is in quadrantIII. 1=yes,0=no.",1,"Both negative."),
+            new("Coordinate(2,3) is in quadrantI. 1=yes,0=no.",1,"Both positive."),
+            new("Points(-2,3),(2,3),(-2,-3),(2,-3) form a rectangle when joined along edges. 1=yes,0=no.",1,"Opposite corners and edges."),
+            new("The line through(-3.5,4),(0,4),(6.2,4) is horizontal. 1=yes,0=no.",1,"All y values4."),
+            new("A point(8,4) lies on the horizontal line y=4. 1=yes,0=no.",1,"Same y coordinate."),
+            new("A point(4,8) lies on the horizontal line y=4. 1=yes,0=no.",0,"Its y is8."),
+            new("The point(0,-3) lies in quadrantIII. 1=yes,0=no.",0,"Points on axes lie in no quadrant."),
+            new("The point(1,0) lies on x-axis. 1=yes,0=no.",1,"y=0."),
+            new("The origin is(0,0) and belongs to no quadrant. 1=yes,0=no.",1,"Axes intersection."),
+            new("Ordered coordinates(x,y) list horizontal displacement first. 1=yes,0=no.",1,"x before y."),
+            new("Temperature12°C vs-12°C differs by24°C. 1=yes,0=no.",1,"12-(-12)=24."),
+            new("29m in10s at constant speed implies174m in60s. 1=yes,0=no.",1,"Multiply both by6."),
+            new("20 bars at1.50dollars means30dollars per box. 1=yes,0=no.",1,"20×1.5=30."),
+            new("In m=30b the number of boxes b is independent if revenue depends on box count. 1=yes,0=no.",1,"m scales from b."),
+            new("If the point's graph source image is missing, automatically guessing coordinate readings is safe. 1=yes,0=no.",0,"Teacher verifies visual descriptions and scale.")
         ]
     };
 
