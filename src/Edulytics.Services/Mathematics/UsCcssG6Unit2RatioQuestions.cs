@@ -82,6 +82,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0308SpeedAmounts = "usccss.g6.u03.l08.speed_distance_time_quantities";
     public const string L0308PaceMeaning = "usccss.g6.u03.l08.speed_pace_comparison";
 
+    public const string L0309RateValues = "usccss.g6.u03.l09.source_unit_rate_calculations";
+    public const string L0309ComparisonLogic = "usccss.g6.u03.l09.solve_rate_comparison";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -974,6 +977,43 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A pace measured in minutes per mile is the reciprocal of speed in miles per minute for a constant positive rate. 1=yes,0=no.",1,"Reciprocal quantities/units."),
             new("Time to travel a fixed distance at constant speed halves if speed doubles. 1=yes,0=no.",1,"time=distance/speed."),
             new("On a constant-speed table, doubling time doubles distance traveled from the same origin. 1=yes,0=no.",1,"Proportional movement.")
+        ],
+        [L0309RateValues] =
+        [
+            new("Copier prints480 pages in4minutes. Copies per MINUTE?",120,"480/4=120 copies/minute."),
+            new("Copier prints480 pages in4minutes. Copies in10minutes?",1200,"120×10=1200copies."),
+            new("Copier prints480 pages in4minutes. Minutes to print720copies?",6,"720/120=6minutes."),
+            new("School bus mass9tons. Pounds assuming2000lb per ton?",18000,"9×2000=18000lbs."),
+            new("Elephant weighs5500kilograms. Approx pounds using2.2lbs/kg?",12100,"5500×2.2=12100lbs."),
+            new("Grand piano weighs15840ounces. Pounds given16ounces/lb?",990,"15840/16=990lbs."),
+            new("Horse weighs1100lbs. Equivalent ounces at16oz/lb?",17600,"1100×16=17600ounces."),
+            new("Rank from heaviest to lightest bus9tons, elephant5500kg, horse1100lb, piano15840oz. Enter1 for bus,2 elephant,3 horse,4 piano as HEAVIEST.",1,"School bus18000lb is heaviest."),
+            new("A worker earns10dollars for half hour. Dollars per hour?",20,"10/0.5=20dollars/hour."),
+            new("A worker earns30dollars for1.5hours. Dollars per hour?",20,"30/1.5=20."),
+            new("A worker earns30dollars for2hours. Dollars per hour?",15,"30/2=15."),
+            new("A worker earns20dollars per hour. Pay in DOLLARS for3hours?",60,"20×3=60."),
+            new("Compute one-half times17, expressed in TENTHS of a unit.",85,"17/2=8.5, or85tenths."),
+            new("Compute three-quarters of200.",150,"200×3/4=150."),
+            new("Compute0.2 times40.",8,"0.2×40=8."),
+            new("Compute0.25 times60.",15,"0.25×60=15."),
+            new("A fast printer makes120 copies per minute. Time for360 copies in MINUTES?",3,"360/120=3."),
+            new("At20 dollars/hour, pay for half an hour in DOLLARS?",10,"20×1/2=10.")
+        ],
+        [L0309ComparisonLogic] =
+        [
+            new("A machine prints480copies in4minutes or120copies/minute. 1=yes,0=no.",1,"480÷4=120."),
+            new("The copier at120copies/min prints720copies in6min. 1=yes,0=no.",1,"720/120=6."),
+            new("The bus9tons weighs18000pounds under2000lb/ton. 1=yes,0=no.",1,"9×2000=18000."),
+            new("The elephant5500kg weighs about12100lb using2.2lb/kg. 1=yes,0=no.",1,"Approximate conversion."),
+            new("The piano15840oz weighs more than a horse1100lb. 1=yes,0=no.",0,"Piano990lb, horse1100lb."),
+            new("Job A half hour10dollars and job B1.5hours30dollars have equal hourly pay. 1=yes,0=no.",1,"Both20dollars/hour."),
+            new("A2hour job for30dollars pays more per hour than half hour for10dollars. 1=yes,0=no.",0,"15dollars/hour vs20."),
+            new("The three jobs 10dollars/half hour,30/1.5h,30/2h all pay the same rate. 1=yes,0=no.",0,"Third pays less."),
+            new("Unit-rate reasoning may require converting measurements to the same unit before comparing. 1=yes,0=no.",1,"Incompatible unit comparisons mislead."),
+            new("A whole-package price is enough to determine per-slice cheese price without knowing slice count. 1=yes,0=no.",0,"The source image count must be known."),
+            new("The heart-shaped polygon's exact area can be confirmed from an unlabeled text summary alone without inspecting the drawing. 1=yes,0=no.",0,"Teacher/source image dimensions matter."),
+            new("An exact arithmetic result for a source problem does not automatically grade a student's open-ended visual justification. 1=yes,0=no.",1,"Human review remains needed."),
+            new("A percentage can be interpreted as a rate per100 in next lessons. 1=yes,0=no.",1,"100-based ratio.")
         ]
     };
 
