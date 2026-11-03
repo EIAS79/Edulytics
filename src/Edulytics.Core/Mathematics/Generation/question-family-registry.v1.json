@@ -4,6 +4,81 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l05.parallelogram_base_height_area",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-6-8-l05-source-5-1-5-3-grid-and-practice-rectangle-equivalence",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l05.corresponding_height",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-6-8-l05-two-base-height-pairs-including-6x4-equals-5x4.8",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l05.perpendicular_height_claim",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-6-8-l05-perpendicular-inside-outside-5-2-examples",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l05.area_scaling",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-6-8-l05-height-only-vs-both-dimension-scale-extension",
+      "representations": ["numeric", "algebraic_pattern"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l05.small_triangle_fraction",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-6-8-l05-source-practice-seven-one-eighteenth-unit-triangles",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l04.parallelogram_exact_area",
       "version": 1,
       "skillId": "geometry.area_tiling",

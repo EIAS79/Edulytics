@@ -1411,6 +1411,26 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM 6-8 Grade 6 U01:L05: two corresponding base/height
+        // pairs, perpendicularity (including outside heights), exact area,
+        // scaling and source practice fractional triangle area. The source's
+        // drawn heights, algebraic explanations and teacher-only Cool-down
+        // cannot be certified by numeric auto-grading.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L05",
+            "geometry.area_tiling",
+            "G6_SOURCE_BASE_HEIGHT_PERPENDICULAR_AREA_AND_SCALING_EXACT",
+            [
+                "usccss.g6.u01.l05.parallelogram_base_height_area",
+                "usccss.g6.u01.l05.corresponding_height",
+                "usccss.g6.u01.l05.perpendicular_height_claim",
+                "usccss.g6.u01.l05.area_scaling",
+                "usccss.g6.u01.l05.small_triangle_fraction"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L05_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
