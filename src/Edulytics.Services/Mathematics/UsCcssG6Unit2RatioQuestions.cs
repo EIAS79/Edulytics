@@ -238,6 +238,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0611AlgebraEvaluation = "usccss.g6.u06.l11.expansion_factor_values";
     public const string L0611DistributionLogic = "usccss.g6.u06.l11.distributive_equivalence_logic";
 
+    public const string L0612ExponentValues = "usccss.g6.u06.l12.exponents_numeric_values";
+    public const string L0612ExponentReasoning = "usccss.g6.u06.l12.exponent_and_distributive_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -3171,6 +3174,52 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("Square perimeter4s and area s² for side s. 1=yes,0=no.",1,"Geometry formulas."),
             new("A121sqcm square has11cm side. 1=yes,0=no.",1,"Square root."),
             new("An optional practice lesson can be useful without introducing a brand-new mathematical topic. 1=yes,0=no.",1,"Spiraled distribution practice.")
+        ],
+        [L0612ExponentValues] =
+        [
+            new("2 to power6 equals?",64,"2×2×2×2×2×2=64."),
+            new("4 cubed equals?",64,"4³=64."),
+            new("8 squared equals?",64,"8²=64."),
+            new("2 to power8 equals?",256,"2^8=256."),
+            new("3 to power4 equals?",81,"3^4=81."),
+            new("9 squared equals?",81,"9²=81."),
+            new("4 to power5 equals?",1024,"4^5=1024."),
+            new("4 to power6 equals?",4096,"4×1024=4096."),
+            new("4 to power4 equals?",256,"1024÷4=256."),
+            new("4 cubed times4 squared equals?",1024,"4^(3+2)=4^5."),
+            new("6 cubed equals?",216,"6×6×6=216."),
+            new("2 cubed times3 cubed equals?",216,"8×27=216."),
+            new("3 cubed times8 equals?",216,"27×8=216."),
+            new("a-2.01=5.5. a in HUNDREDTHS?",751,"a=7.51."),
+            new("b+2.01=5.5. b in HUNDREDTHS?",349,"b=3.49."),
+            new("10c=13.71. c in THOUSANDTHS?",1371,"c=1.371."),
+            new("100d=13.71. d in TEN-THOUSANDTHS?",1371,"d=.1371."),
+            new("16% of250=?",40,".16×250=40."),
+            new("250% of16=?",40,"2.5×16=40."),
+            new("45% of72 in TENTHS?",324,"0.45×72=32.4."),
+            new("45/72×100, answer in HALVES?",125,"62.5=125halves."),
+            new("6(m+n) when m=3 n=4?",42,"6×7=42.")
+        ],
+        [L0612ExponentReasoning] =
+        [
+            new("2^6=64. 1=yes,0=no.",1,"Original option A."),
+            new("4^3=64. 1=yes,0=no.",1,"Original option C."),
+            new("8^2=64. 1=yes,0=no.",1,"Original option D."),
+            new("2^8=64. 1=yes,0=no.",0,"256."),
+            new("3^4=81. 1=yes,0=no.",1,"Original option D."),
+            new("9^2=3^4. 1=yes,0=no.",1,"Original option F."),
+            new("4^6=4096. 1=yes,0=no.",1,"4×1024."),
+            new("4^3×4^2=4^5. 1=yes,0=no.",1,"Same base combine exponents."),
+            new("6^3=216. 1=yes,0=no.",1,"6×6×6."),
+            new("2^3×3^3=216. 1=yes,0=no.",1,"(2×3)^3."),
+            new("3xy+6yz can be factored as3y(x+2z). 1=yes,0=no.",1,"Common factor3y."),
+            new("3xy+6yz can be factored as y(3x+6z). 1=yes,0=no.",1,"Common factor y."),
+            new("6(m+n)=6m+6n. 1=yes,0=no.",1,"Source A,C,E."),
+            new("6(m+n)=6n+m for all m,n. 1=yes,0=no.",0,"Missing factor6 for m."),
+            new("45/100×72 equals45/72×100. 1=yes,0=no.",0,"32.4 vs62.5."),
+            new("16% of250 equals250% of16. 1=yes,0=no.",1,"Both40."),
+            new("An exponent of3 counts three factors of same base, not base multiplied by3. 1=yes,0=no.",1,"Repeated multiplication."),
+            new("A graphical repeated-times3 dot pattern can be represented using powers of3. 1=yes,0=no.",1,"Exponential growth.")
         ]
     };
 
