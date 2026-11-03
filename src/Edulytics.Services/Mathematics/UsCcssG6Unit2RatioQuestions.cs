@@ -94,6 +94,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0312TapePercent = "usccss.g6.u03.l12.tape_diagram_percent_amounts";
     public const string L0312TapeStructure = "usccss.g6.u03.l12.percent_tape_reasoning";
 
+    public const string L0313BenchmarkNumbers = "usccss.g6.u03.l13.benchmark_percent_values";
+    public const string L0313BenchmarkLogic = "usccss.g6.u03.l13.benchmark_percent_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -1134,6 +1137,44 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("One can determine exact walking percentages from an original image without knowing the picture's measured quantities. 1=yes,0=no.",0,"Diagram data needed."),
             new("Tapes can represent both percentages below100 and comparisons larger than100 by extending beyond the reference whole. 1=yes,0=no.",1,"Extend tape beyond100%."),
             new("At8miles per50minutes,9miles takes56.25minutes. 1=yes,0=no.",1,"50×9/8=56.25.")
+        ],
+        [L0313BenchmarkNumbers] =
+        [
+            new("Andre lives1.6km from school. Fifty percent of that distance in METERS?",800,"Half of1.6km=0.8km=800meters."),
+            new("Diego lives half a mile from school. Fifty percent of that in QUARTER-MILE UNITS?",1,"Half of1/2mile is1/4mile."),
+            new("Diego lives half a mile from school. Fifty percent in YARDS?",440,"One quarter mile=440yards."),
+            new("Laptop sale saves35 dollars, which is10% of original price. Original price in DOLLARS?",350,"35/0.10=350dollars."),
+            new("If15 is out of30, what PERCENT is15 of30?",50,"15/30×100=50%."),
+            new("If3 is out of12, what PERCENT is3 of12?",25,"3/12×100=25%."),
+            new("If6 is out of10, what PERCENT is6 of10?",60,"6/10×100=60%."),
+            new("20% of60 is how many?",12,"One fifth of60=12."),
+            new("20% of125 is how many?",25,"125/5=25."),
+            new("Diego has75% of10dollars. Amount in CENTS?",750,"0.75×1000=750cents."),
+            new("Noah has25% of30dollars. Amount in CENTS?",750,"0.25×3000=750cents."),
+            new("Nine is what percent of36?",25,"9/36=1/4=25%."),
+            new("Nine is what percent of18?",50,"9/18=1/2=50%."),
+            new("Nine is what percent of90?",10,"9/90=1/10=10%."),
+            new("Nine is what percent of12?",75,"9/12=3/4=75%."),
+            new("Lin walks2.5miles/hour, Andre3miles/hour from opposite ends22mile trail. Meeting time in HOURS?",4,"22/(2.5+3)=4 hours."),
+            new("Lin walks2.5mph, Andre3mph toward each other22mi apart. Combined miles covered after2hours?",11,"(2.5+3)×2=11miles."),
+            new("One hour has60minutes. Twenty-five percent of hour in MINUTES?",15,"60/4=15minutes."),
+            new("One hour has60minutes. Seventy-five percent of hour in MINUTES?",45,"3×15=45minutes.")
+        ],
+        [L0313BenchmarkLogic] =
+        [
+            new("50% of any positive quantity is one-half of that quantity. 1=yes,0=no.",1,"50/100=1/2."),
+            new("25% of a quantity is one-fourth of it. 1=yes,0=no.",1,"25/100=1/4."),
+            new("10% of a quantity is one-tenth of it. 1=yes,0=no.",1,"10/100=1/10."),
+            new("75% of a quantity is three-fourths of it. 1=yes,0=no.",1,"75/100=3/4."),
+            new("For any real number,20% of it equals that number divided by5. 1=yes,0=no.",1,"20/100=1/5."),
+            new("Twenty percent of60 is20, because percent means subtract20. 1=yes,0=no.",0,"20%=12."),
+            new("Saving35 dollars at10% discount means original price350 dollars. 1=yes,0=no.",1,"35×10=350."),
+            new("Fifteen is50% of30. 1=yes,0=no.",1,"15 is half30."),
+            new("Three is25% of12. 1=yes,0=no.",1,"3 is quarter12."),
+            new("Six is60% of10. 1=yes,0=no.",1,"6/10=60%."),
+            new("75% of10dollars and25% of30dollars are equal. 1=yes,0=no.",1,"Both7.50dollars."),
+            new("Lin2.5mph and Andre3mph start22miles apart and move toward each other, meeting after4hours. 1=yes,0=no.",1,"Combined speed5.5mph."),
+            new("A 10% reduction of350dollars saves35 dollars. 1=yes,0=no.",1,"350×0.1=35.")
         ]
     };
 
