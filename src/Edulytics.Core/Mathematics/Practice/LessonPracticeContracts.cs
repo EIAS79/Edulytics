@@ -1599,6 +1599,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM Grade6 U01:L17 perfect squares/cubes,
+        // exponent factors and 32-cube physical model. Exact numeric/boolean
+        // grading only; geometric layer construction teacher marked.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L17",
+            "indices.integer_power.evaluate",
+            "G6_ORIGINAL_SQUARE_AND_CUBE_REPEATED_FACTORS",
+            [
+                "usccss.g6.u01.l17.original_square_cube_values",
+                "usccss.g6.u01.l17.square_cube_exponent_meaning"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L17_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

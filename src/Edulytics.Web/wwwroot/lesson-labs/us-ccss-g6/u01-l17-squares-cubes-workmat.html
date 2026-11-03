@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G6 U01:L17 Squares and Cubes — Edulytics</title>
+<style>:root{color-scheme:light;font-family:system-ui,sans-serif}body{max-width:920px;margin:auto;padding:18px;line-height:1.5;color:#192941}h1,h2{line-height:1.25}section{border-top:1px solid #c1cbd7;padding-top:12px;margin-top:18px}.note{border-left:4px solid #47749c;background:#eff4f9;padding:12px}table{border-collapse:collapse;width:100%;max-width:740px}th,td{border:1px solid #a9b8c8;padding:8px;text-align:left}fieldset{display:flex;gap:15px;flex-wrap:wrap}label{display:block;max-width:210px}input{display:block;width:8em;padding:8px;margin-top:5px}button{padding:9px 13px;cursor:pointer}output{display:block;padding:10px;min-height:14px}@media print{button{display:none}body{padding:0}.note{background:white}}</style>
+</head><body><h1>Grade 6 · U01:L17 · Squares and Cubes</h1>
+<p class="note">First-party Edulytics workmat, aligned to original OUR/IM first-edition Lesson17.1–17.4 and practice. The original publisher17.5 Cool-down is behind teacher login and is NOT reproduced. Student physical 3D models, unit labels and written reasons are teacher-scored.</p>
+<section><h2>Original 17.2 — From 32 cubes to one largest complete cube</h2>
+<p>One 3-by-3 layer uses <strong>9</strong> unit cubes. Three identical layers make a 3-by-3-by-3 cube with <strong>27</strong> unit cubes; <strong>5</strong> remain from 32. An edge4 cube requires <strong>64</strong> unit cubes, so 32 do not suffice. With an inventory of 64, use all cubes and build the 4-by-4-by-4 cube.</p>
+<table><thead><tr><th>Cube edge</th><th>Area of ONE face (square units)</th><th>Volume (cubic units)</th></tr></thead><tbody>
+<tr><td>3</td><td>3² = 9</td><td>3³ = 27</td></tr>
+<tr><td>4</td><td>4² = 16</td><td>4³ = 64</td></tr>
+</tbody></table>
+</section>
+<section><h2>Original Practice 5 — Same volume, different surface area</h2>
+<p>Source Prism A is <strong>3×2×1</strong> inches (volume6in³, area22in²), source Prism B is <strong>1×1×6</strong> inches (volume6in³, area26in²). Both have six planar faces, and Prism B exposes more surface area even though they contain the same six unit cubes.</p></section>
+<section><h2>Source-skill number checks</h2><form id="numbers"><fieldset>
+<label for="n1">Original 17.1 square side7in area<input required id="n1" inputmode="decimal"></label>
+<label for="n2">Original17.1 square area64cm² side<input required id="n2" inputmode="decimal"></label>
+<label for="n3">Largest complete cube from32 cubes — cubes used<input required id="n3" inputmode="decimal"></label>
+<label for="n4">Original practice4 cube side3in volume<input required id="n4" inputmode="decimal"></label>
+</fieldset><button type="submit">Check numbers</button><output id="result" aria-live="polite"></output></form></section>
+<section><h2>Independent Edulytics Cool-down — NOT publisher 17.5</h2>
+<p>Draw or build a cube of edge length <strong>3 units</strong>. Show three full 3-by-3 layers; label each face area as9 square units, total exterior surface area <strong>54 square units</strong>, and volume <strong>27 cubic units</strong>. Explain in writing why <strong>3²=9</strong> and <strong>3³=27</strong>, and why neither expression means 3 multiplied by its exponent.</p>
+<p><strong>Teacher rubric:</strong> accurate 3D layering, 27 cubes total, six faces each area9, exterior area54, proper square/cubic units, correct exponent reasoning and independently justified drawing.</p><div aria-label="Blank student workspace" style="border:1px dashed #8b9cb1;min-height:160px"></div>
+</section><button type="button" id="print">Print</button>
+<script>"use strict";document.getElementById("numbers").addEventListener("submit",e=>{e.preventDefault();const ids=["n1","n2","n3","n4"],expected=[49,8,27,27];const ok=ids.map((id,i)=>{const s=document.getElementById(id).value.trim();return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(s)&&Number.isFinite(Number(s))&&Number(s)===expected[i]});const n=ok.filter(Boolean).length;document.getElementById("result").textContent=n===4?"4/4 numeric answers correct. Teacher grades the drawings and exponent explanations.":n+"/4 correct. Recheck how many equal factors the exponent requires."});document.getElementById("print").addEventListener("click",()=>window.print());</script>
+</body></html>

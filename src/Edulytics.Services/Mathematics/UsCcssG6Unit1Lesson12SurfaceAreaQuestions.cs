@@ -21,17 +21,20 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     public const string L15NetLogic = "usccss.g6.u01.l15.net_design_and_volume_reasoning";
     public const string L16Measures = "usccss.g6.u01.l16.source_equal_surface_different_volume";
     public const string L16Concepts = "usccss.g6.u01.l16.surface_volume_unit_logic";
+    public const string L17Measures = "usccss.g6.u01.l17.original_square_cube_values";
+    public const string L17Concepts = "usccss.g6.u01.l17.square_cube_exponent_meaning";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures
        or L14NetArea or L14NetLogic or L15BoxArea or L15NetLogic
-       or L16Measures or L16Concepts;
+       or L16Measures or L16Concepts or L17Measures or L17Concepts;
     private static int Count(string family)=>family==Prism?14:family==Meaning?8:
         family==L13Polyhedra?15:family==L13Measures?13:
         family==L14NetArea?10:family==L14NetLogic?11:
         family==L15BoxArea?14:family==L15NetLogic?9:
-        family==L16Measures?13:family==L16Concepts?9:0;
+        family==L16Measures?13:family==L16Concepts?9:
+        family==L17Measures?19:family==L17Concepts?10:0;
 
     public static Problem Build(string family,Random random)
     {
@@ -45,7 +48,9 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             family==L14NetLogic?L14NetLogicProblem(v):
             family==L15BoxArea?L15BoxAreaProblem(v):
             family==L15NetLogic?L15NetLogicProblem(v):
-            family==L16Measures?L16MeasuresProblem(v):L16ConceptsProblem(v);
+            family==L16Measures?L16MeasuresProblem(v):
+            family==L16Concepts?L16ConceptsProblem(v):
+            family==L17Measures?L17MeasuresProblem(v):L17ConceptsProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -70,6 +75,18 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L17Measures=>v switch
+        {
+            0=>49m,1=>8m,2=>3m,3=>27m,4=>5m,5=>9m,6=>27m,
+            7=>4m,8=>16m,9=>64m,10=>1000m,11=>100m,12=>7m,
+            13=>16m,14=>7m,15=>27m,16=>22m,17=>26m,18=>6m,
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L17Concepts=>v switch
+        {
+            0=>1m,1=>0m,2=>1m,3=>0m,4=>1m,5=>0m,6=>1m,7=>1m,8=>0m,9=>1m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         L16Measures=>v switch
@@ -178,7 +195,7 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer!=answer.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts)return answer is ("0" or "1") &&
+        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts||family==L17Concepts)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -214,6 +231,45 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L17MeasuresProblem(int v)=>v switch
+    {
+        0=>("Original17.1: a square side7 inches, find area in square inches.","7×7=49."),
+        1=>("Original17.1: a square has area64cm². Find whole-number side length in centimeters.","8×8=64, so side8cm."),
+        2=>("Original17.2: with32 unit cubes, what is the largest possible whole-number EDGE of one complete cube?","3×3×3=27 fits;4×4×4=64 does not."),
+        3=>("Original17.2: construct largest complete cube using32 unit cubes. How many cubes are used?","3³=27."),
+        4=>("Original17.2: after building the maximal complete 3-by-3-by-3 cube out of32, how many cubes remain?","32-27=5."),
+        5=>("Original17.2 largest complete cube from32 cubes has edge3. Find area of ONE face.","3×3=9 square units."),
+        6=>("Original17.2 largest complete cube from32 cubes has edge3. Find volume.","3×3×3=27 cubic units."),
+        7=>("Original17.2 extension: from64 unit cubes, find largest whole-number cube edge.","4³=64, so edge4."),
+        8=>("Original17.2 extension: cube edge4 units has area how many square units PER face?","4²=16."),
+        9=>("Original17.2 extension: cube edge4 units contains how many unit cubes?","4³=64."),
+        10=>("Original17.3: a cube edge10 inches, calculate its volume.","10×10×10=1000 cubic inches."),
+        11=>("Original17.4: a square edge10 centimeters, find its area.","10²=100 square centimeters."),
+        12=>("Original17.4: square area7² square inches. Find edge length.","7 inches."),
+        13=>("Original practice4: square side4cm, area?","4²=16 cm²."),
+        14=>("Original practice4: square area49m², find side in meters.","7m."),
+        15=>("Original practice4: cube side3 inches, volume?","3³=27 cubic inches."),
+        16=>("Original practice5 rectangular prism A dimensions3in×2in×1in. Find full outside surface area.","2×(6+3+2)=22 square inches."),
+        17=>("Original practice5 rectangular prism B dimensions1in×1in×6in. Find full outside surface area.","2×(1+6+6)=26 square inches."),
+        18=>("Original practice5 both prisms A3×2×1 and B1×1×6 have what volume?","Each has6 cubic inches."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L17ConceptsProblem(int v)=>v switch
+    {
+        0=>("Original17.4 in 5² the exponent2 says multiply TWO factors of5. 1=true,0=false.","5²=5×5=25."),
+        1=>("Original17.4 5² means5×2. 1=true,0=false.","5²=25, not10."),
+        2=>("Original17.4 4³ means4×4×4=64. 1=true,0=false.","Exponent3 counts three equal factors."),
+        3=>("Original17.4 3³ is9 because3×3=9. 1=true,0=false.","3³ has three factors, 27."),
+        4=>("Original17.1 9 is a perfect square because3²=9. 1=true,0=false.","Square area for edge3 uses9 square tiles."),
+        5=>("Original17.1 10 is a perfect square of a positive whole-number side length. 1=true,0=false.","No integer s has s²=10."),
+        6=>("Original17.3 27 is a perfect cube because3³=27. 1=true,0=false.","Three edge lengths3 multiply to27."),
+        7=>("Original17.4 zero is both a perfect square and perfect cube because 0²=0 and0³=0. 1=true,0=false.","Both exponent statements hold mathematically."),
+        8=>("Original practice5 prisms A3×2×1 and B1×1×6 have the same surface area. 1=true,0=false.","A outside area22, B26."),
+        9=>("Original practice5 prisms A3×2×1 and B1×1×6 have the same volume6. 1=true,0=false.","Both contain six unit cubes."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 
