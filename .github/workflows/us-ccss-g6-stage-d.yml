@@ -168,9 +168,127 @@ jobs:
           path: g6-stage-d-reconciled/
           if-no-files-found: warn
           retention-days: 30
+  g6-authenticated-https:
+    name: g6-d-147-isolated-postgres-authenticated-https
+    needs: reconcile
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: 'US-CCSS-G6'
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject production databases, restrict work to disposable GitHub runner
+        run: |
+          set -euo pipefail
+          test "$GITHUB_ACTIONS" = true
+          test "$EDULYTICS_CI_REHEARSAL" = true
+          test "$EDULYTICS_CI_REHEARSAL_PROGRAMME" = US-CCSS-G6
+          test "$EDULYTICS_CLEAN_DATABASE_NAME" = edulytics_clean_ci
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python3 -m py_compile tools/phase29/g6_stage_d_authenticated_https.py
+      - name: Build/publish real web app and migrate local PostgreSQL 18
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore --output /tmp/g6-d-web-publish
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Real HTTPS students, teachers, 147 lessons and persisted Practice attempts
+        env:
+          RENDER_SERVICE_ID: ci-disposable
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          rehearsal_password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$rehearsal_password"
+          export Edulytics__MeetingDemo__Password="$rehearsal_password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/g6-d-fixture.log 2>&1; then
+            tail -n 90 /tmp/g6-d-fixture.log
+            exit 1
+          fi
+          grep -q MEETING_DEMO_SEED_COMPLETED /tmp/g6-d-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/g6-d-key.pem -out /tmp/g6-d-cert.pem \
+            -subj '/CN=localhost' -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g6-d-identity.pfx \
+            -inkey /tmp/g6-d-key.pem -in /tmp/g6-d-cert.pem \
+            -passout pass:g6-local-ci-tls >/dev/null 2>&1
+          cp /tmp/g6-d-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS=https://127.0.0.1:5052
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g6-d-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=g6-local-ci-tls
+          export Edulytics__MeetingDemo__ResetAndSeed=false
+          export Edulytics__Deployment__CleanBootstrap=true
+          export ASPNETCORE_CONTENTROOT=/tmp/g6-d-web-publish
+          dotnet /tmp/g6-d-web-publish/Edulytics.Web.dll > /tmp/g6-d-web.log 2>&1 &
+          web_pid=$!
+          trap 'kill "$web_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 100); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then
+              ready=true
+              break
+            fi
+            if ! kill -0 "$web_pid" 2>/dev/null; then
+              tail -n 100 /tmp/g6-d-web.log
+              exit 1
+            fi
+            sleep 3
+          done
+          test "$ready" = true
+          export G6_CANDIDATE_SHA="$(git rev-parse HEAD)"
+          if ! python3 tools/phase29/g6_stage_d_authenticated_https.py; then
+            echo G6_AUTHENTICATED_STAGE_D_FAILURE
+            tail -n 75 /tmp/g6-d-web.log
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g6-d-isolated-authenticated-147-evidence-not-release
+          path: /tmp/g6-147-isolated-auth-https-evidence.json
+          if-no-files-found: warn
+          retention-days: 30
   diagnostic:
     name: g6-d-diagnostics-not-academic-or-release
-    needs: [inventory, build, math, node, reconcile]
+    needs: [inventory, build, math, node, reconcile, g6-authenticated-https]
     if: always()
     runs-on: ubuntu-24.04
     steps:
@@ -180,6 +298,7 @@ jobs:
           MATH: ${{ needs.math.result }}
           NODE: ${{ needs.node.result }}
           RECONCILE: ${{ needs.reconcile.result }}
+          AUTH_HTTPS: ${{ needs.g6-authenticated-https.result }}
         run: |
           set -euo pipefail
           test "$INVENTORY" = success
@@ -187,4 +306,5 @@ jobs:
           test "$MATH" = success
           test "$NODE" = success
           test "$RECONCILE" = success
+          test "$AUTH_HTTPS" = success
           echo "Technical suites only. Not original element parity, authenticated E2E, DB/Auth, visual/accessibility, human academic signoff or release. NO GO."
