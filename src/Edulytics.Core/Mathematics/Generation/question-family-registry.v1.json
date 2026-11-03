@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-segments-A-B-C-D-E-F-and-axis-aligned-points-around-P",
+      "representations": [
+        "coordinate_grid",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u07.l14.distance_same_axis_reasoning",
+      "version": 1,
+      "skillId": "ratio.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "coordinate-axis-differences-reflections-and-unit-rate-cumulative",
+      "representations": [
+        "boolean_reasoning",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u07.l13.coordinate_context_numeric",
       "version": 1,
       "skillId": "ratio.unit_rate",

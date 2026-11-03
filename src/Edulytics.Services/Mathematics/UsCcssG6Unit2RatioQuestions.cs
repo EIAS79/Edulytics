@@ -304,6 +304,9 @@ internal static class UsCcssG6Unit2RatioQuestions
     public const string L0713CoordinatesData = "usccss.g6.u07.l13.coordinate_context_numeric";
     public const string L0713ContextLogic = "usccss.g6.u07.l13.interpret_axes_and_extrema";
 
+    public const string L0714Distances = "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances";
+    public const string L0714DistanceLogic = "usccss.g6.u07.l14.distance_same_axis_reasoning";
+
     internal sealed record Problem(string Family, string Prompt, string Explanation,
         AssessmentItemType ItemType, IReadOnlyDictionary<string,int> Parameters);
 
@@ -4259,6 +4262,54 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("5½=d+¼ gives d=5¼. 1=yes,0=no.",1,"Subtract quarter."),
             new("When graphing before/after noon, times before noon may have negative x values. 1=yes,0=no.",1,"Signed time reference."),
             new("A point representing hour0,-567m is on negative y-axis, not in quadrantIV. 1=yes,0=no.",1,"x=0.")
+        ],
+        [L0714Distances] =
+        [
+            new("Distance in units between A(3,5) and B(3,6)?",1,"Same x, vertical distance|6-5|=1."),
+            new("Distance in units between C(-2,-3) and D(-2,-6)?",3,"Same x,|-6-(-3)|=3."),
+            new("Distance in units between E(-3,1) and F(-3,-1)?",2,"Same x,|-1-1|=2."),
+            new("P=(-2,-1). Move3 units RIGHT. New x?",1,"-2+3=1."),
+            new("P=(-2,-1). Move3 units RIGHT. New y?",-1,"Horizontal move leaves y."),
+            new("P=(-2,-1). Move3 units LEFT. New x?",-5,"-2-3=-5."),
+            new("P=(-2,-1). Move3 units LEFT. New y?",-1,"y unchanged."),
+            new("P=(-2,-1). Move3 units UP. New x?",-2,"Vertical move leaves x."),
+            new("P=(-2,-1). Move3 units UP. New y?",2,"-1+3=2."),
+            new("P=(-2,-1). Move3 units DOWN. New x?",-2,"x unchanged."),
+            new("P=(-2,-1). Move3 units DOWN. New y?",-4,"-1-3=-4."),
+            new("Horizontal distance from(-4,3) to(5,3) in units?",9,"|5-(-4)|=9."),
+            new("Vertical distance from(7,-8) to(7,2) in units?",10,"|2-(-8)|=10."),
+            new("Vertical distance from(-3,-2.5) to(-3,1.5) in units?",4,"|1.5-(-2.5)|=4."),
+            new("Sparkling orange juice uses4L orange and5L soda. Total liters for one batch?",9,"4+5=9L."),
+            new("Sparkling orange juice soda is what fraction of total in NINTHS?",5,"5/9."),
+            new("Sparkling orange juice orange is what fraction of total in NINTHS?",4,"4/9."),
+            new("For 9L mixture, soda amount L?",5,"Five parts soda."),
+            new("For 18L mixture, soda amount L?",10,"18×5/9=10."),
+            new("For 8L orange juice, total mixed beverage L?",18,"8×9/4=18."),
+            new("For 4L orange juice, soda L?",5,"Scale ratio4:5."),
+            new("Suitcase23kg, approximate10kg=22lb. Weight in TENTHS OF POUND?",506,"23×22/10=50.6lb."),
+            new("Suitcase can weigh AT MOST50lb. Under approximate23kg≈50.6lb, permitted? Enter1 yes,0 no.",0,"50.6>50."),
+            new("Points(-5,-1) and(1,-1) are horizontally how many units apart?",6,"1-(-5)=6.")
+        ],
+        [L0714DistanceLogic] =
+        [
+            new("A(3,5) and B(3,6) form a vertical segment. 1=yes,0=no.",1,"x coordinate unchanged."),
+            new("C(-2,-3) to D(-2,-6) has length3. 1=yes,0=no.",1,"Absolute y difference3."),
+            new("E(-3,1) to F(-3,-1) has length2. 1=yes,0=no.",1,"|1-(-1)|=2."),
+            new("Distance between(3,5) and(3,6) equals y difference6-5 in absolute value. 1=yes,0=no.",1,"Same x."),
+            new("Horizontal distance between(-4,3) and(5,3) is1 because signs differ. 1=yes,0=no.",0,"Distance9."),
+            new("Points(-5,-1),(1,-1),(-2,2),(-2,-4) each lie exactly3 units from(-2,-1) along an axis. 1=yes,0=no.",1,"Each shift has magnitude3."),
+            new("Any point exactly3 units from(-2,-1) must share x or y coordinate. 1=yes,0=no.",0,"There are also diagonal points on the radius3 circle."),
+            new("Reflecting(x,y) across vertical y-axis produces(-x,y). 1=yes,0=no.",1,"Horizontal reflection."),
+            new("Reflecting(x,y) across horizontal x-axis produces(x,-y). 1=yes,0=no.",1,"Vertical reflection."),
+            new("A horizontal segment's endpoints share the same y coordinate. 1=yes,0=no.",1,"Horizontal displacement only."),
+            new("A vertical segment's endpoints share the same x coordinate. 1=yes,0=no.",1,"Vertical displacement only."),
+            new("A point(-2,-1) is in quadrantIII. 1=yes,0=no.",1,"Both negative."),
+            new("Sparkling juice4 orange:5 soda means5/9 of mixed beverage is soda. 1=yes,0=no.",1,"Total9 parts."),
+            new("If orange amount j is known, total juice mix t=(9/4)j. 1=yes,0=no.",1,"Total/orange=9/4."),
+            new("If mixed total t is known, soda amount s=(5/9)t. 1=yes,0=no.",1,"Soda/total=5/9."),
+            new("A checked bag limited to50lb is allowed at50.6lb. 1=yes,0=no.",0,"50.6 exceeds maximum."),
+            new("The factor22lb per10kg is approximate, so a careful solution marks50.6lb approximate. 1=yes,0=no.",1,"Rounded conversion."),
+            new("For axis-aligned distance, subtract coordinates and take absolute value to ensure nonnegative length. 1=yes,0=no.",1,"Length must be nonnegative.")
         ]
     };
 
