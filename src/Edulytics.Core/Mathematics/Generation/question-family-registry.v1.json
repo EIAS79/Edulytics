@@ -4,6 +4,30 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g6.u01.l18.source_cube_surface_and_volume",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_rational",
+      "verificationPolicy": "original-im-g6-u01l18-source-cube-area-volume-exact-fraction-one-over-27",
+      "representations": ["numeric", "area_model"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g6.u01.l18.cube_net_dimension_and_units",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-im-g6-u01l18-unit-conversion-and-six-square-net-logic",
+      "representations": ["numeric", "structured_geometry"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l17.original_square_cube_values",
       "version": 1,
       "skillId": "indices.integer_power.evaluate",

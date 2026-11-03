@@ -1614,6 +1614,21 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Original OUR/IM G6 U01:L18 cube surface and volume. Exact fractions
+        // in source P1 retain 1/27 without decimal approximation. Teacher
+        // reviews six-face foldable nets, symbols and squared/cubic units.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L18",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_CUBE_NET_SURFACE_AND_VOLUME",
+            [
+                "usccss.g6.u01.l18.source_cube_surface_and_volume",
+                "usccss.g6.u01.l18.cube_net_dimension_and_units"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L18_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

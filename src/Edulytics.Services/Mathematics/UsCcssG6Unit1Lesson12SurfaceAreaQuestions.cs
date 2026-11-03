@@ -23,18 +23,22 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     public const string L16Concepts = "usccss.g6.u01.l16.surface_volume_unit_logic";
     public const string L17Measures = "usccss.g6.u01.l17.original_square_cube_values";
     public const string L17Concepts = "usccss.g6.u01.l17.square_cube_exponent_meaning";
+    public const string L18CubeAreas = "usccss.g6.u01.l18.source_cube_surface_and_volume";
+    public const string L18Units = "usccss.g6.u01.l18.cube_net_dimension_and_units";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family)=>family is Prism or Meaning or L13Polyhedra or L13Measures
        or L14NetArea or L14NetLogic or L15BoxArea or L15NetLogic
-       or L16Measures or L16Concepts or L17Measures or L17Concepts;
+       or L16Measures or L16Concepts or L17Measures or L17Concepts
+       or L18CubeAreas or L18Units;
     private static int Count(string family)=>family==Prism?14:family==Meaning?8:
         family==L13Polyhedra?15:family==L13Measures?13:
         family==L14NetArea?10:family==L14NetLogic?11:
         family==L15BoxArea?14:family==L15NetLogic?9:
         family==L16Measures?13:family==L16Concepts?9:
-        family==L17Measures?19:family==L17Concepts?10:0;
+        family==L17Measures?19:family==L17Concepts?10:
+        family==L18CubeAreas?16:family==L18Units?11:0;
 
     public static Problem Build(string family,Random random)
     {
@@ -50,7 +54,9 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             family==L15NetLogic?L15NetLogicProblem(v):
             family==L16Measures?L16MeasuresProblem(v):
             family==L16Concepts?L16ConceptsProblem(v):
-            family==L17Measures?L17MeasuresProblem(v):L17ConceptsProblem(v);
+            family==L17Measures?L17MeasuresProblem(v):
+            family==L17Concepts?L17ConceptsProblem(v):
+            family==L18CubeAreas?L18CubeAreaProblem(v):L18UnitProblem(v);
         return new Problem(family,t.Prompt,t.Explanation+
             " Teacher checks the actually built 3D figure, all hidden faces, " +
             "orientation, units and learner's written reasoning separately.",
@@ -75,6 +81,20 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
             11=>88m, // Original practice P4 4x2x6 prism
             12=>52m, // Original source lesson summary 2x3x4 prism
             13=>62m, // Owner independent Cool-down, source prep 2x3x5 prism
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L18CubeAreas=>v switch
+        {
+            0=>150m,1=>125m,2=>1734m,3=>4913m,4=>512m,
+            5=>0m, // Exact rational1/27 is handled separately in Solve/Verify
+            6=>2m,7=>22326m,8=>226981m,9=>10m,
+            10=>54m,11=>96m,12=>64m,13=>24m,14=>8m,15=>216m,
+            _=>throw new ArgumentOutOfRangeException(nameof(v))
+        },
+        L18Units=>v switch
+        {
+            0=>1m,1=>1m,2=>1m,3=>0m,4=>0m,5=>1m,
+            6=>1m,7=>1m,8=>1m,9=>0m,10=>1m,
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
         L17Measures=>v switch
@@ -187,6 +207,8 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(family,p))throw new ArgumentException("Invalid source variant",nameof(p));
+        // (1/3)^3 is non-terminating in decimal: preserve exact rational answer.
+        if(family==L18CubeAreas && p["variant"]==5)return "1/27";
         return Answer(family,p["variant"]).ToString(CultureInfo.InvariantCulture);
     }
 
@@ -195,7 +217,16 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer!=answer.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
-        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts||family==L17Concepts)return answer is ("0" or "1") &&
+        if(family==L18CubeAreas && p["variant"]==5)
+        {
+            // Exact fraction only: 1/27 = 2/54, not a rounded decimal.
+            var f=answer.Split('/');
+            return f.Length==2 &&
+                long.TryParse(f[0],NumberStyles.None,CultureInfo.InvariantCulture,out long n) &&
+                long.TryParse(f[1],NumberStyles.None,CultureInfo.InvariantCulture,out long d) &&
+                n>0 && d>0 && n<=1000000 && d<=1000000 && n*27==d;
+        }
+        if(family==Meaning||family==L13Polyhedra||family==L14NetLogic||family==L15NetLogic||family==L16Concepts||family==L17Concepts||family==L18Units)return answer is ("0" or "1") &&
             answer==expected.ToString(CultureInfo.InvariantCulture);
         var parts=answer.Split('/');
         if(parts.Length==2)
@@ -231,6 +262,43 @@ internal static class UsCcssG6Unit1Lesson12SurfaceAreaQuestions
         11=>("Original practice4: rectangular prism height4, width2, length6. Find surface area in square units.","2×(4×2+4×6+2×6)=88."),
         12=>("Original source lesson summary rectangular prism edges2cm,3cm,4cm. Find surface area in cm².","2×(6+8+12)=52 square cm."),
         13=>("Edulytiks independent Cool-down, NOT protected original12.4: a 2-by-3-by-5 prism (as in source teacher-prep materials) is built from unit cubes. Find all exposed square faces.","2×(2×3+2×5+3×5)=62. Teacher checks student model and all six faces."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L18CubeAreaProblem(int v)=>v switch
+    {
+        0=>("Original IM18.2 cube with edge5 inches. Find surface area of all six square faces in in².","6×(5×5)=150 in²."),
+        1=>("Original IM18.2 cube edge5in. Find cubic volume.","5³=125 in³."),
+        2=>("Original IM18.2 second cube edge17 units. Find total surface area.","6×17² =6×289=1734 square units."),
+        3=>("Original IM18.2 second cube edge17 units. Find volume.","17³=4913 cubic units."),
+        4=>("Original practice1 cube edge8in. Find volume in cubic inches.","8³=512."),
+        5=>("Original practice1 cube edge ONE THIRD centimeter. Find exact volume as a FRACTION (no rounded decimal).","(1/3)³=1/27 cm³ exactly."),
+        6=>("Original practice1 cube volume8ft³. Find edge length in feet.","2³=8, so edge2."),
+        7=>("Original practice2 six-square cube net each square side61cm. Find full surface area.","6×61²=6×3721=22326 cm²."),
+        8=>("Original practice2 cube net edge61cm. Find volume.","61³=226981 cm³."),
+        9=>("Original practice5: Elena's box dimensions1ft×1ft×2ft. Find CORRECT six-face area in square FEET, rejecting her mixed-units claim296ft².","2×(1×1+1×2+1×2)=10ft². 12in×12in is144in², equal1ft², NOT144ft²."),
+        10=>("EDULYTICS independent earlier cube edge3cm. What is six-face area?","6×3²=54 cm²."),
+        11=>("EDULYTICS independent earlier cube edge4m. What is six-face area?","6×4²=96 m²."),
+        12=>("EDULYTICS independent earlier cube edge4m. Find its volume.","4³=64 m³."),
+        13=>("EDULYTICS independent owner-authorized Cool-down, NOT original18.4: cube edge2 units. Find its six-face surface area.","6×2²=24 square units. Teacher checks net and squared units."),
+        14=>("EDULYTICS independent Cool-down, cube edge2 units. Find its cubic volume.","2³=8 cubic units."),
+        15=>("EDULYTICS independent cube edge6 units. Find surface area.","6×6²=216 square units."),
+        _=>throw new ArgumentOutOfRangeException(nameof(v))
+    };
+
+    private static (string Prompt,string Explanation) L18UnitProblem(int v)=>v switch
+    {
+        0=>("Original18.3: every cube has six congruent square faces and total area6s² for edge length s. 1=true,0=false.","Each face has s² area; sum six faces."),
+        1=>("Original18.3: cube edge s has volume s³, meaning s×s×s cubic units. 1=true,0=false.","Exponent3 multiplies three length factors."),
+        2=>("Original18.2: cube edge5in has face area25in², total SA150in² and volume125in³. 1=true,0=false.","Face units squared, volume units cubed."),
+        3=>("Original18.2: surface area of cube edge17 is (17×17)^6, not 6×17². 1=true,0=false.","Six equal faces are ADDED, not exponentiated six times."),
+        4=>("Original18.3: cube face area s² and volume s³ have the same units so the numbers can be compared directly. 1=true,0=false.","Surface area is square units, volume cubic units."),
+        5=>("Original practice5: 12 inches by12 inches is one square FOOT, not 144 square FEET. 1=true,0=false.","Area conversion 144in²=1ft²."),
+        6=>("Original practice5: box1ft×1ft×2ft has exactly10ft² outside surface, not Elena's296ft². 1=true,0=false.","Opposite face pairs area1,2,2 each."),
+        7=>("Original practice3: to construct cube net of edge xcm, six complete x-by-x squares in a valid foldable arrangement are required. 1=true,0=false.","A valid six-square edge-connected net is necessary."),
+        8=>("Original practice1: cube edge1/3 cm has volume1/27cm³, not1/9cm³. 1=true,0=false.","Cube numerator and denominator separately."),
+        9=>("Original18.1: 5×3 and5³ are equal because the exponent3 is a multiplier. 1=true,0=false.","5×3=15 versus5×5×5=125."),
+        10=>("Original18.4 teacher-locked Cool-down can be treated as fully verified publisher text from a first-party independently authored source-skill equivalent. 1=true,0=false.","An independent equivalent never establishes exact publisher protected text parity."),
         _=>throw new ArgumentOutOfRangeException(nameof(v))
     };
 
