@@ -133,9 +133,44 @@ jobs:
           name: g6-d-node-regressions
           path: g6-stage-d-results/
           if-no-files-found: warn
+  reconcile:
+    name: g6-d-exact-run-real-TRX-per-lesson
+    needs: [inventory, build, math, node]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: g6-147-lesson-inventory
+          path: g6-stage-d-inventory
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: g6-d-D*-math-results
+          merge-multiple: true
+          path: g6-stage-d-trx
+      - name: Reject missing/failed/unattributed lesson tests in actual same-run TRX
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/g6-stage-d-trx-reconcile.py \
+            --inventory g6-stage-d-inventory/inventory.json \
+            --trx-dir g6-stage-d-trx \
+            --output g6-stage-d-reconciled/real-g6-per-lesson-math-only.json \
+            --candidate-sha "$(git rev-parse HEAD)" \
+            --run-id "$GITHUB_RUN_ID"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g6-d-147-real-per-lesson-math-evidence-NOT-release
+          path: g6-stage-d-reconciled/
+          if-no-files-found: warn
+          retention-days: 30
   diagnostic:
     name: g6-d-diagnostics-not-academic-or-release
-    needs: [inventory, build, math, node]
+    needs: [inventory, build, math, node, reconcile]
     if: always()
     runs-on: ubuntu-24.04
     steps:
@@ -144,10 +179,12 @@ jobs:
           BUILD: ${{ needs.build.result }}
           MATH: ${{ needs.math.result }}
           NODE: ${{ needs.node.result }}
+          RECONCILE: ${{ needs.reconcile.result }}
         run: |
           set -euo pipefail
           test "$INVENTORY" = success
           test "$BUILD" = success
           test "$MATH" = success
           test "$NODE" = success
+          test "$RECONCILE" = success
           echo "Technical suites only. Not original element parity, authenticated E2E, DB/Auth, visual/accessibility, human academic signoff or release. NO GO."
