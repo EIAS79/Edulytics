@@ -38,3 +38,14 @@ test('L05 learner task visible in grade-only view but not falsely persisted',()=
   assert.match(view,/Cool-down — Edulytiks-original/);
   assert.match(view,/No student work\s+is automatically scored, submitted or persisted/);
 });
+
+test('L05 lesson-selected reciprocal family authored but not executed in A-C',()=>{
+ const root=path.join(__dirname,'..');
+ const contracts=fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+ const checkpoint=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l05-abc-cursor.json'),'utf8'));
+ assert.match(contracts,/usccss\.g7\.u01\.l05\.factor_size_and_reciprocal/);
+ assert.equal(checkpoint.READY_FOR_STAGE_D,true);
+ assert.equal(checkpoint.testExecution,'TEST_AUTHORED_NOT_RUN');
+});

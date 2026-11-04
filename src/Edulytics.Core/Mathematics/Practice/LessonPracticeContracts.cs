@@ -1403,6 +1403,20 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L04_FIRST_PARTY_AND_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+        // OUR/IM G7 U01:L05, 2017–2019: classify factor size and
+        // reciprocal direction; reuse precise L02 rational scale choices.
+        // Teacher supervises original physical card sort and puzzle.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L05",
+            "geometry.similarity.scale_factor",
+            "G7_FACTOR_SIZE_AND_INVERSE",
+            [
+                "usccss.g7.u01.l05.factor_size_and_reciprocal",
+                "usccss.g7.u01.l02.scale_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L05_SOURCE_SCOPED_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

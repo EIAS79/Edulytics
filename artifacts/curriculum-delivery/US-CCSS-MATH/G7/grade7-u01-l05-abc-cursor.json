@@ -33,9 +33,9 @@
   "cooldownOriginal": "NOT_VERIFIED_GATED",
   "cooldownEdulytiks": "Original k=3/4 copy of 8x4 rectangle, 6x3 copy, inverse 4/3 and teacher-reviewed sketch with angle/length evidence",
   "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
-  "A_STATUS": "A_CLOSED_SOURCE_EQUIVALENT_AND_RIGHTS_REVIEWED",
-  "B_STATUS": "BLOCKED_SHARED_RICH_V2_INVOCATION",
-  "C_STATUS": "BLOCKED_SELECTED_GEOMETRY_PRACTICE_AND_TEACHER_SCORING",
+  "A_STATUS": "A_CLOSED_LOCAL_SOURCE_4_ACTIVITIES_AND_PRACTICE_REVIEWED",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_CARD_PUZZLE_AND_INVERSE_COPY",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_L05_FACTOR_SIZE_AND_RECIPROCAL_PRACTICE",
   "PracticeStrategy": "REUSE_OR_EXTEND_EXISTING_FAMILY_WITH_SINGLE_WRITER_ISSUE_592",
   "PracticeAcceptance": [
     "k=1 unchanged",
@@ -47,12 +47,25 @@
   ],
   "testFile": "tests/academic-us-ccss-g7-u01-l05-abc-fixture.test.cjs",
   "testExecution": "TEST_AUTHORED_NOT_RUN",
-  "READY_FOR_STAGE_D": false,
+  "READY_FOR_STAGE_D": true,
   "D_STATUS": "NOT_RUN",
   "gradePatch": "9fc0bc53a2c90a9d57aa9a5f855ed58b4a9ea0d1",
   "testPatch": "de1d83edb43a1da6edbb82f5e6986bb04fcc8c29",
-  "blockedOwner": "Supervisor 1 / shared #592 / renderer Draft PR #599",
+  "blockedOwner": null,
   "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L06",
-  "closedAt": null,
-  "closureSHA": null
+  "closedAt": "2026-11-04 (authoring checkpoint; elapsed not measured)",
+  "closureSHA": null,
+  "stageABCClosure_20261104": {
+    "sourceScope": "LOCAL_OUR_IM_G7_2017_2019_NO_ACCESSIM_NO_V360",
+    "read": "07_Grade_7_OUR_IM/1/5/preparation.html; 1/5/index.html; 07_Grade_7_OUR_IM_Student/1/5/index.html; 1/5/practice.html",
+    "sourceElements": "5.1 five missing-factor number talk; 5.2 card sort smaller/unchanged/larger and reciprocal pairs; 5.3 optional six-piece half-scale puzzle; 5.4 reconstruct unknown original from inverse factor; practice",
+    "preserved": "First-party eight scale cards, existing six-piece puzzle and student instructions, teacher rubric, Grade7 SVG and Rich V2",
+    "reuse": "L02 rational scale factor family selected along with new L05 factor-size classification and inverse reciprocal family",
+    "family": "usccss.g7.u01.l05.factor_size_and_reciprocal",
+    "teacherOnly": "Drawings, puzzle physical reassembly, oral/written reasoning and teacher-reviewed Cool-down; no automatic scoring or persistence",
+    "publisherGatedCooldown": "NOT_VERIFIED; independent Edulytiks replacement retained",
+    "tests": "AUTHORED_NOT_RUN",
+    "StageD": "NOT_RUN",
+    "next": "PED:US-CCSS-MATH:G7:U01:L06"
+  }
 }
