@@ -1814,6 +1814,15 @@ public static class LessonPracticeContractRegistry
              "supporting.fractions.multiply"],
             "G7_U04_L02_FRACTIONAL_RATE_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U04 L03: revisit constants of proportionality across
+        // rate, table, equation and context. Existing Grade 7 U02 families cover it.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L03", "proportions.equivalent_ratios",
+            "G7_REVISIT_PROPORTIONAL_CONSTANTS_TABLES_AND_EQUATIONS",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l02.proportional_tables"],
+            "G7_U04_L03_PROPORTIONAL_REVIEW_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
