@@ -2010,6 +2010,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.number.signed_rational_multiply"],
             "G7_U05_L10_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U05 L11: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L11", "supporting.fractions.multiply_divide",
+            "G7_SIGNED_RATIONAL_DIVISION_AND_RECIPROCAL",
+            ["usccss.number.signed_rational_divide", "usccss.g7.u05.signed_rational_distance"],
+            "G7_U05_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
