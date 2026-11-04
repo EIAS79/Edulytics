@@ -4012,6 +4012,25 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u03.l05.wheel_rotations_distance",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-wheel-distance-circumference-times-rotations-recompute",
+      "representations": [
+        "numeric",
+        "diagram_metadata",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "supporting.geometry.circle_circumference_pi_coefficient",
       "version": 1,
       "skillId": "supporting.geometry.circles_loci",

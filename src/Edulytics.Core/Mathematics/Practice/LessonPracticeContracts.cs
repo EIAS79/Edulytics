@@ -1719,6 +1719,17 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.circle_circumference_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation"],
             "OUR_IM_G7_2017_2019_U03_L04_CIRCUMFERENCE_APPLICATION_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L05: one wheel rotation travels
+        // one circumference, so rolling distance and rotation count are
+        // proportional. The existing supporting engine is extended with this
+        // exact product/division family; physical rolling observations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L05", "supporting.geometry.circles_loci",
+            "G7_WHEEL_CIRCUMFERENCE_ROTATIONS_DISTANCE_AND_SPEED",
+            ["usccss.g7.u03.l05.wheel_rotations_distance", "supporting.geometry.circle_circumference_pi_coefficient",
+             "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L05_WHEEL_ROLLING_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

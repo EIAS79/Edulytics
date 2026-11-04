@@ -101,6 +101,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.midpoint",
             "supporting.geometry.axis_distance",
             "usccss.g7.u03.l02.radius_diameter_relation",
+            "usccss.g7.u03.l05.wheel_rotations_distance",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
             "supporting.geometry.locus_equidistant",
@@ -275,6 +276,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.midpoint" => Midpoint(random, scale),
             "supporting.geometry.axis_distance" => AxisDistance(random, scale),
             "usccss.g7.u03.l02.radius_diameter_relation" => CircleRadiusDiameter(random, scale),
+            "usccss.g7.u03.l05.wheel_rotations_distance" => WheelRotationsDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
             "supporting.geometry.locus_equidistant" => LocusEquidistant(random, preferredVariant),
@@ -458,6 +460,13 @@ internal static partial class SupportingPracticeCompletionEngine
                 Math.Abs(p["end"] - p["start"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u03.l02.radius_diameter_relation" =>
                 (p["mode"] == 0 ? 2 * p["radius"] : p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u03.l05.wheel_rotations_distance" =>
+                p["mode"] switch
+                {
+                    0 => (p["diameter"] * p["rotations"]).ToString(CultureInfo.InvariantCulture),
+                    1 => (p["circumference"] * p["rotations"]).ToString(CultureInfo.InvariantCulture),
+                    _ => p["rotations"].ToString(CultureInfo.InvariantCulture)
+                },
             "supporting.geometry.circle_circumference_pi_coefficient" =>
                 (2 * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_area_pi_coefficient" =>
@@ -1366,6 +1375,30 @@ internal static partial class SupportingPracticeCompletionEngine
             prompt,
             "A diameter passes through the center and is twice a radius: d = 2r.",
             ("mode", mode), ("radius", radius));
+    }
+
+    private static Problem WheelRotationsDistance(Random r, int s)
+    {
+        var mode = r.Next(0, 3);
+        var rotations = r.Next(2, 12 + s * 2);
+        if (mode == 0)
+        {
+            var diameter = r.Next(4, 20 + s * 2);
+            return P("usccss.g7.u03.l05.wheel_rotations_distance",
+                $"A wheel has diameter {diameter} units and makes {rotations} complete rotations without slipping. The exact distance is kπ units. Find k.",
+                "One rotation travels one circumference, πd. Multiply by the number of complete rotations.",
+                ("mode", mode), ("diameter", diameter), ("rotations", rotations));
+        }
+        var circumference = r.Next(12, 45 + s * 5);
+        if (mode == 1)
+            return P("usccss.g7.u03.l05.wheel_rotations_distance",
+                $"A wheel has circumference {circumference} units and makes {rotations} complete rotations without slipping. Find the distance traveled.",
+                "Distance equals circumference times number of rotations.",
+                ("mode", mode), ("circumference", circumference), ("rotations", rotations));
+        return P("usccss.g7.u03.l05.wheel_rotations_distance",
+            $"A wheel has circumference {circumference} units and travels {circumference * rotations} units without slipping. Find the number of complete rotations.",
+            "Rotations equal total distance divided by one-wheel circumference.",
+            ("mode", mode), ("circumference", circumference), ("rotations", rotations));
     }
 
     private static Problem CircleCircumference(Random r, int s)
