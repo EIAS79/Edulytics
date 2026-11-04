@@ -246,6 +246,110 @@ def main():
     REPORT["crossSchoolTeacherAssessmentAccess"]="DENIED"
     REPORT["teacherFinalAcademicApproval"]="NOT_CLAIMED"
     print("G6_D_TEACHER_GRADE6_ASSESSMENT_POST_AND_TENANT_DENIAL_PASS",flush=True)
+    # Complete the *synthetic* teacher-assessment journey in the same
+    # disposable PostgreSQL 18 school. Approval here exercises role-scoped
+    # controls; it is NOT independent human review or academic sign-off.
+    aid=saved[0]
+    require(re.fullmatch(r"[0-9a-fA-F-]{36}",aid),"assessment ID malformed")
+    builder=f"/school/assessments/{aid}/builder"
+    require(sql(f"""SELECT count(*) FROM "AssessmentQuestions"
+        WHERE "AssessmentId"='{aid}';""")=="0",
+        "new synthetic G6 assessment not empty")
+
+    def version_on(markup):
+        m=re.search(r'name="rowVersion"[^>]*value="([^"]+)"',markup)
+        require(m is not None,"Grade6 builder optimistic rowVersion unavailable")
+        return m.group(1)
+
+    def teacher_post(route, values):
+        data=urllib.parse.urlencode(values).encode()
+        with teacher.open(urllib.request.Request(BASE+route,data=data,method="POST"),timeout=55) as response:
+            require(response.status==200,"teacher builder POST non-200 "+route)
+            return html.unescape(response.read().decode("utf-8"))
+
+    builder_html=page(teacher,builder)
+    require("assessment" in builder_html.casefold(),"Grade6 builder workspace not displayed")
+    settings_html=teacher_post(builder+"/settings",{
+        "__RequestVerificationToken":extract_csrf(builder_html),
+        "rowVersion":version_on(builder_html),
+        "targetType":"Class","targetStudentProfileId":"",
+        "deliveryMode":"Online","difficultyBand":"AtClassLevel"})
+    require('data-delivery-saved="true"' in settings_html.lower(),
+        "assessment delivery settings did not unlock native builder")
+    first_lesson_id=grade_rows[0].split("|",3)[1]
+    require(re.fullmatch(r"[0-9a-fA-F-]{36}",first_lesson_id),
+        "Grade6 first lesson not seeded")
+    generated_html=teacher_post(builder+"/generate",{
+        "__RequestVerificationToken":extract_csrf(settings_html),
+        "rowVersion":version_on(settings_html),
+        "questionCount":"1","maxScorePerQuestion":"100",
+        "difficulty":"AtClassLevel","scopeType":"Lessons",
+        "lessonIds":first_lesson_id,"seed":"20261104"})
+    rows=sql(f"""SELECT q."Id"::text,i."GenerationFamily",
+                 COALESCE(i."ValidationMetadataJson"::text,'')
+        FROM "AssessmentQuestions" q
+        JOIN "AssessmentItems" i ON i."Id"=q."Id"
+        WHERE q."AssessmentId"='{aid}';""").splitlines()
+    require(len(rows)==1,"Grade6 teacher builder did not generate one stored question")
+    qid,assessment_family,meta=rows[0].split("|",2)
+    require(re.fullmatch(r"[0-9a-fA-F-]{36}",qid) and
+        assessment_family.startswith("usccss.g6.u01.l01."),
+        "Assessment Builder did not use selected Grade6 lesson family")
+    require(json.loads(meta).get("builderStatus")=="Draft",
+        "generated teacher question must require review")
+    reviewed_html=teacher_post(builder+"/questions/"+qid+"/approve",{
+        "__RequestVerificationToken":extract_csrf(generated_html),
+        "rowVersion":version_on(generated_html)})
+    stored_meta=sql(f"""SELECT i."ValidationMetadataJson"::text FROM "AssessmentItems" i
+        WHERE i."Id"='{qid}';""")
+    require(json.loads(stored_meta).get("builderStatus")=="Approved",
+        "Grade6 teacher approval did not persist")
+    status_before=sql(f"""SELECT "Status"::text FROM "Assessments"
+        WHERE "Id"='{aid}';""")
+    published_html=teacher_post(builder+"/publish",{
+        "__RequestVerificationToken":extract_csrf(reviewed_html),
+        "rowVersion":version_on(reviewed_html)})
+    status_after=sql(f"""SELECT "Status"::text FROM "Assessments"
+        WHERE "Id"='{aid}';""")
+    require(status_before!=status_after,
+        "teacher-approved Grade6 assessment was not published")
+    student_index=page(student,"/student/assessments")
+    require(aid.lower() in student_index.lower(),
+        "published Grade6 assessment not assigned to synthetic enrolled learner")
+    require(aid.lower() in published_html.lower(),
+        "teacher publish response did not retain assessment identity")
+    cross_denied(foreign,"/student/assessments/"+aid)
+    exam_html=page(student,"/student/assessments/"+aid)
+    exam_csrf=extract_csrf(exam_html)
+    exam_questions=re.findall(
+        r'name="questionIds"[^>]*value="([0-9a-fA-F-]{36})"',exam_html)
+    require(exam_csrf and exam_questions and qid.lower() in
+        [x.lower() for x in exam_questions],
+        "student examination form did not render approved G6 question")
+    attempts_before=int(sql(f"""SELECT count(*) FROM "AssessmentAttempts"
+        WHERE "AssessmentId"='{aid}';"""))
+    submission=[("__RequestVerificationToken",exam_csrf)]
+    for exam_qid in exam_questions:
+        submission.extend([("questionIds",exam_qid),("responses","")])
+    with student.open(urllib.request.Request(
+        BASE+"/student/assessments/"+aid+"/submit",
+        data=urllib.parse.urlencode(submission).encode(),method="POST"),
+        timeout=55) as response:
+        require(response.status==200,"student assessment submission failed")
+        result_html=response.read().decode("utf-8")
+        require("student-assessment" in result_html or "Submitted" in result_html,
+            "student assessment completion confirmation absent")
+    attempts_after=int(sql(f"""SELECT count(*) FROM "AssessmentAttempts"
+        WHERE "AssessmentId"='{aid}';"""))
+    require(attempts_after==attempts_before+1,
+        "Grade6 student assessment attempt not stored")
+    page(student,"/student/results")
+    REPORT["syntheticTeacherBuilderSelectedGeneratedQuestionFamily"]=assessment_family
+    REPORT["syntheticTeacherBuilderReviewApprovePublish"]="PASS"
+    REPORT["syntheticStudentAssessmentSubmittedStored"]="PASS"
+    REPORT["crossSchoolStudentAssessmentAccess"]="DENIED"
+    REPORT["syntheticHumanAcademicApproval"]="NOT_CLAIMED"
+    print("G6_D_BUILDER_GENERATE_REVIEW_APPROVE_PUBLISH_STUDENT_SUBMIT_PASS",flush=True)
     REPORT.update(status="G6_147_REAL_AUTHENTICATED_HTTPS_PASS",
         correctGradedAndPersisted=147,invalidRejectedAndPersisted=147,
         wellFormedWrongRejectedAndPersisted=147,
