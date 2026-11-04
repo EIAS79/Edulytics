@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "recordType": "V5_UNIT_BLOCKED_CURRENT_FIRST_OFFICIAL_LESSON",
+  "date": "2026-10-30",
+  "course": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "unitCode": "U01",
+  "officialUnitTotal": 19,
+  "unitStatus": "UNIT_BLOCKED",
+  "unitReadyForD": false,
+  "branch": "curriculum/us-ccss-g6-full-grade-20261028",
+  "pr": 591,
+  "verifiedBeforeCommitHead": "0e94819924e94e85955eaddf55d73e2c165e052f",
+  "firstOpenLesson": "PED:US-CCSS-MATH:G6:U01:L01",
+  "lastClosedLessonInOfficialUnit": null,
+  "previouslyABCClosedInUnit": 0,
+  "newlyABCClosedInUnit": 0,
+  "nextUnit": "U02_NOT_AUTHORIZED",
+  "lessonA": "A_CLOSED_PREEXISTING_GRADE_OWNED_FIRST_PARTY_ALTERNATIVES",
+  "lessonB": "B_CLOSED_PREEXISTING_GRADE_OWNED_RICH_V2",
+  "lessonC": "C_BLOCKED_NO_VERIFIED_EXACT_SELECTED_TILING_AREA_OR_TEACHER_DRAWING_CONTRACT",
+  "sourceAccess": "Our-CS read-only via Primary Desktop Commander",
+  "readLocalFiles": [
+    "06_Grade_6_OUR_IM/1/1/index.html",
+    "06_Grade_6_OUR_IM/1/1/preparation.html",
+    "06_Grade_6_OUR_IM/1/1/practice.html",
+    "06_Grade_6_OUR_IM_Student/1/1/index.html",
+    "06_Grade_6_OUR_IM_Student/1/1/practice.html"
+  ],
+  "sourceFindings": [
+    "Source asks for defensible comparisons between four tiling patterns, including gaps.",
+    "For one hexagon, trapezoids/rhombi/triangles cover 9/8/7 small-triangle units; for 8 hexagons, 72/64/56 respectively.",
+    "Student must justify conservation of area and create a gap-free, overlap-free equal-area tiling using at least two shape types.",
+    "Practice includes learner drawing and multi-strategy area reasoning; numeric-only grading is insufficient."
+  ],
+  "repositoryFindings": [
+    "No exact G6 U01:L01 lesson skill record in lesson-skill-mappings.v1.json.",
+    "No direct G6 U01:L01 LessonPracticeContracts.cs entry.",
+    "Title-only Tiling the Plane rule selects supporting.geometry.plane / TESSELLATION / supporting.geometry.plane.mixed as candidate, not verified selected runtime contract.",
+    "Question-family supporting.geometry.plane.mixed is ShadowVerified; presence in registry does not prove source-specific area and drawing feedback.",
+    "Existing Grade6 RichV2 teaching and first-party area models are preserved; no change to them in this checkpoint."
+  ],
+  "blocker": "Unverified exact lesson Practice selection and teacher-scored tiling/area construction contract",
+  "blockerOwner": "Supervisor 1 designated shared integration single-writer",
+  "trackingIssue": "https://github.com/EIAS79/Edulytics/issues/604",
+  "nextAction": "Authorized shared writer traces actual selection, reuses or extends area/tiling assessment, tests correct/wrong/equivalent/malformed with TEACHER_REVIEW_REQUIRED for sketches. Resume the same L01 after integration; no L02 progression beforehand.",
+  "laterEvidence": "Keep existing L05-L08 V4 delta and historical U03:L07 intact. Neither proves sequential unit closure.",
+  "testStatus": "NOT_RUN: no native Node/.NET/CI/authenticated Practice/Stage D",
+  "baselineLedger": {
+    "TOTAL": 147,
+    "AUTHORED": 147,
+    "A_CLOSED": 5,
+    "B_CLOSED": 5,
+    "C_PREPARED": 1,
+    "READY_FOR_D": 1,
+    "D_VERIFIED": 0,
+    "BLOCKED": 4,
+    "REMAINING": 146,
+    "UNIT_TOTAL": 9,
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
+  }
+}

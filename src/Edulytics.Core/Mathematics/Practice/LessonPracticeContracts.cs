@@ -1379,6 +1379,7 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+
         // IM K5 2021 G5 U05:L26: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
         byLesson["PED:US-CCSS-MATH:G5:U05:L26"] = new LessonPracticeContract(
@@ -2369,6 +2370,11 @@ public static class LessonPracticeContractRegistry
             Version);
 
         // IM 2021 Grade 6 U01:L01: reuse released two-family tiling route.
+
+        // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
+        // units and structured 2x2 coverage separately; actual drawing,
+        // student explanation and the eight-point rubric are teacher reviewed.
+
         byLesson["PED:US-CCSS-MATH:G6:U01:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G6:U01:L01",
             "geometry.area_tiling",
@@ -2380,6 +2386,2088 @@ public static class LessonPracticeContractRegistry
             "IM2021_G6_U01_L01_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+
+
+
+        // Original IM 6-8 (OUR/Kendall Hunt, 2017-2019) G6 U01:L02:
+        // exact piece areas and numerical area equivalence only. Physical/digital
+        // tangram outlines, distinct shapes, no gaps or overlaps, and proofs
+        // remain teacher-reviewed rather than falsely marked by the numeric engine.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L02",
+            "geometry.area_tiling",
+            "G6_SOURCE_TANGRAM_AREA_CONSERVATION_EXACT_NUMERIC_TEACHER_REVIEW",
+            [
+                "usccss.g6.u01.l02.tangram_piece_area",
+                "usccss.g6.u01.l02.tangram_equal_area"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L02_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original IM 6-8 G6 U01:L03: calculate known shaded areas by
+        // decomposition, enclosing/subtracting and rearrangement. Original
+        // plots, diagrams and justifications are still teacher-reviewed.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L03",
+            "geometry.area_tiling",
+            "G6_SOURCE_SHADED_AREA_DECOMPOSE_SUBTRACT_REARRANGE_EXACT",
+            [
+                "usccss.g6.u01.l03.source_shaded_area",
+                "usccss.g6.u01.l03.area_conservation"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L03_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original IM 6-8 G6 U01:L04 Parallelograms: classify both
+        // opposite parallel side pairs, numeric area via dissection/enclosure,
+        // and area invariance under true perpendicular height. Drawings,
+        // constructions, distinct decompositions and proofs stay teacher-scored.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L04",
+            "geometry.area_tiling",
+            "G6_SOURCE_PARALLELOGRAM_CLASSIFY_AREA_REARRANGE_EXACT",
+            [
+                "usccss.g6.u01.l04.parallelogram_exact_area",
+                "usccss.g6.u01.l04.two_pairs_parallel",
+                "usccss.g6.u01.l04.equal_area_rearrangement"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L04_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM 6-8 Grade 6 U01:L05: two corresponding base/height
+        // pairs, perpendicularity (including outside heights), exact area,
+        // scaling and source practice fractional triangle area. The source's
+        // drawn heights, algebraic explanations and teacher-only Cool-down
+        // cannot be certified by numeric auto-grading.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L05",
+            "geometry.area_tiling",
+            "G6_SOURCE_BASE_HEIGHT_PERPENDICULAR_AREA_AND_SCALING_EXACT",
+            [
+                "usccss.g6.u01.l05.parallelogram_base_height_area",
+                "usccss.g6.u01.l05.corresponding_height",
+                "usccss.g6.u01.l05.perpendicular_height_claim",
+                "usccss.g6.u01.l05.area_scaling",
+                "usccss.g6.u01.l05.small_triangle_fraction"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L05_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original IM/OUR G6 U01:L06 numerical area, missing corresponding
+        // dimensions and equal-area reasoning. Drawings/justifications remain
+        // teacher reviewed; the publisher's 6.3 Cool-down remains protected.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L06",
+            "geometry.area_tiling",
+            "G6_SOURCE_PARALLELOGRAM_AREA_MISSING_DIMENSION_COMPOSITE",
+            [
+                "usccss.g6.u01.l06.area_missing_dimension",
+                "usccss.g6.u01.l06.equal_area_reasoning",
+                "usccss.g6.u01.l06.composite_area"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L06_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U01:L07 triangle/diagonal composition; exact
+        // fractions and numeric responses only. Drawing and congruence proof
+        // are assessed by a teacher using the source-matched rubric.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L07",
+            "geometry.area_tiling",
+            "G6_SOURCE_TRIANGLE_DIAGONAL_CONGRUENCE_AND_FRACTIONS",
+            [
+                "usccss.g6.u01.l07.parallelogram_diagonal_half",
+                "usccss.g6.u01.l07.original_fraction_dimensions",
+                "usccss.g6.u01.l07.triangle_composition_logic"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L07_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original IM/OUR G6 U01:L08: two COMPLETE matching triangles form
+        // doubled-area parallelogram; cut pieces of ONE triangle rearrange
+        // to a SAME-area parallelogram. Keep these distinct pedagogically.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L08",
+            "geometry.area_tiling",
+            "G6_SOURCE_TRIANGLE_HALF_AREA_VS_SAME_AREA_REARRANGEMENT",
+            [
+                "usccss.g6.u01.l08.triangle_half_area",
+                "usccss.g6.u01.l08.decomposition_invariance",
+                "usccss.g6.u01.l08.original_decimal_practice"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L08_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original IM 6-8 Grade6 U01:L09: reuse the selected L08 triangle
+        // formula exact adapter; teacher must review student diagrams,
+        // three possible base/height choices, and derivation of one half.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L09",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_TRIANGLE_AREA_FORMULA_AND_HEIGHT_VALIDITY",
+            [
+                "usccss.g6.u01.l09.triangle_formula_source_area",
+                "usccss.g6.u01.l09.triangle_height_validity"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L09_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U01:L10: reuse the existing triangle-area
+        // adapter for source-grid dimensions and perpendicular-height checks.
+        // Student construction and reasoning remain teacher-reviewed.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L10",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_TRIANGLE_PERPENDICULAR_HEIGHT_OUTSIDE_AREA",
+            [
+                "usccss.g6.u01.l10.triangle_corresponding_height_area",
+                "usccss.g6.u01.l10.height_construction_validity"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L10_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U01:L11: classify simple polygons and compute
+        // areas of first-edition source quadrilaterals, hexagon, trapezoid,
+        // triangle, pinwheel. Drawings/proofs are teacher-assessed.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L11",
+            "geometry.area_tiling",
+            "G6_SOURCE_POLYGON_CLASSIFICATION_AND_COMPOSITE_AREA",
+            [
+                "usccss.g6.u01.l11.polygon_classification",
+                "usccss.g6.u01.l11.source_polygon_area"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L11_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM Grade6 U01:L12 surface area of rectangular prisms
+        // and exposed unit cube faces. User-built figures and reasoning require
+        // teacher review; only source numerical / true-false skills auto-check.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L12",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_EXPOSED_FACE_PRISM_SURFACE_AREA",
+            [
+                "usccss.g6.u01.l12.prism_exposed_face_area",
+                "usccss.g6.u01.l12.surface_area_meaning"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L12_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM Grade6 U01:L13 Polyhedra: existing solid engine
+        // now covers source polyhedron classification, nets and face/edge/
+        // vertex counts; actual cutting/folding requires teacher review.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L13",
+            "geometry.area_tiling",
+            "G6_SOURCE_POLYHEDRON_PRISM_PYRAMID_NET_COUNTS",
+            [
+                "usccss.g6.u01.l13.polyhedron_and_net_logic",
+                "usccss.g6.u01.l13.source_faces_edges_vertices"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L13_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U01:L14: reuse the exact solid model from L12/L13
+        // for original nets A/B/C and source homework, but teacher marks the
+        // actual foldability, adjacency and sketched proof.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L14",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_POLYHEDRA_NET_FACE_AREA_AND_FOLD_LOGIC",
+            [
+                "usccss.g6.u01.l14.source_net_surface_area",
+                "usccss.g6.u01.l14.net_folding_face_logic"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L14_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U01:L15: original box nets and capacities,
+        // Jada's false triangle area, stepped cube faces and correct folding.
+        // Reuse prior solid exact-question service. Actual drawn nets teacher marked.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L15",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_NETS_BOX_SURFACE_VS_VOLUME",
+            [
+                "usccss.g6.u01.l15.source_box_nets_surface_volume",
+                "usccss.g6.u01.l15.net_design_and_volume_reasoning"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L15_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original optional OUR/IM G6 U01:L16: same-volume eight cube
+        // constructs and source equal-area 1×11,2×7,3×5 base rectangles.
+        // Actual physical arrangements, notebooks and reasons need a teacher.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L16",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_OPTIONAL_SURFACE_AREA_VS_VOLUME",
+            [
+                "usccss.g6.u01.l16.source_equal_surface_different_volume",
+                "usccss.g6.u01.l16.surface_volume_unit_logic"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L16_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM Grade6 U01:L17 perfect squares/cubes,
+        // exponent factors and 32-cube physical model. Exact numeric/boolean
+        // grading only; geometric layer construction teacher marked.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L17",
+            "indices.integer_power.evaluate",
+            "G6_ORIGINAL_SQUARE_AND_CUBE_REPEATED_FACTORS",
+            [
+                "usccss.g6.u01.l17.original_square_cube_values",
+                "usccss.g6.u01.l17.square_cube_exponent_meaning"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L17_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U01:L18 cube surface and volume. Exact fractions
+        // in source P1 retain 1/27 without decimal approximation. Teacher
+        // reviews six-face foldable nets, symbols and squared/cubic units.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L18",
+            "geometry.area_tiling",
+            "G6_ORIGINAL_CUBE_NET_SURFACE_AND_VOLUME",
+            [
+                "usccss.g6.u01.l18.source_cube_surface_and_volume",
+                "usccss.g6.u01.l18.cube_net_dimension_and_units"
+            ],
+            "IM_ORIGINAL_6_8_G6_U01_L18_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // Grade 6 U01:L19: open-ended student-designed tent capstone.
+        // Selected Practice reinforces polygon-area decomposition under named
+        // assumptions; the student project, drawing and peer review remain
+        // TEACHER_REVIEW_REQUIRED, never certified by a numeric score.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L19",
+            "geometry.area_tiling",
+            "G6_TENT_CAPSTONE_FLOOR_ROOF_ENDS_AND_DESIGN",
+            [
+                "usccss.g6.u01.l19.first_party_tent_panel_area",
+                "usccss.g6.u01.l19.open_design_reasoning"
+            ],
+            "G6_U01_L19_OWNER_ORIGINAL_MATH_TEACHER_REVIEW_OPEN_PROJECT",
+            "READY_VERIFIED",
+            Version);
+
+        // Original OUR/IM G6 U02:L01. Ratios are ordered comparisons of
+        // named object categories; the 24-unit two-color model is source skill.
+        // Student sorting, diagrams, other-shape shading and explanation are
+        // teacher-reviewed; exact Practice checks the typed ratios/counts only.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_ORDERED_CATEGORY_RATIOS_AND_AREA_COLOR_MODEL",
+            [
+                "usccss.g6.u02.l01.ordered_collection_ratios",
+                "usccss.g6.u02.l01.shaded_area_ratio_counts"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 U02:L02 local original diagrams: source snap cubes, 2 cups white
+        // paint vs 6 tablespoons blue, recipe card diagrams with ordered 3 terms.
+        // Typed ratios are auto-scored, drawing/card matching teacher-scored.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DISCRETE_TWO_ROW_AND_THREE_INGREDIENT_DIAGRAMS",
+            [
+                "usccss.g6.u02.l02.labeled_two_row_ratios",
+                "usccss.g6.u02.l02.three_ingredient_ratio_cards"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 U02:L03 Recipes: scaling all ingredient quantities by equal
+        // factors; numeric practice and taste equivalence; student models and
+        // actual taste claims remain teacher-reviewed, not certified by grader.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_RECIPE_BATCHES_AND_EQUAL_TASTE",
+            [
+                "usccss.g6.u02.l03.recipe_batch_scale",
+                "usccss.g6.u02.l03.same_taste_equivalent_ratios"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 U02:L04 Color Mixtures. Original first-edition teacher
+        // model uses physical paint/colored water and optional accessible dough.
+        // Exact selected math checks quantities and proportionality, not shade.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COLOR_MIXTURES_SAME_SHADE_AND_SCALE",
+            [
+                "usccss.g6.u02.l04.color_mixture_quantities",
+                "usccss.g6.u02.l04.same_shade_proportions"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 U02:L05 source first-edition equivalent-ratio definitions;
+        // numeric selected Practice plus teacher-scored multiple-batch drawings.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EQUIVALENT_RATIO_DEFINITION_AND_SCALE",
+            [
+                "usccss.g6.u02.l05.equivalent_ratio_definition",
+                "usccss.g6.u02.l05.scaled_ratio_missing_term"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DOUBLE_NUMBER_LINE_RECIPE_BATCH_PAIRS",
+            [
+                "usccss.g6.u02.l06.double_number_line_amounts",
+                "usccss.g6.u02.l06.double_number_line_structure"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONSTRUCT_LABELED_EQUAL_SPACED_DOUBLE_LINES",
+            [
+                "usccss.g6.u02.l07.created_double_number_line_values",
+                "usccss.g6.u02.l07.double_number_line_units_per"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_UNIT_PRICE_AND_COST_PER_ITEM",
+            [
+                "usccss.g6.u02.l08.unit_prices_and_counts",
+                "usccss.g6.u02.l08.unit_price_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONSTANT_SPEED_DISTANCE_TIME_DOUBLE_LINES",
+            [
+                "usccss.g6.u02.l09.constant_speed_quantities",
+                "usccss.g6.u02.l09.constant_speed_equivalence"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COMPARE_EQUAL_RATES_SPEED_COST_RECIPES",
+            [
+                "usccss.g6.u02.l10.rate_comparison_quantities",
+                "usccss.g6.u02.l10.compare_rates_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EQUIVALENT_RATIO_TABLES",
+            [
+                "usccss.g6.u02.l11.table_equivalent_ratio_values",
+                "usccss.g6.u02.l11.ratio_table_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_RATIO_TABLE_FIND_UNKNOWN",
+            [
+                "usccss.g6.u02.l12.table_missing_quantity",
+                "usccss.g6.u02.l12.table_equivalence_methods"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TABLE_VS_DOUBLE_NUMBER_LINE_CHOICE",
+            [
+                "usccss.g6.u02.l13.table_line_ratio_values",
+                "usccss.g6.u02.l13.representation_selection"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_WHAT_WHY_INFO_GAP_EQUIVALENT_RATIOS",
+            [
+                "usccss.g6.u02.l14.info_gap_ratio_quantities",
+                "usccss.g6.u02.l14.rate_information_requests"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TAPE_DIAGRAM_PART_PART_WHOLE",
+            [
+                "usccss.g6.u02.l15.tape_diagram_part_whole",
+                "usccss.g6.u02.l15.part_to_whole_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson16; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L16",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CHOOSE_RATIO_DIAGRAM_TABLE_LINE",
+            [
+                "usccss.g6.u02.l16.multistep_ratio_totals",
+                "usccss.g6.u02.l16.ratio_tool_selection"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L16_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit2 Lesson17; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U02:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U02:L17",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_OPEN_ENDED_FERMI_PROJECT_WITH_BOUND_ASSUMPTION_PRACTICE",
+            [
+                "usccss.g6.u02.l17.first_party_fermi_assumption_arithmetic",
+                "usccss.g6.u02.l17.first_party_fermi_sensitivity"
+            ],
+            "OUR_IM_ORIGINAL_G6_U02_L17_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_REAL_WORLD_PER_ONE_RATE_SCALING",
+            [
+                "usccss.g6.u03.l01.per_one_source_rate",
+                "usccss.g6.u03.l01.source_rate_meaning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_BENCHMARK_LENGTH_CAPACITY_MASS_UNITS",
+            [
+                "usccss.g6.u03.l02.unit_magnitude_and_conversion",
+                "usccss.g6.u03.l02.choose_appropriate_unit_category"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MEASUREMENT_STATIONS_AND_UNIT_SCALE",
+            [
+                "usccss.g6.u03.l03.measurement_source_quantity",
+                "usccss.g6.u03.l03.measurement_attribute_identification"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CROSS_SYSTEM_UNIT_CONVERSION_RATE_PER_ONE",
+            [
+                "usccss.g6.u03.l04.source_ratio_unit_conversions",
+                "usccss.g6.u03.l04.conversion_direction_and_units"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COMPARE_PER_ONE_SPEED_AND_PRICE",
+            [
+                "usccss.g6.u03.l05.source_speed_price_values",
+                "usccss.g6.u03.l05.same_rate_price_speed_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_RECIPROCAL_RATES_PER_ONE",
+            [
+                "usccss.g6.u03.l06.source_reciprocal_rate_values",
+                "usccss.g6.u03.l06.reciprocal_rate_meaning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EQUIVALENT_RATIO_UNIT_RATE_TABLES",
+            [
+                "usccss.g6.u03.l07.unit_rate_table_quantities",
+                "usccss.g6.u03.l07.unit_rate_equivalence"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONSTANT_SPEED_PACE_DISTANCE_TIME",
+            [
+                "usccss.g6.u03.l08.speed_distance_time_quantities",
+                "usccss.g6.u03.l08.speed_pace_comparison"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_UNSCAFFOLDED_UNIT_RATE_CHOICE",
+            [
+                "usccss.g6.u03.l09.source_unit_rate_calculations",
+                "usccss.g6.u03.l09.solve_rate_comparison"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENT_AS_RATE_PER_ONE_HUNDRED",
+            [
+                "usccss.g6.u03.l10.percent_coin_values",
+                "usccss.g6.u03.l10.percent_comparison_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENTAGES_WITH_DOUBLE_NUMBER_LINES",
+            [
+                "usccss.g6.u03.l11.percent_scaled_amounts",
+                "usccss.g6.u03.l11.percent_of_quantity_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENT_TAPE_PART_TO_WHOLE",
+            [
+                "usccss.g6.u03.l12.tape_diagram_percent_amounts",
+                "usccss.g6.u03.l12.percent_tape_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_BENCHMARK_PERCENT_OF_QUANTITY",
+            [
+                "usccss.g6.u03.l13.benchmark_percent_values",
+                "usccss.g6.u03.l13.benchmark_percent_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENT_FIND_PART_WHOLE_OR_RATE",
+            [
+                "usccss.g6.u03.l14.percent_unknowns",
+                "usccss.g6.u03.l14.percent_compare_and_inverse"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EFFICIENT_PERCENT_MULTIPLICATION",
+            [
+                "usccss.g6.u03.l15.percent_of_quantity_exact",
+                "usccss.g6.u03.l15.percent_of_quantity_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson16; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L16",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENT_FROM_PART_DIVIDED_BY_REFERENCE",
+            [
+                "usccss.g6.u03.l16.find_percent_from_two_amounts",
+                "usccss.g6.u03.l16.percent_division_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L16_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson17; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U03:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U03:L17",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CAPSTONE_ROOM_AREA_PAINT_PURCHASE_PERCENT_TIME_MODEL",
+            [
+                "usccss.g6.u03.l17.first_party_bounded_room_paint_math",
+                "usccss.g6.u03.l17.first_party_paint_model_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U03_L17_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COMPARE_DIVISION_QUOTIENT_MAGNITUDE",
+            [
+                "usccss.g6.u04.l01.division_and_source_quantities",
+                "usccss.g6.u04.l01.predict_quotient_size"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MISSING_NUMBER_OF_GROUPS_OR_GROUP_SIZE",
+            [
+                "usccss.g6.u04.l02.division_groups_and_size",
+                "usccss.g6.u04.l02.division_interpretations"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DIVISION_DIAGRAM_EQUATION_CONTEXT",
+            [
+                "usccss.g6.u04.l03.division_contextual_results",
+                "usccss.g6.u04.l03.division_explanation_checks"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FRACTION_DIVISION_EQUAL_GROUP_PATTERN_BLOCKS",
+            [
+                "usccss.g6.u04.l04.fraction_groups_exact",
+                "usccss.g6.u04.l04.fraction_division_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_NONINTEGER_FRACTION_GROUPS_PATTERN_BLOCK",
+            [
+                "usccss.g6.u04.l05.fraction_group_quotients",
+                "usccss.g6.u04.l05.fractional_group_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FRACTION_DIVISION_TAPE_DIAGRAMS",
+            [
+                "usccss.g6.u04.l06.fraction_division_values",
+                "usccss.g6.u04.l06.fraction_tape_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FRACTIONAL_NUMBER_OF_GROUPS_LESS_THAN_ONE",
+            [
+                "usccss.g6.u04.l07.fraction_of_group_numeric",
+                "usccss.g6.u04.l07.fractional_group_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MISSING_GROUP_SIZE_FRACTION_DIVISION",
+            [
+                "usccss.g6.u04.l08.fraction_group_size",
+                "usccss.g6.u04.l08.fraction_group_size_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_UNSCAFFOLDED_FRACTION_DIVISION_CONTEXT",
+            [
+                "usccss.g6.u04.l09.contextual_fraction_division",
+                "usccss.g6.u04.l09.division_word_model_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DIVIDE_FRACTION_MULTIPLY_BY_RECIPROCAL",
+            [
+                "usccss.g6.u04.l10.fraction_division_steps",
+                "usccss.g6.u04.l10.division_reciprocal_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FRACTION_DIVISION_RECIPROCAL_ALGORITHM",
+            [
+                "usccss.g6.u04.l11.divide_fractions_exact",
+                "usccss.g6.u04.l11.fraction_algorithm_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MULTIPLICATIVE_COMPARISON_FRACTION_LENGTHS",
+            [
+                "usccss.g6.u04.l12.fractional_length_comparisons",
+                "usccss.g6.u04.l12.fractional_comparison_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FIND_UNKNOWN_RECTANGLE_SIDE_FRACTION_DIVISION",
+            [
+                "usccss.g6.u04.l13.rectangle_area_fractional_sides",
+                "usccss.g6.u04.l13.rectangle_area_diagram_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TRIANGLE_BASE_HEIGHT_AND_FRACTIONAL_PRISM_VOLUME",
+            [
+                "usccss.g6.u04.l14.triangle_height_and_cube_counts",
+                "usccss.g6.u04.l14.cube_and_triangle_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_VOLUME_PRISM_FRACTIONAL_EDGES",
+            [
+                "usccss.g6.u04.l15.fractional_prism_volume",
+                "usccss.g6.u04.l15.prism_unit_cube_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson16; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L16",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COMBINE_FRACTION_OPERATIONS_CONTEXT",
+            [
+                "usccss.g6.u04.l16.fraction_operations_context",
+                "usccss.g6.u04.l16.fraction_ops_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L16_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit3 Lesson17; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U04:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U04:L17",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CAPSTONE_FRACTIONAL_BOX_PACKING_COST_MODEL",
+            [
+                "usccss.g6.u04.l17.first_party_fixed_orientation_packing_math",
+                "usccss.g6.u04.l17.first_party_orientation_model_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U04_L17_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_BUDGETING_ESTIMATION_AND_EXACT_OPERATIONS",
+            [
+                "usccss.g6.u05.l01.shopping_decimal_arithmetic",
+                "usccss.g6.u05.l01.shopping_reasonableness"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_BASE_TEN_DIAGRAM_AND_VERTICAL_DECIMALS",
+            [
+                "usccss.g6.u05.l02.base_ten_decimal_arithmetic",
+                "usccss.g6.u05.l02.align_decimal_place_values"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_REGROUPING_ADD_SUBTRACT",
+            [
+                "usccss.g6.u05.l03.decimal_sum_difference_results",
+                "usccss.g6.u05.l03.placevalue_borrowing_correctness"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_ALIGNMENT_MANY_NONZERO_DIGITS",
+            [
+                "usccss.g6.u05.l04.precise_decimal_add_subtract",
+                "usccss.g6.u05.l04.placevalue_high_precision_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_MULTIPLICATION_POWERS_OF_TEN",
+            [
+                "usccss.g6.u05.l05.decimal_products_base_ten",
+                "usccss.g6.u05.l05.decimal_product_placevalue_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_PRODUCTS_FRACTIONS_AREA_DIAGRAMS",
+            [
+                "usccss.g6.u05.l06.decimal_multiplication_methods",
+                "usccss.g6.u05.l06.decimal_product_scale_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_AREA_PARTIAL_PRODUCTS",
+            [
+                "usccss.g6.u05.l07.decimal_partial_product_values",
+                "usccss.g6.u05.l07.partial_product_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DECIMAL_MULTIPLICATION_ALGORITHM_AND_PARTIAL_AREAS",
+            [
+                "usccss.g6.u05.l08.multiplication_calculation_values",
+                "usccss.g6.u05.l08.decimal_product_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_BASE_TEN_PARTIAL_QUOTIENTS",
+            [
+                "usccss.g6.u05.l09.partial_quotient_results",
+                "usccss.g6.u05.l09.partial_quotient_principles"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_LONG_DIVISION_PLACE_VALUE_DIGITS",
+            [
+                "usccss.g6.u05.l10.long_division_quotient_results",
+                "usccss.g6.u05.l10.long_division_placevalue_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TERMINATING_DECIMAL_QUOTIENT_FROM_WHOLE_DIVISION",
+            [
+                "usccss.g6.u05.l11.whole_division_decimal_results",
+                "usccss.g6.u05.l11.decimal_quotient_placevalue_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DIVIDE_DECIMAL_BY_WHOLE_AND_SCALE_BOTH",
+            [
+                "usccss.g6.u05.l12.decimal_divided_by_whole",
+                "usccss.g6.u05.l12.division_scale_equivalence"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SCALE_DECIMAL_DIVISION_BY_TEN_POWERS",
+            [
+                "usccss.g6.u05.l13.decimal_divisor_quotients",
+                "usccss.g6.u05.l13.decimal_divisor_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONTEXTUAL_DECIMAL_OPERATIONS_ESTIMATES",
+            [
+                "usccss.g6.u05.l14.decimal_context_calculations",
+                "usccss.g6.u05.l14.decimal_application_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit5 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U05:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U05:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_OPTIONAL_DECIMAL_MEASUREMENT_ORIGAMI_CAPSTONE",
+            [
+                "usccss.g6.u05.l15.first_party_fixed_paper_box_scaling",
+                "usccss.g6.u05.l15.measurement_precision_and_area_scaling"
+            ],
+            "OUR_IM_ORIGINAL_G6_U05_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TAPE_DIAGRAM_ADDITIVE_MULTIPLICATIVE_EQUATIONS",
+            [
+                "usccss.g6.u06.l01.tape_equation_unknown_values",
+                "usccss.g6.u06.l01.tape_diagram_equation_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EQUATION_TRUTH_VARIABLE_SUBSTITUTION",
+            [
+                "usccss.g6.u06.l02.variable_equation_solutions",
+                "usccss.g6.u06.l02.equation_truth_and_model_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_BALANCED_HANGER_EQUAL_OPS_BOTH_SIDES",
+            [
+                "usccss.g6.u06.l03.hanger_equation_unknowns",
+                "usccss.g6.u06.l03.balance_equation_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FLEXIBLE_EQUATION_REPRESENTATION_AND_SOLUTION",
+            [
+                "usccss.g6.u06.l04.equation_context_solutions",
+                "usccss.g6.u06.l04.equation_choice_and_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_GENERAL_FRACTION_BAR_DIVISION_OF_RATIONALS",
+            [
+                "usccss.g6.u06.l05.rational_fraction_bar_division",
+                "usccss.g6.u06.l05.fraction_bar_meaning_and_solutions"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_VARIABLE_EXPRESSIONS_FROM_RELATIONSHIPS",
+            [
+                "usccss.g6.u06.l06.expression_evaluation_contexts",
+                "usccss.g6.u06.l06.expression_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PERCENT_OF_UNKNOWN_EQUATIONS",
+            [
+                "usccss.g6.u06.l07.percent_equation_unknown_whole",
+                "usccss.g6.u06.l07.percent_equation_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EQUIVALENCE_FOR_EVERY_VARIABLE_VALUE",
+            [
+                "usccss.g6.u06.l08.equivalent_expression_evaluation",
+                "usccss.g6.u06.l08.equivalent_for_all_values_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DISTRIBUTIVE_PROPERTY_RECTANGLE_AREA_NUMERIC",
+            [
+                "usccss.g6.u06.l09.distributive_numeric_products",
+                "usccss.g6.u06.l09.distributive_area_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_VARIABLE_DISTRIBUTION_RECTANGLE_AREAS",
+            [
+                "usccss.g6.u06.l10.variable_distributive_values",
+                "usccss.g6.u06.l10.variable_distributive_equivalence"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_OPTIONAL_DISTRIBUTIVE_EXPAND_FACTOR_EQUIVALENCE",
+            [
+                "usccss.g6.u06.l11.expansion_factor_values",
+                "usccss.g6.u06.l11.distributive_equivalence_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EXPONENT_NOTATION_REPEATED_MULTIPLICATION",
+            [
+                "usccss.g6.u06.l12.exponents_numeric_values",
+                "usccss.g6.u06.l12.exponent_and_distributive_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EXPONENTS_RATIONAL_BASES_AND_TRUTH",
+            [
+                "usccss.g6.u06.l13.exponents_with_rational_bases",
+                "usccss.g6.u06.l13.exponent_equation_truth"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EXPONENTS_EVALUATE_BEFORE_MULTIPLICATION",
+            [
+                "usccss.g6.u06.l14.exponent_order_numeric",
+                "usccss.g6.u06.l14.exponent_evaluation_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EXPONENT_WITH_VARIABLE_EVALUATION",
+            [
+                "usccss.g6.u06.l15.exponential_variable_values",
+                "usccss.g6.u06.l15.exponential_expression_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson16; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L16",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PROPORTIONAL_TWO_VARIABLE_TABLE_GRAPH_EQUATION",
+            [
+                "usccss.g6.u06.l16.related_quantities_numeric",
+                "usccss.g6.u06.l16.two_variable_equation_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L16_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson17; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L17",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONSTANT_SPEED_TWO_VARIABLE_EQUATIONS",
+            [
+                "usccss.g6.u06.l17.constant_speed_numeric",
+                "usccss.g6.u06.l17.constant_speed_equation_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L17_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson18; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L18",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_OPTIONAL_INVERSE_AREA_VOLUME_EXPONENTIAL_RELATIONS",
+            [
+                "usccss.g6.u06.l18.related_area_volume_growth",
+                "usccss.g6.u06.l18.inverse_and_exponential_relationships"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L18_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit6 Lesson19; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U06:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U06:L19",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CAPSTONE_COMPARE_EQUATIONS_TABLES_AND_GRAPHS",
+            [
+                "usccss.g6.u06.l19.first_party_equation_table_examples",
+                "usccss.g6.u06.l19.first_party_relationship_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U06_L19_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SIGNED_TEMPERATURE_ELEVATION_NUMBER_LINE",
+            [
+                "usccss.g6.u07.l01.signed_temperatures_elevation",
+                "usccss.g6.u07.l01.signed_number_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SIGNED_RATIONAL_NUMBER_OPPOSITES",
+            [
+                "usccss.g6.u07.l02.signed_opposites_values",
+                "usccss.g6.u07.l02.opposite_number_line_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SIGNED_RATIONAL_INEQUALITY_NUMBER_LINE",
+            [
+                "usccss.g6.u07.l03.signed_order_comparisons",
+                "usccss.g6.u07.l03.signed_inequality_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_ORDER_SIGNED_RATIONALS_AND_OPPOSITES",
+            [
+                "usccss.g6.u07.l04.order_signed_numbers_source",
+                "usccss.g6.u07.l04.signed_ordering_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_SIGNED_CHANGE_MONEY_INVENTORY_TEMPERATURE",
+            [
+                "usccss.g6.u07.l05.positive_negative_changes",
+                "usccss.g6.u07.l05.signed_context_representations"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_ABSOLUTE_VALUE_DISTANCE_FROM_ZERO",
+            [
+                "usccss.g6.u07.l06.absolute_distance_values",
+                "usccss.g6.u07.l06.absolute_value_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_ORDER_VS_ABSOLUTE_MAGNITUDE",
+            [
+                "usccss.g6.u07.l07.signed_comparisons_absolute",
+                "usccss.g6.u07.l07.order_and_absolute_value_inequalities"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_INEQUALITY_OPEN_CLOSED_BOUNDS_CONTEXT",
+            [
+                "usccss.g6.u07.l08.inequality_bound_examples",
+                "usccss.g6.u07.l08.inequality_constraints_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_INEQUALITY_SOLUTION_SETS_CONTEXT",
+            [
+                "usccss.g6.u07.l09.inequality_solution_values",
+                "usccss.g6.u07.l09.inequality_solution_set_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONTEXTUAL_INEQUALITY_DISCRETE_AND_RELATIONAL",
+            [
+                "usccss.g6.u07.l10.inequality_context_solutions",
+                "usccss.g6.u07.l10.inequality_context_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COORDINATE_PLOT_ALL_FOUR_QUADRANTS",
+            [
+                "usccss.g6.u07.l11.coordinates_and_axis_locations",
+                "usccss.g6.u07.l11.coordinate_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FOUR_QUADRANT_AXES_SCALE_SELECTION",
+            [
+                "usccss.g6.u07.l12.four_quadrant_plot_and_axis_scale",
+                "usccss.g6.u07.l12.axis_precision_and_plot_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CONTEXTUAL_COORDINATE_PLANE_QUADRANTS_AND_SCALES",
+            [
+                "usccss.g6.u07.l13.coordinate_context_numeric",
+                "usccss.g6.u07.l13.interpret_axes_and_extrema"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_AXIS_ALIGNED_DISTANCE_COORDINATES",
+            [
+                "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances",
+                "usccss.g6.u07.l14.distance_same_axis_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COORDINATE_POLYGON_PERIMETER",
+            [
+                "usccss.g6.u07.l15.polygon_perimeter_signed_coordinates",
+                "usccss.g6.u07.l15.polygon_coordinate_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson16; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L16",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_GREATEST_COMMON_FACTOR_EQUAL_GROUPS",
+            [
+                "usccss.g6.u07.l16.gcf_source_numbers_and_groups",
+                "usccss.g6.u07.l16.factor_context_and_sign_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L16_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson17; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L17",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_LEAST_COMMON_MULTIPLE_REPEATING_CYCLES",
+            [
+                "usccss.g6.u07.l17.least_common_multiple_source_cycles",
+                "usccss.g6.u07.l17.multiple_cycle_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L17_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson18; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L18",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CHOOSE_GCF_VERSUS_LCM_IN_CONTEXT",
+            [
+                "usccss.g6.u07.l18.gcf_lcm_context_problems",
+                "usccss.g6.u07.l18.factor_multiple_selection_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L18_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit7 Lesson19; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U07:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U07:L19",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COORDINATE_IMAGE_CAPSTONE_TEACHER_SCORED",
+            [
+                "usccss.g6.u07.l19.first_party_plotting_coordinates",
+                "usccss.g6.u07.l19.first_party_picture_precision_rules"
+            ],
+            "OUR_IM_ORIGINAL_G6_U07_L19_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CATEGORICAL_VERSUS_NUMERICAL_SURVEY_DATA",
+            [
+                "usccss.g6.u08.l01.numerical_vs_categorical_sources",
+                "usccss.g6.u08.l01.data_type_and_dotplot_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_STATISTICAL_QUESTIONS_EXPECTED_VARIABILITY",
+            [
+                "usccss.g6.u08.l02.statistical_question_classification",
+                "usccss.g6.u08.l02.expected_data_variation_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FREQUENCY_TABLE_TO_DOT_PLOT",
+            [
+                "usccss.g6.u08.l03.dotplot_frequency_counts",
+                "usccss.g6.u08.l03.frequency_plot_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DOTPLOT_TYPICAL_VALUE_AND_SPREAD",
+            [
+                "usccss.g6.u08.l04.source_dotplot_comparisons",
+                "usccss.g6.u08.l04.dotplot_center_spread_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_DOTPLOT_CONTEXT_COMPARE_CENTER_SPREAD",
+            [
+                "usccss.g6.u08.l05.dotplot_source_comparisons",
+                "usccss.g6.u08.l05.dotplot_center_spread_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_HISTOGRAM_GROUPED_FREQUENCY_BINS",
+            [
+                "usccss.g6.u08.l06.histogram_bin_frequencies",
+                "usccss.g6.u08.l06.histogram_vs_dotplot_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson7; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L07",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COMPARE_HISTOGRAM_SHAPE_CENTER_SPREAD",
+            [
+                "usccss.g6.u08.l07.histogram_center_spread_numeric",
+                "usccss.g6.u08.l07.center_spread_and_inequality_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L07_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson8; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L08",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_HISTOGRAM_SHAPE_SYMMETRY_GAPS_PEAKS",
+            [
+                "usccss.g6.u08.l08.histogram_shape_and_cumulative",
+                "usccss.g6.u08.l08.histogram_shape_explanations"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L08_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson9; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L09",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MEAN_AS_EQUAL_REDISTRIBUTION",
+            [
+                "usccss.g6.u08.l09.mean_and_balanced_total",
+                "usccss.g6.u08.l09.mean_fair_share_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L09_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson10; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L10",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MEAN_BALANCE_POSITIVE_NEGATIVE_DEVIATIONS",
+            [
+                "usccss.g6.u08.l10.mean_balance_source_data",
+                "usccss.g6.u08.l10.balance_point_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L10_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson11; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L11",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MAD_AVERAGE_ABSOLUTE_DISTANCE_FROM_MEAN",
+            [
+                "usccss.g6.u08.l11.mean_absolute_deviation_amounts",
+                "usccss.g6.u08.l11.mad_interpretation_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L11_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson12; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L12",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MEAN_MAD_COMPARE_CONTEXTUAL_DOT_PLOTS",
+            [
+                "usccss.g6.u08.l12.mean_mad_source_datasets",
+                "usccss.g6.u08.l12.mean_mad_spread_context"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L12_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson13; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L13",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_MEDIAN_ODD_EVEN_DATASET_CENTER",
+            [
+                "usccss.g6.u08.l13.median_sorted_samples",
+                "usccss.g6.u08.l13.median_interpretations"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L13_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson14; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L14",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CHOOSE_MEAN_VERSUS_MEDIAN_CONTEXT_OUTLIERS",
+            [
+                "usccss.g6.u08.l14.mean_median_outlier_changes",
+                "usccss.g6.u08.l14.mean_median_choice_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L14_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson15; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L15",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_QUARTILES_MIDDLE_HALF_RANGE_AND_IQR",
+            [
+                "usccss.g6.u08.l15.quartiles_five_number_summary",
+                "usccss.g6.u08.l15.quartile_spread_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L15_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson16; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L16",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_BOXPLOT_MINIMUM_QUARTILES_MEDIAN_MAXIMUM",
+            [
+                "usccss.g6.u08.l16.box_plot_source_quartiles",
+                "usccss.g6.u08.l16.five_number_box_plot_interpretation"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L16_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson17; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L17",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_COMPARE_BOXPLOTS_MEDIAN_IQR",
+            [
+                "usccss.g6.u08.l17.boxplot_athlete_pineapple_statistics",
+                "usccss.g6.u08.l17.interpret_center_and_spread_boxplots"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L17_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit8 Lesson18; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U08:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U08:L18",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_CAPSTONE_SELECT_MEASURE_CENTER_SPREAD_AND_GRAPH",
+            [
+                "usccss.g6.u08.l18.first_party_statistics_context",
+                "usccss.g6.u08.l18.first_party_statistical_report_selection"
+            ],
+            "OUR_IM_ORIGINAL_G6_U08_L18_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit9 Lesson1; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L01",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_FERMI_ESTIMATES_RATES_GEOMETRY_ASSUMPTIONS",
+            [
+                "usccss.g6.u09.l01.first_party_fermi_source_rates",
+                "usccss.g6.u09.l01.first_party_fermi_modeling_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L01_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit9 Lesson2; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L02",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_POPULATION_CLASS_RATIO_PERCENT_MODELING",
+            [
+                "usccss.g6.u09.l02.first_party_population_ratio_quantities",
+                "usccss.g6.u09.l02.first_party_population_model_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L02_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit9 Lesson3; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L03",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_EUCLIDEAN_SQUARE_TILING_GCF_FRACTION_CONNECTIONS",
+            [
+                "usccss.g6.u09.l03.first_party_rectangle_square_decomposition",
+                "usccss.g6.u09.l03.first_party_square_tiling_fraction_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L03_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit9 Lesson4; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L04",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_TWO_CHOICE_VOTING_RATIO_SUPERMAJORITY_SAMPLING",
+            [
+                "usccss.g6.u09.l04.first_party_two_choice_voting_math",
+                "usccss.g6.u09.l04.first_party_supermajority_and_sampling_logic"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L04_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit9 Lesson5; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L05",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_PLURALITY_RUNOFF_RANKED_SCORE_COMPARISON",
+            [
+                "usccss.g6.u09.l05.first_party_multichoice_voting_arithmetic",
+                "usccss.g6.u09.l05.first_party_multichoice_election_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L05_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // G6 original first edition Unit9 Lesson6; exact math only.
+        // Student diagrams and contextual explanations require teacher assessment.
+        byLesson["PED:US-CCSS-MATH:G6:U09:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U09:L06",
+            "ratio.unit_rate",
+            "G6_ORIGINAL_OPTIONAL_PROPORTIONAL_REPRESENTATION_FAIR_ALLOCATION",
+            [
+                "usccss.g6.u09.l06.first_party_proportional_allocation_math",
+                "usccss.g6.u09.l06.first_party_representatives_fairness_reasoning"
+            ],
+            "OUR_IM_ORIGINAL_G6_U09_L06_FIRST_PARTY_COOLDOWN_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
 
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area

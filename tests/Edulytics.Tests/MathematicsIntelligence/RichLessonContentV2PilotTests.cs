@@ -329,7 +329,7 @@ public sealed class RichLessonContentV2PilotTests
         // The original 26 pilot, 143 Grade 3 and 149 Grade 4 lessons remain
         // registered. Adding all 148 Grade 5 lessons MUST NOT delete any old
         // entries or introduce a second Rich V2 entry for one lesson.
-        const int originalOtherLessons = 26 + 143 + 149;
+        const int originalOtherLessons = 26 + 143 + 149 + 9; // G6 first-party Rich V2 sidecars
         const int grade5Lessons = 148;
         Assert.Equal(originalOtherLessons + grade5Lessons, lessons.Length);
         Assert.Equal(grade5Lessons, lessons.Count(x =>

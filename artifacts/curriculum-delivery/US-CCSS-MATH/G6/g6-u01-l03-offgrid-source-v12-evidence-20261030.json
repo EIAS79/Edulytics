@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "course": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L03",
+  "sourceTeacherPreparation": "https://im.kendallhunt.com/MS/teachers/1/1/3/preparation.html",
+  "sourceTeacherActivity": "https://im.kendallhunt.com/MS/teachers/1/1/3/index.html",
+  "sourceStudent": "https://im.kendallhunt.com/MS/students/1/1/3/index.html",
+  "reviewScope": "PUBLIC_STUDENT_AND_TEACHER_ACTIVITY_TEXT_AND_FIGURE_ALT_ONLY",
+  "publicSourceTeacherGoalTaskTextCompared": true,
+  "publicSourceFiguresAltRead": true,
+  "publisherFigurePixelInspection": false,
+  "originalFigureAppletRecreationVerified": false,
+  "protectedTeacherResponsesRead": false,
+  "sourceTaskBreakdown": [
+    {
+      "id": "3.1",
+      "focus": "Compare shaded regions; matching removed and attached square preserves area",
+      "contentStatus": "Existing first-party 16-unit rearrangement retained"
+    },
+    {
+      "id": "3.2",
+      "focus": "A/B/C/D on grid; decompose, rearrange and subtract only known dimensions",
+      "contentStatus": "Existing area-conservation and measured-hole content retained",
+      "unresolved": "Original four-figure geometric detail and teacher assessment unverified"
+    },
+    {
+      "id": "3.3",
+      "focus": "Off-grid A two 5×3 right triangles; B four 2×4 shaded right triangles around unmeasured tilted square; C outer 5×5 minus inner 2×2 tilted square",
+      "contentStatus": "New Rich V2 example and accessible text diagram covering 15, 16 and 21 square centimeters",
+      "unresolved": "Source image pixels, actual accessible geometric manipulations and teacher-scored submissions unverified"
+    }
+  ],
+  "independentNumericalChecks": [
+    {
+      "figure": "A",
+      "expression": "2 * (5 * 3 / 2)",
+      "area": 15,
+      "units": "cm²"
+    },
+    {
+      "figure": "B",
+      "expression": "4 * (2 * 4 / 2)",
+      "area": 16,
+      "units": "cm²",
+      "wrongMethod": "Unknown tilted inner square cannot be subtracted without a supported measurement"
+    },
+    {
+      "figure": "C",
+      "expression": "5 * 5 - 2 * 2",
+      "area": 21,
+      "units": "cm²",
+      "invalidSubtraction": "Do not treat 2 centimeters as 2 square centimeters"
+    }
+  ],
+  "sourceTeacherMaterials": [
+    "geometry toolkits",
+    "tracing paper",
+    "blackline masters for warm-up comparison",
+    "peer strategy discussion"
+  ],
+  "sourceStandardsRoles": {
+    "buildingOn": [
+      "3.MD.C.7.d"
+    ],
+    "addressing": [
+      "6.G.A.1"
+    ]
+  },
+  "contentCommit": "c326dbb351a26d10ba58323daface9f1416ca049",
+  "stageA": "OPEN__SOURCE_FIGURE_PIXEL_AND_AUTHENTICATED_PARITY_UNVERIFIED",
+  "stageB": "CANDIDATE_MATH_AND_TEXTUAL_VISUAL__AUTHENTICATED_RENDER_UNVERIFIED",
+  "stageC": "NOT_RUN__SHARED_EXACT_PRACTICE_AND_TEACHER_RUBRIC",
+  "stageD": "NOT_RUN__STUDENT_TEACHER_RENDER_PERSISTENCE_AUTHORIZATION_TENANCY",
+  "accepted": false,
+  "released": false
+}

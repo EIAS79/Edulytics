@@ -239,7 +239,7 @@ test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without
  const expected=new Map([
   ['fractions.divide_whole_numbers',5],
   ['geometry.area',5],
-  ['geometry.area_tiling',2],
+  ['geometry.area_tiling',43],
   ['geometry.similarity.scale_factor',1]
  ]);
  for(const [skillId,count] of expected){
@@ -258,7 +258,7 @@ test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without
       'Missing required verification/generation capability '+capability+' in '+skillId);
   }
  }
- // Check all 1,300 families; a source-specific repair must not create other dangling IDs.
+ // Check every registered family; source-specific work must not create dangling IDs.
  for(const family of families)
   assert.ok(bySkill.has(family.skillId),'Orphaned family '+family.id+' -> '+family.skillId);
 });

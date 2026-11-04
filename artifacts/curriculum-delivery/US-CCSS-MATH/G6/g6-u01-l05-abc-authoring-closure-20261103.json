@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_STAGE_ABC_OWNER_AUTHORIZED_SOURCE_SUBSTITUTION_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L05",
+  "lesson": "Bases and Heights of Parallelograms",
+  "sourceEdition": "Original OUR/IM 6–8 Math first-edition lineage 2017–2019 with IM 2019 adaptations, CC BY 4.0; original Archive 06_Grade_6_OUR_IM",
+  "sourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM",
+  "excludedSources": [
+    "AccessIM_Grade6_*.html v360",
+    "Illustrative_Mathematics_v360"
+  ],
+  "stageA": "SOURCE_ALIGNED_AVAILABLE_MATH_AND_TASKS_OWNER_AUTHORIZED_COOLDOWN_SUBSTITUTION",
+  "stageB": "AUTHORING_COMPLETE_FIRST_PARTY_WORKMAT_AND_TEACHER_RUBRIC",
+  "stageC": "EXACT_FIVE_SOURCE_PRACTICE_FAMILIES_AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "readyForStageD": true,
+  "gradeLabel": "ready for stage D",
+  "reviewComplete2021MarkerAdded": false,
+  "publisherSourceTextParity100": false,
+  "denominatorStatus": "DENOMINATOR_INCOMPLETE_FOR_PUBLISHER_SOURCE_TRANSCRIPT",
+  "ownerApprovedException": "Original publisher 5.4 Cool-down is teacher-login restricted. User explicitly ordered create an Edulytics Cool-down based on available lesson content and learning goal. The independent task is authored, auto-checks its numeric heights, and includes human rubric for diagrams and explanations; not a claim to copy inaccessible source wording.",
+  "sourceElementCount": 63,
+  "sourceElementStatusCounts": {
+    "MATCHED_DIGITAL": 32,
+    "MATCHED_TEACHER_LED": 29,
+    "SOURCE_UNAVAILABLE": 2
+  },
+  "originalPublisherExceptions": [
+    "Original 5.4 Cool-down prompt hidden behind teacher login",
+    "Original formatted teacher-answer texts hidden behind teacher login"
+  ],
+  "authoringAlternatives": [
+    "Original learning goal: any side can be base, but choose its own perpendicular height; 6×4=5×4.8=24",
+    "5.1 shaded source 7×6=42, cutting and rearranging preserve area",
+    "5.2 valid/invalid right-angle heights (including outside), accessible first-party teacher-led diagrams",
+    "5.3 original four source figure dimensions: 4×6=24, 5×3=15, 2×3=6, 4 vertical×2 horizontal=8; independent first-party SVG",
+    "Original practice 3–7 (8,10,8; 4 and 4.8; 36 and 20; algebraic b·h; five claims; 1/3 m² and 27 triangles)",
+    "Owner-approved original Edulytics Cool-down: 36 cm² with bases 9 cm and 6 cm, corresponding perpendicular heights 4 cm and 6 cm; geometry and written reasoning teacher rubric, not publisher content"
+  ],
+  "newInstructionDoc": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/G6_STAGE_ABC_SEQUENTIAL_FAST_EXECUTION_RULES.md",
+  "sourceElementEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l05-element-coverage-20261103.json",
+  "sourceGatedPriorEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l05-abc-candidate-source-gated-20261103.json",
+  "firstCodeCommitUtc": "2026-11-03T03:08:53Z",
+  "closureRecordedUtc": "2026-11-03T03:23:01Z",
+  "codeCommits": [
+    "f0b4d47cc9a0b39200b7e9f7f46145c1b033d452",
+    "d1a064b017f44ab6649752b61db110403d966377"
+  ],
+  "authoredTests": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson5SelectedPracticeRouteTests.cs",
+    "tests/academic-us-ccss-g6-u01-l05-l08-v4-first-party-oracles.test.cjs"
+  ],
+  "testStatus": "AUTHORED_NOT_RUN",
+  "staticVerification": "Code and JSON source checks, 1119 registry family ids unique, no runtime test/CI/Stage D",
+  "teacherBoundary": "Open drawings, constructed heights, perpendicularity marks, symbolic explanation and full Cool-down rubric require teacher review; never claim numeric verification alone grades an explanation",
+  "sourceSha256": {
+    "teacherLesson": "e68804d4fa0958f6384d6491f16195fe33cb8aee6813b49abf1caace8d59ca1c",
+    "teacherPreparation": "81ea608d4409c0570397a917f11e5c5f142fe1056f3e3ddc45a50489c44817fb",
+    "teacherPractice": "bda96b7de027e15d40238ad4b76758da4135303de3216fab7cb39ba4330cef3f",
+    "studentLesson": "74036df4983e64bc4eac6097792e98aa5743ad722a34b94e80a109e035dcca7e"
+  },
+  "closureShaRole": "Final evidence/cooldown GitHub closure commit is the commit adding this file; prior code SHA is immutable in codeCommits",
+  "readyForStageDMeaning": "A/B/C content authored and skill contract connected, tests written but not executed. Stage D will test runtime math/grading, rendered workmat, persisted learner feedback, teacher checks and CI.",
+  "nextLesson": "PED:US-CCSS-MATH:G6:U01:L06"
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_INDIVIDUAL_LESSON_ABC_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L03",
+  "sourceLessonCode": "6.1.3",
+  "title": "Reasoning to Find Area",
+  "unit": "U01",
+  "sourceEdition": "Original IM 6–8 Math / OUR-developed Kendall Hunt first-edition lineage, 2017–2019 copyright with IM 2019 adaptation; owner-approved original IM K–12 family",
+  "sourceRightsMetadata": "CC BY 4.0",
+  "source": {
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\3\\index.html",
+    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\3\\preparation.html",
+    "teacherPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\3\\practice.html",
+    "studentLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM_Student\\1\\3\\index.html",
+    "teacherLessonSha256": "bac4b6f92d8b543fb4e7138d9d41289b0e76e4f595c2a46c0dc27c6c03da0356",
+    "teacherPreparationSha256": "a0873e05615f47b21939cbc61e610aecd5966126f434423ba29fa2df7f2fd328",
+    "teacherPracticeSha256": "bb745ba84686cd3720c18d1dc8a09bb4dfe6911bd22c9e02638205d1de4a3f8d",
+    "studentLessonSha256": "e7772a4bb06b42e481bf7024afb1dad3b04d61c36456ff45c86a19a79e3cab32"
+  },
+  "excludedWrongEdition": "All three AccessIM_Grade6_*.html v360 2024 pages and separate Illustrative_Mathematics_v360 archive",
+  "closureStatus": "A_B_C_AUTHORED_CLOSED_READY_FOR_STAGE_D",
+  "gradeLabel": "ready for stage D",
+  "reviewComplete2021MarkerAdded": false,
+  "acceptedUtc": "2026-11-03T02:40:04Z",
+  "closureSha": "0bbee58004ae071967e7bc972dbe0fd039d69ce5",
+  "closureShaRole": "Code-delivery GitHub commit of complete selected lesson Practice; following evidence ledger GitHub commit separately recorded on PR #591",
+  "stageA": {
+    "status": "CLOSED",
+    "sourceGoals": [
+      "3.1 Compare equal shaded regions via cut and rearrange, justify mathematically",
+      "3.2 On the Grid: 6×6 square minus 3×3 hole, decompose rectangles, rearrange slanted shapes with teacher drawing",
+      "3.3 Off the Grid: two right triangles 5×3, four right triangles 2×4, 5×5 outer minus 2×2 inner, explain",
+      "Original practice: 3 rectangles 5×2+4×2+2×2, equivalent plots, 80×40 tiled wall and tile-size claims"
+    ],
+    "priorEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l03-abc-first-party-20261030.json",
+    "knownLimits": "Publisher figure pixels, teacher-only answer content and authenticated Cool-down are not certified. Numerical questions derived from original stated dimensions; student diagrams and explanation teacher assessed."
+  },
+  "stageB": {
+    "status": "CLOSED_AUTHORED",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
+    "sourceAlignedExamples": [
+      "6×6 −3×3 shaded grid area 27",
+      "2 right triangles 5cm×3cm area 15",
+      "4 right triangles 2cm×4cm area 16",
+      "5cm-square frame minus 2cm-square hole area 21",
+      "Original practice 3 rectangles area 22; wall area 3200 sq in"
+    ],
+    "pedagogicalBoundary": "Different methods of decomposing, subtracting and rearranging are compared; actual student drawings and mathematical reasoning teacher-reviewed, not numerically graded"
+  },
+  "stageC": {
+    "status": "CLOSED_STATIC_AUTHORED_SELECTED_PRACTICE",
+    "contract": "PED:US-CCSS-MATH:G6:U01:L03 -> LessonPracticeContractRegistry -> StudentPrivatePracticeService -> Stage18SkillContractPracticeEngine -> ExactSkillContractQuestionEngine",
+    "skillId": "geometry.area_tiling",
+    "families": [
+      "usccss.g6.u01.l03.source_shaded_area",
+      "usccss.g6.u01.l03.area_conservation"
+    ],
+    "questionAdapter": "src/Edulytics.Services/Mathematics/UsCcssG6Unit1Lesson3ShadedAreaQuestions.cs",
+    "routing": "SupportsFamily -> BuildProblem -> Solve -> Verify, all bounded source variants, independent lesson-family alignment validator",
+    "validation": "Six source numeric area cases and six true/false conservation comparisons; malformed, forged, cross-lesson and out-of-domain responses fail closed",
+    "feedback": "Question solution gives non-secret strategy and explicitly defers diagrams, tracing, missing pieces and justification to the teacher; authenticated feedback and persistence not executed",
+    "registry": "Shared JSON parsed with 1111 unique family IDs; prior 1109 preserved; lessonPracticeRouting=true, productionRouting=false",
+    "integrationCommit": "0bbee58004ae071967e7bc972dbe0fd039d69ce5",
+    "authoredFixtures": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson3SelectedPracticeRouteTests.cs",
+      "tests/academic-us-ccss-g6-u01-l03-abc-first-party-20261030.test.cjs",
+      "tests/academic-us-ccss-g6-u01-l03-offgrid-v12.test.cjs"
+    ],
+    "execution": "AUTHORED_NOT_RUN; git diff --check clean; no dotnet, Node, Stage D or CI"
+  },
+  "stageD": "NOT_STARTED",
+  "readyForStageD": true,
+  "nextLesson": "PED:US-CCSS-MATH:G6:U01:L04",
+  "limitations": [
+    "First-edition source alignment verified to the available 2017–2019 local lesson pages, not a claim of specific 2021 G6 publisher imprint",
+    "Authoring-only acceptance; full runtime generation, persistence and teacher/learner feedback untested",
+    "Original diagrams, applet and teacher-authenticated Cool-down not reproduced",
+    "No Stage D/CI, main merge or deployment"
+  ]
+}

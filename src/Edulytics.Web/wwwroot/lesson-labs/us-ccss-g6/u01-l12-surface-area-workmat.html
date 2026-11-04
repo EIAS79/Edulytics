@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G6 U01:L12 First-edition Surface Area — Edulytics first-party workmat</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,Arial,sans-serif}body{max-width:980px;margin:auto;color:#162337;padding:17px;line-height:1.5}
+h1,h2{line-height:1.25}section{border-top:1px solid #bfcad4;margin-top:16px;padding-top:12px}
+.note{background:#eef3f8;border-left:4px solid #426488;padding:12px}table{border-collapse:collapse;width:100%;max-width:690px}th,td{border:1px solid #b0bdc9;padding:8px;text-align:left}
+svg{width:100%;max-width:490px;border:1px solid #b0b9ca}fieldset{display:flex;flex-wrap:wrap;gap:14px}
+label{display:block;max-width:220px}input{display:block;padding:7px;width:7em;margin-top:6px}button{padding:8px 12px;cursor:pointer}output{display:block;padding:10px;min-height:20px}
+@media print{button{display:none}body{padding:0}.note{background:white}}
+</style></head>
+<body>
+<h1>Grade 6 · U01:L12 · What Is Surface Area?</h1>
+<p class="note"><strong>Original Edulytics practice workmat.</strong> Uses the first-edition OUR/IM 6–8 lesson's verified mathematics and original source dimensions, but not the copyrighted photo/video or the publisher's protected 12.4 Cool-down question. This workmat's sketches are independently drawn and do not save learner grades.</p>
+<section><h2>12.2 — The original filing cabinet</h2>
+<p>The original lesson's cabinet is <strong>24 × 12 × 6</strong> sticky-note units. Cover the top, two front/back faces and two side faces; <strong>do not</strong> cover the bottom resting on the floor. These original source measurements differ from the separately labeled independent 8 × 5 × 3 example in Edulytics.</p>
+<table><thead><tr><th>Faces being covered</th><th>Count</th><th>Sticky-note squares</th></tr></thead><tbody>
+<tr><td>Top only (no bottom)</td><td>1 × (24 × 12)</td><td>288</td></tr>
+<tr><td>Front and back</td><td>2 × (24 × 6)</td><td>288</td></tr>
+<tr><td>Left and right</td><td>2 × (12 × 6)</td><td>144</td></tr>
+<tr><th>Total covering (five faces)</th><th>288 + 288 + 144</th><th>720</th></tr></tbody></table>
+<p>If the bottom were also covered, the complete six-faced surface would be 1008 square notes. Excluding a face from a specific <em>covering task</em> does not mean the physical prism has only five faces.</p>
+</section>
+<section><h2>12.3 — Unit cubes, visible and hidden faces</h2>
+<p>Build a 2 × 2 × 3 prism from twelve unit cubes (surface area 32), then build a different prism with twelve cubes. Draw all six faces including the three that cannot be seen in one viewpoint.</p>
+<svg role="img" aria-labelledby="cuboid-title cuboid-desc" viewBox="0 0 440 295" xmlns="http://www.w3.org/2000/svg">
+<title id="cuboid-title">Independently drawn rectangular prism with top, front and side labeled</title>
+<desc id="cuboid-desc">An isometric view of a rectangular prism 3 units across, 2 units deep and 5 units high. Top area six unit squares, front area fifteen and right side ten. Opposite faces are congruent and also contribute to surface area.</desc>
+<polygon points="90,98 177,40 340,40 253,98" fill="#b8e0f1" stroke="#234466" stroke-width="3"/>
+<polygon points="90,98 253,98 253,263 90,263" fill="#8dcbdf" stroke="#234466" stroke-width="3"/>
+<polygon points="253,98 340,40 340,205 253,263" fill="#bad6a5" stroke="#234466" stroke-width="3"/>
+<g font-family="Arial,sans-serif" fill="#12253e" font-size="16" font-weight="bold">
+<text x="196" y="70">top 3 × 2</text><text x="118" y="190">front 3 × 5</text>
+<text x="283" y="172" transform="rotate(-32 283 172)">side 2 × 5</text>
+</g></svg>
+<p>For this 3 × 2 × 5 prism, the complete area is 2 × (3×2 + 3×5 + 2×5) = <strong>62 square units</strong>. In one picture you only see three faces. Count their opposites too.</p>
+<p>Original practice 3 displays five-cube L and plus shapes. In both drawings four face-sharing pairs hide eight of the original thirty cube faces: <strong>22 outer unit squares each</strong>. Neither shape has a greater surface area.</p>
+</section>
+<section><h2>Numeric source-skill check</h2>
+<form id="checks"><fieldset>
+<label for="q-cabinet">Original cabinet five-face covering
+<input required inputmode="decimal" id="q-cabinet"></label>
+<label for="q-practice1">Original practice 1 — 2 × 4 × 4 prism
+<input required inputmode="decimal" id="q-practice1"></label>
+<label for="q-exit">Independent Cool-down — 2 × 3 × 5 prism
+<input required inputmode="decimal" id="q-exit"></label>
+</fieldset><button type="submit">Check numerical answers</button><output id="feedback" aria-live="polite"></output></form>
+</section>
+<section><h2>Independent Edulytics Cool-down (not publisher 12.4)</h2>
+<p>Using the original teacher-preparation dimensions, build or sketch a 2-by-3-by-5 unit-cube prism. Label the surface area of all six faces (including back and bottom), give the total <strong>62</strong> square units, and explain why multiplying 2 × 3 × 5 gives the number of cubes, not the surface area.</p>
+<p><strong>Teacher rubric:</strong> 3D prism truly uses 30 cubes; opposite-face pairs are 2×3,2×5,3×5; correct sum is 62 square units; hidden faces counted; distinguishes volume (30 cubic units) from surface area (62 square units); written justification and model independently teacher reviewed. The numerical check cannot certify the model.</p>
+<div aria-label="Printable student illustration space" style="min-height:160px;border:1px dashed #99a8b6"></div>
+</section><button id="print" type="button">Print teacher workmat</button>
+<script>
+"use strict";
+document.getElementById("checks").addEventListener("submit",e=>{
+ e.preventDefault();
+ const ids=["q-cabinet","q-practice1","q-exit"],answer=[720,64,62];
+ const passed=ids.map((id,i)=>{
+   const text=document.getElementById(id).value.trim();
+   return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(text)&&Number.isFinite(Number(text))&&Number(text)===answer[i];
+ });
+ const n=passed.filter(Boolean).length;
+ document.getElementById("feedback").textContent=n===3?
+ "All numerical areas correct. Teacher must still evaluate the 3D model and hidden-face proof.":
+ n+" / 3 numbers correct; check whether the task includes all six faces or excludes the bottom. Teacher grades the model.";
+});
+document.getElementById("print").addEventListener("click",()=>window.print());
+</script></body></html>

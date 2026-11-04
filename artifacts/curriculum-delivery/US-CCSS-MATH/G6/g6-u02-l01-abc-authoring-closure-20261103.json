@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "recordType": "GRADE6_ORIGINAL_IM_ABC_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U02:L01",
+  "lessonOrdinal": 20,
+  "title": "Introducing Ratios and Ratio Language",
+  "recordedAtUtc": "2026-11-03T13:29:34.678004+00:00",
+  "sourceEdition": "Original IM/OUR 6-8 first-edition, copyright 2017-2019 CC BY 4.0, not AccessIM v360",
+  "sourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\2\\1",
+  "originalSourceSha256": {
+    "teacherPreparation": "3802a07481c3449297b44ba007c1aa8813301d584c1fad398d7644b9af119453",
+    "teacherLesson": "75aa1742e008486c78d4172cfb5fd1ac91b7736f7176b8eb66877c4ee30de84d",
+    "sourcePractice": "4d6c42889368deb9037e9ea824824ae73304aeabc17295f20e38dcff12610265",
+    "studentLesson": "6b9b036afd919672d7186a58caa0be3292ea48851855280c1445f3b22190ee75"
+  },
+  "sourceTasks": [
+    {
+      "id": "A1.1",
+      "expectation": "Sort figures into independently named categories and count",
+      "coverage": "Independent workmat + teacher rubric",
+      "scoring": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "A1.2",
+      "expectation": "Sort teacher collection into 2-3 categories and express ordered ratios in multiple sentence forms",
+      "coverage": "Existing pack + labeled workmat + selected ratio Practice",
+      "scoring": "NUMERIC_PRACTICE_PLUS_TEACHER_REVIEW"
+    },
+    {
+      "id": "A1.3",
+      "expectation": "Make collection/display, compare ratio sentences and 24-unit 2:1 shaded rectangle; draw differently shaped non-24 figure preserving 2:1",
+      "coverage": "Existing pack + new interactive 24-unit workmat + selected shade count Practice",
+      "scoring": "NUMERIC_PRACTICE_PLUS_TEACHER_REVIEW"
+    },
+    {
+      "id": "A1.4",
+      "expectation": "Original Cool-down entitled A Collection of Animals is teacher-login protected",
+      "coverage": "Independent owner-authorized Edulytics 8 green:6 red ratio Cool-down",
+      "scoring": "OWNER_AUTHORIZED_SUBSTITUTE"
+    },
+    {
+      "id": "P1",
+      "expectation": "9 bananas, 4 apples, 3 plums; named ordered ratios",
+      "coverage": "Existing pack extended + 4 source-related independent Practice variants",
+      "scoring": "SELECTED_EXACT_PRACTICE"
+    },
+    {
+      "id": "P2-P3",
+      "expectation": "Pictorial dogs/cats and eyes/legs; visual-to-ratio and two sentences",
+      "coverage": "Teacher-marked own labeled object collection, not publisher original graphic",
+      "scoring": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "id": "P4-P6",
+      "expectation": "Cumulative cm/cm²/cm³; prism volume/surface and identifying triangular prisms",
+      "coverage": "Short source-aligned first-party worked cumulative review in pack; earlier original Unit 1 families available separately",
+      "scoring": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "visuals": {
+    "originalImageAssetCopied": false,
+    "workmat": "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u02-l01-ratio-collections-workmat.html",
+    "teacherReviewBoundary": "Teacher reviews actual categorization, orientation, physical object manipulations, diagrams, alternate shape and written explanations; no persistence claim"
+  },
+  "deliveryArtifacts": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g6-phase29-v1.lesson-content-pack.json",
+    "src/Edulytics.Services/Mathematics/UsCcssG6Unit2RatioQuestions.cs",
+    "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u02-l01-ratio-collections-workmat.html"
+  ],
+  "selectedPractice": {
+    "contract": "PED:US-CCSS-MATH:G6:U02:L01",
+    "families": [
+      "usccss.g6.u02.l01.ordered_collection_ratios",
+      "usccss.g6.u02.l01.shaded_area_ratio_counts"
+    ],
+    "generationVerification": "AUTHORED_STATIC_ROUTE_NOT_RUN",
+    "type": "ordered ShortAnswer ratios and Numeric equal-square-unit color counts"
+  },
+  "testsFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit2Lesson1SelectedPracticeTests.cs",
+  "testStatus": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ci": "NOT_RUN",
+  "readyForStageD": true,
+  "gradeLabel": "ready for stage D",
+  "publisherSourceTextParity100": false,
+  "sourceCooldownText": "SOURCE_UNAVAILABLE_TEACHER_AUTH",
+  "ownerAuthorizedCooldownSubstitute": true,
+  "ownerAcademicApproval": true,
+  "ownerPublicationPermission": true,
+  "publicationExecuted": false,
+  "reviewComplete2021MarkerAdded": false,
+  "noOverclaim": "Static code and JSON checks are not .NET test results, authenticated learner delivery, teacher rubric persistence or publisher text identity."
+}

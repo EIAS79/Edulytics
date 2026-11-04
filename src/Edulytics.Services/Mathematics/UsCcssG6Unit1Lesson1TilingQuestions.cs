@@ -34,6 +34,7 @@ internal static class UsCcssG6Unit1Lesson1TilingQuestions
         }
         else
         {
+
             int pattern = random.Next(0,16);
             values["pattern"] = pattern;
             // Render exactly the same tile list the solver validates, so
@@ -42,6 +43,7 @@ internal static class UsCcssG6Unit1Lesson1TilingQuestions
                 piece.Kind == Kernel.PieceKind.UnitSquare
                     ? $"S({piece.X},{piece.Y})"
                     : $"T({piece.X},{piece.Y},{piece.Half})"));
+
             prompt = "A 2 by 2 square must be tiled using exactly two unit squares " +
                 "and four congruent half-square triangles, without a gap or overlap. " +
                 "Cells are (x,y) with x,y each 0 or 1. S(x,y) covers both halves " +
@@ -80,7 +82,9 @@ internal static class UsCcssG6Unit1Lesson1TilingQuestions
             return p.Count == 2 && p.TryGetValue("hexagons",out var h) &&
                 h is >=1 and <=8 && p.TryGetValue("color",out var c) && c is >=0 and <=2;
         return p.Count == 1 && p.TryGetValue("pattern",out var variant) &&
+
             variant is >=0 and <=15;
+
     }
     private static IReadOnlyList<Kernel.Tile> Pieces(int variant)
     {
@@ -93,6 +97,7 @@ internal static class UsCcssG6Unit1Lesson1TilingQuestions
             1 => [S(0,0),S(1,0),T(0,1,0),T(0,1,1),T(1,1,0),T(1,1,1)],
             2 => [S(0,0),S(0,1),T(1,0,0),T(1,0,1),T(1,1,0),T(1,0,1)],
             3 => [S(0,0),S(0,1),T(1,0,0),T(1,0,1),T(1,1,0)],
+
             // Six geometrically distinct complete 2x2 tilings (0,1,4-7).
             4 => [S(0,0),S(1,1),T(1,0,0),T(1,0,1),T(0,1,0),T(0,1,1)],
             5 => [S(1,0),S(0,1),T(0,0,0),T(0,0,1),T(1,1,0),T(1,1,1)],
@@ -108,6 +113,7 @@ internal static class UsCcssG6Unit1Lesson1TilingQuestions
             13 => [S(0,0),S(1,1),T(0,0,0),T(0,0,1),T(1,0,0),T(1,0,1)],
             14 => [S(0,0),S(1,1),T(-1,0,0),T(-1,0,1),T(1,0,0),T(1,0,1)],
             15 => [S(0,0),S(0,1),T(1,0,0),T(1,0,1),T(1,0,0),T(1,0,1)],
+
             _ => throw new InvalidOperationException("Invalid G6 pattern")
         };
     }
