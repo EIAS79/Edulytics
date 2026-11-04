@@ -2346,6 +2346,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.prism_surface_area_base_perimeter_height", "geometry.surface_area.rectangular_prism"],
             "G7_U07_L14_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U07 L15: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L15", "geometry.surface_area_volume",
+            "G7_DISTINGUISH_VOLUME_FROM_SURFACE_AREA_IN_CONTEXT",
+            ["usccss.g7.u07.prism_volume_base_height", "usccss.g7.u07.prism_surface_area_base_perimeter_height", "percentages.core.increase_decrease"],
+            "G7_U07_L15_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
