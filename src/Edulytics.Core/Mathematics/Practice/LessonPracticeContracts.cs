@@ -2530,6 +2530,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.probability_statistics.mixed", "supporting.statistics.collection_method", "statistics.center_spread.mean", "supporting.statistics.experimental_probability"],
             "G7_U08_L20_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U09 L01: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L01", "proportions.unit_rate",
+            "G7_RECIPE_SERVINGS_NUTRITION_AND_PROPORTIONAL_SCALING",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations", "percentages.core.of_quantity"],
+            "G7_U09_L01_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
