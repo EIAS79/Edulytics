@@ -17,7 +17,7 @@ test('right triangle and fractional scale area cases',()=>{
   const initial=4*3/2;assert.equal(initial,6);
   assert.deepEqual([1,2,3,.5,1/3].map(k=>area(initial,k)),[6,24,54,1.5,2/3]);
   assert.equal(area(initial,5),150);
-  assert.equal(area(initial,3/5),54/25);
+  assert.ok(Math.abs(area(initial,3/5)-54/25)<1e-12);
 });
 test('original L06 cooldown computes actual side/area factors',()=>{
   assert.equal(2*4,8);
