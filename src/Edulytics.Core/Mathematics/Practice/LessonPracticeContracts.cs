@@ -1545,6 +1545,17 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l03.unit_rates_reciprocal"],
             "OUR_IM_G7_2017_2019_U02_L03_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED",Version);
+        // OUR/IM G7 U02:L04 (2017-2019): equations y=kx from
+        // tables, unit-row interpretation, proportional and inverse
+        // constants, flight distance and fractional servings.
+        // Written equations, drawings and oral explanations need educator review.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L04", "proportions.equivalent_ratios",
+            "G7_TABLE_TO_PROPORTIONAL_EQUATION_AND_VARIABLE_DIRECTION",
+            ["usccss.g7.u02.l04.proportional_equations", "usccss.g7.u02.l03.unit_rates_reciprocal",
+             "usccss.g7.u02.l02.proportional_tables"],
+            "OUR_IM_G7_2017_2019_U02_L04_EQUATIONS_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
