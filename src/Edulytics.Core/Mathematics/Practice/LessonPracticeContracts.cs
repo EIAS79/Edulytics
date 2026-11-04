@@ -1619,6 +1619,18 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l08.classify_equations"],
             "OUR_IM_G7_2017_2019_U02_L10_GRAPH_AND_TEACHER_REVIEW",
             "READY_VERIFIED",Version);
+        // OUR/IM 2017-2019 G7 U02 L11: interpret points and (1,k) on
+        // proportional graphs, connect k to context, and write y=kx. The
+        // existing exact graph/equation/rate families already cover the
+        // machine-scorable mathematics; invented contexts and plotted graphs
+        // remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L11", "proportions.equivalent_ratios",
+            "G7_INTERPRET_GRAPH_POINT_ONE_K_CONTEXT_AND_EQUATION",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L11_GRAPH_INTERPRETATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
