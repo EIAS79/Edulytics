@@ -1805,6 +1805,15 @@ public static class LessonPracticeContractRegistry
              "supporting.fdp.percent_equivalent"],
             "G7_U04_L01_FLAGS_SCALE_AND_PERCENT_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U04 L02: unit rates with fractional and decimal quantities.
+        // Reuse the Grade 7 reciprocal unit-rate family and supporting fraction division.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L02", "proportions.unit_rate",
+            "G7_FRACTIONAL_RATIOS_AND_UNIT_RATES",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "supporting.fractions.divide_whole",
+             "supporting.fractions.multiply"],
+            "G7_U04_L02_FRACTIONAL_RATE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
