@@ -1379,6 +1379,8 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // OUR/IM 6-8 Grade 7 (2017-2019) U01:L01: exact polygon recognition;
+        // constructions, explanations and qualitative feedback need teacher review.
 
         // IM K5 2021 G5 U05:L26: source-aligned selected decimal
         // numeric subskills, with original drawings/reasoning TEACHER_REVIEW_REQUIRED.
@@ -2365,9 +2367,1289 @@ public static class LessonPracticeContractRegistry
             "geometry.similarity.scale_factor",
             "G7_EXACT_SCALED_COPY_CORRESPONDENCE",
             ["usccss.g7.u01.l01.scaled_copy_correspondence"],
-            "IM2021_G7_U01_L01_EXACT_AND_TEACHER_REVIEW",
+            "OUR_IM_G7_2017_2019_L01_EXACT_AND_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+        // OUR/IM 6-8 Grade 7 (2017-2019) U01:L02. Exact numeric
+        // correspondence and rational factor selections are supported by
+        // independently authored triangles. Drawing, angle tracing and
+        // explanations remain teacher reviewed, not machine graded.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L02",
+            "geometry.similarity.scale_factor",
+            "G7_EXACT_CORRESPONDING_PARTS_AND_SCALE",
+            [
+                "usccss.g7.u01.l02.corresponding_parts",
+                "usccss.g7.u01.l02.scale_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L02_AUTHORING_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM 6-8 Grade 7 U01:L03: source-grounded first-party scaling.
+        // The L02 rational scale-factor family is reused without duplication.
+        // Drawings and written critiques require teacher review.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L03",
+            "geometry.similarity.scale_factor",
+            "G7_EXACT_SCALED_L_DRAWING_AND_MULTIPLICATIVE_NOT_ADDITIVE",
+            [
+                "usccss.g7.u01.l03.scaled_l_polygon",
+                "usccss.g7.u01.l03.multiplicative_vs_additive",
+                "usccss.g7.u01.l02.scale_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L03_SOURCE_SCOPED_NUMERIC_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM 6-8 G7 U01:L04: any two corresponding points scale.
+        // The prior polygon oracle also checks angles/diagonals rather than
+        // confusing equal angles alone with a valid scaled copy.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L04",
+            "geometry.similarity.scale_factor",
+            "G7_HIDDEN_CORRESPONDING_DISTANCES_AND_ANGLES",
+            [
+                "usccss.g7.u01.l04.hidden_corresponding_distance",
+                "usccss.g7.u01.l04.angle_and_distance_scaling",
+                "usccss.g7.u01.l01.scaled_copy_correspondence"
+            ],
+            "OUR_IM_G7_2017_2019_L04_FIRST_PARTY_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM G7 U01:L05, 2017–2019: classify factor size and
+        // reciprocal direction; reuse precise L02 rational scale choices.
+        // Teacher supervises original physical card sort and puzzle.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L05",
+            "geometry.similarity.scale_factor",
+            "G7_FACTOR_SIZE_AND_INVERSE",
+            [
+                "usccss.g7.u01.l05.factor_size_and_reciprocal",
+                "usccss.g7.u01.l02.scale_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L05_SOURCE_SCOPED_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM G7 U01:L06 optional-but-canonical source: area is
+        // original area times squared scale factor. Teacher reviews block
+        // construction and original drawn triangles/parallelograms.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L06",
+            "geometry.area.scaled_figures",
+            "G7_EXACT_SQUARED_AREA_FACTOR_AND_PATTERN_BLOCKS",
+            ["usccss.g7.u01.l06.scaled_area_square_factor"],
+            "OUR_IM_G7_2017_2019_L06_AREA_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM G7 U01:L07 scale drawings: retain real-vs-drawn
+        // physical units; reuse earlier polygon distortion family for
+        // identifying non-scale diagrams. Actual ruler work is teacher-led.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L07",
+            "geometry.scale_drawings",
+            "G7_DRAWING_CM_TO_ACTUAL_METRES_UNITS",
+            [
+                "usccss.g7.u01.l07.drawing_actual_distance_units",
+                "usccss.g7.u01.l04.angle_and_distance_scaling"
+            ],
+            "OUR_IM_G7_2017_2019_L07_ORIGINAL_FIRST_PARTY_DIAGRAM",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM 6-8 G7 U01:L08 optional: measure road polylines
+        // separately from direct routes and convert minutes to hours.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L08",
+            "geometry.scale_drawings",
+            "G7_MAP_ROUTE_DISTANCE_SPEED_AND_TIME",
+            ["usccss.g7.u01.l08.map_route_rate_time"],
+            "OUR_IM_G7_2017_2019_L08_FIRST_PARTY_MAP_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM Grade 7 U01:L09, create and compare actual-vs-drawing
+        // lengths; physical construction and teacher rubric remain required.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L09",
+            "geometry.scale_drawings",
+            "G7_CREATE_SCALED_PLAN_AND_COMPARE_SCALES",
+            [
+                "usccss.g7.u01.l09.create_drawing_scale_lengths",
+                "usccss.g7.u01.l07.drawing_actual_distance_units"
+            ],
+            "OUR_IM_G7_2017_2019_L09_FIRST_PARTY_PLAN_AND_TEACHER",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM Grade 7 U01:L10 changing drawings: length ratios
+        // and square-area factors. Reuse exact L06 area family; human
+        // ruler work/drawing is a separately assessed task.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L10",
+            "geometry.scale_drawings",
+            "G7_NEW_DRAWING_SCALE_AREA_AND_MEASUREMENT_PRECISION",
+            [
+                "usccss.g7.u01.l10.change_scale_length_and_area",
+                "usccss.g7.u01.l06.scaled_area_square_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L10_FIRST_PARTY_AND_TEACHER",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM G7 U01:L11. A unitless scale is a same-unit
+        // ratio; source-specific models also require foot/inch conversion.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L11",
+            "geometry.scale_drawings",
+            "G7_UNITLESS_SCALE_AND_PHYSICAL_UNIT_CONVERSION",
+            [
+                "usccss.g7.u01.l11.unitless_scale_and_conversions",
+                "usccss.g7.u01.l05.factor_size_and_reciprocal"
+            ],
+            "OUR_IM_G7_2017_2019_L11_INDEPENDENT_DIAGRAM_TEACHER",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM Grade 7 2017-2019 U01:L12: equivalent customary/metric
+        // source ratios and squared actual areas; reuse the existing L11
+        // unitless exact engine and L06 exact area family.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L12",
+            "geometry.scale_drawings",
+            "G7_UNIT_CONVERSION_EQUIVALENT_SCALES_AND_REAL_AREA",
+            ["usccss.g7.u01.l12.equivalent_scales_area","usccss.g7.u01.l11.unitless_scale_and_conversions",
+             "usccss.g7.u01.l06.scaled_area_square_factor"],
+            "OUR_IM_G7_2017_2019_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // OUR/IM Grade 7 U01:L13 (2017-2019): teacher-scored floor-plan
+        // capstone with exact numeric scale choice and paper-fit checks.
+        // L09 and L06 bounded families are reused, NOT substituted for
+        // classroom measurement, peer critique or drawing evaluation.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L13",
+            "geometry.scale_drawings",
+            "G7_FLOOR_PLAN_SCALE_FIT_TILE_AREA_AND_TEACHER_REVIEW",
+            ["usccss.g7.u01.l13.floor_plan_scale_fit","usccss.g7.u01.l09.create_drawing_scale_lengths",
+             "usccss.g7.u01.l06.scaled_area_square_factor"],
+            "OUR_IM_G7_2017_2019_L13_ORIGINAL_PROJECT_AUTHORING",
+            "READY_VERIFIED",Version);
+        // OUR/IM 6-8 Grade7 U02:L01 (2017-2019) source: double number
+        // lines, ingredient ratios and curved scaled copies. A wrong generic
+        // single-ratio route cannot certify the drawing or mixture experiment.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L01",
+            "proportions.equivalent_ratios",
+            "G7_ORIGINAL_MIXTURE_DOUBLE_LINE_AND_UNIFORM_CRESCENT",
+            ["usccss.g7.u02.l01.ratio_mixtures_crescent"],
+            "OUR_IM_G7_2017_2019_U02_L01_FIRST_PARTY_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // OUR/IM 6–8 Grade7 U02:L02: exact proportion-table and inverse
+        // constants. The original towel source table has one anomalous
+        // row (2 cases,36 rolls); never silently rewrite it to 24.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L02",
+            "proportions.equivalent_ratios",
+            "G7_PROPORTIONAL_TABLES_CONSTANT_AND_SOURCE_ANOMALY",
+            ["usccss.g7.u02.l02.proportional_tables"],
+            "OUR_IM_G7_2017_2019_U02_L02_FIRST_PARTY_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // OUR/IM Grade7 U02:L03 (2017-2019): reciprocal cm/mm constants,
+        // speed versus pace and area-square conversion in source tables.
+        // Maps/drawings and contextual units need teacher evaluation.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L03",
+            "proportions.unit_rate",
+            "G7_UNIT_CONVERSION_REVERSE_CONSTANT_AND_SPEED",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // OUR/IM G7 U02:L04 (2017-2019): equations y=kx from
+        // tables, unit-row interpretation, proportional and inverse
+        // constants, flight distance and fractional servings.
+        // Written equations, drawings and oral explanations need educator review.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L04", "proportions.equivalent_ratios",
+            "G7_TABLE_TO_PROPORTIONAL_EQUATION_AND_VARIABLE_DIRECTION",
+            ["usccss.g7.u02.l04.proportional_equations", "usccss.g7.u02.l03.unit_rates_reciprocal",
+             "usccss.g7.u02.l02.proportional_tables"],
+            "OUR_IM_G7_2017_2019_U02_L04_EQUATIONS_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM Grade 7 U02:L05 (2017-2019): two equivalent equations
+        // for the same proportional relationship and reciprocal constants.
+        // Meter-centimeter, water flow, shrimp feeding and independent
+        // measurement tables require educator review for explanations.
+        // Reuse the L04 exact proportional-equation engine.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L05", "proportions.equivalent_ratios",
+            "G7_FORWARD_AND_REVERSE_PROPORTIONAL_EQUATIONS",
+            ["usccss.g7.u02.l05.reciprocal_proportional_equations", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L05_RECIPROCALS",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 Grade 7 U02 L06. Exact y=kx and inverse
+        // revenue, recycler mass/can, and market rates; context units,
+        // discrete counts and written algebraic reasoning teacher assessed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L06", "proportions.equivalent_ratios",
+            "G7_RATE_EQUATIONS_AND_INVERSE_TICKET_RECYCLE_COUNTS",
+            ["usccss.g7.u02.l06.concert_recycling_equations", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l05.reciprocal_proportional_equations"],
+            "OUR_IM_G7_2017_2019_U02_L06_SOURCE_AUTHORING",
+            "READY_VERIFIED", Version);
+        // OUR/IM G7 U02:L07 2017-2019. A finite table with equal
+        // quotients only COULD be proportional, whereas unequal
+        // quotients refute the claim. Qualitative taste and outdoor
+        // measurement contexts require human review.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L07", "proportions.equivalent_ratios",
+            "G7_TABLE_PROPORTIONALITY_CONSISTENT_VS_IMPOSSIBLE",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l02.proportional_tables"],
+            "OUR_IM_G7_2017_2019_U02_L07_SOURCE_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 Grade 7 U02 L08: compare equation forms.
+        // E=12s is proportional, A=6s^2 and V=s^3 are not;
+        // temperature has a nonzero intercept. Original tactile cube
+        // constructions and explanations require human assessment.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L08", "proportions.equivalent_ratios",
+            "G7_CLASSIFY_PROPORTIONAL_EQUATIONS_AFFINE_AND_NONLINEAR",
+            ["usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l07.table_proportional_or_not",
+             "usccss.g7.u02.l04.proportional_equations"],
+            "OUR_IM_G7_2017_2019_U02_L08_SOURCE_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02:L09 source information gaps and
+        // rate comparisons: no replacement for teacher-led role questions.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L09", "proportions.unit_rate",
+            "G7_MISSING_INFORMATION_CONSTANT_RATE_AND_RANKINGS",
+            ["usccss.g7.u02.l09.missing_info_rate_comparison", "usccss.g7.u02.l07.table_proportional_or_not",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L09_SOURCE_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // OUR/IM 2017-2019 G7 U02 L10: graph-origin/slope checks with
+        // a source-independent first-party coordinate diagram; physical
+        // plots, matching cards and explanations remain teacher assessed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L10", "proportions.equivalent_ratios",
+            "G7_GRAPH_ORIGIN_SLOPE_TABLE_COORDINATE_PROPORTIONS",
+            ["usccss.g7.u02.l10.graphs_origin_slope","usccss.g7.u02.l07.table_proportional_or_not",
+             "usccss.g7.u02.l08.classify_equations"],
+            "OUR_IM_G7_2017_2019_U02_L10_GRAPH_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // OUR/IM 2017-2019 G7 U02 L11: interpret points and (1,k) on
+        // proportional graphs, connect k to context, and write y=kx. The
+        // existing exact graph/equation/rate families already cover the
+        // machine-scorable mathematics; invented contexts and plotted graphs
+        // remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L11", "proportions.equivalent_ratios",
+            "G7_INTERPRET_GRAPH_POINT_ONE_K_CONTEXT_AND_EQUATION",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L11_GRAPH_INTERPRETATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02 L12: compare proportional graphs on
+        // identical axes, connect steepness with k, and reject a delayed-start
+        // graph as proportional to a shared clock. This extends the existing
+        // G7 graph engine instead of creating a parallel mechanism.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L12", "proportions.equivalent_ratios",
+            "G7_COMPARE_PROPORTIONAL_GRAPHS_SAME_AXES_RATE_AND_DELAYED_START",
+            ["usccss.g7.u02.l12.compare_same_axes_rates", "usccss.g7.u02.l10.graphs_origin_slope",
+             "usccss.g7.u02.l09.missing_info_rate_comparison"],
+            "OUR_IM_G7_2017_2019_U02_L12_GRAPH_COMPARISON_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02 L13: the same proportional
+        // relationship is graphed in two directions. Existing reciprocal-rate
+        // and proportional-equation families already score the exact core;
+        // graph construction, axis labels and interpretations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L13", "proportions.equivalent_ratios",
+            "G7_TWO_GRAPH_AXIS_REVERSAL_RECIPROCAL_RATE_AND_EQUATION",
+            ["usccss.g7.u02.l05.reciprocal_proportional_equations", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L13_RECIPROCAL_GRAPHS_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02 L14: connect context, table,
+        // graph and equation while distinguishing proportional from
+        // nonproportional relationships. Existing classification, table and
+        // graph families score only closed subresults; authored scenarios and
+        // poster critique stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L14", "proportions.equivalent_ratios",
+            "G7_FOUR_REPRESENTATIONS_CONTEXT_TABLE_GRAPH_EQUATION_CRITIQUE",
+            ["usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l07.table_proportional_or_not",
+             "usccss.g7.u02.l10.graphs_origin_slope"],
+            "OUR_IM_G7_2017_2019_U02_L14_FOUR_REPRESENTATIONS_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02 L15: open water-use modelling with
+        // assumptions, rate equations and reciprocal units. The local student
+        // edition has no separate L15 practice.html; selected first-party exact
+        // Practice reuses existing rate/equation families while investigation
+        // quality, evidence and conclusions remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L15", "proportions.unit_rate",
+            "G7_WATER_USE_ASSUMPTIONS_RATE_RECIPROCAL_EQUATIONS",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l05.reciprocal_proportional_equations",
+             "usccss.g7.u02.l09.missing_info_rate_comparison"],
+            "OUR_IM_G7_2017_2019_U02_L15_OPEN_MODEL_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L01: measurement scatter around
+        // proportional square side/diagonal/perimeter relationships and a
+        // nonproportional area relationship. Physical measurement and
+        // explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L01", "proportions.equivalent_ratios",
+            "G7_SQUARE_MEASUREMENT_APPROXIMATE_PROPORTION_AND_AREA",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l10.graphs_origin_slope",
+             "supporting.geometry.parallelogram_area"],
+            "OUR_IM_G7_2017_2019_U03_L01_MEASUREMENT_ERROR_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L02: defining circle features,
+        // radius/diameter measurement and construction. The general supporting
+        // engine is extended only for exact d=2r conversion; circle sorting,
+        // drawing and measurement quality remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L02", "supporting.geometry.circles_loci",
+            "G7_CIRCLE_DEFINITION_RADIUS_DIAMETER_AND_CONSTRUCTION",
+            ["usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L02_CIRCLE_CONSTRUCTION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L03: measured circumference and
+        // diameter, C/d near pi, proportional graph structure and inaccurate
+        // measurements. Existing exact circumference and table families cover
+        // closed subresults; physical measurement and explanation remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L03", "supporting.geometry.circles_loci",
+            "G7_CIRCUMFERENCE_DIAMETER_PI_PROPORTIONAL_MEASUREMENT",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation",
+             "usccss.g7.u02.l07.table_proportional_or_not"],
+            "OUR_IM_G7_2017_2019_U03_L03_CIRCUMFERENCE_MEASUREMENT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L04: apply circumference with
+        // exact pi or a context-appropriate approximation. Exact circle
+        // circumference and radius/diameter conversion are machine scored;
+        // composite boundaries and approximation-choice explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L04", "supporting.geometry.circles_loci",
+            "G7_APPLY_CIRCUMFERENCE_PI_APPROXIMATION_AND_COMPOSITE_BOUNDARY",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L04_CIRCUMFERENCE_APPLICATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L05: one wheel rotation travels
+        // one circumference, so rolling distance and rotation count are
+        // proportional. The existing supporting engine is extended with this
+        // exact product/division family; physical rolling observations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L05", "supporting.geometry.circles_loci",
+            "G7_WHEEL_CIRCUMFERENCE_ROTATIONS_DISTANCE_AND_SPEED",
+            ["usccss.g7.u03.l05.wheel_rotations_distance", "supporting.geometry.circle_circumference_pi_coefficient",
+             "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L05_WHEEL_ROLLING_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L06: estimate irregular areas by
+        // decomposing or enclosing them with familiar polygons. Existing
+        // compound, triangle and parallelogram area families score exact
+        // subregions; the choice and defensibility of an estimate stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L06", "geometry.perimeter_area",
+            "G7_ESTIMATE_IRREGULAR_AREAS_BY_POLYGON_DECOMPOSITION",
+            ["supporting.geometry.compound_area", "supporting.geometry.triangle_area",
+             "supporting.geometry.parallelogram_area"],
+            "OUR_IM_G7_2017_2019_U03_L06_AREA_ESTIMATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L07: estimate circle area, compare
+        // radius/diameter with area, and recognize that area grows with the
+        // square of the linear measure. Existing exact circle-area,
+        // radius/diameter, and proportional-table families cover closed subresults.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L07", "supporting.geometry.circles_loci",
+            "G7_EXPLORE_CIRCLE_AREA_RADIUS_SQUARED_AND_NONPROPORTIONAL_DIAMETER",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation",
+             "usccss.g7.u02.l07.table_proportional_or_not"],
+            "OUR_IM_G7_2017_2019_U03_L07_CIRCLE_AREA_ESTIMATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L08: rearrange circle sectors to
+        // motivate A=pi r^2 from half-circumference times radius. Existing
+        // exact circle-area, circumference and radius/diameter families score
+        // closed values; the geometric derivation and sector-limit explanation stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L08", "supporting.geometry.circles_loci",
+            "G7_DERIVE_CIRCLE_AREA_FROM_REARRANGED_SECTORS_AND_CIRCUMFERENCE",
+            ["supporting.geometry.circle_area_pi_coefficient", "supporting.geometry.circle_circumference_pi_coefficient",
+             "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L08_SECTOR_REARRANGEMENT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L09: exact full, half and quarter
+        // circle areas and composite regions. The existing supporting engine
+        // is extended only for half/quarter-disk pi coefficients; full circle
+        // and compound-area families are reused.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L09", "supporting.geometry.circles_loci",
+            "G7_APPLY_CIRCLE_AREA_PARTIAL_DISKS_AND_COMPOSITE_REGIONS",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
+             "supporting.geometry.compound_area"],
+            "OUR_IM_G7_2017_2019_U03_L09_COMPOSITE_CIRCLE_AREA_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L10: distinguish boundary length
+        // from covered area and select the appropriate circle measure in a
+        // context. Exact circumference, area and radius/diameter calculations
+        // are machine scored; measure selection and justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L10", "supporting.geometry.circles_loci",
+            "G7_DISTINGUISH_CIRCUMFERENCE_AND_AREA_IN_CONTEXT",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient",
+             "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L10_BOUNDARY_VS_COVERAGE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L11: open stained-glass design and
+        // cost modelling using circle area, composite regions and proportional
+        // price relationships. The local student edition has no separate
+        // practice.html; exact first-party Practice reuses existing families.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L11", "supporting.geometry.circles_loci",
+            "G7_STAINED_GLASS_CIRCLE_AREA_DESIGN_AND_COST_MODEL",
+            ["supporting.geometry.circle_area_pi_coefficient", "supporting.geometry.compound_area",
+             "usccss.g7.u02.l04.proportional_equations"],
+            "OUR_IM_G7_2017_2019_U03_L11_STAINED_GLASS_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L01: scaled rectangle dimensions plus fraction/percent
+        // of area. Reuse existing scale-factor and percent-equivalent families.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L01", "proportions.equivalent_ratios",
+            "G7_FLAGS_SCALE_DIMENSIONS_AND_PERCENT_AREA",
+            ["usccss.g7.u01.l02.scale_factor", "usccss.g7.u01.l01.scaled_copy_correspondence",
+             "supporting.fdp.percent_equivalent"],
+            "G7_U04_L01_FLAGS_SCALE_AND_PERCENT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L02: unit rates with fractional and decimal quantities.
+        // Reuse the Grade 7 reciprocal unit-rate family and supporting fraction division.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L02", "proportions.unit_rate",
+            "G7_FRACTIONAL_RATIOS_AND_UNIT_RATES",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "supporting.fractions.divide_whole",
+             "supporting.fractions.multiply"],
+            "G7_U04_L02_FRACTIONAL_RATE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L03: revisit constants of proportionality across
+        // rate, table, equation and context. Existing Grade 7 U02 families cover it.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L03", "proportions.equivalent_ratios",
+            "G7_REVISIT_PROPORTIONAL_CONSTANTS_TABLES_AND_EQUATIONS",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l02.proportional_tables"],
+            "G7_U04_L03_PROPORTIONAL_REVIEW_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L04: fractional increases/decreases and equivalent
+        // multiplicative representations. Extend the existing supporting exact
+        // Practice engine with one bounded fractional-change family.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L04", "percentages.core",
+            "G7_FRACTIONAL_INCREASE_DECREASE_AND_MULTIPLIER",
+            ["usccss.g7.u04.fractional_change", "supporting.fractions.multiply",
+             "usccss.g7.u02.l04.proportional_equations"],
+            "G7_U04_L04_FRACTIONAL_CHANGE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L05: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L05", "percentages.core",
+            "G7_DECIMAL_AND_FRACTION_CHANGE_FACTORS",
+            ["usccss.g7.u04.fractional_change", "supporting.fdp.percent_equivalent", "usccss.number.rational_terminating_decimal"],
+            "G7_U04_L05_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L06: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L06", "percentages.core",
+            "G7_PERCENT_INCREASE_DECREASE_TAPE_DIAGRAMS",
+            ["percentages.core.increase_decrease", "percentages.core.of_quantity", "usccss.g7.u04.fractional_change"],
+            "G7_U04_L06_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L07: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L07", "percentages.core",
+            "G7_RECOVER_ONE_HUNDRED_PERCENT_REFERENCE",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original"],
+            "G7_U04_L07_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L08: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L08", "percentages.core",
+            "G7_PERCENT_CHANGE_EQUATIONS_AND_REVERSE_MULTIPLIERS",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u02.l04.proportional_equations"],
+            "G7_U04_L08_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L09: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L09", "percentages.core",
+            "G7_NONWHOLE_AND_SUB_ONE_PERCENTAGES",
+            ["usccss.g7.u04.nonwhole_percent_of_quantity", "supporting.fdp.percent_equivalent"],
+            "G7_U04_L09_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L10: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L10", "percentages.core",
+            "G7_TAX_TIP_RATE_AMOUNT_AND_TOTAL",
+            ["usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u04.percent_rate_from_values", "percentages.core.increase_decrease"],
+            "G7_U04_L10_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L11: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L11", "percentages.core",
+            "G7_MARKUP_DISCOUNT_COMMISSION_AND_INTEREST",
+            ["usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity", "percentages.core.increase_decrease"],
+            "G7_U04_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L12: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L12", "percentages.core",
+            "G7_FIND_PERCENT_FROM_ORIGINAL_AND_CHANGED_VALUES",
+            ["usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original"],
+            "G7_U04_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L13: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L13", "percentages.core",
+            "G7_MEASUREMENT_ERROR_AS_PERCENT_OF_ACTUAL",
+            ["usccss.g7.u04.percent_error", "percentages.core.of_quantity"],
+            "G7_U04_L13_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L14: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L14", "percentages.core",
+            "G7_PERCENT_ERROR_CONTEXTS_AND_REVERSE_ESTIMATES",
+            ["usccss.g7.u04.percent_error", "usccss.g7.u04.reverse_percent_original"],
+            "G7_U04_L14_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L15: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L15", "percentages.core",
+            "G7_PERCENT_ERROR_INTERVALS_AND_TOLERANCE",
+            ["usccss.g7.u04.error_interval_bound", "usccss.g7.u04.percent_error"],
+            "G7_U04_L15_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U04 L16: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L16", "percentages.core",
+            "G7_POSE_AND_CRITIQUE_PERCENTAGE_PROBLEMS",
+            ["usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u04.reverse_percent_original"],
+            "G7_U04_L16_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L01: interpret and compare signed rational numbers in
+        // temperature/elevation contexts. Extend the existing supporting engine
+        // for exact rational comparison; plotting and contextual justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L01", "supporting.number.directed_operations",
+            "G7_INTERPRET_COMPARE_AND_PLOT_SIGNED_RATIONALS",
+            ["usccss.g7.u05.compare_signed_rational", "usccss.number.rational_terminating_decimal"],
+            "G7_U05_L01_SIGNED_NUMBER_INTERPRETATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L02: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L02", "supporting.number.directed_operations",
+            "G7_SIGNED_TEMPERATURE_CHANGES_NUMBER_LINE",
+            ["usccss.g7.u05.signed_rational_add_subtract", "supporting.number.negative_operation"],
+            "G7_U05_L02_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L03: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L03", "supporting.number.directed_operations",
+            "G7_SIGNED_ELEVATION_ADDITION_GENERALIZATION",
+            ["usccss.g7.u05.signed_rational_add_subtract", "usccss.g7.u05.compare_signed_rational"],
+            "G7_U05_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L04: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L04", "supporting.number.directed_operations",
+            "G7_MONEY_CREDITS_DEBTS_SIGNED_BALANCE",
+            ["usccss.g7.u05.signed_rational_add_subtract", "supporting.number.negative_operation"],
+            "G7_U05_L04_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L05: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L05", "supporting.number.directed_operations",
+            "G7_SUBTRACTION_AS_ADDING_THE_OPPOSITE",
+            ["usccss.g7.u05.signed_rational_add_subtract"],
+            "G7_U05_L05_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L06: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L06", "supporting.number.directed_operations",
+            "G7_SIGNED_DIFFERENCE_VERSUS_DISTANCE",
+            ["usccss.g7.u05.signed_rational_add_subtract", "usccss.g7.u05.signed_rational_distance"],
+            "G7_U05_L06_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L07: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L07", "supporting.number.directed_operations",
+            "G7_SIGNED_GAINS_LOSSES_AND_NET_CHANGE",
+            ["usccss.g7.u05.signed_rational_add_subtract", "usccss.g7.u05.signed_rational_distance"],
+            "G7_U05_L07_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L08: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L08", "supporting.fractions.multiply_divide",
+            "G7_SIGNED_POSITION_VELOCITY_AND_DISPLACEMENT",
+            ["usccss.number.signed_rate_displacement", "usccss.number.signed_rational_multiply"],
+            "G7_U05_L08_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L09: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L09", "supporting.fractions.multiply_divide",
+            "G7_SIGNED_RATIONAL_MULTIPLICATION_SIGN_RULE",
+            ["usccss.number.signed_rational_multiply", "usccss.number.signed_rate_displacement"],
+            "G7_U05_L09_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L10: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L10", "supporting.fractions.multiply_divide",
+            "G7_SIGNED_RATIONAL_MULTIPLICATION_FLUENCY",
+            ["usccss.number.signed_rational_multiply"],
+            "G7_U05_L10_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L11: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L11", "supporting.fractions.multiply_divide",
+            "G7_SIGNED_RATIONAL_DIVISION_AND_RECIPROCAL",
+            ["usccss.number.signed_rational_divide", "usccss.g7.u05.signed_rational_distance"],
+            "G7_U05_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L12: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L12", "supporting.fractions.multiply_divide",
+            "G7_NEGATIVE_RATES_AND_SIGNED_DISPLACEMENT",
+            ["usccss.number.signed_rate_displacement", "usccss.number.signed_rational_multiply", "usccss.number.signed_rational_divide"],
+            "G7_U05_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L13: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L13", "supporting.number.directed_operations",
+            "G7_RATIONAL_EXPRESSIONS_FOUR_OPERATIONS",
+            ["usccss.g7.u05.signed_rational_add_subtract", "usccss.number.signed_rational_multiply", "usccss.number.signed_rational_divide"],
+            "G7_U05_L13_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L14: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L14", "supporting.number.directed_operations",
+            "G7_MULTI_STEP_RATIONAL_NUMBER_CONTEXTS",
+            ["usccss.g7.u05.signed_rational_add_subtract", "usccss.number.signed_rational_multiply", "usccss.number.signed_rational_divide", "usccss.number.signed_rate_displacement"],
+            "G7_U05_L14_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L15: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L15", "supporting.algebra.equations",
+            "G7_ONE_STEP_RATIONAL_EQUATIONS_INVERSE_OPERATIONS",
+            ["usccss.g7.u05.rational_linear_equation", "usccss.g7.u05.signed_rational_add_subtract", "usccss.number.signed_rational_divide"],
+            "G7_U05_L15_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L16: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L16", "supporting.algebra.equations",
+            "G7_SIGNED_CONTEXTS_TO_RATIONAL_EQUATIONS",
+            ["usccss.g7.u05.rational_linear_equation", "usccss.number.signed_rate_displacement", "usccss.g7.u05.signed_rational_add_subtract"],
+            "G7_U05_L16_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U05 L17: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L17", "percentages.core",
+            "G7_STOCK_GAINS_LOSSES_AND_PERCENT_CHANGES",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.percent_rate_from_values", "usccss.g7.u05.signed_rational_add_subtract"],
+            "G7_U05_L17_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L01: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L01", "supporting.algebra.equations",
+            "G7_NONPROPORTIONAL_RELATIONSHIPS_AND_UNKNOWN_QUANTITIES",
+            ["usccss.g7.u02.l08.classify_equations", "supporting.algebra.equations.mixed"],
+            "G7_U06_L01_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L02: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L02", "algebra.linear.solve",
+            "G7_TAPE_DIAGRAMS_FOR_PX_PLUS_Q_AND_P_X_PLUS_Q",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed"],
+            "G7_U06_L02_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L03: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L03", "algebra.linear.solve",
+            "G7_MATCH_TAPE_DIAGRAMS_AND_EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expand"],
+            "G7_U06_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L04: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L04", "algebra.linear.solve",
+            "G7_SOLVE_AX_PLUS_B_EQUALS_C_FROM_CONTEXT",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expressions.mixed"],
+            "G7_U06_L04_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L05: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L05", "algebra.linear.solve",
+            "G7_SOLVE_P_X_PLUS_Q_EQUALS_R",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expand"],
+            "G7_U06_L05_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L06: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L06", "algebra.linear.solve",
+            "G7_DISTINGUISH_AX_PLUS_B_FROM_A_X_PLUS_B",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expand"],
+            "G7_U06_L06_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L07: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L07", "algebra.linear.solve",
+            "G7_BALANCED_HANGER_LINEAR_EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c"],
+            "G7_U06_L07_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L08: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L08", "algebra.linear.solve",
+            "G7_HANGERS_PARENTHESES_AND_DISTRIBUTION",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expand"],
+            "G7_U06_L08_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L09: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L09", "algebra.linear.solve",
+            "G7_LINEAR_EQUATIONS_WITH_NEGATIVE_VALUES",
+            ["algebra.linear.ax_plus_b_equals_c", "usccss.g7.u05.signed_rational_add_subtract"],
+            "G7_U06_L09_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L10: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L10", "algebra.linear.solve",
+            "G7_COMPARE_VALID_LINEAR_EQUATION_SOLUTION_PATHS",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expand"],
+            "G7_U06_L10_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L11: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L11", "algebra.linear.solve",
+            "G7_CONTEXT_TO_LINEAR_EQUATION_AND_SOLUTION",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed"],
+            "G7_U06_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L12: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L12", "algebra.linear.solve",
+            "G7_PERCENT_CHANGE_WORD_PROBLEMS_WITH_EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c", "percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original"],
+            "G7_U06_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L14: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L14", "algebra.linear.inequality.solve",
+            "G7_CONTEXTUAL_LINEAR_INEQUALITY_CONSTRAINTS",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "G7_U06_L14_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L16: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L16", "algebra.linear.inequality.solve",
+            "G7_MATCH_CONTEXTS_TO_INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "G7_U06_L16_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L17: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L17", "algebra.linear.inequality.solve",
+            "G7_MODEL_REAL_WORLD_CONSTRAINTS_WITH_INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c"],
+            "G7_U06_L17_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L18: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L18", "supporting.algebra.expressions",
+            "G7_SUBTRACTION_AS_ADDITION_AND_DISTRIBUTION",
+            ["supporting.algebra.expand", "supporting.algebra.simplify"],
+            "G7_U06_L18_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L19: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L19", "supporting.algebra.expressions",
+            "G7_EXPAND_FACTOR_WITH_SIGNED_COEFFICIENTS",
+            ["supporting.algebra.expand", "supporting.algebra.factor"],
+            "G7_U06_L19_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L20: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L20"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L20", "supporting.algebra.expressions",
+            "G7_COMBINE_LIKE_TERMS_AND_TEST_EQUIVALENCE",
+            ["supporting.algebra.simplify", "supporting.algebra.expressions.mixed"],
+            "G7_U06_L20_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L21: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L21"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L21", "supporting.algebra.expressions",
+            "G7_COMBINE_TERMS_WITH_SUBTRACTION_AND_DISTRIBUTION",
+            ["supporting.algebra.simplify", "supporting.algebra.expand"],
+            "G7_U06_L21_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L22: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L22"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L22", "supporting.algebra.expressions",
+            "G7_EQUIVALENT_EXPRESSIONS_FEWER_TERMS",
+            ["supporting.algebra.simplify", "supporting.algebra.expand", "supporting.algebra.factor"],
+            "G7_U06_L22_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U06 L23: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L23"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L23", "supporting.algebra.expressions",
+            "G7_APPLY_EQUIVALENT_EXPRESSIONS_TO_COMPARE_OPTIONS",
+            ["supporting.algebra.expressions.mixed", "supporting.algebra.simplify"],
+            "G7_U06_L23_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L01: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L01", "geometry.angles.relationships",
+            "G7_RIGHT_STRAIGHT_FULL_TURN_AND_ADJACENT_ANGLES",
+            ["supporting.geometry.angle_around_point", "supporting.geometry.angle_classify", "geometry.angles.supplementary"],
+            "G7_U07_L01_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L02: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L02", "geometry.angles.relationships",
+            "G7_COMPLEMENTARY_AND_SUPPLEMENTARY_ADJACENT_ANGLES",
+            ["usccss.g7.u07.complementary_angle", "geometry.angles.supplementary"],
+            "G7_U07_L02_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L03: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L03", "geometry.angles.relationships",
+            "G7_VERTICAL_COMPLEMENTARY_AND_SUPPLEMENTARY_ANGLE_PAIRS",
+            ["usccss.g7.u07.vertical_angle", "usccss.g7.u07.complementary_angle", "geometry.angles.supplementary"],
+            "G7_U07_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L04: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L04", "geometry.angles.relationships",
+            "G7_MULTI_STEP_UNKNOWN_ANGLE_EQUATIONS",
+            ["geometry.angles.algebraic_supplementary", "algebra.linear.ax_plus_b_equals_c", "usccss.g7.u07.vertical_angle"],
+            "G7_U07_L04_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L05: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L05", "geometry.angles.relationships",
+            "G7_CRITIQUE_AND_SOLVE_ANGLE_EQUATIONS",
+            ["geometry.angles.algebraic_supplementary", "algebra.linear.ax_plus_b_equals_c", "usccss.g7.u07.complementary_angle"],
+            "G7_U07_L05_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L06: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L06", "geometry.triangles.construct",
+            "G7_POLYGON_CONSTRUCTION_AND_SIDE_CONSTRAINTS",
+            ["usccss.g7.u07.triangle_side_feasible", "supporting.geometry.angle_around_point"],
+            "G7_U07_L06_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L07: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L07", "geometry.triangles.construct",
+            "G7_TRIANGLE_INEQUALITY_AND_MULTIPLE_CONSTRUCTIONS",
+            ["usccss.g7.u07.triangle_side_feasible", "usccss.g7.u07.complementary_angle"],
+            "G7_U07_L07_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L08: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L08", "geometry.congruence.identify",
+            "G7_TRIANGLE_UNIQUENESS_FROM_COMMON_MEASURES",
+            ["geometry.congruence.identify_criterion", "usccss.g7.u07.triangle_side_feasible"],
+            "G7_U07_L08_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L09: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L09", "geometry.triangles.construct",
+            "G7_TRIANGLE_ANGLE_SUM_AND_UNIQUENESS",
+            ["geometry.congruence.identify_criterion", "usccss.g7.u07.triangle_side_feasible", "geometry.angles.supplementary"],
+            "G7_U07_L09_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L10: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L10", "geometry.triangles.construct",
+            "G7_TRIANGLE_CONSTRUCTION_SSS_ASA_AND_AAA",
+            ["geometry.congruence.identify_criterion", "usccss.g7.u07.triangle_side_feasible"],
+            "G7_U07_L10_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L11: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L11", "geometry.solids.cross_sections",
+            "G7_CROSS_SECTIONS_OF_PRISMS_AND_PYRAMIDS",
+            ["usccss.g7.u07.parallel_base_cross_section_sides", "supporting.geometry.angle_classify"],
+            "G7_U07_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L12: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L12", "geometry.volume",
+            "G7_RIGHT_PRISM_VOLUME_BASE_AREA_TIMES_HEIGHT",
+            ["usccss.g7.u07.prism_volume_base_height", "supporting.geometry.cuboid_volume"],
+            "G7_U07_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L13: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L13", "geometry.volume",
+            "G7_DECOMPOSE_BASE_AREA_THEN_FIND_PRISM_VOLUME",
+            ["usccss.g7.u07.prism_volume_base_height", "supporting.geometry.compound_area", "supporting.geometry.triangle_area"],
+            "G7_U07_L13_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L14: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L14", "geometry.surface_area",
+            "G7_RIGHT_PRISM_SURFACE_AREA_FROM_BASE_AND_LATERAL_FACES",
+            ["usccss.g7.u07.prism_surface_area_base_perimeter_height", "geometry.surface_area.rectangular_prism"],
+            "G7_U07_L14_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L15: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L15", "geometry.surface_area_volume",
+            "G7_DISTINGUISH_VOLUME_FROM_SURFACE_AREA_IN_CONTEXT",
+            ["usccss.g7.u07.prism_volume_base_height", "usccss.g7.u07.prism_surface_area_base_perimeter_height", "percentages.core.increase_decrease"],
+            "G7_U07_L15_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L16: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L16", "geometry.surface_area_volume",
+            "G7_APPLY_PRISM_VOLUME_AND_SURFACE_AREA_TO_DESIGN_CONTEXTS",
+            ["usccss.g7.u07.prism_volume_base_height", "usccss.g7.u07.prism_surface_area_base_perimeter_height", "supporting.geometry.compound_area"],
+            "G7_U07_L16_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U07 L17: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L17", "geometry.solids.construction",
+            "G7_BUILD_AND_COMBINE_TRIANGULAR_PRISM_NETS",
+            ["usccss.g7.u07.triangle_side_feasible", "usccss.g7.u07.prism_volume_base_height", "usccss.g7.u07.prism_surface_area_base_perimeter_height"],
+            "G7_U07_L17_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L01: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L01", "supporting.probability_statistics.core",
+            "G7_INFER_UNKNOWN_COMPOSITION_FROM_RANDOM_DRAWS",
+            ["supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
+            "G7_U08_L01_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L02: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L02", "probability.theoretical.core",
+            "G7_INTERPRET_PROBABILITY_AS_FRACTION_DECIMAL_PERCENT",
+            ["probability.theoretical.simple_event", "supporting.fdp.percent_equivalent"],
+            "G7_U08_L02_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L03: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L03", "supporting.probability.sample_space",
+            "G7_LIST_SAMPLE_SPACE_AND_CALCULATE_SIMPLE_PROBABILITY",
+            ["supporting.probability.sample_space_count", "probability.theoretical.simple_event"],
+            "G7_U08_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L04: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L04", "supporting.statistics.experimental_probability",
+            "G7_LONG_RUN_EXPERIMENTAL_PROBABILITY_AND_EXPECTED_FREQUENCY",
+            ["supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
+            "G7_U08_L04_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L05: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L05", "supporting.statistics.experimental_probability",
+            "G7_NON_EQUALLY_LIKELY_OUTCOMES_FROM_EXPERIMENTAL_DATA",
+            ["supporting.statistics.experimental_probability", "probability.theoretical.simple_event"],
+            "G7_U08_L05_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L06: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L06", "supporting.probability_statistics.core",
+            "G7_DESIGN_VALID_SIMULATION_FOR_STATED_PROBABILITY",
+            ["probability.theoretical.simple_event", "supporting.statistics.experimental_probability"],
+            "G7_U08_L06_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L07: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L07", "supporting.probability.events",
+            "G7_MULTI_STEP_SIMULATION_AND_EMPIRICAL_EVENT_PROBABILITY",
+            ["supporting.statistics.experimental_probability", "supporting.probability.independent_product", "supporting.probability.sample_space_count"],
+            "G7_U08_L07_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L08: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L08", "supporting.probability.sample_space",
+            "G7_ORGANIZE_MULTI_STEP_SAMPLE_SPACES",
+            ["supporting.probability.sample_space_count", "supporting.probability.independent_product"],
+            "G7_U08_L08_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L09: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L09", "supporting.probability.events",
+            "G7_COMPOUND_PROBABILITY_FROM_EQUALLY_LIKELY_OUTCOMES",
+            ["supporting.probability.independent_product", "probability.theoretical.complement", "supporting.probability.sample_space_count"],
+            "G7_U08_L09_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L10: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L10", "supporting.probability_statistics.core",
+            "G7_CRITIQUE_AND_DESIGN_SIMULATIONS",
+            ["probability.theoretical.simple_event", "supporting.statistics.experimental_probability", "supporting.probability.sample_space_count"],
+            "G7_U08_L10_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L11: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L11", "statistics.center_spread.core",
+            "G7_COMPARE_GROUPS_USING_CENTER_AND_SPREAD",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "supporting.statistics.compare_range"],
+            "G7_U08_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L12: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L12", "supporting.statistics.data_collection",
+            "G7_SAMPLE_VERSUS_POPULATION_AND_INFERENCE",
+            ["supporting.statistics.collection_method", "statistics.center_spread.mean"],
+            "G7_U08_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L13: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L13", "supporting.statistics.data_collection",
+            "G7_REPRESENTATIVE_SAMPLE_AND_SAMPLING_BIAS",
+            ["supporting.statistics.collection_method", "supporting.statistics.compare_range"],
+            "G7_U08_L13_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L14: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L14", "supporting.statistics.data_collection",
+            "G7_RANDOM_SAMPLE_EQUAL_SELECTION_CHANCE",
+            ["supporting.statistics.collection_method", "supporting.probability.sample_space_count"],
+            "G7_U08_L14_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L15: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L15", "statistics.center_spread.core",
+            "G7_ESTIMATE_POPULATION_CENTER_AND_COMPARE_VARIABILITY",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "supporting.statistics.quartile", "supporting.statistics.compare_range"],
+            "G7_U08_L15_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L16: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L16", "supporting.statistics.experimental_probability",
+            "G7_SAMPLE_PROPORTION_AS_POPULATION_ESTIMATE",
+            ["supporting.statistics.experimental_probability", "supporting.statistics.collection_method"],
+            "G7_U08_L16_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L17: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L17", "statistics.center_spread.core",
+            "G7_SAMPLING_VARIABILITY_AND_SAMPLE_MEAN_DISTRIBUTION",
+            ["statistics.center_spread.mean", "supporting.statistics.compare_range", "supporting.statistics.collection_method"],
+            "G7_U08_L17_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L18: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L18", "statistics.center_spread.core",
+            "G7_COMPARE_POPULATIONS_WITH_SAMPLE_CENTER_AND_VARIATION",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "supporting.statistics.compare_range"],
+            "G7_U08_L18_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L19: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L19", "statistics.center_spread.core",
+            "G7_INFORMATION_GAP_POPULATION_COMPARISON",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "supporting.statistics.compare_range", "supporting.statistics.collection_method"],
+            "G7_U08_L19_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U08 L20: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L20"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L20", "supporting.probability_statistics.core",
+            "G7_INTEGRATE_RANDOM_SAMPLING_PROBABILITY_AND_INFERENCE",
+            ["supporting.probability_statistics.mixed", "supporting.statistics.collection_method", "statistics.center_spread.mean", "supporting.statistics.experimental_probability"],
+            "G7_U08_L20_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L01: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L01", "proportions.unit_rate",
+            "G7_RECIPE_SERVINGS_NUTRITION_AND_PROPORTIONAL_SCALING",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations", "percentages.core.of_quantity"],
+            "G7_U09_L01_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L02: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L02", "proportions.unit_rate",
+            "G7_RECIPE_COST_PER_SERVING_AND_SPREADSHEET_FORMULAS",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations", "supporting.fractions.divide_whole"],
+            "G7_U09_L02_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L03: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L03", "proportions.equivalent_ratios",
+            "G7_RESTAURANT_FIXED_VARIABLE_COSTS_AND_PROPORTIONALITY",
+            ["usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l04.proportional_equations", "percentages.core.increase_decrease"],
+            "G7_U09_L03_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L04: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L04", "geometry.scale.construction",
+            "G7_RESTAURANT_SCALE_DRAWING_AREA_AND_LAYOUT",
+            ["usccss.g7.u01.l02.scale_factor", "supporting.geometry.compound_area", "usccss.g7.u01.l06.scaled_area_square_factor"],
+            "G7_U09_L04_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L05: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L05", "proportions.unit_rate",
+            "G7_DOT_HOUSING_AND_POPULATION_DENSITY",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l02.proportional_tables"],
+            "G7_U09_L05_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L06: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L06", "proportions.unit_rate",
+            "G7_FERMI_ESTIMATION_ASSUMPTIONS_AND_REASONABLE_PRECISION",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations", "supporting.reasoning.multistep"],
+            "G7_U09_L06_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L07: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L07", "supporting.algebra.expressions",
+            "G7_CULMINATING_EXPRESSIONS_EQUATIONS_AND_EQUIVALENT_FORMS",
+            ["supporting.algebra.simplify", "supporting.algebra.expand", "supporting.algebra.equations.mixed"],
+            "G7_U09_L07_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L08: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L08", "percentages.core",
+            "G7_MEASUREMENT_ESTIMATE_MAXIMUM_PERCENT_ERROR",
+            ["usccss.g7.u04.percent_error", "usccss.g7.u04.error_interval_bound"],
+            "G7_U09_L08_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L09: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L09", "percentages.core",
+            "G7_PROPAGATED_MEASUREMENT_ERROR_AREA_AND_VOLUME",
+            ["usccss.g7.u04.percent_error", "supporting.geometry.compound_area", "supporting.geometry.cuboid_volume"],
+            "G7_U09_L09_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L10: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L10", "proportions.unit_rate",
+            "G7_LONG_DISTANCE_MEASUREMENT_METHODS_AND_ERROR",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u04.percent_error"],
+            "G7_U09_L10_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L11: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L11", "geometry.circles_loci",
+            "G7_TRUNDLE_WHEEL_CIRCUMFERENCE_AND_DISTANCE_PER_ROTATION",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "usccss.g7.u03.l05.wheel_rotations_distance"],
+            "G7_U09_L11_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L12: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L12", "geometry.circles_loci",
+            "G7_TRUNDLE_WHEEL_ROTATIONS_TO_LONG_DISTANCE",
+            ["usccss.g7.u03.l05.wheel_rotations_distance", "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "G7_U09_L12_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // Grade 7 U09 L13: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L13", "geometry.scale.construction",
+            "G7_5K_ROUTE_SCALE_MAP_TRUNDLE_AND_PROPORTIONAL_REASONING",
+            ["usccss.g7.u01.l02.scale_factor", "usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations"],
+            "G7_U09_L13_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+        // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
+        // units and structured 2x2 coverage separately; actual drawing,
+        // student explanation and the eight-point rubric are teacher reviewed.
+
 
         // IM 2021 Grade 6 U01:L01: reuse released two-family tiling route.
 
@@ -2386,6 +3668,7 @@ public static class LessonPracticeContractRegistry
             "IM2021_G6_U01_L01_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+
 
 
 

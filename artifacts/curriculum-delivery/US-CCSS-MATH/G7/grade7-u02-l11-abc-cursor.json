@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U02:L11",
+  "ordinal": 24,
+  "title": "Interpreting Graphs of Proportional Relationships",
+  "teacherSource": [
+    "07_Grade_7_OUR_IM/2/11/preparation.html",
+    "07_Grade_7_OUR_IM/2/11/index.html"
+  ],
+  "studentSource": [
+    "07_Grade_7_OUR_IM_Student/2/11/index.html",
+    "07_Grade_7_OUR_IM_Student/2/11/practice.html"
+  ],
+  "sourceHashesSha256": {
+    "teacherPreparation": "c2f1e77b427aebf5257b67e0d437379a11fafc747c43910c3c4e66401468befd",
+    "teacherLesson": "22091c202c990e7162ca6da7ec349a5911c19dee4c1130056ee691d744160107",
+    "studentLesson": "af38056d7e88eee92a37b677f0c0fcd2a7f65c7cf689ff9d9212e5d74c1a61e2",
+    "studentPractice": "98bba4240f6d123d83e97e25bae4e4dc68bda62f949f65391677e6b8d7112770"
+  },
+  "edition": "OUR_IM_G7_2017_2019_NO_ACCESSIM_V360",
+  "sourceGoals": [
+    "Draw a proportional graph from one non-origin point and the origin",
+    "Identify k from a graph, especially the point (1,k)",
+    "Interpret graph points and the constant rate in context"
+  ],
+  "sourceActivities": [
+    "invent and label a situation for an unlabeled proportional graph",
+    "interpret the distance-time point, unit-rate point, equation and changed pace",
+    "interpret another constant-rate context",
+    "practice subscription and mixture graphs with exact k and equations"
+  ],
+  "reused": [
+    "existing U02 L11 Rich V2 teaching body",
+    "usccss.g7.u02.l10.graphs_origin_slope",
+    "usccss.g7.u02.l04.proportional_equations",
+    "usccss.g7.u02.l03.unit_rates_reciprocal",
+    "existing exact dispatcher"
+  ],
+  "newEngine": false,
+  "newFirstPartySVG": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u02-l11-point-k-context.svg",
+  "firstPartyCooldown": "tank filling from one point: k, (1,k), equation, second point, labeled graph and contextual interpretation",
+  "A_STATUS": "LOCAL_SOURCE_TEACHER_STUDENT_PRACTICE_COMPARED",
+  "B_STATUS": "AUTHORING_FIRST_PARTY_GRAPH_INTERPRETATION_AND_COOLDOWN",
+  "C_STATUS": "EXISTING_EXACT_GRAPH_EQUATION_RATE_FAMILIES_SELECTED",
+  "READY_FOR_STAGE_D": true,
+  "D_STATUS": "NOT_RUN",
+  "testExecution": "AUTHORED_NOT_RUN",
+  "tests": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7Unit2Lesson11GraphInterpretationTests.cs",
+    "tests/academic-us-ccss-g7-u02-l11-abc-fixture.test.cjs"
+  ],
+  "humanBoundary": "INVENTED_CONTEXT_DRAWN_GRAPH_AXIS_LABELS_AND_WRITTEN_INTERPRETATION_TEACHER_REVIEW",
+  "originalGatedCoolDown": "NOT_VERIFIED_NOT_COPIED",
+  "closedAt": "2026-11-04; elapsed not measured",
+  "nextLesson": "PED:US-CCSS-MATH:G7:U02:L12"
+}

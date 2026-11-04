@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L05",
+  "title": "The Size of the Scale Factor",
+  "originalSourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/5/preparation.html",
+    "07_Grade_7_OUR_IM/1/5/index.html",
+    "07_Grade_7_OUR_IM_Student/1/5/index.html",
+    "07_Grade_7_OUR_IM_Student/1/5/practice.html"
+  ],
+  "sourceRights": "2017–2019 OUR/IM CC BY 4.0. Edulytiks uses original numeric/shape cards, not the publisher's master.",
+  "sourceGoal": "Classify factors 0<k<1, k=1, k>1 and reverse scaling with reciprocal 1/k",
+  "sourceParity": [
+    {
+      "section": "5.1 Number Talk",
+      "equivalent": "All five original missing-factor identities and reciprocal explanation"
+    },
+    {
+      "section": "5.2 Card Sort",
+      "equivalent": "Eight original uniform-scale rectangle cards in reciprocal pairs and three size classes; original publisher 13-card master not copied"
+    },
+    {
+      "section": "5.3 Scaling a Puzzle (optional)",
+      "equivalent": "Original six-piece 2x2 square arrangement, half-size copies and inverse rebuilding"
+    },
+    {
+      "section": "5.4 Missing Figure, Factor or Copy (optional)",
+      "equivalent": "First-party 4x2 to 6x3 construction, forward/reverse scale and original drawings"
+    }
+  ],
+  "firstPartyView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "sourceGradeOnlySvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+  "cooldownOriginal": "NOT_VERIFIED_GATED",
+  "cooldownEdulytiks": "Original k=3/4 copy of 8x4 rectangle, 6x3 copy, inverse 4/3 and teacher-reviewed sketch with angle/length evidence",
+  "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "A_STATUS": "A_CLOSED_LOCAL_SOURCE_4_ACTIVITIES_AND_PRACTICE_REVIEWED",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_CARD_PUZZLE_AND_INVERSE_COPY",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_L05_FACTOR_SIZE_AND_RECIPROCAL_PRACTICE",
+  "PracticeStrategy": "REUSE_OR_EXTEND_EXISTING_FAMILY_WITH_SINGLE_WRITER_ISSUE_592",
+  "PracticeAcceptance": [
+    "k=1 unchanged",
+    "0<k<1 shrink",
+    "k>1 expand",
+    "reverse factor 1/k",
+    "malformed k<=0 must be rejected",
+    "teacher review for original measured drawing"
+  ],
+  "testFile": "tests/academic-us-ccss-g7-u01-l05-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "READY_FOR_STAGE_D": true,
+  "D_STATUS": "NOT_RUN",
+  "gradePatch": "9fc0bc53a2c90a9d57aa9a5f855ed58b4a9ea0d1",
+  "testPatch": "de1d83edb43a1da6edbb82f5e6986bb04fcc8c29",
+  "blockedOwner": null,
+  "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L06",
+  "closedAt": "2026-11-04 (authoring checkpoint; elapsed not measured)",
+  "closureSHA": null,
+  "stageABCClosure_20261104": {
+    "sourceScope": "LOCAL_OUR_IM_G7_2017_2019_NO_ACCESSIM_NO_V360",
+    "read": "07_Grade_7_OUR_IM/1/5/preparation.html; 1/5/index.html; 07_Grade_7_OUR_IM_Student/1/5/index.html; 1/5/practice.html",
+    "sourceElements": "5.1 five missing-factor number talk; 5.2 card sort smaller/unchanged/larger and reciprocal pairs; 5.3 optional six-piece half-scale puzzle; 5.4 reconstruct unknown original from inverse factor; practice",
+    "preserved": "First-party eight scale cards, existing six-piece puzzle and student instructions, teacher rubric, Grade7 SVG and Rich V2",
+    "reuse": "L02 rational scale factor family selected along with new L05 factor-size classification and inverse reciprocal family",
+    "family": "usccss.g7.u01.l05.factor_size_and_reciprocal",
+    "teacherOnly": "Drawings, puzzle physical reassembly, oral/written reasoning and teacher-reviewed Cool-down; no automatic scoring or persistence",
+    "publisherGatedCooldown": "NOT_VERIFIED; independent Edulytiks replacement retained",
+    "tests": "AUTHORED_NOT_RUN",
+    "StageD": "NOT_RUN",
+    "next": "PED:US-CCSS-MATH:G7:U01:L06"
+  }
+}

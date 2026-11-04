@@ -108,6 +108,70 @@ internal static partial class SupportingPracticeCompletionEngine
     }
 
     // Remaining Grade 6/7 subclauses: these families are exact and independently solved.
+    private static Problem G7SignedRationalAddSubtract(Random r, int scale)
+    {
+        var d1 = r.Next(2, 7 + scale);
+        var d2 = r.Next(2, 7 + scale);
+        var n1 = r.Next(1, 5 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        var n2 = r.Next(1, 5 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        var operation = r.Next(2) == 0 ? 1 : -1;
+        var symbol = operation == 1 ? "+" : "-";
+        return P("usccss.g7.u05.signed_rational_add_subtract",
+            $"Calculate ({n1}/{d1}) {symbol} ({n2}/{d2}). Give the rational number in simplest form.",
+            "Use a common denominator, combine signed numerators, then simplify. For subtraction, adding the opposite gives the same result.",
+            ("n1", n1), ("d1", d1), ("n2", n2), ("d2", d2), ("operation", operation));
+    }
+
+    private static Problem G7CompareSignedRational(Random r, int scale)
+    {
+        var d1 = r.Next(2, 7 + scale);
+        var d2 = r.Next(2, 7 + scale);
+        var n1 = r.Next(1, 6 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        var n2 = r.Next(1, 6 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        return P("usccss.g7.u05.compare_signed_rational",
+            $"Compare {n1}/{d1} and {n2}/{d2}. Enter -1 if the first is less, 0 if equal, or 1 if the first is greater.",
+            "Compare exact rational values by a common denominator or cross-products; on a number line the value farther right is greater.",
+            ("n1", n1), ("d1", d1), ("n2", n2), ("d2", d2));
+    }
+
+    private static Problem G7SignedRationalDistance(Random r, int scale)
+    {
+        var d1 = r.Next(2, 7 + scale);
+        var d2 = r.Next(2, 7 + scale);
+        var n1 = r.Next(1, 7 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        var n2 = r.Next(1, 7 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        return P("usccss.g7.u05.signed_rational_distance",
+            $"Find the distance between {n1}/{d1} and {n2}/{d2} on a number line.",
+            "Distance is the absolute value of the difference, so it is never negative.",
+            ("n1", n1), ("d1", d1), ("n2", n2), ("d2", d2));
+    }
+
+    private static Problem G7RationalLinearEquation(Random r, int scale)
+    {
+        var mode = r.Next(0, 2);
+        var aD = r.Next(2, 6 + scale);
+        var aN = r.Next(1, 5 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        if (mode == 0)
+        {
+            var xD = r.Next(2, 6 + scale);
+            var xN = r.Next(1, 5 + scale) * (r.Next(2) == 0 ? -1 : 1);
+            var rightD = aD * xD;
+            var rightN = xN * aD + aN * xD;
+            return P("usccss.g7.u05.rational_linear_equation",
+                $"Solve x + ({aN}/{aD}) = {rightN}/{rightD}. Give x in simplest form.",
+                "Undo the addition by subtracting the same rational number from both sides.",
+                ("mode", mode), ("aN", aN), ("aD", aD), ("rightN", rightN), ("rightD", rightD));
+        }
+
+        var solution = r.Next(1, 6 + scale) * (r.Next(2) == 0 ? -1 : 1);
+        var rightN2 = aN * solution;
+        var rightD2 = aD;
+        return P("usccss.g7.u05.rational_linear_equation",
+            $"Solve ({aN}/{aD})x = {rightN2}/{rightD2}. Give x in simplest form.",
+            "Undo multiplication by multiplying both sides by the reciprocal of the nonzero coefficient.",
+            ("mode", mode), ("aN", aN), ("aD", aD), ("rightN", rightN2), ("rightD", rightD2));
+    }
+
     private static Problem UsExponentProductValue(Random r, int scale)
     {
         var baseNumber = r.Next(2, 10 + scale * 3);

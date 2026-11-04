@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">The same proportional relationship with reversed axes</title>
+  <desc id="desc">Two first-party coordinate diagrams. The left graph places minutes on x and parts on y and includes point 3 comma 18, giving 6 parts per minute. The right graph reverses axes and includes point 18 comma 3, giving one sixth minute per part.</desc>
+  <rect width="760" height="360" fill="white"/>
+  <g transform="translate(55,25)">
+    <line x1="35" y1="260" x2="315" y2="260" stroke="currentColor" stroke-width="3"/>
+    <line x1="35" y1="260" x2="35" y2="20" stroke="currentColor" stroke-width="3"/>
+    <line x1="35" y1="260" x2="285" y2="55" stroke="currentColor" stroke-width="4"/>
+    <circle cx="285" cy="55" r="6" fill="currentColor"/>
+    <text x="230" y="45" font-size="17">(3,18)</text>
+    <text x="140" y="310" font-size="18">minutes t</text>
+    <text x="-135" y="10" font-size="18" transform="rotate(-90)">parts p</text>
+    <text x="95" y="90" font-size="18">p = 6t</text>
+  </g>
+  <g transform="translate(415,25)">
+    <line x1="35" y1="260" x2="315" y2="260" stroke="currentColor" stroke-width="3"/>
+    <line x1="35" y1="260" x2="35" y2="20" stroke="currentColor" stroke-width="3"/>
+    <line x1="35" y1="260" x2="285" y2="55" stroke="currentColor" stroke-width="4"/>
+    <circle cx="285" cy="55" r="6" fill="currentColor"/>
+    <text x="225" y="45" font-size="17">(18,3)</text>
+    <text x="145" y="310" font-size="18">parts p</text>
+    <text x="-145" y="10" font-size="18" transform="rotate(-90)">minutes t</text>
+    <text x="85" y="90" font-size="18">t = p/6</text>
+  </g>
+</svg>

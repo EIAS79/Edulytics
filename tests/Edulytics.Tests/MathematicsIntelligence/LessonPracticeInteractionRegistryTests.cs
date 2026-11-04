@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            1564, // Previous interactions plus Grade 6 registrations; retain all prior routes.
+            1609, // 1564 previous interactions plus 45 distinct Grade 7 routes.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(

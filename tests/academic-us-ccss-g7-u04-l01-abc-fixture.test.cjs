@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U04 L01 first-party Cool-down is authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit4PercentagePractice.cshtml');for(const s of ['data-g7-u04-l01','1.1 Preserve','1.2 Percent','Cool-down','Teacher review'])assert.ok(v.includes(s));});
+test('U04 L01 arithmetic witnesses',()=>{assert.equal(6*(15/10),9);assert.equal((3*4)/(6*10)*100,20);});
+test('U04 L01 A-C authored not run',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u04-l01-abc-cursor.json'));assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.newEngine,false);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

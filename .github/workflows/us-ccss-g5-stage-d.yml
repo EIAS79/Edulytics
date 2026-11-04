@@ -104,6 +104,10 @@ jobs:
             stage-d-results/grade5-original-2021-source-review-queue.json
           if-no-files-found: error
   teaching-body-delta:
+    # The exact 107-field owner-consent delta is scoped to Grade 5 PR #596.
+    # Other Grade changes still run G5 regression gates, but cannot be
+    # required to contain someone else's Grade 5 content delta.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.number == 596
     name: grade5-main-candidate-104-source-delta-evidence
     runs-on: ubuntu-24.04
     timeout-minutes: 15
@@ -215,6 +219,12 @@ jobs:
           test "$NODE_SHARDS" = success
           test "$DOTNET" = success
           test "$SOURCE" = success
-          test "$MAIN_PARITY" = success
+          # Grade 5 owner-consent exact-delta gate belongs only to PR #596.
+          # On other PRs the job is explicitly skipped while shared G5 runtime tests run.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event.pull_request.number }}" = "596" ]; then
+            test "$MAIN_PARITY" = success
+          else
+            test "$MAIN_PARITY" = skipped
+          fi
           node tools/curriculum/g5-first-party-digital-release.cjs
           node --test tests/academic-us-ccss-g5-first-party-digital-release.test.cjs

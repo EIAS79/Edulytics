@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U03 L09 partial/composite circle area authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit3CircleFigures.cshtml');for(const s of ['data-g7-u03-l09','9.1 Partial','9.2 Composite','9.3 Recover','Cool-down'])assert.ok(v.includes(s));});
+test('U03 L09 arithmetic witnesses',()=>{assert.equal(6*6/2,18);assert.equal(6*6/4,9);assert.equal(18*14,252);});
+test('U03 L09 records Extend not New Engine',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u03-l09-abc-cursor.json'));assert.equal(c.extendedFamily,'usccss.g7.u03.l09.circle_fraction_area_pi_coefficient');assert.equal(c.newEngine,false);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

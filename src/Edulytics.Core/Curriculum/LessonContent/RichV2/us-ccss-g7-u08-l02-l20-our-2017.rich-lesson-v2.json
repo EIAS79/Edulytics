@@ -1,0 +1,2737 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v3",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L02",
+      "CultureCode": "en",
+      "Title": "Chance Experiments",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Conduct chance experiments with repeated trials, organize outcomes and compare relative frequencies. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/2/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Place chance events on an impossible-to-certain scale. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/2/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "A trial is one run of a random experiment.",
+          "Rule": "A trial is one run of a random experiment.",
+          "Example": "0.35."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "A tally records counts of each possible result.",
+          "Rule": "A tally records counts of each possible result.",
+          "Example": "1/6."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Relative frequency is occurrence count divided by total trials.",
+          "Rule": "Relative frequency is occurrence count divided by total trials.",
+          "Example": "Blue."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "A spinner shows red 7 times in 20 spins. Estimated red frequency?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Count 7 red.",
+            "Divide 7/20=0.35.",
+            "Express 35%."
+          ],
+          "Answer": "0.35.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "A die is rolled 30 times and 5 sixes occur. Rate?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 5/30.",
+            "Reduce to 1/6.",
+            "State an observed relative frequency."
+          ],
+          "Answer": "1/6.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "A bag shows blue 12 times, red 8 times in 20 replacements. Which is observed more likely?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Blue 12/20=0.6.",
+            "Red 8/20=0.4.",
+            "Compare 0.6>0.4."
+          ],
+          "Answer": "Blue.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Chance Experiments",
+          "Question": "A fair bag has 3 blue balls, 2 red balls, and no green balls; a ball is drawn without looking. Classify drawing green, blue, or red and explain all categories.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Five equally likely balls are in the bag.",
+            "P(green)=0 so impossible.",
+            "P(blue)=3/5=0.6, so more likely than not; P(red)=2/5=0.4, so less likely than not.",
+            "Arrange the event likelihoods on a 0-to-1 number line, stating one event certain (a ball is blue or red)."
+          ],
+          "Answer": "Green impossible; blue likely; red unlikely; blue-or-red certain.",
+          "Check": "Teacher checks probability number line and language nuance."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confusing an observed frequency with guaranteed next-trial outcome.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "A trial is one run of a random experiment.",
+        "A tally records counts of each possible result.",
+        "Relative frequency is occurrence count divided by total trials."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Relative frequency from random trials",
+          "Description": "Labeled first-party illustrative data for Chance Experiments. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Trial description",
+              "Cells": [
+                "Spinner red",
+                "Die roll six",
+                "Bag green"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Successes",
+              "Cells": [
+                "7",
+                "5",
+                "12"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Trials",
+              "Cells": [
+                "20",
+                "30",
+                "20"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Observed fraction",
+              "Cells": [
+                "7/20",
+                "1/6",
+                "3/5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L03",
+      "CultureCode": "en",
+      "Title": "What Are Probabilities?",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Explain probability as a number from 0 to 1, identifying impossible and certain events. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/3/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: List sample spaces and compare simple games. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/3/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "0 means impossible; 1 means certain.",
+          "Rule": "0 means impossible; 1 means certain.",
+          "Example": "1/6."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "For equally likely simple outcomes, P(E)=favorable/total.",
+          "Rule": "For equally likely simple outcomes, P(E)=favorable/total.",
+          "Example": "0."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Complementary event probabilities sum to 1.",
+          "Rule": "Complementary event probabilities sum to 1.",
+          "Example": "2/5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Fair die: probability of 5?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "There are 6 equally likely faces.",
+            "One is favorable.",
+            "Compute 1/6."
+          ],
+          "Answer": "1/6.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Fair die: probability of a value greater than 6?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Possible results are 1 to 6.",
+            "None exceeds 6.",
+            "Probability 0."
+          ],
+          "Answer": "0.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Bag has 3 red, 2 blue counters. Probability of not red?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Total 5.",
+            "Not red=2 blue.",
+            "Compute 2/5."
+          ],
+          "Answer": "2/5.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — What Are Probabilities?",
+          "Question": "One game pays if a fair coin is heads, another if an equally likely six-sided number cube shows a multiple of 3. Which has greater win probability?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Coin sample space {H,T}, with 1 winning outcome out of 2.",
+            "Cube sample space {1,2,3,4,5,6}, winning multiples {3,6}.",
+            "P(coin win)=1/2, P(cube win)=2/6=1/3.",
+            "Choose coin game for greater chance and explain equal-likelihood assumptions."
+          ],
+          "Answer": "Coin game, 1/2 versus 1/3.",
+          "Check": "Teacher reviews correctly enumerated sample spaces and game choice."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying equally likely arithmetic to a biased or unknown experiment.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "0 means impossible; 1 means certain.",
+        "For equally likely simple outcomes, P(E)=favorable/total.",
+        "Complementary event probabilities sum to 1."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Theoretical event probabilities",
+          "Description": "Labeled first-party illustrative data for What Are Probabilities?. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Event",
+              "Cells": [
+                "Roll 5",
+                "Roll >6",
+                "Pick not-red"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Favorable",
+              "Cells": [
+                "1",
+                "0",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Equally likely outcomes",
+              "Cells": [
+                "6",
+                "6",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Probability",
+              "Cells": [
+                "1/6",
+                "0",
+                "2/5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L04",
+      "CultureCode": "en",
+      "Title": "Estimating Probabilities Through Repeated Experiments",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Use empirical frequencies to estimate probability and explain the effect of increased trials. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/4/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Run repeated simulated games and record empirical probability convergence. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/4/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Experimental P is successes/trials.",
+          "Rule": "Experimental P is successes/trials.",
+          "Example": "0.4."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Random fluctuations persist in small samples.",
+          "Rule": "Random fluctuations persist in small samples.",
+          "Example": "0.48."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Larger samples often improve stability, without guaranteeing exact values.",
+          "Rule": "Larger samples often improve stability, without guaranteeing exact values.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "A toss gives 8 heads in 20 trials. Estimate P(head).",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Divide 8/20.",
+            "Simplify 2/5.",
+            "Write decimal 0.4."
+          ],
+          "Answer": "0.4.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "A second series has 48 heads in 100 tosses. Estimate.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Divide 48/100.",
+            "Express decimal.",
+            "Compare 0.48 to 0.5."
+          ],
+          "Answer": "0.48.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "One trial gives head. Is P(head)=1 for every future toss?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Observed 1/1=1.",
+            "Only one trial was run.",
+            "Do not equate frequency to true probability."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Probabilities Through Repeated Experiments",
+          "Question": "A spinner has four equal sectors, one marked win. In an illustrative first 20 spins it wins 7 times, in the next 80 wins 17 times. Compute both block frequencies and cumulative result.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "First 20 win fraction=7/20=0.35.",
+            "Next 80 win fraction=17/80=0.2125.",
+            "Combined 100 spins contain 24 wins, frequency=24/100=0.24.",
+            "Compare with theoretical 1/4=0.25 and discuss random variation without claiming convergence is guaranteed."
+          ],
+          "Answer": "Empirical cumulative 0.24 after 100 trials, close to theoretical 0.25.",
+          "Check": "Teacher evaluates actual trial log/graph; provided observations are explicitly hypothetical."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a small relative frequency as the exact theoretical probability.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Experimental P is successes/trials.",
+        "Random fluctuations persist in small samples.",
+        "Larger samples often improve stability, without guaranteeing exact values."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Estimating from repeated experiments",
+          "Description": "Labeled first-party illustrative data for Estimating Probabilities Through Repeated Experiments. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Experiment",
+              "Cells": [
+                "Coin sequence A",
+                "Coin sequence B"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Heads",
+              "Cells": [
+                "8",
+                "48"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Tosses",
+              "Cells": [
+                "20",
+                "100"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Observed frequency",
+              "Cells": [
+                "0.40",
+                "0.48"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L05",
+      "CultureCode": "en",
+      "Title": "More Estimating Probabilities",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Compare theoretical probability with observed variation and understand why more trials can reduce noise. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/5/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Group spinner experiments and compare identical sample spaces with different probabilities. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/5/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Theoretical expectation uses a specified equal-likelihood model.",
+          "Rule": "Theoretical expectation uses a specified equal-likelihood model.",
+          "Example": "1/2."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Relative frequency varies around the theoretical probability.",
+          "Rule": "Relative frequency varies around the theoretical probability.",
+          "Example": "0.1."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "More trials tend to produce closer estimates on average but are not guaranteed.",
+          "Rule": "More trials tend to produce closer estimates on average but are not guaranteed.",
+          "Example": "0.01."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Fair coin: theoretical heads probability?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Two equally likely outcomes.",
+            "One favorable.",
+            "Compute 1/2."
+          ],
+          "Answer": "1/2.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "20 flips show 12 heads. Difference from 1/2?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Observed 12/20=0.6.",
+            "Theoretical 0.5.",
+            "Difference=0.1."
+          ],
+          "Answer": "0.1.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "200 flips show 102 heads. Difference from 1/2?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Observed 102/200=0.51.",
+            "Compare 0.5.",
+            "Difference=0.01."
+          ],
+          "Answer": "0.01.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — More Estimating Probabilities",
+          "Question": "Two spinners both have labels 1,2,3. Spinner A has three equal sectors, while B has six equal sectors with labels 1,1,1,2,2,3. Compare probability of landing on 3.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Both distinct-label sample spaces are {1,2,3}.",
+            "A has one of three equal sectors labeled 3, so P_A(3)=1/3.",
+            "B has one of six equal sectors labeled 3, so P_B(3)=1/6.",
+            "Draw sector counts, record 10 real trial outcomes for each, and discuss deviation from those theoretical values."
+          ],
+          "Answer": "Same labels but different P(3): 1/3 versus 1/6.",
+          "Check": "Teacher reviews proportional sector diagram and actual observation logs."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming 200 flips must be exactly 100 heads.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Theoretical expectation uses a specified equal-likelihood model.",
+        "Relative frequency varies around the theoretical probability.",
+        "More trials tend to produce closer estimates on average but are not guaranteed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Compare theoretical and empirical coin rates",
+          "Description": "Labeled first-party illustrative data for More Estimating Probabilities. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Basis",
+              "Cells": [
+                "Fair theoretical",
+                "20 flips / 12 heads",
+                "200 flips / 102 heads"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Head fraction",
+              "Cells": [
+                "1/2",
+                "12/20",
+                "102/200"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Decimal",
+              "Cells": [
+                "0.50",
+                "0.60",
+                "0.51"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L06",
+      "CultureCode": "en",
+      "Title": "Estimating Probabilities Using Simulation",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Design random-digit simulations to model events with a known probability and summarize results. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/6/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Construct simulations for a stated real-world probability. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/6/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "A valid simulation assigns equally likely symbols consistently.",
+          "Rule": "A valid simulation assigns equally likely symbols consistently.",
+          "Example": "Digits 0,1,2."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Successful trials must match the modeled event.",
+          "Rule": "Successful trials must match the modeled event.",
+          "Example": "0.325."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Repeat trials and calculate simulated rate.",
+          "Rule": "Repeat trials and calculate simulated rate.",
+          "Example": "1/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Use random digits 0–9 to model a 30% chance. Which digits succeed?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Ten equally likely digits.",
+            "Assign 0,1,2 as successes.",
+            "Count 3/10."
+          ],
+          "Answer": "Digits 0,1,2.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "In 40 simulated events, 13 are successful. Estimate probability.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Divide 13/40.",
+            "Compute 0.325.",
+            "Express as 32.5%."
+          ],
+          "Answer": "0.325.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Simulate 1-in-4 chance with equally likely outcomes 1–4. Mark 1 successful. What is theoretical P?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "One marked outcome.",
+            "Four equal options.",
+            "Divide 1/4."
+          ],
+          "Answer": "1/4.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Probabilities Using Simulation",
+          "Question": "An imaginary delivery succeeds on 30% of days. Propose a fair-digit simulation and demonstrate how to record 12 trials without suggesting a made-up sample was actually run.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Choose uniform random digits 0–9; designate 0,1,2 as successes.",
+            "Each digit is equally likely, so success probability 3/10=30%.",
+            "For a real experiment use an actual 10-sector equal spinner, RNG or physical digit slips and record each trial.",
+            "Review why choosing 3 of 6 faces would incorrectly simulate 50%, not 30%."
+          ],
+          "Answer": "Three winning digits out of 10 give P(success)=0.30.",
+          "Check": "Teacher checks simulation mapping and actual trial provenance."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assigning three of six outcomes to simulate 30% without accounting for 50% implied chance.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "A valid simulation assigns equally likely symbols consistently.",
+        "Successful trials must match the modeled event.",
+        "Repeat trials and calculate simulated rate."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Probability-matched simulation symbols",
+          "Description": "Labeled first-party illustrative data for Estimating Probabilities Using Simulation. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Simulation",
+              "Cells": [
+                "Success on digits 0,1,2",
+                "Observed success in trials",
+                "1 of 4 equal spinner sectors"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Successful/total",
+              "Cells": [
+                "3/10",
+                "13/40",
+                "1/4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Probability or frequency",
+              "Cells": [
+                "0.30",
+                "0.325",
+                "0.25"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L07",
+      "CultureCode": "en",
+      "Title": "Simulating Multi-step Experiments",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Model sequential independent random events and estimate joint probabilities from simulation. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/7/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Simulate multi-day events with at least a threshold of successes. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/7/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Independent event probabilities multiply.",
+          "Rule": "Independent event probabilities multiply.",
+          "Example": "1/4."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "A trial needs to include all steps in the simulated process.",
+          "Rule": "A trial needs to include all steps in the simulated process.",
+          "Example": "1/16."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Repeat full sequences rather than isolated outcomes.",
+          "Rule": "Repeat full sequences rather than isolated outcomes.",
+          "Example": "0.225."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Two fair coins: probability of two heads?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "P(H first)=1/2.",
+            "P(H second)=1/2 independent.",
+            "Multiply 1/2×1/2."
+          ],
+          "Answer": "1/4.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "A spinner with 4 equal sectors is spun twice. Probability of sector 1 both times?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Per spin P=1/4.",
+            "Multiply 1/4×1/4.",
+            "Compute 1/16."
+          ],
+          "Answer": "1/16.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Of 80 full simulated two-step games, 18 succeed. Estimate chance.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Divide 18/80.",
+            "Simplify 9/40.",
+            "Compute 0.225."
+          ],
+          "Answer": "0.225.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Simulating Multi-step Experiments",
+          "Question": "A fictional weather model has independent rain probability 1/3 each day. For a six-day festival, what is a valid simulation for whether rain occurs at least 3 days?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Use a fair three-sector spinner (rain,not,not) once per day.",
+            "Record six separate spins per simulated festival week.",
+            "Classify a week as rain-threshold met only when 3 or more of six days show rain.",
+            "Repeat many independent weeks and divide successful-week counts by total simulated weeks to estimate probability."
+          ],
+          "Answer": "Use a six-spin-per-trial, 1/3-per-day simulation with success count at least 3.",
+          "Check": "Teacher checks authentic multi-step trial protocol and classification; no fabricated empirical estimate."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Simulating just the first step and calling its frequency the entire two-step probability.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Independent event probabilities multiply.",
+        "A trial needs to include all steps in the simulated process.",
+        "Repeat full sequences rather than isolated outcomes."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Two-step simulations require complete events",
+          "Description": "Labeled first-party illustrative data for Simulating Multi-step Experiments. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Model",
+              "Cells": [
+                "Two independent coins",
+                "Two independent 4-sector spins",
+                "80 simulated compound trials"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Success case",
+              "Cells": [
+                "HH",
+                "Sector 1 on both",
+                "18 full successes"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Joint rate",
+              "Cells": [
+                "1/4",
+                "1/16",
+                "18/80 = 0.225"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L08",
+      "CultureCode": "en",
+      "Title": "Keeping Track of All Possible Outcomes",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Enumerate sample spaces systematically with tables and organized lists. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/8/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Create systematic outcome lists, two-way tables and tree diagrams. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/8/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "A sample space lists all possible outcomes.",
+          "Rule": "A sample space lists all possible outcomes.",
+          "Example": "{HH,HT,TH,TT}."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Ordered outcomes distinguish first and second events.",
+          "Rule": "Ordered outcomes distinguish first and second events.",
+          "Example": "6."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "A table or tree prevents missing or duplicated cases.",
+          "Rule": "A table or tree prevents missing or duplicated cases.",
+          "Example": "1/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Two coin flips: list outcomes.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "First H or T.",
+            "Second H or T for each first.",
+            "List HH,HT,TH,TT."
+          ],
+          "Answer": "{HH,HT,TH,TT}.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Roll a die 1–3 then flip coin. Number of outcomes?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Three first-stage results.",
+            "Two second-stage outcomes.",
+            "Multiply 3×2."
+          ],
+          "Answer": "6.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "From two coin flips, probability of exactly one head?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "List HH,HT,TH,TT.",
+            "Favorable HT and TH.",
+            "Compute 2/4."
+          ],
+          "Answer": "1/2.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Keeping Track of All Possible Outcomes",
+          "Question": "A snack includes one of 2 sandwiches, one of 3 fruit choices and one of 2 drinks. How many distinct snack bundles are possible?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Multiplication principle gives 2×3×2=12 unique triples.",
+            "Draw a three-level tree: 2 first branches, 3 for each first branch, then 2 drinks each.",
+            "List representative choices systematically and check no duplicates or missing bundles.",
+            "Verify a two-way/intermediate table also gives 12."
+          ],
+          "Answer": "12 unique complete snack combinations.",
+          "Check": "Teacher assesses original tree/table completeness, labels and combinatorial reasoning."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dropping ordered alternatives HT and TH as if they were identical sequence outcomes.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "A sample space lists all possible outcomes.",
+        "Ordered outcomes distinguish first and second events.",
+        "A table or tree prevents missing or duplicated cases."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Organize the compound sample space",
+          "Description": "Labeled first-party illustrative data for Keeping Track of All Possible Outcomes. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "First coin",
+              "Cells": [
+                "H",
+                "T"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Second H result",
+              "Cells": [
+                "HH",
+                "TH"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Second T result",
+              "Cells": [
+                "HT",
+                "TT"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Exactly one H cases",
+              "Cells": [
+                "HT",
+                "TH"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L09",
+      "CultureCode": "en",
+      "Title": "Multi-step Experiments",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Calculate probabilities for compound events from sample spaces and simple trees. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/9/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Evaluate compound spinner events from explicit sample spaces. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/9/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Multiplication rule applies to independent steps.",
+          "Rule": "Multiplication rule applies to independent steps.",
+          "Example": "3/4."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "A compound event may contain multiple acceptable paths.",
+          "Rule": "A compound event may contain multiple acceptable paths.",
+          "Example": "1/4."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Add probabilities of disjoint successful paths.",
+          "Rule": "Add probabilities of disjoint successful paths.",
+          "Example": "1/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Two fair coins: P(at least one head)?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Possible HH,HT,TH,TT.",
+            "Three favorable.",
+            "Compute 3/4."
+          ],
+          "Answer": "3/4.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Fair die followed by coin: P(even then heads)?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "P(even)=3/6=1/2.",
+            "P(heads)=1/2.",
+            "Multiply to 1/4."
+          ],
+          "Answer": "1/4.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Two coin flips: P(exactly one tail)?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Favorable HT,TH.",
+            "Total four sequences.",
+            "Compute 2/4."
+          ],
+          "Answer": "1/2.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Multi-step Experiments",
+          "Question": "Independently spin one of four equally likely colors R,B,G,Y and one of five equally likely numbers 1–5. Find P(blue and odd number).",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "There are 4×5=20 equally likely color-number pairs.",
+            "Blue has one possible color and odd numbers are 1,3,5 (three).",
+            "Favorable pairs are (B,1),(B,3),(B,5), exactly three.",
+            "Probability 3/20=0.15; verify with an enumerated table or tree."
+          ],
+          "Answer": "P(blue and odd)=3/20.",
+          "Check": "Teacher checks independence assumption and an authentic joint sample-space table."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying individual path probabilities when an event has several disjoint winning paths.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Multiplication rule applies to independent steps.",
+        "A compound event may contain multiple acceptable paths.",
+        "Add probabilities of disjoint successful paths."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sample-space probability for compound games",
+          "Description": "Labeled first-party illustrative data for Multi-step Experiments. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Event",
+              "Cells": [
+                "At least one head in 2 flips",
+                "Even die then heads",
+                "Exactly one tail in 2 flips"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Favorable/total",
+              "Cells": [
+                "3/4",
+                "1/4",
+                "2/4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Probability",
+              "Cells": [
+                "0.75",
+                "0.25",
+                "0.50"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L10",
+      "CultureCode": "en",
+      "Title": "Designing Simulations",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Choose, justify and critique simulation devices for complex chance experiments. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/10/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Design a realistic multi-step simulation with a compound success threshold. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/10/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Simulation outcomes must match target probabilities.",
+          "Rule": "Simulation outcomes must match target probabilities.",
+          "Example": "HH."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Independence must match the real process.",
+          "Rule": "Independence must match the real process.",
+          "Example": "Digits 0 and 1."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Run full sequences and report limits.",
+          "Rule": "Run full sequences and report limits.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "A game succeeds if a fair coin lands heads twice. Which simulated sequences succeed?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Model two independent H/T flips.",
+            "List four equally likely sequences.",
+            "Only HH succeeds."
+          ],
+          "Answer": "HH.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Simulate a 1/5 probability with equally likely digits 0–9. Which two digits could represent success?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Ten equal digit symbols.",
+            "Choose any two, e.g. 0,1.",
+            "Compute 2/10=1/5."
+          ],
+          "Answer": "Digits 0 and 1.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "A designer marks three faces of a fair die as success for an event with target probability 1/3. Is it valid?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Success probability 3/6=1/2.",
+            "Target 1/3.",
+            "Compare 1/2≠1/3."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Designing Simulations",
+          "Question": "A fictional experiment produces a rare trait with probability 1/4 per offspring; a group requires at least 2 successes among 5 independent offspring. Design, but do not falsely claim to execute, a coin simulation.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Assign success to HH from two fair independent coins; HH has P=1/4.",
+            "For one family simulation perform five independent two-coin trials.",
+            "Count how many HH outcomes occur; record the family as successful if count≥2.",
+            "Repeat families; use successful-family fraction as empirical probability and describe sampling variability."
+          ],
+          "Answer": "Valid simulation: 5 two-coin trials per family with HH as success; threshold 2 of 5.",
+          "Check": "Teacher checks physical/simulated trial data and genuine empirical estimate."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using a chance device with different success likelihood than the modeled event.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Simulation outcomes must match target probabilities.",
+        "Independence must match the real process.",
+        "Run full sequences and report limits."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check whether simulations are faithful",
+          "Description": "Labeled first-party illustrative data for Designing Simulations. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Target event",
+              "Cells": [
+                "Probability 1/5",
+                "Probability 1/3",
+                "Three marked faces of die"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Device construction",
+              "Cells": [
+                "2 of 10 digits",
+                "2 of 6 faces",
+                "3 of 6 faces"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Actual probability",
+              "Cells": [
+                "1/5",
+                "1/3",
+                "1/2 (wrong for 1/3)"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L11",
+      "CultureCode": "en",
+      "Title": "Comparing Groups",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Compare two group distributions using mean, median and distributional context. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/11/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare group centers and spread using graphical displays. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/11/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Mean=sum/count.",
+          "Rule": "Mean=sum/count.",
+          "Example": "B mean 4 points higher."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Median is middle value in sorted data.",
+          "Rule": "Median is middle value in sorted data.",
+          "Example": "Both mean 4, variation differs."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Similar averages can hide different variation.",
+          "Rule": "Similar averages can hide different variation.",
+          "Example": "10."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Group A scores 3,4,5; B scores 7,8,9. Compare means.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "A mean=(3+4+5)/3=4.",
+            "B mean=(7+8+9)/3=8.",
+            "Difference 8−4=4."
+          ],
+          "Answer": "B mean 4 points higher.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Group X 2,4,6 and Y 1,4,7. Do they have same mean?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "X sum 12/3=4.",
+            "Y sum 12/3=4.",
+            "Compare spreads."
+          ],
+          "Answer": "Both mean 4, variation differs.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Data 1,3,10,12,15: median?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Order already sorted.",
+            "Five values; third is middle.",
+            "Read 10."
+          ],
+          "Answer": "10.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Comparing Groups",
+          "Question": "Two equal-sized groups have fictional measurements A={4,5,6,5,5} and B={10,11,12,11,11}. Compare mean, range and distribution shape.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "A has sum 25, mean 5 and range 6−4=2.",
+            "B has sum 55, mean 11 and range 12−10=2.",
+            "Means differ by 6 but ranges and relative within-group patterns are equal.",
+            "Draw aligned dot plots and describe shift right by 6 rather than inventing different spread."
+          ],
+          "Answer": "Means 5 vs 11, same range 2, B shifted +6.",
+          "Check": "Teacher checks equally scaled dot plots and center-versus-variation language."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing distributions solely using one average without assessing variation.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Mean=sum/count.",
+        "Median is middle value in sorted data.",
+        "Similar averages can hide different variation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Compare sample centers and variation",
+          "Description": "Labeled first-party illustrative data for Comparing Groups. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Group",
+              "Cells": [
+                "A scores 3,4,5",
+                "B scores 7,8,9",
+                "X scores 2,4,6",
+                "Y scores 1,4,7"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Mean",
+              "Cells": [
+                "4",
+                "8",
+                "4",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Observation",
+              "Cells": [
+                "Lower center",
+                "Higher center",
+                "Spread differs from Y",
+                "Spread differs from X"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L12",
+      "CultureCode": "en",
+      "Title": "Larger Populations",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Explain why samples are needed when populations are large and identify limits of a sample-based claim. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/12/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Collect class name-length data and discuss population generalization. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/12/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Population is the full group of interest.",
+          "Rule": "Population is the full group of interest.",
+          "Example": "2%."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Sample is a selected subset.",
+          "Rule": "Sample is a selected subset.",
+          "Example": "About 60%."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "A sample statistic estimates, but does not equal, a population parameter automatically.",
+          "Rule": "A sample statistic estimates, but does not equal, a population parameter automatically.",
+          "Example": "Not reliably."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "A town has 10,000 residents; 200 are randomly sampled. What is sample fraction?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Divide 200/10000.",
+            "Compute 0.02.",
+            "Express 2%."
+          ],
+          "Answer": "2%.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Among 200 sampled, 120 prefer buses. Estimate town proportion.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 120/200=0.6.",
+            "Interpret sample-based estimate.",
+            "State uncertainty."
+          ],
+          "Answer": "About 60%.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Can a voluntary poll of only bus riders estimate views of all town residents without bias?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Identify sampled population.",
+            "Bus riders may differ from other residents.",
+            "Explain selection bias."
+          ],
+          "Answer": "Not reliably.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Larger Populations",
+          "Question": "An illustrative class sample of five first-name lengths is {3,4,4,5,9} and matching last-name lengths {5,5,6,7,7}. Compute means and explain why one class is not automatically the whole-school population.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "First-name mean=(3+4+4+5+9)/5=5.",
+            "Last-name mean=(5+5+6+7+7)/5=6.",
+            "The sample suggests last names average 1 letter longer within this invented class.",
+            "It may not represent the school unless the selection process is defensible; collect actual data without publishing student names."
+          ],
+          "Answer": "Sample means 5 and 6 letters, an estimated one-letter difference only for this class.",
+          "Check": "Teacher reviews ethically collected anonymous data and sampling limitations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a voluntary or convenience subset as automatically representative.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Population is the full group of interest.",
+        "Sample is a selected subset.",
+        "A sample statistic estimates, but does not equal, a population parameter automatically."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Samples versus large populations",
+          "Description": "Labeled first-party illustrative data for Larger Populations. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measure",
+              "Cells": [
+                "Town population",
+                "Selected sample",
+                "Bus preference in sample"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Count",
+              "Cells": [
+                "10,000",
+                "200",
+                "120"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Derived rate",
+              "Cells": [
+                "—",
+                "2% sampled",
+                "120/200 = 60%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L13",
+      "CultureCode": "en",
+      "Title": "What Makes a Good Sample?",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Identify random sampling and distinguish representative samples from biased convenience samples. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/13/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Judge sample quality by selection mechanism and distribution. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/13/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Random selection gives each population member a defined chance.",
+          "Rule": "Random selection gives each population member a defined chance.",
+          "Example": "Likely biased."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Convenience samples may overrepresent certain categories.",
+          "Rule": "Convenience samples may overrepresent certain categories.",
+          "Example": "10%."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "The sampling frame must match the population.",
+          "Rule": "The sampling frame must match the population.",
+          "Example": "Can support a systematic random sample."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "School wants lunch opinions; polls only students in cafeteria. Potential bias?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Population is all students.",
+            "Only cafeteria users are reached.",
+            "Selection may exclude packed-lunch students."
+          ],
+          "Answer": "Likely biased.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "A class roster of 120 students has 12 selected using random numbers. Sample fraction?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 12/120.",
+            "Simplify 1/10.",
+            "Express 10%."
+          ],
+          "Answer": "10%.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Why can choosing every 10th person from a randomly shuffled complete list be useful?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Random shuffle avoids original ordering patterns.",
+            "Select a fixed interval.",
+            "Each student has an equal inclusion chance if setup correct."
+          ],
+          "Answer": "Can support a systematic random sample.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — What Makes a Good Sample?",
+          "Question": "A painter sells 20 paintings, but a gallery sample includes only the most expensive three. Is the sample mean a fair estimate of mean selling price for all 20?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "The sampling frame covers only gallery high-price items, not all 20 paintings.",
+            "Selection is linked to price, so the observed mean is systematically at risk of being too high.",
+            "A simple random sample over all 20 sales would give broader inclusion.",
+            "Compare sample and full-population plots or data before assessing possible bias; no numerical population mean is supplied here."
+          ],
+          "Answer": "Not a fair representative sample without further evidence; use a random selection from all 20.",
+          "Check": "Teacher checks bias argument and recognition that unknown prices cannot be invented."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating easy-to-reach respondents with a random sample.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Random selection gives each population member a defined chance.",
+        "Convenience samples may overrepresent certain categories.",
+        "The sampling frame must match the population."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sampling frame and selection bias",
+          "Description": "Labeled first-party illustrative data for What Makes a Good Sample?. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Method",
+              "Cells": [
+                "Choose 12 from 120 random roster",
+                "Poll only cafeteria",
+                "Poll only friends"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Selection mechanism",
+              "Cells": [
+                "Randomized whole roster",
+                "Convenience",
+                "Social convenience"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Representativeness",
+              "Cells": [
+                "Plausible with uncertainty",
+                "Potentially biased",
+                "Potentially biased"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L14",
+      "CultureCode": "en",
+      "Title": "Sampling in a Fair Way",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Design fair random sampling procedures and justify equal inclusion probabilities. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/14/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare truly random samples with convenience sampling. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/14/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "A fair simple random draw is unbiased with respect to member labels.",
+          "Rule": "A fair simple random draw is unbiased with respect to member labels.",
+          "Example": "1/40."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Random number generation should match the full sampling frame.",
+          "Rule": "Random number generation should match the full sampling frame.",
+          "Example": "0.05."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Replacement rules affect selection probabilities.",
+          "Rule": "Replacement rules affect selection probabilities.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Select one of 40 roster entries using equally likely numbers 1–40. Each chance?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "40 equally likely indices.",
+            "Each index is selected once.",
+            "Probability 1/40."
+          ],
+          "Answer": "1/40.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Choose 5 of 100 students at random without replacement. Inclusion chance for each?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Sample size 5.",
+            "Population 100.",
+            "Symmetry gives inclusion probability 5/100."
+          ],
+          "Answer": "0.05.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Poll only first 10 arrivals to a club meeting: is it a simple random sample of members?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Early arrivals are not randomly selected.",
+            "Attendance time may affect selection.",
+            "Conclude sampling not fair."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Sampling in a Fair Way",
+          "Question": "A school has a numbered roster of 200. One survey picks every 20th student after a random start 1–20, another polls only friends at a lunchtime table. Which is more defensible, and what could still go wrong?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Random-start systematic sample includes 10 distinct students spread across the roster.",
+            "The friends-at-one-table convenience group can overrepresent a shared interest or grade.",
+            "Systematic sampling may also be biased if the roster has a repeating 20-student pattern tied to the outcome.",
+            "Explain inclusion/selection and discuss when a genuine simple random draw would be preferable."
+          ],
+          "Answer": "Random-start systematic sample is more defensible than polling friends, but periodic ordering remains a risk.",
+          "Check": "Teacher checks actual sampling plan and qualified criticism of bias."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using the phrase random without specifying how participants were selected.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "A fair simple random draw is unbiased with respect to member labels.",
+        "Random number generation should match the full sampling frame.",
+        "Replacement rules affect selection probabilities."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Random selection methods",
+          "Description": "Labeled first-party illustrative data for Sampling in a Fair Way. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Procedure",
+              "Cells": [
+                "Pick 1 of 40 roster entries",
+                "Pick 5 of 100 without replacement",
+                "First 10 club arrivals"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Equal inclusion chance",
+              "Cells": [
+                "1/40",
+                "5/100 = 0.05",
+                "Not ensured"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Method judgment",
+              "Cells": [
+                "Random if equal index chance",
+                "Simple random if uniform 5-subset",
+                "Convenience, not random"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L15",
+      "CultureCode": "en",
+      "Title": "Estimating Population Measures of Center",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Use sample mean or median to estimate central tendency while acknowledging sampling variability. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/15/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Estimate population center from random samples and assess outliers. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/15/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Sample mean estimates population mean.",
+          "Rule": "Sample mean estimates population mean.",
+          "Example": "156 cm."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Sample median estimates population median.",
+          "Rule": "Sample median estimates population median.",
+          "Example": "6."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Different random samples often produce different estimates.",
+          "Rule": "Different random samples often produce different estimates.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Sample heights 150,154,158,162 cm. Estimate mean.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Sum 150+154+158+162=624.",
+            "Divide by 4.",
+            "Compute 156."
+          ],
+          "Answer": "156 cm.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Sample values 2,4,6,8,10. Median?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Values sorted.",
+            "Middle third value.",
+            "Read 6."
+          ],
+          "Answer": "6.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Two samples mean 20 and 23. Must population mean equal either exactly?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Both are sample estimates.",
+            "Sampling variability is possible.",
+            "Do not assert exact equality."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Population Measures of Center",
+          "Question": "A sample of five fictional transaction times is 2,3,3,4,18 minutes. Find mean and median, and select a center robust to the high outlier.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Ordered data are already 2,3,3,4,18.",
+            "Mean=(2+3+3+4+18)/5=30/5=6 minutes.",
+            "Median is third value 3 minutes.",
+            "18 pushes the mean up, so median better describes the typical lower cluster; generalization needs representative sampling."
+          ],
+          "Answer": "Mean 6 min, median 3 min; median more resistant to the outlier.",
+          "Check": "Teacher checks a dot plot or histogram and explanation of outlier influence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating the sample statistic with an exact census value.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Sample mean estimates population mean.",
+        "Sample median estimates population median.",
+        "Different random samples often produce different estimates."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sample mean and median estimates",
+          "Description": "Labeled first-party illustrative data for Estimating Population Measures of Center. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Sample",
+              "Cells": [
+                "150,154,158,162",
+                "2,4,6,8,10",
+                "Means 20 and 23 from separate samples"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Statistic",
+              "Cells": [
+                "Mean 156",
+                "Median 6",
+                "Different estimates"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Interpretation",
+              "Cells": [
+                "Approximate population mean",
+                "Approximate population median",
+                "Population value not certified"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L16",
+      "CultureCode": "en",
+      "Title": "Estimating Population Proportions",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Use sample category proportions to estimate counts in a larger population. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/16/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Project sample proportions to a population with uncertainty. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/16/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Sample proportion is count/category sample size.",
+          "Rule": "Sample proportion is count/category sample size.",
+          "Example": "0.36."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Multiply estimated proportion by population size for projected count.",
+          "Rule": "Multiply estimated proportion by population size for projected count.",
+          "Example": "About 180."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Representative sampling matters more than arithmetic alone.",
+          "Rule": "Representative sampling matters more than arithmetic alone.",
+          "Example": "Both 30%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Among 50 random students, 18 cycle. Estimated population fraction?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Divide 18/50.",
+            "Reduce 9/25.",
+            "Convert 0.36."
+          ],
+          "Answer": "0.36.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Using estimate 0.36, project cyclists among 500 students.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 0.36×500.",
+            "Get 180.",
+            "State approximate projection."
+          ],
+          "Answer": "About 180.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Sample 40 has 12 preferring option A, sample 50 has 15. Compare proportions.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "First 12/40=0.3.",
+            "Second 15/50=0.3.",
+            "Compare equal."
+          ],
+          "Answer": "Both 30%.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Population Proportions",
+          "Question": "In a genuinely randomly selected model sample of 80 commuters, 30 reported cycling. Estimate how many out of 1200 commuters may cycle, and explain why the estimate is not a census result.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Sample proportion=30/80=0.375.",
+            "Apply 0.375×1200=450 commuters.",
+            "The projection assumes the sampling frame is representative.",
+            "State potential sampling variation and rounding; a different sample may yield another estimate."
+          ],
+          "Answer": "Approximately 450 cyclists, conditional on representative sampling.",
+          "Check": "Teacher checks sampling evidence and explicitly qualified extrapolation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating sampled proportions as certainties about every individual.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Sample proportion is count/category sample size.",
+        "Multiply estimated proportion by population size for projected count.",
+        "Representative sampling matters more than arithmetic alone."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Proportions projected from samples",
+          "Description": "Labeled first-party illustrative data for Estimating Population Proportions. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Sample",
+              "Cells": [
+                "18 of 50 cycle",
+                "Estimate in 500",
+                "12 of 40 choose A",
+                "15 of 50 choose A"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Proportion",
+              "Cells": [
+                "0.36",
+                "0.36 estimate",
+                "0.30",
+                "0.30"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Projection or conclusion",
+              "Cells": [
+                "36% observed",
+                "≈180 in population",
+                "Equal rate",
+                "Equal rate"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L17",
+      "CultureCode": "en",
+      "Title": "More about Sampling Variability",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Investigate variation among sample estimates and how repeated samples reveal uncertainty. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/17/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare distributions of sample means and population means. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/17/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Each sample statistic can differ from the population statistic.",
+          "Rule": "Each sample statistic can differ from the population statistic.",
+          "Example": "4."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Comparing repeated estimates shows variability.",
+          "Rule": "Comparing repeated estimates shows variability.",
+          "Example": "0.2."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Increasing sample size often reduces uncertainty without eliminating it.",
+          "Rule": "Increasing sample size often reduces uncertainty without eliminating it.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Three sample means are 10,12,14. What is their range?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Largest 14.",
+            "Smallest 10.",
+            "Subtract 14−10=4."
+          ],
+          "Answer": "4.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Two samples each of size 20 have proportions 0.4 and 0.6. Difference?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 0.6−0.4.",
+            "Get 0.2.",
+            "Interpret 20 percentage points."
+          ],
+          "Answer": "0.2.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "A population proportion is 0.5. Would every random sample of 10 have proportion 0.5?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Random draws vary.",
+            "Counts of success can differ.",
+            "A sample need not have exactly five successes."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — More about Sampling Variability",
+          "Question": "From the same population, sample means 12,13,11,14,10 are recorded in five independent trials. Find their mean and spread, and explain why another sample could differ.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Sum of sample means is 60; average of them is 12.",
+            "Observed range is 14−10=4.",
+            "Plot each mean on a dot plot with frequency 1 and label the scale.",
+            "Separate distribution of sample means from the distribution of all individual observations."
+          ],
+          "Answer": "Mean of five sample means 12, observed range 4.",
+          "Check": "Teacher checks actual sample construction or labels hypothetical data, and comparison of distributions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a larger sample guarantees a perfect match to population.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Each sample statistic can differ from the population statistic.",
+        "Comparing repeated estimates shows variability.",
+        "Increasing sample size often reduces uncertainty without eliminating it."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sample variability between repeated draws",
+          "Description": "Labeled first-party illustrative data for More about Sampling Variability. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Statistic",
+              "Cells": [
+                "Three means 10,12,14",
+                "Two sample proportions 0.4,0.6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "High minus low",
+              "Cells": [
+                "14−10",
+                "0.6−0.4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Difference",
+              "Cells": [
+                "4",
+                "0.2 = 20 percentage points"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L18",
+      "CultureCode": "en",
+      "Title": "Comparing Populations Using Samples",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Use two sample distributions to infer differences with attention to overlap and variability. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/18/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare two sampled populations using measures of center and spread. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/18/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Difference in sample centers informs but does not prove population difference.",
+          "Rule": "Difference in sample centers informs but does not prove population difference.",
+          "Example": "5 units."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Spread and overlap affect strength of comparison.",
+          "Rule": "Spread and overlap affect strength of comparison.",
+          "Example": "B median 6 higher."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Claims require random sampling and uncertainty.",
+          "Rule": "Claims require random sampling and uncertainty.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Sample means 12 and 17. Difference?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 17−12.",
+            "Get 5.",
+            "Label measured quantity."
+          ],
+          "Answer": "5 units.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Sample A 2,4,6; B 8,10,12. Compare medians.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "A median=4.",
+            "B median=10.",
+            "Difference 6."
+          ],
+          "Answer": "B median 6 higher.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Two groups each sample mean 8. Can you conclude populations identical?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Only one statistic matches.",
+            "Distributions and uncertainty may differ.",
+            "Do not overclaim."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Comparing Populations Using Samples",
+          "Question": "Two samples are A={5,7,9,11} and B={9,11,13,15}. Compare means and mean absolute deviations and discuss if the sample proves the entire populations differ.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Mean A=(5+7+9+11)/4=8; mean B=12.",
+            "A deviations from 8 are 3,1,1,3, MAD=2.",
+            "B deviations from 12 are 3,1,1,3, MAD=2.",
+            "Difference in sample means is 4 with equal sampled MAD; population conclusions require random-sample context."
+          ],
+          "Answer": "Sample means 8 and 12; both sample MADs 2.",
+          "Check": "Teacher reviews comparative dot plots and bounded inference, not a guaranteed population claim."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reporting a definitive causal or population conclusion from a small sample gap.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Difference in sample centers informs but does not prove population difference.",
+        "Spread and overlap affect strength of comparison.",
+        "Claims require random sampling and uncertainty."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Comparing samples, not certifying populations",
+          "Description": "Labeled first-party illustrative data for Comparing Populations Using Samples. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Comparison",
+              "Cells": [
+                "Sample means 12 and 17",
+                "Medians 4 and 10"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Difference",
+              "Cells": [
+                "5",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Inference limit",
+              "Cells": [
+                "Sampling uncertainty remains",
+                "Spread/overlap still matter"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L19",
+      "CultureCode": "en",
+      "Title": "Comparing Populations With Friends",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Design and interpret collaborative sampling comparisons and communicate limitations. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/19/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare populations through information-gap dialogue and choose effective charts. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/19/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "Comparison requires common measurement procedures.",
+          "Rule": "Comparison requires common measurement procedures.",
+          "Example": "4 min."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Use sample centers and spread.",
+          "Rule": "Use sample centers and spread.",
+          "Example": "Both mean 12 min."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Human review assesses fairness and interpretation of student-generated investigations.",
+          "Rule": "Human review assesses fairness and interpretation of student-generated investigations.",
+          "Example": "Not reliably."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "One group reports mean reading time 15 min, another 19 min. Difference?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Subtract 19−15.",
+            "Compute 4.",
+            "Label minutes."
+          ],
+          "Answer": "4 min.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "Group A times 10,12,14; group B 9,12,15. Compare means.",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "A mean 36/3=12.",
+            "B mean 36/3=12.",
+            "Recognize spread differs."
+          ],
+          "Answer": "Both mean 12 min.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "A team samples only its closest friends to estimate school opinion. Representative?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Friend selection may cluster preferences.",
+            "Sample not randomly chosen.",
+            "Call for broader random sampling."
+          ],
+          "Answer": "Not reliably.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Comparing Populations With Friends",
+          "Question": "A teacher gives one learner group A: 5,7,9,11 and another group B: 8,8,10,14; neither may show the raw card. What questions must partners ask to compare means and ranges?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Each partner asks for the number of observations, total sum and extreme values or suitable summary.",
+            "A: mean 32/4=8, range 11−5=6.",
+            "B: mean 40/4=10, range 14−8=6.",
+            "Compare A mean 8 and B mean 10 with equal ranges 6, and discuss graph scale."
+          ],
+          "Answer": "Sample B has mean 2 more, both range 6.",
+          "Check": "Teacher checks partner question log and correctness of required information."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming friend convenience samples represent the school.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "Comparison requires common measurement procedures.",
+        "Use sample centers and spread.",
+        "Human review assesses fairness and interpretation of student-generated investigations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Collaborative sample group comparisons",
+          "Description": "Labeled first-party illustrative data for Comparing Populations With Friends. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measure",
+              "Cells": [
+                "Mean time group A",
+                "Mean time group B",
+                "Two alternative groups with mean 12"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "15 min",
+                "19 min",
+                "12 min each"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Comparison",
+              "Cells": [
+                "4 min below B",
+                "4 min above A",
+                "Same center, spread may vary"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U08:L20",
+      "CultureCode": "en",
+      "Title": "Memory Test",
+      "ExplanationParagraphs": [
+        "Edulytiks learning goal: Design a fair memory-test experiment, compare groups and justify population inferences without false automated scoring. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/20/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Conduct random-sample methods with data-grid selection and memory claims. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/20/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical meaning",
+          "Definition": "An experimental comparison should control timing and instructions.",
+          "Rule": "An experimental comparison should control timing and instructions.",
+          "Example": "2 items."
+        },
+        {
+          "Title": "Numerical model",
+          "Definition": "Group statistics summarize observed results.",
+          "Rule": "Group statistics summarize observed results.",
+          "Example": "65%."
+        },
+        {
+          "Title": "Inference limits",
+          "Definition": "Human evaluation is needed for designs and interpretations.",
+          "Rule": "Human evaluation is needed for designs and interpretations.",
+          "Example": "No."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "First-party statistics example 1",
+          "Question": "Group A recall counts 6,7,8; group B 4,5,6. Difference in means?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "A mean 21/3=7.",
+            "B mean 15/3=5.",
+            "Subtract 2."
+          ],
+          "Answer": "2 items.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 2",
+          "Question": "A memory test has 20 words, student recalls 13. Proportion recalled?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Compute 13/20.",
+            "Convert 0.65.",
+            "Express 65%."
+          ],
+          "Answer": "65%.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "First-party statistics example 3",
+          "Question": "Does a 2-word mean gap from two tiny friend groups prove one technique is better for all students?",
+          "Method": "Use the probability space or sample frame specified in this problem and state uncertainty.",
+          "Steps": [
+            "Inspect sample sizes and selection.",
+            "Possible chance and confounding effects.",
+            "Avoid causal certainty."
+          ],
+          "Answer": "No.",
+          "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Memory Test",
+          "Question": "A 10-by-10 anonymous score grid has 100 values. Compare selecting 20 uniformly random distinct cells versus selecting the first 20 values or a contiguous path of 20.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Uniform sampling without replacement can give every cell equal inclusion probability 20/100.",
+            "The first 20 values may systematically reflect ordering, and a contiguous path can preserve local clustering.",
+            "Choose 20 distinct cell indices by a uniform random method, record their actual values and calculate the sample summary.",
+            "Compare a new independent random draw; avoid asserting causal effects from scores without an experimental design."
+          ],
+          "Answer": "A genuinely uniform 20-cell sample is defensible; first-20 or linked paths are not automatically representative.",
+          "Check": "Teacher checks a real reproducible selection protocol and the sampled-value calculations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Machine-grading one mean calculation as proof that a student designed a fair, interpretable memory experiment.",
+          "WhyWrong": "It misinterprets probability, sampling bias, variability or the limits of the data.",
+          "Correction": "State the model, sample and degree of uncertainty."
+        },
+        {
+          "Mistake": "Reporting a self-designed experiment as if a numeric rate proves its fairness",
+          "WhyWrong": "Simulations and samples need independently justified selection procedures.",
+          "Correction": "Require teacher evaluation of randomization, complete outcomes and interpretation."
+        }
+      ],
+      "SummaryPoints": [
+        "An experimental comparison should control timing and instructions.",
+        "Group statistics summarize observed results.",
+        "Human evaluation is needed for designs and interpretations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Memory experiment: summary is not causal proof",
+          "Description": "Labeled first-party illustrative data for Memory Test. These rates and comparisons do not prove that a random sample is unbiased or a claim is causal; experimental designs, simulated results and student explanations require teacher review.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measure",
+              "Cells": [
+                "Group A recall",
+                "Group B recall",
+                "One student of 20 words"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Illustrative data",
+              "Cells": [
+                "6,7,8",
+                "4,5,6",
+                "13 recalled"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Statistic",
+              "Cells": [
+                "Mean 7",
+                "Mean 5",
+                "13/20 = 65%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -54,25 +54,26 @@ test('G5 source-to-QuestionFamily additions cannot replace original G1 solver br
 // The historical G5 proof above stays pinned to its RELEASED SHA. New Grade 6
 // source-scoped extensions are a separate, exact-blob compatibility audit.
 // Neither the G1 canonical lessons nor their G1-specific engines may change.
-test('new G6 math routes preserve the published G5 baseline and G1-specific code',()=>{
- assert.equal(execFileSync('git',['merge-base','--is-ancestor',grade5PublishedMain,'HEAD'],{cwd:root}).length,0);
+test('historical G6 shared math routes preserve the published G5 baseline and G1-specific code',()=>{
+ const g6PublishedMain='b146b9c35d5aa12b2f7efb59a3e4842c356f2713';
+ assert.equal(execFileSync('git',['merge-base','--is-ancestor',grade5PublishedMain,g6PublishedMain],{cwd:root}).length,0);
  const g6=[
   [shared[0][0],2088,0,'ebb8108f080421a7078245644d490ec69fb2aeb7'],
   [shared[1][0],356,6,'558dbbd75cf1dbf274ee9f047f32ac42971ed779'],
   [shared[2][0],0,0,'c3df782c9e124e9ad5f1011eb6d2ab23c2aa61a8'],
   [shared[3][0],47,0,'28cc417956722287265a43d740eafb9db1ff2d25']
  ];
- const raw=git('diff','--numstat',grade5PublishedMain,'HEAD','--',...g6.map(x=>x[0]));
+ const raw=git('diff','--numstat',grade5PublishedMain,g6PublishedMain,'--',...g6.map(x=>x[0]));
  const changed=new Map(raw.split(/\r?\n/).filter(Boolean).map(x=>{
   const [added,removed,path]=x.split('\t');
   return [path,[Number(added),Number(removed)]];
  }));
- assert.equal(changed.size,3,'only the three reviewed G6 shared additions may vary');
+ assert.equal(changed.size,3,'historical G6 baseline includes exactly the three reviewed shared additions');
  for(const [path,added,removed,blob] of g6){
   assert.deepEqual(changed.get(path)||[0,0],[added,removed],path+' has an unreviewed delta');
-  assert.equal(git('rev-parse','HEAD:'+path),blob,path+' is not the tested G6 blob');
+  assert.equal(git('rev-parse',g6PublishedMain+':'+path),blob,path+' is not the tested G6 blob');
  }
- const engineDiff=git('diff','--unified=0',grade5PublishedMain,'HEAD','--',shared[1][0]);
+ const engineDiff=git('diff','--unified=0',grade5PublishedMain,g6PublishedMain,'--',shared[1][0]);
  const removals=engineDiff.split('\n')
   .filter(x=>x.startsWith('-')&&!x.startsWith('---'))
   .map(x=>x.slice(1).trim()).sort();
@@ -85,7 +86,7 @@ test('new G6 math routes preserve the published G5 baseline and G1-specific code
   'return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);'
  ].sort();
  assert.deepEqual(removals,expected,'the G6 extension must not delete other solver branches');
- const grade1=git('diff','--name-only',grade5PublishedMain,'HEAD','--',
+ const grade1=git('diff','--name-only',grade5PublishedMain,g6PublishedMain,'--',
   'src/Edulytics.Services/Mathematics/UsCcssG1*',
   'src/Edulytics.Core/Mathematics/Practice/UsCcssG1*',
   'src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.G1*')

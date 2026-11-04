@@ -1,0 +1,3 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U04 L02 authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit4PercentagePractice.cshtml');for(const s of ['data-g7-u04-l02','2.1 Compare','2.2 Scale','Cool-down'])assert.ok(v.includes(s));});
+test('U04 L02 arithmetic',()=>{assert.equal(2.25/18,0.125);assert.ok(0.125>1.75/15);assert.equal(1/0.125,8);});

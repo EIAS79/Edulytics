@@ -28647,6 +28647,853 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l10.graphs_origin_slope",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "linear-graph-origin-and-rational-slope-over-domain",
+      "representations": [
+        "numeric",
+        "coordinate_plot",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l12.compare_same_axes_rates",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "same-axis-proportional-line-rate-and-delayed-start-comparison",
+      "representations": [
+        "numeric",
+        "coordinate_plot",
+        "table",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l09.missing_info_rate_comparison",
+      "version": 1,
+      "skillId": "proportions.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "exact-individual-rate-total-and-ranked-comments",
+      "representations": [
+        "numeric",
+        "table",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l08.classify_equations",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "proportional-vs-affine-exponential-and-polynomial-equations-exact",
+      "representations": [
+        "numeric",
+        "equation",
+        "table",
+        "geometry_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l07.table_proportional_or_not",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "multirow-table-quotients-can-or-cannot-proportional",
+      "representations": [
+        "numeric",
+        "ratio_table",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l06.concert_recycling_equations",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "exact-inverse-rate-revenue-can-mass-and-whole-ticket-boundary",
+      "representations": [
+        "numeric",
+        "equation",
+        "table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l05.reciprocal_proportional_equations",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "source-reciprocal-coefficient-context-and-unit-orientation",
+      "representations": [
+        "numeric",
+        "table",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l04.proportional_equations",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "first-party-y-equals-kx-ratio-direction-and-proportional-row-constant",
+      "representations": [
+        "numeric",
+        "table",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l03.unit_rates_reciprocal",
+      "version": 1,
+      "skillId": "proportions.unit_rate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "independent-rational-reciprocal-unit-rates-speed-area",
+      "representations": [
+        "numeric",
+        "ratio_table",
+        "double_number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l02.proportional_tables",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "source-verified-proportional-table-ratios-anomalous-row-detection",
+      "representations": [
+        "numeric",
+        "ratio_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u02.l01.ratio_mixtures_crescent",
+      "version": 1,
+      "skillId": "proportions.equivalent_ratios",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "two-ingredient-cross-ratios-double-number-line-and-two-axis-scale",
+      "representations": [
+        "numeric",
+        "double_number_line",
+        "ratio_table",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l13.floor_plan_scale_fit",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "single-scale-paper-fit-and-tile-side-square-area",
+      "representations": [
+        "numeric",
+        "scale_drawing",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l12.equivalent_scales_area",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "exact-unit-conversion-squared-area-original-flag-table",
+      "representations": [
+        "numeric",
+        "scale_drawing",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l02.corresponding_parts",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-triangle-vertex-segment-angle-correspondence-under-label-cyclic-permutation",
+      "representations": [
+        "numeric",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l02.scale_factor",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "three-independent-corresponding-side-ratios-positive-and-reverse-rational-factors",
+      "representations": [
+        "numeric",
+        "geometry_lengths"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l03.scaled_l_polygon",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reused-bounded-polygon-kernel-all-distances-and-angles-k-half-or-three",
+      "representations": [
+        "coordinate_polygon",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l03.multiplicative_vs_additive",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "multiplicative-corresponding-side-ratios-not-equal-additive-differences",
+      "representations": [
+        "numeric",
+        "scale_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l04.hidden_corresponding_distance",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "all-corresponding-point-distances-even-hidden-direction-sensitive-integer-rational-scale",
+      "representations": [
+        "numeric",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l04.angle_and_distance_scaling",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reused-exact-geometry-kernel-matching-angles-insufficient-with-unequal-corresponding-ratios",
+      "representations": [
+        "coordinate_polygon",
+        "angle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l05.factor_size_and_reciprocal",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "source-grade7-7-rational-scale-factors-3-size-classes-recursive-pairwise-reciprocal",
+      "representations": [
+        "numeric",
+        "scale_factor_cards"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l06.scaled_area_square_factor",
+      "version": 1,
+      "skillId": "geometry.area.scaled_figures",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "scaled-two-dimensional-area-n-times-k-squared-equivalent-positive-fractions",
+      "representations": [
+        "area_model",
+        "pattern_blocks",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l07.drawing_actual_distance_units",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "unit-aware-length-map-drawing-centimetres-to-actual-metres-not-physical-cm-to-m-unit-conversion",
+      "representations": [
+        "scale_drawing",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l08.map_route_rate_time",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "first-party-5-12-13-road-vs-air-mile-scale-hours-minutes-and-mph",
+      "representations": [
+        "map_scale",
+        "numeric",
+        "coordinate_route"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l09.create_drawing_scale_lengths",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "unit-aware-actual-to-drawing-scale-bedroom-utah-outline-book-flag",
+      "representations": [
+        "scale_drawing",
+        "floor_plan",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l10.change_scale_length_and_area",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "two-scales-one-real-object-length-factor-squared-area-physical-units-precision",
+      "representations": [
+        "scale_drawing",
+        "area_model",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l11.unitless_scale_and_conversions",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "unitless-scale-same-physical-units-inch-to-foot-conversion-and-reciprocal",
+      "representations": [
+        "scale_drawing",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u04.fractional_change",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-fractional-increase-decrease-independent-recompute",
+      "representations": [
+        "numeric",
+        "equation",
+        "tape_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u04.reverse_percent_original",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-reverse-percent-multiplier-independent-recompute",
+      "representations": [
+        "numeric",
+        "equation",
+        "double_number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u04.nonwhole_percent_of_quantity",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-nonwhole-percent-exact-rational-recompute",
+      "representations": [
+        "numeric",
+        "equation",
+        "money"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u04.percent_rate_from_values",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-percent-change-from-original-and-final-recompute",
+      "representations": [
+        "numeric",
+        "equation",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u04.percent_error",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-percent-error-absolute-error-over-actual-recompute",
+      "representations": [
+        "numeric",
+        "measurement",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u04.error_interval_bound",
+      "version": 1,
+      "skillId": "percentages.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-error-interval-target-plus-minus-percent-recompute",
+      "representations": [
+        "numeric",
+        "number_line",
+        "measurement"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u07.complementary_angle",
+      "version": 1,
+      "skillId": "geometry.angles.relationships",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade7-complementary-angle-sum-90-independent-recompute",
+      "representations": [
+        "numeric",
+        "angle",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u07.vertical_angle",
+      "version": 1,
+      "skillId": "geometry.angles.relationships",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade7-vertical-angle-equality-independent-recompute",
+      "representations": [
+        "numeric",
+        "angle",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u07.triangle_side_feasible",
+      "version": 1,
+      "skillId": "geometry.triangles.construct",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade7-triangle-inequality-all-three-pairs-independent-recompute",
+      "representations": [
+        "numeric",
+        "triangle",
+        "construction_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u07.parallel_base_cross_section_sides",
+      "version": 1,
+      "skillId": "geometry.solids.cross_sections",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade7-prism-parallel-base-cross-section-same-polygon-side-count",
+      "representations": [
+        "numeric",
+        "solid",
+        "cross_section"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u07.prism_volume_base_height",
+      "version": 1,
+      "skillId": "geometry.volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade7-right-prism-volume-base-area-times-height",
+      "representations": [
+        "numeric",
+        "solid",
+        "base_height"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u07.prism_surface_area_base_perimeter_height",
+      "version": 1,
+      "skillId": "geometry.surface_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade7-right-prism-surface-area-two-base-area-plus-perimeter-times-height",
+      "representations": [
+        "numeric",
+        "solid",
+        "net",
+        "base_height"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u03.l02.radius_diameter_relation",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "grade7-circle-radius-diameter-two-to-one-recompute",
+      "representations": [
+        "numeric",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u03.l05.wheel_rotations_distance",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-wheel-distance-circumference-times-rotations-recompute",
+      "representations": [
+        "numeric",
+        "diagram_metadata",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "grade7-half-quarter-circle-area-pi-coefficient-recompute",
+      "representations": [
+        "symbolic",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.signed_rational_add_subtract",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-signed-rational-add-subtract-independent-recompute",
+      "representations": [
+        "numeric",
+        "number_line",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.compare_signed_rational",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-signed-rational-comparison-cross-product-recompute",
+      "representations": [
+        "numeric",
+        "number_line",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.signed_rational_distance",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-number-line-distance-absolute-difference-recompute",
+      "representations": [
+        "numeric",
+        "number_line",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.rational_linear_equation",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-one-step-rational-linear-equation-inverse-operation-recompute",
+      "representations": [
+        "numeric",
+        "equation",
+        "context"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

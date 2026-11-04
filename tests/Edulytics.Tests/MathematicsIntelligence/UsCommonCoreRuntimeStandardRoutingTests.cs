@@ -15,7 +15,7 @@ public sealed class UsCommonCoreRuntimeStandardRoutingTests
             ["PED:US-CCSS-MATH:G6:U06:L11"] = ["usccss.g6.u06.l11.expansion_factor_values", "usccss.g6.u06.l11.distributive_equivalence_logic"],
             ["PED:US-CCSS-MATH:G6:U06:L15"] = ["usccss.g6.u06.l15.exponential_variable_values", "usccss.g6.u06.l15.exponential_expression_reasoning"],
             ["PED:US-CCSS-MATH:G6:U06:L19"] = ["usccss.g6.u06.l19.first_party_equation_table_examples", "usccss.g6.u06.l19.first_party_relationship_interpretation"],
-            ["PED:US-CCSS-MATH:G7:U05:L08"] = ["usccss.number.signed_rate_displacement"]
+            ["PED:US-CCSS-MATH:G7:U05:L08"] = ["usccss.number.signed_rate_displacement", "usccss.number.signed_rational_multiply"]
         };
         foreach (var (lessonCode, families) in expected)
         {

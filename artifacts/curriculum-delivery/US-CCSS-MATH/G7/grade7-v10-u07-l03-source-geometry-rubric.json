@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L03",
+  "checkpoint": "V10_ORIGINAL_REFERENCE_DIAGRAM_TEACHER_RUBRIC_DRAFT",
+  "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/7/3/index.html",
+  "sourcePreparationUrl": "https://im.kendallhunt.com/MS/teachers/2/7/3/preparation.html",
+  "sourceRead": "PUBLIC_STUDENT_AND_PREPARATION_HTML_READ_2026-10-29",
+  "sourceRights": "OUR/IM 2017–2019 CC BY 4.0 attribution; diagram independently authored, original publisher graphics not reused",
+  "sourceTasks": [
+    "3.1 Algebraic equivalence from a+b=180.",
+    "3.2 Identify complementary or supplementary angles in polygons, including nonadjacent pairs.",
+    "3.3 Use straightedge and protractor to draw crossing lines, measure four angles, and discuss conjectures.",
+    "3.4 Work row-game angle measures and reconcile mismatched answers with a partner."
+  ],
+  "staticAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l03-nonadjacent-vertical-and-complementary-angles.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l03-nonadjacent-vertical-and-complementary-angles.svg",
+  "model": {
+    "crossing": {
+      "horizontalY": 235,
+      "origin": [
+        255,
+        235
+      ],
+      "diagonalEndpoints": [
+        [
+          163.23,
+          366.06
+        ],
+        [
+          346.77,
+          103.94
+        ]
+      ],
+      "acute": 55,
+      "obtuse": 125,
+      "oppositePairs": [
+        [
+          55,
+          55
+        ],
+        [
+          125,
+          125
+        ]
+      ],
+      "supplementarySum": 180
+    },
+    "nonadjacent": {
+      "vertices": [
+        [
+          682,
+          304
+        ],
+        [
+          875,
+          304
+        ]
+      ],
+      "measures": [
+        28,
+        62
+      ],
+      "complementarySum": 90
+    }
+  },
+  "studentTask": "Draw and measure all four angles of two original crossing lines; identify vertical pairs, justify a supplementary shared-angle argument, and compare results with another learner. Construct and label two separate angles 28° and 62° to explain complementarity without adjacency.",
+  "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+  "teacherRubric": {
+    "criteria": [
+      {
+        "id": "g7u07l03-1",
+        "description": "Draw two genuine intersecting straight lines and measure and label all four angles with a protractor.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7u07l03-2",
+        "description": "Correctly identify two vertical-angle pairs and justify equal opposite measures using adjacent straight-angle sums.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7u07l03-3",
+        "description": "Produce two separately constructed nonadjacent 28° and 62° angles and explain why their measures are complementary.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7u07l03-4",
+        "description": "Compare measured figures or paired row-game solutions, find and explain an error, and revise the claim.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "maxScore": 12,
+    "passDecision": "Teacher judgment only, based on actual student construction and reasoning.",
+    "studentArtifactPersisted": false
+  },
+  "cases": [
+    {
+      "kind": "correct",
+      "claim": "Both opposite angles of 125° are equal; adjacent angles 55°; separate 28° and 62° sum to 90°.",
+      "expected": "Correct model, still requires human review of original student work."
+    },
+    {
+      "kind": "incorrect",
+      "claim": "55° is vertically opposite 125°.",
+      "expected": "Reject: those are adjacent supplementary angles, not a vertical pair."
+    },
+    {
+      "kind": "incorrect",
+      "claim": "Complementary angles must touch.",
+      "expected": "Reject: they need only sum to 90°."
+    },
+    {
+      "kind": "incomplete",
+      "claim": "Numerical 125° supplied without a drawn, measured original intersection.",
+      "expected": "Not complete."
+    },
+    {
+      "kind": "malformed",
+      "claim": "Bent lines or absent intersection labels.",
+      "expected": "Require a new valid construction; never auto-pass."
+    }
+  ],
+  "stageEvidence": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "ownerUAT": "NOT_RUN",
+    "humanAcademicAcceptance": "NOT_EVIDENCED"
+  },
+  "runtime": {
+    "authenticatedStudentAsset": "NOT_RUN",
+    "gradeOnlySharedRendererHook": "SUPERVISOR1_PENDING",
+    "selectedPractice": "NOT_EXECUTED",
+    "teacherRubricUI": "NOT_IMPLEMENTED",
+    "teacherScorePersistence": "NOT_RUN",
+    "tenantIsolation": "NOT_RUN"
+  },
+  "sharedIntegration": {
+    "issue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "draftPR": "https://github.com/EIAS79/Edulytics/pull/599",
+    "ownedBy": "American Supervisor 1",
+    "sharedFilesModifiedByCoder3": false
+  },
+  "tests": {
+    "mathIndependentOracle": "PASSED_ISOLATED_NODE_NUMERIC_CHECK",
+    "newNativeNodeSuite": "NOT_RUN",
+    "dotnet": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN"
+  },
+  "release": "RELEASE_BLOCKED"
+}

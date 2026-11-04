@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L04",
+  "status": "ORIGINAL_FIGURE_AND_TEACHER_RUBRIC_DRAFT_ONLY",
+  "source": {
+    "studentUrl": "https://im.kendallhunt.com/MS/students/2/7/4/index.html",
+    "teacherUrl": "https://im.kendallhunt.com/MS/teachers/2/7/4/preparation.html",
+    "rights": "Original OUR/IM 2017-2019 student text is CC BY 4.0; this SVG is independently authored Edulytiks material, not a reproduction of the publisher diagrams or information-gap cards.",
+    "observation": "Public student lesson HTML and accessible figure descriptions plus teacher preparation inspected 2026-10-29. Full restricted blackline-master cards, teacher guide and Cool Down NOT_INSPECTED. Neither exact artwork parity nor complete source-task parity is established.",
+    "teacherGoals": [
+      "Coordinate angle diagrams and equations orally and in writing.",
+      "Solve multi-step complementary, supplementary and vertical angle questions and explain the reasoning."
+    ],
+    "activityComparison": [
+      {
+        "sourceActivity": "4.1 True or False: Length Relationships",
+        "observed": "Students justify true and false equations for collinear segments AB, BC, CD.",
+        "edulytiksDisposition": "SOURCE_ACTIVITY_IDENTIFIED_NOT_REPRODUCED_BY_ANGLE_SVG; requires separate learner task evaluation."
+      },
+      {
+        "sourceActivity": "4.2 Info Gap: Angle Finding",
+        "observed": "Partner with separate problem/data cards; ask precisely for needed information, justify each question, solve independently and discuss; blackline-master content not independently inspected.",
+        "edulytiksDisposition": "Draft original teacher-only prompt checks question selection and explanation. No claim of original card fidelity or completed student dialogue."
+      },
+      {
+        "sourceActivity": "4.3 What's the Match?",
+        "observed": "Match five described original angle figures to g+h=180, g=h, 2h+g=90, g+h+48=180 and g+h+35=180; explain every match.",
+        "edulytiksDisposition": "Original two-panel SVG provides analogues for 2x+40=180 and 3y+10=70, not a replacement for the five source figures. Further A-source-task matching remains pending."
+      },
+      {
+        "sourceActivity": "Summary / optional clock extension",
+        "observed": "Supplementary, vertical and complementary angle equations; optional clock-hand angular reasoning.",
+        "edulytiksDisposition": "Existing Rich V2 worked examples address several angle relationships; optional extension not proven implemented."
+      }
+    ]
+  },
+  "firstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l04-multi-step-angle-equations.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l04-multi-step-angle-equations.svg",
+  "mathModel": {
+    "straight": {
+      "origin": [
+        245,
+        303
+      ],
+      "rayBearings": [
+        0,
+        40,
+        110,
+        180
+      ],
+      "parts": [
+        40,
+        70,
+        70
+      ],
+      "equation": "40+x+x=180",
+      "x": 70
+    },
+    "vertical": {
+      "origin": [
+        760,
+        292
+      ],
+      "diagonalEndpoints": [
+        [
+          724.09,
+          390.67
+        ],
+        [
+          795.91,
+          193.33
+        ]
+      ],
+      "upperRight": 70,
+      "lowerLeftExpression": "3y+10",
+      "y": 20,
+      "equation": "3y+10=70"
+    }
+  },
+  "studentIndependentPrompt": "Draw a straight angle and partition it into 40°, x°, and x°. Label the rays, explain why 40+x+x=180, solve for x, then check with a protractor. Draw intersecting lines where an angle of 70° is opposite (3y+10)°; write an equation, solve y, and explain why the angles are equal. Exchange an original problem card and a separate data card with a partner, ask for relevant missing conditions without revealing full cards, and document the question-and-reason exchange.",
+  "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+  "teacherRubric": {
+    "maxScore": 12,
+    "criteria": [
+      {
+        "id": "g7-u07-l04-1",
+        "description": "Construct an original accurate, labeled straight-angle partition with all three parts and solve 40+x+x=180.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7-u07-l04-2",
+        "description": "Draw genuine intersecting straight lines, identify the opposite vertical angles and solve 3y+10=70 with a justified equality.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7-u07-l04-3",
+        "description": "Explain why each diagram entails its equation, independently measure or check the angle totals and reject mismatched geometry.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7-u07-l04-4",
+        "description": "In an original information-gap activity, ask for necessary data, justify the requests, independently solve and discuss corrections with a partner.",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "passDecision": "Teacher only after reviewing learner-drawn geometry and information exchange; number-only response is insufficient.",
+    "studentArtifactPersisted": false
+  },
+  "cases": [
+    {
+      "kind": "correct",
+      "submission": "x=70, y=20 with valid drawings and explanation",
+      "expectation": "Numbers correct; teacher must verify construction and dialogue before awarding rubric marks."
+    },
+    {
+      "kind": "wrong",
+      "submission": "40+2x=90 gives x=25",
+      "expectation": "Reject: line is a straight angle of 180 degrees."
+    },
+    {
+      "kind": "wrong",
+      "submission": "3y+10+70=180 gives y=100/3",
+      "expectation": "Reject: marked angles are vertical opposites and therefore equal, not adjacent supplements."
+    },
+    {
+      "kind": "incomplete",
+      "submission": "x=70 and y=20 without diagrams, mathematical justification or partner questioning",
+      "expectation": "Cannot satisfy full source task or teacher-only rubric."
+    },
+    {
+      "kind": "malformed",
+      "submission": "Bent baseline or rays failing to share an intended vertex",
+      "expectation": "Invalid straight/intersecting-line configuration, request corrected drawing."
+    }
+  ],
+  "sharedIntegration": {
+    "owner": "American Supervisor 1",
+    "issue": 592,
+    "draftPr": 599,
+    "sharedFilesModified": false,
+    "richRendererHook": "PENDING",
+    "teacherRubricUI": "NOT_IMPLEMENTED",
+    "selectedPractice": "NOT_EXECUTED",
+    "teacherScorePersistence": "NOT_RUN",
+    "authenticatedStudentRender": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN"
+  },
+  "academic": {
+    "stageA": "NOT_VERIFIED",
+    "stageB": "NOT_VERIFIED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_VERIFIED",
+    "ownerUAT": "NOT_RUN",
+    "humanApproval": "NOT_EVIDENCED",
+    "release": "RELEASE_BLOCKED"
+  },
+  "checks": {
+    "staticMathSourceFixture": "RUN_IN_ISOLATED_STAGE_ONLY",
+    "fullGitCheckout": "UNAVAILABLE_DNS",
+    "dotnet": "NOT_RUN",
+    "protectedGitHubCI": "PENDING_EXACT_HEAD"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L06",
+  "release": "RELEASE_BLOCKED",
+  "status": "SOURCE_SEQUENCE_REPAIRED_ORIGINAL_CONSTRUCTION_ASSET_RUBRIC_DRAFT_NOT_APPROVED",
+  "sources": {
+    "student": "https://im.kendallhunt.com/MS/students/2/7/6/index.html",
+    "teacherPreparation": "https://im.kendallhunt.com/MS/teachers/2/7/6/preparation.html",
+    "rights": "OUR/IM 2017–2019 curriculum CC BY 4.0; original newly drawn Edulytiks SVG (not a publisher-art copy).",
+    "checked": "Public full student HTML statements and public teacher preparation, including published image descriptions. Private teacher guide, exact original applet behavior, blackline master interaction and Cool Down not reproduced.",
+    "standardsAddressing": [
+      "7.G.A.2",
+      "7.NS.A.1"
+    ]
+  },
+  "sourceComparison": [
+    {
+      "activity": "6.1 Signed Numbers true/false warm-up",
+      "expected": "Explain signed-number identity and distributive structure; not geometric construction.",
+      "finding": "Existing grade-owned Rich V2 is geometry-focused. Warm-up is not represented as a verified comparable activity; retain as open source-task gap, no artificial completeness."
+    },
+    {
+      "activity": "6.2 What Can You Build?",
+      "expected": "Make both triangle and quadrilateral with provided segments; measure each angle and redraw to scale on paper.",
+      "finding": "Existing Rich V2 taught abstract numerical closure prematurely. Repaired explanation/examples to foreground hinged-strip construction and peer overlay; new original SVG shows 2 precisely calculated quadrilaterals and one feasible triangle. Actual student-created measurements are not recorded."
+    },
+    {
+      "activity": "6.3 Building Diego's and Jada's Shapes",
+      "expected": "4,5,6,9 inch quadrilateral can change shape; 4,5,8 inch triangle fixed up to congruence, with physical comparison.",
+      "finding": "New original figure has consecutive 9,4,5,6 inch sides for two quadrilaterals with AC diagonals 7 and 9 inches. Same example includes 4,5,8 inch triangle. Original source figures were not traced."
+    },
+    {
+      "activity": "6.4 Building Han's Shape",
+      "expected": "Attempt 3,4,9 inch polygon and describe failed closure.",
+      "finding": "Repaired rich fourth worked example to require physical failed closure; figure includes explicit constraint but students still need real attempt."
+    }
+  ],
+  "pedagogicalRepair": "Teacher preparation explicitly defers a general triangle inequality rule until the following lesson. Rich V2 L06 previously led with numerical inequalities. Now students construct, measure, overlay, explain why a 3,4,9 triangle cannot close; general proof is deferred to L07. The 3,4,5 independent worked example remains but uses physical hinged reasoning.",
+  "asset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l06-hinged-quadrilaterals-and-triangle.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l06-hinged-quadrilaterals-and-triangle.svg",
+  "mathModel": {
+    "unit": "in",
+    "polygonVertexOrder": "A-B-C-D",
+    "quadSideLengths": [
+      9,
+      4,
+      5,
+      6
+    ],
+    "quad1": {
+      "diagonalAC": 7,
+      "points": [
+        [
+          65,
+          330
+        ],
+        [
+          281,
+          330
+        ],
+        [
+          217,
+          258.4458
+        ],
+        [
+          115.1377,
+          195.0103
+        ]
+      ],
+      "pxPerIn": 24
+    },
+    "quad2": {
+      "diagonalAC": 9,
+      "points": [
+        [
+          430,
+          330
+        ],
+        [
+          646,
+          330
+        ],
+        [
+          624.6667,
+          236.4004
+        ],
+        [
+          507.8675,
+          208.8693
+        ]
+      ],
+      "pxPerIn": 24
+    },
+    "triangle": {
+      "sideLengthsAB_BC_CA": [
+        8,
+        5,
+        4
+      ],
+      "points": [
+        [
+          825,
+          330
+        ],
+        [
+          1025,
+          330
+        ],
+        [
+          910.9375,
+          278.8654
+        ]
+      ],
+      "pxPerIn": 25
+    },
+    "failedClosure": {
+      "lengths": [
+        3,
+        4,
+        9
+      ],
+      "shorterTotal": 7,
+      "longest": 9
+    }
+  },
+  "learnerTask": "Use connected strips (or an independently implemented digital hinge) to draw two different quadrilaterals with sides 4,5,6,9 inches and measure every interior angle and the diagonal AC. Construct and annotate the 4,5,8 inch triangle, compare it with another student's model by overlay/rotation/reflection. Attempt 3,4,9 inch triangle and explain the visible gap. Submit measurements and original drawings for a teacher's human review.",
+  "teacherOnlyRubric": {
+    "maxScore": 12,
+    "reviewRequired": true,
+    "studentWorkPersisted": false,
+    "criteria": [
+      {
+        "id": "g7-l06-1",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Construct and label a genuine triangle and quadrilateral with assigned physical strip lengths; record measured angles and accurate separate drawings."
+      },
+      {
+        "id": "g7-l06-2",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Construct two valid noncongruent 4/5/6/9-inch quadrilaterals, show a differing diagonal or angle and explain same side multiset does not imply unique shape."
+      },
+      {
+        "id": "g7-l06-3",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Explain via physical matching why 4/5/8-inch triangles overlay up to rigid motion, while 3/4/9-inch strips cannot close into a nondegenerate triangle."
+      },
+      {
+        "id": "g7-l06-4",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Use explicit units, drawing precision, measurement records and oral/written reasoning; distinguish source investigation from pre-emptive general inequality rule."
+      }
+    ],
+    "scoring": "Human teacher only; numeric side closure alone is insufficient, and teacher assessment is not integrated."
+  },
+  "cases": [
+    {
+      "kind": "correct",
+      "submission": "Two 9/4/5/6 quadrilaterals with diagonals 7 and 9, labeled angles; valid 4/5/8 model; rejected 3/4/9 closure.",
+      "expected": "Mathematics valid; teacher must inspect measurements and constructed artifacts."
+    },
+    {
+      "kind": "wrong",
+      "submission": "Both quadrilaterals must be identical because all four sides match.",
+      "expected": "Reject. AC diagonals 7 and 9 give different figures despite same consecutive sides."
+    },
+    {
+      "kind": "wrong",
+      "submission": "3+4=7 can reach a 9-inch closing side.",
+      "expected": "Reject; even fully aligned 3+4 stops 2 inches short."
+    },
+    {
+      "kind": "degenerate",
+      "submission": "Make an apparent triangle by placing 3 and 4 and 9 along a single straight ray.",
+      "expected": "Reject; cannot close and has zero triangular area."
+    },
+    {
+      "kind": "incomplete",
+      "submission": "Reports a true inequality but supplies no physical construction, angle measurement, comparison or drawing.",
+      "expected": "No full source activity/rubric completion."
+    },
+    {
+      "kind": "malformed",
+      "submission": "Side drawing labels omit inches or adjacent endpoints do not match.",
+      "expected": "Request corrected drawing and measured evidence."
+    }
+  ],
+  "runtime": {
+    "authenticatedStudentFigure": "NOT_RUN",
+    "selectedPracticeFamily": "NOT_EXECUTED",
+    "sourceConstructionSubmission": "NOT_IMPLEMENTED",
+    "teacherScoringPersistence": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN",
+    "sourceParity": "PARTIAL_SOURCE_COMPARISON_NOT_HUMAN_ACCEPTED"
+  },
+  "sharedIntegration": {
+    "owner": "American Supervisor 1",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "draftPR": "https://github.com/EIAS79/Edulytics/pull/599",
+    "exactLessonGuardRequired": true,
+    "sharedFilesChanged": false
+  },
+  "academic": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "humanAcceptance": "NOT_EVIDENCED",
+    "ownerUAT": "NOT_RUN"
+  },
+  "tests": {
+    "gradeOnly": "tests/academic-us-ccss-g7-p0-u07-l06-geometry.test.cjs",
+    "gradeOnlyNodeExecution": "NOT_RUN_AT_AUTHORING",
+    "dotnet": "NOT_RUN",
+    "browser": "NOT_RUN"
+  }
+}

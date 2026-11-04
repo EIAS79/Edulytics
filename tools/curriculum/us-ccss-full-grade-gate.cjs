@@ -109,7 +109,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   if(diff.status!==1)return false;
   // Historical Grade 1 proofs are not automatically carried to new code.
   // Independent source-scope audit from the exact G1 evidence commit e702b363:
-  // 124 G1-affected paths; EXACTLY 8 pinned changes after the additive Grade 5 release. The three Grade 3
+  // 124 G1-affected paths; EXACTLY 8 pinned changed paths after Grade 5 and the additive Grade 7 integration. The three Grade 3
   // source-seeded deltas were already audited. Four Grade 4 source/solver/
   // renderer deltas were reviewed and fingerprinted at Grade 4 publication.
   // Grade 5 adds exact-pinned G5-only Practice contracts/solver/renderer
@@ -121,7 +121,10 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // This technical compatibility check must be paired with CURRENT-HEAD
   // G1 source-math regression AND authenticated two-school CI; it is NOT an
   // academic reapproval, replacement for those tests, or blanket SHA reset.
-  // Any ninth changed G1-scope file or further edit fails this check.
+  // Three shared blobs gained Grade 7-only routes and retain byte-identical G1-specific
+  // dispatch lines (verified by the G1-G7 shared compatibility test).
+  // All eight paths are still exact Git-blob pinned; a ninth path or any
+  // future change fails. Live G1 practice and two-school HTTPS gates remain mandatory.
   const auditedG1UnaffectedDeltas=new Map([
     ['src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs',
       ['c0910a9bc06193e98cc8bf07d6b76234c7ea9381','cbf481746db2296b0e83e1ca199ee261fe0d7128']],
@@ -130,11 +133,11 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','558dbbd75cf1dbf274ee9f047f32ac42971ed779']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','1621291d58735d314953c908ac2d02dc04282e8d']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','ebb8108f080421a7078245644d490ec69fb2aeb7']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','4ab3d76929f98384a8cbde990e9298cfa0d7d3f6']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
-      ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','c3df782c9e124e9ad5f1011eb6d2ab23c2aa61a8']],
+      ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
