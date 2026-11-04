@@ -104,6 +104,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.g7.u03.l05.wheel_rotations_distance",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
             "supporting.geometry.locus_equidistant",
             "supporting.statistics.table_total",
             "supporting.statistics.pie_sector_angle",
@@ -279,6 +280,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.g7.u03.l05.wheel_rotations_distance" => WheelRotationsDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" => CircleFractionArea(random, scale),
             "supporting.geometry.locus_equidistant" => LocusEquidistant(random, preferredVariant),
             "supporting.statistics.table_total" => TableTotal(random, scale),
             "supporting.statistics.pie_sector_angle" => PieSector(random, scale),
@@ -471,6 +473,8 @@ internal static partial class SupportingPracticeCompletionEngine
                 (2 * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_area_pi_coefficient" =>
                 (p["radius"] * p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" =>
+                SimplifyFraction(p["radius"] * p["radius"], p["denominator"]),
             "supporting.geometry.locus_equidistant" =>
                 SolveLocusEquidistant(p),
             "supporting.statistics.table_total" =>
@@ -565,6 +569,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.fractions.multiply" or
             "supporting.fractions.divide_whole" or
             "supporting.fractions.simplify" or
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" or
             "usccss.g8.integer_exponent_laws" or
             "supporting.statistics.experimental_probability" or
             "supporting.probability.conditional_simple" or
@@ -1417,6 +1422,17 @@ internal static partial class SupportingPracticeCompletionEngine
             $"A circle has radius {radius}. Its area is kπ. Find k.",
             "Use A = πr² and report the exact coefficient of π.",
             ("radius", radius));
+    }
+
+    private static Problem CircleFractionArea(Random r, int s)
+    {
+        var radius = r.Next(2, 18 + s * 3);
+        var denominator = r.Next(0, 2) == 0 ? 2 : 4;
+        var name = denominator == 2 ? "semicircle" : "quarter-circle";
+        return P("usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
+            $"A {name} has radius {radius}. Its exact area is kπ square units. Find k.",
+            $"Find πr² for the full circle, then divide by {denominator}. Report the exact coefficient of π.",
+            ("radius", radius), ("denominator", denominator));
     }
 
     private static Problem LocusEquidistant(
