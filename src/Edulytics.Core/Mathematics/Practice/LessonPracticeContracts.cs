@@ -2330,6 +2330,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.prism_volume_base_height", "supporting.geometry.cuboid_volume"],
             "G7_U07_L12_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U07 L13: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L13", "geometry.volume",
+            "G7_DECOMPOSE_BASE_AREA_THEN_FIND_PRISM_VOLUME",
+            ["usccss.g7.u07.prism_volume_base_height", "supporting.geometry.compound_area", "supporting.geometry.triangle_area"],
+            "G7_U07_L13_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
