@@ -115,7 +115,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Independently fingerprint Grade5 old/new field differences
+      # The historical 107-change consent is anchored to the commit before PR #596, not moving main.
+      # Keep the job name stable for existing required-check consumers.
+      - name: Independently fingerprint Grade5 pre-PR596 vs candidate teaching differences
         run: |
           node --check tools/curriculum/g5-main-teaching-body-delta.cjs
           node tools/curriculum/g5-main-teaching-body-delta.cjs
