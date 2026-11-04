@@ -1823,6 +1823,16 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l02.proportional_tables"],
             "G7_U04_L03_PROPORTIONAL_REVIEW_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U04 L04: fractional increases/decreases and equivalent
+        // multiplicative representations. Extend the existing supporting exact
+        // Practice engine with one bounded fractional-change family.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L04", "percentages.core",
+            "G7_FRACTIONAL_INCREASE_DECREASE_AND_MULTIPLIER",
+            ["usccss.g7.u04.fractional_change", "supporting.fractions.multiply",
+             "usccss.g7.u02.l04.proportional_equations"],
+            "G7_U04_L04_FRACTIONAL_CHANGE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

@@ -105,6 +105,12 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
+            "usccss.g7.u04.fractional_change",
+            "usccss.g7.u04.reverse_percent_original",
+            "usccss.g7.u04.nonwhole_percent_of_quantity",
+            "usccss.g7.u04.percent_rate_from_values",
+            "usccss.g7.u04.percent_error",
+            "usccss.g7.u04.error_interval_bound",
             "supporting.geometry.locus_equidistant",
             "supporting.statistics.table_total",
             "supporting.statistics.pie_sector_angle",
@@ -281,6 +287,12 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" => CircleFractionArea(random, scale),
+            "usccss.g7.u04.fractional_change" => G7FractionalChange(random, scale),
+            "usccss.g7.u04.reverse_percent_original" => G7ReversePercentOriginal(random, scale),
+            "usccss.g7.u04.nonwhole_percent_of_quantity" => G7NonWholePercentOfQuantity(random, scale),
+            "usccss.g7.u04.percent_rate_from_values" => G7PercentRateFromValues(random, scale),
+            "usccss.g7.u04.percent_error" => G7PercentError(random, scale),
+            "usccss.g7.u04.error_interval_bound" => G7ErrorIntervalBound(random, scale),
             "supporting.geometry.locus_equidistant" => LocusEquidistant(random, preferredVariant),
             "supporting.statistics.table_total" => TableTotal(random, scale),
             "supporting.statistics.pie_sector_angle" => PieSector(random, scale),
@@ -475,6 +487,18 @@ internal static partial class SupportingPracticeCompletionEngine
                 (p["radius"] * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" =>
                 SimplifyFraction(p["radius"] * p["radius"], p["denominator"]),
+            "usccss.g7.u04.fractional_change" =>
+                SimplifyFraction(p["quantity"] * (p["denominator"] + p["direction"] * p["numerator"]), p["denominator"]),
+            "usccss.g7.u04.reverse_percent_original" =>
+                SimplifyFraction(p["final"] * 100, 100 + p["direction"] * p["percent"]),
+            "usccss.g7.u04.nonwhole_percent_of_quantity" =>
+                SimplifyFraction(p["quantity"] * p["percentMilli"], 100000),
+            "usccss.g7.u04.percent_rate_from_values" =>
+                SimplifyFraction(Math.Abs(p["final"] - p["original"]) * 100, p["original"]),
+            "usccss.g7.u04.percent_error" =>
+                SimplifyFraction(Math.Abs(p["measured"] - p["actual"]) * 100, p["actual"]),
+            "usccss.g7.u04.error_interval_bound" =>
+                SimplifyFraction(p["target"] * (100000 + p["bound"] * p["percentMilli"]), 100000),
             "supporting.geometry.locus_equidistant" =>
                 SolveLocusEquidistant(p),
             "supporting.statistics.table_total" =>
@@ -565,6 +589,17 @@ internal static partial class SupportingPracticeCompletionEngine
             return false;
 
         var expected = Solve(family, p);
+        if (family is
+            "usccss.g7.u04.fractional_change" or
+            "usccss.g7.u04.reverse_percent_original" or
+            "usccss.g7.u04.nonwhole_percent_of_quantity" or
+            "usccss.g7.u04.percent_rate_from_values" or
+            "usccss.g7.u04.percent_error" or
+            "usccss.g7.u04.error_interval_bound")
+        {
+            return EquivalentRationalDecimal(answer, expected);
+        }
+
         if (family is
             "supporting.fractions.multiply" or
             "supporting.fractions.divide_whole" or
@@ -1404,6 +1439,88 @@ internal static partial class SupportingPracticeCompletionEngine
             $"A wheel has circumference {circumference} units and travels {circumference * rotations} units without slipping. Find the number of complete rotations.",
             "Rotations equal total distance divided by one-wheel circumference.",
             ("mode", mode), ("circumference", circumference), ("rotations", rotations));
+    }
+
+    private static Problem G7FractionalChange(Random r, int s)
+    {
+        int[] denominators = [2, 3, 4, 5, 8];
+        var denominator = denominators[r.Next(denominators.Length)];
+        var numerator = r.Next(1, denominator);
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var quantity = denominator * r.Next(4, 18 + s * 3);
+        var word = direction > 0 ? "more" : "less";
+        return P("usccss.g7.u04.fractional_change",
+            $"A quantity is {numerator}/{denominator} {word} than {quantity}. Find the new quantity.",
+            "Multiply the original by 1 plus or minus the stated fractional change.",
+            ("numerator", numerator), ("denominator", denominator),
+            ("direction", direction), ("quantity", quantity));
+    }
+
+    private static Problem G7ReversePercentOriginal(Random r, int s)
+    {
+        int[] percents = [10, 20, 25, 40, 50];
+        var percent = percents[r.Next(percents.Length)];
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var original = 20 * r.Next(3, 14 + s * 2);
+        var final = original * (100 + direction * percent) / 100;
+        var word = direction > 0 ? "increase" : "decrease";
+        return P("usccss.g7.u04.reverse_percent_original",
+            $"After a {percent}% {word}, a quantity is {final}. Find the original quantity.",
+            "The final amount equals the original times the appropriate percent multiplier; divide to reverse the change.",
+            ("percent", percent), ("direction", direction), ("final", final));
+    }
+
+    private static Problem G7NonWholePercentOfQuantity(Random r, int s)
+    {
+        int[] percentMilliValues = [400, 5125, 7250, 12500, 15500, 18500];
+        int[] quantities = [80, 160, 200, 400, 800, 1200];
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var quantity = quantities[r.Next(quantities.Length)];
+        var percent = (percentMilli / 1000m).ToString("0.###", CultureInfo.InvariantCulture);
+        return P("usccss.g7.u04.nonwhole_percent_of_quantity",
+            $"Find {percent}% of {quantity}. Give an exact value.",
+            "Convert the percentage to a multiplier by dividing by 100, then multiply by the quantity.",
+            ("percentMilli", percentMilli), ("quantity", quantity));
+    }
+
+    private static Problem G7PercentRateFromValues(Random r, int s)
+    {
+        int[] percentMilliValues = [5000, 10000, 12500, 15000, 18500, 25000];
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var original = 2000 * r.Next(1, 5 + s);
+        var final = original * (100000 + direction * percentMilli) / 100000;
+        return P("usccss.g7.u04.percent_rate_from_values",
+            $"A value changes from {original} to {final}. Find the percent change relative to the original amount.",
+            "Find the absolute change, divide by the original amount, and multiply by 100.",
+            ("original", original), ("final", final));
+    }
+
+    private static Problem G7PercentError(Random r, int s)
+    {
+        int[] percentMilliValues = [1000, 1500, 3000, 12000, 20000];
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var actual = 2000 * r.Next(1, 5 + s);
+        var measured = actual * (100000 + direction * percentMilli) / 100000;
+        return P("usccss.g7.u04.percent_error",
+            $"The actual value is {actual}, but a measurement gives {measured}. Find the percent error.",
+            "Percent error is absolute measurement error divided by the actual value, multiplied by 100.",
+            ("actual", actual), ("measured", measured));
+    }
+
+    private static Problem G7ErrorIntervalBound(Random r, int s)
+    {
+        int[] percentMilliValues = [1000, 1500, 5000];
+        var target = 100 * r.Next(2, 10 + s * 2);
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var bound = r.Next(0, 2) == 0 ? -1 : 1;
+        var percent = (percentMilli / 1000m).ToString("0.###", CultureInfo.InvariantCulture);
+        var side = bound < 0 ? "least" : "greatest";
+        return P("usccss.g7.u04.error_interval_bound",
+            $"A target value is {target} with a maximum percent error of {percent}%. Find the {side} acceptable value.",
+            "Find the allowed error as a percentage of the target, then subtract for the lower bound or add for the upper bound.",
+            ("target", target), ("percentMilli", percentMilli), ("bound", bound));
     }
 
     private static Problem CircleCircumference(Random r, int s)
@@ -2337,6 +2454,30 @@ internal static partial class SupportingPracticeCompletionEngine
     }
 
     private static string FormatPair(int x, int y) => $"({x}, {y})";
+
+    private static bool EquivalentRationalDecimal(string answer, string expected)
+    {
+        static bool TryValue(string text, out decimal value)
+        {
+            value = 0m;
+            var s = text.Trim();
+            var slash = s.IndexOf('/');
+            if (slash >= 0)
+            {
+                if (!decimal.TryParse(s[..slash].Trim(), NumberStyles.Number, CultureInfo.InvariantCulture, out var n) ||
+                    !decimal.TryParse(s[(slash + 1)..].Trim(), NumberStyles.Number, CultureInfo.InvariantCulture, out var d) ||
+                    d == 0m)
+                    return false;
+                value = n / d;
+                return true;
+            }
+            return decimal.TryParse(s, NumberStyles.Number, CultureInfo.InvariantCulture, out value);
+        }
+
+        return TryValue(answer, out var actual) &&
+               TryValue(expected, out var target) &&
+               actual == target;
+    }
 
     private static bool EquivalentPair(string answer, string expected) =>
         NormalizePair(answer) == NormalizePair(expected);
