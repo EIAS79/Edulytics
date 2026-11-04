@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
+  "title": "Solutions to Linear Equations",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\12\\index.html",
+      "sha256": "2568c2836d184369528818e0c419e868af7828e338bd60a75e94430282dda030"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\12\\preparation.html",
+      "sha256": "952adb96f558b7e8e12fb091a057d11bcd17b9f04e2105dc516ddf542d437ddb"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\12\\index.html",
+      "sha256": "e53e7dda479dc0e4d3694450fd9779fe6cb6ac77cb3258c057baa5a10f874fac"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\12\\practice.html",
+      "sha256": "c086b0af818dc9797537371e5f584e9dd9681444a1ad7790e005bda56dab815c"
+    }
+  },
+  "learningGoals": [
+    "Recognize an ordered pair as a solution exactly when it makes a two-variable equation true",
+    "Write Ax+By=C from a linear context, without confusing it with one-variable solving",
+    "Distinguish every point on the line from points off the line through substitution"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "12.1 • Estimate shaded areas",
+      "firstPartyTask": "shade",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "12.2 • Apples and oranges in a two-variable equation",
+      "firstPartyTask": "apples-oranges",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "12.3 • Solutions and everything else",
+      "firstPartyTask": "solutions",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u03-l12-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u03-l12-selected-first-party-paper.html",
+    "sha256": "5ffc5593838389ce4594fc16c8d894a61a712ddc0aec076bbe964c3c052bcd5d",
+    "taskIds": [
+      "shade",
+      "apples-oranges",
+      "solutions",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Shade comparisons 12/16,12/16,13/16; third larger.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "a+2o=10, examples (10,0),(8,1),(6,2),(4,3); integer and nonnegative constraints.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "2x+y=10: (0,10),(2,6),(5,0) yes and (3,3) no.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice 2x+3y=6: (0,2),(3,0),(-3,4) true, (1,1) false; fuel0..8 sec; sandwiches each7 and delivery5.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cooldown 3x+2y=14: (2,4) true, (4,0) false, (0,7) true and (4,2) false; precise substitution.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "a": 2,
+    "b": 4,
+    "c": 14,
+    "falseA": 4,
+    "falseB": 0
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

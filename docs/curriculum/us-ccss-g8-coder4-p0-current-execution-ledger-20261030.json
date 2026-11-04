@@ -11,8 +11,8 @@
     "sourceFigurePriorityWithoutOriginalAsset": 75,
     "teacherOnlyCooldowns": 117,
     "grade8LessonsWithServiceOnlySyntheticPracticeHarness": 1,
-    "AAccepted": 41,
-    "BAccepted": 41,
+    "AAccepted": 42,
+    "BAccepted": 42,
     "CVerified": 1,
     "DVerified": 0,
     "authenticatedDatabaseFixtureRun": false,
@@ -1810,18 +1810,13 @@
       "actualPostgresqlAttemptPersistedAndReadBack": false,
       "studentTeacherAuthenticatedSessionVerified": false,
       "teacherScoringPersistenceVerified": false,
-      "A": "NOT_ACCEPTED",
-      "B": "NOT_ACCEPTED",
-      "C": "NOT_VERIFIED",
-      "D": "NOT_VERIFIED",
+      "A": "A_CLOSED_LOCAL_SOURCE_LEARNING_GOALS_ACTIVITIES_PRACTICE",
+      "B": "B_CLOSED_REUSED_RICHV2_PLUS_FIRST_PARTY_ASSESSMENT",
+      "C": "C_CLOSED_TEACHER_REVIEW_AND_MATH_FIXTURES_AUTHORED",
+      "D": "NOT_RUN",
       "nextChecks": [
-        "U03L12_REAL_GRAPH_CONSTRUCTION_NOT_PROVED_BY_ORDERED_PAIR_FAMILY",
-        "U03L12_HUMAN_TEACHER_SCORE_AND_DOMAIN_RESTRICTION_UNVERIFIED",
-        "SVG_ASSET_NOT_YET_ATTACHED_TO_AUTHENTICATED_RICH_V2_RENDERER",
-        "SOURCE_COOLDOWN_TEACHER_RUBRIC_AND_PERSISTED_SCORE_NOT_VERIFIED",
-        "AUTHORITATIVE_STANDARDS_ROLE_OWNER_APPROVAL_PENDING",
-        "SUPERVISOR2_SHARED_PRACTICE_PR597_TECHNICAL_REVIEW_INTEGRATION_PENDING",
-        "LESSON_EXACT_AUTHENTICATED_PRACTICE_AND_TWO_SCHOOL_DATABASE_VERIFICATION_REQUIRED"
+        "G8_AUTHENTICATED_RUNTIME_NOT_RUN",
+        "DIGITAL_GRADING_AND_TEACHER_PERSISTENCE_NOT_RUN"
       ],
       "additionalCourseOwnedSvgFiles": [
         {
@@ -1830,7 +1825,22 @@
         }
       ],
       "p0U03SourceEvidence": "docs/curriculum/us-ccss-g8-coder4-p0-u03-l12-source-graph-contract-20261030.json",
-      "p0U03ReviewLevel": "PUBLIC_STUDENT_AND_TEACHER_ACTIVITY_SPOT_REVIEW_NOT_FULL_PARITY"
+      "p0U03ReviewLevel": "PUBLIC_STUDENT_AND_TEACHER_ACTIVITY_SPOT_REVIEW_NOT_FULL_PARITY",
+      "readyForStageD": true,
+      "lessonClosureStatus": "READY_FOR_STAGE_D_ACADEMIC_OFFLINE_PAPER_ONLY",
+      "selectedTeacherPaperAssessment": "/curriculum/us-ccss-g8/assessment/u03-l12-selected-first-party-paper.html",
+      "selectedRouteKind": "FIRST_PARTY_OFFLINE_TEACHER_CLASSROOM_ASSESSMENT",
+      "sourceStudentSha256": "e53e7dda479dc0e4d3694450fd9779fe6cb6ac77cb3258c057baa5a10f874fac",
+      "sourceTeacherSha256": "2568c2836d184369528818e0c419e868af7828e338bd60a75e94430282dda030",
+      "sourcePreparationSha256": "952adb96f558b7e8e12fb091a057d11bcd17b9f04e2105dc516ddf542d437ddb",
+      "sourcePracticeSha256": "c086b0af818dc9797537371e5f584e9dd9681444a1ad7790e005bda56dab815c",
+      "sourcePracticeProblemCount": 5,
+      "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u03-l12-academic-assessment-contract-20261104.json",
+      "lastConfirmedClosureEvidence": "docs/curriculum/us-ccss-g8-coder4-u03-l12-selected-paper-stage-c-checkpoint-20261104.json",
+      "lessonExactDigitalPracticeVerified": false,
+      "stageDIntegrationRequired": true,
+      "sequentialAdvanceAllowed": true,
+      "tests": "AUTHORED_NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U03:L13",
@@ -4052,11 +4062,11 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U03:L13",
     "status": "ACTIVE_NEXT_UNCLOSED",
     "unit": "U02",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U03:L12",
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U03:L11",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U03:L13",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U03:L12",
     "advanceAllowed": true,
     "authority": "GRADE8_STANDING_SEQUENTIAL_SOURCE_A_B_C_EXECUTION"
   },
@@ -4064,13 +4074,13 @@
   "abcCounters": {
     "TOTAL": 131,
     "AUTHORED": 131,
-    "A_CLOSED": 41,
-    "B_CLOSED": 41,
-    "C_PREPARED": 41,
-    "ABC_READY_FOR_D": 41,
+    "A_CLOSED": 42,
+    "B_CLOSED": 42,
+    "C_PREPARED": 42,
+    "ABC_READY_FOR_D": 42,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 90,
+    "REMAINING": 89,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 2,
     "CURRENT_UNIT": "U03",
@@ -4079,13 +4089,13 @@
   "unitProgress": {
     "unitCode": "U03",
     "unitTotal": 14,
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U03:L11",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U03:L12",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U03:L12",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U03:L13",
     "unitStatus": "NEXT_UNIT_NOT_STARTED",
     "unitsABCCLOSED": 2,
     "unitTotalCount": 9,
-    "unitReadyForD": 11,
-    "unitRemaining": 3
+    "unitReadyForD": 12,
+    "unitRemaining": 2
   },
   "abcReturnQueueSkipAllowed": false,
   "currentBlockedLesson": null,
