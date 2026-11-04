@@ -60,11 +60,11 @@ internal static class UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions
 
         var pars = new Dictionary<string, int>(StringComparer.Ordinal)
         {
-            ["variant"] = random.Next(0, 5)
+            ["variant"] = random.Next(0, 25)
         };
         var target = GeometryCandidate(pars["variant"]);
-        decimal claimed = pars["variant"] == 4 ? 0.5m : 2m;
-        string angleNote = pars["variant"] switch
+        decimal claimed = pars["variant"] % 5 == 4 ? 0.5m : 2m;
+        string angleNote = (pars["variant"] % 5) switch
         {
             0 or 1 or 2 or 4 => "All four corresponding angles are right angles.",
             _ => "The proposed copy has oblique angles even though both shapes use straight edges."
@@ -94,7 +94,7 @@ internal static class UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions
             decimal result = p["reverse"] == 0 ? original * Factor(p["factor"]) : original;
             return Format(result);
         }
-        decimal factor = p["variant"] == 4 ? 0.5m : 2m;
+        decimal factor = p["variant"] % 5 == 4 ? 0.5m : 2m;
         return Kernel.Check(BaseRectangle, GeometryCandidate(p["variant"]), factor)
             .IsScaledCopy ? "1" : "0";
     }
@@ -114,7 +114,7 @@ internal static class UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions
                 p.TryGetValue("hidden", out var hidden) && hidden is >= 1 and <= 6 &&
                 p.TryGetValue("reverse", out var reverse) && reverse is 0 or 1;
         return p.Count == 1 &&
-            p.TryGetValue("variant", out var variant) && variant is >= 0 and <= 4;
+            p.TryGetValue("variant", out var variant) && variant is >= 0 and <= 24;
     }
 
     private static decimal Factor(int f) => f switch
@@ -122,7 +122,10 @@ internal static class UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions
         0 => 2m, 1 => 2.5m, _ => 3m
     };
 
-    private static Kernel.Vertex[] GeometryCandidate(int variant) => variant switch
+    private static Kernel.Vertex[] GeometryCandidate(int variant)
+    {
+        var phase = variant / 5;
+        Kernel.Vertex[] shape = (variant % 5) switch
     {
         0 => [new(0m,0m),new(8m,0m),new(8m,6m),new(0m,6m)],
         1 => [new(0m,0m),new(8m,0m),new(8m,3m),new(0m,3m)],
@@ -130,7 +133,10 @@ internal static class UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions
         3 => [new(0m,0m),new(8m,0m),new(11m,6m),new(3m,6m)],
         4 => [new(0m,0m),new(-2m,0m),new(-2m,-1.5m),new(0m,-1.5m)],
         _ => throw new InvalidOperationException("Invalid geometry variant")
-    };
+        };
+        // Coordinate translations are mathematically valid scaled-copy comparisons.
+        return shape.Select(v => new Kernel.Vertex(v.X + 2m * phase, v.Y + phase)).ToArray();
+    }
 
     private static string Coordinates(IReadOnlyList<Kernel.Vertex> points) =>
         string.Join(", ", points.Select(v => "(" + Format(v.X) + "," + Format(v.Y) + ")"));

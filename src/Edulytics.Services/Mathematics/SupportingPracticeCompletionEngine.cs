@@ -1380,7 +1380,7 @@ internal static partial class SupportingPracticeCompletionEngine
 
     private static Problem G7ParallelBaseCrossSection(Random r)
     {
-        var baseSides = r.Next(3, 7);
+        var baseSides = r.Next(3, 30);
         return P("usccss.g7.u07.parallel_base_cross_section_sides",
             $"A right prism has a {baseSides}-sided polygon as its base. A slice parallel to the base makes a cross section. How many sides does that cross section have?",
             "A slice parallel to a prism base is congruent to the base, so it has the same number of sides.",
