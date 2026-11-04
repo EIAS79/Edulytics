@@ -55,7 +55,7 @@ public sealed class UsCcssG6Unit8Lesson14SelectedPracticeTests
         yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,4,"1"};
         yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,5,"1"};
         yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,6,"1"};
-        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,7,"0"};
+        yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,7,"1"}; // Exact finite symmetry gives mean = median.
         yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,8,"1"};
         yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,9,"1"};
         yield return new object[]{UsCcssG6Unit2RatioQuestions.L0814CenterLogic,10,"0"};
