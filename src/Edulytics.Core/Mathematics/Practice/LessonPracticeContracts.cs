@@ -1677,6 +1677,17 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l09.missing_info_rate_comparison"],
             "OUR_IM_G7_2017_2019_U02_L15_OPEN_MODEL_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L01: measurement scatter around
+        // proportional square side/diagonal/perimeter relationships and a
+        // nonproportional area relationship. Physical measurement and
+        // explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L01", "proportions.equivalent_ratios",
+            "G7_SQUARE_MEASUREMENT_APPROXIMATE_PROPORTION_AND_AREA",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l10.graphs_origin_slope",
+             "supporting.geometry.parallelogram_area"],
+            "OUR_IM_G7_2017_2019_U03_L01_MEASUREMENT_ERROR_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

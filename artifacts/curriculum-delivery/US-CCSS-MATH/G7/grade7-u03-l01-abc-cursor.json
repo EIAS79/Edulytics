@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U03:L01",
+  "ordinal": 29,
+  "title": "How Well Can You Measure?",
+  "teacherSource": ["07_Grade_7_OUR_IM/3/1/preparation.html","07_Grade_7_OUR_IM/3/1/index.html"],
+  "studentSource": ["07_Grade_7_OUR_IM_Student/3/1/index.html","07_Grade_7_OUR_IM_Student/3/1/practice.html"],
+  "sourceHashesSha256": {
+    "teacherPreparation": "7e6efcf47897ec913833e836fe0378df0a3509a82e56738658787857a624826a",
+    "teacherLesson": "c53811fa17ee3e1b1768afa4b4c433fe7f3fee84b7bf35d82282c6a2b050ecd6",
+    "studentLesson": "4fcdbb0485d64aa4e04688c21006ae01555843d851e9b35cd74fcd0ef8e78431",
+    "studentPractice": "2baecc81e72178b7d06e6eae19cce54a6d85c64385d2442334748b9287164a5c"
+  },
+  "edition": "OUR_IM_G7_2017_2019_NO_ACCESSIM_V360",
+  "sourceGoals": ["Create and describe graphs of square measurements","Use measurement evidence to reason about proportional and nonproportional relationships","Account for ordinary measurement error"],
+  "reused": ["existing U03 L01 Rich V2 body","usccss.g7.u02.l07.table_proportional_or_not","usccss.g7.u02.l10.graphs_origin_slope","supporting.geometry.parallelogram_area"],
+  "newEngine": false,
+  "newFirstPartySVG": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u03-l01-square-measurement.svg",
+  "firstPartyCooldown": "judge approximate diagonal/perimeter proportionality under measurement scatter and contrast with area",
+  "A_STATUS": "LOCAL_SOURCE_TEACHER_STUDENT_PRACTICE_COMPARED",
+  "B_STATUS": "AUTHORING_FIRST_PARTY_SQUARE_MEASUREMENT_VISUAL_AND_COOLDOWN",
+  "C_STATUS": "EXISTING_TABLE_GRAPH_AND_AREA_FAMILIES_SELECTED",
+  "READY_FOR_STAGE_D": true,
+  "D_STATUS": "NOT_RUN",
+  "testExecution": "AUTHORED_NOT_RUN",
+  "tests": ["tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7Unit3Lesson1MeasurementTests.cs","tests/academic-us-ccss-g7-u03-l01-abc-fixture.test.cjs"],
+  "humanBoundary": "PHYSICAL_MEASUREMENT_GRAPH_SCATTER_AND_WRITTEN_JUDGMENT_TEACHER_REVIEW",
+  "originalGatedCoolDown": "NOT_VERIFIED_NOT_COPIED",
+  "closedAt": "2026-11-04; elapsed not measured",
+  "nextLesson": "PED:US-CCSS-MATH:G7:U03:L02"
+}
