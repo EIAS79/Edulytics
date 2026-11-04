@@ -242,6 +242,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l11.unitless_scale_and_conversions",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "unitless-scale-same-physical-units-inch-to-foot-conversion-and-reciprocal",
+      "representations": [
+        "scale_drawing",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
       "version": 1,
       "skillId": "geometry.area_tiling",

@@ -1479,6 +1479,19 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L10_FIRST_PARTY_AND_TEACHER",
             "READY_VERIFIED",
             Version);
+        // OUR/IM G7 U01:L11. A unitless scale is a same-unit
+        // ratio; source-specific models also require foot/inch conversion.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L11",
+            "geometry.scale_drawings",
+            "G7_UNITLESS_SCALE_AND_PHYSICAL_UNIT_CONVERSION",
+            [
+                "usccss.g7.u01.l11.unitless_scale_and_conversions",
+                "usccss.g7.u01.l05.factor_size_and_reciprocal"
+            ],
+            "OUR_IM_G7_2017_2019_L11_INDEPENDENT_DIAGRAM_TEACHER",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
