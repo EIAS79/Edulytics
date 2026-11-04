@@ -83,28 +83,12 @@ internal static class UsCcssG7Unit2Lesson3UnitRatesQuestions
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>36)
+        if (!Valid(family, p))
             return false;
-        var parts=answer.Trim().Split('/');
-        decimal given;
-        if(parts.Length==2)
-        {
-            if(!decimal.TryParse(parts[0],NumberStyles.None,CultureInfo.InvariantCulture,out var n)||
-               !decimal.TryParse(parts[1],NumberStyles.None,CultureInfo.InvariantCulture,out var d)||
-               n<0||n>1000000||d<=0||d>1000000)
-                return false;
-            given=n/d;
-        }
-        else if(parts.Length==1)
-        {
-            if(!decimal.TryParse(parts[0],NumberStyles.AllowDecimalPoint,
-                   CultureInfo.InvariantCulture,out given)||given<0||given>1000000)
-                return false;
-        }
-        else return false;
-        var(en,ed)=Expected(p);
-        return given*ed==en;
+        var (n, d) = Expected(p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 1000000);
     }
+
     private static(long,long) Expected(IReadOnlyDictionary<string,int> p)
     {
         int f=p["feature"];

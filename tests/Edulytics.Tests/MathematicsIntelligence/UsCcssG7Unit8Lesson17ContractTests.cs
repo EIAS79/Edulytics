@@ -8,8 +8,8 @@ public sealed class UsCcssG7Unit8Lesson17ContractTests
     [Fact] public void ContractResolvesPrimaryExactFamily()
     {
         Assert.True(LessonPracticeContractRegistry.TryResolve("PED:US-CCSS-MATH:G7:U08:L17",out var c));
-        Assert.NotNull(c);Assert.Contains("statistics.mean.arithmetic.exact",c.AllowedQuestionFamilies);
+        Assert.NotNull(c);Assert.Contains("statistics.center_spread.mean",c.AllowedQuestionFamilies);
         Assert.Equal("READY_VERIFIED",c.Readiness);
-        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("statistics.mean.arithmetic.exact"));
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("statistics.center_spread.mean"));
     }
 }

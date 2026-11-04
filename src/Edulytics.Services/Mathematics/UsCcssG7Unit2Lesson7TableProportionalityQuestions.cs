@@ -83,29 +83,14 @@ internal static class UsCcssG7Unit2Lesson7TableProportionalityQuestions
         return d==1?n.ToString(CultureInfo.InvariantCulture):
             n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
-    public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)return false;
-        var bits=answer.Trim().Split('/');
-        decimal value;
-        if(bits.Length==2)
-        {
-            if(!decimal.TryParse(bits[0],NumberStyles.None,
-                  CultureInfo.InvariantCulture,out var n)||
-               !decimal.TryParse(bits[1],NumberStyles.None,
-                  CultureInfo.InvariantCulture,out var d)||
-               n<0||n>1000000||d<=0||d>1000000)return false;
-            value=n/d;
-        }
-        else if(bits.Length==1)
-        {
-            if(!decimal.TryParse(bits[0],NumberStyles.AllowDecimalPoint,
-                   CultureInfo.InvariantCulture,out value)||
-               value<0||value>1000000)return false;
-        }
-        else return false;
-        var(en,ed)=Expected(p);return value*ed==en;
+        if (!Valid(family, p))
+            return false;
+        var (n, d) = Expected(p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 1000000);
     }
+
     private static(long,long) Expected(IReadOnlyDictionary<string,int> p)
     {
         int k=p["kind"],i=p["feature"];

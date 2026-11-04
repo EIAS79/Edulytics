@@ -108,26 +108,12 @@ internal static class UsCcssG7Unit2Lesson10GraphProportionsQuestions
             n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
 
-    public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)
+        if (!Valid(family, p))
             return false;
-        var a=answer.Trim().Split('/');
-        decimal val;
-        if(a.Length==2)
-        {
-            if(!decimal.TryParse(a[0],NumberStyles.None,CultureInfo.InvariantCulture,out var n)||
-               !decimal.TryParse(a[1],NumberStyles.None,CultureInfo.InvariantCulture,out var d)||
-               n<0||n>1000000||d<=0||d>1000000)return false;
-            val=n/d;
-        }
-        else if(a.Length==1)
-        {
-            if(!decimal.TryParse(a[0],NumberStyles.AllowDecimalPoint,
-                CultureInfo.InvariantCulture,out val)||val<0||val>1000000)return false;
-        }
-        else return false;
-        var(en,ed)=Expected(f,p);return val*ed==en;
+        var (n, d) = Expected(family, p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 1000000);
     }
 
     private static(long,long) Expected(string f,IReadOnlyDictionary<string,int> p)

@@ -81,29 +81,14 @@ internal static class UsCcssG7Unit2Lesson8ClassifyEquationsQuestions
         return d==1?n.ToString(CultureInfo.InvariantCulture):
             n.ToString(CultureInfo.InvariantCulture)+"/"+d.ToString(CultureInfo.InvariantCulture);
     }
-    public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(!Valid(f,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)return false;
-        string[] a=answer.Trim().Split('/');
-        decimal value;
-        if(a.Length==2)
-        {
-            if(!decimal.TryParse(a[0],NumberStyles.None,
-                 CultureInfo.InvariantCulture,out decimal n)||
-               !decimal.TryParse(a[1],NumberStyles.None,
-                 CultureInfo.InvariantCulture,out decimal d)||
-               n<0||n>10000000||d<=0||d>10000000)return false;
-            value=n/d;
-        }
-        else if(a.Length==1)
-        {
-            if(!decimal.TryParse(a[0],NumberStyles.AllowDecimalPoint,
-                CultureInfo.InvariantCulture,out value)||
-                value<0||value>10000000)return false;
-        }
-        else return false;
-        var(numer,denom)=Expected(p);return value*denom==numer;
+        if (!Valid(family, p))
+            return false;
+        var (n, d) = Expected(p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 10000000);
     }
+
     private static(long,long) Expected(IReadOnlyDictionary<string,int> p)
     {
         int mode=p["mode"],f=p["feature"],v=p["variant"];

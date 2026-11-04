@@ -70,29 +70,12 @@ internal static class UsCcssG7Unit2Lesson6ConcertRecyclingQuestions
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)
+        if (!Valid(family, p))
             return false;
-        var parts=answer.Trim().Split('/');
-        decimal value;
-        if(parts.Length==2)
-        {
-            if(!decimal.TryParse(parts[0],NumberStyles.None,
-                   CultureInfo.InvariantCulture,out decimal n)||
-               !decimal.TryParse(parts[1],NumberStyles.None,
-                   CultureInfo.InvariantCulture,out decimal d)||
-               n<0||n>100000000||d<=0||d>100000000)return false;
-            value=n/d;
-        }
-        else if(parts.Length==1)
-        {
-            if(!decimal.TryParse(parts[0],NumberStyles.AllowDecimalPoint,
-                   CultureInfo.InvariantCulture,out value)||
-               value<0||value>100000000)return false;
-        }
-        else return false;
-        var(en,ed)=Expected(p);
-        return value*ed==en;
+        var (n, d) = Expected(p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 100000000);
     }
+
     private static (long,long) Expected(IReadOnlyDictionary<string,int> p)
     {
         int mode=p["mode"],f=p["feature"];

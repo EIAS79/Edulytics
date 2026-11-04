@@ -74,27 +74,10 @@ internal static class UsCcssG7Unit2Lesson1EquivalentRatioQuestions
     }
     public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(!Valid(family,p)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)
+        if (!Valid(family, p))
             return false;
-        var v=answer.Trim().Split('/');
-        decimal supplied;
-        if(v.Length==2)
-        {
-            if(!decimal.TryParse(v[0],NumberStyles.None,CultureInfo.InvariantCulture,out var n)||
-               !decimal.TryParse(v[1],NumberStyles.None,CultureInfo.InvariantCulture,out var d)||
-               n<0||n>1000000||d<=0||d>1000000)
-                return false;
-            supplied=n/d;
-        }
-        else if(v.Length==1)
-        {
-            if(!decimal.TryParse(v[0],NumberStyles.AllowDecimalPoint,
-                  CultureInfo.InvariantCulture,out supplied)||supplied<0||supplied>1000000)
-                return false;
-        }
-        else return false;
-        var(n0,d0)=family==Table?ExpectedTable(p):Expected(p);
-        return supplied*d0==n0;
+        var (n, d) = family == Table ? ExpectedTable(p) : Expected(p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 1000000);
     }
 
     private static Problem BuildTable(Random random)

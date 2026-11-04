@@ -38,7 +38,7 @@ public sealed class UsCcssG7Unit1Lesson7SelectedPracticeRouteTests
         Assert.True(ExactSkillContractQuestionEngine.Verify(
             Family,parameters,expected));
         Assert.False(ExactSkillContractQuestionEngine.Verify(
-            Family,parameters,expected+"0"));
+            Family,parameters,(decimal.Parse(expected, System.Globalization.CultureInfo.InvariantCulture)+1m).ToString(System.Globalization.CultureInfo.InvariantCulture)));
     }
 
     [Fact]

@@ -117,34 +117,12 @@ internal static class UsCcssG7Unit2Lesson4ProportionalEquationsQuestions
               denominator.ToString(CultureInfo.InvariantCulture);
     }
 
-    public static bool Verify(string family, IReadOnlyDictionary<string, int> p, string? answer)
+    public static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if (!Valid(family, p) || string.IsNullOrWhiteSpace(answer) || answer.Length > 36)
+        if (!Valid(family, p))
             return false;
-        string[] parts = answer.Trim().Split('/');
-        decimal value;
-        if (parts.Length == 2)
-        {
-            if (!decimal.TryParse(parts[0], NumberStyles.None,
-                    CultureInfo.InvariantCulture, out decimal numerator) ||
-                !decimal.TryParse(parts[1], NumberStyles.None,
-                    CultureInfo.InvariantCulture, out decimal denominator) ||
-                numerator < 0 || numerator > 1000000 ||
-                denominator <= 0 || denominator > 1000000)
-                return false;
-            value = numerator / denominator;
-        }
-        else if (parts.Length == 1)
-        {
-            if (!decimal.TryParse(parts[0], NumberStyles.AllowDecimalPoint,
-                    CultureInfo.InvariantCulture, out value) ||
-                value < 0 || value > 1000000)
-                return false;
-        }
-        else return false;
-        var (n, d) = family == ReciprocalFamily
-            ? ExpectedReciprocal(p) : Expected(p);
-        return value * d == n;
+        var (n, d) = family == ReciprocalFamily ? ExpectedReciprocal(p) : Expected(p);
+        return G7ExactRationalAnswer.Matches(answer, n, d, 1000000);
     }
 
     private static (long N, long D) Expected(IReadOnlyDictionary<string, int> p)

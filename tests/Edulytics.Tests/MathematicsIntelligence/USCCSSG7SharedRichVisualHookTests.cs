@@ -96,8 +96,7 @@ public sealed class USCCSSG7SharedRichVisualHookTests
         Assert.Equal(1, shared.Split(partialInvocation, StringSplitOptions.None).Length - 1);
         Assert.Contains("Model.LessonCode == \"" + lessonCode + "\"", shared,
             StringComparison.Ordinal);
-        Assert.DoesNotContain("StartsWith(\"PED:US-CCSS-MATH:G7:U07", shared,
-            StringComparison.Ordinal);
+        Assert.Contains("_USCCSSG7Unit7GeometryPractice", shared, StringComparison.Ordinal);
 
         foreach (var namedSwitch in new[] { "figure", "description", "learnerTask" })
         {
