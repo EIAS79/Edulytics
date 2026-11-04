@@ -217,6 +217,12 @@ jobs:
           test "$NODE_SHARDS" = success
           test "$DOTNET" = success
           test "$SOURCE" = success
-          test "$MAIN_PARITY" = success
+          # Grade 5 owner-consent exact-delta gate belongs only to PR #596.
+          # On other PRs the job is explicitly skipped while shared G5 runtime tests run.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event.pull_request.number }}" = "596" ]; then
+            test "$MAIN_PARITY" = success
+          else
+            test "$MAIN_PARITY" = skipped
+          fi
           node tools/curriculum/g5-first-party-digital-release.cjs
           node --test tests/academic-us-ccss-g5-first-party-digital-release.test.cjs

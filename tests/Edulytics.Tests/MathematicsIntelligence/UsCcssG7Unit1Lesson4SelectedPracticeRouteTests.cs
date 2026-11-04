@@ -53,6 +53,8 @@ public sealed class UsCcssG7Unit1Lesson4SelectedPracticeRouteTests
     [InlineData(2,false)] // equal right angles, horizontal ratio 1, vertical 2
     [InlineData(3,false)] // shear changes matching angles, diagonal
     [InlineData(4,true)]  // rotated/reflected half-size
+    [InlineData(5,true)]  // translated valid scaled copy
+    [InlineData(24,true)] // translated half-size scaled copy
     public void AnglesAloneDoNotProveScaling(int variant, bool expected)
     {
         var p = new Dictionary<string,int> { ["variant"]=variant };
@@ -69,7 +71,7 @@ public sealed class UsCcssG7Unit1Lesson4SelectedPracticeRouteTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(Dist, D(1,7,0), "35"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Dist, D(1,2,2), "10"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(
-            Angles, new Dictionary<string,int>{["variant"]=5}, "1"));
+            Angles, new Dictionary<string,int>{["variant"]=25}, "1"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(
             "usccss.g7.u01.l05.not_authorized",D(0,2,0),"1"));
     }
