@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            1265, // Initial 1070 + 195 source-family interactions. Keep complete Grade5 and prior catalogue.
+            1564, // Previous interactions plus Grade 6 registrations; retain all prior routes.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
