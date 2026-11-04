@@ -11,5 +11,7 @@ public sealed class UsCcssG7Unit9Lesson4ContractTests
         Assert.NotNull(c);Assert.Contains("usccss.g7.u01.l02.scale_factor",c.AllowedQuestionFamilies);
         Assert.Equal("READY_VERIFIED",c.Readiness);
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("usccss.g7.u01.l02.scale_factor"));
+        Assert.Contains("usccss.g7.u01.l06.scaled_area_square_factor",c.AllowedQuestionFamilies);
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("usccss.g7.u01.l06.scaled_area_square_factor"));
     }
 }
