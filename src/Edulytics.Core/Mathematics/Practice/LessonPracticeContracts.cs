@@ -2066,6 +2066,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.increase_decrease", "usccss.g7.u04.percent_rate_from_values", "usccss.g7.u05.signed_rational_add_subtract"],
             "G7_U05_L17_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U06 L01: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L01", "supporting.algebra.equations",
+            "G7_NONPROPORTIONAL_RELATIONSHIPS_AND_UNKNOWN_QUANTITIES",
+            ["usccss.g7.u02.l08.classify_equations", "supporting.algebra.equations.mixed"],
+            "G7_U06_L01_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
