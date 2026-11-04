@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L08",
+  "title": "Translating to $y=mx+b$",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\8\\index.html",
+      "sha256": "20d74c4a28f772715bdfaa29bebdd0a4e2b057dbe2cf5d13782f2229807fa2f5"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\8\\preparation.html",
+      "sha256": "15abe5f31df1f3beb7c1774d43cdba1f7871d6d8b191a8770cc1a709943cd646"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\8\\index.html",
+      "sha256": "555255b9732b3ec886958afbd50e1fbbfd9a5c1509b22739f08eb5ebf6c44199"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\8\\practice.html",
+      "sha256": "c3514b42f7dc765ed22096dcaea2cbeed5616b260b6e2a3c1cf0c004fc20a8d0"
+    }
+  },
+  "learningGoals": [
+    "Recognize translations of parallel lines as keeping slope constant",
+    "Connect slope and intercept in y=mx+b to a graph with positive or negative initial value",
+    "Model realistic earnings and savings as parallel lines with different starting balances"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "8.1 • Which graphed lines are translations?",
+      "firstPartyTask": "translated-lines",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "8.2 • Increased savings",
+      "firstPartyTask": "savings",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "8.3 • Translating a line from points",
+      "firstPartyTask": "moving-line",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u03-l08-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u03-l08-selected-first-party-paper.html",
+    "sha256": "6905123f3b2371c2776d38e828622464659e7a80e0beb1926e48c8cbce3f3906",
+    "taskIds": [
+      "translated-lines",
+      "savings",
+      "moving-line",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Only f,h,i with common slope2; g and j slope differ.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Savings y=10h and y=10h+25; slope10 both and intercept0 vs25.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Lines y=1.5x+b at intercept2,5,−3; right translation4 changes intercept to−4 from starting2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice intercept5 equations first second and constant y=5; road slope350ft/mile, at5 miles6550ft.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cool-down B y=−3x−3; A at2 gives−2, B at2 gives−9; y=−10x+4 has unequal slope.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "slopeNum": 3,
+    "slopeDen": 2,
+    "translationRight": 4,
+    "initialIntercept": 2,
+    "newIntercept": -4
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
