@@ -1348,14 +1348,29 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // IM 2021 G7 U01:L01: source-specific exact polygon recognition;
+        // OUR/IM 6-8 Grade 7 (2017-2019) U01:L01: exact polygon recognition;
         // constructions, explanations and qualitative feedback need teacher review.
         byLesson["PED:US-CCSS-MATH:G7:U01:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G7:U01:L01",
             "geometry.similarity.scale_factor",
             "G7_EXACT_SCALED_COPY_CORRESPONDENCE",
             ["usccss.g7.u01.l01.scaled_copy_correspondence"],
-            "IM2021_G7_U01_L01_EXACT_AND_TEACHER_REVIEW",
+            "OUR_IM_G7_2017_2019_L01_EXACT_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+        // OUR/IM 6-8 Grade 7 (2017-2019) U01:L02. Exact numeric
+        // correspondence and rational factor selections are supported by
+        // independently authored triangles. Drawing, angle tracing and
+        // explanations remain teacher reviewed, not machine graded.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L02",
+            "geometry.similarity.scale_factor",
+            "G7_EXACT_CORRESPONDING_PARTS_AND_SCALE",
+            [
+                "usccss.g7.u01.l02.corresponding_parts",
+                "usccss.g7.u01.l02.scale_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L02_AUTHORING_AND_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area

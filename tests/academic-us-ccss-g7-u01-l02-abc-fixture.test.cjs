@@ -56,12 +56,12 @@ test('L02 exact Grade 7 Rich V2 renderer hook and accessible local geometry are 
   assert.match(svg,/<title/);
   assert.match(svg,/<desc/);
   assert.match(cursor.B_STATUS,/ACCEPTED_AUTHORING/);
-  assert.equal(cursor.READY_FOR_STAGE_D,false);
+  assert.equal(cursor.READY_FOR_STAGE_D,true);
+  assert.equal(cursor.testExecution,'TEST_AUTHORED_NOT_RUN');
 });
 
-// EXPECTED RED while Stage C is unselected: a source rubric draft alone
-// cannot turn a numeric generic fallback or a freehand sketch into a score.
-// Shared contract/engine files are owned by a separately authorized writer.
+// A-C authoring contract only: the exact family is selected in source.
+// Runtime scoring/persistence, human rubric delivery and D remain unverified.
 test('L02 selected Practice or verified educator-scoring route is required before C closure',()=>{
   const contracts=file('src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
   const rubric=JSON.parse(file('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json'));
@@ -74,4 +74,6 @@ test('L02 selected Practice or verified educator-scoring route is required befor
     record.studentArtifactPersisted===true;
   assert.ok(hasExactSelection||hasVerifiedTeacherDelivery,
     'L02 exact selected Practice or verified teacher-scored delivery is missing');
+  assert.match(contracts, /usccss\.g7\.u01\.l02\.corresponding_parts/);
+  assert.match(contracts, /usccss\.g7\.u01\.l02\.scale_factor/);
 });

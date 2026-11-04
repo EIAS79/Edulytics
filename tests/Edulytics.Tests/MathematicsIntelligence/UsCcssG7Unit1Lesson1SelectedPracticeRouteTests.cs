@@ -33,8 +33,14 @@ public sealed class UsCcssG7Unit1Lesson1SelectedPracticeRouteTests
         Assert.Equal("READY_VERIFIED", contract.Readiness);
         Assert.Equal(new[] { Family }, contract.AllowedQuestionFamilies);
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(Family));
-        Assert.False(LessonPracticeContractRegistry.TryResolve(
-            "PED:US-CCSS-MATH:G7:U01:L02", out _));
+        Assert.True(LessonPracticeContractRegistry.TryResolve(
+            "PED:US-CCSS-MATH:G7:U01:L02", out var next));
+        Assert.NotNull(next);
+        Assert.Equal(new[]
+        {
+            "usccss.g7.u01.l02.corresponding_parts",
+            "usccss.g7.u01.l02.scale_factor"
+        }, next.AllowedQuestionFamilies);
     }
 
     [Theory]

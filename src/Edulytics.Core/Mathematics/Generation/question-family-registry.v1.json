@@ -13,7 +13,46 @@
       ],
       "answerType": "exact_integer",
       "verificationPolicy": "exact-uniform-polygon-correspondence-all-pairwise-squared-distances-source-scale-factors",
-      "representations": ["numeric", "coordinate_polygon"],
+      "representations": [
+        "numeric",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l02.corresponding_parts",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "original-triangle-vertex-segment-angle-correspondence-under-label-cyclic-permutation",
+      "representations": [
+        "numeric",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l02.scale_factor",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "three-independent-corresponding-side-ratios-positive-and-reverse-rational-factors",
+      "representations": [
+        "numeric",
+        "geometry_lengths"
+      ],
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
@@ -28,7 +67,10 @@
       ],
       "answerType": "exact_integer",
       "verificationPolicy": "original-eight-hexagon-piece-count-times-unit-triangle-area",
-      "representations": ["numeric", "area_model"],
+      "representations": [
+        "numeric",
+        "area_model"
+      ],
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
@@ -43,7 +85,10 @@
       ],
       "answerType": "exact_integer",
       "verificationPolicy": "exact-two-square-four-triangle-disjoint-half-cell-coverage-not-area-sum-alone",
-      "representations": ["numeric", "structured_geometry"],
+      "representations": [
+        "numeric",
+        "structured_geometry"
+      ],
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
