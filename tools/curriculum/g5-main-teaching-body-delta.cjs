@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// Read-only source-preserving exact Git-object diff. Produces review candidates, NEVER academic approvals.
+// Read-only, historical pre-PR596-to-candidate Git-object diff. Produces review candidates, NEVER academic approvals.
 const fs = require('node:fs');
 const path = require('node:path');
 const cp = require('node:child_process');
@@ -29,7 +29,8 @@ const ownerConsentValid=
 
 const sha = value => crypto.createHash('sha256').update(String(value),'utf8').digest('hex');
 const git = (...args) => cp.execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:32*1024*1024}).trim();
-const previous = JSON.parse(git('show','origin/main:'+relative));
+const historicalBaselineCommit = '39c757630d2bd67217a1468fce099653ed0f3f53'; // First parent of the merged Grade 5 PR #596.
+const previous = JSON.parse(git('show',historicalBaselineCommit+':'+relative));
 const next = JSON.parse(fs.readFileSync(path.join(root,relative),'utf8'));
 const old = previous.lessons, current = next.lessons;
 const errors=[], review=[];
@@ -94,7 +95,7 @@ if(changed.some(x=>x.translations.some(t=>t.cultureCode!=='en')))
 const languageCounts={};
 for(const r of review)for(const tr of r.translations)languageCounts[tr.cultureCode]=(languageCounts[tr.cultureCode]||0)+1;
 const result={schemaVersion:1,kind:'G5_MAIN_TO_CANDIDATE_CONTENT_DIFFERENCE_EVIDENCE_NOT_ACADEMIC_APPROVAL',
-  baselineBranch:'origin/main',candidateSha:git('rev-parse','HEAD'),
+  baselineBranch:'historical-grade5-pre-pr596',baselineCommit:historicalBaselineCommit,candidateSha:git('rev-parse','HEAD'),
   baselinePackLessons:old?.length,candidatePackLessons:current?.length,
   changedTeachingLessonCount:changed.length,changedMetadataLessonCount:metadata.length,
   changedCultureCounts:languageCounts,sourceHashPreservedOnAllChangedLessons:changed.every(x=>x.sourceShaUnchanged),
@@ -108,9 +109,9 @@ const result={schemaVersion:1,kind:'G5_MAIN_TO_CANDIDATE_CONTENT_DIFFERENCE_EVID
 fs.mkdirSync(outputDir,{recursive:true});
 fs.writeFileSync(path.join(outputDir,'grade5-main-teaching-body-delta.json'),JSON.stringify(result,null,2)+'\n');
 const lines=[
-  '# Grade 5 — candidate versus main exact teaching-field differences',
+  '# Grade 5 — pre-PR596 versus candidate exact teaching-field differences',
   '',
-  'Candidate '+result.candidateSha+', main baseline '+git('rev-parse','origin/main')+'.',
+  'Candidate '+result.candidateSha+', pre-PR596 baseline '+historicalBaselineCommit+'.',
   '148 source lesson identities must remain identical. This is a SHA-based change inventory, **not source-parity acceptance**.',
   'Changed teaching lessons: '+changed.length+'; metadata-changed lessons: '+metadata.length+
   '; owner academic content approval evidenced: **'+result.ownerContentApprovedLessonCount+'**; independently verified source parity: **0**.',
