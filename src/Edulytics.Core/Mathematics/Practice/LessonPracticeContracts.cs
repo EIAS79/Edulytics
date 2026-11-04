@@ -1568,6 +1568,16 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l03.unit_rates_reciprocal"],
             "OUR_IM_G7_2017_2019_U02_L05_RECIPROCALS",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 Grade 7 U02 L06. Exact y=kx and inverse
+        // revenue, recycler mass/can, and market rates; context units,
+        // discrete counts and written algebraic reasoning teacher assessed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L06", "proportions.equivalent_ratios",
+            "G7_RATE_EQUATIONS_AND_INVERSE_TICKET_RECYCLE_COUNTS",
+            ["usccss.g7.u02.l06.concert_recycling_equations", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l05.reciprocal_proportional_equations"],
+            "OUR_IM_G7_2017_2019_U02_L06_SOURCE_AUTHORING",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

@@ -197,6 +197,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit2Lesson3UnitRatesQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
@@ -450,6 +451,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG7Unit2Lesson3UnitRatesQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(family))
             return UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
             return UsCcssG6Unit1Lesson1TilingQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
@@ -1847,6 +1850,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(family))
         {
             var item = UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -5028,6 +5037,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG7Unit2Lesson3UnitRatesQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(problem.Family))
             return UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
