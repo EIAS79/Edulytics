@@ -1665,6 +1665,18 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l10.graphs_origin_slope"],
             "OUR_IM_G7_2017_2019_U02_L14_FOUR_REPRESENTATIONS_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02 L15: open water-use modelling with
+        // assumptions, rate equations and reciprocal units. The local student
+        // edition has no separate L15 practice.html; selected first-party exact
+        // Practice reuses existing rate/equation families while investigation
+        // quality, evidence and conclusions remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L15", "proportions.unit_rate",
+            "G7_WATER_USE_ASSUMPTIONS_RATE_RECIPROCAL_EQUATIONS",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l05.reciprocal_proportional_equations",
+             "usccss.g7.u02.l09.missing_info_rate_comparison"],
+            "OUR_IM_G7_2017_2019_U02_L15_OPEN_MODEL_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
