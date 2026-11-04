@@ -1698,6 +1698,17 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u03.l02.radius_diameter_relation"],
             "OUR_IM_G7_2017_2019_U03_L02_CIRCLE_CONSTRUCTION_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L03: measured circumference and
+        // diameter, C/d near pi, proportional graph structure and inaccurate
+        // measurements. Existing exact circumference and table families cover
+        // closed subresults; physical measurement and explanation remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L03", "supporting.geometry.circles_loci",
+            "G7_CIRCUMFERENCE_DIAMETER_PI_PROPORTIONAL_MEASUREMENT",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation",
+             "usccss.g7.u02.l07.table_proportional_or_not"],
+            "OUR_IM_G7_2017_2019_U03_L03_CIRCUMFERENCE_MEASUREMENT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
