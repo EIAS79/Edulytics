@@ -1,0 +1,3 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U09 L11 project supplement authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit9CulminatingPractice.cshtml');assert.ok(v.includes('data-g7-u09-l11'));assert.ok(v.includes('Cool-down'));});
+test('U09 L11 A-C closure explicit',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u09-l11-abc-cursor.json'));assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.newEngine,false);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');assert.equal(c.studentPracticeSource,'ABSENT_IN_LOCAL_EDITION');});
