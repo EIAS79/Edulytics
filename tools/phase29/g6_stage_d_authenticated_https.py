@@ -341,8 +341,23 @@ def main():
             "student assessment completion confirmation absent")
     attempts_after=int(sql(f"""SELECT count(*) FROM "AssessmentAttempts"
         WHERE "AssessmentId"='{aid}';"""))
-    require(attempts_after==attempts_before+1,
-        "Grade6 student assessment attempt not stored")
+    # GET /student/assessments/{id} already calls GetOrCreateAttemptAsync.
+    # Submission must transition that persisted attempt, not create a second.
+    require(attempts_before==1 and attempts_after==1,
+        "Grade6 student assessment attempt missing or duplicated")
+    attempt_state=sql(f"""SELECT "Status"::text,("SubmittedAtUtc" IS NOT NULL)::text
+        FROM "AssessmentAttempts" WHERE "AssessmentId"='{aid}';""")
+    require(attempt_state in ("Submitted|t","Completed|t"),
+        "Grade6 student assessment attempt not submitted "+attempt_state)
+    result_count=sql(f"""SELECT count(*) FROM "AssessmentResults"
+        WHERE "AssessmentId"='{aid}';""")
+    require(result_count=="1",
+        "Grade6 student exam score/result not persisted "+result_count)
+    answer_count=sql(f"""SELECT count(*) FROM "StudentAnswers" sa
+        JOIN "AssessmentResults" ar ON ar."Id"=sa."AssessmentResultId"
+        WHERE ar."AssessmentId"='{aid}';""")
+    require(answer_count==str(len(exam_questions)),
+        "Grade6 student assessment responses not persisted "+answer_count)
     page(student,"/student/results")
     REPORT["syntheticTeacherBuilderSelectedGeneratedQuestionFamily"]=assessment_family
     REPORT["syntheticTeacherBuilderReviewApprovePublish"]="PASS"
