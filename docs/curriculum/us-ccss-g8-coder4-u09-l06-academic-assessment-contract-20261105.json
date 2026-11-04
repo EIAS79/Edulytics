@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U09:L06",
+  "title": "Using and Interpreting a Mathematical Model",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\9\\6\\index.html",
+      "sha256": "2c66d9067b5e88b52ab5c19ad6dba91b2a3b8c39cd62c4f8bd926d0c6aeff7c1"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\9\\6\\preparation.html",
+      "sha256": "ceb410ba4b25be07f55cfe01a54cd905a948f16d5971f00953ba302521f632bc"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\9\\6\\index.html",
+      "sha256": "0291d42e16ff1fec1b2baabedaed058f3fc73839fe25cc10c2b26772dc2865d6"
+    },
+    "practice": null
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "6.1: Using a Mathematical Model",
+      "6.2: Interpreting a Mathematical Model"
+    ],
+    "practiceProblemCount": 0,
+    "teacherFigureTagCount": 10,
+    "studentFigureTagCount": 6,
+    "requiredMaterialsSectionPresent": false,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: use a linear model of paired data for contextual predictions, interpret slope and intercept, and explicitly state plausible limits and uncertainty.",
+    "An illustrative model T(L)=40−0.5L for temperature T in degrees Celsius versus latitude L in degrees has negative slope, but its intercept describes only what the model predicts for L=0. It is not an asserted universal equatorial measurement, nor necessarily suitable for southern latitudes, other seasons, or extreme altitudes."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "6.1: Using a Mathematical Model",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "6.2: Interpreting a Mathematical Model",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 0,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u09-l06-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u09-l06-selected-first-party-paper.html",
+    "sha256": "fde776090ee9d67265e242d83407a6dcc4602f4590db7099c78fc918ccf3ee95",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "The prediction is 15. The slope means the model decreases 0.5 temperature-degree per latitude-degree within the modeled range; the intercept is a model parameter, not a universal equatorial measurement.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Geometric constructions distinguish gap-free/overlap-free tessellation from visual proximity, and statistical models distinguish prediction from exact observation.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Claims state the conditions, variables, units, and limitations needed for a defensible conclusion.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "L": 50,
+    "T": 15,
+    "slope": -0.5
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
