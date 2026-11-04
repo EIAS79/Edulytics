@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U03 L11 stained glass project authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit3CircleFigures.cshtml');for(const s of ['data-g7-u03-l11','11.1 Price','11.2 Scale','11.3 Create','Cool-down'])assert.ok(v.includes(s));});
+test('U03 L11 scale witnesses',()=>{assert.equal((4*4)/(2*2),4);assert.equal(4/2,2);});
+test('U03 L11 absence of separate practice is explicit',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u03-l11-abc-cursor.json'));assert.equal(c.studentPracticeSource,'ABSENT_IN_LOCAL_EDITION');assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

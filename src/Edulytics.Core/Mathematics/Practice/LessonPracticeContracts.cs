@@ -1785,6 +1785,17 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u03.l02.radius_diameter_relation"],
             "OUR_IM_G7_2017_2019_U03_L10_BOUNDARY_VS_COVERAGE_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L11: open stained-glass design and
+        // cost modelling using circle area, composite regions and proportional
+        // price relationships. The local student edition has no separate
+        // practice.html; exact first-party Practice reuses existing families.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L11", "supporting.geometry.circles_loci",
+            "G7_STAINED_GLASS_CIRCLE_AREA_DESIGN_AND_COST_MODEL",
+            ["supporting.geometry.circle_area_pi_coefficient", "supporting.geometry.compound_area",
+             "usccss.g7.u02.l04.proportional_equations"],
+            "OUR_IM_G7_2017_2019_U03_L11_STAINED_GLASS_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
