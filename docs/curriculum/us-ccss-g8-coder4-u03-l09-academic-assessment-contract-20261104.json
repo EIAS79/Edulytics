@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L09",
+  "title": "Slopes Don't Have to be Positive",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\9\\index.html",
+      "sha256": "310b92d49821831a4ea343b35a791bd2312e29fb3a49c670bed22502178038ec"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\9\\preparation.html",
+      "sha256": "fc8d41af416ef9e1db7be18e8f3bca88ac8018cc905710aff7d738970c5a1401"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\9\\index.html",
+      "sha256": "35986588052c99743e1376fcd54b67641cdfb9647796c058480ae9d95722a65b"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\9\\practice.html",
+      "sha256": "8f50acaddec5b923b82923cdea6a487cb8a86de48e4ff5524b2c3e826a9b67dd"
+    }
+  },
+  "learningGoals": [
+    "Recognize and justify negative and zero slopes of linear relationships",
+    "Interpret a decreasing line and positive starting balance",
+    "Respect realistic input domains in financial and travel models"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "9.1 • Odd line out",
+      "firstPartyTask": "odd-line",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.2 • Transportation card decreases",
+      "firstPartyTask": "fare",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.3 • Travel habits across a month",
+      "firstPartyTask": "travel",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.4 • A weekly payback plan",
+      "firstPartyTask": "payback",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 4,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u03-l09-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u03-l09-selected-first-party-paper.html",
+    "sha256": "115c321951c712c3fe398e1f049f4e5e3784af5b146dba311c3332cc461f32e3",
+    "taskIds": [
+      "odd-line",
+      "fare",
+      "travel",
+      "payback",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Two supported odd-one-out arguments, with slopes and intercepts.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "B(r)=40−2.5r, balances40,37.5,35,15,0 at r0,1,2,10,16; no r17.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Daily travel balance30−3d and domain limited to remaining money.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Debt96−12w, reaches0 at week8; negative debt cannot be a remaining amount.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Practice descent 9000−600t and t15 min, other rates, fixed bonus nonproportional, slopes −2,0,vertical undefined.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C6",
+      "points": 2,
+      "expectedReasoning": "Cooldown B(n)=25−5n, B(3)=10, n0..5 whole journeys.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 12,
+  "mathFixtures": {
+    "initial": 40,
+    "cost": 2.5,
+    "lastRide": 16,
+    "finalBalance": 0
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
