@@ -374,7 +374,8 @@ public sealed class ExactSkillContractQuestionEngine
                     random,
                     difficulty,
                     requestedVariant,
-                    allowedQuestionFamilies.Count == 1 && questionCount >= 10);
+                    allowedQuestionFamilies.Count == 1 && questionCount >= 10,
+                    preferredVariant.HasValue);
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -451,7 +452,9 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
-        if (Grade6FiniteSourceFamilyIds.Contains(family) && parameters.ContainsKey("g6Composite"))
+        if (parameters.ContainsKey("g6ScaledRatio"))
+            return VerifyGrade6ScaledRatio(family, parameters, answer);
+        if (IsGrade6FiniteSourceVariantFamily(family) && parameters.ContainsKey("g6Composite"))
             return VerifyGrade6Composite(family, parameters, answer);
 
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
@@ -1833,6 +1836,22 @@ public sealed class ExactSkillContractQuestionEngine
     // Finite original geometry examples are combined into first-party compound
     // computations. Both original source-specific questions must be solved:
     // no fake randomness, duplicated exposure fingerprints or reused answers.
+    // Grade 6's selected-source variant banks are genuinely finite. Only
+    // compose numeric source tasks for adaptive sessions that request a
+    // preferred variant; ordinary single-lesson Practice remains unchanged.
+    private static bool IsGrade6FiniteSourceVariantFamily(string family) =>
+        Grade6FiniteSourceFamilyIds.Contains(family) ||
+        UsCcssG6Unit1Lesson2TangramQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson6AreaQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family) ||
+        UsCcssG6Unit2RatioQuestions.Supports(family);
+
     private static readonly HashSet<string> Grade6FiniteSourceFamilyIds = new(StringComparer.Ordinal)
     {
         "usccss.g6.u01.l02.tangram_equal_area",
@@ -1862,12 +1881,39 @@ public sealed class ExactSkillContractQuestionEngine
 
     private static ExactProblem BuildProblem(
         string family, Random random, ExactSkillQuestionDifficulty difficulty,
-        int? preferredVariant = null, bool extendedFamilySession = false)
+        int? preferredVariant = null, bool extendedFamilySession = false,
+        bool adaptiveCandidate = false)
     {
-        if (!extendedFamilySession || !Grade6FiniteSourceFamilyIds.Contains(family))
+        if ((!extendedFamilySession && !adaptiveCandidate) ||
+            !IsGrade6FiniteSourceVariantFamily(family))
             return BuildOriginalProblem(family, random, difficulty, preferredVariant);
 
         var a = BuildOriginalProblem(family, random, difficulty, preferredVariant);
+        if (a.ItemType == AssessmentItemType.ShortAnswer &&
+            family is (UsCcssG6Unit2RatioQuestions.L02Diagrams or
+                       UsCcssG6Unit2RatioQuestions.L02Cards) &&
+            a.Parameters.TryGetValue("variant", out var ratioVariant))
+        {
+            int ratioCopies = random.Next(2, 20);
+            return new ExactProblem(family, a.Prompt +
+                $" Edulytics extension: imagine {ratioCopies} identical copies of this " +
+                "same labeled diagram. Calculate the TOTAL depicted marks in each " +
+                "named row across ALL copies. Enter exact totals in order as " +
+                (family == UsCcssG6Unit2RatioQuestions.L02Cards
+                    ? "A:B:C. Do not simplify the depicted totals."
+                    : "A:B. Do not simplify the depicted totals."),
+                "Multiply each source row count by the number of diagrams; " +
+                "preserve the original named row order.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>
+                {
+                    ["g6ScaledRatio"] = 1,
+                    ["variant"] = ratioVariant,
+                    ["copies"] = ratioCopies
+                });
+        }
+        if (a.ItemType != AssessmentItemType.Numeric)
+            return a;
         var b = BuildOriginalProblem(family, random, difficulty, preferredVariant);
         if (!a.Parameters.TryGetValue("variant", out int av) ||
             !b.Parameters.TryGetValue("variant", out int bv))
@@ -1892,6 +1938,41 @@ public sealed class ExactSkillContractQuestionEngine
             "Independently solve both source-skill tasks, then combine " +
             "the values with exact arithmetic; diagrams still need a teacher's review.",
             a.ItemType, parameters);
+    }
+
+    private static string Grade6ScaledRatioValue(
+        string family, IReadOnlyDictionary<string, int> p)
+    {
+        if (family is not (UsCcssG6Unit2RatioQuestions.L02Diagrams or
+                           UsCcssG6Unit2RatioQuestions.L02Cards) ||
+            p.Count != 3 ||
+            !p.TryGetValue("g6ScaledRatio", out var flag) || flag != 1 ||
+            !p.TryGetValue("copies", out var copies) || copies is < 2 or > 19 ||
+            !p.TryGetValue("variant", out var variant))
+            throw new ArgumentException("Invalid Grade 6 scaled ratio.");
+
+        var original = new Dictionary<string, int> { ["variant"] = variant };
+        var baseAnswer = UsCcssG6Unit2RatioQuestions.Solve(family, original);
+        return string.Join(":", baseAnswer.Split(':')
+            .Select(term => (int.Parse(term, CultureInfo.InvariantCulture) * copies)
+                .ToString(CultureInfo.InvariantCulture)));
+    }
+
+    private static bool VerifyGrade6ScaledRatio(
+        string family, IReadOnlyDictionary<string, int> p, string? answer)
+    {
+        if (string.IsNullOrWhiteSpace(answer) || answer != answer.Trim())
+            return false;
+        try
+        {
+            return string.Equals(
+                Grade6ScaledRatioValue(family, p), answer,
+                StringComparison.Ordinal);
+        }
+        catch (Exception ex) when (ex is ArgumentException or FormatException or OverflowException)
+        {
+            return false;
+        }
     }
 
     private static bool VerifyGrade6Composite(
@@ -1920,7 +2001,7 @@ public sealed class ExactSkillContractQuestionEngine
     private static (BigInteger Numerator, BigInteger Denominator) Grade6CompositeValue(
         string family, IReadOnlyDictionary<string, int> p)
     {
-        if (!Grade6FiniteSourceFamilyIds.Contains(family) || !IsValidGrade6Composite(p))
+        if (!IsGrade6FiniteSourceVariantFamily(family) || !IsValidGrade6Composite(p))
             throw new ArgumentException("Unsupported Grade 6 composite");
         var a = new Dictionary<string, int> { ["variant"] = p["a"] };
         var b = new Dictionary<string, int> { ["variant"] = p["b"] };
@@ -5341,7 +5422,9 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
-        if (Grade6FiniteSourceFamilyIds.Contains(problem.Family) &&
+        if (p.ContainsKey("g6ScaledRatio"))
+            return Grade6ScaledRatioValue(problem.Family, p);
+        if (IsGrade6FiniteSourceVariantFamily(problem.Family) &&
             p.ContainsKey("g6Composite"))
         {
             var value = Grade6CompositeValue(problem.Family, p);

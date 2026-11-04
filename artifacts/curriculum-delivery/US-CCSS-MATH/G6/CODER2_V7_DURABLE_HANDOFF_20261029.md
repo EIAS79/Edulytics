@@ -1,12 +1,12 @@
 # Edulytiks — American Coder 2 / Grade 6 — V7 durable continuation checkpoint
 
-**Date:** 2026-10-29  
-**Repository:** `EIAS79/Edulytics`  
-**Existing branch:** `curriculum/us-ccss-g6-full-grade-20261028`  
-**Existing draft PR:** [#591](https://github.com/EIAS79/Edulytics/pull/591)  
-**Verified latest head immediately before this checkpoint:** `c55468750fdb867a1d487c16950ed144b7a551f2`  
-**Protected main at beginning:** `39c757630d2bd67217a1468fce099653ed0f3f53`  
-**Course:** `US-CCSS-MATH:G6:OUR-IM-2017` — 147 canonical lessons / 9 units  
+**Date:** 2026-10-29
+**Repository:** `EIAS79/Edulytics`
+**Existing branch:** `curriculum/us-ccss-g6-full-grade-20261028`
+**Existing draft PR:** [#591](https://github.com/EIAS79/Edulytics/pull/591)
+**Verified latest head immediately before this checkpoint:** `c55468750fdb867a1d487c16950ed144b7a551f2`
+**Protected main at beginning:** `39c757630d2bd67217a1468fce099653ed0f3f53`
+**Course:** `US-CCSS-MATH:G6:OUR-IM-2017` — 147 canonical lessons / 9 units
 **Verdict: AUTHORING_CONTINUES / NO_GO / RELEASE_BLOCKED.** Do not merge, deploy, alter production DB or claim owner UAT.
 
 ## Exact work completed in V7 (existing 147 candidates preserved)

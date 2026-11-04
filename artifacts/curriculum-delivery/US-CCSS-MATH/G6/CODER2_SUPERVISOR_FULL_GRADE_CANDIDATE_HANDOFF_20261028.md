@@ -1,10 +1,10 @@
 # Edulytiks — American Coder 2 → American Supervisor 1
 
-**Course:** `US-CCSS-MATH:G6:OUR-IM-2017` (Grade 6, LogicalLevel 7)  
-**Scope:** 147 canonical lessons, 9 units, US Common Core Mathematics only  
-**Authoring branch:** `curriculum/us-ccss-g6-full-grade-20261028`  
-**Verified initial main:** `39c757630d2bd67217a1468fce099653ed0f3f53`  
-**Date:** 2026-10-28  
+**Course:** `US-CCSS-MATH:G6:OUR-IM-2017` (Grade 6, LogicalLevel 7)
+**Scope:** 147 canonical lessons, 9 units, US Common Core Mathematics only
+**Authoring branch:** `curriculum/us-ccss-g6-full-grade-20261028`
+**Verified initial main:** `39c757630d2bd67217a1468fce099653ed0f3f53`
+**Date:** 2026-10-28
 **Decision:** **FULL-GRADE FIRST-PARTY CONTENT AUTHORING CANDIDATE. RELEASE BLOCKED.** This is not an academic signoff or an instruction to merge/deploy.
 
 ## A. Changes actually committed
@@ -147,4 +147,3 @@ No production state has been changed by Coder 2. Rolling back this unmerged work
 **Shared single-writer unresolved work — NOT assigned to this coder:** G7 PR #590 remains open/draft and changes both global `RichLessonContentV2PilotTests.cs` and `RichLessonContentV2RolloutTests.cs`. Supervisor 1 must coordinate those shared tests under issue #592 before merging either grade, preserving prior G1/G3/G4 and other-curriculum invariants. The precise Grade6 `LessonPracticeContractRegistry.TryResolve` selected route, generator, verifier, correct/wrong/malformed/equivalent grading, feedback, attempted/persisted submissions and two-school isolation remain unverified. Particularly `CCSS:6.G.A.1` area teaching cannot be certified by the generic shape-dimension fallback. Source-faithful drawings, histogram/box plots, geometry manipulatives and voting/estimation rubrics require actual accessible interactive or human-reviewed alternatives and authenticated evaluation/persistence proof.
 
 **Durable cursor:** Next original student/teacher task body review `PED:US-CCSS-MATH:G6:U01:L11`, then remaining 72 not independently compared at this depth. Full academic acceptance cursor remains `PED:US-CCSS-MATH:G6:U01:L01`. Treat all 147 lessons as **NOT_ACCEPTED** until real A–D evidence at the final tested candidate SHA. Draft PR, no merge, no deploy, no owner UAT or production data writes.
-

@@ -1,9 +1,9 @@
 # Edulytiks — Coder 2 Grade 6 — V11 P0 durable execution handoff
 
-**Date:** 2026-10-30  
-**Repository:** `EIAS79/Edulytics`  
-**Course:** `US-CCSS-MATH:G6:OUR-IM-2017`  
-**Branch:** `curriculum/us-ccss-g6-full-grade-20261028`  
+**Date:** 2026-10-30
+**Repository:** `EIAS79/Edulytics`
+**Course:** `US-CCSS-MATH:G6:OUR-IM-2017`
+**Branch:** `curriculum/us-ccss-g6-full-grade-20261028`
 **PR:** [#591](https://github.com/EIAS79/Edulytics/pull/591), **DRAFT / NO_GO**.
 
 ## HEAD and ownership

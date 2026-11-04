@@ -1,10 +1,10 @@
 # Edulytiks — American Grade 6 Coder 2 — V8 durable execution handoff
 
-**Date:** 2026-10-29  
-**Existing branch:** `curriculum/us-ccss-g6-full-grade-20261028`  
-**Existing review PR:** [#591](https://github.com/EIAS79/Edulytics/pull/591), DRAFT, NO_GO  
-**Initial checked V8 PR SHA:** `3180f2b46a72394ed2329a972fe1707838a2c168` (139 commits; no replacement branch).  
-**Last committed Grade 6 ledger checkpoint:** `237d5264be264cfec4aa819d79789aa2ea861cdd`.  
+**Date:** 2026-10-29
+**Existing branch:** `curriculum/us-ccss-g6-full-grade-20261028`
+**Existing review PR:** [#591](https://github.com/EIAS79/Edulytics/pull/591), DRAFT, NO_GO
+**Initial checked V8 PR SHA:** `3180f2b46a72394ed2329a972fe1707838a2c168` (139 commits; no replacement branch).
+**Last committed Grade 6 ledger checkpoint:** `237d5264be264cfec4aa819d79789aa2ea861cdd`.
 **Never force-push or reset. Re-check PR SHA before every new write.**
 
 ## Verified grade-owned work in this execution turn
@@ -28,8 +28,8 @@ The direct public **student/teacher lesson activity body comparison** counter ad
 - Prior verified CI at `3180f2b...` contained 6 failures and was not green. Shared global Rich V2 tests asserted **318** instead of current candidate-rich count **327**; other jobs rejected **147 body changes without independent source approvals**. These are **real fail-closed blockers**, not tests to bypass. G7 PR #590 also touches shared Rich V2 tests. **Supervisor 1's single integration writer** owns shared test compatibility and safe content version/predecessor decisions under [issue #592](https://github.com/EIAS79/Edulytics/issues/592). This Coder edited **no shared core/CI/DB/seed/rendering paths**.
 - Keep existing PR #591 **DRAFT, NO_GO**. No protected merge, production change, deploy, owner UAT, or fabricated academic signoff.
 
-**Next direct source activity comparison:** `PED:US-CCSS-MATH:G6:U03:L04`, followed by 45 additional unreviewed activities according to the current ledger (check actual per-row flags rather than simply incrementing counters).  
-**Next full academic acceptance cursor:** `PED:US-CCSS-MATH:G6:U01:L01`.  
-**Next production validation:** freeze exact PR SHA after approved shared integration, run actual Node/.NET/isolated DB/Practice/student/teacher/two-school/cross-curriculum suite, then independently review results before considering release. 
+**Next direct source activity comparison:** `PED:US-CCSS-MATH:G6:U03:L04`, followed by 45 additional unreviewed activities according to the current ledger (check actual per-row flags rather than simply incrementing counters).
+**Next full academic acceptance cursor:** `PED:US-CCSS-MATH:G6:U01:L01`.
+**Next production validation:** freeze exact PR SHA after approved shared integration, run actual Node/.NET/isolated DB/Practice/student/teacher/two-school/cross-curriculum suite, then independently review results before considering release.
 
 **Terminal verdict: SOURCE_REVIEW_CONTINUATION_COMMITTED / AUTHORING_CANDIDATE / RELEASE_BLOCKED.**
