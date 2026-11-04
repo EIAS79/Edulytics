@@ -2391,7 +2391,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:US-CCSS-MATH:G7:U08:L03"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G7:U08:L03", "supporting.probability.sample_space",
             "G7_LIST_SAMPLE_SPACE_AND_CALCULATE_SIMPLE_PROBABILITY",
-            ["supporting.probability.sample_space_count", "probability.simple.favourable_over_total.exact"],
+            ["supporting.probability.sample_space_count", "probability.theoretical.simple_event"],
             "G7_U08_L03_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
         // Grade 7 U08 L04: source-scoped probability/statistics Practice.

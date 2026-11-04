@@ -11,5 +11,7 @@ public sealed class UsCcssG7Unit8Lesson3ContractTests
         Assert.NotNull(c);Assert.Contains("supporting.probability.sample_space_count",c.AllowedQuestionFamilies);
         Assert.Equal("READY_VERIFIED",c.Readiness);
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("supporting.probability.sample_space_count"));
+        Assert.Contains("probability.theoretical.simple_event", c.AllowedQuestionFamilies);
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("probability.theoretical.simple_event"));
     }
 }
