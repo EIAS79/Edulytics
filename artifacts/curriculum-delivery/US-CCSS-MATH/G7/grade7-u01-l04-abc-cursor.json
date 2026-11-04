@@ -39,15 +39,33 @@
   "existingTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
   "oracle": "tests/academic-us-ccss-g7-u01-l04-abc-fixture.test.cjs",
   "testExecution": "TEST_AUTHORED_NOT_RUN",
-  "A_STATUS": "A_CLOSED_SOURCE_EQUIVALENT_TASKS_AND_RIGHTS_REVIEWED",
-  "B_STATUS": "BLOCKED_SHARED_RICH_V2_PARTIAL_INVOCATION",
-  "C_STATUS": "BLOCKED_SHARED_7G_A1_PRACTICE_AND_TEACHER_SCORING",
+  "A_STATUS": "A_CLOSED_LOCAL_SOURCE_TEACHER_STUDENT_ALL_FOUR_ACTIVITIES_PRACTICE",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_PARTIAL_REUSED",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_L04_HIDDEN_DISTANCE_AND_ANGLE_SCALING",
   "D_STATUS": "NOT_RUN",
-  "READY_FOR_STAGE_D": false,
-  "blockerOwner": "Supervisor 1 / integration issue #592 and Draft PR #599",
+  "READY_FOR_STAGE_D": true,
+  "blockerOwner": null,
   "gradePatch": "48381ce93ccc854d45da1684c37295be1a05c627",
   "testPatch": "e32eb68a849613ae176ec1d185a3f0676c06550b",
   "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L05",
-  "closedAt": null,
-  "closureSHA": null
+  "closedAt": "2026-11-04 (A-B-C authoring checkpoint; time not measured)",
+  "closureSHA": null,
+  "practice": "EXACT_LESSON_SELECTED_HIDDEN_DISTANCE_AND_ANGLE_FAMILIES_SOURCE_AUTHORING",
+  "stageABCClosure_20261104": {
+    "sourceScope": "OUR_IM_G7_2017_2019_ORIGINAL_LOCAL_NO_ACCESSIM_NO_V360",
+    "teacher": "07_Grade_7_OUR_IM/1/4/preparation.html; 1/4/index.html",
+    "student": "07_Grade_7_OUR_IM_Student/1/4/index.html; 1/4/practice.html",
+    "sourceCoverage": "4.1 corresponding angles/protractor; 4.2 distances between nonadjacent points, inverse ratio 6-to-15; 4.3 identical angle measurements do not imply proportional distances; 4.4 first-party bird shapes",
+    "reused": "existing source scoped U01 L04 Rich V2, SVG and teacher rubric, exact L01 polygon check",
+    "newSourceSelectedFamilies": [
+      "usccss.g7.u01.l04.hidden_corresponding_distance",
+      "usccss.g7.u01.l04.angle_and_distance_scaling"
+    ],
+    "teacherBoundary": "Protractor measurements, student bird diagram and drawing, written angle and distance justification need teacher review; not auto-graded or persisted",
+    "cooldown": "First-party Edulytiks teacher-reviewed replacement retained; publisher gated Cool-down not verified or copied",
+    "authoringTests": "AUTHORED_NOT_RUN",
+    "CI": "NOT_RUN",
+    "StageD": "NOT_RUN",
+    "next": "PED:US-CCSS-MATH:G7:U01:L05"
+  }
 }

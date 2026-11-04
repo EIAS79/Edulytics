@@ -1388,6 +1388,21 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L03_SOURCE_SCOPED_NUMERIC_AND_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+        // OUR/IM 6-8 G7 U01:L04: any two corresponding points scale.
+        // The prior polygon oracle also checks angles/diagonals rather than
+        // confusing equal angles alone with a valid scaled copy.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L04",
+            "geometry.similarity.scale_factor",
+            "G7_HIDDEN_CORRESPONDING_DISTANCES_AND_ANGLES",
+            [
+                "usccss.g7.u01.l04.hidden_corresponding_distance",
+                "usccss.g7.u01.l04.angle_and_distance_scaling",
+                "usccss.g7.u01.l01.scaled_copy_correspondence"
+            ],
+            "OUR_IM_G7_2017_2019_L04_FIRST_PARTY_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

@@ -94,6 +94,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l04.hidden_corresponding_distance",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "all-corresponding-point-distances-even-hidden-direction-sensitive-integer-rational-scale",
+      "representations": [
+        "numeric",
+        "coordinate_polygon"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l04.angle_and_distance_scaling",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reused-exact-geometry-kernel-matching-angles-insufficient-with-unequal-corresponding-ratios",
+      "representations": [
+        "coordinate_polygon",
+        "angle"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
       "version": 1,
       "skillId": "geometry.area_tiling",

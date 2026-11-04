@@ -33,3 +33,14 @@ test('L04 student investigation and original teacher-reviewed cooldown are lesso
   assert.match(view,/12-by-3 right triangle/);
   assert.match(view,/cannot submit work, persist scores/);
 });
+
+test('L04 lesson-selected objective Practice authoring references the original roles',()=>{
+  const contracts=fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+  const c=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l04-abc-cursor.json'),'utf8'));
+  assert.match(contracts,/usccss\.g7\.u01\.l04\.hidden_corresponding_distance/);
+  assert.match(contracts,/usccss\.g7\.u01\.l04\.angle_and_distance_scaling/);
+  assert.equal(c.READY_FOR_STAGE_D,true);
+  assert.equal(c.testExecution,'TEST_AUTHORED_NOT_RUN');
+});
