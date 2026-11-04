@@ -23,3 +23,14 @@ test('L07 original task is lesson guarded and fails closed at human score',()=>{
   assert.match(src,/Cool-down — Edulytiks-original/);
   assert.match(src,/not provided by this partial/);
 });
+
+test('L07 source units and selected exact family authored, tests not run',()=>{
+ const root=path.join(__dirname,'..');
+ const registry=fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+ const checkpoint=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l07-abc-cursor.json'),'utf8'));
+ assert.match(registry,/usccss\.g7\.u01\.l07\.drawing_actual_distance_units/);
+ assert.equal(checkpoint.READY_FOR_STAGE_D,true);
+ assert.equal(checkpoint.testExecution,'TEST_AUTHORED_NOT_RUN');
+});

@@ -167,6 +167,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l07.drawing_actual_distance_units",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "unit-aware-length-map-drawing-centimetres-to-actual-metres-not-physical-cm-to-m-unit-conversion",
+      "representations": [
+        "scale_drawing",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
       "version": 1,
       "skillId": "geometry.area_tiling",
