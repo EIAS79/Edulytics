@@ -95,6 +95,12 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
             "supporting.geometry.angle_around_point",
+            "usccss.g7.u07.complementary_angle",
+            "usccss.g7.u07.vertical_angle",
+            "usccss.g7.u07.triangle_side_feasible",
+            "usccss.g7.u07.parallel_base_cross_section_sides",
+            "usccss.g7.u07.prism_volume_base_height",
+            "usccss.g7.u07.prism_surface_area_base_perimeter_height",
             "supporting.geometry.angle_classify",
             "supporting.geometry.parallelogram_area",
             "supporting.geometry.compound_area",
@@ -281,6 +287,12 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
+            "usccss.g7.u07.complementary_angle" => G7ComplementaryAngle(random),
+            "usccss.g7.u07.vertical_angle" => G7VerticalAngle(random),
+            "usccss.g7.u07.triangle_side_feasible" => G7TriangleSideFeasible(random, scale),
+            "usccss.g7.u07.parallel_base_cross_section_sides" => G7ParallelBaseCrossSection(random),
+            "usccss.g7.u07.prism_volume_base_height" => G7PrismVolume(random, scale),
+            "usccss.g7.u07.prism_surface_area_base_perimeter_height" => G7PrismSurfaceArea(random, scale),
             "supporting.geometry.angle_classify" => AngleClassify(random),
             "supporting.geometry.parallelogram_area" => ParallelogramArea(random, scale),
             "supporting.geometry.compound_area" => CompoundArea(random, scale),
@@ -472,6 +484,18 @@ internal static partial class SupportingPracticeCompletionEngine
                 p["coefficient"].ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_around_point" =>
                 (360 - p["a"] - p["b"] - p["c"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.complementary_angle" =>
+                (90 - p["known"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.vertical_angle" =>
+                p["known"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.triangle_side_feasible" =>
+                (p["a"] + p["b"] > p["c"] && p["a"] + p["c"] > p["b"] && p["b"] + p["c"] > p["a"] ? "1" : "0"),
+            "usccss.g7.u07.parallel_base_cross_section_sides" =>
+                p["baseSides"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.prism_volume_base_height" =>
+                (p["baseArea"] * p["height"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.prism_surface_area_base_perimeter_height" =>
+                (2 * p["baseArea"] + p["basePerimeter"] * p["height"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_classify" =>
                 ClassifyAngle(p["angle"]),
             "supporting.geometry.parallelogram_area" =>
@@ -1320,6 +1344,68 @@ internal static partial class SupportingPracticeCompletionEngine
             $"Three angles around a point are {a}°, {b}° and {c}°. Find the remaining angle.",
             "Angles around a point total 360°. Subtract the known angles and check the complete turn.",
             ("a", a), ("b", b), ("c", c));
+    }
+
+    private static Problem G7ComplementaryAngle(Random r)
+    {
+        var known = r.Next(10, 81);
+        return P("usccss.g7.u07.complementary_angle",
+            $"Two angles are complementary. One measures {known} degrees. Find the other.",
+            "Complementary angles sum to 90 degrees.",
+            ("known", known));
+    }
+
+    private static Problem G7VerticalAngle(Random r)
+    {
+        var known = r.Next(20, 161);
+        return P("usccss.g7.u07.vertical_angle",
+            $"Two angles are vertical angles. One measures {known} degrees. Find the other.",
+            "Vertical angles formed by two intersecting lines have equal measures.",
+            ("known", known));
+    }
+
+    private static Problem G7TriangleSideFeasible(Random r, int s)
+    {
+        var a = r.Next(2, 10 + s);
+        var b = r.Next(2, 10 + s);
+        var makeValid = r.Next(0, 2) == 0;
+        var c = makeValid
+            ? r.Next(Math.Abs(a - b) + 1, a + b)
+            : a + b + r.Next(0, 4 + s);
+        return P("usccss.g7.u07.triangle_side_feasible",
+            $"Can side lengths {a}, {b}, and {c} form a nondegenerate triangle? Enter 1 for yes or 0 for no.",
+            "Each pair of side lengths must have a sum greater than the third side.",
+            ("a", a), ("b", b), ("c", c));
+    }
+
+    private static Problem G7ParallelBaseCrossSection(Random r)
+    {
+        var baseSides = r.Next(3, 7);
+        return P("usccss.g7.u07.parallel_base_cross_section_sides",
+            $"A right prism has a {baseSides}-sided polygon as its base. A slice parallel to the base makes a cross section. How many sides does that cross section have?",
+            "A slice parallel to a prism base is congruent to the base, so it has the same number of sides.",
+            ("baseSides", baseSides));
+    }
+
+    private static Problem G7PrismVolume(Random r, int s)
+    {
+        var baseArea = r.Next(4, 30 + s * 5);
+        var height = r.Next(2, 12 + s * 2);
+        return P("usccss.g7.u07.prism_volume_base_height",
+            $"A right prism has base area {baseArea} square units and height {height} units. Find its volume.",
+            "Use V = B h, where B is the area of a base and h is the perpendicular distance between the bases.",
+            ("baseArea", baseArea), ("height", height));
+    }
+
+    private static Problem G7PrismSurfaceArea(Random r, int s)
+    {
+        var baseArea = r.Next(4, 25 + s * 4);
+        var basePerimeter = r.Next(6, 30 + s * 4);
+        var height = r.Next(2, 12 + s * 2);
+        return P("usccss.g7.u07.prism_surface_area_base_perimeter_height",
+            $"A right prism has base area {baseArea}, base perimeter {basePerimeter}, and height {height}. Find its total surface area.",
+            "For a right prism, total surface area is 2B + P h: two congruent bases plus the lateral rectangles.",
+            ("baseArea", baseArea), ("basePerimeter", basePerimeter), ("height", height));
     }
 
     private static Problem AngleClassify(Random r)

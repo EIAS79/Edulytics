@@ -2234,6 +2234,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.expressions.mixed", "supporting.algebra.simplify"],
             "G7_U06_L23_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U07 L01: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L01", "geometry.angles.relationships",
+            "G7_RIGHT_STRAIGHT_FULL_TURN_AND_ADJACENT_ANGLES",
+            ["supporting.geometry.angle_around_point", "supporting.geometry.angle_classify", "geometry.angles.supplementary"],
+            "G7_U07_L01_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
