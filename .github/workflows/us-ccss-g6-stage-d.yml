@@ -233,7 +233,7 @@ jobs:
           test "$EDULYTICS_CI_REHEARSAL" = true
           test "$EDULYTICS_CI_REHEARSAL_PROGRAMME" = US-CCSS-G6
           test "$EDULYTICS_CLEAN_DATABASE_NAME" = edulytics_clean_ci
-          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
           python3 -m py_compile tools/phase29/g6_stage_d_authenticated_https.py tools/phase29/g6_stage_d_visual_https.py tools/phase29/b001_practice_attempt_probe.py
           python3 tools/phase29/b001_practice_attempt_probe.py >/tmp/g6-probe-unittests.log
       - name: Build/publish real web app and migrate local PostgreSQL 18

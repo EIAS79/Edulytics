@@ -244,6 +244,8 @@ public static class LessonPracticeInteractionRegistry
                 LessonPracticeInteractionKind.FractionEntry,
 
             "exact_vector" or
+            "exact_ordered_ratio" or
+            "exact_ordered_ratio_three_term" or
             "exact_interval_or_union" or
             "quotient_and_remainder" or
             "enum_text" =>
