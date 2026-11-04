@@ -1865,6 +1865,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u02.l04.proportional_equations"],
             "G7_U04_L08_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U04 L09: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L09", "percentages.core",
+            "G7_NONWHOLE_AND_SUB_ONE_PERCENTAGES",
+            ["usccss.g7.u04.nonwhole_percent_of_quantity", "supporting.fdp.percent_equivalent"],
+            "G7_U04_L09_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
