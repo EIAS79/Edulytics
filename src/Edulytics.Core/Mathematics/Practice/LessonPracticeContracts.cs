@@ -2538,6 +2538,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations", "percentages.core.of_quantity"],
             "G7_U09_L01_CULMINATING_PROJECT_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U09 L02: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L02", "proportions.unit_rate",
+            "G7_RECIPE_COST_PER_SERVING_AND_SPREADSHEET_FORMULAS",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l04.proportional_equations", "supporting.fractions.divide_whole"],
+            "G7_U09_L02_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
