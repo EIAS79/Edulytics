@@ -1730,6 +1730,17 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u03.l02.radius_diameter_relation"],
             "OUR_IM_G7_2017_2019_U03_L05_WHEEL_ROLLING_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L06: estimate irregular areas by
+        // decomposing or enclosing them with familiar polygons. Existing
+        // compound, triangle and parallelogram area families score exact
+        // subregions; the choice and defensibility of an estimate stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L06", "geometry.perimeter_area",
+            "G7_ESTIMATE_IRREGULAR_AREAS_BY_POLYGON_DECOMPOSITION",
+            ["supporting.geometry.compound_area", "supporting.geometry.triangle_area",
+             "supporting.geometry.parallelogram_area"],
+            "OUR_IM_G7_2017_2019_U03_L06_AREA_ESTIMATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
