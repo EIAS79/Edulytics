@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L08",
+  "title": "Similar Triangles",
+  "unit": "U02",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\8\\index.html",
+      "sha256": "75b9edb6029a5215d7235cfeab47e1118a023538e6d8de2f0fd24b2c4abc60a0"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\8\\preparation.html",
+      "sha256": "20fd4962b79cb22b9fd1016689058921e81cd90fd7cbec3a4b0439d72cb59d7b"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\8\\index.html",
+      "sha256": "11dc12264ca525fe40ab7e331fbbfe9d7dbbafb296ac7ca8dc9bdc7485bf8d31"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\8\\practice.html",
+      "sha256": "92c4d0aca4c74feaf73af616e291370a6acce60fb736303dfb771c409ccd5367"
+    }
+  },
+  "sourceEdition": "OUR_IM_GRADE8_2017_2019_LOCAL_TEACHER_STUDENT",
+  "sourceAccess": "LOCAL_SNAPSHOT_NOT_V360",
+  "learningGoals": [
+    "Demonstrate and justify triangle similarity by two corresponding equal angles, allowing a rigid motion and dilation",
+    "Compare student-built physical triangles with one versus two prescribed corresponding angles",
+    "Use angle sum and proportional sides to support or reject a similarity claim"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "source": "8.1 Equivalent Expressions",
+      "section": "warm-up",
+      "modality": "THREE_EXPRESSIONS_WITH_SIGNED_NUMBERS_AND_PEER_COMPARISON"
+    },
+    {
+      "source": "8.2 Making Pasta Angles and Triangles",
+      "section": "one-angle",
+      "modality": "PHYSICAL_SINGLE_ANGLE_TRIANGLES_COMPARE_WITH_PARTNERS",
+      "teacherReview": true
+    },
+    {
+      "source": "8.2 Making Pasta Angles and Triangles continuation",
+      "section": "two-angles",
+      "modality": "PHYSICAL_TWO_ANGLE_AA_TRIANGLES_SCALE_MEASUREMENT_AND_PARALLEL_CONSTRUCTION",
+      "teacherReview": true
+    },
+    {
+      "source": "8.3 Similar Figures in a Regular Pentagon",
+      "section": "pentagon",
+      "modality": "OPTIONAL_FIRST_PARTY_PENTAGON_AND_TRIANGLE_AA_ANALYSIS",
+      "teacherReview": true
+    },
+    {
+      "source": "Source teacher-only Cool Down",
+      "section": "cool-down",
+      "modality": "ORIGINAL_FIRST_PARTY_AA_COOLDOWN_NOT_SOURCE_REPRODUCTION"
+    }
+  ],
+  "sourcePracticeToFirstPartyCrosswalk": [
+    {
+      "source": "Problem 1 classify angle pairs",
+      "section": "practice",
+      "key": "AA complete missing triangle angles and matching angle multisets"
+    },
+    {
+      "source": "Problem 2 draw different equilateral triangles",
+      "section": "practice",
+      "key": "Different scale with same 60-degree angle sets"
+    },
+    {
+      "source": "Problem 3 similar triangles with parallel segment",
+      "section": "practice",
+      "key": "Corresponding angles from parallelism and proportional sides"
+    },
+    {
+      "source": "Problem 4 dilation of quadrilateral sides",
+      "section": "practice",
+      "key": "Positive image factor scales side length"
+    },
+    {
+      "source": "Problem 5 explain a transformation",
+      "section": "practice",
+      "key": "Rigid motions and dilation justification by corresponding angles and sides"
+    }
+  ],
+  "originalCoolDown": "TEACHER_LOGIN_UNAVAILABLE_NOT_REPRODUCED",
+  "teacherScored": true,
+  "assessment": {
+    "type": "FIRST_PARTY_SELECTED_OFFLINE_CLASSROOM_PAPER",
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l08-similar-triangles-aa-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u02-l08-similar-triangles-aa-paper.html",
+    "sha256": "1fc2122d284ae81427c2ea84f0bd67d02547a07265b54dc530b86fcf65445618",
+    "stableTaskIds": [
+      "warm-up",
+      "one-angle",
+      "two-angles",
+      "pentagon",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "teacherRubric": [
+    {
+      "criterion": "Signed expression equivalence",
+      "points": 2,
+      "key": "10?(4+(-2))=20; (4+(-2))?10=20; 4?10?(?(?2))=20 (using unary negation of the supplied ?2 exactly once). Reject distributed forms using 10 twice when original warm-up requires each number once."
+    },
+    {
+      "criterion": "One-angle counterexample and partner measurement",
+      "points": 2,
+      "key": "One common angle insufficient: e.g., 40,60,80 vs 40,70,70; accept measured ?5? construction error with mathematical argument."
+    },
+    {
+      "criterion": "AA and similar triangle constructions",
+      "points": 3,
+      "key": "Two angles fix third by 180?; corresponding side factor constant; exact justification beats measurement noise; PST~PQR if ST?QR."
+    },
+    {
+      "criterion": "Pentagon reasoned optional extension",
+      "points": 1,
+      "key": "A valid labelled matched-angle proof or disproof; no guessed similar pairs awarded."
+    },
+    {
+      "criterion": "Practice reasoning and negative cases",
+      "points": 4,
+      "key": "P1 missing56? both, AA yes; P2 angle multisets (90,37,53) equal, AA yes; P3 equilateral side lengths3 and7 similar factor7/3 but not congruent; P4 AE=10; P5 image side=15 under factor3, angles invariant; P6 map Q to P via dilation k2 about origin then translate (+2,0) on every vertex; P7 quadrilateral angles alone insufficient."
+    },
+    {
+      "criterion": "Independent Cool-down",
+      "points": 2,
+      "key": "Triangle M and N similar AA, factor2 and not congruent; P with 42,75,63 is NOT necessarily similar to 42,68,70."
+    }
+  ],
+  "maxScore": 14,
+  "gradingModes": {
+    "numeric": "AUTHOR_TEST_ONLY",
+    "drawingOrPhysical": "TEACHER_REVIEW_REQUIRED",
+    "teacherScorePersistence": "STAGE_D_NOT_RUN"
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "sourcePublisherBrandInStudentPaper": false
+}
