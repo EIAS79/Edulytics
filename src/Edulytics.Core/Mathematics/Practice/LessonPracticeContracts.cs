@@ -1492,6 +1492,17 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L11_INDEPENDENT_DIAGRAM_TEACHER",
             "READY_VERIFIED",
             Version);
+        // OUR/IM Grade 7 2017-2019 U01:L12: equivalent customary/metric
+        // source ratios and squared actual areas; reuse the existing L11
+        // unitless exact engine and L06 exact area family.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L12",
+            "geometry.scale_drawings",
+            "G7_UNIT_CONVERSION_EQUIVALENT_SCALES_AND_REAL_AREA",
+            ["usccss.g7.u01.l12.equivalent_scales_area","usccss.g7.u01.l11.unitless_scale_and_conversions",
+             "usccss.g7.u01.l06.scaled_area_square_factor"],
+            "OUR_IM_G7_2017_2019_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

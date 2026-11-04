@@ -22,6 +22,25 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l12.equivalent_scales_area",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "exact-unit-conversion-squared-area-original-flag-table",
+      "representations": [
+        "numeric",
+        "scale_drawing",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g7.u01.l02.corresponding_parts",
       "version": 1,
       "skillId": "geometry.similarity.scale_factor",
