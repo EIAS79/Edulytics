@@ -124,7 +124,20 @@ def main():
                 "missing canonical Grade6 section "+code+" "+field)
             source_text=html.unescape(authored)
             if field=="stepByStepSolutions":
-                source_text=source_text.replace("Step 1: ","",1)
+                # Razor renders numbered steps as ordered list items, not with
+                # literal Step N labels. Check each instructional line itself.
+                for line_number,line in enumerate(source_text.splitlines(),1):
+                    line=line.strip()
+                    if not line:
+                        continue
+                    prefix,separator,body=line.partition(": ")
+                    instruction=body if separator and prefix.startswith("Step ") else line
+                    tokens=re.findall(r"\w+",instruction.casefold(),flags=re.UNICODE)
+                    require(len(tokens)>=4,
+                        "source step unexpectedly short "+code+" line "+str(line_number))
+                    require(" ".join(tokens[:6]) in visible_words,
+                        "rendered learner missing step "+code+" line "+str(line_number))
+                continue
             source_words=re.findall(r"\w+",source_text.casefold(),flags=re.UNICODE)
             require(len(source_words)>=8,"too-short source section "+code+" "+field)
             require(" ".join(source_words[:8]) in visible_words,
