@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L09",
+  "title": "Side Length Quotients in Similar Triangles",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\9\\index.html",
+      "sha256": "54f6e5b71392444ec30f5eb39a631340c40df82807713ef90d8b33f5ca804fe4"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\9\\preparation.html",
+      "sha256": "dc6233f4726b2e2c71085ef7fe651bdeea5ebc25c0ad8cd541a1418e705a69f5"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\9\\index.html",
+      "sha256": "065aac832d5fcd86c1705dd2375d1e2712ab0ae2064868f5d30047970f247f8a"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\9\\practice.html",
+      "sha256": "9a2f6263ca11fab2dfd62677aec1a821ff005349ced834a5cbc9fbf041da6039"
+    }
+  },
+  "learningGoals": [
+    "Find and explain equal quotients within similar triangles",
+    "Solve side length unknowns using corresponding quotients",
+    "Distinguish same-direction proportional ratios from reversed ratios"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "9.1 • Compare two side triples",
+      "firstPartyTask": "warmup",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.2 • Quotients within scaled triangles",
+      "firstPartyTask": "quotient-table",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.3 • Missing side lengths",
+      "firstPartyTask": "missing-sides",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 4,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l09-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u02-l09-selected-first-party-paper.html",
+    "sha256": "643635f2a7d31aa0dc3991c38541325b87623cca6d1526b844da263c54b501ee",
+    "taskIds": [
+      "warmup",
+      "quotient-table",
+      "missing-sides",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Warm-up: 4/2=2,5/3,6/4 differ; factor2 for 3,4,5 to 6,8,10.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Quotients from (4,5,7) remain 7/4,7/5 and5/4 for factors2,3,1/2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Missing side problem k=10/6=5/3, EF=15, DF=20. Negative reversed ratio rejected.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice: factor3/2 sides4.5,6,7.5; factor1/4 side1,1.25,1.75; unknownx=15; image coordinates (0,0),(2,0),(0,3).",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cooldown: all factor2; 7 maps to14 and21 is wrong.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "short": 5,
+    "middle": 7,
+    "long": 9,
+    "factor": 2,
+    "wrong": 3
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
