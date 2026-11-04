@@ -2450,6 +2450,14 @@ public static class LessonPracticeContractRegistry
             ["probability.theoretical.simple_event", "supporting.statistics.experimental_probability", "supporting.probability.sample_space_count"],
             "G7_U08_L10_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U08 L11: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L11", "statistics.center_spread.core",
+            "G7_COMPARE_GROUPS_USING_CENTER_AND_SPREAD",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "supporting.statistics.compare_range"],
+            "G7_U08_L11_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
