@@ -130,8 +130,8 @@ def main():
                     line=line.strip()
                     if not line:
                         continue
-                    prefix,separator,body=line.partition(": ")
-                    instruction=body if separator and prefix.startswith("Step ") else line
+                    prefix,separator,step_text=line.partition(": ")
+                    instruction=step_text if separator and prefix.startswith("Step ") else line
                     tokens=re.findall(r"\w+",instruction.casefold(),flags=re.UNICODE)
                     require(len(tokens)>=4,
                         "source step unexpectedly short "+code+" line "+str(line_number))
