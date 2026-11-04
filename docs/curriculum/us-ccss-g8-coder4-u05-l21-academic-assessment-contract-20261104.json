@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U05:L21",
+  "title": "Cylinders, Cones, and Spheres",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\21\\index.html",
+      "sha256": "a55d87e05ec7c0813e019ed5d0a768eed567ffe0f3501065b7253be6c2ac1851"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\21\\preparation.html",
+      "sha256": "81cf20ad37e6fddbef05a19e864d13e968518434ee062d54e6c3e76424b4db06"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\21\\index.html",
+      "sha256": "0d012011aea1c083bf9b807c06246c9415bfaa96ffe12748487bedb312dd6cdc"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\21\\practice.html",
+      "sha256": "6648df68d4df33b1ffe592bfc898a833c91f0d10930172cf8b2550b5ad395626"
+    }
+  },
+  "learningGoals": [
+    "Solve for sphere radius from a given volume",
+    "Determine what information is needed for mixed cylinder/cone/sphere problems"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "21.1 ? Sphere Arguments",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "21.2 ? Sphere?s Radius",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "21.3 ? Info Gap: Unknown Dimensions",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "21.4 ? The Right Fit",
+      "firstPartyTask": "activity-4",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 4,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u05-l21-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u05-l21-selected-first-party-paper.html",
+    "sha256": "62918e10fb71cf822739221d6ded1ae883fe5a21cecfe3a92975c6562fb0af84",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "activity-4",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "r=3 because (4/3)??27=36?.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Sphere radius follows r=cuberoot(3V/(4?)).",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Cylinder/cone require radius and perpendicular height; sphere requires radius only.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Exact expressions are compared before decimal rounding.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 8,
+  "mathFixtures": {
+    "Vcoef": 36,
+    "r": 3
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
