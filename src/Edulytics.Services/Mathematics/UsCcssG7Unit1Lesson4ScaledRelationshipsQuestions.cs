@@ -135,5 +135,5 @@ internal static class UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions
     private static string Coordinates(IReadOnlyList<Kernel.Vertex> points) =>
         string.Join(", ", points.Select(v => "(" + Format(v.X) + "," + Format(v.Y) + ")"));
     private static string Format(decimal n) =>
-        n.ToString(CultureInfo.InvariantCulture);
+        n.ToString("0.############################", CultureInfo.InvariantCulture);
 }
