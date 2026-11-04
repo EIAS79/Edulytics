@@ -1503,6 +1503,18 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u01.l06.scaled_area_square_factor"],
             "OUR_IM_G7_2017_2019_L12_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED",Version);
+        // OUR/IM Grade 7 U01:L13 (2017-2019): teacher-scored floor-plan
+        // capstone with exact numeric scale choice and paper-fit checks.
+        // L09 and L06 bounded families are reused, NOT substituted for
+        // classroom measurement, peer critique or drawing evaluation.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L13",
+            "geometry.scale_drawings",
+            "G7_FLOOR_PLAN_SCALE_FIT_TILE_AREA_AND_TEACHER_REVIEW",
+            ["usccss.g7.u01.l13.floor_plan_scale_fit","usccss.g7.u01.l09.create_drawing_scale_lengths",
+             "usccss.g7.u01.l06.scaled_area_square_factor"],
+            "OUR_IM_G7_2017_2019_L13_ORIGINAL_PROJECT_AUTHORING",
+            "READY_VERIFIED",Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

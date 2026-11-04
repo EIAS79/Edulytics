@@ -22,6 +22,25 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l13.floor_plan_scale_fit",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "single-scale-paper-fit-and-tile-side-square-area",
+      "representations": [
+        "numeric",
+        "scale_drawing",
+        "area_model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g7.u01.l12.equivalent_scales_area",
       "version": 1,
       "skillId": "geometry.scale_drawings",

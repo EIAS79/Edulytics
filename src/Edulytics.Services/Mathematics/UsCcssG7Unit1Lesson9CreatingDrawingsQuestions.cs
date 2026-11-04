@@ -11,15 +11,19 @@ namespace Edulytics.Services.Mathematics;
 internal static class UsCcssG7Unit1Lesson9CreatingDrawingsQuestions
 {
     public const string Family="usccss.g7.u01.l09.create_drawing_scale_lengths";
+    // L13 optional human-reviewed capstone: numeric paper-size and proportional
+    // dimensions complement (but cannot certify) the physical floor-plan task.
+    public const string FloorPlan="usccss.g7.u01.l13.floor_plan_scale_fit";
     internal sealed record Problem(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
     public static bool Supports(string? family) =>
-        string.Equals(family,Family,StringComparison.Ordinal);
+        family is Family or FloorPlan;
 
     public static Problem Build(string family,Random random)
     {
-        if(!Supports(family))throw new InvalidOperationException("Unsupported G7 L09 family.");
+        if(!Supports(family))throw new InvalidOperationException("Unsupported G7 scale drawing family.");
+        if(family==FloorPlan) return BuildFloorPlan(random);
         var p=new Dictionary<string,int>(StringComparer.Ordinal)
         {
             ["kind"]=random.Next(0,4),
@@ -70,7 +74,7 @@ internal static class UsCcssG7Unit1Lesson9CreatingDrawingsQuestions
     public static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(!Valid(family,p))throw new InvalidOperationException("Invalid G7 L09 parameters.");
-        var (n,d)=Expected(p);
+        var (n,d)=family==FloorPlan?ExpectedFloorPlan(p):Expected(p);
         return Fraction(n,d);
     }
 
@@ -80,7 +84,7 @@ internal static class UsCcssG7Unit1Lesson9CreatingDrawingsQuestions
             return false;
         if(!TryFraction(answer.Trim(),out long n,out long d))
             return false;
-        var (wantN,wantD)=Expected(p);
+        var (wantN,wantD)=family==FloorPlan?ExpectedFloorPlan(p):Expected(p);
         return n*wantD==wantN*d;
     }
 
@@ -110,6 +114,77 @@ internal static class UsCcssG7Unit1Lesson9CreatingDrawingsQuestions
         }
         long[] feet=[6,2,1,1];
         return (feet[feature]*(style==0?1:2),style==0?2:1);
+    }
+
+
+    private static Problem BuildFloorPlan(Random random)
+    {
+        var p=new Dictionary<string,int>(StringComparer.Ordinal)
+        {
+            ["kind"]=random.Next(0,4),
+            ["feature"]=random.Next(0,4),
+            ["style"]=random.Next(0,2)
+        };
+        int kind=p["kind"],feature=p["feature"],style=p["style"];
+        string question=kind switch
+        {
+            0 => "An original Edulytiks classroom is 8 m by 6 m with a 1-m "+
+                 "door opening and a 3-m wall board. Use 1 cm on drawing to "+
+                 (style==0?"1":"2")+" actual m. How many centimetres on "+
+                 "the PLAN should "+new[]{"the 8-m length","the 6-m width",
+                         "the 1-m door opening","the 3-m board"}[feature]+
+                 " measure? Give an exact numeric answer.",
+            1 => "A rectangular 10-by-8-m room must fit within "+
+                 new[]{"20 by 15","21 by 29","15 by 15","10 by 10"}[feature]+
+                 " centimetres of usable paper. Is a plan at 1 drawing cm "+
+                 "to "+(style==0?"0.5":"1")+" actual m feasible "+
+                 "WITHOUT cropping either dimension? Enter 1=yes or 0=no. "+
+                 "A teacher must review the real student's layout.",
+            2 => "A floor covering uses square tiles with sides "+
+                 new[]{"5","8","10","12"}[feature]+" inches. "+
+                 "Switch to tiles with DOUBLE the side length. "+
+                 (style==0?"What FRACTION of the old tile count covers the SAME AREA "+
+                            "ignoring cutting and waste?":
+                           "How many times the ORIGINAL AREA does ONE new tile cover?")+
+                 " Give an exact fraction or integer.",
+            _ => "A real classroom is 8 by 6 metres, drawn at 1 plan cm to "+
+                 (style==0?"1":"2")+" actual m. "+
+                 new[]{"What is the REAL room area in square meters?",
+                       "What is the DRAWN floor-plan area in square centimetres?",
+                       "How many actual square meters does 1 drawn square centimetre represent?",
+                       "What is the DRAWN floor-plan perimeter in centimetres?"}[feature]+
+                 " Explain why its measured geometry still needs teacher review."
+        };
+        return new(FloorPlan,question,
+            "Record actual dimensions first, choose one consistent scale "+
+            "that fits the paper, and check each corresponding measured feature. "+
+            "Doubling tile side length quadruples tile area. Numeric estimates "+
+            "do not certify drawing accuracy, placements, handwriting or peer critique.",
+            AssessmentItemType.ShortAnswer,p);
+    }
+
+    private static (long N,long D) ExpectedFloorPlan(IReadOnlyDictionary<string,int> p)
+    {
+        int k=p["kind"],f=p["feature"],s=p["style"];
+        if(k==0)
+        {
+            long[] lengths=[8,6,1,3];
+            return (lengths[f],s==0?1:2);
+        }
+        if(k==1)
+        {
+            int[][] available=[[20,15],[21,29],[15,15],[10,10]];
+            int drawnLong=s==0?20:10,drawnShort=s==0?16:8;
+            return (drawnLong<=available[f][0]&&drawnShort<=available[f][1]?1:0,1);
+        }
+        if(k==2)return s==0?(1,4):(4,1);
+        return f switch
+        {
+            0 => (48,1),
+            1 => s==0?(48,1):(12,1),
+            2 => s==0?(1,1):(4,1),
+            _ => s==0?(28,1):(14,1)
+        };
     }
 
     private static bool Valid(string? family,IReadOnlyDictionary<string,int>? p) =>
