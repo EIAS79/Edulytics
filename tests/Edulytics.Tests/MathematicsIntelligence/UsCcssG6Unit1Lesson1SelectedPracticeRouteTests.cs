@@ -65,7 +65,7 @@ public sealed class UsCcssG6Unit1Lesson1SelectedPracticeRouteTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(Area,
             new Dictionary<string,int>{{"hexagons",8},{"color",0},{"unsafe",1}},"72"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Coverage,
-            new Dictionary<string,int>{{"pattern",4}},"1"));
+            new Dictionary<string,int>{{"pattern",16}},"1"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Coverage,
             new Dictionary<string,int>(), "1"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Area,
