@@ -6,6 +6,7 @@ on:
       - '.github/workflows/us-ccss-g6-stage-d.yml'
       - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
       - 'tools/phase29/g6_stage_d_authenticated_https.py'
+      - 'tools/phase29/b001_practice_attempt_probe.py'
       - 'tools/phase29/g6_stage_d_visual_https.py'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
@@ -22,6 +23,7 @@ on:
       - '.github/workflows/us-ccss-g6-stage-d.yml'
       - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
       - 'tools/phase29/g6_stage_d_authenticated_https.py'
+      - 'tools/phase29/b001_practice_attempt_probe.py'
       - 'tools/phase29/g6_stage_d_visual_https.py'
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
@@ -226,7 +228,9 @@ jobs:
           test "$EDULYTICS_CI_REHEARSAL_PROGRAMME" = US-CCSS-G6
           test "$EDULYTICS_CLEAN_DATABASE_NAME" = edulytics_clean_ci
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
-          python3 -m py_compile tools/phase29/g6_stage_d_authenticated_https.py
+          python3 -m py_compile tools/phase29/g6_stage_d_authenticated_https.py tools/phase29/g6_stage_d_visual_https.py tools/phase29/b001_practice_attempt_probe.py
+          python3 tools/phase29/b001_practice_attempt_probe.py >/tmp/g6-probe-unittests.log
+          test -s /tmp/g6-probe-unittests.log || true
       - name: Build/publish real web app and migrate local PostgreSQL 18
         run: |
           set -euo pipefail

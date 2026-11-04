@@ -129,10 +129,20 @@ def main():
             extract_csrf(f),extract_idempotency_key(f),sql,answer_mode="malformed")
         require(negative.get("status")=="MALFORMED_ANSWER_REJECTED_AND_PERSISTED",
             "incorrect answer accepted or not persisted "+code+" "+repr(negative))
+        f=page(student,"/student/practice")
+        valid_wrong=probe_lesson(student,BASE,lesson_id,extract_adoption(f),
+            extract_csrf(f),extract_idempotency_key(f),sql,
+            answer_mode="well_formed_wrong")
+        require(valid_wrong.get("status")=="WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED",
+            "well-formed mathematical wrong answer incorrectly accepted or not persisted "+code+" "+repr(valid_wrong))
+        require(isinstance(valid_wrong.get("family"),str) and
+            valid_wrong["family"].startswith("usccss.g6."),
+            "valid-wrong attempt generated unrelated family "+code)
         REPORT["lessons"].append({"ordinal":ordinal,"lessonCode":code,"unit":int(re.search(r":G6:U(\d{2}):L\d{2}$",code).group(1)),
             "authenticatedLearnerRichV2":"PASS","firstPartyTitleAndGoal":"PASS",
             "practiceFormAndNonce":"PASS","realGeneratedFamily":family,
             "correctAnswerStoredWithScoreOne":"PASS","malformedAnswerStoredWithScoreZero":"PASS",
+            "wellFormedWrongStoredWithScoreZero":"PASS",
             "foreignSchoolLessonAccess":"DENIED","teacherAssessment":"NOT_EVALUATED",
             "sourceParity":"UNKNOWN","learnerHtmlSha256":hashlib.sha256(body.encode()).hexdigest()})
         save()
@@ -177,6 +187,7 @@ def main():
     print("G6_D_TEACHER_GRADE6_ASSESSMENT_POST_AND_TENANT_DENIAL_PASS",flush=True)
     REPORT.update(status="G6_147_REAL_AUTHENTICATED_HTTPS_PASS",
         correctGradedAndPersisted=147,invalidRejectedAndPersisted=147,
+        wellFormedWrongRejectedAndPersisted=147,
         crossSchoolDenied=147,studentRichPagesPassed=147,stageDVerified=0)
     save()
     print("G6_D_AUTH_HTTPS_FINAL_PASS 147/147 lessons; not academic release",flush=True)

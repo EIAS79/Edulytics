@@ -20,12 +20,15 @@ def main():
     require(source.get("status")=="G6_147_REAL_AUTHENTICATED_HTTPS_PASS" and
         source.get("candidateSha")==os.environ.get("G6_CANDIDATE_SHA") and
         len(source.get("lessons",[]))==147,"missing same-run authenticated source evidence")
-    samples=[]
-    for unit in range(1,10):
-        matches=[x for x in source["lessons"] if x["unit"]==unit]
-        require(matches,"missing unit "+str(unit))
-        samples.append(matches[0])
+    samples=source["lessons"]
+    require([x["ordinal"] for x in samples]==list(range(1,148)),
+        "visual browser lessons not in canonical order")
+    first_in_unit={}
+    for case in samples:
+        first_in_unit.setdefault(case["unit"],case["lessonCode"])
+    require(set(first_in_unit)==set(range(1,10)),"missing visual unit")
     shots=[]
+    visual_checks=[]
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=True)
         context=browser.new_context(ignore_https_errors=True,viewport={"width":1280,"height":900},
@@ -59,29 +62,42 @@ def main():
                 tab.keyboard.press("Tab")
                 focused=tab.evaluate("document.activeElement && document.activeElement.tagName")
                 require(focused not in (None,"BODY","HTML"),"keyboard focus lost "+lesson+" "+mode)
-                filename=f"g6-u{case['unit']:02d}-{mode}.png"
-                destination=OUT/filename
-                tab.screenshot(path=str(destination),full_page=True,animations="disabled")
-                require(destination.is_file() and destination.stat().st_size>1000,
-                    "empty Chromium screenshot "+filename)
-                screenshot_sha=hashlib.sha256(destination.read_bytes()).hexdigest()
                 horizontal=tab.evaluate("document.documentElement.scrollWidth - window.innerWidth")
-                shots.append({"unit":case["unit"],"lessonCode":lesson,"viewport":mode,
-                    "width":width,"height":height,"path":filename,"sha256":screenshot_sha,
-                    "missingImageAlt":0,"keyboardFocusVerified":True,
+                require(horizontal<=2,
+                    "G6 mobile/desktop horizontal document overflow "+lesson+
+                    " "+mode+" px="+str(horizontal))
+                visual_checks.append({"ordinal":case["ordinal"],"unit":case["unit"],
+                    "lessonCode":lesson,"viewport":mode,
+                    "richV2":"PASS","canonicalFirstPartyTeaching":"PASS",
+                    "heading":"PASS","imageAlt":"PASS","keyboardFocus":"PASS",
                     "horizontalOverflowPx":horizontal})
-                print("G6_D_CHROMIUM_VISUAL_PASS",lesson,mode,flush=True)
+                if first_in_unit[case["unit"]]==lesson:
+                    filename=f"g6-u{case['unit']:02d}-{mode}.png"
+                    destination=OUT/filename
+                    tab.screenshot(path=str(destination),full_page=True,animations="disabled")
+                    require(destination.is_file() and destination.stat().st_size>1000,
+                        "empty Chromium screenshot "+filename)
+                    shots.append({"unit":case["unit"],"lessonCode":lesson,"viewport":mode,
+                        "width":width,"height":height,"path":filename,
+                        "sha256":hashlib.sha256(destination.read_bytes()).hexdigest(),
+                        "missingImageAlt":0,"keyboardFocusVerified":True,
+                        "horizontalOverflowPx":horizontal})
+                print("G6_D_CHROMIUM_VISUAL_PASS",case["ordinal"],lesson,mode,flush=True)
         browser.close()
     require(len(shots)==18,"missing representative screenshots")
+    require(len(visual_checks)==294 and
+        [x["ordinal"] for x in visual_checks[::2]]==list(range(1,148)),
+        "all-lesson visual audit incomplete")
     report={"recordType":"G6_STAGE_D_REAL_CHROMIUM_REPRESENTATIVE_VISUALS",
         "candidateSha":source["candidateSha"],"runId":source["runId"],
         "unitsVisited":9,"lessonSnapshots":9,"screenshots":18,
+        "allLessonViewportChecks":294,"visuallyCheckedDistinctLessons":147,
         "sourceParity":"UNKNOWN","visualFull147":"NOT_TESTED",
         "automatedAccessibilityCertification":"NOT_CLAIMED",
         "teacherAcademicApproval":"NOT_CLAIMED","releaseDecision":"NO_GO_TECHNICAL",
-        "shots":shots}
+        "shots":shots,"perLessonViewportChecks":visual_checks}
     (OUT/"g6-nine-unit-chromium-visual-evidence.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print("G6_CHROMIUM_9_UNITS_18_SCREENSHOTS_PASS",flush=True)
+    print("G6_CHROMIUM_147_LESSONS_294_VIEWPORTS_18_SCREENSHOTS_PASS",flush=True)
 if __name__=="__main__":
     main()
