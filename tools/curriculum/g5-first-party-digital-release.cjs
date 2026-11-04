@@ -71,7 +71,8 @@ function auditFirstPartyRelease(){
   error.push('UNEXPECTED_FIRST_PARTY_LESSON_VISUAL_OR_EMBED_DRIFT');
  if(sourceSummaryLinks<95)error.push('INTERNAL_SOURCE_CITATIONS_DELETED');
  const view=fs.readFileSync(path.join(ROOT,'src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml'),'utf8');
- if(!view.includes('RichLessonSummaryVisibility.ForReader(Model.LessonCode, Model.SummaryPoints)'))
+ if(!view.includes('RichLessonSummaryVisibility.ForReader(Model.LessonCode, Model.SummaryPoints)') &&
+    !view.includes('RichLessonSummaryVisibility.ForReader(Model.LessonCode ?? string.Empty, Model.SummaryPoints)'))
   error.push('STUDENT_TEACHER_SOURCE_NOTES_MAY_LEAK');
 
  if(!fs.existsSync(evidencePath))error.push('SOURCE_DIAGNOSTIC_NOT_COLLECTED');

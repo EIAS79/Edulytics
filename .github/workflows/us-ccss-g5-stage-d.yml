@@ -104,6 +104,10 @@ jobs:
             stage-d-results/grade5-original-2021-source-review-queue.json
           if-no-files-found: error
   teaching-body-delta:
+    # The exact 107-field owner-consent delta is scoped to Grade 5 PR #596.
+    # Other Grade changes still run G5 regression gates, but cannot be
+    # required to contain someone else's Grade 5 content delta.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.number == 596
     name: grade5-main-candidate-104-source-delta-evidence
     runs-on: ubuntu-24.04
     timeout-minutes: 15

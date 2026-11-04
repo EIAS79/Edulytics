@@ -13,7 +13,7 @@ test('student and lesson-detail views share a provenance-free SummaryPoints rend
  const detail=fs.readFileSync(path.join(root,'src/Edulytics.Web/Views/LessonContent/Detail.cshtml'),'utf8');
  assert.match(student,/partial name="_RichLessonContentV2"/);
  assert.match(detail,/partial name="_RichLessonContentV2"/);
- assert.match(shared,/RichLessonSummaryVisibility\.ForReader\(Model\.LessonCode, Model\.SummaryPoints\)/);
+ assert.match(shared,/RichLessonSummaryVisibility\.ForReader\(Model\.LessonCode(?: \?\? string\.Empty)?, Model\.SummaryPoints\)/);
  assert.doesNotMatch(shared,/@foreach\s*\(var point in Model\.SummaryPoints\)/);
  assert.doesNotMatch(shared,/@Model\.SummaryPoints/);
 });

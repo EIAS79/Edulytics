@@ -237,6 +237,7 @@ public static class LessonPracticeInteractionRegistry
             "exact_integer" =>
                 LessonPracticeInteractionKind.IntegerKeypad,
 
+            "exact_decimal" or
             "exact_scalar" =>
                 LessonPracticeInteractionKind.NumericEntry,
 
