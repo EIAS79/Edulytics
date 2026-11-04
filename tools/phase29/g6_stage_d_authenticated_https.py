@@ -113,6 +113,19 @@ def main():
         goal=re.sub(r"\s+"," ",english[0]["explanation"].split("\n",1)[0]).casefold()
         require(title in visible,"source-bound title absent from rendered learner page "+code)
         require(goal[:48] in visible,"authored learning goal absent from rendered learner page "+code)
+        # A green title/goal is insufficient: each canonical teaching section
+        # must be readable in the same authenticated learner page. Compare
+        # first eight normalized source tokens for all six independently.
+        visible_words=" ".join(re.findall(r"\w+",visible,flags=re.UNICODE))
+        for field in ("explanation","keyConceptsAndRules","workedExamples",
+                      "stepByStepSolutions","commonMistakes","quickSummary"):
+            authored=english[0].get(field)
+            require(isinstance(authored,str) and len(authored.strip())>=20,
+                "missing canonical Grade6 section "+code+" "+field)
+            source_words=re.findall(r"\w+",html.unescape(authored).casefold(),flags=re.UNICODE)
+            require(len(source_words)>=8,"too-short source section "+code+" "+field)
+            require(" ".join(source_words[:8]) in visible_words,
+                "canonical source section not rendered to authenticated student "+code+" "+field)
         require(has_lesson_start_form(body) and has_lesson_start_nonce(body),
             "lesson Practice form or unique nonce absent "+code)
         cross_denied(foreign,"/student/learning/lesson/"+lesson_id)
@@ -122,8 +135,11 @@ def main():
         require(correct.get("status")=="SELF_CONSISTENT_GRADE_PERSISTED",
             "correct Grade6 attempt failed "+code+" "+repr(correct))
         family=correct.get("family")
-        require(isinstance(family,str) and family.startswith("usccss.g6."),
-            "unrelated generator family "+code+" "+str(family))
+        unit_lesson=re.fullmatch(r"PED:US-CCSS-MATH:G6:U(\d{2}):L(\d{2})",code)
+        require(unit_lesson is not None,"invalid G6 canonical lesson code")
+        exact_family_prefix=f"usccss.g6.u{unit_lesson.group(1)}.l{unit_lesson.group(2)}."
+        require(isinstance(family,str) and family.startswith(exact_family_prefix),
+            "unrelated lesson-level generator family "+code+" "+str(family))
         f=page(student,"/student/practice")
         negative=probe_lesson(student,BASE,lesson_id,extract_adoption(f),
             extract_csrf(f),extract_idempotency_key(f),sql,answer_mode="malformed")
@@ -136,10 +152,14 @@ def main():
         require(valid_wrong.get("status")=="WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED",
             "well-formed mathematical wrong answer incorrectly accepted or not persisted "+code+" "+repr(valid_wrong))
         require(isinstance(valid_wrong.get("family"),str) and
-            valid_wrong["family"].startswith("usccss.g6."),
-            "valid-wrong attempt generated unrelated family "+code)
+            valid_wrong["family"].startswith(exact_family_prefix),
+            "valid-wrong attempt generated unrelated lesson family "+code)
+        require(isinstance(negative.get("family"),str) and
+            negative["family"].startswith(exact_family_prefix),
+            "malformed attempt generated unrelated lesson family "+code)
         REPORT["lessons"].append({"ordinal":ordinal,"lessonCode":code,"unit":int(re.search(r":G6:U(\d{2}):L\d{2}$",code).group(1)),
             "authenticatedLearnerRichV2":"PASS","firstPartyTitleAndGoal":"PASS",
+            "sixCanonicalInstructionalSections":"PASS","exactLessonScopedPracticeFamily":"PASS",
             "practiceFormAndNonce":"PASS","realGeneratedFamily":family,
             "correctAnswerStoredWithScoreOne":"PASS","malformedAnswerStoredWithScoreZero":"PASS",
             "wellFormedWrongStoredWithScoreZero":"PASS",

@@ -11,6 +11,9 @@ on:
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
+      - '!artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-stage-d-execution-ledger.json'
+      - '!artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-stage-d-evidence-index.md'
+      - '!artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-final-ci-summary.md'
       - 'tests/academic-us-ccss-g6-*.test.cjs'
       - 'tests/Edulytics.Tests/**/*.cs'
       - 'tests/Edulytics.Tests/Acceptance/LevelAwareMathematicsGenerationTests.cs'
@@ -28,6 +31,9 @@ on:
       - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
       - 'tools/curriculum/g6-stage-d-test-matrix.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/**'
+      - '!artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-stage-d-execution-ledger.json'
+      - '!artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-stage-d-evidence-index.md'
+      - '!artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-final-ci-summary.md'
       - 'tests/academic-us-ccss-g6-*.test.cjs'
       - 'tests/Edulytics.Tests/**/*.cs'
       - 'tests/Edulytics.Tests/Acceptance/LevelAwareMathematicsGenerationTests.cs'
@@ -230,7 +236,6 @@ jobs:
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           python3 -m py_compile tools/phase29/g6_stage_d_authenticated_https.py tools/phase29/g6_stage_d_visual_https.py tools/phase29/b001_practice_attempt_probe.py
           python3 tools/phase29/b001_practice_attempt_probe.py >/tmp/g6-probe-unittests.log
-          test -s /tmp/g6-probe-unittests.log || true
       - name: Build/publish real web app and migrate local PostgreSQL 18
         run: |
           set -euo pipefail

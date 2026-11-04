@@ -212,6 +212,11 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
                 return {"status":"GENERATION_ROUTE_NOT_ATTEMPT","httpStatus":response.status}
             attempt_id=match.group(1)
             page=response.read().decode("utf-8")
+        # Fail closed if a Grade 6 attempt page embeds answer keys/validator
+        # metadata in a machine-readable field before the learner submits.
+        # Visible teaching examples are not answer-key leakage.
+        if re.search(r'(?i)(?:"correctAnswer"\s*:|data-(?:correct|expected)-answer\s*=|name="correctAnswer")',page):
+            return {"status":"G6_PRE_SUBMISSION_ANSWER_KEY_LEAK"}
         # Real DB evidence prevents false success from HTTP 200 on an error page.
         found=sql("""
             SELECT p."CurriculumPedagogicalLessonId"::text,

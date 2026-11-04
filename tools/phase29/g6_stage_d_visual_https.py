@@ -92,7 +92,7 @@ def main():
         "candidateSha":source["candidateSha"],"runId":source["runId"],
         "unitsVisited":9,"lessonSnapshots":9,"screenshots":18,
         "allLessonViewportChecks":294,"visuallyCheckedDistinctLessons":147,
-        "sourceParity":"UNKNOWN","visualFull147":"NOT_TESTED",
+        "sourceParity":"UNKNOWN","visualFull147":"294_BASELINE_DOM_AND_RESPONSIVE_CHECKS_147_LESSONS_NOT_FULL_VISUAL_CERTIFICATION",
         "automatedAccessibilityCertification":"NOT_CLAIMED",
         "teacherAcademicApproval":"NOT_CLAIMED","releaseDecision":"NO_GO_TECHNICAL",
         "shots":shots,"perLessonViewportChecks":visual_checks}
