@@ -2370,6 +2370,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.triangle_side_feasible", "usccss.g7.u07.prism_volume_base_height", "usccss.g7.u07.prism_surface_area_base_perimeter_height"],
             "G7_U07_L17_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U08 L01: source-scoped probability/statistics Practice.
+        // Simulations, sampling plans, graphs, data displays, inference and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U08:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U08:L01", "supporting.probability_statistics.core",
+            "G7_INFER_UNKNOWN_COMPOSITION_FROM_RANDOM_DRAWS",
+            ["supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
+            "G7_U08_L01_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

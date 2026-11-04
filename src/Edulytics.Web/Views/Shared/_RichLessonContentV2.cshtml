@@ -110,6 +110,11 @@
         {
             <partial name="_USCCSSG7Unit7GeometryPractice" model="Model" />
         }
+        @if (Model.LessonCode is not null &&
+             Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G7:U08:L", StringComparison.Ordinal))
+        {
+            <partial name="_USCCSSG7Unit8ProbabilityStatisticsPractice" model="Model" />
+        }
         @if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L01" ||
              Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L02" ||
              Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L03" ||
