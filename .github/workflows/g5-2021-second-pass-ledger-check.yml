@@ -1,0 +1,52 @@
+name: Grade 5 IM 2021 second-pass evidence integrity (no tests)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-second-pass-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate independent flags, chronological cursor, closure evidence
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("artifacts/curriculum-delivery/US-CCSS-MATH/G5")
+          old = json.loads((root / "g5-abc-lesson-ledger-v1.json").read_text(encoding="utf-8"))
+          review = json.loads((root / "g5-2021-second-pass-review-ledger-v1.json").read_text(encoding="utf-8"))
+          old_l = old["lessons"]
+          new_l = review["lessons"]
+          assert len(old_l) == len(new_l) == 148, "expected 148 original and second-pass rows"
+          assert review["sourceEdition"].endswith("First Edition (2021)"), "wrong source edition"
+          assert len({x["lessonCode"] for x in new_l}) == 148, "duplicate lessonCode"
+          complete = 0
+          for idx, (baseline, entry) in enumerate(zip(old_l, new_l), 1):
+              assert entry["ordinal"] == idx, f"wrong ordinal at {idx}"
+              assert entry["lessonCode"] == baseline["LessonCode"], f"order mismatch at {idx}"
+              historical = baseline["READY_FOR_STAGE_D"] is True or baseline["READY_FOR_STAGE_D"] == "READY_FOR_STAGE_D"
+              assert entry["readyForStageDPreviousPass"] == historical, f"historical status overwritten: {idx}"
+              if entry["REVIEW_COMPLETE_2021"]:
+                  assert complete == idx - 1, f"gap in chronological closures at {idx}"
+                  assert entry["reviewState"] == "CLOSED", f"incomplete review state {idx}"
+                  assert entry["sourceEditionVerified"] == "IM K-5 Grade 5 First Edition 2021", f"wrong edition {idx}"
+                  assert entry.get("reviewEvidencePath"), f"missing evidence {idx}"
+                  assert (Path(entry["reviewEvidencePath"])).is_file(), f"missing evidence file {idx}"
+                  assert entry.get("reviewCommitSha"), f"missing closure commit {idx}"
+                  assert entry.get("startedAtUtc") and entry.get("closedAtUtc"), f"missing time evidence {idx}"
+                  complete += 1
+              else:
+                  assert entry["reviewState"] != "CLOSED", f"closed without flag {idx}"
+          assert complete == review["reviewComplete2021Count"], "incorrect completion count"
+          assert review["lastSecondPassClosed"] == (new_l[complete - 1]["lessonCode"] if complete else None), "wrong last closure"
+          assert review["nextSecondPassLesson"] == (new_l[complete]["lessonCode"] if complete < 148 else None), "wrong next lesson"
+          assert review["unitsCompleted"] <= 8, "invalid unit count"
+          print(f"Validated independent second-pass ledger: {complete}/148. Old READY_FOR_STAGE_D preserved.")
+          print("This workflow checks evidence bookkeeping only. It does NOT verify publisher source parity or run Stage D.")
+          PY

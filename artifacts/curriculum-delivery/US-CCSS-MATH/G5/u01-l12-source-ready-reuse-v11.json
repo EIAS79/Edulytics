@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
+  "grade": "US-CCSS-MATH:G5:IM-K5-2021",
+  "date": "2026-10-29",
+  "reviewClassification": "READY_REUSE_WITH_GATED_ASSESSMENT",
+  "academicAccepted": false,
+  "sourceEdition": "IM K-5 2021 first edition, original optional lesson",
+  "source": {
+    "preparation": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-12/preparation.html",
+    "lesson": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-12/lesson.html",
+    "originalStudentTaskPdf": "https://cms-assets.illustrativemathematics.org/lb6t2iql38l1dckwk7lu5wf4u2ky",
+    "pdfPagesVisuallyChecked": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "gatedCooldownChecked": false,
+    "thirdPartyImageRightsIndividuallyChecked": false,
+    "images": "Original garbage truck photo, container drawing, partially/full cargo ship pictures inspected as source reference only, not copied into Edulytiks.",
+    "curriculumStatus": "Optional; original teacher preparation does not introduce a new mathematical content standard, but lists 5.MD.C.5 addressing"
+  },
+  "studentTaskPdfChecked": true,
+  "comparison": {
+    "originalWarmup": "Notice and Wonder at garbage truck photograph, mass/space context; 3300 tons and 60 containers are contextual quantities, not a volume conversion",
+    "originalTask1": "Choose at least FIVE different rectangular arrangements of 60 identical shipping containers; expression and judged visual display for shipping 3,300 tons",
+    "originalTask2": "Separate lower/plausible/upper estimates for partially loaded versus fully loaded cargo ship images; written assumptions about stacked rows/layers and occluded deck",
+    "candidate": "Existing original Grade-5 Rich V2 L12 sidecar models both tasks using five factor triples, a teacher-reviewed best-arrangement choice, bounds and explicit assumptions. No misleading fixed real-ship count.",
+    "independentArithmetic": "(1×6×10)=(2×5×6)=(3×4×5)=(2×3×10)=(1×3×20)=60, five distinct dimension multisets; illustrative 8×12×4=384 only under stated assumptions.",
+    "unresolved": "Candidate text/tables do not reproduce source imagery, the student’s original drawn display, particular visual ship estimation, or independent asset licensing; teacher rubric and effective authenticated rendering not verified. 3,300 tons describes mass, not automatically cubic volume.",
+    "gradeOwnedEdit": "READY_REUSE, so no redundant rich-sidecar rewriting and no version bump"
+  },
+  "rubric": {
+    "correct": "Five distinct valid positive-integer arrangements giving 60; reasoned choice with constraints; coherent low/central/high estimates and explicit premises",
+    "reject": "Declaring one universally optimal layout, counting mass as volume, claiming 384 ships' actual capacity, wrong products, unjustified guesses",
+    "teacherAssessed": "Presentation and spatial sketches, ship suitability, photograph-based estimates and model assumptions"
+  },
+  "sourceAndCodeChecked": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json"
+  ],
+  "stageA": "NOT_COMPLETE",
+  "stageB": "NOT_VERIFIED",
+  "stageC": "NOT_VERIFIED",
+  "stageD": "NOT_VERIFIED",
+  "ownerUat": "NOT_RUN",
+  "release": "NO_GO",
+  "shared": "https://github.com/EIAS79/Edulytics/issues/592"
+}

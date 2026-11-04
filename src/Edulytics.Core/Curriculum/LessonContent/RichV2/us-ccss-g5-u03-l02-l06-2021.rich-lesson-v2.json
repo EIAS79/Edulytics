@@ -1,0 +1,1441 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u03-l02-l06-im2021-source-parity-visual-v10-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L02",
+      "CultureCode": "en",
+      "Title": "Represent Unit Fraction Multiplication",
+      "ExplanationParagraphs": [
+        "Goal: draw and interpret the product of two UNIT fractions in two different orders, while retaining the original unit square as the whole. The public 2021 source explicitly asks for different partitioning orders rather than just the final numerical fraction.",
+        "Warm-up: compare four equal-area grid sketches in which one selected part is marked; reason why different-looking blue parts may or may not represent the same fraction of the original unit. A Which One Doesn't Belong choice can have multiple valid justifications, so the original diagrams are not reduced to a fixed answer.",
+        "Activity 1: make an original unit square grid with three equal vertical columns and four equal horizontal rows. First take one third of the whole, then one fourth of that selected third: the overlap is exactly one of 12 equal cells. Draw the construction again with fourths first, then take one third of the fourth. Show that the two dark cells represent equal area even though partition order differs.",
+        "Activity 2 (Write an Expression): original Kendall Hunt 2021 teacher Student Facing contains Priya figure 149035 with 2 rows x 5 columns and 1 shaded rectangle (1/5 × 1/2 = 1/2 × 1/5 = 1/10 of original whole). The SECOND source figure 149036 has 5 rows x 3 columns, 1 shaded (1/5 × 1/3 = 1/3 × 1/5 = 1/15 of original whole, not 1/10). The figures below are independently authored mathematical grids, not publisher image copies. Students justify both expressions and the unchanged whole; teacher reviews their drawing.",
+        "Assessment: Activity 1 requires both full original unit squares with order 1/3×1/4 and 1/4×1/3 yielding 1/12. Activity 2 requires the Priya 1/10 diagram and the separate original second 5-by-3 diagram (1/15), each justified with original-whole visual evidence. Numeric-only answers do not grade diagrams. Original source pictures are not redistributed and teacher-rubric persistence and gated Cool-down still require verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit-fraction multiplication",
+          "Definition": "One unit fraction of another unit fraction of the same whole.",
+          "Rule": "1/a×1/b = 1/(ab) for positive whole numbers a,b.",
+          "Example": "1/3 of 1/4 is 1/12."
+        },
+        {
+          "Title": "Two possible partition orders",
+          "Definition": "Changing the order of two equal-area partitions need not change the selected overlap area.",
+          "Rule": "1/3×1/4=1/4×1/3.",
+          "Example": "One of 12 equal cells is selected either way."
+        },
+        {
+          "Title": "Keep the original whole",
+          "Definition": "The fraction of a fraction must ultimately be expressed relative to the first complete unit.",
+          "Rule": "The selected 1/12 is one twelfth of the entire initial square, not one twelfth of only the first third.",
+          "Example": "Compare the highlighted cell with all 12 equal full-unit cells."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Quarter of a third",
+          "Question": "Find 1/4 of 1/3 of a unit square.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Divide one whole into three equal vertical strips.",
+            "Choose one third, then divide that strip into four equal pieces.",
+            "Extend the row lines across the original square and count 12 equal cells."
+          ],
+          "Answer": "1/12 of the full square.",
+          "Check": "Four of the 1/12 cells make one third."
+        },
+        {
+          "Title": "Third of a quarter",
+          "Question": "Find 1/3 of 1/4 of the same unit square.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Draw four equal strips and choose one.",
+            "Divide that chosen quarter into three equal parts.",
+            "Extend partitions to count 12 equal unit-square cells."
+          ],
+          "Answer": "1/12 of the full square.",
+          "Check": "Three such pieces reconstruct 1/4."
+        },
+        {
+          "Title": "Another order pair",
+          "Question": "Find both 1/2×1/5 and 1/5×1/2.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Make two equal-unit 2-by-5 grids.",
+            "Shade one intersection cell in each orientation.",
+            "Count one selected region out of ten equal regions."
+          ],
+          "Answer": "Both are 1/10 of the original whole.",
+          "Check": "One tenth can be drawn with different row/column order."
+        },
+        {
+          "Title": "Second original Activity 2 source geometry (5 × 3)",
+          "Question": "A whole square is partitioned into 5 equal rows and 3 equal columns, exactly one cell shaded. What is the shaded fraction and its two multiplication expressions?",
+          "Method": "Edulytiks independently authored accessible grid using verified source geometry, not a publisher image.",
+          "Steps": [
+            "Keep the original whole square.",
+            "Divide it into five congruent rows and three congruent columns.",
+            "Shade one of the 15 equal cells.",
+            "Write 1/5 × 1/3 and 1/3 × 1/5 for the same unit cell."
+          ],
+          "Answer": "1/15 of the original whole.",
+          "Check": "5 × 3 = 15 equal cells; exactly one is shaded, not 1/10."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Regard the first chosen fraction as the new entire whole",
+          "WhyWrong": "The final question asks for the fraction of the original complete square.",
+          "Correction": "Extend all partition lines to the original boundary and recount the equal regions."
+        },
+        {
+          "Mistake": "Use unequal divisions for the second stage",
+          "WhyWrong": "Fraction multiplication by visual partition requires equal-sized subpieces.",
+          "Correction": "Use equal spacings or a grid and check areas of the tiny cells."
+        }
+      ],
+      "SummaryPoints": [
+        "Two different partition orders can represent the same unit-fraction product.",
+        "The area is expressed relative to the original whole.",
+        "The separate second source diagram has one shaded cell among 15 equal cells (five by three), representing 1/15 of the original whole.",
+        "Source diagram comparisons and drawing quality require teacher review.",
+        "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-2/lesson.html. Public teacher/student-facing HTML source tasks inspected; original Edulytiks examples. Gated response and original Student Task PDF not independently checked."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Represent Unit Fraction Multiplication — fraction grid",
+          "Description": "Accessible first-party text equivalent of an equal-area fraction grid; not publisher artwork.",
+          "Rows": [
+            {
+              "Label": "Partition order",
+              "Cells": [
+                "Third then quarter",
+                "Quarter then third"
+              ]
+            },
+            {
+              "Label": "Total equal cells in whole",
+              "Cells": [
+                "12",
+                "12"
+              ]
+            },
+            {
+              "Label": "Selected cells",
+              "Cells": [
+                "1",
+                "1"
+              ]
+            },
+            {
+              "Label": "Final fraction",
+              "Cells": [
+                "1/12",
+                "1/12"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1 first-party model: third then quarter (4 rows by 3 columns)",
+          "Description": "EDULYTIKS-ORIGINAL accessible full-unit square, NOT a publisher diagram. The 12 equal-area cells cover the SAME entire square; select the left third, partition it into four equal rows and shade one cell. One selected cell = 1/12 of the original whole.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 1 first-party model: quarter then third (3 rows by 4 columns)",
+          "Description": "EDULYTIKS-ORIGINAL accessible full-unit square, not the publisher diagram. Select one of four equal vertical quarter strips, then divide that strip into three equal rows and extend the rows across the whole. One of the SAME total twelve equal-area cells is shaded.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 2 Priya explanation substitute: fifth of half and half of fifth (2 rows by 5 columns)",
+          "Description": "First-party illustration for interpreting the Priya-expression example, not a copy of source Priya image or its separate task diagram. Each of ten equal-area cells is one tenth of the SAME original square. Both 1/5 × 1/2 and 1/2 × 1/5 describe its shaded fraction; teacher reviews the two different justifications and expression for the other publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 2 second original source geometry — Edulytiks first-party 5 rows by 3 columns",
+          "Description": "EDULYTIKS-ORIGINAL table, not publisher artwork. From local first-edition 2021 teacher Student Facing image record 149036: complete unit square divided into 5 rows and 3 columns, with exactly one of 15 equal rectangles shaded. 1/5 × 1/3 = 1/3 × 1/5 = 1/15. Student visual explanations require teacher review.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L03",
+      "CultureCode": "en",
+      "Title": "Multiply Unit Fractions",
+      "ExplanationParagraphs": [
+        "Goal (IM K–5 2021, 5.NF.B.4.a): use rows and columns of the same original whole to connect unit-fraction multiplication diagrams, expressions and exact products. Students first read supplied images and later calculate without a diagram.",
+        "Warm-up — Estimation Exploration: How Much is Shaded? Record an estimate that is too low, about right and too high for the SOURCE shaded image. Discuss why the pictured region is MORE than (1/2) × (1/6) = 1/12 of the whole; approximate image dimensions do not justify replacing the source task with an exact guessed fraction. Teacher reviews estimates and visual reasoning.",
+        "Activity 1 — Notice Patterns in Expressions: the source A–D diagrams keep the SAME full square and FOUR equal columns while the equal rows grow 2, 3, 4, 5. One shaded cell has area 1/8, 1/12, 1/16, 1/20 respectively. Students select an actual source diagram, write an equivalent unit-fraction multiplication expression, explain the shading and DRAW their predicted next (six-row) diagram. Show (1/2)×(1/4)=(1/4)×(1/2)=1/8, and analogous 1/3, 1/4 and 1/5 rows. Independently-authored equal-area grids below model the mathematical structure but do NOT reproduce the publisher images.",
+        "Activity 2 — Write a Multiplication Equation: use the FIRST source-provided shaded image to write the multiplication equation for its actual shaded piece (do not invent its dimensions). Explain how the SECOND source diagram represents (1/5)×(1/3)=1/15 of the ORIGINAL whole, using rows and columns. Then solve (1/2)×(1/6)=1/12 and (1/4)×(1/6)=1/24; drawings may support but are not required for the last numerical subskills. Preserve MLR1 Stronger and Clearer Each Time: partners give feedback on the written diagram explanation and students revise it.",
+        "Assessment boundaries: fixed-whole equal-area products and their numeric answers can be authored for exact Practice; image-specific expression selection, open drawings, estimates, prediction justifications and revised written explanations require TEACHER_REVIEW_REQUIRED. The original publisher drawings/Student Task PDF and gated Cool-down have not been separately certified. Optional seven-row 1/28 practice is an EXTENSION, not the source's Activity 2."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Grid-denominator pattern",
+          "Definition": "When a whole is partitioned into a equal columns and b equal rows, there are ab equal cells.",
+          "Rule": "One cell has area 1/(ab) square unit.",
+          "Example": "4 columns and 5 rows make twentieths."
+        },
+        {
+          "Title": "Unit fraction multiplication rule",
+          "Definition": "One a-th of one b-th of the same whole is one (a×b)-th of that whole.",
+          "Rule": "(1/a)×(1/b)=1/(a×b).",
+          "Example": "1/4×1/3=1/12."
+        },
+        {
+          "Title": "Changing row count",
+          "Definition": "When column count remains constant and row count grows, one cell becomes a smaller fraction.",
+          "Rule": "Compare 1/8,1/12,1/16,1/20 for 4 fixed columns and increasing rows.",
+          "Example": "One twentieth is smaller than one eighth."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Four columns, two rows",
+          "Question": "Find the shaded area of one cell in a 4-column-by-2-row unit square.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Partition the whole into 4 equal columns.",
+            "Divide each into two equal rows.",
+            "Count eight equal pieces and shade one."
+          ],
+          "Answer": "1/8 square unit.",
+          "Check": "1/4×1/2=1/8."
+        },
+        {
+          "Title": "Make a row-count table",
+          "Question": "For 4 columns and 3, 4, 5 rows, record the selected one-cell area.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Count 4×3=12 equal cells when there are three rows.",
+            "Count 4×4=16 when there are four rows.",
+            "Count 4×5=20 when there are five rows."
+          ],
+          "Answer": "1/12, 1/16 and 1/20 square unit.",
+          "Check": "All numerators are one; denominators grow by four with each row."
+        },
+        {
+          "Title": "Activity 2: explain one fifth of one third",
+          "Question": "Explain why the source's 1/5 × 1/3 grid represents 1/15 of the original unit square.",
+          "Method": "Count the source diagram's equal columns and rows; use a newly authored 5-by-3 model as a mathematical reference, not as the publisher figure.",
+          "Steps": [
+            "Fix the original whole as one complete square.",
+            "Partition into five equal parts in one direction and three in the other.",
+            "One of fifteen equal cells is one fifteenth of the original whole; justify against the source picture."
+          ],
+          "Answer": "1/15 of the original whole.",
+          "Check": "(1/5) × (1/3) = 1/(5 × 3) = 1/15; the source image explanation is teacher-reviewed."
+        },
+        {
+          "Title": "Activity 2: one half of one sixth",
+          "Question": "Find the number that makes 1/2 × 1/6 = ? true.",
+          "Method": "Exact unit-fraction denominator product, optionally supported by a two-row six-column diagram.",
+          "Steps": [
+            "Hold the complete unit as the original whole.",
+            "Count 2 × 6 = 12 equally sized pieces.",
+            "The product is one of twelve equal pieces."
+          ],
+          "Answer": "1/12.",
+          "Check": "(1/2)×(1/6)=1/(2×6)."
+        },
+        {
+          "Title": "Activity 2: one quarter of one sixth",
+          "Question": "Find the number that makes 1/4 × 1/6 = ? true.",
+          "Method": "Exact unit-fraction denominator product; the diagram is optional for the numerical answer.",
+          "Steps": [
+            "Hold the complete unit as the original whole.",
+            "Count 4 × 6 = 24 equal cells.",
+            "One selected part is one twenty-fourth of the whole."
+          ],
+          "Answer": "1/24.",
+          "Check": "(1/4)×(1/6)=1/(4×6)."
+        },
+        {
+          "Title": "Optional extension: predict seven rows (not original Activity 2)",
+          "Question": "EXTENSION ONLY: a full unit square has 4 equal columns and 7 equal rows. What area is one equal cell?",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Count 4×7 equal cells.",
+            "Select one cell of the same size as the others.",
+            "Write the unit-fraction area relative to the whole."
+          ],
+          "Answer": "1/28 square unit.",
+          "Check": "28 copies of 1/28 reconstruct the whole."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add denominators rather than multiply",
+          "WhyWrong": "The whole grid count is rows times columns, not their sum.",
+          "Correction": "Explicitly draw and count the rectangular array."
+        },
+        {
+          "Mistake": "Think more rows means a larger cell",
+          "WhyWrong": "The same whole is split into more equal pieces.",
+          "Correction": "Compare one shaded part to the fixed-size whole square."
+        },
+        {
+          "Mistake": "Treat the source's approximate estimation image as an exact prescribed 1/4 height",
+          "WhyWrong": "The original warm-up asks for bounds and compares the shading against 1/2 × 1/6; its publisher diagram dimensions were not independently verified.",
+          "Correction": "Use the original teacher warm-up language and review the estimate qualitatively."
+        },
+        {
+          "Mistake": "Replace source Activity 2's 1/5 × 1/3 image and 1/2 × 1/6, 1/4 × 1/6 equations with a 4 × 7 extension",
+          "WhyWrong": "This omits distinct source tasks and confuses extension with the required lesson.",
+          "Correction": "Retain all three source expressions and treat 4 × 7 as additional practice only."
+        }
+      ],
+      "SummaryPoints": [
+        "Four fixed columns with 2–5 rows yield 1/8, 1/12, 1/16, 1/20; predict six rows as source pattern continuation.",
+        "Source Activity 2 includes explaining 1/5 × 1/3 = 1/15 and calculating 1/2 × 1/6 = 1/12 and 1/4 × 1/6 = 1/24.",
+        "Estimation from the source shaded image, source-image-to-equation, partner explanations and drawings remain teacher-reviewed.",
+        "Publisher gated Cool-down, independent Student Task PDF and original image binaries/rights unverified; first-party diagrams below do not claim publisher pixel parity.",
+        "Publisher reference: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-3/lesson.html."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multiply Unit Fractions — source Activity 1 four-column pattern",
+          "Description": "Accessible first-party text equivalent of an equal-area fraction grid; not publisher artwork.",
+          "Rows": [
+            {
+              "Label": "Columns",
+              "Cells": [
+                "4",
+                "4",
+                "4",
+                "4"
+              ]
+            },
+            {
+              "Label": "Rows",
+              "Cells": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Cell area",
+              "Cells": [
+                "1/8",
+                "1/12",
+                "1/16",
+                "1/20"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 2 rows (source A)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 8 of the SAME original whole is 1/8. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 3 rows (source B)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 12 of the SAME original whole is 1/12. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 4 rows (source C)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 16 of the SAME original whole is 1/16. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 4 columns × 5 rows (source D)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 20 of the SAME original whole is 1/20. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 5 columns × 3 rows (source Activity 2 1/5 × 1/3)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 15 of the SAME original whole is 1/15. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 6 columns × 2 rows (source Activity 2 1/2 × 1/6)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 12 of the SAME original whole is 1/12. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill model: 6 columns × 4 rows (source Activity 2 1/4 × 1/6)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 24 of the SAME original whole is 1/24. Drawn model supports source arithmetic; interpretation of the source picture and freehand explanation remain teacher-reviewed.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional extension: 4 columns × 7 rows (seven rows)",
+          "Description": "EDULYTIKS-ORIGINAL complete equal-area grid, NOT publisher artwork. One shaded cell out of 28 of the SAME original whole is 1/28. Additional practice only, not original Activity 2.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 6",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 7",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L04",
+      "CultureCode": "en",
+      "Title": "Situations about Multiplying Fractions",
+      "ExplanationParagraphs": [
+        "Goal IM 2021 5.NF.B.4.a (building toward 5.NF.B.4.b): use park scenarios to interpret and draw one UNIT fraction OF a NON-UNIT fraction of the SAME original rectangular park. Contexts describe fractions of land, not measured square-unit areas; keep the park itself as the whole.",
+        "Warm-up — Number Talk: More Halving: mentally evaluate 1/2×1/2=1/4, 1/3×1/2=1/6, 1/4×1/2=1/8 and 1/5×1/2=1/10. Students explain decreasing portions and denominators relative to an unchanged whole.",
+        "Activity 1 — The Park: a city dedicates 2/3 of the whole park to sports, then 1/2 OF THAT sports portion to soccer fields. Learners DRAW the park and write (1/2)×(2/3)=2/6=1/3 OF THE WHOLE PARK. Distinguish 1/2 of sports from 1/2 of the entire park. Present different valid partition orientations and have students explain the original whole.",
+        "Activity 2 — A Different Park (Elena's original source): the source-described rectangle has FIVE rows and TWO equal cells per row (10 equal cells in the full park); the labeled pieces total exactly: basketball 2 cells, pond 4, swings 1, grass 3. The expression (3/5)×(1/2)=3/10 identifies GRASS, not flowers or gardens. Partner selects another region and writes an expression: swings (1/5)×(1/2)=1/10; pond (4/5)×(1/2)=4/10; basketball (2/5)×(1/2)=2/10. Interpret the actual source image rather than asserting original spatial positions from text-only data; student pairing/region reasoning is teacher reviewed.",
+        "Assessment and source boundaries: teacher reviews original sports-field drawing and explanation, valid orientations, Elena's colored source geometry, expression-to-region exchange and math talk. Edulytiks-authored alternative Cool-down: 3/4 of a park is sports, 1/2 of sports is courts; draw a same-whole model and justify 3/8 of park. Do not pass these freehand/qualitative tasks solely from a numeric choice. Original gated publisher Cool-down and artwork are not claimed verified; original teacher Student Facing textual tasks were locally reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fraction of a non-unit fraction",
+          "Definition": "A selected fraction may be subdivided into equal pieces and only some of those pieces chosen.",
+          "Rule": "(1/a)×(b/c) = b/(a×c), for valid positive a,c.",
+          "Example": "Half of three fifths is three tenths."
+        },
+        {
+          "Title": "Contextual original whole",
+          "Definition": "The final fraction refers to the entire park or unit, not just the middle-stage region.",
+          "Rule": "Always distinguish 'fraction of gardens' from 'fraction of whole park'.",
+          "Example": "Half the garden portion of 3/5 park is 3/10 park."
+        },
+        {
+          "Title": "Use a labeled area model",
+          "Definition": "Partition in one direction for the first fraction and another for the second.",
+          "Rule": "The overlap counts shaded equal cells over all equal cells of the initial region.",
+          "Example": "3 of ten equal park cells are flower area."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source Activity 1: soccer fields",
+          "Question": "2/3 of a city park is sports, and 1/2 of sports land is for soccer; what fraction of the WHOLE park is soccer?",
+          "Method": "First-party equal-area model and source-specific expression, with teacher-reviewed original drawings.",
+          "Steps": [
+            "Take the same original whole park as one rectangle.",
+            "Divide the park into 3 equal columns and select 2 for sports.",
+            "Halve the selected sports region, then extend the cuts across the full park and count 2 of 6 equal cells."
+          ],
+          "Answer": "1/3 of the whole park.",
+          "Check": "(1/2)×(2/3)=2/6=1/3; teacher checks the park diagram."
+        },
+        {
+          "Title": "Source Activity 2: grass region in Elena park",
+          "Question": "Which part of Elena's original 5-row 2-column park is (3/5)×(1/2)?",
+          "Method": "First-party equal-area model and source-specific expression, with teacher-reviewed original drawings.",
+          "Steps": [
+            "The complete Elena park has ten equal cells.",
+            "Find the three red cells labeled GRASS in the source-described park.",
+            "Three out of ten cells are 3/10 of the full park."
+          ],
+          "Answer": "Grass, 3/10 of the park.",
+          "Check": "Grass 3 cells; basketball 2; pond 4; swings 1; total 10."
+        },
+        {
+          "Title": "Source Activity 2: other regions",
+          "Question": "Match the swings, pond and basketball regions to fractions of Elena's original whole.",
+          "Method": "First-party equal-area model and source-specific expression, with teacher-reviewed original drawings.",
+          "Steps": [
+            "Swings 1 cell: (1/5)×(1/2)=1/10.",
+            "Pond 4 cells: (4/5)×(1/2)=4/10.",
+            "Basketball 2 cells: (2/5)×(1/2)=2/10."
+          ],
+          "Answer": "Swings 1/10; Pond 4/10; Basketball 2/10.",
+          "Check": "Original whole always ten equal cells; partner interpretation teacher reviewed."
+        },
+        {
+          "Title": "Optional extension — Flowers in a community park",
+          "Question": "Three fifths of a park is garden; half the garden is flowers. What fraction of the full park is flowers?",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Draw a whole square divided into five equal columns.",
+            "Shade three garden columns and subdivide them into halves.",
+            "Extend the horizontal midline across the park and count three of ten equal cells."
+          ],
+          "Answer": "3/10 of the full park.",
+          "Check": "(1/2)×(3/5)=3/10; teacher checks that the drawing uses the original whole."
+        },
+        {
+          "Title": "Optional extension — Another nested allocation",
+          "Question": "Two thirds of a parcel is play area; one quarter of play area is for soccer. What fraction of the whole is soccer?",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Divide the full parcel into thirds and select two parts.",
+            "Quarter each selected third; extend lines through all thirds.",
+            "Count two out of twelve equal whole-parcel pieces."
+          ],
+          "Answer": "2/12=1/6 of the entire parcel.",
+          "Check": "(1/4)×(2/3)=2/12=1/6."
+        },
+        {
+          "Title": "Optional extension — Distinguish the two wholes",
+          "Question": "If 3/5 of the park is gardens, does 'half the gardens' equal 1/2 of the whole park?",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Name the full park as the original whole.",
+            "Find the garden fraction 3/5 and take one half of it.",
+            "Compare 3/10 with 1/2 of the full park."
+          ],
+          "Answer": "No; it is 3/10 of the full park.",
+          "Check": "3/10≠5/10, so the two interpretations differ."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use half the whole instead of half the selected portion",
+          "WhyWrong": "The operation is applied to the intermediate fraction, not the full unit.",
+          "Correction": "Shade the original allocation first, then subdivide only that portion."
+        },
+        {
+          "Mistake": "Treat the second selected portion as a different full unit",
+          "WhyWrong": "Final fraction must refer to the original entire park.",
+          "Correction": "Continue all grid lines across the original whole and count every equal cell."
+        },
+        {
+          "Mistake": "Replace the original sports/Elena parks with flowers and garden situations",
+          "WhyWrong": "Numerically plausible examples miss the original 2021 source Student Facing contexts and the 5-by-2 color-to-region mapping.",
+          "Correction": "Retain extension examples after the source park tasks and explicitly identify grass as three of ten cells."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up four products of one-half and another unit fraction: 1/4, 1/6, 1/8, 1/10.",
+        "Original sports-park task is (1/2)×(2/3)=1/3 of the entire park, not a made-up garden story.",
+        "Elena source park has 10 cells: basketball 2, pond 4, swings 1, grass 3; grass corresponds to (3/5)×(1/2)=3/10.",
+        "An Edulytiks-authored teacher-scored alternative Cool-down uses 1/2 of 3/4=3/8 of an original park.",
+        "Freehand diagrams, original color placement, peer explanations and source image matching remain teacher reviewed.",
+        "Publisher-original separate Student Task PDF, figure binaries and gated Cool-down are not independently certified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original city park sports and soccer counts",
+          "Description": "EDULYTIKS original 3-by-2 equal-area park model, not source art. Two of six whole-park cells represent one half of the two sports thirds; original whole is six cells.",
+          "Rows": [
+            {
+              "Label": "Top half",
+              "Cells": [
+                "soccer",
+                "soccer",
+                "other land"
+              ]
+            },
+            {
+              "Label": "Bottom half",
+              "Cells": [
+                "other sports",
+                "other sports",
+                "other land"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Elena park source count inventory, geometry teacher reviewed",
+          "Description": "The source Student Facing describes 5 rows by 2 equal cells; numbers/labels are verified but exact publisher cell positions are NOT claimed reconstructed. Total ten pieces. Colors and visual matching require the original diagram and teacher review.",
+          "Rows": [
+            {
+              "Label": "basketball / yellow",
+              "Cells": [
+                "2",
+                "2/10"
+              ]
+            },
+            {
+              "Label": "pond / blue",
+              "Cells": [
+                "4",
+                "4/10"
+              ]
+            },
+            {
+              "Label": "swings / gray",
+              "Cells": [
+                "1",
+                "1/10"
+              ]
+            },
+            {
+              "Label": "grass / red",
+              "Cells": [
+                "3",
+                "3/10"
+              ]
+            },
+            {
+              "Label": "total",
+              "Cells": [
+                "10",
+                "10/10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L05",
+      "CultureCode": "en",
+      "Title": "Multiply a Unit Fraction by a Non-unit Fraction",
+      "ExplanationParagraphs": [
+        "Source IM 2021 Grade 5 U03:L05, 5.NF.B.4.b: multiply a UNIT fraction and a NON-UNIT fraction including a value greater than one; link the fixed unit-square grid denominator to cell area, the numerator to the number of shaded pieces, and the correct square-unit area.",
+        "Warm-up — Estimation Exploration: Shaded Rectangle. Learners supply a too-low/about-right/too-high estimate for the actual source figure, and explain why the shaded area is MORE than 1/4 square unit. The exact dimensions of this approximate publisher picture are not invented; teacher assesses reasoning.",
+        "Activity 1 — Write Equations: original source images A, B, C show progressively more shaded fraction of a 1/3-high row with fifths along the horizontal. Source figure A can be described by (2/5)×(1/3)=2/15 square unit; students give expressions for EACH actual source image, notice the pattern and explain Han's (6/5)×(1/3)=6/15 square unit, including how six fifth-width pieces may extend beyond one row/unit-square. Do not falsely count a doubled 30-cell denominator for 6/5.",
+        "Activity 2 — Estimate With Expressions: write a plausible expression for the SOURCE warm-up shaded image and explain why its shaded area exceeds 1/4 but is less than 1/2 square unit. Examples like (3/5)×(1/2) or (4/5)×(1/2) are reasonable estimates, not a certified exact image value. The teacher reviews varied mathematically defensible estimates, not a single arbitrary scalar choice.",
+        "Lesson synthesis: explicitly compare the 6/5×1/3=6/15 diagram with Kiran's incorrect 6/30 reasoning; the unit square is the denominator reference, not the number of cells in a drawn two-unit rectangle. Partner explanations and the original publisher figures are teacher reviewed. Alternative Edulytiks Cool-down: use (4/5)×(1/3)=4/15 with a correct same-whole diagram and written justification.",
+        "Existing independent 4-by-5 twentieths examples are retained as EXTENSION models only; they do NOT replace original A–C images, Han or the estimation activity. Gated 2021 publisher Cool-down/Student Task PDF/image binaries are not independently certified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit fraction of several equal parts",
+          "Definition": "Taking 1/a of b/c selects b of the ac equal whole-unit cells.",
+          "Rule": "1/a×b/c=b/(ac).",
+          "Example": "1/4×3/5=3/20."
+        },
+        {
+          "Title": "Repeated unit-product reasoning",
+          "Definition": "The non-unit numerator counts how many identical unit-fraction products are selected.",
+          "Rule": "1/a×b/c=b×(1/a×1/c).",
+          "Example": "1/4×3/5=3×(1/20)."
+        },
+        {
+          "Title": "Progressive shading",
+          "Definition": "With one fixed denominator grid, increasing the number of selected cells increases covered area in equal increments.",
+          "Rule": "For a 4×5 grid, one new cell adds 1/20 of the whole.",
+          "Example": "Changing 2/5 to 3/5 in a quarter row adds 1/20."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source Activity 1 A: two fifths of one third",
+          "Question": "What area is shaded by (2/5)×(1/3) in the first source grid?",
+          "Method": "Source-specific equal-area unit model; teacher verifies source figure interpretation.",
+          "Steps": [
+            "Divide the original square into 5 equal columns and 3 equal rows.",
+            "Shade two of fifteen equal cells.",
+            "Write the area relative to ONE square unit."
+          ],
+          "Answer": "2/15 square unit.",
+          "Check": "2×1/(5×3)=2/15."
+        },
+        {
+          "Title": "Source Activity 1 Han: six fifths of one third",
+          "Question": "Explain why Han writes (6/5)×(1/3)=6/15, not 6/30.",
+          "Method": "Source-specific equal-area unit model; teacher verifies source figure interpretation.",
+          "Steps": [
+            "A single whole square has 15 equal 1/15 cells.",
+            "Six fifth-width cells may extend across unit boundaries.",
+            "Six shaded fifteenths are 6/15 square unit, not six of thirty new unit-sized parts."
+          ],
+          "Answer": "6/15 square unit (equivalent 2/5).",
+          "Check": "The unit-square denominator is 5×3=15, not a doubled 30."
+        },
+        {
+          "Title": "Source Activity 2: estimate with a multiplication expression",
+          "Question": "Give a reasonable multiplication expression for a source shaded rectangle that covers more than 1/4 but less than 1/2 of the square.",
+          "Method": "Source-specific equal-area unit model; teacher verifies source figure interpretation.",
+          "Steps": [
+            "Keep the full square as the reference.",
+            "Use visual bounds rather than pretend exact side lengths.",
+            "For example (3/5)×(1/2)=3/10 is a plausible estimate if consistent with the actual image."
+          ],
+          "Answer": "Teacher-reviewed plausible estimates, e.g. 3/10 if diagram supports them.",
+          "Check": "The image is not a fixed 3/10 oracle; estimates require justification."
+        },
+        {
+          "Title": "Optional extension — Three fifths of a quarter",
+          "Question": "Find (1/4)×(3/5) using a unit square.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Divide whole into four rows and five columns.",
+            "Choose one quarter-high row and shade three of five columns in that row.",
+            "Count three shaded cells out of twenty equal parts."
+          ],
+          "Answer": "3/20 square unit.",
+          "Check": "Three groups of 1/20 give 3/20."
+        },
+        {
+          "Title": "Optional extension — Compare increasing shaded cells",
+          "Question": "Compute (1/4)×(1/5), (1/4)×(2/5), (1/4)×(3/5).",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Keep the whole as the same 4×5 grid.",
+            "Mark one, two or three cells in one selected row.",
+            "Record the increasing parts of the full twenty-cell unit."
+          ],
+          "Answer": "1/20, 2/20=1/10, 3/20.",
+          "Check": "Each increases by exactly 1/20 square unit."
+        },
+        {
+          "Title": "Optional extension — Four fifths of one quarter",
+          "Question": "Find (1/4)×(4/5).",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Partition the whole into 20 equal pieces.",
+            "Shade four of the five cells in one quarter-row.",
+            "Count four selected twentieths."
+          ],
+          "Answer": "4/20=1/5 square unit.",
+          "Check": "Four selected twentieths make one fifth of the whole."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiply the non-unit numerator into the denominator",
+          "WhyWrong": "The numerator counts selected parts; it is not another division of the whole.",
+          "Correction": "Count b highlighted cells in an a-by-c grid to obtain b/(ac)."
+        },
+        {
+          "Mistake": "Use unequal grids for successive examples and claim a pattern",
+          "WhyWrong": "The lesson's pattern requires a fixed-size original whole and equal cells.",
+          "Correction": "Keep the same 4×5 area grid when comparing growing numerators."
+        },
+        {
+          "Mistake": "Use 6/30 instead of 6/15 from Han's two-unit sketch",
+          "WhyWrong": "The denominator must measure one original unit square, not both drawn squares combined.",
+          "Correction": "Mark one complete unit square's 5-by-3 equal cells and count six 1/15-sized shaded pieces."
+        }
+      ],
+      "SummaryPoints": [
+        "Original source A row model (2/5)×(1/3)=2/15, and Han (6/5)×(1/3)=6/15 of one square unit.",
+        "The numerator counts shaded unit-grid cells; the denominator counts equal cells of one ORIGINAL unit square, not of several adjacent unit squares.",
+        "The source warm-up asks for too-low/about-right/too-high estimates; the second activity accepts more than one justified approximate expression.",
+        "Teacher reviews actual original figures A, B, C, Kiran's 6/30 misconception, partner discussion and hand drawings.",
+        "Independent 4/5×1/3=4/15 Cool-down with teacher rubric; original restricted publisher Cool-down not copied."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source A whole-unit 5-column by 3-row",
+          "Description": "EDULYTIKS original equal 15-cell unit-square diagram, not original figure A. Exactly two shaded cells demonstrate 2/5×1/3=2/15.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "shade",
+                "shade",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Han's six shaded fifteenths without denominator doubling",
+          "Description": "One WHOLE unit square always has 15 equal 1/15 cells. Six shaded cells (possibly continuing to an adjacent unit-square diagram) total 6/15, NOT 6/30.",
+          "Rows": [
+            {
+              "Label": "Part count in first whole",
+              "Cells": [
+                "5×3=15",
+                "one cell=1/15"
+              ]
+            },
+            {
+              "Label": "Total selected cells",
+              "Cells": [
+                "6",
+                "six fifteenths"
+              ]
+            },
+            {
+              "Label": "Correct product",
+              "Cells": [
+                "(6/5)×(1/3)",
+                "6/15"
+              ]
+            },
+            {
+              "Label": "Rejected Kiran claim",
+              "Cells": [
+                "6/30",
+                "wrong original whole"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L06",
+      "CultureCode": "en",
+      "Title": "Multiply Fractions",
+      "ExplanationParagraphs": [
+        "Goal (IM 2021 5.NF.B.4.b): represent multiplying TWO NON-UNIT fractions as shaded rectangular area. Each correct expression must be traced to number of shaded equal cells over the number of same-size cells in ONE original whole square.",
+        "Warm-up — Which One Doesn't Belong: More Pieces? Discuss the four ORIGINAL source figures A–D; the source explicitly notes picture A as the only one with neither side length a unit fraction. Original image A has six shaded of twelve whole cells, so its fraction is 6/12. Multiple teacher-defended exclusions are valid; do not replace original diagrams with an invented fixed answer.",
+        "Activity 1 — Many Expressions: the actual source diagram represents 8/30 square unit, also 2×4×(1/5×1/6) and (2/6)×(4/5). The learner explains that a 6-row by 5-column original square contains 30 equal cells and the 2×4 selected rectangle is eight of them. Show why products of numerators and denominators each count different parts of the same model. Students describe in words how ALL THREE given expressions match the ONE source diagram.",
+        "Activity 2 — More Patterns: complete the source diagram A–D table with the multiplication expression and shaded square-unit area for each actual publisher drawing (do not invent absent image values). For the final source diagram explain (6×4)/(5×4)=24/20, including six selected fifth parts over 5-by-4 original-unit cells; the whole does not silently become a 2-unit rectangle. Draw teacher-supported alternatives while preserving the actual image comparison and noticed pattern.",
+        "Synthesis — the product of shaded row-count times shaded column-count goes in the numerator, while the count of equal rows times equal columns in one original whole goes in the denominator. Original drawings, source diagram A-D interpretations and different student justifications are teacher reviewed. Edulytiks independent Cool-down: draw (2/3)×(3/5)=6/15=2/5 square unit with a whole-unit 3-by-5 area model.",
+        "Earlier mathematically valid 6/12 and 8/35 examples are kept as EXTENSIONS, not a substitute for the original 8/30/2×4×(1/5×1/6), 2/6×4/5 and final 24/20 source tasks. Publisher Student Task PDF, original artwork and gated Cool-down remain unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product of non-unit fractions",
+          "Definition": "A fractional rectangle covers a selected number of equal cells in the common whole.",
+          "Rule": "(a/b)×(c/d)=(a×c)/(b×d) for positive denominators.",
+          "Example": "(2/3)×(3/4)=6/12=1/2."
+        },
+        {
+          "Title": "Many equivalent expressions",
+          "Definition": "A selected subgrid can be understood as repeated unit-cell pieces or direct factor multiplication.",
+          "Rule": "a×c×(1/b×1/d)=ac/(bd).",
+          "Example": "2×3×1/12=6/12."
+        },
+        {
+          "Title": "Diagram must match factors",
+          "Definition": "The selected rows and columns determine a geometric fraction-of-fraction product.",
+          "Rule": "a/b of the height and c/d of the width shade ac out of bd equal full-unit cells.",
+          "Example": "2 rows of 5 and 4 columns of 7 cover 8 of 35 cells."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original Activity 1: three equivalent expressions",
+          "Question": "Explain 8/30, 2×4×(1/5×1/6) and (2/6)×(4/5) as the same shaded unit-square area.",
+          "Method": "IM 2021 source diagram mathematics, with first-party grid model and teacher-reviewed original figure.",
+          "Steps": [
+            "Hold the square at six rows and five columns.",
+            "Select two of six rows and four of five columns.",
+            "Count eight cells of 30 to prove the expressions agree."
+          ],
+          "Answer": "8/30 square unit (=4/15).",
+          "Check": "(2/6)×(4/5)=8/30."
+        },
+        {
+          "Title": "Source preparation: three sixths by four fifths",
+          "Question": "Why is (3/6)×(4/5) a product of shaded rows and columns?",
+          "Method": "IM 2021 source diagram mathematics, with first-party grid model and teacher-reviewed original figure.",
+          "Steps": [
+            "Partition the unit square into six rows and five columns.",
+            "Select three rows and four columns.",
+            "Count twelve shaded parts of thirty."
+          ],
+          "Answer": "12/30 square unit (=2/5).",
+          "Check": "3×4/6×5=12/30."
+        },
+        {
+          "Title": "Original Activity 2 last table",
+          "Question": "Explain (6×4)/(5×4) with the original whole as one square unit.",
+          "Method": "IM 2021 source diagram mathematics, with first-party grid model and teacher-reviewed original figure.",
+          "Steps": [
+            "Each original whole has 5 by 4 equal subdivisions.",
+            "Six selected fifth-wide parts extend beyond one unit width.",
+            "Six times four shaded pieces of 1/20 units produce 24/20."
+          ],
+          "Answer": "24/20 square unit (=6/5).",
+          "Check": "A visible second unit does not double the 20-cell denominator."
+        },
+        {
+          "Title": "Optional extension — Six of twelve cells",
+          "Question": "A unit square is partitioned into three rows and four columns, with two rows and three columns shaded. Find the area.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Find the dimensions of the shaded subrectangle: 2/3 and 3/4.",
+            "Count 2×3=6 selected cells out of 3×4=12 whole-unit cells.",
+            "Write the multiplication expression and simplify."
+          ],
+          "Answer": "6/12=1/2 square unit.",
+          "Check": "(2/3)×(3/4)=6/12."
+        },
+        {
+          "Title": "Optional extension — Multiply two non-unit fractions",
+          "Question": "Find 2/5×4/7 as an area of one whole.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Divide the square into five rows and seven columns.",
+            "Select two rows and four columns.",
+            "Count eight selected cells of the 35 total."
+          ],
+          "Answer": "8/35 square unit.",
+          "Check": "8 is 2×4 and 35 is 5×7."
+        },
+        {
+          "Title": "Optional extension — Justify different expressions",
+          "Question": "Show why (2/3)×(3/4) and 6×(1/12) describe the same shaded area.",
+          "Method": "A first-party exact equal-area diagram with verbal explanation and independent fraction check.",
+          "Steps": [
+            "Each selected 1/12 cell comes from a 3-row by 4-column partition.",
+            "Two selected rows and three columns cover six cells.",
+            "Add six identical 1/12-square-unit areas."
+          ],
+          "Answer": "Both give 6/12=1/2 square unit.",
+          "Check": "Teacher checks that a claimed 2×3 subgrid is a complete rectangle and that the original whole is fixed."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiply only the numerators and leave the denominator unchanged",
+          "WhyWrong": "The number of whole-unit cells is the PRODUCT of both partition counts.",
+          "Correction": "Use an equal-row/equal-column area model to count bd total pieces."
+        },
+        {
+          "Mistake": "Select arbitrary nonrectangular cells while naming rectangular side fractions",
+          "WhyWrong": "A product of side fractions refers to a rectangular region with that row/column extent.",
+          "Correction": "Shade a coherent a-by-c subrectangle and label the original whole."
+        },
+        {
+          "Mistake": "Substitute a mathematically correct but different 5-by-7 eight-of-thirty-five rectangle for the source 8/30 diagram",
+          "WhyWrong": "Source A1 requires six rows, five columns, shaded two by four and three equivalent expressions.",
+          "Correction": "Use an original full-unit 6-by-5 grid for required source task, keep 8/35 as optional extension only."
+        }
+      ],
+      "SummaryPoints": [
+        "Exact source Activity 1: 8/30 = 2×4×(1/5×1/6) = (2/6)×(4/5) square unit.",
+        "Exact source last-table expression: (6×4)/(5×4)=24/20; denominator refers to ONE unit.",
+        "Source warm-up asks Which One Doesn't Belong with image A showing 6/12 shaded, including teacher-defended multiple reasons.",
+        "Original diagram interpretations, open explanations and learner drawings require teacher review; not machine-scored.",
+        "Independent Edulytiks Cool-down: (2/3)×(3/5)=6/15=2/5 with a 3-by-5 grid."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party source-skill 6-by-5 shaded model",
+          "Description": "EDULYTIKS original 6-row by 5-column model: a 2×4 shaded rectangle has eight of thirty equal full-unit parts, illustrating the source 8/30 equation but not copying publisher artwork.",
+          "Rows": [
+            {
+              "Label": "R1",
+              "Cells": [
+                "shade",
+                "shade",
+                "shade",
+                "shade",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R2",
+              "Cells": [
+                "shade",
+                "shade",
+                "shade",
+                "shade",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R3",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R4",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R5",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            },
+            {
+              "Label": "R6",
+              "Cells": [
+                "empty",
+                "empty",
+                "empty",
+                "empty",
+                "empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source Activity 2 last diagram mathematical table",
+          "Description": "Six groups of four shaded twentieth-cells compared with the SAME original 5-by-4 whole; if the drawing extends beyond one unit, 24/20 remains the area in square units.",
+          "Rows": [
+            {
+              "Label": "shaded count",
+              "Cells": [
+                "6×4",
+                "24"
+              ]
+            },
+            {
+              "Label": "one whole subdivisions",
+              "Cells": [
+                "5×4",
+                "20"
+              ]
+            },
+            {
+              "Label": "fraction of square unit",
+              "Cells": [
+                "24/20",
+                "6/5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

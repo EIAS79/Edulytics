@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "kind": "G5_U02_L14_L17_V13_SOURCE_TASK_AUDIT",
+  "date": "2026-10-30",
+  "course": "US-CCSS-MATH:G5:IM-K5-2021",
+  "repo": "EIAS79/Edulytics",
+  "pr": 596,
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "sourcePolicy": "Compared publicly accessible original 2021 IM K–5 teacher lesson, preparation and embedded Student Facing HTML for lessons 14–17 only. No original separate Student Task PDF, original publisher blackline master/figure licensing, gated Cool-down or teacher response inspected in this batch.",
+  "reviewed": [
+    {
+      "lesson": "PED:US-CCSS-MATH:G5:U02:L14",
+      "classification": "CONTENT_REPAIR",
+      "lessonSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-14/lesson.html",
+      "prepSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-14/preparation.html",
+      "purpose": "Info Gap: Area with problem card/data card protocol, two rounds and precise questions for missing relational measurements, optional seven fill-in equations.",
+      "previousDefect": "Grade-5 candidate invented art panel 4×7 1/2 and second case 15 3/4÷3 and presented them as original publisher source cases; optional equation activity absent.",
+      "repair": "Labels invented panels as Edulytiks first-party extension only. Restores original warm-up products 15,15,20,20; Info Gap progressive questioning and partner role switch; optional seven publicly displayed missing-factors/mixed products.",
+      "boundary": "Original source cards (paper towel/corn field) and exact numerical dimensions not inspected; no fake card parity claim or numeric-only acceptance."
+    },
+    {
+      "lesson": "PED:US-CCSS-MATH:G5:U02:L15",
+      "classification": "CONTENT_REPAIR",
+      "lessonSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-15/lesson.html",
+      "prepSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-15/preparation.html",
+      "purpose": "Six-number use-once bank plus four matching diagrams/expressions for 4×5 2/3.",
+      "previousDefect": "Candidate bank 2,3,4,6,6 1/2,6 3/4 with different target panels was not source's actual use-once rug/puzzle/whiteboard story.",
+      "repair": "Original bank 4,5,5 1/2,3,5 3/4,2: rug 3×5 1/2=16 1/2; puzzle 2×2 1/2=5; board 4×5 3/4=23. Original four expressions each equal 4×17/3=68/3.",
+      "boundary": "Teacher must verify physical diagram A-D correspondence and reasoning; source images original PDF not checked."
+    },
+    {
+      "lesson": "PED:US-CCSS-MATH:G5:U02:L16",
+      "classification": "CONTENT_REPAIR_WITH_JUDGMENT_GAP",
+      "lessonSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-16/lesson.html",
+      "prepSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-16/preparation.html",
+      "purpose": "Optional Priya garden about 36 square feet and source estimation activities.",
+      "previousDefect": "Candidate falsely changed 36 ft² benchmark to 30 ft², with four invented options. It also omitted 7×12 8/9 and 9×4 2/29 estimation and source 2,3,5,6,7 digit puzzle.",
+      "repair": "Original four areas 42,35,35,24 ft²; explicit strict budget ≤36 accepts B/C/D, but source language 'reasonable near 36' could support emphasizing B/C only. First-party narrative preserves teacher judgment rather than declaring D automatically correct. Restored exact 90 2/9, 36 18/29, sample 6×3 2/5=20 2/5.",
+      "boundary": "Original student task image, key and human rubric not independently checked; the distinction between admissible under budget and sufficiently close to target is explicitly open."
+    },
+    {
+      "lesson": "PED:US-CCSS-MATH:G5:U02:L17",
+      "classification": "CONTENT_REPAIR",
+      "lessonSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-17/lesson.html",
+      "prepSource": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-17/preparation.html",
+      "purpose": "Optional handmade rectangle mosaic plus original second activity Cost of Mosaic.",
+      "previousDefect": "Candidate substituted a generic layout-comparison exercise for original material-cost activity.",
+      "repair": "Restored source cost table stone $5/tile $3/glass $2 per square unit, open student-selected area and first-party 18-square-unit illustrative cost $90/$54/$36. No unique original mosaic/cost asserted.",
+      "boundary": "Physical work, group arrangement, individual photo asset rights and teacher-reviewed cost estimates not verified."
+    }
+  ],
+  "sourceOnlyComparedLessonCount": 4,
+  "richCandidateRepairs": 4,
+  "fullOriginalStudentTaskPdfChecked": false,
+  "originalPublisherCardMastersChecked": false,
+  "publicTeacherStudentFacingChecked": true,
+  "gradeScopedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u02-final-v13.test.cjs"
+  ],
+  "contentCommit": "fd40dbac1226727b2283b5b0fc9b2bee0942f3ee",
+  "testCommittedBlob": "c1dedbf72c4cdb972df4d0d8497ab949cb159128",
+  "nativeV13Suite": {
+    "node": "v22.16.0",
+    "command": "node --test /mnt/data/g5_v13_isolated/tests/*.test.cjs",
+    "passed": 18,
+    "failed": 0,
+    "skipped": 3,
+    "exactCommittedGitBlobs": [
+      "e3635644158d949fa9daaaa3c9b351cf301cf9f8",
+      "ee8fc67901f4e7e85cb6782bb0f597807fe79c9e",
+      "c1dedbf72c4cdb972df4d0d8497ab949cb159128"
+    ],
+    "limitations": "Actual isolated Node executable math/negative tests. Three branch-fixture tests skipped because full repository was not mounted in container. .NET SDK unavailable; git clone DNS failed. Not application or production tests."
+  },
+  "stageStatus": {
+    "academicAClosed": 0,
+    "stageBAuthoredCandidates": 148,
+    "stageBEffectiveRuntimeVerified": 0,
+    "stageCSelectedPracticeVerified": 0,
+    "stageDIntegratedVerified": 0,
+    "finalAcademicAccepted": 0,
+    "ownerUat": "NOT_RUN",
+    "release": "NO_GO"
+  },
+  "remainingSourceBacklog": [
+    "Prior U01:L01 original Student Task PDF and task drawing audit",
+    "Prior U02:L04 Student Task PDF oversized",
+    "U02:L02 Sandwich Match blackline master",
+    "U02:L07 Match the Situation blackline master",
+    "U02:L13 Card Sort blackline master",
+    "U02:L14 original Info Gap Area blackline cards",
+    "Original Student Task PDF and individual rights for all V13 U02:L07-L17",
+    "Gated Cool-down, authenticated student teacher flows and verified selected Practice"
+  ],
+  "nextSourceCursor": "PED:US-CCSS-MATH:G5:U03:L01 — original source fidelity review after U02:L17",
+  "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "supervisorTestPR": "https://github.com/EIAS79/Edulytics/pull/601"
+}

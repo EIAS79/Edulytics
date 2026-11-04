@@ -16,7 +16,7 @@ test('146 unique canonical lessons, first new ordinal 51, old 50 historical only
   assert.equal(ledger.newLessons[0].lessonCode,'PED:US-CCSS-MATH:G1:U03:L14');
   assert.equal(ledger.historical.status,'HISTORICALLY_RELEASED_NO_RETEST');
 });
-test('G1 96 historical exact-source scopes are unchanged except seven SHA-pinned audited Grade 3/4 additions',()=>{
+test('G1 96 original-source scopes retain their original SHA, with eight exact-pinned audited G3/G4/G5 shared-route deltas',()=>{
   const {execFileSync}=require('node:child_process');
   const {sourceUnchangedSinceProof}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
   const ledger=JSON.parse(fs.readFileSync(path.join(ROOT,
@@ -35,7 +35,7 @@ test('G1 96 historical exact-source scopes are unchanged except seven SHA-pinned
   assert.equal(paths.size,124);
   const changed=execFileSync('git',['diff','--name-only',proof,head,'--',...paths],
     {cwd:ROOT,encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean);
-  assert.equal(changed.length,7, 'Unexpected change in a Grade 1 proof-affecting code path');
+  assert.equal(changed.length,8, 'Unexpected unreviewed change in a Grade 1 proof-affecting code path');
   assert.deepEqual(changed.filter(p=>p.includes('/G1')).sort(),[],
     'Grade 1-specific source code itself changed');
 });

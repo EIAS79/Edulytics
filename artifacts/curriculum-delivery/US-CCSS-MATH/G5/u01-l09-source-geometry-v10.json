@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
+  "grade": "US-CCSS-MATH:G5:IM-K5-2021",
+  "sourceEdition": "IM K-5 2021 first edition",
+  "reviewDate": "2026-10-29",
+  "reviewClassification": "GRADE5_DEFECT_FIXED",
+  "disposition": "Corrected prior sidecar's oversimplified one-extra-cube example to cover the source's two measured partner figures and paired expression representations. Preserves other five lessons in the same sidecar.",
+  "sourceAccess": {
+    "deviceConnection": "Primary",
+    "deviceName": "Our-CS",
+    "deviceId": "98fe82ca-5db1-4369-9545-f146cc609375",
+    "access": "READ_ONLY",
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-9\\lesson.html",
+    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-9\\preparation.html",
+    "studentFacing": "embedded public 2021 teacher lesson Student Facing text read",
+    "studentTaskPdfChecked": false,
+    "gatedCooldownChecked": false,
+    "publisherFiguresIndependentlyVerified": false,
+    "assetRightsIndividuallyChecked": false
+  },
+  "studentTaskPdfChecked": false,
+  "gatedCooldownChecked": false,
+  "stageA": "NOT_COMPLETE",
+  "stageB": "EFFECTIVE_AUTHENTICATED_RENDER_NOT_VERIFIED",
+  "stageC": "EXACT_SELECTED_PRACTICE_NOT_VERIFIED",
+  "stageD": "NOT_RUN",
+  "academicAccepted": false,
+  "ownerUat": "NOT_RUN",
+  "standards": {
+    "Addressing": [
+      "5.MD.C.5.c",
+      "5.OA.A.2"
+    ],
+    "BuildingTowards": [
+      "5.NBT.A.2"
+    ]
+  },
+  "observedTaskSequence": [
+    "Times Ten mental number talk: 6×2, 6×2×10, 6×20×10, 60×20×10",
+    "Partner A measures Figure 1 and Partner B Figure 2, exchanges paper, and finds SAME volume with DIFFERENT decomposition; individual unit cubes not displayed",
+    "Figure 1 dimensions 7 ft total width/height, 5 ft right width/height and 2 ft depth, so both missing lengths 2 ft",
+    "Figure 2 9 in upper horizontal extent, 5 in bottom extent, 5 in overall height, 2 in lower part and 7 in depth; upper/overhang differences 3 in and 4 in",
+    "Interpret each parenthesized factor/group as a physically drawn nonoverlapping prism, including both a 42-unit-pair and 420-in³-pair",
+    "Independent student drawing, peer comparison, alternate decomposition and unit justification require teacher-scored evidence"
+  ],
+  "geometricChecks": [
+    {
+      "label": "Figure 1 ft³",
+      "missingEdgesFeet": [
+        2,
+        2
+      ],
+      "partitionA": [
+        28,
+        50
+      ],
+      "partitionB": [
+        70,
+        8
+      ],
+      "expectedTotal": 78
+    },
+    {
+      "label": "Figure 2 in³",
+      "missingEdgesInches": [
+        4,
+        3
+      ],
+      "partitionA": [
+        189,
+        70
+      ],
+      "partitionB": [
+        175,
+        84
+      ],
+      "expectedTotal": 259
+    },
+    {
+      "label": "Expression 420 in³",
+      "partitionA": [
+        240,
+        180
+      ],
+      "partitionB": [
+        360,
+        60
+      ],
+      "expectedTotal": 420
+    },
+    {
+      "label": "Parenthesized pair cubic units",
+      "numericExpressions": [
+        "((2×3)×4)+((3×3)×2)",
+        "(5×6)+(3×4)"
+      ],
+      "expectedTotal": 42,
+      "geometricMatchRequiresTeacherReview": true
+    }
+  ],
+  "rubric": {
+    "correctNumericSubchecks": "78 ft³, 259 in³, 420 in³ and 42 cubic units; validate units and each factor's physical measure",
+    "incorrect": "wrong units, missing edge guessed rather than derived, overlapping/double-counted cuts, unsupported same-shape mapping",
+    "malformed": "missing/zero/negative/non-integer dimensions, mixed units or overlapping prism coordinate regions",
+    "teacherReview": "student's own first-party diagram/sketch, explanation, unique physical decomposition, correct boundary matching, no double-counting, partner critique"
+  },
+  "sharedDependencies": [
+    "https://github.com/EIAS79/Edulytics/issues/592"
+  ],
+  "release": "NO_GO"
+}

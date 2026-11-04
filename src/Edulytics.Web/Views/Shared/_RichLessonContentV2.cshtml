@@ -166,7 +166,7 @@
     </header>
     <div class="lesson-reader-blocks lesson-reader-blocks--summary">
         <ul class="lesson-summary-list">
-            @foreach (var point in Model.SummaryPoints)
+            @foreach (var point in RichLessonSummaryVisibility.ForReader(Model.LessonCode, Model.SummaryPoints))
             {
                 <li>@point</li>
             }

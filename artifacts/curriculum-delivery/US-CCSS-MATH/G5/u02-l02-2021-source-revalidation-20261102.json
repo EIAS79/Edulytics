@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
+  "ordinal": 14,
+  "sourceEdition": "Illustrative Mathematics K5 First Edition 2021",
+  "sourceFiles": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-2\\lesson.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-2\\lesson-2\\preparation.html"
+  ],
+  "sourceReading": "READ_ONLY_SOURCE_FILES_2026_11_02",
+  "items": [
+    {
+      "id": "G5-U02-L02-WU",
+      "source": "Estimate shaded part near 1/5 of a whole; too-low/about-right/too-high",
+      "implementation": "FIRST_PARTY_RICHV2",
+      "status": "MATCHED_TEACHER_LED"
+    },
+    {
+      "id": "G5-U02-L02-A1",
+      "source": "Jada one sandwich shared between 2,3,4,5 people; one diagram and pattern",
+      "implementation": "RICHV2_PLUS_STATIC_EXACT_FAMILY",
+      "status": "MATCHED_TEACHER_LED"
+    },
+    {
+      "id": "G5-U02-L02-A2",
+      "source": "Sandwich Match card sort contexts, expressions, multiple diagrams; 2/5 and 3/2 illustrations",
+      "implementation": "FIRST_PARTY_CONTEXT_AND_TEACHER_REVIEW",
+      "status": "MATCHED_TEACHER_LED"
+    },
+    {
+      "id": "G5-U02-L02-A2-CARDS",
+      "source": "Separate publisher blackline master card images",
+      "implementation": "FIRST_PARTY_ALTERNATIVE_NOT_OFFICIAL_CARDS",
+      "status": "SOURCE_UNAVAILABLE"
+    },
+    {
+      "id": "G5-U02-L02-CD",
+      "source": "Publisher gated How Much Sandwich? cooldown",
+      "implementation": "INDEPENDENT_3_DIV_4_FIRST_PARTY_EXIT",
+      "status": "SOURCE_UNAVAILABLE"
+    }
+  ],
+  "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json",
+  "staticPracticeFamily": "usccss.g5.u02.l02.unit_share_equivalence",
+  "evidenceBoundary": "Static source/contract verification only; original images and publisher gated exit not claimed source-exact. No source 100% claim.",
+  "tests": [
+    "tests/academic-us-ccss-g5-u02-l02-contract-v16.test.cjs"
+  ],
+  "testStatus": "WRITTEN_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "decision": "ABC_FUNCTIONAL_HANDOFF_ONLY"
+}
