@@ -7,7 +7,7 @@ namespace Edulytics.Services.Mathematics;
 /// Exact arithmetic answer verification for bounded Grade 7 rational
 /// questions. Uses integer cross-products, never a rounded decimal quotient.
 /// </summary>
-internal static class G7ExactRationalAnswer
+public static class G7ExactRationalAnswer
 {
     public static bool Matches(
         string? submitted, long expectedNumerator, long expectedDenominator,
