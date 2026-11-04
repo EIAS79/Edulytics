@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U04:L15",
+  "title": "Writing Systems of Equations",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\15\\index.html",
+      "sha256": "3a29a5e895d762cc5ddea652a2a9183b5ee917d2a03f9136decbd5b7c1e521f6"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\15\\preparation.html",
+      "sha256": "2e634c34b9acef20035269f0de0632b930eb334c5240980b352d61c04eda991b"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\15\\index.html",
+      "sha256": "60db5a2b68730fbcc027e4aa375398efbcf83d39cf93555e58c5aa5350882a2f"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\15\\practice.html",
+      "sha256": "64f1df2b2be4a8021bfc5265ab3f342482eadac9e07b988a852b4a2a567af090"
+    }
+  },
+  "learningGoals": [
+    "Write systems of equations from real-world relationships",
+    "Interpret a system solution in the context that generated it",
+    "Classify and solve systems using multiple strategies"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "15.1 ? Classify systems before solving",
+      "firstPartyTask": "classify",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "15.2 ? Turn situations into systems",
+      "firstPartyTask": "model-contexts",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "15.3 ? Information-gap reasoning",
+      "firstPartyTask": "info-gap",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "15.4 ? Mixed system-solving practice",
+      "firstPartyTask": "solve-practice",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u04-l15-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u04-l15-selected-first-party-paper.html",
+    "sha256": "f23111331ecf03e5a3cb995464b28572ef699ae8fd11bd42cc09eaa02e34cc6d",
+    "taskIds": [
+      "classify",
+      "model-contexts",
+      "info-gap",
+      "solve-practice",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Classification: distinct equal slopes -> none; different slopes -> one; proportional left sides with mismatched constants -> none; y=5x-15 and y=5(x-3) -> infinitely many.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Context models define variables explicitly, encode both independent constraints, and interpret the intersection rather than only reporting numbers.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Information-gap work distinguishes needed quantities from calculations and verifies the final pair in both equations.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Mixed solving uses an efficient valid method and checks both original equations; P4 gives (2,4).",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cool-down equations a+s=10 and 2a+3s=24 give a=6 adults and s=4 students.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "x": 6,
+    "y": 4
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
