@@ -1,0 +1,83 @@
+name: Grade 7 Stage D technical diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g7-stage-d.yml'
+      - 'tools/curriculum/g7-stage-d-inventory.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G7/**'
+      - 'src/Edulytics.Core/**'
+      - 'tests/academic-us-ccss-g7-**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/curriculum/g7-stage-d-inventory.cjs
+  source-shards:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - shell: bash
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(node tools/curriculum/g7-stage-d-inventory.cjs shard "$BATCH")
+          node --test "${files[@]}"
+  richv2:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test tests/academic-us-ccss-g7-full-grade-candidate.test.cjs
+  dotnet-math:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - run: |
+          mkdir -p stage-d-results
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --filter 'FullyQualifiedName~UsCcssG7|FullyQualifiedName~USCCSSG7' --logger 'trx;LogFileName=g7.trx' --results-directory stage-d-results
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade7-test-results
+          path: stage-d-results/
+          if-no-files-found: warn
+  academic-parity:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail closed if independent source-element evidence missing
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),path=require('path'),base='artifacts/curriculum-delivery/US-CCSS-MATH/G7';
+          const files=fs.readdirSync(base).filter(f=>/^grade7-u\d\d-l\d\d-abc-cursor\.json$/.test(f));
+          const invalid=files.filter(f=>{const x=JSON.parse(fs.readFileSync(path.join(base,f),'utf8'));return !Number.isInteger(x.sourceElementCount)||x.sourceElementCount<=0||x.sourceElementCount!==x.verifiedEquivalentElementCount});
+          if(files.length!==145||invalid.length){console.error('D_BLOCKED_ACADEMIC_SOURCE: source-element 1:1 evidence missing for '+invalid.length+'/145 lessons');process.exit(1)}
+          NODE
