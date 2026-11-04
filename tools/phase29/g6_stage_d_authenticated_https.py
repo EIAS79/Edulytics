@@ -276,7 +276,7 @@ def main():
         "deliveryMode":"Online","difficultyBand":"AtClassLevel"})
     require('data-delivery-saved="true"' in settings_html.lower(),
         "assessment delivery settings did not unlock native builder")
-    first_lesson_id=grade_rows[0].split("|",3)[1]
+    first_lesson_id=rows[0].split("|",3)[1]
     require(re.fullmatch(r"[0-9a-fA-F-]{36}",first_lesson_id),
         "Grade6 first lesson not seeded")
     generated_html=teacher_post(builder+"/generate",{
