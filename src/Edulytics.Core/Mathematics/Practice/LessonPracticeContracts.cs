@@ -2058,6 +2058,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u05.rational_linear_equation", "usccss.number.signed_rate_displacement", "usccss.g7.u05.signed_rational_add_subtract"],
             "G7_U05_L16_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U05 L17: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L17", "percentages.core",
+            "G7_STOCK_GAINS_LOSSES_AND_PERCENT_CHANGES",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.percent_rate_from_values", "usccss.g7.u05.signed_rational_add_subtract"],
+            "G7_U05_L17_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
