@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Real Grade 6 Stage D HTTPS/DB rehearsal. Disposable GitHub CI ONLY."""
 import hashlib, html, http.cookiejar, json, os, re, ssl, subprocess
+from html.parser import HTMLParser
 import urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 from b001_practice_attempt_probe import probe_lesson,extract_csrf,extract_adoption,extract_idempotency_key
@@ -15,6 +16,30 @@ REPORT={"recordType":"G6_STAGE_D_AUTHENTICATED_HTTPS_DISPOSABLE", "lessonCount":
         "candidateSha":os.getenv("G6_CANDIDATE_SHA"),"runId":os.getenv("GITHUB_RUN_ID"),
         "sourceParity":"UNKNOWN","teacherAcademicApproval":"NOT_CLAIMED",
         "releaseDecision":"NO_GO_TECHNICAL","lessons":[],"status":"INCOMPLETE"}
+
+def learner_visible_text(markup):
+    """Extract rendered HTML text while preserving mathematical < and >.
+    Do not treat literal less-than signs in math as HTML tags, and exclude
+    script/style/template contents from section text evidence.
+    """
+    class VisibleText(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.parts=[]
+            self.hidden=[]
+        def handle_starttag(self, tag, attrs):
+            if tag in ("script","style","template"):
+                self.hidden.append(tag)
+        def handle_endtag(self, tag):
+            if self.hidden and tag==self.hidden[-1]:
+                self.hidden.pop()
+        def handle_data(self, data):
+            if not self.hidden:
+                self.parts.append(data)
+    parser=VisibleText()
+    parser.feed(markup)
+    return " ".join(" ".join(parser.parts).split()).casefold()
+
 
 def require(cond, message):
     if not cond: raise AssertionError("G6_AUTH_FAIL_CLOSED "+str(message))
@@ -108,7 +133,7 @@ def main():
         require(len(english)==1,"missing first-party English content "+code)
         body=page(student,"/student/learning/lesson/"+lesson_id)
         require("rich-lesson-section" in body,"no authenticated Rich V2 "+code)
-        visible=re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",body)).casefold()
+        visible=learner_visible_text(body)
         title=re.sub(r"\s+"," ",english[0]["title"]).casefold()
         goal=re.sub(r"\s+"," ",english[0]["explanation"].split("\n",1)[0]).casefold()
         require(title in visible,"source-bound title absent from rendered learner page "+code)
