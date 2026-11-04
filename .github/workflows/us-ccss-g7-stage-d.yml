@@ -1,5 +1,13 @@
 name: Grade 7 Stage D technical diagnostics
 on:
+  push:
+    branches: [curriculum/us-ccss-g7-full-grade-20261028]
+    paths:
+      - '.github/workflows/us-ccss-g7-stage-d.yml'
+      - 'tools/curriculum/g7-stage-d-inventory.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G7/**'
+      - 'src/Edulytics.Core/**'
+      - 'tests/academic-us-ccss-g7-**'
   pull_request:
     branches: [main]
     paths:
@@ -16,6 +24,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -29,6 +39,8 @@ jobs:
         batch: [D1, D2, D3]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -44,6 +56,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -54,6 +68,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
@@ -73,6 +89,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Fail closed if independent source-element evidence missing
         run: |
           node - <<'NODE'
