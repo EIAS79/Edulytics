@@ -3994,6 +3994,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u03.l02.radius_diameter_relation",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "grade7-circle-radius-diameter-two-to-one-recompute",
+      "representations": [
+        "numeric",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "supporting.geometry.circle_circumference_pi_coefficient",
       "version": 1,
       "skillId": "supporting.geometry.circles_loci",

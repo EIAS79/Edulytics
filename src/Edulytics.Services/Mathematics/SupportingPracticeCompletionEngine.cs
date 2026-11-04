@@ -100,6 +100,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.rotate90",
             "supporting.geometry.midpoint",
             "supporting.geometry.axis_distance",
+            "usccss.g7.u03.l02.radius_diameter_relation",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
             "supporting.geometry.locus_equidistant",
@@ -273,6 +274,7 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.rotate90" => RotatePoint(random, scale),
             "supporting.geometry.midpoint" => Midpoint(random, scale),
             "supporting.geometry.axis_distance" => AxisDistance(random, scale),
+            "usccss.g7.u03.l02.radius_diameter_relation" => CircleRadiusDiameter(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
             "supporting.geometry.locus_equidistant" => LocusEquidistant(random, preferredVariant),
@@ -454,6 +456,8 @@ internal static partial class SupportingPracticeCompletionEngine
                 FormatPair((p["x1"] + p["x2"]) / 2, (p["y1"] + p["y2"]) / 2),
             "supporting.geometry.axis_distance" =>
                 Math.Abs(p["end"] - p["start"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u03.l02.radius_diameter_relation" =>
+                (p["mode"] == 0 ? 2 * p["radius"] : p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_circumference_pi_coefficient" =>
                 (2 * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_area_pi_coefficient" =>
@@ -1349,6 +1353,19 @@ internal static partial class SupportingPracticeCompletionEngine
             $"Two points lie on a horizontal line at x={start} and x={end}. Find the distance between them.",
             "Distance on one axis is the absolute difference between the coordinates.",
             ("start", start), ("end", end));
+    }
+
+    private static Problem CircleRadiusDiameter(Random r, int s)
+    {
+        var radius = r.Next(2, 18 + s * 4);
+        var mode = r.Next(0, 2);
+        var prompt = mode == 0
+            ? $"A circle has radius {radius}. Find its diameter."
+            : $"A circle has diameter {2 * radius}. Find its radius.";
+        return P("usccss.g7.u03.l02.radius_diameter_relation",
+            prompt,
+            "A diameter passes through the center and is twice a radius: d = 2r.",
+            ("mode", mode), ("radius", radius));
     }
 
     private static Problem CircleCircumference(Random r, int s)

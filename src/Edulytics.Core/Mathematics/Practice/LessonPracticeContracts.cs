@@ -1688,6 +1688,16 @@ public static class LessonPracticeContractRegistry
              "supporting.geometry.parallelogram_area"],
             "OUR_IM_G7_2017_2019_U03_L01_MEASUREMENT_ERROR_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L02: defining circle features,
+        // radius/diameter measurement and construction. The general supporting
+        // engine is extended only for exact d=2r conversion; circle sorting,
+        // drawing and measurement quality remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L02", "supporting.geometry.circles_loci",
+            "G7_CIRCLE_DEFINITION_RADIUS_DIAMETER_AND_CONSTRUCTION",
+            ["usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L02_CIRCLE_CONSTRUCTION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
