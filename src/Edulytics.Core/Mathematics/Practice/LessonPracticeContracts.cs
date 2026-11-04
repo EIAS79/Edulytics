@@ -2322,6 +2322,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.parallel_base_cross_section_sides", "supporting.geometry.angle_classify"],
             "G7_U07_L11_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U07 L12: source-scoped geometry Practice.
+        // Physical constructions, diagrams, nets, slicing and written explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U07:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U07:L12", "geometry.volume",
+            "G7_RIGHT_PRISM_VOLUME_BASE_AREA_TIMES_HEIGHT",
+            ["usccss.g7.u07.prism_volume_base_height", "supporting.geometry.cuboid_volume"],
+            "G7_U07_L12_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
