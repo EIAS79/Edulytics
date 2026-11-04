@@ -1774,6 +1774,17 @@ public static class LessonPracticeContractRegistry
              "supporting.geometry.compound_area"],
             "OUR_IM_G7_2017_2019_U03_L09_COMPOSITE_CIRCLE_AREA_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L10: distinguish boundary length
+        // from covered area and select the appropriate circle measure in a
+        // context. Exact circumference, area and radius/diameter calculations
+        // are machine scored; measure selection and justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L10", "supporting.geometry.circles_loci",
+            "G7_DISTINGUISH_CIRCUMFERENCE_AND_AREA_IN_CONTEXT",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient",
+             "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L10_BOUNDARY_VS_COVERAGE_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
