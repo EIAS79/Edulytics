@@ -81,18 +81,11 @@ for(const [code,item] of currentMap){
 for(const code of baseline.keys())if(!currentMap.has(code))errors.push('MAIN_LESSON_DELETED:'+code);
 const changed=review.filter(x=>x.translations.length);
 const metadata=review.filter(x=>x.changedMetadata.length);
-// An unchanged published Grade 5 pack requires no new Grade 5 owner consent.
-// This byte-identical case is distinct from, and never authorizes, a candidate
-// carrying some (but not all) of the 107 consented teaching revisions.
-const unchangedPublishedGrade5 =
-  git('rev-parse','origin/main:'+relative) === git('hash-object',relative);
 const approvalIssues=[];
-if(!unchangedPublishedGrade5){
-  if(!ownerConsentValid)approvalIssues.push('GRADE5_OWNER_CONTENT_CONSENT_INVALID_OR_MISSING');
-  if(changed.length!==107)approvalIssues.push('OWNER_CONSENT_WAS_FOR_EXACTLY_107_TEACHING_EDITS');
-  if(metadata.length!==0)approvalIssues.push('UNAPPROVED_NON_TRANSLATION_METADATA_CHANGES');
-  if(review.length!==107)approvalIssues.push('OWNER_APPROVAL_SCOPE_DOES_NOT_COVER_EXTRA_CHANGES');
-}
+if(!ownerConsentValid)approvalIssues.push('GRADE5_OWNER_CONTENT_CONSENT_INVALID_OR_MISSING');
+if(changed.length!==107)approvalIssues.push('OWNER_CONSENT_WAS_FOR_EXACTLY_107_TEACHING_EDITS');
+if(metadata.length!==0)approvalIssues.push('UNAPPROVED_NON_TRANSLATION_METADATA_CHANGES');
+if(review.length!==107)approvalIssues.push('OWNER_APPROVAL_SCOPE_DOES_NOT_COVER_EXTRA_CHANGES');
 if(changed.some(x=>!x.sourceShaUnchanged||!x.canonicalShaUnchanged))
   approvalIssues.push('UNAPPROVED_PUBLISHER_SOURCE_OR_CANONICAL_HASH_CHANGED');
 if(changed.some(x=>x.translations.some(t=>t.cultureCode!=='en')))
@@ -106,11 +99,10 @@ const result={schemaVersion:1,kind:'G5_MAIN_TO_CANDIDATE_CONTENT_DIFFERENCE_EVID
   changedTeachingLessonCount:changed.length,changedMetadataLessonCount:metadata.length,
   changedCultureCounts:languageCounts,sourceHashPreservedOnAllChangedLessons:changed.every(x=>x.sourceShaUnchanged),
   canonicalHashPreservedOnAllChangedLessons:changed.every(x=>x.canonicalShaUnchanged),
-  ownerContentApprovedLessonCount:!unchangedPublishedGrade5 && ownerConsentValid && approvalIssues.length===0 ? changed.length:0,
+  ownerContentApprovedLessonCount:ownerConsentValid && approvalIssues.length===0 ? changed.length:0,
   ownerContentApprovalEvidence:ownerConsentValid?ownerConsent.publicDecisionEvidence:null,
   independentlySourceVerifiedLessonCount:0,
-  approvalStatus:unchangedPublishedGrade5 ? 'NO_GRADE5_CONTENT_DELTA_NO_NEW_OWNER_CONSENT_REQUIRED' :
-    approvalIssues.length ? 'OWNER_APPROVAL_OUTSIDE_VERIFIED_SCOPE' :
+  approvalStatus:approvalIssues.length ? 'OWNER_APPROVAL_OUTSIDE_VERIFIED_SCOPE' :
     'OWNER_CONTENT_CONSENT_GRANTED_SOURCE_PARITY_INDEPENDENTLY_UNVERIFIED',
   errors:[...errors,...approvalIssues],lessons:review};
 fs.mkdirSync(outputDir,{recursive:true});
@@ -141,6 +133,5 @@ console.log('G5_MAIN_CONTENT_DELTA '+JSON.stringify({candidate:result.candidateS
   languages:languageCounts,sourceHashesUnchanged:result.sourceHashPreservedOnAllChangedLessons,
   canonicalHashesUnchanged:result.canonicalHashPreservedOnAllChangedLessons,
   ownerApproved:result.ownerContentApprovedLessonCount,sourceVerified:0,
-  unchangedPublishedGrade5,
   outsideOwnerConsent:approvalIssues.length,errors:result.errors}));
 if(result.errors.length)process.exitCode=2; // Owner consents to the 107 exact content edits; source parity remains a separate required Stage D gate.
