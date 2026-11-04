@@ -2554,6 +2554,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l04.proportional_equations", "percentages.core.increase_decrease"],
             "G7_U09_L03_CULMINATING_PROJECT_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U09 L04: culminating project Practice reuses prior Grade 7 engines.
+        // Spreadsheet work, physical measurement, design, estimation assumptions and written project justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U09:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U09:L04", "geometry.scale.construction",
+            "G7_RESTAURANT_SCALE_DRAWING_AREA_AND_LAYOUT",
+            ["usccss.g7.u01.l02.scale_factor", "supporting.geometry.compound_area", "usccss.g7.u01.l07.area_ratio_scale_factor"],
+            "G7_U09_L04_CULMINATING_PROJECT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
