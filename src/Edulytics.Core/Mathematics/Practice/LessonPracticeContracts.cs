@@ -2463,7 +2463,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:US-CCSS-MATH:G7:U08:L12"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G7:U08:L12", "supporting.statistics.data_collection",
             "G7_SAMPLE_VERSUS_POPULATION_AND_INFERENCE",
-            ["supporting.statistics.collection_method", "statistics.mean.arithmetic.exact"],
+            ["supporting.statistics.collection_method", "statistics.center_spread.mean"],
             "G7_U08_L12_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
         // Grade 7 U08 L13: source-scoped probability/statistics Practice.

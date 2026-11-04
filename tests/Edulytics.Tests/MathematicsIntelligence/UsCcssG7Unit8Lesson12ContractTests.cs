@@ -11,5 +11,7 @@ public sealed class UsCcssG7Unit8Lesson12ContractTests
         Assert.NotNull(c);Assert.Contains("supporting.statistics.collection_method",c.AllowedQuestionFamilies);
         Assert.Equal("READY_VERIFIED",c.Readiness);
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("supporting.statistics.collection_method"));
+        Assert.Contains("statistics.center_spread.mean",c.AllowedQuestionFamilies);
+        Assert.True(ExactSkillContractQuestionEngine.SupportsFamily("statistics.center_spread.mean"));
     }
 }
