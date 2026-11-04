@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U08:L07",
+  "title": "A Proof of the Pythagorean Theorem",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\7\\index.html",
+      "sha256": "658617186140b38cedb1a64c65a1af00552a31b560294424cb4cb543e28f11c0"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\7\\preparation.html",
+      "sha256": "d0315d80251a37a4042cad963240fb08eefffb120661aa31506a94b0620f1701"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\7\\index.html",
+      "sha256": "484d5386950d0d954bf2b2a04c119fb0c223c7f3c7479438c9a74527734917fd"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\7\\practice.html",
+      "sha256": "e77239ca6467fbe01b81710e0afc8dcc2ecfc9f0c907eb472ea9005b762882f0"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "7.1: Notice and Wonder: A Square and Four Triangles",
+      "7.2: Adding Up Areas",
+      "7.3: Let’s Take it for a Spin",
+      "7.4: A Transformational Proof"
+    ],
+    "practiceProblemCount": 6,
+    "teacherFigureTagCount": 49,
+    "studentFigureTagCount": 47,
+    "requiredMaterialsSectionPresent": true,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: develop an area-based proof of a²+b²=c² using four congruent right triangles in a larger square, not merely plug numbers into the formula.",
+    "Arrange four congruent right triangles of legs a,b and hypotenuse c inside a square of side a+b. One arrangement leaves a central square of side c; its area is (a+b)²−4(ab/2). Expanding gives a²+b²=c²."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "7.1: Notice and Wonder: A Square and Four Triangles",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "7.2: Adding Up Areas",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "7.3: Let’s Take it for a Spin",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "7.4: A Transformational Proof",
+      "firstPartyTask": "activity-4",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 6,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u08-l07-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u08-l07-selected-first-party-paper.html",
+    "sha256": "78eaa8246d800167751594057498c76c8a54276e9c354f9ed2891adf839b689d",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "activity-4",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "49-24=25, so the central square has side 5; the algebra is an area proof of a^2+b^2=c^2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Square/cube root and Pythagorean reasoning distinguishes exact values, approximations, and physical nonnegative lengths.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Diagrams, units, rationality claims, and scaling conclusions are checked against the defining equations.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "a": 3,
+    "b": 4,
+    "c": 5
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
