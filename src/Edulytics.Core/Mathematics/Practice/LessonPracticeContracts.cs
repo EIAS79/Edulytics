@@ -1535,6 +1535,16 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l02.proportional_tables"],
             "OUR_IM_G7_2017_2019_U02_L02_FIRST_PARTY_AND_TEACHER_REVIEW",
             "READY_VERIFIED",Version);
+        // OUR/IM Grade7 U02:L03 (2017-2019): reciprocal cm/mm constants,
+        // speed versus pace and area-square conversion in source tables.
+        // Maps/drawings and contextual units need teacher evaluation.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L03",
+            "proportions.unit_rate",
+            "G7_UNIT_CONVERSION_REVERSE_CONSTANT_AND_SPEED",
+            ["usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
