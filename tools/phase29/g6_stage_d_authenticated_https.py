@@ -347,7 +347,7 @@ def main():
         "Grade6 student assessment attempt missing or duplicated")
     attempt_state=sql(f"""SELECT "Status"::text,("SubmittedAtUtc" IS NOT NULL)::text
         FROM "AssessmentAttempts" WHERE "AssessmentId"='{aid}';""")
-    require(attempt_state in ("Submitted|t","Completed|t"),
+    require(attempt_state in ("2|t","3|t"),
         "Grade6 student assessment attempt not submitted "+attempt_state)
     result_count=sql(f"""SELECT count(*) FROM "AssessmentResults"
         WHERE "AssessmentId"='{aid}';""")
