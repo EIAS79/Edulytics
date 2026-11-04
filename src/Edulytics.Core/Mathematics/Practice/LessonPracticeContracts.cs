@@ -1962,6 +1962,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u05.signed_rational_add_subtract", "supporting.number.negative_operation"],
             "G7_U05_L04_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U05 L05: source-scoped signed-rational Practice.
+        // Open diagrams, explanations and contextual models remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L05", "supporting.number.directed_operations",
+            "G7_SUBTRACTION_AS_ADDING_THE_OPPOSITE",
+            ["usccss.g7.u05.signed_rational_add_subtract"],
+            "G7_U05_L05_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
