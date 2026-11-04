@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            1070, // The Grade 4 2021 exact family registrations add 45 interaction contracts to the prior 1025.
+            1564, // Previous interactions plus Grade 6 registrations; retain all prior routes.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(

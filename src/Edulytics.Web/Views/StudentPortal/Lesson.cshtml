@@ -6,7 +6,15 @@
 @using Edulytics.Web.ViewModels.LessonContent
 @{
     Layout = "_StudentLayout";
-    ViewData["Title"] = Model.Title;
+    // The owner-consented Grade 5 canonical JSON remains SHA pinned.
+    // Remove the editorial "PLC Activity" suffix only at presentation time:
+    // IM K-5 First Edition 2021's original lesson titles exclude this badge.
+    var grade5OriginalDisplayTitle =
+        Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G5:", StringComparison.Ordinal) &&
+        Model.Title.EndsWith(" PLC Activity", StringComparison.Ordinal)
+            ? Model.Title[..^" PLC Activity".Length]
+            : Model.Title;
+    ViewData["Title"] = grade5OriginalDisplayTitle;
     var gameAdoptionId = ViewData["GameAdoptionId"] is Guid gameId
         ? gameId
         : (Guid?)null;
@@ -100,6 +108,23 @@
         </nav>
     }
 
+    @* G5 U03:L02: independently authored free-response construction,
+       explicitly teacher scored and never auto-mastery. *@
+    @if (Model.LessonCode == "PED:US-CCSS-MATH:G5:U03:L02" &&
+         unifiedPracticeAdoptionId.HasValue)
+    {
+        <section class="student-card" aria-label="Grade 5 teacher-reviewed equal-area construction">
+            <h2>Equal-area construction — teacher review</h2>
+            <p>Explain both unit-fraction multiplication orders and compare 2-by-5
+                and 5-by-3 unit-square models. A qualified teacher scores all six criteria.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade5U03L02RubricStudent" asp-action="Index"
+               asp-route-curriculumAdoptionId="@unifiedPracticeAdoptionId.Value"
+               asp-route-lessonId="@Model.Id">
+                Open teacher-reviewed construction and explanation
+            </a>
+        </section>
+    }
     @if (Model.LessonCode == "PED:US-CCSS-MATH:G3:U01:L01" &&
          grade3AuthoredActivityAdoptionId.HasValue)
     {
@@ -1861,11 +1886,27 @@
         <div class="school-alert school-alert-error" role="alert">@error</div>
     }
 
-    <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@Model.Title</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span></div></div></header>
+    <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@grade5OriginalDisplayTitle</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span></div></div></header>
     <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />
+            @* Grade 6 A-B-C authoring has six complete canonical Edulytics
+               teaching sections. Rich V2 can compress away the exact lesson
+               goal, source-skill reasoning and worked examples. Retain Rich
+               V2 interactions, and keep the canonical instructional sections
+               visible and accessible for every G6 learner. This does not
+               auto-grade teacher-led drawing or discussion activities. *@
+            @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G6:", StringComparison.Ordinal))
+            {
+                <div class="lesson-source-aligned-activities"
+                     aria-label="Grade 6 full first-party lesson teaching">
+                    @foreach (var canonicalSection in sections)
+                    {
+                        <partial name="_LessonReaderSection" model="canonicalSection" />
+                    }
+                </div>
+            }
             @* A-C source-corrected original U03 L20-L27 teaching lives in the
                canonical translation. The V2 runtime composer compresses the
                worked examples/steps and can otherwise hide essential original
@@ -1934,7 +1975,7 @@
                  model="@(new LessonYouTubeStudioViewModel(
                      Model.Id,
                      Model.LessonCode,
-                     Model.Title,
+                     grade5OriginalDisplayTitle,
                      Model.GradeName,
                      Model.FrameworkName,
                      Model.RichContent,

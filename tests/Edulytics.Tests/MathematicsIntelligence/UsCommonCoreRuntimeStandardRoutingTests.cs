@@ -11,10 +11,10 @@ public sealed class UsCommonCoreRuntimeStandardRoutingTests
     {
         var expected = new Dictionary<string, string[]>(StringComparer.Ordinal)
         {
-            ["PED:US-CCSS-MATH:G6:U06:L10"] = ["supporting.algebra.expand", "supporting.algebra.simplify"],
-            ["PED:US-CCSS-MATH:G6:U06:L11"] = ["supporting.algebra.expand", "supporting.algebra.simplify"],
-            ["PED:US-CCSS-MATH:G6:U06:L15"] = ["usccss.algebra.exponent_product_value"],
-            ["PED:US-CCSS-MATH:G6:U06:L19"] = ["supporting.functions.evaluate"],
+            ["PED:US-CCSS-MATH:G6:U06:L10"] = ["usccss.g6.u06.l10.variable_distributive_values", "usccss.g6.u06.l10.variable_distributive_equivalence"],
+            ["PED:US-CCSS-MATH:G6:U06:L11"] = ["usccss.g6.u06.l11.expansion_factor_values", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            ["PED:US-CCSS-MATH:G6:U06:L15"] = ["usccss.g6.u06.l15.exponential_variable_values", "usccss.g6.u06.l15.exponential_expression_reasoning"],
+            ["PED:US-CCSS-MATH:G6:U06:L19"] = ["usccss.g6.u06.l19.first_party_equation_table_examples", "usccss.g6.u06.l19.first_party_relationship_interpretation"],
             ["PED:US-CCSS-MATH:G7:U05:L08"] = ["usccss.number.signed_rate_displacement"]
         };
         foreach (var (lessonCode, families) in expected)
@@ -31,9 +31,9 @@ public sealed class UsCommonCoreRuntimeStandardRoutingTests
     {
         var narrowByOutcome = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            ["CCSS:5.G.A.1"] = "usccss.geometry.",
-            ["CCSS:5.NF.B.7"] = "usccss.fractions.",
-            ["CCSS:6.EE.A.2"] = "usccss.algebra.",
+            ["CCSS:5.G.A.1"] = "usccss.g5.u07.",
+            ["CCSS:5.NF.B.7"] = "usccss.g5.u03.",
+            ["CCSS:6.EE.A.2"] = "usccss.g6.u06.",
             ["CCSS:7.NS.A.2"] = "usccss.number."
         };
         // Only lessons with independent publisher-title evidence for this exact

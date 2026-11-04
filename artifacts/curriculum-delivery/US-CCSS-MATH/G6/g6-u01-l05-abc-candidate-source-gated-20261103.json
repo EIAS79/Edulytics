@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_U01_L05_ABC_SOURCE_GATED_CANDIDATE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L05",
+  "title": "Bases and Heights of Parallelograms",
+  "coursePR": 591,
+  "sourceEdition": "IM 6–8 original first-edition OUR/Kendall Hunt 2017–2019 (2019 IM adaptations), CC BY 4.0; NOT AccessIM v360",
+  "sourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM",
+  "sourcePreparationSha256": "81ea608d4409c0570397a917f11e5c5f142fe1056f3e3ddc45a50489c44817fb",
+  "teacherLessonSha256": "e68804d4fa0958f6384d6491f16195fe33cb8aee6813b49abf1caace8d59ca1c",
+  "teacherPracticeSha256": "bda96b7de027e15d40238ad4b76758da4135303de3216fab7cb39ba4330cef3f",
+  "studentLessonSha256": "74036df4983e64bc4eac6097792e98aa5743ad722a34b94e80a109e035dcca7e",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l05-element-coverage-20261103.json",
+  "identifiedSourceItems": 63,
+  "identifiedElementStatuses": {
+    "MATCHED_DIGITAL": 32,
+    "MATCHED_TEACHER_LED": 29,
+    "SOURCE_UNAVAILABLE": 2
+  },
+  "denominator": "DENOMINATOR_INCOMPLETE",
+  "source100Percent": false,
+  "stageA": {
+    "status": "A_C_EXPLICIT_GAP",
+    "verified": "Original teacher preparation/lesson/practice and student mirror compared; original math figures 27226,27230,27231,27232,27233 and practice 29359 opened visually, independently drawn first-party 5.2 and 5.3 visuals",
+    "unresolved": [
+      {
+        "id": "G6-U01-L05-54-COOLDOWN",
+        "status": "SOURCE_UNAVAILABLE",
+        "source": "Original 5.4 Parallelograms S and T exact question content behind publisher teacher login"
+      },
+      {
+        "id": "G6-U01-L05-TEACHER-KEYS",
+        "status": "SOURCE_UNAVAILABLE",
+        "source": "Publisher formatted teacher response keys behind teacher login"
+      },
+      {
+        "id": "G6-U01-L05-PUBLIC-MEDIA-AUDIT",
+        "status": "DENOMINATOR_INCOMPLETE",
+        "source": "Remaining publisher external visual/download resource completeness not yet author-verified"
+      }
+    ],
+    "sourceRights": "CC BY 4.0 applies to original math content, not logos or third-party media automatically"
+  },
+  "stageB": {
+    "status": "AUTHORED_SOURCE_ALIGNED_RUNTIME_UNVERIFIED",
+    "preservedPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g6-phase29-v1.lesson-content-pack.json",
+    "newFirstPartyWorkmat": "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u01-l05-base-height-workmat.html",
+    "pedagogicalAdditions": "Source 5.1 7×6; 5.2 internal/external perpendicular and B/E errors; 5.3 original 4-grid A/B/C/D 24/15/6/8 with independent SVG figures; source practice 3/4/5/6/7 exact fractions and teacher explanations; original Edulytiks exit check expressly not the publisher Cool-down",
+    "teacherBoundary": "Students draw both valid base-height pairs, write b·h, justify cuts and extension; teacher reviews paper printout. Browser workmat only self-checks numeric answers and does not persist a grade."
+  },
+  "stageC": {
+    "status": "EXACT_LESSON_SELECTED_PRACTICE_AUTHORED_STATIC",
+    "route": "LessonPracticeContractRegistry.TryResolve -> StudentPrivatePracticeService -> Stage18SkillContractPracticeEngine -> ExactSkillContractQuestionEngine",
+    "families": [
+      "usccss.g6.u01.l05.parallelogram_base_height_area",
+      "usccss.g6.u01.l05.corresponding_height",
+      "usccss.g6.u01.l05.perpendicular_height_claim",
+      "usccss.g6.u01.l05.area_scaling",
+      "usccss.g6.u01.l05.small_triangle_fraction"
+    ],
+    "newAdapter": "src/Edulytics.Services/Mathematics/UsCcssG6Unit1Lesson5BaseHeightQuestions.cs",
+    "authoredTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson5SelectedPracticeRouteTests.cs",
+    "tests": "AUTHORED_NOT_RUN",
+    "sourceGate": "NOT_CLOSED: stage A incomplete even with exact contract authored",
+    "registryUniqueFamilyCount": 1119,
+    "staticChecks": [
+      "git diff --check clean",
+      "Registry JSON parsed; 1119 IDs distinct",
+      "Grade6 pack JSON parsed"
+    ],
+    "codeCommit": "f0b4d47cc9a0b39200b7e9f7f46145c1b033d452"
+  },
+  "stageD": "NOT_STARTED",
+  "stageDTests": "NOT_RUN",
+  "readyForStageD": false,
+  "reviewComplete2021MarkerAdded": false,
+  "closureSha": null,
+  "nextLessonPermission": false,
+  "currentLesson": "PED:US-CCSS-MATH:G6:U01:L05",
+  "nextIndependentLessonCandidate": "PED:US-CCSS-MATH:G6:U01:L06",
+  "reasonDoNotAdvance": "Owner's strict sequential lesson closure rule and A–B–C plan forbid marking lesson ready while publisher-source denominator incomplete. Keep L05 open and do not pretend next lesson closed.",
+  "notes": "No .NET/Node tests, CI, Stage D, deployment, or main merge executed. PR #591 source code pushed; evidence is a candidate, not a 100% acceptance certificate."
+}

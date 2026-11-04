@@ -1,0 +1,196 @@
+# Grade 5 — First Edition 2021 — A–B–C execution rules
+
+**Binding operating instructions for PR #596; source of truth is the user-supplied Grade 5 A–B–C execution plan.** Do not begin Stage D until the user reviews the final A–B–C report and explicitly authorizes Stage D.
+
+## Source / edition separation
+- Authoritative lesson material: `C:\Users\khali\Downloads\New folder (2)\Common Core\Illustrative_Mathematics_First_Edition_2021\05_Grade_5_IM_K5\unit-{u}\lesson-{l}\lesson.html`, and `preparation.html` (read-only via Our-CS).
+- The original Windows legacy path to `05_Grade_5_IM_K5` is a junction to this First Edition 2021 folder.
+- `Illustrative_Mathematics_v360` and any `accessim_student`, `accessim_teacher`, `Student_Public_Mirror` from it are **excluded** from original 2021 source parity evidence. Do not treat a v.360 student page as the original 2021 Student Facing.
+- Use original 2021 teacher HTML's embedded Student Facing, teacher preparation, and verified 2021 materials. Do not alter source files.
+
+## Lesson workflow (sequential)
+1. Read current GitHub PR #596 HEAD and prior lesson checkpoint. Start at **first not-validly-closed lesson**; historic `READY_FOR_STAGE_D` alone is not sufficient.
+2. Open current Edulytics lesson and only the 2021 source segments/evidence not already verified. Batch local reads; do not rescan whole books or repeat verified reads.
+3. Compare objectives, original tasks and subparts, examples, math, activity order, source visuals and licensing, Student Facing, teacher-led exercises, practice and cool-down, and current Rich V2/Practice.
+4. **Reuse** correct content and existing generator/grader; **Extend** an existing engine for specific missing families; create **New Engine** only for a genuinely different mechanism. Repair proven errors only; add missing elements; remove confirmed out-of-scope additions without damaging other lesson contracts.
+5. Create an Edulytics-authored, teacher-reviewed **alternative cool-down** when the publisher 2021 original is login-gated. Mark the original source's literal equivalence `SOURCE_UNAVAILABLE`; do not assert source-exact parity without evidence. Do not copy restricted publisher artwork.
+6. Write/adjust **targeted tests as WRITTEN_NOT_RUN**, do **not** run local tests, builds, .NET, GitHub Actions, CI, Stage D, authenticated E2E, merges or deployments in this A–B–C phase. GitHub is the implementation record; Our-CS is read-only for source reference, never the test executor. If a future separately authorized test is needed, use GitHub Actions rather than running it on Our-CS.
+7. One clear lesson-closure commit (where feasible) with source itemization, first-edition locator, evidence, lesson checkpoint, and correct ledger; no redundant commits or reports. Capture actual start/end times and elapsed duration, never invent timings. About 3 minutes per straightforward reused lesson is an efficiency **target**, not a waiver of accuracy.
+8. **Only close `READY_FOR_STAGE_D` when every A–B–C handoff requirement passes**, with no unresolved academic-source item; no simultaneous `A_C_EXPLICIT_GAP` and READY. If source or rights are missing, record explicit blocker and requirement. A publisher-gated Cool-down may use the **owner-approved first-party functional replacement only**, with exact original text openly marked SOURCE_UNAVAILABLE and teacher review required; no original-source or human academic approval may be fabricated. Preserve prior work and continue independent lessons. Do not claim grade completion with blockers.
+9. Proceed in `U01:L01 → U01:L02 → … → U08` order, without asking for permission after each lesson. Aggregate brief progress at the end of each full unit; continue next unit. Prepare one comprehensive final A–B–C report for user review; **Stage D remains out of scope**.
+
+## Revalidation state (2026-11-02)
+- Candidate before revalidation: `421d3e2ad56fa2657c151cc3ec355b3bdb91a072` on `curriculum/us-ccss-g5-full-grade-20261028`.
+- `U01:L01` revalidated and A–B–C closed with **owner-authorized independent teacher-reviewed Cool-down alternative**; original publisher text is still source-unavailable and must not be claimed literal parity. The next lesson cursor is `U01:L02`. The open publisher source issue is retained as a source-verbatim limitation, not a defect in the independent Edulytics Cool-down.
+- Existing original Edulytics cool-down and Grade 5 Rich V2/Practice are **retained**. First-edition teacher lesson SHA-256: `88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb`; preparation SHA-256: `0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195`.
+- No CI or tests are claimed from this revalidation. Do not promote the lesson or all 148 by altering flags alone.
+
+## Sequential closure checkpoint: Grade 5 U01:L02
+- Reused existing exact irregular unit-cube count family and 2021 source-aligned Rich V2. Original publisher Cool-down explicitly remains SOURCE_UNAVAILABLE; existing first-party teacher-reviewed alternative approved by owner and retained. Static selected Practice contract present; Stage D runtime is NOT_RUN.
+- Source SHA-256 lesson 2: `2d2ad558cf24be326217d4ec18da8fc217d16f35d5440733d70fc24fb3b258fc`; preparation: `a37655d8ee484e83a6a476caa974d9276e7be3990c6e93d6253f89cf28ddb984`.
+- Next active lesson: **U01:L03**. Preserve this closure and all previous content; do not rerun Stage D/CI.
+
+## Sequential closure checkpoint: Grade 5 U01:L03
+- First Edition 2021 teacher lesson and preparation compared to the existing Rich V2; four original Edulytiks printable prism-build card models now supplied, alongside reused 40/60/80 cube math and original first-party Cool-down. Original publisher cards/Cool-down remain SOURCE_UNAVAILABLE, never certified as reproduced.
+- Source SHA-256 lesson: `830299e9528c83bcdb2a779422555272264375154cca22100e05f6e616422690`; preparation: `2b7223772b6f4ee077911c54d22252b9208a66671ca026ea2e448da4b1d3f43a`.
+- A–B–C authored and closed; Stage D / CI NOT_RUN. Next active **U01:L04**.
+
+## Sequential closure checkpoint: Grade 5 U01:L04
+- Existing source-matched six prisms, source 120-cube layer-expression explanations, independent teacher-reviewed 60-cube Cool-down and exact practice reused (no rebuild).
+- Previously deleted original publisher gated Cool-down is now **restored to denominator** as `G5-U01-L04-CD-Q01` / `SOURCE_UNAVAILABLE`; 20 original elements matched, denominator 21. Owner-authorized independent alternative is functionally accepted A–B–C, **not** claimed identical to the original source.
+- Teacher lesson SHA-256 `79f825be60d5a797fa64d549643093610503477f38f3d252e04cffb1279ddc12`; preparation `31baa2dca687f0a5916c90db93cb2c20ca30d1e06c4284c68ed8b462ce23396d` from 2021 source review.
+- Stale practice-rubric `BLOCKED_SHARED_INTEGRATION` corrected to selected static lesson practice evidence; Stage D and tests NOT_RUN. Next **U01:L05**.
+
+## Sequential closure checkpoint: Grade 5 U01:L05
+- First Edition 2021 original teacher source reviewed, 4×10 growing base and heights 1/2/3/10/25, source reverse-question task and existing exact Practice retained. Original protected publisher Cool-down restored as 25th source element with SOURCE_UNAVAILABLE; independent existing Edulytiks 60-cube alternate-base exit accepted functionally with manual scoring.
+- Original teacher source SHA-256 `dce46e63cad9ce3e60e7a2836f90505455391743f7da46338be14e92aad138af`, preparation `b4d1ecc3e77cc9e675452af275d2e85fd8c767c067d052e923f348e9de4d5e50`.
+- No original exact-source parity claim, Stage D/CI/tests NOT_RUN; next **U01:L06**.
+
+## Sequential closure checkpoint: Grade 5 U01:L06
+- Existing first-edition 2021 true/false warm-up, source 90/72/84 examples, optional Two Truths and a Lie, source-specific exact family, and Edulytiks original Cool-down retained. Added six independent text-accessible prism-expression cards as original first-party Activity 1 alternative. Source publisher card blackline and original gated Cool-down recorded as SOURCE_UNAVAILABLE, not hidden.
+- Teacher SHA-256 `6b6c0e624f3445483a276742c2de655586a7edf8b276477dab5c7a0de62d8ad6`, preparation `d37110791a47146e20f89ce48506ea92c73556ca6cc295b94ef769223898885c`. Stage D, CI, tests NOT_RUN. Next **U01:L07**.
+
+## Sequential closure checkpoint: Grade 5 U01:L07
+- Existing 2021 six-object cubic-unit choice, two-party information-gap lesson, source dimensions (4 feet, 2-foot data card; other dimension must be requested), independent 24-cubic-foot exit and source-specific exact unit-choice Practice reused. Information-gap card element recorded explicitly; inaccessible original publisher Cool-down preserved as SOURCE_UNAVAILABLE with first-party replacement.
+- Teacher lesson SHA-256 `956878ef2019e4e1650b8ce7e50421b580f092fff10326af06035d0648e9d763`, preparation SHA-256 `11a861b7578ba63160fc29bb89b48da9187c063429dcd4f5a4dd054e1b69dd30`.
+- Original publisher text parity NOT claimed; CI, Stage D and tests NOT_RUN. Next **U01:L08**.
+
+## Sequential closure checkpoint: Grade 5 U01:L08
+- First Edition 2021 Put It Together and source 22, 30, 46, 50, 60, 57 disjoint prism calculations retained. Previous stale ABC source-review `readyForStageD=false` reconciled with source-specific registered practice and user-authorized independent teacher-reviewed 30-cube exit; original publisher Cool-down still SOURCE_UNAVAILABLE and NOT claimed exact.
+- Teacher SHA-256 `347ec03c60ad4125aef80609cfab5ef05646325793ca51534570f17ed16c9420`; preparation `c409f8cc52224e79f6d64618ce8f8886154817b6465db385ff9388e4c1544279`. No tests/CI/Stage D run. Next **U01:L09**.
+
+## Sequential closure checkpoint: Grade 5 U01:L09
+- Original first-edition 2021 source and correct 78 ft³/259 in³/42 cubes/420 in³ composite expressions retained. Existing selected lesson-specific numeric Practice and teacher partition explanations retained. Previous source review false READY status reconciled; gated original publisher Cool-down separately SOURCE_UNAVAILABLE while independent Edulytiks 78 ft³ reasoning exit accepted functionally.
+- Teacher SHA-256 `1096c393903be379c1071785ea657f8be4f3d945727c85e0b82c4c067cb08cc2`; preparation `bd20cf59b7ac2a38a2c78b1f746cade09962af5d23963428c4e9cb54164f60d4`. No tests/CI/Stage D run. Next **U01:L10**.
+
+## Sequential closure checkpoint: Grade 5 U01:L10
+- Source-matched measured composite 95 units and 168 cubic feet, two additive splits and bounding-prism subtraction preserved; existing exact family used. Historical source review not-ready reconciled using existing 2021 teacher data. Original gated publisher Cool-down restored as SOURCE_UNAVAILABLE, and existing first-party 168-cubic-foot reasoning exit accepted functionally (not publisher-exact).
+- Teacher SHA-256 `569f66c2d9bb588da02cf7f0b042642d1a9582f32e80888e995bb5ab52a560ec`; preparation SHA-256 `5bfc12c436a2c040a63c30057c4694908d7fa6b482de3b9b92c97b67379c3f59`. CI/tests/Stage D NOT_RUN. Next **U01:L11**.
+
+## Sequential closure checkpoint: Grade 5 U01:L11
+- Reused 2021 source-aligned packed 300-cube box, 180-ft³ storage, 270-ft³ closet, and 216-ft³ connected garden with alternate designs. First-party teacher-reviewed garden exit already present. Original publisher sandbox cooldown recorded SOURCE_UNAVAILABLE as element 25, rather than elided. Selected exact practice code checked statically; Stage D not run.
+- Teacher SHA-256 `a15d3f83ab96832d6b6d8e87c5b4ba3396ae5d0951dc4ed06ac8045500c59c6a`, preparation SHA-256 `d60d1e80a67ea019c4124e2d2e34bc2429d0072de6fd09759ed1ace52c9a821c`. Next **U01:L12**.
+
+## U01 L12 and Unit 1 completion (2021 first-edition)
+- Optional source L12 is valid and has NO official publisher Cool-down. Its third-party truck photo remains `RIGHTS_RESTRICTED` and was NOT imported; independent Edulytiks text/array activities and own reflection reused.
+- U01:L01–L12 sequential A–B–C source/teaching/practice revalidated with first-party authorized alternatives and explicit original publisher limits. See `u01-abc-first-edition-2021-revalidation-closure-20261102.json`.
+- Current pass 12/148 revalidated; previous 148 READY labels are historical, not 2021 revalidation. CI/tests and Stage D NOT_RUN. Next **U02:L01**.
+
+## Sequential closure checkpoint: Grade5 U02:L01 (ordinal 13)
+- Source is local 2021 Kendall Hunt unit2 Lesson 1 `Share Sandwiches`, teacher lesson SHA-256 `6ba43da35214dc627a8989ec9b171c2a8b2103298b3d85e096072ce4b5d31538`, preparation `0ac916c7f980ebf891a001a519241f4db4acc6ee818fcbb7fa4f593e`.
+- Reused correct first-party Rich V2 explaining six 2/3/5 distinct-number cases and Han's 2/3 partition; static source-specific exact multiple-choice generator verified from grouped `UsCcssG5Unit2SourceQuestions`, registered through `UsCcssG5Unit2SourcePracticeContracts`. Teacher checks drawings/reasoning; four third-party publisher food photos not copied. Original gated publisher How Much? remains SOURCE_UNAVAILABLE; own 4/3 fair-share exit retained.
+- Created source-relevant atomic itemization instead of misusing 45 raw DOM image/header tags; denominator of full original publisher source remains incomplete. Test fixtures written NOT_RUN, CI/D NOT_RUN. Next **U02:L02**.
+
+## Sequential 2021 source revalidation checkpoint: U02:L02 (ordinal 14)
+- Inspected original 2021 teacher `lesson.html` and `preparation.html` read-only on Our-CS. Source warm-up is imprecise estimate near one-fifth; Jada shares one sandwich among 2,3,4,5 people; Card Sort matches contexts/expressions/possibly multiple diagrams including 2÷5 and 3÷2. Existing first-party Rich V2 already contains these tasks and own 3÷4 exit; retained.
+- Resolved stale Stage C evidence: current code statically declares `usccss.g5.u02.l02.unit_share_equivalence` in `UsCcssG5Unit2SourcePracticeContracts.cs` and corresponding bank in `UsCcssG5Unit2SourceQuestions.cs`; historical `BLOCKED_SHARED_INTEGRATION` assertion replaced by authored-not-run regression. Teacher still checks drawing/card matching. Original publisher cool-down and separate card master remain unverified and NOT reproduced; no publisher-source 100% claim.
+- Source and contract review only: tests WRITTEN_NOT_RUN, CI/Stage D NOT_RUN. Next **U02:L03**.
+
+## Sequential 2021 source revalidation checkpoint: U02:L03 (ordinal 15)
+- Read 2021 local `lesson.html` and `preparation.html` on Our-CS: warm-up 3/2 as number/diagram, Dehydrated Dancers 2 liters/3 dancers, reject Mai's reversed 3/2 in this context, open five-row dancer/liter expression table, 3/2 valid for changed 3-liter/2-dancer story. Reused existing matching Rich V2 and first-party 4/5 water exit. Original publisher cool-down remains gated and source-exact status unavailable.
+- Fixed stale Stage C `BLOCKED_SHARED_INTEGRATION`: source contract maps U02:L03 to `usccss.g5.u02.l03.fraction_division_direction`; question bank already exists. Updated evidence and existing authored test expectation, not run. Teacher reviews explanation/diagrams. No claimed CI/Stage D, source-verbatim parity, or deployment. Next **U02:L04**.
+
+## Sequential 2021 revalidation checkpoint: U02:L04 (ordinal 16)
+- Read original teacher lesson and preparation locally: Number Talk 35÷7,1÷7,36÷7,37÷7; Pounds of Blueberries group equation/diagram/context 4÷6=4/6; Grams of Gold total 3×4/3=4 grams and 5 grams at 5/6 per person=6 people. Existing Rich V2 already source-aligned and its first-party grain exit retained.
+- Corrected stale `BLOCKED_SHARED_INTEGRATION` evidence because current source-specific contract declares U02:L04 `usccss.g5.u02.l04.blueberry_division_context` and exact question bank exists; written not-run test updated. Teacher evaluates authored situations and diagrams. Original publisher 'How Much Milk?' gated Cool-down remains SOURCE_UNAVAILABLE, not claimed identical to first-party exit. No source-verbatim 100% or runtime acceptance claim. Tests/CI/Stage D NOT_RUN. Next **U02:L05**.
+
+## Sequential 2021 source revalidation checkpoint: U02:L05 (ordinal 17)
+- Read original local 2021 teacher lesson and preparation: three true/false fractions, blueberry constraints greater/equal/less than one and exactly half, general explanation why a÷b=a/b for nonnegative whole a and positive whole b. Existing Rich V2 complete and its first-party Explain It alternative retained. Note original lesson teacher prompt says 'people half the pounds' for half-pound; mathematical correct rule is twice the people, preserved.
+- Updated stale Stage C blocked text against explicit source-specific `usccss.g5.u02.l05.fraction_division_generalization` contract and existing question bank. Teacher review is mandatory for the general proof; numeric family is only subskill. Publisher Explain It cool-down remains gated, exact publisher-source claim not made; tests WRITTEN_NOT_RUN, CI/D NOT_RUN. Next **U02:L06**.
+
+## U02:L06 (ordinal 18) 2021 revalidation
+Local teacher lesson/preparation inspected: number talk 3×1/2, 3×2/2, 3×3/2, 5×3/2; Lin and Han share a 3-mile relay equally 3÷2=3×1/2=1/2×3=3/2; two 3-unit half-partition diagrams and teacher explanation. Reused matching Rich V2 and first-party independent 5-mile exit. Static practice family `usccss.g5.u02.l06.relay_division_unit_fraction` already declared and questions present, correcting historical stale BLOCKED_SHARED_INTEGRATION. Original gated publisher cool-down unavailable. Tests WRITTEN_NOT_RUN; Stage D NOT_RUN. Next U02:L07.
+
+## U02:L07 (ordinal 19) local 2021 revalidation
+Original teacher lesson/preparation checked: estimate number line between 0 and 5 without unsupported exact value; Mai 1/4 of 9 miles =9/4, Han 1/4 of 7 =7/4; four-person 3-mile relay gives 3/4 per runner, multiple diagrams/cards with explanations. Existing source-aligned Rich V2 and first-party 11-mile independent exit retained. Exact source-specific static family `usccss.g5.u02.l07.unit_fraction_race_distances` declared, stale Stage C blocked evidence corrected and test expectation authored not run. Publisher Another Race gated and original blackline cards not claimed source-exact. CI/Stage D NOT_RUN. Next U02:L08.
+
+## U02:L08 (ordinal 20), sequential 2021 source revalidation
+Read local teacher lesson and preparation: source true/false unit-fraction thirds vs fourths; 1/5,2/5,3/5 times three; 3×2/5=2×(3÷5)=6/5 with shaded fifths and teacher rationale. Preserved existing source-aligned Rich V2 and static selected `usccss.g5.u02.l08.nonunit_fraction_of_whole` family. Fixed actual absence of an explicit independent Cool-down: added original 2/3 of 6 liters (=4 liters) with diagram/equivalent-expression teacher rubric; not the publisher's gated Two Thirds. Appended authored-not-run source fixture; no tests/CI/Stage D run. Next U02:L09.
+
+## U02:L09 (ordinal 21) first edition 2021 revalidation
+Read teacher lesson/preparation: warm-up compare four area shapes; six-unit length with heights 1,1/2,1/3,1/4 produces 6,3,2,1 1/2 square units; four half-height 1,2,3,4 wide grid drawings and partly hidden area estimations. Reused existing Rich V2 and static area family; added missing independent teacher-reviewed 6×1/4 vs 3×1/2 rectangle exit, not the publisher-gated Fractional Pieces. Test authored NOT_RUN; Stage D/CI NOT_RUN. Next U02:L10.
+
+## U02:L10 (ordinal 22), IM 2021 local source revalidation
+Local teacher lesson/preparation checked: estimate fractional area >half of seven; rectangles of whole side four with fractional heights 2/3,3/4,3/5; distinguish twelve 1/4 from twelve 1/5 area pieces. Unlabeled diagrams and student matching remain teacher-reviewed. Reused existing source-matched Rich V2 and exact unit2 selected static family `usccss.g5.u02.l10.area_whole_by_nonunit_fraction`. Added first-party 4×3/5 versus 4×3/4 cool-down with geometric reasoning; publisher original gated. Tests authored NOT_RUN; CI/Stage D NOT_RUN. Next U02:L11.
+
+## U02:L11 (ordinal 23) IM first edition 2021 revalidation
+Source teacher lesson/preparation compared: warm-up 10÷3=10×1/3 and 10/3=5×2/3; 4 2/3×4=56/3 select-all correct (A,C,D), 2 1/4×2 and 3 3/4×3 geometric examples. Source-aligned Rich V2 reused and independent 3×5/4 first-party area exit appended with diagram rubric. Static exact family `usccss.g5.u02.l11.area_fraction_greater_than_one` retained; publisher Find the Area gated and no source-verbatim 100% claim. Test authored NOT_RUN, CI/Stage D NOT_RUN. Next U02:L12.
+
+## U02:L12 (ordinal 24) source revalidation 2021
+Original local teacher lesson/preparation inspected: number talk 3×20,3×24,5×2,5×2 1/2; Noah 5×6 1/4=31 1/4 square yards versus Priya 6×5 1/4=31 1/2; six decomposition strategy starters for 4×5 1/2=22. Reused existing math/teacher rubric/source-specific static family `usccss.g5.u02.l12.decomposed_mixed_rectangle_area`; independent exit added asking two decompositions of 4×5 1/2. Publisher Decompose Rectangles gated; first-party equivalent not claimed publisher text. Test authored NOT_RUN; CI/Stage D NOT_RUN. Next U02:L13.
+
+## U02:L13 (ordinal 25) source revalidation 2021
+Original teacher lesson/preparation: parenthesis number talk; card sort expressions/diagrams with multiple matches, diagram C 3×5 2/5, B (5×3)−(5×2/5); later 4×5 1/3 and 7×3 3/4 using distributive area expressions. Reused source-specific static family `usccss.g5.u02.l13.distributive_area_expressions` and existing Rich V2. Added teacher-reviewed 7×3 3/4 independent cooldown with additive/subtractive decompositions, not the publisher gated Equivalent Expressions. Tests WRITTEN_NOT_RUN, Stage D/CI NOT_RUN. Next U02:L14.
+
+## U02:L14 (ordinal 26) 2021 local original revalidation
+Number talk source 3×(10÷2),3/2×10,14/7×10,14×10/7; two-role Info Gap: Area involves missing side length and querying relation, original gated master not verified; optional Fill in the Blank fractional products preserved. Reused Rich V2 and static family `usccss.g5.u02.l14.fraction_multiplication_info_gap`. Added teacher-reviewed first-party 8m width 3/4 length info-gap exit ->48 sq m without claiming original publisher Evaluate Expressions. Tests authored NOT_RUN, CI/Stage D NOT_RUN. Next U02:L15.
+
+## U02:L15 (ordinal 27) IM 2021 source revalidation
+Read local teacher source/preparation: mixed number talk 6×3/8,6×2 3/8,7×9/10,7×3 9/10; number bank 4,5,5 1/2,3,5 3/4,2 exactly once for rug, puzzle and whiteboard contexts; 4×5 2/3 expressed by distributive, bounding subtraction, improper fraction, and divide-by-three. Rich V2 and static `usccss.g5.u02.l15.multiply_mixed_source_number_bank` reused; added independent 4×5 2/3 display-board exit with diagram/two methods. Publisher Mixed Number Multiplication gated; no exact-source parity claim. Tests written not run; CI/D not run. Next U02:L16.
+
+## U02:L16 (ordinal 28; source OPTIONAL), 2021 revalidation
+Local original teacher lesson/preparation read: warm-up 30-40 square foot garden sizes, Priya budget 36 with options 9×4 2/3=42,9×3 8/9=35,12×2 11/12=35,9×2 2/3=24; distinguish eligibility versus closeness to target. Estimation products 7×12 8/9 and 9×4 2/29 and digit puzzle close to 20. Existing source-specific Rich V2/`usccss.g5.u02.l16.estimate_mixed_area_products` preserved, added own 8×4 1/3=34 2/3 independent exit with teacher reasoning. Publisher Estimate and Solve gated. Tests WRITTEN_NOT_RUN, CI/Stage D NOT_RUN. Next U02:L17.
+
+## U02:L17 (ordinal 29; OPTIONAL) and Unit 2 checkpoint
+Original local 2021 teacher lesson/preparation inspected. Source Notice/Wonder mosaic photograph; optional group creation of same-size rectangles with one whole and one fractional >1 side, then compare cost using stone $5, tile $3, glass $2 per square unit. Existing Rich V2 and source-specific practice `usccss.g5.u02.l17.mosaic_rectangle_area_cost` preserved, studio activity graded by teacher. Corrected erroneous publisher-Cool-down implication: the official optional lesson contains NO Cool-down. No artificial source-aligned exit required. Unit 2 lessons L01–L17 all sequentially revalidated for A–B–C functional handoff with independent first-party alternatives and explicit source parity limits; tests authored NOT_RUN, CI/Stage D NOT_RUN. Next **U03:L01**. Current sequential count 29/148.
+
+## U03:L01 (ordinal 30) 2021 original source revalidation
+Revisited original 2021 teacher lesson/preparation on Our-CS: pan remainder ~2/5 warm-up estimate, Activity 1 1/3 of remaining half=1/6 of original pan, Activity 2 horizontal/vertical equal-area 1/4 of 1/2=1/8 diagrams. Existing source-aligned Rich V2, exact two selected Practice families, native area validator and first-party teacher-scored carrot-bed exit retained. Historical U03:L01 blocker evidence predates completed 2026-10-31 integration, should remain historical rather than mistaken for live. Updated authored-not-run regression to assert later closure READY while keeping historical blocker provenance. Publisher original gated cool-down/images not certified. Test WRITTEN_NOT_RUN, CI/Stage D NOT_RUN. Next U03:L02.
+
+## U03:L02 (ordinal 31) 2021 first-edition sequential revalidation
+Re-read original teacher lesson/preparation locally: WODB diagrams with multiple valid arguments; first 1/4 of 1/3 and 1/3 of 1/4 both equal 1/12; Priya 1/5×1/2=1/10 and second image 1/5×1/3=1/15 of original whole. Existing Rich V2 contains corresponding first-party 4×3, 3×4, 2×5, 5×3 grids, exact two selected static families, teacher rubric and tests; preserved. Original publisher How Much is Shaded? gated, first-party teacher rubric retained. Tests/Stage D/CI NOT_RUN, publisher exact asset parity not claimed. Next U03:L03.
+
+## U03:L03–L06 (ordinals 32–35) 2021 sequential revalidation — 2026-11-02
+- Read original First Edition 2021 local `lesson.html` and `preparation.html` for U03:L03, L04, L05, L06. Compared source objectives, sample values, student-facing tasks and teacher-led reasoning against their existing 2026-11-01 A–B–C authoring closures and selected static Practice families. No unnecessary engine or content reconstruction.
+- L03 source four-column unit-fraction arrays, 1/8, 1/12, 1/16, 1/20 and next 1/24, plus 1/5×1/3=1/15 and 1/4×1/6=1/24. Revalidation `u03-l03-2021-source-revalidation-20261102.json` committed `9662f64a`.
+- L04 sports park 1/2 of 2/3 = 1/3 and Elena's ten-piece park: grass 3/10, pond 4/10, swings 1/10, basketball 2/10. Revalidation `u03-l04-2021-source-revalidation-20261102.json` committed `79a6bdda`.
+- L05 shaded unit/non-unit fraction area 2/5×1/3=2/15, 6/5×1/3=6/15 and Kiran error 6/30. Open estimate drawings remain teacher-reviewed. Revalidation `u03-l05-2021-source-revalidation-20261102.json` committed `50f0f84c`.
+- L06 non-unit fractions 8/30 = 2×4×(1/5×1/6), 6×4/(5×4)=24/20 and 2/4×3/5=6/20. Revalidation `u03-l06-2021-source-revalidation-20261102.json` committed `9f211343`.
+- Publisher gated original Cool-downs and independently uncertified publisher image/PDF assets stay explicit source-verbatim limitations, not accepted as source-exact. Existing first-party teacher-scored cool-downs retained. Tests authored but NOT_RUN. Stage D / CI NOT_RUN. **Current sequential revalidation cursor U03:L07**; prior 35/148 lessons reviewed in this revalidation series, not 35 new authoring closures.
+
+## Unit 3 revalidation completed — U03:L07–L20, 2026-11-02
+- Sequential individual revalidation evidence committed for U03:L07–L20, with local First Edition 2021 teacher lesson comparison and retained authoring closures. All existing selected Practice/rubrics preserved where aligned; no intentional tests or CI.
+- Unit record: `u03-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `683bdc8f42bb5cfe0fc97f9060733e6bc06b3628`.
+- **New sequential cursor: U04:L01 (50th of 148 lessons)**. The revalidation count through U03 is 49/148; publisher asset-exact coverage is not certified and outstanding original images/Student PDFs/gated Cool-downs remain flagged.
+
+## Unit 4 revalidation completed — 2026-11-02
+- Source-reviewed U04:L01–L21 using 2021 local original teacher HTML and previously closed authoring and selected Practice. Individual sequential revalidation evidence added for L01–L21. Confirmed error in U04:L06 prior closure (carried **one hundred** erroneously called one thousand) fixed in commit `0638e411`.
+- Unit closure `u04-2021-abc-sequential-revalidation-unit-closure-20261102.md` commit `463e546554051813f40d84234105b24edf195844`.
+- **Active revalidation cursor: U05:L01**, 70 of 148 source-reviewed for functional A–B–C handoff, *not* 100% original publisher asset parity; tests/Stage D/CI NOT_RUN and publisher gated items remain explicit.
+
+## Unit 5 sequential first-edition revalidation — 2026-11-02
+- Original teacher lesson/preparation sources for U05:L01–L26 compared to existing authoring artifacts; per-lesson revalidations saved sequentially. No duplicated engines. U05 lesson authoring conditions were retained, source image/PDF limitations explicit.
+- Unit report: `u05-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `3743dbaa8d390aadfe4ba26be81c715a0c9ee8e3`.
+- **Current sequential revalidation cursor: U06:L01 (97th lesson); 96/148 lessons re-reviewed.** No Stage D, CI intentionally run, Merge or Deploy. Academic original asset source-exact 100% NOT claimed.
+
+## Unit 6 sequential IM 2021 source revalidation completed — 2026-11-02
+- U06:L01–L21 compared in official sequence against local First Edition 2021 teacher lesson/preparation and existing authoring closures; committed one source-revalidation evidence file per lesson without rebuilding correct implementations.
+- Unit handoff report: `u06-2021-abc-sequential-revalidation-unit-closure-20261102.md`, GitHub commit `9292a1be48fd0623fb3b25e09b3cc502da0d4391`.
+- **Active revalidation cursor: U07:L01**, revalidated **117/148** lessons. This count does not imply original publisher asset-exact 100% or Stage D approval. Tests/Stage D/CI deliberately NOT_RUN; no merge/deploy.
+
+## Unit 7 2021 sequential A–B–C revalidation complete — 2026-11-02
+- U07:L01–L13 compared one-by-one with local original teacher lesson/preparation, prior authoring closures and selected lesson Practice. Revalidation JSON artifacts committed in lesson order; no engine rewrite.
+- Unit report `u07-2021-abc-sequential-revalidation-unit-closure-20261102.md`, commit `574c72e01028e4912a5664a2867fb3aed5090e42`. U07:L13 original teaching commentary makes imprecise claim 16/5~3 1/3 although exact value 3.2; flagged as source text discrepancy without propagating math error.
+- **Active sequential cursor: U08:L01, reviewed 130/148**. Original publisher asset-exact 100%, authenticated runtime, Stage D and CI NOT certified/run. No merge or deploy.
+
+## Grade 5 First Edition 2021 sequential A–B–C revalidation FINISHED — 2026-11-02
+- U08:L01–L18 teacher original lesson/preparation content compared in order to prior source-specific 2026-11-01 A–B–C authoring closures; revalidation files written to GitHub one by one. Unit8 report `u08-2021-abc-sequential-revalidation-unit-closure-20261102.md` committed as `086d4c31059a93c6da15d0c13d2d191b85489a76`.
+- Final aggregate review `GRADE5_IM2021_148_ABC_SEQUENTIAL_REVALIDATION_FINAL_REPORT_20261102.md` commit `e057003678ea74da1bded229e924c23a3c2ca824`.
+- **Static sequential lesson-level source revalidation coverage 148/148 across 8 units.** Existing previous authoring retained; true original publisher source-element/assets parity 100% NOT VERIFIED; prior rights/illustrations/cool-down/student-PDF source limits explicit. Tests/Stage D/CI intentionally NOT RUN; NO merge or deploy.
+- **Cursor: PED:US-CCSS-MATH:G5:ABC_REVALIDATION_REVIEW_COMPLETE**. Next task is user/owner review of final report; never start Stage D without explicit permission. Any subsequent A–B–C repair should be limited to a demonstrated source or implementation defect, not a restart.
+
+## Owner-directed SECOND A–B–C review pass, independent status — 2026-11-02
+
+**Active new pass starts at U01:L01.** The previous `ABC_REVALIDATION_REVIEW_COMPLETE` is historical pass closure and must NOT be misread as completion of the newly requested 2021-only second-pass review. The owner requires **two independent statuses per lesson**: preserve original `READY_FOR_STAGE_D` and set `REVIEW_COMPLETE_2021` only on new per-lesson closure evidence.
+
+- Mandatory process: `GRADE5_2021_SECOND_PASS_EXECUTION_PROTOCOL.md` in this directory.
+- Active **single source of truth for new pass progress**: `g5-2021-second-pass-review-ledger-v1.json` in this directory. Initial verified baseline: 148 old READY, 0 new REVIEW_COMPLETE_2021, next `PED:US-CCSS-MATH:G5:U01:L01`.
+- The previous 148 static 2021 review records remain reusable but are **not automatically certified** as second-pass lesson closures.
+- GitHub Actions manual no-tests ledger integrity workflow: `.github/workflows/g5-2021-second-pass-ledger-check.yml`. This validates state/evidence bookkeeping; it cannot inspect local 2021 source files on a hosted runner. Never substitute its success for source examination.
+- Retain 2021 local source read-only; fix only proven v360/content mismatches. Run no Stage D, tests, CI suites, merge or deploy. Finish each lesson then unit, report per unit and proceed without waiting for another instruction.
+
+## SECOND-PASS OWNER REVIEW REPORT PUBLISHED — 2026-11-02
+
+The separately requested 2021-only second A–B–C source review is **closed for all 148 lessons, across all 8 units**. Original `READY_FOR_STAGE_D=148/148` unchanged, new independent `REVIEW_COMPLETE_2021=148/148`; `lastSecondPassClosed=PED:US-CCSS-MATH:G5:U08:L18`, `nextSecondPassLesson=null`. The current source of truth is `g5-2021-second-pass-review-ledger-v1.json`, not any old 2026-10-30/11-01 authored acceptance counter or the earlier 2026-11-02 static revalidation report. Independent report: `GRADE5_2021_SECOND_PASS_ABC_148_FINAL_REVIEW_REPORT_20261102.md`. Each of the eight units has its own `UNN_SECOND_PASS_2021_REVIEW_COMPLETE_20261102.md` report.
+
+**No more lesson A–B–C re-review is queued. Do not restart at U01:L01 or U02:L05.** Next action is **owner examines the final report and explicitly authorizes the existing Stage D plan** if acceptable. No Stage D tests/CI, merge or deploy occurred. `REVIEW_COMPLETE_2021` denotes source-aligned lesson-level evidence review with documented publisher assets/Cool-down/teacher limitations; it is NOT a publisher-exact-material or student-runtime certification.

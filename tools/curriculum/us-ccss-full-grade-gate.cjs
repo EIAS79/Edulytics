@@ -109,15 +109,19 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   if(diff.status!==1)return false;
   // Historical Grade 1 proofs are not automatically carried to new code.
   // Independent source-scope audit from the exact G1 evidence commit e702b363:
-  // 124 G1-affected paths; EXACTLY 7 changed blobs. The three Grade 3
-  // source-seeded deltas were already audited. The four additional changes
-  // below are narrowly scoped Grade 4-only additive solver/contract/diagram
-  // routing and source entity handlers; existing G1 implementations and
-  // lesson IDs remain unchanged. Both old and current blob IDs are locked.
+  // 124 G1-affected paths; EXACTLY 8 pinned changes after the additive Grade 5 release. The three Grade 3
+  // source-seeded deltas were already audited. Four Grade 4 source/solver/
+  // renderer deltas were reviewed and fingerprinted at Grade 4 publication.
+  // Grade 5 adds exact-pinned G5-only Practice contracts/solver/renderer
+  // routing and a diagnostic-only failure-message probe. The G1 families,
+  // lesson IDs and original G1 source files must remain untouched; paired
+  // current-SHA G1 math/runtime tests and authenticated CI remain mandatory.
+  // All original and current Git blobs are immutable evidence, NOT fresh
+  // academic certification of the 96 G1 original-source activities.
   // This technical compatibility check must be paired with CURRENT-HEAD
   // G1 source-math regression AND authenticated two-school CI; it is NOT an
   // academic reapproval, replacement for those tests, or blanket SHA reset.
-  // Any eighth changed G1-scope file or further edit fails this check.
+  // Any ninth changed G1-scope file or further edit fails this check.
   const auditedG1UnaffectedDeltas=new Map([
     ['src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs',
       ['c0910a9bc06193e98cc8bf07d6b76234c7ea9381','cbf481746db2296b0e83e1ca199ee261fe0d7128']],
@@ -126,13 +130,15 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','18c7c65da8606354002e37a78f846e8e0d30563d']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','558dbbd75cf1dbf274ee9f047f32ac42971ed779']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','0f2d85373b379177961c58b8c041b84e98b42af1']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','ebb8108f080421a7078245644d490ec69fb2aeb7']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
-      ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','5667da84beba2344498ca462b1fa5af1dc948bd0']],
+      ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','c3df782c9e124e9ad5f1011eb6d2ab23c2aa61a8']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
-      ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']]
+      ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
+    ['tools/phase29/b001_practice_attempt_probe.py',
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','28cc417956722287265a43d740eafb9db1ff2d25']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;
