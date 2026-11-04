@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "sourceEdition": "OUR/IM 2017–2019 CC BY 4.0",
+  "reviewDate": "2026-10-29",
+  "reviewType": "DIRECT_PUBLIC_STUDENT_AND_TEACHER_ACTIVITY_SEMANTIC_COMPARISON__NOT_ACADEMIC_ACCEPTANCE",
+  "summary": {
+    "publicStudentAndTeacherBodiesReviewed": 3,
+    "activitiesCompared": 11,
+    "fullStageAAccepted": 0,
+    "stageCExactRuntimeValidated": 0,
+    "stageDVerified": 0
+  },
+  "limitations": [
+    "Publisher's protected model answers, full original pictures, partner card files and original applets not verified.",
+    "First-party text-alternative examples authored; no authenticated renderer or persisted student teacher workflow was checked.",
+    "Information gap and learner-created geometric/ratio designs require human rubrics; numeric answer checks only support narrow deterministic subskills."
+  ],
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U02:L13",
+      "title": "Tables and Double Number Line Diagrams",
+      "publicStudentUrl": "https://im.kendallhunt.com/MS/students/1/2/13/index.html",
+      "publicTeacherUrl": "https://im.kendallhunt.com/MS/teachers/1/2/13/index.html",
+      "sourceTaskExpectations": [
+        "13.1: Halving quotients of 150; locate 75, 37.5 and 18.75 on a labeled line",
+        "13.2: Time-versus-distance 3000-meter race with 100m/20s, 150m/20s and 360m/15s; critique mislabeled table column",
+        "13.3: Information gap comparing two representations of a space-station speed; no unprovided data may be invented"
+      ],
+      "firstPartyCandidateTeachingEvidence": [
+        "original first-party distance-time numeric comparisons and correct unit table labels",
+        "text-accessible aligned double number line versus ratio table",
+        "partner card missing-information warning"
+      ],
+      "independentNumericalOracles": {
+        "runnerTimeSeconds": 600,
+        "cyclistTimeSeconds": 400,
+        "motorbikeTimeSeconds": 125,
+        "quotients": [
+          75,
+          37.5,
+          18.75
+        ]
+      },
+      "teacherRubricCandidate": {
+        "criteria": [
+          "Explain dimensional meaning of each table column",
+          "Check equivalent representations and unit spacing",
+          "Use actual provided rather than invented partner values",
+          "Give one justified similarity and difference between diagram and table"
+        ],
+        "pointsPerCriterion": 2,
+        "implemented": false,
+        "persisted": false
+      },
+      "sourceMediaCopied": false,
+      "renderedAccessibilityVerified": false,
+      "actualSelectedPracticeVerified": false,
+      "sourceStudentTaskFullParityApproved": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U02:L14",
+      "title": "Solving Equivalent Ratio Problems",
+      "publicStudentUrl": "https://im.kendallhunt.com/MS/students/1/2/14/index.html",
+      "publicTeacherUrl": "https://im.kendallhunt.com/MS/teachers/1/2/14/index.html",
+      "sourceTaskExpectations": [
+        "14.1: What unknown speed, direction and origin facts are needed to compare car separation after four hours?",
+        "14.2: Controlled partner information gap using cocoa/milk or potatoes; reason before requesting data",
+        "14.3: Calculate actual days remaining for readers with distinct book lengths and page rates",
+        "Extension: Solve a cats-to-dogs ratio after adding cats"
+      ],
+      "firstPartyCandidateTeachingEvidence": [
+        "red 65mph versus blue 60mph, same start and direction => twenty-mile difference in four hours",
+        "source-proportional cocoa recipe uses 3 cups milk per 2 tbsp cocoa and 9 tbsp cocoa available",
+        "independently computed days remaining 12,9,10 for Lin,Diego,Elena"
+      ],
+      "independentNumericalOracles": {
+        "carSeparationMilesAfter4h": 20,
+        "hotChocolateMilkCupsFor9Tbsp": 13.5,
+        "linDaysRemaining": 12,
+        "diegoDaysRemaining": 9,
+        "elenaDaysRemaining": 10
+      },
+      "teacherRubricCandidate": {
+        "criteria": [
+          "Identify which speed/start/direction information is necessary",
+          "Ask partner for measurements, not solved answers",
+          "Compare readers by remaining work and actual rate",
+          "Explain why alternative question sequences may be equally valid"
+        ],
+        "pointsPerCriterion": 2,
+        "implemented": false,
+        "persisted": false
+      },
+      "sourceMediaCopied": false,
+      "renderedAccessibilityVerified": false,
+      "actualSelectedPracticeVerified": false,
+      "sourceStudentTaskFullParityApproved": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U02:L15",
+      "title": "Part-Part-Whole Ratios",
+      "publicStudentUrl": "https://im.kendallhunt.com/MS/students/1/2/15/index.html",
+      "publicTeacherUrl": "https://im.kendallhunt.com/MS/teachers/1/2/15/index.html",
+      "sourceTaskExpectations": [
+        "15.1: Reason about multiplying by unit fractions and equivalent expressions",
+        "15.2: Represent 5:3 red:blue paint with snap cubes; vary milliliters per cube and total 80mL",
+        "15.3: Solve two-part and three-part contexts with tape diagrams, including limited ingredient quantities",
+        "15.4: Invent, exchange and justify an original part-part-whole story and tape diagram"
+      ],
+      "firstPartyCandidateTeachingEvidence": [
+        "first-party snapped-cube equivalent quantities 1,2,5 and 10 mL per part",
+        "three-ingredient marinade 21:14:7 and punch 40:30:20",
+        "limiting 50-cup cranberry supply gives maximum 112.5-cup blend"
+      ],
+      "independentNumericalOracles": {
+        "redPaintMlFor80": 50,
+        "bluePaintMlFor80": 30,
+        "oilCupsFor42": 21,
+        "soyCupsFor42": 14,
+        "orangeCupsFor42": 7,
+        "punchTotalIfApple30": 90,
+        "maxPunchWithSupply": 112.5
+      },
+      "teacherRubricCandidate": {
+        "criteria": [
+          "Show equal-area or equal-quantity ratio parts with labeled units",
+          "Distinguish part-to-part from part-to-whole",
+          "Check constrained recipes against every ingredient supply",
+          "Teacher-evaluate original learner-written question and diagram"
+        ],
+        "pointsPerCriterion": 2,
+        "implemented": false,
+        "persisted": false
+      },
+      "sourceMediaCopied": false,
+      "renderedAccessibilityVerified": false,
+      "actualSelectedPracticeVerified": false,
+      "sourceStudentTaskFullParityApproved": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    }
+  ]
+}

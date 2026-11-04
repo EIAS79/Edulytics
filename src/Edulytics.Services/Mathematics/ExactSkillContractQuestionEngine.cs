@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Enums;
@@ -183,6 +184,55 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssT001RepresentationChoices.Supports(family.Trim()) ||
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson3DrawingQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson5FactorQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson6AreaScalingQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson7DrawingScaleQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson8MapRateQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson10ChangingScalesQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson3UnitRatesQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson7TableProportionalityQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson9RateComparisonQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit2Lesson10GraphProportionsQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
+
+         UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson2TangramQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson6AreaQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG6Unit2RatioQuestions.Supports(family.Trim()) ||
+
+         UsCcssG5U03L01FractionOfHalfQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L02UnitFractionQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L03UnitFractionQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L04ParkQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L05ShadedAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L06NonunitAreaQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L07FractionEquationQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L08FlagMeasureQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L09FlagDesignSupportQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03L10SharingQuestions.Supports(family.Trim()) ||
+         UsCcssG5U03SourceDivisionQuestions.Supports(family.Trim()) ||
+         UsCcssG5U04WholeNumberSourceProducts.Supports(family.Trim()) ||
+         UsCcssG5U04WholeNumberSourceDivision.Supports(family.Trim()) ||
+         UsCcssG5U05SourceThousandths.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
+
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
@@ -190,6 +240,19 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG4Unit1ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SecondLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1FirstLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson2Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson3Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson4Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson5Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson6Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson7Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson8Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson9Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson10Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson11Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson12Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit2SourceQuestions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1FirstLessonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson2And3Questions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson4Questions.Supports(family.Trim()) ||
@@ -330,7 +393,9 @@ public sealed class ExactSkillContractQuestionEngine
                     family,
                     random,
                     difficulty,
-                    requestedVariant);
+                    requestedVariant,
+                    allowedQuestionFamilies.Count == 1 && questionCount >= 10,
+                    preferredVariant.HasValue);
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -407,6 +472,105 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson2CorrespondenceQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson3DrawingQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson3DrawingQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson5FactorQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson5FactorQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson6AreaScalingQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson6AreaScalingQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson7DrawingScaleQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson7DrawingScaleQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson8MapRateQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson8MapRateQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson10ChangingScalesQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson10ChangingScalesQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson3UnitRatesQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson3UnitRatesQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson7TableProportionalityQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson7TableProportionalityQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson9RateComparisonQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson9RateComparisonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit2Lesson10GraphProportionsQuestions.Supports(family))
+            return UsCcssG7Unit2Lesson10GraphProportionsQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson1TilingQuestions.Verify(family, parameters, answer);
+        if (parameters.ContainsKey("g6ScaledRatio"))
+            return VerifyGrade6ScaledRatio(family, parameters, answer);
+        if (IsGrade6FiniteSourceVariantFamily(family) && parameters.ContainsKey("g6Composite"))
+            return VerifyGrade6Composite(family, parameters, answer);
+
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson1TilingQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson2TangramQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson2TangramQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson3ShadedAreaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson4ParallelogramQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson5BaseHeightQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson6AreaQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson6AreaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson7TriangleQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson8TriangleAreaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson11PolygonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit2RatioQuestions.Supports(family))
+            return UsCcssG6Unit2RatioQuestions.Verify(family, parameters, answer);
+        if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family))
+            return UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Verify(family, parameters, answer);
+
+        if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
+            return UsCcssG5U03L01FractionOfHalfQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L02UnitFractionQuestions.Supports(family))
+            return UsCcssG5U03L02UnitFractionQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L03UnitFractionQuestions.Supports(family))
+            return UsCcssG5U03L03UnitFractionQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L04ParkQuestions.Supports(family))
+            return UsCcssG5U03L04ParkQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L05ShadedAreaQuestions.Supports(family))
+            return UsCcssG5U03L05ShadedAreaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L06NonunitAreaQuestions.Supports(family))
+            return UsCcssG5U03L06NonunitAreaQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L07FractionEquationQuestions.Supports(family))
+            return UsCcssG5U03L07FractionEquationQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L08FlagMeasureQuestions.Supports(family))
+            return UsCcssG5U03L08FlagMeasureQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L09FlagDesignSupportQuestions.Supports(family))
+            return UsCcssG5U03L09FlagDesignSupportQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03L10SharingQuestions.Supports(family))
+            return UsCcssG5U03L10SharingQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U03SourceDivisionQuestions.Supports(family))
+            return UsCcssG5U03SourceDivisionQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5U04WholeNumberSourceProducts.Supports(family))
+            return UsCcssG5U04WholeNumberSourceProducts.Verify(family, parameters, answer);
+        if (UsCcssG5U04WholeNumberSourceDivision.Supports(family))
+            return UsCcssG5U04WholeNumberSourceDivision.Verify(family, parameters, answer);
+        if (UsCcssG5U05SourceThousandths.Supports(family))
+            return UsCcssG5U05SourceThousandths.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
+
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -457,6 +621,27 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG4Unit1SecondLessonQuestions.Verify(family,parameters,answer);
         if (UsCcssG4Unit1FirstLessonQuestions.Supports(family))
             return UsCcssG4Unit1FirstLessonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5Unit1Lesson2Questions.Supports(family))
+            return UsCcssG5Unit1Lesson2Questions.Verify(family, parameters, answer);
+        if (UsCcssG5Unit1Lesson3Questions.Supports(family))
+            return UsCcssG5Unit1Lesson3Questions.Verify(family, parameters, answer);
+        if (UsCcssG5Unit1Lesson4Questions.Supports(family))
+            return UsCcssG5Unit1Lesson4Questions.Verify(family,parameters,answer);
+        if (UsCcssG5Unit1Lesson5Questions.Supports(family))
+            return UsCcssG5Unit1Lesson5Questions.Verify(family,parameters,answer);
+        if (UsCcssG5Unit1Lesson6Questions.Supports(family))
+            return UsCcssG5Unit1Lesson6Questions.Verify(family,parameters,answer);
+        if (UsCcssG5Unit1Lesson7Questions.Supports(family))
+            return UsCcssG5Unit1Lesson7Questions.Verify(family,parameters,answer);
+        if(UsCcssG5Unit1Lesson8Questions.Supports(family))return UsCcssG5Unit1Lesson8Questions.Verify(family,parameters,answer);
+        if(UsCcssG5Unit1Lesson9Questions.Supports(family))return UsCcssG5Unit1Lesson9Questions.Verify(family,parameters,answer);
+        if(UsCcssG5Unit1Lesson10Questions.Supports(family))return UsCcssG5Unit1Lesson10Questions.Verify(family,parameters,answer);
+        if(UsCcssG5Unit1Lesson11Questions.Supports(family))return UsCcssG5Unit1Lesson11Questions.Verify(family,parameters,answer);
+        if(UsCcssG5Unit1Lesson12Questions.Supports(family))return UsCcssG5Unit1Lesson12Questions.Verify(family,parameters,answer);
+        if (UsCcssG5Unit2SourceQuestions.Supports(family))
+            return UsCcssG5Unit2SourceQuestions.Verify(family,parameters,answer);
+        if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family))
+            return UsCcssG5Unit1Lesson1ComparisonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
             return UsCcssG2Unit1FirstLessonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1Lesson2And3Questions.Supports(family))
@@ -1708,7 +1893,215 @@ public sealed class ExactSkillContractQuestionEngine
         };
     }
 
+    // Finite original geometry examples are combined into first-party compound
+    // computations. Both original source-specific questions must be solved:
+    // no fake randomness, duplicated exposure fingerprints or reused answers.
+    // Grade 6's selected-source variant banks are genuinely finite. Only
+    // compose numeric source tasks for adaptive sessions that request a
+    // preferred variant; ordinary single-lesson Practice remains unchanged.
+    private static bool IsGrade6FiniteSourceVariantFamily(string family) =>
+        Grade6FiniteSourceFamilyIds.Contains(family) ||
+        UsCcssG6Unit1Lesson2TangramQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson6AreaQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family) ||
+        UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family) ||
+        UsCcssG6Unit2RatioQuestions.Supports(family);
+
+    private static readonly HashSet<string> Grade6FiniteSourceFamilyIds = new(StringComparer.Ordinal)
+    {
+        "usccss.g6.u01.l02.tangram_equal_area",
+        "usccss.g6.u01.l02.tangram_piece_area",
+        "usccss.g6.u01.l03.area_conservation",
+        "usccss.g6.u01.l03.source_shaded_area",
+        "usccss.g6.u01.l04.equal_area_rearrangement",
+        "usccss.g6.u01.l04.parallelogram_exact_area",
+        "usccss.g6.u01.l04.two_pairs_parallel",
+        "usccss.g6.u01.l05.area_scaling",
+        "usccss.g6.u01.l05.corresponding_height",
+        "usccss.g6.u01.l05.small_triangle_fraction",
+        "usccss.g6.u01.l06.composite_area",
+        "usccss.g6.u01.l06.equal_area_reasoning",
+        "usccss.g6.u01.l07.original_fraction_dimensions",
+        "usccss.g6.u01.l07.parallelogram_diagonal_half",
+        "usccss.g6.u01.l07.triangle_composition_logic",
+        "usccss.g6.u01.l08.decomposition_invariance",
+        "usccss.g6.u01.l08.original_decimal_practice",
+        "usccss.g6.u01.l08.triangle_half_area",
+        "usccss.g6.u01.l09.triangle_height_validity",
+        "usccss.g6.u01.l10.height_construction_validity",
+        "usccss.g6.u01.l12.surface_area_meaning",
+        "usccss.g6.u01.l15.net_design_and_volume_reasoning",
+        "usccss.g6.u01.l16.surface_volume_unit_logic"
+    };
+
     private static ExactProblem BuildProblem(
+        string family, Random random, ExactSkillQuestionDifficulty difficulty,
+        int? preferredVariant = null, bool extendedFamilySession = false,
+        bool adaptiveCandidate = false)
+    {
+        if ((!extendedFamilySession && !adaptiveCandidate) ||
+            !IsGrade6FiniteSourceVariantFamily(family))
+            return BuildOriginalProblem(family, random, difficulty, preferredVariant);
+
+        var a = BuildOriginalProblem(family, random, difficulty, preferredVariant);
+        if (a.ItemType == AssessmentItemType.ShortAnswer &&
+            family is (UsCcssG6Unit2RatioQuestions.L02Diagrams or
+                       UsCcssG6Unit2RatioQuestions.L02Cards) &&
+            a.Parameters.TryGetValue("variant", out var ratioVariant))
+        {
+            int ratioCopies = random.Next(2, 20);
+            return new ExactProblem(family, a.Prompt +
+                $" Edulytics extension: imagine {ratioCopies} identical copies of this " +
+                "same labeled diagram. Calculate the TOTAL depicted marks in each " +
+                "named row across ALL copies. Enter exact totals in order as " +
+                (family == UsCcssG6Unit2RatioQuestions.L02Cards
+                    ? "A:B:C. Do not simplify the depicted totals."
+                    : "A:B. Do not simplify the depicted totals."),
+                "Multiply each source row count by the number of diagrams; " +
+                "preserve the original named row order.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>
+                {
+                    ["g6ScaledRatio"] = 1,
+                    ["variant"] = ratioVariant,
+                    ["copies"] = ratioCopies
+                });
+        }
+        if (a.ItemType != AssessmentItemType.Numeric)
+            return a;
+        var b = BuildOriginalProblem(family, random, difficulty, preferredVariant);
+        if (!a.Parameters.TryGetValue("variant", out int av) ||
+            !b.Parameters.TryGetValue("variant", out int bv))
+            throw new InvalidOperationException("Grade 6 compound requires two source variants.");
+
+        var copies = random.Next(2, 8);
+        var parameters = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["g6Composite"] = 1,
+            ["a"] = av,
+            ["b"] = bv,
+            ["copies"] = copies
+        };
+        var prompt = $"Edulytics first-party Grade 6 multi-situation exercise. " +
+            $"There are {copies} independent copies of Situation A and one copy of " +
+            "Situation B. Solve the numerical question in each situation, and " +
+            $"enter ({copies} × A's numerical answer) + (B's numerical answer). " +
+            "For any yes/no question, use 1 for yes and 0 for no. " +
+            "For a fraction, use an exact fraction or decimal when exact. " +
+            "Situation A: " + a.Prompt + " Situation B: " + b.Prompt;
+        return new ExactProblem(family, prompt,
+            "Independently solve both source-skill tasks, then combine " +
+            "the values with exact arithmetic; diagrams still need a teacher's review.",
+            a.ItemType, parameters);
+    }
+
+    private static string Grade6ScaledRatioValue(
+        string family, IReadOnlyDictionary<string, int> p)
+    {
+        if (family is not (UsCcssG6Unit2RatioQuestions.L02Diagrams or
+                           UsCcssG6Unit2RatioQuestions.L02Cards) ||
+            p.Count != 3 ||
+            !p.TryGetValue("g6ScaledRatio", out var flag) || flag != 1 ||
+            !p.TryGetValue("copies", out var copies) || copies is < 2 or > 19 ||
+            !p.TryGetValue("variant", out var variant))
+            throw new ArgumentException("Invalid Grade 6 scaled ratio.");
+
+        var original = new Dictionary<string, int> { ["variant"] = variant };
+        var baseAnswer = UsCcssG6Unit2RatioQuestions.Solve(family, original);
+        return string.Join(":", baseAnswer.Split(':')
+            .Select(term => (int.Parse(term, CultureInfo.InvariantCulture) * copies)
+                .ToString(CultureInfo.InvariantCulture)));
+    }
+
+    private static bool VerifyGrade6ScaledRatio(
+        string family, IReadOnlyDictionary<string, int> p, string? answer)
+    {
+        if (string.IsNullOrWhiteSpace(answer) || answer != answer.Trim())
+            return false;
+        try
+        {
+            return string.Equals(
+                Grade6ScaledRatioValue(family, p), answer,
+                StringComparison.Ordinal);
+        }
+        catch (Exception ex) when (ex is ArgumentException or FormatException or OverflowException)
+        {
+            return false;
+        }
+    }
+
+    private static bool VerifyGrade6Composite(
+        string family, IReadOnlyDictionary<string, int> parameters, string? answer)
+    {
+        if (!IsValidGrade6Composite(parameters) || string.IsNullOrWhiteSpace(answer))
+            return false;
+        try
+        {
+            var expected = Grade6CompositeValue(family, parameters);
+            var received = ParseGrade6ExactNumber(answer.Trim());
+            return expected.Numerator * received.Denominator ==
+                   received.Numerator * expected.Denominator;
+        }
+        catch (Exception ex) when (ex is ArgumentException or FormatException or OverflowException)
+        {
+            return false;
+        }
+    }
+
+    private static bool IsValidGrade6Composite(IReadOnlyDictionary<string, int> p) =>
+        p.Count == 4 && p.TryGetValue("g6Composite", out var composite) &&
+        composite == 1 && p.ContainsKey("a") && p.ContainsKey("b") &&
+        p.TryGetValue("copies", out var copies) && copies is >= 2 and <= 7;
+
+    private static (BigInteger Numerator, BigInteger Denominator) Grade6CompositeValue(
+        string family, IReadOnlyDictionary<string, int> p)
+    {
+        if (!IsGrade6FiniteSourceVariantFamily(family) || !IsValidGrade6Composite(p))
+            throw new ArgumentException("Unsupported Grade 6 composite");
+        var a = new Dictionary<string, int> { ["variant"] = p["a"] };
+        var b = new Dictionary<string, int> { ["variant"] = p["b"] };
+        var first = Solve(new ExactProblem(family, "", "", AssessmentItemType.Numeric, a));
+        var second = Solve(new ExactProblem(family, "", "", AssessmentItemType.Numeric, b));
+        if (!Verify(family, a, first) || !Verify(family, b, second))
+            throw new ArgumentException("Invalid source variant");
+        var (an, ad) = ParseGrade6ExactNumber(first);
+        var (bn, bd) = ParseGrade6ExactNumber(second);
+        var numerator = p["copies"] * an * bd + bn * ad;
+        var denominator = ad * bd;
+        var divisor = BigInteger.GreatestCommonDivisor(numerator, denominator);
+        return (numerator / divisor, denominator / divisor);
+    }
+
+    private static (BigInteger Numerator, BigInteger Denominator) ParseGrade6ExactNumber(string raw)
+    {
+        var value = raw.Trim();
+        var slash = value.IndexOf('/');
+        if (slash >= 0)
+        {
+            var n = BigInteger.Parse(value[..slash], CultureInfo.InvariantCulture);
+            var d = BigInteger.Parse(value[(slash + 1)..], CultureInfo.InvariantCulture);
+            if (d <= 0) throw new ArgumentException("Invalid denominator");
+            var gcd = BigInteger.GreatestCommonDivisor(n, d);
+            return (n / gcd, d / gcd);
+        }
+        if (!decimal.TryParse(value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture, out _))
+            throw new FormatException("Invalid exact numeric response");
+        var dot = value.IndexOf('.');
+        var places = dot < 0 ? 0 : value.Length - dot - 1;
+        var ntext = value.Replace(".", "", StringComparison.Ordinal);
+        var numerator = BigInteger.Parse(ntext, CultureInfo.InvariantCulture);
+        var denominator = BigInteger.Pow(10, places);
+        var divisor = BigInteger.GreatestCommonDivisor(numerator, denominator);
+        return (numerator / divisor, denominator / divisor);
+    }
+
+    private static ExactProblem BuildOriginalProblem(
         string family,
         Random random,
         ExactSkillQuestionDifficulty difficulty,
@@ -1720,6 +2113,277 @@ public sealed class ExactSkillContractQuestionEngine
             ExactSkillQuestionDifficulty.Challenge => 3,
             _ => 1
         };
+
+
+
+
+        if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L01FractionOfHalfQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L02UnitFractionQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L02UnitFractionQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L03UnitFractionQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L03UnitFractionQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L04ParkQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L04ParkQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L05ShadedAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L05ShadedAreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L06NonunitAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L06NonunitAreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L07FractionEquationQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L07FractionEquationQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L08FlagMeasureQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L08FlagMeasureQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L09FlagDesignSupportQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L09FlagDesignSupportQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03L10SharingQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03L10SharingQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U03SourceDivisionQuestions.Supports(family))
+        {
+            var item = UsCcssG5U03SourceDivisionQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U04WholeNumberSourceProducts.Supports(family))
+        {
+            var item = UsCcssG5U04WholeNumberSourceProducts.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U04WholeNumberSourceDivision.Supports(family))
+        {
+            var item = UsCcssG5U04WholeNumberSourceDivision.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG5U05SourceThousandths.Supports(family))
+        {
+            var item = UsCcssG5U05SourceThousandths.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson1ScaledCopyQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson2CorrespondenceQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson3DrawingQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson3DrawingQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson5FactorQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson5FactorQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson6AreaScalingQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson6AreaScalingQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson7DrawingScaleQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson7DrawingScaleQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson8MapRateQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson8MapRateQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson10ChangingScalesQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson10ChangingScalesQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson3UnitRatesQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson3UnitRatesQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson7TableProportionalityQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson7TableProportionalityQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson9RateComparisonQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson9RateComparisonQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit2Lesson10GraphProportionsQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit2Lesson10GraphProportionsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson1TilingQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+
+
+        if (UsCcssG6Unit1Lesson2TangramQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson2TangramQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson3ShadedAreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson4ParallelogramQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson5BaseHeightQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson6AreaQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson6AreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson7TriangleQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson7TriangleQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson8TriangleAreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson11PolygonQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson11PolygonQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG6Unit2RatioQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit2RatioQuestions.Build(family, random);
+            return new ExactProblem(item.Family,item.Prompt,item.Explanation,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family))
+        {
+            var item = UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Explanation,
+                item.ItemType, item.Parameters);
+        }
+
 
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
         {
@@ -1849,6 +2513,69 @@ public sealed class ExactSkillContractQuestionEngine
             var rectangle = UsCcssG4Unit1FirstLessonQuestions.Build(family, random);
             return new ExactProblem(rectangle.Family, rectangle.Prompt, rectangle.Solution,
                 rectangle.ItemType, rectangle.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson2Questions.Supports(family))
+        {
+            var g5 = UsCcssG5Unit1Lesson2Questions.Build(family, random);
+            return new ExactProblem(g5.Family, g5.Prompt, g5.Solution,
+                g5.ItemType, g5.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson3Questions.Supports(family))
+        {
+            var g5 = UsCcssG5Unit1Lesson3Questions.Build(family, random);
+            return new ExactProblem(g5.Family,g5.Prompt,g5.Solution,g5.ItemType,g5.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson4Questions.Supports(family))
+        {
+            var g5=UsCcssG5Unit1Lesson4Questions.Build(family,random);
+            return new ExactProblem(g5.Family,g5.Prompt,g5.Solution,g5.ItemType,g5.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson5Questions.Supports(family))
+        {
+            var g5=UsCcssG5Unit1Lesson5Questions.Build(family,random);
+            return new ExactProblem(g5.Family,g5.Prompt,g5.Solution,g5.ItemType,g5.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson6Questions.Supports(family))
+        {
+            var g5=UsCcssG5Unit1Lesson6Questions.Build(family,random);
+            return new ExactProblem(g5.Family,g5.Prompt,g5.Solution,g5.ItemType,g5.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson7Questions.Supports(family))
+        {
+            var sourceModel=UsCcssG5Unit1Lesson7Questions.Build(family,random);
+            return new ExactProblem(sourceModel.Family,sourceModel.Prompt,sourceModel.Solution,sourceModel.ItemType,sourceModel.Parameters);
+        }
+        if(UsCcssG5Unit1Lesson8Questions.Supports(family)){
+            var item=UsCcssG5Unit1Lesson8Questions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if(UsCcssG5Unit1Lesson9Questions.Supports(family)){
+            var item=UsCcssG5Unit1Lesson9Questions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if(UsCcssG5Unit1Lesson10Questions.Supports(family)){
+            var item=UsCcssG5Unit1Lesson10Questions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if(UsCcssG5Unit1Lesson11Questions.Supports(family)){
+            var item=UsCcssG5Unit1Lesson11Questions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if(UsCcssG5Unit1Lesson12Questions.Supports(family)){
+            var item=UsCcssG5Unit1Lesson12Questions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG5Unit2SourceQuestions.Supports(family))
+        {
+            var sourceItem=UsCcssG5Unit2SourceQuestions.Build(family,random);
+            return new ExactProblem(sourceItem.Family,sourceItem.Prompt,sourceItem.Solution,
+                sourceItem.ItemType,sourceItem.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family))
+        {
+            var comparison = UsCcssG5Unit1Lesson1ComparisonQuestions.Build(family, random);
+            return new ExactProblem(comparison.Family, comparison.Prompt, comparison.Solution,
+                comparison.ItemType, comparison.Parameters);
         }
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
         {
@@ -4865,6 +5592,112 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson2CorrespondenceQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson3DrawingQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson3DrawingQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson4ScaledRelationshipsQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson5FactorQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson5FactorQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson6AreaScalingQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson6AreaScalingQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson7DrawingScaleQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson7DrawingScaleQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson8MapRateQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson8MapRateQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson10ChangingScalesQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson10ChangingScalesQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson11UnitlessScalesQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson1EquivalentRatioQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson3UnitRatesQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson3UnitRatesQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson4ProportionalEquationsQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson6ConcertRecyclingQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson7TableProportionalityQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson7TableProportionalityQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson8ClassifyEquationsQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson9RateComparisonQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson9RateComparisonQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit2Lesson10GraphProportionsQuestions.Supports(problem.Family))
+            return UsCcssG7Unit2Lesson10GraphProportionsQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);
+        if (p.ContainsKey("g6ScaledRatio"))
+            return Grade6ScaledRatioValue(problem.Family, p);
+        if (IsGrade6FiniteSourceVariantFamily(problem.Family) &&
+            p.ContainsKey("g6Composite"))
+        {
+            var value = Grade6CompositeValue(problem.Family, p);
+            return value.Denominator == BigInteger.One
+                ? value.Numerator.ToString(CultureInfo.InvariantCulture)
+                : value.Numerator.ToString(CultureInfo.InvariantCulture) + "/" +
+                  value.Denominator.ToString(CultureInfo.InvariantCulture);
+        }
+
+        if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson2TangramQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson2TangramQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson3ShadedAreaQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson3ShadedAreaQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson4ParallelogramQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson4ParallelogramQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson5BaseHeightQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson5BaseHeightQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson6AreaQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson6AreaQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson7TriangleQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson7TriangleQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson8TriangleAreaQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson8TriangleAreaQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit1Lesson11PolygonQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson11PolygonQuestions.Solve(problem.Family, p);
+        if (UsCcssG6Unit2RatioQuestions.Supports(problem.Family))
+            return UsCcssG6Unit2RatioQuestions.Solve(problem.Family,p);
+        if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(problem.Family))
+            return UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Solve(problem.Family, p);
+
+        if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(problem.Family))
+            return UsCcssG5U03L01FractionOfHalfQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L02UnitFractionQuestions.Supports(problem.Family))
+            return UsCcssG5U03L02UnitFractionQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L03UnitFractionQuestions.Supports(problem.Family))
+            return UsCcssG5U03L03UnitFractionQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L04ParkQuestions.Supports(problem.Family))
+            return UsCcssG5U03L04ParkQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L05ShadedAreaQuestions.Supports(problem.Family))
+            return UsCcssG5U03L05ShadedAreaQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L06NonunitAreaQuestions.Supports(problem.Family))
+            return UsCcssG5U03L06NonunitAreaQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L07FractionEquationQuestions.Supports(problem.Family))
+            return UsCcssG5U03L07FractionEquationQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L08FlagMeasureQuestions.Supports(problem.Family))
+            return UsCcssG5U03L08FlagMeasureQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L09FlagDesignSupportQuestions.Supports(problem.Family))
+            return UsCcssG5U03L09FlagDesignSupportQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03L10SharingQuestions.Supports(problem.Family))
+            return UsCcssG5U03L10SharingQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U03SourceDivisionQuestions.Supports(problem.Family))
+            return UsCcssG5U03SourceDivisionQuestions.Solve(problem.Family, p);
+        if (UsCcssG5U04WholeNumberSourceProducts.Supports(problem.Family))
+            return UsCcssG5U04WholeNumberSourceProducts.Solve(problem.Family, p);
+        if (UsCcssG5U04WholeNumberSourceDivision.Supports(problem.Family))
+            return UsCcssG5U04WholeNumberSourceDivision.Solve(problem.Family, p);
+        if (UsCcssG5U05SourceThousandths.Supports(problem.Family))
+            return UsCcssG5U05SourceThousandths.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
+
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
@@ -4915,6 +5748,27 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG4Unit1SecondLessonQuestions.Solve(problem.Family,p);
         if (UsCcssG4Unit1FirstLessonQuestions.Supports(problem.Family))
             return UsCcssG4Unit1FirstLessonQuestions.Solve(problem.Family, p);
+        if (UsCcssG5Unit1Lesson2Questions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson2Questions.Solve(problem.Family, p);
+        if (UsCcssG5Unit1Lesson3Questions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson3Questions.Solve(problem.Family,p);
+        if (UsCcssG5Unit1Lesson4Questions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson4Questions.Solve(problem.Family,p);
+        if (UsCcssG5Unit1Lesson5Questions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson5Questions.Solve(problem.Family,p);
+        if (UsCcssG5Unit1Lesson6Questions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson6Questions.Solve(problem.Family,p);
+        if (UsCcssG5Unit1Lesson7Questions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson7Questions.Solve(problem.Family,p);
+        if(UsCcssG5Unit1Lesson8Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson8Questions.Solve(problem.Family,p);
+        if(UsCcssG5Unit1Lesson9Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson9Questions.Solve(problem.Family,p);
+        if(UsCcssG5Unit1Lesson10Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson10Questions.Solve(problem.Family,p);
+        if(UsCcssG5Unit1Lesson11Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson11Questions.Solve(problem.Family,p);
+        if(UsCcssG5Unit1Lesson12Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson12Questions.Solve(problem.Family,p);
+        if (UsCcssG5Unit2SourceQuestions.Supports(problem.Family))
+            return UsCcssG5Unit2SourceQuestions.Solve(problem.Family,p);
+        if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson1ComparisonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(problem.Family))
             return UsCcssG2Unit1FirstLessonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1Lesson2And3Questions.Supports(problem.Family))

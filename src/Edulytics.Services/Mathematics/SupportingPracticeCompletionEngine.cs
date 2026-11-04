@@ -42,6 +42,10 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.rational_terminating_decimal",
             "usccss.number.repeating_decimal_digit",
             "usccss.number.signed_rate_displacement",
+            "usccss.g7.u05.signed_rational_add_subtract",
+            "usccss.g7.u05.compare_signed_rational",
+            "usccss.g7.u05.signed_rational_distance",
+            "usccss.g7.u05.rational_linear_equation",
             "usccss.algebra.exponent_product_value",
             "usccss.g8.integer_exponent_laws",
             "usccss.vector.add_x",
@@ -91,6 +95,12 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent",
             "supporting.surds.coefficient",
             "supporting.geometry.angle_around_point",
+            "usccss.g7.u07.complementary_angle",
+            "usccss.g7.u07.vertical_angle",
+            "usccss.g7.u07.triangle_side_feasible",
+            "usccss.g7.u07.parallel_base_cross_section_sides",
+            "usccss.g7.u07.prism_volume_base_height",
+            "usccss.g7.u07.prism_surface_area_base_perimeter_height",
             "supporting.geometry.angle_classify",
             "supporting.geometry.parallelogram_area",
             "supporting.geometry.compound_area",
@@ -100,8 +110,17 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.rotate90",
             "supporting.geometry.midpoint",
             "supporting.geometry.axis_distance",
+            "usccss.g7.u03.l02.radius_diameter_relation",
+            "usccss.g7.u03.l05.wheel_rotations_distance",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
+            "usccss.g7.u04.fractional_change",
+            "usccss.g7.u04.reverse_percent_original",
+            "usccss.g7.u04.nonwhole_percent_of_quantity",
+            "usccss.g7.u04.percent_rate_from_values",
+            "usccss.g7.u04.percent_error",
+            "usccss.g7.u04.error_interval_bound",
             "supporting.geometry.locus_equidistant",
             "supporting.statistics.table_total",
             "supporting.statistics.pie_sector_angle",
@@ -215,6 +234,10 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.rational_terminating_decimal" => UsRationalDecimal(random, scale),
             "usccss.number.repeating_decimal_digit" => UsRepeatingDecimalDigit(random, scale),
             "usccss.number.signed_rate_displacement" => UsSignedRateDisplacement(random, scale),
+            "usccss.g7.u05.signed_rational_add_subtract" => G7SignedRationalAddSubtract(random, scale),
+            "usccss.g7.u05.compare_signed_rational" => G7CompareSignedRational(random, scale),
+            "usccss.g7.u05.signed_rational_distance" => G7SignedRationalDistance(random, scale),
+            "usccss.g7.u05.rational_linear_equation" => G7RationalLinearEquation(random, scale),
             "usccss.algebra.exponent_product_value" => UsExponentProductValue(random, scale),
             "usccss.g8.integer_exponent_laws" => UsGrade8IntegerExponentLaws(random),
             "usccss.vector.add_x" => VectorComponentSum(random, scale),
@@ -264,6 +287,12 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.standard_form.power10_exponent" => StandardFormExponent(random, scale),
             "supporting.surds.coefficient" => SurdCoefficient(random, scale),
             "supporting.geometry.angle_around_point" => AngleAroundPoint(random),
+            "usccss.g7.u07.complementary_angle" => G7ComplementaryAngle(random),
+            "usccss.g7.u07.vertical_angle" => G7VerticalAngle(random),
+            "usccss.g7.u07.triangle_side_feasible" => G7TriangleSideFeasible(random, scale),
+            "usccss.g7.u07.parallel_base_cross_section_sides" => G7ParallelBaseCrossSection(random),
+            "usccss.g7.u07.prism_volume_base_height" => G7PrismVolume(random, scale),
+            "usccss.g7.u07.prism_surface_area_base_perimeter_height" => G7PrismSurfaceArea(random, scale),
             "supporting.geometry.angle_classify" => AngleClassify(random),
             "supporting.geometry.parallelogram_area" => ParallelogramArea(random, scale),
             "supporting.geometry.compound_area" => CompoundArea(random, scale),
@@ -273,8 +302,17 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.rotate90" => RotatePoint(random, scale),
             "supporting.geometry.midpoint" => Midpoint(random, scale),
             "supporting.geometry.axis_distance" => AxisDistance(random, scale),
+            "usccss.g7.u03.l02.radius_diameter_relation" => CircleRadiusDiameter(random, scale),
+            "usccss.g7.u03.l05.wheel_rotations_distance" => WheelRotationsDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" => CircleFractionArea(random, scale),
+            "usccss.g7.u04.fractional_change" => G7FractionalChange(random, scale),
+            "usccss.g7.u04.reverse_percent_original" => G7ReversePercentOriginal(random, scale),
+            "usccss.g7.u04.nonwhole_percent_of_quantity" => G7NonWholePercentOfQuantity(random, scale),
+            "usccss.g7.u04.percent_rate_from_values" => G7PercentRateFromValues(random, scale),
+            "usccss.g7.u04.percent_error" => G7PercentError(random, scale),
+            "usccss.g7.u04.error_interval_bound" => G7ErrorIntervalBound(random, scale),
             "supporting.geometry.locus_equidistant" => LocusEquidistant(random, preferredVariant),
             "supporting.statistics.table_total" => TableTotal(random, scale),
             "supporting.statistics.pie_sector_angle" => PieSector(random, scale),
@@ -366,6 +404,16 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.rational_terminating_decimal" => FormatHundredths(p["numerator"] * 100 / p["denominator"]),
             "usccss.number.repeating_decimal_digit" => (p["numerator"] * (9 / p["denominator"])).ToString(CultureInfo.InvariantCulture),
             "usccss.number.signed_rate_displacement" => (p["velocity"] * p["time"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u05.signed_rational_add_subtract" =>
+                SimplifyFraction(p["n1"] * p["d2"] + p["operation"] * p["n2"] * p["d1"], p["d1"] * p["d2"]),
+            "usccss.g7.u05.compare_signed_rational" =>
+                Math.Sign((long)p["n1"] * p["d2"] - (long)p["n2"] * p["d1"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u05.signed_rational_distance" =>
+                SimplifyFraction(Math.Abs(p["n1"] * p["d2"] - p["n2"] * p["d1"]), p["d1"] * p["d2"]),
+            "usccss.g7.u05.rational_linear_equation" =>
+                p["mode"] == 0
+                    ? SimplifyFraction(p["rightN"] * p["aD"] - p["aN"] * p["rightD"], p["rightD"] * p["aD"])
+                    : SimplifyFraction(p["rightN"] * p["aD"], p["rightD"] * p["aN"]),
             "usccss.algebra.exponent_product_value" => IntPow(p["base"], p["exponent"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g8.integer_exponent_laws" => SolveUsGrade8IntegerExponentLaws(p),
             "usccss.vector.add_x" => (p["ax"]+p["bx"]).ToString(CultureInfo.InvariantCulture),
@@ -436,6 +484,18 @@ internal static partial class SupportingPracticeCompletionEngine
                 p["coefficient"].ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_around_point" =>
                 (360 - p["a"] - p["b"] - p["c"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.complementary_angle" =>
+                (90 - p["known"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.vertical_angle" =>
+                p["known"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.triangle_side_feasible" =>
+                (p["a"] + p["b"] > p["c"] && p["a"] + p["c"] > p["b"] && p["b"] + p["c"] > p["a"] ? "1" : "0"),
+            "usccss.g7.u07.parallel_base_cross_section_sides" =>
+                p["baseSides"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.prism_volume_base_height" =>
+                (p["baseArea"] * p["height"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u07.prism_surface_area_base_perimeter_height" =>
+                (2 * p["baseArea"] + p["basePerimeter"] * p["height"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.angle_classify" =>
                 ClassifyAngle(p["angle"]),
             "supporting.geometry.parallelogram_area" =>
@@ -454,10 +514,33 @@ internal static partial class SupportingPracticeCompletionEngine
                 FormatPair((p["x1"] + p["x2"]) / 2, (p["y1"] + p["y2"]) / 2),
             "supporting.geometry.axis_distance" =>
                 Math.Abs(p["end"] - p["start"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u03.l02.radius_diameter_relation" =>
+                (p["mode"] == 0 ? 2 * p["radius"] : p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u03.l05.wheel_rotations_distance" =>
+                p["mode"] switch
+                {
+                    0 => (p["diameter"] * p["rotations"]).ToString(CultureInfo.InvariantCulture),
+                    1 => (p["circumference"] * p["rotations"]).ToString(CultureInfo.InvariantCulture),
+                    _ => p["rotations"].ToString(CultureInfo.InvariantCulture)
+                },
             "supporting.geometry.circle_circumference_pi_coefficient" =>
                 (2 * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_area_pi_coefficient" =>
                 (p["radius"] * p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" =>
+                SimplifyFraction(p["radius"] * p["radius"], p["denominator"]),
+            "usccss.g7.u04.fractional_change" =>
+                SimplifyFraction(p["quantity"] * (p["denominator"] + p["direction"] * p["numerator"]), p["denominator"]),
+            "usccss.g7.u04.reverse_percent_original" =>
+                SimplifyFraction(p["final"] * 100, 100 + p["direction"] * p["percent"]),
+            "usccss.g7.u04.nonwhole_percent_of_quantity" =>
+                SimplifyFraction(p["quantity"] * p["percentMilli"], 100000),
+            "usccss.g7.u04.percent_rate_from_values" =>
+                SimplifyFraction(Math.Abs(p["final"] - p["original"]) * 100, p["original"]),
+            "usccss.g7.u04.percent_error" =>
+                SimplifyFraction(Math.Abs(p["measured"] - p["actual"]) * 100, p["actual"]),
+            "usccss.g7.u04.error_interval_bound" =>
+                SimplifyFraction(p["target"] * (100000 + p["bound"] * p["percentMilli"]), 100000),
             "supporting.geometry.locus_equidistant" =>
                 SolveLocusEquidistant(p),
             "supporting.statistics.table_total" =>
@@ -549,9 +632,24 @@ internal static partial class SupportingPracticeCompletionEngine
 
         var expected = Solve(family, p);
         if (family is
+            "usccss.g7.u04.fractional_change" or
+            "usccss.g7.u04.reverse_percent_original" or
+            "usccss.g7.u04.nonwhole_percent_of_quantity" or
+            "usccss.g7.u04.percent_rate_from_values" or
+            "usccss.g7.u04.percent_error" or
+            "usccss.g7.u04.error_interval_bound")
+        {
+            return EquivalentRationalDecimal(answer, expected);
+        }
+
+        if (family is
+            "usccss.g7.u05.signed_rational_add_subtract" or
+            "usccss.g7.u05.signed_rational_distance" or
+            "usccss.g7.u05.rational_linear_equation" or
             "supporting.fractions.multiply" or
             "supporting.fractions.divide_whole" or
             "supporting.fractions.simplify" or
+            "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" or
             "usccss.g8.integer_exponent_laws" or
             "supporting.statistics.experimental_probability" or
             "supporting.probability.conditional_simple" or
@@ -1248,6 +1346,68 @@ internal static partial class SupportingPracticeCompletionEngine
             ("a", a), ("b", b), ("c", c));
     }
 
+    private static Problem G7ComplementaryAngle(Random r)
+    {
+        var known = r.Next(10, 81);
+        return P("usccss.g7.u07.complementary_angle",
+            $"Two angles are complementary. One measures {known} degrees. Find the other.",
+            "Complementary angles sum to 90 degrees.",
+            ("known", known));
+    }
+
+    private static Problem G7VerticalAngle(Random r)
+    {
+        var known = r.Next(20, 161);
+        return P("usccss.g7.u07.vertical_angle",
+            $"Two angles are vertical angles. One measures {known} degrees. Find the other.",
+            "Vertical angles formed by two intersecting lines have equal measures.",
+            ("known", known));
+    }
+
+    private static Problem G7TriangleSideFeasible(Random r, int s)
+    {
+        var a = r.Next(2, 10 + s);
+        var b = r.Next(2, 10 + s);
+        var makeValid = r.Next(0, 2) == 0;
+        var c = makeValid
+            ? r.Next(Math.Abs(a - b) + 1, a + b)
+            : a + b + r.Next(0, 4 + s);
+        return P("usccss.g7.u07.triangle_side_feasible",
+            $"Can side lengths {a}, {b}, and {c} form a nondegenerate triangle? Enter 1 for yes or 0 for no.",
+            "Each pair of side lengths must have a sum greater than the third side.",
+            ("a", a), ("b", b), ("c", c));
+    }
+
+    private static Problem G7ParallelBaseCrossSection(Random r)
+    {
+        var baseSides = r.Next(3, 30);
+        return P("usccss.g7.u07.parallel_base_cross_section_sides",
+            $"A right prism has a {baseSides}-sided polygon as its base. A slice parallel to the base makes a cross section. How many sides does that cross section have?",
+            "A slice parallel to a prism base is congruent to the base, so it has the same number of sides.",
+            ("baseSides", baseSides));
+    }
+
+    private static Problem G7PrismVolume(Random r, int s)
+    {
+        var baseArea = r.Next(4, 30 + s * 5);
+        var height = r.Next(2, 12 + s * 2);
+        return P("usccss.g7.u07.prism_volume_base_height",
+            $"A right prism has base area {baseArea} square units and height {height} units. Find its volume.",
+            "Use V = B h, where B is the area of a base and h is the perpendicular distance between the bases.",
+            ("baseArea", baseArea), ("height", height));
+    }
+
+    private static Problem G7PrismSurfaceArea(Random r, int s)
+    {
+        var baseArea = r.Next(4, 25 + s * 4);
+        var basePerimeter = r.Next(6, 30 + s * 4);
+        var height = r.Next(2, 12 + s * 2);
+        return P("usccss.g7.u07.prism_surface_area_base_perimeter_height",
+            $"A right prism has base area {baseArea}, base perimeter {basePerimeter}, and height {height}. Find its total surface area.",
+            "For a right prism, total surface area is 2B + P h: two congruent bases plus the lateral rectangles.",
+            ("baseArea", baseArea), ("basePerimeter", basePerimeter), ("height", height));
+    }
+
     private static Problem AngleClassify(Random r)
     {
         var angle = r.Next(1, 360);
@@ -1351,6 +1511,125 @@ internal static partial class SupportingPracticeCompletionEngine
             ("start", start), ("end", end));
     }
 
+    private static Problem CircleRadiusDiameter(Random r, int s)
+    {
+        var radius = r.Next(2, 18 + s * 4);
+        var mode = r.Next(0, 2);
+        var prompt = mode == 0
+            ? $"A circle has radius {radius}. Find its diameter."
+            : $"A circle has diameter {2 * radius}. Find its radius.";
+        return P("usccss.g7.u03.l02.radius_diameter_relation",
+            prompt,
+            "A diameter passes through the center and is twice a radius: d = 2r.",
+            ("mode", mode), ("radius", radius));
+    }
+
+    private static Problem WheelRotationsDistance(Random r, int s)
+    {
+        var mode = r.Next(0, 3);
+        var rotations = r.Next(2, 12 + s * 2);
+        if (mode == 0)
+        {
+            var diameter = r.Next(4, 20 + s * 2);
+            return P("usccss.g7.u03.l05.wheel_rotations_distance",
+                $"A wheel has diameter {diameter} units and makes {rotations} complete rotations without slipping. The exact distance is kπ units. Find k.",
+                "One rotation travels one circumference, πd. Multiply by the number of complete rotations.",
+                ("mode", mode), ("diameter", diameter), ("rotations", rotations));
+        }
+        var circumference = r.Next(12, 45 + s * 5);
+        if (mode == 1)
+            return P("usccss.g7.u03.l05.wheel_rotations_distance",
+                $"A wheel has circumference {circumference} units and makes {rotations} complete rotations without slipping. Find the distance traveled.",
+                "Distance equals circumference times number of rotations.",
+                ("mode", mode), ("circumference", circumference), ("rotations", rotations));
+        return P("usccss.g7.u03.l05.wheel_rotations_distance",
+            $"A wheel has circumference {circumference} units and travels {circumference * rotations} units without slipping. Find the number of complete rotations.",
+            "Rotations equal total distance divided by one-wheel circumference.",
+            ("mode", mode), ("circumference", circumference), ("rotations", rotations));
+    }
+
+    private static Problem G7FractionalChange(Random r, int s)
+    {
+        int[] denominators = [2, 3, 4, 5, 8];
+        var denominator = denominators[r.Next(denominators.Length)];
+        var numerator = r.Next(1, denominator);
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var quantity = denominator * r.Next(4, 18 + s * 3);
+        var word = direction > 0 ? "more" : "less";
+        return P("usccss.g7.u04.fractional_change",
+            $"A quantity is {numerator}/{denominator} {word} than {quantity}. Find the new quantity.",
+            "Multiply the original by 1 plus or minus the stated fractional change.",
+            ("numerator", numerator), ("denominator", denominator),
+            ("direction", direction), ("quantity", quantity));
+    }
+
+    private static Problem G7ReversePercentOriginal(Random r, int s)
+    {
+        int[] percents = [10, 20, 25, 40, 50];
+        var percent = percents[r.Next(percents.Length)];
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var original = 20 * r.Next(3, 14 + s * 2);
+        var final = original * (100 + direction * percent) / 100;
+        var word = direction > 0 ? "increase" : "decrease";
+        return P("usccss.g7.u04.reverse_percent_original",
+            $"After a {percent}% {word}, a quantity is {final}. Find the original quantity.",
+            "The final amount equals the original times the appropriate percent multiplier; divide to reverse the change.",
+            ("percent", percent), ("direction", direction), ("final", final));
+    }
+
+    private static Problem G7NonWholePercentOfQuantity(Random r, int s)
+    {
+        int[] percentMilliValues = [400, 5125, 7250, 12500, 15500, 18500];
+        int[] quantities = [80, 160, 200, 400, 800, 1200];
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var quantity = quantities[r.Next(quantities.Length)];
+        var percent = (percentMilli / 1000m).ToString("0.###", CultureInfo.InvariantCulture);
+        return P("usccss.g7.u04.nonwhole_percent_of_quantity",
+            $"Find {percent}% of {quantity}. Give an exact value.",
+            "Convert the percentage to a multiplier by dividing by 100, then multiply by the quantity.",
+            ("percentMilli", percentMilli), ("quantity", quantity));
+    }
+
+    private static Problem G7PercentRateFromValues(Random r, int s)
+    {
+        int[] percentMilliValues = [5000, 10000, 12500, 15000, 18500, 25000];
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var original = 2000 * r.Next(1, 5 + s);
+        var final = original * (100000 + direction * percentMilli) / 100000;
+        return P("usccss.g7.u04.percent_rate_from_values",
+            $"A value changes from {original} to {final}. Find the percent change relative to the original amount.",
+            "Find the absolute change, divide by the original amount, and multiply by 100.",
+            ("original", original), ("final", final));
+    }
+
+    private static Problem G7PercentError(Random r, int s)
+    {
+        int[] percentMilliValues = [1000, 1500, 3000, 12000, 20000];
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var direction = r.Next(0, 2) == 0 ? -1 : 1;
+        var actual = 2000 * r.Next(1, 5 + s);
+        var measured = actual * (100000 + direction * percentMilli) / 100000;
+        return P("usccss.g7.u04.percent_error",
+            $"The actual value is {actual}, but a measurement gives {measured}. Find the percent error.",
+            "Percent error is absolute measurement error divided by the actual value, multiplied by 100.",
+            ("actual", actual), ("measured", measured));
+    }
+
+    private static Problem G7ErrorIntervalBound(Random r, int s)
+    {
+        int[] percentMilliValues = [1000, 1500, 5000];
+        var target = 100 * r.Next(2, 10 + s * 2);
+        var percentMilli = percentMilliValues[r.Next(percentMilliValues.Length)];
+        var bound = r.Next(0, 2) == 0 ? -1 : 1;
+        var percent = (percentMilli / 1000m).ToString("0.###", CultureInfo.InvariantCulture);
+        var side = bound < 0 ? "least" : "greatest";
+        return P("usccss.g7.u04.error_interval_bound",
+            $"A target value is {target} with a maximum percent error of {percent}%. Find the {side} acceptable value.",
+            "Find the allowed error as a percentage of the target, then subtract for the lower bound or add for the upper bound.",
+            ("target", target), ("percentMilli", percentMilli), ("bound", bound));
+    }
+
     private static Problem CircleCircumference(Random r, int s)
     {
         var radius = r.Next(2, 18 + s * 4);
@@ -1367,6 +1646,17 @@ internal static partial class SupportingPracticeCompletionEngine
             $"A circle has radius {radius}. Its area is kπ. Find k.",
             "Use A = πr² and report the exact coefficient of π.",
             ("radius", radius));
+    }
+
+    private static Problem CircleFractionArea(Random r, int s)
+    {
+        var radius = r.Next(2, 18 + s * 3);
+        var denominator = r.Next(0, 2) == 0 ? 2 : 4;
+        var name = denominator == 2 ? "semicircle" : "quarter-circle";
+        return P("usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
+            $"A {name} has radius {radius}. Its exact area is kπ square units. Find k.",
+            $"Find πr² for the full circle, then divide by {denominator}. Report the exact coefficient of π.",
+            ("radius", radius), ("denominator", denominator));
     }
 
     private static Problem LocusEquidistant(
@@ -2271,6 +2561,30 @@ internal static partial class SupportingPracticeCompletionEngine
     }
 
     private static string FormatPair(int x, int y) => $"({x}, {y})";
+
+    private static bool EquivalentRationalDecimal(string answer, string expected)
+    {
+        static bool TryValue(string text, out decimal value)
+        {
+            value = 0m;
+            var s = text.Trim();
+            var slash = s.IndexOf('/');
+            if (slash >= 0)
+            {
+                if (!decimal.TryParse(s[..slash].Trim(), NumberStyles.Number, CultureInfo.InvariantCulture, out var n) ||
+                    !decimal.TryParse(s[(slash + 1)..].Trim(), NumberStyles.Number, CultureInfo.InvariantCulture, out var d) ||
+                    d == 0m)
+                    return false;
+                value = n / d;
+                return true;
+            }
+            return decimal.TryParse(s, NumberStyles.Number, CultureInfo.InvariantCulture, out value);
+        }
+
+        return TryValue(answer, out var actual) &&
+               TryValue(expected, out var target) &&
+               actual == target;
+    }
 
     private static bool EquivalentPair(string answer, string expected) =>
         NormalizePair(answer) == NormalizePair(expected);

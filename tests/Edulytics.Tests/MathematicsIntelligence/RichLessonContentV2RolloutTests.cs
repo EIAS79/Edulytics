@@ -114,9 +114,10 @@ public sealed class RichLessonContentV2RolloutTests
         }
 
         Assert.Equal(5110, rows.Count);
-        // Curated Rich V2 expands as first-party courses are added. Preserve
-        // exact registry-to-canonical coverage and unique lesson identities,
-        // rather than freezing the old 318-lesson pilot count.
+        // Curated count is data-driven: newly authored grades must not fail
+        // rollout merely because the historical global total was pinned.
+        // A curated sidecar with an unknown lesson or unexpected locale
+        // fails closed instead of inflating the accepted count.
         var curatedLessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(x => x.Lessons)
             .ToArray();
@@ -125,6 +126,25 @@ public sealed class RichLessonContentV2RolloutTests
             curatedLessons.Select(x => x.LessonCode)
                 .Distinct(StringComparer.Ordinal)
                 .Count());
+        Assert.Equal(
+            145,
+            curatedLessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal)));
+        Assert.Equal(
+            131,
+            curatedLessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G8:", StringComparison.Ordinal)));
+
+        var canonicalCodes = documents
+            .SelectMany(x => x.Lessons)
+            .Select(x => x.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.All(curatedLessons, lesson =>
+        {
+            Assert.Contains(lesson.LessonCode, canonicalCodes);
+            Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
+        });
+
         Assert.Equal(curatedLessons.Length, readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);

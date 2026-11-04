@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G6 U01:L13 Polyhedra, nets and vertices — Edulytics workmat</title>
+<style>:root{color-scheme:light;font-family:system-ui,Arial,sans-serif}
+body{max-width:900px;margin:auto;padding:17px;color:#172638;line-height:1.5}h1,h2{line-height:1.3}
+section{margin-top:17px;border-top:1px solid #bcc5d2;padding-top:13px}
+.note{border-left:4px solid #527198;background:#f0f5f9;padding:12px}fieldset{display:flex;gap:13px;flex-wrap:wrap}
+label{display:block;max-width:200px}input{display:block;width:8em;padding:7px;margin-top:4px}button{padding:9px 13px;cursor:pointer}
+output{display:block;padding:10px;min-height:1em}svg{max-width:350px;width:100%;border:1px solid #aebacc}
+@media print{button{display:none}body{padding:0}.note{background:white}}
+</style></head>
+<body>
+<h1>Grade 6 · Unit 1 · Lesson 13 — Polyhedra and Nets</h1>
+<p class="note">Independently authored Edulytics classroom worksheet based on original OUR/IM 6–8 lesson 13.1–13.3. Not a copy of the historical publisher net diagrams, protected teacher responses or 13.4 Cool-down. Teacher must inspect the <strong>physically folded figure</strong>, not grade folding by counts alone.</p>
+<section><h2>13.1 — Is this a polyhedron?</h2>
+<p>Polygonal <strong>faces</strong> meet along whole <strong>edges</strong>, which meet at <strong>vertices</strong>. A closed 3D surface composed of flat polygons encloses a region. Curved spheres and cones and an open-top box do not satisfy this working definition.</p>
+<p>Original practice 1: A rectangular pyramid, B many-faced closed polyhedron and D hexagonal prism qualify. C cone and E sphere do not. Explain each classification.</p></section>
+<section><h2>13.2 — A tetrahedron net has four triangular faces</h2>
+<p>Cut out or copy this <em>independent geometric example</em> of a triangular-pyramid net. Three triangles share complete edges with a fourth central triangle. Mark folds and test assembly with paper/tape; the original source arrangements 1 and 2 fold, but original net 3 does not.</p>
+<svg role="img" aria-labelledby="net-title net-desc" viewBox="0 0 310 335" xmlns="http://www.w3.org/2000/svg">
+<title id="net-title">Net of a tetrahedron: central triangle with three attached</title>
+<desc id="net-desc">One central equilateral triangle with vertices 150,90;90,194;210,194. Three congruent equilateral triangles lie outside each of the central triangle's three edges and share their entire base with the central triangle.</desc>
+<g stroke="#264b6c" stroke-width="3" fill="#b8e2ed">
+<polygon points="150,90 90,194 210,194"/>
+<polygon points="150,90 90,194 30,90" fill="#cbdcbd"/>
+<polygon points="150,90 210,194 270,90" fill="#cbdcbd"/>
+<polygon points="90,194 210,194 150,298" fill="#cbdcbd"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="15" fill="#142638" text-anchor="middle">
+<text x="150" y="169">center</text><text x="92" y="118">fold</text><text x="209" y="118">fold</text><text x="150" y="251">fold</text></g>
+</svg>
+<p><strong>Teacher check:</strong> four triangles are attached along three complete source-length edges; folded tabs meet without gaps or overlap, and the resulting solid has <strong>4 faces, 6 edges, 4 vertices</strong>. A drawing of four triangles merely touching at their corners is <em>not</em> a valid net.</p></section>
+<section><h2>Original practice checks</h2>
+<p>A prism with octagon bases has two octagons and eight rectangular lateral faces. A square-based prism can have rectangular side faces, so Tyler's all-squares claim is incorrect.</p>
+<form id="check"><fieldset>
+<label for="q-faces">Octagonal prism faces<input required id="q-faces" inputmode="numeric"></label>
+<label for="q-edges">Octagonal prism edges<input required id="q-edges" inputmode="numeric"></label>
+<label for="q-vertices">Octagonal prism vertices<input required id="q-vertices" inputmode="numeric"></label>
+<label for="q-area">Practice 5 shaded combined area (cm²)<input required id="q-area" inputmode="decimal"></label>
+</fieldset><button type="submit">Check numeric facts</button><output id="feedback" aria-live="polite"></output></form>
+</section>
+<section><h2>Independent Edulytics Cool-down — not publisher 13.4</h2>
+<p>Construct and label two different <strong>5-face polyhedra</strong>: a triangular prism (two triangles and three rectangles) and a square pyramid (one square and four triangles). Draw a net of each and explain how each net's edges pair. Then explain why equal face counts do not make the solids the same shape.</p>
+<p><strong>Teacher rubric:</strong> correct type and polygonal bases; all five necessary faces; valid edge-to-edge contiguous net; folding checked without overlap; correct face-edge-vertex vocabulary; a written distinction between the solids. Numeric feedback is insufficient for this task.</p>
+<div aria-label="Blank student construction space" style="min-height:160px;border:1px dashed #8898a9"></div>
+</section><button type="button" id="print">Print for teacher</button>
+<script>"use strict";
+document.getElementById("check").addEventListener("submit",ev=>{
+ ev.preventDefault();const ids=["q-faces","q-edges","q-vertices","q-area"],expected=[10,24,16,31];
+ const ok=ids.map((id,i)=>{const t=document.getElementById(id).value.trim();return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(t)&&Number.isFinite(Number(t))&&Number(t)===expected[i]});
+ const n=ok.filter(Boolean).length;
+ document.getElementById("feedback").textContent=n===4?"4/4 numeric facts correct. A teacher must grade the actual nets and explanations.":n+"/4 numeric facts correct; revisit base polygons, lateral edges and original shaded-region subtraction.";
+});
+document.getElementById("print").addEventListener("click",()=>window.print());</script></body></html>

@@ -26,6 +26,22 @@ public sealed class CommonCorePhase04SourceEntityPresentationTests
             .ToArray();
         Assert.Equal(20, flagged.Length);
 
+        // The exact eight Grade 5 original-source-bound display repairs
+        // are now applied in the candidate pack's WORKED EXAMPLES only.
+        // This finite reviewed source-identity list must never authorize
+        // arbitrary deletion of HTML-entity warnings in another lesson.
+        var grade5AuthoringEntityFixes = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "PED:US-CCSS-MATH:G5:U01:L10",
+            "PED:US-CCSS-MATH:G5:U04:L14",
+            "PED:US-CCSS-MATH:G5:U05:L11",
+            "PED:US-CCSS-MATH:G5:U05:L25",
+            "PED:US-CCSS-MATH:G5:U06:L08",
+            "PED:US-CCSS-MATH:G5:U08:L02",
+            "PED:US-CCSS-MATH:G5:U08:L05",
+            "PED:US-CCSS-MATH:G5:U08:L09"
+        };
+        var observedGrade5EntityFixes = new HashSet<string>(StringComparer.Ordinal);
         var packs = new Dictionary<string, JsonDocument>(StringComparer.Ordinal);
         try
         {
@@ -56,9 +72,17 @@ public sealed class CommonCorePhase04SourceEntityPresentationTests
                 var hasOriginalEntity =
                     originalExamples.Contains("&nbsp;", StringComparison.Ordinal) ||
                     originalExamples.Contains("&lt;", StringComparison.Ordinal);
+                var permittedGrade5Repair = grade5AuthoringEntityFixes.Contains(lessonCode);
                 Assert.True(hasOriginalEntity ||
-                    lessonCode.StartsWith("PED:US-CCSS-MATH:G4:", StringComparison.Ordinal),
-                    $"An unapproved non-Grade-4 source entity was removed: {lessonCode}");
+                    lessonCode.StartsWith("PED:US-CCSS-MATH:G4:", StringComparison.Ordinal) ||
+                    permittedGrade5Repair,
+                    $"An unapproved source entity was removed: {lessonCode}");
+                if (permittedGrade5Repair)
+                {
+                    observedGrade5EntityFixes.Add(lessonCode);
+                    Assert.DoesNotContain("&nbsp;", originalExamples,
+                        StringComparison.Ordinal);
+                }
 
                 var parsed = LessonPresentationParser.ToPlainText(originalExamples);
                 var readerItems = LessonPresentationParser.Parse(
@@ -87,6 +111,9 @@ public sealed class CommonCorePhase04SourceEntityPresentationTests
             foreach (var pack in packs.Values)
                 pack.Dispose();
         }
+        Assert.Equal(
+            grade5AuthoringEntityFixes.OrderBy(x => x, StringComparer.Ordinal),
+            observedGrade5EntityFixes.OrderBy(x => x, StringComparer.Ordinal));
     }
 
     [Theory]

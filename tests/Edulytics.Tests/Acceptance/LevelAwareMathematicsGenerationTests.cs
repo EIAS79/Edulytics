@@ -11,7 +11,7 @@ namespace Edulytics.Tests.Acceptance;
 
 public sealed class LevelAwareMathematicsGenerationTests
 {
-    private readonly MathematicsQuestionGenerationEngine _engine = new();
+    private readonly Edulytics.Services.MathematicsGeneration.MathematicsQuestionGenerationEngine _engine = new();
 
     [Fact]
     public void Resolver_ExtractsExplicitWithinCeilingFromReviewedOutcome()

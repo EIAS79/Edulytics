@@ -1,0 +1,211 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L01")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-square-measurement"
+           data-g7-u03-l01 aria-label="Grade 7 square measurement relationships">
+    <h3>Measure, Graph, and Judge the Relationship — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u03-l01-square-measurement.svg"
+           alt="Three squares with measured diagonals and exact perimeter and area values."
+           loading="lazy" />
+      <figcaption>Repeated measurements can miss an ideal line slightly without changing the mathematical relationship being investigated.</figcaption>
+    </figure>
+    <h4>1.1 Collect square measurements</h4>
+    <p>Measure or use supplied side and diagonal values for several squares.
+       Record side length, diagonal length, perimeter, and area. Plot
+       diagonal versus perimeter and diagonal versus area on separate graphs.</p>
+    <h4>1.2 Decide which relationships are proportional</h4>
+    <p>Explain why side length and perimeter are proportional. Use the
+       measured diagonal data to decide whether diagonal and perimeter are
+       consistent with a proportional relationship even if points do not
+       land perfectly on one line. Contrast this with area.</p>
+    <h4>1.3 Measurement error</h4>
+    <p>Two students measure the same diagonal as 5.6 cm and 5.8 cm.
+       Give realistic reasons for the difference and explain why a small
+       measurement discrepancy is not enough by itself to reject proportionality.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>Squares with sides 2, 4, and 6 have perimeters 8, 16, and 24
+         and areas 4, 16, and 36. Perimeter scales directly with side,
+         while area scales with the square of side length.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>A class records square data with approximate diagonals 2.8, 5.7,
+       and 8.5 for side lengths 2, 4, and 6. The matching perimeters are
+       8, 16, and 24. Decide whether diagonal and perimeter are reasonably
+       modeled as proportional, explain the role of measurement error,
+       and state whether diagonal and area should be proportional.</p>
+    <p><strong>Teacher review:</strong> Check the physical measurements,
+       plotted graphs, explanation of scatter and distinction between
+       experimental evidence and exact structure. Machine Practice checks
+       only closed table, graph, and area subresults. The Cool-down is
+       independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L02")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-circle-features"
+           data-g7-u03-l02 aria-label="Grade 7 defining features of a circle">
+    <h3>What Makes a Shape a Circle? — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u03-l02-circle-features.svg"
+           alt="A circle with center O, one radius, one diameter through the center, and the circumference labeled."
+           loading="lazy" />
+      <figcaption>A circle is the set of points at one fixed distance from its center; a diameter is two radii end to end through the center.</figcaption>
+    </figure>
+    <h4>2.1 Sort and justify</h4>
+    <p>Compare several round-looking shapes. Decide which are mathematical
+       circles and justify each decision using equal distance from one center,
+       not appearance alone.</p>
+    <h4>2.2 Measure radius and diameter</h4>
+    <p>Choose or draw a circle. Measure a radius in at least two directions
+       and a diameter in at least two directions. Record ordinary measurement
+       variation, then compare each diameter with twice the corresponding radius.</p>
+    <h4>2.3 Construct a circle</h4>
+    <p>Use a compass or another fixed-radius method to draw a circle with
+       radius 4 cm. Mark the center, two radii, and one diameter. Explain why
+       moving the pencil while keeping the fixed distance creates the circle.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>If r=4 cm, d=8 cm. If d=11 cm, r=5.5 cm.
+         Small differences in hand measurement do not change d=2r for an ideal circle.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>Circle A has radius 3.5 cm and circle B has diameter 10 cm.
+       Find the missing diameter and radius. Then state one defining
+       property that both figures must satisfy to be circles and describe
+       how you would check it with a measuring tool.</p>
+    <p><strong>Teacher review:</strong> Check sorting justification, geometric
+       construction, measurement technique and use of center/radius/diameter
+       vocabulary. Machine Practice checks only exact radius-diameter
+       conversion. The Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L03")
+{
+  <section class="rich-lesson-section" data-g7-u03-l03 aria-label="Grade 7 circumference and diameter">
+    <h3>Discover π from Measurements — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l03-circumference-diameter.svg" alt="Table and graph showing circumference divided by diameter is close to 3.14." loading="lazy" />
+      <figcaption>Measurement error causes small scatter, while the ideal relationship is C=πd.</figcaption></figure>
+    <h4>3.1 Measure and compare</h4><p>For several circular objects, record diameter and circumference with the same unit. Compute C/d for every row and compare the results.</p>
+    <h4>3.2 Graph circumference versus diameter</h4><p>Plot the measured pairs, draw a reasonable line through the origin, and interpret its slope. Explain why the slope is approximately π rather than an arbitrary constant.</p>
+    <h4>3.3 Audit a suspicious measurement</h4><p>A table lists d=5 cm with C=15.7 cm and d=8 cm with C=31.4 cm. Identify the suspicious row and justify the decision using C/d.</p>
+    <details><summary>Numerical self-check</summary><p>For d=5, C≈15.7 gives C/d≈3.14. For d=8, C=31.4 gives C/d≈3.925, so that row is inconsistent with the circle relationship.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A circle has diameter 12 cm. Give its circumference exactly in terms of π and approximately using 3.14. Then explain what π means in the ratio C/d and how ordinary measurement error could affect a classroom estimate.</p>
+    <p><strong>Teacher review:</strong> Check physical measurement, graph construction, choice of reasonable fit and explanation of π. Machine Practice scores exact circumference, radius/diameter and table subresults only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L04")
+{
+  <section class="rich-lesson-section" data-g7-u03-l04 aria-label="Grade 7 applying circumference">
+    <h3>Use Circumference in Context — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l04-applying-circumference.svg" alt="A full circle with diameter 20 meters and a semicircle with diameter 12 units illustrating circumference and arc length." loading="lazy" />
+      <figcaption>First decide which curved boundary is present; then choose exact π or a stated approximation appropriate to the question.</figcaption></figure>
+    <h4>4.1 Exact before approximate</h4><p>A circular walking path has diameter 20 m. Write one-lap distance exactly in terms of π, then approximate it using 3.14. Explain why both answers can be valid in different contexts.</p>
+    <h4>4.2 Composite boundary</h4><p>A semicircle has diameter 12 units and is attached to two straight segments of lengths 8 and 8. Find the curved arc exactly and describe how to combine it with the straight parts when finding an outside perimeter.</p>
+    <h4>4.3 Work backward</h4><p>A circular wheel has circumference 36π cm. Determine its diameter and radius, and explain which formula step you reversed.</p>
+    <details><summary>Numerical self-check</summary><p>For d=20, C=20π≈62.8 m. A semicircle with d=12 has curved arc 6π. If C=36π, then d=36 and r=18.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>Two circular signs have radii 6 cm and 10 cm. Give each circumference exactly in terms of π and approximately using 3.14. Then state which approximation is more useful for cutting a real strip of trim and why the exact form should still be kept during intermediate work.</p>
+    <p><strong>Teacher review:</strong> Check composite-boundary selection, units and justification for the chosen π approximation. Machine Practice checks exact circumference and radius/diameter conversions only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L05")
+{
+  <section class="rich-lesson-section" data-g7-u03-l05 aria-label="Grade 7 circumference and wheels">
+    <h3>From Wheel Rotations to Distance — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l05-wheel-roll.svg" alt="A wheel rolls along a line; each complete rotation advances by one circumference." loading="lazy" /><figcaption>Without slipping, one complete rotation advances the wheel by exactly one circumference.</figcaption></figure>
+    <h4>5.1 One rotation</h4><p>A wheel has diameter 10 units. Find its circumference exactly and explain why one complete rotation travels 10π units.</p>
+    <h4>5.2 Many rotations</h4><p>Use distance = circumference × rotations to find the exact distance for 3, 8, and 15 rotations. State what changes if the wheel slips.</p>
+    <h4>5.3 Reverse the calculation</h4><p>A wheel with circumference 64 inches travels 320 inches without slipping. Find the number of rotations. Then convert 300 yards to inches before comparing with a 64-inch wheel.</p>
+    <details><summary>Numerical self-check</summary><p>For d=10, C=10π. Three rotations travel 30π. A 64-inch wheel traveling 320 inches makes 5 complete rotations.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A bicycle wheel has diameter 24 inches and makes 18 complete rotations. Give the exact distance in terms of π. Then a second wheel has circumference 60 inches and travels 900 inches: find its rotation count. Explain the no-slip assumption.</p>
+    <p><strong>Teacher review:</strong> Check unit conversions, physical rolling model and no-slip explanation. Machine Practice checks exact circumference, distance and rotation-count subresults. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L06")
+{
+  <section class="rich-lesson-section" data-g7-u03-l06 aria-label="Grade 7 estimating irregular areas">
+    <h3>Estimate Irregular Areas — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l06-area-estimation.svg" alt="An irregular region decomposed into a rectangle and triangles for area estimation." loading="lazy" /><figcaption>Approximation is a modeling choice: use measurable polygons that follow the boundary closely enough for the purpose.</figcaption></figure>
+    <h4>6.1 Decompose a floor plan</h4><p>Split an L-shaped floor into non-overlapping rectangles or subtract a rectangular cutout. Label every required measurement and calculate the area in two ways.</p>
+    <h4>6.2 Approximate an irregular map region</h4><p>Overlay a small number of rectangles, triangles, or parallelograms on an irregular outline. State the measurements needed and explain whether your construction is likely an overestimate or underestimate.</p>
+    <h4>6.3 Improve the estimate</h4><p>Refine one boundary with an additional polygon. Compare the two estimates and explain why adding detail does not automatically guarantee accuracy if the measurements are poor.</p>
+    <details><summary>Numerical self-check</summary><p>A 12-by-9 rectangle with a 4-by-3 corner removed has area 108−12=96 square units. The same result comes from adding two non-overlapping rectangles that cover the remaining region.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A park outline can be modeled by a 20-by-12 rectangle plus a triangle with base 8 and height 6, minus a 4-by-3 rectangular pond. Calculate the modeled area and name one geometric reason the real park area could differ.</p>
+    <p><strong>Teacher review:</strong> Check the student’s chosen decomposition, measurement labels, over/under-estimate reasoning and modeling limitations. Machine Practice scores exact polygon and compound-area subresults only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L07")
+{
+  <section class="rich-lesson-section" data-g7-u03-l07 aria-label="Grade 7 exploring circle area">
+    <h3>Explore the Area of a Circle — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l07-circle-area-bounds.svg" alt="A radius-three circle bounded by an outer square of area 36 and an inner rotated square of area 18." loading="lazy" /><figcaption>Simple enclosing and inscribed shapes can bound a circle’s area before the exact formula is formalized.</figcaption></figure>
+    <h4>7.1 Estimate with a grid or bounding shapes</h4><p>For a circle of radius 3, use the inner and outer squares to argue that its area is between 18 and 36 square units. Compare that interval with 9π.</p>
+    <h4>7.2 Test proportionality</h4><p>Compare circles with diameters 2, 4, and 6. Record radii and exact areas. Decide whether diameter and area are proportional and explain why doubling diameter multiplies area by four.</p>
+    <h4>7.3 Radius squared</h4><p>For several radii, compare A/r². Describe the pattern and explain why area depends on a squared linear measure rather than on radius alone.</p>
+    <details><summary>Numerical self-check</summary><p>For r=3, A=9π≈28.27, which lies between 18 and 36. Doubling r multiplies r², and therefore area, by 4.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>Circle A has radius 4 and circle B has radius 8. Give both exact areas in terms of π, compare the area factor, and decide whether radius and area form a proportional relationship. Support the conclusion with both numbers and structure.</p>
+    <p><strong>Teacher review:</strong> Check bounding arguments, diagrams and explanations of why area is not proportional to radius or diameter. Machine Practice checks exact circle-area, radius/diameter and closed proportional-table subresults. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L08")
+{
+  <section class="rich-lesson-section" data-g7-u03-l08 aria-label="Grade 7 relating circle area to circumference">
+    <h3>Rearrange a Circle to Explain Its Area — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l08-sector-rearrangement.svg" alt="Circle sectors alternating to form an almost rectangle with base pi r and height r." loading="lazy" /><figcaption>As sectors become narrower, the rearranged figure approaches a rectangle with base half the circumference and height equal to the radius.</figcaption></figure>
+    <h4>8.1 Track the dimensions</h4><p>For radius r, identify the total top-and-bottom arc length of the alternating strip and explain why one long side approaches half the circumference, πr.</p>
+    <h4>8.2 Connect to area</h4><p>Use base ≈πr and height r to explain why the rearranged area is πr², while noting that rearranging pieces does not change total area.</p>
+    <h4>8.3 Use both formulas</h4><p>A circle has circumference 14π. Find its radius and exact area. Then explain which formula supplied each step.</p>
+    <details><summary>Numerical self-check</summary><p>C=14π gives r=7, so A=49π. The derivation uses C/2=πr as the approximate base of the rearranged sectors.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A circle has circumference 18π. Find its radius and area exactly. Then give a two-sentence geometric explanation of why half the circumference appears as the base in the sector rearrangement.</p>
+    <p><strong>Teacher review:</strong> Check the sector-rearrangement reasoning and explanation of the limiting rectangle. Machine Practice checks exact circumference, radius and area subresults only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L09")
+{
+  <section class="rich-lesson-section" data-g7-u03-l09 aria-label="Grade 7 applying circle areas">
+    <h3>Apply Area of Circles — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l09-partial-composite-circles.svg" alt="Full, half, and quarter circles with radius six plus a rectangle with a circular cutout." loading="lazy" /><figcaption>Identify the fraction of each disk before combining regions; keep π exact unless the context requires a decimal.</figcaption></figure>
+    <h4>9.1 Partial disks</h4><p>A circle has diameter 12. Find the exact area of the full disk, a semicircle, and a quarter-circle. Explain why halving or quartering the figure halves or quarters the area.</p>
+    <h4>9.2 Composite region</h4><p>A rectangular panel is 18 by 14 units with a circular hole of radius 4. Write the remaining area exactly and explain why subtraction, not addition, models the shaded material.</p>
+    <h4>9.3 Recover area from circumference</h4><p>A circular clock has circumference 10π. Find its radius and exact area, showing the formula transition from circumference to radius to area.</p>
+    <details><summary>Numerical self-check</summary><p>For d=12, r=6: full area 36π, half 18π, quarter 9π. The 18-by-14 panel with a radius-4 hole has area 252−16π.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A quarter-circle has radius 10. Give its exact area. Then a 20-by-20 square contains a circle of radius 8: write the area outside the circle but inside the square exactly. State which region is subtracted and why.</p>
+    <p><strong>Teacher review:</strong> Check diagram interpretation, region selection and composite reasoning. Machine Practice scores full/partial circle coefficients and closed compound-area subresults only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L10")
+{
+  <section class="rich-lesson-section" data-g7-u03-l10 aria-label="Grade 7 circumference versus area">
+    <h3>Boundary or Coverage? — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l10-boundary-vs-area.svg" alt="One radius-five circle emphasizes the boundary for circumference and another shades the interior for area." loading="lazy" /><figcaption>Ask what is being measured before choosing a formula: distance around uses circumference; amount of surface covered uses area.</figcaption></figure>
+    <h4>10.1 Choose the measure</h4><p>For each situation—trim around a round table, paint on its top, fence around a circular lawn, grass covering the lawn—state whether circumference or area is required and name the units expected.</p>
+    <h4>10.2 Same circle, different quantities</h4><p>A circle has radius 5 m. Give both circumference and area exactly in terms of π and explain why meters and square meters are not interchangeable.</p>
+    <h4>10.3 Critique a claim</h4><p>A student says a circular garden with diameter 12 m needs 36π meters of sod. Identify both errors in the statement and write a correct quantity with correct units for sod coverage.</p>
+    <details><summary>Numerical self-check</summary><p>For r=5, C=10π meters and A=25π square meters. For d=12, r=6 and sod coverage is 36π square meters.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A circular lawn has diameter 18 m. Find the exact amount of edging needed around it and the exact amount of turf needed to cover it. Label units correctly and explain in one sentence why the two formulas answer different questions.</p>
+    <p><strong>Teacher review:</strong> Check measure selection, units and contextual justification. Machine Practice checks exact circumference, area and radius/diameter values only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U03:L11")
+{
+  <section class="rich-lesson-section" data-g7-u03-l11 aria-label="Grade 7 stained glass circle project">
+    <h3>Model a Stained-Glass Window — Edulytiks</h3>
+    <figure><img src="/curriculum/us-ccss-g7/geometry/u03-l11-stained-glass-model.svg" alt="A radius-two circular stained-glass design beside a cost-model assumptions panel." loading="lazy" /><figcaption>A usable cost model separates geometric quantities from business assumptions: glass uses area; edge trim uses circumference.</figcaption></figure>
+    <h4>11.1 Price a reference window</h4><p>A circular window has radius 2 m. Find its exact glass area and circumference. If glass is priced at 45 currency units per square meter, write a proportional cost equation in terms of glass area and state what is not included in that rate.</p>
+    <h4>11.2 Scale the design</h4><p>Double the radius. Compare the factor change in circumference and area, then explain why material cost based on area does not merely double when the radius doubles.</p>
+    <h4>11.3 Create and defend a design</h4><p>Design a circular or composite stained-glass window. Label dimensions, calculate relevant areas and boundaries, state material rates, include a stated waste allowance if used, and produce a transparent cost estimate with assumptions.</p>
+    <details><summary>Numerical self-check</summary><p>For r=2, area=4π m² and circumference=4π m. Doubling radius to 4 doubles circumference but multiplies area by four.</p></details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4><p>A circular window has radius 1.5 m. Write its exact area and circumference. If glass costs 40 per square meter, write the cost relationship before rounding. Then list two assumptions that a real quote would need beyond the pure geometry.</p>
+    <p><strong>Teacher review:</strong> Check design feasibility, region decomposition, material assumptions, waste/labor treatment and cost justification. Machine Practice checks exact area, compound-area and proportional-equation subresults only. The local student edition has no separate L11 practice page; this Cool-down is independently authored.</p>
+  </section>
+}

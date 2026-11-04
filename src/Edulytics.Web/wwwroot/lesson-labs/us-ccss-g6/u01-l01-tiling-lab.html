@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Grade 6 U01 L01 | Tiling the Plane — Edulytiks</title>
+  <link rel="stylesheet" href="u01-l01-tiling-lab.css">
+  <script src="u01-l01-tiling-lab.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header>
+    <p class="eyebrow">Edulytiks · Grade 6 · Unit 1 · Lesson 1</p>
+    <h1>Tiling the Plane — explore area and coverage</h1>
+    <p>These are original Edulytiks diagrams, not publisher figures. This optional learning workmat is <strong>not the graded Practice activity</strong>. It does not submit, save or grade drawings or explanations.</p>
+  </header>
+  <section aria-labelledby="source-patterns">
+    <h2 id="source-patterns">1. Compare the four patterns</h2>
+    <p>All four targets are <strong>2 × 2 = 4 square units</strong>. In a pattern, a blue square is one piece covering 1 square unit; each yellow right triangle is one piece covering ½ square unit. <strong>Tile count is not covered area.</strong></p>
+    <img class="source-figure" src="/images/public/us-ccss-g6-u01-l01-first-party-tilings.svg"
+       alt="Edulytiks-original patterns: A four blue squares, B eight half-square triangles, C two squares and four half-square triangles, all fully covering four square units; D leaves one unit cell empty. V and H rearrange the same mixed pieces.">
+    <p>Which one does not belong? Give at least two defensible criteria (for example coverage and the number of tile types). Multiple explanations may be valid.</p>
+    <label for="class-reason">My explanation for A, B, C and D</label>
+    <textarea id="class-reason" rows="3" maxlength="2000" placeholder="My criteria and evidence…"></textarea>
+  </section>
+  <section aria-labelledby="construct-title">
+    <h2 id="construct-title">2. Build a tiling on a 2 × 2 target</h2>
+    <p>Each cell can contain a whole square, two half-square triangles, one triangle, a gap, or an overlapping square and triangle. Try the examples, then use the four selectors to build your own arrangement.</p>
+    <nav class="presets" aria-label="Load an example">
+      <button type="button" data-preset="a">A · squares only</button>
+      <button type="button" data-preset="b">B · triangles only</button>
+      <button type="button" data-preset="v">V · mixed, vertical</button>
+      <button type="button" data-preset="h">H · mixed, horizontal</button>
+      <button type="button" data-preset="gap">D · gap</button>
+      <button type="button" data-preset="trick">Misleading area sum</button>
+    </nav>
+    <div class="workmat">
+      <div>
+        <div class="mosaic" id="mosaic" role="img" aria-label="Tiling diagram with four cells"></div>
+        <div id="editors" class="editors" role="group" aria-label="Choose the pieces in each cell"></div>
+      </div>
+      <div class="results" aria-live="polite" aria-atomic="true">
+        <h3>What does this arrangement show?</h3>
+        <dl>
+          <div><dt>Number of blue square pieces</dt><dd id="square-count">—</dd></div>
+          <div><dt>Number of yellow triangle pieces</dt><dd id="triangle-count">—</dd></div>
+          <div><dt>Sum of individual piece areas</dt><dd id="area-sum">—</dd></div>
+          <div><dt>Target region actually covered</dt><dd id="covered-area">—</dd></div>
+          <div><dt>Uncovered area (gaps)</dt><dd id="gap-area">—</dd></div>
+          <div><dt>Overlapping area</dt><dd id="overlap-area">—</dd></div>
+        </dl>
+        <p id="coverage-status" class="status"></p>
+        <p id="inventory-status"></p>
+        <p class="small">This is a simplified four-cell teaching model, not a full geometric polygon verifier. The production selected Practice contract and teacher-scoring workflow are separate.</p>
+      </div>
+    </div>
+    <section class="capture-panel" aria-labelledby="capture-title">
+      <h3 id="capture-title">Keep two different constructions for teacher comparison</h3>
+      <p>Build one arrangement, capture it, change the cell selectors and capture a second one. Both arrangements remain visible and printable. These browser-only snapshots are not submissions or automatic marks.</p>
+      <div class="capture-buttons"><button type="button" id="capture-first">Capture construction 1</button><button type="button" id="capture-second">Capture construction 2</button></div>
+      <div class="captures" id="captures" aria-label="Two student arrangement snapshots" aria-live="polite">
+        <article id="construction-first" class="capture-item"><h4>Construction 1</h4><p>Not captured</p></article>
+        <article id="construction-second" class="capture-item"><h4>Construction 2</h4><p>Not captured</p></article>
+      </div>
+      <p id="comparison-status" class="status" role="status">Capture both arrangements; your teacher must review their completeness, distinctness and explanation.</p>
+    </section>
+    <p><strong>Challenge:</strong> Use exactly <strong>2 blue unit squares</strong> and <strong>4 yellow half-square triangles</strong>. Make two different complete tilings; each shape type must cover 2 square units. Explain why equal numerical area alone does not rule out gaps or overlaps.</p>
+    <label for="construction-reason">Describe your second/third construction and why it is valid</label>
+    <textarea id="construction-reason" rows="4" maxlength="3000" placeholder="Locations of pieces, common units, boundaries, gap/overlap check…"></textarea>
+  </section>
+  <section aria-labelledby="hexagons">
+    <h2 id="hexagons">3. Eight hexagons: count pieces, then compare area</h2>
+    <p>The historical lesson asks for area comparisons of colored polygon tiles. This <strong>first-party numerical model</strong> uses one small triangle as <strong>one triangular area unit</strong>, not one square unit.</p>
+    <div class="table-wrap"><table>
+      <caption>Eight groups with 3 trapezoids, 4 rhombi and 7 small triangles in each</caption>
+      <thead><tr><th scope="col">Color and shape</th><th scope="col">Pieces in 8 groups</th><th scope="col">Area of each piece</th><th scope="col">Total triangular area units</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Red trapezoids</th><td>8 × 3 = <strong>24</strong></td><td>3 triangle units</td><td><strong>72</strong></td></tr>
+        <tr><th scope="row">Blue rhombi</th><td>8 × 4 = <strong>32</strong></td><td>2 triangle units</td><td><strong>64</strong></td></tr>
+        <tr><th scope="row">Green triangles</th><td>8 × 7 = <strong>56</strong></td><td>1 triangle unit</td><td><strong>56</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Most pieces:</strong> green (56). <strong>Greatest area:</strong> red (72 triangular units). The total colored area is 192 triangular units, and rotating or translating unchanged pieces does not change their individual areas.</p>
+    <label for="comparison-reason">Why does the shape with the most pieces not necessarily cover the most area?</label>
+    <textarea id="comparison-reason" rows="3" maxlength="2000" placeholder="Explain using common area units, not just tile counts…"></textarea>
+  </section>
+  <section aria-labelledby="review-title" class="teacher">
+    <h2 id="review-title">4. Teacher review — not automatic scoring</h2>
+    <p>Ask a teacher to examine the actual student diagram (or an equivalent precise cell-by-cell description) and reasoning. The selectors model only constrained cells; they cannot assess arbitrary freehand shapes or justifications.</p>
+    <table><caption>Teacher rubric — select 0, 1, or 2 points per criterion after human review</caption>
+      <thead><tr><th scope="col">Criterion</th><th scope="col">Review score</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><label for="rubric-coverage">Whole target covered once with no gaps or overlaps</label></th><td><select id="rubric-coverage" class="rubric"><option value="">Not reviewed</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></td></tr>
+        <tr><th scope="row"><label for="rubric-units">Correct comparison using one consistent area unit</label></th><td><select id="rubric-units" class="rubric"><option value="">Not reviewed</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></td></tr>
+        <tr><th scope="row"><label for="rubric-distinct">Two valid distinct arrangements using the required pieces</label></th><td><select id="rubric-distinct" class="rubric"><option value="">Not reviewed</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></td></tr>
+        <tr><th scope="row"><label for="rubric-reasoning">Clear explanation distinguishing piece count, area and coverage</label></th><td><select id="rubric-reasoning" class="rubric"><option value="">Not reviewed</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></td></tr>
+      </tbody>
+    </table>
+    <label for="teacher-comments">Teacher feedback</label>
+    <textarea id="teacher-comments" rows="3" maxlength="3000" placeholder="Observations, requested corrections and feedback…"></textarea>
+    <p><strong>Review status:</strong> <span id="review-status">Not reviewed</span>. The rubric is filled by the teacher, not calculated from the diagram.</p>
+    <p class="small">This workmat is browser-only. No answer, rubric or feedback is transmitted to or persisted by Edulytiks. Print or save a copy and provide it to the teacher separately.</p>
+    <button type="button" id="print-work">Print / Save this workmat</button>
+  </section>
+  <footer><p>Grade 6 U01:L01 original teaching aid. The protected publisher Cool-down and live authenticated Practice are not represented as verified here.</p></footer>
+</main>
+</body>
+</html>

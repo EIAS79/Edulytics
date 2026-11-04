@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_U01_L02_COURSE_LOCAL_STAGE_C_PREPARATION_NOT_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+  "title": "Finding Area by Decomposing and Rearranging",
+  "sourceLessonCode": "6.1.2",
+  "sourceSha256": "441e23409386636755283bbf43ac0ff7d500caec77bf39c3046f34cf284783bf",
+  "recordedAtUtc": "2026-10-31T10:25:36+00:00",
+  "branch": "curriculum/us-ccss-g6-full-grade-20261028",
+  "lastClosed": "PED:US-CCSS-MATH:G6:U01:L01",
+  "activeLesson": "PED:US-CCSS-MATH:G6:U01:L02",
+  "A": "CLOSED_PREVIOUS_SOURCE_FIRST_PARTY_EVIDENCE",
+  "B": "CLOSED_PREVIOUS_RICH_V2_SOURCE_WORK",
+  "C": "BLOCKED_EXACT_SELECTED_LESSON_PRACTICE_AND_HUMAN_REVIEW_INTEGRATION",
+  "sourceTaskGoals": [
+    "2.1 distinguish complete covering from mixed-sized square units and gaps/overlap",
+    "2.2 inventory 1 unit square, 4 half-unit triangles, 1 area-1 medium triangle, 2 area-2 large triangles",
+    "2.3 show equivalent decomposed areas and explain equal-area rearrangement"
+  ],
+  "implementation": "src/Edulytics.Core/Mathematics/Practice/UsCcssG6Unit1Lesson2TangramArea.cs",
+  "fixtures": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson2TangramAreaTests.cs",
+  "fixturesStatus": "AUTHORED_NOT_RUN",
+  "halfSquareUnitWeights": {
+    "square": 2,
+    "smallTriangle": 1,
+    "mediumTriangle": 2,
+    "largeTriangle": 4
+  },
+  "fullKit": {
+    "square": 1,
+    "smallTriangle": 4,
+    "mediumTriangle": 1,
+    "largeTriangle": 2,
+    "areaInSquareUnits": 8
+  },
+  "positiveExamples": [
+    "four half-unit small triangles -> area 2",
+    "one large triangle -> area 2",
+    "full kit -> area 8"
+  ],
+  "negativeExamples": [
+    "five small triangles cannot be chosen from a four-piece inventory",
+    "full kit cannot have area 4",
+    "null or negative/out-of-range targets rejected"
+  ],
+  "teacherBoundary": "Numerical area and piece counts cannot verify tangram outlines, non-square requirement, two distinct constructed arrangements, no gaps/overlap or free reasoning. Paper or authenticated teacher review required.",
+  "runtimeSelection": "NOT_SELECTED_FOR_L02",
+  "exactPracticeRoutingVerified": false,
+  "sharedIntegrationRequired": {
+    "engineIdRequested": "USCCSS-G6-U01L02-TANGRAM-AREA-CONSERVATION",
+    "owner": "Supervisor 1 / Admin-cleared exclusive single writer (NEW LEASE REQUIRED)",
+    "paths": [
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+      "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+    ],
+    "requirement": "Select exactly U01:L02 and source-specific tangram inventory/area verifier with equivalent decomposition and teacher-only drawing boundary; reuse existing G6 L01 tiling/area mechanics only when mathematically compatible. Verify Generate/Solve/Verify and feedback; protect other curricula."
+  },
+  "testRun": false,
+  "stageD": "NOT_STARTED",
+  "readyForStageD": false,
+  "closureSha": null,
+  "nextLessonPermission": false
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" role="img" aria-labelledby="g7l09title g7l09desc">
+<title id="g7l09title">Drawing triangles from two angles and one side: exactly one, impossible, or multiple shapes</title>
+<desc id="g7l09desc">Panel A: an independently drawn equilateral triangle has two 60 degree angles and each side 4 centimeters, one congruent shape up to turning or flipping. Panel B: two vertical rays perpendicular to the same 4 centimeter horizontal baseline are parallel and cannot meet to form a triangle, so there is no triangle with two right angles. Panel C: two noncongruent 30-60-90 right triangles have angles at corresponding vertices A 60, B 90 and C 30; first triangle AB equals 4 centimeters, second triangle BC equals 4 centimeters. Their corresponding lengths are different because the unspecified 4 centimeter side was placed differently. All coordinate drawings are independent Edulytiks models, not copies of publisher illustrations. Students must draw and measure their own triangles, identify each 4 centimeter side and justify the 0, 1 or multiple result.</desc>
+<style>
+.bg{fill:white}.panel{fill:#f6f9fc;stroke:#748697;stroke-width:1.5}
+.tri{fill:#dceef7;stroke:#1b4f68;stroke-width:3;stroke-linejoin:round}
+.ray{stroke:#915a25;stroke-width:3;stroke-linecap:round}
+.base{stroke:#23485d;stroke-width:3;stroke-linecap:round}
+.heading{font:bold 18px system-ui,sans-serif;fill:#163447}
+.label{font:16px system-ui,sans-serif;fill:#163447}
+.small{font:14px system-ui,sans-serif;fill:#163447}
+</style>
+<rect class="bg" width="1200" height="460"/>
+<text class="heading" x="18" y="27">Given two angles and one side: how many different triangles can you build?</text>
+<rect class="panel" x="16" y="44" width="320" height="382" rx="8"/>
+<rect class="panel" x="345" y="44" width="310" height="382" rx="8"/>
+<rect class="panel" x="664" y="44" width="517" height="382" rx="8"/>
+<text class="heading" x="32" y="75">A. One shape</text>
+<polygon id="g7-l09-equilateral" class="tri" points="67,305 187,305 127,201.077" data-scale="30" data-side-cm="4"/>
+<text class="label" x="70" y="328">60°</text><text class="label" x="153" y="328">60°</text>
+<text class="small" x="32" y="366">Two 60° angles; one side 4 cm</text>
+<text class="small" x="32" y="391">All copies are congruent</text>
+<text class="heading" x="362" y="75">B. No triangle</text>
+<line class="base" id="g7-l09-impossible-base" x1="420" y1="306" x2="540" y2="306" data-scale="30" data-side-cm="4"/>
+<line class="ray" id="g7-l09-impossible-left" x1="420" y1="306" x2="420" y2="150"/>
+<line class="ray" id="g7-l09-impossible-right" x1="540" y1="306" x2="540" y2="150"/>
+<text class="label" x="428" y="291">90°</text><text class="label" x="492" y="291">90°</text>
+<text class="small" x="362" y="366">Two 90° angles; one side 4 cm</text>
+<text class="small" x="362" y="391">Parallel rays cannot meet</text>
+<text class="heading" x="681" y="75">C. More than one shape</text>
+<polygon id="g7-l09-triangle-ab-four" class="tri" points="715,314 787,314 787,189.2923" data-scale="18" data-side-cm="4" data-labeled-side="AB"/>
+<polygon id="g7-l09-triangle-bc-four" class="tri" points="916,314 957.5692,314 957.5692,242" data-scale="18" data-side-cm="4" data-labeled-side="BC"/>
+<text class="small" x="699" y="338">A 60°</text><text class="small" x="772" y="338">B 90°</text><text class="small" x="792" y="175">C 30°</text>
+<text class="small" x="899" y="338">A 60°</text><text class="small" x="959" y="338">B 90°</text><text class="small" x="966" y="235">C 30°</text>
+<text class="small" x="693" y="366">Left AB=4 cm; right BC=4 cm</text>
+<text class="small" x="693" y="391">Same 60°/90° angles, different sizes</text>
+<text class="small" x="18" y="450">Original Edulytiks teaching references. The side location must be specified; actual learner drawings require teacher review.</text>
+</svg>

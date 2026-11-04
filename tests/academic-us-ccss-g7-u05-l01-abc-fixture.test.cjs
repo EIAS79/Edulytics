@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U05 L01 signed-number supplement authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit5SignedNumbersPractice.cshtml');for(const s of ['data-g7-u05-l01','1.1 Place','1.2 Compare','Cool-down','Teacher review'])assert.ok(v.includes(s));});
+test('U05 L01 exact comparison witness',()=>{const vals=[-7.5,-13/2,2.25];assert.deepEqual([...vals].sort((a,b)=>a-b),[-7.5,-6.5,2.25]);assert.equal(Math.abs(-7.5-(-6.5)),1);});
+test('U05 L01 A-C authored not run',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u05-l01-abc-cursor.json'));assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.newEngine,false);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

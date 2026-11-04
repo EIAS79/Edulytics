@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 460" role="img" aria-labelledby="g7-u07-l04-title g7-u07-l04-desc">
+  <title id="g7-u07-l04-title">Two angle diagrams with equations and missing measures</title>
+  <desc id="g7-u07-l04-desc">Left panel: an upper half-plane at point P is partitioned by two rays into adjacent angles 40 degrees, x degrees, and x degrees, in that order from the horizontal right ray toward the horizontal left ray. They form a straight angle: 40 plus x plus x equals 180, so x equals 70 degrees. Right panel: two straight lines meet at Q. An upper-right angle of 70 degrees is vertically opposite a lower-left angle labeled 3y plus 10 degrees. Their equality gives 3y plus 10 equals 70, so y equals 20. The drawings are independently authored examples, not publisher graphics. Learners should explain how the diagrams support each equation.</desc>
+  <style>
+    .canvas{fill:#fff}.panel{fill:#f7f9fc;stroke:#60748a;stroke-width:1.5}
+    .line{stroke:#243e54;stroke-width:3;stroke-linecap:round}
+    .ray{stroke:#98531d;stroke-width:3;stroke-linecap:round}
+    .origin{fill:#243e54}.heading{font:bold 19px system-ui,sans-serif;fill:#142b42}
+    .label{font:17px system-ui,sans-serif;fill:#142b42}
+    .small{font:15px system-ui,sans-serif;fill:#142b42}
+  </style>
+  <rect class="canvas" width="1060" height="460"/>
+  <text class="heading" x="20" y="30">Use the angle relationships to write and solve an equation</text>
+  <rect class="panel" x="18" y="48" width="492" height="372" rx="9"/>
+  <rect class="panel" x="530" y="48" width="512" height="372" rx="9"/>
+  <text class="heading" x="34" y="83">A. Three parts of a straight angle</text>
+  <line id="g7l04-straight-base" class="line" x1="85" y1="303" x2="420" y2="303"/>
+  <line id="g7l04-ray-40" class="ray" x1="245" y1="303" x2="364.50" y2="202.72" data-angle-deg="40"/>
+  <line id="g7l04-ray-110" class="ray" x1="245" y1="303" x2="193.70" y2="162.05" data-angle-deg="110"/>
+  <circle class="origin" cx="245" cy="303" r="5"/>
+  <text class="small" x="251" y="325">P</text>
+  <text class="label" x="323" y="282">40°</text>
+  <text class="label" x="273" y="214">x°</text>
+  <text class="label" x="156" y="241">x°</text>
+  <text class="small" x="34" y="370">40 + x + x = 180</text>
+  <text class="small" x="34" y="395">2x = 140, so x = 70°</text>
+  <text class="heading" x="548" y="83">B. A pair of vertical angles</text>
+  <line id="g7l04-cross-horizontal" class="line" x1="620" y1="292" x2="914" y2="292"/>
+  <line id="g7l04-cross-diagonal" class="line" x1="724.09" y1="390.67" x2="795.91" y2="193.33" data-angle-deg="70"/>
+  <circle class="origin" cx="760" cy="292" r="5"/>
+  <text class="small" x="765" y="315">Q</text>
+  <text class="label" x="811" y="263">70°</text>
+  <text class="label" x="631" y="354">(3y + 10)°</text>
+  <text class="small" x="548" y="371">3y + 10 = 70</text>
+  <text class="small" x="548" y="396">3y = 60, so y = 20</text>
+  <text class="small" x="20" y="449">Original Edulytiks models. Explain the straight-angle or vertical-angle justification before using the equation.</text>
+</svg>

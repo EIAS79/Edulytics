@@ -29,7 +29,7 @@ public sealed class FullSystemLearningLifecycleTests
         await using var context = CreateContext();
         var fixture = await SeedStudentScopeAsync(context);
         var blueprintEngine = new AssessmentBlueprintEngine();
-        var generationEngine = new MathematicsQuestionGenerationEngine();
+        var generationEngine = new Edulytics.Services.MathematicsGeneration.MathematicsQuestionGenerationEngine();
         var practice = new PracticeService(new PracticeRepository(context));
         var analytics = new AnalyticsProjectionBuilder();
         var adaptive = new AdaptiveDiagnosticAssessmentEngine();
@@ -237,7 +237,7 @@ public sealed class FullSystemLearningLifecycleTests
             4,
             AssessmentDifficultyPolicy.Balanced,
             []));
-        var batch = new MathematicsQuestionGenerationEngine().Generate(new MathematicsGenerationRequest(
+        var batch = new Edulytics.Services.MathematicsGeneration.MathematicsQuestionGenerationEngine().Generate(new MathematicsGenerationRequest(
             blueprint,
             [GenerationProfile(outcomeId)],
             73));

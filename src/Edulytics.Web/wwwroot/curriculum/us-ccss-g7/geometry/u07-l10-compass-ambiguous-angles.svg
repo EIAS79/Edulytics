@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 465" role="img" aria-labelledby="g7-l10-title g7-l10-desc">
+<title id="g7-l10-title">Triangle constructions: compass estimate, ambiguous nonincluded angle, and angle-only scaling</title>
+<desc id="g7-l10-desc">First panel: two 5-centimeter segments join at one 40-degree angle; their endpoint-to-endpoint third side is about 3.42 centimeters, shorter than 5. Second panel: A to B is 8 centimeters, angle A measures 45 degrees, and a compass circle centered B with radius 6 centimeters intersects the positive 45-degree ray from A at two points, giving different third sides approximately 3.66 and 7.66 centimeters. Thus the same attached side-side-nonincluded-angle data admit two distinct noncongruent triangles. Third panel: two triangles, one twice the size of the other, have corresponding angles 50, 60, 70 degrees; three angle measures alone do not determine size. A 50, 60, 100 degree triple is impossible. Original Edulytiks coordinate models, not publisher artwork. Teacher reviews student drawings and measurements.</desc>
+<style>
+.bg{fill:white}.panel{fill:#f7f9fc;stroke:#677d8c;stroke-width:1.4}
+.tri{fill:#dbeef4;stroke:#1b5169;stroke-width:3;stroke-linejoin:round}
+.tri-alt{fill:#f6e5d7;fill-opacity:.45;stroke:#9b5b2f;stroke-width:3;stroke-linejoin:round}
+.dashed{stroke:#9b5b2f;fill:none;stroke-width:2;stroke-dasharray:6 5}
+.heading{font:bold 18px system-ui,sans-serif;fill:#163447}
+.label{font:16px system-ui,sans-serif;fill:#163447}
+.small{font:14px system-ui,sans-serif;fill:#163447}
+</style>
+<rect class="bg" width="1220" height="465"/>
+<text class="heading" x="16" y="29">Use a compass and protractor to find every possible triangle, not just one drawing</text>
+<rect class="panel" x="14" y="46" width="377" height="381" rx="8"/>
+<rect class="panel" x="402" y="46" width="404" height="381" rx="8"/>
+<rect class="panel" x="815" y="46" width="387" height="381" rx="8"/>
+<text class="heading" x="28" y="77">A. 40° between 5 cm sides</text>
+<polygon id="g7-l10-included-five" class="tri" points="90,315 240,315 204.9067,218.5819" data-scale="30" data-angle-a="40"/>
+<text x="106" y="301" class="label">40°</text>
+<text x="28" y="370" class="small">Third side ≈ 3.42 cm, shorter than 5 cm</text>
+<text x="28" y="393" class="small">Measure with a compass opening</text>
+<text class="heading" x="417" y="77">B. 45°, 8 cm, 6 cm: two shapes</text>
+<polygon id="g7-l10-ssa-near" class="tri" points="502,315 694,315 564.0589,252.9411" data-scale="24" data-third-side="near"/>
+<polygon id="g7-l10-ssa-far" class="tri-alt" points="502,315 694,315 631.9411,185.0589" data-scale="24" data-third-side="far"/>
+<line class="dashed" x1="502" y1="315" x2="692" y2="125"/>
+<text x="512" y="298" class="label">45°</text><text x="652" y="338" class="label">AB=8</text>
+<text x="417" y="370" class="small">BC=6 cm in both; AC ≈ 3.66 or 7.66</text>
+<text x="417" y="393" class="small">Different triangles, same 3 conditions</text>
+<text class="heading" x="831" y="77">C. Three angles, two sizes</text>
+<polygon id="g7-l10-aaa-large" class="tri-alt" points="850,325 1006,325 942.4138,214.8655" data-scale="26" data-size="large"/>
+<polygon id="g7-l10-aaa-small" class="tri" points="850,325 928,325 896.2069,269.9328" data-scale="26" data-size="small"/>
+<text x="837" y="345" class="label">50°</text><text x="968" y="345" class="label">60°</text>
+<text x="831" y="370" class="small">50°, 60°, 70°: multiple scales</text>
+<text x="831" y="393" class="small">50°, 60°, 100°: impossible</text>
+<text x="16" y="451" class="small">First-party reference only. Learner-created angle/compass models and explanations must be reviewed by a teacher.</text>
+</svg>

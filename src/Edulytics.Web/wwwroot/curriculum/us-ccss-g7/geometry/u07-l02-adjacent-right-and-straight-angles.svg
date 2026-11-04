@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 365" role="img" aria-labelledby="g7u07l02-title g7u07l02-desc">
+  <title id="g7u07l02-title">Adjacent angles partition a right angle and a straight angle</title>
+  <desc id="g7u07l02-desc">Left panel shows a horizontal rightward ray and vertical upward ray making 90 degrees. A third ray exactly 35 degrees counterclockwise from the rightward ray partitions the right angle into 35 and 55 degrees. Right panel has left and right opposite rays forming 180 degrees. A third ray at 125 degrees counterclockwise from the rightward ray divides the straight angle into 125 and 55 degrees. Adjacent angle regions share one vertex and one side and do not overlap; diagram units are illustrative. Learners must draw, label, measure and explain their own examples.</desc>
+  <style>
+    .bg{fill:#fff}.panel{fill:#f8fafc;stroke:#536171;stroke-width:1.5}
+    .line{stroke:#1a3349;stroke-width:3;stroke-linecap:round}
+    .divider{stroke:#74421a;stroke-width:3;stroke-linecap:round}
+    .arc{fill:none;stroke:#285b74;stroke-width:2.5}
+    .h{font:bold 18px system-ui,sans-serif;fill:#142738}
+    .lab{font:16px system-ui,sans-serif;fill:#172c40}
+    .small{font:14px system-ui,sans-serif;fill:#172c40}
+  </style>
+  <rect class="bg" width="1000" height="365"/>
+  <text class="h" x="20" y="30">Adjacent angles share a side, but do not overlap</text>
+  <rect class="panel" x="18" y="48" width="466" height="300" rx="9"/>
+  <rect class="panel" x="502" y="48" width="480" height="300" rx="9"/>
+  <text class="h" x="35" y="82">Partition a right angle (90°)</text>
+  <text class="h" x="519" y="82">Partition a straight angle (180°)</text>
+  <line class="line" x1="195" y1="271" x2="365" y2="271"/>
+  <line class="line" x1="195" y1="271" x2="195" y2="104"/>
+  <line id="right-angle-35-ray" class="divider" x1="195" y1="271" x2="321.96" y2="182.09" data-angle-deg="35"/>
+  <path class="arc" d="M 256 271 A 61 61 0 0 0 244.97 236.01"/>
+  <text class="lab" x="261" y="255">35°</text>
+  <text class="lab" x="212" y="166">55°</text>
+  <rect x="195" y="255" width="16" height="16" fill="none" stroke="#1a3349" stroke-width="1.5"/>
+  <circle cx="195" cy="271" r="5" fill="#182d3f"/>
+  <text class="small" x="35" y="328">35° + 55° = 90°</text>
+  <line class="line" x1="706" y1="271" x2="900" y2="271"/>
+  <line class="line" x1="706" y1="271" x2="526" y2="271"/>
+  <line id="straight-angle-125-ray" class="divider" x1="706" y1="271" x2="602.76" y2="123.55" data-angle-deg="125"/>
+  <circle cx="706" cy="271" r="5" fill="#182d3f"/>
+  <text class="lab" x="752" y="230">125°</text>
+  <text class="lab" x="562" y="217">55°</text>
+  <text class="small" x="519" y="328">125° + 55° = 180°</text>
+  <text class="small" x="20" y="362">Original reference only. Learners must measure or construct the angles and justify the shared vertex and ray.</text>
+</svg>

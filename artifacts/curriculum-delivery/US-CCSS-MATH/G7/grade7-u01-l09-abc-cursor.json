@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
+  "title": "Creating Scale Drawings",
+  "sourceEdition": "OUR/IM 6-8 Grade 7 2017–2019 ORIGINAL LOCAL; NO AccessIM/v360",
+  "sourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/9/preparation.html",
+    "07_Grade_7_OUR_IM/1/9/index.html",
+    "07_Grade_7_OUR_IM_Student/1/9/index.html",
+    "07_Grade_7_OUR_IM_Student/1/9/practice.html"
+  ],
+  "sourceGoals": [
+    "Create actual-to-plan scale drawings with units",
+    "Compare scales and sizes of the same physical object",
+    "Recover and express a source floor-plan scale equivalently"
+  ],
+  "sourceLedger": [
+    {
+      "sourceElement": "G7-U01-L09-WU",
+      "scope": "9.1 compare three quotient pairs",
+      "artifact": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "status": "MATCHED_TEACHER_LED"
+    },
+    {
+      "sourceElement": "G7-U01-L09-A01",
+      "scope": "9.2 bedroom floor plan 4m wall ->16cm; scaled 2.5,2.75,3.75m walls and peer discussion",
+      "artifact": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "status": "MATCHED_TEACHER_LED"
+    },
+    {
+      "sourceElement": "G7-U01-L09-A02",
+      "scope": "9.3 two different Utah scale drawings at50 and75mi percm, missing corner and scaled dimensions",
+      "artifact": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "status": "MATCHED_TEACHER_LED"
+    },
+    {
+      "sourceElement": "G7-U01-L09-PR",
+      "scope": "Book 1.5in for9in, flag strips, rational area review, first-party scaled rectangle practice",
+      "artifact": "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.cs",
+      "status": "MATCHED_DIGITAL_PLUS_TEACHER_LED"
+    },
+    {
+      "sourceElement": "G7-U01-L09-CD-INDEPENDENT",
+      "scope": "Teacher-reviewed Edulytiks-original Cool-down, no gated publisher copy",
+      "artifact": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "status": "FIRST_PARTY_COOLDOWN_NOT_PUBLISHER_VERIFIED"
+    }
+  ],
+  "existingReused": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
+    "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json"
+  ],
+  "changed": [
+    "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "src/Edulytics.Services/Mathematics/UsCcssG7Unit1Lesson9CreatingDrawingsQuestions.cs"
+  ],
+  "A_STATUS": "A_SOURCE_TASKS_MAPPED_20261104",
+  "B_STATUS": "B_RICH_AND_G7_PARTIAL_AUTHORING_COMPLETED_RUNTIME_NOT_RUN",
+  "C_STATUS": "C_EXACT_SOURCE_SELECTED_QUESTION_FAMILIES_AUTHORED_NOT_RUN",
+  "READY_FOR_STAGE_D": true,
+  "D_STATUS": "NOT_RUN",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "copyright": "No publisher artwork copied; original first-party diagrams; separate CC BY provenance retained",
+  "teacherReview": "Teacher measures actual floor plans, scaled region outlines, door gaps and peer critique. No automated scoring or persistence for drawings.",
+  "nextLesson": "PED:US-CCSS-MATH:G7:U01:L10",
+  "closureSHA": null,
+  "closedAt": "2026-11-04 (authoring only; no real elapsed time recorded)"
+}

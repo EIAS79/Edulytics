@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L10",
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "status": "V13_SOURCE_ALIGNED_ORIGINAL_MODEL_AND_TEACHER_RUBRIC_CANDIDATE",
+  "release": "RELEASE_BLOCKED",
+  "sources": {
+    "student": "https://im.kendallhunt.com/MS/students/2/7/10/index.html",
+    "teacher": "https://im.kendallhunt.com/MS/teachers/2/7/10/preparation.html",
+    "standard": "7.G.A.2",
+    "rights": "OUR/IM 2017–19 CC BY 4.0 source attribution; all SVG points and figures independently constructed by Edulytiks.",
+    "inspected": "Direct public student task statements, accessible figure descriptions and teacher narrative/goals; restricted teacher guide, blackline-master classroom use, full applet behavior and Cool Down not verified."
+  },
+  "activityComparison": [
+    {
+      "activity": "10.1 Using a Compass to Estimate Length",
+      "original": "Draw a measured 40° angle, use compass to make both ray sides 5 cm, connect the free endpoints and decide whether third side is longer or shorter than 5.",
+      "repair": "Replaced unrelated 3/7/11 opening with directly relevant 40° 5 cm included-angle construction and original SVG. Independent math oracle gives BC≈3.42 cm, though Grade 7 students need only compass comparison."
+    },
+    {
+      "activity": "10.2 Revisiting How Many Can You Draw?",
+      "original": "Explore 40° angle with two sides 4 and 5 cm and two 6 cm sides with 100° angle using manipulatives and justify uniqueness/multiplicity.",
+      "repair": "Rich V2 explicitly requires attachment of sides and angle, including one unique included 100°-6/6 example and a separate mathematically exact 45°-8/6 nonincluded two-solution analogue. Original applet's precise student traces not verified; this is not full task parity."
+    },
+    {
+      "activity": "10.3 Three Angles",
+      "original": "Construct 50°/60°/70° triangles with different scales and attempt 50°/60°/100° triple.",
+      "repair": "Existing generic length examples replaced with original drawing task and SVG two distinct-size triangles with same 50°/60°/70° and explanation of impossible 50°/60°/100°."
+    },
+    {
+      "activity": "Dynamic equilateral extension",
+      "original": "Use point, segment and compass tools to make a triangle that remains equilateral when vertices are dragged.",
+      "repair": "Not delivered; required authentic dragging and constraints remain shared-integration / source-parity blocker."
+    }
+  ],
+  "asset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l10-compass-ambiguous-angles.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l10-compass-ambiguous-angles.svg",
+  "richFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u07-l02-l17-our-2017.rich-lesson-v2.json",
+  "math": {
+    "included40": {
+      "anglesDeg": [
+        40
+      ],
+      "sidePairCm": [
+        5,
+        5
+      ],
+      "pxPerCm": 30,
+      "vertices": [
+        [
+          90,
+          315
+        ],
+        [
+          240,
+          315
+        ],
+        [
+          204.9067,
+          218.5819
+        ]
+      ],
+      "thirdSideApproxCm": 3.420201433256687,
+      "answer": "shorter than 5 cm"
+    },
+    "ambiguousSSA": {
+      "angleADeg": 45,
+      "ABcm": 8,
+      "BCcm": 6,
+      "pxPerCm": 24,
+      "A": [
+        502,
+        315
+      ],
+      "B": [
+        694,
+        315
+      ],
+      "Cnear": [
+        564.0589,
+        252.9411
+      ],
+      "Cfar": [
+        631.9411,
+        185.0589
+      ],
+      "ACnearCm": 3.6568542494923806,
+      "ACfarCm": 7.656854249492381,
+      "noncongruentSolutions": 2
+    },
+    "angleOnly": {
+      "angleTripleDeg": [
+        50,
+        60,
+        70
+      ],
+      "pxPerCm": 26,
+      "small": [
+        [
+          850,
+          325
+        ],
+        [
+          928,
+          325
+        ],
+        [
+          896.2069,
+          269.9328
+        ]
+      ],
+      "large": [
+        [
+          850,
+          325
+        ],
+        [
+          1006,
+          325
+        ],
+        [
+          942.4138,
+          214.8655
+        ]
+      ],
+      "scaleFactor": 2,
+      "impossibleTripleDeg": [
+        50,
+        60,
+        100
+      ]
+    }
+  },
+  "studentTask": "Construct original 40° angle with two 5-cm ray segments and compass-check its third side. Draw two 6-cm sides with a 100° included angle and overlay a peer's matching construction. Construct the 45°-8-cm-6-cm nonincluded-angle example using a 6-cm compass circle, mark and measure BOTH valid intersections, then compare the resulting triangles. Draw two different-sized 50°/60°/70° triangles, reject 50°/60°/100° using measured ray closure, and submit diagrams and justifications for teacher evaluation.",
+  "teacherRubric": {
+    "maxScore": 12,
+    "mode": "HUMAN_TEACHER_ONLY",
+    "studentSubmissionPersisted": false,
+    "teacherScoringPersisted": false,
+    "criteria": [
+      {
+        "id": "g7-l10-a",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Accurate original 40-degree angle with two 5 cm sides, compass estimate and teacher-checkable measurements."
+      },
+      {
+        "id": "g7-l10-b",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Construct both intersections for the 45°, AB8, BC6 conditions, measure distinct third sides and justify that both fulfill the same attached input constraints."
+      },
+      {
+        "id": "g7-l10-c",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Draw two distinct scales of valid 50/60/70 triangle and show 50/60/100 is impossible; use an appropriate geometry explanation without requiring formal theorem memorization."
+      },
+      {
+        "id": "g7-l10-d",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Use units, correct attachment of rays, construction trace, self-check and written/oral reasoning; explain included versus nonincluded angle geometry."
+      }
+    ]
+  },
+  "cases": [
+    {
+      "type": "correct",
+      "reply": "Two valid C points for A45, AB8, BC6, AC≈3.66 or7.66; included40,5,5 has third≈3.42",
+      "verdict": "Numerically valid; teacher scoring still requires learner drawing and justification."
+    },
+    {
+      "type": "wrong",
+      "reply": "A fixed angle and two side lengths ALWAYS produce exactly one triangle.",
+      "verdict": "Reject: nonincluded SSA example has two distinct valid intersections."
+    },
+    {
+      "type": "wrong",
+      "reply": "50°,60°,70° fix a single size.",
+      "verdict": "Reject; drawing can be scaled uniformly."
+    },
+    {
+      "type": "degenerate",
+      "reply": "A straight segment with zero area is treated as a triangle.",
+      "verdict": "Reject a collinear construction."
+    },
+    {
+      "type": "ambiguous",
+      "reply": "Angle 100° and sides 6 and 6, but no information states which sides meet or where angle lies.",
+      "verdict": "Require the actual marked angle position before identifying unique construction."
+    },
+    {
+      "type": "incomplete",
+      "reply": "Only says third side shorter than 5 cm and that two triangles exist.",
+      "verdict": "Teacher still needs construction, measurements and reasoning."
+    },
+    {
+      "type": "malformed",
+      "reply": "Circle radii or vertices mislabeled, or 8-cm base not measured.",
+      "verdict": "Reject the malformed side-attachment construction."
+    }
+  ],
+  "nativeTest": "tests/academic-us-ccss-g7-v13-u07-l10-compass-ssa.test.cjs",
+  "nativeTestExecution": "NOT_RUN",
+  "dotnet": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "integration": {
+    "sharedOwner": "American Supervisor 1",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "draftPR": "https://github.com/EIAS79/Edulytics/pull/599",
+    "exactLessonHook": "PENDING",
+    "exactPractice": "NOT_EXECUTED",
+    "humanDrawingSubmission": "NOT_IMPLEMENTED",
+    "teacherScorePersistence": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN"
+  },
+  "academic": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "humanAcceptance": "NOT_EVIDENCED",
+    "ownerUAT": "NOT_RUN"
+  }
+}

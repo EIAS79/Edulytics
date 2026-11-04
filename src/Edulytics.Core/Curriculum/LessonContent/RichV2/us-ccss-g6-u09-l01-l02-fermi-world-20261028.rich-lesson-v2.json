@@ -1,0 +1,232 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g6-u09-source-bound-fermi-population-rich-v2-candidate-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G6:U09:L01",
+      "CultureCode": "en",
+      "Title": "Fermi Problems",
+      "ExplanationParagraphs": [
+        "Learning goal: Build and critique approximate quantitative models for long travel, packing many cartons, and exterior tile coverage.",
+        "Fermi estimates begin with a question missing some physical measurements. Select assumptions, convert to matching units, compute a plausible range, and state why another student could obtain a different defensible result.",
+        "A cross-country ant journey requires distance and speed. A cereal-box warehouse requires actual usable stacking dimensions, not only total volume. A monument covering estimate requires surface area of all exposed faces, tile area and a plausible allowance for cut edges.",
+        "Original Edulytiks examples below are illustrations, not observations or reproductions of source artworks. Original student-designed models, precision and competing assumptions require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Estimate with uncertain inputs",
+          "Definition": "A Fermi question asks for a plausible scale of an unfamiliar result, not one experimentally exact value.",
+          "Rule": "Document the approximations and vary one dominant assumption to test sensitivity.",
+          "Example": "An ideal continuous ant-speed model differs from a route allowing rest and detours."
+        },
+        {
+          "Title": "Dimensional consistency",
+          "Definition": "A rate relates compatible measurement units such as distance per time.",
+          "Rule": "Convert kilometers to millimeters before dividing by a speed measured in millimeters per second.",
+          "Example": "3,900 km = 3.9 billion mm; at 20 mm/s time is 195 million seconds."
+        },
+        {
+          "Title": "Packing and covering",
+          "Definition": "Volume capacity, physical carton fit, and exposed surface area are distinct geometric constraints.",
+          "Rule": "Check real box orientation and available floor dimensions; for tiles count all included faces and allow for edge waste.",
+          "Example": "Two billion hypothetical 0.125-ft³ cereal cartons need at least 250 million ft³ before any wasted space."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "How long could an ant take?",
+          "Question": "Under deliberately simplified assumptions, how long to cover a 3,900-km path at 20 mm/s continuously?",
+          "Method": "Divide compatible distance by speed; retain uncertainty caveats.",
+          "Steps": [
+            "Convert 3,900 km to 3,900,000,000 mm.",
+            "Divide by 20 mm/s to get 195,000,000 seconds.",
+            "Divide by 86,400 seconds/day for about 2,257 days.",
+            "Divide by 365 days/year to obtain approximately 6.2 years."
+          ],
+          "Answer": "Approximately 6.2 continuous years in the ideal model, not a prediction of an actual ant journey.",
+          "Check": "A 10% change in speed produces a substantial change in travel time; stops, lifespan, and real obstacles are excluded."
+        },
+        {
+          "Title": "Pack an illustrative cereal warehouse",
+          "Question": "Model storage of 2 billion boxes each 0.25-by-0.5-by-1 ft in a warehouse 10 ft tall.",
+          "Method": "Model carton volume, floor area, and integer packing alignment.",
+          "Steps": [
+            "Each carton volume is 0.25×0.5×1 = 0.125 ft³.",
+            "Total carton volume is 2,000,000,000×0.125 = 250,000,000 ft³.",
+            "Ideal floor area at 10 ft high is 25,000,000 ft².",
+            "A hypothetical 5,000-by-5,000-ft floor and a 20,000-by-10,000-by-10 aligned carton arrangement fit the assumed count without aisles."
+          ],
+          "Answer": "One idealized floor is 5,000 by 5,000 ft; practical warehouses need space for aisles and non-ideal stacking.",
+          "Check": "A floor with an arbitrarily tiny width could have the correct area and still fail to fit the cartons."
+        },
+        {
+          "Title": "Estimate monument exterior tile coverage",
+          "Question": "Create a labeled model of a tall monument using four trapezoidal faces and triangular top faces. Estimate the tiles needed.",
+          "Method": "Student-defined geometric assumptions and teacher-reviewed open-ended evidence.",
+          "Steps": [
+            "Identify exterior faces including those hidden from a single viewpoint.",
+            "Estimate or research appropriate dimensions with dated/credible sources.",
+            "Decompose trapezoids into measurable rectangles/triangles, and add the exposed face areas.",
+            "Choose the tile area and estimate edge losses or waste; provide a range."
+          ],
+          "Answer": "The numerical estimate depends on explicitly chosen dimensions, tile size, rounding and waste assumptions.",
+          "Check": "Teacher verifies face inventory, consistent square units, realistic assumptions and supported variation. One number is not sufficient."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mixing speed and distance units before division.",
+          "WhyWrong": "km divided by mm/s without conversion does not yield the intended seconds.",
+          "Correction": "Use consistent distance units and check that the compound units reduce to time."
+        },
+        {
+          "Mistake": "Assuming sufficient volume proves feasible physical packing.",
+          "WhyWrong": "Too-narrow dimensions can block storage even when the total space is large enough.",
+          "Correction": "Check integer carton fit along every proposed warehouse edge and account for realistic clearance."
+        },
+        {
+          "Mistake": "Estimating tile coverage from only visible monument faces.",
+          "WhyWrong": "A photograph shows only some of the exterior and cuts may waste tiles.",
+          "Correction": "Include the entire intended exterior and explicitly estimate edge waste."
+        }
+      ],
+      "SummaryPoints": [
+        "Fermi estimates use assumptions, unit conversion and defensible uncertainty ranges.",
+        "Physical packing constraints differ from abstract volume or floor area.",
+        "Open-ended designs and justifications need human evaluation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Three Fermi modeling pathways",
+          "Description": "Text-accessible strategy organizer: a three-row comparison linking ant journey to distance/speed and time units, cereal storage to count×carton volume plus integer packing constraints, and monument tiles to exposed trapezoid/triangle face areas divided by tile area, adjusted for edge waste. No publisher artwork is used.",
+          "PrimaryLabel": "Distance ÷ speed",
+          "SecondaryLabel": "Count × volume; exposed area ÷ tile area",
+          "Items": [
+            "Ant trek: km→mm, seconds→years",
+            "Cereal boxes: capacity and feasible layers",
+            "Monument: shaded exterior including hidden faces"
+          ],
+          "SecondaryItems": [
+            "State assumptions",
+            "Compute plausible bounds",
+            "Explain why no one exact answer"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G6:U09:L02",
+      "CultureCode": "en",
+      "Title": "If Our Class Were the World",
+      "ExplanationParagraphs": [
+        "Learning goal: Model a historical world-population distribution in a hypothetical class and justify fractional percentages, rounding and original visual displays.",
+        "The public 2017–2019 curriculum describes a historical 7.4-billion-person world using 30 representative classmates. This is a dated source-era premise, not a current-world-population statistic. Convert category counts into percentages and scale a source-referenced proportion to other hypothetical class sizes.",
+        "A modeled fraction of a person cannot appear in a classroom diagram. Rounded counts need explanatory choices, and independently selected characteristics may overlap, so they are not automatically a disjoint partition.",
+        "Classroom model data do not describe the actual identities or private demographics of real students. Original research questions, visual representations and interpretations require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Population as a hypothetical class",
+          "Definition": "A smaller group can model a much larger reference population through approximate equivalent ratios.",
+          "Rule": "Scale a known fraction or percentage to a chosen imaginary class size.",
+          "Example": "12 of 30 represents 12/30 = 40% in a dated teaching model."
+        },
+        {
+          "Title": "Whole-number representations",
+          "Definition": "Individual represented people are whole count units, not fractional people.",
+          "Rule": "Report plausible integer approximations and how their percentages deviate from the reference value.",
+          "Example": "10% of a 25-person model gives 2.5; selecting 2 (8%) or 3 (12%) needs an explicit approximation rule."
+        },
+        {
+          "Title": "Interpret and present source data",
+          "Definition": "A visual class model must cite the date and sources used for the representative population measures.",
+          "Rule": "Keep the same whole for each proportion, avoid summing overlapping attributes, and label the chart or accessible table.",
+          "Example": "The historical lesson's sample numbers cannot be presented as verified 2026 world demographics."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use the dated 30-class model",
+          "Question": "A historical illustrative 30-person model assigns 14 to one food characteristic, 12 to the under-20 group, and 5 to a region. What are the complement, age percent, and region proportion?",
+          "Method": "Read the model categories against the same whole of 30 and label its historical nature.",
+          "Steps": [
+            "The complement of the first group is 30−14=16 classmates.",
+            "The under-20 proportion is 12/30=2/5=40%.",
+            "The hypothetical regional proportion is 5/30=1/6≈16.7%.",
+            "If applied to an explicitly dated 7.4-billion premise, that fraction would represent about 1.23 billion, not a current verified regional population."
+          ],
+          "Answer": "The complement is 16 model classmates; the second group is 40%; the regional share is approximately 16.7% of this historical model.",
+          "Check": "No category is assumed disjoint from age or food choices, and the dated world value is not modernized without a source."
+        },
+        {
+          "Title": "Round an approximate class model",
+          "Question": "Suppose a documented/reference example gives a characteristic prevalence of 10%. How can a 25-person model show it?",
+          "Method": "Calculate the expected count and compare two nearby integer approximations.",
+          "Steps": [
+            "Compute 0.10×25=2.5 expected model people.",
+            "Choose two or three entire represented people, not 2.5.",
+            "Two people out of 25 is 8%; three out of 25 is 12%.",
+            "State why both are two percentage points from the 10% target and what rounding rule is used."
+          ],
+          "Answer": "Either 2 or 3 imaginary classmates is a defensible approximate 10% model under a stated choice.",
+          "Check": "Original poster/drawing and choice of approximation require teacher review; there is no uniquely correct visual."
+        },
+        {
+          "Title": "Design a hypothetical world-class display",
+          "Question": "Develop two population research questions, cite dated statistics or state invented illustration premises, and present a scaled 30-person class diagram.",
+          "Method": "Student-selected research, modeling and teacher-reviewed visual communication.",
+          "Steps": [
+            "State two well-posed population questions and the data source/date for each.",
+            "Use equivalent ratios to compute hypothetical whole-person representation counts.",
+            "Explain integer rounding and how overlapping attributes are handled.",
+            "Create a labeled original visual display with a text alternative and evaluate its limitations."
+          ],
+          "Answer": "Several diagrams and population categories are valid when sourced, consistently scaled, labeled and justified.",
+          "Check": "Teacher checks research integrity, ratios, count plausibility, graphic accessibility and explanation. No single numeric verifier replaces this assessment."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating historical world numbers as up-to-date facts.",
+          "WhyWrong": "The lesson's source-era 7.4-billion model is explicitly dated.",
+          "Correction": "Label the reference year/model and verify any actual current statistic separately."
+        },
+        {
+          "Mistake": "Showing 2.5 people or summing overlapping population attributes as disjoint groups.",
+          "WhyWrong": "Class counts must be integers and people may fit several categories.",
+          "Correction": "Choose justified rounded counts and model each overlapping characteristic separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Population-to-class ratios are hypothetical models that require reference source and date.",
+        "Translate percentages to whole-person approximate counts with transparent rounding.",
+        "Teacher-reviewed questions and original visual reports cannot be fully evaluated by one numeric answer."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Historical population model: 30 classmates",
+          "Description": "Text-accessible example comparing historically stated 14 out of 30 people with its complement 16, an under-20 group of 12 out of 30 corresponding to 40%, and a modeled regional group of 5 out of 30 near 16.7%. These categories can overlap, and the original lesson's 7.4-billion number is an historical source premise, not a current data report.",
+          "PrimaryLabel": "12/30 = 40%",
+          "SecondaryLabel": "5/30 ≈ 16.7%",
+          "Items": [
+            "Food-model complement: 30−14=16",
+            "Under 20: 12/30=40%",
+            "Regional model: 5/30≈16.7%"
+          ],
+          "SecondaryItems": [
+            "Model 10% of 25 → 2 or 3 people",
+            "State year and source",
+            "Do not assert real class identities"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

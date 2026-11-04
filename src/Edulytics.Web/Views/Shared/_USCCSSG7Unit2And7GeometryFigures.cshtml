@@ -1,0 +1,1055 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+@{
+    // Grade 7-only opt-in content. This partial is intentionally not called
+    // from the shared Rich V2 renderer: Supervisor 1 controls that integration
+    // under issue #592 and draft PR #599's single-writer boundary.
+    var figure = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U02:L01" =>
+            "/curriculum/us-ccss-g7/geometry/u02-l01-scaled-crescents.svg",
+        "PED:US-CCSS-MATH:G7:U07:L01" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l01-hexagon-angles-and-protractor.svg",
+        "PED:US-CCSS-MATH:G7:U07:L02" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l02-adjacent-right-and-straight-angles.svg",
+        "PED:US-CCSS-MATH:G7:U07:L03" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l03-nonadjacent-vertical-and-complementary-angles.svg",
+        "PED:US-CCSS-MATH:G7:U07:L04" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l04-multi-step-angle-equations.svg",
+        "PED:US-CCSS-MATH:G7:U07:L05" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l05-equation-choice-underdetermined-and-equal-parts.svg",
+        _ => null
+    };
+    var description = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U02:L01" =>
+            "Three original crescent outlines using the same curve: A has width W and height H, B has width 1.5W and height 1.5H, and C has width 1.5W but height H. B is a true copy of A; C is stretched in only one direction.",
+        "PED:US-CCSS-MATH:G7:U07:L01" =>
+            "Three regular hexagon corners of 120 degrees each meet at one vertex to make 360 degrees. The right-hand protractor example measures 40 degrees counterclockwise from its zero ray, not 140 degrees.",
+        "PED:US-CCSS-MATH:G7:U07:L02" =>
+            "Two distinct angle constructions: 35 plus 55 degrees makes a 90-degree right angle; 125 plus 55 degrees makes a 180-degree straight angle. The parts are adjacent and have no overlapping interiors.",
+        "PED:US-CCSS-MATH:G7:U07:L03" =>
+            "Two intersecting straight lines form equal vertical-angle pairs of 55 and 55 degrees and 125 and 125 degrees, with adjacent angles summing to 180 degrees. At separate vertices, a 28-degree angle and a 62-degree angle sum to 90 degrees without being adjacent.",
+        "PED:US-CCSS-MATH:G7:U07:L04" =>
+            "Two original diagrams model unknown angles: a straight angle is partitioned into 40 degrees, x degrees and x degrees, giving 40+2x=180 and x=70. Two intersecting lines have opposite angles of 70 degrees and 3y+10 degrees, so 3y+10=70 and y=20.",
+        "PED:US-CCSS-MATH:G7:U07:L05" =>
+            "In the first original diagram a straight angle has sectors a, 90 degrees and b; a+b=90 does not fix a and b separately. In the second diagram three equal x+10 degree sectors and one 30 degree sector form 180 degrees; 3(x+10)+30=180 gives x=40. The illustrative first diagram must not be measured to invent a unique value.",
+        _ => ""
+    };
+    var learnerTask = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U02:L01" =>
+            "Draw and label at least two crescent copies. Compare one horizontal and one vertical corresponding dimension; explain why a horizontal stretch is not a scaled copy. Explain how the drawing compares with equivalent mixtures.",
+        "PED:US-CCSS-MATH:G7:U07:L01" =>
+            "Assemble three hexagon corners, justify a full turn, and independently draw a right-starting 40-degree angle using the correct protractor scale. Explain why the 140-degree reading is a different angle.",
+        "PED:US-CCSS-MATH:G7:U07:L02" =>
+            "Cut or draw two original rectangular angle constructions, label adjacent parts of 90-degree and 180-degree angles, and explain why their measures add. Check both with a real protractor.",
+        "PED:US-CCSS-MATH:G7:U07:L03" =>
+            "Using a straightedge and protractor, draw two intersecting lines and measure all four angles. Mark both equal vertical pairs, explain why adjacent angles sum to 180 degrees, compare the measurements with a partner, and independently construct separate 28-degree and 62-degree angles to demonstrate nonadjacent complementary angles.",
+        "PED:US-CCSS-MATH:G7:U07:L04" =>
+            "Draw and annotate your own straight and intersecting-line figures. Determine unknown angles with 40+x+x=180 and 3y+10=70, explain why straight angles and vertical angles justify each equation, and check x=70 and y=20 by substitution; review incorrect reasoning with your teacher.",
+        "PED:US-CCSS-MATH:G7:U07:L05" =>
+            "Determine whether a+90+b=180 gives enough information to find a and b individually. Provide two distinct valid pairs. Then draw and label three equal adjacent x+10 sectors and a final 30-degree sector on a straight angle; solve 3(x+10)+30=180, justify the parentheses, check x=40, and correct a wrong solution.",
+        _ => ""
+    };
+}
+@if (figure is not null)
+{
+    <section class="rich-lesson-section rich-lesson-section--g7-source-geometry"
+             aria-label="Grade 7 original geometric construction reference">
+        <h3>Geometric construction and explanation</h3>
+        <figure>
+            <img src="@figure"
+                 asp-append-version="true"
+                 alt="@description"
+                 width="1000"
+                 loading="lazy"
+                 decoding="async"
+                 style="display:block;max-width:100%;height:auto" />
+            <figcaption>
+                Original Edulytiks mathematical example, not a reproduction
+                of an Illustrative Mathematics figure. Student constructions
+                must be individually drawn or measured.
+            </figcaption>
+        </figure>
+        <p><strong>Student task:</strong> @learnerTask</p>
+        <p>
+            <strong>Teacher-only assessment:</strong> Review the learner's
+            actual construction, labeled corresponding geometry, mathematical
+            reasoning and discussion. A numerical Practice answer or this
+            reference figure cannot by itself pass the source task.
+        </p>
+    </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L01")
+{
+    @* First-party Grade7 proportional reasoning lesson, no source artwork. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-proportional-reasoning"
+             data-g7-u02-l01 aria-label="Grade 7 original equivalent-ratio investigation">
+      <h3>One of These Things Is Not Like the Others — Edulytiks</h3>
+      <h4>1.1 Build a labeled double number line</h4>
+      <p>Complete aligned top ticks 0, 2, 4, 6, 8, 10 and
+         bottom ticks 0, 1, 2, 3, 4, 5. Invent a context
+         with TWO different quantities, label both
+         with correct units, and explain the shared
+         multiplicative relationship and how 10
+         on the top corresponds to 5 on the bottom.
+         A teacher should evaluate your invented context.</p>
+      <h4>1.2 Compare first-party mystery drink mixtures</h4>
+      <p>Consider three hypothetical drink recipes:
+         A: 1 cup water and 1.5 teaspoons of powder;
+         B: 2 cups water and 0.5 teaspoon of powder;
+         C: 1 cup water and 0.25 teaspoon of powder.
+         Explain which recipe would have the strongest
+         concentration under equal ingredients, and
+         why B and C are equivalent at 0.25 teaspoon
+         per cup despite differing total amounts.
+         Construct a ratio table or a double number line
+         for both recipes. Any real tasting,
+         classroom supplies, food restrictions and
+         discussion remain teacher-managed.</p>
+      <p>Extension: A hypothetical salt-and-sugar mixture
+         uses water/salt/sugar amounts 2 cups/4 tsp/0.25 cups;
+         a second uses 1.5 cups/3 tsp/0.2 cups;
+         a third uses 1 cup/2 tsp/0.125 cups.
+         Compare BOTH salt and sugar concentration per
+         cup water. The first and third match in both
+         components; the middle differs in sugar ratio.</p>
+      <h4>1.3 Draw and explain scaled crescent-like figures</h4>
+      <p>Using the first-party crescent reference above,
+         compare A with B and C. B grows by a factor
+         1.5 on BOTH width and height; C grows by
+         1.5 in width only. Explain why matching
+         just one ratio does not establish
+         a uniform scaled copy. Draw two figures,
+         mark corresponding maximum widths and heights,
+         then represent their measurements in a table
+         or on a double number line. Have your teacher
+         review the original drawings and argument.</p>
+      <details><summary>Open mathematical checks after reasoning</summary>
+        <p>For the line, 2 top units align with 1 bottom
+           unit and 10 align with 5. For the recipes:
+           A=1.5 tsp/cup, B=0.25, C=0.25;
+           B and C are equivalent. In the salt/sugar
+           extension, mixtures A and C have equal
+           ratios for BOTH ingredients; B's sugar
+           concentration differs. Uniform crescent
+           scale A to B is 1.5 in both dimensions;
+           A to C is NOT uniform.</p>
+      </details>
+      <h4>Cool-down — independent Edulytiks assessment</h4>
+      <p>A color-mixing recipe uses 3 units of blue for
+         every 2 units of yellow. Compare it with
+         a second recipe using 9 blue and 6 yellow,
+         and a third using 9 blue and 8 yellow.
+         Decide which mixture has the same proportions.
+         Draw a double number line showing
+         the equivalent ratios and give a short
+         written explanation of why the third
+         recipe differs. Your teacher evaluates
+         the representation and reasoning.</p>
+      <p><strong>Assessment boundary:</strong> Exact ratio
+         answers can be machine checked; original
+         drawings, real mixtures, learner-invented
+         line contexts and verbal justification
+         require human review. No learner
+         artefact or teacher score is saved by
+         this view, and the publisher's gated
+         Cool-down has not been reproduced.</p>
+    </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L02")
+{
+    <section class="rich-lesson-section rich-lesson-section--g7-proportion-tables"
+             data-g7-u02-l02 aria-label="Grade 7 tables and proportional constants">
+      <h3>Introducing Proportional Relationships with Tables</h3>
+      <h4>2.1 Notice, question and test an inconsistent table</h4>
+      <p>In a hypothetical towel shipment, a table records
+         1 case → 12 rolls, 2 cases → 36 rolls,
+         5 cases → 60 rolls, 10 cases → 120 rolls.
+         Notice and discuss what might be inconsistent.
+         Compute every rolls-per-case ratio, and
+         identify the row that prevents a constant
+         of proportionality. If each case contained
+         12 rolls, 2 cases would require 24 rolls,
+         not 36. Do not ignore the inconsistent entry.</p>
+      <h4>2.2 Feeding a crowd — two proportional tables</h4>
+      <p>A first-party recipe requires 2 cups of rice
+         per 6 people. Complete a ratio table containing
+         2 cups/6 people, 3 cups/9 people,
+         10 cups/? people, and ? cups/45 people.
+         Next a batch of 6 spring rolls serves 3 people.
+         Extend its table for 30 and 40 rolls, and
+         calculate how many rolls are needed for
+         28 people. Explain the constant of
+         proportionality for each chosen column order,
+         and why reversing columns reciprocates it.</p>
+      <h4>2.3 Bread dough — fractional constant</h4>
+      <p>An original class example uses 8 tablespoons
+         of honey for every 10 cups of flour.
+         Complete the table for 20 tablespoons
+         of honey, 13 tablespoons and 20 cups of
+         flour. Write and interpret the constant
+         5/4 cups of flour per tablespoon of honey,
+         and the inverse 4/5 tablespoon of
+         honey per cup of flour. Use diagrams,
+         tables and a written explanation.</p>
+      <h4>2.4 Quarters and dimes</h4>
+      <p>Four quarters have the same value as ten dimes.
+         Create the pairs (1,2.5), (4,10),
+         (6,15) and (14,35).
+         Explain the meaning of 2.5 dimes per quarter
+         as a VALUE equivalent, rather than claiming
+         a shop pays with half a coin. A teacher
+         reviews your table and reasoning.</p>
+      <h4>Additional practice and transfer</h4>
+      <p>Draw a table for chocolate milk:
+         2 cups milk for 3 tablespoons syrup.
+         Determine syrup for 8 and 10 cups and
+         state the constant with units.
+         Separately compare 3 cups of red paint
+         per 7 cups of white paint, and
+         the ratio cards 4:7, 8:15, 16:28,
+         2:3 and 20:35. Identify all ratios
+         equivalent to 4:7 and justify the grouping.
+         Apply previous scale-drawing area rules
+         where appropriate, without replacing
+         this lesson's proportionality work.</p>
+      <details><summary>Check numerical answers after your work</summary>
+        <p>Rice: 10 cups serve 30 people;
+           45 people need 15 cups.
+           Spring rolls: 30 rolls serve 15 people,
+           40 rolls serve 20, and 28 people need
+           56 rolls. Bread dough: 20 tbsp honey
+           use 25 cups flour, 13 tbsp use 16.25 cups,
+           and 20 cups flour need 16 tbsp honey.
+           Quarters-to-dimes factor is 5/2.
+           Chocolate syrup-per-milk factor is 3/2,
+           red paint-per-white factor is 3/7.
+           Matching ratio cards are A, C and E.</p>
+      </details>
+      <h4>Cool-down — independently authored Edulytiks task</h4>
+      <p>One maker uses 6 meters of string to assemble
+         4 identical decorations. Another makes
+         10 decorations with the same design.
+         Complete a table for 1, 4, 7 and
+         10 decorations, and state both the
+         meters-per-decoration constant and
+         its inverse with suitable units.
+         Explain why changing the first
+         column from 4 to 10 is not the same
+         as changing the fixed unit rate.</p>
+      <p><strong>Assessment boundary:</strong> Numeric
+         results are exact Practice; the source
+         table anomaly, written interpretations,
+         invented contexts and hand-drawn tables
+         need teacher review. No third-party
+         figures or gated original Cool-down
+         have been reproduced.</p>
+    </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L03")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-conversion-constants"
+           data-g7-u02-l03 aria-label="Grade 7 reciprocal unit rate tables">
+    <h3>More about Constant of Proportionality — Edulytiks</h3>
+    <h4>3.1 Equivalent measurements</h4>
+    <p>Prepare pairs of equal measurements using mixed
+       time, feet, inches, centimeters and meters:
+       30 minutes = 1/2 hour, 12 inches = 1 foot,
+       0.4 m = 40 cm, and 0.01 m = 1 cm.
+       Make a matching-card collection and justify
+       at least four unit conversions to a partner.</p>
+    <h4>3.2 Centimeters and millimeters: two directions</h4>
+    <p>Construct one table from centimeter values
+       <strong>9, 12.5, 50 and 88.49</strong> to
+       millimeters; then reverse for millimeter
+       values <strong>70, 245, 4 and 699.1</strong>.
+       Report both constants with their physical
+       units: 10 mm/cm, and 1/10 cm/mm.
+       Explain why the inverse constant is not 10,
+       although dividing by 10 produces the
+       correct numerical conversion.
+       Extend the work to areas: 1 cm² = 100 mm²,
+       not 10 mm². Draw a squared-grid
+       explanation for teacher review.</p>
+    <h4>3.3 A plane at constant speed</h4>
+    <p>A first-party flight-table illustration follows
+       the route Pittsburgh → Saint Louis →
+       Albuquerque → Phoenix. An aircraft flies
+       550 miles in 1 hour, then 1 hour and
+       42 minutes on the next leg. At the same
+       speed, calculate the second distance.
+       If the following leg is 330 miles, determine
+       its flying time in minutes. Explain how
+       550 miles/hour and 55/6 miles/minute
+       represent the same rate in different units,
+       and what happens to the constant when
+       the columns change from time→distance
+       to distance→time. Do not reproduce
+       a third-party map graphic.</p>
+    <h4>Practice transfer and review</h4>
+    <p>Complete a runner's table at 6 miles/hour;
+       convert kilometers and meters in both
+       directions; contrast 12 inches/foot with
+       1/12 foot/inch; calculate an area scale
+       when 25,000 square miles correspond
+       to 10 square inches on a plan. Compare
+       first-party nested ovals whose outer,
+       inner and vertical measurements are
+       L=(5,3,4), M=(10,4,8), N=(15,9,12).
+       Which changes uniformly?</p>
+    <details><summary>Numerical self-check</summary>
+      <p>9 cm = 90 mm, 12.5 cm = 125 mm,
+         50 cm = 500 mm, 88.49 cm = 884.9 mm.
+         70 mm = 7 cm, 245 mm = 24.5 cm,
+         4 mm = 0.4 cm, 699.1 mm = 69.91 cm.
+         1 h 42 min = 1.7 h, giving 935 miles.
+         At 550 mph, 330 miles take 36 min.
+         A real/drawn area ratio of 2500 yields
+         a linear scale of 1 drawing inch to
+         50 real miles. Oval M is not uniformly
+         scaled relative to L; N is.</p>
+    </details>
+    <h4>Cool-down — independent Edulytiks task</h4>
+    <p>A bicycle travels 21 kilometers in 1.5 hours
+       at a constant speed. Find the constant
+       kilometers/hour and its reciprocal
+       hours/kilometer. Use the same relationship
+       to calculate the distance in 2.25 hours
+       and time for 35 km. Represent the
+       quantities in a table with correct units
+       and justify the inverse relationship.</p>
+    <p><strong>Teacher review:</strong> Original
+       unit-bearing tables, physical measurement,
+       drawing and flight-map interpretation need
+       human review. Exact arithmetic alone
+       cannot approve the complete activity
+       or a gated publisher Cool-down.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L04")
+{
+  @* First-party Grade 7 U02 L04 mathematical tasks. Teacher must review
+     open-ended reasoning, diagram and equation-writing. No publisher artwork. *@
+  <section class="rich-lesson-section rich-lesson-section--g7-proportional-equations"
+           data-g7-u02-l04 aria-label="Grade 7 proportional equations">
+    <h3>Proportional Tables and Equations — Edulytiks</h3>
+    <h4>4.1 Mental calculation and division</h4>
+    <p>Find 645 ÷ 100, 645 ÷ 50, and 48.6 ÷ 30 mentally.
+       Explain how one division calculation helps with another.
+       Choose a positive divisor x for 48.6 ÷ x and justify
+       why your answer is efficient rather than arbitrary.</p>
+    <h4>4.2 Write equations from recipe tables</h4>
+    <p>A community kitchen uses 2 cups of dry rice to prepare
+       6 servings. Complete a table for 1, 2, 3, 12 and
+       43 cups, and for x cups. State the servings-per-cup
+       constant and write a proportional equation connecting
+       cups x to servings y. Use a second table in which
+       6 spring rolls provide 3 servings: find values for
+       1, 10, 16 and 25 rolls, then write an equation for
+       n rolls. Explain why the two coefficients differ.</p>
+    <h4>4.3 Rate equation for travel</h4>
+    <p>A plane travels 915 miles in 1.5 hours at constant speed.
+       Fill a table of distances at 1, 1.5, 2 and 2.5 hours,
+       then derive d = kt where d is distance in miles
+       and t is elapsed time in hours. Calculate distances
+       for 3 and 3.5 hours. Label units and explain why
+       this proportional relationship passes through the origin.</p>
+    <h4>4.4 Bread ingredients and variable direction</h4>
+    <p>For every 8 tablespoons of honey, a bakery uses
+       10 cups of flour. Complete a table at 1, 8, 16
+       and 20 tablespoons, and for a variable h.
+       Derive f = kh, where flour cups f depend on
+       honey tablespoons h. Calculate flour needed at
+       h = 15 and h = 17. Write the inverse relationship
+       when flour is the input. Explain why switching the
+       variables changes the coefficient.</p>
+    <h4>Independent first-party practice</h4>
+    <p>A workshop processes 7 kilograms of modeling material every 2 hours at a
+       fixed rate. Represent the total material mass y (kilograms) and
+       hours x with an equation y = kx.
+       Make a table for x = 0, 2, 4 and 6 and determine
+       the mass processed in 9 hours. Compare with a
+       wrong proposed rule y = 7x + 2 and explain
+       why a nonzero intercept cannot represent
+       the stated proportional relationship.</p>
+    <details>
+      <summary>Review the computations after completing the tasks</summary>
+      <p>Division: 6.45; 12.9; 1.62.
+         Kitchen rice y = 3x. Rolls y = x/2.
+         Plane d = 610t; at 2, 2.5, 3, 3.5 h:
+         1220, 1525, 1830, 2135 miles.
+         Bakery f = (5/4)h; for 15 and 17 tbsp,
+         f = 75/4 and 85/4 cups; inverse h = (4/5)f.
+         Workshop y = (7/2)x, so 9 hours yields 31.5
+         kilograms of material; this continuous quantity
+         can have fractional values.</p>
+    </details>
+    <h4>Cool-down — independent Edulytiks assessment</h4>
+    <p>A garden supplier fills 4 planters using 7.5 liters
+       of potting mix. Assuming a constant amount per
+       planter, write y = kx for liters y needed
+       for x planters. Fill a table for 0, 2, 4, 6
+       and 10 planters. State and explain the coefficient
+       as a unit rate, then reverse the relationship
+       to express planters as a function of liters.
+       A teacher reviews the equations, table,
+       explanation and units.</p>
+    <p><strong>Teacher review required:</strong> Check equation
+       direction, table completeness, conceptual reasoning
+       and written justifications; auto-graded numeric
+       Practice is only supporting evidence. This activity
+       does not claim to reproduce the inaccessible
+       publisher assessment or automatically grade student work.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L05")
+{
+  @* First-party Grade7 reciprocal-equation lesson, human-reviewed constructions. *@
+  <section class="rich-lesson-section rich-lesson-section--g7-reciprocal-relationships"
+           data-g7-u02-l05 aria-label="Grade 7 two equations for a proportion">
+    <h3>Two Equations for a Relationship — Edulytiks</h3>
+    <h4>5.1 Growing mosaic patterns</h4>
+    <p>Create a two-row tile mosaic. A block contains 3 yellow
+       and 2 blue tiles in each row. Draw the first and third
+       patterns when 1 and 3 blocks are connected, then
+       describe the 10th pattern. Explain the difference
+       between additive changes between patterns and
+       multiplicative relationships within a fixed pattern.
+       A teacher checks your drawings and color counts.</p>
+    <h4>5.2 Meters and centimeters in both directions</h4>
+    <p>Complete two conversion tables: meters to centimeters
+       for 0.94, 1.67 and 57.24 meters, and centimeters
+       to meters for 250, 78.2 and 123.9 centimeters.
+       Write <strong>c = 100m</strong> and
+       <strong>m = (1/100)c</strong>; explain
+       the constant and its reciprocal. Extend to
+       cubic units: why does 1 cubic meter contain
+       1,000,000 cubic centimeters, not 100?</p>
+    <h4>5.3 Filling a water cooler</h4>
+    <p>A water cooler fills with 8 gallons in 5 minutes
+       at a uniform flow rate. Let w be gallons and
+       t be minutes. Write both w = (8/5)t and
+       t = (5/8)w. Explain what 8/5 and 5/8 measure.
+       The flow later changes to 1 gallon every 3 minutes:
+       write both new equations and compare flow speed.
+       Support the comparison with a table or double
+       number line and units.</p>
+    <h4>5.4 Feeding aquarium shrimp</h4>
+    <p>One shrimp receives 1/5 gram three times a day.
+       Complete food totals for 1, 7 and 30 days.
+       Write a forward equation for total food f in grams
+       and days d and its inverse. Consider 10 shrimp:
+       find daily food mass, then determine how many
+       days 300 grams will last at this constant rate.
+       Label tables, equations and the meaning of each
+       reciprocal coefficient.</p>
+    <h4>Independent transfer: meters and kilometers</h4>
+    <p>At a local community event, runners cover 3.5 km.
+       Write equations converting kilometers k to meters m
+       and meters to kilometers. A teacher should confirm
+       the direction and unit labels before accepting work.</p>
+    <details><summary>Numerical checks after independent work</summary>
+      <p>Meter-to-centimeter results: 94, 167 and 5724 cm.
+         Centimeter-to-meter results: 2.5, 0.782 and 1.239 m.
+         Water: 1.6 gallons/min or 0.625 min/gallon;
+         new flow 1/3 gallon/min is slower.
+         Each shrimp eats 3/5 g daily, 21/5 g in 7 days,
+         and 18 g in 30 days. Ten shrimp require 6 g/day,
+         so 300 g lasts 50 days. 3.5 km is 3500 m.</p>
+    </details>
+    <h4>Cool-down — independent Edulytiks assessment</h4>
+    <p>A science club uses 6 liters of dye for 15 identical
+       fabric panels. Let L be liters and p be panels.
+       Derive both L = kp and p = hL,
+       interpret k and h with units, and calculate
+       the amount for 22.5 panels as a continuous
+       mathematical model. Discuss how an actual
+       production order would handle whole panels.
+       Provide a table and explanations for teacher review.</p>
+    <p><strong>Teacher review:</strong> Inspect original
+       diagrams, models, tables, explanations and appropriate
+       units. Numeric checks do not certify the complete
+       lesson or reproduce an inaccessible original Cool-down.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L06")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-equation-problems"
+           data-g7-u02-l06 aria-label="Grade 7 using proportional equations">
+    <h3>Use Equations to Solve Problems — Edulytiks</h3>
+    <h4>6.1 Reason about decimal quotients</h4>
+    <p>Without first calculating, arrange 42.6 ÷ 0.07,
+       42.6 ÷ 70, 42.6 ÷ 0.7 and 426 ÷ 70
+       from least to greatest. Explain the powers of ten.
+       Complete 42.6 ÷ 7 with the decimal point in
+       the correct place, then use the relationship
+       to check the four divisions.</p>
+    <h4>6.2 Tickets, revenue and a realistic count</h4>
+    <p>A first-party theater model expects $311,000 from
+       5,000 equally priced tickets. Derive a price
+       and the equation R = kt. Predict revenue at
+       7,000, 10,000, 50,000 and 120,000 tickets,
+       and for an arbitrary t. Solve for t when
+       R = $404,300. Decide how many whole tickets
+       must be sold to earn at least $5,000,000;
+       distinguish the exact fractional mathematical
+       answer from a realizable whole-ticket count.</p>
+    <h4>6.3 Recycled cans and mass</h4>
+    <p>Ten aluminum cans weigh 0.16 kg and are worth
+       $0.14 in recyclable material. How many cans
+       weigh 2.4 kg, and what are they worth?
+       Use w for mass in kilograms, c for number
+       of cans and r for recycling dollars. Write
+       and explain c = 62.5w, r = 0.014c and
+       r = 0.875w. Explain why the coefficients'
+       units matter, and how each equation is derived.</p>
+    <h4>Transfer practice</h4>
+    <p>A car travels at 65 miles per hour: calculate
+       its distance in 1.5 hours and the time for
+       26 miles. Next, connect bottle count b
+       to total water volume w when each bottle
+       holds 17 fluid ounces. Compare forward
+       and reverse equations and units.</p>
+    <details><summary>Check computed quantities</summary>
+      <p>42.6/70 ≈ 0.60857, 426/70 ≈ 6.0857,
+         42.6/0.7 ≈ 60.857 and 42.6/0.07 ≈ 608.57.
+         Ticket price: $62.20. 6,500 tickets yield
+         $404,300; to earn at least $5,000,000,
+         80,386 whole tickets are required (earning
+         $5,000,009.20). Recycling: 150 cans weigh
+         2.4 kg and earn $2.10.
+         A car drives 97.5 miles in 1.5 hours,
+         and 26 miles takes 0.4 hour.</p>
+    </details>
+    <h4>Cool-down — independent Edulytiks assessment</h4>
+    <p>An art recycling club collects 120 glass containers,
+       weighing 18 kg together. A recycling buyer offers
+       $0.45 for every 3 kg at a fixed rate.
+       Write mass as a function of the container count,
+       and payout as a function of mass and container count.
+       Calculate the payout for 36 kg and explain
+       each coefficient with the correct units.
+       The teacher reviews all model equations, reasoning
+       and any assumptions about identical containers.</p>
+    <p><strong>Teacher review:</strong> Check
+       modeled quantities, inverse operations,
+       whole-item feasibility, explanations and
+       independently created tables. Numeric
+       answers are not a complete automatic grade
+       and do not reproduce a gated assessment.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L07")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-table-ratio-tests"
+           data-g7-u02-l07 aria-label="Grade 7 comparing table proportionality">
+    <h3>Compare Proportional and Nonproportional Tables — Edulytiks</h3>
+    <h4>7.1 Invent contrasting fruit drinks</h4>
+    <p>Mix 5 lemons, 2 cups water and 2 tablespoons honey as a
+       baseline drink. Invent four new batches: larger and
+       smaller batches with the same flavor, a stronger
+       lemon taste and a weaker lemon taste. State quantities
+       for each ingredient and explain which models preserve
+       every ingredient ratio. Compare your proposals with
+       another learner. A teacher reviews taste descriptions.</p>
+    <h4>7.2 Entry fees are not a simple proportional rule</h4>
+    <p>A public park charges $6 per vehicle plus $2 per
+       passenger. Make a table for vehicles with 2, 4, 10
+       and 50 passengers. Calculate each passenger's
+       share if the price is divided equally. Write
+       C = 6 + 2p for entrance cost C and passenger
+       count p. Compare C/p across the rows and explain
+       why this is not a proportional relationship,
+       although a pay-per-person-only price could be.</p>
+    <h4>7.3 Track runner pace tables</h4>
+    <p>Two runners report elapsed minutes after 2, 4, 6
+       and 8 laps. Runner A: 4, 9, 15 and 23 minutes.
+       Runner B: 5, 10, 15 and 20 minutes. Compute minutes
+       per lap in each row; identify whose observed
+       times are consistent with a constant pace.
+       Write an equation for the consistent table
+       and explain what an unchanged observed ratio
+       can and cannot establish about unobserved times.</p>
+    <h4>Practice table comparisons</h4>
+    <p>Compare two original smoothie price lists:
+       Shop A offers 8 oz/$6, 12 oz/$9 and 16 oz/$12.
+       Shop B offers 8 oz/$6, 12 oz/$8 and 16 oz/$10.
+       Find price per ounce and decide whether
+       each displayed table <em>could</em> reflect
+       a proportional rule. Test a taxi with $1 for
+       the first tenth mile and $0.10 for each
+       additional tenth; find its cost at 0.9 mile
+       and 3.1 miles. Explain the role of fixed fees.</p>
+    <details><summary>Review numerical results after independent work</summary>
+      <p>Park costs for 2, 4, 10, 50 people are
+         $10, $14, $26, $106, respectively.
+         Cost per person changes from $5 to
+         $3.50 to $2.60 to $2.12, so not proportional.
+         Runner B has a constant 2.5 min/lap;
+         A's pace varies. Shop A's shown pairs
+         all have $0.75/oz, so they are consistent
+         but do not prove unseen prices follow.
+         Shop B's ratios differ. Taxi fares at
+         0.9 and 3.1 miles are $1.80 and $4.00.</p>
+    </details>
+    <h4>Cool-down — original Edulytiks table assessment</h4>
+    <p>A delivery service charges $4 to dispatch a
+       vehicle and $1.50 for each package. Construct
+       a table for 0, 2, 4 and 8 packages and explain
+       why the fee is not proportional to package count.
+       Design a second fee rule that is proportional,
+       write it as y = kx, and compare the two
+       relationships by inspecting ratios and
+       their values at zero packages.</p>
+    <p><strong>Teacher review:</strong> Check tables,
+       original recipes, appropriate zero behavior,
+       justifications and explanations of what
+       finite observations can establish. Numeric
+       classification is supporting Practice only.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L08")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-compare-equations"
+           data-g7-u02-l08 aria-label="Grade 7 comparing equations">
+    <h3>Which Equations Model Proportions? — Edulytiks</h3>
+    <h4>8.1 Notice geometric growth patterns</h4>
+    <p>Construct rectangles with dimensions 1×2, 2×4,
+       3×6 and 4×8 grid units. Record each rectangle's
+       length, perimeter and area. Compare how
+       perimeter and area change with the scale.
+       Discuss why simply noticing a pattern
+       does not prove one proportional equation
+       for all the quantities.</p>
+    <h4>8.2 More conversions: proportional or affine?</h4>
+    <p>Use F=(9/5)C+32 to complete a Celsius-to-Fahrenheit
+       table for C=0,4,20,175. Complete another table
+       converting 1, 3.5, 8 and 10 inches to centimeters
+       using c=2.54n. Explain which relationship is
+       proportional and why starting at zero matters.
+       Include correct temperature and length units.</p>
+    <h4>8.3 Compare cube edges, area and volume</h4>
+    <p>Build or draw cubes with sides of 3, 5, 9.5 and 2
+       units. Make three tables: total edge length E,
+       surface area A and volume V. Derive
+       <strong>E=12s</strong>, <strong>A=6s²</strong> and
+       <strong>V=s³</strong>. State which output is
+       proportional to side length and which are not.
+       Compare with a rectangular prism whose width
+       is 10, height is 5 and varying length is L:
+       why is its volume V=50L proportional to L?</p>
+    <h4>8.4 Test equations with tables</h4>
+    <p>For each input x=2,3,4,5, evaluate six
+       first-party candidates:
+       y=x+4, y=x/4, y=4x, y=4^x, y=4/x
+       and y=x^4. Record y/x for each nonzero x.
+       Identify exactly which two equations have
+       a constant ratio, and explain algebraically
+       why the others cannot be expressed as y=kx.</p>
+    <h4>Practice and evidence boundaries</h4>
+    <p>Classify these relationships: rope remaining
+       L=120-x, final price including 8% sales tax
+       t=1.08p, sharing m marbles between four people
+       x=m/4, and square-base prism V=12s².
+       Build a table for y=(5/2)x and compare it
+       with y=3.2x+5. A teacher checks equations,
+       complete tables and explanations, not just
+       single numeric responses.</p>
+    <details><summary>Independent computation check</summary>
+      <p>At x=2, y=x/4 gives 0.5 and y=4x gives 8;
+         these are the only two proportional rules
+         among the six candidates. A cube's edge
+         total is 12s while its surface area 6s²
+         and volume s³ are not proportional to s.
+         At s=3, E=36, A=54, V=27.
+         F(0)=32 shows the offset, while c=2.54n
+         passes through zero. Tax and four-way
+         marble splitting are proportional; a
+         leftover-rope length and square-base prism
+         volume are not.</p>
+    </details>
+    <h4>Cool-down — independent Edulytiks assessment</h4>
+    <p>A shipping box has a fixed 4 cm by 6 cm base,
+       and adjustable height h in centimeters.
+       Determine whether its volume is proportional
+       to h and write the equation. Compare this
+       with a cube of side h and explain why its
+       volume cannot be written using a fixed
+       k times h for all positive h.
+       Include two numerical table rows and
+       a labeled geometric drawing for teacher review.</p>
+    <p><strong>Teacher review:</strong> Check accurate
+       physical construction, units, labeled tables,
+       contextual interpretations and general
+       justification. Number checks alone do not
+       grade complete source activities.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L09")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-info-gap"
+           data-g7-u02-l09 aria-label="Grade 7 proportional information gap">
+    <h3>Solving Problems with Missing Information — Edulytiks</h3>
+    <h4>9.1 Ask the right question first</h4>
+    <p>A runner moves at a constant but initially unknown speed.
+       What information do you need to estimate a finish time?
+       Only after proposing a question, reveal this original
+       data: the race is 10,000 meters, starts at 9:15 a.m.
+       and the runner covers 156.25 meters each minute.
+       Determine the elapsed duration and finish clock time.
+       Explain which data was essential and which was not.</p>
+    <h4>9.2 Two-card cycling information gap</h4>
+    <p>Work in pairs without revealing the data prematurely.
+       Card A asks: How long does a cyclist need to cover
+       90 km at a constant pace? Card B contains additional
+       information in the collapsed panel below.
+       The first learner must ask specific questions
+       and justify why each datum is needed before
+       the other learner reveals it. Exchange roles
+       using a second, rain-related question with
+       an agreed constant-pace assumption.</p>
+    <details><summary>Data card — reveal after the learner asks</summary>
+       <p>Card A's cyclist travels at 15 km/hour.
+          For a second example, a cyclist rides
+          12 km/hour and the storm begins after
+          1 hour 45 minutes. Find how far the cyclist
+          travels before the storm, with units.
+          Discuss what would change if speed varied.</p>
+    </details>
+    <h4>9.3 Compare worker totals and rates</h4>
+    <p>Four volunteers review comments at constant rates.
+       Person 1 processes 50,000 in 210 minutes;
+       Person 2 processes 1,325 in each 5-minute period
+       for 200 minutes; Person 3 follows c=331t
+       for 120 minutes; Person 4 follows t=(3/800)c
+       for 150 minutes. Compute each person's
+       total and exact comments-per-minute rate.
+       Rank them twice: by total completed and
+       by speed. Explain why the rankings differ
+       and support each with a table and equations.</p>
+    <h4>Practice: is the model justified?</h4>
+    <p>Compare the weight of identical paper sheets
+       with the weight of randomly sized books.
+       Explain which relation could have one exact
+       weight-per-item coefficient. Model the number
+       of batteries in packages containing exactly
+       two batteries per toy. Contrast with sibling
+       ages three years apart, where adding a
+       constant difference is not proportional.</p>
+    <details><summary>Numerical self-check</summary>
+       <p>The runner takes 64 minutes and finishes at
+          10:19 a.m. The 90-km cyclist at 15 km/h
+          takes 6 hours; at 12 km/h a rider travels
+          21 km in 1 hour 45 minutes.
+          Volunteer totals: 50,000; 53,000;
+          39,720; 40,000. Totals rank 2,1,4,3;
+          exact rates: 5000/21, 265, 331,
+          800/3 comments/minute; speed rank
+          3,4,2,1.</p>
+    </details>
+    <h4>Cool-down — independently authored Edulytiks task</h4>
+    <p>An emergency supply van drives at a constant rate.
+       Your partner's data card shows an 84-km route
+       but hides the speed. Write the question
+       needed to determine travel time. After
+       learning the rate is 28 km/h, calculate
+       the time and write d=kt. Describe how a
+       delivery fee or a change in speed would
+       affect model suitability. The teacher
+       reviews the questions and mathematical
+       explanations, not just the numeric result.</p>
+    <p><strong>Teacher review:</strong> Check information requests,
+       why a constant rate is appropriate, math tables,
+       two distinct rankings and oral explanations.
+       This is independent first-party task authoring,
+       not a reproduction of a gated assessment.</p>
+  </section>
+}
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L10")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-graph-slope"
+           data-g7-u02-l10 aria-label="Grade 7 proportional graph investigations">
+    <h3>Graph Tables and Proportional Relationships — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u02-l10-proportional-vs-offset.svg"
+           alt="Two original graphs: A shows shirt price rising by eight dollars per shirt through zero; B shows y equals ten minus two x, a straight line with an offset."
+           loading="lazy" />
+      <figcaption>Compare a line through the origin with one that does not.</figcaption>
+    </figure>
+    <h4>10.1 Plot coordinate pairs</h4>
+    <p>Use grid paper to plot (0,10), (1,8), (2,6),
+       (3,4), (4,2). Do the points lie on a straight
+       line? Does that mean the relationship is
+       proportional? Check the origin before deciding.</p>
+    <h4>10.2 T-shirt table and graph</h4>
+    <p>Shirts cost $8 each with no fixed fee.
+       Make a two-column table of quantity x and
+       dollar cost y for x = 0,1,2,3,4,5,6.
+       Draw accurately scaled axes and graph the
+       coordinate pairs. Explain why each plotted
+       point satisfies y=8x, and why a line
+       through (0,0) describes the relationship.</p>
+    <h4>10.3 Match tables and graphs</h4>
+    <p>Prepare original sets of graph/table cards:
+       y=3x, y=10-2x, y=x² and y=(1/4)x.
+       Plot at least four points for each model,
+       classify the graphs and match their tables.
+       Compare a line through the origin, a
+       straight offset line, and a curved graph.
+       With a partner, explain why merely passing
+       through the origin is not sufficient if
+       the graph is curved.</p>
+    <p>For a produce-by-weight graph, blueberries
+       cost $6 per pound. Explain why a fractional
+       x=1.25 pounds is meaningful and its graph
+       can be drawn as a continuous line. Compare
+       whole-shirt quantities, which may naturally
+       be represented by discrete points only.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>The warm-up is y=10-2x, which is linear
+         but not proportional. Shirts follow y=8x.
+         A proportional graph is a line through
+         the origin with the same output/input
+         ratio at every nonzero input.
+         A curved y=x² graph passes through the
+         origin but is not proportional.
+         At 1.25 pounds, blueberries cost $7.50.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>A bicycle parts shop sells $9 reflectors with
+       no base fee. Draw at least four points
+       that represent the number of reflectors
+       and their total price, label both axes,
+       then write y=9x. Construct a second
+       comparison graph for a shop charging a
+       $4 handling fee plus $9 per reflector.
+       Explain which plotted relation is
+       proportional, including the origin test.</p>
+    <p><strong>Teacher review:</strong> Check axis scales,
+       labeled coordinate points, correct graphs,
+       discrete vs continuous domain assumptions,
+       card sorting, and oral explanations.
+       Machine-scored Practice only checks
+       numeric or symbolic subresults.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L11")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-graph-interpretation"
+           data-g7-u02-l11 aria-label="Grade 7 interpreting proportional graphs">
+    <h3>Read a Proportional Graph — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u02-l11-point-k-context.svg"
+           alt="A distance-time graph through the origin with labeled points at 1 second and 2.5 meters, 4 seconds and 10 meters, and 8 seconds and 20 meters."
+           loading="lazy" />
+      <figcaption>Every labeled point describes the same constant rate; the point with x = 1 exposes the unit rate directly.</figcaption>
+    </figure>
+    <h4>11.1 Interpret a point before calculating</h4>
+    <p>A delivery cart moves at a constant pace. Explain in words what the point
+       (8,20) means when x is elapsed seconds and y is meters traveled.
+       Then explain why the origin belongs to this graph.</p>
+    <h4>11.2 Locate the constant of proportionality</h4>
+    <p>Use (8,20) to calculate k = y/x. Locate (1,k), write d = kt,
+       and use the equation to predict the distance after 6 seconds.
+       State the units of k.</p>
+    <h4>11.3 Connect a changed rate to the graph</h4>
+    <p>The cart must cover the same 20 meters in 4 seconds instead of 8.
+       Determine the new constant of proportionality and describe how the
+       new line would compare with the original line on the same axes.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>The original rate is 20/8 = 2.5 meters per second, so (1,2.5)
+         lies on d=2.5t and d(6)=15. Covering 20 meters in 4 seconds
+         gives 5 meters per second and a steeper line through the origin.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>A tank fills at a constant rate and contains 30 liters after
+       4 minutes. Find k, identify the point (1,k), write V=kt,
+       and determine the volume after 6 minutes. Explain what the
+       coordinates of your 6-minute point mean in context and sketch
+       the proportional line with labeled axes.</p>
+    <p><strong>Teacher review:</strong> Check the student's invented or drawn
+       graph, axis labels, units and contextual explanations. Machine-scored
+       Practice checks only exact numerical or symbolic subresults. This
+       Cool-down is independently authored and is not a reproduction of
+       the gated original assessment.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L12")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-graph-comparison"
+           data-g7-u02-l12 aria-label="Grade 7 compare proportional graphs">
+    <h3>Compare Relationships on Shared Axes — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u02-l12-compare-same-axes.svg"
+           alt="Distance-time graph on common axes with proportional line A reaching 50 meters in 20 seconds, proportional line B reaching 50 meters in 30 seconds, and a delayed-start segment that begins at 10 seconds."
+           loading="lazy" />
+      <figcaption>On identical axes, compare equal distances or equal times before interpreting steepness.</figcaption>
+    </figure>
+    <h4>12.1 Same destination, different rates</h4>
+    <p>Line A reaches 50 meters in 20 seconds and line B reaches 50 meters
+       in 30 seconds. Calculate both constants of proportionality and
+       explain why A is steeper. A third traveler starts at shared time
+       10 seconds and reaches 50 meters at time 40; explain why that
+       segment is not proportional to the shared elapsed time.</p>
+    <h4>12.2 Compare without inventing a scale</h4>
+    <p>Suppose two positive proportional lines are drawn on the same axes
+       but the numerical tick labels are hidden. Explain what relative
+       steepness can tell you about their constants of proportionality,
+       and what exact numerical information cannot be recovered.</p>
+    <h4>12.3 Unit-price graph</h4>
+    <p>Two cord suppliers use the same axes: kilograms on x and price on y.
+       Supplier P follows y=4x and supplier Q follows y=6x. Compare the
+       y-values at x=3 and use both the graph idea and the equations to
+       identify the greater unit price.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>A has k=50/20=2.5 m/s; B has k=50/30=5/3 m/s.
+         At 3 kg, P costs 12 and Q costs 18, so Q is steeper on the
+         shared price-versus-mass axes.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>Two inspection robots move at constant rates on one shared
+       distance-time grid. Robot R passes through (8,24); robot S passes
+       through (8,16), and both lines pass through the origin. Find both
+       constants, identify the steeper graph, and predict each distance
+       at 12 seconds. Then describe how your conclusion would change if
+       the axes were swapped.</p>
+    <p><strong>Teacher review:</strong> Check common-axis assumptions,
+       labeled graphs, units, the delayed-start explanation and the
+       swapped-axis reasoning. Machine Practice scores exact rate and
+       comparison subresults only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L13")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-reciprocal-graphs"
+           data-g7-u02-l13 aria-label="Grade 7 two graphs for one proportional relationship">
+    <h3>One Relationship, Two Graph Directions — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u02-l13-reversed-axes-rates.svg"
+           alt="Two graphs of the same production relationship: parts versus minutes has rate 6 parts per minute, and minutes versus parts has reciprocal rate one sixth minute per part."
+           loading="lazy" />
+      <figcaption>Swapping the quantities swaps every ordered pair and changes the constant to its reciprocal.</figcaption>
+    </figure>
+    <h4>13.1 Coordinate table, graph and equation</h4>
+    <p>A machine makes 18 parts in 3 minutes at a constant pace.
+       Build a table containing (0,0), (1,6), (2,12), and (3,18).
+       Explain why every nonzero p/t quotient is 6 and write p=6t.</p>
+    <h4>13.2 Reverse the axes</h4>
+    <p>Now put parts on the horizontal axis and minutes on the vertical
+       axis. Rewrite the same ordered pairs, identify the new constant
+       1/6 minute per part, and write t=p/6. Explain why these two
+       equations describe the same physical relationship.</p>
+    <h4>13.3 Compare reciprocal contextual rates</h4>
+    <p>Worker A completes 10 items in 4 minutes and worker B completes
+       12 items in 6 minutes. For each worker calculate both items per
+       minute and minutes per item. State units every time and explain
+       why the two rates for one worker are reciprocals.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>The machine rate is 6 parts/minute and its inverse is 1/6
+         minute/part. Worker A has 5/2 items/minute and 2/5 minute/item;
+         worker B has 2 items/minute and 1/2 minute/item.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>A pump transfers 14 liters in 4 minutes at constant rate.
+       Write one equation with liters as the dependent quantity and
+       another with minutes as the dependent quantity. Give one
+       non-origin point for each graph, identify both constants with
+       units, and explain how the points correspond after the axes swap.</p>
+    <p><strong>Teacher review:</strong> Check graph construction, axis labels,
+       units and the explanation that reciprocal equations represent the
+       same paired quantities. Machine Practice scores exact reciprocal
+       rates and equation subresults only. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L14")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-four-representations"
+           data-g7-u02-l14 aria-label="Grade 7 four representations">
+    <h3>Four Representations — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u02-l14-four-representations.svg"
+           alt="A context, equation y equals four x, proportional table, and line through the origin all represent four credits per task."
+           loading="lazy" />
+      <figcaption>A valid proportional model must tell one consistent story in words, table, equation and graph.</figcaption>
+    </figure>
+    <h4>14.1 Check consistency across representations</h4>
+    <p>A rewards program gives 4 credits per completed task with no starting
+       bonus. Confirm that y=4x, the table (0,0), (1,4), (2,8), (3,12),
+       and the graph through those points all agree. State the units of k.</p>
+    <h4>14.2 Create a proportional and a nonproportional scenario</h4>
+    <p>Create two original situations. For each, write a context, a table
+       with at least six input-output pairs, an equation, and a labeled graph.
+       One relationship must be proportional and the other must not be.
+       Explain at least two independent reasons for each classification.</p>
+    <h4>14.3 Critique a proposed display</h4>
+    <p>A display says "5 dollars per item," uses y=5x, and lists table
+       rows (0,2), (1,5), (2,10). Identify the inconsistency, decide
+       whether the intended model is proportional, and correct the
+       representation without changing the stated unit price.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>For the 4-credit model, k=4 credits/task. In the critique,
+         y=5x requires the zero row (0,0); the listed (0,2) conflicts
+         with the intended proportional model.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>A print service charges 3 dollars per page with no setup fee.
+       Give a six-row table including zero, write an equation, describe
+       the graph, identify k with units, and explain why the relationship
+       is proportional. Then change only one feature to create a
+       nonproportional version and explain which representations must change.</p>
+    <p><strong>Teacher review:</strong> The student-authored context, six-row
+       tables, graphs, labels, equations and critique require teacher review.
+       Machine Practice checks only closed classification and exact-rate
+       subresults. This Cool-down is independently authored.</p>
+  </section>
+}
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U02:L15")
+{
+  <section class="rich-lesson-section rich-lesson-section--g7-water-model"
+           data-g7-u02-l15 aria-label="Grade 7 water use proportional modelling">
+    <h3>Model Water Use with Explicit Assumptions — Edulytiks</h3>
+    <figure>
+      <img src="/curriculum/us-ccss-g7/geometry/u02-l15-water-use-model.svg"
+           alt="Water-use graph with shower model V equals eight t and a seventy-liter bath reference meeting at eight point seven five minutes."
+           loading="lazy" />
+      <figcaption>The conclusion depends on the chosen flow rate, duration and bath volume; state those assumptions before comparing.</figcaption>
+    </figure>
+    <h4>15.1 Decide what information is needed</h4>
+    <p>Before calculating, list the quantities needed to compare one bath
+       with one shower: bath volume, shower flow rate, shower duration,
+       and whether the stated bath volume means a full tub or actual use.
+       Explain which quantities could vary in real life.</p>
+    <h4>15.2 Build and compare a model</h4>
+    <p>For one fictional comparison, assume a bath uses 70 liters and a
+       shower flows at a constant 8 liters per minute. Write V=8t and
+       calculate shower use at 5, 9, and 12 minutes. Find the break-even
+       duration and state when this model predicts the shower uses more water.</p>
+    <h4>15.3 Reverse the proportional relationship</h4>
+    <p>Write time as a function of shower volume, identify the reciprocal
+       constant and its units, and explain why V=8t and t=V/8 describe
+       the same modeled relationship. Add both equations and a labeled
+       graph to the investigation display.</p>
+    <details><summary>Numerical self-check</summary>
+      <p>The shower uses 40, 72, and 96 liters at 5, 9, and 12 minutes.
+         The modeled break-even point is 70/8 = 8.75 minutes.
+         The inverse constant is 1/8 minute per liter.</p>
+    </details>
+    <h4>Cool-down — first-party Edulytiks assessment</h4>
+    <p>A second fictional shower flows at 9 liters per minute and a bath
+       comparison uses 72 liters. Find the break-even duration, write
+       both reciprocal equations with units, and give one 6-minute
+       comparison. State at least two assumptions that must remain true
+       for your conclusion to be valid.</p>
+    <p><strong>Teacher review:</strong> Check assumptions, data provenance when
+       students research their own values, graph labels, equations, units and
+       the qualified conclusion. Machine Practice scores only exact rate,
+       reciprocal and information-gap subresults. The local student source
+       contains no separate L15 practice page, and this Cool-down is independently authored.</p>
+  </section>
+}

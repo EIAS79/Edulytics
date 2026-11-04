@@ -47,7 +47,9 @@ public sealed class CommonCorePhase04RichV2SourceEntityTests
             // misclassify that intentional addition as an unexpected source.
             var curated = RichLessonContentV2Registry.Find(code, "en");
             if (curated is not null)
-                Assert.StartsWith("PED:US-CCSS-MATH:G4:", code);
+                Assert.True(code.StartsWith("PED:US-CCSS-MATH:G4:", StringComparison.Ordinal) ||
+                            code.StartsWith("PED:US-CCSS-MATH:G5:", StringComparison.Ordinal),
+                    "Only Grade4/5 source-curated Rich V2 may replace Phase04 HTML fallback: " + code);
             var lesson = lessonsByCode[code];
             var english = Assert.Single(lesson.Translations,
                 item => item.CultureCode == "en");

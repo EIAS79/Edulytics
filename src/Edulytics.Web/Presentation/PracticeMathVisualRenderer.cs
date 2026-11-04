@@ -28,6 +28,12 @@ public static partial class PracticeMathVisualRenderer
 
             var svg = family switch
             {
+                "usccss.g7.u01.l04.angle_and_distance_scaling" => G7ScaledPolygon(parameters),
+                "usccss.g7.u07.complementary_angle" or
+                "usccss.g7.u07.vertical_angle" => G7AngleVisual(family, parameters),
+                "usccss.g7.u03.l02.radius_diameter_relation" or
+                "usccss.g7.u03.l05.wheel_rotations_distance" or
+                "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" => G7CircleLessonVisual(family, parameters),
                 "supporting.circle.arc_angle_degrees" => CircleArc(parameters),
                 "geometry.coordinate.gradient_between_points" => CoordinateGradient(parameters),
                 "geometry.coordinate.evaluate_linear_rule" or
@@ -57,6 +63,9 @@ public static partial class PracticeMathVisualRenderer
                 "trigonometry.right_triangle.find_side_exact" or
                 "trigonometry.right_triangle.find_angle_exact" or
                 "trigonometry.modelling.contextual" => RightTriangle(parameters),
+                "usccss.g5.u03.l02.unit_fraction_of_unit_fraction" or
+                "usccss.g5.u03.l02.same_original_whole_order_comparison"
+                    => GradeFiveUnitFractionAreaVisual(family, parameters),
                 "fractions.represent.interpret.fraction_bar" => FractionBar(parameters),
                 "vectors.add.exact_rational" or
                 "vectors.subtract.exact_rational" or

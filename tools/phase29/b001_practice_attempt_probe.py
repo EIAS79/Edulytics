@@ -48,11 +48,45 @@ def synthetic_survey_protocol(expected, parameters_json):
     return "v:"+votes+"|g:"+tally
 
 
+def grade6_syntactically_valid_wrong_answer(correct):
+    """Perturb a server-generated Grade 6 answer without breaking its numeric
+    schema. The persisted grade is checked separately; this is not a publisher
+    source oracle. Grade 1's custom multi-field wrong-answer rules are unchanged.
+    """
+    from decimal import Decimal
+    if not isinstance(correct,str) or not correct.strip() or len(correct)>128:
+        raise ValueError("Missing or unbounded Grade 6 answer")
+    # Work for signed/unsigned integers, decimals, fractions, percentages,
+    # coordinate pairs, numeric tables and labeled fields without inventing
+    # an invalid-answer sentinel.
+    number=re.search(r'(?<![A-Za-z0-9_.])[+-]?\d+(?:\.\d+)?(?![A-Za-z0-9_.])',correct)
+    if number:
+        old=number.group()
+        candidate=correct[:number.start()]+format(Decimal(old)+Decimal(11),"f")+correct[number.end():]
+    else:
+        categories={
+            "YES":"NO","NO":"YES","TRUE":"FALSE","FALSE":"TRUE",
+            "GREATER":"LESS","LESS":"GREATER","EQUAL":"GREATER",
+            "A":"B","B":"C","C":"A","D":"A",
+            ">":"<","<":">","=":">",
+            "ODD":"EVEN","EVEN":"ODD","POSITIVE":"NEGATIVE","NEGATIVE":"POSITIVE"
+        }
+        key=correct.strip().upper()
+        if key not in categories:
+            raise ValueError("Unknown Grade 6 answer format for valid-wrong probe")
+        candidate=categories[key]
+    if candidate==correct or "B001_MALFORMED" in candidate:
+        raise ValueError("Not distinct valid-wrong answer")
+    return candidate
+
+
 def syntactically_valid_wrong_answer(correct, family=None):
     """Create a real incorrect Grade 1 submission, preserving its answer
     field/schema; unlike a malformed sentinel, this exercises math grading.
     A full independent source oracle is tested separately in C#.
     """
+    if isinstance(family,str) and family.startswith("usccss.g6."):
+        return grade6_syntactically_valid_wrong_answer(correct)
     if not isinstance(correct,str) or "=" not in correct:
         raise ValueError("Expected answer with named fields")
     parts=correct.split(";")
@@ -175,9 +209,26 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             final=urllib.parse.urlparse(response.url).path.lower()
             match=re.fullmatch(r"/student/practice/attempt/("+UUID+r")",final)
             if response.status!=200 or not match:
-                return {"status":"GENERATION_ROUTE_NOT_ATTEMPT","httpStatus":response.status}
+                # A 200 response can be the application's redirect to
+                # the practice index after a genuine generation failure.
+                # Surface only the user-facing alert, never auth tokens.
+                response_body=response.read().decode("utf-8",errors="replace")
+                import html
+                alert=re.search(
+                    r'<div[^>]*class="[^"]*school-alert-error[^"]*"[^>]*>(.*?)</div>',
+                    response_body, flags=re.IGNORECASE|re.DOTALL)
+                failure_message=(re.sub(r'<[^>]+>',' ',html.unescape(alert.group(1)))
+                                 if alert else '').strip()
+                return {"status":"GENERATION_ROUTE_NOT_ATTEMPT",
+                        "httpStatus":response.status,"redirectPath":final,
+                        "failureMessage":failure_message[:250]}
             attempt_id=match.group(1)
             page=response.read().decode("utf-8")
+        # Fail closed if a Grade 6 attempt page embeds answer keys/validator
+        # metadata in a machine-readable field before the learner submits.
+        # Visible teaching examples are not answer-key leakage.
+        if re.search(r'(?i)(?:"correctAnswer"\s*:|data-(?:correct|expected)-answer\s*=|name="correctAnswer")',page):
+            return {"status":"G6_PRE_SUBMISSION_ANSWER_KEY_LEAK"}
         # Real DB evidence prevents false success from HTTP 200 on an error page.
         found=sql("""
             SELECT p."CurriculumPedagogicalLessonId"::text,
@@ -323,6 +374,14 @@ def summarize(rows):
 if __name__=="__main__":
     import unittest
     class ProbeTests(unittest.TestCase):
+        def test_g6_well_formed_wrong_is_numeric_and_g1_does_not_change(self):
+            self.assertEqual(grade6_syntactically_valid_wrong_answer("-4"),"7")
+            self.assertEqual(grade6_syntactically_valid_wrong_answer("2.50"),"13.50")
+            self.assertEqual(grade6_syntactically_valid_wrong_answer("1/3"),"12/3")
+            self.assertEqual(grade6_syntactically_valid_wrong_answer("(3,-2)"),"(14,-2)")
+            self.assertEqual(grade6_syntactically_valid_wrong_answer("YES"),"NO")
+            self.assertEqual(syntactically_valid_wrong_answer("n=2","usccss.g1.u01.l01.example"),"n=3")
+            self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,"")
         def test_parse_csrf_and_adoption(self):
             self.assertEqual(extract_csrf('<input name="__RequestVerificationToken" value="token123">'),"token123")
             self.assertIsNone(extract_csrf('<div>no csrf</div>'))

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U02:L15",
+  "ordinal": 28,
+  "title": "Using Water Efficiently",
+  "teacherSource": [
+    "07_Grade_7_OUR_IM/2/15/preparation.html",
+    "07_Grade_7_OUR_IM/2/15/index.html"
+  ],
+  "studentSource": [
+    "07_Grade_7_OUR_IM_Student/2/15/index.html"
+  ],
+  "studentPracticeSource": "ABSENT_IN_LOCAL_EDITION",
+  "sourceHashesSha256": {
+    "teacherPreparation": "e3c6c64b8d02252452babc6577d24e16374157e377cd8fdbe120f0f6231a2a58",
+    "teacherLesson": "aa725ece8c6dfa8eb098c5336c0189f288966481039f0f379c1e2e82e98fb629",
+    "studentLesson": "905e38d1afbf2cf287af3838b5a6db062b2eabba397f73195128fabcb52a5bb5"
+  },
+  "edition": "OUR_IM_G7_2017_2019_NO_ACCESSIM_V360",
+  "sourceGoals": [
+    "Apply proportional reasoning to a water-use situation",
+    "Make simplifying assumptions and identify information needed for a comparison",
+    "Use proportional relationships, reciprocal units and graphs to analyze water use"
+  ],
+  "sourceActivities": [
+    "brainstorm information needed to compare bath and shower water use",
+    "investigate conditions under which each option uses more water and defend assumptions",
+    "optional graph with water versus time, two reciprocal constants and two equations"
+  ],
+  "reused": [
+    "existing U02 L15 Rich V2 teaching body",
+    "usccss.g7.u02.l03.unit_rates_reciprocal",
+    "usccss.g7.u02.l05.reciprocal_proportional_equations",
+    "usccss.g7.u02.l09.missing_info_rate_comparison",
+    "existing exact dispatcher"
+  ],
+  "newEngine": false,
+  "newFirstPartySVG": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u02-l15-water-use-model.svg",
+  "firstPartyCooldown": "9 L/min versus 72 L comparison with break-even, reciprocal equations and explicit assumptions",
+  "A_STATUS": "LOCAL_SOURCE_TEACHER_STUDENT_INVESTIGATION_COMPARED",
+  "B_STATUS": "AUTHORING_FIRST_PARTY_WATER_MODEL_GRAPH_AND_COOLDOWN",
+  "C_STATUS": "EXISTING_RATE_RECIPROCAL_INFORMATION_GAP_FAMILIES_SELECTED",
+  "READY_FOR_STAGE_D": true,
+  "D_STATUS": "NOT_RUN",
+  "testExecution": "AUTHORED_NOT_RUN",
+  "tests": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7Unit2Lesson15WaterUseTests.cs",
+    "tests/academic-us-ccss-g7-u02-l15-abc-fixture.test.cjs"
+  ],
+  "humanBoundary": "RESEARCH_VALUES_ASSUMPTIONS_DATA_QUALITY_GRAPH_AND_OPEN_CONCLUSION_TEACHER_REVIEW",
+  "originalGatedCoolDown": "NOT_VERIFIED_NOT_COPIED",
+  "closedAt": "2026-11-04; elapsed not measured",
+  "nextLesson": "PED:US-CCSS-MATH:G7:U03:L01"
+}

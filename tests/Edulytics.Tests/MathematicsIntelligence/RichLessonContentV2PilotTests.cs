@@ -320,21 +320,35 @@ public sealed class RichLessonContentV2PilotTests
     }
 
     [Fact]
-    public void PilotRegistry_PreservesOriginal26And143Grade3And149Grade4LessonsWithoutDuplicates()
+    public void PilotRegistry_PreservesHistoricalLessonsAndGrade7WithoutDuplicates()
     {
         var lessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(x => x.Lessons)
             .ToArray();
 
-        // Preserve the original pilot and grade cohorts without assuming the
-        // registry will never gain another first-party course.
-        var originalGrade3 = lessons.Count(x => x.LessonCode.StartsWith(
-            "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal));
-        var originalGrade4 = lessons.Count(x => x.LessonCode.StartsWith(
-            "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal));
-        Assert.Equal(143, originalGrade3);
-        Assert.Equal(149, originalGrade4);
-        Assert.True(lessons.Length - originalGrade3 - originalGrade4 >= 26);
+        // Keep the historic coverage independently checked; a newly curated
+        // grade must not invalidate a global count or hide missing older lessons.
+        Assert.Equal(
+            143,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal)));
+        Assert.Equal(
+            149,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal)));
+        Assert.Equal(
+            145,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal)));
+        Assert.Equal(
+            131,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G8:", StringComparison.Ordinal)));
+
+        // Existing 24 Cambridge Stage 6 and 2 UAE pilot lessons remain
+        // guarded by their dedicated tests above. Do not pin the global sum:
+        // future grades can add curated content on their own branches.
+        Assert.True(lessons.Length >= 26 + 143 + 149 + 145 + 131);
         Assert.Equal(
             lessons.Length,
             lessons.Select(x => x.LessonCode)

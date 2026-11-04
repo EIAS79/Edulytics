@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics Grade 6 • Recipe scaling</title><style>
+body{font-family:system-ui,Arial,sans-serif;background:#f8fafc;color:#1e293b;margin:0}main{max-width:860px;margin:auto;padding:1.5rem}
+section{padding:1rem;margin:1rem 0;background:#fff;border:1px solid #cbd5e1;border-radius:12px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #94a3b8;padding:.5rem;text-align:left}
+label{display:block;margin:.5rem 0}input,button{font:inherit;padding:.4rem}.teacher{border-left:4px solid #64748b;background:#e2e8f0;padding:.7rem}
+</style></head><body><main><h1>Recipes: scale every ingredient</h1><p>Independent Edulytics activity using first-party diagrams. Keep the units and ingredient order visible. Draw or describe each repeated batch; a teacher checks the reasoning, not only the final numbers.</p>
+<section><h2>3.1 • Flower pattern</h2><p>Create a flower using three triangular petals and two circular details, then make two complete copies and a third. Draw grouped petals rather than random extra parts. What features stay in the same ratio?</p></section>
+<section><h2>3.2 • Drink mixes</h2><p>One recipe uses one cup water and four teaspoons powdered mix; two batches need two cups water and eight teaspoons mix. The recipe tastes the same <em>under the same mixing and ingredient assumptions</em>. Explain why doubling just the water changes the concentration.</p>
+<p>Practice: one cup of juice concentrate for every three cups sparkling water. Draw two other combinations with the same taste, and one that should taste different.</p></section>
+<section><h2>3.3 • Cookie batch scaler</h2>
+<p>Each batch uses 5 cups flour and 2 teaspoons vanilla.</p>
+<label>Number of whole batches <input type="number" min="1" max="20" value="2" id="batches"></label><button type="button" id="calculate">Calculate scaled quantities</button>
+<table><thead><tr><th>Batches</th><th>Flour (cups)</th><th>Vanilla (teaspoons)</th></tr></thead><tbody id="result"><tr><td>2</td><td>10</td><td>4</td></tr></tbody></table>
+<p>Predict the values for 3 and 5 batches before checking. Draw the two ingredient rows and circle each complete repeated batch.</p></section>
+<section><h2>Original-skills cumulative practice</h2><p>A spice-mix diagram has 9 teaspoons mustard, 15 teaspoons chili, and 3 teaspoons salt; the base batch is 3:5:1. It represents <strong>3 batches</strong>. Two batches of a mix with 2 cups milk and 5 tablespoons cocoa need 4 cups and 10 tablespoons.</p><p>For 80 unit cubes, the largest complete cube has 4 layers per edge, volume 64 cubes. Multiplying any nonzero number by its reciprocal gives 1.</p></section>
+<section><h2>Independent Edulytics Cool-down</h2><p>Bird-food recipe: one batch takes 4 tablespoons seeds and 2 tablespoons oats. Make 3 batches. Write the two scaled quantities and explain why the ratio stays the same.</p>
+<div class="teacher"><strong>Teacher rubric:</strong> 12 tablespoons seeds and 6 tablespoons oats; compare 4:2 to 12:6 using three equal groups. Check source task diagrams, same-taste reasoning, complete unit labels, two different equivalent ratios, and one non-equivalent ratio. The automatic practice checks selected numbers only.</div></section>
+<script>
+const b=document.getElementById('batches'),result=document.getElementById('result');document.getElementById('calculate').addEventListener('click',()=>{const n=Number(b.value);if(!Number.isInteger(n)||n<1||n>20){result.textContent='Enter a whole number 1 to 20.';return}result.replaceChildren();const row=document.createElement('tr');for(const x of [n,5*n,2*n]){const cell=document.createElement('td');cell.textContent=x;row.appendChild(cell)}result.appendChild(row)});
+</script></main></body></html>

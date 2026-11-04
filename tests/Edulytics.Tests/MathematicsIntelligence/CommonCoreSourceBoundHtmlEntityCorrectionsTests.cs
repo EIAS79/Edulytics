@@ -17,14 +17,29 @@ public sealed class CommonCoreSourceBoundHtmlEntityCorrectionsTests
             .ToList();
 
     [Fact]
-    public void SixteenRemainingHtmlEntityRepairsAndThreeSourceRichSupersessions()
+    public void RemainingEightLegacyRepairsAndEightGrade5SourceRichSupersessionsAreIsolated()
     {
         var targets = Targets();
-        Assert.Equal(16, targets.Count);
-        Assert.Equal(16, targets.Select(x => x.Lesson.LessonCode)
+        // 19 original entries: 3 superseded by G2 authoring, and 8 Grade 5
+        // lessons have migrated to the independently authored Grade 5 source
+        // pack. Only the remaining eight legacy phase30 repairs apply.
+        Assert.Equal(8, targets.Count);
+        Assert.Equal(8, targets.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
 
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var grade5SourceCodes = CommonCoreSourceBoundHtmlEntityCorrections
+            .TargetLessonCodes
+            .Where(code => code.StartsWith("PED:US-CCSS-MATH:G5:", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(8, grade5SourceCodes.Length);
+        foreach (var code in grade5SourceCodes)
+        {
+            Assert.DoesNotContain(targets, x => x.Lesson.LessonCode == code);
+            // Do not hide an old HTML repair by losing its replacement.
+            // The source-specific Grade 5 Rich V2 item must still exist.
+            Assert.NotNull(RichLessonContentV2Registry.Find(code, "en"));
+        }
         Assert.Equal(0, documents.Where(x =>
             x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
             .SelectMany(x => x.Lessons)

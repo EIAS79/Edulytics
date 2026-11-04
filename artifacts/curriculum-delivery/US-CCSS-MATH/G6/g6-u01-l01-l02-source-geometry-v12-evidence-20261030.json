@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "batch": "V12_U01_L01_L02_SOURCE_GEOMETRY",
+  "date": "2026-10-30",
+  "candidateContentCommit": "006f040fe1ddb1928d7dbdccf62f75258cd32755",
+  "sourceAuthority": "Public 2017–2019 OUR/IM Kendall Hunt teacher preparation and lesson HTML; public image ALT descriptions only, not verified figure pixels or applet behavior",
+  "sourceResources": [
+    "https://im.kendallhunt.com/MS/teachers/1/1/1/preparation.html",
+    "https://im.kendallhunt.com/MS/teachers/1/1/1/index.html",
+    "https://im.kendallhunt.com/MS/students/1/1/1/index.html",
+    "https://im.kendallhunt.com/MS/teachers/1/1/2/preparation.html",
+    "https://im.kendallhunt.com/MS/teachers/1/1/2/index.html"
+  ],
+  "evidence": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+      "sourceStudentTaskTextCompared": true,
+      "sourceTeacherGoalAndPreparationCompared": true,
+      "sourceFigureDescriptionsRead": true,
+      "sourceFigurePixelsIndependentlyInspected": false,
+      "sourceAppletOperated": false,
+      "teacherProtectedResponsesAccessed": false,
+      "studentActivities": [
+        {
+          "id": "1.1",
+          "target": "Multiple defensible Which One Doesn't Belong interpretations of four colored/gapped tilings; distinguish complete coverage from color or tile variety",
+          "candidate": "Original text-only four-pattern comparison, fifth Rich V2 worked example and second accessible-text visual",
+          "unresolved": "Source images not independently inspected; actual polygon manipulative and teacher reasoning review unverified"
+        },
+        {
+          "id": "1.2",
+          "target": "Teacher-assigned Pattern A/B; eight hexagons, each with 3 red trapezoids, 4 blue rhombi and 7 green triangles; compare covered area by shape units",
+          "candidate": "Fourth Rich V2 worked example shows red 72, blue 64, green 56 triangular area units; original 3/4/7 single-hex teaching retained",
+          "unresolved": "Source A/B figure geometric detail and digital hide/move/turn behavior not independently verified"
+        },
+        {
+          "id": "extension",
+          "target": "Create graph-paper tiling using two or more shapes with equal covered area per shape type",
+          "candidate": "Existing first-party mosaic example and human-rubric boundary preserved",
+          "unresolved": "No teacher-evaluated original student drawings or persisted scores"
+        }
+      ],
+      "sourceTeacherMaterials": [
+        "Geometry toolkit: tracing paper, graph paper, colored pencils, scissors, index-card straightedge",
+        "Pairs assigned opposite A/B patterns; partner and whole-class explanation",
+        "Encourage justified spoken comparisons and more than one valid warm-up classification"
+      ],
+      "exactMathematicalOracle": {
+        "areaUnit": "small triangle",
+        "hexagons": 8,
+        "perHex": {
+          "trapezoids": 3,
+          "rhombi": 4,
+          "triangles": 7
+        },
+        "relativeTileArea": {
+          "trapezoids": 3,
+          "rhombi": 2,
+          "triangles": 1
+        },
+        "coloredAreas": {
+          "red": 72,
+          "blue": 64,
+          "green": 56
+        },
+        "total": 192
+      },
+      "sourceStandardsRoles": {
+        "buildingOn": [
+          "3.G.A"
+        ],
+        "buildingTowards": [
+          "6.G.A.1"
+        ],
+        "addressing": []
+      },
+      "stages": {
+        "A": "OPEN__SOURCE_TEXT_TEACHER_PREPARATION_AND_FIGURE_ALT_REVIEW_ONLY",
+        "B": "CANDIDATE_EDIT__AUTHENTICATED_RENDER_UNVERIFIED",
+        "C": "NOT_RUN__SHARED_PRACTICE_AND_HUMAN_RUBRIC",
+        "D": "NOT_RUN__AUTH_RENDER_PERSISTENCE_TENANCY"
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+      "sourceStudentTaskTextCompared": true,
+      "sourceTeacherGoalAndPreparationCompared": true,
+      "sourceFigureDescriptionsRead": true,
+      "sourceFigurePixelsIndependentlyInspected": false,
+      "sourceAppletOperated": false,
+      "teacherProtectedResponsesAccessed": false,
+      "studentActivities": [
+        {
+          "id": "2.1",
+          "target": "Distinguish equal unit square sizes, gaps and overlap in four arrangements, then define area",
+          "candidate": "Existing numeric mixed square example is source-related only",
+          "unresolved": "Four original source images and learner-facing rendering not verified"
+        },
+        {
+          "id": "2.2",
+          "target": "Manipulate 1 square, 4 small right triangles, 1 medium triangle, 2 large right triangles; construct non-square area 1, two different area 2 shapes, area 4 figure, full-piece large square",
+          "candidate": "Existing V11 corrected subskill: four identical half-square small triangles form 2 square units by conservation",
+          "unresolved": "No evidence full source manipulative inventory or all five constructions is implemented and scored"
+        },
+        {
+          "id": "2.3",
+          "target": "Compare triangular-pieces areas and justify with same-area overlays",
+          "candidate": "Fractional triangle and square teaching retained",
+          "unresolved": "No full source figure and teacher-workflow verification"
+        }
+      ],
+      "exactMathematicalOracle": {
+        "oneUnitSquare": 1,
+        "halfSquareTriangleArea": 0.5,
+        "fourTriangleArea": 2,
+        "invalidAreaDistractor": 6,
+        "unit": "square units",
+        "validConstructions": [
+          "2-by-1 rectangle",
+          "slanted parallelogram of base 2 and height 1"
+        ]
+      },
+      "sourceTeacherMaterials": [
+        "One square, four small triangles, one medium triangle and two large triangles for each pair",
+        "Tracing paper and physical or digital tangram manipulations",
+        "Teacher verifies sketches and spoken area conservation justifications"
+      ],
+      "sourceStandardsRoles": {
+        "buildingOn": [
+          "3.MD.C.5.b"
+        ],
+        "addressing": [
+          "6.G.A.1"
+        ],
+        "buildingTowards": [
+          "6.G.A"
+        ]
+      },
+      "stages": {
+        "A": "OPEN__SOURCE_TEXT_AND_TEACHER_PREPARATION_REVIEW_ONLY",
+        "B": "V11_MATH_CORRECTION_RETAINED__AUTHENTICATED_RENDER_UNVERIFIED",
+        "C": "NOT_RUN__EXACT_SELECTED_PRACTICE_AND_TEACHER_RUBRIC",
+        "D": "NOT_RUN__AUTH_RENDER_PERSISTENCE_TENANCY"
+      }
+    }
+  ],
+  "testing": {
+    "repoNativeNode": "NOT_RUN__NO_APPROVED_FULL_CHECKOUT",
+    "dotnet": "NOT_RUN__SDK_ABSENT",
+    "applicationPractice": "NOT_RUN",
+    "appAuthenticatedRendering": "NOT_RUN",
+    "teacherRubricPersistence": "NOT_RUN",
+    "crossCurriculum": "NOT_RUN"
+  },
+  "summary": {
+    "sourceTextTasksScoped": 2,
+    "sourceFiguresFullyAccepted": 0,
+    "stageAClosed": 0,
+    "stageBEffectiveAuthenticatedVerified": 0,
+    "stageCSelectedPracticeVerified": 0,
+    "stageDVerified": 0,
+    "academicAccepted": 0,
+    "released": false
+  }
+}
