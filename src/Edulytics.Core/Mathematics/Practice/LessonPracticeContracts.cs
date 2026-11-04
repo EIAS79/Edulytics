@@ -1465,6 +1465,20 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L09_FIRST_PARTY_PLAN_AND_TEACHER",
             "READY_VERIFIED",
             Version);
+        // OUR/IM Grade 7 U01:L10 changing drawings: length ratios
+        // and square-area factors. Reuse exact L06 area family; human
+        // ruler work/drawing is a separately assessed task.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L10",
+            "geometry.scale_drawings",
+            "G7_NEW_DRAWING_SCALE_AREA_AND_MEASUREMENT_PRECISION",
+            [
+                "usccss.g7.u01.l10.change_scale_length_and_area",
+                "usccss.g7.u01.l06.scaled_area_square_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L10_FIRST_PARTY_AND_TEACHER",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

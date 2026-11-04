@@ -223,6 +223,25 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l10.change_scale_length_and_area",
+      "version": 1,
+      "skillId": "geometry.scale_drawings",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "two-scales-one-real-object-length-factor-squared-area-physical-units-precision",
+      "representations": [
+        "scale_drawing",
+        "area_model",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
       "version": 1,
       "skillId": "geometry.area_tiling",
