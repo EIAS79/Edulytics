@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U05:L17",
+  "title": "Scaling One Dimension",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\17\\index.html",
+      "sha256": "5764f0cd990cdf6820c7a517ab7a99a6019357131e4443f68ccc2423cdb87b05"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\17\\preparation.html",
+      "sha256": "ec173998b900bfa5942b78da00ba1e71b15201a20f2d18cf951557549c8192ea"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\17\\index.html",
+      "sha256": "a9e460f4036f158db54ca7b4c106fbe7ba4441d2dbe603375c54aef17676aa18"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\17\\practice.html",
+      "sha256": "36de1ecd60c402d8d50028a580cb075f199612023bd6c5ec150289387dfc276d"
+    }
+  },
+  "learningGoals": [
+    "Represent cylinder/cone volume as a function of one changing dimension",
+    "Explain why changing only one linear dimension can create a linear volume relationship"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "17.1 ? Driving the Distance",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "17.2 ? Double the Edge",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "17.3 ? Halve the Height",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "17.4 ? Figuring Out Cone Dimensions",
+      "firstPartyTask": "activity-4",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 6,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u05-l17-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u05-l17-selected-first-party-paper.html",
+    "sha256": "48320788d973ada102846215284364a2cda7dd1a792000dab46ad91cc34514d0",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "activity-4",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Volumes 30 and 60 cm?; doubling height doubles volume.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "With fixed base area, V=Bh is linear in h.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Changing one prism edge alone scales volume by that edge factor.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Cylinder radius enters squared, so radius scaling is not linear in r.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 8,
+  "mathFixtures": {
+    "B": 10,
+    "h1": 3,
+    "h2": 6
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
