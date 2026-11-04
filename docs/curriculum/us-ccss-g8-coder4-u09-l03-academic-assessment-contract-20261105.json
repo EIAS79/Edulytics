@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U09:L03",
+  "title": "Tessellating Polygons",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\9\\3\\index.html",
+      "sha256": "60ebbfd1fa4c50028a2e0e950d6a19661829dbd07c8d964fd845620b3e14e492"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\9\\3\\preparation.html",
+      "sha256": "58c20b3c5b9b2cbbe009eee4e1e41388ac8f8053b952b8ab5194d0f0a10d7821"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\9\\3\\index.html",
+      "sha256": "0c1d157069af3d750df35e9f9968a89605ae73990b6b0174d11570d01f14c400"
+    },
+    "practice": null
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "3.1: Triangle Tessellations",
+      "3.2: Quadrilateral Tessellations",
+      "3.3: Pentagonal Tessellations"
+    ],
+    "practiceProblemCount": 0,
+    "teacherFigureTagCount": 40,
+    "studentFigureTagCount": 14,
+    "requiredMaterialsSectionPresent": true,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: design a tessellation with polygons that may be different or irregular, showing explicitly how tile edges meet and whether a repeat pattern covers the plane.",
+    "Every triangle tessellates the plane by pairing rotated copies into parallelograms, and every quadrilateral can tile by 180° rotations around side midpoints in an appropriate arrangement. Not every arbitrary mixture will tile."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "3.1: Triangle Tessellations",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "3.2: Quadrilateral Tessellations",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "3.3: Pentagonal Tessellations",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 0,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u09-l03-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u09-l03-selected-first-party-paper.html",
+    "sha256": "ab848ad0a4043c807b400e7843a5d5cfe72dcbeda4ecd64bfc14878f25f8ecd7",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "A triangle's angles total 180 degrees; paired/rotated copies provide 360 degrees around repeating vertices and can form a translation unit without gaps.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Geometric constructions distinguish gap-free/overlap-free tessellation from visual proximity, and statistical models distinguish prediction from exact observation.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Claims state the conditions, variables, units, and limitations needed for a defensible conclusion.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "sum": 180,
+    "pair": 360
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
