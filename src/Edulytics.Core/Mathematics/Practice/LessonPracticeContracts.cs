@@ -1600,6 +1600,15 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l04.proportional_equations"],
             "OUR_IM_G7_2017_2019_U02_L08_SOURCE_AND_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02:L09 source information gaps and
+        // rate comparisons: no replacement for teacher-led role questions.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L09", "proportions.unit_rate",
+            "G7_MISSING_INFORMATION_CONSTANT_RATE_AND_RANKINGS",
+            ["usccss.g7.u02.l09.missing_info_rate_comparison", "usccss.g7.u02.l07.table_proportional_or_not",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L09_SOURCE_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
