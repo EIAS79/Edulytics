@@ -1709,6 +1709,16 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l07.table_proportional_or_not"],
             "OUR_IM_G7_2017_2019_U03_L03_CIRCUMFERENCE_MEASUREMENT_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L04: apply circumference with
+        // exact pi or a context-appropriate approximation. Exact circle
+        // circumference and radius/diameter conversion are machine scored;
+        // composite boundaries and approximation-choice explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L04", "supporting.geometry.circles_loci",
+            "G7_APPLY_CIRCUMFERENCE_PI_APPROXIMATION_AND_COMPOSITE_BOUNDARY",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation"],
+            "OUR_IM_G7_2017_2019_U03_L04_CIRCUMFERENCE_APPLICATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
