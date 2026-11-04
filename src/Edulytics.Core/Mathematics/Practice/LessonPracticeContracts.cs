@@ -1642,6 +1642,17 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l09.missing_info_rate_comparison"],
             "OUR_IM_G7_2017_2019_U02_L12_GRAPH_COMPARISON_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U02 L13: the same proportional
+        // relationship is graphed in two directions. Existing reciprocal-rate
+        // and proportional-equation families already score the exact core;
+        // graph construction, axis labels and interpretations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L13", "proportions.equivalent_ratios",
+            "G7_TWO_GRAPH_AXIS_REVERSAL_RECIPROCAL_RATE_AND_EQUATION",
+            ["usccss.g7.u02.l05.reciprocal_proportional_equations", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "OUR_IM_G7_2017_2019_U02_L13_RECIPROCAL_GRAPHS_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
