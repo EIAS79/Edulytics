@@ -36,11 +36,11 @@
   "gradeOwnedStudentView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
   "sourceCooldown": "NOT_VERIFIED_GATED",
   "edulytiksCooldown": "Original 3+4 cm road path (7cm total) vs 5cm direct distance at 1cm:4mi; calculate 70mph for 28mi in 24min, teacher reviews model and explanation",
-  "A_STATUS": "A_CLOSED_EQUIVALENT_SOURCE_TASKS_AND_RIGHTS",
-  "B_STATUS": "BLOCKED_GRADE_PARTIAL_NOT_CONNECTED_TO_SHARED_RICH_V2",
-  "C_STATUS": "BLOCKED_EXACT_MAP_RATE_PRACTICE_FAMILY_AND_TEACHER_SCORING",
+  "A_STATUS": "A_CLOSED_LOCAL_SOURCE_TRAIN_CAR_ROUTE_MAP_AND_BIKE_TASKS",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_GRADE_MAP_AND_COOLDOWN",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_MAP_ROUTE_SPEED_TIME",
   "D_STATUS": "NOT_RUN",
-  "READY_FOR_STAGE_D": false,
+  "READY_FOR_STAGE_D": true,
   "practiceStrategy": "REUSE_OR_EXTEND_EXACT_MAP_RATE_FAMILY_SINGLE_WRITER",
   "practiceAcceptance": [
     "Road 8.5mi in8min ->63.75mph",
@@ -55,8 +55,22 @@
   "patch": "25b24a44713f89a1d860216008f3642b91f48df1",
   "routePrecisionFix": "4ec9d968023ec5f81e7399970f2ba5e437c25c30",
   "testCommit": "f6dea4bcf54dc028400cc192cce38165a29573da",
-  "blockerOwner": "Supervisor 1 shared integration owner #592 / Draft PR #599",
+  "blockerOwner": null,
   "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L09",
-  "closedAt": null,
-  "closureSHA": null
+  "closedAt": "2026-11-04 (authoring checkpoint; elapsed not measured)",
+  "closureSHA": null,
+  "stageABCClosure_20261104": {
+    "sourceScope": "LOCAL_ORIGINAL_OUR_IM_G7_2017_2019_NO_ACCESSIM_NO_V360",
+    "sources": "07_Grade_7_OUR_IM/1/8/preparation.html; 1/8/index.html; 07_Grade_7_OUR_IM_Student/1/8/index.html; 1/8/practice.html",
+    "elements": "8.1 train 243mi in4h vs 65mph; 8.2 12+5 road vs 13 direct grid units at 0.5mi/unit and 8min speed comparison; 8.3 12.5 graphic bars each 4mi at 15mph = 200min",
+    "sourceOptional": true,
+    "existingReused": "Grade7 first-party map SVG, Rich V2, teacher rubric, original independently authored Cool-down",
+    "family": "usccss.g7.u01.l08.map_route_rate_time",
+    "sourceGradeMath": "Road path not Euclidean direct line; units mph and minutes/60; route polyline 8.5mi vs helicopter 6.5mi",
+    "teacherBoundary": "route plotting, map measurements and explanation teacher-reviewed, not machine scored",
+    "thirdPartyMaps": "Original map images not copied, require separate rights for any reused artwork",
+    "tests": "AUTHORED_NOT_RUN",
+    "D": "NOT_RUN",
+    "next": "PED:US-CCSS-MATH:G7:U01:L09"
+  }
 }

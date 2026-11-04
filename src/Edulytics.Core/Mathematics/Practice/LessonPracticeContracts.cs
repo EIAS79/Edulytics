@@ -1442,6 +1442,16 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L07_ORIGINAL_FIRST_PARTY_DIAGRAM",
             "READY_VERIFIED",
             Version);
+        // OUR/IM 6-8 G7 U01:L08 optional: measure road polylines
+        // separately from direct routes and convert minutes to hours.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L08",
+            "geometry.scale_drawings",
+            "G7_MAP_ROUTE_DISTANCE_SPEED_AND_TIME",
+            ["usccss.g7.u01.l08.map_route_rate_time"],
+            "OUR_IM_G7_2017_2019_L08_FIRST_PARTY_MAP_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

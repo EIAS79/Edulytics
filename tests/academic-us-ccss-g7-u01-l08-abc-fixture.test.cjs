@@ -37,3 +37,14 @@ test('L08 activity and original assessment are grade-scoped',()=>{
   assert.match(view,/original Edulytiks map assessment/);
   assert.match(view,/does not record work/);
 });
+
+test('L08 selected exact mile-route Practice family authored NOT_RUN',()=>{
+ const root=path.join(__dirname,'..');
+ const contracts=fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+ const cursor=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l08-abc-cursor.json'),'utf8'));
+ assert.match(contracts,/usccss\.g7\.u01\.l08\.map_route_rate_time/);
+ assert.equal(cursor.READY_FOR_STAGE_D,true);
+ assert.equal(cursor.testExecution,'TEST_AUTHORED_NOT_RUN');
+});
