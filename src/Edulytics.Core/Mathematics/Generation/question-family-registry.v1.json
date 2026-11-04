@@ -6248,6 +6248,54 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u05.signed_rational_add_subtract",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-signed-rational-add-subtract-independent-recompute",
+      "representations": ["numeric","number_line","equation"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.compare_signed_rational",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-signed-rational-comparison-cross-product-recompute",
+      "representations": ["numeric","number_line","context"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.signed_rational_distance",
+      "version": 1,
+      "skillId": "supporting.number.directed_operations",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-number-line-distance-absolute-difference-recompute",
+      "representations": ["numeric","number_line","context"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u05.rational_linear_equation",
+      "version": 1,
+      "skillId": "supporting.algebra.equations",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade7-one-step-rational-linear-equation-inverse-operation-recompute",
+      "representations": ["numeric","equation","context"],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.algebra.exponent_product_value",
       "version": 1,
       "skillId": "supporting.algebra.expressions",

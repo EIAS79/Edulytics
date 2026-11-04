@@ -1929,6 +1929,15 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u04.reverse_percent_original"],
             "G7_U04_L16_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U05 L01: interpret and compare signed rational numbers in
+        // temperature/elevation contexts. Extend the existing supporting engine
+        // for exact rational comparison; plotting and contextual justification remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U05:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U05:L01", "supporting.number.directed_operations",
+            "G7_INTERPRET_COMPARE_AND_PLOT_SIGNED_RATIONALS",
+            ["usccss.g7.u05.compare_signed_rational", "usccss.number.rational_terminating_decimal"],
+            "G7_U05_L01_SIGNED_NUMBER_INTERPRETATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

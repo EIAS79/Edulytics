@@ -42,6 +42,10 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.rational_terminating_decimal",
             "usccss.number.repeating_decimal_digit",
             "usccss.number.signed_rate_displacement",
+            "usccss.g7.u05.signed_rational_add_subtract",
+            "usccss.g7.u05.compare_signed_rational",
+            "usccss.g7.u05.signed_rational_distance",
+            "usccss.g7.u05.rational_linear_equation",
             "usccss.algebra.exponent_product_value",
             "usccss.g8.integer_exponent_laws",
             "usccss.vector.add_x",
@@ -224,6 +228,10 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.rational_terminating_decimal" => UsRationalDecimal(random, scale),
             "usccss.number.repeating_decimal_digit" => UsRepeatingDecimalDigit(random, scale),
             "usccss.number.signed_rate_displacement" => UsSignedRateDisplacement(random, scale),
+            "usccss.g7.u05.signed_rational_add_subtract" => G7SignedRationalAddSubtract(random, scale),
+            "usccss.g7.u05.compare_signed_rational" => G7CompareSignedRational(random, scale),
+            "usccss.g7.u05.signed_rational_distance" => G7SignedRationalDistance(random, scale),
+            "usccss.g7.u05.rational_linear_equation" => G7RationalLinearEquation(random, scale),
             "usccss.algebra.exponent_product_value" => UsExponentProductValue(random, scale),
             "usccss.g8.integer_exponent_laws" => UsGrade8IntegerExponentLaws(random),
             "usccss.vector.add_x" => VectorComponentSum(random, scale),
@@ -384,6 +392,16 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.number.rational_terminating_decimal" => FormatHundredths(p["numerator"] * 100 / p["denominator"]),
             "usccss.number.repeating_decimal_digit" => (p["numerator"] * (9 / p["denominator"])).ToString(CultureInfo.InvariantCulture),
             "usccss.number.signed_rate_displacement" => (p["velocity"] * p["time"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u05.signed_rational_add_subtract" =>
+                SimplifyFraction(p["n1"] * p["d2"] + p["operation"] * p["n2"] * p["d1"], p["d1"] * p["d2"]),
+            "usccss.g7.u05.compare_signed_rational" =>
+                Math.Sign((long)p["n1"] * p["d2"] - (long)p["n2"] * p["d1"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g7.u05.signed_rational_distance" =>
+                SimplifyFraction(Math.Abs(p["n1"] * p["d2"] - p["n2"] * p["d1"]), p["d1"] * p["d2"]),
+            "usccss.g7.u05.rational_linear_equation" =>
+                p["mode"] == 0
+                    ? SimplifyFraction(p["rightN"] * p["aD"] - p["aN"] * p["rightD"], p["rightD"] * p["aD"])
+                    : SimplifyFraction(p["rightN"] * p["aD"], p["rightD"] * p["aN"]),
             "usccss.algebra.exponent_product_value" => IntPow(p["base"], p["exponent"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g8.integer_exponent_laws" => SolveUsGrade8IntegerExponentLaws(p),
             "usccss.vector.add_x" => (p["ax"]+p["bx"]).ToString(CultureInfo.InvariantCulture),
@@ -601,6 +619,9 @@ internal static partial class SupportingPracticeCompletionEngine
         }
 
         if (family is
+            "usccss.g7.u05.signed_rational_add_subtract" or
+            "usccss.g7.u05.signed_rational_distance" or
+            "usccss.g7.u05.rational_linear_equation" or
             "supporting.fractions.multiply" or
             "supporting.fractions.divide_whole" or
             "supporting.fractions.simplify" or
