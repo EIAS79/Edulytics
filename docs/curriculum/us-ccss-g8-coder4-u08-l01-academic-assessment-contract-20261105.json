@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U08:L01",
+  "title": "The Areas of Squares and Their Side Lengths",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\1\\index.html",
+      "sha256": "197d60b75d52819c8d05761529d22880097fac8e7469b42773dfc264e6933d25"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\1\\preparation.html",
+      "sha256": "87ca71b8c1383cc09ee64d2b98ad7e06ecb6fe8c04bdcbf6c9ab5bc50553d277"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\1\\index.html",
+      "sha256": "d643b413f1b3d70430ff515d9de248b1980f55985af233c24367aa482b20ba00"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\1\\practice.html",
+      "sha256": "2ae3326fb2812265b34000d53da8fd010e997bede7be6c7db6e68ddc6e063f64"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "1.1: Two Regions",
+      "1.2: Decomposing to Find Area",
+      "1.3: Estimating Side Lengths from Areas",
+      "1.4: Making Squares"
+    ],
+    "practiceProblemCount": 6,
+    "teacherFigureTagCount": 69,
+    "studentFigureTagCount": 43,
+    "requiredMaterialsSectionPresent": true,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: connect area of a square with the square of its side length, and determine an unknown side by using a nonnegative square root.",
+    "Construct paper square tiles with side lengths 1,2,3,4 and compare the number of unit-square tiles. The relationship A=s² means a square with area 25 has side length 5 units, not ±5, because physical lengths are nonnegative."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "1.1: Two Regions",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "1.2: Decomposing to Find Area",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "1.3: Estimating Side Lengths from Areas",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "1.4: Making Squares",
+      "firstPartyTask": "activity-4",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 6,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u08-l01-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u08-l01-selected-first-party-paper.html",
+    "sha256": "32b044d5821ce65f17751120f0f55c0586bd371115d51af73ff1e025886b4601",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "activity-4",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "The side length is 5 because 5^2=25; physical length uses the nonnegative square root.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Square/cube root and Pythagorean reasoning distinguishes exact values, approximations, and physical nonnegative lengths.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Diagrams, units, rationality claims, and scaling conclusions are checked against the defining equations.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "A": 25,
+    "s": 5
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
