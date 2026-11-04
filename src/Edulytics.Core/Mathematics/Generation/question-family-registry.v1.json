@@ -58,6 +58,42 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.g7.u01.l03.scaled_l_polygon",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "reused-bounded-polygon-kernel-all-distances-and-angles-k-half-or-three",
+      "representations": [
+        "coordinate_polygon",
+        "numeric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g7.u01.l03.multiplicative_vs_additive",
+      "version": 1,
+      "skillId": "geometry.similarity.scale_factor",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "multiplicative-corresponding-side-ratios-not-equal-additive-differences",
+      "representations": [
+        "numeric",
+        "scale_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g6.u01.l01.triangular_unit_tile_area",
       "version": 1,
       "skillId": "geometry.area_tiling",

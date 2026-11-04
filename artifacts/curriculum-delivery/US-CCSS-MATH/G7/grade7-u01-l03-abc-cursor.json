@@ -74,19 +74,43 @@
   "gradeOwnedView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
   "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
   "practiceRequired": "Exact lesson-scoped uniform scale 1/2 or 3; reject additive/nonuniform; recognize rotated/transposed models; teacher-reviewed drawing",
-  "practiceSelection": "BLOCKED_SHARED_7G_A1_GENERIC_SHAPE_DIMENSION_ISSUE_592",
-  "A_STATUS": "A_CLOSED_EQUIVALENT_TASKS_AND_SOURCE_RIGHTS_REVIEWED",
-  "B_STATUS": "BLOCKED_PARTIAL_NOT_INVOKED_BY_SHARED_RICH_VIEW",
-  "C_STATUS": "BLOCKED_EXACT_SELECTED_PRACTICE_AND_TEACHER_SCORING",
-  "READY_FOR_STAGE_D": false,
+  "practiceSelection": "EXACT_L03_SOURCE_SCOPED_TWO_FAMILIES_WITH_L02_RATIO_REUSE",
+  "A_STATUS": "A_CLOSED_LOCAL_TEACHER_STUDENT_WARMUP_4_ACTIVITIES_PRACTICE_REVIEWED",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_PARTIAL_FIRST_PARTY_GEOMETRY",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_L03_MULTIPLICATIVE_NOT_ADDITIVE_PRACTICE",
+  "READY_FOR_STAGE_D": true,
   "D_STATUS": "NOT_RUN",
   "testFile": "tests/academic-us-ccss-g7-u01-l03-abc-fixture.test.cjs",
   "testExecution": "TEST_AUTHORED_NOT_RUN",
   "firstPatch": "d4a3d68d1b99fb4bd24e4f8ff8b41f75f6e46656",
   "studentAnswerLeakRepair": "0473612adcaf4ff94148830f7db7b72bd443e2f7",
   "testCommit": "8b499a7661cc5c106781bea663114051e8754be9",
-  "blockerOwner": "Supervisor 1 shared integration issue #592, shared renderer PR #599 OPEN DRAFT",
+  "blockerOwner": null,
   "nextIndependentCursor": "PED:US-CCSS-MATH:G7:U01:L04",
-  "closedAt": null,
-  "closureSHA": null
+  "closedAt": "2026-11-04 (A-B-C authoring checkpoint; time not measured)",
+  "closureSHA": null,
+  "stageABCClosure_20261104": {
+    "sourceEdition": "OUR_IM_G7_2017_2019_ORIGINAL_LOCAL_NO_ACCESSIM_NO_V360",
+    "sourceTeacher": "07_Grade_7_OUR_IM/1/3/preparation.html; 1/3/index.html",
+    "sourceStudent": "07_Grade_7_OUR_IM_Student/1/3/index.html; 1/3/practice.html",
+    "scope": "A_B_C_AUTHORING_ONLY",
+    "sourceGoalEvidence": "uniform scale construction k=1/2 and 3; mathematical distinction between multiplication and equal addition; source warm-up three decimal comparisons; optional drawing; practice problems",
+    "existingComponentsReused": [
+      "Grade7 Rich V2 L03",
+      "first-party scaled L SVG",
+      "original independent teacher rubric",
+      "L01 bounded polygon geometry kernel",
+      "L02 rational scale selector"
+    ],
+    "newQuestionFamilies": [
+      "usccss.g7.u01.l03.scaled_l_polygon",
+      "usccss.g7.u01.l03.multiplicative_vs_additive"
+    ],
+    "drawingsAndReasoning": "TEACHER_REVIEW_REQUIRED",
+    "originalGatedCooldown": "NOT_VERIFIED; independent Edulytiks teacher-reviewed replacement only",
+    "sourceAssetRights": "NO_ORIGINAL_PUBLISHER_ARTWORK_COPIED",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "D_STATUS": "NOT_RUN",
+    "nextLesson": "PED:US-CCSS-MATH:G7:U01:L04"
+  }
 }

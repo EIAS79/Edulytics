@@ -185,6 +185,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family.Trim()) ||
+         UsCcssG7Unit1Lesson3DrawingQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
@@ -414,6 +415,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family))
             return UsCcssG7Unit1Lesson2CorrespondenceQuestions.Verify(family, parameters, answer);
+        if (UsCcssG7Unit1Lesson3DrawingQuestions.Supports(family))
+            return UsCcssG7Unit1Lesson3DrawingQuestions.Verify(family, parameters, answer);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
             return UsCcssG6Unit1Lesson1TilingQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
@@ -1739,6 +1742,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family))
         {
             var item = UsCcssG7Unit1Lesson2CorrespondenceQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssG7Unit1Lesson3DrawingQuestions.Supports(family))
+        {
+            var item = UsCcssG7Unit1Lesson3DrawingQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -4896,6 +4905,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson2CorrespondenceQuestions.Solve(problem.Family, p);
+        if (UsCcssG7Unit1Lesson3DrawingQuestions.Supports(problem.Family))
+            return UsCcssG7Unit1Lesson3DrawingQuestions.Solve(problem.Family, p);
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))

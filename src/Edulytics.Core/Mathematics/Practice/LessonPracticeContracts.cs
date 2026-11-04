@@ -1373,6 +1373,21 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L02_AUTHORING_AND_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+        // OUR/IM 6-8 Grade 7 U01:L03: source-grounded first-party scaling.
+        // The L02 rational scale-factor family is reused without duplication.
+        // Drawings and written critiques require teacher review.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L03",
+            "geometry.similarity.scale_factor",
+            "G7_EXACT_SCALED_L_DRAWING_AND_MULTIPLICATIVE_NOT_ADDITIVE",
+            [
+                "usccss.g7.u01.l03.scaled_l_polygon",
+                "usccss.g7.u01.l03.multiplicative_vs_additive",
+                "usccss.g7.u01.l02.scale_factor"
+            ],
+            "OUR_IM_G7_2017_2019_L03_SOURCE_SCOPED_NUMERIC_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

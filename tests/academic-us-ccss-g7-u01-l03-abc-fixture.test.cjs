@@ -40,3 +40,12 @@ test('L03 warm-up numbers and student-facing original exit task',()=>{
   assert.match(view,/does not submit,/);
   assert.match(view,/a real labeled drawing/);
 });
+
+test('L03 explicit source-scoped Practice routing authored, NOT_RUN',()=>{
+ const contracts=fs.readFileSync(path.join(root,'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+ const cursor=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l03-abc-cursor.json'),'utf8'));
+ assert.match(contracts,/usccss\.g7\.u01\.l03\.scaled_l_polygon/);
+ assert.match(contracts,/usccss\.g7\.u01\.l03\.multiplicative_vs_additive/);
+ assert.equal(cursor.READY_FOR_STAGE_D,true);
+ assert.equal(cursor.testExecution,'TEST_AUTHORED_NOT_RUN');
+});
