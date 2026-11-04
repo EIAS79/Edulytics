@@ -1841,6 +1841,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u04.fractional_change", "supporting.fdp.percent_equivalent", "usccss.number.rational_terminating_decimal"],
             "G7_U04_L05_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U04 L06: source-scoped percentage Practice. Open diagrams,
+        // explanations, information-gap dialogue, and authored displays stay teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L06", "percentages.core",
+            "G7_PERCENT_INCREASE_DECREASE_TAPE_DIAGRAMS",
+            ["percentages.core.increase_decrease", "percentages.core.of_quantity", "usccss.g7.u04.fractional_change"],
+            "G7_U04_L06_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
