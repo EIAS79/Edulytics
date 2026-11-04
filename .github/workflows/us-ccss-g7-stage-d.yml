@@ -7,6 +7,10 @@ on:
       - 'tools/curriculum/g7-stage-d-inventory.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G7/**'
       - 'src/Edulytics.Core/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Web/Views/Shared/_USCCSSG7**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7**'
       - 'tests/academic-us-ccss-g7-**'
   pull_request:
     branches: [main]
@@ -15,6 +19,10 @@ on:
       - 'tools/curriculum/g7-stage-d-inventory.cjs'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G7/**'
       - 'src/Edulytics.Core/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Web/Views/Shared/_USCCSSG7**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7**'
       - 'tests/academic-us-ccss-g7-**'
   workflow_dispatch:
 permissions:
