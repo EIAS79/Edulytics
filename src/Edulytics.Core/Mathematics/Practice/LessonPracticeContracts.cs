@@ -2082,6 +2082,14 @@ public static class LessonPracticeContractRegistry
             ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed"],
             "G7_U06_L02_SOURCE_SCOPED_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U06 L03: source-scoped algebra Practice.
+        // Tape diagrams, hangers, authored contexts, graphs and explanations remain teacher reviewed.
+        byLesson["PED:US-CCSS-MATH:G7:U06:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U06:L03", "algebra.linear.solve",
+            "G7_MATCH_TAPE_DIAGRAMS_AND_EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.expand"],
+            "G7_U06_L03_SOURCE_SCOPED_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
