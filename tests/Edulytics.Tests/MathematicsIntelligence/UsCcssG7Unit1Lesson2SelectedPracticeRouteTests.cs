@@ -110,7 +110,8 @@ public sealed class UsCcssG7Unit1Lesson2SelectedPracticeRouteTests
                 Assert.True(ExactSkillContractQuestionEngine.Verify(
                     family, item.Parameters, item.CorrectAnswer));
                 Assert.Contains(item.CorrectAnswer, new[] { "1", "2", "3", "4", "5" });
-                Assert.Contains("Choose", item.Prompt, StringComparison.OrdinalIgnoreCase);
+                Assert.Contains("triangle", item.Prompt, StringComparison.OrdinalIgnoreCase);
+                Assert.DoesNotContain("CorrectAnswer", item.Prompt);
             }
         }
     }
