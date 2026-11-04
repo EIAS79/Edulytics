@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using Edulytics.Core.Enums;
@@ -372,7 +373,8 @@ public sealed class ExactSkillContractQuestionEngine
                     family,
                     random,
                     difficulty,
-                    requestedVariant);
+                    requestedVariant,
+                    allowedQuestionFamilies.Count == 1 && questionCount >= 10);
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -449,6 +451,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (Grade6FiniteSourceFamilyIds.Contains(family) && parameters.ContainsKey("g6Composite"))
+            return VerifyGrade6Composite(family, parameters, answer);
 
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(family))
             return UsCcssG6Unit1Lesson1TilingQuestions.Verify(family, parameters, answer);
@@ -1826,7 +1830,137 @@ public sealed class ExactSkillContractQuestionEngine
         };
     }
 
+    // Finite original geometry examples are combined into first-party compound
+    // computations. Both original source-specific questions must be solved:
+    // no fake randomness, duplicated exposure fingerprints or reused answers.
+    private static readonly HashSet<string> Grade6FiniteSourceFamilyIds = new(StringComparer.Ordinal)
+    {
+        "usccss.g6.u01.l02.tangram_equal_area",
+        "usccss.g6.u01.l02.tangram_piece_area",
+        "usccss.g6.u01.l03.area_conservation",
+        "usccss.g6.u01.l03.source_shaded_area",
+        "usccss.g6.u01.l04.equal_area_rearrangement",
+        "usccss.g6.u01.l04.parallelogram_exact_area",
+        "usccss.g6.u01.l04.two_pairs_parallel",
+        "usccss.g6.u01.l05.area_scaling",
+        "usccss.g6.u01.l05.corresponding_height",
+        "usccss.g6.u01.l05.small_triangle_fraction",
+        "usccss.g6.u01.l06.composite_area",
+        "usccss.g6.u01.l06.equal_area_reasoning",
+        "usccss.g6.u01.l07.original_fraction_dimensions",
+        "usccss.g6.u01.l07.parallelogram_diagonal_half",
+        "usccss.g6.u01.l07.triangle_composition_logic",
+        "usccss.g6.u01.l08.decomposition_invariance",
+        "usccss.g6.u01.l08.original_decimal_practice",
+        "usccss.g6.u01.l08.triangle_half_area",
+        "usccss.g6.u01.l09.triangle_height_validity",
+        "usccss.g6.u01.l10.height_construction_validity",
+        "usccss.g6.u01.l12.surface_area_meaning",
+        "usccss.g6.u01.l15.net_design_and_volume_reasoning",
+        "usccss.g6.u01.l16.surface_volume_unit_logic"
+    };
+
     private static ExactProblem BuildProblem(
+        string family, Random random, ExactSkillQuestionDifficulty difficulty,
+        int? preferredVariant = null, bool extendedFamilySession = false)
+    {
+        if (!extendedFamilySession || !Grade6FiniteSourceFamilyIds.Contains(family))
+            return BuildOriginalProblem(family, random, difficulty, preferredVariant);
+
+        var a = BuildOriginalProblem(family, random, difficulty, preferredVariant);
+        var b = BuildOriginalProblem(family, random, difficulty, preferredVariant);
+        if (!a.Parameters.TryGetValue("variant", out int av) ||
+            !b.Parameters.TryGetValue("variant", out int bv))
+            throw new InvalidOperationException("Grade 6 compound requires two source variants.");
+
+        var copies = random.Next(2, 8);
+        var parameters = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["g6Composite"] = 1,
+            ["a"] = av,
+            ["b"] = bv,
+            ["copies"] = copies
+        };
+        var prompt = $"Edulytics first-party Grade 6 multi-situation exercise. " +
+            $"There are {copies} independent copies of Situation A and one copy of " +
+            "Situation B. Solve the numerical question in each situation, and " +
+            $"enter ({copies} × A's numerical answer) + (B's numerical answer). " +
+            "For any yes/no question, use 1 for yes and 0 for no. " +
+            "For a fraction, use an exact fraction or decimal when exact. " +
+            "Situation A: " + a.Prompt + " Situation B: " + b.Prompt;
+        return new ExactProblem(family, prompt,
+            "Independently solve both source-skill tasks, then combine " +
+            "the values with exact arithmetic; diagrams still need a teacher's review.",
+            a.ItemType, parameters);
+    }
+
+    private static bool VerifyGrade6Composite(
+        string family, IReadOnlyDictionary<string, int> parameters, string? answer)
+    {
+        if (!IsValidGrade6Composite(parameters) || string.IsNullOrWhiteSpace(answer))
+            return false;
+        try
+        {
+            var expected = Grade6CompositeValue(family, parameters);
+            var received = ParseGrade6ExactNumber(answer.Trim());
+            return expected.Numerator * received.Denominator ==
+                   received.Numerator * expected.Denominator;
+        }
+        catch (Exception ex) when (ex is ArgumentException or FormatException or OverflowException)
+        {
+            return false;
+        }
+    }
+
+    private static bool IsValidGrade6Composite(IReadOnlyDictionary<string, int> p) =>
+        p.Count == 4 && p.TryGetValue("g6Composite", out var composite) &&
+        composite == 1 && p.ContainsKey("a") && p.ContainsKey("b") &&
+        p.TryGetValue("copies", out var copies) && copies is >= 2 and <= 7;
+
+    private static (BigInteger Numerator, BigInteger Denominator) Grade6CompositeValue(
+        string family, IReadOnlyDictionary<string, int> p)
+    {
+        if (!Grade6FiniteSourceFamilyIds.Contains(family) || !IsValidGrade6Composite(p))
+            throw new ArgumentException("Unsupported Grade 6 composite");
+        var a = new Dictionary<string, int> { ["variant"] = p["a"] };
+        var b = new Dictionary<string, int> { ["variant"] = p["b"] };
+        var first = Solve(new ExactProblem(family, "", "", AssessmentItemType.Numeric, a));
+        var second = Solve(new ExactProblem(family, "", "", AssessmentItemType.Numeric, b));
+        if (!Verify(family, a, first) || !Verify(family, b, second))
+            throw new ArgumentException("Invalid source variant");
+        var (an, ad) = ParseGrade6ExactNumber(first);
+        var (bn, bd) = ParseGrade6ExactNumber(second);
+        var numerator = p["copies"] * an * bd + bn * ad;
+        var denominator = ad * bd;
+        var divisor = BigInteger.GreatestCommonDivisor(numerator, denominator);
+        return (numerator / divisor, denominator / divisor);
+    }
+
+    private static (BigInteger Numerator, BigInteger Denominator) ParseGrade6ExactNumber(string raw)
+    {
+        var value = raw.Trim();
+        var slash = value.IndexOf('/');
+        if (slash >= 0)
+        {
+            var n = BigInteger.Parse(value[..slash], CultureInfo.InvariantCulture);
+            var d = BigInteger.Parse(value[(slash + 1)..], CultureInfo.InvariantCulture);
+            if (d <= 0) throw new ArgumentException("Invalid denominator");
+            var gcd = BigInteger.GreatestCommonDivisor(n, d);
+            return (n / gcd, d / gcd);
+        }
+        if (!decimal.TryParse(value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture, out _))
+            throw new FormatException("Invalid exact numeric response");
+        var dot = value.IndexOf('.');
+        var places = dot < 0 ? 0 : value.Length - dot - 1;
+        var ntext = value.Replace(".", "", StringComparison.Ordinal);
+        var numerator = BigInteger.Parse(ntext, CultureInfo.InvariantCulture);
+        var denominator = BigInteger.Pow(10, places);
+        var divisor = BigInteger.GreatestCommonDivisor(numerator, denominator);
+        return (numerator / divisor, denominator / divisor);
+    }
+
+    private static ExactProblem BuildOriginalProblem(
         string family,
         Random random,
         ExactSkillQuestionDifficulty difficulty,
@@ -5207,6 +5341,15 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (Grade6FiniteSourceFamilyIds.Contains(problem.Family) &&
+            p.ContainsKey("g6Composite"))
+        {
+            var value = Grade6CompositeValue(problem.Family, p);
+            return value.Denominator == BigInteger.One
+                ? value.Numerator.ToString(CultureInfo.InvariantCulture)
+                : value.Numerator.ToString(CultureInfo.InvariantCulture) + "/" +
+                  value.Denominator.ToString(CultureInfo.InvariantCulture);
+        }
 
         if (UsCcssG6Unit1Lesson1TilingQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson1TilingQuestions.Solve(problem.Family, p);
