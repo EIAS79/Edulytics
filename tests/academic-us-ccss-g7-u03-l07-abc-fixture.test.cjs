@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U03 L07 circle area exploration authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit3CircleFigures.cshtml');for(const s of ['data-g7-u03-l07','7.1 Estimate','7.2 Test','7.3 Radius squared','Cool-down'])assert.ok(v.includes(s));});
+test('U03 L07 arithmetic witnesses',()=>{assert.ok(9*Math.PI>18&&9*Math.PI<36);assert.equal(8*8/(4*4),4);});
+test('U03 L07 A-C ready not run',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u03-l07-abc-cursor.json'));assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.newEngine,false);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

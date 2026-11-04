@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" role="img" aria-labelledby="title desc">
+<title id="title">Bounding the area of a circle with squares</title><desc id="desc">A first-party circle of radius 3 is drawn inside a 6 by 6 square and around a rotated inner square. The outer square area is 36 and the inner square area is 18, showing the circle area lies between them.</desc>
+<rect width="740" height="420" fill="white"/><rect x="190" y="55" width="300" height="300" fill="none" stroke="currentColor" stroke-width="3"/>
+<circle cx="340" cy="205" r="150" fill="none" stroke="currentColor" stroke-width="4"/>
+<polygon points="340,55 490,205 340,355 190,205" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="8 6"/>
+<line x1="340" y1="205" x2="490" y2="205" stroke="currentColor" stroke-width="2"/><text x="395" y="192" font-size="18">r=3</text>
+<text x="505" y="205" font-size="18">outer square: 6×6=36</text><text x="25" y="205" font-size="18">inner square: area 18</text>
+<text x="185" y="395" font-size="20">18 &lt; circle area &lt; 36, while exact area = 9π</text>
+</svg>

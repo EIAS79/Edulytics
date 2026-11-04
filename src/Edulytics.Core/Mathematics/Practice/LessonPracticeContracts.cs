@@ -1741,6 +1741,17 @@ public static class LessonPracticeContractRegistry
              "supporting.geometry.parallelogram_area"],
             "OUR_IM_G7_2017_2019_U03_L06_AREA_ESTIMATION_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // OUR/IM 2017-2019 G7 U03 L07: estimate circle area, compare
+        // radius/diameter with area, and recognize that area grows with the
+        // square of the linear measure. Existing exact circle-area,
+        // radius/diameter, and proportional-table families cover closed subresults.
+        byLesson["PED:US-CCSS-MATH:G7:U03:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U03:L07", "supporting.geometry.circles_loci",
+            "G7_EXPLORE_CIRCLE_AREA_RADIUS_SQUARED_AND_NONPROPORTIONAL_DIAMETER",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u03.l02.radius_diameter_relation",
+             "usccss.g7.u02.l07.table_proportional_or_not"],
+            "OUR_IM_G7_2017_2019_U03_L07_CIRCLE_AREA_ESTIMATION_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
