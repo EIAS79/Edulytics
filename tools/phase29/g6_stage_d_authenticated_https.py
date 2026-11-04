@@ -122,7 +122,10 @@ def main():
             authored=english[0].get(field)
             require(isinstance(authored,str) and len(authored.strip())>=20,
                 "missing canonical Grade6 section "+code+" "+field)
-            source_words=re.findall(r"\w+",html.unescape(authored).casefold(),flags=re.UNICODE)
+            source_text=html.unescape(authored)
+            if field=="stepByStepSolutions":
+                source_text=source_text.replace("Step 1: ","",1)
+            source_words=re.findall(r"\w+",source_text.casefold(),flags=re.UNICODE)
             require(len(source_words)>=8,"too-short source section "+code+" "+field)
             require(" ".join(source_words[:8]) in visible_words,
                 "canonical source section not rendered to authenticated student "+code+" "+field)
