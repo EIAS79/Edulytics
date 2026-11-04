@@ -34,9 +34,9 @@
   "gradeOwnedTeaching": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
   "reusedFirstPartySvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
   "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
-  "A_STATUS": "A_CLOSED_SOURCE_EQUIVALENT_AND_RIGHTS_REVIEWED",
-  "B_STATUS": "BLOCKED_SHARED_RICH_V2_GRADE_PARTIAL_INVOCATION",
-  "C_STATUS": "BLOCKED_EXACT_AREA_PRACTICE_ROUTE_AND_TEACHER_SCORING",
+  "A_STATUS": "A_CLOSED_LOCAL_OPTIONAL_SOURCE_TEACHER_STUDENT_ALL_ACTIVITIES",
+  "B_STATUS": "ACCEPTED_AUTHORING_G7_SCOPED_RICH_V2_AND_AREA_DIAGRAM",
+  "C_STATUS": "ACCEPTED_AUTHORING_EXACT_AREA_K_SQUARED_FAMILY",
   "testFile": "tests/academic-us-ccss-g7-u01-l06-abc-fixture.test.cjs",
   "testExecution": "TEST_AUTHORED_NOT_RUN",
   "PracticeStrategy": "REUSE_OR_EXTEND_EXACT_AREA_FAMILY_ISSUE_592",
@@ -47,12 +47,24 @@
     "correct/wrong/malformed inputs",
     "teacher-reviewed polygons and tilings"
   ],
-  "READY_FOR_STAGE_D": false,
+  "READY_FOR_STAGE_D": true,
   "D_STATUS": "NOT_RUN",
-  "blockerOwner": "Supervisor 1 shared renderer #599 and mapping/grader #592",
+  "blockerOwner": null,
   "patch": "20bf8a090076bfd566512e713872d8248c7efd79",
   "testPatch": "6b863a2058dc59de7603b1bf14187ce3f4be21d9",
   "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L07",
-  "closedAt": null,
-  "closureSHA": null
+  "closedAt": "2026-11-04 (authoring checkpoint; elapsed not measured)",
+  "closureSHA": null,
+  "stageABCClosure_20261104": {
+    "sourceScope": "LOCAL_ORIGINAL_OUR_IM_2017_2019_NO_ACCESSIM_NO_V360",
+    "sources": "07_Grade_7_OUR_IM/1/6/preparation.html; 1/6/index.html; 07_Grade_7_OUR_IM_Student/1/6/index.html; 1/6/practice.html",
+    "sourceProof": "optional lesson 6.1 one pattern block k squared; 6.2 n blocks * k squared with n 3/2/4; 6.3 triangle/parallelogram base-height and area k squared, fractional 1/2,1/3 and 3/5",
+    "existingPreserved": "original independent tile SVG, Rich V2 G7 partial, lesson teaching and first-party teacher rubric",
+    "family": "usccss.g7.u01.l06.scaled_area_square_factor",
+    "firstPartyMath": "integer and rational exact area and equivalent fraction verifier; source 36-area triangle and pattern block group work remain teacher reviewed",
+    "teacherBoundary": "Physical pattern blocks, area diagram construction and explanations teacher-reviewed; original Cool-down gated and replaced by independent Edulytiks task",
+    "tests": "AUTHORED_NOT_RUN",
+    "StageD": "NOT_RUN",
+    "next": "PED:US-CCSS-MATH:G7:U01:L07"
+  }
 }

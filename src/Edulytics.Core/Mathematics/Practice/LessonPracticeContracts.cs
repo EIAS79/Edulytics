@@ -1417,6 +1417,17 @@ public static class LessonPracticeContractRegistry
             "OUR_IM_G7_2017_2019_L05_SOURCE_SCOPED_AND_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
+        // OUR/IM G7 U01:L06 optional-but-canonical source: area is
+        // original area times squared scale factor. Teacher reviews block
+        // construction and original drawn triangles/parallelograms.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L06",
+            "geometry.area.scaled_figures",
+            "G7_EXACT_SQUARED_AREA_FACTOR_AND_PATTERN_BLOCKS",
+            ["usccss.g7.u01.l06.scaled_area_square_factor"],
+            "OUR_IM_G7_2017_2019_L06_AREA_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.

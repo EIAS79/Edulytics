@@ -29,3 +29,14 @@ test('original L06 cooldown computes actual side/area factors',()=>{
   assert.match(view,/independently authored Edulytiks task/);
   assert.match(view,/does not persist a drawing/);
 });
+
+test('L06 source-selected exact rational area question family authored',()=>{
+ const root=path.join(__dirname,'..');
+ const contracts=fs.readFileSync(path.join(root,
+  'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),'utf8');
+ const checkpoint=JSON.parse(fs.readFileSync(path.join(root,
+  'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l06-abc-cursor.json'),'utf8'));
+ assert.match(contracts,/usccss\.g7\.u01\.l06\.scaled_area_square_factor/);
+ assert.equal(checkpoint.READY_FOR_STAGE_D,true);
+ assert.equal(checkpoint.testExecution,'TEST_AUTHORED_NOT_RUN');
+});
