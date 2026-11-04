@@ -1578,6 +1578,17 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l05.reciprocal_proportional_equations"],
             "OUR_IM_G7_2017_2019_U02_L06_SOURCE_AUTHORING",
             "READY_VERIFIED", Version);
+        // OUR/IM G7 U02:L07 2017-2019. A finite table with equal
+        // quotients only COULD be proportional, whereas unequal
+        // quotients refute the claim. Qualitative taste and outdoor
+        // measurement contexts require human review.
+        byLesson["PED:US-CCSS-MATH:G7:U02:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U02:L07", "proportions.equivalent_ratios",
+            "G7_TABLE_PROPORTIONALITY_CONSISTENT_VS_IMPOSSIBLE",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l04.proportional_equations",
+             "usccss.g7.u02.l02.proportional_tables"],
+            "OUR_IM_G7_2017_2019_U02_L07_SOURCE_AND_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
