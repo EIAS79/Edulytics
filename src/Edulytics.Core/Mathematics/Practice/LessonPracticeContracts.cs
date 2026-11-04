@@ -1796,6 +1796,15 @@ public static class LessonPracticeContractRegistry
              "usccss.g7.u02.l04.proportional_equations"],
             "OUR_IM_G7_2017_2019_U03_L11_STAINED_GLASS_PROJECT_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
+        // Grade 7 U04 L01: scaled rectangle dimensions plus fraction/percent
+        // of area. Reuse existing scale-factor and percent-equivalent families.
+        byLesson["PED:US-CCSS-MATH:G7:U04:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U04:L01", "proportions.equivalent_ratios",
+            "G7_FLAGS_SCALE_DIMENSIONS_AND_PERCENT_AREA",
+            ["usccss.g7.u01.l02.scale_factor", "usccss.g7.u01.l01.scaled_copy_correspondence",
+             "supporting.fdp.percent_equivalent"],
+            "G7_U04_L01_FLAGS_SCALE_AND_PERCENT_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
         // IM 2021 G6 U01:L01: source-specific machine Practice checks tile-area
         // units and structured 2x2 coverage separately; actual drawing,
         // student explanation and the eight-point rubric are teacher reviewed.
