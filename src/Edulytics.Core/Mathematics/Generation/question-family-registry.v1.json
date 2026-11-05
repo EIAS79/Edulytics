@@ -20637,6 +20637,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.linear.systems.solution_count.classify",
+      "version": 1,
+      "skillId": "algebra.linear.systems.classification",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-solution-count-exact",
+      "representations": ["two_linear_equations","solution_count","teacher_led_graph_justification"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

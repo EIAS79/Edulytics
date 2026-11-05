@@ -121,4 +121,17 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
         Assert.False(UsCcssAlg1Unit2AlgebraQuestions.Verify(
             UsCcssAlg1Unit2AlgebraQuestions.LinearSystemSolveFamily, parameters, "7,4"));
     }
+    [Theory]
+    [InlineData(0, "one")]
+    [InlineData(1, "none")]
+    [InlineData(2, "infinitely-many")]
+    public void SystemCountClassifiesAllCases(int shape, string expected)
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["shape"] = shape, ["sum"] = 5, ["difference"] = 3, ["variant"] = 0
+        };
+        Assert.Equal(expected, UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.SystemSolutionCountFamily, p));
+    }
 }

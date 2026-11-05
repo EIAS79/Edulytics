@@ -1733,6 +1733,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L17",
+            "algebra.linear.systems.classification",
+            "ALG1_ZERO_ONE_INFINITE_SOLUTION_COUNT_PLUS_GRAPH_REASONING",
+            ["algebra.linear.systems.solution_count.classify"],
+            "ALG1_U02_L17_SOLUTION_COUNT_PLUS_TEACHER_JUSTIFICATION",
+            "READY_VERIFIED",
+            Version);
+
         byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U03:L01",
             "supporting.fractions.multiply_divide",

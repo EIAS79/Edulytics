@@ -27,6 +27,9 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
     public const string LinearSystemSolveFamily =
         "algebra.linear.systems.two_by_two.integer_coefficients";
 
+    public const string SystemSolutionCountFamily =
+        "algebra.linear.systems.solution_count.classify";
+
     public sealed record Problem(
         string Family,
         string Prompt,
@@ -38,7 +41,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
             PatternClassificationFamily or OneVariableSolutionCheckFamily or
             TwoVariableSolutionCheckFamily or EquationEquivalenceFamily or
-            LiteralEquationIsolateFamily or StandardFormSlopeInterceptFamily or LinearSystemSolveFamily;
+             LiteralEquationIsolateFamily or StandardFormSlopeInterceptFamily or LinearSystemSolveFamily or
+            SystemSolutionCountFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -60,6 +64,9 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return BuildStandardFormSlopeIntercept(random);
         if (family == LinearSystemSolveFamily)
             return BuildLinearSystem(random);
+
+        if (family == SystemSolutionCountFamily)
+            return BuildSystemSolutionCount(random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -148,6 +155,19 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return $"{xNumerator / determinant},{yNumerator / determinant}";
         }
 
+        if (family == SystemSolutionCountFamily)
+        {
+            if (!ValidateSolutionCount(parameters, out var shape, out _, out _, out _))
+                throw new InvalidOperationException("Invalid system count parameters.");
+            return shape switch
+            {
+                0 => "one",
+                1 => "none",
+                2 => "infinitely-many",
+                _ => throw new InvalidOperationException("Invalid system shape.")
+            };
+        }
+
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
             throw new InvalidOperationException("Invalid ALG1 U02 constraint parameters.");
@@ -198,10 +218,39 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 NormalizePair(answer) == $"{numeratorX / determinant},{numeratorY / determinant}";
         }
 
+        if (family == SystemSolutionCountFamily)
+            return ValidateSolutionCount(parameters, out _, out _, out _, out _) &&
+                NormalizeCount(answer) == Solve(family, parameters);
+
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildSystemSolutionCount(Random random)
+    {
+        var shape = random.Next(0, 3);
+        var sum = random.Next(-8, 13);
+        var difference = random.Next(-8, 13);
+        var variant = random.Next(0, 16);
+        var second = shape switch
+        {
+            0 => $"x-y={difference}",
+            1 => $"2x+2y={2 * sum + 1}",
+            2 => $"2x+2y={2 * sum}",
+            _ => throw new InvalidOperationException("Invalid system shape.")
+        };
+        return new(
+            SystemSolutionCountFamily,
+            $"How many solutions does the system x+y={sum}, {second} have? " +
+            "Answer one, none, or infinitely-many. Explain the graph relationship to your teacher.",
+            "Check whether the two lines intersect, are parallel, or coincide.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["shape"] = shape, ["sum"] = sum, ["difference"] = difference, ["variant"] = variant
+            });
     }
 
     private static Problem BuildLinearSystem(Random random)
@@ -401,6 +450,30 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             {
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
+    }
+
+    private static bool ValidateSolutionCount(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int shape, out int sum, out int difference, out int variant)
+    {
+        shape = sum = difference = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("shape", out shape) && shape is >= 0 and <= 2 &&
+            parameters.TryGetValue("sum", out sum) && sum is >= -8 and <= 12 &&
+            parameters.TryGetValue("difference", out difference) && difference is >= -8 and <= 12 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static string NormalizeCount(string value)
+    {
+        var s = value.Trim().ToLowerInvariant().Replace(' ', '-');
+        return s switch
+        {
+            "1" or "one-solution" => "one",
+            "0" or "zero" or "no-solutions" => "none",
+            "infinite" or "infinitely-many-solutions" => "infinitely-many",
+            _ => s
+        };
     }
 
     private static bool ValidateLinearSystem(
