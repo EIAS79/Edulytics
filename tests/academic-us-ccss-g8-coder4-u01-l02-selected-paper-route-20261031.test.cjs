@@ -49,7 +49,7 @@ test('source activities, 8-point private teacher rubric and response boundaries 
  assert(!paper.includes('Card T1')&&!paper.includes('Card R1')&&!paper.includes('Card F1'));
  assert(!paper.includes('teacherKey'));
  assert.equal(ledger.rows[1].readyForStageD,true);
- assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L03');
+ assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
 });
 test('cool-down first-party reflection and negative example are geometrically distinct',()=>{
  const original=[[1,1],[3,1],[2,3]];
@@ -57,6 +57,6 @@ test('cool-down first-party reflection and negative example are geometrically di
  const wrong=[[-1,1],[-3,1],[2,3]];
  assert.deepEqual(original.map(([x,y])=>[-x,y]),correct);
  assert.notDeepEqual(correct,wrong);
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,2);
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);
  assert.equal(ledger.abcCounters.D_VERIFIED,0);
 });

@@ -33,6 +33,6 @@ test('nonparallel counterexample intersection and angle differ from 45°',()=>{
  assert.notEqual(n.differenceDegrees,45);
  for(const kind of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[kind].length>=3);
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(led.abcCounters.ABC_READY_FOR_D,14);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L15');
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

@@ -10,7 +10,8 @@ const original=[[1,1],[3,1],[2,3]];
 const T=original.map(([x,y])=>[x+2,y-1]);
 const R=original.map(([x,y])=>[-y,x]);
 const F=original.map(([x,y])=>[-x,y]);
-const axi=[[1,0],[0,1],[1,1]].map(([q,s])=>[-s,q+s]);
+const cleanZero=n=>Object.is(n,-0)?0:n;
+const axi=[[1,0],[0,1],[1,1]].map(([q,s])=>[cleanZero(-s),cleanZero(q+s)]);
 const area=p=>Math.abs((p[1][0]-p[0][0])*(p[2][1]-p[0][1])-(p[1][1]-p[0][1])*(p[2][0]-p[0][0]));
 const lengths=p=>[[0,1],[1,2],[0,2]].map(([i,j])=>(p[i][0]-p[j][0])**2+(p[i][1]-p[j][1])**2);
 test('exact L03 first-party sheet linked from student Rich V2, separate teacher rubric',()=>{
@@ -40,6 +41,6 @@ test('translation vs nontranslation cooldown and authored negative boundaries',(
  assert.deepEqual(moves(imageI),[[2,-1],[2,-1],[2,-1]]);
  assert.deepEqual(moves(imageII),[[2,-1],[2,-1],[0,-1]]);
  for(const key of ['correct','equivalent','wrong','malformed','boundary'])assert.ok(r.fixtures[key].length>=3);
- assert.equal(l.abcCounters.ABC_READY_FOR_D,3);assert.equal(l.abcCounters.D_VERIFIED,0);
- assert.equal(l.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L04');
+ assert.equal(l.abcCounters.ABC_READY_FOR_D,131);assert.equal(l.abcCounters.D_VERIFIED,0);
+ assert.equal(l.currentSequentialABCCursor.lessonCode,null);
 });

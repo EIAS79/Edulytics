@@ -44,6 +44,6 @@ test('six practice families and first-party Cool-down verify positive/negative g
  assert.deepEqual(k.cooldown.original.map(x=>x*k.cooldown.factor),k.cooldown.similar);
  assert.notEqual(k.cooldown.unequalRatios[0],k.cooldown.unequalRatios[1]);
  for(const type of ['correct','equivalent','wrong','missing','malformed','boundary'])assert(r.fixtures[type].length>=4);
- assert.equal(c.StageD,'NOT_RUN');assert.equal(led.abcCounters.ABC_READY_FOR_D,24);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(unit.academicABCReadyForD,7);assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L08');
+ assert.equal(c.StageD,'NOT_RUN');assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(unit.unitLessonCount,13);assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

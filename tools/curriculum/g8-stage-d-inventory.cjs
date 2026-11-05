@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -130,10 +131,22 @@ function loadInventory() {
 
     if (assessmentPath) {
       const normalizedAsset = slash(assessmentPath);
+      const assetFullPath = path.join(root, normalizedAsset);
       assert.ok(
-        fs.existsSync(path.join(root, normalizedAsset)),
+        fs.existsSync(assetFullPath),
         'checkpoint references missing first-party assessment asset: ' + normalizedAsset
       );
+      if (data.studentPaper?.sha256) {
+        const actualSha256 = crypto
+          .createHash('sha256')
+          .update(fs.readFileSync(assetFullPath))
+          .digest('hex');
+        assert.equal(
+          actualSha256,
+          data.studentPaper.sha256,
+          'checkpoint assessment SHA-256 drift: ' + code
+        );
+      }
     }
 
     byCode.set(code, {

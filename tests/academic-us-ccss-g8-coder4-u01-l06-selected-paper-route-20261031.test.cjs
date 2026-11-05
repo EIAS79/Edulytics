@@ -46,6 +46,6 @@ test('composition is noncommutative and each step preserves pairwise lengths',()
 test('positive equivalent negative malformed boundary fixtures authored, no Stage D claim',()=>{
  for(const x of ['correct','equivalent','wrong','malformed','boundary'])assert(route.fixtures[x].length>=3);
  assert.equal(route.publisherCooldown,'PUBLISHER_COOLDOWN_UNVERIFIED');
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,6);assert.equal(ledger.abcCounters.D_VERIFIED,0);
- assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L07');
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);assert.equal(ledger.abcCounters.D_VERIFIED,0);
+ assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
 });

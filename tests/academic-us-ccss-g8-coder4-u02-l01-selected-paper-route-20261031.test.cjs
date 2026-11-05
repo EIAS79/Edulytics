@@ -46,6 +46,6 @@ test('source scope retrieval, cooldown and five fixture families honest Stage D'
  for(const kind of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[kind].length>=3);
  assert.equal(contract.StageA,'A_CLOSED_SOURCE_AND_PRACTICE_SCOPE_PARITY');
  assert.equal(contract.StageD,'NOT_RUN');
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,18);assert.equal(ledger.abcCounters.D_VERIFIED,0);
- assert.equal(unit.academicABCReadyForD,1);assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L02');
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);assert.equal(ledger.abcCounters.D_VERIFIED,0);
+ assert.equal(unit.unitLessonCount,13);assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
 });

@@ -41,6 +41,6 @@ test('joined rectangles area/perimeter exclude shared interior segment; cases au
  assert.equal(z.combinedPerimeter,2*(z.combinedWidth+z.height));assert.equal(z.combinedPerimeter,2*2*(z.widthEach+z.height)-2*z.sharedInteriorSide);
  for(const key of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[key].length>=3);
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(led.abcCounters.ABC_READY_FOR_D,10);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L11');
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

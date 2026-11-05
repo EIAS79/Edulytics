@@ -34,6 +34,6 @@ test('equal area or equal perimeter is not sufficient to show rectangles congrue
  assert.equal(R.perimeter,T.perimeter);assert.notEqual(R.area,T.area);
  for(const z of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[z].length>=3);
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,11);assert.equal(ledger.abcCounters.D_VERIFIED,0);
- assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L12');
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);assert.equal(ledger.abcCounters.D_VERIFIED,0);
+ assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
 });

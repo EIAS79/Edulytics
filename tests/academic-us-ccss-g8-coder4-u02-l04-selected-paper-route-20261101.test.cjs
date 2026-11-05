@@ -57,7 +57,7 @@ test('five source Practice families and independent Cool-down preserve exact mat
  assert.deepEqual(k.practice5.final,[2,-3]);
  assert.deepEqual(k.cooldown.vertices.map(p=>dilate(p,k.cooldown.center,k.cooldown.factor)),k.cooldown.image);
  for(const cat of ['correct','equivalent','wrong','missing','malformed','boundary'])assert(r.fixtures[cat].length>=4);
- assert.equal(c.StageD,'NOT_RUN');assert.equal(led.abcCounters.ABC_READY_FOR_D,21);
- assert.equal(led.abcCounters.D_VERIFIED,0);assert.equal(unit.academicABCReadyForD,4);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L05');
+ assert.equal(c.StageD,'NOT_RUN');assert.equal(led.abcCounters.ABC_READY_FOR_D,131);
+ assert.equal(led.abcCounters.D_VERIFIED,0);assert.equal(unit.unitLessonCount,13);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

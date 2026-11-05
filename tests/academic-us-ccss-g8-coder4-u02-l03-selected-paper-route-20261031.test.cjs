@@ -45,7 +45,7 @@ test('all six practice skill families and boundary cases mathematically authored
  assert.deepEqual(k.practice6.original.map(p=>dilate(p,[0,0],1).map((v,i)=>v+[2,-1][i])),k.practice6.image);
  assert.deepEqual(k.cooldown.original.map(p=>dilate(p,k.cooldown.center,k.cooldown.factor)),k.cooldown.image);
  for(const key of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[key].length>=4);
- assert.equal(c.D,'NOT_RUN');assert.equal(led.abcCounters.ABC_READY_FOR_D,20);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(unit.academicABCReadyForD,3);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L04');
+ assert.equal(c.D,'NOT_RUN');assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(unit.unitLessonCount,13);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

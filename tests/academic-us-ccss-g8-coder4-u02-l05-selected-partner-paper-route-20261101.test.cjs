@@ -43,6 +43,6 @@ test('all four Practice types and first-party Cool-down have exact mathematical 
  assert.equal(k.practice4.givenAngle+k.practice4.rightAngle+k.practice4.otherAcuteAngle,180);
  assert.deepEqual(k.cooldown.original.map(pt=>dilate(pt,k.cooldown.center,k.cooldown.factor)),k.cooldown.image);
  for(const category of ['correct','equivalent','wrong','missing','malformed','boundary'])assert(r.fixtures[category].length>=4);
- assert.equal(c.StageD,'NOT_RUN');assert.equal(led.abcCounters.D_VERIFIED,0);assert.equal(led.abcCounters.ABC_READY_FOR_D,22);
- assert.equal(unit.academicABCReadyForD,5);assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L06');
+ assert.equal(c.StageD,'NOT_RUN');assert.equal(led.abcCounters.D_VERIFIED,0);assert.equal(led.abcCounters.ABC_READY_FOR_D,131);
+ assert.equal(unit.unitLessonCount,13);assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

@@ -13,7 +13,7 @@ test('L06 student-facing paper selected exactly from Rich V2; partner sets and p
  assert.equal(crypto.createHash('sha256').update(Buffer.from(html,'utf8')).digest('hex'),r.learnerWorksheetSha256);
  for(const id of r.stableTaskIds)assert(html.includes('id="'+id+'"'));
  assert.equal(r.privateTeacherRubric.criteria.reduce((v,x)=>v+x.points,0),8);
- assert.equal(r.partnerSetsDistinct,true);assert.equal(r.onlineStudentSubmission,false);assert.equal(r.automaticExplanationGrading,false);
+ assert.equal(r.partnerSetsDistinct,true);assert.equal(r.studentOnlineSubmission,false);assert.equal(r.automaticExplanationGrading,false);
 });
 test('6.1 exact equivalent expression and two first-party complete figure maps',()=>{
  assert.equal(10*(2+3)-8*3,k.warmup.value);
@@ -45,6 +45,6 @@ test('three original Practice task families and original cooldown preserve verte
  assert.equal(k.practice3.factor*k.practice3.inverse,1);
  assert.deepEqual(k.cooldown.original.map(p=>t(d(p,k.cooldown.center,k.cooldown.factor),k.cooldown.translation)),k.cooldown.target);
  for(const kind of ['correct','equivalent','wrong','missing','malformed','boundary'])assert(r.fixtures[kind].length>=4);
- assert.equal(c.StageD,'NOT_RUN');assert.equal(l.abcCounters.D_VERIFIED,0);assert.equal(l.abcCounters.ABC_READY_FOR_D,23);
- assert.equal(u.academicABCReadyForD,6);assert.equal(l.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L07');
+ assert.equal(c.StageD,'NOT_RUN');assert.equal(l.abcCounters.D_VERIFIED,0);assert.equal(l.abcCounters.ABC_READY_FOR_D,131);
+ assert.equal(u.unitLessonCount,13);assert.equal(l.currentSequentialABCCursor.lessonCode,null);
 });

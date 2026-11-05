@@ -33,6 +33,6 @@ test('vertical acute angle correspondence and no parallel/intersection contradic
  assert.deepEqual(r.sourceActivityMap.map(x=>x.worksheet),['line-moves','parallel','vertical','cool']);
  for(const type of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[type].length>=3);
  assert.equal(r.originalPublisherCooldown,'PUBLISHER_COOLDOWN_UNVERIFIED');
- assert.equal(led.abcCounters.ABC_READY_FOR_D,9);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L10');
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

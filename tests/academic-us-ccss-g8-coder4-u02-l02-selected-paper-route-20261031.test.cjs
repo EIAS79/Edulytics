@@ -49,7 +49,7 @@ test('original source practice P1-P4 and independently authored cooldown have co
  assert.notEqual(k.practice4.invalid.reduce((a,b)=>a+b),180);
  assert.deepEqual(k.cooldown.small.map(pt=>pt.map(v=>2*v)),k.cooldown.image);
  for(const category of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[category].length>=4);
- assert.equal(c.D,'NOT_RUN');assert.equal(l.abcCounters.ABC_READY_FOR_D,19);assert.equal(l.abcCounters.D_VERIFIED,0);
- assert.equal(u.academicABCReadyForD,2);
- assert.equal(l.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L03');
+ assert.equal(c.D,'NOT_RUN');assert.equal(l.abcCounters.ABC_READY_FOR_D,131);assert.equal(l.abcCounters.D_VERIFIED,0);
+ assert.equal(u.unitLessonCount,13);
+ assert.equal(l.currentSequentialABCCursor.lessonCode,null);
 });

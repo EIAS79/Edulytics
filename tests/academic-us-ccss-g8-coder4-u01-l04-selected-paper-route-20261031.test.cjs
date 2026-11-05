@@ -36,7 +36,7 @@ test('noncommuting composition preserves all vertices and yields different resul
 test('positive/equivalent/wrong/malformed/boundary fixtures authored and no Stage D claims',()=>{
  for(const key of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[key].length>=3);
  assert.equal(r.publisherCooldown,'PUBLISHER_COOLDOWN_UNVERIFIED');
- assert.equal(led.rows[3].readyForStageD,true);assert.equal(led.abcCounters.ABC_READY_FOR_D,4);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L05');
+ assert.equal(led.rows[3].readyForStageD,true);assert.equal(led.abcCounters.ABC_READY_FOR_D,131);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
  assert.equal(led.abcCounters.D_VERIFIED,0);
 });

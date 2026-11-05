@@ -31,7 +31,7 @@ test('nonvertex centroid and midpoint obey same translated reflection and preser
  assert.deepEqual(f(k.midpointOriginal),k.midpointImage);
  const center=k.triangleOriginal.reduce(([a,b],[x,y])=>[a+x/3,b+y/3],[0,0]);
  assert.ok(Math.abs(center[0]-k.centroidOriginal[0])<1e-10);
- assert.deepEqual(f(k.centroidOriginal),k.centroidImage);
+ const fc=f(k.centroidOriginal);assert.ok(Math.abs(fc[0]-k.centroidImage[0])<1e-12&&Math.abs(fc[1]-k.centroidImage[1])<1e-12);
 });
 test('changed face cheek cannot be a reflection while all other landmarks correspond',()=>{
  const f=k.face;assert.deepEqual([-f.cheek[0],f.cheek[1]],f.correctMirroredCheek);
@@ -41,6 +41,6 @@ test('changed face cheek cannot be a reflection while all other landmarks corres
  const z=k.cooldown;assert.deepEqual([z.AImage[0]+z.BImage[0],z.AImage[1]+z.BImage[1]],[2*z.EImage[0],2*z.EImage[1]]);
  for(const kind of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[kind].length>=3);
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(led.abcCounters.ABC_READY_FOR_D,13);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L14');
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

@@ -6,7 +6,8 @@ const c=read('docs/curriculum/us-ccss-g8-coder4-u01-l08-academic-assessment-cont
 const led=read('docs/curriculum/us-ccss-g8-coder4-p0-current-execution-ledger-20261030.json');
 const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json');
 const html=fs.readFileSync(path.join(root,r.learnerWorksheetPath),'utf8'),sha=crypto.createHash('sha256').update(Buffer.from(html,'utf8')).digest('hex');
-const cw=([x,y])=>[y,-x],ccw=([x,y])=>[-y,x],half=([x,y],[a,b])=>[2*a-x,2*b-y];
+const cleanZero=n=>Object.is(n,-0)?0:n;
+const cw=([x,y])=>[cleanZero(y),cleanZero(-x)],ccw=([x,y])=>[cleanZero(-y),cleanZero(x)],half=([x,y],[a,b])=>[2*a-x,2*b-y];
 const sq=(a,b)=>(a[0]-b[0])**2+(a[1]-b[1])**2;
 test('L08 student route selected by exact lesson, four assessment sections, independent teacher rubric',()=>{
  assert.equal(r.lessonCode,'PED:US-CCSS-MATH:G8:U01:L08');assert.equal(sha,r.learnerWorksheetSha256);
@@ -51,6 +52,6 @@ test('selected paper has correct/equivalent/wrong/malformed/boundary fixtures, n
  for(const x of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[x].length>=4);
  assert.equal(r.originalPublisherCooldown,'PUBLISHER_COOLDOWN_UNVERIFIED');
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(led.abcCounters.ABC_READY_FOR_D,8);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L09');
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

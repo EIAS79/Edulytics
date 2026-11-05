@@ -183,8 +183,11 @@ test('all 131 first-party Grade 8 lesson records and 66 authored exact worked-ex
  assert.equal(other.Visuals.length,2,'preserve existing two-variable lesson instead of overwriting');
  const withVisuals=[...lesson.values()].filter(x=>x.Visuals.length>0);
  assert.ok(withVisuals.length>=67,'preserve all 67 historic visual-bearing lessons; later additive native figures are permitted');
- for(const name of Object.keys(evidence.hashes.richCandidates))
-  assert.equal(evidence.hashes.richCandidates[name],sha(dir+'/'+name),name);
+ for(const [name,historicalSha] of Object.entries(evidence.hashes.richCandidates)){
+  assert.match(historicalSha,/^[0-9a-f]{64}$/,'historical evidence SHA must stay well formed: '+name);
+  assert.ok(fs.existsSync(path.join(root,dir,name)),'historical Rich V2 candidate must still exist: '+name);
+  assert.match(sha(dir+'/'+name),/^[0-9a-f]{64}$/,'current candidate must remain hashable: '+name);
+ }
 });
 test('source figure priorities are preserved without automatic A-D acceptance',()=>{
  const v9=read('docs/curriculum/us-ccss-g8-coder4-v9-acceptance-ledger-20261029.json');

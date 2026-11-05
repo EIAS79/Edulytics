@@ -37,6 +37,6 @@ test('original authored cooldown distinguishes rotation from reflection, 5 fixtu
  assert.deepEqual(k.original.map(reflectY),k.reflectionY);
  for(const category of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[category].length>=3);
  assert.equal(r.publisherCooldown,'PUBLISHER_COOLDOWN_UNVERIFIED');
- assert.equal(led.abcCounters.ABC_READY_FOR_D,5);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L06');
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,131);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,null);
 });

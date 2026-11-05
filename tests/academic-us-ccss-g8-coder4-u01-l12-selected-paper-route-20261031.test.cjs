@@ -27,7 +27,7 @@ test('full quadrilateral correspondence distinguishes congruent reflection/trans
  assert.deepEqual(k.rectangleOriginal.map(([x,y])=>[x-5,y+2]),k.rectangleU);
  assert.equal(sq(k.rectangleOriginal[1],k.rectangleOriginal[2]),4);
  assert.equal(sq(k.rectangleV[1],k.rectangleV[2]),9);
- assert.deepEqual(k.quadOriginal.map(([x,y])=>[-x,y]),k.quadM);
+ assert.deepEqual(k.quadOriginal.map(([x,y])=>[x===0?0:-x,y]),k.quadM);
  assert.equal(sq(k.quadOriginal[3],k.quadOriginal[0]),10);
  assert.equal(sq(k.quadN[3],k.quadN[0]),2);
 });
@@ -38,6 +38,6 @@ test('equal-area four-unit-square composites can have unequal perimeters; origin
  assert.deepEqual(k.rectangleOriginal.map(([x,y])=>[x-5,y+2]),k.cooldownImages);
  for(const category of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[category].length>=3);
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,12);assert.equal(ledger.abcCounters.D_VERIFIED,0);
- assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L13');
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);assert.equal(ledger.abcCounters.D_VERIFIED,0);
+ assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
 });

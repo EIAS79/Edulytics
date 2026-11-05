@@ -292,7 +292,7 @@ public sealed class UsCcssGrade8Coder4TwoVariableRepresentationTests
 public sealed class UsCcssGrade8Coder4V10OriginalVisualResourceTests
 {
     [Fact]
-    public void SixtySevenGrade8LessonsLoadOriginalMathRepresentationsWithoutMutatingOtherCurricula()
+    public void CurrentGrade8VisualLessonsLoadOriginalMathRepresentationsWithoutMutatingOtherCurricula()
     {
         var lessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(document => document.Lessons)
@@ -306,11 +306,11 @@ public sealed class UsCcssGrade8Coder4V10OriginalVisualResourceTests
             .Distinct(StringComparer.Ordinal).Count());
 
         var supported = lessons.Where(lesson => lesson.Visuals.Count > 0).ToArray();
-        Assert.Equal(67, supported.Length);
+        Assert.Equal(77, supported.Length);
         var ratioTables = supported.SelectMany(lesson => lesson.Visuals)
             .Where(visual => visual.Kind == RichLessonVisualKind.RatioTable)
             .ToArray();
-        Assert.Equal(67, ratioTables.Length);
+        Assert.Equal(79, ratioTables.Length);
 
         var unitNumbers = supported
             .Select(lesson => lesson.LessonCode.Split(':')[3])

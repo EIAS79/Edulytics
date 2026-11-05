@@ -131,14 +131,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Execute Grade 8 cross-cutting source, math and visual contracts
+      - name: Execute current Grade 8 cross-cutting source, math and visual contracts
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p g8-stage-d-results
-          set -- tests/academic-us-ccss-g8-coder4-*.test.cjs
-          test -f "$1"
-          node --test "$@" | tee g8-stage-d-results/g8-crosscut-node.tap
+          # Per-lesson tests are executed exactly once by D1/D2/D3 shards above.
+          # P0/V7/V8/V9 snapshot-state tests remain historical evidence and are
+          # intentionally not treated as assertions about the final A-B-C state.
+          files=(
+            tests/academic-us-ccss-g8-coder4-v10-math-visuals.test.cjs
+            tests/academic-us-ccss-g8-coder4-v11-original-svg.test.cjs
+            tests/academic-us-ccss-g8-coder4-v12-source-geometry.test.cjs
+            tests/academic-us-ccss-g8-coder4-v13-u01-batch.test.cjs
+            tests/academic-us-ccss-g8-coder4-v13-u01-extended.test.cjs
+            tests/academic-us-ccss-g8-coder4-v13-u01-final-source-spot.test.cjs
+          )
+          for file in "${files[@]}"; do test -f "$file"; done
+          node --test "${files[@]}" | tee g8-stage-d-results/g8-crosscut-node.tap
       - uses: actions/upload-artifact@v4
         if: always()
         with:

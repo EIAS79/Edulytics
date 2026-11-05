@@ -33,6 +33,6 @@ test('correct/equivalent/wrong/malformed/boundary fixtures authored; no runtime 
  for(const kind of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[kind].length>=3);
  assert.equal(r.originalPublisherCooldown,'PUBLISHER_COOLDOWN_UNVERIFIED');
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,15);assert.equal(ledger.abcCounters.D_VERIFIED,0);
- assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L16');
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);assert.equal(ledger.abcCounters.D_VERIFIED,0);
+ assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
 });

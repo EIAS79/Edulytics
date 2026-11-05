@@ -43,8 +43,8 @@ test('six sectors Cool-down, all five response categories and full U01 source ac
  for(const key of ['correct','equivalent','wrong','malformed','boundary'])assert(r.fixtures[key].length>=3);
  assert.equal(c.gates.C,'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE');
  assert.equal(ledger.rows.slice(0,17).filter(q=>q.readyForStageD).length,17);
- assert.equal(ledger.abcCounters.ABC_READY_FOR_D,17);assert.equal(ledger.abcCounters.D_VERIFIED,0);assert.equal(ledger.abcCounters.UNITS_ABC_CLOSED,1);
+ assert.equal(ledger.abcCounters.ABC_READY_FOR_D,131);assert.equal(ledger.abcCounters.D_VERIFIED,0);assert.equal(ledger.abcCounters.UNITS_ABC_CLOSED,9);
  assert.equal(unit.unitReadyForStageD,true);assert.equal(report.academicABCSelectedPaperClosures,17);
- assert.equal(ledger.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L01');
+ assert.equal(ledger.currentSequentialABCCursor.lessonCode,null);
  assert.equal(report.stageD,'NOT_RUN');
 });
