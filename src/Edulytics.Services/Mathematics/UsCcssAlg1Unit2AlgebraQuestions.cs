@@ -14,6 +14,10 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         "algebra.modeling.linear_relationship.select_equation";
     public const string PatternClassificationFamily =
         "algebra.modeling.pattern.classify_relation";
+    public const string OneVariableSolutionCheckFamily =
+        "algebra.equation.one_variable.solution_check";
+    public const string TwoVariableSolutionCheckFamily =
+        "algebra.equation.two_variable.solution_check";
 
     public sealed record Problem(
         string Family,
@@ -24,7 +28,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
 
     public static bool Supports(string? family) =>
         family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
-            PatternClassificationFamily;
+            PatternClassificationFamily or OneVariableSolutionCheckFamily or
+            TwoVariableSolutionCheckFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -36,6 +41,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return BuildLinearRelationshipEquation(random);
         if (family == PatternClassificationFamily)
             return BuildPatternClassification(random);
+        if (family is OneVariableSolutionCheckFamily or TwoVariableSolutionCheckFamily)
+            return BuildSolutionCheck(family, random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -87,6 +94,13 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 _ => throw new InvalidOperationException("Unsupported pattern relation.")
             };
         }
+        if (family is OneVariableSolutionCheckFamily or TwoVariableSolutionCheckFamily)
+        {
+            if (!ValidateSolutionCheck(parameters, out var a, out var b, out var c, out var x, out var y, out _))
+                throw new InvalidOperationException("Invalid ALG1 U02 solution-check parameters.");
+            var ok = family == OneVariableSolutionCheckFamily ? a * x + b == c : a * x + b * y == c;
+            return ok ? "yes" : "no";
+        }
 
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
@@ -112,11 +126,39 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         if (family == PatternClassificationFamily)
             return ValidatePattern(parameters, out _, out _, out _, out _, out _) &&
                 NormalizePattern(answer) == Solve(family, parameters);
+        if (family is OneVariableSolutionCheckFamily or TwoVariableSolutionCheckFamily)
+            return ValidateSolutionCheck(parameters, out _, out _, out _, out _, out _, out _) &&
+                NormalizeYesNo(answer) == Solve(family, parameters);
 
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildSolutionCheck(string family, Random random)
+    {
+        var a = random.Next(2, 9);
+        var b = random.Next(-7, 8);
+        if (b == 0) b = 3;
+        var x = random.Next(-5, 11);
+        var y = random.Next(-5, 11);
+        var shouldMatch = random.Next(0, 2) == 1;
+        var c = family == OneVariableSolutionCheckFamily ? a * x + b : a * x + b * y;
+        if (!shouldMatch) c += random.Next(1, 5);
+        var variant = random.Next(0, 16);
+        var prompt = family == OneVariableSolutionCheckFamily
+            ? $"Does x={x} satisfy {a}x{(b >= 0 ? "+" : "")}{b}={c}? Enter yes or no."
+            : $"Does the ordered pair ({x},{y}) satisfy {a}x{(b >= 0 ? "+" : "")}{b}y={c}? Enter yes or no.";
+        return new(
+            family,
+            prompt + " Explain the contextual meaning of a solution separately with the teacher.",
+            "Substitute the proposed value or ordered pair into the original equation and compare both sides.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["a"] = a, ["b"] = b, ["c"] = c, ["x"] = x, ["y"] = y, ["variant"] = variant
+            });
     }
 
     private static Problem BuildPatternClassification(Random random)
@@ -172,6 +214,25 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             {
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
+    }
+
+    private static bool ValidateSolutionCheck(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int a,
+        out int b,
+        out int c,
+        out int x,
+        out int y,
+        out int variant)
+    {
+        a = b = c = x = y = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("a", out a) && a is >= 2 and <= 8 &&
+            parameters.TryGetValue("b", out b) && b is >= -7 and <= 7 && b != 0 &&
+            parameters.TryGetValue("c", out c) && c is >= -200 and <= 300 &&
+            parameters.TryGetValue("x", out x) && x is >= -5 and <= 10 &&
+            parameters.TryGetValue("y", out y) && y is >= -5 and <= 10 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 
     private static bool ValidatePattern(

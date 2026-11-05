@@ -47,4 +47,22 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
         Assert.Equal(expected, UsCcssAlg1Unit2AlgebraQuestions.Solve(
             UsCcssAlg1Unit2AlgebraQuestions.PatternClassificationFamily, p));
     }
+
+    [Fact]
+    public void SolutionChecksEvaluateOriginalEquation()
+    {
+        var one = new Dictionary<string, int>
+        {
+            ["a"] = 3, ["b"] = 2, ["c"] = 17, ["x"] = 5, ["y"] = 0, ["variant"] = 0
+        };
+        Assert.Equal("yes", UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.OneVariableSolutionCheckFamily, one));
+
+        var two = new Dictionary<string, int>
+        {
+            ["a"] = 2, ["b"] = 3, ["c"] = 12, ["x"] = 3, ["y"] = 2, ["variant"] = 0
+        };
+        Assert.Equal("yes", UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.TwoVariableSolutionCheckFamily, two));
+    }
 }

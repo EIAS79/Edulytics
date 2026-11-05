@@ -20577,6 +20577,30 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.equation.one_variable.solution_check",
+      "version": 1,
+      "skillId": "algebra.equations.solutions",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-one-variable-solution-check-exact",
+      "representations": ["equation", "candidate_value", "yes_no"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.equation.two_variable.solution_check",
+      "version": 1,
+      "skillId": "algebra.equations.solutions",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-two-variable-solution-check-exact",
+      "representations": ["two_variable_equation", "ordered_pair", "yes_no", "teacher_led_context_interpretation"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
