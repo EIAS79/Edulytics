@@ -52,8 +52,32 @@ def source_words(value):
 def require_rendered(value, visible_words, label, min_words=1, max_words=8):
     words=source_words(value)
     require(len(words)>=min_words,"canonical Rich V2 text unexpectedly short "+label)
-    signature=" ".join(words[:min(max_words,len(words))])
-    require(signature in visible_words,"canonical Rich V2 text not rendered "+label+" :: "+signature)
+    expected=words[:min(max_words,len(words))]
+    signature=" ".join(expected)
+    if signature in visible_words:
+        return
+    # The genuine learner renderer inserts diagrams and their accessible
+    # captions between source text blocks. The source words must still occur
+    # in their exact original order within a bounded local DOM window; a
+    # generic heading or an unrelated distant occurrence is not sufficient.
+    tokens=visible_words.split()
+    anchor=expected[:min(4,len(expected))]
+    if len(anchor)==len(expected):
+        raise AssertionError(
+            "G8_AUTH_FAIL_CLOSED canonical Rich V2 text not rendered " +
+            label+" :: "+signature)
+    for start in range(0,len(tokens)-len(anchor)+1):
+        if tokens[start:start+len(anchor)] != anchor:
+            continue
+        matched=len(anchor)
+        for token in tokens[start+len(anchor):start+len(anchor)+90]:
+            if token == expected[matched]:
+                matched+=1
+                if matched==len(expected):
+                    return
+    raise AssertionError(
+        "G8_AUTH_FAIL_CLOSED canonical Rich V2 text not rendered " +
+        label+" :: "+signature)
 
 def sql(query):
     return subprocess.check_output(["psql","-h","127.0.0.1","-U","postgres","-d","edulytics_clean_ci",
