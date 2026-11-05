@@ -22,6 +22,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         "statistics.histogram.half_open_bin_count";
     public const string ExtremeMeanReplacementFamily =
         "statistics.extreme_value.mean_after_replacement";
+    public const string PopulationSdFamily =
+        "statistics.center_spread.population_sd";
 
     public sealed record Problem(
         string Family,
@@ -33,7 +35,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
     public static bool Supports(string? family) =>
         family is DistributionShapeFamily or IqrFamily or MadFamily or
             SpreadsheetFormulaFamily or SpreadsheetRecursiveFillFamily or
-            HistogramBinFamily or ExtremeMeanReplacementFamily;
+            HistogramBinFamily or ExtremeMeanReplacementFamily or
+            PopulationSdFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -53,7 +56,9 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return BuildSpreadsheetRecursiveFill(random);
         if (family == HistogramBinFamily)
             return BuildHistogramBin(random);
-        return BuildExtremeMeanReplacement(random);
+        if (family == ExtremeMeanReplacementFamily)
+            return BuildExtremeMeanReplacement(random);
+        return BuildPopulationSd(random);
     }
 
     public static string Solve(
@@ -127,6 +132,13 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return newMean.ToString(CultureInfo.InvariantCulture);
         }
 
+        if (family == PopulationSdFamily)
+        {
+            if (!ValidatePopulationSd(parameters, out _, out var spread, out _))
+                throw new InvalidOperationException("Invalid population-SD parameters.");
+            return spread.ToString(CultureInfo.InvariantCulture);
+        }
+
         throw new InvalidOperationException("Unsupported ALG1 Unit 1 extension family.");
     }
 
@@ -152,6 +164,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
                 ValidateHistogram(parameters, out _, out _, out _, out _, out _, out _, out _),
             ExtremeMeanReplacementFamily =>
                 ValidateExtreme(parameters, out _, out _, out _),
+            PopulationSdFamily =>
+                ValidatePopulationSd(parameters, out _, out _, out _),
             _ => ValidateStep(parameters, out _, out _, out _)
         };
 
@@ -349,6 +363,29 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             });
     }
 
+    private static Problem BuildPopulationSd(Random random)
+    {
+        var center = random.Next(5, 41);
+        var spread = random.Next(1, 10);
+        var variant = random.Next(0, 16);
+        var values = new[]
+        {
+            center - spread, center - spread,
+            center + spread, center + spread
+        };
+
+        return new(
+            PopulationSdFamily,
+            $"The synthetic population data are {string.Join(", ", values)}. " +
+            "Calculate the population standard deviation σ, dividing the squared-deviation sum by n (not n-1). Enter one exact number.",
+            "Find the population mean, average the squared deviations using n, then take the square root.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["center"] = center, ["spread"] = spread, ["variant"] = variant
+            });
+    }
+
     private static int[] Frequencies(int shape, int scale) => shape switch
     {
         0 => [2 * scale, 2 * scale, 2 * scale, 2 * scale, 2 * scale],
@@ -457,6 +494,19 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         return parameters is not null &&
             parameters.TryGetValue("center", out center) && center is >= 4 and <= 30 &&
             parameters.TryGetValue("delta", out delta) && delta is >= 10 and <= 60 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidatePopulationSd(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int center,
+        out int spread,
+        out int variant)
+    {
+        center = spread = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("center", out center) && center is >= 5 and <= 40 &&
+            parameters.TryGetValue("spread", out spread) && spread is >= 1 and <= 9 &&
             parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 

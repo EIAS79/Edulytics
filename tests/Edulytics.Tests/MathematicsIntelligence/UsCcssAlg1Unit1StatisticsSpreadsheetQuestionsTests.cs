@@ -120,4 +120,17 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.ExtremeMeanReplacementFamily, p, "19/2"));
     }
+
+    [Fact]
+    public void PopulationSdOracleUsesNNotNMinusOne()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["center"] = 4, ["spread"] = 3, ["variant"] = 0
+        };
+        Assert.Equal("3", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.PopulationSdFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.PopulationSdFamily, p, "3"));
+    }
 }

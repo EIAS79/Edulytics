@@ -20505,6 +20505,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.center_spread.population_sd",
+      "version": 1,
+      "skillId": "statistics.standard_deviation",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-population-standard-deviation-exact",
+      "representations": ["numeric_data", "population_sd", "numeric_short_answer", "teacher_led_technology_check"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
