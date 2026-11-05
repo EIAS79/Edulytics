@@ -1,0 +1,3 @@
+# Algebra 1 ? 132 lessons A-B-C completion record
+
+A-B-C recorded complete for 132/132 across 7 units. Unit closures U01?U07 and per-lesson evidence tracked in the sequential ledger. This is an A-B-C content/preparedness declaration, NOT a claim of successful runtime tests, CI, Stage D, publication, or external academic publisher certification. The approved local original source edition is OUR?IM 2017?2019, with AccessIM/v360 excluded. Independent Edulytiks Cool-downs were used where locked source Cool-downs were unavailable. Numeric exact subskills use existing or extended math engines; open-ended graphing, model interpretation and proofs are explicitly teacher-reviewed. No REVIEW complete 2021 marker was added.
