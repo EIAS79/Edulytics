@@ -346,9 +346,19 @@ internal static class MeetingDemoProvisioner
         // retain their existing, unchanged school selection behavior.
         var ciProgramme = Environment.GetEnvironmentVariable(
             "EDULYTICS_CI_REHEARSAL_PROGRAMME");
+        // A separate disposable-only G10 geometry rehearsal preserves the
+        // established Algebra 1 fixture and never alters real school adoptions.
+        var geometryCi = disposableCi &&
+            string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_G10_GEOMETRY"),
+                "true", StringComparison.OrdinalIgnoreCase);
         var activeSchools = disposableCi &&
             string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
-            ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary").ToArray()
+            ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary")
+                .Select(s => geometryCi && s.Key == "commoncore-secondary"
+                    ? s with { PrimaryLoginLogicalLevel = 10, SecondaryLoginLogicalLevel = 11 }
+                    : s)
+                .ToArray()
             : disposableCi || permanentDemo
                 ? Schools.Take(2).ToArray()
                 : Schools;
@@ -1116,7 +1126,14 @@ DELETE FROM "Schools";
             .Where(x =>
                 definition.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
                 x.LogicalLevel <= 9 ||
-                x.CourseCode == "ALG1")
+                x.CourseCode == (string.Equals(
+                    Environment.GetEnvironmentVariable("EDULYTICS_CI_G10_GEOMETRY"),
+                    "true", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                    "true", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                    "true", StringComparison.OrdinalIgnoreCase)
+                        ? "GEO" : "ALG1"))
             .ToArray();
 
         if (levels.Length == 0)
