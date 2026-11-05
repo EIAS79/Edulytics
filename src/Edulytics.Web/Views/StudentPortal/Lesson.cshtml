@@ -1914,7 +1914,7 @@
                         <section class="lesson-learning-section lesson-learning-section--examples"
                                  aria-label="Complete written descriptions of worked examples">
                             <h3>Worked-example descriptions and graph details</h3>
-                            <div class="lesson-reader-text" style="white-space: pre-wrap">@Model.WorkedExamples</div>
+                            <div class="lesson-reader-text" style="white-space: pre-wrap">@Edulytics.Web.Presentation.LessonPresentationParser.ToPlainText(Model.WorkedExamples)</div>
                         </section>
                     }
                 </div>
