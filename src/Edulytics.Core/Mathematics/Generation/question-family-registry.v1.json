@@ -20817,6 +20817,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.notation.evaluate_context",
+      "version": 1,
+      "skillId": "functions.notation.interpret",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-u04-function-notation-context",
+      "representations": ["function_notation", "input_output", "contextual_interpretation"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
