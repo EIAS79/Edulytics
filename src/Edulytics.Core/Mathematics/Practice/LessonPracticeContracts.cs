@@ -1697,6 +1697,15 @@ public static class LessonPracticeContractRegistry
         // measured against the ORIGINAL whole (1/6 or 1/8).
         // Digital objective selections are exact; drawings and explanations
         // remain TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L13",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_SYSTEM_SUBSTITUTION_EXACT_PAIR_PLUS_TEACHER_METHOD",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L13_SOURCE_ALIGNED_METHOD_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U03:L01",
             "supporting.fractions.multiply_divide",
