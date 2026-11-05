@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U06:L12",
+  "nextCanonical": "U06:L13",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -4866,25 +4866,66 @@
       "sourceReviewStartedAtUtc": "2026-11-05T13:02:25.838036+00:00",
       "abcPreparedAtUtc": "2026-11-05T13:02:25.899368+00:00",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L11_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+      "unitCode": "U06",
+      "lessonNumber": 12,
+      "title": "Graphing the Standard Form (Part 1)",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "11d77debe7de463ab5e5333b1521110381ff037122e7ad4aed7d7b465debaacb",
+        "ti": "ace65d2b00da72b1f26f4afd8d821f3f9dddc56aa5e404ae180cfaab37112c22",
+        "tpr": "9ddf032b6c99cff818cd1a80f5a201338841f3b77ce71847f2d7d4022a399e37",
+        "si": "b1bee48b3f0b43b5653eec133449aa51db3acaea6cb7356e668292c391235418",
+        "spr": "de96e39786c8a390282a0b8683f4219a4137dea4acb2f5780ecc21eedef7083e"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u06-l12-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u06-l12-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "verified original teacher/student goals, source activities and practice; retained preexisting aligned examples"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "firstPartyCooldown": "AUTHORED",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "supporting.algebra.complete_square_vertex"
+        ],
+        "teacherReviewRequired": [
+          "standard-form coefficient effects and graph/representation coordination"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "sourceReviewStartedAtUtc": "2026-11-05T13:02:28.756737+00:00",
+      "abcPreparedAtUtc": "2026-11-05T13:02:28.823022+00:00",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L12_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 102,
-    "B_CLOSED": 102,
-    "C_PREPARED": 102,
-    "ABC_READY_FOR_D": 102,
+    "A_CLOSED": 103,
+    "B_CLOSED": 103,
+    "C_PREPARED": 103,
+    "ABC_READY_FOR_D": 103,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 30,
+    "REMAINING": 29,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 5,
     "CURRENT_UNIT": "U06",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L12",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L13",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -4919,12 +4960,12 @@
     "unitsABCCLosed": 5,
     "status": "U06_IN_PROGRESS",
     "previouslyABCClosed": 91,
-    "newlyABCClosed": 11,
+    "newlyABCClosed": 12,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -4956,9 +4997,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U06_IN_PROGRESS_L12",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11",
+  "unitStatus": "U06_IN_PROGRESS_L13",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -4968,9 +5009,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L11_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L12_ABC_CLOSURE_20261105.md"
 }
