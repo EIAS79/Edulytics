@@ -1715,6 +1715,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L15",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_ELIMINATION_CONTEXT_EXACT_PAIR_PLUS_TEACHER_METHOD",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L15_OBJECTIVE_PAIR_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U03:L01",
             "supporting.fractions.multiply_divide",
