@@ -13,6 +13,9 @@ const ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPE
 const progress=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/full-grade-progress.json');
 const files=walk('src/Edulytics.Core/Curriculum/LessonContent/RichV2').filter(f=>/us-ccss-hs-geo-u\d\d-.*\.json$/.test(f));
 const rich=files.flatMap(f=>read(f).Lessons.map(x=>({...x,__file:f})));
+const mappings=read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json').mappings;
+const mapped=mappings.filter(x=>typeof x.lessonCode==='string'&&x.lessonCode.startsWith(prefix));
+const verifiedMapped=mapped.filter(x=>x.practiceReadiness==='READY_VERIFIED'&&Array.isArray(x.allowedQuestionFamilies)&&x.allowedQuestionFamilies.length>0);
 const counts=[22,15,16,11,18,17,14,11];
 const issues=[];const check=(condition,code,detail)=>{if(!condition)issues.push({code,detail})};
 check(blueprint.Lessons.length===124,'BLUEPRINT_COUNT',String(blueprint.Lessons.length));
@@ -50,9 +53,10 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
 const structural={pass:issues.length===0,errors:issues,count:lessons.length,units:8,
   blueprintHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json'))).digest('hex'),
   sourceEvidenceCompleteCount:lessons.filter(x=>x.sourceEvidenceComplete).length,
-  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN'};
+  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
 const result={structural,lessons};
 if(process.argv.includes('--json')) console.log(JSON.stringify(result,null,2));
 else console.log(JSON.stringify(structural,null,2));
 if(issues.length)process.exitCode=1;
+if(process.argv.includes('--strict-practice') && verifiedMapped.length!==124){console.error('FAIL_CLOSED: Grade10 verified practice mappings '+verifiedMapped.length+'/124');process.exitCode=4}
 if(process.argv.includes('--strict-source')&&lessons.some(x=>!x.sourceEvidenceComplete)){console.error('FAIL_CLOSED: grade10 source-element 1:1 coverage not demonstrated');process.exitCode=2}

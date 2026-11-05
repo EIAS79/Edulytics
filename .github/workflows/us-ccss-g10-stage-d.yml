@@ -5,11 +5,11 @@ on:
     paths:
       - '.github/workflows/us-ccss-g10-stage-d.yml'
       - 'tools/curriculum/g10-stage-d-audit.cjs'
-      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G10/**'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/GEO/**'
       - 'src/Edulytics.Core/Curriculum/LessonContent/**'
       - 'src/Edulytics.Core/Curriculum/LessonBlueprints/**'
       - 'tools/curriculum/us-ccss-geo-*.test.cjs'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -151,3 +151,17 @@ jobs:
           node-version: '24'
       - name: Fail closed unless 124 complete source-element maps are evidenced
         run: node tools/curriculum/g10-stage-d-audit.cjs --strict-source
+
+  practice-route-coverage:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Require verified Grade 10 lesson-specific Practice routing
+        run: node tools/curriculum/g10-stage-d-audit.cjs --strict-practice
