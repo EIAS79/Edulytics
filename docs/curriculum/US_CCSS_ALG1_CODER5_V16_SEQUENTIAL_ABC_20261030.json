@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U01:L03",
+  "nextCanonical": "U01:L04",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -227,27 +227,26 @@
         "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
       },
       "C": {
-        "status": "AUTHORING_CLOSED_NOT_RUNTIME",
+        "status": "C_CLOSED_REUSED_EXACT_FAMILIES",
         "draftPrepared": true,
-        "oracles": "Shifted synthetic arrays median difference 5, equal range 3; graph drawing human scored",
+        "oracles": "First-party shifted distributions preserve range/IQR while median shifts by 5; existing source-grounded test fixture authored",
         "humanScored": true,
-        "runtimeSupported": false,
-        "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
-        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
-        "owner": "Supervisor 2",
+        "runtimeSupported": true,
+        "exactPath": "statistics.center_spread.median + statistics.center_spread.range via existing exact SkillContract engine",
+        "reason": "Reuse existing exact center/spread families for objective components; student-created displays and gallery critique remain teacher-scored",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L03_AUTHORING_C_20261030.json",
-        "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading",
-        "selectedPracticeRouteVerified": false,
-        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
+        "independentOracle": "UsCcssAlgebra1CourseUnit1RichV2Tests.GalleryShiftPreservesRangeAndIqrAndChangesMedianByFive — AUTHORED_NOT_RUN",
+        "deferredToStageD": "test/CI execution, authenticated display submission and teacher review",
+        "selectedPracticeRouteVerified": true,
+        "stageCGate": "REUSE_ROUTE_AUTHORED_TESTS_NOT_RUN"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": false,
+      "readyForStageD": true,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
-      "timingNote": "not captured at source review start; no invented duration",
+      "timingNote": "2026-11-05 continuation: local teacher/student source hashes preloaded and compared; no invented elapsed time.",
       "authoringClosedAtUtc": "2026-10-30T14:06:53.660859+00:00",
-      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
+      "strictABCClosure": "READY_FOR_STAGE_D"
     },
     {
       "ordinal": 4,
@@ -1117,16 +1116,16 @@
     "A_CLOSED": 16,
     "B_CLOSED": 16,
     "C_PREPARED": 16,
-    "ABC_READY_FOR_D": 2,
+    "ABC_READY_FOR_D": 3,
     "D_VERIFIED": 0,
     "BLOCKED": 1,
-    "REMAINING": 130,
+    "REMAINING": 129,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_BLOCKED_L03",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_BLOCKED_L04",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -1157,22 +1156,21 @@
     "unitTotalLessons": 16,
     "courseUnitTotal": 7,
     "unitsABCCLosed": 0,
-    "status": "L03_C_BLOCKED_EXACT_SELECTED_PRACTICE",
+    "status": "L04_C_BLOCKED_EXACT_SELECTED_PRACTICE",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 2,
+    "newlyABCClosed": 3,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
     "blockingDependency": {
-      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
       "stage": "C",
-      "missing": "Exact selected digital component route for L03; graph/gallery critique remains teacher-scored",
-      "currentSourceAuthoring": "existing U01:L03 Rich V2 plus C authoring fixture"
+      "missing": "Exact selected digital component route for distribution-shape classification; context justification remains teacher-scored"
     },
     "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
     "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
@@ -1184,9 +1182,9 @@
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
-  "unitStatus": "UNIT_IN_PROGRESS_BLOCKED_L03",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+  "unitStatus": "UNIT_IN_PROGRESS_BLOCKED_L04",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -1196,14 +1194,13 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
   "blockedCurrentLesson": {
-    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
     "stage": "C",
-    "missing": "Exact selected digital component route for L03; graph/gallery critique remains teacher-scored",
-    "currentSourceAuthoring": "existing U01:L03 Rich V2 plus C authoring fixture"
+    "missing": "Exact selected digital component route for distribution-shape classification; context justification remains teacher-scored"
   },
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U01_L02_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U01_L03_ABC_CLOSURE_20261105.md"
 }
