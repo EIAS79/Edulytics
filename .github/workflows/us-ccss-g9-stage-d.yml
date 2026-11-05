@@ -1,5 +1,10 @@
 name: US CCSS G9 Stage D - fail closed
 on:
+  push:
+    branches: [feat/us-ccss-alg1-coder5-full-course-20261028]
+    paths:
+      - '.github/workflows/us-ccss-g9-stage-d.yml'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G9/**'
   pull_request:
     branches: [main]
     paths:
