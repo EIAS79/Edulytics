@@ -1,0 +1,1467 @@
+{
+  "schema": "edulytiks-us-ccss-coder8-course-evidence-v1",
+  "asOf": "2026-10-30",
+  "operator": "Coder 8",
+  "supervisor": "American Supervisor 3",
+  "course": {
+    "curriculum": "US-CCSS-MATH",
+    "standardsVersion": "CCSSM-2010",
+    "blueprintCode": "US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC",
+    "courseCode": "ADV-ALG-FUNC",
+    "pathway": "Fourth Courses",
+    "unitCount": 1,
+    "lessonCount": 2
+  },
+  "git": {
+    "repository": "EIAS79/Edulytics",
+    "auditedMain": "39c757630d2bd67217a1468fce099653ed0f3f53",
+    "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+    "contentCommit": "14a487ccb5b04c2d3178e63ae99ba9f5e65c49a0",
+    "courseTestCommit": "e13fa7977b5b4f56fcef22f04ef412071862edb4",
+    "canonicalBodyHashCommit": "0cab2b9bcbb127f8d20e65629275f24478ae3ab5",
+    "hashTestCommit": "037394c727ae7e14efac3dedf86a00c525e19bb7",
+    "draftPr": "https://github.com/EIAS79/Edulytics/pull/585",
+    "latestVerifiedCandidateBodyHashChange": "0cab2b9bcbb127f8d20e65629275f24478ae3ab5",
+    "semanticTestFixCommit": "4d55a896fbab011b82d90efd70e8da8e48486921",
+    "fixtureDataCommit": "300f19045833772f19c135f6f374e6a575f73e45",
+    "fixtureTestsCommit": "f3a92ee01e638b81be534152195abd9a51365157",
+    "revisionDiffHandoffCommit": "fb6885829250ed4874182c601b69f0373bda7095",
+    "fixtureTestsOracleStrengtheningCommit": "71eb6f3eddbde45cd3b068fcfdfe1892e8825717",
+    "sourcePaintingContentCommit": "36ec7df1cb52fbb37512756c34a5e8e7f0da156c",
+    "sourcePaintingOracleTestsCommit": "6a0425c3c9cb58b36e653dbb3d490ed9fb3b29ad",
+    "sourceTaskEvidenceCommit": "991bea163fdeccfa259c2c980ae66b9bd1937272",
+    "v2ExactFieldHandoffCommit": "aa689a5797521818dfb83bf876ee5087d11fa499",
+    "logNumberLineTeachingCommit": "fa296857f7176cc85714b0af4cc38ce68bcd0352",
+    "logNumberLineOracleTestsCommit": "03bdcd34eb1c69cb18883dbe5375277e24359e1f",
+    "twentySixMalformedBoundaryFixturesCommit": "1befb0b28f76810b7ba36b229acb848d448143a8",
+    "sixRubricsCommit": "dc1325200287baa54f0421943908f31c0c4c0709",
+    "fixtureTheoryTestsCommit": "057051e7b1e64bbe904612e38f1d40664c784f92",
+    "nodeFixtureTestCommit": "92bce8457feb2d8974581495224ad8ea456b9cb9",
+    "sourceScenarioDataCommit": "595db3ba0528d07c93e211314a0b55ce66e1204b",
+    "continuationNodeTestCommit": "a2d36970a3b749a811117d2d2a72c26c6342a7f0",
+    "continuationL06CSharpTestCommit": "3fe175643642e0f98f19ad4ed30344fd0aa81b30",
+    "continuationL06CorrectedFixtureCommit": "44290bb73875cdf806d8db54dcb39aab143bb634",
+    "sourceV4ContentCommit": "fa1bc776f22d118b564ac98b6265c7b09dea22a0",
+    "sourceV4TestCommit": "cfbb243421deb1aba9928365da57903ad3e1cc69",
+    "sourceV4FixtureCommit": "6674ab7b95af8321cd01e50e37a94bbfb5ff7ded",
+    "sourceV4NodeTestCommit": "86434e2f4672886523e138436042004df1ef42ab",
+    "sourceV4HandoffCommit": "f086ec3eb23482b732b13b4aba9f0d0cea739638"
+  },
+  "content": {
+    "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
+    "oldVersion": "phase30-common-core-rich-content-v1",
+    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v4",
+    "baselineFileBlobSha": "69306240d3f240177af7dcc6b25fc420c59a8316",
+    "candidateFileBlobSha": "f316ef834f64d6f95e9464d8ec88fc59d476e158",
+    "sourceMetadataPreserved": true,
+    "migrationRequired": true,
+    "persistedPredecessorVerified": false,
+    "effectiveRenderedContentVerified": false,
+    "publisherTaskPdfIndependentlyRechecked": false,
+    "priorUnapprovedCandidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+    "previousUnapprovedV2Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v2",
+    "previousUnapprovedV3Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
+    "l01SourcePdfTeacherBinaryShaVerified": true,
+    "l01SourcePdfStudentTaskPagesVerified": true
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "title": "All Systems Go",
+      "standardCodes": [
+        "CCSS:HSA-REI.C.8",
+        "CCSS:HSA-REI.C.9"
+      ],
+      "sourceSha256Recorded": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+      "canonicalBodySha256Recorded": "7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199",
+      "changes": [
+        "2x2 inverse determinant and multiplication example",
+        "3x3 inverse using matrix-capable technology and independent verification",
+        "singular dependent vs inconsistent classification",
+        "inverse versus row reduction decision guidance",
+        "source-excerpt-aligned three-week painting supplies 3x3 model, exact inverse, price interpretation and negative price boundary",
+        "direct PDF source-confirmed MVP 10.6H identity/inverse matrix multiplication task order, technology and second 3×3 system [2,4,3]"
+      ],
+      "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
+      "localMathOracle": "PASS_EXACT_ARITHMETIC",
+      "runtimeLessonPractice": "NOT_RUN",
+      "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "stageB": "COURSE_CONTENT_V4_AUTHORED_AND_NODE_SOURCE_ORACLE_CHECKED; AUTHENTICATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
+      "mappingAndPractice": "BLOCKED_584_EXPLICIT_MATRIX_SYSTEM_INVERSE_GENERATORS_REQUIRED",
+      "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
+      "authenticatedRuntime": "NOT_RUN_453",
+      "productionUat": "NOT_RUN",
+      "previousUnapprovedV1BodySha256": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+      "sourceTaskReconciliation": "PAINTING_RECEIPT_MODEL_IMPLEMENTED; STUDENT_AND_TEACHER_INDEXED_SOURCE_TEXT_VERIFIED; FULL_PDF_BINARY_AND_ALL_SOURCE_TASKS_NOT_VERIFIED",
+      "stageA": "TARGETED_ORIGINAL_10_6H_STUDENT_PAGES_34_TO_36_AND_TEACHER_49_TO_53_DIRECTLY_READ_AND_SOURCE_SHA_VERIFIED; INDEPENDENT_ACADEMIC_SIGNOFF_PENDING",
+      "previousUnapprovedV3BodySha256": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
+      "sequentialABCCheckpoint": {
+        "reviewedHead": "798d57b0f969fd683d624f479245798908ed76ee",
+        "evidenceCommit": "2c2353b3a6252b0f4c28fe66d9b6f9059eba6fd2",
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/AllSystemsGo-sequential-ABC-checkpoint-20261030.md",
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED_BY_INTEGRATION": true,
+        "sourceLocalSha256Matches": true,
+        "sourceTeacherPagesReviewed": [
+          49,
+          50,
+          51,
+          52,
+          53
+        ],
+        "academicApproved": false,
+        "currentHeadTests": "TEST_NOT_RUN",
+        "blocker": "#584 shared incorrect matrix Practice mapping and unapproved predecessor transition",
+        "nextCursor": "U01:L01"
+      },
+      "continuationAfterSupervisorOrder20261030": {
+        "checkedAtLocal": "2026-10-30T08:08:44.1493293+01:00",
+        "startOfCurrentContinuation": "2026-10-30 local (before 08:08:44+01:00; exact start not captured)",
+        "coderHeadBefore": "3c59164d0f0f073985511cb121d7f0d703929a29",
+        "sharedPr600Head": "e16dcea4680cee585aa9b4f088fabd4421dc5392",
+        "sharedPr600Status": "OPEN_DRAFT_NOT_MERGED",
+        "sourceABEvidence": "Reused prior original teacher pages 49-53; unchanged lesson v4 body and original SHA; no PDF re-read",
+        "sourceAcademicSignoff": "NOT_VERIFIED",
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED_BY_INTEGRATION": true,
+        "matrixFixtureCount": 11,
+        "fixtureSourceBlobSha": "1ad0f6866479a9ddf7a7f45d954834005bdee82a",
+        "sharedOwnerFixtureStatusBlobSha": "29058d62b74becef70ac56c3a555259f4be45ca8",
+        "proposedFixtureCrosswalk": [
+          {
+            "id": "M01",
+            "questionCategory": "matrix-coefficients-3x3",
+            "officialStandard": "CCSS:HSA-REI.C.8",
+            "proposedQuestionFamily": "usccss.hs.matrix.coefficients_3x3",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "NUMERIC_OR_STRUCTURED",
+            "correct": "A=[[1,1,1],[2,-1,1],[1,2,-1]]; b=[6,3,2]",
+            "equivalent": "Ax=b with A rows (1,1,1), (2,-1,1), (1,2,-1) and b column (6,3,2)",
+            "wrong": "A=[[1,1,1],[2,1,1],[1,2,-1]]",
+            "malformed": "A=[[1,1],[2,-1,1]]; b=[6,3,2]",
+            "boundaryVerifier": "The first coefficient row has all 1s; replacing absent entries or dropping a column changes the system.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M02",
+            "questionCategory": "inverse-2x2",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": "usccss.hs.matrix.inverse_2x2",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "NUMERIC_OR_STRUCTURED",
+            "correct": "A^-1=[[1,-1],[-1,2]]; x=[2,1]",
+            "equivalent": "A^-1=[[1,-1],[-1,2]]; x=[2/1,1/1]",
+            "wrong": "x=[1,2]",
+            "malformed": "A^-1=[[1,-1],[-1]]; x=[2,1]",
+            "boundaryVerifier": "det([[2,1],[1,1]])=1, so the inverse is defined and A^-1 b must reproduce x=[2,1].",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M03",
+            "questionCategory": "inverse-3x3",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": "usccss.hs.matrix.inverse_3x3",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "NUMERIC_OR_STRUCTURED",
+            "correct": "det(A)=7; A^-1=(1/7)*[[-1,3,2],[3,-2,1],[5,-1,-3]]; x=[1,2,3]",
+            "equivalent": "x=[7/7,14/7,21/7]",
+            "wrong": "x=[1,3,2]",
+            "malformed": "A^-1=[[1,2],[3,4]]; x=[1,2,3]",
+            "boundaryVerifier": "det(A)=7; verify both A*A^-1=I3 and A*x=b using exact rational entries.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M04",
+            "questionCategory": "row-reduction-3x3",
+            "officialStandard": "CCSS:HSA-REI.C.8",
+            "proposedQuestionFamily": "usccss.hs.matrix.row_reduce_3x3",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "NUMERIC_OR_STRUCTURED",
+            "correct": "x=[1,2,3]",
+            "equivalent": "[1,2,3]",
+            "wrong": "[1,2]",
+            "malformed": "x=[1,2,not-a-number]",
+            "boundaryVerifier": "All 3 original equations must hold: 6, 3 and 2; rejecting a two-entry solution is mandatory.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M05",
+            "questionCategory": "singular-dependent",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": "usccss.hs.matrix.classify_2x2",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "CLASSIFICATION_AND_RUBRIC",
+            "correct": "infinitely many; (x,y)=(2-t,t)",
+            "equivalent": "x=2-y for all real y",
+            "wrong": "only one solution (2,0)",
+            "malformed": "(x,y)=(2-t,)",
+            "boundaryVerifier": "The augmented zero row is [0,0|0], leaving a free parameter; do not accept a single example as the full set.",
+            "teacherRubricId": "M05",
+            "teacherReviewRequired": true,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M06",
+            "questionCategory": "singular-inconsistent",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": "usccss.hs.matrix.classify_2x2",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "CLASSIFICATION",
+            "correct": "no solution",
+            "equivalent": "inconsistent",
+            "wrong": "infinitely many",
+            "malformed": "classification=",
+            "boundaryVerifier": "Subtracting twice the first equation yields [0,0|1], a contradiction.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M07",
+            "questionCategory": "singular-no-inverse",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": "usccss.hs.matrix.inverse_2x2",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "CLASSIFICATION",
+            "correct": "det(A)=0; inverse undefined",
+            "equivalent": "singular; no inverse",
+            "wrong": "A^-1=[[4,-2],[-2,1]]",
+            "malformed": "A^-1=[[4,-2],[-2]]",
+            "boundaryVerifier": "det(A)=1*4-2*2=0, so the inverse is undefined regardless of entries supplied.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M08",
+            "questionCategory": "dimension-error",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": "usccss.hs.matrix.inverse_2x2",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "REJECT_INVALID_INPUT",
+            "correct": "reject dimension mismatch",
+            "equivalent": "invalid dimensions",
+            "wrong": "x=[2,1,0]",
+            "malformed": "A^-1*[5,3,]",
+            "boundaryVerifier": "2x2 inverse times a 3-entry column is undefined, even if a student pads a solution with zero.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M09",
+            "questionCategory": "sign-order-error",
+            "officialStandard": "CCSS:HSA-REI.C.8",
+            "proposedQuestionFamily": "usccss.hs.matrix.coefficients_3x3",
+            "interactionProposed": "StructuredEntry (pending only)",
+            "answerGradingPolicy": "NUMERIC_OR_STRUCTURED",
+            "correct": "[2,-1,1]",
+            "equivalent": "(2, -1, +1)",
+            "wrong": "[2,1,-1]",
+            "malformed": "[2,-,1]",
+            "boundaryVerifier": "Coefficient row order x,y,z and the negative y sign must both be preserved.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M10",
+            "questionCategory": "inverse-not-available",
+            "officialStandard": "CCSS:HSA-REI.C.9",
+            "proposedQuestionFamily": null,
+            "interactionProposed": "Invalid-input/no-inverse validator; generator unassigned",
+            "answerGradingPolicy": "REJECT_INVALID_INPUT",
+            "correct": "not square; A^-1 undefined",
+            "equivalent": "dimension-incompatible for inversion",
+            "wrong": "invertible",
+            "malformed": "A^-1=[[1,2,3],[4,5,6]]",
+            "boundaryVerifier": "A 2x3 matrix has no two-sided square inverse even if its rows are independent.",
+            "teacherRubricId": null,
+            "teacherReviewRequired": false,
+            "independentKernelStatus": "HUMAN_OR_INVALID_INPUT_REVIEW_REQUIRED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          },
+          {
+            "id": "M11",
+            "questionCategory": "reasoning-rubric",
+            "officialStandard": "CCSS:HSA-REI.C.8",
+            "proposedQuestionFamily": null,
+            "interactionProposed": "Teacher-scored written explanation; no auto-grade kernel",
+            "answerGradingPolicy": "HUMAN_RUBRIC",
+            "correct": "valid equivalence argument referring to reversible row operation",
+            "equivalent": "independent rubric assessed explanation",
+            "wrong": "numerical answer only",
+            "malformed": "R2 <- R2 -",
+            "boundaryVerifier": "A valid explanation must establish reverse operation R2 <- R2 + 2R1 while R1 stays fixed.",
+            "teacherRubricId": "M11",
+            "teacherReviewRequired": true,
+            "independentKernelStatus": "HUMAN_OR_INVALID_INPUT_REVIEW_REQUIRED",
+            "selectedRuntime": "NOT_VERIFIED_STUDENT_ROUTE_DENIED",
+            "gradedPersistence": "NOT_VERIFIED"
+          }
+        ],
+        "readiness": "INTEGRATION_PENDING on PR600, zero selected student questions certified",
+        "sharedMapUpdate": "PR600 maps CCSS:HSA-REI.C.8/.9 to hs-matrix-linear-systems via ccss-hs-matrix-systems-exact; NOT in merged branch PR585 and NOT READY_VERIFIED",
+        "successorGap": "PR600 proposed successor file references teaching-v1 and old L01 body 6abd1e7... whereas Coder8 current lesson is teaching-v4 and body 7245f950...; proposed manifest is explicitly DENIED, not an approved predecessor or permission for materialization",
+        "blockingOwner": "Shared Integration Owner #584; PR600 review; independent content/version approval",
+        "additionalUnverified": "Exact source fixture equivalence of all 11 candidate kernels; selected lesson-scoped routing; approved content-version v4 predecessor; teacher rubric scoring workflow; score persistence/tenant isolation. #453 school adoption remains separate Stage D/release issue.",
+        "tests": {
+          "command": "NOT_RUN",
+          "result": "TEST_NOT_RUN",
+          "testedSha": null,
+          "reason": "No source or Practice code changed on Coder8; inspection of PR600 pending contract and static 11-case mapping only. Prior 32/32 Node belonged to 86434e2f and not current SHA."
+        },
+        "stageD": "NOT_STARTED",
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+        "advancedToL02": false
+      },
+      "soloABC20261030": {
+        "version": "coder8-solo-abc-20261030",
+        "repository": "EIAS79/Edulytics",
+        "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+        "headBefore": "7bcd2c83ba4f346e36bb730c50f446c2cd57d19c",
+        "codeCommits": [
+          "2c3cee7cf10bed1c1f05ebafb484acef7ae10737",
+          "6b54277236ba67ad3982d105b692afbda399ed27"
+        ],
+        "fixturesCommit": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+        "contractSourcePath": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+        "contractTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+        "contractGitBlobSha": "37cda1b440a04ce63072e2409b5af7361f22415c",
+        "testChecks": {
+          "isolatedDotnetConsole": {
+            "status": "PASS",
+            "checksPassed": 28,
+            "checksTotal": 28,
+            "device": "Our-CS",
+            "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+          },
+          "nativeNodeFixtures": {
+            "status": "PASS",
+            "checksPassed": 32,
+            "checksTotal": 32,
+            "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+            "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+            "device": "Our-CS",
+            "scope": "Fixture/independent mathematical oracle, not selected Practice"
+          },
+          "focusedXunit": {
+            "status": "FAILED_INFRASTRUCTURE",
+            "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+            "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+            "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+          }
+        },
+        "sourceHashesMutated": false,
+        "canonicalBodyHashesMutated": false,
+        "manualCIStarted": false,
+        "stageD": "NOT_STARTED",
+        "merge": false,
+        "deploy": false,
+        "timing": {
+          "firstObservedLocal": "2026-10-30T13:02:41.2742220+01:00",
+          "l02PdfHashObservedLocal": "2026-10-30T13:05:10.3109856+01:00",
+          "lastObservedLocal": "2026-10-30T13:13:25.8329591+01:00",
+          "note": "Observation times only; exact per-lesson work start/end were not captured and are not inferred"
+        },
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED": true,
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+        "returnQueue": {
+          "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+          "state": "BLOCKED_EXTERNAL_FILE_OWNERSHIP_AND_VERSION_APPROVAL",
+          "blockingItems": [
+            {
+              "kind": "central_runtime_contract",
+              "needed": "Official lesson-selected Practice mapping and registered exact generator/interactions with M01–M11 evidence; PR600 remains unmerged pending. PR585 Coder8 may not touch central registries without exclusive file allocation.",
+              "fileOwnership": "Supervisor 3 to allocate exclusive edit owner for LessonPracticeContracts.cs, ExactSkillContractQuestionEngine.cs and required registry/mapping files, or accept verified integrated predecessor",
+              "reference": "https://github.com/EIAS79/Edulytics/pull/600"
+            },
+            {
+              "kind": "academic_content_predecessor",
+              "needed": "Authorize actual teaching-v4 and canonical body 7245f950... with source-aware approved predecessor; v1 proposal on PR600 does not authorize v4.",
+              "fileOwnership": "Academic/version approval authority; no source/canonical hash edits by Coder8"
+            }
+          ],
+          "courseOwnedDone": [
+            "Preserved A/B parity",
+            "Implemented isolated rational exact full-matrix and inverse+solution verifier",
+            "Corrected M03 fixture equivalent answer to require inverse AND x",
+            "Preserved M05/M11 human rubrics"
+          ],
+          "pendingC": [
+            "M04 row-reduction work rubric beyond solution-only automatic score",
+            "M05 and M11 teacher-scored evidence",
+            "M07/M08/M10 inverse-eligibility adapter from PR600 not yet selected",
+            "Actual lesson-selected generator and verifier adoption, explicit legal predecessor"
+          ]
+        }
+      },
+      "unitFirstV3CurrentCheckpoint": {
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED_BY_INTEGRATION": true,
+        "sourceAandBReused": true,
+        "blockedBy": [
+          "SELECTED_PRACTICE_CENTRAL_CONFLICT",
+          "TEACHING_V4_APPROVED_PREDECESSOR_MISSING"
+        ],
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+        "testsThisPass": "NOT_RUN",
+        "newCourseOwnedSourceMethods": [
+          "VerifySystemClassification",
+          "VerifySystemSolution",
+          "VerifyInverseEligibility"
+        ],
+        "preserveSourceAndBodyHashes": true
+      },
+      "centralLeaseV4Checkpoint": {
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "contentChanged": false,
+        "candidateContractCommit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac",
+        "pendingOnly": true,
+        "integrationStillNeeded": true
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "title": "Log Logic",
+      "standardCodes": [
+        "CCSS:HSF-BF.B.5"
+      ],
+      "sourceSha256Recorded": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+      "canonicalBodySha256Recorded": "d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c",
+      "changes": [
+        "same-base comparison with logarithm bounds",
+        "base between zero and one reverses inequality",
+        "comparison across different bases",
+        "proof of product rule and counterexample to sum rule",
+        "logarithmic equation domain check",
+        "source-goal number-line placements and cross-base log conjecture with x<1, x=1, x>1 counterexamples"
+      ],
+      "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "practiceStatus": "PARTIAL_NUMERIC_SUBSKILLS_SHARED_INTEGRATION_REQUIRED_FOR_SOURCE_GOAL",
+      "localMathOracle": "PASS_DOUBLE_WITH_TOLERANCE",
+      "runtimeLessonPractice": "NOT_RUN",
+      "baselineCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "stageB": "COURSE_AUTHORED_AND_MATH_CHECKED; INTEGRATION_AND_APPROVAL_PENDING",
+      "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
+      "mappingAndPractice": "PARTIAL_LOG_EXACT_EVALUATION; COMPARISON_AND_REASONING_NOT_VERIFIED_SHARED_OWNER_584",
+      "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
+      "authenticatedRuntime": "NOT_RUN_453",
+      "productionUat": "NOT_RUN",
+      "previousUnapprovedV2BodySha256": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
+      "stageA": "STUDENT_ORIGINAL_TASK_PAGES_1_TO_4_VISUALLY_REVIEWED_AND_TARGETED_TEACHER_NOTES_INDEXED; ACADEMIC_APPROVAL_PENDING",
+      "soloABC20261030": {
+        "version": "coder8-solo-abc-20261030",
+        "repository": "EIAS79/Edulytics",
+        "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+        "headBefore": "7bcd2c83ba4f346e36bb730c50f446c2cd57d19c",
+        "codeCommits": [
+          "2c3cee7cf10bed1c1f05ebafb484acef7ae10737",
+          "6b54277236ba67ad3982d105b692afbda399ed27"
+        ],
+        "fixturesCommit": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+        "contractSourcePath": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+        "contractTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+        "contractGitBlobSha": "37cda1b440a04ce63072e2409b5af7361f22415c",
+        "testChecks": {
+          "isolatedDotnetConsole": {
+            "status": "PASS",
+            "checksPassed": 28,
+            "checksTotal": 28,
+            "device": "Our-CS",
+            "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+          },
+          "nativeNodeFixtures": {
+            "status": "PASS",
+            "checksPassed": 32,
+            "checksTotal": 32,
+            "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+            "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+            "device": "Our-CS",
+            "scope": "Fixture/independent mathematical oracle, not selected Practice"
+          },
+          "focusedXunit": {
+            "status": "FAILED_INFRASTRUCTURE",
+            "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+            "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+            "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+          }
+        },
+        "sourceHashesMutated": false,
+        "canonicalBodyHashesMutated": false,
+        "manualCIStarted": false,
+        "stageD": "NOT_STARTED",
+        "merge": false,
+        "deploy": false,
+        "timing": {
+          "firstObservedLocal": "2026-10-30T13:02:41.2742220+01:00",
+          "l02PdfHashObservedLocal": "2026-10-30T13:05:10.3109856+01:00",
+          "lastObservedLocal": "2026-10-30T13:13:25.8329591+01:00",
+          "note": "Observation times only; exact per-lesson work start/end were not captured and are not inferred"
+        },
+        "A_CLOSED": false,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED": true,
+        "nextCursor": "RETURN_QUEUE",
+        "sourceTeacherLocalSha256": "7d3bc5c246ad1d648e0ee64edbcc844ec2bcb102f79543c77be215e6696df749",
+        "sourceTeacherProtectedSha256": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+        "sourceTeacherPdfPagesRead": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "returnQueue": {
+          "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+          "state": "BLOCKED_SOURCE_SHA_AND_CENTRAL_ROUTING",
+          "blockingItems": [
+            {
+              "kind": "teacher_pdf_sha",
+              "needed": "Investigate original MVP Math III Module 2 teacher local binary discrepancy. Current local 54-page teacher PDF SHA-256 7d3bc5c246ad1d648e0ee64edbcc844ec2bcb102f79543c77be215e6696df749 vs protected sourceSha256 590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3. No hash mutation until original edition/version and protected provenance are proven.",
+              "fileOwnership": "Curriculum source/academic authority; original-local source investigation by Coder8",
+              "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod2tn718.pdf"
+            },
+            {
+              "kind": "central_practice_routing",
+              "needed": "Review/authorize exact log selected lesson families and distinct auto-graded closed comparisons vs teacher-reviewed proof for L04/L05/L06/L13. Shared registry/engine requires exclusive file allocation by Supervisor3.",
+              "fileOwnership": "Supervisor3 to allocate central file ownership; Coder8 owns isolated course components"
+            },
+            {
+              "kind": "v4_content_predecessor",
+              "needed": "Independent approved teaching-v4 predecessor/translation lineage; v1 proposal is not an approved v4 transition.",
+              "fileOwnership": "Academic/version approval authority"
+            }
+          ],
+          "courseOwnedDone": [
+            "Compared source teacher Log Logic page 5–8 with current course content without recopying source",
+            "Preserved valid base and domain proof examples",
+            "Implemented fixed L06 four-interval typed answer model with teacher-reviewed proof",
+            "Preserved all fifteen L01–L15 fixtures and L04/L05/L06/L13 human rubrics"
+          ],
+          "pendingC": [
+            "All 15 fixtures need selected course-specific verified routing and feedback contract",
+            "L06 closed relation alone does not certify proof",
+            "Teacher workflow and authenticated score remain for Stage D"
+          ]
+        }
+      }
+    }
+  ],
+  "verification": {
+    "staticClientSideInspections": {
+      "executed": true,
+      "total": 12,
+      "passed": 11,
+      "failed": 1,
+      "failure": "CCSS:HSA-REI.C.8 and .9 still map to one-step-formula-equation in shared official-outcome-practice-map.v1.json",
+      "method": "GitHub connector fetched exact branch content and JS assertions executed in this chat; no compiled .NET tests were run"
+    },
+    "independentOracle": "Python sympy inversion and substitution of existing 3x3 system passed; JS checked 3x3 product, 4 logarithm inverse powers and comparison ordering",
+    "dotnetCompile": "Prior GitHub CI compiled C# tests at ed083eef; new fixture-tests compilation awaits current GitHub CI. Local container has no dotnet SDK.",
+    "dotnetTests": "EXECUTED_PRIOR_HEAD_WITH_FAILURE; CURRENT_HEAD_PENDING",
+    "protectedCi": "NOT_COMPLETE_FOR_FINAL_BRANCH_SHA; GITHUB_ACTIONS_QUEUED",
+    "authenticatedTwoSchool": "NOT_VERIFIED_ISSUE_453",
+    "effectiveStudentRoute": "NOT_VERIFIED",
+    "actualDeployedSha": "NOT_VERIFIED",
+    "ownerUat": "NOT_PERFORMED",
+    "academicApproved": "NOT_APPROVED",
+    "prInitialCi": {
+      "headSha": "aa69802249b7c0fd818f9b3094a85634154081f2",
+      "failures": [
+        40775122098,
+        40775122140,
+        40775122169
+      ],
+      "reason": "Revised canonical body hashes, source-evidence manifest approvals and safe predecessor materialization need coordinated review",
+      "checkedAt": "2026-10-28"
+    },
+    "phase04EvidenceManifestReview": "PENDING_BY_GLOBAL_ACADEMIC_EVIDENCE_OWNER",
+    "courseOwnedSemanticTestCorrection": {
+      "status": "COMMITTED_NOT_FINAL_SHA_CI_VERIFIED",
+      "commit": "4d55a896fbab011b82d90efd70e8da8e48486921",
+      "detail": "Existing Log Logic rule already contains 'they reverse order' with 0<b<1; replaced brittle wording check with exact mathematical inequality 0<x<y implies log_b x>log_b y. No new lesson content/body hash changes."
+    },
+    "proposedIntegrationAcceptanceFixtures": {
+      "status": "AUTHORED_AND_COMMITTED_NOT_RUNTIME_CERTIFIED",
+      "path": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json",
+      "count": 26,
+      "matrixCases": 11,
+      "logCases": 15,
+      "executableOracleTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests.cs",
+      "runtimePracticeContractTest": "ENFORCED_EXPECTED_FAIL_UNTIL_SHARED_MAPPING_FIXED"
+    },
+    "academicVersionHandoff": {
+      "status": "PENDING_INTEGRATION_REVIEW",
+      "path": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-phase04-revision-handoff.md",
+      "previousBodyHashes": [
+        "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+        "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30"
+      ],
+      "candidateBodyHashes": [
+        "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+        "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6"
+      ],
+      "sourceShaUnchanged": true,
+      "historicalPhase04ManifestUnmodified": true,
+      "originalHumanAcademicSignoff": "PENDING",
+      "predecessorMigrationRun": false
+    },
+    "prHeadObservedCi": {
+      "verifiedHead": "ed083eefc9ad6ae15d7cdeb7d67e0527c2b17935",
+      "runIds": [
+        40775690145,
+        40775690308,
+        40775690395,
+        40775690210
+      ],
+      "result": "FAIL",
+      "failures": [
+        "One course-owned exact-string assertion for logarithm reversal (now fixed at 4d55a896)",
+        "Shared matrix Practice mapping to one-step-formula-equation (intentionally retained as failure)",
+        "Phase04 locked old body hash; missing reviewed new-revision academic evidence",
+        "V2 JSON parity: changedBodies=2,newlyApproved=0; explicit predecessor approval pending"
+      ],
+      "notFinalHead": true
+    },
+    "staticFixtureInspection": {
+      "status": "PASSED",
+      "checks": 17,
+      "passed": 17,
+      "failed": 0,
+      "executedVia": "GitHub connector retrieved course branch files; JavaScript independent deterministic assertions in this chat",
+      "scope": "Fixture identity, 26-case completeness, exact 3x3 inverse, singular classification, log order and domains, retained matrix Practice blocker",
+      "notEquivalentTo": ".NET compilation, runtime Practice generation, academic human signoff, persistent grading or authenticated two-school testing"
+    },
+    "finalCandidateExactShaCI": "NOT_VERIFIED",
+    "sourcePdfIndependentReview": "NOT_RUN_FULL_ORIGINAL_PDFS",
+    "sourcePaintingV2": {
+      "status": "SOURCE_EXCERPT_ALIGNED_AND_COURSE_CODE_COMMITTED",
+      "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/AllSystemsGo-original-source-task-review-v2.md",
+      "sourcePdfBytesIndependentlyVerified": false,
+      "fullOriginalStudentTeacherPagesReviewed": false,
+      "mathematicalInverseCheck": "3x3_det_10_AND_A_TIMES_INVERSE_EQUALS_IDENTITY_INDEPENDENT_ORACLE",
+      "exampleSolution": [
+        12,
+        2,
+        6
+      ],
+      "negativeBoundary": "Altered third total 50 yields negative paint price; invertible system remains mathematically consistent",
+      "newCSharpTest": "AllSystemsGoPaintingReceiptsHaveVerifiedInverseAndContextualBoundaries",
+      "latestHeadDotnetTest": "NOT_YET_VERIFIED",
+      "authenticatedRuntime": "NOT_RUN",
+      "humanAcademicApproval": false,
+      "sharedVersionMaterialization": "PENDING_584",
+      "release": "NO_GO"
+    },
+    "coder8P0ThirdPass": {
+      "status": "SOURCE_TASK_GAPS_REPAIRED_AND_26_FIXTURE_ORACLES_CHECKED; NOT_RUNTIME_VERIFIED",
+      "shaAtStart": "c750204d2ad56bc3b7366d263bfd69577cf47361",
+      "courseVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
+      "matrixContentSha": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
+      "logContentSha": "d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c",
+      "fixtures": 26,
+      "matrixFixtures": 11,
+      "logarithmFixtures": 15,
+      "positiveEquivalentWrongMalformedBoundary": {
+        "caseFieldsPresent": "26_OF_26",
+        "independentMathematicalWitnesses": "26_OF_26",
+        "runtimeActualSubmissions": "0_OF_26_VERIFIED",
+        "selectedPracticeQuestionFamilies": "NOT_VERIFIED_ON_585"
+      },
+      "teacherScoredRubrics": [
+        "M05",
+        "M11",
+        "L04",
+        "L05",
+        "L06",
+        "L13"
+      ],
+      "teacherScoringPersistence": "NOT_VERIFIED",
+      "sourcePdfBinaryReviewed": false,
+      "independentJSFixtureOracle": "26/26 exact branch fixture witness inspections passed by connector-side JS; not the node test runner, runtime answer engine, or xUnit",
+      "newXunitTheory": "EveryFixtureHasSeparateWrongMalformedBoundaryAndEquivalentInputs — 26 InlineData cases committed, execution pending exact-head CI",
+      "sourceTaskReferences": [
+        "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+        "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2se518.pdf",
+        "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2tn718.pdf"
+      ],
+      "academicApproval": false,
+      "authenticatedTwoSchool": false,
+      "practiceReady": false,
+      "ownerUAT": false,
+      "nativeNodeMathOracles": {
+        "command": "node --test /mnt/data/coder8_isolated/tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+        "method": "isolated local native Node 22 test of file byte-identical to GitHub PR blob, but WITHOUT repository fixture JSON mounted",
+        "repoTestPath": "tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+        "repoBlobSha": "b52ab278fbfcb8470177eafffa9c29a88499d4a6",
+        "localGitBlobSha": "b52ab278fbfcb8470177eafffa9c29a88499d4a6",
+        "total": 29,
+        "passed": 28,
+        "failed": 0,
+        "skipped": 1,
+        "exitCode": 0,
+        "notVerified": "Repo fixture binding subtest skipped in local isolated environment; must run in full authorized checkout/CI. Native .NET 26-case xUnit compilation and selected Practice runtime remain unverified."
+      },
+      "sourceBoundScenarios": [
+        "MVP-A2-10.6H-PAINT-SYSTEM",
+        "MVP-M3-2.1-LOG-NUMBER-LINE"
+      ],
+      "nativeCSharpStatus": "NOT_EXECUTED_LOCAL_DOTNET_SDK_MISSING",
+      "independentFixtureOracle": "26/26 connector-side JS mathematical witnesses (not node runner, xunit, or runtime)",
+      "studentLogLogicSourceInspection": {
+        "url": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2se518.pdf",
+        "verifiedSource": "official MVP Secondary Mathematics III Module 2 student edition linked from publisher's official curriculum page",
+        "pdfPageIndicesDirectlyViewed": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "printedTaskPages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "directEvidence": "inverse exponential/log example, numbered line placement with explanations, always/sometimes/never validity/sign/base and cross-base conjecture explanations",
+        "teacherPdfStatus": "INDEXED_TEXT_ONLY; TEACHER_PDF_NOT_FULLY_RENDERED",
+        "binarySha256Rechecked": false,
+        "notClaimed": "Whole 39-page PDF audit or teacher reviewed signoff"
+      }
+    },
+    "coder8P0Continuation20261030": {
+      "baseCheckpoint": "812535b529924c0679aadbe10a654faa83e1d629",
+      "scope": "Only lesson-specific candidate fixture and test bugfixes; no shared Practice or persistence modifications",
+      "provenDefects": [
+        "L08 and L11 Node oracles used argument/ln surrogates rather than validating invalid logarithm bases 1 and -2.",
+        "L06 original two-part comparison prompt accepted a canonical answer for only its first subquestion."
+      ],
+      "courseOwnedFixes": [
+        "Node test now enforces finite real-log base >0 and !=1 and argument >0 for distinct invalid-base/invalid-argument cases.",
+        "L06 canonical and equivalent answers must cover comparison log_4(3)<log_2(3) and cross-base counterexample x=1 / 0<x<1 / x>1.",
+        "Course-owned C# test now rejects missing second L06 explanation."
+      ],
+      "node": {
+        "command": "node --test /mnt/data/coder8_isolated/tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+        "gitBlobOfExactTestFile": "569da5107d768506099478d41edb2293d6c933b0",
+        "localGitBlobMatches": true,
+        "total": 30,
+        "passed": 29,
+        "failed": 0,
+        "skipped": 1,
+        "exitCode": 0,
+        "fixtureBindingSkippedBecauseCompleteRepoNotMounted": true
+      },
+      "existingFixtureInventory": {
+        "cases": 26,
+        "matrix": 11,
+        "log": 15,
+        "proposedTeacherRubrics": 6,
+        "sourceBoundScenarios": 2,
+        "authenticatedRuntimeCasesVerified": 0
+      },
+      "officialCsharp": {
+        "latestExactHead": "NOT_RUN_YET",
+        "localDotnetSdk": "UNAVAILABLE",
+        "jobStateAtInspection": "QUEUED",
+        "mustNotClaimPass": true
+      },
+      "effectiveContent": {
+        "staticEnglishJson": "PRESENT_IN_COURSE_BRANCH",
+        "authenticatedRenderedEnglish": "NOT_VERIFIED",
+        "otherApplicableTranslations": "NO_ADDITIONAL_TRANSLATIONS_IN_PACK",
+        "accessibilityBrowserAudit": "NOT_RUN",
+        "deployedSha": "NOT_VERIFIED"
+      },
+      "sourceAndAcademic": {
+        "fullStudentTeacherSourceFidelity": "TARGETED_ONLY",
+        "sourceShaPreserved": true,
+        "phase04Approval": "PENDING",
+        "approvedVersionPredecessorTransition": "PENDING_GLOBAL_OWNER"
+      },
+      "integration": {
+        "sharedPr": 600,
+        "wrongMatrixFallback": "one-step-formula-equation",
+        "selectedMatrixAndLogPractice": "NOT_VERIFIED",
+        "schoolAdoptionIssue": 453,
+        "authenticatedTeacherScoring": "NOT_VERIFIED",
+        "twoSchoolIsolation": "NOT_VERIFIED"
+      },
+      "release": "NO_GO",
+      "fullRepoFixtureBindingSkipResolved": true,
+      "priorNodeSkipResultSupersededBy": "coder8FullNativeNodeBinding20261030"
+    },
+    "coder8FullNativeNodeBinding20261030": {
+      "status": "EXECUTED_ON_ISOLATED_AUTHORIZED_TEMP_COPY; NO_SKIPS",
+      "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+      "sourceHead": "c7e167cf655ccd2970b15e7e9e6e0638c449f669",
+      "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+      "runtime": "Node v26.4.0",
+      "host": "Anas_Nitro authorized connected device, isolated temporary test directory, NOT Our-CS",
+      "repositorySnapshot": "Exact three text files fetched from PR #585 HEAD via GitHub connector, each verified with git hash-object prior to execution",
+      "gitBlobSha": {
+        "tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs": "23ad28682cef40a86653f9b663b604196bd333eb",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json": "8015be75e4444f8fc4eba1137f5b916a0de342ea",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json": "376401223286b2a6bc65f075d3dca394f445ddbf"
+      },
+      "total": 31,
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "exitCode": 0,
+      "caseOracles": 26,
+      "sourceMathScenarios": 2,
+      "proposedHumanRubrics": 6,
+      "scope": "Native isolated mathematical oracles, exact fixture JSON bindings, rubric metadata and source task examples; no selected Practice/HTTP/grade persistence",
+      "dotnetSDKInstalled": false,
+      "officialCsharpXunit": "NOT_EXECUTED",
+      "githubCIExactHead": "QUEUED_OR_PENDING_AT_INSPECTION",
+      "effectiveAuthenticatedEN": "NOT_VERIFIED",
+      "tenantIsolation": "NOT_VERIFIED",
+      "ownerUAT": "NOT_VERIFIED",
+      "supersededBy": "coder8P0V4NodeNativeFullBinding"
+    },
+    "coder8VerifiedOriginalSourceV4": {
+      "status": "PUBLISHER_STUDENT_AND_TEACHER_PDF_DIRECTLY_ACCESSED_TARGETED_10_6H",
+      "studentPdf": {
+        "pages": 38,
+        "taskPages": [
+          34,
+          35,
+          36
+        ],
+        "sha256": "763cda359f5d86ae1e01064340286e02308fee0470eb7d3deb07db34ead80b61"
+      },
+      "teacherPdf": {
+        "pages": 55,
+        "taskPages": [
+          49,
+          50,
+          51
+        ],
+        "notesPages": [
+          52,
+          53
+        ],
+        "sha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+        "matchesProtectedSourceSha": true
+      },
+      "originalTaskClarification": "Painting receipts first introduced in 10.1H (student page 5) and explicitly restated in 10.6H (page 34); prior correct paint model reused",
+      "sourceTaskSix": {
+        "matrix": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "rhs": [
+          16,
+          17,
+          13
+        ],
+        "inverseNumerator": [
+          [
+            -5,
+            2,
+            4
+          ],
+          [
+            1,
+            -1,
+            1
+          ],
+          [
+            3,
+            0,
+            -3
+          ]
+        ],
+        "denominator": 3,
+        "determinant": 3,
+        "solution": [
+          2,
+          4,
+          3
+        ]
+      },
+      "independentAcademicReviewerApproval": "PENDING",
+      "learnerRenderVerification": "NOT_VERIFIED"
+    },
+    "coder8P0V4NodeNativeFullBinding": {
+      "status": "EXECUTED_32_OF_32_NO_SKIP_NO_FAILURE",
+      "sourceSha": "86434e2f4672886523e138436042004df1ef42ab",
+      "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+      "host": "Anas_Nitro isolated temporary copy; never Our-CS",
+      "runtime": "Node v26.4.0",
+      "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+      "gitBlobSha": {
+        "tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs": "7d1b6c9c7cbb76a7b965556c2501d0df23d8917f",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json": "1ad0f6866479a9ddf7a7f45d954834005bdee82a",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json": "376401223286b2a6bc65f075d3dca394f445ddbf"
+      },
+      "allThreeGitBlobHashesVerifiedLocally": true,
+      "total": 32,
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "covered": "26 canonical fixtures; exact source identity/inverse + second 3x3 question; log numberline and base/cross-base; six proposed human rubric bindings",
+      "notVerified": "dotnet/xUnit official on exact head, selected Practice, saved attempts/teacher grade, cross-school isolation, actual rendered learner content, academic approval"
+    },
+    "sequentialABCAtOurCS20261030": "L01 A_CLOSED/B_CLOSED coder-level source and authored-content review, C_PREPARED but BLOCKED_BY_INTEGRATION #584; evidence file committed; current-head TEST_NOT_RUN, L02 not advanced, D not started.",
+    "coder8ContinueL01Pr600Recon20261030": {
+      "coderHeadBefore": "3c59164d0f0f073985511cb121d7f0d703929a29",
+      "sharedHead": "e16dcea4680cee585aa9b4f088fabd4421dc5392",
+      "status": "L01_A_B_PRESERVED_C_BLOCKED",
+      "fixtureIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11"
+      ],
+      "owner": "Shared Integration Owner #584",
+      "nodeRun": "TEST_NOT_RUN",
+      "integratedLessonRoute": "INTEGRATION_PENDING",
+      "proposedContentLineage": "V1_PROPOSAL_DOES_NOT_COVER_CODER8_V4"
+    },
+    "coder8SoloFullABC20261030": {
+      "version": "coder8-solo-abc-20261030",
+      "repository": "EIAS79/Edulytics",
+      "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+      "headBefore": "7bcd2c83ba4f346e36bb730c50f446c2cd57d19c",
+      "codeCommits": [
+        "2c3cee7cf10bed1c1f05ebafb484acef7ae10737",
+        "6b54277236ba67ad3982d105b692afbda399ed27"
+      ],
+      "fixturesCommit": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+      "contractSourcePath": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+      "contractTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+      "contractGitBlobSha": "37cda1b440a04ce63072e2409b5af7361f22415c",
+      "testChecks": {
+        "isolatedDotnetConsole": {
+          "status": "PASS",
+          "checksPassed": 28,
+          "checksTotal": 28,
+          "device": "Our-CS",
+          "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+        },
+        "nativeNodeFixtures": {
+          "status": "PASS",
+          "checksPassed": 32,
+          "checksTotal": 32,
+          "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+          "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+          "device": "Our-CS",
+          "scope": "Fixture/independent mathematical oracle, not selected Practice"
+        },
+        "focusedXunit": {
+          "status": "FAILED_INFRASTRUCTURE",
+          "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+          "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+          "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+        }
+      },
+      "sourceHashesMutated": false,
+      "canonicalBodyHashesMutated": false,
+      "manualCIStarted": false,
+      "stageD": "NOT_STARTED",
+      "merge": false,
+      "deploy": false,
+      "timing": {
+        "firstObservedLocal": "2026-10-30T13:02:41.2742220+01:00",
+        "l02PdfHashObservedLocal": "2026-10-30T13:05:10.3109856+01:00",
+        "lastObservedLocal": "2026-10-30T13:13:25.8329591+01:00",
+        "note": "Observation times only; exact per-lesson work start/end were not captured and are not inferred"
+      },
+      "lessonStatus": {
+        "L01": {
+          "A_CLOSED": true,
+          "B_CLOSED": true,
+          "C_PREPARED": true,
+          "C_CLOSED": false,
+          "ABC_READY_FOR_D": false
+        },
+        "L02": {
+          "A_CLOSED": false,
+          "B_CLOSED": true,
+          "C_PREPARED": true,
+          "C_CLOSED": false,
+          "ABC_READY_FOR_D": false
+        }
+      },
+      "totals": {
+        "TOTAL": 2,
+        "AUTHORED": 2,
+        "A_CLOSED": 1,
+        "B_CLOSED": 2,
+        "C_PREPARED": 2,
+        "C_CLOSED": 0,
+        "ABC_READY_FOR_D": 0,
+        "D_VERIFIED": 0,
+        "BLOCKED": 2
+      },
+      "nextCursor": "RETURN_QUEUE_FIRST_UNBLOCKED_SOURCE_OR_RUNTIME_DEPENDENCY"
+    },
+    "unitFirstV3_20261030": {
+      "instruction": "SUP3_CODER8_UNIT_FIRST_V3_20261030",
+      "course": "ADV-ALG-FUNC",
+      "UnitCode": "U01",
+      "OfficialUnitTotal": 2,
+      "PreviouslyClosed": 0,
+      "NewlyClosed": 0,
+      "UnitReadyForD": false,
+      "UNIT_ABC_CLOSED": false,
+      "UnitStatus": "UNIT_BLOCKED",
+      "LastClosureSHA": null,
+      "BlockedLessonCodes": [
+        "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+        "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02"
+      ],
+      "FirstOpenLesson": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "NextUnit": "NOT_AUTHORIZED_UNTIL_U01_ABC_CLOSED",
+      "headAtStart": "67886a73cc4f9d6c1e90b17f34631e8af3aec148",
+      "headBeforeLedgerWrite": "bc54cf212433cb85841a1c96fc64624c7f6c663e",
+      "recordedCourseCodeCommits": [
+        "0db86cd2b5e69999954d4c237a0e0f69170ebcdc",
+        "54125d032b05d1bcaeccd17b29af34891ba59ac2",
+        "bc54cf212433cb85841a1c96fc64624c7f6c663e"
+      ],
+      "newSourceContract": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+      "newRegressionDesign": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+      "existingFixtureCrosswalk": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json",
+      "existingLocalPublisherEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/AllSystemsGo-sequential-ABC-checkpoint-20261030.md",
+      "testsThisPass": {
+        "status": "NOT_RUN",
+        "reason": "Supervisor3 Unit-First V3 prohibits automated test packages/full build/manual CI during A-C; added xUnit regressions were designed but not executed. Prior checks are retained at the exact older SHAs; no test PASS claimed for current work.",
+        "priorEvidenceBySHA": {
+          "isolatedDotnetConsole": {
+            "status": "PASS",
+            "checksPassed": 28,
+            "checksTotal": 28,
+            "device": "Our-CS",
+            "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+          },
+          "nativeNodeFixtures": {
+            "status": "PASS",
+            "checksPassed": 32,
+            "checksTotal": 32,
+            "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+            "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+            "device": "Our-CS",
+            "scope": "Fixture/independent mathematical oracle, not selected Practice"
+          },
+          "focusedXunit": {
+            "status": "FAILED_INFRASTRUCTURE",
+            "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+            "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+            "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+          }
+        }
+      },
+      "lessonResults": [
+        {
+          "LessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+          "A_CLOSED": true,
+          "B_CLOSED": true,
+          "C_PREPARED": true,
+          "C_CLOSED": false,
+          "ABC_READY_FOR_D": false,
+          "work": "Source/model preserved; added course-owned exact 2x2 classification (unique/infinite/none), row-reduction solution verification via original equations, and inverse eligibility (singular, dimension mismatch, nonsquare, invertible); corrected rank-zero contradiction; added new xUnit cases but NOT_RUN",
+          "remaining": [
+            "Shared lesson-selected contract at PR600 INTEGRATION_PENDING, no approved registration of source-own verifier",
+            "Human M05/M11 review rubric cannot be autograded; source exact M04 steps require teacher review where solicited",
+            "Predecessor approval missing for actual teaching-v4, canonical body digest and materializer transition"
+          ],
+          "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01"
+        },
+        {
+          "LessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+          "A_CLOSED": false,
+          "B_CLOSED": true,
+          "C_PREPARED": true,
+          "C_CLOSED": false,
+          "ABC_READY_FOR_D": false,
+          "workThisPass": "NOT_OPENED_FOR_EDIT, unit-first gate blocks L02 until L01 closed",
+          "priorSourceIssue": "Original local teacher binary sha != recorded protected pack sourceSha256 (see soloABC20261030)",
+          "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01"
+        }
+      ],
+      "centralFileOwnership": {
+        "status": "NOT_ACQUIRED_ACTIVE_OVERLAP",
+        "checkedBranches": {
+          "coder8": {
+            "pr": 585,
+            "head": "bc54cf212433cb85841a1c96fc64624c7f6c663e"
+          },
+          "shared": {
+            "pr": 600,
+            "head": "f611cdc31f7b9b5e256dc6ff33db9cd38d62f37f"
+          },
+          "overlappingPRs": [
+            602,
+            399,
+            492,
+            553
+          ],
+          "UAESeederPr394NotModified": true
+        },
+        "files": [
+          {
+            "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+            "coder8BlobSha": "0f2d85373b379177961c58b8c041b84e98b42af1",
+            "pr600BlobSha": "834cd4f628ec6cc5bc4bd202410737bcfe21e87b",
+            "changedHere": false
+          },
+          {
+            "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+            "coder8BlobSha": "18c7c65da8606354002e37a78f846e8e0d30563d",
+            "pr600BlobSha": "1f5dcbbbdb2c5cedaebfcac20e5ef2428657f447",
+            "changedHere": false
+          },
+          {
+            "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+            "coder8BlobSha": "dc4c6d6426c05c86c7b4bcaed135d2b1108ce81c",
+            "pr600BlobSha": "b938d3976abbdeef1337fe0be84643c48041aa09",
+            "changedHere": false
+          },
+          {
+            "path": "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json",
+            "coder8BlobSha": "9fd7f0999e88c24f6d76602a69debbf40ee19227",
+            "pr600BlobSha": "40022282a85b0b4683d369f71128924848700c21",
+            "changedHere": false
+          }
+        ],
+        "owner": "Supervisor 3 must confirm exclusive, serialized file ownership before central modification despite temporary conditional authorization",
+        "acquiredAt": null,
+        "releasedAt": null,
+        "releaseStatus": "NOT_APPLICABLE_NO_CENTRAL_FILE_TOUCHED"
+      },
+      "publisherAndLineage": {
+        "teacherPagesPreserved": [
+          49,
+          50,
+          51,
+          52,
+          53
+        ],
+        "sourceTeacherSha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+        "sourceBodyCanonicalSha256": "7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199",
+        "packVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v4",
+        "packBlobSha": "f316ef834f64d6f95e9464d8ec88fc59d476e158",
+        "PR600ProposalVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+        "PR600ProposalBodyDigest": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+        "PR600Authorization": "DENIED",
+        "independentAcademicApproval": "NOT_RECEIVED",
+        "historicalHashesChanged": false
+      },
+      "nextAction": "Continue ONLY L01: obtain independently reviewed v4 predecessor decision and single-writer ownership of targeted central lesson Practice adoption; preserve pending, avoid C_READY until exact generator/answer/rubric contract checks are available. Do not enter L02 yet."
+    },
+    "unitFirstV4CentralLease20261030": {
+      "instruction": "SUP3_CODER8_L01_CENTRAL_LEASE_V4_20261030",
+      "course": "ADV-ALG-FUNC",
+      "unitCode": "U01",
+      "total": 2,
+      "verifiedBeforeHead": "c446f6d0a881d673781210d87c5c9a91b77c98f0",
+      "lastVerifiedHeadBeforeLedgerCommit": "aadd2e17ef38dd580371285fc6fddfb5a5688314",
+      "unitStatus": "UNIT_BLOCKED",
+      "firstOpenLesson": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "L01": {
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "contentChanged": false,
+        "candidateContractCommit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac",
+        "pendingOnly": true,
+        "integrationStillNeeded": true
+      },
+      "L02": {
+        "editsThisPass": 0,
+        "firstOpenLessonRemainsL01": true
+      },
+      "lease": {
+        "type": "SUPERVISOR3_CONDITIONAL_PROCESS_FIRST_EXCLUSIVE_SLOT",
+        "acquired": "YES_BY_V4_SUPERVISOR_ORDER_WITH_FRESH_GITHUB_CHECKS",
+        "acquisitionTimestamp": "NOT_RECORDED",
+        "released": true,
+        "releaseCommentId": 6524242729,
+        "releaseLink": "https://github.com/EIAS79/Edulytics/pull/585#issuecomment-6524242729",
+        "files": [
+          {
+            "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+            "before": "0f2d85373b379177961c58b8c041b84e98b42af1",
+            "after": "45093f65f17f5e3f6075d87f9e2c3f637c56e97e",
+            "changed": true,
+            "commit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac"
+          },
+          {
+            "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+            "before": "18c7c65da8606354002e37a78f846e8e0d30563d",
+            "after": "18c7c65da8606354002e37a78f846e8e0d30563d",
+            "changed": false
+          },
+          {
+            "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+            "before": "dc4c6d6426c05c86c7b4bcaed135d2b1108ce81c",
+            "after": "dc4c6d6426c05c86c7b4bcaed135d2b1108ce81c",
+            "changed": false
+          },
+          {
+            "path": "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json",
+            "before": "9fd7f0999e88c24f6d76602a69debbf40ee19227",
+            "after": "9fd7f0999e88c24f6d76602a69debbf40ee19227",
+            "changed": false
+          }
+        ],
+        "mainAtPreflightBlobsMatchedCoder8": true,
+        "pr600Head": "f611cdc31f7b9b5e256dc6ff33db9cd38d62f37f",
+        "otherCheckedPRs": [
+          602,
+          399,
+          394,
+          492,
+          553
+        ],
+        "otherWriters": "No HEAD changes observed on checked PRs; process lease not GitHub-enforced",
+        "nextOwner": "SUPERVISOR_3_TO_ASSIGN_NOT_CODER_8"
+      },
+      "codeChanges": [
+        {
+          "commit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac",
+          "scope": "exact L01 candidate pending contract override, exclusion from routable public All, candidate family IDs audit only",
+          "productionRouting": false
+        },
+        {
+          "commit": "aadd2e17ef38dd580371285fc6fddfb5a5688314",
+          "scope": "added xUnit assertions pending contract not selected and unrelated Grade1 route stays ready",
+          "testStatus": "NOT_RUN"
+        }
+      ],
+      "testsThisPass": {
+        "status": "NOT_RUN",
+        "reason": "Unit-First V3 prohibits manual automation/full suite/CI in A-C; only source/static review of code changes and SHA comparisons",
+        "priorDotnetAndNodeEvidence": "Older SHAs only; not proof of these commits"
+      },
+      "sourceAndVersion": {
+        "sourceTeacherSha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+        "sourceBodyCanonicalSha256": "7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199",
+        "currentContentVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v4",
+        "academicApproved": false,
+        "proposedPr600Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+        "predecessorAuthorization": "DENIED_OR_NOT_RECEIVED",
+        "historicalHashesChanged": false
+      },
+      "blockers": [
+        {
+          "type": "STAGE_C_DISPATCH",
+          "owner": "SUPERVISOR_3_SERIALIZED_CENTRAL_INTEGRATION_OWNER",
+          "detail": "PR585 now carries L01 canonical pending override; engine, question family registry and global official outcome map remain baseline (3 untouched central paths), while PR600 candidate matrix kernels and typed negative eligibility remain isolated, unmerged. No selected-family generator/verify or 11-case fixture certification on PR585.",
+          "gate": "C_CLOSED=false"
+        },
+        {
+          "type": "TEACHER_RUBRIC",
+          "owner": "Coder8 and teacher/academic reviewer",
+          "detail": "M05 free parameter and M11 reversible row-operation proof teacher-only; M04 row-operation explanation teacher-reviewed; no auto-grade claim.",
+          "gate": "C_CLOSED=false"
+        },
+        {
+          "type": "CONTENT_V4_PREDECESSOR",
+          "owner": "INDEPENDENT_ACADEMIC_AND_VERSION_AUTHORITY",
+          "detail": "Protected content v4 and canonical hash 7245f... lacks approved source-aware transition; PR600 v1 proposal is expressly denied; reviewer asked on PR585.",
+          "gate": "ABC_READY_FOR_D=false"
+        },
+        {
+          "type": "OVERLAPPING_CENTRAL_BRANCHES",
+          "owner": "SUPERVISOR_3",
+          "detail": "PR600/602/399/492/553 have divergent central edits; avoid blind merge/rebase/cherry-pick.",
+          "gate": "NO_MERGE"
+        }
+      ],
+      "unitClosed": false,
+      "unitReadyForD": false,
+      "stageD": "NOT_STARTED",
+      "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "merge": false,
+      "deploy": false
+    }
+  },
+  "release": {
+    "courseOwnedContentChanges": "2/2",
+    "practiceComplete": "0_OF_2_PRODUCTION_CERTIFIED",
+    "academicAccepted": "0/2",
+    "releaseCandidate": "NO_GO_PENDING_OFFICIAL_CI_AND_AUTHENTICATED_PRACTICE_ACADEMIC_APPROVAL",
+    "merged": false,
+    "deployed": false,
+    "gateIssues": [
+      "https://github.com/EIAS79/Edulytics/issues/584",
+      "https://github.com/EIAS79/Edulytics/issues/453",
+      "Source-bound Phase04 canonical SHA and approved lesson-repair manifest need integration-owner update."
+    ],
+    "parallelConflicts": [
+      "PR #399 touches shared Practice and materializer",
+      "PR #394 touches shared canonical lesson seeder"
+    ],
+    "nextRequiredOwner": "designated global shared Practice + academic/version integration owner (issue #584); school adoption owner (#453); release owner only after protected acceptance",
+    "nextRequiredAction": "Coder8 solo: clear each named returnQueue item under exclusive ownership; verify L02 original teacher PDF vs protected SHA before source A closure; secure teaching-v4 approved predecessor; integrate and certify 26 exact lesson Practice fixtures; then A/B/C close both and begin single Stage D batch. No shared coder or unowned central writes.",
+    "acceptanceFixtureCaseCount": 26,
+    "academicAcceptance": "0_OF_2_PENDING",
+    "versionTransition": "BLOCKED_584",
+    "lessonPractice": "NOT_PRODUCTION_VERIFIED",
+    "approvedCourseAdoption": "BLOCKED_453",
+    "handoffComment": "https://github.com/EIAS79/Edulytics/issues/584"
+  },
+  "rights": {
+    "originalPublisherContentCopied": false,
+    "rightsEvidence": "Existing pack and blueprint record CC BY 4.0 Phase 29 source; exact source PDF hash/license not independently reverified this session",
+    "sourceTitlesPreserved": true,
+    "exactPublisherEquivalenceClaimed": false
+  },
+  "returnQueue": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "state": "BLOCKED_L01_PENDING_SHARED_KERNEL_INTEGRATION_AND_INDEPENDENT_V4_APPROVAL",
+      "blockingItems": [
+        {
+          "kind": "central_runtime_contract",
+          "needed": "Official lesson-selected Practice mapping and registered exact generator/interactions with M01–M11 evidence; PR600 remains unmerged pending. PR585 Coder8 may not touch central registries without exclusive file allocation.",
+          "fileOwnership": "Supervisor 3 to allocate exclusive edit owner for LessonPracticeContracts.cs, ExactSkillContractQuestionEngine.cs and required registry/mapping files, or accept verified integrated predecessor",
+          "reference": "https://github.com/EIAS79/Edulytics/pull/600"
+        },
+        {
+          "kind": "academic_content_predecessor",
+          "needed": "Authorize actual teaching-v4 and canonical body 7245f950... with source-aware approved predecessor; v1 proposal on PR600 does not authorize v4.",
+          "fileOwnership": "Academic/version approval authority; no source/canonical hash edits by Coder8"
+        }
+      ],
+      "courseOwnedDone": [
+        "Preserved A/B parity",
+        "Implemented isolated rational exact full-matrix and inverse+solution verifier",
+        "Corrected M03 fixture equivalent answer to require inverse AND x",
+        "Preserved M05/M11 human rubrics"
+      ],
+      "pendingC": [
+        "M04 row-reduction work rubric beyond solution-only automatic score",
+        "M05 and M11 teacher-scored evidence",
+        "M07/M08/M10 inverse-eligibility adapter from PR600 not yet selected",
+        "Actual lesson-selected generator and verifier adoption, explicit legal predecessor"
+      ],
+      "centralLeaseV4Progress": "One central file changed: explicit L01 INTEGRATION_PENDING candidate prevents wrong generic one-step selected route, but no engine dispatch or selected practice approved. Four-file lease RELEASED at PR #585 comment 6524242729; exact PR600 component integration/version approval still required."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "state": "BLOCKED_SOURCE_SHA_AND_CENTRAL_ROUTING",
+      "blockingItems": [
+        {
+          "kind": "teacher_pdf_sha",
+          "needed": "Investigate original MVP Math III Module 2 teacher local binary discrepancy. Current local 54-page teacher PDF SHA-256 7d3bc5c246ad1d648e0ee64edbcc844ec2bcb102f79543c77be215e6696df749 vs protected sourceSha256 590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3. No hash mutation until original edition/version and protected provenance are proven.",
+          "fileOwnership": "Curriculum source/academic authority; original-local source investigation by Coder8",
+          "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod2tn718.pdf"
+        },
+        {
+          "kind": "central_practice_routing",
+          "needed": "Review/authorize exact log selected lesson families and distinct auto-graded closed comparisons vs teacher-reviewed proof for L04/L05/L06/L13. Shared registry/engine requires exclusive file allocation by Supervisor3.",
+          "fileOwnership": "Supervisor3 to allocate central file ownership; Coder8 owns isolated course components"
+        },
+        {
+          "kind": "v4_content_predecessor",
+          "needed": "Independent approved teaching-v4 predecessor/translation lineage; v1 proposal is not an approved v4 transition.",
+          "fileOwnership": "Academic/version approval authority"
+        }
+      ],
+      "courseOwnedDone": [
+        "Compared source teacher Log Logic page 5–8 with current course content without recopying source",
+        "Preserved valid base and domain proof examples",
+        "Implemented fixed L06 four-interval typed answer model with teacher-reviewed proof",
+        "Preserved all fifteen L01–L15 fixtures and L04/L05/L06/L13 human rubrics"
+      ],
+      "pendingC": [
+        "All 15 fixtures need selected course-specific verified routing and feedback contract",
+        "L06 closed relation alone does not certify proof",
+        "Teacher workflow and authenticated score remain for Stage D"
+      ]
+    }
+  ],
+  "unitFirstV3_20261030": {
+    "UnitCode": "U01",
+    "UnitStatus": "UNIT_BLOCKED",
+    "UNIT_ABC_CLOSED": false,
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+    "LastClosureSHA": null,
+    "NextUnit": "NOT_AUTHORIZED",
+    "lessonClosed": 0,
+    "unitLessons": 2
+  }
+}
