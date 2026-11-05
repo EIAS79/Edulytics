@@ -170,15 +170,15 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 
         if (family == QuadraticExpandMiddleFamily)
         {
-            var a = random.Next(-8, 9);
-            var b = random.Next(-8, 9);
+            var factorA = random.Next(-8, 9);
+            var factorB = random.Next(-8, 9);
             return new(family,
-                $"Expand (x+({a}))(x+({b})). What is the coefficient of x in the expanded standard form? Enter the integer only; show the full distribution and area diagram to the teacher.",
-                $"The expanded form is x^2+({a + b})x+({a * b}).",
+                $"Expand (x+({factorA}))(x+({factorB})). What is the coefficient of x in the expanded standard form? Enter the integer only; show the full distribution and area diagram to the teacher.",
+                $"The expanded form is x^2+({factorA + factorB})x+({factorA * factorB}).",
                 AssessmentItemType.ShortAnswer,
                 new Dictionary<string, int>(StringComparer.Ordinal)
                 {
-                    ["a"] = a, ["b"] = b
+                    ["a"] = factorA, ["b"] = factorB
                 });
         }
 
@@ -267,9 +267,9 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 
         if (family == QuadraticExpandMiddleFamily)
         {
-            if (!ValidateQuadraticExpand(parameters, out var a, out var b))
+            if (!ValidateQuadraticExpand(parameters, out var factorA, out var factorB))
                 throw new InvalidOperationException("Invalid quadratic expansion parameters.");
-            return (a + b).ToString();
+            return (factorA + factorB).ToString();
         }
 
         if (family != FunctionRelationFamily ||

@@ -103,7 +103,7 @@ public static class UsCcssAlg1Unit2InequalityQuestions
     public static bool Verify(string family, IReadOnlyDictionary<string, int> parameters, string? answer)
     {
         if (!Supports(family) || string.IsNullOrWhiteSpace(answer) ||
-            !Valid(parameters, out _, out _, out _, out _, out _, out _, out _))
+            !Valid(parameters, out _, out _, out _, out _, out _, out _, out _, out _))
             return false;
         var v = answer.Trim().ToLowerInvariant();
         if (family == ModelOperator)
