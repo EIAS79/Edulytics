@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u07-l19-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u07-l19-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Deriving the Quadratic Formula",
       "ExplanationParagraphs": [
-        "Learning goal: derive the quadratic formula for any real ax²+bx+c=0 with a≠0 by normalizing and completing the square, and explain the discriminant and the ± branch. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 19 teacher https://im.kendallhunt.com/HS/teachers/1/7/19/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/19/index.html (CC BY 4.0). This lesson develops a proof of the formula, not another unexamined memorization exercise.",
+        "Learning goal: derive the quadratic formula for any real ax²+bx+c=0 with a≠0 by normalizing and completing the square, and explain the discriminant and the ± branch. Original first-party Edulytiks adaptation of Independently authored Edulytiks material follows the approved local Algebra 1 Unit 7 lesson goals.",
         "Start ax²+bx+c=0 with a≠0. Divide by a: x²+(b/a)x=−c/a. Add (b/(2a))²=b²/(4a²) to BOTH sides. Left becomes (x+b/(2a))²; right becomes (b²−4ac)/(4a²). For real roots require discriminant D=b²−4ac≥0.",
         "Taking square roots of both sides yields |x+b/(2a)|=√D/(2|a|). The two possible signs can be arranged as x=(-b±√D)/(2a) even when a<0 because ± branches exchange order. State this nuance rather than falsely assuming √(4a²)=2a for every negative a.",
         "Independent numerical check: for 2x²−6x+4=0, a2,b−6,c4,D36−32=4, formula x=(6±2)/4 gives x2 or1. Factoring 2(x−1)(x−2)=0 confirms them. The derived formula therefore agrees with another independent method.",
-        "Student task: reconstruct each algebraic step from shuffled cards, identify where a≠0 is needed, explain the source of ± and D, then validate a numerical example with factoring. Teacher-scored rubric0–2 for legitimate normalization, correct completed-square identity, sound square-root/sign handling and independent check."
+        "Student task: reconstruct each algebraic step from shuffled cards, identify where a≠0 is needed, explain the source of ± and D, then validate a numerical example with factoring. Teacher-scored rubric0–2 for legitimate normalization, correct completed-square identity, sound square-root/sign handling and independent check.",
+        "First-party Cool-down (teacher-scored): Start from ax^2+bx+c=0 with a nonzero. Explain how dividing by a and completing the square gives the quadratic formula. Exact subskill questions are graded by their mapped engines only; teacher review is required for symbolic derivation and equivalence of methods."
       ],
       "KeyConcepts": [
         {
