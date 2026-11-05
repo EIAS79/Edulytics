@@ -446,11 +446,15 @@
       "CultureCode": "en",
       "Title": "Perpendicular Lines in the Plane",
       "ExplanationParagraphs": [
-        "Learning goal: Prove perpendicularity by direction-vector dot product and negative reciprocal slopes, including horizontal/vertical exceptions.",
+        "Learning goal: Prove the perpendicular-slope relationship using a 90-degree rotation and apply negative reciprocals, including horizontal/vertical cases.",
         "For nonzero finite slopes m1,m2, perpendicular iff m1m2=−1 Use perpendicular direction vectors Slope 2 perpendicular slope −1/2",
         "Vectors (a,b) and (c,d) perpendicular iff ac+bd=0 Works for vertical/horizontal Avoid multiplying undefined slopes",
         "Independent source-specific student task: Prove a pair of slopes perpendicular and draw all special axis cases; teacher reviews exact proof. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 11, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 11, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments.",
+        "Source alignment repair: Retains the transformation rule (x,y)->(-y,x) as a 90-degree rotation.",
+        "Source alignment repair: Connects rotated direction vectors to slope product -1.",
+        "Source alignment repair: Retains the coordinate proof application to rhombus diagonals.",
+        "Edulytics independent cool-down: Write an equation of the line through (2,-1) perpendicular to y=3/4 x+5. Explain why the slopes certify perpendicularity and state what changes if the given line is vertical."
       ],
       "KeyConcepts": [
         {
@@ -523,6 +527,7 @@
         }
       ],
       "SummaryPoints": [
+        "Prove the perpendicular-slope relationship using a 90-degree rotation and apply negative reciprocals, including horizontal/vertical cases.",
         "Prove perpendicularity by direction-vector dot product and negative reciprocal slopes, including horizontal/vertical exceptions.",
         "Works for vertical/horizontal",
         "Human assessment required for original diagrams and geometric proofs."
