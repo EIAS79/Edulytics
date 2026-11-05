@@ -79,4 +79,18 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
         Assert.Equal("not-equivalent", UsCcssAlg1Unit2AlgebraQuestions.Solve(
             UsCcssAlg1Unit2AlgebraQuestions.EquationEquivalenceFamily, invalid));
     }
+
+    [Theory]
+    [InlineData(0, 0, "a")]
+    [InlineData(1, 1, "b")]
+    [InlineData(3, 2, "c")]
+    public void LiteralIsolationReturnsCorrectOption(int template, int correct, string expected)
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["template"] = template, ["correct"] = correct, ["variant"] = 0
+        };
+        Assert.Equal(expected, UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.LiteralEquationIsolateFamily, p));
+    }
 }

@@ -20,6 +20,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         "algebra.equation.two_variable.solution_check";
     public const string EquationEquivalenceFamily =
         "algebra.equations.equivalence.classify";
+    public const string LiteralEquationIsolateFamily =
+        "algebra.literal_equation.isolate.select_form";
 
     public sealed record Problem(
         string Family,
@@ -31,7 +33,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
     public static bool Supports(string? family) =>
         family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
             PatternClassificationFamily or OneVariableSolutionCheckFamily or
-            TwoVariableSolutionCheckFamily or EquationEquivalenceFamily;
+            TwoVariableSolutionCheckFamily or EquationEquivalenceFamily or
+            LiteralEquationIsolateFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -47,6 +50,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return BuildSolutionCheck(family, random);
         if (family == EquationEquivalenceFamily)
             return BuildEquationEquivalence(random);
+        if (family == LiteralEquationIsolateFamily)
+            return BuildLiteralEquationIsolate(random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -111,6 +116,12 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 throw new InvalidOperationException("Invalid ALG1 U02 equivalence parameters.");
             return operation <= 2 ? "equivalent" : "not-equivalent";
         }
+        if (family == LiteralEquationIsolateFamily)
+        {
+            if (!ValidateLiteralIsolate(parameters, out _, out var correct, out _))
+                throw new InvalidOperationException("Invalid ALG1 U02 literal-equation parameters.");
+            return correct switch { 0 => "a", 1 => "b", 2 => "c", _ => throw new InvalidOperationException() };
+        }
 
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
@@ -142,11 +153,46 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         if (family == EquationEquivalenceFamily)
             return ValidateEquivalence(parameters, out _, out _, out _, out _, out _) &&
                 NormalizeEquivalence(answer) == Solve(family, parameters);
+        if (family == LiteralEquationIsolateFamily)
+            return ValidateLiteralIsolate(parameters, out _, out _, out _) &&
+                NormalizeChoice(answer) == Solve(family, parameters);
 
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildLiteralEquationIsolate(Random random)
+    {
+        var template = random.Next(0, 4);
+        var correct = random.Next(0, 3);
+        var variant = random.Next(0, 16);
+        var (equation, target, right, wrong1, wrong2) = template switch
+        {
+            0 => ("A=bh", "h", "h=A/b", "h=Ab", "h=b/A"),
+            1 => ("P=2l+2w", "w", "w=(P-2l)/2", "w=P-2l/2", "w=(P+2l)/2"),
+            2 => ("v=u+at", "t", "t=(v-u)/a", "t=(v+u)/a", "t=a(v-u)"),
+            3 => ("C=mx+b", "x", "x=(C-b)/m", "x=(C+b)/m", "x=m(C-b)"),
+            _ => throw new InvalidOperationException()
+        };
+        var options = new[] { wrong1, wrong2, wrong1 };
+        options[correct] = right;
+        if (correct == 0) { options[1] = wrong1; options[2] = wrong2; }
+        else if (correct == 1) { options[0] = wrong1; options[2] = wrong2; }
+        else { options[0] = wrong1; options[1] = wrong2; }
+
+        return new(
+            LiteralEquationIsolateFamily,
+            $"For {equation}, which option correctly isolates {target}? " +
+            $"A) {options[0]}  B) {options[1]}  C) {options[2]}. Enter A, B, or C. " +
+            "Writing a complete chain of equivalent equations remains teacher-reviewed.",
+            "Undo operations on both sides in reverse order while preserving equivalence.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["template"] = template, ["correct"] = correct, ["variant"] = variant
+            });
     }
 
     private static Problem BuildEquationEquivalence(Random random)
@@ -260,6 +306,31 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             {
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
+    }
+
+    private static bool ValidateLiteralIsolate(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int template,
+        out int correct,
+        out int variant)
+    {
+        template = correct = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("template", out template) && template is >= 0 and <= 3 &&
+            parameters.TryGetValue("correct", out correct) && correct is >= 0 and <= 2 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static string NormalizeChoice(string value)
+    {
+        var text = value.Trim().ToLowerInvariant();
+        return text switch
+        {
+            "a" or "option a" => "a",
+            "b" or "option b" => "b",
+            "c" or "option c" => "c",
+            _ => text
+        };
     }
 
     private static bool ValidateEquivalence(

@@ -20613,6 +20613,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.literal_equation.isolate.select_form",
+      "version": 1,
+      "skillId": "algebra.literal_equations.isolate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-literal-isolation-form-exact",
+      "representations": ["literal_equation", "isolated_form_choice", "teacher_led_derivation"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
