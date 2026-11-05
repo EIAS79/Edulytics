@@ -20829,6 +20829,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.domain_range.context_bounds",
+      "version": 1,
+      "skillId": "functions.domain_range.context",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-domain-range-context-bounds",
+      "representations": ["function_rule", "domain_interval", "range_interval", "context_restriction"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

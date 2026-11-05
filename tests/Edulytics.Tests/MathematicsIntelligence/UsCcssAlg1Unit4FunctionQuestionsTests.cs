@@ -48,4 +48,18 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
         Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(
             UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, parameters, "50"));
     }
+
+    [Fact]
+    public void DomainAndRangeRespectContextBounds()
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["duration"] = 6, ["rate"] = 4, ["start"] = 24, ["variant"] = 0
+        };
+
+        Assert.Equal("D=0,6;R=0,24", UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionDomainRangeFamily, parameters));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionDomainRangeFamily, parameters, "D=0,6; R=0,24"));
+    }
 }

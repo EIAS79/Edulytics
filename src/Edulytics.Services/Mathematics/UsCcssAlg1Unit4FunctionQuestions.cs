@@ -6,12 +6,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 {
     public const string FunctionRelationFamily = "functions.relations.unique_output.classify";
     public const string FunctionNotationFamily = "functions.notation.evaluate_context";
+    public const string FunctionDomainRangeFamily = "functions.domain_range.context_bounds";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -32,6 +33,23 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 {
                     ["initial"] = initial, ["rate"] = rate,
                     ["input"] = input, ["variant"] = variant
+                });
+        }
+
+        if (family == FunctionDomainRangeFamily)
+        {
+            var duration = random.Next(2, 9);
+            var rate = random.Next(2, 10);
+            var start = duration * rate;
+            var variant = random.Next(0, 16);
+            return new(family,
+                $"A tank starts with {start} litres and drains at {rate} litres per hour. V(t)={start}-{rate}t is modeled only from t=0 through t={duration} hours. Enter the endpoint form exactly as D=0,{duration};R=0,{start}. Explain with the teacher why the context restricts both sets.",
+                $"The modeled domain is 0 through {duration} hours and the range is 0 through {start} litres.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["duration"] = duration, ["rate"] = rate,
+                    ["start"] = start, ["variant"] = variant
                 });
         }
 
@@ -65,6 +83,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (initial + rate * input).ToString();
         }
 
+        if (family == FunctionDomainRangeFamily)
+        {
+            if (!ValidateDomainRange(parameters, out var duration, out _, out var start, out _))
+                throw new InvalidOperationException("Invalid domain-range parameters.");
+            return $"D=0,{duration};R=0,{start}";
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -83,17 +108,24 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return submitted.ToString() == Solve(family, parameters);
         }
 
+        if (family == FunctionDomainRangeFamily)
+        {
+            if (!ValidateDomainRange(parameters, out _, out _, out _, out _)) return false;
+            var normalized = new string(answer.Where(c => !char.IsWhiteSpace(c)).ToArray()).ToUpperInvariant();
+            return normalized == Solve(family, parameters).ToUpperInvariant();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out _, out _, out _, out _))
             return false;
 
-        var normalized = answer.Trim().ToLowerInvariant() switch
+        var relationAnswer = answer.Trim().ToLowerInvariant() switch
         {
             "yes" or "y" or "true" => "yes",
             "no" or "n" or "false" => "no",
             _ => ""
         };
-        return normalized.Length > 0 && normalized == Solve(family, parameters);
+        return relationAnswer.Length > 0 && relationAnswer == Solve(family, parameters);
     }
 
     private static bool ValidateRelation(IReadOnlyDictionary<string, int>? p,
@@ -116,6 +148,17 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("initial", out initial) && initial is >= 0 and <= 20 &&
             p.TryGetValue("rate", out rate) && rate is >= 1 and <= 9 &&
             p.TryGetValue("input", out input) && input is >= 0 and <= 6 &&
+            p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateDomainRange(IReadOnlyDictionary<string, int>? p,
+        out int duration, out int rate, out int start, out int variant)
+    {
+        duration = rate = start = variant = 0;
+        return p is not null &&
+            p.TryGetValue("duration", out duration) && duration is >= 2 and <= 8 &&
+            p.TryGetValue("rate", out rate) && rate is >= 2 and <= 9 &&
+            p.TryGetValue("start", out start) && start == duration * rate &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 }
