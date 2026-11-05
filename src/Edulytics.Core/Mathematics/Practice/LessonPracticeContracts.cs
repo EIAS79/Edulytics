@@ -1711,6 +1711,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L03",
+            "functions.notation.interpret",
+            "ALG1_FUNCTION_NOTATION_GRAPH_CONNECTIONS_PLUS_TEACHER_SKETCH",
+            ["functions.notation.evaluate_context"],
+            "ALG1_U04_L03_NOTATION_GRAPH_CONNECTIONS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 Grade 5 U03:L01: one piece of one selected half
         // measured against the ORIGINAL whole (1/6 or 1/8).
         // Digital objective selections are exact; drawings and explanations
