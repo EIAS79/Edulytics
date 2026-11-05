@@ -20433,6 +20433,30 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.center_spread.iqr",
+      "version": 1,
+      "skillId": "statistics.center_spread",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-iqr-median-of-halves-exact",
+      "representations": ["ordered_numeric_data", "numeric_short_answer"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.center_spread.mad",
+      "version": 1,
+      "skillId": "statistics.center_spread",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-mad-exact",
+      "representations": ["numeric_data", "numeric_short_answer"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

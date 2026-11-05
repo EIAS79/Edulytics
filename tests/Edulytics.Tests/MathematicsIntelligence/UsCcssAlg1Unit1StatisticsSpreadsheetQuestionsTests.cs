@@ -37,4 +37,32 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.False(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.DistributionShapeFamily, p, "left-skewed"));
     }
+
+    [Fact]
+    public void IqrOracleUsesMedianOfHalves()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["base"] = 4, ["step"] = 3, ["variant"] = 2
+        };
+        Assert.Equal("18", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.IqrFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.IqrFamily, p, "18"));
+    }
+
+    [Fact]
+    public void MadOracleAcceptsEquivalentFraction()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["base"] = 20, ["step"] = 2, ["variant"] = 5
+        };
+        Assert.Equal("2.4", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.MadFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.MadFamily, p, "12/5"));
+        Assert.False(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.MadFamily, p, "2.5"));
+    }
 }
