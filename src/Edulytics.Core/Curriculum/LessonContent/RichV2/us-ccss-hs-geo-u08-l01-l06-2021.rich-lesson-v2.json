@@ -140,12 +140,16 @@
       "CultureCode": "en",
       "Title": "Playing with Probability",
       "ExplanationParagraphs": [
-        "Learning goal: Build explicit sample spaces for one- and two-stage chance experiments, count equally likely events and critique unsupported equiprobability assumptions.",
+        "Learning goal: Use repeated random draws with replacement to connect empirical relative frequencies to theoretical probabilities and interpret probability language without assuming different labels are equally likely.",
         "Set of all possible outcomes of experiment For two fair coins, HH,HT,TH,TT",
         "Source task focus: design a closed-bag draw experiment where some participant labels occur on multiple equally likely physical slips. Record which label was drawn, replace or do not replace according to the declared protocol, and compare the empirical frequency to the theoretical fraction of slips bearing that label. Do not assume distinct visible names are equiprobable or invent observations that were never collected.",
         "A subset satisfying multiple criteria such as exactly one head Count favorable outcomes / total if equiprobable Don't use simple counts for biased alternatives",
         "Original source-specific student task: Construct a two-stage table and compare empirical and modelled event frequencies; teacher evaluates reasoning. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 2, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 2, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments.",
+        "Source alignment repair: Correct the prior sample-space emphasis to the source bag-of-names experiment and repeated-trial interpretation.",
+        "Source alignment repair: Retain that repeated physical slips with the same label increase that label's probability even though the visible names are distinct.",
+        "Source alignment repair: Use larger numbers of trials to discuss stabilization of relative frequency without claiming exact convergence in a finite sample.",
+        "Edulytics independent cool-down: A bag has 15 equally likely slips: A appears 5 times, B 4 times, C 3 times, D 2 times, and E once. Find P(A), then explain what a result of 37 A's in 100 replacement draws would mean."
       ],
       "KeyConcepts": [
         {
@@ -218,6 +222,7 @@
         }
       ],
       "SummaryPoints": [
+        "Use repeated random draws with replacement to connect empirical relative frequencies to theoretical probabilities and interpret probability language without assuming different labels are equally likely.",
         "Build explicit sample spaces for one- and two-stage chance experiments, count equally likely events and critique unsupported equiprobability assumptions.",
         "Count favorable outcomes / total if equiprobable",
         "Human-assessed modelling and experiment evidence remains pending."
