@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U05:L20",
+  "nextCanonical": "U05:L21",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -4315,25 +4315,65 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L19_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+      "unitCode": "U05",
+      "lessonNumber": 20,
+      "title": "Changes over Equal Intervals",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "cf6f2ebb50e37164291577446ad431e940199c4029374b3e6c65bb91bd051a9f",
+        "ti": "f9c3d2100a170bb3c791d61f31f4435f4c58173b9e464f776895cbbc5bca42aa",
+        "tpr": "98a6def3cbbfd881d6c65645fb886dec377e9858286cebc7035e79ac963bb9e0",
+        "si": "c080148ed15a5ca7ace47de31524ba9d4e8dc46f69892296db7b5b3d5c924508",
+        "spr": "402f971d5c333ba9f75ede1027403efce1fb4bd2676004d5d4f9614d474a9c1e"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u05-l20-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u05-l20-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "Local learning goals, source activities, examples and practice compared; previously correct content preserved"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true,
+        "firstPartyCooldown": "AUTHORED"
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "geometry.coordinate.gradient_between_points",
+          "functions.exponential.growth.evaluate"
+        ],
+        "teacherReviewRequired": [
+          "equal-interval difference versus factor and graph interpretation"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L20_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 89,
-    "B_CLOSED": 89,
-    "C_PREPARED": 89,
-    "ABC_READY_FOR_D": 89,
+    "A_CLOSED": 90,
+    "B_CLOSED": 90,
+    "C_PREPARED": 90,
+    "ABC_READY_FOR_D": 90,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 43,
+    "REMAINING": 42,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 4,
     "CURRENT_UNIT": "U05",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L20",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L21",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -4368,12 +4408,12 @@
     "unitsABCCLosed": 4,
     "status": "U05_IN_PROGRESS",
     "previouslyABCClosed": 70,
-    "newlyABCClosed": 19,
+    "newlyABCClosed": 20,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L19",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -4405,9 +4445,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U05_IN_PROGRESS_L20",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L19",
+  "unitStatus": "U05_IN_PROGRESS_L21",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -4417,9 +4457,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L19",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L19_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L20_ABC_CLOSURE_20261105.md"
 }
