@@ -2066,7 +2066,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
             "functions.quadratic.context",
             "ALG1_U06_L03_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
-            ["supporting.algebra.factor", "supporting.algebra.complete_square_vertex"],
+            ["functions.quadratic.expand.middle_coefficient", "supporting.algebra.complete_square_vertex"],
             "ALG1_U06_L03_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
@@ -2111,7 +2111,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L08",
             "functions.quadratic.context",
             "ALG1_U06_L08_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
-            ["supporting.algebra.factor"],
+            ["functions.quadratic.expand.middle_coefficient"],
             "ALG1_U06_L08_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
@@ -2120,7 +2120,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L09",
             "functions.quadratic.context",
             "ALG1_U06_L09_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
-            ["supporting.algebra.factor"],
+            ["functions.quadratic.expand.middle_coefficient"],
             "ALG1_U06_L09_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);
@@ -2156,7 +2156,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
             "functions.quadratic.context",
             "ALG1_U06_L13_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
-            ["supporting.algebra.complete_square_vertex", "supporting.algebra.factor"],
+            ["supporting.algebra.complete_square_vertex", "functions.quadratic.expand.middle_coefficient"],
             "ALG1_U06_L13_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
             "READY_VERIFIED",
             Version);

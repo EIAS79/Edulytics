@@ -13,12 +13,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string LinearExponentialCompareFamily = "functions.growth.linear_exponential.compare";
     public const string ExponentialGrowthEvaluateFamily = "functions.exponential.growth.evaluate";
     public const string ExponentialDecayHalfFamily = "functions.exponential.decay.half_evaluate";
+    public const string QuadraticExpandMiddleFamily = "functions.quadratic.expand.middle_coefficient";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily or QuadraticExpandMiddleFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -167,6 +168,20 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == QuadraticExpandMiddleFamily)
+        {
+            var a = random.Next(-8, 9);
+            var b = random.Next(-8, 9);
+            return new(family,
+                $"Expand (x+({a}))(x+({b})). What is the coefficient of x in the expanded standard form? Enter the integer only; show the full distribution and area diagram to the teacher.",
+                $"The expanded form is x^2+({a + b})x+({a * b}).",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["a"] = a, ["b"] = b
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -250,6 +265,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (initial / (1 << exponent)).ToString();
         }
 
+        if (family == QuadraticExpandMiddleFamily)
+        {
+            if (!ValidateQuadraticExpand(parameters, out var a, out var b))
+                throw new InvalidOperationException("Invalid quadratic expansion parameters.");
+            return (a + b).ToString();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -310,6 +332,11 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 
         if (family == ExponentialDecayHalfFamily)
             return ValidateDecayHalf(parameters, out _, out _) &&
+                   int.TryParse(answer.Trim(), out var value) &&
+                   value.ToString() == Solve(family, parameters);
+
+        if (family == QuadraticExpandMiddleFamily)
+            return ValidateQuadraticExpand(parameters, out _, out _) &&
                    int.TryParse(answer.Trim(), out var value) &&
                    value.ToString() == Solve(family, parameters);
 
@@ -428,6 +455,15 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("exponent", out exponent) && exponent is >= 1 and <= 5 &&
             initial % (1 << exponent) == 0 &&
             initial / (1 << exponent) is >= 1 and <= 12;
+    }
+
+    private static bool ValidateQuadraticExpand(IReadOnlyDictionary<string, int>? p,
+        out int a, out int b)
+    {
+        a = b = 0;
+        return p is not null &&
+            p.TryGetValue("a", out a) && a is >= -8 and <= 8 &&
+            p.TryGetValue("b", out b) && b is >= -8 and <= 8;
     }
 
 }

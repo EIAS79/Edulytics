@@ -145,4 +145,16 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
             UsCcssAlg1Unit4FunctionQuestions.ExponentialDecayHalfFamily, p, "12"));
     }
 
+    [Theory]
+    [InlineData(4, 2, "6")]
+    [InlineData(-5, 3, "-2")]
+    public void QuadraticBinomialExpansionCombinesLinearCoefficients(int a, int b, string expected)
+    {
+        var p = new Dictionary<string, int> { ["a"] = a, ["b"] = b };
+        Assert.Equal(expected, UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.QuadraticExpandMiddleFamily, p));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.QuadraticExpandMiddleFamily, p, expected));
+    }
+
 }

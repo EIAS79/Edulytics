@@ -13,3 +13,5 @@ Local goals, activities and practice checked; existing Rich V2 examples retained
 Existing exact family components: supporting.algebra.factor
 Teacher review: rectangular area diagram, distributive property, polynomial expansion
 Focused tests not run; CI, Stage D, full build and deployment not run.
+
+Technical correction: replaced unrelated linear-GCF factor family with the quadratic binomial middle-coefficient exact family. Full symbolic expansion and diagrams remain teacher-reviewed. Regression fixture authored; NOT_RUN.

@@ -20913,6 +20913,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.quadratic.expand.middle_coefficient",
+      "version": 1,
+      "skillId": "functions.quadratic.expand",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-quadratic-binomial-linear-coefficient",
+      "representations": ["binomial_product", "standard_quadratic", "teacher_area_model"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
