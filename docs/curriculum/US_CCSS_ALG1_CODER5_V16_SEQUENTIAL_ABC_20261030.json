@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U05:L13",
+  "nextCanonical": "U05:L14",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -4032,25 +4032,65 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L12_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+      "unitCode": "U05",
+      "lessonNumber": 13,
+      "title": "Reasoning about Exponential Graphs (Part 2)",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "e2e2c2b23eec6c9534eb22cfcae176b64ce38107bd8eb6a4271b0e1b79323590",
+        "ti": "838a63ae7b957df06c6832a079bfa47cf3ed1606e793a076cc8988b216f73d98",
+        "tpr": "e6e29e7b484a8c3f33dde8a1006ce397d81c5e97965b4c129dc2e0be079a8250",
+        "si": "8da0515f1dfb138b46ab5818d26630f307fe6169352aecfdf5265e1f6579c108",
+        "spr": "3926a0375df4b2e0803bce846ab9076398c25def2e352f380c45955f9aff58d0"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u05-l13-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u05-l13-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "Local learning goals, source activities, examples and practice compared; previously correct content preserved"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true,
+        "firstPartyCooldown": "AUTHORED"
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "functions.exponential.growth.evaluate"
+        ],
+        "teacherReviewRequired": [
+          "recovering factors from non-consecutive inputs",
+          "intersection meaning"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L13_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 82,
-    "B_CLOSED": 82,
-    "C_PREPARED": 82,
-    "ABC_READY_FOR_D": 82,
+    "A_CLOSED": 83,
+    "B_CLOSED": 83,
+    "C_PREPARED": 83,
+    "ABC_READY_FOR_D": 83,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 50,
+    "REMAINING": 49,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 4,
     "CURRENT_UNIT": "U05",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L13",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L14",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -4085,12 +4125,12 @@
     "unitsABCCLosed": 4,
     "status": "U05_IN_PROGRESS",
     "previouslyABCClosed": 70,
-    "newlyABCClosed": 12,
+    "newlyABCClosed": 13,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L12",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -4122,9 +4162,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U05_IN_PROGRESS_L13",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L12",
+  "unitStatus": "U05_IN_PROGRESS_L14",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -4134,9 +4174,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L12",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L12_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L13_ABC_CLOSURE_20261105.md"
 }

@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l13-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l13-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Reasoning about Exponential Graphs (Part 2)",
       "ExplanationParagraphs": [
-        "Learning goal: recover growth/decay factor from two graph points with nonconsecutive inputs, interpret intersections of exponential graphs and distinguish a matching formula from a superficially plausible one. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 13, https://im.kendallhunt.com/HS/teachers/1/5/13/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/13/index.html (CC BY 4.0). The source's special feature is nonconsecutive input intervals when inferring factors.",
+        "Learning goal: recover growth/decay factor from two graph points with nonconsecutive inputs, interpret intersections of exponential graphs and distinguish a matching formula from a superficially plausible one. Original first-party Edulytiks adaptation of This first-party Edulytiks material follows the reviewed local Algebra 1 learning objectives and uses independently authored examples.",
         "Original hypothetical device value graph has A(0)=320 dollars and A(2)=180 dollars for A(t)=a·b^t. At0, a=320. At2,320b²=180 so b²=9/16, positive b=3/4=0.75. Therefore A(t)=320(.75)^t. It predicts A1=$240,A3=$135; do not mistakenly set factor to180/320=.5625, which is the TWO-year factor.",
         "Original second comparison: F(t)=60·2^t, G(t)=240·(.5)^t, for whole nonnegative times. Equate:60·2^t=240·(1/2)^t; dividing yields4^t=4, so t=1, both outputs120. At t0 F60<G240; at t2 F240>G60. The intersection gives equality at the SAME input.",
-        "Student task: identify a,b from graphs with missing intermediate t, sketch both curves on shared axes, calculate an intersection and explain where ordering reverses. Teacher-scored rubric0–2 each for factor extraction, exact graph predictions, intersection and limitations and units."
+        "Student task: identify a,b from graphs with missing intermediate t, sketch both curves on shared axes, calculate an intersection and explain where ordering reverses. Teacher-scored rubric0–2 each for factor extraction, exact graph predictions, intersection and limitations and units.",
+        "First-party Cool-down (teacher-scored): An exponential function has f(0)=3 and f(2)=27. Determine the positive constant factor per step and explain why it is not found by subtracting the outputs. Numeric responses supported by the mapped exact families may be auto-checked; the teacher scores recovering factors from non-consecutive inputs, intersection meaning."
       ],
       "KeyConcepts": [
         {
