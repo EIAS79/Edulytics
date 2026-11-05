@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l08-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l08-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Interpreting and Creating Graphs",
       "ExplanationParagraphs": [
-        "Learning goal: use a complex or ambiguous verbal description to design a plausible graph, label features and justify assumptions; interpret average rate in context. First-party Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 8, https://im.kendallhunt.com/HS/teachers/1/4/8/preparation.html and student tasks at https://im.kendallhunt.com/HS/students/1/4/8/index.html (CC BY 4.0). Official Addressing HSF-IF.B.4 and HSF-IF.B.6. The original activities involve flag-raising and descriptions/video; text examples here preserve modeling without claiming access to source clips.",
+        "Learning goal: turn a verbal or visual description of a situation into a plausible graph with labeled key features, interpret those features in context, and calculate an average rate of change when two points are known. This first-party Edulytics lesson is aligned to the approved local Algebra 1 Unit 4 Lesson 8 evidence and uses independently authored scenarios rather than claiming unavailable media.",
         "Independent original flag-raising scenario: a flag starts at 0 metres, rises uniformly to 6 metres between t=0 and t=3 seconds, stays fixed at 6m until t=8, then lowers uniformly to 0m by t=11. The height H(t) is a piecewise-linear *model*, not an observation of a real flag. Its anchors are (0,0),(3,6),(8,6),(11,0); a learner connects these with straight lines, units and an explicitly stated assumption of constant speed in each moving interval.",
         "Piecewise function for 0≤t≤11: H(t)=2t for 0≤t≤3; H(t)=6 for 3≤t≤8; H(t)=22−2t for 8≤t≤11. At t=3 both first two formulas give6, at t=8 both final formulas give6. Upward speed 2m/s, rest speed0m/s, downward rate −2m/s; all heights remain nonnegative.",
         "Modeling variation: if the flag briefly pauses at half height on the way up, a graph consistent with that new description gains an extra horizontal segment. More than one graph may satisfy a vague verbal account; student must identify what is known, what is inferred and which assumptions determine the shape.",
-        "Student activity: draw two different plausible graphs from an underspecified situation, label intercepts/maxima/constant intervals and explain their common and different features. State that actual publisher video clips are not supplied in this first-party JSON; do not imply a video was watched or produced. Teacher-scored rubric 0–2 each for faithful context model, accurate graph/features and rates, explicit assumptions, and critique of an alternative valid graph."
+        "Student activity: draw two different plausible graphs from an underspecified situation, label intercepts/maxima/constant intervals and explain their common and different features. State that actual publisher video clips are not supplied in this first-party JSON; do not imply a video was watched or produced. Teacher-scored rubric 0–2 each for faithful context model, accurate graph/features and rates, explicit assumptions, and critique of an alternative valid graph.",
+        "First-party Cool-down (teacher-scored): A flag is 1 metre high at t=0 seconds and 9 metres high at t=4 seconds, then remains at 9 metres through t=7. Calculate the average rate of change from 0 to 4 seconds and sketch or describe a graph showing the rise and the later constant interval. The rate is exact; the graph and contextual explanation are teacher-reviewed."
       ],
       "KeyConcepts": [
         {
