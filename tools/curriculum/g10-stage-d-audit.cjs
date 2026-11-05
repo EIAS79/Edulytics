@@ -10,6 +10,7 @@ const walk=(dir)=>exists(dir)?fs.readdirSync(path.join(root,dir),{withFileTypes:
 const prefix='PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:';
 const blueprint=read('src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json');
 const sourceInventory=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/g10-local-source-element-inventory-20261106.json');
+const sourceCrosswalk=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/g10-source-activity-crosswalk-diagnostics-20261106.json');
 const ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json');
 const progress=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/full-grade-progress.json');
 const files=walk('src/Edulytics.Core/Curriculum/LessonContent/RichV2').filter(f=>/us-ccss-hs-geo-u\d\d-.*\.json$/.test(f));
@@ -24,6 +25,7 @@ check(rich.length===124,'RICH_COUNT',String(rich.length));
 check(ledger.LessonEntries.length===124,'ABC_LEDGER_COUNT',String(ledger.LessonEntries.length));
 check(progress.ReadyForStageD===124,'ABC_READY_COUNT',String(progress.ReadyForStageD));
 check(sourceInventory.Lessons.length===124,'LOCAL_INVENTORY_LESSON_COUNT',String(sourceInventory.Lessons.length));
+check(sourceCrosswalk.lessonCount===124 && sourceCrosswalk.sourceSnapshotId===sourceInventory.SourceSnapshotId,'SOURCE_ACTIVITY_CROSSWALK_STALE',String(sourceCrosswalk.lessonCount));
 check(sourceInventory.availableHtmlFiles===496 && sourceInventory.expectedHtmlFiles===496,'LOCAL_SOURCE_HTML_MISSING',String(sourceInventory.availableHtmlFiles));
 check(sourceInventory.SourceSnapshotId?.startsWith('g10-local-html-sha256:'),'LOCAL_SOURCE_SNAPSHOT_MISSING','No pinned local HTML digest');
 const bc=new Map(blueprint.Lessons.map(l=>[l.LessonCode,l]));
@@ -78,7 +80,7 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
 const structural={pass:issues.length===0,errors:issues,count:lessons.length,units:8,
   blueprintHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json'))).digest('hex'),
   sourceEvidenceCompleteCount:lessons.filter(x=>x.sourceEvidenceComplete).length,
-  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',localSourceSnapshotId:sourceInventory.SourceSnapshotId,localSourceHtmlCount:sourceInventory.availableHtmlFiles,localSourceHeadingCount:sourceInventory.totalHeadingElements,localSourceVisualRefs:sourceInventory.totalDistinctWithinPageVisualAssets,documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
+  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',localSourceSnapshotId:sourceInventory.SourceSnapshotId,localSourceHtmlCount:sourceInventory.availableHtmlFiles,localSourceHeadingCount:sourceInventory.totalHeadingElements,localSourceVisualRefs:sourceInventory.totalDistinctWithinPageVisualAssets,sourceTeacherActivityIds:sourceCrosswalk.sourceTeacherActivityIdCount,sourceTeacherActivityIdsCrosswalked:sourceCrosswalk.sourceTeacherActivityIdsDocumentedInCrosswalk,sourcePracticeProblemHeadings:sourceCrosswalk.practiceProblemsSourceHeadingCount,sourceActivityCrosswalkMeaningVerified:false,documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
 const result={structural,lessons};
 if(process.argv.includes('--json')) console.log(JSON.stringify(result,null,2));
 else console.log(JSON.stringify(structural,null,2));
