@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l15-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l15-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Inverse Functions",
       "ExplanationParagraphs": [
-        "Learning goal: understand an inverse function as undoing the original input-output process, including letter-shift ciphers and a reversible fixed-rate currency conversion; distinguish a genuine inverse from a reciprocal. Independently authored Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 15, https://im.kendallhunt.com/HS/teachers/1/4/15/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/15/index.html (CC BY 4.0). The source introduces inverses through forward/backward reasoning before abstract notation.",
+        "Learning goal: understand an inverse function as reversing the original input-output process, describe the inverse of a linear rule in words or equations, and distinguish an inverse function from taking a reciprocal. This first-party Edulytiks lesson is aligned to the approved local Algebra 1 Unit 4 Lesson 15 evidence and uses independently authored reversible contexts.",
         "Original shift-cipher example: label alphabet letters with indices 0–25 and encode c=(m+3) mod26. Decode using m=(c−3) mod26, wrapping negative residues back into 0–25. For original W at index22, encoded Z index25; for X at23, encoded A index0. The same encoded letter has exactly one original letter for this fixed shift, so the mapping is invertible over the 26-letter alphabet.",
         "Original fictitious currency desk rate: 18 pesos per one dollar at a fixed instant, with no fees. P(d)=18d pesos for dollars d≥0; the inverse process D(p)=p/18 dollars for p≥0. Ten dollars converts to180 pesos, and converting back gives 180/18=10 dollars. This is illustrative fixed arithmetic, not a current exchange-rate claim or quote.",
-        "Student activity: invent a three-letter cipher message, encode and exchange with a partner, explain why the decoding must undo the steps in reverse, then compare it with numerical conversion. Teacher-scored rubric (0–2 each, max 8): valid bijective mapping and wrap, correct reverse operation, accurate contextual units/domains, and reasoned explanation of reversible processes."
+        "Student activity: invent a three-letter cipher message, encode and exchange with a partner, explain why the decoding must undo the steps in reverse, then compare it with numerical conversion. Teacher-scored rubric (0–2 each, max 8): valid bijective mapping and wrap, correct reverse operation, accurate contextual units/domains, and reasoned explanation of reversible processes.",
+        "First-party Cool-down (teacher-scored): Let f(x)=3x+4. If f(5)=19, determine f inverse of 19 and explain in words how the input and output roles reverse. State why the inverse is not 1/f(x). The numeric inverse value can be checked exactly; the explanation is teacher-reviewed."
       ],
       "KeyConcepts": [
         {
