@@ -20841,6 +20841,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.piecewise.evaluate_interval",
+      "version": 1,
+      "skillId": "functions.piecewise.interpret",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-u04-piecewise-interval-selection",
+      "representations": ["piecewise_rule", "interval_selection", "endpoint_convention"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

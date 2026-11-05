@@ -62,4 +62,20 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
         Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
             UsCcssAlg1Unit4FunctionQuestions.FunctionDomainRangeFamily, parameters, "D=0,6; R=0,24"));
     }
+
+    [Fact]
+    public void PiecewiseFamilyChoosesInclusiveBoundaryRule()
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["boundary"] = 3, ["leftSlope"] = 2, ["leftIntercept"] = 1,
+            ["rightSlope"] = 5, ["rightIntercept"] = 4, ["side"] = 0, ["variant"] = 0
+        };
+
+        Assert.Equal("7", UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionPiecewiseFamily, parameters));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionPiecewiseFamily, parameters, "7"));
+    }
+
 }

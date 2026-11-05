@@ -7,12 +7,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string FunctionRelationFamily = "functions.relations.unique_output.classify";
     public const string FunctionNotationFamily = "functions.notation.evaluate_context";
     public const string FunctionDomainRangeFamily = "functions.domain_range.context_bounds";
+    public const string FunctionPiecewiseFamily = "functions.piecewise.evaluate_interval";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -53,6 +54,32 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == FunctionPiecewiseFamily)
+        {
+            var boundary = random.Next(1, 6);
+            var leftSlope = random.Next(1, 5);
+            var leftIntercept = random.Next(0, 8);
+            var rightSlope = random.Next(1, 5);
+            var rightIntercept = random.Next(0, 8);
+            var side = random.Next(0, 2);
+            var input = side == 0 ? boundary : boundary + 1;
+            var variant = random.Next(0, 16);
+            var output = input <= boundary
+                ? leftSlope * input + leftIntercept
+                : rightSlope * input + rightIntercept;
+            return new(family,
+                $"A piecewise function P uses P(x)={leftSlope}x+{leftIntercept} for x<= {boundary}, and P(x)={rightSlope}x+{rightIntercept} for x>{boundary}. Find P({input}). Enter the integer output only. Explain which rule applies and how the endpoint should be drawn.",
+                $"Because x={input} {(input <= boundary ? "is in the first interval" : "is in the second interval")}, P({input})={output}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["boundary"] = boundary, ["leftSlope"] = leftSlope,
+                    ["leftIntercept"] = leftIntercept, ["rightSlope"] = rightSlope,
+                    ["rightIntercept"] = rightIntercept, ["side"] = side,
+                    ["variant"] = variant
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -90,6 +117,15 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return $"D=0,{duration};R=0,{start}";
         }
 
+        if (family == FunctionPiecewiseFamily)
+        {
+            if (!ValidatePiecewise(parameters, out var boundary, out var leftSlope, out var leftIntercept,
+                    out var rightSlope, out var rightIntercept, out var side, out _))
+                throw new InvalidOperationException("Invalid piecewise parameters.");
+            var input = side == 0 ? boundary : boundary + 1;
+            return (input <= boundary ? leftSlope * input + leftIntercept : rightSlope * input + rightIntercept).ToString();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -113,6 +149,14 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             if (!ValidateDomainRange(parameters, out _, out _, out _, out _)) return false;
             var normalized = new string(answer.Where(c => !char.IsWhiteSpace(c)).ToArray()).ToUpperInvariant();
             return normalized == Solve(family, parameters).ToUpperInvariant();
+        }
+
+        if (family == FunctionPiecewiseFamily)
+        {
+            if (!ValidatePiecewise(parameters, out _, out _, out _, out _, out _, out _, out _) ||
+                !int.TryParse(answer.Trim(), out var submitted))
+                return false;
+            return submitted.ToString() == Solve(family, parameters);
         }
 
         if (family != FunctionRelationFamily ||
@@ -159,6 +203,21 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("duration", out duration) && duration is >= 2 and <= 8 &&
             p.TryGetValue("rate", out rate) && rate is >= 2 and <= 9 &&
             p.TryGetValue("start", out start) && start == duration * rate &&
+            p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidatePiecewise(IReadOnlyDictionary<string, int>? p,
+        out int boundary, out int leftSlope, out int leftIntercept, out int rightSlope,
+        out int rightIntercept, out int side, out int variant)
+    {
+        boundary = leftSlope = leftIntercept = rightSlope = rightIntercept = side = variant = 0;
+        return p is not null &&
+            p.TryGetValue("boundary", out boundary) && boundary is >= 1 and <= 5 &&
+            p.TryGetValue("leftSlope", out leftSlope) && leftSlope is >= 1 and <= 4 &&
+            p.TryGetValue("leftIntercept", out leftIntercept) && leftIntercept is >= 0 and <= 7 &&
+            p.TryGetValue("rightSlope", out rightSlope) && rightSlope is >= 1 and <= 4 &&
+            p.TryGetValue("rightIntercept", out rightIntercept) && rightIntercept is >= 0 and <= 7 &&
+            p.TryGetValue("side", out side) && side is >= 0 and <= 1 &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 }
