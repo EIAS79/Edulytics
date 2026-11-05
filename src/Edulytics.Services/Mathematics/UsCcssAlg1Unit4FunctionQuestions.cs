@@ -12,12 +12,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string FunctionAbsoluteTranslateFamily = "functions.absolute_value.translate_evaluate";
     public const string LinearExponentialCompareFamily = "functions.growth.linear_exponential.compare";
     public const string ExponentialGrowthEvaluateFamily = "functions.exponential.growth.evaluate";
+    public const string ExponentialDecayHalfFamily = "functions.exponential.decay.half_evaluate";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -151,6 +152,21 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == ExponentialDecayHalfFamily)
+        {
+            var exponent = random.Next(1, 6);
+            var multiplier = random.Next(1, 13);
+            var initial = multiplier * (1 << exponent);
+            return new(family,
+                $"A model is D(t)={initial}*(1/2)^t. Find D({exponent}) and enter the integer result. Explain with the teacher why this represents a constant-factor decay.",
+                $"D({exponent})={multiplier}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["initial"] = initial, ["exponent"] = exponent
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -227,6 +243,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (initial * (int)Math.Pow(factor, exponent)).ToString();
         }
 
+        if (family == ExponentialDecayHalfFamily)
+        {
+            if (!ValidateDecayHalf(parameters, out var initial, out var exponent))
+                throw new InvalidOperationException("Invalid exponential-decay parameters.");
+            return (initial / (1 << exponent)).ToString();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -282,6 +305,11 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 
         if (family == ExponentialGrowthEvaluateFamily)
             return ValidateExponentialGrowth(parameters, out _, out _, out _) &&
+                   int.TryParse(answer.Trim(), out var value) &&
+                   value.ToString() == Solve(family, parameters);
+
+        if (family == ExponentialDecayHalfFamily)
+            return ValidateDecayHalf(parameters, out _, out _) &&
                    int.TryParse(answer.Trim(), out var value) &&
                    value.ToString() == Solve(family, parameters);
 
@@ -389,6 +417,17 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("initial", out initial) && initial is >= 2 and <= 20 &&
             p.TryGetValue("factor", out factor) && factor is >= 2 and <= 4 &&
             p.TryGetValue("exponent", out exponent) && exponent is >= 0 and <= 5;
+    }
+
+    private static bool ValidateDecayHalf(IReadOnlyDictionary<string, int>? p,
+        out int initial, out int exponent)
+    {
+        initial = exponent = 0;
+        return p is not null &&
+            p.TryGetValue("initial", out initial) && initial > 0 &&
+            p.TryGetValue("exponent", out exponent) && exponent is >= 1 and <= 5 &&
+            initial % (1 << exponent) == 0 &&
+            initial / (1 << exponent) is >= 1 and <= 12;
     }
 
 }

@@ -20901,6 +20901,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.exponential.decay.half_evaluate",
+      "version": 1,
+      "skillId": "functions.exponential.decay",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-u05-half-decay-integer",
+      "representations": ["exponential_decay_rule", "table", "teacher_graph"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

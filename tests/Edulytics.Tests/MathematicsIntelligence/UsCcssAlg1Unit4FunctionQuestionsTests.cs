@@ -135,4 +135,14 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
             UsCcssAlg1Unit4FunctionQuestions.ExponentialGrowthEvaluateFamily, p, expected));
     }
 
+    [Fact]
+    public void ExponentialHalfDecayUsesCorrectConstantFactor()
+    {
+        var p = new Dictionary<string, int> { ["initial"] = 96, ["exponent"] = 3 };
+        Assert.Equal("12", UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.ExponentialDecayHalfFamily, p));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.ExponentialDecayHalfFamily, p, "12"));
+    }
+
 }

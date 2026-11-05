@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l05-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l05-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Representing Exponential Decay",
       "ExplanationParagraphs": [
-        "Learning goal: represent exponential decrease by y=a·b^t with 0<b<1 using equations, tables and graphs; interpret the initial amount and decay factor; distinguish measured discrete samples from continuous-time interpolation. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 5, https://im.kendallhunt.com/HS/teachers/1/5/5/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/5/index.html (CC BY 4.0). Source includes an algae area model and insulin context; our first-party model is not a biological dose or medical instruction.",
+        "Interpret exponential decay models y=a*b^x with 0<b<1 using equations, graphs and tables. Explain how the initial amount and retained fraction can be inferred from graph points, and distinguish discrete measurements from a continuous model. This independently authored Edulytiks lesson follows the approved local Algebra 1 Unit 5 Lesson 5 goals.",
         "Original hypothetical surface staining area in square centimetres decreases by half after each treatment week. Initial area256cm², so A(t)=256(1/2)^t for nonnegative whole weeks t, giving 256,128,64,32,16 at weeks0–4. The formula can be evaluated at fractional weeks as a mathematical extension, but no physical process at fractional times is established without observations.",
         "Read the graph: vertical intercept (0,256), positive y-values decreasing toward0 but never exactly0 at finite nonnegative t under the real exponential model. For t3 A=32; solving A=16 by pattern gives t4. An automatic assumption that all exponential decay crosses the horizontal axis at a finite time is incorrect.",
-        "Student task: use a table and original graph to identify multiplier, initial value and long-term trend; explain why discrete observed weeks may not prove smooth decay, and compare it with a linear decline. Teacher-scored rubric 0–2 each for arithmetic, equation/graph match, context and asymptote interpretation, and disclosure of continuous-model assumptions."
+        "Student task: use a table and original graph to identify multiplier, initial value and long-term trend; explain why discrete observed weeks may not prove smooth decay, and compare it with a linear decline. Teacher-scored rubric 0–2 each for arithmetic, equation/graph match, context and asymptote interpretation, and disclosure of continuous-model assumptions.",
+        "First-party Cool-down (teacher-scored): A sample starts at 96 units and halves each time step. Write a function rule and compute the value at t=3, then sketch or describe the graph and explain its decreasing pattern. Exact values are checked; graph and interpretation are teacher-reviewed."
       ],
       "KeyConcepts": [
         {
