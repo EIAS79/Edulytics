@@ -65,4 +65,18 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
         Assert.Equal("yes", UsCcssAlg1Unit2AlgebraQuestions.Solve(
             UsCcssAlg1Unit2AlgebraQuestions.TwoVariableSolutionCheckFamily, two));
     }
+
+    [Fact]
+    public void EquivalenceOracleDistinguishesTwoSidedAndOneSidedChanges()
+    {
+        var valid = new Dictionary<string, int>
+        {
+            ["a"] = 3, ["b"] = 2, ["c"] = 17, ["operation"] = 1, ["variant"] = 0
+        };
+        var invalid = new Dictionary<string, int>(valid) { ["operation"] = 3 };
+        Assert.Equal("equivalent", UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.EquationEquivalenceFamily, valid));
+        Assert.Equal("not-equivalent", UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.EquationEquivalenceFamily, invalid));
+    }
 }

@@ -18,6 +18,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         "algebra.equation.one_variable.solution_check";
     public const string TwoVariableSolutionCheckFamily =
         "algebra.equation.two_variable.solution_check";
+    public const string EquationEquivalenceFamily =
+        "algebra.equations.equivalence.classify";
 
     public sealed record Problem(
         string Family,
@@ -29,7 +31,7 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
     public static bool Supports(string? family) =>
         family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
             PatternClassificationFamily or OneVariableSolutionCheckFamily or
-            TwoVariableSolutionCheckFamily;
+            TwoVariableSolutionCheckFamily or EquationEquivalenceFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -43,6 +45,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return BuildPatternClassification(random);
         if (family is OneVariableSolutionCheckFamily or TwoVariableSolutionCheckFamily)
             return BuildSolutionCheck(family, random);
+        if (family == EquationEquivalenceFamily)
+            return BuildEquationEquivalence(random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -101,6 +105,12 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             var ok = family == OneVariableSolutionCheckFamily ? a * x + b == c : a * x + b * y == c;
             return ok ? "yes" : "no";
         }
+        if (family == EquationEquivalenceFamily)
+        {
+            if (!ValidateEquivalence(parameters, out _, out _, out _, out var operation, out _))
+                throw new InvalidOperationException("Invalid ALG1 U02 equivalence parameters.");
+            return operation <= 2 ? "equivalent" : "not-equivalent";
+        }
 
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
@@ -129,11 +139,47 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         if (family is OneVariableSolutionCheckFamily or TwoVariableSolutionCheckFamily)
             return ValidateSolutionCheck(parameters, out _, out _, out _, out _, out _, out _) &&
                 NormalizeYesNo(answer) == Solve(family, parameters);
+        if (family == EquationEquivalenceFamily)
+            return ValidateEquivalence(parameters, out _, out _, out _, out _, out _) &&
+                NormalizeEquivalence(answer) == Solve(family, parameters);
 
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildEquationEquivalence(Random random)
+    {
+        var a = random.Next(2, 8);
+        var b = random.Next(-6, 7);
+        var x = random.Next(-4, 9);
+        var c = a * x + b;
+        var operation = random.Next(0, 5);
+        var k = random.Next(2, 6);
+        var variant = random.Next(0, 16);
+
+        var original = $"{a}x{(b >= 0 ? "+" : "")}{b}={c}";
+        var transformed = operation switch
+        {
+            0 => $"{a}x{(b + k >= 0 ? "+" : "")}{b + k}={c + k}",
+            1 => $"{a * k}x{(b * k >= 0 ? "+" : "")}{b * k}={c * k}",
+            2 => $"{a}x{(b - k >= 0 ? "+" : "")}{b - k}={c - k}",
+            3 => $"{a}x{(b + k >= 0 ? "+" : "")}{b + k}={c}",
+            4 => $"{a * k}x{(b >= 0 ? "+" : "")}{b}={c}",
+            _ => throw new InvalidOperationException()
+        };
+
+        return new(
+            EquationEquivalenceFamily,
+            $"Are the equations {original} and {transformed} equivalent, meaning they have exactly the same solution set? " +
+            "Enter equivalent or not-equivalent. Explaining the operation remains teacher-reviewed.",
+            "Operations applied equally to both sides preserve the solution set; one-sided changes generally do not.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["a"] = a, ["b"] = b, ["c"] = c, ["operation"] = operation, ["variant"] = variant
+            });
     }
 
     private static Problem BuildSolutionCheck(string family, Random random)
@@ -214,6 +260,34 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             {
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
+    }
+
+    private static bool ValidateEquivalence(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int a,
+        out int b,
+        out int c,
+        out int operation,
+        out int variant)
+    {
+        a = b = c = operation = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("a", out a) && a is >= 2 and <= 7 &&
+            parameters.TryGetValue("b", out b) && b is >= -6 and <= 6 &&
+            parameters.TryGetValue("c", out c) && c is >= -100 and <= 150 &&
+            parameters.TryGetValue("operation", out operation) && operation is >= 0 and <= 4 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static string NormalizeEquivalence(string value)
+    {
+        var text = value.Trim().ToLowerInvariant().Replace('_', '-').Replace(' ', '-');
+        return text switch
+        {
+            "same" or "equivalent" => "equivalent",
+            "not" or "not-equivalent" or "different" => "not-equivalent",
+            _ => text
+        };
     }
 
     private static bool ValidateSolutionCheck(

@@ -20601,6 +20601,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.equations.equivalence.classify",
+      "version": 1,
+      "skillId": "algebra.equations.equivalence",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-equation-equivalence-exact",
+      "representations": ["equation_pair", "solution_set_equivalence", "teacher_led_operation_justification"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
