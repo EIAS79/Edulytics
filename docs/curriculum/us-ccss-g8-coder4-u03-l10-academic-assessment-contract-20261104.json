@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L10",
+  "title": "Calculating Slope",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\10\\index.html",
+      "sha256": "9836136e57096acc96317f821e839bd93d0fce147ac9f870408df48e87ac06c7"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\10\\preparation.html",
+      "sha256": "fe4283b55f9652d1169059861e06281bc905d2df08812625222efe4c44775407"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\10\\index.html",
+      "sha256": "1fd4e68756fe507338d159e978bc6e7fa8ab04f0c4c5fc219207aa2235ece819"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\10\\practice.html",
+      "sha256": "4ff5518de410e07f90cbea8f4165f37b24ee74896fb06a8cfe521c0d8f36e7df"
+    }
+  },
+  "learningGoals": [
+    "Calculate positive negative and fractional slope from two points",
+    "Describe a line precisely enough for a partner to construct it",
+    "Correctly handle coordinate subtraction and zero run"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "10.1 • Integer and quotient mental exercise",
+      "firstPartyTask": "numbertalk",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "10.2 • General slope formula",
+      "firstPartyTask": "slopeformula",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "10.3 • Private design and blank-grid partner cards",
+      "firstPartyTask": "design",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 4,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u03-l10-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u03-l10-selected-first-party-paper.html",
+    "sha256": "2f02c71bda00d1cc885e6046f3697ba855aacb56def4f55045e5b5036d414779",
+    "taskIds": [
+      "numbertalk",
+      "slopeformula",
+      "design",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Number talk sample a=−4 b=2 yields−2, a=4 b=2 yields2, a=0 b=2 yields−2 by subtraction; other valid pairs accepted.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "For points (1,11),(8,2), m=−9/7; reversed slope remains−9/7.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Partner private design and blank-grid communication includes a point plus slope or two distinct points.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice slopes−1,−9/7, 3/2, −1/2, vertical undefined; line through (1,−2) slope4 gives (2,2).",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cooldown slope(−1−8)/(5−(−1))=−9/6=−3/2; reversing both keeps sign.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "x1": 1,
+    "y1": 11,
+    "x2": 8,
+    "y2": 2,
+    "numerator": -9,
+    "denominator": 7
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

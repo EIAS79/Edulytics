@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_INDIVIDUAL_LESSON_ABC_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L04",
+  "title": "Parallelograms",
+  "sourceLessonCode": "6.1.4",
+  "unit": "U01",
+  "sourceEdition": "Original IM 6–8 Math first-edition / OUR-developed Kendall Hunt 2017–2019 lineage (IM 2019 adaptation); original IM K–12 owner-approved",
+  "rights": "CC BY 4.0",
+  "sourceFiles": {
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\4\\index.html",
+    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\4\\preparation.html",
+    "teacherPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\4\\practice.html",
+    "studentLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM_Student\\1\\4\\index.html"
+  },
+  "sourceSha256": {
+    "teacherLesson": "851c6808cf72cb2e0224ef2aad52b1a4d7befbf0ac586a08bbfba9a18a300820",
+    "teacherPreparation": "27a6c5f410e374f8c153ba8da60c01ee64a01efc0f16e7e3824267ee3ab70842",
+    "teacherPractice": "0486f258ca1d42000ffd435eb5880bd3f94e7bc00d306f4abb6c040abe254fea",
+    "studentLesson": "3a5a5f0f5ac9653c5986c5685883ff639198c369f71253c45833616e1ee6cb4b"
+  },
+  "excludedWrongEdition": "All AccessIM_Grade6_*.html 2024 v360, Illustrative_Mathematics_v360 archive",
+  "closureStatus": "A_B_C_AUTHORED_CLOSED_READY_FOR_STAGE_D",
+  "gradeLabel": "ready for stage D",
+  "reviewComplete2021MarkerAdded": false,
+  "acceptedUtc": "2026-11-03T02:49:51Z",
+  "closureSha": "2389c71afc04c06cf82bad2ea4b7e46d0519511f",
+  "closureShaRole": "Integration code commit present in original PR #591; closure evidence/ledger later distinct commit",
+  "stageA": {
+    "status": "CLOSED",
+    "originalTasks": [
+      "4.1 Features of a Parallelogram: distinguish A/B/C parallelograms from D/E/F, both parallel opposite pairs; rectangles/squares included",
+      "4.2 Area of a Parallelogram: decompose/rearrange end triangles or enclose/subtract two corner triangles, moving a vertex and justifying preservation",
+      "4.3 Lots of Parallelograms: grid and off-grid examples, in source C useful 4 and perpendicular 6, slanted 4.5 is not a usable height",
+      "4.4 Publisher Cool-down title and area summary appear; restricted teacher-only question content not claimed reproduced",
+      "Original practice: classify polygons, make rectangle by cut/rearrange, find areas and explain non-examples"
+    ],
+    "existingEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-abc-first-party-parallelograms-20261030.json",
+    "sourceBoundary": "Original figures and drag applet not copied or functionally operated; first-party coordinate equivalents are explained. Teacher judges genuine diagrams and proofs."
+  },
+  "stageB": {
+    "status": "CLOSED_AUTHORED",
+    "preservedPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g6-phase29-v1.lesson-content-pack.json",
+    "existingSourceTasks": "Six first-party coordinate parallelogram/classification drawings; 4×3, 7×4 and 6×4 cut/move/enclosing examples; teacher-only student-drawn graphs; first-party original 24-unit Cool-down",
+    "reuse": "Reused exact area calculation and general Practice generation infrastructure; new family adapter only for selected source representations",
+    "knownLimits": "Existing canonical grade pack (not a newly authored Rich V2 sidecar); actual product rendering and official publisher figure equivalence deferred to Stage D"
+  },
+  "stageC": {
+    "status": "CLOSED_STATIC_AUTHORED_SELECTED_PRACTICE",
+    "skillId": "geometry.area_tiling",
+    "contract": "PED:US-CCSS-MATH:G6:U01:L04 -> LessonPracticeContractRegistry -> StudentPrivatePracticeService -> Stage18SkillContractPracticeEngine -> ExactSkillContractQuestionEngine",
+    "families": [
+      "usccss.g6.u01.l04.parallelogram_exact_area",
+      "usccss.g6.u01.l04.two_pairs_parallel",
+      "usccss.g6.u01.l04.equal_area_rearrangement"
+    ],
+    "adapter": "src/Edulytics.Services/Mathematics/UsCcssG6Unit1Lesson4ParallelogramQuestions.cs",
+    "directNumericalChecks": "Area 12,16,28,24; original 4×3 diagram, 4×6 perpendicular C, 8×4 enclosure minus two external triangles, 11×4 first-party construction; A/B/C true, D/E/F false; height and slanted-side invariance distinctions",
+    "verification": "Exact integer bounded variant domain, malformed/forged/out-of-domain fail closed. Lesson-local explicit contract prevents cross-lesson family replacement.",
+    "feedback": "Source-specific non-secret numeric hints with explicit teacher-only verification of actual student shape and written explanation; no live feedback workflow executed",
+    "registryStatus": "1114 distinct IDs, prior 1111 retained; productionRouting=false, lessonPracticeRouting=true",
+    "integrationCommit": "2389c71afc04c06cf82bad2ea4b7e46d0519511f",
+    "authoredFixtures": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson4SelectedPracticeRouteTests.cs",
+      "tests/academic-us-ccss-g6-u01-l04-first-party-parallelograms-20261030.test.cjs"
+    ],
+    "execution": "AUTHORED_NOT_RUN; static code diff checked and JSON parsed; no .NET/Node or Stage D/CI"
+  },
+  "stageD": "NOT_STARTED",
+  "readyForStageD": true,
+  "nextLesson": "PED:US-CCSS-MATH:G6:U01:L05",
+  "limitations": [
+    "A–B–C static/authoring acceptance, not functional runtime or Stage D pass",
+    "Official source figure pixel-parity, interactive publisher applet and teacher-only Cool-down not certified",
+    "Live student persisted grading, actual feedback, teacher graphical scoring and access checks not run",
+    "No main merge, production deployment or unrelated review marker"
+  ]
+}

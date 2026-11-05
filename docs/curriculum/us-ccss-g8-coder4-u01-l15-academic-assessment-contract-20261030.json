@@ -1,0 +1,350 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L15",
+  "title": "Adding the Angles in a Triangle",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\15\\index.html",
+      "sha256": "634f182312d5ae21bb424642a64c6304c5f911452b9482600129ad04b779e903"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\15\\index.html",
+      "sha256": "06a012df4495b6340795f66a134da1cfae0128483c049ac5663526dd9913c543"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\15\\preparation.html",
+      "sha256": "a706adf18b8bd771f1ffebc8034a6de10a01fde9077e3548057fa399e8aee48f"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.G.A.2"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.5"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: conjecture, verify and use the 180° angle sum of a triangle, distinguishing an interior angle from the adjacent exterior angle.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Triangle angles are 50° and 60°. Construct the third angle, arrange original paper angle cutouts along a straight line and defend why the result is 70° rather than measuring a sketch. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "15.1: Can You Draw It?",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Classify all nine combinations of scalene/isosceles/equilateral with acute/right/obtuse and explain impossible cells.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "15.2: Find All Three",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Find three congruent triangle angle cards with each angle shown once and test total 180°.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "15.3: Tear It Up",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Cut three first-party angle corners and line them along a straight angle; explain why this represents 180°, including quadrilateral extension.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "One triangle has angles 50° and 60°. What is the remaining interior angle?",
+    "responseType": "finite_decimal_degrees",
+    "unit": "degrees",
+    "expected": 70,
+    "acceptedEquivalentInputs": [
+      "70",
+      "70.0",
+      "70°"
+    ],
+    "wrongRejected": [
+      "71",
+      "69"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "Infinity",
+      "1e309",
+      "",
+      null,
+      "3,4",
+      "--2"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 2,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "Triangle angles are 50° and 60°. Construct the third angle, arrange original paper angle cutouts along a straight line and defend why the result is 70° rather than measuring a sketch.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:02:16.009820+00:00",
+  "parentGitHEAD": "e883a1bb55fc33f01f56f40cd07de6fd9b3527a7",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L15",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l15-adding-angles-triangle-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l15-adding-angles-triangle-paper.html",
+    "learnerWorksheetSha256": "dd80ff82a3e3b4d7206c2bc7ab58919a2012fa34837a8260c0282ab43c94dbee",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints and distributes this exact first-party student paper, collects all source-equivalent diagrams, labelled mathematical constructions, calculations and oral or written reasoning; private manual rubric only.",
+    "sourceActivityMap": [
+      {
+        "source": "15.1: Can You Draw It?",
+        "worksheet": "classification",
+        "modality": "NINE_TRIANGLE_SIDE_TYPE_ANGLE_TYPE_CLASSIFICATION_AND_IMPOSSIBILITY_PROOFS",
+        "key": "Scalene acute 50/60/70, right30/60/90, obtuse30/40/110 possible; isosceles acute70/70/40,right45/45/90,obtuse40/40/100 possible; equilateral only acute60/60/60; right or obtuse impossible. Inclusive isosceles includes equilateral."
+      },
+      {
+        "source": "15.2: Find All Three",
+        "worksheet": "three-angles",
+        "modality": "THREE_CORRESPONDING_ANGLE_CARDS_DISTINGUISH_INTERIOR_AND_EXTERIOR",
+        "key": "Congruent triangle views: A50°,B60°,C70°; C exterior adjacent is110°, not part of three-angle180° sum. Rigid motion preserves each angle."
+      },
+      {
+        "source": "15.3: Tear It Up",
+        "worksheet": "tear",
+        "modality": "THREE_PHYSICAL_ANGLE_WEDGES_FORM_STRAIGHT_ANGLE_AND_QUADRILATERAL_EXTENSION",
+        "key": "Angle wedges 50°+60°+70°=180° fit along one straight angle without overlaps or gaps; quadrilateral split by diagonal has two triangle sums2×180°=360°."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "HUMAN_REVIEWED_50_60_70_TRIANGLE_CONSTRUCTION_AND_STRAIGHT_ANGLE_PROOF",
+        "key": "Missing interior=70°, exterior next to it110°, physical or exact labelled three-wedge arrangement sums180°; not approximate sketch measurement."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "Four 0–2 criteria: 0 incorrect/missing,1 partially accurate,2 correct fully labelled mathematical reasoning and observable construction; teacher manual paper assessment only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "All 9 triangle side/angle classification cells and possible examples with equilateral impossible right/obtuse and inclusive isosceles nuance"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Three congruent-view angle cards identified A50 B60 C70, adjacent exterior110, avoids mixing interior/exterior"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Physical or source-equivalent 50/60/70 angle wedges form 180 straight angle without gaps and quadrilateral angle sum360"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down correct interior70 with labelled triangle, straight angle arrangement and rigorous angle sum reasoning"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "scalene": {
+        "acute": [
+          50,
+          60,
+          70
+        ],
+        "right": [
+          30,
+          60,
+          90
+        ],
+        "obtuse": [
+          30,
+          40,
+          110
+        ]
+      },
+      "isosceles": {
+        "acute": [
+          70,
+          70,
+          40
+        ],
+        "right": [
+          45,
+          45,
+          90
+        ],
+        "obtuse": [
+          40,
+          40,
+          100
+        ]
+      },
+      "equilateral": {
+        "acute": [
+          60,
+          60,
+          60
+        ],
+        "right": null,
+        "obtuse": null
+      },
+      "givenAngles": [
+        50,
+        60
+      ],
+      "remainingInterior": 70,
+      "adjacentExterior": 110,
+      "triangleSum": 180,
+      "quadrilateralSum": 360
+    },
+    "fixtures": {
+      "correct": [
+        "Scalene acute50/60/70, right30/60/90, obtuse30/40/110 are valid",
+        "Isosceles acute70/70/40, right45/45/90, obtuse40/40/100 all valid",
+        "Equilateral60/60/60 acute; cannot have right or obtuse angle",
+        "Three congruent triangle interior angles50/60/70, exterior at C110",
+        "Three sectors on straight line sum180 and two triangles give quadrilateral360"
+      ],
+      "equivalent": [
+        "70° equals 180° minus (50°+60°)",
+        "Angle wedges reordered along straight line still sum180 if no overlap",
+        "Inclusive isosceles classification admits equilateral although row prioritizes specific type",
+        "Any correct acute scalene or obtuse isosceles angle set with exact side classification acceptable"
+      ],
+      "wrong": [
+        "Classify equilateral with 90° or >90° angle",
+        "Use exterior 110 as an interior angle among three",
+        "Give triangle interior sum360 instead of180",
+        "Claim straight angle construction can leave gap and still prove180",
+        "Define isosceles to exclude equilateral despite inclusive source definition"
+      ],
+      "malformed": [
+        "One or more of 9 classification cells left without explanation",
+        "No labels on interior/exterior vertex C",
+        "Paper sectors with overlapping wedges or unknown measures",
+        "Only numeric70 without source-aligned straight angle reasoning",
+        "Missing quadrilateral diagonal extension"
+      ],
+      "boundary": [
+        "A triangle may be isosceles and equilateral under inclusive at-least-two-equal definition",
+        "Triangle may have at most one right or obtuse angle",
+        "Exterior at C is supplement of C interior not an additional interior angle",
+        "Any congruent move preserves three labelled angle measures",
+        "Quadrilateral interior sum360 when decomposed into exactly two triangles"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeEdited": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l15-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
+}

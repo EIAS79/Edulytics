@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "status": "SHARED_DEPENDENCIES_REQUIRE_SUPERVISOR_1_SINGLE_WRITER",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "owner": "American Supervisor 1 coordinates with global cross-curriculum integration writer; Grade 7 Coder owns lesson-specific authoring only",
+  "competingPRs": [
+    {
+      "number": 553,
+      "affected": [
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+        "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+        "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs",
+        "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs"
+      ]
+    },
+    {
+      "number": 492,
+      "affected": [
+        "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+      ]
+    },
+    {
+      "number": 215,
+      "affected": [
+        "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+        "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs"
+      ]
+    },
+    {
+      "number": 210,
+      "affected": [
+        "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+      ]
+    },
+    {
+      "number": 204,
+      "affected": [
+        "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "G7-SHARED-001",
+      "severity": "P0",
+      "lessons": [
+        "PED:US-CCSS-MATH:G7:U01:L01",
+        "PED:US-CCSS-MATH:G7:U01:L02",
+        "PED:US-CCSS-MATH:G7:U01:L03"
+      ],
+      "evidence": "Outcome CCSS:7.G.A.1 statically projects to reviewed shape-properties target/family supporting.geometry.shape_dimension, which tests 2D-versus-3D classification rather than uniform scaled-copy ratios; L02/L03 title/body rules also appear eligible for algebraic identity-proof family. Actual runtime precedence must be run before final disposition.",
+      "sharedPaths": [
+        "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json",
+        "src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json",
+        "src/Edulytics.Core/Mathematics/Practice/OfficialLessonPracticeRuleProjection.cs",
+        "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+      ],
+      "requiredAction": "Create a reviewed exact lesson-scoped family for corresponding geometric lengths and scalable construction (or reuse a proven matching existing family), with generation/verifier and teacher rubric for original drawings. Prevent unrelated outcome/title fallback. Single-writer integration required.",
+      "tests": [
+        "Static contract identity",
+        "Seeded exact Practice request",
+        "Scale 2 and 1/2",
+        "Nonuniform copy rejected",
+        "wrong/malformed/equivalent submission",
+        "student attempts persisted in two schools",
+        "Cambridge/UAE/Polish regressions"
+      ]
+    },
+    {
+      "id": "G7-SHARED-002",
+      "severity": "P0",
+      "lessons": [
+        "PED:US-CCSS-MATH:G7:U06:L01"
+      ],
+      "evidence": "Reviewed title rule for 'Relationships between Quantities' can authorize ratio-scaling families despite publisher's actual introductory emphasis on nonproportional relations. Runtime selection and exact contract alignment not tested.",
+      "sharedPaths": [
+        "src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json",
+        "src/Edulytics.Core/Mathematics/Practice/OfficialLessonPracticeRuleProjection.cs"
+      ],
+      "requiredAction": "Prove runtime-selected family; scope an explicit nonproportional-vs-proportional comparison or classify teacher-only; block false READY_VERIFIED title routing.",
+      "tests": [
+        "Fixed-fee nonproportional cases",
+        "Proportional counterexample",
+        "Student verbal/diagram argument teacher rubric",
+        "Verify no broad fallback"
+      ]
+    },
+    {
+      "id": "G7-SHARED-003",
+      "severity": "P1",
+      "lessons": [
+        "PED:US-CCSS-MATH:G7:U06:L23",
+        "PED:US-CCSS-MATH:G7:U09:L10"
+      ],
+      "evidence": "Static official outcome map has no entries for CCSS:MP.2, CCSS:MP.4, CCSS:MP.5, which appear in these lessons; absence must not lead to invented official standard or false Practice readiness.",
+      "sharedPaths": [
+        "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json",
+        "src/Edulytics.Core/Mathematics/Practice/OfficialLessonPracticeRuleProjection.cs"
+      ],
+      "requiredAction": "Classify modeling practices as teacher-assessed with rubric or explicitly reviewed exact subskills; preserve official MP designation without fabricating 7-grade content standards.",
+      "tests": [
+        "Source standard role and persisted outcomes",
+        "Human rubric for measurement/modeling",
+        "Cross-curriculum exact route regression"
+      ]
+    },
+    {
+      "id": "G7-ALIGNMENT-004",
+      "severity": "P1",
+      "lessons": [
+        "PED:US-CCSS-MATH:G7:U04:L01",
+        "PED:US-CCSS-MATH:G7:U06:L01",
+        "PED:US-CCSS-MATH:G7:U07:L01"
+      ],
+      "evidence": "CONFIRMED against historical official preparation pages on 2026-10-28: U04/L01 7.RP.A.2.a is Building Towards, U06/L01 7.EE.B.4 is Building Towards, U07/L01 7.G.B.5 is Building Towards. Grade 7 blueprint contains each same standard twice, once as BuildingTowards with no OutcomeCode and once as extra Addressing with accepted OutcomeCode. Do not simply delete extra Addressing without reconciling the canonical OutcomeCodes, validated semantic graph hashes, seed/materialization and existing attempts.",
+      "sharedPaths": [
+        "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade7-our-2017.lesson-blueprint.json",
+        "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g7-phase29-v1.lesson-content-pack.json"
+      ],
+      "requiredAction": "Academic owner and Supervisor 1 validate publisher standards roles as source of truth and inspect currently accepted OutcomeCodes and seeder behavior. Make a minimal Grade 7 blueprint/source-identity correction with SHA/semantic graph migration only under reviewed criteria, plus targeted source/tenant regression; do not alter shared curriculum mapping or production seed as a guess.",
+      "tests": [
+        "Official source reconciliation",
+        "Blueprint and content pack exact OutcomeCodes",
+        "Seeder and learner context identity"
+      ],
+      "sourceChecks": [
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G7:U04:L01",
+          "publisherUrl": "https://im.kendallhunt.com/MS/teachers/2/4/1/preparation.html",
+          "reference": "7.RP.A.2.a",
+          "officialRole": "BuildingTowards",
+          "blueprintExtraRole": "Addressing",
+          "blueprintDerivedOutcomeCode": "CCSS:7.RP.A.2"
+        },
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
+          "publisherUrl": "https://im.kendallhunt.com/MS/teachers/2/6/1/preparation.html",
+          "reference": "7.EE.B.4",
+          "officialRole": "BuildingTowards",
+          "blueprintExtraRole": "Addressing",
+          "blueprintDerivedOutcomeCode": "CCSS:7.EE.B.4"
+        },
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G7:U07:L01",
+          "publisherUrl": "https://im.kendallhunt.com/MS/teachers/2/7/1/preparation.html",
+          "reference": "7.G.B.5",
+          "officialRole": "BuildingTowards",
+          "blueprintExtraRole": "Addressing",
+          "blueprintDerivedOutcomeCode": "CCSS:7.G.B.5"
+        }
+      ]
+    },
+    {
+      "id": "G7-EXPERIENCE-005",
+      "severity": "P1",
+      "lessons": "All 145, especially U07 constructions U08 statistical investigations and U09 field projects",
+      "evidence": "Rich V2 lesson registry has higher selection precedence than runtime composer, but canonical baseline and persisted content may still surface simultaneously, and actual authenticated student routes were not inspected.",
+      "sharedPaths": [
+        "src/Edulytics.Services/LessonContent/LessonContentService.cs",
+        "src/Edulytics.Core/Curriculum/RichLessonContentV2.cs",
+        "src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs"
+      ],
+      "requiredAction": "Run isolated seeded materialization, inspect student and teacher views, verify direct RichV2 content is actually learner-visible without stale generics. Introduce narrow integration changes only if evidence demands.",
+      "tests": [
+        "Read-only existing DB versus disposable seed",
+        "Student authenticated screen",
+        "Teacher view",
+        "Accessibility of diagrams and math notation",
+        "Tenant isolation and persistence",
+        "Production parity only after protected release"
+      ]
+    }
+  ],
+  "explicitlyNotModified": [
+    "Other grade/curriculum content",
+    "All shared mathematical engine and skill maps",
+    "Global seeders/materializer",
+    "Database and migrations",
+    "Authentication UI CI workflow",
+    "Production data, Neon and Render"
+  ],
+  "releaseGates": {
+    "all145SourceToStudentTasks": "NOT_VERIFIED",
+    "all145TruePracticeAlignment": "NOT_VERIFIED",
+    "dotnetBuild": "NOT_RUN",
+    "authenticatedRuntime": "NOT_RUN",
+    "ownerUAT": "NOT_RUN"
+  },
+  "rollback": "All grade-owned edits on unpublished branch; closing draft PR or reverting grade-scoped commits leaves protected main and production unchanged. Any future seed/migration needs a separately reviewed rollback plan."
+}

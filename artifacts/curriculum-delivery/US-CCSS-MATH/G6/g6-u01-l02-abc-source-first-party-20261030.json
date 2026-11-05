@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+  "startedAt": "2026-10-30T07:56:07.276Z",
+  "attemptReviewedAt": "2026-10-30T07:56:08.656Z",
+  "closedAt": null,
+  "elapsedSeconds": null,
+  "commitSHA": null,
+  "originalLocalSourcePaths": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\2\\preparation.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\2\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\2\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\2\\practice.html"
+  ],
+  "sourceEdition": "OUR/IM 2017-2019 lineage; local Primary/Our-CS read-only; no web book download",
+  "sourceTasks": [
+    {
+      "id": "2.1",
+      "original": "Four square tilings A/B/C/D, critique gaps/mixed squares, write rigorous area definition",
+      "authored": "Rich V2 visual Rows with four precise construction rules and direct prompts"
+    },
+    {
+      "id": "2.2",
+      "original": "One square + 4 small, 1 medium, 2 large right triangles; create non-square area1, two area2, area4 and full inventory square",
+      "authored": "Paper/cell accessibility instructions, exact piece inventory and 8-unit total plus teacher construction check"
+    },
+    {
+      "id": "2.3",
+      "original": "Compare small/medium/large triangle areas using overlays and justify conservation",
+      "authored": "Verified area relationships (1/2,1,2), move/rearrange proof and teacher-rubric evidence"
+    },
+    {
+      "id": "practice",
+      "original": "Open area invariance drawings and decompositions",
+      "authored": "Existing math oracles + first-party exit check + teacher-scored construction; selected Practice engine blocked"
+    }
+  ],
+  "retainedMath": "U01:L02 4×(1/2)=2 square units correction preserved; no unrelated 6-unit calculation. Existing 3 examples retained, 2 added.",
+  "cooldown": {
+    "publisher": "NOT_VERIFIED_GATED",
+    "edulytiks": "ORIGINAL_AUTHORED_AS_RICH_V2_EXAMPLE_NOT_LIVE_ASSESSMENT",
+    "expected": 2.5
+  },
+  "gradeOwned": {
+    "richPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
+    "testPath": "tests/academic-us-ccss-g6-u01-l02-first-party-tangram.test.cjs",
+    "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02"
+  },
+  "practice": {
+    "current": "NO_EXPLICIT_LESSON_SKILL_MAPPING",
+    "outcome": "CCSS:6.G.A.1",
+    "sharedOwner": "Supervisor 1 to explicitly authorize G6 single-writer shared Practice integration",
+    "defect": "Shape properties/area-unrelated fallback cannot assess tangram decompositions, equivalent area constructions and explanation; source-drawing teacher assessment not selected/wired",
+    "strategy": "REUSE area conservation / construction if lesson-selected; EXTEND only if demonstrated deficient; NEW_ENGINE last resort",
+    "mustTest": [
+      "numeric correct 1/2,1,2,8; 4 half triangles=2",
+      "invalid square full kit area4 vs actual8",
+      "equivalent 2-area polygon arrangements",
+      "five triangles=5/2 not 3",
+      "malformed unit, gap, overlap, missing tile and numeric-only sketch",
+      "teacher rubric justification"
+    ]
+  },
+  "teacherRubric": {
+    "maximum": 8,
+    "criteria": [
+      "Unit-square area definition 0–2",
+      "Correct inventory and area conservation 0–2",
+      "Two distinct gap-free constructions meeting shapes/area 0–2",
+      "Explain and represent decomposition/additivity 0–2"
+    ],
+    "teacherAction": "Review drawing or accessible construction description; unverified in runtime"
+  },
+  "sourceLimits": [
+    "Publisher figure pixels not independently verified",
+    "No live applet; first-party paper alternative",
+    "Publisher Cool-down sign-in gated"
+  ],
+  "A_STATUS": "A_CLOSED_FIRST_PARTY_DRAWABLE_SOURCE_EQUIVALENT",
+  "B_STATUS": "B_CLOSED_GRADE_OWNED_RICH_V2_SOURCE_TASKS",
+  "C_STATUS": "C_BLOCKED_SHARED_AREA_CONSTRUCTION_ENGINE",
+  "READY_FOR_STAGE_D": false,
+  "testExecutionStatus": "AUTHORED_NOT_RUN",
+  "nextLessonDecision": "Admin §3A.b exception: skip only blocked lesson after recording; do not mark A–C ready.",
+  "attemptCommitSHA": "5c7e9913c928acb2c8bf033f5d63be34d39694d2",
+  "closureSHA": null
+}

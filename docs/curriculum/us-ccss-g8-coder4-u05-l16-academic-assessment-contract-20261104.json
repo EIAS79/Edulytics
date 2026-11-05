@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U05:L16",
+  "title": "Finding Cone Dimensions",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\16\\index.html",
+      "sha256": "aba4d384d7e6e82fc2fe7d7abb25b44a9d6cc7c9630a52f5c4423a51c48b3647"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\16\\preparation.html",
+      "sha256": "5e8be66f14408c98858c476511cfe80a994950b2e63b64c526529919457678d9"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\16\\index.html",
+      "sha256": "f4b6d117848615c1e45fddcd4debf54ea4a3d37ff6276be5ee4e59b79eff3c04"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\16\\practice.html",
+      "sha256": "2a40d1d1e44cc357f9a8f4719a3993d001a4fa24033ab856cb07a535b7f6f5d2"
+    }
+  },
+  "learningGoals": [
+    "Solve cone-volume equations for unknown radius or height",
+    "Compare cone and cylinder volumes in context and justify value decisions"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "16.1 ? Number Talk: Thirds",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "16.2 ? An Unknown Radius",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "16.3 ? Cones with Unknown Dimensions",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "16.4 ? Popcorn Deals",
+      "firstPartyTask": "activity-4",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u05-l16-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u05-l16-selected-first-party-paper.html",
+    "sha256": "a9723cc483b812b4d937175799e6ec66e99a05e745cdd877bcf65222ae6b68b9",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "activity-4",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "r=6 because (1/3)??36?4=48?.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Unknown dimensions are solved from V=?r?h/3.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Radius uses the nonnegative square root in a physical model.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Value comparisons use comparable volume and price units.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 8,
+  "mathFixtures": {
+    "Vcoef": 48,
+    "h": 4,
+    "r": 6
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

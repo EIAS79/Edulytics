@@ -1,0 +1,230 @@
+name: Grade 5 Stage D — Owner-Authored Digital Release and Independent Source Report
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g5-stage-d.yml'
+      - 'tools/curriculum/g5-stage-d-diagnostic.cjs'
+      - 'tools/curriculum/g5-first-party-digital-release.cjs'
+      - 'tools/curriculum/g5-stage-d-trx-reconcile.py'
+      - 'tools/curriculum/tests/test_g5_stage_d_trx_reconcile.py'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G5/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'tests/academic-us-ccss-g5-*.test.cjs'
+      - 'tests/us-ccss-g1-g5-pinned-shared-routing-delta.test.cjs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG5*'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: g5-stage-d-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-preflight:
+    name: grade5-148-blueprint-pack-handoff-integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Assert all 148 unique source-linked lesson rows, tests and closure evidence
+        run: node tools/curriculum/g5-stage-d-diagnostic.cjs preflight
+      - name: Verify independent 2021 second-pass 148-lesson handoff evidence (not academic approval)
+        run: node --test tests/academic-us-ccss-g5-second-pass-stage-d.test.cjs
+      - name: Reject duplicate embedded Rich V2 lesson/culture records across curricula
+        run: node --test tests/academic-us-ccss-g5-rich-v2-duplicate-gate-stage-d.test.cjs
+      - name: Validate source-item evidence across legacy 2021 schemas and negative controls
+        run: node --test tests/academic-us-ccss-g5-stage-d-source-inventory.test.cjs
+      - name: Grade 5 first lesson real 2021 source geometry and gated publisher cool-down negative control
+        run: node --test tests/academic-us-ccss-g5-u01-l01-stage-d-original-source-evidence.test.cjs
+      - name: Verify 2021 publisher Student Task PDF pages and Rich V2 task alignment for U01 L04-L06
+        run: node --test tests/academic-us-ccss-g5-u01-l04-l06-original-2021-student-pdf-stage-d.test.cjs
+      - name: Verify G5 U01 L04 original A–F prism mathematics and report gated cool-down only as Stage D blocker
+        run: node --test tests/academic-us-ccss-g5-u01-l04-source-20261030.test.cjs
+      - name: Check U02 original local source-section inventory without false parity approval
+        run: node --test tests/academic-us-ccss-g5-u02-stage-d-raw-source-inventory.test.cjs
+      - name: Verify all 296 teacher/student local source snapshots are indexed without granting academic approval
+        run: node --test tests/academic-us-ccss-g5-local-html-snapshot-stage-d.test.cjs
+      - name: Prove original IM2021 teacher lessons contain student-facing source sections without assuming parity
+        run: node --test tests/academic-us-ccss-g5-im2021-student-facing-locator.test.cjs
+      - name: Require hashed original 2021 Student Facing section-level evidence for every Grade 5 lesson
+        run: node --test tests/academic-us-ccss-g5-im2021-student-facing-section-provenance.test.cjs
+      - name: Validate owner academic consent is scoped to Grade 5 only and cannot authorize unverified release
+        run: node --test tests/academic-us-ccss-g5-owner-academic-consent-stage-d.test.cjs
+      - name: Record explicit 2026-11-03 project-owner academic approval and release permission without inventing source rights
+        run: node --test tests/academic-us-ccss-g5-owner-release-authorization.test.cjs
+      - name: Keep internal Grade 5 source provenance out of student and teacher Quick Summary views
+        run: node --test tests/academic-us-ccss-g5-summary-provenance-hidden-ui.test.cjs
+  source-element-evidence:
+    name: grade5-independent-publisher-source-diagnostic-not-first-party-release-blocker
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Preserve independent publisher-source parity diagnostic without claiming 100 percent approval
+        run: |
+          set +e
+          node tools/curriculum/g5-stage-d-diagnostic.cjs source-evidence
+          status=$?
+          set -e
+          # Expected NO_GO for publisher-identical source parity is preserved in the JSON.
+          # The separately owner-approved first-party mathematics release does not
+          # claim an independent original publisher artifact/teacher certificate.
+          if [ "$status" -ne 2 ]; then
+            echo "Unexpected source-certification diagnostic exit $status (expected 2 while source parity is unverified)"
+            exit 1
+          fi
+          node tools/curriculum/g5-first-party-digital-release.cjs
+          node --test tests/academic-us-ccss-g5-first-party-digital-release.test.cjs
+      - name: Generate original IM2021 per-lesson source-section mapping review queue
+        if: always()
+        run: node tools/curriculum/g5-source-review-queue.cjs
+      - name: Guard source queue against false approval and lost Rich V2 mappings
+        if: always()
+        run: node --test tests/academic-us-ccss-g5-source-review-queue-stage-d.test.cjs
+      - name: Preserve per-lesson evidence and explicit blockers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade5-source-element-provenance-report
+          path: |
+            stage-d-results/grade5-source-evidence.json
+            stage-d-results/grade5-original-2021-source-review-queue.json
+          if-no-files-found: error
+  teaching-body-delta:
+    # The exact 107-field owner-consent delta is scoped to Grade 5 PR #596.
+    # Other Grade changes still run G5 regression gates, but cannot be
+    # required to contain someone else's Grade 5 content delta.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.number == 596
+    name: grade5-main-candidate-104-source-delta-evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      # The historical 107-change consent is anchored to the commit before PR #596, not moving main.
+      # Keep the job name stable for existing required-check consumers.
+      - name: Independently fingerprint Grade5 pre-PR596 vs candidate teaching differences
+        run: |
+          node --check tools/curriculum/g5-main-teaching-body-delta.cjs
+          node tools/curriculum/g5-main-teaching-body-delta.cjs
+      - name: Upload exact 104-change source-review audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade5-main-content-field-change-evidence
+          path: |
+            stage-d-results/grade5-main-teaching-body-delta.json
+            stage-d-results/grade5-main-teaching-body-delta.md
+          if-no-files-found: error
+  source-contract-shards:
+    name: grade5-source-contract-${{ matrix.batch }}
+    needs: source-preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run all existing linked Node source tests without narrowing the 148-row denominator
+        run: node tools/curriculum/g5-stage-d-diagnostic.cjs shard '${{ matrix.batch }}'
+  shared-build-grade5-dotnet:
+    name: grade5-build-and-real-dotnet-grade5-tests
+    needs: source-preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore once and build Grade5 tests plus dependencies
+        run: |
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - name: Execute Grade5 mathematical oracle and regression tests
+        run: |
+          mkdir -p stage-d-results
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --no-restore --filter 'FullyQualifiedName~UsCcssG5|FullyQualifiedName~Grade5' --logger 'trx;LogFileName=grade5.trx' --results-directory stage-d-results
+      - name: Validate Stage D per-lesson attribution parser against negative controls
+        if: always()
+        run: python3 -m unittest discover -s tools/curriculum/tests -p 'test_g5_stage_d_trx_reconcile.py' -v
+      - name: Reconcile real Grade 5 xUnit TestRun results to all 148 individual lessons
+        if: always()
+        run: |
+          python3 tools/curriculum/g5-stage-d-trx-reconcile.py \
+            --trx stage-d-results/grade5.trx \
+            --ledger artifacts/curriculum-delivery/US-CCSS-MATH/G5/g5-abc-lesson-ledger-v1.json \
+            --output stage-d-results/grade5-trx-per-lesson.json
+      - name: Keep TRX and per-lesson diagnostic even when tests fail
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade5-stage-d-dotnet-trx
+          path: stage-d-results/
+          if-no-files-found: warn
+  final-first-party-digital-release:
+    name: grade5-owner-first-party-digital-release-eligible-not-publisher-certification
+    if: always()
+    needs: [source-preflight, source-element-evidence, teaching-body-delta, source-contract-shards, shared-build-grade5-dotnet]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v4
+        with:
+          name: grade5-source-element-provenance-report
+          path: stage-d-results
+      - name: Verify pinned owner-authorized first-party digital scope and exact technical dependencies
+        env:
+          PREFLIGHT: ${{ needs.source-preflight.result }}
+          NODE_SHARDS: ${{ needs.source-contract-shards.result }}
+          DOTNET: ${{ needs.shared-build-grade5-dotnet.result }}
+          SOURCE: ${{ needs.source-element-evidence.result }}
+          MAIN_PARITY: ${{ needs.teaching-body-delta.result }}
+        run: |
+          echo "G5_STAGE_D_RESULTS preflight=$PREFLIGHT node=$NODE_SHARDS dotnet=$DOTNET source=$SOURCE main=$MAIN_PARITY"
+          test "$PREFLIGHT" = success
+          test "$NODE_SHARDS" = success
+          test "$DOTNET" = success
+          test "$SOURCE" = success
+          # Grade 5 owner-consent exact-delta gate belongs only to PR #596.
+          # On other PRs the job is explicitly skipped while shared G5 runtime tests run.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event.pull_request.number }}" = "596" ]; then
+            test "$MAIN_PARITY" = success
+          else
+            test "$MAIN_PARITY" = skipped
+          fi
+          node tools/curriculum/g5-first-party-digital-release.cjs
+          node --test tests/academic-us-ccss-g5-first-party-digital-release.test.cjs

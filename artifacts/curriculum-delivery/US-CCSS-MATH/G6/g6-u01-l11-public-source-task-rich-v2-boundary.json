@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L11",
+  "lessonTitle": "Polygons",
+  "reviewDate": "2026-10-29",
+  "reviewLevel": "PUBLIC_STUDENT_TEACHER_PRACTICE_TASK_BODIES_COMPARED__ACADEMIC_ACCEPTANCE_PENDING",
+  "source": {
+    "edition": "OUR/IM 2017–2019, CC BY 4.0 source lineage",
+    "student": "https://im.kendallhunt.com/MS/students/1/1/11/index.html",
+    "teacher": "https://im.kendallhunt.com/MS/teachers/1/1/11/index.html",
+    "practice": "https://im.kendallhunt.com/MS/students/1/1/11/practice.html",
+    "sourceProtectedTeacherResponseAccessible": false
+  },
+  "studentSourceActivities": [
+    {
+      "id": "11.1",
+      "name": "Which One Doesn't Belong: Bases and Heights",
+      "target": "Multiple defensible comparisons of triangles, including orientation, base and perpendicular height",
+      "status": "CANDIDATE_TEXT_AND_TEACHER_ONLY_EXPLANATION",
+      "humanReview": true
+    },
+    {
+      "id": "11.2",
+      "name": "What Are Polygons?",
+      "target": "Classify polygon/non-polygon boundaries and articulate a precise simple polygon definition including closed straight non-crossing edges",
+      "status": "CANDIDATE_FIRST_PARTY_EXAMPLES",
+      "humanReview": true
+    },
+    {
+      "id": "11.3",
+      "name": "Quadrilateral Strategies",
+      "target": "Choose two quadrilaterals, plan area strategies, compare approaches; extend by deriving trapezoid area formula",
+      "status": "CANDIDATE_FIRST_PARTY_WORKED_EXAMPLE_AND_PROOF",
+      "humanReview": true
+    },
+    {
+      "id": "11.4",
+      "name": "Pinwheel",
+      "target": "Decompose, rearrange, or enclose a complex shaded polygon with measured lengths and justify the area",
+      "status": "CANDIDATE_ORIGINAL_ALTERNATIVE_FIGURE_NOT_SOURCE_PIXEL_PARITY",
+      "humanReview": true
+    },
+    {
+      "id": "11.5",
+      "name": "Cool-down - Triangulation",
+      "target": "Demonstrate area by justified polygon triangulation (teacher activity)",
+      "status": "TEACHER_ASSESSMENT_DESIGN_ONLY",
+      "humanReview": true
+    }
+  ],
+  "practiceTasks": [
+    {
+      "number": 1,
+      "target": "Identify all polygon boundaries in figures",
+      "autoGradeScope": "ONLY_WITH_VERIFIED_EXPLICIT_GEOMETRIC_GRAPHICS_AND_LABELS"
+    },
+    {
+      "number": 2,
+      "target": "Mark vertices and count sides in shown polygon",
+      "autoGradeScope": "NUMERIC_COUNT_NEEDS_REAL_DRAWING"
+    },
+    {
+      "number": 3,
+      "target": "Trapezoid area via an explained decomposition",
+      "autoGradeScope": "AREA_NUMERIC_CAN_BE_VERIFIED_BUT_EXPLANATION_TEACHER_ASSESSED"
+    },
+    {
+      "number": 4,
+      "target": "Two methods for a regular hexagon area",
+      "autoGradeScope": "MULTIPLE_VALID_PROOFS_REQUIRE_TEACHER_REVIEW"
+    },
+    {
+      "number": 5,
+      "target": "Identify triangle base and corresponding height",
+      "autoGradeScope": "DRAWING_AND_HEIGHT_JUSTIFICATION_REQUIRE_HUMAN_REVIEW"
+    },
+    {
+      "number": 6,
+      "target": "Draw three triangles of area eight square units",
+      "autoGradeScope": "MULTIPLE_ORIGINAL_DRAWINGS_REQUIRE_HUMAN_REVIEW"
+    }
+  ],
+  "implementation": {
+    "canonicalPack": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g6-phase29-v1.lesson-content-pack.json",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l11-polygons-20261029.rich-lesson-v2.json",
+    "origIllustrationNotExactSource": "The new first-party coordinate-defined four-wing pinwheel has area 12; this is not claimed to reproduce the source image or source answer.",
+    "gradeSourceContentFieldsModified": [
+      "explanation",
+      "keyConceptsAndRules",
+      "workedExamples",
+      "stepByStepSolutions",
+      "commonMistakes",
+      "quickSummary"
+    ],
+    "teacherRubric": {
+      "status": "PROPOSED_ONLY",
+      "criteria": [
+        "correct polygon classification reasoning",
+        "valid decomposition with measured perpendicular heights",
+        "two independent trapezoid proofs",
+        "clear non-overlapping pinwheel area reasoning"
+      ],
+      "pointsPerCriterion": 2,
+      "maxPoints": 8,
+      "persistedWorkflowVerified": false
+    }
+  },
+  "unverified": {
+    "publisherDiagramPixelEquivalence": true,
+    "appletMovementAndAccess": true,
+    "authStudentRichV2Render": true,
+    "runtimeSelectedPracticeContract": true,
+    "correctWrongMalformedEquivalentGrading": true,
+    "teacherRubricPersistence": true,
+    "twoSchoolTenantIsolation": true,
+    "stageAAccepted": true,
+    "stageCAccepted": true,
+    "stageDVerified": true
+  },
+  "releaseStatus": "NO_GO__NOT_ACADEMICALLY_ACCEPTED"
+}

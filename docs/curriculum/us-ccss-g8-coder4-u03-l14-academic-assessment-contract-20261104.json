@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L14",
+  "title": "Using Linear Relations to Solve Problems",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\14\\index.html",
+      "sha256": "fe971351addf1794e3a69a84a29e7406dcce1b3fbcfeb821e8685d6ee8741f6b"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\14\\preparation.html",
+      "sha256": "6da7781007341e0b32e3e555f3c8ccfe34fbede5f126b66a752e4258e81524da"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\14\\index.html",
+      "sha256": "0fbc29d2cbdca8215c8bbfe9e6b235d133f412bfbff52cc9b22e6ae4b5442a15"
+    },
+    "practice": null
+  },
+  "learningGoals": [
+    "Model fruit shopping and savings constraints with two-variable and affine linear equations",
+    "Interpret five savings graphs using initial balances, positive/negative or zero rates",
+    "Reject physically or financially impossible solutions while solving contexts"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "14.1 • Buying fruit with a fixed budget",
+      "firstPartyTask": "fruit",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "14.2 • Five original savings lines",
+      "firstPartyTask": "five-accounts",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "14.3 • Fish-market daily spending constraint",
+      "firstPartyTask": "fish",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 0,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u03-l14-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u03-l14-selected-first-party-paper.html",
+    "sha256": "94f2320611fd2d8f350626f9ac0bb7d01c53c7422c1d698ac87e7c472e876d15",
+    "taskIds": [
+      "fruit",
+      "five-accounts",
+      "fish",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Fruit constraint 2.39g+0.59b=15, examples g=0,b=1500/59 and b=0,g=1500/239; (10,1) >15.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Savings y=50+20w, values50,130,230 at w0,4,9.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Five accounts a50+20t, b30+10t, c110−5t, d40, e10+30t; c reaches0 at t22, d flat.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Fish 3t+5s=210, examples (70,0),(0,42); (70,1) exceeds210; nonnegative constraints.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Independent practice gym25+12×9=133, savings70−7×6=28, zero atweek10.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C6",
+      "points": 2,
+      "expectedReasoning": "Cooldown 8a+5c=90, feasible (0,18),(5,10), (10,4) costs100 and invalid.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 12,
+  "mathFixtures": {
+    "adultPrice": 8,
+    "childPrice": 5,
+    "budget": 90,
+    "falseAdult": 10,
+    "falseChild": 4
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

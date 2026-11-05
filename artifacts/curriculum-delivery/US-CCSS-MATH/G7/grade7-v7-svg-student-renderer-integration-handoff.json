@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "pr": "https://github.com/EIAS79/Edulytics/pull/590",
+  "sharedCoordinationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "scope": "Grade 7 / Unit 1 / Lessons 1–3, first-party accessible reference geometry and teacher-only rubrics",
+  "stageA": "NOT_VERIFIED",
+  "stageB": "NOT_VERIFIED",
+  "stageC": "NOT_VERIFIED",
+  "stageD": "NOT_VERIFIED",
+  "release": "NO_GO",
+  "gradeOwnedImplementation": {
+    "razorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "partialModel": "Edulytics.Core.Curriculum.RichLessonContentV2Lesson",
+    "svgPrefix": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/",
+    "teacherRubrics": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+    "candidateXunit": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "liveSharedRichRenderer": "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml",
+    "currentSharedRendererInvokesPartial": false,
+    "authenticatedStudentPageRendered": "NOT_RUN",
+    "realTeacherScoringFlow": "NOT_IMPLEMENTED",
+    "generatorVerifier": "NOT_EXECUTED"
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+      "assetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "mathVerifiedReadOnly": "YES_SRC_V8_GEOMETRY_ASSERTIONS",
+      "svgTitleDescriptionPresent": true,
+      "panelBoundsVerified": true,
+      "learnerInteraction": "Student must submit original figure and written/oral justification to teacher. Reference image is not submission.",
+      "rubricMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "renderedInAuthenticatedRichV2": "NOT_RUN",
+      "sharedPracticeSelected": "NOT_EXECUTED",
+      "teacherRubricPersistence": "NOT_RUN"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+      "assetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "mathVerifiedReadOnly": "YES_SRC_V8_GEOMETRY_ASSERTIONS",
+      "svgTitleDescriptionPresent": true,
+      "panelBoundsVerified": true,
+      "learnerInteraction": "Student must submit original figure and written/oral justification to teacher. Reference image is not submission.",
+      "rubricMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "renderedInAuthenticatedRichV2": "NOT_RUN",
+      "sharedPracticeSelected": "NOT_EXECUTED",
+      "teacherRubricPersistence": "NOT_RUN"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+      "assetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "mathVerifiedReadOnly": "YES_SRC_V8_GEOMETRY_ASSERTIONS",
+      "svgTitleDescriptionPresent": true,
+      "panelBoundsVerified": true,
+      "learnerInteraction": "Student must submit original figure and written/oral justification to teacher. Reference image is not submission.",
+      "rubricMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "renderedInAuthenticatedRichV2": "NOT_RUN",
+      "sharedPracticeSelected": "NOT_EXECUTED",
+      "teacherRubricPersistence": "NOT_RUN"
+    }
+  ],
+  "minimalSupervisedRendererChange": {
+    "owner": "Supervisor 1 single writer, after conflict review",
+    "path": "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml",
+    "proposedInsertion": "Immediately after existing @foreach (var visual in Model.Visuals) { <partial name=\"_RichLessonVisual\" model=\"visual\" /> } inside the explanation section, insert one guarded component call: <partial name=\"_USCCSSG7ScaleConstructionFigures\" model=\"Model\" />. The grade-only partial fails closed for every other LessonCode. Confirm Razor discovery, responsive img tag helper and CSP.",
+    "mustNotChange": [
+      "Global VisualKind enum",
+      "Global practice routing",
+      "Seeders or tenant DB",
+      "Other curricula",
+      "Production code without approved single-writer designation"
+    ],
+    "verifiedAcceptanceRequired": [
+      "Protected xUnit test compiles and executes on exact SHA, not just static V8",
+      "Authenticated student and teacher lesson route resolves effective G7 Rich V2, not stale canonical fallback",
+      "Image src response 200, correct 3 distinct figures, responsive behavior, zoom, keyboard and screen reader labels",
+      "Student geometry construction can be submitted and teacher rubric applied/persisted per school; wrong/incomplete responses do not pass",
+      "Shared Practice issue #592 exact scaled-copy question family / generator / verifier and malformed/equivalent answer tests",
+      "Cross-curriculum and two-school isolation regression, final exact-head CI and owner UAT"
+    ]
+  },
+  "evidence": {
+    "sourceGeometryReadOnlyInspection": "PASS on three assets for F factor2 vs horizontal-only stretch, triangles factor1.5, L factor0.5 and3, and every polygon entirely in its panel",
+    "realNodeTestRunner": "NOT_RUN: local isolated host has Node, but no clone/network; GitHub V8 check is NOT node --test",
+    "realDotNet": "NOT_RUN: local isolated host has no dotnet; new grade-specific xUnit fixture committed",
+    "browserAndAssistiveTechnology": "NOT_RUN",
+    "g7FullGradeAuthoringPreserved": {
+      "canonicalLessonCount": 145,
+      "workedExamples": 584,
+      "richVisualRecords": 151,
+      "studentPagesPreviouslyReviewed": 145,
+      "stageAApproved": 0,
+      "stageCVerified": 0,
+      "stageDVerified": 0
+    }
+  },
+  "resumeAction": "Supervisor #592 review one opt-in shared renderer hook; owner-approved isolated CI and authenticated verification; then continue remaining 142 lessons' task-specific geometry, rubrics and Practice acceptance without replaying source scans."
+}

@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "status": "PUBLIC_SOURCE_ACTIVITY_COMPARISON_NOT_ACADEMIC_ACCEPTANCE",
+  "reviewDate": "2026-10-28",
+  "authenticHistoricalSourceEdition": "OUR/IM 2017–2019",
+  "sourceRightsNote": "Public historical Kendall Hunt teacher, student and practice pages state CC BY 4.0 for licensed OUR/IM educational material; the IM name/logo are excluded. Candidate examples and descriptions are independently authored and do not embed publisher diagrams.",
+  "sourceAccessCaveats": [
+    "Public pages and available alt descriptions were read. Teacher model answer sections may require login; no protected student-response content was accessed.",
+    "Public source task comparison is not a claim that all figure pixels, applet interactions, authenticated Edulytiks rendering, student submissions or teacher evaluation were checked.",
+    "Standard roles are activity-level observations from the public teacher pages, not a replacement for the repository's official immutable blueprint alignments."
+  ],
+  "candidateBranch": "curriculum/us-ccss-g6-full-grade-20261028",
+  "entries": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+      "title": "Tiling the Plane",
+      "student": "https://im.kendallhunt.com/MS/students/1/1/1/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/1/1/index.html",
+      "practice": "https://im.kendallhunt.com/MS/students/1/1/1/practice.html",
+      "observableTasks": [
+        {
+          "sourceActivity": "1.1",
+          "target": "Compare differently colored and sometimes gapped tilings; give defensible shape/coverage distinctions",
+          "teacherAssessment": "REQUIRED_FOR_EXPLANATION"
+        },
+        {
+          "sourceActivity": "1.2",
+          "target": "Compare red trapezoids, blue rhombi and green triangles by actual covered area, not by tile count",
+          "teacherAssessment": "REQUIRED_FOR_VISUAL_REASONING"
+        },
+        {
+          "sourceActivity": "design extension",
+          "target": "Compose different shapes into equal-area regions while preserving full tiling",
+          "teacherAssessment": "REQUIRED_FOR_ORIGINAL_DRAWING"
+        },
+        {
+          "sourceActivity": "practice",
+          "target": "Explain area comparisons of unlike square tiles, create equal-area quadrilaterals and identify non-tilings",
+          "teacherAssessment": "REQUIRED_FOR_DIAGRAM"
+        }
+      ],
+      "implementationEvidence": [
+        "canonical English lesson contains shared triangular-area-unit comparison and equal-area mixed-polygon mosaic",
+        "Rich V2 sidecar includes 3 mathematical examples with source-aligned comparison and open-ended rubric boundary",
+        "text-accessible author-created tile family description"
+      ],
+      "remainingGaps": [
+        "No verified drag-and-turn polygon manipulative in the authenticated product",
+        "Original publisher picture assets not reproduced or individually licensed by this candidate",
+        "No selected exact Practice generator/verifier or teacher-review persistence proof"
+      ],
+      "practiceBoundary": {
+        "safeNumericSubskills": [
+          "calculate colored areas after explicit tile counts and common-area-unit equivalences"
+        ],
+        "teacherOnly": [
+          "justify which visual design does not tile a region",
+          "construct two different equal-area mosaics and explain area preservation"
+        ],
+        "forbiddenSubstitutes": [
+          "geometry shape names and dimensions without comparing covered area",
+          "single numeric mark for original design or oral justification"
+        ]
+      },
+      "publicSourceLessonStandardsRoles": {
+        "buildingOn": [
+          "3.G.A"
+        ],
+        "buildingTowards": [
+          "6.G.A.1"
+        ],
+        "addressing": []
+      },
+      "teacherOnlyRubricCandidate": {
+        "status": "AUTHORING_ONLY_NO_VERIFIED_TEACHER_WORKFLOW",
+        "scoreRange": {
+          "min": 0,
+          "max": 8
+        },
+        "criteria": [
+          {
+            "criterion": "Tiling validity",
+            "maxPoints": 2,
+            "requiredEvidence": "Shows complete coverage and identifies a gap/overlap correctly",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Comparable units",
+            "maxPoints": 2,
+            "requiredEvidence": "Converts unlike polygons to a shared area unit before comparing",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Mathematical justification",
+            "maxPoints": 2,
+            "requiredEvidence": "Explains why rotations/rearrangements preserve the same piece areas",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Original representation",
+            "maxPoints": 2,
+            "requiredEvidence": "Presents a labeled design or accessible description supporting the conclusion",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedEvaluationVerified": false
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+      "title": "Finding Area by Decomposing and Rearranging",
+      "student": "https://im.kendallhunt.com/MS/students/1/1/2/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/1/2/index.html",
+      "practice": "https://im.kendallhunt.com/MS/students/1/1/2/practice.html",
+      "observableTasks": [
+        {
+          "sourceActivity": "2.1",
+          "target": "Diagnose gaps, overlap and mixed-size squares; articulate precise area definition",
+          "teacherAssessment": "REQUIRED_FOR_EXPLANATION"
+        },
+        {
+          "sourceActivity": "2.2",
+          "target": "Compose and rearrange triangles with a unit square to make different shapes with specified areas",
+          "teacherAssessment": "REQUIRED_FOR_DRAWING"
+        },
+        {
+          "sourceActivity": "2.3",
+          "target": "Justify relative area of small, medium and large triangle pieces",
+          "teacherAssessment": "REQUIRED_FOR_GEOMETRIC_REASONING"
+        },
+        {
+          "sourceActivity": "practice",
+          "target": "Rearrange diagonal rectangle pieces and identify equal area despite changed boundary",
+          "teacherAssessment": "REQUIRED_FOR_VISUAL_PROOF"
+        }
+      ],
+      "implementationEvidence": [
+        "canonical English lesson explicitly converts mixed square tile areas and forms area-1/2 triangular pieces",
+        "Rich V2 sidecar models triangle-square compositions and teacher-reviewable non-square arrangements"
+      ],
+      "remainingGaps": [
+        "No verified physical or digital tangram move/rotate interaction",
+        "Full set of original tangram pieces and student designs not rendered or teacher-assessed in the product",
+        "No exact selected Practice and persisted teacher-rubric evidence"
+      ],
+      "practiceBoundary": {
+        "safeNumericSubskills": [
+          "fractional component area via two congruent half-unit triangles",
+          "equivalent square area after rearrangement"
+        ],
+        "teacherOnly": [
+          "student-authored tangram construction",
+          "mathematically correct proof that two designs cover equal area"
+        ],
+        "forbiddenSubstitutes": [
+          "shape classification replacing area conservation",
+          "grading an original drawing solely by a number"
+        ]
+      },
+      "publicSourceLessonStandardsRoles": {
+        "buildingOn": [
+          "3.MD.C.5.b"
+        ],
+        "buildingTowards": [
+          "6.G.A"
+        ],
+        "addressing": [
+          "6.G.A.1"
+        ]
+      },
+      "teacherOnlyRubricCandidate": {
+        "status": "AUTHORING_ONLY_NO_VERIFIED_TEACHER_WORKFLOW",
+        "scoreRange": {
+          "min": 0,
+          "max": 8
+        },
+        "criteria": [
+          {
+            "criterion": "Precise meaning of area",
+            "maxPoints": 2,
+            "requiredEvidence": "Defines area as equal-size square coverage without gaps or overlap",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Fractional piece reasoning",
+            "maxPoints": 2,
+            "requiredEvidence": "Proves matching half-square triangles compose one unit square",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Area conservation",
+            "maxPoints": 2,
+            "requiredEvidence": "Creates a different shape from unchanged non-overlapping pieces",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Explanation quality",
+            "maxPoints": 2,
+            "requiredEvidence": "Uses a labeled diagram/description and exact area units",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedEvaluationVerified": false
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L03",
+      "title": "Reasoning to Find Area",
+      "student": "https://im.kendallhunt.com/MS/students/1/1/3/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/1/3/index.html",
+      "practice": "https://im.kendallhunt.com/MS/students/1/1/3/practice.html",
+      "observableTasks": [
+        {
+          "sourceActivity": "3.1",
+          "target": "Compare shaded square with a congruent square minus an interior square plus equal appended shaded piece",
+          "teacherAssessment": "REQUIRED_FOR_EXPLANATION"
+        },
+        {
+          "sourceActivity": "3.2",
+          "target": "Use grid decompositions and known-hole subtraction without counting every square",
+          "teacherAssessment": "REQUIRED_FOR_METHOD_JUSTIFICATION"
+        },
+        {
+          "sourceActivity": "3.3",
+          "target": "Derive off-grid shaded areas using measured triangle and rectangle parts, including tilted interior holes",
+          "teacherAssessment": "REQUIRED_FOR_DIAGRAM"
+        },
+        {
+          "sourceActivity": "practice",
+          "target": "Find on-grid and off-grid composite shaded areas and justify unequal-outline equal-area plots",
+          "teacherAssessment": "REQUIRED_FOR_VISUAL_PROOF"
+        }
+      ],
+      "implementationEvidence": [
+        "canonical English lesson adds moved-square shaded-area proof and constraint on unknown tilted holes",
+        "Rich V2 sidecar prioritizes original-equivalent shaded area conservation instead of rectangle-only calculations"
+      ],
+      "remainingGaps": [
+        "No rendered authenticated original-equivalent moved-square diagram or interactive proof tool",
+        "No verified generator/verifier assessing this actual shaded region rather than a shape label",
+        "Practice and persisted student/teacher reasoning review not tested"
+      ],
+      "practiceBoundary": {
+        "safeNumericSubskills": [
+          "subtract known unshaded holes from enclosing area",
+          "sum measurable non-overlapping shaded subregions"
+        ],
+        "teacherOnly": [
+          "justify cut/reassemble shaded area equality",
+          "decompose unknown tilted-hole figure into measurable triangles"
+        ],
+        "forbiddenSubstitutes": [
+          "unjustified subtraction of an unknown tilted-hole area",
+          "mere polygon classification"
+        ]
+      },
+      "publicSourceLessonStandardsRoles": {
+        "buildingOn": [
+          "3.MD.C.7.d"
+        ],
+        "buildingTowards": [],
+        "addressing": [
+          "6.G.A.1"
+        ]
+      },
+      "teacherOnlyRubricCandidate": {
+        "status": "AUTHORING_ONLY_NO_VERIFIED_TEACHER_WORKFLOW",
+        "scoreRange": {
+          "min": 0,
+          "max": 8
+        },
+        "criteria": [
+          {
+            "criterion": "Shaded-region selection",
+            "maxPoints": 2,
+            "requiredEvidence": "Counts only actual shaded portions, excluding interior holes",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Defensible measurement",
+            "maxPoints": 2,
+            "requiredEvidence": "Uses known lengths or supported decompositions, not invented tilted-hole sizes",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Conservation proof",
+            "maxPoints": 2,
+            "requiredEvidence": "Shows an equal-area piece can be moved without changing the total",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Second method",
+            "maxPoints": 2,
+            "requiredEvidence": "Explains how addition, rearrangement or justified subtraction gives the same area",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedEvaluationVerified": false
+      }
+    }
+  ]
+}

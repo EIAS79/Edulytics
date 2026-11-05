@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "method": "Public source lesson activity review (U01:L08-L10) with first-party mathematical representations. Does not verify authenticated rendering, teacher scoring, card-sort/GeoGebra equivalence, or publisher art.",
+  "sourceEdition": "IM/Open Up Resources 2017–2019",
+  "status": "SOURCE_ALIGNED_CANDIDATE_NOT_A_D_ACCEPTED",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+      "addedTeacherStudentActivityPrompts": [
+        "Activity 8.1: create an original right isosceles triangle OAB with OA=OB=3 and angle AOB=90°. Draw its images after clockwise rotations of 90°, 180°, and 270° about O; four copies exactly form a square. Explain why the equal legs fit without gaps.",
+        "Activity 8.2: rotate segment PQ through 180° about endpoint Q, midpoint M, and off-line point C. For a half-turn about center C, each image X′ satisfies X′=2C−X. Endpoint rotation extends the original line; midpoint rotation exchanges segment endpoints; off-line rotation makes a parallel segment at the same length.",
+        "Activity 8.3: use four rigid copies of an asymmetric triangle to build and label a pattern. Identify corresponding lengths and transformations; a drawn construction and its explanation require teacher or accessible graphical assessment."
+      ],
+      "fullSourceParityAccepted": false,
+      "teacherRubricPersisted": false,
+      "interactiveConstructionImplemented": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
+      "addedTeacherStudentActivityPrompts": [
+        "Activity 9.1: for a line ℓ and its image ℓ′, identify a possible single rigid motion and then plot corresponding images A′ and B′. Mapping only the infinite line without its labeled points does not complete the source task.",
+        "Activity 9.2: apply a common translation, half-turn about K, and mirror reflection across h to the same two parallel lines. Explain why their distance and parallelism remain unchanged, even when both line directions reverse.",
+        "Activity 9.3: under a half-turn around D on a line, every point exchanges position with its image across D and the full line maps to itself. For intersecting lines rotated together about O, reason from corresponding angles and vertical angles rather than appearance alone."
+      ],
+      "fullSourceParityAccepted": false,
+      "teacherRubricPersisted": false,
+      "interactiveConstructionImplemented": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L10",
+      "addedTeacherStudentActivityPrompts": [
+        "Activity 10.1: start from isosceles triangle ABC with AB=AC. Reflect ABC over side AB, then rotate around A to align the image of C with B; corresponding base angles B and C are congruent because reflections and rotations preserve angle measure.",
+        "Activity 10.2: mark M as the midpoint of side AC of triangle ABC, then rotate the triangle 180° around M. The image vertices are C,D,A, and quadrilateral ABCD is a parallelogram because opposite corresponding sides are parallel. Two congruent triangles fill it, so each has half its area.",
+        "Activity 10.3: construct and label two other rigid images of an original scalene triangle. Identify at least two corresponding segment pairs and two equal angle pairs by matching vertices; teacher review is required for the constructed diagram and explanation.",
+        "Activity 10.4: begin with triangle ONE where ON=OE=5 and angle NOE=30°. Reflect across ON and then across OM, marking the successive images M and T. Justify the new angles and all 5-unit image rays; numerical repetition is not sufficient evidence of a constructed sequence."
+      ],
+      "fullSourceParityAccepted": false,
+      "teacherRubricPersisted": false,
+      "interactiveConstructionImplemented": false
+    }
+  ],
+  "figures": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/3/1/8/index.html",
+      "sourceTeacherUrl": "https://im.kendallhunt.com/MS/teachers/3/1/8/index.html",
+      "assetPath": "/curriculum/us-ccss-g8/figures/u01-l08.svg",
+      "sha256": "b40151655e58f2a9d84a2aa82c476a0dfd8da2b86fff59736a94a28ee429082f",
+      "description": "Four original right isosceles triangles rotate by 0, -90, -180 and -270 degrees around O(0,0), with OA=OB=3. Separate half-turn images of segment P(0,0), Q(4,0) about endpoint Q(4,0), midpoint M(2,0), off-line C(2,2).",
+      "data": {
+        "triangle": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "turns": [
+          0,
+          -90,
+          -180,
+          -270
+        ],
+        "segment": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "centers": [
+          {
+            "name": "endpoint",
+            "x": 4,
+            "y": 0
+          },
+          {
+            "name": "midpoint",
+            "x": 2,
+            "y": 0
+          },
+          {
+            "name": "off-line",
+            "x": 2,
+            "y": 2
+          }
+        ]
+      },
+      "sourceParityAccepted": false,
+      "authenticatedStudentRendered": false,
+      "independentMathTestsRequired": true
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/3/1/9/index.html",
+      "sourceTeacherUrl": "https://im.kendallhunt.com/MS/teachers/3/1/9/index.html",
+      "assetPath": "/curriculum/us-ccss-g8/figures/u01-l09.svg",
+      "sha256": "464dd844df9f7287006d29f4517bb5e94236ca8faa2d0f296c043602d0ef208d",
+      "description": "Horizontal parallel lines y=1 and y=4; a common translation by (2,3) maps them to y=4 and y=7; a half-turn about (0,0) maps them to y=-1 and y=-4; reflection in y=0 produces the same line equations but does not reverse x. Distance remains three.",
+      "data": {
+        "lines": [
+          1,
+          4
+        ],
+        "translation": {
+          "x": 2,
+          "y": 3
+        },
+        "rotationCenter": {
+          "x": 0,
+          "y": 0
+        },
+        "reflectionAxis": "y=0"
+      },
+      "sourceParityAccepted": false,
+      "authenticatedStudentRendered": false,
+      "independentMathTestsRequired": true
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L10",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/3/1/10/index.html",
+      "sourceTeacherUrl": "https://im.kendallhunt.com/MS/teachers/3/1/10/index.html",
+      "assetPath": "/curriculum/us-ccss-g8/figures/u01-l10.svg",
+      "sha256": "585e2c18383dcf1dc9fbbce571e369f3bbf1c7bc661be2b55214f49a42303807",
+      "description": "Triangle A(0,0), B(1,2), C(5,2) and 180-degree image C(5,2), D(4,0), A(0,0) around M(2.5,1) form parallelogram ABCD. Original triangle area 4 and parallelogram area 8. Isosceles triangle with B(-1,0), C(1,0), A(0,sqrt(8)) has AB=AC=3.",
+      "data": {
+        "triangle": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          }
+        ],
+        "midpoint": {
+          "x": 2.5,
+          "y": 1
+        },
+        "isosceles": {
+          "base": [
+            {
+              "x": -1,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 0
+            }
+          ],
+          "apex": {
+            "x": 0,
+            "y": 2.8284271247461903
+          }
+        }
+      },
+      "sourceParityAccepted": false,
+      "authenticatedStudentRendered": false,
+      "independentMathTestsRequired": true
+    }
+  ],
+  "updatedRichCandidateHashes": {
+    "us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json": "83e2438bc8497dc5dc4e73b73b64a4e9805ff182605671b584e308f1953b1254",
+    "us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json": "a492bde9564ad92af1936988506310cbeaad3c137f9f635407dc683a2b9bef61"
+  },
+  "approval": {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0
+  }
+}

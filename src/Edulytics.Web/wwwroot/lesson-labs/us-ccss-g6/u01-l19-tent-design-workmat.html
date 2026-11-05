@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edulytics Grade 6 — Design a Tent</title>
+<style>:root{color-scheme:light;font-family:system-ui,Arial,sans-serif}body{max-width:950px;margin:auto;padding:18px;color:#1b2e42;line-height:1.55}h1,h2{line-height:1.3}section{border-top:1px solid #b7c7d5;padding-top:12px;margin-top:16px}.note{padding:12px;border-left:4px solid #3e638c;background:#eff5fa}table{width:100%;border-collapse:collapse}th,td{border:1px solid #abb9c8;padding:8px;text-align:left}svg{width:100%;max-width:430px}fieldset{display:flex;gap:12px;flex-wrap:wrap}label{display:block;max-width:240px}input[type=text]{display:block;width:9em;padding:8px;margin-top:5px}button{padding:9px 13px;cursor:pointer}output{display:block;padding:9px;min-height:18px}.rubric{background:#f3f6fa;padding:12px}.sketch{border:1px dashed #889bae;min-height:180px}@media print{button{display:none}body{padding:0}.note,.rubric{background:white}}</style></head>
+<body>
+<h1>Grade 6 · Unit 1 · Lesson 19 — Design a Tent</h1>
+<p class="note">An Edulytics-designed geometry project. There is <strong>no single correct tent shape or fabric amount</strong>. Numeric feedback below checks only two worked examples. The teacher evaluates every student's actual design, space for campers, panel dimensions, fabric estimate and written explanation.</p>
+<section><h2>Part 1 — Plan a floor-inclusive tent for up to four campers</h2>
+<p>Draw a 3D tent and a net, choosing shape, number of campers, height and dimensions. Include a <strong>floor</strong>; account for roof and end walls. Sketch four sleeping bags with realistic dimensions inside your proposed floor and state any assumptions about free headroom, aisle space, doorway and seams.</p>
+<svg role="img" aria-labelledby="triangle-title triangle-desc" viewBox="0 0 410 195" xmlns="http://www.w3.org/2000/svg">
+<title id="triangle-title">Example triangular tent end cross-section</title>
+<desc id="triangle-desc">Isosceles triangle with base 8 feet, perpendicular height 3 feet, each sloping roof half 5 feet, and half base 4 feet.</desc>
+<path d="M45 149 L165 59 L285 149 Z" fill="#d0e7f4" stroke="#254967" stroke-width="3"/>
+<path d="M165 59 V149" stroke="#254967" stroke-dasharray="5 5" stroke-width="2"/><path d="M165 149 h15 v-15" fill="none" stroke="#254967"/>
+<g font-family="Arial,sans-serif" font-size="17" fill="#17344e">
+<text x="156" y="175">8 ft floor width</text><text x="179" y="100">3 ft</text>
+<text x="81" y="94">5 ft</text><text x="235" y="94">5 ft</text><text x="89" y="142">4 ft</text>
+<text x="13" y="188" font-size="12">First-party illustrative 3–4–5 geometry, not a required design</text></g>
+</svg>
+<p>Worked <strong>example</strong>: four 2-by-6-foot sleeping bags side by side, with no aisle, require floor 8-by-6 feet. A tent of width8ft, height3ft and length6ft has sloping length5ft.</p>
+<table><thead><tr><th>Fabric component</th><th>Compact example (length6ft)</th><th>Longer example (length8ft)</th></tr></thead><tbody>
+<tr><td>Required floor</td><td>8×6=48ft²</td><td>8×8=64ft²</td></tr>
+<tr><td>Two sloped roof panels</td><td>2×5×6=60ft²</td><td>2×5×8=80ft²</td></tr>
+<tr><td>Two triangular end panels</td><td>2×(8×3÷2)=24ft²</td><td>24ft²</td></tr>
+<tr><td><strong>Total before seam/door allowance</strong></td><td><strong>132ft²</strong></td><td><strong>168ft²</strong></td></tr>
+</tbody></table>
+<p>These are only two possible first-party models; a learner's valid alternative must be calculated from that learner's own chosen dimensions. The compact floor assumes no walkway and limited headroom. Discuss this limitation explicitly.</p>
+</section>
+<section><h2>Source-dimensional check — actual sleeping bags</h2>
+<p>The original reference diagram specifies a <strong>74-inch-long by 34-inch-wide</strong> sleeping bag (about 6 ft 2 in × 2 ft 10 in). Four side-by-side bags need 4×34 = <strong>136 inches</strong> of width before an aisle. The 2-by-6-foot model above is retained as a separate, idealized arithmetic example; it does <strong>not</strong> fit these actual dimensions.</p>
+<p>One independently designed floor that fits these bags is <strong>12 ft wide × 7 ft long</strong> (144×84 inches). That leaves only <strong>8 inches total width</strong> and <strong>10 inches length</strong> beyond the bags, so it still provides no comfortable aisle. Choose a triangular cross-section width12ft, perpendicular height4.5ft and half-base6ft, giving a 7.5ft sloping roof side.</p>
+<table><thead><tr><th>Source-dimension-compatible model</th><th>Length 7 ft</th><th>Length 8 ft</th></tr></thead><tbody>
+<tr><td>Required floor</td><td>12×7 = 84 ft²</td><td>12×8 = 96 ft²</td></tr>
+<tr><td>Two sloped roofs</td><td>2×7.5×7 = 105 ft²</td><td>2×7.5×8 = 120 ft²</td></tr>
+<tr><td>Two triangular end panels</td><td>2×(12×4.5÷2) = 54 ft²</td><td>54 ft²</td></tr>
+<tr><td><strong>Fabric total incl. floor</strong></td><td><strong>243 ft²</strong></td><td><strong>270 ft²</strong></td></tr>
+</tbody></table>
+<p>Difference: 27 ft². These are <em>Edulytics</em> designs based on the original source's sleeping-bag sizes, not fixed publisher answers. Actual tent fit, headroom, doors, seams and safe clearance require student justification and teacher review.</p></section>
+<section><h2>Independent arithmetic check</h2>
+<form id="check"><fieldset>
+<label for="first">Compact example: all-panel fabric (ft²)<input required id="first" type="text" inputmode="decimal"></label>
+<label for="second">Longer example: all-panel fabric (ft²)<input required id="second" type="text" inputmode="decimal"></label>
+<label for="delta">Extra fabric for longer example (ft²)<input required id="delta" type="text" inputmode="decimal"></label>
+</fieldset>
+<p><strong>Source-dimension-compatible example:</strong></p><fieldset>
+<label for="bags">Four 34-inch-wide bags: total width (in)<input required id="bags" type="text" inputmode="decimal"></label>
+<label for="proper">12×7ft compatible tent: all-panel fabric (ft²)<input required id="proper" type="text" inputmode="decimal"></label>
+<label for="properlong">12×8ft compatible tent: all-panel fabric (ft²)<input required id="properlong" type="text" inputmode="decimal"></label>
+</fieldset><button type="submit">Check example arithmetic</button><output id="feedback" aria-live="polite"></output></form></section>
+<section><h2>Part 2 — Compare and justify your designs</h2>
+<p>Compare your design with another drawing for the <strong>same number of campers</strong>. Discuss which uses less fabric, whether both include the floor, why roof slope and tent height matter, how much sleeping space is provided and which assumptions are uncertain. A claim with no measured panels and no calculation is not sufficient.</p>
+<div class="sketch" aria-label="Blank area for student tent drawings and panel labels"></div>
+<p><strong>Student response:</strong> write dimensions, surface decompositions, units and a defense of the design. The blank space is for a paper sketch or attached teacher-reviewed drawing.</p></section>
+<section><h2>Edulytics independent Cool-down</h2>
+<p>Using <em>your own</em> design, write the area of the floor, roofs and end panels. Add them in square units, explain how four campers fit, and defend one trade-off against a peer's design. There is no universal numeric answer.</p>
+<div class="rubric"><strong>Teacher checklist:</strong> <label><input type="checkbox"> Fits the claimed number of people and their sleeping bags</label>
+<label><input type="checkbox"> Explicit floor panel included</label>
+<label><input type="checkbox"> All other exterior fabric panels labeled with compatible dimensions</label>
+<label><input type="checkbox"> Right areas, units, and arithmetic (including half-base slopes when needed)</label>
+<label><input type="checkbox"> Assumptions (aisle, headroom, openings, seam/waste) justified</label>
+<label><input type="checkbox"> Peer comparison and written reasoning reviewed</label></div></section>
+<button type="button" id="print">Print worksheet</button>
+<script>"use strict";document.getElementById("check").addEventListener("submit",event=>{event.preventDefault();const ids=["first","second","delta","bags","proper","properlong"],target=[132,168,36,136,243,270];const valid=ids.map((id,i)=>{const t=document.getElementById(id).value.trim();return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(t)&&Number.isFinite(Number(t))&&Number(t)===target[i]});const n=valid.filter(Boolean).length;document.getElementById("feedback").textContent=n===6?"6/6 worked-example values correct. Your independent design still requires teacher assessment.":n+"/6 example values correct; check the original 74×34in bag fit and mandatory FLOOR plus roof and end panels."});document.getElementById("print").addEventListener("click",()=>window.print());</script></body></html>

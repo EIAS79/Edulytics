@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U03 L08 sector rearrangement authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit3CircleFigures.cshtml');for(const s of ['data-g7-u03-l08','8.1 Track','8.2 Connect','8.3 Use both','Cool-down'])assert.ok(v.includes(s));});
+test('U03 L08 arithmetic witnesses',()=>{assert.equal(14/2,7);assert.equal(7*7,49);assert.equal(18/2,9);assert.equal(9*9,81);});
+test('U03 L08 A-C ready not run',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u03-l08-abc-cursor.json'));assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

@@ -347,11 +347,15 @@ internal static class MeetingDemoProvisioner
         var ciProgramme = Environment.GetEnvironmentVariable(
             "EDULYTICS_CI_REHEARSAL_PROGRAMME");
         var activeSchools = disposableCi &&
-            string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
-            ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary").ToArray()
-            : disposableCi || permanentDemo
-                ? Schools.Take(2).ToArray()
-                : Schools;
+            (string.Equals(ciProgramme, "US-CCSS-G6", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "US-CCSS-G8", StringComparison.Ordinal))
+            ? Schools.Where(s => s.Key is "commoncore-middle" or "commoncore-secondary").ToArray()
+            : disposableCi &&
+              string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
+                ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary").ToArray()
+                : disposableCi || permanentDemo
+                    ? Schools.Take(2).ToArray()
+                    : Schools;
 
         var password = configuration["Edulytics:MeetingDemo:Password"];
         if (string.IsNullOrWhiteSpace(password))

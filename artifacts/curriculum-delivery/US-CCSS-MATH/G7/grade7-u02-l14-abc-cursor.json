@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U02:L14",
+  "ordinal": 27,
+  "title": "Four Representations",
+  "teacherSource": [
+    "07_Grade_7_OUR_IM/2/14/preparation.html",
+    "07_Grade_7_OUR_IM/2/14/index.html"
+  ],
+  "studentSource": [
+    "07_Grade_7_OUR_IM_Student/2/14/index.html",
+    "07_Grade_7_OUR_IM_Student/2/14/practice.html"
+  ],
+  "sourceHashesSha256": {
+    "teacherPreparation": "6486a334ab2fe6719d97a5afc591742d7b22ecbc83a8be043e6bb3f3b690ab71",
+    "teacherLesson": "e23a5e7795fb43decb7800edeaf77c32e1744b60214725ac09fb8375e7427bcd",
+    "studentLesson": "3c8a66642e4edb4ab132b94ac99369540256daaec2164b8e00b782c150dd97a9",
+    "studentPractice": "934f856bce6a55f70852e8b2c3e4e57947fb255c186174bb8444170787e5e2cd"
+  },
+  "edition": "OUR_IM_G7_2017_2019_NO_ACCESSIM_V360",
+  "sourceGoals": [
+    "Calculate and interpret k with correct units in unfamiliar contexts",
+    "Critique presentations of proportional and nonproportional relationships",
+    "Invent and represent both kinds of relationship in words, table, graph and equation"
+  ],
+  "sourceActivities": [
+    "create proportional and nonproportional scenarios",
+    "make at least six table pairs, labeled graph, equation and written justification",
+    "visual-display peer critique",
+    "practice unit-price and unit-conversion graphs, k and equations"
+  ],
+  "reused": [
+    "existing U02 L14 Rich V2 teaching body",
+    "usccss.g7.u02.l08.classify_equations",
+    "usccss.g7.u02.l07.table_proportional_or_not",
+    "usccss.g7.u02.l10.graphs_origin_slope",
+    "existing exact dispatcher"
+  ],
+  "newEngine": false,
+  "newFirstPartySVG": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u02-l14-four-representations.svg",
+  "firstPartyCooldown": "six-row unit-price model in four representations plus one controlled nonproportional change and explanation",
+  "A_STATUS": "LOCAL_SOURCE_TEACHER_STUDENT_PRACTICE_COMPARED",
+  "B_STATUS": "AUTHORING_FIRST_PARTY_FOUR_REPRESENTATIONS_AND_COOLDOWN",
+  "C_STATUS": "EXISTING_EQUATION_TABLE_GRAPH_CLASSIFICATION_FAMILIES_SELECTED",
+  "READY_FOR_STAGE_D": true,
+  "D_STATUS": "NOT_RUN",
+  "testExecution": "AUTHORED_NOT_RUN",
+  "tests": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG7Unit2Lesson14FourRepresentationsTests.cs",
+    "tests/academic-us-ccss-g7-u02-l14-abc-fixture.test.cjs"
+  ],
+  "humanBoundary": "STUDENT_AUTHORED_SCENARIOS_SIX_ROW_TABLES_GRAPHS_POSTERS_AND_CRITIQUE_TEACHER_REVIEW",
+  "originalGatedCoolDown": "NOT_VERIFIED_NOT_COPIED",
+  "closedAt": "2026-11-04; elapsed not measured",
+  "nextLesson": "PED:US-CCSS-MATH:G7:U02:L15"
+}

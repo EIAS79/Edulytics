@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L08",
+  "release": "RELEASE_BLOCKED",
+  "status": "SOURCE_ADJACENCY_REPAIR_FIRST_PARTY_REFERENCE_RUBRIC_DRAFT_NOT_APPROVED",
+  "source": {
+    "student": "https://im.kendallhunt.com/MS/students/2/7/8/index.html",
+    "teacher": "https://im.kendallhunt.com/MS/teachers/2/7/8/preparation.html",
+    "rights": "2017–2019 OUR/IM CC BY 4.0 attribution for educational source. New Edulytiks diagrams are original mathematical figures, not publisher tracing.",
+    "checked": "Public lesson activities, available image descriptions and teacher narrative/goals; original publisher image pixels, restricted teacher guide/Cool Down, classroom/student comparisons NOT_VERIFIED.",
+    "standardsAddressing": [
+      "7.G.A.2"
+    ],
+    "goals": [
+      "Compare corresponding triangle measurements including attachment of marked side to specific angle vertices.",
+      "Distinguish identical copies after rotation/reflection from differently sized/arranged triangles.",
+      "Do not require memorization of formal ASA/SAS/SSS criteria at this stage."
+    ]
+  },
+  "sourceTasks": [
+    {
+      "activity": "8.1 Three Sides, Three Angles",
+      "source": "Observe and contrast six triangle figures in Set 1 and four in Set 2; identify identical versus different shapes.",
+      "coverage": "Existing Rich V2 SSS/AAA mathematical examples retained and language repaired for physical overlay; original 6+4 publisher images not recreated."
+    },
+    {
+      "activity": "8.2 Two Sides and One Angle",
+      "source": "Compare nine figures and justify how many genuinely different triangles, taking side–angle adjacency into account.",
+      "coverage": "Explanation now requires checking correspondence, including whether angle is between named sides; not claiming parity for all nine publisher triangles."
+    },
+    {
+      "activity": "8.3 Two Angles and One Side",
+      "source": "Compare eight triangles; show how the same three numerical measurements could make distinct triangles when the marked side has another adjacency.",
+      "coverage": "Original SVG shows 40°, 60°, and length 5 once as AB and once as AC; noncongruent despite identical numeric measures. Does not reproduce all eight publisher illustrations."
+    },
+    {
+      "activity": "Summary",
+      "source": "Two triangles each have an angle 32° and side lengths 5 and 6 in different adjacencies; position determines identical-copy classification.",
+      "coverage": "New original example changes measurements intentionally to 40°, 60°, length 5, to demonstrate the same general adjacency principle without copying publisher geometry."
+    }
+  ],
+  "asset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l08-angle-side-adjacency-contrast.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l08-angle-side-adjacency-contrast.svg",
+  "model": {
+    "pxPerUnit": 50,
+    "anglesDeg": [
+      40,
+      60,
+      80
+    ],
+    "triangle1": {
+      "sideWithLength5": "AB",
+      "A": [
+        78,
+        334
+      ],
+      "B": [
+        328,
+        334
+      ],
+      "C": [
+        246.412,
+        192.6855
+      ],
+      "AB": 5
+    },
+    "triangle2": {
+      "sideWithLength5": "AC",
+      "A": [
+        558,
+        334
+      ],
+      "B": [
+        842.2895,
+        334
+      ],
+      "C": [
+        749.5111,
+        173.3031
+      ],
+      "AC": 5,
+      "AB": 5.6858
+    },
+    "congruent": false,
+    "reason": "The 5-unit side belongs to different corresponding vertex pairs, so the whole triangles have different side lengths."
+  },
+  "learnerTask": "Draw or trace two triangles each with 40° and 60° measured at vertices A and B, and one side of 5 units; first position 5 units on AB, then on AC. Independently measure the remaining sides and overlay figures (allowing rotation/reflection). Explain which corresponding side lengths differ and why the figures cannot be identical copies despite their three shared numerical measurements.",
+  "teacherRubric": {
+    "maxScore": 12,
+    "humanOnly": true,
+    "teacherScorePersistence": "NOT_RUN",
+    "submittedStudentArtifact": false,
+    "criteria": [
+      {
+        "id": "g7-u07-l08-1",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Construct both original triangle models with accurately measured angles and correct, distinct placement of the 5-unit side."
+      },
+      {
+        "id": "g7-u07-l08-2",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Identify corresponding sides, compare independently measured third-side lengths, and correctly reject congruence."
+      },
+      {
+        "id": "g7-u07-l08-3",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Explain why a rotation or reflection alone gives an identical triangle but moving the specified side to a different vertex pair changes the constraints."
+      },
+      {
+        "id": "g7-u07-l08-4",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "description": "Give written/oral comparative reasoning and accurately label angles, side units and student measurements; distinguish examples from publisher source figures."
+      }
+    ]
+  },
+  "cases": [
+    {
+      "kind": "correct",
+      "claim": "Both figures have 40°,60°,80° but AB=5 in first and AB≈5.686 in second; not identical.",
+      "expectation": "Correct math; teacher still checks original measured drawings."
+    },
+    {
+      "kind": "wrong",
+      "claim": "Two angles and one side length automatically mean identical triangles, regardless of which side is 5.",
+      "expectation": "Reject; matching position matters."
+    },
+    {
+      "kind": "wrong",
+      "claim": "A 90° rotation makes a different triangle.",
+      "expectation": "Reject; a rigid rotation preserves lengths and angles."
+    },
+    {
+      "kind": "degenerate",
+      "claim": "Three 40°,60°,80° rays drawn along a single line are a triangle.",
+      "expectation": "Reject non-triangle construction."
+    },
+    {
+      "kind": "incomplete",
+      "claim": "Only says 'different' without figure, corresponding measurements or explanation.",
+      "expectation": "Teacher cannot award full source-task credit."
+    },
+    {
+      "kind": "malformed",
+      "claim": "Mislabels AB and AC on original construction, obscuring which is 5.",
+      "expectation": "Request correct marked side and vertices."
+    }
+  ],
+  "tests": {
+    "path": "tests/academic-us-ccss-g7-p0-u07-l08-side-placement.test.cjs",
+    "nativeNode": "NOT_RUN_AT_AUTHORING",
+    "dotnet": "NOT_RUN",
+    "studentBrowser": "NOT_RUN"
+  },
+  "integration": {
+    "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "supervisorPr": "https://github.com/EIAS79/Edulytics/pull/599",
+    "sharedFilesChanged": false,
+    "richRendererHook": "PENDING",
+    "selectedPractice": "NOT_EXECUTED",
+    "teacherScoringPersistence": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN"
+  },
+  "academic": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "ownerUAT": "NOT_RUN",
+    "humanAcceptance": "NOT_EVIDENCED"
+  }
+}

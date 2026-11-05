@@ -1,0 +1,3 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U06 L16 supplement authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit6AlgebraPractice.cshtml');assert.ok(v.includes('data-g7-u06-l16'));assert.ok(v.includes('Cool-down'));});
+test('U06 L16 A-C closure explicit',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u06-l16-abc-cursor.json'));assert.equal(c.READY_FOR_STAGE_D,true);assert.equal(c.newEngine,false);assert.equal(c.testExecution,'AUTHORED_NOT_RUN');});

@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L01",
+  "title": "Projecting and Scaling",
+  "unit": "U02",
+  "sourceEdition": "OUR/Illustrative Mathematics Grade8 Unit2 Lesson1 local source CC BY4.0; Edulytiks independent assessment",
+  "sources": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\1\\index.html",
+      "sha256": "70294ce9ea513a2a386158291eef7e59cfd0b11b69f5d0b8aaba336d0ef121fa"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\1\\index.html",
+      "sha256": "2b37d9a9844a547253e7afea3ba5aa73cf8c410fd0b10de938d07c1199ff0fe2"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\1\\preparation.html",
+      "sha256": "5e4d3342f603e791e448751780f0986356a8003f61572a82a214bbdee12e3a2b"
+    },
+    "studentPractice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\1\\practice.html",
+      "sha256": "a3c58cdc6a30ae5762f524d21d4ed55e7a220c2ccc6aa910e84df54660114920"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "6.NS.A"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A"
+    }
+  ],
+  "learningGoals": [
+    "Comprehend dilation as a process producing scaled copies",
+    "Describe orally features of scaled copies of a rectangle",
+    "Identify rectangles that are scaled copies of each other"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "source": "1.1 Number Talk: Remembering Fraction Division",
+      "worksheet": "warmup",
+      "mode": "EXACT_MIXED_FRACTION_DIVISION",
+      "teacherKey": "6¼÷2=25/8=3⅛; 10⅐÷5=71/35=2 1/35; 8½÷11=17/22"
+    },
+    {
+      "source": "1.2 Sorting Rectangles",
+      "worksheet": "sorting",
+      "mode": "CUT_MEASURE_ALIGN_COMMON_CORNER_CLASSIFY_ASPECT_RATIOS",
+      "teacherKey": "A(8.5,11),B(5.5,8.5),C(4.25,5.5),D(2.75,4.25),E(2.125,2.75). Similar to A: A,C,E (1,½,¼); other family B,D; only similar rectangles share diagonal ray when common corner aligned"
+    },
+    {
+      "source": "1.3 Scaled Rectangles",
+      "worksheet": "scaled",
+      "mode": "COMPOSE_TWO_SIMILAR_RECTANGLE_SCALE_FACTORS",
+      "teacherKey": "R(12,8), B(6,4), C(2,4/3), R→B 1/2, B→C 1/3, R→C 1/6"
+    }
+  ],
+  "sourcePracticeScopeToFirstPartyCrosswalk": [
+    {
+      "source": "Problem 1 scaled-copy dimension select-all",
+      "worksheet": "practice",
+      "teacherKey": "12×4: A6×2 true, B9×2 false, C18×6 true,D24×8 true,E12×6 false"
+    },
+    {
+      "source": "Problem 2 rectangle pair reciprocal scaling and negative example",
+      "worksheet": "practice",
+      "teacherKey": "10×6→15×9 factor3/2; inverse2/3. 20×10 fails ratios against both"
+    },
+    {
+      "source": "Problem 3 draw three scaled polygon copies",
+      "worksheet": "practice",
+      "teacherKey": "Triangle half (0,0),(2,0),(0,2); rectangle twice (0,0),(4,0),(4,2),(0,2); trapezoid quarter (0,0),(2,0),(1,1),(0,1)"
+    },
+    {
+      "source": "Problem 4 retrieval triangle angles",
+      "worksheet": "practice",
+      "teacherKey": "A40+50+60=150 invalid,B45+55+80=180 valid,C30+60+90=180 valid,D50+50+90=190 invalid"
+    },
+    {
+      "source": "Problem 5 retrieval parallel transversal angles",
+      "worksheet": "practice",
+      "teacherKey": "Horizontal y=0,y=3 transversal y=x: acute corresponding/alternate45°, supplementary135°"
+    }
+  ],
+  "courseOwnedExtension": {
+    "worksheet": "project",
+    "mode": "CENTER_OF_DILATION_RAYS_AND_PROPORIONAL_DISTANCES",
+    "teacherKey": "O=(0,0), P(2,0) Q(0,2) R(2,2), P′(3,0) Q′(0,3) R′(3,3), factor3/2. Physical shadows not always ideal similarity."
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U02:L01",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l01-projecting-scaling-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u02-l01-projecting-scaling-paper.html",
+    "learnerWorksheetSha256": "f92ca6bc252971135b1f79e8c72ddbd8cab4031656b622fdec65089ff24df68a",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+    "sourceActivityMap": [
+      {
+        "source": "1.1 Number Talk: Remembering Fraction Division",
+        "worksheet": "warmup",
+        "mode": "EXACT_MIXED_FRACTION_DIVISION",
+        "teacherKey": "6¼÷2=25/8=3⅛; 10⅐÷5=71/35=2 1/35; 8½÷11=17/22"
+      },
+      {
+        "source": "1.2 Sorting Rectangles",
+        "worksheet": "sorting",
+        "mode": "CUT_MEASURE_ALIGN_COMMON_CORNER_CLASSIFY_ASPECT_RATIOS",
+        "teacherKey": "A(8.5,11),B(5.5,8.5),C(4.25,5.5),D(2.75,4.25),E(2.125,2.75). Similar to A: A,C,E (1,½,¼); other family B,D; only similar rectangles share diagonal ray when common corner aligned"
+      },
+      {
+        "source": "1.3 Scaled Rectangles",
+        "worksheet": "scaled",
+        "mode": "COMPOSE_TWO_SIMILAR_RECTANGLE_SCALE_FACTORS",
+        "teacherKey": "R(12,8), B(6,4), C(2,4/3), R→B 1/2, B→C 1/3, R→C 1/6"
+      }
+    ],
+    "sourcePracticeMap": [
+      {
+        "source": "Problem 1 scaled-copy dimension select-all",
+        "worksheet": "practice",
+        "teacherKey": "12×4: A6×2 true, B9×2 false, C18×6 true,D24×8 true,E12×6 false"
+      },
+      {
+        "source": "Problem 2 rectangle pair reciprocal scaling and negative example",
+        "worksheet": "practice",
+        "teacherKey": "10×6→15×9 factor3/2; inverse2/3. 20×10 fails ratios against both"
+      },
+      {
+        "source": "Problem 3 draw three scaled polygon copies",
+        "worksheet": "practice",
+        "teacherKey": "Triangle half (0,0),(2,0),(0,2); rectangle twice (0,0),(4,0),(4,2),(0,2); trapezoid quarter (0,0),(2,0),(1,1),(0,1)"
+      },
+      {
+        "source": "Problem 4 retrieval triangle angles",
+        "worksheet": "practice",
+        "teacherKey": "A40+50+60=150 invalid,B45+55+80=180 valid,C30+60+90=180 valid,D50+50+90=190 invalid"
+      },
+      {
+        "source": "Problem 5 retrieval parallel transversal angles",
+        "worksheet": "practice",
+        "teacherKey": "Horizontal y=0,y=3 transversal y=x: acute corresponding/alternate45°, supplementary135°"
+      }
+    ],
+    "courseOwnedExtension": {
+      "worksheet": "project",
+      "mode": "CENTER_OF_DILATION_RAYS_AND_PROPORIONAL_DISTANCES",
+      "teacherKey": "O=(0,0), P(2,0) Q(0,2) R(2,2), P′(3,0) Q′(0,3) R′(3,3), factor3/2. Physical shadows not always ideal similarity."
+    },
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 incorrect/absent;1 partially correct or incomplete diagram;2 exact source-equivalent work and mathematical explanation. Teacher privately scores paper offline, no automatic saved grade.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "Exact source 1.1 fraction quotients, simplified fractions/mixed numbers and reciprocal reasoning"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Source 1.2 A,C,E similar B,D different with two-dimensional ratios/shared diagonal; source1.3 correct composite scale1/6"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Complete dilation center/ray diagram, proportional distance and three scaled polygon constructions/length correspondence"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Five first-party practice skill families with positive/negative scale choices and geometry retrieval, plus source-equivalent independent Cool-down"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "fractionQuotients": [
+        {
+          "improper": "25/8",
+          "mixed": "3 1/8"
+        },
+        {
+          "improper": "71/35",
+          "mixed": "2 1/35"
+        },
+        {
+          "improper": "17/22",
+          "mixed": null
+        }
+      ],
+      "halvedRectangles": [
+        {
+          "label": "A",
+          "dimensions": [
+            8.5,
+            11
+          ],
+          "relativeFactor": 1,
+          "similar": true
+        },
+        {
+          "label": "B",
+          "dimensions": [
+            5.5,
+            8.5
+          ],
+          "relativeFactor": null,
+          "similar": false
+        },
+        {
+          "label": "C",
+          "dimensions": [
+            4.25,
+            5.5
+          ],
+          "relativeFactor": 0.5,
+          "similar": true
+        },
+        {
+          "label": "D",
+          "dimensions": [
+            2.75,
+            4.25
+          ],
+          "relativeFactor": null,
+          "similar": false
+        },
+        {
+          "label": "E",
+          "dimensions": [
+            2.125,
+            2.75
+          ],
+          "relativeFactor": 0.25,
+          "similar": true
+        }
+      ],
+      "nestedScaling": {
+        "R": [
+          12,
+          8
+        ],
+        "B": [
+          6,
+          4
+        ],
+        "C": [
+          2,
+          1.3333333333333333
+        ],
+        "RtoB": 0.5,
+        "BtoC": 0.3333333333333333,
+        "RtoC": 0.16666666666666666
+      },
+      "dilation": {
+        "center": [
+          0,
+          0
+        ],
+        "original": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "image": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "factor": 1.5
+      },
+      "practice1Correct": [
+        "A",
+        "C",
+        "D"
+      ],
+      "practice2": {
+        "forward": 1.5,
+        "inverse": 0.6666666666666666,
+        "negative": [
+          20,
+          10
+        ]
+      },
+      "practice3": {
+        "A": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "B": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "C": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "practice4Correct": [
+        "B",
+        "C"
+      ],
+      "practice5": {
+        "acute": 45,
+        "obtuse": 135
+      },
+      "cooldown": {
+        "A": [
+          3,
+          2
+        ],
+        "B": [
+          6,
+          4
+        ],
+        "C": [
+          6,
+          3
+        ],
+        "correctFactor": 2,
+        "similar": [
+          "A",
+          "B"
+        ],
+        "nonsimilar": "C"
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "6¼÷2=25/8;10⅐÷5=71/35;8½÷11=17/22",
+        "Repeated halving A,C,E are similar with factors1,1/2,1/4, B/D not",
+        "R→B 1/2, B→C1/3, R→C1/6",
+        "Project triangle O at shared center enlarged factor3/2 along all rays",
+        "Practice1 A,C,D and practice4 B,C only",
+        "Cooldown A3x2 to B6x4 factor2, C6x3 nonsimilar"
+      ],
+      "equivalent": [
+        "25/8 and 3⅛ accepted as mathematically identical fraction answers",
+        "71/35 and 2 1/35 accepted",
+        "B and D may be correctly identified as similar to each other but not to A",
+        "A correct physical rectangle cutout with common corner and aligned diagonals equivalent to coordinate sketch",
+        "Scale ratio1.5 equals3/2; reciprocals2/3 and0.666... mathematically equivalent"
+      ],
+      "wrong": [
+        "Claim every successive half rectangle similar to original",
+        "Claim B or D same aspect ratio as A",
+        "Claim R→C factor1/5 rather than1/6",
+        "Treat a projection shadow always exactly a geometric dilation",
+        "Practice1 select B9x2 or E12x6 as scaled rectangle of12x4",
+        "Accept triangle angles totaling150 as valid"
+      ],
+      "malformed": [
+        "Only one dimension of supposed scale copy provided",
+        "No shared corner or diagonal reasoning",
+        "Unlabelled scaled polygon image vertices",
+        "Fraction answer NaN/Infinity or empty",
+        "No original-to-image correspondence on dilation rays",
+        "Practice yes/no alone without scale-ratio calculation"
+      ],
+      "boundary": [
+        "Similarity requires same factor on both corresponding dimensions, not equal area",
+        "Scaling distances about center is not rigid motion unless factor1",
+        "Rectangle halving flips orientation of short/long ordering every step; A,C,E share aspect ratio",
+        "Direct composite factor is product(1/2)*(1/3)=1/6",
+        "Physical pinhole shadow may not represent mathematically exact planar dilation",
+        "Practice retrieval of triangle/parallel-angle concepts is distinct from current new scaling skill"
+      ]
+    },
+    "firstPartyCoolDown": {
+      "worksheet": "cool",
+      "provenance": "EDULYTIKS_AUTHORED_COOLDOWN_SOURCE_TEACHER_ITEM_NOT_REPRODUCED",
+      "teacherKey": "A3×2 and B6×4 share factor2, C6×3 has factors2,1.5 and fails similarity, shared-corner diagonals align only for similar rectangles."
+    },
+    "teacherSelectedOffline": true,
+    "linkedFromRichV2": true,
+    "machineGenerated": false,
+    "authenticatedStudentSubmissionVerified": false,
+    "onlineSubmission": false,
+    "savedTeacherGradeVerified": false,
+    "originalPublisherCoolDown": "SOURCE_TEACHER_1.4_HEADING_PRESENT_NOT_REPRODUCED",
+    "testsStatus": "AUTHORED_NOT_RUN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u02-l01-selected-paper-route-20261031.test.cjs"
+  },
+  "skillCandidateGroup": "G8_DILATIONS_AND_SCALED_COPIES_SOURCE_STANDARD_OUTCOME_CANDIDATE_CLUSTER_REUSE_NOT_AUTOMATIC_SHARED_ENGINE",
+  "practiceSelection": "FIRST_PARTY_OFFLINE_TEACHER_REVIEW_PAPER_EXACT_LESSON",
+  "sharedDependencies": {
+    "registry": "GitHub Issue #605",
+    "sharedWritersRespected": true,
+    "sharedEnginePathsModified": false,
+    "digitalPracticeIntegration": "NOT_READY_VERIFIED",
+    "teacherGradePersistence": "NOT_RUN"
+  },
+  "sourceFig": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u02-l01.svg",
+  "sourceFigureRole": "EXISTING_FIRST_PARTY_REFERENCE_PRESERVED_NOT_CLAIMED_AS_AUTHENTICATED_STUDENT_RENDERER",
+  "StageA": "A_CLOSED_SOURCE_AND_PRACTICE_SCOPE_PARITY",
+  "StageB": "B_CLOSED_RICHV2_AND_FIRST_PARTY_SOURCE_ALIGNED_PAPER",
+  "StageC": "C_CLOSED_ACADEMIC_SELECTED_OFFLINE_HUMAN_PAPER_ROUTE",
+  "StageD": "NOT_RUN",
+  "tests": "AUTHORED_NOT_RUN",
+  "runtimePractice": "NOT_RUN",
+  "teacherGradePersistence": "NOT_RUN",
+  "rights": "CC_BY_4_0_SOURCE_WITH_INDEPENDENT_FIRST_PARTY_TASKS"
+}

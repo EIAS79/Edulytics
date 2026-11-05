@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+<title id="title">Estimate an irregular region with familiar polygons</title><desc id="desc">A first-party irregular region is overlaid by a rectangle and two triangles. Dimensions show how a practical estimate can be built by adding polygon areas.</desc>
+<rect width="760" height="420" fill="white"/>
+<path d="M120 300 L105 170 L190 80 L360 105 L470 55 L635 150 L610 300 L470 335 L300 315 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+<rect x="190" y="105" width="280" height="210" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 6"/>
+<path d="M105 170 L190 105 L190 315 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 6"/>
+<path d="M470 105 L635 150 L470 315 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="270" y="205" font-size="20">rectangle</text><text x="105" y="120" font-size="18">triangle</text><text x="545" y="120" font-size="18">triangle</text>
+<text x="205" y="355" font-size="18">estimate = areas of chosen simple pieces</text><text x="80" y="390" font-size="18">A good estimate states dimensions, units, assumptions, and why the chosen polygons fit the boundary.</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Proportional distance graph with a unit-rate point</title>
+  <desc id="desc">A first-party coordinate graph with elapsed time in seconds on the horizontal axis and distance in meters on the vertical axis. A straight line starts at the origin and passes through 1 comma 2.5, 4 comma 10, and 8 comma 20.</desc>
+  <rect x="0" y="0" width="640" height="420" fill="white"/>
+  <line x1="80" y1="350" x2="590" y2="350" stroke="currentColor" stroke-width="3"/>
+  <line x1="80" y1="350" x2="80" y2="45" stroke="currentColor" stroke-width="3"/>
+  <text x="300" y="400" font-size="20">elapsed time (seconds)</text>
+  <text x="18" y="205" font-size="20" transform="rotate(-90 18 205)">distance (meters)</text>
+  <g font-size="16" text-anchor="middle">
+    <text x="80" y="374">0</text><text x="140" y="374">1</text>
+    <text x="320" y="374">4</text><text x="560" y="374">8</text>
+  </g>
+  <g font-size="16" text-anchor="end">
+    <text x="68" y="356">0</text><text x="68" y="319">2.5</text>
+    <text x="68" y="206">10</text><text x="68" y="56">20</text>
+  </g>
+  <line x1="80" y1="350" x2="560" y2="50" stroke="currentColor" stroke-width="4"/>
+  <g fill="currentColor">
+    <circle cx="140" cy="312.5" r="6"/><circle cx="320" cy="200" r="6"/><circle cx="560" cy="50" r="6"/>
+  </g>
+  <g font-size="17">
+    <text x="150" y="303">(1, 2.5)</text><text x="330" y="190">(4, 10)</text><text x="474" y="78">(8, 20)</text>
+  </g>
+</svg>

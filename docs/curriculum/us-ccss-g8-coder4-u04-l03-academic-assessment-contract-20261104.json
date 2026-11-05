@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U04:L03",
+  "title": "Balanced Moves",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\3\\index.html",
+      "sha256": "265b98c071f1dbcf3642ab5c27b25bc7455df27763e617389db6486ebd052f1d"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\3\\preparation.html",
+      "sha256": "e146cb23f0d09c91591c616ba5a5d1036ffd576ec4f0b2094cc511dfffc553b2"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\3\\index.html",
+      "sha256": "02568548f02bde721c323bb9ab05a0d28ff8fe1695fc60ea0e09dc6005bc9a79"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\3\\practice.html",
+      "sha256": "0621e1ef8504e1a3ed7c5beb4bb0230b154282a80a6e64c6f5a85c1a3e4f065e"
+    }
+  },
+  "learningGoals": [
+    "Explain which changes to both sides preserve the solution set",
+    "Match equation pairs with balanced hanger moves",
+    "Critique invalid operations and compare two correct solution strategies"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "3.1 • Matching equivalent hangers",
+      "firstPartyTask": "hangers",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "3.2 • Match equations to legal moves",
+      "firstPartyTask": "card-sort",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "3.3 • Keep equality and assess peers",
+      "firstPartyTask": "equality",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u04-l03-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u04-l03-selected-first-party-paper.html",
+    "sha256": "45141fbe1b28780aa7276254ac5439785962cb1d3964ec8ce3e84c6a94321c29",
+    "taskIds": [
+      "hangers",
+      "card-sort",
+      "equality",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Hanger 4x+6=2x+16 gives x5 with legal equal removals.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Cards legal moves identified and separately distributed; multiplying/dividing by zero prohibited.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "2x+6=3x−8 gives x14 after moving x terms, both-sides equivalence.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice 2(4)+3y=20 gives y4, table y15,9,0 and valid moves.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cooldown 5x−10+3=3x+1 =>2x=8 =>x4.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "x": 5,
+    "leftCoeff": 4,
+    "leftConst": 6,
+    "rightCoeff": 2,
+    "rightConst": 16
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

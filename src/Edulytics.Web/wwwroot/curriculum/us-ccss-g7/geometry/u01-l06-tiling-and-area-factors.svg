@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 266" role="img" aria-labelledby="g7u01l06-title g7u01l06-desc">
+<title id="g7u01l06-title">Count area tiles in rectangles at scale factors one, two, and three</title>
+<desc id="g7u01l06-desc">Three-by-one unit rectangle comprises 3 tiles. At scale factor 2 the sides become six-by-two, containing 12 identical square unit tiles. At scale factor 3 the sides become nine-by-three, containing 27 tiles. Every small square is drawn at the same page size, 15 pixels per unit, making the area scale factor equal the square of the length scale factor. The student must draw, tile, count and justify rather than rely on a single number.</desc>
+<style>
+.panel{fill:#fff;stroke:#405163;stroke-width:1.8}.shape{fill:#e5f3fc;stroke:#112b45;stroke-width:2.3}.gridline{stroke:#405163;stroke-width:1}.heading{fill:#102339;font:700 17px system-ui,sans-serif}.note{fill:#102339;font:14px system-ui,sans-serif}
+</style>
+<rect width="760" height="266" fill="#fff"/>
+<text class="heading" x="20" y="28">Length factors 1, 2, 3 — area factors 1, 4, 9</text>
+<rect class="panel" x="18" y="43" width="185" height="175" rx="8"/>
+<rect class="panel" x="218" y="43" width="220" height="175" rx="8"/>
+<rect class="panel" x="453" y="43" width="289" height="175" rx="8"/>
+<text class="heading" x="30" y="69">Original k = 1</text>
+<text class="heading" x="230" y="69">Copy k = 2</text>
+<text class="heading" x="465" y="69">Copy k = 3</text>
+<polygon class="shape" points="66,143 111,143 111,128 66,128"/>
+<polygon class="shape" points="261,143 351,143 351,113 261,113"/>
+<polygon class="shape" points="511,143 646,143 646,98 511,98"/>
+<path class="gridline" d="M81 128V143 M96 128V143 M276 113V143 M291 113V143 M306 113V143 M321 113V143 M336 113V143 M261 128H351 M526 98V143 M541 98V143 M556 98V143 M571 98V143 M586 98V143 M601 98V143 M616 98V143 M631 98V143 M511 113H646 M511 128H646"/>
+<text class="note" x="30" y="195">3 × 1 = 3 tiles</text>
+<text class="note" x="230" y="195">6 × 2 = 12 tiles</text>
+<text class="note" x="465" y="195">9 × 3 = 27 tiles</text>
+<text class="note" x="20" y="245">Area: 3 → 12 → 27 square units. The 1-unit tile size never changes.</text>
+</svg>

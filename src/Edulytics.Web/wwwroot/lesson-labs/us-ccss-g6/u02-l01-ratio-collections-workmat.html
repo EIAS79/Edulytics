@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics • Grade 6 • Ratio collections and colors</title>
+<style>
+:root{font-family:system-ui,Arial,sans-serif;color:#1d2939;background:#f8fafc}main{max-width:850px;margin:auto;padding:1.5rem}h1{font-size:1.65rem}
+section{background:white;border:1px solid #cbd5e1;border-radius:12px;padding:1rem;margin:1rem 0}table{border-collapse:collapse;width:100%}td,th{border:1px solid #cbd5e1;padding:.5rem;text-align:left}input{font:inherit;width:8rem;max-width:100%}button{font:inherit;padding:.35rem .7rem;margin:.2rem;border:1px solid #64748b;border-radius:6px;cursor:pointer}.cells{display:grid;grid-template-columns:repeat(6,2.3rem);gap:.15rem;margin:1rem 0}.cell{width:2.3rem;height:2.3rem;border:1px solid #475569;background:#e2e8f0;padding:0}.cell[data-color=A]{background:#f59e0b}.cell[data-color=B]{background:#3b82f6}.small{color:#475569}.teacher{border-left:4px solid #64748b;padding:.65rem;background:#f1f5f9}
+</style></head><body><main>
+<h1>Ratio language: collections and color</h1>
+<p>Independent Edulytics learning activity. Describe what each quantity means. The order of a ratio matters. Drawings, categories and explanations require teacher review.</p>
+<section><h2>1. Sort a collection</h2><p>Sort 10–50 objects into two or three named groups. You may use objects or an accessible written description.</p><table><thead><tr><th>Category</th><th>Object count</th></tr></thead><tbody><tr><td><input aria-label="Category 1" placeholder="group A"></td><td><input inputmode="numeric" aria-label="Count 1"></td></tr><tr><td><input aria-label="Category 2" placeholder="group B"></td><td><input inputmode="numeric" aria-label="Count 2"></td></tr><tr><td><input aria-label="Category 3" placeholder="optional group C"></td><td><input inputmode="numeric" aria-label="Count 3"></td></tr></tbody></table>
+<p>Write two sentences: “For every ___ [first group], there are ___ [second group].” Reverse the order and explain what changed. Include a part-to-whole comparison.</p>
+<p class="small">Worked example: 9 bananas, 4 apples, 3 plums. Bananas:apples=9:4; plums:apples=3:4; apples:plums=4:3; bananas:plums=9:3=3:1.</p></section>
+<section><h2>2. Shade 24 equal square units</h2><p>Select a color and click squares until you have 16 color-A and 8 color-B units. Your 24-unit model then has A:B=2:1.</p>
+<div><button type="button" id="pickA" aria-pressed="true">Color A • amber</button><button type="button" id="pickB" aria-pressed="false">Color B • blue</button><button type="button" id="clear">Reset</button></div><div class="cells" id="grid" role="group" aria-label="24 equal square units"></div><p id="count" aria-live="polite">A: 0; B: 0; uncolored: 24</p><button type="button" id="check">Check counts only</button><p id="feedback" role="status"></p>
+<p>Now draw a different, non-24-unit shape. For example, 18 equal square units can be split 12 and 6. Explain why 16:8 and 12:6 both describe 2:1 even though the shapes have different areas.</p></section>
+<section><h2>3. Independently authored Cool-down</h2><p>A box contains 8 green counters and 6 red counters. Write green:red, red:green, and green:total ratios. Give one complete “for every” sentence and describe the groups with a labeled diagram.</p>
+<div class="teacher"><strong>Teacher rubric:</strong> green:red=8:6=4:3; reverse=6:8=3:4; green:total=8:14=4:7. Check labeled grouping, correct order, equivalent ratio explanation, correct 24-grid shading, differently sized second figure and oral/written reasoning. These are not certified by the automatic numeric check.</div></section>
+<script>
+const grid=document.getElementById('grid'),colors=Array(24).fill(''),pick={value:'A'};
+function render(){grid.innerHTML='';colors.forEach((color,i)=>{const b=document.createElement('button');b.type='button';b.className='cell';b.dataset.color=color;b.setAttribute('aria-label','Square '+(i+1)+' '+(color||'uncolored'));b.addEventListener('click',()=>{colors[i]=pick.value;render()});grid.appendChild(b)});const a=colors.filter(c=>c==='A').length,b=colors.filter(c=>c==='B').length;document.getElementById('count').textContent='A: '+a+'; B: '+b+'; uncolored: '+(24-a-b)}
+for(const c of ['A','B'])document.getElementById('pick'+c).onclick=()=>{pick.value=c;for(const x of ['A','B'])document.getElementById('pick'+x).setAttribute('aria-pressed',String(x===c))};
+document.getElementById('clear').onclick=()=>{colors.fill('');render();document.getElementById('feedback').textContent=''};
+document.getElementById('check').onclick=()=>{const a=colors.filter(c=>c==='A').length,b=colors.filter(c=>c==='B').length;document.getElementById('feedback').textContent=a===16&&b===8?'Counts meet 16:8=2:1. Teacher still checks your diagram and reasoning.':'Counts are not yet 16 color-A and 8 color-B squares.'};render();
+</script></main></body></html>

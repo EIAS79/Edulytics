@@ -1,0 +1,1701 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "sourceLicensing": "Original Edulytiks figure geometry, no third-party publisher pixels reused",
+  "purpose": "Grade 7-owned first-party geometric diagrams + proposed teacher-only rubric; not executable/selected Practice nor student UI integration",
+  "singleWriterIntegrationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "ownership": "Grade 7 only. Shared visual-kind/renderer/Practice, persistence, authentication and rubric UI require Supervisor 1 designated single writer and protected tests.",
+  "releaseStatus": "BLOCKED",
+  "statusEvidence": {
+    "staticGeometrySourcePresent": true,
+    "authenticatedStudentPageRender": "NOT_RUN",
+    "screenReaderRealDevice": "NOT_RUN",
+    "studentPracticeSelection": "NOT_EXECUTED",
+    "scoringPersistence": "NOT_RUN",
+    "stageA": "NOT_VERIFIED",
+    "stageB": "NOT_VERIFIED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_VERIFIED"
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/1/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "model": {
+        "originalVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "correctScaleFactor": 2,
+        "correctCopyVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "counterexampleVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "unit": "shared drawing grid unit"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Construct the original recognisable 10-vertex F without altering side adjacency",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Apply one scale factor to every corresponding horizontal and vertical length",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Reject horizontal-only stretching with at least two unequal corresponding segment ratios",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Present labeled figure and written/oral explanation to another learner",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Both coordinates multiplied by 2",
+          "expectation": "accepted conceptually subject to figure+reasoning teacher review"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Only horizontal coordinates doubled",
+          "expectation": "must be rejected as nonuniform stretch"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only reports k=2 without drawing",
+          "expectation": "cannot pass full source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "v7GradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v7SharedRendererInvoked": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/2/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "model": {
+        "originalVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctScaleFactor": 1.5,
+        "correctCopyVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            4.5
+          ]
+        ],
+        "vertexMapping": {
+          "A": "D",
+          "B": "E",
+          "C": "F"
+        },
+        "angleMapping": {
+          "BAC": "EDF"
+        },
+        "unit": "shared drawing grid unit"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw both triangles at equal page units and label all six vertices",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Match original and copy points/segments with correct ordered correspondence",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Verify scale factor on both legs and hypotenuse, and preserve the 90 degree right angle",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Explain reciprocal factors and corresponding-angle invariance",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "AB 4→DE 6, AC 3→DF 4.5 and right angle preserved",
+          "expectation": "valid scale 1.5, drawing+label+explanation teacher-reviewed"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Multiply the 90° angle by 1.5",
+          "expectation": "reject; angle remains 90°"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports k=1.5 without vertex mapping",
+          "expectation": "not full credit"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "v7GradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v7SharedRendererInvoked": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/3/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "model": {
+        "originalVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "correctScaleFactors": [
+          0.5,
+          3
+        ],
+        "halfScaleVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2.5
+          ],
+          [
+            0,
+            2.5
+          ]
+        ],
+        "tripleScaleVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            18,
+            6
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            0,
+            15
+          ]
+        ],
+        "unit": "shared drawing grid unit"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw the six-vertex L shape and both requested copies without distorting angles",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Apply the same fraction or whole-number multiplier to every segment and coordinate",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Show why adding the same amount to each length is not scaling",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Submit accurate grid positions, labeled ratios and a critique for teacher review",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Half and triple copies on common grid; segment ratios uniformly 1/2 or 3",
+          "expectation": "valid when figures and explanation checked"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Add 2 units to every side",
+          "expectation": "reject nonmultiplicative construction"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Scale x by 3 but y by 2",
+          "expectation": "reject nonuniform stretch"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "v7GradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v7SharedRendererInvoked": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/6/1/index.html",
+      "staticFirstPartyAsset": null,
+      "publicAssetPath": null,
+      "model": {
+        "unitPrice": "C=0.60*ounces",
+        "fixedFeePrice": "C=3.50+0.25*ounces",
+        "entryFee": "C=8+3*passengers",
+        "toaster": "T=35*ceil(slices/4), positive integer slices; T=0 for zero"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Distinguish proportional table from a fixed-fee relation with at least two quotients",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Infer a per-person fee and additive intercept from evidence; describe zero-input case",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Represent whole-batch capacity with integer ceiling; reject continuous time-per-slice assumption",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Explain multiple strategies and document teacher-reviewed table or reasoning",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "10 oz→$6 in either plan, but 20 oz→$12 or $8.50",
+          "expectation": "shows ratios and fixed offset differ"
+        },
+        {
+          "kind": "correct",
+          "claim": "9 slices require 3 batches of 35 seconds",
+          "expectation": "105 seconds under batch assumption"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "9 slices need 9/4×35=78.75 seconds",
+          "expectation": "reject partial-batch continuous division"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "C=3.50+0.25x is proportional",
+          "expectation": "reject fixed intercept"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/4/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+      "model": {
+        "original": {
+          "width": 4,
+          "height": 3,
+          "diagonal": 5,
+          "unit": "drawing units"
+        },
+        "copy": {
+          "width": 8,
+          "height": 6,
+          "diagonal": 10
+        },
+        "scaleFactor": 2,
+        "correspondingAngleDegrees": 90
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Plot two rectangles with correct corresponding point order and the same drawing unit",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c2",
+            "description": "Measure or justify that hidden diagonals 5 and 10 scale by the same factor two",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c3",
+            "description": "Show corresponding angles remain equal including their 90-degree corners",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c4",
+            "description": "Present a measured, labeled original drawing and an explanation with a reasonable measurement tolerance",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; neither numeric-only answer nor static reference figure certifies original construction or measured reasoning",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Shows both rectangles, diagonal ratio 10/5=2 and equal angles",
+          "expectation": "Satisfies mathematical checks, subject to teacher review"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims diagonals are unchanged when visible edges double",
+          "expectation": "Reject; all corresponding distances must use factor two"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only writes scale factor 2 without measuring or drawing",
+          "expectation": "Not an accepted student construction"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L05",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/5/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+      "model": {
+        "original": [
+          8,
+          4
+        ],
+        "reduced": [
+          4,
+          2
+        ],
+        "enlarged": [
+          12,
+          6
+        ],
+        "factors": [
+          0.5,
+          1,
+          1.5
+        ],
+        "reverseFactors": [
+          2,
+          0.6666666666666666
+        ],
+        "unit": "same graph-paper units"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Construct all three rectangles using one consistent drawing unit and label dimensions",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c2",
+            "description": "Classify k less than one as reduction and k greater than one as enlargement",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c3",
+            "description": "Apply inverse factors 2 and 2/3 to restore original 8 by 4 dimensions",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c4",
+            "description": "Justify uniform scaling with corresponding-side ratios and peer-checked original drawings",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; neither numeric-only answer nor static reference figure certifies original construction or measured reasoning",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "The 4 by 2 reduction and 12 by 6 enlargement restore to 8 by 4 using reciprocal factors",
+          "expectation": "Mathematical concept correct, require original drawing/rubric"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Adds 4 to every reduced side to restore 8 by 4",
+          "expectation": "Reject; the reduced height 2+4 becomes 6 instead of 4"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports k=1/2 without identifying factor 3/2 or drawing the enlargement",
+          "expectation": "Cannot pass full lesson source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L06",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/6/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+      "model": {
+        "originalGrid": [
+          3,
+          1
+        ],
+        "copyFactor2": [
+          6,
+          2
+        ],
+        "copyFactor3": [
+          9,
+          3
+        ],
+        "areaTileCounts": [
+          3,
+          12,
+          27
+        ],
+        "linearFactors": [
+          1,
+          2,
+          3
+        ],
+        "areaFactors": [
+          1,
+          4,
+          9
+        ],
+        "unit": "equal one-square-unit tiles"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Construct each three-by-one, six-by-two and nine-by-three tiled rectangle with equal square tiles",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c2",
+            "description": "Demonstrate 3, 12 and 27 square units by counting the drawn tiles",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c3",
+            "description": "Explain area factors 1:4:9 via squared length factors rather than a mistaken 1:2:3",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c4",
+            "description": "Present an original tiled model with labels and a partner-reviewed multiplication argument",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; neither numeric-only answer nor static reference figure certifies original construction or measured reasoning",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "3 original squares yield 12 and 27 when all side lengths scale by 2 and 3",
+          "expectation": "Correct area mathematics, teacher validates tile figures and reasoning"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims doubling both side lengths doubles total tile count to six",
+          "expectation": "Reject: the area quadruples to twelve tiles"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only states the formula A scales by k² without tiling any figures",
+          "expectation": "Does not fulfill original drawing-and-count activity"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L07",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/7/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+      "model": {
+        "drawingDimensionsCm": [
+          14,
+          7
+        ],
+        "realDimensionsMeters": [
+          28,
+          14
+        ],
+        "mapScale": "1 cm : 2 m",
+        "realBenchMeters": 9,
+        "drawingBenchCm": 4.5
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Make a correctly measured rectangle 14 cm by 7 cm representing the real 28 m by 14 m court",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Draw the independent 4.5 cm bench segment representing a 9 m real object",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Label and justify map-to-real ratios consistently with units and a scale key",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Present a complete original drawing, ruler evidence and peer explanation",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Only a teacher may accept geometry, measurement accuracy and explanation; numeric answer is insufficient",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Shows 14×7 cm court and 4.5 cm bench at 1 cm:2 m",
+          "expectation": "Mathematics correct; teacher still checks ruler and original diagram"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims 9 m bench should be 9 cm at 1 cm:2 m",
+          "expectation": "Reject: the drawn bench should be 4.5 cm"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only computes 28×14 meters without drawing court or bench",
+          "expectation": "Not an accepted source drawing"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/8/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+      "model": {
+        "mapScale": "1 cm : 4 km",
+        "roadSegmentCm": [
+          2,
+          2,
+          2
+        ],
+        "roadLengthCm": 6,
+        "roadActualKm": 24,
+        "directLengthCm": 5,
+        "directActualKm": 20,
+        "excessKm": 4
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw three connected road segments and a distinct straight endpoint-to-endpoint segment",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Measure or label 6 cm total route and 5 cm direct distance on the same scale",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Convert both distances using 1 cm:4 km and explain 24 km versus 20 km",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Distinguish traveled route from direct separation, justify assumptions and check with a peer",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Only a teacher may accept geometry, measurement accuracy and explanation; numeric answer is insufficient",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Road 6 cm / 24 km, direct 5 cm / 20 km, road longer by 4 km",
+          "expectation": "Correct only if corresponding diagram is consistent"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Uses straight-line 20 km as total traveled road distance",
+          "expectation": "Reject: road segment lengths must be summed"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports 24 km without direct comparison or actual map measurements",
+          "expectation": "Requires teacher review; incomplete source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/9/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+      "model": {
+        "realRoomMeters": [
+          7,
+          5
+        ],
+        "drawingRoomCm": [
+          7,
+          5
+        ],
+        "mapScale": "1 cm : 1 m",
+        "realDoorMeters": 1.5,
+        "drawingDoorCm": 1.5,
+        "doorPlacement": "lower 7-meter wall, open gap rather than solid wall"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw accurately scaled and labeled 7 cm by 5 cm room boundary",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Leave a genuine 1.5 cm opening for a 1.5 m door at a plausible location",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Include 1 cm:1 m scale key, units, features and wall measurements",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Show peer feedback and revise construction or explanations where needed",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Only a teacher may accept geometry, measurement accuracy and explanation; numeric answer is insufficient",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "7×5 cm plan, 1.5 cm lower-wall gap, scale and labels",
+          "expectation": "Mathematical draft acceptable subject to teacher-reviewed drawing and revision"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Closes all four walls then marks the 1.5 cm doorway on top of a solid line",
+          "expectation": "Reject as an inaccurate drawn opening"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Writes 7×5 cm without a floor plan, scale key or door",
+          "expectation": "Not a complete source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L10",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/10/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l10-changing-plan-scales.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l10-changing-plan-scales.svg",
+      "model": {
+        "realMeters": [
+          300,
+          180
+        ],
+        "firstDrawingCm": [
+          10,
+          6
+        ],
+        "secondDrawingCm": [
+          15,
+          9
+        ],
+        "firstScale": "1cm:30m",
+        "secondScale": "1cm:20m",
+        "drawingAreaFactor": 2.25
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw the identical real garden correctly under both labeled scales",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Show that 10x6 cm and 15x9 cm correspond to the same 300x180 m land",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Explain length ratio 1.5 and drawing-area ratio 2.25, not changes in actual land",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Document the ruler check, accurate labels and peer comparison",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "10×6 drawing at 1cm:30m and 15×9 drawing at 1cm:20m; drawing area ratio 2.25",
+          "expectation": "Mathematically sound with teacher-reviewed diagrams"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Says real garden gets 2.25 times bigger when drawing scale changes",
+          "expectation": "Reject: only paper-drawing area differs"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports 15×9 without either scale key or drawings",
+          "expectation": "Not complete"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L11",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/11/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l11-unitless-scale-conversion.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l11-unitless-scale-conversion.svg",
+      "model": {
+        "firstScale": "1 drawing in:15 real ft",
+        "sameUnitScale": "1:180",
+        "actualWallFt": 6,
+        "actualWallInches": 72,
+        "drawingWallInches": 0.4
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Convert 15 actual feet to 180 actual inches before treating 1:180 as unitless",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Convert 6-foot wall to 72 inches and draw its 0.4-inch representation",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Use a ruler and consistently labeled original inch scale key",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Explain why inverse measurement is 180 drawing-units to one actual unit and critique unit mistakes",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "1 in:15 ft becomes 1:180 and 6 ft wall is 0.4 in on drawing",
+          "expectation": "Mathematical check; teacher still inspects measured segment"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Writes unitless 1:15 without converting feet to inches",
+          "expectation": "Reject inconsistent units"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports 1:180 but does not draw measured wall",
+          "expectation": "Needs student artifact"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L12",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/12/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l12-unit-conversion-area-flag.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l12-unit-conversion-area-flag.svg",
+      "model": {
+        "realMeters": [
+          20,
+          12
+        ],
+        "actualAreaSquareMeters": 240,
+        "drawingCm": [
+          20,
+          12
+        ],
+        "drawingAreaSquareCm": 240,
+        "sameUnitAreaFactor": 10000,
+        "scale": "1:100"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Convert 20x12 meters into centimeters and apply unitless 1:100 to both lengths",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Construct correct 20x12 centimeter plan and label units and scale",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Compute both areas with explicitly converted square units, demonstrating factor 10000",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Distinguish identical bare numbers 240 from different units m² and cm² and explain to a peer",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "240 m² actual = 2,400,000 cm² while drawing is 240 cm²",
+          "expectation": "Valid conversion, original plan still must be reviewed"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims actual and drawing areas are equal because both numbers are 240",
+          "expectation": "Reject incompatible area units"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only reports 1:100 without drawing or converting area units",
+          "expectation": "Not complete"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L13",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/13/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l13-classroom-floor-plan-peer-review.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l13-classroom-floor-plan-peer-review.svg",
+      "model": {
+        "roomMeters": [
+          8,
+          6
+        ],
+        "drawingCm": [
+          8,
+          6
+        ],
+        "doorMeters": 1,
+        "drawingDoorCm": 1,
+        "boardMeters": 3,
+        "drawingBoardCm": 3,
+        "scale": "1cm:1m"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Create a measured 8 by 6 cm classroom drawing with accurate room proportions",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Include an actual 1 cm doorway opening and a separate correctly positioned 3 cm board",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Provide complete scale key, actual dimensions, units and feature labels",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Exchange diagram, document meaningful partner critique and revise the original plan",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "8×6 cm floor plan with 1cm actual wall gap and 3cm board at 1cm:1m",
+          "expectation": "Needs full teacher rubric and peer-revision evidence"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Adds a door icon on top of a solid wall and labels it as an opening",
+          "expectation": "Reject inaccurate plan geometry"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Produces correct room area but no doorway/board plan or peer revision",
+          "expectation": "Not a completed source project"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    }
+  ],
+  "v7": {
+    "partial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "integrationHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v7-svg-student-renderer-integration-handoff.json",
+    "studentsAuthenticatedRendered": 0,
+    "rubricsScoredOrPersisted": 0,
+    "sharedRendererInvoked": false,
+    "teacherUiIntegration": false,
+    "release": "NO_GO"
+  },
+  "v8": {
+    "status": "COMPLETE_U01_THIRTEEN_GRADE_ONLY_REFERENCE_FIGURES_FOURTEEN_DRAFT_TEACHER_RUBRICS_STILL_NOT_RENDERED",
+    "scope": "Added U01 L04–L06 teacher-only rubric drafts and original SVG diagrams, alongside existing U01 L01–L03 and U06 L01 candidates. Shared renderer, selected Practice, student artifact persistence, teacher scoring, cross-tenant tests and authenticated UI still NOT_RUN.",
+    "gradeOnlyPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "sourceMathMathOracles": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "requiredSharedIntegration": "https://github.com/EIAS79/Edulytics/issues/592",
+    "stageA": "NOT_VERIFIED",
+    "stageB": "NOT_VERIFIED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_VERIFIED",
+    "geometryRubricDrafts": 13,
+    "totalRubricDrafts": 14,
+    "batch2": "U01 L07–L09 court, map and floorplan diagrams and teacher-only rubric drafts",
+    "batch3": "U01 L10–L13 original garden unit-conversion and classroom diagrams plus teacher only criteria"
+  }
+}

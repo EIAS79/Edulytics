@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L16",
+  "unit": "U01",
+  "officialOrdinal": 16,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\16\\index.html",
+      "sha256": "acbda1d66d6a996d3435771e31950486c9b1dec469c20f06a58cfa8aa5d0e486"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\16\\index.html",
+      "sha256": "9ca94211cb058f027a350fcc66058d8a31202cd0f5cef2171643173200f21300"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\16\\preparation.html",
+      "sha256": "3f44d2ad6ca6699c78c8201d479bf60e2d11de2b7a8bc29b7a1d8891899ffe89"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.NS.A"
+    },
+    {
+      "role": "BuildingOn",
+      "reference": "8.G.A.1.b"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.5"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.B.6"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "16.1: True or False: Computational Relationships",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Judge 62−28=60−30 false, 3·(-8)=2·(-8)-8 true, and (16+24)/(-2)=40/(-2) true; show calculations.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "16.2: Angle Plus Two",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Rotate triangle around the midpoints of two sides through 180° and use resulting parallel lines to compare angles.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "16.3: Every Triangle in the World",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Draw a line through a vertex parallel to opposite side and justify that three adjacent transferred angles form 180° for any triangle.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "16.4: Four Triangles Revisited",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Use congruent triangle copies to make and analyze a four-triangle composite figure.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L16 Parallel Lines and the Angles in a Triangle",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 0
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l16-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 4,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": 65,
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "c5222978d508078e25b4d4a5fabd4fb7403c4308",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:02:20.365567+00:00",
+  "nextLesson": "U01:L17",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}

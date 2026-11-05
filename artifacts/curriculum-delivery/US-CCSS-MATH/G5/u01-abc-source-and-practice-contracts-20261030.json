@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-30",
+  "scope": "Grade5 U01 First Edition 2021",
+  "source": "Authorized local Our-CS original book HTML, read-only teacher lesson, teacher preparation, Student Facing, image alt descriptions",
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "commitBeforeUnitHandoff": "144131cb0e8c56f0fe5cce654385268bf600065c",
+  "lessonCount": 12,
+  "sourceLessonReviews": 12,
+  "lessonSpecificCommits": 12,
+  "contentRepairs": [
+    1,
+    2,
+    3,
+    4,
+    8
+  ],
+  "contentReused": [
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12
+  ],
+  "digitalPracticeContractDrafts": 12,
+  "engineReuse": 12,
+  "newEngines": 0,
+  "testsExecuted": false,
+  "stageDExecuted": false,
+  "stageC": {
+    "sourceSkillContractsAuthored": 12,
+    "selectedPracticeVerified": 0,
+    "teacherRubricLiveVerified": 0,
+    "sharedExactMappingConfirmed": 1
+  },
+  "pedagogicalProgress": "12/12 LESSONS SOURCE-REVIEWED, STAGE A-B-C CANDIDATE CONTENT REPAIRED/REUSED",
+  "acceptance": {
+    "sourceElementFullParity100": false,
+    "richV2EffectiveRenderVerified": false,
+    "practiceSelectedRuntimeVerified": false,
+    "gradeAcademicallyAcceptedLessons": 0,
+    "unitReadyForStageD": false
+  },
+  "remainingAcceptanceGates": [
+    "Original source figures represented by verified HTML alt text; image binaries not inspected; no publisher artwork imported",
+    "Original publisher cooldowns teacher-gated where source has them; source-appropriate original exit checks reused",
+    "Practice generation/selection and teacher-reviewed open work cannot be certified without execution/integration",
+    "User prohibited executing Stage D/CI; written test contracts are NOT_RUN"
+  ],
+  "lessonContracts": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+      "title": "What Is Volume?",
+      "primarySkill": "unit_cube_construction_comparison",
+      "sourceTasks": "Different 8-cube forms; connected 9-cube constructions",
+      "independentMathOracle": "8=8; 9=9",
+      "teacherReviewRequiredFor": "WODB, constructing, verbal justification",
+      "forbiddenShortcuts": "unit_cube_count digital questions are supplementary only; teacher scores construction",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "MAPPING_usccss.g5.unit_cube_count_METADATA_ONLY; NOT SOURCE_EQUIVALENT_ON_ITS_OWN",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-source-figure-audit-20261030.json",
+      "sourceReviewCommit": "d27eb4138f78cdb6415ddb9bb8782dfb52d16d90"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
+      "title": "Measure Volume",
+      "primarySkill": "count_unit_cubes_and_describe_prisms",
+      "sourceTasks": "Build 8–12 cubes; Guess My Prism 16–24 cubes",
+      "independentMathOracle": "3×2×3=18",
+      "teacherReviewRequiredFor": "Partner builds, recreates shape and explains hidden cubes",
+      "forbiddenShortcuts": "Numeric cube count alone cannot assess matching-prism description",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-source-review-20261030.json",
+      "sourceReviewCommit": "13cdf20510234456cb0a1acca0d20047e8e51174"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
+      "title": "Volumes of Prism Drawings",
+      "primarySkill": "packed_prism_hidden_cube_layer_count",
+      "sourceTasks": "4×2×5, 4×3×5, 4×4×5",
+      "independentMathOracle": "40,60,80",
+      "teacherReviewRequiredFor": "Build prism from card; explain equivalent layer orientations",
+      "forbiddenShortcuts": "Do not treat visible top-face cube count as total",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l03-abc-source-review-20261030.json",
+      "sourceReviewCommit": "2000b651f252243ad09e9b1df5d68425311c62fa"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
+      "title": "Use Layers to Determine Volume PLC Activity",
+      "primarySkill": "partial_drawing_complete_layer_inference",
+      "sourceTasks": "Estimate under hidden depth and interpret one 6×4×5 prism",
+      "independentMathOracle": "5×24=6×20=4×30=120",
+      "teacherReviewRequiredFor": "Reasonable low/high estimates and geometric explanations",
+      "forbiddenShortcuts": "No exact volume from incomplete dimensions unless full prism dimensions supplied",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-abc-source-review-20261030.json",
+      "sourceReviewCommit": "533ae437bfa5398af4e90b3175524ab6cc812fd2"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
+      "title": "Side Lengths of Rectangular Prisms PLC Activity",
+      "primarySkill": "base_area_times_height_and_base_rotation",
+      "sourceTasks": "4×10 base and heights 1,2,3,10,25",
+      "independentMathOracle": "40,80,120,400,1000",
+      "teacherReviewRequiredFor": "Invent questions for answers 3,5,12,60 and compare bases",
+      "forbiddenShortcuts": "Base area and height must correspond to same model",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l05-abc-source-review-20261030.json",
+      "sourceReviewCommit": "a4525d1d179c9682c7968933ec06a23f338a85bd"
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
+      "title": "Expressions for Volume",
+      "primarySkill": "equivalent_prism_volume_expressions",
+      "sourceTasks": "True/false; prism-expression card sort; optional Two Truths and a Lie",
+      "independentMathOracle": "40=40; 40≠400; 6×3×4=72",
+      "teacherReviewRequiredFor": "Interpret expression factors with actual prism, defend rejected choices",
+      "forbiddenShortcuts": "Equal numerical product not enough when shape metadata conflicts",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l06-abc-source-review-20261030.json",
+      "sourceReviewCommit": "475ab547f4bec906fb75a225ee0c7556f04faad4"
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
+      "title": "Cubic Units of Measure",
+      "primarySkill": "cubic_unit_selection_and_information_gap",
+      "sourceTasks": "Choose cm³/in³/ft³; ask missing measurement for freezer",
+      "independentMathOracle": "4×2×3=24 cubic feet (independent example)",
+      "teacherReviewRequiredFor": "Teacher checks units, information requests, contextual suitability",
+      "forbiddenShortcuts": "Do not invent missing dimension on incomplete source problem card",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l07-abc-source-review-20261030.json",
+      "sourceReviewCommit": "8aa6411ac19ce25f47023e868d790b4b6a47f9ae"
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
+      "title": "Figures Made of Prisms",
+      "primarySkill": "nonoverlap_composite_prism_volume",
+      "sourceTasks": "Join 12 + 10 cubes; source figures including extra cube",
+      "independentMathOracle": "22,30,46,50,60,57",
+      "teacherReviewRequiredFor": "Describe nonoverlapping partition and WODB alternatives",
+      "forbiddenShortcuts": "Do not count shared/overlapping cubes twice",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l08-abc-source-review-20261030.json",
+      "sourceReviewCommit": "196694c3af166f29d6d25a0ce97422f6b0e41309"
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
+      "title": "Measure Figures Made From Prisms",
+      "primarySkill": "composite_edge_inference_and_multi_decomposition",
+      "sourceTasks": "Different cuts of stepped solids, feet vs inches",
+      "independentMathOracle": "78 ft³,259 in³,420 in³",
+      "teacherReviewRequiredFor": "Explain where missing edges and each sum term lie",
+      "forbiddenShortcuts": "Do not accept correct total with wrong geometric dissection",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-abc-source-review-20261030.json",
+      "sourceReviewCommit": "c02e59e788e92d54fac4acaedb752fdaaa91498b"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L10",
+      "title": "Represent Volume with Expressions PLC Activity",
+      "primarySkill": "additive_subtractive_composite_volume",
+      "sourceTasks": "125−30 and three 168-ft³ expressions",
+      "independentMathOracle": "95 cubic units,168 ft³",
+      "teacherReviewRequiredFor": "Explain Mai's bounding subtraction and missing edges",
+      "forbiddenShortcuts": "Subtract only truly absent prism volume",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l10-abc-source-review-20261030.json",
+      "sourceReviewCommit": "dbcdd9c4b77d229109c73bcd85550277112f7586"
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
+      "title": "All Kinds of Prisms",
+      "primarySkill": "volume_from_dimensions_base_area_and_composites",
+      "sourceTasks": "300-cube box, 180-ft³ box, 270-ft³ closet, 216-ft³ garden",
+      "independentMathOracle": "300,180,270,216",
+      "teacherReviewRequiredFor": "Redesign two-piece garden preserving total volume",
+      "forbiddenShortcuts": "Garden joints must not overlap",
+      "optional": false,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l11-abc-source-review-20261030.json",
+      "sourceReviewCommit": "2d11313b6ddf6e5c7bd1bac93ea062b7218bdd20"
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
+      "title": "Lots and Lots of Garbage (optional)",
+      "primarySkill": "unit_cube_arrays_and_contextual_estimation",
+      "sourceTasks": "Five different arrangements of 60 shipping containers; estimate ship count",
+      "independentMathOracle": "5 valid 60-factor arrays; no unique ship count",
+      "teacherReviewRequiredFor": "Estimate reasonableness/assumptions; distinguish 3300 tons of mass",
+      "forbiddenShortcuts": "Do not infer cubic space from tonnes alone; optional lesson",
+      "optional": true,
+      "preferredEngineStrategy": "REUSE_EXISTING; EXTEND_ONLY_AFTER_CONFIRMED_DEFICIT",
+      "verifiedSelectedPracticeRoute": "NOT_VERIFIED_IN_EXPLICIT_SHARED_MAPPING",
+      "digitalAnswerTypes": [
+        "numeric_with_units_when_applicable",
+        "equivalent_expressions_when_algebraic"
+      ],
+      "humanAnswerTypes": [
+        "constructed_models",
+        "written_explanations",
+        "open_diagrams_and_comparisons"
+      ],
+      "gradeLocalContractStatus": "DESIGN_DRAFT_NOT_EXECUTABLE_SELECTED_ROUTE",
+      "sourceEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l12-abc-source-review-20261030.json",
+      "sourceReviewCommit": "144131cb0e8c56f0fe5cce654385268bf600065c"
+    }
+  ],
+  "decision": "UNIT01_SOURCE_REVIEW_COMPLETED_WITH_OPEN_ACCEPTANCE_GATES_NOT_FINAL_AC_CLOSURE"
+}

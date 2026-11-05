@@ -1,0 +1,14 @@
+# Grade 8 A-B-C sequential execution ? standing local-source policy
+- Course: US-CCSS Math Grade 8, 9 units, 131 lessons; edition OUR-IM 2017?2019.
+- Teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\08_Grade_8_OUR_IM.
+- Student: C:\Users\khali\Downloads\New folder (2)\Common Core\08_Grade_8_OUR_IM_Student.
+- Never substitute AccessIM/v360 or K-5 2021. Read source locally on the authorized desktop.
+- Resume at currentSequentialABCCursor in us-ccss-g8-coder4-p0-current-execution-ledger-20261030.json.
+- A: compare source objectives, Warm-up, activities, materials, practice, figures and teacher guidance; fix only actual differences.
+- B: preserve valid Edulytiks content, reuse engines first, extend when appropriate; new engine only for distinct mechanics.
+- C: author focused test fixtures but DO NOT run tests/CI in A-B-C; include teacher-scored physical and drawing tasks and independent first-party Cool-down where teacher originals are login-only.
+- Record source SHA256, original assessment and human rubric, and READY_FOR_STAGE_D only after source review.
+- Move strictly to the next lesson only after a lesson-specific closure Git commit. Batch GitHub pushes; aggregate reports after each unit.
+- Do not imply automated grading, authenticated rendering, runtime persistence, or publisher 1:1 certification from offline paper evidence.
+- Owner academically approves first-party content; internal source provenance and any applicable third-party licensing remain distinct from public endorsement.
+- Time claims must be measured, not invented. Do not add REVIEW complete 2021 for Grade 8.

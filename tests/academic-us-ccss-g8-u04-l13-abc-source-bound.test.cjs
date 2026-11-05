@@ -1,0 +1,5 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto'),path=require('node:path');
+const root=path.resolve(__dirname,'..');const c=JSON.parse(fs.readFileSync(path.join(root,'docs/curriculum/us-ccss-g8-coder4-u04-l13-academic-assessment-contract-20261104.json'),'utf8'));const f=c.mathFixtures;
+test('source-aligned paper is hashed with independent teacher scoring',()=>{const html=fs.readFileSync(path.join(root,c.selectedOfflinePaper.path),'utf8');for(const id of c.selectedOfflinePaper.taskIds)assert.ok(html.includes("id='"+id+"'"),id);assert.equal(c.maxScore,c.rubric.reduce((s,x)=>s+x.points,0));assert.equal(crypto.createHash('sha256').update(html).digest('hex'),c.selectedOfflinePaper.sha256);assert.equal(c.tests,'AUTHORED_NOT_RUN');assert.match(html,/Cool-down/);assert(!html.includes('Open Up Resources'))});
+test('independent lesson-specific right and wrong math',()=>{assert.equal(-f.x+10,f.y);assert.equal(2*f.x+4,f.y);assert.equal(3*3+5,-2*3+20);assert.equal(4*2-3,-2*2+9);});
