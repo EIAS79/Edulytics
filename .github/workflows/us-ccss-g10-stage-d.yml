@@ -152,7 +152,7 @@ jobs:
       - name: Fail closed unless 124 complete source-element maps are evidenced
         run: node tools/curriculum/g10-stage-d-audit.cjs --strict-source
 
-  practice-route-coverage:
+  lesson-runtime-route-coverage:
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 15
@@ -163,5 +163,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Require verified Grade 10 lesson-specific Practice routing
+      - name: Require verified digital Practice or tested tenant-isolated teacher-review route
         run: node tools/curriculum/g10-stage-d-audit.cjs --strict-practice

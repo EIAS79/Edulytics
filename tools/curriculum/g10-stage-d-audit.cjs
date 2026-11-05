@@ -28,7 +28,7 @@ const ec=new Map(ledger.LessonEntries.map(l=>[l.LessonCode,l]));
 for(const [name,arr] of [['blueprint',blueprint.Lessons],['rich',rich],['ledger',ledger.LessonEntries]]){
   check(new Set(arr.map(x=>x.LessonCode)).size===124,'DUPLICATE_'+name,'duplicate or missing');
 }
-const lessons=[];let ordinal=0;let mappedSourceLessonCount=0;let mappedSourceRows=0;const sourceMapKinds={};
+const lessons=[];let ordinal=0;let mappedSourceLessonCount=0;let mappedSourceRows=0;const sourceMapKinds={};let assessedLessons=0;let teacherAuthoredRoutes=0;let runtimeVerifiedRoutes=0;
 for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
   ordinal++;
   const code=prefix+`U${String(u).padStart(2,'0')}:L${String(l).padStart(2,'0')}`;
@@ -37,6 +37,19 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
   if(b) check(b.SortOrder===ordinal && b.UnitNumber===u && b.LessonNumber===l,'BLUEPRINT_ORDER',code);
   if(e) check(e.Ordinal===ordinal && e.ABCReadyForD===true,'ABC_LESSON_NOT_READY',code);
   if(r) check(typeof r.Title==='string' && r.Title.length>0 && Array.isArray(r.WorkedExamples) && Array.isArray(r.ExplanationParagraphs),'RICH_SHAPE',code);
+  const assessmentPath=e?.AssessmentPath;
+  check(!!assessmentPath && exists(assessmentPath),'ASSESSMENT_ARTIFACT_MISSING',code);
+  const assessment=assessmentPath&&exists(assessmentPath)?read(assessmentPath):null;
+  if(assessment){
+    check(assessment.LessonCode===code,'ASSESSMENT_CODE_MISMATCH',code);
+    assessedLessons++;
+    const humanKey=['HumanRubric','TeacherHandoff','PaperHandoff','PaperDelivery','TeacherPaperHandoff','TeacherAssessmentRequired','Rubric','OriginalFirstPartyTaskRubric','TeacherReview','TeacherPaperReview','Handoff','Tasks','Modality'].some(k=>assessment[k]!==undefined);
+    if(humanKey)teacherAuthoredRoutes++;
+    // Do not infer runtime success from authored rubrics, approved owner, or framework-level acceptance.
+    // A future verified runtime evidence contract must contain a candidate SHA and an Actions run ID.
+    const evidence=assessment.StageDRuntimeEvidence;
+    if(evidence?.CandidateSha && evidence?.ActionsRunId && evidence?.TeacherScorePersisted===true && evidence?.TenantIsolated===true)runtimeVerifiedRoutes++;
+  }
   const cp=e?.SourceCheckpoint;
   check(!!cp && exists(cp),'SOURCE_CHECKPOINT_MISSING',code);
   const evidence=cp&&exists(cp)?read(cp):null;
@@ -58,10 +71,10 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
 const structural={pass:issues.length===0,errors:issues,count:lessons.length,units:8,
   blueprintHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json'))).digest('hex'),
   sourceEvidenceCompleteCount:lessons.filter(x=>x.sourceEvidenceComplete).length,
-  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
+  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
 const result={structural,lessons};
 if(process.argv.includes('--json')) console.log(JSON.stringify(result,null,2));
 else console.log(JSON.stringify(structural,null,2));
 if(issues.length)process.exitCode=1;
-if(process.argv.includes('--strict-practice') && verifiedMapped.length!==124){console.error('FAIL_CLOSED: Grade10 verified practice mappings '+verifiedMapped.length+'/124');process.exitCode=4}
+if(process.argv.includes('--strict-practice') && (verifiedMapped.length+runtimeVerifiedRoutes)<124){console.error('FAIL_CLOSED: Grade10 lesson runtime routes require verified digital and/or independently tested teacher-scored route: digital '+verifiedMapped.length+'/124, teacher persisted/tenant-isolated '+runtimeVerifiedRoutes+'/124. Teacher-authored rubrics are not effective runtime proof.');process.exitCode=4}
 if(process.argv.includes('--strict-source')&&lessons.some(x=>!x.sourceEvidenceComplete)){console.error('FAIL_CLOSED: grade10 source-element 1:1 coverage not demonstrated');process.exitCode=2}
