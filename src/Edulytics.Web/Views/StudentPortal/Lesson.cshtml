@@ -1909,7 +1909,8 @@
                        generated visual; mathematical labels and axes must
                        remain available to all authenticated Grade 8 learners. *@
                     @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G8:", StringComparison.Ordinal) &&
-                         Model.WorkedExamples.Contains("Description:", StringComparison.OrdinalIgnoreCase))
+                         (Model.WorkedExamples.Contains("Description:", StringComparison.OrdinalIgnoreCase) ||
+                          Model.WorkedExamples.StartsWith("Example:", StringComparison.OrdinalIgnoreCase)))
                     {
                         <section class="lesson-learning-section lesson-learning-section--examples"
                                  aria-label="Complete written descriptions of worked examples">
