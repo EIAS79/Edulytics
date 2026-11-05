@@ -1868,6 +1868,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L06",
+            "statistics.bivariate.residual",
+            "ALG1_U03_EXACT_CORRELATION_OR_RESIDUAL_PLUS_TEACHER_GRAPH_REASONING",
+            ["statistics.linear_model.residual"],
+            "ALG1_U03_L06_SOURCE_STATISTICS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U03:L01",
             "supporting.fractions.multiply_divide",
