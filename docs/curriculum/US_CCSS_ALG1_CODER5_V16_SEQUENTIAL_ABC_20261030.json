@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U07:L21",
+  "nextCanonical": "U07:L22",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -5958,25 +5958,66 @@
       "sourceReviewStartedAtUtc": "2026-11-05T13:07:18.356410+00:00",
       "abcPreparedAtUtc": "2026-11-05T13:07:18.407921+00:00",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L20_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+      "unitCode": "U07",
+      "lessonNumber": 21,
+      "title": "Sums and Products of Rational and Irrational Numbers",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "3599f45307184fe2387835c331d2928a8197fb223754b57f16e429f24e8be043",
+        "ti": "91b5156d91ea44e8f1f5bee6727bb0c91d35bfed070b8b06302b43d9c1a49777",
+        "tpr": "ec3be23cfbddc252c704dda59b0702952d237128ba8d530b7d4fb18a968c569c",
+        "si": "5ebfee1dabaaf0175acd7cc50b4715940cfed0d451886a71283cba451ff8bd37",
+        "spr": "925d7b8008f9da459833718154319300e2df8090cd40418573d93fe128dab5f0"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u07-l21-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u07-l21-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "original teacher/student learning goals, activities and practice source revalidated with hashes; existing aligned examples preserved"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "firstPartyCooldown": "AUTHORED",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_SUBSKILLS_TESTS_NOT_RUN",
+        "exactPath": [
+          "supporting.surds.coefficient"
+        ],
+        "teacherReviewRequired": [
+          "rational/irrational classification and proof"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "sourceReviewStartedAtUtc": "2026-11-05T13:07:21.323116+00:00",
+      "abcPreparedAtUtc": "2026-11-05T13:07:21.378878+00:00",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L21_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 128,
-    "B_CLOSED": 128,
-    "C_PREPARED": 128,
-    "ABC_READY_FOR_D": 128,
+    "A_CLOSED": 129,
+    "B_CLOSED": 129,
+    "C_PREPARED": 129,
+    "ABC_READY_FOR_D": 129,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 4,
+    "REMAINING": 3,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 6,
     "CURRENT_UNIT": "U07",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L21",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L22",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -6011,12 +6052,12 @@
     "unitsABCCLosed": 6,
     "status": "U07_IN_PROGRESS",
     "previouslyABCClosed": 108,
-    "newlyABCClosed": 20,
+    "newlyABCClosed": 21,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L20",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -6048,9 +6089,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U07_IN_PROGRESS_L21",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L20",
+  "unitStatus": "U07_IN_PROGRESS_L22",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -6060,9 +6101,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L20",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L20_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L21_ABC_CLOSURE_20261105.md"
 }
