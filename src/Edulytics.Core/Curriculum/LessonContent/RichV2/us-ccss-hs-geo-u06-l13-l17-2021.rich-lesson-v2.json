@@ -226,12 +226,16 @@
       "CultureCode": "en",
       "Title": "Weighted Averages",
       "ExplanationParagraphs": [
-        "Learning goal: Partition a segment at a stated positive ratio using weighted coordinate averages, and interpret internal versus external division.",
+        "Learning goal: Partition segments in stated ratios using weighted averages and connect internal partitioning to dilation from a common center.",
         "Point P at fraction t∈[0,1] from A to B is A+t(B−A) Compute each coordinate separately",
         "If AP:PB=m:n with m,n>0 then t=m/(m+n) Distinguish segment from entire line",
         "Original student activities also compare a weighted average P=(1/3)A+(2/3)B with a 2:1 internal segment partition and construct a 1:4 dilation of a quadrilateral using A as centre. The lesson should make the shared centre and a consistent scale factor visible, not only compute isolated segment coordinates.",
         "Original student task: Draw line and mark partition ratios in two different coordinate settings; teacher checks exact construction. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 15, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 15, CC BY 4.0. Independently authored examples; no source artwork or protected assessments.",
+        "Source alignment repair: Retains midpoint as the 1:1 special case.",
+        "Source alignment repair: Retains the source 2:1 weighted-average connection.",
+        "Source alignment repair: Retains the 1:4 common-centre quadrilateral partition and dilation interpretation.",
+        "Edulytics independent cool-down: A=(0,0) and B=(10,5). Find the point P with AP:PB=2:3 using a weighted average, and state the fraction of the way from A to B."
       ],
       "KeyConcepts": [
         {
@@ -304,6 +308,7 @@
         }
       ],
       "SummaryPoints": [
+        "Partition segments in stated ratios using weighted averages and connect internal partitioning to dilation from a common center.",
         "Partition a segment at a stated positive ratio using weighted coordinate averages, and interpret internal versus external division.",
         "For AP:PB=m:n with m,n>0, P=(n/(m+n))A+(m/(m+n))B; a whole-polygon dilation needs one common centre and the same factor.",
         "Teacher evaluation is required for original coordinate proofs and graphical submissions."
