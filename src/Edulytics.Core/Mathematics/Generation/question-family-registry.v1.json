@@ -20649,6 +20649,54 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.inequality.context.operator_choice",
+      "version": 1,
+      "skillId": "algebra.inequalities.modeling",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-inequality-source-scoped",
+      "representations": ["inequality","candidate_or_operator","teacher_led_graph_and_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.inequality.one_variable.candidate_check",
+      "version": 1,
+      "skillId": "algebra.inequalities.one_variable",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-inequality-source-scoped",
+      "representations": ["inequality","candidate_or_operator","teacher_led_graph_and_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.inequality.two_variable.candidate_check",
+      "version": 1,
+      "skillId": "algebra.inequalities.two_variable",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-inequality-source-scoped",
+      "representations": ["inequality","candidate_or_operator","teacher_led_graph_and_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.inequality.system.candidate_check",
+      "version": 1,
+      "skillId": "algebra.inequalities.systems",
+      "requiredCapabilities": ["lesson.practice.exact.generate","lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-inequality-source-scoped",
+      "representations": ["inequality","candidate_or_operator","teacher_led_graph_and_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -1742,6 +1742,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L18",
+            "algebra.inequalities.modeling",
+            "ALG1_CONTEXT_TO_INEQUALITY_OPERATOR_CHOICE_PLUS_TEACHER_MODEL",
+            ["algebra.inequality.context.operator_choice"],
+            "ALG1_U02_L18_CONTEXT_OPERATOR_PLUS_TEACHER_CONTEXT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G5:U03:L01",
             "supporting.fractions.multiply_divide",
