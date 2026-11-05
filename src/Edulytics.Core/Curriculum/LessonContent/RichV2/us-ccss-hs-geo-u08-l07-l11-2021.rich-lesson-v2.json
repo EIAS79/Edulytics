@@ -272,11 +272,15 @@
       "CultureCode": "en",
       "Title": "Using Tables for Conditional Probability",
       "ExplanationParagraphs": [
-        "Learning goal: Compute row-conditional and column-conditional probabilities from a frequency table and distinguish them from marginals.",
+        "Learning goal: Create and use two-way tables to estimate conditional probabilities and determine whether events appear independent in the observed data.",
         "Given event A in a two-way table, P(B|A)=count(A∩B)/count(A) when count(A)>0; the denominator is the A row total. The marginal P(B)=count(B)/N uses the grand total instead.",
         "Given B, the reversed conditional P(A|B)=count(A∩B)/count(B) when count(B)>0. To check independence in the empirical table distribution, compare P(B|A) with P(B), or test P(A∩B)=P(A)×P(B).",
         "Original student task: Use an original school-club hypothetical contingency table, justify population and limitations; teacher scores model. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 9, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 9, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses.",
+        "Source alignment repair: Retain the source medicine/placebo and blood-bank table contexts as table-reading/modeling tasks.",
+        "Source alignment repair: Compare P(A|B) with P(A), and when appropriate compare P(A and B) with P(A)P(B), using the table's observed frequencies.",
+        "Source alignment repair: State that conclusions from observed data are about the sampled table unless a broader inference is justified.",
+        "Edulytics independent cool-down: A table has 40 group-B observations, 18 of which are also A, within 100 total observations where 45 are A. Compute P(A|B), P(A), and decide whether the table distribution supports independence."
       ],
       "KeyConcepts": [
         {
@@ -349,6 +353,7 @@
         }
       ],
       "SummaryPoints": [
+        "Create and use two-way tables to estimate conditional probabilities and determine whether events appear independent in the observed data.",
         "Compute row-conditional and column-conditional probabilities from a frequency table and distinguish them from marginals.",
         "For this table P(B|A)=12/20=0.6, P(A|B)=12/30=0.4, and joint P(A∩B)=12/50=0.24; do not interchange denominators.",
         "Source-specific probability models and experimental interpretations require teacher review."
