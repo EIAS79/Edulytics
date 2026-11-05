@@ -110,7 +110,12 @@ def page(opener,route):
     with opener.open(BASE+route,timeout=40) as response:
         require(response.status==200 and urllib.parse.urlsplit(response.url).path.lower()!="/account/login",
             "page denied "+route)
-        return html.unescape(response.read().decode("utf-8"))
+        markup=response.read().decode("utf-8")
+        # Keep escaped inequality signs such as 0&lt;k&lt;1 intact
+        # until HTMLParser decodes text nodes after tokenizing tags.
+        if route.startswith("/student/learning/lesson/"):
+            return markup
+        return html.unescape(markup)
 def cross_denied(opener,route):
     try:
         with opener.open(BASE+route,timeout=40) as response:
