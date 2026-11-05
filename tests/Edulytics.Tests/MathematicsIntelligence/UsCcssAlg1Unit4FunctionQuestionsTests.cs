@@ -119,4 +119,20 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
             UsCcssAlg1Unit4FunctionQuestions.LinearExponentialCompareFamily, p, expected));
     }
 
+    [Theory]
+    [InlineData(5, 3, 0, "5")]
+    [InlineData(5, 3, 3, "135")]
+    public void ExponentialGrowthUsesInitialValueAndGrowthFactor(
+        int initial, int factor, int exponent, string expected)
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["initial"] = initial, ["factor"] = factor, ["exponent"] = exponent
+        };
+        Assert.Equal(expected, UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.ExponentialGrowthEvaluateFamily, p));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.ExponentialGrowthEvaluateFamily, p, expected));
+    }
+
 }

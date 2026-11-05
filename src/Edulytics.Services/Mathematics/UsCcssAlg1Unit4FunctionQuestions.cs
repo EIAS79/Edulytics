@@ -11,12 +11,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string FunctionAbsoluteErrorFamily = "functions.absolute_error.from_target";
     public const string FunctionAbsoluteTranslateFamily = "functions.absolute_value.translate_evaluate";
     public const string LinearExponentialCompareFamily = "functions.growth.linear_exponential.compare";
+    public const string ExponentialGrowthEvaluateFamily = "functions.exponential.growth.evaluate";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -134,6 +135,22 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == ExponentialGrowthEvaluateFamily)
+        {
+            var initial = random.Next(2, 21);
+            var factor = random.Next(2, 5);
+            var exponent = random.Next(0, 6);
+            var output = initial * (int)Math.Pow(factor, exponent);
+            return new(family,
+                $"An exponential quantity is given by G(t)={initial}*{factor}^t. Find G({exponent}) and enter the integer output. Explain the meaning of initial value and constant multiplier to the teacher.",
+                $"G({exponent})={output}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["initial"] = initial, ["factor"] = factor, ["exponent"] = exponent
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -203,6 +220,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return linear > exponential ? "A" : exponential > linear ? "B" : "E";
         }
 
+        if (family == ExponentialGrowthEvaluateFamily)
+        {
+            if (!ValidateExponentialGrowth(parameters, out var initial, out var factor, out var exponent))
+                throw new InvalidOperationException("Invalid exponential growth parameters.");
+            return (initial * (int)Math.Pow(factor, exponent)).ToString();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -255,6 +279,11 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         if (family == LinearExponentialCompareFamily)
             return ValidateGrowth(parameters, out _, out _, out _, out _) &&
                    string.Equals(answer.Trim(), Solve(family, parameters), StringComparison.OrdinalIgnoreCase);
+
+        if (family == ExponentialGrowthEvaluateFamily)
+            return ValidateExponentialGrowth(parameters, out _, out _, out _) &&
+                   int.TryParse(answer.Trim(), out var value) &&
+                   value.ToString() == Solve(family, parameters);
 
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out _, out _, out _, out _))
@@ -350,6 +379,16 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("addition", out addition) && addition is >= 2 and <= 8 &&
             p.TryGetValue("factor", out factor) && factor is >= 2 and <= 4 &&
             p.TryGetValue("steps", out steps) && steps is >= 2 and <= 5;
+    }
+
+    private static bool ValidateExponentialGrowth(IReadOnlyDictionary<string, int>? p,
+        out int initial, out int factor, out int exponent)
+    {
+        initial = factor = exponent = 0;
+        return p is not null &&
+            p.TryGetValue("initial", out initial) && initial is >= 2 and <= 20 &&
+            p.TryGetValue("factor", out factor) && factor is >= 2 and <= 4 &&
+            p.TryGetValue("exponent", out exponent) && exponent is >= 0 and <= 5;
     }
 
 }

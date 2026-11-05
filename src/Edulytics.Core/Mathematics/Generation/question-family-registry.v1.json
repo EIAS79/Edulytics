@@ -20889,6 +20889,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.exponential.growth.evaluate",
+      "version": 1,
+      "skillId": "functions.exponential.growth",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-u05-integer-exponential-growth",
+      "representations": ["exponential_rule", "table", "teacher_graph"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
