@@ -1,0 +1,153 @@
+name: Grade 10 Geometry Stage D - fail closed
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g10-stage-d.yml'
+      - 'tools/curriculum/g10-stage-d-audit.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G10/**'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/GEO/**'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/**'
+      - 'tools/curriculum/us-ccss-geo-*.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: g10-stage-d-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  structural-inventory:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Report exact candidate
+        run: |
+          echo "CANDIDATE_SHA=$(git rev-parse HEAD)"
+          echo "EVENT_SHA=${{ github.event.pull_request.head.sha || github.sha }}"
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify 124 exact Grade 10 codes across blueprint, RichV2, ledger, checkpoint
+        run: node tools/curriculum/g10-stage-d-audit.cjs --json > /tmp/g10-structural.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-structural-inventory
+          path: /tmp/g10-structural.json
+          if-no-files-found: warn
+  node-lesson-shards:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shard: D1
+            from: 1
+            to: 42
+          - shard: D2
+            from: 43
+            to: 83
+          - shard: D3
+            from: 84
+            to: 124
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute existing, source-scoped authoring/contract tests with explicit missing-suite accounting
+        shell: bash
+        env:
+          LOWER: ${{ matrix.from }}
+          UPPER: ${{ matrix.to }}
+        run: |
+          set -euo pipefail
+          files=()
+          missing=()
+          for ordinal in $(seq "$LOWER" "$UPPER"); do
+            if [ "$ordinal" -le 22 ]; then u=1; l=$ordinal
+            elif [ "$ordinal" -le 37 ]; then u=2; l=$((ordinal-22))
+            elif [ "$ordinal" -le 53 ]; then u=3; l=$((ordinal-37))
+            elif [ "$ordinal" -le 64 ]; then u=4; l=$((ordinal-53))
+            elif [ "$ordinal" -le 82 ]; then u=5; l=$((ordinal-64))
+            elif [ "$ordinal" -le 99 ]; then u=6; l=$((ordinal-82))
+            elif [ "$ordinal" -le 113 ]; then u=7; l=$((ordinal-99))
+            else u=8; l=$((ordinal-113))
+            fi
+            printf -v base 'tools/curriculum/us-ccss-geo-u%02d-l%02d-authoring-contract.test.cjs' "$u" "$l"
+            if [ -f "$base" ]; then files+=("$base"); else missing+=("$ordinal:$base"); fi
+          done
+          printf 'SCOPED_FILES=%s\n' "${#files[@]}"
+          if (("${#files[@]}")); then node --test "${files[@]}"; fi
+          if (("${#missing[@]}")); then
+            printf 'MISSING_LESSON_SUITE %s\n' "${missing[@]}"
+            echo 'Fail closed: not every lesson has a named authoring contract suite.'
+            exit 3
+          fi
+  node-shared-geometry:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run all preexisting Geometry shared-source and independent math oracles
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          suites=(tools/curriculum/us-ccss-geo-*.test.cjs)
+          test "${#suites[@]}" -gt 0
+          node --test "${suites[@]}"
+  dotnet-build-regression:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Shared .NET restore and build
+        run: |
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore -c Release
+      - name: Relevant geometry/math regression
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~Geometry|FullyQualifiedName~UsCcssGeo|FullyQualifiedName~Grade10' --logger 'trx;LogFileName=g10-geometry.trx' --results-directory /tmp/g10-dotnet
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-dotnet-regression
+          path: /tmp/g10-dotnet/
+          if-no-files-found: warn
+  source-element-parity:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fail closed unless 124 complete source-element maps are evidenced
+        run: node tools/curriculum/g10-stage-d-audit.cjs --strict-source
