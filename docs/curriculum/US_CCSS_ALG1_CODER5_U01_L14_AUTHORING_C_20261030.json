@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
   "contentVersion": "alg1-u01-l14-source-abc-authoring-20261030-v2",
-  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "status": "C_AUTHORING_CORRECTED_AND_RUNTIME_ROUTE_AUTHORED",
   "sourceFiles": {
     "teacherPreparation": {
       "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\14\\preparation.html",
@@ -35,6 +35,7 @@
     10,
     13,
     3,
+    5.5,
     17.5,
     25.833333333333332,
     11,
@@ -70,12 +71,13 @@
       "id": "NUMERIC_EXAMPLE",
       "kind": "AUTHORING_MATH_ORACLE",
       "prompt": "Find fences 5.5 and17.5 for 9,10,11,12,13,100; explain why 100 is outlying but not automatically discarded.",
-      "answerType": "finite numeric vector",
+      "answerType": "finite numeric vector: median,Q1,Q3,IQR,lowerFence,upperFence,meanAll,meanWithoutOutlier,medianWithoutOutlier",
       "expected": [
         11.5,
         10,
         13,
         3,
+        5.5,
         17.5,
         25.833333333333332,
         11,
@@ -126,11 +128,11 @@
     ]
   },
   "oracleCheck": {
-    "status": "PASS_LOCAL_FIXTURE",
+    "status": "CORRECTED_AUTHORED_NOT_RUN",
     "correct": "expected numeric vector",
     "equivalent": "numeric strings accepted",
     "wrong": "shifted value rejected",
     "malformed": "null, missing, blank, NaN rejected",
-    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+    "testsRun": "NOT_RUN_DURING_A_B_C"
   }
 }

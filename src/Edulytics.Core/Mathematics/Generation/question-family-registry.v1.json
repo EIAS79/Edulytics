@@ -20517,6 +20517,30 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.outliers.iqr_fence",
+      "version": 1,
+      "skillId": "statistics.outliers",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-iqr-fence-exact",
+      "representations": ["ordered_numeric_data", "iqr_fence", "numeric_short_answer"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.outliers.classify_iqr_flag",
+      "version": 1,
+      "skillId": "statistics.outliers",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-iqr-outlier-flag-exact",
+      "representations": ["ordered_numeric_data", "outlier_classification", "teacher_led_keep_exclude_reasoning"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

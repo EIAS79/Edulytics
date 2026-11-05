@@ -24,6 +24,10 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         "statistics.extreme_value.mean_after_replacement";
     public const string PopulationSdFamily =
         "statistics.center_spread.population_sd";
+    public const string OutlierFenceFamily =
+        "statistics.outliers.iqr_fence";
+    public const string OutlierFlagFamily =
+        "statistics.outliers.classify_iqr_flag";
 
     public sealed record Problem(
         string Family,
@@ -36,7 +40,7 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         family is DistributionShapeFamily or IqrFamily or MadFamily or
             SpreadsheetFormulaFamily or SpreadsheetRecursiveFillFamily or
             HistogramBinFamily or ExtremeMeanReplacementFamily or
-            PopulationSdFamily;
+            PopulationSdFamily or OutlierFenceFamily or OutlierFlagFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -58,7 +62,9 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return BuildHistogramBin(random);
         if (family == ExtremeMeanReplacementFamily)
             return BuildExtremeMeanReplacement(random);
-        return BuildPopulationSd(random);
+        if (family == PopulationSdFamily)
+            return BuildPopulationSd(random);
+        return BuildOutlierQuestion(family, random);
     }
 
     public static string Solve(
@@ -139,6 +145,18 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return spread.ToString(CultureInfo.InvariantCulture);
         }
 
+        if (family is OutlierFenceFamily or OutlierFlagFamily)
+        {
+            if (!ValidateOutlier(parameters, out var center, out var delta, out var side, out _))
+                throw new InvalidOperationException("Invalid outlier parameters.");
+            var lowerFence = center - 5.5m;
+            var upperFence = center + 6.5m;
+            if (family == OutlierFlagFamily)
+                return center + delta > upperFence ? "yes" : "no";
+            return (side == 0 ? lowerFence : upperFence)
+                .ToString(CultureInfo.InvariantCulture);
+        }
+
         throw new InvalidOperationException("Unsupported ALG1 Unit 1 extension family.");
     }
 
@@ -154,6 +172,10 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return ValidateShape(parameters, out _, out _, out _, out _) &&
                 NormalizeLabel(answer) == NormalizeLabel(Solve(family, parameters));
 
+        if (family == OutlierFlagFamily)
+            return ValidateOutlier(parameters, out _, out _, out _, out _) &&
+                NormalizeYesNo(answer) == Solve(family, parameters);
+
         var parametersValid = family switch
         {
             SpreadsheetFormulaFamily =>
@@ -166,6 +188,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
                 ValidateExtreme(parameters, out _, out _, out _),
             PopulationSdFamily =>
                 ValidatePopulationSd(parameters, out _, out _, out _),
+            OutlierFenceFamily =>
+                ValidateOutlier(parameters, out _, out _, out _, out _),
             _ => ValidateStep(parameters, out _, out _, out _)
         };
 
@@ -386,6 +410,47 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             });
     }
 
+    private static Problem BuildOutlierQuestion(string family, Random random)
+    {
+        var center = random.Next(8, 31);
+        var delta = random.Next(3, 16);
+        var side = random.Next(0, 2);
+        var variant = random.Next(0, 16);
+        var values = new[]
+        {
+            center - 2, center - 1, center,
+            center + 1, center + 2, center + delta
+        };
+
+        if (family == OutlierFlagFamily)
+        {
+            return new(
+                family,
+                $"The ordered synthetic data are {string.Join(", ", values)}. " +
+                "Using the 1.5×IQR rule and the median-of-halves convention, " +
+                "is the largest value flagged as an upper outlier? Enter yes or no. " +
+                "Whether a flagged observation should be deleted remains teacher-reviewed.",
+                "Find Q1, Q3 and IQR; compare the largest value with Q3 + 1.5×IQR.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["center"] = center, ["delta"] = delta, ["side"] = side, ["variant"] = variant
+                });
+        }
+
+        return new(
+            family,
+            $"The ordered synthetic data are {string.Join(", ", values)}. " +
+            $"Using the median-of-halves convention and the 1.5×IQR rule, find the {(side == 0 ? "lower" : "upper")} fence. " +
+            "Enter an exact decimal or fraction.",
+            "Compute Q1 and Q3, then IQR=Q3-Q1; lower=Q1-1.5IQR and upper=Q3+1.5IQR.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["center"] = center, ["delta"] = delta, ["side"] = side, ["variant"] = variant
+            });
+    }
+
     private static int[] Frequencies(int shape, int scale) => shape switch
     {
         0 => [2 * scale, 2 * scale, 2 * scale, 2 * scale, 2 * scale],
@@ -508,6 +573,32 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             parameters.TryGetValue("center", out center) && center is >= 5 and <= 40 &&
             parameters.TryGetValue("spread", out spread) && spread is >= 1 and <= 9 &&
             parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateOutlier(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int center,
+        out int delta,
+        out int side,
+        out int variant)
+    {
+        center = delta = side = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("center", out center) && center is >= 8 and <= 30 &&
+            parameters.TryGetValue("delta", out delta) && delta is >= 3 and <= 15 &&
+            parameters.TryGetValue("side", out side) && side is >= 0 and <= 1 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static string NormalizeYesNo(string value)
+    {
+        var text = value.Trim().ToLowerInvariant();
+        return text switch
+        {
+            "y" or "yes" or "true" => "yes",
+            "n" or "no" or "false" => "no",
+            _ => text
+        };
     }
 
     private static string NormalizeLabel(string value)

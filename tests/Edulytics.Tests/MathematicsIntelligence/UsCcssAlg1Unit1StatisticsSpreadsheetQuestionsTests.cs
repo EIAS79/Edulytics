@@ -133,4 +133,24 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.PopulationSdFamily, p, "3"));
     }
+
+    [Fact]
+    public void OutlierFenceOracleIncludesBothFencesAndClassifiesLargestValue()
+    {
+        var lower = new Dictionary<string, int>
+        {
+            ["center"] = 11, ["delta"] = 15, ["side"] = 0, ["variant"] = 0
+        };
+        var upper = new Dictionary<string, int>(lower) { ["side"] = 1 };
+        Assert.Equal("5.5", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.OutlierFenceFamily, lower));
+        Assert.Equal("17.5", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.OutlierFenceFamily, upper));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.OutlierFlagFamily, upper, "yes"));
+
+        var notFlagged = new Dictionary<string, int>(upper) { ["delta"] = 6 };
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.OutlierFlagFamily, notFlagged, "no"));
+    }
 }
