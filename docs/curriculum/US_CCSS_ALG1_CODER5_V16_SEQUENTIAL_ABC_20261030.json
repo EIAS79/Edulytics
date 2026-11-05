@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U07:L11",
+  "nextCanonical": "U07:L12",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -5534,25 +5534,67 @@
       "sourceReviewStartedAtUtc": "2026-11-05T13:06:45.886760+00:00",
       "abcPreparedAtUtc": "2026-11-05T13:06:45.944615+00:00",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L10_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+      "unitCode": "U07",
+      "lessonNumber": 11,
+      "title": "What are Perfect Squares?",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "20ac49d97741f7c54f15c59fe82efc04145bb792b99140bf3464db12abf27a6e",
+        "ti": "d1fa7a4d1e4c56e6bc3faf73ed62f0febdad6408119643657fd6e075595c876e",
+        "tpr": "f49dd734df48e2a812f5b2f10d19e01c653c8940d37930819572afd280e69385",
+        "si": "a137c2a93fb02362e150f23fef545203f6552b29eb37e730c82e38b42e41e71e",
+        "spr": "1619fcaa80077f3ba6169333c9d71914a4efca07b559e3bb8c49b82ba3a8f607"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u07-l11-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u07-l11-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "original teacher/student learning goals, activities and practice source revalidated with hashes; existing aligned examples preserved"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "firstPartyCooldown": "AUTHORED",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_SUBSKILLS_TESTS_NOT_RUN",
+        "exactPath": [
+          "functions.quadratic.expand.middle_coefficient"
+        ],
+        "teacherReviewRequired": [
+          "perfect-square reasoning",
+          "full expansion and square-root properties"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "sourceReviewStartedAtUtc": "2026-11-05T13:06:48.894097+00:00",
+      "abcPreparedAtUtc": "2026-11-05T13:06:48.949753+00:00",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L11_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 118,
-    "B_CLOSED": 118,
-    "C_PREPARED": 118,
-    "ABC_READY_FOR_D": 118,
+    "A_CLOSED": 119,
+    "B_CLOSED": 119,
+    "C_PREPARED": 119,
+    "ABC_READY_FOR_D": 119,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 14,
+    "REMAINING": 13,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 6,
     "CURRENT_UNIT": "U07",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L11",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L12",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -5587,12 +5629,12 @@
     "unitsABCCLosed": 6,
     "status": "U07_IN_PROGRESS",
     "previouslyABCClosed": 108,
-    "newlyABCClosed": 10,
+    "newlyABCClosed": 11,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L10",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -5624,9 +5666,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U07_IN_PROGRESS_L11",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L10",
+  "unitStatus": "U07_IN_PROGRESS_L12",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -5636,9 +5678,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L10",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L10_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U07_L11_ABC_CLOSURE_20261105.md"
 }
