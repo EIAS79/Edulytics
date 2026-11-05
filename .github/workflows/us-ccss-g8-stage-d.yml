@@ -58,6 +58,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: g8-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   inventory:
     name: g8-d-inventory-131
