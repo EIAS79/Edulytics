@@ -20553,6 +20553,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.modeling.linear_relationship.select_equation",
+      "version": 1,
+      "skillId": "algebra.modeling.linear_relationship",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-linear-relationship-equation-exact",
+      "representations": ["context", "linear_equation", "teacher_led_quantity_analysis"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
