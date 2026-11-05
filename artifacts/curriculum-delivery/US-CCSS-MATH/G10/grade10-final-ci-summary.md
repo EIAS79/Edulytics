@@ -1,16 +1,16 @@
-# Grade 10 Stage D / Final CI ? evidence-based status
+# Grade 10 Stage D / Final CI
 
-- Decision: **NO_GO_TECHNICAL**.
-- Candidate tested: `aebec28570777556d0d740a385c5f1ca19ee56d4` (documentation-only commits must be tracked separately).
-- A?B?C READY: 124/124; Stage D VERIFIED: **0/124**.
-- Source-element parity: UNKNOWN / fail-closed; no proven full denominator.
-- Exact verified Grade 10 Practice mapping: **0/124** in the current 238-row registry; an untested fallback is not proof of no runtime.
-- Structural inventory and all three Node authoring-contract shards: PASS.
-- Shared Node Geometry maths/source contracts: PASS.
-- Targeted .NET build/tests PASS: 121/121 with zero failures; shared HTTPS/full-product workflows were still running and are not counted as completed G10-specific final acceptance.
-- G10-specific student/teacher authenticated E2E, grader persistence, visual/accessibility: NOT VERIFIED.
-- Blocking issue: https://github.com/EIAS79/Edulytics/issues/623
-- Stage D run: https://github.com/EIAS79/Edulytics/actions/runs/42112323865
-- **No merge, production change or deployment performed.**
+**Release decision: NO_GO_TECHNICAL. No merge or production deployment.**
 
-Owner academic approval: recorded from direct owner authorization on 2026-11-06; technical and third-party asset rights gates remain separate and unverified.
+- Owner academic authorization: recorded and accepted as owner decision in `grade10-owner-academic-authorization-20261106.json`; separate third-party asset rights status NOT VERIFIED.
+- Current candidate code SHA: `18974359778bd1cca9c58d1c14a0fd2cd5bbce87`.
+- Last fully observed Grade 10 candidate SHA: `aebec28570777556d0d740a385c5f1ca19ee56d4` (previous D CI RUN `42112323865`, 121/121 .NET targeted PASS and D1/D2/D3 Node PASS, with source and route jobs FAIL).
+- GitHub Actions on current head: NOT OBSERVED at time of record; do not transfer old PASS to the new SHA.
+- Grade 10 authenticated HTTPS regression workflow added: `.github/workflows/us-ccss-g10-geometry-https.yml`; results pending observation.
+- Local source inventory: 496/496 HTML documents present, 7,480 headings and 3,067 distinct-within-page image references; **no asset bytes or rights clearance inferred**.
+- Activity identifier crosswalk: 382 of 498 source teacher activity IDs referenced by A-C checkpoint/assessment maps; 116 not explicitly referenced. Identifier reference is not semantic equivalence.
+- Source student Practice: 955 problem headings inventoried; individual first-party equivalents NOT VERIFIED.
+- Runtime Practice: 0/124 exact `READY_VERIFIED` Geometry mappings on last checked registry; teacher-scored submission/persistence not yet verified as an alternative.
+- Lessons D_VERIFIED: 0/124. Human academic owner approval alone does not indicate student/teacher operational readiness.
+- Blocker: https://github.com/EIAS79/Edulytics/issues/623
+- PR: https://github.com/EIAS79/Edulytics/pull/583
