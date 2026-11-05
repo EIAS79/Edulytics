@@ -669,11 +669,14 @@
       "CultureCode": "en",
       "Title": "The Addition Rule",
       "ExplanationParagraphs": [
-        "Learning goal: Derive and apply P(A∪B)=P(A)+P(B)−P(A∩B), including the disjoint special case.",
+        "Learning goal: Derive and apply the addition rule P(A or B)=P(A)+P(B)-P(A and B), interpret results in context, and diagnose double-counting errors.",
         "General union probability counts overlap once P(A∪B)=P(A)+P(B)−P(A∩B)",
         "Disjoint A,B have P(A∩B)=0 Then union is sum Check result is within [0,1]",
         "Original source-specific student task: Student proves addition rule by partitioning a Venn diagram into disjoint regions; teacher checks proof. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 6, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 6, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments.",
+        "Source alignment repair: Retain the source hat/sneakers overcounting example as the motivation for subtracting the intersection.",
+        "Source alignment repair: Retain the error-analysis task where an impossible probability greater than 1 reveals overlap was counted twice.",
+        "Edulytics independent cool-down: In a group, P(A)=0.55, P(B)=0.40, and P(A and B)=0.20. Find P(A or B) and explain exactly why the intersection is subtracted."
       ],
       "KeyConcepts": [
         {
@@ -746,6 +749,7 @@
         }
       ],
       "SummaryPoints": [
+        "Derive and apply the addition rule P(A or B)=P(A)+P(B)-P(A and B), interpret results in context, and diagnose double-counting errors.",
         "Derive and apply P(A∪B)=P(A)+P(B)−P(A∩B), including the disjoint special case.",
         "Then union is sum",
         "Human-assessed modelling and experiment evidence remains pending."
