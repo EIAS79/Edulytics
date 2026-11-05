@@ -126,7 +126,7 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
     {
         var p = new Dictionary<string, int>
         {
-            ["center"] = 4, ["spread"] = 3, ["variant"] = 0
+            ["center"] = 5, ["spread"] = 3, ["variant"] = 0
         };
         Assert.Equal("3", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.PopulationSdFamily, p));

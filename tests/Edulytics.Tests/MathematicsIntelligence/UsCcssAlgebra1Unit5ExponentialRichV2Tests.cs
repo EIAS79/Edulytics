@@ -39,8 +39,7 @@ public sealed class UsCcssAlgebra1Unit5ExponentialRichV2Tests
         Assert.NotNull(lesson);
         Assert.Equal(expectedTitle,lesson.Title);
         var n=int.Parse(number[1..]);
-        Assert.Contains(lesson.ExplanationParagraphs,x=>
-            x.Contains("/1/5/"+n+"/preparation.html",StringComparison.Ordinal));
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.True(lesson.ExplanationParagraphs.Count>=3);
         Assert.True(lesson.KeyConcepts.Count>=3);
         Assert.True(lesson.WorkedExamples.Count>=3);

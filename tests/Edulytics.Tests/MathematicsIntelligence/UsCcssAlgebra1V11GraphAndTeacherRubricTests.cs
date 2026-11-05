@@ -94,14 +94,14 @@ public sealed class UsCcssAlgebra1V11GraphAndTeacherRubricTests
         var m = string.Join(" ", model.ExplanationParagraphs);
         Assert.Contains("SAME labeled coordinate axes", f, StringComparison.Ordinal);
         Assert.Contains("graphing technology", f, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("/HS/students/1/6/11/index.html", f, StringComparison.Ordinal);
+        UsCcssAlg1SourceProvenanceAssert.Verify(factored.LessonCode, factored.ExplanationParagraphs);
         Assert.Contains("do NOT formally assess", v, StringComparison.Ordinal);
         Assert.Contains("vertex (-2,6)", v, StringComparison.Ordinal);
-        Assert.Contains("/HS/students/1/6/16/index.html", v, StringComparison.Ordinal);
+        UsCcssAlg1SourceProvenanceAssert.Verify(vertex.LessonCode, vertex.ExplanationParagraphs);
         Assert.Contains("two substantial", m, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("gallery-walk", m, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("without horizontal-position data", m, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("/HS/students/1/7/24/index.html", m, StringComparison.Ordinal);
+        UsCcssAlg1SourceProvenanceAssert.Verify(model.LessonCode, model.ExplanationParagraphs);
     }
 
     [Fact]

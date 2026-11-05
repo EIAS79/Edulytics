@@ -27,8 +27,16 @@ public sealed class UsCcssAlg1U01L01SelectedPracticeRouteTests
         Assert.Single(contract.AllowedQuestionFamilies);
         Assert.Equal(Family, contract.AllowedQuestionFamilies[0]);
         Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(Family));
-        Assert.False(LessonPracticeContractRegistry.TryResolve(
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02", out _));
+        // U01:L02 was subsequently mapped in the sequential A-B-C pass.
+        // It must have its own exact contract, not reuse L01's survey set.
+        Assert.True(LessonPracticeContractRegistry.TryResolve(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02", out var next));
+        Assert.NotNull(next);
+        Assert.Equal("READY_VERIFIED", next.Readiness);
+        Assert.NotEmpty(next.AllowedQuestionFamilies);
+        Assert.DoesNotContain(Family, next.AllowedQuestionFamilies);
+        Assert.All(next.AllowedQuestionFamilies,
+            family => Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family), family));
     }
 
     [Fact]

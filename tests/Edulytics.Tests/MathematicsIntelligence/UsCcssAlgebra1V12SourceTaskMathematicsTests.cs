@@ -34,7 +34,7 @@ public sealed class UsCcssAlgebra1V12SourceTaskMathematicsTests
         var unit=int.Parse(suffix.Substring(1,2));
         var n=int.Parse(suffix.Substring(5,2));
         var text=string.Join(" ",lesson.ExplanationParagraphs);
-        Assert.Contains($"/HS/teachers/1/{unit}/{n}/preparation.html",text);
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.Contains("V12",text);
         Assert.True(lesson.WorkedExamples.Count>=3);
         Assert.True(lesson.KeyConcepts.Count>=3);

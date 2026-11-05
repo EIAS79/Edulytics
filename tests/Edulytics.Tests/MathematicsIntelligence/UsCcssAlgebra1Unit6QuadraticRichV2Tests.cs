@@ -35,8 +35,7 @@ public sealed class UsCcssAlgebra1Unit6QuadraticRichV2Tests
         Assert.NotNull(lesson);
         Assert.Equal(title,lesson.Title);
         int n=int.Parse(code[1..]);
-        Assert.Contains(lesson.ExplanationParagraphs,p=>
-            p.Contains("/1/6/"+n+"/preparation.html",StringComparison.Ordinal));
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.True(lesson.KeyConcepts.Count>=3);
         Assert.True(lesson.WorkedExamples.Count>=3);
         Assert.All(lesson.WorkedExamples,x=>

@@ -25,14 +25,14 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
     {
         var parameters = new Dictionary<string, int>
         {
-            ["initial"] = 20, ["rate"] = 15,
+            ["initial"] = 20, ["rate"] = 9,
             ["input"] = 2, ["variant"] = 0
         };
 
-        Assert.Equal("50", UsCcssAlg1Unit4FunctionQuestions.Solve(
+        Assert.Equal("38", UsCcssAlg1Unit4FunctionQuestions.Solve(
             UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, parameters));
         Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
-            UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, parameters, "50"));
+            UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, parameters, "38"));
         Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(
             UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, parameters, "2"));
     }
@@ -69,7 +69,7 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
         var parameters = new Dictionary<string, int>
         {
             ["boundary"] = 3, ["leftSlope"] = 2, ["leftIntercept"] = 1,
-            ["rightSlope"] = 5, ["rightIntercept"] = 4, ["side"] = 0, ["variant"] = 0
+            ["rightSlope"] = 4, ["rightIntercept"] = 4, ["side"] = 0, ["variant"] = 0
         };
 
         Assert.Equal("7", UsCcssAlg1Unit4FunctionQuestions.Solve(

@@ -37,8 +37,7 @@ public sealed class UsCcssAlgebra1Unit4FunctionRichV2Tests
         Assert.NotNull(lesson);
         Assert.Equal(title,lesson.Title);
         var n=int.Parse(code[1..]);
-        Assert.Contains(lesson.ExplanationParagraphs, p =>
-            p.Contains("/1/4/"+n+"/preparation.html",StringComparison.Ordinal));
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.True(lesson.ExplanationParagraphs.Count>=3);
         Assert.True(lesson.KeyConcepts.Count>=3);
         Assert.True(lesson.WorkedExamples.Count>=3);

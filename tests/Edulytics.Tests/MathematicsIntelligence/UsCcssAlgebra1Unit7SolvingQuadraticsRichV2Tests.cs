@@ -42,8 +42,7 @@ public sealed class UsCcssAlgebra1Unit7SolvingQuadraticsRichV2Tests
             var lesson=RichLessonContentV2Registry.Find(code,"en");
             Assert.NotNull(lesson);
             Assert.Equal(expected[n-1],lesson.Title);
-            Assert.Contains(lesson.ExplanationParagraphs,p=>
-                p.Contains("/1/7/"+n+"/preparation.html",StringComparison.Ordinal));
+            UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
             Assert.True(lesson.KeyConcepts.Count>=3);
             Assert.True(lesson.WorkedExamples.Count>=3);
             Assert.All(lesson.WorkedExamples,e=>

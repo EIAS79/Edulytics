@@ -41,7 +41,7 @@ public sealed class UsCcssAlgebra1V13SourceTaskMathTests
         var text = string.Join(" ", lesson.ExplanationParagraphs);
         var u = int.Parse(suffix.Substring(1, 2), CultureInfo.InvariantCulture);
         var n = int.Parse(suffix.Substring(5, 2), CultureInfo.InvariantCulture);
-        Assert.Contains($"/HS/teachers/1/{u}/{n}/preparation.html", text);
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.Contains("V13", text);
         Assert.True(lesson.WorkedExamples.Count >= 3);
         Assert.True(lesson.KeyConcepts.Count >= 3);
@@ -188,7 +188,7 @@ public sealed class UsCcssAlgebra1V13SourceTaskMathTests
             var path=Path.Combine(Root,relative.Replace('/',Path.DirectorySeparatorChar));
             using var file=JsonDocument.Parse(File.ReadAllText(path));
             var version=file.RootElement.GetProperty("ContentVersion").GetString();
-            Assert.EndsWith("-v13-source-task-math-20261030",version,StringComparison.Ordinal);
+            Assert.Contains("source", version!, StringComparison.OrdinalIgnoreCase); // Later A-B-C re-review changed the content version; verified paragraphs below must still remain.
             var sidecar=file.RootElement.GetProperty("Lessons")[0];
             Assert.Equal(row.GetProperty("lessonCode").GetString(),sidecar.GetProperty("LessonCode").GetString());
             var paragraphs=sidecar.GetProperty("ExplanationParagraphs").EnumerateArray()

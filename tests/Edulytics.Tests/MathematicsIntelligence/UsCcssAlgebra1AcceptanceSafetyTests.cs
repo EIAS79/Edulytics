@@ -49,7 +49,7 @@ public sealed class UsCcssAlgebra1AcceptanceSafetyTests
     [InlineData("U05:L16")]
     [InlineData("U06:L15")]
     [InlineData("U07:L24")]
-    public async Task UnverifiedExactLessonCannotCreateGenericPrivatePractice(string suffix)
+    public async Task SequencedExactLessonGeneratesOnlyThroughItsRegisteredContract(string suffix)
     {
         var school=Guid.NewGuid();
         var student=Guid.NewGuid();
@@ -60,8 +60,10 @@ public sealed class UsCcssAlgebra1AcceptanceSafetyTests
             student,new GenerateStudentPrivatePracticeRequest(
                 adoption,StudentPrivatePracticeScope.Lesson,
                 repo.LessonId,null,StudentPrivatePracticeDifficulty.AtClassLevel,1,29));
-        Assert.Equal(StudentPrivatePracticeError.NoSupportedOutcomes,result.Error);
-        Assert.Equal(0,repo.SaveCount);
+        // These six lessons now have sequential A-B-C exact contracts.
+        // Stage D must prove their lesson-specific generation and save path.
+        Assert.Null(result.Error);
+        Assert.Equal(1,repo.SaveCount);
     }
 
     [Theory]
