@@ -16,6 +16,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
     public const string MadFamily = "statistics.center_spread.mad";
     public const string SpreadsheetFormulaFamily =
         "spreadsheet.cell_reference.evaluate";
+    public const string SpreadsheetRecursiveFillFamily =
+        "spreadsheet.recursive_fill.evaluate";
 
     public sealed record Problem(
         string Family,
@@ -26,7 +28,7 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
 
     public static bool Supports(string? family) =>
         family is DistributionShapeFamily or IqrFamily or MadFamily or
-            SpreadsheetFormulaFamily;
+            SpreadsheetFormulaFamily or SpreadsheetRecursiveFillFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -40,7 +42,9 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return BuildIqr(random);
         if (family == MadFamily)
             return BuildMad(random);
-        return BuildSpreadsheetFormula(random);
+        if (family == SpreadsheetFormulaFamily)
+            return BuildSpreadsheetFormula(random);
+        return BuildSpreadsheetRecursiveFill(random);
     }
 
     public static string Solve(
@@ -91,6 +95,13 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        if (family == SpreadsheetRecursiveFillFamily)
+        {
+            if (!ValidateRecursiveFill(parameters, out var start, out var step, out var row, out _))
+                throw new InvalidOperationException("Invalid recursive-fill parameters.");
+            return (start + (row - 1) * step).ToString(CultureInfo.InvariantCulture);
+        }
+
         throw new InvalidOperationException("Unsupported ALG1 Unit 1 extension family.");
     }
 
@@ -106,9 +117,14 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return ValidateShape(parameters, out _, out _, out _, out _) &&
                 NormalizeLabel(answer) == NormalizeLabel(Solve(family, parameters));
 
-        var parametersValid = family == SpreadsheetFormulaFamily
-            ? ValidateSpreadsheet(parameters, out _, out _, out _, out _, out _)
-            : ValidateStep(parameters, out _, out _, out _);
+        var parametersValid = family switch
+        {
+            SpreadsheetFormulaFamily =>
+                ValidateSpreadsheet(parameters, out _, out _, out _, out _, out _),
+            SpreadsheetRecursiveFillFamily =>
+                ValidateRecursiveFill(parameters, out _, out _, out _, out _),
+            _ => ValidateStep(parameters, out _, out _, out _)
+        };
 
         return parametersValid &&
             TryExactDecimal(answer, out var submitted) &&
@@ -215,6 +231,29 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             });
     }
 
+    private static Problem BuildSpreadsheetRecursiveFill(Random random)
+    {
+        var start = random.Next(5, 41);
+        var step = random.Next(-8, 16);
+        if (step == 0)
+            step = 6;
+        var row = random.Next(3, 11);
+        var variant = random.Next(0, 16);
+
+        return new(
+            SpreadsheetRecursiveFillFamily,
+            $"Cell B1 contains {start}. Cell B2 contains =B1{(step >= 0 ? "+" : "")}{step} " +
+            $"and that relative-reference formula is filled down through B{row}. " +
+            $"What value should appear in B{row}? Enter one number. " +
+            "Performing the drag/fill action in spreadsheet software remains teacher-reviewed.",
+            "Each copied row references the immediately previous cell, so apply the same change once per row.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["start"] = start, ["step"] = step, ["row"] = row, ["variant"] = variant
+            });
+    }
+
     private static int[] Frequencies(int shape, int scale) => shape switch
     {
         0 => [2 * scale, 2 * scale, 2 * scale, 2 * scale, 2 * scale],
@@ -274,6 +313,21 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             parameters.TryGetValue("b", out b) && b is >= -6 and <= 15 &&
             parameters.TryGetValue("c", out c) && c is >= 1 and <= 9 &&
             parameters.TryGetValue("op", out op) && op is >= 0 and <= 3 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateRecursiveFill(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int start,
+        out int step,
+        out int row,
+        out int variant)
+    {
+        start = step = row = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("start", out start) && start is >= 5 and <= 40 &&
+            parameters.TryGetValue("step", out step) && step is >= -8 and <= 15 && step != 0 &&
+            parameters.TryGetValue("row", out row) && row is >= 3 and <= 10 &&
             parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 

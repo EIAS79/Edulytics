@@ -80,4 +80,17 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.False(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetFormulaFamily, p, "17"));
     }
+
+    [Fact]
+    public void RelativeFillOracleUsesPreviousRowReference()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["start"] = 18, ["step"] = 12, ["row"] = 7, ["variant"] = 1
+        };
+        Assert.Equal("90", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetRecursiveFillFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetRecursiveFillFamily, p, "90"));
+    }
 }

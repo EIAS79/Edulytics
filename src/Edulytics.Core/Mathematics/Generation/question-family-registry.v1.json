@@ -20469,6 +20469,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "spreadsheet.recursive_fill.evaluate",
+      "version": 1,
+      "skillId": "spreadsheet.recursive_reasoning",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-spreadsheet-relative-fill-exact",
+      "representations": ["spreadsheet_relative_reference", "recursive_sequence", "numeric_short_answer", "teacher_led_software_interaction"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
