@@ -20865,6 +20865,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.absolute_value.translate_evaluate",
+      "version": 1,
+      "skillId": "functions.absolute_value.translate",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-u04-absolute-value-translation",
+      "representations": ["absolute_value_rule", "distance", "translated_v_graph"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

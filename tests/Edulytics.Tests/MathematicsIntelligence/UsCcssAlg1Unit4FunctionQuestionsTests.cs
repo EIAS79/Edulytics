@@ -92,4 +92,16 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
             UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteErrorFamily, parameters, "7"));
     }
 
+
+    [Fact]
+    public void AbsoluteValueTranslationEvaluatesShiftedDistance()
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["center"] = 3, ["vertical"] = 2, ["input"] = 1, ["variant"] = 0
+        };
+        Assert.Equal("4", UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteTranslateFamily, parameters));
+    }
+
 }

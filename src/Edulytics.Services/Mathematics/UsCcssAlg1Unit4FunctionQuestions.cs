@@ -9,12 +9,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string FunctionDomainRangeFamily = "functions.domain_range.context_bounds";
     public const string FunctionPiecewiseFamily = "functions.piecewise.evaluate_interval";
     public const string FunctionAbsoluteErrorFamily = "functions.absolute_error.from_target";
+    public const string FunctionAbsoluteTranslateFamily = "functions.absolute_value.translate_evaluate";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -97,6 +98,23 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == FunctionAbsoluteTranslateFamily)
+        {
+            var center = random.Next(-5, 6);
+            var vertical = random.Next(-4, 7);
+            var input = random.Next(-8, 9);
+            var variant = random.Next(0, 16);
+            var output = Math.Abs(input - center) + vertical;
+            return new(family,
+                $"Let f(x)=|x-({center})|+({vertical}). Find f({input}). Enter the integer output only. Explain with the teacher how the center and vertical shift locate the V-shaped graph.",
+                $"f({input})=|{input}-({center})|+({vertical})={output}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["center"] = center, ["vertical"] = vertical, ["input"] = input, ["variant"] = variant
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -150,6 +168,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return Math.Abs(guess - target).ToString();
         }
 
+        if (family == FunctionAbsoluteTranslateFamily)
+        {
+            if (!ValidateAbsoluteTranslate(parameters, out var center, out var vertical, out var input, out _))
+                throw new InvalidOperationException("Invalid absolute-value translation parameters.");
+            return (Math.Abs(input - center) + vertical).ToString();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -186,6 +211,14 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         if (family == FunctionAbsoluteErrorFamily)
         {
             if (!ValidateAbsoluteError(parameters, out _, out _, out _) ||
+                !int.TryParse(answer.Trim(), out var submitted))
+                return false;
+            return submitted.ToString() == Solve(family, parameters);
+        }
+
+        if (family == FunctionAbsoluteTranslateFamily)
+        {
+            if (!ValidateAbsoluteTranslate(parameters, out _, out _, out _, out _) ||
                 !int.TryParse(answer.Trim(), out var submitted))
                 return false;
             return submitted.ToString() == Solve(family, parameters);
@@ -261,6 +294,18 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("target", out target) && target is >= 20 and <= 80 &&
             p.TryGetValue("guess", out guess) && guess is >= 5 and <= 95 &&
             Math.Abs(guess - target) is >= 1 and <= 15 &&
+            p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+
+    private static bool ValidateAbsoluteTranslate(IReadOnlyDictionary<string, int>? p,
+        out int center, out int vertical, out int input, out int variant)
+    {
+        center = vertical = input = variant = 0;
+        return p is not null &&
+            p.TryGetValue("center", out center) && center is >= -5 and <= 5 &&
+            p.TryGetValue("vertical", out vertical) && vertical is >= -4 and <= 6 &&
+            p.TryGetValue("input", out input) && input is >= -8 and <= 8 &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 
