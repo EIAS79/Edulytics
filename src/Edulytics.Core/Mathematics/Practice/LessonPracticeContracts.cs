@@ -5752,6 +5752,1264 @@ public static class LessonPracticeContractRegistry
             Version);
 
 
+        // IM Algebra 1 U01:L01 source P3: exactly six first-party choices;
+        // unordered three-choice response set. Statistics explanation, class
+        // survey, P1/P2 and protected Cool-down remain TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+            "supporting.statistics.statistical_questions",
+            "ALG1_SOURCE_SIX_CHOICE_STATISTICAL_SET_P3",
+            ["usccss.alg1.u01.l01.statistical_questions_p3"],
+            "IM2021_ALG1_U01_L01_EXACT_P3_SET_PLUS_HUMAN_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // ALG1 U01:L02: exact numerical components of first-party data displays.
+        // Student-created graphs and written interpretation remain teacher-scored.
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+            "supporting.statistics.statistical_questions",
+            "ALG1_DATA_REPRESENTATIONS_NUMERIC_COMPONENTS_PLUS_HUMAN_GRAPH_REVIEW",
+            [
+                "usccss.alg1.u01.l02.dot_frequency",
+                "usccss.alg1.u01.l02.histogram_half_open_bin_count",
+                "usccss.alg1.u01.l02.five_number_component"
+            ],
+            "IM_ALG1_U01_L02_INDEPENDENT_EQUIVALENT_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // ALG1 U01:L03: reuse proven center/spread exact families for the
+        // objectively gradable components; creation/critique of displays stays human.
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+            "statistics.center_spread",
+            "ALG1_GALLERY_CENTER_SPREAD_PLUS_HUMAN_DISPLAY_CRITIQUE",
+            [
+                "statistics.center_spread.median",
+                "statistics.center_spread.range"
+            ],
+            "IM_ALG1_U01_L03_FIRST_PARTY_GALLERY_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+            "statistics.distribution_shape",
+            "ALG1_DISTRIBUTION_SHAPE_CLASSIFICATION_PLUS_HUMAN_CONTEXT_REASONING",
+            ["statistics.distribution_shape.classify"],
+            "IM_ALG1_U01_L04_FIRST_PARTY_FREQUENCY_PATTERNS_PLUS_TEACHER_CONTEXT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
+            "statistics.center_spread",
+            "ALG1_CENTER_VARIABILITY_EXACT_COMPONENTS_PLUS_HUMAN_INTERPRETATION",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.median",
+                "statistics.center_spread.iqr",
+                "statistics.center_spread.mad"
+            ],
+            "IM_ALG1_U01_L05_OPTIONAL_REVIEW_CENTER_SPREAD_PLUS_TEACHER_INTERPRETATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+            "spreadsheet.formula_reasoning",
+            "ALG1_CELL_REFERENCE_FORMULA_EVALUATION_PLUS_HUMAN_SPREADSHEET_EXPLORATION",
+            ["spreadsheet.cell_reference.evaluate"],
+            "IM_ALG1_U01_L06_OPTIONAL_SPREADSHEET_RULE_DISCOVERY_PLUS_TEACHER_SOFTWARE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
+            "spreadsheet.formula_reasoning",
+            "ALG1_CONTEXTUAL_SPREADSHEET_CALCULATION_PLUS_HUMAN_MODEL_SELECTION",
+            ["spreadsheet.cell_reference.evaluate"],
+            "IM_ALG1_U01_L07_OPTIONAL_SPREADSHEET_CALCULATOR_PLUS_TEACHER_CONTEXT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08",
+            "spreadsheet.recursive_reasoning",
+            "ALG1_RELATIVE_FILL_RECURSIVE_VALUE_PLUS_HUMAN_SPREADSHEET_SHORTCUT",
+            ["spreadsheet.recursive_fill.evaluate"],
+            "IM_ALG1_U01_L08_OPTIONAL_RELATIVE_FILL_RECURRENCE_PLUS_TEACHER_SOFTWARE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",
+            "statistics.data_representation",
+            "ALG1_TECHNOLOGY_STATS_AND_BIN_COUNTS_PLUS_HUMAN_GRAPH_CREATION",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.median",
+                "statistics.center_spread.iqr",
+                "statistics.histogram.half_open_bin_count"
+            ],
+            "IM_ALG1_U01_L09_TECH_GRAPHING_NUMERIC_COMPONENTS_PLUS_TEACHER_SOFTWARE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
+            "statistics.extreme_value_effect",
+            "ALG1_EXTREME_EFFECT_ON_CENTER_PLUS_HUMAN_ROBUSTNESS_REASONING",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.median",
+                "statistics.extreme_value.mean_after_replacement"
+            ],
+            "IM_ALG1_U01_L10_FIRST_PARTY_EXTREME_DATA_PLUS_TEACHER_CONSTRUCTION_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
+            "statistics.center_spread",
+            "ALG1_VARIABILITY_COMPARISON_MAD_IQR_PLUS_HUMAN_DISPLAY_REASONING",
+            [
+                "statistics.center_spread.mad",
+                "statistics.center_spread.iqr"
+            ],
+            "IM_ALG1_U01_L11_FIRST_PARTY_EQUAL_CENTER_DIFFERENT_SPREAD_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12",
+            "statistics.standard_deviation",
+            "ALG1_POPULATION_SD_EXACT_PLUS_HUMAN_TECHNOLOGY_INTERPRETATION",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.population_sd"
+            ],
+            "IM_ALG1_U01_L12_POPULATION_SD_N_DENOMINATOR_PLUS_TEACHER_TECH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
+            "statistics.standard_deviation",
+            "ALG1_CONTEXTUAL_SD_COMPARISON_PLUS_HUMAN_INFORMATION_GAP",
+            ["statistics.center_spread.population_sd"],
+            "IM_ALG1_U01_L13_CONTEXTUAL_SD_INFORMATION_GAP_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+            "statistics.outliers",
+            "ALG1_IQR_OUTLIER_DETECTION_PLUS_HUMAN_DATA_QUALITY_DECISION",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.median",
+                "statistics.center_spread.iqr",
+                "statistics.outliers.iqr_fence",
+                "statistics.outliers.classify_iqr_flag"
+            ],
+            "IM_ALG1_U01_L14_OUTLIER_FENCES_EFFECTS_PLUS_TEACHER_RETAIN_EXCLUDE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+            "statistics.compare_distributions",
+            "ALG1_COMPARE_CENTER_SD_IQR_PLUS_HUMAN_DECISION_CRITERION",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.median",
+                "statistics.center_spread.iqr",
+                "statistics.center_spread.population_sd"
+            ],
+            "IM_ALG1_U01_L15_FIRST_PARTY_EQUAL_CENTER_DIFFERENT_VARIABILITY_PLUS_TEACHER_DECISION_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+            "statistics.experimental_analysis",
+            "ALG1_TWO_CONDITION_SUMMARIES_PLUS_HUMAN_EXPERIMENT_DESIGN_COLLECTION",
+            [
+                "statistics.center_spread.mean",
+                "statistics.center_spread.median",
+                "statistics.center_spread.mad",
+                "statistics.center_spread.iqr"
+            ],
+            "IM_ALG1_U01_L16_RULER_DROP_SUMMARIES_PLUS_TEACHER_AUTHENTIC_EXPERIMENT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+            "algebra.modeling.constraints",
+            "ALG1_CONTEXT_CONSTRAINT_FEASIBILITY_PLUS_HUMAN_MODEL_AUTHORING",
+            ["algebra.modeling.constraints.feasible_pair"],
+            "IM_ALG1_U02_L01_FIRST_PARTY_PIZZA_STYLE_CONSTRAINTS_PLUS_TEACHER_MODEL_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L02",
+            "algebra.modeling.linear_relationship",
+            "ALG1_CONTEXT_TO_LINEAR_EQUATION_PLUS_HUMAN_CONSTANT_VARIABLE_REASONING",
+            ["algebra.modeling.linear_relationship.select_equation"],
+            "IM_ALG1_U02_L02_FIRST_PARTY_CONTEXT_EQUATION_PLUS_TEACHER_QUANTITY_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L03",
+            "algebra.modeling.patterns",
+            "ALG1_TABLE_PATTERN_CLASSIFICATION_PLUS_HUMAN_EQUATION_GENERALIZATION",
+            ["algebra.modeling.pattern.classify_relation"],
+            "IM_ALG1_U02_L03_FIRST_PARTY_TABLE_PATTERNS_PLUS_TEACHER_GENERALIZATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L04",
+            "algebra.equations.solutions",
+            "ALG1_SOLUTION_SUBSTITUTION_CHECKS_PLUS_HUMAN_CONTEXT_INTERPRETATION",
+            [
+                "algebra.equation.one_variable.solution_check",
+                "algebra.equation.two_variable.solution_check"
+            ],
+            "IM_ALG1_U02_L04_FIRST_PARTY_SOLUTION_CHECKS_PLUS_TEACHER_INTERPRETATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L05",
+            "algebra.equations.graphs",
+            "ALG1_GRAPH_POINT_SOLUTION_CHECK_PLUS_HUMAN_GRAPH_CREATION",
+            ["algebra.equation.two_variable.solution_check"],
+            "IM_ALG1_U02_L05_FIRST_PARTY_POINT_ON_GRAPH_EQUIVALENCE_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L06",
+            "algebra.equations.equivalence",
+            "ALG1_EQUIVALENT_EQUATION_CLASSIFICATION_PLUS_HUMAN_OPERATION_JUSTIFICATION",
+            ["algebra.equations.equivalence.classify"],
+            "IM_ALG1_U02_L06_FIRST_PARTY_EQUIVALENT_EQUATIONS_PLUS_TEACHER_JUSTIFICATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L07",
+            "algebra.equations.rewriting",
+            "ALG1_REWRITE_STEP_VALIDITY_PLUS_HUMAN_EXPLANATION",
+            [
+                "algebra.equations.equivalence.classify",
+                "algebra.equation.one_variable.solution_check"
+            ],
+            "IM_ALG1_U02_L07_VALID_INVALID_REWRITES_PLUS_TEACHER_REASONING",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L08",
+            "algebra.literal_equations.isolate",
+            "ALG1_LITERAL_EQUATION_TARGET_ISOLATION_PLUS_HUMAN_DERIVATION",
+            ["algebra.literal_equation.isolate.select_form"],
+            "IM_ALG1_U02_L08_FIRST_PARTY_TARGET_VARIABLE_REWRITES_PLUS_TEACHER_DERIVATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L09",
+            "algebra.literal_equations.isolate",
+            "ALG1_CONTEXTUAL_TARGET_VARIABLE_ISOLATION_PLUS_HUMAN_TOOL_INTERPRETATION",
+            ["algebra.literal_equation.isolate.select_form"],
+            "IM_ALG1_U02_L09_CONTEXTUAL_REWRITES_PLUS_TEACHER_TECHNOLOGY_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L10",
+            "algebra.linear.graph_connections",
+            "ALG1_STANDARD_FORM_TO_SLOPE_INTERCEPT_PLUS_HUMAN_GRAPH_CONTEXT",
+            [
+                "algebra.linear.standard_form.slope_intercept",
+                "algebra.equation.two_variable.solution_check"
+            ],
+            "IM_ALG1_U02_L10_STANDARD_FORM_INTERCEPTS_SLOPE_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L11",
+            "algebra.linear.graph_connections",
+            "ALG1_REWRITE_TO_SLOPE_INTERCEPT_PLUS_HUMAN_GRAPH_INTERPRETATION",
+            [
+                "algebra.linear.standard_form.slope_intercept",
+                "algebra.equation.two_variable.solution_check"
+            ],
+            "IM_ALG1_U02_L11_SLOPE_INTERCEPT_REWRITE_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L12",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_SYSTEM_INTERSECTION_EXACT_PAIR_PLUS_TEACHER_GRAPH_MODEL",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L12_REUSE_SYSTEM_SKILL_PLUS_TEACHER_MODEL_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+            "functions.relations.definition",
+            "ALG1_UNIQUE_OUTPUT_CLASSIFICATION_PLUS_HUMAN_GRAPHS",
+            ["functions.relations.unique_output.classify"],
+            "ALG1_U04_L01_FUNCTION_DEFINITION_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L02",
+            "functions.notation.interpret",
+            "ALG1_FUNCTION_NOTATION_EVALUATION_PLUS_TEACHER_CONTEXT",
+            ["functions.notation.evaluate_context"],
+            "ALG1_U04_L02_NOTATION_INPUT_OUTPUT_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L03",
+            "functions.notation.interpret",
+            "ALG1_FUNCTION_NOTATION_GRAPH_CONNECTIONS_PLUS_TEACHER_SKETCH",
+            ["functions.notation.evaluate_context"],
+            "ALG1_U04_L03_NOTATION_GRAPH_CONNECTIONS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04",
+            "functions.rules.linear",
+            "ALG1_FUNCTION_RULE_EVALUATE_AND_REVERSE_PLUS_TEACHER_REPRESENTATIONS",
+            ["functions.notation.evaluate_context", "algebra.linear.ax_plus_b_equals_c"],
+            "ALG1_U04_L04_RULE_EVALUATE_SOLVE_PLUS_TEACHER_GRAPH_TABLE",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+            "functions.linear.evaluate_and_solve",
+            "ALG1_LINEAR_FUNCTION_EVALUATE_SOLVE_PLUS_TEACHER_GRAPH_TECH",
+            ["functions.notation.evaluate_context", "algebra.linear.ax_plus_b_equals_c"],
+            "ALG1_U04_L05_LINEAR_EVALUATE_SOLVE_PLUS_TEACHER_TECHNOLOGY_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
+            "functions.graph.key_features",
+            "ALG1_GRAPH_FEATURES_INTERCEPT_EXACT_PLUS_TEACHER_EXTREMA_INTERVALS",
+            ["geometry.coordinate.y_intercept_from_rule"],
+            "ALG1_U04_L06_INTERCEPT_PLUS_TEACHER_GRAPH_FEATURE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L07",
+            "functions.average_rate_of_change",
+            "ALG1_AVERAGE_RATE_EXACT_SLOPE_PLUS_TEACHER_CONTEXT",
+            ["geometry.coordinate.gradient_between_points"],
+            "ALG1_U04_L07_AVERAGE_RATE_FROM_POINTS_PLUS_TEACHER_UNITS",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L08",
+            "functions.graph.model_and_interpret",
+            "ALG1_GRAPH_MODEL_PLUS_AVERAGE_RATE_EXACT_AND_TEACHER_SKETCH",
+            ["geometry.coordinate.gradient_between_points"],
+            "ALG1_U04_L08_RATE_PLUS_TEACHER_GRAPH_MODEL_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L09",
+            "functions.compare.intersection_and_rate",
+            "ALG1_COMPARE_FUNCTIONS_INTERSECTION_RATE_PLUS_TEACHER_CONTEXT",
+            ["supporting.coordinate.line_intersection", "geometry.coordinate.gradient_between_points"],
+            "ALG1_U04_L09_INTERSECTION_RATE_PLUS_TEACHER_GRAPH_COMPARISON",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L10",
+            "functions.domain_range.context",
+            "ALG1_DOMAIN_RANGE_CONTEXT_BOUNDS_PLUS_TEACHER_DISCRETE_CONTINUOUS",
+            ["functions.domain_range.context_bounds"],
+            "ALG1_U04_L10_DOMAIN_RANGE_BOUNDS_PLUS_TEACHER_CONTEXT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L11",
+            "functions.domain_range.graph",
+            "ALG1_DOMAIN_RANGE_BOUNDS_PLUS_TEACHER_GRAPH_ENDPOINTS",
+            ["functions.domain_range.context_bounds"],
+            "ALG1_U04_L11_DOMAIN_RANGE_PLUS_TEACHER_ENDPOINT_HOLE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L12",
+            "functions.piecewise.interpret",
+            "ALG1_PIECEWISE_INTERVAL_EVALUATION_PLUS_TEACHER_ENDPOINT_GRAPH",
+            ["functions.piecewise.evaluate_interval"],
+            "ALG1_U04_L12_PIECEWISE_RULE_SELECTION_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L13",
+            "functions.absolute_value.error",
+            "ALG1_ABSOLUTE_ERROR_EXACT_PLUS_TEACHER_SCATTER_PATTERN",
+            ["functions.absolute_error.from_target"],
+            "ALG1_U04_L13_ABSOLUTE_ERROR_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L14",
+            "functions.absolute_value.translate",
+            "ALG1_ABSOLUTE_VALUE_TRANSLATED_EVALUATION_PLUS_TEACHER_GRAPH",
+            ["functions.absolute_value.translate_evaluate", "functions.absolute_error.from_target"],
+            "ALG1_U04_L14_ABSOLUTE_DISTANCE_TRANSLATION_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15",
+            "functions.inverse.composition",
+            "ALG1_INVERSE_COMPOSITION_TABLE_RESTRICTED_QUADRATIC_PLUS_TEACHER_UNDO_CONTEXT",
+            ["usccss.hs.inverse_composition", "usccss.hs.inverse_table", "usccss.hs.restricted_inverse"],
+            "ALG1_U04_L15_EXACT_RESTRICTED_INVERSE_EXTENSION_PLUS_TEACHER_PROCESS_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16",
+            "functions.inverse.table",
+            "ALG1_INVERSE_FUNCTION_TABLE_EXACT_PLUS_TEACHER_RULE_CONTEXT",
+            ["usccss.hs.inverse_table"],
+            "ALG1_U04_L16_INVERSE_TABLE_PLUS_TEACHER_CONTEXT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17",
+            "functions.inverse.model",
+            "ALG1_EXACT_INVERSE_COMPOSITION_PLUS_TEACHER_MODEL_CONTEXT",
+            ["usccss.hs.inverse_composition"],
+            "ALG1_U04_L17_INVERSE_MODEL_COMPOSITION_PLUS_TEACHER_ROLE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L18",
+            "functions.model.linear_data",
+            "ALG1_LINEAR_MODEL_PREDICT_RESIDUAL_PLUS_TEACHER_MODEL_CRITIQUE",
+            ["statistics.linear_model.predict", "statistics.linear_model.residual"],
+            "ALG1_U04_L18_BATTERY_MODEL_PLUS_TEACHER_ASSUMPTION_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
+            "functions.growth.compare",
+            "ALG1_LINEAR_EXPONENTIAL_COMPARE_PLUS_TEACHER_GRAPHS",
+            ["functions.growth.linear_exponential.compare"],
+            "ALG1_U05_L01_GROWTH_COMPARISON_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+            "functions.growth.compare",
+            "ALG1_CONSTANT_DIFFERENCE_FACTOR_PLUS_TEACHER_TABLE_EXPRESSIONS",
+            ["functions.growth.linear_exponential.compare"],
+            "ALG1_U05_L02_PATTERN_TABLES_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
+            "functions.exponential.growth",
+            "ALG1_EXPONENTIAL_GROWTH_EVALUATE_PLUS_TEACHER_GRAPH_CONTEXT",
+            ["functions.exponential.growth.evaluate"],
+            "ALG1_U05_L03_INITIAL_FACTOR_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L04",
+            "functions.exponential.decay",
+            "ALG1_DECAY_RETAINED_PERCENT_PLUS_TEACHER_REPEATED_MULTIPLICATION",
+            ["percentages.core.increase_decrease"],
+            "ALG1_U05_L04_PERCENT_REMAINING_PLUS_TEACHER_DECAY_REASONING",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L05",
+            "functions.exponential.decay",
+            "ALG1_EXPONENTIAL_DECAY_EXACT_PLUS_TEACHER_GRAPH_FACTOR",
+            ["functions.exponential.decay.half_evaluate"],
+            "ALG1_U05_L05_HALF_DECAY_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L06",
+            "functions.exponential.graph.compare",
+            "ALG1_U05_L06_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.decay.half_evaluate", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L06_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+            "functions.exponential.negative_exponents",
+            "ALG1_U05_L07_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.decay.half_evaluate"],
+            "ALG1_U05_L07_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
+            "functions.exponential.notation",
+            "ALG1_U05_L08_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.relations.unique_output.classify", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L08_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L09",
+            "functions.exponential.graph.interpret",
+            "ALG1_U05_L09_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.growth.evaluate", "functions.exponential.decay.half_evaluate"],
+            "ALG1_U05_L09_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+            "functions.exponential.rate",
+            "ALG1_U05_L10_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["geometry.coordinate.gradient_between_points", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L10_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
+            "functions.exponential.model.choose",
+            "ALG1_U05_L11_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.growth.evaluate", "functions.exponential.decay.half_evaluate"],
+            "ALG1_U05_L11_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L12",
+            "functions.exponential.graph.parameters",
+            "ALG1_U05_L12_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.growth.evaluate"],
+            "ALG1_U05_L12_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+            "functions.exponential.two_point.factor",
+            "ALG1_U05_L13_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.growth.evaluate"],
+            "ALG1_U05_L13_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
+            "functions.percent.change",
+            "ALG1_U05_L14_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["percentages.core.increase_decrease"],
+            "ALG1_U05_L14_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L15",
+            "functions.percent.repeated",
+            "ALG1_U05_L15_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["percentages.core.increase_decrease", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L15_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L16",
+            "functions.percent.compounding",
+            "ALG1_U05_L16_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["percentages.core.increase_decrease", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L16_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L17",
+            "functions.percent.compounding.intervals",
+            "ALG1_U05_L17_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["percentages.core.increase_decrease", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L17_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L18",
+            "functions.exponential.equivalent.expressions",
+            "ALG1_U05_L18_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.exponential.growth.evaluate", "percentages.core.increase_decrease"],
+            "ALG1_U05_L18_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L19",
+            "functions.growth.compare",
+            "ALG1_U05_L19_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.growth.linear_exponential.compare"],
+            "ALG1_U05_L19_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+            "functions.equal_intervals.rate",
+            "ALG1_U05_L20_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["geometry.coordinate.gradient_between_points", "functions.exponential.growth.evaluate"],
+            "ALG1_U05_L20_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
+            "functions.model.population",
+            "ALG1_U05_L21_EXACT_COMPONENT_PLUS_TEACHER_REVIEW",
+            ["functions.growth.linear_exponential.compare", "statistics.linear_model.predict"],
+            "ALG1_U05_L21_REVIEWED_SOURCE_AND_EXACT_COMPONENT",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L01",
+            "functions.quadratic.context",
+            "ALG1_U06_L01_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L01_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L02",
+            "functions.quadratic.context",
+            "ALG1_U06_L02_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex", "functions.growth.linear_exponential.compare"],
+            "ALG1_U06_L02_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
+            "functions.quadratic.context",
+            "ALG1_U06_L03_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["functions.quadratic.expand.middle_coefficient", "supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L03_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+            "functions.quadratic.context",
+            "ALG1_U06_L04_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["functions.growth.linear_exponential.compare", "supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L04_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
+            "functions.quadratic.context",
+            "ALG1_U06_L05_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L05_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+            "functions.quadratic.context",
+            "ALG1_U06_L06_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.quadratic_larger_root", "supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L06_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
+            "functions.quadratic.context",
+            "ALG1_U06_L07_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U06_L07_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L08",
+            "functions.quadratic.context",
+            "ALG1_U06_L08_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U06_L08_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L09",
+            "functions.quadratic.context",
+            "ALG1_U06_L09_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U06_L09_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L10",
+            "functions.quadratic.context",
+            "ALG1_U06_L10_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.quadratic_larger_root", "supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L10_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11",
+            "functions.quadratic.context",
+            "ALG1_U06_L11_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U06_L11_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+            "functions.quadratic.context",
+            "ALG1_U06_L12_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L12_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L13",
+            "functions.quadratic.context",
+            "ALG1_U06_L13_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex", "functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U06_L13_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L14",
+            "functions.quadratic.context",
+            "ALG1_U06_L14_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L14_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L15",
+            "functions.quadratic.context",
+            "ALG1_U06_L15_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L15_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16",
+            "functions.quadratic.context",
+            "ALG1_U06_L16_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L16_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L17",
+            "functions.quadratic.context",
+            "ALG1_U06_L17_EXACT_SUBSKILLS_PLUS_TEACHER_REVIEW",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U06_L17_QUADRATIC_SOURCE_ALIGNED_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L01",
+            "functions.quadratic.equations",
+            "ALG1_U07_L01_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root", "supporting.functions.polynomial_value"],
+            "ALG1_U07_L01_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L02",
+            "functions.quadratic.equations",
+            "ALG1_U07_L02_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L02_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L03",
+            "functions.quadratic.equations",
+            "ALG1_U07_L03_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L03_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L04",
+            "functions.quadratic.equations",
+            "ALG1_U07_L04_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L04_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L05",
+            "functions.quadratic.equations",
+            "ALG1_U07_L05_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root", "supporting.algebra.complete_square_vertex"],
+            "ALG1_U07_L05_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L06",
+            "functions.quadratic.equations",
+            "ALG1_U07_L06_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U07_L06_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L07",
+            "functions.quadratic.equations",
+            "ALG1_U07_L07_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U07_L07_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L08",
+            "functions.quadratic.equations",
+            "ALG1_U07_L08_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U07_L08_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L09",
+            "functions.quadratic.equations",
+            "ALG1_U07_L09_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L09_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L10",
+            "functions.quadratic.equations",
+            "ALG1_U07_L10_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["functions.quadratic.expand.middle_coefficient", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L10_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+            "functions.quadratic.equations",
+            "ALG1_U07_L11_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U07_L11_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
+            "functions.quadratic.equations",
+            "ALG1_U07_L12_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L12_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L13",
+            "functions.quadratic.equations",
+            "ALG1_U07_L13_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L13_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L14",
+            "functions.quadratic.equations",
+            "ALG1_U07_L14_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L14_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L15",
+            "functions.quadratic.equations",
+            "ALG1_U07_L15_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.surds.coefficient", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L15_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L16",
+            "functions.quadratic.equations",
+            "ALG1_U07_L16_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root", "supporting.surds.coefficient"],
+            "ALG1_U07_L16_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L17",
+            "functions.quadratic.equations",
+            "ALG1_U07_L17_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.quadratic_larger_root", "supporting.functions.polynomial_value"],
+            "ALG1_U07_L17_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L18",
+            "functions.quadratic.equations",
+            "ALG1_U07_L18_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.functions.polynomial_value", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L18_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L19",
+            "functions.quadratic.equations",
+            "ALG1_U07_L19_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root"],
+            "ALG1_U07_L19_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L20"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L20",
+            "functions.quadratic.equations",
+            "ALG1_U07_L20_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.surds.coefficient"],
+            "ALG1_U07_L20_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+            "functions.quadratic.equations",
+            "ALG1_U07_L21_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.surds.coefficient"],
+            "ALG1_U07_L21_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
+            "functions.quadratic.equations",
+            "ALG1_U07_L22_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex", "functions.quadratic.expand.middle_coefficient"],
+            "ALG1_U07_L22_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L23"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L23",
+            "functions.quadratic.equations",
+            "ALG1_U07_L23_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex"],
+            "ALG1_U07_L23_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24",
+            "functions.quadratic.equations",
+            "ALG1_U07_L24_EXACT_COMPONENT_PLUS_TEACHER_PROOF",
+            ["supporting.algebra.complete_square_vertex", "supporting.algebra.quadratic_larger_root", "supporting.functions.polynomial_value"],
+            "ALG1_U07_L24_SOURCE_GOALS_PLUS_TEACHER_EVALUATION",
+            "READY_VERIFIED",
+            Version);
+
+        // IM 2021 Grade 5 U03:L01: one piece of one selected half
+        // measured against the ORIGINAL whole (1/6 or 1/8).
+        // Digital objective selections are exact; drawings and explanations
+        // remain TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L13"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L13",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_SYSTEM_SUBSTITUTION_EXACT_PAIR_PLUS_TEACHER_METHOD",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L13_SOURCE_ALIGNED_METHOD_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L14"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L14",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_SYSTEM_ELIMINATION_ADD_SUBTRACT_EXACT_PAIR_PLUS_TEACHER_METHOD",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L14_SOURCE_ALIGNED_METHOD_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L15",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_ELIMINATION_CONTEXT_EXACT_PAIR_PLUS_TEACHER_METHOD",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L15_OBJECTIVE_PAIR_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L16"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L16",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_ELIMINATION_SCALING_EXACT_PAIR_PLUS_TEACHER_METHOD",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L16_OBJECTIVE_PAIR_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L17"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L17",
+            "algebra.linear.systems.classification",
+            "ALG1_ZERO_ONE_INFINITE_SOLUTION_COUNT_PLUS_GRAPH_REASONING",
+            ["algebra.linear.systems.solution_count.classify"],
+            "ALG1_U02_L17_SOLUTION_COUNT_PLUS_TEACHER_JUSTIFICATION",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L18"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L18",
+            "algebra.inequalities.modeling",
+            "ALG1_CONTEXT_TO_INEQUALITY_OPERATOR_CHOICE_PLUS_TEACHER_MODEL",
+            ["algebra.inequality.context.operator_choice"],
+            "ALG1_U02_L18_CONTEXT_OPERATOR_PLUS_TEACHER_CONTEXT_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L19"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L19",
+            "algebra.inequalities.one_variable",
+            "ALG1_ONE_VARIABLE_INEQUALITY_CANDIDATE_PLUS_HUMAN_INTERVAL_REASONING",
+            ["algebra.inequality.one_variable.candidate_check"],
+            "ALG1_U02_L19_SOURCE_INEQUALITY_PLUS_TEACHER_INTERVAL_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L20"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L20",
+            "algebra.inequalities.one_variable",
+            "ALG1_ONE_VARIABLE_INEQUALITY_CANDIDATE_PLUS_HUMAN_INTERVAL_REASONING",
+            ["algebra.inequality.one_variable.candidate_check", "algebra.inequality.context.operator_choice"],
+            "ALG1_U02_L20_SOURCE_INEQUALITY_PLUS_TEACHER_INTERVAL_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L21"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L21",
+            "algebra.inequalities.two_variable",
+            "ALG1_HALF_PLANE_POINT_MEMBERSHIP_PLUS_HUMAN_GRAPH_CONTEXT",
+            ["algebra.inequality.two_variable.candidate_check"],
+            "ALG1_U02_L21_EXACT_POINT_MEMBERSHIP_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L22"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L22",
+            "algebra.inequalities.two_variable",
+            "ALG1_HALF_PLANE_POINT_MEMBERSHIP_PLUS_HUMAN_GRAPH_CONTEXT",
+            ["algebra.inequality.two_variable.candidate_check"],
+            "ALG1_U02_L22_EXACT_POINT_MEMBERSHIP_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L23"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L23",
+            "algebra.inequalities.two_variable",
+            "ALG1_INEQUALITY_CANDIDATE_MEMBERSHIP_PLUS_TEACHER_GRAPH_CONTEXT",
+            ["algebra.inequality.two_variable.candidate_check"],
+            "ALG1_U02_L23_EXACT_FEASIBILITY_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L24"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L24",
+            "algebra.inequalities.systems",
+            "ALG1_INEQUALITY_CANDIDATE_MEMBERSHIP_PLUS_TEACHER_GRAPH_CONTEXT",
+            ["algebra.inequality.system.candidate_check"],
+            "ALG1_U02_L24_EXACT_FEASIBILITY_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L25"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L25",
+            "algebra.inequalities.systems",
+            "ALG1_SYSTEM_BOUNDARY_FEASIBILITY_PLUS_TEACHER_CONTEXT_INTERPRETATION",
+            ["algebra.inequality.system.candidate_check"],
+            "ALG1_U02_L25_SYSTEMS_WITH_ENDPOINT_PRECISION_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
+            "algebra.inequalities.systems",
+            "ALG1_CUSTOM_TRAIL_MIX_CONSTRAINTS_PLUS_TEACHER_MODEL_CREATION",
+            ["algebra.inequality.system.candidate_check"],
+            "ALG1_U02_L26_INDEPENDENT_CONSTRAINT_MODEL_PLUS_TEACHER_GRAPH_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+            "statistics.categorical.two_way",
+            "ALG1_TWO_WAY_MARGINAL_COUNTS_PLUS_TEACHER_TABLE_CREATION",
+            ["statistics.two_way.marginal_count"],
+            "ALG1_U03_L01_CATEGORICAL_COUNTS_PLUS_TEACHER_INFORMATION_GAP",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L02",
+            "statistics.categorical.relative_frequency",
+            "ALG1_U03_CATEGORICAL_EXACT_COMPONENT_PLUS_TEACHER_INTERPRETATION",
+            ["statistics.two_way.conditional_relative"],
+            "ALG1_U03_L02_SOURCE_CATEGORICAL_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L03",
+            "statistics.categorical.association",
+            "ALG1_U03_CATEGORICAL_EXACT_COMPONENT_PLUS_TEACHER_INTERPRETATION",
+            ["statistics.two_way.association"],
+            "ALG1_U03_L03_SOURCE_CATEGORICAL_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L04",
+            "statistics.bivariate.linear_model",
+            "ALG1_U03_BIVARIATE_EXACT_COMPONENT_PLUS_TEACHER_GRAPH_INTERPRETATION",
+            ["statistics.linear_model.predict"],
+            "ALG1_U03_L04_SOURCE_BIVARIATE_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L05",
+            "statistics.bivariate.regression",
+            "ALG1_U03_BIVARIATE_EXACT_COMPONENT_PLUS_TEACHER_GRAPH_INTERPRETATION",
+            ["statistics.linear_model.fit_select"],
+            "ALG1_U03_L05_SOURCE_BIVARIATE_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L06",
+            "statistics.bivariate.residual",
+            "ALG1_U03_EXACT_CORRELATION_OR_RESIDUAL_PLUS_TEACHER_GRAPH_REASONING",
+            ["statistics.linear_model.residual"],
+            "ALG1_U03_L06_SOURCE_STATISTICS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L07",
+            "statistics.bivariate.correlation",
+            "ALG1_U03_EXACT_CORRELATION_OR_RESIDUAL_PLUS_TEACHER_GRAPH_REASONING",
+            ["statistics.correlation.direction"],
+            "ALG1_U03_L07_SOURCE_STATISTICS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L08",
+            "statistics.bivariate.correlation",
+            "ALG1_U03_CORRELATION_CAUSALITY_OBJECTIVE_PLUS_TEACHER_REASONING",
+            ["statistics.correlation.rounded"],
+            "ALG1_U03_L08_SOURCE_STATISTICS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L09"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L09",
+            "statistics.bivariate.causality",
+            "ALG1_U03_CORRELATION_CAUSALITY_OBJECTIVE_PLUS_TEACHER_REASONING",
+            ["statistics.association.confounder"],
+            "ALG1_U03_L09_SOURCE_STATISTICS_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10",
+            "statistics.bivariate.project",
+            "ALG1_AUTHENTIC_DATA_PROJECT_NUMERIC_COMPONENTS_PLUS_TEACHER_INVESTIGATION",
+            [
+                "statistics.linear_model.predict",
+                "statistics.linear_model.residual",
+                "statistics.correlation.rounded"
+            ],
+            "ALG1_U03_L10_FOSSILS_FLAGS_PROJECT_PLUS_TEACHER_DATA_PROVENANCE_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.

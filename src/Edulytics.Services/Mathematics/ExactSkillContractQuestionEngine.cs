@@ -217,6 +217,13 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit2RatioQuestions.Supports(family.Trim()) ||
 
+         UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1U01L02RepresentationQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1Unit2AlgebraQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1Unit2InequalityQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1Unit3StatisticsQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1Unit4FunctionQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L01FractionOfHalfQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L02UnitFractionQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L03UnitFractionQuestions.Supports(family.Trim()) ||
@@ -540,6 +547,20 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(family))
             return UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Verify(family, parameters, answer);
 
+        if (UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(family))
+            return UsCcssAlg1U01L01StatisticalSelectionQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1U01L02RepresentationQuestions.Supports(family))
+            return UsCcssAlg1U01L02RepresentationQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(family))
+            return UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1Unit2AlgebraQuestions.Supports(family))
+            return UsCcssAlg1Unit2AlgebraQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1Unit2InequalityQuestions.Supports(family))
+            return UsCcssAlg1Unit2InequalityQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1Unit3StatisticsQuestions.Supports(family))
+            return UsCcssAlg1Unit3StatisticsQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1Unit4FunctionQuestions.Supports(family))
+            return UsCcssAlg1Unit4FunctionQuestions.Verify(family, parameters, answer);
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
             return UsCcssG5U03L01FractionOfHalfQuestions.Verify(family, parameters, answer);
         if (UsCcssG5U03L02UnitFractionQuestions.Supports(family))
@@ -2117,6 +2138,48 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+        if (UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1U01L01StatisticalSelectionQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1U01L02RepresentationQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1U01L02RepresentationQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1Unit2AlgebraQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1Unit2AlgebraQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1Unit2InequalityQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1Unit2InequalityQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1Unit3StatisticsQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1Unit3StatisticsQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1Unit4FunctionQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1Unit4FunctionQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
         {
             var item = UsCcssG5U03L01FractionOfHalfQuestions.Build(family, random);
@@ -5667,6 +5730,20 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Supports(problem.Family))
             return UsCcssG6Unit1Lesson12SurfaceAreaQuestions.Solve(problem.Family, p);
 
+        if (UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(problem.Family))
+            return UsCcssAlg1U01L01StatisticalSelectionQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1U01L02RepresentationQuestions.Supports(problem.Family))
+            return UsCcssAlg1U01L02RepresentationQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(problem.Family))
+            return UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1Unit2AlgebraQuestions.Supports(problem.Family))
+            return UsCcssAlg1Unit2AlgebraQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1Unit2InequalityQuestions.Supports(problem.Family))
+            return UsCcssAlg1Unit2InequalityQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1Unit3StatisticsQuestions.Supports(problem.Family))
+            return UsCcssAlg1Unit3StatisticsQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1Unit4FunctionQuestions.Supports(problem.Family))
+            return UsCcssAlg1Unit4FunctionQuestions.Solve(problem.Family, p);
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(problem.Family))
             return UsCcssG5U03L01FractionOfHalfQuestions.Solve(problem.Family, p);
         if (UsCcssG5U03L02UnitFractionQuestions.Supports(problem.Family))

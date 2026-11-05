@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
+  "contentVersion": "alg1-u01-l10-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\10\\preparation.html",
+      "sha256": "e559aeb87dfcdf026c255bc96be40f5c02adc303ae27abe183c2e655c23976e3"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\10\\index.html",
+      "sha256": "279e04e46713e9d393d4f78cbed216f9a165f05f87fb31723ec99672b435e207"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\10\\index.html",
+      "sha256": "bc3d559031aed9b062a63365a8f43c9375e952641f6d5dbd46812912358c5cfe"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\10\\practice.html",
+      "sha256": "64870e032eba892137da27be48d77537f26d7bb572c3cd16bbb6efdb9a890311"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1 Addressing",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.3 Addressing",
+    "HSS-ID.A.3 BuildingTowards"
+  ],
+  "activity": "Compare two gaming populations using variable and graph; create at least 10 points with three distinct values for given mean-median relations.",
+  "practice": "Explain why replacing 9 by 39 changes mean 6.5 to 9.5 while median stays 6.5; defend center under skew.",
+  "mathFixture": [
+    65,
+    6.5,
+    6.5,
+    95,
+    9.5,
+    6.5
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Compare two gaming populations using variable and graph; create at least 10 points with three distinct values for given mean-median relations.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Explain why replacing 9 by 39 changes mean 6.5 to 9.5 while median stays 6.5; defend center under skew.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        65,
+        6.5,
+        6.5,
+        95,
+        9.5,
+        6.5
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Explain why replacing 9 by 39 changes mean 6.5 to 9.5 while median stays 6.5; defend center under skew.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Mean/median calculations",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Effects of extremes and shape",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Appropriate center and context",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

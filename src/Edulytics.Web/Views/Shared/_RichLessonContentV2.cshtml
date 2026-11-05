@@ -69,6 +69,13 @@
         {
             <partial name="_RichLessonVisual" model="visual" />
         }
+        @if (Model.LessonCode is
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11" or
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16" or
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24")
+        {
+            <partial name="_UsCcssAlgebra1GraphGallery" model="Model" />
+        }
         @* Grade 7 U01 first-party geometry; exact lesson whitelist lives in the
            Grade 7-owned partial. Other grades and units remain untouched. *@
         @if (Model.LessonCode is not null &&
