@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U04:L05",
+  "nextCanonical": "U04:L06",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -2966,25 +2966,67 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U04_L04_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+      "unitCode": "U04",
+      "lessonNumber": 5,
+      "title": "Using Function Notation to Describe Rules (Part 2)",
+      "sourceEdition": "Approved Algebra 1 local original teacher/student HTML; AccessIM/v360 excluded",
+      "sourceHashes": [
+        "d041998961dc478e33b38b47aa6d75d0ae9f226f70796996cea48804d4c07a8e",
+        "9afe75d9b48c0203a30e10a5e1fd929358b8d9e7f074264f83fbd350a64a8d3c",
+        "b8cbb13ddbffa179f30f552643ef8f707307258eb94c499b449460ef08dc0192",
+        "b8006cf1767bd5f2ba98d2082b780678674cbcf7f08005eaa74cb5b6eb58d971",
+        "a3d1122e2d809ac65a883a52dfb939d10e05bd97fe5a09a9942caba3bbee0ec0"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u04-l05-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u04-l05-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "evaluate functions, solve function equations, linear constant-rate meaning and optional technology compared with local originals",
+        "publisherCooldown": "LOCKED_SOURCE_COOLDOWN_REPLACED_WITH_FIRST_PARTY"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true,
+        "firstPartyCooldown": "AUTHORED"
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": "functions.notation.evaluate_context + algebra.linear.ax_plus_b_equals_c",
+        "humanScored": true,
+        "runtimeSupported": true,
+        "teacherReviewRequired": [
+          "linearity explanation",
+          "graph interpretation",
+          "actual technology use if available"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U04_L05_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 56,
-    "B_CLOSED": 56,
-    "C_PREPARED": 56,
-    "ABC_READY_FOR_D": 56,
+    "A_CLOSED": 57,
+    "B_CLOSED": 57,
+    "C_PREPARED": 57,
+    "ABC_READY_FOR_D": 57,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 76,
+    "REMAINING": 75,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 3,
     "CURRENT_UNIT": "U04",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L05",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L06",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -3019,12 +3061,12 @@
     "unitsABCCLosed": 3,
     "status": "U04_IN_PROGRESS",
     "previouslyABCClosed": 52,
-    "newlyABCClosed": 4,
+    "newlyABCClosed": 5,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -3040,11 +3082,12 @@
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests",
     "mayAdvanceToL03": false,
     "mayAdvanceToL04": false,
-    "mayAdvanceToL05": true
+    "mayAdvanceToL05": false,
+    "mayAdvanceToL06": true
   },
-  "unitStatus": "U04_IN_PROGRESS_L05",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04",
+  "unitStatus": "U04_IN_PROGRESS_L06",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -3054,9 +3097,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L05",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L06",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U04_L04_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U04_L05_ABC_CLOSURE_20261105.md"
 }
