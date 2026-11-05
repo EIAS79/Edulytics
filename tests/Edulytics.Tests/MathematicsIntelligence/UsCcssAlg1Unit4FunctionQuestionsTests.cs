@@ -104,4 +104,19 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
             UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteTranslateFamily, parameters));
     }
 
+    [Theory]
+    [InlineData(4, 8, 2, 2, "A")]
+    [InlineData(4, 2, 3, 4, "B")]
+    public void GrowthPatternsCompareExactly(int initial, int addition, int factor, int steps, string expected)
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["initial"] = initial, ["addition"] = addition, ["factor"] = factor, ["steps"] = steps
+        };
+        Assert.Equal(expected, UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.LinearExponentialCompareFamily, p));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.LinearExponentialCompareFamily, p, expected));
+    }
+
 }

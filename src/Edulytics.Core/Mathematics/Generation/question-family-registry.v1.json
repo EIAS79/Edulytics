@@ -20877,6 +20877,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.growth.linear_exponential.compare",
+      "version": 1,
+      "skillId": "functions.growth.compare",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u05-growth-pattern-comparison",
+      "representations": ["linear_table", "exponential_table", "teacher_graph_comparison"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

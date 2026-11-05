@@ -10,12 +10,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string FunctionPiecewiseFamily = "functions.piecewise.evaluate_interval";
     public const string FunctionAbsoluteErrorFamily = "functions.absolute_error.from_target";
     public const string FunctionAbsoluteTranslateFamily = "functions.absolute_value.translate_evaluate";
+    public const string LinearExponentialCompareFamily = "functions.growth.linear_exponential.compare";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -115,6 +116,24 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == LinearExponentialCompareFamily)
+        {
+            var initial = random.Next(2, 9);
+            var addition = random.Next(2, 9);
+            var factor = random.Next(2, 5);
+            var steps = random.Next(2, 6);
+            var linear = initial + addition * steps;
+            var exponential = initial * (int)Math.Pow(factor, steps);
+            return new(family,
+                $"A begins at {initial} and adds {addition} each round. B begins at {initial} and multiplies by {factor} each round. Which is larger after {steps} rounds? Answer A, B, or E for equal. Explain both growth patterns to the teacher.",
+                $"A={linear}, B={exponential}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["initial"] = initial, ["addition"] = addition, ["factor"] = factor, ["steps"] = steps
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -175,6 +194,15 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (Math.Abs(input - center) + vertical).ToString();
         }
 
+        if (family == LinearExponentialCompareFamily)
+        {
+            if (!ValidateGrowth(parameters, out var initial, out var addition, out var factor, out var steps))
+                throw new InvalidOperationException("Invalid growth parameters.");
+            var linear = initial + addition * steps;
+            var exponential = initial * (int)Math.Pow(factor, steps);
+            return linear > exponential ? "A" : exponential > linear ? "B" : "E";
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -223,6 +251,10 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 return false;
             return submitted.ToString() == Solve(family, parameters);
         }
+
+        if (family == LinearExponentialCompareFamily)
+            return ValidateGrowth(parameters, out _, out _, out _, out _) &&
+                   string.Equals(answer.Trim(), Solve(family, parameters), StringComparison.OrdinalIgnoreCase);
 
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out _, out _, out _, out _))
@@ -307,6 +339,17 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("vertical", out vertical) && vertical is >= -4 and <= 6 &&
             p.TryGetValue("input", out input) && input is >= -8 and <= 8 &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateGrowth(IReadOnlyDictionary<string, int>? p,
+        out int initial, out int addition, out int factor, out int steps)
+    {
+        initial = addition = factor = steps = 0;
+        return p is not null &&
+            p.TryGetValue("initial", out initial) && initial is >= 2 and <= 8 &&
+            p.TryGetValue("addition", out addition) && addition is >= 2 and <= 8 &&
+            p.TryGetValue("factor", out factor) && factor is >= 2 and <= 4 &&
+            p.TryGetValue("steps", out steps) && steps is >= 2 and <= 5;
     }
 
 }
