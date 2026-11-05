@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U06:L04",
+  "nextCanonical": "U06:L05",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -4524,25 +4524,69 @@
       "sourceReviewStartedAtUtc": "2026-11-05T13:01:58.586413+00:00",
       "abcPreparedAtUtc": "2026-11-05T13:01:58.638156+00:00",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L03_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+      "unitCode": "U06",
+      "lessonNumber": 4,
+      "title": "Comparing Quadratic and Exponential Functions",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "55f5496fe866d224cbb02bd94b426aceb6ef001a4850f08280d410e02f42a052",
+        "ti": "9205741d8a16aec977d27f77c1f7a55dc6f9792fcbb152e21b3f3954095d2a46",
+        "tpr": "066e924cf6ae3ac25a939e0922fbecff32ecb2d4ecbe856157b2516323edc3f3",
+        "si": "91a58b36f13d673485b4dc67000baebfa8a663d7b8162ec5f330c5523d59b97e",
+        "spr": "28bd5bf7617144b6122a961493d24e54150a0ff70363c74b31e2465d03d2a21f"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u06-l04-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u06-l04-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "verified original teacher/student goals, source activities and practice; retained preexisting aligned examples"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "firstPartyCooldown": "AUTHORED",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "functions.growth.linear_exponential.compare",
+          "supporting.algebra.complete_square_vertex"
+        ],
+        "teacherReviewRequired": [
+          "quadratic-versus-exponential tables",
+          "graphs",
+          "eventual dominance"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "sourceReviewStartedAtUtc": "2026-11-05T13:02:01.692138+00:00",
+      "abcPreparedAtUtc": "2026-11-05T13:02:01.758947+00:00",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L04_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 94,
-    "B_CLOSED": 94,
-    "C_PREPARED": 94,
-    "ABC_READY_FOR_D": 94,
+    "A_CLOSED": 95,
+    "B_CLOSED": 95,
+    "C_PREPARED": 95,
+    "ABC_READY_FOR_D": 95,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 38,
+    "REMAINING": 37,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 5,
     "CURRENT_UNIT": "U06",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L04",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L05",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -4577,12 +4621,12 @@
     "unitsABCCLosed": 5,
     "status": "U06_IN_PROGRESS",
     "previouslyABCClosed": 91,
-    "newlyABCClosed": 3,
+    "newlyABCClosed": 4,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -4614,9 +4658,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U06_IN_PROGRESS_L04",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
+  "unitStatus": "U06_IN_PROGRESS_L05",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -4626,9 +4670,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L03_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L04_ABC_CLOSURE_20261105.md"
 }
