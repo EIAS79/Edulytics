@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l11-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l11-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Modeling Exponential Behavior",
       "ExplanationParagraphs": [
-        "Learning goal: choose and critique an exponential model for messy decay measurements, identify approximate factor from several ratios, evaluate residuals and distinguish authentic experiments from fabricated demonstration data. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 11, https://im.kendallhunt.com/HS/teachers/1/5/11/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/11/index.html (CC BY 4.0). The publisher's main investigation uses successive ball-bounce heights and data/model critique, not exact perfect decay alone.",
+        "Learning goal: choose and critique an exponential model for messy decay measurements, identify approximate factor from several ratios, evaluate residuals and distinguish authentic experiments from fabricated demonstration data. First-party Edulytiks adaptation of This first-party Edulytiks material follows the reviewed local Algebra 1 learning objectives and uses independently authored examples.",
         "Original hypothetical bounce-height observations in centimetres for bounce numbers n=0,1,2,3 are100,61,37,22. These numbers were constructed for mathematical modeling, not measured from a bouncing ball. A simple approximate model is H(n)=100(0.6)^n, predicting100,60,36,21.6cm. Observed-minus-predicted residuals are0,1,1,0.4cm; the model does not fit exactly.",
         "Compare a constant subtraction model L(n)=100−20n, which predicts100,80,60,40 and has residuals0,−19,−23,−18. The exponential model has much smaller absolute errors here. Ratios of actual heights61/100=.61,37/61≈.607,22/37≈.595 vary slightly around.6, making a multiplier around.6 defensible.",
-        "Student task: construct graphs with shared scales, compute at least three ratios, propose two potential exponential factors, compare prediction error and explain possible measurement variation. An actual ball experiment is optional, and requires genuine data collection to count as performed. Teacher-scored rubric0–2 each for transparent data provenance, factor estimation, model comparison and reasoned uncertainty."
+        "Student task: construct graphs with shared scales, compute at least three ratios, propose two potential exponential factors, compare prediction error and explain possible measurement variation. An actual ball experiment is optional, and requires genuine data collection to count as performed. Teacher-scored rubric0–2 each for transparent data provenance, factor estimation, model comparison and reasoned uncertainty.",
+        "First-party Cool-down (teacher-scored): A quantity is 5 initially and triples each step. Write and evaluate a model at step 3. Explain what plot window would make that growth visible and why linear growth would be a poor choice. Numeric responses supported by the mapped exact families may be auto-checked; the teacher scores model choice, graph-window selection and assumptions."
       ],
       "KeyConcepts": [
         {
