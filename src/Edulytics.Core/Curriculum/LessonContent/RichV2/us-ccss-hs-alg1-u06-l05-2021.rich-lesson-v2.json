@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u06-l05-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u06-l05-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Building Quadratic Functions to Describe Situations (Part 1)",
       "ExplanationParagraphs": [
-        "Learning goal: recognize a quadratic distance-versus-time pattern for a falling object, derive distance from an approximate constant gravitational acceleration and distinguish distance fallen from remaining altitude. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L05 teacher https://im.kendallhunt.com/HS/teachers/1/6/5/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/5/index.html (CC BY 4.0). The source uses feet and falling rock data; this candidate uses a separate invented metric scenario.",
+        "Learning goal: recognize a quadratic distance-versus-time pattern for a falling object, derive distance from an approximate constant gravitational acceleration and distinguish distance fallen from remaining altitude. Independently authored Edulytiks adaptation of Independently authored Edulytiks lesson content aligned to approved local Algebra 1 Unit 6 objectives.",
         "Original physics-idealized scenario: object released from rest in an approximate gravitational field with g≈10m/s² and no air drag from180m above ground. After t seconds, approximate distance fallen D(t)=(1/2)gt²≈5t² metres. At t0,1,2,3,4,5,6, fall distances0,5,20,45,80,125,180m. The model is valid only until the object reaches ground at t6, ignoring drag and other physics.",
         "The increase in distance for successive seconds grows by5,15,25,35,45,55m. Second differences of10m per equal-second step match a quadratic pattern; the average rate of fall in each second is not constant. Remaining height H(t)=180−5t²; do not confuse the two output variables.",
-        "Student task: use original table and diagram to argue why linear constant-speed modeling fails, identify physical domain0≤t≤6, graph D and H separately and interpret what D(6)=180 means. Teacher-scored rubric0–2 for correct data and second differences, justified model, unit/domain and careful physical assumptions. No real drop is claimed."
+        "Student task: use original table and diagram to argue why linear constant-speed modeling fails, identify physical domain0≤t≤6, graph D and H separately and interpret what D(6)=180 means. Teacher-scored rubric0–2 for correct data and second differences, justified model, unit/domain and careful physical assumptions. No real drop is claimed.",
+        "First-party Cool-down (teacher-scored): A hypothetical launched object has height h(t)=-t^2+6t+2. Identify when its height is maximal and explain the roles of each term and suitable time domain. Exact numerical subskills use existing practice capabilities where applicable; the teacher reviews constructing the contextual quadratic rule, table and units."
       ],
       "KeyConcepts": [
         {
