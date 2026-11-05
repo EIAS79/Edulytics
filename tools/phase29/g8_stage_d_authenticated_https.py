@@ -189,8 +189,20 @@ def main():
             and len(mistakes)>=2 and len(summaries)>=3,
             "incomplete canonical Rich V2 structure "+code)
 
+        governance_paragraphs=0
         for index,paragraph in enumerate(explanations,1):
+            # Preserve source and license provenance internally. It is
+            # editorial metadata, not mathematical instruction to learners.
+            if "open up resources" in paragraph.casefold() or (
+                "illustrative mathematics" in paragraph.casefold()):
+                governance_paragraphs+=1
+                continue
             require_rendered(paragraph,visible_words,f"{code} explanation[{index}]")
+        require(governance_paragraphs==1,
+            "Grade8 provenance metadata cardinality drift "+code)
+        require("open up resources" not in visible and
+            "illustrative mathematics" not in visible,
+            "external publisher branding leaked into Grade8 learner lesson "+code)
         for index,concept in enumerate(concepts,1):
             for field in ("Title","Definition","Rule"):
                 require_rendered(concept.get(field,""),visible_words,
