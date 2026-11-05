@@ -20805,6 +20805,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.relations.unique_output.classify",
+      "version": 1,
+      "skillId": "functions.relations.definition",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-unique-output",
+      "representations": ["ordered_pairs", "function_classification", "teacher_led_graphing"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
