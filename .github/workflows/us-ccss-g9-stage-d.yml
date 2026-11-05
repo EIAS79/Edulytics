@@ -50,7 +50,7 @@ jobs:
       - run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
       - run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
       - name: Grade 9 math tests
-        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --filter "FullyQualifiedName~UsCcssAlg1" --logger "trx;LogFileName=g9-math.trx" --results-directory stage-d-results
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --filter "FullyQualifiedName~UsCcssAlg1|FullyQualifiedName~UsCcssAlgebra1" --logger "trx;LogFileName=g9-math.trx" --results-directory stage-d-results
       - if: always()
         uses: actions/upload-artifact@v4
         with:
