@@ -3,7 +3,7 @@
 **Release decision: NO_GO_TECHNICAL. No merge or production deployment.**
 
 - Owner academic authorization: recorded and accepted as owner decision in `grade10-owner-academic-authorization-20261106.json`; separate third-party asset rights status NOT VERIFIED.
-- Current candidate code SHA: `18974359778bd1cca9c58d1c14a0fd2cd5bbce87`.
+- Current candidate code SHA: `2a7129acdbb7722e3b4314a27398acc04202a564`.
 - Last fully observed Grade 10 candidate SHA: `aebec28570777556d0d740a385c5f1ca19ee56d4` (previous D CI RUN `42112323865`, 121/121 .NET targeted PASS and D1/D2/D3 Node PASS, with source and route jobs FAIL).
 - GitHub Actions on current head: NOT OBSERVED at time of record; do not transfer old PASS to the new SHA.
 - Grade 10 authenticated HTTPS regression workflow added: `.github/workflows/us-ccss-g10-geometry-https.yml`; results pending observation.
@@ -14,3 +14,5 @@
 - Lessons D_VERIFIED: 0/124. Human academic owner approval alone does not indicate student/teacher operational readiness.
 - Blocker: https://github.com/EIAS79/Edulytics/issues/623
 - PR: https://github.com/EIAS79/Edulytics/pull/583
+
+Latest reviewed source-visual audit: 65 RichV2 structured visuals with zero external visual URLs; this is not graphic/semantic equivalence. Some learner-facing lesson paragraphs still include internal source/editorial notes.
