@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U05:L02",
+  "nextCanonical": "U05:L03",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -3593,25 +3593,64 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L01_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+      "unitCode": "U05",
+      "lessonNumber": 2,
+      "title": "Patterns of Growth",
+      "sourceEdition": "Approved local Algebra 1 original teacher/student; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "7866a902392ecc408c45b22f6e47dc9f51268e6e221b82556fd6137b05abc8f7",
+        "ti": "4c62f8d335fb9a146df75f7d7c7b491519968dc4f2bdaf840505b077bcdd2b85",
+        "tpr": "6e26c824c5fcd287c1f6bff46fd6be87f1798e64ebb29c9e2804e1f00bb167c4",
+        "si": "bd4e2d9769474b472ba4e5fb7d07e7aae7aaa30c8186cad7a75d8d35852a0a9e",
+        "spr": "d298f24837631e62e36b328ab9ef7f864040cb60c6638e1fc8221fcc54b1480f"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u05-l02-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u05-l02-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "goals, tables, growth-store contexts, constant difference and factor, practice"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true,
+        "firstPartyCooldown": "AUTHORED"
+      },
+      "C": {
+        "status": "C_CLOSED_REUSE_TESTS_NOT_RUN",
+        "exactPath": "functions.growth.linear_exponential.compare",
+        "teacherReviewRequired": [
+          "table generation",
+          "symbolic expressions",
+          "pattern reasoning"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L02_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 71,
-    "B_CLOSED": 71,
-    "C_PREPARED": 71,
-    "ABC_READY_FOR_D": 71,
+    "A_CLOSED": 72,
+    "B_CLOSED": 72,
+    "C_PREPARED": 72,
+    "ABC_READY_FOR_D": 72,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 61,
+    "REMAINING": 60,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 4,
     "CURRENT_UNIT": "U05",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L02",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L03",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -3646,15 +3685,15 @@
     "unitsABCCLosed": 4,
     "status": "U05_IN_PROGRESS",
     "previouslyABCClosed": 70,
-    "newlyABCClosed": 1,
+    "newlyABCClosed": 2,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
-    "mayAdvanceToL02": true,
+    "mayAdvanceToL02": false,
     "blockingDependency": null,
     "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
     "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
@@ -3665,7 +3704,7 @@
     "fullBuild": "NOT_RUN",
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests",
-    "mayAdvanceToL03": false,
+    "mayAdvanceToL03": true,
     "mayAdvanceToL04": false,
     "mayAdvanceToL05": false,
     "mayAdvanceToL06": false,
@@ -3683,9 +3722,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U05_IN_PROGRESS_L02",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
+  "unitStatus": "U05_IN_PROGRESS_L03",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -3695,9 +3734,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L01_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L02_ABC_CLOSURE_20261105.md"
 }
