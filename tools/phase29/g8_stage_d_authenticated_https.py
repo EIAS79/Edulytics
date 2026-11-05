@@ -204,10 +204,21 @@ def main():
                     f"{code} mistake[{index}].{field}")
         for index,summary in enumerate(summaries,1):
             require_rendered(summary,visible_words,f"{code} summary[{index}]")
+
+        canonical=english[0]
+        for field in ("explanation","keyConceptsAndRules","workedExamples",
+                      "stepByStepSolutions","commonMistakes","quickSummary"):
+            authored=canonical.get(field)
+            require(isinstance(authored,str) and len(authored.strip())>=20,
+                "missing canonical Grade8 pack section "+code+" "+field)
+            require_rendered(authored,visible_words,
+                f"{code} canonical-pack.{field}",min_words=4,max_words=10)
+
         cross_denied(foreign,"/student/learning/lesson/"+lesson_id)
         entry={"ordinal":ordinal,"lessonCode":code,
             "unit":int(re.search(r":G8:U(\d{2}):L\d{2}$",code).group(1)),
             "authenticatedLearnerRichV2":"PASS","firstPartyTitleAndGoal":"PASS",
+            "richV2CanonicalStructures":"PASS",
             "sixCanonicalInstructionalSections":"PASS",
             "foreignSchoolLessonAccess":"DENIED","teacherAssessment":"NOT_EVALUATED",
             "sourceParity":"UNKNOWN","learnerHtmlSha256":hashlib.sha256(body.encode()).hexdigest(),
