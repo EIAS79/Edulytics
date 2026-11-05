@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "planId": "EDULYTICS-US-CCSS-20-V2",
+  "batchId": "US-CCSS-B001",
+  "candidateSha": "46ef62c31e1e2429eb715cd70ca86a357e88f0e3",
+  "evidenceClass": "EXACT_CANDIDATE_SHA_AUTHENTICATED_HTTPS_GRADE_AND_PERSISTENCE_EXTRACTED_FIRST20_FROM_500_SCOPE",
+  "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39047635881",
+  "artifactName": "b001-500-real-practice-grade-probe-not-academic-acceptance",
+  "artifactId": 12105654666,
+  "originalScope": 500,
+  "exactV2ScopedCodes": 20,
+  "evidenceSource": "Exact candidate 46ef62 GitHub Actions artifact with real isolated student HTTPS/DB Practice scoring; extracted ordered first 20 unique lesson codes from intact 500-record evidence, exact SHA-256 verified.",
+  "counts": {
+    "matchedExact20": 20,
+    "persistedCorrectSubmissions": 20,
+    "rejectedAndPersistedMalformedSubmissions": 20,
+    "syntheticSurveyCases": 2,
+    "realSurveyParticipantsVerified": 0,
+    "independentAcademicAcceptances": 0
+  },
+  "limitations": [
+    "Source artifact checks self-consistent server answer grading, not independent mathematical reasoning.",
+    "Source artifact uses disposable US school and does not prove real-production student UAT.",
+    "Survey entries use deliberately synthetic votes and cannot prove real classroom participation.",
+    "Reusing this exact-SHA technical evidence does not certify original activity equivalence or P5 acceptance.",
+    "A subsequent candidate code/SHA may invalidate this run for changed behavior; recheck effective SHA before carrying proof forward."
+  ],
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L01",
+      "family": "usccss.g1.u01.l01.count_collection_to20",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L02",
+      "family": "usccss.t001.g1.write_dot_expression",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L03",
+      "family": "usccss.t001.g1.add_one_or_two",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L04",
+      "family": "usccss.t001.g1.subtract_one_or_two",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L05",
+      "family": "usccss.t001.g1.mixed_add_subtract",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 6,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L06",
+      "family": "usccss.t001.g1.make_ten_missing_part",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 7,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L07",
+      "family": "usccss.t001.g1.construct_tool_sort",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 8,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L08",
+      "family": "usccss.t001.g1.construct_shape_graph",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 9,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L09",
+      "family": "usccss.t001.g1.collect_survey_graph",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "SYNTHETIC_ANONYMOUS_CI_VOTES_NOT_REAL_SURVEY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L10",
+      "family": "usccss.t001.g1.make_ten_missing_part",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 11,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L11",
+      "family": "usccss.g1.u01.b03.check_data_statement",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 12,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L12",
+      "family": "usccss.g1.u01.b03.count_category_data",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L13",
+      "family": "usccss.g1.u01.b03.answerable_data_question",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 14,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L14",
+      "family": "usccss.t001.g1.construct_tool_sort",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U01:L15",
+      "family": "usccss.t001.g1.collect_survey_graph",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "SYNTHETIC_ANONYMOUS_CI_VOTES_NOT_REAL_SURVEY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L01",
+      "family": "usccss.g1.u02.story.write_expression",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L02",
+      "family": "usccss.g1.u02.story.write_equation",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L03",
+      "family": "usccss.g1.u02.story.add_change_unknown",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L04",
+      "family": "usccss.g1.u02.story.write_result_or_change_equation",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:G1:U02:L05",
+      "family": "usccss.g1.u02.center.write_picture_equation",
+      "correctAnswerSubmission": "SCORED_ONE_AND_PERSISTED",
+      "malformedAnswerSubmission": "SCORED_ZERO_REJECTED_AND_PERSISTED",
+      "surveyResponseProvenance": "NOT_A_SURVEY_FAMILY",
+      "independentMathematicsOracle": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "originalStudentActivityEquivalence": "NOT_ESTABLISHED_BY_THIS_DISPOSABLE_PROBE",
+      "academicAcceptance": "NOT_ASSERTED"
+    }
+  ],
+  "academicDecision": "NO_GO",
+  "published": false,
+  "authenticRunArtifactIntegrity": {
+    "artifactId": 12105654666,
+    "downloadedZipSha256": "3b932f196b365bc417c3b0223d8d70e2a895b3a7ccdf00ce0e95fb97b2e6f1dc",
+    "innerJsonSha256": "62d3c9f46c77c2eec88997dfedb750ed6217eb8f3dd048fea1c3df6a593a1192",
+    "innerPath": "b001-500-real-practice-generation-and-grading-probe.json",
+    "sourceCohortRows": 500,
+    "sourceCorrectAndPersisted": 500,
+    "sourceMalformedRejectedAndPersisted": 500,
+    "verifiedFirst20InOrder": true,
+    "sourceDeclaredAcademicApprovals": 0,
+    "sourceDeclaredLiveUatApprovals": 0,
+    "sourceDeclaredRealSurveyParticipants": 0,
+    "sourceDeclaredDecision": "NO_GO"
+  },
+  "priorExactSHATechnicalEvidence": {
+    "candidateSha": "fc0587ae23c07cbc094b4886ef4e6236311eff45",
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/39042006680",
+    "artifactId": 12104124628
+  },
+  "artifactUnchangedDataBytesAcrossPureTestCommit": true
+}
