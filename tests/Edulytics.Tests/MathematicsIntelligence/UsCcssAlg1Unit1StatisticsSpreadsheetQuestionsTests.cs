@@ -93,4 +93,18 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetRecursiveFillFamily, p, "90"));
     }
+
+    [Fact]
+    public void HistogramOracleRespectsHalfOpenRightEndpoint()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["start"] = 5, ["width"] = 2, ["c0"] = 4, ["c1"] = 3,
+            ["c2"] = 1, ["target"] = 1, ["variant"] = 0
+        };
+        Assert.Equal("3", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.HistogramBinFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.HistogramBinFamily, p, "3"));
+    }
 }

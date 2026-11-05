@@ -152,6 +152,8 @@ public sealed class StudentPrivatePracticeService(
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07";
         const string acceptedAlgebra1L08 =
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08";
+        const string acceptedAlgebra1L09 =
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09";
         var selectedAcceptedAlgebra1Lesson =
             request.Scope == StudentPrivatePracticeScope.Lesson &&
             scoped.LessonId.HasValue &&
@@ -164,7 +166,8 @@ public sealed class StudentPrivatePracticeService(
                  string.Equals(lesson.Code, acceptedAlgebra1L05, StringComparison.Ordinal) ||
                  string.Equals(lesson.Code, acceptedAlgebra1L06, StringComparison.Ordinal) ||
                  string.Equals(lesson.Code, acceptedAlgebra1L07, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L08, StringComparison.Ordinal)) &&
+                 string.Equals(lesson.Code, acceptedAlgebra1L08, StringComparison.Ordinal) ||
+                 string.Equals(lesson.Code, acceptedAlgebra1L09, StringComparison.Ordinal)) &&
                 LessonPracticeContractRegistry.TryResolve(lesson.Code, out var exactAlgebra1Contract) &&
                 exactAlgebra1Contract is not null &&
                 string.Equals(exactAlgebra1Contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal));

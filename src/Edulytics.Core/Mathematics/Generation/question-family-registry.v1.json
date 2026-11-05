@@ -20481,6 +20481,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.histogram.half_open_bin_count",
+      "version": 1,
+      "skillId": "statistics.data_representation",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-half-open-histogram-bin-count-exact",
+      "representations": ["raw_numeric_data", "histogram_bin", "numeric_short_answer", "teacher_led_graph_creation"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

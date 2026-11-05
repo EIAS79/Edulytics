@@ -18,6 +18,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         "spreadsheet.cell_reference.evaluate";
     public const string SpreadsheetRecursiveFillFamily =
         "spreadsheet.recursive_fill.evaluate";
+    public const string HistogramBinFamily =
+        "statistics.histogram.half_open_bin_count";
 
     public sealed record Problem(
         string Family,
@@ -28,7 +30,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
 
     public static bool Supports(string? family) =>
         family is DistributionShapeFamily or IqrFamily or MadFamily or
-            SpreadsheetFormulaFamily or SpreadsheetRecursiveFillFamily;
+            SpreadsheetFormulaFamily or SpreadsheetRecursiveFillFamily or
+            HistogramBinFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -44,7 +47,9 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return BuildMad(random);
         if (family == SpreadsheetFormulaFamily)
             return BuildSpreadsheetFormula(random);
-        return BuildSpreadsheetRecursiveFill(random);
+        if (family == SpreadsheetRecursiveFillFamily)
+            return BuildSpreadsheetRecursiveFill(random);
+        return BuildHistogramBin(random);
     }
 
     public static string Solve(
@@ -102,6 +107,14 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return (start + (row - 1) * step).ToString(CultureInfo.InvariantCulture);
         }
 
+        if (family == HistogramBinFamily)
+        {
+            if (!ValidateHistogram(parameters, out _, out _, out var c0, out var c1, out var c2, out var target, out _))
+                throw new InvalidOperationException("Invalid histogram parameters.");
+            var count = target switch { 0 => c0, 1 => c1, 2 => c2, _ => -1 };
+            return count.ToString(CultureInfo.InvariantCulture);
+        }
+
         throw new InvalidOperationException("Unsupported ALG1 Unit 1 extension family.");
     }
 
@@ -123,6 +136,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
                 ValidateSpreadsheet(parameters, out _, out _, out _, out _, out _),
             SpreadsheetRecursiveFillFamily =>
                 ValidateRecursiveFill(parameters, out _, out _, out _, out _),
+            HistogramBinFamily =>
+                ValidateHistogram(parameters, out _, out _, out _, out _, out _, out _, out _),
             _ => ValidateStep(parameters, out _, out _, out _)
         };
 
@@ -254,6 +269,45 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             });
     }
 
+    private static Problem BuildHistogramBin(Random random)
+    {
+        var start = random.Next(0, 21);
+        var width = random.Next(2, 5);
+        var c0 = random.Next(1, 5);
+        var c1 = random.Next(1, 5);
+        var c2 = random.Next(1, 5);
+        var target = random.Next(0, 3);
+        var variant = random.Next(0, 16);
+        var values = new List<int>();
+        AddBin(values, start, width, 0, c0);
+        AddBin(values, start, width, 1, c1);
+        AddBin(values, start, width, 2, c2);
+        values.Sort();
+
+        var left = start + target * width;
+        var right = left + width;
+        return new(
+            HistogramBinFamily,
+            $"The synthetic data are {string.Join(", ", values)}. " +
+            $"Using consecutive histogram bins of width {width} starting at {start}, " +
+            $"how many observations belong to [{left}, {right})? " +
+            "The left endpoint is included and the right endpoint is excluded. Enter one number.",
+            "Count exactly the observations with left <= value < right.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["start"] = start, ["width"] = width, ["c0"] = c0, ["c1"] = c1,
+                ["c2"] = c2, ["target"] = target, ["variant"] = variant
+            });
+    }
+
+    private static void AddBin(List<int> values, int start, int width, int bin, int count)
+    {
+        var left = start + bin * width;
+        for (var i = 0; i < count; i++)
+            values.Add(left + (i % width));
+    }
+
     private static int[] Frequencies(int shape, int scale) => shape switch
     {
         0 => [2 * scale, 2 * scale, 2 * scale, 2 * scale, 2 * scale],
@@ -328,6 +382,27 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             parameters.TryGetValue("start", out start) && start is >= 5 and <= 40 &&
             parameters.TryGetValue("step", out step) && step is >= -8 and <= 15 && step != 0 &&
             parameters.TryGetValue("row", out row) && row is >= 3 and <= 10 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateHistogram(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int start,
+        out int width,
+        out int c0,
+        out int c1,
+        out int c2,
+        out int target,
+        out int variant)
+    {
+        start = width = c0 = c1 = c2 = target = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("start", out start) && start is >= 0 and <= 20 &&
+            parameters.TryGetValue("width", out width) && width is >= 2 and <= 4 &&
+            parameters.TryGetValue("c0", out c0) && c0 is >= 1 and <= 4 &&
+            parameters.TryGetValue("c1", out c1) && c1 is >= 1 and <= 4 &&
+            parameters.TryGetValue("c2", out c2) && c2 is >= 1 and <= 4 &&
+            parameters.TryGetValue("target", out target) && target is >= 0 and <= 2 &&
             parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 
