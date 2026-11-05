@@ -404,12 +404,16 @@
       "CultureCode": "en",
       "Title": "Tables of Relative Frequencies",
       "ExplanationParagraphs": [
-        "Learning goal: Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
+        "Learning goal: Connect two-way frequency tables to relative-frequency tables and use them to estimate joint, marginal, and within-group probabilities from observed data.",
         "A two-way table classifies the same observations by events A and B. Summing cells gives the grand total N and the row and column marginal totals; joint relative frequency P(A∩B) uses N as its denominator.",
         "Conditional probability changes the reference population. If count(B)>0, P(A|B)=count(A∩B)/count(B). If count(A)>0, P(B|A)=count(A∩B)/count(A). These are generally different numbers and should not be interchanged.",
         "Source task parity: in addition to reading a supplied two-way relative-frequency table, students perform paired fair-number-cube trials, record ordered outcomes in a 6-by-6 table, compute observed relative frequencies, and interpret why finite empirical estimates need not exactly equal theoretical values. The data below are hypothetical illustrative counts, not an assertion that a class experiment occurred.",
         "Original source-specific student task: Students construct an original two-way table from supplied hypothetical counts and analyze two different conditionals. Teacher checks notation. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 4, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 4, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments.",
+        "Source alignment repair: Correct the lesson emphasis so two-way and relative-frequency tables are primary; formal conditional-probability identities remain for later lessons.",
+        "Source alignment repair: Retain the paired-number-cube data collection/table task and explicitly separate empirical estimates from theoretical probabilities.",
+        "Source alignment repair: Use row/column/grand totals with named denominators so percentages are interpreted in context.",
+        "Edulytics independent cool-down: A two-way table records 80 survey responses: 30 urban dog, 10 urban cat, 20 rural dog, 20 rural cat. Find the joint relative frequency of urban-and-dog, the marginal frequency of dog, and the percentage of rural respondents who prefer dogs."
       ],
       "KeyConcepts": [
         {
@@ -482,6 +486,7 @@
         }
       ],
       "SummaryPoints": [
+        "Connect two-way frequency tables to relative-frequency tables and use them to estimate joint, marginal, and within-group probabilities from observed data.",
         "Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
         "Joint P(A∩B)=12/50=0.24; conditional P(B|A)=12/20=0.6 and P(A|B)=12/30=0.4 for the worked table.",
         "Human-assessed modelling and experiment evidence remains pending."
