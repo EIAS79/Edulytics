@@ -22,6 +22,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         "algebra.equations.equivalence.classify";
     public const string LiteralEquationIsolateFamily =
         "algebra.literal_equation.isolate.select_form";
+    public const string StandardFormSlopeInterceptFamily =
+        "algebra.linear.standard_form.slope_intercept";
 
     public sealed record Problem(
         string Family,
@@ -34,7 +36,7 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
             PatternClassificationFamily or OneVariableSolutionCheckFamily or
             TwoVariableSolutionCheckFamily or EquationEquivalenceFamily or
-            LiteralEquationIsolateFamily;
+            LiteralEquationIsolateFamily or StandardFormSlopeInterceptFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -52,6 +54,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return BuildEquationEquivalence(random);
         if (family == LiteralEquationIsolateFamily)
             return BuildLiteralEquationIsolate(random);
+        if (family == StandardFormSlopeInterceptFamily)
+            return BuildStandardFormSlopeIntercept(random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -122,6 +126,12 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 throw new InvalidOperationException("Invalid ALG1 U02 literal-equation parameters.");
             return correct switch { 0 => "a", 1 => "b", 2 => "c", _ => throw new InvalidOperationException() };
         }
+        if (family == StandardFormSlopeInterceptFamily)
+        {
+            if (!ValidateSlopeIntercept(parameters, out var slope, out var intercept, out _, out _))
+                throw new InvalidOperationException("Invalid ALG1 U02 slope-intercept parameters.");
+            return $"{slope},{intercept}";
+        }
 
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
@@ -156,11 +166,37 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         if (family == LiteralEquationIsolateFamily)
             return ValidateLiteralIsolate(parameters, out _, out _, out _) &&
                 NormalizeChoice(answer) == Solve(family, parameters);
+        if (family == StandardFormSlopeInterceptFamily)
+            return ValidateSlopeIntercept(parameters, out _, out _, out _, out _) &&
+                NormalizePair(answer) == Solve(family, parameters);
 
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildStandardFormSlopeIntercept(Random random)
+    {
+        var slope = random.Next(-5, 6);
+        if (slope == 0) slope = 2;
+        var intercept = random.Next(-9, 10);
+        var scale = random.Next(1, 5);
+        var variant = random.Next(0, 16);
+        var a = -slope * scale;
+        var b = scale;
+        var c = intercept * scale;
+
+        return new(
+            StandardFormSlopeInterceptFamily,
+            $"Rewrite {a}x{(b >= 0 ? "+" : "")}{b}y={c} as y=mx+b. " +
+            "Enter the slope and y-intercept as m,b. Interpreting the quantities in a context remains teacher-reviewed.",
+            "Solve the equation for y; the coefficient of x is the slope and the constant term is the y-intercept.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["slope"] = slope, ["intercept"] = intercept, ["scale"] = scale, ["variant"] = variant
+            });
     }
 
     private static Problem BuildLiteralEquationIsolate(Random random)
@@ -307,6 +343,26 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
     }
+
+    private static bool ValidateSlopeIntercept(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int slope,
+        out int intercept,
+        out int scale,
+        out int variant)
+    {
+        slope = intercept = scale = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("slope", out slope) && slope is >= -5 and <= 5 && slope != 0 &&
+            parameters.TryGetValue("intercept", out intercept) && intercept is >= -9 and <= 9 &&
+            parameters.TryGetValue("scale", out scale) && scale is >= 1 and <= 4 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static string NormalizePair(string value) =>
+        string.Concat(value.Where(ch => !char.IsWhiteSpace(ch)))
+            .Replace("(", "", StringComparison.Ordinal)
+            .Replace(")", "", StringComparison.Ordinal);
 
     private static bool ValidateLiteralIsolate(
         IReadOnlyDictionary<string, int>? parameters,

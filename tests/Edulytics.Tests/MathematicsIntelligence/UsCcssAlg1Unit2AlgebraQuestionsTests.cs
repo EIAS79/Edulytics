@@ -93,4 +93,17 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
         Assert.Equal(expected, UsCcssAlg1Unit2AlgebraQuestions.Solve(
             UsCcssAlg1Unit2AlgebraQuestions.LiteralEquationIsolateFamily, p));
     }
+
+    [Fact]
+    public void StandardFormOracleReturnsSlopeAndYIntercept()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["slope"] = -3, ["intercept"] = 7, ["scale"] = 2, ["variant"] = 0
+        };
+        Assert.Equal("-3,7", UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.StandardFormSlopeInterceptFamily, p));
+        Assert.True(UsCcssAlg1Unit2AlgebraQuestions.Verify(
+            UsCcssAlg1Unit2AlgebraQuestions.StandardFormSlopeInterceptFamily, p, "(-3, 7)"));
+    }
 }

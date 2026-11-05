@@ -20625,6 +20625,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.linear.standard_form.slope_intercept",
+      "version": 1,
+      "skillId": "algebra.linear.graph_connections",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-standard-form-slope-intercept-exact",
+      "representations": ["standard_form_equation", "slope_intercept_pair", "teacher_led_graph_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
