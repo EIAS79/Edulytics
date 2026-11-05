@@ -404,11 +404,15 @@
       "CultureCode": "en",
       "Title": "Using Probability to Determine Whether Events Are Independent",
       "ExplanationParagraphs": [
-        "Learning goal: Test independence from observed proportions, conditional probabilities and uncertainty from finite samples.",
+        "Learning goal: Use marginal, joint, and conditional probabilities to test whether events are independent, while treating finite-sample proportions as estimates.",
         "In an exact probability model, A and B are independent if and only if P(A∩B)=P(A)×P(B). Check joint, marginal and conditional probabilities with their named events and valid denominators.",
         "For P(B)>0, the equivalent criterion is P(A|B)=P(A). Empirical frequencies from a finite classroom sample are estimates and cannot by themselves prove population-level independence or dependence.",
         "Original student task: Design a hypothetical data collection with two binary variables and discuss sampling uncertainty; teacher reviews critique. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 10, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 10, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses.",
+        "Source alignment repair: Retain the source overtime-win and genetic-testing contexts for comparing conditional and marginal rates.",
+        "Source alignment repair: Use both equivalent independence checks when denominators are valid: P(A|B)=P(A) and P(A and B)=P(A)P(B).",
+        "Source alignment repair: Do not convert small observed differences automatically into a population-level dependence claim.",
+        "Edulytics independent cool-down: A table gives P(A)=0.48, P(B)=0.50, P(A and B)=0.24, with P(B)>0. Test independence two ways and explain what would change if these were only estimates from a small sample."
       ],
       "KeyConcepts": [
         {
@@ -481,6 +485,7 @@
         }
       ],
       "SummaryPoints": [
+        "Use marginal, joint, and conditional probabilities to test whether events are independent, while treating finite-sample proportions as estimates.",
         "Test independence from observed proportions, conditional probabilities and uncertainty from finite samples.",
         "In an exact probability model, independence means P(A∩B)=P(A)×P(B), or P(A|B)=P(A) when P(B)>0.",
         "Source-specific probability models and experimental interpretations require teacher review."
