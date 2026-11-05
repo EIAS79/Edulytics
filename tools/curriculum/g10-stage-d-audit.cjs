@@ -15,6 +15,16 @@ const ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPE
 const progress=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/full-grade-progress.json');
 const files=walk('src/Edulytics.Core/Curriculum/LessonContent/RichV2').filter(f=>/us-ccss-hs-geo-u\d\d-.*\.json$/.test(f));
 const rich=files.flatMap(f=>read(f).Lessons.map(x=>({...x,__file:f})));
+const visualKinds={};let externalRuntimeVisuals=0;let runtimeVisualCount=0;let studentCopyPublisherMentions=0;
+for(const lesson of rich){
+  for(const visual of lesson.Visuals||[]){
+    runtimeVisualCount++;visualKinds[visual.Kind]=(visualKinds[visual.Kind]||0)+1;
+    if(/https?:\/\//i.test(JSON.stringify(visual)))externalRuntimeVisuals++;
+  }
+  for(const section of [...(lesson.ExplanationParagraphs||[]),...(lesson.SummaryPoints||[])]){
+    if(typeof section==='string' && /Illustrative Mathematics|publisher/i.test(section))studentCopyPublisherMentions++;
+  }
+}
 const mappings=read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json').mappings;
 const mapped=mappings.filter(x=>typeof x.lessonCode==='string'&&x.lessonCode.startsWith(prefix));
 const verifiedMapped=mapped.filter(x=>x.practiceReadiness==='READY_VERIFIED'&&Array.isArray(x.allowedQuestionFamilies)&&x.allowedQuestionFamilies.length>0);
@@ -22,6 +32,7 @@ const counts=[22,15,16,11,18,17,14,11];
 const issues=[];const check=(condition,code,detail)=>{if(!condition)issues.push({code,detail})};
 check(blueprint.Lessons.length===124,'BLUEPRINT_COUNT',String(blueprint.Lessons.length));
 check(rich.length===124,'RICH_COUNT',String(rich.length));
+check(externalRuntimeVisuals===0,'RICH_EXTERNAL_VISUAL_SOURCE_URLS',String(externalRuntimeVisuals));
 check(ledger.LessonEntries.length===124,'ABC_LEDGER_COUNT',String(ledger.LessonEntries.length));
 check(progress.ReadyForStageD===124,'ABC_READY_COUNT',String(progress.ReadyForStageD));
 check(sourceInventory.Lessons.length===124,'LOCAL_INVENTORY_LESSON_COUNT',String(sourceInventory.Lessons.length));
@@ -80,7 +91,7 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
 const structural={pass:issues.length===0,errors:issues,count:lessons.length,units:8,
   blueprintHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json'))).digest('hex'),
   sourceEvidenceCompleteCount:lessons.filter(x=>x.sourceEvidenceComplete).length,
-  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',localSourceSnapshotId:sourceInventory.SourceSnapshotId,localSourceHtmlCount:sourceInventory.availableHtmlFiles,localSourceHeadingCount:sourceInventory.totalHeadingElements,localSourceVisualRefs:sourceInventory.totalDistinctWithinPageVisualAssets,sourceTeacherActivityIds:sourceCrosswalk.sourceTeacherActivityIdCount,sourceTeacherActivityIdsCrosswalked:sourceCrosswalk.sourceTeacherActivityIdsDocumentedInCrosswalk,sourcePracticeProblemHeadings:sourceCrosswalk.practiceProblemsSourceHeadingCount,sourceActivityCrosswalkMeaningVerified:false,documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
+  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',localSourceSnapshotId:sourceInventory.SourceSnapshotId,localSourceHtmlCount:sourceInventory.availableHtmlFiles,localSourceHeadingCount:sourceInventory.totalHeadingElements,runtimeVisualCount,visualKinds,externalRuntimeVisuals,studentCopyPublisherMentions,localSourceVisualRefs:sourceInventory.totalDistinctWithinPageVisualAssets,sourceTeacherActivityIds:sourceCrosswalk.sourceTeacherActivityIdCount,sourceTeacherActivityIdsCrosswalked:sourceCrosswalk.sourceTeacherActivityIdsDocumentedInCrosswalk,sourcePracticeProblemHeadings:sourceCrosswalk.practiceProblemsSourceHeadingCount,sourceActivityCrosswalkMeaningVerified:false,documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
 const result={structural,lessons};
 if(process.argv.includes('--json')) console.log(JSON.stringify(result,null,2));
 else console.log(JSON.stringify(structural,null,2));
