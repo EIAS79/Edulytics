@@ -536,12 +536,16 @@
       "CultureCode": "en",
       "Title": "Probabilities in Games",
       "ExplanationParagraphs": [
-        "Learning goal: optional source practice collecting and interpreting classroom game trials to estimate conditional probabilities and determine independence, while distinguishing data estimates from an exact chance model.",
+        "Learning goal: Apply conditional probability and independence to game data, including Rock-Paper-Scissors trials and the three-card visible-side paradox, while separating empirical estimates from exact models.",
         "A symmetric payout game is fair in expectation when mean net gain equals zero Weight all outcomes by their probabilities",
         "Original classroom-game investigation: three equally likely two-sided tokens have markings blank/blank, star/blank, and star/star. Select a token uniformly, then randomly expose one of its two sides. If the visible side has a star, the two-star token is more likely than the one-star token; each visible token face must be counted rather than each token type counted once. Also compare repeated independent rounds with observed classroom data, avoiding unsupported claims from small samples.",
         "The theoretical outcomes are six equally likely token-side combinations. Three show stars: one side of star/blank and both sides of star/star. Two of those three starred outcomes come from the star/star token, so P(double-star token | visible star)=2/3, not 1/2. For a live experiment, record the selected token, visible side and count of trials, then estimate the conditional frequency and explain sampling variation.",
         "Original student task: Students design a noncommercial, classroom probability board game with mathematical payoffs and critique whether repeated rounds are independent. Teacher scores rules, modelling and evidence. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 11, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 11, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses.",
+        "Source alignment repair: Correct the prior generic board-game emphasis to the actual source Rock-Paper-Scissors data investigation.",
+        "Source alignment repair: Retain the three-card setup: blank/blank, X/blank, and X/X; after observing X, count visible card-sides rather than card types to obtain P(X/X card | visible X)=2/3.",
+        "Source alignment repair: Treat classroom game records as teacher-reviewed empirical evidence and the card model as an exact conditional-probability calculation.",
+        "Edulytics independent cool-down: Three equally likely cards are blank/blank, X/blank, and X/X. A card is chosen uniformly and placed with a random side up. Given that X is visible, find the probability the chosen card is X/X and explain why 1/2 is wrong."
       ],
       "KeyConcepts": [
         {
@@ -614,6 +618,7 @@
         }
       ],
       "SummaryPoints": [
+        "Apply conditional probability and independence to game data, including Rock-Paper-Scissors trials and the three-card visible-side paradox, while separating empirical estimates from exact models.",
         "Classroom game data provide empirical estimates of conditional probabilities and evidence about independence; do not treat a small experimental sample as mathematical proof of the population model.",
         "Fair two-sided token games must weight visible faces correctly: P(double-star token | visible star)=2/3 in the three-token model; empirical frequencies vary across trials.",
         "Source-specific probability models and experimental interpretations require teacher review."
