@@ -550,12 +550,16 @@
       "CultureCode": "en",
       "Title": "A Special Point",
       "ExplanationParagraphs": [
-        "Learning goal: Prove concurrency of triangle angle bisectors and characterize the incenter as point equally distant from all three side lines.",
+        "Learning goal: Prove the angle-bisector distance-locus theorem in both directions and use it to prove concurrency of a triangle's internal angle bisectors at the incenter.",
         "Intersection of all three internal angle bisectors Equidistant from side lines",
         "Source task progression: a hypothetical mound of grains on a triangular card has ridges where the shortest paths to two sides are equally long. This physical analogy motivates, but does not prove, the angle-bisector distance locus. Draw perpendicular segments from a point on the interior bisector to each side and prove they are equal using congruent right triangles; then apply transitivity to the concurrence of all three internal bisectors.",
         "Point on interior bisector has equal perpendicular distances to adjacent sides Use congruent right triangles r=Δ/s where Δ area and s semiperimeter",
         "Source-specific student task: Students annotate an angle-bisector proof and separate incenter from circumcenter; teacher reviews. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
-        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 6, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 6, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers.",
+        "Source alignment repair: Retain the salt-pile context as intuition only, not proof.",
+        "Source alignment repair: Make both directions explicit: point on an angle bisector iff its perpendicular distances to the sides are equal.",
+        "Source alignment repair: Use transitivity of equal side distances to justify the third angle bisector through the same point.",
+        "Edulytics independent cool-down: Point I lies on the internal bisectors of angles A and B in triangle ABC. Prove I also lies on the internal bisector of angle C using perpendicular distances to the three sides."
       ],
       "KeyConcepts": [
         {
@@ -628,6 +632,7 @@
         }
       ],
       "SummaryPoints": [
+        "Prove the angle-bisector distance-locus theorem in both directions and use it to prove concurrency of a triangle's internal angle bisectors at the incenter.",
         "Prove concurrency of triangle angle bisectors and characterize the incenter as point equally distant from all three side lines.",
         "Use congruent right triangles",
         "Teacher-scored source-aligned diagram and proof evidence remains required."
