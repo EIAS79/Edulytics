@@ -22,6 +22,7 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
         var rich = RichLessonContentV2Registry.Find(Prefix + ordinal, "en");
         Assert.NotNull(rich);
         Assert.Equal(title, rich.Title);
+        Assert.Equal("/1/1/" + int.Parse(ordinal[1..]) + "/preparation.html", sourceSuffix);
         UsCcssAlg1SourceProvenanceAssert.Verify(rich.LessonCode, rich.ExplanationParagraphs);
         Assert.True(rich.ExplanationParagraphs.Count >= 2);
         Assert.True(rich.KeyConcepts.Count >= 3);
