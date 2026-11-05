@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U06:L06",
+  "nextCanonical": "U06:L07",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -4610,25 +4610,69 @@
       "sourceReviewStartedAtUtc": "2026-11-05T13:02:06.029302+00:00",
       "abcPreparedAtUtc": "2026-11-05T13:02:06.101201+00:00",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L05_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+      "unitCode": "U06",
+      "lessonNumber": 6,
+      "title": "Building Quadratic Functions to Describe Situations (Part 2)",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "52e1b9298c9a03341bbe3541a2930ed6c0b9a8b771a15459776582e14f3c0a29",
+        "ti": "21306ea44ce5ff93a9be1672719ea4f81307dfd56f7fb1ec3d9123beb7437919",
+        "tpr": "24a6fdee96fd7f32a1fb7bc108eebc6503ff577fa6113c86e9a71080972b6530",
+        "si": "74ab1b06bd07fb88c6167e90837d054517b23bbdc7bf403f711e2fed8fa5b0eb",
+        "spr": "dd57fe0695ab692354daa6147b90de5263c390423d367f2e4ca94f05e930f627"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u06-l06-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u06-l06-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "verified original teacher/student goals, source activities and practice; retained preexisting aligned examples"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "firstPartyCooldown": "AUTHORED",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "supporting.algebra.quadratic_larger_root",
+          "supporting.algebra.complete_square_vertex"
+        ],
+        "teacherReviewRequired": [
+          "graphing a physical model",
+          "zeros",
+          "vertex and contextual restrictions"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "sourceReviewStartedAtUtc": "2026-11-05T13:02:09.997751+00:00",
+      "abcPreparedAtUtc": "2026-11-05T13:02:10.059529+00:00",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L06_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 96,
-    "B_CLOSED": 96,
-    "C_PREPARED": 96,
-    "ABC_READY_FOR_D": 96,
+    "A_CLOSED": 97,
+    "B_CLOSED": 97,
+    "C_PREPARED": 97,
+    "ABC_READY_FOR_D": 97,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 36,
+    "REMAINING": 35,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 5,
     "CURRENT_UNIT": "U06",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L06",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L07",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -4663,12 +4707,12 @@
     "unitsABCCLosed": 5,
     "status": "U06_IN_PROGRESS",
     "previouslyABCClosed": 91,
-    "newlyABCClosed": 5,
+    "newlyABCClosed": 6,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -4700,9 +4744,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U06_IN_PROGRESS_L06",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
+  "unitStatus": "U06_IN_PROGRESS_L07",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -4712,9 +4756,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L05",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L05_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U06_L06_ABC_CLOSURE_20261105.md"
 }
