@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l17-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l17-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Different Compounding Intervals",
       "ExplanationParagraphs": [
-        "Learning goal: compare equal nominal annual rates applied at different compounding frequencies, identify the actual periodic interest rate and effective annual growth factor, and explain assumptions and limits of a mathematical comparison. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 17, https://im.kendallhunt.com/HS/teachers/1/5/17/preparation.html and student task https://im.kendallhunt.com/HS/students/1/5/17/index.html (CC BY 4.0). No personal investment or borrowing advice is given.",
+        "Learning goal: compare equal nominal annual rates applied at different compounding frequencies, identify the actual periodic interest rate and effective annual growth factor, and explain assumptions and limits of a mathematical comparison. Original first-party Edulytiks adaptation of This first-party Edulytiks material follows the reviewed local Algebra 1 learning objectives and uses independently authored examples.",
         "Invented principal$1000 with nominal annual rate24%, no fees or tax. Annual compounding: A(y)=1000(1.24)^y for whole years. Monthly compounding: M(m)=1000(1+.24/12)^m=1000(1.02)^m; after12 months M(12)=1000(1.02)^12≈$1268.24. Annual A(1)=$1240, so additional compounding periods increase the modeled year-end amount by about$28.24 under these assumptions.",
         "Effective annual rate of the monthly model is ((1.02)^12−1)×100≈26.8242%, not24%; nominal24% and periodic2% are different pieces of information. Comparing models fairly requires the same principal and elapsed time. For a quarterly model at6% per quarter, total after one year is1000(1.06)^4≈$1262.48.",
-        "Student task: write annual, quarterly and monthly functions, compare their one-year outputs and identify the correct time unit for each exponent. Explain what is held equal and which assumptions are omitted. Teacher-scored rubric0–2 each for period/rate conversion, correct powers and comparison, effective annual rate interpretation and reasoned caveats."
+        "Student task: write annual, quarterly and monthly functions, compare their one-year outputs and identify the correct time unit for each exponent. Explain what is held equal and which assumptions are omitted. Teacher-scored rubric0–2 each for period/rate conversion, correct powers and comparison, effective annual rate interpretation and reasoned caveats.",
+        "First-party Cool-down (teacher-scored): On a fictional principal of 1000, compare one 10% annual increase with two successive 5% half-year increases. Calculate both results and state which is larger, explaining compounding frequency. Numeric responses supported by the mapped exact families may be auto-checked; the teacher scores periodic-rate conversion, exact compounding comparisons and interpretation."
       ],
       "KeyConcepts": [
         {
