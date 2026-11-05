@@ -36,6 +36,11 @@ if(batch==='final'){
  assert.equal(ev.correctGradesPersisted,132);
  assert.equal(ev.malformedGradesRejectedPersisted,132);
  assert.equal(ev.crossSchoolLessonDenied,true);
+ assert.equal(ev.crossSchoolLessonsDenied,132,'Cross-school denial must be tested on all 132 lessons');
+ assert.equal(ev.browserVisual?.chromiumDesktopLessonsRendered,132,'All 132 browser pages must render');
+ assert.equal(ev.browserVisual?.mobileLessonsRendered,7,'Seven real mobile visual checks required');
+ assert.equal(ev.browserVisual?.cssVerified,true,'Published app CSS not verified');
+ assert.equal(ev.browserVisual?.screenshots?.length,14,'Missing 14 responsive screenshots');
  assert.equal(ev.lessons.length,132);
  const attempts=new Set();
  for(let i=0;i<132;i++){

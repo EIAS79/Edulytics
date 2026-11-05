@@ -122,6 +122,66 @@ def run_practice(student, adoption_id, code, lesson_id, response_is_correct):
         code, family, "server grade/persistence mismatch", result)
     return {"attemptId": attempt_id, "family": family, "status": "CORRECT_PERSISTED" if response_is_correct else "MALFORMED_REJECTED_PERSISTED"}
 
+def verify_browser_visuals(student, expected, lesson_ids):
+    """Check all 132 rendered Grade 9 documents with real Chromium/CSS, plus
+    representative desktop/mobile screenshots. No screenshot means no visual pass.
+    """
+    from playwright.sync_api import sync_playwright
+    jar = next(handler.cookiejar for handler in student.handlers
+               if isinstance(handler, urllib.request.HTTPCookieProcessor))
+    cookies = [{"name": cookie.name, "value": cookie.value, "url": BASE}
+               for cookie in jar if cookie.secure]
+    assert cookies, "No authenticated Grade9 browser session cookies"
+    screenshots = []
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=True,args=["--no-sandbox"])
+        try:
+            desktop=browser.new_context(ignore_https_errors=True,
+                viewport={"width":1440,"height":900})
+            mobile=browser.new_context(ignore_https_errors=True,
+                viewport={"width":390,"height":844})
+            for context in (desktop,mobile):
+                context.add_cookies(cookies)
+            desktop_page=desktop.new_page()
+            mobile_page=mobile.new_page()
+            style=desktop_page.request.get(BASE+"/css/site.css",timeout=30000)
+            assert style.status==200 and "text/css" in style.headers.get("content-type",""), (
+                "CSS missing in published Grade9 application",style.status)
+            for ordinal,code in enumerate(expected,1):
+                lesson_id=lesson_ids[code]
+                url=BASE+"/student/learning/lesson/"+lesson_id
+                response=desktop_page.goto(url,wait_until="domcontentloaded",timeout=40000)
+                assert response is not None and response.status==200,(
+                    code,"Chromium desktop HTTP failure", response.status if response else None)
+                assert desktop_page.locator("section.rich-lesson-section").count()>=3,(
+                    code,"Grade9 Rich V2 sections missing in actual browser")
+                assert desktop_page.locator("section.rich-lesson-section").first.is_visible(),(
+                    code,"Grade9 Rich V2 not visible")
+                assert desktop_page.evaluate(
+                    "() => parseFloat(getComputedStyle(document.body).fontSize)>0"),(
+                    code,"No CSS computed body font")
+                if ordinal in (1,17,43,53,71,92,109):
+                    name=f"/tmp/g9-u{int(code.split('U')[-1].split(':')[0]):02d}-desktop.png"
+                    desktop_page.screenshot(path=name,full_page=False)
+                    screenshots.append(name)
+                    mobile_response=mobile_page.goto(url,wait_until="domcontentloaded",timeout=40000)
+                    assert mobile_response is not None and mobile_response.status==200,(
+                        code,"Chromium mobile HTTP failure")
+                    assert mobile_page.locator("section.rich-lesson-section").first.is_visible(),(
+                        code,"Grade9 mobile content not visible")
+                    mobile_name=name.replace("-desktop.png","-mobile.png")
+                    mobile_page.screenshot(path=mobile_name,full_page=False)
+                    screenshots.append(mobile_name)
+                if ordinal % 22==0:
+                    print("G9_CHROMIUM_AUTHENTICATED_RENDER",ordinal,"/132",flush=True)
+            desktop.close()
+            mobile.close()
+        finally:
+            browser.close()
+    assert len(screenshots)==14,screenshots
+    return {"chromiumDesktopLessonsRendered":132,"mobileLessonsRendered":7,
+            "screenshots":screenshots,"cssVerified":True}
+
 def main():
     assert sql('SELECT count(*) FROM "Schools";') == "2", "not a two-school isolated fixture"
     secondary = connect("commoncore-secondary", "Student")
@@ -158,14 +218,18 @@ def main():
           "correct":correct,"malformed":malformed,
           "teacherSessionAuthorized":True})
         if ordinal%11==0: print("G9_HTTPS_BATCH",ordinal,"/132",flush=True)
-    cross=found[expected[0]]
-    target="/student/learning/lesson/"+cross
-    try:
-        with primary.open(BASE+target,timeout=30) as response:
-            redirected_to=urllib.parse.urlparse(response.url).path.lower()
-            assert redirected_to!=target, ("cross-school Grade9 lesson returned 200",target)
-    except urllib.error.HTTPError as error:
-        assert error.code in (401,403,404), ("unexpected cross-school HTTP response",error.code)
+    visual=verify_browser_visuals(secondary,expected,found)
+    denied=0
+    for code in expected:
+        target="/student/learning/lesson/"+found[code]
+        try:
+            with primary.open(BASE+target,timeout=30) as response:
+                redirected_to=urllib.parse.urlparse(response.url).path.lower()
+                assert redirected_to!=target, ("cross-school Grade9 lesson returned 200",code)
+        except urllib.error.HTTPError as error:
+            assert error.code in (401,403,404), ("unexpected cross-school HTTP response",code,error.code)
+        denied+=1
+    assert denied==132
     out={"course":"US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
         "candidateSha":os.environ["G9_CANDIDATE_SHA"],
         "runId":os.environ["GITHUB_RUN_ID"],
@@ -175,6 +239,8 @@ def main():
         "malformedGradesRejectedPersisted":sum(x["malformed"]["status"]=="MALFORMED_REJECTED_PERSISTED" for x in evidence),
         "renderedAuthenticated":sum(x["contentRenderedAuthenticated"] for x in evidence),
         "crossSchoolLessonDenied":True,
+        "crossSchoolLessonsDenied":denied,
+        "browserVisual":visual,
         "scopeNote":"Technical student/teacher authenticated route and exact grading checks; not licensed source parity or authoring review",
         "lessons":evidence}
     out_path=Path("/tmp/g9-132-https-practice-evidence.json")

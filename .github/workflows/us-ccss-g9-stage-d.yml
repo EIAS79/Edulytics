@@ -127,6 +127,12 @@ jobs:
           dotnet publish src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-restore --output /tmp/g9-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install real Chromium for 132 lesson browser rendering and 14 visual snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
       - name: Execute Grade9 132 lesson live HTTPS, exact grading and cross-school denial
         shell: bash
         env:
@@ -182,6 +188,14 @@ jobs:
           done
           test "$ready" = true || { tail -n 100 /tmp/g9-web.log; exit 1; }
           python3 tools/phase29/g9_two_school_https.py
+      - name: Retain 7 desktop and 7 mobile authenticated Grade9 visual snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g9-132-browser-render-14-responsive-screenshots
+          path: /tmp/g9-u*-*.png
+          if-no-files-found: warn
+          retention-days: 30
       - name: Retain exact-run Grade9 HTTPS and grading evidence
         if: always()
         uses: actions/upload-artifact@v4
