@@ -8,11 +8,15 @@
       "CultureCode": "en",
       "Title": "Related Events",
       "ExplanationParagraphs": [
-        "Learning goal: Define independent and dependent events correctly by whether knowing one changes the probability of the other, and test independence from joint probability.",
+        "Learning goal: Distinguish independent and dependent events by whether knowing one changes the probability of the other, using replacement/no-replacement experiments and structured game data.",
         "Two events A and B are independent exactly when P(A∩B)=P(A)×P(B). If P(B)>0, this is equivalent to P(A|B)=P(A): knowing B occurred does not change A's probability.",
         "Dependence means the conditional probability differs from the unconditional probability: P(A|B)≠P(A) when P(B)>0. Disjoint events with positive probabilities are not independent, because P(A∩B)=0 while P(A)×P(B)>0.",
         "Original student task: Use a two-stage card model and explain why replacement changes independence; teacher scores experimental plan. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 7, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 7, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses.",
+        "Source alignment repair: Retain the source crayon replacement versus no-replacement comparison.",
+        "Source alignment repair: Add the source three-door host experiment as teacher-led evidence, explicitly accounting for the host's rule of revealing an empty unchosen door.",
+        "Source alignment repair: Use collected frequencies only as estimates; distinguish them from the exact independence criterion.",
+        "Edulytics independent cool-down: A bag contains 8 different crayons. One crayon is drawn. Compare the probability that a second draw is yellow when the first crayon is replaced versus not replaced, and classify the event relationship in each protocol."
       ],
       "KeyConcepts": [
         {
@@ -85,6 +89,7 @@
         }
       ],
       "SummaryPoints": [
+        "Distinguish independent and dependent events by whether knowing one changes the probability of the other, using replacement/no-replacement experiments and structured game data.",
         "Define independent and dependent events correctly by whether knowing one changes the probability of the other, and test independence from joint probability.",
         "For P(B)>0, independence means P(A|B)=P(A), equivalently P(A∩B)=P(A)P(B). Disjoint positive-probability events are dependent.",
         "Source-specific probability models and experimental interpretations require teacher review."
