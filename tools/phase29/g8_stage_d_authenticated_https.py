@@ -167,6 +167,16 @@ def main():
         require("rich-lesson-section" in body,"no authenticated Rich V2 "+code)
         visible=learner_visible_text(body)
         visible_words=" ".join(re.findall(r"\w+",visible,flags=re.UNICODE))
+        require("lesson-source-aligned-activities" in body,
+            "Grade8 canonical instructional sections absent from learner DOM "+code)
+        if ordinal == 1:
+            goal_index=visible_words.find("learning goal")
+            print("G8_D_FIRST_LESSON_CANONICAL_DIAGNOSTIC",
+                "sourceDom=", "lesson-source-aligned-activities" in body,
+                "goalIndex=", goal_index,
+                "goalContext=", visible_words[max(0,goal_index-40):goal_index+240]
+                    if goal_index >= 0 else "NO_LEARNING_GOAL_TEXT",
+                flush=True)
         title=re.sub(r"\s+"," ",rich["Title"]).casefold()
         require(title in visible,"Rich V2 title absent from rendered learner page "+code)
 
@@ -222,8 +232,12 @@ def main():
                             f"{code} canonical-pack.{field}[{line_index}]",
                             min_words=3,max_words=8)
             else:
+                # The renderer may place an accessible diagram or block
+                # between adjacent source sentences. Match a complete
+                # opening phrase within a single learner text block, not
+                # ten tokens that can straddle separate DOM blocks.
                 require_rendered(authored,visible_words,
-                    f"{code} canonical-pack.{field}",min_words=4,max_words=10)
+                    f"{code} canonical-pack.{field}",min_words=4,max_words=6)
 
         cross_denied(foreign,"/student/learning/lesson/"+lesson_id)
         entry={"ordinal":ordinal,"lessonCode":code,
