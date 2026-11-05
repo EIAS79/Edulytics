@@ -24,6 +24,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         "algebra.literal_equation.isolate.select_form";
     public const string StandardFormSlopeInterceptFamily =
         "algebra.linear.standard_form.slope_intercept";
+    public const string LinearSystemSolveFamily =
+        "algebra.linear.systems.two_by_two.integer_coefficients";
 
     public sealed record Problem(
         string Family,
@@ -36,7 +38,7 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
             PatternClassificationFamily or OneVariableSolutionCheckFamily or
             TwoVariableSolutionCheckFamily or EquationEquivalenceFamily or
-            LiteralEquationIsolateFamily or StandardFormSlopeInterceptFamily;
+            LiteralEquationIsolateFamily or StandardFormSlopeInterceptFamily or LinearSystemSolveFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -56,6 +58,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             return BuildLiteralEquationIsolate(random);
         if (family == StandardFormSlopeInterceptFamily)
             return BuildStandardFormSlopeIntercept(random);
+        if (family == LinearSystemSolveFamily)
+            return BuildLinearSystem(random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -132,6 +136,17 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 throw new InvalidOperationException("Invalid ALG1 U02 slope-intercept parameters.");
             return $"{slope},{intercept}";
         }
+        if (family == LinearSystemSolveFamily)
+        {
+            if (!ValidateLinearSystem(parameters, out var a, out var b, out var c1, out var d, out var e, out var c2, out _))
+                throw new InvalidOperationException("Invalid ALG1 U02 system parameters.");
+            var determinant = a * e - b * d;
+            var xNumerator = c1 * e - b * c2;
+            var yNumerator = a * c2 - c1 * d;
+            if (determinant == 0 || xNumerator % determinant != 0 || yNumerator % determinant != 0)
+                throw new InvalidOperationException("The generated system requires an exact integer solution.");
+            return $"{xNumerator / determinant},{yNumerator / determinant}";
+        }
 
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
@@ -169,11 +184,55 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         if (family == StandardFormSlopeInterceptFamily)
             return ValidateSlopeIntercept(parameters, out _, out _, out _, out _) &&
                 NormalizePair(answer) == Solve(family, parameters);
+        if (family == LinearSystemSolveFamily)
+        {
+            if (!ValidateLinearSystem(parameters, out var a, out var b, out var c1, out var d, out var e, out var c2, out _))
+                return false;
+            var determinant = a * e - b * d;
+            if (determinant == 0)
+                return false;
+            var numeratorX = c1 * e - b * c2;
+            var numeratorY = a * c2 - c1 * d;
+            return numeratorX % determinant == 0 &&
+                numeratorY % determinant == 0 &&
+                NormalizePair(answer) == $"{numeratorX / determinant},{numeratorY / determinant}";
+        }
 
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildLinearSystem(Random random)
+    {
+        var x = random.Next(-6, 7);
+        var y = random.Next(-6, 7);
+        var template = random.Next(0, 4);
+        var (a, b, d, e) = template switch
+        {
+            0 => (1, 1, 1, -1),
+            1 => (2, 1, 1, -1),
+            2 => (3, -1, 1, 2),
+            3 => (1, 2, 2, -1),
+            _ => throw new InvalidOperationException()
+        };
+        var c1 = a * x + b * y;
+        var c2 = d * x + e * y;
+        var variant = random.Next(0, 16);
+
+        return new(
+            LinearSystemSolveFamily,
+            $"Solve the system {a}x{(b >= 0 ? "+" : "")}{b}y={c1} and " +
+            $"{d}x{(e >= 0 ? "+" : "")}{e}y={c2}. Enter the exact ordered pair x,y. " +
+            "Representing the constraints and explaining a graphical or algebraic solution remains teacher-reviewed.",
+            "Solve by any valid method and substitute the pair into both original equations.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["a"] = a, ["b"] = b, ["c1"] = c1,
+                ["d"] = d, ["e"] = e, ["c2"] = c2, ["variant"] = variant
+            });
     }
 
     private static Problem BuildStandardFormSlopeIntercept(Random random)
@@ -342,6 +401,33 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             {
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
+    }
+
+    private static bool ValidateLinearSystem(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int a,
+        out int b,
+        out int c1,
+        out int d,
+        out int e,
+        out int c2,
+        out int variant)
+    {
+        a = b = c1 = d = e = c2 = variant = 0;
+        if (parameters is null ||
+            !parameters.TryGetValue("a", out a) ||
+            !parameters.TryGetValue("b", out b) ||
+            !parameters.TryGetValue("c1", out c1) ||
+            !parameters.TryGetValue("d", out d) ||
+            !parameters.TryGetValue("e", out e) ||
+            !parameters.TryGetValue("c2", out c2) ||
+            !parameters.TryGetValue("variant", out variant))
+            return false;
+        var determinant = a * e - b * d;
+        return a is >= -5 and <= 5 && b is >= -5 and <= 5 &&
+            d is >= -5 and <= 5 && e is >= -5 and <= 5 &&
+            c1 is >= -100 and <= 100 && c2 is >= -100 and <= 100 &&
+            variant is >= 0 and <= 15 && determinant != 0;
     }
 
     private static bool ValidateSlopeIntercept(

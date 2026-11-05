@@ -105,5 +105,20 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
             UsCcssAlg1Unit2AlgebraQuestions.StandardFormSlopeInterceptFamily, p));
         Assert.True(UsCcssAlg1Unit2AlgebraQuestions.Verify(
             UsCcssAlg1Unit2AlgebraQuestions.StandardFormSlopeInterceptFamily, p, "(-3, 7)"));
+    } 
+    [Fact]
+    public void LinearSystemVerifiesBothEquationsAndRejectsWrongPair()
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["a"] = 1, ["b"] = 1, ["c1"] = 11,
+            ["d"] = 1, ["e"] = -1, ["c2"] = 5, ["variant"] = 0
+        };
+        Assert.Equal("8,3", UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.LinearSystemSolveFamily, parameters));
+        Assert.True(UsCcssAlg1Unit2AlgebraQuestions.Verify(
+            UsCcssAlg1Unit2AlgebraQuestions.LinearSystemSolveFamily, parameters, "(8, 3)"));
+        Assert.False(UsCcssAlg1Unit2AlgebraQuestions.Verify(
+            UsCcssAlg1Unit2AlgebraQuestions.LinearSystemSolveFamily, parameters, "7,4"));
     }
 }

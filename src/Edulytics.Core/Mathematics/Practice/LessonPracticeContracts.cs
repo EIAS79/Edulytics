@@ -1684,6 +1684,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L12"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L12",
+            "algebra.linear.systems.two_by_two.solve",
+            "ALG1_SYSTEM_INTERSECTION_EXACT_PAIR_PLUS_TEACHER_GRAPH_MODEL",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "ALG1_U02_L12_REUSE_SYSTEM_SKILL_PLUS_TEACHER_MODEL_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 Grade 5 U03:L01: one piece of one selected half
         // measured against the ORIGINAL whole (1/6 or 1/8).
         // Digital objective selections are exact; drawings and explanations
