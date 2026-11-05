@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U05:L07",
+  "nextCanonical": "U05:L08",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -3788,25 +3788,65 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L06_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+      "unitCode": "U05",
+      "lessonNumber": 7,
+      "title": "Using Negative Exponents",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "f67c5e310c0037b480b70a7d468a2a4cac69cae95f126995ced461600e3f2e9c",
+        "ti": "3a2d43a3019972b297cf50ee2f1f3f9af8220f3c6fcadf60bb0df045d85c5de6",
+        "tpr": "772c06eb9c683279feea6d5a8fe691947f2d17e37d657529eea88d64ce2fbe38",
+        "si": "74ea0122b19387f4fa4310875f77210c44ca6c51f28a756c3102ed943797b274",
+        "spr": "b4c5d8a9c84a4e48b91632c8dc2aab84f28a44d4b155581038a4c01aab8c9785"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u05-l07-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u05-l07-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "Local learning goals, source activities, examples and practice compared; previously correct content preserved"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true,
+        "firstPartyCooldown": "AUTHORED"
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "functions.exponential.decay.half_evaluate"
+        ],
+        "teacherReviewRequired": [
+          "negative-exponent exact reasoning",
+          "pre-baseline context and graphing"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L07_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 76,
-    "B_CLOSED": 76,
-    "C_PREPARED": 76,
-    "ABC_READY_FOR_D": 76,
+    "A_CLOSED": 77,
+    "B_CLOSED": 77,
+    "C_PREPARED": 77,
+    "ABC_READY_FOR_D": 77,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 56,
+    "REMAINING": 55,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 4,
     "CURRENT_UNIT": "U05",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L07",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L08",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -3841,12 +3881,12 @@
     "unitsABCCLosed": 4,
     "status": "U05_IN_PROGRESS",
     "previouslyABCClosed": 70,
-    "newlyABCClosed": 6,
+    "newlyABCClosed": 7,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L06",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -3878,9 +3918,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U05_IN_PROGRESS_L07",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L06",
+  "unitStatus": "U05_IN_PROGRESS_L08",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -3890,9 +3930,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L06",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L06_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L07_ABC_CLOSURE_20261105.md"
 }
