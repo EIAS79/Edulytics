@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l17-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l17-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Writing Inverse Functions to Solve Problems",
       "ExplanationParagraphs": [
-        "Learning goal: write an inverse for a linear function stated in function notation, use it to solve a contextual problem or reverse a data model, and explain which input/output roles change. Original Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 17, https://im.kendallhunt.com/HS/teachers/1/4/17/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/4/17/index.html (CC BY 4.0). The source intentionally delays notation f^(-1) to prioritize meaning; this candidate uses 'inverse process' and does not force that symbol.",
-        "Independent tank model: water volume W(t)=80−2.5t litres for elapsed time t minutes until empty, 0≤t≤32. To find elapsed time from a remaining volume v litres, solve v=80−2.5t for t=(80−v)/2.5. Inverse input v is restricted to [0,80] litres and output time lies in [0,32] minutes. W(13)=47.5 litres; if only5 litres remain, t=(80−5)/2.5=30 minutes.",
-        "Original second hypothetical data model: a measured-looking percentage indicator increases approximately as P(t)=12+3.5t for years t∈[0,6]. Given an indicator level p, the inverse model t=(p−12)/3.5 estimates the year offset. This is invented for mathematical practice and does not describe actual phone subscriptions or real populations. Extrapolation past observed years may fail.",
-        "Student activity: explain inverse operation to a peer, construct forward/backward tables, sketch the input/output interchange, interpret a fractional time estimate and critique when a fitted model is not physically invertible beyond its observed range. Teacher-scored rubric 0–2 each for algebra, checked function composition, valid interpretation of units/domains and responsible modeling limitations."
+        "Learning goal: write a linear function to model a situation or data, reverse that model with an inverse function, and use the inverse to solve a contextual problem while explaining which input/output roles change. This first-party Edulytiks lesson is aligned to the approved local Algebra 1 Unit 4 Lesson 17 evidence and uses independently authored data and contexts.",
+        "Independent tank model: water volume W(t)=80−2. 5t litres for elapsed time t minutes until empty, 0≤t≤32. To find elapsed time from a remaining volume v litres, solve v=80−2. 5t for t=(80−v)/2. 5. Inverse input v is restricted to [0,80] litres and output time lies in [0,32] minutes. W(13)=47. 5 litres; if only5 litres remain, t=(80−5)/2. 5=30 minutes.",
+        "Original second hypothetical data model: a measured-looking percentage indicator increases approximately as P(t)=12+3. 5t for years t∈[0,6]. Given an indicator level p, the inverse model t=(p−12)/3. 5 estimates the year offset. This is invented for mathematical practice and does not describe actual phone subscriptions or real populations. Extrapolation past observed years may fail.",
+        "Student activity: explain inverse operation to a peer, construct forward/backward tables, sketch the input/output interchange, interpret a fractional time estimate and critique when a fitted model is not physically invertible beyond its observed range. Teacher-scored rubric 0–2 each for algebra, checked function composition, valid interpretation of units/domains and responsible modeling limitations.",
+        "First-party Cool-down (teacher-scored): A model P(t)=3t+12 gives a quantity after t time units. Predict P(7), then find the original t when P(t)=33 and explain what the inverse calculation means in the situation. Exact prediction/inverse values can be checked automatically; model meaning and role reversal are teacher-reviewed."
       ],
       "KeyConcepts": [
         {
