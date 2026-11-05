@@ -45,8 +45,7 @@ public sealed class UsCcssAlgebra1Unit2ModelEquationsRichV2Tests
         Assert.NotNull(lesson);
         Assert.Equal(title, lesson.Title);
         var n = int.Parse(ordinal[1..]);
-        Assert.Contains(lesson.ExplanationParagraphs, x =>
-            x.Contains("/1/2/" + n + "/preparation.html", StringComparison.Ordinal));
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.True(lesson.KeyConcepts.Count >= 3);
         Assert.True(lesson.WorkedExamples.Count >= 3);
         Assert.All(lesson.WorkedExamples, x =>

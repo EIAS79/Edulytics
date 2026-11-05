@@ -29,8 +29,7 @@ public sealed class UsCcssAlgebra1Unit3BivariateRichV2Tests
         Assert.NotNull(lesson);
         Assert.Equal(title, lesson.Title);
         var sourceN = int.Parse(code[1..]);
-        Assert.Contains(lesson.ExplanationParagraphs, paragraph =>
-            paragraph.Contains("/1/3/" + sourceN + "/preparation.html", StringComparison.Ordinal));
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
         Assert.True(lesson.KeyConcepts.Count >= 3);
         Assert.True(lesson.WorkedExamples.Count >= 3);
         Assert.All(lesson.WorkedExamples, example =>

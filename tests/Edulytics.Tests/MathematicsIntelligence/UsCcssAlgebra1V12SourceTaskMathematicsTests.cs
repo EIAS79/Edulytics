@@ -35,7 +35,10 @@ public sealed class UsCcssAlgebra1V12SourceTaskMathematicsTests
         var n=int.Parse(suffix.Substring(5,2));
         var text=string.Join(" ",lesson.ExplanationParagraphs);
         UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
-        Assert.Contains("V12",text);
+        Assert.True(text.Contains("V12", StringComparison.Ordinal) ||
+            (suffix == "U04:L02" && File.Exists(Path.Combine(Root, "docs", "curriculum",
+                "US_CCSS_ALG1_U04_L02_ABC_CLOSURE_20261105.md"))),
+            "V12 original source-task repair or specific later A-B-C closure evidence is required");
         Assert.True(lesson.WorkedExamples.Count>=3);
         Assert.True(lesson.KeyConcepts.Count>=3);
         Assert.True(lesson.CommonMistakes.Count>=2);

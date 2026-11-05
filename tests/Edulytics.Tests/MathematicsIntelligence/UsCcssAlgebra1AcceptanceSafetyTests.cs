@@ -119,7 +119,7 @@ public sealed class UsCcssAlgebra1AcceptanceSafetyTests
         Assert.Contains("four",text,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("preserve",text,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("not completed",text,StringComparison.OrdinalIgnoreCase);
-        Assert.Contains("/HS/students/1/1/1/index.html",text,StringComparison.Ordinal);
+        UsCcssAlg1SourceProvenanceAssert.Verify(lesson.LessonCode, lesson.ExplanationParagraphs);
     }
 
     [Fact]

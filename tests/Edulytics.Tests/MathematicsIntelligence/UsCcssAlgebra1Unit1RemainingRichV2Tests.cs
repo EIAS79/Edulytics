@@ -32,7 +32,7 @@ public sealed class UsCcssAlgebra1Unit1RemainingRichV2Tests
         Assert.Equal(title, rich.Title);
         var narrative = string.Join(" ", rich.ExplanationParagraphs);
         var sourcePath = "/1/1/" + int.Parse(code[1..]) + "/preparation.html";
-        Assert.Contains(sourcePath, narrative, StringComparison.Ordinal);
+        UsCcssAlg1SourceProvenanceAssert.Verify(rich.LessonCode, rich.ExplanationParagraphs);
         Assert.Contains("teacher", narrative, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("rubric", narrative, StringComparison.OrdinalIgnoreCase);
         Assert.True(rich.KeyConcepts.Count >= 3);

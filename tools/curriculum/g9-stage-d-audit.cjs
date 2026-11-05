@@ -16,6 +16,11 @@ for(let i=0;i<132;i++){
  assert(r.aCEvidence && fs.existsSync(path.join(root,r.aCEvidence)),'Missing closure: '+code);
  assert(r.contentPath && fs.existsSync(path.join(root,r.contentPath)),'Missing RichV2: '+code);
  const c=read(r.contentPath);assert(c && Object.keys(c).length>0,'Empty RichV2: '+code);
+ assert(c.ContentVersion && typeof c.ContentVersion==='string', 'Missing content version: '+code);
+ const visible=(c.Lessons||[]).flatMap(lesson=>lesson.ExplanationParagraphs||[]).join(' ');
+ assert(!/im\.kendallhunt\.com|Illustrative Mathematics|\/HS\/teachers\//i.test(visible),
+   'Learner-facing source publisher reference is not separated: '+code);
+
 }
 const batch=process.argv[2]||'inventory';
 if(batch==='final'){
