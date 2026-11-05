@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l04-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l04-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Understanding Decay",
       "ExplanationParagraphs": [
-        "Learning goal: explain fractional decrease as repeated multiplication by a remaining fraction, distinguish the amount lost from the amount retained, and compare a constant-factor decay with subtraction of a fixed amount. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 4, https://im.kendallhunt.com/HS/teachers/1/5/4/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/4/index.html (CC BY 4.0). The source uses the idea that losing a fraction leaves a complementary fraction.",
+        "Exponential decay means multiplying a quantity by a positive factor less than one at each equal time step. A decrease of r percent retains 1-r of the previous amount; it does not subtract the same fixed amount each step. This independently authored lesson follows the approved local Algebra 1 Unit 5 Lesson 4 learning goals.",
         "Original fictional used-laptop depreciation: starting advertised value $640, losing25% of its CURRENT value each year. Remaining multiplier is1−0.25=0.75, so V(t)=640(0.75)^t for whole years t≥0. Values are $640,$480,$360,$270 at years0–3. Losses are $160,$120,$90 respectively: absolute dollar losses shrink while percent lost remains25%.",
         "Contrast a different model subtracting a fixed $160 every year: 640,480,320,160; it matches the first decay model only at t0 and1, then diverges. If the original problem were 'lose $160 per year', repeated subtraction would be appropriate. The exact wording and reference amount matter.",
-        "Student task: explain algebraically why x decreased by one quarter gives x(3/4), extend a table and graph both models on same axes, and interpret when a physical amount would make an indefinite model implausible. Teacher-scored rubric 0–2 each for remaining-fraction derivation, correct values, model contrast and contextual limitations."
+        "Student task: explain algebraically why x decreased by one quarter gives x(3/4), extend a table and graph both models on same axes, and interpret when a physical amount would make an indefinite model implausible. Teacher-scored rubric 0–2 each for remaining-fraction derivation, correct values, model contrast and contextual limitations.",
+        "First-party Cool-down (teacher-scored): A device loses 20% of its value each year. Write the one-year multiplier, express the value after two years starting from 500, and explain why subtracting 100 each year is not equivalent. The one-step percentage is exact; the exponential explanation is teacher-reviewed."
       ],
       "KeyConcepts": [
         {
