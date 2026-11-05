@@ -1,0 +1,212 @@
+name: Grade 8 Stage D 131-Lesson Diagnostics
+
+on:
+  push:
+    branches: [curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029]
+    paths:
+      - '.github/workflows/us-ccss-g8-stage-d.yml'
+      - 'tools/curriculum/g8-stage-d-inventory.cjs'
+      - 'tools/phase29/g8_stage_d_authenticated_https.py'
+      - 'tools/phase29/g8_stage_d_visual_https.py'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G8/**'
+      - 'docs/curriculum/us-ccss-g8-**'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade8-our-2017.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g8-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/**'
+      - 'tests/academic-us-ccss-g8-**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2PilotTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2RolloutTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/SupportingLessonPracticeR3Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4RichV2Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4V11SyntheticPracticeServiceTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsGrade8IntegerExponentOutcomeTests.cs'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g8-stage-d.yml'
+      - 'tools/curriculum/g8-stage-d-inventory.cjs'
+      - 'tools/phase29/g8_stage_d_authenticated_https.py'
+      - 'tools/phase29/g8_stage_d_visual_https.py'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G8/**'
+      - 'docs/curriculum/us-ccss-g8-**'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade8-our-2017.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g8-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/**'
+      - 'tests/academic-us-ccss-g8-**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2PilotTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2RolloutTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/SupportingLessonPracticeR3Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4RichV2Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4V11SyntheticPracticeServiceTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsGrade8IntegerExponentOutcomeTests.cs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    name: g8-d-inventory-131
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Bind exact candidate SHA
+        env:
+          CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify 131/131 handoffs, canonical scope, content pack and lesson-test mapping
+        run: |
+          set -euo pipefail
+          node tools/curriculum/g8-stage-d-inventory.cjs verify
+          mkdir -p /tmp/g8-stage-d
+          node tools/curriculum/g8-stage-d-inventory.cjs inventory > /tmp/g8-stage-d/inventory.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-131-inventory
+          path: /tmp/g8-stage-d/inventory.json
+          if-no-files-found: error
+          retention-days: 30
+
+  source-shards:
+    name: g8-d-${{ matrix.batch }}-lesson-contracts
+    needs: inventory
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute exactly the A-B-C-authored test mapped to every lesson in this shard
+        shell: bash
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          mkdir -p g8-stage-d-results
+          mapfile -t files < <(node tools/curriculum/g8-stage-d-inventory.cjs shard "$BATCH")
+          test "${#files[@]}" -gt 0
+          printf '%s\n' "${files[@]}" > "g8-stage-d-results/$BATCH-files.txt"
+          node --test "${files[@]}" | tee "g8-stage-d-results/$BATCH-node.tap"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-${{ matrix.batch }}-lesson-contract-results
+          path: g8-stage-d-results/
+          if-no-files-found: error
+          retention-days: 30
+
+  crosscut-node:
+    name: g8-d-crosscut-source-math-visual-regressions
+    needs: inventory
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute Grade 8 cross-cutting source, math and visual contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p g8-stage-d-results
+          set -- tests/academic-us-ccss-g8-coder4-*.test.cjs
+          test -f "$1"
+          node --test "$@" | tee g8-stage-d-results/g8-crosscut-node.tap
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-crosscut-node-results
+          path: g8-stage-d-results/
+          if-no-files-found: error
+          retention-days: 30
+
+  dotnet-build-math:
+    name: g8-d-dotnet-build-and-math
+    needs: inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and build affected test graph
+        run: |
+          set -euo pipefail
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - name: Execute Grade 8 Rich V2, Practice routing and math regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p g8-stage-d-results
+          FILTER='FullyQualifiedName~UsCcssGrade8|FullyQualifiedName~UsGrade8IntegerExponentOutcomeTests|FullyQualifiedName~SupportingLessonPracticeR3Tests|FullyQualifiedName~RichLessonContentV2PilotTests|FullyQualifiedName~RichLessonContentV2RolloutTests'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj             -c Release --no-build             --filter "$FILTER"             --logger 'trx;LogFileName=g8-dotnet.trx'             --results-directory g8-stage-d-results
+          test -s g8-stage-d-results/g8-dotnet.trx
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-dotnet-math-results
+          path: g8-stage-d-results/
+          if-no-files-found: warn
+          retention-days: 30
+
+  technical-summary:
+    name: g8-d-d1-d2-technical-summary
+    if: always()
+    needs: [inventory, source-shards, crosscut-node, dotnet-build-math]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Fail closed unless all D1/D2 technical jobs passed
+        env:
+          INVENTORY: ${{ needs.inventory.result }}
+          SHARDS: ${{ needs.source-shards.result }}
+          CROSSCUT: ${{ needs.crosscut-node.result }}
+          DOTNET: ${{ needs.dotnet-build-math.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$INVENTORY" = success
+          test "$SHARDS" = success
+          test "$CROSSCUT" = success
+          test "$DOTNET" = success
+          {
+            echo 'Grade 8 D1/D2 technical diagnostics passed on this exact candidate SHA.'
+            echo 'Authenticated E2E, DB/RBAC, visual/accessibility runtime and final release gate are separate D3/D4 gates and are not granted here.'
+          } | tee g8-d1-d2-summary.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-d1-d2-technical-summary
+          path: g8-d1-d2-summary.txt
+          if-no-files-found: warn
+          retention-days: 30
