@@ -78,7 +78,7 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
         using var stream = assembly.GetManifestResourceStream(resource);
         Assert.NotNull(stream);
         using var doc = System.Text.Json.JsonDocument.Parse(stream);
-        Assert.Equal("alg1-u01-l01-local-source-aligned-20261031-v4",
+        Assert.Equal("alg1-u01-l01-local-source-aligned-20261031-v4-g9-staged-20261105",
             doc.RootElement.GetProperty("ContentVersion").GetString());
         Assert.Equal(Prefix + "L01", Assert.Single(doc.RootElement
             .GetProperty("Lessons").EnumerateArray()).GetProperty("LessonCode").GetString());
