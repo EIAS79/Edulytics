@@ -43,6 +43,16 @@ def learner_visible_text(markup):
 
 def require(cond, message):
     if not cond: raise AssertionError("G8_AUTH_FAIL_CLOSED "+str(message))
+
+def source_words(value):
+    return re.findall(r"\w+",html.unescape(str(value)).casefold(),flags=re.UNICODE)
+
+def require_rendered(value, visible_words, label, min_words=1, max_words=8):
+    words=source_words(value)
+    require(len(words)>=min_words,"canonical Rich V2 text unexpectedly short "+label)
+    signature=" ".join(words[:min(max_words,len(words))])
+    require(signature in visible_words,"canonical Rich V2 text not rendered "+label+" :: "+signature)
+
 def sql(query):
     return subprocess.check_output(["psql","-h","127.0.0.1","-U","postgres","-d","edulytics_clean_ci",
         "-A","-t","-F","|","-c",query], text=True, timeout=50).strip()
@@ -125,6 +135,16 @@ def main():
         and len(pack["lessons"])==131,"missing G8 source or database lessons")
     by_code={x["lessonCode"]:x for x in pack["lessons"]}
     require(len(by_code)==131,"duplicate authored content code")
+    rich_by_code={}
+    rich_dir=ROOT/"src/Edulytics.Core/Curriculum/LessonContent/RichV2"
+    for rich_path in sorted(rich_dir.glob("us-ccss-g8-*.rich-lesson-v2.json")):
+        document=json.loads(rich_path.read_text(encoding="utf-8"))
+        for lesson in document.get("Lessons",[]):
+            code=lesson.get("LessonCode")
+            require(code not in rich_by_code,"duplicate Grade8 Rich V2 lesson "+str(code))
+            rich_by_code[code]=lesson
+    require(len(rich_by_code)==131 and set(rich_by_code)==set(expected),
+        "Grade8 Rich V2 registry files do not cover exact 131-lesson scope")
     # Stage D must not fabricate auto-graded coverage. Only these two lessons
     # have an explicit READY_VERIFIED practice contract in the current repo.
     practice_eligible={
@@ -139,38 +159,51 @@ def main():
             and re.fullmatch(r"[0-9a-fA-F-]{36}",lesson_id),"identity mismatch "+code)
         lesson_ids[code]=lesson_id
         english=[x for x in by_code[code]["translations"] if x["cultureCode"]=="en"]
-        require(len(english)==1,"missing first-party English content "+code)
+        require(len(english)==1,"missing legacy English pack identity "+code)
+        rich=rich_by_code[code]
         body=page(student,"/student/learning/lesson/"+lesson_id)
         require("rich-lesson-section" in body,"no authenticated Rich V2 "+code)
         visible=learner_visible_text(body)
-        title=re.sub(r"\s+"," ",english[0]["title"]).casefold()
-        goal=re.sub(r"\s+"," ",english[0]["explanation"].split("\n",1)[0]).casefold()
-        require(title in visible,"source-bound title absent from rendered learner page "+code)
-        require(goal[:48] in visible,"authored learning goal absent from rendered learner page "+code)
         visible_words=" ".join(re.findall(r"\w+",visible,flags=re.UNICODE))
-        for field in ("explanation","keyConceptsAndRules","workedExamples",
-                      "stepByStepSolutions","commonMistakes","quickSummary"):
-            authored=english[0].get(field)
-            require(isinstance(authored,str) and len(authored.strip())>=20,
-                "missing canonical Grade8 section "+code+" "+field)
-            source_text=html.unescape(authored)
-            if field=="stepByStepSolutions":
-                for line_number,line in enumerate(source_text.splitlines(),1):
-                    line=line.strip()
-                    if not line:
-                        continue
-                    prefix,separator,step_text=line.partition(": ")
-                    instruction=step_text if separator and prefix.startswith("Step ") else line
-                    tokens=re.findall(r"\w+",instruction.casefold(),flags=re.UNICODE)
-                    require(len(tokens)>=4,
-                        "source step unexpectedly short "+code+" line "+str(line_number))
-                    require(" ".join(tokens[:6]) in visible_words,
-                        "rendered learner missing step "+code+" line "+str(line_number))
-                continue
-            source_words=re.findall(r"\w+",source_text.casefold(),flags=re.UNICODE)
-            require(len(source_words)>=8,"too-short source section "+code+" "+field)
-            require(" ".join(source_words[:8]) in visible_words,
-                "canonical source section not rendered to authenticated student "+code+" "+field)
+        title=re.sub(r"\s+"," ",rich["Title"]).casefold()
+        require(title in visible,"Rich V2 title absent from rendered learner page "+code)
+
+        explanations=rich.get("ExplanationParagraphs",[])
+        concepts=rich.get("KeyConcepts",[])
+        examples=rich.get("WorkedExamples",[])
+        mistakes=rich.get("CommonMistakes",[])
+        summaries=rich.get("SummaryPoints",[])
+        require(len(explanations)>=2 and len(concepts)>=3 and len(examples)>=3
+            and len(mistakes)>=2 and len(summaries)>=3,
+            "incomplete canonical Rich V2 structure "+code)
+
+        for index,paragraph in enumerate(explanations,1):
+            require_rendered(paragraph,visible_words,f"{code} explanation[{index}]")
+        for index,concept in enumerate(concepts,1):
+            for field in ("Title","Definition","Rule"):
+                require_rendered(concept.get(field,""),visible_words,
+                    f"{code} concept[{index}].{field}")
+            if concept.get("Example"):
+                require_rendered(concept["Example"],visible_words,
+                    f"{code} concept[{index}].Example")
+        for index,example in enumerate(examples,1):
+            for field in ("Title","Question","Method","Answer"):
+                require_rendered(example.get(field,""),visible_words,
+                    f"{code} example[{index}].{field}")
+            if example.get("Check"):
+                require_rendered(example["Check"],visible_words,
+                    f"{code} example[{index}].Check")
+            steps=example.get("Steps",[])
+            require(len(steps)>=3,"worked example has fewer than three steps "+code)
+            for step_index,step in enumerate(steps,1):
+                require_rendered(step,visible_words,
+                    f"{code} example[{index}].step[{step_index}]")
+        for index,mistake in enumerate(mistakes,1):
+            for field in ("Mistake","WhyWrong","Correction"):
+                require_rendered(mistake.get(field,""),visible_words,
+                    f"{code} mistake[{index}].{field}")
+        for index,summary in enumerate(summaries,1):
+            require_rendered(summary,visible_words,f"{code} summary[{index}]")
         cross_denied(foreign,"/student/learning/lesson/"+lesson_id)
         entry={"ordinal":ordinal,"lessonCode":code,
             "unit":int(re.search(r":G8:U(\d{2}):L\d{2}$",code).group(1)),
