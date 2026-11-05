@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 97,
-    "B_CLOSED": 97,
-    "C_PREPARED": 97,
-    "ABC_READY_FOR_D": 97,
+    "A_CLOSED": 98,
+    "B_CLOSED": 98,
+    "C_PREPARED": 98,
+    "ABC_READY_FOR_D": 98,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 27,
+    "REMAINING": 26,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 5,
     "CURRENT_UNIT": "U06",
@@ -24,18 +24,18 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 27,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+    "Unprocessed": 26,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L17",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U06",
     "UnitLessonCount": 17,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L17",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L17",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
     "AllUnitABCReady": false,
     "NextUnit": "U06",
     "ProcessedFirstUnit": 22,
@@ -45,7 +45,7 @@
     "U03ClosedLessonCount": 16,
     "U04ClosedLessonCount": 11,
     "U05ClosedLessonCount": 18,
-    "U06ClosedLessonCount": 15
+    "U06ClosedLessonCount": 16
   },
   "LessonEntries": [
     {
@@ -3176,6 +3176,44 @@
       "StartedAtUtc": "2026-11-05T20:46:43.563763Z",
       "ClosedAtUtc": "2026-11-05T20:46:43.563763Z",
       "ElapsedSeconds": 0
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+      "Ordinal": 98,
+      "UnitOrdinal": 16,
+      "Title": "Weighted Averages in a Triangle",
+      "LessonCommit": "SELF_CLOSURE_COMMIT_RECORDED_BY_GIT_HISTORY",
+      "SourceEdition": "IM Geometry local archive used as authorized source; AccessIM/v360 excluded",
+      "SourceSha256": {
+        "TeacherPreparation": "787d67cf9570ddf0a87a9888e020247f726fffedc335388a66364fa6338cb5b4",
+        "TeacherActivities": "cf355ba8497c50724d476e8cce4ec57b559ad18baa02eca3ae48d2d78c6dbf73",
+        "StudentActivities": "f5cd64d9e826aac07c7ee5af83e87ba06a5f605aefc633082cf44c63f29517b9",
+        "StudentPractice": "b46423375be7de3c719d69479326eb5f6e9afab284624d8a6e4793f73aa1b29c"
+      },
+      "OriginalActivities": [
+        "16.1",
+        "16.2",
+        "16.3",
+        "Practice",
+        "Cool-down"
+      ],
+      "OriginalPracticeCount": "FULL_LOCAL_PRACTICE_HTML_REVIEWED",
+      "A": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+      "B": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+      "C": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U06_L16_SOURCE_ALIGNED_HUMAN",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u06-l16-source-human-paper-20261105.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u06-l16-abc-checkpoint-20261105.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l16-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+      "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+      "TeacherScoringPersistence": "UNVERIFIED_STAGE_D_ISSUE_453",
+      "StartedAtUtc": "2026-11-05T20:46:44.015706Z",
+      "ClosedAtUtc": "2026-11-05T20:46:44.015706Z",
+      "ElapsedSeconds": 0
     }
   ],
   "return_queue": [],
@@ -3216,7 +3254,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "U06:L16 canonical next; Stage D NOT_RUN",
+  "Next": "U06:L17 canonical next; Stage D NOT_RUN",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -3245,8 +3283,8 @@
     "Timing": "Not independently measured; not inferred"
   },
   "LastCheckpoint20261031": {
-    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
-    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L17",
     "BLOCKED_CURRENT_LESSON": null,
     "LAST_CONTENT_COMMIT": "SELF_CLOSURE_COMMIT_RECORDED_BY_GIT_HISTORY",
     "Tests": "AUTHORED_NOT_RUN",

@@ -336,11 +336,15 @@
       "CultureCode": "en",
       "Title": "Weighted Averages in a Triangle",
       "ExplanationParagraphs": [
-        "Learning goal: Prove that all three medians concur at the centroid and compute the centroid as the average of vertex coordinates.",
+        "Learning goal: Use weighted averages to prove the three medians of a triangle concur at a point two-thirds of the way from each vertex to the opposite-side midpoint.",
         "Segment from vertex to opposite-side midpoint Find side midpoint first",
         "G=(A+B+C)/3 coordinatewise G=A+(2/3)(M−A)",
         "Original student task: Construct all three medians on grid and prove their common centroid algebraically; teacher assesses diagram/proof. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 16, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 16, CC BY 4.0. Independently authored examples; no source artwork or protected assessments.",
+        "Source alignment repair: Retains construction and measurement of medians.",
+        "Source alignment repair: Adds the general coordinate proof for a triangle with symbolic vertices.",
+        "Source alignment repair: Makes the 2:1 partition and centroid coordinate average explicit.",
+        "Edulytics independent cool-down: For triangle A=(0,0), B=(6,0), C=(0,3), find the centroid and verify that it lies two-thirds of the way from A to the midpoint of BC."
       ],
       "KeyConcepts": [
         {
@@ -413,6 +417,7 @@
         }
       ],
       "SummaryPoints": [
+        "Use weighted averages to prove the three medians of a triangle concur at a point two-thirds of the way from each vertex to the opposite-side midpoint.",
         "Prove that all three medians concur at the centroid and compute the centroid as the average of vertex coordinates.",
         "Intersection of all three medians",
         "Teacher evaluation is required for original coordinate proofs and graphical submissions."
