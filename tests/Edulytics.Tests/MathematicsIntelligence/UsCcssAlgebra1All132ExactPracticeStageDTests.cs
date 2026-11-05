@@ -1,5 +1,6 @@
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Services.Mathematics;
 using Xunit;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
