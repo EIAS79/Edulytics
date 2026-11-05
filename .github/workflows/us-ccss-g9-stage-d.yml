@@ -5,6 +5,10 @@ on:
     paths:
       - '.github/workflows/us-ccss-g9-stage-d.yml'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G9/**'
+      - 'src/Edulytics.Core/**'
+      - 'src/Edulytics.Services/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - 'tools/curriculum/g9-stage-d-audit.cjs'
   pull_request:
     branches: [main]
     paths:
