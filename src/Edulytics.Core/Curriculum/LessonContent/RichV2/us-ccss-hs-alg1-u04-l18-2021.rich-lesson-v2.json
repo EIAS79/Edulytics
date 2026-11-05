@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l18-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l18-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,11 +8,12 @@
       "CultureCode": "en",
       "Title": "Using Functions to Model Battery Power",
       "ExplanationParagraphs": [
-        "Learning goal: analyze paired time/battery readings, build and critique a linear charging or draining model, make a justified prediction, and revise assumptions when new information appears. Independently authored Edulytiks adaptation from Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 18, https://im.kendallhunt.com/HS/teachers/1/4/18/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/18/index.html (CC BY 4.0). The source culminates in battery power modeling rather than solely solving a linear formula.",
-        "First-party hypothetical charging data: after t minutes since connection, battery percentages are (0,5),(10,14),(30,32),(40,41), each consistent with increasing by9 percentage points per10 minutes. A simple line is B(t)=5+0.9t percent while charging is approximately linear. The physical battery percentage cannot exceed100 or fall below0; without further measurements a sensible model stops or changes at full charge.",
-        "Solving B(t)=100 gives 0.9t=95, so t=95/0.9≈105.56 minutes after plug-in (about1hour45.6minutes). This is an extrapolation beyond the observed40-minute data, not a precise claim about an actual phone. Real devices often change charge rate; the source asks learners to reflect critically and improve models.",
-        "Contrasting hypothetical drain case: an unplugged device begins at90% and loses approximately4 percentage points per hour, D(h)=90−4h on 0≤h≤22.5 until empty. At 5 hours D=70%; estimated time from90% to20% is17.5 hours. If battery state or rate changes, a piecewise function could be more suitable than one straight line.",
-        "Student activity: graph the first-party readings, justify fit/units, solve for predicted full-charge time, compare this to an alternative piecewise rate, and explain what extra observations are needed. Actual user-device measurements are optional and require explicit truthful collection and privacy handling. Teacher-scored rubric 0–2 for accurate data plot, valid model/rate, checked predictions, and critical uncertainty/model-revision explanation."
+        "Learning goal: analyze paired time-and-battery data, build and use a linear charging or draining model, make a justified prediction, and critique or revise the model when new information makes its assumptions unreasonable. This first-party Edulytiks lesson is aligned to the approved local Algebra 1 Unit 4 Lesson 18 evidence and uses independently authored battery data.",
+        "First-party hypothetical charging data: after t minutes since connection, battery percentages are (0,5),(10,14),(30,32),(40,41), each consistent with increasing by9 percentage points per10 minutes. A simple line is B(t)=5+0. 9t percent while charging is approximately linear. The physical battery percentage cannot exceed100 or fall below0; without further measurements a sensible model stops or changes at full charge.",
+        "Solving B(t)=100 gives 0. 9t=95, so t=95/0. 9≈105. 56 minutes after plug-in (about1hour45. 6minutes). This is an extrapolation beyond the observed40-minute data, not a precise claim about an actual phone. Real devices often change charge rate; the source asks learners to reflect critically and improve models.",
+        "Contrasting hypothetical drain case: an unplugged device begins at90% and loses approximately4 percentage points per hour, D(h)=90−4h on 0≤h≤22. 5 until empty. At 5 hours D=70%; estimated time from90% to20% is17. 5 hours. If battery state or rate changes, a piecewise function could be more suitable than one straight line.",
+        "Student activity: graph the first-party readings, justify fit/units, solve for predicted full-charge time, compare this to an alternative piecewise rate, and explain what extra observations are needed. Actual user-device measurements are optional and require explicit truthful collection and privacy handling. Teacher-scored rubric 0–2 for accurate data plot, valid model/rate, checked predictions, and critical uncertainty/model-revision explanation.",
+        "First-party Cool-down (teacher-scored): A battery model predicts B(t)=90-8t percent after t hours. Predict B(6). If an observed value at 6 hours is 45 percent, compute observed minus predicted and explain whether that evidence should make you question the model. Prediction and residual can be checked exactly; model critique and revision are teacher-reviewed."
       ],
       "KeyConcepts": [
         {
