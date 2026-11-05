@@ -9,6 +9,7 @@ const exists=p=>fs.existsSync(path.join(root,p));
 const walk=(dir)=>exists(dir)?fs.readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(x=>x.isDirectory()?walk(path.join(dir,x.name)):[path.join(dir,x.name).replaceAll('\\','/')]):[];
 const prefix='PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:';
 const blueprint=read('src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json');
+const sourceInventory=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/g10-local-source-element-inventory-20261106.json');
 const ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json');
 const progress=read('artifacts/curriculum-delivery/US-CCSS-MATH/G10/full-grade-progress.json');
 const files=walk('src/Edulytics.Core/Curriculum/LessonContent/RichV2').filter(f=>/us-ccss-hs-geo-u\d\d-.*\.json$/.test(f));
@@ -22,6 +23,9 @@ check(blueprint.Lessons.length===124,'BLUEPRINT_COUNT',String(blueprint.Lessons.
 check(rich.length===124,'RICH_COUNT',String(rich.length));
 check(ledger.LessonEntries.length===124,'ABC_LEDGER_COUNT',String(ledger.LessonEntries.length));
 check(progress.ReadyForStageD===124,'ABC_READY_COUNT',String(progress.ReadyForStageD));
+check(sourceInventory.Lessons.length===124,'LOCAL_INVENTORY_LESSON_COUNT',String(sourceInventory.Lessons.length));
+check(sourceInventory.availableHtmlFiles===496 && sourceInventory.expectedHtmlFiles===496,'LOCAL_SOURCE_HTML_MISSING',String(sourceInventory.availableHtmlFiles));
+check(sourceInventory.SourceSnapshotId?.startsWith('g10-local-html-sha256:'),'LOCAL_SOURCE_SNAPSHOT_MISSING','No pinned local HTML digest');
 const bc=new Map(blueprint.Lessons.map(l=>[l.LessonCode,l]));
 const rc=new Map(rich.map(l=>[l.LessonCode,l]));
 const ec=new Map(ledger.LessonEntries.map(l=>[l.LessonCode,l]));
@@ -34,6 +38,9 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
   const code=prefix+`U${String(u).padStart(2,'0')}:L${String(l).padStart(2,'0')}`;
   const b=bc.get(code),r=rc.get(code),e=ec.get(code);
   check(!!b,'BLUEPRINT_LESSON_MISSING',code);check(!!r,'RICH_LESSON_MISSING',code);check(!!e,'LEDGER_LESSON_MISSING',code);
+  const sourceRow=sourceInventory.Lessons[ordinal-1];
+  check(sourceRow?.lessonCode===code && sourceRow?.ordinal===ordinal,'LOCAL_SOURCE_INVENTORY_ORDER',code);
+  if(sourceRow) for(const [kind,page] of Object.entries(sourceRow.documents||{}))check(page.available===true && typeof page.sha256==='string' && page.sha256.length===64,'LOCAL_SOURCE_PAGE_MISSING_OR_HASH',code+' '+kind);
   if(b) check(b.SortOrder===ordinal && b.UnitNumber===u && b.LessonNumber===l,'BLUEPRINT_ORDER',code);
   if(e) check(e.Ordinal===ordinal && e.ABCReadyForD===true,'ABC_LESSON_NOT_READY',code);
   if(r) check(typeof r.Title==='string' && r.Title.length>0 && Array.isArray(r.WorkedExamples) && Array.isArray(r.ExplanationParagraphs),'RICH_SHAPE',code);
@@ -71,7 +78,7 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
 const structural={pass:issues.length===0,errors:issues,count:lessons.length,units:8,
   blueprintHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json'))).digest('hex'),
   sourceEvidenceCompleteCount:lessons.filter(x=>x.sourceEvidenceComplete).length,
-  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
+  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',localSourceSnapshotId:sourceInventory.SourceSnapshotId,localSourceHtmlCount:sourceInventory.availableHtmlFiles,localSourceHeadingCount:sourceInventory.totalHeadingElements,localSourceVisualRefs:sourceInventory.totalDistinctWithinPageVisualAssets,documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,assessmentArtifactCount:assessedLessons,teacherAuthoredCandidateCount:teacherAuthoredRoutes,runtimeVerifiedTeacherRouteCount:runtimeVerifiedRoutes,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
 const result={structural,lessons};
 if(process.argv.includes('--json')) console.log(JSON.stringify(result,null,2));
 else console.log(JSON.stringify(structural,null,2));
